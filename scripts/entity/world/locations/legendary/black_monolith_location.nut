@@ -177,4 +177,10 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 		body.setBrush("world_monolith_01");
 	}
 
+	function onDeserialize( _in )
+	{
+		this.location.onDeserialize(_in);
+		this.m.IsAttackable = true;
+	}
+
 });
