@@ -1,0 +1,835 @@
+this.location <- this.inherit("scripts/entity/world/world_entity", {
+	m = {
+		Description = "",
+		LocationType = 0,
+		TypeID = "",
+		Banner = "banner_beasts_01",
+		DefenderSpawnList = null,
+		DefenderSpawnDay = 0,
+		RoamerSpawnList = null,
+		Resources = 0,
+		LastSpawnTime = -1000.0,
+		Loot = null,
+		OnDiscovered = null,
+		OnEnter = null,
+		OnDestroyed = null,
+		IsSpawningDefenders = true,
+		IsDespawningDefenders = true,
+		IsScalingDefenders = true,
+		IsShowingDefenders = true,
+		IsShowingBanner = true,
+		IsShowingLabel = false,
+		IsVisited = false,
+		IsBattlesite = false,
+		IsDroppingLoot = true
+	},
+	function isLocationType( _t )
+	{
+		return (this.m.LocationType & _t) != 0;
+	}
+
+	function getLocationType()
+	{
+		return this.m.LocationType;
+	}
+
+	function getTypeID()
+	{
+		return this.m.TypeID;
+	}
+
+	function isLocation()
+	{
+		return true;
+	}
+
+	function isEnterable()
+	{
+		return false;
+	}
+
+	function isIsolated()
+	{
+		return false;
+	}
+
+	function isActive()
+	{
+		return true;
+	}
+
+	function isShowingDefenders()
+	{
+		return this.m.IsShowingDefenders;
+	}
+
+	function isVisited()
+	{
+		return this.m.IsVisited;
+	}
+
+	function getBanner()
+	{
+		return this.m.Banner;
+	}
+
+	function getDescription()
+	{
+		return this.m.Description;
+	}
+
+	function getResources()
+	{
+		return this.m.Resources;
+	}
+
+	function getLoot()
+	{
+		return this.m.Loot;
+	}
+
+	function getStrength()
+	{
+		if (this.m.Strength != 0)
+		{
+			return this.m.Strength;
+		}
+		else
+		{
+			return this.m.Resources;
+		}
+	}
+
+	function getRoamerSpawnList()
+	{
+		if (this.m.RoamerSpawnList != null)
+		{
+			return this.m.RoamerSpawnList;
+		}
+		else
+		{
+			return this.m.DefenderSpawnList;
+		}
+	}
+
+	function getLastSpawnTime()
+	{
+		return this.m.LastSpawnTime;
+	}
+
+	function setDefenderSpawnList( _l )
+	{
+		this.m.DefenderSpawnList = _l;
+	}
+
+	function setResources( _r )
+	{
+		this.m.Resources = _r;
+	}
+
+	function setActive( _f )
+	{
+	}
+
+	function setVisited( _f )
+	{
+		this.m.IsVisited = _f;
+	}
+
+	function setDropLoot( _l )
+	{
+		this.m.IsDroppingLoot = _l;
+	}
+
+	function getDefenderSpawnList()
+	{
+		return this.m.DefenderSpawnList;
+	}
+
+	function resetDefenderSpawnDay()
+	{
+		this.m.DefenderSpawnDay = this.World.getTime().Days;
+	}
+
+	function getOwner()
+	{
+		return null;
+	}
+
+	function addFaction( _f )
+	{
+		this.setFaction(_f);
+	}
+
+	function removeFaction( _f )
+	{
+		this.setFaction(0);
+	}
+
+	function create()
+	{
+		this.world_entity.create();
+		this.m.IsAttackable = true;
+		this.m.IsAttackableByAI = false;
+		this.m.IsShowingStrength = false;
+		this.m.Loot = this.new("scripts/items/stash_container");
+		this.m.Loot.setResizable(true);
+	}
+
+	function setLastSpawnTimeToNow()
+	{
+		this.m.LastSpawnTime = this.Time.getVirtualTimeF();
+		this.m.DefenderSpawnDay = 0;
+
+		if (!this.isHiddenToPlayer())
+		{
+			this.onVisibleToPlayer();
+		}
+	}
+
+	function spawnFireAndSmoke( _pos = null )
+	{
+		if (_pos == null)
+		{
+			_pos = this.getPos();
+		}
+
+		if (this.Const.World.SmokeParticles.len() != 0)
+		{
+			local smoke = this.Const.World.SmokeParticles;
+
+			for( local i = 0; i < smoke.len(); i = ++i )
+			{
+				this.World.spawnParticleEffect(smoke[i].Brushes, smoke[i].Delay, smoke[i].Quantity, smoke[i].LifeTime, smoke[i].SpawnRate, smoke[i].Stages, this.createVec(_pos.X, _pos.Y - 30), -200 + this.Const.World.ZLevel.Particles);
+			}
+
+			local fire = this.Const.World.FireParticles;
+
+			for( local i = 0; i < fire.len(); i = ++i )
+			{
+				this.World.spawnParticleEffect(fire[i].Brushes, fire[i].Delay, fire[i].Quantity, fire[i].LifeTime, fire[i].SpawnRate, fire[i].Stages, this.createVec(_pos.X, _pos.Y - 30), -200 + this.Const.World.ZLevel.Particles - 3);
+			}
+		}
+	}
+
+	function setBanner( _banner )
+	{
+		this.m.Banner = _banner;
+
+		if (this.hasSprite("location_banner"))
+		{
+			this.getSprite("location_banner").setBrush(_banner);
+		}
+	}
+
+	function getTooltip()
+	{
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			}
+		];
+
+		if (!this.isAlliedWithPlayer())
+		{
+			if (this.m.IsShowingDefenders && !this.isHiddenToPlayer() && this.m.Troops.len() != 0 && this.getFaction() != 0)
+			{
+				ret.extend(this.getTroopComposition());
+			}
+			else
+			{
+				ret.push({
+					id = 20,
+					type = "text",
+					icon = "ui/orientation/player_01_orientation.png",
+					text = "Unknown garrison"
+				});
+			}
+		}
+
+		return ret;
+	}
+
+	function getSounds( _all = true )
+	{
+		return [];
+	}
+
+	function setLootScaleBasedOnResources( _r )
+	{
+		local resources = this.m.Resources * this.Math.minf(3.0, 1.0 + this.World.getTime().Days * 0.00749999983) * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
+		this.m.LootScale = this.Math.minf(1.0, _r / resources);
+	}
+
+	function onEnter()
+	{
+		if (!this.m.IsVisited && this.m.OnEnter != null)
+		{
+			this.m.IsVisited = true;
+			this.World.Events.fire(this.m.OnEnter);
+			return false;
+		}
+		else
+		{
+			this.m.IsVisited = true;
+			return true;
+		}
+	}
+
+	function onLeave()
+	{
+	}
+
+	function onRaided()
+	{
+	}
+
+	function onBeforeCombatStarted()
+	{
+		this.world_entity.onBeforeCombatStarted();
+
+		if (this.m.IsSpawningDefenders && this.m.DefenderSpawnList != null && this.m.Resources != 0)
+		{
+			if (this.m.Troops.len() != 0 && this.m.DefenderSpawnDay != 0 && this.World.getTime().Days - this.m.DefenderSpawnDay < 10)
+			{
+				return;
+			}
+
+			this.createDefenders();
+		}
+
+		if (this.m.Troops.len() == 0)
+		{
+			this.logWarning("Location forfeited combat - no defenders in spawnlist!");
+			this.onCombatLost();
+		}
+	}
+
+	function onCombatLost()
+	{
+		local tile = this.getTile();
+
+		if (this.m.IsDestructible && this.m.IsBattlesite)
+		{
+			if (this.Const.World.TerrainScript[tile.Type] != "")
+			{
+				tile.clearAllBut(this.Const.World.DetailType.Road | this.Const.World.DetailType.Shore | this.Const.World.DetailType.Footprints);
+				local t = this.MapGen.get(this.Const.World.TerrainScript[tile.Type]);
+				t.fill({
+					X = tile.SquareCoords.X,
+					Y = tile.SquareCoords.Y,
+					W = 1,
+					H = 1,
+					IsEmpty = false
+				}, null, 2);
+
+				if (tile.HasRoad && "onRoadPass" in t)
+				{
+					t.onRoadPass({
+						X = tile.SquareCoords.X,
+						Y = tile.SquareCoords.Y,
+						W = 1,
+						H = 1,
+						IsEmpty = false
+					});
+				}
+			}
+		}
+
+		if (this.m.IsDestructible)
+		{
+			this.World.EntityManager.onWorldEntityDestroyed(this, true);
+		}
+
+		this.world_entity.onCombatLost();
+
+		if (this.m.IsDestructible && !this.m.IsBattlesite)
+		{
+			local battlefield = this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", tile.Coords);
+			battlefield.setSize(1);
+		}
+
+		if (this.m.OnDestroyed != null)
+		{
+			this.World.Events.fire(this.m.OnDestroyed);
+			this.m.IsVisited = true;
+			return false;
+		}
+	}
+
+	function onCombatWon()
+	{
+		this.world_entity.onCombatWon();
+
+		if (this.m.IsDespawningDefenders)
+		{
+			this.m.Troops = [];
+		}
+	}
+
+	function onDropLootForPlayer( _lootTable )
+	{
+		this.world_entity.onDropLootForPlayer(_lootTable);
+		local loot = this.m.Loot.getItems();
+
+		foreach( item in loot )
+		{
+			if (item != null)
+			{
+				_lootTable.push(item);
+			}
+		}
+	}
+
+	function onSpawned()
+	{
+		local nearestSettlement = 9000;
+		local myTile = this.getTile();
+
+		foreach( s in this.World.EntityManager.getSettlements() )
+		{
+			local d = myTile.getDistanceTo(s.getTile());
+
+			if (d < nearestSettlement)
+			{
+				nearestSettlement = d;
+			}
+		}
+
+		if (!this.isLocationType(this.Const.World.LocationType.Unique))
+		{
+			local num = 0;
+
+			for( local chance = (this.m.Resources + nearestSettlement * 4) / 5.0 - 37.0; num < 2;  )
+			{
+				local r = this.Math.rand(1, 100);
+
+				if (r <= chance)
+				{
+					chance = chance - r;
+					num = ++num;
+					local type = this.Math.rand(20, 100);
+
+					if (type <= 40)
+					{
+						local i;
+
+						if (this.Const.DLC.Unhold)
+						{
+							i = this.Math.rand(1, 24);
+						}
+						else
+						{
+							i = this.Math.rand(1, 18);
+						}
+
+						if (i == 1)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_axe"));
+						}
+						else if (i == 2)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_billhook"));
+						}
+						else if (i == 3)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_cleaver"));
+						}
+						else if (i == 4)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_crossbow"));
+						}
+						else if (i == 5)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_dagger"));
+						}
+						else if (i == 6)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_flail"));
+						}
+						else if (i == 7)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_greataxe"));
+						}
+						else if (i == 8)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_greatsword"));
+						}
+						else if (i == 9)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_javelin"));
+						}
+						else if (i == 10)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_longaxe"));
+						}
+						else if (i == 11)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_mace"));
+						}
+						else if (i == 12)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_spear"));
+						}
+						else if (i == 13)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_sword"));
+						}
+						else if (i == 14)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_throwing_axe"));
+						}
+						else if (i == 15)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_hammer"));
+						}
+						else if (i == 16)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_warbow"));
+						}
+						else if (i == 17)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_warbrand"));
+						}
+						else if (i == 18)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_warhammer"));
+						}
+						else if (i == 19)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_polehammer"));
+						}
+						else if (i == 20)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_fencing_sword"));
+						}
+						else if (i == 21)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_mace"));
+						}
+						else if (i == 22)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_flail"));
+						}
+						else if (i == 23)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_three_headed_flail"));
+						}
+						else if (i == 24)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_spetum"));
+						}
+					}
+					else if (type <= 60)
+					{
+						local i = this.Math.rand(1, 10);
+
+						if (i == 1)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_bandit_kite_shield"));
+						}
+						else if (i == 2)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_bandit_heater_shield"));
+						}
+						else if (i == 3)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_dragon_shield"));
+						}
+						else if (i == 4)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_full_metal_heater_shield"));
+						}
+						else if (i == 5)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_golden_round_shield"));
+						}
+						else if (i == 6)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_red_white_shield"));
+						}
+						else if (i == 7)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_rider_on_horse_shield"));
+						}
+						else if (i == 8)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_wing_shield"));
+						}
+						else if (i == 9)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_undead_heater_shield"));
+						}
+						else if (i == 10)
+						{
+							this.m.Loot.add(this.new("scripts/items/shields/named/named_undead_kite_shield"));
+						}
+					}
+					else if (type <= 80)
+					{
+						local i = this.Math.rand(1, 7);
+
+						if (i == 1)
+						{
+							this.m.Loot.add(this.new("scripts/items/helmets/named/golden_feathers_helmet"));
+						}
+						else if (i == 2)
+						{
+							this.m.Loot.add(this.new("scripts/items/helmets/named/heraldic_mail_helmet"));
+						}
+						else if (i == 3)
+						{
+							this.m.Loot.add(this.new("scripts/items/helmets/named/nasal_feather_helmet"));
+						}
+						else if (i == 4)
+						{
+							this.m.Loot.add(this.new("scripts/items/helmets/named/norse_helmet"));
+						}
+						else if (i == 5)
+						{
+							this.m.Loot.add(this.new("scripts/items/helmets/named/sallet_green_helmet"));
+						}
+						else if (i == 6)
+						{
+							this.m.Loot.add(this.new("scripts/items/helmets/named/wolf_helmet"));
+						}
+						else if (i == 7)
+						{
+							this.m.Loot.add(this.new("scripts/items/helmets/named/lindwurm_helmet"));
+						}
+					}
+					else if (type <= 100)
+					{
+						local i = this.Math.rand(1, 6);
+
+						if (i == 1)
+						{
+							this.m.Loot.add(this.new("scripts/items/armor/named/black_leather_armor"));
+						}
+						else if (i == 2)
+						{
+							this.m.Loot.add(this.new("scripts/items/armor/named/blue_studded_mail_armor"));
+						}
+						else if (i == 3)
+						{
+							this.m.Loot.add(this.new("scripts/items/armor/named/brown_coat_of_plates_armor"));
+						}
+						else if (i == 4)
+						{
+							this.m.Loot.add(this.new("scripts/items/armor/named/golden_scale_armor"));
+						}
+						else if (i == 5)
+						{
+							this.m.Loot.add(this.new("scripts/items/armor/named/green_coat_of_plates_armor"));
+						}
+						else if (i == 6)
+						{
+							this.m.Loot.add(this.new("scripts/items/armor/named/heraldic_mail_armor"));
+						}
+					}
+				}
+				else
+				{
+					break;
+				}
+			}
+		}
+	}
+
+	function onInit()
+	{
+		this.world_entity.onInit();
+		this.setRenderedTop(false);
+		this.setVisibleInFogOfWar(true);
+
+		if (this.m.LocationType != this.Const.World.LocationType.Settlement)
+		{
+			this.World.EntityManager.addLocation(this);
+		}
+
+		this.getTile().IsOccupied = true;
+		local label_name = this.addLabel("name");
+		label_name.Visible = false;
+		label_name.Text = this.getName();
+	}
+
+	function onAfterInit()
+	{
+		local selection = this.addSprite("location_banner");
+		selection.Visible = this.m.IsShowingBanner;
+		this.setSpriteScaling("location_banner", false);
+		this.world_entity.onAfterInit();
+	}
+
+	function onFinish()
+	{
+		this.world_entity.onFinish();
+		this.getTile().IsOccupied = false;
+
+		if (this.m.LocationType != this.Const.World.LocationType.Settlement)
+		{
+			this.World.EntityManager.removeLocation(this);
+		}
+
+		if (this.World.FactionManager.getFaction(this.getFaction()) != null && this.m.LocationType != this.Const.World.LocationType.AttachedLocation)
+		{
+			this.World.FactionManager.getFaction(this.getFaction()).removeSettlement(this);
+		}
+	}
+
+	function onUpdate()
+	{
+		this.world_entity.onUpdate();
+	}
+
+	function onDiscovered()
+	{
+		this.world_entity.onDiscovered();
+		this.getTile().clearAllBut(this.Const.World.DetailType.Road | this.Const.World.DetailType.Shore);
+		this.getLabel("name").Visible = this.Const.World.AI.VisualizeNameOfLocations && this.m.IsShowingLabel;
+		this.World.Ambitions.onLocationDiscovered(this);
+
+		if (this.m.OnDiscovered != null)
+		{
+			this.World.Events.fire(this.m.OnDiscovered);
+		}
+	}
+
+	function onVisibleToPlayer()
+	{
+		if (!this.m.IsSpawningDefenders || this.m.DefenderSpawnList == null || this.isAlliedWithPlayer())
+		{
+			return;
+		}
+
+		if (this.m.Troops.len() != 0 && this.m.DefenderSpawnDay != 0 && this.World.getTime().Days - this.m.DefenderSpawnDay < 10)
+		{
+			return;
+		}
+
+		this.createDefenders();
+	}
+
+	function createDefenders()
+	{
+		local resources = this.m.Resources;
+
+		if (this.m.IsScalingDefenders)
+		{
+			resources = resources * this.Math.minf(3.0, 1.0 + this.World.getTime().Days * 0.00749999983);
+		}
+
+		if (!this.isAlliedWithPlayer())
+		{
+			resources = resources * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
+		}
+
+		if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
+		{
+			resources = resources * 0.75;
+		}
+
+		local best;
+		local bestCost = -9000;
+
+		foreach( party in this.m.DefenderSpawnList )
+		{
+			if (party.Cost > resources)
+			{
+				continue;
+			}
+
+			if (best == null || party.Cost > bestCost)
+			{
+				best = party;
+				bestCost = party.Cost;
+			}
+		}
+
+		local potential = [];
+
+		foreach( party in this.m.DefenderSpawnList )
+		{
+			if (party.Cost > resources || party.Cost < bestCost * 0.75)
+			{
+				continue;
+			}
+
+			potential.push(party);
+		}
+
+		if (potential.len() != 0)
+		{
+			best = potential[this.Math.rand(0, potential.len() - 1)];
+		}
+
+		if (best == null)
+		{
+			bestCost = 9000;
+
+			foreach( party in this.m.DefenderSpawnList )
+			{
+				if (this.Math.abs(party.Cost - resources) < bestCost)
+				{
+					best = party;
+					bestCost = this.Math.abs(party.Cost - resources);
+				}
+			}
+		}
+
+		if (best != null)
+		{
+			this.m.Troops = [];
+
+			if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
+			{
+				this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
+			}
+			else
+			{
+				this.m.DefenderSpawnDay = this.World.getTime().Days;
+			}
+
+			foreach( t in best.Troops )
+			{
+				for( local i = 0; i != t.Num; i = ++i )
+				{
+					this.Const.World.Common.addTroop(this, t, false);
+				}
+			}
+
+			this.updateStrength();
+		}
+	}
+
+	function onSerialize( _out )
+	{
+		this.world_entity.onSerialize(_out);
+		_out.writeU32(this.m.DefenderSpawnDay);
+		_out.writeF32(this.m.LastSpawnTime);
+		_out.writeU16(this.m.Resources);
+		_out.writeString(this.m.Banner);
+		_out.writeBool(this.m.IsVisited);
+		this.m.Loot.onSerialize(_out);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.world_entity.onDeserialize(_in);
+		this.m.DefenderSpawnDay = _in.readU32();
+		this.m.LastSpawnTime = _in.readF32();
+		this.m.Resources = _in.readU16();
+		this.m.Banner = _in.readString();
+		this.m.IsVisited = _in.readBool();
+		this.m.Loot.onDeserialize(_in);
+		this.getLabel("name").Visible = this.Const.World.AI.VisualizeNameOfLocations && this.m.IsShowingLabel;
+	}
+
+});

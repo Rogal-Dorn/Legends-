@@ -1,0 +1,37 @@
+this.local_holiday_situation <- this.inherit("scripts/entity/world/settlements/situations/situation", {
+	m = {},
+	function create()
+	{
+		this.situation.create();
+		this.m.ID = "situation.local_holiday";
+		this.m.Name = "Local Holiday";
+		this.m.Description = "A local holiday has the people in a generous mood. Time for food and drink!";
+		this.m.Icon = "ui/settlement_status/settlement_effect_22.png";
+		this.m.IsStacking = false;
+		this.m.ValidDays = 2;
+	}
+
+	function getAddedString( _s )
+	{
+		return _s + " now has a " + this.m.Name;
+	}
+
+	function getRemovedString( _s )
+	{
+		return _s + " no longer has a " + this.m.Name;
+	}
+
+	function onAdded( _settlement )
+	{
+		_settlement.resetShop();
+	}
+
+	function onUpdate( _modifiers )
+	{
+		_modifiers.SellPriceMult *= 1.04999995;
+		_modifiers.BuyPriceMult *= 0.949999988;
+		_modifiers.FoodRarityMult *= 1.5;
+		_modifiers.FoodPriceMult *= 0.899999976;
+	}
+
+});
