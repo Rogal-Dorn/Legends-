@@ -21,8 +21,8 @@ this.asset_manager <- {
 		MoralReputation = 50.0,
 		Score = 0.0,
 		AverageMoodState = this.Const.MoodState.Neutral,
-		BrothersMax = 20,
-		BrothersMaxInCombat = 12,
+		BrothersMax = 27,
+		BrothersMaxInCombat = 27,
 		LastDayPaid = 1,
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
@@ -288,24 +288,24 @@ this.asset_manager <- {
 		switch(_settings.BudgetDifficulty)
 		{
 		case 0:
-			this.m.Money = 2500;
-			this.m.Ammo = 80;
-			this.m.ArmorParts = 40;
-			this.m.Medicine = 30;
-			break;
-
-		case 1:
-			this.m.Money = 2000;
+			this.m.Money = 1500;
 			this.m.Ammo = 40;
 			this.m.ArmorParts = 20;
 			this.m.Medicine = 20;
 			break;
 
-		case 2:
-			this.m.Money = 1500;
+		case 1:
+			this.m.Money = 1000;
 			this.m.Ammo = 20;
 			this.m.ArmorParts = 10;
 			this.m.Medicine = 10;
+			break;
+
+		case 2:
+			this.m.Money = 500;
+			this.m.Ammo = 0;
+			this.m.ArmorParts = 0;
+			this.m.Medicine = 0;
 			break;
 		}
 
@@ -347,31 +347,15 @@ this.asset_manager <- {
 		]);
 		local roster = this.World.getPlayerRoster();
 		local bro;
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[0][1]);
-		bro.setStartValuesEx([
-			"companion_1h_background"
-		]);
-		bro.setPlaceInFormation(3);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
+		
 		bro = roster.create("scripts/entity/tactical/player");
 		bro.setName(this.m.FounderNames[1][1]);
 		bro.setStartValuesEx([
-			"companion_2h_background"
+			"beggar_background"
 		]);
 		bro.setPlaceInFormation(4);
 		bro.worsenMood(0.5, "Lost most of the company");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[2][1]);
-		bro.setStartValuesEx([
-			"companion_ranged_background"
-		]);
-		bro.setPlaceInFormation(5);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
-		this.m.FounderNames = [];
 	}
 
 	function getBusinessReputationAsText()
@@ -1219,7 +1203,7 @@ this.asset_manager <- {
 			{
 				formation[b.getPlaceInFormation()] = true;
 
-				if (b.getPlaceInFormation() <= 17)
+				if (b.getPlaceInFormation() <= 26)
 				{
 					inCombat = ++inCombat;
 				}
@@ -1244,7 +1228,7 @@ this.asset_manager <- {
 
 				if (inCombat >= this.m.BrothersMaxInCombat)
 				{
-					i = 18;
+					i = 27;
 				}
 
 				while (i != formation.len())
@@ -1254,7 +1238,7 @@ this.asset_manager <- {
 						b.setPlaceInFormation(i);
 						formation[i] = true;
 
-						if (i <= 17)
+						if (i <= 26)
 						{
 							inCombat = ++inCombat;
 						}

@@ -62,17 +62,17 @@ gt.Const.World.TerrainTypeSpeedMult <- [
 	0.0,
 	1.0,
 	0.5,
-	0.649999976,
-	0.649999976,
-	0.649999976,
-	0.649999976,
-	0.649999976,
+	0.64,
+	0.64,
+	0.64,
+	0.64,
+	0.64,
 	0.25,
 	0.5,
 	1.0,
 	0.75,
-	0.899999976,
-	0.899999976,
+	0.9,
+	0.9,
 	1.0,
 	0.5
 ];
@@ -80,8 +80,8 @@ gt.Const.World.TerrainTypeVisibilityMult <- [
 	1.0,
 	1.0,
 	1.0,
-	0.899999976,
-	0.899999976,
+	0.9,
+	0.9,
 	0.5,
 	0.5,
 	0.5,
@@ -118,19 +118,19 @@ gt.Const.World.TerrainFoodConsumption <- [
 	0.0,
 	1.0,
 	1.0,
-	1.10000002,
-	1.10000002,
+	1.1,
+	1.1,
 	1.0,
-	1.10000002,
+	1.1,
 	1.0,
 	1.0,
 	2.0,
 	1.0,
 	1.0,
-	1.10000002,
+	1.1,
 	1.25,
 	1.0,
-	1.10000002,
+	1.1,
 	1.0
 ];
 gt.Const.World.TerrainTypeLineBattle <- [
@@ -319,11 +319,11 @@ gt.Const.World.ZLevel <- {
 gt.Const.World.MovementSettings <- {
 	GlobalMult = 0.75,
 	NighttimeMult = 0.75,
-	NotPlayerMult = 0.949999988,
+	NotPlayerMult = 0.95,
 	RoadMult = 1.5,
 	RiverMult = 0.75,
 	Speed = 100.0,
-	SlowDownPartyPerTroop = 0.0149999997,
+	SlowDownPartyPerTroop = 0.015,
 	PlayerDirectMoveRadius = 400.0
 };
 gt.Const.World.SpeedSettings <- {
@@ -335,7 +335,7 @@ gt.Const.World.CombatSettings <- {
 	CombatDistance = 100,
 	CombatPlayerDistance = 100,
 	CombatTickTime = 3.0,
-	CombatStrengthMult = 0.400000006
+	CombatStrengthMult = 0.4
 };
 gt.Const.World.GreaterEvilType <- {
 	Random = 0,
@@ -357,12 +357,12 @@ gt.Const.World.GreaterEvilPhase <- {
 	Live = 2
 };
 gt.Const.World.Settings <- {
-	SizeX = 140,
-	SizeY = 140,
-	LandMassMult = 1.39999998,
+	SizeX = 240,
+	SizeY = 160,
+	LandMassMult = 1.4,
 	WaterConnectivity = 38,
-	MinLandToWaterRatio = 1.39999998,
-	Snowline = 0.899999976,
+	MinLandToWaterRatio = 1.4,
+	Snowline = 0.90,
 	Vision = 500.0
 };
 gt.Const.World.TerrainTypeNavCost <- [

@@ -775,11 +775,11 @@ gt.Const.World.Settlements.Fortifications_large <- [
 ];
 gt.Const.World.Settlements.Master <- [
 	{
-		Amount = 1,
+		Amount = 3,
 		List = this.Const.World.Settlements.Villages_small_coast
 	},
 	{
-		Amount = 1,
+		Amount = 2,
 		List = this.Const.World.Settlements.Villages_medium_coast
 	},
 	{
@@ -791,7 +791,7 @@ gt.Const.World.Settlements.Master <- [
 		List = this.Const.World.Settlements.Villages_small
 	},
 	{
-		Amount = 2,
+		Amount = 4,
 		List = this.Const.World.Settlements.Villages_medium
 	},
 	{
@@ -799,11 +799,11 @@ gt.Const.World.Settlements.Master <- [
 		List = this.Const.World.Settlements.Villages_large
 	},
 	{
-		Amount = 2,
+		Amount = 4,
 		List = this.Const.World.Settlements.Fortifications_small
 	},
 	{
-		Amount = 2,
+		Amount = 3,
 		List = this.Const.World.Settlements.Fortifications_medium
 	},
 	{

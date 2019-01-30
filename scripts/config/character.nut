@@ -53,7 +53,7 @@ for( local i = 0; i < 22; i = ++i )
 }
 
 gt.Const.Combat <- {
-	GlobalXPMult = 0.850000024,
+	GlobalXPMult = 0.85,
 	GlobalXPVeteranLevelMult = 1.0,
 	WeaponSpecFatigueMult = 0.75,
 	RetreatDeathChanceNotAtBorder = 0,
@@ -81,19 +81,19 @@ gt.Const.Combat <- {
 	ShieldWallMaxAllies = 4,
 	RiposteDelay = 300,
 	SpawnBloodMinDamage = 10,
-	SpawnBloodSameTileChance = 90,
-	SpawnBloodAdjacentTileChance = 75,
-	SpawnBloodAttempts = 3,
+	SpawnBloodSameTileChance = 95,
+	SpawnBloodAdjacentTileChance = 80,
+	SpawnBloodAttempts = 9,
 	SpawnBloodEffectMinDamage = 8,
 	PlayHitSoundMinDamage = 1,
 	PlayPainSoundMinDamage = 6,
 	PlayPainVolumeMaxDamage = 20.0,
-	BloodSplattersAtDeathMult = 1.0,
-	BloodSplattersAtOriginalPosMult = 0.0500000007,
-	DustSplattersAtResurrectionMult = 1.0,
-	BloodPoolsAtDeathMin = 4,
-	BloodPoolsAtDeathMax = 4,
-	BloodiedBustCount = 4,
+	BloodSplattersAtDeathMult = 4.0,
+	BloodSplattersAtOriginalPosMult = 0.5,
+	DustSplattersAtResurrectionMult = 1.5,
+	BloodPoolsAtDeathMin = 8,
+	BloodPoolsAtDeathMax = 16,
+	BloodiedBustCount = 6,
 	FliesRoundDelay = 15,
 	DiversionMaxLevelDifference = 1,
 	DiversionMinDist = 2,
@@ -115,10 +115,10 @@ gt.Const.Combat <- {
 	ShakeEffectSplitShieldColor = this.createColor("#ffffff"),
 	ShakeEffectSplitShieldHighlight = this.createColor("#ffffff"),
 	ShakeEffectSplitShieldFactor = 0.5,
-	ResurrectAnimationTime = 1.0,
+	ResurrectAnimationTime = 0.5,
 	ResurrectAnimationDistance = -200.0,
 	RootedAnimationTime = 0.5,
-	ZweihanderFatigueMult = 0.800000012,
+	ZweihanderFatigueMult = 0.8,
 	StealthFailRadius = 4
 };
 gt.Const.Corpse <- {
@@ -319,7 +319,7 @@ gt.Const.MoodChange <- {
 	BrotherDied = 0.25,
 	BrotherDismissed = 0.5,
 	VeteranDismissed = 1.0,
-	BattleWithoutMe = 0.200000003,
+	BattleWithoutMe = 0.2,
 	BattleWon = 0.349999994,
 	BattleLost = 0.449999988,
 	BattleRetreat = 0.25,
@@ -551,10 +551,10 @@ gt.Const.BloodPoolTerrainAlpha <- [
 	1.0,
 	1.0,
 	1.0,
-	0.660000026,
-	0.800000012,
-	0.660000026,
-	0.660000026
+	0.66,
+	0.8,
+	0.66,
+	0.66
 ];
 gt.Const.CorpsePart <- [
 	"corpse_part_01",

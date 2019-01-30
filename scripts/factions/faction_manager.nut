@@ -638,11 +638,11 @@ this.faction_manager <- {
 		{
 			if (GE.IsExtraLate)
 			{
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(100, 120) * this.World.getTime().SecondsPerDay;
+				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(15, 20) * this.World.getTime().SecondsPerDay;
 			}
 			else
 			{
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(55, 65) * this.World.getTime().SecondsPerDay;
+				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(5, 10) * this.World.getTime().SecondsPerDay;
 			}
 
 			if (this.World.Assets.isIronman())
@@ -652,11 +652,11 @@ this.faction_manager <- {
 		}
 		else if (GE.NextPhaseTime <= this.Time.getVirtualTimeF())
 		{
-			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 210)
+			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 20)
 			{
 				this.logInfo("STARTING GREATER EVIL - WARNING PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Warning;
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + 20 * this.World.getTime().SecondsPerDay;
+				GE.NextPhaseTime = this.Time.getVirtualTimeF() + 10 * this.World.getTime().SecondsPerDay;
 
 				if (GE.Type == 0)
 				{
@@ -702,7 +702,7 @@ this.faction_manager <- {
 					}
 				}
 			}
-			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 210)
+			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 20)
 			{
 				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Live;
@@ -766,7 +766,7 @@ this.faction_manager <- {
 					GE.LastType = GE.Type;
 					GE.Type = this.Const.World.GreaterEvilType.Random;
 					GE.Phase = this.Const.World.GreaterEvilPhase.NotSet;
-					GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(25, 35) * this.World.getTime().SecondsPerDay;
+					GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(5, 10) * this.World.getTime().SecondsPerDay;
 					this.World.Statistics.getFlags().increment("GreaterEvilsDefeated");
 				}
 			}
@@ -780,7 +780,7 @@ this.faction_manager <- {
 
 		foreach( n in nobles )
 		{
-			if (n.getSettlements().len() >= 2)
+			if (n.getSettlements().len() >= 1)
 			{
 				feuding = ++feuding;
 			}
