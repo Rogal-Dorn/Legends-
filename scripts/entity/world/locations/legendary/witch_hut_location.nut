@@ -12,7 +12,7 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 		this.m.LocationType = this.Const.World.LocationType.Unique;
 		this.m.IsShowingDefenders = true;
 		this.m.IsShowingBanner = false;
-		this.m.IsAttackable = false;
+		this.m.IsAttackable = true;
 		this.m.VisibilityMult = 0.800000012;
 		this.m.Resources = 500;
 		this.m.OnEnter = "event.location.witchhut_enter";
@@ -102,6 +102,7 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 	function onDeserialize( _in )
 	{
 		this.location.onDeserialize(_in);
+		this.m.IsAttackable = true;
 	}
 
 });

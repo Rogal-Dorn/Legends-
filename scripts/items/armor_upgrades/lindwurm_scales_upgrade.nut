@@ -56,6 +56,28 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 		});
 	}
 
+	function onEquip()
+	{
+		this.item.onEquip();
+		local c = this.m.Armor.getContainer();
+
+		if (c != null && c.getActor() != null && !c.getActor().isNull())
+		{
+			c.getActor().getTags().add("body_immune_to_acid");
+		}
+	}
+
+	function onUnequip()
+	{
+		this.item.onUnequip();
+		local c = this.m.Armor.getContainer();
+
+		if (c != null && c.getActor() != null && !c.getActor().isNull())
+		{
+			c.getActor().getTags().remove("body_immune_to_acid");
+		}
+	}
+
 	function onAdded()
 	{
 		this.armor_upgrade.onAdded();
