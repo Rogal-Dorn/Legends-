@@ -1218,7 +1218,7 @@ gt.Const.World.Spawn.Zombies <- [
 				Num = 15
 			}
 		]
-	},,
+	},
 	{
 		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
@@ -1232,57 +1232,57 @@ gt.Const.World.Spawn.Zombies <- [
 			{
 				Type = this.Const.World.Spawn.Troops.ZombieKnight,
 				Num = 18
-			}
-		]
-	},,
-	{
-		MovementSpeedMult = 0.800000012,
-		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
-		Body = "figure_zombie_03",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
-				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieKnight,
-				Num = 21
-			}
-		]
-	},,
-	{
-		MovementSpeedMult = 0.800000012,
-		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
-		Body = "figure_zombie_03",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieKnight,
-				Num = 24
-			}
-		]
-	},,
-	{
-		MovementSpeedMult = 0.800000012,
-		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
-		Body = "figure_zombie_03",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
-				Num = 27
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.ZombieKnight,
-				Num = 27
 			}
 		]
 	},
+	{
+		MovementSpeedMult = 0.800000012,
+		VisibilityMult = 1.0,
+		VisionMult = 0.800000012,
+		Body = "figure_zombie_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 21
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieKnight,
+				Num = 21
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.800000012,
+		VisibilityMult = 1.0,
+		VisionMult = 0.800000012,
+		Body = "figure_zombie_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 24
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieKnight,
+				Num = 24
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.800000012,
+		VisibilityMult = 1.0,
+		VisionMult = 0.800000012,
+		Body = "figure_zombie_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 27
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieKnight,
+				Num = 27
+			}
+		]
+	}
 ];
 gt.Const.World.Spawn.Ghosts <- [
 		{
@@ -1747,7 +1747,7 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 			}
 		]
 	},
-{
+	{
 		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
 		VisionMult = 0.800000012,
@@ -1763,7 +1763,7 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 			}
 		]
 	},
-{
+	{
 		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
 		VisionMult = 0.800000012,
@@ -1779,8 +1779,7 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 			}
 		]
 	},
-
-{
+	{
 		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
 		VisionMult = 0.800000012,
@@ -1796,7 +1795,7 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 			}
 		]
 	},
-{
+	{
 		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
 		VisionMult = 0.800000012,
@@ -1812,7 +1811,7 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 			}
 		]
 	},
-{
+	{
 		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
 		VisionMult = 0.800000012,

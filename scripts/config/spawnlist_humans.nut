@@ -2727,7 +2727,9 @@ gt.Const.World.Spawn.Militia <- [
 				Type = this.Const.World.Spawn.Troops.Militia,
 				Num = 1
 			}
-	},	{
+		]
+	},	
+	{
 		Cost = 0,
 		MovementSpeedMult = 0.899999976,
 		VisibilityMult = 1.0,
@@ -2743,7 +2745,8 @@ gt.Const.World.Spawn.Militia <- [
 				Num = 1
 			}
 		]
-	},	{
+	},	
+	{
 		Cost = 0,
 		MovementSpeedMult = 0.899999976,
 		VisibilityMult = 1.0,
@@ -2759,7 +2762,8 @@ gt.Const.World.Spawn.Militia <- [
 				Num = 1
 			}
 		]
-	},	{
+	},	
+	{
 		Cost = 0,
 		MovementSpeedMult = 0.899999976,
 		VisibilityMult = 1.0,
@@ -2776,7 +2780,6 @@ gt.Const.World.Spawn.Militia <- [
 			}
 		]
 	},
-
 	{
 		Cost = 0,
 		MovementSpeedMult = 0.899999976,
@@ -2794,7 +2797,6 @@ gt.Const.World.Spawn.Militia <- [
 			}
 		]
 	},
-
 	{
 		Cost = 0,
 		MovementSpeedMult = 0.899999976,

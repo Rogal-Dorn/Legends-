@@ -6408,8 +6408,7 @@ gt.Const.World.Spawn.OrcBoss <- [
 				Num = 1
 			}
 		]
-	}
-	,
+	},
 	{
 		Troops = [
 			{
@@ -6631,6 +6630,7 @@ gt.Const.World.Spawn.OrcBoss <- [
 		]
 	}
 ];
+
 gt.Const.World.Spawn.YoungOrcsOnly <- [
 	{
 		Troops = [
@@ -6777,6 +6777,7 @@ gt.Const.World.Spawn.YoungOrcsOnly <- [
 		]
 	}
 ];
+
 gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 	{
 		Troops = [
@@ -7016,9 +7017,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 8
 			}
 		]
-	}
-];
-,
+	},
 	{
 		Troops = [
 			{
@@ -7026,8 +7025,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 9
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7035,8 +7033,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 10
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7044,8 +7041,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 11
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7053,8 +7049,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 12
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7062,8 +7057,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 13
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7071,17 +7065,15 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 14
 			}
 		]
-	}
-];,
-	{
+	},
+		{
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 15
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7089,8 +7081,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 16
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7098,8 +7089,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 17
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7107,8 +7097,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 18
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7116,8 +7105,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 19
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7125,8 +7113,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 20
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7134,8 +7121,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 21
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7143,8 +7129,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 22
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7152,8 +7137,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 23
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7161,8 +7145,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 24
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7170,8 +7153,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 25
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7179,8 +7161,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 26
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7188,8 +7169,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 27
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7197,8 +7177,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 28
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7206,8 +7185,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 29
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7215,8 +7193,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 30
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7224,8 +7201,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 31
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7233,8 +7209,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 32
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7242,8 +7217,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 33
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7251,8 +7225,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 34
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7260,8 +7233,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 35
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7269,8 +7241,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 36
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7278,8 +7249,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 37
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7287,8 +7257,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 38
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7296,8 +7265,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 39
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7305,8 +7273,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 40
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7314,8 +7281,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 42
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7323,8 +7289,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 44
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7332,8 +7297,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 46
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7341,8 +7305,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 				Num = 48
 			}
 		]
-	}
-];,
+	},
 	{
 		Troops = [
 			{
@@ -7352,6 +7315,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		]
 	}
 ];
+
 gt.Const.World.Spawn.BerserkersOnly <- [
 	{
 		Troops = [
@@ -7361,7 +7325,6 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 			}
 		]
 	},
-
 	{
 		Troops = [
 			{
@@ -7723,6 +7686,7 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		]
 	}
 ];
+
 function onCostCompare( _t1, _t2 )
 {
 	if (_t1.Cost < _t2.Cost)
