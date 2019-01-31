@@ -90,6 +90,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 					"Kill %boss%"
 				];
 				this.World.State.m.IsAutosaving = false;
+				this.Flags.set("IsTutorialBattleDone", true);
 			}
 
 			function update()
@@ -159,7 +160,9 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 								tile.IsHidingEntity = false;
 							}
 						}
+
 					}
+
 				}
 
 				this.Tactical.fillVisibility(this.Const.Faction.Player, true);
@@ -500,10 +503,6 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				local shield = this.new("scripts/items/shields/wooden_shield");
 				shield.setVariant(4);
 				items.equip(shield);
-				e.getSprite("head").setBrush(this.Flags.get("BossHead"));
-				e.getSprite("beard").setBrush(this.Flags.get("BossBeard"));
-				e.getSprite("beard_top").setBrush(this.Flags.get("BossBeardTop"));
-				e.getSprite("hair").setBrush(this.Flags.get("BossHair"));
 			}
 
 			function onActorKilled( _actor, _killer, _combatID )
