@@ -72,7 +72,8 @@ CharacterScreenRightPanelModule.prototype.setupEventHandler = function ()
 	this.removeEventHandler();
 
 	this.mHeaderModule.setOnSwitchToInventoryCallback(jQuery.proxy(this.switchToInventory, this));
-	this.mHeaderModule.setOnSwitchToPerksCallback(jQuery.proxy(this.switchToPerks, this));
+    this.mHeaderModule.setOnSwitchToPerksCallback(jQuery.proxy(this.switchToPerks, this));
+    this.mHeaderModule.setOnSwitchToFormationsCallback(jQuery.proxy(this.switchToFormations, this));
 
 	this.mHeaderModule.selectInventoryPanel();
 };
@@ -80,7 +81,8 @@ CharacterScreenRightPanelModule.prototype.setupEventHandler = function ()
 CharacterScreenRightPanelModule.prototype.removeEventHandler = function ()
 {
 	this.mHeaderModule.setOnSwitchToInventoryCallback(null);
-	this.mHeaderModule.setOnSwitchToPerksCallback(null);
+    this.mHeaderModule.setOnSwitchToPerksCallback(null);
+    this.mHeaderModule.setOnSwitchToFormationsCallback(null);
 };
 
 
@@ -151,11 +153,24 @@ CharacterScreenRightPanelModule.prototype.toggleFilterPanel = function ()
 CharacterScreenRightPanelModule.prototype.switchToInventory = function ()
 {
 	this.mPerksModule.hide();
-	this.mInventoryModule.show();
+    this.mInventoryModule.show();
+    this.mInventoryModule.toggleFilterPanel(true);
+    this.mInventoryModule.toggleFormationsPanel(false);
 };
+
 
 CharacterScreenRightPanelModule.prototype.switchToPerks = function ()
 {
     this.mInventoryModule.hide();
+    this.mInventoryModule.toggleFilterPanel(false);
+    this.mInventoryModule.toggleFormationsPanel(false);
     this.mPerksModule.show();
+};
+
+CharacterScreenRightPanelModule.prototype.switchToFormations = function ()
+{
+    this.mInventoryModule.show();
+    this.mInventoryModule.toggleFilterPanel(false);
+    this.mInventoryModule.toggleFormationsPanel(true);
+    this.mPerksModule.hide();
 };

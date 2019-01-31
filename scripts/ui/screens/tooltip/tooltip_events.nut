@@ -2723,6 +2723,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "character-screen.right-panel-header-module.FormationButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Formations"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Switch to viewing the formation configuriations for your mercenary company."
+				}
+			];
+
 		case "character-screen.right-panel-header-module.CloseButton":
 			return [
 				{
@@ -2832,6 +2846,48 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Toggle between showing and hiding the mood of your men."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Change company formation and equipment loadouts."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ClearFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Clear Formation Loadout"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all items and weapons from brothers and place in inventory."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormationName":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation Name"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Give this formation a descriptive label for your reference."
 				}
 			];
 
@@ -3422,6 +3478,20 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Give the selected recruit a proper tryout to reveal his hidden character traits, if any."
+				}
+			];
+
+		case "world-town-screen.hire-dialog-module.DismissButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Dismiss Recruit"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Selected recruit doesn't make the cut, give'em the boot."
 				}
 			];
 
