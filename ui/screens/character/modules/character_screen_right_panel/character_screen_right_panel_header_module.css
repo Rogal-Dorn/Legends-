@@ -37,7 +37,7 @@
 
 .character-screen-container .right-panel-header-module .buttons-container.is-middle
 {
-	left: 16.0rem;
+	left: 8.0rem;
 	right: 0;
 	width: 200.0rem;
 }
@@ -90,7 +90,7 @@
 
 .character-screen-container .right-panel-header-module .buttons-container .l-button.is-perks
 {
-    left: 17.0rem;
+    left: 34.0rem;
 }
 
 .character-screen-container .right-panel-header-module .buttons-container .l-button.is-close
@@ -99,4 +99,9 @@
     top: 0.2rem;
     width: 4.5rem;
 	height: 4.1rem;
+}
+
+.character-screen-container .right-panel-header-module .buttons-container .l-button.is-formations
+{
+	left: 17.0rem;
 }

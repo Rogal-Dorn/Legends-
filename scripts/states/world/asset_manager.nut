@@ -30,7 +30,9 @@ this.asset_manager <- {
 		IsPermanentDestruction = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
-		IsConsumingAssets = true
+		IsConsumingAssets = true,
+		FormationIndex = 0,
+		FormationNames = []
 	},
 	function getCampaignID()
 	{
@@ -130,6 +132,16 @@ this.asset_manager <- {
 	function getFounderNames()
 	{
 		return this.m.FounderNames;
+	}
+
+	function getFormationIndex()
+	{
+		return this.m.FormationIndex;
+	}
+
+	function getFormationName()
+	{
+		return this.m.FormationNames[this.m.FormationIndex];
 	}
 
 	function isIronman()
@@ -571,6 +583,10 @@ this.asset_manager <- {
 		this.m.LastFoodConsumed = this.Time.getVirtualTimeF();
 		local globalTable = this.getroottable();
 		globalTable.Stash <- this.WeakTableRef(this.m.Stash);
+		for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+        {
+            this.m.FormationNames.push("Formation " + (i+1));
+        }
 	}
 
 	function init()
@@ -1202,6 +1218,73 @@ this.asset_manager <- {
 		}
 
 		return ret;
+	}
+
+    function changeFormation( _index )
+	{
+
+		if (_index == this.m.FormationIndex)
+		{
+			return;
+		}
+
+		this.m.FormationIndex = _index;
+		local roster = this.World.getPlayerRoster().getAll();
+		local stash = this.World.Assets.getStash();
+
+		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
+		//full stash and losing the gear
+		stash.setResizable(true);
+		//Save current loadout and strip all gear into stash if moving into a saved formation
+		foreach (b in roster) 
+		{
+			b.saveFormation();
+			b.getItems().transferToStash(stash);
+		}
+		stash.setResizable(false);
+		//All gear now in stash, set new formation and build up the next loadout
+		foreach (b in roster) 
+		{
+			b.setFormation(_index);
+		}
+
+		stash.sort();
+		this.updateFormation()
+	}
+
+    function clearFormation( _index )
+	{
+		this.m.FormationIndex = _index;
+		local roster = this.World.getPlayerRoster().getAll();
+		local stash = this.World.Assets.getStash();
+
+		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
+		//full stash and losing the gear
+		stash.setResizable(true);
+		//Clear loadout and strip all gear into stash
+		foreach (b in roster) 
+		{
+			//Strip items
+			b.getItems().transferToStash(stash);
+			b.saveFormation()
+		}
+		stash.setResizable(false);
+		stash.sort();
+		this.updateFormation()
+	}
+
+	function setFormationName(_index, _name)
+	{
+		if (_name == "") 
+		{
+			return;
+		}
+		this.m.FormationNames[_index] = _name;
+	}
+
+    function changeFormationName( _name )
+	{
+		this.setFormationName(this.m.FormationIndex, _name);
 	}
 
 	function updateFormation()
@@ -1964,6 +2047,11 @@ this.asset_manager <- {
 		_out.writeU8(this.m.LastHourUpdated);
 		_out.writeF32(this.m.LastFoodConsumed);
 		_out.writeBool(this.m.IsCamping);
+		_out.writeU8(this.m.FormationIndex);
+		foreach( name in this.m.FormationNames) 
+		{
+			_out.writeString(name);
+		}
 		_out.writeBool(false);
 	}
 
@@ -2026,6 +2114,20 @@ this.asset_manager <- {
 		this.m.LastHourUpdated = _in.readU8();
 		this.m.LastFoodConsumed = _in.readF32();
 		this.m.IsCamping = _in.readBool();
+		
+		if (_in.getMetaData().getVersion() >= 46 )
+		{
+			this.m.FormationIndex = _in.readU8();
+		}
+
+		if (_in.getMetaData().getVersion() >= 47 )
+		{
+			for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+			{
+				this.setFormationName(i, _in.readString())
+			}
+		}
+
 		this.updateAverageMoodState();
 		this.updateFood();
 		this.updateFormation();
@@ -2061,7 +2163,7 @@ this.asset_manager <- {
 				}
 			}
 		}
-
+	
 		_in.readBool();
 	}
 
