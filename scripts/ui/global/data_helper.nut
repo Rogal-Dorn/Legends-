@@ -8,6 +8,24 @@ this.data_helper <- {
 	{
 	}
 
+	function convertLegendCampaignsToUIData()
+	{
+		local result = [];
+		result.push({
+			name = "Default",
+			banner = "default",
+		})
+		result.push({
+			name = "Beggar Start",
+			banner = "legends_beggar",
+		})
+		result.push({
+			name = "Noble Start",
+			banner = "legends_noble",
+		})
+		return result;
+	}
+
 	function convertCampaignStoragesToUIData()
 	{
 		local isWorldmap = ("Assets" in this.World) && this.World.Assets != null;
