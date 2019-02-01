@@ -357,7 +357,7 @@ gt.Const.World.GreaterEvilPhase <- {
 	Live = 2
 };
 gt.Const.World.Settings <- {
-	SizeX = 240,
+	SizeX = 180,
 	SizeY = 160,
 	LandMassMult = 1.4,
 	WaterConnectivity = 38,
