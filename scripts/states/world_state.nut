@@ -960,9 +960,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function init()
 	{
 		this.initOptions();
-		this.logInfo("WORLD STATE INIT ")
-		this.logInfo("CAMPAIGN  " + this.m.Campaign);
-		this.logInfo("CAMPAIGN SETTINGS " + this.m.CampaignSettings.Campaign);
 
 		if (this.m.CampaignToLoadFileName != null)
 		{
@@ -1087,38 +1084,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 		
 		if (this.m.Campaign == "legends_noble") {
-			local c = this.new("scripts/contracts/contracts/legends_noble_start");
-			c.start();
-			this.World.Contracts.addContract(c);
-			this.World.Contracts.setActiveContract(c, true);
-			this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
-			return
+			this.World.Tags.set("IsLegendsNoble", true);
 		}
 
 		if (this.m.Campaign == "legends_beggar") {
-			local c = this.new("scripts/contracts/contracts/legends_beggar_start_contract");
-			c.start();
-			this.World.Contracts.addContract(c);
-			this.World.Contracts.setActiveContract(c, true);
-			this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
-			return
+			this.World.Tags.set("IsLegendsBeggar", true);
 		}
-
-		// switch(this.m.Campaign)
-		// {
-		// case "legends_noble":
-		// 	this.logInfo("LEGENDS NOBLE START")
-		// 	c = this.new("scripts/contracts/contracts/legends_noble_start");
-		// 	break;
-
-		// case "legends_beggar":
-		// 	c = this.new("scripts/contracts/contracts/legends_beggar_start");
-		// 	break;
-			
-		// default:
-		// 	c = this.new("scripts/contracts/contracts/tutorial_contract");
-		// 	break;				
-		// }
 
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
@@ -1184,8 +1155,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function setNewCampaignSettings( _settings )
 	{
-		this.logInfo("**SETTING NEW CAMPAIGN SETTINGS IN WORLD STATE " );
-		this.logInfo("**** NewCampaignSettings " + _settings.Campaign )
 		this.m.CampaignSettings = _settings;
 		this.m.Campaign = _settings.Campaign;
 	}
