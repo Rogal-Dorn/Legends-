@@ -22,7 +22,8 @@ var NewCampaignMenuModule = function()
     this.mDialogContainer = null;
 
     this.mFirstPanel = null;
-    this.mSecondPanel = null;
+	this.mSecondPanel = null;
+	this.mMapPanel = null;
 
 	// controls
 	this.mDifficultyEasyCheckbox = null;
@@ -83,6 +84,67 @@ var NewCampaignMenuModule = function()
 	this.mBudgetDifficulty = 0;
 	this.mEvil = 0;
 
+
+	// controls
+	this.mMapOptions = {
+		Width: {
+			Control: null,
+			OptionsKey: 'map.width',
+			Min: 50,
+			Max: 300,
+			Value: 140
+		},
+		Height: {
+			Control: null,
+			OptionsKey: 'map.height',
+			Min: 50,
+			Max: 300,
+			Value: 140
+		},
+		LandMassMult: {
+			Control: null,
+			OptionsKey: 'map.landmassmult',
+			Min: 0,
+			Max: 20,
+			Value: 14
+		},
+		WaterConnectivity: {
+			Control: null,
+			OptionsKey: 'map.waterconnectivity',
+			Min: 0,
+			Max: 100,
+			Value: 38
+		},
+		MinLandToWaterRatio: {
+			Control: null,
+			OptionsKey: 'map.minlandtowaterratio',
+			Min: 0,
+			Max: 20,
+			Value: 14
+		},
+		Snowline: {
+			Control: null,
+			OptionsKey: 'map.snowline',
+			Min: 0,
+			Max: 100,
+			Value: 90
+		},
+		NumSettlements: {
+			Control: null,
+			OptionsKey: 'map.settlements',
+			Min: 1,
+			Max: 60,
+			Value: 19
+		},
+		NumFactions: {
+			Control: null,
+			OptionsKey: 'map.factions',
+			Min: 1,
+			Max: 6,
+			Value: 3
+		}
+	};
+	this.mFogofWarCheckbox = null;
     // generics
     this.mIsVisible = false;
 };
@@ -130,7 +192,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 
 	this.mFirstPanel = $('<div class="display-block"/>');
 	contentContainer.append(this.mFirstPanel);
-
+	{
 		var leftColumn = $('<div class="column"/>');
 		this.mFirstPanel.append(leftColumn);
 		var rightColumn = $('<div class="column"/>');
@@ -293,10 +355,11 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		var inputLayout = $('<div class="l-input"/>');
 		row.append(inputLayout);
 		this.mSeed = inputLayout.createInput('', 0, 10, 1, null, 'title-font-big font-bold font-color-brother-name');
-
+	}
+	
 	this.mSecondPanel = $('<div class="display-none"/>');
 	contentContainer.append(this.mSecondPanel);
-
+	{
 		var leftColumn = $('<div class="column"/>');
 		this.mSecondPanel.append(leftColumn);
 		var rightColumn = $('<div class="column"/>');
@@ -491,6 +554,44 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			increaseArea: '30%'
 		});
 
+	}
+
+	this.mMapPanel = $('<div class="display-none"/>');
+	contentContainer.append(this.mMapPanel);
+	{
+	
+		var leftColumn = $('<div class="column"></div>');
+		this.mMapPanel.append(leftColumn);
+		var rightColumn = $('<div class="column"></div>');
+		this.mMapPanel.append(rightColumn);
+	
+		//
+		this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);	
+		this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
+		this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass', leftColumn);	
+		this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
+		this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
+		this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', rightColumn);
+		this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
+		this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
+
+		var row = $('<div class="row"></div>');
+		rightColumn.append(row);
+
+		var control = $('<div class="control"/>');
+		row.append(control);
+		this.mFogofWarCheckbox = $('<input type="checkbox" id="cb-fog-of-war"/>');
+		control.append(this.mFogofWarCheckbox);
+		var label = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Fog of War</label>');
+		control.append(label);
+		this.mFogofWarCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+		});
+
+	}
+
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"></div>');
     this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
@@ -502,14 +603,23 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
     	if(self.mFirstPanel.hasClass('display-block'))
     	{
     		self.mFirstPanel.removeClass('display-block').addClass('display-none');
-    		self.mSecondPanel.addClass('display-block').removeClass('display-none');
-    		self.mStartButton.changeButtonText("Start");
+			self.mSecondPanel.addClass('display-block').removeClass('display-none');
+			self.mMapPanel.removeClass('display-block').addClass('display-none')
+    		self.mStartButton.changeButtonText("Next");
     		self.mCancelButton.changeButtonText("Previous");
     	}
-    	else
+    	else if (self.mSecondPanel.hasClass('display-block'))
     	{
+			self.mFirstPanel.removeClass('display-block').addClass('display-none');
+			self.mSecondPanel.removeClass('display-block').addClass('display-none');
+			self.mMapPanel.addClass('display-block').removeClass('display-none')
+    		self.mStartButton.changeButtonText("Start");
+			self.mCancelButton.changeButtonText("Previous");			
+		}
+		else
+		{
     		self.notifyBackendStartButtonPressed();
-    	}    	
+		}
     }, '', 1);
 
     layout = $('<div class="l-cancel-button"/>');
@@ -519,18 +629,56 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
     	if (self.mFirstPanel.hasClass('display-block'))
     	{
     		self.notifyBackendCancelButtonPressed();
-    	}
-    	else
+		}
+		else if (self.mSecondPanel.hasClass('display-block'))
     	{
 			self.mFirstPanel.addClass('display-block').removeClass('display-none');
 			self.mSecondPanel.removeClass('display-block').addClass('display-none');
+			self.mMapPanel.removeClass('display-block').addClass('display-none')
+    		self.mStartButton.changeButtonText("Next");
+			self.mCancelButton.changeButtonText("Cancel");			
+		}
+    	else
+    	{
+			self.mFirstPanel.removeClass('display-block').addClass('display-none');
+			self.mSecondPanel.addClass('display-block').removeClass('display-none');
+			self.mMapPanel.removeClass('display-block').addClass('display-none')
 			self.mStartButton.changeButtonText("Next");
-    		self.mCancelButton.changeButtonText("Cancel");
-    	}    	
+    		self.mCancelButton.changeButtonText("Previous");
+    	}
     }, '', 1);
 
     this.mIsVisible = false;
 };
+
+NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv)
+{
+    var self = this;
+	var row = $('<div class="row"></div>');
+	_parentDiv.append(row);
+	var scalingTile = $('<div class="title title-font-big font-bold font-color-title">' + _label + '</div>');
+	row.append(scalingTile);
+
+	var control = $('<div class="scale-control"></div>');
+	row.append(control);
+
+	_definition.Control = $('<input class="scale-slider" type="range" step="1" />');
+	_definition.Control.attr('min', _definition.Min);
+	_definition.Control.attr('max', _definition.Max);
+	_definition.Control.val(_definition.Value);
+	control.append(_definition.Control);
+
+	_definition.Control.on("change", function ()
+	{
+		_definition.Value = parseInt(_definition.Control.val());
+		label.text('' + _definition.Value);
+	});
+
+	var label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
+	control.append(label);
+
+};
+
 
 NewCampaignMenuModule.prototype.destroyDIV = function ()
 {
@@ -574,6 +722,10 @@ NewCampaignMenuModule.prototype.destroyDIV = function ()
     this.mSecondPanel.remove();
     this.mSecondPanel = null;
 
+	this.mMapPanel.empty();
+    this.mMapPanel.remove();
+	this.mMapPanel = null;
+	
     this.mDialogContainer.empty();
     this.mDialogContainer.remove();
     this.mDialogContainer = null;
@@ -768,6 +920,7 @@ NewCampaignMenuModule.prototype.show = function ()
 	// reset panels
 	this.mFirstPanel.addClass('display-block').removeClass('display-none');
 	this.mSecondPanel.removeClass('display-block').addClass('display-none');
+	this.mMapPanel.removeClass('display-block').addClass('display-none');
 	this.mStartButton.changeButtonText("Next");
 	this.mCancelButton.changeButtonText("Cancel");
 
@@ -857,6 +1010,20 @@ NewCampaignMenuModule.prototype.setBanners = function(_data)
 	}
 }
 
+NewCampaignMenuModule.prototype.setMapConfig = function(_data)
+{
+	if(_data !== null && jQuery.isArray(_data))
+	{
+		this.mBanners = _data;
+		this.mCurrentBannerIndex = Math.floor(Math.random() * _data.length);
+
+		this.mBannerImage.attr('src', Path.GFX + 'ui/banners/' + _data[this.mCurrentBannerIndex] + '.png');
+	}
+	else
+	{
+		console.error('ERROR: No banners specified for NewCampaignMenu::setBanners');
+	}
+}
 
 NewCampaignMenuModule.prototype.collectSettings = function()
 {
@@ -876,6 +1043,15 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mEvil);
 	settings.push(this.mEvilPermanentDestructionCheckbox.is(':checked'));
 	settings.push(this.mSeed.getInputText());
+	settings.push(this.mMapOptions.Width.Value);	
+	settings.push(this.mMapOptions.Height.Value);	
+	settings.push(this.mMapOptions.LandMassMult.Value);	
+	settings.push(this.mMapOptions.WaterConnectivity.Value);	
+	settings.push(this.mMapOptions.MinLandToWaterRatio.Value);	
+	settings.push(this.mMapOptions.Snowline.Value);	
+	settings.push(this.mMapOptions.NumSettlements.Value);	
+	settings.push(this.mMapOptions.NumFactions.Value);
+	settings.push(this.mFogofWarCheckbox.is(':checked'));	
 
 	return settings;
 }
