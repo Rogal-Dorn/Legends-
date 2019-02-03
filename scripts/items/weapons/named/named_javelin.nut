@@ -34,7 +34,7 @@ this.named_javelin <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.75;
-		this.m.DirectDamageMult = 0.449999988;
+		this.m.DirectDamageMult = 0.45;
 		this.m.ShieldDamage = 0;
 		this.randomizeValues();
 	}

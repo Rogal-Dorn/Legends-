@@ -164,7 +164,7 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 
 			score = score + targets * this.Const.AI.Behavior.CharmHelpOther;
-			score = score * this.Math.maxf(0.200000003, 1.0 - this.Const.AI.Behavior.CharmBraveryMult * target.getBravery() * 0.00999999978);
+			score = score * this.Math.maxf(0.2, 1.0 - this.Const.AI.Behavior.CharmBraveryMult * target.getBravery() * 0.01);
 
 			if (target.getCurrentProperties().IsRooted && opponentTile.getZoneOfControlCount(target.getFaction()) == 0 && !target.isArmedWithRangedWeapon())
 			{
@@ -279,7 +279,7 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 		if (bestTarget != null)
 		{
 			this.m.TargetTile = bestTarget.getTile();
-			this.m.ScoreBonus = bestScore * 0.100000001;
+			this.m.ScoreBonus = bestScore * 0.1;
 		}
 
 		return true;

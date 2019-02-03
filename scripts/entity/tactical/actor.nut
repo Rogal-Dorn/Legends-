@@ -1040,14 +1040,14 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function playIdleSound()
 	{
-		this.playSound(this.Const.Sound.ActorEvent.Idle, this.Const.Sound.Volume.Actor * this.Const.Sound.Volume.ActorIdle * this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] * this.m.SoundVolumeOverall * (this.Math.rand(60, 100) * 0.00999999978) * (this.isHiddenToPlayer ? 0.330000013 : 1.0), this.m.SoundPitch * (this.Math.rand(85, 115) * 0.00999999978));
+		this.playSound(this.Const.Sound.ActorEvent.Idle, this.Const.Sound.Volume.Actor * this.Const.Sound.Volume.ActorIdle * this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] * this.m.SoundVolumeOverall * (this.Math.rand(60, 100) * 0.01) * (this.isHiddenToPlayer ? 0.33 : 1.0), this.m.SoundPitch * (this.Math.rand(85, 115) * 0.01));
 	}
 
 	function playAttackSound()
 	{
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.playSound(this.Const.Sound.ActorEvent.Attack, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] * (this.Math.rand(75, 100) * 0.00999999978), this.m.SoundPitch);
+			this.playSound(this.Const.Sound.ActorEvent.Attack, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] * (this.Math.rand(75, 100) * 0.01), this.m.SoundPitch);
 		}
 	}
 
@@ -1508,7 +1508,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (this.getFaction() == this.Const.Faction.Player && _attacker != null && _attacker.isAlive())
 		{
-			this.Tactical.getCamera().quake(_attacker, this, 5.0, 0.159999996, 0.300000012);
+			this.Tactical.getCamera().quake(_attacker, this, 5.0, 0.16, 0.3);
 		}
 
 		if (damage <= 0 && armorDamage >= 0)
@@ -1987,7 +1987,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.setSpriteColorization("arrow", false);
 		local rooted = this.addSprite("status_rooted_back");
 		rooted.Visible = false;
-		rooted.Scale = 0.550000012;
+		rooted.Scale = 0.55;
 	}
 
 	function onAfterInit()
@@ -2348,7 +2348,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (_numTiles > 1)
 		{
-			this.playSound(this.Const.Sound.ActorEvent.Move, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] * this.m.SoundVolumeOverall * (this.Math.rand(50, 100) * 0.00999999978) * (_tile.IsVisibleForPlayer ? 1.0 : 0.5));
+			this.playSound(this.Const.Sound.ActorEvent.Move, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] * this.m.SoundVolumeOverall * (this.Math.rand(50, 100) * 0.01) * (_tile.IsVisibleForPlayer ? 1.0 : 0.5));
 		}
 	}
 
@@ -2401,7 +2401,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 							if (otherActor.m.MaxEnemiesThisTurn < numEnemies && !otherActor.isAlliedWith(this))
 							{
-								local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.100000001);
+								local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
 								otherActor.checkMorale(-1, difficulty);
 								otherActor.m.MaxEnemiesThisTurn = numEnemies;
 							}
@@ -2431,7 +2431,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		if (this.m.IsEmittingMovementSounds && this.Const.Tactical.TerrainMovementSound[_tile.Subtype].len() != 0)
 		{
 			local sound = this.Const.Tactical.TerrainMovementSound[_tile.Subtype][this.Math.rand(0, this.Const.Tactical.TerrainMovementSound[_tile.Subtype].len() - 1)];
-			this.Sound.play("sounds/" + sound.File, sound.Volume * this.Const.Sound.Volume.TacticalMovement * this.Math.rand(90, 100) * 0.00999999978, this.getPos(), sound.Pitch * this.Math.rand(95, 105) * 0.00999999978);
+			this.Sound.play("sounds/" + sound.File, sound.Volume * this.Const.Sound.Volume.TacticalMovement * this.Math.rand(90, 100) * 0.01, this.getPos(), sound.Pitch * this.Math.rand(95, 105) * 0.01);
 		}
 
 		this.spawnTerrainDropdownEffect(_tile);
@@ -3623,18 +3623,18 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			Iterations = 0,
 			function onCorpseEffect( _data )
 			{
-				if (this.Time.getRealTimeF() - _data.Start > 0.200000003)
+				if (this.Time.getRealTimeF() - _data.Start > 0.2)
 				{
 					if (++_data.Iterations > 5)
 					{
 						return;
 					}
 
-					_data.Vector = this.createVec(this.Math.rand(-100, 100) * 0.00999999978, this.Math.rand(-100, 100) * 0.00999999978);
+					_data.Vector = this.createVec(this.Math.rand(-100, 100) * 0.01, this.Math.rand(-100, 100) * 0.01);
 					_data.Start = this.Time.getRealTimeF();
 				}
 
-				local f = (this.Time.getRealTimeF() - _data.Start) / 0.200000003;
+				local f = (this.Time.getRealTimeF() - _data.Start) / 0.2;
 
 				for( local i = 0; i < _data.Decals.len(); i = ++i )
 				{

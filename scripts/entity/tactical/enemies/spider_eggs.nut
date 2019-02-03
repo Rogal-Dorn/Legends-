@@ -128,7 +128,7 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 		if (tile != null)
 		{
 			local spawn = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/spider", tile.Coords);
-			spawn.setSize(this.Math.rand(60, 75) * 0.00999999978);
+			spawn.setSize(this.Math.rand(60, 75) * 0.01);
 			spawn.setFaction(this.getFaction());
 			spawn.m.XP = spawn.m.XP / 2;
 			++this.m.Count;

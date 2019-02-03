@@ -18,7 +18,7 @@ this.demolish_armor_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/crush_armor_hit_02.wav",
 			"sounds/combat/crush_armor_hit_03.wav"
 		];
-		this.m.SoundVolume = 1.10000002;
+		this.m.SoundVolume = 1.1;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
 		this.m.IsSerialized = false;

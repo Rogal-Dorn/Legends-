@@ -520,7 +520,7 @@ this.find_artifact_contract <- this.inherit("scripts/contracts/contract", {
 						this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.UndeadArmy, 130 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 						this.Contract.m.Destination.setLootScaleBasedOnResources(130 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 
-						if (this.Contract.getDifficultyMult() <= 1.14999998 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+						if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
 						{
 							this.Contract.m.Destination.getLoot().clear();
 						}
@@ -711,7 +711,7 @@ this.find_artifact_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
-				local bribe = this.Contract.beautifyNumber(this.Contract.m.Payment.Pool * 0.400000006);
+				local bribe = this.Contract.beautifyNumber(this.Contract.m.Payment.Pool * 0.4);
 				this.World.Assets.addMoney(-bribe);
 				this.List.push({
 					id = 10,
@@ -874,7 +874,7 @@ this.find_artifact_contract <- this.inherit("scripts/contracts/contract", {
 		]);
 		_vars.push([
 			"bribe",
-			this.beautifyNumber(this.m.Payment.Pool * 0.400000006)
+			this.beautifyNumber(this.m.Payment.Pool * 0.4)
 		]);
 		_vars.push([
 			"direction",

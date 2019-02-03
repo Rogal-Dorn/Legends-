@@ -35,7 +35,7 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.HitChanceBonus = 0;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
@@ -272,7 +272,7 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.DamageRegularMin += 40;
 		_properties.DamageRegularMax += 80;
-		_properties.DamageArmorMult *= 0.800000012;
+		_properties.DamageArmorMult *= 0.8;
 	}
 
 });

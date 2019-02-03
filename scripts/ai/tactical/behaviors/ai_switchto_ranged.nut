@@ -134,7 +134,7 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (_entity.getCurrentProperties().getRangedSkill() < 50)
 		{
-			scoreMult = scoreMult * (1.0 - (50 - _entity.getCurrentProperties().getRangedSkill()) * 0.00999999978);
+			scoreMult = scoreMult * (1.0 - (50 - _entity.getCurrentProperties().getRangedSkill()) * 0.01);
 		}
 
 		local declaredTargetTile = this.getAgent().getIntentions().TargetTile;

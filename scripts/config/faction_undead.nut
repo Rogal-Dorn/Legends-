@@ -99,7 +99,7 @@ gt.Const.Tactical.Actor.SkeletonBoss <- {
 		0,
 		0
 	],
-	DamageTotalMult = 1.35000002
+	DamageTotalMult = 1.35
 };
 gt.Const.Tactical.Actor.Zombie <- {
 	XP = 100,

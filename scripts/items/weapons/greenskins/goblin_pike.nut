@@ -26,7 +26,7 @@ this.goblin_pike <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 70;
-		this.m.ArmorDamageMult = 0.899999976;
+		this.m.ArmorDamageMult = 0.9;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 5;
 	}

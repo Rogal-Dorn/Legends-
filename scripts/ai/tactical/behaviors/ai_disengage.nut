@@ -204,7 +204,7 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 										{
 										}
 
-										score = score * (this.Const.AI.Behavior.DisengageBetterTargetMult - movementCosts.Tiles * 0.100000001 + value * this.Const.AI.Behavior.DisengageTargetMult);
+										score = score * (this.Const.AI.Behavior.DisengageBetterTargetMult - movementCosts.Tiles * 0.1 + value * this.Const.AI.Behavior.DisengageTargetMult);
 										potentialTarget = o.Actor;
 										goodReason = true;
 										break;

@@ -48,7 +48,7 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.BuildingPriceMult *= 1.35000002;
+		_modifiers.BuildingPriceMult *= 1.35;
 		_modifiers.BuildingRarityMult *= 0.5;
 	}
 

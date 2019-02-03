@@ -117,22 +117,22 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 				if (l)
 				{
-					landChance = landChance + (x < _rect.W * 0.5 ? x * 0.649999976 : 0);
+					landChance = landChance + (x < _rect.W * 0.5 ? x * 0.65 : 0);
 				}
 
 				if (r)
 				{
-					landChance = landChance + (x > _rect.W * 0.5 ? (x - _rect.W * 0.5) * 0.649999976 : 0);
+					landChance = landChance + (x > _rect.W * 0.5 ? (x - _rect.W * 0.5) * 0.65 : 0);
 				}
 
 				if (b)
 				{
-					landChance = landChance + (y < _rect.H * 0.5 ? y * 0.649999976 : 0);
+					landChance = landChance + (y < _rect.H * 0.5 ? y * 0.65 : 0);
 				}
 
 				if (t)
 				{
-					landChance = landChance + (y > _rect.H * 0.5 ? (y - _rect.H * 0.5) * 0.649999976 : 0);
+					landChance = landChance + (y > _rect.H * 0.5 ? (y - _rect.H * 0.5) * 0.65 : 0);
 				}
 
 				landChance = landChance * this.Const.World.Settings.LandMassMult;
@@ -468,7 +468,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		this.logInfo("Building terrain...");
 		local isAutumnLeft = this.Math.rand(0, 1) == 1;
 
-		for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.649999976; y = ++y )
+		for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.65; y = ++y )
 		{
 			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 			{
@@ -525,7 +525,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 		{
-			for( local y = _rect.Y + _rect.H * 0.200000003; y < _rect.Y + _rect.H * 0.800000012; y = ++y )
+			for( local y = _rect.Y + _rect.H * 0.2; y < _rect.Y + _rect.H * 0.8; y = ++y )
 			{
 				local tile = this.World.getTileSquare(x, y);
 
@@ -535,7 +535,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				else
 				{
 					local chance = y < _rect.H * 0.5 ? y : _rect.H - y;
-					chance = chance * 0.0250000004;
+					chance = chance * 0.025;
 
 					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
 					{
@@ -580,7 +580,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		for( local x = _rect.X + (isAutumnLeft ? _rect.W * 0.5 : 0); x < _rect.X + _rect.W * (isAutumnLeft ? 1.0 : 0.5); x = ++x )
 		{
-			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.699999988; y = ++y )
+			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.7; y = ++y )
 			{
 				local tile = this.World.getTileSquare(x, y);
 
@@ -590,7 +590,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				else
 				{
 					local chance = !isAutumnLeft ? _rect.W - x : x;
-					chance = chance * 0.0250000004;
+					chance = chance * 0.025;
 
 					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
 					{
@@ -639,7 +639,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				else
 				{
 					local chance = isAutumnLeft ? _rect.W - x : x;
-					chance = chance * 0.0250000004;
+					chance = chance * 0.025;
 
 					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
 					{
@@ -684,7 +684,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 		{
-			for( local y = _rect.Y + _rect.H * 0.400000006; y < _rect.Y + _rect.H; y = ++y )
+			for( local y = _rect.Y + _rect.H * 0.4; y < _rect.Y + _rect.H; y = ++y )
 			{
 				local tile = this.World.getTileSquare(x, y);
 
@@ -694,7 +694,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				else
 				{
 					local chance = y < _rect.H * 0.75 ? y : _rect.H - y;
-					chance = chance * 0.0700000003;
+					chance = chance * 0.07;
 
 					if (y > _rect.H * this.Const.World.Settings.Snowline)
 					{
@@ -788,7 +788,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 		{
-			for( local y = _rect.H * 0.699999988; y < _rect.Y + _rect.H; y = ++y )
+			for( local y = _rect.H * 0.7; y < _rect.Y + _rect.H; y = ++y )
 			{
 				local tile = this.World.getTileSquare(x, y);
 
@@ -798,7 +798,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				else
 				{
 					local chance = y;
-					chance = chance * 0.200000003;
+					chance = chance * 0.2;
 
 					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
 					{
@@ -837,7 +837,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 		{
-			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.649999976; y = ++y )
+			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.65; y = ++y )
 			{
 				local tile = this.World.getTileSquare(x, y);
 
@@ -1290,8 +1290,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		while (_numRivers > 0 && tries < 1000)
 		{
-			local x = this.Math.rand(_rect.X + _rect.W * 0.200000003, _rect.X + _rect.W * 0.800000012);
-			local y = this.Math.rand(_rect.Y + _rect.H * 0.200000003, _rect.Y + _rect.H * 0.800000012);
+			local x = this.Math.rand(_rect.X + _rect.W * 0.2, _rect.X + _rect.W * 0.8);
+			local y = this.Math.rand(_rect.Y + _rect.H * 0.2, _rect.Y + _rect.H * 0.8);
 			local start = this.World.getTileSquare(x, y);
 			x = x <= _rect.X + _rect.W * 0.5 ? 0 : _rect.X + _rect.W - 1;
 			y = 0;
@@ -1621,14 +1621,14 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 					if (isLeft)
 					{
-						x = this.Math.rand(6, _rect.W * 0.600000024);
+						x = this.Math.rand(6, _rect.W * 0.6);
 					}
 					else
 					{
-						x = this.Math.rand(_rect.W * 0.400000006, _rect.W - 6);
+						x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
 					}
 
-					y = this.Math.rand(6, _rect.H * 0.949999988);
+					y = this.Math.rand(6, _rect.H * 0.95);
 					local tile = this.World.getTileSquare(x, y);
 					local next = false;
 
@@ -1927,7 +1927,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		];
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = roadCost;
-		navSettings.RoadMult = 0.150000006;
+		navSettings.RoadMult = 0.15;
 		navSettings.StopAtRoad = false;
 
 		for( local i = 0; i != settlements.len(); i = ++i )

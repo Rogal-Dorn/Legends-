@@ -148,7 +148,7 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.699999988 : 0.5;
+		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
 	}
 
 	function onUse( _user, _targetTile )

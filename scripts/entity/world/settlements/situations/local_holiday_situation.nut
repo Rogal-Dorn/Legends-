@@ -28,10 +28,10 @@ this.local_holiday_situation <- this.inherit("scripts/entity/world/settlements/s
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.SellPriceMult *= 1.04999995;
-		_modifiers.BuyPriceMult *= 0.949999988;
+		_modifiers.SellPriceMult *= 1.05;
+		_modifiers.BuyPriceMult *= 0.95;
 		_modifiers.FoodRarityMult *= 1.5;
-		_modifiers.FoodPriceMult *= 0.899999976;
+		_modifiers.FoodPriceMult *= 0.9;
 	}
 
 });

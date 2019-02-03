@@ -80,9 +80,9 @@ this.dazed_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		_properties.DamageTotalMult *= 0.649999976;
-		_properties.InitiativeMult *= 0.649999976;
-		_properties.StaminaMult *= 0.649999976;
+		_properties.DamageTotalMult *= 0.65;
+		_properties.InitiativeMult *= 0.65;
+		_properties.StaminaMult *= 0.65;
 
 		if (actor.hasSprite("status_stunned") && !this.getContainer().hasSkill("effects.stunned"))
 		{

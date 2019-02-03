@@ -38,7 +38,7 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
-		this.m.DirectDamageMult = 0.449999988;
+		this.m.DirectDamageMult = 0.45;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 2;

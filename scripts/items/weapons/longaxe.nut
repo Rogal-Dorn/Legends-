@@ -26,8 +26,8 @@ this.longaxe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 70;
 		this.m.RegularDamageMax = 95;
-		this.m.ArmorDamageMult = 1.10000002;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.ArmorDamageMult = 1.1;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
 	}
 

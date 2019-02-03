@@ -32,7 +32,7 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/geist_idle_16.wav",
 			"sounds/enemies/geist_idle_17.wav"
 		];
-		this.m.SoundPitch = this.Math.rand(90, 110) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.getTags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/ghost_agent");
 		this.m.AIAgent.setActor(this);
@@ -79,8 +79,8 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 						LifeTimeMax = 1.0,
 						ColorMin = this.createColor("ffffff2f"),
 						ColorMax = this.createColor("ffffff2f"),
-						ScaleMin = 0.899999976,
-						ScaleMax = 0.899999976,
+						ScaleMin = 0.9,
+						ScaleMax = 0.9,
 						RotationMin = 0,
 						RotationMax = 0,
 						VelocityMin = 80,
@@ -91,12 +91,12 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 						ForceMax = this.createVec(0, 0)
 					},
 					{
-						LifeTimeMin = 0.100000001,
-						LifeTimeMax = 0.100000001,
+						LifeTimeMin = 0.1,
+						LifeTimeMax = 0.1,
 						ColorMin = this.createColor("ffffff00"),
 						ColorMax = this.createColor("ffffff00"),
-						ScaleMin = 0.100000001,
-						ScaleMax = 0.100000001,
+						ScaleMin = 0.1,
+						ScaleMax = 0.1,
 						RotationMin = 0,
 						RotationMax = 0,
 						VelocityMin = 80,
@@ -140,21 +140,21 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 		local body = this.addSprite("body");
 		body.setBrush("bust_ghost_01");
 		body.varySaturation(0.25);
-		body.varyColor(0.200000003, 0.200000003, 0.200000003);
+		body.varyColor(0.2, 0.2, 0.2);
 		local head = this.addSprite("head");
 		head.setBrush("bust_ghost_01");
 		head.varySaturation(0.25);
-		head.varyColor(0.200000003, 0.200000003, 0.200000003);
+		head.varyColor(0.2, 0.2, 0.2);
 		local blur_1 = this.addSprite("blur_1");
 		blur_1.setBrush("bust_ghost_01");
 		blur_1.varySaturation(0.25);
-		blur_1.varyColor(0.200000003, 0.200000003, 0.200000003);
+		blur_1.varyColor(0.2, 0.2, 0.2);
 		local blur_2 = this.addSprite("blur_2");
 		blur_2.setBrush("bust_ghost_01");
 		blur_2.varySaturation(0.25);
-		blur_2.varyColor(0.200000003, 0.200000003, 0.200000003);
+		blur_2.varyColor(0.2, 0.2, 0.2);
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.550000012;
+		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(-5, -5));
 		this.m.Skills.add(this.new("scripts/skills/actives/ghastly_touch"));
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
@@ -171,7 +171,7 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("head", this.m.DistortTargetPrevA, this.m.DistortTargetA, 3.79999995, this.m.DistortAnimationStartTimeA))
+		if (this.moveSpriteOffset("head", this.m.DistortTargetPrevA, this.m.DistortTargetA, 3.8, this.m.DistortAnimationStartTimeA))
 		{
 			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevA = this.m.DistortTargetA;
@@ -197,7 +197,7 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("body", this.m.DistortTargetPrevC, this.m.DistortTargetC, 4.30000019, this.m.DistortAnimationStartTimeC))
+		if (this.moveSpriteOffset("body", this.m.DistortTargetPrevC, this.m.DistortTargetC, 4.3, this.m.DistortAnimationStartTimeC))
 		{
 			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevC = this.m.DistortTargetC;

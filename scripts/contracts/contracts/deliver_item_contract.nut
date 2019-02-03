@@ -7,7 +7,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 	function create()
 	{
 		this.contract.create();
-		this.m.DifficultyMult = this.Math.rand(70, 105) * 0.00999999978;
+		this.m.DifficultyMult = this.Math.rand(70, 105) * 0.01;
 		this.m.Type = "contract.deliver_item";
 		this.m.Name = "Armed Courier";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
@@ -96,11 +96,11 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 		if (days >= 2 || distance >= 40)
 		{
-			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.01;
 		}
 		else
 		{
-			this.m.DifficultyMult = this.Math.rand(70, 85) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
 		}
 
 		this.m.Payment.Pool = this.Math.max(125, distance * 4.5 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
@@ -147,7 +147,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (r <= 10)
 				{
-					if (this.Contract.getDifficultyMult() >= 0.949999988 && this.World.Assets.getBusinessReputation() > 750 && (!this.World.Ambitions.hasActiveAmbition() || this.World.Ambitions.getActiveAmbition().getID() != "ambition.defeat_mercenaries"))
+					if (this.Contract.getDifficultyMult() >= 0.95 && this.World.Assets.getBusinessReputation() > 750 && (!this.World.Ambitions.hasActiveAmbition() || this.World.Ambitions.getActiveAmbition().getID() != "ambition.defeat_mercenaries"))
 					{
 						this.Flags.set("IsMercenaries", true);
 					}

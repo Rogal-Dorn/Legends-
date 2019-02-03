@@ -22,8 +22,8 @@ this.ancient_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -6;
 		this.m.RegularDamage = 38;
 		this.m.RegularDamageMax = 43;
-		this.m.ArmorDamageMult = 0.800000012;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 0.8;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function onEquip()

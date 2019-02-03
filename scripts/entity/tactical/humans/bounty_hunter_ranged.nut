@@ -19,7 +19,7 @@ this.bounty_hunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.BountyHunterRanged);
-		b.TargetAttractionMult = 1.10000002;
+		b.TargetAttractionMult = 1.1;
 		b.IsSpecializedInCrossbows = true;
 		b.IsSpecializedInBows = true;
 		this.m.ActionPoints = b.ActionPoints;

@@ -46,7 +46,7 @@ this.additional_padding_upgrade <- this.inherit("scripts/items/armor_upgrades/ar
 	{
 		if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
 		{
-			_properties.DamageReceivedDirectMult *= 0.660000026;
+			_properties.DamageReceivedDirectMult *= 0.66;
 		}
 	}
 

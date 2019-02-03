@@ -450,12 +450,12 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		{
 			if (_mouse.getState() == 3)
 			{
-				this.Tactical.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
+				this.Tactical.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
 				return true;
 			}
 			else if (_mouse.getState() == 4)
 			{
-				this.Tactical.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
+				this.Tactical.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
 				return true;
 			}
 		}
@@ -510,9 +510,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 						if (!item.isChangeableInBattle() && item.isDroppedAsLoot())
 						{
-							if (item.getCondition() > 1 && item.getConditionMax() > 1 && item.getCondition() > item.getConditionMax() * 0.660000026 && this.Math.rand(1, 100) <= 66)
+							if (item.getCondition() > 1 && item.getConditionMax() > 1 && item.getCondition() > item.getConditionMax() * 0.66 && this.Math.rand(1, 100) <= 66)
 							{
-								local c = this.Math.minf(item.getCondition(), this.Math.rand(this.Math.maxf(10, item.getConditionMax() * 0.349999994), item.getConditionMax()));
+								local c = this.Math.minf(item.getCondition(), this.Math.rand(this.Math.maxf(10, item.getConditionMax() * 0.35), item.getConditionMax()));
 								item.setCondition(c);
 							}
 
@@ -741,7 +741,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	function spawnRetreatIcon( _tile )
 	{
 		local icon = _tile.spawnDetail("icon_fleeing", 0, false, false, this.createVec(15, 0));
-		icon.Scale = 0.660000026;
+		icon.Scale = 0.66;
 		icon.Alpha = 84;
 	}
 
@@ -2764,7 +2764,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				break;
 			}
 
-			this.Time.setVirtualSpeed(0.100000001);
+			this.Time.setVirtualSpeed(0.1);
 			break;
 
 		case 36:
@@ -3383,11 +3383,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				break;
 
 			case 46:
-				this.Tactical.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
+				this.Tactical.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 
 			case 47:
-				this.Tactical.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
+				this.Tactical.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 			}
 		}

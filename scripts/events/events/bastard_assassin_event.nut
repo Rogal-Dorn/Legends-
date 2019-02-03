@@ -8,7 +8,7 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.bastard_assassin";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "Intro",
 			Text = "[img]gfx/ui/events/event_33.png[/img]Under the cover of night, a man slips into your tent beneath the folds wafting just over the ground. He\'s masked with a black cloak and noble pauldrons. You arm yourself, but he holds a hand out.%SPEECH_ON%Don\'t bother, sellsword, for I am not here for you.%SPEECH_OFF%That\'s not good enough for you. The second the man takes another step, you charge and plant him on your table and with your free arm put a dagger to his neck. He grins.%SPEECH_ON%I already told you that I am not here for you. I am here for %bastard%.%SPEECH_OFF%The bastard nobleman? You ask what the stranger wants with him.%SPEECH_ON%Well, that depends, are you willing to talk?%SPEECH_OFF%",

@@ -12,6 +12,6 @@ gt.Const.Contracts.Settings <- {
 	NegotiationRefuseChance = 10,
 	PaymentOnCompletionMult = 1.0,
 	PaymentInAdvanceMult = 0.75,
-	PaymentPerHeadMult = 0.0500000007,
+	PaymentPerHeadMult = 0.05,
 	IntroChance = 20
 };

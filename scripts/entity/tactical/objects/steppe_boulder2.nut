@@ -15,8 +15,8 @@ this.steppe_boulder2 <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("steppe_stone_02");
 		body.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		body.varyColor(0.0299999993, 0.0299999993, 0.0299999993);
-		body.Scale = 0.800000012 + this.Math.rand(0, 20) / 100.0;
+		body.varyColor(0.03, 0.03, 0.03);
+		body.Scale = 0.8 + this.Math.rand(0, 20) / 100.0;
 		this.setBlockSight(true);
 	}
 

@@ -22,7 +22,7 @@ this.knife <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 25;
 		this.m.ArmorDamageMult = 0.5;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function onEquip()

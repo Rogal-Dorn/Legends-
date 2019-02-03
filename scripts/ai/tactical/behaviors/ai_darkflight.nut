@@ -97,7 +97,7 @@ this.ai_darkflight <- this.inherit("scripts/ai/tactical/behavior", {
 
 				if (this.isRangedUnit(t))
 				{
-					mult = 0.330000013;
+					mult = 0.33;
 				}
 
 				local hitpoints = t.getHitpoints() + t.getArmor(this.Const.BodyPart.Body) + t.getArmor(this.Const.BodyPart.Head);

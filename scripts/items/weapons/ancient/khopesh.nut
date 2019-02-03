@@ -23,7 +23,7 @@ this.khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 1300;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 55;
-		this.m.ArmorDamageMult = 1.20000005;
+		this.m.ArmorDamageMult = 1.2;
 		this.m.DirectDamageMult = 0.25;
 	}
 

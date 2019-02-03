@@ -8,7 +8,7 @@ this.melon_thief_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.melon_thief";
 		this.m.Title = "At %townname%";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_43.png[/img]You eye a large group of screaming villagers. They\'re drunkenly carrying a felled tree like a throng of ants would a beetle. There\'s a blindfolded and shackled man astride the wood. As the crowd draws near, the pungency of alcohol emanates from the mob like miasma from a particularly angry swamp.\n\n %otherbro% asks the riffraff where they\'re off to. A bearded stooge swerves forward, braking on a heel and toe tip at the same time like an unpracticed puppet.%SPEECH_ON%Oy! We off to tar and feather this, this, uh...%SPEECH_OFF%Someone yells out \'fruit philanderer!\' from the crowd. The stooge snaps his fingers.%SPEECH_ON%Right! This melon mugger is getting what\'s, er, coming... to him.%SPEECH_OFF%",

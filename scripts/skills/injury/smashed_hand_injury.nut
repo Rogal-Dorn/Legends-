@@ -54,8 +54,8 @@ this.smashed_hand_injury <- this.inherit("scripts/skills/injury/injury", {
 			return;
 		}
 
-		_properties.MeleeSkillMult *= 0.600000024;
-		_properties.RangedSkillMult *= 0.600000024;
+		_properties.MeleeSkillMult *= 0.6;
+		_properties.RangedSkillMult *= 0.6;
 	}
 
 });

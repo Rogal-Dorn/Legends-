@@ -10,7 +10,7 @@ this.vampire_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
 		this.m.Properties.TargetPriorityDamageMult = 0.25;
 		this.m.Properties.TargetPriorityFleeingMult = 1.0;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.100000001;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityArmorMult = 0.5;
 		this.m.Properties.OverallDefensivenessMult = 1.0;
 		this.m.Properties.OverallFormationMult = 0.5;

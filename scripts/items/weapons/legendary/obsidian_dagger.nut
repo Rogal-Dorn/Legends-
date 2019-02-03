@@ -21,8 +21,8 @@ this.obsidian_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 5000;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 45;
-		this.m.ArmorDamageMult = 0.699999988;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 0.7;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function getTooltip()

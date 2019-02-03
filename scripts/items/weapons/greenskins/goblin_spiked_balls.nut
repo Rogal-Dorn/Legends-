@@ -33,8 +33,8 @@ this.goblin_spiked_balls <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -3;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 35;
-		this.m.ArmorDamageMult = 0.699999988;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.ArmorDamageMult = 0.7;
+		this.m.DirectDamageMult = 0.35;
 		this.m.IsDroppedAsLoot = true;
 	}
 

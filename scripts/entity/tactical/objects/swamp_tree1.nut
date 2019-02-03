@@ -26,18 +26,18 @@ this.swamp_tree1 <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("swamp_tree_" + v);
 		body.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		body.varyColor(0.0700000003, 0.0700000003, 0.0700000003);
+		body.varyColor(0.07, 0.07, 0.07);
 		body.Rotation = this.Math.rand(-10, 10);
 
 		if (this.Math.rand(0, 100) < 50)
 		{
-			body.Scale = 0.800000012 + this.Math.rand(0, 20) / 100.0;
+			body.Scale = 0.8 + this.Math.rand(0, 20) / 100.0;
 		}
 
 		local web = this.addSprite("web");
 		web.setBrush("web_03");
 		web.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		web.Scale = body.Scale * 0.800000012;
+		web.Scale = body.Scale * 0.8;
 		web.Visible = false;
 	}
 

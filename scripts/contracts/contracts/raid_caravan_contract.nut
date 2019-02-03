@@ -100,8 +100,8 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				if (r <= 10)
 				{
 					this.Flags.set("IsBribe", true);
-					this.Flags.set("Bribe1", this.Contract.beautifyNumber(this.Contract.m.Payment.Pool * (this.Math.rand(70, 150) * 0.00999999978)));
-					this.Flags.set("Bribe2", this.Contract.beautifyNumber(this.Contract.m.Payment.Pool * (this.Math.rand(70, 150) * 0.00999999978)));
+					this.Flags.set("Bribe1", this.Contract.beautifyNumber(this.Contract.m.Payment.Pool * (this.Math.rand(70, 150) * 0.01)));
+					this.Flags.set("Bribe2", this.Contract.beautifyNumber(this.Contract.m.Payment.Pool * (this.Math.rand(70, 150) * 0.01)));
 				}
 				else if (r <= 15)
 				{

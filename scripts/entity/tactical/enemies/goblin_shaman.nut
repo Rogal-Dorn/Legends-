@@ -5,7 +5,7 @@ this.goblin_shaman <- this.inherit("scripts/entity/tactical/goblin", {
 		this.m.Type = this.Const.EntityType.GoblinShaman;
 		this.m.XP = this.Const.Tactical.Actor.GoblinShaman.XP;
 		this.goblin.create();
-		this.m.SoundPitch = this.Math.rand(90, 100) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(90, 100) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/goblin_shaman_agent");
 		this.m.AIAgent.setActor(this);
 	}

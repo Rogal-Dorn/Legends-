@@ -54,7 +54,7 @@ this.injured_knee_cap_injury <- this.inherit("scripts/skills/injury/injury", {
 		}
 
 		_properties.MovementAPCostAdditional += 2;
-		_properties.InitiativeMult *= 0.600000024;
+		_properties.InitiativeMult *= 0.6;
 	}
 
 });

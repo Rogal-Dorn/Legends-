@@ -18,7 +18,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 	function create()
 	{
 		this.contract.create();
-		this.m.DifficultyMult = 0.850000024;
+		this.m.DifficultyMult = 0.85;
 		this.m.Type = "contract.raze_attached_location";
 		this.m.Name = "Raze Location";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;

@@ -8,7 +8,7 @@ gt.Const.World.AI <- {
 	VisualizeNameOfUnits = true,
 	VisualizeOrders = false,
 	VisualizeStrength = true,
-	AllottedTimePerEvaluationRun = 0.00400000019,
+	AllottedTimePerEvaluationRun = 0.004,
 	RefreshTime = 1.0,
 	Controller = {
 		OpponentPartyTTL = 14000,
@@ -77,7 +77,7 @@ gt.Const.World.AI <- {
 		AttackVisibleTargetMult = 1.5,
 		AttackChaseMaxTime = 30.0,
 		FleeMinTime = 4.0,
-		FleeMinScore = 0.600000024,
+		FleeMinScore = 0.6,
 		FleeMaxAttempts = 4,
 		FleeMaxAttemptsPerDirection = 2,
 		FleeFromVisibleTargetMult = 1.25,

@@ -50,22 +50,22 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 	{
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(70, 100) * 0.00999999978);
+			this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(70, 100) * 0.01);
 		}
 
 		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
 		{
-			this.m.MeleeDefense = this.Math.round(this.m.MeleeDefense * this.Math.rand(120, 140) * 0.00999999978);
+			this.m.MeleeDefense = this.Math.round(this.m.MeleeDefense * this.Math.rand(120, 140) * 0.01);
 		}
 		else if (r == 2)
 		{
-			this.m.RangedDefense = this.Math.round(this.m.RangedDefense * this.Math.rand(120, 140) * 0.00999999978);
+			this.m.RangedDefense = this.Math.round(this.m.RangedDefense * this.Math.rand(120, 140) * 0.01);
 		}
 		else if (r == 3)
 		{
-			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(120, 150) * 0.00999999978) * 1.0;
+			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(120, 150) * 0.01) * 1.0;
 			this.m.ConditionMax = this.m.Condition;
 		}
 	}

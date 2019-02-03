@@ -9,11 +9,11 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 		if (r <= 70)
 		{
-			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.01;
 		}
 		else
 		{
-			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.01;
 		}
 
 		this.m.Type = "contract.siege_fortification";

@@ -26,8 +26,8 @@ this.hooked_blade <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 70;
-		this.m.ArmorDamageMult = 1.10000002;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.ArmorDamageMult = 1.1;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
 	}
 

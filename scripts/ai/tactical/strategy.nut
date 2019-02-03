@@ -362,7 +362,7 @@ this.strategy <- {
 		this.m.Stats.AllyRangedFiring = allyRangedFiring;
 		this.m.Stats.EnemyRangedTotal = enemyRangedTotal;
 		this.m.Stats.AllyRangedTotal = allyRangedTotal;
-		this.m.Stats.IsEngaged = this.m.Stats.EngagedAlliesRatio > 0.100000001;
+		this.m.Stats.IsEngaged = this.m.Stats.EngagedAlliesRatio > 0.1;
 		local players = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
 		local levels = 0;
 		local armors = 0;
@@ -426,7 +426,7 @@ this.strategy <- {
 		local engagedAlliesRatio = 1.0 - this.m.Stats.EngagedAlliesRatio;
 		local outrangeRatio = this.m.Stats.AllyVSEnemyOutrange;
 		local defensiveScore = enemiesVSallies * engagedAlliesRatio * rangedAlliesVSEnemies * defensiveAlliesRatio * fleeingEnemiesRatio * outrangeRatio;
-		local defensiveThreshold = 3.0 * (1.0 / this.Math.maxf(0.100000001, this.m.Stats.DefensiveBiasAverage));
+		local defensiveThreshold = 3.0 * (1.0 / this.Math.maxf(0.1, this.m.Stats.DefensiveBiasAverage));
 
 		if (this.m.Stats.IsOutrangedByEnemy)
 		{

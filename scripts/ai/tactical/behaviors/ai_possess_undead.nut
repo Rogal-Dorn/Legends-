@@ -92,8 +92,8 @@ this.ai_possess_undead <- this.inherit("scripts/ai/tactical/behavior", {
 			score = score + zoc * this.Const.AI.Behavior.PossessUndeadZOCMult;
 			local mag = this.queryOpponentMagnitude(tile, this.Const.AI.Behavior.PossessUndeadMagnitudeMaxRange);
 			score = score + mag.Opponents * (1.0 - mag.AverageDistanceScore) * this.Math.maxf(0.5, 1.0 - mag.AverageEngaged) * this.Const.AI.Behavior.PossessUndeadOpponentValue;
-			score = score * (0.25 + 0.75 * this.Math.maxf(0.330000013, a.getHitpointsPct()));
-			score = score * (0.5 + 0.5 * a.getXPValue() * 0.00999999978);
+			score = score * (0.25 + 0.75 * this.Math.maxf(0.33, a.getHitpointsPct()));
+			score = score * (0.5 + 0.5 * a.getXPValue() * 0.01);
 
 			if (!a.isArmedWithMeleeWeapon())
 			{

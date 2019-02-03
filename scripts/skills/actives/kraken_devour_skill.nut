@@ -117,7 +117,7 @@ this.kraken_devour_skill <- this.inherit("scripts/skills/skill", {
 		local _user = _tag.User;
 		local myTile = this.getContainer().getActor().getTile();
 		local isScreenShaking = false;
-		this.Tactical.getCamera().quake(_user, _targetTile.getEntity(), 5.0, 0.159999996, 0.300000012);
+		this.Tactical.getCamera().quake(_user, _targetTile.getEntity(), 5.0, 0.16, 0.3);
 
 		for( local i = 0; i < this.Const.Tactical.KrakenDevourParticles.len(); i = ++i )
 		{

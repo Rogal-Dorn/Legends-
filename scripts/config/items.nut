@@ -13,10 +13,10 @@ gt.Const.Items.Default <- {
 	GenericItemName = "Generic Item",
 	GenericItemIcon = "skills/passive_03.png",
 	RaiseShieldOffset = this.createVec(0, 10),
-	RaiseShieldDuration = 0.150000006,
-	LowerShieldDuration = 0.400000006,
+	RaiseShieldDuration = 0.15,
+	LowerShieldDuration = 0.4,
 	RaiseWeaponDuration = 0.25,
-	LowerWeaponDuration = 0.200000003
+	LowerWeaponDuration = 0.2
 };
 gt.Const.Items.ItemType <- {
 	None = 0,

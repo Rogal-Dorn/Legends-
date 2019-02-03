@@ -9,13 +9,13 @@ this.spider_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
 		this.m.Properties.TargetPriorityDamageMult = 0.25;
 		this.m.Properties.TargetPriorityFleeingMult = 0.75;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.100000001;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 0.0;
 		this.m.Properties.OverallFormationMult = 0.5;
 		this.m.Properties.EngageAgainstSpearwallMult = 1.0;
-		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.33000004;
-		this.m.Properties.EngageFlankingMult = 1.60000002;
+		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.33;
+		this.m.Properties.EngageFlankingMult = 1.6;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.5;
 		this.m.Properties.EngageLockDownTargetMult = 2.0;
 		this.m.Properties.PreferCarefulEngage = false;

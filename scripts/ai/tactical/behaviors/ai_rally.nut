@@ -77,7 +77,7 @@ this.ai_rally <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		score = score * (useScore * 0.100000001);
+		score = score * (useScore * 0.1);
 		return this.Const.AI.Behavior.Score.Rally * score;
 	}
 

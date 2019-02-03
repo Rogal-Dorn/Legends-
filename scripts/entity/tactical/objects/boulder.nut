@@ -15,8 +15,8 @@ this.boulder <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("boulder_01");
 		body.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		body.varyColor(0.0299999993, 0.0299999993, 0.0299999993);
-		body.Scale = 0.649999976 + this.Math.rand(0, 35) / 100.0;
+		body.varyColor(0.03, 0.03, 0.03);
+		body.Scale = 0.65 + this.Math.rand(0, 35) / 100.0;
 		this.setSpriteOcclusion("body", 1, -2, -2);
 		this.setBlockSight(true);
 	}

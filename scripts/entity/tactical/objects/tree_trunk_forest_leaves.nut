@@ -26,9 +26,9 @@ this.tree_trunk_forest_leaves <- this.inherit("scripts/entity/tactical/entity", 
 			body.Color = this.createColor("#f0ffdc");
 		}
 
-		body.varyColor(0.0500000007, 0.0500000007, 0.0500000007);
-		body.Saturation = 0.949999988;
-		body.Scale = 0.699999988 + this.Math.rand(0, 30) / 100.0;
+		body.varyColor(0.05, 0.05, 0.05);
+		body.Saturation = 0.95;
+		body.Scale = 0.7 + this.Math.rand(0, 30) / 100.0;
 	}
 
 });

@@ -13,7 +13,7 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsShowingDefenders = false;
 		this.m.IsShowingBanner = true;
 		this.m.IsDespawningDefenders = false;
-		this.m.VisibilityMult = 0.800000012;
+		this.m.VisibilityMult = 0.8;
 		this.m.Resources = 500;
 	}
 

@@ -17,10 +17,10 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.SellPriceMult *= 0.899999976;
-		_modifiers.BuyPriceMult *= 1.10000002;
-		_modifiers.RarityMult *= 0.600000024;
-		_modifiers.FoodRarityMult *= 0.899999976;
+		_modifiers.SellPriceMult *= 0.9;
+		_modifiers.BuyPriceMult *= 1.1;
+		_modifiers.RarityMult *= 0.6;
+		_modifiers.FoodRarityMult *= 0.9;
 	}
 
 });

@@ -28,9 +28,9 @@ this.unhold_attacks_situation <- this.inherit("scripts/entity/world/settlements/
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.BuyPriceMult *= 1.10000002;
-		_modifiers.SellPriceMult *= 0.899999976;
-		_modifiers.RarityMult *= 0.899999976;
+		_modifiers.BuyPriceMult *= 1.1;
+		_modifiers.SellPriceMult *= 0.9;
+		_modifiers.RarityMult *= 0.9;
 		_modifiers.RecruitsMult *= 0.75;
 		_modifiers.RarityMult *= 0.75;
 	}

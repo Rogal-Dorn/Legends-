@@ -15,7 +15,7 @@ this.snow_boulder1 <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("snow_boulder_0" + this.Math.rand(1, 3));
 		body.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		body.Scale = 0.800000012 + this.Math.rand(0, 20) / 100.0;
+		body.Scale = 0.8 + this.Math.rand(0, 20) / 100.0;
 		this.setBlockSight(true);
 	}
 

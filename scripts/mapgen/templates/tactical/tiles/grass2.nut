@@ -76,7 +76,7 @@ this.grass2 <- this.inherit("scripts/mapgen/tactical_template", {
 	function fillWithTrees( _rect, _properties, _pass = 1 )
 	{
 		local chance = this.m.ChanceToSpawnObject;
-		this.m.ChanceToSpawnObject = this.Math.round(chance * 1.79999995);
+		this.m.ChanceToSpawnObject = this.Math.round(chance * 1.8);
 		this.fill(_rect, _properties, _pass);
 		this.m.ChanceToSpawnObject = chance;
 	}

@@ -14,7 +14,7 @@ this.taunt_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.TargetAttractionMult *= 1.0 + this.Math.minf(1.5, this.getContainer().getActor().getCurrentProperties().Bravery * 0.0149999997);
+		_properties.TargetAttractionMult *= 1.0 + this.Math.minf(1.5, this.getContainer().getActor().getCurrentProperties().Bravery * 0.015);
 	}
 
 	function onTurnStart()

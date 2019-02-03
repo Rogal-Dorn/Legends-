@@ -71,7 +71,7 @@ this.escort_envoy_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Flags.set("EnvoyName", this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
 		this.m.Flags.set("EnvoyTitle", titles[this.Math.rand(0, titles.len() - 1)]);
 		this.m.Flags.set("DestinationName", this.m.Destination.getName());
-		this.m.Flags.set("Bribe", this.beautifyNumber(this.m.Payment.Pool * this.Math.rand(75, 150) * 0.00999999978));
+		this.m.Flags.set("Bribe", this.beautifyNumber(this.m.Payment.Pool * this.Math.rand(75, 150) * 0.01));
 		this.m.Flags.set("EnemyName", this.m.Destination.getOwner().getName());
 		this.contract.start();
 	}

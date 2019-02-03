@@ -79,7 +79,7 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.m.Destination.clearTroops();
 
-				if (this.Contract.getDifficultyMult() <= 1.14999998 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
 				{
 					this.Contract.m.Destination.getLoot().clear();
 				}
@@ -90,7 +90,7 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.Destination.setDiscovered(true);
 				this.World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 
-				if (this.World.Assets.getBusinessReputation() >= 500 && this.Contract.getDifficultyMult() >= 0.949999988 && this.Math.rand(1, 100) <= 20)
+				if (this.World.Assets.getBusinessReputation() >= 500 && this.Contract.getDifficultyMult() >= 0.95 && this.Math.rand(1, 100) <= 20)
 				{
 					this.Flags.set("IsRobberBaronPresent", true);
 

@@ -26,7 +26,7 @@ this.woodcutters_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.25;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 0;
 	}
 

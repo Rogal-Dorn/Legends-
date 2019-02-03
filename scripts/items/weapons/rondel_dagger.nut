@@ -21,8 +21,8 @@ this.rondel_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 400;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 0.699999988;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 0.7;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function onEquip()

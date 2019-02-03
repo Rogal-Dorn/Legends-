@@ -117,7 +117,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			}
 
 			local distance = this.getDistanceOnRoads(this.m.Origin.getTile(), s.getTile());
-			local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.600000024, true);
+			local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.6, true);
 
 			if (days > 7 || distance < 15)
 			{
@@ -145,19 +145,19 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Destination = this.WeakTableRef(candidates[this.Math.rand(0, candidates.len() - 1)]);
 		local distance = this.getDistanceOnRoads(this.m.Origin.getTile(), this.m.Destination.getTile());
-		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.600000024, true);
+		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.6, true);
 
 		if (days >= 5)
 		{
-			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.01;
 		}
 		else if (days >= 2)
 		{
-			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.01;
 		}
 		else
 		{
-			this.m.DifficultyMult = this.Math.rand(70, 85) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
 		}
 
 		this.m.Payment.Pool = this.Math.max(150, distance * 6.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
@@ -239,7 +239,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else if (r <= 10)
 				{
-					if (this.World.Assets.getBusinessReputation() > 1000 && this.Contract.getDifficultyMult() >= 0.949999988)
+					if (this.World.Assets.getBusinessReputation() > 1000 && this.Contract.getDifficultyMult() >= 0.95)
 					{
 						this.Flags.set("IsVampires", true);
 						this.Flags.set("IsEnoughCombat", true);
@@ -256,7 +256,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.Flags.set("IsPrisoner", true);
 					}
 				}
-				else if (this.Contract.getDifficultyMult() < 0.949999988 || this.World.Assets.getBusinessReputation() <= 500 || this.Contract.getDifficultyMult() <= 1.10000002 && this.Math.rand(1, 100) <= 20)
+				else if (this.Contract.getDifficultyMult() < 0.95 || this.World.Assets.getBusinessReputation() <= 500 || this.Contract.getDifficultyMult() <= 1.1 && this.Math.rand(1, 100) <= 20)
 				{
 					this.Flags.set("IsEnoughCombat", true);
 				}
@@ -1032,12 +1032,12 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 	function spawnCaravan()
 	{
 		local faction = this.World.FactionManager.getFaction(this.getFaction());
-		local party = faction.spawnEntity(this.m.Home.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanEscort, this.m.Home.getResources() * 0.400000006);
+		local party = faction.spawnEntity(this.m.Home.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanEscort, this.m.Home.getResources() * 0.4);
 		party.getSprite("banner").Visible = false;
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
 		party.setDescription("A trading caravan from " + this.m.Home.getName() + " that is transporting all manner of goods between settlements.");
-		party.setMovementSpeed(this.Const.World.MovementSettings.Speed * 0.600000024);
+		party.setMovementSpeed(this.Const.World.MovementSettings.Speed * 0.6);
 		party.setLeaveFootprints(false);
 
 		if (this.m.Home.getProduce().len() != 0)
@@ -1179,7 +1179,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 	function onPrepareVariables( _vars )
 	{
-		local days = this.getDaysRequiredToTravel(this.m.Flags.get("Distance"), this.Const.World.MovementSettings.Speed * 0.600000024, true);
+		local days = this.getDaysRequiredToTravel(this.m.Flags.get("Distance"), this.Const.World.MovementSettings.Speed * 0.6, true);
 		_vars.push([
 			"objective",
 			this.m.Destination == null || this.m.Destination.isNull() ? "" : this.m.Destination.getName()

@@ -97,12 +97,12 @@ this.ai_world_flee <- this.inherit("scripts/ai/world/world_behavior", {
 				canSeeEnemy = true;
 			}
 
-			if (o.Entity.getStrength() / _entity.getStrength() <= 1.33000004)
+			if (o.Entity.getStrength() / _entity.getStrength() <= 1.33)
 			{
 				continue;
 			}
 
-			score = score * (o.Entity.getStrength() / (_entity.getStrength() * 1.33000004));
+			score = score * (o.Entity.getStrength() / (_entity.getStrength() * 1.33));
 
 			if (!o.Entity.isLocation() && _entity.getBaseMovementSpeed() < o.Entity.getBaseMovementSpeed())
 			{

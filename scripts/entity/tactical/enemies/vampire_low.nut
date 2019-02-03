@@ -8,7 +8,7 @@ this.vampire_low <- this.inherit("scripts/entity/tactical/enemies/vampire", {
 	function onInit()
 	{
 		this.vampire.onInit();
-		this.setHitpoints(this.getHitpointsMax() * this.Math.rand(25, 65) * 0.00999999978);
+		this.setHitpoints(this.getHitpointsMax() * this.Math.rand(25, 65) * 0.01);
 		this.getSkills().update();
 	}
 

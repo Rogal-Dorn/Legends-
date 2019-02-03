@@ -243,7 +243,7 @@ this.shield <- this.inherit("scripts/items/item", {
 			if (_playHitSound && this.m.SoundOnHit.len() != 0)
 			{
 				this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, this.getContainer().getActor().getPos());
-				this.Sound.play(this.m.SoundOnDestroyed[this.Math.rand(0, this.m.SoundOnDestroyed.len() - 1)], this.Const.Sound.Volume.Skill * 0.330000013, this.getContainer().getActor().getPos());
+				this.Sound.play(this.m.SoundOnDestroyed[this.Math.rand(0, this.m.SoundOnDestroyed.len() - 1)], this.Const.Sound.Volume.Skill * 0.33, this.getContainer().getActor().getPos());
 			}
 
 			if (this.m.ShowOnCharacter)

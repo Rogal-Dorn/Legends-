@@ -39,7 +39,7 @@ this.ai_attack_swallow_whole <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (_entity.getHitpointsPct() < 0.150000006 && _entity.getTile().getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) > 1)
+		if (_entity.getHitpointsPct() < 0.15 && _entity.getTile().getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) > 1)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -123,7 +123,7 @@ this.ai_attack_swallow_whole <- this.inherit("scripts/ai/tactical/behavior", {
 			score = score + p.getMeleeDefense();
 			score = score + p.getMeleeSkill() * 0.25;
 			score = score + target.getHitpoints() * 0.25;
-			score = score + (target.getArmor(this.Const.BodyPart.Body) * (p.HitChance[this.Const.BodyPart.Body] / 100.0) + target.getArmor(this.Const.BodyPart.Head) * (p.HitChance[this.Const.BodyPart.Head] / 100.0)) * 0.100000001;
+			score = score + (target.getArmor(this.Const.BodyPart.Body) * (p.HitChance[this.Const.BodyPart.Body] / 100.0) + target.getArmor(this.Const.BodyPart.Head) * (p.HitChance[this.Const.BodyPart.Head] / 100.0)) * 0.1;
 			score = score * p.TargetAttractionMult;
 
 			if (score > bestScore)
@@ -135,7 +135,7 @@ this.ai_attack_swallow_whole <- this.inherit("scripts/ai/tactical/behavior", {
 
 		return {
 			Target = bestTarget,
-			Score = bestScore * 0.00999999978
+			Score = bestScore * 0.01
 		};
 	}
 

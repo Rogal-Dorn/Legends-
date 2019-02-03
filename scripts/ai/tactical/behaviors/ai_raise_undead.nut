@@ -487,7 +487,7 @@ this.ai_raise_undead <- this.inherit("scripts/ai/tactical/behavior", {
 			return;
 		}
 
-		if (protectors < this.Math.max(1, allies.len() * 0.100000001) || priorityTargets == 1 && allies.len() <= 2)
+		if (protectors < this.Math.max(1, allies.len() * 0.1) || priorityTargets == 1 && allies.len() <= 2)
 		{
 			agent.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_protect"));
 		}

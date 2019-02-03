@@ -241,7 +241,7 @@ this.behavior <- {
 
 		score = score + hitpoints * this.getProperties().TargetPriorityHitpointsMult;
 		score = score + (1.0 - _target.getCurrentProperties().Bravery / 100.0) * this.getProperties().TargetPriorityBraveryMult;
-		score = score + this.Math.rand(1, 100) * 0.00999999978 * this.getProperties().TargetPriorityRandomMult;
+		score = score + this.Math.rand(1, 100) * 0.01 * this.getProperties().TargetPriorityRandomMult;
 
 		if (!_entity.getCurrentProperties().IsIgnoringArmorOnAttack && (!_skill || _skill.getDirectDamage() < 1.0))
 		{
@@ -259,7 +259,7 @@ this.behavior <- {
 
 		if (_target.getMoraleState() < this.Const.MoraleState.Confident)
 		{
-			score = score + 0.100000001 * (this.Const.MoraleState.Confident - _target.getMoraleState()) * this.getProperties().TargetPriorityMoraleMult;
+			score = score + 0.1 * (this.Const.MoraleState.Confident - _target.getMoraleState()) * this.getProperties().TargetPriorityMoraleMult;
 		}
 
 		if (_skill == null)
@@ -269,7 +269,7 @@ this.behavior <- {
 
 			if (shield != null && weapon != null && weapon.isAgainstShields())
 			{
-				score = score + 0.100000001;
+				score = score + 0.1;
 			}
 		}
 
@@ -280,12 +280,12 @@ this.behavior <- {
 
 		if (this.Math.max(expectedDamage.HitpointDamage, expectedDamage.DirectDamage) * this.getProperties().TargetPriorityFinishTreshhold >= _target.getHitpoints())
 		{
-			score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.660000026));
+			score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
 		}
 
 		if (expectedDamage.ArmorDamage * this.getProperties().TargetPriorityFinishTreshhold >= armorValue)
 		{
-			score = score * (_skill != null ? this.getProperties().TargetPriorityFinishArmorMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishArmorMult * 0.660000026));
+			score = score * (_skill != null ? this.getProperties().TargetPriorityFinishArmorMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishArmorMult * 0.66));
 		}
 
 		if (_target.getMoraleState() == this.Const.MoraleState.Fleeing)
@@ -306,7 +306,7 @@ this.behavior <- {
 		}
 		else if (_target.isPlayerControlled())
 		{
-			if (_target.getLevel() <= 2 && this.getStrategy().getAveragePlayerLevel() >= 6 && _target.getArmorMax(this.Const.BodyPart.Body) + _target.getArmorMax(this.Const.BodyPart.Head) <= this.getStrategy().getAveragePlayerArmor() * 0.330000013)
+			if (_target.getLevel() <= 2 && this.getStrategy().getAveragePlayerLevel() >= 6 && _target.getArmorMax(this.Const.BodyPart.Body) + _target.getArmorMax(this.Const.BodyPart.Head) <= this.getStrategy().getAveragePlayerArmor() * 0.33)
 			{
 				score = score * this.Const.AI.Behavior.LikelyPlayerBaitMult;
 			}
@@ -321,7 +321,7 @@ this.behavior <- {
 			score = score * this.Const.AI.Behavior.AttackWhenAlmostDeadMult;
 		}
 
-		return this.Math.maxf(0.00999999978, score);
+		return this.Math.maxf(0.01, score);
 	}
 
 	function queryBestMeleeTarget( _entity, _skill, _targets )
@@ -878,7 +878,7 @@ this.behavior <- {
 		local fatigue = this.Math.max(0, _skill.getFatigueCost() - entity.getCurrentProperties().FatigueRecoveryRate * entity.getCurrentProperties().FatigueRecoveryRateMult * apPct);
 		local currentFatigue = entity.getFatigue();
 		local maxFatigue = entity.getFatigueMax();
-		return 0.400000006 + (1.0 - fatigue / (maxFatigue - currentFatigue)) * 0.600000024;
+		return 0.4 + (1.0 - fatigue / (maxFatigue - currentFatigue)) * 0.6;
 	}
 
 	function isRangedUnit( _entity )

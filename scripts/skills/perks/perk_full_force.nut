@@ -18,7 +18,7 @@ this.perk_full_force <- this.inherit("scripts/skills/skill", {
 		if (this.getContainer().getActor().isArmedWithMeleeWeapon())
 		{
 			local bodyArmor = this.getContainer().getActor().getArmor(this.Const.BodyPart.Body);
-			_properties.DamageRegularMax += this.Math.floor(bodyArmor * 0.100000001);
+			_properties.DamageRegularMax += this.Math.floor(bodyArmor * 0.1);
 		}
 	}
 

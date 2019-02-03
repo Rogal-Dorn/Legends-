@@ -31,7 +31,7 @@ this.split <- this.inherit("scripts/skills/skill", {
 		this.m.IsAOE = true;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;

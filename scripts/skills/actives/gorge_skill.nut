@@ -44,7 +44,7 @@ this.gorge_skill <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin += 80;
 			_properties.DamageRegularMax += 140;
 			_properties.DamageArmorMult *= 1.5;
-			_properties.DamageDirectMult += 0.400000006;
+			_properties.DamageDirectMult += 0.4;
 		}
 	}
 

@@ -28,8 +28,8 @@ this.public_executions_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.FoodRarityMult *= 1.35000002;
-		_modifiers.FoodPriceMult *= 1.14999998;
+		_modifiers.FoodRarityMult *= 1.35;
+		_modifiers.FoodPriceMult *= 1.15;
 	}
 
 });

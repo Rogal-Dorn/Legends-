@@ -24,8 +24,8 @@ this.orc_axe_2h <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -34;
 		this.m.RegularDamage = 90;
 		this.m.RegularDamageMax = 120;
-		this.m.ArmorDamageMult = 1.60000002;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.ArmorDamageMult = 1.6;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 0;
 	}
 

@@ -5,7 +5,7 @@ this.goblin_leader <- this.inherit("scripts/entity/tactical/goblin", {
 		this.m.Type = this.Const.EntityType.GoblinLeader;
 		this.m.XP = this.Const.Tactical.Actor.GoblinLeader.XP;
 		this.goblin.create();
-		this.m.SoundPitch = this.Math.rand(85, 95) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(85, 95) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/goblin_leader_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -16,7 +16,7 @@ this.goblin_leader <- this.inherit("scripts/entity/tactical/goblin", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.GoblinLeader);
 		b.TargetAttractionMult = 1.5;
-		b.DamageDirectMult = 1.10000002;
+		b.DamageDirectMult = 1.1;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

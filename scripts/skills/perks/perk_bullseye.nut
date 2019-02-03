@@ -15,7 +15,7 @@ this.perk_bullseye <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.RangedAttackBlockedChanceMult *= 0.660000026;
+		_properties.RangedAttackBlockedChanceMult *= 0.66;
 	}
 
 });

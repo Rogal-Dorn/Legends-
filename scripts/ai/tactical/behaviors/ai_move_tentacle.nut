@@ -149,7 +149,7 @@ this.ai_move_tentacle <- this.inherit("scripts/ai/tactical/behavior", {
 
 					if (pr.getTile().getDistanceTo(tile) <= pr.getIdealRange())
 					{
-						targetValues = targetValues - 0.100000001;
+						targetValues = targetValues - 0.1;
 					}
 				}
 

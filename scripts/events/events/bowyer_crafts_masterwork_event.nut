@@ -8,7 +8,7 @@ this.bowyer_crafts_masterwork_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.bowyer_crafts_masterwork";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_05.png[/img]%bowyer% the bowyer comes to you with a bit of request: he wishes to build a weapon for the ages. Apparently, the man has been attempting to build a bow of legendary qualities for many years, but now that he has been on the road he\'s picked up a few things to fill in his gaps of knowledge. Truly, he believes he can get it right this time. All he needs is a few resources to help procure the elements needed to construct it. A sum of 500 crowns is what he humbly requests, and the quality wood you carry.",

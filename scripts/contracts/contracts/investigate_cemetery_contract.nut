@@ -88,7 +88,7 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 				this.World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 				this.Contract.m.Destination.clearTroops();
 
-				if (this.Contract.getDifficultyMult() < 1.14999998 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() < 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
 				{
 					this.Contract.m.Destination.getLoot().clear();
 				}
@@ -474,7 +474,7 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 						this.Contract.m.Destination.setLootScaleBasedOnResources(115 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 						this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.Necromancer, 115 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 
-						if (this.Contract.getDifficultyMult() <= 1.14999998 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+						if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
 						{
 							this.Contract.m.Destination.getLoot().clear();
 						}

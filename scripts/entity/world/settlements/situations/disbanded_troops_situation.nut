@@ -29,7 +29,7 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.PriceMult *= 0.899999976;
+		_modifiers.PriceMult *= 0.9;
 		_modifiers.RecruitsMult *= 1.25;
 	}
 

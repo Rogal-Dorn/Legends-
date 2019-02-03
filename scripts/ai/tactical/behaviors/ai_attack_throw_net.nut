@@ -206,7 +206,7 @@ this.ai_attack_throw_net <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		_bestTarget.Target = bestTarget;
-		_bestTarget.Score = bestScore * 0.100000001;
+		_bestTarget.Score = bestScore * 0.1;
 		return true;
 	}
 

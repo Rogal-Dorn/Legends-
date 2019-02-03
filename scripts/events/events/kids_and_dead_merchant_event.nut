@@ -6,7 +6,7 @@ this.kids_and_dead_merchant_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.kids_and_dead_merchant";
 		this.m.Title = "Along the road...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_97.png[/img]You find a kid wearing a rather opulent chain around his neck. It\'s so heavy his head is bent forward, but that minor struggle doesn\'t wipe the mile wide grin off his face. %randombrother% pushes the kid down and takes the necklace.%SPEECH_ON%Where did you get this?%SPEECH_OFF%The kid cries out, trying to grab his treasure back, but he\'s about three feet and a good jump too short.%SPEECH_ON%Hey, that\'s mine! Give it back!%SPEECH_OFF%Another kid comes over flashing a ring so large it\'s pinching two fingers at once. Alright. That\'s enough. The company fans out and eventually find a dead merchant in some tall grass beside a treeline. His face is purpled and jagged with broken bones. It appears he has been stoned to death.\n\n A group of about forty or fifty youngsters appear from the treeline, each juggling a stone in hand. Their leader, a little runt with red hair and sleeves of tattoos, asks what you want. You tell him that you\'ll be taking the merchant\'s goods. The leader laughs.%SPEECH_ON%Oy is that so? I\'ll give ya ten seconds to rethink that choice, oy that I will, mister!%SPEECH_OFF%",

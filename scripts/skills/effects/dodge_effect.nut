@@ -17,7 +17,7 @@ this.dodge_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local initiative = this.Math.max(0, this.Math.floor(this.getContainer().getActor().getInitiative() * 0.150000006));
+		local initiative = this.Math.max(0, this.Math.floor(this.getContainer().getActor().getInitiative() * 0.15));
 		return [
 			{
 				id = 1,
@@ -48,7 +48,7 @@ this.dodge_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.m.IsEnabled)
 		{
-			local initiative = this.Math.floor(this.getContainer().getActor().getInitiative() * 0.150000006);
+			local initiative = this.Math.floor(this.getContainer().getActor().getInitiative() * 0.15);
 			_properties.MeleeDefense += this.Math.max(0, initiative);
 			_properties.RangedDefense += this.Math.max(0, initiative);
 		}

@@ -25,9 +25,9 @@ this.reinforced_wooden_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -7;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 45;
-		this.m.ArmorDamageMult = 0.800000012;
+		this.m.ArmorDamageMult = 0.8;
 		this.m.ChanceToHitHead = 10;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 	}
 
 	function onEquip()

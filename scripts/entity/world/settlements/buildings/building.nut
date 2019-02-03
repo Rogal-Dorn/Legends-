@@ -141,7 +141,7 @@ this.building <- {
 					{
 						if (this.Math.rand(1, 100) <= 50)
 						{
-							item.setCondition(this.Math.rand(item.getConditionMax() * 0.400000006, item.getConditionMax()) * 1.0);
+							item.setCondition(this.Math.rand(item.getConditionMax() * 0.4, item.getConditionMax()) * 1.0);
 						}
 					}
 

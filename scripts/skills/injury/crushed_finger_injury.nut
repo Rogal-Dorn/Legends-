@@ -53,8 +53,8 @@ this.crushed_finger_injury <- this.inherit("scripts/skills/injury/injury", {
 			return;
 		}
 
-		_properties.MeleeSkillMult *= 0.949999988;
-		_properties.RangedSkillMult *= 0.949999988;
+		_properties.MeleeSkillMult *= 0.95;
+		_properties.RangedSkillMult *= 0.95;
 	}
 
 });

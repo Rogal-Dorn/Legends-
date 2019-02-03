@@ -27,8 +27,8 @@ this.ambushed_trade_routes_situation <- this.inherit("scripts/entity/world/settl
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.BuyPriceMult *= 1.20000005;
-		_modifiers.SellPriceMult *= 1.10000002;
+		_modifiers.BuyPriceMult *= 1.2;
+		_modifiers.SellPriceMult *= 1.1;
 		_modifiers.RarityMult *= 0.75;
 	}
 

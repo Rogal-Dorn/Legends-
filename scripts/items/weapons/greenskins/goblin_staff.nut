@@ -25,8 +25,8 @@ this.goblin_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -4;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 35;
-		this.m.ArmorDamageMult = 0.699999988;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.ArmorDamageMult = 0.7;
+		this.m.DirectDamageMult = 0.4;
 	}
 
 	function onEquip()

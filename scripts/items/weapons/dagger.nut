@@ -21,8 +21,8 @@ this.dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 180;
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 35;
-		this.m.ArmorDamageMult = 0.600000024;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 0.6;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function onEquip()

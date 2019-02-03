@@ -21,7 +21,7 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.BanditMarksman);
-		b.TargetAttractionMult = 1.10000002;
+		b.TargetAttractionMult = 1.1;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -41,11 +41,11 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 			dirt.Alpha = this.Math.rand(150, 255);
 		}
 
-		this.getSprite("armor").Saturation = 0.850000024;
-		this.getSprite("helmet").Saturation = 0.850000024;
-		this.getSprite("helmet_damage").Saturation = 0.850000024;
-		this.getSprite("shield_icon").Saturation = 0.850000024;
-		this.getSprite("shield_icon").setBrightness(0.850000024);
+		this.getSprite("armor").Saturation = 0.85;
+		this.getSprite("helmet").Saturation = 0.85;
+		this.getSprite("helmet_damage").Saturation = 0.85;
+		this.getSprite("shield_icon").Saturation = 0.85;
+		this.getSprite("shield_icon").setBrightness(0.85);
 
 		if (!this.m.IsLow)
 		{

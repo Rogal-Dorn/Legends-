@@ -71,7 +71,7 @@ this.ai_attack_splitshield <- this.inherit("scripts/ai/tactical/behavior", {
 			local possibleShieldDamage = shieldDamage;
 			local targetValue = this.queryTargetValue(_entity, t, null);
 			possibleScore = possibleScore * targetValue;
-			local meleeDefense = t.getCurrentProperties().getMeleeDefense() * this.Const.AI.Behavior.SplitShieldDefenseMult * 0.00999999978;
+			local meleeDefense = t.getCurrentProperties().getMeleeDefense() * this.Const.AI.Behavior.SplitShieldDefenseMult * 0.01;
 			possibleScore = possibleScore + meleeDefense;
 			possibleScore = possibleScore * (t.getHitpoints() / t.getHitpointsMax());
 

@@ -46,7 +46,7 @@ this.quick_shot <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;

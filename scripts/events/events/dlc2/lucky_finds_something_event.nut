@@ -159,7 +159,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 
 		if (item.getConditionMax() > 1)
 		{
-			item.setCondition(this.Math.max(1, item.getConditionMax() * this.Math.rand(10, 40) * 0.00999999978));
+			item.setCondition(this.Math.max(1, item.getConditionMax() * this.Math.rand(10, 40) * 0.01));
 		}
 
 		this.m.FoundItem = item;

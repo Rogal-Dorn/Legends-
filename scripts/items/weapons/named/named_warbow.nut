@@ -25,8 +25,8 @@ this.named_warbow <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ConditionMax = 100.0;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 70;
-		this.m.ArmorDamageMult = 0.600000024;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.ArmorDamageMult = 0.6;
+		this.m.DirectDamageMult = 0.35;
 		this.randomizeValues();
 	}
 

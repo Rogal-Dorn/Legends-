@@ -64,9 +64,9 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/giant_spider_idle_16.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = this.m.Sound[this.Const.Sound.ActorEvent.Idle];
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.699999988;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.7;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
-		this.m.SoundPitch = this.Math.rand(95, 105) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/spider_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -90,7 +90,7 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.DistortTargetA = this.m.IsFlipping ? this.createVec(0, 1.0 * this.m.Size) : this.createVec(0, -1.0 * this.m.Size);
 			this.m.DistortTargetB = !this.m.IsFlipping ? this.createVec(-0.5 * this.m.Size, 0) : this.createVec(0.5 * this.m.Size, 0);
 			this.m.DistortTargetC = !this.m.IsFlipping ? this.createVec(0.5 * this.m.Size, 0) : this.createVec(-0.5 * this.m.Size, 0);
-			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF() - this.Math.rand(10, 100) * 0.00999999978;
+			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF() - this.Math.rand(10, 100) * 0.01;
 		}
 
 		this.moveSpriteOffset("legs_back", this.m.DistortTargetPrevB, this.m.DistortTargetB, 1.0, this.m.DistortAnimationStartTimeA);
@@ -125,7 +125,7 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail("bust_spider_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = body.Color;
 			decal.Saturation = body.Saturation;
-			decal.Scale = 0.899999976 * this.m.Size;
+			decal.Scale = 0.9 * this.m.Size;
 			body_decal = decal;
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
@@ -133,7 +133,7 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 				decal = _tile.spawnDetail("bust_spider_head_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 				decal.Color = head.Color;
 				decal.Saturation = head.Saturation;
-				decal.Scale = 0.899999976 * this.m.Size;
+				decal.Scale = 0.9 * this.m.Size;
 				head_decal = decal;
 
 				if (_fatalityType == this.Const.FatalityType.None)
@@ -146,18 +146,18 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 						Iterations = 0,
 						function onCorpseEffect( _data )
 						{
-							if (this.Time.getRealTimeF() - _data.Start > 0.200000003)
+							if (this.Time.getRealTimeF() - _data.Start > 0.2)
 							{
 								if (++_data.Iterations > 5)
 								{
 									return;
 								}
 
-								_data.Vector = this.createVec(this.Math.rand(-100, 100) * 0.00999999978, this.Math.rand(-100, 100) * 0.00999999978);
+								_data.Vector = this.createVec(this.Math.rand(-100, 100) * 0.01, this.Math.rand(-100, 100) * 0.01);
 								_data.Start = this.Time.getRealTimeF();
 							}
 
-							local f = (this.Time.getRealTimeF() - _data.Start) / 0.200000003;
+							local f = (this.Time.getRealTimeF() - _data.Start) / 0.2;
 							_data.Body.setOffset(this.createVec(0.0 + 0.5 * _data.Vector.X * f, 30.0 + 1.0 * _data.Vector.Y * f));
 							_data.Head.setOffset(this.createVec(0.0 + 0.5 * _data.Vector.X * f, 30.0 + 1.0 * _data.Vector.Y * f));
 							this.Time.scheduleEvent(this.TimeUnit.Real, 10, _data.onCorpseEffect, _data);
@@ -175,24 +175,24 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-50, -10), 0.0, "bust_spider_head_01_dead_bloodpool");
 				decap[0].Color = head.Color;
 				decap[0].Saturation = head.Saturation;
-				decap[0].Scale = 0.899999976 * this.m.Size;
+				decap[0].Scale = 0.9 * this.m.Size;
 			}
 
 			if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
 				decal = _tile.spawnDetail("bust_spider_body_01_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976 * this.m.Size;
+				decal.Scale = 0.9 * this.m.Size;
 			}
 
 			if (_fatalityType == this.Const.FatalityType.Disemboweled)
 			{
 				decal = _tile.spawnDetail("bust_spider_gut", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976 * this.m.Size;
+				decal.Scale = 0.9 * this.m.Size;
 			}
 			else if (_fatalityType == this.Const.FatalityType.Smashed)
 			{
 				decal = _tile.spawnDetail("bust_spider_skull", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976 * this.m.Size;
+				decal.Scale = 0.9 * this.m.Size;
 			}
 
 			this.spawnTerrainDropdownEffect(_tile);
@@ -236,7 +236,7 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 30)
 		{
-			b.DamageDirectAdd += 0.0500000007;
+			b.DamageDirectAdd += 0.05;
 		}
 
 		this.m.ActionPoints = b.ActionPoints;
@@ -253,17 +253,17 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varySaturation(0.300000012);
+			body.varySaturation(0.3);
 		}
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varyColor(0.100000001, 0.100000001, 0.100000001);
+			body.varyColor(0.1, 0.1, 0.1);
 		}
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varyBrightness(0.100000001);
+			body.varyBrightness(0.1);
 		}
 
 		local legs_front = this.addSprite("legs_front");
@@ -280,11 +280,11 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_spider_01_injured");
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.649999976;
+		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(7, 10));
 		this.setSpriteOffset("status_stunned", this.createVec(0, -20));
 		this.setSpriteOffset("arrow", this.createVec(0, -20));
-		this.setSize(this.Math.rand(70, 90) * 0.00999999978);
+		this.setSize(this.Math.rand(70, 90) * 0.01);
 		this.m.Skills.add(this.new("scripts/skills/actives/spider_bite_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/web_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
@@ -301,8 +301,8 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("body").Scale = _s;
 		this.getSprite("head").Scale = _s;
 		this.getSprite("injury").Scale = _s;
-		this.getSprite("status_rooted").Scale = _s * 0.649999976;
-		this.getSprite("status_rooted_back").Scale = _s * 0.649999976;
+		this.getSprite("status_rooted").Scale = _s * 0.65;
+		this.getSprite("status_rooted_back").Scale = _s * 0.65;
 		this.getSprite("legs_back").Scale = _s;
 		this.getSprite("legs_front").Scale = _s;
 		local offset = this.createVec(0, -10.0 * (1.0 - _s));

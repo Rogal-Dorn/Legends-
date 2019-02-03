@@ -201,7 +201,7 @@ this.ai_attack_terror <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
-		this.m.TargetScore = bestScore * 0.0500000007;
+		this.m.TargetScore = bestScore * 0.05;
 
 		if (bestTarget != null)
 		{

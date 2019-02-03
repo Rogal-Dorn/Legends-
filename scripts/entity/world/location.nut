@@ -264,7 +264,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 	function setLootScaleBasedOnResources( _r )
 	{
-		local resources = this.m.Resources * this.Math.minf(3.0, 1.0 + this.World.getTime().Days * 0.00749999983) * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
+		local resources = this.m.Resources * this.Math.minf(3.0, 1.0 + this.World.getTime().Days * 0.0075) * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 		this.m.LootScale = this.Math.minf(1.0, _r / resources);
 	}
 
@@ -723,7 +723,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 		if (this.m.IsScalingDefenders)
 		{
-			resources = resources * this.Math.minf(3.0, 1.0 + this.World.getTime().Days * 0.00749999983);
+			resources = resources * this.Math.minf(3.0, 1.0 + this.World.getTime().Days * 0.0075);
 		}
 
 		if (!this.isAlliedWithPlayer())

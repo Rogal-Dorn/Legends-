@@ -135,7 +135,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 			item = this.new("scripts/items/armor/wizard_robe");
 		}
 
-		item.setCondition(this.Math.max(1, item.getConditionMax() * this.Math.rand(10, 40) * 0.00999999978));
+		item.setCondition(this.Math.max(1, item.getConditionMax() * this.Math.rand(10, 40) * 0.01));
 		this.m.FoundItem = item;
 	}
 

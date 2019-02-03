@@ -49,7 +49,7 @@ this.pierced_side_injury <- this.inherit("scripts/skills/injury/injury", {
 			return;
 		}
 
-		_properties.StaminaMult *= 0.800000012;
+		_properties.StaminaMult *= 0.8;
 	}
 
 });

@@ -61,7 +61,7 @@ this.destroy_goblin_camp_contract <- this.inherit("scripts/contracts/contract", 
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.m.Destination.clearTroops();
 
-				if (this.Contract.getDifficultyMult() < 1.14999998 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() < 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
 				{
 					this.Contract.m.Destination.getLoot().clear();
 				}
@@ -82,7 +82,7 @@ this.destroy_goblin_camp_contract <- this.inherit("scripts/contracts/contract", 
 
 					if (r <= 20 && this.World.Assets.getBusinessReputation() > 1000)
 					{
-						if (this.Contract.getDifficultyMult() >= 0.949999988)
+						if (this.Contract.getDifficultyMult() >= 0.95)
 						{
 							this.Flags.set("IsAmbush", true);
 						}

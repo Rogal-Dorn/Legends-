@@ -30,17 +30,17 @@ gt.Const.Sound <- {
 		Actor = 1.0,
 		ActorIdle = 1.0,
 		ActorArmorHit = 1.0,
-		ActorNoDamage = 0.349999994,
+		ActorNoDamage = 0.35,
 		TacticalMovement = 0.75,
 		Tactical = 1.0,
-		Inventory = 0.699999988,
+		Inventory = 0.7,
 		RacialEffect = 0.75,
 		Ambience = 0.5,
-		AmbienceTerrain = 0.800000012,
-		AmbienceOutsideSettlement = 0.400000006,
-		AmbienceInSettlement = 1.29999995,
-		AmbienceTerrainInSettlement = 0.400000006,
-		AmbienceInTactical = 0.400000006,
+		AmbienceTerrain = 0.8,
+		AmbienceOutsideSettlement = 0.4,
+		AmbienceInSettlement = 1.3,
+		AmbienceTerrainInSettlement = 0.4,
+		AmbienceInTactical = 0.4,
 		AmbienceInBuilding = 0.5
 	},
 	DefaultWeaponEquip = [
@@ -283,7 +283,7 @@ gt.Const.SoundAmbience <- {
 	Blizzard = [
 		{
 			File = "atmosphere/blizzard_01.wav",
-			Volume = 1.60000002,
+			Volume = 1.6,
 			Pitch = 1.0,
 			Pan = false,
 			RandomVolume = false
@@ -559,27 +559,27 @@ gt.Const.SoundAmbience <- {
 		},
 		{
 			File = "ambience/settlement/settlement_cat_00.wav",
-			Volume = 0.400000006,
+			Volume = 0.4,
 			Pitch = 1.0
 		},
 		{
 			File = "ambience/settlement/settlement_cat_01.wav",
-			Volume = 0.400000006,
+			Volume = 0.4,
 			Pitch = 1.0
 		},
 		{
 			File = "ambience/settlement/settlement_cat_02.wav",
-			Volume = 0.400000006,
+			Volume = 0.4,
 			Pitch = 1.0
 		},
 		{
 			File = "ambience/settlement/settlement_cat_03.wav",
-			Volume = 0.400000006,
+			Volume = 0.4,
 			Pitch = 1.0
 		},
 		{
 			File = "ambience/settlement/settlement_cat_04.wav",
-			Volume = 0.400000006,
+			Volume = 0.4,
 			Pitch = 1.0
 		},
 		{
@@ -1288,61 +1288,61 @@ gt.Const.SoundAmbience <- {
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_03.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_04.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_05.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_06.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_07.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_08.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_09.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_10.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_11.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_12.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
@@ -1514,13 +1514,13 @@ gt.Const.SoundAmbience <- {
 		[
 			{
 				File = "ambience/terrain/forest_bird_02.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/forest_bird_05.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
@@ -1556,37 +1556,37 @@ gt.Const.SoundAmbience <- {
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_03.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_04.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_05.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_06.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/grasslands_bird_07.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/hill_bird_00.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
@@ -2235,7 +2235,7 @@ gt.Const.SoundAmbience <- {
 			},
 			{
 				File = "ambience/terrain/hill_bird_00.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
@@ -2257,22 +2257,22 @@ gt.Const.SoundAmbience <- {
 		[
 			{
 				File = "ambience/terrain/snow_wind_00.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/terrain/snow_wind_01.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/terrain/snow_wind_00.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/terrain/snow_wind_01.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{
@@ -2500,67 +2500,67 @@ gt.Const.SoundAmbience <- {
 			},
 			{
 				File = "ambience/terrain/steppe_bird_00.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_01.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_02.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_03.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_04.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_05.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_06.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_07.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_08.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_09.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			},
 			{
 				File = "ambience/terrain/steppe_bird_10.wav",
-				Volume = 0.699999988,
+				Volume = 0.7,
 				Pitch = 1.0,
 				RandomPitch = true
 			}
@@ -3416,22 +3416,22 @@ gt.Const.SoundAmbience <- {
 		[
 			{
 				File = "ambience/terrain/snow_wind_00.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/terrain/snow_wind_01.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/terrain/snow_wind_00.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/terrain/snow_wind_01.wav",
-				Volume = 1.10000002,
+				Volume = 1.1,
 				Pitch = 1.0
 			},
 			{

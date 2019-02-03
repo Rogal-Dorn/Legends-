@@ -167,7 +167,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 1.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] = 2.0;
-		this.m.SoundPitch = this.Math.rand(95, 105) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
 		this.getTags().add("body_immune_to_acid");
 		this.getTags().add("head_immune_to_acid");
 		this.getTags().add("lindwurm");
@@ -177,7 +177,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 
 	function playAttackSound()
 	{
-		this.playSound(this.Const.Sound.ActorEvent.Attack, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] * (this.Math.rand(75, 100) * 0.00999999978), this.m.SoundPitch * 1.14999998);
+		this.playSound(this.Const.Sound.ActorEvent.Attack, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] * (this.Math.rand(75, 100) * 0.01), this.m.SoundPitch * 1.15);
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
@@ -299,7 +299,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.getFaction() == this.Const.Faction.Player && _attacker != null && _attacker.isAlive())
 		{
-			this.Tactical.getCamera().quake(_attacker, this, 5.0, 0.159999996, 0.300000012);
+			this.Tactical.getCamera().quake(_attacker, this, 5.0, 0.16, 0.3);
 		}
 
 		if (damage <= 0 && armorDamage >= 0)
@@ -434,7 +434,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail("bust_lindwurm_tail_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = body.Color;
 			decal.Saturation = body.Saturation;
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 			this.spawnTerrainDropdownEffect(_tile);
 			local corpse = clone this.Const.Corpse;
 			corpse.CorpseName = "A Lindwurm";
@@ -481,7 +481,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 180)
 		{
 			b.MeleeSkill += 10;
-			b.DamageTotalMult += 0.100000001;
+			b.DamageTotalMult += 0.1;
 		}
 
 		this.m.ActionPoints = b.ActionPoints;
@@ -495,12 +495,12 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varySaturation(0.200000003);
+			body.varySaturation(0.2);
 		}
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varyColor(0.0799999982, 0.0799999982, 0.0799999982);
+			body.varyColor(0.08, 0.08, 0.08);
 		}
 
 		local head = this.addSprite("head");
@@ -511,7 +511,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		injury.setBrush("bust_lindwurm_tail_01_injured");
 		local body_blood = this.addSprite("body_blood");
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.540000021;
+		this.getSprite("status_rooted").Scale = 0.54;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 0));
 		this.m.Racial = this.new("scripts/skills/racial/lindwurm_racial");
 		this.m.Skills.add(this.m.Racial);

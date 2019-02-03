@@ -98,14 +98,14 @@ gt.Const.Tactical.AmbientLightingColor <- {
 };
 gt.Const.Tactical.AmbientLightingSaturation <- {
 	Default = 1.0,
-	Fog = 0.899999976,
+	Fog = 0.9,
 	Dawn = 1.0,
 	Dusk = 1.0,
 	Night = 0.5,
 	Midday = 1.0,
 	Rain = 1.0,
 	LightRain = 1.0,
-	Storm = 0.899999976,
+	Storm = 0.9,
 	Desert = 1.0,
 	Time = [
 		1.0,
@@ -115,7 +115,7 @@ gt.Const.Tactical.AmbientLightingSaturation <- {
 		1.0,
 		1.0,
 		0.5,
-		0.899999976
+		0.9
 	]
 };
 gt.Const.Tactical.TileBlendPriority <- {

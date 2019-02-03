@@ -28,7 +28,7 @@ gt.Const.Tactical.Actor.OrcYoung <- {
 		0
 	],
 	FatigueRecoveryRate = 25,
-	DamageTotalMult = 1.14999998
+	DamageTotalMult = 1.15
 };
 gt.Const.Tactical.Actor.OrcBerserker <- {
 	XP = 350,
@@ -48,7 +48,7 @@ gt.Const.Tactical.Actor.OrcBerserker <- {
 		0
 	],
 	FatigueRecoveryRate = 35,
-	DamageTotalMult = 1.20000005
+	DamageTotalMult = 1.2
 };
 gt.Const.Tactical.Actor.OrcWarrior <- {
 	XP = 400,
@@ -88,7 +88,7 @@ gt.Const.Tactical.Actor.OrcWarlord <- {
 		0
 	],
 	FatigueRecoveryRate = 30,
-	DamageTotalMult = 1.35000002
+	DamageTotalMult = 1.35
 };
 gt.Const.Tactical.Actor.GoblinAmbusher <- {
 	XP = 250,

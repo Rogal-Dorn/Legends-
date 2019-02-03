@@ -215,7 +215,7 @@ this.tile_steppe <- this.inherit("scripts/mapgen/map_template", {
 		{
 			local r = this.Math.rand(1, 11);
 			local d = tile.spawnDetail("world_steppe_brush_" + (r < 10 ? "0" + r : r), this.Const.World.ZLevel.Object, 0);
-			d.Saturation = 0.800000012;
+			d.Saturation = 0.8;
 		}
 		else if (this.Math.rand(1, 100) <= 15)
 		{

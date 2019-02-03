@@ -24,7 +24,7 @@ this.crypt_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -16;
 		this.m.RegularDamage = 65;
 		this.m.RegularDamageMax = 85;
-		this.m.ArmorDamageMult = 1.14999998;
+		this.m.ArmorDamageMult = 1.15;
 		this.m.DirectDamageMult = 0.25;
 	}
 

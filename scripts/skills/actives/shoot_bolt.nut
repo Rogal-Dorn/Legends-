@@ -48,7 +48,7 @@ this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
-		this.m.DirectDamageMult = 0.449999988;
+		this.m.DirectDamageMult = 0.45;
 		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
@@ -131,7 +131,7 @@ this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.699999988 : 0.5;
+		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
 	}
 
 	function onUse( _user, _targetTile )

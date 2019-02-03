@@ -25,7 +25,7 @@ this.named_warbrand <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 75;
 		this.m.ArmorDamageMult = 0.75;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.DirectDamageMult = 0.2;
 		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();
 	}

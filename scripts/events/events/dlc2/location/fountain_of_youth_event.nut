@@ -4,7 +4,7 @@ this.fountain_of_youth_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.location.fountain_of_youth";
 		this.m.Title = "As you approach...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_114.png[/img]{You stand at the edge of a forest clearing and the sight therein beggars belief.\n\n A trunk of a human body runs up out of the earth like a slender tree, naked and bristling, goosebumps for bark, continuing upward until its twice as tall as yourself. There are no branches. There are no hands. There are, instead, a series of human heads bound in a bunch where a tree crown should be. From left to right they are babyish and beautifully present, ambiguously sexless, malformed creations of time it seems, where the shadows they themselves author turn their faces from ones oddly familiar to strangely naive, as they stare about as though they knew not how they got there and seem ever ready to ask it of you. It reminds you of a drowning you happened upon, the face contorting beneath the running river water, the flesh suffering nothing short of constant conjecture as to what put it there.\n\n Whispers sift in from the trees. They riffle over the ground as if spoken by the bugs, and they clamber up your arms until they scratch at your very ears. They ask you to stay.}",

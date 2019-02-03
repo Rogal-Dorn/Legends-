@@ -10,7 +10,7 @@ this.kid_blacksmith_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.kid_blacksmith";
 		this.m.Title = "At %townname%";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_97.png[/img]{While walking about the shops of %townname%, you feel a tug at your sleeve. You turn to find a child there with a face smeared black with two bright white eyes staring out. He asks if you know anything about swords. You gesture toward the one you got sheathed at your side. He claps his hands.%SPEECH_ON%Great! I work for a blacksmith yonder, but he\'s away fetching iron ingots. He told me to keep watch of this special sword he was making, but it, uh, it fell. And broke. Fell on its own and broke on its own. Will you help me put it back together?%SPEECH_OFF%}",

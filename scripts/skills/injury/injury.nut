@@ -62,9 +62,9 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		local mult = this.World.State.getCurrentTown().getBuyPriceMult() * this.Const.Difficulty.BuyPriceMult[this.World.Assets.getEconomicDifficulty()] * this.m.TreatmentPriceMult;
 		local time = this.getTime();
 		local maxt = this.Math.max(1, this.m.HealingTimeMax - this.Math.floor((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay));
-		mult = mult * (1.0 + (this.getContainer().getActor().getLevel() - 1) * 0.200000003);
+		mult = mult * (1.0 + (this.getContainer().getActor().getLevel() - 1) * 0.2);
 		local p = maxt * mult * this.Const.World.Assets.BaseWoundTreatmentPrice;
-		p = this.Math.round(p * 0.100000001) * 10;
+		p = this.Math.round(p * 0.1) * 10;
 		return p;
 	}
 

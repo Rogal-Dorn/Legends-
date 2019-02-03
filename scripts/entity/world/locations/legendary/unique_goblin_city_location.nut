@@ -14,7 +14,7 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 		this.m.IsShowingBanner = true;
 		this.m.IsDespawningDefenders = false;
 		this.m.IsAttackable = false;
-		this.m.VisibilityMult = 0.800000012;
+		this.m.VisibilityMult = 0.8;
 		this.m.Resources = 500;
 		this.m.OnEnter = "event.location.goblin_city_enter";
 		this.m.OnDestroyed = "event.location.goblin_city_destroyed";

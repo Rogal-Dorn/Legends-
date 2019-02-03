@@ -110,14 +110,14 @@ this.town_training_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 		case 1:
 			price = this.Math.round(settlement.getSellPriceMult() * (100 + 60 * entity.getLevel()));
 			effect.m.Duration = 3;
-			effect.m.XPGainMult = 1.35000002;
+			effect.m.XPGainMult = 1.35;
 			effect.m.Icon = "skills/status_effect_76.png";
 			break;
 
 		case 2:
 			price = this.Math.round(settlement.getSellPriceMult() * (90 + 55 * entity.getLevel()));
 			effect.m.Duration = 5;
-			effect.m.XPGainMult = 1.20000005;
+			effect.m.XPGainMult = 1.2;
 			effect.m.Icon = "skills/status_effect_77.png";
 			break;
 		}

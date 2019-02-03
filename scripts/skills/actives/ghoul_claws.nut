@@ -26,7 +26,7 @@ this.ghoul_claws <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
-		this.m.DirectDamageMult = 0.100000001;
+		this.m.DirectDamageMult = 0.1;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 6;
 		this.m.MinRange = 1;

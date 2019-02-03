@@ -49,7 +49,7 @@ this.cut_arm_sinew_injury <- this.inherit("scripts/skills/injury/injury", {
 			return;
 		}
 
-		_properties.DamageTotalMult *= 0.600000024;
+		_properties.DamageTotalMult *= 0.6;
 	}
 
 });

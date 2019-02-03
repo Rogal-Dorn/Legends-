@@ -32,7 +32,7 @@ this.defend_orcs_action <- this.inherit("scripts/factions/faction_action", {
 
 			foreach( e in entities )
 			{
-				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * 0.660000026)
+				if (e.isParty() && e.isAttackable() && e.isAttackableByAI() && !s.isAlliedWith(e) && e.getStrength() < s.getResources() * 0.66)
 				{
 					if (e.getFaction() == beastFaction && this.Math.rand(1, 100) > 10)
 					{
@@ -79,7 +79,7 @@ this.defend_orcs_action <- this.inherit("scripts/factions/faction_action", {
 
 		for( local i = 0; i != spawnpoints.len(); i = ++i )
 		{
-			local party = this.getFaction().spawnEntity(spawnpoints[i], "Orcs", false, this.Const.World.Spawn.OrcDefenders, this.m.Settlement.getResources() * 0.660000026);
+			local party = this.getFaction().spawnEntity(spawnpoints[i], "Orcs", false, this.Const.World.Spawn.OrcDefenders, this.m.Settlement.getResources() * 0.66);
 			party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
 			local c = party.getController();

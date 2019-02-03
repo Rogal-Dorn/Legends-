@@ -102,7 +102,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 				}
 				else if (r <= 35)
 				{
-					if (this.Contract.getDifficultyMult() > 0.850000024)
+					if (this.Contract.getDifficultyMult() > 0.85)
 					{
 						this.Flags.set("IsScouts", true);
 					}
@@ -114,7 +114,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 				{
 					this.Flags.set("IsEnemyCamp", true);
 
-					if (this.Math.rand(1, 100) <= 20 && this.Contract.getDifficultyMult() < 1.14999998)
+					if (this.Math.rand(1, 100) <= 20 && this.Contract.getDifficultyMult() < 1.15)
 					{
 						this.Flags.set("IsEmptyCamp", true);
 					}
@@ -409,7 +409,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 							{
 								this.Contract.m.Destination.setLootScaleBasedOnResources(120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 
-								if (this.Contract.getDifficultyMult() <= 1.14999998 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+								if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
 								{
 									this.Contract.m.Destination.getLoot().clear();
 								}
@@ -523,7 +523,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 				local roster = this.World.getTemporaryRoster();
 				this.Contract.m.Dude = roster.create("scripts/entity/tactical/player");
 				this.Contract.m.Dude.setStartValuesEx(this.Const.CharacterVeteranBackgrounds);
-				this.Contract.m.Dude.setHitpointsPct(0.600000024);
+				this.Contract.m.Dude.setHitpointsPct(0.6);
 
 				if (this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
 				{
@@ -542,7 +542,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 
 				if (this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body) != null)
 				{
-					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getArmor() * 0.330000013);
+					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getArmor() * 0.33);
 				}
 
 				if (this.Contract.m.Dude.getTitle() == "")

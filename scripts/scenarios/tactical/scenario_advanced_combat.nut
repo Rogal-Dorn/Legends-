@@ -18,7 +18,7 @@ this.scenario_advanced_combat <- this.inherit("scripts/scenarios/tactical/scenar
 		rain.MaxVelocity = 100.0;
 		rain.MinAlpha = 1.0;
 		rain.MaxAlpha = 1.0;
-		rain.MinScale = 0.300000012;
+		rain.MinScale = 0.3;
 		rain.MaxScale = 0.5;
 		rain.ScaleDropsWithTime = true;
 		rain.clearDropBrushes();

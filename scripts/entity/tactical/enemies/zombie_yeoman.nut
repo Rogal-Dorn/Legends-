@@ -24,7 +24,7 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100)
 		{
-			b.DamageTotalMult += 0.100000001;
+			b.DamageTotalMult += 0.1;
 		}
 
 		this.m.ActionPoints = b.ActionPoints;

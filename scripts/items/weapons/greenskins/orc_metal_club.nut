@@ -25,8 +25,8 @@ this.orc_metal_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -20;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 50;
-		this.m.ArmorDamageMult = 0.899999976;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.ArmorDamageMult = 0.9;
+		this.m.DirectDamageMult = 0.4;
 	}
 
 	function getTooltip()

@@ -30,7 +30,7 @@ this.scenario_defend_the_hill <- this.inherit("scripts/scenarios/tactical/scenar
 		rain.MaxScale = 1.0;
 		this.Tactical.getWeather().buildRain(rain);
 		this.Tactical.getWeather().setAmbientLightingPreset(6);
-		this.Tactical.getWeather().setAmbientLightingSaturation(0.899999976);
+		this.Tactical.getWeather().setAmbientLightingSaturation(0.9);
 		this.Tactical.CameraDirector.addMoveToTileEvent(0, this.Tactical.getTile(15, 15 - 15 / 2), 3, null, null, 0, 2000);
 		this.Tactical.CameraDirector.addMoveToTileEvent(0, this.Tactical.getTile(9, 15 - 9 / 2), -1, null, null, 0, 1800);
 		this.Tactical.CameraDirector.addMoveToTileEvent(0, this.Tactical.getTile(15, 8 - 15 / 2), -1, null, null, 0, 1800);

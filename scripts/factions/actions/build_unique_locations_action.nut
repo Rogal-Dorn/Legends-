@@ -367,7 +367,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 		else
 		{
 			this.logInfo("Done placing all unique locations.");
-			this.m.CooldownUntil = 1000000000.000;
+			this.m.CooldownUntil = 1000000000.0;
 			this.m.IsRunOnNewCampaign = false;
 		}
 	}

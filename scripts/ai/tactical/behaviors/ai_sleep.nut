@@ -188,7 +188,7 @@ this.ai_sleep <- this.inherit("scripts/ai/tactical/behavior", {
 					target_score = target_score + this.Const.AI.Behavior.HorrorAlmostFleeingBonus;
 				}
 
-				target_score = target_score * (1.0 - this.Math.minf(1.0, target.getCurrentProperties().getBravery() * 0.00999999978));
+				target_score = target_score * (1.0 - this.Math.minf(1.0, target.getCurrentProperties().getBravery() * 0.01));
 				target_score = target_score * (1.0 / target.getCurrentProperties().MoraleCheckBraveryMult[this.Const.MoraleCheckType.MentalAttack]);
 				target_score = target_score * target.getCurrentProperties().TargetAttractionMult;
 

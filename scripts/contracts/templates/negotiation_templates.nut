@@ -104,7 +104,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 					}
 					else
 					{
-						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.00999999978);
+						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.01);
 					}
 
 					return "Negotiation";
@@ -293,7 +293,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 					}
 					else
 					{
-						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.00999999978);
+						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.01);
 					}
 
 					return "Negotiation";
@@ -566,7 +566,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 					}
 					else
 					{
-						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.00999999978);
+						this.Contract.m.Payment.Pool = this.Contract.m.Payment.Pool * (1.0 + this.Math.rand(3, 10) * 0.01);
 					}
 
 					return "Negotiation";

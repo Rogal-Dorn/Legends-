@@ -80,7 +80,7 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/orc_fatigue_02.wav",
 			"sounds/enemies/orc_fatigue_03.wav"
 		];
-		this.m.SoundPitch = 0.800000012;
+		this.m.SoundPitch = 0.8;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.75;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/orc_warlord_agent");
@@ -117,14 +117,14 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = sprite_body.Color;
 			decal.Saturation = sprite_body.Saturation;
-			decal.Scale = 0.899999976;
-			decal.setBrightness(0.899999976);
+			decal.Scale = 0.9;
+			decal.setBrightness(0.9);
 
 			if (appearance.CorpseArmor != "")
 			{
 				decal = _tile.spawnDetail(appearance.CorpseArmor, this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
-				decal.setBrightness(0.899999976);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
 			}
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
@@ -134,15 +134,15 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 					decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 					decal.Color = sprite_head.Color;
 					decal.Saturation = sprite_head.Saturation;
-					decal.Scale = 0.899999976;
-					decal.setBrightness(0.899999976);
+					decal.Scale = 0.9;
+					decal.setBrightness(0.9);
 				}
 
 				if (appearance.HelmetCorpse != "")
 				{
 					decal = _tile.spawnDetail(appearance.HelmetCorpse, this.Const.Tactical.DetailFlag.Corpse, flip);
-					decal.Scale = 0.899999976;
-					decal.setBrightness(0.899999976);
+					decal.Scale = 0.9;
+					decal.setBrightness(0.9);
 				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
@@ -166,15 +166,15 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					decap[idx].Color = sprite_head.Color;
 					decap[idx].Saturation = sprite_head.Saturation;
-					decap[idx].Scale = 0.899999976;
-					decap[idx].setBrightness(0.899999976);
+					decap[idx].Scale = 0.9;
+					decap[idx].setBrightness(0.9);
 					idx = ++idx;
 				}
 
 				if (appearance.HelmetCorpse.len() != 0)
 				{
-					decap[idx].Scale = 0.899999976;
-					decap[idx].setBrightness(0.899999976);
+					decap[idx].Scale = 0.9;
+					decap[idx].setBrightness(0.9);
 					idx = ++idx;
 				}
 			}
@@ -182,12 +182,12 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 			if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
 				decal = _tile.spawnDetail(appearance.CorpseArmor + "_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
+				decal.Scale = 0.9;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
 				decal = _tile.spawnDetail(appearance.CorpseArmor + "_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
+				decal.Scale = 0.9;
 			}
 
 			this.spawnTerrainDropdownEffect(_tile);
@@ -215,7 +215,7 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 200)
 		{
 			b.MeleeSkill += 5;
-			b.DamageTotalMult += 0.100000001;
+			b.DamageTotalMult += 0.1;
 		}
 
 		b.IsSpecializedInAxes = true;
@@ -229,7 +229,7 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("socket").setBrush("bust_base_orcs");
 		local body = this.addSprite("body");
 		body.setBrush("bust_orc_04_body");
-		body.varyColor(0.100000001, 0.100000001, 0.100000001);
+		body.varyColor(0.1, 0.1, 0.1);
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
 		injury_body.setBrush("bust_orc_04_body_injured");
@@ -249,7 +249,7 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("arms_icon", this.createVec(-8, 0));
 		this.setSpriteOffset("shield_icon", this.createVec(-5, 0));
 		this.setSpriteOffset("stunned", this.createVec(0, 10));
-		this.getSprite("status_rooted").Scale = 0.649999976;
+		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 16));
 		this.setSpriteOffset("status_stunned", this.createVec(-5, 30));
 		this.setSpriteOffset("arrow", this.createVec(-5, 30));

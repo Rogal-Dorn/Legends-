@@ -51,7 +51,7 @@ this.stabbed_guts_injury <- this.inherit("scripts/skills/injury/injury", {
 
 		if (this.m.IsShownOutOfCombat)
 		{
-			_properties.HitpointsMult *= 0.600000024;
+			_properties.HitpointsMult *= 0.6;
 		}
 	}
 

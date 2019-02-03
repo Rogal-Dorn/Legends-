@@ -26,7 +26,7 @@ this.wooden_stick <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 25;
 		this.m.ArmorDamageMult = 0.5;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.DirectDamageMult = 0.4;
 	}
 
 	function onEquip()

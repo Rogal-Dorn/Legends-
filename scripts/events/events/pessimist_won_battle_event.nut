@@ -48,7 +48,7 @@ this.pessimist_won_battle_event <- this.inherit("scripts/events/event", {
 
 					if (this.Math.rand(1, 100) <= 50 && !bro.getSkills().hasSkill("trait.optimist"))
 					{
-						bro.worsenMood(0.400000006, "Tempered by " + _event.m.Pessimist.getName() + "\'s pessimism");
+						bro.worsenMood(0.4, "Tempered by " + _event.m.Pessimist.getName() + "\'s pessimism");
 
 						if (bro.getMoodState() < this.Const.MoodState.Neutral)
 						{

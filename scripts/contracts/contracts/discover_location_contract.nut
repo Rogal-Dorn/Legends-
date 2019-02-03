@@ -6,7 +6,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 	function create()
 	{
 		this.contract.create();
-		this.m.DifficultyMult = this.Math.rand(75, 105) * 0.00999999978;
+		this.m.DifficultyMult = this.Math.rand(75, 105) * 0.01;
 		this.m.Type = "contract.discover_location";
 		this.m.Name = "Find Location";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
@@ -70,7 +70,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Location = this.WeakTableRef(best);
 		this.m.Flags.set("Region", this.World.State.getTileRegion(this.m.Location.getTile()).Name);
 		this.m.Flags.set("Location", this.m.Location.getName());
-		this.m.DifficultyMult = this.Math.rand(70, 85) * 0.00999999978;
+		this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
 		this.m.Payment.Pool = this.Math.max(300, 100 + lowestDistance * 15.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
 
 		if (this.Math.rand(1, 100) <= 33)
@@ -83,8 +83,8 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 			this.m.Payment.Completion = 1.0;
 		}
 
-		this.m.Flags.set("Bribe", this.beautifyNumber(this.m.Payment.Pool * (this.Math.rand(110, 150) * 0.00999999978)));
-		this.m.Flags.set("HintBribe", this.beautifyNumber(this.m.Payment.Pool * 0.100000001));
+		this.m.Flags.set("Bribe", this.beautifyNumber(this.m.Payment.Pool * (this.Math.rand(110, 150) * 0.01)));
+		this.m.Flags.set("HintBribe", this.beautifyNumber(this.m.Payment.Pool * 0.1));
 	}
 
 	function createStates()
@@ -342,7 +342,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 					Text = "Much appreciated.",
 					function getResult()
 					{
-						if (this.Math.rand(1, 100) <= 20 && this.Contract.getDifficultyMult() > 0.949999988)
+						if (this.Math.rand(1, 100) <= 20 && this.Contract.getDifficultyMult() > 0.95)
 						{
 							this.Flags.set("IsTrap", true);
 						}

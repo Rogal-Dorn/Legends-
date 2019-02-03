@@ -22,7 +22,7 @@ this.named_orc_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.StaminaModifier = -18;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 70;
-		this.m.ArmorDamageMult = 1.10000002;
+		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.25;
 		this.randomizeValues();
 	}

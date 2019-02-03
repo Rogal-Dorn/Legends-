@@ -116,7 +116,7 @@ this.ai_attack_puncture <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 
 			local score = this.queryTargetValue(_entity, target, _skill);
-			score = score * this.Math.pow(armor / 100.0, 1.10000002);
+			score = score * this.Math.pow(armor / 100.0, 1.1);
 
 			if (score > bestScore)
 			{

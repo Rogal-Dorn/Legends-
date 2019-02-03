@@ -15,7 +15,7 @@ this.boulder_forest <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("boulder_0" + this.Math.rand(2, 4));
 		body.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		body.Scale = 0.800000012 + this.Math.rand(0, 20) / 100.0;
+		body.Scale = 0.8 + this.Math.rand(0, 20) / 100.0;
 		this.setBlockSight(true);
 	}
 

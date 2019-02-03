@@ -27,7 +27,7 @@ this.pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.75;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
 	}
 

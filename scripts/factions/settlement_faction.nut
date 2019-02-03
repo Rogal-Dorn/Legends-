@@ -11,7 +11,7 @@ this.settlement_faction <- this.inherit("scripts/factions/faction", {
 
 		if (_r > 0 && this.m.Settlements.len() != 0)
 		{
-			_r = _r * (1.0 - (this.m.Settlements[0].getSize() - 1) * 0.150000006);
+			_r = _r * (1.0 - (this.m.Settlements[0].getSize() - 1) * 0.15);
 		}
 
 		this.faction.addPlayerRelation(_r, _reason);

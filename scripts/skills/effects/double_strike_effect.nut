@@ -31,9 +31,9 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (!this.m.IsGarbage && this.m.TimeAdded + 0.100000001 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
+		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
-			_properties.DamageTotalMult *= 1.20000005;
+			_properties.DamageTotalMult *= 1.2;
 			this.removeSelf();
 		}
 	}

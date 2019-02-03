@@ -16,8 +16,8 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		this.goblin.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.GoblinAmbusher);
-		b.DamageDirectMult = 1.39999998;
-		b.TargetAttractionMult = 1.10000002;
+		b.DamageDirectMult = 1.4;
+		b.TargetAttractionMult = 1.1;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

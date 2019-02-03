@@ -193,8 +193,8 @@ this.options_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 		currentVideoMode.VSync = _data[2];
 		currentVideoMode.DepthOfField = _data[3];
-		currentVideoMode.UIScale = _data[4] * 0.00999999978;
-		currentVideoMode.SceneScale = _data[5] * 0.00999999978;
+		currentVideoMode.UIScale = _data[4] * 0.01;
+		currentVideoMode.SceneScale = _data[5] * 0.01;
 		this.Settings.setVideoMode(currentVideoMode);
 		this.Settings.saveWithCustomVideoMode(currentVideoMode);
 	}

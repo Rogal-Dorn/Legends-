@@ -156,17 +156,17 @@ gt.Const.Difficulty <- {
 	SellPriceMult = [
 		1.0,
 		1.0,
-		0.899999976
+		0.9
 	],
 	EnemyMult = [
-		0.850000024,
+		0.85,
 		1.0,
-		1.14999998
+		1.15
 	],
 	PaymentMult = [
-		1.10000002,
+		1.1,
 		1.0,
-		0.899999976
+		0.9
 	],
 	RetreatDefenseBonus = [
 		30,

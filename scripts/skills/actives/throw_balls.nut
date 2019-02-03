@@ -32,7 +32,7 @@ this.throw_balls <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 2;

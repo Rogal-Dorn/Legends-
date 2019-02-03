@@ -48,7 +48,7 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 			"sounds/enemies/wolf_idle_08.wav",
 			"sounds/enemies/wolf_idle_09.wav"
 		];
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 0.600000024;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 0.6;
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
 			"sounds/enemies/goblin_wolfrider_move_00.wav",
 			"sounds/enemies/goblin_wolfrider_move_01.wav",
@@ -96,8 +96,8 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 		local variant = this.Math.rand(1, 2);
 		local wolf = this.addSprite("wolf");
 		wolf.setBrush("bust_wolf_0" + variant + "_body");
-		wolf.varySaturation(0.150000006);
-		wolf.varyColor(0.0700000003, 0.0700000003, 0.0700000003);
+		wolf.varySaturation(0.15);
+		wolf.varyColor(0.07, 0.07, 0.07);
 		local wolf = this.addSprite("wolf_head");
 		wolf.setBrush("bust_wolf_0" + variant + "_head");
 		wolf.Saturation = wolf.Saturation;
@@ -125,7 +125,7 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 
 	function onAfterInit()
 	{
-		this.getSprite("status_rooted").Scale = 0.569999993;
+		this.getSprite("status_rooted").Scale = 0.57;
 		this.setSpriteOffset("status_rooted", this.createVec(-2, -3));
 		this.actor.onAfterInit();
 	}
@@ -216,17 +216,17 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 		local decal;
 		this.m.IsCorpseFlipped = flip;
 		decal = _tile.spawnDetail(this.getSprite("wolf").getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-		decal.setBrightness(0.899999976);
-		decal.Scale = 0.949999988;
+		decal.setBrightness(0.9);
+		decal.Scale = 0.95;
 		decal = _tile.spawnDetail("bust_wolf_02_armor_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-		decal.setBrightness(0.899999976);
-		decal.Scale = 0.949999988;
+		decal.setBrightness(0.9);
+		decal.Scale = 0.95;
 
 		if (_fatalityType != this.Const.FatalityType.Decapitated)
 		{
 			decal = _tile.spawnDetail(this.getSprite("wolf_head").getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-			decal.setBrightness(0.899999976);
-			decal.Scale = 0.949999988;
+			decal.setBrightness(0.9);
+			decal.Scale = 0.95;
 		}
 		else if (_fatalityType == this.Const.FatalityType.Decapitated)
 		{
@@ -234,18 +234,18 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 				this.getSprite("wolf_head").getBrush().Name + "_dead"
 			];
 			local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-20, 15), 0.0, "bust_wolf_head_bloodpool");
-			decap[0].setBrightness(0.899999976);
-			decap[0].Scale = 0.949999988;
+			decap[0].setBrightness(0.9);
+			decap[0].Scale = 0.95;
 		}
 		else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 		{
 			decal = _tile.spawnDetail(this.getSprite("wolf").getBrush().Name + "_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 		}
 		else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 		{
 			decal = _tile.spawnDetail(this.getSprite("wolf").getBrush().Name + "_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 		}
 
 		this.spawnTerrainDropdownEffect(_tile);
@@ -264,7 +264,7 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 
 		if (entity != null)
 		{
-			entity.setVariant(this.m.Variant, _info.WolfColor, _info.WolfSaturation, 0.449999988);
+			entity.setVariant(this.m.Variant, _info.WolfColor, _info.WolfSaturation, 0.45);
 			entity.setFaction(_info.Faction);
 			entity.setMoraleState(_info.Morale);
 		}
@@ -289,7 +289,7 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 			entity.getItems().clear();
 			this.m.Items.transferTo(entity.getItems());
 			entity.setMoraleState(_info.Morale);
-			entity.setHitpoints(entity.getHitpointsMax() * 0.449999988);
+			entity.setHitpoints(entity.getHitpointsMax() * 0.45);
 			entity.onUpdateInjuryLayer();
 		}
 	}
@@ -303,7 +303,7 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 		else if (_type == this.Const.Sound.ActorEvent.Death && this.m.LastBodyPartHit == this.Const.BodyPart.Body)
 		{
 			_type = this.Const.Sound.ActorEvent.Other2;
-			this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 0.699999988;
+			this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 0.7;
 		}
 
 		this.actor.playSound(_type, _volume, _pitch);

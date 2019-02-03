@@ -26,8 +26,8 @@ this.goblin_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeIdeal = 6;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 0.550000012;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.ArmorDamageMult = 0.55;
+		this.m.DirectDamageMult = 0.35;
 	}
 
 	function getAmmoID()

@@ -160,7 +160,7 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.DamageRegularMin += 70;
 		_properties.DamageRegularMax += 100;
-		_properties.DamageArmorMult *= 0.850000024;
+		_properties.DamageArmorMult *= 0.85;
 	}
 
 });

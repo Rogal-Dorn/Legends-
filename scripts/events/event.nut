@@ -416,7 +416,7 @@ this.event <- {
 
 		foreach( party in _partyList )
 		{
-			if (party.Cost < _resources * 0.699999988)
+			if (party.Cost < _resources * 0.7)
 			{
 				continue;
 			}
@@ -504,9 +504,9 @@ this.event <- {
 
 	function getReputationToDifficultyMult()
 	{
-		local r = this.Math.minf(4.0, this.Math.maxf(0.75, this.Math.pow(this.Math.maxf(0, 0.00300000003 * this.World.Assets.getBusinessReputation()), 0.400000006)));
-		local s = this.Math.maxf(0.75, this.Math.pow(0.00999999978 * this.World.State.getPlayer().getStrength(), 0.899999976));
-		local d = this.Math.minf(5.0, 0.400000006 * r + 0.600000024 * s + this.Math.minf(0.5, this.World.getTime().Days * 0.00499999989));
+		local r = this.Math.minf(4.0, this.Math.maxf(0.75, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.4)));
+		local s = this.Math.maxf(0.75, this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.9));
+		local d = this.Math.minf(5.0, 0.4 * r + 0.6 * s + this.Math.minf(0.5, this.World.getTime().Days * 0.005));
 		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 	}
 

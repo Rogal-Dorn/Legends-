@@ -24,8 +24,8 @@ this.hatchet <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -6;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 1.10000002;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.ArmorDamageMult = 1.1;
+		this.m.DirectDamageMult = 0.3;
 	}
 
 	function onEquip()

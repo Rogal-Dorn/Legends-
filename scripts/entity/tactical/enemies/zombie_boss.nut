@@ -36,9 +36,9 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/ghastly_touch_01.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = this.m.Sound[this.Const.Sound.ActorEvent.Idle];
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.100000001;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.1;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 0.5;
-		this.m.SoundPitch = 80 * 0.00999999978;
+		this.m.SoundPitch = 80 * 0.01;
 		this.getTags().add("undead");
 		this.getTags().add("zombie_minion");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/zombie_agent");
@@ -64,11 +64,11 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.IsCorpseFlipped = flip;
 			local decal;
 			decal = _tile.spawnDetail("bust_ghost_knight_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-			decal.Scale = 0.899999976;
-			decal.setBrightness(0.899999976);
+			decal.Scale = 0.9;
+			decal.setBrightness(0.9);
 			decal = _tile.spawnDetail("bust_ghost_knight_01_head_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-			decal.Scale = 0.899999976;
-			decal.setBrightness(0.899999976);
+			decal.Scale = 0.9;
+			decal.setBrightness(0.9);
 			this.spawnTerrainDropdownEffect(_tile);
 			local corpse = clone this.Const.Corpse;
 			corpse.CorpseName = this.getName();
@@ -191,8 +191,8 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 					LifeTimeMax = 1.0,
 					ColorMin = this.createColor("ffffff2f"),
 					ColorMax = this.createColor("ffffff2f"),
-					ScaleMin = 0.899999976,
-					ScaleMax = 0.899999976,
+					ScaleMin = 0.9,
+					ScaleMax = 0.9,
 					RotationMin = 0,
 					RotationMax = 0,
 					VelocityMin = 80,
@@ -203,12 +203,12 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 					ForceMax = this.createVec(0, 0)
 				},
 				{
-					LifeTimeMin = 0.100000001,
-					LifeTimeMax = 0.100000001,
+					LifeTimeMin = 0.1,
+					LifeTimeMax = 0.1,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
-					ScaleMin = 0.100000001,
-					ScaleMax = 0.100000001,
+					ScaleMin = 0.1,
+					ScaleMax = 0.1,
 					RotationMin = 0,
 					RotationMax = 0,
 					VelocityMin = 80,

@@ -26,8 +26,8 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -4;
 		this.m.RegularDamage = 5;
 		this.m.RegularDamageMax = 10;
-		this.m.ArmorDamageMult = 0.100000001;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.ArmorDamageMult = 0.1;
+		this.m.DirectDamageMult = 0.4;
 	}
 
 	function onEquip()

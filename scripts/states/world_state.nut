@@ -721,7 +721,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.Player.setPath(null);
 				this.m.Player.setDestination(this.m.AutoAttack.getPos());
 			}
-			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.100000001)
+			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.1)
 			{
 				local navSettings = this.World.getNavigator().createSettings();
 				navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
@@ -811,12 +811,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			if (_mouse.getState() == 3)
 			{
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
 				return true;
 			}
 			else if (_mouse.getState() == 4)
 			{
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
 				return true;
 			}
 		}
@@ -981,8 +981,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		clouds.MaxClouds = 70;
 		clouds.MinVelocity = 35.0;
 		clouds.MaxVelocity = 65.0;
-		clouds.MinAlpha = 0.800000012;
-		clouds.MaxAlpha = 0.800000012;
+		clouds.MinAlpha = 0.8;
+		clouds.MaxAlpha = 0.8;
 		clouds.MinScale = 1.0;
 		clouds.MaxScale = 1.25;
 		this.World.getWeather().buildCloudCover(clouds);
@@ -3365,12 +3365,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			case 67:
 			case 46:
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 
 			case 68:
 			case 47:
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 
 			case 96:

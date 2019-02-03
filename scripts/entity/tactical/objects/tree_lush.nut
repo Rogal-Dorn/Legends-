@@ -17,14 +17,14 @@ this.tree_lush <- this.inherit("scripts/entity/tactical/entity", {
 		local bottom = this.addSprite("bottom");
 		bottom.setBrush("tree_0" + v + "_bottom");
 		bottom.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		bottom.varyColor(0.0299999993, 0.0299999993, 0.0299999993);
+		bottom.varyColor(0.03, 0.03, 0.03);
 		bottom.Rotation = rotation;
 		local top = this.addSprite("top");
 		top.setBrush("tree_0" + v + "_top");
 		top.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
 		top.varyColor(0.125, 0.125, 0.125);
 		top.Rotation = rotation + this.Math.rand(-5, 5);
-		top.Scale = 0.800000012 + this.Math.rand(0, 20) / 100.0;
+		top.Scale = 0.8 + this.Math.rand(0, 20) / 100.0;
 		local web = this.addSprite("web");
 		web.setBrush("web_01");
 		web.setHorizontalFlipping(this.Math.rand(0, 100) < 50);

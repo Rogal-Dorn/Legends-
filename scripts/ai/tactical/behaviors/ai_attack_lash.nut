@@ -111,7 +111,7 @@ this.ai_attack_lash <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 
 			local score = this.queryTargetValue(_entity, target, _skill);
-			score = score * this.Math.minf(3.0, 0.330000013 * f);
+			score = score * this.Math.minf(3.0, 0.33 * f);
 
 			if (score > bestScore)
 			{

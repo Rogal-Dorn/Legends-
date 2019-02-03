@@ -76,7 +76,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 					}
 					else if (r <= 40)
 					{
-						if (this.Contract.getDifficultyMult() >= 0.949999988)
+						if (this.Contract.getDifficultyMult() >= 0.95)
 						{
 							this.Flags.set("IsMilitia", true);
 						}
@@ -92,12 +92,12 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 
 				local number = 1;
 
-				if (this.Contract.getDifficultyMult() >= 0.949999988)
+				if (this.Contract.getDifficultyMult() >= 0.95)
 				{
 					number = number + this.Math.rand(0, 1);
 				}
 
-				if (this.Contract.getDifficultyMult() >= 1.10000002)
+				if (this.Contract.getDifficultyMult() >= 1.1)
 				{
 					number = number + 1;
 				}
@@ -558,7 +558,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 					function getResult()
 					{
 						local home = this.Contract.m.Home;
-						local party = this.World.FactionManager.getFaction(this.Contract.getFaction()).spawnEntity(home.getTile(), home.getName() + " Militia", false, this.Const.World.Spawn.Militia, home.getResources() * 0.699999988);
+						local party = this.World.FactionManager.getFaction(this.Contract.getFaction()).spawnEntity(home.getTile(), home.getName() + " Militia", false, this.Const.World.Spawn.Militia, home.getResources() * 0.7);
 						party.getSprite("banner").setBrush(home.getBanner());
 						party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
 						this.Contract.m.Militia = this.WeakTableRef(party);
@@ -578,7 +578,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 					function getResult()
 					{
 						local home = this.Contract.m.Home;
-						local party = this.World.FactionManager.getFaction(this.Contract.getFaction()).spawnEntity(home.getTile(), home.getName() + " Militia", false, this.Const.World.Spawn.Militia, home.getResources() * 0.699999988);
+						local party = this.World.FactionManager.getFaction(this.Contract.getFaction()).spawnEntity(home.getTile(), home.getName() + " Militia", false, this.Const.World.Spawn.Militia, home.getResources() * 0.7);
 						party.getSprite("banner").setBrush(home.getBanner());
 						party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
 						this.Contract.m.Militia = this.WeakTableRef(party);

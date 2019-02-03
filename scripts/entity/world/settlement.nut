@@ -608,15 +608,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		if (this.m.Size <= 1)
 		{
-			p = 0.949999988 + this.getActiveAttachedLocations().len() * 0.0299999993;
+			p = 0.95 + this.getActiveAttachedLocations().len() * 0.03;
 		}
 		else if (this.m.Size == 2)
 		{
-			p = 1.01999998 + this.getActiveAttachedLocations().len() * 0.0299999993;
+			p = 1.02 + this.getActiveAttachedLocations().len() * 0.03;
 		}
 		else if (this.m.Size == 3)
 		{
-			p = 1.10000002 + this.getActiveAttachedLocations().len() * 0.0299999993;
+			p = 1.1 + this.getActiveAttachedLocations().len() * 0.03;
 		}
 
 		return p * this.m.Modifiers.PriceMult;
@@ -629,11 +629,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		if (r < 50)
 		{
-			p = p + (50.0 - r) * 0.00600000005;
+			p = p + (50.0 - r) * 0.006;
 		}
 		else if (r > 50)
 		{
-			p = p - (r - 50.0) * 0.00300000003;
+			p = p - (r - 50.0) * 0.003;
 		}
 
 		p = p * this.m.Modifiers.BuyPriceMult;
@@ -647,11 +647,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		if (r < 50)
 		{
-			p = p - (50.0 - r) * 0.00600000005;
+			p = p - (50.0 - r) * 0.006;
 		}
 		else if (r > 50)
 		{
-			p = p + (r - 50.0) * 0.00300000003;
+			p = p + (r - 50.0) * 0.003;
 		}
 
 		p = p * this.m.Modifiers.SellPriceMult;
@@ -1168,7 +1168,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				c[i].clear();
 				c[i].IsOccupied = true;
 				local d = c[i].spawnDetail("world_houses_0" + this.m.HousesType + "_0" + v, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
-				d.Scale = 0.850000024;
+				d.Scale = 0.85;
 				c.remove(i);
 			}
 		}
@@ -1562,7 +1562,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses);
 				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
-				d.Scale = 0.850000024;
+				d.Scale = 0.85;
 			}
 		}
 		else
@@ -1583,7 +1583,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses | this.Const.World.DetailType.Lighting);
 				local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V + "_ruins", this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
-				d.Scale = 0.850000024;
+				d.Scale = 0.85;
 				this.spawnFireAndSmoke(tile.Pos);
 			}
 
@@ -1636,7 +1636,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					local tile = this.World.getTileSquare(h.X, h.Y);
 					local d = tile.spawnDetail("world_houses_0" + this.m.HousesType + "_0" + h.V + "_light", this.Const.World.ZLevel.Object - 4, this.Const.World.DetailType.Lighting, false, insideScreen);
 					d.IgnoreAmbientColor = true;
-					d.Scale = 0.850000024;
+					d.Scale = 0.85;
 				}
 			}
 			else if (lighting.Alpha != 0 && this.World.getTime().TimeOfDay >= 0 && this.World.getTime().TimeOfDay <= 3)

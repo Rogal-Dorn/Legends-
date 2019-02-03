@@ -25,8 +25,8 @@ this.two_handed_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -16;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 80;
-		this.m.ArmorDamageMult = 1.10000002;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.ArmorDamageMult = 1.1;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 15;
 	}
 

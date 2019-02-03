@@ -67,7 +67,7 @@ this.perk_nimble <- this.inherit("scripts/skills/skill", {
 		}
 
 		fat = this.Math.min(0, fat + 15);
-		local ret = this.Math.minf(1.0, 1.0 - 0.600000024 + this.Math.pow(this.Math.abs(fat), 1.20000005) * 0.00999999978);
+		local ret = this.Math.minf(1.0, 1.0 - 0.6 + this.Math.pow(this.Math.abs(fat), 1.2) * 0.01);
 		return ret;
 	}
 

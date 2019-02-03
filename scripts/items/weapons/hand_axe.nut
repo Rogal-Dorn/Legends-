@@ -24,8 +24,8 @@ this.hand_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 45;
-		this.m.ArmorDamageMult = 1.20000005;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.ArmorDamageMult = 1.2;
+		this.m.DirectDamageMult = 0.3;
 	}
 
 	function onEquip()

@@ -22,127 +22,127 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 		this.m.Sounds = [
 			{
 				File = "ambience/buildings/market_people_00.wav",
-				Volume = 0.400000006,
+				Volume = 0.4,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_01.wav",
-				Volume = 0.600000024,
+				Volume = 0.6,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_02.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_03.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_04.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_05.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_07.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_08.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_09.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_10.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_11.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_12.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_13.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_people_14.wav",
-				Volume = 0.800000012,
+				Volume = 0.8,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_pig_00.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_pig_01.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_pig_02.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_pig_03.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_pig_04.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_chicken_00.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_chicken_01.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_chicken_02.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_chicken_03.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_chicken_04.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{
 				File = "ambience/buildings/market_chicken_05.wav",
-				Volume = 0.899999976,
+				Volume = 0.9,
 				Pitch = 1.0
 			},
 			{

@@ -74,7 +74,7 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.m.Destination.clearTroops();
 
-				if (this.Contract.getDifficultyMult() < 1.14999998 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() < 1.15 && !this.Contract.m.Destination.getTags().get("IsEventLocation"))
 				{
 					this.Contract.m.Destination.getLoot().clear();
 				}
@@ -100,7 +100,7 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 					}
 					else if (r <= 15 && this.World.Assets.getBusinessReputation() > 800)
 					{
-						if (this.Contract.getDifficultyMult() >= 0.949999988)
+						if (this.Contract.getDifficultyMult() >= 0.95)
 						{
 							this.Flags.set("IsOrcsAgainstOrcs", true);
 						}
@@ -409,7 +409,7 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body) != null)
 				{
-					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getArmor() * 0.330000013);
+					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getArmor() * 0.33);
 				}
 
 				if (this.Contract.m.Dude.getTitle() == "")

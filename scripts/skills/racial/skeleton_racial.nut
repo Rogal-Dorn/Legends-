@@ -17,7 +17,7 @@ this.skeleton_racial <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot" || _skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake")
 		{
-			_properties.DamageReceivedRegularMult *= 0.100000001;
+			_properties.DamageReceivedRegularMult *= 0.1;
 		}
 		else if (_skill.getID() == "actives.throw_javelin")
 		{

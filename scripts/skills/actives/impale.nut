@@ -30,7 +30,7 @@ this.impale <- this.inherit("scripts/skills/skill", {
 		this.m.IsTooCloseShown = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.HitChanceBonus = 10;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 15;

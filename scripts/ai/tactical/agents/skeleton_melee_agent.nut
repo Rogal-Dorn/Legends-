@@ -10,8 +10,8 @@ this.skeleton_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.OverallDefensivenessMult = 0.25;
 		this.m.Properties.OverallFormationMult = 1.0;
 		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 1.0;
-		this.m.Properties.EngageWhenAlreadyEngagedMult = 0.100000001;
-		this.m.Properties.EngageFlankingMult = 0.100000001;
+		this.m.Properties.EngageWhenAlreadyEngagedMult = 0.1;
+		this.m.Properties.EngageFlankingMult = 0.1;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 5.0;
 		this.m.Properties.EngageTileLimit = 3;
 		this.m.Properties.IgnoreTargetValueOnEngage = true;

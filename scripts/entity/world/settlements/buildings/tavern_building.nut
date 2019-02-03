@@ -272,7 +272,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 			{
 				if (!this.m.Settlement.isMilitary())
 				{
-					this.World.FactionManager.getFaction(this.m.Settlement.getFactions()[0]).addPlayerRelation(0.100000001);
+					this.World.FactionManager.getFaction(this.m.Settlement.getFactions()[0]).addPlayerRelation(0.1);
 				}
 
 				rumor = rumor + this.Const.Strings.PayTavernRumorsIntro[this.Math.rand(0, this.Const.Strings.PayTavernRumorsIntro.len() - 1)];

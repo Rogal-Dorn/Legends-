@@ -231,7 +231,7 @@ this.asset_manager <- {
 
 		if (_f > 0)
 		{
-			this.m.Score += _f * 0.00999999978;
+			this.m.Score += _f * 0.01;
 		}
 
 		if (this.m.Money >= 5000)
@@ -1808,7 +1808,7 @@ this.asset_manager <- {
 		{
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.00200000009;
+				s = s + item.getValue() * 0.002;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -1830,7 +1830,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.00200000009;
+				s = s + item.getValue() * 0.002;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -1846,7 +1846,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.00200000009;
+				s = s + item.getValue() * 0.002;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -1862,7 +1862,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.00200000009;
+				s = s + item.getValue() * 0.002;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -1878,7 +1878,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.00200000009;
+				s = s + item.getValue() * 0.002;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -1894,7 +1894,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.00200000009;
+				s = s + item.getValue() * 0.002;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -1912,7 +1912,7 @@ this.asset_manager <- {
 
 				if (item != null)
 				{
-					s = s + item.getValue() * 0.00200000009;
+					s = s + item.getValue() * 0.002;
 
 					if (item.isItemType(this.Const.Items.ItemType.Named))
 					{

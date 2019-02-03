@@ -14,8 +14,8 @@ this.scenario_early_game <- this.inherit("scripts/scenarios/tactical/scenario_te
 		clouds.MaxClouds = 16;
 		clouds.MinVelocity = 3.0;
 		clouds.MaxVelocity = 9.0;
-		clouds.MinAlpha = 0.300000012;
-		clouds.MaxAlpha = 0.400000006;
+		clouds.MinAlpha = 0.3;
+		clouds.MaxAlpha = 0.4;
 		clouds.MinScale = 2.0;
 		clouds.MaxScale = 3.0;
 		this.Tactical.getWeather().buildCloudCover(clouds);

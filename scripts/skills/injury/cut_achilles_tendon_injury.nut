@@ -55,7 +55,7 @@ this.cut_achilles_tendon_injury <- this.inherit("scripts/skills/injury/injury", 
 		}
 
 		_properties.MovementAPCostAdditional += 2;
-		_properties.InitiativeMult *= 0.699999988;
+		_properties.InitiativeMult *= 0.7;
 	}
 
 });

@@ -75,7 +75,7 @@ this.move_order <- this.inherit("scripts/ai/world/world_behavior", {
 
 			if (this.m.RoadsOnly)
 			{
-				navSettings.RoadMult *= 0.0500000007;
+				navSettings.RoadMult *= 0.05;
 			}
 
 			if (this.m.AvoidSettlements)

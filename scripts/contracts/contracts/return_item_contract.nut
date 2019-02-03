@@ -73,7 +73,7 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (r <= 15)
 				{
-					if (this.Contract.getDifficultyMult() >= 0.949999988)
+					if (this.Contract.getDifficultyMult() >= 0.95)
 					{
 						this.Flags.set("IsNecromancer", true);
 					}
@@ -81,7 +81,7 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 				else if (r <= 30)
 				{
 					this.Flags.set("IsCounterOffer", true);
-					this.Flags.set("Bribe", this.Contract.beautifyNumber(this.Contract.m.Payment.getOnCompletion() * this.Math.rand(100, 300) * 0.00999999978));
+					this.Flags.set("Bribe", this.Contract.beautifyNumber(this.Contract.m.Payment.getOnCompletion() * this.Math.rand(100, 300) * 0.01));
 				}
 				else
 				{

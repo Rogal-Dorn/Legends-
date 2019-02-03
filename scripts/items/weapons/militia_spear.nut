@@ -22,7 +22,7 @@ this.militia_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -6;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 30;
-		this.m.ArmorDamageMult = 0.899999976;
+		this.m.ArmorDamageMult = 0.9;
 		this.m.DirectDamageMult = 0.25;
 	}
 

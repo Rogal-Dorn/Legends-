@@ -51,7 +51,7 @@ this.exposed_ribs_injury <- this.inherit("scripts/skills/injury/injury", {
 
 		if (this.m.IsShownOutOfCombat)
 		{
-			_properties.HitpointsMult *= 0.649999976;
+			_properties.HitpointsMult *= 0.65;
 		}
 	}
 

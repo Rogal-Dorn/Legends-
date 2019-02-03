@@ -28,8 +28,8 @@ this.rich_veins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.SellPriceMult *= 1.10000002;
-		_modifiers.BuyPriceMult *= 1.10000002;
+		_modifiers.SellPriceMult *= 1.1;
+		_modifiers.BuyPriceMult *= 1.1;
 		_modifiers.MineralRarityMult = 1.5;
 	}
 

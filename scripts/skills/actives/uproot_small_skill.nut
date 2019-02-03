@@ -33,7 +33,7 @@ this.uproot_small_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargetingActor = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
@@ -93,7 +93,7 @@ this.uproot_small_skill <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.DamageRegularMin += 40;
 		_properties.DamageRegularMax += 60;
-		_properties.DamageArmorMult *= 0.850000024;
+		_properties.DamageArmorMult *= 0.85;
 	}
 
 });

@@ -39,7 +39,7 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/unhold_idle_06.wav",
 			"sounds/enemies/unhold_idle_07.wav"
 		];
-		this.m.SoundPitch = this.Math.rand(0.899999976, 1.10000002);
+		this.m.SoundPitch = this.Math.rand(0.9, 1.1);
 		this.m.SoundVolumeOverall = 10.0;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/unhold_agent");
 		this.m.AIAgent.setActor(this);
@@ -70,14 +70,14 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = sprite_body.Color;
 			decal.Saturation = sprite_body.Saturation;
-			decal.Scale = 0.899999976;
-			decal.setBrightness(0.899999976);
+			decal.Scale = 0.9;
+			decal.setBrightness(0.9);
 
 			if (appearance.CorpseArmor != "")
 			{
 				decal = _tile.spawnDetail(appearance.CorpseArmor, this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
-				decal.setBrightness(0.899999976);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
 			}
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
@@ -87,8 +87,8 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 					decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 					decal.Color = sprite_head.Color;
 					decal.Saturation = sprite_head.Saturation;
-					decal.Scale = 0.899999976;
-					decal.setBrightness(0.899999976);
+					decal.Scale = 0.9;
+					decal.setBrightness(0.9);
 				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
@@ -107,8 +107,8 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					decap[idx].Color = sprite_head.Color;
 					decap[idx].Saturation = sprite_head.Saturation;
-					decap[idx].Scale = 0.899999976;
-					decap[idx].setBrightness(0.899999976);
+					decap[idx].Scale = 0.9;
+					decap[idx].setBrightness(0.9);
 					idx = ++idx;
 				}
 			}
@@ -116,17 +116,17 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 			if (_fatalityType == this.Const.FatalityType.Disemboweled)
 			{
 				decal = _tile.spawnDetail("bust_unhold_guts", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
+				decal.Scale = 0.9;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
 				decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
+				decal.Scale = 0.9;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
 				decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
+				decal.Scale = 0.9;
 			}
 
 			this.spawnTerrainDropdownEffect(_tile);
@@ -186,7 +186,7 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{
-			b.DamageTotalMult += 0.100000001;
+			b.DamageTotalMult += 0.1;
 		}
 
 		this.m.ActionPoints = b.ActionPoints;
@@ -198,8 +198,8 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
 		body.setBrush("bust_unhold_body_02");
-		body.varySaturation(0.100000001);
-		body.varyColor(0.0900000036, 0.0900000036, 0.0900000036);
+		body.varySaturation(0.1);
+		body.varyColor(0.09, 0.09, 0.09);
 		local injury_body = this.addSprite("injury");
 		injury_body.Visible = false;
 		injury_body.setBrush("bust_unhold_02_injured");
@@ -208,7 +208,7 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.649999976;
+		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));
 		this.setSpriteOffset("status_stunned", this.createVec(0, 10));
 		this.setSpriteOffset("arrow", this.createVec(0, 10));

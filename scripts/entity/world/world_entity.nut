@@ -426,15 +426,15 @@ this.world_entity <- {
 		local p = this.World.State.getPlayer() != null ? this.World.State.getPlayer().getStrength() : 33;
 		local s = p / (v * 1.0);
 
-		if (s >= 0.850000024 && s <= 1.14999998)
+		if (s >= 0.85 && s <= 1.15)
 		{
 			return "Even";
 		}
-		else if (s >= 0.699999988 && s < 0.850000024)
+		else if (s >= 0.7 && s < 0.85)
 		{
 			return "Challenging";
 		}
-		else if (s >= 0.5 && s < 0.699999988)
+		else if (s >= 0.5 && s < 0.7)
 		{
 			return "Deadly";
 		}
@@ -442,11 +442,11 @@ this.world_entity <- {
 		{
 			return "Impossible";
 		}
-		else if (s >= 1.14999998 && s <= 1.29999995)
+		else if (s >= 1.15 && s <= 1.3)
 		{
 			return "Slightly Weaker";
 		}
-		else if (s >= 1.29999995 && s <= 1.5)
+		else if (s >= 1.3 && s <= 1.5)
 		{
 			return "Weaker";
 		}

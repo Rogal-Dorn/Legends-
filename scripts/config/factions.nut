@@ -2,7 +2,7 @@ local gt = this.getroottable();
 gt.Const.Factions <- {
 	GlobalMinDelay = 4.0,
 	BuildCampTries = 1,
-	RelationDecayPerDay = 0.330000013,
+	RelationDecayPerDay = 0.33,
 	CyclesOnNewCampaign = 2000,
 	NeutralColor = this.createColor("#ffffff"),
 	HostileColor = this.createColor("#e57878"),

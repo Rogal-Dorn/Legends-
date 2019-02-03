@@ -39,7 +39,7 @@ this.perk_ironside <- this.inherit("scripts/skills/skill", {
 			Actor = this.m.Container.getActor()
 		};
 		this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 1, this.isOpponent, this.result);
-		return this.result.Opponents * 0.0500000007;
+		return this.result.Opponents * 0.05;
 	}
 
 	function onUpdate( _properties )

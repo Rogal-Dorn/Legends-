@@ -49,7 +49,7 @@ this.pierced_lung_injury <- this.inherit("scripts/skills/injury/injury", {
 			return;
 		}
 
-		_properties.StaminaMult *= 0.400000006;
+		_properties.StaminaMult *= 0.4;
 	}
 
 });

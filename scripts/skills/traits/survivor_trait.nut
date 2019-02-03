@@ -44,7 +44,7 @@ this.survivor_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function onUpdate( _properties )
 	{
-		_properties.SurviveWithInjuryChanceMult *= 2.72000003;
+		_properties.SurviveWithInjuryChanceMult *= 2.72;
 	}
 
 });

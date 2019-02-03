@@ -12,7 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.UndeadScourge <- [
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -32,7 +32,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -52,7 +52,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -72,7 +72,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -92,7 +92,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -112,7 +112,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -132,7 +132,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -152,7 +152,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -176,7 +176,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_01",
@@ -200,7 +200,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -224,7 +224,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -244,7 +244,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -264,7 +264,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -284,7 +284,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -308,7 +308,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -332,7 +332,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -352,7 +352,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -372,7 +372,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -400,7 +400,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -428,7 +428,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -456,7 +456,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -476,7 +476,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -496,7 +496,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -516,7 +516,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -540,7 +540,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -560,7 +560,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -588,7 +588,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -612,7 +612,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -636,7 +636,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -660,7 +660,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -692,7 +692,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -716,7 +716,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -744,7 +744,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -772,7 +772,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -792,7 +792,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -812,7 +812,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -836,7 +836,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -856,7 +856,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -884,7 +884,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -904,7 +904,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -928,7 +928,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -952,7 +952,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -980,7 +980,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1008,7 +1008,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1036,7 +1036,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1064,7 +1064,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1100,7 +1100,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1128,7 +1128,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1160,7 +1160,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1192,7 +1192,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1228,7 +1228,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1256,7 +1256,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1292,7 +1292,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1328,7 +1328,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1360,7 +1360,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1400,7 +1400,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1432,7 +1432,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1464,7 +1464,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1496,7 +1496,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1528,7 +1528,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1564,7 +1564,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1592,7 +1592,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1620,7 +1620,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1656,7 +1656,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1692,7 +1692,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1716,7 +1716,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1740,7 +1740,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1764,7 +1764,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1788,7 +1788,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_04",
@@ -1824,7 +1824,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1840,7 +1840,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1860,7 +1860,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_02",
@@ -1884,7 +1884,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1904,7 +1904,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1924,7 +1924,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1944,7 +1944,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1964,7 +1964,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -1988,7 +1988,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -2008,7 +2008,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_03",
@@ -2036,7 +2036,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_skeleton_02",
@@ -2060,7 +2060,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_01",
@@ -2084,7 +2084,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_01",
@@ -2108,7 +2108,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_01",
@@ -2136,7 +2136,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_01",
@@ -2168,7 +2168,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_01",
@@ -2196,7 +2196,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_01",
@@ -2228,7 +2228,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_02",
@@ -2248,7 +2248,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_01",
@@ -2268,7 +2268,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_02",
@@ -2288,7 +2288,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_02",
@@ -2308,7 +2308,7 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_vampire_02",
@@ -2328,9 +2328,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2348,9 +2348,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2368,9 +2368,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2388,9 +2388,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2408,9 +2408,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2428,9 +2428,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2448,9 +2448,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2468,9 +2468,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2492,9 +2492,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2516,9 +2516,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2536,9 +2536,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2556,9 +2556,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2576,9 +2576,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2600,9 +2600,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2624,9 +2624,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2652,9 +2652,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2676,9 +2676,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2700,9 +2700,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2724,9 +2724,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2748,9 +2748,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2764,9 +2764,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2780,9 +2780,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2804,9 +2804,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2824,9 +2824,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2844,9 +2844,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2872,9 +2872,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2892,9 +2892,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2916,9 +2916,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2940,9 +2940,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2968,9 +2968,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2996,9 +2996,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -3016,9 +3016,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -3036,9 +3036,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -3056,9 +3056,9 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
-		VisionMult = 0.800000012,
+		VisionMult = 0.8,
 		Body = "figure_zombie_03",
 		Troops = [
 			{

@@ -69,7 +69,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		local r = this.Math.rand(100, 200) * 0.00999999978;
+		local r = this.Math.rand(100, 200) * 0.01;
 		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, this.Const.World.Spawn.NobleCaravan, r * 100);
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);

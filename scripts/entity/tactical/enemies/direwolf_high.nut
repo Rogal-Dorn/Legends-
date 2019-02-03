@@ -16,7 +16,7 @@ this.direwolf_high <- this.inherit("scripts/entity/tactical/enemies/direwolf", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.FrenziedDirewolf);
 		b.IsAffectedByNight = false;
-		b.DamageTotalMult = 1.20000005;
+		b.DamageTotalMult = 1.2;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

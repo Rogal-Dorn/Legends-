@@ -28,7 +28,7 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local value = this.Math.round(this.Math.minf(0.5, this.getContainer().getActor().getCurrentProperties().Bravery * 0.00499999989) * 100);
+		local value = this.Math.round(this.Math.minf(0.5, this.getContainer().getActor().getCurrentProperties().Bravery * 0.005) * 100);
 		local ret = [
 			{
 				id = 1,

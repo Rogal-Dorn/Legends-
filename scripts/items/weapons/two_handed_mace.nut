@@ -25,7 +25,7 @@ this.two_handed_mace <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -14;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 75;
-		this.m.ArmorDamageMult = 1.14999998;
+		this.m.ArmorDamageMult = 1.15;
 		this.m.DirectDamageMult = 0.5;
 		this.m.ChanceToHitHead = 0;
 	}

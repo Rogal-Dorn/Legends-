@@ -25,8 +25,8 @@ this.rhomphaia <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 65;
-		this.m.ArmorDamageMult = 1.04999995;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 1.05;
+		this.m.DirectDamageMult = 0.2;
 		this.m.ChanceToHitHead = 5;
 	}
 

@@ -21,8 +21,8 @@ this.named_sword <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.Value = 6400;
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 50;
-		this.m.ArmorDamageMult = 0.850000024;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 0.85;
+		this.m.DirectDamageMult = 0.2;
 		this.randomizeValues();
 	}
 

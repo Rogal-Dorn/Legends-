@@ -46,7 +46,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 	function onInit()
 	{
 		this.attached_location.onInit();
-		this.getSprite("body").Scale = 0.899999976;
+		this.getSprite("body").Scale = 0.9;
 	}
 
 });

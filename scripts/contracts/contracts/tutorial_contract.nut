@@ -239,7 +239,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				e.getBaseProperties().MeleeSkill = -200;
 				e.getBaseProperties().RangedSkill = 0;
 				e.getBaseProperties().MeleeDefense = -200;
-				e.getBaseProperties().DamageTotalMult = 0.100000001;
+				e.getBaseProperties().DamageTotalMult = 0.1;
 				e.getBaseProperties().Initiative = 250;
 				e.getSkills().update();
 				e.setHitpoints(5);
@@ -844,26 +844,26 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		local armorSprite = armors[this.Math.rand(0, armors.len() - 1)];
 		local flip = this.Math.rand(0, 1) == 1;
 		local decal = tile.spawnDetail(armorSprite, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.899999976;
-		decal.setBrightness(0.899999976);
+		decal.Scale = 0.9;
+		decal.setBrightness(0.9);
 		decal = tile.spawnDetail("bust_naked_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.899999976;
-		decal.setBrightness(0.899999976);
+		decal.Scale = 0.9;
+		decal.setBrightness(0.9);
 
 		if (this.Math.rand(1, 100) <= 25)
 		{
 			decal = tile.spawnDetail("bust_body_guts_0" + this.Math.rand(1, 3), this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.899999976;
+			decal.Scale = 0.9;
 		}
 		else if (this.Math.rand(1, 100) <= 25)
 		{
 			decal = tile.spawnDetail("bust_head_smashed_01", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.899999976;
+			decal.Scale = 0.9;
 		}
 		else
 		{
 			decal = tile.spawnDetail(armorSprite + "_arrows", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.899999976;
+			decal.Scale = 0.9;
 		}
 
 		local color = this.Const.HairColors.All[this.Math.rand(0, this.Const.HairColors.All.len() - 1)];
@@ -871,21 +871,21 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		local beardSprite = "beard_" + color + "_" + this.Const.Beards.All[this.Math.rand(0, this.Const.Beards.All.len() - 1)];
 		local headSprite = this.Const.Faces.AllMale[this.Math.rand(0, this.Const.Faces.AllMale.len() - 1)];
 		local decal = tile.spawnDetail(headSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.899999976;
-		decal.setBrightness(0.899999976);
+		decal.Scale = 0.9;
+		decal.setBrightness(0.9);
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
 			local decal = tile.spawnDetail(beardSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.899999976;
-			decal.setBrightness(0.899999976);
+			decal.Scale = 0.9;
+			decal.setBrightness(0.9);
 		}
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
 			local decal = tile.spawnDetail(hairSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.899999976;
-			decal.setBrightness(0.899999976);
+			decal.Scale = 0.9;
+			decal.setBrightness(0.9);
 		}
 
 		local pools = this.Math.rand(this.Const.Combat.BloodPoolsAtDeathMin, this.Const.Combat.BloodPoolsAtDeathMax);

@@ -178,7 +178,7 @@ this.ai_swarm_of_insects <- this.inherit("scripts/ai/tactical/behavior", {
 
 		return {
 			Target = bestTarget,
-			Score = bestScore * 0.100000001
+			Score = bestScore * 0.1
 		};
 	}
 

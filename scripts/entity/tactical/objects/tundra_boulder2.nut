@@ -16,8 +16,8 @@ this.tundra_boulder2 <- this.inherit("scripts/entity/tactical/entity", {
 		local bottom = this.addSprite("bottom");
 		bottom.setBrush("tundra_stone_02_bottom");
 		bottom.setHorizontalFlipping(flip);
-		bottom.varyColor(0.0299999993, 0.0299999993, 0.0299999993);
-		bottom.Scale = 0.800000012 + this.Math.rand(0, 20) / 100.0;
+		bottom.varyColor(0.03, 0.03, 0.03);
+		bottom.Scale = 0.8 + this.Math.rand(0, 20) / 100.0;
 		local top = this.addSprite("top");
 		top.setBrush("tundra_stone_02_top");
 		top.setHorizontalFlipping(flip);

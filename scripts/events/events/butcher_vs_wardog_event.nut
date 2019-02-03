@@ -6,7 +6,7 @@ this.butcher_vs_wardog_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.butcher_vs_wardog";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_27.png[/img]You hear a yelp and quickly rush to the noise. When you get there, you\'re not sure whether it was man or dog that produced it. %butcher% the butcher is holding a cleaver up and a wardog is rearing beneath him, both sides ready to lunge. The man sees you and quickly sweeps the weapon behind his back. The hound takes a squat and throws some puppy eyes your way. Raising an eyebrow, you try not to make sense of the scene.%SPEECH_ON%Play nice now.%SPEECH_OFF%The butcher scoffs.%SPEECH_ON%Oy\', me and the bitch were just having a talk that\'s all.%SPEECH_OFF%",

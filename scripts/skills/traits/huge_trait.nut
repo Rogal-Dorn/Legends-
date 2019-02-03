@@ -58,7 +58,7 @@ this.huge_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDamageMult *= 1.10000002;
+		_properties.MeleeDamageMult *= 1.1;
 		_properties.MeleeDefense -= 5;
 		_properties.RangedDefense -= 5;
 	}

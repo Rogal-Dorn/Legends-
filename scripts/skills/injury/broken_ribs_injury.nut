@@ -48,7 +48,7 @@ this.broken_ribs_injury <- this.inherit("scripts/skills/injury/injury", {
 			return;
 		}
 
-		_properties.StaminaMult *= 0.600000024;
+		_properties.StaminaMult *= 0.6;
 	}
 
 });

@@ -29,7 +29,7 @@ this.flail_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsShieldRelevant = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 13;
 		this.m.MinRange = 1;

@@ -16,7 +16,7 @@ this.unhold_bog <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{
-			b.DamageTotalMult += 0.100000001;
+			b.DamageTotalMult += 0.1;
 		}
 
 		this.m.ActionPoints = b.ActionPoints;
@@ -28,8 +28,8 @@ this.unhold_bog <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
 		body.setBrush("bust_unhold_body_03");
-		body.varySaturation(0.100000001);
-		body.varyColor(0.0900000036, 0.0900000036, 0.0900000036);
+		body.varySaturation(0.1);
+		body.varyColor(0.09, 0.09, 0.09);
 		local injury_body = this.addSprite("injury");
 		injury_body.Visible = false;
 		injury_body.setBrush("bust_unhold_03_injured");
@@ -38,7 +38,7 @@ this.unhold_bog <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.649999976;
+		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));

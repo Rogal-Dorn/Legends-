@@ -10,7 +10,7 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.creepy_guy";
 		this.m.Title = "At %townname%";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_43.png[/img]While walking the streets of %townname%, you come upon a crowd standing around a hanged man. He must have been of some notoriety: the folks are muscling one another to try and get a turn to cut a toe or finger off as a sort of hanging-heirloom. An old man is quickly elbowed out of the mob. He turns to you, voice raspy, his bony fingers tented like sickly ribs.%SPEECH_ON%Ahh, sellsword are ye? O\'course, I can smell your business, the purchases ye have made. Say, would you do a bit of work for me? I need a number of that dead man\'s fingers and toes. It\'s for m\'work, ye shall see. I\'ll give you five hundred crowns in return for it.%SPEECH_OFF%You ask why he needs that particular man\'s appendages. The crooning, shoulder-cowed man laughs, a heckle if there ever was one.%SPEECH_ON%Aye, good question. The man earned his walk to the hangman\'s noose with a penchant for violence and an unerring strength to see his desires through. The toes and fingers of a simpleton won\'t do. I need a man of uncinched cruelty, and the only one I see right now is swinging by that there rope. So, what say ye? Five hundred crowns, remember?%SPEECH_OFF%",

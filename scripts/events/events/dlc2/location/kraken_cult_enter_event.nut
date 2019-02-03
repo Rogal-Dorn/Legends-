@@ -11,7 +11,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.location.kraken_cult_enter";
 		this.m.Title = "As you approach...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Texts.resize(4);
 		this.m.Texts[0] = "And who are you?";
 		this.m.Texts[1] = "So what all do you know?";

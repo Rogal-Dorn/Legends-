@@ -26,7 +26,7 @@ this.morning_star <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.DirectDamageMult = 0.4;
 	}
 
 	function onEquip()

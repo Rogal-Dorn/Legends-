@@ -182,12 +182,12 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 			if (this.Math.rand(1, 100) <= 50 + steppe * 2)
 			{
 				local d = tile.spawnDetail("world_steppe_transition_0" + this.Math.rand(1, 4), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.NotCompatibleWithRoad);
-				d.setBrightness(0.949999988);
+				d.setBrightness(0.95);
 			}
 			else if (this.Math.rand(1, 100) <= 10)
 			{
 				local d = tile.spawnDetail("world_steppe_brush_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Object, 0);
-				d.Saturation = 0.800000012;
+				d.Saturation = 0.8;
 			}
 		}
 		else if (urban != 0 && this.Math.rand(1, 100) <= 25)

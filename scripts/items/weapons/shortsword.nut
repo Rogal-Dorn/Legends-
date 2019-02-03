@@ -23,7 +23,7 @@ this.shortsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.75;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function onEquip()

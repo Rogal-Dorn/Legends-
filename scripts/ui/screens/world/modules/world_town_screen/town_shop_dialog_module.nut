@@ -133,7 +133,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 
 		local price = (item.getConditionMax() - item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-		local value = item.m.Value * (1.0 - item.getCondition() / item.getConditionMax()) * 0.200000003 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+		local value = item.m.Value * (1.0 - item.getCondition() / item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 		price = this.Math.max(price, value);
 
 		if (this.World.Assets.getMoney() < price)

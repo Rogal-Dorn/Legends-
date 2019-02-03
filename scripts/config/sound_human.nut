@@ -1,7 +1,7 @@
 local gt = this.getroottable();
 gt.Const.HumanSounds <- [
 	{
-		Volume = 1.10000002,
+		Volume = 1.1,
 		NoDamageReceived = [
 			"sounds/humans/0/human_light_01.wav",
 			"sounds/humans/0/human_light_02.wav",
@@ -169,7 +169,7 @@ gt.Const.HumanSounds <- [
 		]
 	},
 	{
-		Volume = 0.899999976,
+		Volume = 0.9,
 		NoDamageReceived = [
 			"sounds/humans/4/human_light_01.wav",
 			"sounds/humans/4/human_light_02.wav",

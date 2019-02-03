@@ -38,7 +38,7 @@ this.crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 48.0;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 60;
-		this.m.ArmorDamageMult = 0.699999988;
+		this.m.ArmorDamageMult = 0.7;
 		this.m.DirectDamageMult = 0.5;
 	}
 

@@ -13,7 +13,7 @@ this.autumn_tree2 <- this.inherit("scripts/entity/tactical/entity", {
 	function onInit()
 	{
 		local hasLeaves = this.Math.rand(1, 100) <= 90;
-		local scale = 0.850000024 + this.Math.rand(0, 15) / 100.0;
+		local scale = 0.85 + this.Math.rand(0, 15) / 100.0;
 		local flip = this.Math.rand(0, 1) == 1;
 		local v = this.Math.rand(2, 5);
 		local rotation = this.Math.rand(-3, 3);

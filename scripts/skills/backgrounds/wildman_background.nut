@@ -237,7 +237,7 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	function onUpdate( _properties )
 	{
 		this.character_background.onUpdate(_properties);
-		_properties.XPGainMult *= 0.850000024;
+		_properties.XPGainMult *= 0.85;
 	}
 
 	function onSerialize( _out )

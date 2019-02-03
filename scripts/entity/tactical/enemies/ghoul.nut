@@ -21,8 +21,8 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.XP = this.Const.Tactical.Actor.Ghoul.XP;
 		this.m.BloodSplatterOffset = this.createVec(0, 0);
 		this.m.DecapitateSplatterOffset = this.createVec(33, -26);
-		this.m.DecapitateBloodAmount = 0.699999988;
-		this.m.BloodPoolScale = 0.699999988;
+		this.m.DecapitateBloodAmount = 0.7;
+		this.m.BloodPoolScale = 0.7;
 		this.m.ConfidentMoraleBrush = "icon_confident_undead";
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
@@ -101,7 +101,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/ghoul_death_fullbelly_02.wav",
 			"sounds/enemies/ghoul_death_fullbelly_03.wav"
 		];
-		this.m.SoundPitch = 1.14999998;
+		this.m.SoundPitch = 1.15;
 		local onArmorHitSounds = this.getItems().getAppearance().ImpactSound;
 		onArmorHitSounds[this.Const.BodyPart.Body] = this.Const.Sound.ArmorLeatherImpact;
 		onArmorHitSounds[this.Const.BodyPart.Head] = this.Const.Sound.ArmorLeatherImpact;
@@ -126,8 +126,8 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = skin.Color;
 			decal.Saturation = skin.Saturation;
-			decal.Scale = 0.899999976;
-			decal.setBrightness(0.899999976);
+			decal.Scale = 0.9;
+			decal.setBrightness(0.9);
 
 			if (_fatalityType == this.Const.FatalityType.Decapitated)
 			{
@@ -140,8 +140,8 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					sprite.Color = skin.Color;
 					sprite.Saturation = skin.Saturation;
-					sprite.Scale = 0.899999976;
-					sprite.setBrightness(0.899999976);
+					sprite.Scale = 0.9;
+					sprite.setBrightness(0.9);
 				}
 			}
 			else
@@ -149,21 +149,21 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 				decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 				decal.Color = skin.Color;
 				decal.Saturation = skin.Saturation;
-				decal.Scale = 0.899999976;
-				decal.setBrightness(0.899999976);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
 			}
 
 			if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
 				decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
-				decal.setBrightness(0.899999976);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
 				decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.899999976;
-				decal.setBrightness(0.899999976);
+				decal.Scale = 0.9;
+				decal.setBrightness(0.9);
 			}
 
 			this.spawnTerrainDropdownEffect(_tile);
@@ -255,7 +255,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		local body = this.addSprite("body");
 		body.setBrush("bust_ghoul_body_01");
 		body.varySaturation(0.25);
-		body.varyColor(0.0599999987, 0.0599999987, 0.0599999987);
+		body.varyColor(0.06, 0.06, 0.06);
 		local head = this.addSprite("head");
 		head.setBrush("bust_ghoul_head_01");
 		head.Saturation = body.Saturation;
@@ -268,7 +268,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		body_blood.setBrush("bust_body_bloodied_02");
 		body_blood.Visible = false;
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.449999988;
+		this.getSprite("status_rooted").Scale = 0.45;
 		this.setSpriteOffset("status_rooted", this.createVec(-4, 7));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/actives/ghoul_claws"));
@@ -293,7 +293,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.m.Size == 2)
 		{
-			this.m.SoundPitch = 1.05999994;
+			this.m.SoundPitch = 1.06;
 			this.getSprite("body").setBrush("bust_ghoul_body_02");
 			this.getSprite("head").setBrush("bust_ghoul_02_head_0" + this.m.Head);
 			this.getSprite("injury").setBrush("bust_ghoul_02_injured");
@@ -329,14 +329,14 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 
 			this.m.DecapitateSplatterOffset = this.createVec(35, -26);
 			this.m.DecapitateBloodAmount = 1.5;
-			this.m.BloodPoolScale = 1.33000004;
-			this.getSprite("status_rooted").Scale = 0.600000024;
-			this.getSprite("status_rooted_back").Scale = 0.600000024;
+			this.m.BloodPoolScale = 1.33;
+			this.getSprite("status_rooted").Scale = 0.6;
+			this.getSprite("status_rooted_back").Scale = 0.6;
 			this.setSpriteOffset("status_rooted", this.createVec(-7, 14));
 			this.setSpriteOffset("status_rooted_back", this.createVec(-7, 14));
 		}
 
-		this.m.SoundPitch = 1.20000005 - this.m.Size * 0.100000001;
+		this.m.SoundPitch = 1.2 - this.m.Size * 0.1;
 		this.m.Skills.update();
 		this.setDirty(true);
 	}
@@ -347,22 +347,22 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.m.Size == 2)
 		{
-			this.getSprite("body").Scale = this.Math.minf(1.0, 0.959999979 + 0.0399999991 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.300000012));
-			this.getSprite("head").Scale = this.Math.minf(1.0, 0.959999979 + 0.0399999991 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.300000012));
-			this.moveSpriteOffset("body", this.createVec(0, -1), this.createVec(0, 0), 0.300000012, this.m.ScaleStartTime);
+			this.getSprite("body").Scale = this.Math.minf(1.0, 0.96 + 0.04 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.3));
+			this.getSprite("head").Scale = this.Math.minf(1.0, 0.96 + 0.04 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.3));
+			this.moveSpriteOffset("body", this.createVec(0, -1), this.createVec(0, 0), 0.3, this.m.ScaleStartTime);
 
-			if (this.moveSpriteOffset("head", this.createVec(0, -1), this.createVec(0, 0), 0.300000012, this.m.ScaleStartTime))
+			if (this.moveSpriteOffset("head", this.createVec(0, -1), this.createVec(0, 0), 0.3, this.m.ScaleStartTime))
 			{
 				this.setRenderCallbackEnabled(false);
 			}
 		}
 		else if (this.m.Size == 3)
 		{
-			this.getSprite("body").Scale = this.Math.minf(1.0, 0.939999998 + 0.0599999987 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.300000012));
-			this.getSprite("head").Scale = this.Math.minf(1.0, 0.939999998 + 0.0599999987 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.300000012));
-			this.moveSpriteOffset("body", this.createVec(0, -1), this.createVec(0, 0), 0.300000012, this.m.ScaleStartTime);
+			this.getSprite("body").Scale = this.Math.minf(1.0, 0.94 + 0.06 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.3));
+			this.getSprite("head").Scale = this.Math.minf(1.0, 0.94 + 0.06 * ((this.Time.getVirtualTimeF() - this.m.ScaleStartTime) / 0.3));
+			this.moveSpriteOffset("body", this.createVec(0, -1), this.createVec(0, 0), 0.3, this.m.ScaleStartTime);
 
-			if (this.moveSpriteOffset("head", this.createVec(0, -1), this.createVec(0, 0), 0.300000012, this.m.ScaleStartTime))
+			if (this.moveSpriteOffset("head", this.createVec(0, -1), this.createVec(0, 0), 0.3, this.m.ScaleStartTime))
 			{
 				this.setRenderCallbackEnabled(false);
 			}

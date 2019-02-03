@@ -64,11 +64,11 @@ this.rebuild_location_action <- this.inherit("scripts/factions/faction_action", 
 	{
 		this.m.Settlement.addSituation(this.new("scripts/entity/world/settlements/situations/rebuilding_effort_situation"));
 		local cooldown = this.World.getTime().SecondsPerDay * this.Math.rand(10, 20);
-		cooldown = cooldown * (1.0 - 0.200000003 * (this.m.Settlement.getSize() - 1));
+		cooldown = cooldown * (1.0 - 0.2 * (this.m.Settlement.getSize() - 1));
 
 		if (this.World.FactionManager.isCivilWar())
 		{
-			cooldown = cooldown * 0.899999976;
+			cooldown = cooldown * 0.9;
 		}
 
 		this.m.Cooldown = cooldown;

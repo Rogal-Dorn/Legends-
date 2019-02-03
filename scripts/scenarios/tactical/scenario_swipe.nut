@@ -14,13 +14,13 @@ this.scenario_swipe <- this.inherit("scripts/scenarios/tactical/scenario_templat
 		clouds.MaxClouds = 20;
 		clouds.MinVelocity = 3.0;
 		clouds.MaxVelocity = 9.0;
-		clouds.MinAlpha = 0.349999994;
-		clouds.MaxAlpha = 0.449999988;
+		clouds.MinAlpha = 0.35;
+		clouds.MaxAlpha = 0.45;
 		clouds.MinScale = 2.0;
 		clouds.MaxScale = 3.0;
 		this.Tactical.getWeather().buildCloudCover(clouds);
 		this.Tactical.getWeather().setAmbientLightingPreset(1);
-		this.Tactical.getWeather().setAmbientLightingSaturation(0.899999976);
+		this.Tactical.getWeather().setAmbientLightingSaturation(0.9);
 		this.Tactical.CameraDirector.addJumpToTileEvent(0, this.Tactical.getTile(4, 14 - 4 / 2), 1, null, null, 0, 0);
 	}
 

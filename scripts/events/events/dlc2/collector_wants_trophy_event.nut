@@ -103,7 +103,7 @@ this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Peddler.getImagePath());
-				_event.m.Reward = this.Math.floor(_event.m.Reward * 1.33000004);
+				_event.m.Reward = this.Math.floor(_event.m.Reward * 1.33);
 			}
 
 		});

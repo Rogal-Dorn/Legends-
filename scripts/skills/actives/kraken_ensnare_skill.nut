@@ -152,7 +152,7 @@ this.kraken_ensnare_skill <- this.inherit("scripts/skills/skill", {
 
 					_data.User.m.IsAbleToDie = true;
 					_data.User.setDirty(true);
-					_data.User.riseFromGround(0.100000001);
+					_data.User.riseFromGround(0.1);
 				}
 			}
 		}, _data);

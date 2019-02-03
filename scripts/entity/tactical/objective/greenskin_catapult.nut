@@ -66,7 +66,7 @@ this.greenskin_catapult <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		local body = this.addSprite("body");
 		body.setBrush("greenskin_catapult_bottom");
-		body.varySaturation(0.100000001);
+		body.varySaturation(0.1);
 		local top = this.addSprite("top");
 		top.setBrush("greenskin_catapult_top");
 		this.setSpriteOcclusion("top", 1, 2, -3);

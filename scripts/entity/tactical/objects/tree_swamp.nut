@@ -15,12 +15,12 @@ this.tree_swamp <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("swamp_tree_01");
 		body.setHorizontalFlipping(this.Math.rand(0, 100) < 50);
-		body.varyColor(0.0700000003, 0.0700000003, 0.0700000003);
+		body.varyColor(0.07, 0.07, 0.07);
 		body.Rotation = this.Math.rand(-10, 10);
 
 		if (this.Math.rand(0, 100) < 50)
 		{
-			body.Scale = 0.899999976 + this.Math.rand(0, 10) / 100.0;
+			body.Scale = 0.9 + this.Math.rand(0, 10) / 100.0;
 		}
 	}
 

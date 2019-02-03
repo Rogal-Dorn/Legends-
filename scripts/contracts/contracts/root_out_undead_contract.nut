@@ -13,11 +13,11 @@ this.root_out_undead_contract <- this.inherit("scripts/contracts/contract", {
 
 		if (r <= 70)
 		{
-			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.01;
 		}
 		else
 		{
-			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.01;
 		}
 
 		this.m.Type = "contract.root_out_undead";
@@ -100,7 +100,7 @@ this.root_out_undead_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.addUnitsToEntity(this.Contract.m.Objective1, this.Contract.m.Objective1.getDefenderSpawnList(), 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				this.Contract.m.Objective1.setDiscovered(true);
 
-				if (this.Contract.getDifficultyMult() <= 1.14999998 && !this.Contract.m.Objective1.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Objective1.getTags().get("IsEventLocation"))
 				{
 					this.Contract.m.Objective1.getLoot().clear();
 				}
@@ -112,7 +112,7 @@ this.root_out_undead_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.addUnitsToEntity(this.Contract.m.Objective2, this.Contract.m.Objective2.getDefenderSpawnList(), 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				this.Contract.m.Objective2.setDiscovered(true);
 
-				if (this.Contract.getDifficultyMult() <= 1.14999998 && !this.Contract.m.Objective2.getTags().get("IsEventLocation"))
+				if (this.Contract.getDifficultyMult() <= 1.15 && !this.Contract.m.Objective2.getTags().get("IsEventLocation"))
 				{
 					this.Contract.m.Objective2.getLoot().clear();
 				}

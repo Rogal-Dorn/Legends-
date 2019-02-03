@@ -90,13 +90,13 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 
 			if (r == 1)
 			{
-				local f = this.Math.rand(110, 130) * 0.00999999978;
+				local f = this.Math.rand(110, 130) * 0.01;
 				this.m.RegularDamage = this.Math.round(this.m.RegularDamage * f);
 				this.m.RegularDamageMax = this.Math.round(this.m.RegularDamageMax * f);
 			}
 			else if (r == 2)
 			{
-				this.m.ArmorDamageMult = this.m.ArmorDamageMult + this.Math.rand(15, 35) * 0.00999999978;
+				this.m.ArmorDamageMult = this.m.ArmorDamageMult + this.Math.rand(15, 35) * 0.01;
 			}
 			else if (r == 3)
 			{
@@ -104,20 +104,20 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 			}
 			else if (r == 5)
 			{
-				this.m.DirectDamageAdd = this.Math.rand(8, 16) * 0.00999999978;
+				this.m.DirectDamageAdd = this.Math.rand(8, 16) * 0.01;
 			}
 			else if (r == 6)
 			{
-				this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(80, 140) * 0.00999999978) * 1.0;
+				this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(80, 140) * 0.01) * 1.0;
 				this.m.ConditionMax = this.m.Condition;
 			}
 			else if (r == 7)
 			{
-				this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(50, 90) * 0.00999999978);
+				this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(50, 90) * 0.01);
 			}
 			else if (r == 8 && this.m.ShieldDamage > 0)
 			{
-				this.m.ShieldDamage = this.Math.round(this.m.ShieldDamage * this.Math.rand(110, 130) * 0.00999999978);
+				this.m.ShieldDamage = this.Math.round(this.m.ShieldDamage * this.Math.rand(110, 130) * 0.01);
 			}
 		}
 	}

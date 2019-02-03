@@ -54,7 +54,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Flee] = 1.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 1.5;
-		this.m.SoundPitch = this.Math.rand(95, 105) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
 		this.getTags().add("body_immune_to_acid");
 		this.getTags().add("head_immune_to_acid");
 		this.getTags().add("lindwurm");
@@ -84,14 +84,14 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail("bust_lindwurm_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = body.Color;
 			decal.Saturation = body.Saturation;
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
 			{
 				decal = _tile.spawnDetail("bust_lindwurm_head_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 				decal.Color = head.Color;
 				decal.Saturation = head.Saturation;
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
 			{
@@ -101,18 +101,18 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(0, 0), 0.0, "bust_lindwurm_head_01_bloodpool");
 				decap[0].Color = head.Color;
 				decap[0].Saturation = head.Saturation;
-				decap[0].Scale = 0.949999988;
+				decap[0].Scale = 0.95;
 			}
 
 			if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
 				decal = _tile.spawnDetail("bust_lindwurm_body_01_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
 				decal = _tile.spawnDetail("bust_lindwurm_body_01_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 			}
 
 			this.spawnTerrainDropdownEffect(_tile);
@@ -229,7 +229,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 170)
 		{
 			b.MeleeSkill += 10;
-			b.DamageTotalMult += 0.100000001;
+			b.DamageTotalMult += 0.1;
 		}
 
 		this.m.ActionPoints = b.ActionPoints;
@@ -243,12 +243,12 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varySaturation(0.200000003);
+			body.varySaturation(0.2);
 		}
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varyColor(0.0799999982, 0.0799999982, 0.0799999982);
+			body.varyColor(0.08, 0.08, 0.08);
 		}
 
 		local head = this.addSprite("head");
@@ -261,7 +261,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		local body_blood = this.addSprite("body_blood");
 		body_blood.Visible = false;
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.629999995;
+		this.getSprite("status_rooted").Scale = 0.63;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 15));
 		this.setSpriteOffset("status_stunned", this.createVec(-5, 30));
 		this.setSpriteOffset("arrow", this.createVec(-5, 30));

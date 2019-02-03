@@ -47,7 +47,7 @@ this.brain_damage_injury <- this.inherit("scripts/skills/injury_permanent/perman
 
 	function onUpdate( _properties )
 	{
-		_properties.BraveryMult *= 1.14999998;
+		_properties.BraveryMult *= 1.15;
 		_properties.XPGainMult *= 0.75;
 		_properties.InitiativeMult *= 0.75;
 	}

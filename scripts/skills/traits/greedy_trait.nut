@@ -33,7 +33,7 @@ this.greedy_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DailyWageMult *= 1.14999998;
+		_properties.DailyWageMult *= 1.15;
 	}
 
 });

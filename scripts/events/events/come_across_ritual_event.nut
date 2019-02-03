@@ -6,7 +6,7 @@ this.come_across_ritual_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.come_across_ritual";
 		this.m.Title = "Along the way...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_33.png[/img]It\'s not a rare sight to find a dead body on your journey. This one, though, is rather unusual. %randombrother% takes a long look.%SPEECH_ON%What\'s that on his chest?%SPEECH_OFF%You crouch down and throw back the corpse\'s shirt. Scars run lengthwise all about his body, drawn in very familiar shapes: forests, rivers, mountains. %randombrother% walks up.%SPEECH_ON%Ain\'t that a sight. Wolves do that or something?%SPEECH_OFF%You stand back up.%SPEECH_ON%I think he did it to himself.%SPEECH_OFF%Bloody footprints lead away from the scene...",

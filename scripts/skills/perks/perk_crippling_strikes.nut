@@ -15,7 +15,7 @@ this.perk_crippling_strikes <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.ThresholdToInflictInjuryMult *= 0.660000026;
+		_properties.ThresholdToInflictInjuryMult *= 0.66;
 	}
 
 });

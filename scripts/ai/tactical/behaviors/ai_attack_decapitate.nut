@@ -102,7 +102,7 @@ this.ai_attack_decapitate <- this.inherit("scripts/ai/tactical/behavior", {
 				continue;
 			}
 
-			if (target.getHitpointsPct() > 0.800000012)
+			if (target.getHitpointsPct() > 0.8)
 			{
 				continue;
 			}

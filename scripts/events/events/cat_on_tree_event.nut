@@ -8,7 +8,7 @@ this.cat_on_tree_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.cat_on_tree";
 		this.m.Title = "At %townname%";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_97.png[/img]You find a boy and girl looking up a tree. The girl throws her hands up.%SPEECH_ON%Alright, stay there until you die! See if I care!%SPEECH_OFF%The boy, spotting you, asks if perhaps you could help them get their cat out of the tree. Looking up, you do see a feline flopped over a branch, basking in the sun.",

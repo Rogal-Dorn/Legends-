@@ -24,8 +24,8 @@ this.named_mace <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 55;
-		this.m.ArmorDamageMult = 1.10000002;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.ArmorDamageMult = 1.1;
+		this.m.DirectDamageMult = 0.4;
 		this.randomizeValues();
 	}
 

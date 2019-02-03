@@ -4,7 +4,7 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.oracle";
 		this.m.Title = "Along the road...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_11.png[/img]{You come across a goatskin tent beside the road. The hide tarps have been dipped in purple dyes and there are fresh daisies twisted into the knots of matted goat hair. An old woman with a hunchback stands outside with her hands clasped and hanging. She sizes you up and down with withered eyes.%SPEECH_ON%Ah, a sellsword. No, a captain of sellswords. Or perhaps something more. You smell of a strange odor, and not just that of a man. Do you wish to have your fortune told?%SPEECH_OFF%She gestures to inside the tent. You see a number of long, cards laid facedown across the table.}",

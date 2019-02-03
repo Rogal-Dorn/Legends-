@@ -7,7 +7,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.cultist_finale";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_33.png[/img]%cultist% enters your tent and a strong, brisk wind chases in after him, rearing up your scrolls and other notes. He walks forward, hands crossed before him, a rather priestly look to his approach.%SPEECH_ON%Sir, I\'ve been spoken to and it is a grave matter which I\'ve been given responsibility for.%SPEECH_OFF%You ask the man who the hell he\'s talking about. The cultist bows forward as though the words weighed his tongue down just so.%SPEECH_ON%Davkul, sir.%SPEECH_OFF%Ah, of course, who else? You tell the man to explain what it is he needs. The man responds.%SPEECH_ON%No, not I, Davkul. Davkul is the one in need - and he needs blood, a sacrifice.%SPEECH_OFF%You tell the man the company can stop at the next town and get some chickens, lambs, or whatever else he needs if it\'s so important. %cultist% shakes his head.%SPEECH_ON%The blood of some impish beast? No, he demands the blood of a warrior. A true fighting spirit and he has trusted me to find a man of such import - and that I have.%SPEECH_OFF%The cultist straightens up, the tent\'s candlelight suddenly fickle and uneasy.%SPEECH_ON%Davkul demands the blood of %sacrifice%.%SPEECH_OFF%",

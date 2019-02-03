@@ -266,7 +266,7 @@ this.ai_attack_bow <- this.inherit("scripts/ai/tactical/behavior", {
 						if (pick <= score)
 						{
 							this.m.SelectedSkill = bestSkills[i].Skill;
-							return this.Math.maxf(0.100000001, bestSkills[i].Score + this.Math.maxf(0.0, bestScore));
+							return this.Math.maxf(0.1, bestSkills[i].Score + this.Math.maxf(0.0, bestScore));
 						}
 
 						pick = pick - score;

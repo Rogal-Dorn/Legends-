@@ -21,7 +21,7 @@ this.kraken_move_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/tentacle_appear_04.wav",
 			"sounds/enemies/tentacle_appear_05.wav"
 		];
-		this.m.SoundVolume = 0.660000026;
+		this.m.SoundVolume = 0.66;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;

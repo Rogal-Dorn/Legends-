@@ -26,8 +26,8 @@ this.masterwork_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 110.0;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 75;
-		this.m.ArmorDamageMult = 0.649999976;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.ArmorDamageMult = 0.65;
+		this.m.DirectDamageMult = 0.35;
 		this.m.AdditionalAccuracy = 5;
 	}
 

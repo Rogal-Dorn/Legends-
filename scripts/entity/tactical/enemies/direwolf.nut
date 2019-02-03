@@ -72,9 +72,9 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/werewolf_fatigue_06.wav",
 			"sounds/enemies/werewolf_fatigue_07.wav"
 		];
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] = 0.800000012;
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.699999988;
-		this.m.SoundPitch = this.Math.rand(95, 105) * 0.00999999978;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] = 0.8;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.7;
+		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/direwolf_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -83,7 +83,7 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.playSound(this.Const.Sound.ActorEvent.Attack, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] * (this.Math.rand(75, 100) * 0.00999999978), this.m.SoundPitch * 1.14999998);
+			this.playSound(this.Const.Sound.ActorEvent.Attack, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Attack] * (this.Math.rand(75, 100) * 0.01), this.m.SoundPitch * 1.15);
 		}
 	}
 
@@ -110,19 +110,19 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail("bust_direwolf_01_body_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = body.Color;
 			decal.Saturation = body.Saturation;
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
 			{
 				decal = _tile.spawnDetail(head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 				decal.Color = head.Color;
 				decal.Saturation = head.Saturation;
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 
 				if (head_frenzy.HasBrush)
 				{
 					decal = _tile.spawnDetail(head_frenzy.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-					decal.Scale = 0.949999988;
+					decal.Scale = 0.95;
 				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
@@ -139,23 +139,23 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(0, 0), 0.0, "bust_direwolf_head_bloodpool");
 				decap[0].Color = head.Color;
 				decap[0].Saturation = head.Saturation;
-				decap[0].Scale = 0.949999988;
+				decap[0].Scale = 0.95;
 
 				if (head_frenzy.HasBrush)
 				{
-					decap[1].Scale = 0.949999988;
+					decap[1].Scale = 0.95;
 				}
 			}
 
 			if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
 				decal = _tile.spawnDetail("bust_direwolf_01_body_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
 				decal = _tile.spawnDetail("bust_direwolf_01_body_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 			}
 
 			this.spawnTerrainDropdownEffect(_tile);
@@ -220,12 +220,12 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varySaturation(0.200000003);
+			body.varySaturation(0.2);
 		}
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varyColor(0.0500000007, 0.0500000007, 0.0500000007);
+			body.varyColor(0.05, 0.05, 0.05);
 		}
 
 		local head = this.addSprite("head");
@@ -239,7 +239,7 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 		local body_blood = this.addSprite("body_blood");
 		body_blood.Visible = false;
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.540000021;
+		this.getSprite("status_rooted").Scale = 0.54;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 0));
 		this.m.Skills.add(this.new("scripts/skills/actives/werewolf_bite"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));

@@ -98,7 +98,7 @@ this.move_tail_skill <- this.inherit("scripts/skills/skill", {
 		if (this.Const.Tactical.TerrainMovementSound[_entity.getTile().Subtype].len() != 0)
 		{
 			local sound = this.Const.Tactical.TerrainMovementSound[_entity.getTile().Subtype][this.Math.rand(0, this.Const.Tactical.TerrainMovementSound[_entity.getTile().Subtype].len() - 1)];
-			this.Sound.play("sounds/" + sound.File, sound.Volume * this.Const.Sound.Volume.TacticalMovement * this.Math.rand(90, 100) * 0.00999999978, _entity.getPos(), sound.Pitch * this.Math.rand(95, 105) * 0.00999999978);
+			this.Sound.play("sounds/" + sound.File, sound.Volume * this.Const.Sound.Volume.TacticalMovement * this.Math.rand(90, 100) * 0.01, _entity.getPos(), sound.Pitch * this.Math.rand(95, 105) * 0.01);
 		}
 	}
 

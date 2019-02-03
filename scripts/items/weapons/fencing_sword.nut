@@ -23,7 +23,7 @@ this.fencing_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.75;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function onEquip()

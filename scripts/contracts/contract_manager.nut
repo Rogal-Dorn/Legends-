@@ -120,7 +120,7 @@ this.contract_manager <- {
 		if (_isNewContract)
 		{
 			_contract.m.ID = this.generateContractID();
-			_contract.m.TimeOut += this.World.getTime().SecondsPerDay * (this.Math.rand(0, 200) - 100) * 0.00999999978;
+			_contract.m.TimeOut += this.World.getTime().SecondsPerDay * (this.Math.rand(0, 200) - 100) * 0.01;
 		}
 
 		this.logDebug("contract added: " + _contract.getName());

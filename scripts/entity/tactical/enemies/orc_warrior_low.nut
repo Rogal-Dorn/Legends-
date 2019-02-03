@@ -8,7 +8,7 @@ this.orc_warrior_low <- this.inherit("scripts/entity/tactical/enemies/orc_warrio
 	function onInit()
 	{
 		this.orc_warrior.onInit();
-		this.m.BaseProperties.DamageTotalMult -= 0.100000001;
+		this.m.BaseProperties.DamageTotalMult -= 0.1;
 		this.m.Skills.update();
 	}
 

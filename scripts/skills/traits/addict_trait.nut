@@ -120,11 +120,11 @@ this.addict_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 		if (isAffected)
 		{
-			_properties.BraveryMult *= 0.899999976;
-			_properties.MeleeSkillMult *= 0.899999976;
-			_properties.RangedSkillMult *= 0.899999976;
-			_properties.MeleeDefenseMult *= 0.899999976;
-			_properties.RangedDefenseMult *= 0.899999976;
+			_properties.BraveryMult *= 0.9;
+			_properties.MeleeSkillMult *= 0.9;
+			_properties.RangedSkillMult *= 0.9;
+			_properties.MeleeDefenseMult *= 0.9;
+			_properties.RangedDefenseMult *= 0.9;
 		}
 	}
 

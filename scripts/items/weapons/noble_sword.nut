@@ -22,8 +22,8 @@ this.noble_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 3200;
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 50;
-		this.m.ArmorDamageMult = 0.850000024;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 0.85;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function onEquip()

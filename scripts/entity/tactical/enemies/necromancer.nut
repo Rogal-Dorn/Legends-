@@ -11,7 +11,7 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
 		this.m.ConfidentMoraleBrush = "icon_confident_undead";
-		this.m.SoundPitch = 0.899999976;
+		this.m.SoundPitch = 0.9;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/necromancer_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -31,7 +31,7 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_undead");
 		this.getSprite("head").Color = this.createColor("#ffffff");
 		this.getSprite("head").Saturation = 1.0;
-		this.getSprite("body").Saturation = 0.600000024;
+		this.getSprite("body").Saturation = 0.6;
 		this.m.Skills.add(this.new("scripts/skills/actives/raise_undead"));
 		this.m.Skills.add(this.new("scripts/skills/actives/possess_undead_skill"));
 	}

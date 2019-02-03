@@ -22,7 +22,7 @@ this.named_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.Value = 3800;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 60;
-		this.m.ArmorDamageMult = 0.899999976;
+		this.m.ArmorDamageMult = 0.9;
 		this.m.DirectDamageMult = 0.25;
 		this.randomizeValues();
 	}

@@ -71,15 +71,15 @@ this.berserker_mushrooms_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDefenseMult *= 1.0 - 0.100000001 * this.m.TurnsLeft;
-		_properties.RangedDefenseMult *= 1.0 - 0.100000001 * this.m.TurnsLeft;
+		_properties.MeleeDefenseMult *= 1.0 - 0.1 * this.m.TurnsLeft;
+		_properties.RangedDefenseMult *= 1.0 - 0.1 * this.m.TurnsLeft;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill.isAttack() && !_skill.isRanged())
 		{
-			_properties.DamageTotalMult *= 1.0 + 0.100000001 * this.m.TurnsLeft;
+			_properties.DamageTotalMult *= 1.0 + 0.1 * this.m.TurnsLeft;
 		}
 	}
 
@@ -94,12 +94,12 @@ this.berserker_mushrooms_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Actor, this.getContainer().getActor().getPos(), this.Math.rand(100, 115) * 0.00999999978 * this.getContainer().getActor().getSoundPitch());
+		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Actor, this.getContainer().getActor().getPos(), this.Math.rand(100, 115) * 0.01 * this.getContainer().getActor().getSoundPitch());
 	}
 
 	function onTargetMissed( _skill, _targetEntity )
 	{
-		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Actor, this.getContainer().getActor().getPos(), this.Math.rand(100, 115) * 0.00999999978 * this.getContainer().getActor().getSoundPitch());
+		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Actor, this.getContainer().getActor().getPos(), this.Math.rand(100, 115) * 0.01 * this.getContainer().getActor().getSoundPitch());
 	}
 
 	function onCombatFinished()

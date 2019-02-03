@@ -4,12 +4,12 @@ this.kraken_agent <- this.inherit("scripts/ai/tactical/agent", {
 	{
 		this.agent.create();
 		this.m.ID = this.Const.AI.Agent.ID.Kraken;
-		this.m.Properties.TargetPriorityHitchanceMult = 0.349999994;
+		this.m.Properties.TargetPriorityHitchanceMult = 0.35;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.25;
-		this.m.Properties.TargetPriorityRandomMult = 0.150000006;
+		this.m.Properties.TargetPriorityRandomMult = 0.15;
 		this.m.Properties.TargetPriorityDamageMult = 0.25;
 		this.m.Properties.TargetPriorityFleeingMult = 0.75;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.100000001;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityArmorMult = 1.0;
 		this.m.Properties.OverallDefensivenessMult = 0.0;
 		this.m.Properties.OverallFormationMult = 0.0;

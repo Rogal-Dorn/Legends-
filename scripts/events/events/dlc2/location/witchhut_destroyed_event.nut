@@ -8,7 +8,7 @@ this.witchhut_destroyed_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.location.witchhut_destroyed";
 		this.m.Title = "After the battle";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Texts.resize(7);
 		this.m.Texts[0] = "Who are you?";
 		this.m.Texts[1] = "How do you know who I am?";

@@ -77,7 +77,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 			local decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 			decal.Color = sprite_body.Color;
 			decal.Saturation = sprite_body.Saturation;
-			decal.Scale = 0.899999976;
+			decal.Scale = 0.9;
 
 			if (appearance.CorpseArmor != "")
 			{
@@ -93,7 +93,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				}
 
 				local decal = _tile.spawnDetail(armorDecal, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.899999976;
+				decal.Scale = 0.9;
 			}
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
@@ -103,7 +103,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 					local decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 					decal.Color = sprite_head.Color;
 					decal.Saturation = sprite_head.Saturation;
-					decal.Scale = 0.899999976;
+					decal.Scale = 0.9;
 				}
 
 				if (!appearance.HideBeard && !appearance.HideCorpseHead && sprite_beard.HasBrush)
@@ -111,14 +111,14 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 					local decal = _tile.spawnDetail(sprite_beard.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 					decal.Color = sprite_beard.Color;
 					decal.Saturation = sprite_beard.Saturation;
-					decal.Scale = 0.899999976;
+					decal.Scale = 0.9;
 
 					if (sprite_beard_top.HasBrush)
 					{
 						local decal = _tile.spawnDetail(sprite_beard_top.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 						decal.Color = sprite_beard.Color;
 						decal.Saturation = sprite_beard.Saturation;
-						decal.Scale = 0.899999976;
+						decal.Scale = 0.9;
 					}
 				}
 
@@ -127,7 +127,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 					local decal = _tile.spawnDetail(sprite_face.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 					decal.Color = sprite_face.Color;
 					decal.Saturation = sprite_face.Saturation;
-					decal.Scale = 0.899999976;
+					decal.Scale = 0.9;
 				}
 
 				if (!appearance.HideHair && !appearance.HideCorpseHead && sprite_hair.HasBrush)
@@ -135,13 +135,13 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 					local decal = _tile.spawnDetail(sprite_hair.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 					decal.Color = sprite_hair.Color;
 					decal.Saturation = sprite_hair.Saturation;
-					decal.Scale = 0.899999976;
+					decal.Scale = 0.9;
 				}
 
 				if (appearance.HelmetCorpse != "")
 				{
 					local decal = _tile.spawnDetail(appearance.HelmetCorpse, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Scale = 0.899999976;
+					decal.Scale = 0.9;
 				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
@@ -185,7 +185,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					decap[idx].Color = sprite_head.Color;
 					decap[idx].Saturation = sprite_head.Saturation;
-					decap[idx].Scale = 0.899999976;
+					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
 					idx = ++idx;
 				}
@@ -194,14 +194,14 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					decap[idx].Color = sprite_beard.Color;
 					decap[idx].Saturation = sprite_beard.Saturation;
-					decap[idx].Scale = 0.899999976;
+					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
 					idx = ++idx;
 				}
 
 				if (!appearance.HideCorpseHead)
 				{
-					decap[idx].Scale = 0.899999976;
+					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
 					idx = ++idx;
 				}
@@ -210,14 +210,14 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					decap[idx].Color = sprite_hair.Color;
 					decap[idx].Saturation = sprite_hair.Saturation;
-					decap[idx].Scale = 0.899999976;
+					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
 					idx = ++idx;
 				}
 
 				if (appearance.HelmetCorpse.len() != 0)
 				{
-					decap[idx].Scale = 0.899999976;
+					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
 					idx = ++idx;
 				}
@@ -226,7 +226,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					decap[idx].Color = sprite_beard.Color;
 					decap[idx].Saturation = sprite_beard.Saturation;
-					decap[idx].Scale = 0.899999976;
+					decap[idx].Scale = 0.9;
 					decap[idx].setHorizontalFlipping(true);
 				}
 			}
@@ -251,7 +251,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				if (this.doesBrushExist(armorDecal))
 				{
 					decal = _tile.spawnDetail(armorDecal, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Saturation = 0.850000024;
+					decal.Saturation = 0.85;
 				}
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
@@ -274,7 +274,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				if (this.doesBrushExist(armorDecal))
 				{
 					decal = _tile.spawnDetail(armorDecal, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Saturation = 0.850000024;
+					decal.Saturation = 0.85;
 				}
 			}
 
@@ -346,14 +346,14 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 				beard.setBrush(_info.Custom.Beard);
 				beard.Color = _info.Custom.HairColor;
 				beard.Saturation = _info.Custom.HairSaturation;
-				beard.setBrightness(0.899999976);
+				beard.setBrightness(0.9);
 
 				if (this.doesBrushExist(_info.Custom.Beard + "_top"))
 				{
 					beard_top.setBrush(_info.Custom.Beard + "_top");
 					beard_top.Color = _info.Custom.HairColor;
 					beard_top.Saturation = _info.Custom.HairSaturation;
-					beard_top.setBrightness(0.899999976);
+					beard_top.setBrightness(0.9);
 				}
 			}
 			else
@@ -389,7 +389,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 
 					if (otherActor.m.MaxEnemiesThisTurn < numEnemies && !otherActor.isAlliedWith(this))
 					{
-						local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.100000001);
+						local difficulty = this.Math.maxf(10.0, 50.0 - this.getXPValue() * 0.1);
 						otherActor.checkMorale(-1, difficulty);
 						otherActor.m.MaxEnemiesThisTurn = numEnemies;
 					}
@@ -433,16 +433,16 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		body.setHorizontalFlipping(true);
-		body.Saturation = 0.800000012;
+		body.Saturation = 0.8;
 
 		if (this.Math.rand(0, 100) < 75)
 		{
-			body.varySaturation(0.200000003);
+			body.varySaturation(0.2);
 		}
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varyColor(0.0250000004, 0.0250000004, 0.0250000004);
+			body.varyColor(0.025, 0.025, 0.025);
 		}
 
 		this.m.BloodColor = body.Color;
@@ -456,7 +456,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 		local injury = this.addSprite("injury");
 		injury.setBrush("bust_skeleton_head_injured");
 		local beard = this.addSprite("beard");
-		beard.varyColor(0.0199999996, 0.0199999996, 0.0199999996);
+		beard.varyColor(0.02, 0.02, 0.02);
 
 		if (this.Math.rand(1, 100) <= 25)
 		{
@@ -494,7 +494,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 		body_dirt.setHorizontalFlipping(true);
 		body_dirt.Visible = this.Math.rand(1, 100) <= 33;
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.550000012;
+		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));

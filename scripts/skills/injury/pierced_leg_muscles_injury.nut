@@ -54,8 +54,8 @@ this.pierced_leg_muscles_injury <- this.inherit("scripts/skills/injury/injury", 
 			return;
 		}
 
-		_properties.MeleeDefenseMult *= 0.699999988;
-		_properties.InitiativeMult *= 0.699999988;
+		_properties.MeleeDefenseMult *= 0.7;
+		_properties.InitiativeMult *= 0.7;
 	}
 
 });

@@ -65,9 +65,9 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 	function onInit()
 	{
 		this.attached_location.onInit();
-		this.getSprite("body").Scale = 0.899999976;
+		this.getSprite("body").Scale = 0.9;
 		this.getSprite("lighting").setBrush("world_fortified_outpost_01_light");
-		this.getSprite("lighting").Scale = 0.899999976;
+		this.getSprite("lighting").Scale = 0.9;
 		this.registerThinker();
 	}
 

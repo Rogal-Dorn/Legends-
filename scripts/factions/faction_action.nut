@@ -485,14 +485,14 @@ this.faction_action <- {
 
 	function getReputationToDifficultyMult()
 	{
-		local s = this.Math.maxf(0.5, 0.600000024 * this.Math.pow(0.00999999978 * this.World.State.getPlayer().getStrength(), 0.899999976));
-		local d = this.Math.minf(4.0, s + this.Math.minf(1.0, this.World.getTime().Days * 0.00999999978));
+		local s = this.Math.maxf(0.5, 0.6 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.9));
+		local d = this.Math.minf(4.0, s + this.Math.minf(1.0, this.World.getTime().Days * 0.01));
 		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 	}
 
 	function getReputationToDifficultyLightMult()
 	{
-		local d = 1.0 + this.Math.minf(2.0, this.World.getTime().Days * 0.0140000004) - 0.100000001;
+		local d = 1.0 + this.Math.minf(2.0, this.World.getTime().Days * 0.014) - 0.1;
 		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 	}
 

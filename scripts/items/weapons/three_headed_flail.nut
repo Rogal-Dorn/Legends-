@@ -28,7 +28,7 @@ this.three_headed_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 21;
 		this.m.RegularDamageMax = 66;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 10;
 	}
 

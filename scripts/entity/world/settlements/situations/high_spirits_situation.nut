@@ -27,9 +27,9 @@ this.high_spirits_situation <- this.inherit("scripts/entity/world/settlements/si
 
 	function onUpdate( _modifiers )
 	{
-		_modifiers.SellPriceMult *= 1.04999995;
-		_modifiers.BuyPriceMult *= 0.949999988;
-		_modifiers.RarityMult *= 1.10000002;
+		_modifiers.SellPriceMult *= 1.05;
+		_modifiers.BuyPriceMult *= 0.95;
+		_modifiers.RarityMult *= 1.1;
 	}
 
 });

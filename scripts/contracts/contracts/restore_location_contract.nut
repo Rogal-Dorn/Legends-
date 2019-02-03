@@ -12,7 +12,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 	function create()
 	{
 		this.contract.create();
-		this.m.DifficultyMult = this.Math.rand(70, 90) * 0.00999999978;
+		this.m.DifficultyMult = this.Math.rand(70, 90) * 0.01;
 		this.m.Type = "contract.restore_location";
 		this.m.Name = "Rebuilding";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
@@ -556,7 +556,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 	function spawnCaravan()
 	{
 		local faction = this.World.FactionManager.getFaction(this.getFaction());
-		local party = faction.spawnEntity(this.m.Home.getTile(), "Worker Caravan", false, this.Const.World.Spawn.CaravanEscort, this.m.Home.getResources() * 0.400000006);
+		local party = faction.spawnEntity(this.m.Home.getTile(), "Worker Caravan", false, this.Const.World.Spawn.CaravanEscort, this.m.Home.getResources() * 0.4);
 		party.getSprite("banner").Visible = false;
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);

@@ -22,7 +22,7 @@ this.falx <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -6;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 35;
-		this.m.ArmorDamageMult = 0.800000012;
+		this.m.ArmorDamageMult = 0.8;
 		this.m.DirectDamageMult = 0.25;
 	}
 

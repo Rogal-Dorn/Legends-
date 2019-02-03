@@ -34,7 +34,7 @@ this.javelin <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.75;
-		this.m.DirectDamageMult = 0.449999988;
+		this.m.DirectDamageMult = 0.45;
 		this.m.ShieldDamage = 0;
 		this.m.IsDroppedAsLoot = true;
 	}

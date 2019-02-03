@@ -19,32 +19,32 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 			r = [
 				{
 					File = "ambience/settlement/lumberjack_00.wav",
-					Volume = 1.10000002,
+					Volume = 1.1,
 					Pitch = 1.0
 				},
 				{
 					File = "ambience/settlement/lumberjack_01.wav",
-					Volume = 1.10000002,
+					Volume = 1.1,
 					Pitch = 1.0
 				},
 				{
 					File = "ambience/settlement/lumberjack_02.wav",
-					Volume = 1.10000002,
+					Volume = 1.1,
 					Pitch = 1.0
 				},
 				{
 					File = "ambience/settlement/lumberjack_03.wav",
-					Volume = 1.10000002,
+					Volume = 1.1,
 					Pitch = 1.0
 				},
 				{
 					File = "ambience/settlement/settlement_saw_00.wav",
-					Volume = 1.10000002,
+					Volume = 1.1,
 					Pitch = 1.0
 				},
 				{
 					File = "ambience/settlement/settlement_saw_01.wav",
-					Volume = 1.10000002,
+					Volume = 1.1,
 					Pitch = 1.0
 				}
 			];

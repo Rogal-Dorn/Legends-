@@ -27,7 +27,7 @@ this.named_greatsword <- this.inherit("scripts/items/weapons/named/named_weapon"
 		this.m.RegularDamage = 85;
 		this.m.RegularDamageMax = 105;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.DirectDamageMult = 0.35;
 		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();
 	}

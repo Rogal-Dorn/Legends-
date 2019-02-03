@@ -22,7 +22,7 @@ this.scenario_line_battle_zombies <- this.inherit("scripts/scenarios/tactical/sc
 		rain.MaxScale = 1.0;
 		rain.clearDropBrushes();
 		rain.addDropBrush("rain_03");
-		rain.Direction = this.createVec(-0.449999988, -0.550000012);
+		rain.Direction = this.createVec(-0.45, -0.55);
 		weather.buildRain(rain);
 		local clouds = weather.createCloudSettings();
 		clouds.Type = this.getconsttable().CloudType.Custom;
@@ -30,14 +30,14 @@ this.scenario_line_battle_zombies <- this.inherit("scripts/scenarios/tactical/sc
 		clouds.MaxClouds = 150;
 		clouds.MinVelocity = 400.0;
 		clouds.MaxVelocity = 500.0;
-		clouds.MinAlpha = 0.600000024;
+		clouds.MinAlpha = 0.6;
 		clouds.MaxAlpha = 1.0;
 		clouds.MinScale = 1.0;
 		clouds.MaxScale = 4.0;
 		clouds.Sprite = "wind_01";
 		clouds.RandomizeDirection = false;
 		clouds.RandomizeRotation = false;
-		clouds.Direction = this.createVec(-1.0, -0.699999988);
+		clouds.Direction = this.createVec(-1.0, -0.7);
 		weather.buildCloudCover(clouds);
 		this.Sound.setAmbience(0, this.Const.SoundAmbience.Blizzard, this.Const.Sound.Volume.Ambience, 0);
 		this.Tactical.getCamera().Level = 1;

@@ -11,10 +11,10 @@ gt.Const.World.Assets <- {
 		"scripts/items/supplies/ground_grains_item",
 		"scripts/items/accessory/bandage_item"
 	],
-	MedicinePerHitpoint = 0.100000001,
+	MedicinePerHitpoint = 0.1,
 	MedicinePerInjuryDay = 1.0,
 	HitpointsPerHour = 1,
-	ArmorPartsPerArmor = 0.0670000017,
+	ArmorPartsPerArmor = 0.067,
 	ArmorPerHour = 3,
 	FoodConsumptionMult = 1.0 / this.World.getTime().SecondsPerDay,
 	CostToRepairPerPoint = 2,
@@ -46,11 +46,11 @@ gt.Const.World.Assets <- {
 	RelationFavor = 15.0,
 	RelationUnitKilled = -0.5,
 	RelationTimeOut = 10.0 * this.World.getTime().SecondsPerDay,
-	ContractRewardPOW = 1.29999995,
+	ContractRewardPOW = 1.3,
 	BaseBuyPrice = 1.0,
-	BaseSellPrice = 0.150000006,
-	BaseLootSellPrice = 0.949999988,
-	SellPriceNotProducedHere = 1.00999999,
+	BaseSellPrice = 0.15,
+	BaseLootSellPrice = 0.95,
+	SellPriceNotProducedHere = 1.01,
 	BuyPriceNotProducedHere = 1.5,
 	BaseWoundTreatmentPrice = 20
 };

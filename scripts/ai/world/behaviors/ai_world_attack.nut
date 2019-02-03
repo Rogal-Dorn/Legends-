@@ -129,7 +129,7 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 
 			totalEnemyStrength = totalEnemyStrength + o.Entity.getStrength();
 
-			if (_entity.getStrength() / o.Entity.getStrength() <= 0.600000024)
+			if (_entity.getStrength() / o.Entity.getStrength() <= 0.6)
 			{
 				continue;
 			}
@@ -159,7 +159,7 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 
 		if (this.World.FactionManager.getFaction(_entity.getFaction()).getType() == this.Const.FactionType.Goblins)
 		{
-			threshold = 0.649999976;
+			threshold = 0.65;
 		}
 
 		if (totalAlliedStrength / totalEnemyStrength <= threshold)

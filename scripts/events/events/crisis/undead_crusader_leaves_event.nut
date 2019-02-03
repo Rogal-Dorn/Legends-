@@ -6,7 +6,7 @@ this.undead_crusader_leaves_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.crisis.undead_crusader_leaves";
 		this.m.Title = "Along the way...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_35.png[/img]%crusader% the crusader approaches you with his armor off and his helmet tucked into the nook of his elbow.%SPEECH_ON%Good sir, I must bid the company adieu. With the undead beaten, my mission is complete.%SPEECH_OFF%You go to shake the man\'s hand, but he simply hands you his helm and weapon.%SPEECH_ON%You\'ve more use for these than I. My fighting days are over. It was a pleasure to ride them into the twilight with you by my side. Send the men my regards.%SPEECH_OFF%",

@@ -7,11 +7,11 @@ this.charmed_player_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Defend] = 0.0;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.AttackDefault] = 1.25;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.5;
-		this.m.Properties.TargetPriorityHitpointsMult = 0.300000012;
+		this.m.Properties.TargetPriorityHitpointsMult = 0.3;
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
-		this.m.Properties.TargetPriorityDamageMult = 0.200000003;
+		this.m.Properties.TargetPriorityDamageMult = 0.2;
 		this.m.Properties.TargetPriorityFleeingMult = 0.25;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.100000001;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityFinishOpponentMult = 3.0;
 		this.m.Properties.TargetPriorityCounterSkillsMult = 2.0;
 		this.m.Properties.TargetPriorityArmorMult = 0.75;

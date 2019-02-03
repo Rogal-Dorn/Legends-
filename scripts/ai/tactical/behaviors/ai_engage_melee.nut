@@ -599,7 +599,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 							waitAfterMove = true;
 						}
 					}
-					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && this.getStrategy().getStats().EnemyRangedReadyRatio <= this.getStrategy().getStats().AllyRangedReadyRatio + 0.5 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && (!willRunIntoSpearwall || useSkill && !this.m.Skill.isSpearwallRelevant()) && !t.Actor.getCurrentProperties().IsStunned && !t.Actor.getSkills().hasSkill("actives.spearwall") && !t.IsTargetLocked && !t.Actor.isNonCombatant() && t.Actor.getIdealRange() < 2 && t.TargetValue <= 0.899999976 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult)
+					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && this.getStrategy().getStats().EnemyRangedReadyRatio <= this.getStrategy().getStats().AllyRangedReadyRatio + 0.5 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && (!willRunIntoSpearwall || useSkill && !this.m.Skill.isSpearwallRelevant()) && !t.Actor.getCurrentProperties().IsStunned && !t.Actor.getSkills().hasSkill("actives.spearwall") && !t.IsTargetLocked && !t.Actor.isNonCombatant() && t.Actor.getIdealRange() < 2 && t.TargetValue <= 0.9 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult)
 					{
 						local alternative;
 						local nextToLastAlternative;
@@ -675,7 +675,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 							alternative = movementCosts.SecondLastBeforeEnd;
 						}
 
-						if (alternative != null && t.TargetValue <= 0.899999976 && (!alternative.IsBadTerrain || t.Tile.IsBadTerrain))
+						if (alternative != null && t.TargetValue <= 0.9 && (!alternative.IsBadTerrain || t.Tile.IsBadTerrain))
 						{
 							intermediateTile = alternative;
 							waitAfterMove = true;
@@ -954,7 +954,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 					spearwallMult = this.querySpearwallValueForTile(_entity, bestIntermediateTile);
 				}
 
-				score = score * this.Math.maxf(0.100000001, 1.0 - spearwallMult * 0.5);
+				score = score * this.Math.maxf(0.1, 1.0 - spearwallMult * 0.5);
 			}
 
 			if (AlreadyEngagedWithNum == 0)

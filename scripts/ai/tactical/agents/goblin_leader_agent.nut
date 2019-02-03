@@ -4,18 +4,18 @@ this.goblin_leader_agent <- this.inherit("scripts/ai/tactical/agent", {
 	{
 		this.agent.create();
 		this.m.ID = this.Const.AI.Agent.ID.GoblinLeader;
-		this.m.Properties.TargetPriorityHitchanceMult = 0.699999988;
-		this.m.Properties.TargetPriorityHitpointsMult = 0.150000006;
+		this.m.Properties.TargetPriorityHitchanceMult = 0.7;
+		this.m.Properties.TargetPriorityHitpointsMult = 0.15;
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
-		this.m.Properties.TargetPriorityDamageMult = 0.150000006;
+		this.m.Properties.TargetPriorityDamageMult = 0.15;
 		this.m.Properties.TargetPriorityFleeingMult = 0.5;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.100000001;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityFinishOpponentMult = 3.0;
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.5;
 		this.m.Properties.TargetPriorityArmorMult = 0.5;
 		this.m.Properties.OverallDefensivenessMult = 1.0;
 		this.m.Properties.OverallFormationMult = 1.0;
-		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.35000002;
+		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.35;
 		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 1.75;
 	}
 

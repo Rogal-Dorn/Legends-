@@ -22,7 +22,7 @@ this.scramasax <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -8;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 45;
-		this.m.ArmorDamageMult = 0.800000012;
+		this.m.ArmorDamageMult = 0.8;
 		this.m.DirectDamageMult = 0.25;
 	}
 

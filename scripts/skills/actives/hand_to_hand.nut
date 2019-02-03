@@ -29,7 +29,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.100000001;
+		this.m.DirectDamageMult = 0.1;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;

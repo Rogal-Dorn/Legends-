@@ -27,7 +27,7 @@ this.werewolf_claws <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
-		this.m.DirectDamageMult = 0.150000006;
+		this.m.DirectDamageMult = 0.15;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 6;
 		this.m.MinRange = 1;
@@ -69,7 +69,7 @@ this.werewolf_claws <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.DamageRegularMin += 35;
 		_properties.DamageRegularMax += 55;
-		_properties.DamageArmorMult *= 0.699999988;
+		_properties.DamageArmorMult *= 0.7;
 	}
 
 	function onUse( _user, _targetTile )

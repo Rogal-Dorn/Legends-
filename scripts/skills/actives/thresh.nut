@@ -33,7 +33,7 @@ this.thresh <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.HitChanceBonus = -15;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 35;
 		this.m.MinRange = 1;

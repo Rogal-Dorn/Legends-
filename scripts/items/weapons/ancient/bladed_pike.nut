@@ -27,7 +27,7 @@ this.bladed_pike <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 55;
 		this.m.RegularDamageMax = 80;
 		this.m.ArmorDamageMult = 1.25;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
 	}
 

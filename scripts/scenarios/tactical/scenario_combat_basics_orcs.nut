@@ -13,8 +13,8 @@ this.scenario_combat_basics_orcs <- this.inherit("scripts/scenarios/tactical/sce
 		clouds.MaxClouds = 5;
 		clouds.MinVelocity = 30.0;
 		clouds.MaxVelocity = 50.0;
-		clouds.MinAlpha = 0.660000026;
-		clouds.MaxAlpha = 0.899999976;
+		clouds.MinAlpha = 0.66;
+		clouds.MaxAlpha = 0.9;
 		clouds.MinScale = 1.5;
 		clouds.MaxScale = 3.0;
 		this.Tactical.getWeather().buildCloudCover(clouds);

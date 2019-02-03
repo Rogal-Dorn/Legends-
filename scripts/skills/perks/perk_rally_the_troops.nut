@@ -28,7 +28,7 @@ this.perk_rally_the_troops <- this.inherit("scripts/skills/skill", {
 
 	function onUpdated( _properties )
 	{
-		_properties.TargetAttractionMult *= 1.33000004;
+		_properties.TargetAttractionMult *= 1.33;
 	}
 
 });

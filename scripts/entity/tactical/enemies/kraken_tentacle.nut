@@ -104,7 +104,7 @@ this.kraken_tentacle <- this.inherit("scripts/entity/tactical/actor", {
 		local body = this.addSprite("body");
 		body.setBrush("bust_kraken_tentacle_01");
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.680000007;
+		this.getSprite("status_rooted").Scale = 0.68;
 		this.setSpriteOffset("status_rooted", this.createVec(5, 25));
 		this.setSpriteOffset("arrow", this.createVec(0, 25));
 		this.setSpriteOffset("status_stunned", this.createVec(0, 25));

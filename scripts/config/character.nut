@@ -12,7 +12,7 @@ gt.Const.Movement <- {
 	EnemySelectionFadeTime = 500
 };
 gt.Const.XP <- {
-	XPForKillerPct = 0.200000003,
+	XPForKillerPct = 0.2,
 	MaxLevelWithPerkpoints = 11
 };
 gt.Const.BusinessReputation <- [
@@ -53,7 +53,7 @@ for( local i = 0; i < 22; i = ++i )
 }
 
 gt.Const.Combat <- {
-	GlobalXPMult = 0.850000024,
+	GlobalXPMult = 0.85,
 	GlobalXPVeteranLevelMult = 1.0,
 	WeaponSpecFatigueMult = 0.75,
 	RetreatDeathChanceNotAtBorder = 0,
@@ -70,7 +70,7 @@ gt.Const.Combat <- {
 	AttackOfOpportunityLimit = 999,
 	RangedAttackBlockedChance = 0.75,
 	FallingDamage = 10,
-	ArmorDirectDamageMitigationMult = 0.100000001,
+	ArmorDirectDamageMitigationMult = 0.1,
 	PoisonEffectMinDamage = 6,
 	AlertWeaponBreakingCondition = 12,
 	WeaponDurabilityLossOnHit = 3.0,
@@ -89,7 +89,7 @@ gt.Const.Combat <- {
 	PlayPainSoundMinDamage = 6,
 	PlayPainVolumeMaxDamage = 20.0,
 	BloodSplattersAtDeathMult = 1.0,
-	BloodSplattersAtOriginalPosMult = 0.0500000007,
+	BloodSplattersAtOriginalPosMult = 0.05,
 	DustSplattersAtResurrectionMult = 1.0,
 	BloodPoolsAtDeathMin = 4,
 	BloodPoolsAtDeathMax = 4,
@@ -118,7 +118,7 @@ gt.Const.Combat <- {
 	ResurrectAnimationTime = 1.0,
 	ResurrectAnimationDistance = -200.0,
 	RootedAnimationTime = 0.5,
-	ZweihanderFatigueMult = 0.800000012,
+	ZweihanderFatigueMult = 0.8,
 	StealthFailRadius = 4
 };
 gt.Const.Corpse <- {
@@ -136,7 +136,7 @@ gt.Const.Corpse <- {
 	IsPlayer = false,
 	Color = this.createColor("#ffffff"),
 	Saturation = 1.0,
-	Hitpoints = 0.449999988,
+	Hitpoints = 0.45,
 	Armor = [
 		0,
 		0
@@ -186,14 +186,14 @@ gt.Const.ShakeCharacterLayers <- [
 ];
 gt.Const.Morale <- {
 	EnemyKilledBaseDifficulty = -30,
-	EnemyKilledXPMult = 0.0399999991,
+	EnemyKilledXPMult = 0.04,
 	EnemyKilledDistancePow = 3.0,
 	EnemyKilledSelfBonus = 15,
 	AllyKilledBaseDifficulty = 20,
-	AllyKilledXPMult = 0.0350000001,
+	AllyKilledXPMult = 0.035,
 	AllyKilledDistancePow = 2.4000001,
 	AllyFleeingBaseDifficulty = 30,
-	AllyFleeingXPMult = 0.0350000001,
+	AllyFleeingXPMult = 0.035,
 	AllyFleeingDistancePow = 3.0,
 	OnHitMinDamage = 15,
 	OnHitBaseDifficulty = -40,
@@ -319,21 +319,21 @@ gt.Const.MoodChange <- {
 	BrotherDied = 0.25,
 	BrotherDismissed = 0.5,
 	VeteranDismissed = 1.0,
-	BattleWithoutMe = 0.200000003,
-	BattleWon = 0.349999994,
-	BattleLost = 0.449999988,
+	BattleWithoutMe = 0.2,
+	BattleWon = 0.35,
+	BattleLost = 0.45,
 	BattleRetreat = 0.25,
-	PermanentInjury = 1.35000002,
-	Injury = 0.150000006,
-	NearCity = 0.100000001,
+	PermanentInjury = 1.35,
+	Injury = 0.15,
+	NearCity = 0.1,
 	StandardLost = 0.25,
 	AmbitionFulfilled = 1.0,
 	AmbitionFailed = 0.75,
-	OptimistMult = 1.33000004,
-	PessimistMult = 1.33000004,
+	OptimistMult = 1.33,
+	PessimistMult = 1.33,
 	CheckIntervalHours = 4,
-	RecoveryPerHour = 0.0149999997,
-	RelativeRecoveryPerHour = 0.00999999978,
+	RecoveryPerHour = 0.015,
+	RelativeRecoveryPerHour = 0.01,
 	Timeout = 5.0 * this.World.getTime().SecondsPerDay
 };
 gt.Const.MoodState <- {
@@ -551,10 +551,10 @@ gt.Const.BloodPoolTerrainAlpha <- [
 	1.0,
 	1.0,
 	1.0,
-	0.660000026,
-	0.800000012,
-	0.660000026,
-	0.660000026
+	0.66,
+	0.8,
+	0.66,
+	0.66
 ];
 gt.Const.CorpsePart <- [
 	"corpse_part_01",

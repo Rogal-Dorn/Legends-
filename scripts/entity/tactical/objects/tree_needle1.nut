@@ -35,8 +35,8 @@ this.tree_needle1 <- this.inherit("scripts/entity/tactical/entity", {
 			top.setHorizontalFlipping(flip);
 			top.Rotation = rotation;
 			top.Scale = scale;
-			top.varyColor(0.150000006, 0.150000006, 0.150000006);
-			top.varySaturation(0.100000001);
+			top.varyColor(0.15, 0.15, 0.15);
+			top.varySaturation(0.1);
 			this.setSpriteOcclusion("top", 1, 2, -3);
 		}
 

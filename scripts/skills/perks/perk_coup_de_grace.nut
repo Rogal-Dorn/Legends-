@@ -22,7 +22,7 @@ this.perk_coup_de_grace <- this.inherit("scripts/skills/skill", {
 
 		if (_targetEntity.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 		{
-			_properties.DamageTotalMult *= 1.20000005;
+			_properties.DamageTotalMult *= 1.2;
 		}
 	}
 

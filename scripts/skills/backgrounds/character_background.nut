@@ -79,7 +79,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Type = this.Const.SkillType.Background | this.Const.SkillType.Trait;
 		this.m.Order = this.Const.SkillOrder.Background;
-		this.m.DailyCostMult = this.Math.rand(90, 110) * 0.00999999978;
+		this.m.DailyCostMult = this.Math.rand(90, 110) * 0.01;
 	}
 
 	function isHidden()
@@ -261,12 +261,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		local level = this.getContainer().getActor().getLevel();
 		local wage = this.Math.round(this.m.DailyCost * this.m.DailyCostMult);
-		_properties.DailyWage += wage * this.Math.pow(1.10000002, this.Math.min(10, level - 1));
+		_properties.DailyWage += wage * this.Math.pow(1.1, this.Math.min(10, level - 1));
 
 		if (level > 11)
 		{
-			local previous = wage * this.Math.pow(1.10000002, 10);
-			_properties.DailyWage += previous * this.Math.pow(1.02999997, level - 1 - 10) - previous;
+			local previous = wage * this.Math.pow(1.1, 10);
+			_properties.DailyWage += previous * this.Math.pow(1.03, level - 1 - 10) - previous;
 		}
 	}
 
@@ -284,7 +284,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		cost = cost * 1.25;
 		actor.m.HiringCost = actor.m.HiringCost + cost;
-		actor.m.HiringCost *= 0.100000001;
+		actor.m.HiringCost *= 0.1;
 		actor.m.HiringCost = this.Math.ceil(actor.m.HiringCost);
 		actor.m.HiringCost *= 10;
 	}
@@ -304,8 +304,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			local sprite = actor.getSprite("head");
 			sprite.setBrush(this.m.Faces[this.Math.rand(0, this.m.Faces.len() - 1)]);
 			sprite.Color = this.createColor("#fbffff");
-			sprite.varyColor(0.0500000007, 0.0500000007, 0.0500000007);
-			sprite.varySaturation(0.100000001);
+			sprite.varyColor(0.05, 0.05, 0.05);
+			sprite.varySaturation(0.1);
 			local body = actor.getSprite("body");
 			body.Color = sprite.Color;
 			body.Saturation = sprite.Saturation;
@@ -318,11 +318,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 			if (hairColor != "grey")
 			{
-				sprite.varyColor(0.100000001, 0.100000001, 0.100000001);
+				sprite.varyColor(0.1, 0.1, 0.1);
 			}
 			else
 			{
-				sprite.varyBrightness(0.100000001);
+				sprite.varyBrightness(0.1);
 			}
 		}
 

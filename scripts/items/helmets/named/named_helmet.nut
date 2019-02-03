@@ -74,9 +74,9 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 130) * 0.00999999978) * 1.0;
+		this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 130) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
-		this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(75, 110) * 0.00999999978);
+		this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(75, 110) * 0.01);
 	}
 
 	function onSerialize( _out )

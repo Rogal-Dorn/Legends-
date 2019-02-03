@@ -19,7 +19,7 @@ this.mercenary_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.MercenaryRanged);
-		b.TargetAttractionMult = 1.10000002;
+		b.TargetAttractionMult = 1.1;
 		b.IsSpecializedInBows = true;
 		b.IsSpecializedInCrossbows = true;
 		b.IsSpecializedInDaggers = true;

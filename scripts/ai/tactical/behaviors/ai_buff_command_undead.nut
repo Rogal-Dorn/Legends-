@@ -87,7 +87,7 @@ this.ai_buff_command_undead <- this.inherit("scripts/ai/tactical/behavior", {
 					}
 
 					local danger = this.queryActorTurnsNearTarget(a, d.Actor.getTile(), a);
-					local localDanger = (3.0 - this.Math.minf(3.0, danger.Turns)) * 0.333299994 * this.Const.AI.Behavior.CommandUndeadTargetsInRangeMult;
+					local localDanger = (3.0 - this.Math.minf(3.0, danger.Turns)) * 0.3333 * this.Const.AI.Behavior.CommandUndeadTargetsInRangeMult;
 					score = score + localDanger;
 				}
 

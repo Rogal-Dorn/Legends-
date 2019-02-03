@@ -4,7 +4,7 @@ this.witchhut_enter_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.location.witchhut_enter";
 		this.m.Title = "As you approach...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_115.png[/img]{You pause at the forest clearing. The hut before you stands like a mere crumb. It\'s so quaint and easily forgotten you wondered how it could survive, but perhaps its total banality and unassuming nature is itself a sort of armor. But you\'ve been around this world long enough to know to trust your instinct, and right now your instinct is to wait.\n\n Soon enough, the hut\'s door pops open and an elderly woman hobbles out. She immediately waves in your direction.%SPEECH_ON%You, and only you.%SPEECH_OFF%Confused, you ask why just yourself, or more particularly why would you ever trust her to begin with. She smiles.%SPEECH_ON%Because I know what the False King dreams of at night.%SPEECH_OFF%The mercenaries around you turn about and ask what she said. You put a hand up and tell them to stay their ground while you go have a talk with the mysterious woman.}",

@@ -152,7 +152,7 @@ this.ai_hex <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (target.isPlayerControlled())
 			{
-				if (target.getLevel() <= 2 && this.getStrategy().getAveragePlayerLevel() >= 6 && target.getArmorMax(this.Const.BodyPart.Body) + target.getArmorMax(this.Const.BodyPart.Head) <= this.getStrategy().getAveragePlayerArmor() * 0.400000006)
+				if (target.getLevel() <= 2 && this.getStrategy().getAveragePlayerLevel() >= 6 && target.getArmorMax(this.Const.BodyPart.Body) + target.getArmorMax(this.Const.BodyPart.Head) <= this.getStrategy().getAveragePlayerArmor() * 0.4)
 				{
 					score = score * this.Const.AI.Behavior.LikelyPlayerBaitMult;
 				}
@@ -189,7 +189,7 @@ this.ai_hex <- this.inherit("scripts/ai/tactical/behavior", {
 
 		return {
 			Target = bestTarget,
-			Score = bestScore * 0.100000001
+			Score = bestScore * 0.1
 		};
 	}
 

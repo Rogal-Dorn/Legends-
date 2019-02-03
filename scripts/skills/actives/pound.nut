@@ -31,7 +31,7 @@ this.pound <- this.inherit("scripts/skills/skill", {
 		this.m.IsShieldRelevant = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;

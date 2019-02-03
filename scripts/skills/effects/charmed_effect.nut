@@ -97,12 +97,12 @@ this.charmed_effect <- this.inherit("scripts/skills/skill", {
 					ForceMax = this.createVec(0, 0)
 				},
 				{
-					LifeTimeMin = 0.100000001,
-					LifeTimeMax = 0.100000001,
+					LifeTimeMin = 0.1,
+					LifeTimeMax = 0.1,
 					ColorMin = this.createColor("fff3e500"),
 					ColorMax = this.createColor("ffffff00"),
-					ScaleMin = 0.100000001,
-					ScaleMax = 0.100000001,
+					ScaleMin = 0.1,
+					ScaleMax = 0.1,
 					RotationMin = 0,
 					RotationMax = 0,
 					VelocityMin = 80,

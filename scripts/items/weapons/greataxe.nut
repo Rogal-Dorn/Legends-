@@ -26,7 +26,7 @@ this.greataxe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 80;
 		this.m.RegularDamageMax = 100;
 		this.m.ArmorDamageMult = 1.5;
-		this.m.DirectDamageMult = 0.400000006;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 0;
 	}
 

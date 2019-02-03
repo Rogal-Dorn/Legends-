@@ -65,7 +65,7 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 5.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 2.0;
-		this.m.SoundPitch = this.Math.rand(95, 105) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/schrat_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -100,21 +100,21 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail("bust_schrat_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = body.Color;
 			decal.Saturation = body.Saturation;
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 			decal = _tile.spawnDetail(head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = head.Color;
 			decal.Saturation = head.Saturation;
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 
 			if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
 				decal = _tile.spawnDetail("bust_schrat_body_01_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
 				decal = _tile.spawnDetail("bust_schrat_body_01_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.949999988;
+				decal.Scale = 0.95;
 			}
 
 			this.spawnTerrainDropdownEffect(_tile);
@@ -158,8 +158,8 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		clouds.MaxClouds = 20;
 		clouds.MinVelocity = 3.0;
 		clouds.MaxVelocity = 9.0;
-		clouds.MinAlpha = 0.349999994;
-		clouds.MaxAlpha = 0.449999988;
+		clouds.MinAlpha = 0.35;
+		clouds.MaxAlpha = 0.45;
 		clouds.MinScale = 2.0;
 		clouds.MaxScale = 3.0;
 		this.Tactical.getWeather().buildCloudCover(clouds);
@@ -187,8 +187,8 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
 		body.setBrush("bust_schrat_body_01");
-		body.varySaturation(0.200000003);
-		body.varyColor(0.0500000007, 0.0500000007, 0.0500000007);
+		body.varySaturation(0.2);
+		body.varyColor(0.05, 0.05, 0.05);
 		this.m.BloodColor = body.Color;
 		local head = this.addSprite("head");
 		head.setBrush("bust_schrat_head_0" + this.Math.rand(1, 2));
@@ -198,7 +198,7 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_schrat_01_injured");
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.540000021;
+		this.getSprite("status_rooted").Scale = 0.54;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 0));
 		this.setSpriteOffset("status_stunned", this.createVec(0, 10));
 		this.setSpriteOffset("arrow", this.createVec(0, 10));

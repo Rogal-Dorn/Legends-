@@ -73,7 +73,7 @@ this.ai_root <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (this.getStrategy().getStats().RangedAlliedVSEnemies > 1)
 		{
-			score = score + this.getStrategy().getStats().RangedAlliedVSEnemies * 0.100000001;
+			score = score + this.getStrategy().getStats().RangedAlliedVSEnemies * 0.1;
 		}
 
 		return this.Const.AI.Behavior.Score.Root * score + this.m.TargetScore;

@@ -27,7 +27,7 @@ this.wonky_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.5;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.DirectDamageMult = 0.35;
 		this.m.AdditionalAccuracy = -10;
 	}
 

@@ -61,7 +61,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (r <= 10)
 				{
-					if (this.Contract.getDifficultyMult() >= 0.899999976)
+					if (this.Contract.getDifficultyMult() >= 0.9)
 					{
 						this.Flags.set("IsOldArmor", true);
 					}
@@ -415,12 +415,12 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head) != null)
 				{
-					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head).getArmor() * 0.330000013);
+					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Head).getArmor() * 0.33);
 				}
 
 				if (this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body) != null)
 				{
-					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getArmor() * 0.330000013);
+					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).setArmor(this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getArmor() * 0.33);
 				}
 
 				this.Characters.push(this.Contract.m.Dude.getImagePath());

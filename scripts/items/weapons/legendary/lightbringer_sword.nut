@@ -22,8 +22,8 @@ this.lightbringer_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 20000;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 55;
-		this.m.ArmorDamageMult = 0.899999976;
-		this.m.DirectDamageMult = 0.200000003;
+		this.m.ArmorDamageMult = 0.9;
+		this.m.DirectDamageMult = 0.2;
 	}
 
 	function getTooltip()

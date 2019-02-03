@@ -52,7 +52,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 	function getFootprintsSize()
 	{
-		return this.Math.minf(1.0, this.Math.maxf(0.400000006, this.m.Troops.len() * 0.0500000007));
+		return this.Math.minf(1.0, this.Math.maxf(0.4, this.m.Troops.len() * 0.05));
 	}
 
 	function setDestination( _dest )
@@ -252,7 +252,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		{
 			if (this.World.getTime().IsDaytime)
 			{
-				this.m.VisibilityMult = 0.100000001;
+				this.m.VisibilityMult = 0.1;
 				this.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 				this.m.IsLeavingFootprints = false;
 			}
@@ -347,7 +347,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 					if (this.m.FootprintSizeOverride == 0.0)
 					{
-						scale = this.Math.minf(1.0, this.Math.maxf(0.400000006, this.m.Troops.len() * 0.0500000007));
+						scale = this.Math.minf(1.0, this.Math.maxf(0.4, this.m.Troops.len() * 0.05));
 					}
 					else
 					{

@@ -208,40 +208,40 @@ this.morale_check <- this.inherit("scripts/skills/skill", {
 		case this.Const.MoraleState.Confident:
 			this.m.Icon = "skills/status_effect_14.png";
 			this.m.IconMini = "status_effect_14_mini";
-			_properties.MeleeSkillMult *= 1.10000002;
-			_properties.RangedSkillMult *= 1.10000002;
-			_properties.MeleeDefenseMult *= 1.10000002;
-			_properties.RangedDefenseMult *= 1.10000002;
+			_properties.MeleeSkillMult *= 1.1;
+			_properties.RangedSkillMult *= 1.1;
+			_properties.MeleeDefenseMult *= 1.1;
+			_properties.RangedDefenseMult *= 1.1;
 			break;
 
 		case this.Const.MoraleState.Wavering:
 			this.m.Icon = "skills/status_effect_02_c.png";
 			this.m.IconMini = "status_effect_02_c_mini";
-			_properties.BraveryMult *= 0.899999976;
-			_properties.MeleeSkillMult *= 0.899999976;
-			_properties.RangedSkillMult *= 0.899999976;
-			_properties.MeleeDefenseMult *= 0.899999976;
-			_properties.RangedDefenseMult *= 0.899999976;
+			_properties.BraveryMult *= 0.9;
+			_properties.MeleeSkillMult *= 0.9;
+			_properties.RangedSkillMult *= 0.9;
+			_properties.MeleeDefenseMult *= 0.9;
+			_properties.RangedDefenseMult *= 0.9;
 			break;
 
 		case this.Const.MoraleState.Breaking:
 			this.m.Icon = "skills/status_effect_02_b.png";
 			this.m.IconMini = "status_effect_02_b_mini";
-			_properties.BraveryMult *= 0.800000012;
-			_properties.MeleeSkillMult *= 0.800000012;
-			_properties.RangedSkillMult *= 0.800000012;
-			_properties.MeleeDefenseMult *= 0.800000012;
-			_properties.RangedDefenseMult *= 0.800000012;
+			_properties.BraveryMult *= 0.8;
+			_properties.MeleeSkillMult *= 0.8;
+			_properties.RangedSkillMult *= 0.8;
+			_properties.MeleeDefenseMult *= 0.8;
+			_properties.RangedDefenseMult *= 0.8;
 			break;
 
 		case this.Const.MoraleState.Fleeing:
 			this.m.Icon = "skills/status_effect_02_a.png";
 			this.m.IconMini = "status_effect_02_a_mini";
-			_properties.BraveryMult *= 0.699999988;
-			_properties.MeleeSkillMult *= 0.699999988;
-			_properties.RangedSkillMult *= 0.699999988;
-			_properties.MeleeDefenseMult *= 0.699999988;
-			_properties.RangedDefenseMult *= 0.699999988;
+			_properties.BraveryMult *= 0.7;
+			_properties.MeleeSkillMult *= 0.7;
+			_properties.RangedSkillMult *= 0.7;
+			_properties.MeleeDefenseMult *= 0.7;
+			_properties.RangedDefenseMult *= 0.7;
 			_properties.InitiativeForTurnOrderAdditional -= 1000;
 			break;
 		}

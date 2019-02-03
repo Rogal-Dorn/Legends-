@@ -189,7 +189,7 @@ this.ai_nightmare <- this.inherit("scripts/ai/tactical/behavior", {
 		if (bestTarget != null)
 		{
 			this.m.TargetTile = bestTarget.getTile();
-			this.m.ScoreBonus = bestScore * 0.100000001;
+			this.m.ScoreBonus = bestScore * 0.1;
 		}
 
 		return true;

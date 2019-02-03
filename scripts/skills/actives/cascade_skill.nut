@@ -30,7 +30,7 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Delay = 250;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
@@ -96,7 +96,7 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageTotalMult *= 0.330000013;
+			_properties.DamageTotalMult *= 0.33;
 			_properties.DamageTooltipMaxMult *= 3.0;
 		}
 	}

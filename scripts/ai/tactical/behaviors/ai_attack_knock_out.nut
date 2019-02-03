@@ -120,7 +120,7 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 
 				local score = target.getHitpoints() / target.getHitpointsMax();
-				score = score * (_skill.getHitchance(target) * 0.00999999978);
+				score = score * (_skill.getHitchance(target) * 0.01);
 
 				if (target.getSkills().hasSkill("actives.rally_the_troops"))
 				{

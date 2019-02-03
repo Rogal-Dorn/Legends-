@@ -1370,7 +1370,7 @@ gt.Const.World.Spawn.Mercenaries <- [
 gt.Const.World.Spawn.Militia <- [
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1387,7 +1387,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1408,7 +1408,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1429,7 +1429,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1446,7 +1446,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1467,7 +1467,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1488,7 +1488,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1509,7 +1509,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.899999976,
+		MovementSpeedMult = 0.9,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1526,7 +1526,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1547,7 +1547,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1572,7 +1572,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1597,7 +1597,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1622,7 +1622,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeedMult = 0.800000012,
+		MovementSpeedMult = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1647,7 +1647,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1672,7 +1672,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1697,7 +1697,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1722,7 +1722,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1747,7 +1747,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1772,7 +1772,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1797,7 +1797,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",
@@ -1822,7 +1822,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_01",
@@ -1847,7 +1847,7 @@ gt.Const.World.Spawn.Militia <- [
 	},
 	{
 		Cost = 0,
-		MovementSpeed = 0.800000012,
+		MovementSpeed = 0.8,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_militia_02",

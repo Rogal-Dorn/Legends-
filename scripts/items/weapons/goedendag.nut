@@ -25,7 +25,7 @@ this.goedendag <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -14;
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 75;
-		this.m.ArmorDamageMult = 1.10000002;
+		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 0;
 	}

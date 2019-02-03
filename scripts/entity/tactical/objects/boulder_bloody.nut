@@ -16,7 +16,7 @@ this.boulder_bloody <- this.inherit("scripts/entity/tactical/entity", {
 		local body = this.addSprite("body");
 		body.setBrush("boulder_01");
 		body.setHorizontalFlipping(flipped);
-		body.varyColor(0.0299999993, 0.0299999993, 0.0299999993);
+		body.varyColor(0.03, 0.03, 0.03);
 		local blood = this.addSprite("blood");
 		blood.setBrush("boulder_01_blood");
 		blood.setHorizontalFlipping(flipped);

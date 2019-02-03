@@ -85,7 +85,7 @@ this.acid_effect <- this.inherit("scripts/skills/skill", {
 
 			if (head_affected)
 			{
-				local damage = actor.getArmor(this.Const.BodyPart.Head) * 0.200000003;
+				local damage = actor.getArmor(this.Const.BodyPart.Head) * 0.2;
 
 				if (this.isKindOf(actor.get(), "kraken"))
 				{
@@ -94,7 +94,7 @@ this.acid_effect <- this.inherit("scripts/skills/skill", {
 
 				local hitInfo = clone this.Const.Tactical.HitInfo;
 				hitInfo.DamageRegular = 0.0;
-				hitInfo.DamageArmor = damage * 0.200000003;
+				hitInfo.DamageArmor = damage * 0.2;
 				hitInfo.DamageDirect = 0.0;
 				hitInfo.BodyPart = this.Const.BodyPart.Head;
 				hitInfo.BodyDamageMult = 1.0;
@@ -110,7 +110,7 @@ this.acid_effect <- this.inherit("scripts/skills/skill", {
 
 			if (body_affected)
 			{
-				local damage = actor.getArmor(this.Const.BodyPart.Body) * 0.200000003;
+				local damage = actor.getArmor(this.Const.BodyPart.Body) * 0.2;
 
 				if (this.isKindOf(actor.get(), "kraken"))
 				{
@@ -137,7 +137,7 @@ this.acid_effect <- this.inherit("scripts/skills/skill", {
 			{
 				if (this.m.SoundOnUse.len() != 0)
 				{
-					this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.20000005, actor.getPos());
+					this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.2, actor.getPos());
 				}
 
 				for( local i = 0; i < this.Const.Tactical.AcidParticles.len(); i = ++i )

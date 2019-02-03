@@ -13,11 +13,11 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 
 		if (r <= 70)
 		{
-			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(95, 105) * 0.01;
 		}
 		else
 		{
-			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.01;
 		}
 
 		this.m.Type = "contract.decisive_battle";
@@ -79,7 +79,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 		}
 
 		this.m.Flags.set("RequisitionCost", this.beautifyNumber(this.m.Payment.Pool * 0.25));
-		this.m.Flags.set("Bribe", this.beautifyNumber(this.m.Payment.Pool * 0.349999994));
+		this.m.Flags.set("Bribe", this.beautifyNumber(this.m.Payment.Pool * 0.35));
 		this.contract.start();
 	}
 

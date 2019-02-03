@@ -28,7 +28,7 @@ this.shortsighted_shoots_bro_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Shortsighted.getImagePath());
 				this.Characters.push(_event.m.OtherGuy.getImagePath());
-				local injury = _event.m.OtherGuy.addInjury(this.Const.Injury.PiercingBody, 0.400000006);
+				local injury = _event.m.OtherGuy.addInjury(this.Const.Injury.PiercingBody, 0.4);
 				this.List.push({
 					id = 10,
 					icon = injury.getIcon(),

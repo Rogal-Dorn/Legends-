@@ -32,7 +32,7 @@ gt.Const.World.Common <- {
 
 	function assignTroops( _party, _partyList, _resources, _weightMode = 1 )
 	{
-		if (_partyList[_partyList.len() - 1].Cost < _resources * 0.699999988)
+		if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
 		{
 			_resources = _partyList[_partyList.len() - 1].Cost;
 		}
@@ -44,7 +44,7 @@ gt.Const.World.Common <- {
 
 		foreach( party in _partyList )
 		{
-			if (party.Cost < _resources * 0.699999988)
+			if (party.Cost < _resources * 0.7)
 			{
 				continue;
 			}

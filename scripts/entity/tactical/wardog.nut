@@ -89,21 +89,21 @@ this.wardog <- this.inherit("scripts/entity/tactical/actor", {
 			local decal;
 			this.m.IsCorpseFlipped = flip;
 			decal = _tile.spawnDetail(this.getSprite("body").getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-			decal.setBrightness(0.899999976);
-			decal.Scale = 0.949999988;
+			decal.setBrightness(0.9);
+			decal.Scale = 0.95;
 
 			if (appearance.CorpseArmor != "")
 			{
 				decal = _tile.spawnDetail(appearance.CorpseArmor, this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.setBrightness(0.899999976);
-				decal.Scale = 0.949999988;
+				decal.setBrightness(0.9);
+				decal.Scale = 0.95;
 			}
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
 			{
 				decal = _tile.spawnDetail(this.getSprite("head").getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.setBrightness(0.899999976);
-				decal.Scale = 0.949999988;
+				decal.setBrightness(0.9);
+				decal.Scale = 0.95;
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
 			{
@@ -111,8 +111,8 @@ this.wardog <- this.inherit("scripts/entity/tactical/actor", {
 					this.getSprite("head").getBrush().Name + "_dead"
 				];
 				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-15, 5), 0.0, this.getSprite("head").getBrush().Name + "_dead_bloodpool");
-				decap[0].setBrightness(0.899999976);
-				decap[0].Scale = 0.949999988;
+				decap[0].setBrightness(0.9);
+				decap[0].Scale = 0.95;
 				decap[0].setHorizontalFlipping(true);
 			}
 
@@ -202,7 +202,7 @@ this.wardog <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Wardog);
-		b.TargetAttractionMult = 0.100000001;
+		b.TargetAttractionMult = 0.1;
 		b.IsAffectedByInjuries = false;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
@@ -223,7 +223,7 @@ this.wardog <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_dog_01_injured");
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.460000008;
+		this.getSprite("status_rooted").Scale = 0.46;
 		this.setSpriteOffset("status_rooted", this.createVec(8, -15));
 		this.setSpriteOffset("status_stunned", this.createVec(0, -25));
 		this.setSpriteOffset("arrow", this.createVec(0, -25));

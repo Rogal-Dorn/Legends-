@@ -29,7 +29,7 @@ this.warehouse_burned_down_situation <- this.inherit("scripts/entity/world/settl
 	function onUpdate( _modifiers )
 	{
 		_modifiers.BuyPriceMult *= 1.25;
-		_modifiers.SellPriceMult *= 1.04999995;
+		_modifiers.SellPriceMult *= 1.05;
 		_modifiers.RarityMult *= 0.5;
 	}
 

@@ -31,7 +31,7 @@ this.donkey_military <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/misc/donkey_idle_07.wav",
 			"sounds/misc/donkey_idle_08.wav"
 		];
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 0.349999994;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 0.35;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/donkey_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -120,8 +120,8 @@ this.donkey_military <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		local body = this.addSprite("body");
 		body.setBrush("donkey_tactical");
-		body.varySaturation(0.400000006);
-		body.varyColor(0.0350000001, 0.0350000001, 0.0350000001);
+		body.varySaturation(0.4);
+		body.varyColor(0.035, 0.035, 0.035);
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
 		injury.setBrush("donkey_tactical_injured");

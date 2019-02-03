@@ -143,7 +143,7 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		this.m.Score = (this.World.Assets.getMoney() - 30000) * 0.000500000024;
+		this.m.Score = (this.World.Assets.getMoney() - 30000) * 0.0005;
 	}
 
 	function onPrepare()

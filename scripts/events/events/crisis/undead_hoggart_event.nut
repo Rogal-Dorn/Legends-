@@ -7,7 +7,7 @@ this.undead_hoggart_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.crisis.undead_hoggart";
 		this.m.Title = "Along the road...";
-		this.m.Cooldown = 999999.000 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_76.png[/img]Marching through a foggy, hot rain, you spot a figure standing in the middle of the path. He\'s holding a metal-wreathed torch, no doubt the fire of a man wanting to be seen. As you draw near, he puts the torch down, giving light to an oddly familiar face, though you can\'t quite put your finger on it. You order him to announce himself.%SPEECH_ON%Are ye a lot of sellswords, hm?%SPEECH_OFF%You tell him that is not a name. He clears his throat, a soft orange glow of his face peering through the storm\'s dark.%SPEECH_ON%My name is Barnabas. Are ye sellswords or not?%SPEECH_OFF%Carefully, you cross the path and come close to the man. He waves the torch aside.%SPEECH_ON%Yeah, I figured as much. My brother, I need someone... I mean, I can\'t...%SPEECH_OFF%You nod and speak for him.%SPEECH_ON%He\'s come up out of the grave and now you want someone to take care of him.%SPEECH_OFF%The man nods, he waves the torch to a yonder spot where a dim light burns in the distance.%SPEECH_ON%He\'s thataway. I\'ll pay you %reward% crowns, seeing as how you\'re sellswords and all.%SPEECH_OFF%",

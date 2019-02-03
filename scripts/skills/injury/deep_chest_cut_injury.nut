@@ -57,10 +57,10 @@ this.deep_chest_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 
 		if (this.m.IsShownOutOfCombat)
 		{
-			_properties.HitpointsMult *= 0.699999988;
+			_properties.HitpointsMult *= 0.7;
 		}
 
-		_properties.StaminaMult *= 0.699999988;
+		_properties.StaminaMult *= 0.7;
 	}
 
 });

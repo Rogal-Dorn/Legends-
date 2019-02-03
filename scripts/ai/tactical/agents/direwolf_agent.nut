@@ -9,7 +9,7 @@ this.direwolf_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityRandomMult = 0.25;
 		this.m.Properties.TargetPriorityDamageMult = 0.25;
 		this.m.Properties.TargetPriorityFleeingMult = 0.75;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.100000001;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 0.0;
 		this.m.Properties.OverallFormationMult = 1.25;

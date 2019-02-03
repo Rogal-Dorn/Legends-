@@ -78,7 +78,7 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 			decal = _tile.spawnDetail("bust_kraken_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			decal.Color = body.Color;
 			decal.Saturation = body.Saturation;
-			decal.Scale = 0.949999988;
+			decal.Scale = 0.95;
 			this.spawnTerrainDropdownEffect(_tile);
 			this.spawnFlies(_tile);
 			local corpse = clone this.Const.Corpse;
@@ -291,12 +291,12 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varySaturation(0.200000003);
+			body.varySaturation(0.2);
 		}
 
 		if (this.Math.rand(0, 100) < 90)
 		{
-			body.varyColor(0.0799999982, 0.0799999982, 0.0799999982);
+			body.varyColor(0.08, 0.08, 0.08);
 		}
 
 		this.addDefaultStatusSprites();

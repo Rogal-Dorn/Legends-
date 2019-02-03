@@ -83,7 +83,7 @@ this.send_orc_marauders_action <- this.inherit("scripts/factions/faction_action"
 
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
-		local mult = this.World.FactionManager.isGreenskinInvasion() ? 1.10000002 : 1.0;
+		local mult = this.World.FactionManager.isGreenskinInvasion() ? 1.1 : 1.0;
 		local party = this.getFaction().spawnEntity(settlement.getTile(), "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyLightMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A band of menacing orcs, greenskinned and towering any man.");

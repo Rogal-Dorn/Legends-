@@ -7,12 +7,12 @@ this.kraken_tentacle_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.EngageMelee] = 0.0;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.AttackDefault] = 2.5;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.MoveTentacle] = 0.75;
-		this.m.Properties.TargetPriorityHitchanceMult = 0.349999994;
+		this.m.Properties.TargetPriorityHitchanceMult = 0.35;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.25;
-		this.m.Properties.TargetPriorityRandomMult = 0.150000006;
+		this.m.Properties.TargetPriorityRandomMult = 0.15;
 		this.m.Properties.TargetPriorityDamageMult = 0.25;
 		this.m.Properties.TargetPriorityFleeingMult = 0.75;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.100000001;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityArmorMult = 1.0;
 		this.m.Properties.OverallDefensivenessMult = 0.0;
 		this.m.Properties.OverallFormationMult = 0.0;

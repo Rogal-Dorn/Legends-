@@ -36,7 +36,7 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 		else
 		{
 			this.m.Size = 2;
-			this.m.DifficultyMult = 1.20000005;
+			this.m.DifficultyMult = 1.2;
 		}
 	}
 

@@ -11,11 +11,11 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 
 		if (r <= 70)
 		{
-			this.m.DifficultyMult = this.Math.rand(90, 105) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(90, 105) * 0.01;
 		}
 		else
 		{
-			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.00999999978;
+			this.m.DifficultyMult = this.Math.rand(115, 135) * 0.01;
 		}
 
 		this.m.Type = "contract.break_greenskin_siege";
@@ -586,7 +586,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 		local goblinBase = this.World.getEntityByID(this.m.Flags.get("GoblinBase"));
 		local numSiegeEngines;
 
-		if (this.m.DifficultyMult >= 1.14999998)
+		if (this.m.DifficultyMult >= 1.15)
 		{
 			numSiegeEngines = this.Math.rand(1, 2);
 		}
@@ -601,7 +601,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 		{
 			numOtherEnemies = this.Math.rand(2, 3);
 		}
-		else if (this.m.DifficultyMult >= 0.949999988)
+		else if (this.m.DifficultyMult >= 0.95)
 		{
 			numOtherEnemies = 2;
 		}

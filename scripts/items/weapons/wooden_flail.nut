@@ -26,7 +26,7 @@ this.wooden_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 10;
 		this.m.RegularDamageMax = 25;
 		this.m.ArmorDamageMult = 0.5;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 10;
 	}
 

@@ -32,7 +32,7 @@ this.perk_killing_frenzy <- this.inherit("scripts/skills/skill", {
 
 	function onUpdated( _properties )
 	{
-		_properties.TargetAttractionMult *= 1.20000005;
+		_properties.TargetAttractionMult *= 1.2;
 	}
 
 });

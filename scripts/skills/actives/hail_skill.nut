@@ -31,7 +31,7 @@ this.hail_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.HitChanceBonus = 0;
-		this.m.DirectDamageMult = 0.300000012;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
@@ -110,7 +110,7 @@ this.hail_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.HitChance[this.Const.BodyPart.Head] += 100.0;
-			_properties.DamageTotalMult *= 0.330000013;
+			_properties.DamageTotalMult *= 0.33;
 			_properties.DamageTooltipMaxMult *= 3.0;
 		}
 	}

@@ -31,11 +31,11 @@ this.perk_mastery_throwing <- this.inherit("scripts/skills/skill", {
 
 			if (d <= 2)
 			{
-				_properties.DamageTotalMult *= 1.39999998;
+				_properties.DamageTotalMult *= 1.4;
 			}
 			else if (d <= 3)
 			{
-				_properties.DamageTotalMult *= 1.20000005;
+				_properties.DamageTotalMult *= 1.2;
 			}
 		}
 	}

@@ -33,7 +33,7 @@ this.named_throwing_axe <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.StaminaModifier = -4;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 1.10000002;
+		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ShieldDamage = 0;
 		this.m.ChanceToHitHead = 5;

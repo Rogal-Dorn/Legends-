@@ -27,8 +27,8 @@ this.warscythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 55;
 		this.m.RegularDamageMax = 80;
-		this.m.ArmorDamageMult = 1.04999995;
-		this.m.DirectDamageMult = 0.349999994;
+		this.m.ArmorDamageMult = 1.05;
+		this.m.DirectDamageMult = 0.35;
 	}
 
 	function onEquip()
