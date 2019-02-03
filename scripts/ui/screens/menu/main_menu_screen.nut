@@ -4,6 +4,7 @@ this.main_menu_screen <- {
 		MainMenuModule = null,
 		LoadCampaignModule = null,
 		NewCampaignModule = null,
+		NewLegendCampaignModule = null,
 		ScenarioMenuModule = null,
 		OptionsMenuModule = null,
 		CreditsModule = null,
@@ -58,6 +59,11 @@ this.main_menu_screen <- {
 		return this.m.NewCampaignModule;
 	}
 
+	function getNewLegendCampaignMenuModule()
+	{
+		return this.m.NewLegendCampaignModule;
+	}
+
 	function getScenarioMenuModule()
 	{
 		return this.m.ScenarioMenuModule;
@@ -107,6 +113,7 @@ this.main_menu_screen <- {
 		this.m.MainMenuModule = this.new("scripts/ui/screens/menu/modules/main_menu_module");
 		this.m.LoadCampaignModule = this.new("scripts/ui/screens/menu/modules/load_campaign_menu_module");
 		this.m.NewCampaignModule = this.new("scripts/ui/screens/menu/modules/new_campaign_menu_module");
+		this.m.NewLegendCampaignModule = this.new("scripts/ui/screens/menu/modules/new_legend_campaign_menu_module");
 		this.m.ScenarioMenuModule = this.new("scripts/ui/screens/menu/modules/scenario_menu_module");
 		this.m.OptionsMenuModule = this.new("scripts/ui/screens/menu/modules/options_menu_module");
 		this.m.CreditsModule = this.new("scripts/ui/screens/menu/modules/credits_module");
@@ -118,6 +125,7 @@ this.main_menu_screen <- {
 		this.m.MainMenuModule.connectUI(this.m.JSHandle);
 		this.m.LoadCampaignModule.connectUI(this.m.JSHandle);
 		this.m.NewCampaignModule.connectUI(this.m.JSHandle);
+		this.m.NewLegendCampaignModule.connectUI(this.m.JSHandle);
 		this.m.ScenarioMenuModule.connectUI(this.m.JSHandle);
 		this.m.OptionsMenuModule.connectUI(this.m.JSHandle);
 		this.m.CreditsModule.connectUI(this.m.JSHandle);
@@ -149,6 +157,8 @@ this.main_menu_screen <- {
 		this.m.LoadCampaignModule = null;
 		this.m.NewCampaignModule.destroy();
 		this.m.NewCampaignModule = null;
+		this.m.NewLegendCampaignModule.destroy();
+		this.m.NewLegendCampaignModule = null;
 		this.m.ScenarioMenuModule.destroy();
 		this.m.ScenarioMenuModule = null;
 		this.m.OptionsMenuModule.destroy();
@@ -194,6 +204,7 @@ this.main_menu_screen <- {
 		}
 	}
 
+
 	function showNewCampaignMenu()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
@@ -203,12 +214,30 @@ this.main_menu_screen <- {
 		}
 	}
 
+	function showNewLegendCampaignMenu()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showNewLegendCampaignMenu",  this.UIDataHelper.convertLegendCampaignsToUIData());
+		}
+	}
+
 	function hideNewCampaignMenu()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
 		{
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("hideNewCampaignMenu", null);
+		}
+	}
+
+	function hideNewLegendCampaignMenu()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("hideNewLegendCampaignMenu", null);
 		}
 	}
 

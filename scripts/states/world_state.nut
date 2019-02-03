@@ -71,6 +71,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
 		CampaignSettings = null
+		Campaign = ""
 	},
 	function getPlayer()
 	{
@@ -1081,6 +1082,27 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
+		
+		if (this.m.Campaign == "legends_noble") {
+			this.World.Tags.set("IsLegendsNoble", true);
+		}
+
+		if (this.m.Campaign == "legends_beggar") {
+			this.World.Tags.set("IsLegendsBeggar", true);
+		}
+		if (this.m.Campaign == "legends_crusader") {
+			this.World.Tags.set("IsLegendsCrusader", true);
+		}
+		if (this.m.Campaign == "legends_hunter") {
+			this.World.Tags.set("IsLegendsHunter", true);
+		}
+		if (this.m.Campaign == "legends_inventor") {
+			this.World.Tags.set("IsLegendsInventor", true);
+		}
+		if (this.m.Campaign == "legends_necro") {
+			this.World.Tags.set("IsLegendsNecro", true);
+		}
+
 
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
@@ -1147,6 +1169,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function setNewCampaignSettings( _settings )
 	{
 		this.m.CampaignSettings = _settings;
+		this.m.Campaign = _settings.Campaign;
 	}
 
 	function enterLocation( _location )
@@ -1204,7 +1227,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(32, 0);
+		factions.resize(100, 0);
 
 		foreach( party in raw_parties )
 		{

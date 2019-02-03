@@ -50,6 +50,11 @@ gt.Const.CharacterBackgrounds <- [
 	"tailor_background",
 	"shepherd_background",
 	"houndmaster_background"
+	"legend_crusader_background"
+	"legend_hunter_background"
+	"legend_noble_background"
+	"legend_necro_background"
+	"vazl_inventor_background"
 ];
 gt.Const.CharacterLaborerBackgrounds <- [
 	"farmhand_background",

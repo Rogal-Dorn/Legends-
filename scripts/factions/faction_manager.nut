@@ -244,10 +244,11 @@ this.faction_manager <- {
 		{
 			s.setDiscovered(true);
 
-			if (s.getOwner() != null || s.getSize() >= 2)
+			if (s.getOwner() != null || s.getSize() >= 1 )
 			{
-				this.World.uncoverFogOfWar(s.getTile().Pos, 2100.0);
+				this.World.uncoverFogOfWar(s.getTile().Pos, 0);
 			}
+
 		}
 	}
 
