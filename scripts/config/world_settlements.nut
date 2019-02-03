@@ -811,3 +811,24 @@ gt.Const.World.Settlements.Master <- [
 		List = this.Const.World.Settlements.Fortifications_large
 	}
 ];
+
+gt.Const.World.SettlementsUpdate <- function (_val)
+{
+	foreach (s in gt.Const.World.Settlements.Master)
+	{
+		s.Amount = Math.ceil(_val * s.Percentage);
+	}
+};
+
+local total = 0
+foreach(s in gt.Const.World.Settlements.Master)
+{
+	total = total + s.Amount;
+}
+
+foreach(s in gt.Const.World.Settlements.Master)
+{
+	s.Percentage <- s.Amount / total;
+}
+
+

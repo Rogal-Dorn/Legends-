@@ -1603,7 +1603,6 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 	function buildSettlements( _rect )
 	{
 		this.logInfo("Building settlements...");
-		local tries = 0;
 		local isLeft = this.Math.rand(0, 1);
 		local settlementTiles = [];
 

@@ -999,9 +999,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setAutoPause(true);
 		this.Time.setVirtualTime(0);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
+		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
+		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
-		local minX = worldmap.getMinX();
-		local minY = worldmap.getMinY();
+		local minX = this.Const.World.Settings.SizeX;
+		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
 		worldmap.fill({
 			X = 0,

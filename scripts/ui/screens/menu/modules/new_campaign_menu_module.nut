@@ -63,7 +63,16 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Ironman = _settings[5],
 			GreaterEvil = _settings[6],
 			PermanentDestruction = _settings[7],
-			Seed = _settings[8]
+			Seed = _settings[8],
+			Width = _settings[9],
+			Height = _settings[10],
+			LandMassMult = _settings[11] / 10,
+			WaterConnectivity = _settings[12],
+			MinLandToWaterRatio = _settings[13] / 10,
+			Snowline = _settings[14] / 100,
+			NumSettlements = _settings[15],
+			NumFactions = _settings[16],
+			FOW = _settings[17]
 		};
 
 		if (this.m.OnStartButtonPressedListener != null)
