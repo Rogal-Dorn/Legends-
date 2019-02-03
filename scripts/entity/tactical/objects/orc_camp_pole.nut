@@ -18,7 +18,7 @@ this.orc_camp_pole <- this.inherit("scripts/entity/tactical/entity", {
 			"16"
 		];
 		local v = variants[this.Math.rand(0, variants.len() - 1)];
-		local baseScale = 0.600000024 + this.Math.rand(0, 40) / 100.0;
+		local baseScale = 0.6 + this.Math.rand(0, 40) / 100.0;
 		local rotation = this.Math.rand(-6, 6);
 		local flip = this.Math.rand(0, 100) < 50;
 		local bottom = this.addSprite("bottom");

@@ -21,7 +21,7 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
-			_properties.DamageTotalMult *= 1.20000005;
+			_properties.DamageTotalMult *= 1.2;
 			this.removeSelf();
 		}
 	}

@@ -16,7 +16,7 @@ this.perk_feint <- this.inherit("scripts/skills/skill", {
 	function onTargetMissed( _skill, _targetEntity )
 	{
 		local actor = this.getContainer().getActor();
-		actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.floor(_skill.getFatigueCost() * 0.200000003)));
+		actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.floor(_skill.getFatigueCost() * 0.2)));
 	}
 
 });

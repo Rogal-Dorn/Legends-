@@ -16,7 +16,7 @@ this.wake_ally_aoe_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/wake_up_05.wav",
 			"sounds/enemies/wake_up_06.wav"
 		];
-		this.m.SoundVolume = 0.899999976;
+		this.m.SoundVolume = 0.9;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsSerialized = false;

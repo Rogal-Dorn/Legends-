@@ -26,7 +26,7 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/ghost_death_02.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [];
-		this.m.SoundPitch = this.Math.rand(90, 110) * 0.00999999978;
+		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/alp_shadow_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -67,8 +67,8 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 						LifeTimeMax = 0.5,
 						ColorMin = this.createColor("0000001f"),
 						ColorMax = this.createColor("0000001f"),
-						ScaleMin = 0.899999976,
-						ScaleMax = 0.899999976,
+						ScaleMin = 0.9,
+						ScaleMax = 0.9,
 						RotationMin = 0,
 						RotationMax = 0,
 						VelocityMin = 80,
@@ -79,12 +79,12 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 						ForceMax = this.createVec(0, 0)
 					},
 					{
-						LifeTimeMin = 0.100000001,
-						LifeTimeMax = 0.100000001,
+						LifeTimeMin = 0.1,
+						LifeTimeMax = 0.1,
 						ColorMin = this.createColor("00000000"),
 						ColorMax = this.createColor("00000000"),
-						ScaleMin = 0.100000001,
-						ScaleMax = 0.100000001,
+						ScaleMin = 0.1,
+						ScaleMax = 0.1,
 						RotationMin = 0,
 						RotationMax = 0,
 						VelocityMin = 80,
@@ -150,7 +150,7 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		blur_2.Alpha = 0;
 		blur_2.fadeToAlpha(blurAlpha, 750);
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.550000012;
+		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(-5, -5));
 		this.m.Skills.add(this.new("scripts/skills/actives/nightmare_touch_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/nightmare_touch_zoc_skill"));
@@ -167,7 +167,7 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("head", this.m.DistortTargetPrevA, this.m.DistortTargetA, 3.79999995, this.m.DistortAnimationStartTimeA))
+		if (this.moveSpriteOffset("head", this.m.DistortTargetPrevA, this.m.DistortTargetA, 3.8, this.m.DistortAnimationStartTimeA))
 		{
 			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevA = this.m.DistortTargetA;
@@ -193,7 +193,7 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
 		}
 
-		if (this.moveSpriteOffset("body", this.m.DistortTargetPrevC, this.m.DistortTargetC, 4.30000019, this.m.DistortAnimationStartTimeC))
+		if (this.moveSpriteOffset("body", this.m.DistortTargetPrevC, this.m.DistortTargetC, 4.3, this.m.DistortAnimationStartTimeC))
 		{
 			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
 			this.m.DistortTargetPrevC = this.m.DistortTargetC;
