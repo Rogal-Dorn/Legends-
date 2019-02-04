@@ -1608,53 +1608,49 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		foreach( list in this.Const.World.Settlements.Master )
 		{
-			
-			for (local i = 0; i < list.Amount; i = ++i)
+			local num = list.Amount;
+
+			while (num > 0 && tries++ < 3000)
 			{
-				local tile = null;
-				local hasConnection = false;
-				local next = false;
-				local terrain = null;
-				for (local j = 0; j < 1000; j = ++j)
+				local x;
+				local y;
+
+				if (isLeft)
 				{
-					local x;
-					local y;
+					x = this.Math.rand(6, _rect.W * 0.6);
+				}
+				else
+				{
+					x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
+				}
 
-					if (isLeft)
+				y = this.Math.rand(6, _rect.H * 0.95);
+				local tile = this.World.getTileSquare(x, y);
+				local next = false;
+
+				foreach( settlement in settlementTiles )
+				{
+					if (tile.getDistanceTo(settlement) < 12)
 					{
-						x = this.Math.rand(6, _rect.W * 0.6);
+						next = true;
+						break;
 					}
-					else
-					{
-						x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
-					}
+				}
 
-					y = this.Math.rand(6, _rect.H * 0.95);
-					tile = this.World.getTileSquare(x, y);
-					next = false;
-
-					terrain = this.getTerrainInRegion(tile);
-
-					if (terrain.Adjacent[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Adjacent[this.Const.World.TerrainType.Shore] >= 3)
-					{
-						continue;
-					}
-
-					foreach( settlement in settlementTiles )
-					{
-						if (tile.getDistanceTo(settlement) < 12)
-						{
-							next = true;
-							break;
-						}
-					}
+				if (next)
+				{
+					continue;
+				}
 
 					if (next) 
 					{
 						continue;
 					}
 
-					local candidates = [];
+				if (terrain.Adjacent[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Adjacent[this.Const.World.TerrainType.Shore] >= 3)
+				{
+					continue;
+				}
 
 					foreach( settlement in list.List )
 					{
@@ -1669,6 +1665,10 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						continue;
 					}
 
+				if (candidates.len() == 0)
+				{
+					continue;
+				}
 
 					local settlementType = candidates[this.Math.rand(0, candidates.len() - 1)];
 
@@ -1677,31 +1677,44 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						continue;
 					}
 
+				if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in type))
+				{
+					continue;
+				}
 
 
-					if (!("IsCoastal" in settlementType) && settlementTiles.len() > 0)
+				if (!("IsCoastal" in settlementType) && settlementTiles.len() > 0)
+				{
+					local navSettings = this.World.getNavigator().createSettings();
+					local skip = true;
+					foreach( s in this.World.EntityManager.getSettlements() )
 					{
-						local navSettings = this.World.getNavigator().createSettings();
-						local skip = true;
-						foreach( s in this.World.EntityManager.getSettlements() )
-						{
-							navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
-							local path = this.World.getNavigator().findPath(tile, s.getTile(), navSettings, 0);
+						navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
+						local path = this.World.getNavigator().findPath(tile, s.getTile(), navSettings, 0);
 
-							if (!path.isEmpty())
-							{
-								skip = false;
-								break;
-							}
-						}
-
-						if (skip)
+						if (!path.isEmpty())
 						{
-							continue;
+							skip = false;
+							break;
 						}
 					}
 
+					if (skip)
+					{
+						continue;
+					}
+				}
+
 					hasConnection = false;
+					foreach( settlement in settlementTiles )
+					{
+						continue;
+					}
+				}
+				else if (settlementTiles.len() >= 1 && tries < 1000)
+				{
+					local hasConnection = false;
+
 					foreach( settlement in settlementTiles )
 					{
 						local navSettings = this.World.getNavigator().createSettings();
@@ -1715,14 +1728,17 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						}
 					}
 
-					if (hasConnection || settlementTiles.len() == 0)
+					if (!hasConnection)
 					{
-						tile.clear();
-						local entity = this.World.spawnLocation(settlementType.Script, tile.Coords);
-						settlementTiles.push(tile);
-						break;
+						continue;
 					}
 				}
+
+				tile.clear();
+				local entity = this.World.spawnLocation(type.Script, tile.Coords);
+				settlementTiles.push(tile);
+				tries = 0;
+				num = --num;
 			}
 		}
 
