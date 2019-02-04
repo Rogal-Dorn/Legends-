@@ -215,13 +215,13 @@ this.faction_manager <- {
 		this.m.Factions.push(null);
 	}
 
-	function createFactions()
+	function createFactions( _settings )
 	{
 		this.createGenericEnemy();
 		this.createSettlements();
 		local nobles = this.createNobleHouses();
 		this.assignSettlementsToNobleHouses(nobles);
-		this.uncoverSettlements();
+		this.uncoverSettlements( _settings.FOW );
 		this.createBandits();
 		this.createOrcs();
 		this.createGoblins();
@@ -238,15 +238,19 @@ this.faction_manager <- {
 		}
 	}
 
-	function uncoverSettlements()
+	function uncoverSettlements( _fow )
 	{
 		foreach( s in this.World.EntityManager.getSettlements() )
 		{
 			s.setDiscovered(true);
-
 			if (s.getOwner() != null || s.getSize() >= 2)
 			{
-				this.World.uncoverFogOfWar(s.getTile().Pos, 2100.0);
+				local vis = 2100;
+				if (_fow)
+				{
+					vis = 0;
+				}
+				this.World.uncoverFogOfWar(s.getTile().Pos, vis);
 			}
 		}
 	}

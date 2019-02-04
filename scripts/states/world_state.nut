@@ -1011,7 +1011,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			W = minX,
 			H = minY
 		}, null);
-		this.World.FactionManager.createFactions();
+		this.World.FactionManager.createFactions(this.m.CampaignSettings);
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
 		this.m.Assets.init();
