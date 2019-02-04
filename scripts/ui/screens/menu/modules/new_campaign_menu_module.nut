@@ -66,12 +66,13 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Seed = _settings[8],
 			Width = _settings[9],
 			Height = _settings[10],
-			LandMassMult = _settings[11] / 10,
+			LandMassMult = _settings[11] / 10.0,
 			WaterConnectivity = _settings[12],
-			MinLandToWaterRatio = _settings[13] / 10,
-			Snowline = _settings[14] / 100,
+			MinLandToWaterRatio = _settings[13] / 10.0,
+			Snowline = _settings[14] / 100.0,
 			NumSettlements = _settings[15],
 			NumFactions = _settings[16],
+			//Vision = _settings[17],
 			FOW = _settings[17]
 		};
 
