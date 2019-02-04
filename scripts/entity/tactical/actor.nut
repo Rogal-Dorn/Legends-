@@ -2879,9 +2879,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (this.Math.rand(0, 100) < this.Const.Combat.SpawnBloodSameTileChance)
 		{
-			local n = this.Const.Combat.SpawnBloodAttempts;
-
-			while (n != 0)
+			for( local n = this.Const.Combat.SpawnBloodAttempts; n != 0;  )
 			{
 				local decal = this.Const.BloodDecals[this.m.BloodType][this.Math.rand(0, this.Const.BloodDecals[this.m.BloodType].len() - 1)];
 				local detail = _tile.spawnDetail(decal, this.Math.rand(0, 1) == 0, false, 0);
@@ -2915,9 +2913,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 					return;
 				}
 
-				local n = this.Const.Combat.SpawnBloodAttempts;
-
-				while (n != 0)
+				for( local n = this.Const.Combat.SpawnBloodAttempts; n != 0;  )
 				{
 					local decal = this.Const.BloodDecals[this.m.BloodType][this.Math.rand(0, this.Const.BloodDecals[this.m.BloodType].len() - 1)];
 					local detail = spawnOnTile.spawnDetail(decal, this.Math.rand(0, 1) == 0, false, 0);

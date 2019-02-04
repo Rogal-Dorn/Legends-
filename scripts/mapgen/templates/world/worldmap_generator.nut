@@ -1611,42 +1611,43 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			local num = list.Amount;
 
-			do
+			while (num > 0 && tries++ < 3000)
 			{
-				do
+				local x;
+				local y;
+
+				if (isLeft)
 				{
-					  // [032]  OP_JZ            10    269    0    0
-					local x;
-					local y;
+					x = this.Math.rand(6, _rect.W * 0.6);
+				}
+				else
+				{
+					x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
+				}
 
-					if (isLeft)
-					{
-						x = this.Math.rand(6, _rect.W * 0.6);
-					}
-					else
-					{
-						x = this.Math.rand(_rect.W * 0.4, _rect.W - 6);
-					}
+				y = this.Math.rand(6, _rect.H * 0.95);
+				local tile = this.World.getTileSquare(x, y);
+				local next = false;
 
-					y = this.Math.rand(6, _rect.H * 0.95);
-					local tile = this.World.getTileSquare(x, y);
-					local next = false;
-
-					foreach( settlement in settlementTiles )
+				foreach( settlement in settlementTiles )
+				{
+					if (tile.getDistanceTo(settlement) < 12)
 					{
-						if (tile.getDistanceTo(settlement) < 12)
-						{
-							next = true;
-							break;
-						}
+						next = true;
+						break;
 					}
 				}
-				while (next);
+
+				if (next)
+				{
+					continue;
+				}
 
 				local terrain = this.getTerrainInRegion(tile);
 
-				while (terrain.Adjacent[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Adjacent[this.Const.World.TerrainType.Shore] >= 3)
+				if (terrain.Adjacent[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Adjacent[this.Const.World.TerrainType.Shore] >= 3)
 				{
+					continue;
 				}
 
 				local candidates = [];
@@ -1659,14 +1660,16 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 				}
 
-				while (candidates.len() == 0)
+				if (candidates.len() == 0)
 				{
+					continue;
 				}
 
 				local type = candidates[this.Math.rand(0, candidates.len() - 1)];
 
-				while ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in type))
+				if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in type))
 				{
+					continue;
 				}
 
 				if (!("IsCoastal" in type))
@@ -1690,38 +1693,36 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					{
 						continue;
 					}
-
-					break;
 				}
-
-				if (!(settlementTiles.len() >= 1 && tries < 1000))
+				else if (settlementTiles.len() >= 1 && tries < 1000)
 				{
-					break;
-				}
+					local hasConnection = false;
 
-				local hasConnection = false;
-
-				foreach( settlement in settlementTiles )
-				{
-					local navSettings = this.World.getNavigator().createSettings();
-					navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
-					local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);
-
-					if (!path.isEmpty())
+					foreach( settlement in settlementTiles )
 					{
-						hasConnection = true;
-						break;
+						local navSettings = this.World.getNavigator().createSettings();
+						navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
+						local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);
+
+						if (!path.isEmpty())
+						{
+							hasConnection = true;
+							break;
+						}
+					}
+
+					if (!hasConnection)
+					{
+						continue;
 					}
 				}
-			}
-			while (!hasConnection);
 
-			tile.clear();
-			local entity = this.World.spawnLocation(type.Script, tile.Coords);
-			settlementTiles.push(tile);
-			tries = 0;
-			num = --num;
-			  // [301]  OP_JMP            0   -277    0    0
+				tile.clear();
+				local entity = this.World.spawnLocation(type.Script, tile.Coords);
+				settlementTiles.push(tile);
+				tries = 0;
+				num = --num;
+			}
 		}
 
 		this.logInfo("Created " + settlementTiles.len() + " settlements.");
