@@ -1603,6 +1603,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 	function buildSettlements( _rect )
 	{
 		this.logInfo("Building settlements...");
+		local tries = 0;
 		local isLeft = this.Math.rand(0, 1);
 		local settlementTiles = [];
 
@@ -1642,51 +1643,40 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					continue;
 				}
 
-					if (next) 
-					{
-						continue;
-					}
+				local terrain = this.getTerrainInRegion(tile);
 
 				if (terrain.Adjacent[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Adjacent[this.Const.World.TerrainType.Shore] >= 3)
 				{
 					continue;
 				}
 
-					foreach( settlement in list.List )
-					{
-						if (settlement.isSuitable(terrain))
-						{
-							candidates.push(settlement);
-						}
-					}
+				local candidates = [];
 
-					if (candidates.len() == 0)
+				foreach( settlement in list.List )
+				{
+					if (settlement.isSuitable(terrain))
 					{
-						continue;
+						candidates.push(settlement);
 					}
+				}
 
 				if (candidates.len() == 0)
 				{
 					continue;
 				}
 
-					local settlementType = candidates[this.Math.rand(0, candidates.len() - 1)];
-
-					if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in settlementType))
-					{
-						continue;
-					}
+				local type = candidates[this.Math.rand(0, candidates.len() - 1)];
 
 				if ((terrain.Region[this.Const.World.TerrainType.Ocean] >= 3 || terrain.Region[this.Const.World.TerrainType.Shore] >= 3) && !("IsCoastal" in type))
 				{
 					continue;
 				}
 
-
-				if (!("IsCoastal" in settlementType) && settlementTiles.len() > 0)
+				if (!("IsCoastal" in type))
 				{
-					local navSettings = this.World.getNavigator().createSettings();
 					local skip = true;
+					local navSettings = this.World.getNavigator().createSettings();
+
 					foreach( s in this.World.EntityManager.getSettlements() )
 					{
 						navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
@@ -1700,13 +1690,6 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 
 					if (skip)
-					{
-						continue;
-					}
-				}
-
-					hasConnection = false;
-					foreach( settlement in settlementTiles )
 					{
 						continue;
 					}
@@ -1950,7 +1933,6 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 		for( local i = 0; i != settlements.len(); i = ++i )
 		{
-			this.logInfo("* " + i);
 			local numConnections = 0;
 			local tries = 0;
 			tries = ++tries;
