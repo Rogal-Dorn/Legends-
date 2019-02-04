@@ -92,56 +92,72 @@ var NewCampaignMenuModule = function()
 			OptionsKey: 'map.width',
 			Min: 50,
 			Max: 300,
-			Value: 140
+			Value: 140,
+			Step: 1
 		},
 		Height: {
 			Control: null,
 			OptionsKey: 'map.height',
 			Min: 50,
 			Max: 300,
-			Value: 140
+			Value: 140,
+			Step: 1
 		},
 		LandMassMult: {
 			Control: null,
 			OptionsKey: 'map.landmassmult',
 			Min: 0,
 			Max: 20,
-			Value: 14
+			Value: 14,
+			Step: 1
 		},
 		WaterConnectivity: {
 			Control: null,
 			OptionsKey: 'map.waterconnectivity',
 			Min: 0,
 			Max: 100,
-			Value: 38
+			Value: 38,
+			Step: 1
 		},
 		MinLandToWaterRatio: {
 			Control: null,
 			OptionsKey: 'map.minlandtowaterratio',
 			Min: 0,
 			Max: 20,
-			Value: 14
+			Value: 14,
+			Step: 1
 		},
 		Snowline: {
 			Control: null,
 			OptionsKey: 'map.snowline',
 			Min: 0,
 			Max: 100,
-			Value: 90
+			Value: 90,
+			Step: 1
 		},
+		Vision: {
+			Control: null,
+			OptionsKey: 'map.vision',
+			Min: 0,
+			Max: 5000,
+			Value: 500,
+			Step: 100,
+		},		
 		NumSettlements: {
 			Control: null,
 			OptionsKey: 'map.settlements',
 			Min: 1,
 			Max: 60,
-			Value: 19
+			Value: 19,
+			Step: 1
 		},
 		NumFactions: {
 			Control: null,
 			OptionsKey: 'map.factions',
 			Min: 1,
 			Max: 6,
-			Value: 3
+			Value: 3,
+			Step: 1
 		}
 	};
 	this.mFogofWarCheckbox = null;
@@ -574,6 +590,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', rightColumn);
 		this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
 		this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
+		//this.createSliderControlDIV(this.mMapOptions.Vision, 'Vision', rightColumn);
 
 		var row = $('<div class="row"></div>');
 		rightColumn.append(row);
@@ -662,9 +679,10 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
 	var control = $('<div class="scale-control"></div>');
 	row.append(control);
 
-	_definition.Control = $('<input class="scale-slider" type="range" step="1" />');
+	_definition.Control = $('<input class="scale-slider" type="range"/>');
 	_definition.Control.attr('min', _definition.Min);
 	_definition.Control.attr('max', _definition.Max);
+	_definition.Control.attr('step', _definition.Step);
 	_definition.Control.val(_definition.Value);
 	control.append(_definition.Control);
 
@@ -1051,6 +1069,7 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mMapOptions.Snowline.Value);	
 	settings.push(this.mMapOptions.NumSettlements.Value);	
 	settings.push(this.mMapOptions.NumFactions.Value);
+	// settings.push(this.mMapOptions.Vision.Value);	
 	settings.push(this.mFogofWarCheckbox.is(':checked'));	
 
 	return settings;
