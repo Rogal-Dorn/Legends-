@@ -599,7 +599,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		row.append(control);
 		this.mFogofWarCheckbox = $('<input type="checkbox" id="cb-fog-of-war"/>');
 		control.append(this.mFogofWarCheckbox);
-		var label = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Fog of War</label>');
+		var label = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Settlements start hidden</label>');
 		control.append(label);
 		this.mFogofWarCheckbox.iCheck({
 			checkboxClass: 'icheckbox_flat-orange',
