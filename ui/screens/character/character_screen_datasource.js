@@ -1426,9 +1426,9 @@ CharacterScreenDatasource.prototype.unlockPerk = function(_brotherId, _perkId)
     });
 };
 
-CharacterScreenDatasource.prototype.queryPerkInformation = function(_perkId, _callback)
+CharacterScreenDatasource.prototype.queryPerkInformation = function(_perkId, _background, _callback)
 {
-    this.notifyBackendQueryPerkInformation(_perkId, _callback);
+    this.notifyBackendQueryPerkInformation(_perkId, _background, _callback);
 };
 
 
@@ -1640,9 +1640,9 @@ CharacterScreenDatasource.prototype.notifyBackendSortButtonClicked = function ()
     return null;
 };*/
 
-CharacterScreenDatasource.prototype.notifyBackendQueryPerkInformation = function (_perkId, _callback)
+CharacterScreenDatasource.prototype.notifyBackendQueryPerkInformation = function (_perkId, _background, _callback)
 {
-    SQ.call(this.mSQHandle, 'onQueryPerkInformation', [_perkId], _callback);
+    SQ.call(this.mSQHandle, 'onQueryPerkInformation', [_perkId, _background], _callback);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendUnlockPerk = function (_brotherId, _perkId, _callback)

@@ -861,7 +861,8 @@ this.tooltip_events <- {
 
 	function general_queryUIPerkTooltipData( _entityId, _perkId )
 	{
-		local perk = this.Const.Perks.findById(_perkId);
+		local player = this.Tactical.getEntityByID(_entityId);
+		local perk = this.Const.Perks.findByBackground(_perkId, player.getBackground().getID());
 
 		if (perk != null)
 		{
@@ -877,7 +878,6 @@ this.tooltip_events <- {
 					text = perk.Tooltip
 				}
 			];
-			local player = this.Tactical.getEntityByID(_entityId);
 
 			if (!player.hasPerk(_perkId))
 			{

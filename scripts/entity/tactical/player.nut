@@ -1453,14 +1453,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CombatStats.XPGained += this.Math.floor(_xp * this.m.CurrentProperties.XPGainMult);
 	}
 
-	function unlockPerk( _id )
+	function unlockPerk( _id , _background )
 	{
 		if (this.hasPerk(_id))
 		{
 			return true;
 		}
 
-		local perk = this.Const.Perks.findById(_id);
+		local perk = this.Const.Perks.findByBackground(_id, _background);
 
 		if (perk == null)
 		{
@@ -1491,7 +1491,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return false;
 		}
 
-		local perk = this.Const.Perks.findById(_id);
+		local perk = this.Const.Perks.findByBackground(_id, this.getBackground().getID());
 
 		if (this.m.PerkPointsSpent >= perk.Unlocks)
 		{
