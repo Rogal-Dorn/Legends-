@@ -33,7 +33,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			FavoriteWeapon = "",
 			FavoriteWeaponUses = 0,
 			CurrentWeaponUses = 0
-		}
+		},
+		Formations = null
 	},
 	function setName( _value )
 	{
@@ -127,7 +128,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getTryoutCost()
 	{
-		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * 0.1));
+		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult));
 	}
 
 	function getDailyCost()
@@ -318,6 +319,68 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					id = s.getID(),
 					icon = s.getIconColored()
 				});
+			}
+		}
+
+		return ret;
+	}
+
+	function getHiringTalents()
+	{
+		local ret = [];
+
+		if (!this.m.IsTryoutDone)
+		{
+			return ret;
+		}
+
+		local talents = this.getTalents()
+
+		for (local i = 0; i < this.Const.Attributes.COUNT; i = ++i)
+		{
+			if (talents[i] > 0)
+			{
+				local r = {
+					talent = "",
+					value = talents[i]
+				};
+
+				switch(i)
+				{
+				case 0:
+					r.talent = "HP";
+					break;
+
+				case 1:
+					r.talent = "RES";
+					break;
+
+				case 2:
+					r.talent = "FAT";
+					break;
+
+				case 3:
+					r.talent = "INIT";
+					break;
+
+				case 4:
+					r.talent = "MA";
+					break;
+
+				case 5:
+					r.talent = "RA";
+					break;
+
+				case 6:
+					r.talent = "MD";
+					break;
+
+				case 7:
+					r.talent = "RD";
+					break;
+				}
+
+				ret.push(r);
 			}
 		}
 
@@ -715,6 +778,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.getTags().set("PotionsUsed", 0);
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.Formations = this.new("scripts/entity/tactical/formations_container")
 	}
 
 	function onHired()
@@ -2291,6 +2355,49 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
 	}
 
+	function saveFormation()
+	{
+		this.m.Formations.savePosition(this.m.PlaceInFormation);
+		this.m.Formations.saveItems(this.getItems());
+	}
+	
+	function setFormation( _i )
+	{
+		if (_i == this.m.Formations.getCurrentIndex()) 
+		{
+			return;
+		}
+
+		this.m.Formations.setFormation(_i)
+		this.setPlaceInFormation(this.m.Formations.getPosition());
+		local items = this.m.Formations.getItems();
+		//Find the item in the stash, remove from stash and equip it
+		foreach (itemId in items)
+		{
+			local res = this.Stash.getItemByInstanceID(itemId);
+			if (res == null) {
+				this.logInfo("saveFormation::could not find item for " + itemId);
+				continue
+			}
+
+			this.Stash.remove(res.item);
+			this.m.Items.equip(res.item);
+		}
+
+		local bags = this.m.Formations.getBags();
+		foreach (itemId in bags)
+		{
+			local res = this.Stash.getItemByInstanceID(itemId);
+			if (res == null) {
+				this.logInfo("saveFormation::could not find item for " + itemId);
+				continue
+			}
+
+			this.Stash.remove(res.item);
+			this.m.Items.addToBag(res.item);
+		}
+	}
+
 	function onSerialize( _out )
 	{
 		this.actor.onSerialize(_out);
@@ -2337,6 +2444,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU32(this.m.LifetimeStats.FavoriteWeaponUses);
 		_out.writeU32(this.m.LifetimeStats.CurrentWeaponUses);
 		_out.writeBool(this.m.IsTryoutDone);
+		this.m.Formations.onSerialize(_out);
+
 	}
 
 	function onDeserialize( _in )
@@ -2412,6 +2521,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.LifetimeStats.CurrentWeaponUses = _in.readU32();
 		this.m.IsTryoutDone = _in.readBool();
 		this.m.Skills.update();
+
+		if (_in.getMetaData().getVersion() >= 46)
+		{
+			this.m.Formations.onDeserialize(_in);
+		}
+
 	}
 
 });

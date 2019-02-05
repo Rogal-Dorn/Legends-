@@ -8,6 +8,40 @@ this.data_helper <- {
 	{
 	}
 
+	function convertLegendCampaignsToUIData()
+	{
+		local result = [];
+		result.push({
+			name = "Default",
+			banner = "default",
+		})
+		result.push({
+			name = "Beggar",
+			banner = "legends_beggar",
+		})
+		result.push({
+			name = "Runaway noble",
+			banner = "legends_noble",
+		})
+		result.push({
+			name = "The crusade",
+			banner = "legends_crusader",
+		})
+		result.push({
+			name = "Rangers",
+			banner = "legends_hunter",
+		})
+		result.push({
+			name = "Necromancy",
+			banner = "legends_necro",
+		})
+		result.push({
+			name = "Inventions",
+			banner = "legends_inventor",
+		})
+		return result;
+	}
+
 	function convertCampaignStoragesToUIData()
 	{
 		local isWorldmap = ("Assets" in this.World) && this.World.Assets != null;

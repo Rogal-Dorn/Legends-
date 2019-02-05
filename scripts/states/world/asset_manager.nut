@@ -21,8 +21,8 @@ this.asset_manager <- {
 		MoralReputation = 50.0,
 		Score = 0.0,
 		AverageMoodState = this.Const.MoodState.Neutral,
-		BrothersMax = 20,
-		BrothersMaxInCombat = 12,
+		BrothersMax = 27,
+		BrothersMaxInCombat = 27,
 		LastDayPaid = 1,
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
@@ -30,7 +30,9 @@ this.asset_manager <- {
 		IsPermanentDestruction = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
-		IsConsumingAssets = true
+		IsConsumingAssets = true,
+		FormationIndex = 0,
+		FormationNames = []
 	},
 	function getCampaignID()
 	{
@@ -130,6 +132,16 @@ this.asset_manager <- {
 	function getFounderNames()
 	{
 		return this.m.FounderNames;
+	}
+
+	function getFormationIndex()
+	{
+		return this.m.FormationIndex;
+	}
+
+	function getFormationName()
+	{
+		return this.m.FormationNames[this.m.FormationIndex];
 	}
 
 	function isIronman()
@@ -288,24 +300,24 @@ this.asset_manager <- {
 		switch(_settings.BudgetDifficulty)
 		{
 		case 0:
-			this.m.Money = 2500;
-			this.m.Ammo = 80;
-			this.m.ArmorParts = 40;
-			this.m.Medicine = 30;
-			break;
-
-		case 1:
-			this.m.Money = 2000;
+			this.m.Money = 1500;
 			this.m.Ammo = 40;
 			this.m.ArmorParts = 20;
 			this.m.Medicine = 20;
 			break;
 
-		case 2:
-			this.m.Money = 1500;
+		case 1:
+			this.m.Money = 1000;
 			this.m.Ammo = 20;
 			this.m.ArmorParts = 10;
 			this.m.Medicine = 10;
+			break;
+
+		case 2:
+			this.m.Money = 500;
+			this.m.Ammo = 0;
+			this.m.ArmorParts = 0;
+			this.m.Medicine = 0;
 			break;
 		}
 
@@ -347,31 +359,120 @@ this.asset_manager <- {
 		]);
 		local roster = this.World.getPlayerRoster();
 		local bro;
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[0][1]);
-		bro.setStartValuesEx([
-			"companion_1h_background"
-		]);
-		bro.setPlaceInFormation(3);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[1][1]);
-		bro.setStartValuesEx([
-			"companion_2h_background"
-		]);
-		bro.setPlaceInFormation(4);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[2][1]);
-		bro.setStartValuesEx([
-			"companion_ranged_background"
-		]);
-		bro.setPlaceInFormation(5);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
+
+
+		switch(_settings.Campaign)
+		{
+		case "legends_noble":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_noble_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+		case "legends_crusader":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx([
+				"legend_crusader_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+		case "legends_hunter":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[0][1]);
+			bro.setStartValuesEx([
+				"legend_hunter_background"
+			]);
+			bro.setPlaceInFormation(3);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_hunter_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[2][1]);
+			bro.setStartValuesEx([
+				"legend_hunter_background"
+			]);
+			bro.setPlaceInFormation(5);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			break;
+		case "legends_necro":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_necro_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+		case "legends_inventor":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[0][1]);
+			bro.setStartValuesEx([
+				"vazl_inventor_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+						bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"apprentice_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			break;
+
+		case "legends_beggar":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"beggar_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+
+
+		default:
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[0][1]);
+			bro.setStartValuesEx([
+				"companion_1h_background"
+			]);
+			bro.setPlaceInFormation(3);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"companion_2h_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[2][1]);
+			bro.setStartValuesEx([
+				"companion_ranged_background"
+			]);
+			bro.setPlaceInFormation(5);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+		}
 		this.m.FounderNames = [];
+
 	}
 
 	function getBusinessReputationAsText()
@@ -571,6 +672,10 @@ this.asset_manager <- {
 		this.m.LastFoodConsumed = this.Time.getVirtualTimeF();
 		local globalTable = this.getroottable();
 		globalTable.Stash <- this.WeakTableRef(this.m.Stash);
+		for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+        {
+            this.m.FormationNames.push("Formation " + (i+1));
+        }
 	}
 
 	function init()
@@ -1204,6 +1309,73 @@ this.asset_manager <- {
 		return ret;
 	}
 
+    function changeFormation( _index )
+	{
+
+		if (_index == this.m.FormationIndex)
+		{
+			return;
+		}
+
+		this.m.FormationIndex = _index;
+		local roster = this.World.getPlayerRoster().getAll();
+		local stash = this.World.Assets.getStash();
+
+		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
+		//full stash and losing the gear
+		stash.setResizable(true);
+		//Save current loadout and strip all gear into stash if moving into a saved formation
+		foreach (b in roster) 
+		{
+			b.saveFormation();
+			b.getItems().transferToStash(stash);
+		}
+		stash.setResizable(false);
+		//All gear now in stash, set new formation and build up the next loadout
+		foreach (b in roster) 
+		{
+			b.setFormation(_index);
+		}
+
+		stash.sort();
+		this.updateFormation()
+	}
+
+    function clearFormation( _index )
+	{
+		this.m.FormationIndex = _index;
+		local roster = this.World.getPlayerRoster().getAll();
+		local stash = this.World.Assets.getStash();
+
+		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
+		//full stash and losing the gear
+		stash.setResizable(true);
+		//Clear loadout and strip all gear into stash
+		foreach (b in roster) 
+		{
+			//Strip items
+			b.getItems().transferToStash(stash);
+			b.saveFormation()
+		}
+		stash.setResizable(false);
+		stash.sort();
+		this.updateFormation()
+	}
+
+	function setFormationName(_index, _name)
+	{
+		if (_name == "") 
+		{
+			return;
+		}
+		this.m.FormationNames[_index] = _name;
+	}
+
+    function changeFormationName( _name )
+	{
+		this.setFormationName(this.m.FormationIndex, _name);
+	}
+
 	function updateFormation()
 	{
 		local NOT_IN_FORMATION = 255;
@@ -1219,7 +1391,7 @@ this.asset_manager <- {
 			{
 				formation[b.getPlaceInFormation()] = true;
 
-				if (b.getPlaceInFormation() <= 17)
+				if (b.getPlaceInFormation() <= 26)
 				{
 					inCombat = ++inCombat;
 				}
@@ -1244,7 +1416,7 @@ this.asset_manager <- {
 
 				if (inCombat >= this.m.BrothersMaxInCombat)
 				{
-					i = 18;
+					i = 27;
 				}
 
 				while (i != formation.len())
@@ -1254,7 +1426,7 @@ this.asset_manager <- {
 						b.setPlaceInFormation(i);
 						formation[i] = true;
 
-						if (i <= 17)
+						if (i <= 26)
 						{
 							inCombat = ++inCombat;
 						}
@@ -1964,6 +2136,11 @@ this.asset_manager <- {
 		_out.writeU8(this.m.LastHourUpdated);
 		_out.writeF32(this.m.LastFoodConsumed);
 		_out.writeBool(this.m.IsCamping);
+		_out.writeU8(this.m.FormationIndex);
+		foreach( name in this.m.FormationNames) 
+		{
+			_out.writeString(name);
+		}
 		_out.writeBool(false);
 	}
 
@@ -2026,6 +2203,20 @@ this.asset_manager <- {
 		this.m.LastHourUpdated = _in.readU8();
 		this.m.LastFoodConsumed = _in.readF32();
 		this.m.IsCamping = _in.readBool();
+		
+		if (_in.getMetaData().getVersion() >= 46 )
+		{
+			this.m.FormationIndex = _in.readU8();
+		}
+
+		if (_in.getMetaData().getVersion() >= 47 )
+		{
+			for( local i = 0; i < this.Const.Formations.Count; i = ++i )
+			{
+				this.setFormationName(i, _in.readString())
+			}
+		}
+
 		this.updateAverageMoodState();
 		this.updateFood();
 		this.updateFormation();
@@ -2061,7 +2252,7 @@ this.asset_manager <- {
 				}
 			}
 		}
-
+	
 		_in.readBool();
 	}
 

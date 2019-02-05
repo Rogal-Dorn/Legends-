@@ -81,6 +81,10 @@ this.raise_undead <- this.inherit("scripts/skills/skill", {
 	{
 		local p = _tile.Properties.get("Corpse");
 		p.Faction = _user.getFaction();
+		if (p.Faction == this.Const.Faction.Player)
+		{
+			p.Faction = this.Const.Faction.PlayerAnimals;
+		}
 		local e = this.Tactical.Entities.onResurrect(p);
 
 		if (e != null)

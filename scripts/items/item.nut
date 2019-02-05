@@ -1,6 +1,7 @@
 this.item <- {
 	m = {
 		ID = "",
+		OldID = "",
 		Name = "",
 		Icon = "",
 		IconLarge = "",
@@ -57,6 +58,11 @@ this.item <- {
 	function getID()
 	{
 		return this.m.ID;
+	}
+
+	function getOldInstanceID()
+	{
+		return this.m.OldID;
 	}
 
 	function getInstanceID()
@@ -603,6 +609,7 @@ this.item <- {
 		_out.writeU16(this.m.Variant);
 		_out.writeF32(this.m.Condition);
 		_out.writeF32(this.m.PriceMult);
+		_out.writeString(this.getInstanceID()); //Need old ID for saved formations
 	}
 
 	function onDeserialize( _in )
@@ -620,6 +627,12 @@ this.item <- {
 
 		this.m.Condition = _in.readF32();
 		this.m.PriceMult = _in.readF32();
+
+		if (_in.getMetaData().getVersion() >= 46)
+		{
+			this.m.OldID = _in.readString();
+		}
+		
 		this.updateVariant();
 	}
 

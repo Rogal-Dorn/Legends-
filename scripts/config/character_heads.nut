@@ -90,7 +90,19 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_15",
 	"bust_head_16",
 	"bust_head_17",
-	"bust_head_18"
+	"bust_head_18",
+	"bust_head_19",
+	"bust_head_20",
+	"bust_head_21",
+	"bust_head_22",
+	"bust_head_23",
+	"bust_head_24",
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30"
 ];
 gt.Const.Faces.SmartMale <- [
 	"bust_head_01",
@@ -102,7 +114,8 @@ gt.Const.Faces.SmartMale <- [
 	"bust_head_09",
 	"bust_head_12",
 	"bust_head_13",
-	"bust_head_14"
+	"bust_head_14",
+	"bust_head_24"
 ];
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",
@@ -130,7 +143,8 @@ gt.Const.Hair.BarberMale <- [
 	"17",
 	"18",
 	"19",
-	"20"
+	"20",
+	"21"
 ];
 gt.Const.Hair.AllMale <- [
 	"shaved",
@@ -407,5 +421,6 @@ gt.Const.Tattoos.Cultist <- [];
 gt.Const.Bodies.AllMale <- [
 	"bust_naked_body_00",
 	"bust_naked_body_01",
-	"bust_naked_body_02"
+	"bust_naked_body_02",
+	"bust_naked_body_03"
 ];

@@ -8,9 +8,9 @@ if (!("Tactical" in gt.Const))
 gt.Const.Tactical.GruesomeFeastParticles <- [
 	{
 		Delay = 0,
-		Quantity = 60,
-		LifeTimeQuantity = 60,
-		SpawnRate = 50,
+		Quantity = 120,
+		LifeTimeQuantity = 120,
+		SpawnRate = 100,
 		Brushes = [
 			"blood_red_01",
 			"blood_red_02",
@@ -69,9 +69,9 @@ gt.Const.Tactical.GruesomeFeastParticles <- [
 	},
 	{
 		Delay = 0,
-		Quantity = 80,
-		LifeTimeQuantity = 80,
-		SpawnRate = 40,
+		Quantity = 160,
+		LifeTimeQuantity = 160,
+		SpawnRate = 100,
 		Brushes = [
 			"blood_splatter_red_01",
 			"blood_splatter_red_02",
@@ -134,9 +134,9 @@ gt.Const.Tactical.GruesomeFeastParticles <- [
 gt.Const.Tactical.KrakenDevourParticles <- [
 	{
 		Delay = 0,
-		Quantity = 100,
-		LifeTimeQuantity = 100,
-		SpawnRate = 90,
+		Quantity = 200,
+		LifeTimeQuantity = 200,
+		SpawnRate = 180,
 		Brushes = [
 			"blood_red_01",
 			"blood_red_02",
@@ -195,9 +195,9 @@ gt.Const.Tactical.KrakenDevourParticles <- [
 	},
 	{
 		Delay = 0,
-		Quantity = 160,
-		LifeTimeQuantity = 160,
-		SpawnRate = 80,
+		Quantity = 320,
+		LifeTimeQuantity = 320,
+		SpawnRate = 160,
 		Brushes = [
 			"blood_splatter_red_01",
 			"blood_splatter_red_02",
@@ -260,9 +260,9 @@ gt.Const.Tactical.KrakenDevourParticles <- [
 gt.Const.Tactical.KrakenDevourVictimParticles <- [
 	{
 		Delay = 0,
-		Quantity = 30,
-		LifeTimeQuantity = 30,
-		SpawnRate = 25,
+		Quantity = 60,
+		LifeTimeQuantity = 60,
+		SpawnRate = 50,
 		Brushes = [
 			"blood_red_01",
 			"blood_red_02",
@@ -321,9 +321,9 @@ gt.Const.Tactical.KrakenDevourVictimParticles <- [
 	},
 	{
 		Delay = 0,
-		Quantity = 40,
-		LifeTimeQuantity = 40,
-		SpawnRate = 30,
+		Quantity = 80,
+		LifeTimeQuantity = 80,
+		SpawnRate = 60,
 		Brushes = [
 			"blood_splatter_red_01",
 			"blood_splatter_red_02",
@@ -386,9 +386,9 @@ gt.Const.Tactical.KrakenDevourVictimParticles <- [
 gt.Const.Tactical.DarkflightStartParticles <- [
 	{
 		Delay = 0,
-		Quantity = 70,
-		LifeTimeQuantity = 70,
-		SpawnRate = 150,
+		Quantity = 140,
+		LifeTimeQuantity = 140,
+		SpawnRate = 300,
 		Brushes = [
 			"effect_bat_01"
 		],
@@ -457,9 +457,9 @@ gt.Const.Tactical.DarkflightStartParticles <- [
 gt.Const.Tactical.DarkflightEndParticles <- [
 	{
 		Delay = 0,
-		Quantity = 70,
-		LifeTimeQuantity = 70,
-		SpawnRate = 150,
+		Quantity = 140,
+		LifeTimeQuantity = 140,
+		SpawnRate = 300,
 		Brushes = [
 			"effect_bat_01"
 		],
@@ -528,9 +528,9 @@ gt.Const.Tactical.DarkflightEndParticles <- [
 gt.Const.Tactical.RaiseUndeadParticles <- [
 	{
 		Delay = 0,
-		Quantity = 100,
-		LifeTimeQuantity = 100,
-		SpawnRate = 100,
+		Quantity = 200,
+		LifeTimeQuantity = 200,
+		SpawnRate = 200,
 		Brushes = [
 			"effect_fire_01",
 			"effect_fire_02",
@@ -587,9 +587,9 @@ gt.Const.Tactical.RaiseUndeadParticles <- [
 	},
 	{
 		Delay = 0,
-		Quantity = 10,
-		LifeTimeQuantity = 10,
-		SpawnRate = 10,
+		Quantity = 20,
+		LifeTimeQuantity = 20,
+		SpawnRate = 20,
 		Brushes = [
 			"effect_skull_01"
 		],
@@ -642,9 +642,9 @@ gt.Const.Tactical.RaiseUndeadParticles <- [
 gt.Const.Tactical.RaiseFromGroundParticles <- [
 	{
 		Delay = 200,
-		Quantity = 70,
-		LifeTimeQuantity = 70,
-		SpawnRate = 60,
+		Quantity = 140,
+		LifeTimeQuantity = 140,
+		SpawnRate = 120,
 		Brushes = [
 			"dust_01"
 		],
@@ -695,9 +695,9 @@ gt.Const.Tactical.RaiseFromGroundParticles <- [
 gt.Const.Tactical.MiasmaParticles <- [
 	{
 		Delay = 0,
-		Quantity = 50,
+		Quantity = 100,
 		LifeTimeQuantity = 0,
-		SpawnRate = 9,
+		SpawnRate = 18,
 		Brushes = [
 			"miasma_effect_02",
 			"miasma_effect_03"
@@ -758,7 +758,7 @@ gt.Const.Tactical.MiasmaParticles <- [
 		Delay = 0,
 		Quantity = 10,
 		LifeTimeQuantity = 0,
-		SpawnRate = 2,
+		SpawnRate = 4,
 		Brushes = [
 			"effect_skull_01",
 			"effect_fire_01",
@@ -817,9 +817,9 @@ gt.Const.Tactical.MiasmaParticles <- [
 gt.Const.Tactical.ShadowParticles <- [
 	{
 		Delay = 0,
-		Quantity = 25,
+		Quantity = 50,
 		LifeTimeQuantity = 0,
-		SpawnRate = 5,
+		SpawnRate = 10,
 		Brushes = [
 			"effect_lightning_01",
 			"effect_lightning_02",
@@ -879,9 +879,9 @@ gt.Const.Tactical.ShadowParticles <- [
 	},
 	{
 		Delay = 0,
-		Quantity = 25,
+		Quantity = 50,
 		LifeTimeQuantity = 0,
-		SpawnRate = 4,
+		SpawnRate = 8,
 		Brushes = [
 			"miasma_effect_02",
 			"miasma_effect_03"

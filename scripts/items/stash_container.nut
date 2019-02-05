@@ -224,6 +224,14 @@ this.stash_container <- {
 					index = i
 				};
 			}
+
+			if (this.m.Items[i] != null && this.m.Items[i].getOldInstanceID() == _instanceID)
+			{
+				return {
+					item = this.m.Items[i],
+					index = i
+				};
+			}
 		}
 
 		return null;

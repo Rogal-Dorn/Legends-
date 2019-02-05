@@ -890,7 +890,7 @@ this.tactical_entity_manager <- {
 
 		foreach( p in all_players )
 		{
-			if (p.getPlaceInFormation() > 17)
+			if (p.getPlaceInFormation() > 26)
 			{
 				continue;
 			}
@@ -908,7 +908,7 @@ this.tactical_entity_manager <- {
 
 			num = ++num;
 
-			if (num >= 12)
+			if (num >= 27)
 			{
 				break;
 			}
