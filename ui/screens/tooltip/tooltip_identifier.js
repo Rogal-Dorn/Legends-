@@ -262,7 +262,8 @@ var TooltipIdentifier =
 		HireDialogModule:
 		{
             HireButton: 'world-town-screen.hire-dialog-module.HireButton',
-            TryoutButton: 'world-town-screen.hire-dialog-module.TryoutButton',
+			TryoutButton: 'world-town-screen.hire-dialog-module.TryoutButton',
+			DismissButton: 'world-town-screen.hire-dialog-module.DismissButton',
             LeaveButton: 'world-town-screen.hire-dialog-module.LeaveButton',
             UnknownTraits: 'world-town-screen.hire-dialog-module.UnknownTraits',
         },

@@ -463,24 +463,28 @@
 
 .world-town-screen > .l-hire-dialog-container .content .details-container .column.is-character-background-container .row.is-top .traits-container
 {
-    left: 3.4rem;
-    right: 1.0rem;
+    left: 3.0rem;
+    right: 0.0rem;
     bottom: -3.2rem;
     height: 2.6rem;
     position: absolute;
-    overflow: hidden;
 
     line-height: 3.0rem;
 }
 
 .world-town-screen > .l-hire-dialog-container .content .details-container .column.is-character-background-container .row.is-top .traits-container > img
 {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 3.0rem;
+    height: 2.8rem;
+    padding-right: 0.3rem;
 
     position: relative;
     display: block;
     float: left;
+}
+.world-town-screen > .l-hire-dialog-container .content .details-container .column.is-character-background-container .row.is-top .traits-container > span
+{
+    padding-left: 1.0rem;
 }
 
 .world-town-screen > .l-hire-dialog-container .content .details-container .column.is-character-background-container .row.is-bottom
