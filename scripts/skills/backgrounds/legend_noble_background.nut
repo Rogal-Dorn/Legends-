@@ -10,7 +10,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.GoodEnding = "Adventurousness never leaves the soul of a woman like %name%. {Instead of following the traditions of her noble family, she headed east to start slay a fearsome beast. Word has it she returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | She journeyed with %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where she is these days, but you\'ve little doubt that she\'ll be coming back with stories to tell. | She retired from the %companyname% and, instead of returning to her noble family, headed south. Word has it she fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about her travels. | The noblewoman left the %companyname% and, preferring the life of adventure to noble boredom, she headed north. Word has it that she\'s currently marching a troop of explorers to the furthest reaches of the world.}";
 		this.m.BadEnding = "%name% departed the %companyname% and continued her adventuring elsewhere. {She headed east, hoping to discover the source of the greenskins, but has not been heard from since. | She headed north into the snowy wastes. Word has it she was seen a week ago, marching south this time, looking rather pale and shuffling moreso than walking. | She headed south into brutal marshlands. Word has it that a mysterious flame appeared in the fog and she walked toward it. The men who saw this said she disappeared into the mist and never returned. | She headed west and sailed the open sea. Despite having no experience at sea, she saw fit to make herself captain of the boat. They say pieces of her ship and dead sailors kept washing ashore for weeks.}";
 		this.m.HiringCost = 150;
-		this.m.DailyCost = 5;
+		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_beasts",
@@ -26,13 +26,12 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.asthmatic",
 			"trait.spartan"
 		];
-		this.m.Faces = "bust_head_20";
-		this.m.Hairs = "hair_blonde_21";
+		this.m.Faces = this.Const.Faces.SmartMale;
+		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = null;
+		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_03";
 		this.m.Level = this.Math.rand(1, 3);
-		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 	}
 
@@ -100,12 +99,19 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
 	}
 
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
+		local stash =this.World.Assets.getStash()
+		stash.removeByID("supplies.ground_grains");
+		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/loot/signet_ring_item"));
+		items.equip(this.new("scripts/items/helmets/noble_headgear"));
+		stash.add(this.new("scripts/items/supplies/medicine_item"));
+		stash.add(this.new("scripts/items/supplies/wine_item"));
+
 		local r;
 		r = this.Math.rand(0, 2);
 
@@ -122,52 +128,21 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/weapons/shortbow"));
 		}
 		
-		r = this.Math.rand(0, 3);
 
-		if (r == 0)
-		{
-			items.addToBag(this.new("scripts/items/loot/signet_ring_item"));
-		}
-		else if (r == 1)
-		{
-			items.addToBag(this.new("scripts/items/loot/signet_ring_item"));
-		}
-		else if (r == 2)
-		{
-			items.addToBag(this.new("scripts/items/loot/white_pearls_item"));
-		}
-		else if (r == 3)
-		{
-			items.addToBag(this.new("scripts/items/loot/jeweled_crown_item"));
-		}
-
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.addToBag(this.new("scripts/items/supplies/medicine_item"));
-			items.addToBag(this.new("scripts/items/supplies/preserved_mead_item"));
-		}
-		else if (r == 1)
-		{
-			items.addToBag(this.new("scripts/items/supplies/medicine_item"));
-			items.addToBag(this.new("scripts/items/supplies/wine_item"));
-		}
 	
 		r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{
-			items.addToBag(this.new("scripts/items/trade/dies_item"));
+			stash.add(this.new("scripts/items/trade/dies_item"));
 		}
 		else if (r == 1)
 		{
-			items.addToBag(this.new("scripts/items/trade/uncut_gems_item"));
+			stash.add(this.new("scripts/items/trade/uncut_gems_item"));
 		}
 		else if (r == 1)
 		{
-			items.addToBag(this.new("scripts/items/trade/amber_shards_item"));
+			stash.add(this.new("scripts/items/trade/amber_shards_item"));
 		}
 
 
@@ -185,16 +160,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 
 
-		r = this.Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/noble_headgear"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		}
 	}
 
 });

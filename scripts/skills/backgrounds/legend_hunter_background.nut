@@ -83,7 +83,7 @@ this.legend_hunter_background <- this.inherit("scripts/skills/backgrounds/charac
 				5
 			],
 			Stamina = [
-				7,
+				10,
 				5
 			],
 			MeleeSkill = [
@@ -91,20 +91,20 @@ this.legend_hunter_background <- this.inherit("scripts/skills/backgrounds/charac
 				0
 			],
 			RangedSkill = [
-				20,
-				17
+				30,
+				20
 			],
 			MeleeDefense = [
 				0,
 				0
 			],
 			RangedDefense = [
-				0,
-				3
+				20,
+				10
 			],
 			Initiative = [
-				0,
-				5
+				10,
+				10
 			]
 		};
 		return c;
@@ -114,24 +114,40 @@ this.legend_hunter_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.character_background.onAdded();
 
 		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 	}	
 
 
 
 	function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.RangedSkill] = 3;
+		talents[this.Const.Attributes.RangedDefense] = 2;
+		talents[this.Const.Attributes.Fatigue] = 1;
+
 		local items = this.getContainer().getActor().getItems();
+
+
 		local r;
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		items.addToBag(this.new("scripts/items/supplies/ammo_item"));
+
+		local stash =this.World.Assets.getStash()
+		stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));
+		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
+		stash.removeByID("supplies.ground_grains");
+
+
+
 		r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{
 			items.addToBag(this.new("scripts/items/weapons/knife"));
 		}
-		if (r == 0)
+		if (r == 1)
 		{
 			items.addToBag(this.new("scripts/items/weapons/bludgeon"));
 		}
@@ -157,7 +173,7 @@ this.legend_hunter_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}
-		else if (r == 0)
+		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/helmets/hunters_hat"));
 		}

@@ -9,15 +9,15 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 
 		if (r == 0)
 		{
-			this.m.Name = "Mage";
+			this.m.Name = "Medium";
 		}
 		else if (r == 1)
 		{
-			this.m.Name = "Sorcerer";
+			this.m.Name = "Séance";
 		}
 		else if (r == 2)
 		{
-			this.m.Name = "Wizard";
+			this.m.Name = "Sorceror";
 		}
 		else if (r == 3)
 		{
@@ -25,27 +25,28 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 
 		this.m.HiringCost = 250;
-		this.m.DailyCost = 15;
+		this.m.DailyCost = 0;
 		this.m.Excluded = [
-			"trait.impatient",
-			"trait.iron_jaw",
-			"trait.clubfooted",
-			"trait.dumb",
-			"trait.insecure",
-			"trait.loyal",
-			"trait.hesitant",
-			"trait.craven",
-			"trait.fainthearted",
+			"trait.brave",
+			"trait.athletic",
 			"trait.brute",
-			"trait.bloodthirsty"
+			"trait.dexterous",
+			"trait.eagleyes",
+			"trait.fearless",
+			"trait.huge",
+			"trait.loyal",
+			"trait.quick",
+			"trait.swift",
+			"trait.suser_footing",
+			"trait.tough"
 		];
 		this.m.Titles = [
-			"the All-Powerful",
-			"the Magnificent",
-			"the Augur",
-			"the Seer",
-			"Star Seer",
-			"the Stargazer"
+			"the Sickening",
+			"the Wretched",
+			"the Widow Taunter",
+			"the Fleshturner",
+			"The Corpse Dancer",
+			"the Puppeteer"
 		];
 		this.m.Faces = this.Const.Faces.SmartMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
@@ -83,23 +84,60 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Container.add(this.new("scripts/skills/actives/possess_undead_skill"));		
 	}	
 
+		function onChangeAttributes()
+	{
+		local c = {
+			Hitpoints = [
+				-20,
+				-20
+			],
+			Bravery = [
+				0,
+				0
+			],
+			Stamina = [
+				-20,
+				-20
+			],
+			MeleeSkill = [
+				-10,
+				-10
+			],
+			RangedSkill = [
+				-10,
+				-5
+			],
+			MeleeDefense = [
+				0,
+				0
+			],
+			RangedDefense = [
+				-5,
+				0
+			],
+			Initiative = [
+				0,
+				0
+			]
+		};
+		return c;
+	}
+
+
 	function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Initiative] = 1;
+		talents[this.Const.Attributes.Bravery] = 1;
+		talents[this.Const.Attributes.Hitpoints] = 1;
 		local items = this.getContainer().getActor().getItems();
-		local r;
-		r = this.Math.rand(0, 0);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/wizard_robe"));
-		}
-
-		r = this.Math.rand(0, 0);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/wizard_hat"));
-		}
+		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
+		items.equip(this.new("scripts/items/helmets/necromancer_hat"));
+		local stash = this.World.Assets.getStash()
+		stash.removeByID("supplies.ground_grains");
+		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/supplies/strange_meat_item"));
 	}
 
 });
