@@ -632,7 +632,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getConditionMax() > 1 && _item.getCondition() < _item.getConditionMax())
 			{
 				local price = (_item.getConditionMax() - _item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.200000003 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)
@@ -3422,6 +3422,20 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Give the selected recruit a proper tryout to reveal his hidden character traits, if any."
+				}
+			];
+
+		case "world-town-screen.hire-dialog-module.DismissButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Dismiss Recruit"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Selected recruit doesn't make the cut, give'em the boot."
 				}
 			];
 
