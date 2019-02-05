@@ -343,7 +343,8 @@ this.data_helper <- {
 			ImageOffsetY = _entity.getImageOffsetY(),
 			BackgroundImagePath = background.getIconColored(),
 			BackgroundText = background.getDescription(),
-			Traits = _entity.getHiringTraits()
+			Traits = _entity.getHiringTraits(),
+			Talents = _entity.getHiringTalents()
 		};
 	}
 

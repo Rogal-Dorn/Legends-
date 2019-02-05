@@ -37,6 +37,8 @@ Mod Features:
 * Hexen nerf
 	- Only uses one ability per turn
 * More blood
+* Tryout Talents
+    - Reveals star attribtes when trying out a brother in hire screen
 
 
 Recommended addons:

@@ -122,6 +122,34 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		};
 	}
 
+	function onDismissRosterEntry( _entityID )
+	{
+		local entry = this.findEntityWithinRoster(_entityID);
+
+		if (entry != null)
+		{
+			local roster = this.World.getPlayerRoster();
+			local entities = roster.getAll();
+
+			this.World.getRoster(this.m.RosterID).remove(entry);
+
+			if (this.World.getRoster(this.m.RosterID).getSize() == 0)
+			{
+				this.m.Parent.getMainDialogModule().reload();
+			}
+
+			return {
+				Result = 0,
+				Assets = this.m.Parent.queryAssetsInformation()
+			};
+		}
+
+		return {
+			Result = this.Const.UI.Error.RosterEntryNotFound,
+			Assets = null
+		};
+	}
+
 	function findEntityWithinRoster( _entryID )
 	{
 		local roster = this.World.getRoster(this.m.RosterID);
