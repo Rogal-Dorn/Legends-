@@ -32,9 +32,9 @@ Mod Features:
 * Endless war 
 	- reduced crises interval from ~100 days to ~30 days 
 	- Noble houses begin at war 
-*Alp nerf
+* lp nerf
 	- Only spawns 1 nightmare per turn
-*Hexen nerf
+* Hexen nerf
 	- Only uses one ability per turn
 * More blood
 
