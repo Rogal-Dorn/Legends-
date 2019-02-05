@@ -16,27 +16,39 @@ this.data_helper <- {
 			banner = "default",
 		})
 		result.push({
-			name = "Beggar",
+			name = "Beggar - Weak and poor",
 			banner = "legends_beggar",
 		})
 		result.push({
-			name = "Runaway noble",
-			banner = "legends_noble",
-		})
-		result.push({
-			name = "The crusade",
+			name = "Crusader - Well equiped and strong",
 			banner = "legends_crusader",
 		})
 		result.push({
-			name = "Rangers",
+			name = "Rangers - Dexterous and deadly",
 			banner = "legends_hunter",
 		})
 		result.push({
-			name = "Necromancy",
+			name = "Healer - Healthy and caring",
+			banner = "legends_healer",
+		})
+		result.push({
+			name = "Berserker - Violent and tireless",
+			banner = "legends_beserker",
+		})
+		result.push({
+			name = "Witch - Old and sleepy",
+			banner = "legends_witch",
+		})
+		result.push({
+			name = "Necromancer -  Frail reincarnator",
 			banner = "legends_necro",
 		})
 		result.push({
-			name = "Inventions",
+			name = "Noble - rich",
+			banner = "legends_noble",
+		})
+		result.push({
+			name = "Inventor - experimental acedemic",
 			banner = "legends_inventor",
 		})
 		return result;

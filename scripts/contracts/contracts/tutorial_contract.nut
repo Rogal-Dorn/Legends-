@@ -96,6 +96,18 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("LegendsNecro");
 		} 
+		else if (this.World.Tags.get("IsLegendsWitch"))
+		{
+			this.setState("LegendsWitch");
+		} 
+		else if (this.World.Tags.get("IsLegendsHealer"))
+		{
+			this.setState("LegendsHealer");
+		} 
+			else if (this.World.Tags.get("IsLegendsBeserker"))
+		{
+			this.setState("LegendsBeserker");
+		} 
 		else if (this.World.Tags.get("IsLegendsInventor"))
 		{
 			this.setState("LegendsInventor");
@@ -267,7 +279,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				e.getBaseProperties().MeleeSkill = -200;
 				e.getBaseProperties().RangedSkill = 0;
 				e.getBaseProperties().MeleeDefense = -200;
-				e.getBaseProperties().DamageTotalMult = 0.1;
+				e.getBaseProperties().DamageTotalMult = 0.100000001;
 				e.getBaseProperties().Initiative = 250;
 				e.getSkills().update();
 				e.setHitpoints(5);
@@ -630,6 +642,45 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Contracts.showActiveContract();
 			}
 		});	
+			this.m.States.push({
+			ID = "LegendsWitch",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsWitchSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+			this.m.States.push({
+			ID = "LegendsHealer",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsHealerSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+			this.m.States.push({
+			ID = "LegendsBeserker",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsBesekerSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
 		this.m.States.push({
 			ID = "LegendsInventor",
 			function start()
@@ -643,6 +694,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Contracts.showActiveContract();
 			}
 		});	
+
+
 
 		this.m.States.push({
 			ID = "LegendsBeggar",
@@ -1038,6 +1091,88 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 
 		});
 		this.m.Screens.push({
+			ID = "LegendsHealerSuccess",
+			Title = "Necro",
+			Text = "[img]gfx/ui/events/event_24.png[/img]Healer start intro text",
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+
+
+		this.m.Screens.push({
+			ID = "LegendsWitchSuccess",
+			Title = "Necro",
+			Text = "[img]gfx/ui/events/event_24.png[/img]Witch start intro text",
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		
+		this.m.Screens.push({
+			ID = "LegendsBeserkerSuccess",
+			Title = "Necro",
+			Text = "[img]gfx/ui/events/event_24.png[/img]Beserker start intro text",
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+
+		this.m.Screens.push({
 			ID = "LegendsInventorSuccess",
 			Title = "Inventor",
 			Text = "[img]gfx/ui/events/event_24.png[/img]Inventor start intro text",
@@ -1066,7 +1201,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LegendsBeggarSuccess",
 			Title = "Beggar",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Beggar start intro text",
+			Text = "[img]gfx/ui/events/event_24.png[/img]Six crowns. A whole day and all you have for it is a paltry six crowns. Barely enough for a loaf of bread in this dung heap of a town. It wasn't but a month ago that you could solicit twenty or more from the passersby. But now they barely acknowledge you exist. You sigh as you amble through the narrow streets, heading toward your alley for the night. Thoughts of uncertainty drift into your head. You've seen a lot in the square. There, your hand is on the pulse of the town. You can tell when things aren't right, you see it in the way they all walk. Have they been walking differently? Your thoughts are cut short by clamoring pouring out the mouth of your alley. It must be some street hounds squabbling over some rotten scrap. Before you turn the corner, you hear words, yelling. Why is someone here? You picked this alleyway precisely because it's so remote. The noble is dead, his coins glinting... ",
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1109,26 +1244,26 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		local armorSprite = armors[this.Math.rand(0, armors.len() - 1)];
 		local flip = this.Math.rand(0, 1) == 1;
 		local decal = tile.spawnDetail(armorSprite, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.9;
-		decal.setBrightness(0.9);
+		decal.Scale = 0.899999976;
+		decal.setBrightness(0.899999976);
 		decal = tile.spawnDetail("bust_naked_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.9;
-		decal.setBrightness(0.9);
+		decal.Scale = 0.899999976;
+		decal.setBrightness(0.899999976);
 
 		if (this.Math.rand(1, 100) <= 25)
 		{
 			decal = tile.spawnDetail("bust_body_guts_0" + this.Math.rand(1, 3), this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
+			decal.Scale = 0.899999976;
 		}
 		else if (this.Math.rand(1, 100) <= 25)
 		{
 			decal = tile.spawnDetail("bust_head_smashed_01", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
+			decal.Scale = 0.899999976;
 		}
 		else
 		{
 			decal = tile.spawnDetail(armorSprite + "_arrows", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
+			decal.Scale = 0.899999976;
 		}
 
 		local color = this.Const.HairColors.All[this.Math.rand(0, this.Const.HairColors.All.len() - 1)];
@@ -1136,21 +1271,21 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		local beardSprite = "beard_" + color + "_" + this.Const.Beards.All[this.Math.rand(0, this.Const.Beards.All.len() - 1)];
 		local headSprite = this.Const.Faces.AllMale[this.Math.rand(0, this.Const.Faces.AllMale.len() - 1)];
 		local decal = tile.spawnDetail(headSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.9;
-		decal.setBrightness(0.9);
+		decal.Scale = 0.899999976;
+		decal.setBrightness(0.899999976);
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
 			local decal = tile.spawnDetail(beardSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
-			decal.setBrightness(0.9);
+			decal.Scale = 0.899999976;
+			decal.setBrightness(0.899999976);
 		}
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
 			local decal = tile.spawnDetail(hairSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
-			decal.setBrightness(0.9);
+			decal.Scale = 0.899999976;
+			decal.setBrightness(0.899999976);
 		}
 
 		local pools = this.Math.rand(this.Const.Combat.BloodPoolsAtDeathMin, this.Const.Combat.BloodPoolsAtDeathMax);

@@ -12,9 +12,9 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.Zombies <- [
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -88,9 +88,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -104,9 +104,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -120,9 +120,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -136,9 +136,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -152,9 +152,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -168,9 +168,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -184,9 +184,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -200,9 +200,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -216,9 +216,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -232,9 +232,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -252,9 +252,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -268,9 +268,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -284,9 +284,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -300,9 +300,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -316,9 +316,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -332,9 +332,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -352,9 +352,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -368,9 +368,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -384,9 +384,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -400,9 +400,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -416,9 +416,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -432,9 +432,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -448,9 +448,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -464,9 +464,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -480,9 +480,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -496,9 +496,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -512,9 +512,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -528,9 +528,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -544,9 +544,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -560,9 +560,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -576,9 +576,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -592,9 +592,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -608,9 +608,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -624,9 +624,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -640,9 +640,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -660,9 +660,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -676,9 +676,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -692,9 +692,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -708,9 +708,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -724,9 +724,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -736,9 +736,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -748,9 +748,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -764,9 +764,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -780,9 +780,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -796,9 +796,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -812,9 +812,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -824,9 +824,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -840,9 +840,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -856,9 +856,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -868,9 +868,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -880,9 +880,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -892,9 +892,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -904,9 +904,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -920,9 +920,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -932,9 +932,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -944,9 +944,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -960,9 +960,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -976,9 +976,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -992,9 +992,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1008,9 +1008,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1024,9 +1024,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1040,9 +1040,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1056,9 +1056,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1072,9 +1072,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1088,9 +1088,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1104,9 +1104,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1120,9 +1120,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1136,9 +1136,9 @@ gt.Const.World.Spawn.Zombies <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_03",
 		Troops = [
 			{
@@ -1732,9 +1732,9 @@ gt.Const.World.Spawn.Ghosts <- [
 ];
 gt.Const.World.Spawn.ZombiesAndGhouls <- [
 {
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1748,9 +1748,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1764,9 +1764,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1780,9 +1780,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1796,9 +1796,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1812,9 +1812,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1828,9 +1828,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1844,9 +1844,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -1860,9 +1860,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1876,9 +1876,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1892,9 +1892,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1912,9 +1912,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1932,9 +1932,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1952,9 +1952,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1972,9 +1972,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -1996,9 +1996,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2020,9 +2020,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2044,9 +2044,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2064,9 +2064,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2084,9 +2084,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2104,9 +2104,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2124,9 +2124,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2144,9 +2144,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2164,9 +2164,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2184,9 +2184,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2206,9 +2206,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <- [
 ];
 gt.Const.World.Spawn.ZombiesAndGhosts <- [
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2222,9 +2222,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2238,9 +2238,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2254,9 +2254,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2288,9 +2288,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 	},
 
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2304,9 +2304,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2320,9 +2320,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -2336,9 +2336,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2352,9 +2352,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2368,9 +2368,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2388,9 +2388,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -2404,9 +2404,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_02",
 		Troops = [
 			{
@@ -5579,9 +5579,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5591,9 +5591,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5603,9 +5603,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5615,9 +5615,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5627,9 +5627,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5639,9 +5639,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5651,9 +5651,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5663,9 +5663,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5675,9 +5675,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5687,9 +5687,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5699,9 +5699,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5711,9 +5711,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5723,9 +5723,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5735,9 +5735,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5747,9 +5747,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5759,9 +5759,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5771,9 +5771,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5783,9 +5783,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5795,9 +5795,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5807,9 +5807,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5819,9 +5819,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5831,9 +5831,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5843,9 +5843,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{
@@ -5855,9 +5855,9 @@ gt.Const.World.Spawn.ZombiesLight <- [
 		]
 	},
 	{
-		MovementSpeedMult = 0.8,
+		MovementSpeedMult = 0.800000012,
 		VisibilityMult = 1.0,
-		VisionMult = 0.8,
+		VisionMult = 0.800000012,
 		Body = "figure_zombie_01",
 		Troops = [
 			{

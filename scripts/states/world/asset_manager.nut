@@ -243,7 +243,7 @@ this.asset_manager <- {
 
 		if (_f > 0)
 		{
-			this.m.Score += _f * 0.01;
+			this.m.Score += _f * 0.00999999978;
 		}
 
 		if (this.m.Money >= 5000)
@@ -410,6 +410,33 @@ this.asset_manager <- {
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_necro_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+		case "legends_witch":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_witch_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+		case "legends_healer":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_healer_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			break;
+		case "legends_beserker":
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_beserker_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -1980,7 +2007,7 @@ this.asset_manager <- {
 		{
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.002;
+				s = s + item.getValue() * 0.00200000009;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -2002,7 +2029,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.002;
+				s = s + item.getValue() * 0.00200000009;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -2018,7 +2045,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.002;
+				s = s + item.getValue() * 0.00200000009;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -2034,7 +2061,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.002;
+				s = s + item.getValue() * 0.00200000009;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -2050,7 +2077,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.002;
+				s = s + item.getValue() * 0.00200000009;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -2066,7 +2093,7 @@ this.asset_manager <- {
 
 			if (item != null)
 			{
-				s = s + item.getValue() * 0.002;
+				s = s + item.getValue() * 0.00200000009;
 
 				if (item.isItemType(this.Const.Items.ItemType.Named))
 				{
@@ -2084,7 +2111,7 @@ this.asset_manager <- {
 
 				if (item != null)
 				{
-					s = s + item.getValue() * 0.002;
+					s = s + item.getValue() * 0.00200000009;
 
 					if (item.isItemType(this.Const.Items.ItemType.Named))
 					{

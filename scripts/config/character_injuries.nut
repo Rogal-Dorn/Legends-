@@ -80,7 +80,7 @@ gt.Const.Injury.BluntHead <- [
 	},
 	{
 		ID = "injury.fractured_skull",
-		Threshold = 0.6,
+		Threshold = 0.60000002,
 		Script = "injury/fractured_skull_injury"
 	}
 ];
@@ -112,7 +112,7 @@ gt.Const.Injury.CuttingBody <- [
 	},
 	{
 		ID = "injury.exposed_ribs",
-		Threshold = 0.35,
+		Threshold = 0.34999999,
 		Script = "injury/exposed_ribs_injury"
 	},
 	{
@@ -311,7 +311,7 @@ gt.Const.Injury.Permanent <- [
 gt.Const.Injury.Flagellation <- [
 	{
 		ID = "injury.exposed_ribs",
-		Threshold = 0.35,
+		Threshold = 0.34999999,
 		Script = "injury/exposed_ribs_injury"
 	},
 	{

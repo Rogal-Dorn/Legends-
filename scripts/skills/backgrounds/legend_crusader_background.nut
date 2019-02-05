@@ -153,12 +153,15 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
+		local stash =this.World.Assets.getStash()
 		local r;
-		items.equip(this.new("scripts/items/armor/mail_hauberk"));
-		items.addToBag(this.new("scripts/items/supplies/cured_rations_item"));
-		items.addToBag(this.new("scripts/items/supplies/armor_parts_item"));
-		items.addToBag(this.new("scripts/items/supplies/medicine_item"));
+		stash.removeByID("supplies.ground_grains");
+		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
+		stash.add(this.new("scripts/items/supplies/medicine_item"));
+		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 
+		items.equip(this.new("scripts/items/armor/mail_hauberk"));
 				r = this.Math.rand(0, 3);
 
 		if (r == 0)
@@ -194,7 +197,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		}
 		else if (r == 3)
 		{
-			items.equip(this.new("scripts/items/helmets/closed_flat_top_with_neck_guard"));
+			items.equip(this.new("scripts/items/helmets/closed_flat_top_with_neckguard"));
 		}
 	}
 
