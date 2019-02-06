@@ -54,7 +54,6 @@ this.new_legend_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_modu
 
 	function onStartButtonPressed( _settings )
 	{
-		this.logInfo("**** _SETTINGS 9 " + _settings[9] )
 		local settings = {
 			Name = _settings[0],
 			Banner = _settings[1],
@@ -67,8 +66,6 @@ this.new_legend_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_modu
 			Seed = _settings[8],
 			Campaign = _settings[9]
 		};
-
-		this.logInfo("**** _SETTINGS 9 " + settings.Campaign )
 
 		if (this.m.OnStartButtonPressedListener != null)
 		{

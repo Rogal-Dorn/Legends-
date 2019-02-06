@@ -513,23 +513,7 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
     footerButtonBar.append(layout);
     this.mStartButton = layout.createTextButton("Next", function ()
     {
-		if(self.mScenarioPanel.hasClass('display-block'))
-    	{
-			self.mScenarioPanel.removeClass('display-block').addClass('display-none');
-			self.mFirstPanel.removeClass('display-none').addClass('display-block');
-    		self.mStartButton.changeButtonText("Next");
-    		self.mCancelButton.changeButtonText("Previous");
-    	} else if(self.mFirstPanel.hasClass('display-block'))
-    	{
-    		self.mFirstPanel.removeClass('display-block').addClass('display-none');
-    		self.mSecondPanel.addClass('display-block').removeClass('display-none');
-    		self.mStartButton.changeButtonText("Start");
-    		self.mCancelButton.changeButtonText("Previous");
-    	}
-    	else
-    	{
-    		self.notifyBackendStartButtonPressed();
-    	}    	
+		self.advanceScreen();
 	}, '', 1);
 	this.mStartButton.enableButton(false);
 
@@ -537,11 +521,8 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
     footerButtonBar.append(layout);
     this.mCancelButton = layout.createTextButton("Cancel", function ()
     {
-		console.error("CANCEL BUTTON 1");
-
 		if (self.mScenarioPanel.hasClass('display-block'))
     	{
-			console.error("CANCEL BUTTON 2");
     		self.notifyBackendCancelButtonPressed();
 		}
 		else if (self.mFirstPanel.hasClass('display-block'))
@@ -562,6 +543,28 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 
     this.mIsVisible = false;
 };
+
+NewLegendCampaignMenuModule.prototype.advanceScreen = function() 
+{
+	if(this.mScenarioPanel.hasClass('display-block'))
+	{
+		this.mScenarioPanel.removeClass('display-block').addClass('display-none');
+		this.mFirstPanel.removeClass('display-none').addClass('display-block');
+		this.mStartButton.changeButtonText("Next");
+		this.mCancelButton.changeButtonText("Previous");
+	} else if(this.mFirstPanel.hasClass('display-block'))
+	{
+		this.mFirstPanel.removeClass('display-block').addClass('display-none');
+		this.mSecondPanel.addClass('display-block').removeClass('display-none');
+		this.mStartButton.changeButtonText("Start");
+		this.mCancelButton.changeButtonText("Previous");
+	}
+	else
+	{
+		this.notifyBackendStartButtonPressed();
+	}    	
+
+}
 
 NewLegendCampaignMenuModule.prototype.destroyDIV = function ()
 {
@@ -880,8 +883,8 @@ NewLegendCampaignMenuModule.prototype.addCampaignEntryToList = function (_data)
     var self = this;
 
     var entry = this.mListScrollContainer.createListCampaign(_data);
-    entry.assignListCampaignName(_data[CampaignMenuModulesIdentifier.Campaign.Name]);
-
+	entry.assignListCampaignName(_data["name"]);
+	entry.assignListCampaignGroupName(_data["description"]);
 	if (CampaignMenuModulesIdentifier.Campaign.Image in _data)
     {
 		entry.assignListImage('ui/icons/' + _data[CampaignMenuModulesIdentifier.Campaign.Image] + '.png');
@@ -924,6 +927,8 @@ NewLegendCampaignMenuModule.prototype.addCampaignEntryToList = function (_data)
 			_entry.addClass('is-selected');
 
 			self.mStartButton.enableButton(true);
+			self.advanceScreen();
+
 		}
 		
     });
@@ -934,7 +939,7 @@ NewLegendCampaignMenuModule.prototype.addCampaignEntryToList = function (_data)
     	if (_entry.hasClass('is-selected') === true && !_data["isIncompatibleVersion"])
         {
 			this.mStartButton.enableButton(true);
-			this.mStartButton.click();
+			this.advanceScreen();
         }		
     });
 };
