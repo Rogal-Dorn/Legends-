@@ -158,7 +158,8 @@ var NewCampaignMenuModule = function()
 			Max: 6,
 			Value: 3,
 			Step: 1
-		}
+		},
+		FOW : true
 	};
 	this.mFogofWarCheckbox = null;
     // generics
@@ -581,7 +582,6 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		var rightColumn = $('<div class="column"></div>');
 		this.mMapPanel.append(rightColumn);
 	
-		//
 		this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);	
 		this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
 		this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass', leftColumn);	
@@ -606,6 +606,10 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
+		if (this.mMapOptions.FOW)
+		{
+			this.mFogofWarCheckbox.iCheck('check');
+		}
 
 	}
 
@@ -686,15 +690,14 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
 	_definition.Control.val(_definition.Value);
 	control.append(_definition.Control);
 
+	var label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
+	control.append(label);
+
 	_definition.Control.on("change", function ()
 	{
 		_definition.Value = parseInt(_definition.Control.val());
 		label.text('' + _definition.Value);
 	});
-
-	var label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
-	control.append(label);
-
 };
 
 
@@ -1028,18 +1031,58 @@ NewCampaignMenuModule.prototype.setBanners = function(_data)
 	}
 }
 
-NewCampaignMenuModule.prototype.setMapConfig = function(_data)
+NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 {
-	if(_data !== null && jQuery.isArray(_data))
+	console.error("****SET CONFIG OPTS ****" + Object.keys(_data));
+	if(_data !== null)
 	{
-		this.mBanners = _data;
-		this.mCurrentBannerIndex = Math.floor(Math.random() * _data.length);
-
-		this.mBannerImage.attr('src', Path.GFX + 'ui/banners/' + _data[this.mCurrentBannerIndex] + '.png');
+		if ('Height' in _data) {
+			this.mMapOptions.Height.Value = _data['Height'];
+			this.mMapOptions.Height.Min = _data['HeightMin'];
+			this.mMapOptions.Height.Max = _data['HeightMax'];
+		}
+		if ('Width' in _data) {
+			this.mMapOptions.Width.Value = _data['Width'];
+			this.mMapOptions.Width.Min = _data['WidthMin'];
+			this.mMapOptions.Width.Max = _data['WidthMax'];
+		}
+		if ('LandMassMult' in _data) {
+			this.mMapOptions.LandMassMult.Value = _data['LandMassMult'];
+			this.mMapOptions.LandMassMult.Min = _data['LandMassMultMin'];
+			this.mMapOptions.LandMassMult.Max = _data['LandMassMultMax'];
+		}
+		if ('WaterConnectivity' in _data) {
+			this.mMapOptions.WaterConnectivity.Value = _data['WaterConnectivity'];
+			this.mMapOptions.WaterConnectivity.Min = _data['WaterConnectivityMin'];
+			this.mMapOptions.WaterConnectivity.Max = _data['WaterConnectivityMax'];
+		}
+		if ('MinLandToWaterRatio' in _data) {
+			this.mMapOptions.MinLandToWaterRatio.Value = _data['MinLandToWaterRatio'];
+			this.mMapOptions.MinLandToWaterRatio.Min = _data['MinLandToWaterRatioMin'];
+			this.mMapOptions.MinLandToWaterRatio.Max = _data['MinLandToWaterRatioMax'];
+		}
+		if ('Snowline' in _data) {
+			this.mMapOptions.Snowline.Value = _data['Snowline'];
+			this.mMapOptions.Snowline.Min = _data['SnowlineMin'];
+			this.mMapOptions.Snowline.Max = _data['SnowlineMax'];
+		}
+		if ('NumSettlements' in _data) {
+			this.mMapOptions.NumSettlements.Value = _data['NumSettlements'];
+			this.mMapOptions.NumSettlements.Min = _data['NumSettlementsMin'];
+			this.mMapOptions.NumSettlements.Max = _data['NumSettlementsMax'];
+		}
+		if ('NumFactions' in _data) {
+			this.mMapOptions.NumFactions.Value = _data['NumFactions'];
+			this.mMapOptions.NumFactions.Min = _data['NumFactionsMin'];
+			this.mMapOptions.NumFactions.Max = _data['NumFactionsMax'];
+		}
+		if ('FOW' in _data) {
+			this.mMapOptions.FOW = _data['FOW'];
+		}
 	}
 	else
 	{
-		console.error('ERROR: No banners specified for NewCampaignMenu::setBanners');
+		console.error('ERROR: No opts specified for NewCampaignMenu::setConfigOpts');
 	}
 }
 
