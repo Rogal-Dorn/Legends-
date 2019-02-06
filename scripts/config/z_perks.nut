@@ -116,9 +116,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 {
 	switch ( _background )
 	{
-		case "background.apprentice":
-		case "background.beggar":
-		case "background.farmhand":
+		case "background.dummyplaceholder":
 			return gt.Const.Perks.TreeAltLookupMap;
 			break;
 		
@@ -132,9 +130,7 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 {
 	switch ( _background )
 	{
-		case "background.apprentice":
-		case "background.beggar":
-		case "background.farmhand":
+		case "background.dummyplaceholder":
 			return gt.Const.Perks.PerksTreeAlt;
 			break;
 		
