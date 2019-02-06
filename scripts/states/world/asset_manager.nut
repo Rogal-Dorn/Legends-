@@ -363,7 +363,7 @@ this.asset_manager <- {
 
 		switch(_settings.Campaign)
 		{
-		case "legends_noble":
+		case this.Const.LegendMod.StartTypes.Noble:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -373,7 +373,7 @@ this.asset_manager <- {
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
-		case "legends_crusader":
+		case this.Const.LegendMod.StartTypes.Crusader:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
 				"legend_crusader_background"
@@ -381,7 +381,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
-		case "legends_hunter":
+		case this.Const.LegendMod.StartTypes.Rangers:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -405,7 +405,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			break;
-		case "legends_necro":
+		case this.Const.LegendMod.StartTypes.Necro:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -414,7 +414,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
-		case "legends_witch":
+		case this.Const.LegendMod.StartTypes.Witch:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -423,7 +423,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
-		case "legends_healer":
+		case this.Const.LegendMod.StartTypes.Healer:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -432,7 +432,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
-		case "legends_beserker":
+		case this.Const.LegendMod.StartTypes.Berserker:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -441,7 +441,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
-		case "legends_inventor":
+		case this.Const.LegendMod.StartTypes.Inventor:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -459,7 +459,7 @@ this.asset_manager <- {
 
 			break;
 
-		case "legends_beggar":
+		case this.Const.LegendMod.StartTypes.Beggar:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([

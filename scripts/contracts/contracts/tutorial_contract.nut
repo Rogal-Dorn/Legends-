@@ -988,7 +988,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LegendsNobleSuccess",
 			Title = "Noble",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Noble start intro text",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Noble),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1014,7 +1014,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LegendsCrusaderSuccess",
 			Title = "Crusader",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Crusader start intro text",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Crusader),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1040,7 +1040,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.m.Screens.push({
 			ID = "LegendsHunterSuccess",
 			Title = "Hunter",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Hunter start intro text",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Rangers),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1067,7 +1067,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LegendsNecroSuccess",
 			Title = "Necro",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Necro start intro text",
+			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Necro),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1092,8 +1092,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "LegendsHealerSuccess",
-			Title = "Necro",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Healer start intro text",
+			Title = "Healer",
+			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Healer),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1121,7 +1121,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LegendsWitchSuccess",
 			Title = "Necro",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Witch start intro text",
+			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Witch),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1147,8 +1147,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		
 		this.m.Screens.push({
 			ID = "LegendsBeserkerSuccess",
-			Title = "Necro",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Beserker start intro text",
+			Title = "Berserker",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Berserker),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1175,7 +1175,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LegendsInventorSuccess",
 			Title = "Inventor",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Inventor start intro text",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Inventor),
 			ShowEmployer = true,
 			Image = "",
 			List = [],
@@ -1201,7 +1201,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LegendsBeggarSuccess",
 			Title = "Beggar",
-			Text = "[img]gfx/ui/events/event_24.png[/img]Six crowns. A whole day and all you have for it is a paltry six crowns. Barely enough for a loaf of bread in this dung heap of a town. It wasn't but a month ago that you could solicit twenty or more from the passersby. But now they barely acknowledge you exist. You sigh as you amble through the narrow streets, heading toward your alley for the night. Thoughts of uncertainty drift into your head. You've seen a lot in the square. There, your hand is on the pulse of the town. You can tell when things aren't right, you see it in the way they all walk. Have they been walking differently? Your thoughts are cut short by clamoring pouring out the mouth of your alley. It must be some street hounds squabbling over some rotten scrap. Before you turn the corner, you hear words, yelling. Why is someone here? You picked this alleyway precisely because it's so remote. The noble is dead, his coins glinting... ",
+			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Beggar),
 			ShowEmployer = true,
 			Image = "",
 			List = [],

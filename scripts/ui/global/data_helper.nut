@@ -10,48 +10,7 @@ this.data_helper <- {
 
 	function convertLegendCampaignsToUIData()
 	{
-		local result = [];
-		result.push({
-			name = "Default",
-			banner = "default",
-		})
-		result.push({
-			name = "Beggar - Weak and poor",
-			banner = "legends_beggar",
-		})
-		result.push({
-			name = "Crusader - Well equiped and strong",
-			banner = "legends_crusader",
-		})
-		result.push({
-			name = "Rangers - Dexterous and deadly",
-			banner = "legends_hunter",
-		})
-		result.push({
-			name = "Healer - Healthy and caring",
-			banner = "legends_healer",
-		})
-		result.push({
-			name = "Berserker - Violent and tireless",
-			banner = "legends_beserker",
-		})
-		result.push({
-			name = "Witch - Old and sleepy",
-			banner = "legends_witch",
-		})
-		result.push({
-			name = "Necromancer -  Frail reincarnator",
-			banner = "legends_necro",
-		})
-		result.push({
-			name = "Noble - rich",
-			banner = "legends_noble",
-		})
-		result.push({
-			name = "Inventor - experimental acedemic",
-			banner = "legends_inventor",
-		})
-		return result;
+		return this.Const.LegendMod.Starts;
 	}
 
 	function convertCampaignStoragesToUIData()
