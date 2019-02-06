@@ -219,7 +219,7 @@ this.faction_manager <- {
 	{
 		this.createGenericEnemy();
 		this.createSettlements();
-		local nobles = this.createNobleHouses();
+		local nobles = this.createNobleHouses(_settings.NumFactions);
 		this.assignSettlementsToNobleHouses(nobles);
 		this.uncoverSettlements( _settings.FOW );
 		this.createBandits();
@@ -315,21 +315,23 @@ this.faction_manager <- {
 		this.m.Factions.push(f);
 	}
 
-	function createNobleHouses()
+	function createNobleHouses( _num )
 	{
 		local banners = [];
 		local names = [];
 		local nobleHouses = [];
 
-		foreach( i, g in this.Const.FactionArchetypes )
+		local houses = this.Const.GetFactionArchetypesList();
+		for (local i = 0; i < _num; i = ++i)
 		{
-			local a = g[this.Math.rand(0, g.len() - 1)];
+			local index = houses.remove(this.Math.rand(0, houses.len() - 1));
+			local a = this.Const.FactionArchetypes[index[0]][index[1]];
 			local f = this.new("scripts/factions/noble_faction");
 			local banner;
 
 			do
 			{
-				banner = this.Math.rand(2, 10);
+				banner = this.Math.rand(1, 23);
 			}
 			while (banners.find(banner) != null);
 
