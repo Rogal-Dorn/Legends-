@@ -4,13 +4,13 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_noble";
-		this.m.Name = "Runaway Noble";
-		this.m.Icon = "ui/backgrounds/background_58.png";
-		this.m.BackgroundDescription = "Runaway Nobles tend to have high resolve and shrewed bargaining, but often neglect combat skills.";
-		this.m.GoodEnding = "Adventurousness never leaves the soul of a woman like %name%. {Instead of following the traditions of her noble family, she headed east to start slay a fearsome beast. Word has it she returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | She journeyed with %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where she is these days, but you\'ve little doubt that she\'ll be coming back with stories to tell. | She retired from the %companyname% and, instead of returning to her noble family, headed south. Word has it she fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about her travels. | The noblewoman left the %companyname% and, preferring the life of adventure to noble boredom, she headed north. Word has it that she\'s currently marching a troop of explorers to the furthest reaches of the world.}";
-		this.m.BadEnding = "%name% departed the %companyname% and continued her adventuring elsewhere. {She headed east, hoping to discover the source of the greenskins, but has not been heard from since. | She headed north into the snowy wastes. Word has it she was seen a week ago, marching south this time, looking rather pale and shuffling moreso than walking. | She headed south into brutal marshlands. Word has it that a mysterious flame appeared in the fog and she walked toward it. The men who saw this said she disappeared into the mist and never returned. | She headed west and sailed the open sea. Despite having no experience at sea, she saw fit to make herself captain of the boat. They say pieces of her ship and dead sailors kept washing ashore for weeks.}";
+		this.m.Name = "Noble";
+		this.m.Icon = "ui/backgrounds/background_06.png";
+		this.m.BackgroundDescription = "Adventurous Nobles tend to have high resolve and melee skills, but often neglect ranged defense.";
+		this.m.GoodEnding = "Adventurousness never leaves the soul of a man like %name%. {Instead of returning to his noble family, he left the %companyname% and headed east in search of rare beasts. Word has it he returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | He departed the %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where he is these days, but you\'ve little doubt that he\'ll be coming back with stories to tell. | He retired from the %companyname% and, instead of returning to his noble family, headed south. Word has it he fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about his travels. | The nobleman left the %companyname% and, preferring the life of adventure to noble boredom, he headed north. Word has it that he\'s currently marching a troop of explorers to the furthest reaches of the world.}";
+		this.m.BadEnding = "%name% departed the %companyname% and continued his adventuring elsewhere. {He headed east, hoping to discover the source of the greenskins, but the nobleman has not been heard from since. | He headed north into the snowy wastes. Word has it he was seen a week ago, marching south this time, looking rather pale and shuffling moreso than walking. | He headed south into brutal marshlands. Word has it that a mysterious flame appeared in the fog and he walked toward it. The men who saw this said he disappeared into the mist and never returned. | He headed west and sailed the open sea. Despite having no experience at sea, he saw fit to make himself captain of the boat. They say pieces of his ship and dead sailors kept washing ashore for weeks.}";
 		this.m.HiringCost = 150;
-		this.m.DailyCost = 0;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_beasts",
@@ -26,12 +26,13 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.asthmatic",
 			"trait.spartan"
 		];
-		this.m.Faces = this.Const.Faces.SmartMale;
-		this.m.Hairs = this.Const.Hair.AllMale;
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(1, 3);
+		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 	}
 
@@ -53,8 +54,10 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 
 	function onBuildDescription()
 	{
-		return "{Daughter of a minor noble | Last of her bloodline | A young and fiery noble | A strong willed heiress}, %name%\  {had been promised in marriage to a tyrant | was bored with endless studying of court etiquette and family lineage | longed to see the world beyong her cloister | was lured by tales of adventures, battles, fearsome beasts to vanquish and handsome princes}. {Leaving her betrothed at the altar | Sneaking out in the dead of night | Escaping with the help of her handmaidens | Despite her parents pleading}, %name% rode out to {prove herself | find a new life in the world |  make her own way | forge another path} and {live life to its fullest as she imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn her place in the world | create her own legacy | become famous and loved in all the known world | become infamous and feared in all the known world}.";
+		return "{A minor noble | As the third in the line of succession | A young and brash noble | A skilled swordsman}, %name%\'s life at court {had grown stale for him | was not exciting enough for him with endless studying of court etiquette and family lineage | felt like wasting the best time of his life | was not half as exciting to him as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of his brother | To the frustration of his mother | Finally making a decision to change things}, %name% rode out to {prove himself | make a name for himself | earn glory on the battlefield | test his skills in battle} and {live life to its fullest as he imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn his place in the world | be knighted for his valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
 	}
+
+
 
 	function onChangeAttributes()
 	{
@@ -64,32 +67,32 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				0
 			],
 			Bravery = [
-				25,
+				30,
 				20
 			],
 			Stamina = [
-				10,
+				0,
 				5
 			],
 			MeleeSkill = [
-				5,
-				0
+				10,
+				10
 			],
 			RangedSkill = [
-				5,
+				0,
 				0
 			],
 			MeleeDefense = [
-				0,
-				0
+				5,
+				8
 			],
 			RangedDefense = [
-				0,
-				0
+				-20,
+				-10
 			],
 			Initiative = [
-				10,
-				5
+				0,
+				0
 			]
 		};
 		return c;
@@ -98,68 +101,31 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
+			this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+
+
 		local actor = this.getContainer().getActor();
+		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
+		
+
 	}
 
 	function onAddEquipment()
 	{
+	local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Bravery] = 3;
+		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.Fatigue] = 1;
 		local items = this.getContainer().getActor().getItems();
-		local stash =this.World.Assets.getStash()
+		items.equip(this.new("scripts/items/armor/noble_tunic"));
+		items.equip(this.new("scripts/items/weapons/noble_sword"));
+		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/loot/signet_ring_item"));
-		items.equip(this.new("scripts/items/helmets/noble_headgear"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/supplies/wine_item"));
-
-		local r;
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/arming_sword"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/crossbow"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/shortbow"));
-		}
-		
-
-	
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			stash.add(this.new("scripts/items/trade/dies_item"));
-		}
-		else if (r == 1)
-		{
-			stash.add(this.new("scripts/items/trade/uncut_gems_item"));
-		}
-		else if (r == 1)
-		{
-			stash.add(this.new("scripts/items/trade/amber_shards_item"));
-		}
-
-
-	
-
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/noble_tunic"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/noble_gear"));
-		}
-
-
+		stash.add(this.new("scripts/items/supplies/signet_ring_item"));
+		stash.add(this.new("scripts/items/special/golden_goose_item"));
 
 	}
 
