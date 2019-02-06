@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Events <- {
-	GlobalMinDelay = 240.0,
+	GlobalMinDelay = 180.0,
 	GlobalBaseChance = 1.0,
 	GlobalChancePerSecond = 0.18,
 	AllottedTimePerEvaluationRun = 0.001,

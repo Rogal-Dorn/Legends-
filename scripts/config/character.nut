@@ -142,7 +142,8 @@ gt.Const.Corpse <- {
 		0
 	],
 	Items = null,
-	Custom = null
+	Custom = null,
+	isHuman = 0
 };
 gt.Const.ShakeCharacterLayers <- [
 	[

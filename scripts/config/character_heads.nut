@@ -409,3 +409,74 @@ gt.Const.Bodies.AllMale <- [
 	"bust_naked_body_01",
 	"bust_naked_body_02"
 ];
+gt.Const.Faces.AllFemale <- [
+	"bust_head_19",
+	"bust_head_20",
+	"bust_head_21",
+	"bust_head_22",
+	"bust_head_23",
+	"bust_head_24",
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30"
+];
+gt.Const.Hair.AllFemale <- [
+	"shaved",
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"09",
+	"10",
+	"11",
+	"13",
+	"14",
+	"15",
+	"16",
+	"17",
+	"18",
+	"19",
+	"20",
+	"21"
+];
+gt.Const.Hair.BarberFemale <- [
+	"",
+	"shaved",
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"09",
+	"10",
+	"11",
+	"12",
+	"13",
+	"14",
+	"15",
+	"16",
+	"17",
+	"18",
+	"19",
+	"20",
+	"21"
+];
+gt.Const.Beards.AllFemale <- [
+	""
+];
+gt.Const.Beards.BarberFemale <- [
+	""
+];
+gt.Const.Bodies.AllFemale <- [
+	"bust_naked_body_03"
+];

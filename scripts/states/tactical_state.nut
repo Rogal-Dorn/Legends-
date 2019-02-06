@@ -482,6 +482,28 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			playerKills = playerKills + bro.getCombatStats().Kills;
 		}
 
+
+
+		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
+		local CannibalsInRoster = 0;
+		foreach (bro in EntireCompanyRoster)
+		{
+			if (bro.isAlive() && bro.getBackground().getID() == "background.vazl_cannibal")
+			{
+				CannibalsInRoster += 1;
+			}
+		}
+		local CannibalisticButchersInRoster = 0;
+		foreach (bro in EntireCompanyRoster)
+		{
+			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
+			{
+				CannibalisticButchersInRoster += 1;
+			}
+		}
+
+
+
 		local loot = [];
 		local size = this.Tactical.getMapSize();
 
@@ -499,6 +521,29 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 						loot.push(item);
 					}
 				}
+
+
+
+				if (this.Math.rand(1, 100) <= 8 && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
+				{
+					if (CannibalisticButchersInRoster >= 1)
+					{
+						local humanmeat = this.new("scripts/items/supplies/vazl_yummy_sausages");
+						humanmeat.randomizeAmount();
+						humanmeat.randomizeBestBefore();
+						loot.push(humanmeat);
+					}
+					else if (CannibalisticButchersInRoster < 1 && CannibalsInRoster >= 1)
+					{
+						local humanmeat = this.new("scripts/items/supplies/vazl_human_meat");
+						humanmeat.randomizeAmount();
+						humanmeat.randomizeBestBefore();
+						loot.push(humanmeat);
+					}
+				}
+
+
+
 
 				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null)
 				{

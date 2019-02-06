@@ -6,7 +6,7 @@ gt.Const.AI <- {
 	SecretSpectatorMode = false,
 	NoRetreatMode = false,
 	ParallelizationMode = true,
-	AllottedTimePerEvaluationRun = 0.005,
+	AllottedTimePerEvaluationRun = 0.00500000,
 	HeatRange = 5,
 	Agent = {
 		ID = {
@@ -71,12 +71,12 @@ gt.Const.AI <- {
 			IsRetreating = false
 		},
 		ConsiderBehaviorsCutoff = 0.25,
-		ActionDelay = 900,
-		MinorActionDelay = 400,
-		NewTurnDelay = 900,
-		NewTurnDelayWithFasterMovement = 250,
-		NewEvaluationDelay = 800,
-		CameraAdditionalDelay = 400,
+		ActionDelay = 500,
+		MinorActionDelay = 125,
+		NewTurnDelay = 50,
+		NewTurnDelayWithFasterMovement = 25,
+		NewEvaluationDelay = 50,
+		CameraAdditionalDelay = 25,
 		DefaultOpponentTTL = 9000,
 		DefaultAllyTTL = 3,
 		GuessOpponentNewPositionMaxDistance = 3,

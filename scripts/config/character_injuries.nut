@@ -302,6 +302,10 @@ gt.Const.Injury.Permanent <- [
 	{
 		ID = "injury.broken_elbow_joint",
 		Script = "injury_permanent/broken_elbow_joint_injury"
+	},
+	{
+		ID = "injury.missing_hand",
+		Script = "injury_permanent/missing_hand_injury"
 	}
 ];
 gt.Const.Injury.Flagellation <- [

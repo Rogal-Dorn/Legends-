@@ -810,7 +810,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			foreach( inj in injuries )
 			{
-				if (!this.m.Skills.hasSkill(inj.ID))
+				if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_hand"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.vazl_glass_eye"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_eye" && !this.m.Skills.hasSkill(inj.ID))
 				{
 					potential.push(inj);
 				}
@@ -1453,14 +1461,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CombatStats.XPGained += this.Math.floor(_xp * this.m.CurrentProperties.XPGainMult);
 	}
 
-	function unlockPerk( _id )
+	function unlockPerk( _id , _background )
 	{
 		if (this.hasPerk(_id))
 		{
 			return true;
 		}
 
-		local perk = this.Const.Perks.findById(_id);
+		local perk = this.Const.Perks.findByBackground(_id, _background);
 
 		if (perk == null)
 		{
@@ -1491,7 +1499,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return false;
 		}
 
-		local perk = this.Const.Perks.findById(_id);
+		local perk = this.Const.Perks.findByBackground(_id, this.getBackground().getID());
 
 		if (this.m.PerkPointsSpent >= perk.Unlocks)
 		{
