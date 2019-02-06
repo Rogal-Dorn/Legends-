@@ -76,7 +76,6 @@ var CharacterScreenIdentifier =
 	QueryResult:
 	{
         Perks: 'perks',
-        PerkTrees: 'perkTrees',
 		Brother: 'brother',
         Brothers: 'brothers',
 		Stash: 'stash'
@@ -130,6 +129,7 @@ var CharacterScreenIdentifier =
 
     Perk: {
         Key: 'perks',
+		Tree: 'perkTree',
 
         Type: {
             Offensive: 'offensive',
