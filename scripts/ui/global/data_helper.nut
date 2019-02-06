@@ -194,12 +194,14 @@ this.data_helper <- {
 			statusEffects = {},
 			injuries = [],
 			perks = [],
+			perkTree = [],
 			equipment = {},
 			bag = [],
 			ground = []
 		};
 		this.addFlagsToUIData(_entity, _activeEntity, result.flags);
 		this.addCharacterToUIData(_entity, result.character);
+		result.perkTree = this.Const.Perks.getPerksTree(result.character.background);
 		this.addStatsToUIData(_entity, result.stats);
 		local skills = _entity.getSkills();
 		this.addSkillsToUIData(skills.querySortedByItems(this.Const.SkillType.Active), result.activeSkills);
@@ -335,6 +337,7 @@ this.data_helper <- {
 		_target.daysWounded <- _entity.getDaysWounded();
 		_target.leveledUp <- _entity.isLeveled();
 		_target.moodIcon <- "ui/icons/mood_0" + (_entity.getMoodState() + 1) + ".png";
+		_target.background <- _entity.getBackground().getID();
 
 		if (_entity.getLevelUps() > 0)
 		{
@@ -528,9 +531,9 @@ this.data_helper <- {
 		}
 	}
 
-	function convertPerkToUIData( _perkId )
+	function convertPerkToUIData( _perkId, _background )
 	{
-		local perk = this.Const.Perks.findById(_perkId);
+		local perk = this.Const.Perks.findByBackground(_perkId, _background);
 
 		if (perk != null)
 		{

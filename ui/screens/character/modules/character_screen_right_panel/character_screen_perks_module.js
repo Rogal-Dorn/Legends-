@@ -94,6 +94,8 @@ CharacterScreenPerksModule.prototype.resetPerkTree = function(_perkTree)
 {
 	if (_perkTree == null)
 		return;
+	
+	this.mPerkTree = _perkTree;
 
 	for (var row = 0; row < this.mPerkRows.length; ++row)
 	{
@@ -105,6 +107,7 @@ CharacterScreenPerksModule.prototype.resetPerkTree = function(_perkTree)
 		for (var i = 0; i < _perkTree[row].length; ++i)
 		{
 			var perk = _perkTree[row][i];
+			console.error(Object.keys(perk));
 			perk.Unlocked = false;
 
 			perk.Image.attr('src', Path.GFX + perk.IconDisabled);
@@ -174,9 +177,13 @@ CharacterScreenPerksModule.prototype.setupPerkTreeTooltips = function(_perkTree,
 	}
 };
 
-CharacterScreenPerksModule.prototype.setupPerkTree = function ()
+CharacterScreenPerksModule.prototype.setupPerkTree = function (_perkTree)
 {
-    this.mLeftColumn.empty();
+	if (this.mPerkTree !== null) {
+		this.removePerksEventHandlers()
+	}
+	this.mLeftColumn.empty();
+	this.mPerkTree = _perkTree;
     this.createPerkTreeDIV(this.mPerkTree, this.mLeftColumn);
 
     this.setupPerksEventHandlers(this.mPerkTree);
@@ -188,7 +195,7 @@ CharacterScreenPerksModule.prototype.updatePerkTreeLayout = function (_inventory
 
 CharacterScreenPerksModule.prototype.loadPerkTreesWithBrotherData = function (_brother)
 {
-    this.resetPerkTree(this.mPerkTree);
+    this.setupPerkTree(_brother[CharacterScreenIdentifier.Perk.Tree]);
 
     if (CharacterScreenIdentifier.Perk.Key in _brother)
     {
@@ -267,7 +274,7 @@ CharacterScreenPerksModule.prototype.removePerksEventHandler = function (_perkTr
 
 CharacterScreenPerksModule.prototype.setupPerksEventHandlers = function(_perkTree)
 {
-	this.removePerksEventHandlers();
+	//this.removePerksEventHandlers();
 
 	for (var row = 0; row < _perkTree.length; ++row)
 	{
@@ -431,11 +438,11 @@ CharacterScreenPerksModule.prototype.onInventoryModeUpdated = function (_dataSou
 
 CharacterScreenPerksModule.prototype.onPerkTreeLoaded = function (_dataSource, _perkTree)
 {
-    if (_perkTree !== null)
-    {
-    	this.mPerkTree = _perkTree;
-        this.setupPerkTree();
-    }
+    // if (_perkTree !== null)
+    // {
+    // 	this.mPerkTree = _perkTree;
+    //     this.setupPerkTree();
+    // }
 };
 
 CharacterScreenPerksModule.prototype.onBrotherUpdated = function (_dataSource, _brother)

@@ -1,6 +1,3 @@
-# declare -a scriptFiles=(
-#     "scripts/config/actor.nut"
-# )
 
 FILES=$(git diff --name-only `git merge-base origin/master HEAD`)
 while read -r line; do

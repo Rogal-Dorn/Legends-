@@ -844,7 +844,7 @@ this.character_screen <- {
 
 	function general_onQueryPerkInformation( _data )
 	{
-		return this.UIDataHelper.convertPerkToUIData(_data[0]);
+		return this.UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
 	}
 
 	function general_onUnlockPerk( _data )
@@ -856,7 +856,7 @@ this.character_screen <- {
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToFindEntity);
 		}
 
-		if (!entity.unlockPerk(_data[1]))
+		if (!entity.unlockPerk(_data[1], entity.getBackground().getID()))
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToUnlockPerk);
 		}
