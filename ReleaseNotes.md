@@ -9,6 +9,7 @@ Mod Features:
     - Noble: runaway noble
     - Crusader: Level 6 with good melee stats and equipment
     - Hunter: Three strong archers with footwork and pathfinder 
+	- Seer: old and powerful, but sleepy
     - Necromancer: Weak character with the ability to raise the dead
     - Inventor: Weak character with the ability to repair lost limbs and eyes 
 * Enhanced Spawn lists
