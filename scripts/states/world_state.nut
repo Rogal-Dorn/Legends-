@@ -1008,6 +1008,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local tries = 3000;
 		while (tries > 0)
 		{
+			this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
+			this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity)
 			local result = worldmap.fill({
 				X = 0,
 				Y = 0,
@@ -1023,9 +1025,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 			//With each failure, slowly weight map towards more landmass. 
 			//To date, almost all the failures are because too much water
 			this.Const.World.Settings.LandMassMult +=  0.10 * this.Const.World.Settings.LandMassMult
-			this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
+
 			this.Const.World.Settings.WaterConnectivity -= 0.10 * this.Const.World.Settings.WaterConnectivity
-			this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity)
+			
 		}
 
 		this.World.FactionManager.createFactions(this.m.CampaignSettings);
