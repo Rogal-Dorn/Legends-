@@ -1005,7 +1005,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		local tries = 3000;
+		local tries = 200;
 		while (tries > 0)
 		{
 			this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
@@ -1022,12 +1022,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 			tries = --tries
 			this.logInfo("Invalid map. Regenerating...")
-			//With each failure, slowly weight map towards more landmass. 
-			//To date, almost all the failures are because too much water
-			this.Const.World.Settings.LandMassMult +=  0.10 * this.Const.World.Settings.LandMassMult
-
-			this.Const.World.Settings.WaterConnectivity -= 0.10 * this.Const.World.Settings.WaterConnectivity
 			
+			//Failures are because of water issues, help map generation towards desired results
+			if (tries > 2)
+			{
+				//Above 50% We want more land than water
+				if (this.Const.World.Settings.LandMassMult > 1.5) {
+					this.Const.World.Settings.WaterConnectivity -= 0.05 * this.Const.World.Settings.WaterConnectivity
+				} else {
+				//Below 50% we want more water than land
+					this.Const.World.Settings.WaterConnectivity += 0.05 * this.Const.World.Settings.WaterConnectivity
+				}
+			}
 		}
 
 		this.World.FactionManager.createFactions(this.m.CampaignSettings);

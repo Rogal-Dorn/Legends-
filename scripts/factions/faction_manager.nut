@@ -198,6 +198,9 @@ this.faction_manager <- {
 
 		for( local i = 0; i < this.Const.Factions.CyclesOnNewCampaign; i = ++i )
 		{
+			if (i % 100 == 0){
+				this.logInfo("Cylce number " + i)
+			}
 			bandits.update(true);
 			goblins.update(true);
 			orcs.update(true);
@@ -331,7 +334,7 @@ this.faction_manager <- {
 
 			do
 			{
-				banner = this.Math.rand(1, 23);
+				banner = this.Math.rand(1, 10);
 			}
 			while (banners.find(banner) != null);
 
@@ -390,7 +393,7 @@ this.faction_manager <- {
 			{
 				break;
 			}
-			
+
 			n.addSettlement(military[0]);
 			military.remove(0);
 			local other;

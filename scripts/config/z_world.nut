@@ -42,7 +42,7 @@ gt.Const.World.NewCampaignOpts <- function ()
 		Height = this.Const.World.Settings.SizeY,
 		HeightMin = 60,
 		HeightMax = 260,
-		LandMassMult = this.Const.World.Settings.LandMassMult * 100 - 100,
+		LandMassMult = 50 //this.Const.World.Settings.LandMassMult * 100 - 100,
 		LandMassMultMin = 1,
 		LandMassMultMax = 100,
 		WaterConnectivity = this.Const.World.Settings.WaterConnectivity,
