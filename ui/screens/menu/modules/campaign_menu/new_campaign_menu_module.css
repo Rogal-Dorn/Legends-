@@ -141,6 +141,17 @@
     line-height: 3.0rem;
 }
 
+.new-campaign-menu-module > .dialog .footer .l-random-button
+{
+    top: 0;
+    left: 29.0rem;
+    bottom: 0;
+    width: 17.5rem;
+    position: absolute;
+
+    line-height: 3.0rem;
+}
+
 .new-campaign-menu-module .column .row .l-input
 {
     width: 30.0rem;
