@@ -11,6 +11,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 	function fill( _rect, _properties, _pass = 1 )
 	{
+		this.clearWorld(_rect);
 		this.Const.World.Buildings.reset();
 		this.m.Tiles = [];
 		this.m.Tiles.resize(this.Const.World.TerrainType.COUNT);
@@ -22,21 +23,13 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				this.m.Tiles[i] = this.MapGen.get(this.Const.World.TerrainScript[i]);
 			}
 		}
+		local result;
+		this.buildLandAndSea(_rect);
 
-		while (true)
+		result = this.isWorldAcceptable(_rect)
+		if (!result)
 		{
-			this.buildLandAndSea(_rect);
-
-			if (!this.isWorldAcceptable(_rect))
-			{
-				this.logInfo("World rejected. Creating new one...");
-				this.clearWorld(_rect);
-			}
-			else
-			{
-				this.logInfo("World accepted.");
-				break;
-			}
+			return false
 		}
 
 		this.buildElevation(_rect);
@@ -44,13 +37,29 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		this.defragmentTerrain(_rect);
 		this.removeStraits(_rect);
 		this.refineTerrain(_rect, _properties);
-		this.buildSettlements(_rect);
-		this.buildRoads(_rect, _properties);
+
+		result = this.buildSettlements(_rect);
+		if (!result) 
+		{
+			return false;
+		}
+
+		result = this.buildRoads(_rect, _properties);
+		if (!result) 
+		{
+			return false;
+		}
 		this.refineSettlements(_rect);
 		this.guaranteeAllBuildingsInSettlements();
 		this.buildAdditionalRoads(_rect, _properties);
 		this.buildRoadSprites(_rect, _properties);
-		this.buildLabels(_rect);
+		result = this.buildLabels(_rect);
+		if (!result) 
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	function isWorldAcceptable( _rect )
@@ -74,6 +83,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 			}
 		}
+		this.logInfo("Land:" + nonOcean + " Ocean:" + ocean);
+		return true
 
 		return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
 	}
@@ -1579,6 +1590,10 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			}
 		}
 
+		if (finalRegions.len() == 0)
+		{
+			return false
+		}
 		this.logInfo("Creating final " + finalRegions.len() + " regions...");
 
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
@@ -1598,6 +1613,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		}
 
 		this.World.State.m.Regions = finalRegions;
+		return true
 	}
 
 	function buildSettlements( _rect )
@@ -1726,6 +1742,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		}
 
 		this.logInfo("Created " + settlementTiles.len() + " settlements.");
+		return settlementTiles.len() > 2
 	}
 
 	function guaranteeAllBuildingsInSettlements()
@@ -1746,15 +1763,16 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 			for( local i = this.Const.World.Buildings.Fletchers; i <= 2; i = ++i )
 			{
+				if (candidates.len() == 0)
+				{
+					break;
+				}
+
 				local r = this.Math.rand(0, candidates.len() - 1);
 				local s = candidates[r];
 				candidates.remove(r);
 				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
 			}
 		}
 
@@ -1772,15 +1790,17 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 			for( local i = this.Const.World.Buildings.Temples; i <= 2; i = ++i )
 			{
+				if (candidates.len() == 0)
+				{
+					break;
+				}
+
 				local r = this.Math.rand(0, candidates.len() - 1);
 				local s = candidates[r];
 				candidates.remove(r);
 				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
+
 			}
 		}
 
@@ -1798,15 +1818,16 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 			for( local i = this.Const.World.Buildings.Barbers; i <= 2; i = ++i )
 			{
+				if (candidates.len() == 0)
+				{
+					break;
+				}
+
 				local r = this.Math.rand(0, candidates.len() - 1);
 				local s = candidates[r];
 				candidates.remove(r);
 				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/barber_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
 			}
 		}
 
@@ -1824,15 +1845,16 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 			for( local i = this.Const.World.Buildings.Kennels; i <= 2; i = ++i )
 			{
+				if (candidates.len() == 0)
+				{
+					break;
+				}
+
 				local r = this.Math.rand(0, candidates.len() - 1);
 				local s = candidates[r];
 				candidates.remove(r);
 				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
 
-				if (candidates.len() == 0)
-				{
-					break;
-				}
 			}
 		}
 
@@ -1850,15 +1872,17 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 			for( local i = this.Const.World.Buildings.Taxidermists; i <= 2; i = ++i )
 			{
-				local r = this.Math.rand(0, candidates.len() - 1);
-				local s = candidates[r];
-				candidates.remove(r);
-				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/taxidermist_building"));
 
 				if (candidates.len() == 0)
 				{
 					break;
 				}
+
+				local r = this.Math.rand(0, candidates.len() - 1);
+				local s = candidates[r];
+				candidates.remove(r);
+				s.addBuilding(this.new("scripts/entity/world/settlements/buildings/taxidermist_building"));
+
 			}
 		}
 	}
@@ -1935,10 +1959,10 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			local numConnections = 0;
 			local tries = 0;
-			tries = ++tries;
 
 			while (numConnections < 2 && tries < 50)
 			{
+				tries = ++tries;
 				local closest;
 				local closestDist = 9000;
 				local closestJ = i;
@@ -2001,9 +2025,11 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 				}
 			}
+
 		}
 
 		this.removeAutobahnkreuze(_rect, _properties);
+		return true;
 	}
 
 	function buildAdditionalRoads( _rect, _properties )

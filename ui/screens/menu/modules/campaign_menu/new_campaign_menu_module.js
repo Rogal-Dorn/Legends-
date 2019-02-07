@@ -575,43 +575,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 
 	this.mMapPanel = $('<div class="display-none"/>');
 	contentContainer.append(this.mMapPanel);
-	{
-	
-		var leftColumn = $('<div class="column"></div>');
-		this.mMapPanel.append(leftColumn);
-		var rightColumn = $('<div class="column"></div>');
-		this.mMapPanel.append(rightColumn);
-	
-		this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);	
-		this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
-		this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass', leftColumn);	
-		this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
-		this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
-		this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', rightColumn);
-		this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
-		this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
-		//this.createSliderControlDIV(this.mMapOptions.Vision, 'Vision', rightColumn);
-
-		var row = $('<div class="row"></div>');
-		rightColumn.append(row);
-
-		var control = $('<div class="control"/>');
-		row.append(control);
-		this.mFogofWarCheckbox = $('<input type="checkbox" id="cb-fog-of-war"/>');
-		control.append(this.mFogofWarCheckbox);
-		var label = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Settlements start hidden</label>');
-		control.append(label);
-		this.mFogofWarCheckbox.iCheck({
-			checkboxClass: 'icheckbox_flat-orange',
-			radioClass: 'iradio_flat-orange',
-			increaseArea: '30%'
-		});
-		if (this.mMapOptions.FOW)
-		{
-			this.mFogofWarCheckbox.iCheck('check');
-		}
-
-	}
+	this.buildMapConfig();
 
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"></div>');
@@ -672,6 +636,67 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
     this.mIsVisible = false;
 };
 
+NewCampaignMenuModule.prototype.buildMapConfig = function ()
+{
+	var leftColumn = $('<div class="column"></div>');
+	this.mMapPanel.append(leftColumn);
+	var rightColumn = $('<div class="column"></div>');
+	this.mMapPanel.append(rightColumn);
+
+	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);	
+	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);	
+	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
+	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
+	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
+	//this.createSliderControlDIV(this.mMapOptions.Vision, 'Vision', rightColumn);
+
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mFogofWarCheckbox = $('<input type="checkbox" id="cb-fog-of-war"/>');
+	control.append(this.mFogofWarCheckbox);
+	var label = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Settlements start hidden</label>');
+	control.append(label);
+	this.mFogofWarCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	if (this.mMapOptions.FOW)
+	{
+		this.mFogofWarCheckbox.iCheck('check');
+	}
+};
+
+NewCampaignMenuModule.prototype.updateMapConfig = function () 
+{
+	var controls = [
+		this.mMapOptions.Width,
+		this.mMapOptions.Height,
+		this.mMapOptions.LandMassMult,
+		this.mMapOptions.WaterConnectivity,
+		this.mMapOptions.Snowline,
+		this.mMapOptions.NumSettlements,
+		this.mMapOptions.NumFactions
+	]
+	controls.forEach(function (_definition) {
+		_definition.Control.attr('min', _definition.Min);
+		_definition.Control.attr('max', _definition.Max);
+		_definition.Control.attr('step', _definition.Step);
+		_definition.Control.val(_definition.Value);
+		_definition.Label.text('' + _definition.Value);
+	});
+	if (this.mMapOptions.FOW)
+	{
+		this.mFogofWarCheckbox.iCheck('check');
+	}
+}
+
 NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv)
 {
     var self = this;
@@ -690,13 +715,13 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
 	_definition.Control.val(_definition.Value);
 	control.append(_definition.Control);
 
-	var label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
-	control.append(label);
+	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
+	control.append(_definition.Label);
 
 	_definition.Control.on("change", function ()
 	{
 		_definition.Value = parseInt(_definition.Control.val());
-		label.text('' + _definition.Value);
+		_definition.Label.text('' + _definition.Value);
 	});
 };
 
@@ -1033,7 +1058,6 @@ NewCampaignMenuModule.prototype.setBanners = function(_data)
 
 NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 {
-	console.error("****SET CONFIG OPTS ****" + Object.keys(_data));
 	if(_data !== null)
 	{
 		if ('Height' in _data) {
@@ -1084,6 +1108,8 @@ NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 	{
 		console.error('ERROR: No opts specified for NewCampaignMenu::setConfigOpts');
 	}
+	this.updateMapConfig();
+
 }
 
 NewCampaignMenuModule.prototype.collectSettings = function()

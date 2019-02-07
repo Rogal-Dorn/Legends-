@@ -59,7 +59,7 @@ gt.Const.World.NewCampaignOpts <- function ()
 		NumSettlementsMin = 6
 		NumFactions = 3,
 		NumFactionsMin = 1,
-		NumFactionsMax = 23,
+		NumFactionsMax = Math.min(23, this.Const.GetFactionArchetypesList().len())
 		FOW = true
 	}
 }

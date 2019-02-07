@@ -386,6 +386,11 @@ this.faction_manager <- {
 
 		foreach( i, n in _nobleHouses )
 		{
+			if (military.len() == 0)
+			{
+				break;
+			}
+			
 			n.addSettlement(military[0]);
 			military.remove(0);
 			local other;

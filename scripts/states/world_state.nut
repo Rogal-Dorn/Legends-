@@ -1005,12 +1005,29 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		worldmap.fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, null);
+		local tries = 3000;
+		while (tries > 0)
+		{
+			local result = worldmap.fill({
+				X = 0,
+				Y = 0,
+				W = minX,
+				H = minY
+			}, null);
+			if (result) 
+			{
+				break;
+			}
+			tries = --tries
+			this.logInfo("Invalid map. Regenerating...")
+			//With each failure, slowly weight map towards more landmass. 
+			//To date, almost all the failures are because too much water
+			this.Const.World.Settings.LandMassMult +=  0.10 * this.Const.World.Settings.LandMassMult
+			this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
+			this.Const.World.Settings.WaterConnectivity -= 0.10 * this.Const.World.Settings.WaterConnectivity
+			this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity)
+		}
+
 		this.World.FactionManager.createFactions(this.m.CampaignSettings);
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
@@ -1088,6 +1105,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		c.start();
 		this.World.Contracts.addContract(c);
 		this.World.Contracts.setActiveContract(c, true);
+		this.World.setFogOfWar(false);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
 	}
 
