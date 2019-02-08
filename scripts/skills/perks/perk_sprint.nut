@@ -2,9 +2,9 @@ this.perk_sprint <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.sprint";
-		this.m.Name = this.Const.Strings.PerkName.Sprint;
-		this.m.Description = this.Const.Strings.PerkDescription.Sprint;
+		this.m.ID = "perk.mastery_poison";
+		this.m.Name = this.Const.Strings.PerkName.SpecPoion;
+		this.m.Description = this.Const.Strings.PerkDescription.SpecPoison;
 		this.m.Icon = "ui/perks/perk_21.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -17,7 +17,7 @@ this.perk_sprint <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.sprint"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/sprint_skill_5"));
+			this.m.Container.add(this.new("scripts/skills/actives/coat_with_poison_skill"));
 		}
 	}
 

@@ -31,7 +31,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = this.Math.rand(1, 3);
+		this.m.Level = 11;
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 	}
