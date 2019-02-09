@@ -26,6 +26,36 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+		function getTooltip()
+	{
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/tooltips/heart.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage, ignores armor"
+			}
+		];
+	}
+
+
+
 	function onUpdate( _properties )
 	{
 		_properties.DamageRegularMin += 15;

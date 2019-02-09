@@ -1079,7 +1079,9 @@ gt.Const.Strings.PerkName <- {
 	LegendHorrify = "Horrify",
 	LegendPush = "Revolt",
 	LegendEntice = "Entice",
-	LegendSleep = "Sleep"
+	LegendSleep = "Sleep",
+	LegendFirefield = "Fire Field",
+	LegendPossessUndead = "Possess Undead"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1184,7 +1186,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorrify = "Spin such gruesome tales as to horrify a target",
 	LegendPush = "Digust a target so much they are forced to retrate one tile in revulsion",
 	LegendEntice = "Lure a target one tile closer with your enticing words"
-	LegendSleep  = "Send a group of opponents to sleep "
+	LegendSleep  = "Send a group of opponents to sleep",
+	LegendFirefield = "Release a field of fire that burns all beings"
+	LegendPossessUndead = "Allows you to boost the attacks of an undead minion"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -227,7 +227,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 					if (!f.getFlags().get("Betrayed"))
 					{
 						this.Flags.set("IsChangingSides", true);
-						local i = this.Math.rand(1, 18);
+						local i = this.Math.rand(1, 20);
 						local item;
 
 						if (i == 1)
@@ -301,6 +301,14 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 						else if (i == 18)
 						{
 							item = this.new("scripts/items/weapons/named/named_warhammer");
+						},					
+						else if (i == 19)
+						{
+							item = this.new("scripts/items/weapons/named/named_warbow");
+						},						
+						else if (i == 20)
+						{
+							item = this.new("scripts/items/weapons/named/named_crossbow");
 						}
 
 						item.onAddedToStash("");

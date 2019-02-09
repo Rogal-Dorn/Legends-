@@ -130,7 +130,7 @@ gt.Const.Corpse <- {
 	Tile = null,
 	Value = 1.0,
 	IsConsumable = true,
-	IsResurrectable = false,
+	IsResurrectable = true,
 	IsRestoringSkin = false,
 	IsHeadAttached = true,
 	IsPlayer = false,

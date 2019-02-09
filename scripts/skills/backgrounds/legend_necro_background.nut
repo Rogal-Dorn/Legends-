@@ -81,8 +81,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 
-		this.m.Container.add(this.new("scripts/skills/actives/raise_undead"));
-		this.m.Container.add(this.new("scripts/skills/actives/possess_undead_skill"));		
+		this.m.Container.add(this.new("scripts/skills/actives/legend_raise_undead"));	
 	}	
 
 		function onChangeAttributes()

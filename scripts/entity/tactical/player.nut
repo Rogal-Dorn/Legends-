@@ -926,7 +926,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local flip = this.Math.rand(0, 100) < 50;
 		this.m.IsCorpseFlipped = flip;
-		local isResurrectable = _fatalityType == this.Const.FatalityType.None || _fatalityType == this.Const.FatalityType.Disemboweled;
+		local isResurrectable = true;
 		local appearance = this.getItems().getAppearance();
 		local sprite_body = this.getSprite("body");
 		local sprite_head = this.getSprite("head");

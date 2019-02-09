@@ -78,8 +78,8 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Script = "scripts/skills/perks/legend_stunned",
 			Name = this.Const.Strings.PerkName.LegendStunned,
 			Tooltip = this.Const.Strings.PerkDescription.LegendStunned,
-			Icon = "skills/status_effect_32.png",
-			IconDisabled = "ui/perks/perk_32_sw.png"
+			Icon = "skills/status_effect_31.png",
+			IconDisabled = "ui/perks/perk_31_sw.png"
 		}
 
 	],
@@ -457,8 +457,8 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Script = "scripts/skills/perks/perk_stalwart",
 			Name = this.Const.Strings.PerkName.Stalwart,
 			Tooltip = this.Const.Strings.PerkDescription.Stalwart,
-			Icon = "ui/perks/perk_32.png",
-			IconDisabled = "ui/perks/perk_32.png_sw.png"
+			Icon = "skills/active_52.png",
+			IconDisabled = "skills/active_52.png"
 		},
 		{
 			ID = "perk.battle_flow",
@@ -522,8 +522,8 @@ gt.Const.Perks.PerksTreeRanger <- [
 			Script = "scripts/skills/perks/perk_lookout",
 			Name = this.Const.Strings.PerkName.Lookout,
 			Tooltip = this.Const.Strings.PerkDescription.Lookout,
-			Icon = "ui/perks/perk_118.png",
-			IconDisabled = "ui/perks/perk_118_sw.png"
+			Icon = "skills/active_118.png",
+			IconDisabled = "skills/active_118_sw.png"
 		}
 	],
 	[
@@ -1305,8 +1305,8 @@ gt.Const.Perks.PerksTreeBerserker <- [
 			Script = "scripts/skills/perks/perk_stalwart",
 			Name = this.Const.Strings.PerkName.Stalwart,
 			Tooltip = this.Const.Strings.PerkDescription.Stalwart,
-			Icon = "ui/perks/perk_32.png",
-			IconDisabled = "ui/perks/perk_32.png_sw.png"
+			Icon = "skills/active_52.png",
+			IconDisabled = "skills/active_52_sw.png"
 		}
 	],
 	[],

@@ -6,6 +6,7 @@ this.perk_legend_push <- this.inherit("scripts/skills/skill", {
 		this.m.Name = this.Const.Strings.PerkName.LegendPush;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendPush;
 		this.m.Icon = "skills/active_42.png";
+		this.m.IconDisabled = "skills/active_42_sw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
