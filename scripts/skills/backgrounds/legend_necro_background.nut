@@ -80,8 +80,10 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
-
-		this.m.Container.add(this.new("scripts/skills/actives/legend_raise_undead"));	
+		this.m.Container.add(this.new("scripts/skills/actives/legend_hex_skill"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_rust"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_wither"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_darkflight"));
 	}	
 
 		function onChangeAttributes()

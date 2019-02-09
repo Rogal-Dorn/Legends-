@@ -66,8 +66,6 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " dazed");
 			}
 		}
-
-		return success;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

@@ -195,6 +195,14 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.PerfectFocus,
 			Icon = "ui/perks/perk_37.png",
 			IconDisabled = "ui/perks/perk_37_sw.png"
+		},
+		{
+			ID = "perk.legend_firefield",
+			Script = "scripts/skills/perks/perk_legend_miasma",
+			Name = this.Const.Strings.PerkName.LegendMiasma,
+			Tooltip = this.Const.Strings.PerkDescription.LegendMiasma,
+			Icon = "skills/active_101.png",
+			IconDisabled = "skills/active_101_sw.png"
 		}
 	],
 	[

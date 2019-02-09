@@ -3474,6 +3474,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.XP = this.Math.floor(this.m.XP * _info.Hitpoints);
 		this.m.BaseProperties.Armor = _info.Armor;
 		this.onUpdateInjuryLayer();
+		this.World.getPlayerRoster().add(_info);
 	}
 
 	function assignRandomEquipment()
