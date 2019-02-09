@@ -81,8 +81,9 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 
-		this.m.Container.add(this.new("scripts/skills/actives/legend_firefield_skill"));	
-		this.m.Container.add(this.new("scripts/skills/actives/legend_miasma_skill"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_daze"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_entice"));
+
 	}	
 		function onChangeAttributes()
 	{
