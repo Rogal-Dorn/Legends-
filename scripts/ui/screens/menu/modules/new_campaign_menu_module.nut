@@ -78,7 +78,10 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			NumSettlements = _settings[15],
 			NumFactions = _settings[16],
 			//Vision = _settings[17],
-			FOW = _settings[17]
+			FOW = _settings[17],
+			ForestsMult = _settings[18] / 100.0,
+			SwampsMult = _settings[19] / 100.0 ,
+			MountainsMult = _settings[20] / 100.0
 		};
 
 		if (this.m.OnStartButtonPressedListener != null)

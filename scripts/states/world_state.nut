@@ -1028,11 +1028,17 @@ this.world_state <- this.inherit("scripts/states/state", {
 			{
 				//Above 50% We want more land than water
 				if (this.Const.World.Settings.LandMassMult > 1.5) {
-					this.Const.World.Settings.WaterConnectivity -= 0.05 * this.Const.World.Settings.WaterConnectivity
+					this.Const.World.Settings.LandMassMult -= 0.02 * this.Const.World.Settings.LandMassMult
 				} else {
-				//Below 50% we want more water than land
-					this.Const.World.Settings.WaterConnectivity += 0.05 * this.Const.World.Settings.WaterConnectivity
+					this.Const.World.Settings.LandMassMult += 0.02 * this.Const.World.Settings.LandMassMult
 				}
+
+				// if (this.Const.World.Settings.WaterConnectivity > 38) {
+				// 	this.Const.World.Settings.WaterConnectivity = Math.max(28, this.Const.World.Settings.WaterConnectivity -  0.05 * this.Const.World.Settings.WaterConnectivity)
+				// } else {
+				// //Below 50% we want more water than land
+				// 	this.Const.World.Settings.WaterConnectivity = Math.min(48, this.Const.World.Settings.WaterConnectivity +  0.05 * this.Const.World.Settings.WaterConnectivity)
+				// }
 			}
 		}
 
