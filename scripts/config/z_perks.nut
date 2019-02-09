@@ -379,123 +379,123 @@ gt.Const.Perks.PerksTreeCrusader <- [
 	[]
 ];
 
-gt.Const.Perks.PerksTreeSeer <- [
-	[
-		{
-			ID = "perk.fast_adaption",
-			Script = "scripts/skills/perks/perk_fast_adaption",
-			Name = this.Const.Strings.PerkName.FastAdaption,
-			Tooltip = this.Const.Strings.PerkDescription.FastAdaption,
-			Icon = "ui/perks/perk_33.png",
-			IconDisabled = "ui/perks/perk_33_sw.png"
-		},
-		{
-			ID = "perk.bags_and_belts",
-			Script = "scripts/skills/perks/perk_bags_and_belts",
-			Name = this.Const.Strings.PerkName.BagsAndBelts,
-			Tooltip = this.Const.Strings.PerkDescription.BagsAndBelts,
-			Icon = "ui/perks/perk_20.png",
-			IconDisabled = "ui/perks/perk_20_sw.png"
-		},
-		{
-			ID = "perk.student",
-			Script = "scripts/skills/perks/perk_student",
-			Name = this.Const.Strings.PerkName.Student,
-			Tooltip = this.Const.Strings.PerkDescription.Student,
-			Icon = "ui/perks/perk_21.png",
-			IconDisabled = "ui/perks/perk_21_sw.png"
-		},
-		{
-			ID = "perk.recover",
-			Script = "scripts/skills/perks/perk_recover",
-			Name = this.Const.Strings.PerkName.Recover,
-			Tooltip = this.Const.Strings.PerkDescription.Recover,
-			Icon = "ui/perks/perk_54.png",
-			IconDisabled = "ui/perks/perk_54_sw.png"
-		},
-		{
-			ID = "perk.student",
-			Script = "scripts/skills/perks/perk_student",
-			Name = this.Const.Strings.PerkName.Student,
-			Tooltip = this.Const.Strings.PerkDescription.Student,
-			Icon = "ui/perks/perk_21.png",
-			IconDisabled = "ui/perks/perk_21_sw.png"
-		}
-	],
-	[
-		{
-			ID = "perk.fortified_mind",
-			Script = "scripts/skills/perks/perk_fortified_mind",
-			Name = this.Const.Strings.PerkName.FortifiedMind,
-			Tooltip = this.Const.Strings.PerkDescription.FortifiedMind,
-			Icon = "ui/perks/perk_08.png",
-			IconDisabled = "ui/perks/perk_08_sw.png"
-		},
-		{
-			ID = "perk.hold_out",
-			Script = "scripts/skills/perks/perk_hold_out",
-			Name = this.Const.Strings.PerkName.HoldOut,
-			Tooltip = this.Const.Strings.PerkDescription.HoldOut,
-			Icon = "ui/perks/perk_04.png",
-			IconDisabled = "ui/perks/perk_04_sw.png"
-		},
+// gt.Const.Perks.PerksTreeSeer <- [
+// 	[
+// 		{
+// 			ID = "perk.fast_adaption",
+// 			Script = "scripts/skills/perks/perk_fast_adaption",
+// 			Name = this.Const.Strings.PerkName.FastAdaption,
+// 			Tooltip = this.Const.Strings.PerkDescription.FastAdaption,
+// 			Icon = "ui/perks/perk_33.png",
+// 			IconDisabled = "ui/perks/perk_33_sw.png"
+// 		},
+// 		{
+// 			ID = "perk.bags_and_belts",
+// 			Script = "scripts/skills/perks/perk_bags_and_belts",
+// 			Name = this.Const.Strings.PerkName.BagsAndBelts,
+// 			Tooltip = this.Const.Strings.PerkDescription.BagsAndBelts,
+// 			Icon = "ui/perks/perk_20.png",
+// 			IconDisabled = "ui/perks/perk_20_sw.png"
+// 		},
+// 		{
+// 			ID = "perk.student",
+// 			Script = "scripts/skills/perks/perk_student",
+// 			Name = this.Const.Strings.PerkName.Student,
+// 			Tooltip = this.Const.Strings.PerkDescription.Student,
+// 			Icon = "ui/perks/perk_21.png",
+// 			IconDisabled = "ui/perks/perk_21_sw.png"
+// 		},
+// 		{
+// 			ID = "perk.recover",
+// 			Script = "scripts/skills/perks/perk_recover",
+// 			Name = this.Const.Strings.PerkName.Recover,
+// 			Tooltip = this.Const.Strings.PerkDescription.Recover,
+// 			Icon = "ui/perks/perk_54.png",
+// 			IconDisabled = "ui/perks/perk_54_sw.png"
+// 		},
+// 		{
+// 			ID = "perk.student",
+// 			Script = "scripts/skills/perks/perk_student",
+// 			Name = this.Const.Strings.PerkName.Student,
+// 			Tooltip = this.Const.Strings.PerkDescription.Student,
+// 			Icon = "ui/perks/perk_21.png",
+// 			IconDisabled = "ui/perks/perk_21_sw.png"
+// 		}
+// 	],
+// 	[
+// 		{
+// 			ID = "perk.fortified_mind",
+// 			Script = "scripts/skills/perks/perk_fortified_mind",
+// 			Name = this.Const.Strings.PerkName.FortifiedMind,
+// 			Tooltip = this.Const.Strings.PerkDescription.FortifiedMind,
+// 			Icon = "ui/perks/perk_08.png",
+// 			IconDisabled = "ui/perks/perk_08_sw.png"
+// 		},
+// 		{
+// 			ID = "perk.hold_out",
+// 			Script = "scripts/skills/perks/perk_hold_out",
+// 			Name = this.Const.Strings.PerkName.HoldOut,
+// 			Tooltip = this.Const.Strings.PerkDescription.HoldOut,
+// 			Icon = "ui/perks/perk_04.png",
+// 			IconDisabled = "ui/perks/perk_04_sw.png"
+// 		},
 
-	],
-	[
-		{
-			ID = "perk.backstabber",
-			Script = "scripts/skills/perks/perk_backstabber",
-			Name = this.Const.Strings.PerkName.Backstabber,
-			Tooltip = this.Const.Strings.PerkDescription.Backstabber,
-			Icon = "ui/perks/perk_59.png",
-			IconDisabled = "ui/perks/perk_59_sw.png"
-		}
-	],
-	[
-		{
-			ID = "perk.mastery.mace",
-			Script = "scripts/skills/perks/perk_mastery_mace",
-			Name = this.Const.Strings.PerkName.SpecMace,
-			Tooltip = this.Const.Strings.PerkDescription.SpecMace,
-			Icon = "ui/perks/perk_43.png",
-			IconDisabled = "ui/perks/perk_43_sw.png"
-		}
-	],
-	[
-		{
-			ID = "perk.reach_advantage",
-			Script = "scripts/skills/perks/perk_reach_advantage",
-			Name = this.Const.Strings.PerkName.ReachAdvantage,
-			Tooltip = this.Const.Strings.PerkDescription.ReachAdvantage,
-			Icon = "ui/perks/perk_19.png",
-			IconDisabled = "ui/perks/perk_19_sw.png"
-		}
-	],
-	[
-		{
-			ID = "perk.berserk",
-			Script = "scripts/skills/perks/perk_berserk",
-			Name = this.Const.Strings.PerkName.Berserk,
-			Tooltip = this.Const.Strings.PerkDescription.Berserk,
-			Icon = "ui/perks/perk_35.png",
-			IconDisabled = "ui/perks/perk_35_sw.png"
-		}
-	],
-	[
-		{
-			ID = "perk.fearsome",
-			Script = "scripts/skills/perks/perk_fearsome",
-			Name = this.Const.Strings.PerkName.Fearsome,
-			Tooltip = this.Const.Strings.PerkDescription.Fearsome,
-			Icon = "ui/perks/perk_27.png",
-			IconDisabled = "ui/perks/perk_27_sw.png"
-		}
-	],
-	[],
-	[],
-	[],
-	[]
-];
+// 	],
+// 	[
+// 		{
+// 			ID = "perk.backstabber",
+// 			Script = "scripts/skills/perks/perk_backstabber",
+// 			Name = this.Const.Strings.PerkName.Backstabber,
+// 			Tooltip = this.Const.Strings.PerkDescription.Backstabber,
+// 			Icon = "ui/perks/perk_59.png",
+// 			IconDisabled = "ui/perks/perk_59_sw.png"
+// 		}
+// 	],
+// 	[
+// 		{
+// 			ID = "perk.mastery.mace",
+// 			Script = "scripts/skills/perks/perk_mastery_mace",
+// 			Name = this.Const.Strings.PerkName.SpecMace,
+// 			Tooltip = this.Const.Strings.PerkDescription.SpecMace,
+// 			Icon = "ui/perks/perk_43.png",
+// 			IconDisabled = "ui/perks/perk_43_sw.png"
+// 		}
+// 	],
+// 	[
+// 		{
+// 			ID = "perk.reach_advantage",
+// 			Script = "scripts/skills/perks/perk_reach_advantage",
+// 			Name = this.Const.Strings.PerkName.ReachAdvantage,
+// 			Tooltip = this.Const.Strings.PerkDescription.ReachAdvantage,
+// 			Icon = "ui/perks/perk_19.png",
+// 			IconDisabled = "ui/perks/perk_19_sw.png"
+// 		}
+// 	],
+// 	[
+// 		{
+// 			ID = "perk.berserk",
+// 			Script = "scripts/skills/perks/perk_berserk",
+// 			Name = this.Const.Strings.PerkName.Berserk,
+// 			Tooltip = this.Const.Strings.PerkDescription.Berserk,
+// 			Icon = "ui/perks/perk_35.png",
+// 			IconDisabled = "ui/perks/perk_35_sw.png"
+// 		}
+// 	],
+// 	[
+// 		{
+// 			ID = "perk.fearsome",
+// 			Script = "scripts/skills/perks/perk_fearsome",
+// 			Name = this.Const.Strings.PerkName.Fearsome,
+// 			Tooltip = this.Const.Strings.PerkDescription.Fearsome,
+// 			Icon = "ui/perks/perk_27.png",
+// 			IconDisabled = "ui/perks/perk_27_sw.png"
+// 		}
+// 	],
+// 	[],
+// 	[],
+// 	[],
+// 	[]
+// ];
 
 gt.Const.Perks.PerksTreeRanger <- [
 	[
@@ -703,7 +703,7 @@ gt.Const.Perks.PerksTreeRanger <- [
 	[]
 ];
 
-gt.Const.Perks.PerksTreeNecromancer <- [
+gt.Const.Perks.PerksTreeNecro <- [
 	[
 		{
 			ID = "perk.nine_lives",
@@ -844,7 +844,7 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 	[]
 ];
 
-gt.Const.Perks.PerksTreeBerseker <- [
+gt.Const.Perks.PerksTreeBerserker <- [
 	[
 		{
 			ID = "perk.fast_adaption",
@@ -1460,7 +1460,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeBerserkerLookupMap;
 			break;
 		case "background.legend_noble":
-			return gt.Const.Perks.TreeBerserkerLookupMap;
+			return gt.Const.Perks.TreeNobleLookupMap;
 			break;
 		default:
 			return  gt.Const.Perks.LookupMap;
