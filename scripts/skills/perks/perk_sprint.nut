@@ -3,7 +3,7 @@ this.perk_sprint <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.mastery_poison";
-		this.m.Name = this.Const.Strings.PerkName.SpecPoion;
+		this.m.Name = this.Const.Strings.PerkName.SpecPoison;
 		this.m.Description = this.Const.Strings.PerkDescription.SpecPoison;
 		this.m.Icon = "ui/perks/perk_21.png";
 		this.m.Type = this.Const.SkillType.Perk;
