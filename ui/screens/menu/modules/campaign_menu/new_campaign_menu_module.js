@@ -90,49 +90,49 @@ var NewCampaignMenuModule = function()
 		Width: {
 			Control: null,
 			OptionsKey: 'map.width',
-			Min: 50,
-			Max: 300,
-			Value: 140,
+			Min: 0,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
 		Height: {
 			Control: null,
 			OptionsKey: 'map.height',
-			Min: 50,
-			Max: 300,
-			Value: 140,
+			Min: 0,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
 		LandMassMult: {
 			Control: null,
 			OptionsKey: 'map.landmassmult',
 			Min: 0,
-			Max: 20,
-			Value: 14,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
 		WaterConnectivity: {
 			Control: null,
 			OptionsKey: 'map.waterconnectivity',
 			Min: 0,
-			Max: 100,
-			Value: 38,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
 		MinLandToWaterRatio: {
 			Control: null,
 			OptionsKey: 'map.minlandtowaterratio',
 			Min: 0,
-			Max: 20,
-			Value: 14,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
 		Snowline: {
 			Control: null,
 			OptionsKey: 'map.snowline',
 			Min: 0,
-			Max: 100,
-			Value: 90,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
 		Vision: {
@@ -146,19 +146,43 @@ var NewCampaignMenuModule = function()
 		NumSettlements: {
 			Control: null,
 			OptionsKey: 'map.settlements',
-			Min: 1,
-			Max: 60,
-			Value: 19,
+			Min: 0,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
 		NumFactions: {
 			Control: null,
 			OptionsKey: 'map.factions',
-			Min: 1,
-			Max: 6,
-			Value: 3,
+			Min: 0,
+			Max: 0,
+			Value: 0,
 			Step: 1
 		},
+		ForestsMult: {
+			Control: null,
+			OptionsKey: 'map.forests',
+			Min: 0,
+			Max: 0,
+			Value: 0,
+			Step: 1
+		},
+		SwampsMult: {
+			Control: null,
+			OptionsKey: 'map.swamps',
+			Min: 0,
+			Max: 0,
+			Value: 0,
+			Step: 1
+		},
+		MountainsMult: {
+			Control: null,
+			OptionsKey: 'map.mountains',
+			Min: 0,
+			Max: 0,
+			Value: 0,
+			Step: 1
+		},						
 		FOW : true
 	};
 
@@ -664,8 +688,12 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	//this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.ForestsMult, 'Forest Density', rightColumn);
+	this.createSliderControlDIV(this.mMapOptions.SwampsMult, 'Swamp Density', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
+
 	//this.createSliderControlDIV(this.mMapOptions.Vision, 'Vision', rightColumn);
 
 	var row = $('<div class="row"></div>');
@@ -697,7 +725,10 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 		//this.mMapOptions.WaterConnectivity,
 		this.mMapOptions.Snowline,
 		this.mMapOptions.NumSettlements,
-		this.mMapOptions.NumFactions
+		this.mMapOptions.NumFactions,
+		this.mMapOptions.ForestsMult,
+		this.mMapOptions.SwampsMult,
+		this.mMapOptions.MountainsMult
 	]
 	controls.forEach(function (_definition) {
 		_definition.Control.attr('min', _definition.Min);
@@ -722,6 +753,9 @@ NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
 	this.mMapOptions.Snowline.Value = Helper.weightedRandom(this.mMapOptions.Snowline.Min, this.mMapOptions.Snowline.Max, 90, 5);
 	this.mMapOptions.NumSettlements.Value = Helper.getRandomInt(this.mMapOptions.NumSettlements.Min, this.mMapOptions.NumSettlements.Max);
 	this.mMapOptions.NumFactions.Value = Helper.getRandomInt(this.mMapOptions.NumFactions.Min, this.mMapOptions.NumFactions.Max);
+	this.mMapOptions.ForestsMult.Value = Helper.getRandomInt(this.mMapOptions.ForestsMult.Min, this.mMapOptions.ForestsMult.Max);
+	this.mMapOptions.SwampsMult.Value = Helper.getRandomInt(this.mMapOptions.SwampsMult.Min, this.mMapOptions.SwampsMult.Max);
+	this.mMapOptions.MountainsMult.Value = Helper.getRandomInt(this.mMapOptions.MountainsMult.Min, this.mMapOptions.MountainsMult.Max);
 	this.updateMapConfig();
 }
 
@@ -1131,6 +1165,21 @@ NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 			this.mMapOptions.NumFactions.Min = _data['NumFactionsMin'];
 			this.mMapOptions.NumFactions.Max = _data['NumFactionsMax'];
 		}
+		if ('ForestsMult' in _data) {
+			this.mMapOptions.ForestsMult.Value = _data['ForestsMult'];
+			this.mMapOptions.ForestsMult.Min = _data['ForestsMultMin'];
+			this.mMapOptions.ForestsMult.Max = _data['ForestsMultMax'];
+		}
+		if ('SwampsMult' in _data) {
+			this.mMapOptions.SwampsMult.Value = _data['SwampsMult'];
+			this.mMapOptions.SwampsMult.Min = _data['SwampsMultMin'];
+			this.mMapOptions.SwampsMult.Max = _data['SwampsMultMax'];
+		}	
+		if ('MountainsMult' in _data) {
+			this.mMapOptions.MountainsMult.Value = _data['MountainsMult'];
+			this.mMapOptions.MountainsMult.Min = _data['MountainsMultMin'];
+			this.mMapOptions.MountainsMult.Max = _data['MountainsMultMax'];
+		}		
 		if ('FOW' in _data) {
 			this.mMapOptions.FOW = _data['FOW'];
 		}
@@ -1170,8 +1219,10 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mMapOptions.NumSettlements.Value);	
 	settings.push(this.mMapOptions.NumFactions.Value);
 	// settings.push(this.mMapOptions.Vision.Value);	
-	settings.push(this.mFogofWarCheckbox.is(':checked'));	
-
+	settings.push(this.mFogofWarCheckbox.is(':checked'));
+	settings.push(this.mMapOptions.ForestsMult.Value);
+	settings.push(this.mMapOptions.SwampsMult.Value);
+	settings.push(this.mMapOptions.MountainsMult.Value);
 	return settings;
 }
 
