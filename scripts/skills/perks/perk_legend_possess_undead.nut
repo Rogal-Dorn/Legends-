@@ -15,14 +15,14 @@ this.perk_legend_possess_undead <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_hex_skill"))
+		if (!this.m.Container.hasSkill("actives.legend_possess_undead"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_hex_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_possess_undead"));
 		}
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_hex_skill");
+		this.m.Container.removeByID("actives.legend_possess_undead");
 	}
 
 });

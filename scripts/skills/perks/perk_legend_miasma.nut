@@ -15,14 +15,14 @@ this.perk_legend_miasma <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_miasma"))
+		if (!this.m.Container.hasSkill("actives.legend_miasma_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_miasma"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_miasma_skill"));
 		}
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_miasma");
+		this.m.Container.removeByID("actives.legend_miasma_skill");
 	}
 
 });

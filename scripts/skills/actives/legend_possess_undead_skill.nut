@@ -4,7 +4,7 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_possess_undead";
 		this.m.Name = "Possess Undead";
-		this.m.Description = "";
+		this.m.Description = "Allows you to boost the attacks of an undead minion";
 		this.m.Icon = "skills/active_99.png";
 		this.m.IconDisabled = "skills/active_99.png";
 		this.m.Overlay = "active_99";

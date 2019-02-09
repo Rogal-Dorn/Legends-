@@ -1,23 +1,23 @@
-this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
+this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_miasma";
-		this.m.Name = "Miasma";
-		this.m.Description = "Release a cloud of noxious gasses that effects living beings";
-		this.m.Icon = "skills/active_101.png";
-		this.m.IconDisabled = "skills/active_101.png";
-		this.m.Overlay = "active_101";
+		this.m.ID = "actives.legend_firefield";
+		this.m.Name = "Fire Field";
+		this.m.Description = "Release a field of fire that burns all beings";
+		this.m.Icon = "skills/active_100.png";
+		this.m.IconDisabled = "skills/active_100_sw.png";
+		this.m.Overlay = "active_100";
 		this.m.SoundOnUse = [
 			"sounds/enemies/miasma_spell_01.wav",
 			"sounds/enemies/miasma_spell_02.wav",
 			"sounds/enemies/miasma_spell_03.wav"
 		];
 		this.m.SoundOnHitHitpoints = [
-			"sounds/humans/human_coughing_01.wav",
-			"sounds/humans/human_coughing_02.wav",
-			"sounds/humans/human_coughing_03.wav",
-			"sounds/humans/human_coughing_04.wav"
+			"sounds/humans/0/human_light_01.wav",
+			"sounds/humans/0/human_light_02.wav",
+			"sounds/humans/0/human_light_03.wav",
+			"sounds/humans/0/human_light_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
@@ -43,11 +43,6 @@ this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
 	function isViableTarget( _user, _target )
 	{
 		if (_target.isAlliedWith(_user))
-		{
-			return false;
-		}
-
-		if (_target.getTags().has("undead"))
 		{
 			return false;
 		}
@@ -78,18 +73,18 @@ this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		local p = {
-			Type = "legend_miasma",
-			Tooltip = "Miasma lingers here, harmful to any living being",
+			Type = "legend_firefield",
+			Tooltip = "Fire lingers here, burning all who enter",
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
 			Timeout = this.Time.getRound() + 3,
-			Callback = this.Const.Tactical.Common.onApplyMiasma
+			Callback = this.Const.Tactical.Common.onApplyFirefield
 		};
 
 		foreach( tile in targets )
 		{
-			if (tile.Properties.Effect != null && tile.Properties.Effect.Type == "legend_miasma")
+			if (tile.Properties.Effect != null && tile.Properties.Effect.Type == "legend_firefield")
 			{
 				tile.Properties.Effect.Timeout = this.Time.getRound() + 3;
 			}
@@ -98,9 +93,9 @@ this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
 				tile.Properties.Effect = clone p;
 				local particles = [];
 
-				for( local i = 0; i < this.Const.Tactical.MiasmaParticles.len(); i = ++i )
+				for( local i = 0; i < this.Const.Tactical.FireParticles.len(); i = ++i )
 				{
-					particles.push(this.Tactical.spawnParticleEffect(true, this.Const.Tactical.MiasmaParticles[i].Brushes, tile, this.Const.Tactical.MiasmaParticles[i].Delay, this.Const.Tactical.MiasmaParticles[i].Quantity, this.Const.Tactical.MiasmaParticles[i].LifeTimeQuantity, this.Const.Tactical.MiasmaParticles[i].SpawnRate, this.Const.Tactical.MiasmaParticles[i].Stages));
+					particles.push(this.Tactical.spawnParticleEffect(true, this.Const.Tactical.FireParticles[i].Brushes, tile, this.Const.Tactical.FireParticles[i].Delay, this.Const.Tactical.FireParticles[i].Quantity, this.Const.Tactical.FireParticles[i].LifeTimeQuantity, this.Const.Tactical.FireParticles[i].SpawnRate, this.Const.Tactical.FireParticles[i].Stages));
 				}
 
 				this.Tactical.Entities.addTileEffect(tile, tile.Properties.Effect, particles);
