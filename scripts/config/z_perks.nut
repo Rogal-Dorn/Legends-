@@ -41,7 +41,7 @@ gt.Const.Perks.PerksTreeSeer <- [
 		},
 		{
 			ID = "perk.legend_daze",
-			Script = "scripts/skills/perks/legend_daze",
+			Script = "scripts/skills/perks/perk_legend_daze",
 			Name = this.Const.Strings.PerkName.LegendDaze,
 			Tooltip = this.Const.Strings.PerkDescription.LegendDaze,
 			Icon = "skills/status_effect_62.png",
@@ -75,7 +75,7 @@ gt.Const.Perks.PerksTreeSeer <- [
 		},
 		{
 			ID = "perk.legend_stunned",
-			Script = "scripts/skills/perks/legend_stunned",
+			Script = "scripts/skills/perks/perk_legend_stun",
 			Name = this.Const.Strings.PerkName.LegendStunned,
 			Tooltip = this.Const.Strings.PerkDescription.LegendStunned,
 			Icon = "skills/status_effect_31.png",
@@ -118,7 +118,7 @@ gt.Const.Perks.PerksTreeSeer <- [
 		},
 		{
 			ID = "perk.legend_horrify",
-			Script = "scripts/skills/perks/legend_horrify",
+			Script = "scripts/skills/perks/perk_legend_horrify",
 			Name = this.Const.Strings.PerkName.LegendHorrify,
 			Tooltip = this.Const.Strings.PerkDescription.LegendHorrify,
 			Icon = "skills/status_effect_42.png",
@@ -137,7 +137,7 @@ gt.Const.Perks.PerksTreeSeer <- [
 		},
 		{
 			ID = "perk.legend_entice",
-			Script = "scripts/skills/perks/legend_entice",
+			Script = "scripts/skills/perks/perk_legend_entice",
 			Name = this.Const.Strings.PerkName.LegendEntice,
 			Tooltip = this.Const.Strings.PerkDescription.LegendEntice,
 			Icon = "skills/status_effect_42.png",
@@ -145,7 +145,7 @@ gt.Const.Perks.PerksTreeSeer <- [
 		},
 		{
 			ID = "perk.legend_push",
-			Script = "scripts/skills/perks/legend_push",
+			Script = "scripts/skills/perks/perk_legend_push",
 			Name = this.Const.Strings.PerkName.LegendPush,
 			Tooltip = this.Const.Strings.PerkDescription.LegendPush,
 			Icon = "skills/status_effect_42.png",
@@ -530,8 +530,8 @@ gt.Const.Perks.PerksTreeRanger <- [
 			Script = "scripts/skills/perks/perk_lookout",
 			Name = this.Const.Strings.PerkName.Lookout,
 			Tooltip = this.Const.Strings.PerkDescription.Lookout,
-			Icon = "skills/active_118.png",
-			IconDisabled = "skills/active_118_sw.png"
+			Icon = "ui/perks/perk_vision.png",
+			IconDisabled = "ui/perks/perk_vision_sw.png"
 		}
 	],
 	[
@@ -794,7 +794,7 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.Recover,
 			Icon = "ui/perks/perk_54.png",
 			IconDisabled = "ui/perks/perk_54_sw.png"
-		},
+		}
 	],
 	[
 		{
@@ -823,7 +823,7 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 		},
 		{
 			ID = "perk.legend_wither",
-			Script = "scripts/skills/perks/legend_wither",
+			Script = "scripts/skills/perks/perk_legend_wither",
 			Name = this.Const.Strings.PerkName.LegendWither,
 			Tooltip = this.Const.Strings.PerkDescription.LegendWither,
 			Icon = "ui/perks/perk_34.png",
@@ -849,10 +849,10 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 		},
 		{
 			ID = "perk.legend_rust",
-			Script = "scripts/skills/perks/legend_rust",
+			Script = "scripts/skills/perks/perk_legend_rust",
 			Name = this.Const.Strings.PerkName.LegendRust,
 			Tooltip = this.Const.Strings.PerkDescription.LegendRust,
-			Icon = "skills/active_137.png",
+			Icon = "ui/perks/perk_137.png",
 			IconDisabled = "skills/active_137_sw.png"
 		},
 		{
@@ -860,8 +860,8 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Script = "scripts/skills/perks/perk_lookout",
 			Name = this.Const.Strings.PerkName.Lookout,
 			Tooltip = this.Const.Strings.PerkDescription.Lookout,
-			Icon = "ui/perks/perk_118.png",
-			IconDisabled = "ui/perks/perk_118_sw.png"
+			Icon = "ui/perks/perk_vision.png",
+			IconDisabled = "ui/perks/perk_vision_sw.png"
 		}
 	],
 	[
@@ -879,13 +879,13 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Name = this.Const.Strings.PerkName.LegendDeathtouch,
 			Tooltip = this.Const.Strings.PerkDescription.LegendDeathtouch,
 			Icon = "skills/active_42.png",
-			IconDisabled = "skills/active_4_sw.png"
+			IconDisabled = "skills/active_42_sw.png"
 		},
 		{
 			ID = "perk.legend_possess_undead",
 			Script = "scripts/skills/perks/perk_legend_possess_undead",
-			Name = this.Const.Strings.PerkName.LegendDeathtouch,
-			Tooltip = this.Const.Strings.PerkDescription.LegendDeathtouch,
+			Name = this.Const.Strings.PerkName.LegendPossessUndead,
+			Tooltip = this.Const.Strings.PerkDescription.LegendPossessUndead,
 			Icon = "skills/active_99.png",
 			IconDisabled = "skills/active_99_sw.png"
 		}
@@ -934,11 +934,11 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			IconDisabled = "skills/active_101_sw.png"
 		},
 		{
-			ID = "perk.legend_hex_skill",
-			Script = "scripts/skills/perks/perk_legend_hex_skill",
+			ID = "perk.legend_hex",
+			Script = "scripts/skills/perks/perk_legend_hex",
 			Name = this.Const.Strings.PerkName.LegendHex,
 			Tooltip = this.Const.Strings.PerkDescription.LegendHex,
-			Icon = "skills/active_119.png",
+			Icon = "skills/active_100.png",
 			IconDisabled = "skills/active_100_sw.png"
 		}
 	],
@@ -953,7 +953,7 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 		},
 		{
 			ID = "perk.legend_darkflight",
-			Script = "scripts/skills/perks/perk_legend_darkfligh",
+			Script = "scripts/skills/perks/perk_legend_darkflight",
 			Name = this.Const.Strings.PerkName.LegendDarkflight,
 			Tooltip = this.Const.Strings.PerkDescription.LegendDarkflight,
 			Icon = "ui/perks/perk_27.png",

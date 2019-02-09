@@ -1537,13 +1537,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		++this.m.PerkPointsSpent;
-		this.m.Skills.add(this.new(perk.Script));
+		local p = this.new(perk.Script);
+		this.m.Skills.add(p);
 		this.m.Skills.update();
 
 		if (this.m.Level >= 11 && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
+
+		// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS ++this.m.PerkPoints
 
 		return true;
 	}

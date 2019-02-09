@@ -3,8 +3,8 @@ this.perk_legend_possess_undead <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_possess_undead";
-		this.m.Name = this.Const.Strings.PerkName.LegendHex;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendHex;
+		this.m.Name = this.Const.Strings.PerkName.LegendPossessUndead;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendPossessUndead;
 		this.m.Icon = "skills/active_99.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -17,10 +17,11 @@ this.perk_legend_possess_undead <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_possess_undead"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_possess_undead"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_possess_undead_skill"));
 		}
 	}
-		function onRemoved()
+	
+	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_possess_undead");
 	}

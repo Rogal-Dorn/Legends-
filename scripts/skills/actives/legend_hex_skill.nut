@@ -4,7 +4,7 @@ this.legend_hex_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_hex_skill";
+		this.m.ID = "actives.legend_hex";
 		this.m.Name = "Hex";
 		this.m.Description = "You tie your soul to your enemy, your pain becomes their pain";
 		this.m.Icon = "skills/active_119.png";
@@ -38,6 +38,11 @@ this.legend_hex_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.MaxLevelDifference = 4;
+	}
+
+	function isStacking()
+	{
+		return this.m.IsStacking;
 	}
 
 	function isUsable()
