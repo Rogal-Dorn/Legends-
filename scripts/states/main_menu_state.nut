@@ -400,7 +400,6 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 	function campaign_menu_module_onStartLegendPressed( _settings )
 	{
 		this.m.NewCampaignSettings = _settings;
-		this.logInfo("**** NewCampaignSettings " + this.m.NewCampaignSettings.Campaign )
 		this.m.SelectedScenarioID = 999;
 		this.LoadingScreen.show();
 	}

@@ -372,6 +372,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 			break;
 		case this.Const.LegendMod.StartTypes.Crusader:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -380,6 +381,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 			break;
 		case this.Const.LegendMod.StartTypes.Rangers:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -413,6 +415,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 			break;
 		case this.Const.LegendMod.StartTypes.Witch:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -422,6 +425,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 			break;
 		case this.Const.LegendMod.StartTypes.Healer:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -431,6 +435,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 			break;
 		case this.Const.LegendMod.StartTypes.Berserker:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -440,6 +445,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 			break;
 		case this.Const.LegendMod.StartTypes.Inventor:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -449,7 +455,9 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-						bro = roster.create("scripts/entity/tactical/player");
+			bro.setCommander(true);
+			
+			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"apprentice_background"

@@ -70,8 +70,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		GameWon = null,
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
-		CampaignSettings = null
-		Campaign = ""
+		CampaignSettings = null,
+		Campaign = "",
+		CommanderDied = null
 	},
 	function getPlayer()
 	{
@@ -416,6 +417,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function commanderDied()
+	{
+		return this.m.CommanderDied;
+	}
+
+	function setCommanderDied( _v )
+	{
+		this.m.CommanderDied = _v
+	}
+
 	function onInit()
 	{
 		this.m.IsDeveloperModeEnabled = this.isDevmode() || !this.isReleaseBuild();
@@ -426,6 +437,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.LastWorldSpeedMult = 1.0;
 		this.m.ExitGame = false;
 		this.m.GameWon = false;
+		this.m.CommanderDied = false;
 		this.Settings.getTempGameplaySettings().CameraLocked = false;
 		this.Settings.getTempGameplaySettings().ShowTracking = true;
 		this.Tactical.setActive(false);
@@ -1524,7 +1536,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		if (this.World.getPlayerRoster().getSize() == 0)
+		if (this.World.getPlayerRoster().getSize() == 0 || this.commanderDied())
 		{
 			this.show();
 			this.showGameFinishScreen(false);

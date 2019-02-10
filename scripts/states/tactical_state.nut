@@ -1722,6 +1722,17 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.m.TacticalScreen.hide();
 		this.Tactical.OrientationOverlay.removeOverlays();
 
+		local dead = this.Tactical.getCasualtyRoster().getAll();
+		foreach (d in dead)
+		{
+			if (d.isCommander())
+			{
+				this.World.State.setCommanderDied(true);
+				isVictory = false;
+				break;
+			}
+		}
+
 		if (isVictory)
 		{
 			this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);

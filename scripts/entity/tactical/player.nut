@@ -13,6 +13,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		HireTime = 0.0,
 		IsTryoutDone = false,
 		IsGuest = false,
+		IsCommander = false,
 		Attributes = [],
 		Talents = [],
 		CombatStats = {
@@ -166,6 +167,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.IsGuest = _f;
 	}
 
+	function setCommander( _f )
+	{
+		this.m.IsCommander = _f;
+	}
+
 	function isLeveled()
 	{
 		return (this.m.PerkPoints != 0 || this.m.LevelUps != 0) && !this.m.IsGuest;
@@ -174,6 +180,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function isGuest()
 	{
 		return this.m.IsGuest;
+	}
+
+	function isCommander()
+	{
+		return this.m.IsCommander
 	}
 
 	function isTryoutDone()
@@ -941,6 +952,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (!this.isGuest())
 		{
 			local stub = this.Tactical.getCasualtyRoster().create("scripts/entity/tactical/player_corpse_stub");
+			stub.setCommander(this.isCommander());
 			stub.setOriginalID(this.getID());
 			stub.setName(this.getNameOnly());
 			stub.setTitle(this.getTitle());
