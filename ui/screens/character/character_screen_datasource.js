@@ -78,6 +78,8 @@ var CharacterScreenDatasource = function(_isTacticalMode)
 
     this.mFormationIndex = 0;
     this.mFormationName = "";
+
+    this.mMaxBrothers = 27;
 	// init the datasource
 	this.init();
 };
@@ -271,6 +273,11 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
     {
         console.error('ERROR: Failed to query character screen result data. Reason: Invalid result.');
         return;
+    }
+
+    if ('maxBrothers' in _data)
+    {
+        this.mMaxBrothers = _data.maxBrothers;
     }
 
     if ('stashSpaceUsed' in _data)
@@ -1647,6 +1654,11 @@ CharacterScreenDatasource.prototype.updateFormationName = function(_src, _name)
         self.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationName,  self.mFormationName);
     });
 };
+
+CharacterScreenDatasource.prototype.getMaxBrothers = function ()
+{
+	return this.mMaxBrothers;
+}
 
 /*CharacterScreenDatasource.prototype.notifyBackendQueryBrothersList = function ()
 {

@@ -46,7 +46,15 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendDaze,
 			Icon = "skills/status_effect_62.png",
 			IconDisabled = "ui/perks/perk_54_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_1",
+			Script = "scripts/skills/perks/perk_legend_roster_1",
+			Name = this.Const.Strings.PerkName.LegendRoster + " 1",
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -80,7 +88,15 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendStunned,
 			Icon = "skills/status_effect_31.png",
 			IconDisabled = "ui/perks/perk_31_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_2",
+			Script = "scripts/skills/perks/perk_legend_roster_2",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 
 	],
 	[
@@ -123,7 +139,15 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendHorrify,
 			Icon = "skills/status_effect_42.png",
 			IconDisabled = "ui/perks/perk_42_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_3",
+			Script = "scripts/skills/perks/perk_legend_roster_3",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 
 	],
 	[
@@ -150,7 +174,15 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendPush,
 			Icon = "skills/status_effect_42.png",
 			IconDisabled = "ui/perks/perk_42_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_4",
+			Script = "scripts/skills/perks/perk_legend_roster_4",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -176,7 +208,15 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.Footwork,
 			Icon = "ui/perks/perk_25.png",
 			IconDisabled = "ui/perks/perk_25_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_5",
+			Script = "scripts/skills/perks/perk_legend_roster_5",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 
 	],
 	[
@@ -203,7 +243,15 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendMiasma,
 			Icon = "skills/active_101.png",
 			IconDisabled = "skills/active_101_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_6",
+			Script = "scripts/skills/perks/perk_legend_roster_6",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -229,7 +277,15 @@ gt.Const.Perks.PerksTreeSeer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendSleep,
 			Icon = "ui/perks/perk_82.png",
 			IconDisabled = "ui/perks/perk_82_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_7",
+			Script = "scripts/skills/perks/perk_legend_roster_7",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[],
 	[],
@@ -271,6 +327,14 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Icon = "ui/perks/perk_54.png",
 			IconDisabled = "ui/perks/perk_54_sw.png"
 		},
+		{
+			ID = "perk.legend_roster_1",
+			Script = "scripts/skills/perks/perk_legend_roster_1",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}
 	],
 	[
 		{
@@ -304,6 +368,14 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Tooltip = this.Const.Strings.PerkDescription.SteelBrow,
 			Icon = "ui/perks/perk_09.png",
 			IconDisabled = "ui/perks/perk_09_sw.png"
+		},
+		{
+			ID = "perk.legend_roster_2",
+			Script = "scripts/skills/perks/perk_legend_roster_2",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
 		}
 
 	],
@@ -339,6 +411,14 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Tooltip = this.Const.Strings.PerkDescription.Taunt,
 			Icon = "ui/perks/perk_38.png",
 			IconDisabled = "ui/perks/perk_38_sw.png"
+		},
+		{
+			ID = "perk.legend_roster_3",
+			Script = "scripts/skills/perks/perk_legend_roster_3",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
 		}
 	],
 	[
@@ -373,7 +453,15 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Tooltip = this.Const.Strings.PerkDescription.SpecSword,
 			Icon = "ui/perks/perk_46.png",
 			IconDisabled = "ui/perks/perk_46_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_4",
+			Script = "scripts/skills/perks/perk_legend_roster_4",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -407,7 +495,15 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Tooltip = this.Const.Strings.PerkDescription.ReturnFavor,
 			Icon = "ui/perks/perk_31.png",
 			IconDisabled = "ui/perks/perk_31_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_5",
+			Script = "scripts/skills/perks/perk_legend_roster_5",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -441,7 +537,15 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Tooltip = this.Const.Strings.PerkDescription.SunderingStrikes,
 			Icon = "ui/perks/perk_12.png",
 			IconDisabled = "ui/perks/perk_12_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_6",
+			Script = "scripts/skills/perks/perk_legend_roster_6",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -483,7 +587,15 @@ gt.Const.Perks.PerksTreeCrusader <- [
 			Tooltip = this.Const.Strings.PerkDescription.PerfectFocus,
 			Icon = "ui/perks/perk_37.png",
 			IconDisabled = "ui/perks/perk_37_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_7",
+			Script = "scripts/skills/perks/perk_legend_roster_7",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[],
 	[],
@@ -794,7 +906,15 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.Recover,
 			Icon = "ui/perks/perk_54.png",
 			IconDisabled = "ui/perks/perk_54_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_1",
+			Script = "scripts/skills/perks/perk_legend_roster_1",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -828,7 +948,15 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendWither,
 			Icon = "ui/perks/perk_34.png",
 			IconDisabled = "ui/perks/perk_34_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_2",
+			Script = "scripts/skills/perks/perk_legend_roster_2",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -862,7 +990,15 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.Lookout,
 			Icon = "ui/perks/perk_vision.png",
 			IconDisabled = "ui/perks/perk_vision_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_3",
+			Script = "scripts/skills/perks/perk_legend_roster_3",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -888,7 +1024,15 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendPossessUndead,
 			Icon = "skills/active_99.png",
 			IconDisabled = "skills/active_99_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_4",
+			Script = "scripts/skills/perks/perk_legend_roster_4",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -914,7 +1058,15 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.Footwork,
 			Icon = "ui/perks/perk_25.png",
 			IconDisabled = "ui/perks/perk_25_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_5",
+			Script = "scripts/skills/perks/perk_legend_roster_5",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -940,7 +1092,15 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.LegendHex,
 			Icon = "skills/active_100.png",
 			IconDisabled = "skills/active_100_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_6",
+			Script = "scripts/skills/perks/perk_legend_roster_6",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -966,7 +1126,15 @@ gt.Const.Perks.PerksTreeNecromancer <- [
 			Tooltip = this.Const.Strings.PerkDescription.PerfectFocus,
 			Icon = "ui/perks/perk_37.png",
 			IconDisabled = "ui/perks/perk_37_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_7",
+			Script = "scripts/skills/perks/perk_legend_roster_7",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[],
 	[],
@@ -1373,7 +1541,15 @@ gt.Const.Perks.PerksTreeNoble <- [
 			Tooltip = this.Const.Strings.PerkDescription.BagsAndBelts,
 			Icon = "ui/perks/perk_20.png",
 			IconDisabled = "ui/perks/perk_20_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_1",
+			Script = "scripts/skills/perks/perk_legend_roster_1",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -1423,7 +1599,15 @@ gt.Const.Perks.PerksTreeNoble <- [
 			Tooltip = this.Const.Strings.PerkDescription.Gifted,
 			Icon = "ui/perks/perk_56.png",
 			IconDisabled = "ui/perks/perk_56_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_2",
+			Script = "scripts/skills/perks/perk_legend_roster_2",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -1457,7 +1641,15 @@ gt.Const.Perks.PerksTreeNoble <- [
 			Tooltip = this.Const.Strings.PerkDescription.Taunt,
 			Icon = "ui/perks/perk_38.png",
 			IconDisabled = "ui/perks/perk_38_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_3",
+			Script = "scripts/skills/perks/perk_legend_roster_3",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -1475,7 +1667,15 @@ gt.Const.Perks.PerksTreeNoble <- [
 			Tooltip = this.Const.Strings.PerkDescription.SpecSword,
 			Icon = "ui/perks/perk_46.png",
 			IconDisabled = "ui/perks/perk_46_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_4",
+			Script = "scripts/skills/perks/perk_legend_roster_4",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 			{
@@ -1517,7 +1717,15 @@ gt.Const.Perks.PerksTreeNoble <- [
 			Tooltip = this.Const.Strings.PerkDescription.Footwork,
 			Icon = "ui/perks/perk_25.png",
 			IconDisabled = "ui/perks/perk_25_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_5",
+			Script = "scripts/skills/perks/perk_legend_roster_5",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -1535,7 +1743,15 @@ gt.Const.Perks.PerksTreeNoble <- [
 			Tooltip = this.Const.Strings.PerkDescription.Nimble,
 			Icon = "ui/perks/perk_29.png",
 			IconDisabled = "ui/perks/perk_29_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_6",
+			Script = "scripts/skills/perks/perk_legend_roster_6",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[
 		{
@@ -1553,7 +1769,15 @@ gt.Const.Perks.PerksTreeNoble <- [
 			Tooltip = this.Const.Strings.PerkDescription.Duelist,
 			Icon = "ui/perks/perk_41.png",
 			IconDisabled = "ui/perks/perk_41_sw.png"
-		}
+		},
+		{
+			ID = "perk.legend_roster_7",
+			Script = "scripts/skills/perks/perk_legend_roster_7",
+			Name = this.Const.Strings.PerkName.LegendRoster,
+			Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
+			Icon = "ui/perks/perk_21.png",
+			IconDisabled = "ui/perks/perk_21_sw.png"
+		}		
 	],
 	[],
 	[],

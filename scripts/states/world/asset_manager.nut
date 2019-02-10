@@ -169,6 +169,11 @@ this.asset_manager <- {
 		return this.m.IsConsumingAssets;
 	}
 
+	function setBrothersMax( _v )
+	{
+		this.m.BrothersMax = _v;
+	}
+
 	function setCamping( _c )
 	{
 		this.m.IsCamping = _c;
@@ -373,6 +378,7 @@ this.asset_manager <- {
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
 		case this.Const.LegendMod.StartTypes.Crusader:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -382,6 +388,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
 		case this.Const.LegendMod.StartTypes.Rangers:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -416,6 +423,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
 		case this.Const.LegendMod.StartTypes.Witch:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -426,6 +434,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
 		case this.Const.LegendMod.StartTypes.Healer:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -435,7 +444,6 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
 			break;
 		case this.Const.LegendMod.StartTypes.Berserker:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -455,8 +463,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
-			
+
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -464,7 +471,6 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-
 			break;
 
 		case this.Const.LegendMod.StartTypes.Beggar:
@@ -475,7 +481,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");
-			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			break;
 
 
@@ -2176,6 +2182,7 @@ this.asset_manager <- {
 		{
 			_out.writeString(name);
 		}
+		_out.writeU8(this.m.BrothersMax);
 		_out.writeBool(false);
 	}
 
@@ -2250,6 +2257,11 @@ this.asset_manager <- {
 			{
 				this.setFormationName(i, _in.readString())
 			}
+		}
+
+		if (_in.getMetaData().getVersion() >= 47 )
+		{
+			this.m.BrothersMax = _in.readU8();
 		}
 
 		this.updateAverageMoodState();

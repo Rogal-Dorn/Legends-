@@ -1081,7 +1081,8 @@ gt.Const.Strings.PerkName <- {
 	LegendEntice = "Entice",
 	LegendSleep = "Sleep",
 	LegendFirefield = "Fire Field",
-	LegendPossessUndead = "Possess Undead"
+	LegendPossessUndead = "Possess Undead",
+	LegendRoster = "Increase Roster"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1190,6 +1191,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFirefield = "Release a field of fire that burns all beings"
 	LegendPossessUndead = "Allows you to boost the attacks of an undead minion"
 	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled."
+	LegendRoster = "Increase the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

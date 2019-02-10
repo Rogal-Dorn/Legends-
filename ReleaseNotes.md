@@ -6,12 +6,16 @@ Mod Features:
 
 * Alternate Starts
     - Beggar: start with nothing but the rags on your back 
-    - Noble: runaway noble
-    - Crusader: Level 6 with good melee stats and equipment
+    - Noble: runaway noble - Is commander
+    - Crusader: Level 6 with good melee stats and equipment - Is commander
     - Hunter: Three strong archers with footwork and pathfinder 
-	- Seer: old and powerful, but sleepy
-    - Necromancer: Weak character with the ability to raise the dead
+	- Seer: old and powerful, but sleepy - Is commander
+    - Necromancer: Weak character with the ability to raise the dead - Is commander
     - Inventor: Weak character with the ability to repair lost limbs and eyes
+* Commander centric starts
+	- Commander starts with company size of 6
+	- Commander only perks that increase size of roster
+	- If commander dies, game over
 * Unique Perk Trees for different background
 * Enhanced Spawn lists
 	- Low level spawns added for single character starts 
