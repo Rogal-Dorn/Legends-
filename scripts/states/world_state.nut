@@ -1103,10 +1103,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.Tags.set("IsLegendsNecro", true);
 		}
 		if (this.m.Campaign == "legends_witch") {
-			this.World.Tags.set("IsLegendsHealer", true);
+			this.World.Tags.set("IsLegendsWitch", true);
 		}
 		if (this.m.Campaign == "legends_healer") {
-			this.World.Tags.set("IsLegendsWitch", true);
+			this.World.Tags.set("IsLegendsHealer", true);
 		}
 		if (this.m.Campaign == "legends_beserker") {
 			this.World.Tags.set("IsLegendsWitch", true);

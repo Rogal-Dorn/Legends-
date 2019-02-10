@@ -11,7 +11,8 @@ Mod Features:
     - Hunter: Three strong archers with footwork and pathfinder 
 	- Seer: old and powerful, but sleepy
     - Necromancer: Weak character with the ability to raise the dead
-    - Inventor: Weak character with the ability to repair lost limbs and eyes 
+    - Inventor: Weak character with the ability to repair lost limbs and eyes
+* Unique Perk Trees for different background
 * Enhanced Spawn lists
 	- Low level spawns added for single character starts 
 	- increased variety of spawn options in the mid game
@@ -33,7 +34,7 @@ Mod Features:
 * Endless war 
 	- reduced crises interval from ~100 days to ~30 days 
 	- Noble houses begin at war 
-* lp nerf
+* alp nerf
 	- Only spawns 1 nightmare per turn
 * Hexen nerf
 	- Only uses one ability per turn

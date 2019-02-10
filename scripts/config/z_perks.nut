@@ -679,7 +679,7 @@ gt.Const.Perks.PerksTreeRanger <- [
 			IconDisabled = "ui/perks/perk_19_sw.png"
 		},
 		{
-			ID = "perk.close_ballistics",
+			ID = "perk.ballistics",
 			Script = "scripts/skills/perks/perk_ballistics",
 			Name = this.Const.Strings.PerkName.Ballistics,
 			Tooltip = this.Const.Strings.PerkDescription.Ballistics,

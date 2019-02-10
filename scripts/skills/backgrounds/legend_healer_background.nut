@@ -68,6 +68,7 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_03";
+		this.m.Level = 2;
 	}
 
 	function getTooltip()

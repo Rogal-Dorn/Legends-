@@ -42,7 +42,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 11;
+		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 	}
 

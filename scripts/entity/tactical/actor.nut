@@ -10,7 +10,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		Title = "",
 		WorldTroop = null,
 		BloodType = this.Const.BloodType.None,
-		BloodSaturation = 1.0,
+		BloodSaturation = 2.0,
 		BloodColor = this.createColor("#ffffff"),
 		MoraleState = this.Const.MoraleState.Steady,
 		MaxMoraleState = this.Const.MoraleState.Confident,
@@ -44,8 +44,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		SmashSplatterOffset = this.createVec(-15, -45),
 		ShakeLayers = this.Const.ShakeCharacterLayers,
 		DecapitateBloodAmount = 4.0,
-		DeathBloodAmount = 1.0,
-		BloodPoolScale = 1.0,
+		DeathBloodAmount = 2.0,
+		BloodPoolScale = 2.0,
 		RenderAnimationStartTime = 0.0,
 		RenderAnimationOffset = this.createVec(0, 0),
 		RenderAnimationSpeed = 1.0,
@@ -3474,6 +3474,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.XP = this.Math.floor(this.m.XP * _info.Hitpoints);
 		this.m.BaseProperties.Armor = _info.Armor;
 		this.onUpdateInjuryLayer();
+		this.World.getPlayerRoster().add(_info);
 	}
 
 	function assignRandomEquipment()

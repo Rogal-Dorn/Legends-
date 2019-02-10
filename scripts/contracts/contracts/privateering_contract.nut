@@ -305,7 +305,7 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 						else if (i == 19)
 						{
 							item = this.new("scripts/items/weapons/named/named_warbow");
-						},						
+						}					
 						else if (i == 20)
 						{
 							item = this.new("scripts/items/weapons/named/named_crossbow");

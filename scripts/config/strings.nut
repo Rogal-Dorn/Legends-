@@ -1189,6 +1189,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSleep  = "Send a group of opponents to sleep",
 	LegendFirefield = "Release a field of fire that burns all beings"
 	LegendPossessUndead = "Allows you to boost the attacks of an undead minion"
+	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
