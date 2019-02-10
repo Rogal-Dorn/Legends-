@@ -1756,12 +1756,12 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 						this.World.getPlayerRoster().remove(bro);
 					}
-					else if (bro.getPlaceInFormation() <= 17)
+					else if (bro.getPlaceInFormation() <= 26)
 					{
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
 						bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
@@ -1793,17 +1793,17 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 						this.World.getPlayerRoster().remove(bro);
 					}
-					else if (bro.getPlaceInFormation() <= 17 && bro.isPlacedOnMap() && (bro.getTags().get("Charmed") == true || bro.getTags().get("Sleeping") == true || bro.getTags().get("Nightmare") == true))
+					else if (bro.getPlaceInFormation() <= 26 && bro.isPlacedOnMap() && (bro.getTags().get("Charmed") == true || bro.getTags().get("Sleeping") == true || bro.getTags().get("Nightmare") == true))
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Suicide);
 						this.World.getPlayerRoster().remove(bro);
 					}
-					else if (bro.getPlaceInFormation() <= 17)
+					else if (bro.getPlaceInFormation() <= 26)
 					{
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
 

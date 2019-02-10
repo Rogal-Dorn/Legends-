@@ -602,7 +602,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				text = this.Const.MoodStateName[this.getMoodState()]
 			});
 
-			if (this.m.PlaceInFormation <= 17)
+			if (this.m.PlaceInFormation <= 26)
 			{
 				tooltip.push({
 					id = 6,
