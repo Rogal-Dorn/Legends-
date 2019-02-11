@@ -5,6 +5,7 @@ if (!("Strings" in gt.Const))
 	gt.Const.Strings <- {};
 }
 
+
 gt.Const.Strings.CharacterNames <- [
 	"Sigurd",
 	"Siegfried",
@@ -278,6 +279,7 @@ gt.Const.Strings.CharacterNames <- [
 	"Jenna"
 
 ];
+
 gt.Const.Strings.CharacterNamesFemale <- [
 	"Ingrid",
 	"Helga",

@@ -72,7 +72,7 @@ gt.Const.HairColors.Lineage <- [
 		"grey"
 	]
 ];
-gt.Const.Faces.AllMale <- [
+gt.Const.Faces.AllHuman <- [
 	"bust_head_01",
 	"bust_head_02",
 	"bust_head_03",
@@ -104,6 +104,41 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_29",
 	"bust_head_30"
 ];
+gt.Const.Faces.AllMale <- [
+	"bust_head_01",
+	"bust_head_02",
+	"bust_head_03",
+	"bust_head_04",
+	"bust_head_05",
+	"bust_head_06",
+	"bust_head_07",
+	"bust_head_08",
+	"bust_head_09",
+	"bust_head_10",
+	"bust_head_11",
+	"bust_head_12",
+	"bust_head_13",
+	"bust_head_14",
+	"bust_head_15",
+	"bust_head_16",
+	"bust_head_17",
+	"bust_head_18"
+];
+gt.Const.Faces.AllFemale <- [
+	"bust_head_19",
+	"bust_head_20",
+	"bust_head_21",
+	"bust_head_22",
+	"bust_head_23",
+	"bust_head_24",
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30"
+];
+
 gt.Const.Faces.SmartMale <- [
 	"bust_head_01",
 	"bust_head_04",
@@ -165,6 +200,22 @@ gt.Const.Hair.AllMale <- [
 	"16",
 	"20"
 ];
+
+gt.Const.Hair.AllFemale <- [
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"10",
+	"19",
+	"20",
+	"21"
+];
+
 gt.Const.Hair.CommonMale <- [
 	"shaved",
 	"01",
@@ -320,6 +371,10 @@ gt.Const.Beards.All <- [
 	"15",
 	"16"
 ];
+gt.Const.Beards.Female <- [
+	"",
+];
+
 gt.Const.Beards.Tidy <- [
 	"01",
 	"02",

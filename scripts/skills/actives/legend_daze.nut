@@ -4,7 +4,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_daze";
 		this.m.Name = "Daze";
-		this.m.Description = "Anyone hit with a blow like this will be dazed and gasping for air, unable to put full force behind their blows for two turns.";
+		this.m.Description = "Assault the senses of your target with a flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively.";
 		this.m.KilledString = "Dazed";
 		this.m.Icon = "skills/active_133.png";
 		this.m.IconDisabled = "skills/active_133_sw.png";

@@ -51,6 +51,22 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"deserter_background",
 			"retired_soldier_background",
+			"retired_soldier_background",
+						"apprentice_background",
+			"houndmaster_background",
+			"female_bowyer_background",
+			"brawler_background",
+			"female_daytaler_background",
+			"hunter_background",
+			"hunter_background",
+			"lumberjack_background",
+			"militia_background",
+			"militia_background",
+			"wildman_background",
+			"bastard_background",
+			"deserter_background",
+			"deserter_background",
+			"retired_soldier_background",
 			"retired_soldier_background"
 		];
 

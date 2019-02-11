@@ -1,4 +1,4 @@
-this.sleep_skill <- this.inherit("scripts/skills/skill", {
+this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsFake = false
 	},
@@ -18,8 +18,8 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		this.m.ID = "actives.sleep";
-		this.m.Name = "Sleep";
+		this.m.ID = "actives.legend_sleep_skill";
+		this.m.Name = "Mass Sleep";
 		this.m.Description = "";
 		this.m.Icon = "skills/active_116.png";
 		this.m.IconDisabled = "skills/active_116.png";

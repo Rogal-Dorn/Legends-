@@ -4,7 +4,7 @@ this.legend_horrify <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_horrify";
 		this.m.Name = "Horrify";
-		this.m.Description = "Horrifies an enemy for a while";
+		this.m.Description = "Blare out a piercing, unworldly sound that is more than likely to distress anyone unfortunate enough to hear it.";
 		this.m.KilledString = "Horrified";
 		this.m.Icon = "skills/active_133.png";
 		this.m.IconDisabled = "skills/active_133_sw.png";
@@ -47,7 +47,7 @@ this.legend_horrify <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to daze on a hit"
+			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to horrify on a hit"
 		});
 		return ret;
 	}

@@ -108,7 +108,7 @@ this.civilwar_dead_knight_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.thief" || bro.getSkills().hasSkill("trait.eagle_eyes"))
+			if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief" || bro.getSkills().hasSkill("trait.eagle_eyes"))
 			{
 				candidates.push(bro);
 			}

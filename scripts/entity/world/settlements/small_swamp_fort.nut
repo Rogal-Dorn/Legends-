@@ -52,6 +52,19 @@ this.small_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
+			"retired_soldier_background",
+						"cultist_background",
+			"houndmaster_background",
+			"female_daytaler_background",
+			"hunter_background",
+			"militia_background",
+			"militia_background",
+			"ratcatcher_background",
+			"ratcatcher_background",
+			"wildman_background",
+			"witchhunter_background",
+			"bastard_background",
+			"deserter_background",
 			"retired_soldier_background"
 		];
 

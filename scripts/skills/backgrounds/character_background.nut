@@ -150,6 +150,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]
 			],
 			[
+				"randomnamefemale",
+				this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]
+			],
+			[
 				"companyname",
 				this.World.Assets.getName()
 			],
