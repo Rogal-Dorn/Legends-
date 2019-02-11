@@ -48,12 +48,13 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Clairvoyant",
 			"the Diviner"
 		];
-		this.m.Faces = this.Const.Faces.SmartMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.All;
+		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
 		this.m.Level = 2;
+		this.n.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

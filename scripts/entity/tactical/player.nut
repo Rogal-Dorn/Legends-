@@ -2096,10 +2096,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		if (this.m.Name.len() == 0)
+		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
 		{
 			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
 		}
+		if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
+		{
+			this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
+		}
+
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);

@@ -24,6 +24,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsCombatBackground = false,
 		IsNoble = false,
 		IsLowborn = false
+		IsFemaleBackground = false
 	},
 	function isExcluded( _id )
 	{
@@ -43,6 +44,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isOffendedByViolence()
 	{
 		return this.m.IsOffendedByViolence;
+	}
+
+		function isFemaleBackground()
+	{
+		return this.m.IsFemaleBackground;
 	}
 
 	function isCombatBackground()

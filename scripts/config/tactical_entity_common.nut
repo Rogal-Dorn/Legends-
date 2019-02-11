@@ -10,6 +10,11 @@ gt.Const.Tactical.Common <- {
 	{
 		return this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)];
 	}
+	function getRandomPlayerNameFemale()
+	{
+		return this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)];
+	}
+
 
 	function onSpawnFlies( _tile )
 	{

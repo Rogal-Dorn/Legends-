@@ -1,10 +1,10 @@
-this.disowned_noble_reminisces_event <- this.inherit("scripts/events/event", {
+this.female_disowned_noble_reminisces_event <- this.inherit("scripts/events/event", {
 	m = {
 		Disowned = null
 	},
 	function create()
 	{
-		this.m.ID = "event.disowned_noble_reminisces";
+		this.m.ID = "event.female_disowned_noble_reminisces";
 		this.m.Title = "During camp...";
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
@@ -34,7 +34,7 @@ this.disowned_noble_reminisces_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Disowned.getImagePath());
-				_event.m.Disowned.getTags().set("disowned_noble_reminisces", true);
+				_event.m.Disowned.getTags().set("female_disowned_noble_reminisces", true);
 			}
 
 		});
@@ -131,7 +131,7 @@ this.disowned_noble_reminisces_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.disowned_noble" && !bro.getTags().get("disowned_noble_reminisces"))
+			if (bro.getLevel() >= 5 && bro.getBackground().getID() == "background.disowned_noble" && !bro.getTags().get("female_disowned_noble_reminisces"))
 			{
 				candidates.push(bro);
 			}

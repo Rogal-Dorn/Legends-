@@ -31,6 +31,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
+		this.n.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

@@ -40,6 +40,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
+		this.n.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

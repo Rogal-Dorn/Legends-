@@ -79,8 +79,6 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_butcher.push(bro);
 			}
-candidates_butcher.push(bro);
-			}
 			else if (bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.monk_turned_flagellant")
 			{
 				candidates_flagellant.push(bro);
