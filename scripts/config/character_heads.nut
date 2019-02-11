@@ -473,9 +473,18 @@ gt.Const.Tattoos.All <- [
 ];
 gt.Const.Tattoos.Wildman <- [];
 gt.Const.Tattoos.Cultist <- [];
-gt.Const.Bodies.AllMale <- [
+gt.Const.Bodies.AllHuman <- [
 	"bust_naked_body_00",
 	"bust_naked_body_01",
 	"bust_naked_body_02",
+	"bust_naked_body_03"
+];
+
+gt.Const.Bodies.AllMale <- [
+	"bust_naked_body_00",
+	"bust_naked_body_01",
+	"bust_naked_body_02"
+];
+gt.Const.Bodies.AllFemale <- [
 	"bust_naked_body_03"
 ];
