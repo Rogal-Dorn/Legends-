@@ -3,9 +3,9 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_stunned";
-		this.m.Name = "Daze";
-		this.m.Description = "Stuns an enemy for a while";
-		this.m.KilledString = "Dazed";
+		this.m.Name = "Stun";
+		this.m.Description = "Unleash a brilliant flash of light in an attempt to blind and incapacitate your target.";
+		this.m.KilledString = "Stunned";
 		this.m.Icon = "skills/active_133.png";
 		this.m.IconDisabled = "skills/active_133_sw.png";
 		this.m.Overlay = "active_133";
@@ -47,7 +47,7 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to daze on a hit"
+			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stunn= on a hit"
 		});
 		return ret;
 	}

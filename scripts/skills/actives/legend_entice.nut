@@ -4,7 +4,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_entice";
 		this.m.Name = "Entice";
-		this.m.Description = "A target 2 tiles away is enticed and pulled close if there is space. Anyone affected will be staggered and lose initiative. A target can not be pulled up a level of height, but may take damage if it is pulled down several levels of height at once. Shieldwall, Spearwall and Riposte will be canceled for a successfully enticed target. A rooted target can not be enticed.";
+		this.m.Description = "With a trick of the light, captivate your target in such a way that they can’t help but approach you.";
 		this.m.Icon = "skills/active_31.png";
 		this.m.IconDisabled = "skills/active_31_sw.png";
 		this.m.Overlay = "active_31";
