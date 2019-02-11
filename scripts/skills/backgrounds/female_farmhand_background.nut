@@ -24,6 +24,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
+		this.n.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

@@ -50,6 +50,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
+		this.n.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
