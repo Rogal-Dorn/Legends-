@@ -70,7 +70,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		GameWon = null,
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
-		CampaignSettings = null
+		CampaignSettings = null,
+		LegendsMod = null
 	},
 	function getPlayer()
 	{
@@ -453,6 +454,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Tags <- this.m.Tags;
 		this.m.Assets = this.new("scripts/states/world/asset_manager");
 		this.World.Assets <- this.WeakTableRef(this.m.Assets);
+		this.m.LegendsMod = this.new("scripts/mods/legends_mod"); 
+		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
 		this.onInitUI();
 		this.init();
 	}
@@ -575,6 +578,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.EntityManager = null;
 		this.World.State = null;
 		this.Root.setBackgroundTaskCallback(null);
+		this.m.LegendsMod = null;
+		this.World.LegendsMod = null;
 		this.onDestroyUI();
 		this.Sound.stopAmbience();
 	}
@@ -785,12 +790,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function onKeyInput( _key )
 	{
 		return this.helper_handleContextualKeyInput(_key);
-		return false;
 	}
 
 	function onMouseInput( _mouse )
 	{
 		if (this.isInLoadingScreen())
+		{
+			return true;
+		}
+
+		if (this.isInDevScreen())
 		{
 			return true;
 		}
@@ -2408,6 +2417,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function isInDevScreen()
+	{
+		if (this.m.WorldScreen != null && this.m.WorldScreen.devConsoleVisible())
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	function isInCharacterScreen()
 	{
 		if (this.m.CharacterScreen != null && (this.m.CharacterScreen.isVisible() || this.m.CharacterScreen.isAnimating()))
@@ -3107,6 +3126,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
+		if (this.isInDevScreen())
+		{
+			switch(_key.getKey())
+			{
+			case 41:
+				this.m.WorldScreen.hideDevConsole();
+				break;
+			}
+
+			return true;
+		}
+
 		if (this.isInCharacterScreen() && _key.getState() == 0)
 		{
 			switch(_key.getKey())
@@ -3191,6 +3222,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 					}
 				}
 
+				break;
+			
+			case 32:
+				if (!this.m.MenuStack.hasBacksteps())
+				{
+					this.m.WorldScreen.showDevConsole();
+					return true;
+				}
 				break;
 
 			case 26:
