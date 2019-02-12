@@ -291,7 +291,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		{
 			this.RootState.add("WorldState", "scripts/states/world_state");
 		}
-
+		
 		this.hide();
 	}
 
