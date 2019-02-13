@@ -2096,6 +2096,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
+			local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
+		this.m.Skills.add(background);
+		this.m.Background = background;
 		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
 		{
 			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
@@ -2106,9 +2109,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 
-		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
-		this.m.Skills.add(background);
-		this.m.Background = background;
+	
 		background.buildAttributes();
 		background.buildDescription();
 		local maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);

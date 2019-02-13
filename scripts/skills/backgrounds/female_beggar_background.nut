@@ -50,7 +50,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -78,16 +78,16 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-10
+				-15,
+				-15
 			],
 			Bravery = [
 				-10,
 				-5
 			],
 			Stamina = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			MeleeSkill = [
 				0,

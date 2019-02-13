@@ -52,16 +52,16 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local c = {
 			Hitpoints = [
-				-3,
-				0
+				-8,
+				-5
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				-5,
-				-5
+				0,
+				0
 			],
 			MeleeSkill = [
 				0,

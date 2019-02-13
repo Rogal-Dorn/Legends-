@@ -22,8 +22,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsUntalented = false,
 		IsOffendedByViolence = false,
 		IsCombatBackground = false,
+		Name = "",
 		IsNoble = false,
-		IsLowborn = false
+		IsLowborn = false,
 		IsFemaleBackground = false
 	},
 	function isExcluded( _id )

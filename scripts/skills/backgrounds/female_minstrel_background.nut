@@ -41,7 +41,7 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -69,16 +69,16 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-3
+				-10,
+				-8
 			],
 			Bravery = [
 				5,
 				10
 			],
 			Stamina = [
-				-10,
-				-10
+				-5,
+				-5
 			],
 			MeleeSkill = [
 				0,

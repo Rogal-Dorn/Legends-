@@ -42,7 +42,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -70,16 +70,16 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				-5,
+				-5
 			],
 			Bravery = [
 				-5,
 				0
 			],
 			Stamina = [
-				0,
-				0
+				5,
+				5
 			],
 			MeleeSkill = [
 				-5,

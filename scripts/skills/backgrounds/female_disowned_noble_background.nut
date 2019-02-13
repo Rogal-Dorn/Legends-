@@ -31,7 +31,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -59,16 +59,16 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-5
+				-15,
+				-10
 			],
 			Bravery = [
 				-5,
 				-2
 			],
 			Stamina = [
-				0,
-				0
+				5,
+				5
 			],
 			MeleeSkill = [
 				8,
