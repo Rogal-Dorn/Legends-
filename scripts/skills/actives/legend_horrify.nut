@@ -66,8 +66,6 @@ this.legend_horrify <- this.inherit("scripts/skills/skill", {
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " horrified");
 			}
 		}
-
-		return success;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
