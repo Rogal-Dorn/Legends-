@@ -23,8 +23,8 @@ this.legend_raise_undead <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 10;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.MaxLevelDifference = 4;

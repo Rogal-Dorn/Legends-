@@ -354,7 +354,8 @@ this.character_screen <- {
 		local result = {
 			brothers = this.onQueryBrothersList(),
 			formationIndex = this.World.Assets.getFormationIndex(),
-			formationName = this.World.Assets.getFormationName()
+			formationName = this.World.Assets.getFormationName(),
+			maxBrothers = this.World.Assets.getBrothersMax()
 		};
 
 		if (this.m.InventoryMode != this.Const.CharacterScreen.InventoryMode.Ground)

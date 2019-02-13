@@ -32,7 +32,8 @@ this.asset_manager <- {
 		IsUsingProvisions = true,
 		IsConsumingAssets = true,
 		FormationIndex = 0,
-		FormationNames = []
+		FormationNames = [],
+		LastRosterSize = 0
 	},
 	function getCampaignID()
 	{
@@ -114,6 +115,36 @@ this.asset_manager <- {
 		return this.Math.floor(this.m.Medicine);
 	}
 
+	function getMaxAmmo()
+	{
+		local ammo = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			ammo += this.Const.LegendMod.getMaxAmmo(bro.getBackground().getID());
+		}
+		return ammo;
+	}
+
+	function getMaxArmorParts()
+	{
+		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			parts += this.Const.LegendMod.getMaxArmorParts(bro.getBackground().getID());
+		}
+		return parts;
+	}
+
+	function getMaxMedicine()
+	{
+		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			meds += this.Const.LegendMod.getMaxMedicine(bro.getBackground().getID());
+		}
+		return meds;
+	}
+
 	function getBusinessReputation()
 	{
 		return this.m.BusinessReputation;
@@ -169,6 +200,11 @@ this.asset_manager <- {
 		return this.m.IsConsumingAssets;
 	}
 
+	function setBrothersMax( _v )
+	{
+		this.m.BrothersMax = _v;
+	}
+
 	function setCamping( _c )
 	{
 		this.m.IsCamping = _c;
@@ -197,33 +233,33 @@ this.asset_manager <- {
 
 	function setAmmo( _f )
 	{
-		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.getMaxAmmo());
 		this.refillAmmo();
 	}
 
 	function setArmorParts( _f )
 	{
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.ArmorParts = this.Math.min(this.Math.max(0, _f), this.getMaxArmorParts());
 	}
 
 	function setMedicine( _f )
 	{
-		this.m.Medicine = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Medicine = this.Math.min(this.Math.max(0, _f), this.getMaxMedicine());
 	}
 
 	function addAmmo( _f )
 	{
-		this.m.Ammo = this.Math.min(this.Math.max(0, this.m.Ammo + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.Ammo = this.Math.min(this.Math.max(0, this.m.Ammo + _f), this.getMaxAmmo());
 	}
 
 	function addArmorParts( _f )
 	{
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, this.m.ArmorParts + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.ArmorParts = this.Math.min(this.Math.max(0, this.m.ArmorParts + _f), this.getMaxArmorParts());
 	}
 
 	function addMedicine( _f )
 	{
-		this.m.Medicine = this.Math.min(this.Math.max(0, this.m.Medicine + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Medicine = this.Math.min(this.Math.max(0, this.m.Medicine + _f), this.getMaxMedicine());
 	}
 
 	function addMoralReputation( _f )
@@ -297,29 +333,12 @@ this.asset_manager <- {
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
 		this.World.FactionManager.getGreaterEvil().IsExtraLate = false;
 
-		switch(_settings.BudgetDifficulty)
-		{
-		case 0:
-			this.m.Money = 1500;
-			this.m.Ammo = 40;
-			this.m.ArmorParts = 20;
-			this.m.Medicine = 20;
-			break;
-
-		case 1:
-			this.m.Money = 1000;
-			this.m.Ammo = 20;
-			this.m.ArmorParts = 10;
-			this.m.Medicine = 10;
-			break;
-
-		case 2:
-			this.m.Money = 500;
-			this.m.Ammo = 0;
-			this.m.ArmorParts = 0;
-			this.m.Medicine = 0;
-			break;
-		}
+		this.m.Stash.resize( this.Const.LegendMod.MaxResources[_settings.EconomicDifficulty].Stash);
+		
+		this.m.Money = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Money;
+		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
+		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
+		this.m.Medicine = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Medicine;
 
 		this.m.Stash.clear();
 
@@ -367,62 +386,76 @@ this.asset_manager <- {
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"legend_noble_background"
+				"legend_noble_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Crusader:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
-				"legend_crusader_background"
+				"legend_crusader_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Rangers:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
-				"legend_ranger_background"
+				"legend_ranger_commander_background"
 			]);
-			bro.setPlaceInFormation(3);
-			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
-			bro.setStartValuesEx([
-				"legend_ranger_background"
-			]);
+			bro.setCommander(true);
+			this.setBrothersMax(6);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[2][1]);
-			bro.setStartValuesEx([
-				"legend_ranger_background"
-			]);
-			bro.setPlaceInFormation(5);
-			bro.m.HireTime = this.Time.getVirtualTimeF();
+			// bro = roster.create("scripts/entity/tactical/player");
+			// bro.setName(this.m.FounderNames[1][1]);
+			// bro.setStartValuesEx([
+			// 	"legend_ranger_background"
+			// ]);
+			// bro.setPlaceInFormation(4);
+			// bro.m.HireTime = this.Time.getVirtualTimeF();
+			// bro = roster.create("scripts/entity/tactical/player");
+			// bro.setName(this.m.FounderNames[2][1]);
+			// bro.setStartValuesEx([
+			// 	"legend_ranger_background"
+			// ]);
+			// bro.setPlaceInFormation(5);
+			// bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			break;
 		case this.Const.LegendMod.StartTypes.Necro:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"legend_necro_background"
+				"legend_necro_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Witch:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"legend_witch_background"
+				"legend_witch_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Healer:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
@@ -432,6 +465,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
+
 		case this.Const.LegendMod.StartTypes.Berserker:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
@@ -440,7 +474,9 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Inventor:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
@@ -449,25 +485,26 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-						bro = roster.create("scripts/entity/tactical/player");
+			bro.setCommander(true);
+
+			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"apprentice_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-
 			break;
 
 		case this.Const.LegendMod.StartTypes.Beggar:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"beggar_background"
+				"legend_beggar_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");
-			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			break;
 
 
@@ -499,6 +536,7 @@ this.asset_manager <- {
 			break;
 		}
 		this.m.FounderNames = [];
+		this.m.LastRosterSize = roster.getSize();
 
 	}
 
@@ -831,7 +869,7 @@ this.asset_manager <- {
 
 			if (this.World.Tags.get("IsGoldenGoose") == true)
 			{
-				this.addMoney(15);
+				this.addMoney(30);
 			}
 
 			local mood = 0;
@@ -902,13 +940,32 @@ this.asset_manager <- {
 			local roster = this.World.getPlayerRoster().getAll();
 			local campMultiplier = this.isCamping() ? 2.0 : 1.0;
 
+			local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
+			local healingModifier = 1.0;
+			local repairModifier = 1.0;
+			local toolConsumptionModifier = 1.0;
+			//local medsConsumptionModifier = 1.0;
+			foreach( bro in roster )
+			{
+				stashSize += this.Const.LegendMod.getMaxStash(bro.getBackground().getID());
+				healingModifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
+				repairModifier += this.Const.LegendMod.getRepairModifier(bro.getBackground().getID());
+				toolConsumptionModifier += this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID());
+				//medsConsumptionModifier += this.Const.LegendMod.getMedsConsumptionModifier(bro.getBackground().getID());
+			}
+			
+			if (stashSize != this.m.Stash.getCapacity())
+			{
+				this.m.Stash.resize(stashSize);
+			}
+
 			foreach( bro in roster )
 			{
 				local d = bro.getHitpointsMax() - bro.getHitpoints();
 
 				if (bro.getHitpoints() < bro.getHitpointsMax())
 				{
-					bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier));
+					bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier * healingModifier));
 				}
 			}
 
@@ -926,9 +983,9 @@ this.asset_manager <- {
 				{
 					if (item.getCondition() < item.getConditionMax())
 					{
-						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier, item.getConditionMax() - item.getCondition());
+						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier * repairModifier, item.getConditionMax() - item.getCondition());
 						item.setCondition(item.getCondition() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor);
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * toolConsumptionModifier);
 						updateBro = true;
 					}
 
@@ -969,7 +1026,7 @@ this.asset_manager <- {
 					{
 						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier, item.getConditionMax() - item.getCondition());
 						item.setCondition(item.getCondition() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor);
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * toolConsumptionModifier);
 					}
 
 					if (item.getCondition() >= item.getConditionMax())
@@ -1008,6 +1065,7 @@ this.asset_manager <- {
 
 			_worldState.updateTopbarAssets();
 		}
+
 	}
 
 	function updateAverageMoodState()
@@ -2168,6 +2226,7 @@ this.asset_manager <- {
 		{
 			_out.writeString(name);
 		}
+		_out.writeU8(this.m.BrothersMax);
 		_out.writeBool(false);
 	}
 
@@ -2220,9 +2279,9 @@ this.asset_manager <- {
 		}
 
 		this.m.Money = _in.readF32();
-		this.m.Ammo = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
-		this.m.Medicine = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Ammo = this.Math.max(0, _in.readF32()); //, this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.ArmorParts = this.Math.max(0, _in.readF32()); //, this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.Medicine = this.Math.max(0, _in.readF32()); //, this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine);
 		this.m.BusinessReputation = _in.readU32();
 		this.m.MoralReputation = _in.readF32();
 		this.m.Score = _in.readF32();
@@ -2242,6 +2301,11 @@ this.asset_manager <- {
 			{
 				this.setFormationName(i, _in.readString())
 			}
+		}
+
+		if (_in.getMetaData().getVersion() >= 47 )
+		{
+			this.m.BrothersMax = _in.readU8();
 		}
 
 		this.updateAverageMoodState();

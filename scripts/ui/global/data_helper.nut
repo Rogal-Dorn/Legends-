@@ -160,6 +160,7 @@ this.data_helper <- {
 			Brothers = entities != null ? entities.len() : 0,
 			BrothersMax = this.World.Assets.getBrothersMax()
 		};
+		
 	}
 
 	function convertStashAndEntityToUIData( _entity = null, _activeEntity = null, _withoutStash = false, _filter = 0 )

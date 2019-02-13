@@ -4,9 +4,9 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_rust";
 		this.m.Name = "Rust";
-		this.m.Description = "Deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t inflict the most injury to the wearer.";
-		this.m.Icon = "skills/active_137.png";
-		this.m.IconDisabled = "skills/active_137_sw.png";
+		this.m.Description = "Tarnish leather and metal with rapid age, thereby undermining the solidity of the armor worn by your target.";
+		this.m.Icon = "skills/rust56.png";
+		this.m.IconDisabled = "skills/rust56_bw.png";
 		this.m.Overlay = "active_137";
 		this.m.SoundOnUse = [
 			"sounds/combat/crush_armor_01.wav",
@@ -25,13 +25,13 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
-		this.m.IsAttack = true;
+		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsTooCloseShown = true;
 		this.m.DirectDamageMult = 0.0;
 		this.m.HitChanceBonus = 0;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 35;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.ChanceDecapitate = 0;
