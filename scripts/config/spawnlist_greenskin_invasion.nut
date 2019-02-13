@@ -27,6 +27,7 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			}
 		]
 	},
+	{
 			MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
@@ -42,6 +43,7 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			}
 		]
 	},
+	{
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
@@ -2422,7 +2424,7 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			}
 		]
 	},
-{
+	{
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,

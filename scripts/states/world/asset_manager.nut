@@ -865,7 +865,7 @@ this.asset_manager <- {
 
 			if (this.World.Tags.get("IsGoldenGoose") == true)
 			{
-				this.addMoney(15);
+				this.addMoney(30);
 			}
 
 			local mood = 0;

@@ -16,7 +16,7 @@ this.perk_legend_mastery_bandage <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.coat_with_poison_skill"))
+		if (!this.m.Container.hasSkill("actives.legend_bandage"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_bandage"));
 		}
