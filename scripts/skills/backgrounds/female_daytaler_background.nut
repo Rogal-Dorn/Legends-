@@ -23,7 +23,7 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function onBuildDescription()
@@ -35,16 +35,16 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				-5,
+				-5
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				0,
-				3
+				5,
+				8
 			],
 			MeleeSkill = [
 				0,

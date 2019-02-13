@@ -24,7 +24,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -52,16 +52,16 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				12,
-				10
+				7,
+				5
 			],
 			Bravery = [
 				-2,
 				-3
 			],
 			Stamina = [
-				10,
-				20
+				15,
+				25
 			],
 			MeleeSkill = [
 				0,
