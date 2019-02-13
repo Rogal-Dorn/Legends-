@@ -2,11 +2,11 @@ this.perk_legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_legend_hold_the_liney";
+		this.m.ID = "perk.legend_hold_the_line";
 		this.m.Name = this.Const.Strings.PerkName.LegendHoldTheLine;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendHoldTheLine;
-		this.m.Icon = "skills/active_22.png";
-		this.m.IconDisabled = "skills/active_22_sw.png";
+		this.m.Icon = "ui/perks/return_favor56.png";
+		this.m.IconDisabled = "ui/perks/return_favor56_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

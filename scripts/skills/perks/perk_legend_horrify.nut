@@ -15,14 +15,14 @@ this.perk_legend_horrify <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_horrify"))
+		if (!this.m.Container.hasSkill("actives.legend_horrific_scream"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_horrify"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_horrific_scream"));
 		}
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_horrify");
+		this.m.Container.removeByID("actives.legend_horrific_scream");
 	}
 
 });

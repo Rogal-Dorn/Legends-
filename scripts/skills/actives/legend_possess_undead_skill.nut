@@ -70,7 +70,7 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (target.getSkills().hasSkill("effects.possessed_undead"))
+		if (target.getSkills().hasSkill("effects.legend_possessed_undead"))
 		{
 			return false;
 		}
@@ -92,7 +92,7 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		local possessed = this.new("scripts/skills/effects/possessed_undead_effect");
+		local possessed = this.new("scripts/skills/effects/legend_possessed_undead_effect");
 		possessed.setPossessor(_user);
 		target.getSkills().add(possessed);
 		target.IsControlledByPlayer = true;

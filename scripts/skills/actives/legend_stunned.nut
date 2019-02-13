@@ -4,10 +4,10 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_stun";
 		this.m.Name = "Daze";
-		this.m.Description = "Stuns an enemy for a while";
+		this.m.Description = "Unleash a brilliant flash of white light aimed directly at the eyes of your target in an attempt to blind and incapacitate.";
 		this.m.KilledString = "Dazed";
-		this.m.Icon = "skills/active_133.png";
-		this.m.IconDisabled = "skills/active_133_sw.png";
+		this.m.Icon = "skills/stun56.png";
+		this.m.IconDisabled = "skills/stun56_bw.png";
 		this.m.Overlay = "active_133";
 		this.m.SoundOnUse = [
 			"sounds/combat/cudgel_01.wav",
@@ -29,7 +29,7 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 15;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 	}
