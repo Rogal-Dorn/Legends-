@@ -1143,7 +1143,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Ammo + " units at a time."
+					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.World.Assets.getMaxAmmo() + " units at a time."
 				}
 			];
 
@@ -1167,7 +1167,7 @@ this.tooltip_events <- {
 				desc = desc + (repair.ArmorParts + "[/color] tools and supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].ArmorParts + " units at most.");
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
 			return [
 				{
 					id = 1,
@@ -1212,7 +1212,7 @@ this.tooltip_events <- {
 				desc = desc + (heal.MedicineMax + "[/color] Medical Supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Medicine + " units at most.");
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
 			return [
 				{
 					id = 1,

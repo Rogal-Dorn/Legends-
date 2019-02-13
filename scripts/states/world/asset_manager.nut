@@ -114,6 +114,36 @@ this.asset_manager <- {
 		return this.Math.floor(this.m.Medicine);
 	}
 
+	function getMaxAmmo()
+	{
+		local ammo = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			ammo += this.Const.LegendMod.getMaxAmmo(bro.getBackground().getID());
+		}
+		return ammo;
+	}
+
+	function getMaxArmorParts()
+	{
+		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			parts += this.Const.LegendMod.getMaxArmorParts(bro.getBackground().getID());
+		}
+		return parts;
+	}
+
+	function getMaxMedicine()
+	{
+		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			meds += this.Const.LegendMod.getMaxMedicine(bro.getBackground().getID());
+		}
+		return meds;
+	}
+
 	function getBusinessReputation()
 	{
 		return this.m.BusinessReputation;
@@ -202,33 +232,33 @@ this.asset_manager <- {
 
 	function setAmmo( _f )
 	{
-		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.getMaxAmmo());
 		this.refillAmmo();
 	}
 
 	function setArmorParts( _f )
 	{
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.ArmorParts = this.Math.min(this.Math.max(0, _f), this.getMaxArmorParts());
 	}
 
 	function setMedicine( _f )
 	{
-		this.m.Medicine = this.Math.min(this.Math.max(0, _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Medicine = this.Math.min(this.Math.max(0, _f), this.getMaxMedicine());
 	}
 
 	function addAmmo( _f )
 	{
-		this.m.Ammo = this.Math.min(this.Math.max(0, this.m.Ammo + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.Ammo = this.Math.min(this.Math.max(0, this.m.Ammo + _f), this.getMaxAmmo());
 	}
 
 	function addArmorParts( _f )
 	{
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, this.m.ArmorParts + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.ArmorParts = this.Math.min(this.Math.max(0, this.m.ArmorParts + _f), this.getMaxArmorParts());
 	}
 
 	function addMedicine( _f )
 	{
-		this.m.Medicine = this.Math.min(this.Math.max(0, this.m.Medicine + _f), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Medicine = this.Math.min(this.Math.max(0, this.m.Medicine + _f), this.getMaxMedicine());
 	}
 
 	function addMoralReputation( _f )
@@ -302,29 +332,10 @@ this.asset_manager <- {
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
 		this.World.FactionManager.getGreaterEvil().IsExtraLate = false;
 
-		switch(_settings.BudgetDifficulty)
-		{
-		case 0:
-			this.m.Money = 750;
-			this.m.Ammo = 20;
-			this.m.ArmorParts = 10;
-			this.m.Medicine = 10;
-			break;
-
-		case 1:
-			this.m.Money = 500;
-			this.m.Ammo = 10;
-			this.m.ArmorParts = 5;
-			this.m.Medicine = 5;
-			break;
-
-		case 2:
-			this.m.Money = 250;
-			this.m.Ammo = 0;
-			this.m.ArmorParts = 0;
-			this.m.Medicine = 0;
-			break;
-		}
+		this.m.Money = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Money;
+		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
+		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
+		this.m.Medicine = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Medicine;
 
 		this.m.Stash.clear();
 
@@ -2244,9 +2255,9 @@ this.asset_manager <- {
 		}
 
 		this.m.Money = _in.readF32();
-		this.m.Ammo = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Ammo);
-		this.m.ArmorParts = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].ArmorParts);
-		this.m.Medicine = this.Math.min(this.Math.max(0, _in.readF32()), this.Const.Difficulty.MaxResources[this.m.EconomicDifficulty].Medicine);
+		this.m.Ammo = this.Math.max(0, _in.readF32()); //, this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo);
+		this.m.ArmorParts = this.Math.max(0, _in.readF32()); //, this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts);
+		this.m.Medicine = this.Math.max(0, _in.readF32()); //, this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine);
 		this.m.BusinessReputation = _in.readU32();
 		this.m.MoralReputation = _in.readF32();
 		this.m.Score = _in.readF32();
