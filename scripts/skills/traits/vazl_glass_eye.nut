@@ -43,7 +43,7 @@ this.vazl_glass_eye <- this.inherit("scripts/skills/traits/character_trait", {
 		];
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 		_properties.RangedSkillMult *= 0.5;
 		_properties.Vision -= 2;

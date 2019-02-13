@@ -25,7 +25,7 @@ this.vazl_cannibalistic <- this.inherit("scripts/skills/traits/character_trait",
 		];
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 	}
 });

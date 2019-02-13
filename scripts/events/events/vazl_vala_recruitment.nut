@@ -7,10 +7,10 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_vala_recruitment";
 		this.m.Title = "Somewhere around %townname%...";
-		this.m.Cooldown = 120 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_43.png[/img]A wild Vala appears before you.",
+			Text = "[img]gfx/ui/events/vazl_vala_recruitment.png[/img]You run into a mysterious staff-wielding woman.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -38,9 +38,7 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Vala = roster.create("scripts/entity/tactical/player");
-				_event.m.Vala.setStartValuesEx([
-					"vazl_vala_background"
-				]);
+				_event.m.Vala.setStartValuesEx(["vazl_vala_background"]);
 				this.Characters.push(_event.m.Vala.getImagePath());
 			}
 		});
@@ -48,15 +46,19 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		this.logInfo("Vala recruitment  --  onUpdateScore");
+		local brothers = this.World.getPlayerRoster().getAll();
+		local towns = this.World.EntityManager.getSettlements();
+		local nearTown = false;
+		local town;
+		local playerTile = this.World.State.getPlayer().getTile();
+
+
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
 
-		local towns = this.World.EntityManager.getSettlements();
-		local nearTown = false;
-		local town;
-		local playerTile = this.World.State.getPlayer().getTile();
 
 		foreach (t in towns)
 		{
@@ -72,7 +74,7 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		local brothers = this.World.getPlayerRoster().getAll();
+
 		foreach (bro in brothers)
 		{
 			if (bro.getBackground().getID() == "background.vazl_vala")
@@ -81,16 +83,19 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 			}
 		}
 
+
 		local totalbrothers = 0;
 		local totalbrotherlevels = 0;
 		foreach (bro in brothers)
 		{
 			totalbrothers += 1;
-		}
-		foreach (bro in brothers)
-		{
 			totalbrotherlevels += bro.getLevel();
 		}
+		if (totalbrothers < 1 || totalbrotherlevels < 1)
+		{
+			return;
+		}
+
 
 		this.m.Town = town;
 		this.m.Score = (totalbrotherlevels / totalbrothers) / 2;
@@ -113,5 +118,4 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 		this.m.Vala = null;
 		this.m.Town = null;
 	}
-
 });

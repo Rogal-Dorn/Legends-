@@ -7,10 +7,10 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_cannibal_corrupts_butcher";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%cannibal% corrupts %butcher%.",
+			Text = "[img]gfx/ui/events/vazl_cannibal_corrupts_butcher.png[/img]%cannibal% corrupts %butcher%.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -21,7 +21,6 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 					{
 						return 0;
 					}
-
 				}
 			],
 			function start( _event )
@@ -34,17 +33,19 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 						icon = cannibalistic_trait.getIcon(),
 						text = _event.m.Butcher.getName() + " now enjoys forbidden meat"
 				});
-				_event.m.Cannibal.improveMood(2.00000000, "Spread the ways of cannibalism");
-				_event.m.Butcher.improveMood(2.00000000, "Started appreciating forbidden meat");
+				_event.m.Cannibal.improveMood(2.0, "Spread the joys of cannibalism");
+				_event.m.Butcher.improveMood(2.0, "Started appreciating forbidden meat");
 			}
 		});
 	}
 
 	function onUpdateScore()
 	{
+		this.logInfo("Cannibal corrupts butcher  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local cannibal_candidates = [];
 		local butcher_candidates = [];
+
 
 		foreach (bro in brothers)
 		{
@@ -52,25 +53,21 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 			{
 				cannibal_candidates.push(bro);
 			}
-		}
-		if (cannibal_candidates.len() > 0)
-		{
-			this.m.Cannibal = cannibal_candidates[this.Math.rand(0, cannibal_candidates.len() - 1)];
-		}
-
-		foreach (bro in brothers)
-		{
 			if (bro.getBackground().getID() == "background.butcher" && !bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
 			{
 				butcher_candidates.push(bro);
 			}
 		}
-		if (butcher_candidates.len() > 0)
+
+		if (cannibal_candidates.len() < 1 || butcher_candidates.len() < 1)
 		{
-			this.m.Butcher = butcher_candidates[this.Math.rand(0, butcher_candidates.len() - 1)];
+			return;
 		}
 
-		this.m.Score = (this.m.Cannibal.getLevel() + this.m.Butcher.getLevel()) / 2;
+
+		this.m.Cannibal = cannibal_candidates[this.Math.rand(0, cannibal_candidates.len() - 1)];
+		this.m.Butcher = butcher_candidates[this.Math.rand(0, butcher_candidates.len() - 1)];
+		this.m.Score = (this.m.Cannibal.getLevel() + this.m.Butcher.getLevel()) / 4;
 	}
 
 	function onPrepare()
@@ -99,5 +96,4 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 		this.m.Cannibal = null;
 		this.m.Butcher = null;
 	}
-
 });
