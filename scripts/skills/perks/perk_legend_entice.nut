@@ -5,7 +5,7 @@ this.perk_legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_entice";
 		this.m.Name = this.Const.Strings.PerkName.LegendEntice;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendEntice;
-		this.m.Icon = "skills/active_42.png";
+		this.m.Icon = "skills/entice56.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

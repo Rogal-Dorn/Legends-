@@ -1045,7 +1045,6 @@ NewLegendCampaignMenuModule.prototype.notifyBackendCancelButtonPressed = functio
 {
     if (this.mSQHandle !== null)
     {
-		console.error("onCancelButtonPressed")
         SQ.call(this.mSQHandle, 'onCancelButtonPressed');
     }
 };

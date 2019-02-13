@@ -287,7 +287,7 @@ CharacterScreenBrothersListModule.prototype.addBrotherSlotDIV = function (_paren
 
 CharacterScreenBrothersListModule.prototype.updateRosterLabel = function ()
 {
-    this.mRosterCountLabel.html('' + this.mNumActive + '/' + this.mNumActiveMax);
+    this.mRosterCountLabel.html('' + this.mNumActive + '/' + this.mDataSource.getMaxBrothers());
 };
 
 
@@ -463,7 +463,7 @@ CharacterScreenBrothersListModule.prototype.updateBlockedSlots = function ()
 
         if (slot.data('child') != null || self.mNumActive >= self.mNumActiveMax)
         {
-            slot.addClass('is-blocked-slot');
+           // slot.addClass('is-blocked-slot');
         }
     });
 
@@ -473,7 +473,7 @@ CharacterScreenBrothersListModule.prototype.updateBlockedSlots = function ()
 
         if (slot.data('child') != null)
         {
-            slot.addClass('is-blocked-slot');
+           // slot.addClass('is-blocked-slot');
         }
     });
 }
