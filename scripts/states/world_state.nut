@@ -1352,7 +1352,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 					if (!this.World.FactionManager.isAlliedWithPlayer(t.Faction))
 					{
-						if (t.Faction >= len(factions))
+						if (t.Faction >= factions.len())
 						{
 							factions.resize(t.Faction + 1, 0);
 						}
