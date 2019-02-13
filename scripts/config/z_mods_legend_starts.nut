@@ -30,7 +30,6 @@ gt.Const.LegendMod.Starts <- [
     // },
     {
         name = "Beggar",
-        intro = "[img]gfx/ui/events/event_24.png[/img]Six crowns. A whole day and all you have for it is a paltry six crowns. Barely enough for a loaf of bread in this dung heap of a town. It wasn't but a month ago that you could solicit twenty or more from the passersby. But now they barely acknowledge you exist. You sigh as you amble through the narrow streets, heading toward your alley for the night. Thoughts of uncertainty drift into your head. You've seen a lot in the square. There, your hand is on the pulse of the town. You can tell when things aren't right, you see it in the way they all walk. Have they been walking differently? Your thoughts are cut short by clamoring pouring out the mouth of your alley. It must be some street hounds squabbling over some rotten scrap. Before you turn the corner, you hear words, yelling. Why is someone here? You picked this alleyway precisely because it's so remote. The noble is dead, his coins glinting... ",
         description = "No money, no skill, highborn will not join him. Very Hard",
         banner = gt.Const.LegendMod.StartTypes.Beggar
     },
