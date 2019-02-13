@@ -5,7 +5,7 @@ this.perk_legend_stun <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_stun";
 		this.m.Name = this.Const.Strings.PerkName.LegendStunned;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendStunned;
-		this.m.Icon = "skills/active_101.png";
+		this.m.Icon = "skills/stun56.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

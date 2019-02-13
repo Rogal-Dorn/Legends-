@@ -305,21 +305,21 @@ this.asset_manager <- {
 		switch(_settings.BudgetDifficulty)
 		{
 		case 0:
-			this.m.Money = 1500;
-			this.m.Ammo = 40;
-			this.m.ArmorParts = 20;
-			this.m.Medicine = 20;
-			break;
-
-		case 1:
-			this.m.Money = 1000;
+			this.m.Money = 750;
 			this.m.Ammo = 20;
 			this.m.ArmorParts = 10;
 			this.m.Medicine = 10;
 			break;
 
-		case 2:
+		case 1:
 			this.m.Money = 500;
+			this.m.Ammo = 10;
+			this.m.ArmorParts = 5;
+			this.m.Medicine = 5;
+			break;
+
+		case 2:
+			this.m.Money = 250;
 			this.m.Ammo = 0;
 			this.m.ArmorParts = 0;
 			this.m.Medicine = 0;

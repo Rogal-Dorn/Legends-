@@ -1,26 +1,11 @@
 this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
-	m = {
-		IsFake = false
-	},
-	function setFake( _f )
-	{
-		this.m.IsFake = _f;
 
-		if (this.m.IsFake)
-		{
-			this.m.ActionPointCost = 6;
-		}
-		else
-		{
-			this.m.ActionPointCost = 6;
-		}
-	}
 
 	function create()
 	{
-		this.m.ID = "actives.sleep";
-		this.m.Name = "Sleep";
-		this.m.Description = "";
+		this.m.ID = "actives.legend_sleep_skill";
+		this.m.Name = "Mass Sleep";
+		this.m.Description = "Enshroud the area with thick smoke that draws the vigor out of your foes. Those that breathe in too much are forced into a light sleep.";
 		this.m.Icon = "skills/active_116.png";
 		this.m.IconDisabled = "skills/active_116.png";
 		this.m.Overlay = "active_116";
@@ -53,9 +38,9 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 12;
+		this.m.MaxRange = 8;
 		this.m.MaxLevelDifference = 4;
 	}
 
@@ -164,7 +149,7 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " resists the urge to sleep thanks to his resolve");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " resists the urge to sleep thanks to their resolve");
 				}
 
 				continue;

@@ -433,6 +433,103 @@ CharacterScreenDatasource.prototype.setSelectedBrotherIndex = function (_rosterP
     }
 };
 
+function getParagonPerkPoints(_brother) {
+	var character = _brother[CharacterScreenIdentifier.Entity.Character.Key];
+	var _perksUnlocked = _brother[CharacterScreenIdentifier.Perk.Key];
+	var level = character[CharacterScreenIdentifier.Entity.Character.Level];
+	var perkPointsSpent = character[CharacterScreenIdentifier.Entity.Character.PerkPointsSpent];
+	var paragonPerkPoints = 0
+	var StudentPerkPoint = isStudentPerkUnlocked(_perksUnlocked) ? 1 : 0
+	
+	if (level >= 13 && perkPointsSpent < 11 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 16 && perkPointsSpent < 12 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 19 && perkPointsSpent < 13 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 22 && perkPointsSpent < 14 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+
+	if (level >= 25 && perkPointsSpent < 15 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	if (level >= 28 && perkPointsSpent < 16 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	if (level >= 31 && perkPointsSpent < 17 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	if (level >= 33 && perkPointsSpent < 18 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}	
+	if (level >= 36 && perkPointsSpent < 19 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 39 && perkPointsSpent < 20 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 42 && perkPointsSpent < 21 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 45 && perkPointsSpent < 22 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 48 && perkPointsSpent < 23 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 51 && perkPointsSpent < 24 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}	
+	
+	if (level >= 54 && perkPointsSpent < 25 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 57 && perkPointsSpent < 26 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	if (level >= 50 && perkPointsSpent < 27 + StudentPerkPoint) 
+	{
+		paragonPerkPoints++
+	}
+	
+	return paragonPerkPoints
+}
+
+function isStudentPerkUnlocked(_perksUnlocked) {
+	return _perksUnlocked.indexOf('perk.student') !== -1
+}
+
+
 
 CharacterScreenDatasource.prototype.getBrotherPerkPoints = function(_brother)
 {
