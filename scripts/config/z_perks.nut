@@ -770,7 +770,7 @@ gt.Const.Perks.PerksTreeRanger <- [
 			ID = "perk.mastery.poison",
 			Script = "scripts/skills/perks/perk_mastery_poison",
 			Name = this.Const.Strings.PerkName.LegendSpecPoison,
-			Tooltip = this.Const.Strings.PerkDescription.LegendSpecPosion,
+			Tooltip = this.Const.Strings.PerkDescription.LegendSpecPoison,
 			Icon = "ui/perks/mastery-poison.png",
 			IconDisabled = "ui/perks/mastery-poison_bw.png"
 		},
