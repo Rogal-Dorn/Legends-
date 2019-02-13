@@ -5,8 +5,8 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_hold_the_line";
 		this.m.Name = "Hold the line";
 		this.m.Description = "Instruct your mercenaries to push their advantages, raising melee defence by 10 within 4 tiles";
-		this.m.Icon = "skills/active_22.png";
-		this.m.IconDisabled = "skills/active_22_sw.png";
+		this.m.Icon = "ui/perks/return_favor56.png";
+		this.m.IconDisabled = "ui/perks/return_favor56_bw.png";
 		this.m.Overlay = "active_22";
 		this.m.SoundOnUse = [
 		
@@ -72,7 +72,7 @@ function isUsable()
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.holding_the_line"))
 			{
 
-			a.getSkills().add(this.new("scripts/skills/effects/legend_holding_the_line""));
+			a.getSkills().add(this.new("scripts/skills/effects/legend_holding_the_line"));
 
 			}
 		}

@@ -4,8 +4,8 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_wither";
 		this.m.Name = "Wither";
-		this.m.Icon = "ui/perks/perk_34_active.png";
-		this.m.IconDisabled = "ui/perks/perk_34_active_sw.png";
+		this.m.Icon = "skills/wither56_skill.png";
+		this.m.IconDisabled = "skills/wither56_skill_bw.png";
 		this.m.Overlay = "perk_34_active";
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
@@ -22,7 +22,7 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 30;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.MaxLevelDifference = 4;
