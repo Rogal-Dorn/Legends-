@@ -853,7 +853,7 @@ this.character_screen <- {
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToFindEntity);
 		}
 
-		if (!entity.unlockPerk(_data[1]), entity.getBackground().getID())
+		if (!entity.unlockPerk(_data[1], entity.getBackground().getID()))
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToUnlockPerk);
 		}

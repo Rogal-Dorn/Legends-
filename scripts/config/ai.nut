@@ -6,7 +6,7 @@ gt.Const.AI <- {
 	SecretSpectatorMode = false,
 	NoRetreatMode = false,
 	ParallelizationMode = true,
-	AllottedTimePerEvaluationRun = 0.00500000,
+	AllottedTimePerEvaluationRun = 0.005,
 	HeatRange = 5,
 	Agent = {
 		ID = {

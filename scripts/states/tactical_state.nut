@@ -486,16 +486,13 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
 		local CannibalsInRoster = 0;
+		local CannibalisticButchersInRoster = 0;
 		foreach (bro in EntireCompanyRoster)
 		{
 			if (bro.isAlive() && bro.getBackground().getID() == "background.vazl_cannibal")
 			{
 				CannibalsInRoster += 1;
 			}
-		}
-		local CannibalisticButchersInRoster = 0;
-		foreach (bro in EntireCompanyRoster)
-		{
 			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
 			{
 				CannibalisticButchersInRoster += 1;
@@ -535,7 +532,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 					}
 					else if (CannibalisticButchersInRoster < 1 && CannibalsInRoster >= 1)
 					{
-						local humanmeat = this.new("scripts/items/supplies/vazl_human_meat");
+						local humanmeat = this.new("scripts/items/supplies/vazl_human_parts");
 						humanmeat.randomizeAmount();
 						humanmeat.randomizeBestBefore();
 						loot.push(humanmeat);

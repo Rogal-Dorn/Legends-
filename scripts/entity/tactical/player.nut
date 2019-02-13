@@ -808,9 +808,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local injuries = this.Const.Injury.Permanent;
 			local numPermInjuries = 0;
 
-			foreach( inj in injuries )
+			foreach (inj in injuries)
 			{
 				if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_hand"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_foot"))
 				{
 					potential.push(inj);
 				}
@@ -818,7 +822,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_eye" && !this.m.Skills.hasSkill(inj.ID))
+				else if (inj.ID != "injury.missing_hand" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_eye" && !this.m.Skills.hasSkill(inj.ID))
 				{
 					potential.push(inj);
 				}

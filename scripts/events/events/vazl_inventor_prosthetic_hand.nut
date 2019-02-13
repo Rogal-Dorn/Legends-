@@ -7,10 +7,10 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_inventor_prosthetic_hand";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]As you take in the scenery you find %inventor% sitting by a tree, seemingly deep in thought, startling him as you approach.%SPEECH_ON%Oh, hey there, captain! I didn\'t see you there.%SPEECH_OFF%He stands up and enthusiastically steps up to you.%SPEECH_ON%You know.. I\'ve been thinking of ways to help %nohand% with his problem, and I think I might have come up with a solution.%SPEECH_OFF%He scratches his head nervously as he continues..%SPEECH_ON%I.. will need some coin in order to cover the material cost for this little experiment, however.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]As you take in the scenery you find %inventor% sitting by a tree, seemingly deep in thought, startling him as you approach.%SPEECH_ON%Oh, hey there, captain! I didn\'t see you there.%SPEECH_OFF%He stands up and enthusiastically steps up to you.%SPEECH_ON%You know.. I\'ve been thinking of ways to help %nohand% with his problem, and I think I might have come up with a solution.%SPEECH_OFF%He scratches his head nervously as he continues..%SPEECH_ON%I.. will need some coin in order to cover the material cost for this little experiment, however, and any leftover tools that we can spare.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -21,7 +21,6 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 					{
 						return "B";
 					}
-
 				},
 				{
 					Text = "We can\'t spare resources on this right now.",
@@ -29,18 +28,16 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 					{
 						return "C";
 					}
-
 				}
 			],
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 			}
-
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You hand him some coin and he takes his leave. You stroll around the camp for some time and then, from out of nowhere, %inventor% appears before you, holding something behind his back.%SPEECH_ON%It\'s finished! Are you ready?%SPEECH_OFF% With eyes the size of saucers, he spins around and then hands you what looks like.. a hand?%SPEECH_ON%It\'s a new hand! I\'m sure this will be of great help to %nohand%.%SPEECH_OFF%He bows to you and scurries off. Well, I guess we\'ll find out.",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]You hand him some coin and he takes his leave. You stroll around the camp for some time and then, from out of nowhere, %inventor% appears before you, holding something behind his back.%SPEECH_ON%It\'s finished! Are you ready?%SPEECH_OFF% With eyes the size of saucers, he spins around and then hands you what looks like.. a hand?%SPEECH_ON%It\'s a new hand! I\'m sure this will be of great help to %nohand%.%SPEECH_OFF%He bows to you and scurries off. Well, I guess we\'ll find out.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -51,7 +48,6 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 					{
 						return 0;
 					}
-
 				}
 			],
 			function start( _event )
@@ -64,6 +60,13 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
 				});
 
+				this.World.Assets.addArmorParts(-20);
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_supplies.png",
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
+				});
+
 				local pros_hand_trait = this.new("scripts/skills/traits/vazl_prosthetic_hand");
 				_event.m.Nohand.getSkills().add(pros_hand_trait);
 				local pros_hand_works = _event.m.Nohand.getItems();
@@ -71,7 +74,7 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = pros_hand_trait.getIcon(),
-						text = _event.m.Nohand.getName() + " has received a prosthetic hand"
+						text = _event.m.Nohand.getName() + " receives a " + pros_hand_trait.getName()
 				});
 
 				local missing_hand_bye = this.new("scripts/skills/injury_permanent/missing_hand_injury");
@@ -79,17 +82,16 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = missing_hand_bye.getIcon(),
-						text = _event.m.Nohand.getName() + " no longer has a missing hand"
+						text = _event.m.Nohand.getName() + " no longer has a " + missing_hand_bye.getName()
 				});
 
-				_event.m.Inventor.improveMood(2.00000000, "Created a prosthetic hand");
-				_event.m.Nohand.improveMood(2.00000000, "Received a prosthetic hand");
+				_event.m.Inventor.improveMood(2.0, "Created a " + pros_hand_trait.getName() + " for " + _event.m.Nohand.getName());
+				_event.m.Nohand.improveMood(2.0, "Received a " + pros_hand_trait.getName() + " from " + _event.m.Inventor.getName());
 			}
-
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You tell %inventor% that the %companyname% has no resources to spare for such things at this time. The inventor lowers his head and lets out a sigh.%SPEECH_ON%I understand. Perhaps later, then. I\'ll be around.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]You tell %inventor% that the %companyname% has no resources to spare for such things at this time. The inventor lowers his head and lets out a sigh.%SPEECH_ON%I understand. Perhaps later, then. I\'ll be around.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -100,55 +102,68 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 					{
 						return 0;
 					}
-
 				}
 			],
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 			}
-
 		});
 	}
 
 	function onUpdateScore()
 	{
+		this.logInfo("Inventor creates a prosthetic hand  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local inventor_candidates = [];
 		local nohand_candidates = [];
 
-		if (this.World.Assets.getMoney() < 2000)
+
+		if (this.World.Assets.getMoney() < 2000 || this.World.Assets.getArmorParts() < 40)
 		{
 			return;
 		}
 
+
+		local totalinventors = 0;
+		local totalinventorlevels = 0;
 		foreach (bro in brothers)
 		{
-			if (bro.getBackground().getID() == "background.vazl_inventor" && bro.getLevel() >= 6)
+			if (bro.getBackground().getID() == "background.vazl_inventor")
 			{
 				inventor_candidates.push(bro);
+				totalinventors += 1;
+				totalinventorlevels += bro.getLevel();
 			}
 		}
-
-		if (inventor_candidates.len() > 0)
+		if (inventor_candidates.len() < 1)
+		{
+			return;
+		}
+		else
 		{
 			this.m.Inventor = inventor_candidates[this.Math.rand(0, inventor_candidates.len() - 1)];
 		}
 
+
 		foreach (bro in brothers)
 		{
-			if (bro.getSkills().hasSkill("injury.missing_hand") && !bro.getSkills().hasSkill("trait.vazl_prosthetic_hand") && bro.getName() != this.m.Inventor.getName())
+			if (bro.getSkills().hasSkill("injury.missing_hand") && !bro.getSkills().hasSkill("trait.vazl_prosthetic_hand") && bro.getID() != this.m.Inventor.getID())
 			{
 				nohand_candidates.push(bro);
 			}
 		}
-
-		if (nohand_candidates.len() > 0)
+		if (nohand_candidates.len() < 1)
+		{
+			return;
+		}
+		else
 		{
 			this.m.Nohand = nohand_candidates[this.Math.rand(0, nohand_candidates.len() - 1)];
 		}
 
-		this.m.Score = this.m.Inventor.getLevel() / 2;
+
+		this.m.Score = (totalinventorlevels / totalinventors) / 4;
 	}
 
 	function onPrepare()
@@ -177,5 +192,4 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 		this.m.Inventor = null;
 		this.m.Nohand = null;
 	}
-
 });

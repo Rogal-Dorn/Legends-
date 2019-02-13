@@ -7,21 +7,20 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_inventor_glass_eye";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the men, inspecting their eyes. Before long he comes running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, he hastily shifts up close to you, grabs your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%For some mere coin I can procure what items I need.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the men, inspecting their eyes. Before long he comes running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, he hastily shifts up close to you, grabs your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%Access to the company tools, and some coin for special parts, is all I require. What say you?%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Sounds good. Here\'s 500 crowns for the expenses.",
+					Text = "Sounds good. Here\'s 1000 crowns for the expenses.",
 					function getResult( _event )
 					{
 							return this.Math.rand(1, 100) <= 85 ? "C" : "D";
 					}
-
 				},
 				{
 					Text = "We can\'t spare resources on this right now.",
@@ -29,29 +28,26 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 					{
 						return "E";
 					}
-
 				}
 			],
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 			}
-
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_05.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the men, inspecting their eyes. Before long he comes running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, he hastily shifts up close to you, grabs your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%For some mere coin I can procure what items I need.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the men, inspecting their eyes. Before long he comes running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, he hastily shifts up close to you, grabs your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%For some mere coin I can procure what items I need.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Sounds good. Here\'s 500 crowns for the expenses.",
+					Text = "Sounds good. Here\'s 1000 crowns for the expenses.",
 					function getResult( _event )
 					{
 							return "C";
 					}
-
 				},
 				{
 					Text = "We can\'t spare resources on this right now.",
@@ -59,18 +55,16 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 					{
 						return "E";
 					}
-
 				}
 			],
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 			}
-
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%inventor% runs off and starts working on.. whatever it is, so you lean back and let the resting begin. An hour or so passes by before %inventor% comes back, dragging %noeye% behind him.%SPEECH_ON%It\'s completed, captain. Watch.%SPEECH_OFF%The enthusiastic inventor faces %noeye%, tells him to lift his head up and then proceeds to stick something into his eye.%SPEECH_ON%Look at him! It fits perfectly. This new eye of his will surely bring his confidence back in no time!%SPEECH_OFF%Before you can say anything, %inventor% has already lept away and continued on some other project, %noeye% still standing in front of you looking very confused.",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]%inventor% runs off and starts working on.. whatever it is, so you lean back and let the resting begin. An hour or so passes by before %inventor% comes back, dragging %noeye% behind him.%SPEECH_ON%It\'s completed, captain. Watch.%SPEECH_OFF%The enthusiastic inventor faces %noeye%, tells him to lift his head up and then proceeds to stick something into his eye.%SPEECH_ON%Look at him! It fits perfectly. This new eye of his will surely bring his confidence back in no time!%SPEECH_OFF%Before you can say anything, %inventor% has already lept away and continued on some other project, %noeye% still standing in front of you looking very confused.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -81,17 +75,23 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 					{
 						return 0;
 					}
-
 				}
 			],
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
-				this.World.Assets.addMoney(-500);
+				this.World.Assets.addMoney(-1000);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]500[/color] Crowns"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
+				});
+
+				this.World.Assets.addArmorParts(-20);
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_supplies.png",
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
 				});
 
 				local glass_eye_trait = this.new("scripts/skills/traits/vazl_glass_eye");
@@ -99,7 +99,7 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = glass_eye_trait.getIcon(),
-						text = _event.m.Noeye.getName() + " has received a glass eye"
+						text = _event.m.Noeye.getName() + " receives a " + glass_eye_trait.getName()
 				});
 
 				local missing_eye_bye = this.new("scripts/skills/injury_permanent/missing_eye_injury");
@@ -108,17 +108,16 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = missing_eye_bye.getIcon(),
-						text = _event.m.Noeye.getName() + " no longer has a missing eye"
+						text = _event.m.Noeye.getName() + " no longer has a " + missing_eye_bye.getName()
 				});
 
-				_event.m.Inventor.improveMood(2.00000000, "Created a glass eye");
-				_event.m.Noeye.improveMood(2.00000000, "Received a glass eye");
+				_event.m.Inventor.improveMood(2.0, "Created a " + glass_eye_trait.getName() + " for " + _event.m.Noeye.getName());
+				_event.m.Noeye.improveMood(2.0, "Received a " + glass_eye_trait.getName() + " from " + _event.m.Inventor.getName());
 			}
-
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%inventor% runs off and starts working on.. whatever it is, so you lean back and let the resting begin. An hour or so passes by before %inventor% comes back, dragging %noeye% behind him.%SPEECH_ON%It\'s completed, captain. Watch.%SPEECH_OFF%The enthusiastic inventor faces %noeye%, tells him to lift his head up and then proceeds to stick something into his eye.%SPEECH_ON%Look at him! It fits perfectly. This new eye of his will sure--%SPEECH_OFF%He gets interrupted by %noeye% who screams out in pain as he falls to the ground, bleeding heavily from his eye.%SPEECH_ON%Oh.. I.. seem to have miscalculated. No worries, I\'m sure he\'ll be fine!%SPEECH_OFF%The inventor slinks away out of sight as %noeye% goes silent, drifting into unconsciousness.",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]%inventor% runs off and starts working on.. whatever it is, so you lean back and let the resting begin. An hour or so passes by before %inventor% comes back, dragging %noeye% behind him.%SPEECH_ON%It\'s completed, captain. Watch.%SPEECH_OFF%The enthusiastic inventor faces %noeye%, tells him to lift his head up and then proceeds to stick something into his eye.%SPEECH_ON%Look at him! It fits perfectly. This new eye of his will sure--%SPEECH_OFF%He gets interrupted by %noeye% who screams out in pain as he falls to the ground, bleeding heavily from his eye.%SPEECH_ON%Oh.. I.. seem to have miscalculated. No worries, I\'m sure he\'ll be fine!%SPEECH_OFF%The inventor slinks away out of sight as %noeye% goes silent, drifting into unconsciousness.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -129,19 +128,24 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 					{
 						return 0;
 					}
-
 				}
 			],
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
-				this.World.Assets.addMoney(-500);
+				this.World.Assets.addMoney(-1000);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]500[/color] Crowns"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
 				});
 
+				this.World.Assets.addArmorParts(-20);
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_supplies.png",
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
+				});
 
 				if (!_event.m.Noeye.getSkills().hasSkill("injury.brain_damage"))
 				{
@@ -150,18 +154,17 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 					this.List.push({
 							id = 10,
 							icon = brain_damage_yum.getIcon(),
-							text = _event.m.Noeye.getName() + " suffers brain damage"
+							text = _event.m.Noeye.getName() + " suffers " + brain_damage_yum.getName()
 					});
 				}
 
-				_event.m.Inventor.worsenMood(2.00000000, "Caused brain damage");
-				_event.m.Noeye.worsenMood(2.00000000, "Suffered brain damage");
+				_event.m.Inventor.worsenMood(this.Const.MoodChange.PermanentInjury, "Caused " + brain_damage_yum.getName() + " in " + _event.m.Noeye.getName());
+				_event.m.Noeye.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered " + brain_damage_yum.getName() + " because of " + _event.m.Inventor.getName());
 			}
-
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You tell %inventor% that the %companyname% has no resources to spare for such things at this time. The inventor tilts his head at an odd angle and shrugs before he takes off.",
+			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]You tell %inventor% that the %companyname% has no resources to spare for such things at this time. The inventor tilts his head at an odd angle and shrugs before he takes off.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -172,55 +175,68 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 					{
 						return 0;
 					}
-
 				}
 			],
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 			}
-
 		});
 	}
 
 	function onUpdateScore()
 	{
+		this.logInfo("Inventor creates a glass eye  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local inventor_candidates = [];
 		local noeye_candidates = [];
 
-		if (this.World.Assets.getMoney() < 1000)
+	
+		if (this.World.Assets.getMoney() < 2000 || this.World.Assets.getArmorParts() < 40)
 		{
 			return;
 		}
 
+
+		local totalinventors = 0;
+		local totalinventorlevels = 0;
 		foreach (bro in brothers)
 		{
-			if (bro.getBackground().getID() == "background.vazl_inventor" && bro.getLevel() >= 3)
+			if (bro.getBackground().getID() == "background.vazl_inventor")
 			{
 				inventor_candidates.push(bro);
+				totalinventors += 1;
+				totalinventorlevels += bro.getLevel();
 			}
 		}
-
-		if (inventor_candidates.len() > 0)
+		if (inventor_candidates.len() < 1)
+		{
+			return;
+		}
+		else
 		{
 			this.m.Inventor = inventor_candidates[this.Math.rand(0, inventor_candidates.len() - 1)];
 		}
 
+
 		foreach (bro in brothers)
 		{
-			if (bro.getSkills().hasSkill("injury.missing_eye") && !bro.getSkills().hasSkill("trait.vazl_glass_eye") && bro.getName() != this.m.Inventor.getName())
+			if (bro.getSkills().hasSkill("injury.missing_eye") && !bro.getSkills().hasSkill("trait.vazl_glass_eye") && bro.getID() != this.m.Inventor.getID())
 			{
 				noeye_candidates.push(bro);
 			}
 		}
-
-		if (noeye_candidates.len() > 0)
+		if (noeye_candidates.len() < 1)
+		{
+			return;
+		}
+		else
 		{
 			this.m.Noeye = noeye_candidates[this.Math.rand(0, noeye_candidates.len() - 1)];
 		}
 
-		this.m.Score = this.m.Inventor.getLevel() / 2;
+
+		this.m.Score = (totalinventorlevels / totalinventors) / 4;
 	}
 
 	function onPrepare()
@@ -256,5 +272,4 @@ this.vazl_inventor_glass_eye <- this.inherit("scripts/events/event", {
 		this.m.Inventor = null;
 		this.m.Noeye = null;
 	}
-
 });

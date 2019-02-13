@@ -9,8 +9,8 @@ this.vazl_cannibal_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BackgroundDescription = "Cannibals have a thing for human flesh.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 70;
-		this.m.DailyCost = 7;
+		this.m.HiringCost = 60;
+		this.m.DailyCost = 6;
 		this.m.Excluded = [
 			"trait.asthmatic"
 		];
@@ -48,38 +48,14 @@ this.vazl_cannibal_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onChangeAttributes()
 	{
 		local c = {
-			Hitpoints = [
-				0,
-				0
-			],
-			Bravery = [
-				7,
-				11
-			],
-			Stamina = [
-				0,
-				0
-			],
-			MeleeSkill = [
-				0,
-				0
-			],
-			RangedSkill = [
-				0,
-				0
-			],
-			MeleeDefense = [
-				0,
-				0
-			],
-			RangedDefense = [
-				0,
-				0
-			],
-			Initiative = [
-				0,
-				0
-			]
+			Hitpoints = [0, 0],
+			Bravery = [0, 0],
+			Stamina = [0, 0],
+			MeleeSkill = [0, 0],
+			RangedSkill = [0, 0],
+			MeleeDefense = [0, 0],
+			RangedDefense = [0, 0],
+			Initiative = [0, 0]
 		};
 		return c;
 	}

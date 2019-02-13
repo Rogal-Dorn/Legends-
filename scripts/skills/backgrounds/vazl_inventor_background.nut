@@ -9,16 +9,13 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BackgroundDescription = "Inventors are trenchant problem solvers, fueled by a burning passion for knowledge.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 140;
-		this.m.DailyCost = 14;
+		this.m.HiringCost = 120;
+		this.m.DailyCost = 12;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
 			"trait.dumb",
 			"trait.superstitious"
-		];
-		this.m.ExcludedTalents = [
-			this.Const.Attributes.Initiative
 		];
 		this.m.Titles = [
 			"the Inventor",
@@ -67,38 +64,14 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onChangeAttributes()
 	{
 		local c = {
-			Hitpoints = [
-				0,
-				0
-			],
-			Bravery = [
-				0,
-				0
-			],
-			Stamina = [
-				0,
-				0
-			],
-			MeleeSkill = [
-				0,
-				0
-			],
-			RangedSkill = [
-				0,
-				0
-			],
-			MeleeDefense = [
-				0,
-				0
-			],
-			RangedDefense = [
-				0,
-				0
-			],
-			Initiative = [
-				0,
-				0
-			]
+			Hitpoints = [0, 0],
+			Bravery = [0, 0],
+			Stamina = [0, 0],
+			MeleeSkill = [0, 0],
+			RangedSkill = [0, 0],
+			MeleeDefense = [0, 0],
+			RangedDefense = [0, 0],
+			Initiative = [0, 0]
 		};
 		return c;
 	}
@@ -143,7 +116,7 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 		this.character_background.onUpdate(_properties);
 		_properties.XPGainMult *= 1.2;

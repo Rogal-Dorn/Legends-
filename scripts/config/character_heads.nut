@@ -472,10 +472,10 @@ gt.Const.Hair.BarberFemale <- [
 	"21"
 ];
 gt.Const.Beards.AllFemale <- [
-	""
+	null
 ];
 gt.Const.Beards.BarberFemale <- [
-	""
+	null
 ];
 gt.Const.Bodies.AllFemale <- [
 	"bust_naked_body_03"

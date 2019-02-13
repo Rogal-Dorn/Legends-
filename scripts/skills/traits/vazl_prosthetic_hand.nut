@@ -55,7 +55,7 @@ this.vazl_prosthetic_hand <- this.inherit("scripts/skills/traits/character_trait
 		return shield != null && shield.isItemType(this.Const.Items.ItemType.Shield);
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 		if (this.newhandShield())
 		{

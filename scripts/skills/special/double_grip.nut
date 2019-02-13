@@ -49,7 +49,7 @@ this.double_grip <- this.inherit("scripts/skills/skill", {
 		return this.skill.isHidden() || !this.canDoubleGrip();
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 		if (this.canDoubleGrip())
 		{

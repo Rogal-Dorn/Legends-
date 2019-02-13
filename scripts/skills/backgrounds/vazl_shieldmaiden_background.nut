@@ -9,10 +9,14 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.BackgroundDescription = "Shieldmaidens are female warriors.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 130;
-		this.m.DailyCost = 16;
+		this.m.HiringCost = 180;
+		this.m.DailyCost = 18;
 		this.m.Excluded = [
 			"trait.asthmatic"
+		];
+		this.m.ExcludedTalents = [
+			this.Const.Attributes.Bravery,
+			this.Const.Attributes.Initiative
 		];
 		this.m.Titles = [
 			"the Shieldmaiden"
@@ -21,6 +25,7 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.AllFemale;
+		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
@@ -50,38 +55,14 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 	function onChangeAttributes()
 	{
 		local c = {
-			Hitpoints = [
-				3,
-				5
-			],
-			Bravery = [
-				4,
-				7
-			],
-			Stamina = [
-				4,
-				6
-			],
-			MeleeSkill = [
-				5,
-				6
-			],
-			RangedSkill = [
-				6,
-				7
-			],
-			MeleeDefense = [
-				1,
-				3
-			],
-			RangedDefense = [
-				1,
-				3
-			],
-			Initiative = [
-				0,
-				0
-			]
+			Hitpoints = [5, 10],
+			Bravery = [4, 8],
+			Stamina = [6, 12],
+			MeleeSkill = [3, 6],
+			RangedSkill = [4, 8],
+			MeleeDefense = [0, 0],
+			RangedDefense = [0, 0],
+			Initiative = [-5, -10]
 		};
 		return c;
 	}
@@ -145,20 +126,16 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 			items.equip(this.new("scripts/items/shields/buckler_shield"));
 		}
 
-		r = this.Math.rand(0, 5);
-		if (r <= 2)
+		r = this.Math.rand(0, 3);
+		if (r <= 1)
 		{
 			items.equip(this.new("scripts/items/weapons/militia_spear"));
 		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/weapons/boar_spear"));
-		}
-		else if (r == 4)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/shortsword"));
 		}
-		else if (r == 5)
+		else if (r == 3)
 		{
 			items.equip(this.new("scripts/items/weapons/hatchet"));
 		}
