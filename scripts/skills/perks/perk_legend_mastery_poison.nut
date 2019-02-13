@@ -1,8 +1,8 @@
-this.perk_mastery_poison <- this.inherit("scripts/skills/skill", {
+this.perk_legend_mastery_poison <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.mastery_poison";
+		this.m.ID = "perk.legend_mastery_poison";
 		this.m.Name = this.Const.Strings.PerkName.LegendSpecPoion;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendSpecPoison;
 		this.m.Icon = "ui/perks/mastery-poison.png";

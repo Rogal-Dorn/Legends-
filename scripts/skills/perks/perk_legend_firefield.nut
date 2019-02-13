@@ -1,12 +1,12 @@
-this.perk_legend_miasma <- this.inherit("scripts/skills/skill", {
+this.perk_legend_firefield <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_miasma";
-		this.m.Name = this.Const.Strings.PerkName.LegendMiasma;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendMiasma;
-		this.m.Icon = "skills/active_100.png";
-		this.m.IconDisabled = "skills/active_100_sw.png";
+		this.m.ID = "perk.legend_firefield";
+		this.m.Name = this.Const.Strings.PerkName.LegendFirefield;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendFirefield;
+		this.m.Icon = "skills/firefield56.png";
+		this.m.IconDisabled = "skills/firefield56_sw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

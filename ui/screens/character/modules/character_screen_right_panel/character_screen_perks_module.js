@@ -210,15 +210,16 @@ CharacterScreenPerksModule.prototype.loadPerkTreesWithBrotherData = function (_b
 
 CharacterScreenPerksModule.prototype.isPerkUnlockable = function (_perk)
 {
-	var perkPoints = this.mDataSource.getBrotherPerkPoints(this.mDataSource.getSelectedBrother());
-	var perkPointsSpent = this.mDataSource.getBrotherPerkPointsSpent(this.mDataSource.getSelectedBrother());
-
-	if(perkPoints > 0 && perkPointsSpent >= _perk.Unlocks)
-	{
-		return true;
+	var _brother = this.mDataSource.getSelectedBrother();
+	var character = _brother[CharacterScreenIdentifier.Entity.Character.Key];
+	var level = character[CharacterScreenIdentifier.Entity.Character.Level];
+	var perkPoints = this.mDataSource.getBrotherPerkPoints(_brother);
+	var perkPointsSpent = this.mDataSource.getBrotherPerkPointsSpent(_brother);
+	
+	if(level >= 13 && _perk.ID === 'perk.student') {
+		return false;
 	}
-
-	return false;
+	return perkPoints > 0 && perkPointsSpent >= _perk.Unlocks;
 };
 
 CharacterScreenPerksModule.prototype.attachEventHandler = function(_perk)
