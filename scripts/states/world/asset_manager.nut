@@ -372,7 +372,7 @@ this.asset_manager <- {
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"legend_noble_background"
+				"legend_noble_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");
@@ -380,62 +380,68 @@ this.asset_manager <- {
 			bro.setCommander(true);
 			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Crusader:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
-				"legend_crusader_background"
+				"legend_crusader_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Rangers:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
-				"legend_ranger_background"
+				"legend_ranger_commander_background"
 			]);
-			bro.setPlaceInFormation(3);
-			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
-			bro.setStartValuesEx([
-				"legend_ranger_background"
-			]);
+			bro.setCommander(true);
+			this.setBrothersMax(6);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[2][1]);
-			bro.setStartValuesEx([
-				"legend_ranger_background"
-			]);
-			bro.setPlaceInFormation(5);
-			bro.m.HireTime = this.Time.getVirtualTimeF();
+			// bro = roster.create("scripts/entity/tactical/player");
+			// bro.setName(this.m.FounderNames[1][1]);
+			// bro.setStartValuesEx([
+			// 	"legend_ranger_background"
+			// ]);
+			// bro.setPlaceInFormation(4);
+			// bro.m.HireTime = this.Time.getVirtualTimeF();
+			// bro = roster.create("scripts/entity/tactical/player");
+			// bro.setName(this.m.FounderNames[2][1]);
+			// bro.setStartValuesEx([
+			// 	"legend_ranger_background"
+			// ]);
+			// bro.setPlaceInFormation(5);
+			// bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			break;
 		case this.Const.LegendMod.StartTypes.Necro:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"legend_necro_background"
+				"legend_necro_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Witch:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"legend_witch_background"
+				"legend_witch_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			this.setBrothersMax(6);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Healer:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
@@ -445,6 +451,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
+
 		case this.Const.LegendMod.StartTypes.Berserker:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
@@ -455,6 +462,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			break;
+
 		case this.Const.LegendMod.StartTypes.Inventor:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
@@ -463,6 +471,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
 
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
@@ -477,7 +486,7 @@ this.asset_manager <- {
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"beggar_background"
+				"legend_beggar_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");

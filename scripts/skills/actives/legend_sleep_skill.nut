@@ -1,4 +1,4 @@
-this.sleep_skill <- this.inherit("scripts/skills/skill", {
+this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsFake = false
 	},

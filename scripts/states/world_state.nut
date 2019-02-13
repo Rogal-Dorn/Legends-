@@ -1257,7 +1257,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(100, 0);
+		factions.resize(50, 0);
 
 		foreach( party in raw_parties )
 		{
@@ -1350,9 +1350,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 					t.Party <- this.WeakTableRef(party);
 					properties.Entities.push(t);
 
-					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
+					if (!this.World.FactionManager.isAlliedWithPlayer(t.Faction))
 					{
-						++factions[party.getFaction()];
+						if (t.Faction >= len(factions))
+						{
+							factions.resize(t.Faction + 1, 0);
+						}
+						++factions[t.Faction];
 					}
 				}
 			}
@@ -1362,7 +1366,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				party.onCombatStarted();
 				properties.Parties.push(party);
 				this.m.PartiesInCombat.push(party);
-				this.logInfo("party name: " + party.getName());
+				//this.logInfo("party name: " + party.getName());
 
 				if (party.isAlliedWithPlayer())
 				{
