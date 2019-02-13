@@ -6,17 +6,30 @@ Mod Features:
 
 * Alternate Starts
     - Beggar: start with nothing but the rags on your back 
-    - Noble: runaway noble - Is commander
-    - Crusader: Level 6 with good melee stats and equipment - Is commander
+    - Noble: runaway noble
+    - Crusader: Level 6 with good melee stats and equipment
     - Hunter: Three strong archers with footwork and pathfinder 
-	- Seer: old and powerful, but sleepy - Is commander
-    - Necromancer: Weak character with the ability to raise the dead - Is commander
-    - Inventor: Weak character with the ability to repair lost limbs and eyes
+	- Seer: old and powerful, but sleepy
+    - Warlock: Weak character with the ability to raise the dead
 * Commander centric starts
 	- Commander starts with company size of 6
 	- Commander only perks that increase size of roster
 	- If commander dies, game over
 * Unique Perk Trees for different background
+* Max resources are now tied to the background of your mercs
+	- Each bro background adds a base amount of food, ammo, parts and stash size
+* Certain backgrounds now improve the movement map speed over different terrains
+	- Bonuses do stack
+	- Having a messenger in the company improves communications and overall speed across all terrains
+	- Moving through the mountains? Having some miners who know the terrain helps
+	- Hunters, poachers, lumberjacks make a living in the woods, having a few certainly helps the company navigate the thick foilage
+	- Wildmen, hailing from the lands of the north, know their way around the difficult terrain of the north
+	- farmhands, vagabonds, caravan_hands, beast slayers, witchhunters, all contribute their knowledge of terrain
+* Removed Cart and Wagon ambitions
+	- Use the bros in your company to manage stash size
+* Different backgrounds can now help improve the repair rate of items and healing of bros
+	- Add a couple extra apprentices and or tailors to speed up repair of items
+	- Add a monk or two to help injured bros recover
 * Enhanced Spawn lists
 	- Low level spawns added for single character starts 
 	- increased variety of spawn options in the mid game
@@ -26,8 +39,9 @@ Mod Features:
 	- No reserves tent, every man in every battle. Should eventually have a way to leave people to recover in town
 	- Increased level scaling to support 27 mercs, previously difficulty stopped at 12. Be careful increasing your roster too early 
 * Battle sisters 
-	- Increased recruitable character faces from 18 to 30 faces, 
-	- Includes female bodies, faces and names.   
+	- Increased recruitable character faces from 18 to 30 faces.
+	- Includes female bodies, faces and names (and no more beards!).
+	- Includes correct gender text and events and. 
 * Formations Mod - Save and change all merc positions and equipment.
     - Total of 6 formation slots
     - Each formation can be individually labeled

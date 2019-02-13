@@ -32,7 +32,8 @@ this.asset_manager <- {
 		IsUsingProvisions = true,
 		IsConsumingAssets = true,
 		FormationIndex = 0,
-		FormationNames = []
+		FormationNames = [],
+		LastRosterSize = 0
 	},
 	function getCampaignID()
 	{
@@ -332,6 +333,8 @@ this.asset_manager <- {
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
 		this.World.FactionManager.getGreaterEvil().IsExtraLate = false;
 
+		this.m.Stash.resize( this.Const.LegendMod.MaxResources[_settings.EconomicDifficulty].Stash);
+		
 		this.m.Money = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Money;
 		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
 		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
@@ -533,6 +536,7 @@ this.asset_manager <- {
 			break;
 		}
 		this.m.FounderNames = [];
+		this.m.LastRosterSize = roster.getSize();
 
 	}
 
@@ -936,13 +940,32 @@ this.asset_manager <- {
 			local roster = this.World.getPlayerRoster().getAll();
 			local campMultiplier = this.isCamping() ? 2.0 : 1.0;
 
+			local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
+			local healingModifier = 1.0;
+			local repairModifier = 1.0;
+			local toolConsumptionModifier = 1.0;
+			//local medsConsumptionModifier = 1.0;
+			foreach( bro in roster )
+			{
+				stashSize += this.Const.LegendMod.getMaxStash(bro.getBackground().getID());
+				healingModifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
+				repairModifier += this.Const.LegendMod.getRepairModifier(bro.getBackground().getID());
+				toolConsumptionModifier += this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID());
+				//medsConsumptionModifier += this.Const.LegendMod.getMedsConsumptionModifier(bro.getBackground().getID());
+			}
+			
+			if (stashSize != this.m.Stash.getCapacity())
+			{
+				this.m.Stash.resize(stashSize);
+			}
+
 			foreach( bro in roster )
 			{
 				local d = bro.getHitpointsMax() - bro.getHitpoints();
 
 				if (bro.getHitpoints() < bro.getHitpointsMax())
 				{
-					bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier));
+					bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier * healingModifier));
 				}
 			}
 
@@ -960,9 +983,9 @@ this.asset_manager <- {
 				{
 					if (item.getCondition() < item.getConditionMax())
 					{
-						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier, item.getConditionMax() - item.getCondition());
+						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier * repairModifier, item.getConditionMax() - item.getCondition());
 						item.setCondition(item.getCondition() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor);
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * toolConsumptionModifier);
 						updateBro = true;
 					}
 
@@ -1003,7 +1026,7 @@ this.asset_manager <- {
 					{
 						local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier, item.getConditionMax() - item.getCondition());
 						item.setCondition(item.getCondition() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor);
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * toolConsumptionModifier);
 					}
 
 					if (item.getCondition() >= item.getConditionMax())
@@ -1042,6 +1065,7 @@ this.asset_manager <- {
 
 			_worldState.updateTopbarAssets();
 		}
+
 	}
 
 	function updateAverageMoodState()
