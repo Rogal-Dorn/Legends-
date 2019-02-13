@@ -1,12 +1,11 @@
-this.perk_legend_hex_skill <- this.inherit("scripts/skills/skill", {
+this.perk_legend_hex <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.logInfo("CREATING LEGEN HEX PERK");
 		this.m.ID = "perk.legend_hex";
 		this.m.Name = this.Const.Strings.PerkName.LegendHex;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendHex;
-		this.m.Icon = "skills/active_101.png";
+		this.m.Icon = "ui/perks/perk_27.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

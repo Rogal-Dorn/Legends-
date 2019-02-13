@@ -2,7 +2,7 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_stunned";
+		this.m.ID = "actives.legend_stun";
 		this.m.Name = "Daze";
 		this.m.Description = "Stuns an enemy for a while";
 		this.m.KilledString = "Dazed";
