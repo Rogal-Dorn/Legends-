@@ -5,7 +5,7 @@ this.perk_mastery_poison <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.mastery_poison";
 		this.m.Name = this.Const.Strings.PerkName.LegendSpecPoion;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendSpecPoison;
-		this.m.Icon = "ui/perks/perk_21.png";
+		this.m.Icon = "ui/perks/mastery-poison.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
