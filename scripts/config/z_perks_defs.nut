@@ -709,7 +709,64 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.Inspire,
 		Icon = "ui/perks/perk_41.png",
 		IconDisabled = "ui/perks/perk_41_sw.png"
-	}
+	},
+	{
+		ID = "perk.bloody_harvest",
+		Script = "scripts/skills/perks/perk_bloody_harvest",
+		Name = this.Const.Strings.PerkName.BloodyHarvest,
+		Tooltip = this.Const.Strings.PerkDescription.BloodyHarvest,
+		Icon = "ui/perks/perk_14.png",
+		IconDisabled = "ui/perks/perk_14_sw.png"
+	},
+	{
+		ID = "perk.devastating_strikes",
+		Script = "scripts/skills/perks/perk_devastating_strikes",
+		Name = this.Const.Strings.PerkName.DevastatingStrikes,
+		Tooltip = this.Const.Strings.PerkDescription.DevastatingStrikes,
+		Icon = "ui/perks/perk_31.png",
+		IconDisabled = "ui/perks/perk_31_sw.png"
+	},
+	{
+		ID = "perk.debilitate",
+		Script = "scripts/skills/perks/perk_debilitate",
+		Name = this.Const.Strings.PerkName.Debilitate,
+		Tooltip = this.Const.Strings.PerkDescription.Debilitate,
+		Icon = "ui/perks/perk_34.png",
+		IconDisabled = "ui/perks/perk_34_sw.png"
+	},
+	{
+		ID = "perk.slaughterer",
+		Script = "scripts/skills/perks/perk_slaughterer",
+		Name = this.Const.Strings.PerkName.Slaughterer,
+		Tooltip = this.Const.Strings.PerkDescription.Slaughterer,
+		Icon = "ui/perks/perk_25.png",
+		IconDisabled = "ui/perks/perk_25_sw.png"
+	},
+	{
+		ID = "perk.vengeance",
+		Script = "scripts/skills/perks/perk_vengeance",
+		Name = this.Const.Strings.PerkName.Vengeance,
+		Tooltip = this.Const.Strings.PerkDescription.Vengeance,
+		Icon = "ui/perks/perk_36.png",
+		IconDisabled = "ui/perks/perk_36_sw.png"
+	},
+	{
+		ID = "perk.ironside",
+		Script = "scripts/skills/perks/perk_ironside",
+		Name = this.Const.Strings.PerkName.Ironside,
+		Tooltip = this.Const.Strings.PerkDescription.Ironside,
+		Icon = "ui/perks/perk_35.png",
+		IconDisabled = "ui/perks/perk_35_sw.png"
+	},
+	{
+		ID = "perk.last_stand",
+		Script = "scripts/skills/perks/perk_last_stand",
+		Name = this.Const.Strings.PerkName.LastStand,
+		Tooltip = this.Const.Strings.PerkDescription.LastStand,
+		Icon = "ui/perks/perk_101.png",
+		IconDisabled = "ui/perks/perk_101.png_sw.png"
+	}	
+
 ];
 
 
@@ -801,5 +858,12 @@ gt.Const.Perks.PerkDefs <- {
 	InspiringPresence = 84,
 	LegendMasteryBandage = 85,
 	LegendHoldTheLine = 86,
-	Inspire = 87
+	Inspire = 87,
+	BloodyHarvest = 88,
+	DevastatingStrikes = 89,
+	Debilitate = 90,
+	Slaughter = 91,
+	Vengeance = 92,
+	Ironside = 93,
+	LastStand = 94
 };

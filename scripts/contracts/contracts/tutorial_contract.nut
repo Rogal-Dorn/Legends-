@@ -104,9 +104,9 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("LegendsHealer");
 		} 
-			else if (this.World.Tags.get("IsLegendsBeserker"))
+			else if (this.World.Tags.get("IsLegendsBerserker"))
 		{
-			this.setState("LegendsBeserker");
+			this.setState("LegendsBerserker");
 		} 
 		else if (this.World.Tags.get("IsLegendsInventor"))
 		{
@@ -669,7 +669,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			}
 		});	
 			this.m.States.push({
-			ID = "LegendsBeserker",
+			ID = "LegendsBerserker",
 			function start()
 			{
 				this.World.State.getPlayer().setAttackable(true);
@@ -677,7 +677,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 
 			function update()
 			{
-				this.Contract.setScreen("LegendsBesekerSuccess");
+				this.Contract.setScreen("LegendsBerserkerSuccess");
 				this.World.Contracts.showActiveContract();
 			}
 		});	
@@ -1163,7 +1163,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		
 		this.m.Screens.push({
-			ID = "LegendsBeserkerSuccess",
+			ID = "LegendsBerserkerSuccess",
 			Title = "Berserker",
 			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Berserker),
 			ShowEmployer = true,

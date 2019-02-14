@@ -44,7 +44,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			break;
 		case "background.legend_commander_beggar":
 			return gt.Const.Perks.TreeBeggarLookupMap;
-			break;			
+			break;	
+		case "background.legend_commander_berserker":
+			return gt.Const.Perks.TreeBerserkerLookupMap		
 		default:
 			return  gt.Const.Perks.LookupMap;
 	}
@@ -72,7 +74,9 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			break;
 		case "background.legend_commander_beggar":
 			return gt.Const.Perks.PerksTreeBeggar;
-			break;			
+			break;
+		case "background.legend_commander_berserker":
+			return gt.Const.Perks.PerksTreeBerserker				
 		default:
 			return  gt.Const.Perks.Perks;
 	}

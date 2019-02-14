@@ -470,11 +470,12 @@ this.asset_manager <- {
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"legend_berserker_background"
+				"legend_berserker_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			this.setBrothersMax(6);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Inventor:

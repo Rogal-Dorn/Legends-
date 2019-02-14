@@ -14,7 +14,7 @@ gt.Const.LegendMod.StartTypes <- {
     Crusader = "legends_crusader",
     Rangers = "legends_hunter",
     Healer = "legends_healer",
-    Berserker = "legends_beserker",
+    Berserker = "legends_berserker",
     Witch = "legends_witch",
     Necro = "legends_necro",
     Noble = "legends_noble",
@@ -69,12 +69,12 @@ gt.Const.LegendMod.Starts <- [
     //     description = "Experimental acedemic",
     //     banner = gt.Const.LegendMod.StartTypes.Inventor
     // },
-	//     {
-    //    name = "Berserker",
-    //   intro = "[img]gfx/ui/events/event_24.png[/img]Currently Unavailable",
-    //    description = "Currently Unavailable",
-    //    banner = gt.Const.LegendMod.StartTypes.Berserker
-    //},
+	{
+       name = "Berserker",
+       intro = "[img]gfx/ui/events/event_24.png[/img]Berserker start",
+       description = "Berserker",
+       banner = gt.Const.LegendMod.StartTypes.Berserker
+    },
 	{
         name = "Noble",
         description = "Rich and skilled at leadership. Easy",
