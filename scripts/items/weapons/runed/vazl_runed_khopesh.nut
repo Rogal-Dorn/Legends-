@@ -7,8 +7,8 @@ this.vazl_runed_khopesh <- this.inherit("scripts/items/weapons/runed/vazl_runed_
 		this.m.Name = "Khopesh";
 		this.m.Description = "An ancient curved sword on a long handle with strange ornamentations. Its shape makes it particularly effective against armor.";
 		this.m.Categories = "Cleaver, One-Handed";
-		this.m.IconLarge = "weapons/melee/kopesh_01.png";
-		this.m.Icon = "weapons/melee/kopesh_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_kopesh_01.png";
+		this.m.Icon = "weapons/melee/runed_kopesh_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

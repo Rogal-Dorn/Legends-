@@ -7,8 +7,8 @@ this.vazl_runed_goblin_heavy_bow <- this.inherit("scripts/items/weapons/runed/va
 		this.m.Name = "Reinforced Boondock Bow";
 		this.m.Description = "A light, yet powerful bow made from various woods.";
 		this.m.Categories = "Bow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/bow_goblin_02.png";
-		this.m.Icon = "weapons/ranged/bow_goblin_02_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_bow_goblin_02.png";
+		this.m.Icon = "weapons/ranged/runed_bow_goblin_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;

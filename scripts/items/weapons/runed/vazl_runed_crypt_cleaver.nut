@@ -7,8 +7,8 @@ this.vazl_runed_crypt_cleaver <- this.inherit("scripts/items/weapons/runed/vazl_
 		this.m.Name = "Crypt Cleaver";
 		this.m.Description = "A heavy blade with an oddly curved end, combining the qualities of sword and axe into a devastating two-handed cleaver.";
 		this.m.Categories = "Cleaver, Two-Handed";
-		this.m.IconLarge = "weapons/melee/cryptcleaver_01.png";
-		this.m.Icon = "weapons/melee/cryptcleaver_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_cryptcleaver_01.png";
+		this.m.Icon = "weapons/melee/runed_cryptcleaver_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

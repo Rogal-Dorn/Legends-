@@ -7,8 +7,8 @@ this.vazl_runed_orc_axe <- this.inherit("scripts/items/weapons/runed/vazl_runed_
 		this.m.Name = "Head Splitter";
 		this.m.Description = "A heavy piece of metal with a sharp head. Not made for human hands.";
 		this.m.Categories = "Axe, One-Handed";
-		this.m.IconLarge = "weapons/melee/orc_axe.png";
-		this.m.Icon = "weapons/melee/orc_axe_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_orc_axe.png";
+		this.m.Icon = "weapons/melee/runed_orc_axe_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -7,8 +7,8 @@ this.vazl_runed_rhomphaia <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.Name = "Rhomphaia";
 		this.m.Description = "A long and curved blade, sharpened only on one side, on a large handle. Can be used both for quick slashes and sweeping strikes.";
 		this.m.Categories = "Sword, Two-Handed";
-		this.m.IconLarge = "weapons/melee/romphaia_01.png";
-		this.m.Icon = "weapons/melee/romphaia_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_romphaia_01.png";
+		this.m.Icon = "weapons/melee/runed_romphaia_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

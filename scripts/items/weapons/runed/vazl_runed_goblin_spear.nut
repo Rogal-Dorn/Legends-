@@ -7,8 +7,8 @@ this.vazl_runed_goblin_spear <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.Name = "Goblin Skewer";
 		this.m.Description = "A long shaft with a sharp metal tip at the top.";
 		this.m.Categories = "Spear, One-Handed";
-		this.m.IconLarge = "weapons/melee/goblin_weapon_03.png";
-		this.m.Icon = "weapons/melee/goblin_weapon_03_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_goblin_weapon_03.png";
+		this.m.Icon = "weapons/melee/runed_goblin_weapon_03_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive;
 		this.m.IsDoubleGrippable = true;

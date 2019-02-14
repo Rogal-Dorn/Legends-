@@ -7,8 +7,8 @@ this.vazl_runed_falx <- this.inherit("scripts/items/weapons/runed/vazl_runed_wea
 		this.m.Name = "Falx";
 		this.m.Description = "A short and heavy blade with a curved edge designed for hacking and ripping bleeding wounds. Dulled over the years.";
 		this.m.Categories = "Cleaver, One-Handed";
-		this.m.IconLarge = "weapons/melee/falx_01.png";
-		this.m.Icon = "weapons/melee/falx_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_falx_01.png";
+		this.m.Icon = "weapons/melee/runed_falx_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
