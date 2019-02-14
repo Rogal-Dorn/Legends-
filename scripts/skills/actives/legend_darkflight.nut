@@ -5,8 +5,8 @@ this.legend_darkflight <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_darkflight";
 		this.m.Name = "Darkflight";
 		this.m.Description = "Disapperate from your current location and reappear on the other side of the battlefield";
-		this.m.Icon = "skills/active_28.png";
-		this.m.IconDisabled = "skills/active_11_sw.png";
+		this.m.Icon = "skills/darkflight.png";
+		this.m.IconDisabled = "skills/darkflight_bw.png";
 		this.m.Overlay = "active_28";
 		this.m.SoundOnUse = [
 			"sounds/enemies/vampire_takeoff_01.wav",

@@ -5,8 +5,8 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_hold_the_line";
 		this.m.Name = "Hold the line";
 		this.m.Description = "Instruct your mercenaries to push their advantages, raising melee defence by 10 within 4 tiles";
-		this.m.Icon = "ui/perks/return_favor56.png";
-		this.m.IconDisabled = "ui/perks/return_favor56_bw.png";
+		this.m.Icon = "skills/holdtheline_square.png";
+		this.m.IconDisabled = "skills/holdtheline_square_bw.png";
 		this.m.Overlay = "active_22";
 		this.m.SoundOnUse = [
 		
@@ -19,7 +19,7 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 7;
+		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;

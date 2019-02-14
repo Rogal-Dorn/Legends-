@@ -5,8 +5,8 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_firefield";
 		this.m.Name = "Fire Field";
 		this.m.Description = "Release a field of fire that burns all beings";
-		this.m.Icon = "skills/active_100.png";
-		this.m.IconDisabled = "skills/active_100_sw.png";
+		this.m.Icon = "skills/fire_square.png";
+		this.m.IconDisabled = "skills/fire_square.png";
 		this.m.Overlay = "active_100";
 		this.m.SoundOnUse = [
 			"sounds/enemies/miasma_spell_01.wav",

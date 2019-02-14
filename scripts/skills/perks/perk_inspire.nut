@@ -5,7 +5,8 @@ this.perk_inspire <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.inspire";
 		this.m.Name = this.Const.Strings.PerkName.Inspire;
 		this.m.Description = this.Const.Strings.PerkDescription.Inspire;
-		this.m.Icon = "ui/perks/perk_28.png";
+		this.m.Icon = "ui/perks/inspire_circle.png";
+		this.m.IconDisabled = "ui/perks/inspire_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
