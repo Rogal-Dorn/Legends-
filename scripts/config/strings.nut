@@ -1084,7 +1084,8 @@ gt.Const.Strings.PerkName <- {
 	LegendPossessUndead = "Possess Undead",
 	LegendRoster = "Increase Roster",
 	LegendSpecBandage = "Bandage Mastery",
-	LegendHoldTheLine = "Hold the line"
+	LegendHoldTheLine = "Hold the line",
+	LegendRaiseUndead = "Raise the Dead"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1196,6 +1197,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster = "Increase the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
 	LegendSpecBandage = "Master the art of bandaging mid battle using nay cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
 	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

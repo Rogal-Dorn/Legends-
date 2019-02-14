@@ -32,6 +32,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.MasteryMace,
 		gt.Const.Perks.PerkDefs.MasteryThrowing,
 		gt.Const.Perks.PerkDefs.MasteryPoison,
+		gt.Const.Perks.PerkDefs.LegendRaiseUndead,
 		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[

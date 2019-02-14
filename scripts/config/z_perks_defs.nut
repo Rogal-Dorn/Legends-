@@ -765,7 +765,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LastStand,
 		Icon = "ui/perks/perk_101.png",
 		IconDisabled = "ui/perks/perk_101.png_sw.png"
-	}	
+	},
+	{
+		ID = "perk.legend_raise_undead",
+		Script = "scripts/skills/perks/perk_legend_raise_undead",
+		Name = this.Const.Strings.PerkName.LegendRaiseUndead,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRaiseUndead,
+		Icon = "skills/active_26.png",
+		IconDisabled = "skills/active_01_sw.png"
+	}		
 
 ];
 
@@ -865,5 +873,6 @@ gt.Const.Perks.PerkDefs <- {
 	Slaughter = 91,
 	Vengeance = 92,
 	Ironside = 93,
-	LastStand = 94
+	LastStand = 94,
+	LegendRaiseUndead = 95
 };
