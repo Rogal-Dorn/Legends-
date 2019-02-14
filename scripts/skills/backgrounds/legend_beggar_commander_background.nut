@@ -50,7 +50,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
-		this.m.Level = 2;
+		this.m.Level = 1;
 	}
 
 	function getTooltip()

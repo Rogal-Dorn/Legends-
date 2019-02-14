@@ -101,9 +101,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	function onAdded()
 	{
 		this.character_background.onAdded();
-			this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
-
-
 		local actor = this.getContainer().getActor();
 		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 		

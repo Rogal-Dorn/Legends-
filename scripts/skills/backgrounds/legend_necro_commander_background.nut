@@ -53,7 +53,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
-		this.m.Level = 2;
+		this.m.Level = 1;
 	}
 
 	function getTooltip()
