@@ -1,16 +1,16 @@
-this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_berserker_commander_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {
 		Tattoo = 0
 	},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.wildman";
-		this.m.Name = "Wildman";
+		this.m.ID = "background.legend_commander_berserker";
+		this.m.Name = "Berserker";
 		this.m.Icon = "ui/backgrounds/background_31.png";
-		this.m.BackgroundDescription = "Wildmen are used to the hard life of the wild where only the strong prevail. They are less used to the life of cities, where the astute and deceitful rule.";
-		this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
-		this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
+		// this.m.BackgroundDescription = "Wildmen are used to the hard life of the wild where only the strong prevail. They are less used to the life of cities, where the astute and deceitful rule.";
+		// this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
+		// this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
 		this.m.HiringCost = 100;
 		this.m.DailyCost = 12;
 		this.m.Excluded = [
@@ -56,10 +56,9 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Beards = this.Const.Beards.Wild;
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = this.Math.rand(1, 2);
+		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
-		this.m.Level = 2;
 	}
 
 	function getTooltip()
@@ -101,12 +100,12 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 				10
 			],
 			Stamina = [
-				18,
-				23
+				40,
+				30
 			],
 			MeleeSkill = [
-				6,
-				0
+				40,
+				30
 			],
 			RangedSkill = [
 				-5,
@@ -154,17 +153,24 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 			tattoo_body.setBrush((this.m.Tattoo == 0 ? "warpaint_01_" : "scar_02_") + body.getBrush().Name);
 		}
 	}
+
 	function onAdded()
 	{
 		this.character_background.onAdded();
-
-		this.m.Container.add(this.new("scripts/skills/actives/berseker_mushrooms_skill"));		
+		local actor = this.getContainer().getActor();
+		actor.setTitle("The Berserker");
 	}	
 
 
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
+		local stash = this.World.Assets.getStash()
+		stash.removeByID("supplies.ground_grains");
+		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
+		stash.add(this.new("scripts/items/supplies/medicine_item"));
+		stash.add(this.new("scripts/items/weapons/throwing_axe"));
 		local r;
 
 		if (this.Const.DLC.Unhold)
@@ -210,27 +216,19 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 
 			if (r == 0)
 			{
-				items.equip(this.new("scripts/items/weapons/hatchet"));
+				items.equip(this.new("scripts/items/weapons/hand_axe"));
 			}
 			else if (r == 1)
 			{
-				items.equip(this.new("scripts/items/weapons/wooden_stick"));
-			}
-			else if (r == 2)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_metal_club"));
-			}
-			else if (r == 3)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_wooden_club"));
+				items.equip(this.new("scripts/items/weapons/warbrand"));
 			}
 			else if (r == 4)
 			{
-				items.equip(this.new("scripts/items/weapons/boar_spear"));
+				items.equip(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
 			}
 			else if (r == 5)
 			{
-				items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+				items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 			}
 		}
 
