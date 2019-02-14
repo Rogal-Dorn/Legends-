@@ -55,7 +55,10 @@ Mod Features:
 	- Added 6 AI faction archetypes: Questing warriors, populist authoritarian, surveilence police state, iron fisted collector, beloved schemers, altruistic marauders.
 * Endless war 
 	- Reduced crises interval from ~100 days to ~30 days.
-	- Noble houses begin at war.
+	- Noble houses don't start allied
+	- Greenskins don't start allied
+	- Bandits don't start allied
+	- increased ambushes, can be ambushed closer to settlements
 * Alp nerf
 	- Only spawns 1 nightmare per turn.
 * Hexen nerf
