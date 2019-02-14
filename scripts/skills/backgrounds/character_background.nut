@@ -106,7 +106,67 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getBackgroundDescription()
 	{
-		return this.m.BackgroundDescription;
+		local text = this.m.BackgroundDescription;
+		local repairs = this.Const.LegendMod.getRepairModifier(this.m.ID) * 100.0 - 100.0;
+		if (repairs > 0)
+		{
+			text += "\nRepairs +" + repairs +"%"
+		}
+		local meds = this.Const.LegendMod.getHealingModifier(this.m.ID) * 100.0 - 100.0;
+		if (meds > 0)
+		{
+			text += "\nHealing +" + meds +"%"
+		}
+		text += "\n\nResource Modifiers:"
+		text += "\nAmmo +" + this.Const.LegendMod.getMaxAmmo(this.m.ID);
+		text += "\nTools +" + this.Const.LegendMod.getMaxArmorParts(this.m.ID);
+		text += "\nMedicine +" + this.Const.LegendMod.getMaxMedicine(this.m.ID);
+		text += "\nStash +" + this.Const.LegendMod.getMaxStash(this.m.ID);
+
+		text += "\n\nTerrain Movement Modifiers:"
+		local terrains = this.Const.LegendMod.getTerrainSpeedModifier(this.m.ID);
+		local val = 0.0
+		val = terrains[2] * 100.0;
+		if (val > 0) {
+			text += "\nPlains +" + val +"%"
+		}
+		val = terrains[3] * 100.0;
+		if (val > 0) {
+			text += "\nSwamp +" + val +"%"
+		}
+		val = terrains[4] * 100.0;
+		if (val > 0) {
+			text += "\nHills +" + val +"%"
+		}		
+		val = terrains[5] * 100.0;
+		if (val > 0) {
+			text += "\nForests +" + val +"%"
+		}
+		val = terrains[9] * 100.0;
+		if (val > 0) {
+			text += "\nMountains +" + val +"%"
+		}
+		val = terrains[11] * 100.0;
+		if (val > 0) {
+			text += "\nFarmland +" + val +"%"
+		}		
+		val = terrains[12] * 100.0;
+		if (val > 0) {
+			text += "\nSnow +" + val +"%"
+		}
+		val = terrains[13] * 100.0;
+		if (val > 0) {
+			text += "\nBadlands +" + val +"%"
+		}
+		val = terrains[14] * 100.0;
+		if (val > 0) {
+			text += "\nHighlands +" + val +"%"
+		}
+		val = terrains[15] * 100.0;
+		if (val > 0) {
+			text += "\nStepps +" + val +"%"
+		}		
+		return text;
 	}
 
 	function getGenericTooltip()
