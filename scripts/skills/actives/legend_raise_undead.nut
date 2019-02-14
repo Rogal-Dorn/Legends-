@@ -5,8 +5,8 @@ this.legend_raise_undead <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_raise_undead";
 		this.m.Name = "Conduct Seance";
 		this.m.Description = "";
-		this.m.Icon = "skills/active_26.png";
-		this.m.IconDisabled = "skills/active_01_sw.png";
+		this.m.Icon = "skills/raisedead2.png";
+		this.m.IconDisabled = "skills/raisedead2_bw.png";
 		this.m.Overlay = "active_26";
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",

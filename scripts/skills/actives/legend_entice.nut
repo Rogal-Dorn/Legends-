@@ -5,8 +5,8 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_entice";
 		this.m.Name = "Entice";
 		this.m.Description = "With a trick of the light, captivate your target in such a way that they can’t help but approach you.";
-		this.m.Icon = "skills/active_31.png";
-		this.m.IconDisabled = "skills/active_31_sw.png";
+		this.m.Icon = "skills/entice.png";
+		this.m.IconDisabled = "skills/entice_bw.png";
 		this.m.Overlay = "active_31";
 		this.m.SoundOnUse = [
 			"sounds/combat/hook_01.wav",
@@ -27,8 +27,8 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.HitChanceBonus = 10;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 8;
 	}
