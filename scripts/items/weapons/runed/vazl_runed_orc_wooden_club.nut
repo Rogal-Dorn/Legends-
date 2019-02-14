@@ -7,8 +7,8 @@ this.vazl_runed_orc_wooden_club <- this.inherit("scripts/items/weapons/runed/vaz
 		this.m.Name = "Tree Limb";
 		this.m.Description = "A big and heavy branch torn from a tree. Not well suited for human hands.";
 		this.m.Categories = "Mace, One-Handed";
-		this.m.IconLarge = "weapons/melee/orc_club_01_140x70.png";
-		this.m.Icon = "weapons/melee/orc_club_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_orc_club_01_140x70.png";
+		this.m.Icon = "weapons/melee/runed_orc_club_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

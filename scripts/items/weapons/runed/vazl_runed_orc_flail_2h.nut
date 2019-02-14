@@ -7,8 +7,8 @@ this.vazl_runed_orc_flail_2h <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.Name = "Berserk Chain";
 		this.m.Description = "A massive iron chain with a spiked full metal head at the end. Too heavy to be used effectively by the average human.";
 		this.m.Categories = "Flail, Two-Handed";
-		this.m.IconLarge = "weapons/melee/orc_flail_two_handed.png";
-		this.m.Icon = "weapons/melee/orc_flail_two_handed_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_orc_flail_two_handed.png";
+		this.m.Icon = "weapons/melee/runed_orc_flail_two_handed_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

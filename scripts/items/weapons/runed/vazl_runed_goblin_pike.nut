@@ -7,8 +7,8 @@ this.vazl_runed_goblin_pike <- this.inherit("scripts/items/weapons/runed/vazl_ru
 		this.m.Name = "Jagged Pike";
 		this.m.Description = "A long jagged pike that can tear bleeding wounds and keep enemies at bay with its long reach.";
 		this.m.Categories = "Polearm, Two-Handed";
-		this.m.IconLarge = "weapons/melee/goblin_weapon_04.png";
-		this.m.Icon = "weapons/melee/goblin_weapon_04_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_goblin_weapon_04.png";
+		this.m.Icon = "weapons/melee/runed_goblin_weapon_04_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;

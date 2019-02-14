@@ -7,8 +7,8 @@ this.vazl_runed_goblin_notched_blade <- this.inherit("scripts/items/weapons/rune
 		this.m.Name = "Notched Blade";
 		this.m.Description = "A long curved knife with a one sided blade used for slashing, hacking and stabbing at weak spots.";
 		this.m.Categories = "Sword/Dagger, One-Handed";
-		this.m.IconLarge = "weapons/melee/goblin_weapon_01.png";
-		this.m.Icon = "weapons/melee/goblin_weapon_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_goblin_weapon_01.png";
+		this.m.Icon = "weapons/melee/runed_goblin_weapon_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -17,8 +17,8 @@ this.vazl_runed_orc_javelin <- this.inherit("scripts/items/weapons/runed/vazl_ru
 		this.m.Name = "Bundle of Crude Javelins";
 		this.m.Description = "A bunch of crudely made javelins intended for throwing at targets. Have limited range and are exhausting to throw, but may inflict devastating injuries. Can also inflict minor damage to shields if those are hit instead.";
 		this.m.Categories = "Throwing Weapon, One-Handed";
-		this.m.IconLarge = "weapons/ranged/orc_javelins.png";
-		this.m.Icon = "weapons/ranged/orc_javelins_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_orc_javelins.png";
+		this.m.Icon = "weapons/ranged/runed_orc_javelins_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
