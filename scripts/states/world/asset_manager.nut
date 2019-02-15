@@ -389,7 +389,6 @@ this.asset_manager <- {
 				"legend_noble_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
-			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			this.setBrothersMax(6);
@@ -403,7 +402,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(6);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Rangers:
@@ -414,7 +413,7 @@ this.asset_manager <- {
 			]);
 			bro.setCommander(true);
 			this.setBrothersMax(6);
-			bro.setPlaceInFormation(4);
+			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			// bro = roster.create("scripts/entity/tactical/player");
 			// bro.setName(this.m.FounderNames[1][1]);
@@ -441,7 +440,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(6);
+			this.setBrothersMax(3);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Witch:
@@ -453,7 +452,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(6);
+			this.setBrothersMax(3);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:
@@ -475,8 +474,63 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(6);
+			this.setBrothersMax(3);
 			break;
+		case this.Const.LegendMod.StartTypes.Party:
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_berserker_background"
+			]);
+			bro.setPlaceInFormation(3);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			this.setBrothersMax(6);
+			
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_witch_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_crusader_background"
+			]);
+			bro.setPlaceInFormation(5);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_noble_background"
+			]);
+			bro.setPlaceInFormation(6);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_necro_background"
+			]);
+			bro.setPlaceInFormation(7);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_ranger_background"
+			]);
+			bro.setPlaceInFormation(8);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			break;
+
+
 
 		case this.Const.LegendMod.StartTypes.Inventor:
 			bro = roster.create("scripts/entity/tactical/player");

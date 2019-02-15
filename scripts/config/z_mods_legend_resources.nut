@@ -60,6 +60,7 @@ gt.Const.LegendMod.getMaxAmmo <- function ( _background )
 			return 15;
 			break;
 		case "background.bowyer":
+		case "background.female_bowyer":
 			return 30;
 			break;
 
@@ -74,6 +75,7 @@ gt.Const.LegendMod.getMaxArmorParts <- function ( _background )
 	switch ( _background )
 	{
 		case "background.tailor":
+		case "background.female_tailor":
 		case "background.peddler":
 			return 5;
 			break;
@@ -99,6 +101,7 @@ gt.Const.LegendMod.getMaxMedicine <- function ( _background )
 			break;
 		case "background.monk":
 		case "background.butcher":
+		case "background.female_butcher":
 			return 15;
 			break;
 
@@ -120,8 +123,10 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 			break;
 
 		case "background.daytaler":
+		case "background.female_daytaler":
 		case "background.brawler":
 		case "background.farmhand":
+		case "background.female_farmhand":
 		case "background.gravedigger":
 		case "background.mason":
 		case "background.miner":
@@ -155,6 +160,7 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 	switch ( _background )
 	{
 		case "background.tailor":
+		case "background.female_tailor":
 		case "background.apprentice":
 			return 1.5;
 			break;
@@ -179,6 +185,9 @@ gt.Const.LegendMod.getMedsConsumptionModifier <- function ( _background )
 {
 	switch ( _background )
 	{
+		case "background.female_beggar":
+			return 1.5;
+			break;
 		default:
 			return 1.0;
 	}

@@ -19,6 +19,7 @@ gt.Const.LegendMod.StartTypes <- {
     Necro = "legends_necro",
     Noble = "legends_noble",
     Inventor = "legends_inventor"
+	Party = "legends_party"
 }
 
 gt.Const.LegendMod.Starts <- [
@@ -30,7 +31,7 @@ gt.Const.LegendMod.Starts <- [
     // },
     {
         name = "Beggar",
-        description = "No money, no skill, highborn will not join him. Very Hard",
+        description = "No money, no skill. Very Hard",
         banner = gt.Const.LegendMod.StartTypes.Beggar
     },
     {
@@ -71,15 +72,21 @@ gt.Const.LegendMod.Starts <- [
     // },
 	{
        name = "Berserker",
-       intro = "[img]gfx/ui/events/event_24.png[/img]Berserker start",
-       description = "Berserker",
+       intro = "[img]gfx/ui/events/event_24.png[/img]So tired. You have been walking for weeks and haven't slept in... too long. You stop and rest a moment, and the thoughts return. The wooden hut you built together. The plot of yams she had planted. The evening you returned from a hunt. They had come. Burned it all. The stores, the hut, the woman, the child. Their screams echo in your blood, calling you to avenge them. You should have been there in time. Her tortured last moments fill your mind. What they did to her was...  too unspeakable. The disgust and loathing well up again. What kind of filth could rape and kill a mother in front of her child? Your heart pounds now, cold sweat, the froth forms at the edge of your mouth. What kind of monster could then do those things to an infant child?  Your mind snaps at the memory of their broken bodies. You scream with unbridled rage. Your muscles push you on again, running blindly into another day. You must find the killers, those swine will know vengeance",
+       description = "A path of carnage and rage. Medium",
        banner = gt.Const.LegendMod.StartTypes.Berserker
     },
 	{
-        name = "Noble",
+        name = "Officer",
         description = "Rich and skilled at leadership. Easy",
-        intro = "[img]gfx/ui/events/event_24.png[/img]You were born to be a leader, raised in the company of the greatest men of our day. Somehow though, inheriting power doesn't feel as satisfying as seizing it for yourself. No, if one is to be king, it must be earned through battle and through the blood of one's subjects. Now, off to find some subjects willing to die for their betters",
+        intro = "[img]gfx/ui/events/event_24.png[/img]You were born to be a leader, raised in the company of the greatest men of our day. Somehow though, inheriting power doesn't feel as satisfying as seizing it for yourself. No, if one is to be king, it must be earned through battle and through the blood of one's subjects. Now, off to find some subjects willing to die for their betters.",
         banner = gt.Const.LegendMod.StartTypes.Noble
+    },
+	{
+        name = "Party",
+        description = "A group of six adventurers. Easy",
+        intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
+        banner = gt.Const.LegendMod.StartTypes.Party
     }
 ]
 

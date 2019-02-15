@@ -555,8 +555,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_stalwart",
 		Name = this.Const.Strings.PerkName.Stalwart,
 		Tooltip = this.Const.Strings.PerkDescription.Stalwart,
-		Icon = "skills/stalwart.png",
-		IconDisabled = "skills/stalwart_bw.png"
+		Icon = "ui/perks/stalwart.png",
+		IconDisabled = "ui/perks/stalwart_bw.png"
 	},
 	{
 		ID = "perk.battle_flow",
@@ -636,39 +636,39 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRust,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRust,
 		Icon = "ui/perks/rust56_circle.png",
-		IconDisabled = "skills/rust56_circle_bw.png",
+		IconDisabled = "ui/perks/rust56_circle_bw.png",
 	},
 	{
 		ID = "perk.legend_deathtouch",
 		Script = "scripts/skills/perks/perk_legend_deathtouch",
 		Name = this.Const.Strings.PerkName.LegendDeathtouch,
 		Tooltip = this.Const.Strings.PerkDescription.LegendDeathtouch,
-		Icon = "skills/deathtouch_circle.png",
-		IconDisabled = "skills/deathtouch_circle_bw.png"
+		Icon = "ui/perks/deathtouch_circle.png",
+		IconDisabled = "ui/perks/deathtouch_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_possess_undead",
 		Script = "scripts/skills/perks/perk_legend_possess_undead",
 		Name = this.Const.Strings.PerkName.LegendPossessUndead,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossessUndead,
-		Icon = "skills/posess56.png",
-		IconDisabled = "skills/posess56_bw.png"
+		Icon = "ui/perks/posess56.png",
+		IconDisabled = "ui/perks/posess56_bw.png"
 	},
 	{
 		ID = "perk.legend_miasma",
 		Script = "scripts/skills/perks/perk_legend_miasma",
 		Name = this.Const.Strings.PerkName.LegendMiasma,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMiasma,
-		Icon = "skills/miasma_circle.png",
-		IconDisabled = "skills/miasma_circle_bw.png"
+		Icon = "ui/perks/miasma_circle.png",
+		IconDisabled = "ui/perks/miasma_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_hex",
 		Script = "scripts/skills/perks/perk_legend_hex",
 		Name = this.Const.Strings.PerkName.LegendHex,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHex,
-		Icon = "skills/hex_circle.png",
-		IconDisabled = "skills/hex_circle_bw.png"
+		Icon = "ui/perks/hex_circle.png",
+		IconDisabled = "ui/perks/hex_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_darkflight",
@@ -692,7 +692,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecBandage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecBandage,
 		Icon = "ui/perks/bandage_circle.png",
-		IconDisabled = "skills/bandage_circle_bw.png"
+		IconDisabled = "ui/perk/bandage_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_hold_the_line",
@@ -715,64 +715,64 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_bloody_harvest",
 		Name = this.Const.Strings.PerkName.BloodyHarvest,
 		Tooltip = this.Const.Strings.PerkDescription.BloodyHarvest,
-		Icon = "ui/perks/perk_14.png",
-		IconDisabled = "ui/perks/perk_14_sw.png"
+		Icon = "ui/perks/bloody_harvest.png",
+		IconDisabled = "ui/perks/bloody_harvest_bw.png"
 	},
 	{
 		ID = "perk.devastating_strikes",
 		Script = "scripts/skills/perks/perk_devastating_strikes",
 		Name = this.Const.Strings.PerkName.DevastatingStrikes,
 		Tooltip = this.Const.Strings.PerkDescription.DevastatingStrikes,
-		Icon = "ui/perks/perk_31.png",
-		IconDisabled = "ui/perks/perk_31_sw.png"
+		Icon = "ui/perks/devastating_strikes.png",
+		IconDisabled = "ui/perks/devastating_strikes_bw.png"
 	},
 	{
 		ID = "perk.debilitate",
 		Script = "scripts/skills/perks/perk_debilitate",
 		Name = this.Const.Strings.PerkName.Debilitate,
 		Tooltip = this.Const.Strings.PerkDescription.Debilitate,
-		Icon = "ui/perks/perk_34.png",
-		IconDisabled = "ui/perks/perk_34_sw.png"
+		Icon = "ui/perks/debilitate_circle_56.png",
+		IconDisabled = "ui/perks/debilitate_circle_56_bw.png"
 	},
 	{
 		ID = "perk.slaughterer",
 		Script = "scripts/skills/perks/perk_slaughterer",
 		Name = this.Const.Strings.PerkName.Slaughterer,
 		Tooltip = this.Const.Strings.PerkDescription.Slaughterer,
-		Icon = "ui/perks/perk_25.png",
-		IconDisabled = "ui/perks/perk_25_sw.png"
+		Icon = "ui/perks/slaughterer_circle.png",
+		IconDisabled = "ui/perks/slaughterer_circle_bw.png"
 	},
 	{
 		ID = "perk.vengeance",
 		Script = "scripts/skills/perks/perk_vengeance",
 		Name = this.Const.Strings.PerkName.Vengeance,
 		Tooltip = this.Const.Strings.PerkDescription.Vengeance,
-		Icon = "ui/perks/perk_36.png",
-		IconDisabled = "ui/perks/perk_36_sw.png"
+		Icon = "ui/perks/vengeance_circle.png",
+		IconDisabled = "ui/perks/vengeance_circle_bw.png"
 	},
 	{
 		ID = "perk.ironside",
 		Script = "scripts/skills/perks/perk_ironside",
 		Name = this.Const.Strings.PerkName.Ironside,
 		Tooltip = this.Const.Strings.PerkDescription.Ironside,
-		Icon = "ui/perks/perk_35.png",
-		IconDisabled = "ui/perks/perk_35_sw.png"
+		Icon = "ui/perks/perk_101.png",
+		IconDisabled = "ui/perks/perk_101_sw.png"
 	},
 	{
 		ID = "perk.last_stand",
 		Script = "scripts/skills/perks/perk_last_stand",
 		Name = this.Const.Strings.PerkName.LastStand,
 		Tooltip = this.Const.Strings.PerkDescription.LastStand,
-		Icon = "ui/perks/perk_101.png",
-		IconDisabled = "ui/perks/perk_101.png_sw.png"
+		Icon = "ui/perks/laststand_circle.png",
+		IconDisabled = "ui/perks/laststand_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_raise_undead",
 		Script = "scripts/skills/perks/perk_legend_raise_undead",
 		Name = this.Const.Strings.PerkName.LegendRaiseUndead,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRaiseUndead,
-		Icon = "skills/active_26.png",
-		IconDisabled = "skills/active_01_sw.png"
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
 	}		
 
 ];

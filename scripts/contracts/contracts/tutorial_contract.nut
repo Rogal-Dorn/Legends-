@@ -112,6 +112,10 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("LegendsInventor");
 		} 
+		else if (this.World.Tags.get("IsLegendsParty"))
+		{
+			this.setState("LegendsParty");
+		} 
 
 		else 
 		{
@@ -681,6 +685,19 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Contracts.showActiveContract();
 			}
 		});	
+			this.m.States.push({
+			ID = "LegendsParty",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsPartySuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
 		this.m.States.push({
 			ID = "LegendsInventor",
 			function start()
@@ -1188,7 +1205,31 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			}
 
 		});
+		this.m.Screens.push({
+			ID = "LegendsPartySuccess",
+			Title = "Party",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Party),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
 
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+		});
 		this.m.Screens.push({
 			ID = "LegendsInventorSuccess",
 			Title = "Inventor",

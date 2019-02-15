@@ -1,4 +1,4 @@
-this.legend_beserker_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {
 		Tattoo = 0
 	},
@@ -156,9 +156,11 @@ this.legend_beserker_background <- this.inherit("scripts/skills/backgrounds/char
 
 	function onAdded()
 	{
-		this.character_background.onAdded();
 
-		this.m.Container.add(this.new("scripts/skills/perks/killing_frenzy"));
+		this.character_background.onAdded();
+		local actor = this.getContainer().getActor();
+		actor.setTitle("The Berserker");
+		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 		
 	}	
 
