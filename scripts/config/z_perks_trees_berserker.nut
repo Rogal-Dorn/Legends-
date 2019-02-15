@@ -55,6 +55,7 @@ local BerserkerTree = [
 	],
 	[
 		// This hard crashes the game // gt.Const.Perks.PerkDefs.Ironside,
+		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
 		gt.Const.Perks.PerkDefs.LastStand,

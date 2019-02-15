@@ -489,10 +489,10 @@ this.faction_manager <- {
 					{
 						continue;
 					}
-					else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Settlement[j].getType() == this.Const.FactionType.Settlement)
-					{
-						this.m.Factions[i].addAlly(j);
-					}
+					// else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Settlement[j].getType() == this.Const.FactionType.Settlement)
+					// {
+					// 	this.m.Factions[i].addAlly(j);
+					// }
 					else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
 					{
 						this.m.Factions[i].addAlly(j);
@@ -505,7 +505,7 @@ this.faction_manager <- {
 					{
 						this.m.Factions[i].addAlly(j);
 					}
-						else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
 					{
 						this.m.Factions[i].addAlly(j);
 					}
