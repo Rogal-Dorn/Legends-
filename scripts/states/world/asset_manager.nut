@@ -376,6 +376,18 @@ this.asset_manager <- {
 			"ranged",
 			names[2]
 		]);
+		this.m.FounderNames.push([
+			"fourth",
+			names[3]
+		]);
+		this.m.FounderNames.push([
+			"fifth",
+			names[4]
+		]);
+		this.m.FounderNames.push([
+			"sixth",
+			names[5]
+		]);
 		local roster = this.World.getPlayerRoster();
 		local bro;
 
@@ -478,7 +490,7 @@ this.asset_manager <- {
 			break;
 		case this.Const.LegendMod.StartTypes.Party:
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
+			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
 				"legend_berserker_background"
 			]);
@@ -491,11 +503,11 @@ this.asset_manager <- {
 			bro.setStartValuesEx([
 				"legend_witch_background"
 			]);
-			bro.setPlaceInFormation(4);
+			bro.setPlaceInFormation(12);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
+			bro.setName(this.m.FounderNames[2][1]);
 			bro.setStartValuesEx([
 				"legend_crusader_background"
 			]);
@@ -504,28 +516,28 @@ this.asset_manager <- {
 
 			
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
+			bro.setName(this.m.FounderNames[3][1]);
 			bro.setStartValuesEx([
 				"legend_noble_background"
 			]);
-			bro.setPlaceInFormation(6);
+			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
+			bro.setName(this.m.FounderNames[4][1]);
 			bro.setStartValuesEx([
 				"legend_necro_background"
 			]);
-			bro.setPlaceInFormation(7);
+			bro.setPlaceInFormation(13);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
+			bro.setName(this.m.FounderNames[5][1]);
 			bro.setStartValuesEx([
 				"legend_ranger_background"
 			]);
-			bro.setPlaceInFormation(8);
+			bro.setPlaceInFormation(14);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			break;

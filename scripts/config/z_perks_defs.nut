@@ -499,8 +499,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_perfect_focus",
 		Name = this.Const.Strings.PerkName.PerfectFocus,
 		Tooltip = this.Const.Strings.PerkDescription.PerfectFocus,
-		Icon = "ui/perks/perfect_focus_circle.png",
-		IconDisabled = "ui/perks/perfect_focus_circle_bw.png"
+		Icon = "ui/perks/perfectfocus_circle.png",
+		IconDisabled = "ui/perks/perfectfocus_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_firefield",
@@ -652,7 +652,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendPossessUndead,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossessUndead,
 		Icon = "ui/perks/posess56.png",
-		IconDisabled = "ui/perks/posess56_bw.png"
+		IconDisabled = "ui/perks/possess56_bw.png"
 	},
 	{
 		ID = "perk.legend_miasma",
@@ -692,7 +692,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecBandage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecBandage,
 		Icon = "ui/perks/bandage_circle.png",
-		IconDisabled = "ui/perk/bandage_circle_bw.png"
+		IconDisabled = "ui/perks/bandage_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_hold_the_line",
