@@ -694,7 +694,7 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 };
 
 
-NewCampaignMenuModule.prototype.buildMapConfig = function ()
+NewLegendCampaignMenuModule.prototype.buildMapConfig = function ()
 {
 	var leftColumn = $('<div class="column"></div>');
 	this.mMapPanel.append(leftColumn);
@@ -752,7 +752,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	}
 };
 
-NewCampaignMenuModule.prototype.updateMapConfig = function () 
+NewLegendCampaignMenuModule.prototype.updateMapConfig = function () 
 {
 	var controls = [
 		this.mMapOptions.Width,
@@ -783,7 +783,7 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 	}	
 }
 
-NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
+NewLegendCampaignMenuModule.prototype.randomizeMapConfig = function ()
 {
 
 	this.mMapOptions.Width.Value = Helper.getRandomInt(this.mMapOptions.Width.Min, this.mMapOptions.Width.Max);
@@ -799,7 +799,7 @@ NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
 	this.updateMapConfig();
 }
 
-NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv)
+NewLegendCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv)
 {
     var self = this;
 	var row = $('<div class="row"></div>');
@@ -1353,6 +1353,82 @@ NewLegendCampaignMenuModule.prototype.setBanners = function(_data)
 	{
 		console.error('ERROR: No banners specified for NewCampaignMenu::setBanners');
 	}
+}
+
+NewLegendCampaignMenuModule.prototype.setConfigOpts = function(_data)
+{
+	if(_data !== null)
+	{
+		this.mMapConfigOpts = _data;
+
+		if ('Height' in _data) {
+			this.mMapOptions.Height.Value = _data['Height'];
+			this.mMapOptions.Height.Min = _data['HeightMin'];
+			this.mMapOptions.Height.Max = _data['HeightMax'];
+		}
+		if ('Width' in _data) {
+			this.mMapOptions.Width.Value = _data['Width'];
+			this.mMapOptions.Width.Min = _data['WidthMin'];
+			this.mMapOptions.Width.Max = _data['WidthMax'];
+		}
+		if ('LandMassMult' in _data) {
+			this.mMapOptions.LandMassMult.Value = _data['LandMassMult'];
+			this.mMapOptions.LandMassMult.Min = _data['LandMassMultMin'];
+			this.mMapOptions.LandMassMult.Max = _data['LandMassMultMax'];
+		}
+		if ('WaterConnectivity' in _data) {
+			this.mMapOptions.WaterConnectivity.Value = _data['WaterConnectivity'];
+			this.mMapOptions.WaterConnectivity.Min = _data['WaterConnectivityMin'];
+			this.mMapOptions.WaterConnectivity.Max = _data['WaterConnectivityMax'];
+		}
+		if ('MinLandToWaterRatio' in _data) {
+			this.mMapOptions.MinLandToWaterRatio.Value = _data['MinLandToWaterRatio'];
+			this.mMapOptions.MinLandToWaterRatio.Min = _data['MinLandToWaterRatioMin'];
+			this.mMapOptions.MinLandToWaterRatio.Max = _data['MinLandToWaterRatioMax'];
+		}
+		if ('Snowline' in _data) {
+			this.mMapOptions.Snowline.Value = _data['Snowline'];
+			this.mMapOptions.Snowline.Min = _data['SnowlineMin'];
+			this.mMapOptions.Snowline.Max = _data['SnowlineMax'];
+		}
+		if ('NumSettlements' in _data) {
+			this.mMapOptions.NumSettlements.Value = _data['NumSettlements'];
+			this.mMapOptions.NumSettlements.Min = _data['NumSettlementsMin'];
+			this.mMapOptions.NumSettlements.Max = _data['NumSettlementsMax'];
+		}
+		if ('NumFactions' in _data) {
+			this.mMapOptions.NumFactions.Value = _data['NumFactions'];
+			this.mMapOptions.NumFactions.Min = _data['NumFactionsMin'];
+			this.mMapOptions.NumFactions.Max = _data['NumFactionsMax'];
+		}
+		if ('ForestsMult' in _data) {
+			this.mMapOptions.ForestsMult.Value = _data['ForestsMult'];
+			this.mMapOptions.ForestsMult.Min = _data['ForestsMultMin'];
+			this.mMapOptions.ForestsMult.Max = _data['ForestsMultMax'];
+		}
+		if ('SwampsMult' in _data) {
+			this.mMapOptions.SwampsMult.Value = _data['SwampsMult'];
+			this.mMapOptions.SwampsMult.Min = _data['SwampsMultMin'];
+			this.mMapOptions.SwampsMult.Max = _data['SwampsMultMax'];
+		}	
+		if ('MountainsMult' in _data) {
+			this.mMapOptions.MountainsMult.Value = _data['MountainsMult'];
+			this.mMapOptions.MountainsMult.Min = _data['MountainsMultMin'];
+			this.mMapOptions.MountainsMult.Max = _data['MountainsMultMax'];
+		}		
+		if ('FOW' in _data) {
+			this.mMapOptions.FOW = _data['FOW'];
+		}
+		if ('Debug' in _data) {
+			this.mMapOptions.Debug = _data['Debug'];
+		}
+	}
+	else
+	{
+		console.error('ERROR: No opts specified for NewCampaignMenu::setConfigOpts');
+	}
+	this.updateMapConfig();
+
 }
 
 
