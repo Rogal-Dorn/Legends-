@@ -350,7 +350,7 @@ this.asset_manager <- {
 		this.updateFood();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 6; i = ++i )
 		{
 			while (true)
 			{
