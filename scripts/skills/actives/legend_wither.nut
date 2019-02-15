@@ -30,7 +30,7 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Debilitate a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color].";
+		return "Wither a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color].";
 	}
 
 	function getTooltip()
@@ -38,10 +38,6 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 		return this.skill.getDefaultUtilityTooltip();
 	}
 
-	function isUsable()
-	{
-		return this.skill.isUsable() && !this.getContainer().getActor().getSkills().hasSkill("effects.debilitating_attack");
-	}
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
@@ -50,13 +46,19 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.m.Container.add(this.new("scripts/skills/effects/debilitating_attack_effect"));
-		return true;
+		local target = _targetTile.getEntity();
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+
+		if (target.isAlive())
+		{
+			target.getSkills().add(this.new("scripts/skills/effects/debilitated_effect"));
+
+			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has left " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " withered");
+			}
+		}
 	}
 
-	function onRemoved()
-	{
-		this.m.Container.removeByID("effects.debilitating_attack");
-	}
 
 });

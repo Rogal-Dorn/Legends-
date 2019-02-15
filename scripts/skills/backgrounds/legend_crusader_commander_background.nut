@@ -153,6 +153,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 
 	function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeDefense] = 3;
 		local items = this.getContainer().getActor().getItems();
 		local stash =this.World.Assets.getStash()
 		local r;
