@@ -476,51 +476,50 @@ this.faction_manager <- {
 		{
 			if (this.m.Factions[i] == null)
 			{
+				continue
 			}
-			else
-			{
-				for( local j = 0; j < this.m.Factions.len(); j = ++j )
-				{
-					if ((j == 1 || j == 2) && (this.m.Factions[i].getType() == this.Const.FactionType.Settlement || this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse))
-					{
-						this.m.Factions[i].addAlly(j);
-					}
-					else if (this.m.Factions[j] == null)
-					{
-						continue;
-					}
-					// else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Settlement[j].getType() == this.Const.FactionType.Settlement)
-					// {
-					// 	this.m.Factions[i].addAlly(j);
-					// }
-					else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
-					{
-						this.m.Factions[i].addAlly(j);
-					}
-					else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.NobleHouse)
-					{
-						this.m.Factions[i].addAlly(j);
-					}
-					else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
-					{
-						this.m.Factions[i].addAlly(j);
-					}
-					else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
-					{
-						this.m.Factions[i].addAlly(j);
-					}
-					else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
-					{
-						this.m.Factions[i].addAlly(j);
-					}
-					else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
-					{
-						this.m.Factions[i].addAlly(j);
-					}
-				}
 
-				this.m.Factions[i].updatePlayerRelation();
+			for( local j = 0; j < this.m.Factions.len(); j = ++j )
+			{
+				if ((j == 1 || j == 2) && (this.m.Factions[i].getType() == this.Const.FactionType.Settlement || this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse))
+				{
+					this.m.Factions[i].addAlly(j);
+				}
+				else if (this.m.Factions[j] == null)
+				{
+					continue;
+				}
+				else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
+				{
+					this.m.Factions[i].addAlly(j);
+				}
+				else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
+				{
+					this.m.Factions[i].addAlly(j);
+				}
+				else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.NobleHouse)
+				{
+					this.m.Factions[i].addAlly(j);
+				}
+				else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
+				{
+					this.m.Factions[i].addAlly(j);
+				}
+				else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
+				{
+					this.m.Factions[i].addAlly(j);
+				}
+				else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
+				{
+					this.m.Factions[i].addAlly(j);
+				}
+				else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
+				{
+					this.m.Factions[i].addAlly(j);
+				}
 			}
+
+			this.m.Factions[i].updatePlayerRelation();
 		}
 	}
 
