@@ -21,8 +21,8 @@ this.legend_minor_sleep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legned_minor_sleep_skill";
 		this.m.Name = "Minor Sleep";
 		this.m.Description = "";
-		this.m.Icon = "skills/active_116.png";
-		this.m.IconDisabled = "skills/active_116.png";
+		this.m.Icon = "skills/sleep_square.png";
+		this.m.IconDisabled = "skills/sleep_square_bw.png";
 		this.m.Overlay = "active_116";
 		this.m.SoundOnUse = [
 			"sounds/enemies/alp_sleep_01.wav",

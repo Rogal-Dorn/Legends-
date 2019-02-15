@@ -6,8 +6,8 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Daze";
 		this.m.Description = "Assault the senses of your target with a flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively.";
 		this.m.KilledString = "Dazed";
-		this.m.Icon = "skills/active_133.png";
-		this.m.IconDisabled = "skills/active_133_sw.png";
+		this.m.Icon = "skills/daze_square.png";
+		this.m.IconDisabled = "skills/daze_square_bw.png";
 		this.m.Overlay = "active_133";
 		this.m.SoundOnUse = [
 			"sounds/combat/cudgel_01.wav",

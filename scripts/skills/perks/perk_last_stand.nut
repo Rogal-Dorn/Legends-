@@ -5,7 +5,8 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.last_stand";
 		this.m.Name = this.Const.Strings.PerkName.LastStand;
 		this.m.Description = this.Const.Strings.PerkDescription.LastStand;
-		this.m.Icon = "skills/passive_03.png";
+		this.m.Icon = "ui/perks/laststand_circle.png";
+		this.m.IconDisabled = "ui/perks/laststand_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

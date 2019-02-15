@@ -5,9 +5,9 @@ this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_miasma";
 		this.m.Name = "Miasma";
 		this.m.Description = "Release a cloud of noxious gasses that effects living beings";
-		this.m.Icon = "skills/active_101.png";
-		this.m.IconDisabled = "skills/active_101.png";
-		this.m.Overlay = "active_101";
+		this.m.Icon = "skills/miasma_square.png";
+		this.m.IconDisabled = "skills/miasma_square_bw.png";
+		this.m.Overlay = "miasma_square";
 		this.m.SoundOnUse = [
 			"sounds/enemies/miasma_spell_01.wav",
 			"sounds/enemies/miasma_spell_02.wav",
@@ -34,7 +34,7 @@ this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.MaxLevelDifference = 4;

@@ -6,6 +6,7 @@ this.perk_legend_horrify <- this.inherit("scripts/skills/skill", {
 		this.m.Name = this.Const.Strings.PerkName.LegendHorrify;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendHorrify;
 		this.m.Icon = "ui/perks/horrify56.png";
+		this.m.IconDisabled = "ui/perks/horrify56_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

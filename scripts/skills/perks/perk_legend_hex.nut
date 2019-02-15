@@ -5,7 +5,8 @@ this.perk_legend_hex <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_hex";
 		this.m.Name = this.Const.Strings.PerkName.LegendHex;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendHex;
-		this.m.Icon = "ui/perks/perk_27.png";
+		this.m.Icon = "ui/perks/hex_circle.png";
+		this.m.IconDisabled = "ui/perks/hex_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

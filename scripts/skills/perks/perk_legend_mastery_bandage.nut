@@ -5,8 +5,8 @@ this.perk_legend_mastery_bandage <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_mastery_bandage";
 		this.m.Name = this.Const.Strings.PerkName.LegendSpecBandage;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendSpecBandage;
-		this.m.Icon = "skills/active_105.png";
-		this.m.IconDisabled = "skills/active_105_sw.png";
+		this.m.Icon = "ui/perks/bandage_circle.png";
+		this.m.IconDisabled = "ui/perks/bandage_circle_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

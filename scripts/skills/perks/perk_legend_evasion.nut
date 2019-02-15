@@ -5,7 +5,8 @@ this.perk_legend_evasion <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_evasion";
 		this.m.Name = this.Const.Strings.PerkName.LegendEvasion;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendEvasion;
-		this.m.Icon = "ui/perks/perk_29.png";
+		this.m.Icon = "ui/perks/evasion_circle.png";
+		this.m.IconDisabled = "ui/perks/evasion_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
