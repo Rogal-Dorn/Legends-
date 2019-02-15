@@ -116,7 +116,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				20
 			],
 			Stamina = [
-				10,
+				20,
 				10
 			],
 			MeleeSkill = [
@@ -128,8 +128,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				-5
 			],
 			MeleeDefense = [
-				0,
-				0
+				20,
+				10
 			],
 			RangedDefense = [
 				-5,

@@ -124,8 +124,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 3;
-		talents[this.Const.Attributes.RangedDefense] = 2;
-		talents[this.Const.Attributes.Fatigue] = 1;
+		talents[this.Const.Attributes.RangedDefense] = 1;
+		talents[this.Const.Attributes.Fatigue] = 2;
 
 		local items = this.getContainer().getActor().getItems();
 

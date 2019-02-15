@@ -101,12 +101,12 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 				10
 			],
 			Stamina = [
-				18,
-				23
+				30,
+				25
 			],
 			MeleeSkill = [
-				6,
-				0
+				30,
+				20
 			],
 			RangedSkill = [
 				-5,
@@ -164,88 +164,41 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 
 	function onAddEquipment()
 	{
-		local items = this.getContainer().getActor().getItems();
+
+	local items = this.getContainer().getActor().getItems();
+		local stash = this.World.Assets.getStash()
+		stash.removeByID("supplies.ground_grains");
+		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
+		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));		
+		stash.add(this.new("scripts/items/weapons/throwing_axe"));
+		items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));
 		local r;
 
-		if (this.Const.DLC.Unhold)
-		{
-			r = this.Math.rand(0, 7);
+
+			r = this.Math.rand(0, 4);
 
 			if (r == 0)
 			{
-				items.equip(this.new("scripts/items/weapons/hatchet"));
+				items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
 			}
 			else if (r == 1)
 			{
-				items.equip(this.new("scripts/items/weapons/wooden_stick"));
+				items.equip(this.new("scripts/items/weapons/warbrand"));
 			}
 			else if (r == 2)
 			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_metal_club"));
+				items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
 			}
+
 			else if (r == 3)
 			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_wooden_club"));
+				items.equip(this.new("scripts/items/weapons/greenskins/orc_flail_2h"));
 			}
 			else if (r == 4)
 			{
-				items.equip(this.new("scripts/items/weapons/boar_spear"));
+				items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 			}
-			else if (r == 5)
-			{
-				items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-			}
-			else if (r == 6)
-			{
-				items.equip(this.new("scripts/items/weapons/two_handed_wooden_hammer"));
-			}
-			else if (r == 7)
-			{
-				items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
-			}
-		}
-		else
-		{
-			r = this.Math.rand(0, 6);
-
-			if (r == 0)
-			{
-				items.equip(this.new("scripts/items/weapons/hatchet"));
-			}
-			else if (r == 1)
-			{
-				items.equip(this.new("scripts/items/weapons/wooden_stick"));
-			}
-			else if (r == 2)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_metal_club"));
-			}
-			else if (r == 3)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_wooden_club"));
-			}
-			else if (r == 4)
-			{
-				items.equip(this.new("scripts/items/weapons/boar_spear"));
-			}
-			else if (r == 5)
-			{
-				items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-			}
-		}
-
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/leather_wraps"));
-		}
-	}
-
-	function onUpdate( _properties )
-	{
-		this.character_background.onUpdate(_properties);
-		_properties.XPGainMult *= 0.85;
 	}
 
 	function onSerialize( _out )

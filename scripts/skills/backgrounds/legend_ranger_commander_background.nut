@@ -145,7 +145,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 		if (r == 0)
 		{
-			items.addToBag(this.new("scripts/items/weapons/knife"));
+			items.addToBag(this.new("scripts/items/weapons/dagger"));
 		}
 		if (r == 1)
 		{
@@ -156,15 +156,15 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
+			items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/armor/thick_tunic"));
+			items.equip(this.new("scripts/items/armor/padded_leather"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/armor/leather_tunic"));
+			items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		}
 
 		r = this.Math.rand(0, 1);
