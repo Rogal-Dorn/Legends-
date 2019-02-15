@@ -156,9 +156,11 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 
 	function onAdded()
 	{
+
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
+		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 	}	
 
 
@@ -168,6 +170,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
+		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
+		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));		
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/weapons/throwing_axe"));
