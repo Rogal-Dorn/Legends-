@@ -392,6 +392,7 @@ this.asset_manager <- {
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 			this.setBrothersMax(6);
 			break;
 
@@ -403,6 +404,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 			this.setBrothersMax(6);
 			break;
 
@@ -413,6 +415,7 @@ this.asset_manager <- {
 				"legend_ranger_commander_background"
 			]);
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 			this.setBrothersMax(6);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -441,6 +444,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 			this.setBrothersMax(6);
 			break;
 
@@ -453,6 +457,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 			this.setBrothersMax(6);
 			break;
 
@@ -475,6 +480,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 			this.setBrothersMax(6);
 			break;
 
@@ -487,6 +493,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);

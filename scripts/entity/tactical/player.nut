@@ -35,7 +35,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			FavoriteWeaponUses = 0,
 			CurrentWeaponUses = 0
 		},
-		Formations = null
+		Formations = null,
+		VeteranPerks = 0
 	},
 	function setName( _value )
 	{
@@ -170,6 +171,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setCommander( _f )
 	{
 		this.m.IsCommander = _f;
+	}
+
+	function setVeteranPerks( _f )
+	{
+		this.m.VeteranPerks = _f;
 	}
 
 	function isLeveled()
@@ -1558,7 +1564,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			++this.m.PerkPoints;
 		}
 
-		++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
+		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
 
 		return true;
 	}
@@ -1627,6 +1633,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (this.m.Level == 11)
 			{
 				this.updateAchievement("OldAndWise", 1, 1);
+			}
+
+			if (this.m.Level > 11 && this.m.VeteranPerks > 0)
+			{
+				if ((this.m.Level - 1) % this.m.VeteranPerks == 0) {
+					++this.m.PerkPoints;
+				}
 			}
 		}
 	}
@@ -2466,6 +2479,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU32(this.m.LifetimeStats.CurrentWeaponUses);
 		_out.writeBool(this.m.IsTryoutDone);
 		this.m.Formations.onSerialize(_out);
+		_out.writeU8(this.m.VeteranPerks);
 
 	}
 
@@ -2546,6 +2560,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 46)
 		{
 			this.m.Formations.onDeserialize(_in);
+		}
+		
+		if (_in.getMetaData().getVersion() >= 47)
+		{
+			this.m.VeteranPerks = _in.readU8();
 		}
 
 	}
