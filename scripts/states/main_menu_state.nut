@@ -58,8 +58,6 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setBanners(this.Const.PlayerBanners);
-		this.m.MainMenuScreen.getNewCampaignMenuModule().setConfigOpts(this.Const.World.NewCampaignOpts());
-
 
 		this.m.MainMenuScreen.getNewLegendCampaignMenuModule().setBanners(this.Const.PlayerBanners);
 		this.m.MainMenuScreen.getNewLegendCampaignMenuModule().setConfigOpts(this.Const.World.NewCampaignOpts());
