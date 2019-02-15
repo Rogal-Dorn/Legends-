@@ -45,12 +45,12 @@ gt.Const.World.NewCampaignOpts <- function ()
 		Height = this.Const.World.Settings.SizeY,
 		HeightMin = 60,
 		HeightMax = 260,
-		LandMassMult = 50 //this.Const.World.Settings.LandMassMult * 100 - 100,
+		LandMassMult = 50, //this.Const.World.Settings.LandMassMult * 100 - 100,
 		LandMassMultMin = 1,
 		LandMassMultMax = 100,
-		WaterConnectivity = this.Const.World.Settings.WaterConnectivity,
+		WaterConnectivity = this.Const.World.Settings.WaterConnectivity - 34,
 		WaterConnectivityMin = 1,
-		WaterConnectivityMax = 100,
+		WaterConnectivityMax = 8,
 		MinLandToWaterRatio = this.Const.World.Settings.MinLandToWaterRatio * 10,
 		MinLandToWaterRatioMin = 1,
 		MinLandToWaterRatioMax = 50,
@@ -59,19 +59,20 @@ gt.Const.World.NewCampaignOpts <- function ()
 		SnowlineMax = 100,
 		NumSettlements = 19,
 		NumSettlementsMax = 60,
-		NumSettlementsMin = 6
+		NumSettlementsMin = 6,
 		NumFactions = 3,
 		NumFactionsMin = 1,
-		NumFactionsMax = Math.min(11, this.Const.GetFactionArchetypesList().len())
+		NumFactionsMax = Math.min(11, this.Const.GetFactionArchetypesList().len()),
 		FOW = true,
 		ForestsMult = 50,
 		ForestsMultMax = 100,
 		ForestsMultMin = 1
 		SwampsMult = 50,
 		SwampsMultMax = 100,
-		SwampsMultMin = 1
+		SwampsMultMin = 1,
 		MountainsMult = 50,
 		MountainsMultMax = 100,
-		MountainsMultMin = 1				
+		MountainsMultMin = 1,
+		Debug = false
 	}
 }

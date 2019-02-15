@@ -86,12 +86,18 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		local ratio = nonOcean * 1.0 / (ocean * 1.0)
 		//Above 50% We want more land than water
 		if (this.Const.World.Settings.LandMassMult >= 1.5) {
+			return ratio >= 1.5
+		} else if (this.Const.World.Settings.LandMassMult >= 1.4) {
+			return ratio >= 1.4
+		} else if (this.Const.World.Settings.LandMassMult >= 1.3) {
+			return ratio >= 1.3
+		} else if (this.Const.World.Settings.LandMassMult >= 1.2) {
+			return ratio >= 1.2
+		} else if (this.Const.World.Settings.LandMassMult >= 1.1) {
+			return ratio >= 1.1
+		} else {
 			return ratio >= 1.0
 		}
-		//Below 50% we want more water than land
-		return ratio < 1.0 && ratio > 0.25
-
-		//return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
 	}
 
 	function clearWorld( _rect )

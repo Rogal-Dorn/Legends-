@@ -70,7 +70,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		GameWon = null,
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
-		CampaignSettings = null
+		CampaignSettings = null,
+		DebugMap = false
 	},
 	function getPlayer()
 	{
@@ -1023,22 +1024,20 @@ this.world_state <- this.inherit("scripts/states/state", {
 			tries = --tries
 			this.logInfo("Invalid map. Regenerating...")
 			
-			//Failures are because of water issues, help map generation towards desired results
+			//Failures are because of water issues, help map generation towards default results
 			if (tries > 2)
 			{
-				//Above 50% We want more land than water
-				if (this.Const.World.Settings.LandMassMult > 1.5) {
-					this.Const.World.Settings.LandMassMult -= 0.02 * this.Const.World.Settings.LandMassMult
+				if (this.Const.World.Settings.LandMassMult > 1.4) {
+					this.Const.World.Settings.LandMassMult -= 0.05;
 				} else {
-					this.Const.World.Settings.LandMassMult += 0.02 * this.Const.World.Settings.LandMassMult
+					this.Const.World.Settings.LandMassMult += 0.05;
 				}
 
-				// if (this.Const.World.Settings.WaterConnectivity > 38) {
-				// 	this.Const.World.Settings.WaterConnectivity = Math.max(28, this.Const.World.Settings.WaterConnectivity -  0.05 * this.Const.World.Settings.WaterConnectivity)
-				// } else {
-				// //Below 50% we want more water than land
-				// 	this.Const.World.Settings.WaterConnectivity = Math.min(48, this.Const.World.Settings.WaterConnectivity +  0.05 * this.Const.World.Settings.WaterConnectivity)
-				// }
+				if (this.Const.World.Settings.WaterConnectivity > 38) {
+					--this.Const.World.Settings.WaterConnectivity;
+				} else {
+					++this.Const.World.Settings.WaterConnectivity;
+				}
 			}
 		}
 
@@ -1119,7 +1118,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		c.start();
 		this.World.Contracts.addContract(c);
 		this.World.Contracts.setActiveContract(c, true);
-		this.World.setFogOfWar(false);
+		this.World.setFogOfWar(!this.m.DebugMap);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
 	}
 
@@ -1180,7 +1179,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function setNewCampaignSettings( _settings )
 	{
+		foreach(k,v in _settings) 
+		{
+			this.logInfo(k + " = " + v);
+		}
 		this.m.CampaignSettings = _settings;
+		this.m.DebugMap = _settings.Debug;
 	}
 
 	function enterLocation( _location )
@@ -1333,7 +1337,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
 					{
-						++factions[party.getFaction()];
+						if (t.Faction >= factions.len())
+						{
+							factions.resize(t.Faction + 1, 0);
+						}
+						++factions[t.Faction];
 					}
 				}
 			}

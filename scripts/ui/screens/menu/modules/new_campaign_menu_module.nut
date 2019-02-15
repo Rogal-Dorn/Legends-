@@ -72,8 +72,8 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Width = _settings[9],
 			Height = _settings[10],
 			LandMassMult = (_settings[11] + 100) / 100.0 ,
-			WaterConnectivity = _settings[12],
-			MinLandToWaterRatio = _settings[13] / 10.0,
+			WaterConnectivity = _settings[12] + 34,
+			MinLandToWaterRatio = _settings[13],
 			Snowline = _settings[14] / 100.0,
 			NumSettlements = _settings[15],
 			NumFactions = _settings[16],
@@ -81,7 +81,8 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			FOW = _settings[17],
 			ForestsMult = _settings[18] / 100.0,
 			SwampsMult = _settings[19] / 100.0 ,
-			MountainsMult = _settings[20] / 100.0
+			MountainsMult = _settings[20] / 100.0,
+			Debug = _settings[21]
 		};
 
 		if (this.m.OnStartButtonPressedListener != null)
