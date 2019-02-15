@@ -8,7 +8,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.ID = "background.legend_commander_berserker";
 		this.m.Name = "Berserker";
 		this.m.Icon = "ui/backgrounds/background_31.png";
-		// this.m.BackgroundDescription = "Wildmen are used to the hard life of the wild where only the strong prevail. They are less used to the life of cities, where the astute and deceitful rule.";
+		// this.m.BackgroundDescription = "Berserkers are used to the hard life of the wild where only the strong prevail. They are less used to the life of cities, where the astute and deceitful rule.";
 		// this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
 		// this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
 		this.m.HiringCost = 100;
@@ -56,7 +56,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Beards = this.Const.Beards.Wild;
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 3;
+		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
 	}
@@ -92,11 +92,11 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 	{
 		local c = {
 			Hitpoints = [
-				12,
+				20,
 				10
 			],
 			Bravery = [
-				12,
+				20,
 				10
 			],
 			Stamina = [
@@ -176,80 +176,37 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/weapons/throwing_axe"));
+		items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));
 		local r;
 
-		if (this.Const.DLC.Unhold)
-		{
-			r = this.Math.rand(0, 7);
+
+			r = this.Math.rand(0, 4);
 
 			if (r == 0)
 			{
-				items.equip(this.new("scripts/items/weapons/hatchet"));
-			}
-			else if (r == 1)
-			{
-				items.equip(this.new("scripts/items/weapons/wooden_stick"));
-			}
-			else if (r == 2)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_metal_club"));
-			}
-			else if (r == 3)
-			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_wooden_club"));
-			}
-			else if (r == 4)
-			{
-				items.equip(this.new("scripts/items/weapons/boar_spear"));
-			}
-			else if (r == 5)
-			{
-				items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-			}
-			else if (r == 6)
-			{
-				items.equip(this.new("scripts/items/weapons/two_handed_wooden_hammer"));
-			}
-			else if (r == 7)
-			{
-				items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
-			}
-		}
-		else
-		{
-			r = this.Math.rand(0, 6);
-
-			if (r == 0)
-			{
-				items.equip(this.new("scripts/items/weapons/hand_axe"));
+				items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
 			}
 			else if (r == 1)
 			{
 				items.equip(this.new("scripts/items/weapons/warbrand"));
 			}
-			else if (r == 4)
+			else if (r == 2)
 			{
-				items.equip(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
+				items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
 			}
-			else if (r == 5)
+
+			else if (r == 3)
+			{
+				items.equip(this.new("scripts/items/weapons/greenskins/orc_flail_2h"));
+			}
+			else if (r == 4)
 			{
 				items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 			}
-		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/leather_wraps"));
-		}
 	}
 
-	function onUpdate( _properties )
-	{
-		this.character_background.onUpdate(_properties);
-		_properties.XPGainMult *= 0.85;
-	}
+
 
 	function onSerialize( _out )
 	{

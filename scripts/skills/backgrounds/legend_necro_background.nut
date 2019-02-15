@@ -80,10 +80,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/actives/legend_hex_skill"));
-		this.m.Container.add(this.new("scripts/skills/actives/legend_rust"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_wither"));
-		this.m.Container.add(this.new("scripts/skills/actives/legend_darkflight"));
 	}	
 
 		function onChangeAttributes()
@@ -139,7 +136,6 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/strange_meat_item"));
 	}
 
 });

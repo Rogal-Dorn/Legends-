@@ -54,7 +54,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = this.Const.Beards.Female;
 		this.m.Body = "bust_naked_body_03";
 		this.m.Level = 2;
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -83,7 +83,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.character_background.onAdded();
 
 		this.m.Container.add(this.new("scripts/skills/actives/legend_daze"));
-		this.m.Container.add(this.new("scripts/skills/actives/legend_entice"));
+
 
 	}	
 		function onChangeAttributes()
