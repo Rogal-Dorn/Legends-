@@ -1558,7 +1558,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			++this.m.PerkPoints;
 		}
 
-		++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
+	//	++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
 
 		return true;
 	}

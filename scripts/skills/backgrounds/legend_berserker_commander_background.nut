@@ -112,12 +112,12 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				0
 			],
 			MeleeDefense = [
-				-5,
-				0
+				-10,
+				-10
 			],
 			RangedDefense = [
-				-5,
-				-5
+				-15,
+				-15
 			],
 			Initiative = [
 				-5,
@@ -166,6 +166,10 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 
 	function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeSkill] = 3;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
@@ -203,6 +207,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			{
 				items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 			}
+
 
 	}
 

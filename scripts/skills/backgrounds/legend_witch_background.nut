@@ -51,7 +51,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Female;
+		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.Level = 2;
 		this.m.IsFemaleBackground = true;
@@ -130,9 +130,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Initiative] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
-		talents[this.Const.Attributes.Hitpoints] = 1;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/wizard_robe"));
 		items.equip(this.new("scripts/items/helmets/wizard_hat"));

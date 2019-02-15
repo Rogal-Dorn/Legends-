@@ -29,7 +29,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.Female;
+		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
@@ -55,7 +55,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 
 	function onBuildDescription()
 	{
-		return "{A minor noble | As the third in the line of succession | A young and brash noble | A skilled swordsman}, %name%\'s life at court {had grown stale for him | was not exciting enough for him with endless studying of court etiquette and family lineage | felt like wasting the best time of his life | was not half as exciting to him as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of his brother | To the frustration of his mother | Finally making a decision to change things}, %name% rode out to {prove himself | make a name for himself | earn glory on the battlefield | test his skills in battle} and {live life to its fullest as he imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn his place in the world | be knighted for his valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
+		return "{A minor noble | As the third in the line of succession | A young and brash noble | A skilled swordswoman}, %name%\'s life at court {had grown stale for her | was not exciting enough for her with endless studying of court etiquette and family lineage | felt like wasting the best time of her life | was not half as exciting to her as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of her brother | To the frustration of her mother | Finally making a decision to change things}, %name% rode out to {prove herself | make a name for herself | earn glory on the battlefield | test her skills in battle} and {live life to its fullest as she imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn her place in the world | be knighted for her valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
 	}
 
 
@@ -105,8 +105,6 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 
 
-		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 		
 
 	}
@@ -125,7 +123,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/wine_item"));
-		stash.add(this.new("scripts/items/supplies/signet_ring_item"));
+		stash.add(this.new("scripts/items/loot/signet_ring_item"));
 		stash.add(this.new("scripts/items/special/golden_goose_item"));
 
 	}

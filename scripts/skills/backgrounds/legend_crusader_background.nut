@@ -153,6 +153,9 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 
 	function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeDefense] = 3;
 		local items = this.getContainer().getActor().getItems();
 		local stash =this.World.Assets.getStash()
 		local r;
@@ -161,7 +164,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
-		items.equip(this.new("scripts/items/weapons/two_handed_hammer
+		items.equip(this.new("scripts/items/weapons/two_handed_hammer"));
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/helmets/mail_coif"));
 	}

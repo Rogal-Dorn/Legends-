@@ -372,7 +372,7 @@ gt.Const.Beards.All <- [
 	"16"
 ];
 gt.Const.Beards.Female <- [
-	"",
+	""
 ];
 
 gt.Const.Beards.Tidy <- [

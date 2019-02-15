@@ -29,7 +29,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.Female;
+		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
@@ -103,7 +103,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 		
 
 	}
@@ -118,14 +117,22 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/helmets/mail_coif"));
-		items.equip(this.new("scripts/items/weapons/noble_sword"));
+		
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/wine_item"));
-		stash.add(this.new("scripts/items/supplies/signet_ring_item"));
+		stash.add(this.new("scripts/items/loot/signet_ring_item"));
 		stash.add(this.new("scripts/items/special/golden_goose_item"));
 
+		if (this.Const.DLC.Unhold)
+		{
+		items.equip(this.new("scripts/items/weapons/noble_sword"));
+		}
+		else
+		{
+		items.equip(this.new("scripts/items/weapons/fencing_sword"));
+		}
 	}
 
 });
