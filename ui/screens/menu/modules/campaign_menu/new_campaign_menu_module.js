@@ -89,6 +89,7 @@ var NewCampaignMenuModule = function()
 	this.mMapOptions = {
 		Width: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.width',
 			Min: 0,
 			Max: 0,
@@ -97,6 +98,7 @@ var NewCampaignMenuModule = function()
 		},
 		Height: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.height',
 			Min: 0,
 			Max: 0,
@@ -105,6 +107,7 @@ var NewCampaignMenuModule = function()
 		},
 		LandMassMult: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.landmassmult',
 			Min: 0,
 			Max: 0,
@@ -113,6 +116,7 @@ var NewCampaignMenuModule = function()
 		},
 		WaterConnectivity: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.waterconnectivity',
 			Min: 0,
 			Max: 0,
@@ -121,6 +125,7 @@ var NewCampaignMenuModule = function()
 		},
 		MinLandToWaterRatio: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.minlandtowaterratio',
 			Min: 0,
 			Max: 0,
@@ -129,6 +134,7 @@ var NewCampaignMenuModule = function()
 		},
 		Snowline: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.snowline',
 			Min: 0,
 			Max: 0,
@@ -137,6 +143,7 @@ var NewCampaignMenuModule = function()
 		},
 		Vision: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.vision',
 			Min: 0,
 			Max: 5000,
@@ -145,6 +152,7 @@ var NewCampaignMenuModule = function()
 		},		
 		NumSettlements: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.settlements',
 			Min: 0,
 			Max: 0,
@@ -153,6 +161,7 @@ var NewCampaignMenuModule = function()
 		},
 		NumFactions: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.factions',
 			Min: 0,
 			Max: 0,
@@ -161,6 +170,7 @@ var NewCampaignMenuModule = function()
 		},
 		ForestsMult: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.forests',
 			Min: 0,
 			Max: 0,
@@ -169,6 +179,7 @@ var NewCampaignMenuModule = function()
 		},
 		SwampsMult: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.swamps',
 			Min: 0,
 			Max: 0,
@@ -177,18 +188,23 @@ var NewCampaignMenuModule = function()
 		},
 		MountainsMult: {
 			Control: null,
+			Title: null,
 			OptionsKey: 'map.mountains',
 			Min: 0,
 			Max: 0,
 			Value: 0,
 			Step: 1
 		},						
-		FOW : true
+		FOW : true,
+		Debug: false
 	};
 
 	this.mMapConfigOpts = {};
 
 	this.mFogofWarCheckbox = null;
+	this.mFogofWarCheckboxLabel = null;
+	this.mDebugCheckbox = null;
+	this.mDebugCheckboxLabel = null;	
     // generics
     this.mIsVisible = false;
 };
@@ -685,10 +701,10 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);	
 	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);	
-	//this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
-	this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.ForestsMult, 'Forest Density', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.SwampsMult, 'Swamp Density', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
@@ -698,13 +714,12 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
-
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mFogofWarCheckbox = $('<input type="checkbox" id="cb-fog-of-war"/>');
 	control.append(this.mFogofWarCheckbox);
-	var label = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Settlements start hidden</label>');
-	control.append(label);
+	this.mFogofWarCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-fog-of-war">Settlements start hidden</label>');
+	control.append(this.mFogofWarCheckboxLabel);
 	this.mFogofWarCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
@@ -714,6 +729,24 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	{
 		this.mFogofWarCheckbox.iCheck('check');
 	}
+
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mDebugCheckbox = $('<input type="checkbox" id="cb-debug"/>');
+	control.append(this.mDebugCheckbox);
+	this.mDebugCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-debug">Debug</label>');
+	control.append(this.mDebugCheckboxLabel);
+	this.mDebugCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	if (this.mMapOptions.Debug)
+	{
+		this.mDebugCheckbox.iCheck('check');
+	}
 };
 
 NewCampaignMenuModule.prototype.updateMapConfig = function () 
@@ -722,7 +755,7 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 		this.mMapOptions.Width,
 		this.mMapOptions.Height,
 		this.mMapOptions.LandMassMult,
-		//this.mMapOptions.WaterConnectivity,
+		this.mMapOptions.WaterConnectivity,
 		this.mMapOptions.Snowline,
 		this.mMapOptions.NumSettlements,
 		this.mMapOptions.NumFactions,
@@ -741,6 +774,10 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 	{
 		this.mFogofWarCheckbox.iCheck('check');
 	}
+	if (this.mMapOptions.Debug)
+	{
+		this.mDebugCheckbox.iCheck('check');
+	}	
 }
 
 NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
@@ -749,7 +786,7 @@ NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
 	this.mMapOptions.Width.Value = Helper.getRandomInt(this.mMapOptions.Width.Min, this.mMapOptions.Width.Max);
 	this.mMapOptions.Height.Value = Helper.getRandomInt(this.mMapOptions.Height.Min, this.mMapOptions.Height.Max);
 	this.mMapOptions.LandMassMult.Value = Helper.getRandomInt(this.mMapOptions.LandMassMult.Min, this.mMapOptions.LandMassMult.Max);
-	//this.mMapOptions.WaterConnectivity.Value = Helper.getRandomInt(this.mMapOptions.WaterConnectivity.Min, this.mMapOptions.WaterConnectivity.Max);
+	this.mMapOptions.WaterConnectivity.Value = Helper.getRandomInt(this.mMapOptions.WaterConnectivity.Min, this.mMapOptions.WaterConnectivity.Max);
 	this.mMapOptions.Snowline.Value = Helper.weightedRandom(this.mMapOptions.Snowline.Min, this.mMapOptions.Snowline.Max, 90, 5);
 	this.mMapOptions.NumSettlements.Value = Helper.getRandomInt(this.mMapOptions.NumSettlements.Min, this.mMapOptions.NumSettlements.Max);
 	this.mMapOptions.NumFactions.Value = Helper.getRandomInt(this.mMapOptions.NumFactions.Min, this.mMapOptions.NumFactions.Max);
@@ -764,8 +801,8 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
     var self = this;
 	var row = $('<div class="row"></div>');
 	_parentDiv.append(row);
-	var scalingTile = $('<div class="title title-font-big font-bold font-color-title">' + _label + '</div>');
-	row.append(scalingTile);
+	_definition.Title = $('<div class="title title-font-big font-bold font-color-title">' + _label + '</div>');
+	row.append(_definition.Title);
 
 	var control = $('<div class="scale-control"></div>');
 	row.append(control);
@@ -896,6 +933,39 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mEvilPermanentDestructionLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction });
 	this.mEvilPermanentDestructionCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction });
+
+	this.mMapOptions.Width.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.width' });
+	this.mMapOptions.Width.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.width' });
+	
+	this.mMapOptions.Height.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.height' });
+	this.mMapOptions.Height.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.height' });	
+	
+	this.mMapOptions.LandMassMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.landmass' });
+	this.mMapOptions.LandMassMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.landmass' });
+
+	this.mMapOptions.WaterConnectivity.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.water' });
+	this.mMapOptions.WaterConnectivity.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.water' });	
+
+	this.mMapOptions.Snowline.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.snowline' });
+	this.mMapOptions.Snowline.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.snowline' });	
+
+	this.mMapOptions.MountainsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });
+	this.mMapOptions.MountainsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });	
+
+	this.mMapOptions.ForestsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });
+	this.mMapOptions.ForestsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });	
+
+	this.mMapOptions.SwampsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });
+	this.mMapOptions.SwampsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });	
+
+	this.mMapOptions.NumSettlements.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.settlements' });
+	this.mMapOptions.NumSettlements.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.settlements' });	
+
+	this.mMapOptions.NumFactions.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.factions' });
+	this.mMapOptions.NumFactions.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.factions' });	
+
+	this.mFogofWarCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.fow' });
+	this.mFogofWarCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.fow' });
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function ()
@@ -950,6 +1020,39 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mEvilPermanentDestructionLabel.unbindTooltip();
 	this.mEvilPermanentDestructionCheckbox.unbindTooltip();
+
+	this.mMapOptions.Width.Control.unbindTooltip();
+	this.mMapOptions.Width.Title.unbindTooltip();
+
+	this.mMapOptions.Height.Control.unbindTooltip();
+	this.mMapOptions.Height.Title.unbindTooltip();
+
+	this.mMapOptions.LandMassMult.Control.unbindTooltip();
+	this.mMapOptions.LandMassMult.Title.unbindTooltip();
+
+	this.mMapOptions.WaterConnectivity.Control.unbindTooltip();
+	this.mMapOptions.WaterConnectivity.Title.unbindTooltip();
+
+	this.mMapOptions.Snowline.Control.unbindTooltip();
+	this.mMapOptions.Snowline.Title.unbindTooltip();
+
+	this.mMapOptions.MountainsMult.Control.unbindTooltip();
+	this.mMapOptions.MountainsMult.Title.unbindTooltip();
+
+	this.mMapOptions.ForestsMult.Control.unbindTooltip();
+	this.mMapOptions.ForestsMult.Title.unbindTooltip();
+
+	this.mMapOptions.SwampsMult.Control.unbindTooltip();
+	this.mMapOptions.SwampsMult.Title.unbindTooltip();
+
+	this.mMapOptions.NumSettlements.Control.unbindTooltip();
+	this.mMapOptions.NumSettlements.Title.unbindTooltip();
+
+	this.mMapOptions.NumFactions.Control.unbindTooltip();
+	this.mMapOptions.NumFactions.Title.unbindTooltip();
+
+	this.mFogofWarCheckbox.unbindTooltip();
+	this.mFogofWarCheckboxLabel.unbindTooltip();
 };
 
 
@@ -1183,6 +1286,9 @@ NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 		if ('FOW' in _data) {
 			this.mMapOptions.FOW = _data['FOW'];
 		}
+		if ('Debug' in _data) {
+			this.mMapOptions.Debug = _data['Debug'];
+		}
 	}
 	else
 	{
@@ -1223,6 +1329,7 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mMapOptions.ForestsMult.Value);
 	settings.push(this.mMapOptions.SwampsMult.Value);
 	settings.push(this.mMapOptions.MountainsMult.Value);
+	settings.push(this.mDebugCheckbox.is(':checked'));	
 	return settings;
 }
 
