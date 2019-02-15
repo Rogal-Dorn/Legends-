@@ -5,7 +5,8 @@ this.perk_legend_darkflight <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_darkflight";
 		this.m.Name = this.Const.Strings.PerkName.LegendDarkflight;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendDarkflight;
-		this.m.Icon = "skills/active_28.png";
+		this.m.Icon = "ui/perks/darkflight_circle.png";
+		this.m.IconDisabled = "ui/perks/darkflight_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

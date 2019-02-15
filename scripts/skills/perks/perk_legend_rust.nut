@@ -6,6 +6,7 @@ this.perk_legend_rust <- this.inherit("scripts/skills/skill", {
 		this.m.Name = this.Const.Strings.PerkName.LegendRust;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendRust;
 		this.m.Icon = "ui/perks/rust56.png";
+		this.m.IconDisabled = "ui/perks/rust56_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

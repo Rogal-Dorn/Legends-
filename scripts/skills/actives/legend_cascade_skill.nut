@@ -3,8 +3,8 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_cascade";
-		this.m.Name = "Cascades";
-		this.m.Description = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.";
+		this.m.Name = "Triple Strike";
+		this.m.Description = "Let loose a cascade of three striking shots on your opponent. Will strike over or around shield cover.";
 		this.m.KilledString = "Smashed";
 		this.m.Icon = "skills/active_125.png";
 		this.m.IconDisabled = "skills/active_125_sw.png";
@@ -32,9 +32,9 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 15;
-		this.m.MinRange = 8;
-		this.m.MaxRange = 1;
+		this.m.FatigueCost = 20;
+		this.m.MinRange = 1;
+		this.m.MaxRange = 8;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 50;
@@ -60,10 +60,6 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInFlails ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-	}
 
 	function onUse( _user, _targetTile )
 	{

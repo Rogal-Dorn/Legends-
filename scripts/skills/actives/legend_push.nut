@@ -5,8 +5,8 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_push";
 		this.m.Name = "Revolt";
 		this.m.Description = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe. Targets hit will receive fatigue and may take damage if they are pushed down several levels of height. Shieldwall, Spearwall and Riposte will be canceled for a target that is successfully knocked back. A rooted target can not be knocked back.";
-		this.m.Icon = "skills/active_10.png";
-		this.m.IconDisabled = "skills/active_10_sw.png";
+		this.m.Icon = "skills/revolt_square.png";
+		this.m.IconDisabled = "skills/revolt_square_bw.png";
 		this.m.Overlay = "active_10";
 		this.m.SoundOnUse = [
 			"sounds/combat/knockback_01.wav",
