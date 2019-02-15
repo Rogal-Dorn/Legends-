@@ -632,7 +632,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getConditionMax() > 1 && _item.getCondition() < _item.getConditionMax())
 			{
 				local price = (_item.getConditionMax() - _item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.200000003 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)
@@ -861,7 +861,8 @@ this.tooltip_events <- {
 
 	function general_queryUIPerkTooltipData( _entityId, _perkId )
 	{
-		local perk = this.Const.Perks.findById(_perkId);
+		local player = this.Tactical.getEntityByID(_entityId);
+		local perk = this.Const.Perks.findByBackground(_perkId, player.getBackground().getID());
 
 		if (perk != null)
 		{
@@ -877,7 +878,6 @@ this.tooltip_events <- {
 					text = perk.Tooltip
 				}
 			];
-			local player = this.Tactical.getEntityByID(_entityId);
 
 			if (!player.hasPerk(_perkId))
 			{
@@ -1143,7 +1143,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Ammo + " units at a time."
+					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.World.Assets.getMaxAmmo() + " units at a time."
 				}
 			];
 
@@ -1167,7 +1167,7 @@ this.tooltip_events <- {
 				desc = desc + (repair.ArmorParts + "[/color] tools and supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].ArmorParts + " units at most.");
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
 			return [
 				{
 					id = 1,
@@ -1212,7 +1212,7 @@ this.tooltip_events <- {
 				desc = desc + (heal.MedicineMax + "[/color] Medical Supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Medicine + " units at most.");
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
 			return [
 				{
 					id = 1,
@@ -2723,6 +2723,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "character-screen.right-panel-header-module.FormationButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Formations"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Switch to viewing the formation configuriations for your mercenary company."
+				}
+			];
+
 		case "character-screen.right-panel-header-module.CloseButton":
 			return [
 				{
@@ -2832,6 +2846,48 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Toggle between showing and hiding the mood of your men."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Change company formation and equipment loadouts."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ClearFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Clear Formation Loadout"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all items and weapons from brothers and place in inventory."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormationName":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation Name"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Give this formation a descriptive label for your reference."
 				}
 			];
 
@@ -3422,6 +3478,20 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Give the selected recruit a proper tryout to reveal his hidden character traits, if any."
+				}
+			];
+
+		case "world-town-screen.hire-dialog-module.DismissButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Dismiss Recruit"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Selected recruit doesn't make the cut, give'em the boot."
 				}
 			];
 

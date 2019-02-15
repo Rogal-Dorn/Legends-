@@ -71,7 +71,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
 		CampaignSettings = null,
-		DebugMap = false
+		DebugMap = false,
+		Campaign = "",
+		CommanderDied = null,
+		LegendsMod = null
 	},
 	function getPlayer()
 	{
@@ -416,6 +419,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function commanderDied()
+	{
+		return this.m.CommanderDied;
+	}
+
+	function setCommanderDied( _v )
+	{
+		this.m.CommanderDied = _v
+	}
+
 	function onInit()
 	{
 		this.m.IsDeveloperModeEnabled = this.isDevmode() || !this.isReleaseBuild();
@@ -426,6 +439,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.LastWorldSpeedMult = 1.0;
 		this.m.ExitGame = false;
 		this.m.GameWon = false;
+		this.m.CommanderDied = false;
 		this.Settings.getTempGameplaySettings().CameraLocked = false;
 		this.Settings.getTempGameplaySettings().ShowTracking = true;
 		this.Tactical.setActive(false);
@@ -454,6 +468,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Tags <- this.m.Tags;
 		this.m.Assets = this.new("scripts/states/world/asset_manager");
 		this.World.Assets <- this.WeakTableRef(this.m.Assets);
+		this.m.LegendsMod = this.new("scripts/mods/legends_mod"); 
+		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
 		this.onInitUI();
 		this.init();
 	}
@@ -576,6 +592,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.EntityManager = null;
 		this.World.State = null;
 		this.Root.setBackgroundTaskCallback(null);
+		this.m.LegendsMod = null;
+		this.World.LegendsMod = null;
 		this.onDestroyUI();
 		this.Sound.stopAmbience();
 	}
@@ -722,7 +740,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.Player.setPath(null);
 				this.m.Player.setDestination(this.m.AutoAttack.getPos());
 			}
-			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.1)
+			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.100000001)
 			{
 				local navSettings = this.World.getNavigator().createSettings();
 				navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
@@ -786,12 +804,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function onKeyInput( _key )
 	{
 		return this.helper_handleContextualKeyInput(_key);
-		return false;
 	}
 
 	function onMouseInput( _mouse )
 	{
 		if (this.isInLoadingScreen())
+		{
+			return true;
+		}
+
+		if (this.isInDevScreen())
 		{
 			return true;
 		}
@@ -812,12 +834,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			if (_mouse.getState() == 3)
 			{
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
 				return true;
 			}
 			else if (_mouse.getState() == 4)
 			{
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
 				return true;
 			}
 		}
@@ -982,8 +1004,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		clouds.MaxClouds = 70;
 		clouds.MinVelocity = 35.0;
 		clouds.MaxVelocity = 65.0;
-		clouds.MinAlpha = 0.8;
-		clouds.MaxAlpha = 0.8;
+		clouds.MinAlpha = 0.800000012;
+		clouds.MaxAlpha = 0.800000012;
 		clouds.MinScale = 1.0;
 		clouds.MaxScale = 1.25;
 		this.World.getWeather().buildCloudCover(clouds);
@@ -1113,6 +1135,36 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
+		
+		if (this.m.Campaign == "legends_noble") {
+			this.World.Tags.set("IsLegendsNoble", true);
+		}
+
+		if (this.m.Campaign == "legends_beggar") {
+			this.World.Tags.set("IsLegendsBeggar", true);
+		}
+		if (this.m.Campaign == "legends_crusader") {
+			this.World.Tags.set("IsLegendsCrusader", true);
+		}
+		if (this.m.Campaign == "legends_hunter") {
+			this.World.Tags.set("IsLegendsHunter", true);
+		}
+		if (this.m.Campaign == "legends_inventor") {
+			this.World.Tags.set("IsLegendsInventor", true);
+		}
+		if (this.m.Campaign == "legends_necro") {
+			this.World.Tags.set("IsLegendsNecro", true);
+		}
+		if (this.m.Campaign == "legends_witch") {
+			this.World.Tags.set("IsLegendsWitch", true);
+		}
+		if (this.m.Campaign == "legends_healer") {
+			this.World.Tags.set("IsLegendsHealer", true);
+		}
+		if (this.m.Campaign == "legends_berserker") {
+			this.World.Tags.set("IsLegendsBerserker", true);
+		}
+
 
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
@@ -1185,6 +1237,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 		this.m.CampaignSettings = _settings;
 		this.m.DebugMap = _settings.Debug;
+		this.m.Campaign = _settings.Campaign;
 	}
 
 	function enterLocation( _location )
@@ -1242,7 +1295,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(32, 0);
+		factions.resize(100, 0);
 
 		foreach( party in raw_parties )
 		{
@@ -1534,7 +1587,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		if (this.World.getPlayerRoster().getSize() == 0)
+		if (this.World.getPlayerRoster().getSize() == 0 || this.commanderDied())
 		{
 			this.show();
 			this.showGameFinishScreen(false);
@@ -2450,6 +2503,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function isInDevScreen()
+	{
+		if (this.m.WorldScreen != null && this.m.WorldScreen.devConsoleVisible())
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	function isInCharacterScreen()
 	{
 		if (this.m.CharacterScreen != null && (this.m.CharacterScreen.isVisible() || this.m.CharacterScreen.isAnimating()))
@@ -3149,6 +3212,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
+		if (this.isInDevScreen())
+		{
+			switch(_key.getKey())
+			{
+			case 41:
+				this.m.WorldScreen.hideDevConsole();
+				break;
+			}
+
+			return true;
+		}
+
 		if (this.isInCharacterScreen() && _key.getState() == 0)
 		{
 			switch(_key.getKey())
@@ -3233,6 +3308,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 					}
 				}
 
+				break;
+			
+			case 32:
+				if (!this.m.MenuStack.hasBacksteps())
+				{
+					this.m.WorldScreen.showDevConsole();
+					return true;
+				}
 				break;
 
 			case 26:
@@ -3407,12 +3490,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			case 67:
 			case 46:
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
 				break;
 
 			case 68:
 			case 47:
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
 				break;
 
 			case 96:

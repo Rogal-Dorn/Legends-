@@ -1064,7 +1064,28 @@ gt.Const.Strings.PerkName <- {
 	SpecPolearm = "Polearm Mastery",
 	SpecHammer = "Hammer Mastery",
 	SpecMace = "Mace Mastery",
-	SpecFlail = "Flail Mastery"
+	SpecFlail = "Flail Mastery",
+	LegendSpecPoison = "Poison Mastery",
+	LegendCascade ="Cascade strikes",
+	LegendEvasion ="Evasion",
+	LegendRust = "Rust",
+	LegendWither = "Wither",
+	LegendDeathtouch = "Death Touch",
+	LegendHex = "Hex",
+	LegendMiasma = "Miasma",
+	LegendDarkflight = "Darkflight",
+	LegendDaze ="Daze",
+	LegendStunned = "Stun",
+	LegendHorrify = "Horrify",
+	LegendPush = "Revolt",
+	LegendEntice = "Entice",
+	LegendSleep = "Sleep",
+	LegendFirefield = "Fire Field",
+	LegendPossessUndead = "Possess Undead",
+	LegendRoster = "Increase Roster",
+	LegendSpecBandage = "Bandage Mastery",
+	LegendHoldTheLine = "Hold the line",
+	LegendRaiseUndead = "Raise the Dead"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1154,7 +1175,29 @@ gt.Const.Strings.PerkDescription <- {
 	SpecPolearm = "Master polearms and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nPolearm skills have their Action Point cost reduced to [color=" + this.Const.UI.Color.NegativeValue + "]5[/color], and no longer have a penalty for attacking targets directly adjacent.",
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
 	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.",
-	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit."
+	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	LegendSpecPoison = "Master poison, giving you the ability to keep your weapons covered in poison at all times",
+	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
+	LegendEvasion = "Enables the character for one turn to move swiftly and safely through any Zone of Control without incurring any free attacks.",
+	LegendRust = "Deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t inflict the most injury to the wearer.",
+	LegendWither = "Debilitate a target for one turn, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color].",
+	LegendDeathtouch = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim",
+	LegendHex = "You tie your soul to your enemy, your pain becomes their pain",
+	LegendMiasma = "Release a cloud of noxious gasses that are harmful to any living being",
+	LegendDarkflight = "Disapperate from your current location and reappear on the other side of the battlefield up to 6 tiles away",
+	LegendDaze = "Anyone hit with a blow like this will be dazed and gasping for air, unable to put full force behind their blows for two turns."
+	LegendStunned = "Your amazing words manage to stun and amaze a target",
+	LegendHorrify = "Spin such gruesome tales as to horrify a target",
+	LegendPush = "Digust a target so much they are forced to retrate one tile in revulsion",
+	LegendEntice = "Lure a target one tile closer with your enticing words"
+	LegendSleep  = "Send a group of opponents to sleep",
+	LegendFirefield = "Release a field of fire that burns all beings"
+	LegendPossessUndead = "Allows you to boost the attacks of an undead minion"
+	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled."
+	LegendRoster = "Increase the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
+	LegendSpecBandage = "Master the art of bandaging mid battle using nay cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
+	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

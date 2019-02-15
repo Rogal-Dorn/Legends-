@@ -56,6 +56,21 @@ this.small_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"raider_background",
 			"retired_soldier_background",
+			"retired_soldier_background",
+						"female_beggar_background",
+			"houndmaster_background",
+			"brawler_background",
+			"cultist_background",
+			"mason_background",
+			"militia_background",
+			"militia_background",
+			"vagabond_background",
+			"wildman_background",
+			"witchhunter_background",
+			"deserter_background",
+			"deserter_background",
+			"raider_background",
+			"retired_soldier_background",
 			"retired_soldier_background"
 		];
 		this.m.UIDescription = "This motte with bailey looks wide over the endless snow";

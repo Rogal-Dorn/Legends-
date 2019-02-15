@@ -642,17 +642,17 @@ this.tactical_entity_manager <- {
 			if (_info.Tile.IsVisibleForPlayer)
 			{
 				this.Tactical.CameraDirector.pushMoveToTileEvent(0, _info.Tile, -1, this.onResurrect.bindenv(this), _info, 200, this.Const.Tactical.Settings.CameraNextEventDelay);
-				this.Tactical.CameraDirector.addDelay(0.2);
+				this.Tactical.CameraDirector.addDelay(0.200000003);
 			}
 			else if (knockToTile.IsVisibleForPlayer)
 			{
 				this.Tactical.CameraDirector.pushMoveToTileEvent(0, knockToTile, -1, this.onResurrect.bindenv(this), _info, 200, this.Const.Tactical.Settings.CameraNextEventDelay);
-				this.Tactical.CameraDirector.addDelay(0.2);
+				this.Tactical.CameraDirector.addDelay(0.200000003);
 			}
 			else
 			{
 				this.Tactical.CameraDirector.pushIdleEvent(0, this.onResurrect.bindenv(this), _info, 200, this.Const.Tactical.Settings.CameraNextEventDelay);
-				this.Tactical.CameraDirector.addDelay(0.2);
+				this.Tactical.CameraDirector.addDelay(0.200000003);
 			}
 
 			return null;
@@ -705,8 +705,8 @@ this.tactical_entity_manager <- {
 			clouds.MaxClouds = 20;
 			clouds.MinVelocity = 3.0;
 			clouds.MaxVelocity = 9.0;
-			clouds.MinAlpha = 0.35;
-			clouds.MaxAlpha = 0.45;
+			clouds.MinAlpha = 0.349999994;
+			clouds.MaxAlpha = 0.449999988;
 			clouds.MinScale = 2.0;
 			clouds.MaxScale = 3.0;
 			weather.buildCloudCover(clouds);
@@ -755,8 +755,8 @@ this.tactical_entity_manager <- {
 			rain.NumSplats = 20;
 			rain.MinVelocity = 300.0;
 			rain.MaxVelocity = 400.0;
-			rain.MinAlpha = 0.4;
-			rain.MaxAlpha = 0.6;
+			rain.MinAlpha = 0.400000006;
+			rain.MaxAlpha = 0.600000024;
 			rain.SplatAlpha = 0.5;
 			rain.MinScale = 0.75;
 			rain.MaxScale = 1.0;
@@ -772,9 +772,9 @@ this.tactical_entity_manager <- {
 			rain.MinVelocity = 100.0;
 			rain.MaxVelocity = 200.0;
 			rain.MinAlpha = 0.5;
-			rain.MaxAlpha = 0.9;
+			rain.MaxAlpha = 0.899999976;
 			rain.MinScale = 0.25;
-			rain.MaxScale = 0.4;
+			rain.MaxScale = 0.400000006;
 			rain.clearDropBrushes();
 			rain.addDropBrush("ice_crystal");
 			weather.buildRain(rain);
@@ -788,9 +788,9 @@ this.tactical_entity_manager <- {
 			rain.MinVelocity = 100.0;
 			rain.MaxVelocity = 200.0;
 			rain.MinAlpha = 0.5;
-			rain.MaxAlpha = 0.9;
-			rain.MinScale = 0.15;
-			rain.MaxScale = 0.3;
+			rain.MaxAlpha = 0.899999976;
+			rain.MinScale = 0.150000006;
+			rain.MaxScale = 0.300000012;
 			rain.clearDropBrushes();
 			rain.addDropBrush("ice_crystal");
 			weather.buildRain(rain);
@@ -809,7 +809,7 @@ this.tactical_entity_manager <- {
 			rain.MaxScale = 1.0;
 			rain.clearDropBrushes();
 			rain.addDropBrush("rain_03");
-			rain.Direction = this.createVec(-0.45, -0.55);
+			rain.Direction = this.createVec(-0.449999988, -0.550000012);
 			weather.buildRain(rain);
 			local clouds = weather.createCloudSettings();
 			clouds.Type = this.getconsttable().CloudType.Custom;
@@ -817,14 +817,14 @@ this.tactical_entity_manager <- {
 			clouds.MaxClouds = 150;
 			clouds.MinVelocity = 400.0;
 			clouds.MaxVelocity = 500.0;
-			clouds.MinAlpha = 0.6;
+			clouds.MinAlpha = 0.600000024;
 			clouds.MaxAlpha = 1.0;
 			clouds.MinScale = 1.0;
 			clouds.MaxScale = 4.0;
 			clouds.Sprite = "wind_01";
 			clouds.RandomizeDirection = false;
 			clouds.RandomizeRotation = false;
-			clouds.Direction = this.createVec(-1.0, -0.7);
+			clouds.Direction = this.createVec(-1.0, -0.699999988);
 			weather.buildCloudCover(clouds);
 			this.Sound.setAmbience(0, this.Const.SoundAmbience.Blizzard, this.Const.Sound.Volume.Ambience, 0);
 		}
@@ -835,7 +835,7 @@ this.tactical_entity_manager <- {
 			clouds.MaxClouds = 5;
 			clouds.MinVelocity = 30.0;
 			clouds.MaxVelocity = 50.0;
-			clouds.MinAlpha = 0.35;
+			clouds.MinAlpha = 0.349999994;
 			clouds.MaxAlpha = 0.5;
 			clouds.MinScale = 1.5;
 			clouds.MaxScale = 3.0;
@@ -853,7 +853,7 @@ this.tactical_entity_manager <- {
 			rain.MaxVelocity = 100.0;
 			rain.MinAlpha = 1.0;
 			rain.MaxAlpha = 1.0;
-			rain.MinScale = 0.3;
+			rain.MinScale = 0.300000012;
 			rain.MaxScale = 0.5;
 			rain.ScaleDropsWithTime = true;
 			rain.clearDropBrushes();
@@ -890,7 +890,7 @@ this.tactical_entity_manager <- {
 
 		foreach( p in all_players )
 		{
-			if (p.getPlaceInFormation() > 17)
+			if (p.getPlaceInFormation() > 26)
 			{
 				continue;
 			}
@@ -908,7 +908,7 @@ this.tactical_entity_manager <- {
 
 			num = ++num;
 
-			if (num >= 12)
+			if (num >= 27)
 			{
 				break;
 			}

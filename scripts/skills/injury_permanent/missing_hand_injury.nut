@@ -5,8 +5,8 @@ this.missing_hand_injury <- this.inherit("scripts/skills/injury_permanent/perman
 		this.permanent_injury.create();
 		this.m.ID = "injury.missing_hand";
 		this.m.Name = "Missing Hand";
-		this.m.Description = "A missing hand prevents this character from using shields and two-handed weapons.";
 		this.m.Icon = "ui/injury/injury_permanent_icon_07.png";
+		this.m.Description = "Uh-oh! Unless something is done about this, missing a hand will prevent this character from using shields, two-handed weapons and throwing nets, and from double gripping one-handed weapons.";
 	}
 
 	function getTooltip()
@@ -48,4 +48,7 @@ this.missing_hand_injury <- this.inherit("scripts/skills/injury_permanent/perman
 		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
 	}
 
+	function onUpdate( _properties )
+	{
+	}
 });

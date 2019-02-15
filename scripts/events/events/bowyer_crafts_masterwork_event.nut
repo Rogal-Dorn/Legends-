@@ -11,7 +11,7 @@ this.bowyer_crafts_masterwork_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%bowyer% the bowyer comes to you with a bit of request: he wishes to build a weapon for the ages. Apparently, the man has been attempting to build a bow of legendary qualities for many years, but now that he has been on the road he\'s picked up a few things to fill in his gaps of knowledge. Truly, he believes he can get it right this time. All he needs is a few resources to help procure the elements needed to construct it. A sum of 500 crowns is what he humbly requests, and the quality wood you carry.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%bowyer% the bowyer comes to you with a bit of request: they wish to build a weapon for the ages. Apparently, %bowyer% has been attempting to build a bow of legendary qualities for many years, but now that they've has been on the road they've picked up a few things to fill in the gaps of knowledge. Truly, %bowyer% believes they can get it right this time. All tthe mercenary needs is a few resources to help procure the elements needed to construct it. A sum of 500 crowns is humbly requested, and the quality wood you carry.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -216,6 +216,10 @@ this.bowyer_crafts_masterwork_event <- this.inherit("scripts/events/event", {
 		foreach( bro in brothers )
 		{
 			if (bro.getLevel() >= 6 && bro.getBackground().getID() == "background.bowyer")
+			{
+				candidates.push(bro);
+			}
+			if (bro.getLevel() >= 6 && bro.getBackground().getID() == "background.female_bowyer")
 			{
 				candidates.push(bro);
 			}
