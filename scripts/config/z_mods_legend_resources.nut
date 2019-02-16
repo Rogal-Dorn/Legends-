@@ -146,13 +146,13 @@ gt.Const.LegendMod.getHealingModifier <- function ( _background )
 		switch ( _background )
 	{
 		case "background.monk":
-			return 1.5;
+			return 0.5;
 			break;
 
 		default:
-			return 1.0;
+			return 0.0;
 	}
-	return 1.0;
+	return 0.0;
 }
 
 gt.Const.LegendMod.getRepairModifier <- function ( _background )
@@ -162,13 +162,13 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 		case "background.tailor":
 		case "background.female_tailor":
 		case "background.apprentice":
-			return 1.5;
+			return 0.5;
 			break;
 
 		default:
-			return 1.0;
+			return 0.0;
 	}
-	return 1.0;
+	return 0.0;
 };
 
 gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
@@ -176,9 +176,9 @@ gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
 	switch ( _background )
 	{
 		default:
-			return 1.0;
+			return 0.0;
 	}
-	return 1.0;
+	return 0.0;
 };
 
 gt.Const.LegendMod.getMedsConsumptionModifier <- function ( _background )
@@ -186,12 +186,12 @@ gt.Const.LegendMod.getMedsConsumptionModifier <- function ( _background )
 	switch ( _background )
 	{
 		case "background.female_beggar":
-			return 1.5;
+			return 0.5;
 			break;
 		default:
-			return 1.0;
+			return 0.0;
 	}
-	return 1.0;
+	return 0.0;
 };
 
 // gt.Const.World.TerrainTypeSpeedMult <- [

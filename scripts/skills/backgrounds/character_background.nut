@@ -107,12 +107,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function getBackgroundDescription()
 	{
 		local text = this.m.BackgroundDescription;
-		local repairs = this.Const.LegendMod.getRepairModifier(this.m.ID) * 100.0 - 100.0;
+		local repairs = this.Const.LegendMod.getRepairModifier(this.m.ID) * 100.0;
 		if (repairs > 0)
 		{
 			text += "\nRepairs +" + repairs +"%"
 		}
-		local meds = this.Const.LegendMod.getHealingModifier(this.m.ID) * 100.0 - 100.0;
+		local meds = this.Const.LegendMod.getHealingModifier(this.m.ID) * 100.0;
 		if (meds > 0)
 		{
 			text += "\nHealing +" + meds +"%"
