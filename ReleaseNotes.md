@@ -15,6 +15,7 @@ Mod Features:
 * Commander Centric Starts
 	- Commander starts with company size of 6.
 	- Commander-only perks that increase the size of roster up to 27.
+	- Extra perk point for every 3rd veteran level.
 	- If the Commander dies, it's game over.
 * Unique Perk Trees for different Backgrounds
 * Max resources are now tied to the Backgrounds of your mercs
@@ -66,7 +67,7 @@ Mod Features:
 * More blood
 * Tryout Talents
     - Reveals star attributes when trying out a brother in hire screen.
-* Increased Event spawn rate by 10%
+* Increased Event spawn rate by 10%.
 
 
 Recommended addons:
