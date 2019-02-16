@@ -5,7 +5,7 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "ReleaseNotes.md" ]; then
         echo "skipping $line"
-    elif [ "$line" == "worldmap_generator.nut" ]; then
+    elif [ "$line" == "scripts/mapgen/templates/world/worldmap_generator.nut" ]; then
         echo "skipping $line"        
     else
         echo "$line"

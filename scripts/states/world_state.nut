@@ -1028,40 +1028,46 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		local tries = 200;
-		while (tries > 0)
-		{
-			this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
-			this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity)
-			local result = worldmap.fill({
-				X = 0,
-				Y = 0,
-				W = minX,
-				H = minY
-			}, null);
-			if (result) 
-			{
-				break;
-			}
-			tries = --tries
-			this.logInfo("Invalid map. Regenerating...")
+		worldmap.fill({
+			X = 0,
+			Y = 0,
+			W = minX,
+			H = minY
+		}, null);
+		// local tries = 200;
+		// while (tries > 0)
+		// {
+		// 	this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
+		// 	this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity)
+		// 	local result = worldmap.fill({
+		// 		X = 0,
+		// 		Y = 0,
+		// 		W = minX,
+		// 		H = minY
+		// 	}, null);
+		// 	if (result) 
+		// 	{
+		// 		break;
+		// 	}
+		// 	tries = --tries
+		// 	this.logInfo("Invalid map. Regenerating...")
 			
-			//Failures are because of water issues, help map generation towards default results
-			if (tries > 2)
-			{
-				if (this.Const.World.Settings.LandMassMult > 1.4) {
-					this.Const.World.Settings.LandMassMult -= 0.05;
-				} else {
-					this.Const.World.Settings.LandMassMult += 0.05;
-				}
+		// 	//Failures are because of water issues, help map generation towards default results
+		// 	if (tries > 2)
+		// 	{
+		// 		if (this.Const.World.Settings.LandMassMult > 1.4) {
+		// 			this.Const.World.Settings.LandMassMult -= 0.05;
+		// 		} else {
+		// 			this.Const.World.Settings.LandMassMult += 0.05;
+		// 		}
 
-				if (this.Const.World.Settings.WaterConnectivity > 38) {
-					--this.Const.World.Settings.WaterConnectivity;
-				} else {
-					++this.Const.World.Settings.WaterConnectivity;
-				}
-			}
-		}
+		// 		if (this.Const.World.Settings.WaterConnectivity > 38) {
+		// 			--this.Const.World.Settings.WaterConnectivity;
+		// 		} else {
+		// 			++this.Const.World.Settings.WaterConnectivity;
+		// 		}
+		// 	}
+		// }
 
 		this.World.FactionManager.createFactions(this.m.CampaignSettings);
 		this.World.EntityManager.buildRoadAmbushSpots();

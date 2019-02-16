@@ -6,7 +6,16 @@ gt.Const.World.SettingsUpdate <- function (_settings)
 	this.Const.World.Settings.SizeY = _settings.Height;
 	this.Const.World.Settings.LandMassMult = _settings.LandMassMult;
 	this.Const.World.Settings.WaterConnectivity = _settings.WaterConnectivity;
-	this.Const.World.Settings.MinLandToWaterRatio = _settings.MinLandToWaterRatio;
+	if ( _settings.LandMassMult < 1.1) {
+		this.Const.World.Settings.MinLandToWaterRatio = 1.0;
+	} else if  ( _settings.LandMassMult < 1.2 ) {
+		this.Const.World.Settings.MinLandToWaterRatio = 1.2;
+	} else if  ( _settings.LandMassMult < 1.3 ) {
+		this.Const.World.Settings.MinLandToWaterRatio = 1.3;
+	} else if  ( _settings.LandMassMult < 1.4 ) {
+		this.Const.World.Settings.MinLandToWaterRatio = 1.4;
+	}
+	//this.Const.World.Settings.MinLandToWaterRatio = _settings.MinLandToWaterRatio;
 	this.Const.World.Settings.Snowline = _settings.Snowline;
 	this.Const.World.Settings.ForestsMult <- _settings.ForestsMult;
 	this.Const.World.Settings.SwampsMult <- _settings.SwampsMult;
@@ -40,11 +49,11 @@ gt.Const.World.NewCampaignOpts <- function ()
 {
 	return {
 		Width = this.Const.World.Settings.SizeX,
-		WidthMin = 60,
-		WidthMax = 260,
+		WidthMin = 100,
+		WidthMax = 200,
 		Height = this.Const.World.Settings.SizeY,
-		HeightMin = 60,
-		HeightMax = 260,
+		HeightMin = 100,
+		HeightMax = 200,
 		LandMassMult = 50, //this.Const.World.Settings.LandMassMult * 100 - 100,
 		LandMassMultMin = 1,
 		LandMassMultMax = 100,
@@ -58,7 +67,7 @@ gt.Const.World.NewCampaignOpts <- function ()
 		SnowlineMin = 1,
 		SnowlineMax = 100,
 		NumSettlements = 19,
-		NumSettlementsMax = 60,
+		NumSettlementsMax = 40,
 		NumSettlementsMin = 6,
 		NumFactions = 3,
 		NumFactionsMin = 1,
