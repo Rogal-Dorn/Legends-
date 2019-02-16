@@ -74,9 +74,17 @@ this.combat_manager <- {
 			Combatants = [],
 			Factions = []
 		};
-		combat.Factions.resize(32);
+		local numFactions = 32;
+		if (p1.getFaction() >= numFactions) {
+			numFactions = p1.getFaction() + 1;
+		}
+		if (p2.getFaction() >= numFactions) {
+			numFactions = p2.getFaction() + 1;
+		}
 
-		for( local f = 0; f != 32; f = ++f )
+		combat.Factions.resize(numFactions);
+
+		for( local f = 0; f != numFactions; f = ++f )
 		{
 			combat.Factions[f] = [];
 		}
@@ -103,6 +111,7 @@ this.combat_manager <- {
 
 		_combat.Combatants.sort(this.onInitiativeCompare);
 		_party.setCombatID(_combat.ID);
+		
 		_combat.Factions[_party.getFaction()].push(this.WeakTableRef(_party));
 		_party.onCombatStarted();
 	}
@@ -467,7 +476,15 @@ this.combat_manager <- {
 
 			for( local p = 0; p < numParties; p = ++p )
 			{
-				this.joinCombat(combat, this.World.getEntityByID(_in.readU32()));
+				local party = this.World.getEntityByID(_in.readU32());
+				if (party.getFaction() >= combat.len()) {
+					combat.Factions.resize(party.getFaction() + 1);
+					for( local f = party.getFaction(); f != party.getFaction() + 1; f = ++f )
+					{
+						combat.Factions[f] = [];
+					}
+				}
+				this.joinCombat(combat, party);
 			}
 
 			this.m.Combats.push(combat);

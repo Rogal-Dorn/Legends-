@@ -1301,7 +1301,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(100, 0);
+		factions.resize(32, 0);
 
 		foreach( party in raw_parties )
 		{
