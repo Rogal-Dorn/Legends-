@@ -410,57 +410,57 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_roster_1",
 		Script = "scripts/skills/perks/perk_legend_roster_1",
 		Name = this.Const.Strings.PerkName.LegendRoster + " 1",
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster1,
+		Icon = "ui/perks/recruit1.png",
+		IconDisabled = "ui/perks/recruit1_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_2",
 		Script = "scripts/skills/perks/perk_legend_roster_2",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster2,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster2,
+		Icon = "ui/perks/recruit2.png",
+		IconDisabled = "ui/perks/recruit2_bw.png"
 	},			
 	{
 		ID = "perk.legend_roster_3",
 		Script = "scripts/skills/perks/perk_legend_roster_3",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster3,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster3,
+		Icon = "ui/perks/recruit2.png",
+		IconDisabled = "ui/perks/recruit2_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_4",
 		Script = "scripts/skills/perks/perk_legend_roster_4",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster4,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster4,
+		Icon = "ui/perks/recruit3.png",
+		IconDisabled = "ui/perks/recruit3_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_5",
 		Script = "scripts/skills/perks/perk_legend_roster_5",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster5,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster5,
+		Icon = "ui/perks/recruit5.png",
+		IconDisabled = "ui/perks/recruit5_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_6",
 		Script = "scripts/skills/perks/perk_legend_roster_6",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster6,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster6,
+		Icon = "ui/perks/recruit6.png",
+		IconDisabled = "ui/perks/recruit6_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_7",
 		Script = "scripts/skills/perks/perk_legend_roster_7",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster7,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster7,
+		Icon = "ui/perks/recruit7.png",
+		IconDisabled = "ui/perks/recruit7_bw.png"
 	},
 	{
 		ID = "perk.legend_stun",
@@ -773,7 +773,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendRaiseUndead,
 		Icon = "ui/perks/raisedead2_circle.png",
 		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
-	}		
+	},
+	{
+		ID = "perk.legend_wither",
+		Script = "scripts/skills/perks/perk_legend_wither",
+		Name = this.Const.Strings.PerkName.LegendWither,
+		Tooltip = this.Const.Strings.PerkDescription.LegendWither,
+		Icon = "ui/perks/wither56.png",
+		IconDisabled = "ui/perks/wither56_bw.png"
+	}			
 
 ];
 
@@ -875,4 +883,5 @@ gt.Const.Perks.PerkDefs <- {
 	Ironside = 93,
 	LastStand = 94,
 	LegendRaiseUndead = 95
+	LegendWither = 96
 };
