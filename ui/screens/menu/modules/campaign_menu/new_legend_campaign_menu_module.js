@@ -713,6 +713,16 @@ NewLegendCampaignMenuModule.prototype.buildMapConfig = function ()
 	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
 
+	this.mMapOptions.ForestsMult.Control.addClass('display-none');
+	this.mMapOptions.ForestsMult.Title.addClass('display-none');
+	this.mMapOptions.ForestsMult.Label.addClass('display-none');
+	this.mMapOptions.SwampsMult.Control.addClass('display-none');
+	this.mMapOptions.SwampsMult.Title.addClass('display-none');
+	this.mMapOptions.SwampsMult.Label.addClass('display-none');
+	this.mMapOptions.MountainsMult.Control.addClass('display-none');
+	this.mMapOptions.MountainsMult.Title.addClass('display-none');
+	this.mMapOptions.MountainsMult.Label.addClass('display-none');
+
 	//this.createSliderControlDIV(this.mMapOptions.Vision, 'Vision', rightColumn);
 
 	var row = $('<div class="row"></div>');
@@ -734,7 +744,7 @@ NewLegendCampaignMenuModule.prototype.buildMapConfig = function ()
 	}
 
 	var row = $('<div class="row"></div>');
-	leftColumn.append(row);
+	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mDebugCheckbox = $('<input type="checkbox" id="cb-debug"/>');
