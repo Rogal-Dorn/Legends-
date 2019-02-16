@@ -6,8 +6,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.ID = "background.legend_crusader";
 		this.m.Name = "Holy Crusader";
 		this.m.Icon = "ui/backgrounds/background_60.png";
-		this.m.HiringCost = 200;
-		this.m.DailyCost = 25;
+		this.m.HiringCost = 20000;
+		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -46,7 +46,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 2;
+		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 	}

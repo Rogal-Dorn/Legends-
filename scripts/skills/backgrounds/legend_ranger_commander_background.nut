@@ -9,8 +9,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.BackgroundDescription = "Rangers are expert trackers and marksman, used to hunting prey of any kind";
 		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the ranger eventually saw fit to leave it all behind. He returned to the forests and fields, hunting deer and small game. He rarely showed the grim reality of hunting humans, but you have to imagine he\'d just rather stop doing it. As far as you know, he\'s doing well for himself these days. He purchased a bit of land and helps guide nobles on pricy hunting trips.";
 		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the ranger departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling he\'d be blamed, shot by the nobleman and his guard and fled through the forests on his own. He has not been seen since.";
-		this.m.HiringCost = 120;
-		this.m.DailyCost = 20;
+		this.m.HiringCost = 12000;
+		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -42,7 +42,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 1;
+		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 	}
 
@@ -125,7 +125,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 3;
 		talents[this.Const.Attributes.RangedDefense] = 2;
-		talents[this.Const.Attributes.Fatigue] = 1;
 
 		local items = this.getContainer().getActor().getItems();
 

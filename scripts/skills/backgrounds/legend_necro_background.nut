@@ -24,7 +24,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			this.m.Name = "Warlock";
 		}
 
-		this.m.HiringCost = 250;
+		this.m.HiringCost = 25000;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.brave",
@@ -53,7 +53,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
-		this.m.Level = 2;
+		this.m.Level = 1;
 	}
 
 	function getTooltip()
@@ -82,16 +82,16 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				-20,
-				-20
+				10,
+				10
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				-20,
-				-20
+				10,
+				10
 			],
 			MeleeSkill = [
 				-10,
@@ -106,12 +106,12 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				0
 			],
 			RangedDefense = [
-				-5,
-				0
+				-10,
+				-5
 			],
 			Initiative = [
-				0,
-				0
+				20,
+				20
 			]
 		};
 		return c;
@@ -122,9 +122,8 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Initiative] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
-		talents[this.Const.Attributes.Hitpoints] = 1;
+		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Hitpoints] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/helmets/necromancer_hat"));

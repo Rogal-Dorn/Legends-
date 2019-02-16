@@ -1085,6 +1085,7 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecBandage = "Bandage Mastery",
 	LegendHoldTheLine = "Hold the line",
 	LegendRaiseUndead = "Raise the Dead",
+	LegendRoster = "Increase roster size",
 	LegendRoster1 = "The Apprentice",
 	LegendRoster2 = "The Bodygaurds",
 	LegendRoster3 = "The Team",
@@ -1191,24 +1192,24 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHex = "You tie your soul to your enemy, your pain becomes their pain",
 	LegendMiasma = "Release a cloud of noxious gasses that are harmful to any living being",
 	LegendDarkflight = "Disapperate from your current location and reappear on the other side of the battlefield up to 6 tiles away",
-	LegendDaze = "Anyone hit with a blow like this will be dazed and gasping for air, unable to put full force behind their blows for two turns."
+	LegendDaze = "Anyone hit with a blow like this will be dazed and gasping for air, unable to put full force behind their blows for two turns.",
 	LegendStunned = "Your amazing words manage to stun and amaze a target",
 	LegendHorrify = "Spin such gruesome tales as to horrify a target",
 	LegendPush = "Digust a target so much they are forced to retrate one tile in revulsion",
 	LegendEntice = "Lure a target one tile closer with your enticing words"
 	LegendSleep  = "Send a group of opponents to sleep",
-	LegendFirefield = "Release a field of fire that burns all beings"
-	LegendPossessUndead = "Allows you to boost the attacks of an undead minion"
-	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled."
-	LegendRoster = "",
+	LegendFirefield = "Release a field of fire that burns all beings",
+	LegendPossessUndead = "Allows you to boost the attacks of an undead minion",
+	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled.",
+	LegendRoster = "Increase roster size",
 	LegendSpecBandage = "Master the art of bandaging mid battle using nay cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
-	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army",
 	LegendRoster1 = "Direct your attention to guiding an apprentice into the mercenary world, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color]",
 	LegendRoster2 = "Spend time training bodygaurds to work together, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
 	LegendRoster3 = "Set up team planning, with task lists and prioritisation. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
 	LegendRoster4 = "Create a squad regime, with weekly shedules and drills. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
-	LegendRoster5 = "Oversee the section\s financial administation processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
+	LegendRoster5 = "Oversee the section\'s financial administation processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
 	LegendRoster6 = "Manage the company logicistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]"
 };
