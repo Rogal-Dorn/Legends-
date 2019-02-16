@@ -1082,10 +1082,16 @@ gt.Const.Strings.PerkName <- {
 	LegendSleep = "Sleep",
 	LegendFirefield = "Fire Field",
 	LegendPossessUndead = "Possess Undead",
-	LegendRoster = "Increase Roster",
 	LegendSpecBandage = "Bandage Mastery",
 	LegendHoldTheLine = "Hold the line",
-	LegendRaiseUndead = "Raise the Dead"
+	LegendRaiseUndead = "Raise the Dead",
+	LegendRoster1 = "The Apprentice",
+	LegendRoster2 = "The Bodygaurds",
+	LegendRoster3 = "The Team",
+	LegendRoster4 = "The Squad",
+	LegendRoster5 = "The Section",
+	LegendRoster6 = "The Company",
+	LegendRoster7 = "The Platoon"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1194,10 +1200,17 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFirefield = "Release a field of fire that burns all beings"
 	LegendPossessUndead = "Allows you to boost the attacks of an undead minion"
 	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled."
-	LegendRoster = "Increase the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
+	LegendRoster = "",
 	LegendSpecBandage = "Master the art of bandaging mid battle using nay cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
 	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
-	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army"
+	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army",
+	LegendRoster1 = "Direct your attention to guiding an apprentice into the mercenary world, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color]",
+	LegendRoster2 = "Spend time training bodygaurds to work together, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
+	LegendRoster3 = "Set up team planning, with task lists and prioritisation. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
+	LegendRoster4 = "Create a squad regime, with weekly shedules and drills. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
+	LegendRoster5 = "Oversee the section\s financial administation processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
+	LegendRoster6 = "Manage the company logicistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
+	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

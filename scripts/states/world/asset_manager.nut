@@ -404,7 +404,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-			this.setBrothersMax(6);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Crusader:
@@ -416,7 +416,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-			this.setBrothersMax(6);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Rangers:
@@ -427,7 +427,7 @@ this.asset_manager <- {
 			]);
 			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-			this.setBrothersMax(6);
+			this.setBrothersMax(1);
 			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			// bro = roster.create("scripts/entity/tactical/player");
@@ -456,7 +456,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-			this.setBrothersMax(3);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Witch:
@@ -469,7 +469,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-			this.setBrothersMax(6);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:
@@ -479,6 +479,7 @@ this.asset_manager <- {
 				"legend_healer_background"
 			]);
 			bro.setPlaceInFormation(4);
+			this.setBrothersMax(1);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
 
@@ -491,7 +492,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(3);
+			this.setBrothersMax(1);
 			break;
 		case this.Const.LegendMod.StartTypes.Party:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -573,6 +574,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			this.setBrothersMax(2);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Beggar:
@@ -583,7 +585,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.setVeteranPerks(3);
-			bro.worsenMood(0.5, "Lost most of the company");
+			this.setBrothersMax(1);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			break;
 
