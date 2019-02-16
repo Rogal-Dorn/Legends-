@@ -139,7 +139,6 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 			break;
 		case "background.caravan_hand":
 		case "background.legend_commander_noble":
-
 			return 15;
 			break;
 		case "background.legend_commander_ranger":
@@ -173,6 +172,9 @@ gt.Const.LegendMod.getHealingModifier <- function ( _background )
 	{
 		case "background.legend_commander_noble":
 		case "background.legend_noble":
+			return 0.1;
+			break;
+
 		case "background.legend_commander_witch":
 		case "background.legend_witch":
 		case "background.legend_commander_necro":
@@ -193,6 +195,7 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 {
 	switch ( _background )
 	{
+
 		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
 			return 0.2;
@@ -214,9 +217,12 @@ gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
 {
 	switch ( _background )
 	{
+		case "background.legend_commander_noble":
+		case "background.legend_noble":
+			return 0.1;
 		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
-			return 0.1;
+			return 0.2;
 			break;
 		default:
 			return 0.0;
@@ -228,6 +234,10 @@ gt.Const.LegendMod.getMedsConsumptionModifier <- function ( _background )
 {
 	switch ( _background )
 	{
+		case "background.legend_commander_necro":
+		case "background.legend_necro":
+					return 0.2;
+			break;
 		case "background.legend_commander_witch":
 		case "background.legend_witch":
 		case "background.female_beggar":
