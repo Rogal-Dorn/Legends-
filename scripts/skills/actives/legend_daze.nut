@@ -4,7 +4,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_daze";
 		this.m.Name = "Daze";
-		this.m.Description = "Assault the senses of your target with a flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively.";
+		this.m.Description = "Assault the senses of your target with a flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Does no damage";
 		this.m.KilledString = "Dazed";
 		this.m.Icon = "skills/daze_square.png";
 		this.m.IconDisabled = "skills/daze_square_bw.png";
@@ -47,7 +47,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to daze on a hit"
+			text = "leave your opponent bewildered, lowering their attacks by 20 damage and increasing their fatigue per hit"
 		});
 		return ret;
 	}
