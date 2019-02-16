@@ -461,7 +461,9 @@ this.contract <- {
 
 	function buildText( _text )
 	{
+
 		local brothers = this.World.getPlayerRoster().getAll();
+
 		local brother1 = this.Math.rand(0, brothers.len() - 1);
 		local brother2 = this.Math.rand(0, brothers.len() - 1);
 
@@ -473,8 +475,14 @@ this.contract <- {
 			}
 		}
 
-		brother1 = brothers[brother1].getName();
-		brother2 = brothers[brother2].getName();
+		if (brothers.len() < 2) {
+			brother1 = "unknown"
+			brother2 = "unknown"
+		} else {
+			brother1 = brothers[brother1].getName();
+			brother2 = brothers[brother2].getName();
+		}
+
 		local villages = this.World.EntityManager.getSettlements();
 		local randomTown;
 
