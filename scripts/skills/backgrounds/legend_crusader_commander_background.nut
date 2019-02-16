@@ -156,7 +156,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
-		talents[this.Const.Attributes.MeleeAttack] = 2;
+		talents[this.Const.Attributes.MeleeSkill] = 2;
 		local items = this.getContainer().getActor().getItems();
 		local stash =this.World.Assets.getStash()
 		local r;
