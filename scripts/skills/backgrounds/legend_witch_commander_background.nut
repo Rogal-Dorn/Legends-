@@ -50,7 +50,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-		this.m.Level = 1;
+		this.m.Level = 2;
 	}
 
 	function getTooltip()
@@ -120,9 +120,8 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Initiative] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
-		talents[this.Const.Attributes.Hitpoints] = 1;
+		talents[this.Const.Attributes.Bravery] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/wizard_robe"));
 		items.equip(this.new("scripts/items/helmets/wizard_hat"));
