@@ -3,9 +3,9 @@ this.perk_legend_roster_4 <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_roster_4";
-		this.m.Name = this.Const.Strings.PerkName.LegendRoster;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendRoster;
-		this.m.Icon = "ui/perks/perk_21.png";
+		this.m.Name = this.Const.Strings.PerkName.LegendRoster4;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendRoster4;
+		this.m.Icon = "ui/perks/recruit3.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
