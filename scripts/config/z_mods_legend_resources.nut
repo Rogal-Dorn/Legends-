@@ -145,7 +145,7 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 		case "background.legend_ranger":
 		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
-		case "background.legend_berserker"
+		case "background.legend_berserker":
 		case "background.legend_commander_berserker":
 		case "background.daytaler":
 		case "background.female_daytaler":
