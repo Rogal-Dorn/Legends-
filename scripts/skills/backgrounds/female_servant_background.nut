@@ -39,7 +39,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsOffendedByViolence = true;
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function onBuildDescription()
