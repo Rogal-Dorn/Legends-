@@ -6,7 +6,9 @@ while read -r line; do
     elif [ "$line" == "ReleaseNotes.md" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/mapgen/templates/world/worldmap_generator.nut" ]; then
-        echo "skipping $line"        
+        echo "skipping $line"  
+    elif [ "$line" == "scripts/contracts/contract.nut" ]; then
+        echo "skipping $line"          
     else
         echo "$line"
         path=$( echo ${line%/*} )
