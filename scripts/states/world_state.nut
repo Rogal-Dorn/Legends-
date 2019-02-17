@@ -1593,6 +1593,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
+		this.logInfo("***** BATTLE OVER, CHECKING IF should loose game **** " + this.commanderDied())
 		if (this.World.getPlayerRoster().getSize() == 0 || this.commanderDied())
 		{
 			this.show();

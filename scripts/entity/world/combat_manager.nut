@@ -418,7 +418,12 @@ this.combat_manager <- {
 
 			for( local f = 0; f != c.Factions.len(); f = ++f )
 			{
-				for( local p = 0; p != c.Factions[f].len(); p = ++p )
+				local faction = c.Factions[f];
+				if (faction == null || faction.len() == 0){
+					continue;
+				}
+
+				for( local p = 0; p != faction.len(); p = ++p )
 				{
 					if (c.Factions[f][p] != null && !c.Factions[f][p].isNull() && c.Factions[f][p].isAlive())
 					{
