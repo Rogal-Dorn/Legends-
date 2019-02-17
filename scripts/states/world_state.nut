@@ -1028,46 +1028,45 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		worldmap.fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, null);
-		// local tries = 200;
-		// while (tries > 0)
-		// {
-		// 	this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
-		// 	this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity)
-		// 	local result = worldmap.fill({
-		// 		X = 0,
-		// 		Y = 0,
-		// 		W = minX,
-		// 		H = minY
-		// 	}, null);
-		// 	if (result) 
-		// 	{
-		// 		break;
-		// 	}
-		// 	tries = --tries
-		// 	this.logInfo("Invalid map. Regenerating...")
-			
-		// 	//Failures are because of water issues, help map generation towards default results
-		// 	if (tries > 2)
-		// 	{
-		// 		if (this.Const.World.Settings.LandMassMult > 1.4) {
-		// 			this.Const.World.Settings.LandMassMult -= 0.05;
-		// 		} else {
-		// 			this.Const.World.Settings.LandMassMult += 0.05;
-		// 		}
+		// worldmap.fill({
+		// 	X = 0,
+		// 	Y = 0,
+		// 	W = minX,
+		// 	H = minY
+		// }, null);
+		local tries = 200;
+		while (tries > 0)
+		{
+			local result = worldmap.fill({
+				X = 0,
+				Y = 0,
+				W = minX,
+				H = minY
+			}, null);
+			if (result) 
+			{
+				break;
+			}
+			tries = --tries
+			this.logInfo("Invalid map. Regenerating...")			
+			//Failures are because of water issues, help map generation towards default results
+			if (tries > 10)
+			{
+				if (this.Const.World.Settings.LandMassMult > 1.4) {
+					this.Const.World.Settings.LandMassMult -= 0.05;
+				} else {
+					this.Const.World.Settings.LandMassMult += 0.05;
+				}
 
-		// 		if (this.Const.World.Settings.WaterConnectivity > 38) {
-		// 			--this.Const.World.Settings.WaterConnectivity;
-		// 		} else {
-		// 			++this.Const.World.Settings.WaterConnectivity;
-		// 		}
-		// 	}
-		// }
+				if (this.Const.World.Settings.WaterConnectivity > 38) {
+					this.Const.World.Settings.WaterConnectivity -= 1;
+				} else {
+					this.Const.World.Settings.WaterConnectivity += 1;
+				}
+				this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult);
+				this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity);
+			}
+		}
 
 		this.World.FactionManager.createFactions(this.m.CampaignSettings);
 		this.World.EntityManager.buildRoadAmbushSpots();
@@ -1097,14 +1096,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
-		local tries = 0
-		do
+		for (local i = 0; i < 3000; i = ++i)
 		{
-			if (tries % 100 == 0){
-				this.logInfo("Looking for start location attempt: " + tries);
-			}
-			++tries;
-
 			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 8), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 8));
 			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 8), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 8));
 
@@ -1119,12 +1112,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 			{
 				continue;
 			}
-			
+
 			if (tile.getDistanceTo(randomVillageTile) <= 3)
 			{
 				continue
 			}
-			
+
 			if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
 			{
 				continue
@@ -1137,12 +1130,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 				randomVillageTile = tile;
 				break;
 			}
-
-		}
-		while (tries < 3000);
-
-		if (tries >= 3000) {
-			this.logInfo("*** COULD NOT FIND A STARTING TILE ***")
 		}
 
 		this.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
@@ -1154,11 +1141,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
-		
 		if (this.m.Campaign == "legends_noble") {
 			this.World.Tags.set("IsLegendsNoble", true);
 		}
-
 		if (this.m.Campaign == "legends_beggar") {
 			this.World.Tags.set("IsLegendsBeggar", true);
 		}
@@ -1183,8 +1168,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		if (this.m.Campaign == "legends_berserker") {
 			this.World.Tags.set("IsLegendsBerserker", true);
 		}
-
-
+		
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
 		this.World.Contracts.addContract(c);
