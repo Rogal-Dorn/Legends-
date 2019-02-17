@@ -36,20 +36,36 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Dazes an opponent"
-		});
-		ret.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "leave your opponent bewildered, lowering their attacks by 20 damage and increasing their fatigue per hit"
-		});
-		return ret;
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Dazes an opponent"
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "leave your opponent bewildered, lowering their attacks by 20 damage and increasing their fatigue per hit"
+			}
+		];
 	}
 
 	function onUse( _user, _targetTile )
@@ -65,16 +81,6 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 			{
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stupefied " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them dazed");
 			}
-		}
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
-			_properties.DamageRegularMin += 20;
-			_properties.DamageRegularMax += 20;
-			_properties.FatigueDealtPerHitMult += 4.0;
 		}
 	}
 

@@ -3,8 +3,8 @@ this.perk_legend_push_forward <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_push_forward";
-		this.m.Name = this.Const.Strings.PerkName.LegendPushForward;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendPushForward;
+		this.m.Name = this.Const.Strings.PerkName.LegendForwardPush;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendForwardPush;
 		this.m.Icon = "ui/perks/spears_circle.png";
 		this.m.IconDisabled = "ui/perks/spears_circle_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
