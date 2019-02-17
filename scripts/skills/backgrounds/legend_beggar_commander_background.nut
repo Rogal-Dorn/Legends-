@@ -78,36 +78,36 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-5
+				-20,
+				-20
 			],
 			Bravery = [
-				-10,
-				-5
+				-20,
+				-20
 			],
 			Stamina = [
-				-10,
-				-5
+				-20,
+				-20
 			],
 			MeleeSkill = [
-				0,
-				0
+				-10,
+				-10
 			],
 			RangedSkill = [
 				-10,
-				-5
+				-10
 			],
 			MeleeDefense = [
-				0,
-				0
+				-10,
+				-10
 			],
 			RangedDefense = [
 				-10,
-				-5
+				-10
 			],
 			Initiative = [
-				0,
-				0
+				20,
+				20
 			]
 		};
 		return c;

@@ -48,13 +48,12 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			"the Clairvoyant",
 			"the Diviner"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = null;
-		this.m.Body = "bust_naked_body_03";
+		this.m.Faces = this.Const.Faces.SmartMale;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.Old;
+		this.m.Beards = this.Const.Beards.Untidy;
+		this.m.Body = "bust_naked_body_01";
 		this.m.Level = 1;
-		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -117,7 +116,11 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		};
 		return c;
 	}
-
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+	}
 
 	function onAddEquipment()
 	{

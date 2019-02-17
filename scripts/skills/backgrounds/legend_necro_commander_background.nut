@@ -116,7 +116,11 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		};
 		return c;
 	}
-
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_wither"));
+	}
 
 	function onAddEquipment()
 	{
