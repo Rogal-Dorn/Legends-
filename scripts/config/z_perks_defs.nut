@@ -540,7 +540,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Steadfast,
 		Tooltip = this.Const.Strings.PerkDescription.Steadfast,
 		Icon = "ui/perks/steadfast_circle.png",
-		IconDisabled = "ui/perks/steadfast_circle.png"
+		IconDisabled = "ui/perks/steadfast_circle_bw.png"
 		},
 	{
 		ID = "perk.sundering_strikes",
@@ -789,6 +789,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.Rebound,
 		Icon = "ui/perks/rebound_circle.png",
 		IconDisabled = "ui/perks/rebound_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_coordinated_volleys",
+		Script = "scripts/skills/perks/perk_coordinated_volleys",
+		Name = this.Const.Strings.PerkName.LegendCoordinatedVolleys,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCoordinatedVolleys,
+		Icon = "ui/perks/coordinated_volleys_circle.png",
+		IconDisabled = "ui/perks/coordinated_volleys_circle_bw.png"
 	}
 
 ];
@@ -893,4 +901,5 @@ gt.Const.Perks.PerkDefs <- {
 	LegendRaiseUndead = 95
 	LegendWither = 96
 	Rebound = 97
+	CoordinatedVolleys = 98
 };

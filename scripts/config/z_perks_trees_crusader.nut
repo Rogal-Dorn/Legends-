@@ -37,7 +37,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.MasteryFlail,
 		gt.Const.Perks.PerkDefs.MasteryHammer,
 		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.Polearm,
+		gt.Const.Perks.PerkDefs.MasteryPolearm,
 		gt.Const.Perks.PerkDefs.MasteryAxe,
 		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
@@ -63,7 +63,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.InspiringPresence,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
+		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],
 	[],

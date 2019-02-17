@@ -84,7 +84,7 @@ gt.Const.LegendMod.Starts <- [
     },
 	{
         name = "Party",
-        description = "Easy. Very powerful skill combinations, but you can never hire anymore people",
+        description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",
         intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
         banner = gt.Const.LegendMod.StartTypes.Party
     }

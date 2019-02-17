@@ -34,21 +34,22 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.MasteryFlail,
 		gt.Const.Perks.PerkDefs.MasteryHammer,
 		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.Polearm,
+		gt.Const.Perks.PerkDefs.MasteryPolearm,
 		gt.Const.Perks.PerkDefs.MasteryAxe,
 	],
 	[
 		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
 		gt.Const.Perks.PerkDefs.FullForce,
-		gt.Const.Perks.PerkDefs.ReturnFavor,
+		gt.Const.Perks.PerkDefs.ReturnFavor
 	],
 	[
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.BattleForged,
+		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.Steadfast,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
-		gt.Const.Perks.PerkDefs.SunderingStrike,
+		gt.Const.Perks.PerkDefs.SunderingStrike
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
@@ -56,7 +57,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.InspiringPresence,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
+		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],
 	[],
