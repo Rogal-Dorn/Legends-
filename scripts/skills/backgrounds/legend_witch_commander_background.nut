@@ -88,8 +88,8 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				0
 			],
 			Stamina = [
-				-20,
-				-20
+				0,
+				0
 			],
 			MeleeSkill = [
 				-10,
