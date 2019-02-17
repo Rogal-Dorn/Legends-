@@ -5,8 +5,8 @@ this.perk_legend_insects <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_insects";
 		this.m.Name = this.Const.Strings.PerkName.LegendInsects;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendInsects;
-		this.m.Icon = "ui/perks/daze56_circle.png";
-		this.m.IconDisabled = "ui/perks/daze56_circle_bw.png"
+		this.m.Icon = "ui/perks/insects_circle.png";
+		this.m.IconDisabled = "ui/perks/insects_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

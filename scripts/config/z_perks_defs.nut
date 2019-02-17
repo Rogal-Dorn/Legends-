@@ -651,7 +651,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_possess_undead",
 		Name = this.Const.Strings.PerkName.LegendPossessUndead,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossessUndead,
-		Icon = "ui/perks/posess56.png",
+		Icon = "ui/perks/possess56.png",
 		IconDisabled = "ui/perks/possess56_bw.png"
 	},
 	{
@@ -812,7 +812,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendInsects,
 		Tooltip = this.Const.Strings.PerkDescription.LegendInsects,
 		Icon = "ui/perks/insects_circle.png",
-		IconDisabled = "ui/perks/spears_insects_circle_bw.png"
+		IconDisabled = "ui/perks/insects_circle_bw.png"
 	}
 
 ];

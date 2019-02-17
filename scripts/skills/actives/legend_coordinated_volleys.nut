@@ -4,7 +4,7 @@ this.legend_coordinated_volleys <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_coordinated_volleys";
 		this.m.Name = "Coordinated Volleys";
-		this.m.Description = "Time your shots to arrive together, increasing their damage";
+		this.m.Description = "Time and call the shots for archers, increasing their chance to hit";
 		this.m.Icon = "skills/coordinated_volleys_square.png";
 		this.m.IconDisabled = "skills/coordinated_volleys_square_bw.png";
 		this.m.Overlay = "active_22";
@@ -43,7 +43,13 @@ this.legend_coordinated_volleys <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "text",
 				text = this.getCostString()
-			}
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+			}			
 		];
 	}
 
@@ -71,9 +77,7 @@ function isUsable()
 
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.legend_coordinating_volleys"))
 			{
-
-			a.getSkills().add(this.new("scripts/skills/effects/legend_coordinating_volleys"));
-
+				a.getSkills().add(this.new("scripts/skills/effects/legend_coordinating_volleys"));
 			}
 		}
 
