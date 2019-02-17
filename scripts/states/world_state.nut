@@ -1097,40 +1097,53 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
+		local tries = 0
 		do
 		{
+			if (tries % 100 == 0){
+				this.logInfo("Looking for start location attempt: " + tries);
+			}
+			++tries;
+
 			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 8), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 8));
 			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 8), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 8));
 
 			if (!this.World.isValidTileSquare(x, y))
 			{
+				continue
 			}
-			else
+
+			local tile = this.World.getTileSquare(x, y);
+
+			if (tile.IsOccupied)
 			{
-				local tile = this.World.getTileSquare(x, y);
-
-				if (tile.IsOccupied)
-				{
-				}
-				else if (tile.getDistanceTo(randomVillageTile) <= 3)
-				{
-				}
-				else if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
-				{
-				}
-				else
-				{
-					local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
-
-					if (!path.isEmpty())
-					{
-						randomVillageTile = tile;
-						break;
-					}
-				}
+				continue;
 			}
+			
+			if (tile.getDistanceTo(randomVillageTile) <= 3)
+			{
+				continue
+			}
+			
+			if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
+			{
+				continue
+			}
+
+			local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
+
+			if (!path.isEmpty())
+			{
+				randomVillageTile = tile;
+				break;
+			}
+
 		}
-		while (1);
+		while (tries < 3000);
+
+		if (tries >= 3000) {
+			this.logInfo("*** COULD NOT FIND A STARTING TILE ***")
+		}
 
 		this.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.getCamera().setPos(this.m.Player.getPos());

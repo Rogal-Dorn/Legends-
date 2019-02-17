@@ -198,33 +198,15 @@ this.faction_manager <- {
 
 		for( local i = 0; i < this.Const.Factions.CyclesOnNewCampaign; i = ++i )
 		{
-			if (i % 100 == 0){
-				this.logInfo("Cycle number " + i);
-			}
-
+			// if (i % 100 == 0){
+			// 	this.logInfo("Cycle number " + i);
+			// }
 			bandits.update(true);
-			if ( i >= 1999) {
-				this.logInfo("Updated Bandits");
-			}
 			goblins.update(true);
-			if ( i >= 1999) {
-				this.logInfo("Updated Goblins");
-			}		
-			if ( i >= 1999) {
-				this.logInfo("Updated Orcs");
-			}		
-			undead.update(true);
-			if ( i >= 1999) {
-				this.logInfo("Updated Undead");
-			}		
-			zombies.update(true);
-			if ( i >= 1999) {
-				this.logInfo("Updated Zombies");
-			}		
-			beasts.update(true);
-			if ( i >= 1999) {
-				this.logInfo("Updated Beasts");
-			}			
+			orcs.update(true);	
+			undead.update(true);		
+			zombies.update(true);	
+			beasts.update(true);		
 		}
 	}
 
