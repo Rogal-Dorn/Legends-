@@ -53,7 +53,7 @@ this.legend_push_forward <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-function isUsable()
+	function isUsable()
 	{
 		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.legend_pushing_forward");
 	}
