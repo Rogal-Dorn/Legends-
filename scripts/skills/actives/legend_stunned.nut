@@ -29,9 +29,9 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 6;
 	}
 
 	function getTooltip()
@@ -67,7 +67,6 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		return success;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

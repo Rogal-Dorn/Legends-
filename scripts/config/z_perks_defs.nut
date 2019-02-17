@@ -792,11 +792,27 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_coordinated_volleys",
-		Script = "scripts/skills/perks/perk_coordinated_volleys",
+		Script = "scripts/skills/perks/perk_legend_coordinated_volleys",
 		Name = this.Const.Strings.PerkName.LegendCoordinatedVolleys,
 		Tooltip = this.Const.Strings.PerkDescription.LegendCoordinatedVolleys,
 		Icon = "ui/perks/coordinated_volleys_circle.png",
 		IconDisabled = "ui/perks/coordinated_volleys_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_push_forward",
+		Script = "scripts/skills/perks/perk_legend_push_forward",
+		Name = this.Const.Strings.PerkName.LegendPushForward,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPushForward,
+		Icon = "ui/perks/spears_circle.png",
+		IconDisabled = "ui/perks/spears_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_perk_insects",
+		Script = "scripts/skills/perks/perk_legend_insects",
+		Name = this.Const.Strings.PerkName.LegendInsects,
+		Tooltip = this.Const.Strings.PerkDescription.LegendInsects,
+		Icon = "ui/perks/insects_circle.png",
+		IconDisabled = "ui/perks/spears_insects_circle_bw.png"
 	}
 
 ];
@@ -902,4 +918,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendWither = 96
 	Rebound = 97
 	CoordinatedVolleys = 98
+	LegendPushForward = 99
+	LegendInsects = 100
 };

@@ -55,6 +55,8 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.ReturnFavor,
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.LegendPushForward,
+		gt.Const.Perks.PerkDefs.Rebound,
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,

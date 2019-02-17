@@ -46,6 +46,7 @@ local NobleWeakTree = [
 		gt.Const.Perks.PerkDefs.BattleForged,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
+		gt.Const.Perks.PerkDefs.LegendPushForward,
 		gt.Const.Perks.PerkDefs.LegendRoster6,
 	],
 	[

@@ -49,10 +49,12 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.BattleForged,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
+		gt.Const.Perks.PerkDefs.LegendPushForward,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
+		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Inspire,
 		gt.Const.Perks.PerkDefs.LegendRoster7

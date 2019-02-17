@@ -1093,7 +1093,9 @@ gt.Const.Strings.PerkName <- {
 	LegendRoster4 = "The Squad",
 	LegendRoster5 = "The Section",
 	LegendRoster6 = "The Company",
-	LegendRoster7 = "The Platoon"
+	LegendRoster7 = "The Platoon",
+	LegendPushForward = "Push Forward",
+	LegendInsects = "Insect Swarm"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1213,7 +1215,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster4 = "Create a squad regime, with weekly shedules and drills. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
 	LegendRoster5 = "Oversee the section\'s financial administation processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
 	LegendRoster6 = "Manage the company logicistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
-	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]"
+	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
+	LegendPushFoward = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative"
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

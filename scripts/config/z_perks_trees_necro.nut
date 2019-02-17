@@ -53,6 +53,7 @@ local NecroTree = [
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
+		gt.Const.Perks.PerkDefs.LegendInsects,
 		gt.Const.Perks.PerkDefs.LegendDarkflight,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 	],
