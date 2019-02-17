@@ -199,14 +199,20 @@ this.faction_manager <- {
 		for( local i = 0; i < this.Const.Factions.CyclesOnNewCampaign; i = ++i )
 		{
 			if (i % 100 == 0){
-				this.logInfo("Cylce number " + i)
+				this.logInfo("Cycle number " + i);
 			}
 			bandits.update(true);
+			this.logInfo("Updated Bandits");
 			goblins.update(true);
+			this.logInfo("Updated Goblins");
 			orcs.update(true);
+			this.logInfo("Updated Orcs");
 			undead.update(true);
+			this.logInfo("Updated Undead");
 			zombies.update(true);
+			this.logInfo("Updated Zombies");
 			beasts.update(true);
+			this.logInfo("Updated Beasts");
 		}
 	}
 
