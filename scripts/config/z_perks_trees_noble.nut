@@ -28,6 +28,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,
+		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.InspiringPresence,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],

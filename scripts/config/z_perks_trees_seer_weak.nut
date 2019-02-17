@@ -35,6 +35,7 @@ local SeerWeakTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.Rebound,
 	],
 	[
 		gt.Const.Perks.PerkDefs.Nimble,

@@ -112,8 +112,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				10
 			],
 			Bravery = [
-				15,
-				20
+				20,
+				30
 			],
 			Stamina = [
 				20,

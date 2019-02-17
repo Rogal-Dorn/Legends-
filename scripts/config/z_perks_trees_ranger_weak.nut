@@ -7,8 +7,10 @@ if (!("Perks" in gt.Const))
 
 local RangerWeakTree = [
 	[
+		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
+		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.Lookout,
@@ -19,6 +21,7 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.Debilitate,
 		gt.Const.Perks.PerkDefs.Sprint,
 	],
 	[
@@ -26,6 +29,7 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.DoubleStrike,
+		gt.Const.Perks.PerkDefs.DevastatingStrikes,
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryPoison,
@@ -44,6 +48,7 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Nimble,
+		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendCascade,
 	],
 	[

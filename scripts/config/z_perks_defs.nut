@@ -781,7 +781,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendWither,
 		Icon = "ui/perks/wither56.png",
 		IconDisabled = "ui/perks/wither56_bw.png"
-	}			
+	},
+	{
+		ID = "perk.legend_rebound",
+		Script = "scripts/skills/perks/perk_rebound",
+		Name = this.Const.Strings.PerkName.Rebound,
+		Tooltip = this.Const.Strings.PerkDescription.Rebound,
+		Icon = "ui/perks/rebound_circle.png",
+		IconDisabled = "ui/perks/rebound_circle_bw.png"
+	}
 
 ];
 
@@ -884,4 +892,5 @@ gt.Const.Perks.PerkDefs <- {
 	LastStand = 94,
 	LegendRaiseUndead = 95
 	LegendWither = 96
+	Rebound = 97
 };

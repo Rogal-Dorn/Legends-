@@ -47,10 +47,12 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.LegendMiasma,
 		gt.Const.Perks.PerkDefs.LegendHex,
+		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
+		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LegendDarkflight,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendRoster7

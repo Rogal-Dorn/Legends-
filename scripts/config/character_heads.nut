@@ -95,14 +95,7 @@ gt.Const.Faces.AllHuman <- [
 	"bust_head_20",
 	"bust_head_21",
 	"bust_head_22",
-	"bust_head_23",
-	"bust_head_24",
-	"bust_head_25",
-	"bust_head_26",
-	"bust_head_27",
-	"bust_head_28",
-	"bust_head_29",
-	"bust_head_30"
+	"bust_head_23"
 ];
 gt.Const.Faces.AllMale <- [
 	"bust_head_01",
@@ -130,13 +123,7 @@ gt.Const.Faces.AllFemale <- [
 	"bust_head_21",
 	"bust_head_22",
 	"bust_head_23",
-	"bust_head_24",
-	"bust_head_25",
-	"bust_head_26",
-	"bust_head_27",
-	"bust_head_28",
-	"bust_head_29",
-	"bust_head_30"
+	"bust_head_24"
 ];
 
 gt.Const.Faces.SmartMale <- [
@@ -178,8 +165,7 @@ gt.Const.Hair.BarberMale <- [
 	"17",
 	"18",
 	"19",
-	"20",
-	"21"
+	"20"
 ];
 gt.Const.Hair.AllMale <- [
 	"shaved",
@@ -212,8 +198,7 @@ gt.Const.Hair.AllFemale <- [
 	"08",
 	"10",
 	"19",
-	"20",
-	"21"
+	"20"
 ];
 
 gt.Const.Hair.CommonMale <- [

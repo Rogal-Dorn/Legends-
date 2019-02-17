@@ -39,6 +39,7 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
@@ -51,7 +52,6 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Indomitable,
 		gt.Const.Perks.PerkDefs.LegendSleep,
-		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],
 	[],

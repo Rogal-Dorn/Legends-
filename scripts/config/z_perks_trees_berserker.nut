@@ -59,7 +59,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
 		gt.Const.Perks.PerkDefs.LastStand,
-		gt.Const.Perks.PerkDefs.LegendRoster6
+		gt.Const.Perks.PerkDefs.Rebound,
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
@@ -67,7 +67,6 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.Stalwart,
-		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],
 	[],
