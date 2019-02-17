@@ -18,12 +18,12 @@ this.perk_legend_entice <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_entice"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_legend_entice"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_entice"));
 		}
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_legend_entice");
+		this.m.Container.removeByID("actives.legend_entice");
 	}
 
 });

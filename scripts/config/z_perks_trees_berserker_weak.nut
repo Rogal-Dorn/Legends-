@@ -21,7 +21,7 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
-		gt.Const.Perks.PerkDefs.DevastatingStrikes,
+		gt.Const.Perks.PerkDefs.DevastatingStrikes
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -38,7 +38,7 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.MasteryAxe,
 		gt.Const.Perks.PerkDefs.MasteryCleaver,
 		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.MasteryThrowing,
+		gt.Const.Perks.PerkDefs.MasteryThrowing
 	],
 	[
 		gt.Const.Perks.PerkDefs.LoneWolf,
@@ -46,7 +46,7 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.Footwork,
 		gt.Const.Perks.PerkDefs.Slaughter,
 		gt.Const.Perks.PerkDefs.Vengeance,
-		gt.Const.Perks.PerkDefs.SunderingStrike,
+		gt.Const.Perks.PerkDefs.SunderingStrike
 	],
 	[
 		// This hard crashes the game // gt.Const.Perks.PerkDefs.Ironside,
@@ -56,14 +56,14 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendPushForward,
-		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.Rebound
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.BattleFlow,
-		gt.Const.Perks.PerkDefs.Stalwart,
+		gt.Const.Perks.PerkDefs.Stalwart
 	],
 	[],
 	[],

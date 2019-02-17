@@ -201,18 +201,21 @@ this.faction_manager <- {
 			if (i % 100 == 0){
 				this.logInfo("Cycle number " + i);
 			}
+			if ( i > 1900) {
+				this.logInfo("Cycle number " + i);
+			}
 			bandits.update(true);
-			this.logInfo("Updated Bandits");
+			//this.logInfo("Updated Bandits");
 			goblins.update(true);
-			this.logInfo("Updated Goblins");
+			//this.logInfo("Updated Goblins");
 			orcs.update(true);
-			this.logInfo("Updated Orcs");
+			//this.logInfo("Updated Orcs");
 			undead.update(true);
-			this.logInfo("Updated Undead");
+			//this.logInfo("Updated Undead");
 			zombies.update(true);
-			this.logInfo("Updated Zombies");
+			//this.logInfo("Updated Zombies");
 			beasts.update(true);
-			this.logInfo("Updated Beasts");
+			//this.logInfo("Updated Beasts");
 		}
 	}
 

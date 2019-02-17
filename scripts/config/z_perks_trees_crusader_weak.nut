@@ -12,14 +12,14 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.CripplingStrikes,
+		gt.Const.Perks.PerkDefs.CripplingStrikes
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
 		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
-		gt.Const.Perks.PerkDefs.SteelBrow,
+		gt.Const.Perks.PerkDefs.SteelBrow
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -27,7 +27,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
-		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.Rebound
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,
@@ -35,7 +35,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.MasteryHammer,
 		gt.Const.Perks.PerkDefs.MasterySword,
 		gt.Const.Perks.PerkDefs.MasteryPolearm,
-		gt.Const.Perks.PerkDefs.MasteryAxe,
+		gt.Const.Perks.PerkDefs.MasteryAxe
 	],
 	[
 		gt.Const.Perks.PerkDefs.Underdog,

@@ -783,7 +783,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/wither56_bw.png"
 	},
 	{
-		ID = "perk.legend_rebound",
+		ID = "perk.rebound",
 		Script = "scripts/skills/perks/perk_rebound",
 		Name = this.Const.Strings.PerkName.Rebound,
 		Tooltip = this.Const.Strings.PerkDescription.Rebound,
@@ -801,8 +801,8 @@ gt.Const.Perks.PerkDefObjects <- [
 	{
 		ID = "perk.legend_push_forward",
 		Script = "scripts/skills/perks/perk_legend_push_forward",
-		Name = this.Const.Strings.PerkName.LegendPushForward,
-		Tooltip = this.Const.Strings.PerkDescription.LegendPushForward,
+		Name = this.Const.Strings.PerkName.LegendForwardPush,
+		Tooltip = this.Const.Strings.PerkDescription.LegendForwardPush,
 		Icon = "ui/perks/spears_circle.png",
 		IconDisabled = "ui/perks/spears_circle_bw.png"
 	},
@@ -914,10 +914,10 @@ gt.Const.Perks.PerkDefs <- {
 	Vengeance = 92,
 	Ironside = 93,
 	LastStand = 94,
-	LegendRaiseUndead = 95
-	LegendWither = 96
-	Rebound = 97
-	CoordinatedVolleys = 98
-	LegendPushForward = 99
+	LegendRaiseUndead = 95,
+	LegendWither = 96,
+	Rebound = 97,
+	CoordinatedVolleys = 98,
+	LegendPushForward = 99,
 	LegendInsects = 100
 };

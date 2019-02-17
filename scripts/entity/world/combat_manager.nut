@@ -236,61 +236,65 @@ this.combat_manager <- {
 
 			if (combatant.Party == null || combatant.Party.isNull())
 			{
+				continue;
 			}
-			else
+
+			local potentialOpponentFactions = [];
+
+			for( local f = 0; f < _combat.Factions.len(); f = ++f )
 			{
-				local potentialOpponentFactions = [];
-
-				for( local f = 0; f < _combat.Factions.len(); f = ++f )
+				local lFaction = _combat.Factions[f];
+				if (lFaction == null || lFaction.len() == 0)
 				{
-					if (_combat.Factions[f].len() != 0 && combatant.Party.getFaction() != f && !this.World.FactionManager.isAllied(combatant.Party.getFaction(), f))
-					{
-						potentialOpponentFactions.push(f);
-					}
+					continue
 				}
 
-				if (potentialOpponentFactions.len() == 0)
+				if (combatant.Party.getFaction() != f && !this.World.FactionManager.isAllied(combatant.Party.getFaction(), f))
 				{
-				}
-				else
-				{
-					local opponentFaction = potentialOpponentFactions[this.Math.rand(0, potentialOpponentFactions.len() - 1)];
-					local opponentParty = _combat.Factions[opponentFaction][this.Math.rand(0, _combat.Factions[opponentFaction].len() - 1)];
-
-					if (opponentParty == null || opponentParty.isNull() || opponentParty.getTroops().len() == 0)
-					{
-					}
-					else
-					{
-						local opponentIndex = this.Math.rand(0, opponentParty.getTroops().len() - 1);
-						local opponent = opponentParty.getTroops()[opponentIndex];
-						attackOccured = true;
-						opponent.Strength -= this.Math.max(1, this.Math.rand(1, combatant.Strength) * this.Const.World.CombatSettings.CombatStrengthMult);
-
-						if (opponent.Strength <= 0)
-						{
-							++_combat.Stats.Dead;
-							opponentParty.getTroops().remove(opponentIndex);
-							opponentIndex = _combat.Combatants.find(opponent);
-							_combat.Combatants.remove(opponentIndex);
-
-							if (opponentIndex < i)
-							{
-								i = --i;
-							}
-
-							if (opponentParty.getTroops().len() == 0)
-							{
-								_combat.Stats.Loot.extend(opponentParty.getInventory());
-								local partyIndex = _combat.Factions[opponentParty.getFaction()].find(opponentParty);
-								opponentParty.setCombatID(0);
-								_combat.Factions[opponentParty.getFaction()].remove(partyIndex);
-								opponentParty.onCombatLost();
-							}
-						}
-					}
+					potentialOpponentFactions.push(f);
 				}
 			}
+
+			if (potentialOpponentFactions.len() == 0)
+			{
+				continue;
+			}
+
+			local opponentFaction = potentialOpponentFactions[this.Math.rand(0, potentialOpponentFactions.len() - 1)];
+			local opponentParty = _combat.Factions[opponentFaction][this.Math.rand(0, _combat.Factions[opponentFaction].len() - 1)];
+
+			if (opponentParty == null || opponentParty.isNull() || opponentParty.getTroops().len() == 0)
+			{
+				continue;
+			}
+
+			local opponentIndex = this.Math.rand(0, opponentParty.getTroops().len() - 1);
+			local opponent = opponentParty.getTroops()[opponentIndex];
+			attackOccured = true;
+			opponent.Strength -= this.Math.max(1, this.Math.rand(1, combatant.Strength) * this.Const.World.CombatSettings.CombatStrengthMult);
+
+			if (opponent.Strength <= 0)
+			{
+				++_combat.Stats.Dead;
+				opponentParty.getTroops().remove(opponentIndex);
+				opponentIndex = _combat.Combatants.find(opponent);
+				_combat.Combatants.remove(opponentIndex);
+
+				if (opponentIndex < i)
+				{
+					i = --i;
+				}
+
+				if (opponentParty.getTroops().len() == 0)
+				{
+					_combat.Stats.Loot.extend(opponentParty.getInventory());
+					local partyIndex = _combat.Factions[opponentParty.getFaction()].find(opponentParty);
+					opponentParty.setCombatID(0);
+					_combat.Factions[opponentParty.getFaction()].remove(partyIndex);
+					opponentParty.onCombatLost();
+				}
+			}
+
 		}
 
 		if (!attackOccured)

@@ -1094,7 +1094,7 @@ gt.Const.Strings.PerkName <- {
 	LegendRoster5 = "The Section",
 	LegendRoster6 = "The Company",
 	LegendRoster7 = "The Platoon",
-	LegendPushForward = "Push Forward",
+	LegendForwardPush = "Push Forward",
 	LegendInsects = "Insect Swarm"
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1199,7 +1199,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendStunned = "Unleash a brilliant flash of white light aimed directly at the eyes of your target in an attempt to blind and incapacitate.",
 	LegendHorrify = "Blare out a piercing, unworldly sound that is more than likely to distress anyone unfortunate enough to hear it.",
 	LegendPush = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe.",
-	LegendEntice = "With a trick of the light, captivate your target in such a way that they can’t help but approach you."
+	LegendEntice = "With a trick of the light, captivate your target in such a way that they can\'t help but approach you."
 	LegendSleep  = "Enshroud the area with thick smoke that draws the vigor out of your foes. Those that breathe in too much are forced into a light sleep.",
 	LegendFirefield = "throw a noxious concoction that sets the ground alight",
 	LegendPossessUndead = "Allows you to boost the attacks of an undead minion",
@@ -1216,9 +1216,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster5 = "Oversee the section\'s financial administation processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
 	LegendRoster6 = "Manage the company logicistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
-	LegendPushFoward = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
-	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative"
-
+	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
+	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
