@@ -94,8 +94,8 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				10
 			],
 			MeleeSkill = [
-				-10,
-				-10
+				10,
+				10
 			],
 			RangedSkill = [
 				-10,
@@ -131,6 +131,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/helmets/necromancer_hat"));
+		items.equip(this.new("scripts/items/weapons/dagger"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
