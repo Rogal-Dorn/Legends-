@@ -265,15 +265,30 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				P = 1.0,
 				S = "supplies/ammo_item"
 			},
+				{
+				R = 0,
+				P = 1.0,
+				S = "supplies/ammo_small_item"
+			},
 			{
 				R = 10,
 				P = 1.0,
 				S = "supplies/armor_parts_item"
 			},
 			{
+				R = 10,
+				P = 1.0,
+				S = "supplies/armor_parts_small_item"
+			},
+			{
 				R = 50,
 				P = 1.0,
 				S = "supplies/armor_parts_item"
+			},
+				{
+				R = 50,
+				P = 1.0,
+				S = "supplies/armor_parts_small_item"
 			},
 			{
 				R = 10,

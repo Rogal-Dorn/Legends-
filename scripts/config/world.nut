@@ -329,7 +329,7 @@ gt.Const.World.MovementSettings <- {
 gt.Const.World.SpeedSettings <- {
 	FastMult = 2.0,
 	EscortMult = 3.75,
-	CampMult = 3.0
+	CampMult = 4.0
 };
 gt.Const.World.CombatSettings <- {
 	CombatDistance = 100,
