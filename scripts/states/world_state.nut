@@ -3631,6 +3631,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);
 		this.World.Assets.onDeserialize(_in);
+
+		this.logInfo("**CREATING NEW COMBAT MANAGER***")
+		this.m.Combat = this.new("scripts/entity/world/combat_manager");
+		this.World.Combat <- this.WeakTableRef(this.m.Combat);
+
 		this.World.Combat.onDeserialize(_in);
 		this.World.Contracts.onDeserialize(_in);
 		this.World.Events.onDeserialize(_in);
