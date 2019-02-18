@@ -136,8 +136,7 @@ gt.Const.Faces.SmartMale <- [
 	"bust_head_09",
 	"bust_head_12",
 	"bust_head_13",
-	"bust_head_14",
-	"bust_head_24"
+	"bust_head_14"
 ];
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",

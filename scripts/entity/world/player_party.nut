@@ -19,7 +19,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				break;
 			}
 
-			this.m.Strength += 10.0 + (bro.getLevel() - 1) * 2.0;
+			this.m.Strength += ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2.0; 
 		}
 	}
 
