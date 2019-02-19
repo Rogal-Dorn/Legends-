@@ -1,4 +1,4 @@
-this.aimed_shot <- this.inherit("scripts/skills/skill", {
+this.legend_aimed_pebble <- this.inherit("scripts/skills/skill", {
 	m = {
 		AdditionalAccuracy = 0,
 		AdditionalHitChance = 0
@@ -9,7 +9,7 @@ this.aimed_shot <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		this.m.ID = "actives.aimed_shot";
+		this.m.ID = "actives.legend_aimed_pebble";
 		this.m.Name = "Aimed Shot";
 		this.m.Description = "A focused and carefully aimed shot with a good outlook of hitting its intended target even at a distance. Can not be used while engaged in melee.";
 		this.m.KilledString = "Shot";
