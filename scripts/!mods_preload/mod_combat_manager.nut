@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/combat_manager", function(o) {
+::mods_hookNewObjectOnce("entity/world/combat_manager", function(o) {
 
 	o.joinCombat = function( _combat, _party )
 	{
