@@ -767,11 +767,11 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			}
 			else if (r == 15)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe"));
 			}
 			else if (r == 16)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
 			}
 		}
 

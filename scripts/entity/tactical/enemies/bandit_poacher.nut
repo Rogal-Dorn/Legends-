@@ -55,7 +55,7 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/weapons/legend_sling));
+		this.m.Items.equip(this.new("scripts/items/weapons/legend_sling"));
 		this.m.Items.equip(this.new("scripts/items/ammo/bag_of_pebbles"));
 
 		if (this.Math.rand(1, 100) <= 50)
