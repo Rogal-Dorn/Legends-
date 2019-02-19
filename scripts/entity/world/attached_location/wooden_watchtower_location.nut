@@ -116,9 +116,14 @@ this.wooden_watchtower_location <- this.inherit("scripts/entity/world/attached_l
 				S = "weapons/legend_sling"
 			});
 				_list.push({
-				R = 10,
+				R = 50,
 				P = 1.0,
 				S = "weapons/legend_staff"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_wooden_spear"
 			});
 				_list.push({
 				R = 10,

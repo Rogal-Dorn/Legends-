@@ -707,7 +707,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			r = this.Math.rand(1, 7);
+			r = this.Math.rand(1, 16);
 
 			if (r == 1)
 			{
@@ -736,6 +736,42 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			else if (r == 7)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+			}
+			else if (r == 8)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_spear"));
+			}
+				else if (r == 9)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_shiv"));
+			}
+			else if (r == 10)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_hammer"));
+			}
+			else if (r == 11)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_hoe"));
+			}
+			else if (r == 12)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_shovel"));
+			}
+			else if (r == 13)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_staff"));
+			}
+			else if (r == 14)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_sickle"));
+			}
+			else if (r == 15)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe));
+			}
+			else if (r == 16)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork));
 			}
 		}
 

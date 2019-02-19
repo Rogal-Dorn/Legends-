@@ -4,7 +4,7 @@ this.legend_hoe <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.create();
 		this.m.ID = "weapon.legend_hoe";
-		this.m.Name = "Scythe";
+		this.m.Name = "Hoe";
 		this.m.Description = "A digging tool, also digs through shields";
 		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/hoe_01.png";
@@ -17,7 +17,7 @@ this.legend_hoe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "hoe_01";
+		this.m.ArmamentIcon = "icon_hoe_01";
 		this.m.Value = 55;
 		this.m.ShieldDamage = 20
 		this.m.Condition = 30.0;

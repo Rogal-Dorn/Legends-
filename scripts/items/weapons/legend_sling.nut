@@ -37,9 +37,9 @@ this.legend_sling <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local quick_shot = this.new("scripts/skills/actives/quick_shot");
+		local quick_shot = this.new("scripts/skills/actives/legend_quick_pebble");
 		this.addSkill(quick_shot);
-		local aimed_shot = this.new("scripts/skills/actives/aimed_shot");
+		local aimed_shot = this.new("scripts/skills/actives/legend_aimed_pebble");
 		this.addSkill(aimed_shot);
 	}
 

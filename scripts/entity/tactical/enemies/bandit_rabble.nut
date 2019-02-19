@@ -71,7 +71,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/wooden_spear"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_spear"));
 		}
 		else if (r == 3)
 		{
@@ -138,7 +138,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local r = this.Math.rand(1, 2);
 
-			else if (r == 1)
+			if (r == 1)
 			{
 				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
 			}

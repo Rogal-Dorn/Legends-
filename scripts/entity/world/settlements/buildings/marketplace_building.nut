@@ -188,7 +188,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 10,
 				P = 1.0,
-				S = "weapons/wooden_spear"
+				S = "weapons/legend_wooden_spear"
 			},
 			{
 				R = 40,
@@ -279,11 +279,6 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 10,
 				P = 1.0,
 				S = "helmets/straw_hat"
-			},
-			{
-				R = 10,
-				P = 1.0,
-				S = "weapons/legend_staff"
 			},
 			{
 				R = 20,
