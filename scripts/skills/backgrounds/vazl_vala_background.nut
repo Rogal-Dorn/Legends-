@@ -6,7 +6,7 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.ID = "background.vazl_vala";
 		this.m.Name = "Vala";
 		this.m.Icon = "ui/backgrounds/vazl_vala.png";
-		this.m.BackgroundDescription = "Valas combine shamanism, divination and incantation.";
+		this.m.BackgroundDescription = "A Vala is a travelling seer, shaman and sorceress.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
 		this.m.HiringCost = 240;
@@ -74,6 +74,6 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.new("scripts/items/armor/wizard_robe"));
-		items.equip(this.new("scripts/items/weapons/wooden_stick"));
+		items.equip(this.new("scripts/items/weapons/greenskins/goblin_staff"));
 	}
 });

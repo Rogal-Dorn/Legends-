@@ -32,7 +32,7 @@ this.vazl_prosthetic_foot <- this.inherit("scripts/skills/traits/character_trait
 				id = 11,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Initiative"
 			}
 		];
 	}
@@ -40,6 +40,6 @@ this.vazl_prosthetic_foot <- this.inherit("scripts/skills/traits/character_trait
 	function onUpdate (_properties)
 	{
 		_properties.MovementFatigueCostAdditional += 3;
-		_properties.InitiativeMult *= 0.8;
+		_properties.InitiativeMult *= 0.9;
 	}
 });
