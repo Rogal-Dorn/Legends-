@@ -7,8 +7,8 @@ this.vazl_runed_two_handed_hammer <- this.inherit("scripts/items/weapons/runed/v
 		this.m.Name = "Two-Handed Hammer";
 		this.m.Description = "A large and heavy hammer held with both hands. What it lacks in grace, it makes up for in raw force as it is used to shatter even heavily-armored enemy lines by knocking people away or to the ground.";
 		this.m.Categories = "Hammer, Two-Handed";
-		this.m.IconLarge = "weapons/melee/hammer_two_handed_01.png";
-		this.m.Icon = "weapons/melee/hammer_two_handed_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_hammer_two_handed_01.png";
+		this.m.Icon = "weapons/melee/runed_hammer_two_handed_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,7 +17,7 @@ this.vazl_runed_two_handed_hammer <- this.inherit("scripts/items/weapons/runed/v
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_hammer_01";
+		this.m.ArmamentIcon = "runed_icon_hammer_01";
 		this.m.Value = 2000;
 		this.m.ShieldDamage = 26;
 		this.m.Condition = 120.0;

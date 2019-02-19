@@ -7,8 +7,8 @@ this.vazl_runed_orc_metal_club <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.Name = "Cudgel";
 		this.m.Description = "A massive wooden club studded with metal plates. Not made for human hands.";
 		this.m.Categories = "Mace, One-Handed";
-		this.m.IconLarge = "weapons/melee/orc_club_02_140x70.png";
-		this.m.Icon = "weapons/melee/orc_club_02_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_orc_club_02_140x70.png";
+		this.m.Icon = "weapons/melee/runed_orc_club_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
@@ -17,7 +17,7 @@ this.vazl_runed_orc_metal_club <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_orc_weapon_07";
+		this.m.ArmamentIcon = "runed_icon_orc_weapon_07";
 		this.m.Value = 300;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 68.0;

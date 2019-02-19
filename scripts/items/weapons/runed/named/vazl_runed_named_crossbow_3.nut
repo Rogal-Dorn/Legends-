@@ -36,9 +36,9 @@ this.vazl_runed_named_crossbow_3 <- this.inherit("scripts/items/weapons/runed/va
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 0.75;
 		this.m.DirectDamageMult = 0.5;
-		this.m.IconLarge = "weapons/melee/crossbow_01_named_03.png";
-		this.m.Icon = "weapons/melee/crossbow_01_named_03_70x70.png";
-		this.m.ArmamentIcon = "icon_named_crossbow_03";
+		this.m.IconLarge = "weapons/melee/runed_crossbow_01_named_03.png";
+		this.m.Icon = "weapons/melee/runed_crossbow_01_named_03_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_crossbow_03";
 	}
 
 

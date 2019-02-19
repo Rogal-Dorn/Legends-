@@ -24,9 +24,9 @@ this.vazl_runed_named_two_handed_flail_1 <- this.inherit("scripts/items/weapons/
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 15;
-		this.m.IconLarge = "weapons/melee/flail_two_handed_02_named_01.png";
-		this.m.Icon = "weapons/melee/flail_two_handed_02_named_01_70x70.png";
-		this.m.ArmamentIcon = "icon_flail_two_handed_02_named_01";
+		this.m.IconLarge = "weapons/melee/runed_flail_two_handed_02_named_01.png";
+		this.m.Icon = "weapons/melee/runed_flail_two_handed_02_named_01_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_flail_two_handed_02_named_01";
 	}
 
 

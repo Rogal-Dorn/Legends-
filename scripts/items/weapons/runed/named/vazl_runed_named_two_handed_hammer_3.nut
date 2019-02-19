@@ -24,9 +24,9 @@ this.vazl_runed_named_two_handed_hammer_3 <- this.inherit("scripts/items/weapons
 		this.m.ArmorDamageMult = 2.0;
 		this.m.DirectDamageMult = 0.5;
 		this.m.ChanceToHitHead = 0;
-		this.m.IconLarge = "weapons/melee/hammer_two_handed_named_03.png";
-		this.m.Icon = "weapons/melee/hammer_two_handed_named_03_70x70.png";
-		this.m.ArmamentIcon = "icon_named_hammer_03";
+		this.m.IconLarge = "weapons/melee/runed_hammer_two_handed_named_03.png";
+		this.m.Icon = "weapons/melee/runed_hammer_two_handed_named_03_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_hammer_03";
 	}
 
 

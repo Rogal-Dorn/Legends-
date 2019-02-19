@@ -26,9 +26,9 @@ this.vazl_runed_named_three_headed_flail_1 <- this.inherit("scripts/items/weapon
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 10;
-		this.m.IconLarge = "weapons/melee/flail_three_headed_01_named_01.png";
-		this.m.Icon = "weapons/melee/flail_three_headed_01_named_01_70x70.png";
-		this.m.ArmamentIcon = "icon_flail_three_headed_01_named_01";
+		this.m.IconLarge = "weapons/melee/runed_flail_three_headed_01_named_01.png";
+		this.m.Icon = "weapons/melee/runed_flail_three_headed_01_named_01_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_flail_three_headed_01_named_01";
 	}
 
 

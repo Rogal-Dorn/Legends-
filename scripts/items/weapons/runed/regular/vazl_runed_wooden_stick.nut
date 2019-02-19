@@ -9,8 +9,8 @@ this.vazl_runed_wooden_stick <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.Name = "Wooden Stick";
 		this.m.Description = "A simple wooden stick, usually an improvised weapon.";
 		this.m.Categories = "Mace, One-Handed";
-		this.m.IconLarge = "weapons/melee/club_01.png";
-		this.m.Icon = "weapons/melee/club_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_club_01.png";
+		this.m.Icon = "weapons/melee/runed_club_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
@@ -18,7 +18,7 @@ this.vazl_runed_wooden_stick <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_club_01";
+		this.m.ArmamentIcon = "runed_icon_club_01";
 		this.m.Value = 35;
 		this.m.Condition = 32.0;
 		this.m.ConditionMax = 32.0;

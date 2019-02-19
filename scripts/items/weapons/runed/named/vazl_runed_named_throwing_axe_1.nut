@@ -34,9 +34,9 @@ this.vazl_runed_named_throwing_axe_1 <- this.inherit("scripts/items/weapons/rune
 		this.m.DirectDamageMult = 0.25;
 		this.m.ShieldDamage = 0;
 		this.m.ChanceToHitHead = 5;
-		this.m.IconLarge = "weapons/melee/throwing_axes_01_named_01.png";
-		this.m.Icon = "weapons/melee/throwing_axes_01_named_01_70x70.png";
-		this.m.ArmamentIcon = "icon_named_throwing_axes_01";
+		this.m.IconLarge = "weapons/melee/runed_throwing_axes_01_named_01.png";
+		this.m.Icon = "weapons/melee/runed_throwing_axes_01_named_01_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_throwing_axes_01";
 	}
 
 
@@ -52,16 +52,16 @@ this.vazl_runed_named_throwing_axe_1 <- this.inherit("scripts/items/weapons/rune
 
 		if (this.m.Ammo > 0)
 		{
-			this.m.IconLarge = "weapons/melee/throwing_axes_01_named_01.png";
-			this.m.Icon = "weapons/melee/throwing_axes_01_named_01_70x70.png";
-			this.m.ArmamentIcon = "icon_named_throwing_axes_01";
+			this.m.IconLarge = "weapons/melee/runed_throwing_axes_01_named_01.png";
+			this.m.Icon = "weapons/melee/runed_throwing_axes_01_named_01_70x70.png";
+			this.m.ArmamentIcon = "runed_icon_named_throwing_axes_01";
 			this.m.ShowArmamentIcon = true;
 		}
 		else
 		{
-			this.m.IconLarge = "weapons/ranged/throwing_axes_01_bag.png";
-			this.m.Icon = "weapons/ranged/throwing_axes_01_bag_70x70.png";
-			this.m.ArmamentIcon = "icon_named_throwing_axes_01";
+			this.m.IconLarge = "weapons/ranged/runed_throwing_axes_01_bag.png";
+			this.m.Icon = "weapons/ranged/runed_throwing_axes_01_bag_70x70.png";
+			this.m.ArmamentIcon = "runed_icon_named_throwing_axes_01";
 			this.m.ShowArmamentIcon = false;
 		}
 	}

@@ -35,8 +35,8 @@ this.vazl_runed_player_banner <- this.inherit("scripts/items/weapons/runed/vazl_
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.IconLarge = "weapons/banner/banner_" + variant + ".png";
-		this.m.Icon = "weapons/banner/banner_" + variant + "_70x70.png";
+		this.m.IconLarge = "weapons/banner/runed_banner_" + variant + ".png";
+		this.m.Icon = "weapons/banner/runed_banner_" + variant + "_70x70.png";
 	}
 
 	function getTooltip()
@@ -69,12 +69,12 @@ this.vazl_runed_player_banner <- this.inherit("scripts/items/weapons/runed/vazl_
 
 		if (actor.hasSprite("background"))
 		{
-			actor.getSprite("background").setBrush("player_banner_" + variant);
+			actor.getSprite("background").setBrush("player_runed_banner_" + variant);
 		}
 
 		if (actor.hasSprite("shaft"))
 		{
-			actor.getSprite("shaft").setBrush("player_banner_" + variant + "_shaft");
+			actor.getSprite("shaft").setBrush("player_runed_banner_" + variant + "_shaft");
 		}
 
 		actor.setDirty(true);

@@ -7,8 +7,8 @@ this.vazl_runed_hunting_bow <- this.inherit("scripts/items/weapons/runed/vazl_ru
 		this.m.Name = "Hunting Bow";
 		this.m.Description = "A refined bow usually used for hunting down animals. Deadly against unarmored targets, but requires some expertise to use effectively.";
 		this.m.Categories = "Bow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/bow_01.png";
-		this.m.Icon = "weapons/ranged/bow_01_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_bow_01.png";
+		this.m.Icon = "weapons/ranged/runed_bow_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
@@ -16,7 +16,7 @@ this.vazl_runed_hunting_bow <- this.inherit("scripts/items/weapons/runed/vazl_ru
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_hunting_bow";
+		this.m.ArmamentIcon = "runed_icon_hunting_bow";
 		this.m.Value = 600;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 7;

@@ -24,9 +24,9 @@ this.vazl_runed_named_warbrand_1 <- this.inherit("scripts/items/weapons/runed/va
 		this.m.ArmorDamageMult = 0.75;
 		this.m.DirectDamageMult = 0.2;
 		this.m.ChanceToHitHead = 5;
-		this.m.IconLarge = "weapons/melee/military_scythe_named_01.png";
-		this.m.Icon = "weapons/melee/military_scythe_named_01_70x70.png";
-		this.m.ArmamentIcon = "icon_named_warbrand_01";
+		this.m.IconLarge = "weapons/melee/runed_military_scythe_named_01.png";
+		this.m.Icon = "weapons/melee/runed_military_scythe_named_01_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_warbrand_01";
 	}
 
 

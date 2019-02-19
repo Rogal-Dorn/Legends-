@@ -17,13 +17,13 @@ this.vazl_runed_goblin_spiked_balls <- this.inherit("scripts/items/weapons/runed
 		this.m.Name = "Bundle of Spiked Bolas";
 		this.m.Description = "Small and heavy iron balls with metal spikes to be hurled at a target.";
 		this.m.Categories = "Throwing Weapon, One-Handed";
-		this.m.IconLarge = "weapons/ranged/goblin_weapon_07.png";
-		this.m.Icon = "weapons/ranged/goblin_weapon_07_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_goblin_weapon_07.png";
+		this.m.Icon = "weapons/ranged/runed_goblin_weapon_07_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_goblin_weapon_07";
+		this.m.ArmamentIcon = "runed_icon_goblin_weapon_07";
 		this.m.Value = 200;
 		this.m.Ammo = 5;
 		this.m.AmmoMax = 5;

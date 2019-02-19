@@ -7,8 +7,8 @@ this.vazl_runed_two_handed_mace <- this.inherit("scripts/items/weapons/runed/vaz
 		this.m.Name = "Two-Handed Mace";
 		this.m.Description = "A massive wooden club with a spiked head. Receiving a blow from this weapon will leave anyone dazed and gasping for air, no matter their armor.";
 		this.m.Categories = "Mace, Two-Handed";
-		this.m.IconLarge = "weapons/melee/mace_two_handed_01.png";
-		this.m.Icon = "weapons/melee/mace_two_handed_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_mace_two_handed_01.png";
+		this.m.Icon = "weapons/melee/runed_mace_two_handed_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,7 +17,7 @@ this.vazl_runed_two_handed_mace <- this.inherit("scripts/items/weapons/runed/vaz
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_mace_two_handed_01";
+		this.m.ArmamentIcon = "runed_icon_mace_two_handed_01";
 		this.m.Value = 1000;
 		this.m.ShieldDamage = 20;
 		this.m.Condition = 80.0;

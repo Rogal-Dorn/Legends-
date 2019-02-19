@@ -21,9 +21,9 @@ this.vazl_runed_named_warhammer_2 <- this.inherit("scripts/items/weapons/runed/v
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 2.25;
 		this.m.DirectDamageMult = 0.5;
-		this.m.IconLarge = "weapons/melee/warhammer_named_02.png";
-		this.m.Icon = "weapons/melee/warhammer_named_02_70x70.png";
-		this.m.ArmamentIcon = "icon_named_warhammer_02";
+		this.m.IconLarge = "weapons/melee/runed_warhammer_named_02.png";
+		this.m.Icon = "weapons/melee/runed_warhammer_named_02_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_warhammer_02";
 	}
 
 

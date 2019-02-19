@@ -20,9 +20,9 @@ this.vazl_runed_named_fencing_sword_2 <- this.inherit("scripts/items/weapons/run
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.75;
 		this.m.DirectDamageMult = 0.2;
-		this.m.IconLarge = "weapons/melee/sword_fencing_01_named_02.png";
-		this.m.Icon = "weapons/melee/sword_fencing_01_named_02_70x70.png";
-		this.m.ArmamentIcon = "icon_fencing_sword_01_named_02";
+		this.m.IconLarge = "weapons/melee/runed_sword_fencing_01_named_02.png";
+		this.m.Icon = "weapons/melee/runed_sword_fencing_01_named_02_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_fencing_sword_01_named_02";
 	}
 
 

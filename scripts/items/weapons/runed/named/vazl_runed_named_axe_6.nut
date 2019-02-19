@@ -22,9 +22,9 @@ this.vazl_runed_named_axe_6 <- this.inherit("scripts/items/weapons/runed/vazl_ru
 		this.m.RegularDamageMax = 55;
 		this.m.ArmorDamageMult = 1.3;
 		this.m.DirectDamageMult = 0.3;
-		this.m.IconLarge = "weapons/melee/axe_03_named_06.png";
-		this.m.Icon = "weapons/melee/axe_03_named_06_70x70.png";
-		this.m.ArmamentIcon = "icon_named_axe_06";
+		this.m.IconLarge = "weapons/melee/runed_axe_03_named_06.png";
+		this.m.Icon = "weapons/melee/runed_axe_03_named_06_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_axe_06";
 	}
 
 

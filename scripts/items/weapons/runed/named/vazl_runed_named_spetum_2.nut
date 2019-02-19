@@ -25,9 +25,9 @@ this.vazl_runed_named_spetum_2 <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 5;
-		this.m.IconLarge = "weapons/melee/spetum_01_named_02.png";
-		this.m.Icon = "weapons/melee/spetum_01_named_02_70x70.png";
-		this.m.ArmamentIcon = "icon_spetum_01_named_02";
+		this.m.IconLarge = "weapons/melee/runed_spetum_01_named_02.png";
+		this.m.Icon = "weapons/melee/runed_spetum_01_named_02_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_spetum_01_named_02";
 	}
 
 

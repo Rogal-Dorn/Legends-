@@ -19,8 +19,8 @@ this.vazl_runed_goblin_crossbow <- this.inherit("scripts/items/weapons/runed/vaz
 		this.m.Name = "Spiked Impaler";
 		this.m.Description = "A large and heavy crossbow with menacing spikes in front. More like a minitature ballista, it shoots stakes with enough force to knock back a target hit.";
 		this.m.Categories = "Crossbow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/crossbow_goblin_01.png";
-		this.m.Icon = "weapons/ranged/crossbow_goblin_01_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_crossbow_goblin_01.png";
+		this.m.Icon = "weapons/ranged/runed_crossbow_goblin_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
@@ -28,7 +28,7 @@ this.vazl_runed_goblin_crossbow <- this.inherit("scripts/items/weapons/runed/vaz
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_goblin_crossbow_01";
+		this.m.ArmamentIcon = "runed_icon_goblin_crossbow_01";
 		this.m.Value = 2000;
 		this.m.Condition = 72;
 		this.m.ConditionMax = 72;

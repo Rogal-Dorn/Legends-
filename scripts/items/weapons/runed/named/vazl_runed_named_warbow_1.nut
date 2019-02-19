@@ -24,9 +24,9 @@ this.vazl_runed_named_warbow_1 <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 0.6;
 		this.m.DirectDamageMult = 0.35;
-		this.m.IconLarge = "weapons/melee/bow_01_named_01.png";
-		this.m.Icon = "weapons/melee/bow_01_named_01_70x70.png";
-		this.m.ArmamentIcon = "icon_named_bow_01";
+		this.m.IconLarge = "weapons/melee/runed_bow_01_named_01.png";
+		this.m.Icon = "weapons/melee/runed_bow_01_named_01_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_bow_01";
 	}
 
 

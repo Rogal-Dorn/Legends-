@@ -17,13 +17,13 @@ this.vazl_runed_throwing_axe <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.Name = "Bundle of Throwing Axes";
 		this.m.Description = "Small axes to be thrown in an overhand motion towards a target. Heavy enough to inflict serious damage to armor and shields from range.";
 		this.m.Categories = "Throwing Weapon, One-Handed";
-		this.m.IconLarge = "weapons/ranged/throwing_axes_01.png";
-		this.m.Icon = "weapons/ranged/throwing_axes_01_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_throwing_axes_01.png";
+		this.m.Icon = "weapons/ranged/runed_throwing_axes_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_throwing_axes_01";
+		this.m.ArmamentIcon = "runed_icon_throwing_axes_01";
 		this.m.Value = 200;
 		this.m.Ammo = 5;
 		this.m.AmmoMax = 5;
@@ -53,15 +53,15 @@ this.vazl_runed_throwing_axe <- this.inherit("scripts/items/weapons/runed/vazl_r
 		if (this.m.Ammo > 0)
 		{
 			this.m.Name = "Bundle of Throwing Axes";
-			this.m.IconLarge = "weapons/ranged/throwing_axes_01.png";
-			this.m.Icon = "weapons/ranged/throwing_axes_01_70x70.png";
+			this.m.IconLarge = "weapons/ranged/runed_throwing_axes_01.png";
+			this.m.Icon = "weapons/ranged/runed_throwing_axes_01_70x70.png";
 			this.m.ShowArmamentIcon = true;
 		}
 		else
 		{
 			this.m.Name = "Bundle of Throwing Axes (Empty)";
-			this.m.IconLarge = "weapons/ranged/throwing_axes_01_bag.png";
-			this.m.Icon = "weapons/ranged/throwing_axes_01_bag_70x70.png";
+			this.m.IconLarge = "weapons/ranged/runed_throwing_axes_01_bag.png";
+			this.m.Icon = "weapons/ranged/runed_throwing_axes_01_bag_70x70.png";
 			this.m.ShowArmamentIcon = false;
 		}
 

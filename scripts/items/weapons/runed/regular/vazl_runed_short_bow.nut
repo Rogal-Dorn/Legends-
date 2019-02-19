@@ -7,8 +7,8 @@ this.vazl_runed_short_bow <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.Name = "Short Bow";
 		this.m.Description = "A simple wooden short bow with medium range. Requires some expertise to use effectively.";
 		this.m.Categories = "Bow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/bow_02.png";
-		this.m.Icon = "weapons/ranged/bow_02_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_bow_02.png";
+		this.m.Icon = "weapons/ranged/runed_bow_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
@@ -16,7 +16,7 @@ this.vazl_runed_short_bow <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_short_bow";
+		this.m.ArmamentIcon = "runed_icon_short_bow";
 		this.m.Value = 200;
 		this.m.StaminaModifier = -4;
 		this.m.RangeMin = 2;

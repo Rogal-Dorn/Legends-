@@ -23,9 +23,9 @@ this.vazl_runed_named_mace_5 <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.RegularDamageMax = 55;
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.4;
-		this.m.IconLarge = "weapons/melee/mace_01_named_05.png";
-		this.m.Icon = "weapons/melee/mace_01_named_05_70x70.png";
-		this.m.ArmamentIcon = "icon_named_mace_05";
+		this.m.IconLarge = "weapons/melee/runed_mace_01_named_05.png";
+		this.m.Icon = "weapons/melee/runed_mace_01_named_05_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_mace_05";
 	}
 
 
