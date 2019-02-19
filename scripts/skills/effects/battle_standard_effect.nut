@@ -68,7 +68,7 @@ this.battle_standard_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.player_banner")
+			if (ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && (ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.player_banner" || ally.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.vazl_runed_player_banner"))
 			{
 				if (ally.getBravery() > bestBravery)
 				{
