@@ -28,7 +28,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			"the Miller"
 		];
 		this.m.Faces = this.Const.Faces.AllFemale;
-		this.m.Hairs = this.Const.Hair.Female;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
