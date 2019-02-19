@@ -18,7 +18,7 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_shovel_02";
+		this.m.ArmamentIcon = "icon_shovel_01";
 		this.m.Value = 50;
 		this.m.Condition = 32.0;
 		this.m.ConditionMax = 32.0;
