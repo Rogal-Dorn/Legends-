@@ -21,9 +21,9 @@ this.vazl_runed_named_orc_cleaver_3 <- this.inherit("scripts/items/weapons/runed
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.25;
-		this.m.IconLarge = "weapons/melee/orc_cleaver_named_03_140x70.png";
-		this.m.Icon = "weapons/melee/orc_cleaver_named_03_70x70.png";
-		this.m.ArmamentIcon = "icon_orc_weapon_04_named_03";
+		this.m.IconLarge = "weapons/melee/runed_orc_cleaver_named_03_140x70.png";
+		this.m.Icon = "weapons/melee/runed_orc_cleaver_named_03_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_orc_weapon_04_named_03";
 	}
 
 

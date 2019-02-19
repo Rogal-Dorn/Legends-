@@ -9,8 +9,8 @@ this.vazl_runed_longsword <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.Name = "Longsword";
 		this.m.Description = "A long two-handed blade that makes for a versatile weapon.";
 		this.m.Categories = "Sword, Two-Handed";
-		this.m.IconLarge = "weapons/melee/longsword_01.png";
-		this.m.Icon = "weapons/melee/longsword_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_longsword_01.png";
+		this.m.Icon = "weapons/melee/runed_longsword_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -19,7 +19,7 @@ this.vazl_runed_longsword <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_longsword_01";
+		this.m.ArmamentIcon = "runed_icon_longsword_01";
 		this.m.Value = 1600;
 		this.m.ShieldDamage = 12;
 		this.m.Condition = 60.0;

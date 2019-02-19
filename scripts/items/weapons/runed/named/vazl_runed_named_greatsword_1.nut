@@ -26,9 +26,9 @@ this.vazl_runed_named_greatsword_1 <- this.inherit("scripts/items/weapons/runed/
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.35;
 		this.m.ChanceToHitHead = 5;
-		this.m.IconLarge = "weapons/melee/sword_two_hand_01_named_01.png";
-		this.m.Icon = "weapons/melee/sword_two_hand_01_named_01_70x70.png";
-		this.m.ArmamentIcon = "icon_named_greatsword_01";
+		this.m.IconLarge = "weapons/melee/runed_sword_two_hand_01_named_01.png";
+		this.m.Icon = "weapons/melee/runed_sword_two_hand_01_named_01_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_greatsword_01";
 	}
 
 

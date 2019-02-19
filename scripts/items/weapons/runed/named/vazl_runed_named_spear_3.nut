@@ -20,9 +20,9 @@ this.vazl_runed_named_spear_3 <- this.inherit("scripts/items/weapons/runed/vazl_
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.25;
-		this.m.IconLarge = "weapons/melee/spear_03_named_03.png";
-		this.m.Icon = "weapons/melee/spear_03_named_03_70x70.png";
-		this.m.ArmamentIcon = "icon_named_spear_03";
+		this.m.IconLarge = "weapons/melee/runed_spear_03_named_03.png";
+		this.m.Icon = "weapons/melee/runed_spear_03_named_03_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_spear_03";
 	}
 
 

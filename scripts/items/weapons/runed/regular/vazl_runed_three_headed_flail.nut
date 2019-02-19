@@ -9,8 +9,8 @@ this.vazl_runed_three_headed_flail <- this.inherit("scripts/items/weapons/runed/
 		this.m.Name = "Three-Headed Flail";
 		this.m.Description = "Three separate striking heads attached to a handle by chains. Each head can hit or miss a target separately and strike over or around shield cover.";
 		this.m.Categories = "Flail, One-Handed";
-		this.m.IconLarge = "weapons/melee/flail_three_headed_01.png";
-		this.m.Icon = "weapons/melee/flail_three_headed_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_flail_three_headed_01.png";
+		this.m.Icon = "weapons/melee/runed_flail_three_headed_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.ItemProperty = this.Const.Items.Property.IgnoresShieldwall;
@@ -19,7 +19,7 @@ this.vazl_runed_three_headed_flail <- this.inherit("scripts/items/weapons/runed/
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_flail_three_headed_01";
+		this.m.ArmamentIcon = "runed_icon_flail_three_headed_01";
 		this.m.Value = 1600;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 60.0;

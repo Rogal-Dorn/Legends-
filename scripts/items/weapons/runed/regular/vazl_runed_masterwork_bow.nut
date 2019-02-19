@@ -7,8 +7,8 @@ this.vazl_runed_masterwork_bow <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.Name = "Masterwork Bow";
 		this.m.Description = "A finely crafted bow, light in grip and perfectly balanced for accuracy. Constructed from different woods, it has colors of this tree and that spiral through the curve of the weapon, looking arboreally damascened. Truly the work of a master bowyer.";
 		this.m.Categories = "Bow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/bow_03.png";
-		this.m.Icon = "weapons/ranged/bow_03_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_bow_03.png";
+		this.m.Icon = "weapons/ranged/runed_bow_03_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon;
@@ -16,7 +16,7 @@ this.vazl_runed_masterwork_bow <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_event_bow_01";
+		this.m.ArmamentIcon = "runed_icon_event_bow_01";
 		this.m.Value = 3500;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 7;

@@ -24,9 +24,9 @@ this.vazl_runed_named_two_handed_mace_2 <- this.inherit("scripts/items/weapons/r
 		this.m.ArmorDamageMult = 1.25;
 		this.m.DirectDamageMult = 0.5;
 		this.m.ChanceToHitHead = 0;
-		this.m.IconLarge = "weapons/melee/mace_two_handed_02_named_02.png";
-		this.m.Icon = "weapons/melee/mace_two_handed_02_named_02_70x70.png";
-		this.m.ArmamentIcon = "icon_mace_two_handed_02_named_02";
+		this.m.IconLarge = "weapons/melee/runed_mace_two_handed_02_named_02.png";
+		this.m.Icon = "weapons/melee/runed_mace_two_handed_02_named_02_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_mace_two_handed_02_named_02";
 	}
 
 

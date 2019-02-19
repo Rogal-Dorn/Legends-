@@ -24,9 +24,9 @@ this.vazl_runed_named_flail_3 <- this.inherit("scripts/items/weapons/runed/vazl_
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 10;
-		this.m.IconLarge = "weapons/melee/flail_01_named_03.png";
-		this.m.Icon = "weapons/melee/flail_01_named_03_70x70.png";
-		this.m.ArmamentIcon = "icon_named_flail_03";
+		this.m.IconLarge = "weapons/melee/runed_flail_01_named_03.png";
+		this.m.Icon = "weapons/melee/runed_flail_01_named_03_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_flail_03";
 	}
 
 

@@ -7,8 +7,8 @@ this.vazl_runed_warscythe <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.Name = "Warscythe";
 		this.m.Description = "A long pole attached to a sharp curved blade, used to deliver deep sweeping strikes over some distance.";
 		this.m.Categories = "Polearm, Two-Handed";
-		this.m.IconLarge = "weapons/melee/warscythe_01.png";
-		this.m.Icon = "weapons/melee/warscythe_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_warscythe_01.png";
+		this.m.Icon = "weapons/melee/runed_warscythe_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -16,7 +16,7 @@ this.vazl_runed_warscythe <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_warscythe_01";
+		this.m.ArmamentIcon = "runed_icon_warscythe_01";
 		this.m.Value = 700;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 36.0;

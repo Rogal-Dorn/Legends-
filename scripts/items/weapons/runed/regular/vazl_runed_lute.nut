@@ -9,8 +9,8 @@ this.vazl_runed_lute <- this.inherit("scripts/items/weapons/runed/vazl_runed_wea
 		this.m.Name = "Lute";
 		this.m.Description = "A musical instrument that, if in the right hands, is capable of producing pleasant sounds with its vibrating strings.";
 		this.m.Categories = "Musical Instrument, Two-Handed";
-		this.m.IconLarge = "weapons/melee/lute_01.png";
-		this.m.Icon = "weapons/melee/lute_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_lute_01.png";
+		this.m.Icon = "weapons/melee/runed_lute_01_70x70.png";
 		this.m.BreakingSound = "sounds/combat/lute_break_01.wav";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
@@ -19,7 +19,7 @@ this.vazl_runed_lute <- this.inherit("scripts/items/weapons/runed/vazl_runed_wea
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_lute";
+		this.m.ArmamentIcon = "runed_icon_lute";
 		this.m.Value = 120;
 		this.m.Condition = 2.0;
 		this.m.ConditionMax = 2.0;

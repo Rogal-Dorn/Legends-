@@ -7,8 +7,8 @@ this.vazl_runed_fighting_axe <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.Name = "Fighting Axe";
 		this.m.Description = "An axe explicitly designed for fighting armored opponents. Quite sturdy.";
 		this.m.Categories = "Axe, One-Handed";
-		this.m.IconLarge = "weapons/melee/axe_03.png";
-		this.m.Icon = "weapons/melee/axe_03_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_axe_03.png";
+		this.m.Icon = "weapons/melee/runed_axe_03_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
@@ -16,7 +16,7 @@ this.vazl_runed_fighting_axe <- this.inherit("scripts/items/weapons/runed/vazl_r
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_axe_03";
+		this.m.ArmamentIcon = "runed_icon_axe_03";
 		this.m.Value = 3000;
 		this.m.ShieldDamage = 16;
 		this.m.Condition = 80.0;

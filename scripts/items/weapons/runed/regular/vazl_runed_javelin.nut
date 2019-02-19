@@ -17,13 +17,13 @@ this.vazl_runed_javelin <- this.inherit("scripts/items/weapons/runed/vazl_runed_
 		this.m.Name = "Bundle of Javelins";
 		this.m.Description = "A couple of light throwing spears usually carried by skirmishers. Have limited range and are exhausting to throw, but may inflict devastating injuries.";
 		this.m.Categories = "Throwing Weapon, One-Handed";
-		this.m.IconLarge = "weapons/ranged/javelins_01.png";
-		this.m.Icon = "weapons/ranged/javelins_01_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_javelins_01.png";
+		this.m.Icon = "weapons/ranged/runed_javelins_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_javelin_02";
+		this.m.ArmamentIcon = "runed_icon_javelin_02";
 		this.m.Value = 200;
 		this.m.Ammo = 5;
 		this.m.AmmoMax = 5;
@@ -52,15 +52,15 @@ this.vazl_runed_javelin <- this.inherit("scripts/items/weapons/runed/vazl_runed_
 		if (this.m.Ammo > 0)
 		{
 			this.m.Name = "Bundle of Javelins";
-			this.m.IconLarge = "weapons/ranged/javelins_01.png";
-			this.m.Icon = "weapons/ranged/javelins_01_70x70.png";
+			this.m.IconLarge = "weapons/ranged/runed_javelins_01.png";
+			this.m.Icon = "weapons/ranged/runed_javelins_01_70x70.png";
 			this.m.ShowArmamentIcon = true;
 		}
 		else
 		{
 			this.m.Name = "Bundle of Javelins (Empty)";
-			this.m.IconLarge = "weapons/ranged/javelins_01_bag.png";
-			this.m.Icon = "weapons/ranged/javelins_01_bag_70x70.png";
+			this.m.IconLarge = "weapons/ranged/runed_javelins_01_bag.png";
+			this.m.Icon = "weapons/ranged/runed_javelins_01_bag_70x70.png";
 			this.m.ShowArmamentIcon = false;
 		}
 

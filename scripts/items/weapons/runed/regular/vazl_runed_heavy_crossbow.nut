@@ -19,8 +19,8 @@ this.vazl_runed_heavy_crossbow <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.Name = "Heavy Crossbow";
 		this.m.Description = "A heavy crossbow with a crank that can propel bolts over medium distances and is effective even against heavily armored targets. Requires almost a full turn to reload.";
 		this.m.Categories = "Crossbow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/crossbow_03.png";
-		this.m.Icon = "weapons/ranged/crossbow_03_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_crossbow_03.png";
+		this.m.Icon = "weapons/ranged/runed_crossbow_03_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
@@ -28,7 +28,7 @@ this.vazl_runed_heavy_crossbow <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_crossbow_03";
+		this.m.ArmamentIcon = "runed_icon_crossbow_03";
 		this.m.Value = 3200;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 6;

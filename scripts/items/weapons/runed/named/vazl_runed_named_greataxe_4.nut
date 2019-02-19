@@ -24,9 +24,9 @@ this.vazl_runed_named_greataxe_4 <- this.inherit("scripts/items/weapons/runed/va
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 0;
-		this.m.IconLarge = "weapons/melee/axe_two_handed_01_named_04.png";
-		this.m.Icon = "weapons/melee/axe_two_handed_01_named_04_70x70.png";
-		this.m.ArmamentIcon = "icon_named_two_handed_axe_04";
+		this.m.IconLarge = "weapons/melee/runed_axe_two_handed_01_named_04.png";
+		this.m.Icon = "weapons/melee/runed_axe_two_handed_01_named_04_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_two_handed_axe_04";
 	}
 
 

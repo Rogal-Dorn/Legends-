@@ -21,9 +21,9 @@ this.vazl_runed_named_orc_axe_1 <- this.inherit("scripts/items/weapons/runed/vaz
 		this.m.RegularDamageMax = 65;
 		this.m.ArmorDamageMult = 1.3;
 		this.m.DirectDamageMult = 0.3;
-		this.m.IconLarge = "weapons/melee/orc_axe_named_01_140x70.png";
-		this.m.Icon = "weapons/melee/orc_axe_named_01_70x70.png";
-		this.m.ArmamentIcon = "icon_orc_weapon_02_named_01";
+		this.m.IconLarge = "weapons/melee/runed_orc_axe_named_01_140x70.png";
+		this.m.Icon = "weapons/melee/runed_orc_axe_named_01_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_orc_weapon_02_named_01";
 	}
 
 

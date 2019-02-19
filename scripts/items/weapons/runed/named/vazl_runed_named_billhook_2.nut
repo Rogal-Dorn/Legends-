@@ -25,9 +25,9 @@ this.vazl_runed_named_billhook_2 <- this.inherit("scripts/items/weapons/runed/va
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
-		this.m.IconLarge = "weapons/melee/bill_01_named_02.png";
-		this.m.Icon = "weapons/melee/bill_01_named_02_70x70.png";
-		this.m.ArmamentIcon = "icon_named_bill_03";
+		this.m.IconLarge = "weapons/melee/runed_bill_01_named_02.png";
+		this.m.Icon = "weapons/melee/runed_bill_01_named_02_70x70.png";
+		this.m.ArmamentIcon = "runed_icon_named_bill_03";
 	}
 
 

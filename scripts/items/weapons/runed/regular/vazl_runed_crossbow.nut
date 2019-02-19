@@ -19,8 +19,8 @@ this.vazl_runed_crossbow <- this.inherit("scripts/items/weapons/runed/vazl_runed
 		this.m.Name = "Crossbow";
 		this.m.Description = "A pull-lever crossbow that can propel bolts over medium distances. Effective even in the hands of laymen, but requires almost a full turn to reload.";
 		this.m.Categories = "Crossbow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/crossbow_01.png";
-		this.m.Icon = "weapons/ranged/crossbow_01_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_crossbow_01.png";
+		this.m.Icon = "weapons/ranged/runed_crossbow_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
@@ -28,7 +28,7 @@ this.vazl_runed_crossbow <- this.inherit("scripts/items/weapons/runed/vazl_runed
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_crossbow_01";
+		this.m.ArmamentIcon = "runed_icon_crossbow_01";
 		this.m.Value = 750;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 6;

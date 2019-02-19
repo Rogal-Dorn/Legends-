@@ -7,8 +7,8 @@ this.vazl_runed_war_bow <- this.inherit("scripts/items/weapons/runed/vazl_runed_
 		this.m.Name = "War Bow";
 		this.m.Description = "A long bow with massive pulling power. Distinctively designed for battle.";
 		this.m.Categories = "Bow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/bow_05.png";
-		this.m.Icon = "weapons/ranged/bow_05_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_bow_05.png";
+		this.m.Icon = "weapons/ranged/runed_bow_05_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
@@ -16,7 +16,7 @@ this.vazl_runed_war_bow <- this.inherit("scripts/items/weapons/runed/vazl_runed_
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_war_bow";
+		this.m.ArmamentIcon = "runed_icon_war_bow";
 		this.m.Value = 2900;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 7;

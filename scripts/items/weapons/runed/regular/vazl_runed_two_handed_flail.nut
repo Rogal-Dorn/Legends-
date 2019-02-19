@@ -7,8 +7,8 @@ this.vazl_runed_two_handed_flail <- this.inherit("scripts/items/weapons/runed/va
 		this.m.Name = "Two-handed Flail";
 		this.m.Description = "A large and heavy metal flail that required two hands to use. Useful to strike over or around shield cover.";
 		this.m.Categories = "Flail, Two-Handed";
-		this.m.IconLarge = "weapons/melee/flail_two_handed_02.png";
-		this.m.Icon = "weapons/melee/flail_two_handed_02_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_flail_two_handed_02.png";
+		this.m.Icon = "weapons/melee/runed_flail_two_handed_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,7 +17,7 @@ this.vazl_runed_two_handed_flail <- this.inherit("scripts/items/weapons/runed/va
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_flail_two_handed_02";
+		this.m.ArmamentIcon = "runed_icon_flail_two_handed_02";
 		this.m.Value = 1200;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 80.0;

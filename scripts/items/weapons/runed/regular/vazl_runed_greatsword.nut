@@ -9,8 +9,8 @@ this.vazl_runed_greatsword <- this.inherit("scripts/items/weapons/runed/vazl_run
 		this.m.Name = "Greatsword";
 		this.m.Description = "A long two-handed blade as good for crushing as for cutting.";
 		this.m.Categories = "Sword, Two-Handed";
-		this.m.IconLarge = "weapons/melee/sword_two_hand_02.png";
-		this.m.Icon = "weapons/melee/sword_two_hand_02_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_sword_two_hand_02.png";
+		this.m.Icon = "weapons/melee/runed_sword_two_hand_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -19,7 +19,7 @@ this.vazl_runed_greatsword <- this.inherit("scripts/items/weapons/runed/vazl_run
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_sword_two_handed_02";
+		this.m.ArmamentIcon = "runed_icon_sword_two_handed_02";
 		this.m.Value = 3200;
 		this.m.ShieldDamage = 16;
 		this.m.Condition = 72.0;

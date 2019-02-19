@@ -7,14 +7,14 @@ this.vazl_runed_throwing_spear <- this.inherit("scripts/items/weapons/runed/vazl
 		this.m.Name = "Throwing Spear";
 		this.m.Description = "Lighter than a common spear, but heavier than a javelin, this weapon is intended to be thrown over short distances. The tip will bend on impact, potentially rendering shields unusable. Can be used against unshielded opponents as well for great effect.";
 		this.m.Categories = "Throwing Weapon, One-Handed";
-		this.m.IconLarge = "weapons/ranged/throwing_spear_01.png";
-		this.m.Icon = "weapons/ranged/throwing_spear_01_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_throwing_spear_01.png";
+		this.m.Icon = "weapons/ranged/runed_throwing_spear_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Tool;
 		this.m.IsAgainstShields = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_throwing_spear_01";
+		this.m.ArmamentIcon = "runed_icon_throwing_spear_01";
 		this.m.Value = 80;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 4;

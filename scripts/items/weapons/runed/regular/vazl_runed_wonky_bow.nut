@@ -7,8 +7,8 @@ this.vazl_runed_wonky_bow <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.Name = "Wonky Bow";
 		this.m.Description = "An ill-conceived bow if you ever saw one. The wood cricks and cracks when bent, the string frizzes and goes wiry every time you draw it back.";
 		this.m.Categories = "Bow, Two-Handed";
-		this.m.IconLarge = "weapons/ranged/bow_04.png";
-		this.m.Icon = "weapons/ranged/bow_04_70x70.png";
+		this.m.IconLarge = "weapons/ranged/runed_bow_04.png";
+		this.m.Icon = "weapons/ranged/runed_bow_04_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon;
@@ -16,7 +16,7 @@ this.vazl_runed_wonky_bow <- this.inherit("scripts/items/weapons/runed/vazl_rune
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_event_bow_02";
+		this.m.ArmamentIcon = "runed_icon_event_bow_02";
 		this.m.Value = 100;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 7;

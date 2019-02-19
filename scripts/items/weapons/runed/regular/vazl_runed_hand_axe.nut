@@ -7,8 +7,8 @@ this.vazl_runed_hand_axe <- this.inherit("scripts/items/weapons/runed/vazl_runed
 		this.m.Name = "Handaxe";
 		this.m.Description = "A one-handed axe with a medium long shaft and a refined head.";
 		this.m.Categories = "Axe, One-Handed";
-		this.m.IconLarge = "weapons/melee/axe_02.png";
-		this.m.Icon = "weapons/melee/axe_02_70x70.png";
+		this.m.IconLarge = "weapons/melee/runed_axe_02.png";
+		this.m.Icon = "weapons/melee/runed_axe_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
@@ -16,7 +16,7 @@ this.vazl_runed_hand_axe <- this.inherit("scripts/items/weapons/runed/vazl_runed
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_axe_02";
+		this.m.ArmamentIcon = "runed_icon_axe_02";
 		this.m.Value = 900;
 		this.m.ShieldDamage = 12;
 		this.m.Condition = 68.0;
