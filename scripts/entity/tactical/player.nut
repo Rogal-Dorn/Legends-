@@ -2480,6 +2480,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeBool(this.m.IsTryoutDone);
 		this.m.Formations.onSerialize(_out);
 		_out.writeU8(this.m.VeteranPerks);
+		_out.writeBool(this.m.IsCommander);
 
 	}
 
@@ -2565,6 +2566,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 47)
 		{
 			this.m.VeteranPerks = _in.readU8();
+		}
+
+		if (_in.getMetaData().getVersion() >= 48)
+		{
+			this.m.IsCommander = _in.readBool();
 		}
 
 	}
