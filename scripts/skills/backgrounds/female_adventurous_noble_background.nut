@@ -29,7 +29,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.Female;
+		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
