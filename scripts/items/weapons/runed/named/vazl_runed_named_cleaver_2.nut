@@ -21,7 +21,7 @@ this.vazl_runed_named_cleaver_2 <- this.inherit("scripts/items/weapons/runed/vaz
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 0.9;
 		this.m.DirectDamageMult = 0.25;
-		this.m.IconLarge = "weapons/melee/cleaver_01_named_02".png";
+		this.m.IconLarge = "weapons/melee/cleaver_01_named_02.png";
 		this.m.Icon = "weapons/melee/cleaver_01_named_02_70x70.png";
 		this.m.ArmamentIcon = "icon_named_cleaver_02";
 	}
