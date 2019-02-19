@@ -14,7 +14,9 @@ while read -r line; do
     elif [ "$line" == "scripts/states/tactical_state.nut" ]; then
         echo "skipping $line"     
     elif [ "$line" == "scripts/entity/tactical/actor.nut" ]; then
-        echo "skipping $line"                         
+        echo "skipping $line"
+    elif [ "$line" == "scripts/entity/tactical/tactical_entity_manager.nut" ]; then
+        echo "skipping $line"                           
     else
         echo "$line"
         path=$( echo ${line%/*} )
