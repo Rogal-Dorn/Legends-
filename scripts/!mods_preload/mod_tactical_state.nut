@@ -2,7 +2,6 @@
 
 	o.onBattleEnded = function()
 	{
-        this.logInfo("*** ON BATTLE ENDED ****" + this.m.IsExitingToMenu)
 		if (this.m.IsExitingToMenu)
 		{
 			return;
