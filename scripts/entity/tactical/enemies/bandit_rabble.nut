@@ -67,23 +67,23 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 
 		if (r == 1)
 		{
-		this.m.Items.equip(this.new("scripts/items/weapons/pitchfork"));
+		this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			this.m.Items.equip(this.new("scripts/items/weapons/wooden_spear"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/hatchet"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_sickle"));
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/bludgeon"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_staff"));
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 		else if (r == 6)
 		{
@@ -91,11 +91,11 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 7)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/pickaxe"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_hammer"));
 		}
 		else if (r == 8)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_shiv"));
 		}
 		else if (r == 9)
 		{
@@ -107,7 +107,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 11)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/knife"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_hoe"));
 		}
 
 	
