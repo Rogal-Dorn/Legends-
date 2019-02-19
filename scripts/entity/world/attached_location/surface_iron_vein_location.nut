@@ -107,6 +107,10 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 				P = 1.0,
 				S = "weapons/morning_star"
 			});
+					R = 60,
+				P = 1.0,
+				S = "weapons/legend_tipstaff"
+			});
 			_list.push({
 				R = 70,
 				P = 1.0,

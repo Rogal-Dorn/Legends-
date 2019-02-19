@@ -66,6 +66,7 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/ammo_item");
+		_list.push("supplies/ammo_small_item");
 	}
 
 	function onUpdateDraftList( _list )
@@ -77,7 +78,8 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 
 		_list.push("hunter_background");
 		_list.push("bowyer_background");
-		_list.push("bowyer_background");
+		_list.push("female_bowyer_background");
+		_list.push("female_bowyer_background");
 		_list.push("poacher_background");
 		_list.push("witchhunter_background");
 	}
@@ -99,6 +101,11 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 			_list.push({
 				R = 0,
 				P = 0.8,
+				S = "ammo/bag_of_pebbles"
+			});
+			_list.push({
+				R = 0,
+				P = 0.8,
 				S = "ammo/quiver_of_bolts"
 			});
 			_list.push({
@@ -116,6 +123,11 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				R = 20,
 				P = 1.0,
 				S = "weapons/hunting_bow"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_sling"
 			});
 			_list.push({
 				R = 20,

@@ -110,6 +110,21 @@ this.wooden_watchtower_location <- this.inherit("scripts/entity/world/attached_l
 				P = 1.0,
 				S = "shields/wooden_shield"
 			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_sling"
+			});
+				_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_staff"
+			});
+				_list.push({
+				R = 10,
+				P = 1.0,
+				S = "ammo/bag_of_pebbles"
+			});
 		}
 		else if (_id == "building.specialized_trader")
 		{

@@ -848,6 +848,8 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInPolearms = false,
 	IsSpecializedInDaggers = false,
 	IsSpecializedInShields = false,
+	IsSpecializedInSlings = false,
+	IsSpecializedInStaves = false,
 	IsContentWithBeingInReserve = false,
 	DailyWage = 0,
 	DailyWageMult = 1.0,

@@ -67,7 +67,9 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 
 		_list.push("butcher_background");
 		_list.push("daytaler_background");
+		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
+		_list.push("female_farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
@@ -86,6 +88,11 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 				R = 10,
 				P = 1.0,
 				S = "weapons/butchers_cleaver"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_shiv"
 			});
 			_list.push({
 				R = 20,

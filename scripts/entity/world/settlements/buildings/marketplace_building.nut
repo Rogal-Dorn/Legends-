@@ -186,9 +186,19 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/militia_spear"
 			},
 			{
-				R = 20,
+				R = 10,
+				P = 1.0,
+				S = "weapons/wooden_spear"
+			},
+			{
+				R = 40,
 				P = 1.0,
 				S = "weapons/pitchfork"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_wooden_pitchfork"
 			},
 			{
 				R = 10,
@@ -196,14 +206,44 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/knife"
 			},
 			{
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_shiv"
+			},
+			{
 				R = 20,
 				P = 1.0,
 				S = "weapons/hatchet"
 			},
 			{
+				R = 60,
+				P = 1.0,
+				S = "weapons/legend_staff"
+			},
+			{
+				R = 40,
+				P = 1.0,
+				S = "weapons/legend_hoe"
+			},
+			{
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_shovel"
+			},
+			{
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_hammer"
+			},
+			{
 				R = 30,
 				P = 1.0,
 				S = "weapons/short_bow"
+			},
+				{
+				R = 15,
+				P = 1.0,
+				S = "weapons/legend_sling"
 			},
 			{
 				R = 30,
@@ -214,6 +254,11 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 30,
 				P = 1.0,
 				S = "ammo/quiver_of_arrows"
+			},
+			{
+				R = 15,
+				P = 1.0,
+				S = "ammo/bag_of_pebbles"
 			},
 			{
 				R = 10,
@@ -234,6 +279,11 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 10,
 				P = 1.0,
 				S = "helmets/straw_hat"
+			},
+			{
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_staff"
 			},
 			{
 				R = 20,

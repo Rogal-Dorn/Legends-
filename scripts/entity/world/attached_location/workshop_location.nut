@@ -93,6 +93,7 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/armor_parts_item");
+		_list.push("supplies/armor_parts_small_item");
 	}
 
 	function onUpdateDraftList( _list )
@@ -105,6 +106,7 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("peddler_background");
+		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
 	}
 
@@ -121,6 +123,16 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 				R = 20,
 				P = 1.0,
 				S = "supplies/armor_parts_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "supplies/armor_parts_small_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "supplies/armor_parts_small_item"
 			});
 			_list.push({
 				R = 20,

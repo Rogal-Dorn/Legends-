@@ -24,6 +24,7 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 		}
 
 		_list.push("daytaler_background");
+		_list.push("female_daytaler_background");
 		_list.push("peddler_background");
 	}
 
@@ -31,6 +32,17 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 	{
 		if (_id == "building.marketplace")
 		{
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_hoe"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_shovel"
+			});
+
 			_list.push({
 				R = 0,
 				P = 1.0,
