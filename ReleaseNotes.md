@@ -82,7 +82,7 @@ Beta 08
 *Seer starts with a mystic staff that shoots magic missiles. Daze upgraded, gains Chain lightning
 *Warlock starts with grizzly scythe that drains life, health and melee buffed
 *Ranger gains Nightvision and Composure (stun immunity)
-*Berserker, Noble and Crusader gain composure
+*Berserker, Noble Warlock, and Crusader gain composure
 *New low level enemy, the bandit rabble, weaker than thugs. 
 *New low level weapons: hammer, hoe, scythe, shiv, shovel, sickle, sling, staff, tipstaff, wooden pitchfork and wooden spear. Each spawns near the appropriate industry.
 *Low level weapons given to civilians, rabble and zombies. Taught AI how to use slings, though they sling arrows for the moment.
