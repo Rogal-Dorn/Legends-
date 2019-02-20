@@ -552,7 +552,10 @@ this.weapon <- this.inherit("scripts/items/item", {
 		}
 		this.m.Icon = text;
 		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
-		this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		if (this.m.Name.find("Runed") == null) 
+		{
+			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		}
 		this.m.IsRuned = true;
 	}
 
