@@ -589,7 +589,38 @@ this.asset_manager <- {
 			this.setBrothersMax(1);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			break;
-
+		case this.Const.LegendMod.StartTypes.Hoggart:
+				bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[0][1]);
+			bro.setStartValuesEx([
+				"companion_1h_background"
+			]);
+			bro.setPlaceInFormation(3);
+			bro.setVeteranPerks(3);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+		this.setBrothersMax(18);
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"companion_2h_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.setVeteranPerks(3);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+		
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[2][1]);
+			bro.setStartValuesEx([
+				"companion_ranged_background"
+			]);
+			bro.setPlaceInFormation(5);
+			bro.setVeteranPerks(3);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+		
+			break;
 
 		default:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -601,6 +632,7 @@ this.asset_manager <- {
 			bro.setVeteranPerks(3);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -609,6 +641,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[2][1]);
 			bro.setStartValuesEx([

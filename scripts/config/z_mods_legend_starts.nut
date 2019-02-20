@@ -93,7 +93,7 @@ gt.Const.LegendMod.Starts <- [
         name = "Hoggart",
         description = "Easy. The classic start, in the legends world.",
         intro = "[img]gfx/ui/events/event_24.png[/img]Here we go again..",
-        banner = gt.Const.LegendMod.StartTypes.Noble
+        banner = gt.Const.LegendMod.StartTypes.Hoggart
     },
 ]
 

@@ -688,6 +688,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.setScreen("LegendsBerserkerSuccess");
 				this.World.Contracts.showActiveContract();
 			}
+	});	
 			this.m.States.push({
 			ID = "LegendsHoggart",
 			function start()
