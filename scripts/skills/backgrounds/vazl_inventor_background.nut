@@ -5,20 +5,17 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.character_background.create();
 		this.m.ID = "background.vazl_inventor";
 		this.m.Name = "Inventor";
-		this.m.Icon = "ui/backgrounds/background_61.png";
+		this.m.Icon = "ui/backgrounds/vazl_inventor.png";
 		this.m.BackgroundDescription = "Inventors are trenchant problem solvers, fueled by a burning passion for knowledge.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 140;
-		this.m.DailyCost = 16;
+		this.m.HiringCost = 120;
+		this.m.DailyCost = 12;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
 			"trait.dumb",
 			"trait.superstitious"
-		];
-		this.m.ExcludedTalents = [
-			this.Const.Attributes.Initiative
 		];
 		this.m.Titles = [
 			"the Inventor",
@@ -103,33 +100,23 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 		return c;
 	}
 
-		function onAdded()
+	function onAdded()
 	{
 		this.character_background.onAdded();
-
-		this.m.Container.add(this.new("scripts/skills/perks/perk_bags_and_belts"));
-	}	
-
+		local actor = this.getContainer().getActor();
+		actor.setTitle(this.Const.Strings.InventorTitles[this.Math.rand(0, this.Const.Strings.InventorTitles.len() - 1)]);
+	}
 
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		items.addToBag(this.new("scripts/items/supplies/armor_parts_item"));
-		items.addToBag(this.new("scripts/items/trade/quality_wood_item"));
-		items.addToBag(this.new("scripts/items/trade/copper_ingots_item"));
-		items.addToBag(this.new("scripts/items/misc/potion_of_knowledge_item"));
 
 		r = this.Math.rand(0, 1);
-		if (r == 0)
+		if (r <= 1)
 		{
 			items.equip(this.new("scripts/items/armor/apron"));
 		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/apron"));
-		}
-
 
 		r = this.Math.rand(0, 1);
 		if (r == 0)
@@ -140,7 +127,6 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			items.equip(this.new("scripts/items/helmets/headscarf"));
 		}
-
 
 		r = this.Math.rand(0, 1);
 		if (r == 0)
@@ -153,10 +139,9 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 		this.character_background.onUpdate(_properties);
 		_properties.XPGainMult *= 1.2;
 	}
-
 });

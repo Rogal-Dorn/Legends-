@@ -26,25 +26,25 @@ this.vazl_prosthetic_hand <- this.inherit("scripts/skills/traits/character_trait
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Melee Defense when using a shield"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Melee Defense when using a shield"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Ranged Defense when using a shield"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Ranged Defense when using a shield"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Melee Skill when NOT using a shield"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Melee Skill when NOT using a shield"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Ranged Skill when NOT using a shield"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Ranged Skill when NOT using a shield"
 			}
 		];
 	}
@@ -55,17 +55,17 @@ this.vazl_prosthetic_hand <- this.inherit("scripts/skills/traits/character_trait
 		return shield != null && shield.isItemType(this.Const.Items.ItemType.Shield);
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 		if (this.newhandShield())
 		{
-			_properties.MeleeDefenseMult *= 0.85;
-			_properties.RangedDefenseMult *= 0.85;
+			_properties.MeleeDefenseMult *= 0.9;
+			_properties.RangedDefenseMult *= 0.9;
 		}
 		if (!this.newhandShield())
 		{
-			_properties.MeleeSkillMult *= 0.85;
-			_properties.RangedSkillMult *= 0.85;
+			_properties.MeleeSkillMult *= 0.9;
+			_properties.RangedSkillMult *= 0.9;
 		}
 	}
 });

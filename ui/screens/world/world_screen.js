@@ -478,13 +478,10 @@ WorldScreen.prototype.createDevConsoleContent = function (_dialog)
 
     var inputLayout = $('<div class="l-input"/>');
     row.append(inputLayout);
-    inputLayout.createInput('', 0, 255, 1, null, 'title-font-big font-bold font-color-brother-name', function (_input)
+    inputLayout.createInput('', 0, 1024, 1, null, 'title-font-big font-bold font-color-brother-name', function (_input)
 	{
 		var button = _dialog.findPopupDialogOkButton();
-		if(button.isEnabled())
-		{
-			button.click();
-		}
+		button.click();
 	});
 
     row = $('<div class="row"/>');
@@ -497,8 +494,7 @@ WorldScreen.prototype.createDevConsoleContent = function (_dialog)
     inputLayout.createInput('',0, 255, 2, null, 'title-font-big font-bold font-color-brother-name', function (_input)
 	{
 		var button = _dialog.findPopupDialogOkButton();
-		if(button.isEnabled())
-			button.click();
+		button.click();
 	});
 
     return result;

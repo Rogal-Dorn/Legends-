@@ -129,4 +129,117 @@
 		this.Time.scheduleEvent(this.TimeUnit.Real, 800, this.onBattleEndedDelayed.bindenv(this), isVictory);
 	}
 
+	o.gatherLoot = function()
+	{
+		local playerKills = 0;
+
+		foreach( bro in this.m.CombatResultRoster )
+		{
+			playerKills = playerKills + bro.getCombatStats().Kills;
+		}
+
+		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
+		local CannibalsInRoster = 0;
+		local CannibalisticButchersInRoster = 0;
+		foreach (bro in EntireCompanyRoster)
+		{
+			if (bro.isAlive() && bro.getBackground().getID() == "background.vazl_cannibal")
+			{
+				CannibalsInRoster += 1;
+			}
+			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
+			{
+				CannibalisticButchersInRoster += 1;
+			}
+		}
+
+
+
+		local loot = [];
+		local size = this.Tactical.getMapSize();
+
+		for( local x = 0; x < size.X; x = ++x )
+		{
+			for( local y = 0; y < size.Y; y = ++y )
+			{
+				local tile = this.Tactical.getTileSquare(x, y);
+
+				if (tile.IsContainingItems)
+				{
+					foreach( item in tile.Items )
+					{
+						item.onCombatFinished();
+						loot.push(item);
+					}
+				}
+
+
+
+				if (this.Math.rand(1, 100) <= 8 && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
+				{
+					if (CannibalisticButchersInRoster >= 1)
+					{
+						local humanmeat = this.new("scripts/items/supplies/vazl_yummy_sausages");
+						humanmeat.randomizeAmount();
+						humanmeat.randomizeBestBefore();
+						loot.push(humanmeat);
+					}
+					else if (CannibalisticButchersInRoster < 1 && CannibalsInRoster >= 1)
+					{
+						local humanmeat = this.new("scripts/items/supplies/vazl_human_parts");
+						humanmeat.randomizeAmount();
+						humanmeat.randomizeBestBefore();
+						loot.push(humanmeat);
+					}
+				}
+
+
+
+
+				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null)
+				{
+					local items = tile.Properties.get("Corpse").Items.getAllItems();
+
+					foreach( item in items )
+					{
+						item.onCombatFinished();
+
+						if (!item.isChangeableInBattle() && item.isDroppedAsLoot())
+						{
+							if (item.getCondition() > 1 && item.getConditionMax() > 1 && item.getCondition() > item.getConditionMax() * 0.66 && this.Math.rand(1, 100) <= 66)
+							{
+								local c = this.Math.minf(item.getCondition(), this.Math.rand(this.Math.maxf(10, item.getConditionMax() * 0.35), item.getConditionMax()));
+								item.setCondition(c);
+							}
+
+							item.removeFromContainer();
+							loot.push(item);
+						}
+					}
+				}
+			}
+		}
+
+		if (this.m.StrategicProperties != null)
+		{
+			local player = this.World.State.getPlayer();
+
+			foreach( party in this.m.StrategicProperties.Parties )
+			{
+				if (party.getTroops().len() == 0 && party.isAlive() && !party.isAlliedWithPlayer() && party.isDroppingLoot() && (playerKills > 0 || this.m.IsDeveloperModeEnabled))
+				{
+					party.onDropLootForPlayer(loot);
+				}
+			}
+
+			foreach( item in this.m.StrategicProperties.Loot )
+			{
+				loot.push(this.new(item));
+			}
+		}
+
+		this.m.CombatResultLoot.assign(loot);
+		this.m.CombatResultLoot.sort();
+	}
+
 })
