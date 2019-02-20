@@ -161,6 +161,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
 		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
 	}	
 
 
