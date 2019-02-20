@@ -34,7 +34,7 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/bash"));
-		this.addSkill(this.new("scripts/skills/actives/knock_out"));
+		this.addSkill(this.new("scripts/skills/actives/legend_magic_missile"));
 	}
 
 });
