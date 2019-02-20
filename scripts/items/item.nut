@@ -645,7 +645,7 @@ this.item <- {
 
 		if (_in.getMetaData().getVersion() >= 48)
 		{
-			this.m.IsRuned = _in.readbool();
+			this.m.IsRuned = _in.readBool();
 		}		
 	
 		this.updateVariant();

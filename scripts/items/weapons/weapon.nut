@@ -530,9 +530,10 @@ this.weapon <- this.inherit("scripts/items/item", {
 		local text = ""
 		for (local i = 0; i < iconLargeParts.len(); i = ++i)
 		{
+			this.logInfo(iconLargeParts[i]);
 			if (i == iconLargeParts.len() - 1)
 			{
-				text = "runed_" + iconLargeParts[i]
+				text = text + "runed_" + iconLargeParts[i]
 			} else {
 				text = text + iconLargeParts[i] + "/";
 			}
@@ -544,13 +545,13 @@ this.weapon <- this.inherit("scripts/items/item", {
 		{
 			if (i == iconParts.len() - 1)
 			{
-				text = "runed_" + iconParts[i]
+				text = text + "runed_" + iconParts[i]
 			} else {
 				text = text + iconParts[i] + "/";
 			}
 		}
 		this.m.Icon = text;
-		this.m.ArmamentIcon = "runed_" + text;
+		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
 		this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
 		this.m.IsRuned = true;
 	}
