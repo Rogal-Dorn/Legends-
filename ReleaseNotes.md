@@ -75,3 +75,23 @@ Recommended addons:
 	- Adds 48 new tracks to the game.
 * Dark Reskin 
 	- Reworks all graphics.
+
+
+Beta 08
+
+*Seer starts with a mystic staff that shoots magic missiles. Daze upgraded, gains Chain lightning
+*Warlock starts with grizzly scythe that drains life, health and melee buffed
+*Ranger gains Nightvision and Composure (stun immunity)
+*Berserker, Noble and Crusader gain composure
+*New low level enemy, the bandit rabble, weaker than thugs. 
+*New low level weapons: hammer, hoe, scythe, shiv, shovel, sickle, sling, staff, tipstaff, wooden pitchfork and wooden spear. Each spawns near the appropriate industry.
+*Low level weapons given to civilians, rabble and zombies. Taught AI how to use slings, though they sling arrows for the moment.
+*You can now start with three companions and 18 roster slots, like the base game, but still in legends world. 
+*Veteran perks come every 2 levels for commanders, and three levels for companions, beserker now gains levels as he should.
+*Custom icons for fishwife, washerwoman, baker, milkmaid, housemaid and seamstress
+*Deliver goods, Escort Caravan, and Discover location contracts now give an XP reward as well.
+*4 new backgrounds (Inventor, Vala, Cannibal, Shieldmaiden).
+*Through events, Inventor can add prosthetic body parts that alleviate various permanent injuries.
+*Through event, can get new Vala class that is able to inscribed rune weapons with accompanying graphics (event).
+*Cannibal can provide free food provision (Ewww!) (provided by a cannibal and/or a cannibalistically corrupted butcher).
+*New sounds added for some perks and weapons.
