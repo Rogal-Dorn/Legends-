@@ -29,6 +29,8 @@ this.vazl_vala_carves_runes_of_power <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Vala.getImagePath());
 				_event.m.ItemToRune.setRuned();
 				_event.m.ItemToRune.createRuneDamage();
+				_event.m.Person.getItems().unequip(_event.m.ItemToRune);
+				_event.m.Person.getItems().equip(_event.m.ItemToRune);
 				this.List.push({
 						id = 10,
 						icon = "ui/items/" + _event.m.ItemToRune.getIcon(),

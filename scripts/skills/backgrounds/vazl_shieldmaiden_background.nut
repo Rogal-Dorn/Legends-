@@ -24,7 +24,7 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.AllFemale;
+		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
 		this.m.Level = this.Math.rand(1, 2);
@@ -50,8 +50,9 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		return "{Shieldmaiden.}";
+		return "{%name% fights as well as any man.}";
 	}
+
 
 	function onChangeAttributes()
 	{

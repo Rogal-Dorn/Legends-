@@ -42,7 +42,7 @@ this.vazl_cannibal_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onBuildDescription()
 	{
-		return "{Cannibal.}";
+		return "{%name% has a thing for human flesh.}";
 	}
 
 	function onChangeAttributes()
