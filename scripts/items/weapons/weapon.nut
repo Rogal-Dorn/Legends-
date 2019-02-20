@@ -523,17 +523,74 @@ this.weapon <- this.inherit("scripts/items/item", {
 		this.getContainer().updateAppearance();
 	}
 
+	function setRuned()
+	{
+		local iconLargeParts = split(this.m.IconLarge, "/");
+		local iconParts = split(this.m.Icon, "/");
+		local text = ""
+		for (local i = 0; i < iconLargeParts.len(); i = ++i)
+		{
+			this.logInfo(iconLargeParts[i]);
+			if (i == iconLargeParts.len() - 1)
+			{
+				text = text + "runed_" + iconLargeParts[i]
+			} else {
+				text = text + iconLargeParts[i] + "/";
+			}
+		}
+		this.m.IconLarge = text;
+
+		text = ""
+		for (local i = 0; i < iconParts.len(); i = ++i)
+		{
+			if (i == iconParts.len() - 1)
+			{
+				text = text + "runed_" + iconParts[i]
+			} else {
+				text = text + iconParts[i] + "/";
+			}
+		}
+		this.m.Icon = text;
+		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
+		this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		this.m.IsRuned = true;
+	}
+
+	function createRuneDamage()
+	{
+		local damage_randomizer = this.Math.rand(110, 120) * 0.01;
+		local durability_randomizer = this.Math.rand(10, 20);
+		this.m.RegularDamage = this.Math.round(this.m.RegularDamage * damage_randomizer);
+		this.m.RegularDamageMax = this.Math.round(this.m.RegularDamageMax * damage_randomizer);
+		this.m.Condition = this.Math.round(this.m.Condition + durability_randomizer);
+		this.m.ConditionMax = this.Math.round(this.m.ConditionMax + durability_randomizer);
+	}
+
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
 		_out.writeU16(this.m.Ammo);
+		if (this.m.IsRuned) {
+			_out.writeF32(this.m.Condition);
+			_out.writeF32(this.m.ConditionMax);
+			_out.writeU16(this.m.RegularDamage);
+			_out.writeU16(this.m.RegularDamageMax);
+		}
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
-		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
 		this.m.Ammo = _in.readU16();
+		if (this.m.IsRuned) 
+		{
+			this.m.Condition = _in.readF32();
+			this.m.ConditionMax = _in.readF32();
+			this.m.RegularDamage = _in.readU16();
+			this.m.RegularDamageMax = _in.readU16();
+			this.setRuned();
+		}
+		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
 	}
 
 });

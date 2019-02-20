@@ -31,6 +31,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
+		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 	}

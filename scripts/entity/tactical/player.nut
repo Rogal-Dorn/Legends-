@@ -889,9 +889,41 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local injuries = this.Const.Injury.Permanent;
 			local numPermInjuries = 0;
 
-			foreach( inj in injuries )
+			foreach (inj in injuries)
 			{
-				if (!this.m.Skills.hasSkill(inj.ID))
+				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_forearm"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_leg"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_foot"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_ear"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_eye"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_finger"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_hand"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_nose"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
 				{
 					potential.push(inj);
 				}

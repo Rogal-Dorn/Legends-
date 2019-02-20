@@ -47,7 +47,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsOffendedByViolence;
 	}
 
-		function isFemaleBackground()
+	function isFemaleBackground()
 	{
 		return this.m.IsFemaleBackground;
 	}

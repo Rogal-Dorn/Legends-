@@ -133,8 +133,17 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 
 			color = this.Const.HairColors.All[index];
-			this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), 0, "hair", color, "");
-			this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), 0, "beard", color, "");
+
+			if (temp.getBackground().isFemaleBackground())
+			{
+				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), 0, "hair", color, "");
+				this.changeIndexEx(this.Const.Beards.BarberFemale, temp.getSprite("beard"), 0, "beard", color, "");
+			}
+			else
+			{
+				this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), 0, "hair", color, "");
+				this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), 0, "beard", color, "");
+			}
 
 			if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
 			{
@@ -147,28 +156,66 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "body")
 		{
-			this.changeIndex(this.Const.Bodies.AllHuman, temp.getSprite("body"), _change);
-			this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
-		}
-		else if (_layerID == "head")
-		{
-			this.changeIndex(this.Const.Faces.AllHuman, temp.getSprite("head"), _change);
-		}
-		else if (_layerID == "hair")
-		{
-			this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), _change, "hair", color, "");
-		}
-		else if (_layerID == "beard")
-		{
-			this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), _change, "beard", color, "");
-
-			if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
+			if (temp.getBackground().isFemaleBackground())
 			{
-				temp.getSprite("beard_top").setBrush(temp.getSprite("beard").getBrush().Name + "_top");
+				this.changeIndex(this.Const.Bodies.AllFemale, temp.getSprite("body"), _change);
+				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
 			}
 			else
 			{
-				temp.getSprite("beard_top").resetBrush();
+				this.changeIndex(this.Const.Bodies.AllMale, temp.getSprite("body"), _change);
+				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+			}
+		}
+		else if (_layerID == "head")
+		{
+			if (temp.getBackground().isFemaleBackground())
+			{
+				this.changeIndex(this.Const.Faces.AllFemale, temp.getSprite("head"), _change);
+			}
+			else
+			{
+				this.changeIndex(this.Const.Faces.AllMale, temp.getSprite("head"), _change);
+			}
+		}
+		else if (_layerID == "hair")
+		{
+			if (temp.getBackground().isFemaleBackground())
+			{
+				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), _change, "hair", color, "");
+			}
+			else
+			{
+				this.changeIndexEx(this.Const.Hair.BarberMale, temp.getSprite("hair"), _change, "hair", color, "");
+			}
+		}
+		else if (_layerID == "beard")
+		{
+			if (temp.getBackground().isFemaleBackground())
+			{
+				this.changeIndexEx(this.Const.Beards.BarberFemale, temp.getSprite("beard"), _change, "beard", color, "");
+
+				if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
+				{
+					temp.getSprite("beard_top").setBrush(temp.getSprite("beard").getBrush().Name + "_top");
+				}
+				else
+				{
+					temp.getSprite("beard_top").resetBrush();
+				}
+			}
+			else
+			{
+				this.changeIndexEx(this.Const.Beards.Barber, temp.getSprite("beard"), _change, "beard", color, "");
+
+				if (temp.getSprite("beard").HasBrush && this.doesBrushExist(temp.getSprite("beard").getBrush().Name + "_top"))
+				{
+					temp.getSprite("beard_top").setBrush(temp.getSprite("beard").getBrush().Name + "_top");
+				}
+				else
+				{
+					temp.getSprite("beard_top").resetBrush();
+				}
 			}
 		}
 		else if (_layerID == "tattoo")

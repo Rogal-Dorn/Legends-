@@ -183,6 +183,64 @@
 		this.Math.seedRandom(this.Time.getRealTime());
 	}
 
+	o.placePlayersInFormation = function ( _players )
+	{
+		for( local x = 11; x <= 14; x = ++x )
+		{
+			for( local y = 10; y <= 20; y = ++y )
+			{
+				this.Tactical.getTile(x, y - x / 2).removeObject();
+			}
+		}
+
+		local positions = [];
+		positions.resize(27 ,0);
+
+		foreach( e in _players )
+		{
+			local p = e.getPlaceInFormation();
+			if (positions[p] == 1)
+			{
+				p += 9;
+			} 
+			else
+			{
+				positions[p] = 1;
+			}
+
+			local x = 13 - p / 9;
+			local y = 30 - (11 + p - p / 9 * 9);
+			local tile = this.Tactical.getTileSquare(x, y);
+
+			if (!tile.IsEmpty)
+			{
+				tile.removeObject();
+			}
+
+			if (this.isTileIsolated(tile))
+			{
+				local avg = 0;
+
+				for( local x = 0; x < 6; x = ++x )
+				{
+					if (tile.hasNextTile(x))
+					{
+						avg = avg + tile.getNextTile(x).Level;
+					}
+				}
+
+				tile.Level = avg / 6;
+			}
+
+			this.Tactical.addEntityToMap(e, tile.Coords.X, tile.Coords.Y);
+
+			if (!this.World.getTime().IsDaytime && e.getBaseProperties().IsAffectedByNight)
+			{
+				e.getSkills().add(this.new("scripts/skills/special/night_effect"));
+			}
+		}
+	}
+	
     o.isTileIsolated = function( _tile )
 	{
 		local isCompletelyIsolated = true;

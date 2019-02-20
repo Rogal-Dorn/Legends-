@@ -469,6 +469,7 @@ gt.Const.Bodies.AllMale <- [
 	"bust_naked_body_01",
 	"bust_naked_body_02"
 ];
+
 gt.Const.Bodies.AllFemale <- [
 	"bust_naked_body_03"
 ];
