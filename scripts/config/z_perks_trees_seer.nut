@@ -51,7 +51,8 @@ local SeerTree = [
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Indomitable,
-		gt.Const.Perks.PerkDefs.LegendSleep
+		gt.Const.Perks.PerkDefs.LegendSleep,
+		gt.Const.Perks.PerkDefs.LegendChainLightning
 	],
 	[],
 	[],

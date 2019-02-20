@@ -181,7 +181,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/bludgeon"
 			},
 			{
-				R = 20,
+				R = 40,
 				P = 1.0,
 				S = "weapons/militia_spear"
 			},
@@ -194,11 +194,6 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 40,
 				P = 1.0,
 				S = "weapons/pitchfork"
-			},
-			{
-				R = 20,
-				P = 1.0,
-				S = "weapons/legend_wooden_pitchfork"
 			},
 			{
 				R = 10,
@@ -216,24 +211,9 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/hatchet"
 			},
 			{
-				R = 60,
-				P = 1.0,
-				S = "weapons/legend_staff"
-			},
-			{
-				R = 40,
-				P = 1.0,
-				S = "weapons/legend_hoe"
-			},
-			{
 				R = 20,
 				P = 1.0,
 				S = "weapons/legend_shovel"
-			},
-			{
-				R = 30,
-				P = 1.0,
-				S = "weapons/legend_hammer"
 			},
 			{
 				R = 30,

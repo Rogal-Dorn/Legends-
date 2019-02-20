@@ -5,7 +5,7 @@ this.legend_hoe <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_hoe";
 		this.m.Name = "Hoe";
-		this.m.Description = "A digging tool, also digs through shields";
+		this.m.Description = "An agricultural tool with a thin, flat blade attached to a long handle used to till soil and harvest root crops. The blade has been sharpened as to fashion it into a crude and oddly shaped chopping weapon.";
 		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/hoe_01.png";
 		this.m.Icon = "weapons/melee/hoe_01_70x70.png";

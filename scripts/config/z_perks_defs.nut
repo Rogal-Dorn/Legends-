@@ -813,6 +813,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendInsects,
 		Icon = "ui/perks/insects_circle.png",
 		IconDisabled = "ui/perks/insects_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_perk_chain_lightning",
+		Script = "scripts/skills/perks/perk_legend_chain_lightning",
+		Name = this.Const.Strings.PerkName.LegendChainLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendChainLightning,
+		Icon = "ui/perks/lightning_circle.png",
+		IconDisabled = "ui/perks/lightning_circle_bw.png"
 	}
 
 ];
@@ -919,5 +927,6 @@ gt.Const.Perks.PerkDefs <- {
 	Rebound = 97,
 	CoordinatedVolleys = 98,
 	LegendPushForward = 99,
-	LegendInsects = 100
+	LegendInsects = 100,
+	LegendChainLightning = 101
 };

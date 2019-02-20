@@ -5,7 +5,7 @@ this.legend_shiv <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_shiv";
 		this.m.Name = "Shank";
-		this.m.Description = "A jagged piece of metal, tied with cloth";
+		this.m.Description = "A makeshift weapon fashioned from a rusty metal scrap wrapped in cloth. Fit only for the desperate or deranged.";
 		this.m.Categories = "Dagger, One-Handed";
 		this.m.IconLarge = "weapons/melee/shiv_01.png";
 		this.m.Icon = "weapons/melee/shiv_01_70x70.png";

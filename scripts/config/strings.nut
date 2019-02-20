@@ -1097,7 +1097,8 @@ gt.Const.Strings.PerkName <- {
 	LegendRoster6 = "The Company",
 	LegendRoster7 = "The Platoon",
 	LegendForwardPush = "Push Forward",
-	LegendInsects = "Insect Swarm"
+	LegendInsects = "Insect Swarm",
+	LegendChainLightning = "Chain Lightning"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1219,7 +1220,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster6 = "Manage the company logicistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
-	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

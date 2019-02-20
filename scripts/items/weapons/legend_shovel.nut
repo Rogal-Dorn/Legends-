@@ -7,7 +7,7 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_shovel";
 		this.m.Name = "Bludgeon";
-		this.m.Description = "A tool for digging sod, and hitting sods.";
+		this.m.Description = "A tool meant for digging holes, not maiming men. A shovel's wide blade lends accuracy when aiming for the head, but almost anything else would be better.";
 		this.m.Categories = "Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/shovel_01.png";
 		this.m.Icon = "weapons/melee/shovel_01_70x70.png";
