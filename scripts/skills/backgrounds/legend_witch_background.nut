@@ -99,12 +99,12 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 				-10
 			],
 			RangedSkill = [
-				-10,
-				-5
+				10,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				-10,
+				-5
 			],
 			RangedDefense = [
 				-5,

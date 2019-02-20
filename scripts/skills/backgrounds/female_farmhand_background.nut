@@ -115,8 +115,6 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		else
 		{
 			local item = this.new("scripts/items/armor/linen_tunic");
-			item.setVariant(this.Math.rand(6, 7));
-			items.equip(item);
 		}
 
 		r = this.Math.rand(0, 2);

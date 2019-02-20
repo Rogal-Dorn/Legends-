@@ -120,6 +120,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_wither"));
+
 	}
 
 	function onAddEquipment()
@@ -131,7 +132,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/helmets/necromancer_hat"));
-		items.equip(this.new("scripts/items/weapons/dagger"));
+		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

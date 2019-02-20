@@ -13,7 +13,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		}
 		else if (r == 1)
 		{
-			this.m.Name = "S�ance";
+			this.m.Name = "Seance";
 		}
 		else if (r == 2)
 		{
@@ -82,20 +82,20 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				-20,
-				-20
+				20,
+				20
 			],
 			Bravery = [
-				0,
-				0
+				-10,
+				-5
 			],
 			Stamina = [
 				-20,
 				-20
 			],
 			MeleeSkill = [
-				-10,
-				-10
+				10,
+				10
 			],
 			RangedSkill = [
 				-10,
@@ -106,8 +106,8 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				0
 			],
 			RangedDefense = [
-				-5,
-				0
+				-10,
+				-5
 			],
 			Initiative = [
 				0,
@@ -131,7 +131,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/helmets/necromancer_hat"));
-		items.equip(this.new("scripts/items/weapons/dagger"));
+		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

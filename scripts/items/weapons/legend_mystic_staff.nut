@@ -11,7 +11,7 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Icon = "weapons/melee/staff_03_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
@@ -22,7 +22,7 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 100.0;
 		this.m.StaminaModifier = -4;
 		this.m.RangeMin = 1;
-		this.m.RangeMax = 1;
+		this.m.RangeMax = 6;
 		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 50;

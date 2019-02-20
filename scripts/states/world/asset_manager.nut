@@ -530,7 +530,7 @@ this.asset_manager <- {
 			bro.setStartValuesEx([
 				"legend_noble_background"
 			]);
-			bro.setPlaceInFormation(4);
+			bro.setPlaceInFormation(13);
 			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			
@@ -539,7 +539,7 @@ this.asset_manager <- {
 			bro.setStartValuesEx([
 				"legend_necro_background"
 			]);
-			bro.setPlaceInFormation(13);
+			bro.setPlaceInFormation(4);
 			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
