@@ -403,7 +403,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			this.setBrothersMax(1);
 			break;
 
@@ -415,7 +415,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			this.setBrothersMax(1);
 			break;
 
@@ -426,7 +426,7 @@ this.asset_manager <- {
 				"legend_ranger_commander_background"
 			]);
 			bro.setCommander(true);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			this.setBrothersMax(1);
 			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -455,7 +455,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			this.setBrothersMax(1);
 			break;
 
@@ -468,7 +468,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			this.setBrothersMax(1);
 			break;
 
@@ -493,6 +493,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			this.setBrothersMax(1);
+			bro.setVeteranPerks(2);
 			break;
 		case this.Const.LegendMod.StartTypes.Party:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -511,7 +512,7 @@ this.asset_manager <- {
 				"legend_witch_background"
 			]);
 			bro.setPlaceInFormation(12);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			bro = roster.create("scripts/entity/tactical/player");
@@ -520,7 +521,7 @@ this.asset_manager <- {
 				"legend_crusader_background"
 			]);
 			bro.setPlaceInFormation(5);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			
@@ -530,7 +531,7 @@ this.asset_manager <- {
 				"legend_noble_background"
 			]);
 			bro.setPlaceInFormation(4);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			
 			bro = roster.create("scripts/entity/tactical/player");
@@ -539,7 +540,7 @@ this.asset_manager <- {
 				"legend_necro_background"
 			]);
 			bro.setPlaceInFormation(13);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			
@@ -549,7 +550,7 @@ this.asset_manager <- {
 				"legend_ranger_background"
 			]);
 			bro.setPlaceInFormation(14);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			break;
@@ -597,6 +598,7 @@ this.asset_manager <- {
 				"companion_1h_background"
 			]);
 			bro.setPlaceInFormation(3);
+			bro.setVeteranPerks(3);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro = roster.create("scripts/entity/tactical/player");
@@ -613,8 +615,10 @@ this.asset_manager <- {
 				"companion_ranged_background"
 			]);
 			bro.setPlaceInFormation(5);
+			bro.setVeteranPerks(3);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			this.setBrothersMax(18);
 			break;
 		}
 		this.m.FounderNames = [];

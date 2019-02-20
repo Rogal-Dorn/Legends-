@@ -19,6 +19,7 @@ gt.Const.LegendMod.StartTypes <- {
     Necro = "legends_necro",
     Noble = "legends_noble",
     Inventor = "legends_inventor"
+	Hoggart = "legends_hoggart",
 	Party = "legends_party"
 }
 
@@ -29,21 +30,34 @@ gt.Const.LegendMod.Starts <- [
     //     description = "Default Battle Brothers Campaign",
     //     banner = gt.Const.LegendMod.StartTypes.Default
     // },
-    {
-        name = "Beggar",
-        description = "Hardest. No money, no skill. Very Hard",
-        banner = gt.Const.LegendMod.StartTypes.Beggar
+	{
+        name = "Party",
+        description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",
+        intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
+        banner = gt.Const.LegendMod.StartTypes.Party
+    },
+	{
+       name = "Berserker",
+       intro = "[img]gfx/ui/events/event_24.png[/img]So tired. You have been walking for weeks and haven't slept in... too long. You stop and rest a moment, and the thoughts return. The wooden hut you built together. The plot of yams she had planted. The evening you returned from a hunt. They had come. Burned it all. The stores, the hut, the woman, the child. Their screams echo in your blood, calling you to avenge them. You should have been there in time. Her tortured last moments fill your mind. What they did to her was...  too unspeakable. The disgust and loathing well up again. What kind of filth could rape and kill a mother in front of her child? Your heart pounds now, cold sweat, the froth forms at the edge of your mouth. What kind of monster could then do those things to an infant child?  Your mind snaps at the memory of their broken bodies. You scream with unbridled rage. Your muscles push you on again, running blindly into another day. You must find the killers, those swine will know vengeance",
+       description = "Medium. AOE melee damage perks. moves fast in mountains and wildlands",
+       banner = gt.Const.LegendMod.StartTypes.Berserker
     },
     {
         name = "Crusader",
         intro = "[img]gfx/ui/events/event_24.png[/img]The bishop had told you the world was dying due to the sins of man, that the end of days is upon us. The dark ones come and only the furious justice of peity can hold it back. Since then you have journeyed across the lands to find the root of the infection, to stem the tide of the plague. The more of the world you see, the worse it looks. The corruption is spreading, you've followed its tendrils back to its source, here in these lands you will find the cause. Your faith cannot falter, for you bear the torch into the yawning darkness. The day of reckoning approaches, you must finish your preparations",
-        description = "Hard. Tanking and melee perks. Great gear and repair rates",
+        description = "Medium. Tanking and melee perks. Great gear and repair rates",
         banner = gt.Const.LegendMod.StartTypes.Crusader
+    },
+	{
+        name = "Noble",
+        description = "Hard. Leadership and support skills. More supplies and slower supply usage, faster marching speed on flat land",
+        intro = "[img]gfx/ui/events/event_24.png[/img]You were born to be a leader, raised in the company of the greatest men of our day. Somehow though, inheriting power doesn't feel as satisfying as seizing it for yourself. No, if one is to be king, it must be earned through battle and through the blood of one's subjects. Now, off to find some subjects willing to die for their betters.",
+        banner = gt.Const.LegendMod.StartTypes.Noble
     },
     {
         name = "Ranger",
         intro = "[img]gfx/ui/events/event_24.png[/img]The council sent us out three months ago, in all directions from the grove. They wouldn't tell us what we were looking for exactly, only that we would know the signs of destruction when we saw them. For weeks we have followed the tracks and watched the skies. The birds are migrating the wrong direction. The rabbits only run one way down their bramble paths. The animals abandon their ranges, as is they know what is coming.  So you pushed on in the other direction, past deserted fields and burned homesteads, past rivers, lakes and mountains.  As you passed the last rise you paus, this is the place. These valleys have no deer, smoke hangs in the air and clings to the hills, the light is harsh and the air is bitter. Whatever is coming, it is coming from here. ",
-        description = "Harder. Great ranged stats, excelent damage perks. walks faster in forrests",
+        description = "Hard. Great ranged stats, excelent damage perks. walks faster in forrests",
         banner = gt.Const.LegendMod.StartTypes.Rangers
     },
     // {
@@ -70,24 +84,17 @@ gt.Const.LegendMod.Starts <- [
     //     description = "Experimental acedemic",
     //     banner = gt.Const.LegendMod.StartTypes.Inventor
     // },
-	{
-       name = "Berserker",
-       intro = "[img]gfx/ui/events/event_24.png[/img]So tired. You have been walking for weeks and haven't slept in... too long. You stop and rest a moment, and the thoughts return. The wooden hut you built together. The plot of yams she had planted. The evening you returned from a hunt. They had come. Burned it all. The stores, the hut, the woman, the child. Their screams echo in your blood, calling you to avenge them. You should have been there in time. Her tortured last moments fill your mind. What they did to her was...  too unspeakable. The disgust and loathing well up again. What kind of filth could rape and kill a mother in front of her child? Your heart pounds now, cold sweat, the froth forms at the edge of your mouth. What kind of monster could then do those things to an infant child?  Your mind snaps at the memory of their broken bodies. You scream with unbridled rage. Your muscles push you on again, running blindly into another day. You must find the killers, those swine will know vengeance",
-       description = "Hard. AOE melee damage perks. moves fast in mountains and wildlands",
-       banner = gt.Const.LegendMod.StartTypes.Berserker
+  {
+        name = "Beggar",
+        description = "Hardest. No money, no skill. Very Hard",
+        banner = gt.Const.LegendMod.StartTypes.Beggar
     },
 	{
-        name = "Noble",
-        description = "Hard. Leadership and support skills. More supplies and slower supply usage, faster marching speed on flat land",
-        intro = "[img]gfx/ui/events/event_24.png[/img]You were born to be a leader, raised in the company of the greatest men of our day. Somehow though, inheriting power doesn't feel as satisfying as seizing it for yourself. No, if one is to be king, it must be earned through battle and through the blood of one's subjects. Now, off to find some subjects willing to die for their betters.",
+        name = "Hoggart",
+        description = "Easy. The classic start, in the legends world.",
+        intro = "[img]gfx/ui/events/event_24.png[/img]Here we go again..",
         banner = gt.Const.LegendMod.StartTypes.Noble
     },
-	{
-        name = "Party",
-        description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",
-        intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
-        banner = gt.Const.LegendMod.StartTypes.Party
-    }
 ]
 
 
