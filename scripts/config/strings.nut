@@ -1099,7 +1099,8 @@ gt.Const.Strings.PerkName <- {
 	LegendForwardPush = "Push Forward",
 	LegendInsects = "Insect Swarm",
 	LegendChainLightning = "Chain Lightning",
-	LegendComposure = "Composure"
+	LegendComposure = "Composure",
+	LegendNightvision = "Nightvision"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1223,7 +1224,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
 	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor",
-	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun"
+	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun",
+	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

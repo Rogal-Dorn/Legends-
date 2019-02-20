@@ -829,6 +829,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendComposure,
 		Icon = "ui/perks/composed_circle.png",
 		IconDisabled = "ui/perks/composed_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_nightvision",
+		Script = "scripts/skills/perks/perk_legend_nightvision",
+		Name = this.Const.Strings.PerkName.LegendNightvision,
+		Tooltip = this.Const.Strings.PerkDescription.LegendNightvision,
+		Icon = "ui/perks/nightvision_circle.png",
+		IconDisabled = "ui/perks/nightvision_circle_bw.png"
 	}
 
 ];
@@ -937,5 +945,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendPushForward = 99,
 	LegendInsects = 100,
 	LegendChainLightning = 101,
-	LegendComposure = 102
+	LegendComposure = 102,
+	LegendNightvision = 102
 };

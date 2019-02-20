@@ -22,6 +22,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendNightvision,
 		gt.Const.Perks.PerkDefs.Debilitate,
 		gt.Const.Perks.PerkDefs.Sprint
 	],
