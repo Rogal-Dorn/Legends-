@@ -10,9 +10,12 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/daze_square_bw.png";
 		this.m.Overlay = "active_133";
 		this.m.SoundOnUse = [
-			"sounds/combat/cudgel_01.wav",
-			"sounds/combat/cudgel_02.wav",
-			"sounds/combat/cudgel_03.wav"
+			"sounds/combat/stupefy_01.wav",
+			"sounds/combat/stupefy_02.wav",
+			"sounds/combat/stupefy_03.wav",
+			"sounds/combat/stupefy_04.wav",
+			"sounds/combat/stupefy_05.wav"
+
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/cudgel_hit_01.wav",
@@ -28,7 +31,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
@@ -49,21 +52,10 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			},
 			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Dazes an opponent"
-			},
-			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "leave your opponent bewildered, lowering their attacks by 20 damage and increasing their fatigue per hit"
+				text = "leave your opponent bewildered, halving their damage, fatigue and initiative"
 			}
 		];
 	}
@@ -75,7 +67,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 		if (target.isAlive())
 		{
-			target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
+			target.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
 
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{

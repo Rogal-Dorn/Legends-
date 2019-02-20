@@ -88,20 +88,20 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				0
 			],
 			Stamina = [
-				0,
-				0
+				30,
+				20
 			],
 			MeleeSkill = [
 				-10,
 				-10
 			],
 			RangedSkill = [
-				-10,
-				-5
+				10,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				-20,
+				-10
 			],
 			RangedDefense = [
 				-5,
@@ -124,7 +124,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = 2;
+		talents[this.Const.Attributes.RangedSkill] = 2;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/wizard_robe"));

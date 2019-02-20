@@ -112,7 +112,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents[this.Const.Attributes.MeleeSkill] = 2;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/noble_tunic"));
-		items.equip(this.new("scripts/items/weapons/noble_sword"));
+		items.equip(this.new("scripts/items/weapons/pike"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

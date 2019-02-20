@@ -139,7 +139,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
+			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
 		if (r == 1)

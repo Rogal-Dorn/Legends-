@@ -39,19 +39,14 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsRanged = true;
-		this.m.IsIgnoredAsAOO = true;
-		this.m.IsShowingProjectile = true;
-		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
-		this.m.DirectDamageMult = 0.35;
+		this.m.DirectDamageMult = 0.8;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 30;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 8;
-		this.m.ProjectileType = this.Const.ProjectileType.Arrow;
 	}
 
 	function getTooltip()
@@ -85,66 +80,23 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		local ammo = this.getAmmo();
 
-		if (ammo > 0)
-		{
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] arrows left"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty quiver of arrows equipped[/color]"
-			});
-		}
-
-		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
-		{
-			ret.push({
-				id = 9,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
-			});
-		}
 
 		return ret;
 	}
 
 	function isUsable()
 	{
-//		return !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
-	function getAmmo()
-	{
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);
-
-		if (item == null)
-		{
-			return 0;
-		}
-
-		if (item.getAmmoType() == this.Const.Items.AmmoType.Arrows)
-		{
-			return item.getAmmo();
-		}
-	}
 
 
 	function onAfterUpdate( _properties )
 	{
 		this.m.MaxRange = this.m.Item.getRangeMax() - 1 + (_properties.IsSpecializedInStaves ? 1 : 0);
 		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
-		this.m.FatigueCostMult = _properties.IsSpecializedInBows ? this.Const.Combat.WeaponSpecFatigueMult : 0.8;
+		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 0.8;
 	}
 
 	function onUse( _user, _targetTile )
@@ -156,7 +108,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.MeleeSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += -4 + this.m.AdditionalHitChance;
 		}
 	}

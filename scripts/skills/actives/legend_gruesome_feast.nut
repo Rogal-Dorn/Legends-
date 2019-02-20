@@ -125,7 +125,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		local actor = _effect.getContainer().getActor();
 		_effect.addFeastStack();
 		_effect.getContainer().update();
-		actor.setHitpoints(this.Math.min(actor.getHitpoints() + 200, actor.getHitpointsMax()));
+		actor.setHitpoints(this.Math.min(actor.getHitpoints() + 50, actor.getHitpointsMax()));
 		local skills = _effect.getContainer().getAllSkillsOfType(this.Const.SkillType.Injury);
 
 		foreach( s in skills )
