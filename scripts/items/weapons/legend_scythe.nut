@@ -5,7 +5,7 @@ this.legend_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_scythe";
 		this.m.Name = "Scythe";
-		this.m.Description = "A tool for harvesting grain, also the harbringer of death";
+		this.m.Description = "An agricultural tool originally used for mowing grass or reaping crops that can used as an improvised two handed weapon. The edge has been sharpened and will easily rip through unarmored individuals.";
 		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/scythe_01.png";
 		this.m.Icon = "weapons/melee/scythe_01_70x70.png";
