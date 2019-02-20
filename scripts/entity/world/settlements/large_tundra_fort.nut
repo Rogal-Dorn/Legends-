@@ -37,16 +37,17 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Geirborg"
 		]);
 		this.m.DraftList = [
+			"vazl_shieldmaiden_background",
 			"apprentice_background",
-			"beggar_background",
-			"bowyer_background",
+			"female_beggar_background",
+			"female_bowyer_background",
 			"brawler_background",
 			"brawler_background",
 			"brawler_background",
 			"gambler_background",
 			"cultist_background",
-			"daytaler_background",
-			"farmhand_background",
+			"female_daytaler_background",
+			"female_farmhand_background",
 			"gravedigger_background",
 			"graverobber_background",
 			"messenger_background",
@@ -67,7 +68,7 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
 			"sellsword_background",
@@ -77,8 +78,7 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"cripple_background",
 			"eunuch_background",
 			"hedge_knight_background",
-			"hedge_knight_background",
-			"vazl_shieldmaiden_background"
+			"hedge_knight_background"
 		];
 		this.m.UIDescription = "A large citadel towering high over the surrounding tundra";
 		this.m.Description = "A large citadel towering high over the surrounding tundra and securing the large and open region. Many come here to resupply, make repairs and rest until venturing on.";

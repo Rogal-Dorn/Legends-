@@ -7,19 +7,19 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		this.m.Strength = 0.0;
 		local roster = clone this.World.getPlayerRoster().getAll();
 
-		if (roster.len() > 12)
+		if (roster.len() > 27)
 		{
 			roster.sort(this.onLevelCompare);
 		}
 
 		foreach( i, bro in roster )
 		{
-			if (i >= 12)
+			if (i >= 27)
 			{
 				break;
 			}
 
-			this.m.Strength += 10.0 + (bro.getLevel() - 1) * 2.0;
+			this.m.Strength += ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2.0; 
 		}
 	}
 
@@ -62,16 +62,18 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	{
 		local smoke = this.Const.World.CampSmokeParticles;
 
-		for( local i = 0; i < smoke.len(); i = ++i )
+		for( local i = 0; i < smoke.len(); i = i )
 		{
 			this.World.spawnParticleEffect(smoke[i].Brushes, smoke[i].Delay, smoke[i].Quantity, smoke[i].LifeTime, smoke[i].SpawnRate, smoke[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), -200 + this.Const.World.ZLevel.Particles, true);
+			i = ++i;
 		}
 
 		local fire = this.Const.World.CampFireParticles;
 
-		for( local i = 0; i < fire.len(); i = ++i )
+		for( local i = 0; i < fire.len(); i = i )
 		{
 			this.World.spawnParticleEffect(fire[i].Brushes, fire[i].Delay, fire[i].Quantity, fire[i].LifeTime, fire[i].SpawnRate, fire[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), -200 + this.Const.World.ZLevel.Particles - 3, true);
+			i = ++i;
 		}
 	}
 

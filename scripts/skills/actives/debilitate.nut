@@ -4,8 +4,8 @@ this.debilitate <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.debilitate";
 		this.m.Name = "Debilitate";
-		this.m.Icon = "ui/perks/perk_34_active.png";
-		this.m.IconDisabled = "ui/perks/perk_34_active_sw.png";
+		this.m.Icon = "skills/debilitate_square.png";
+		this.m.IconDisabled = "skills/debilitate_square_bw.png";
 		this.m.Overlay = "perk_34_active";
 		this.m.SoundOnUse = [];
 		this.m.Type = this.Const.SkillType.Active;

@@ -632,7 +632,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getConditionMax() > 1 && _item.getCondition() < _item.getConditionMax())
 			{
 				local price = (_item.getConditionMax() - _item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.200000003 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)
@@ -1143,7 +1143,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Ammo + " units at a time."
+					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.World.Assets.getMaxAmmo() + " units at a time."
 				}
 			];
 
@@ -1167,7 +1167,7 @@ this.tooltip_events <- {
 				desc = desc + (repair.ArmorParts + "[/color] tools and supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].ArmorParts + " units at most.");
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
 			return [
 				{
 					id = 1,
@@ -1212,7 +1212,7 @@ this.tooltip_events <- {
 				desc = desc + (heal.MedicineMax + "[/color] Medical Supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Medicine + " units at most.");
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
 			return [
 				{
 					id = 1,
@@ -2723,6 +2723,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "character-screen.right-panel-header-module.FormationButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Formations"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Switch to viewing the formation configuriations for your mercenary company."
+				}
+			];
+
 		case "character-screen.right-panel-header-module.CloseButton":
 			return [
 				{
@@ -2832,6 +2846,48 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Toggle between showing and hiding the mood of your men."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Change company formation and equipment loadouts."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ClearFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Clear Formation Loadout"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all items and weapons from brothers and place in inventory."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormationName":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation Name"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Give this formation a descriptive label for your reference."
 				}
 			];
 
@@ -3425,6 +3481,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "world-town-screen.hire-dialog-module.DismissButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Dismiss Recruit"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Selected recruit doesn't make the cut, give'em the boot."
+				}
+			];
+
 		case "world-town-screen.hire-dialog-module.UnknownTraits":
 			return [
 				{
@@ -3651,6 +3721,161 @@ this.tooltip_events <- {
 				text = "Open store page in browser"
 			});
 			return ret;
+		
+		case "mapconfig.width":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Map Width"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Number of tiles in wide. Default is 140. The camera renderer is hardcoded for max of 140 (this can't be modded). Above that and zoom in won't render correctly for tiles above 140"
+				}
+			];
+
+		case "mapconfig.height":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Map Height"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Number of tiles in hieght. Defualt is 140. The camera renderer is hardcoded for max of 140 (this can't be modded). Above that and zoom in won't render correctly for tiles above 140"
+				}
+			];
+
+		case "mapconfig.landmass":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Land Mass Ratio"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Minimum land to water ratio for an acceptable map. Default is 40. Going either extremes on this slider can result in map never getting generated."
+				}
+			];
+
+		case "mapconfig.water":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Water Connectivity"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Impacts how connected the water masses are. Default is 4. Small value results in patchy water arund corners of map. larger numbers can create a single large island given a low enough land mass ratio."
+				}
+			];
+
+		case "mapconfig.snowline":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Snowline"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Determines where the snowline is generated. Default is 90. This value is inverted. a value of 10 would mean the top 90% of the map is snow."
+				}
+			];
+
+		case "mapconfig.mountains":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Mountain Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of mountains. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.forest":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Forest Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of forests. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.swamp":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Swamp Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of swamps. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.settlements":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Number of Settlements"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Maximum number of settlements. Depending on map size, this will try to add the number of settlements on the slider. It will keep the same ratio of settlement types as default Battle Brothers maps. Minimum distance between settlements is 12 tiles."
+				}
+			];
+
+		case "mapconfig.factions":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Number of Factions"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Maximum number of Factions. Depending on map size, this will try to add the number of factions on the slider."
+				}
+			];
+
+		case "mapconfig.fow":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Settlement Visibility"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled. All settlements will be hidden at campaign start. For the true explorer experience!"
+				}
+			];
+
 		}
 
 		return null;

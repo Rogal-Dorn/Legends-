@@ -134,7 +134,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 			color = this.Const.HairColors.All[index];
 
-			if (temp.getBackground().getID() == "background.vazl_shieldmaiden" || temp.getBackground().getID() == "background.vazl_vala")
+			if (temp.getBackground().isFemaleBackground())
 			{
 				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), 0, "hair", color, "");
 				this.changeIndexEx(this.Const.Beards.BarberFemale, temp.getSprite("beard"), 0, "beard", color, "");
@@ -156,7 +156,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "body")
 		{
-			if (temp.getBackground().getID() == "background.vazl_shieldmaiden" || temp.getBackground().getID() == "background.vazl_vala")
+			if (temp.getBackground().isFemaleBackground())
 			{
 				this.changeIndex(this.Const.Bodies.AllFemale, temp.getSprite("body"), _change);
 				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
@@ -169,7 +169,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "head")
 		{
-			if (temp.getBackground().getID() == "background.vazl_shieldmaiden" || temp.getBackground().getID() == "background.vazl_vala")
+			if (temp.getBackground().isFemaleBackground())
 			{
 				this.changeIndex(this.Const.Faces.AllFemale, temp.getSprite("head"), _change);
 			}
@@ -180,7 +180,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "hair")
 		{
-			if (temp.getBackground().getID() == "background.vazl_shieldmaiden" || temp.getBackground().getID() == "background.vazl_vala")
+			if (temp.getBackground().isFemaleBackground())
 			{
 				this.changeIndexEx(this.Const.Hair.BarberFemale, temp.getSprite("hair"), _change, "hair", color, "");
 			}
@@ -191,7 +191,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 		else if (_layerID == "beard")
 		{
-			if (temp.getBackground().getID() == "background.vazl_shieldmaiden" || temp.getBackground().getID() == "background.vazl_vala")
+			if (temp.getBackground().isFemaleBackground())
 			{
 				this.changeIndexEx(this.Const.Beards.BarberFemale, temp.getSprite("beard"), _change, "beard", color, "");
 

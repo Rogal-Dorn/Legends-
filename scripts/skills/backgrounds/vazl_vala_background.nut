@@ -23,6 +23,7 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = this.Const.Beards.AllFemale;
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

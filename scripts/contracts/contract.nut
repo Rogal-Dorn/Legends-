@@ -461,7 +461,9 @@ this.contract <- {
 
 	function buildText( _text )
 	{
+
 		local brothers = this.World.getPlayerRoster().getAll();
+
 		local brother1 = this.Math.rand(0, brothers.len() - 1);
 		local brother2 = this.Math.rand(0, brothers.len() - 1);
 
@@ -473,8 +475,14 @@ this.contract <- {
 			}
 		}
 
-		brother1 = brothers[brother1].getName();
-		brother2 = brothers[brother2].getName();
+		if (brothers.len() < 2) {
+			brother1 = "unknown"
+			brother2 = "unknown"
+		} else {
+			brother1 = brothers[brother1].getName();
+			brother2 = brothers[brother2].getName();
+		}
+
 		local villages = this.World.EntityManager.getSettlements();
 		local randomTown;
 
@@ -1116,11 +1124,12 @@ this.contract <- {
 		local path = this.World.getNavigator().findPath(_from, _to, navSettings, 0);
 		local left = true;
 		local pos = _from.Pos;
+		local dest = null;
+		local tile = null;
 
-		for( local dest; !path.isEmpty(); pos = this.World.move(pos, dest, speed) )
+		
+		while (!path.isEmpty())
 		{
-			local dest;
-
 			if (path.isAtWaypoint(pos))
 			{
 				path.pop();
@@ -1129,18 +1138,13 @@ this.contract <- {
 				{
 					break;
 				}
-
-				dest = this.World.tileToWorld(path.getCurrent());
-			}
-			else if (dest == null)
-			{
-				dest = this.World.tileToWorld(path.getCurrent());
+				
 			}
 
-			local tile = this.World.getTile(this.World.worldToTile(pos));
+			dest = this.World.tileToWorld(path.getCurrent());
+			tile = this.World.getTile(this.World.worldToTile(pos));
 			local speed = 100.0;
 			speed = speed * this.Const.World.MovementSettings.GlobalMult;
-
 			if (tile.HasRoad)
 			{
 				speed = speed * this.Const.World.MovementSettings.RoadMult;
@@ -1151,7 +1155,11 @@ this.contract <- {
 				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0);
 				left = !left;
 			}
+
+			pos = this.World.move(pos, dest, speed);
+
 		}
+
 	}
 
 	function addUnitsToCombat( _into, _partyList, _resources, _faction )

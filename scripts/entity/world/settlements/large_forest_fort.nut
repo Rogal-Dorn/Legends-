@@ -34,11 +34,13 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Fichtenwall"
 		]);
 		this.m.DraftList = [
-			"apprentice_background",
-			"beggar_background",
-			"bowyer_background",
-			"bowyer_background",
-			"bowyer_background",
+			"vazl_shieldmaiden_background",
+			"vazl_shieldmaiden_background",
+		 	"apprentice_background",
+			"female_beggar_background",
+			"female_bowyer_background",
+			"female_bowyer_background",
+			"female_bowyer_background",
 			"brawler_background",
 			"gambler_background",
 			"gravedigger_background",
@@ -57,8 +59,8 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
-			"disowned_noble_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
+			"female_disowned_noble_background",
 			"hedge_knight_background",
 			"raider_background",
 			"raider_background",
@@ -68,8 +70,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"squire_background",
 			"swordmaster_background",
-			"cripple_background",
-			"vazl_shieldmaiden_background"
+			"cripple_background"
 		];
 
 		if (this.Const.DLC.Unhold)

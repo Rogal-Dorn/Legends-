@@ -37,9 +37,10 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Jarlsborg"
 		]);
 		this.m.DraftList = [
+			"vazl_shieldmaiden_background",
 			"apprentice_background",
 			"brawler_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"gravedigger_background",
 			"graverobber_background",
 			"mason_background",
@@ -49,7 +50,7 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"militia_background",
 			"ratcatcher_background",
 			"refugee_background",
-			"servant_background",
+			"female_servant_background",
 			"vagabond_background",
 			"vagabond_background",
 			"wildman_background",
@@ -57,11 +58,11 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",
-			"adventurous_noble_background",
+			"female_adventurous_noble_background",
 			"deserter_background",
 			"deserter_background",
-			"disowned_noble_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
+			"female_disowned_noble_background",
 			"hedge_knight_background",
 			"hedge_knight_background",
 			"raider_background",
@@ -71,8 +72,7 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"sellsword_background",
 			"squire_background",
-			"cripple_background",
-			"vazl_shieldmaiden_background"
+			"cripple_background"
 		];
 
 		if (this.Const.DLC.Unhold)

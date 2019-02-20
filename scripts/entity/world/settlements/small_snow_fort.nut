@@ -42,7 +42,8 @@ this.small_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Hakonswold"
 		]);
 		this.m.DraftList = [
-			"beggar_background",
+			"vazl_shieldmaiden_background",
+			"female_beggar_background",
 			"houndmaster_background",
 			"brawler_background",
 			"cultist_background",
@@ -56,8 +57,7 @@ this.small_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"raider_background",
 			"retired_soldier_background",
-			"retired_soldier_background",
-			"vazl_shieldmaiden_background"
+			"retired_soldier_background"
 		];
 		this.m.UIDescription = "This motte with bailey looks wide over the endless snow";
 		this.m.Description = "This motte with bailey looks wide over the endless snow, and offers shelter from the cold and warm food to the garrison stationed here.";

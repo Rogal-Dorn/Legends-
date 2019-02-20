@@ -40,10 +40,11 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Lundirsholm"
 		]);
 		this.m.DraftList = [
+			"vazl_shieldmaiden_background",
 			"houndmaster_background",
-			"bowyer_background",
+			"female_bowyer_background",
 			"brawler_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"gravedigger_background",
 			"messenger_background",
 			"militia_background",
@@ -56,12 +57,11 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
 			"retired_soldier_background",
-			"sellsword_background",
-			"vazl_shieldmaiden_background"
+			"sellsword_background"
 		];
 		this.m.UIDescription = "A stone keep securing the surrounding tundra";
 		this.m.Description = "A stone keep that is the seat of power in the surrounding tundra. It acts as a base of operations for a decently sized garrison.";

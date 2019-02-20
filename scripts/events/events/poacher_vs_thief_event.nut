@@ -77,6 +77,10 @@ this.poacher_vs_thief_event <- this.inherit("scripts/events/event", {
 			{
 				thief_candidates.push(bro);
 			}
+		if (bro.getBackground().getID() == "background.female_thief")
+			{
+				thief_candidates.push(bro);
+			}
 		}
 
 		if (thief_candidates.len() == 0)

@@ -342,11 +342,11 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 
 		foreach( b in brothers )
 		{
-			if (b.getBackground().getID() == "background.thief")
+			if (b.getBackground().getID() == "background.thief" || b.getBackground().getID() == "background.female_thief")
 			{
 				candidates_thief.push(b);
 			}
-			else if (b.getBackground().getID() == "background.minstrel")
+			else if (b.getBackground().getID() == "background.minstrel" || b.getBackground().getID() == "background.female_minstrel")
 			{
 				candidates_minstrel.push(b);
 			}
@@ -354,6 +354,11 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_butcher.push(b);
 			}
+			else if (b.getBackground().getID() == "background.female_butcher" && !b.getSkills().hasSkill("injury.missing_finger"))
+			{
+				candidates_butcher.push(b);
+			}
+
 			else if (b.getBackground().getID() == "background.killer_on_the_run")
 			{
 				candidates_killer.push(b);
