@@ -129,7 +129,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/wizard_robe"));
 		items.equip(this.new("scripts/items/helmets/wizard_hat"));
-		items.equip(this.new("scripts/items/weapons/greenskins/goblin_staff"));
+		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
