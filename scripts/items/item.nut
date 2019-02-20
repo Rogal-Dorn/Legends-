@@ -30,7 +30,8 @@ this.item <- {
 		IsAllowedInBag = true,
 		IsUsable = false,
 		IsSold = false,
-		IsBought = false
+		IsBought = false,
+		IsRuned = false
 	},
 	function setContainer( _c )
 	{
@@ -597,12 +598,22 @@ this.item <- {
 	{
 	}
 
+	function setRuned()
+	{
+	}
+
+	function getRuned()
+	{
+		return this.m.IsRuned;
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeBool(this.m.IsToBeRepaired);
 		_out.writeU16(this.m.Variant);
 		_out.writeF32(this.m.Condition);
 		_out.writeF32(this.m.PriceMult);
+		_out.writeBool(this.m.IsRuned);
 	}
 
 	function onDeserialize( _in )
@@ -620,6 +631,10 @@ this.item <- {
 
 		this.m.Condition = _in.readF32();
 		this.m.PriceMult = _in.readF32();
+		if (_in.getMetaData().getVersion() >= 48)
+		{
+			this.m.IsRuned = _in.readbool();
+		}		
 		this.updateVariant();
 	}
 
