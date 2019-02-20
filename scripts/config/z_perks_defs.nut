@@ -807,7 +807,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/spears_circle_bw.png"
 	},
 	{
-		ID = "perk.legend_perk_insects",
+		ID = "perk.legend_insects",
 		Script = "scripts/skills/perks/perk_legend_insects",
 		Name = this.Const.Strings.PerkName.LegendInsects,
 		Tooltip = this.Const.Strings.PerkDescription.LegendInsects,
@@ -815,12 +815,20 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/insects_circle_bw.png"
 	},
 	{
-		ID = "perk.legend_perk_chain_lightning",
+		ID = "perk.legend_chain_lightning",
 		Script = "scripts/skills/perks/perk_legend_chain_lightning",
 		Name = this.Const.Strings.PerkName.LegendChainLightning,
 		Tooltip = this.Const.Strings.PerkDescription.LegendChainLightning,
 		Icon = "ui/perks/lightning_circle.png",
 		IconDisabled = "ui/perks/lightning_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_composure",
+		Script = "scripts/skills/perks/perk_legend_composure",
+		Name = this.Const.Strings.PerkName.LegendComposure,
+		Tooltip = this.Const.Strings.PerkDescription.LegendComposure,
+		Icon = "ui/perks/composed_circle.png",
+		IconDisabled = "ui/perks/composed_circle_bw.png"
 	}
 
 ];
@@ -928,5 +936,6 @@ gt.Const.Perks.PerkDefs <- {
 	CoordinatedVolleys = 98,
 	LegendPushForward = 99,
 	LegendInsects = 100,
-	LegendChainLightning = 101
+	LegendChainLightning = 101,
+	LegendComposure = 102
 };

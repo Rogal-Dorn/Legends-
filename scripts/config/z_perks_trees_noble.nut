@@ -21,6 +21,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[

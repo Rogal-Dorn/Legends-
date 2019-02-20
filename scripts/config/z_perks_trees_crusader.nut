@@ -21,6 +21,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.SteelBrow,
+		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[

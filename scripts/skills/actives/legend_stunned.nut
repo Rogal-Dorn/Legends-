@@ -3,9 +3,9 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_stun";
-		this.m.Name = "Daze";
+		this.m.Name = "Stun";
 		this.m.Description = "Unleash a brilliant flash of white light aimed directly at the eyes of your target in an attempt to blind and incapacitate.";
-		this.m.KilledString = "Dazed";
+		this.m.KilledString = "Stunned";
 		this.m.Icon = "skills/stun56.png";
 		this.m.IconDisabled = "skills/stun56_bw.png";
 		this.m.Overlay = "active_133";
