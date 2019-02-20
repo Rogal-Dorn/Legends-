@@ -29,6 +29,7 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()

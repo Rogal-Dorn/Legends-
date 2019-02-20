@@ -128,9 +128,8 @@ var CharacterScreenIdentifier =
 	},
 
     Perk: {
-        Key: 'perks',
+		Key: 'perks',
 		Tree: 'perkTree',
-
         Type: {
             Offensive: 'offensive',
             Defensive: 'defensive',
@@ -146,6 +145,6 @@ var CharacterScreenIdentifier =
         Description: 'Description',
         ImagePath: 'Icon',
         ImagePathDisabled: 'IconDisabled',
-    	Unlocks: 'Unlocks'
+		Unlocks: 'Unlocks'
     }
 };

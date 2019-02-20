@@ -64,14 +64,38 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onChangeAttributes()
 	{
 		local c = {
-			Hitpoints = [0, 0],
-			Bravery = [0, 0],
-			Stamina = [0, 0],
-			MeleeSkill = [0, 0],
-			RangedSkill = [0, 0],
-			MeleeDefense = [0, 0],
-			RangedDefense = [0, 0],
-			Initiative = [0, 0]
+			Hitpoints = [
+				0,
+				0
+			],
+			Bravery = [
+				0,
+				0
+			],
+			Stamina = [
+				0,
+				0
+			],
+			MeleeSkill = [
+				0,
+				0
+			],
+			RangedSkill = [
+				0,
+				0
+			],
+			MeleeDefense = [
+				0,
+				0
+			],
+			RangedDefense = [
+				0,
+				0
+			],
+			Initiative = [
+				0,
+				0
+			]
 		};
 		return c;
 	}
@@ -87,7 +111,6 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-
 
 		r = this.Math.rand(0, 1);
 		if (r <= 1)
