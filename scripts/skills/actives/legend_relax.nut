@@ -9,8 +9,7 @@ this.legend_relax <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/skills/relax_square_bw.png";
 		this.m.Overlay = "relax_square";
 		this.m.SoundOnUse = [
-			"sounds/combat/inspire_01.wav",
-			"sounds/combat/inspire_02.wav"
+			"sounds/combat/relax_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Any;
