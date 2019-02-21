@@ -643,7 +643,7 @@ this.item <- {
 			this.m.OldID = _in.readString();
 		}
 
-		if (_in.getMetaData().getVersion() >= 48)
+		if (_in.getMetaData().getVersion() >= 49)
 		{
 			this.m.IsRuned = _in.readBool();
 		}		
