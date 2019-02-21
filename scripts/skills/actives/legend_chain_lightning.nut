@@ -49,6 +49,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDecapitate = 5;
 		this.m.ChanceDisembowel = 3;
 		this.m.ChanceSmash = 0;
+		this.m.MaxLevelDifference = 4;
 	}
 
 	function getTooltip()
