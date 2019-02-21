@@ -1102,6 +1102,7 @@ gt.Const.Strings.PerkName <- {
 	LegendComposure = "Composure",
 	LegendNightvision = "Nightvision",
 	LegendMasteryStaves = "Staff Mastery",
+	LegendRelax = "relax",
 	LegendGruesomeFeast = "Gruesome Feast"
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1229,7 +1230,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
 	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
-	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] "
+	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
+	LegendRelax = "Sooth an ally, halving their fatigue",
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
