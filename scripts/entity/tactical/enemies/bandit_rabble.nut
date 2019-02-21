@@ -114,7 +114,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		
 		if (this.Math.rand(1, 100) <= 70)
 		{
-			r = this.Math.rand(0, 9);
+			r = this.Math.rand(0, 6);
 
 			if (r <= 1)
 			{
@@ -131,6 +131,10 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 4)
 			{
 				this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
+			}
+			else if (r == 4)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
 			}
 
 		}

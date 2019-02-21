@@ -91,12 +91,12 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	}
 
 
-
 	function onAfterUpdate( _properties )
 	{
 		this.m.MaxRange = this.m.Item.getRangeMax() - 1 + (_properties.IsSpecializedInStaves ? 1 : 0);
 		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 0.8;
+		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 	}
 
 	function onUse( _user, _targetTile )
