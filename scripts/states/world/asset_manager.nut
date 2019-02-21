@@ -707,7 +707,9 @@ this.asset_manager <- {
 	{
 		local ret = {
 			ArmorParts = 0,
-			Hours = 0
+			Hours = 0,
+			Modifier = 0,
+			Modifiers = []
 		};
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -715,7 +717,6 @@ this.asset_manager <- {
 		{
 			local d;
 			local items = bro.getItems().getAllItems();
-
 			foreach( item in items )
 			{
 				if (item.getCondition() < item.getConditionMax())
@@ -733,6 +734,12 @@ this.asset_manager <- {
 					}
 				}
 			}
+
+			local rm = this.Const.LegendMod.getRepairModifier(bro.getBackground().getID()) * 100.0;
+			ret.Modifier += rm;
+			if (rm > 0) {
+				ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
+			}			
 		}
 
 		local items = this.m.Stash.getItems();
@@ -773,7 +780,10 @@ this.asset_manager <- {
 			MedicineMin = 0,
 			MedicineMax = 0,
 			DaysMin = 0,
-			DaysMax = 0
+			DaysMax = 0,
+			Modifier = 0,
+			Modifiers = [],
+			Injuries = []
 		};
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -781,9 +791,10 @@ this.asset_manager <- {
 		{
 			local injuries = bro.getSkills().query(this.Const.SkillType.TemporaryInjury);
 
+			local ht;
 			foreach( inj in injuries )
 			{
-				local ht = inj.getHealingTime();
+				ht = inj.getHealingTime();
 				ret.MedicineMin += ht.Min * this.Const.World.Assets.MedicinePerInjuryDay;
 				ret.MedicineMax += ht.Max * this.Const.World.Assets.MedicinePerInjuryDay;
 
@@ -797,6 +808,18 @@ this.asset_manager <- {
 					ret.DaysMax = ht.Max;
 				}
 			}
+
+			if (ht)
+			{
+				ret.Injuries.push([ht.Min, ht.Max, bro.getName()]);
+			}
+
+			local rm = this.Const.LegendMod.getHealingModifier(bro.getBackground().getID()) * 100.0;
+			if (rm > 0) 
+			{
+				ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
+			}
+			ret.Modifier += rm;
 		}
 
 		ret.MedicineMin = this.Math.ceil(ret.MedicineMin);
@@ -2315,6 +2338,75 @@ this.asset_manager <- {
 		return this.Math.max(0, this.Math.round(s * 10));
 	}
 
+	function getRosterDescription()
+	{
+		local ret = {
+			TerrainModifiers = [],
+			Brothers = []
+		}
+
+		for (local i=0; i < 9; i=++i)
+		{
+			ret.TerrainModifiers.push(["", 0]);
+		}
+
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			local terrains = this.Const.LegendMod.getTerrainSpeedModifier(bro.getBackground().getID());
+			ret.TerrainModifiers[0][0] = "Plains";
+			ret.TerrainModifiers[0][1] += terrains[2] * 100.0;
+
+			ret.TerrainModifiers[1][0] = "Swamp";
+			ret.TerrainModifiers[1][1] += terrains[3] * 100.0;
+
+			ret.TerrainModifiers[2][0] = "Hills";
+			ret.TerrainModifiers[2][1] += terrains[4] * 100.0;
+
+			ret.TerrainModifiers[3][0] = "Forests";
+			ret.TerrainModifiers[3][1] += terrains[5] * 100.0;
+
+			ret.TerrainModifiers[4][0] = "Mountains";
+			ret.TerrainModifiers[4][1] += terrains[9] * 100.0;
+
+			ret.TerrainModifiers[5][0] = "Farmland";
+			ret.TerrainModifiers[5][1] += terrains[11] * 100.0;
+
+			ret.TerrainModifiers[6][0] = "Snow";
+			ret.TerrainModifiers[6][1] += terrains[12] * 100.0;
+
+			ret.TerrainModifiers[7][0] = "Highlands";
+			ret.TerrainModifiers[7][1] += terrains[14] * 100.0;
+
+			ret.TerrainModifiers[8][0] = "Stepps";
+			ret.TerrainModifiers[8][1] += terrains[15] * 100.0;
+
+			ret.Brothers.push({
+				Name = bro.getName(),
+				Mood = this.Const.MoodStateIcon[bro.getMoodState()],
+				Level = bro.getLevel(),
+				Background = bro.getBackground().getNameOnly()
+			});
+		}
+
+		local sortfn = function (first, second) 
+		{
+			if (first.Level == second.Level)
+			{
+				return 0
+			}
+			if (first.Level > second.Level) 
+			{
+				return -1
+			}
+			return 1
+		}
+
+		ret.Brothers.sort(sortfn);
+
+		return ret;
+
+	}
+	
 	function onSerialize( _out )
 	{
 		_out.writeU16(this.m.Stash.getCapacity());

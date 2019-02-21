@@ -13,7 +13,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 		else if (r == 1)
 		{
-			this.m.Name = "S�ance";
+			this.m.Name = "Seance";
 		}
 		else if (r == 2)
 		{

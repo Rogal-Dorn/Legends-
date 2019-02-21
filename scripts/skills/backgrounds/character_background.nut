@@ -104,13 +104,18 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.Name;
 	}
 
-	function getBackgroundDescription()
+	function getBackgroundDescription( _desc )
 	{
-		local text = this.m.BackgroundDescription;
+		local text = ""
+		if (_desc)
+		{
+			text = text + this.m.BackgroundDescription + "\n";
+		}
+
 		local repairs = this.Const.LegendMod.getRepairModifier(this.m.ID) * 100.0;
 		if (repairs > 0)
 		{
-			text += "\nRepairs +" + repairs +"%"
+			text += "Repairs +" + repairs +"%"
 		}
 		local meds = this.Const.LegendMod.getHealingModifier(this.m.ID) * 100.0;
 		if (meds > 0)
@@ -180,7 +185,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			{
 				id = 2,
 				type = "description",
-				text = this.getBackgroundDescription()
+				text = this.getBackgroundDescription(true)
 			}
 		];
 	}

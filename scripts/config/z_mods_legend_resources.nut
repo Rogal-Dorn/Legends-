@@ -95,6 +95,7 @@ gt.Const.LegendMod.getMaxArmorParts <- function ( _background )
 			return 10;
 			break;
 		case "background.apprentice":
+		case "background.vazl_inventor":
 			return 15;
 			break;
 
@@ -120,6 +121,7 @@ gt.Const.LegendMod.getMaxMedicine <- function ( _background )
 		case "background.female_butcher":
 		case "background.legend_commander_necro":
 		case "background.legend_necro":
+		case "background.vazl_vala":
 			return 15;
 			break;
 
@@ -141,6 +143,8 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 		case "background.legend_commander_noble":
 			return 15;
 			break;
+		case "background.vazl_inventor":
+			return 5
 		case "background.legend_commander_ranger":
 		case "background.legend_ranger":
 		case "background.legend_commander_crusader":
@@ -182,6 +186,7 @@ gt.Const.LegendMod.getHealingModifier <- function ( _background )
 			return 0.2;
 			break;
 		case "background.monk":
+		case "background.vazl_vala":
 			return 0.5;
 			break;
 
@@ -203,7 +208,7 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 		case "background.tailor":
 		case "background.female_tailor":
 		case "background.apprentice":
-
+		case "background.vazl_inventor":
 			return 0.5;
 			break;
 
