@@ -1,22 +1,22 @@
-this.legend_push <- this.inherit("scripts/skills/skill", {
+this.legend_revolt <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_push";
+		this.m.ID = "actives.legend_revolt";
 		this.m.Name = "Revolt";
 		this.m.Description = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe. Targets hit will receive fatigue and may take damage if they are pushed down several levels of height. Shieldwall, Spearwall and Riposte will be canceled for a target that is successfully knocked back. A rooted target can not be knocked back.";
 		this.m.Icon = "skills/revolt_square.png";
 		this.m.IconDisabled = "skills/revolt_square_bw.png";
 		this.m.Overlay = "active_10";
-		this.m.SoundOnUse = [
-			"sounds/combat/knockback_01.wav",
-			"sounds/combat/knockback_02.wav",
-			"sounds/combat/knockback_03.wav"
-		];
 		this.m.SoundOnHit = [
 			"sounds/combat/knockback_hit_01.wav",
 			"sounds/combat/knockback_hit_02.wav",
 			"sounds/combat/knockback_hit_03.wav"
+		];
+		this.m.SoundOnMiss = [
+			"sounds/combat/impale_01.wav",
+			"sounds/combat/impale_02.wav",
+			"sounds/combat/impale_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
@@ -26,33 +26,45 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 25;
+		this.m.IsTooCloseShown = true;
+		this.m.HitChanceBonus = 10;
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 7;
 	}
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
+		local ret = this.getDefaultUtilityTooltip();
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
+		});
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stagger on a hit"
+		});
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/hitchance.png",
+			text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
+		});
 
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit targets directly adjacent, unless specialised in staves"
+			});
+		}
 
 		return ret;
 	}
@@ -65,7 +77,7 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 		{
 			local knockToTile = _targetTile.getNextTile(dir);
 
-			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			if (knockToTile.IsEmpty && knockToTile.Level - _userTile.Level <= 1)
 			{
 				return knockToTile;
 			}
@@ -77,7 +89,7 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 		{
 			local knockToTile = _targetTile.getNextTile(altdir);
 
-			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			if (knockToTile.IsEmpty && knockToTile.Level - _userTile.Level <= 1)
 			{
 				return knockToTile;
 			}
@@ -89,13 +101,19 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 		{
 			local knockToTile = _targetTile.getNextTile(altdir);
 
-			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			if (knockToTile.IsEmpty && knockToTile.Level - _userTile.Level <= 1)
 			{
 				return knockToTile;
 			}
 		}
 
 		return null;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -117,16 +135,26 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 
-		if (this.m.SoundOnUse.len() != 0)
+		if (this.Math.rand(1, 100) > this.getHitchance(_targetTile.getEntity()))
 		{
-			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
-		}
+			if (this.m.SoundOnMiss.len() != 0)
+			{
+				this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			}
 
+			target.onMissed(this.getContainer().getActor(), this);
+			return false;
+		}
 
 		local knockToTile = this.findTileToKnockBackTo(_user.getTile(), _targetTile);
 
 		if (knockToTile == null)
 		{
+			if (this.m.SoundOnMiss.len() != 0)
+			{
+				this.Sound.play(this.m.SoundOnMiss[this.Math.rand(0, this.m.SoundOnMiss.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			}
+
 			return false;
 		}
 
@@ -134,6 +162,11 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 
 		if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
 		{
+			if (this.m.SoundOnHit.len() != 0)
+			{
+				this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			}
+
 			return false;
 		}
 
@@ -152,8 +185,14 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 			this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 		}
 
+		target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
+
+		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has staggered " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+		}
+
 		target.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
-		local hasShieldBash = _user.getSkills().hasSkill("perk.shield_bash");
 		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
 
 		if (damage == 0)
@@ -175,26 +214,29 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 			tag.HitInfo.BodyPart = this.Const.BodyPart.Body;
 			tag.HitInfo.BodyDamageMult = 1.0;
 			tag.HitInfo.FatalityChanceMult = 1.0;
-
-			if (hasShieldBash)
-			{
-				damage = damage + this.Math.rand(10, 25) * p.DamageTotalMult;
-				tag.HitInfoBash = clone this.Const.Tactical.HitInfo;
-				tag.HitInfoBash.DamageRegular = damage * p.DamageRegularMult;
-				tag.HitInfoBash.DamageArmor = this.Math.floor(damage * 0.5);
-				tag.HitInfoBash.DamageFatigue = 10;
-				tag.HitInfoBash.BodyPart = this.Const.BodyPart.Body;
-				tag.HitInfoBash.BodyDamageMult = 1.0;
-				tag.HitInfoBash.FatalityChanceMult = 0.0;
-			}
-
 			this.Tactical.getNavigator().teleport(target, knockToTile, this.onKnockedDown, tag, true);
 		}
 
 		return true;
 	}
 
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.MeleeSkill += 10;
 
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			{
+				_properties.MeleeSkill += -15;
+				this.m.HitChanceBonus = -5;
+			}
+			else
+			{
+				this.m.HitChanceBonus = 10;
+			}
+		}
+	}
 
 	function onKnockedDown( _entity, _tag )
 	{

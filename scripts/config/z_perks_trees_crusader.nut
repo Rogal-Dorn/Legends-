@@ -21,6 +21,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.SteelBrow,
+		gt.Const.Perks.PerkDefs.InspiringPresence,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
@@ -63,7 +64,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.BattleFlow,
-		gt.Const.Perks.PerkDefs.InspiringPresence,
+		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],

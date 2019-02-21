@@ -837,6 +837,30 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendNightvision,
 		Icon = "ui/perks/nightvision_circle.png",
 		IconDisabled = "ui/perks/nightvision_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_mastery_staves",
+		Script = "scripts/skills/perks/perk_legend_mastery_staves",
+		Name = this.Const.Strings.PerkName.LegendMasteryStaves,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryStaves,
+		Icon = "ui/perks/staffmastery.png",
+		IconDisabled = "ui/perks/staffmastery_bw.png"
+	},
+	{
+		ID = "perk.legend_relax",
+		Script = "scripts/skills/perks/perk_legend_relax",
+		Name = this.Const.Strings.PerkName.LegendRelax,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRelax,
+		Icon = "ui/perks/relax_circle.png",
+		IconDisabled = "ui/perks/relax_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_gruesome_feast",
+		Script = "scripts/skills/perks/perk_legend_gruesome_feast",
+		Name = this.Const.Strings.PerkName.LegendGruesomeFeast,
+		Tooltip = this.Const.Strings.PerkDescription.LegendGruesomeFeast,
+		Icon = "ui/perks/gruesome_circle.png",
+		IconDisabled = "ui/perks/gruesome_circle_bw.png"
 	}
 
 ];
@@ -946,5 +970,8 @@ gt.Const.Perks.PerkDefs <- {
 	LegendInsects = 100,
 	LegendChainLightning = 101,
 	LegendComposure = 102,
-	LegendNightvision = 102
+	LegendNightvision = 103,
+	LegendMasteryStaves = 104,
+	LegendRelax = 105,
+	LegendGruesomeFeast = 106
 };

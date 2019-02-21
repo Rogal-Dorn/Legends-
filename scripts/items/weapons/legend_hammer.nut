@@ -17,7 +17,7 @@ this.legend_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_hammer_02";
+		this.m.ArmamentIcon = "icon_hammer_01";
 		this.m.Value = 50;
 		this.m.Condition = 22.0;
 		this.m.ConditionMax = 22.0;

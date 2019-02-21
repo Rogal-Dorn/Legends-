@@ -50,6 +50,7 @@ local NecroWeakTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LegendInsects,
 		gt.Const.Perks.PerkDefs.LegendDarkflight,
+		gt.Const.Perks.PerkDefs.LegendGruesomeFeast,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],

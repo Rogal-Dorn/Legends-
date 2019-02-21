@@ -664,8 +664,8 @@ gt.Const.World.Spawn.Troops <- {
 		BanditRabble = {
 		ID = this.Const.EntityType.BanditRabble,
 		Variant = 0,
-		Strength = 4,
-		Cost = 4,
+		Strength = 6,
+		Cost = 6,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/bandit_rabble"
 	},

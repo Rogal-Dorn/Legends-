@@ -16,14 +16,14 @@ this.perk_legend_push <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_push"))
+		if (!this.m.Container.hasSkill("actives.legend_revolt"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_push"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_revolt"));
 		}
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_push");
+		this.m.Container.removeByID("actives.legend_revolt");
 	}
 
 });

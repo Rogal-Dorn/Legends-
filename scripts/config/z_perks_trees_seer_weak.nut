@@ -16,6 +16,7 @@ local SeerWeakTree = [
 	[
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
+		gt.Const.Perks.PerkDefs.Bullseye,
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendStun
 	],
@@ -28,6 +29,8 @@ local SeerWeakTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryDagger,
+		gt.Const.Perks.PerkDefs.MasteryThrowing,
+		gt.Const.Perks.PerkDefs.LegendMasteryStaves,
 		gt.Const.Perks.PerkDefs.LegendEntice,
 		gt.Const.Perks.PerkDefs.LegendPush
 	],
@@ -35,18 +38,20 @@ local SeerWeakTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendChainLightning
 		gt.Const.Perks.PerkDefs.Rebound
 	],
 	[
 		gt.Const.Perks.PerkDefs.Nimble,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
-		gt.Const.Perks.PerkDefs.LegendFireField
+		gt.Const.Perks.PerkDefs.LegendRelax,
+		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.Ballistics,
 	],
 	[
-		gt.Const.Perks.PerkDefs.Fearsome,
-		gt.Const.Perks.PerkDefs.Indomitable,
+		gt.Const.Perks.PerkDefs.BattleFlow,
+		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendSleep,
-		gt.Const.Perks.PerkDefs.LegendChainLightning
+		gt.Const.Perks.PerkDefs.LegendFireField,
 	],
 	[],
 	[],

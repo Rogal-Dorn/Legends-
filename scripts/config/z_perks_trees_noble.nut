@@ -20,6 +20,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
+		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
@@ -51,6 +52,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
 		gt.Const.Perks.PerkDefs.LegendPushForward,
+		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[
@@ -58,6 +60,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Inspire,
+		gt.Const.Perks.PerkDefs.LegendRelax,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],

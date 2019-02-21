@@ -17,7 +17,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
-		this.m.IsTargeted = false;
+		this.m.IsTargeted = true;
 		this.m.IsTargetingActor = false;
 		this.m.IsVisibleTileNeeded = true;
 		this.m.IsStacking = false;

@@ -121,7 +121,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
-		this.m.Container.add(this.new("scripts/skills/actives/legend_chain_lightning"));
 	}
 
 	function onAddEquipment()

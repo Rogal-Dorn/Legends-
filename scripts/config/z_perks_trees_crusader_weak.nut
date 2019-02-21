@@ -27,6 +27,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
+		gt.Const.Perks.PerkDefs.InspiringPresence,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
 		gt.Const.Perks.PerkDefs.Rebound
 	],
@@ -57,7 +58,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.BattleFlow,
-		gt.Const.Perks.PerkDefs.InspiringPresence,
+		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],

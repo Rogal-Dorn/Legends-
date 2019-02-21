@@ -1088,19 +1088,20 @@ gt.Const.Strings.PerkName <- {
 	LegendHoldTheLine = "Hold the line",
 	LegendCoordinatedVolleys = "Coordinated Volleys",
 	LegendRaiseUndead = "Raise the Dead",
-	LegendRoster = "Increase roster size",
+	LegendRoster = "The Apprentice",
 	LegendRoster1 = "The Apprentice",
 	LegendRoster2 = "The Bodygaurds",
 	LegendRoster3 = "The Team",
 	LegendRoster4 = "The Squad",
 	LegendRoster5 = "The Section",
-	LegendRoster6 = "The Company",
-	LegendRoster7 = "The Platoon",
+	LegendRoster6 = "The Platoon",
+	LegendRoster7 = "The Company",
 	LegendForwardPush = "Push Forward",
 	LegendInsects = "Insect Swarm",
 	LegendChainLightning = "Chain Lightning",
 	LegendComposure = "Composure",
-	LegendNightvision = "Nightvision"
+	LegendNightvision = "Nightvision",
+	LegendMasteryStaves = "Staff Mastery"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1225,7 +1226,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun",
-	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies"
+	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
+	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
