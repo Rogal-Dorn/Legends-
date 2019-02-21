@@ -95,3 +95,5 @@ Beta 08
 *Through event, can get new Vala class that is able to inscribed rune weapons with accompanying graphics (event).
 *Cannibal can provide free food provision (Ewww!) (provided by a cannibal and/or a cannibalistically corrupted butcher).
 *New sounds added for some perks and weapons.
+*Improved tooltips
+
