@@ -167,7 +167,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 
 		items.equip(this.new("scripts/items/armor/mail_hauberk"));
-				r = this.Math.rand(0, 3);
+				r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
@@ -175,13 +175,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/two_handed_mace"));
-		}
-		else if (r == 2)
-		{
 			items.equip(this.new("scripts/items/weapons/warbrand"));;
 		}
-		else if (r == 3)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/greataxe"));
 		}
