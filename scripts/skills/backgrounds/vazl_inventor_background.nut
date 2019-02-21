@@ -14,6 +14,7 @@ this.vazl_inventor_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
+			"trait.cocky",
 			"trait.dumb",
 			"trait.superstitious"
 		];

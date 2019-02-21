@@ -7,7 +7,7 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_inventor_prosthetic_hand";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]As you take in the scenery you find %inventor% sitting by a tree, seemingly deep in thought, startling him as you approach.%SPEECH_ON%Oh, hey there, captain! I didn\'t see you there.%SPEECH_OFF%He stands up and enthusiastically steps up to you.%SPEECH_ON%You know.. I\'ve been thinking of ways to help %nohand% with his problem, and I think I might have come up with a solution.%SPEECH_OFF%He scratches his head nervously as he continues..%SPEECH_ON%I.. will need some coin in order to cover the material cost for this little experiment, however, and any leftover tools that we can spare.%SPEECH_OFF%",
@@ -113,7 +113,6 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		this.logInfo("Inventor creates a prosthetic hand  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local inventor_candidates = [];
 		local nohand_candidates = [];
@@ -125,15 +124,11 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 		}
 
 
-		local totalinventors = 0;
-		local totalinventorlevels = 0;
 		foreach (bro in brothers)
 		{
 			if (bro.getBackground().getID() == "background.vazl_inventor")
 			{
 				inventor_candidates.push(bro);
-				totalinventors += 1;
-				totalinventorlevels += bro.getLevel();
 			}
 		}
 		if (inventor_candidates.len() < 1)
@@ -163,7 +158,7 @@ this.vazl_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 		}
 
 
-		this.m.Score = (totalinventorlevels / totalinventors) / 4;
+		this.m.Score = 5 + ((this.m.Inventor.getLevel() / this.Const.LevelXP.len()) * 10);
 	}
 
 	function onPrepare()
