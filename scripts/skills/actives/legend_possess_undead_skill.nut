@@ -95,7 +95,6 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 		local possessed = this.new("scripts/skills/effects/legend_possessed_undead_effect");
 		possessed.setPossessor(_user);
 		target.getSkills().add(possessed);
-		target.IsControlledByPlayer = true;
 		target.setActionPoints(target.getCurrentProperties().ActionPoints);
 		local possessing = this.new("scripts/skills/effects/possessing_undead_effect");
 		possessing.setPossessed(target);

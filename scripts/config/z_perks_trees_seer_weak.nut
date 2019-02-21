@@ -45,13 +45,13 @@ local SeerWeakTree = [
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendRelax,
 		gt.Const.Perks.PerkDefs.Rebound,
-		gt.Const.Perks.PerkDefs.Ballistics,
+		gt.Const.Perks.PerkDefs.Ballistics
 	],
 	[
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendSleep,
-		gt.Const.Perks.PerkDefs.LegendFireField,
+		gt.Const.Perks.PerkDefs.LegendFireField
 	],
 	[],
 	[],

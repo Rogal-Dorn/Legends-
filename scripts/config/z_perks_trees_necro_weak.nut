@@ -41,6 +41,7 @@ local NecroWeakTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,
+		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendMiasma,
 		gt.Const.Perks.PerkDefs.LegendHex,
 		gt.Const.Perks.PerkDefs.Rebound
