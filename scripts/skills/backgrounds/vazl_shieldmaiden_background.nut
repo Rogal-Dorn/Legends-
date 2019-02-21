@@ -12,7 +12,11 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HiringCost = 180;
 		this.m.DailyCost = 18;
 		this.m.Excluded = [
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.clumsy",
+			"trait.cocky",
+			"trait.fragile",
+			"trait.tiny"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Bravery,
@@ -49,7 +53,7 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		return "{Shieldmaiden.}";
+		return "{%name% fights as well as any man.}";
 	}
 
 	function onChangeAttributes()
@@ -62,7 +66,7 @@ this.vazl_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/ch
 			RangedSkill = [4, 8],
 			MeleeDefense = [0, 0],
 			RangedDefense = [0, 0],
-			Initiative = [-5, -10]
+			Initiative = [-10, -15]
 		};
 		return c;
 	}

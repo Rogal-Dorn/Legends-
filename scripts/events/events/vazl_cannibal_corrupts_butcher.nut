@@ -7,7 +7,7 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_cannibal_corrupts_butcher";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/vazl_cannibal_corrupts_butcher.png[/img]%cannibal% corrupts %butcher%.",
@@ -41,7 +41,6 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		this.logInfo("Cannibal corrupts butcher  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local cannibal_candidates = [];
 		local butcher_candidates = [];
@@ -58,7 +57,6 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 				butcher_candidates.push(bro);
 			}
 		}
-
 		if (cannibal_candidates.len() < 1 || butcher_candidates.len() < 1)
 		{
 			return;
@@ -67,7 +65,7 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 
 		this.m.Cannibal = cannibal_candidates[this.Math.rand(0, cannibal_candidates.len() - 1)];
 		this.m.Butcher = butcher_candidates[this.Math.rand(0, butcher_candidates.len() - 1)];
-		this.m.Score = (this.m.Cannibal.getLevel() + this.m.Butcher.getLevel()) / 4;
+		this.m.Score = 5 + (((this.m.Cannibal.getLevel() + this.m.Butcher.getLevel()) / this.Const.LevelXP.len()) * 5);
 	}
 
 	function onPrepare()

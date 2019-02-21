@@ -7,7 +7,7 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_inventor_prosthetic_eye";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the men, inspecting their eyes. Before long he comes running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, he hastily shifts up close to you, grabs your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%Access to the company tools, and some coin for special parts, is all I require. What say you?%SPEECH_OFF%",
@@ -186,7 +186,6 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		this.logInfo("Inventor creates a prosthetic eye  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local inventor_candidates = [];
 		local noeye_candidates = [];
@@ -198,15 +197,11 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 		}
 
 
-		local totalinventors = 0;
-		local totalinventorlevels = 0;
 		foreach (bro in brothers)
 		{
 			if (bro.getBackground().getID() == "background.vazl_inventor")
 			{
 				inventor_candidates.push(bro);
-				totalinventors += 1;
-				totalinventorlevels += bro.getLevel();
 			}
 		}
 		if (inventor_candidates.len() < 1)
@@ -236,7 +231,7 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 		}
 
 
-		this.m.Score = (totalinventorlevels / totalinventors) / 4;
+		this.m.Score = 5 + ((this.m.Inventor.getLevel() / this.Const.LevelXP.len()) * 10);
 	}
 
 	function onPrepare()
