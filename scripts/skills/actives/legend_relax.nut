@@ -72,7 +72,7 @@ this.legend_relax <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 
-			target.setFatigue(_user.getFatigue() / 2);
+		target.setFatigue(_user.getFatigue() / 2);
 
 		if (!target.isHiddenToPlayer())
 		{
@@ -80,9 +80,6 @@ this.legend_relax <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true;
-	}
-
-
 	}
 
 });
