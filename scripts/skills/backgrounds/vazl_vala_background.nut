@@ -12,7 +12,13 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HiringCost = 240;
 		this.m.DailyCost = 24;
 		this.m.Excluded = [
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.clumsy",
+			"trait.cocky",
+			"trait.craven",
+			"trait.dastard",
+			"trait.fainthearted",
+			"trait.insecure"
 		];
 		this.m.Titles = [
 			"the Vala"
@@ -50,14 +56,14 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 	function onChangeAttributes()
 	{
 		local c = {
-			Hitpoints = [0, 0],
-			Bravery = [0, 0],
-			Stamina = [0, 0],
+			Hitpoints = [-4, -6],
+			Bravery = [8, 12],
+			Stamina = [6, 9],
 			MeleeSkill = [0, 0],
 			RangedSkill = [0, 0],
 			MeleeDefense = [0, 0],
 			RangedDefense = [0, 0],
-			Initiative = [0, 0]
+			Initiative = [10, 15]
 		};
 		return c;
 	}

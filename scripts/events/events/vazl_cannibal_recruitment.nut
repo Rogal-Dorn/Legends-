@@ -6,7 +6,7 @@ this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_cannibal_recruitment";
 		this.m.Title = "Along the way...";
-		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/vazl_cannibal_recruitment.png[/img]You find a man preparing some good-smelling but suspicious-looking meat.",
@@ -45,34 +45,30 @@ this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		this.logInfo("Cannibal recruitment  --  onUpdateScore");
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
 
 		local brothers = this.World.getPlayerRoster().getAll();
+		local totalbrothers = 0;
+		local brotherlevels = 0;
 		foreach (bro in brothers)
 		{
 			if (bro.getBackground().getID() == "background.vazl_cannibal")
 			{
 				return;
 			}
-		}
-		
-		local totalbrothers = 0;
-		local totalbrotherlevels = 0;
-		foreach (bro in brothers)
-		{
 			totalbrothers += 1;
-			totalbrotherlevels += bro.getLevel();
+			brotherlevels += bro.getLevel();
 		}
-		if (totalbrothers < 1 || totalbrotherlevels < 1)
+		if (totalbrothers < 1 || brotherlevels < 1)
 		{
 			return;
 		}
 
-		this.m.Score = (totalbrotherlevels / totalbrothers) / 2;
+
+		this.m.Score = 10 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 10);
 	}
 
 	function onPrepare()

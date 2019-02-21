@@ -12,7 +12,9 @@ this.vazl_cannibal_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HiringCost = 60;
 		this.m.DailyCost = 6;
 		this.m.Excluded = [
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.clumsy",
+			"trait.cocky"
 		];
 		this.m.Titles = [
 			"the Cannibal"

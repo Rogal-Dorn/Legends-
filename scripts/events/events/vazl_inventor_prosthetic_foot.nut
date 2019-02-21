@@ -7,7 +7,7 @@ this.vazl_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.vazl_inventor_prosthetic_foot";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/vazl_inventor_general.png[/img]%inventor% offers to fix %nofoot%\'s foot. He asks for coin to cover the cost, and requires the use of company tools.",
@@ -111,7 +111,6 @@ this.vazl_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		this.logInfo("Inventor creates a prosthetic foot  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local inventor_candidates = [];
 		local nofoot_candidates = [];
@@ -123,15 +122,11 @@ this.vazl_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 		}
 
 
-		local totalinventors = 0;
-		local totalinventorlevels = 0;
 		foreach (bro in brothers)
 		{
 			if (bro.getBackground().getID() == "background.vazl_inventor")
 			{
 				inventor_candidates.push(bro);
-				totalinventors += 1;
-				totalinventorlevels += bro.getLevel();
 			}
 		}
 		if (inventor_candidates.len() < 1)
@@ -161,7 +156,7 @@ this.vazl_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 		}
 
 
-		this.m.Score = (totalinventorlevels / totalinventors) / 4;
+		this.m.Score = 5 + ((this.m.Inventor.getLevel() / this.Const.LevelXP.len()) * 10);
 	}
 
 	function onPrepare()
