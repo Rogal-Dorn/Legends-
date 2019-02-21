@@ -45,7 +45,6 @@ this.vazl_vala_carves_runes_of_power <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		this.logInfo("Vala carves runes of power  --  onUpdateScore");
 		local brothers = this.World.getPlayerRoster().getAll();
 		local vala_candidates = [];
 		local person_candidates = [];
@@ -112,7 +111,7 @@ this.vazl_vala_carves_runes_of_power <- this.inherit("scripts/events/event", {
 		local personandweapon = this.Math.rand(0, person_candidates.len() - 1);
 		this.m.Person = person_candidates[personandweapon];
 		this.m.ItemToRune = item_candidates[personandweapon];
-		this.m.Score = this.m.Vala.getLevel() / 4;
+		this.m.Score = 5 + ((this.m.Vala.getLevel() / this.Const.LevelXP.len()) * 10);
 	}
 
 

@@ -64,7 +64,14 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeBerserkerLookupMap
 			break;
 		case "background.legend_berserker":
-			return gt.Const.Perks.TreeBerserkerWeakLookupMap		
+			return gt.Const.Perks.TreeBerserkerWeakLookupMap
+			break;
+		// case "background.vazl_inventor":
+		// 	return gt.Const.Perks.TreeInventorLookupMap;
+		// 	break;
+		// case "background.vazl_vala":
+		// 	return gt.Const.Perks.TreeValaLookupMap;
+		// 	break;				
 		default:
 			return  gt.Const.Perks.LookupMap;
 	}
@@ -112,7 +119,14 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeBerserker	
 			break;
 		case "background.legend_berserker":
-			return gt.Const.Perks.PerksTreeBerserkerWeak	
+			return gt.Const.Perks.PerksTreeBerserkerWeak;
+			break;
+		// case "background.vazl_inventor":
+		// 	return gt.Const.Perks.PerksTreeInventor;
+		// 	break;
+		// case "background.vazl_vala":
+		// 	return gt.Const.Perks.PerksTreeVala;
+		// 	break;
 		default:
 			return  gt.Const.Perks.Perks;
 	}

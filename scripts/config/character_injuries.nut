@@ -724,5 +724,9 @@ gt.Const.Injury.Cannibal <- [
 	{
 		ID = "injury.missing_finger",
 		Script = "injury_permanent/missing_finger_injury"
+	},
+	{
+		ID = "injury.missing_hand",
+		Script = "injury_permanent/missing_hand_injury"
 	}
 ];
