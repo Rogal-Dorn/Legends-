@@ -24,12 +24,6 @@ gt.Const.LegendMod.StartTypes <- {
 }
 
 gt.Const.LegendMod.Starts <- [
-    // {
-    //     name = "Default",
-    //     intro = "",
-    //     description = "Default Battle Brothers Campaign",
-    //     banner = gt.Const.LegendMod.StartTypes.Default
-    // },
 	{
         name = "Party",
         description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",

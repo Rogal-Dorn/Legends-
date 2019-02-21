@@ -29,6 +29,7 @@ local NecroWeakTree = [
 	[
 		gt.Const.Perks.PerkDefs.MasteryDagger,
 		gt.Const.Perks.PerkDefs.MasteryMace,
+		gt.Const.Perks.PerkDefs.MasteryCleaver,
 		gt.Const.Perks.PerkDefs.MasteryThrowing,
 		gt.Const.Perks.PerkDefs.MasteryPoison,
 		gt.Const.Perks.PerkDefs.LegendRaiseUndead
