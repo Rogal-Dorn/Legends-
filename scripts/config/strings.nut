@@ -1101,7 +1101,8 @@ gt.Const.Strings.PerkName <- {
 	LegendChainLightning = "Chain Lightning",
 	LegendComposure = "Composure",
 	LegendNightvision = "Nightvision",
-	LegendMasteryStaves = "Staff Mastery"
+	LegendMasteryStaves = "Staff Mastery",
+	LegendGruesomeFeast = "Gruesome Feast"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1227,7 +1228,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
-	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range"
+	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
+	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] "
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
