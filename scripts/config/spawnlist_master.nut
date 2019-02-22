@@ -344,7 +344,7 @@ gt.Const.World.Spawn.Troops <- {
 	Lindwurm = {
 		ID = this.Const.EntityType.Lindwurm,
 		Variant = 0,
-		Strength = 80,
+		Strength = 90,
 		Cost = 80,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/lindwurm"
@@ -392,8 +392,8 @@ gt.Const.World.Spawn.Troops <- {
 	Alp = {
 		ID = this.Const.EntityType.Alp,
 		Variant = 0,
-		Strength = 30,
-		Cost = 30,
+		Strength = 35,
+		Cost = 35,
 		Row = -2,
 		Script = "scripts/entity/tactical/enemies/alp"
 	},

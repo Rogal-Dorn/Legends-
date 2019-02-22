@@ -162,4 +162,10 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 		body.setBrush("world_goblin_camp_04");
 	}
 
+	function onDeserialize( _in )
+	{
+		this.location.onDeserialize(_in);
+		this.m.IsAttackable = true;
+	}
+
 });
