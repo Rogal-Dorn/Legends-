@@ -2162,6 +2162,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
+		
 		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
 		{
 			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
@@ -2171,7 +2172,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
 		}
 
-
+		if (background.isFemaleBackground()) {
+			this.m.Gender = 1;
+		}
 	
 		background.buildAttributes();
 		background.buildDescription();
@@ -2572,6 +2575,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background = ret[0];
 			this.m.Background.adjustHiringCostBasedOnEquipment();
 			this.m.Background.buildDescription(true);
+			if (this.m.Background.isFemaleBackground())
+			{
+				this.m.Gender = 1;
+			}
 		}
 
 		this.m.PlaceInFormation = _in.readU8();

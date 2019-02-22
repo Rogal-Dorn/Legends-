@@ -186,7 +186,24 @@ gt.Const.Hair.AllMale <- [
 	"20"
 ];
 
+gt.Const.Hair.BarberFemale <- [
+	"",
+	"shaved",
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"10",
+	"19",
+	"20"
+];
+
 gt.Const.Hair.AllFemale <- [
+	"shaved",
 	"01",
 	"02",
 	"03",
@@ -355,6 +372,11 @@ gt.Const.Beards.All <- [
 	"15",
 	"16"
 ];
+
+gt.Const.Beards.BarberFemale <- [
+	""
+];
+
 gt.Const.Beards.Female <- [
 	""
 ];
