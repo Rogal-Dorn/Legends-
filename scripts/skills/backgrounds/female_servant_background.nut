@@ -95,7 +95,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/sackcloth"));
+			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
 		else if (r == 1)
 		{

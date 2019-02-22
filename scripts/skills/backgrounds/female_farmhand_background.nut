@@ -111,7 +111,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/sackcloth"));
+			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
 		else
 		{
