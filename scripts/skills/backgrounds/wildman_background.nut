@@ -232,6 +232,10 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			items.equip(this.new("scripts/items/armor/leather_wraps"));
 		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/armor/legend_rabble_wild"));
+		}
 	}
 
 	function onUpdate( _properties )
