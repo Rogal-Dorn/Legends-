@@ -6,6 +6,8 @@ while read -r line; do
         xpath=${line:2} 
         if [ "$xpath" == "build.sh" ]; then
             echo "skipping $xpath"
+        elif [ "$xpath" == "unstaged_build.sh" ]; then
+            echo "skipping $xpath"                    
         elif [ "$xpath" == "ReleaseNotes.md" ]; then
             echo "skipping $xpath"
         elif [ "$xpath" == "scripts/mapgen/templates/world/worldmap_generator.nut" ]; then
