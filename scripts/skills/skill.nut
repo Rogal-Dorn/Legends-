@@ -1233,14 +1233,12 @@ this.skill <- {
 		if (this.m.IsRanged && userTile.getDistanceTo(_targetEntity.getTile()) > 1)
 		{
 			local blockedTiles = this.Const.Tactical.Common.getBlockedTiles(userTile, _targetEntity.getTile(), user.getFaction(), true);
-			local blockChance = 0.0;
 
-			foreach( tile in blockedTiles )
+			if (blockedTiles.len() != 0)
 			{
-				blockChance = blockChance + this.Const.Combat.RangedAttackBlockedChance * properties.RangedAttackBlockedChanceMult / blockedTiles.len();
+				local blockChance = this.Const.Combat.RangedAttackBlockedChance * properties.RangedAttackBlockedChanceMult;
+				toHit = this.Math.floor(toHit * (1.0 - blockChance));
 			}
-
-			toHit = this.Math.floor(toHit * (1.0 - blockChance));
 		}
 
 		return this.Math.max(5, this.Math.min(95, toHit));
@@ -1256,17 +1254,11 @@ this.skill <- {
 		{
 			local blockedTiles = this.Const.Tactical.Common.getBlockedTiles(userTile, _targetEntity.getTile(), _user.getFaction());
 
-			foreach( tile in blockedTiles )
+			if (blockedTiles.len() != 0 && this.Math.rand(1, 100) <= this.Math.ceil(this.Const.Combat.RangedAttackBlockedChance * properties.RangedAttackBlockedChanceMult * 100))
 			{
-				local bonus = 0;
-
-				if (this.Math.rand(1, 100) <= this.Math.ceil(this.Const.Combat.RangedAttackBlockedChance * properties.RangedAttackBlockedChanceMult * 100 / blockedTiles.len()) + bonus)
-				{
-					_targetEntity = tile.getEntity();
-					_allowDiversion = false;
-					astray = true;
-					break;
-				}
+				_allowDiversion = false;
+				astray = true;
+				_targetEntity = blockedTiles[this.Math.rand(0, blockedTiles.len() - 1)].getEntity();
 			}
 		}
 

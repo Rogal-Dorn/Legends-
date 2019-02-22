@@ -25,7 +25,7 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.fat",
 			"trait.brave",
 			"trait.fearless",
-			"trait.optimistic",
+			"trait.optimist",
 			"trait.cocky",
 			"trait.bright",
 			"trait.determined",
