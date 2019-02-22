@@ -136,6 +136,9 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/strange_meat_item"));
+		stash.add(this.new("scripts/items/accessory/zombie_item"));
+		stash.add(this.new("scripts/items/accessory/zombie_item"));
+		stash.add(this.new("scripts/items/accessory/zombie_item"));
 	}
 
 });
