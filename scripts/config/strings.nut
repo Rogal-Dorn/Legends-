@@ -1103,7 +1103,8 @@ gt.Const.Strings.PerkName <- {
 	LegendNightvision = "Nightvision",
 	LegendMasteryStaves = "Staff Mastery",
 	LegendRelax = "relax",
-	LegendGruesomeFeast = "Gruesome Feast"
+	LegendGruesomeFeast = "Gruesome Feast",
+	LegendUberNimble = "Nudist"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1232,6 +1233,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
+	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

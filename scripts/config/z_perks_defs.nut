@@ -861,6 +861,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendGruesomeFeast,
 		Icon = "ui/perks/gruesome_circle.png",
 		IconDisabled = "ui/perks/gruesome_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_ubernimble",
+		Script = "scripts/skills/perks/perk_legend_ubernimble",
+		Name = this.Const.Strings.PerkName.LegendUberNimble,
+		Tooltip = this.Const.Strings.PerkDescription.LegendUberNimble,
+		Icon = "ui/perks/ubernimble_circle.png",
+		IconDisabled = "ui/perks/ubernimble_circle_bw.png"
 	}
 
 ];
@@ -973,5 +981,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendNightvision = 103,
 	LegendMasteryStaves = 104,
 	LegendRelax = 105,
-	LegendGruesomeFeast = 106
+	LegendGruesomeFeast = 106,
+	LegendUberNimble = 107
 };

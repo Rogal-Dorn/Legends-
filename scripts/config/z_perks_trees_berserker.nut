@@ -70,6 +70,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.Stalwart,
+		gt.Const.Perks.PerkDefs.LegendUberNimble,
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[],
