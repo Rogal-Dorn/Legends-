@@ -502,7 +502,7 @@ this.asset_manager <- {
 				"legend_berserker_background"
 			]);
 			bro.setPlaceInFormation(3);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			this.setBrothersMax(6);
 			
