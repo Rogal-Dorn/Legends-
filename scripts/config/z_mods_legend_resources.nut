@@ -218,6 +218,25 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 	return 0.0;
 };
 
+gt.Const.LegendMod.getBarterModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.legend_commander_noble":
+		case "background.legend_noble":
+		case "background.minstrel":
+		case "background.female_minstrel":
+			return 0.025
+		case "background.peddler":
+			return 0.10;
+
+
+		default:
+			return 0.0;
+	}
+	return 0.0;
+};
+
 gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
 {
 	switch ( _background )
