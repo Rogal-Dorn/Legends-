@@ -34,7 +34,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
-		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
