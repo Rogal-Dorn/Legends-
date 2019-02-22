@@ -8,7 +8,7 @@ this.legend_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_hammer";
 		this.m.Name = "Hammer";
 		this.m.Description = "A simple hammer, now everything looks like a nail";
-		this.m.Categories = "Mace, One-Handed";
+		this.m.Categories = "Hammer, One-Handed";
 		this.m.IconLarge = "weapons/melee/legendhammer_01.png";
 		this.m.Icon = "weapons/melee/legendhammer_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
