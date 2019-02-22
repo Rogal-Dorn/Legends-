@@ -50,12 +50,12 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			"the Wild",
 			"the Barbarian"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.WildMale;
+		this.m.Faces = this.Const.Faces.Berserker;
+		this.m.Hairs = this.Const.Hair.Berserker;
 		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.Wild;
+		this.m.Beards = this.Const.Beards.Berserker;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Body = "bust_naked_body_04";
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
