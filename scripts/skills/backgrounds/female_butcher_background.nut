@@ -4,11 +4,11 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 	{
 		this.character_background.create();
 		this.m.ID = "background.female_butcher";
-		this.m.Name = "Butcher";
-		this.m.Icon = "ui/backgrounds/background_43.png";
-		this.m.BackgroundDescription = "Butchers are used to bloodshed.";
-		this.m.GoodEnding = "Mercenary work is a bloody business, which is probably why a butcher like %name% felt right at home in it. While an outstanding fighter, you hear that she still has problems with the war dogs in the party and has been repeatedly caught trying to slaughter them. Eventually, if not desperately, the company gave the woman an adorable puppy to raise as her own. From what you know of, the little runt\'s glowy doe eyes converted the dog hater into a lover. Now she goes into an insatiable bloodlust whenever a wardog is harmed and her little mongrel grew up to be the fiercest beast in the company!";
-		this.m.BadEnding = "%name% the butcher eventually left the declining company. She joined up with another outfit, but was caught slaughtering one of their war dogs. Apparently, she had been feeding the mercenaries dogmeat from all their mongrels that had gone \'missing\'. They did not take this news kindly, stripped the butcher, and fed her to the beasts.";
+		this.m.Name = "Fishwife";
+		this.m.Icon = "ui/backgrounds/fishwife.png";
+		this.m.BackgroundDescription = "Fishwives are used to spilled guts.";
+		this.m.GoodEnding = "Mercenary work is a bloody business, which is probably why a fishwife like %name% felt right at home in it. While an outstanding fighter, you hear that she still has problems with the war dogs in the party and has been repeatedly caught trying to slaughter them. Eventually, if not desperately, the company gave the woman an adorable puppy to raise as her own. From what you know of, the little runt\'s glowy doe eyes converted the dog hater into a lover. Now she goes into an insatiable bloodlust whenever a wardog is harmed and her little mongrel grew up to be the fiercest beast in the company!";
+		this.m.BadEnding = "%name% the fishwife eventually left the declining company. She joined up with another outfit, but was caught slaughtering one of their war dogs. Apparently, she had been feeding the mercenaries dogmeat from all their mongrels that had gone \'missing\'. They did not take this news kindly, stripped the butcher, and fed her to the beasts.";
 		this.m.HiringCost = 80;
 		this.m.DailyCost = 7;
 		this.m.Excluded = [
@@ -39,6 +39,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
+		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 	}

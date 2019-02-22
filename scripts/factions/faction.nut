@@ -706,6 +706,7 @@ this.faction <- {
 				if (pick <= this.m.Deck[i].getScore())
 				{
 					actionToFire = this.m.Deck[i];
+					//this.logInfo("Action to fire = " + this.m.Deck[i]);
 					break;
 				}
 

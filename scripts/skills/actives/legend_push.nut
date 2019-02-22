@@ -24,12 +24,12 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
-		this.m.IsAttack = false;
+		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 15;
-		this.m.MinRange = 6;
-		this.m.MaxRange = 1;
+		this.m.FatigueCost = 25;
+		this.m.MinRange = 1;
+		this.m.MaxRange = 8;
 	}
 
 	function getTooltip()

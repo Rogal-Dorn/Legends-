@@ -403,7 +403,8 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(6);
+			bro.setVeteranPerks(2);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Crusader:
@@ -414,6 +415,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(2);
 			this.setBrothersMax(1);
 			break;
 
@@ -424,7 +426,8 @@ this.asset_manager <- {
 				"legend_ranger_commander_background"
 			]);
 			bro.setCommander(true);
-			this.setBrothersMax(6);
+			bro.setVeteranPerks(2);
+			this.setBrothersMax(1);
 			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			// bro = roster.create("scripts/entity/tactical/player");
@@ -452,7 +455,8 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(3);
+			bro.setVeteranPerks(2);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Witch:
@@ -464,7 +468,8 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(3);
+			bro.setVeteranPerks(2);
+			this.setBrothersMax(1);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:
@@ -474,6 +479,7 @@ this.asset_manager <- {
 				"legend_healer_background"
 			]);
 			bro.setPlaceInFormation(4);
+			this.setBrothersMax(1);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
 
@@ -486,7 +492,8 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
-			this.setBrothersMax(3);
+			this.setBrothersMax(1);
+			bro.setVeteranPerks(2);
 			break;
 		case this.Const.LegendMod.StartTypes.Party:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -495,6 +502,7 @@ this.asset_manager <- {
 				"legend_berserker_background"
 			]);
 			bro.setPlaceInFormation(3);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			this.setBrothersMax(6);
 			
@@ -504,6 +512,7 @@ this.asset_manager <- {
 				"legend_witch_background"
 			]);
 			bro.setPlaceInFormation(12);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			bro = roster.create("scripts/entity/tactical/player");
@@ -512,6 +521,7 @@ this.asset_manager <- {
 				"legend_crusader_background"
 			]);
 			bro.setPlaceInFormation(5);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			
@@ -520,7 +530,8 @@ this.asset_manager <- {
 			bro.setStartValuesEx([
 				"legend_noble_background"
 			]);
-			bro.setPlaceInFormation(4);
+			bro.setPlaceInFormation(13);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			
 			bro = roster.create("scripts/entity/tactical/player");
@@ -528,7 +539,8 @@ this.asset_manager <- {
 			bro.setStartValuesEx([
 				"legend_necro_background"
 			]);
-			bro.setPlaceInFormation(13);
+			bro.setPlaceInFormation(4);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			
@@ -538,6 +550,7 @@ this.asset_manager <- {
 				"legend_ranger_background"
 			]);
 			bro.setPlaceInFormation(14);
+			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			break;
@@ -553,6 +566,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
+			bro.setVeteranPerks(3);
 
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
@@ -561,6 +575,7 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			this.setBrothersMax(2);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Beggar:
@@ -570,10 +585,42 @@ this.asset_manager <- {
 				"legend_beggar_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
-			bro.worsenMood(0.5, "Lost most of the company");
+			bro.setVeteranPerks(3);
+			this.setBrothersMax(1);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			break;
-
+		case this.Const.LegendMod.StartTypes.Hoggart:
+				bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[0][1]);
+			bro.setStartValuesEx([
+				"companion_1h_background"
+			]);
+			bro.setPlaceInFormation(3);
+			bro.setVeteranPerks(3);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+		this.setBrothersMax(18);
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"companion_2h_background"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.setVeteranPerks(3);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+		
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[2][1]);
+			bro.setStartValuesEx([
+				"companion_ranged_background"
+			]);
+			bro.setPlaceInFormation(5);
+			bro.setVeteranPerks(3);
+			bro.worsenMood(0.5, "Lost most of the company");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+		
+			break;
 
 		default:
 			bro = roster.create("scripts/entity/tactical/player");
@@ -582,8 +629,10 @@ this.asset_manager <- {
 				"companion_1h_background"
 			]);
 			bro.setPlaceInFormation(3);
+			bro.setVeteranPerks(3);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -592,14 +641,17 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[2][1]);
 			bro.setStartValuesEx([
 				"companion_ranged_background"
 			]);
 			bro.setPlaceInFormation(5);
+			bro.setVeteranPerks(3);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			this.setBrothersMax(18);
 			break;
 		}
 		this.m.FounderNames = [];
@@ -655,7 +707,9 @@ this.asset_manager <- {
 	{
 		local ret = {
 			ArmorParts = 0,
-			Hours = 0
+			Hours = 0,
+			Modifier = 0,
+			Modifiers = []
 		};
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -663,7 +717,6 @@ this.asset_manager <- {
 		{
 			local d;
 			local items = bro.getItems().getAllItems();
-
 			foreach( item in items )
 			{
 				if (item.getCondition() < item.getConditionMax())
@@ -681,6 +734,12 @@ this.asset_manager <- {
 					}
 				}
 			}
+
+			local rm = this.Const.LegendMod.getRepairModifier(bro.getBackground().getID()) * 100.0;
+			ret.Modifier += rm;
+			if (rm > 0) {
+				ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
+			}			
 		}
 
 		local items = this.m.Stash.getItems();
@@ -721,7 +780,10 @@ this.asset_manager <- {
 			MedicineMin = 0,
 			MedicineMax = 0,
 			DaysMin = 0,
-			DaysMax = 0
+			DaysMax = 0,
+			Modifier = 0,
+			Modifiers = [],
+			Injuries = []
 		};
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -729,9 +791,10 @@ this.asset_manager <- {
 		{
 			local injuries = bro.getSkills().query(this.Const.SkillType.TemporaryInjury);
 
+			local ht;
 			foreach( inj in injuries )
 			{
-				local ht = inj.getHealingTime();
+				ht = inj.getHealingTime();
 				ret.MedicineMin += ht.Min * this.Const.World.Assets.MedicinePerInjuryDay;
 				ret.MedicineMax += ht.Max * this.Const.World.Assets.MedicinePerInjuryDay;
 
@@ -745,6 +808,18 @@ this.asset_manager <- {
 					ret.DaysMax = ht.Max;
 				}
 			}
+
+			if (ht)
+			{
+				ret.Injuries.push([ht.Min, ht.Max, bro.getName()]);
+			}
+
+			local rm = this.Const.LegendMod.getHealingModifier(bro.getBackground().getID()) * 100.0;
+			if (rm > 0) 
+			{
+				ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
+			}
+			ret.Modifier += rm;
 		}
 
 		ret.MedicineMin = this.Math.ceil(ret.MedicineMin);
@@ -2263,6 +2338,75 @@ this.asset_manager <- {
 		return this.Math.max(0, this.Math.round(s * 10));
 	}
 
+	function getRosterDescription()
+	{
+		local ret = {
+			TerrainModifiers = [],
+			Brothers = []
+		}
+
+		for (local i=0; i < 9; i=++i)
+		{
+			ret.TerrainModifiers.push(["", 0]);
+		}
+
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			local terrains = this.Const.LegendMod.getTerrainSpeedModifier(bro.getBackground().getID());
+			ret.TerrainModifiers[0][0] = "Plains";
+			ret.TerrainModifiers[0][1] += terrains[2] * 100.0;
+
+			ret.TerrainModifiers[1][0] = "Swamp";
+			ret.TerrainModifiers[1][1] += terrains[3] * 100.0;
+
+			ret.TerrainModifiers[2][0] = "Hills";
+			ret.TerrainModifiers[2][1] += terrains[4] * 100.0;
+
+			ret.TerrainModifiers[3][0] = "Forests";
+			ret.TerrainModifiers[3][1] += terrains[5] * 100.0;
+
+			ret.TerrainModifiers[4][0] = "Mountains";
+			ret.TerrainModifiers[4][1] += terrains[9] * 100.0;
+
+			ret.TerrainModifiers[5][0] = "Farmland";
+			ret.TerrainModifiers[5][1] += terrains[11] * 100.0;
+
+			ret.TerrainModifiers[6][0] = "Snow";
+			ret.TerrainModifiers[6][1] += terrains[12] * 100.0;
+
+			ret.TerrainModifiers[7][0] = "Highlands";
+			ret.TerrainModifiers[7][1] += terrains[14] * 100.0;
+
+			ret.TerrainModifiers[8][0] = "Stepps";
+			ret.TerrainModifiers[8][1] += terrains[15] * 100.0;
+
+			ret.Brothers.push({
+				Name = bro.getName(),
+				Mood = this.Const.MoodStateIcon[bro.getMoodState()],
+				Level = bro.getLevel(),
+				Background = bro.getBackground().getNameOnly()
+			});
+		}
+
+		local sortfn = function (first, second) 
+		{
+			if (first.Level == second.Level)
+			{
+				return 0
+			}
+			if (first.Level > second.Level) 
+			{
+				return -1
+			}
+			return 1
+		}
+
+		ret.Brothers.sort(sortfn);
+
+		return ret;
+
+	}
+	
 	function onSerialize( _out )
 	{
 		_out.writeU16(this.m.Stash.getCapacity());

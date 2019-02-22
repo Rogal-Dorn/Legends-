@@ -11,12 +11,14 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
+		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRust,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
@@ -30,6 +32,7 @@ local NecroTree = [
 	[
 		gt.Const.Perks.PerkDefs.MasteryDagger,
 		gt.Const.Perks.PerkDefs.MasteryMace,
+		gt.Const.Perks.PerkDefs.MasteryCleaver,
 		gt.Const.Perks.PerkDefs.MasteryThrowing,
 		gt.Const.Perks.PerkDefs.MasteryPoison,
 		gt.Const.Perks.PerkDefs.LegendRaiseUndead,
@@ -44,15 +47,19 @@ local NecroTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,
+		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendMiasma,
 		gt.Const.Perks.PerkDefs.LegendHex,
+		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
+		gt.Const.Perks.PerkDefs.KillingFrenzy,
+		gt.Const.Perks.PerkDefs.LegendInsects,
 		gt.Const.Perks.PerkDefs.LegendDarkflight,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
-		gt.Const.Perks.PerkDefs.LegendRoster7
+		gt.Const.Perks.PerkDefs.LegendGruesomeFeast,
+		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],
 	[],

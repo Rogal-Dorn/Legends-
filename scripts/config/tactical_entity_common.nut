@@ -146,15 +146,18 @@ gt.Const.Tactical.Common <- {
 		else
 		{
 			sounds = [
-				"sounds/enemies/miasma_appears_01.wav",
-				"sounds/enemies/miasma_appears_02.wav",
-				"sounds/enemies/miasma_appears_03.wav"
+				"sounds/combat/fire_01.wav",
+				"sounds/combat/fire_02.wav",
+				"sounds/combat/fire_03.wav",
+				"sounds/combat/fire_04.wav",
+				"sounds/combat/fire_05.wav",
+				"sounds/combat/fire_06.wav"
 			];
 		}
 
 		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
 		local hitInfo = clone this.Const.Tactical.HitInfo;
-		hitInfo.DamageRegular = this.Math.rand(10, 20);
+		hitInfo.DamageRegular = this.Math.rand(20, 30);
 		hitInfo.DamageDirect = 1.0;
 		hitInfo.BodyPart = this.Const.BodyPart.Body;
 		hitInfo.BodyDamageMult = 1.0;

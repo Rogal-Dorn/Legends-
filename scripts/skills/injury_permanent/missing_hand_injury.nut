@@ -34,21 +34,21 @@ this.missing_hand_injury <- this.inherit("scripts/skills/injury_permanent/perman
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand) && items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getBlockedSlotType() == this.Const.ItemSlot.Offhand)
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			item.unequip();
-			item.drop();
+			items.unequip(item);
+			items.drop(item);
 		}
 
 		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			item.unequip();
-			item.drop();
+			items.unequip(item);
+			items.drop(item);
 		}
 
 		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 	}
 });

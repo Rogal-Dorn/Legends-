@@ -6,8 +6,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.ID = "background.legend_commander_crusader";
 		this.m.Name = "Holy Crusader";
 		this.m.Icon = "ui/backgrounds/background_60.png";
-		this.m.HiringCost = 200;
-		this.m.DailyCost = 25;
+		this.m.HiringCost = 20000;
+		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -46,7 +46,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 6;
+		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 	}
@@ -112,8 +112,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				10
 			],
 			Bravery = [
-				15,
-				20
+				20,
+				30
 			],
 			Stamina = [
 				20,
@@ -156,6 +156,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
+		talents[this.Const.Attributes.MeleeSkill] = 2;
 		local items = this.getContainer().getActor().getItems();
 		local stash =this.World.Assets.getStash()
 		local r;
@@ -166,7 +167,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 
 		items.equip(this.new("scripts/items/armor/mail_hauberk"));
-				r = this.Math.rand(0, 3);
+				r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
@@ -174,13 +175,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/two_handed_mace"));
-		}
-		else if (r == 2)
-		{
 			items.equip(this.new("scripts/items/weapons/warbrand"));;
 		}
-		else if (r == 3)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/greataxe"));
 		}

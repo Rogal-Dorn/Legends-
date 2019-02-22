@@ -14,6 +14,7 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/medicine_item");
+		_list.push("supplies/medicine_small_item");
 	}
 
 	function onUpdateDraftList( _list )
@@ -35,6 +36,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 				R = 0,
 				P = 1.0,
 				S = "supplies/medicine_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "supplies/medicine_small_item"
 			});
 			_list.push({
 				R = 0,

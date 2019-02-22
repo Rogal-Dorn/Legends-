@@ -708,3 +708,25 @@ gt.Const.Injury.PiercedArm <- [
 		Script = "injury/pierced_arm_muscles_injury"
 	}
 ];
+gt.Const.Injury.Cannibal <- [
+	{
+		ID = "injury.missing_nose",
+		Script = "injury_permanent/missing_nose_injury"
+	},
+	{
+		ID = "injury.missing_eye",
+		Script = "injury_permanent/missing_eye_injury"
+	},
+	{
+		ID = "injury.missing_ear",
+		Script = "injury_permanent/missing_ear_injury"
+	},
+	{
+		ID = "injury.missing_finger",
+		Script = "injury_permanent/missing_finger_injury"
+	},
+	{
+		ID = "injury.missing_hand",
+		Script = "injury_permanent/missing_hand_injury"
+	}
+];

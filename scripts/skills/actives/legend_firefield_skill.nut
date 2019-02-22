@@ -54,7 +54,11 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 
 		return true;
 	}
-
+	function onAfterUpdate( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
+	}
 	function onUse( _user, _targetTile )
 	{
 		local targets = [];

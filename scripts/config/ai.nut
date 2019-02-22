@@ -70,7 +70,7 @@ gt.Const.AI <- {
 			IsDefending = false,
 			IsRetreating = false
 		},
-		ConsiderBehaviorsCutoff = 0.25000000,
+		ConsiderBehaviorsCutoff = 0.25,
 		ActionDelay = 500,
 		MinorActionDelay = 125,
 		NewTurnDelay = 50,

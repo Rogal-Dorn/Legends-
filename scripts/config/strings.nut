@@ -135,7 +135,8 @@ gt.Const.Strings.EntityName <- [
 	"Kraken",
 	"Irrlicht",
 	"Fallen Betrayer",
-	"Nightmare"
+	"Nightmare",
+	"Bandit Rabble"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -207,7 +208,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Kraken",
 	"Irrlicht",
 	"Fallen Betrayers",
-	"Nightmares"
+	"Nightmares",
+	"Bandit Rabbles"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1082,10 +1084,26 @@ gt.Const.Strings.PerkName <- {
 	LegendSleep = "Sleep",
 	LegendFirefield = "Fire Field",
 	LegendPossessUndead = "Possess Undead",
-	LegendRoster = "Increase Roster",
 	LegendSpecBandage = "Bandage Mastery",
 	LegendHoldTheLine = "Hold the line",
-	LegendRaiseUndead = "Raise the Dead"
+	LegendCoordinatedVolleys = "Coordinated Volleys",
+	LegendRaiseUndead = "Raise the Dead",
+	LegendRoster = "The Apprentice",
+	LegendRoster1 = "The Apprentice",
+	LegendRoster2 = "The Bodygaurds",
+	LegendRoster3 = "The Team",
+	LegendRoster4 = "The Squad",
+	LegendRoster5 = "The Section",
+	LegendRoster6 = "The Platoon",
+	LegendRoster7 = "The Company",
+	LegendForwardPush = "Push Forward",
+	LegendInsects = "Insect Swarm",
+	LegendChainLightning = "Chain Lightning",
+	LegendComposure = "Composure",
+	LegendNightvision = "Nightvision",
+	LegendMasteryStaves = "Staff Mastery",
+	LegendRelax = "relax",
+	LegendGruesomeFeast = "Gruesome Feast"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1185,19 +1203,35 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHex = "You tie your soul to your enemy, your pain becomes their pain",
 	LegendMiasma = "Release a cloud of noxious gasses that are harmful to any living being",
 	LegendDarkflight = "Disapperate from your current location and reappear on the other side of the battlefield up to 6 tiles away",
-	LegendDaze = "Anyone hit with a blow like this will be dazed and gasping for air, unable to put full force behind their blows for two turns."
-	LegendStunned = "Your amazing words manage to stun and amaze a target",
-	LegendHorrify = "Spin such gruesome tales as to horrify a target",
-	LegendPush = "Digust a target so much they are forced to retrate one tile in revulsion",
-	LegendEntice = "Lure a target one tile closer with your enticing words"
-	LegendSleep  = "Send a group of opponents to sleep",
-	LegendFirefield = "Release a field of fire that burns all beings"
-	LegendPossessUndead = "Allows you to boost the attacks of an undead minion"
-	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled."
-	LegendRoster = "Increase the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
+	LegendDaze = "Assault the senses of your target with a flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Does no damage",
+	LegendStunned = "Unleash a brilliant flash of white light aimed directly at the eyes of your target in an attempt to blind and incapacitate.",
+	LegendHorrify = "Blare out a piercing, unworldly sound that is more than likely to distress anyone unfortunate enough to hear it.",
+	LegendPush = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe.",
+	LegendEntice = "With a trick of the light, captivate your target in such a way that they can\'t help but approach you."
+	LegendSleep  = "Enshroud the area with thick smoke that draws the vigor out of your foes. Those that breathe in too much are forced into a light sleep.",
+	LegendFirefield = "throw a noxious concoction that sets the ground alight",
+	LegendPossessUndead = "Allows you to boost the attacks of an undead minion",
+	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled.",
+	LegendRoster = "Increase roster size",
 	LegendSpecBandage = "Master the art of bandaging mid battle using nay cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
-	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
-	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army"
+	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendCoordinatedVolleys = "Direct your troops to time their shots, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army",
+	LegendRoster1 = "Direct your attention to guiding an apprentice into the mercenary world, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color]",
+	LegendRoster2 = "Spend time training bodygaurds to work together, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
+	LegendRoster3 = "Set up team planning, with task lists and prioritisation. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
+	LegendRoster4 = "Create a squad regime, with weekly shedules and drills. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
+	LegendRoster5 = "Oversee the section\'s financial administation processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
+	LegendRoster6 = "Manage the company logicistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
+	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
+	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
+	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor",
+	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun",
+	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
+	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
+	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
+	LegendRelax = "Sooth an ally, halving their fatigue",
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -16,7 +16,7 @@ this.perk_legend_wither <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.perfect_focus"))
+		if (!this.m.Container.hasSkill("actives.legend_wither"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_wither"));
 		}

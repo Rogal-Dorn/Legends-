@@ -53,7 +53,9 @@ gt.Const.Items.AmmoType <- {
 	None = 0,
 	Arrows = 1,
 	Bolts = 2,
-	Spears = 4
+	Spears = 4,
+	Pebbles = 8,
+	Rocks = 16
 };
 gt.Const.Items.Property <- {
 	None = 0,

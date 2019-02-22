@@ -5,7 +5,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.character_background.create();
 		this.m.ID = "background.female_servant";
 		this.m.Name = "Housemaid";
-		this.m.Icon = "ui/backgrounds/background_16.png";
+		this.m.Icon = "ui/backgrounds/housemaid.png";
 		this.m.BackgroundDescription = "Housemaids are often not used to hard physical labor.";
 		this.m.GoodEnding = "As it turns out, %name% the housemaids had been stowing away every last crown she had earned with the %companyname%. When she had enough, she retired and bought herself some land and slowly worked her way up the social ladder. She died in a comfortable bed, surrounded by friends, family, and loyal servants.";
 		this.m.BadEnding = "%name% the servant grew tired of the sellsword life and left the company. She returned to serving nobility. When raiders attacked her liege\'s castle, the nobleman pushed the housemaid out the door with only a kitchen knife to defend herself with. She was found headless in a pile of broken chairs, a few dead raiders littered around her.";
@@ -37,9 +37,10 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
+		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsOffendedByViolence = true;
-		this.n.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = true;
 	}
 
 	function onBuildDescription()

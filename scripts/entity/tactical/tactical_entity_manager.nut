@@ -1071,9 +1071,9 @@ this.tactical_entity_manager <- {
 		}
 
 		local allFactions = [];
-		allFactions.resize(32, 0);
+		allFactions.resize(124, 0);
 
-		for( local i = 0; i != 32; i = ++i )
+		for( local i = 0; i != 124; i = ++i )
 		{
 			allFactions[i] = i;
 		}

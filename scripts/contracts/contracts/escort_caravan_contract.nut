@@ -922,6 +922,13 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(money);
+						local xp = money * 0.10;
+						local playerRoster = this.World.getPlayerRoster().getAll();
+						foreach( bro in playerRoster )
+						{
+							bro.addXP(xp);
+							bro.updateLevel();
+						}
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
 						this.World.Contracts.finishActiveContract();
 						return 0;
@@ -932,10 +939,11 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
+				local xpGained = this.Math.round(money * 0.10 * this.Const.Combat.GlobalXPMult);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + money + "[/color] Crowns"
+					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + money + "[/color] Crowns and [color=" + this.Const.UI.Color.PositiveEventValue + "]" + xpGained + "[/color] Experience"
 				});
 				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/well_supplied_situation"), 3, this.Contract.m.Destination, this.List);
 			}

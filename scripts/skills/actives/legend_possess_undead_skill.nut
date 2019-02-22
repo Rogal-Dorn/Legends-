@@ -5,8 +5,8 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_possess_undead";
 		this.m.Name = "Possess Undead";
 		this.m.Description = "Allows you to boost the attacks of an undead minion";
-		this.m.Icon = "skills/possess_square.png";
-		this.m.IconDisabled = "skills/possess_square_bw.png";
+		this.m.Icon = "skills/possess56_square.png";
+		this.m.IconDisabled = "skills/possess56_square_bw.png";
 		this.m.Overlay = "active_99";
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
@@ -95,7 +95,6 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 		local possessed = this.new("scripts/skills/effects/legend_possessed_undead_effect");
 		possessed.setPossessor(_user);
 		target.getSkills().add(possessed);
-		target.IsControlledByPlayer = true;
 		target.setActionPoints(target.getCurrentProperties().ActionPoints);
 		local possessing = this.new("scripts/skills/effects/possessing_undead_effect");
 		possessing.setPossessed(target);

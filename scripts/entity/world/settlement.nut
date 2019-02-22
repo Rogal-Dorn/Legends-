@@ -636,7 +636,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			p = p - (r - 50.0) * 0.003;
 		}
 
-		p = p * this.m.Modifiers.BuyPriceMult;
+		local barterMult = 0.0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			barterMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID());
+		}
+		p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
 		return p;
 	}
 
@@ -654,7 +659,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			p = p + (r - 50.0) * 0.003;
 		}
 
-		p = p * this.m.Modifiers.SellPriceMult;
+		local barterMult = 0.0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			barterMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID());
+		}
+		p = p * (this.m.Modifiers.SellPriceMult + barterMult);
 		return p;
 	}
 

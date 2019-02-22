@@ -1028,11 +1028,15 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
+		// worldmap.fill({
+		// 	X = 0,
+		// 	Y = 0,
+		// 	W = minX,
+		// 	H = minY
+		// }, null);
 		local tries = 200;
 		while (tries > 0)
 		{
-			this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult)
-			this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity)
 			local result = worldmap.fill({
 				X = 0,
 				Y = 0,
@@ -1044,10 +1048,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 				break;
 			}
 			tries = --tries
-			this.logInfo("Invalid map. Regenerating...")
-			
+			this.logInfo("Invalid map. Regenerating...")			
 			//Failures are because of water issues, help map generation towards default results
-			if (tries > 2)
+			if (tries > 10)
 			{
 				if (this.Const.World.Settings.LandMassMult > 1.4) {
 					this.Const.World.Settings.LandMassMult -= 0.05;
@@ -1056,10 +1059,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 				}
 
 				if (this.Const.World.Settings.WaterConnectivity > 38) {
-					--this.Const.World.Settings.WaterConnectivity;
+					this.Const.World.Settings.WaterConnectivity -= 1;
 				} else {
-					++this.Const.World.Settings.WaterConnectivity;
+					this.Const.World.Settings.WaterConnectivity += 1;
 				}
+				this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult);
+				this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity);
 			}
 		}
 
@@ -1091,40 +1096,41 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
-		do
+		for (local i = 0; i < 3000; i = ++i)
 		{
 			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 8), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 8));
 			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 8), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 8));
 
 			if (!this.World.isValidTileSquare(x, y))
 			{
+				continue
 			}
-			else
+
+			local tile = this.World.getTileSquare(x, y);
+
+			if (tile.IsOccupied)
 			{
-				local tile = this.World.getTileSquare(x, y);
+				continue;
+			}
 
-				if (tile.IsOccupied)
-				{
-				}
-				else if (tile.getDistanceTo(randomVillageTile) <= 3)
-				{
-				}
-				else if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
-				{
-				}
-				else
-				{
-					local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
+			if (tile.getDistanceTo(randomVillageTile) <= 3)
+			{
+				continue
+			}
 
-					if (!path.isEmpty())
-					{
-						randomVillageTile = tile;
-						break;
-					}
-				}
+			if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
+			{
+				continue
+			}
+
+			local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
+
+			if (!path.isEmpty())
+			{
+				randomVillageTile = tile;
+				break;
 			}
 		}
-		while (1);
 
 		this.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.getCamera().setPos(this.m.Player.getPos());
@@ -1135,11 +1141,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
-		
 		if (this.m.Campaign == "legends_noble") {
 			this.World.Tags.set("IsLegendsNoble", true);
 		}
-
 		if (this.m.Campaign == "legends_beggar") {
 			this.World.Tags.set("IsLegendsBeggar", true);
 		}
@@ -1161,11 +1165,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 		if (this.m.Campaign == "legends_healer") {
 			this.World.Tags.set("IsLegendsHealer", true);
 		}
+		if (this.m.Campaign == "legends_hoggart") {
+			this.World.Tags.set("IsLegendsHoggart", true);
+		}
 		if (this.m.Campaign == "legends_berserker") {
 			this.World.Tags.set("IsLegendsBerserker", true);
 		}
-
-
+		
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
 		this.World.Contracts.addContract(c);
@@ -1295,7 +1301,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(100, 0);
+		factions.resize(32, 0);
 
 		foreach( party in raw_parties )
 		{
@@ -1587,6 +1593,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
+		this.logInfo("***** BATTLE OVER, CHECKING IF should loose game **** " + this.commanderDied())
 		if (this.World.getPlayerRoster().getSize() == 0 || this.commanderDied())
 		{
 			this.show();
@@ -3627,6 +3634,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);
 		this.World.Assets.onDeserialize(_in);
+
+		this.logInfo("**CREATING NEW COMBAT MANAGER***")
+		this.m.Combat = this.new("scripts/entity/world/combat_manager");
+		this.World.Combat <- this.WeakTableRef(this.m.Combat);
+
 		this.World.Combat.onDeserialize(_in);
 		this.World.Contracts.onDeserialize(_in);
 		this.World.Events.onDeserialize(_in);

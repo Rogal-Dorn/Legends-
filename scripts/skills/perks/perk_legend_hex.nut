@@ -6,18 +6,12 @@ this.perk_legend_hex <- this.inherit("scripts/skills/skill", {
 		this.m.Name = this.Const.Strings.PerkName.LegendHex;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendHex;
 		this.m.Icon = "ui/perks/hex_circle.png";
-		this.m.IconDisabled = "ui/perks/hex_circle_bw.png"
+		this.m.IconDisabled = "ui/perks/hex_circle_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
-		this.m.IsActive = false;
+		this.m.IsActive = true;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
-		this.m.isStacking = false;
-	}
-
-	function isStacking()
-	{
-		return this.m.IsStacking;
 	}
 
 	function onAdded()

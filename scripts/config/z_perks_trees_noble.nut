@@ -20,7 +20,9 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
+		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
@@ -28,6 +30,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,
+		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.InspiringPresence,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
@@ -48,12 +51,16 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.BattleForged,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
+		gt.Const.Perks.PerkDefs.LegendPushForward,
+		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
+		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Inspire,
+		gt.Const.Perks.PerkDefs.LegendRelax,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],

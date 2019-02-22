@@ -6,7 +6,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.ID = "background.female_beggar";
 		this.m.Name = "Widow";
 		this.m.Icon = "ui/backgrounds/background_18.png";
-		this.m.BackgroundDescription = "Widows aren\'t the most determined persons, and living on the street tends to be detrimental to their health.";
+		this.m.BackgroundDescription = "Widows are in a bad situation, and living on the street tends to be detrimental to their health.";
 		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the woman made a pretty crown in his time with the mercenary company, yet the other day you saw her out begging again. You asked if she\'d wasted all his money and he laughed. He said she\'d purchased land and was doing just fine. Then she held out her little tin and asked for a crown. You gave her two.";
 		this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, she went back to begging. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to her finger.";
 		this.m.HiringCost = 30;
@@ -48,6 +48,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
+		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
@@ -139,7 +140,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
+			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
 		if (r == 1)

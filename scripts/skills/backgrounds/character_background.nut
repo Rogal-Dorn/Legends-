@@ -47,7 +47,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsOffendedByViolence;
 	}
 
-		function isFemaleBackground()
+	function isFemaleBackground()
 	{
 		return this.m.IsFemaleBackground;
 	}
@@ -104,19 +104,38 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.Name;
 	}
 
-	function getBackgroundDescription()
+	function getBackgroundDescription( _desc )
 	{
-		local text = this.m.BackgroundDescription;
+		local text = ""
+		if (_desc)
+		{
+			text = text + this.m.BackgroundDescription + "\n";
+		}
+
 		local repairs = this.Const.LegendMod.getRepairModifier(this.m.ID) * 100.0;
 		if (repairs > 0)
 		{
-			text += "\nRepairs +" + repairs +"%"
+			text += "Repairs +" + repairs +"%"
 		}
 		local meds = this.Const.LegendMod.getHealingModifier(this.m.ID) * 100.0;
 		if (meds > 0)
 		{
-			text += "\nHealing +" + meds +"%"
+			if (repairs != 0)
+			{
+				text += "\n"
+			}
+			text += "Healing +" + meds +"%"
 		}
+		local barter = this.Const.LegendMod.getBarterModifier(this.m.ID) * 100.0
+		if (barter > 0)
+		{
+			if (repairs != 0 || meds != 0)
+			{
+				text += "\n"
+			}
+			text += "Barter +" + barter + "%"
+		}
+		
 		text += "\n\nResource Modifiers:"
 		text += "\nAmmo +" + this.Const.LegendMod.getMaxAmmo(this.m.ID);
 		text += "\nTools +" + this.Const.LegendMod.getMaxArmorParts(this.m.ID);
@@ -180,7 +199,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			{
 				id = 2,
 				type = "description",
-				text = this.getBackgroundDescription()
+				text = this.getBackgroundDescription(true)
 			}
 		];
 	}

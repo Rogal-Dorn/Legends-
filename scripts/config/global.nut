@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 45
+	Version = 48
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -271,6 +271,7 @@ gt.Const.EntityType <- {
 	KrakenTentacle = 67,
 	ZombieBetrayer = 68,
 	AlpShadow = 69,
+	BanditRabble = 70,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -503,5 +504,6 @@ gt.Const.EntityIcon <- [
 	"kraken_01_orientation",
 	"kraken_02_orientation",
 	"zombie_03_orientation",
-	"alp_02_orientation"
+	"alp_02_orientation",
+	"peasant_orientation"
 ];

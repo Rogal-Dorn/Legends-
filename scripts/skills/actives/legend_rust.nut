@@ -25,7 +25,7 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
-		this.m.IsAttack = false;
+		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsTooCloseShown = true;
 		this.m.DirectDamageMult = 0.0;
@@ -70,13 +70,13 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
 		});
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers)
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
 		{
 			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit targets directly adjacent because the weapon is too unwieldy"
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to spread and hit targets directly adjacent because of the corrosive nature of the spell"
 			});
 		}
 
@@ -107,13 +107,13 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageArmorMult *= this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers ? 2.0 : 1.5;
+			_properties.DamageArmorMult *= this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves ? 2.0 : 1.5;
 			_properties.DamageRegularMult *= 0.0;
 			_properties.DamageMinimum = this.Math.max(_properties.DamageMinimum, 10);
 
-			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInHammers && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
-				_properties.MeleeSkill += -15;
+				_properties.RangedSkill += -15;
 				this.m.HitChanceBonus = -15;
 			}
 			else

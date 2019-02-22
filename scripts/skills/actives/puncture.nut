@@ -59,9 +59,11 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 
 	function canDoubleGrip()
 	{
+		local missinghand = this.m.Container.getSkillByID("injury.missing_hand");
+		local newhand = this.m.Container.getSkillByID("trait.vazl_prosthetic_hand");
 		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		return main != null && off == null && main.isDoubleGrippable();
+		return (missinghand == null || newhand != null) && main != null && off == null && main.isDoubleGrippable();
 	}
 
 	function onAfterUpdate( _properties )

@@ -978,12 +978,27 @@ this.tooltip_events <- {
 
 		case "assets.Money":
 			local money = this.World.Assets.getMoney();
-			local dailyMoney = this.World.Assets.getDailyMoneyCost();
-			local time = this.Math.floor(money / dailyMoney);
+			local dailyMoney = 0;
+			local barterMult = 0.0;
+			local brolist = [];
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				local L = []
+				dailyMoney = dailyMoney + bro.getDailyCost();
+				local L = [bro.getDailyCost(), bro.getName(), bro.getBackground().getNameOnly()];
+				barterMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID()) * 100.0;
+				if (barterMult > 0)
+				{
+					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "%[/color] Barter"
+				}
+				brolist.push(L);
+			}
 
+			local time = this.Math.floor(money / dailyMoney);
+			local ret = []
 			if (time >= 1.0 && money > 0)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -992,13 +1007,13 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
+						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.NegativeValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
 					}
 				];
 			}
 			else
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1011,6 +1026,39 @@ this.tooltip_events <- {
 					}
 				];
 			}
+
+			local id = 4;
+			local sortfn = function (first, second) 
+			{
+				if (first[0] == second[0])
+				{
+					return 0
+				}
+				if (first[0] > second[0]) 
+				{
+					return -1
+				}
+				return 1
+			}
+			brolist.sort(sortfn);
+			foreach (bro in brolist)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = "ui/tooltips/money.png",
+					text ="[color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			ret.push({
+				id = id,
+				type = "text",
+				icon = "ui/icons/asset_moral_reputation.png",
+				text ="[color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "[/color]% Barter Multiplier"
+			})
+			++id;
+			return ret
 
 		case "assets.InitialMoney":
 			return [
@@ -1071,11 +1119,20 @@ this.tooltip_events <- {
 		case "assets.Food":
 			local food = this.World.Assets.getFood();
 			local dailyFood = this.Math.ceil(this.World.Assets.getDailyFoodCost() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type]);
-			local time = this.Math.floor(food / dailyFood);
 
+			local brolist = [];
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				local brofood = this.Math.ceil( bro.getDailyFood() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type]);
+				dailyFood = dailyFood + brofood;
+				brolist.push([brofood, bro.getName()]);
+			}
+
+			local time = this.Math.floor(food / dailyFood);
+			local ret = [];
 			if (food > 0 && time > 1)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1090,7 +1147,7 @@ this.tooltip_events <- {
 			}
 			else if (food > 0 && time == 1)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1105,7 +1162,7 @@ this.tooltip_events <- {
 			}
 			else
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1118,6 +1175,32 @@ this.tooltip_events <- {
 					}
 				];
 			}
+
+			local id = 4;
+			local sortfn = function (first, second) 
+			{
+				if (first[0] == second[0])
+				{
+					return 0
+				}
+				if (first[0] > second[0]) 
+				{
+					return -1
+				}
+				return 1
+			}
+			brolist.sort(sortfn);			
+			foreach (bro in brolist)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/asset_daily_food.png",
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] " + bro[1]
+				})
+				++id;
+			}
+			return ret
 
 		case "assets.DailyFood":
 			return [
@@ -1168,7 +1251,8 @@ this.tooltip_events <- {
 			}
 
 			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
-			return [
+
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1178,8 +1262,26 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/repair_item.png",
+					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Modifier + "%[/color]"
 				}
 			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
 
 		case "assets.Medicine":
 			local heal = this.World.Assets.getHealingRequired();
@@ -1213,7 +1315,8 @@ this.tooltip_events <- {
 			}
 
 			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
-			return [
+			
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1223,11 +1326,49 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = desc
+				},
+				{
+					id = 6,
+					type = "text",
+					icon = "ui/icons/health.png",
+					text = "Total healing modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + heal.Modifier + "%[/color]"
 				}
 			];
 
+			local id = 4;
+			foreach (bro in heal.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			if (heal.Injuries.len() > 0) 
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					text = "Injuries:"
+				})
+				++id;
+			}
+			foreach (bro in heal.Injuries)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = "ui/icons/days_wounded.png",
+					text = bro[2] + " [color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] to [color=" + this.Const.UI.Color.NegativeValue + "]" + bro[1] + "[/color] days"
+				})
+				++id;
+			}
+			return ret;
+
 		case "assets.Brothers":
-			return [
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1239,6 +1380,42 @@ this.tooltip_events <- {
 					text = "Show the roster of the fighting force of your mercenary company."
 				}
 			];
+			local data = this.World.Assets.getRosterDescription();
+			local id = 4;
+			ret.push({
+				id = id,
+				type = "text",
+				text = "Terrain Movement Modifiers:"
+			})
+			++id;
+			foreach (bro in data.TerrainModifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/"
+					text = bro[0] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + bro[1] + "%[/color]"
+				})
+				++id;
+			}
+
+			ret.push({
+				id = id,
+				type = "hint",
+				text = "Company:"
+			})
+			++id;
+			foreach (bro in data.Brothers)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = bro.Mood,
+					text = "L" + bro.Level + "  " + bro.Name + " (" + bro.Background + ")"
+				})
+				++id;
+			}			
+			return ret
 
 		case "assets.BusinessReputation":
 			return [

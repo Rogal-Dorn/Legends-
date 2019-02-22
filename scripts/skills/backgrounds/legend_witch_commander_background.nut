@@ -50,7 +50,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-		this.m.Level = 1;
+		this.m.Level = 2;
 	}
 
 	function getTooltip()
@@ -88,20 +88,20 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				0
 			],
 			Stamina = [
-				-20,
-				-20
+				30,
+				20
 			],
 			MeleeSkill = [
 				-10,
 				-10
 			],
 			RangedSkill = [
-				-10,
-				-5
+				10,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				-20,
+				-10
 			],
 			RangedDefense = [
 				-5,
@@ -114,19 +114,22 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		};
 		return c;
 	}
-
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+	}
 
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Initiative] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
-		talents[this.Const.Attributes.Hitpoints] = 1;
+		talents[this.Const.Attributes.RangedSkill] = 2;
+		talents[this.Const.Attributes.Fatigue] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/wizard_robe"));
 		items.equip(this.new("scripts/items/helmets/wizard_hat"));
-		items.equip(this.new("scripts/items/weapons/greenskins/goblin_staff"));
+		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

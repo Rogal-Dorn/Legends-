@@ -13,7 +13,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		}
 		else if (r == 1)
 		{
-			this.m.Name = "S�ance";
+			this.m.Name = "Seance";
 		}
 		else if (r == 2)
 		{
@@ -53,7 +53,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
-		this.m.Level = 1;
+		this.m.Level = 2;
 	}
 
 	function getTooltip()
@@ -82,20 +82,20 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				-20,
-				-20
+				20,
+				20
 			],
 			Bravery = [
-				0,
-				0
+				-10,
+				-5
 			],
 			Stamina = [
 				-20,
 				-20
 			],
 			MeleeSkill = [
-				-10,
-				-10
+				10,
+				10
 			],
 			RangedSkill = [
 				-10,
@@ -106,8 +106,8 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				0
 			],
 			RangedDefense = [
-				-5,
-				0
+				-10,
+				-5
 			],
 			Initiative = [
 				0,
@@ -116,19 +116,22 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		};
 		return c;
 	}
-
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_wither"));
+	}
 
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Initiative] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
-		talents[this.Const.Attributes.Hitpoints] = 1;
+		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Hitpoints] = 3;
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/helmets/necromancer_hat"));
-		items.equip(this.new("scripts/items/weapons/dagger"));
+		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

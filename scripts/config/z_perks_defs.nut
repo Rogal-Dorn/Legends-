@@ -410,57 +410,57 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_roster_1",
 		Script = "scripts/skills/perks/perk_legend_roster_1",
 		Name = this.Const.Strings.PerkName.LegendRoster + " 1",
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster1,
+		Icon = "ui/perks/recruit1.png",
+		IconDisabled = "ui/perks/recruit1_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_2",
 		Script = "scripts/skills/perks/perk_legend_roster_2",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster2,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster2,
+		Icon = "ui/perks/recruit2.png",
+		IconDisabled = "ui/perks/recruit2_bw.png"
 	},			
 	{
 		ID = "perk.legend_roster_3",
 		Script = "scripts/skills/perks/perk_legend_roster_3",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster3,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster3,
+		Icon = "ui/perks/recruit2.png",
+		IconDisabled = "ui/perks/recruit2_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_4",
 		Script = "scripts/skills/perks/perk_legend_roster_4",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster4,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster4,
+		Icon = "ui/perks/recruit3.png",
+		IconDisabled = "ui/perks/recruit3_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_5",
 		Script = "scripts/skills/perks/perk_legend_roster_5",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster5,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster5,
+		Icon = "ui/perks/recruit5.png",
+		IconDisabled = "ui/perks/recruit5_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_6",
 		Script = "scripts/skills/perks/perk_legend_roster_6",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster6,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster6,
+		Icon = "ui/perks/recruit6.png",
+		IconDisabled = "ui/perks/recruit6_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_7",
 		Script = "scripts/skills/perks/perk_legend_roster_7",
-		Name = this.Const.Strings.PerkName.LegendRoster,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster,
-		Icon = "ui/perks/recruit56_3.png",
-		IconDisabled = "ui/perks/recruit56_3_bw.png"
+		Name = this.Const.Strings.PerkName.LegendRoster7,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRoster7,
+		Icon = "ui/perks/recruit7.png",
+		IconDisabled = "ui/perks/recruit7_bw.png"
 	},
 	{
 		ID = "perk.legend_stun",
@@ -540,7 +540,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Steadfast,
 		Tooltip = this.Const.Strings.PerkDescription.Steadfast,
 		Icon = "ui/perks/steadfast_circle.png",
-		IconDisabled = "ui/perks/steadfast_circle.png"
+		IconDisabled = "ui/perks/steadfast_circle_bw.png"
 		},
 	{
 		ID = "perk.sundering_strikes",
@@ -651,7 +651,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_possess_undead",
 		Name = this.Const.Strings.PerkName.LegendPossessUndead,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossessUndead,
-		Icon = "ui/perks/posess56.png",
+		Icon = "ui/perks/possess56.png",
 		IconDisabled = "ui/perks/possess56_bw.png"
 	},
 	{
@@ -773,7 +773,95 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendRaiseUndead,
 		Icon = "ui/perks/raisedead2_circle.png",
 		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
-	}		
+	},
+	{
+		ID = "perk.legend_wither",
+		Script = "scripts/skills/perks/perk_legend_wither",
+		Name = this.Const.Strings.PerkName.LegendWither,
+		Tooltip = this.Const.Strings.PerkDescription.LegendWither,
+		Icon = "ui/perks/wither56.png",
+		IconDisabled = "ui/perks/wither56_bw.png"
+	},
+	{
+		ID = "perk.rebound",
+		Script = "scripts/skills/perks/perk_rebound",
+		Name = this.Const.Strings.PerkName.Rebound,
+		Tooltip = this.Const.Strings.PerkDescription.Rebound,
+		Icon = "ui/perks/rebound_circle.png",
+		IconDisabled = "ui/perks/rebound_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_coordinated_volleys",
+		Script = "scripts/skills/perks/perk_legend_coordinated_volleys",
+		Name = this.Const.Strings.PerkName.LegendCoordinatedVolleys,
+		Tooltip = this.Const.Strings.PerkDescription.LegendCoordinatedVolleys,
+		Icon = "ui/perks/coordinated_volleys_circle.png",
+		IconDisabled = "ui/perks/coordinated_volleys_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_push_forward",
+		Script = "scripts/skills/perks/perk_legend_push_forward",
+		Name = this.Const.Strings.PerkName.LegendForwardPush,
+		Tooltip = this.Const.Strings.PerkDescription.LegendForwardPush,
+		Icon = "ui/perks/spears_circle.png",
+		IconDisabled = "ui/perks/spears_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_insects",
+		Script = "scripts/skills/perks/perk_legend_insects",
+		Name = this.Const.Strings.PerkName.LegendInsects,
+		Tooltip = this.Const.Strings.PerkDescription.LegendInsects,
+		Icon = "ui/perks/insects_circle.png",
+		IconDisabled = "ui/perks/insects_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_chain_lightning",
+		Script = "scripts/skills/perks/perk_legend_chain_lightning",
+		Name = this.Const.Strings.PerkName.LegendChainLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendChainLightning,
+		Icon = "ui/perks/lightning_circle.png",
+		IconDisabled = "ui/perks/lightning_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_composure",
+		Script = "scripts/skills/perks/perk_legend_composure",
+		Name = this.Const.Strings.PerkName.LegendComposure,
+		Tooltip = this.Const.Strings.PerkDescription.LegendComposure,
+		Icon = "ui/perks/composed_circle.png",
+		IconDisabled = "ui/perks/composed_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_nightvision",
+		Script = "scripts/skills/perks/perk_legend_nightvision",
+		Name = this.Const.Strings.PerkName.LegendNightvision,
+		Tooltip = this.Const.Strings.PerkDescription.LegendNightvision,
+		Icon = "ui/perks/nightvision_circle.png",
+		IconDisabled = "ui/perks/nightvision_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_mastery_staves",
+		Script = "scripts/skills/perks/perk_legend_mastery_staves",
+		Name = this.Const.Strings.PerkName.LegendMasteryStaves,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryStaves,
+		Icon = "ui/perks/staffmastery.png",
+		IconDisabled = "ui/perks/staffmastery_bw.png"
+	},
+	{
+		ID = "perk.legend_relax",
+		Script = "scripts/skills/perks/perk_legend_relax",
+		Name = this.Const.Strings.PerkName.LegendRelax,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRelax,
+		Icon = "ui/perks/relax_circle.png",
+		IconDisabled = "ui/perks/relax_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_gruesome_feast",
+		Script = "scripts/skills/perks/perk_legend_gruesome_feast",
+		Name = this.Const.Strings.PerkName.LegendGruesomeFeast,
+		Tooltip = this.Const.Strings.PerkDescription.LegendGruesomeFeast,
+		Icon = "ui/perks/gruesome_circle.png",
+		IconDisabled = "ui/perks/gruesome_circle_bw.png"
+	}
 
 ];
 
@@ -874,5 +962,16 @@ gt.Const.Perks.PerkDefs <- {
 	Vengeance = 92,
 	Ironside = 93,
 	LastStand = 94,
-	LegendRaiseUndead = 95
+	LegendRaiseUndead = 95,
+	LegendWither = 96,
+	Rebound = 97,
+	CoordinatedVolleys = 98,
+	LegendPushForward = 99,
+	LegendInsects = 100,
+	LegendChainLightning = 101,
+	LegendComposure = 102,
+	LegendNightvision = 103,
+	LegendMasteryStaves = 104,
+	LegendRelax = 105,
+	LegendGruesomeFeast = 106
 };

@@ -102,7 +102,9 @@ gt.Const.Faces.AllHuman <- [
 	"bust_head_27",
 	"bust_head_28",
 	"bust_head_29",
-	"bust_head_30"
+	"bust_head_30",
+	"bust_head_31",
+	"bust_head_32"
 ];
 gt.Const.Faces.AllMale <- [
 	"bust_head_01",
@@ -122,7 +124,9 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_15",
 	"bust_head_16",
 	"bust_head_17",
-	"bust_head_18"
+	"bust_head_18",
+	"bust_head_31",
+	"bust_head_32"
 ];
 gt.Const.Faces.AllFemale <- [
 	"bust_head_19",
@@ -138,6 +142,33 @@ gt.Const.Faces.AllFemale <- [
 	"bust_head_29",
 	"bust_head_30"
 ];
+gt.Const.Faces.PrettyFemale <- [
+	"bust_head_19",
+	"bust_head_20",
+	"bust_head_21"
+];
+
+gt.Const.Faces.NormalFemale <- [
+	"bust_head_23",
+	"bust_head_24",
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30"
+];
+gt.Const.Faces.OldFemale <- [
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_29",
+];
+
+gt.Const.Faces.Berserker <- [
+	"bust_head_31",
+	"bust_head_32"
+];
+
 
 gt.Const.Faces.SmartMale <- [
 	"bust_head_01",
@@ -149,8 +180,7 @@ gt.Const.Faces.SmartMale <- [
 	"bust_head_09",
 	"bust_head_12",
 	"bust_head_13",
-	"bust_head_14",
-	"bust_head_24"
+	"bust_head_14"
 ];
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",
@@ -178,8 +208,7 @@ gt.Const.Hair.BarberMale <- [
 	"17",
 	"18",
 	"19",
-	"20",
-	"21"
+	"20"
 ];
 gt.Const.Hair.AllMale <- [
 	"shaved",
@@ -198,10 +227,35 @@ gt.Const.Hair.AllMale <- [
 	"14",
 	"15",
 	"16",
+	"20",
+	"22"
+];
+
+gt.Const.Hair.Berserker <- [
+	"22",
+	"03",
+	"08",
+	"18"
+];
+
+gt.Const.Hair.BarberFemale <- [
+	"",
+	"shaved",
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"10",
+	"19",
 	"20"
 ];
 
 gt.Const.Hair.AllFemale <- [
+	"shaved",
 	"01",
 	"02",
 	"03",
@@ -351,7 +405,8 @@ gt.Const.Beards.Barber <- [
 	"13",
 	"14",
 	"15",
-	"16"
+	"16",
+	"17"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -369,8 +424,19 @@ gt.Const.Beards.All <- [
 	"13",
 	"14",
 	"15",
-	"16"
+	"16",
+	"17"
 ];
+
+gt.Const.Beards.Berserker <- [
+	"17",
+	"14"
+];
+
+gt.Const.Beards.BarberFemale <- [
+	""
+];
+
 gt.Const.Beards.Female <- [
 	""
 ];
@@ -485,6 +551,7 @@ gt.Const.Bodies.AllMale <- [
 	"bust_naked_body_01",
 	"bust_naked_body_02"
 ];
+
 gt.Const.Bodies.AllFemale <- [
 	"bust_naked_body_03"
 ];

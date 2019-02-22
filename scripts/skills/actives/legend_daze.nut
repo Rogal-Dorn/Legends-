@@ -4,15 +4,18 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_daze";
 		this.m.Name = "Daze";
-		this.m.Description = "Assault the senses of your target with a flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively.";
+		this.m.Description = "Assault the senses of your target with a flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Does no damage";
 		this.m.KilledString = "Dazed";
 		this.m.Icon = "skills/daze_square.png";
 		this.m.IconDisabled = "skills/daze_square_bw.png";
 		this.m.Overlay = "active_133";
 		this.m.SoundOnUse = [
-			"sounds/combat/cudgel_01.wav",
-			"sounds/combat/cudgel_02.wav",
-			"sounds/combat/cudgel_03.wav"
+			"sounds/combat/stupefy_01.wav",
+			"sounds/combat/stupefy_02.wav",
+			"sounds/combat/stupefy_03.wav",
+			"sounds/combat/stupefy_04.wav",
+			"sounds/combat/stupefy_05.wav"
+
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/cudgel_hit_01.wav",
@@ -28,7 +31,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
@@ -36,20 +39,25 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 4 + "[/color] extra fatigue"
-		});
-		ret.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to daze on a hit"
-		});
-		return ret;
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "leave your opponent bewildered, halving their damage, fatigue and initiative"
+			}
+		];
 	}
 
 	function onUse( _user, _targetTile )
@@ -59,22 +67,12 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 		if (target.isAlive())
 		{
-			target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
+			target.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
 
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " struck a blow that leaves " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " dazed");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " stupefied " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them dazed");
 			}
-		}
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
-			_properties.DamageRegularMin += 20;
-			_properties.DamageRegularMax += 20;
-			_properties.FatigueDealtPerHitMult += 4.0;
 		}
 	}
 

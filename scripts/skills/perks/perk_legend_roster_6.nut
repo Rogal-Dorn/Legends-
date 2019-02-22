@@ -3,9 +3,9 @@ this.perk_legend_roster_6 <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_roster_6";
-		this.m.Name = this.Const.Strings.PerkName.LegendRoster;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendRoster;
-		this.m.Icon = "ui/perks/perk_21.png";
+		this.m.Name = this.Const.Strings.PerkName.LegendRoster6;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendRoster6;
+		this.m.Icon = "ui/perks/recruit6.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -15,12 +15,12 @@ this.perk_legend_roster_6 <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() + 3);
+		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() + 6);
 	}
 	
 	function onRemoved()
 	{
-		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() - 3);
+		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() - 6);
 	}
 
 });

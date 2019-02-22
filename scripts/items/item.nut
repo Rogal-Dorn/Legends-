@@ -31,7 +31,8 @@ this.item <- {
 		IsAllowedInBag = true,
 		IsUsable = false,
 		IsSold = false,
-		IsBought = false
+		IsBought = false,
+		IsRuned = false
 	},
 	function setContainer( _c )
 	{
@@ -603,6 +604,15 @@ this.item <- {
 	{
 	}
 
+	function setRuned()
+	{
+	}
+
+	function getRuned()
+	{
+		return this.m.IsRuned;
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeBool(this.m.IsToBeRepaired);
@@ -610,6 +620,7 @@ this.item <- {
 		_out.writeF32(this.m.Condition);
 		_out.writeF32(this.m.PriceMult);
 		_out.writeString(this.getInstanceID()); //Need old ID for saved formations
+		_out.writeBool(this.m.IsRuned);		
 	}
 
 	function onDeserialize( _in )
@@ -627,12 +638,16 @@ this.item <- {
 
 		this.m.Condition = _in.readF32();
 		this.m.PriceMult = _in.readF32();
-
 		if (_in.getMetaData().getVersion() >= 46)
 		{
 			this.m.OldID = _in.readString();
 		}
-		
+
+		if (_in.getMetaData().getVersion() >= 49)
+		{
+			this.m.IsRuned = _in.readBool();
+		}		
+	
 		this.updateVariant();
 	}
 

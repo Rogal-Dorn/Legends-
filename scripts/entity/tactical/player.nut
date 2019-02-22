@@ -35,7 +35,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			FavoriteWeaponUses = 0,
 			CurrentWeaponUses = 0
 		},
-		Formations = null
+		Formations = null,
+		VeteranPerks = 0
 	},
 	function setName( _value )
 	{
@@ -170,6 +171,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setCommander( _f )
 	{
 		this.m.IsCommander = _f;
+	}
+
+	function setVeteranPerks( _f )
+	{
+		this.m.VeteranPerks = _f;
 	}
 
 	function isLeveled()
@@ -620,6 +626,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					text = "In reserve"
 				});
 			}
+
+			tooltip.push({
+				id = 7,
+				type = "hint",
+				text = this.getBackground().getBackgroundDescription(false)
+			})
 		}
 
 		local injuries = this.getSkills().query(this.Const.SkillType.Injury | this.Const.SkillType.SemiInjury);
@@ -883,9 +895,41 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local injuries = this.Const.Injury.Permanent;
 			local numPermInjuries = 0;
 
-			foreach( inj in injuries )
+			foreach (inj in injuries)
 			{
-				if (!this.m.Skills.hasSkill(inj.ID))
+				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_forearm"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_leg"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_foot"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_ear"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_eye"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_finger"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_hand"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_nose"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
 				{
 					potential.push(inj);
 				}
@@ -1558,7 +1602,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			++this.m.PerkPoints;
 		}
 
-	//	++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
+		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
 
 		return true;
 	}
@@ -1627,6 +1671,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (this.m.Level == 11)
 			{
 				this.updateAchievement("OldAndWise", 1, 1);
+			}
+
+			if (this.m.Level > 11 && this.m.VeteranPerks > 0)
+			{
+				if ((this.m.Level - 1) % this.m.VeteranPerks == 0) {
+					++this.m.PerkPoints;
+				}
 			}
 		}
 	}
@@ -2111,6 +2162,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
+		
 		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
 		{
 			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
@@ -2120,7 +2172,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
 		}
 
-
+		if (background.isFemaleBackground()) {
+			this.m.Gender = 1;
+		}
 	
 		background.buildAttributes();
 		background.buildDescription();
@@ -2466,6 +2520,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU32(this.m.LifetimeStats.CurrentWeaponUses);
 		_out.writeBool(this.m.IsTryoutDone);
 		this.m.Formations.onSerialize(_out);
+		_out.writeU8(this.m.VeteranPerks);
+		_out.writeBool(this.m.IsCommander);
 
 	}
 
@@ -2519,6 +2575,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background = ret[0];
 			this.m.Background.adjustHiringCostBasedOnEquipment();
 			this.m.Background.buildDescription(true);
+			if (this.m.Background.isFemaleBackground())
+			{
+				this.m.Gender = 1;
+			}
 		}
 
 		this.m.PlaceInFormation = _in.readU8();
@@ -2546,6 +2606,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 46)
 		{
 			this.m.Formations.onDeserialize(_in);
+		}
+		
+		if (_in.getMetaData().getVersion() >= 47)
+		{
+			this.m.VeteranPerks = _in.readU8();
+		}
+
+		if (_in.getMetaData().getVersion() >= 48)
+		{
+			this.m.IsCommander = _in.readBool();
 		}
 
 	}

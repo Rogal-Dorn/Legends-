@@ -11,8 +11,8 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		// this.m.BackgroundDescription = "Berserkers are used to the hard life of the wild where only the strong prevail. They are less used to the life of cities, where the astute and deceitful rule.";
 		// this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
 		// this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
-		this.m.HiringCost = 100;
-		this.m.DailyCost = 12;
+		this.m.HiringCost = 10000;
+		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.teamplayer",
@@ -50,12 +50,12 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			"the Wild",
 			"the Barbarian"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.WildMale;
+		this.m.Faces = this.Const.Faces.Berserker;
+		this.m.Hairs = this.Const.Hair.Berserker;
 		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.Wild;
+		this.m.Beards = this.Const.Beards.Berserker;
 		this.m.BeardChance = 100;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Body = "bust_naked_body_04";
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -161,6 +161,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
 		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
 	}	
 
 
@@ -169,6 +170,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 3;
+		talents[this.Const.Attributes.Fatigue] = 2;
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

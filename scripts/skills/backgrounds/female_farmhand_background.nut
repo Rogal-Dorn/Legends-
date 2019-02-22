@@ -5,7 +5,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.character_background.create();
 		this.m.ID = "background.female_farmhand";
 		this.m.Name = "Milkmaid";
-		this.m.Icon = "ui/backgrounds/background_09.png";
+		this.m.Icon = "ui/backgrounds/milkmaid.png";
 		this.m.BackgroundDescription = "Milkmaid are used to physical labor.";
 		this.m.GoodEnding = "The former milkmaid, %name%, retired from the %companyname%. The money she made was put toward purchasing a bit of land. she spends the rest of her days happily farming and starting a family with way too many children.";
 		this.m.BadEnding = "The former milkmaid, %name%, soon left the %companyname%. She purchased a bit of land out {south | north | east | west} and was doing quite well for herself - until noble soldiers hanged her from a tree for refusing to hand over all her crops.";
@@ -22,6 +22,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
+		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
@@ -115,8 +116,6 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		else
 		{
 			local item = this.new("scripts/items/armor/linen_tunic");
-			item.setVariant(this.Math.rand(6, 7));
-			items.equip(item);
 		}
 
 		r = this.Math.rand(0, 2);
