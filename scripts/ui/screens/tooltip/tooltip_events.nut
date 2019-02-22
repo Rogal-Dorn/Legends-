@@ -632,7 +632,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getConditionMax() > 1 && _item.getCondition() < _item.getConditionMax())
 			{
 				local price = (_item.getConditionMax() - _item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.200000003 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)
@@ -861,7 +861,8 @@ this.tooltip_events <- {
 
 	function general_queryUIPerkTooltipData( _entityId, _perkId )
 	{
-		local perk = this.Const.Perks.findById(_perkId);
+		local player = this.Tactical.getEntityByID(_entityId);
+		local perk = this.Const.Perks.findByBackground(_perkId, player.getBackground().getID());
 
 		if (perk != null)
 		{
@@ -877,7 +878,6 @@ this.tooltip_events <- {
 					text = perk.Tooltip
 				}
 			];
-			local player = this.Tactical.getEntityByID(_entityId);
 
 			if (!player.hasPerk(_perkId))
 			{
@@ -978,12 +978,27 @@ this.tooltip_events <- {
 
 		case "assets.Money":
 			local money = this.World.Assets.getMoney();
-			local dailyMoney = this.World.Assets.getDailyMoneyCost();
-			local time = this.Math.floor(money / dailyMoney);
+			local dailyMoney = 0;
+			local barterMult = 0.0;
+			local brolist = [];
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				local L = []
+				dailyMoney = dailyMoney + bro.getDailyCost();
+				local L = [bro.getDailyCost(), bro.getName(), bro.getBackground().getNameOnly()];
+				barterMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID()) * 100.0;
+				if (barterMult > 0)
+				{
+					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "%[/color] Barter"
+				}
+				brolist.push(L);
+			}
 
+			local time = this.Math.floor(money / dailyMoney);
+			local ret = []
 			if (time >= 1.0 && money > 0)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -992,13 +1007,13 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
+						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.NegativeValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
 					}
 				];
 			}
 			else
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1011,6 +1026,39 @@ this.tooltip_events <- {
 					}
 				];
 			}
+
+			local id = 4;
+			local sortfn = function (first, second) 
+			{
+				if (first[0] == second[0])
+				{
+					return 0
+				}
+				if (first[0] > second[0]) 
+				{
+					return -1
+				}
+				return 1
+			}
+			brolist.sort(sortfn);
+			foreach (bro in brolist)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = "ui/tooltips/money.png",
+					text ="[color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			ret.push({
+				id = id,
+				type = "text",
+				icon = "ui/icons/asset_moral_reputation.png",
+				text ="[color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "[/color]% Barter Multiplier"
+			})
+			++id;
+			return ret
 
 		case "assets.InitialMoney":
 			return [
@@ -1071,11 +1119,20 @@ this.tooltip_events <- {
 		case "assets.Food":
 			local food = this.World.Assets.getFood();
 			local dailyFood = this.Math.ceil(this.World.Assets.getDailyFoodCost() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type]);
-			local time = this.Math.floor(food / dailyFood);
 
+			local brolist = [];
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				local brofood = this.Math.ceil( bro.getDailyFood() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type]);
+				dailyFood = dailyFood + brofood;
+				brolist.push([brofood, bro.getName()]);
+			}
+
+			local time = this.Math.floor(food / dailyFood);
+			local ret = [];
 			if (food > 0 && time > 1)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1090,7 +1147,7 @@ this.tooltip_events <- {
 			}
 			else if (food > 0 && time == 1)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1105,7 +1162,7 @@ this.tooltip_events <- {
 			}
 			else
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1118,6 +1175,32 @@ this.tooltip_events <- {
 					}
 				];
 			}
+
+			local id = 4;
+			local sortfn = function (first, second) 
+			{
+				if (first[0] == second[0])
+				{
+					return 0
+				}
+				if (first[0] > second[0]) 
+				{
+					return -1
+				}
+				return 1
+			}
+			brolist.sort(sortfn);			
+			foreach (bro in brolist)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/asset_daily_food.png",
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] " + bro[1]
+				})
+				++id;
+			}
+			return ret
 
 		case "assets.DailyFood":
 			return [
@@ -1143,7 +1226,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Ammo + " units at a time."
+					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.World.Assets.getMaxAmmo() + " units at a time."
 				}
 			];
 
@@ -1167,8 +1250,9 @@ this.tooltip_events <- {
 				desc = desc + (repair.ArmorParts + "[/color] tools and supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].ArmorParts + " units at most.");
-			return [
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
+
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1178,8 +1262,26 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/repair_item.png",
+					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Modifier + "%[/color]"
 				}
 			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
 
 		case "assets.Medicine":
 			local heal = this.World.Assets.getHealingRequired();
@@ -1212,8 +1314,9 @@ this.tooltip_events <- {
 				desc = desc + (heal.MedicineMax + "[/color] Medical Supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Medicine + " units at most.");
-			return [
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
+			
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1223,11 +1326,49 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = desc
+				},
+				{
+					id = 6,
+					type = "text",
+					icon = "ui/icons/health.png",
+					text = "Total healing modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + heal.Modifier + "%[/color]"
 				}
 			];
 
+			local id = 4;
+			foreach (bro in heal.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			if (heal.Injuries.len() > 0) 
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					text = "Injuries:"
+				})
+				++id;
+			}
+			foreach (bro in heal.Injuries)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = "ui/icons/days_wounded.png",
+					text = bro[2] + " [color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] to [color=" + this.Const.UI.Color.NegativeValue + "]" + bro[1] + "[/color] days"
+				})
+				++id;
+			}
+			return ret;
+
 		case "assets.Brothers":
-			return [
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1239,6 +1380,42 @@ this.tooltip_events <- {
 					text = "Show the roster of the fighting force of your mercenary company."
 				}
 			];
+			local data = this.World.Assets.getRosterDescription();
+			local id = 4;
+			ret.push({
+				id = id,
+				type = "text",
+				text = "Terrain Movement Modifiers:"
+			})
+			++id;
+			foreach (bro in data.TerrainModifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/"
+					text = bro[0] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + bro[1] + "%[/color]"
+				})
+				++id;
+			}
+
+			ret.push({
+				id = id,
+				type = "hint",
+				text = "Company:"
+			})
+			++id;
+			foreach (bro in data.Brothers)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = bro.Mood,
+					text = "L" + bro.Level + "  " + bro.Name + " (" + bro.Background + ")"
+				})
+				++id;
+			}			
+			return ret
 
 		case "assets.BusinessReputation":
 			return [
@@ -2723,6 +2900,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "character-screen.right-panel-header-module.FormationButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Formations"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Switch to viewing the formation configuriations for your mercenary company."
+				}
+			];
+
 		case "character-screen.right-panel-header-module.CloseButton":
 			return [
 				{
@@ -2832,6 +3023,48 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Toggle between showing and hiding the mood of your men."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Change company formation and equipment loadouts."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ClearFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Clear Formation Loadout"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all items and weapons from brothers and place in inventory."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormationName":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation Name"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Give this formation a descriptive label for your reference."
 				}
 			];
 
@@ -3425,6 +3658,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "world-town-screen.hire-dialog-module.DismissButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Dismiss Recruit"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Selected recruit doesn't make the cut, give'em the boot."
+				}
+			];
+
 		case "world-town-screen.hire-dialog-module.UnknownTraits":
 			return [
 				{
@@ -3651,6 +3898,161 @@ this.tooltip_events <- {
 				text = "Open store page in browser"
 			});
 			return ret;
+		
+		case "mapconfig.width":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Map Width"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Number of tiles in wide. Default is 140. The camera renderer is hardcoded for max of 140 (this can't be modded). Above that and zoom in won't render correctly for tiles above 140"
+				}
+			];
+
+		case "mapconfig.height":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Map Height"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Number of tiles in hieght. Defualt is 140. The camera renderer is hardcoded for max of 140 (this can't be modded). Above that and zoom in won't render correctly for tiles above 140"
+				}
+			];
+
+		case "mapconfig.landmass":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Land Mass Ratio"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Minimum land to water ratio for an acceptable map. Default is 40. Going either extremes on this slider can result in map never getting generated."
+				}
+			];
+
+		case "mapconfig.water":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Water Connectivity"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Impacts how connected the water masses are. Default is 4. Small value results in patchy water arund corners of map. larger numbers can create a single large island given a low enough land mass ratio."
+				}
+			];
+
+		case "mapconfig.snowline":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Snowline"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Determines where the snowline is generated. Default is 90. This value is inverted. a value of 10 would mean the top 90% of the map is snow."
+				}
+			];
+
+		case "mapconfig.mountains":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Mountain Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of mountains. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.forest":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Forest Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of forests. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.swamp":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Swamp Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of swamps. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.settlements":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Number of Settlements"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Maximum number of settlements. Depending on map size, this will try to add the number of settlements on the slider. It will keep the same ratio of settlement types as default Battle Brothers maps. Minimum distance between settlements is 12 tiles."
+				}
+			];
+
+		case "mapconfig.factions":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Number of Factions"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Maximum number of Factions. Depending on map size, this will try to add the number of factions on the slider."
+				}
+			];
+
+		case "mapconfig.fow":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Settlement Visibility"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled. All settlements will be hidden at campaign start. For the true explorer experience!"
+				}
+			];
+
 		}
 
 		return null;

@@ -37,12 +37,13 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Wallhovel"
 		]);
 		this.m.DraftList = [
+			"vazl_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
 			"brawler_background",
 			"brawler_background",
 			"cultist_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"gravedigger_background",
 			"mason_background",
 			"messenger_background",
@@ -57,9 +58,9 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"wildman_background",
 			"wildman_background",
 			"witchhunter_background",
-			"adventurous_noble_background",
+			"female_adventurous_noble_background",
 			"deserter_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background"
 		];

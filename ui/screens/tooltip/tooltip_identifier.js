@@ -262,7 +262,8 @@ var TooltipIdentifier =
 		HireDialogModule:
 		{
             HireButton: 'world-town-screen.hire-dialog-module.HireButton',
-            TryoutButton: 'world-town-screen.hire-dialog-module.TryoutButton',
+			TryoutButton: 'world-town-screen.hire-dialog-module.TryoutButton',
+			DismissButton: 'world-town-screen.hire-dialog-module.DismissButton',
             LeaveButton: 'world-town-screen.hire-dialog-module.LeaveButton',
             UnknownTraits: 'world-town-screen.hire-dialog-module.UnknownTraits',
         },
@@ -318,7 +319,11 @@ var TooltipIdentifier =
 			FilterArmorButton: 'character-screen.right-panel-header-module.FilterArmorButton',
             FilterMiscButton: 'character-screen.right-panel-header-module.FilterMiscButton',
             FilterUsableButton: 'character-screen.right-panel-header-module.FilterUsableButton',
-			FilterMoodButton: 'character-screen.right-panel-header-module.FilterMoodButton'
+			FilterMoodButton: 'character-screen.right-panel-header-module.FilterMoodButton',
+			FormationButton: 'character-screen.right-panel-header-module.FormationButton',
+			ChangeFormationButton: 'character-screen.right-panel-header-module.ChangeFormation',
+			ClearFormationButton: 'character-screen.right-panel-header-module.ClearFormation',
+			ChangeFormationName: 'character-screen.right-panel-header-module.ChangeFormationName'
         },
 
 		BattleStartFooterModule:

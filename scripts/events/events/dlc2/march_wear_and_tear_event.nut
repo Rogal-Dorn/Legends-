@@ -289,7 +289,7 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.tailor")
+			if (bro.getBackground().getID() == "background.tailor" || bro.getBackground().getID() == "background.female_tailor")
 			{
 				candidates_tailor.push(bro);
 			}
@@ -297,7 +297,7 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_other.push(bro);
 
-				if (bro.getBackground().getID() == "background.thief")
+				if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief")
 				{
 					candidates_thief.push(bro);
 				}

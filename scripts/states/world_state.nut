@@ -70,7 +70,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		GameWon = null,
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
-		CampaignSettings = null
+		CampaignSettings = null,
+		DebugMap = false,
+		Campaign = "",
+		CommanderDied = null,
+		LegendsMod = null
 	},
 	function getPlayer()
 	{
@@ -415,6 +419,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function commanderDied()
+	{
+		return this.m.CommanderDied;
+	}
+
+	function setCommanderDied( _v )
+	{
+		this.m.CommanderDied = _v
+	}
+
 	function onInit()
 	{
 		this.m.IsDeveloperModeEnabled = this.isDevmode() || !this.isReleaseBuild();
@@ -425,6 +439,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.LastWorldSpeedMult = 1.0;
 		this.m.ExitGame = false;
 		this.m.GameWon = false;
+		this.m.CommanderDied = false;
 		this.Settings.getTempGameplaySettings().CameraLocked = false;
 		this.Settings.getTempGameplaySettings().ShowTracking = true;
 		this.Tactical.setActive(false);
@@ -453,6 +468,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Tags <- this.m.Tags;
 		this.m.Assets = this.new("scripts/states/world/asset_manager");
 		this.World.Assets <- this.WeakTableRef(this.m.Assets);
+		this.m.LegendsMod = this.new("scripts/mods/legends_mod"); 
+		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
 		this.onInitUI();
 		this.init();
 	}
@@ -575,6 +592,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.EntityManager = null;
 		this.World.State = null;
 		this.Root.setBackgroundTaskCallback(null);
+		this.m.LegendsMod = null;
+		this.World.LegendsMod = null;
 		this.onDestroyUI();
 		this.Sound.stopAmbience();
 	}
@@ -721,7 +740,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.Player.setPath(null);
 				this.m.Player.setDestination(this.m.AutoAttack.getPos());
 			}
-			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.1)
+			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.100000001)
 			{
 				local navSettings = this.World.getNavigator().createSettings();
 				navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
@@ -785,12 +804,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function onKeyInput( _key )
 	{
 		return this.helper_handleContextualKeyInput(_key);
-		return false;
 	}
 
 	function onMouseInput( _mouse )
 	{
 		if (this.isInLoadingScreen())
+		{
+			return true;
+		}
+
+		if (this.isInDevScreen())
 		{
 			return true;
 		}
@@ -811,12 +834,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			if (_mouse.getState() == 3)
 			{
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
 				return true;
 			}
 			else if (_mouse.getState() == 4)
 			{
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.300000012);
 				return true;
 			}
 		}
@@ -981,8 +1004,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		clouds.MaxClouds = 70;
 		clouds.MinVelocity = 35.0;
 		clouds.MaxVelocity = 65.0;
-		clouds.MinAlpha = 0.8;
-		clouds.MaxAlpha = 0.8;
+		clouds.MinAlpha = 0.800000012;
+		clouds.MaxAlpha = 0.800000012;
 		clouds.MinScale = 1.0;
 		clouds.MaxScale = 1.25;
 		this.World.getWeather().buildCloudCover(clouds);
@@ -999,17 +1022,53 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setAutoPause(true);
 		this.Time.setVirtualTime(0);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
+		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
+		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
-		local minX = worldmap.getMinX();
-		local minY = worldmap.getMinY();
+		local minX = this.Const.World.Settings.SizeX;
+		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		worldmap.fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, null);
-		this.World.FactionManager.createFactions();
+		// worldmap.fill({
+		// 	X = 0,
+		// 	Y = 0,
+		// 	W = minX,
+		// 	H = minY
+		// }, null);
+		local tries = 200;
+		while (tries > 0)
+		{
+			local result = worldmap.fill({
+				X = 0,
+				Y = 0,
+				W = minX,
+				H = minY
+			}, null);
+			if (result) 
+			{
+				break;
+			}
+			tries = --tries
+			this.logInfo("Invalid map. Regenerating...")			
+			//Failures are because of water issues, help map generation towards default results
+			if (tries > 10)
+			{
+				if (this.Const.World.Settings.LandMassMult > 1.4) {
+					this.Const.World.Settings.LandMassMult -= 0.05;
+				} else {
+					this.Const.World.Settings.LandMassMult += 0.05;
+				}
+
+				if (this.Const.World.Settings.WaterConnectivity > 38) {
+					this.Const.World.Settings.WaterConnectivity -= 1;
+				} else {
+					this.Const.World.Settings.WaterConnectivity += 1;
+				}
+				this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult);
+				this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity);
+			}
+		}
+
+		this.World.FactionManager.createFactions(this.m.CampaignSettings);
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
 		this.m.Assets.init();
@@ -1037,40 +1096,41 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
-		do
+		for (local i = 0; i < 3000; i = ++i)
 		{
 			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 8), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 8));
 			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 8), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 8));
 
 			if (!this.World.isValidTileSquare(x, y))
 			{
+				continue
 			}
-			else
+
+			local tile = this.World.getTileSquare(x, y);
+
+			if (tile.IsOccupied)
 			{
-				local tile = this.World.getTileSquare(x, y);
+				continue;
+			}
 
-				if (tile.IsOccupied)
-				{
-				}
-				else if (tile.getDistanceTo(randomVillageTile) <= 3)
-				{
-				}
-				else if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
-				{
-				}
-				else
-				{
-					local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
+			if (tile.getDistanceTo(randomVillageTile) <= 3)
+			{
+				continue
+			}
 
-					if (!path.isEmpty())
-					{
-						randomVillageTile = tile;
-						break;
-					}
-				}
+			if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
+			{
+				continue
+			}
+
+			local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
+
+			if (!path.isEmpty())
+			{
+				randomVillageTile = tile;
+				break;
 			}
 		}
-		while (1);
 
 		this.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.getCamera().setPos(this.m.Player.getPos());
@@ -1081,11 +1141,42 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
-
+		if (this.m.Campaign == "legends_noble") {
+			this.World.Tags.set("IsLegendsNoble", true);
+		}
+		if (this.m.Campaign == "legends_beggar") {
+			this.World.Tags.set("IsLegendsBeggar", true);
+		}
+		if (this.m.Campaign == "legends_crusader") {
+			this.World.Tags.set("IsLegendsCrusader", true);
+		}
+		if (this.m.Campaign == "legends_hunter") {
+			this.World.Tags.set("IsLegendsHunter", true);
+		}
+		if (this.m.Campaign == "legends_inventor") {
+			this.World.Tags.set("IsLegendsInventor", true);
+		}
+		if (this.m.Campaign == "legends_necro") {
+			this.World.Tags.set("IsLegendsNecro", true);
+		}
+		if (this.m.Campaign == "legends_witch") {
+			this.World.Tags.set("IsLegendsWitch", true);
+		}
+		if (this.m.Campaign == "legends_healer") {
+			this.World.Tags.set("IsLegendsHealer", true);
+		}
+		if (this.m.Campaign == "legends_hoggart") {
+			this.World.Tags.set("IsLegendsHoggart", true);
+		}
+		if (this.m.Campaign == "legends_berserker") {
+			this.World.Tags.set("IsLegendsBerserker", true);
+		}
+		
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
 		this.World.Contracts.addContract(c);
 		this.World.Contracts.setActiveContract(c, true);
+		this.World.setFogOfWar(!this.m.DebugMap);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
 	}
 
@@ -1146,7 +1237,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function setNewCampaignSettings( _settings )
 	{
+		foreach(k,v in _settings) 
+		{
+			this.logInfo(k + " = " + v);
+		}
 		this.m.CampaignSettings = _settings;
+		this.m.DebugMap = _settings.Debug;
+		this.m.Campaign = _settings.Campaign;
 	}
 
 	function enterLocation( _location )
@@ -1299,7 +1396,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
 					{
-						++factions[party.getFaction()];
+						if (t.Faction >= factions.len())
+						{
+							factions.resize(t.Faction + 1, 0);
+						}
+						++factions[t.Faction];
 					}
 				}
 			}
@@ -1492,7 +1593,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		if (this.World.getPlayerRoster().getSize() == 0)
+		this.logInfo("***** BATTLE OVER, CHECKING IF should loose game **** " + this.commanderDied())
+		if (this.World.getPlayerRoster().getSize() == 0 || this.commanderDied())
 		{
 			this.show();
 			this.showGameFinishScreen(false);
@@ -2408,6 +2510,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function isInDevScreen()
+	{
+		if (this.m.WorldScreen != null && this.m.WorldScreen.devConsoleVisible())
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	function isInCharacterScreen()
 	{
 		if (this.m.CharacterScreen != null && (this.m.CharacterScreen.isVisible() || this.m.CharacterScreen.isAnimating()))
@@ -3107,6 +3219,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
+		if (this.isInDevScreen())
+		{
+			switch(_key.getKey())
+			{
+			case 41:
+				this.m.WorldScreen.hideDevConsole();
+				break;
+			}
+
+			return true;
+		}
+
 		if (this.isInCharacterScreen() && _key.getState() == 0)
 		{
 			switch(_key.getKey())
@@ -3191,6 +3315,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 					}
 				}
 
+				break;
+			
+			case 32:
+				if (!this.m.MenuStack.hasBacksteps())
+				{
+					this.m.WorldScreen.showDevConsole();
+					return true;
+				}
 				break;
 
 			case 26:
@@ -3365,12 +3497,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			case 67:
 			case 46:
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
 				break;
 
 			case 68:
 			case 47:
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.150000006);
 				break;
 
 			case 96:
@@ -3502,6 +3634,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);
 		this.World.Assets.onDeserialize(_in);
+
+		this.logInfo("**CREATING NEW COMBAT MANAGER***")
+		this.m.Combat = this.new("scripts/entity/world/combat_manager");
+		this.World.Combat <- this.WeakTableRef(this.m.Combat);
+
 		this.World.Combat.onDeserialize(_in);
 		this.World.Contracts.onDeserialize(_in);
 		this.World.Events.onDeserialize(_in);

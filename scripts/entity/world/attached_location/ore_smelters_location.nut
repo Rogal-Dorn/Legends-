@@ -71,6 +71,11 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "weapons/dagger"
 			});
 			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_hammer"
+			});
+			_list.push({
 				R = 25,
 				P = 1.0,
 				S = "supplies/armor_parts_item"
@@ -105,6 +110,11 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 				R = 45,
 				P = 1.0,
 				S = "weapons/greatsword"
+			});
+			_list.push({
+				R = 45,
+				P = 1.0,
+				S = "weapons/legend_tipstaff"
 			});
 			_list.push({
 				R = 35,

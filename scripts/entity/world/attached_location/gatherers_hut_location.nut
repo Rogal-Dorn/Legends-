@@ -42,6 +42,16 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 			_list.push({
 				R = 20,
 				P = 1.0,
+				S = "weapons/legend_sickle"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "supplies/medicine_small_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
 				S = "supplies/medicine_item"
 			});
 		}

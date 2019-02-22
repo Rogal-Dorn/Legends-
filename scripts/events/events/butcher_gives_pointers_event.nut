@@ -75,7 +75,7 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.butcher")
+			if (bro.getBackground().getID() == "background.butcher"|| bro.getBackground().getID() == "background.female_butcher")
 			{
 				candidates_butcher.push(bro);
 			}

@@ -81,6 +81,10 @@ this.raise_undead <- this.inherit("scripts/skills/skill", {
 	{
 		local p = _tile.Properties.get("Corpse");
 		p.Faction = _user.getFaction();
+		if (p.Faction == this.Const.Faction.Player)
+		{
+			p.Faction = this.Const.Faction.PlayerAnimals;
+		}
 		local e = this.Tactical.Entities.onResurrect(p);
 
 		if (e != null)
@@ -107,7 +111,7 @@ this.raise_undead <- this.inherit("scripts/skills/skill", {
 
 				if (this.m.SoundOnHit.len() != 0)
 				{
-					this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill * 1.2, _user.getPos());
+					this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill * 1.20000005, _user.getPos());
 				}
 			}
 		}

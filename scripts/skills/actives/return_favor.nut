@@ -7,8 +7,8 @@ this.return_favor <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.return_favor";
 		this.m.Name = "Return Favor";
 		this.m.Description = "Use your superior fighting skills to assume a defensive stance and seek to incapacitate anyone attacking you that you can reach yourself.";
-		this.m.Icon = "ui/perks/perk_31_active.png";
-		this.m.IconDisabled = "ui/perks/perk_31_active_sw.png";
+		this.m.Icon = "skills/return_favor_square.png";
+		this.m.IconDisabled = "skills/return_favor_square_bw.png";
 		this.m.Overlay = "perk_31_active";
 		this.m.SoundOnUse = [
 			"sounds/combat/return_favor_01.wav"

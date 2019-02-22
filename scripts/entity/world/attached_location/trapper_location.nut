@@ -36,10 +36,16 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 				P = 1.0,
 				S = "trade/furs_item"
 			});
+
 			_list.push({
 				R = 50,
 				P = 1.0,
 				S = "weapons/hunting_bow"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/legend_shiv"
 			});
 		}
 		else if (_id == "building.specialized_trader")

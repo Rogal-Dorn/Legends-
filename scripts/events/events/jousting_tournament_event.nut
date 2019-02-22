@@ -11,7 +11,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 100.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%jouster% comes to you with a paper in hand. He slams it on your table and says he wishes to enter. You pick up the scroll, unfurling it to show that a local town is hosting a jousting tournament. The man crosses his arms, awaiting your response.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%jouster% comes to you with a paper in hand. They slam it on your table and says they wishes to enter. You pick up the scroll, unfurling it to show that a local town is hosting a jousting tournament. The mercenary crosses his arms, awaiting your response.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -41,7 +41,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_96.png[/img]You agree to let %jouster% go to the tournament and, wanting to see it for yourself, you go along, too.\n\nThe jousting tourney crackles with energy as you near it. Squires hurry to and fro, carrying great armfulls of armor and weapons, and some step slowly about with enormous lances hefted over their shoulders. Other men brush very regal looking horses, many of which wear breastplates decorated with sigils. In the distance, you listen to brief gallops, heavy hooves stamping roughshod and lumbering and then there\'s a snapping twang of wood on metal and cheers erupt.\n\nAs you look about the festivities, a nobleman walks up and stops you. Weighing a purse in one hand and twisting a piece of broomstraw about the corner of his mouth with the other, he asks if you\'d like to make a wager. You ask what for. He nods, pointing toward %jouster% who is across the mustering point signing himself into the tourney. Apparently he is to face this nobleman\'s own rider, a man by the name of %opponent%.%SPEECH_ON%A little bit of gamesmanship never hurt, no? How does %bet% crowns sound to you? Winner take all, of course.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_96.png[/img]You agree to let %jouster% go to the tournament and, wanting to see it for yourself, you go along, too.\n\nThe jousting tourney crackles with energy as you near it. Squires hurry to and fro, carrying great armfulls of armor and weapons, and some step slowly about with enormous lances hefted over their shoulders. Other men brush very regal looking horses, many of which wear breastplates decorated with sigils. In the distance, you listen to brief gallops, heavy hooves stamping roughshod and lumbering and then there\'s a snapping twang of wood on metal and cheers erupt.\n\nAs you look about the festivities, a nobleman walks up and stops you. Weighing a purse in one hand and twisting a piece of broomstraw about the corner of his mouth with the other, he asks if you\'d like to make a wager. You ask what for. He nods, pointing toward %jouster% who is across the mustering point signing themself into the tourney. Apparently he is to face this nobleman\'s own rider, a man by the name of %opponent%.%SPEECH_ON%A little bit of gamesmanship never hurt, no? How does %bet% crowns sound to you? Winner take all, of course.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -101,7 +101,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Win",
-			Text = "[img]gfx/ui/events/event_96.png[/img]Having never been to such an event, you can\'t help but hold your breath as the two riders barrel down the lanes toward each other. The horses are majestic, their legs in rhythm, their hooves tearing up great clods of earth, their armors glinting sundots across the crowds as they run, altogether leaving in their wake streams of giddy observers and shouting kids and drunks spilling their raised mugs and young princesses gripping their dresses and wantingly brave princes clapping their hands and, not knowing how it even came to be, you yourself are standing and shouting.\n\n %opponent% struggles to keep his aim steady, his lance bobbing up and down, the point of it wobbling in search of a true target.\n\nHe doesn\'t find it.",
+			Text = "[img]gfx/ui/events/event_96.png[/img]Having never been to such an event, you can\'t help but hold your breath as the two riders barrel down the lanes toward each other. The horses are majestic, their legs in rhythm, their hooves tearing up great clods of earth, their armors glinting sundots across the crowds as they run, altogether leaving in their wake streams of giddy observers and shouting kids and drunks spilling their raised mugs and young princesses gripping their dresses and wantingly brave princes clapping their hands and, not knowing how it even came to be, you yourself are standing and shouting.\n\n %opponent% struggles to keep his aim steady, his lance bobbing up and down, the point of it wobbling in search of a true target.\n\n They don\'t find it.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -130,7 +130,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "WinNobet",
-			Text = "[img]gfx/ui/events/event_96.png[/img]%jouster%\'s lance shatters on his opponent\'s chest, a proverbial explosion of sawdust and splinters through which rides a horse with no rider, the jouster having been driven back over his cantle and clear of his saddle altogether, coming facedown on the battleground with nary a move or breath. A roar bursts from the crowd, an uncorked tempest which you are quick to join, drowning your ears in a blistering cacophony, swept up in a time and place you will never forget.",
+			Text = "[img]gfx/ui/events/event_96.png[/img]%jouster%\'s lance shatters on their opponent\'s chest, a proverbial explosion of sawdust and splinters through which rides a horse with no rider, the jouster having been driven back over his cantle and clear of his saddle altogether, coming facedown on the battleground with nary a move or breath. A roar bursts from the crowd, an uncorked tempest which you are quick to join, drowning your ears in a blistering cacophony, swept up in a time and place you will never forget.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -162,7 +162,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "WinBet",
-			Text = "[img]gfx/ui/events/event_96.png[/img]%jouster%\'s lance shatters on his opponent\'s chest, a proverbial explosion of sawdust and splinters through which rides a horse with no rider, the jouster having been driven back over his cantle and clear of his saddle altogether, coming facedown on the battleground with nary a move or breath. A roar bursts from the crowd, an uncorked tempest which you are quick to join, drowning your ears in a blistering cacophony, swept up in a time and place you will never forget.\n\nWhile still celebrating, the nobleman you made a wager with comes over and places a purse into your hand. You wish to say a few words, but before you can he angrily turns and walks off.",
+			Text = "[img]gfx/ui/events/event_96.png[/img]%jouster%\'s lance shatters on their opponent\'s chest, a proverbial explosion of sawdust and splinters through which rides a horse with no rider, the jouster having been driven back over his cantle and clear of his saddle altogether, coming facedown on the battleground with nary a move or breath. A roar bursts from the crowd, an uncorked tempest which you are quick to join, drowning your ears in a blistering cacophony, swept up in a time and place you will never forget.\n\nWhile still celebrating, the nobleman you made a wager with comes over and places a purse into your hand. You wish to say a few words, but before you can he angrily turns and walks off.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -200,7 +200,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Lose",
-			Text = "[img]gfx/ui/events/event_96.png[/img]Having never been to such an event, you can\'t help but hold your breath as the two riders barrel down the lanes toward each other. The horses are majestic, their legs in rhythm, their hooves tearing up great clods of earth, their armors glinting sundots across the crowds as they run, altogether leaving in their wake streams of giddy observers and shouting kids and drunks spilling their raised mugs and young princesses gripping their dresses and wantingly brave princes clapping their hands and, not knowing how it even came to be, you yourself are standing and shouting.\n\n%jouster% struggles to keep his aim steady, his lance bobbing up and down, the point of it wobbling in search of a true target.\n\nHe doesn\'t find it.",
+			Text = "[img]gfx/ui/events/event_96.png[/img]Having never been to such an event, you can\'t help but hold your breath as the two riders barrel down the lanes toward each other. The horses are majestic, their legs in rhythm, their hooves tearing up great clods of earth, their armors glinting sundots across the crowds as they run, altogether leaving in their wake streams of giddy observers and shouting kids and drunks spilling their raised mugs and young princesses gripping their dresses and wantingly brave princes clapping their hands and, not knowing how it even came to be, you yourself are standing and shouting.\n\n%jouster% struggles to keep their aim steady, lance bobbing up and down, the point of it wobbling in search of a true target.\n\n They don\'t find it.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -229,7 +229,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "LoseNobet",
-			Text = "[img]gfx/ui/events/event_96.png[/img]%opponent%\'s lance explodes as it lands square on %jouster%\'s chest. The man is bent back in his saddle, a cloud of spinning splinters and powdered wood swirling in his wake. He reaches desperately for his reins. Finding them, you think he\'s recovered, but the bridlebit breaks off and the reins slip free. %jouster% falls backward, tumbling over the mount\'s hindquarters and landing on his feet. Standing he may be, he\'s lost.\n\nThe crowd erupts, clapping fervently to both winner and loser. Rolling his shoulder in a bit of pain, %jouster% clears the field. You find him back at the mustering grounds. He says something was off about his lance, and you mention that his horse\'s bridlebit came loose. Just then, the winner walks by, a retinue of adoring women behind him and a squire leading a rather pompous looking horse. To your surprise, %opponent% and %jouster% shake hands and bid each other congratulations on a well-fought match.",
+			Text = "[img]gfx/ui/events/event_96.png[/img]%opponent%\'s lance explodes as it lands square on %jouster%\'s chest. Bent back in the saddle, a cloud of spinning splinters and powdered wood swirling in its wake. %jouster% reaches desperately for the reins. Finding them, you think they've recovered, but the bridlebit breaks off and the reins slip free. %jouster% falls backward, tumbling over the mount\'s hindquarters and landing feet first. Standing may be impressive, but %jouster% has lost.\n\nThe crowd erupts, clapping fervently to both winner and loser. Rolling their shoulder in a bit of pain, %jouster% clears the field. You find them back at the mustering grounds. %jouster% He says something was off about the lance, and you mention that the horse\'s bridlebit came loose. Just then, the winner walks by, a retinue of adoring women behind him and a squire leading a rather pompous looking horse. To your surprise, %opponent% and %jouster% shake hands and bid each other congratulations on a well-fought match.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -257,7 +257,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "LoseBet",
-			Text = "[img]gfx/ui/events/event_96.png[/img]%opponent%\'s lance explodes as it lands square on %jouster%\'s chest. The man is bent back in his saddle, a cloud of spinning splinters and powdered wood swirling in his wake. He reaches desperately for his reins. Finding them, you think he\'s recovered, but the bridlebit breaks off and the reins slip free. %jouster% falls backward, tumbling over the mount\'s hindquarters and landing on his feet. Standing he may be, he\'s lost.\n\n The crowd erupts, clapping fervently to both winner and loser. Rolling his shoulder in a bit of pain, %jouster% clears the field. You find him back at the mustering grounds. He says something was off about his lance, and you mention that his horse\'s bridlebit came loose. Just then, the winner walks by, a retinue of adoring women behind him and a squire leading a rather pompous looking horse. To your surprise, %opponent% and %jouster% shake hands and bid each other congratulations on a well-fought match. \n\n The nobleman you made a wager with isn\'t so keen on good sportsmanship. He comes to you rubbing his hands beneath a cheap grin. You begrudgingly pay the man what he is owed.",
+			Text = "[img]gfx/ui/events/event_96.png[/img]%opponent%\'s lance explodes as it lands square on %jouster%\'s chest. The mercenary is bent back in his saddle, a cloud of spinning splinters and powdered wood swirling in its wake. %jouster% reaches desperately for the reins. Finding them, you think they've recovered, but the bridlebit breaks off and the reins slip free. %jouster% falls backward, tumbling over the mount\'s hindquarters and landing feet first. Standing may be impressive, but %jouster% has lost.\n\n The crowd erupts, clapping fervently to both winner and loser. Rolling their shoulder in a bit of pain, %jouster% clears the field. You find them back at the mustering grounds. %jouster% says something was off about the lance, and you mention that the horse\'s bridlebit came loose. Just then, the winner walks by, a retinue of adoring women behind him and a squire leading a rather pompous looking horse. To your surprise, %opponent% and %jouster% shake hands and bid each other congratulations on a well-fought match. \n\n The nobleman you made a wager with isn\'t so keen on good sportsmanship. He comes to you rubbing his hands beneath a cheap grin. You begrudgingly pay the man what he is owed.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -291,7 +291,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_64.png[/img]Telling %jouster% no does not go over well. He goes on a great deal about how much money he could have made at the tournament and how you are robbing him of those crowns. All very interesting complaints, sure, until he turns to you and demands %compensation% crowns, compensation for what he claims are lost earnings.",
+			Text = "[img]gfx/ui/events/event_64.png[/img]Telling %jouster% no does not go over well. The mercenary goes on a great deal about how much money they could have made at the tournament and how you are robbing them of those crowns. All very interesting complaints, sure, until they turn to you and demands %compensation% crowns, compensation for claimed lost earnings.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -321,7 +321,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "H",
-			Text = "[img]gfx/ui/events/event_64.png[/img]You stand up and pat %jouster% on the shoulder.%SPEECH_ON%I\'ve no doubt that a man of your skill and prowess would have run clean through the tournament. But I need a man such as yourself here, at camp. You need not prove any lost earnings, I will compensate you for them simply enough.%SPEECH_OFF%The rather diplomatic words calm the man down. He nods and briefly looks as though it would be dishonorable to accept the payment. Not wanting the sellsword to test his resolve any further, or perhaps look a fool or a man of low honor, you order him to take it.",
+			Text = "[img]gfx/ui/events/event_64.png[/img]You stand up and pat %jouster% on the shoulder.%SPEECH_ON%I\'ve no doubt that a mercenary of your skill and prowess would have run clean through the tournament. But I need you here, at camp. You need not prove any lost earnings, I will compensate you for them simply enough.%SPEECH_OFF%The rather diplomatic words calm them down. The mercenary nods and briefly looks as though it would be dishonorable to accept the payment. Not wanting the sellsword to test their resolve any further, or perhaps look a fool or of low honor, you order them to take it.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -427,7 +427,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if ((bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.bastard" || bro.getBackground().getID() == "background.hedge_knight") && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+			if ((bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.female_adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.female_disowned_noble" || bro.getBackground().getID() == "background.bastard" || bro.getBackground().getID() == "background.hedge_knight") && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 			{
 				candidates.push(bro);
 			}

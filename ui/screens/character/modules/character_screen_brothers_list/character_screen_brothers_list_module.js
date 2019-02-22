@@ -29,7 +29,7 @@ var CharacterScreenBrothersListModule = function(_parent, _dataSource)
 
     this.mSlots                         = null;
     this.mNumActive                     = 0;
-    this.mNumActiveMax                  = 12;
+    this.mNumActiveMax                  = 27;
 
     this.IsMoodVisible					= true;
 
@@ -124,13 +124,13 @@ CharacterScreenBrothersListModule.prototype.createBrotherSlots = function (_pare
         }
 
         // number in formation is limited
-        if (self.mNumActive >= self.mNumActiveMax && drag.data('idx') > 17 && drop.data('idx') <= 17 && self.mSlots[drop.data('idx')].data('child') == null)
+        if (self.mNumActive >= self.mNumActiveMax && drag.data('idx') > 27 && drop.data('idx') <= 27 && self.mSlots[drop.data('idx')].data('child') == null)
         {
             return false;
         }
 
         // always keep at least 1 in formation
-        if (self.mNumActive == 1 && drag.data('idx') <= 17 && drop.data('idx') > 17 && self.mSlots[drop.data('idx')].data('child') == null)
+        if (self.mNumActive == 1 && drag.data('idx') <= 27 && drop.data('idx') > 27 && self.mSlots[drop.data('idx')].data('child') == null)
         {
             return false;
         }
@@ -141,7 +141,7 @@ CharacterScreenBrothersListModule.prototype.createBrotherSlots = function (_pare
 
     for (var i = 0; i < 27; ++i)
     {
-        if(i < 18)
+        if(i < 27)
             this.mSlots[i] = $('<div class="ui-control is-brother-slot is-roster-slot"/>');
         else
             this.mSlots[i] = $('<div class="ui-control is-brother-slot is-reserve-slot"/>');
@@ -178,7 +178,7 @@ CharacterScreenBrothersListModule.prototype.addBrotherSlotDIV = function (_paren
 
     this.mSlots[_index].data('child', result);
 
-    if (_index <= 17)
+    if (_index <= 27)
         ++this.mNumActive;
 
     // drag handler
@@ -287,7 +287,7 @@ CharacterScreenBrothersListModule.prototype.addBrotherSlotDIV = function (_paren
 
 CharacterScreenBrothersListModule.prototype.updateRosterLabel = function ()
 {
-    this.mRosterCountLabel.html('' + this.mNumActive + '/' + this.mNumActiveMax);
+    this.mRosterCountLabel.html('' + this.mNumActive + '/' + this.mDataSource.getMaxBrothers());
 };
 
 
@@ -396,9 +396,9 @@ CharacterScreenBrothersListModule.prototype.swapSlots = function (_a, _b)
         this.mSlots[_b].data('child', A);
         this.mSlots[_a].data('child', null);
 
-        if (_a <= 17 && _b > 17)
+        if (_a <= 27 && _b > 27)
             --this.mNumActive;
-        else if (_a > 17 && _b <= 17)
+        else if (_a > 27 && _b <= 27)
             ++this.mNumActive;
 
         this.updateBlockedSlots();
@@ -463,7 +463,7 @@ CharacterScreenBrothersListModule.prototype.updateBlockedSlots = function ()
 
         if (slot.data('child') != null || self.mNumActive >= self.mNumActiveMax)
         {
-            slot.addClass('is-blocked-slot');
+           // slot.addClass('is-blocked-slot');
         }
     });
 
@@ -473,7 +473,7 @@ CharacterScreenBrothersListModule.prototype.updateBlockedSlots = function ()
 
         if (slot.data('child') != null)
         {
-            slot.addClass('is-blocked-slot');
+           // slot.addClass('is-blocked-slot');
         }
     });
 }
@@ -546,7 +546,7 @@ CharacterScreenBrothersListModule.prototype.updateBrotherSlot = function (_data)
 
     slot.removeListBrotherStatusEffects();
 
-    for (var i = 0; i != _data['injuries'].length && i < 3; ++i)
+    for (var i = 0; i != _data['injuries'].length && i < 6; ++i)
     {
         slot.assignListBrotherStatusEffect(_data['injuries'][i].imagePath, character[CharacterScreenIdentifier.Entity.Id], _data['injuries'][i].id)
     }

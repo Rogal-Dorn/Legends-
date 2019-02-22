@@ -504,25 +504,35 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 						}
 						else if (i == 19)
 						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_polehammer"));
-						}
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_warbow"));
+						}				
 						else if (i == 20)
 						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_fencing_sword"));
-						}
-						else if (i == 21)
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_crossbow"));
+						}				
+				
+				
+				else if (i == 21)
 						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_mace"));
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_polehammer"));
 						}
 						else if (i == 22)
 						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_flail"));
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_fencing_sword"));
 						}
 						else if (i == 23)
 						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_three_headed_flail"));
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_mace"));
 						}
 						else if (i == 24)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_flail"));
+						}
+						else if (i == 25)
+						{
+							this.m.Loot.add(this.new("scripts/items/weapons/named/named_three_headed_flail"));
+						}
+						else if (i == 26)
 						{
 							this.m.Loot.add(this.new("scripts/items/weapons/named/named_spetum"));
 						}

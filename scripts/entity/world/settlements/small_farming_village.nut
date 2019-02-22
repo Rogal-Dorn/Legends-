@@ -58,6 +58,19 @@ this.small_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"ratcatcher_background",
 			"tailor_background",
 			"vagabond_background",
+			"poacher_background",
+						"female_beggar_background",
+			"female_daytaler_background",
+			"female_daytaler_background",
+			"female_farmhand_background",
+			"female_farmhand_background",
+			"female_farmhand_background",
+			"female_farmhand_background",
+			"female_miller_background",
+			"female_miller_background",
+			"ratcatcher_background",
+			"female_tailor_background",
+			"vagabond_background",
 			"poacher_background"
 		];
 		this.m.UIDescription = "A small farming village living mostly off of the surrounding fertile lands";

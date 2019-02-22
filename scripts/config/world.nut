@@ -62,11 +62,11 @@ gt.Const.World.TerrainTypeSpeedMult <- [
 	0.0,
 	1.0,
 	0.5,
-	0.65,
-	0.65,
-	0.65,
-	0.65,
-	0.65,
+	0.64,
+	0.64,
+	0.64,
+	0.64,
+	0.64,
 	0.25,
 	0.5,
 	1.0,
@@ -329,7 +329,7 @@ gt.Const.World.MovementSettings <- {
 gt.Const.World.SpeedSettings <- {
 	FastMult = 2.0,
 	EscortMult = 3.75,
-	CampMult = 3.0
+	CampMult = 4.0
 };
 gt.Const.World.CombatSettings <- {
 	CombatDistance = 100,

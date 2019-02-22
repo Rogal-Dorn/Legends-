@@ -44,6 +44,19 @@ this.small_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"tailor_background",
 			"thief_background",
 			"vagabond_background",
+			"poacher_background",
+						"apprentice_background",
+			"female_beggar_background",
+			"brawler_background",
+			"caravan_hand_background",
+			"gambler_background",
+			"female_daytaler_background",
+			"female_daytaler_background",
+			"peddler_background",
+			"refugee_background",
+			"female_tailor_background",
+			"female_thief_background",
+			"vagabond_background",
 			"poacher_background"
 		];
 		this.m.UIDescription = "A small village in the steppe living mainly off of modest trading";

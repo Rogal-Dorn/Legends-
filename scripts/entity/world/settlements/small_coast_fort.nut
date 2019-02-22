@@ -51,6 +51,22 @@ this.small_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"raider_background",
 			"raider_background",
+			"retired_soldier_background",
+			  "female_butcher_background",
+			"female_butcher_background",
+			"fisherman_background",
+			"fisherman_background",
+			"houndmaster_background",
+			"messenger_background",
+			"militia_background",
+			"militia_background",
+			"ratcatcher_background",
+			"witchhunter_background",
+			"female_adventurous_noble_background",
+			"bastard_background",
+			"deserter_background",
+			"raider_background",
+			"raider_background",
 			"retired_soldier_background"
 		];
 		this.m.UIDescription = "A wooden motte with a bailey towering high over the nearby coastline";

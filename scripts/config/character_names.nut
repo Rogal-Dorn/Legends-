@@ -5,6 +5,7 @@ if (!("Strings" in gt.Const))
 	gt.Const.Strings <- {};
 }
 
+
 gt.Const.Strings.CharacterNames <- [
 	"Sigurd",
 	"Siegfried",
@@ -238,24 +239,49 @@ gt.Const.Strings.CharacterNames <- [
 	"Markolf",
 	"Hadebrand",
 	"Roderick",
-	"Rambert",
-	"Meinrad"
+	"Rambert"
+
 ];
+
 gt.Const.Strings.CharacterNamesFemale <- [
 	"Ingrid",
 	"Helga",
 	"Irma",
 	"Adela",
 	"Birgit",
+	"Beatrix",
 	"Bertha",
+	"Blanche",
 	"Borghild",
 	"Brunhild",
 	"Frida",
+	"Gisela",
 	"Gudrun",
 	"Hilda",
+	"Judith",
 	"Sigrid",
+	"Sibyle",
+	"Sophia",
+	"Joanna",
 	"Mathilda",
-	"Gerhild"
+	"Gerhild",
+	"Amalie",
+	"Agnise",
+	"Agathe",
+	"Clare",
+	"Helena",
+	"Ursular",
+	"Vronika",
+	"Magrit",
+	"Eneyde",
+	"Elsa",
+	"Birgitte",
+	"Gissela",
+	"Lena",
+	"Agness",
+	"Adela",
+	"Jenna"
+
 ];
 gt.Const.Strings.NobleTitles <- [
 	"Count",
@@ -299,7 +325,9 @@ gt.Const.Strings.HedgeKnightTitles <- [
 	"Strongface",
 	"the Defiler",
 	"the Knightslayer",
-	"the Hedge Knight"
+	"the Hedge Knight",
+	"the Shrubbery",
+	"who says ni"
 ];
 gt.Const.Strings.MasonTitles <- [
 	"the Builder",
@@ -332,6 +360,9 @@ gt.Const.Strings.WitchhunterTitles <- [
 	"the Nighthunter",
 	"the Witchhunter",
 	"the Exorciser",
+	"the Saltzpire",
+	"the Inquisitor",
+	"the Righteous",
 	"the Torturer"
 ];
 gt.Const.Strings.GravediggerTitles <- [
@@ -424,6 +455,7 @@ gt.Const.Strings.KnightNames <- [
 	"Sir Kunibert",
 	"Sir Dankrad",
 	"Sir Leberecht"
+
 ];
 gt.Const.Strings.OrcWarlordNames <- [
 	"Illska Ghul",
@@ -471,6 +503,7 @@ gt.Const.Strings.OrcWarlordNames <- [
 	"Ilska Sapat",
 	"Grug Zartum",
 	"Grommok",
+	"Arvius",
 	"Ogrul",
 	"Shura Nak"
 ];
@@ -542,4 +575,70 @@ gt.Const.Strings.KrakenNames <- [
 	"Thohochoth the All-Ender",
 	"Naccorath the Eternal",
 	"Xapocathlu the All-Reaching"
+];
+gt.Const.Strings.CharacterNamesFemaleNorse <- [
+	"Agata",
+	"Alfhilda",
+	"Arnlaug",
+	"Birna",
+	"Brunhild",
+	"Bylgja",
+	"Dagrun",
+	"Drifa",
+	"Edda",
+	"Eir",
+	"Elli",
+	"Embla",
+	"Fenja",
+	"Frigg",
+	"Gigja",
+	"Groa",
+	"Gudrun",
+	"Gullveig",
+	"Halla",
+	"Heidrun",
+	"Helga",
+	"Hrefna",
+	"Hulda",
+	"Ida",
+	"Inga",
+	"Ingrid",
+	"Ingunn",
+	"Johanna",
+	"Jorunn",
+	"Katla",
+	"Kolbrun",
+	"Kristin",
+	"Laufey",
+	"Magdalena",
+	"Magna",
+	"Marta",
+	"Mette",
+	"Nanna",
+	"Oda",
+	"Ragna",
+	"Runa",
+	"Sif",
+	"Signy",
+	"Sigrid",
+	"Sigrun",
+	"Solveig",
+	"Svana",
+	"Tekla",
+	"Tora",
+	"Torunn",
+	"Una",
+	"Valborg",
+	"Valdis",
+	"Yrsa"
+];
+gt.Const.Strings.InventorTitles <- [
+	"the Inventor",
+	"the Curious",
+	"the Peculiar",
+	"the Inquisitive",
+	"the Utilitarian",
+	"the Serendipitous",
+	"the Eclectic",
+	"the Tinkerer"
 ];

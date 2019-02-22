@@ -36,9 +36,10 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Bredaswold"
 		]);
 		this.m.DraftList = [
+			"vazl_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"militia_background",
 			"militia_background",
 			"miner_background",

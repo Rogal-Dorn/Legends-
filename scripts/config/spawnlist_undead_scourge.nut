@@ -19,6 +19,149 @@ gt.Const.World.Spawn.UndeadScourge <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.SkeletonLight,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 1
+			}
+		]
+	},
+
+
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_skeleton_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonLight,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 1
+			}
+		]
+	},
+
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_skeleton_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonLight,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 1
+			}
+		]
+	},
+
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_skeleton_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonLight,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 1
+			}
+		]
+	},
+
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_skeleton_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonLight,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_skeleton_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonLight,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 2
+			}
+		]
+	},
+
+
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_skeleton_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonLight,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_skeleton_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.SkeletonLight,
 				Num = 4
 			},
 			{
