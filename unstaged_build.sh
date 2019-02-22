@@ -2,8 +2,12 @@ FILES=$(git status -s)
 while read -r line; do
     #echo $line
     x=${line:0:1}
-    if [ $x == "M" ]; then
-        xpath=${line:2} 
+    if [ $x == "M" ] || [ $x == "A" ]; then
+        if [ $x == "M" ]; then
+            xpath=${line:2}
+        else 
+            xpath=${line:3}
+        fi
         if [ "$xpath" == "build.sh" ]; then
             echo "skipping $xpath"
         elif [ "$xpath" == "unstaged_build.sh" ]; then
