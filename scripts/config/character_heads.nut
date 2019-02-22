@@ -238,7 +238,24 @@ gt.Const.Hair.Berserker <- [
 	"18"
 ];
 
+gt.Const.Hair.BarberFemale <- [
+	"",
+	"shaved",
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"10",
+	"19",
+	"20"
+];
+
 gt.Const.Hair.AllFemale <- [
+	"shaved",
 	"01",
 	"02",
 	"03",
@@ -414,6 +431,10 @@ gt.Const.Beards.All <- [
 gt.Const.Beards.Berserker <- [
 	"17",
 	"14"
+];
+
+gt.Const.Beards.BarberFemale <- [
+	""
 ];
 
 gt.Const.Beards.Female <- [
