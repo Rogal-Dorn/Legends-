@@ -3,6 +3,8 @@ FILES=$(git diff --name-only `git merge-base origin/master HEAD`)
 while read -r line; do
     if [ "$line" == "build.sh" ]; then
         echo "skipping $line"
+    elif [ "$line" == "unstaged_build.sh" ]; then
+        echo "skipping $line"        
     elif [ "$line" == "ReleaseNotes.md" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/mapgen/templates/world/worldmap_generator.nut" ]; then
