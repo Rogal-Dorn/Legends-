@@ -95,7 +95,16 @@ gt.Const.Faces.AllHuman <- [
 	"bust_head_20",
 	"bust_head_21",
 	"bust_head_22",
-	"bust_head_23"
+	"bust_head_23",
+	"bust_head_24",
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30",
+	"bust_head_31",
+	"bust_head_32"
 ];
 gt.Const.Faces.AllMale <- [
 	"bust_head_01",
@@ -115,7 +124,9 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_15",
 	"bust_head_16",
 	"bust_head_17",
-	"bust_head_18"
+	"bust_head_18",
+	"bust_head_31",
+	"bust_head_32"
 ];
 gt.Const.Faces.AllFemale <- [
 	"bust_head_19",
@@ -123,8 +134,41 @@ gt.Const.Faces.AllFemale <- [
 	"bust_head_21",
 	"bust_head_22",
 	"bust_head_23",
-	"bust_head_24"
+	"bust_head_24",
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30"
 ];
+gt.Const.Faces.PrettyFemale <- [
+	"bust_head_19",
+	"bust_head_20",
+	"bust_head_21"
+];
+
+gt.Const.Faces.NormalFemale <- [
+	"bust_head_23",
+	"bust_head_24",
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30"
+];
+gt.Const.Faces.OldFemale <- [
+	"bust_head_25",
+	"bust_head_26",
+	"bust_head_29",
+];
+
+gt.Const.Faces.Berserker <- [
+	"bust_head_31",
+	"bust_head_32"
+];
+
 
 gt.Const.Faces.SmartMale <- [
 	"bust_head_01",
@@ -183,6 +227,30 @@ gt.Const.Hair.AllMale <- [
 	"14",
 	"15",
 	"16",
+	"20",
+	"22"
+];
+
+gt.Const.Hair.Berserker <- [
+	"22",
+	"03",
+	"08",
+	"18"
+];
+
+gt.Const.Hair.BarberFemale <- [
+	"",
+	"shaved",
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"10",
+	"19",
 	"20"
 ];
 
@@ -214,7 +282,8 @@ gt.Const.Hair.AllFemale <- [
 	"08",
 	"10",
 	"19",
-	"20"
+	"20",
+	"21"
 ];
 
 gt.Const.Hair.CommonMale <- [
@@ -352,7 +421,8 @@ gt.Const.Beards.Barber <- [
 	"13",
 	"14",
 	"15",
-	"16"
+	"16",
+	"17"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -370,7 +440,13 @@ gt.Const.Beards.All <- [
 	"13",
 	"14",
 	"15",
-	"16"
+	"16",
+	"17"
+];
+
+gt.Const.Beards.Berserker <- [
+	"17",
+	"14"
 ];
 
 gt.Const.Beards.BarberFemale <- [

@@ -978,13 +978,20 @@ this.tooltip_events <- {
 
 		case "assets.Money":
 			local money = this.World.Assets.getMoney();
-			local dailyMoney = 0
-
+			local dailyMoney = 0;
+			local barterMult = 0.0;
 			local brolist = [];
 			foreach (bro in this.World.getPlayerRoster().getAll())
 			{
+				local L = []
 				dailyMoney = dailyMoney + bro.getDailyCost();
-				brolist.push([bro.getDailyCost(), bro.getName(), bro.getBackground().getNameOnly()]);
+				local L = [bro.getDailyCost(), bro.getName(), bro.getBackground().getNameOnly()];
+				barterMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID()) * 100.0;
+				if (barterMult > 0)
+				{
+					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "%[/color] Barter"
+				}
+				brolist.push(L);
 			}
 
 			local time = this.Math.floor(money / dailyMoney);
@@ -1038,13 +1045,19 @@ this.tooltip_events <- {
 			{
 				ret.push({
 					id = id,
-					type = "text",
+					type = "hint",
 					icon = "ui/tooltips/money.png",
 					text ="[color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] " + bro[1] + " (" + bro[2] + ")"
 				})
 				++id;
 			}
-
+			ret.push({
+				id = id,
+				type = "text",
+				icon = "ui/icons/asset_moral_reputation.png",
+				text ="[color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "[/color]% Barter Multiplier"
+			})
+			++id;
 			return ret
 
 		case "assets.InitialMoney":

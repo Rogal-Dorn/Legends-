@@ -1,4 +1,10 @@
 ::mods_hookBaseClass("contracts/contract", function(o) {
+	while(!("Payment" in o.m)) o = o[o.SuperName]; // find the base class
+    if(!("_mod_legend" in o))
+    {
+        o._mod_legend <- true;// only override the methods once per base instance
+    }
+
     o.buildText <- function(_text)
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
@@ -108,4 +114,17 @@
 		]);
 		return this.buildTextFromTemplate(_text, vars);
 	}
+
+	
+	o.getPaymentMult = function()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local broMult = 0.0;
+		foreach( bro in roster )
+		{
+			broMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID());
+		}
+		return (this.m.PaymentMult + broMult) * this.m.DifficultyMult;
+	}
+
 });
