@@ -114,4 +114,94 @@
 		this.m.Combats.push(combat);
 	}
 
-})
+	o.tickCombat = function ( _combat )
+	{
+		local attackOccured = false;
+		if (_combat.Combatants == null || _combat.Combatants.len() == 0)
+		{
+			_combat.Combatants = [];
+			_combat.IsResolved = true;
+			return
+		}
+
+		if (_combat.Factions == null || _combat.Factions.len() == 0)
+		{
+			_combat.Factions = [];
+			_combat.IsResolved = true;
+			return
+		}
+
+		for( local i = 0; i < _combat.Combatants.len(); i = ++i )
+		{
+			local combatant = _combat.Combatants[i];
+
+			if (combatant.Party == null || combatant.Party.isNull())
+			{
+				continue;
+			}
+
+			local potentialOpponentFactions = [];
+
+			for( local f = 0; f < _combat.Factions.len(); f = ++f )
+			{
+				local lFaction = _combat.Factions[f];
+				if (lFaction == null || lFaction.len() == 0)
+				{
+					continue
+				}
+
+				if (combatant.Party.getFaction() != f && !this.World.FactionManager.isAllied(combatant.Party.getFaction(), f))
+				{
+					potentialOpponentFactions.push(f);
+				}
+			}
+
+			if (potentialOpponentFactions.len() == 0)
+			{
+				continue;
+			}
+
+			local opponentFaction = potentialOpponentFactions[this.Math.rand(0, potentialOpponentFactions.len() - 1)];
+			local opponentParty = _combat.Factions[opponentFaction][this.Math.rand(0, _combat.Factions[opponentFaction].len() - 1)];
+
+			if (opponentParty == null || opponentParty.isNull() || opponentParty.getTroops().len() == 0)
+			{
+				continue;
+			}
+
+			local opponentIndex = this.Math.rand(0, opponentParty.getTroops().len() - 1);
+			local opponent = opponentParty.getTroops()[opponentIndex];
+			attackOccured = true;
+			opponent.Strength -= this.Math.max(1, this.Math.rand(1, combatant.Strength) * this.Const.World.CombatSettings.CombatStrengthMult);
+
+			if (opponent.Strength <= 0)
+			{
+				++_combat.Stats.Dead;
+				opponentParty.getTroops().remove(opponentIndex);
+				opponentIndex = _combat.Combatants.find(opponent);
+				_combat.Combatants.remove(opponentIndex);
+
+				if (opponentIndex < i)
+				{
+					i = --i;
+				}
+
+				if (opponentParty.getTroops().len() == 0)
+				{
+					_combat.Stats.Loot.extend(opponentParty.getInventory());
+					local partyIndex = _combat.Factions[opponentParty.getFaction()].find(opponentParty);
+					opponentParty.setCombatID(0);
+					_combat.Factions[opponentParty.getFaction()].remove(partyIndex);
+					opponentParty.onCombatLost();
+				}
+			}
+
+		}
+
+		if (!attackOccured)
+		{
+			_combat.IsResolved = true;
+		}
+	}
+
+});
