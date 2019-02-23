@@ -114,4 +114,61 @@
 		this.m.Combats.push(combat);
 	}
 
+	o.onDeserialize = function ( _in )
+	{
+		this.logInfo("***DESERIALIZE COMBAT MANAGER IN MOD HOOK ********")
+		this.clear();
+		this.m.NextCombatID = _in.readI32();
+		local numCombats = _in.readU16();
+
+		for( local i = 0; i < numCombats; i = ++i )
+		{
+			local stats = {
+				Dead = 0,
+				Loot = []
+			};
+			local combat = {
+				ID = 0,
+				IsResolved = false,
+				Stats = stats,
+				Combatants = [],
+				Factions = []
+			};
+			combat.Factions.resize(32);
+
+			for( local f = 0; f != 32; f = ++f )
+			{
+				combat.Factions[f] = [];
+			}
+
+			combat.ID = _in.readI32();
+			combat.IsResolved = _in.readBool();
+			combat.Stats.Dead = _in.readI32();
+			local numLoot = _in.readU16();
+
+			for( local i = 0; i != numLoot; i = ++i )
+			{
+				combat.Stats.Loot.push(_in.readString());
+			}
+
+			local numParties = _in.readU16();
+			for( local p = 0; p < numParties; p = ++p )
+			{
+				if (party.getFaction() >= combat.Factions.len())
+				{
+					combat.Factions.resize(party.getFaction() + 1);
+					for( local f = party.getFaction(); f != party.getFaction() + 1; f = ++f )
+					{
+						combat.Factions[f] = [];
+					}
+				}
+				this.joinCombat(combat, party);
+				this.joinCombat(combat, this.World.getEntityByID(_in.readU32()));
+			}
+
+			this.m.Combats.push(combat);
+		}
+	}
+
+
 })

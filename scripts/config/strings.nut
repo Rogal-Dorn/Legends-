@@ -1102,8 +1102,9 @@ gt.Const.Strings.PerkName <- {
 	LegendComposure = "Composure",
 	LegendNightvision = "Nightvision",
 	LegendMasteryStaves = "Staff Mastery",
-	LegendRelax = "relax",
-	LegendGruesomeFeast = "Gruesome Feast"
+	LegendRelax = "Relax",
+	LegendGruesomeFeast = "Gruesome Feast",
+	LegendSpawnZombieLow = "Spawn Weak Zombie"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1232,6 +1233,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
+	LegendSpawnZombieLow = "From the decaying parts of man and beast, raise a weakened foul creature of undeath to devour your enemies"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
