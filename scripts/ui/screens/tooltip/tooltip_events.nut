@@ -986,9 +986,10 @@ this.tooltip_events <- {
 				local L = []
 				dailyMoney = dailyMoney + bro.getDailyCost();
 				local L = [bro.getDailyCost(), bro.getName(), bro.getBackground().getNameOnly()];
-				barterMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID()) * 100.0;
-				if (barterMult > 0)
+				local bm = this.Const.LegendMod.getBarterModifier(bro.getBackground().getID()) * 100.0;
+				if (bm > 0)
 				{
+					barterMult += bm;
 					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "%[/color] Barter"
 				}
 				brolist.push(L);
