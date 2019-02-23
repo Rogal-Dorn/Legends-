@@ -139,6 +139,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		stash.add(this.new("scripts/items/accessory/zombie_item"));
 		stash.add(this.new("scripts/items/accessory/zombie_item"));
 		stash.add(this.new("scripts/items/accessory/zombie_item"));
+		
 	}
 
 });

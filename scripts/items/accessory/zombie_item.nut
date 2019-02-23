@@ -1,14 +1,13 @@
-this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
+this.zombie_item <- this.inherit("scripts/items/accessory/accessory", {
 	m = {
 		Skill = null,
 		Entity = null,
-		Script = "scripts/entity/tactical/wardog",
+		Script = "scripts/entity/tactical/legends_zombie",
 		ArmorScript = null,
 		UnleashSounds = [
-			"sounds/combat/unleash_wardog_01.wav",
-			"sounds/combat/unleash_wardog_02.wav",
-			"sounds/combat/unleash_wardog_03.wav",
-			"sounds/combat/unleash_wardog_04.wav"
+			"sounds/enemies/geist_idle_10.wav",
+			"sounds/enemies/geist_idle_11.wav",
+			"sounds/enemies/geist_idle_12.wav"
 		]
 	},
 	function isAllowedInBag()
@@ -63,21 +62,26 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 	function create()
 	{
 		this.accessory.create();
-		this.m.Variant = this.Math.rand(1, 4);
+		this.m.Variant = 1
 		this.updateVariant();
-		this.m.ID = "accessory.wardog";
-		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Wardog";
-		this.m.Description = "A strong and loyal dog bred for war. Can be unleashed in battle for scouting, tracking or running down routing enemies.";
+		this.m.ID = "accessory.zombie";
+		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Zombie";
+		this.m.Description = "An undead minion. Can be unleashed to do your bidding";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
-		this.m.Value = 200;
+		this.m.Value = 1000;
 	}
 
 	function playInventorySound( _eventType )
 	{
-		this.Sound.play("sounds/inventory/wardog_inventory_0" + this.Math.rand(1, 3) + ".wav", this.Const.Sound.Volume.Inventory);
+		local index = this.Math.rand(1, 16)
+		local variant = "" + index;
+		if (index < 10){
+			variant = "0" + index;
+		}
+		this.Sound.play("sounds/enemies/zombie_idle_" +  variant + ".wav", this.Const.Sound.Volume.Inventory);
 	}
 
 	function updateVariant()
@@ -95,14 +99,14 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 		}
 		else
 		{
-			this.m.Icon = "tools/dog_01_0" + this.m.Variant + "_70x70.png";
+			this.m.Icon = "tools/zombie_01_0" + this.m.Variant + "_70x70.png";
 		}
 	}
 
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local unleash = this.new("scripts/skills/actives/unleash_wardog");
+		local unleash = this.new("scripts/skills/actives/unleash_zombie");
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);
 		this.addSkill(unleash);
