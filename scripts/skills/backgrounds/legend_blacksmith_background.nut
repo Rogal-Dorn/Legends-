@@ -1,0 +1,123 @@
+this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+	m = {},
+	function create()
+	{
+		this.character_background.create();
+		this.m.ID = "background.legend_blacksmith";
+		this.m.Name = "Blacksmith";
+		this.m.Icon = "ui/backgrounds/background_40.png";
+		this.m.BackgroundDescription = "Blacksmiths tend to be strong and are skilled at repairing equipment.";
+		this.m.GoodEnding = "Perhaps one of the strongest men you\'ve ever met, %name% the blacksmith was a vital asset in the %companyname%, repairing both his own equipment and that of his comrades with practiced hands. With plenty of crowns stored, he retired from fighting and blacksmithing both. Last you heard he was living out his years comfortably on the coast.";
+		this.m.BadEnding = "%name% the blacksmith was a strong and capable sellsword in the %companyname%. He held out until the bitter end, sticking with the company as it lurched from one disaster to the next. Perhaps, had he been born in a different time he would have gone on to do great things, making legendary weapons for regal kings. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented men went to total waste.";
+		this.m.HiringCost = 1000;
+		this.m.DailyCost = 15;
+		this.m.Excluded = [
+			"trait.asthmatic",
+			"trait.clumsy",
+			"trait.fragile",
+			
+		];
+		this.m.Titles = [
+			"Iron-arm",
+			"the Blacksmith",
+			"the Bladesmith",
+			"the Armorer",
+			"the Hammer",
+			"the Burly",
+			"the Smith",
+			"the Metalsmith"
+		];
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Body = "bust_naked_body_01";
+	}
+
+	function getTooltip()
+	{
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/xp_received.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience Gain"
+			}
+		];
+	}
+
+	function onBuildDescription()
+	{
+		return "{Most every town has a resident blacksmith, | The local blacksmith is always an important person in the village, | Key to the success of any town is the skills of its resident blacksmith,}{needed to repair tools of every kind and the equipment of the local militia. | vital to the maintenance of sword and plow alike.| relied upon by the whole village for tools of every sort, from horseshoes to axes.}{%name%, learning from his father, was the resident blacksmith of %townname%. | Understanding this, %name% took up an apprenticeship in %randomtown% and, once having mastered the craft, settled down as the blacksmith of %townname%. | The son of one such blacksmith, %name% was forced into the profession by his overzealous father, though he cared little for it. | Hastily trained during a greenskin incursion, %name% eventually settled down as one such blacksmith, in %townname%. | %name% was one such blacksmith.}{Unfortunately, %name%’s wife was killed in a freak accident. Unable to remain in %townname% any longer, %name% sold all he had and left, wandering aimlessly. Eventually he found himself in the company of sellswords, where his strong arms and hammer accustomed hands drew great interest. | Feeling his years wear away, %name% was overcome by restlessness, and he decided to set out as a mercenary, where his strong arms could be of different use. | After many years %name% was nearly killed by greenskin raiders, escaping only by blind chance. Thoroughly shaken, %name% quit his village, determined to learn all he could of warlore and battlecraft so that greenskins would never menace him again.}";
+
+	function onChangeAttributes()
+	{
+		local c = {
+			Hitpoints = [
+				10,
+				5
+			],
+			Bravery = [
+				0,
+				0
+			],
+			Stamina = [
+				12,
+				8
+			],
+			MeleeSkill = [
+				6,
+				3
+			],
+			RangedSkill = [
+				-5,
+				-5
+			],
+			MeleeDefense = [
+				0,
+				0
+			],
+			RangedDefense = [
+				0,
+				0
+			],
+			Initiative = [
+				5,
+				5
+			]
+		};
+		return c;
+	}
+
+	function onAddEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/weapons/legend_hammer"));
+		local r;
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/armor/leather_tunic"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/armor/linen_tunic"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/apron"));
+		}
+	}
+
+});
