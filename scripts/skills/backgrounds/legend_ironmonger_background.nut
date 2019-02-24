@@ -5,7 +5,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.character_background.create();
 		this.m.ID = "background.legend_ironmonger";
 		this.m.Name = "Ironmonger";
-		this.m.Icon = "ui/backgrounds/background_40.png";
+		this.m.Icon = "ui/backgrounds/ironmonger.png";
 		this.m.BackgroundDescription = "Ironmongers are stronger than average and good at maintaining equipment.";
 		this.m.GoodEnding = "A more reliable sellsword than most, %name%’s background as an ironmonger helped him to keep the %companyname%’s equipment functioning. Having saved more than enough crowns, %name% retired and returned to blacksmithing, learning from a true master and becoming a paragon of the craft. Last you heard of him he was living in luxury, making custom weapons and armor for nobles.”;
 		this.m.BadEnding = "%name% the ironmonger stayed with the %companyname% for some time after your departure, but after a particularly nasty stretch of bad luck he saw the rot for what it was and jumped ship. Bad luck seemed to follow him, however, and he never managed to settle down. He burned through his leftover crowns in a few years. He died in poverty one winter, freezing overnight.”;
@@ -49,7 +49,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 				id = 13,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience Gain"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] faster equipment repair and [color=" + this.Const.UI.Color.PositiveValue + "]-10%[/color] tool usage"
 			}
 		];
 	}
@@ -115,6 +115,10 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/armor/apron"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
 		}
 	}
 

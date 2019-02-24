@@ -5,7 +5,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.character_background.create();
 		this.m.ID = "background.legend_blacksmith";
 		this.m.Name = "Blacksmith";
-		this.m.Icon = "ui/backgrounds/background_40.png";
+		this.m.Icon = "ui/backgrounds/blacksmith.png";
 		this.m.BackgroundDescription = "Blacksmiths tend to be strong and are skilled at repairing equipment.";
 		this.m.GoodEnding = "Perhaps one of the strongest men you\'ve ever met, %name% the blacksmith was a vital asset in the %companyname%, repairing both his own equipment and that of his comrades with practiced hands. With plenty of crowns stored, he retired from fighting and blacksmithing both. Last you heard he was living out his years comfortably on the coast.";
 		this.m.BadEnding = "%name% the blacksmith was a strong and capable sellsword in the %companyname%. He held out until the bitter end, sticking with the company as it lurched from one disaster to the next. Perhaps, had he been born in a different time he would have gone on to do great things, making legendary weapons for regal kings. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented men went to total waste.";
@@ -51,7 +51,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 				id = 13,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience Gain"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] repair rate and [color=" + this.Const.UI.Color.PositiveValue + "]-20%[/color]tool usage"
 			}
 		];
 	}
@@ -64,20 +64,20 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				5
+				20,
+				15
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				12,
-				8
+				15,
+				10
 			],
 			MeleeSkill = [
-				6,
-				3
+				15,
+				10
 			],
 			RangedSkill = [
 				-5,
@@ -103,21 +103,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_hammer"));
-		local r;
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/leather_tunic"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/linen_tunic"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/apron"));
-		}
+		items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
 	}
 
 });
