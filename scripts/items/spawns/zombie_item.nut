@@ -48,7 +48,14 @@ this.zombie_item <- this.inherit("scripts/items/spawns/spawn_item", {
 		{
 			return
 		}
-		if this.m.Entity.
+		
+		if (this.m.Entity.m.IsAlive)
+		{
+			this.setEntity(null);
+			this.World.Assets.getStash().add(this);
+			return;
+		}
+		
 		this.setEntity(null);
 	}
 
