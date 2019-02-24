@@ -130,8 +130,8 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents[this.Const.Attributes.Fatigue] = 2;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
-		items.equip(this.new("scripts/items/helmets/necromancer_hat"));
+		items.equip(this.new("scripts/items/armor/legend_warlock_cloak"));
+		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
