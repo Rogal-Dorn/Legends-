@@ -5,7 +5,10 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 		ShowOnCharacter = false,
 		Sprite = null,
 		SpriteCorpse = null,
-		Entity = null
+		Entity = null,
+		MedicinePerDay = 0,
+		Decay = 0.0,
+		DecayRate = 20
 	},
 
 	function isAllowedInBag()
@@ -21,7 +24,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 	function create()
 	{
 		this.m.SlotType = this.Const.ItemSlot.None;
-		this.m.ItemType = this.Const.Items.ItemType.Accessory;
+		this.m.ItemType = this.Const.Items.ItemType.Misc;
 	}
 
 	function getTooltip()
@@ -77,6 +80,15 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		if (this.m.Decay > 0)
+		{
+			result.push({
+				id = 8,
+				type = "hint",
+				text = "Decayed [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Decay + "%[/color]"
+			});
+		}
+
 		return result;
 	}
 
@@ -115,15 +127,40 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 		this.setEntity(null);
 	}
 
+	function onNewDay()
+	{
+		if (this.World.Assets.getMedicine() >= this.m.MedicinePerDay) {
+			this.World.Assets.addMedicine(-this.m.MedicinePerDay);
+			if (this.m.Decay > 0) 
+			{
+				this.m.Decay -= this.m.DecayRate;
+			}
+		} else {
+			this.World.Assets.addMedicine(-this.World.Assets.getMedicine());
+			this.m.Decay += this.m.DecayRate;
+		}
+
+		if (this.m.Decay >= 100) 
+		{
+			this.World.Assets.getStash().remove(this);
+		}
+		
+	}
+
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
+		_out.writeF32(this.m.Decay);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
 		this.updateVariant();
+		if (_in.getMetaData().getVersion() >= 50)
+		{
+			this.m.Decay = _in.readF32();
+		}
 	}
 
 });
