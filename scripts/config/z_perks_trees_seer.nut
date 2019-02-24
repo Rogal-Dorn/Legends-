@@ -11,6 +11,7 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
+		gt.Const.Perks.PerkDefs.LegendSummonCat,
 		gt.Const.Perks.PerkDefs.LegendDaze,
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],

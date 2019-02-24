@@ -901,6 +901,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendPoisonImmunity,
 		Icon = "ui/perks/poison_immunity.png",
 		IconDisabled = "ui/perks/poison_immunity_bw.png"
+	},
+	{
+		ID = "perk.legend_summon_cat",
+		Script = "scripts/skills/perks/perk_legend_summon_cat",
+		Name = this.Const.Strings.PerkName.LegendSummonCat,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonCat,
+		Icon = "ui/perks/cat_circle.png",
+		IconDisabled = "ui/perks/cat_circle_bw.png"
 	}
 
 ];
@@ -1018,5 +1026,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendMuscularity = 108,
 	LegendBattleheart = 109,
 	LegendTrueBeliever = 110,
-	LegendPoisonImmunity = 111
+	LegendPoisonImmunity = 111,
+	LegendSummonCat = 112
 };

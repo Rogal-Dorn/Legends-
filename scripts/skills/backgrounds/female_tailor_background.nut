@@ -92,7 +92,7 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
@@ -101,6 +101,10 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
+		}
+			else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 		}
 
 

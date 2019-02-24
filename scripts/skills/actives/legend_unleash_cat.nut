@@ -38,7 +38,7 @@ this.legend_unleash_cat <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/cat_attack_02.wav",
 			"sounds/enemies/cat_attack_03.wav",
 			"sounds/enemies/cat_attack_04.wav",
-			"sounds/enemies/cat_attack_05.wav",
+			"sounds/enemies/cat_attack_05.wav"
 		]
 	},
 	function setItem( _i )
@@ -50,13 +50,13 @@ this.legend_unleash_cat <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_unleash_cat";
 		this.m.Name = "Summon Cat";
-		this.m.Description = "Summon your cat, hopefully it doesn\'t just run away. Needs a free tile adjacent.";
-		this.m.Icon = "skills/active_83.png";
-		this.m.IconDisabled = "skills/active_83_sw.png";
+		this.m.Description = "Summon your cat, hopefully it wont just run away. Needs a free tile adjacent.";
+		this.m.Icon = "skills/cat_square.png";
+		this.m.IconDisabled = "skills/cat_square_bw.png";
 		this.m.Overlay = "active_83";
 		this.m.SoundOnUse = [
-			"sounds/combat/cat_purr_01.wav",
-			"sounds/combat/cat_purr_02.wav"
+			"sounds/enemies/cat_purr_01.wav",
+			"sounds/enemies/cat_purr_02.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;

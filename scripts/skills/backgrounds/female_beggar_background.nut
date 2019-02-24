@@ -5,23 +5,19 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.character_background.create();
 		this.m.ID = "background.female_beggar";
 		this.m.Name = "Widow";
-		this.m.Icon = "ui/backgrounds/background_18.png";
-		this.m.BackgroundDescription = "Widows are in a bad situation, and living on the street tends to be detrimental to their health.";
+		this.m.Icon = "ui/backgrounds/widow.png";
+		this.m.BackgroundDescription = "Widows who can\t find another husband have few choices, mercenary work is a last resort of the hopeless.";
 		this.m.GoodEnding = "Having enough of all the fighting, %name% the once-beggar retired from the %companyname%. You know the woman made a pretty crown in his time with the mercenary company, yet the other day you saw her out begging again. You asked if she\'d wasted all his money and he laughed. He said she\'d purchased land and was doing just fine. Then she held out her little tin and asked for a crown. You gave her two.";
 		this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, she went back to begging. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to her finger.";
 		this.m.HiringCost = 30;
 		this.m.DailyCost = 3;
 		this.m.Excluded = [
-			"trait.iron_jaw",
+			"trait.optimist",
 			"trait.tough",
 			"trait.strong",
 			"trait.cocky",
 			"trait.fat",
 			"trait.bright",
-			"trait.fearless",
-			"trait.brave",
-			"trait.determined",
-			"trait.deathwish",
 			"trait.greedy",
 			"trait.athletic"
 		];
@@ -30,23 +26,23 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 			this.Const.Attributes.Bravery
 		];
 		this.m.Titles = [
-			"the Dirty",
-			"the Poor",
-			"the Ragged",
-			"the Sick",
-			"the Liar",
-			"the Idle",
-			"the Sloth",
-			"the Useless",
-			"the Beggar",
-			"the Weasel",
-			"the Skunk",
-			"the Sluggard",
-			"the Homeless"
+			"the Jilted",
+			"the Cougar",
+			"the Rejected",
+			"the Abandoned",
+			"the Broken Heart",
+			"the Neglected",
+			"the Discarded",
+			"the Forsaken",
+			"the Spurned",
+			"the Rebuffed",
+			"the Melancholy",
+			"the Sorrowful",
+			"the Downcast"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.OldFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.All;
+		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
@@ -136,7 +132,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
@@ -146,6 +142,14 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/leather_wraps"));
+		}
+		if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
+		}
+		if (r == 3)
+		{
+			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 		}
 
 		r = this.Math.rand(0, 4);

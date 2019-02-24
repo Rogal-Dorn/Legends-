@@ -36,18 +36,18 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.bloodthirsty"
 		];
 		this.m.Titles = [
-			"the Shadow",
-			"the Cutpurse",
-			"the Snake",
-			"the Raven",
-			"the Burglar",
-			"the Snatcher",
+			"the Decoy",
+			"the Disguised",
+			"the Cloak",
+			"Night Raven",
+			"the Charade",
+			"the Cunning",
 			"the Black Cat",
 			"the Sneak",
 			"Quickfingers",
-			"the Thief"
+			"the Veil"
 		];
-		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Faces = this.Const.Faces.PrettyFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
@@ -132,7 +132,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
 
-		r = this.Math.rand(0, 2);
+		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
@@ -145,6 +145,10 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
 
 		r = this.Math.rand(0, 1);

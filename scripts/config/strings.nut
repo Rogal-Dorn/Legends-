@@ -1110,7 +1110,8 @@ gt.Const.Strings.PerkName <- {
 	LegendMuscularity = "Muscularity",
 	LegendBattleheart = "Battleheart",
 	LegendTrueBeliever = "True Believer",
-	LegendPoisonImmunity = "Poison Immunity"
+	LegendPoisonImmunity = "Poison Immunity",
+	LegendSummonCat = "Summon Familiar"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1244,6 +1245,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer effects this character\'s defences at all",
 	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing no longer lowers this character\'s morale",
 	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons."
+	LegendSummonCat = "Summon feline familiar to your aide, while the cat may appear to die in battle, it will always return to your side after the fight."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
