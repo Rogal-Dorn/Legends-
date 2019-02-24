@@ -32,6 +32,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.Debilitate,
+		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.Sprint,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
@@ -42,15 +43,16 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.MasteryAxe,
 		gt.Const.Perks.PerkDefs.MasteryCleaver,
 		gt.Const.Perks.PerkDefs.MasterySword,
+		gt.Const.Perks.PerkDefs.LegendPoisonImmunity,
 		gt.Const.Perks.PerkDefs.MasteryThrowing
 		
 	],
 	[
 		gt.Const.Perks.PerkDefs.LoneWolf,
-		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
 		gt.Const.Perks.PerkDefs.Slaughter,
 		gt.Const.Perks.PerkDefs.Vengeance,
+		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.SunderingStrike,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
@@ -61,6 +63,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.ReturnFavor,
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.LegendMuscularity,
 		gt.Const.Perks.PerkDefs.LegendPushForward,
 		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
@@ -70,6 +73,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.Stalwart,
+		gt.Const.Perks.PerkDefs.LegendUberNimble,
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[],

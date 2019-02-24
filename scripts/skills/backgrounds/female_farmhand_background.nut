@@ -94,28 +94,28 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		local r;
 		r = this.Math.rand(0, 3);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/knife"));
-		}
 		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/weapons/pitchfork"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_flail"));
+			items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 
 		r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/sackcloth"));
+			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
 		else
 		{
-			local item = this.new("scripts/items/armor/linen_tunic");
+			local item = this.new("scripts/items/armor/legend_maid_apron");
 		}
 
 		r = this.Math.rand(0, 2);
