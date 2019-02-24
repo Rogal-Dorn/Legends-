@@ -55,17 +55,17 @@ this.legend_cat_item <- this.inherit("scripts/items/accessory/accessory", {
 		}
 		else
 		{
-			return "The collar of a cat that has been released onto the battlefield";
+			return "The collar of a cat that has been summoned onto the battlefield";
 		}
 	}
 
 	function create()
 	{
 		this.accessory.create();
-		this.m.Variant = this.Math.rand(1, 4);
+		this.m.Variant = 1;
 		this.updateVariant();
-		this.m.ID = "accessory.wardog";
-		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Wardog";
+		this.m.ID = "accessory.legend_cat_item";
+		this.m.Name = this.Const.Strings.LegendCatNames[this.Math.rand(0, this.Const.Strings.LegendCatNames.len() - 1)] + " the Cat";
 		this.m.Description = "A mysterious cat that seems all too intelligent";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
@@ -76,7 +76,7 @@ this.legend_cat_item <- this.inherit("scripts/items/accessory/accessory", {
 
 	function playInventorySound( _eventType )
 	{
-		this.Sound.play("sounds/enemies/cat_purr_02", this.Const.Sound.Volume.Inventory);
+		this.Sound.play("sounds/enemies/cat_purr_02.wav", this.Const.Sound.Volume.Inventory);
 	}
 
 	function updateVariant()
@@ -94,7 +94,7 @@ this.legend_cat_item <- this.inherit("scripts/items/accessory/accessory", {
 		}
 		else
 		{
-			this.m.Icon = "tools/cat_01_0" + this.m.Variant + "_70x70.png";
+			this.m.Icon = "tools/cat_01_01_70x70.png";
 		}
 	}
 
@@ -112,26 +112,6 @@ this.legend_cat_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.setEntity(null);
 	}
 
-	function onActorDied( _onTile )
-	{
-		if (!this.isUnleashed() && _onTile != null)
-		{
-			local entity = this.Tactical.spawnEntity(this.getScript(), _onTile.Coords.X, _onTile.Coords.Y);
-			entity.setItem(this);
-			entity.setName(this.getName());
-			entity.setVariant(this.getVariant());
-			this.setEntity(entity);
-			entity.setFaction(this.Const.Faction.PlayerAnimals);
-
-			if (this.m.ArmorScript != null)
-			{
-				local item = this.new(this.m.ArmorScript);
-				entity.getItems().equip(item);
-			}
-
-			this.Sound.play(this.m.UnleashSounds[this.Math.rand(0, this.m.UnleashSounds.len() - 1)], this.Const.Sound.Volume.Skill, _onTile.Pos);
-		}
-	}
 
 	function onCombatFinished()
 	{

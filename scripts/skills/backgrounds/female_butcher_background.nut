@@ -119,11 +119,15 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 			items.equip(this.new("scripts/items/weapons/knife"));
 		}
 
-		r = this.Math.rand(0, 0);
+		r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/armor/butcher_apron"));
+		}		
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 		}
 	}
 

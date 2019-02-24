@@ -135,19 +135,6 @@ this.legend_cat <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.m.Item != null && !this.m.Item.isNull())
 		{
-			this.m.Item.setEntity(null);
-
-			if (this.m.Item.getContainer() != null)
-			{
-				if (this.m.Item.getCurrentSlotType() == this.Const.ItemSlot.Bag)
-				{
-					this.m.Item.getContainer().removeFromBag(this.m.Item.get());
-				}
-				else
-				{
-					this.m.Item.getContainer().unequip(this.m.Item.get());
-				}
-			}
 
 			this.m.Item = null;
 		}
