@@ -877,6 +877,30 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendMuscularity,
 		Icon = "ui/perks/muscularity_circle.png",
 		IconDisabled = "ui/perks/muscularity_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_battleheart",
+		Script = "scripts/skills/perks/perk_legend_battleheart",
+		Name = this.Const.Strings.PerkName.LegendBattleheart,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBattleheart,
+		Icon = "ui/perks/battleheart_circle.png",
+		IconDisabled = "ui/perks/battleheart_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_true_believer",
+		Script = "scripts/skills/perks/perk_legend_true_believer",
+		Name = this.Const.Strings.PerkName.LegendTrueBeliever,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTrueBeliever,
+		Icon = "ui/perks/true_believer_circle.png",
+		IconDisabled = "ui/perks/true_believer_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_poison_immunity",
+		Script = "scripts/skills/perks/perk_legend_poison_immunity",
+		Name = this.Const.Strings.PerkName.LegendPoisonImmunity,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPoisonImmunity,
+		Icon = "ui/perks/poison_immunity.png",
+		IconDisabled = "ui/perks/poison_immunity_bw.png"
 	}
 
 ];
@@ -991,5 +1015,8 @@ gt.Const.Perks.PerkDefs <- {
 	LegendRelax = 105,
 	LegendGruesomeFeast = 106,
 	LegendUberNimble = 107,
-	LegendMuscularity = 108
+	LegendMuscularity = 108,
+	LegendBattleheart = 109,
+	LegendTrueBeliever = 109,
+	LegendPoisonImmunity = 110
 };

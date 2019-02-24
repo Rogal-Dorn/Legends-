@@ -136,7 +136,8 @@ gt.Const.Strings.EntityName <- [
 	"Irrlicht",
 	"Fallen Betrayer",
 	"Nightmare",
-	"Bandit Rabble"
+	"Bandit Rabble",
+	"Cat"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -209,7 +210,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Irrlicht",
 	"Fallen Betrayers",
 	"Nightmares",
-	"Bandit Rabbles"
+	"Bandit Rabbles",
+	"Cats"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1105,7 +1107,10 @@ gt.Const.Strings.PerkName <- {
 	LegendRelax = "Relax",
 	LegendGruesomeFeast = "Gruesome Feast",
 	LegendUberNimble = "Nudist",
-	LegendMuscularity = "Muscularity"
+	LegendMuscularity = "Muscularity",
+	LegendBattleheart = "Battleheart",
+	LegendTrueBeliever = "True Believer",
+	LegendPoisonImmunity = "Poison Immunity"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1235,7 +1240,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
 	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants",
-	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage."
+	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage.",
+	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer effects this character\'s defences at all",
+	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing no longer lowers this character\'s morale",
+	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

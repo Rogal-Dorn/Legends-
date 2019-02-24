@@ -1,20 +1,20 @@
-this.legend_blacksmith_apron <- this.inherit("scripts/items/armor/armor", {
+this.legend_vala_dress <- this.inherit("scripts/items/armor/armor", {
 	m = {},
 	function create()
 	{
 		this.armor.create();
-		this.m.ID = "armor.body.legend_blacksmith_apron";
-		this.m.Name = "Blacksmith Apron";
-		this.m.Description = "A leather apron usually worn by a blacksmith";
+		this.m.ID = "armor.body.legend_vala_dress";
+		this.m.Name = "Vala\'s Dress";
+		this.m.Description = "A strong leather dress worn by a vala on her travels";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = 500;
+		this.m.Variant = 507;
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 80;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
+		this.m.Condition = 50;
+		this.m.ConditionMax = 50;
 		this.m.StaminaModifier = 0;
 	}
 

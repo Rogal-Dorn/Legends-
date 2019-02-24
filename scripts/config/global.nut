@@ -272,6 +272,7 @@ gt.Const.EntityType <- {
 	ZombieBetrayer = 68,
 	AlpShadow = 69,
 	BanditRabble = 70,
+	LegendCat = 71,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
