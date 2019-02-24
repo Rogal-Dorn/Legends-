@@ -613,6 +613,10 @@ this.item <- {
 		return this.m.IsRuned;
 	}
 
+	function onNewDay()
+	{
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeBool(this.m.IsToBeRepaired);

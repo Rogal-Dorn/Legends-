@@ -1017,6 +1017,17 @@ this.asset_manager <- {
 			local mood = 0;
 			local roster = this.World.getPlayerRoster().getAll();
 
+			local items = this.World.Assets.getStash().getItems();
+			foreach( item in items )
+			{
+				if (item == null)
+				{
+					continue;
+				}
+				
+				item.onNewDay();
+			}
+
 			foreach( bro in roster )
 			{
 				bro.getSkills().onNewDay();
