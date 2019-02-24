@@ -1017,6 +1017,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendUberNimble = 107,
 	LegendMuscularity = 108,
 	LegendBattleheart = 109,
-	LegendTrueBeliever = 109,
-	LegendPoisonImmunity = 110
+	LegendTrueBeliever = 110,
+	LegendPoisonImmunity = 111
 };
