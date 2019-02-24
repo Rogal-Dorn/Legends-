@@ -141,19 +141,40 @@
 		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
 		local CannibalsInRoster = 0;
 		local CannibalisticButchersInRoster = 0;
+		local warlockInRoster = false;
+		local betterZombieSalvage = false;
+
 		foreach (bro in EntireCompanyRoster)
 		{
-			if (bro.isAlive() && bro.getBackground().getID() == "background.vazl_cannibal")
+			if (!bro.isAlive())
 			{
-				CannibalsInRoster += 1;
+				continue;
 			}
-			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
+
+			switch (bro.getBackground().getID())
 			{
-				CannibalisticButchersInRoster += 1;
+				case "background.vazl_cannibal":
+					CannibalsInRoster += 1;
+					break;
+				
+				case "background.butcher":
+					if (bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
+					{
+						CannibalisticButchersInRoster += 1;
+					}
+					break;
+				
+				case "background.legend_necro":
+				case "background.legend_commander_necro":
+					warlockInRoster = true;
+					break;
+			}
+
+			if ( bro.getSkills().hasSkill("trait.legends_zombie_salvage"))
+			{
+				betterZombieSalvage = true;
 			}
 		}
-
-
 
 		local loot = [];
 		local size = this.Tactical.getMapSize();
@@ -175,6 +196,24 @@
 
 
 
+				if (warlockInRoster && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
+				{
+					local zombieLoot = false
+					if (betterZombieSalvage)
+					{
+						zombieLoot = this.Math.rand(1, 100) <= 10;
+					} else {
+						zombieLoot = this.Math.rand(1, 100) <= 33;
+					}
+
+					if (zombieLoot)
+					{
+						local zloot = this.new("scripts/items/spawns/zombie_item");
+						loot.push(zloot);
+					}
+				}
+
+
 				if (this.Math.rand(1, 100) <= 8 && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
 				{
 					if (CannibalisticButchersInRoster >= 1)
@@ -192,8 +231,6 @@
 						loot.push(humanmeat);
 					}
 				}
-
-
 
 
 				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null)
