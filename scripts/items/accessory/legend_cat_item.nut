@@ -1,4 +1,4 @@
-this.cat_item <- this.inherit("scripts/items/accessory/accessory", {
+this.legend_cat_item <- this.inherit("scripts/items/accessory/accessory", {
 	m = {
 		Skill = null,
 		Entity = null,
