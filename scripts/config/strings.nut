@@ -1102,9 +1102,10 @@ gt.Const.Strings.PerkName <- {
 	LegendComposure = "Composure",
 	LegendNightvision = "Nightvision",
 	LegendMasteryStaves = "Staff Mastery",
-	LegendRelax = "relax",
+	LegendRelax = "Relax",
 	LegendGruesomeFeast = "Gruesome Feast",
-	LegendUberNimble = "Nudist"
+	LegendUberNimble = "Nudist",
+	LegendMuscularity = "Muscularity"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1122,7 +1123,7 @@ gt.Const.Strings.PerkDescription <- {
 	SunderingStrikes = "Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] for any weapon used.",
 	BloodyHarvest = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit for all area of effect attacks.",
 	FastAdaption = "Adapt to your opponent\'s moves! Gain an additional stacking [color=" + this.Const.UI.Color.PositiveValue + "]+8%[/color] chance to hit with each attack that misses an opponent. Bonus is reset upon landing a hit.",
-	FullForce = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current body armor as additional maximum damage when attacking with melee attacks.",
+	FullForce = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current body armor as additional maximum damage.",
 	Weaponmaster = "All attacks cost [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Fatigue to use and weapon condition degrades only half as fast. Dance gracefully with your weapon and make every hit count. ",
 	CoupDeGrace = "Inflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that have sustained any injury effects, like a broken arm.",
 	SteelBrow = "Hits to the head no longer cause critical damage to this character, which also lowers the risk of sustaining debilitating head injuries significantly.",
@@ -1219,11 +1220,11 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCoordinatedVolleys = "Direct your troops to time their shots, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army",
 	LegendRoster1 = "Direct your attention to guiding an apprentice into the mercenary world, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color]",
-	LegendRoster2 = "Spend time training bodygaurds to work together, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
+	LegendRoster2 = "Spend time training bodyguards to work together, increasing the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
 	LegendRoster3 = "Set up team planning, with task lists and prioritisation. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color]",
-	LegendRoster4 = "Create a squad regime, with weekly shedules and drills. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
-	LegendRoster5 = "Oversee the section\'s financial administation processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
-	LegendRoster6 = "Manage the company logicistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
+	LegendRoster4 = "Create a squad regime, with weekly schedules and drills. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
+	LegendRoster5 = "Oversee the section\'s financial administration processes, managing pay disputes, disbursements, withholdings and loans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color]",
+	LegendRoster6 = "Manage the company logistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
 	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
@@ -1233,7 +1234,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
-	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants"
+	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants",
+	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -869,6 +869,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendUberNimble,
 		Icon = "ui/perks/ubernimble_circle.png",
 		IconDisabled = "ui/perks/ubernimble_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_muscularity",
+		Script = "scripts/skills/perks/perk_legend_muscularity",
+		Name = this.Const.Strings.PerkName.LegendMuscularity,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMuscularity,
+		Icon = "ui/perks/muscularity_circle.png",
+		IconDisabled = "ui/perks/muscularity_circle_bw.png"
 	}
 
 ];
@@ -982,5 +990,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendMasteryStaves = 104,
 	LegendRelax = 105,
 	LegendGruesomeFeast = 106,
-	LegendUberNimble = 107
+	LegendUberNimble = 107,
+	LegendMuscularity = 108
 };
