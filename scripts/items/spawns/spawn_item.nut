@@ -21,7 +21,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 	function create()
 	{
 		this.m.SlotType = this.Const.ItemSlot.None;
-		this.m.ItemType = this.Const.Items.ItemType.Misc;
+		this.m.ItemType = this.Const.Items.ItemType.Accessory;
 	}
 
 	function getTooltip()
@@ -108,6 +108,11 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 
 	function onUpdateProperties( _properties )
 	{
+	}
+
+	function onCombatFinished()
+	{
+		this.setEntity(null);
 	}
 
 	function onSerialize( _out )

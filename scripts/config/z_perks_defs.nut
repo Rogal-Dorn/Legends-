@@ -861,6 +861,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendGruesomeFeast,
 		Icon = "ui/perks/gruesome_circle.png",
 		IconDisabled = "ui/perks/gruesome_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_spawn_zombie_low",
+		Script = "scripts/skills/perks/perk_legend_spawn_zombie_low",
+		Name = this.Const.Strings.PerkName.LegendSpawnZombieLow,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieLow,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle.png"
 	}
 
 ];
@@ -973,5 +981,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendNightvision = 103,
 	LegendMasteryStaves = 104,
 	LegendRelax = 105,
-	LegendGruesomeFeast = 106
+	LegendGruesomeFeast = 106,
+	LegendSpawnZombieLow = 107
 };

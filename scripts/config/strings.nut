@@ -1233,7 +1233,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
-	LegendSpawnZombieLow = "From the decaying parts of man and beast, raise a weakened foul creature of undeath to devour your enemies"
+	LegendSpawnZombieLow = "From the decaying parts of man and beast, raise a weakened creature of undeath to devour your enemies"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

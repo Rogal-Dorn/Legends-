@@ -1,8 +1,9 @@
 this.legends_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 	m = {
-		Item = null,
-		ResurrectWithScript = "scripts/entity/tactical/legends_zombie"
+		Item = null
+		//ResurrectWithScript = "scripts/entity/tactical/legends_zombie"
 	},
+
 	function setItem( _i )
 	{
 		if (typeof _i == "instance")
