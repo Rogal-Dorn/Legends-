@@ -134,7 +134,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r == 4)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/legend_rabble_wild"));
+				this.m.Items.equip(this.new("scripts/items/armor/legend_rabble_fur"));
 			}
 
 		}
