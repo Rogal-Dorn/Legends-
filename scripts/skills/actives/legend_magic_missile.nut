@@ -109,7 +109,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			local CurrentInit = this.m.Container.getActor().getItems().getInitiative()
+			local CurrentInit = this.m.Container.getActor().getInitiative();
 			_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
 			_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
