@@ -46,12 +46,12 @@ this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
-		this.m.DirectDamageMult = 0.35;
+		this.m.DirectDamageMult = 0.5;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 6;
-		this.m.MaxLevelDifference = 4;
+		this.m.MaxRange = 7;
+		this.m.MaxLevelDifference = 8;
 		this.m.ProjectileType = this.Const.ProjectileType.Pebble;
 	}
 

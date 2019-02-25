@@ -1,6 +1,6 @@
 this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 10,
+		AdditionalAccuracy = 20,
 		AdditionalHitChance = 10
 	},
 	function create()
@@ -113,7 +113,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
 			_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -4 + this.m.AdditionalHitChance;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}
 	}
 

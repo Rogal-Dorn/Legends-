@@ -36,8 +36,8 @@ this.legend_miasma_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
-		this.m.MaxLevelDifference = 4;
+		this.m.MaxRange = 6;
+		this.m.MaxLevelDifference = 8;
 	}
 
 	function isViableTarget( _user, _target )
