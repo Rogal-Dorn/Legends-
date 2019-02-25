@@ -1,7 +1,7 @@
 this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 0,
-		AdditionalHitChance = 0
+		AdditionalAccuracy = -10,
+		AdditionalHitChance = -1
 	},
 	function create()
 	{
