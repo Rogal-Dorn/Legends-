@@ -244,6 +244,7 @@ gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
 	{
 		case "background.legend_commander_noble":
 		case "background.legend_noble":
+		case "background.legend_ironmonger":
 			return 0.1;
 		case "background.legend_commander_crusader":
 		case "background.legend_crusader":

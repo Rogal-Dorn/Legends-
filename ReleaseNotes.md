@@ -97,3 +97,6 @@ Beta 08
 *New sounds added for some perks and weapons.
 *Improved tooltips
 
+Beta 08.5
+*Fixes female face issues
+*Adds new special armor for different start characters
