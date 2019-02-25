@@ -52,7 +52,7 @@ this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
-		this.m.ProjectileType = this.Const.ProjectileType.Arrow;
+		this.m.ProjectileType = this.Const.ProjectileType.Pebble;
 	}
 
 	function getTooltip()
