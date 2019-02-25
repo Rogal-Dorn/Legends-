@@ -195,7 +195,7 @@ this.legend_cat <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		local variant = this.Math.rand(1, 4);
+		local variant = 1;
 		this.m.Items.getAppearance().Body = "bust_cat_01_body_0" + variant;
 		this.addSprite("socket").setBrush("bust_base_player");
 		local body = this.addSprite("body");
@@ -203,7 +203,7 @@ this.legend_cat <- this.inherit("scripts/entity/tactical/actor", {
 		local armor = this.addSprite("armor");
 		this.addSprite("head").setBrush("bust_cat_01_head_0" + variant);
 		local closed_eyes = this.addSprite("closed_eyes");
-		closed_eyes.setBrush("bust_cat_01_body_0" + variant + "_eyes_closed");
+		closed_eyes.setBrush("bust_dog_01_body_0" + variant + "_eyes_closed");
 		closed_eyes.Visible = false;
 		local injury = this.addSprite("injury");
 		injury.Visible = false;

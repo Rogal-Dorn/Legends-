@@ -506,5 +506,6 @@ gt.Const.EntityIcon <- [
 	"kraken_02_orientation",
 	"zombie_03_orientation",
 	"alp_02_orientation",
-	"peasant_orientation"
+	"peasant_orientation",
+	"dog_01_orientation"
 ];

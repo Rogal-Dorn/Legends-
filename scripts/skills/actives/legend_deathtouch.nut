@@ -28,7 +28,7 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 
 		function getTooltip()
 	{
-		local actor = _effect.getContainer().getActor();
+		local actor = this.getContainer().getActor();
 		local CurrentInit = actor.getInitiative();
 		local MinDam =  CurrentInit * 0.1;
 		local MaxDam =  CurrentInit * 0.2;
@@ -58,11 +58,9 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-
-
 	function onUpdate( _properties )
 	{
-		local CurrentInit = this.m.Container.getActor().getInitiative();
+		local CurrentInit = this.getContainer().getActor().getInitiative();
 		_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
 		_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
 		_properties.IsIgnoringArmorOnAttack = true;

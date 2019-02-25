@@ -1,6 +1,8 @@
 this.legend_unleash_cat <- this.inherit("scripts/skills/skill", {
 	m = {
-		Item = null,
+		Entity = null,
+		EntityName = "Fred",
+		Script = "scripts/entity/tactical/legend_cat",
 		Sounds0 = [
 			"sounds/enemies/cat_hurt_01.wav",
 			"sounds/enemies/cat_hurt_02.wav",
@@ -131,7 +133,7 @@ this.legend_unleash_cat <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (this.m.Item.isUnleashed() || !this.skill.isUsable())
+		if (this.m.Entity != null || !this.skill.isUsable())
 		{
 			return false;
 		}
@@ -145,38 +147,28 @@ this.legend_unleash_cat <- this.inherit("scripts/skills/skill", {
 		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.IsEmpty;
 	}
 
-	function onUpdate( _properties )
-	{
-		this.m.IsHidden = this.m.Item.isUnleashed();
-	}
-
 	function onUse( _user, _targetTile )
 	{
-		local entity = this.Tactical.spawnEntity(this.m.Item.getScript(), _targetTile.Coords.X, _targetTile.Coords.Y);
+		local entity = this.Tactical.spawnEntity(this.m.Script, _targetTile.Coords.X, _targetTile.Coords.Y);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
-		entity.setItem(this.m.Item);
-		entity.setName(this.m.Item.getName());
-		entity.setVariant(this.m.Item.getVariant());
-		this.m.Item.setEntity(entity);
+		entity.setName(this.m.EntityName);
 
-		if (this.m.Item.getArmorScript() != null)
-		{
-			local item = this.new(this.m.Item.getArmorScript());
-			entity.getItems().equip(item);
-		}
+		//And cats are cocky too I believe!
+		entity.setMoraleState(this.Const.MoraleState.Confident);
 
-		if (this.getContainer().hasSkill("background.houndmaster"))
-		{
-			entity.setMoraleState(this.Const.MoraleState.Confident);
-		}
-
+		this.m.Entity = entity;
+		//Cats are nocturnal right!
 		if (!this.World.getTime().IsDaytime)
 		{
 			entity.getSkills().add(this.new("scripts/skills/special/night_effect"));
 		}
 
-		this.m.IsHidden = true;
 		return true;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.Entity = null;
 	}
 
 });
