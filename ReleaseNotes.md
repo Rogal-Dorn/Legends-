@@ -109,3 +109,9 @@ Beta 08.5
 *Fixes issues due to faction size limits
 *Fixes crash when using the clear formation button
 *Nerfs sleep skill - can only sleep your target, ont adjacent ones
+Adds slings and ammo 
+Balance pass on all spells altering increasing fatigue and lowering range. ranger is range king
+fixes wither crash on undead
+adds charge active, not given to anyone yet
+
+
