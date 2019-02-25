@@ -2420,8 +2420,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-			this.setAutoPause(true);
-			this.m.AutoUnpauseFrame = this.Time.getFrame() + 1;
+			this.setAutoPause(false);
+			this.setPause(true);
 		}, function ()
 		{
 			return !this.m.WorldTownScreen.isAnimating();
