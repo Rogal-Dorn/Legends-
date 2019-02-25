@@ -115,9 +115,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			local item = this.new("scripts/items/armor/linen_tunic");
-			item.setVariant(this.Math.rand(6, 7));
-			items.equip(item);
+			local item = this.new("scripts/items/armor/legend_maid_apron");
 		}
 	}
 

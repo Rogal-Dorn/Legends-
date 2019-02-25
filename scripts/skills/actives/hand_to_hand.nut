@@ -4,7 +4,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hand_to_hand";
 		this.m.Name = "Hand-to-Hand Attack";
-		this.m.Description = "The standard fist-fighting attack. Let them fly!";
+		this.m.Description = "The standard fist-fighting attack.  Let them fly!  Maximum damage is 10% of the average of your hitpoints and initiative";
 		this.m.KilledString = "Pummeled to death";
 		this.m.Icon = "skills/active_08.png";
 		this.m.IconDisabled = "skills/active_08_sw.png";
@@ -118,8 +118,11 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMin += 5;
-			_properties.DamageRegularMax += 10;
+			local CurrentInit = this.m.Container.getActor().getItems().getInitiative()
+			local CurrentHitpoints = this.m.Container.getActor().getItems().getHitpoints()
+			local Mult = (CurrentInit + CurrentHitpoints) / 2;
+			_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
+			_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
 			_properties.MeleeSkill -= 10;
 		}
 	}

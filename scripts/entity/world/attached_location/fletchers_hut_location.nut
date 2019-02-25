@@ -94,6 +94,11 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "weapons/short_bow"
 			});
 			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_saw"
+			});
+			_list.push({
 				R = 0,
 				P = 0.8,
 				S = "ammo/quiver_of_arrows"

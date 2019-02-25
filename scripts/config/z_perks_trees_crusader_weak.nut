@@ -19,6 +19,8 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
+		gt.Const.Perks.PerkDefs.SteelBrow,
+		gt.Const.Perks.PerkDefs.InspiringPresence,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.SteelBrow
 	],
@@ -29,6 +31,8 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.InspiringPresence,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
+		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.Rebound
 	],
 	[
@@ -40,7 +44,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.MasteryAxe
 	],
 	[
-		gt.Const.Perks.PerkDefs.Underdog,
+		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.Footwork,
 		gt.Const.Perks.PerkDefs.FullForce,
 		gt.Const.Perks.PerkDefs.ReturnFavor

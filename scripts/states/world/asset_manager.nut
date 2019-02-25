@@ -1555,6 +1555,10 @@ this.asset_manager <- {
 			return;
 		}
 
+		if (_index == null) {
+			_index = 0;
+		}
+
 		this.m.FormationIndex = _index;
 		local roster = this.World.getPlayerRoster().getAll();
 		local stash = this.World.Assets.getStash();
@@ -1579,9 +1583,8 @@ this.asset_manager <- {
 		this.updateFormation()
 	}
 
-    function clearFormation( _index )
+    function clearFormation()
 	{
-		this.m.FormationIndex = _index;
 		local roster = this.World.getPlayerRoster().getAll();
 		local stash = this.World.Assets.getStash();
 

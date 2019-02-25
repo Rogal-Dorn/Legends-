@@ -203,11 +203,12 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 
 		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
-			return 0.2;
-			break;
+		case "background.legend_ironmonger":
 		case "background.tailor":
 		case "background.female_tailor":
-		case "background.apprentice":
+			return 0.2;
+			break;
+		case "background.legend_blacksmith":
 		case "background.vazl_inventor":
 			return 0.5;
 			break;
@@ -243,9 +244,11 @@ gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
 	{
 		case "background.legend_commander_noble":
 		case "background.legend_noble":
+		case "background.legend_ironmonger":
 			return 0.1;
 		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
+		case "background.legend_blacksmith":
 			return 0.2;
 			break;
 		default:

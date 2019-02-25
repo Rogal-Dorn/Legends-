@@ -1,6 +1,6 @@
 this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 10,
+		AdditionalAccuracy = 20,
 		AdditionalHitChance = 10
 	},
 	function create()
@@ -98,6 +98,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 0.8;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 	}
+	
 
 	function onUse( _user, _targetTile )
 	{
@@ -108,8 +109,11 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.MeleeSkill += this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -4 + this.m.AdditionalHitChance;
+			local CurrentInit = this.m.Container.getActor().getInitiative();
+			_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
+			_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}
 	}
 

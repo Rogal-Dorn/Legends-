@@ -863,13 +863,61 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/gruesome_circle_bw.png"
 	},
 	{
+		ID = "perk.legend_ubernimble",
+		Script = "scripts/skills/perks/perk_legend_ubernimble",
+		Name = this.Const.Strings.PerkName.LegendUberNimble,
+		Tooltip = this.Const.Strings.PerkDescription.LegendUberNimble,
+		Icon = "ui/perks/ubernimble_circle.png",
+		IconDisabled = "ui/perks/ubernimble_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_muscularity",
+		Script = "scripts/skills/perks/perk_legend_muscularity",
+		Name = this.Const.Strings.PerkName.LegendMuscularity,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMuscularity,
+		Icon = "ui/perks/muscularity_circle.png",
+		IconDisabled = "ui/perks/muscularity_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_battleheart",
+		Script = "scripts/skills/perks/perk_legend_battleheart",
+		Name = this.Const.Strings.PerkName.LegendBattleheart,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBattleheart,
+		Icon = "ui/perks/battlheart_circle.png",
+		IconDisabled = "ui/perks/battlheart_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_true_believer",
+		Script = "scripts/skills/perks/perk_legend_true_believer",
+		Name = this.Const.Strings.PerkName.LegendTrueBeliever,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTrueBeliever,
+		Icon = "ui/perks/true_believer_circle.png",
+		IconDisabled = "ui/perks/true_believer_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_poison_immunity",
+		Script = "scripts/skills/perks/perk_legend_poison_immunity",
+		Name = this.Const.Strings.PerkName.LegendPoisonImmunity,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPoisonImmunity,
+		Icon = "ui/perks/poison_immunity.png",
+		IconDisabled = "ui/perks/poison_immunity_bw.png"
+	},
+	{
+		ID = "perk.legend_summon_cat",
+		Script = "scripts/skills/perks/perk_legend_summon_cat",
+		Name = this.Const.Strings.PerkName.LegendSummonCat,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSummonCat,
+		Icon = "ui/perks/cat_circle.png",
+		IconDisabled = "ui/perks/cat_circle_bw.png"
+	},
+	{
 		ID = "perk.legend_spawn_zombie_low",
 		Script = "scripts/skills/perks/perk_legend_spawn_zombie_low",
 		Name = this.Const.Strings.PerkName.LegendSpawnZombieLow,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieLow,
 		Icon = "ui/perks/raisedead2_circle.png",
 		IconDisabled = "ui/perks/raisedead2_circle.png"
-	}
+	}	
 
 ];
 
@@ -982,5 +1030,11 @@ gt.Const.Perks.PerkDefs <- {
 	LegendMasteryStaves = 104,
 	LegendRelax = 105,
 	LegendGruesomeFeast = 106,
-	LegendSpawnZombieLow = 107
+	LegendUberNimble = 107,
+	LegendMuscularity = 108,
+	LegendBattleheart = 109,
+	LegendTrueBeliever = 110,
+	LegendPoisonImmunity = 111,
+	LegendSummonCat = 112,
+	LegendSpawnZombieLow = 113	
 };

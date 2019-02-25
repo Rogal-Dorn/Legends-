@@ -250,6 +250,176 @@ gt.Const.World.Spawn.BanditRoamers <- [
 		Body = "figure_bandit_01",
 		Troops = [
 			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops = [
+			{
 				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
 				Num = 1
 			}
@@ -1423,6 +1593,45 @@ gt.Const.World.Spawn.BanditScouts <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 7
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
 				Num = 1
 			},
 			{
@@ -1491,11 +1700,269 @@ gt.Const.World.Spawn.BanditScouts <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
 				Num = 2
 			},
 		{
 				Type = this.Const.World.Spawn.Troops.BanditThug,
 				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 3
+			},
+		{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 4
+			},
+		{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 5
+			},
+		{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+		{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+		{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 3
+			}
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 3
+			}
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 4
+			}
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 4
+			}
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditThug,
+				Num = 4
+			}
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 4
 			}
 		]
 	},
@@ -2991,6 +3458,57 @@ gt.Const.World.Spawn.BanditRaiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
 				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				Num = 3
 			}
 		]
 	},

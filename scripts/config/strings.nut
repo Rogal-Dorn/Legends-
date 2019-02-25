@@ -136,7 +136,8 @@ gt.Const.Strings.EntityName <- [
 	"Irrlicht",
 	"Fallen Betrayer",
 	"Nightmare",
-	"Bandit Rabble"
+	"Bandit Rabble",
+	"Cat"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -209,7 +210,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Irrlicht",
 	"Fallen Betrayers",
 	"Nightmares",
-	"Bandit Rabbles"
+	"Bandit Rabbles",
+	"Cats"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1104,6 +1106,12 @@ gt.Const.Strings.PerkName <- {
 	LegendMasteryStaves = "Staff Mastery",
 	LegendRelax = "Relax",
 	LegendGruesomeFeast = "Gruesome Feast",
+	LegendUberNimble = "Nudist",
+	LegendMuscularity = "Muscularity",
+	LegendBattleheart = "Battleheart",
+	LegendTrueBeliever = "True Believer",
+	LegendPoisonImmunity = "Poison Immunity",
+	LegendSummonCat = "Summon Familiar",
 	LegendSpawnZombieLow = "Spawn Weak Zombie"
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1122,7 +1130,7 @@ gt.Const.Strings.PerkDescription <- {
 	SunderingStrikes = "Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] for any weapon used.",
 	BloodyHarvest = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit for all area of effect attacks.",
 	FastAdaption = "Adapt to your opponent\'s moves! Gain an additional stacking [color=" + this.Const.UI.Color.PositiveValue + "]+8%[/color] chance to hit with each attack that misses an opponent. Bonus is reset upon landing a hit.",
-	FullForce = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current body armor as additional maximum damage when attacking with melee attacks.",
+	FullForce = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current body armor as additional maximum damage.",
 	Weaponmaster = "All attacks cost [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Fatigue to use and weapon condition degrades only half as fast. Dance gracefully with your weapon and make every hit count. ",
 	CoupDeGrace = "Inflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that have sustained any injury effects, like a broken arm.",
 	SteelBrow = "Hits to the head no longer cause critical damage to this character, which also lowers the risk of sustaining debilitating head injuries significantly.",
@@ -1150,7 +1158,7 @@ gt.Const.Strings.PerkDescription <- {
 	KillingFrenzy = "Go into a killing frenzy! A kill increases all damage by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] for 2 turns. Does not stack, but another kill will reset the timer.",
 	ShieldBash = "The Knock Back skill now also inflicts [color=" + this.Const.UI.Color.DamageValue + "]10 - 25[/color] Damage (50% effective against armor) and [color=" + this.Const.UI.Color.DamageValue + "]10[/color] Fatigue in addition to its normal effect, and costs 10 Fatigue less to use.",
 	Brawny = "The fatigue and initiative penalty from wearing armor and helmet is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color].",
-	Stalwart = "Immunity against being knocked back or pulled up close. Applies to skills such as Knock Back, Hook and others that change a character\'s position.",
+	Stalwart = "Grants immunity against being knocked back or pulled up close. Applies to skills such as Knock Back, Hook and others that change a character\'s position.",
 	Steadfast = "Getting hit by regular attacks does not cause a loss of fatigue anymore. Attacks that specifically target fatigue are unaffected.",
 	Taunt = "Unlocks the \'Taunt\' skill which makes the targeted opponent take offensive actions instead of defensive ones, and attack the taunting character over another, potentially more vulnerable one.",
 	Colossus = "Bring it on! Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color], which also reduces the chance to sustain debilitating injuries when being hit.",
@@ -1214,7 +1222,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPossessUndead = "Allows you to boost the attacks of an undead minion",
 	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled.",
 	LegendRoster = "Increase roster size",
-	LegendSpecBandage = "Master the art of bandaging mid battle using nay cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
+	LegendSpecBandage = "Master the art of bandaging mid battle using any cloth available, this character no longer requires a bandage item to bandage allies, and can bandage while in a zone of control",
 	LegendHoldTheLine = "Direct your troops to stand their ground, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendCoordinatedVolleys = "Direct your troops to time their shots, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendRaiseUndead = "Raise the dead, and turn them into your own personal army",
@@ -1226,14 +1234,21 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster6 = "Manage the company logistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
-	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
+	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
 	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
+	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants",
+	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage.",
+	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer effects this character\'s defences at all",
+	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing no longer lowers this character\'s morale",
+	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons.",
+	LegendSummonCat = "Summon feline familiar to your aide. Don't worry, this particular cat has nine times a million lives.",
 	LegendSpawnZombieLow = "From the decaying parts of man and beast, raise a weakened creature of undeath to devour your enemies"
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

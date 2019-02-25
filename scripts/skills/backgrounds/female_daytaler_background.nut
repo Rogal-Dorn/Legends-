@@ -86,18 +86,23 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 4);
 
-		if (r == 0)
+		if (r == 0 || r == 1)
 		{
-			items.equip(this.new("scripts/items/armor/sackcloth"));
+			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 		}
-		else
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
+		}
+		else 
 		{
 			local item = this.new("scripts/items/armor/linen_tunic");
 			item.setVariant(this.Math.rand(6, 7));
 			items.equip(item);
 		}
+
 
 		r = this.Math.rand(0, 4);
 

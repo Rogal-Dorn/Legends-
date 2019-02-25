@@ -2239,8 +2239,7 @@ this.character_screen <- {
 
 	function onFormationClear( _data )
 	{
-		local index = _data[0];
-		this.World.Assets.clearFormation(index);
+		this.World.Assets.clearFormation();
 		this.loadData();
 	}
 

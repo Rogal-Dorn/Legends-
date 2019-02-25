@@ -1301,7 +1301,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(32, 0);
+		factions.resize(128, 0);
 
 		foreach( party in raw_parties )
 		{
@@ -1396,10 +1396,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
 					{
-						if (t.Faction >= factions.len())
-						{
-							factions.resize(t.Faction + 1, 0);
-						}
+						// if (t.Faction >= factions.len())
+						// {
+						// 	factions.resize(t.Faction + 1, 0);
+						// }
 						++factions[t.Faction];
 					}
 				}
@@ -2420,8 +2420,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-			this.setAutoPause(true);
-			this.m.AutoUnpauseFrame = this.Time.getFrame() + 1;
+			this.setAutoPause(false);
+			this.setPause(true);
 		}, function ()
 		{
 			return !this.m.WorldTownScreen.isAnimating();
