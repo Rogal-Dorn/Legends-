@@ -99,4 +99,12 @@ Beta 08
 
 Beta 08.5
 *Fixes female face issues
-*Adds new special armor for different start characters
+*New Blacksmith and ironmonger backgrounds. Both give advantages to tool repair speed and tool consumption.
+*5 new Berserker perks: TrueBeleiver, PoisonImmunity, Battleheart, Muscularity and Nudist
+*5 new Crusader perks: SteelBrow, InspiringPresence, Rebound, TrueBeliever, Battleheart; Looses Underdog
+*1 new Seer perk: SummonCat
+*New low teir armors for female boyers, female dayteler, femal farmhand, blacksmith, ironmonger
+*New custom starting armors for Warlock, Seer and Berserker 
+*Improved small arrows, tools, medicine stash images.
+*Fixes issues due to faction size limits`
+*Fixes crash when using the clear formation button
