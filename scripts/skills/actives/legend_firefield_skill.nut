@@ -33,10 +33,10 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
+		this.m.ActionPointCost = 5;
+		this.m.FatigueCost = 40;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
 	}
 

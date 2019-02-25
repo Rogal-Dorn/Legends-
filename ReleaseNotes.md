@@ -97,3 +97,22 @@ Beta 08
 *New sounds added for some perks and weapons.
 *Improved tooltips
 
+Beta 08.5
+*Fixes female face issues
+*New Blacksmith and ironmonger backgrounds. Both give advantages to tool repair speed and tool consumption.
+*5 new Berserker perks: TrueBeleiver, PoisonImmunity, Battleheart, Muscularity and Nudist
+*5 new Crusader perks: SteelBrow, InspiringPresence, Rebound, TrueBeliever, Battleheart; Looses Underdog
+*1 new Seer perk: SummonCat
+*New low teir armors for female boyers, female dayteler, femal farmhand, blacksmith, ironmonger
+*New custom starting armors for Warlock, Seer and Berserker 
+*Improved small arrows, tools, medicine stash images.
+*Fixes issues due to faction size limits
+*Fixes crash when using the clear formation button
+*Nerfs sleep skill - can only sleep your target, ont adjacent ones
+Adds slings and ammo 
+Balance pass on all spells altering increasing fatigue and lowering range. ranger is range king
+fixes wither crash on undead
+adds charge active, not given to anyone yet
+fixed shovel label
+took berserker head out the general pool since he looks funny with some hairs
+Increased size of Rabble spawns.

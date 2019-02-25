@@ -39,8 +39,8 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 40;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
-		this.m.MaxLevelDifference = 4;
+		this.m.MaxRange = 6;
+		this.m.MaxLevelDifference = 6;
 	}
 
 	function isUsable()
@@ -114,27 +114,6 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 			if (this.isViableTarget(_user, entity))
 			{
 				targets.push(entity);
-			}
-		}
-
-		for( local i = 0; i < 6; i = ++i )
-		{
-			if (!_targetTile.hasNextTile(i))
-			{
-			}
-			else
-			{
-				local adjacent = _targetTile.getNextTile(i);
-
-				if (adjacent.IsOccupiedByActor)
-				{
-					local entity = adjacent.getEntity();
-
-					if (this.isViableTarget(_user, entity))
-					{
-						targets.push(entity);
-					}
-				}
 			}
 		}
 

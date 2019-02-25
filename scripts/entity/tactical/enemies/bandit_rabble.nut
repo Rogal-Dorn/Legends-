@@ -114,27 +114,27 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		
 		if (this.Math.rand(1, 100) <= 70)
 		{
-			r = this.Math.rand(0, 6);
+			r = this.Math.rand(0, 4);
 
-			if (r <= 1)
+			if (r <= 0)
 			{
 				this.m.Items.equip(this.new("scripts/items/armor/leather_wraps"));
 			}
-			else if (r == 2)
+			else if (r == 1)
 			{
 				this.m.Items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
 			}
-			else if (r == 3)
+			else if (r == 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
+				this.m.Items.equip(this.new("scripts/items/armor/legend_rabble_tunic"));
 			}
-			else if (r == 4)
+			else if (r == 3)
 			{
 				this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
 			}
 			else if (r == 4)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
+				this.m.Items.equip(this.new("scripts/items/armor/legend_rabble_fur"));
 			}
 
 		}
