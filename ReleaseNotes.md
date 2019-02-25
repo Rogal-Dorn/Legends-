@@ -115,4 +115,4 @@ fixes wither crash on undead
 adds charge active, not given to anyone yet
 fixed shovel label
 took berserker head out the general pool since he looks funny with some hairs
-
+Increased size of Rabble spawns.
