@@ -94,7 +94,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		local r;
 		r = this.Math.rand(0, 3);
 
-		else if (r == 1)
+		if (r == 1)
 		{
 			items.equip(this.new("scripts/items/weapons/pitchfork"));
 		}

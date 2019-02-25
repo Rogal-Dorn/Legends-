@@ -127,8 +127,9 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/armor/apron"));
-		},
-			if (r == 1)
+		}
+		
+		if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 		}
