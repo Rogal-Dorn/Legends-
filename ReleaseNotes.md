@@ -106,5 +106,6 @@ Beta 08.5
 *New low teir armors for female boyers, female dayteler, femal farmhand, blacksmith, ironmonger
 *New custom starting armors for Warlock, Seer and Berserker 
 *Improved small arrows, tools, medicine stash images.
-*Fixes issues due to faction size limits`
+*Fixes issues due to faction size limits
 *Fixes crash when using the clear formation button
+*Nerfs sleep skill - can only sleep your target, ont adjacent ones

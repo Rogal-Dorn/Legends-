@@ -117,27 +117,6 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		for( local i = 0; i < 1; i = ++i )
-		{
-			if (!_targetTile.hasNextTile(i))
-			{
-			}
-			else
-			{
-				local adjacent = _targetTile.getNextTile(i);
-
-				if (adjacent.IsOccupiedByActor)
-				{
-					local entity = adjacent.getEntity();
-
-					if (this.isViableTarget(_user, entity))
-					{
-						targets.push(entity);
-					}
-				}
-			}
-		}
-
 		local myTile = _user.getTile();
 
 		foreach( target in targets )
