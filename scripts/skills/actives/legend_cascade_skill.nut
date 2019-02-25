@@ -60,6 +60,11 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isUsable()
+	{
+	return this.m.IsUsable && this.getContainer().getActor().isArmedWithRangedWeapon()
+	}
+
 
 	function onUse( _user, _targetTile )
 	{

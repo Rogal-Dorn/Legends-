@@ -28,6 +28,13 @@ this.legend_drain <- this.inherit("scripts/skills/skill", {
 
 		function getTooltip()
 	{
+		
+
+		local actor = _effect.getContainer().getActor();
+		local CurrentInit = actor.getInitiative();;
+		local maxHP = actor.getHitpointsMax();
+		local heal = maxHP / 10;
+		local min = 
 		local p = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
@@ -58,8 +65,10 @@ this.legend_drain <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 10;
-		_properties.DamageRegularMax += 15;
+		
+		local CurrentInit = this.m.Container.getActor().getInitiative();
+		_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
+		_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
 		_properties.IsIgnoringArmorOnAttack = true;
 	}
 
@@ -67,7 +76,9 @@ this.legend_drain <- this.inherit("scripts/skills/skill", {
 	{
 		return this.attackEntity(_user, _targetTile.getEntity());
 		local actor = _effect.getContainer().getActor();
-		actor.setHitpoints(this.Math.min(actor.getHitpoints() + 10, actor.getHitpointsMax()));
+		local maxHP = actor.getHitpointsMax();
+		local heal = maxHP / 10;
+		actor.setHitpoints(this.Math.min(actor.getHitpoints() + heal, maxHP));
 	}
 
 });
