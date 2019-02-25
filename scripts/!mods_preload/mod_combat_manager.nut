@@ -204,7 +204,7 @@
 		}
 	}
 
-	function onDeserialize( _in )
+	o.onDeserialize = function ( _in )
 	{
 		this.clear();
 		this.m.NextCombatID = _in.readI32();
