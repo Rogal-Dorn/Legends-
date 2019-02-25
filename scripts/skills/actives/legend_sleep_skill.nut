@@ -39,8 +39,8 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 40;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
-		this.m.MaxLevelDifference = 4;
+		this.m.MaxRange = 6;
+		this.m.MaxLevelDifference = 6;
 	}
 
 	function isUsable()
@@ -117,7 +117,7 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		for( local i = 0; i < 6; i = ++i )
+		for( local i = 0; i < 1; i = ++i )
 		{
 			if (!_targetTile.hasNextTile(i))
 			{
