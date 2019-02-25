@@ -13,10 +13,19 @@ this.perk_legend_summon_cat <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onUpdate( _properties )
+
+	function onAdded()
 	{
-		local stash = this.World.Assets.getStash()
-		stash.add(this.new("scripts/items/accessory/legend_cat_item"));
+		if (!this.m.Container.hasSkill("actives.legend_unleash_cat"))
+		{
+			this.m.Container.add(this.new("scripts/skills/actives/legend_unleash_cat"));
+		}
 	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.legend_unleash_cat");
+	}
+
 
 });
