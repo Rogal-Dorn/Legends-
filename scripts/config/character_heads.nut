@@ -124,9 +124,7 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_15",
 	"bust_head_16",
 	"bust_head_17",
-	"bust_head_18",
-	"bust_head_31",
-	"bust_head_32"
+	"bust_head_18"
 ];
 gt.Const.Faces.AllFemale <- [
 	"bust_head_19",
