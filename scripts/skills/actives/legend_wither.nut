@@ -24,8 +24,8 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
-		this.m.MaxLevelDifference = 4;
+		this.m.MaxRange = 6;
+		this.m.MaxLevelDifference = 8;
 	}
 
 	function getDescription()
@@ -48,16 +48,11 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
-
-		if (target.isAlive())
-		{
-			target.getSkills().add(this.new("scripts/skills/effects/debilitated_effect"));
-
+		target.getSkills().add(this.new("scripts/skills/effects/debilitated_effect"));
 			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has left " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " withered");
 			}
-		}
 	}
 
 
