@@ -883,8 +883,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_battleheart",
 		Name = this.Const.Strings.PerkName.LegendBattleheart,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBattleheart,
-		Icon = "ui/perks/battleheart_circle.png",
-		IconDisabled = "ui/perks/battleheart_circle_bw.png"
+		Icon = "ui/perks/battlheart_circle.png",
+		IconDisabled = "ui/perks/battlheart_circle_bw.png"
 	},
 	{
 		ID = "perk.legend_true_believer",

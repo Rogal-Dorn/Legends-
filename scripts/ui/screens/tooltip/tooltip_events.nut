@@ -990,7 +990,7 @@ this.tooltip_events <- {
 				if (bm > 0)
 				{
 					barterMult += bm;
-					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "%[/color] Barter"
+					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + bm + "%[/color] Barter"
 				}
 				brolist.push(L);
 			}
