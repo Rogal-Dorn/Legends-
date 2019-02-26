@@ -1271,7 +1271,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendConservation = "Conduct profane rituals meant to stave off the passage of time, further preserving the means of your craft. Reduces the cost of maintaining Human Carrion and Human Bones by 50% medicine per day.",
 	LegendEnthrall = "Pull at the strings of a single creation, compelling them to linger among you as an obedient guardian. Enthralled dead act defensively and attempt to protect you from threats.",
 	LegendViolentDecomposition = "Corrupt the force sustaining one of your thralls, causing them to detonate destructively after the corruption has time to build. Affected dead explode at the end of their turn next round, dealing damage in a 1 tile radius. The less HP they have, the more damage the explosion inflicts. If they are killed before they explode, the effect no longer triggers.",
-	LegendPossession = "Enter the mind of a thrall and assume direct control. You have complete control of a possessed thrall’s movements and actions for one turn."
+	LegendPossession = "Enter the mind of a thrall and lend your power for one turn, increasing thralls combat prowess."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -1,11 +1,21 @@
 this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie", {
 	m = {},
-	
+
+	function onInit()
+	{
+		this.m.SpawnType = this.Const.Tactical.Actor.Zombie;
+		this.legend_zombie.onInit();
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
+		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
+		this.m.Skills.update();
+	}
+
 	function assignRandomEquipment()
 	{
 		local r;
 
-		if (this.Math.rand(1, 100) <= 50)
+		if (this.Math.rand(1, 100) <= 66)
 		{
 			r = this.Math.rand(1, 16);
 

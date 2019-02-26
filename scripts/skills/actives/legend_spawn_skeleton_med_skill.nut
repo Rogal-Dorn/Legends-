@@ -6,8 +6,8 @@ this.legend_spawn_skeleton_med_skill <- this.inherit("scripts/skills/actives/leg
 		this.m.ID = "actives.legend_spawn_skeleton_med_skill";
 		this.m.Name = "Summon Medium Skeleton";
 		this.m.Description = "Unleash your skeleton and send him charging into the enemy. Needs a free tile adjacent.";
-		this.m.Icon = "skills/raisedead2.png",
-		this.m.IconDisabled = "skills/raisedead2_bw.png",
+		this.m.Icon = "skills/align_joints.png",
+		this.m.IconDisabled = "skills/align_joints_bw.png",
 		this.m.Overlay = "active_26";
 		// this.m.SoundOnUse = [
 		// 	"sounds/enemies/geist_idle_10.wav",

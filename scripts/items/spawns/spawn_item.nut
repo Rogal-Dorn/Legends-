@@ -27,6 +27,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 
 	function getTooltip()
 	{
+		local desc = this.getDescription() + " Requires [color=" + this.Const.UI.Color.NegativeValue + "]" + this.getMedicinePerDay() + "[/color] units of medicine per day to maintain."
 		local result = [
 			{
 				id = 1,
@@ -36,7 +37,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 			{
 				id = 2,
 				type = "description",
-				text = this.getDescription()
+				text = desc
 			}
 		];
 		result.push({
@@ -80,7 +81,6 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 
 		if (this.m.Condition < this.m.ConditionMax)
 		{
-
 			result.push({
 				id = 67,
 				type = "text",

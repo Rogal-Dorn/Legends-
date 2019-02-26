@@ -5,8 +5,8 @@ this.perk_legend_possession <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_enthrall";
 		this.m.Name = this.Const.Strings.PerkName.LegendPossession;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendPossession;
-		this.m.Icon = "ui/perks/possess56.png";
-		this.m.IconDisabled = "ui/perks/possess56_bw.png";
+		this.m.Icon = "ui/perks/possessoin_circle.png";
+		this.m.IconDisabled = "ui/perks/possessoin_circle_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

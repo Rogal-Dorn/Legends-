@@ -215,6 +215,7 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		entity.assignRandomEquipment();
 		entity.riseFromGround();
 		entity.getTags().add("IsSummoned", true);
+		entity.getTags().add("Summoner", _user);
 		spawnItem.setEntity(entity);
 		this.m.Items.push(spawnItem);
 		return true;

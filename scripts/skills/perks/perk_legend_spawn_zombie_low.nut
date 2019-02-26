@@ -23,6 +23,7 @@ this.perk_legend_spawn_zombie_low <- this.inherit("scripts/skills/skill", {
 			stash.add(this.new("scripts/items/spawns/zombie_item"));
 			stash.add(this.new("scripts/items/spawns/zombie_item"));
 			stash.add(this.new("scripts/items/spawns/zombie_item"));
+			this.World.Assets.addMedicine(30);
 		}
 	}
 	

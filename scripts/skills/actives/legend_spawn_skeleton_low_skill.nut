@@ -6,8 +6,8 @@ this.legend_spawn_skeleton_low_skill <- this.inherit("scripts/skills/actives/leg
 		this.m.ID = "actives.legend_spawn_skeleton_low_skill";
 		this.m.Name = "Summon Light Skeleton";
 		this.m.Description = "Unleash your skeleton and send him charging into the enemy. Needs a free tile adjacent.";
-		this.m.Icon = "skills/raisedead2.png",
-		this.m.IconDisabled = "skills/raisedead2_bw.png",
+		this.m.Icon = "skills/arrange_bones.png",
+		this.m.IconDisabled = "skills/arrange_bones_bw.png",
 		this.m.Overlay = "active_26";
 		// this.m.SoundOnUse = [
 		// 	"sounds/enemies/geist_idle_10.wav",
