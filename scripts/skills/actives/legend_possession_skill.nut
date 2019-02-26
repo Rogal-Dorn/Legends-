@@ -5,8 +5,8 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_possession_skill";
 		this.m.Name = "Possess Undead";
 		this.m.Description = "";
-		this.m.Icon = "skills/raisedead2.png",
-		this.m.IconDisabled = "skills/raisedead2_bw.png",
+		this.m.Icon = "skills/possession.png",
+		this.m.IconDisabled = "skills/possession_bw.png",
 		this.m.Overlay = "active_26";
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
@@ -14,7 +14,7 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/necromancer_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted + 27;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -51,11 +51,6 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function isUsable()
-	{
-		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.possessing_undead");
-	}
-
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
@@ -70,7 +65,7 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (target.getSkills().hasSkill("effects.possessed_undead"))
+		if (target.getSkills().hasSkill("effects.legend_possession"))
 		{
 			return false;
 		}
@@ -92,13 +87,12 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		local possessed = this.new("scripts/skills/effects/possessed_undead_effect");
-		possessed.setPossessor(_user);
+		local possessed = this.new("scripts/skills/effects/legend_possession_effect");
 		target.getSkills().add(possessed);
 		target.setActionPoints(target.getCurrentProperties().ActionPoints);
-		local possessing = this.new("scripts/skills/effects/possessing_undead_effect");
-		possessing.setPossessed(target);
-		_user.getSkills().add(possessing);
+		// local possessing = this.new("scripts/skills/effects/possessing_undead_effect");
+		// possessing.setPossessed(target);
+		// _user.getSkills().add(possessing);
 		return true;
 	}
 

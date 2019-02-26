@@ -116,3 +116,21 @@ adds charge active, not given to anyone yet
 fixed shovel label
 took berserker head out the general pool since he looks funny with some hairs
 Increased size of Rabble spawns.
+
+
+Beta 9
+*Warlock rework
+	* Gains ability to summon zombies and skeletons
+	* New item types, human carrion and human bones, the 'ammo' for summoning
+	* Human carrion & human bones have a medicine upkeep (no wages for these guys, just lots of bandages to keep em' patched up)
+	* 3 tiers of zombie summoning
+		- All Tiers have Double Grip and Zombie Bite.
+		- Teir 1 : Low end armor/weapons; Have BattleForged, Fast Adaptation, Footwork
+		- Teir 2 : Medium end armor/weapons; Have BattleForged, Rotation
+		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
+	* 3 tiers of skeleton summoning
+		- All Tiers have Skeleton Racial, Double Grip, Hand-to-Hand, and Pathfinder
+		- Teir 1 : Low end ancient weapons/armor; Mastery Sword, Mastery Spear
+		- Teir 2 : Medium end armor/weapons; Steel Brow, Shield Expert
+		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
+	* New Perks: Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition

@@ -23,6 +23,7 @@ this.perk_legend_spawn_skeleton_low <- this.inherit("scripts/skills/skill", {
 			stash.add(this.new("scripts/items/spawns/skeleton_item"));
 			stash.add(this.new("scripts/items/spawns/skeleton_item"));
 			stash.add(this.new("scripts/items/spawns/skeleton_item"));
+			this.World.Assets.addMedicine(30);
 		}
 	}
 	

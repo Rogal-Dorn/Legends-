@@ -3,21 +3,12 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 
 	function onInit()
 	{
-		this.skeleton.onInit();
-		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.SkeletonHeavy);
-		b.IsAffectedByNight = false;
-		b.IsAffectedByInjuries = false;
-		b.IsImmuneToBleeding = true;
-		b.IsImmuneToPoison = true;
-		b.IsSpecializedInAxes = true;
-		b.IsSpecializedInCleavers = true;
-		this.m.ActionPoints = b.ActionPoints;
-		this.m.Hitpoints = b.Hitpoints;
-		this.m.CurrentProperties = clone b;
-		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
-		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
+		this.m.SpawnType = this.Const.Tactical.Actor.SkeletonHeavy;
+		this.legend_skeleton.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));		
+		this.m.Skills.update();
 	}
 
 	function assignRandomEquipment()

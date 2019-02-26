@@ -2,21 +2,12 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 	m = {},
 	function onInit()
 	{
-		this.zombie.onInit();
-		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.ZombieKnight);
-		b.SurroundedBonus = 10;
-		b.IsAffectedByNight = false;
-		b.IsAffectedByInjuries = false;
-		b.IsImmuneToBleeding = true;
-		b.IsImmuneToPoison = true;
-
-		this.m.ActionPoints = b.ActionPoints;
-		this.m.Hitpoints = b.Hitpoints;
-		this.m.CurrentProperties = clone b;
+		this.m.SpawnType = this.Const.Tactical.Actor.ZombieKnight;
+		this.legend_zombie.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+		this.m.Skills.update();	
 	}
 
 	function assignRandomEquipment()

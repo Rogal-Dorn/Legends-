@@ -174,11 +174,13 @@
 
 			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_low") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_med") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))
 			{
+				this.logInfo("*ZOMBIE LOOT**")
 				zombieLoot = true;
 			}
 
 			if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_low") || bro.getSkills().hasSkill("perk.legend_spawn_skeleton_med") || bro.getSkills().hasSkill("perk.legend_spawn_skeleton_high"))
 			{
+				this.logInfo("*SKELETON LOOT**")
 				skeletonLoot = true;
 			}
 

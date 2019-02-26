@@ -6,8 +6,8 @@ this.legend_spawn_skeleton_high_skill <- this.inherit("scripts/skills/actives/le
 		this.m.ID = "actives.legend_spawn_skeleton_high_skill";
 		this.m.Name = "Summon Heavy Skeleton";
 		this.m.Description = "Unleash your skeleton and send him charging into the enemy. Needs a free tile adjacent.";
-		this.m.Icon = "skills/raisedead2.png",
-		this.m.IconDisabled = "skills/raisedead2_bw.png",
+		this.m.Icon = "skills/rebuild_skeleton.png",
+		this.m.IconDisabled = "skills/rebuild_skeleton_bw.png",
 		this.m.Overlay = "active_26";
 		// this.m.SoundOnUse = [
 		// 	"sounds/enemies/geist_idle_10.wav",

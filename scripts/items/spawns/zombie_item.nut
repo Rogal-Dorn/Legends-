@@ -18,7 +18,7 @@ this.zombie_item <- this.inherit("scripts/items/spawns/spawn_item", {
 		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
-		this.m.Icon = "tools/zombie_01_0" + this.m.Variant + "_70x70.png";
+		this.m.Icon = "supplies/human_carrion.png";
 		this.m.Value = 1000;
 		this.m.MedicinePerDay = 2;
 	}

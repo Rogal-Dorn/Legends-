@@ -4,8 +4,8 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 	{
 		this.m.ID = "actives.legend_violent_decomposition_skill";
 		this.m.Name = "Violent Decomposition";
-		this.m.Icon = "skills/raisedead2.png",
-		this.m.IconDisabled = "skills/raisedead2_bw.png",
+		this.m.Icon = "skills/violent_decomposition.png",
+		this.m.IconDisabled = "skills/violent_decomposition_bw.png",
 		this.m.Overlay = "active_26";
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
@@ -66,9 +66,9 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 
 	function onUse( _user, _targetTile )
 	{
-		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " sets " + this.Const.UI.getColorizedEntityName(target) + "to violently explode next turn");
 		local target = _targetTile.getEntity();
 		target.getSkills().add(this.new("scripts/skills/effects/legend_violent_decomposition_effect"));
+		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " sets " + this.Const.UI.getColorizedEntityName(target) + "to violently explode next turn");
 	}
 
 
