@@ -396,7 +396,6 @@ this.asset_manager <- {
 		{
 		case this.Const.LegendMod.StartTypes.Noble:
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_noble_commander_background"
 			]);
@@ -405,70 +404,67 @@ this.asset_manager <- {
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
 			this.setBrothersMax(6);
+			
 
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_noble_shield"
 			]);
-			bro.setPlaceInFormation(4);
+			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_noble_2h"
 			]);
-			bro.setPlaceInFormation(5);
+			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_noble_shield"
 			]);
-			bro.setPlaceInFormation(6);
+			bro.setPlaceInFormation(5);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_noble_ranged"
 			]);
 			bro.setPlaceInFormation(12);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
 			bro.setVeteranPerks(3);
-
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_noble_ranged"
 			]);
 			bro.setPlaceInFormation(14);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
 			bro.setVeteranPerks(3);
 
-
-			break;
+		break;
 
 		case this.Const.LegendMod.StartTypes.Crusader:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
-				"legend_crusader_commander_background"
+				"legend_noble_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(1);
+			this.setBrothersMax(2);
+						bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx([
+				"legend_squire_background"
+			]);
+			bro.setPlaceInFormation(3);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(2);
+			this.setBrothersMax(2);
+
+
 			break;
 
 		case this.Const.LegendMod.StartTypes.Rangers:
@@ -479,23 +475,23 @@ this.asset_manager <- {
 			]);
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(1);
+			this.setBrothersMax(3);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"hunter_background"
+			]);
 			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			// bro = roster.create("scripts/entity/tactical/player");
-			// bro.setName(this.m.FounderNames[1][1]);
-			// bro.setStartValuesEx([
-			// 	"legend_ranger_background"
-			// ]);
-			// bro.setPlaceInFormation(4);
-			// bro.m.HireTime = this.Time.getVirtualTimeF();
-			// bro = roster.create("scripts/entity/tactical/player");
-			// bro.setName(this.m.FounderNames[2][1]);
-			// bro.setStartValuesEx([
-			// 	"legend_ranger_background"
-			// ]);
-			// bro.setPlaceInFormation(5);
-			// bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[2][1]);
+			 bro.setStartValuesEx([
+				"bowyer_background"
+			]);
+			bro.setPlaceInFormation(5);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			break;
 		case this.Const.LegendMod.StartTypes.Necro:

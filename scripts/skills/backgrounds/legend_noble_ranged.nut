@@ -139,16 +139,16 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		local r;
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-		items.addToBag(this.new("scripts/items/weapons/knife"));
+		items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
 		r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
+			items.equip(this.new("scripts/items/armor/legend_rabble_tunic"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/armor/thick_tunic"));
+			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 	}
 
