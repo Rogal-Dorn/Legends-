@@ -14,32 +14,11 @@ this.vazl_RSH_bravery <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function getTooltip()
-	{
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-		ret.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/regular_damage.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Resolve"
-		});
-		return ret;
-	}
-
-
 	function onUpdate (_properties)
 	{
 		_properties.Bravery *= 1.1;
+		_properties.MoraleCheckBravery[0] += 5;
+		_properties.MoraleCheckBravery[1] += 5;
+		_properties.MoraleCheckBravery[2] += 5;
 	}
 });
