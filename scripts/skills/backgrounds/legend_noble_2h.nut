@@ -1,9 +1,9 @@
-this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legends_noble_2h";
+		this.m.ID = "background.legend_noble_2h";
 		this.m.Name = "Warrior";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 0;
