@@ -1,4 +1,4 @@
-this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legends_noble_shield <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
