@@ -22,7 +22,7 @@ this.legend_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 40.0;
 		this.m.StaminaModifier = -4;
 		this.m.RangeMin = 1;
-		this.m.RangeMax = 1;
+		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 30;

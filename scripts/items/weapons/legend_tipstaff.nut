@@ -21,9 +21,9 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
 		this.m.StaminaModifier = -4;
-		this.m.RangeMin = 1;
-		this.m.RangeMax = 1;
-		this.m.RangeIdeal = 1;
+		this.m.RangeMin = 2;
+		this.m.RangeMax = 2;
+		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.3;

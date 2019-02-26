@@ -21,9 +21,9 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 100.0;
 		this.m.ConditionMax = 100.0;
 		this.m.StaminaModifier = -4;
-		this.m.RangeMin = 1;
-		this.m.RangeMax = 6;
-		this.m.RangeIdeal = 1;
+		this.m.RangeMin = 2;
+		this.m.RangeMax = 2;
+		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.3;
