@@ -1,4 +1,4 @@
-this.legends_noble_shield <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
@@ -142,34 +142,30 @@ this.legends_noble_shield <- this.inherit("scripts/skills/backgrounds/character_
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
+			items.equip(this.new("scripts/items/armor/thick_tunic"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/armor/padded_surcoat"));
+			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/armor/gambeson"));
+			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 
 		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
+			items.equip(this.new("scripts/items/helmets/headscarf"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/helmets/open_leather_cap"));
+			items.equip(this.new("scripts/items/helmets/straw_hat"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/full_leather_cap"));
+			items.equip(this.new("scripts/items/helmets/hood"));
 		}
 	}
 

@@ -118,3 +118,6 @@ took berserker head out the general pool since he looks funny with some hairs
 Increased size of Rabble spawns.
 staves now have a range of 2
 Noble now has 5 retainers
+Ranger begins with a hunter and bowyer
+Crusader begins with a squire
+Runed versions of all vanilla armours and weapons
