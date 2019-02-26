@@ -1,10 +1,10 @@
-this.vazl_RSW_power <- this.inherit("scripts/skills/skill", {
+this.vazl_RSA_endurance <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "special.vazl_RSW_power";
-		this.m.Name = "Rune Sigil: Power";
-		this.m.Description = "Rune Sigil: Power";
+		this.m.ID = "special.vazl_RSA_endurance";
+		this.m.Name = "Rune Sigil: Endurance";
+		this.m.Description = "Rune Sigil: Endurance";
 		this.m.Icon = "ui/rune_sigils/vazl_rune_sigil.png";
 		this.m.Type = this.Const.SkillType.Special | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast;
@@ -16,6 +16,7 @@ this.vazl_RSW_power <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		_properties.DamageTotalMult *= 1.1;
+		_properties.FatigueRecoveryRate += 1;
+		_properties.FatigueEffectMult *= 0.9;
 	}
 });

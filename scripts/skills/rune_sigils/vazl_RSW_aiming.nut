@@ -14,30 +14,6 @@ this.vazl_RSW_aiming <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function getTooltip()
-	{
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-		ret.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/regular_damage.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Attack Skills"
-		});
-		return ret;
-	}
-
-
 	function onUpdate (_properties)
 	{
 		_properties.MeleeSkillMult *= 1.1;

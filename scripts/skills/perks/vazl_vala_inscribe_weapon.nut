@@ -43,7 +43,7 @@ this.vazl_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		if (this.Math.ceil((this.m.InscriptionSuccessCooldown - this.getDaysSinceInscriptionSuccess())) > 0)
+		if (this.Math.ceil((this.m.InscriptionSuccessCooldown - this.getDaysSinceInscriptionSuccess())) > 0 && this.World.State.getCombatStartTime() == 0)
 		{
 			return false;
 		}
@@ -109,7 +109,7 @@ this.vazl_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 
 		if ((this.getTimeSinceInscriptionTry() >= this.m.InscriptionTryCooldown && this.getDaysSinceInscriptionSuccess() >= this.m.InscriptionSuccessCooldown && this.World.Assets.getStash().hasEmptySlot()) || (this.m.FirstTime == true && this.World.Assets.getStash().hasEmptySlot()))
 		{
-			local expertise = 5;
+			local expertise = 5 + ((this.getContainer().getActor().getLevel() / this.Const.LevelXP.len()) * 5);
 
 			if ((this.Math.rand(1, 400) <= expertise) || this.m.FirstTime == true)
 			{
@@ -118,7 +118,9 @@ this.vazl_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 				local weapon_candidates = [];
 
 				local IgnoredWeapons = [
-					"weapon.throwing_spear"
+					"weapon.throwing_spear",
+					"weapon.lute",
+					"weapon.wonky_bow"
 				];
 
 				foreach (bro in brothers)

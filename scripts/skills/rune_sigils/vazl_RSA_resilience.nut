@@ -14,30 +14,6 @@ this.vazl_RSA_resilience <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function getTooltip()
-	{
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-		ret.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/regular_damage.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs"
-		});
-		return ret;
-	}
-
-
 	function onUpdate (_properties)
 	{
 		_properties.IsImmuneToStun = true;

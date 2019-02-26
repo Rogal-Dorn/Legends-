@@ -1162,9 +1162,9 @@ gt.Const.Strings.PerkDescription <- {
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
 
 	vazl_ValaInscriptionMastery = "Lowers the cooldown until the Vala can begin inscribing items again (after a successful inscription) from 20 to [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] days, and increases her inscription speed.",
-	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any wielded weapon in the company with a random rune sigil.\n\nPossibilities: aiming, draining, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
-	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any worn helmet in the company with a random rune sigil.\n\nPossibilities: bravery, vision, wisdom\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
-	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any worn armor in the company with a random rune sigil.\n\nPossibilities: recovery, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again."
+	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any wielded weapon in the company with a random rune sigil.\n\nPossibilities: aiming, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
+	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any worn helmet in the company with a random rune sigil.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
+	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any worn armor in the company with a random rune sigil.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
