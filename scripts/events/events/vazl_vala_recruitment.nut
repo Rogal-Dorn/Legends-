@@ -90,7 +90,7 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 
 
 		this.m.Town = town;
-		this.m.Score = 10 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 10);
+		this.m.Score = 15 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 15);
 	}
 
 	function onPrepare()
@@ -101,7 +101,7 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"townname",
-			this.m.Town.getName()
+			this.m.Town.m.Name
 		]);
 	}
 
