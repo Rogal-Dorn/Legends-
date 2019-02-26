@@ -95,6 +95,10 @@ this.named_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.StaminaModifier = _in.readI8();
 		this.armor.onDeserialize(_in);
 		this.updateVariant();
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

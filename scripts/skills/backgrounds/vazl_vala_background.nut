@@ -20,6 +20,13 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.fainthearted",
 			"trait.insecure"
 		];
+		this.m.ExcludedTalents = [
+			this.Const.Attributes.Hitpoints,
+			this.Const.Attributes.MeleeSkill,
+			this.Const.Attributes.RangedSkill,
+			this.Const.Attributes.MeleeDefense,
+			this.Const.Attributes.RangedDefense
+		];
 		this.m.Titles = [
 			"the Vala"
 		];

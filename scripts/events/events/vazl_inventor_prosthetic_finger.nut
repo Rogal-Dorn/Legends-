@@ -72,7 +72,7 @@ this.vazl_inventor_prosthetic_finger <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = pros_foot_trait.getIcon(),
-						text = _event.m.Nofoot.getName() + " receives a " + pros_foot_trait.getName()
+						text = _event.m.Nofoot.m.Name + " receives a " + pros_foot_trait.m.Name
 				});
 
 				local maimed_foot_bye = this.new("scripts/skills/injury_permanent/missing_finger_injury");
@@ -80,11 +80,11 @@ this.vazl_inventor_prosthetic_finger <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = maimed_foot_bye.getIcon(),
-						text = _event.m.Nofoot.getName() + " no longer has a " + maimed_foot_bye.getName()
+						text = _event.m.Nofoot.m.Name + " no longer has a " + maimed_foot_bye.m.Name
 				});
 
-				_event.m.Inventor.improveMood(2.0, "Created a " + pros_foot_trait.getName() + " for " + _event.m.Nofoot.getName());
-				_event.m.Nofoot.improveMood(2.0, "Received a " + pros_foot_trait.getName() + " from " + _event.m.Inventor.getName());
+				_event.m.Inventor.improveMood(2.0, "Created a " + pros_foot_trait.m.Name + " for " + _event.m.Nofoot.m.Name);
+				_event.m.Nofoot.improveMood(2.0, "Received a " + pros_foot_trait.m.Name + " from " + _event.m.Inventor.m.Name);
 			}
 		});
 		this.m.Screens.push({
@@ -167,11 +167,11 @@ this.vazl_inventor_prosthetic_finger <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"inventor",
-			this.m.Inventor.getName()
+			this.m.Inventor.m.Name
 		]);
 		_vars.push([
 			"nofoot",
-			this.m.Nofoot.getName()
+			this.m.Nofoot.m.Name
 		]);
 	}
 

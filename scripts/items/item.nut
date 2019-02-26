@@ -31,7 +31,7 @@ this.item <- {
 		IsUsable = false,
 		IsSold = false,
 		IsBought = false,
-		IsRuned = false
+		RuneVariant = 0
 	},
 	function setContainer( _c )
 	{
@@ -516,19 +516,6 @@ this.item <- {
 		this.m.LastEquippedByFaction = _faction;
 	}
 
-	function onEquip()
-	{
-		if (this.m.Container != null && this.m.Container.getActor() != null)
-		{
-			this.m.LastEquippedByFaction = this.m.Container.getActor().getFaction();
-		}
-	}
-
-	function onUnequip()
-	{
-		this.clearSkills();
-	}
-
 	function onPutIntoBag()
 	{
 	}
@@ -598,13 +585,170 @@ this.item <- {
 	{
 	}
 
-	function setRuned()
+	function onUnequip()
 	{
+		this.clearSkills();
 	}
 
-	function getRuned()
+	function onEquip()
 	{
-		return this.m.IsRuned;
+		if (this.m.Container != null && this.m.Container.getActor() != null)
+		{
+			this.m.LastEquippedByFaction = this.m.Container.getActor().getFaction();
+		}
+
+		if (this.isRuned())
+		{
+			this.onEquipRuneSigil();
+		}
+	}
+
+	function onEquipRuneSigil()
+	{
+		switch (this.m.RuneVariant)
+		{
+			case 1:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSW_power"));
+				break;
+
+			case 2:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSW_aiming"));
+				break;
+
+			case 3:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSW_draining"));
+				break;
+
+			case 11:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSH_vision"));
+				break;
+
+			case 12:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSH_wisdom"));
+				break;
+
+			case 13:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSH_bravery"));
+				break;
+
+			case 21:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSA_recovery"));
+				break;
+
+			case 22:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSA_safety"));
+				break;
+
+			case 23:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSA_resilience"));
+				break;
+
+			default:
+				break;
+		}
+	}
+
+	function getRuneSigilTooltip(_rune)
+	{
+		switch (this.m.RuneVariant)
+		{
+			case 1:
+				return "This item is inscribed with the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Damage"
+				break;
+
+			case 2:
+				return "This item is inscribed with the rune sigil of Aiming:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Attack Skills"
+				break;
+
+			case 3:
+				return "This item is inscribed with the rune sigil of Draining:\n[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of Inflicted Health Damage Heals the Wielder"
+				break;
+
+			case 11:
+				return "This item is inscribed with the rune sigil of Vision:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision"
+				break;
+
+			case 12:
+				return "This item is inscribed with the rune sigil of Wisdom:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience Gain"
+				break;
+
+			case 13:
+				return "This item is inscribed with the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Resolve"
+				break;
+
+			case 21:
+				return "This item is inscribed with the rune sigil of Recovery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Fatigue Recovery Per Turn"
+				break;
+
+			case 22:
+				return "This item is inscribed with the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Hitpoints, [color=" + this.Const.UI.Color.PositiveValue + "]-5%[/color] Damage Received"
+				break;
+
+			case 23:
+				return "This item is inscribed with the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs"
+				break;
+
+			default:
+				return "This item is inscribed with a rune sigil, even though it shouldn't have been: please report this bug."
+				break;
+		}
+	}
+
+	function setRuneVariant(_rune)
+	{
+		this.m.RuneVariant = _rune;
+	}
+
+	function getRuneVariant()
+	{
+		return this.m.RuneVariant;
+	}
+
+	function isRuned()
+	{
+		if (this.m.RuneVariant > 0)
+		{
+			return true;
+		}
+	}
+
+	function updateRuneSigil()
+	{
+		if (this.m.Name.find("(Runed)") == null)
+		{
+			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		}
+	}
+
+	function updateRuneSigilAppearance()
+	{
+		local iconLargeParts = split(this.m.IconLarge, "/");
+		local iconParts = split(this.m.Icon, "/");
+		local text = ""
+		for (local i = 0; i < iconLargeParts.len(); i = ++i)
+		{
+			this.logInfo(iconLargeParts[i]);
+			if (i == iconLargeParts.len() - 1)
+			{
+				text = text + "runed_" + iconLargeParts[i]
+			} else {
+				text = text + iconLargeParts[i] + "/";
+			}
+		}
+		this.m.IconLarge = text;
+
+		text = ""
+		for (local i = 0; i < iconParts.len(); i = ++i)
+		{
+			if (i == iconParts.len() - 1)
+			{
+				text = text + "runed_" + iconParts[i]
+			} else {
+				text = text + iconParts[i] + "/";
+			}
+		}
+		this.m.Icon = text;
+		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
 	}
 
 	function onSerialize( _out )
@@ -613,7 +757,7 @@ this.item <- {
 		_out.writeU16(this.m.Variant);
 		_out.writeF32(this.m.Condition);
 		_out.writeF32(this.m.PriceMult);
-		_out.writeBool(this.m.IsRuned);
+		_out.writeU8(this.m.RuneVariant);
 	}
 
 	function onDeserialize( _in )
@@ -634,7 +778,7 @@ this.item <- {
 
 		if (_in.getMetaData().getVersion() >= 48)
 		{
-			this.m.IsRuned = _in.readBool();
+			this.m.RuneVariant = _in.readU8();
 		}		
 	
 		this.updateVariant();

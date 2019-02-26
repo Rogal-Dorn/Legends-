@@ -1064,7 +1064,12 @@ gt.Const.Strings.PerkName <- {
 	SpecPolearm = "Polearm Mastery",
 	SpecHammer = "Hammer Mastery",
 	SpecMace = "Mace Mastery",
-	SpecFlail = "Flail Mastery"
+	SpecFlail = "Flail Mastery",
+
+	vazl_ValaInscriptionMastery = "Inscription Mastery",
+	vazl_ValaInscribeWeapon = "Inscribe Weapon",
+	vazl_ValaInscribeHelmet = "Inscribe Helmet",
+	vazl_ValaInscribeArmor = "Inscribe Armor"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1154,7 +1159,12 @@ gt.Const.Strings.PerkDescription <- {
 	SpecPolearm = "Master polearms and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nPolearm skills have their Action Point cost reduced to [color=" + this.Const.UI.Color.NegativeValue + "]5[/color], and no longer have a penalty for attacking targets directly adjacent.",
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
 	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.",
-	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit."
+	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+
+	vazl_ValaInscriptionMastery = "Lowers the cooldown until the Vala can begin inscribing items again (after a successful inscription) from 20 to [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] days, and increases her inscription speed.",
+	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any wielded weapon in the company with a random rune sigil.\n\nPossibilities: aiming, draining, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
+	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any worn helmet in the company with a random rune sigil.\n\nPossibilities: bravery, vision, wisdom\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
+	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any worn armor in the company with a random rune sigil.\n\nPossibilities: recovery, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
