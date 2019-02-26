@@ -21,9 +21,9 @@ this.legend_staff_gnarled <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -4;
-		this.m.RangeMin = 1;
-		this.m.RangeMax = 1;
-		this.m.RangeIdeal = 1;
+		this.m.RangeMin = 2;
+		this.m.RangeMax = 2;
+		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 0.3;
