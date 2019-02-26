@@ -117,3 +117,4 @@ fixed shovel label
 took berserker head out the general pool since he looks funny with some hairs
 Increased size of Rabble spawns.
 staves now have a range of 2
+Noble now has 5 retainers

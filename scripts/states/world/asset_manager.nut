@@ -400,11 +400,63 @@ this.asset_manager <- {
 			bro.setStartValuesEx([
 				"legend_noble_commander_background"
 			]);
-			bro.setPlaceInFormation(4);
+			bro.setPlaceInFormation(13);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(1);
+			this.setBrothersMax(6);
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_noble_shield"
+			]);
+			bro.setPlaceInFormation(4);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(3);
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_noble_2h"
+			]);
+			bro.setPlaceInFormation(5);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(3);
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_noble_shield"
+			]);
+			bro.setPlaceInFormation(6);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(3);
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_noble_ranged"
+			]);
+			bro.setPlaceInFormation(12);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(3);
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_noble_ranged"
+			]);
+			bro.setPlaceInFormation(14);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(3);
+
+
 			break;
 
 		case this.Const.LegendMod.StartTypes.Crusader:
