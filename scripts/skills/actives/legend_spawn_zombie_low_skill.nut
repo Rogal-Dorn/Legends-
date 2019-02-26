@@ -1,13 +1,13 @@
-this.legends_spawn_zombie_low_skill <- this.inherit("scripts/skills/actives/legends_spawn_skill", {
+this.legend_spawn_zombie_low_skill <- this.inherit("scripts/skills/actives/legend_spawn_skill", {
 	m = {},
 	function create()
 	{
-		this.legends_spawn_skill.create();
-		this.m.ID = "actives.legends_spawn_zombie_low_skill";
-		this.m.Name = "Unleash Zombie";
+		this.legend_spawn_skill.create();
+		this.m.ID = "actives.legend_spawn_zombie_low_skill";
+		this.m.Name = "Summon Light Zombie";
 		this.m.Description = "Unleash your zombie and send him charging into the enemy. Needs a free tile adjacent.";
-		this.m.Icon = "skills/active_26.png";
-		this.m.IconDisabled = "skills/active_01_sw.png";
+		this.m.Icon = "skills/raisedead2.png",
+		this.m.IconDisabled = "skills/raisedead2_bw.png",
 		this.m.Overlay = "active_26";
 		// this.m.SoundOnUse = [
 		// 	"sounds/enemies/geist_idle_10.wav",
@@ -20,12 +20,13 @@ this.legends_spawn_zombie_low_skill <- this.inherit("scripts/skills/actives/lege
 			"sounds/enemies/necromancer_03.wav"
 		];
 		this.m.SpawnItem =  "spawns.zombie",
-		this.m.Script = "scripts/entity/tactical/legends_zombie"
+		this.m.Script = "scripts/entity/tactical/legends_zombie_low"
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 4;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted + 5;
 	}
 
 });

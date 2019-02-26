@@ -6,9 +6,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 		Sprite = null,
 		SpriteCorpse = null,
 		Entity = null,
-		MedicinePerDay = 0,
-		Decay = 0.0,
-		DecayRate = 20
+		DecayRate = 0.2
 	},
 
 	function isAllowedInBag()
@@ -80,12 +78,13 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
-		if (this.m.Decay > 0)
+		if (this.m.Condition < this.m.ConditionMax)
 		{
+
 			result.push({
-				id = 8,
-				type = "hint",
-				text = "Decayed [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Decay + "%[/color]"
+				id = 67,
+				type = "text",
+				text = "Decayed [color=" + this.Const.UI.Color.NegativeValue + "]" + (100 - this.m.Condition * 100) + "%[/color] due to lack of medical parts"
 			});
 		}
 
@@ -97,50 +96,67 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 		return this.m.Entity != null;
 	}
 
-
 	function getDescription()
 	{
 		return this.item.getDescription();
-	}
-
-	function updateVariant()
-	{
-		this.setEntity(this.m.Entity);
 	}
 
 	function setEntity( _e )
 	{
 		this.m.Entity = _e;
 	}
-	
-	function updateVariant()
-	{
-		this.setEntity(this.m.Entity);
-	}
 
 	function onUpdateProperties( _properties )
 	{
 	}
 
+	function getMedicinePerDay()
+	{
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			if (!bro.getSkills().hasSkill("perk.legends_conservation"))
+			{
+				continue
+			}
+
+			local skill = bro.getSkills().getSkillByID("perk.legends_conservation")
+			return this.Math.floor(this.m.MedicinePerDay * skill.m.MedicinePerDayMult);
+		}
+		return this.m.MedicinePerDay;
+	}
+
 	function onCombatFinished()
 	{
+		if (this.m.Entity == null)
+		{
+			return
+		}
+		
+		if (this.m.Entity.m.IsAlive)
+		{
+			this.setEntity(null);
+			this.World.Assets.getStash().add(this);
+			return;
+		}
+
 		this.setEntity(null);
 	}
 
+
 	function onNewDay()
 	{
-		if (this.World.Assets.getMedicine() >= this.m.MedicinePerDay) {
-			this.World.Assets.addMedicine(-this.m.MedicinePerDay);
-			if (this.m.Decay > 0) 
+		if (this.World.Assets.getMedicine() >= this.getMedicinePerDay()) {
+			this.World.Assets.addMedicine(-this.getMedicinePerDay());
+			if (this.m.Condition < this.m.ConditionMax) 
 			{
-				this.m.Decay -= this.m.DecayRate;
+				this.m.Condition = this.Math.min(this.m.ConditionMax, this.m.Condition += this.m.DecayRate);
 			}
 		} else {
 			this.World.Assets.addMedicine(-this.World.Assets.getMedicine());
-			this.m.Decay += this.m.DecayRate;
+			this.m.Condition = this.Math.min(0, this.m.Condition -= this.m.DecayRate);
 		}
 
-		if (this.m.Decay >= 100) 
+		if (this.m.Condition <= 0) 
 		{
 			this.World.Assets.getStash().remove(this);
 		}
@@ -150,17 +166,11 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
-		_out.writeF32(this.m.Decay);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
-		this.updateVariant();
-		if (_in.getMetaData().getVersion() >= 50)
-		{
-			this.m.Decay = _in.readF32();
-		}
 	}
 
 });

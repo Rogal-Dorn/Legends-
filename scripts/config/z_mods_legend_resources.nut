@@ -119,11 +119,13 @@ gt.Const.LegendMod.getMaxMedicine <- function ( _background )
 		case "background.monk":
 		case "background.butcher":
 		case "background.female_butcher":
-		case "background.legend_commander_necro":
-		case "background.legend_necro":
 		case "background.vazl_vala":
 			return 15;
 			break;
+
+		case "background.legend_commander_necro":
+		case "background.legend_necro":
+			return 42;
 
 		default:
 			return 5;

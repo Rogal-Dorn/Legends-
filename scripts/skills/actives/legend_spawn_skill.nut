@@ -1,8 +1,9 @@
-this.legends_spawn_skill <- this.inherit("scripts/skills/skill", {
+this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		Items = [],
 		SpawnItem =  "",
-		Script = ""
+		Script = "",
+		IsControlledByPlayer = true
 	},
 
 	function setItem( _i )
@@ -20,6 +21,7 @@ this.legends_spawn_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsHidden = false;
+		this.m.IsRanged = true;
 		this.m.IsTargetingActor = false;
 		this.m.IsVisibleTileNeeded = true;
 		this.m.IsIgnoredAsAOO = true;
@@ -28,6 +30,40 @@ this.legends_spawn_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 4;
+	}
+
+	function getMaxRange()
+	{
+		if (this.m.Container == null)
+		{
+			return this.m.MaxRange;
+		}
+
+		local skill = this.getContainer().getSkillByID("perk.legend_extended_aura");
+		if (skill == null)
+		{
+			return this.m.MaxRange
+		}
+
+		return this.m.MaxRange + skill.m.RangeIncrease;
+	}
+
+
+	function getFatigueCost()
+	{
+
+		if (this.m.Container == null)
+		{
+			return this.Math.ceil(this.m.FatigueCost * this.m.Container.getActor().getCurrentProperties().FatigueEffectMult);
+		}
+		
+		local perkMult = 1.0;
+		local skill = this.getContainer().getSkillByID("perk.legend_channeled_power");
+		if (skill != null)
+		{
+			perkMult = skill.m.FatigueMult;
+		}
+		return this.Math.round(this.Math.ceil(this.m.FatigueCost * perkMult * this.m.FatigueCostMult * this.m.Container.getActor().getCurrentProperties().FatigueEffectMult) + this.m.Container.getActor().getCurrentProperties().FatigueOnSkillUse);
 	}
 
 	function getTooltip()
@@ -101,8 +137,39 @@ this.legends_spawn_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-		local actor = this.getContainer().getActor();
-		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.IsEmpty;
+		if (this.m.IsTargetingActor && (_targetTile.IsEmpty || !_targetTile.getEntity().isAttackable() || !_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying()))
+		{
+			return false;
+		}
+
+		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
+		{
+			return false;
+		}
+
+		if (this.Math.abs(_targetTile.Level - _originTile.Level) > this.m.MaxLevelDifference)
+		{
+			return false;
+		}
+
+		if (!this.m.IsRanged && this.m.IsVisibleTileNeeded && this.getMaxRange() > 1 && _originTile.getDistanceTo(_targetTile) > 1)
+		{
+			local myPos = _originTile.Pos;
+			local targetPos = _targetTile.Pos;
+			local Dx = (targetPos.X - myPos.X) / 2;
+			local Dy = (targetPos.Y - myPos.Y) / 2;
+			local x = myPos.X + Dx;
+			local y = myPos.Y + Dy;
+			local tileCoords = this.Tactical.worldToTile(this.createVec(x, y));
+			local tile = this.Tactical.getTile(tileCoords);
+
+			if (tile.Level > _originTile.Level && (_originTile.Level - tile.Level < -1 || _targetTile.Level - tile.Level < -1))
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	function onUse( _user, _targetTile )
@@ -137,10 +204,17 @@ this.legends_spawn_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		local entity = this.Tactical.spawnEntity(this.getScript(), _targetTile.Coords.X, _targetTile.Coords.Y);
-		entity.setFaction(this.Const.Faction.PlayerAnimals);
+		if (this.m.IsControlledByPlayer)
+		{
+			entity.setFaction(this.Const.Faction.Player);
+		} else {
+			entity.setFaction(this.Const.Faction.PlayerAnimals);
+		}
 		entity.setItem(spawnItem);
 		entity.setName(spawnItem.getName());
 		entity.assignRandomEquipment();
+		entity.riseFromGround();
+		entity.getTags().add("IsSummoned", true);
 		spawnItem.setEntity(entity);
 		this.m.Items.push(spawnItem);
 		return true;
@@ -158,7 +232,5 @@ this.legends_spawn_skill <- this.inherit("scripts/skills/skill", {
 			item.onCombatFinished();
 		}
 		this.m.Items = [];
-
 	}
-
 });

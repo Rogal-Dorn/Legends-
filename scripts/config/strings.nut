@@ -1112,7 +1112,19 @@ gt.Const.Strings.PerkName <- {
 	LegendTrueBeliever = "True Believer",
 	LegendPoisonImmunity = "Poison Immunity",
 	LegendSummonCat = "Summon Familiar",
-	LegendSpawnZombieLow = "Spawn Weak Zombie"
+	LegendSpawnZombieLow = "Mold Carrion",
+	LegendSpawnZombieMed = "Fashion Body",
+	LegendSpawnZombieHigh = "Remake Man",
+	LegendSpawnSkeletonLow = "Arrange Bones",
+	LegendSpawnSkeletonMed = "Align Joints",
+	LegendSpawnSkeletonHigh = "Rebuild Skeleton",
+	LegendExtendendAura = "Extended Aura",
+	LegendChanneledPower = "Channeled Power",
+	LegendReclamation = "Reclamation",
+	LegendConservation = "Conservation",
+	LegendEnthrall = "Enthrall",
+	LegendViolentDecomposition = "Violent Decomposition",
+	LegendPossession = "Possession"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1247,8 +1259,19 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing no longer lowers this character\'s morale",
 	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons.",
 	LegendSummonCat = "Summon feline familiar to your aide. Don't worry, this particular cat has nine times a million lives.",
-	LegendSpawnZombieLow = "From the decaying parts of man and beast, raise a weakened creature of undeath to devour your enemies"
-
+	LegendSpawnZombieLow = "Raise a half-formed thrall from a pile of mismatched dead flesh. Though lacking in strength or bodily integrity, it shall obey.",
+	LegendSpawnZombieMed = "Organize the remains before you raise it so that your creation is better suited to the work it is given. Sturdier in both form and function.",
+	LegendSpawnZombieHigh = "Stitch the body together with such precision so that, once raised, it could pass as alive. A magnum opus of flesh, unsurpassed in power.",
+	LegendSpawnSkeletonLow = "Raise a ramshackle thrall from some bones only barely ordered. Though lacking in strength or bodily integrity, it shall obey.",
+	LegendSpawnSkeletonMed = "Place the bones where they belong before you raise them so that it’s less liable to fall apart. Sturdier in both form and function.",
+	LegendSpawnSkeletonHigh = "Painstakingly reorganize each bone such that, once raised, no tarsus is out of place. A magnum opus of bone, unsurpassed in power.",
+	LegendExtendendAura = "Yield to the dark power, let it ooze from your pores. With the fell energy now unrestrained, you can further project your art of rousing the dead. Increases range of all skills that raise dead by one tile.",
+	LegendChanneledPower = "Learn to better focus your art so it is less draining on your body. All skills that raise dead build up 30% less Fatigue.",
+	LegendReclamation = "Weave a bit of your magic through the waste of a corpse so more means may be salvaged. Increases how frequently you gain Human Carrion and Human Bones as loot.",
+	LegendConservation = "Conduct profane rituals meant to stave off the passage of time, further preserving the means of your craft. Reduces the cost of maintaining Human Carrion and Human Bones by 50% medicine per day.",
+	LegendEnthrall = "Pull at the strings of a single creation, compelling them to linger among you as an obedient guardian. Enthralled dead act defensively and attempt to protect you from threats.",
+	LegendViolentDecomposition = "Corrupt the force sustaining one of your thralls, causing them to detonate destructively after the corruption has time to build. Affected dead explode at the end of their turn next round, dealing damage in a 1 tile radius. The less HP they have, the more damage the explosion inflicts. If they are killed before they explode, the effect no longer triggers.",
+	LegendPossession = "Enter the mind of a thrall and assume direct control. You have complete control of a possessed thrall’s movements and actions for one turn."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

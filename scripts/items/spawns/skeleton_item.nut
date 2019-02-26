@@ -1,4 +1,4 @@
-this.zombie_item <- this.inherit("scripts/items/spawns/spawn_item", {
+this.skeleton_item <- this.inherit("scripts/items/spawns/spawn_item", {
 	m = {
 		UnleashSounds = [
 			"sounds/enemies/geist_idle_10.wav",
@@ -12,13 +12,13 @@ this.zombie_item <- this.inherit("scripts/items/spawns/spawn_item", {
 		this.spawn_item.create();
 		this.m.Variant = 1
 		this.updateVariant();
-		this.m.ID = "spawns.zombie";
-		this.m.Name = "Human Carrion";
-		this.m.Description = "A heap of human offal; limbs, skin, and gore, all salvaged from your fellow man, the perfect medium for your grim work. Requires constant preservation as the encroaching rot threatens to stall your efforts.";
+		this.m.ID = "spawns.skeleton";
+		this.m.Name = "Human Bones";
+		this.m.Description = "A pile of human bones picked perfectly clean. They creak and shudder at your presence, somehow conscious that you hold the power to rouse them once again. Requires diligent maintenance as brittle bones make poor means for your ends."
 		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
-		this.m.Icon = "tools/zombie_01_0" + this.m.Variant + "_70x70.png";
+		this.m.Icon = "misc/inventory_unhold_bones.png";
 		this.m.Value = 1000;
 		this.m.MedicinePerDay = 2;
 	}
@@ -32,5 +32,5 @@ this.zombie_item <- this.inherit("scripts/items/spawns/spawn_item", {
 		}
 		this.Sound.play("sounds/enemies/zombie_idle_" +  variant + ".wav", this.Const.Sound.Volume.Inventory);
 	}
-	
+
 });

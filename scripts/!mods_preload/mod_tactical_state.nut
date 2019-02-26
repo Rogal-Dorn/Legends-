@@ -141,8 +141,9 @@
 		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
 		local CannibalsInRoster = 0;
 		local CannibalisticButchersInRoster = 0;
-		local warlockInRoster = false;
-		local betterZombieSalvage = false;
+		local zombieSalvage = 10;
+		local zombieLoot = false;
+		local skeletonLoot = false;
 
 		foreach (bro in EntireCompanyRoster)
 		{
@@ -163,17 +164,24 @@
 						CannibalisticButchersInRoster += 1;
 					}
 					break;
-				
-				case "background.legend_necro":
-				case "background.legend_commander_necro":
-					warlockInRoster = true;
-					break;
 			}
 
-			if ( bro.getSkills().hasSkill("trait.legends_zombie_salvage"))
+			if (bro.getSkills().hasSkill("perk.legends_reclamation"))
 			{
-				betterZombieSalvage = true;
+				local skill = bro.getSkills().getSkillByID("perk.legends_reclamation")
+				zombieSalvage = skill.m.LootChance;
 			}
+
+			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_low") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_med") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))
+			{
+				zombieLoot = true;
+			}
+
+			if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_low") || bro.getSkills().hasSkill("perk.legend_spawn_skeleton_med") || bro.getSkills().hasSkill("perk.legend_spawn_skeleton_high"))
+			{
+				skeletonLoot = true;
+			}
+
 		}
 
 		local loot = [];
@@ -194,25 +202,29 @@
 					}
 				}
 
-
-
-				if (warlockInRoster && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
+				if (zombieLoot && tile.Properties.has("Corpse")) 
 				{
-					local zombieLoot = false
-					if (betterZombieSalvage)
+					if (tile.Properties.get("Corpse").isHuman == 1 || tile.Properties.get("Corpse").isHuman == 2)
 					{
-						zombieLoot = this.Math.rand(1, 100) <= 10;
-					} else {
-						zombieLoot = this.Math.rand(1, 100) <= 33;
-					}
-
-					if (zombieLoot)
-					{
-						local zloot = this.new("scripts/items/spawns/zombie_item");
-						loot.push(zloot);
+						if (this.Math.rand(1, 100) <= zombieSalvage)
+						{
+							local zloot = this.new("scripts/items/spawns/zombie_item");
+							loot.push(zloot);
+						}
 					}
 				}
 
+				if (skeletonLoot && tile.Properties.has("Corpse")) 
+				{
+					if (tile.Properties.get("Corpse").isHuman == 1 || tile.Properties.get("Corpse").isHuman == 3)
+					{
+						if (this.Math.rand(1, 100) <= zombieSalvage)
+						{
+							local zloot = this.new("scripts/items/spawns/skeleton_item");
+							loot.push(zloot);
+						}
+					}
+				}
 
 				if (this.Math.rand(1, 100) <= 8 && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
 				{

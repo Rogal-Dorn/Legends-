@@ -427,8 +427,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_roster_3",
 		Name = this.Const.Strings.PerkName.LegendRoster3,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster3,
-		Icon = "ui/perks/recruit2.png",
-		IconDisabled = "ui/perks/recruit2_bw.png"
+		Icon = "ui/perks/recruit3.png",
+		IconDisabled = "ui/perks/recruit3_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_4",
@@ -916,9 +916,104 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpawnZombieLow,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieLow,
 		Icon = "ui/perks/raisedead2_circle.png",
-		IconDisabled = "ui/perks/raisedead2_circle.png"
-	}	
-
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_spawn_zombie_med",
+		Script = "scripts/skills/perks/perk_legend_spawn_zombie_med",
+		Name = this.Const.Strings.PerkName.LegendSpawnZombieMed,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieMed,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_spawn_zombie_high",
+		Script = "scripts/skills/perks/perk_legend_spawn_zombie_high",
+		Name = this.Const.Strings.PerkName.LegendSpawnZombieHigh,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieHigh,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_spawn_skeleton_low",
+		Script = "scripts/skills/perks/perk_legend_spawn_skeleton_low",
+		Name = this.Const.Strings.PerkName.LegendSpawnSkeletonLow,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnSkeletonLow,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_spawn_skeleton_med",
+		Script = "scripts/skills/perks/perk_legend_spawn_skeleton_med",
+		Name = this.Const.Strings.PerkName.LegendSpawnSkeletonMed,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnSkeletonMed,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_spawn_skeleton_high",
+		Script = "scripts/skills/perks/perk_legend_spawn_skeleton_high",
+		Name = this.Const.Strings.PerkName.LegendSpawnSkeletonHigh,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnSkeletonHigh,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_extended_aura",
+		Script = "scripts/skills/perks/perk_legend_extended_aura",
+		Name = this.Const.Strings.PerkName.LegendExtendendAura,
+		Tooltip = this.Const.Strings.PerkDescription.LegendExtendendAura,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_channeled_power",
+		Script = "scripts/skills/perks/perk_legend_channeled_power",
+		Name = this.Const.Strings.PerkName.LegendChanneledPower,
+		Tooltip = this.Const.Strings.PerkDescription.LegendChanneledPower,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_reclamation",
+		Script = "scripts/skills/perks/perk_legend_reclamation",
+		Name = this.Const.Strings.PerkName.LegendReclamation,
+		Tooltip = this.Const.Strings.PerkDescription.LegendReclamation,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_conservation",
+		Script = "scripts/skills/perks/perk_legend_conservation",
+		Name = this.Const.Strings.PerkName.LegendConservation,
+		Tooltip = this.Const.Strings.PerkDescription.LegendConservation,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_enthrall",
+		Script = "scripts/skills/perks/perk_legend_enthrall",
+		Name = this.Const.Strings.PerkName.LegendEnthrall,
+		Tooltip = this.Const.Strings.PerkDescription.LegendEnthrall,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_violent_decomposition",
+		Script = "scripts/skills/perks/perk_legend_violent_decomposition",
+		Name = this.Const.Strings.PerkName.LegendViolentDecomposition,
+		Tooltip = this.Const.Strings.PerkDescription.LegendViolentDecomposition,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_possession",
+		Script = "scripts/skills/perks/perk_legend_possession",
+		Name = this.Const.Strings.PerkName.LegendPossession,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPossession,
+		Icon = "ui/perks/raisedead2_circle.png",
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+	}				
 ];
 
 
@@ -1036,5 +1131,17 @@ gt.Const.Perks.PerkDefs <- {
 	LegendTrueBeliever = 110,
 	LegendPoisonImmunity = 111,
 	LegendSummonCat = 112,
-	LegendSpawnZombieLow = 113	
+	LegendSpawnZombieLow = 113,
+	LegendSpawnZombieMed = 114,
+	LegendSpawnZombieHigh = 115,
+	LegendSpawnSkeletonLow =116,
+	LegendSpawnSkeletonMed = 117,
+	LegendSpawnSkeletonHigh = 118,
+	LegendExtendendAura = 119,
+	LegendChanneledPower = 120,
+	LegendReclamation = 121,
+	LegendConservation = 122,
+	LegendEnthrall = 123,
+	LegendViolentDecomposition = 124,
+	LegendPossession = 125 
 };
