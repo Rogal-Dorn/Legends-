@@ -8,12 +8,12 @@
         o.m.BloodPoolScale = 1.25;
     }
         //
-    local onResurrected = o.onResurrected;
-    o.onResurrected = function ( _info ) 
-    {
-        onResurrected(_info);
-        this.World.getPlayerRoster().add(_info);
-    }
+    // local onResurrected = o.onResurrected;
+    // o.onResurrected = function ( _info ) 
+    // {
+    //     onResurrected(_info);
+    //     this.World.getPlayerRoster().add(_info);
+    // }
     // local onInit = o.onInit;
     // o.onInit = function ()
     // {

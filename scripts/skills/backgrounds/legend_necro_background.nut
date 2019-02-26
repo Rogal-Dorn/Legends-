@@ -135,9 +135,6 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/spawns/zombie_item"));
-		stash.add(this.new("scripts/items/spawns/zombie_item"));
-		stash.add(this.new("scripts/items/spawns/zombie_item"));
 	}
 
 });
