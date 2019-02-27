@@ -6,7 +6,7 @@ this.vazl_prosthetic_eye <- this.inherit("scripts/skills/traits/character_trait"
 		this.m.ID = "trait.vazl_prosthetic_eye";
 		this.m.Name = "Prosthetic Eye";
 		this.m.Icon = "ui/traits/vazl_prosthetic_eye.png";
-		this.m.Description = "My, what pretty eyes! This one seems a bit off, however.";
+		this.m.Description = "My, what pretty eyes! This one seems a bit off, however, and the owner has to constantly shift their pupil back into position to look straight.";
 	}
 
 	function getTooltip()

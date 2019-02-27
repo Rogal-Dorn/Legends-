@@ -6,7 +6,7 @@ this.vazl_prosthetic_foot <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.vazl_prosthetic_foot";
 		this.m.Name = "Prosthetic Foot";
 		this.m.Icon = "ui/traits/vazl_prosthetic_foot.png";
-		this.m.Description = "Not quite as comfortable as your old healthy foot, but definitely better than your old maimed one.";
+		this.m.Description = "Amputation is a thing of life, and the wearer of this prosthetic foot was lucky enough to be given a replacement after the removal of their maimed one. It’s awful to walk on, but at least you can walk.";
 	}
 
 	function getTooltip()

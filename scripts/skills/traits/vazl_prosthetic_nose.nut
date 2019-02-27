@@ -6,7 +6,7 @@ this.vazl_prosthetic_nose <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.vazl_prosthetic_nose";
 		this.m.Name = "Prosthetic Nose";
 		this.m.Icon = "ui/traits/vazl_prosthetic_nose.png";
-		this.m.Description = "Nose.";
+		this.m.Description = "A roughly made fake nose that does more to ensure the wearer can actually breath than actually make them look nice. Try not to lie.";
 	}
 
 	function getTooltip()
