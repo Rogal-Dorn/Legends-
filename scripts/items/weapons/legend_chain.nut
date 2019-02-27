@@ -7,8 +7,8 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Chain";
 		this.m.Description = "Two large sticks attached with a short chain, the Wooden Flail is an agricultural tool used to strike piles of grain to loosen the husks. As an improvised weapon it\'s rather unpredictable but useful to strike over or around shield cover.";
 		this.m.Categories = "Flail, Two-Handed";
-		this.m.IconLarge = "weapons/melee/legendchain_01.png";
-		this.m.Icon = "weapons/melee/legendchain_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_chain_01.png";
+		this.m.Icon = "weapons/melee/legend_chain_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,7 +17,7 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_chain_01";
+		this.m.ArmamentIcon = "icon_legend_chain_01";
 		this.m.Value = 30;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 22.0;

@@ -137,7 +137,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/militia_spear"));
-		items.equip(this.new("scripts/items/shields/wooden_shield"));
+		items.equip(this.new("scripts/items/shields/buckler_shield"));
 		r = this.Math.rand(0, 2);
 
 		if (r == 0)
