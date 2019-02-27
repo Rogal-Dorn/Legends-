@@ -4,7 +4,7 @@ this.legend_warlock_cloak <- this.inherit("scripts/items/armor/armor", {
 	{
 		this.armor.create();
 		this.m.ID = "armor.body.legend_warlock_cloak";
-		this.m.Name = "Warlock Cload";
+		this.m.Name = "Warlock Cloak";
 		this.m.Description = "A cloak made from clothes of powerful men long dead";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
