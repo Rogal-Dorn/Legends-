@@ -32,20 +32,31 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 	}
 
-	function getMaxRange()
+	function setMaxRange( _f )
+	{
+		this.m.MaxRange = _f;
+	}
+
+	function onCombatStarted()
 	{
 		if (this.m.Container == null)
 		{
-			return this.m.MaxRange;
+			return
 		}
 
 		local skill = this.getContainer().getSkillByID("perk.legend_extended_aura");
 		if (skill == null)
 		{
-			return this.m.MaxRange
+			return
 		}
 
-		return this.m.MaxRange + skill.m.RangeIncrease;
+		this.m.MaxRange = this.m.MaxRange + skill.m.RangeIncrease;
+		this.logInfo("Setting max range of spawn to " + this.m.MaxRange + "from extended_aura perk");
+	}
+
+	function getMaxRange()
+	{
+		return this.m.MaxRange;
 	}
 
 
@@ -137,6 +148,11 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		if (!_targetTile.IsEmpty)
+		{
+			return false
+		}
+
 		if (this.m.IsTargetingActor && (_targetTile.IsEmpty || !_targetTile.getEntity().isAttackable() || !_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying()))
 		{
 			return false;

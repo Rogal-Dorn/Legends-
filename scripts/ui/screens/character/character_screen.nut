@@ -569,6 +569,10 @@ this.character_screen <- {
 
 			foreach( entity in entities )
 			{
+				if (entity.isSummoned())
+				{
+					continue;
+				}
 				result.push(this.UIDataHelper.convertEntityToUIData(entity, activeEntity));
 			}
 

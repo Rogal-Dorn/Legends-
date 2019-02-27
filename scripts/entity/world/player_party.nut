@@ -55,6 +55,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			return
 		}
 
+
 		//When playing a warlock build, we need to account for the summons he can add
 		local stash = this.World.Assets.getStash().getItems();
 	
@@ -67,7 +68,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				continue;
 			}
 
-			switch item.getID()
+			switch( item.getID())
 			{
 				case "spawns.zombie":
 					if (zombieSummonLevel == 0)
