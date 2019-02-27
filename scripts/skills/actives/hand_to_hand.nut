@@ -45,12 +45,18 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{
 			mult = 2.0;
 		}
+			local CurrentInit = this.m.Container.getActor().getItems().getInitiative()
+			local MaxHitpoints = this.m.Container.getActor().getItems().getHitpointsMax()
+			local Avg = (CurrentInit + MaxHitpoints) / 2;
+			local DamageMin += this.Math.floor(Avg - 100);
+			local DamageMax += this.Math.floor(Avg - 80);
 
-		local damage_regular_min = this.Math.floor((p.DamageRegularMin + 5) * p.DamageRegularMult * p.DamageTotalMult * mult);
-		local damage_regular_max = this.Math.floor((p.DamageRegularMax + 10) * p.DamageRegularMult * p.DamageTotalMult * mult);
-		local damage_Armor_min = this.Math.floor((p.DamageRegularMin + 5) * p.DamageArmorMult * p.DamageTotalMult * mult);
-		local damage_Armor_max = this.Math.floor((p.DamageRegularMax + 10) * p.DamageArmorMult * p.DamageTotalMult * mult);
-		local damage_direct_max = this.Math.floor(damage_regular_max * this.m.DirectDamageMult);
+
+		local damage_regular_min = DamageMin * p.DamageRegularMult * p.DamageTotalMult * mult);
+		local damage_regular_max = DamageMax * p.DamageRegularMult * p.DamageTotalMult * mult);
+		local damage_Armor_min = DamageMin * p.DamageArmorMult * p.DamageTotalMult * mult);
+		local damage_Armor_max = DamageMax * p.DamageArmorMult * p.DamageTotalMult * mult);
+		local damage_direct_max = this.Math.floor(DamageMax * this.m.DirectDamageMult);
 		local ret = [
 			{
 				id = 1,
@@ -72,7 +78,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			id = 4,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
+			text = "Inflicts damage based on hitpoints and initiative [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
 		});
 
 		if (damage_Armor_max > 0)
@@ -119,10 +125,10 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			local CurrentInit = this.m.Container.getActor().getInitiative()
-			local CurrentHitpoints = this.m.Container.getActor().getHitpoints()
-			local Mult = (CurrentInit + CurrentHitpoints) / 2;
-			_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
-			_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
+			local MaxHitpoints = this.m.Container.getActor().getHitpointsMax()
+			local Avg = (CurrentInit + MaxHitpoints) / 2;
+			_properties.DamageRegularMin += this.Math.floor(Avg - 100);
+			_properties.DamageRegularMax += this.Math.floor(Avg - 80);
 			_properties.MeleeSkill -= 10;
 		}
 	}
