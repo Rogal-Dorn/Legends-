@@ -116,7 +116,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("StartingBattle");
 		} 
-		else if (this.World.Tags.get("IsLegendsParty"))
+		else if (this.World.Tags.get("LegendsParty"))
 		{
 			this.setState("LegendsParty");
 		} 

@@ -54,7 +54,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-			local actor = this.getContainer().getActor();
+		local actor = this.getContainer().getActor();
 		local CurrentInit = actor.getInitiative();
 		local MinDam =  CurrentInit - 100;
 		local MaxDam =  CurrentInit - 90;
@@ -78,7 +78,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 			{
 				id = 4,
 				type = "text",
-				icon = "/ui/icons/heart.png",
+				icon = "/ui/icons/health.png",
 				text = "Inflicts initiative - 100 as damage. [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor"
 			}
 		];

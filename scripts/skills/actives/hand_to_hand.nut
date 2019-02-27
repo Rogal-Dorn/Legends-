@@ -38,23 +38,22 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
+		local actor = this.getContainer().getActor()
+		local p = actor.getCurrentProperties();
 		local mult = 1.0;
 
 		if (this.getContainer().hasSkill("background.brawler"))
 		{
 			mult = 2.0;
 		}
-		local CurrentInit = this.m.Container.getActor().getInitiative();
-		local MaxHitpoints = this.m.Container.getActor().getHitpointsMax();
-		local Avg = (CurrentInit + MaxHitpoints) / 2;
+		local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
 		local DamageMin = this.Math.floor(Avg - 100);
 		local DamageMax = this.Math.floor(Avg - 80);
 
-		local damage_regular_min = DamageMin * p.DamageRegularMult * p.DamageTotalMult * mult);
-		local damage_regular_max = DamageMax * p.DamageRegularMult * p.DamageTotalMult * mult);
-		local damage_Armor_min = DamageMin * p.DamageArmorMult * p.DamageTotalMult * mult);
-		local damage_Armor_max = DamageMax * p.DamageArmorMult * p.DamageTotalMult * mult);
+		local damage_regular_min = DamageMin * p.DamageRegularMult * p.DamageTotalMult * mult;
+		local damage_regular_max = DamageMax * p.DamageRegularMult * p.DamageTotalMult * mult;
+		local damage_Armor_min = DamageMin * p.DamageArmorMult * p.DamageTotalMult * mult;
+		local damage_Armor_max = DamageMax * p.DamageArmorMult * p.DamageTotalMult * mult;
 		local damage_direct_max = this.Math.floor(DamageMax * this.m.DirectDamageMult);
 		local ret = [
 			{
@@ -123,9 +122,8 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			local CurrentInit = this.m.Container.getActor().getInitiative()
-			local MaxHitpoints = this.m.Container.getActor().getHitpointsMax()
-			local Avg = (CurrentInit + MaxHitpoints) / 2;
+			local actor = this.getContainer().getActor();
+			local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
 			_properties.DamageRegularMin += this.Math.floor(Avg - 100);
 			_properties.DamageRegularMax += this.Math.floor(Avg - 80);
 			_properties.MeleeSkill -= 10;
