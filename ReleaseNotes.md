@@ -113,33 +113,33 @@ Beta 9
 		- Teir 2 : Medium end armor/weapons; Steel Brow, Shield Expert
 		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
 	* New Perks: Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition
-*Staves now have a range of 2
 *Noble now has 5 retainers
 *Ranger Commander begins with two rangers
 *Crusader begins with a squire (nerfed from default)
-*Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer and Footman's axe. 
-*Changes magic damage scaling to initiative - 100
-*Changes hand to hand to ((initiative + maxhp)/2) - 80)  
-*Adds magic missile projectile 
-*Fixes heart icon not found
-*Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
-*Adds Orc elites, truly terrifying beasts, helps make the late game not just swarms
-*Gives the new orc weapons to orcs, big ones mostly seen on berserkers and elites
-*Removes quivers from slingers
-*Fixes alignment on maids aprons and rabble tunics
 *Updated start icons to reflect new party sizes
-*New Blacksmith and ironmonger backgrounds. Both give advantages to tool repair speed and tool consumption.
 *5 new Berserker perks: TrueBeleiver, PoisonImmunity, Battleheart, Muscularity and Nudist
 *5 new Crusader perks: SteelBrow, InspiringPresence, Rebound, TrueBeliever, Battleheart; Looses Underdog
 *1 new Seer perk: SummonCat
-*New low teir armors for female boyers, female dayteler, femal farmhand, blacksmith, ironmonger
 *New custom starting armors for Warlock, Seer and Berserker 
+*New Blacksmith and ironmonger backgrounds. Both give advantages to tool repair speed and tool consumption.
+*Staves now have a range of 2
+*Balance pass on all spells altering increasing fatigue and lowering range. ranger is range king
+*Changes magic damage scaling to initiative - 100
+*Changes hand to hand to ((initiative + maxhp)/2) - 80)  
+*Adds magic missile projectile 
+*Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
+*Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer and Footman's axe. 
+*Adds Orc elites, truly terrifying beasts, helps make the late game not just swarms
+*Adds new orc weapons. Big weapons mostly seen on berserkers and elites
+*Fixes heart icon not found
+*Removes quivers from slingers
+*Fixes alignment on maids aprons and rabble tunics
+*New low teir armors for female boyers, female dayteler, femal farmhand, blacksmith, ironmonger
 *Improved small arrows, tools, medicine stash images.
 *Fixes issues due to faction size limits
 *Fixes crash when using the clear formation button
 *Nerfs sleep skill - can only sleep your target, ont adjacent ones
 *Adds slings and ammo 
-*Balance pass on all spells altering increasing fatigue and lowering range. ranger is range king
 *Fixes wither crash on undead
 *Fixed shovel label
 *Took berserker commander head out the general pool since he looks funny with some hairs

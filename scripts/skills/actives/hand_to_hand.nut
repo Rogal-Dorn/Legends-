@@ -45,12 +45,11 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{
 			mult = 2.0;
 		}
-			local CurrentInit = this.m.Container.getActor().getItems().getInitiative()
-			local MaxHitpoints = this.m.Container.getActor().getItems().getHitpointsMax()
-			local Avg = (CurrentInit + MaxHitpoints) / 2;
-			local DamageMin += this.Math.floor(Avg - 100);
-			local DamageMax += this.Math.floor(Avg - 80);
-
+		local CurrentInit = this.m.Container.getActor().getInitiative();
+		local MaxHitpoints = this.m.Container.getActor().getHitpointsMax();
+		local Avg = (CurrentInit + MaxHitpoints) / 2;
+		local DamageMin = this.Math.floor(Avg - 100);
+		local DamageMax = this.Math.floor(Avg - 80);
 
 		local damage_regular_min = DamageMin * p.DamageRegularMult * p.DamageTotalMult * mult);
 		local damage_regular_max = DamageMax * p.DamageRegularMult * p.DamageTotalMult * mult);

@@ -53,7 +53,7 @@ this.orc_young_low <- this.inherit("scripts/entity/tactical/enemies/orc_young", 
 			else if (r == 3)
 			{
 				weapon = this.new("scripts/items/weapons/morning_star");
-			},
+			}
 			else if (r == 4)
 			{
 				weapon = this.new("scripts/items/weapons/greenskins/legend_bone_carver");

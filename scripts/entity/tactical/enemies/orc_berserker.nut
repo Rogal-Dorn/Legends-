@@ -391,16 +391,15 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 		}
-			else if (r == 5)
+		else if (r == 5)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_limb_lopper"));
 		}
-				else if (r == 6)
+		else if (r == 6)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_man_mangler"));
-		}
-			}
-				else if (r == 7)
+		}	
+		else if (r == 7)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_bough"));
 		}

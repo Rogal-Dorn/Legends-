@@ -108,7 +108,7 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/dagger));
+			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
 		else if (r == 1)
 		{
@@ -122,9 +122,6 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			items.equip(this.new("scripts/items/weapons/militia_spear"));
 		}
-
-		
-
 
 		r = this.Math.rand(0, 3);
 
