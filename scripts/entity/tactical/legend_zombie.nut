@@ -13,6 +13,7 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.m.IsResurrectingOnFatality = false;
 		this.m.AIAgent = this.new("scripts/ai/tactical/idle_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.IsSummoned = true;
 	}
 
 	function onInit()
