@@ -205,6 +205,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/orc_berserker"
 	},
+	LegendOrcElite = {
+		ID = this.Const.EntityType.LegendOrcElite,
+		Variant = 0,
+		Strength = 60,
+		Cost = 60,
+		Row = 1,
+		Script = "scripts/entity/tactical/enemies/legend_orc_elite"
+	},
 	OrcWarrior = {
 		ID = this.Const.EntityType.OrcWarrior,
 		Variant = 0,

@@ -276,7 +276,7 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 2);
+			r = this.Math.rand(1, 3);
 
 			if (r == 1)
 			{
@@ -285,6 +285,10 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 			else if (r == 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
+			}
+				else if (r == 3)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skin_flayer"));
 			}
 		}
 

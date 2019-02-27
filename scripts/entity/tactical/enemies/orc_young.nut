@@ -282,6 +282,10 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					weapon = this.new("scripts/items/weapons/greenskins/orc_cleaver");
 				}
+					else if (r == 3)
+				{
+					weapon = this.new("scripts/items/weapons/greenskins/legend_skin_flayer");
+				}
 			}
 			else
 			{
@@ -299,7 +303,7 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 3);
+			r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -307,11 +311,15 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 			}
 			else if (r == 2)
 			{
-				weapon = this.new("scripts/items/weapons/hatchet");
+				weapon = this.new("scripts/items/weapons/morning_star");
 			}
 			else if (r == 3)
 			{
-				weapon = this.new("scripts/items/weapons/morning_star");
+				weapon = this.new("scripts/items/weapons/greenskins/legend_meat_hacker");
+			}
+				else if (r == 4)
+			{
+				weapon = this.new("scripts/items/weapons/greenskins/legend_bone_carver");
 			}
 		}
 
