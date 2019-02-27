@@ -172,6 +172,14 @@ gt.Const.Perks.PerksVala <- [
 	],
 	[
 		{
+			ID = "perk.vazl_vala_warden",
+			Script = "scripts/skills/perks/vazl_vala_warden",
+			Name = this.Const.Strings.PerkName.vazl_ValaWarden,
+			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaWarden,
+			Icon = "ui/perks/vazl_vala_warden.png",
+			IconDisabled = "ui/perks/vazl_vala_warden_sw.png"
+		},
+		{
 			ID = "perk.backstabber",
 			Script = "scripts/skills/perks/perk_backstabber",
 			Name = this.Const.Strings.PerkName.Backstabber,
@@ -238,100 +246,20 @@ gt.Const.Perks.PerksVala <- [
 			IconDisabled = "ui/perks/vazl_vala_inscription_mastery_sw.png"
 		},
 		{
-			ID = "perk.mastery.mace",
-			Script = "scripts/skills/perks/perk_mastery_mace",
-			Name = this.Const.Strings.PerkName.SpecMace,
-			Tooltip = this.Const.Strings.PerkDescription.SpecMace,
-			Icon = "ui/perks/perk_43.png",
-			IconDisabled = "ui/perks/perk_43_sw.png"
+			ID = "perk.vazl_vala_chanting_mastery",
+			Script = "scripts/skills/perks/vazl_vala_chanting_mastery",
+			Name = this.Const.Strings.PerkName.vazl_ValaChantingMastery,
+			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaChantingMastery,
+			Icon = "ui/perks/vazl_vala_chanting_mastery.png",
+			IconDisabled = "ui/perks/vazl_vala_chanting_mastery_sw.png"
 		},
 		{
-			ID = "perk.mastery.flail",
-			Script = "scripts/skills/perks/perk_mastery_flail",
-			Name = this.Const.Strings.PerkName.SpecFlail,
-			Tooltip = this.Const.Strings.PerkDescription.SpecFlail,
-			Icon = "ui/perks/perk_47.png",
-			IconDisabled = "ui/perks/perk_47_sw.png"
-		},
-		{
-			ID = "perk.mastery.hammer",
-			Script = "scripts/skills/perks/perk_mastery_hammer",
-			Name = this.Const.Strings.PerkName.SpecHammer,
-			Tooltip = this.Const.Strings.PerkDescription.SpecHammer,
-			Icon = "ui/perks/perk_53.png",
-			IconDisabled = "ui/perks/perk_53_sw.png"
-		},
-		{
-			ID = "perk.mastery.axe",
-			Script = "scripts/skills/perks/perk_mastery_axe",
-			Name = this.Const.Strings.PerkName.SpecAxe,
-			Tooltip = this.Const.Strings.PerkDescription.SpecAxe,
-			Icon = "ui/perks/perk_44.png",
-			IconDisabled = "ui/perks/perk_44_sw.png"
-		},
-		{
-			ID = "perk.mastery.cleaver",
-			Script = "scripts/skills/perks/perk_mastery_cleaver",
-			Name = this.Const.Strings.PerkName.SpecCleaver,
-			Tooltip = this.Const.Strings.PerkDescription.SpecCleaver,
-			Icon = "ui/perks/perk_52.png",
-			IconDisabled = "ui/perks/perk_52_sw.png"
-		},
-		{
-			ID = "perk.mastery.sword",
-			Script = "scripts/skills/perks/perk_mastery_sword",
-			Name = this.Const.Strings.PerkName.SpecSword,
-			Tooltip = this.Const.Strings.PerkDescription.SpecSword,
-			Icon = "ui/perks/perk_46.png",
-			IconDisabled = "ui/perks/perk_46_sw.png"
-		},
-		{
-			ID = "perk.mastery.dagger",
-			Script = "scripts/skills/perks/perk_mastery_dagger",
-			Name = this.Const.Strings.PerkName.SpecDagger,
-			Tooltip = this.Const.Strings.PerkDescription.SpecDagger,
-			Icon = "ui/perks/perk_51.png",
-			IconDisabled = "ui/perks/perk_51_sw.png"
-		},
-		{
-			ID = "perk.mastery.polearm",
-			Script = "scripts/skills/perks/perk_mastery_polearm",
-			Name = this.Const.Strings.PerkName.SpecPolearm,
-			Tooltip = this.Const.Strings.PerkDescription.SpecPolearm,
-			Icon = "ui/perks/perk_58.png",
-			IconDisabled = "ui/perks/perk_58_sw.png"
-		},
-		{
-			ID = "perk.mastery.spear",
-			Script = "scripts/skills/perks/perk_mastery_spear",
-			Name = this.Const.Strings.PerkName.SpecSpear,
-			Tooltip = this.Const.Strings.PerkDescription.SpecSpear,
-			Icon = "ui/perks/perk_45.png",
-			IconDisabled = "ui/perks/perk_45_sw.png"
-		},
-		{
-			ID = "perk.mastery.crossbow",
-			Script = "scripts/skills/perks/perk_mastery_crossbow",
-			Name = this.Const.Strings.PerkName.SpecCrossbow,
-			Tooltip = this.Const.Strings.PerkDescription.SpecCrossbow,
-			Icon = "ui/perks/perk_48.png",
-			IconDisabled = "ui/perks/perk_48_sw.png"
-		},
-		{
-			ID = "perk.mastery.bow",
-			Script = "scripts/skills/perks/perk_mastery_bow",
-			Name = this.Const.Strings.PerkName.SpecBow,
-			Tooltip = this.Const.Strings.PerkDescription.SpecBow,
-			Icon = "ui/perks/perk_49.png",
-			IconDisabled = "ui/perks/perk_49_sw.png"
-		},
-		{
-			ID = "perk.mastery.throwing",
-			Script = "scripts/skills/perks/perk_mastery_throwing",
-			Name = this.Const.Strings.PerkName.SpecThrowing,
-			Tooltip = this.Const.Strings.PerkDescription.SpecThrowing,
-			Icon = "ui/perks/perk_50.png",
-			IconDisabled = "ui/perks/perk_50_sw.png"
+			ID = "perk.vazl_vala_trance_mastery",
+			Script = "scripts/skills/perks/vazl_vala_trance_mastery",
+			Name = this.Const.Strings.PerkName.vazl_ValaTranceMastery,
+			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaTranceMastery,
+			Icon = "ui/perks/vazl_vala_trance_mastery.png",
+			IconDisabled = "ui/perks/vazl_vala_trance_mastery_sw.png"
 		}
 	],
 	[
