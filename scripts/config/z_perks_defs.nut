@@ -939,7 +939,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_spawn_skeleton_low",
 		Name = this.Const.Strings.PerkName.LegendSpawnSkeletonLow,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnSkeletonLow,
-		Icon = "ui/perks/arrange_bones_circle_.png",
+		Icon = "ui/perks/arrange_bones_circle.png",
 		IconDisabled = "ui/perks/arrange_bones_circle_bw.png"
 	},
 	{
