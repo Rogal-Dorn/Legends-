@@ -30,8 +30,8 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local CurrentInit = actor.getInitiative();
-		local MinDam =  CurrentInit * 0.1;
-		local MaxDam =  CurrentInit * 0.2;
+		local MinDam =  CurrentInit - 100;
+		local MaxDam =  CurrentInit - 90;
 		local p = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
@@ -52,8 +52,8 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 			{
 				id = 4,
 				type = "text",
-				icon = "/ui/tooltips/heart.png",
-				text = "Inflicts 10-20% of your initiative as damage [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor"
+				icon = "/ui/icons/heart.png",
+				text = "Inflicts your initiative - 100 as damage [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor"
 			}
 		];
 	}
@@ -61,8 +61,8 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local CurrentInit = this.getContainer().getActor().getInitiative();
-		_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
-		_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
+		_properties.DamageRegularMin += this.Math.floor(CurrentInit - 100);
+		_properties.DamageRegularMax += this.Math.floor(CurrentInit - 90);
 		_properties.IsIgnoringArmorOnAttack = true;
 	}
 
