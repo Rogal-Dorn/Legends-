@@ -172,14 +172,6 @@ gt.Const.Perks.PerksVala <- [
 	],
 	[
 		{
-			ID = "perk.vazl_vala_warden",
-			Script = "scripts/skills/perks/vazl_vala_warden",
-			Name = this.Const.Strings.PerkName.vazl_ValaWarden,
-			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaWarden,
-			Icon = "ui/perks/vazl_vala_warden.png",
-			IconDisabled = "ui/perks/vazl_vala_warden_sw.png"
-		},
-		{
 			ID = "perk.backstabber",
 			Script = "scripts/skills/perks/perk_backstabber",
 			Name = this.Const.Strings.PerkName.Backstabber,
@@ -244,22 +236,6 @@ gt.Const.Perks.PerksVala <- [
 			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscriptionMastery,
 			Icon = "ui/perks/vazl_vala_inscription_mastery.png",
 			IconDisabled = "ui/perks/vazl_vala_inscription_mastery_sw.png"
-		},
-		{
-			ID = "perk.vazl_vala_chanting_mastery",
-			Script = "scripts/skills/perks/vazl_vala_chanting_mastery",
-			Name = this.Const.Strings.PerkName.vazl_ValaChantingMastery,
-			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaChantingMastery,
-			Icon = "ui/perks/vazl_vala_chanting_mastery.png",
-			IconDisabled = "ui/perks/vazl_vala_chanting_mastery_sw.png"
-		},
-		{
-			ID = "perk.vazl_vala_trance_mastery",
-			Script = "scripts/skills/perks/vazl_vala_trance_mastery",
-			Name = this.Const.Strings.PerkName.vazl_ValaTranceMastery,
-			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaTranceMastery,
-			Icon = "ui/perks/vazl_vala_trance_mastery.png",
-			IconDisabled = "ui/perks/vazl_vala_trance_mastery_sw.png"
 		}
 	],
 	[

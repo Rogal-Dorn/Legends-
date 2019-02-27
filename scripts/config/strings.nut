@@ -1070,14 +1070,7 @@ gt.Const.Strings.PerkName <- {
 	vazl_ValaInscribeWeapon = "Inscribe Weapon",
 	vazl_ValaInscribeHelmet = "Inscribe Helmet",
 	vazl_ValaInscribeArmor = "Inscribe Armor",
-	vazl_ValaInscribeShield = "Inscribe Shield",
-
-	vazl_ValaChantingMastery = "Chanting Mastery",
-	vazl_ValaChantZOC = "Chant ZOC",
-
-	vazl_ValaTranceMastery = "Trance Mastery",
-
-	vazl_ValaWarden = "Warden"
+	vazl_ValaInscribeShield = "Inscribe Shield"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1173,14 +1166,7 @@ gt.Const.Strings.PerkDescription <- {
 	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any weapon currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: aiming, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
 	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any helmet currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
 	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any armor currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again.",
-	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: none\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again.",
-
-	vazl_ValaChantingMastery = "Chanting Mastery.",
-	vazl_ValaChantZOC = "Chant ZOC.",
-
-	vazl_ValaTranceMastery = "Trance Mastery.",
-
-	vazl_ValaWarden = "Warden."
+	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: none\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
