@@ -128,4 +128,6 @@ fixes heart icon not found
 Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
 Adds Orc elites, truly terrifying beasts, helps make the late game not just swarms
 Gives the new orc weapons to orcs, big ones mostly seen on berserkers and elites
-
+removes quivers from slingers
+fixes alignment on maids aprons and rabble tunics
+Updated start icons to reflect new party sizes
