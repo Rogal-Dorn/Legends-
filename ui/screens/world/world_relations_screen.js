@@ -323,7 +323,7 @@ WorldRelationsScreen.prototype.addListEntry = function (_data)
     progressbar.css('width', newWidth + '%');
     progressbarContainer.append(progressbar);
 
-    var progressbarLabel = $('<div class="stats-progressbar-label text-font-small font-color-progressbar-label">' + _data['Relation'] + ' (' + _data.RelationNum + ')' + '</div>');
+    var progressbarLabel = $('<div class="stats-progressbar-label text-font-small font-color-progressbar-label">' + _data['Relation'] + '</div>');
     progressbarContainer.append(progressbarLabel);
 
     /*var text;
