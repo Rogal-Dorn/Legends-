@@ -4,6 +4,8 @@ while read -r line; do
     if [ "$line" == "build.sh" ]; then
         echo "skipping $line"
     elif [ "$line" == "unstaged_build.sh" ]; then
+        echo "skipping $line"
+    elif [ "$line" == "build_compile.sh" ]; then
         echo "skipping $line"        
     elif [ "$line" == "ReleaseNotes.md" ]; then
         echo "skipping $line"

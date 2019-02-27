@@ -9,8 +9,11 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.m.IsControlledByPlayer = true;
 		this.m.Type = this.Const.EntityType.SkeletonLight;
 		this.skeleton.create();
+		this.m.ResurrectWithScript = "";
+		this.m.IsResurrectingOnFatality = false;
 		this.m.AIAgent = this.new("scripts/ai/tactical/idle_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.IsSummoned = true;
 	}
 
 	function isGuest()

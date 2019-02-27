@@ -9,6 +9,8 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.m.IsControlledByPlayer = true;
 		this.m.IsCreatingAgent = false;
 		this.zombie.create();
+		this.m.ResurrectWithScript = "";
+		this.m.IsResurrectingOnFatality = false;
 		this.m.AIAgent = this.new("scripts/ai/tactical/idle_agent");
 		this.m.AIAgent.setActor(this);
 	}
