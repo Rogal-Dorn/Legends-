@@ -120,4 +120,7 @@ staves now have a range of 2
 Noble now has 5 retainers
 Ranger begins with a hunter and bowyer
 Crusader begins with a squire
-Runed versions of all vanilla armours and weapons
+Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer and Footman's axe. 
+Changes magic damage scaling to initiative - 100 
+fixes heart icon not found
+Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
