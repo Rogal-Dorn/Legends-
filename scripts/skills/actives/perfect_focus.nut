@@ -12,7 +12,7 @@ this.perfect_focus <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/perfect_focus_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.BeforeLast;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;

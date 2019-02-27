@@ -12,7 +12,7 @@ this.legend_coordinated_volleys <- this.inherit("scripts/skills/skill", {
 		
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.BeforeLast;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
