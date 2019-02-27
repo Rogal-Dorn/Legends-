@@ -124,3 +124,4 @@ Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer and
 Changes magic damage scaling to initiative - 100 
 fixes heart icon not found
 Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
+Adds Orc elites,  truly terrifying beasts, helps make the late game not just swarms
