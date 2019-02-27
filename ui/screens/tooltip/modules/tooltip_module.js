@@ -497,7 +497,7 @@ TooltipModule.prototype.reloadUITooltip = function()
 		this.mCurrentData    = null;
 		this.mCurrentElement = null;
 
-		// TODO: Prüfen ob das hier an der richtigen Stelle ist und nicht noch geprüft werden muss
+		// TODO: PrÃ¼fen ob das hier an der richtigen Stelle ist und nicht noch geprÃ¼ft werden muss
 		// ob es wirklich ein ui tooltip ist!
 		//this.hideTooltip(); 
 		return;
@@ -1730,15 +1730,13 @@ TooltipModule.prototype.addContentProgressbarDiv = function(_parentDIV, _data)
 		{
 			if (typeof(_data.text) == 'string')
 			{
-				/*
 				var parsedText = XBBCODE.process({
 					text: _data.text,
 					removeMisalignedTags: false,
 					addInLineBreaks: true
 				});
-				*/
-				var parsedText = _data.value + " / " + _data.valueMax;
-				progressbarText.html(parsedText);	//(parsedText.html);
+			
+				progressbarText.html(parsedText.html);
 			}
 		}
 	}
