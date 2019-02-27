@@ -118,10 +118,14 @@ took berserker head out the general pool since he looks funny with some hairs
 Increased size of Rabble spawns.
 staves now have a range of 2
 Noble now has 5 retainers
-Ranger begins with a hunter and bowyer
-Crusader begins with a squire
+Ranger Commander begins with two rangers
+Crusader begins with a squire (nerfed from default)
 Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer and Footman's axe. 
-Changes magic damage scaling to initiative - 100 
+Changes magic damage scaling to initiative - 100
+changes hand to hand to ((initiative + maxhp)/2) - 80)  
+Adds magic missile projectile 
 fixes heart icon not found
 Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
-Adds Orc elites,  truly terrifying beasts, helps make the late game not just swarms
+Adds Orc elites, truly terrifying beasts, helps make the late game not just swarms
+Gives the new orc weapons to orcs, big ones mostly seen on berserkers and elites
+
