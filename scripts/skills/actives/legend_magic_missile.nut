@@ -51,6 +51,35 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+			local actor = this.getContainer().getActor();
+		local CurrentInit = actor.getInitiative();
+		local MinDam =  CurrentInit - 100;
+		local MaxDam =  CurrentInit - 100;
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "/ui/icons/heart.png",
+				text = "Inflicts initiative - 100 as damage. [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor"
+			}
+		];
+
 		local ret = this.getDefaultTooltip();
 		ret.extend([
 			{
@@ -110,8 +139,8 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			local CurrentInit = this.m.Container.getActor().getInitiative();
-			_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
-			_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);
+			_properties.DamageRegularMin += this.Math.floor(CurrentInit - 100);
+			_properties.DamageRegularMax += this.Math.floor(CurrentInit -90);
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}
