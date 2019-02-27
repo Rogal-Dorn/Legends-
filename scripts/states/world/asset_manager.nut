@@ -481,14 +481,14 @@ this.asset_manager <- {
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
-				"hunter_background"
+				"legend_ranger_background"
 			]);
 			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[2][1]);
 			 bro.setStartValuesEx([
-				"bowyer_background"
+				"legend_ranger_background"
 			]);
 			bro.setPlaceInFormation(5);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
