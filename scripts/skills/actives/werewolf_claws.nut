@@ -59,7 +59,7 @@ this.werewolf_claws <- this.inherit("scripts/skills/skill", {
 			{
 				id = 4,
 				type = "text",
-				icon = "/ui/tooltips/heart.png",
+				icon = "/ui/icons/health.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage"
 			}
 		];

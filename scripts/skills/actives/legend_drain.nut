@@ -53,7 +53,7 @@ this.legend_drain <- this.inherit("scripts/skills/skill", {
 			{
 				id = 4,
 				type = "text",
-				icon = "/ui/tooltips/heart.png",
+				icon = "/ui/icons/health.png",
 				text = "Inflicts initiative -100 as damage. Does [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage. Heals for" + heal + " as 10% of your max health"
 			}
 		];
