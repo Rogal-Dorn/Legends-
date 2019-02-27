@@ -447,14 +447,15 @@ this.asset_manager <- {
 		case this.Const.LegendMod.StartTypes.Crusader:
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
-				"legend_noble_commander_background"
+				"legend_crusader_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
 			this.setBrothersMax(2);
-						bro = roster.create("scripts/entity/tactical/player");
+
+			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
 				"legend_squire_background"
 			]);

@@ -102,6 +102,7 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		local r;
 		r = this.Math.rand(0, 3);
 
@@ -122,12 +123,8 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.equip(this.new("scripts/items/weapons/militia_spear"));
 		}
 
-		r = this.Math.rand(0, 2);
+		
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/shields/wooden_shield"));
-		}
 
 		r = this.Math.rand(0, 3);
 
