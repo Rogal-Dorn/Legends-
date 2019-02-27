@@ -19,7 +19,7 @@ this.legend_darkflight <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/vampire_landing_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.Order = this.Const.SkillOrder.OtherTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

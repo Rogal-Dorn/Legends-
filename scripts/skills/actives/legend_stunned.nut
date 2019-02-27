@@ -22,7 +22,7 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.SoundVolume = 1.25;
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

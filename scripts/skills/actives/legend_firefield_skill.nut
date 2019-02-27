@@ -20,7 +20,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/humans/0/human_light_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted +10;
 		this.m.Delay = 0;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
