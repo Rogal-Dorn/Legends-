@@ -13,7 +13,7 @@ this.legend_sling <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
-		this.m.ShowQuiver = true;
+		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_sling_02";
 		this.m.Value = 15;
