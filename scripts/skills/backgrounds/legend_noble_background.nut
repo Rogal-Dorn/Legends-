@@ -63,32 +63,32 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				5,
+				5
 			],
 			Bravery = [
-				30,
+				20,
 				20
 			],
 			Stamina = [
-				0,
+				5,
 				5
 			],
 			MeleeSkill = [
-				10,
-				10
+				15,
+				15
 			],
 			RangedSkill = [
-				0,
-				0
+				-5,
+				-5
 			],
 			MeleeDefense = [
 				5,
-				8
+				5
 			],
 			RangedDefense = [
-				-20,
-				-10
+				-5,
+				-5
 			],
 			Initiative = [
 				0,
