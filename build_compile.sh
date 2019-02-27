@@ -6,7 +6,7 @@ while read -r line; do
     elif [ "$line" == "unstaged_build.sh" ]; then
         echo "skipping $line"
     elif [ "$line" == "build_compile.sh" ]; then
-        echo "skipping $line"             
+        echo "skipping $line"                   
     elif [ "$line" == "ReleaseNotes.md" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/mapgen/templates/world/worldmap_generator.nut" ]; then
@@ -28,3 +28,7 @@ while read -r line; do
         cp "$line" "c:\Steam\steamapps\common\Battle Brothers\data\\$line"
     fi
 done <<< "$FILES"
+
+cd ../bin
+./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
+cd ../battlebrothers
