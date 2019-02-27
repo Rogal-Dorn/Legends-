@@ -81,7 +81,7 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.new("scripts/items/weapons/greenskins/goblin_staff"));
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/armor/legend_vala_cloak"));
