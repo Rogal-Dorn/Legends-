@@ -55,7 +55,7 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 			_list.push({
 				R = 10,
 				P = 1.0,
-				S = "weapon/legend_chain"
+				S = "weapons/legend_chain"
 			});
 			_list.push({
 				R = 10,

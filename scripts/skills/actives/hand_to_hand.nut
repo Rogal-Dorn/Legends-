@@ -118,8 +118,8 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			local CurrentInit = this.m.Container.getActor().getItems().getInitiative()
-			local CurrentHitpoints = this.m.Container.getActor().getItems().getHitpoints()
+			local CurrentInit = this.m.Container.getActor().getInitiative()
+			local CurrentHitpoints = this.m.Container.getActor().getHitpoints()
 			local Mult = (CurrentInit + CurrentHitpoints) / 2;
 			_properties.DamageRegularMin += this.Math.floor(CurrentInit * 0.1);
 			_properties.DamageRegularMax += this.Math.floor(CurrentInit * 0.2);

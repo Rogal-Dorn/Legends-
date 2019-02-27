@@ -47,12 +47,16 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
+		if (target == null)
+		{
+			return;
+		}
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		target.getSkills().add(this.new("scripts/skills/effects/debilitated_effect"));
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has left " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " withered");
-			}
+		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has left " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " withered");
+		}
 	}
 
 
