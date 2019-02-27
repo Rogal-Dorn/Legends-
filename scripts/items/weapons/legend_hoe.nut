@@ -7,8 +7,8 @@ this.legend_hoe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Hoe";
 		this.m.Description = "An agricultural tool with a thin, flat blade attached to a long handle used to till soil and harvest root crops. The blade has been sharpened as to fashion it into a crude and oddly shaped chopping weapon.";
 		this.m.Categories = "Axe, Two-Handed";
-		this.m.IconLarge = "weapons/melee/hoe_01.png";
-		this.m.Icon = "weapons/melee/hoe_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_hoe_01.png";
+		this.m.Icon = "weapons/melee/legend_hoe_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
@@ -17,7 +17,7 @@ this.legend_hoe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_hoe_01";
+		this.m.ArmamentIcon = "icon_legend_hoe_01";
 		this.m.Value = 55;
 		this.m.ShieldDamage = 20
 		this.m.Condition = 30.0;

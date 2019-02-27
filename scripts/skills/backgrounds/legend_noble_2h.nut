@@ -147,15 +147,15 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
+			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/armor/padded_surcoat"));
+			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/armor/gambeson"));
+			items.equip(this.new("scripts/items/armor/thick_tunic"));
 		}
 
 		r = this.Math.rand(0, 1);
