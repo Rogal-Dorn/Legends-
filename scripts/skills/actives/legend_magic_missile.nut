@@ -39,6 +39,8 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = true;
+		this.m.IsShowingProjectile = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.8;
@@ -47,6 +49,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 8;
+		this.m.ProjectileType = this.Const.ProjectileType.Missile;
 	}
 
 	function getTooltip()
@@ -54,7 +57,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 			local actor = this.getContainer().getActor();
 		local CurrentInit = actor.getInitiative();
 		local MinDam =  CurrentInit - 100;
-		local MaxDam =  CurrentInit - 100;
+		local MaxDam =  CurrentInit - 90;
 		local p = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{

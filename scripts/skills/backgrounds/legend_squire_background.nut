@@ -107,7 +107,7 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/shortsword"));
+			items.equip(this.new("scripts/items/weapons/dagger));
 		}
 		else if (r == 1)
 		{
@@ -115,11 +115,11 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/winged_mace"));
+			items.equip(this.new("scripts/items/weapons/bludgeon"));
 		}
 		else if (r == 3)
 		{
-			items.equip(this.new("scripts/items/weapons/boar_spear"));
+			items.equip(this.new("scripts/items/weapons/militia_spear"));
 		}
 
 		r = this.Math.rand(0, 2);
@@ -137,11 +137,11 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/armor/padded_surcoat"));
+			items.equip(this.new("scripts/items/armor/thick_tunic"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/armor/gambeson"));
+			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
 		else if (r == 3)
 		{
@@ -152,15 +152,15 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
+			items.equip(this.new("scripts/items/helmets/hood"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
+			items.equip(this.new("scripts/items/helmets/headscarf"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/helmets/aketon_cap"));
+			items.equip(this.new("scripts/items/helmets/feathered_hat"));
 		}
 		else if (r == 3)
 		{
