@@ -145,3 +145,6 @@ Beta 9
 *Took berserker commander head out the general pool since he looks funny with some hairs
 *Increased size of Rabble spawns.
 
+*Organized order of skills in toolbar
+*Rebalanced starting stats of all commander backgrounds.
+
