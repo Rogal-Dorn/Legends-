@@ -2,7 +2,7 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 	m = {},
 	function onInit()
 	{
-		this.m.SpawnType = this.Const.Tactical.Actor.ZombieKnight;
+		this.m.SpawnType = this.Const.Tactical.Actor.LegendZombieHeavy;
 		this.legend_zombie.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));

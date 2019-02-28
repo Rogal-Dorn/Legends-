@@ -110,8 +110,8 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				-10
 			],
 			Initiative = [
-				10,
-				10
+				15,
+				15
 			]
 		};
 		return c;
@@ -119,7 +119,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_wither"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
 	}
 
 	function onAddEquipment()

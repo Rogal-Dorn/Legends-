@@ -23,7 +23,7 @@ this.perk_legend_deathtouch <- this.inherit("scripts/skills/skill", {
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.ghastly_touch");
+		this.m.Container.removeByID("actives.legend_deathtouch");
 	}
 
 });

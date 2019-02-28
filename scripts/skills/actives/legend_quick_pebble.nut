@@ -9,8 +9,8 @@ this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Quick Shot";
 		this.m.Description = "A quick shot with little time used for drawing and aiming. Accuracy drops sharply with distance. Can not be used while engaged in melee.";
 		this.m.KilledString = "Shot";
-		this.m.Icon = "skills/active_05.png";
-		this.m.IconDisabled = "skills/active_05_sw.png";
+		this.m.Icon = "skills/stone_square.png";
+		this.m.IconDisabled = "skills/stone_square_sw.png";
 		this.m.Overlay = "active_05";
 		this.m.SoundOnUse = [
 			"sounds/combat/quick_shot_01.wav",

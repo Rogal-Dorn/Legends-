@@ -3,7 +3,7 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 
 	function onInit()
 	{
-		this.m.SpawnType = this.Const.Tactical.Actor.ZombieYeoman;
+		this.m.SpawnType = this.Const.Tactical.Actor.LegendZombieMedium;
 		this.legend_zombie.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));

@@ -13,8 +13,8 @@ this.legend_aimed_pebble <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Aimed Shot";
 		this.m.Description = "A focused and carefully aimed shot with a good outlook of hitting its intended target even at a distance. Can not be used while engaged in melee.";
 		this.m.KilledString = "Shot";
-		this.m.Icon = "skills/active_18.png";
-		this.m.IconDisabled = "skills/active_18_sw.png";
+		this.m.Icon = "skills/stone_aim_square.png";
+		this.m.IconDisabled = "skills/stone_aim_square_sw.png";
 		this.m.Overlay = "active_18";
 		this.m.SoundOnUse = [
 			"sounds/combat/aimed_shot_01.wav",

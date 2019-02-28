@@ -8,6 +8,7 @@
     local onDeath = o.onDeath;
     o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
     {
+        this.getItems().dropAll(null, null, false);
         onDeath( _killer, _skill, _tile, _fatalityType);
         if (_tile == null)
         {
@@ -20,6 +21,7 @@
         }
         corpse.isHuman = 2;
         _tile.Properties.set("Corpse", corpse);
+        _tile.Properties.set("IsSummons", true);
     }
 
 });
@@ -35,6 +37,7 @@
     local onDeath = o.onDeath;
     o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
     {
+        this.getItems().dropAll(null, null, false);
         onDeath( _killer, _skill, _tile, _fatalityType);
         if (_tile == null)
         {
@@ -48,6 +51,7 @@
         corpse.IsResurrectable = this.m.IsResurrectingOnFatality && _fatalityType != this.Const.FatalityType.Decapitated;
         corpse.isHuman = 3;
         _tile.Properties.set("Corpse", corpse);
+        _tile.Properties.set("IsSummons", true);
     }
 
 });
