@@ -134,7 +134,7 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
@@ -144,6 +144,10 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/leather_wraps"));
+		}
+		if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/legend_rabble_tunic"));
 		}
 
 		r = this.Math.rand(0, 4);

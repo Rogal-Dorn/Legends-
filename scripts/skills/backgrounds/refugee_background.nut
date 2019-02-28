@@ -119,16 +119,19 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
 		}
-
 		if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/sackcloth"));
+		}
+		if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/legend_rabble_tunic"));
 		}
 	}
 

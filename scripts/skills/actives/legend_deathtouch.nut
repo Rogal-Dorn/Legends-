@@ -21,13 +21,17 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.DirectDamageMult = 1.0;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
 
 		function getTooltip()
 	{
+		local actor = this.getContainer().getActor();
+		local CurrentInit = actor.getInitiative();
+		local MinDam =  CurrentInit - 100;
+		local MaxDam =  CurrentInit - 90;
 		local p = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
@@ -48,18 +52,17 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 			{
 				id = 4,
 				type = "text",
-				icon = "/ui/tooltips/heart.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + p.DamageRegularMax + "[/color] damage, ignores armor"
+				icon = "/ui/icons/health.png",
+				text = "Inflicts your initiative - 100 as damage [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor"
 			}
 		];
 	}
 
-
-
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 15;
-		_properties.DamageRegularMax += 25;
+		local CurrentInit = this.getContainer().getActor().getInitiative();
+		_properties.DamageRegularMin += this.Math.floor(CurrentInit - 100);
+		_properties.DamageRegularMax += this.Math.floor(CurrentInit - 90);
 		_properties.IsIgnoringArmorOnAttack = true;
 	}
 

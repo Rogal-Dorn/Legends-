@@ -129,13 +129,14 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		talents[this.Const.Attributes.Fatigue] = 2;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
-		items.equip(this.new("scripts/items/helmets/necromancer_hat"));
+		items.equip(this.new("scripts/items/armor/legend_warlock_cloak"));
+		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/strange_meat_item"));
+		
 	}
 
 });

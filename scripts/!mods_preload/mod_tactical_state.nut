@@ -141,19 +141,48 @@
 		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
 		local CannibalsInRoster = 0;
 		local CannibalisticButchersInRoster = 0;
+		local zombieSalvage = 10;
+		local zombieLoot = false;
+		local skeletonLoot = false;
+
 		foreach (bro in EntireCompanyRoster)
 		{
-			if (bro.isAlive() && bro.getBackground().getID() == "background.vazl_cannibal")
+			if (!bro.isAlive())
 			{
-				CannibalsInRoster += 1;
+				continue;
 			}
-			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
+
+			switch (bro.getBackground().getID())
 			{
-				CannibalisticButchersInRoster += 1;
+				case "background.vazl_cannibal":
+					CannibalsInRoster += 1;
+					break;
+				
+				case "background.butcher":
+					if (bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
+					{
+						CannibalisticButchersInRoster += 1;
+					}
+					break;
 			}
+
+			if (bro.getSkills().hasSkill("perk.legends_reclamation"))
+			{
+				local skill = bro.getSkills().getSkillByID("perk.legends_reclamation")
+				zombieSalvage = skill.m.LootChance;
+			}
+
+			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_low") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_med") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))
+			{
+				zombieLoot = true;
+			}
+
+			if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_low") || bro.getSkills().hasSkill("perk.legend_spawn_skeleton_med") || bro.getSkills().hasSkill("perk.legend_spawn_skeleton_high"))
+			{
+				skeletonLoot = true;
+			}
+
 		}
-
-
 
 		local loot = [];
 		local size = this.Tactical.getMapSize();
@@ -173,7 +202,29 @@
 					}
 				}
 
+				if (zombieLoot && tile.Properties.has("Corpse")) 
+				{
+					if (tile.Properties.get("Corpse").isHuman == 1 || tile.Properties.get("Corpse").isHuman == 2)
+					{
+						if (this.Math.rand(1, 100) <= zombieSalvage)
+						{
+							local zloot = this.new("scripts/items/spawns/zombie_item");
+							loot.push(zloot);
+						}
+					}
+				}
 
+				if (skeletonLoot && tile.Properties.has("Corpse")) 
+				{
+					if (tile.Properties.get("Corpse").isHuman == 1 || tile.Properties.get("Corpse").isHuman == 3)
+					{
+						if (this.Math.rand(1, 100) <= zombieSalvage)
+						{
+							local zloot = this.new("scripts/items/spawns/skeleton_item");
+							loot.push(zloot);
+						}
+					}
+				}
 
 				if (this.Math.rand(1, 100) <= 8 && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
 				{
@@ -192,8 +243,6 @@
 						loot.push(humanmeat);
 					}
 				}
-
-
 
 
 				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null)

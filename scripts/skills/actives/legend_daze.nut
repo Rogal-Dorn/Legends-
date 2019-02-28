@@ -32,9 +32,9 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.ActionPointCost = 5;
-		this.m.FatigueCost = 15;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 6;
 	}
 
 	function getTooltip()

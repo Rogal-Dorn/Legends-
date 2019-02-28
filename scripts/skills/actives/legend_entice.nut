@@ -28,9 +28,9 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.HitChanceBonus = 10;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 2;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 6;
 	}
 
 	function getTooltip()
