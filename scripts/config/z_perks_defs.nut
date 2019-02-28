@@ -1013,7 +1013,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossession,
 		Icon = "ui/perks/possession_circle.png",
 		IconDisabled = "ui/perks/possession_circle_bw.png"
-	}				
+	},
+	{
+		ID = "perk.legend_siphon",
+		Script = "scripts/skills/perks/perk_legend_siphon",
+		Name = this.Const.Strings.PerkName.LegendSiphon,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSiphon,
+		Icon = "ui/perks/siphon_circle.png",
+		IconDisabled = "ui/perks/siphon_circle_bw.png"
+	}								
 ];
 
 
@@ -1143,5 +1151,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendConservation = 122,
 	LegendEnthrall = 123,
 	LegendViolentDecomposition = 124,
-	LegendPossession = 125 
+	LegendPossession = 125,
+	LegendSiphon = 126
 };

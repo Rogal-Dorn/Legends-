@@ -26,7 +26,8 @@ this.legend_spawn_skeleton_low_skill <- this.inherit("scripts/skills/actives/leg
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 4;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted + 15;
+		this.m.Order = this.Const.SkillOrder.NonTargeted + 15;
+		this.m.HPCost = 5;
 
 	}
 

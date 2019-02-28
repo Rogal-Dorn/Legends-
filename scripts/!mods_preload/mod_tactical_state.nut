@@ -245,7 +245,7 @@
 				}
 
 
-				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null)
+				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null && !tile.Properties.has("IsSummons"))
 				{
 					local items = tile.Properties.get("Corpse").Items.getAllItems();
 

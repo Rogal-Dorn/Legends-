@@ -154,6 +154,11 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		
 	}
 
+    function isReallyKilled(_fatalityType)
+	{
+		return false;
+	}
+
     function onActorKilled( _actor, _tile, _skill )
 	{
 		this.actor.onActorKilled(_actor, _tile, _skill);
