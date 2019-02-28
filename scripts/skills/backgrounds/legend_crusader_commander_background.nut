@@ -165,41 +165,10 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
-
-		items.equip(this.new("scripts/items/armor/mail_hauberk"));
-				r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/two_handed_hammer"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/warbrand"));;
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/greataxe"));
-		}
-		
-		r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/helmets/decayed_full_helm"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/helmets/decayed_great_helm"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/helmets/closed_flat_top_with_neckguard"));
-		}
+		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
+		items.equip(this.new("scripts/items/armor/legend_crusader_armor"));
+		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
+	
 	}
 
 });

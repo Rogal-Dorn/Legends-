@@ -163,10 +163,9 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
-		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
-		items.equip(this.new("scripts/items/weapons/two_handed_hammer"));
-		items.equip(this.new("scripts/items/armor/mail_shirt"));
-		items.equip(this.new("scripts/items/helmets/mail_coif"));
+		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
+		items.equip(this.new("scripts/items/armor/legend_crusader_armor"));
+		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
 	}
 
 });
