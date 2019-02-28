@@ -151,3 +151,9 @@ Beta 9
 *Fix crash with trying to revive summons.
 *Added missing images
 
+Adds crusader sword and armor, gives to crusader
+Adds skullbreaker and spinesmasher, gives to berserkers and elites
+fixes missing pitchfork item
+Adds vala recruitment images
+
+

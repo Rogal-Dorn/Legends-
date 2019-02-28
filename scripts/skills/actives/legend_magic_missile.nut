@@ -1,7 +1,7 @@
 this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	m = {
 		AdditionalAccuracy = 20,
-		AdditionalHitChance = 10
+		AdditionalHitChance = 0
 	},
 	function create()
 	{
@@ -56,8 +56,8 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local CurrentInit = actor.getInitiative();
-		local MinDam =  CurrentInit - 100;
-		local MaxDam =  CurrentInit - 90;
+		local MinDam =  CurrentInit - 90;
+		local MaxDam =  CurrentInit - 80;
 		local p = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
@@ -79,7 +79,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "/ui/icons/health.png",
-				text = "Inflicts initiative - 100 as damage. [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor"
+				text = "Inflicts initiative - 90 as damage. [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor"
 			}
 		];
 
@@ -142,8 +142,8 @@ this.legend_magic_missile <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			local CurrentInit = this.m.Container.getActor().getInitiative();
-			_properties.DamageRegularMin += this.Math.floor(CurrentInit - 100);
-			_properties.DamageRegularMax += this.Math.floor(CurrentInit -90);
+			_properties.DamageRegularMin += this.Math.floor(CurrentInit - 90);
+			_properties.DamageRegularMax += this.Math.floor(CurrentInit -80);
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}

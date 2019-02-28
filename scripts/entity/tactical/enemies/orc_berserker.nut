@@ -403,6 +403,10 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_bough"));
 		}
+			else if (r == 8)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullbreaker"));
+		}
 
 		r = this.Math.rand(1, 5);
 

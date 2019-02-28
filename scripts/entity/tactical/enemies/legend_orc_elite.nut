@@ -277,6 +277,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_axe"));
 			}
+
 		}
 		else
 		{
@@ -293,6 +294,10 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 				else if (r == 3)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_man_mangler"));
+			}
+					else if (r == 2)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullsmasher"));
 			}
 		}
 
