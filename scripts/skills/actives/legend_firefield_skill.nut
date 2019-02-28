@@ -54,11 +54,13 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 
 		return true;
 	}
+
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 	}
+
 	function onUse( _user, _targetTile )
 	{
 		local targets = [];
@@ -68,12 +70,10 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!_targetTile.hasNextTile(i))
 			{
+				continue
 			}
-			else
-			{
-				local tile = _targetTile.getNextTile(i);
-				targets.push(tile);
-			}
+			local tile = _targetTile.getNextTile(i);
+			targets.push(tile);
 		}
 
 		local p = {

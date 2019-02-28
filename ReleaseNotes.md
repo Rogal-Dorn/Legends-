@@ -161,3 +161,7 @@ Beta 9
 *Added a new Siphon skill for warlock. You can siphon HP from target to you. Starts at 30%, decreases 5% for each tile away. Can not kill target with Siphon, can not siphon more HP than you are missing
 *Bunch of other reported issues fixed
  
+
+ *Fix crusdaer sword crash
+ *fix firefield crashes
+ 
