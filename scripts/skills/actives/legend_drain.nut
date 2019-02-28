@@ -59,8 +59,6 @@ this.legend_drain <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-
-
 	function onUpdate( _properties )
 	{
 		
@@ -71,12 +69,15 @@ this.legend_drain <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-
-		local actor = this.getContainer().getActor();
-		local maxHP = actor.getHitpointsMax();
-		local heal = maxHP / 10;
-		actor.setHitpoints(this.Math.min(actor.getHitpoints() + heal, maxHP));
-		return this.attackEntity(_user, _targetTile.getEntity());
+		local res = this.attackEntity(_user, _targetTile.getEntity());
+		if (res)
+		{
+			local actor = this.getContainer().getActor();
+			local maxHP = actor.getHitpointsMax();
+			local heal = maxHP / 10;
+			actor.setHitpoints(this.Math.min(actor.getHitpoints() + heal, maxHP));
+		}
+		return res
 	}
 
 });
