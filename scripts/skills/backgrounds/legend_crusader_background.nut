@@ -108,36 +108,36 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				10
+				5,
+				5
 			],
 			Bravery = [
-				15,
-				20
-			],
-			Stamina = [
 				10,
 				10
+			],
+			Stamina = [
+				15,
+				15
 			],
 			MeleeSkill = [
 				10,
 				10
 			],
 			RangedSkill = [
-				-10,
+				-5,
 				-5
 			],
 			MeleeDefense = [
-				20,
-				10
+				15,
+				15
 			],
 			RangedDefense = [
 				-5,
-				0
+				-5
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				-5
 			]
 		};
 		return c;

@@ -10,7 +10,7 @@ this.sprint_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Overlay = "perk_37_active";
 		this.m.SoundOnUse = [];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.OtherTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;

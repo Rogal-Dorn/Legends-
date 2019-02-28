@@ -92,20 +92,20 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 	{
 		local c = {
 			Hitpoints = [
-				15,
-				10
+				5,
+				5
 			],
 			Bravery = [
-				15,
+				10,
 				10
 			],
 			Stamina = [
-				40,
-				30
+				15,
+				15
 			],
 			MeleeSkill = [
-				40,
-				30
+				25,
+				25
 			],
 			RangedSkill = [
 				-5,
@@ -120,8 +120,8 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 				-5
 			],
 			Initiative = [
-				-5,
-				-5
+				0,
+				0
 			]
 		};
 		return c;

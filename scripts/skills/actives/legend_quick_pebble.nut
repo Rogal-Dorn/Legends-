@@ -33,7 +33,7 @@ this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/arrow_miss_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.Item;
 		this.m.Delay = 100;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;

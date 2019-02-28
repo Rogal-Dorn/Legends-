@@ -14,7 +14,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/gruesome_feast_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.Order = this.Const.SkillOrder.Any;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
