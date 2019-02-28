@@ -12,7 +12,7 @@ this.legend_horrific_scream <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/horrific_scream_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

@@ -16,7 +16,7 @@ this.legend_stealth <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/shieldwall_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.NonTargeted;
+		this.m.Order = this.Const.SkillOrder.OtherTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
