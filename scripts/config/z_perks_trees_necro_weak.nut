@@ -7,11 +7,11 @@ if (!("Perks" in gt.Const))
 
 local NecroWeakTree = [
 	[
+		gt.Const.Perks.PerkDefs.LegendSiphon,
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieLow,
 		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonLow
 	],
@@ -19,6 +19,7 @@ local NecroWeakTree = [
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRust
 	],
@@ -43,6 +44,7 @@ local NecroWeakTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendGruesomeFeast,
 		gt.Const.Perks.PerkDefs.LegendReclamation,
 		gt.Const.Perks.PerkDefs.LegendConservation
 	],
@@ -60,7 +62,6 @@ local NecroWeakTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LegendInsects,
 		gt.Const.Perks.PerkDefs.LegendDarkflight,
-		gt.Const.Perks.PerkDefs.LegendGruesomeFeast,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendViolentDecomposition,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieHigh,

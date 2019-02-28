@@ -3,7 +3,7 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 
 	function onInit()
 	{
-		this.m.SpawnType = this.Const.Tactical.Actor.SkeletonHeavy;
+		this.m.SpawnType = this.Const.Tactical.Actor.LegendSkeletonHeavy;
 		this.legend_skeleton.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));

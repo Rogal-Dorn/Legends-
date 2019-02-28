@@ -461,7 +461,6 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(3);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setCommander(true);
 			bro.setVeteranPerks(2);
 			this.setBrothersMax(2);
 
