@@ -32,13 +32,14 @@ this.legend_crusader_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ChanceToHitHead = 10;
 	}
 
+
 	function onEquip()
 	{
 		this.weapon.onEquip();
 		local skillToAdd = this.new("scripts/skills/actives/overhead_strike");
 		skillToAdd.setStunChance(this.m.StunChance);
 		this.addSkill(skillToAdd);
-		this.addSkill(slash);
+		this.addSkill(this.new("scripts/skills/actives/slash"));
 		this.addSkill(this.new("scripts/skills/actives/split"));
 		this.addSkill(this.new("scripts/skills/actives/swing"));
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");

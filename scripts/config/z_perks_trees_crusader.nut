@@ -21,7 +21,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.SteelBrow,
-		gt.Const.Perks.PerkDefs.InspiringPresence,
+		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
@@ -32,7 +32,6 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
 		gt.Const.Perks.PerkDefs.Rebound,
-		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
@@ -49,6 +48,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.FullForce,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
+		gt.Const.Perks.PerkDefs.InspiringPresence,		
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
