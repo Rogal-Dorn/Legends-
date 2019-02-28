@@ -338,7 +338,14 @@ this.data_helper <- {
 		_target.daysWounded <- _entity.getDaysWounded();
 		_target.leveledUp <- _entity.isLeveled();
 		_target.moodIcon <- "ui/icons/mood_0" + (_entity.getMoodState() + 1) + ".png";
-		_target.background <- _entity.getBackground().getID();
+		if (_entity.getBackground() != null)
+		{
+			_target.background <- _entity.getBackground().getID();
+		}
+		else 
+		{
+			_target.background <- "";
+		}
 
 		if (_entity.getLevelUps() > 0)
 		{
