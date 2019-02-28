@@ -32,6 +32,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
 		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
@@ -44,8 +45,8 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[
-		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.FullForce,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
 		gt.Const.Perks.PerkDefs.LegendRoster5

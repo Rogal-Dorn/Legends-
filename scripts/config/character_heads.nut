@@ -124,9 +124,7 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_15",
 	"bust_head_16",
 	"bust_head_17",
-	"bust_head_18",
-	"bust_head_31",
-	"bust_head_32"
+	"bust_head_18"
 ];
 gt.Const.Faces.AllFemale <- [
 	"bust_head_19",
@@ -236,6 +234,22 @@ gt.Const.Hair.Berserker <- [
 	"03",
 	"08",
 	"18"
+];
+
+gt.Const.Hair.BarberFemale <- [
+	"",
+	"shaved",
+	"01",
+	"02",
+	"03",
+	"04",
+	"05",
+	"06",
+	"07",
+	"08",
+	"10",
+	"19",
+	"20"
 ];
 
 gt.Const.Hair.BarberFemale <- [

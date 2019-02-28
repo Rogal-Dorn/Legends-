@@ -116,7 +116,8 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		{
 			return;
 		}
-
+		_list.push("legend_blacksmith_background");
+		_list.push("legend_ironmonger_background");
 		_list.push("retired_soldier_background");
 		_list.push("deserter_background");
 		_list.push("sellsword_background");

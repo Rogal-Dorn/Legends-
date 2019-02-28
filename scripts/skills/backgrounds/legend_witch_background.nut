@@ -129,8 +129,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Fatigue] = 3;
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/wizard_robe"));
-		items.equip(this.new("scripts/items/helmets/wizard_hat"));
+		items.equip(this.new("scripts/items/armor/legend_seer_robes"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

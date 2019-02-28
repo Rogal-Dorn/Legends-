@@ -9,7 +9,25 @@ if (!("Actor" in gt.Const.Tactical))
 {
 	gt.Const.Tactical.Actor <- {};
 }
-
+gt.Const.Tactical.Actor.LegendCat <- {
+	XP = 50,
+	ActionPoints = 12,
+	Hitpoints = 30,
+	Bravery = 40,
+	Stamina = 130,
+	MeleeSkill = 50,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 25,
+	Initiative = 150,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
 gt.Const.Tactical.Actor.Peasant <- {
 	XP = 50,
 	ActionPoints = 9,

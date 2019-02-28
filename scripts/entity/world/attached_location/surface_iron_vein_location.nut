@@ -69,6 +69,7 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("miner_background");
 		_list.push("miner_background");
 		_list.push("miner_background");
+		_list.push("legend_ironmonger_background");
 		_list.push("retired_soldier_background");
 	}
 

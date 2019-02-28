@@ -569,6 +569,10 @@ this.character_screen <- {
 
 			foreach( entity in entities )
 			{
+				if (entity.isSummoned())
+				{
+					continue;
+				}
 				result.push(this.UIDataHelper.convertEntityToUIData(entity, activeEntity));
 			}
 
@@ -2239,8 +2243,7 @@ this.character_screen <- {
 
 	function onFormationClear( _data )
 	{
-		local index = _data[0];
-		this.World.Assets.clearFormation(index);
+		this.World.Assets.clearFormation();
 		this.loadData();
 	}
 

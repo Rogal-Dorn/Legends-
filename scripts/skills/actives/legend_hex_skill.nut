@@ -36,7 +36,7 @@ this.legend_hex_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
 	}
 

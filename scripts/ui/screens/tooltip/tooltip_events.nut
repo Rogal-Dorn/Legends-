@@ -990,7 +990,7 @@ this.tooltip_events <- {
 				if (bm > 0)
 				{
 					barterMult += bm;
-					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "%[/color] Barter"
+					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + bm + "%[/color] Barter"
 				}
 				brolist.push(L);
 			}
@@ -1315,7 +1315,25 @@ this.tooltip_events <- {
 				desc = desc + (heal.MedicineMax + "[/color] Medical Supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
+			local meds = 0;
+			local stash = this.World.Assets.getStash().getItems();
+			foreach (item in stash)
+			{
+				if (item == null)
+				{
+					continue;
+				}
+				meds += item.getMedicinePerDay();
+			}
+			if (meds > 0)
+			{
+				desc = 	desc + (" You need [color=" + this.Const.UI.Color.NegativeValue + "]" + meds + "[/color] units each day to maintain your supply of flesh and bones for summoning.");
+			}
+
+			desc = desc + ("\n\nYou can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
+
+
+			
 			
 			local ret = [
 				{

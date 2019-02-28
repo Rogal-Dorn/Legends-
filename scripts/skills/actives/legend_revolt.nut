@@ -31,7 +31,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.MaxRange = 6;
 	}
 
 	function getTooltip()

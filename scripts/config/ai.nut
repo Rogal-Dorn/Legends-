@@ -581,6 +581,7 @@ gt.Const.AI <- {
 		KnockBackProtectAllyLockedMult = 1.25000000,
 		KnockBackSpearwallMult = 1.14999998,
 		KnockBackToChargeIntoAgainMult = 1.00000000,
+		KnockBackMinOpponentsInMelee = 2,
 		ShieldwallMinOverwhelmCount = 2,
 		ShieldwallOpponentsInMeleeMult = 1.20000005,
 		ShieldwallOpponentToAllyMinRatio = 0.50000000,

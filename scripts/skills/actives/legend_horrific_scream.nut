@@ -20,9 +20,9 @@ this.legend_horrific_scream <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 4;
+		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
 	}
 

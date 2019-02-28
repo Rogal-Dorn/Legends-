@@ -6,11 +6,11 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.create();
 		this.m.ID = "weapon.legend_shovel";
-		this.m.Name = "Bludgeon";
+		this.m.Name = "Shovel";
 		this.m.Description = "A tool meant for digging holes, not maiming men. A shovel's wide blade lends accuracy when aiming for the head, but almost anything else would be better.";
 		this.m.Categories = "Mace, Two-Handed";
-		this.m.IconLarge = "weapons/melee/shovel_01.png";
-		this.m.Icon = "weapons/melee/shovel_01_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_shovel_01.png";
+		this.m.Icon = "weapons/melee/legend_shovel_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
@@ -18,7 +18,7 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_shovel_01";
+		this.m.ArmamentIcon = "icon_legend_shovel_01";
 		this.m.Value = 50;
 		this.m.Condition = 32.0;
 		this.m.ConditionMax = 32.0;

@@ -95,6 +95,11 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 				S = "weapons/legend_shiv"
 			});
 			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_chain"
+			});
+			_list.push({
 				R = 20,
 				P = 1.0,
 				S = "armor/butcher_apron"

@@ -10,6 +10,7 @@ this.item <- {
 		Variant = 0,
 		Condition = 1.0,
 		ConditionMax = 1.0,
+		MedicinePerDay = 0,
 		SlotType = this.Const.ItemSlot.Bag,
 		CurrentSlotType = this.Const.ItemSlot.None,
 		BlockedSlotType = null,
@@ -611,6 +612,15 @@ this.item <- {
 	function getRuned()
 	{
 		return this.m.IsRuned;
+	}
+
+	function onNewDay()
+	{
+	}
+
+	function getMedicinePerDay()
+	{
+		return this.m.MedicinePerDay;
 	}
 
 	function onSerialize( _out )
