@@ -287,4 +287,14 @@
 		return false;
 	}
 
+	local rezFn = o.resurrect;
+	o.resurrect = function ( _info, _delay = 0 )
+	{
+		if (_info.Type == "")
+		{
+			return;
+		}
+		rezFn(_info, _delay);
+	}
+
 })
