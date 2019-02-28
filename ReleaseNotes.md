@@ -147,4 +147,4 @@ Beta 9
 
 *Organized order of skills in toolbar
 *Rebalanced starting stats of all commander backgrounds.
-
+*Fix crash on inventory screen for hexen/firstborn contracts
