@@ -147,4 +147,7 @@ Beta 9
 
 *Organized order of skills in toolbar
 *Rebalanced starting stats of all commander backgrounds.
-*Fix crash on inventory screen for hexen/firstborn contracts
+*Fix crash on inventory screen for hexen/firstborn contracts.
+*Fix crash with trying to revive summons.
+*Added missing images
+
