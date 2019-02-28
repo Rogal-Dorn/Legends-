@@ -3,7 +3,10 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		Items = [],
 		SpawnItem =  "",
 		Script = "",
-		IsControlledByPlayer = true
+		IsControlledByPlayer = true,
+		HPCost = 5,
+		APStartMult = 1.0,
+		OrigMaxRange = 1
 	},
 
 	function setItem( _i )
@@ -14,7 +17,7 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.Order = this.Const.SkillOrder.NonTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -50,8 +53,24 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 			return
 		}
 
+		this.m.OrigMaxRange = this.m.MaxRange;
 		this.m.MaxRange = this.m.MaxRange + skill.m.RangeIncrease;
-		this.logInfo("Setting max range of spawn to " + this.m.MaxRange + "from extended_aura perk");
+	}
+
+	function onCombatFinished()
+	{
+		if (this.m.Container == null)
+		{
+			return
+		}
+
+		local skill = this.getContainer().getSkillByID("perk.legend_extended_aura");
+		if (skill == null)
+		{
+			return
+		}
+		
+		this.m.MaxRange = this.m.OrigMaxRange
 	}
 
 	function getMaxRange()
@@ -75,6 +94,11 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 			perkMult = skill.m.FatigueMult;
 		}
 		return this.Math.round(this.Math.ceil(this.m.FatigueCost * perkMult * this.m.FatigueCostMult * this.m.Container.getActor().getCurrentProperties().FatigueEffectMult) + this.m.Container.getActor().getCurrentProperties().FatigueOnSkillUse);
+	}
+
+	function getCostString()
+	{
+		return "[i]Costs " + (this.isAffordableBasedOnAPPreview() ? "[b][color=" + this.Const.UI.Color.PositiveValue + "]" + this.getActionPointCost() : "[b][color=" + this.Const.UI.Color.NegativeValue + "]" + this.getActionPointCost()) + " AP[/color][/b] and [b][color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.HPCost + " HP[/color][/b] to use and builds up " + (this.isAffordableBasedOnFatiguePreview() ? "[b][color=" + this.Const.UI.Color.PositiveValue + "]" + this.getFatigueCost() : "[b][color=" + this.Const.UI.Color.NegativeValue + "]" + this.getFatigueCost()) + " Fatigue[/color][/b][/i]\n";
 	}
 
 	function getTooltip()
@@ -139,6 +163,12 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		if (this.getNumberOfSpawnsAvailable() == 0 || !this.skill.isUsable())
+		{
+			return false;
+		}
+
+
+		if (this.getContainer().getActor().getHitpoints() <= this.m.HPCost)
 		{
 			return false;
 		}
@@ -232,8 +262,14 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		entity.riseFromGround();
 		entity.getTags().add("IsSummoned", true);
 		entity.getTags().add("Summoner", _user);
+		entity.setActionPoints(this.Math.round(this.m.APStartMult * entity.getActionPoints()));
 		spawnItem.setEntity(entity);
 		this.m.Items.push(spawnItem);
+
+		this.spawnIcon("status_effect_01", this.getContainer().getActor().getTile());
+		local actor = this.getContainer().getActor();
+		actor.setHitpoints(this.Math.max(actor.getHitpoints() - this.m.HPCost, 1));
+
 		return true;
 	}
 

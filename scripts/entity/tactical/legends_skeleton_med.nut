@@ -3,7 +3,7 @@ this.legends_skeleton_med <- this.inherit("scripts/entity/tactical/legend_skelet
 
 	function onInit()
 	{
-		this.m.SpawnType = this.Const.Tactical.Actor.SkeletonMedium;
+		this.m.SpawnType = this.Const.Tactical.Actor.LegendSkeletonMedium;
 		this.legend_skeleton.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
@@ -18,18 +18,32 @@ this.legends_skeleton_med <- this.inherit("scripts/entity/tactical/legend_skelet
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		}
-		else
+		else if (r == 2)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
+		}
+		else if (r == 3)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 		}
+		else if (r == 4)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+		}		
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
-			if (this.Math.rand(1, 100) <= 66)
+
+			r = this.Math.rand(1, 4);
+			if (r == 1)
+			{
+				this.m.Items.equip(this.new("scripts/items/shields/ancient/auxiliary_shield"));
+			}
+			else if (r == 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/shields/ancient/coffin_shield"));
 			}
-			else
+			else if (r == 3)
 			{
 				this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 			}

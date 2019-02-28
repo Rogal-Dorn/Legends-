@@ -139,6 +139,13 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		
 	}
 
+
+    function isReallyKilled(_fatalityType)
+	{
+		return false;
+	}
+
+
     function onActorKilled( _actor, _tile, _skill )
 	{
 		this.actor.onActorKilled(_actor, _tile, _skill);

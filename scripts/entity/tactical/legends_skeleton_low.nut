@@ -3,26 +3,22 @@ this.legends_skeleton_low <- this.inherit("scripts/entity/tactical/legend_skelet
 
 	function onInit()
 	{
-		this.m.SpawnType = this.Const.Tactical.Actor.SkeletonLight;
+		this.m.SpawnType = this.Const.Tactical.Actor.LegendSkeletonLight;
 		this.legend_skeleton.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_sword"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_spear"));		
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_spear"));
 		this.m.Skills.update();
 	}
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 2);
 
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
 		}
 		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
-		}
-		else if (r == 3)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
 		}

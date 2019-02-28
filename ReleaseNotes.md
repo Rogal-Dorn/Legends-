@@ -112,7 +112,8 @@ Beta 9
 		- Teir 1 : Low end ancient weapons/armor; Mastery Sword, Mastery Spear
 		- Teir 2 : Medium end armor/weapons; Steel Brow, Shield Expert
 		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
-	* New Perks: Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition
+	* Summoning requires a flesh sacrifice. The higher the tier, the higher the flesh sacrifice required.
+	* New Perks: Siphon, Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition
 *Noble now has 5 retainers
 *Ranger Commander begins with two rangers
 *Crusader begins with a squire (nerfed from default)
@@ -151,9 +152,10 @@ Beta 9
 *Fix crash with trying to revive summons.
 *Added missing images
 
-Adds crusader sword and armor, gives to crusader
-Adds skullbreaker and spinesmasher, gives to berserkers and elites
-fixes missing pitchfork item
-Adds vala recruitment images
-
-
+*Adds crusader sword and armor, gives to crusader
+*Adds skullbreaker and spinesmasher, gives to berserkers and elites
+*fixes missing pitchfork item
+*Adds vala recruitment images
+*Changed summon mechanics to require flesh sacrifice. It costs HP (and a little Fatigue) to spawn a summon. Higher requirements for higher tier summons.
+*Added a new Siphon skill for warlock. You can siphon HP from target to you. Starts at 30%, decreases 5% for each tile away. Can not kill target with Siphon, can not siphon more HP than you are missing
+ 
