@@ -117,6 +117,7 @@ Beta 9
 *Noble now has 5 retainers
 *Ranger Commander begins with two rangers
 *Crusader begins with a squire (nerfed from default)
+*Crusader starts with custom armor and weapon.
 *Updated start icons to reflect new party sizes
 *5 new Berserker perks: TrueBeleiver, PoisonImmunity, Battleheart, Muscularity and Nudist
 *5 new Crusader perks: SteelBrow, InspiringPresence, Rebound, TrueBeliever, Battleheart; Looses Underdog
@@ -158,4 +159,5 @@ Beta 9
 *Adds vala recruitment images
 *Changed summon mechanics to require flesh sacrifice. It costs HP (and a little Fatigue) to spawn a summon. Higher requirements for higher tier summons.
 *Added a new Siphon skill for warlock. You can siphon HP from target to you. Starts at 30%, decreases 5% for each tile away. Can not kill target with Siphon, can not siphon more HP than you are missing
+*Bunch of other reported issues fixed
  

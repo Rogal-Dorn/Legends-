@@ -1,5 +1,7 @@
 this.legend_crusader_sword <- this.inherit("scripts/items/weapons/weapon", {
-	m = {},
+	m = {
+		StunChance = 30
+	},
 	function create()
 	{
 		this.weapon.create();
