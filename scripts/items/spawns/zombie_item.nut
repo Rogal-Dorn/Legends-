@@ -19,7 +19,7 @@ this.zombie_item <- this.inherit("scripts/items/spawns/spawn_item", {
 		this.m.ShowOnCharacter = false;
 		this.m.IsChangeableInBattle = false;
 		this.m.Icon = "supplies/human_carrion.png";
-		this.m.Value = 1000;
+		this.m.Value = 100;
 		this.m.MedicinePerDay = 2;
 	}
 

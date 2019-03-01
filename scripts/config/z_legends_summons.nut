@@ -12,7 +12,7 @@ if (!("Actor" in gt.Const.Tactical))
 
 gt.Const.Tactical.Actor.LegendSkeletonLight <- {
 	XP = 150,
-	ActionPoints = 9,
+	ActionPoints = 6,
 	Hitpoints = 45,
 	Bravery = 100,
 	Stamina = 100,
@@ -30,7 +30,7 @@ gt.Const.Tactical.Actor.LegendSkeletonLight <- {
 };
 gt.Const.Tactical.Actor.LegendSkeletonMedium <- {
 	XP = 250,
-	ActionPoints = 9,
+	ActionPoints = 8,
 	Hitpoints = 55,
 	Bravery = 100,
 	Stamina = 100,
@@ -67,7 +67,7 @@ gt.Const.Tactical.Actor.LegendSkeletonHeavy <- {
 
 gt.Const.Tactical.Actor.LegendZombieLight <- {
 	XP = 100,
-	ActionPoints = 9,
+	ActionPoints = 6,
 	Hitpoints = 100,
 	Bravery = 100,
 	Stamina = 100,
@@ -85,7 +85,7 @@ gt.Const.Tactical.Actor.LegendZombieLight <- {
 };
 gt.Const.Tactical.Actor.LegendZombieMedium <- {
 	XP = 150,
-	ActionPoints = 9,
+	ActionPoints = 8,
 	Hitpoints = 130,
 	Bravery = 100,
 	Stamina = 100,
