@@ -149,6 +149,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		local actor = this.getContainer().getActor();
 		actor.setTitle("the Crusader");
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rebound"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 	}
 
 	function onAddEquipment()

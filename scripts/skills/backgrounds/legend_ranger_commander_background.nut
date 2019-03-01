@@ -67,9 +67,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		return "This is your commander, when he dies the company ends. {Without his father around, %name%\'s mother taught him how to shoot a bow, and how to feed the rest of his family. | Born in the hinterlands of %randomtown%, %name% has spent much of his life stalking the beasts amongst the trees. | %name% once took a bet to shoot an apple off a pig\'s head. He missed. With a belly full of bacon, he became determined to never miss again - unless it meant more bacon, of course. | Early in his life, %name% liked to traipse about the forests. When a rabid fox attacked him, he learned to take a bow. When a devilish eagle clawed his face, he learned to shoot it.} {Once employed by local royalty, a disastrous boar hunt ended with a gored baron and all the blame - and blood - on %name%\'s hands. | The hunter hid the thought well, but for the longest time he wondered what it would be like to hunt the ultimate game: man. | Sadly, a bad game of peasant-roulette forced the deer hunter into seeking other means of income. | Unfortunately, he is not nearly as good at cooking deer as he is at shooting them. A dinner consisting of undercooked meats poisoned his entire family. His desperation for a new life is understandable. | After an arduous trip to town to sell meats and leathers, he followed the call of mercenary work. | War drove the game out of the forests, and the hunt out of %name%. Now he seeks another line of work. | When his wife fell ill, he could not heal her with hunted meat. Needing to earn crowns to pay for treatment, he took up the vocation of sellswords - or sellbows, as it were.} {Any outfit could use a deadeye such as this man. | Not entirely without faults, %name% is a professional bowman nonetheless. | A quick demonstration is offered: %name% shoots one arrow high into the sky, and with another he knocks it out. Impressive. | %name% looks like he has something to prove - just make sure he does it at range. When first given a sword, he grabbed it at the wrong end. Yes, that end. | The hunter wields his bow like another limb, and shoots his arrows like a preacher does words.}";
 	}
 
-
-
-
 	function onChangeAttributes()
 	{
 			
@@ -112,7 +109,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		function onAdded()
 	{
 		this.character_background.onAdded();
-
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 	}	

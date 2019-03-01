@@ -116,21 +116,23 @@ Beta 9
 	* New Perks: Siphon, Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition
 *Noble now has 5 retainers
 *Ranger Commander begins with two rangers
-*Crusader begins with a squire (nerfed from default)
-*Crusader starts with custom armor and weapon.
+*Crusader starts with custom armor and weapon and The Apprentice perk.
+*Warlock starts with custom armor and weapon and The Apprentice perk.
+*Seer starts with custom armor and weapon and The Apprentice perk.
 *Updated start icons to reflect new party sizes
 *5 new Berserker perks: TrueBeleiver, PoisonImmunity, Battleheart, Muscularity and Nudist
 *5 new Crusader perks: SteelBrow, InspiringPresence, Rebound, TrueBeliever, Battleheart; Looses Underdog
 *1 new Seer perk: SummonCat
-*New custom starting armors for Warlock, Seer and Berserker 
+*New custom starting armor for Berserker 
 *New Blacksmith and ironmonger backgrounds. Both give advantages to tool repair speed and tool consumption.
 *Staves now have a range of 2
 *Balance pass on all spells altering increasing fatigue and lowering range. ranger is range king
-*Changes magic damage scaling to be CurrentInitiative - 100
+*Changes magic damage scaling to be base off of a flat range plus Initiatvie over 100
 *Changes hand to hand to ((initiative + maxhp)/2) - 80)  
-*Adds magic missile projectile 
+*Adds magic missile projectile to seer. Needs a staff to be equiped.
 *Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
-*Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer and Footman's axe. 
+*Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer Skull Breaker, Spine Smasher and Footman's axe.
+*Berserkers and Orc elites get the new weapons.
 *Adds Orc elites, truly terrifying beasts, helps make the late game not just swarms
 *Adds new orc weapons. Big weapons mostly seen on berserkers and elites
 *Fixes heart icon not found
@@ -146,27 +148,6 @@ Beta 9
 *Fixed shovel label
 *Took berserker commander head out the general pool since he looks funny with some hairs
 *Increased size of Rabble spawns.
-
 *Organized order of skills in toolbar
 *Rebalanced starting stats of all commander backgrounds.
 *Fix crash on inventory screen for hexen/firstborn contracts.
-*Fix crash with trying to revive summons.
-*Added missing images
-
-*Adds crusader sword and armor, gives to crusader
-*Adds skullbreaker and spinesmasher, gives to berserkers and elites
-*fixes missing pitchfork item
-*Adds vala recruitment images
-*Changed summon mechanics to require flesh sacrifice. It costs HP (and a little Fatigue) to spawn a summon. Higher requirements for higher tier summons.
-*Added a new Siphon skill for warlock. You can siphon HP from target to you. Starts at 30%, decreases 5% for each tile away. Can not kill target with Siphon, can not siphon more HP than you are missing
-*Bunch of other reported issues fixed
- 
-
- *Fix crusader sword crash
- *fix firefield crashes
- *fix violent_decomposition crash
- *Warlock and Seer start with group size of 2 - they can recruit an acolyte this way 
- *Initiative Based magic damage. Magic staffs/weapons now have a base min/max damage wich is increased for all initiative over 100.
- *Fix magic missle - Seer always has the skill, but needs a staff equipped to use it now
- *Fixed a few perk unlock issues with icons
- 

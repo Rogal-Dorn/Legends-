@@ -9,7 +9,7 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 		this.m.Overlay = "active_26";
 		this.m.SoundOnUse = [
 		 	"sounds/combat/violent_decomposition.wav"
-		// ];
+		];
 		
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
