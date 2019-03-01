@@ -6,7 +6,7 @@ this.vazl_prosthetic_hand <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.vazl_prosthetic_hand";
 		this.m.Name = "Prosthetic Hand";
 		this.m.Icon = "ui/traits/vazl_prosthetic_hand.png";
-		this.m.Description = "Fancy! Good as new again. Almost.";
+		this.m.Description = "Fine craftsmanship allows the wearer of this prosthetic to articulate the joints with some effort, allowing the fingers to be bent to hold a shield or a sword. Of course, you lose quite a bit of finesse with such an item.";
 	}
 
 	function getTooltip()
