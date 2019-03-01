@@ -7,6 +7,10 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 		this.m.Icon = "skills/violent_decomposition.png",
 		this.m.IconDisabled = "skills/violent_decomposition_bw.png",
 		this.m.Overlay = "active_26";
+		this.m.SoundOnUse = [
+		 	"sounds/combat/violent_decomposition.wav"
+		// ];
+		
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
 			"sounds/enemies/necromancer_02.wav",
