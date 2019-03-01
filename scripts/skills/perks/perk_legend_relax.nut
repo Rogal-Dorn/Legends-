@@ -22,4 +22,9 @@ this.perk_legend_relax <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.legend_relax");
+	}
+
 });
