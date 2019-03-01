@@ -31,7 +31,7 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 1;
+		this.m.MaxRange = 2;
 		this.m.MaxLevelDifference = 4;
 	}
 
@@ -40,37 +40,9 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = _f;
 	}
 
-	function onCombatStarted()
+	function onAfterUpdate( _properties )
 	{
-		if (this.m.Container == null)
-		{
-			return
-		}
-
-		local skill = this.getContainer().getSkillByID("perk.legend_extended_aura");
-		if (skill == null)
-		{
-			return
-		}
-
-		this.m.OrigMaxRange = this.m.MaxRange;
-		this.m.MaxRange = this.m.MaxRange + skill.m.RangeIncrease;
-	}
-
-	function onCombatFinished()
-	{
-		if (this.m.Container == null)
-		{
-			return
-		}
-
-		local skill = this.getContainer().getSkillByID("perk.legend_extended_aura");
-		if (skill == null)
-		{
-			return
-		}
-		
-		this.m.MaxRange = this.m.OrigMaxRange
+		this.m.MaxRange = this.m.MaxRange - 1 + (_properties.IsSpecializedInSummons ? 1 : 0);
 	}
 
 	function getMaxRange()

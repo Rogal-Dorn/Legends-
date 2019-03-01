@@ -23,8 +23,6 @@ this.legend_spawn_skeleton_med_skill <- this.inherit("scripts/skills/actives/leg
 		this.m.Script = "scripts/entity/tactical/legends_skeleton_med"
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 16;
 		this.m.HPCost = 10;

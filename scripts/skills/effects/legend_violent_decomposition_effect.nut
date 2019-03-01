@@ -50,7 +50,7 @@ this.legend_violent_decomposition_effect <- this.inherit("scripts/skills/skill",
 		//this.spawnIcon("status_effect_78", actor.getTile());
 		actor.kill(null, null, this.Const.FatalityType.Suicide, false);
 
-		local ownTile = this.getTile();
+		local ownTile = this.getActor().getTile();
 		local inBlast = [];
 		this.spawnAttackEffect(ownTile, this.Const.Tactical.AttackEffectThresh);
 		for( local i = 5; i >= 0; i = --i )

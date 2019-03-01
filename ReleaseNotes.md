@@ -126,7 +126,7 @@ Beta 9
 *New Blacksmith and ironmonger backgrounds. Both give advantages to tool repair speed and tool consumption.
 *Staves now have a range of 2
 *Balance pass on all spells altering increasing fatigue and lowering range. ranger is range king
-*Changes magic damage scaling to initiative - 100
+*Changes magic damage scaling to be CurrentInitiative - 100
 *Changes hand to hand to ((initiative + maxhp)/2) - 80)  
 *Adds magic missile projectile 
 *Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
@@ -162,6 +162,9 @@ Beta 9
 *Bunch of other reported issues fixed
  
 
- *Fix crusdaer sword crash
+ *Fix crusader sword crash
  *fix firefield crashes
+ *fix violent_decomposition crash
+ *Warlock and Seer start with group size of 2 - they can recruit an acolyte this way 
+ *Initiative Based magic damage. Magic staffs/weapons now have a base min/max damage wich is increased for all initiative over 100.
  
