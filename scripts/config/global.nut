@@ -509,5 +509,5 @@ gt.Const.EntityIcon <- [
 	"alp_02_orientation",
 	"rabble_orientation",
 	"cat_orientation",
-	"orc_elite_orientation",
+	"orc_elite_orientation"
 ];
