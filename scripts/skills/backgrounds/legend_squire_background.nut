@@ -37,6 +37,7 @@ this.legend_squire_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsCombatBackground = true;
+		
 	}
 
 	function getTooltip()

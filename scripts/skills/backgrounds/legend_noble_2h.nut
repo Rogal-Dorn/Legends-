@@ -49,6 +49,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
