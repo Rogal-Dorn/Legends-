@@ -455,15 +455,6 @@ this.asset_manager <- {
 			bro.setVeteranPerks(2);
 			this.setBrothersMax(2);
 
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.setStartValuesEx([
-				"legend_squire_background"
-			]);
-			bro.setPlaceInFormation(3);
-			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setVeteranPerks(2);
-			this.setBrothersMax(2);
-
 
 			break;
 
