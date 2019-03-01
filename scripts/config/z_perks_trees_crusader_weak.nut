@@ -21,8 +21,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
-		gt.Const.Perks.PerkDefs.LegendComposure,
-		gt.Const.Perks.PerkDefs.SteelBrow
+		gt.Const.Perks.PerkDefs.LegendComposure
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -30,7 +29,6 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
-		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.Rebound
 	],
 	[
