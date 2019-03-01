@@ -4,7 +4,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_necro";
-		this.m.Icon = "ui/backgrounds/background_62.png";
+		this.m.Icon = "ui/backgrounds/warlock_02.png";
 		local r = this.Math.rand(0, 3);
 
 		if (r == 0)
