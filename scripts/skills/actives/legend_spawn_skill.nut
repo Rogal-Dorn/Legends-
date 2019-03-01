@@ -35,11 +35,6 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 	}
 
-	function setMaxRange( _f )
-	{
-		this.m.MaxRange = _f;
-	}
-
 	function onAfterUpdate( _properties )
 	{
 		this.m.MaxRange = this.m.MaxRange - 1 + (_properties.IsSpecializedInSummons ? 1 : 0);

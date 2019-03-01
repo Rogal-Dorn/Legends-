@@ -34,7 +34,6 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
 				id = 1,

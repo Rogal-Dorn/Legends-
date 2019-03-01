@@ -14,6 +14,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.IsIgnoredAsAOO = true;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

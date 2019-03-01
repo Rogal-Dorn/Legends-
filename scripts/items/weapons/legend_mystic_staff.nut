@@ -11,7 +11,7 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Icon = "weapons/melee/legend_staff_03_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.MagicStaff;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
@@ -34,7 +34,7 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/bash"));
-		this.addSkill(this.new("scripts/skills/actives/legend_magic_missile"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_magic_missile"));
 	}
 
 });

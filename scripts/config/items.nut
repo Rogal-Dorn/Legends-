@@ -40,10 +40,11 @@ gt.Const.Items.ItemType <- {
 	Crafting = 131072,
 	Supply = 262144,
 	Food = 524288,
-	TradeGood = 1048576
+	TradeGood = 1048576,
+	MagicStaff = 2097152
 };
 gt.Const.Items.ItemFilter <- {
-	Weapons = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Accessory | this.Const.Items.ItemType.Tool | this.Const.Items.ItemType.Ammo,
+	Weapons = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Accessory | this.Const.Items.ItemType.Tool | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.MagicStaff,
 	Armor = this.Const.Items.ItemType.Armor | this.Const.Items.ItemType.Helmet | this.Const.Items.ItemType.Shield,
 	Misc = this.Const.Items.ItemType.Supply | this.Const.Items.ItemType.Food | this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.TradeGood | this.Const.Items.ItemType.Loot | this.Const.Items.ItemType.Crafting,
 	Usable = this.Const.Items.ItemType.Usable,

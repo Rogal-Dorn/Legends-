@@ -167,4 +167,6 @@ Beta 9
  *fix violent_decomposition crash
  *Warlock and Seer start with group size of 2 - they can recruit an acolyte this way 
  *Initiative Based magic damage. Magic staffs/weapons now have a base min/max damage wich is increased for all initiative over 100.
+ *Fix magic missle - Seer always has the skill, but needs a staff equipped to use it now
+ *Fixed a few perk unlock issues with icons
  
