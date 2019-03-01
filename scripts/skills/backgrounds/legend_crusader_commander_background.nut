@@ -49,6 +49,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -158,9 +159,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 2;
+		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		local stash =this.World.Assets.getStash()
-		local r;
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/armor_parts_item"));

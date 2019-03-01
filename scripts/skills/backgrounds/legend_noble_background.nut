@@ -34,6 +34,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -110,6 +111,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 2;
+		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/noble_tunic"));
 		items.equip(this.new("scripts/items/weapons/pike"));

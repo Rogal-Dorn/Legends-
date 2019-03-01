@@ -54,6 +54,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 		this.m.Level = 1;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -128,6 +129,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Fatigue] = 2;
 		talents[this.Const.Attributes.Hitpoints] = 3;
+		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_warlock_cloak"));
 		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));

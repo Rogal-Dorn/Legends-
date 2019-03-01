@@ -44,6 +44,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -125,7 +126,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 3;
 		talents[this.Const.Attributes.Fatigue] = 2;
-
+		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 
 
