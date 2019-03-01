@@ -335,6 +335,16 @@ this.weapon <- this.inherit("scripts/items/item", {
 			}
 		}
 
+		if (this.isRuned())
+		{
+			result.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = this.getRuneSigilTooltip(this.m.RuneVariant)
+			});
+		}
+
 		return result;
 	}
 
@@ -569,31 +579,22 @@ this.weapon <- this.inherit("scripts/items/item", {
 		this.m.ConditionMax = this.Math.round(this.m.ConditionMax + durability_randomizer);
 	}
 
+	
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
 		_out.writeU16(this.m.Ammo);
-		if (this.m.IsRuned) {
-			_out.writeF32(this.m.Condition);
-			_out.writeF32(this.m.ConditionMax);
-			_out.writeU16(this.m.RegularDamage);
-			_out.writeU16(this.m.RegularDamageMax);
-		}
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
-		this.m.Ammo = _in.readU16();
-		if (this.m.IsRuned) 
-		{
-			this.m.Condition = _in.readF32();
-			this.m.ConditionMax = _in.readF32();
-			this.m.RegularDamage = _in.readU16();
-			this.m.RegularDamageMax = _in.readU16();
-			this.setRuned();
-		}
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
+		this.m.Ammo = _in.readU16();
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

@@ -1021,7 +1021,39 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendSiphon,
 		Icon = "ui/perks/siphon_circle.png",
 		IconDisabled = "ui/perks/siphon_circle_bw.png"
-	}								
+	},
+	{
+		ID = "perk.vazl_vala_inscribe_weapon",
+		Script = "scripts/skills/perks/vazl_vala_inscribe_weapon",
+		Name = this.Const.Strings.PerkName.vazl_ValaInscribeWeapon,
+		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscribeWeapon,
+		Icon = "ui/perks/vazl_vala_inscribe_weapon.png",
+		IconDisabled = "ui/perks/vazl_vala_inscribe_weapon_sw.png"
+	},
+	{
+		ID = "perk.vazl_vala_inscribe_helmet",
+		Script = "scripts/skills/perks/vazl_vala_inscribe_helmet",
+		Name = this.Const.Strings.PerkName.vazl_ValaInscribeHelmet,
+		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscribeHelmet,
+		Icon = "ui/perks/vazl_vala_inscribe_helmet.png",
+		IconDisabled = "ui/perks/vazl_vala_inscribe_helmet_sw.png"
+	},
+	{
+		ID = "perk.vazl_vala_inscribe_armor",
+		Script = "scripts/skills/perks/vazl_vala_inscribe_armor",
+		Name = this.Const.Strings.PerkName.vazl_ValaInscribeArmor,
+		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscribeArmor,
+		Icon = "ui/perks/vazl_vala_inscribe_armor.png",
+		IconDisabled = "ui/perks/vazl_vala_inscribe_armor_sw.png"
+	},
+	{
+		ID = "perk.vazl_vala_inscription_mastery",
+		Script = "scripts/skills/perks/vazl_vala_inscription_mastery",
+		Name = this.Const.Strings.PerkName.vazl_ValaInscriptionMastery,
+		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscriptionMastery,
+		Icon = "ui/perks/vazl_vala_inscription_mastery.png",
+		IconDisabled = "ui/perks/vazl_vala_inscription_mastery_sw.png"
+	}				
 ];
 
 
@@ -1152,5 +1184,9 @@ gt.Const.Perks.PerkDefs <- {
 	LegendEnthrall = 123,
 	LegendViolentDecomposition = 124,
 	LegendPossession = 125,
-	LegendSiphon = 126
+	LegendSiphon = 126,
+	VazlInscribeWeapon = 127,
+	VazlInscribeHelmet = 128,
+	VazlInscribeArmor = 129,
+	VazlInscribeMastery = 130
 };

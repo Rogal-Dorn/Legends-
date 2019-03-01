@@ -6,7 +6,7 @@ this.vazl_prosthetic_forearm <- this.inherit("scripts/skills/traits/character_tr
 		this.m.ID = "trait.vazl_prosthetic_forearm";
 		this.m.Name = "Prosthetic Forearm";
 		this.m.Icon = "ui/traits/vazl_prosthetic_forearm.png";
-		this.m.Description = "Forearm.";
+		this.m.Description = "A brand new arm for a sword to be swung with. Of course, the user loses most control in their arm, all feeling, and must manually change the position of their fingers with their other hand. But still, at least it’s something.";
 	}
 
 	function getTooltip()

@@ -177,6 +177,16 @@ this.armor <- this.inherit("scripts/items/item", {
 			this.m.Upgrade.getArmorTooltip(result);
 		}
 
+		if (this.isRuned())
+		{
+			result.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = this.getRuneSigilTooltip(this.m.RuneVariant)
+			});
+		}
+
 		return result;
 	}
 
@@ -447,6 +457,10 @@ this.armor <- this.inherit("scripts/items/item", {
 
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
 		this.updateVariant();
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

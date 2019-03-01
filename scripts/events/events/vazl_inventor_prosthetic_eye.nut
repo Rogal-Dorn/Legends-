@@ -99,7 +99,7 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = glass_eye_trait.getIcon(),
-						text = _event.m.Noeye.getName() + " receives a " + glass_eye_trait.getName()
+						text = _event.m.Noeye.m.Name + " receives a " + glass_eye_trait.m.Name
 				});
 
 				local missing_eye_bye = this.new("scripts/skills/injury_permanent/missing_eye_injury");
@@ -108,11 +108,11 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = missing_eye_bye.getIcon(),
-						text = _event.m.Noeye.getName() + " no longer has a " + missing_eye_bye.getName()
+						text = _event.m.Noeye.m.Name + " no longer has a " + missing_eye_bye.m.Name
 				});
 
-				_event.m.Inventor.improveMood(2.0, "Created a " + glass_eye_trait.getName() + " for " + _event.m.Noeye.getName());
-				_event.m.Noeye.improveMood(2.0, "Received a " + glass_eye_trait.getName() + " from " + _event.m.Inventor.getName());
+				_event.m.Inventor.improveMood(2.0, "Created a " + glass_eye_trait.m.Name + " for " + _event.m.Noeye.m.Name);
+				_event.m.Noeye.improveMood(2.0, "Received a " + glass_eye_trait.m.Name + " from " + _event.m.Inventor.m.Name);
 			}
 		});
 		this.m.Screens.push({
@@ -154,12 +154,12 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 					this.List.push({
 							id = 10,
 							icon = brain_damage_yum.getIcon(),
-							text = _event.m.Noeye.getName() + " suffers " + brain_damage_yum.getName()
+							text = _event.m.Noeye.m.Name + " suffers " + brain_damage_yum.m.Name
 					});
 				}
 
-				_event.m.Inventor.worsenMood(this.Const.MoodChange.PermanentInjury, "Caused " + brain_damage_yum.getName() + " in " + _event.m.Noeye.getName());
-				_event.m.Noeye.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered " + brain_damage_yum.getName() + " because of " + _event.m.Inventor.getName());
+				_event.m.Inventor.worsenMood(this.Const.MoodChange.PermanentInjury, "Caused " + brain_damage_yum.m.Name + " in " + _event.m.Noeye.m.Name);
+				_event.m.Noeye.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered " + brain_damage_yum.m.Name + " because of " + _event.m.Inventor.m.Name);
 			}
 		});
 		this.m.Screens.push({
@@ -242,11 +242,11 @@ this.vazl_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"inventor",
-			this.m.Inventor.getName()
+			this.m.Inventor.m.Name
 		]);
 		_vars.push([
 			"noeye",
-			this.m.Noeye.getName()
+			this.m.Noeye.m.Name
 		]);
 	}
 

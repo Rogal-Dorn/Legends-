@@ -31,7 +31,7 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 				this.List.push({
 						id = 10,
 						icon = cannibalistic_trait.getIcon(),
-						text = _event.m.Butcher.getName() + " now enjoys forbidden meat"
+						text = _event.m.Butcher.m.Name + " now enjoys forbidden meat"
 				});
 				_event.m.Cannibal.improveMood(2.0, "Spread the joys of cannibalism");
 				_event.m.Butcher.improveMood(2.0, "Started appreciating forbidden meat");
@@ -76,11 +76,11 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"cannibal",
-			this.m.Cannibal.getName()
+			this.m.Cannibal.m.Name
 		]);
 		_vars.push([
 			"butcher",
-			this.m.Butcher.getName()
+			this.m.Butcher.m.Name
 		]);
 	}
 

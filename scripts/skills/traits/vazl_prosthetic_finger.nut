@@ -6,7 +6,7 @@ this.vazl_prosthetic_finger <- this.inherit("scripts/skills/traits/character_tra
 		this.m.ID = "trait.vazl_prosthetic_finger";
 		this.m.Name = "Prosthetic Finger";
 		this.m.Icon = "ui/traits/vazl_prosthetic_finger.png";
-		this.m.Description = "Finger.";
+		this.m.Description = "A wooden finger with a joint for the user to force it into whatever position they need. Perfect for pointing fingers at people, but not too much else.";
 	}
 
 	function getTooltip()

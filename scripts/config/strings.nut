@@ -1127,7 +1127,12 @@ gt.Const.Strings.PerkName <- {
 	LegendEnthrall = "Enthrall",
 	LegendViolentDecomposition = "Violent Decomposition",
 	LegendPossession = "Possession",
-	LegendSiphon = "Siphon"
+	LegendSiphon = "Siphon",
+	vazl_ValaInscriptionMastery = "Inscription Mastery",
+	vazl_ValaInscribeWeapon = "Inscribe Weapon",
+	vazl_ValaInscribeHelmet = "Inscribe Helmet",
+	vazl_ValaInscribeArmor = "Inscribe Armor",
+	vazl_ValaInscribeShield = "Inscribe Shield"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1275,7 +1280,12 @@ gt.Const.Strings.PerkDescription <- {
 	LegendEnthrall = "Pull at the strings of a single creation, compelling them to linger among you as an obedient guardian. Enthralled dead act defensively and attempt to protect you from threats.",
 	LegendViolentDecomposition = "Corrupt the force sustaining one of your thralls, causing them to detonate destructively after the corruption has time to build. Affected dead explode at the end of their turn next round, dealing damage in a 1 tile radius. The less HP they have, the more damage the explosion inflicts. If they are killed before they explode, the effect no longer triggers.",
 	LegendPossession = "Enter the mind of a thrall and lend your power for one turn, increasing thralls combat prowess.",
-	LegendSiphon = "Draw from the lifeforce of your victim and transfer up to 30% of their health to yourself. You may not drain more health than you are missing nor drain a victim to their death. Effectiveness drops off 5% for each tile away."
+	LegendSiphon = "Draw from the lifeforce of your victim and transfer up to 30% of their health to yourself. You may not drain more health than you are missing nor drain a victim to their death. Effectiveness drops off 5% for each tile away.",
+	vazl_ValaInscriptionMastery = "Lowers the cooldown until the Vala can begin inscribing items again (after a successful inscription) from 20 to [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] days, and increases her inscription speed.",
+	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any weapon currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: aiming, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
+	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any helmet currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
+	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any armor currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again.",
+	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: none\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

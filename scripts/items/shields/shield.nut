@@ -154,6 +154,16 @@ this.shield <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		if (this.isRuned())
+		{
+			result.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = this.getRuneSigilTooltip(this.m.RuneVariant)
+			});
+		}
+
 		return result;
 	}
 
@@ -383,6 +393,10 @@ this.shield <- this.inherit("scripts/items/item", {
 	{
 		this.item.onDeserialize(_in);
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });
