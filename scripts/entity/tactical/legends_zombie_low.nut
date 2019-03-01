@@ -7,7 +7,6 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 		this.legend_zombie.onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
-		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.update();
 	}
 
