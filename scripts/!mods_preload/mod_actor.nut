@@ -7,6 +7,13 @@
         o.m.DeathBloodAmount = 1.5;
         o.m.BloodPoolScale = 1.25;
     }
+
+    o.isArmedWithMagicStaff <- function()
+	{
+		local item = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		return item != null && item.isItemType(this.Const.Items.ItemType.MagicStaff);
+	}
+
         //
     // local onResurrected = o.onResurrected;
     // o.onResurrected = function ( _info ) 

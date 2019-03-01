@@ -1,5 +1,7 @@
 this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
-	m = {},
+	m = {
+		Range = 6
+	},
 	function create()
 	{
 		this.legend_magic_skill.create();
@@ -49,7 +51,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 20;
-		this.m.MinRange = 4;
+		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
 		//this.m.ProjectileType = this.Const.ProjectileType.Missile;
@@ -63,7 +65,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles on even ground, more if shooting downhill"
 			}
 		]);
 		return ret;
@@ -71,13 +73,16 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 
 	function isUsable()
 	{
+		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
+		{
+			return false
+		}
 		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.MaxRange = this.m.Item.getRangeMax() - 1 + (_properties.IsSpecializedInStaves ? 1 : 0);
-		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
+		this.m.MaxRange = this.m.Range - 1 + (_properties.IsSpecializedInStaves ? 1 : 0);
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 0.8;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 	}
