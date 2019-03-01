@@ -2,7 +2,7 @@ this.legend_relax <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.relax";
+		this.m.ID = "actives.legend_relax";
 		this.m.Name = "Relax";
 		this.m.Description = "You imbue an ally with calm and focus, reducing their fatigue";
 		this.m.Icon = "skills/relax_square.png";

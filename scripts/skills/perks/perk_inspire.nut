@@ -22,4 +22,10 @@ this.perk_inspire <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.inspire");
+	}
+
+
 });
