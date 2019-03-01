@@ -51,6 +51,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 		this.m.Level = 2;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -129,6 +130,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 2;
 		talents[this.Const.Attributes.Fatigue] = 3;
+		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_seer_robes"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));

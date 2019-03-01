@@ -49,6 +49,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -156,6 +157,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeDefense] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local stash =this.World.Assets.getStash()
 		local r;
