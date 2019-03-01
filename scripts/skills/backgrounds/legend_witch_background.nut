@@ -4,7 +4,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_witch";
-		this.m.Icon = "ui/backgrounds/Seer_02.png";
+		this.m.Icon = "ui/backgrounds/seer_02.png";
 		local r = this.Math.rand(0, 3);
 
 		if (r == 0)
