@@ -2223,20 +2223,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.update();
 		local p = this.m.CurrentProperties;
 		this.m.Hitpoints = p.Hitpoints;
-		this.fillTalentValues();
+		this.fillTalentValues(3);
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
 
-	function fillTalentValues()
+	function fillTalentValues( _num, _force = false )
 	{
 		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);
 
-		if (this.getBackground() != null && this.getBackground().isUntalented())
+		if (this.getBackground() != null && this.getBackground().isUntalented() && !_force)
 		{
 			return;
 		}
 
-		for( local done = 0; done < 3;  )
+		for( local done = 0; done < _num;  )
 		{
 			local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
 

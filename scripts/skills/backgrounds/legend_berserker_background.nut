@@ -59,6 +59,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -170,6 +171,8 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 3;
+		 this.getContainer().getActor().fillTalentValues(2, true);
+
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

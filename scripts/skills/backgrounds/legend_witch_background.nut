@@ -54,6 +54,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		this.m.IsUntalented = true;
 		this.m.Level = 1;
 	}
 
@@ -130,6 +131,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Fatigue] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_seer_robes"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));

@@ -34,6 +34,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()
@@ -112,10 +113,11 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 
 	function onAddEquipment()
 	{
-	local talents = this.getContainer().getActor().getTalents();
+		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 2;
+		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/helmets/greatsword_hat"));
