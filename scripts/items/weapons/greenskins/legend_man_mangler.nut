@@ -33,15 +33,13 @@ this.legend_man_mangler <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local slash = this.new("scripts/skills/actives/slash");
-		slash.m.Icon = "skills/active_78.png";
-		slash.m.IconDisabled = "skills/active_78_sw.png";
-		slash.m.Overlay = "active_78";
-		this.addSkill(slash);
-		local skillToAdd = this.new("scripts/skills/actives/split_shield");
+		local skillToAdd = this.new("scripts/skills/actives/swing");
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		this.addSkill(skillToAdd);
-		local skillToAdd = this.new("scripts/skills/actives/overhead_strike");
+		skillToAdd = this.new("scripts/skills/actives/split_shield");
+		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
+		this.addSkill(skillToAdd);
+		skillToAdd = this.new("scripts/skills/actives/overhead_strike");
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		skillToAdd.setStunChance(this.m.StunChance);
 		this.addSkill(skillToAdd);

@@ -15,6 +15,7 @@ this.perk_legend_roster_1 <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+		this.logInfo("**ADDING EXTRA BROTHER***")
 		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() + 1);
 	}
 	

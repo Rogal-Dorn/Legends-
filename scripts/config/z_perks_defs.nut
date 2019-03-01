@@ -409,7 +409,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	{
 		ID = "perk.legend_roster_1",
 		Script = "scripts/skills/perks/perk_legend_roster_1",
-		Name = this.Const.Strings.PerkName.LegendRoster + " 1",
+		Name = this.Const.Strings.PerkName.LegendRoster1,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster1,
 		Icon = "ui/perks/recruit1.png",
 		IconDisabled = "ui/perks/recruit1_bw.png"
@@ -435,8 +435,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_roster_4",
 		Name = this.Const.Strings.PerkName.LegendRoster4,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster4,
-		Icon = "ui/perks/recruit3.png",
-		IconDisabled = "ui/perks/recruit3_bw.png"
+		Icon = "ui/perks/recruit4.png",
+		IconDisabled = "ui/perks/recruit4_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_5",

@@ -13,7 +13,9 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieLow,
-		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonLow
+		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
+		gt.Const.Perks.PerkDefs.LegendRoster1
+
 	],
 	[
 		gt.Const.Perks.PerkDefs.FortifiedMind,

@@ -13,7 +13,7 @@ this.legend_spawn_skeleton_med_skill <- this.inherit("scripts/skills/actives/leg
 		 	"sounds/combat/bones_01.wav",
 		 	"sounds/combat/bones_02.wav",
 		 	"sounds/combat/bones_03.wav"
-		// ];
+		];
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
 			"sounds/enemies/necromancer_02.wav",

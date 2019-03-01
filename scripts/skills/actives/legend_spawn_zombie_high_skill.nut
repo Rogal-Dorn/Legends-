@@ -14,7 +14,7 @@ this.legend_spawn_zombie_high_skill <- this.inherit("scripts/skills/actives/lege
 		 	"sounds/combat/meat_02.wav",
 		 	"sounds/combat/meat_03.wav",
 			"sounds/combat/meat_04.wav"
-		// ];
+		];
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
 			"sounds/enemies/necromancer_02.wav",

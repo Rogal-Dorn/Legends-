@@ -12,7 +12,6 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.BagsAndBelts
-
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -22,8 +21,8 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.Gifted,
-		gt.Const.Perks.PerkDefs.LegendComposure
-
+		gt.Const.Perks.PerkDefs.LegendComposure,
+		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -31,8 +30,8 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
-		gt.Const.Perks.PerkDefs.InspiringPresence
-
+		gt.Const.Perks.PerkDefs.InspiringPresence,
+		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryPolearm,

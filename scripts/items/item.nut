@@ -725,14 +725,6 @@ this.item <- {
 
 	function updateRuneSigil()
 	{
-		if (this.m.Name.find("(Runed)") == null)
-		{
-			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
-		}
-	}
-
-	function updateRuneSigilAppearance()
-	{
 		local iconLargeParts = split(this.m.IconLarge, "/");
 		local iconParts = split(this.m.Icon, "/");
 		local text = ""
@@ -759,7 +751,10 @@ this.item <- {
 			}
 		}
 		this.m.Icon = text;
-		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
+		if (this.m.Name.find("(Runed)") == null)
+		{
+			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		}
 	}
 
 	function onNewDay()
@@ -777,8 +772,7 @@ this.item <- {
 		_out.writeU16(this.m.Variant);
 		_out.writeF32(this.m.Condition);
 		_out.writeF32(this.m.PriceMult);
-		_out.writeString(this.getInstanceID()); //Need old ID for saved formations
-		_out.writeBool(this.m.IsRuned);		
+		_out.writeString(this.getInstanceID()); //Need old ID for saved formations	
 		_out.writeU8(this.m.RuneVariant);
 	}
 
@@ -801,9 +795,9 @@ this.item <- {
 		{
 			this.m.OldID = _in.readString();
 		}
-		if (_in.getMetaData().getVersion() >= 50)
+		if (_in.getMetaData().getVersion() == 50)
 		{
-			this.m.IsRuned = _in.readBool;
+			local runed = _in.readBool;
 		}
 		if (_in.getMetaData().getVersion() >= 51)
 		{
