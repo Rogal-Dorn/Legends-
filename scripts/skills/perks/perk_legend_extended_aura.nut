@@ -1,7 +1,5 @@
 this.perk_legend_extended_aura <- this.inherit("scripts/skills/skill", {
-	m = {
-		RangeIncrease = 1
-	},
+	m = {},
 	function create()
 	{
 		this.m.ID = "perk.legend_extended_aura";
@@ -15,5 +13,11 @@ this.perk_legend_extended_aura <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+
+	function onUpdate( _properties )
+	{
+		_properties.IsSpecializedInSummons = true;
+	}
+
 
 });

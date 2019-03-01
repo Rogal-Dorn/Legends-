@@ -860,7 +860,12 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInShields = false,
 	IsSpecializedInSlings = false,
 	IsSpecializedInStaves = false,
+	IsSpecializedInSummons = false,
 	IsContentWithBeingInReserve = false,
+	DamageInitiativeMin = 0,
+	DamageInitiativeMax = 0,
+	DamageInitiativeCutoff = 100
+
 	DailyWage = 0,
 	DailyWageMult = 1.0,
 	DailyFood = 2.0,
@@ -911,6 +916,16 @@ gt.Const.CharacterProperties <- {
 	function getInitiative()
 	{
 		return this.Math.floor(this.Initiative * (this.InitiativeMult >= 0 ? this.InitiativeMult : 1.0 / this.InitiativeMult));
+	}
+
+	function getInitiativeMinDamage()
+	{
+		return this.DamageInitiativeMin + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
+	}
+
+	function getInitiativeMaxDamage()
+	{
+		return this.DamageInitiativeMax + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
 	}
 
 	function getRegularDamageAverage()

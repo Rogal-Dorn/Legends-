@@ -22,7 +22,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRust,
-		gt.Const.Perks.PerkDefs.LegendRoster1
+		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
 		gt.Const.Perks.PerkDefs.BackStabber,
@@ -30,7 +30,6 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendDeathTouch,
 		gt.Const.Perks.PerkDefs.Lookout,
 		gt.Const.Perks.PerkDefs.LegendExtendendAura,
-		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryDagger,

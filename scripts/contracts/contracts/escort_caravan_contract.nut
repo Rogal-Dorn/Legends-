@@ -922,7 +922,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(money);
-						local xp = money * 0.10;
+						local xp = money * 0.50;
 						local playerRoster = this.World.getPlayerRoster().getAll();
 						foreach( bro in playerRoster )
 						{

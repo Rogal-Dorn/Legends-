@@ -1011,8 +1011,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_possession",
 		Name = this.Const.Strings.PerkName.LegendPossession,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossession,
-		Icon = "ui/perks/possession_circle.png",
-		IconDisabled = "ui/perks/possession_circle_bw.png"
+		Icon = "ui/perks/possession_circle_56.png",
+		IconDisabled = "ui/perks/possession_circle_56_bw.png"
 	},
 	{
 		ID = "perk.legend_siphon",

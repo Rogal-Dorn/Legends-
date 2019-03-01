@@ -504,7 +504,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(1);
+			this.setBrothersMax(2);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Witch:
@@ -517,7 +517,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(1);
+			this.setBrothersMax(2);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:

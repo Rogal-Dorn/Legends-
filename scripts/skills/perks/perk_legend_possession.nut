@@ -2,11 +2,11 @@ this.perk_legend_possession <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_enthrall";
+		this.m.ID = "perk.legend_possession";
 		this.m.Name = this.Const.Strings.PerkName.LegendPossession;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendPossession;
-		this.m.Icon = "ui/perks/possessoin_circle.png";
-		this.m.IconDisabled = "ui/perks/possessoin_circle_bw.png";
+		this.m.Icon = "ui/perks/possession_circle_56.png";
+		this.m.IconDisabled = "ui/perks/possession_circle_56_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

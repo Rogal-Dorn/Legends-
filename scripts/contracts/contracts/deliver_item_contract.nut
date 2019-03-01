@@ -659,7 +659,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
 						local playerRoster = this.World.getPlayerRoster().getAll();
-						local xp = this.Contract.m.Payment.getOnCompletion() * 0.10;
+						local xp = this.Contract.m.Payment.getOnCompletion() * 0.5;
 						foreach( bro in playerRoster )
 							{
 								bro.addXP(xp);
