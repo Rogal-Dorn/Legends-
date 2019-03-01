@@ -9,10 +9,10 @@ this.legend_spawn_skeleton_high_skill <- this.inherit("scripts/skills/actives/le
 		this.m.Icon = "skills/rebuild_skeleton.png",
 		this.m.IconDisabled = "skills/rebuild_skeleton_bw.png",
 		this.m.Overlay = "active_26";
-		// this.m.SoundOnUse = [
-		// 	"sounds/enemies/geist_idle_10.wav",
-		// 	"sounds/enemies/geist_idle_11.wav",
-		// 	"sounds/enemies/geist_idle_12.wav"
+		 this.m.SoundOnUse = [
+		 	"sounds/combat/bones_01.wav",
+		 	"sounds/combat/bones_02.wav",
+		 	"sounds/combat/bones_03.wav"
 		// ];
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
