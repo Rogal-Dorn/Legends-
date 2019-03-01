@@ -39,25 +39,15 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
+		local ret = this.getDefaultUtilityTooltip()
+		ret.push(
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "leave your opponent bewildered, halving their damage, fatigue and initiative"
-			}
-		];
+				text = "Leave your opponent bewildered, halving their damage, fatigue and initiative"
+			})
+		return ret;
 	}
 
 	function onUse( _user, _targetTile )
