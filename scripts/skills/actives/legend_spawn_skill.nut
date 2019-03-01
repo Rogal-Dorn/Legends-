@@ -6,7 +6,7 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		IsControlledByPlayer = true,
 		HPCost = 5,
 		APStartMult = 1.0,
-		OrigMaxRange = 1
+		Range = 2
 	},
 
 	function setItem( _i )
@@ -37,7 +37,7 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.MaxRange = this.m.MaxRange - 1 + (_properties.IsSpecializedInSummons ? 1 : 0);
+		this.m.MaxRange = this.m.Range - 1 + (_properties.IsSpecializedInSummons ? 1 : 0);
 	}
 
 	function getMaxRange()
