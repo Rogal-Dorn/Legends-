@@ -26,7 +26,7 @@ this.legend_spawn_zombie_med_skill <- this.inherit("scripts/skills/actives/legen
 		this.m.FatigueCost = 15;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 6;
-		this.m.HPCost = 10;
+		this.m.HPCost = 20;
 		this.m.APStartMult = 0.5;
 	}
 

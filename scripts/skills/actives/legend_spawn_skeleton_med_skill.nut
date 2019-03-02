@@ -25,7 +25,7 @@ this.legend_spawn_skeleton_med_skill <- this.inherit("scripts/skills/actives/leg
 		this.m.FatigueCost = 15;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 16;
-		this.m.HPCost = 10;
+		this.m.HPCost = 20;
 		this.m.APStartMult = 0.5;
 
 
