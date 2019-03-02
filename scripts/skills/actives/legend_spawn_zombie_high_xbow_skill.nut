@@ -6,8 +6,8 @@ this.legend_spawn_zombie_high_xbow_skill <- this.inherit("scripts/skills/actives
 		this.m.ID = "actives.legend_spawn_zombie_high_xbow_skill";
 		this.m.Name = "Summon Heavy Xbow Zombie";
 		this.m.Description = "Unleash your zombie and send him charging into the enemy. Needs a free tile adjacent.";
-		this.m.Icon = "skills/remake_man.png",
-		this.m.IconDisabled = "skills/remake_man_bw.png",
+		this.m.Icon = "skills/zombie_archer_03_square.png",
+		this.m.IconDisabled = "skills/zombie_archer_03_square_bw.png",
 		this.m.Overlay = "active_26";
 		 this.m.SoundOnUse = [
 		 	"sounds/combat/meat_01.wav",

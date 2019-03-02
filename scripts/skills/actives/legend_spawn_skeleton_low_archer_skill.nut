@@ -6,8 +6,8 @@ this.legend_spawn_skeleton_low_archer_skill <- this.inherit("scripts/skills/acti
 		this.m.ID = "actives.legend_spawn_skeleton_low_archer_skill";
 		this.m.Name = "Summon Light Archer Skeleton";
 		this.m.Description = "Unleash your skeleton and send him charging into the enemy. Needs a free tile adjacent.";
-		this.m.Icon = "skills/arrange_bones.png",
-		this.m.IconDisabled = "skills/arrange_bones_bw.png",
+		this.m.Icon = "skills/skeleton_archer_01_square.png",
+		this.m.IconDisabled = "skills/skeleton_archer_01_square_bw.png",
 		this.m.Overlay = "active_26";
 		 this.m.SoundOnUse = [
 		 	"sounds/combat/bones_01.wav",
