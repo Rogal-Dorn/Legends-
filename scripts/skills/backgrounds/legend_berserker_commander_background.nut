@@ -92,16 +92,16 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				10
+				15,
+				15
 			],
 			Bravery = [
 				15,
 				15
 			],
 			Stamina = [
-				15,
-				15
+				5,
+				5
 			],
 			MeleeSkill = [
 				25,
@@ -112,8 +112,8 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				-5
 			],
 			MeleeDefense = [
-				-5,
-				-5
+				0,
+				0
 			],
 			RangedDefense = [
 				-5,
@@ -170,7 +170,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 3;
-		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Hitpoints] = 2;
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
