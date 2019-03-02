@@ -117,12 +117,12 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				10
 			],
 			Stamina = [
-				15,
-				15
-			],
-			MeleeSkill = [
 				10,
 				10
+			],
+			MeleeSkill = [
+				15,
+				15
 			],
 			RangedSkill = [
 				-5,
