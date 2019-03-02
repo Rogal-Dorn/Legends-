@@ -19,6 +19,11 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
+		if (_targetEntity == null)
+		{
+			return
+		}
+
 		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
 			_properties.DamageTotalMult *= 1.2;
