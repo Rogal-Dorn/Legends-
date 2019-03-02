@@ -119,9 +119,6 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/wine_item"));
-		stash.add(this.new("scripts/items/loot/signet_ring_item"));
-		stash.add(this.new("scripts/items/special/golden_goose_item"));
-
 	}
 
 });

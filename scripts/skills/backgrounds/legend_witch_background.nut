@@ -139,7 +139,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/black_marsh_stew_item"));
-		stash.add(this.new("scripts/items/supplies/medicine_item"));
 	}
 
 });

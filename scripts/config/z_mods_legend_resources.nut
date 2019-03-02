@@ -84,19 +84,24 @@ gt.Const.LegendMod.getMaxArmorParts <- function ( _background )
 		case "background.female_tailor":
 		case "background.peddler":
 		case "background.legend_berserker":
-		case "background.legend_commander_berserker":
-		case "background.legend_commander_noble":
 		case "background.legend_noble":
 			return 5;
 			break;
-		case "background.legend_commander_crusader":
+
+		case "background.legend_commander_noble":
+		case "background.legend_commander_berserker":
 		case "background.legend_crusader":
 		case "background.squire":
 			return 10;
 			break;
 		case "background.apprentice":
+		case "background.legend_commander_crusader":
 		case "background.vazl_inventor":
 			return 15;
+			break;
+		case "background.legend_ironmonger":
+		case "background.legend_blacksmith":
+			return 20;
 			break;
 
 		default:
@@ -122,10 +127,10 @@ gt.Const.LegendMod.getMaxMedicine <- function ( _background )
 		case "background.vazl_vala":
 			return 15;
 			break;
-
 		case "background.legend_commander_necro":
 		case "background.legend_necro":
 			return 42;
+			return 15
 
 		default:
 			return 5;
@@ -137,19 +142,20 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 {
 	switch ( _background )
 	{
-		case "background.peddler":
+		case "background.vazl_inventor":
+		case "background.legend_commander_crusader":
 		case "background.legend_noble":
+			return 5;
+			break;
+		case "background.peddler":
+		case "background.legend_commander_noble":
 			return 10;
 			break;
 		case "background.caravan_hand":
-		case "background.legend_commander_noble":
 			return 15;
 			break;
-		case "background.vazl_inventor":
-			return 5
 		case "background.legend_commander_ranger":
 		case "background.legend_ranger":
-		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
 		case "background.legend_berserker":
 		case "background.legend_commander_berserker":
@@ -202,9 +208,10 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 {
 	switch ( _background )
 	{
-
-		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
+		return 0.1;
+			 break;
+		case "background.legend_commander_crusader":
 		case "background.legend_ironmonger":
 		case "background.tailor":
 		case "background.female_tailor":
@@ -230,9 +237,10 @@ gt.Const.LegendMod.getBarterModifier <- function ( _background )
 		case "background.minstrel":
 		case "background.female_minstrel":
 			return 0.025
+			break;
 		case "background.peddler":
 			return 0.10;
-
+			break;
 
 		default:
 			return 0.0;
@@ -245,14 +253,17 @@ gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
 	switch ( _background )
 	{
 		case "background.legend_commander_noble":
-		case "background.legend_noble":
-		case "background.legend_ironmonger":
-			return 0.1;
-		case "background.legend_commander_crusader":
 		case "background.legend_crusader":
-		case "background.legend_blacksmith":
+			return 0.1;
+			break;
+		case "background.legend_commander_crusader":
+		case "background.legend_ironmonger":
 			return 0.2;
 			break;
+		case "background.legend_blacksmith":
+			return 0.33;
+			break;
+
 		default:
 			return 0.0;
 	}
@@ -263,12 +274,14 @@ gt.Const.LegendMod.getMedsConsumptionModifier <- function ( _background )
 {
 	switch ( _background )
 	{
-		case "background.legend_commander_necro":
 		case "background.legend_necro":
-					return 0.2;
+			return 0.2;
+
+		case "background.legend_commander_necro":
+		case "background.legend_witch":
+			return 0.2;
 			break;
 		case "background.legend_commander_witch":
-		case "background.legend_witch":
 		case "background.female_beggar":
 			return 0.5;
 			break;
