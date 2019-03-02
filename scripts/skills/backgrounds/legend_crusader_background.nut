@@ -7,7 +7,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Name = "Holy Crusader";
 		this.m.Icon = "ui/backgrounds/background_60.png";
 		this.m.HiringCost = 20000;
-		this.m.DailyCost = 0;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",

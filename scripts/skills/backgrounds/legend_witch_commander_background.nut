@@ -128,8 +128,9 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 2;
+		talents[this.Const.Attributes.Initiative] = 2;
 		talents[this.Const.Attributes.Fatigue] = 3;
+		talents[this.Const.Attributes.MeleeSkill] = 1;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_seer_robes"));

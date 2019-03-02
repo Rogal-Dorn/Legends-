@@ -24,8 +24,8 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			this.m.Name = "Warlock";
 		}
 
-		this.m.HiringCost = 25000;
-		this.m.DailyCost = 0;
+		this.m.HiringCost = 20000;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",

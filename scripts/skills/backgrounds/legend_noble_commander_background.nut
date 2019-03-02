@@ -117,6 +117,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.Fatigue] = 1;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
