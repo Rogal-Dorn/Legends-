@@ -26,7 +26,7 @@ this.legend_spawn_zombie_low_skill <- this.inherit("scripts/skills/actives/legen
 		this.m.FatigueCost = 10;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;
-		this.m.HPCost = 5;
+		this.m.HPCost = 10;
 	}
 
 });

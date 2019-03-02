@@ -12,6 +12,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Pathfinder,
+		gt.Const.Perks.PerkDefs.Steadfast,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.BloodyHarvest,
 		gt.Const.Perks.PerkDefs.LegendRoster1
