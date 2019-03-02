@@ -19,7 +19,7 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmamentIcon = "icon_legend_slingstaff_01";
 		this.m.Value = 3000;
 		this.m.RangeMin = 2;
-		this.m.RangeMax = 8;
+		this.m.RangeMax = 10;
 		this.m.RangeIdeal = 8;
 		this.m.StaminaModifier = -12;
 		this.m.Condition = 120.0;
@@ -37,6 +37,7 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 
 	function onEquip()
 	{
+		this.weapon.onEquip();
 		local aimed_shot = this.new("scripts/skills/actives/legend_aimed_rock");
 		this.addSkill(aimed_shot);
 	}

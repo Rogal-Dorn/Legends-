@@ -37,7 +37,7 @@ this.legend_aimed_rock <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/arrow_miss_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Item +1;
+		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
 		this.m.Delay = 1000;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;

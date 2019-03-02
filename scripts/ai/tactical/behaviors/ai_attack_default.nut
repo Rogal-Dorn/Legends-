@@ -41,7 +41,8 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.uproot_small",
 			"actives.kraken_bite",
 			"actives.kraken_devour",
-			"actives.ghost_overhead_strike"
+			"actives.ghost_overhead_strike",
+			"actives.cat_bite",
 		],
 		Skill = null,
 		Hitchance = 0

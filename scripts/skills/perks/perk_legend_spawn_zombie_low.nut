@@ -19,6 +19,7 @@ this.perk_legend_spawn_zombie_low <- this.inherit("scripts/skills/skill", {
 		if (!this.m.Container.hasSkill("actives.legend_spawn_zombie_low_skill"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_low_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_low_xbow_skill"));
 			local stash = this.World.Assets.getStash()
 			stash.add(this.new("scripts/items/spawns/zombie_item"));
 			stash.add(this.new("scripts/items/spawns/zombie_item"));
@@ -30,6 +31,7 @@ this.perk_legend_spawn_zombie_low <- this.inherit("scripts/skills/skill", {
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_spawn_zombie_low_skill");
+		this.m.Container.removeByID("actives.legend_spawn_zombie_low_xbow_skill");
 	}
 
 });
