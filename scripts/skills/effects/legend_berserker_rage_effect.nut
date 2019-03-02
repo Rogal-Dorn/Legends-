@@ -21,7 +21,19 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 	}
-
+	function getTooltip()
+	{
+		local ret = this.getDefaultTooltip();
+		ret.extend([
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "You currently have [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RageStacks + "[/color] rage stacks"
+			}
+		]);
+		return ret;
+	}
 	function getDescription()
 	{
 		return "Raaage";
