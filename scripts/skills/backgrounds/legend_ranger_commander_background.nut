@@ -117,7 +117,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 	}	
 
 
-
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();

@@ -36,7 +36,7 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	}
 	function getDescription()
 	{
-		return "Raaage";
+		return "Hulk Smash!";
 	}
 
 	function addRage( _r )
@@ -80,6 +80,20 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	function onTargetKilled( _targetEntity, _skill )
 	{
 		this.addRage(3);
+	}
+
+	function onCombatStarted()
+	{
+		this.m.RageStacks = 0;
+		this.m.LastRageSoundTime = 0;
+		this.skill.onCombatStarted();
+	}
+
+	function onCombatFinished()
+	{
+		this.m.RageStacks = 0;
+		this.m.LastRageSoundTime = 0;
+		this.skill.onCombatFinished();
 	}
 
 });

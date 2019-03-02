@@ -24,7 +24,7 @@ this.legend_spawn_skeleton_high_archer_skill <- this.inherit("scripts/skills/act
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MaxLevelDifference = 4;
-		this.m.Order = this.Const.SkillOrder.NonTargeted + 17;
+		this.m.Order = this.Const.SkillOrder.NonTargeted + 20;
 		this.m.HPCost = 30;
 		this.m.APStartMult = 0.0;
 
