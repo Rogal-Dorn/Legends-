@@ -43,7 +43,6 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " gains rage!");
 		}
 
-		this.getContainer().getActor().updateRageVisuals(this.m.RageStacks);
 	}
 
 	function onUpdate( _properties )
@@ -59,7 +58,6 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	function onTurnStart()
 	{
 		this.m.RageStacks = this.Math.max(0, this.m.RageStacks - 1);
-		this.getContainer().getActor().updateRageVisuals(this.m.RageStacks);
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
