@@ -24,8 +24,8 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			this.m.Name = "Seer";
 		}
 
-		this.m.HiringCost = 250;
-		this.m.DailyCost = 0;
+		this.m.HiringCost = 20000;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.brave",
 			"trait.athletic",

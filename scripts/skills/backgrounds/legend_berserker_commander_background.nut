@@ -101,12 +101,12 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				15
 			],
 			Stamina = [
-				5,
-				5
+				15,
+				15
 			],
 			MeleeSkill = [
-				25,
-				25
+				20,
+				20
 			],
 			RangedSkill = [
 				-5,
@@ -117,8 +117,8 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				0
 			],
 			RangedDefense = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Initiative = [
 				0,
@@ -171,7 +171,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 3;
-		talents[this.Const.Attributes.Hitpoints] = 2;
+		talents[this.Const.Attributes.Hitpoints] = 3;
+		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.MeleeDefense] = 1;
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
@@ -179,7 +181,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
 		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
 		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));		
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/weapons/throwing_axe"));
 		items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));
