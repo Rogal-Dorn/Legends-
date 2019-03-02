@@ -90,12 +90,12 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				-5
 			],
 			Stamina = [
-				5,
-				5
+				10,
+				10
 			],
 			MeleeSkill = [
-				15,
-				15
+				10,
+				10
 			],
 			RangedSkill = [
 				-5,
