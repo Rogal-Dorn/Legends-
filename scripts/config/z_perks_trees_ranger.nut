@@ -62,7 +62,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.BattleFlow,
-		gt.Const.Perks.PerkDefs.GuidedSteps,
+		gt.Const.Perks.PerkDefs.LegendGuidedSteps,
 		gt.Const.Perks.PerkDefs.LegendEvasion,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
