@@ -44,14 +44,14 @@ gt.Const.LegendMod.Starts <- [
     },
 	{
         name = "Noble",
-        description = "Hard. Leadership and support skills. More supplies and slower supply usage, faster marching speed on flat land",
+        description = "Medium. Leadership and support skills. More supplies and slower supply usage, faster marching speed on flat land",
         intro = "[img]gfx/ui/events/event_24.png[/img]You were born to be a leader, raised in the company of the greatest men of our day. Somehow though, inheriting power doesn't feel as satisfying as seizing it for yourself. No, if one is to be king, it must be earned through battle and through the blood of one's subjects. Now, off to find some subjects willing to die for their betters.",
         banner = gt.Const.LegendMod.StartTypes.Noble
     },
     {
         name = "Ranger",
-        intro = "[img]gfx/ui/events/event_24.png[/img]The council sent us out three months ago, in all directions from the grove. They wouldn't tell us what we were looking for exactly, only that we would know the signs of destruction when we saw them. For weeks we have followed the tracks and watched the skies. The birds are migrating the wrong direction. The rabbits only run one way down their bramble paths. The animals abandon their ranges, as is they know what is coming.  So you pushed on in the other direction, past deserted fields and burned homesteads, past rivers, lakes and mountains.  As you passed the last rise you paus, this is the place. These valleys have no deer, smoke hangs in the air and clings to the hills, the light is harsh and the air is bitter. Whatever is coming, it is coming from here. ",
-        description = "Hard. Great ranged stats, excelent damage perks. walks faster in forrests",
+        intro = "[img]gfx/ui/events/event_24.png[/img]The council sent us out three months ago, in all directions from the grove. They wouldn't tell us what we were looking for exactly, only that we would know the signs of destruction when we saw them. For weeks we have followed the tracks and watched the skies. The birds are migrating the wrong direction. The rabbits only run one way down their bramble paths. The animals abandon their ranges, as if they know what is coming.  So you pushed on in the other direction, past deserted fields and burned homesteads, past rivers, lakes and mountains.  As you passed the last rise you paus, this is the place. These valleys have no deer, smoke hangs in the air and clings to the hills, the light is harsh and the air is bitter. Whatever is coming, it is coming from here. ",
+        description = "Hard. Great ranged stats, excellent damage perks. walks faster in forests",
         banner = gt.Const.LegendMod.StartTypes.Rangers
     },
     // {
@@ -68,7 +68,7 @@ gt.Const.LegendMod.Starts <- [
     },
     {
         name = "Warlock",
-        intro = "[img]gfx/ui/events/event_24.png[/img]That last town was rough.. lets not talk about that place anymore. You stop and turn to the corpse beside you, your only companion. I told you to stop talking about that last town already, i know you miss your wife and family, but i told you there are much greater opportunities for you in the afterlife.  Your companion's head lolls slightly to the side as if rolling its eyes at you before finally the tattered neck flesh gives way, and sends the skull rolling off down the valley. Thats the problem with people these days, always giving up, no one seems to have the fortitude to handle whatever death throws at them. Time to hire some new assistants.  ",
+        intro = "[img]gfx/ui/events/event_24.png[/img]That last town was rough.. lets not talk about that place anymore. You stop and turn to the corpse beside you, your only companion. I told you to stop talking about that last town already, I know you miss your wife and family, but I told you there are much greater opportunities for you in the afterlife.  Your companion's head lolls slightly to the side as if rolling its eyes at you before finally the tattered neck flesh gives way, and sends the skull rolling off down the valley. Thats the problem with people these days, always giving up, no one seems to have the fortitude to handle whatever death throws at them. Time to hire some new assistants.  ",
         description = "Harder. Focus on debuffs and the dark arts. Party uses less meds",
         banner = gt.Const.LegendMod.StartTypes.Necro
     },
