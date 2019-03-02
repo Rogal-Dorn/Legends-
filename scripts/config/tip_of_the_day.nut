@@ -25,7 +25,7 @@ gt.Const.TipOfTheDay <- [
 	"Success in Battle Brothers is also about picking the right fights.",
 	"Undead are unaffected by fatigue and morale.",
 	"Crossbows require less skill to fire accurately than bows, but are slower to use.",
-	"Hunters and poachers will help your move faster through forrests",
+	"Hunters and poachers will help you move through forests quicker",
 	"Some difficult terrain, like swamp, gives combat penalties.",
 	"You can change camera height levels using the + and - keys.",
 	"Miners help you move quickly through mountains, a few miners in your squad lets you quick march through hills",
