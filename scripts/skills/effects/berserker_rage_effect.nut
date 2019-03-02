@@ -24,7 +24,7 @@ this.berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "TODO";
+		return "The smell of blood and death sends you into an uncontrollable rage. Every taste of blood your weapon takes and every kill you make embolderns you and increases your lethality. Once in a rage, you must continuously feed it to keep it going";
 	}
 
 	function addRage( _r )
@@ -62,14 +62,20 @@ this.berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 		this.getContainer().getActor().updateRageVisuals(this.m.RageStacks);
 	}
 
+	function onCombatFinished()
+	{
+		this.m.RageStacks = 0;
+		this.skill.onCombatFinished();
+	}
+
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.addRage(2);
+		this.addRage(1);
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
 	{
-		this.addRage(5);
+		this.addRage(3);
 	}
 
 });
