@@ -45,7 +45,6 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 		return this.m.MaxRange;
 	}
 
-
 	function getFatigueCost()
 	{
 
@@ -122,7 +121,6 @@ this.legend_spawn_skill <- this.inherit("scripts/skills/skill", {
 			}
 			
 			++num;
-			break;
 		}
 		return num;
 	}
