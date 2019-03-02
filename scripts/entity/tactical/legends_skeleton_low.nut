@@ -4,9 +4,7 @@ this.legends_skeleton_low <- this.inherit("scripts/entity/tactical/legend_skelet
 	function onInit()
 	{
 		this.m.SpawnType = this.Const.Tactical.Actor.LegendSkeletonLight;
-		this.legend_skeleton.onInit();
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_sword"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_spear"));
+		this.legend_skeleton.onInit();;
 		this.m.Skills.update();
 	}
 

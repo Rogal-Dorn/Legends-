@@ -91,11 +91,11 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 		local r = this.Math.rand(0, 1);
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/armor/legend_vala_cloak"));
+			items.equip(this.new("scripts/items/armor/legend_vala_cloak"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/armor/legend_vala_dress"));
+			items.equip(this.new("scripts/items/armor/legend_vala_dress"));
 		}
 
 	}
