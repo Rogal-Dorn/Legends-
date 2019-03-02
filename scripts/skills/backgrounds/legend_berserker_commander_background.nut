@@ -187,7 +187,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		local r;
 
 
-			r = this.Math.rand(0, 4);
+			r = this.Math.rand(0, 5);
 
 			if (r == 0)
 			{
@@ -210,7 +210,10 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			{
 				items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
 			}
-
+			else if (r == 5)
+			{
+				items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
+			}
 
 	}
 

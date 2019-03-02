@@ -23,9 +23,5 @@ this.legend_steps_guided <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onTurnEnd()
-	{
-		this.removeSelf();
-	}
 
 });
