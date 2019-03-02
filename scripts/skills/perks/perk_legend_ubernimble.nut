@@ -51,7 +51,7 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 	}
 
 	function getChance()
-	{
+	{		
 		local fat = 1;
 		fat = this.Math.min(0, fat + 15);
 		local ret = this.Math.minf(1.0, 1.0 - 0.6 + this.Math.pow(this.Math.abs(fat), 1.2) * 0.01);
@@ -62,8 +62,13 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 	{
 	   local  bodyitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
        local  headitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+	   
+	   if (bodyitem != null || headitem != null)
+	   {
+		   return
+	   }
 
-		if (_attacker != null && bodyitem == null && headitem == null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
+		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
 		{
 			return;
 		}
