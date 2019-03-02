@@ -7,7 +7,7 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_berserker_rage";
 		this.m.Name = "Rage";
-		this.m.Icon = "skills/status_effect_34.png";
+		this.m.Icon = "ui/perks/berserker_rage_circle.png";
 		this.m.IconMini = "status_effect_34_mini";
 		this.m.Overlay = "status_effect_34";
 		this.m.SoundOnUse = [
@@ -64,12 +64,12 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.addRage(2);
+		this.addRage(1);
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
 	{
-		this.addRage(5);
+		this.addRage(3);
 	}
 
 });

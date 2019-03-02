@@ -54,6 +54,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendCascade,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
@@ -61,7 +62,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.BattleFlow,
-		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
+		gt.Const.Perks.PerkDefs.GuidedSteps,
 		gt.Const.Perks.PerkDefs.LegendEvasion,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],

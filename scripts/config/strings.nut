@@ -1132,7 +1132,9 @@ gt.Const.Strings.PerkName <- {
 	vazl_ValaInscribeWeapon = "Inscribe Weapon",
 	vazl_ValaInscribeHelmet = "Inscribe Helmet",
 	vazl_ValaInscribeArmor = "Inscribe Armor",
-	vazl_ValaInscribeShield = "Inscribe Shield"
+	vazl_ValaInscribeShield = "Inscribe Shield",
+	LegendGuideSteps = "Guide Steps",
+	LegendBerserkerRage = "Berserker Rage"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1285,7 +1287,9 @@ gt.Const.Strings.PerkDescription <- {
 	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any weapon currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: aiming, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
 	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any helmet currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
 	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any armor currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again.",
-	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: none\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again."
+	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: none\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again.",
+	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all allies within 40 tiles",
+	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you hit, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. "
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

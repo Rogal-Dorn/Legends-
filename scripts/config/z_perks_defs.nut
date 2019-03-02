@@ -1053,7 +1053,23 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscriptionMastery,
 		Icon = "ui/perks/vazl_vala_inscription_mastery.png",
 		IconDisabled = "ui/perks/vazl_vala_inscription_mastery_sw.png"
-	}				
+	},
+	{
+		ID = "perk.legend_guide_steps",
+		Script = "scripts/skills/perks/perk_legend_guide_steps",
+		Name = this.Const.Strings.PerkName.LegendGuideSteps,
+		Tooltip = this.Const.Strings.PerkDescription.LegendGuideSteps,
+		Icon = "ui/perks/guided_steps_circle.png",
+		IconDisabled = "ui/perks/guided_steps_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_berserker_rage",
+		Script = "scripts/skills/perks/perk_legend_berserker_rage",
+		Name = this.Const.Strings.PerkName.LegendBerserkerRage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBerserkerRage,
+		Icon = "ui/perks/berserker_rage_circle.png",
+		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
+	}							
 ];
 
 
@@ -1188,5 +1204,7 @@ gt.Const.Perks.PerkDefs <- {
 	VazlInscribeWeapon = 127,
 	VazlInscribeHelmet = 128,
 	VazlInscribeArmor = 129,
-	VazlInscribeMastery = 130
+	VazlInscribeMastery = 130,
+	LegendGuidedSteps = 131,
+	LegendBerserkerRage = 132
 };

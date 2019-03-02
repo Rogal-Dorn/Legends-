@@ -12,6 +12,7 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Pathfinder,
+		gt.Const.Perks.PerkDefs.Steadfast,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.BloodyHarvest
 	],
@@ -68,6 +69,7 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.Stalwart,
+		gt.Const.Perks.PerkDefs.LegendBerserkerRage,
 		gt.Const.Perks.PerkDefs.LegendUberNimble
 	],
 	[],

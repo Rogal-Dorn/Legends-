@@ -12,7 +12,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.Steadfast,
+		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
@@ -23,7 +23,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
-		gt.Const.Perks.PerkDefs.LegendComposure,
+		gt.Const.Perks.PerkDefs.Steadfast,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
