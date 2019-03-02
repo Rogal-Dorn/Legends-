@@ -130,8 +130,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Fatigue] = 2;
 		talents[this.Const.Attributes.Hitpoints] = 3;
-		talents[this.Const.Attributes.Initiative] = 1;
-		this.getContainer().getActor().fillTalentValues(1, true);
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_warlock_cloak"));
 		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));
