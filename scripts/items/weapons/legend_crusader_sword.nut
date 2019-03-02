@@ -21,7 +21,7 @@ this.legend_crusader_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_crusader_sword_01";
 		this.m.Value = 1800;
-		this.m.ShieldDamage = 0;
+		this.m.ShieldDamage = 12;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;
 		this.m.StaminaModifier = -10;
