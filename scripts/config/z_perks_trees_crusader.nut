@@ -56,7 +56,6 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.BattleForged,
 		gt.Const.Perks.PerkDefs.Nimble,
-		gt.Const.Perks.PerkDefs.Steadfast,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.SunderingStrike,
 		gt.Const.Perks.PerkDefs.LegendRoster6
