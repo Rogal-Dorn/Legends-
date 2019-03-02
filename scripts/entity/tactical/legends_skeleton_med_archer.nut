@@ -19,7 +19,7 @@ this.legends_skeleton_med_archer <- this.inherit("scripts/entity/tactical/legend
 		// }
 
 
-		r = this.Math.rand(1, 4);
+		local r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{
