@@ -48,10 +48,10 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			"The Corpse Dancer",
 			"the Puppeteer"
 		];
-		this.m.Faces = this.Const.Faces.SmartMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.All;
+		this.m.Faces = this.Const.Faces.Necromancer;
+		this.m.Hairs = this.Const.Hair.Necromancer;
+		this.m.HairColors = this.Const.HairColors.Zombie;
+		this.m.Beards = this.Const.Beards.Raider;
 		this.m.Body = "bust_naked_body_00";
 		this.m.Level = 1;
 		this.m.IsUntalented = true;
