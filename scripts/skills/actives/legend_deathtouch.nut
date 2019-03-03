@@ -1,4 +1,4 @@
-this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
+this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 	m = {},
 	function create()
 	{
@@ -26,44 +26,10 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-		function getTooltip()
-	{
-		local actor = this.getContainer().getActor();
-		local CurrentInit = actor.getInitiative();
-		local MinDam =  CurrentInit - 100;
-		local MaxDam =  CurrentInit - 80;
-		local p = this.getContainer().getActor().getCurrentProperties();
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 4,
-				type = "text",
-				icon = "/ui/icons/health.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor. Damage output scales with your fatigue level"
-			}
-		];
-	}
-
 	function onUpdate( _properties )
 	{
-		local CurrentInit = this.getContainer().getActor().getInitiative();
-		_properties.DamageRegularMin += this.Math.floor(CurrentInit - 100);
-		_properties.DamageRegularMax += this.Math.floor(CurrentInit - 80);
 		_properties.IsIgnoringArmorOnAttack = true;
+		this.legend_magic_skill.onUpdate(_properties);
 	}
 
 	function onUse( _user, _targetTile )
