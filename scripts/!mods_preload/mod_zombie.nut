@@ -56,7 +56,14 @@
 
 });
 
-::mods_hookNewObject("entity/tactical/enemies/ghoul", function(o) {
+::mods_hookBaseClass("entity/tactical/enemies/ghoul", function(o) {
+    while(!("ScaleStartTime" in o.m)) o = o[o.SuperName]; // find the base class
+    if(!("_mod_legend" in o))
+    {
+        o._mod_legend <- true;// only override the methods once per base instance
+    }
+
+
 	o.onAfterDeath = function ( _tile )
 	{
 		if (this.m.Size < 3)
