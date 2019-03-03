@@ -70,15 +70,15 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
 		});
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to spread and hit targets directly adjacent because of the corrosive nature of the spell"
-			});
-		}
+		// if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
+		// {
+		// 	ret.push({
+		// 		id = 6,
+		// 		type = "text",
+		// 		icon = "ui/icons/hitchance.png",
+		// 		text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to spread and hit targets directly adjacent because of the corrosive nature of the spell"
+		// 	});
+		// }
 
 		return ret;
 	}
