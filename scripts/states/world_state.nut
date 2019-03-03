@@ -2,6 +2,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	m = {
 		WorldScreen = null,
 		WorldTownScreen = null,
+		CampScreen = null,
 		WorldMenuScreen = null,
 		WorldGameFinishScreen = null,
 		WorldEventPopupScreen = null,
@@ -166,6 +167,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function getTownScreen()
 	{
 		return this.m.WorldTownScreen;
+	}
+
+	function getCampScreen()
+	{
+		return this.m.CampScreen;
 	}
 
 	function getWorldScreen()
@@ -496,6 +502,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldTownScreen <- this.new("scripts/ui/screens/world/world_town_screen");
 		this.m.WorldTownScreen.setOnBrothersPressedListener(this.town_screen_main_dialog_module_onBrothersButtonClicked.bindenv(this));
 		this.m.WorldTownScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
+		this.m.CampScreen <- this.new("scripts/ui/screens/world/camp_screen");
+		this.m.CampScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
+		this.m.CampScreen.setOnCampListener(this.onCamp.bindenv(this));
 		this.m.WorldEventPopupScreen <- this.new("scripts/ui/screens/world/world_event_popup_screen");
 		this.m.WorldEventPopupScreen.setOnLeavePressedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
 		this.m.RelationsScreen <- this.new("scripts/ui/screens/world/world_relations_screen");
@@ -532,6 +541,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldEventPopupScreen.destroy();
 		this.m.WorldMenuScreen.destroy();
 		this.m.WorldTownScreen.destroy();
+		this.m.CampScreen.destroy();
 		this.m.EventScreen.destroy();
 		this.m.WorldGameFinishScreen.destroy();
 		this.m.WorldScreen.destroy();
@@ -544,6 +554,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldEventPopupScreen = null;
 		this.m.WorldMenuScreen = null;
 		this.m.WorldTownScreen = null;
+		this.m.CampScreen = null;
 		this.m.WorldGameFinishScreen = null;
 		this.m.WorldGameFinishScreen = null;
 		this.m.WorldScreen = null;
@@ -2427,6 +2438,52 @@ this.world_state <- this.inherit("scripts/states/state", {
 		});
 	}
 
+	function showCampScreen()
+	{
+		if (!this.isCampingAllowed())
+		{
+			return;
+		}
+		//this.Music.setTrackList(this.m.LastEnteredTown.getMusic(), this.Const.Music.CrossFadeTime);
+		this.setAutoPause(true);
+		this.Tooltip.hide();
+		this.m.WorldScreen.hide();
+		//this.m.WorldTownScreen.setTown(this.m.LastEnteredTown);
+		this.m.CampScreen.show();
+		this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+		this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrainInSettlement, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+		//this.Sound.setAmbience(1, this.m.LastEnteredTown.getSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceInSettlement, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+		this.m.MenuStack.push(function ()
+		{
+			this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrain, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+			this.Sound.setAmbience(1, this.getSurroundingLocationSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceOutsideSettlement, this.Const.Sound.AmbienceOutsideDelay);
+			this.World.getCamera().zoomTo(this.m.CustomZoom, 4.0);
+			this.World.Assets.consumeItems();
+			this.World.Assets.refillAmmo();
+			this.World.Assets.updateAchievements();
+			this.World.Assets.checkAmbitionItems();
+			this.World.Ambitions.resetTime(false, 2.0);
+			this.updateTopbarAssets();
+			this.World.State.getPlayer().updateStrength();
+			this.m.CampScreen.clear();
+			this.m.CampScreen.hide();
+			this.m.WorldScreen.show();
+			this.Music.setTrackList(this.World.FactionManager.isGreaterEvil() ? this.Const.Music.WorldmapTracksGreaterEvil : this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime);
+
+			if (this.World.Assets.isIronman())
+			{
+				this.autosave();
+			}
+
+			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+			this.setAutoPause(false);
+			this.setPause(true);
+		}, function ()
+		{
+			return !this.m.CampScreen.isAnimating();
+		});
+	}
+
 	function town_screen_main_dialog_module_onLeaveButtonClicked()
 	{
 		this.m.MenuStack.pop();
@@ -3308,10 +3365,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			case 30:
 				if (!this.m.MenuStack.hasBacksteps())
 				{
-					if (this.isCampingAllowed())
-					{
-						this.onCamp();
-					}
+					this.showCampScreen();
+					// if (this.isCampingAllowed())
+					// {
+					// 	this.onCamp();
+					// }
 				}
 
 				break;

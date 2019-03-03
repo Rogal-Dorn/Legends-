@@ -101,6 +101,7 @@ function registerScreens()
     registerScreen("TacticalMenuScreen", new IngameMenuScreen());
     registerScreen("WorldCharacterScreen", new CharacterScreen(false));
     registerScreen("TacticalCharacterScreen", new CharacterScreen(true));
+    registerScreen("CampScreen", new CampScreen());
 
     Screens["Tooltip"] = Screens["TooltipScreen"];
 
