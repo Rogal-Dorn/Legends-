@@ -159,3 +159,4 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

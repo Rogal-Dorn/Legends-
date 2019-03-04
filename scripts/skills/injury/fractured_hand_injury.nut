@@ -58,3 +58,4 @@ this.fractured_hand_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

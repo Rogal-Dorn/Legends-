@@ -65,3 +65,4 @@ this.investigate_cemetery_action <- this.inherit("scripts/factions/faction_actio
 	}
 
 });
+

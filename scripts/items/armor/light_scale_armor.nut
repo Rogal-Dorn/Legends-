@@ -20,3 +20,4 @@ this.light_scale_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

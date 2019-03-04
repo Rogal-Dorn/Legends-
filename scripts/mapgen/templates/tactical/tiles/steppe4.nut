@@ -78,3 +78,4 @@ this.steppe4 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

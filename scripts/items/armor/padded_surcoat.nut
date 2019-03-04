@@ -20,3 +20,4 @@ this.padded_surcoat <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

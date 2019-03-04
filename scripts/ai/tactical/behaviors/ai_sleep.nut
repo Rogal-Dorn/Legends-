@@ -256,3 +256,4 @@ this.ai_sleep <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

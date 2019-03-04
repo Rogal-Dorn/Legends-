@@ -46,3 +46,4 @@ this.tree_lush_small <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

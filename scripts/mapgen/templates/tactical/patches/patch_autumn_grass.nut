@@ -72,3 +72,4 @@ this.patch_autumn_grass <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

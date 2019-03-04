@@ -17,3 +17,4 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 	}
 
 });
+

@@ -29,3 +29,4 @@ this.lionheart_potion_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

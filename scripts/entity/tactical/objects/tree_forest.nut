@@ -45,3 +45,4 @@ this.tree_forest <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

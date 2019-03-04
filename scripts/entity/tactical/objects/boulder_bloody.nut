@@ -29,3 +29,4 @@ this.boulder_bloody <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

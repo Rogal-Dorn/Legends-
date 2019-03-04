@@ -57,3 +57,4 @@ this.maimed_foot_injury <- this.inherit("scripts/skills/injury_permanent/permane
 	}
 
 });
+

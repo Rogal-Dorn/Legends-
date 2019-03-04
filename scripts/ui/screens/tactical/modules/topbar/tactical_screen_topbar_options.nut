@@ -158,3 +158,4 @@ this.tactical_screen_topbar_options <- this.inherit("scripts/ui/screens/ui_modul
 	}
 
 });
+

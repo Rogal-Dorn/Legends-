@@ -38,3 +38,4 @@ this.goblin_notched_blade <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

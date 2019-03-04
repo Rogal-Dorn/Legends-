@@ -212,3 +212,4 @@ this.ai_attack_terror <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

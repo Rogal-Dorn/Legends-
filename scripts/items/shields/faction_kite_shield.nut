@@ -57,3 +57,4 @@ this.faction_kite_shield <- this.inherit("scripts/items/shields/shield", {
 	}
 
 });
+

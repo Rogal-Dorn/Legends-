@@ -334,3 +334,4 @@ this.shatter_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

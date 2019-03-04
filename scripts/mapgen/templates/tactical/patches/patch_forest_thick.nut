@@ -91,3 +91,4 @@ this.patch_forest_thick <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

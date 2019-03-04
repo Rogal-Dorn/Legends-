@@ -156,3 +156,4 @@ this.wildman_finds_something_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

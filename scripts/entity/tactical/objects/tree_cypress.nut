@@ -31,3 +31,4 @@ this.tree_cypress <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

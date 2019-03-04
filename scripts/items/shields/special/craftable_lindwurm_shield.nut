@@ -35,3 +35,4 @@ this.craftable_lindwurm_shield <- this.inherit("scripts/items/shields/shield", {
 	}
 
 });
+

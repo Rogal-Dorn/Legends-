@@ -280,3 +280,4 @@ this.ai_move_tentacle <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

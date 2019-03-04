@@ -107,3 +107,4 @@ this.world_screen_topbar_daytime_module <- this.inherit("scripts/ui/screens/ui_m
 	}
 
 });
+

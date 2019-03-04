@@ -422,3 +422,4 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

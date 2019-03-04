@@ -62,3 +62,4 @@ this.rooted_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

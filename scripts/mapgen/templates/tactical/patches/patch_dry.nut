@@ -69,3 +69,4 @@ this.patch_dry <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

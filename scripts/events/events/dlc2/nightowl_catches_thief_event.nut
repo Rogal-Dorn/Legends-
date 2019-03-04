@@ -120,3 +120,4 @@ this.nightowl_catches_thief_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -41,3 +41,4 @@ this.named_sword <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

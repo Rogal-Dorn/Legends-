@@ -25,3 +25,4 @@ this.ancient_priest_attire <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

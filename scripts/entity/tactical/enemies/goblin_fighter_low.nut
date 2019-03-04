@@ -70,3 +70,4 @@ this.goblin_fighter_low <- this.inherit("scripts/entity/tactical/enemies/goblin_
 	}
 
 });
+

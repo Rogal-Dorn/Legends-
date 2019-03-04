@@ -47,3 +47,4 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 	}
 
 });
+

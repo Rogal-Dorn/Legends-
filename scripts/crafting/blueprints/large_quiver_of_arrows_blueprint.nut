@@ -21,3 +21,4 @@ this.large_quiver_of_arrows_blueprint <- this.inherit("scripts/crafting/blueprin
 	}
 
 });
+

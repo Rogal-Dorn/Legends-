@@ -73,3 +73,4 @@ this.chop <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

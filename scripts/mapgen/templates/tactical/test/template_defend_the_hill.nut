@@ -70,3 +70,4 @@ this.template_defend_the_hill <- this.inherit("scripts/mapgen/tactical_template"
 	}
 
 });
+

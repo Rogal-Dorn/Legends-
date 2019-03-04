@@ -176,3 +176,4 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 	}
 
 });
+

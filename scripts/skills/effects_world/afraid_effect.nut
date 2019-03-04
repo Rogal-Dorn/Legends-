@@ -60,3 +60,4 @@ this.afraid_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

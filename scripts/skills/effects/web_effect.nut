@@ -76,3 +76,4 @@ this.web_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

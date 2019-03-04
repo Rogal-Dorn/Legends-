@@ -38,3 +38,4 @@ this.goblin_falchion <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -161,3 +161,4 @@ this.unleash_wolf <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

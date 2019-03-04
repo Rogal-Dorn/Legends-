@@ -29,3 +29,4 @@ this.noble_tunic <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

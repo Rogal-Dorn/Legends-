@@ -66,3 +66,4 @@ this.broken_arm_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

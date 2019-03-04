@@ -48,3 +48,4 @@ this.patch_bones <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

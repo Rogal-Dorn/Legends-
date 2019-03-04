@@ -73,3 +73,4 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 	}
 
 });
+

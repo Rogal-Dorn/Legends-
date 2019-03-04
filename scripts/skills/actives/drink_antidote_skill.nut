@@ -174,3 +174,4 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

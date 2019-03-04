@@ -25,3 +25,4 @@ this.horn_plate_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint", 
 	}
 
 });
+

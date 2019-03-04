@@ -543,3 +543,4 @@ gt.Const.Strings.KrakenNames <- [
 	"Naccorath the Eternal",
 	"Xapocathlu the All-Reaching"
 ];
+

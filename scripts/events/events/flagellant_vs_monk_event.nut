@@ -197,3 +197,4 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

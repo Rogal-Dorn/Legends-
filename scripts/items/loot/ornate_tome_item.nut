@@ -74,3 +74,4 @@ this.ornate_tome_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

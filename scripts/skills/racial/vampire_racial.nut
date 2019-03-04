@@ -49,3 +49,4 @@ this.vampire_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

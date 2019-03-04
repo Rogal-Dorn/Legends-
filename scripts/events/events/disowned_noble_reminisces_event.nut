@@ -164,3 +164,4 @@ this.disowned_noble_reminisces_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

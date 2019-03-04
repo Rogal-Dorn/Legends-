@@ -276,3 +276,4 @@ this.sweep_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

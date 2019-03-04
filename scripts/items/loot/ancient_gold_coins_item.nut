@@ -74,3 +74,4 @@ this.ancient_gold_coins_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

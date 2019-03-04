@@ -882,3 +882,4 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

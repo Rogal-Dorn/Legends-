@@ -252,3 +252,4 @@ this.repel <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

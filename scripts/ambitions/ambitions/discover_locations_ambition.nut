@@ -91,3 +91,4 @@ this.discover_locations_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

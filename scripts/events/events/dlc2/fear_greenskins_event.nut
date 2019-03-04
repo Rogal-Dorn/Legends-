@@ -112,3 +112,4 @@ this.fear_greenskins_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

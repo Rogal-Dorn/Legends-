@@ -91,3 +91,4 @@ this.brawl_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -79,3 +79,4 @@ this.deep_face_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

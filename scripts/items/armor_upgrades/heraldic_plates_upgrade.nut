@@ -58,3 +58,4 @@ this.heraldic_plates_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 	}
 
 });
+

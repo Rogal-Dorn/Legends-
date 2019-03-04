@@ -173,3 +173,4 @@ this.tactical_hills_steppe <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

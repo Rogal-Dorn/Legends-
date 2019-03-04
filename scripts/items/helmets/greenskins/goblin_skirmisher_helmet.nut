@@ -25,3 +25,4 @@ this.goblin_skirmisher_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

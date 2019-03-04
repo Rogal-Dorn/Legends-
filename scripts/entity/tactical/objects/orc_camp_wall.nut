@@ -63,3 +63,4 @@ this.orc_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

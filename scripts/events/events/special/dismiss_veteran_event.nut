@@ -80,3 +80,4 @@ this.dismiss_veteran_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

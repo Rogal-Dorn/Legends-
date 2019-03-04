@@ -46,3 +46,4 @@ this.schrat_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

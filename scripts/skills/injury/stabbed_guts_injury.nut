@@ -56,3 +56,4 @@ this.stabbed_guts_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

@@ -84,3 +84,4 @@ this.inadvertently_save_merchant_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

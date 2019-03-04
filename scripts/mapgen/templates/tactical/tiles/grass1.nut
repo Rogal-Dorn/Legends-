@@ -186,3 +186,4 @@ this.grass1 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

@@ -42,3 +42,4 @@ this.woodcutters_axe <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

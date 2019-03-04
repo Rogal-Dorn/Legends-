@@ -127,3 +127,4 @@ this.militia_captain <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

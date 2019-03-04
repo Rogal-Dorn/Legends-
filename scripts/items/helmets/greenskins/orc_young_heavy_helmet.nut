@@ -28,3 +28,4 @@ this.orc_young_heavy_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

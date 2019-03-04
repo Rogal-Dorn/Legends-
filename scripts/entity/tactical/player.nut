@@ -2415,3 +2415,4 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

@@ -50,3 +50,4 @@ this.goblin_shaman <- this.inherit("scripts/entity/tactical/goblin", {
 	}
 
 });
+

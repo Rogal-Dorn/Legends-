@@ -199,3 +199,4 @@ this.tile_highlands <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

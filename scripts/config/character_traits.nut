@@ -229,3 +229,4 @@ gt.Const.CharacterTraits <- [
 		"scripts/skills/traits/huge_trait"
 	]
 ];
+

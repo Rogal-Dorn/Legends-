@@ -70,3 +70,4 @@ this.undead_crypt_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

@@ -20,3 +20,4 @@ this.perk_mastery_bow <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

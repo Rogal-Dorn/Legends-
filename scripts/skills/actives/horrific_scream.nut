@@ -41,3 +41,4 @@ this.horrific_scream <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -115,3 +115,4 @@ this.minstrel_teases_deserter_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

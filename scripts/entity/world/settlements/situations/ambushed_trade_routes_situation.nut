@@ -33,3 +33,4 @@ this.ambushed_trade_routes_situation <- this.inherit("scripts/entity/world/settl
 	}
 
 });
+

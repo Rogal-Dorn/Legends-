@@ -55,3 +55,4 @@ this.town_taxidermist_dialog_module <- this.inherit("scripts/ui/screens/ui_modul
 	}
 
 });
+

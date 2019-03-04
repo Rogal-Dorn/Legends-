@@ -113,3 +113,4 @@ this.tactical_snow <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

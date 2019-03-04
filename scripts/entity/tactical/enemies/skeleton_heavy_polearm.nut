@@ -80,3 +80,4 @@ this.skeleton_heavy_polearm <- this.inherit("scripts/entity/tactical/skeleton", 
 	}
 
 });
+

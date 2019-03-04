@@ -443,3 +443,4 @@ this.ai_defend_knock_back <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

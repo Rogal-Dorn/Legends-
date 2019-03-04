@@ -27,3 +27,4 @@ this.orc_berserker_medium_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

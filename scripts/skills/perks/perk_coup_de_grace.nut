@@ -27,3 +27,4 @@ this.perk_coup_de_grace <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -62,3 +62,4 @@ this.recovery_potion_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

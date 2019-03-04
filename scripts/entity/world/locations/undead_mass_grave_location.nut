@@ -61,3 +61,4 @@ this.undead_mass_grave_location <- this.inherit("scripts/entity/world/location",
 	}
 
 });
+

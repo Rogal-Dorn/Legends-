@@ -73,3 +73,4 @@ this.goblin_whip <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

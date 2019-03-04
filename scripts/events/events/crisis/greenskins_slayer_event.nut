@@ -87,3 +87,4 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

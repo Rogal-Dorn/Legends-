@@ -227,3 +227,4 @@ this.butcher_wardogs_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

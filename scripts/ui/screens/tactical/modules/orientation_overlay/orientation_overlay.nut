@@ -132,3 +132,4 @@ this.orientation_overlay <- this.inherit("scripts/ui/screens/ui_module", {
 	}
 
 });
+

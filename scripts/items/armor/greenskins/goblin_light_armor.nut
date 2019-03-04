@@ -25,3 +25,4 @@ this.goblin_light_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

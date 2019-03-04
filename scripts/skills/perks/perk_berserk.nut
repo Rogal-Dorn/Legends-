@@ -44,3 +44,4 @@ this.perk_berserk <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -69,3 +69,4 @@ this.kraken_bite_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -43,3 +43,4 @@ this.broken_bladed_pike <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

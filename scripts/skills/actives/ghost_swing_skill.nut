@@ -149,3 +149,4 @@ this.ghost_swing_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

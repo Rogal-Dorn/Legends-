@@ -623,3 +623,4 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

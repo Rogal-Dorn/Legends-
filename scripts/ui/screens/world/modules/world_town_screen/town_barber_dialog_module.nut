@@ -284,3 +284,4 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	}
 
 });
+

@@ -470,3 +470,4 @@ this.ai_gruesome_feast <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

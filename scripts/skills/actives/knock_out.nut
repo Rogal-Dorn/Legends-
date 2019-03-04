@@ -126,3 +126,4 @@ this.knock_out <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

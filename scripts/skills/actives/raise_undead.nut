@@ -117,3 +117,4 @@ this.raise_undead <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

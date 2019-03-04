@@ -146,3 +146,4 @@ this.medium_farming_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

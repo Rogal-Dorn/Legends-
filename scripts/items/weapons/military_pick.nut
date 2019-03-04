@@ -40,3 +40,4 @@ this.military_pick <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

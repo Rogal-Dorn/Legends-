@@ -99,3 +99,4 @@ this.miner_atop_world_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

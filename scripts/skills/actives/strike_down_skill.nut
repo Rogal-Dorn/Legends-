@@ -119,3 +119,4 @@ this.strike_down_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

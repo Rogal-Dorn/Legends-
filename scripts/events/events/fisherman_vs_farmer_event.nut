@@ -202,3 +202,4 @@ this.fisherman_vs_farmer_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

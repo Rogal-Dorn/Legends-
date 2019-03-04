@@ -69,3 +69,4 @@ this.undead_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

@@ -41,3 +41,4 @@ this.cat_potion_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

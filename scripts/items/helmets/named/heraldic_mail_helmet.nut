@@ -30,3 +30,4 @@ this.heraldic_mail_helmet <- this.inherit("scripts/items/helmets/named/named_hel
 	}
 
 });
+

@@ -189,3 +189,4 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

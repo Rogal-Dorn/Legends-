@@ -315,3 +315,4 @@ this.civilwar_hungry_hamlet_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

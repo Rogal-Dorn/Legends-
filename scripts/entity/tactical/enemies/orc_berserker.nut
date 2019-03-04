@@ -417,3 +417,4 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

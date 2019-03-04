@@ -103,3 +103,4 @@ this.possess_undead_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

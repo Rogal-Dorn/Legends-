@@ -234,3 +234,4 @@ this.medium_tundra_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

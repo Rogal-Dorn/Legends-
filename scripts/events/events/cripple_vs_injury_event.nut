@@ -103,3 +103,4 @@ this.cripple_vs_injury_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

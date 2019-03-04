@@ -147,3 +147,4 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

@@ -255,3 +255,4 @@ this.ai_hex <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

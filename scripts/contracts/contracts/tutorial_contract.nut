@@ -1023,3 +1023,4 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

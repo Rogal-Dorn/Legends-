@@ -53,3 +53,4 @@ this.swamp_tree2 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

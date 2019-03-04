@@ -79,3 +79,4 @@ this.discover_unique_locations_ambition <- this.inherit("scripts/ambitions/ambit
 	}
 
 });
+

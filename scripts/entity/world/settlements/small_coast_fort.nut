@@ -130,3 +130,4 @@ this.small_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

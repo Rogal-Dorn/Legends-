@@ -77,3 +77,4 @@ this.scenario_combat_basics_orcs <- this.inherit("scripts/scenarios/tactical/sce
 	}
 
 });
+

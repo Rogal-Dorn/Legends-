@@ -70,3 +70,4 @@ this.killing_frenzy_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -153,3 +153,4 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

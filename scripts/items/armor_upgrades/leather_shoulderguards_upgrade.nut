@@ -39,3 +39,4 @@ this.leather_shoulderguards_upgrade <- this.inherit("scripts/items/armor_upgrade
 	}
 
 });
+

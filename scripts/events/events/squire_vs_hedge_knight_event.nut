@@ -115,3 +115,4 @@ this.squire_vs_hedge_knight_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

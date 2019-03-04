@@ -69,3 +69,4 @@ this.orc_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

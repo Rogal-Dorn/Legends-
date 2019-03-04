@@ -192,3 +192,4 @@ this.small_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

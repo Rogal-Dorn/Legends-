@@ -27,3 +27,4 @@ this.perk_lone_wolf <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -49,3 +49,4 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 	}
 
 });
+

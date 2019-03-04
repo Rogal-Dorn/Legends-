@@ -27,3 +27,4 @@ this.ancient_ripped_cloth <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

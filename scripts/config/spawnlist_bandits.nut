@@ -5554,3 +5554,4 @@ this.calculateCosts(this.Const.World.Spawn.BanditRaiders);
 this.calculateCosts(this.Const.World.Spawn.BanditDefenders);
 this.calculateCosts(this.Const.World.Spawn.BanditBoss);
 this.calculateCosts(this.Const.World.Spawn.BanditsDisguisedAsDirewolves);
+

@@ -155,3 +155,4 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

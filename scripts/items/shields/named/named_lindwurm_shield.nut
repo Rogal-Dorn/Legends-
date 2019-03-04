@@ -51,3 +51,4 @@ this.named_lindwurm_shield <- this.inherit("scripts/items/shields/named/named_sh
 	}
 
 });
+

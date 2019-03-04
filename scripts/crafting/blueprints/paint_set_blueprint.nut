@@ -29,3 +29,4 @@ this.paint_set_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

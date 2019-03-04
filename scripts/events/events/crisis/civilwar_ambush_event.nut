@@ -293,3 +293,4 @@ this.civilwar_ambush_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

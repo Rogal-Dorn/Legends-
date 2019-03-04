@@ -182,3 +182,4 @@ this.donkey_military <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

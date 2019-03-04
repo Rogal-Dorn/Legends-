@@ -76,3 +76,4 @@ this.patch_ritual_site <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

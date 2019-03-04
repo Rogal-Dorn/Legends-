@@ -45,3 +45,4 @@ this.metal_plating_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 	}
 
 });
+

@@ -185,3 +185,4 @@ this.unleash_wardog <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

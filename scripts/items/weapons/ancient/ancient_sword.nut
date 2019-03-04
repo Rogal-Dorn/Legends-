@@ -39,3 +39,4 @@ this.ancient_sword <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

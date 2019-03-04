@@ -2055,3 +2055,4 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 	}
 
 });
+

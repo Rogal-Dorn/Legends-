@@ -93,3 +93,4 @@ this.skeleton_heavy <- this.inherit("scripts/entity/tactical/skeleton", {
 	}
 
 });
+

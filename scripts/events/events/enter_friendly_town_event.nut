@@ -84,3 +84,4 @@ this.enter_friendly_town_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

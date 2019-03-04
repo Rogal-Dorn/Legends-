@@ -78,3 +78,4 @@ this.patch_autumn_brushes <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

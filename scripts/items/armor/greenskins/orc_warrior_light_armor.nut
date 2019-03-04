@@ -25,3 +25,4 @@ this.orc_warrior_light_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

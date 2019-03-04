@@ -228,3 +228,4 @@ this.ai_line_breaker <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

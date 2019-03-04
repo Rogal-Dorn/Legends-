@@ -275,3 +275,4 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

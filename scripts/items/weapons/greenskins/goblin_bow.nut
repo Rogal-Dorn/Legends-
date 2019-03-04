@@ -43,3 +43,4 @@ this.goblin_bow <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

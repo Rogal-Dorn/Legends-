@@ -654,3 +654,4 @@ this.traveler_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

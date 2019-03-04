@@ -59,3 +59,4 @@ this.lindwurm_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

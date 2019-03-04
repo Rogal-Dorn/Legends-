@@ -155,3 +155,4 @@ this.autumn3 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

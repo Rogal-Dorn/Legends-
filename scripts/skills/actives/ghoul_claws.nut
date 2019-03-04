@@ -81,3 +81,4 @@ this.ghoul_claws <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -104,3 +104,4 @@ this.scenario_test_bed_human <- this.inherit("scripts/scenarios/tactical/scenari
 	}
 
 });
+

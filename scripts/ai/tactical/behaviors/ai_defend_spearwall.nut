@@ -112,3 +112,4 @@ this.ai_defend_spearwall <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

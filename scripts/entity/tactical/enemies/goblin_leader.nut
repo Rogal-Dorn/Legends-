@@ -51,3 +51,4 @@ this.goblin_leader <- this.inherit("scripts/entity/tactical/goblin", {
 	}
 
 });
+

@@ -314,3 +314,4 @@ this.charge <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

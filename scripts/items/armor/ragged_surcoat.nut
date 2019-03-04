@@ -19,3 +19,4 @@ this.ragged_surcoat <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

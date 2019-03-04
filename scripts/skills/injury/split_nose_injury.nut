@@ -51,3 +51,4 @@ this.split_nose_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

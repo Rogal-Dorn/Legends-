@@ -30,3 +30,4 @@ this.tree_olive_dry <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

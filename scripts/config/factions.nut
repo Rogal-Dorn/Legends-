@@ -181,3 +181,4 @@ gt.Const.UndeadFootprints <- [
 	"world_footprints_undead_w",
 	"world_footprints_undead_nw"
 ];
+

@@ -140,3 +140,4 @@ this.add_random_situation_action <- this.inherit("scripts/factions/faction_actio
 	}
 
 });
+

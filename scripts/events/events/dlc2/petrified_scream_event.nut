@@ -96,3 +96,4 @@ this.petrified_scream_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

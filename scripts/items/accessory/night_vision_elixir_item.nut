@@ -41,3 +41,4 @@ this.night_vision_elixir_item <- this.inherit("scripts/items/accessory/accessory
 	}
 
 });
+

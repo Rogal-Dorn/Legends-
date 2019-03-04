@@ -130,3 +130,4 @@ this.cripple_pep_talk_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

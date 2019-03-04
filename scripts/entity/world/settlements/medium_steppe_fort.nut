@@ -176,3 +176,4 @@ this.medium_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

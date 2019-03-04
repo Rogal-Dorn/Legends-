@@ -189,3 +189,4 @@ this.ai_buff_command_undead <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

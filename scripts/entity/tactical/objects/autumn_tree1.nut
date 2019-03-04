@@ -49,3 +49,4 @@ this.autumn_tree1 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

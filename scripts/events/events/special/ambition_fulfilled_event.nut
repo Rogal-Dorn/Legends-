@@ -172,3 +172,4 @@ this.ambition_fulfilled_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

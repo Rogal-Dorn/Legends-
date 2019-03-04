@@ -37,3 +37,4 @@ this.negative_weathered_upgrade <- this.inherit("scripts/items/armor_upgrades/ar
 	}
 
 });
+

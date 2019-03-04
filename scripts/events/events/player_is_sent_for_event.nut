@@ -103,3 +103,4 @@ this.player_is_sent_for_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

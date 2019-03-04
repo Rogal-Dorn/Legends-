@@ -193,3 +193,4 @@ this.armor_upgrade <- this.inherit("scripts/items/item", {
 	}
 
 });
+

@@ -96,3 +96,4 @@ this.tundra5 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

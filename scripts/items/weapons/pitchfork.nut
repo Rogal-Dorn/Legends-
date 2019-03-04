@@ -47,3 +47,4 @@ this.pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

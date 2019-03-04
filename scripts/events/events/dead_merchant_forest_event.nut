@@ -85,3 +85,4 @@ this.dead_merchant_forest_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

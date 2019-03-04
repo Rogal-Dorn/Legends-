@@ -78,3 +78,4 @@ this.stealth_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

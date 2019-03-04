@@ -79,3 +79,4 @@ this.hammer <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

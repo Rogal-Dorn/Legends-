@@ -166,3 +166,4 @@ this.player_corpse_stub <- {
 	}
 
 };
+

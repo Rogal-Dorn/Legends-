@@ -25,3 +25,4 @@ this.orc_warlord_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

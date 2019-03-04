@@ -110,3 +110,4 @@ this.dastard_loses_trait_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

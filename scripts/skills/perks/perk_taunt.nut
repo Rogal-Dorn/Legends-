@@ -27,3 +27,4 @@ this.perk_taunt <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

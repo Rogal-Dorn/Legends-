@@ -42,3 +42,4 @@ this.winged_mace <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -126,3 +126,4 @@ this.cocky_vs_iron_lungs_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

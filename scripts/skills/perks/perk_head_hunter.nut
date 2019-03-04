@@ -68,3 +68,4 @@ this.perk_head_hunter <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

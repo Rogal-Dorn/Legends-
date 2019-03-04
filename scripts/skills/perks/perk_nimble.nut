@@ -83,3 +83,4 @@ this.perk_nimble <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

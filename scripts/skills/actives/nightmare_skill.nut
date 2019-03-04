@@ -114,3 +114,4 @@ this.nightmare_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

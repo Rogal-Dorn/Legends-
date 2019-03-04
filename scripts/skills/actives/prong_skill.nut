@@ -97,3 +97,4 @@ this.prong_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

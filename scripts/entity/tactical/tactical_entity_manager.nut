@@ -1661,3 +1661,4 @@ this.tactical_entity_manager <- {
 	}
 
 };
+

@@ -232,3 +232,4 @@ gt.Const.Strings.RumorsItemsUndead <- [
 		"You heard of %location%? Ask anyone around here, it\'s been haunting %townname% since before I was born. Folks say some armor from the gods is sealed there for all time, back from when man first settled here."
 	]
 ];
+

@@ -1040,3 +1040,4 @@ gt.Const.CharacterProperties <- {
 	}
 
 };
+

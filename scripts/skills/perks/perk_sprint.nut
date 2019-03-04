@@ -22,3 +22,4 @@ this.perk_sprint <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

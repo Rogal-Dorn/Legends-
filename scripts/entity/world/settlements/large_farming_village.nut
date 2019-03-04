@@ -194,3 +194,4 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

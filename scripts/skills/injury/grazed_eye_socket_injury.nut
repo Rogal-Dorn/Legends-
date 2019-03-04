@@ -58,3 +58,4 @@ this.grazed_eye_socket_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

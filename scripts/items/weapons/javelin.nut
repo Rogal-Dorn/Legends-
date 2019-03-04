@@ -68,3 +68,4 @@ this.javelin <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

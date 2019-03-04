@@ -187,3 +187,4 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

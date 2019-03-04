@@ -68,3 +68,4 @@ this.refugees_situation <- this.inherit("scripts/entity/world/settlements/situat
 	}
 
 });
+

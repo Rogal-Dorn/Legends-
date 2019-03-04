@@ -365,3 +365,4 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

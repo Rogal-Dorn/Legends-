@@ -96,3 +96,4 @@ this.shadows_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

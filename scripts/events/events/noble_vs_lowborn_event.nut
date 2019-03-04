@@ -230,3 +230,4 @@ this.noble_vs_lowborn_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

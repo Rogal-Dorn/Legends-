@@ -40,3 +40,4 @@ this.werewolf_pelt_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

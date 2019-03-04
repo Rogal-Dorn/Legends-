@@ -184,3 +184,4 @@ this.tactical_hills_tundra <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

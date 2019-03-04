@@ -57,3 +57,4 @@ this.named_two_handed_mace <- this.inherit("scripts/items/weapons/named/named_we
 	}
 
 });
+

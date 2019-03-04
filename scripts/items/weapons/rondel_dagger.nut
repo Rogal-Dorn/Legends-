@@ -33,3 +33,4 @@ this.rondel_dagger <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

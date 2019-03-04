@@ -37,3 +37,4 @@ this.ai_charge <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

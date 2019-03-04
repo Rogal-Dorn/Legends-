@@ -64,3 +64,4 @@ this.bone_platings_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 	}
 
 });
+

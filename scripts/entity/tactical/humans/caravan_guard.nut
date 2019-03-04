@@ -128,3 +128,4 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

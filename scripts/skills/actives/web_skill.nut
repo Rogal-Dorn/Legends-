@@ -113,3 +113,4 @@ this.web_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

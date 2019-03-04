@@ -24,3 +24,4 @@ this.perk_dodge <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

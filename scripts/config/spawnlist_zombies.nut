@@ -4166,3 +4166,4 @@ this.calculateCosts(this.Const.World.Spawn.ZombiesOrZombiesAndGhouls);
 this.calculateCosts(this.Const.World.Spawn.ZombiesAndGhosts);
 this.calculateCosts(this.Const.World.Spawn.ZombiesOrZombiesAndGhosts);
 this.calculateCosts(this.Const.World.Spawn.Necromancer);
+

@@ -94,3 +94,4 @@ this.glutton_gets_fat_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -1167,3 +1167,4 @@ gt.Const.Strings.Tooltip <- {
 		Hint_OnlyActiveCharacterCanChangeItemsInCombat = "Only the character whose turn it is right now can change items"
 	}
 };
+

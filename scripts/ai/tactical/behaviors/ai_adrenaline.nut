@@ -75,3 +75,4 @@ this.ai_adrenaline <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

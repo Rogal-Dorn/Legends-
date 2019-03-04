@@ -33,3 +33,4 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 	}
 
 });
+

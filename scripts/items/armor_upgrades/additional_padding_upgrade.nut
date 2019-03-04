@@ -51,3 +51,4 @@ this.additional_padding_upgrade <- this.inherit("scripts/items/armor_upgrades/ar
 	}
 
 });
+

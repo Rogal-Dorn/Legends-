@@ -770,3 +770,4 @@ this.root_out_undead_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

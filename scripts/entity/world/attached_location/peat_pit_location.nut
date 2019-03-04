@@ -50,3 +50,4 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 	}
 
 });
+

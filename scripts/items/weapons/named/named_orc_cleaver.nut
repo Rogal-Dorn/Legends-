@@ -59,3 +59,4 @@ this.named_orc_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon
 	}
 
 });
+

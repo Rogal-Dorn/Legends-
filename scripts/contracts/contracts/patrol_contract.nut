@@ -1230,3 +1230,4 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

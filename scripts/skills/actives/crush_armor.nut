@@ -94,3 +94,4 @@ this.crush_armor <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -58,3 +58,4 @@ this.injured_knee_cap_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

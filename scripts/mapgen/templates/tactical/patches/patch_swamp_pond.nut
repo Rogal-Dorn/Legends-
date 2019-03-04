@@ -60,3 +60,4 @@ this.patch_swamp_pond <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

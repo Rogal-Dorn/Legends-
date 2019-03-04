@@ -56,3 +56,4 @@ this.undead_intro_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -20,3 +20,4 @@ this.lamellar_harness <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

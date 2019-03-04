@@ -231,3 +231,4 @@ this.ai_move_tail <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

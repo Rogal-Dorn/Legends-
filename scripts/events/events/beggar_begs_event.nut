@@ -167,3 +167,4 @@ this.beggar_begs_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

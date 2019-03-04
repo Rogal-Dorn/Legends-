@@ -270,3 +270,4 @@ this.scenario_ghouls <- this.inherit("scripts/scenarios/tactical/scenario_templa
 	}
 
 });
+

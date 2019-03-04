@@ -45,3 +45,4 @@ this.mail_patch_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgr
 	}
 
 });
+

@@ -213,3 +213,4 @@ this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

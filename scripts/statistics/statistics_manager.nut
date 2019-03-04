@@ -187,3 +187,4 @@ this.statistics_manager <- {
 	}
 
 };
+

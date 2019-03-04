@@ -33,3 +33,4 @@ this.high_spirits_situation <- this.inherit("scripts/entity/world/settlements/si
 	}
 
 });
+

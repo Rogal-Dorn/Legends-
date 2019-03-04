@@ -98,3 +98,4 @@ this.named_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

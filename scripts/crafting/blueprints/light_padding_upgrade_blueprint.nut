@@ -25,3 +25,4 @@ this.light_padding_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint
 	}
 
 });
+

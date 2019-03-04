@@ -69,3 +69,4 @@ this.perfect_focus <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

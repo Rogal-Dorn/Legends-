@@ -104,3 +104,4 @@ this.gem_mine_location <- this.inherit("scripts/entity/world/attached_location",
 	}
 
 });
+

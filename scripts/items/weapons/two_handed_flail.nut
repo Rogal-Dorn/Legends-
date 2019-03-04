@@ -52,3 +52,4 @@ this.two_handed_flail <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -77,3 +77,4 @@ this.aging_swordmaster_paycut_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

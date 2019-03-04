@@ -69,3 +69,4 @@ this.alp_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

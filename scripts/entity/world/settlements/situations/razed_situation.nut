@@ -36,3 +36,4 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 	}
 
 });
+

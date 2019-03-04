@@ -52,3 +52,4 @@ this.hate_undead_trait <- this.inherit("scripts/skills/traits/character_trait", 
 	}
 
 });
+

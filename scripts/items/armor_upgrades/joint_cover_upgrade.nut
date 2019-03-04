@@ -45,3 +45,4 @@ this.joint_cover_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upg
 	}
 
 });
+

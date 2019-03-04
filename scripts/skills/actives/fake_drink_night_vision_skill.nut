@@ -84,3 +84,4 @@ this.fake_drink_night_vision_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

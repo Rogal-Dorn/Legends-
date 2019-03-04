@@ -1022,3 +1022,4 @@ this.defend_settlement_greenskins_contract <- this.inherit("scripts/contracts/co
 	}
 
 });
+

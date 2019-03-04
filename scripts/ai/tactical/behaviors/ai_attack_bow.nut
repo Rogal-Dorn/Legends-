@@ -279,3 +279,4 @@ this.ai_attack_bow <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

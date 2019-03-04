@@ -26,3 +26,4 @@ this.goblin_skirmisher_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

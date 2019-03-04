@@ -91,3 +91,4 @@ this.warcry <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

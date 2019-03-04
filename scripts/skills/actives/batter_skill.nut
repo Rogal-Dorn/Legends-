@@ -109,3 +109,4 @@ this.batter_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

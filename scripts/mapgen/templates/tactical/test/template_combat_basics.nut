@@ -48,3 +48,4 @@ this.template_combat_basics <- this.inherit("scripts/mapgen/tactical_template", 
 	}
 
 });
+

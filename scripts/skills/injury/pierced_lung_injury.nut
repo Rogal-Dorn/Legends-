@@ -53,3 +53,4 @@ this.pierced_lung_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

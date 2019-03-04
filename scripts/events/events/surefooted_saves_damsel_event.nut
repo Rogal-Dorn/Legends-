@@ -124,3 +124,4 @@ this.surefooted_saves_damsel_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

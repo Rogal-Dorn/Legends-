@@ -48,3 +48,4 @@ this.caravan_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

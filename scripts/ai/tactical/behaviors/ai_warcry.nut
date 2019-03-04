@@ -147,3 +147,4 @@ this.ai_warcry <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

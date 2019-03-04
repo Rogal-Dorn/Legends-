@@ -26,3 +26,4 @@ this.brush_green <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

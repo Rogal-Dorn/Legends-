@@ -28,3 +28,4 @@ this.steppe_boulder3 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

@@ -176,3 +176,4 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

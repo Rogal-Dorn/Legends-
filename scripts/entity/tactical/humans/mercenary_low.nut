@@ -207,3 +207,4 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

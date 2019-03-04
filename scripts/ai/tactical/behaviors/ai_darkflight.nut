@@ -410,3 +410,4 @@ this.ai_darkflight <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

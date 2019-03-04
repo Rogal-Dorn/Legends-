@@ -130,3 +130,4 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

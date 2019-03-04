@@ -28,3 +28,4 @@ this.ancient_priest_diadem <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

@@ -27,3 +27,4 @@ this.perk_indomitable <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -43,3 +43,4 @@ this.flail <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

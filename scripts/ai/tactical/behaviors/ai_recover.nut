@@ -76,3 +76,4 @@ this.ai_recover <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

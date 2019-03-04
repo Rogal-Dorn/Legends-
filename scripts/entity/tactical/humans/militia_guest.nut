@@ -173,3 +173,4 @@ this.militia_guest <- this.inherit("scripts/entity/tactical/player", {
 	}
 
 });
+

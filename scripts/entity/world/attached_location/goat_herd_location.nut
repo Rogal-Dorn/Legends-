@@ -105,3 +105,4 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 	}
 
 });
+

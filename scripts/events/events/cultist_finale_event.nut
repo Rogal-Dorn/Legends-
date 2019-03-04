@@ -263,3 +263,4 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

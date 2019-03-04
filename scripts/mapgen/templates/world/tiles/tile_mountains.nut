@@ -179,3 +179,4 @@ this.tile_mountains <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

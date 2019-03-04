@@ -178,3 +178,4 @@ this.ai_switchto_melee <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

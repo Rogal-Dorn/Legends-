@@ -600,3 +600,4 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

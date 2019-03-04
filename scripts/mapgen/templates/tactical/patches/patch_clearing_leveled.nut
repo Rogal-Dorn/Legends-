@@ -74,3 +74,4 @@ this.patch_clearing_leveled <- this.inherit("scripts/mapgen/tactical_template", 
 	}
 
 });
+

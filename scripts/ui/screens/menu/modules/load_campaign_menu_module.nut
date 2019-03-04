@@ -87,3 +87,4 @@ this.load_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 	}
 
 });
+

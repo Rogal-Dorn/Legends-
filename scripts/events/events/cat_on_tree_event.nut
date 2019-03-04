@@ -283,3 +283,4 @@ this.cat_on_tree_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

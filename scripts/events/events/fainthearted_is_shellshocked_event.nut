@@ -99,3 +99,4 @@ this.fainthearted_is_shellshocked_event <- this.inherit("scripts/events/event", 
 	}
 
 });
+

@@ -75,3 +75,4 @@ this.greenskin_catapult <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

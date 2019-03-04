@@ -40,3 +40,4 @@ this.generic_item <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

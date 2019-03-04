@@ -296,3 +296,4 @@ this.melon_thief_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

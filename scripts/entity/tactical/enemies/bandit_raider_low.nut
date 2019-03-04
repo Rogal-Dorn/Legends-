@@ -162,3 +162,4 @@ this.bandit_raider_low <- this.inherit("scripts/entity/tactical/enemies/bandit_r
 	}
 
 });
+

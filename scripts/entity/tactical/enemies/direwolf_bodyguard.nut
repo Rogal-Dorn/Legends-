@@ -8,3 +8,4 @@ this.direwolf_bodyguard <- this.inherit("scripts/entity/tactical/enemies/direwol
 	}
 
 });
+

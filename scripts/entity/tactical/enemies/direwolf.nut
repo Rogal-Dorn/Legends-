@@ -248,3 +248,4 @@ this.direwolf <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

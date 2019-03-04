@@ -72,3 +72,4 @@ this.earth2 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

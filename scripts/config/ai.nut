@@ -851,3 +851,4 @@ gt.Const.AI <- {
 		GrantNightVisionStillToActMult = 2.0
 	}
 };
+

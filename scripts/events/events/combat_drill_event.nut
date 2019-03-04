@@ -428,3 +428,4 @@ this.combat_drill_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

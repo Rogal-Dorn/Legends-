@@ -90,3 +90,4 @@ this.tactical_quarry <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

@@ -65,3 +65,4 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 	}
 
 });
+

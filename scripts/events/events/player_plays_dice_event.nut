@@ -264,3 +264,4 @@ this.player_plays_dice_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

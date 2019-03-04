@@ -9,3 +9,4 @@ this.zombie_bodyguard <- this.inherit("scripts/entity/tactical/enemies/zombie", 
 	}
 
 });
+

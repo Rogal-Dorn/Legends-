@@ -69,3 +69,4 @@ this.defeat_mercenaries_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

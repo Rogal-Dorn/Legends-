@@ -54,3 +54,4 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 	}
 
 });
+

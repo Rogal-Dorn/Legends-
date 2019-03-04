@@ -43,3 +43,4 @@ this.hooked_blade <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -109,3 +109,4 @@ this.holy_water_item <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

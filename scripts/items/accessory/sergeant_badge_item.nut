@@ -74,3 +74,4 @@ this.sergeant_badge_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

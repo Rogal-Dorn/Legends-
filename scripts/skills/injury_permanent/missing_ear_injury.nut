@@ -46,3 +46,4 @@ this.missing_ear_injury <- this.inherit("scripts/skills/injury_permanent/permane
 	}
 
 });
+

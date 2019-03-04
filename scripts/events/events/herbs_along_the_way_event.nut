@@ -189,3 +189,4 @@ this.herbs_along_the_way_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

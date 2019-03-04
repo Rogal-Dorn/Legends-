@@ -381,3 +381,4 @@ this.civilwar_conscription_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

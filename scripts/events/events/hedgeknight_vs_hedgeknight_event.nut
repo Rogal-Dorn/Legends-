@@ -643,3 +643,4 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

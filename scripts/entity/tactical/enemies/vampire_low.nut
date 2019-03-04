@@ -18,3 +18,4 @@ this.vampire_low <- this.inherit("scripts/entity/tactical/enemies/vampire", {
 	}
 
 });
+

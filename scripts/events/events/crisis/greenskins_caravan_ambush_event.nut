@@ -254,3 +254,4 @@ this.greenskins_caravan_ambush_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

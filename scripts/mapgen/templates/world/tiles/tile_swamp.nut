@@ -106,3 +106,4 @@ this.tile_swamp <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

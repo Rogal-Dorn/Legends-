@@ -122,3 +122,4 @@ this.minstrel_writes_song_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

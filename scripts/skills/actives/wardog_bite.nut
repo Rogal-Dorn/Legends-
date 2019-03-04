@@ -46,3 +46,4 @@ this.wardog_bite <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

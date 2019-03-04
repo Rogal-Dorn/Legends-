@@ -143,3 +143,4 @@ this.caravan_guard_vs_raider_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -102,3 +102,4 @@ this.food_goes_bad_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

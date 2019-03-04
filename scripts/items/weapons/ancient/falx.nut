@@ -39,3 +39,4 @@ this.falx <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

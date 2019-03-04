@@ -371,3 +371,4 @@ this.undead_hoggart_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

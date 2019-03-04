@@ -36,3 +36,4 @@ this.scenario_template <- {
 	}
 
 };
+

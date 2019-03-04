@@ -258,3 +258,4 @@ this.tail_slam_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

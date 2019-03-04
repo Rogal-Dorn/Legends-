@@ -175,3 +175,4 @@ this.berserker_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

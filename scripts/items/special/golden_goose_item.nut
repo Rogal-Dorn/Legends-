@@ -112,3 +112,4 @@ this.golden_goose_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

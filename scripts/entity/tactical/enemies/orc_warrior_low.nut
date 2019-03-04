@@ -60,3 +60,4 @@ this.orc_warrior_low <- this.inherit("scripts/entity/tactical/enemies/orc_warrio
 	}
 
 });
+

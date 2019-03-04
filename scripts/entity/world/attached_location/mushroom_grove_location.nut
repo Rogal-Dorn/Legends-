@@ -55,3 +55,4 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 	}
 
 });
+

@@ -26,3 +26,4 @@ this.ancient_laurels <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

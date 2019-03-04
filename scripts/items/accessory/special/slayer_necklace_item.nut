@@ -69,3 +69,4 @@ this.slayer_necklace_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

@@ -131,3 +131,4 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

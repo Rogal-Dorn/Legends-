@@ -43,3 +43,4 @@ this.tactical_human_camp <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

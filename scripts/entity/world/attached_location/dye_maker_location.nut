@@ -83,3 +83,4 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 	}
 
 });
+

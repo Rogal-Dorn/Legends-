@@ -19,3 +19,4 @@ this.perk_battering_ram <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

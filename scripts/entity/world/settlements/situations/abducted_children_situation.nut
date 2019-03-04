@@ -32,3 +32,4 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 	}
 
 });
+

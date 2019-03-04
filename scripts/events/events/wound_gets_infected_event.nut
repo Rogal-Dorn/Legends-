@@ -148,3 +148,4 @@ this.wound_gets_infected_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

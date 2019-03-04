@@ -22,3 +22,4 @@ this.perk_pathfinder <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

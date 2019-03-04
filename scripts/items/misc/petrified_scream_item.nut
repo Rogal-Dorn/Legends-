@@ -40,3 +40,4 @@ this.petrified_scream_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

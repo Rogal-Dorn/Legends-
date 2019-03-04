@@ -25,3 +25,4 @@ this.paint_white_blue_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

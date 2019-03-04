@@ -90,3 +90,4 @@ this.stone1 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

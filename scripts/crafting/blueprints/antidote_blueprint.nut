@@ -21,3 +21,4 @@ this.antidote_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

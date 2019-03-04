@@ -93,3 +93,4 @@ this.monk_crafts_holy_water_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

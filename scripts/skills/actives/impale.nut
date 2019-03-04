@@ -98,3 +98,4 @@ this.impale <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -61,3 +61,4 @@ this.goblin_spiked_balls <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

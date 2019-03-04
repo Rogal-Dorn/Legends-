@@ -53,3 +53,4 @@ this.weapon_breaking_warning <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

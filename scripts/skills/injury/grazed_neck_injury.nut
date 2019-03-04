@@ -93,3 +93,4 @@ this.grazed_neck_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

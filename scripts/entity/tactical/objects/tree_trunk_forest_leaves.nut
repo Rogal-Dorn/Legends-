@@ -32,3 +32,4 @@ this.tree_trunk_forest_leaves <- this.inherit("scripts/entity/tactical/entity", 
 	}
 
 });
+

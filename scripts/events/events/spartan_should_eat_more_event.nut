@@ -213,3 +213,4 @@ this.spartan_should_eat_more_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

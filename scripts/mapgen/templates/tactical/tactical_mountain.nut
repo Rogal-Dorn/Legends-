@@ -96,3 +96,4 @@ this.tactical_mountain <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

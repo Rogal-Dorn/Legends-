@@ -118,3 +118,4 @@ this.ghost_split_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

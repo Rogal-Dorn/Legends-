@@ -72,3 +72,4 @@ this.ai_idle <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

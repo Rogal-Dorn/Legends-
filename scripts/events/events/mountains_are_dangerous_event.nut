@@ -112,3 +112,4 @@ this.mountains_are_dangerous_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

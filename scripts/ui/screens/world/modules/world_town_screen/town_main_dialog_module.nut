@@ -36,3 +36,4 @@ this.town_main_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	}
 
 });
+

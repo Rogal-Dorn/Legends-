@@ -381,3 +381,4 @@ this.cow_tipping_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

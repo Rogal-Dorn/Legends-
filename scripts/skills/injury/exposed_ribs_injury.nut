@@ -56,3 +56,4 @@ this.exposed_ribs_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

@@ -80,3 +80,4 @@ this.paint_red_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

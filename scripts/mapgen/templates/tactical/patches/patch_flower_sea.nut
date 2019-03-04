@@ -80,3 +80,4 @@ this.patch_flower_sea <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

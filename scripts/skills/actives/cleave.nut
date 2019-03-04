@@ -113,3 +113,4 @@ this.cleave <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

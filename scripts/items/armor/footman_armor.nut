@@ -19,3 +19,4 @@ this.footman_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

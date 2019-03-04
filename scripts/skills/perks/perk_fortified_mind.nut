@@ -19,3 +19,4 @@ this.perk_fortified_mind <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

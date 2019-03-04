@@ -79,3 +79,4 @@ this.werewolf_claws <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

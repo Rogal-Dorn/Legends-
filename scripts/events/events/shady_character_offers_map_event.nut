@@ -361,3 +361,4 @@ this.shady_character_offers_map_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

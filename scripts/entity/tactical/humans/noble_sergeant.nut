@@ -128,3 +128,4 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

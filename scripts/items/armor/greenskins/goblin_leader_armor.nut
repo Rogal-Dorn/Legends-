@@ -25,3 +25,4 @@ this.goblin_leader_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

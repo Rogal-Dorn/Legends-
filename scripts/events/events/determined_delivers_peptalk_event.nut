@@ -122,3 +122,4 @@ this.determined_delivers_peptalk_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -34,3 +34,4 @@ this.warehouse_burned_down_situation <- this.inherit("scripts/entity/world/settl
 	}
 
 });
+

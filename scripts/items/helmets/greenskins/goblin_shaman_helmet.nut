@@ -24,3 +24,4 @@ this.goblin_shaman_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

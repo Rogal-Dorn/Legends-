@@ -58,3 +58,4 @@ this.unhold_bog <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 	}
 
 });
+

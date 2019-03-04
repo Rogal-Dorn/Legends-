@@ -25,3 +25,4 @@ this.additional_padding_upgrade_blueprint <- this.inherit("scripts/crafting/blue
 	}
 
 });
+

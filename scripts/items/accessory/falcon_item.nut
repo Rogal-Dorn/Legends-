@@ -77,3 +77,4 @@ this.falcon_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

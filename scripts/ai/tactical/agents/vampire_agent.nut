@@ -63,3 +63,4 @@ this.vampire_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

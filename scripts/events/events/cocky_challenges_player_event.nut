@@ -212,3 +212,4 @@ this.cocky_challenges_player_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

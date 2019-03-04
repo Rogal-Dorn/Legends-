@@ -301,3 +301,4 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

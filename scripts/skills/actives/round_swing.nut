@@ -152,3 +152,4 @@ this.round_swing <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

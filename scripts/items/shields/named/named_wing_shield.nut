@@ -36,3 +36,4 @@ this.named_wing_shield <- this.inherit("scripts/items/shields/named/named_shield
 	}
 
 });
+

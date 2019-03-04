@@ -99,3 +99,4 @@ this.peasant_armed <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

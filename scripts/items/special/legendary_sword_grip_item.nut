@@ -18,3 +18,4 @@ this.legendary_sword_grip_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

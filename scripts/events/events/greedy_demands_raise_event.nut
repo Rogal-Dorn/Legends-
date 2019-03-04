@@ -197,3 +197,4 @@ this.greedy_demands_raise_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

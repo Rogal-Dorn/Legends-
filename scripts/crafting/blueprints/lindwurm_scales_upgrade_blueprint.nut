@@ -25,3 +25,4 @@ this.lindwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting/bluepri
 	}
 
 });
+

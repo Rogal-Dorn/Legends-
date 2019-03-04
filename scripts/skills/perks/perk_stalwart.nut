@@ -19,3 +19,4 @@ this.perk_stalwart <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -64,3 +64,4 @@ this.broken_knee_injury <- this.inherit("scripts/skills/injury_permanent/permane
 	}
 
 });
+

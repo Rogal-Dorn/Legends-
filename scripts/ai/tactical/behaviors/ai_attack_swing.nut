@@ -174,3 +174,4 @@ this.ai_attack_swing <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

@@ -25,3 +25,4 @@ this.ghoul_trophy_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

@@ -348,3 +348,4 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -450,3 +450,4 @@ this.armor <- this.inherit("scripts/items/item", {
 	}
 
 });
+

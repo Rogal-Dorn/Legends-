@@ -47,3 +47,4 @@ this.tactical_orc_camp <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

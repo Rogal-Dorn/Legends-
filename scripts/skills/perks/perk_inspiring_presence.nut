@@ -35,3 +35,4 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

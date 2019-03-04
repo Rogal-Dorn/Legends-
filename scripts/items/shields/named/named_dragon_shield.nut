@@ -36,3 +36,4 @@ this.named_dragon_shield <- this.inherit("scripts/items/shields/named/named_shie
 	}
 
 });
+

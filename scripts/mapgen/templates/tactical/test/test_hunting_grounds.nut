@@ -116,3 +116,4 @@ this.test_hunting_grounds <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

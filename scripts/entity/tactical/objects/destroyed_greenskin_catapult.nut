@@ -27,3 +27,4 @@ this.destroyed_greenskin_catapult <- this.inherit("scripts/entity/tactical/entit
 	}
 
 });
+

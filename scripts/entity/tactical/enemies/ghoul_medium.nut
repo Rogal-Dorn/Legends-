@@ -12,3 +12,4 @@ this.ghoul_medium <- this.inherit("scripts/entity/tactical/enemies/ghoul", {
 	}
 
 });
+

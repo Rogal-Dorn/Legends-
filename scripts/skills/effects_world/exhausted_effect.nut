@@ -46,3 +46,4 @@ this.exhausted_effect <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

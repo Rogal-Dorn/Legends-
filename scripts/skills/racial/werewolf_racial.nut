@@ -26,3 +26,4 @@ this.werewolf_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

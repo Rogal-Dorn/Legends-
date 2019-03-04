@@ -181,3 +181,4 @@ this.gruesome_feast <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

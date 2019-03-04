@@ -220,3 +220,4 @@ this.scenario_canyon <- this.inherit("scripts/scenarios/tactical/scenario_templa
 	}
 
 });
+

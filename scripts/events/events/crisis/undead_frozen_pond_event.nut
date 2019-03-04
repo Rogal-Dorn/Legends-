@@ -266,3 +266,4 @@ this.undead_frozen_pond_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

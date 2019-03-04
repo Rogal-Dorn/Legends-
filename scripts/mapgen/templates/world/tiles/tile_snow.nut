@@ -64,3 +64,4 @@ this.tile_snow <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

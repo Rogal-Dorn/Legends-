@@ -51,3 +51,4 @@ this.pierced_cheek_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

@@ -125,3 +125,4 @@ this.hex_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

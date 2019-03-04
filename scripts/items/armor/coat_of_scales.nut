@@ -20,3 +20,4 @@ this.coat_of_scales <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

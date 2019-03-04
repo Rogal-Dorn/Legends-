@@ -60,3 +60,4 @@ this.orc_flail_2h <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -322,3 +322,4 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

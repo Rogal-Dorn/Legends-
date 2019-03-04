@@ -94,3 +94,4 @@ this.farmer_old_tricks_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

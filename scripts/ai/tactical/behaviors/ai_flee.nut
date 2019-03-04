@@ -271,3 +271,4 @@ this.ai_flee <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

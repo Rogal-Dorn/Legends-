@@ -581,3 +581,4 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 	}
 
 });
+

@@ -117,3 +117,4 @@ this.send_ship_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

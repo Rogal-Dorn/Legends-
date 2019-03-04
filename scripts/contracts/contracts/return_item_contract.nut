@@ -469,3 +469,4 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

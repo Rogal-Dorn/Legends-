@@ -62,3 +62,4 @@ this.renown_tutorial_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

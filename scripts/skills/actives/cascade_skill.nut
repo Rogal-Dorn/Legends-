@@ -102,3 +102,4 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

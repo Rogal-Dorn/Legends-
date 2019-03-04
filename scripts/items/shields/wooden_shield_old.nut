@@ -34,3 +34,4 @@ this.wooden_shield_old <- this.inherit("scripts/items/shields/shield", {
 	}
 
 });
+

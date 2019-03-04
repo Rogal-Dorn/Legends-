@@ -21,3 +21,4 @@ this.mail_coif <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

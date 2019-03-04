@@ -21,3 +21,4 @@ this.acid_flask_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

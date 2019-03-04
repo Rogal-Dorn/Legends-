@@ -32,3 +32,4 @@ this.settlement_modifiers <- {
 	}
 
 };
+

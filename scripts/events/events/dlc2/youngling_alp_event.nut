@@ -336,3 +336,4 @@ this.youngling_alp_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

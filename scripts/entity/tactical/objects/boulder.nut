@@ -36,3 +36,4 @@ this.boulder <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

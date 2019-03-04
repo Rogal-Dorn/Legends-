@@ -1253,3 +1253,4 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 	}
 
 });
+

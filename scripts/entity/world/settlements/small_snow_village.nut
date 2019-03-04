@@ -185,3 +185,4 @@ this.small_snow_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

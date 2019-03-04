@@ -74,3 +74,4 @@ this.potion_of_knowledge_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

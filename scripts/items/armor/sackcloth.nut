@@ -19,3 +19,4 @@ this.sackcloth <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

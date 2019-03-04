@@ -42,3 +42,4 @@ this.ancient_watchtower_location <- this.inherit("scripts/entity/world/location"
 	}
 
 });
+

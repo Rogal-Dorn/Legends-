@@ -130,3 +130,4 @@ this.tactical_tundra <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

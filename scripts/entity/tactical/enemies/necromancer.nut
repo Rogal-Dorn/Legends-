@@ -97,3 +97,4 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

@@ -230,3 +230,4 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

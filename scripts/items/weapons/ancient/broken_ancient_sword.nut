@@ -39,3 +39,4 @@ this.broken_ancient_sword <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

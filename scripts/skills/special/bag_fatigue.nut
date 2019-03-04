@@ -26,3 +26,4 @@ this.bag_fatigue <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

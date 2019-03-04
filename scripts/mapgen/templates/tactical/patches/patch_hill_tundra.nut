@@ -152,3 +152,4 @@ this.patch_hill_tundra <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

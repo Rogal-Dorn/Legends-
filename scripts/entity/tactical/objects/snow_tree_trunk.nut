@@ -19,3 +19,4 @@ this.snow_tree_trunk <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

@@ -124,3 +124,4 @@ this.player_banner <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -128,3 +128,4 @@ this.ai_boost_morale <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

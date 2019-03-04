@@ -79,3 +79,4 @@ this.faction_banner <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

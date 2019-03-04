@@ -73,3 +73,4 @@ this.goblin_land_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

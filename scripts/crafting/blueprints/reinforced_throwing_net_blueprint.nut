@@ -25,3 +25,4 @@ this.reinforced_throwing_net_blueprint <- this.inherit("scripts/crafting/bluepri
 	}
 
 });
+

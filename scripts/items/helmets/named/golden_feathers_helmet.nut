@@ -29,3 +29,4 @@ this.golden_feathers_helmet <- this.inherit("scripts/items/helmets/named/named_h
 	}
 
 });
+

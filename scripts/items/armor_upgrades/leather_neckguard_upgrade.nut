@@ -39,3 +39,4 @@ this.leather_neckguard_upgrade <- this.inherit("scripts/items/armor_upgrades/arm
 	}
 
 });
+

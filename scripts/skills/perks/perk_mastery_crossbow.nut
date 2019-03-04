@@ -19,3 +19,4 @@ this.perk_mastery_crossbow <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

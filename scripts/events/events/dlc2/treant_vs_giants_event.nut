@@ -147,3 +147,4 @@ this.treant_vs_giants_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

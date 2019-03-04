@@ -54,3 +54,4 @@ this.gorge_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

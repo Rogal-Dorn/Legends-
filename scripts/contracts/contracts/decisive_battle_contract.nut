@@ -1924,3 +1924,4 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

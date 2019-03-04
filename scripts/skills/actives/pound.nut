@@ -136,3 +136,4 @@ this.pound <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -88,3 +88,4 @@ this.template_clear_hill <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

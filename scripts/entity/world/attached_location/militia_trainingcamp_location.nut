@@ -226,3 +226,4 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 	}
 
 });
+

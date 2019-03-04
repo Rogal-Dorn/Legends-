@@ -43,3 +43,4 @@ this.goblin_heavy_bow <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

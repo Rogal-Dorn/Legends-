@@ -18,3 +18,4 @@ this.ai_world_idle <- this.inherit("scripts/ai/world/world_behavior", {
 	}
 
 });
+

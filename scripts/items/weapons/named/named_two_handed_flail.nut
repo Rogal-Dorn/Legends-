@@ -54,3 +54,4 @@ this.named_two_handed_flail <- this.inherit("scripts/items/weapons/named/named_w
 	}
 
 });
+

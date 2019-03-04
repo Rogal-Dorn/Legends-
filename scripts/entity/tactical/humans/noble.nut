@@ -178,3 +178,4 @@ this.noble <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

@@ -51,3 +51,4 @@ this.inspired_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -40,3 +40,4 @@ this.unhold_heart_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

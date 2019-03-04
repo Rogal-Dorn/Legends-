@@ -196,3 +196,4 @@ this.ai_nightmare <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

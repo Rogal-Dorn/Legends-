@@ -564,3 +564,4 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

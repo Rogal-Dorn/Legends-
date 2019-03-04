@@ -55,3 +55,4 @@ this.perk_fearsome <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -27,3 +27,4 @@ this.perk_rotation <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

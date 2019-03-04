@@ -20,3 +20,4 @@ this.leather_lamellar <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

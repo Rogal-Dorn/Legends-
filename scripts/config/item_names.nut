@@ -659,3 +659,4 @@ gt.Const.Strings.WardogNames <- [
 	"Quickpaw",
 	"Stormtail"
 ];
+

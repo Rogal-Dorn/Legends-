@@ -60,3 +60,4 @@ this.hunting_alps_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

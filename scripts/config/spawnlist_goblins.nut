@@ -4205,3 +4205,4 @@ this.calculateCosts(this.Const.World.Spawn.GoblinScouts);
 this.calculateCosts(this.Const.World.Spawn.GoblinRaiders);
 this.calculateCosts(this.Const.World.Spawn.GoblinDefenders);
 this.calculateCosts(this.Const.World.Spawn.GoblinBoss);
+

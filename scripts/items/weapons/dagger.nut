@@ -38,3 +38,4 @@ this.dagger <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

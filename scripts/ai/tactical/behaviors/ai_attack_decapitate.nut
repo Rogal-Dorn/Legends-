@@ -133,3 +133,4 @@ this.ai_attack_decapitate <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

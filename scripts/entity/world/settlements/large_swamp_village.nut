@@ -227,3 +227,4 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

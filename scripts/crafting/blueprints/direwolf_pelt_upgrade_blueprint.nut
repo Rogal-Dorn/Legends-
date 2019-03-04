@@ -21,3 +21,4 @@ this.direwolf_pelt_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint
 	}
 
 });
+

@@ -102,3 +102,4 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 	}
 
 });
+

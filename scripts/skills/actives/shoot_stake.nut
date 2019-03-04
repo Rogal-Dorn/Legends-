@@ -239,3 +239,4 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

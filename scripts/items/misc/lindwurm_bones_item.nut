@@ -40,3 +40,4 @@ this.lindwurm_bones_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

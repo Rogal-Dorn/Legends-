@@ -154,3 +154,4 @@ this.swing <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

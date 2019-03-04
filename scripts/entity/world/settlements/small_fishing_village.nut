@@ -117,3 +117,4 @@ this.small_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

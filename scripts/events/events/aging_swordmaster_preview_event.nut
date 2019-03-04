@@ -81,3 +81,4 @@ this.aging_swordmaster_preview_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

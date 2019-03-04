@@ -241,3 +241,4 @@ this.alp_nightmare1_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

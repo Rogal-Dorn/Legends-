@@ -23,3 +23,4 @@ this.taunt_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

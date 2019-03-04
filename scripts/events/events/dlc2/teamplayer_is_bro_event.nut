@@ -113,3 +113,4 @@ this.teamplayer_is_bro_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

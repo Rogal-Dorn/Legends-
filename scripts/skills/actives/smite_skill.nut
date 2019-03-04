@@ -128,3 +128,4 @@ this.smite_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

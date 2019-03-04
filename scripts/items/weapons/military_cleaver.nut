@@ -40,3 +40,4 @@ this.military_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

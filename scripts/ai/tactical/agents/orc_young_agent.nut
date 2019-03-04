@@ -50,3 +50,4 @@ this.orc_young_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

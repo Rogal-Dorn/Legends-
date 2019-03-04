@@ -174,3 +174,4 @@ this.lindwurm_acid_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

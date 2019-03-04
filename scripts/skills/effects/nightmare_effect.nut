@@ -177,3 +177,4 @@ this.nightmare_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -72,3 +72,4 @@ this.named_throwing_axe <- this.inherit("scripts/items/weapons/named/named_weapo
 	}
 
 });
+

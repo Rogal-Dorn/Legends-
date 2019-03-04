@@ -281,3 +281,4 @@ gt.Const.Tactical.Actor.Necromancer <- {
 		0
 	]
 };
+

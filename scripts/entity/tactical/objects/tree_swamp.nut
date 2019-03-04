@@ -39,3 +39,4 @@ this.tree_swamp <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

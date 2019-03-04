@@ -83,3 +83,4 @@ this.patch_forest_thick_snow <- this.inherit("scripts/mapgen/tactical_template",
 	}
 
 });
+

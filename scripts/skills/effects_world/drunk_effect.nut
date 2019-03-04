@@ -101,3 +101,4 @@ this.drunk_effect <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

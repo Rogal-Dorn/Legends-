@@ -35,3 +35,4 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 	}
 
 });
+

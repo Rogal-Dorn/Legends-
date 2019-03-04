@@ -27,3 +27,4 @@ this.zombie_betrayer <- this.inherit("scripts/entity/tactical/enemies/zombie_kni
 	}
 
 });
+

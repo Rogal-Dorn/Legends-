@@ -112,3 +112,4 @@ this.stunned_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

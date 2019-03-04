@@ -56,3 +56,4 @@ this.stab <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

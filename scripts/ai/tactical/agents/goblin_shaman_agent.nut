@@ -44,3 +44,4 @@ this.goblin_shaman_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

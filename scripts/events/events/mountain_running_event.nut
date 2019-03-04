@@ -72,3 +72,4 @@ this.mountain_running_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

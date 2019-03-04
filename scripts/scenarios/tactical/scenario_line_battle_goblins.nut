@@ -307,3 +307,4 @@ this.scenario_line_battle_goblins <- this.inherit("scripts/scenarios/tactical/sc
 	}
 
 });
+

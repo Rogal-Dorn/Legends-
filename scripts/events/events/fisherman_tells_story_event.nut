@@ -94,3 +94,4 @@ this.fisherman_tells_story_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

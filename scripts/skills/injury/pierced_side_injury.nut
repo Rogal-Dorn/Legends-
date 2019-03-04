@@ -53,3 +53,4 @@ this.pierced_side_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

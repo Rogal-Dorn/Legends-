@@ -42,3 +42,4 @@ this.wardog_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

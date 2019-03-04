@@ -250,3 +250,4 @@ this.shooting_contest_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

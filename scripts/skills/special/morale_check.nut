@@ -248,3 +248,4 @@ this.morale_check <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

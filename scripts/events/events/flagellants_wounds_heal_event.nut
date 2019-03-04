@@ -97,3 +97,4 @@ this.flagellants_wounds_heal_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

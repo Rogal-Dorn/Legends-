@@ -153,3 +153,4 @@ this.farmer_vs_butcher_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

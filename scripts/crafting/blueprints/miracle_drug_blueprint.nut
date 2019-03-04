@@ -25,3 +25,4 @@ this.miracle_drug_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

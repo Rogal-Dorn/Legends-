@@ -41,3 +41,4 @@ this.eagle_eyes_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	}
 
 });
+

@@ -108,3 +108,4 @@ this.militia_guest_ranged <- this.inherit("scripts/entity/tactical/player", {
 	}
 
 });
+

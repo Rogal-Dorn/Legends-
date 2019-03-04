@@ -127,3 +127,4 @@ this.patch_forest_fern_sea <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

@@ -62,3 +62,4 @@ this.ai_break_free <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

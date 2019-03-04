@@ -144,3 +144,4 @@ this.throw_axe <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

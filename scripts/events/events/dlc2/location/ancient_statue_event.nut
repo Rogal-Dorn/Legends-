@@ -128,3 +128,4 @@ this.ancient_statue_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

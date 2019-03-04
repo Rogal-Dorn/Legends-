@@ -51,3 +51,4 @@ this.unhold_fur_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgr
 	}
 
 });
+

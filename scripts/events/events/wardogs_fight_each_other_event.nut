@@ -346,3 +346,4 @@ this.wardogs_fight_each_other_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

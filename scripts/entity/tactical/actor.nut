@@ -3669,3 +3669,4 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

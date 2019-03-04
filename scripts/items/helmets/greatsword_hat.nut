@@ -21,3 +21,4 @@ this.greatsword_hat <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

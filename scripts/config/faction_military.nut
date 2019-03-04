@@ -162,3 +162,4 @@ gt.Const.Tactical.Actor.Noble <- {
 	],
 	FatigueRecoveryRate = 20
 };
+

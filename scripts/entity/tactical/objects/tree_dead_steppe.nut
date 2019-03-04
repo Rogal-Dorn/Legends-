@@ -22,3 +22,4 @@ this.tree_dead_steppe <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

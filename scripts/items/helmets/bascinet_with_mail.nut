@@ -65,3 +65,4 @@ this.bascinet_with_mail <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

@@ -66,3 +66,4 @@ this.ai_pickup_weapon <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

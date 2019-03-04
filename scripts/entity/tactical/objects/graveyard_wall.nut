@@ -63,3 +63,4 @@ this.graveyard_wall <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

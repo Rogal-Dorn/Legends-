@@ -746,3 +746,4 @@ gt.Const.Tactical.CombatInfo <- {
 	}
 
 };
+

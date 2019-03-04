@@ -833,3 +833,4 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 	}
 
 });
+

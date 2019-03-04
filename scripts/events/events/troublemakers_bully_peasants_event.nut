@@ -352,3 +352,4 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 	}
 
 });
+

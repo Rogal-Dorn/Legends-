@@ -121,3 +121,4 @@ this.optimist_lost_battle_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

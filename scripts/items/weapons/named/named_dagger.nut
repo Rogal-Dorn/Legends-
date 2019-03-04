@@ -40,3 +40,4 @@ this.named_dagger <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

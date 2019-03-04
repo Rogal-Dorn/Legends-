@@ -21,3 +21,4 @@ this.aketon_cap <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

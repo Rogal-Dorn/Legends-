@@ -40,3 +40,4 @@ this.poisoned_apple_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

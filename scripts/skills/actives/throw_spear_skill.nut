@@ -212,3 +212,4 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

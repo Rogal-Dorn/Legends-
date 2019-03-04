@@ -50,3 +50,4 @@ this.orc_cave_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

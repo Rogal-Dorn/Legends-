@@ -264,3 +264,4 @@ this.undead_zombie_in_granary_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

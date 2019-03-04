@@ -57,3 +57,4 @@ this.ai_wake_up_ally <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

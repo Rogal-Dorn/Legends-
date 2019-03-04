@@ -700,3 +700,4 @@ gt.Const.World.LocationNames.OrcCave <- [
 	"Orc infested Cave",
 	"Flesheater\'s Cavern"
 ];
+

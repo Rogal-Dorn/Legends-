@@ -118,3 +118,4 @@ this.butcher_gives_pointers_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

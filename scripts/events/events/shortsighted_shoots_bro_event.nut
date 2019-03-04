@@ -124,3 +124,4 @@ this.shortsighted_shoots_bro_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

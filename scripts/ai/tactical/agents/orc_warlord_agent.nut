@@ -43,3 +43,4 @@ this.orc_warlord_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

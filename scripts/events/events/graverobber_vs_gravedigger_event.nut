@@ -131,3 +131,4 @@ this.graverobber_vs_gravedigger_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

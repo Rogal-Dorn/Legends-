@@ -95,3 +95,4 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

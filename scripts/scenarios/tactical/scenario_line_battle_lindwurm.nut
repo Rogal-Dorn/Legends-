@@ -254,3 +254,4 @@ this.scenario_line_battle_lindwurm <- this.inherit("scripts/scenarios/tactical/s
 	}
 
 });
+

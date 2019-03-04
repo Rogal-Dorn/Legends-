@@ -151,3 +151,4 @@ this.ai_attack_splitshield <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

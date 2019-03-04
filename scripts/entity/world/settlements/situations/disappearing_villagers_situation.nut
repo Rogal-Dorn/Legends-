@@ -27,3 +27,4 @@ this.disappearing_villagers_situation <- this.inherit("scripts/entity/world/sett
 	}
 
 });
+

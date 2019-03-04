@@ -42,3 +42,4 @@ this.land_ship_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

@@ -208,3 +208,4 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

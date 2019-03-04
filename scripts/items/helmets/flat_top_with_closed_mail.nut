@@ -65,3 +65,4 @@ this.flat_top_with_closed_mail <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

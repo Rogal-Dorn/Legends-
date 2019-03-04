@@ -42,3 +42,4 @@ this.perk_bags_and_belts <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

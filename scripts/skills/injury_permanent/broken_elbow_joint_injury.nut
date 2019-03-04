@@ -64,3 +64,4 @@ this.broken_elbow_joint_injury <- this.inherit("scripts/skills/injury_permanent/
 	}
 
 });
+

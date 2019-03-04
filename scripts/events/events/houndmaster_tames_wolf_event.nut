@@ -96,3 +96,4 @@ this.houndmaster_tames_wolf_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

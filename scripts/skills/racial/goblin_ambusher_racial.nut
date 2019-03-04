@@ -58,3 +58,4 @@ this.goblin_ambusher_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

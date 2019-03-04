@@ -207,3 +207,4 @@ this.named_item_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

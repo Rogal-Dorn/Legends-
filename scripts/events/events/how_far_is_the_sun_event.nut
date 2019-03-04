@@ -430,3 +430,4 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

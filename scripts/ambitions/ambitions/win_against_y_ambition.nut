@@ -77,3 +77,4 @@ this.win_against_y_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

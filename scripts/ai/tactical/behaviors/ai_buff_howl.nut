@@ -106,3 +106,4 @@ this.ai_buff_howl <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

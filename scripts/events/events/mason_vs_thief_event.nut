@@ -113,3 +113,4 @@ this.mason_vs_thief_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

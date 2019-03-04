@@ -50,3 +50,4 @@ this.named_pike <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

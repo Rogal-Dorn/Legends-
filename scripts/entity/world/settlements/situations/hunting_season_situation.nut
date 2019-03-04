@@ -33,3 +33,4 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 	}
 
 });
+

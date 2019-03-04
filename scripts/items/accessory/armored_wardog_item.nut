@@ -27,3 +27,4 @@ this.armored_wardog_item <- this.inherit("scripts/items/accessory/wardog_item", 
 	}
 
 });
+

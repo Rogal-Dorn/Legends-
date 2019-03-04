@@ -74,3 +74,4 @@ this.golden_chalice_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

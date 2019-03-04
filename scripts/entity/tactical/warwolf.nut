@@ -231,3 +231,4 @@ this.warwolf <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

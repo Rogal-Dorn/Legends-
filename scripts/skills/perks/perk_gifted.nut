@@ -33,3 +33,4 @@ this.perk_gifted <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

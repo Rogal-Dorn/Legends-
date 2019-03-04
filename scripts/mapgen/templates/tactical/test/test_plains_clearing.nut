@@ -77,3 +77,4 @@ this.test_plains_clearing <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

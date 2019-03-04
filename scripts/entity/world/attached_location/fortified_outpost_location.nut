@@ -311,3 +311,4 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 	}
 
 });
+

@@ -186,3 +186,4 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

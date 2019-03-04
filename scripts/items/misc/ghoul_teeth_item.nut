@@ -40,3 +40,4 @@ this.ghoul_teeth_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

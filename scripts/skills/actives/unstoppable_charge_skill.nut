@@ -338,3 +338,4 @@ this.unstoppable_charge_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

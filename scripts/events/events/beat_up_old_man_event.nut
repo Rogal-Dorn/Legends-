@@ -122,3 +122,4 @@ this.beat_up_old_man_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -58,3 +58,4 @@ this.have_z_crowns_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

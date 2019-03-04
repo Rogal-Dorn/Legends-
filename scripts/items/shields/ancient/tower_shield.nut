@@ -35,3 +35,4 @@ this.tower_shield <- this.inherit("scripts/items/shields/shield", {
 	}
 
 });
+

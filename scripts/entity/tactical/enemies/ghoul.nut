@@ -370,3 +370,4 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

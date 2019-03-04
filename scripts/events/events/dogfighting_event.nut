@@ -453,3 +453,4 @@ this.dogfighting_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

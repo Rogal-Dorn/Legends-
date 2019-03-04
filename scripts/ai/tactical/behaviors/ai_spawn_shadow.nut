@@ -177,3 +177,4 @@ this.ai_spawn_shadow <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

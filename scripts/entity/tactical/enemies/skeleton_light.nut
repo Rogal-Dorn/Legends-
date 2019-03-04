@@ -61,3 +61,4 @@ this.skeleton_light <- this.inherit("scripts/entity/tactical/skeleton", {
 	}
 
 });
+

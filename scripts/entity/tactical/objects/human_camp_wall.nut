@@ -63,3 +63,4 @@ this.human_camp_wall <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

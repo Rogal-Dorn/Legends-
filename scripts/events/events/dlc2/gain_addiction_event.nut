@@ -101,3 +101,4 @@ this.gain_addiction_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

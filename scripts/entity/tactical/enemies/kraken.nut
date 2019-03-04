@@ -64,7 +64,7 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
-		if (!this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
+		if (!this.Tactical.State.isScenarioMode())
 		{
 			this.updateAchievement("BeastOfBeasts", 1, 1);
 		}
@@ -339,3 +339,4 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

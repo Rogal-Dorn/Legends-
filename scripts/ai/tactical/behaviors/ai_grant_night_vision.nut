@@ -201,3 +201,4 @@ this.ai_grant_night_vision <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

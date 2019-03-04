@@ -94,3 +94,4 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

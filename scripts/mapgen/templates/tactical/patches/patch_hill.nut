@@ -151,3 +151,4 @@ this.patch_hill <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

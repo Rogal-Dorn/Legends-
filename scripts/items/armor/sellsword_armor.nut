@@ -19,3 +19,4 @@ this.sellsword_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

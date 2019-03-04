@@ -64,3 +64,4 @@ this.deep_chest_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

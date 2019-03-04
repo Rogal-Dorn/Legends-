@@ -203,3 +203,4 @@ this.scenario_vampire_hunt <- this.inherit("scripts/scenarios/tactical/scenario_
 	}
 
 });
+

@@ -63,3 +63,4 @@ this.undead_town_destroyed_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

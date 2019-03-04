@@ -168,3 +168,4 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

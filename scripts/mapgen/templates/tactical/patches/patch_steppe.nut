@@ -72,3 +72,4 @@ this.patch_steppe <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

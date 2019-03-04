@@ -25,3 +25,4 @@ this.fermented_unhold_heart_blueprint <- this.inherit("scripts/crafting/blueprin
 	}
 
 });
+

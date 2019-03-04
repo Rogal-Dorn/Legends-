@@ -69,3 +69,4 @@ this.staggered_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

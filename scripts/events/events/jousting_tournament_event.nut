@@ -480,3 +480,4 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

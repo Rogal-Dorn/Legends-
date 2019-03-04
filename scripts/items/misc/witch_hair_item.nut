@@ -40,3 +40,4 @@ this.witch_hair_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

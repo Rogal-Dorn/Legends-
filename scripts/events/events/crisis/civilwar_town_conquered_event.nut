@@ -71,3 +71,4 @@ this.civilwar_town_conquered_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -40,3 +40,4 @@ this.ghoul_brain_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

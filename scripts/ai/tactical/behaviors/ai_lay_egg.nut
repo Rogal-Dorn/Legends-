@@ -83,3 +83,4 @@ this.ai_lay_egg <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

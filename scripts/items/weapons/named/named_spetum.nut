@@ -53,3 +53,4 @@ this.named_spetum <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

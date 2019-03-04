@@ -654,3 +654,4 @@ this.confront_warlord_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

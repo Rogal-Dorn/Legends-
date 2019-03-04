@@ -197,3 +197,4 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

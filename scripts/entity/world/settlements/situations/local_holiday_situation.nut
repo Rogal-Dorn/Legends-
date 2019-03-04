@@ -35,3 +35,4 @@ this.local_holiday_situation <- this.inherit("scripts/entity/world/settlements/s
 	}
 
 });
+

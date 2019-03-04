@@ -41,3 +41,4 @@ this.spider_poison_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

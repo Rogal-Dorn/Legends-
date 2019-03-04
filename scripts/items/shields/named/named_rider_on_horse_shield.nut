@@ -36,3 +36,4 @@ this.named_rider_on_horse_shield <- this.inherit("scripts/items/shields/named/na
 	}
 
 });
+

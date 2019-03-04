@@ -140,3 +140,4 @@ this.ai_attack_swallow_whole <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

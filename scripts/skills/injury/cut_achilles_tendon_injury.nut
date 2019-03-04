@@ -59,3 +59,4 @@ this.cut_achilles_tendon_injury <- this.inherit("scripts/skills/injury/injury", 
 	}
 
 });
+

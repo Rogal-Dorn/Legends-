@@ -55,3 +55,4 @@ this.named_longaxe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

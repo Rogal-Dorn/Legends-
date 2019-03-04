@@ -17,3 +17,4 @@ this.zombie_knight_bodyguard <- this.inherit("scripts/entity/tactical/enemies/zo
 	}
 
 });
+

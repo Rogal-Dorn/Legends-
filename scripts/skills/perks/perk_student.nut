@@ -22,3 +22,4 @@ this.perk_student <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

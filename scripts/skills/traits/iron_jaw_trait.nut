@@ -49,3 +49,4 @@ this.iron_jaw_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	}
 
 });
+

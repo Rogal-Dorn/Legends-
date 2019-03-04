@@ -29,3 +29,4 @@ this.protective_runes_upgrade_blueprint <- this.inherit("scripts/crafting/bluepr
 	}
 
 });
+

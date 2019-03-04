@@ -74,3 +74,4 @@ this.defeat_undead_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -101,3 +101,4 @@ this.taxidermist_building <- this.inherit("scripts/entity/world/settlements/buil
 	}
 
 });
+

@@ -25,3 +25,4 @@ this.perk_boondock_blade <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

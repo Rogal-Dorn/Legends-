@@ -14,3 +14,4 @@ this.perk_brawny <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

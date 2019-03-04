@@ -60,3 +60,4 @@ this.patch_snow_less <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

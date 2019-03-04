@@ -30,3 +30,4 @@ this.lindwurm_tail_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

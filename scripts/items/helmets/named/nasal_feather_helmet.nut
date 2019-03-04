@@ -29,3 +29,4 @@ this.nasal_feather_helmet <- this.inherit("scripts/items/helmets/named/named_hel
 	}
 
 });
+

@@ -23,3 +23,4 @@ this.steppe_brush <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

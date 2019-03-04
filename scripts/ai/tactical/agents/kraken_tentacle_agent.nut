@@ -43,3 +43,4 @@ this.kraken_tentacle_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

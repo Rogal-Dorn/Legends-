@@ -90,3 +90,4 @@ this.undead_crusader_leaves_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

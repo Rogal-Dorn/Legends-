@@ -395,3 +395,4 @@ this.ai_possess_undead <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

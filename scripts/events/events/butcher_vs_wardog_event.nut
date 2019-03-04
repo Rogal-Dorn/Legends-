@@ -108,3 +108,4 @@ this.butcher_vs_wardog_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

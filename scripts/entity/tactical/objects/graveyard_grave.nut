@@ -27,3 +27,4 @@ this.graveyard_grave <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

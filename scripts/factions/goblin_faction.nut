@@ -24,3 +24,4 @@ this.goblin_faction <- this.inherit("scripts/factions/faction", {
 	}
 
 });
+

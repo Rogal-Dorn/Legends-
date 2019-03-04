@@ -114,3 +114,4 @@ this.paint_set_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

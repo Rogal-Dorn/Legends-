@@ -380,3 +380,4 @@ this.bird_shits_on_sellsword_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

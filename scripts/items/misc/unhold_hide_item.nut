@@ -40,3 +40,4 @@ this.unhold_hide_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

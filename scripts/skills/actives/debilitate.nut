@@ -53,3 +53,4 @@ this.debilitate <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

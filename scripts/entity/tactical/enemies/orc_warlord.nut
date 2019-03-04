@@ -321,3 +321,4 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

@@ -1044,3 +1044,4 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 	}
 
 });
+

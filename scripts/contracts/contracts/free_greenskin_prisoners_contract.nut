@@ -875,3 +875,4 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 	}
 
 });
+

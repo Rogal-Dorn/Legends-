@@ -104,3 +104,4 @@ this.ai_rally <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

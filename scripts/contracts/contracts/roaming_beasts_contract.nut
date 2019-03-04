@@ -637,3 +637,4 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

@@ -250,3 +250,4 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 	}
 
 });
+

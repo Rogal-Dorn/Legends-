@@ -261,3 +261,4 @@ this.greenskins_trapped_goblin_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

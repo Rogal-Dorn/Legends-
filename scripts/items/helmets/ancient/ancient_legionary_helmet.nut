@@ -30,3 +30,4 @@ this.ancient_legionary_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

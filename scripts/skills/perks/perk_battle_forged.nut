@@ -65,3 +65,4 @@ this.perk_battle_forged <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

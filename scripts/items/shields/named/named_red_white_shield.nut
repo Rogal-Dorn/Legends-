@@ -36,3 +36,4 @@ this.named_red_white_shield <- this.inherit("scripts/items/shields/named/named_s
 	}
 
 });
+

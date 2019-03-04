@@ -29,3 +29,4 @@ this.potion_of_knowledge_blueprint <- this.inherit("scripts/crafting/blueprint",
 	}
 
 });
+

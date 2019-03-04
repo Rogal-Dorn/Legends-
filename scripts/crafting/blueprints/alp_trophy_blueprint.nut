@@ -29,3 +29,4 @@ this.alp_trophy_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

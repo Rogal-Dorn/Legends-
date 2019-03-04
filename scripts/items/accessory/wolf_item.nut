@@ -141,3 +141,4 @@ this.wolf_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

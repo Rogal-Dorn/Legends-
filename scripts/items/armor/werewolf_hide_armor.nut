@@ -38,3 +38,4 @@ this.werewolf_hide_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

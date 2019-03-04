@@ -43,3 +43,4 @@ this.billhook <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

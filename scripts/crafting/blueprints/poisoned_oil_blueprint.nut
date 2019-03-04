@@ -21,3 +21,4 @@ this.poisoned_oil_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

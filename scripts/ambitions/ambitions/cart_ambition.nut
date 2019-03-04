@@ -81,3 +81,4 @@ this.cart_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -81,3 +81,4 @@ this.spiritual_reward_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

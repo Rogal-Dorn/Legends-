@@ -49,3 +49,4 @@ this.teamplayer_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	}
 
 });
+

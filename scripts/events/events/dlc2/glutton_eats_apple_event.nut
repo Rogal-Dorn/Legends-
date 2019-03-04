@@ -134,3 +134,4 @@ this.glutton_eats_apple_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

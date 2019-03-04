@@ -124,3 +124,4 @@ this.demolish_armor_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

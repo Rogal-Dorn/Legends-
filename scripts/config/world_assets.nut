@@ -54,3 +54,4 @@ gt.Const.World.Assets <- {
 	BuyPriceNotProducedHere = 1.5,
 	BaseWoundTreatmentPrice = 20
 };
+

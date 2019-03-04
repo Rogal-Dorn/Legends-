@@ -94,3 +94,4 @@ this.ghost_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

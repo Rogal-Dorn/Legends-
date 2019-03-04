@@ -193,3 +193,4 @@ this.weapon_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

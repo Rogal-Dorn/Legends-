@@ -94,3 +94,4 @@ this.wound_heals_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

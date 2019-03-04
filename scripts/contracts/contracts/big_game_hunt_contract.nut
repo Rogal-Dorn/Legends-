@@ -603,3 +603,4 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

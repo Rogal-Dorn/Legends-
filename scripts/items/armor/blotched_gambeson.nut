@@ -19,3 +19,4 @@ this.blotched_gambeson <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

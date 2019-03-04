@@ -32,3 +32,4 @@ gt.Const.World.PartyAgent <- [
 	"scripts/ai/world/agents/roam_ai_agent",
 	"scripts/ai/world/agents/ambusher_ai_agent"
 ];
+

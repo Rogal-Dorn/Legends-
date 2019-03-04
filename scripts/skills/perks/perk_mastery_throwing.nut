@@ -41,3 +41,4 @@ this.perk_mastery_throwing <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

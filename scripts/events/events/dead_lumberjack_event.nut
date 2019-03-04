@@ -97,3 +97,4 @@ this.dead_lumberjack_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

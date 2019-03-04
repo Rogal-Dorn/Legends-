@@ -60,3 +60,4 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 	}
 
 });
+

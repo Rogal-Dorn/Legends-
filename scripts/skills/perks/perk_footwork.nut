@@ -27,3 +27,4 @@ this.perk_footwork <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

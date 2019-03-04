@@ -431,3 +431,4 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

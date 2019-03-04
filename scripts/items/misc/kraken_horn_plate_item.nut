@@ -40,3 +40,4 @@ this.kraken_horn_plate_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

@@ -54,3 +54,4 @@ this.undead_necromancers_lair_location <- this.inherit("scripts/entity/world/loc
 	}
 
 });
+

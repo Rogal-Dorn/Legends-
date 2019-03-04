@@ -79,3 +79,4 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

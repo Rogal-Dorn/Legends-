@@ -159,3 +159,4 @@ this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

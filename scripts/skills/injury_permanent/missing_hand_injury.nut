@@ -49,3 +49,4 @@ this.missing_hand_injury <- this.inherit("scripts/skills/injury_permanent/perman
 	}
 
 });
+

@@ -586,3 +586,4 @@ this.obtain_item_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

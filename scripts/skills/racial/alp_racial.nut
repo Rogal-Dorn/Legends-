@@ -49,3 +49,4 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

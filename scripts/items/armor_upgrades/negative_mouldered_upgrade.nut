@@ -37,3 +37,4 @@ this.negative_mouldered_upgrade <- this.inherit("scripts/items/armor_upgrades/ar
 	}
 
 });
+

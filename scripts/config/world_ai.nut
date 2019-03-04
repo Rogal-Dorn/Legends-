@@ -84,3 +84,4 @@ gt.Const.World.AI <- {
 		FleeMaxTime = 50.0
 	}
 };
+

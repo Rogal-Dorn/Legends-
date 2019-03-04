@@ -84,3 +84,4 @@ this.ranged_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

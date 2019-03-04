@@ -26,3 +26,4 @@ this.brown_coat_of_plates_armor <- this.inherit("scripts/items/armor/named/named
 	}
 
 });
+

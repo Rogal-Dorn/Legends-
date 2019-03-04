@@ -145,3 +145,4 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

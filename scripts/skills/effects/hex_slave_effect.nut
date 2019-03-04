@@ -128,3 +128,4 @@ this.hex_slave_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

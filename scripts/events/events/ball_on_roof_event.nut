@@ -258,3 +258,4 @@ this.ball_on_roof_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

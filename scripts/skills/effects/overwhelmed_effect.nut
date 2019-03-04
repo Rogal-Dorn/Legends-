@@ -79,3 +79,4 @@ this.overwhelmed_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

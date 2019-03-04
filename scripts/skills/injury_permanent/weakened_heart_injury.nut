@@ -50,3 +50,4 @@ this.weakened_heart_injury <- this.inherit("scripts/skills/injury_permanent/perm
 	}
 
 });
+

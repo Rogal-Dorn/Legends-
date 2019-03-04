@@ -87,3 +87,4 @@ this.light_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

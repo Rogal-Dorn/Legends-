@@ -57,3 +57,4 @@ this.traumatized_injury <- this.inherit("scripts/skills/injury_permanent/permane
 	}
 
 });
+

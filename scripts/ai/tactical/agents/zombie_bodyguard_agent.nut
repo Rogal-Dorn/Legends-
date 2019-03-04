@@ -54,3 +54,4 @@ this.zombie_bodyguard_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

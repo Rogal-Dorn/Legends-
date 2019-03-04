@@ -29,3 +29,4 @@ this.schrat_shield <- this.inherit("scripts/items/shields/shield", {
 	}
 
 });
+

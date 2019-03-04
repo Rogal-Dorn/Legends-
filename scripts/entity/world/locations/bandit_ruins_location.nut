@@ -86,3 +86,4 @@ this.bandit_ruins_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

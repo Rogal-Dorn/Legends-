@@ -507,3 +507,4 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

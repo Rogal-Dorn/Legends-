@@ -127,3 +127,4 @@ this.defeat_orc_location_ambition <- this.inherit("scripts/ambitions/ambition", 
 	}
 
 });
+

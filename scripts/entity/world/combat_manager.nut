@@ -475,3 +475,4 @@ this.combat_manager <- {
 	}
 
 };
+

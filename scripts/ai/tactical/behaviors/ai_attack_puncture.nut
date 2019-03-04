@@ -132,3 +132,4 @@ this.ai_attack_puncture <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

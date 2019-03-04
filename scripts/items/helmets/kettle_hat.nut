@@ -70,3 +70,4 @@ this.kettle_hat <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

@@ -2043,3 +2043,4 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

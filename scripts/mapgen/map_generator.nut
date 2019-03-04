@@ -36,3 +36,4 @@ this.map_generator <- {
 	}
 
 };
+

@@ -252,3 +252,4 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

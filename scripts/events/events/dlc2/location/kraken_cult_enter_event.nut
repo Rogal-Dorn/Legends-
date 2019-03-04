@@ -462,3 +462,4 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

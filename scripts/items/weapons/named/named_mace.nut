@@ -44,3 +44,4 @@ this.named_mace <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

@@ -22,3 +22,4 @@ this.graveyard_ruin <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

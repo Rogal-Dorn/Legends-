@@ -19,3 +19,4 @@ this.leather_tunic <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

@@ -177,3 +177,4 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

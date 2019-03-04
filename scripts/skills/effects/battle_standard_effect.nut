@@ -115,3 +115,4 @@ this.battle_standard_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

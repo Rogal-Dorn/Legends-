@@ -87,3 +87,4 @@ this.fractured_skull_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

@@ -922,3 +922,4 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

@@ -204,3 +204,4 @@ this.wildman_testing_money_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

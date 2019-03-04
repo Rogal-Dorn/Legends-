@@ -19,3 +19,4 @@ this.perk_mastery_axe <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

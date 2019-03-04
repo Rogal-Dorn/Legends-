@@ -120,3 +120,4 @@ this.oldguard_becomes_drunkard_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

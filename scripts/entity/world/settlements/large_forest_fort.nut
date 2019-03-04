@@ -274,3 +274,4 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

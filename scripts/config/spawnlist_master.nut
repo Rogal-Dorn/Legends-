@@ -1184,3 +1184,4 @@ function calculateCosts( _p )
 
 this.calculateCosts(this.Const.World.Spawn.Caravan);
 this.calculateCosts(this.Const.World.Spawn.CaravanEscort);
+

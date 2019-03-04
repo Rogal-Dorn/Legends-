@@ -211,3 +211,4 @@ this.ai_attack_throw_net <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

@@ -212,3 +212,4 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

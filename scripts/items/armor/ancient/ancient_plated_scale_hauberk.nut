@@ -20,3 +20,4 @@ this.ancient_plated_scale_hauberk <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

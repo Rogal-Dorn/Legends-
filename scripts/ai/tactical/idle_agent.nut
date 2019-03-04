@@ -15,3 +15,4 @@ this.idle_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

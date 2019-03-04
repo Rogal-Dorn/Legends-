@@ -56,3 +56,4 @@ this.infected_wound_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

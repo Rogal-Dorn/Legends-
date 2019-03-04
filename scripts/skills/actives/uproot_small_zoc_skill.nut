@@ -90,3 +90,4 @@ this.uproot_small_zoc_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

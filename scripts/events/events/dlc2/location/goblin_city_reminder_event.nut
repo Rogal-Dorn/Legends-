@@ -58,3 +58,4 @@ this.goblin_city_reminder_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

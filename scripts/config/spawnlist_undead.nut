@@ -2657,3 +2657,4 @@ function calculateCosts( _p )
 this.calculateCosts(this.Const.World.Spawn.UndeadArmy);
 this.calculateCosts(this.Const.World.Spawn.Vampires);
 this.calculateCosts(this.Const.World.Spawn.VampiresAndSkeletons);
+

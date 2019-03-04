@@ -33,3 +33,4 @@ this.good_harvest_situation <- this.inherit("scripts/entity/world/settlements/si
 	}
 
 });
+

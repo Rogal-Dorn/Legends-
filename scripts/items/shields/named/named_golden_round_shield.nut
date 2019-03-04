@@ -37,3 +37,4 @@ this.named_golden_round_shield <- this.inherit("scripts/items/shields/named/name
 	}
 
 });
+

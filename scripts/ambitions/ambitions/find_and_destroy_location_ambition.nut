@@ -111,3 +111,4 @@ this.find_and_destroy_location_ambition <- this.inherit("scripts/ambitions/ambit
 	}
 
 });
+

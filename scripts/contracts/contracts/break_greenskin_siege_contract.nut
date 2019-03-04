@@ -887,3 +887,4 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 	}
 
 });
+

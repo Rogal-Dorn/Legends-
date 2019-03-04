@@ -160,3 +160,4 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -188,3 +188,4 @@ this.acid_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -316,3 +316,4 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

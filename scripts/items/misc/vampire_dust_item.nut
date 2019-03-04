@@ -40,3 +40,4 @@ this.vampire_dust_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

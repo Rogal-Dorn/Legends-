@@ -127,3 +127,4 @@ this.ai_attack_lash <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

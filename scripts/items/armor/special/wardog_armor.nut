@@ -25,3 +25,4 @@ this.wardog_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

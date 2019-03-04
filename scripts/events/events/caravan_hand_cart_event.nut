@@ -98,3 +98,4 @@ this.caravan_hand_cart_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

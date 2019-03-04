@@ -262,3 +262,4 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

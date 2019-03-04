@@ -677,3 +677,4 @@ this.entity_manager <- {
 	}
 
 };
+

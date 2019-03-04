@@ -61,3 +61,4 @@ this.fishing_huts_location <- this.inherit("scripts/entity/world/attached_locati
 	}
 
 });
+

@@ -63,3 +63,4 @@ this.battle_standard_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -63,3 +63,4 @@ this.have_z_renown_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

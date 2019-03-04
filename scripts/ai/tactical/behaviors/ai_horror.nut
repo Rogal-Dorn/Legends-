@@ -217,3 +217,4 @@ this.ai_horror <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

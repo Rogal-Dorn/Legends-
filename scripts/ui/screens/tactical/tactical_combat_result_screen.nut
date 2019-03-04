@@ -432,3 +432,4 @@ this.tactical_combat_result_screen <- {
 	}
 
 };
+

@@ -19,3 +19,4 @@ this.apron <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

@@ -20,3 +20,4 @@ this.gambeson <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

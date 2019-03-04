@@ -29,3 +29,4 @@ this.golden_scale_armor <- this.inherit("scripts/items/armor/named/named_armor",
 	}
 
 });
+

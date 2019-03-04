@@ -138,3 +138,4 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 	}
 
 });
+

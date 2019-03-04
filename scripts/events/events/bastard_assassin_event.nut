@@ -438,3 +438,4 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

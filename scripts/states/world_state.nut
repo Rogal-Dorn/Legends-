@@ -3552,3 +3552,4 @@ this.world_state <- this.inherit("scripts/states/state", {
 	}
 
 });
+

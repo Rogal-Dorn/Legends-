@@ -4558,3 +4558,4 @@ this.calculateCosts(this.Const.World.Spawn.HexenAndMore);
 this.calculateCosts(this.Const.World.Spawn.HexenAndNoSpiders);
 this.calculateCosts(this.Const.World.Spawn.Kraken);
 this.calculateCosts(this.Const.World.Spawn.Beasts);
+

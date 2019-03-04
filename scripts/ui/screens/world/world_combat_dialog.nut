@@ -180,3 +180,4 @@ this.world_combat_dialog <- {
 	}
 
 };
+

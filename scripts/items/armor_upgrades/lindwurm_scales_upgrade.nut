@@ -101,3 +101,4 @@ this.lindwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 	}
 
 });
+

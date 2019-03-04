@@ -161,3 +161,4 @@ this.kraken_devour_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

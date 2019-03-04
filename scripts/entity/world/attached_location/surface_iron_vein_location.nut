@@ -139,3 +139,4 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 	}
 
 });
+

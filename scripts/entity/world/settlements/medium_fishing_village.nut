@@ -156,3 +156,4 @@ this.medium_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

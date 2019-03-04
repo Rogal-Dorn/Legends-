@@ -240,3 +240,4 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

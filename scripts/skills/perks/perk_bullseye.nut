@@ -19,3 +19,4 @@ this.perk_bullseye <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

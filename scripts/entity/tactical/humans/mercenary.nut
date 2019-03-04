@@ -343,3 +343,4 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

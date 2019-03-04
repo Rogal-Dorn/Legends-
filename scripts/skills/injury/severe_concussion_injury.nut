@@ -87,3 +87,4 @@ this.severe_concussion_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

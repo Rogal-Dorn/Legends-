@@ -110,3 +110,4 @@ this.bright_vs_dumb_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

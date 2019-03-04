@@ -149,3 +149,4 @@ this.ai_attack_thresh <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

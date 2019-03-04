@@ -70,3 +70,4 @@ this.closed_flat_top_with_neckguard <- this.inherit("scripts/items/helmets/helme
 	}
 
 });
+

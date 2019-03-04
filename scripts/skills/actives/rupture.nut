@@ -139,3 +139,4 @@ this.rupture <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

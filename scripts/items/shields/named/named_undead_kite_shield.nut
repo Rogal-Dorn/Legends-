@@ -36,3 +36,4 @@ this.named_undead_kite_shield <- this.inherit("scripts/items/shields/named/named
 	}
 
 });
+

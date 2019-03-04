@@ -22,3 +22,4 @@ this.straw_hat <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

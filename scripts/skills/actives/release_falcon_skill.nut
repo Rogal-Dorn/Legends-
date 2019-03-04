@@ -88,3 +88,4 @@ this.release_falcon_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

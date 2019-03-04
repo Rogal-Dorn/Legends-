@@ -297,3 +297,4 @@ this.ai_hide <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

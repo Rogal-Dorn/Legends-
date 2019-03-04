@@ -30,3 +30,4 @@ this.skeleton_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

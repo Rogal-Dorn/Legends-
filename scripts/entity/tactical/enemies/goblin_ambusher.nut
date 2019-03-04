@@ -66,3 +66,4 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 	}
 
 });
+

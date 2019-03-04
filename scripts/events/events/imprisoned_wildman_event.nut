@@ -50,7 +50,7 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 					Text = "Alright, I\'ll send a man in.",
 					function getResult( _event )
 					{
-						return "D";
+						return this.Math.rand(1, 100) <= 80 ? "C" : "D";
 					}
 
 				});
@@ -574,3 +574,4 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -76,3 +76,4 @@ this.dead_bodies_on_road_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

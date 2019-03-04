@@ -40,3 +40,4 @@ this.tactical_screen_topbar_round_information <- this.inherit("scripts/ui/screen
 	}
 
 });
+

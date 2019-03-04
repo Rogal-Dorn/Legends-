@@ -168,3 +168,4 @@ this.medium_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

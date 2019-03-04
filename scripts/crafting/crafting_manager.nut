@@ -135,3 +135,4 @@ this.crafting_manager <- {
 	}
 
 };
+

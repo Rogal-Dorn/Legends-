@@ -80,3 +80,4 @@ gt.Const.Items.ConditionColor <- [
 	"#c0ff00",
 	"#ffffff"
 ];
+

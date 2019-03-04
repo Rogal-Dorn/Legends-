@@ -253,3 +253,4 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

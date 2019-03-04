@@ -34,3 +34,4 @@ this.goblin_ambusher_low <- this.inherit("scripts/entity/tactical/enemies/goblin
 	}
 
 });
+

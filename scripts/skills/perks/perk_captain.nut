@@ -14,3 +14,4 @@ this.perk_captain <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -152,3 +152,4 @@ this.wardog_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

@@ -208,3 +208,4 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

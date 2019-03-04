@@ -108,3 +108,4 @@ this.allied_civilians_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

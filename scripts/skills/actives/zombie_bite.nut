@@ -54,3 +54,4 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

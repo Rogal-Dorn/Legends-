@@ -40,3 +40,4 @@ this.lindwurm_scales_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

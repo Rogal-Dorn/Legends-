@@ -213,3 +213,4 @@ this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

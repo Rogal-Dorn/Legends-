@@ -152,3 +152,4 @@ this.send_greenskin_army_action <- this.inherit("scripts/factions/faction_action
 	}
 
 });
+

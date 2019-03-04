@@ -35,3 +35,4 @@ this.craftable_kraken_shield <- this.inherit("scripts/items/shields/shield", {
 	}
 
 });
+

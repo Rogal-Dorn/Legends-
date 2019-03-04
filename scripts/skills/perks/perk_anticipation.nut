@@ -20,3 +20,4 @@ this.perk_anticipation <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

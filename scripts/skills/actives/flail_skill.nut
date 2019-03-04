@@ -65,3 +65,4 @@ this.flail_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

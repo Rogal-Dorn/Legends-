@@ -6,3 +6,4 @@ gt.Const.Events <- {
 	AllottedTimePerEvaluationRun = 0.001,
 	GlobalSound = "sounds/new_round_03.wav"
 };
+

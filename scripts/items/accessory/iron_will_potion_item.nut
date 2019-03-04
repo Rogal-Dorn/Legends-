@@ -41,3 +41,4 @@ this.iron_will_potion_item <- this.inherit("scripts/items/accessory/accessory", 
 	}
 
 });
+

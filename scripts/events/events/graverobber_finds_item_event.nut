@@ -253,3 +253,4 @@ this.graverobber_finds_item_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

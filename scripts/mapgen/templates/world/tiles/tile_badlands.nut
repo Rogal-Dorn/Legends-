@@ -58,3 +58,4 @@ this.tile_badlands <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

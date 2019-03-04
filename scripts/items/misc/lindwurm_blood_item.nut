@@ -40,3 +40,4 @@ this.lindwurm_blood_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

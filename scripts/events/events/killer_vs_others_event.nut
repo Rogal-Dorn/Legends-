@@ -426,3 +426,4 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

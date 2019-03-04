@@ -49,3 +49,4 @@ this.named_greataxe <- this.inherit("scripts/items/weapons/named/named_weapon", 
 	}
 
 });
+

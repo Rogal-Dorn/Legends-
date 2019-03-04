@@ -9,3 +9,4 @@ this.no_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -184,3 +184,4 @@ this.medium_mining_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

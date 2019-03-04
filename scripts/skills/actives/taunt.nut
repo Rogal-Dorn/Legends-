@@ -83,3 +83,4 @@ this.taunt <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -132,3 +132,4 @@ this.standard_bearer <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

@@ -99,3 +99,4 @@ this.holy_water_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -284,3 +284,4 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

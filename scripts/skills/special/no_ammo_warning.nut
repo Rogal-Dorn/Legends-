@@ -47,3 +47,4 @@ this.no_ammo_warning <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

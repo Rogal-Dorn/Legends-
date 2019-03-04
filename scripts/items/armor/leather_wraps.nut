@@ -19,3 +19,4 @@ this.leather_wraps <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

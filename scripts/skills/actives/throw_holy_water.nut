@@ -146,3 +146,4 @@ this.throw_holy_water <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

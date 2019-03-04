@@ -140,3 +140,4 @@ this.civilwar_dead_knight_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

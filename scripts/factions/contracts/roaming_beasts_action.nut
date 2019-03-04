@@ -43,3 +43,4 @@ this.roaming_beasts_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

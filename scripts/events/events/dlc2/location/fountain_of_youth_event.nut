@@ -153,3 +153,4 @@ this.fountain_of_youth_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

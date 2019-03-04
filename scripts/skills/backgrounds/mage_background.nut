@@ -95,3 +95,4 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 	}
 
 });
+

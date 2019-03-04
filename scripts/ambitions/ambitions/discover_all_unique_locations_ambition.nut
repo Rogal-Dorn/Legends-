@@ -53,3 +53,4 @@ this.discover_all_unique_locations_ambition <- this.inherit("scripts/ambitions/a
 	}
 
 });
+

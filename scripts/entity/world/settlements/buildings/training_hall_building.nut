@@ -35,3 +35,4 @@ this.training_hall_building <- this.inherit("scripts/entity/world/settlements/bu
 	}
 
 });
+

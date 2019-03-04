@@ -106,3 +106,4 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

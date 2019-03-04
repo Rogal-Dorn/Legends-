@@ -48,3 +48,4 @@ this.named_warbrand <- this.inherit("scripts/items/weapons/named/named_weapon", 
 	}
 
 });
+

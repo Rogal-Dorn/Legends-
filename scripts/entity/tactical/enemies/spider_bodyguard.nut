@@ -8,3 +8,4 @@ this.spider_bodyguard <- this.inherit("scripts/entity/tactical/enemies/spider", 
 	}
 
 });
+

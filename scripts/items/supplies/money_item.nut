@@ -87,3 +87,4 @@ this.money_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

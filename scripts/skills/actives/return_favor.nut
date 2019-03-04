@@ -77,3 +77,4 @@ this.return_favor <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

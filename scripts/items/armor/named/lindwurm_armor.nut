@@ -61,3 +61,4 @@ this.lindwurm_armor <- this.inherit("scripts/items/armor/named/named_armor", {
 	}
 
 });
+

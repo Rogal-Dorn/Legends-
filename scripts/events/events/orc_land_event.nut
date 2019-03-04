@@ -78,3 +78,4 @@ this.orc_land_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -104,3 +104,4 @@ this.stats_collector <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

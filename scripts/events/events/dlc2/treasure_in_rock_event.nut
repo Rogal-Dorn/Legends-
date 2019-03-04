@@ -331,3 +331,4 @@ this.treasure_in_rock_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

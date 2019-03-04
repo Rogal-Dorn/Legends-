@@ -150,3 +150,4 @@ this.tactical_swamp <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

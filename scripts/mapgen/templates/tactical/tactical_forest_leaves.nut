@@ -144,3 +144,4 @@ this.tactical_forest_leaves <- this.inherit("scripts/mapgen/tactical_template", 
 	}
 
 });
+

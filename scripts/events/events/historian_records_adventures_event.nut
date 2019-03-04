@@ -96,3 +96,4 @@ this.historian_records_adventures_event <- this.inherit("scripts/events/event", 
 	}
 
 });
+

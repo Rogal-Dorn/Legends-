@@ -25,3 +25,4 @@ this.lindwurm_shield_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

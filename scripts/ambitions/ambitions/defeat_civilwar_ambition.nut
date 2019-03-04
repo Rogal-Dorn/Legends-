@@ -97,3 +97,4 @@ this.defeat_civilwar_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

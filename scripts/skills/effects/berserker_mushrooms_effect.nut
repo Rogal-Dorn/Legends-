@@ -172,3 +172,4 @@ this.berserker_mushrooms_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

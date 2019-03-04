@@ -117,3 +117,4 @@ this.ailing_recovers_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

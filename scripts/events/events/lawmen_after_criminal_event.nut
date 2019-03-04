@@ -367,3 +367,4 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

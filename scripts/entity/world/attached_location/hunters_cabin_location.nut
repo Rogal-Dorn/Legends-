@@ -80,3 +80,4 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 	}
 
 });
+

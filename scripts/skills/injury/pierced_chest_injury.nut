@@ -53,3 +53,4 @@ this.pierced_chest_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

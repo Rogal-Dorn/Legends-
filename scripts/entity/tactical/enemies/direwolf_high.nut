@@ -28,3 +28,4 @@ this.direwolf_high <- this.inherit("scripts/entity/tactical/enemies/direwolf", {
 	}
 
 });
+

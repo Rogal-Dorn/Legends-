@@ -103,3 +103,4 @@ this.sweep_zoc_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -242,3 +242,4 @@ this.civilwar_trapped_soldiers_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

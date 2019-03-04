@@ -64,3 +64,4 @@ this.knowledge_potion_effect <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

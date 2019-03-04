@@ -45,3 +45,4 @@ this.double_mail_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upg
 	}
 
 });
+

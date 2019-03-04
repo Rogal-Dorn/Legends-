@@ -66,3 +66,4 @@ this.perk_reach_advantage <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

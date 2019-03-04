@@ -178,3 +178,4 @@ this.test_template <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

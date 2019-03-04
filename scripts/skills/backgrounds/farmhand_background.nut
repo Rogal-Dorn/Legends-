@@ -127,3 +127,4 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 	}
 
 });
+

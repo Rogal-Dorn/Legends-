@@ -58,3 +58,4 @@ this.bruised_leg_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

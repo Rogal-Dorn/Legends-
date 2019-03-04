@@ -203,3 +203,4 @@ this.fell_down_well_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -2567,3 +2567,4 @@ function calculateCosts( _p )
 
 this.calculateCosts(this.Const.World.Spawn.Noble);
 this.calculateCosts(this.Const.World.Spawn.NobleCaravan);
+

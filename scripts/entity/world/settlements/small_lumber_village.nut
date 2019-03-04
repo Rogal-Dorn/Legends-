@@ -191,3 +191,4 @@ this.small_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

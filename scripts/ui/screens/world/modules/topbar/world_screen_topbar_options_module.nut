@@ -121,3 +121,4 @@ this.world_screen_topbar_options_module <- this.inherit("scripts/ui/screens/ui_m
 	}
 
 });
+

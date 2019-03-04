@@ -115,3 +115,4 @@ this.minstrel_outsmarts_gambler_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

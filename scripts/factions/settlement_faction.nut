@@ -99,3 +99,4 @@ this.settlement_faction <- this.inherit("scripts/factions/faction", {
 	}
 
 });
+

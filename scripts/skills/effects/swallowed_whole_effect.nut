@@ -25,3 +25,4 @@ this.swallowed_whole_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

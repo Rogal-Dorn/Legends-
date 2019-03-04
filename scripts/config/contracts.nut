@@ -15,3 +15,4 @@ gt.Const.Contracts.Settings <- {
 	PaymentPerHeadMult = 0.05,
 	IntroChance = 20
 };
+

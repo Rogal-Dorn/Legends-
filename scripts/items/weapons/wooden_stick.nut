@@ -37,3 +37,4 @@ this.wooden_stick <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

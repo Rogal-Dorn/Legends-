@@ -64,3 +64,4 @@ this.patch_forest_mushrooms <- this.inherit("scripts/mapgen/tactical_template", 
 	}
 
 });
+

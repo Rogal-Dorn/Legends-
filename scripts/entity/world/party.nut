@@ -517,3 +517,4 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	}
 
 });
+

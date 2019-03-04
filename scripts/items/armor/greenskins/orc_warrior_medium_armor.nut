@@ -25,3 +25,4 @@ this.orc_warrior_medium_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

@@ -82,3 +82,4 @@ this.fat_guy_gets_fit_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -93,3 +93,4 @@ this.marauding_greenskins_action <- this.inherit("scripts/factions/faction_actio
 	}
 
 });
+

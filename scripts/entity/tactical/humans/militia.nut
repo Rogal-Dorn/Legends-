@@ -194,3 +194,4 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

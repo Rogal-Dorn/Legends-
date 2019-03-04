@@ -19,3 +19,4 @@ this.perk_shield_expert <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -60,3 +60,4 @@ this.named_orc_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

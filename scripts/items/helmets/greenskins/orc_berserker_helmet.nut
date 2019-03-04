@@ -30,3 +30,4 @@ this.orc_berserker_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

@@ -72,3 +72,4 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 	}
 
 });
+

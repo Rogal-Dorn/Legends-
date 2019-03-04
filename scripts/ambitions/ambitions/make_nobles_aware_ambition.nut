@@ -63,3 +63,4 @@ this.make_nobles_aware_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -157,3 +157,4 @@ this.ai_defend_riposte <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

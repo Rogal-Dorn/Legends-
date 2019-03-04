@@ -62,3 +62,4 @@ gt.Const.UndeadBanners <- [
 	"banner_skeletons_05",
 	"banner_skeletons_06"
 ];
+

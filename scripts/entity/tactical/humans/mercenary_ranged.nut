@@ -149,3 +149,4 @@ this.mercenary_ranged <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

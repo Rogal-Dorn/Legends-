@@ -59,3 +59,4 @@ this.broken_wagon_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

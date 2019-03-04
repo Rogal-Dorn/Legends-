@@ -29,3 +29,4 @@ this.patched_mail_shirt <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

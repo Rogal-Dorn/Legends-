@@ -52,3 +52,4 @@ this.broken_ribs_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

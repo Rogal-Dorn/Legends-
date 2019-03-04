@@ -593,3 +593,4 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

@@ -54,3 +54,4 @@ this.orc_metal_club <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

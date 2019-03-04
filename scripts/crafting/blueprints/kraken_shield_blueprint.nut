@@ -25,3 +25,4 @@ this.kraken_shield_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

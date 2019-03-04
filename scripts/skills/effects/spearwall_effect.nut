@@ -67,3 +67,4 @@ this.spearwall_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -728,3 +728,4 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

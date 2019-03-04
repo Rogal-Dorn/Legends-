@@ -27,3 +27,4 @@ this.autumn_brush <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

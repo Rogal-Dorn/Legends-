@@ -25,3 +25,4 @@ this.character_trait <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

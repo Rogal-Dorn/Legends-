@@ -81,3 +81,4 @@ this.perk_fast_adaption <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

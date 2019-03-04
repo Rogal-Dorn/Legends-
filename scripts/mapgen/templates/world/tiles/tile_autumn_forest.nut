@@ -93,3 +93,4 @@ this.tile_autumn_forest <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

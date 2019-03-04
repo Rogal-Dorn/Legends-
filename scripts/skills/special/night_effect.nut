@@ -61,3 +61,4 @@ this.night_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

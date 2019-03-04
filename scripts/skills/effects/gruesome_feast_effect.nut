@@ -48,3 +48,4 @@ this.gruesome_feast_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

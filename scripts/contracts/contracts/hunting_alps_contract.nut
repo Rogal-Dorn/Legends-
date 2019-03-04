@@ -497,3 +497,4 @@ this.hunting_alps_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

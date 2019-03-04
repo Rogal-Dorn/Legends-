@@ -111,3 +111,4 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 	}
 
 });
+

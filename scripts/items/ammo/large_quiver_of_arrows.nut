@@ -81,3 +81,4 @@ this.large_quiver_of_arrows <- this.inherit("scripts/items/ammo/ammo", {
 	}
 
 });
+

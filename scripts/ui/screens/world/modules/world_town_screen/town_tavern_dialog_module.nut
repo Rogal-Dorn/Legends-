@@ -66,3 +66,4 @@ this.town_tavern_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	}
 
 });
+

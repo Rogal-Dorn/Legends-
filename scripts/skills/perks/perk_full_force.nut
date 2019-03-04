@@ -23,3 +23,4 @@ this.perk_full_force <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

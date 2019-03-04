@@ -794,3 +794,4 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

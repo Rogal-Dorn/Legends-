@@ -320,3 +320,4 @@ this.spooky_forest_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

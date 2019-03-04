@@ -42,3 +42,4 @@ this.ancient_statue_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

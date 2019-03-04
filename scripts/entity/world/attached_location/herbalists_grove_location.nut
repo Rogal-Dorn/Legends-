@@ -59,3 +59,4 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 	}
 
 });
+

@@ -198,3 +198,4 @@ this.ai_miasma <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

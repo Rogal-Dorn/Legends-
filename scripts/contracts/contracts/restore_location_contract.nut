@@ -661,3 +661,4 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

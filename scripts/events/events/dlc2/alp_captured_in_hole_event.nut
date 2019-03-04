@@ -292,3 +292,4 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

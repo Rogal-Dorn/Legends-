@@ -261,3 +261,4 @@ this.ai_retreat_always <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

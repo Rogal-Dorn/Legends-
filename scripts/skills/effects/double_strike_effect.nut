@@ -39,3 +39,4 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

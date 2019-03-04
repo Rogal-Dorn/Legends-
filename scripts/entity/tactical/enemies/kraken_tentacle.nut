@@ -222,3 +222,4 @@ this.kraken_tentacle <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

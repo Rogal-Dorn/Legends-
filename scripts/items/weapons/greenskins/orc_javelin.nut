@@ -69,3 +69,4 @@ this.orc_javelin <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

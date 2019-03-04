@@ -316,3 +316,4 @@ this.scenario_line_battle_orcs <- this.inherit("scripts/scenarios/tactical/scena
 	}
 
 });
+

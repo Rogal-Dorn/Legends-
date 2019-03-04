@@ -27,3 +27,4 @@ this.brush_forest <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

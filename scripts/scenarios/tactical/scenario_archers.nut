@@ -263,3 +263,4 @@ this.scenario_archers <- this.inherit("scripts/scenarios/tactical/scenario_templ
 	}
 
 });
+

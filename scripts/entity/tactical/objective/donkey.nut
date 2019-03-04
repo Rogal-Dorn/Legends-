@@ -180,3 +180,4 @@ this.donkey <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

@@ -30,3 +30,4 @@ this.decayed_full_helm <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

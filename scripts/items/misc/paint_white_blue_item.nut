@@ -80,3 +80,4 @@ this.paint_white_blue_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

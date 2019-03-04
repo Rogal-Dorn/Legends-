@@ -148,3 +148,4 @@ this.split_man <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

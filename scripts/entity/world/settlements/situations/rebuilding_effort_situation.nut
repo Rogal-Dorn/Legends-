@@ -91,3 +91,4 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 	}
 
 });
+

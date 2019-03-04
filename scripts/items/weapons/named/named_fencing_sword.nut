@@ -41,3 +41,4 @@ this.named_fencing_sword <- this.inherit("scripts/items/weapons/named/named_weap
 	}
 
 });
+

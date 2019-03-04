@@ -811,3 +811,4 @@ gt.Const.World.Settlements.Master <- [
 		List = this.Const.World.Settlements.Fortifications_large
 	}
 ];
+

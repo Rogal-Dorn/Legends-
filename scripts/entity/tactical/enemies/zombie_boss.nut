@@ -284,3 +284,4 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

@@ -419,3 +419,4 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

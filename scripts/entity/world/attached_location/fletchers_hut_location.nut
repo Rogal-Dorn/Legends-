@@ -129,3 +129,4 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 	}
 
 });
+

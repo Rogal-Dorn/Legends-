@@ -52,3 +52,4 @@ this.orc_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

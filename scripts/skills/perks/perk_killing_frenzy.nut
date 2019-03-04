@@ -36,3 +36,4 @@ this.perk_killing_frenzy <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

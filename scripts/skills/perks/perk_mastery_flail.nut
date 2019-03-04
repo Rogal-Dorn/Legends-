@@ -19,3 +19,4 @@ this.perk_mastery_flail <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

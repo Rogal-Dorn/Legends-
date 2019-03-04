@@ -130,3 +130,4 @@ this.patch_mountain <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

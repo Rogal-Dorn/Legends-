@@ -275,3 +275,4 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

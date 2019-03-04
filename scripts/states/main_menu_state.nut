@@ -488,3 +488,4 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 	}
 
 });
+

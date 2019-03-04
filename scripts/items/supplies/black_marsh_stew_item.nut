@@ -44,3 +44,4 @@ this.black_marsh_stew_item <- this.inherit("scripts/items/supplies/food_item", {
 	}
 
 });
+

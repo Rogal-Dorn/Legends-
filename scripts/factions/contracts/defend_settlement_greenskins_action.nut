@@ -105,3 +105,4 @@ this.defend_settlement_greenskins_action <- this.inherit("scripts/factions/facti
 	}
 
 });
+

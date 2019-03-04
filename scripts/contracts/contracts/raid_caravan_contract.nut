@@ -858,3 +858,4 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

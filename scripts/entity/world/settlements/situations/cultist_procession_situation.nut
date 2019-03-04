@@ -62,3 +62,4 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 	}
 
 });
+

@@ -119,3 +119,4 @@ this.send_bandit_roamers_action <- this.inherit("scripts/factions/faction_action
 	}
 
 });
+

@@ -45,3 +45,4 @@ this.named_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

@@ -19,3 +19,4 @@ this.perk_backstabber <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

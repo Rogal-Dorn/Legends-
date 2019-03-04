@@ -71,3 +71,4 @@ this.named_javelin <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

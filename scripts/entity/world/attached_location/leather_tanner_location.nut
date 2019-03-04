@@ -125,3 +125,4 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 	}
 
 });
+

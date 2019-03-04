@@ -183,3 +183,4 @@ this.ai_swarm_of_insects <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

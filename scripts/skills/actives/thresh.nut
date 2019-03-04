@@ -169,3 +169,4 @@ this.thresh <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

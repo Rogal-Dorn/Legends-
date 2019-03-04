@@ -526,3 +526,4 @@ this.greenskins_investigation_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

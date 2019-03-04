@@ -73,3 +73,4 @@ this.slash <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

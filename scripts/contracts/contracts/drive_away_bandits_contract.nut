@@ -685,3 +685,4 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

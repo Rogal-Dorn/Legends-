@@ -352,3 +352,4 @@ gt.Const.Tactical.Actor.Cultist <- {
 	],
 	FatigueRecoveryRate = 15
 };
+

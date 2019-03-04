@@ -446,3 +446,4 @@ this.ancient_temple_enter_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -357,3 +357,4 @@ this.helmet <- this.inherit("scripts/items/item", {
 	}
 
 });
+

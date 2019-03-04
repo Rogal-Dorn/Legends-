@@ -51,3 +51,4 @@ this.grazed_kidney_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

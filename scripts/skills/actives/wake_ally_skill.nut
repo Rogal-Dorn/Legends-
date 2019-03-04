@@ -124,3 +124,4 @@ this.wake_ally_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

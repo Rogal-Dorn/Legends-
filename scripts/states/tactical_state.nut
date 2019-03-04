@@ -3399,3 +3399,4 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	}
 
 });
+

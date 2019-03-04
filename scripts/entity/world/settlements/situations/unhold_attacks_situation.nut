@@ -36,3 +36,4 @@ this.unhold_attacks_situation <- this.inherit("scripts/entity/world/settlements/
 	}
 
 });
+

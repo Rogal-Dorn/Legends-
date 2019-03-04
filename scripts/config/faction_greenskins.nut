@@ -223,3 +223,4 @@ gt.Const.Tactical.Actor.GreenskinCatapult <- {
 	],
 	FatigueRecoveryRate = 30
 };
+

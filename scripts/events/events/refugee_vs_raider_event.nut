@@ -146,3 +146,4 @@ this.refugee_vs_raider_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

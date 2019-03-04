@@ -173,3 +173,4 @@ this.tactical_hills_snow <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

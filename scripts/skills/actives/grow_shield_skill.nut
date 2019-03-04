@@ -46,3 +46,4 @@ this.grow_shield_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

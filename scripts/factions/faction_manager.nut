@@ -878,3 +878,4 @@ this.faction_manager <- {
 	}
 
 };
+

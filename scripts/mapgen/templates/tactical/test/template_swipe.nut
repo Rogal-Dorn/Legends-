@@ -78,3 +78,4 @@ this.template_swipe <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

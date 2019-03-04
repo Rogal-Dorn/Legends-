@@ -97,3 +97,4 @@ this.defeat_goblin_location_ambition <- this.inherit("scripts/ambitions/ambition
 	}
 
 });
+

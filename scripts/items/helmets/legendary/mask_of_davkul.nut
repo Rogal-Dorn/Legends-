@@ -52,3 +52,4 @@ this.mask_of_davkul <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

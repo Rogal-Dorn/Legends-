@@ -45,3 +45,4 @@ this.disloyal_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	}
 
 });
+

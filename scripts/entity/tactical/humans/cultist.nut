@@ -61,3 +61,4 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

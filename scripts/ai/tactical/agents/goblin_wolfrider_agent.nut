@@ -43,3 +43,4 @@ this.goblin_wolfrider_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

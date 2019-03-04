@@ -128,3 +128,4 @@ this.gambler_vs_other_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

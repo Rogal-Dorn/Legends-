@@ -115,3 +115,4 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

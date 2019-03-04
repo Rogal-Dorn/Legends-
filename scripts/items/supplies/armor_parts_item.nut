@@ -102,3 +102,4 @@ this.armor_parts_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

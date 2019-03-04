@@ -122,3 +122,4 @@ this.test_dry_marshland <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

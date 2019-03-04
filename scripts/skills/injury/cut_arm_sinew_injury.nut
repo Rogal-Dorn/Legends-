@@ -53,3 +53,4 @@ this.cut_arm_sinew_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

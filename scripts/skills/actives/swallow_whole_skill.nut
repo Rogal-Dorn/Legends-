@@ -89,3 +89,4 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

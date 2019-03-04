@@ -203,3 +203,4 @@ gt.Const.FactionArchetypes <- [
 		}
 	]
 ];
+

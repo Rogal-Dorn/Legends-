@@ -19,3 +19,4 @@ this.perk_underdog <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

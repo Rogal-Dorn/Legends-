@@ -187,3 +187,4 @@ this.break_ally_free_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

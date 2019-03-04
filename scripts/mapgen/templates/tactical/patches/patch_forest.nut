@@ -111,3 +111,4 @@ this.patch_forest <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

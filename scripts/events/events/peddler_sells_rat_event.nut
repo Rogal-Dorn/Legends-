@@ -95,3 +95,4 @@ this.peddler_sells_rat_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -107,3 +107,4 @@ this.possessing_undead_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

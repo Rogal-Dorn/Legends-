@@ -167,3 +167,4 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	}
 
 });
+

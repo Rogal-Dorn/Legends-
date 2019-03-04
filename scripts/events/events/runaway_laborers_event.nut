@@ -178,3 +178,4 @@ this.runaway_laborers_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

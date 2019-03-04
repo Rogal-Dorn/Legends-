@@ -344,3 +344,4 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 	}
 
 });
+

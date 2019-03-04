@@ -127,3 +127,4 @@ this.world_obituary_screen <- {
 	}
 
 };
+

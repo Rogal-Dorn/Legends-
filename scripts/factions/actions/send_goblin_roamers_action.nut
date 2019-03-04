@@ -120,3 +120,4 @@ this.send_goblin_roamers_action <- this.inherit("scripts/factions/faction_action
 	}
 
 });
+

@@ -94,3 +94,4 @@ this.patch_autumn_stony <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

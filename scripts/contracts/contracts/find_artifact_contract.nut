@@ -933,3 +933,4 @@ this.find_artifact_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

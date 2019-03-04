@@ -171,3 +171,4 @@ this.kraken_ensnare_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

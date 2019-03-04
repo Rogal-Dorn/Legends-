@@ -109,3 +109,4 @@ this.bad_omen_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

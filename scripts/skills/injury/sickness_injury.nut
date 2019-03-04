@@ -146,3 +146,4 @@ this.sickness_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

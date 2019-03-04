@@ -341,3 +341,4 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

@@ -93,3 +93,4 @@ this.scenario_combat_basics <- this.inherit("scripts/scenarios/tactical/scenario
 	}
 
 });
+

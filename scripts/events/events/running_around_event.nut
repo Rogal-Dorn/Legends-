@@ -70,3 +70,4 @@ this.running_around_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

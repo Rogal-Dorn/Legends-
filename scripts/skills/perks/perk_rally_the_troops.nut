@@ -32,3 +32,4 @@ this.perk_rally_the_troops <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

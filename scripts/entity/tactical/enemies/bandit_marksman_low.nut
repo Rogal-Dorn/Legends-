@@ -46,3 +46,4 @@ this.bandit_marksman_low <- this.inherit("scripts/entity/tactical/enemies/bandit
 	}
 
 });
+

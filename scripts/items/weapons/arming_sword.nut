@@ -39,3 +39,4 @@ this.arming_sword <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

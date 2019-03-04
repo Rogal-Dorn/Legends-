@@ -27,3 +27,4 @@ this.perk_recover <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

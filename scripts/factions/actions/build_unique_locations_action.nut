@@ -373,3 +373,4 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 	}
 
 });
+

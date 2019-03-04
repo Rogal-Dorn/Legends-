@@ -669,3 +669,4 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

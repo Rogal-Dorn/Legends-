@@ -48,3 +48,4 @@ this.have_y_crowns_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -41,3 +41,4 @@ this.bludgeon <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

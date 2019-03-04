@@ -49,3 +49,4 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 	}
 
 });
+

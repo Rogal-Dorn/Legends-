@@ -61,3 +61,4 @@ this.orc_camp_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

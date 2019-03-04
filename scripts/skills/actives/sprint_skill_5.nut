@@ -291,3 +291,4 @@ this.sprint_skill_5 <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -40,3 +40,4 @@ this.kraken_tentacle_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

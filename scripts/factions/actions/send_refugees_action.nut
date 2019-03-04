@@ -72,3 +72,4 @@ this.send_refugees_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

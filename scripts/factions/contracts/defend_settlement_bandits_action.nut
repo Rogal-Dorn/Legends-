@@ -105,3 +105,4 @@ this.defend_settlement_bandits_action <- this.inherit("scripts/factions/faction_
 	}
 
 });
+

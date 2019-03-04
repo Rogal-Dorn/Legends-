@@ -251,3 +251,4 @@ this.ai_root <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

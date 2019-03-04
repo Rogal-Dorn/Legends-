@@ -46,3 +46,4 @@ this.unhold_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -29,3 +29,4 @@ this.perk_colossus <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

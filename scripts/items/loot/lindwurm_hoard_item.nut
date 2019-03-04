@@ -74,3 +74,4 @@ this.lindwurm_hoard_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

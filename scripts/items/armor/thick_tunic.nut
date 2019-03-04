@@ -19,3 +19,4 @@ this.thick_tunic <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

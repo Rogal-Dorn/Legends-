@@ -62,3 +62,4 @@ this.lionheart_potion_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

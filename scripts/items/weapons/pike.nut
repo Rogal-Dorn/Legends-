@@ -43,3 +43,4 @@ this.pike <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

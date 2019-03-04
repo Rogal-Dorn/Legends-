@@ -288,3 +288,4 @@ this.mood_check <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

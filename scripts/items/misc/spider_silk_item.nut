@@ -40,3 +40,4 @@ this.spider_silk_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

@@ -51,3 +51,4 @@ this.emperors_armor_fake <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

@@ -328,3 +328,4 @@ this.scenario_line_battle_zombies <- this.inherit("scripts/scenarios/tactical/sc
 	}
 
 });
+

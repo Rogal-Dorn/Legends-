@@ -71,3 +71,4 @@ this.wagon_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

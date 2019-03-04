@@ -42,3 +42,4 @@ this.ancient_temple_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

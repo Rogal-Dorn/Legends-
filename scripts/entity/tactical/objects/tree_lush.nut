@@ -35,3 +35,4 @@ this.tree_lush <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

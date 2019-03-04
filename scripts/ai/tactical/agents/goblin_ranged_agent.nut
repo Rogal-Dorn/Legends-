@@ -46,3 +46,4 @@ this.goblin_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

@@ -19,3 +19,4 @@ this.perk_rebound <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -114,3 +114,4 @@ this.noble_arbalester <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

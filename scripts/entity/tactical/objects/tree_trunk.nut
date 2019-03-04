@@ -34,3 +34,4 @@ this.tree_trunk <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

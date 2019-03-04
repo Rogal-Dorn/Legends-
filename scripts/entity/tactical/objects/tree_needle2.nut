@@ -37,3 +37,4 @@ this.tree_needle2 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

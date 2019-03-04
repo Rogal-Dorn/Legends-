@@ -46,3 +46,4 @@ this.missing_nose_injury <- this.inherit("scripts/skills/injury_permanent/perman
 	}
 
 });
+

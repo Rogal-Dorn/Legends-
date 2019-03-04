@@ -81,3 +81,4 @@ this.quiver_of_bolts <- this.inherit("scripts/items/ammo/ammo", {
 	}
 
 });
+

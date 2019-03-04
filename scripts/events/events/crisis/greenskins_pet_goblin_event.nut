@@ -411,3 +411,4 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

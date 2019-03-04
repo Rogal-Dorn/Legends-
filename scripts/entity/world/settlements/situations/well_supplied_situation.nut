@@ -33,3 +33,4 @@ this.well_supplied_situation <- this.inherit("scripts/entity/world/settlements/s
 	}
 
 });
+

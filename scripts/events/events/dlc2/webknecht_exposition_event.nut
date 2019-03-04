@@ -68,3 +68,4 @@ this.webknecht_exposition_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

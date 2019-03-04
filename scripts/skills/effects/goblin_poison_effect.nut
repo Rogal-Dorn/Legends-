@@ -89,3 +89,4 @@ this.goblin_poison_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

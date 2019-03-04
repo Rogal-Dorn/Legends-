@@ -104,3 +104,4 @@ this.scenario_test_bed_orc <- this.inherit("scripts/scenarios/tactical/scenario_
 	}
 
 });
+

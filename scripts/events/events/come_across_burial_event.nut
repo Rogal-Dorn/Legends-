@@ -192,3 +192,4 @@ this.come_across_burial_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

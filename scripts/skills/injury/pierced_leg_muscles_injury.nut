@@ -59,3 +59,4 @@ this.pierced_leg_muscles_injury <- this.inherit("scripts/skills/injury/injury", 
 	}
 
 });
+

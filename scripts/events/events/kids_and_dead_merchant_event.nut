@@ -208,3 +208,4 @@ this.kids_and_dead_merchant_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

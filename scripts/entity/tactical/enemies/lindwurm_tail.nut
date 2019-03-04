@@ -525,3 +525,4 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

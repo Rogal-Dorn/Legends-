@@ -368,3 +368,4 @@ this.ai_keep_safe <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

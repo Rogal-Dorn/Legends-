@@ -19,3 +19,4 @@ this.perk_mastery_spear <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

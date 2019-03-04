@@ -68,3 +68,4 @@ this.unhold_exposition_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

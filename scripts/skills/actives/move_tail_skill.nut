@@ -103,3 +103,4 @@ this.move_tail_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

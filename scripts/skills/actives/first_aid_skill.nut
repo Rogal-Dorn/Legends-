@@ -200,3 +200,4 @@ this.first_aid_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

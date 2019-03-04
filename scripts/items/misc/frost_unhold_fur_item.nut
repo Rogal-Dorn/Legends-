@@ -40,3 +40,4 @@ this.frost_unhold_fur_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

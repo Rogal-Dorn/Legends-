@@ -55,3 +55,4 @@ this.firstborn <- this.inherit("scripts/entity/tactical/player", {
 	}
 
 });
+

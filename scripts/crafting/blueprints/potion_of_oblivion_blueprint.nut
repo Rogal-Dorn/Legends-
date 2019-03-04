@@ -45,3 +45,4 @@ this.potion_of_oblivion_blueprint <- this.inherit("scripts/crafting/blueprint", 
 	}
 
 });
+

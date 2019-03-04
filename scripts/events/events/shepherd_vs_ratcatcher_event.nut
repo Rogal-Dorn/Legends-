@@ -113,3 +113,4 @@ this.shepherd_vs_ratcatcher_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -42,3 +42,4 @@ this.polehammer <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

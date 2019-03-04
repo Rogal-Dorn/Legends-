@@ -43,3 +43,4 @@ this.quality_wood_item <- this.inherit("scripts/items/trade/trading_good_item", 
 	}
 
 });
+

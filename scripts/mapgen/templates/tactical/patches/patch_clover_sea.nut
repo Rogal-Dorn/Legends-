@@ -69,3 +69,4 @@ this.patch_clover_sea <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

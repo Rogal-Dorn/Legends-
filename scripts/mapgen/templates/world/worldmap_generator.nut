@@ -2348,3 +2348,4 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

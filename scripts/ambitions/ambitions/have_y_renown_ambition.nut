@@ -54,3 +54,4 @@ this.have_y_renown_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -40,3 +40,4 @@ this.third_eye_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

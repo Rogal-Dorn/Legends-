@@ -32,3 +32,4 @@ this.greatsword_faction_helm <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

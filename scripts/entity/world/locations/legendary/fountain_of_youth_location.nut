@@ -42,3 +42,4 @@ this.fountain_of_youth_location <- this.inherit("scripts/entity/world/location",
 	}
 
 });
+

@@ -178,3 +178,4 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

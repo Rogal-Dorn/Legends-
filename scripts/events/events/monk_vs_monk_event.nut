@@ -267,3 +267,4 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

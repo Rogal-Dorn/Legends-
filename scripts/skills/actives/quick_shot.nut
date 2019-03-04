@@ -173,3 +173,4 @@ this.quick_shot <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -143,3 +143,4 @@ this.ambition_failed_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

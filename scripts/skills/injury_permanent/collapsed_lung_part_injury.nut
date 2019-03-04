@@ -50,3 +50,4 @@ this.collapsed_lung_part_injury <- this.inherit("scripts/skills/injury_permanent
 	}
 
 });
+

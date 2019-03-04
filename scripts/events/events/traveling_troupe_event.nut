@@ -327,3 +327,4 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

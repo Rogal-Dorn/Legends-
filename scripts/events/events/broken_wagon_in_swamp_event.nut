@@ -121,3 +121,4 @@ this.broken_wagon_in_swamp_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -478,3 +478,4 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

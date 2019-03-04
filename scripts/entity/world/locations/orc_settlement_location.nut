@@ -87,3 +87,4 @@ this.orc_settlement_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

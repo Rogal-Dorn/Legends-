@@ -21,3 +21,4 @@ this.tree_trunk_forest <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

@@ -228,3 +228,4 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

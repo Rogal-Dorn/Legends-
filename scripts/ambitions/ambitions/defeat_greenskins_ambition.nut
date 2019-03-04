@@ -74,3 +74,4 @@ this.defeat_greenskins_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

@@ -39,3 +39,4 @@ this.ghastly_touch <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

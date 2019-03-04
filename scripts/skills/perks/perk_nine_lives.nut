@@ -46,3 +46,4 @@ this.perk_nine_lives <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

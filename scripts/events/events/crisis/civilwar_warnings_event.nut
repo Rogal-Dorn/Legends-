@@ -73,3 +73,4 @@ this.civilwar_warnings_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

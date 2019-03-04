@@ -146,3 +146,4 @@ this.overhead_strike <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

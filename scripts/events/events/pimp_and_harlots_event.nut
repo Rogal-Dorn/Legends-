@@ -446,3 +446,4 @@ this.pimp_and_harlots_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

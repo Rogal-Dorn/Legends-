@@ -24,3 +24,4 @@ this.zombies_faction <- this.inherit("scripts/factions/faction", {
 	}
 
 });
+

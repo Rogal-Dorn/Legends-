@@ -44,3 +44,4 @@ gt.WeakTableRef <- class
 	}
 
 };
+

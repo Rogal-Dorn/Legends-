@@ -50,3 +50,4 @@ this.named_billhook <- this.inherit("scripts/items/weapons/named/named_weapon", 
 	}
 
 });
+

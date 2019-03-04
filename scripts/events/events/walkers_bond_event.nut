@@ -118,3 +118,4 @@ this.walkers_bond_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

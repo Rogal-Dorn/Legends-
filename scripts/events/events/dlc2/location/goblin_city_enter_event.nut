@@ -252,3 +252,4 @@ this.goblin_city_enter_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

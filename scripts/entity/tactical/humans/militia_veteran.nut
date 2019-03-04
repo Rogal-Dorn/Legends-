@@ -155,3 +155,4 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

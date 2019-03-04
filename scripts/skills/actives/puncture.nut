@@ -95,3 +95,4 @@ this.puncture <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

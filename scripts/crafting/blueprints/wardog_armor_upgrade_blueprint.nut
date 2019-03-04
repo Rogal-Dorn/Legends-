@@ -21,3 +21,4 @@ this.wardog_armor_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint"
 	}
 
 });
+

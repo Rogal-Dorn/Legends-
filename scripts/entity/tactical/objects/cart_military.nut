@@ -38,3 +38,4 @@ this.cart_military <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

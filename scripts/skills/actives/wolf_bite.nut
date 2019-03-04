@@ -66,3 +66,4 @@ this.wolf_bite <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

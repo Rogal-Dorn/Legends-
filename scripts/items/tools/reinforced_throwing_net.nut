@@ -109,3 +109,4 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

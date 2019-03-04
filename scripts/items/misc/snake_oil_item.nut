@@ -50,3 +50,4 @@ this.snake_oil_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

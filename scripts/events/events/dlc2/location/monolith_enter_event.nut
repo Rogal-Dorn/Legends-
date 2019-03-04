@@ -91,3 +91,4 @@ this.monolith_enter_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -1328,3 +1328,4 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

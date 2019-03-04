@@ -32,3 +32,4 @@ this.tree_needle1_snow <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

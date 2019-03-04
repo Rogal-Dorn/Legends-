@@ -171,3 +171,4 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

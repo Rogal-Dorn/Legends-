@@ -438,3 +438,4 @@ this.graverobber_heist_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

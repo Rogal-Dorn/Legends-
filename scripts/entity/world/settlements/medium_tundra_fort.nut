@@ -193,3 +193,4 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

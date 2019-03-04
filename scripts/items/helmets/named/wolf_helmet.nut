@@ -29,3 +29,4 @@ this.wolf_helmet <- this.inherit("scripts/items/helmets/named/named_helmet", {
 	}
 
 });
+

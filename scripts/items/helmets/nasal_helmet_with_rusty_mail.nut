@@ -32,3 +32,4 @@ this.nasal_helmet_with_rusty_mail <- this.inherit("scripts/items/helmets/helmet"
 	}
 
 });
+

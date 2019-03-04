@@ -147,3 +147,4 @@ this.send_undead_army_action <- this.inherit("scripts/factions/faction_action", 
 	}
 
 });
+

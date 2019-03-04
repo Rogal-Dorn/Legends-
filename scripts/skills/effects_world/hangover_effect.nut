@@ -86,3 +86,4 @@ this.hangover_effect <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

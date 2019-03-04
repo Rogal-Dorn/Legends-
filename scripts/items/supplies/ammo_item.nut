@@ -102,3 +102,4 @@ this.ammo_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

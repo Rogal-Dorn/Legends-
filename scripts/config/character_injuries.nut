@@ -704,3 +704,4 @@ gt.Const.Injury.PiercedArm <- [
 		Script = "injury/pierced_arm_muscles_injury"
 	}
 ];
+

@@ -777,3 +777,4 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 	}
 
 });
+

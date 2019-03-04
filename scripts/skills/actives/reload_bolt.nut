@@ -129,3 +129,4 @@ this.reload_bolt <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

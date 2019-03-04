@@ -43,3 +43,4 @@ this.hatchet <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -49,3 +49,4 @@ this.world_screen_topbar_datasource_module <- this.inherit("scripts/ui/screens/u
 	}
 
 });
+

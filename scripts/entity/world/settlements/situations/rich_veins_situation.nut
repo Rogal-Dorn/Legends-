@@ -34,3 +34,4 @@ this.rich_veins_situation <- this.inherit("scripts/entity/world/settlements/situ
 	}
 
 });
+

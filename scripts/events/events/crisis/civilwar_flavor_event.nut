@@ -60,3 +60,4 @@ this.civilwar_flavor_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

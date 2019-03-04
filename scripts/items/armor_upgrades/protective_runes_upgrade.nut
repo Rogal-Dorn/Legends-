@@ -48,3 +48,4 @@ this.protective_runes_upgrade <- this.inherit("scripts/items/armor_upgrades/armo
 	}
 
 });
+

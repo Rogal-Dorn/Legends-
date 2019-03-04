@@ -21,3 +21,4 @@ this.heavy_wardog_armor_upgrade_blueprint <- this.inherit("scripts/crafting/blue
 	}
 
 });
+

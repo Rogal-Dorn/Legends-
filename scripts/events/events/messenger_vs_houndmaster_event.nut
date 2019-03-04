@@ -112,3 +112,4 @@ this.messenger_vs_houndmaster_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -19,3 +19,4 @@ this.perk_mastery_hammer <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

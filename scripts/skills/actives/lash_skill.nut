@@ -86,3 +86,4 @@ this.lash_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

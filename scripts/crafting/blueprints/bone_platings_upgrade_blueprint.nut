@@ -25,3 +25,4 @@ this.bone_platings_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint
 	}
 
 });
+

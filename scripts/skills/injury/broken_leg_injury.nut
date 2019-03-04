@@ -58,3 +58,4 @@ this.broken_leg_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

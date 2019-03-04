@@ -19,3 +19,4 @@ this.perk_crippling_strikes <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

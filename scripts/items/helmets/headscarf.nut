@@ -28,3 +28,4 @@ this.headscarf <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

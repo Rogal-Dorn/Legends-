@@ -20,3 +20,4 @@ gt.Const.World.LocationSettings <- {
 	ZOffset = 100,
 	GlobalResourcesRate = 1.0
 };
+

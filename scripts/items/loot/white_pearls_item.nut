@@ -74,3 +74,4 @@ this.white_pearls_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

@@ -124,3 +124,4 @@ this.juggler_entertains_townsfolk_event <- this.inherit("scripts/events/event", 
 	}
 
 });
+

@@ -19,3 +19,4 @@ this.wizard_robe <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

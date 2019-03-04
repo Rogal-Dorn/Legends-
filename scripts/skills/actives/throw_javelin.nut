@@ -163,3 +163,4 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

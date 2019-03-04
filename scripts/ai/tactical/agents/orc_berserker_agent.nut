@@ -57,3 +57,4 @@ this.orc_berserker_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

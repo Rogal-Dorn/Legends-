@@ -72,3 +72,4 @@ this.spider_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

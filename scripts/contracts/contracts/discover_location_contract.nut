@@ -674,3 +674,4 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

@@ -206,3 +206,4 @@ this.food_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

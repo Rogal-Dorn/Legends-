@@ -50,3 +50,4 @@ this.goedendag <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

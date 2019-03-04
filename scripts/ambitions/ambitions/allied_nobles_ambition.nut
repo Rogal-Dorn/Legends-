@@ -171,3 +171,4 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

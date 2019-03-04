@@ -121,3 +121,4 @@ this.witchhunter_ghoul_teeth_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

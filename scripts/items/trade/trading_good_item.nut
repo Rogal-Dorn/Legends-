@@ -89,3 +89,4 @@ this.trading_good_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

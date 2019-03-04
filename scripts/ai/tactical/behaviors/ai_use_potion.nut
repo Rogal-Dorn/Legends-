@@ -72,3 +72,4 @@ this.ai_use_potion <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

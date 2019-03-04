@@ -203,3 +203,4 @@ this.more_action_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

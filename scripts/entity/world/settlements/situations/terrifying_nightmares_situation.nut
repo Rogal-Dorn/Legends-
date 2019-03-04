@@ -25,3 +25,4 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 	}
 
 });
+

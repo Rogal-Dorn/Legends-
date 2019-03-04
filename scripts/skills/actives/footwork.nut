@@ -135,3 +135,4 @@ this.footwork <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

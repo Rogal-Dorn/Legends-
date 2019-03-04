@@ -22,3 +22,4 @@ this.dark_cowl <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

@@ -95,3 +95,4 @@ this.horrified_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

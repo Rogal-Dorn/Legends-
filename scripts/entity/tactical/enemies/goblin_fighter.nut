@@ -124,3 +124,4 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 	}
 
 });
+

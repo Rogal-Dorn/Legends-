@@ -39,3 +39,4 @@ this.shortsword <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

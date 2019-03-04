@@ -34,3 +34,4 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 	}
 
 });
+

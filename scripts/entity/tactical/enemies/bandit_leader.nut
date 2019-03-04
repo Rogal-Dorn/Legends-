@@ -289,3 +289,4 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

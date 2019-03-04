@@ -50,3 +50,4 @@ this.missing_finger_injury <- this.inherit("scripts/skills/injury_permanent/perm
 	}
 
 });
+

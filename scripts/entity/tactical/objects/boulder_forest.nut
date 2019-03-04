@@ -34,3 +34,4 @@ this.boulder_forest <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

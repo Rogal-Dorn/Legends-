@@ -127,3 +127,4 @@ this.kraken_move_ensnared_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

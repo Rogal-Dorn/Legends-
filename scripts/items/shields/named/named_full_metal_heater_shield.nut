@@ -37,3 +37,4 @@ this.named_full_metal_heater_shield <- this.inherit("scripts/items/shields/named
 	}
 
 });
+

@@ -111,3 +111,4 @@ this.lose_fear_undead_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

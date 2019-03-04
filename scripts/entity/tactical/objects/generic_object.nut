@@ -54,3 +54,4 @@ this.generic_object <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

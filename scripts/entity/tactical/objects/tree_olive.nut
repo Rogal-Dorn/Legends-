@@ -37,3 +37,4 @@ this.tree_olive <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

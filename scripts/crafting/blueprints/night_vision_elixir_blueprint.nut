@@ -25,3 +25,4 @@ this.night_vision_elixir_blueprint <- this.inherit("scripts/crafting/blueprint",
 	}
 
 });
+

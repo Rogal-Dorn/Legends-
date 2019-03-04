@@ -54,3 +54,4 @@ this.envoy <- this.inherit("scripts/entity/tactical/player", {
 	}
 
 });
+

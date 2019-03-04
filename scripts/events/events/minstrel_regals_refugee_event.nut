@@ -115,3 +115,4 @@ this.minstrel_regals_refugee_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

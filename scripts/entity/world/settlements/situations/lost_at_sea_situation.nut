@@ -35,3 +35,4 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 	}
 
 });
+

@@ -99,3 +99,4 @@ this.coat_with_spider_poison_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

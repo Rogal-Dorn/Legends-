@@ -21,3 +21,4 @@ this.paint_red_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

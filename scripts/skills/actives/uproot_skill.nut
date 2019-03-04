@@ -164,3 +164,4 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

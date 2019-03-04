@@ -41,3 +41,4 @@ this.antidote_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

@@ -20,3 +20,4 @@ this.ancient_breastplate <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

@@ -40,3 +40,4 @@ this.ghoul_horn_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

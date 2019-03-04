@@ -48,3 +48,4 @@ this.goblin_hideout_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

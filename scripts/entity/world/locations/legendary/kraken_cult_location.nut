@@ -52,3 +52,4 @@ this.kraken_cult_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

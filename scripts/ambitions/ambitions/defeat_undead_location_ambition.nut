@@ -122,3 +122,4 @@ this.defeat_undead_location_ambition <- this.inherit("scripts/ambitions/ambition
 	}
 
 });
+

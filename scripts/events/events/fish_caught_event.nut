@@ -110,3 +110,4 @@ this.fish_caught_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

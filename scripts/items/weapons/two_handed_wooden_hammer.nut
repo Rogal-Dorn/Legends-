@@ -44,3 +44,4 @@ this.two_handed_wooden_hammer <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

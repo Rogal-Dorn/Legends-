@@ -87,3 +87,4 @@ this.unhold_graveyard_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

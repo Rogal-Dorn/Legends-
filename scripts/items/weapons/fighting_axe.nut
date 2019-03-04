@@ -43,3 +43,4 @@ this.fighting_axe <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

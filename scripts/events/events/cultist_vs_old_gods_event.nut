@@ -197,3 +197,4 @@ this.cultist_vs_old_gods_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

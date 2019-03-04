@@ -124,3 +124,4 @@ this.split <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

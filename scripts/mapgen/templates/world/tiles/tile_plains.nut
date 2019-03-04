@@ -227,3 +227,4 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

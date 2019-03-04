@@ -85,3 +85,4 @@ gt.Const.CharacterVeteranBackgrounds <- [
 	"bastard_background",
 	"raider_background"
 ];
+

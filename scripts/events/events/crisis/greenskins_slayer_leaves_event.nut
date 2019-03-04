@@ -90,3 +90,4 @@ this.greenskins_slayer_leaves_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

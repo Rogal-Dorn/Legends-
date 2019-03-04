@@ -175,3 +175,4 @@ this.test_plains <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

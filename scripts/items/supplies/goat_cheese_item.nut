@@ -44,3 +44,4 @@ this.goat_cheese_item <- this.inherit("scripts/items/supplies/food_item", {
 	}
 
 });
+

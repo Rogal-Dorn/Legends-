@@ -43,3 +43,4 @@ this.amber_shards_item <- this.inherit("scripts/items/trade/trading_good_item", 
 	}
 
 });
+

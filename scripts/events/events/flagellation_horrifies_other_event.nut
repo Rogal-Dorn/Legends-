@@ -145,3 +145,4 @@ this.flagellation_horrifies_other_event <- this.inherit("scripts/events/event", 
 	}
 
 });
+

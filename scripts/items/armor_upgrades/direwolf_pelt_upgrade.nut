@@ -56,3 +56,4 @@ this.direwolf_pelt_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 	}
 
 });
+

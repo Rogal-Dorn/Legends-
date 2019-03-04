@@ -19,3 +19,4 @@ this.perk_mastery_dagger <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

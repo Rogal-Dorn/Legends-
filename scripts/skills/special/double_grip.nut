@@ -56,3 +56,4 @@ this.double_grip <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

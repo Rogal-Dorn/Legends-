@@ -327,3 +327,4 @@ this.injury <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

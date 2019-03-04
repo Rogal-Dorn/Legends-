@@ -186,3 +186,4 @@ this.bandage_ally_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

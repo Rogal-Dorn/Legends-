@@ -268,3 +268,4 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 	}
 
 });
+

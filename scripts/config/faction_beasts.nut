@@ -316,3 +316,4 @@ gt.Const.Tactical.Actor.KrakenTentacle <- {
 		0
 	]
 };
+

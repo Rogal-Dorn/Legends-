@@ -98,3 +98,4 @@ this.map_template <- {
 	}
 
 };
+

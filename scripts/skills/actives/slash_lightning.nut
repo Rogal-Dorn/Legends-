@@ -243,3 +243,4 @@ this.slash_lightning <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

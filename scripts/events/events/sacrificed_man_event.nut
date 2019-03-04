@@ -264,3 +264,4 @@ this.sacrificed_man_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

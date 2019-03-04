@@ -34,3 +34,4 @@ this.goblin_light_shield <- this.inherit("scripts/items/shields/shield", {
 	}
 
 });
+

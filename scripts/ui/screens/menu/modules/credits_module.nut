@@ -49,3 +49,4 @@ this.credits_module <- this.inherit("scripts/ui/screens/ui_module", {
 	}
 
 });
+

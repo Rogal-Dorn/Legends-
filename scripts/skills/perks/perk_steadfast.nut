@@ -19,3 +19,4 @@ this.perk_steadfast <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

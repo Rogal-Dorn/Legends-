@@ -246,3 +246,4 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

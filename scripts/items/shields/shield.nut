@@ -386,3 +386,4 @@ this.shield <- this.inherit("scripts/items/item", {
 	}
 
 });
+

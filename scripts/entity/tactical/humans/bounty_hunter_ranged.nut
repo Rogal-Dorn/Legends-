@@ -130,3 +130,4 @@ this.bounty_hunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

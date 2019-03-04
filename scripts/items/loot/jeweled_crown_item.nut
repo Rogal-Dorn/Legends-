@@ -74,3 +74,4 @@ this.jeweled_crown_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

@@ -192,3 +192,4 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

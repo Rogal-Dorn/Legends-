@@ -149,3 +149,4 @@ this.goblin_city_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

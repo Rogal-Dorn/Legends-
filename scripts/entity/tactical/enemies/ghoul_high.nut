@@ -13,3 +13,4 @@ this.ghoul_high <- this.inherit("scripts/entity/tactical/enemies/ghoul", {
 	}
 
 });
+

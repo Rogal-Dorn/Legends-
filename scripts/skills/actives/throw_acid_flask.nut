@@ -151,3 +151,4 @@ this.throw_acid_flask <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

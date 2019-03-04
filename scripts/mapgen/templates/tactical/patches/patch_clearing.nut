@@ -72,3 +72,4 @@ this.patch_clearing <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

@@ -45,3 +45,4 @@ this.tree_needle1 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

@@ -62,3 +62,4 @@ this.debilitating_attack_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

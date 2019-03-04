@@ -124,3 +124,4 @@ this.hex_master_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

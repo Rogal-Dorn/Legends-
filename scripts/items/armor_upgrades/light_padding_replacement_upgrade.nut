@@ -51,3 +51,4 @@ this.light_padding_replacement_upgrade <- this.inherit("scripts/items/armor_upgr
 	}
 
 });
+

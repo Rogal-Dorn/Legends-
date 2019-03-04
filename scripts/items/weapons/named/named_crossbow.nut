@@ -94,3 +94,4 @@ this.named_crossbow <- this.inherit("scripts/items/weapons/named/named_weapon", 
 	}
 
 });
+

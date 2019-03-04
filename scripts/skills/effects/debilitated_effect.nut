@@ -24,3 +24,4 @@ this.debilitated_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

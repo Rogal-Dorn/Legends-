@@ -49,3 +49,4 @@ this.patch_stone_sea <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

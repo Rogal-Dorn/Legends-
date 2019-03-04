@@ -25,3 +25,4 @@ this.happy_powder_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

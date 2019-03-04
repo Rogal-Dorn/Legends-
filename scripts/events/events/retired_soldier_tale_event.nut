@@ -111,3 +111,4 @@ this.retired_soldier_tale_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

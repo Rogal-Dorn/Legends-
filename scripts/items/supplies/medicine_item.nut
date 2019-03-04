@@ -102,3 +102,4 @@ this.medicine_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

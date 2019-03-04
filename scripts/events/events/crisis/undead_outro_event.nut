@@ -201,3 +201,4 @@ this.undead_outro_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

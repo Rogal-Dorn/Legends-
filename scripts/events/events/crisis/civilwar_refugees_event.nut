@@ -379,3 +379,4 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

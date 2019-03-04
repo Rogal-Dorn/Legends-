@@ -279,3 +279,4 @@ this.have_all_provisions_ambition <- this.inherit("scripts/ambitions/ambition", 
 	}
 
 });
+

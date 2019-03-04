@@ -54,3 +54,4 @@ this.emperors_countenance <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

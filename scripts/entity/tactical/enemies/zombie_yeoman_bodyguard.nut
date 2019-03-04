@@ -128,3 +128,4 @@ this.zombie_yeoman_bodyguard <- this.inherit("scripts/entity/tactical/enemies/zo
 	}
 
 });
+

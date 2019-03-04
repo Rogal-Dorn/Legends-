@@ -450,3 +450,4 @@ this.destroy_goblin_camp_contract <- this.inherit("scripts/contracts/contract", 
 	}
 
 });
+

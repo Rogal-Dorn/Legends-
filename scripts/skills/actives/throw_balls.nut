@@ -143,3 +143,4 @@ this.throw_balls <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

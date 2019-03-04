@@ -116,3 +116,4 @@ this.root_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

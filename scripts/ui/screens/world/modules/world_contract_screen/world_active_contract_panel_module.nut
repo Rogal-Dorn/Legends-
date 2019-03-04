@@ -57,3 +57,4 @@ this.world_active_contract_panel_module <- this.inherit("scripts/ui/screens/ui_m
 	}
 
 });
+

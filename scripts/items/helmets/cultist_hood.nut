@@ -23,3 +23,4 @@ this.cultist_hood <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

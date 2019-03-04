@@ -211,3 +211,4 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

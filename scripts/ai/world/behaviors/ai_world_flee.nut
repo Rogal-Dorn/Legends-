@@ -258,3 +258,4 @@ this.ai_world_flee <- this.inherit("scripts/ai/world/world_behavior", {
 	}
 
 });
+

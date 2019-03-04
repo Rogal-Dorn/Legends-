@@ -94,3 +94,4 @@ this.cut_throat_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

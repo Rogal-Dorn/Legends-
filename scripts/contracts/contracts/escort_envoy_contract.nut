@@ -626,3 +626,4 @@ this.escort_envoy_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

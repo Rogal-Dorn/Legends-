@@ -139,3 +139,4 @@ this.strike_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -43,3 +43,4 @@ this.warscythe <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

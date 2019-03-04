@@ -239,3 +239,4 @@ this.historian_mysterious_text_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

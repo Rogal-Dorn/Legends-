@@ -19,3 +19,4 @@ this.tattered_sackcloth <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

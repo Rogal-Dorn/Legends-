@@ -185,3 +185,4 @@ this.split_shield <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

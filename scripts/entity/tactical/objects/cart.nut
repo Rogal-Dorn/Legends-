@@ -38,3 +38,4 @@ this.cart <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

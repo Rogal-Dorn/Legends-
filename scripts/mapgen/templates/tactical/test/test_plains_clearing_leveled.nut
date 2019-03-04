@@ -77,3 +77,4 @@ this.test_plains_clearing_leveled <- this.inherit("scripts/mapgen/tactical_templ
 	}
 
 });
+

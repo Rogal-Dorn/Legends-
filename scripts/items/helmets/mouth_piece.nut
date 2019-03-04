@@ -28,3 +28,4 @@ this.mouth_piece <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

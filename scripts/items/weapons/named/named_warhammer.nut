@@ -42,3 +42,4 @@ this.named_warhammer <- this.inherit("scripts/items/weapons/named/named_weapon",
 	}
 
 });
+

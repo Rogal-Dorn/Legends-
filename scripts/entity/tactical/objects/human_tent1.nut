@@ -54,3 +54,4 @@ this.human_tent1 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

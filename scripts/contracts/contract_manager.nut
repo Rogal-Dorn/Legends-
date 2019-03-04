@@ -485,3 +485,4 @@ this.contract_manager <- {
 	}
 
 };
+

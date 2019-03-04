@@ -111,3 +111,4 @@ this.miasma_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

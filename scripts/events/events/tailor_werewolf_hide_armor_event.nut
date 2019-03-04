@@ -126,3 +126,4 @@ this.tailor_werewolf_hide_armor_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

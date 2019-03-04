@@ -44,3 +44,4 @@ this.roots_and_berries_item <- this.inherit("scripts/items/supplies/food_item", 
 	}
 
 });
+

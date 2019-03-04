@@ -24,3 +24,4 @@ this.goblin_heavy_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

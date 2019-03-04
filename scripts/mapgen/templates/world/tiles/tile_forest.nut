@@ -103,3 +103,4 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

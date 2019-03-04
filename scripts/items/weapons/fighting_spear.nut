@@ -39,3 +39,4 @@ this.fighting_spear <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

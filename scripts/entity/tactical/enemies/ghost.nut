@@ -219,3 +219,4 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

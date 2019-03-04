@@ -207,3 +207,4 @@ this.hook <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -12,3 +12,4 @@ this.direwolf_bodyguard_agent <- this.inherit("scripts/ai/tactical/agents/direwo
 	}
 
 });
+

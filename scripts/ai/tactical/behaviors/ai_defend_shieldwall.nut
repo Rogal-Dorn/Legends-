@@ -350,3 +350,4 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

@@ -88,3 +88,4 @@ this.cursed_crystal_skull <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

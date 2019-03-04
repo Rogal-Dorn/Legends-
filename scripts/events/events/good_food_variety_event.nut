@@ -110,3 +110,4 @@ this.good_food_variety_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

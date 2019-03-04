@@ -53,3 +53,4 @@ this._debug_house2 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

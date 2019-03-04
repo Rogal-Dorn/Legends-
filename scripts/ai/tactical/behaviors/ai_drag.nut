@@ -129,3 +129,4 @@ this.ai_drag <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

@@ -76,3 +76,4 @@ this.undead_ruins_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

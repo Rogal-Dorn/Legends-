@@ -77,3 +77,4 @@ this.tile_farmland <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

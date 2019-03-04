@@ -51,3 +51,4 @@ this.ancient_watchtower_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -75,3 +75,4 @@ this.skeleton_medium <- this.inherit("scripts/entity/tactical/skeleton", {
 	}
 
 });
+

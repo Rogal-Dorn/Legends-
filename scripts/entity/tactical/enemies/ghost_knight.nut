@@ -245,3 +245,4 @@ this.ghost_knight <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

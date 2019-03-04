@@ -67,3 +67,4 @@ this.werewolf_howl <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

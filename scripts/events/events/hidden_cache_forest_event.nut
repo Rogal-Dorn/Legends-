@@ -253,3 +253,4 @@ this.hidden_cache_forest_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

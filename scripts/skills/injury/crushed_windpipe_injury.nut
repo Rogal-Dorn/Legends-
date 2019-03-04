@@ -58,3 +58,4 @@ this.crushed_windpipe_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

@@ -115,3 +115,4 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

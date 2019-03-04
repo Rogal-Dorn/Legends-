@@ -343,3 +343,4 @@ this.the_horseman_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

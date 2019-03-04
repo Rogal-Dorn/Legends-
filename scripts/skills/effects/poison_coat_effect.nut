@@ -102,3 +102,4 @@ this.poison_coat_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

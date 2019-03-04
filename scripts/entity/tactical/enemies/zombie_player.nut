@@ -43,3 +43,4 @@ this.zombie_player <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 	}
 
 });
+

@@ -160,3 +160,4 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

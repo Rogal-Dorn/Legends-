@@ -108,3 +108,4 @@ this.decapitate <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

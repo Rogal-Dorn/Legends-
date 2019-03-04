@@ -74,3 +74,4 @@ this.encounter_gnomes_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

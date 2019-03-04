@@ -168,3 +168,4 @@ this.line_breaker <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

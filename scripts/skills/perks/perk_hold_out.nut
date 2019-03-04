@@ -19,3 +19,4 @@ this.perk_hold_out <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

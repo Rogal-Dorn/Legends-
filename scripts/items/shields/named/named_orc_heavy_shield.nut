@@ -37,3 +37,4 @@ this.named_orc_heavy_shield <- this.inherit("scripts/items/shields/named/named_s
 	}
 
 });
+

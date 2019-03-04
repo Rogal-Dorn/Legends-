@@ -103,3 +103,4 @@ this.acid_flask_item <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

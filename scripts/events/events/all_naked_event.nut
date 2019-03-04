@@ -72,3 +72,4 @@ this.all_naked_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

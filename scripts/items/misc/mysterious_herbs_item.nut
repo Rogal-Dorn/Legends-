@@ -40,3 +40,4 @@ this.mysterious_herbs_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

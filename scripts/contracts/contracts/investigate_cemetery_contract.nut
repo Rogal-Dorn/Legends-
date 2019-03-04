@@ -807,3 +807,4 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 	}
 
 });
+

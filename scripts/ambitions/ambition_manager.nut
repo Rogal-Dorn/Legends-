@@ -412,3 +412,4 @@ this.ambition_manager <- {
 	}
 
 };
+

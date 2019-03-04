@@ -25,3 +25,4 @@ this.paint_white_green_yellow_blueprint <- this.inherit("scripts/crafting/bluepr
 	}
 
 });
+

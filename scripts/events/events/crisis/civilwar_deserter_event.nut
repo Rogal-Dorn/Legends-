@@ -244,3 +244,4 @@ this.civilwar_deserter_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -39,3 +39,4 @@ this.military_standard_bearer_agent <- this.inherit("scripts/ai/tactical/agent",
 	}
 
 });
+

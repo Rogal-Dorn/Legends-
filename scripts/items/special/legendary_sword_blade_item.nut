@@ -18,3 +18,4 @@ this.legendary_sword_blade_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

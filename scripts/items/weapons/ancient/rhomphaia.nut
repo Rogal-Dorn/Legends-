@@ -41,3 +41,4 @@ this.rhomphaia <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

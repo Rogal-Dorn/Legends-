@@ -757,3 +757,4 @@ this.hunting_lindwurms_contract <- this.inherit("scripts/contracts/contract", {
 	}
 
 });
+

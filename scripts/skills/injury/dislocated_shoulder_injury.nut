@@ -52,3 +52,4 @@ this.dislocated_shoulder_injury <- this.inherit("scripts/skills/injury/injury", 
 	}
 
 });
+

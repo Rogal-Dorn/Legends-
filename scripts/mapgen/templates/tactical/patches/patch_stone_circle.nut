@@ -105,3 +105,4 @@ this.patch_stone_circle <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

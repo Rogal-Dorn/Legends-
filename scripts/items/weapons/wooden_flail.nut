@@ -51,3 +51,4 @@ this.wooden_flail <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

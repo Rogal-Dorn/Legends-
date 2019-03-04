@@ -85,3 +85,4 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

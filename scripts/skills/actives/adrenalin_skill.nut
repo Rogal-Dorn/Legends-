@@ -69,3 +69,4 @@ this.adrenalin_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

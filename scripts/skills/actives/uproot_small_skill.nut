@@ -97,3 +97,4 @@ this.uproot_small_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

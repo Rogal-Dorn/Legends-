@@ -64,3 +64,4 @@ this.bandit_hideout_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

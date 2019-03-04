@@ -353,3 +353,4 @@ this.scenario_line_battle <- this.inherit("scripts/scenarios/tactical/scenario_t
 	}
 
 });
+

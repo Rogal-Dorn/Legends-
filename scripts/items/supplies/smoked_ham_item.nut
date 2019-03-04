@@ -44,3 +44,4 @@ this.smoked_ham_item <- this.inherit("scripts/items/supplies/food_item", {
 	}
 
 });
+

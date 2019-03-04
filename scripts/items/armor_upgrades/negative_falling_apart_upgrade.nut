@@ -37,3 +37,4 @@ this.negative_falling_apart_upgrade <- this.inherit("scripts/items/armor_upgrade
 	}
 
 });
+

@@ -328,3 +328,4 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

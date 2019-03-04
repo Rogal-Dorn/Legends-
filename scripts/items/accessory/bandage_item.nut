@@ -41,3 +41,4 @@ this.bandage_item <- this.inherit("scripts/items/accessory/accessory", {
 	}
 
 });
+

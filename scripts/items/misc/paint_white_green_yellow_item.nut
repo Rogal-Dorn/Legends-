@@ -80,3 +80,4 @@ this.paint_white_green_yellow_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

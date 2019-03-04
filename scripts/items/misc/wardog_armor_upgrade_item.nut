@@ -84,3 +84,4 @@ this.wardog_armor_upgrade_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

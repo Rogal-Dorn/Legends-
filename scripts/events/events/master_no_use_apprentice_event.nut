@@ -112,3 +112,4 @@ this.master_no_use_apprentice_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

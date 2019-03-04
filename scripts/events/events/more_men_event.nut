@@ -321,3 +321,4 @@ this.more_men_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

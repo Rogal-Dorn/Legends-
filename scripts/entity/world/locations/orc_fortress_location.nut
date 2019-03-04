@@ -68,3 +68,4 @@ this.orc_fortress_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

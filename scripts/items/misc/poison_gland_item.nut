@@ -40,3 +40,4 @@ this.poison_gland_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

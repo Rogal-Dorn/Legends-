@@ -320,3 +320,4 @@ this.forest2 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

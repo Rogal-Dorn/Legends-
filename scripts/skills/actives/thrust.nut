@@ -70,3 +70,4 @@ this.thrust <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -105,3 +105,4 @@ this.riposte <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

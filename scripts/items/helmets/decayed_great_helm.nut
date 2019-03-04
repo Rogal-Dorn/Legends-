@@ -40,3 +40,4 @@ this.decayed_great_helm <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

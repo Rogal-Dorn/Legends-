@@ -83,3 +83,4 @@ this.bodily_reward_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

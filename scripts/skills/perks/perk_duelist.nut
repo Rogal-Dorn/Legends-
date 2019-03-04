@@ -24,3 +24,4 @@ this.perk_duelist <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

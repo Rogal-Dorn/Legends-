@@ -379,3 +379,4 @@ this.juggler_tempts_fate_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

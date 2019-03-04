@@ -51,3 +51,4 @@ this.fractured_elbow_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

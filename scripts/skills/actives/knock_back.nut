@@ -244,3 +244,4 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

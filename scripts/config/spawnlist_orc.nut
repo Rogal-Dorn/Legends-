@@ -3293,3 +3293,4 @@ this.calculateCosts(this.Const.World.Spawn.OrcBoss);
 this.calculateCosts(this.Const.World.Spawn.YoungOrcsOnly);
 this.calculateCosts(this.Const.World.Spawn.YoungOrcsAndBerserkers);
 this.calculateCosts(this.Const.World.Spawn.BerserkersOnly);
+

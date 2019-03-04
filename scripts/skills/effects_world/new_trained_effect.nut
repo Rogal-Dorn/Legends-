@@ -88,3 +88,4 @@ this.new_trained_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

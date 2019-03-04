@@ -152,3 +152,4 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

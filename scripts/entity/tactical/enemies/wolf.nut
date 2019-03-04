@@ -173,3 +173,4 @@ this.wolf <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

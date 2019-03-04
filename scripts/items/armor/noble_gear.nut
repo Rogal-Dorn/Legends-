@@ -30,3 +30,4 @@ this.noble_gear <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

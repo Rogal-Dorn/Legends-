@@ -822,3 +822,4 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

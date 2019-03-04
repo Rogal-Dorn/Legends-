@@ -59,3 +59,4 @@ this.lightbringer_sword <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -44,3 +44,4 @@ this.roster_of_12_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

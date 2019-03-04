@@ -79,3 +79,4 @@ this.goblin_outpost_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

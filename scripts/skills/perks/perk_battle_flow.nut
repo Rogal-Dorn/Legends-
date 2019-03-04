@@ -32,3 +32,4 @@ this.perk_battle_flow <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

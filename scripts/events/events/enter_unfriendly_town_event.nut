@@ -84,3 +84,4 @@ this.enter_unfriendly_town_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

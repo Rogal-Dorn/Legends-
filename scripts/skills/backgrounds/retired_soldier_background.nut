@@ -186,3 +186,4 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 	}
 
 });
+

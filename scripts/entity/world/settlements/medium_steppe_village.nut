@@ -169,3 +169,4 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

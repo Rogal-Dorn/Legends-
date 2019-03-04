@@ -130,3 +130,4 @@ this.undead_necropolis_location <- this.inherit("scripts/entity/world/location",
 	}
 
 });
+

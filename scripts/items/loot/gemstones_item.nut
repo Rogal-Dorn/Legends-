@@ -74,3 +74,4 @@ this.gemstones_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

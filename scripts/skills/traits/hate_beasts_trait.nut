@@ -52,3 +52,4 @@ this.hate_beasts_trait <- this.inherit("scripts/skills/traits/character_trait", 
 	}
 
 });
+

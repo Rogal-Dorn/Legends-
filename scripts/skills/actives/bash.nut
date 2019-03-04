@@ -70,3 +70,4 @@ this.bash <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

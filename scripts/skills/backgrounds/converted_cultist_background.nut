@@ -57,3 +57,4 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 	}
 
 });
+

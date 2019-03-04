@@ -107,3 +107,4 @@ this.send_orc_marauders_action <- this.inherit("scripts/factions/faction_action"
 	}
 
 });
+

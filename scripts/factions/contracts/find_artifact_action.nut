@@ -57,3 +57,4 @@ this.find_artifact_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

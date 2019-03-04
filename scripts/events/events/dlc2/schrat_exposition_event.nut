@@ -63,3 +63,4 @@ this.schrat_exposition_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

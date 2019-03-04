@@ -19,3 +19,4 @@ this.noble_mail_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

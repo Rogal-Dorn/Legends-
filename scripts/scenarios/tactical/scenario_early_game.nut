@@ -199,3 +199,4 @@ this.scenario_early_game <- this.inherit("scripts/scenarios/tactical/scenario_te
 	}
 
 });
+

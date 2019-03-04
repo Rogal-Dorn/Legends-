@@ -102,3 +102,4 @@ this.miner_fresh_air_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

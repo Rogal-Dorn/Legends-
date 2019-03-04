@@ -51,3 +51,4 @@ this.horn_plate_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgr
 	}
 
 });
+

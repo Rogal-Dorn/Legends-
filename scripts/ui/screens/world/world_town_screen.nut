@@ -463,3 +463,4 @@ this.world_town_screen <- {
 	}
 
 };
+

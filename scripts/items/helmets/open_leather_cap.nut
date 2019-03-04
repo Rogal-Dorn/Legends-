@@ -31,3 +31,4 @@ this.open_leather_cap <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

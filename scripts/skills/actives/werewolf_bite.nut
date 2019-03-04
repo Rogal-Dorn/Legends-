@@ -49,3 +49,4 @@ this.werewolf_bite <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

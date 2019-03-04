@@ -537,3 +537,4 @@ this.weapon <- this.inherit("scripts/items/item", {
 	}
 
 });
+

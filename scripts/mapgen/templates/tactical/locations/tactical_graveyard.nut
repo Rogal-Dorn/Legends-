@@ -64,3 +64,4 @@ this.tactical_graveyard <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

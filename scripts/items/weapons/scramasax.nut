@@ -39,3 +39,4 @@ this.scramasax <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

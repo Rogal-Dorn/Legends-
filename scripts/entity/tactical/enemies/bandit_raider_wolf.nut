@@ -170,3 +170,4 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 	}
 
 });
+

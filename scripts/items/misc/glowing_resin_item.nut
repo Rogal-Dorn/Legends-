@@ -40,3 +40,4 @@ this.glowing_resin_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

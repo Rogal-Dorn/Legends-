@@ -286,3 +286,4 @@ this.scenario_advanced_combat <- this.inherit("scripts/scenarios/tactical/scenar
 	}
 
 });
+

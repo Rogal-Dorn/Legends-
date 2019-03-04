@@ -107,3 +107,4 @@ this.lone_wolf_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

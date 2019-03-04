@@ -24,3 +24,4 @@ this.beast_faction <- this.inherit("scripts/factions/faction", {
 	}
 
 });
+

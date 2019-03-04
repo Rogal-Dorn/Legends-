@@ -212,3 +212,4 @@ this.peddler_deal_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

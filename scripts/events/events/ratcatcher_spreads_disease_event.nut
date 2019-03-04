@@ -149,3 +149,4 @@ this.ratcatcher_spreads_disease_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

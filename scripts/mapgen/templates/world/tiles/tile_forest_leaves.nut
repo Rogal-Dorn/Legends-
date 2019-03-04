@@ -69,3 +69,4 @@ this.tile_forest_leaves <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

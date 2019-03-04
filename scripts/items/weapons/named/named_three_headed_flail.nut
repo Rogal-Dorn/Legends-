@@ -67,3 +67,4 @@ this.named_three_headed_flail <- this.inherit("scripts/items/weapons/named/named
 	}
 
 });
+

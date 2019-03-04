@@ -56,3 +56,4 @@ this.undead_vampire_coven_location <- this.inherit("scripts/entity/world/locatio
 	}
 
 });
+

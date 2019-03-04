@@ -40,3 +40,4 @@ this.warhammer <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

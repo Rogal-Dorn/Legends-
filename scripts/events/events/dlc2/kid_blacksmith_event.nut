@@ -415,3 +415,4 @@ this.kid_blacksmith_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

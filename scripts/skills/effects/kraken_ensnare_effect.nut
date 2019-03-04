@@ -159,3 +159,4 @@ this.kraken_ensnare_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

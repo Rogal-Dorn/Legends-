@@ -40,3 +40,4 @@ this.parched_skin_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

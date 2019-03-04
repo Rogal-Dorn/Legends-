@@ -94,3 +94,4 @@ this.skeleton_heavy_bodyguard <- this.inherit("scripts/entity/tactical/skeleton"
 	}
 
 });
+

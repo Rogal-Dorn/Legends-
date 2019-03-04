@@ -70,3 +70,4 @@ this.kettle_hat_with_closed_mail <- this.inherit("scripts/items/helmets/helmet",
 	}
 
 });
+

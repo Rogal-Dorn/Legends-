@@ -32,3 +32,4 @@ this.cartwheel <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

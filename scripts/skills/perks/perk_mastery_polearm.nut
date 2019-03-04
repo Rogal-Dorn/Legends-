@@ -19,3 +19,4 @@ this.perk_mastery_polearm <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

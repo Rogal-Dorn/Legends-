@@ -74,3 +74,4 @@ this.silver_bowl_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

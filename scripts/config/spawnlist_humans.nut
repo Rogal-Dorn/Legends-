@@ -1911,3 +1911,4 @@ this.calculateCosts(this.Const.World.Spawn.PeasantsArmed);
 this.calculateCosts(this.Const.World.Spawn.BountyHunters);
 this.calculateCosts(this.Const.World.Spawn.Mercenaries);
 this.calculateCosts(this.Const.World.Spawn.Militia);
+

@@ -98,3 +98,4 @@ this.orc_young_low <- this.inherit("scripts/entity/tactical/enemies/orc_young", 
 	}
 
 });
+

@@ -220,3 +220,4 @@ this.brawler_teaches_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -96,3 +96,4 @@ this.defend_bandits_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

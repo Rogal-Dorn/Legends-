@@ -121,3 +121,4 @@ this.pessimist_won_battle_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -136,3 +136,4 @@ this.accessory <- this.inherit("scripts/items/item", {
 	}
 
 });
+

@@ -183,3 +183,4 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

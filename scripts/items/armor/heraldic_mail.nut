@@ -20,3 +20,4 @@ this.heraldic_mail <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

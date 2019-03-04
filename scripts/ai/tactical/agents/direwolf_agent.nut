@@ -30,3 +30,4 @@ this.direwolf_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

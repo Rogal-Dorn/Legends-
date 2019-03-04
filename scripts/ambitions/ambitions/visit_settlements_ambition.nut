@@ -115,3 +115,4 @@ this.visit_settlements_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

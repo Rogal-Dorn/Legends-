@@ -22,3 +22,4 @@ this.goblin_shaman_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

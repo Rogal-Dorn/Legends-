@@ -42,3 +42,4 @@ this.perk_quick_hands <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

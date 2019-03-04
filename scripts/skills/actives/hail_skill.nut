@@ -116,3 +116,4 @@ this.hail_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

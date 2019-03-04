@@ -227,3 +227,4 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

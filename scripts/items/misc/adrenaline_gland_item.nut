@@ -40,3 +40,4 @@ this.adrenaline_gland_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

@@ -109,3 +109,4 @@ this.have_armor_upgrades_ambition <- this.inherit("scripts/ambitions/ambition", 
 	}
 
 });
+

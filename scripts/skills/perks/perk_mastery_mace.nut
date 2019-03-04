@@ -19,3 +19,4 @@ this.perk_mastery_mace <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -154,3 +154,4 @@ this.ai_roam <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

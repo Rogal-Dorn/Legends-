@@ -331,3 +331,4 @@ this.moss2 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

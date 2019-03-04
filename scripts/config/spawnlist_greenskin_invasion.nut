@@ -2428,3 +2428,4 @@ function calculateCosts( _p )
 }
 
 this.calculateCosts(this.Const.World.Spawn.GreenskinHorde);
+

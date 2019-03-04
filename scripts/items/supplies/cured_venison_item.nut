@@ -44,3 +44,4 @@ this.cured_venison_item <- this.inherit("scripts/items/supplies/food_item", {
 	}
 
 });
+

@@ -25,3 +25,4 @@ this.iron_will_potion_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	}
 
 });
+

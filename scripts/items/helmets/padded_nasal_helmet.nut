@@ -70,3 +70,4 @@ this.padded_nasal_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

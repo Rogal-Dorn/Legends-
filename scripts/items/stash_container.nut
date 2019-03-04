@@ -501,3 +501,4 @@ this.stash_container <- {
 	}
 
 };
+

@@ -182,3 +182,4 @@ this.charmed_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

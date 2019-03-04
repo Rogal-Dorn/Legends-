@@ -139,3 +139,4 @@ this.siege_fortification_action <- this.inherit("scripts/factions/faction_action
 	}
 
 });
+

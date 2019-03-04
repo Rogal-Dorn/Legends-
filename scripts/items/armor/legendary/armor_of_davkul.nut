@@ -62,3 +62,4 @@ this.armor_of_davkul <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

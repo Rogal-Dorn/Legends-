@@ -11,3 +11,4 @@ this.armored_wardog <- this.inherit("scripts/entity/tactical/wardog", {
 	}
 
 });
+

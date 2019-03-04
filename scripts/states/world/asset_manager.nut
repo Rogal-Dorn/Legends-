@@ -2066,3 +2066,4 @@ this.asset_manager <- {
 	}
 
 };
+

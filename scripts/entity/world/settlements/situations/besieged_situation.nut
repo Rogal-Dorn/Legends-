@@ -36,3 +36,4 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 	}
 
 });
+

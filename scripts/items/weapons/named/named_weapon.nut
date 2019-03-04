@@ -158,3 +158,4 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

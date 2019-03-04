@@ -70,3 +70,4 @@ this.nasal_helmet_with_mail <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

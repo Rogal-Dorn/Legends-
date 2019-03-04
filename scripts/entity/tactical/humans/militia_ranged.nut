@@ -97,3 +97,4 @@ this.militia_ranged <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

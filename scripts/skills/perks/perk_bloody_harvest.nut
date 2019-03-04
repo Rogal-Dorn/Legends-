@@ -22,3 +22,4 @@ this.perk_bloody_harvest <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

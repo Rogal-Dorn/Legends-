@@ -225,3 +225,4 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

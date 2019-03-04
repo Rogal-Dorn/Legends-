@@ -228,3 +228,4 @@ this.tile_steppe <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

@@ -117,3 +117,4 @@ this.send_peasants_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

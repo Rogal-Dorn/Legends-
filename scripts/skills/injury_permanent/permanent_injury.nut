@@ -74,3 +74,4 @@ this.permanent_injury <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

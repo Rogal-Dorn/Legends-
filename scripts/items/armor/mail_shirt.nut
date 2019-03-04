@@ -20,3 +20,4 @@ this.mail_shirt <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

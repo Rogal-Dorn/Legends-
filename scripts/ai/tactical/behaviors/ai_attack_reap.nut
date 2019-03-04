@@ -190,3 +190,4 @@ this.ai_attack_reap <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

@@ -1145,3 +1145,4 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

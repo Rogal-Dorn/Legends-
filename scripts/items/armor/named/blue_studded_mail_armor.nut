@@ -24,3 +24,4 @@ this.blue_studded_mail_armor <- this.inherit("scripts/items/armor/named/named_ar
 	}
 
 });
+

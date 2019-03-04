@@ -58,3 +58,4 @@ this.sprained_ankle_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

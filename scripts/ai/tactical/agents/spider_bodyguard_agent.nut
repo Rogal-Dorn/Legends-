@@ -12,3 +12,4 @@ this.spider_bodyguard_agent <- this.inherit("scripts/ai/tactical/agents/spider_a
 	}
 
 });
+

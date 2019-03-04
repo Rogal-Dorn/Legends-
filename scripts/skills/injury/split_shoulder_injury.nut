@@ -53,3 +53,4 @@ this.split_shoulder_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

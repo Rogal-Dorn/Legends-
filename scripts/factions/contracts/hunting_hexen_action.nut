@@ -60,3 +60,4 @@ this.hunting_hexen_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

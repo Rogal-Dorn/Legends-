@@ -35,3 +35,4 @@ this.barber_building <- this.inherit("scripts/entity/world/settlements/buildings
 	}
 
 });
+

@@ -39,3 +39,4 @@ this.boar_spear <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

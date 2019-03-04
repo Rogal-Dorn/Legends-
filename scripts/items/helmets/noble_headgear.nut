@@ -28,3 +28,4 @@ this.noble_headgear <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

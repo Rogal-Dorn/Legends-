@@ -31,3 +31,4 @@ this.heraldic_mail_armor <- this.inherit("scripts/items/armor/named/named_armor"
 	}
 
 });
+

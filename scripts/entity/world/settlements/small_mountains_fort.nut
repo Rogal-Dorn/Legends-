@@ -148,3 +148,4 @@ this.small_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 	}
 
 });
+

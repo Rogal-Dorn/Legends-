@@ -190,3 +190,4 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

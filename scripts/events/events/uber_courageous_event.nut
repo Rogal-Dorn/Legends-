@@ -100,3 +100,4 @@ this.uber_courageous_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

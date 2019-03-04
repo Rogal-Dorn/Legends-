@@ -129,3 +129,4 @@ this.wildman_offers_mushrooms_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

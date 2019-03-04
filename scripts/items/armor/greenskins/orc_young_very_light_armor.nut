@@ -25,3 +25,4 @@ this.orc_young_very_light_armor <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

@@ -40,3 +40,4 @@ this.ancient_wood_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

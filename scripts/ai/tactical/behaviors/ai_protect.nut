@@ -495,3 +495,4 @@ this.ai_protect <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

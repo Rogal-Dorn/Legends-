@@ -57,3 +57,4 @@ this.root_out_undead_action <- this.inherit("scripts/factions/faction_action", {
 	}
 
 });
+

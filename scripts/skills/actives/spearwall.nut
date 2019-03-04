@@ -110,3 +110,4 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

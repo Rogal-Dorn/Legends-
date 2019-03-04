@@ -40,3 +40,4 @@ this.goblin_leader_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

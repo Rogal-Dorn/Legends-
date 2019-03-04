@@ -47,3 +47,4 @@ this.spetum <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

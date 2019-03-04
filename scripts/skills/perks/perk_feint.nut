@@ -20,3 +20,4 @@ this.perk_feint <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -81,3 +81,4 @@ this.ai_reload <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

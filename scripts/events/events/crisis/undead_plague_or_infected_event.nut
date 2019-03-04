@@ -204,3 +204,4 @@ this.undead_plague_or_infected_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

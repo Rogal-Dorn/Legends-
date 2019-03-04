@@ -613,3 +613,4 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

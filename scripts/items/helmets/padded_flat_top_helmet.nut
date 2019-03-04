@@ -70,3 +70,4 @@ this.padded_flat_top_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

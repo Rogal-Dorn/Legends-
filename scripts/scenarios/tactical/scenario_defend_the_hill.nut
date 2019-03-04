@@ -270,3 +270,4 @@ this.scenario_defend_the_hill <- this.inherit("scripts/scenarios/tactical/scenar
 	}
 
 });
+

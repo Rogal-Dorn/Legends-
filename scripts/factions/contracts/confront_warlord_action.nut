@@ -97,3 +97,4 @@ this.confront_warlord_action <- this.inherit("scripts/factions/faction_action", 
 	}
 
 });
+

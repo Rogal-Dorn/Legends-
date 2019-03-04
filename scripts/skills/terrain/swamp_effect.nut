@@ -55,3 +55,4 @@ this.swamp_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

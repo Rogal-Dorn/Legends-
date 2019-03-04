@@ -166,3 +166,4 @@ this.darkflight <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

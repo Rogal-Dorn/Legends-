@@ -109,3 +109,4 @@ this.witch_being_burned_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

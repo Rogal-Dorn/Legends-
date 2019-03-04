@@ -80,3 +80,4 @@ this.destroy_goblin_camp_action <- this.inherit("scripts/factions/faction_action
 	}
 
 });
+

@@ -22,3 +22,4 @@ this.tundra_brush <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

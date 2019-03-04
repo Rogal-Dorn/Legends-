@@ -497,3 +497,4 @@ this.faction_action <- {
 	}
 
 };
+

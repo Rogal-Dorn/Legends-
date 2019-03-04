@@ -241,3 +241,4 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

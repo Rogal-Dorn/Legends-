@@ -191,3 +191,4 @@ this.civilwar_savagery_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

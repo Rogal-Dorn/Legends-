@@ -20,3 +20,4 @@ this.ancient_plate_harness <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

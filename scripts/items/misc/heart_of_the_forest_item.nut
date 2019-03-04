@@ -40,3 +40,4 @@ this.heart_of_the_forest_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

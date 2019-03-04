@@ -74,3 +74,4 @@ this.silverware_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

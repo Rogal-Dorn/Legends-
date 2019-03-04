@@ -184,3 +184,4 @@ this.scenario_swipe <- this.inherit("scripts/scenarios/tactical/scenario_templat
 	}
 
 });
+

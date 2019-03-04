@@ -140,3 +140,4 @@ this.brawler_vs_brawler_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

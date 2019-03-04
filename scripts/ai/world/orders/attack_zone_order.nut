@@ -85,3 +85,4 @@ this.attack_zone_order <- this.inherit("scripts/ai/world/world_behavior", {
 	}
 
 });
+

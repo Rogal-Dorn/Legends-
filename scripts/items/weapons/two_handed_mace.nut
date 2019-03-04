@@ -50,3 +50,4 @@ this.two_handed_mace <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

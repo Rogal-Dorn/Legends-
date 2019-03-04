@@ -108,3 +108,4 @@ this.caravan_hand <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

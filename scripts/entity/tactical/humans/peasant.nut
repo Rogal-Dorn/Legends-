@@ -99,3 +99,4 @@ this.peasant <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

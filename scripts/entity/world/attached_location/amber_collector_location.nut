@@ -50,3 +50,4 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 	}
 
 });
+

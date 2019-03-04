@@ -157,3 +157,4 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

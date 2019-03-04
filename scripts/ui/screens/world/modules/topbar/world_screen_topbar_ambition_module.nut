@@ -37,3 +37,4 @@ this.world_screen_topbar_ambition_module <- this.inherit("scripts/ui/screens/ui_
 	}
 
 });
+

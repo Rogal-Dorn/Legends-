@@ -50,3 +50,4 @@ this.named_warbow <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	}
 
 });
+

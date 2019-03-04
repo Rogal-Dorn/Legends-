@@ -32,3 +32,4 @@ this.tactical_screen_topbar_event_log <- this.inherit("scripts/ui/screens/ui_mod
 	}
 
 });
+

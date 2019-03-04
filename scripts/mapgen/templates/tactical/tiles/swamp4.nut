@@ -202,3 +202,4 @@ this.swamp4 <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

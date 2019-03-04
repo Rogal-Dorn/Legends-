@@ -24,3 +24,4 @@ this.iron_will_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

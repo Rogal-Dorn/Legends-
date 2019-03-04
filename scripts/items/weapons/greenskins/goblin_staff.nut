@@ -37,3 +37,4 @@ this.goblin_staff <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

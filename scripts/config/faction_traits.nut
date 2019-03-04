@@ -130,3 +130,4 @@ gt.Const.FactionTrait <- {
 		]
 	]
 };
+

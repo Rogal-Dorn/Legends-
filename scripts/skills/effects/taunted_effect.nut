@@ -23,3 +23,4 @@ this.taunted_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

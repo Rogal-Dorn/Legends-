@@ -14,3 +14,4 @@ this.perk_shield_bash <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

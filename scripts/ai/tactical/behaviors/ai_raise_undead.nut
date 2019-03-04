@@ -508,3 +508,4 @@ this.ai_raise_undead <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

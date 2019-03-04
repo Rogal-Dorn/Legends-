@@ -318,3 +318,4 @@ this.scenario_line_battle_nobles <- this.inherit("scripts/scenarios/tactical/sce
 	}
 
 });
+

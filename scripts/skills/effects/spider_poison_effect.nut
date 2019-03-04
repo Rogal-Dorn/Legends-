@@ -94,3 +94,4 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

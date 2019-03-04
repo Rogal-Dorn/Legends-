@@ -66,3 +66,4 @@ this.template_canyon <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

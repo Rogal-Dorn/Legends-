@@ -56,3 +56,4 @@ this.insects_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

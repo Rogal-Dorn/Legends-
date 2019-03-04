@@ -150,3 +150,4 @@ this.drink_lionheart_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

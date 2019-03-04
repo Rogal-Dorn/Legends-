@@ -62,3 +62,4 @@ this.net_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -300,3 +300,4 @@ this.scenario_wolfriders <- this.inherit("scripts/scenarios/tactical/scenario_te
 	}
 
 });
+

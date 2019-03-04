@@ -33,3 +33,4 @@ this.public_executions_situation <- this.inherit("scripts/entity/world/settlemen
 	}
 
 });
+

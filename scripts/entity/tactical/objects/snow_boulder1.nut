@@ -20,3 +20,4 @@ this.snow_boulder1 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

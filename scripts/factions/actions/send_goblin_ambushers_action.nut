@@ -112,3 +112,4 @@ this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_acti
 	}
 
 });
+

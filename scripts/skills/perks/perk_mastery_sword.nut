@@ -19,3 +19,4 @@ this.perk_mastery_sword <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

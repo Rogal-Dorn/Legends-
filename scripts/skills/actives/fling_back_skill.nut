@@ -194,3 +194,4 @@ this.fling_back_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

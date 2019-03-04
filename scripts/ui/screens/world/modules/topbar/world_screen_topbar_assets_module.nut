@@ -38,3 +38,4 @@ this.world_screen_topbar_assets_module <- this.inherit("scripts/ui/screens/ui_mo
 	}
 
 });
+

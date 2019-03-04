@@ -159,3 +159,4 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 	}
 
 });
+

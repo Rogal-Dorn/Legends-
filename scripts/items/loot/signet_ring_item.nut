@@ -74,3 +74,4 @@ this.signet_ring_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

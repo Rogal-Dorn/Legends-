@@ -20,3 +20,4 @@ this.padded_leather <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

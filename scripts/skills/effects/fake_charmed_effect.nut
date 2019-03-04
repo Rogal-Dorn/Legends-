@@ -19,3 +19,4 @@ this.fake_charmed_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

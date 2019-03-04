@@ -212,3 +212,4 @@ this.civilwar_treasurer_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

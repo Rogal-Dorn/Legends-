@@ -63,3 +63,4 @@ this.orc_axe_2h <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

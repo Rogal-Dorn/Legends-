@@ -260,3 +260,4 @@ this.tactical_template <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

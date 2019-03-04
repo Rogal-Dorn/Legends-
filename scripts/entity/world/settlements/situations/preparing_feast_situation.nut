@@ -33,3 +33,4 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 	}
 
 });
+

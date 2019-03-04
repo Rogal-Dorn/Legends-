@@ -92,3 +92,4 @@ this.paranoid_bothers_others_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

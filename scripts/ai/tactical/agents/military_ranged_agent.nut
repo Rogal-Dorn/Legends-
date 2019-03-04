@@ -46,3 +46,4 @@ this.military_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

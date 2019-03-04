@@ -34,3 +34,4 @@ this.spider_agent <- this.inherit("scripts/ai/tactical/agent", {
 	}
 
 });
+

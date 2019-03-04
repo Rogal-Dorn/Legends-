@@ -14,3 +14,4 @@ this.perk_steel_brow <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

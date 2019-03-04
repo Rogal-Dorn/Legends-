@@ -164,3 +164,4 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 	}
 
 });
+

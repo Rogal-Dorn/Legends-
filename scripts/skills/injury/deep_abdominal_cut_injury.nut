@@ -64,3 +64,4 @@ this.deep_abdominal_cut_injury <- this.inherit("scripts/skills/injury/injury", {
 	}
 
 });
+

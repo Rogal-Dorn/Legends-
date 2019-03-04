@@ -53,3 +53,4 @@ this.missing_eye_injury <- this.inherit("scripts/skills/injury_permanent/permane
 	}
 
 });
+

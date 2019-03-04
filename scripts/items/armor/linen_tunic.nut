@@ -29,3 +29,4 @@ this.linen_tunic <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

@@ -59,3 +59,4 @@ this.defeat_kraken_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

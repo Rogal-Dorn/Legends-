@@ -108,3 +108,4 @@ this.armor_ambition <- this.inherit("scripts/ambitions/ambition", {
 	}
 
 });
+

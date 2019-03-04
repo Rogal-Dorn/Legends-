@@ -46,3 +46,4 @@ this.undead_buried_castle_location <- this.inherit("scripts/entity/world/locatio
 	}
 
 });
+

@@ -32,3 +32,4 @@ this.ancient_honorguard_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	}
 
 });
+

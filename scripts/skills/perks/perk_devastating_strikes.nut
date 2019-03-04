@@ -19,3 +19,4 @@ this.perk_devastating_strikes <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

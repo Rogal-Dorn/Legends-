@@ -67,3 +67,4 @@ this.return_favor_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

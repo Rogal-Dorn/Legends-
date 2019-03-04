@@ -166,3 +166,4 @@ this.insect_swarm_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

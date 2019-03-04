@@ -86,3 +86,4 @@ this.indomitable <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

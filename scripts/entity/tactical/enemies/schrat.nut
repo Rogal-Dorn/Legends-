@@ -218,3 +218,4 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

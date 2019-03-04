@@ -205,3 +205,4 @@ this.aimed_shot <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

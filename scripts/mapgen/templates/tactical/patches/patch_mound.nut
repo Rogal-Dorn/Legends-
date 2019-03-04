@@ -90,3 +90,4 @@ this.patch_mound <- this.inherit("scripts/mapgen/tactical_template", {
 	}
 
 });
+

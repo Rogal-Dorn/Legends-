@@ -74,3 +74,4 @@ this.mine_cavein_situation <- this.inherit("scripts/entity/world/settlements/sit
 	}
 
 });
+

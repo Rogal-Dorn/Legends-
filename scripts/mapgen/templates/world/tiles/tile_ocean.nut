@@ -219,3 +219,4 @@ this.tile_ocean <- this.inherit("scripts/mapgen/map_template", {
 	}
 
 });
+

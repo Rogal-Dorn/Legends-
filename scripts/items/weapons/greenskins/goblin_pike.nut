@@ -43,3 +43,4 @@ this.goblin_pike <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

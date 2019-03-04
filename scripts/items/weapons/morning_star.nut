@@ -41,3 +41,4 @@ this.morning_star <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
+

@@ -19,3 +19,4 @@ this.perk_sundering_strikes <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

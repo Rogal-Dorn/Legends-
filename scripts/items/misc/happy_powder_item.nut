@@ -73,3 +73,4 @@ this.happy_powder_item <- this.inherit("scripts/items/item", {
 	}
 
 });
+

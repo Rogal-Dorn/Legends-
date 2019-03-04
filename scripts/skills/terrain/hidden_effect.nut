@@ -26,3 +26,4 @@ this.hidden_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -145,3 +145,4 @@ this.ai_attack_crush_armor <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

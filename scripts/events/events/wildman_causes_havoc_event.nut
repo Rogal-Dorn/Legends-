@@ -304,3 +304,4 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

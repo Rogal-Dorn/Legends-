@@ -233,3 +233,4 @@ this.wardog <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

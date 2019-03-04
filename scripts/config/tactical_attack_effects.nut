@@ -455,3 +455,4 @@ gt.Const.Tactical.AttackEffectClaws <- [
 		Offset = this.createVec(0, 25)
 	}
 ];
+

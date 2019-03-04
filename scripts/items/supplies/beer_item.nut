@@ -44,3 +44,4 @@ this.beer_item <- this.inherit("scripts/items/supplies/food_item", {
 	}
 
 });
+

@@ -78,3 +78,4 @@ this.noble_camp_location <- this.inherit("scripts/entity/world/location", {
 	}
 
 });
+

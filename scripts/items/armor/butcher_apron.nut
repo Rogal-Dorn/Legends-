@@ -19,3 +19,4 @@ this.butcher_apron <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

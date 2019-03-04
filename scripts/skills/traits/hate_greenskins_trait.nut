@@ -55,3 +55,4 @@ this.hate_greenskins_trait <- this.inherit("scripts/skills/traits/character_trai
 	}
 
 });
+

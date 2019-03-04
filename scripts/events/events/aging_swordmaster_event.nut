@@ -190,3 +190,4 @@ this.aging_swordmaster_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

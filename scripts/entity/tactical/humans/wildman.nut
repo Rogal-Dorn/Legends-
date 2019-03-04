@@ -105,3 +105,4 @@ this.wildman <- this.inherit("scripts/entity/tactical/human", {
 	}
 
 });
+

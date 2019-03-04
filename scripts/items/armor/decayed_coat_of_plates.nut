@@ -26,3 +26,4 @@ this.decayed_coat_of_plates <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+

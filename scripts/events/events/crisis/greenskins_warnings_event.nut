@@ -60,3 +60,4 @@ this.greenskins_warnings_event <- this.inherit("scripts/events/event", {
 	}
 
 });
+

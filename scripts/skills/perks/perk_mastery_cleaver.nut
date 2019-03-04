@@ -19,3 +19,4 @@ this.perk_mastery_cleaver <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

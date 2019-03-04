@@ -20,3 +20,4 @@ this.ancient_mail <- this.inherit("scripts/items/armor/armor", {
 	}
 
 });
+
