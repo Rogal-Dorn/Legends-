@@ -171,3 +171,4 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 	}
 
 });
+

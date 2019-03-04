@@ -33,3 +33,4 @@ this.orc_camp_object <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

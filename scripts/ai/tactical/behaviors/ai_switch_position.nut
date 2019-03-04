@@ -129,3 +129,4 @@ this.ai_switch_position <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

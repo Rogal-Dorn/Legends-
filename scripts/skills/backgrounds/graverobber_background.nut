@@ -152,3 +152,4 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 	}
 
 });
+

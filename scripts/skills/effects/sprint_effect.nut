@@ -28,3 +28,4 @@ this.sprint_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

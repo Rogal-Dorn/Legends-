@@ -150,3 +150,4 @@ this.drink_recovery_potion_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

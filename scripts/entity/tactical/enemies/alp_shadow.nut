@@ -227,3 +227,4 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 	}
 
 });
+

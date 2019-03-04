@@ -362,3 +362,4 @@ this.ai_corruption <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

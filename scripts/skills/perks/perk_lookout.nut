@@ -19,3 +19,4 @@ this.perk_lookout <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

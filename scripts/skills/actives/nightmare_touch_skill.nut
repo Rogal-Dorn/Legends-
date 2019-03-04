@@ -68,3 +68,4 @@ this.nightmare_touch_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

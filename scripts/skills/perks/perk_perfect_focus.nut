@@ -27,3 +27,4 @@ this.perk_perfect_focus <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

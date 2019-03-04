@@ -22,3 +22,4 @@ this.perk_return_favor <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

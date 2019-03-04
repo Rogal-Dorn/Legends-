@@ -28,3 +28,4 @@ this.graveyard_crypt <- this.inherit("scripts/entity/tactical/objects/multi_tile
 	}
 
 });
+

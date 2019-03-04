@@ -175,3 +175,4 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 	}
 
 });
+

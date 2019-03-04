@@ -150,3 +150,4 @@ this.drink_cat_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -35,3 +35,4 @@ this.realm_of_nightmares_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

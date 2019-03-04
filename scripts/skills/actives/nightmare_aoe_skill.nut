@@ -138,3 +138,4 @@ this.nightmare_aoe_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

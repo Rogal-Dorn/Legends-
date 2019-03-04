@@ -187,3 +187,4 @@ this.ai_hook <- this.inherit("scripts/ai/tactical/behavior", {
 	}
 
 });
+

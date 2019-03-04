@@ -233,3 +233,4 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 	}
 
 });
+

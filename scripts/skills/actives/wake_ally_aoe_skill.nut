@@ -160,3 +160,4 @@ this.wake_ally_aoe_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

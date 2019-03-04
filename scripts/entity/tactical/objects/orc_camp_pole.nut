@@ -36,3 +36,4 @@ this.orc_camp_pole <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

@@ -152,3 +152,4 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 	}
 
 });
+

@@ -80,3 +80,4 @@ this.evasion <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

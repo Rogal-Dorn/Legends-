@@ -187,3 +187,4 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	}
 
 });
+

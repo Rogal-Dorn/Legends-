@@ -15,3 +15,4 @@ this._debug_house_block <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

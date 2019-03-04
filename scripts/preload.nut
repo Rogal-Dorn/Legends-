@@ -42,3 +42,4 @@ foreach( scriptFile in scriptFiles )
 {
 	this.include(scriptFile);
 }
+

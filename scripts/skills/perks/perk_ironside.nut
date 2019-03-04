@@ -53,3 +53,4 @@ this.perk_ironside <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

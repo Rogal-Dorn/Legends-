@@ -62,3 +62,4 @@ this.multi_tile_object <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+

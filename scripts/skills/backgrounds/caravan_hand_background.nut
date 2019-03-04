@@ -146,3 +146,4 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 	}
 
 });
+

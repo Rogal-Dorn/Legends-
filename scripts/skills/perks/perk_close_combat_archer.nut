@@ -28,3 +28,4 @@ this.perk_close_combat_archer <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

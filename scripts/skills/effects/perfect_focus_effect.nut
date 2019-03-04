@@ -33,3 +33,4 @@ this.perfect_focus_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

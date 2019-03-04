@@ -150,3 +150,4 @@ this.drink_iron_will_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

@@ -67,3 +67,4 @@ this.sprint_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

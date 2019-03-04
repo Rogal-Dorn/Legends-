@@ -184,3 +184,4 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 	}
 
 });
+

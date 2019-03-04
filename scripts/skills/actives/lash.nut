@@ -170,3 +170,4 @@ this.lash <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

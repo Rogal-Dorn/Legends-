@@ -21,3 +21,4 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

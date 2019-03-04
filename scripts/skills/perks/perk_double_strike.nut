@@ -24,3 +24,4 @@ this.perk_double_strike <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

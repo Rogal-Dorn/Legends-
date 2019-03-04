@@ -24,3 +24,4 @@ this.perk_vengeance <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

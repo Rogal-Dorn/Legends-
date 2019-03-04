@@ -147,3 +147,4 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	}
 
 });
+

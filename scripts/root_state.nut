@@ -14,3 +14,4 @@ this.root_state <- this.inherit("scripts/states/state", {
 	}
 
 });
+

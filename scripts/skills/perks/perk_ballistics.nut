@@ -19,3 +19,4 @@ this.perk_ballistics <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

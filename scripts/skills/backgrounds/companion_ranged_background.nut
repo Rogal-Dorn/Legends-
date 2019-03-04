@@ -153,3 +153,4 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 	}
 
 });
+

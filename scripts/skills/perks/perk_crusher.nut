@@ -14,3 +14,4 @@ this.perk_crusher <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

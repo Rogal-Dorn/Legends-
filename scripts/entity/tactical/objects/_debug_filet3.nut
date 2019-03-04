@@ -17,3 +17,4 @@ this._debug_filet3 <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
+
