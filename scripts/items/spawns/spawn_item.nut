@@ -145,6 +145,12 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 
 	function onNewDay()
 	{
+
+		if (!this.World.Assets.isUsingProvisions())
+		{
+			return;
+		}
+		
 		if (this.World.Assets.getMedicine() >= this.getMedicinePerDay()) {
 			this.World.Assets.addMedicine(-this.getMedicinePerDay());
 			if (this.m.Condition < this.m.ConditionMax) 
