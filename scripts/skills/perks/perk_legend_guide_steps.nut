@@ -14,13 +14,14 @@ this.perk_legend_guide_steps <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+
 	function onCombatStarted()
 	{
-		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		local actors = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player)
 
 		foreach( a in actors )
 		{
-			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("perk.pathfinder"))
+			if (!a.getSkills().hasSkill("perk.pathfinder"))
 			{
 				a.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 			}
