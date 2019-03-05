@@ -172,7 +172,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
-		talents[this.Const.Attributes.Fatigue] = 2;
+		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
