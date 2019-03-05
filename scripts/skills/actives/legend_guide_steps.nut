@@ -58,8 +58,6 @@ this.legend_guide_steps <- this.inherit("scripts/skills/skill", {
 		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.legend_steps_guided");
 	}
 
-	function 
-
 	function onUse( _user, _targetTile )
 	{
 		local myTile = _user.getTile();
