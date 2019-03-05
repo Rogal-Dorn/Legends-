@@ -1,3 +1,3 @@
 local gt = this.getroottable();
 
-gt.logInfo("Legends Mod Verison 0.9.3")
+gt.logInfo("Legends Mod Verison 0.9.4")
