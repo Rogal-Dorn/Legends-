@@ -2,6 +2,10 @@ this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 	m = {},
 	function create()
 	{
+		this.legend_magic_skill.create();
+		this.m.AdditionalAccuracy = 10;
+		this.m.DamageInitiativeMin = 15;
+		this.m.DamageInitiativeMax = 35;
 		this.m.ID = "actives.legend_deathtouch";
 		this.m.Name = "Death Touch";
 		this.m.Description = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim ";
@@ -19,17 +23,21 @@ this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = false;
 		this.m.DirectDamageMult = 1.0;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
 
-	function onUpdate( _properties )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		_properties.IsIgnoringArmorOnAttack = true;
-		this.legend_magic_skill.onUpdate(_properties);
+		this.legend_magic_skill.onAnySkillUsed(_skill, _targetEntity, _properties )
+		if (_skill == this)
+		{
+			_properties.IsIgnoringArmorOnAttack = true;
+		}
 	}
 
 	function onUse( _user, _targetTile )

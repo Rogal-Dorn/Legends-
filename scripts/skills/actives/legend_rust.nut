@@ -1,7 +1,11 @@
-this.legend_rust <- this.inherit("scripts/skills/skill", {
+this.legend_rust <- this.inherit("scripts/skills/legend_magic_skill", {
 	m = {},
 	function create()
 	{
+		this.legend_magic_skill.create();
+		this.m.AdditionalAccuracy = 10;
+		this.m.DamageInitiativeMin = 15;
+		this.m.DamageInitiativeMax = 45;
 		this.m.ID = "actives.legend_rust";
 		this.m.Name = "Rust";
 		this.m.Description = "Tarnish leather and metal with rapid age, thereby undermining the solidity of the armor worn by your target.";
@@ -26,14 +30,15 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsTooCloseShown = true;
 		this.m.DirectDamageMult = 0.0;
 		this.m.HitChanceBonus = 0;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 3;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 0;
@@ -42,20 +47,16 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local f = p.IsSpecializedInHammers ? 2.0 : 1.5;
-		local damage_armor_min = this.Math.floor(p.DamageRegularMin * p.DamageArmorMult * f * p.DamageTotalMult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(p.DamageRegularMax * p.DamageArmorMult * f * p.DamageTotalMult * p.MeleeDamageMult);
+		local damage_armor_min = this.Math.floor(p.getInitiativeMinDamage());
+		local damage_armor_max = this.Math.floor(p.getInitiativeMaxDamage());
 		local ret = this.getDefaultUtilityTooltip();
 
-		if (damage_armor_max > 0)
-		{
 			ret.push({
-				id = 5,
-				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_max + "[/color] damage to armor"
-			});
-		}
+			id = 5,
+			type = "text",
+			icon = "ui/icons/armor_damage.png",
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_max + "[/color] damage to armor"
+		});
 
 		ret.push({
 			id = 7,
@@ -67,7 +68,7 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] tiles"
 		});
 
 		// if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
@@ -91,11 +92,6 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInHammers ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
@@ -105,21 +101,12 @@ this.legend_rust <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
+		this.legend_magic_skill.onAnySkillUsed(_skill, _targetEntity, _properties )
 		if (_skill == this)
 		{
-			_properties.DamageArmorMult *= this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves ? 2.0 : 1.5;
-			_properties.DamageRegularMult *= 0.0;
-			_properties.DamageMinimum = this.Math.max(_properties.DamageMinimum, 10);
-
-			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
-			{
-				_properties.RangedSkill += -15;
-				this.m.HitChanceBonus = -15;
-			}
-			else
-			{
-				this.m.HitChanceBonus = 0;
-			}
+			_properties.DamageMinimum = 10;
+			_properties.DamageArmorMult = 1.0;
+			_properties.DamageTotalMult = 1.0;
 		}
 	}
 
