@@ -151,3 +151,17 @@ Beta 9
 *Organized order of skills in toolbar
 *Rebalanced starting stats of all commander backgrounds.
 *Fix crash on inventory screen for hexen/firstborn contracts.
+
+
+Beat 0.9.4
+*Magic spell rework
+	-Each magic spell has it's own base Min/Max damage
+	-Min/Max damage is increased for every point of initiative over 100
+	-Ranged magic attacks use Range skill for hitchance
+	-Melee Magic attacks use Melee skill for hitchance
+*Reworkd Warlocks Wither, Rust and Deathtouch spells
+*Fixed Warlock Siphon giving health on attacks other than Siphon
+*Fixed being able to loot weapons off of Warlock summons
+*Berserk start gets 4 attributes with Stars.
+*Ranger start removes two start companions (roster slots still available) and give Guided Step perk instead (everyone in battle gets free pathfinder)
+*Medical supplies for Warlock summons will not be used during any contract that provides provisions.

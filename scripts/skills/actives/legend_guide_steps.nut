@@ -53,10 +53,12 @@ this.legend_guide_steps <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-function isUsable()
+	function isUsable()
 	{
 		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.legend_steps_guided");
 	}
+
+	function 
 
 	function onUse( _user, _targetTile )
 	{

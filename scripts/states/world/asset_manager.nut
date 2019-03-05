@@ -467,6 +467,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
+			
 		case this.Const.LegendMod.StartTypes.Necro:
 			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
