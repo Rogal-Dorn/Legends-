@@ -54,7 +54,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
-		//this.m.ProjectileType = this.Const.ProjectileType.Missile;
+		this.m.ProjectileType = this.Const.ProjectileType.Missile;
 	}
 
 	function getTooltip()
