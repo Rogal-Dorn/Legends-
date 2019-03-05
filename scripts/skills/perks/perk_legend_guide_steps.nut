@@ -14,16 +14,17 @@ this.perk_legend_guide_steps <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
+	function onCombatStarted()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_guide_steps"))
+		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+
+		foreach( a in actors )
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_guide_steps"));
-		}
-	}
-		function onRemoved()
-	{
-		this.m.Container.removeByID("actives.legend_guide_steps");
+			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("perk.pathfinder"))
+			{
+				a.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+			}
+		}		
 	}
 
 });
