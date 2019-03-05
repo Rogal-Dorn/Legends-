@@ -101,7 +101,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			sCount = this.Math.floor(sCount / 2.0);
 			for (local i = 0; i < sCount; i = ++i)
 			{
-				this.m.Strength += 3 + ((skeletonSummonLevel / 2) + (skeletonSummonLevel - 1)) * 2.0);
+				this.m.Strength += 3 + (((skeletonSummonLevel / 2) + (skeletonSummonLevel - 1)) * 2.0);
 			}
 		}
 	}
