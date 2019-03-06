@@ -165,3 +165,19 @@ Beat 0.9.4
 *Berserk start gets 4 attributes with Stars.
 *Ranger start removes two start companions (roster slots still available) and give Guided Step perk instead (everyone in battle gets free pathfinder)
 *Medical supplies for Warlock summons will not be used during any contract that provides provisions.
+
+0.9.5
+lowers contract difficulty floor, making early game contracts easier
+raises contract difficulty roof, making late game contracts harder
+increases player strength scaling, making late game harder
+Makes contract pay scale with player strength, making early game contracts pay less and late game pay more
+Stops rabble spawning mid game, and makes them spawn in higher numbers
+Increases ambush strength on caravans
+lowers payment floor on discover location missions
+increases rabble hp, initiative and defenses, lowers their xp reward
+removes most early game weapons from zombies, goblin fighters and thugs
+poachers can spawn with bows 
+fixes error when fighting orc elites
+
+
+
