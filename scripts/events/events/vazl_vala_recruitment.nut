@@ -90,7 +90,7 @@ this.vazl_vala_recruitment <- this.inherit("scripts/events/event", {
 
 
 		this.m.Town = town;
-		this.m.Score = 15 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 15);
+		this.m.Score = 20 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 10);
 	}
 
 	function onPrepare()

@@ -1,6 +1,6 @@
 this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 	m = {
-		Cannibal = null,
+		Cannibal = null
 	},
 	function create()
 	{
@@ -23,6 +23,7 @@ this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 						_event.m.Cannibal.onHired();
 						return 0;
 					}
+
 				},
 				{
 					Text = "We\'d rather not take you in.",
@@ -31,15 +32,19 @@ this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 						this.World.getTemporaryRoster().clear();
 						return 0;
 					}
+
 				}
 			],
 			function start( _event )
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Cannibal = roster.create("scripts/entity/tactical/player");
-				_event.m.Cannibal.setStartValuesEx(["vazl_cannibal_background"]);
+				_event.m.Cannibal.setStartValuesEx([
+					"vazl_cannibal_background"
+				]);
 				this.Characters.push(_event.m.Cannibal.getImagePath());
 			}
+
 		});
 	}
 
@@ -53,22 +58,24 @@ this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
 		local brotherlevels = 0;
-		foreach (bro in brothers)
+
+		foreach( bro in brothers )
 		{
 			if (bro.getBackground().getID() == "background.vazl_cannibal")
 			{
 				return;
 			}
-			totalbrothers += 1;
-			brotherlevels += bro.getLevel();
+
+			totalbrothers = totalbrothers + 1;
+			brotherlevels = brotherlevels + bro.getLevel();
 		}
+
 		if (totalbrothers < 1 || brotherlevels < 1)
 		{
 			return;
 		}
 
-
-		this.m.Score = 10 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 10);
+		this.m.Score = 10 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 5);
 	}
 
 	function onPrepare()
@@ -83,4 +90,5 @@ this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 	{
 		this.m.Cannibal = null;
 	}
+
 });
