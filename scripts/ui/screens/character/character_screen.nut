@@ -352,11 +352,15 @@ this.character_screen <- {
 	function queryData()
 	{
 		local result = {
-			brothers = this.onQueryBrothersList(),
-			formationIndex = this.World.Assets.getFormationIndex(),
-			formationName = this.World.Assets.getFormationName(),
-			maxBrothers = this.World.Assets.getBrothersMax()
+			brothers = this.onQueryBrothersList()
 		};
+
+		if ("Assets" in this.World)
+		{
+			result.formationIndex <- this.World.Assets.getFormationIndex(),
+			result.formationName <- this.World.Assets.getFormationName(),
+			result.maxBrothers <- this.World.Assets.getBrothersMax()
+		}
 
 		if (this.m.InventoryMode != this.Const.CharacterScreen.InventoryMode.Ground)
 		{
