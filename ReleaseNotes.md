@@ -167,15 +167,20 @@ Beta 0.9.4
 *Medical supplies for Warlock summons will not be used during any contract that provides provisions.
 
 Beta 0.9.5
-*Adjustments to scaling based on player strength. Should be easier on start and ramp up more as player gets stronger (around level 8 things start to get real)
-	- Fixes Rabble spawns post mid game
-	- Lowers spawn difficulty floor and raises ceiling for contracts.
-	- Contract payout calculation based on player strength now
-	- Payment floor set to 100 for location discovery
-*Rabble get a small buff - help prevent all the one shots on them
+*Lowers contract difficulty floor, making early game contracts easier
+*Raises contract difficulty roof, making late game contracts harder
+*Increases player strength scaling, making late game harder
+*Makes contract pay scale with player strength, making early game contracts pay less and late game pay more
+*Stops rabble spawning mid game, and makes them spawn in higher numbers
 *Increase ambush strength on caravans
+*Increases rabble hp, initiative and defenses, lowers their xp reward
+*Removes most early game weapons from zombies, goblin fighters and thugs
+*Poachers can spawn with bows as well as slings now
 *Fixed error that would prevent Orc elites from spawning
 *Fixed error that prevented scenarios from working
 
 Beta 0.10
 *Adds Orc Behemoth
+
+
+
