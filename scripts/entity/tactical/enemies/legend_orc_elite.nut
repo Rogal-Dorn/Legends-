@@ -250,9 +250,9 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_true_believer"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_believer"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_perfect_focus"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_battleforged"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 	}
 
