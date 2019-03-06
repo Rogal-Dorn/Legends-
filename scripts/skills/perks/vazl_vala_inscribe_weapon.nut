@@ -109,7 +109,7 @@ this.vazl_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 
 		if ((this.getTimeSinceInscriptionTry() >= this.m.InscriptionTryCooldown && this.getDaysSinceInscriptionSuccess() >= this.m.InscriptionSuccessCooldown && this.World.Assets.getStash().hasEmptySlot()) || (this.m.FirstTime == true && this.World.Assets.getStash().hasEmptySlot()))
 		{
-			local expertise = 5 + ((this.getContainer().getActor().getLevel() / this.Const.LevelXP.len()) * 5);
+			local expertise = 15 + ((this.getContainer().getActor().getLevel() / this.Const.LevelXP.len()) * 15);
 
 			if ((this.Math.rand(1, 400) <= expertise) || this.m.FirstTime == true)
 			{
