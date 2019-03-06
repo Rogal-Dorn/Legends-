@@ -153,7 +153,7 @@ Beta 9
 *Fix crash on inventory screen for hexen/firstborn contracts.
 
 
-Beat 0.9.4
+Beta 0.9.4
 *Magic spell rework
 	-Each magic spell has it's own base Min/Max damage
 	-Min/Max damage is increased for every point of initiative over 100
@@ -165,3 +165,17 @@ Beat 0.9.4
 *Berserk start gets 4 attributes with Stars.
 *Ranger start removes two start companions (roster slots still available) and give Guided Step perk instead (everyone in battle gets free pathfinder)
 *Medical supplies for Warlock summons will not be used during any contract that provides provisions.
+
+Beta 0.9.5
+*Adjustments to scaling based on player strength. Should be easier on start and ramp up more as player gets stronger (around level 8 things start to get real)
+	- Fixes Rabble spawns post mid game
+	- Lowers spawn difficulty floor and raises ceiling for contracts.
+	- Contract payout calculation based on player strength now
+	- Payment floor set to 100 for location discovery
+*Rabble get a small buff - help prevent all the one shots on them
+*Increase ambush strength on caravans
+*Fixed error that would prevent Orc elites from spawning
+*Fixed error that prevented scenarios from working
+
+Beta 0.10
+*Adds Orc Behemoth
