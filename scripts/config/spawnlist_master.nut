@@ -680,8 +680,8 @@ gt.Const.World.Spawn.Troops <- {
 	BanditThug = {
 		ID = this.Const.EntityType.BanditThug,
 		Variant = 0,
-		Strength = 6,
-		Cost = 6,
+		Strength = 8,
+		Cost = 8,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/bandit_thug"
 	},
