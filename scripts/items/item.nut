@@ -612,7 +612,7 @@ this.item <- {
 				break;
 
 			case 2:
-				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSW_aiming"));
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSW_accuracy"));
 				break;
 
 			case 3:
@@ -643,6 +643,18 @@ this.item <- {
 				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSA_resilience"));
 				break;
 
+			case 31:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSS_defense"));
+				break;
+
+			case 32:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSS_defense"));
+				break;
+
+			case 33:
+				this.addSkill(this.new("scripts/skills/rune_sigils/vazl_RSS_defense"));
+				break;
+
 			default:
 				break;
 		}
@@ -657,7 +669,7 @@ this.item <- {
 				break;
 
 			case 2:
-				return "This item is inscribed with the rune sigil of Aiming:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged skills"
+				return "This item is inscribed with the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged skills"
 				break;
 
 			case 3:
@@ -686,6 +698,18 @@ this.item <- {
 
 			case 23:
 				return "This item is inscribed with the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs"
+				break;
+
+			case 31:
+				return "This item is inscribed with the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense"
+				break;
+
+			case 32:
+				return "This item is inscribed with the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense"
+				break;
+
+			case 33:
+				return "This item is inscribed with the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense"
 				break;
 
 			default:

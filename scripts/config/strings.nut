@@ -1070,7 +1070,14 @@ gt.Const.Strings.PerkName <- {
 	vazl_ValaInscribeWeapon = "Inscribe Weapon",
 	vazl_ValaInscribeHelmet = "Inscribe Helmet",
 	vazl_ValaInscribeArmor = "Inscribe Armor",
-	vazl_ValaInscribeShield = "Inscribe Shield"
+	vazl_ValaInscribeShield = "Inscribe Shield",
+
+	vazl_ValaChantingMastery = "Chanting Mastery",
+	vazl_ValaChantDisharmony = "Chant of Disharmony",
+
+	vazl_ValaTranceMastery = "Trance Mastery",
+
+	vazl_ValaWarden = "Warden"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1163,10 +1170,17 @@ gt.Const.Strings.PerkDescription <- {
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
 
 	vazl_ValaInscriptionMastery = "Lowers the cooldown until the Vala can begin inscribing items again (after a successful inscription) from 20 to [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] days, and increases her inscription speed.",
-	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any weapon currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: aiming, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
+	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe any weapon currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: accuracy, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing weapons again.",
 	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any helmet currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
 	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any armor currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again.",
-	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: none\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again."
+	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again.",
+
+	vazl_ValaChantingMastery = "Chants build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
+	vazl_ValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies within 4 tiles of the Vala won't be able to enforce Zones of Control, letting your units move in and out safely.",
+
+	vazl_ValaTranceMastery = "Trances build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
+
+	vazl_ValaWarden = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. The Warden can be beaten, but it never dies. The Warden\'s stats scales with the Vala\'s own stats; especially her Resolve."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

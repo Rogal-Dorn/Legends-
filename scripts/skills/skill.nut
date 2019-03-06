@@ -795,6 +795,10 @@ this.skill <- {
 	{
 	}
 
+	function onMovementCompleted()
+	{
+	}
+
 	function onBeforeActivation()
 	{
 	}

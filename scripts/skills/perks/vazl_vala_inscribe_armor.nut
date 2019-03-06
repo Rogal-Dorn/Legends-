@@ -149,7 +149,7 @@ this.vazl_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 
 				if (person.getID() == inscriber.getID())
 				{
-					inscriber.improveMood(0.5, "Carved a rune sigil onto their armor");
+					inscriber.improveMood(0.5, "Carved a rune sigil onto her armor");
 				}
 				else
 				{
