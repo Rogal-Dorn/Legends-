@@ -76,12 +76,12 @@ gt.Const.Perks.PerksVala <- [
 	],
 	[
 		{
-			ID = "perk.vazl_vala_chant_disharmony",
-			Script = "scripts/skills/perks/vazl_vala_chant_disharmony",
-			Name = this.Const.Strings.PerkName.vazl_ValaChantDisharmony,
-			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaChantDisharmony,
-			Icon = "ui/perks/vazl_vala_chant_disharmony.png",
-			IconDisabled = "ui/perks/vazl_vala_chant_disharmony_sw.png"
+			ID = "perk.anticipation",
+			Script = "scripts/skills/perks/perk_anticipation",
+			Name = this.Const.Strings.PerkName.Anticipation,
+			Tooltip = this.Const.Strings.PerkDescription.Anticipation,
+			Icon = "ui/perks/perk_10.png",
+			IconDisabled = "ui/perks/perk_10_sw.png"
 		}
 	],
 	[
@@ -112,63 +112,15 @@ gt.Const.Perks.PerksVala <- [
 	],
 	[
 		{
-			ID = "perk.reach_advantage",
-			Script = "scripts/skills/perks/perk_reach_advantage",
-			Name = this.Const.Strings.PerkName.ReachAdvantage,
-			Tooltip = this.Const.Strings.PerkDescription.ReachAdvantage,
-			Icon = "ui/perks/perk_19.png",
-			IconDisabled = "ui/perks/perk_19_sw.png"
-		},
-		{
-			ID = "perk.overwhelm",
-			Script = "scripts/skills/perks/perk_overwhelm",
-			Name = this.Const.Strings.PerkName.Overwhelm,
-			Tooltip = this.Const.Strings.PerkDescription.Overwhelm,
-			Icon = "ui/perks/perk_62.png",
-			IconDisabled = "ui/perks/perk_62_sw.png"
-		},
-		{
-			ID = "perk.lone_wolf",
-			Script = "scripts/skills/perks/perk_lone_wolf",
-			Name = this.Const.Strings.PerkName.LoneWolf,
-			Tooltip = this.Const.Strings.PerkDescription.LoneWolf,
-			Icon = "ui/perks/perk_61.png",
-			IconDisabled = "ui/perks/perk_61_sw.png"
-		},
-		{
-			ID = "perk.underdog",
-			Script = "scripts/skills/perks/perk_underdog",
-			Name = this.Const.Strings.PerkName.Underdog,
-			Tooltip = this.Const.Strings.PerkDescription.Underdog,
-			Icon = "ui/perks/perk_60.png",
-			IconDisabled = "ui/perks/perk_60_sw.png"
-		},
-		{
-			ID = "perk.footwork",
-			Script = "scripts/skills/perks/perk_footwork",
-			Name = this.Const.Strings.PerkName.Footwork,
-			Tooltip = this.Const.Strings.PerkDescription.Footwork,
-			Icon = "ui/perks/perk_25.png",
-			IconDisabled = "ui/perks/perk_25_sw.png"
+			ID = "perk.vazl_vala_chant_disharmony",
+			Script = "scripts/skills/perks/vazl_vala_chant_disharmony",
+			Name = this.Const.Strings.PerkName.vazl_ValaChantDisharmony,
+			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaChantDisharmony,
+			Icon = "ui/perks/vazl_vala_chant_disharmony.png",
+			IconDisabled = "ui/perks/vazl_vala_chant_disharmony_sw.png"
 		}
 	],
 	[
-		{
-			ID = "perk.berserk",
-			Script = "scripts/skills/perks/perk_berserk",
-			Name = this.Const.Strings.PerkName.Berserk,
-			Tooltip = this.Const.Strings.PerkDescription.Berserk,
-			Icon = "ui/perks/perk_35.png",
-			IconDisabled = "ui/perks/perk_35_sw.png"
-		},
-		{
-			ID = "perk.head_hunter",
-			Script = "scripts/skills/perks/perk_head_hunter",
-			Name = this.Const.Strings.PerkName.HeadHunter,
-			Tooltip = this.Const.Strings.PerkDescription.HeadHunter,
-			Icon = "ui/perks/perk_15.png",
-			IconDisabled = "ui/perks/perk_15_sw.png"
-		},
 		{
 			ID = "perk.nimble",
 			Script = "scripts/skills/perks/perk_nimble",
@@ -187,30 +139,6 @@ gt.Const.Perks.PerksVala <- [
 		}
 	],
 	[
-		{
-			ID = "perk.fearsome",
-			Script = "scripts/skills/perks/perk_fearsome",
-			Name = this.Const.Strings.PerkName.Fearsome,
-			Tooltip = this.Const.Strings.PerkDescription.Fearsome,
-			Icon = "ui/perks/perk_27.png",
-			IconDisabled = "ui/perks/perk_27_sw.png"
-		},
-		{
-			ID = "perk.duelist",
-			Script = "scripts/skills/perks/perk_duelist",
-			Name = this.Const.Strings.PerkName.Duelist,
-			Tooltip = this.Const.Strings.PerkDescription.Duelist,
-			Icon = "ui/perks/perk_41.png",
-			IconDisabled = "ui/perks/perk_41_sw.png"
-		},
-		{
-			ID = "perk.killing_frenzy",
-			Script = "scripts/skills/perks/perk_killing_frenzy",
-			Name = this.Const.Strings.PerkName.KillingFrenzy,
-			Tooltip = this.Const.Strings.PerkDescription.KillingFrenzy,
-			Icon = "ui/perks/perk_36.png",
-			IconDisabled = "ui/perks/perk_36_sw.png"
-		},
 		{
 			ID = "perk.indomitable",
 			Script = "scripts/skills/perks/perk_indomitable",

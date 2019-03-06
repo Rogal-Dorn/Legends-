@@ -1176,7 +1176,7 @@ gt.Const.Strings.PerkDescription <- {
 	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again.",
 
 	vazl_ValaChantingMastery = "Chants build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
-	vazl_ValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies within 4 tiles of the Vala won't be able to enforce Zones of Control, letting your units move in and out safely.",
+	vazl_ValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies within 3 tiles of the Vala won't be able to enforce Zones of Control, letting your units move in and out safely.",
 
 	vazl_ValaTranceMastery = "Trances build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
 

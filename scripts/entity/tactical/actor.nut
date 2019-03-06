@@ -2456,7 +2456,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (ValaTile != null)
 		{
-			if (ValaTile.getDistanceTo(this.getTile()) <= 4 && this.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
+			if (ValaTile.getDistanceTo(this.getTile()) <= 3 && this.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
 			{
 				return false;
 			}
@@ -2510,7 +2510,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (ValaTile != null)
 		{
-			if (ValaTile.getDistanceTo(this.getTile()) <= 4 && this.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
+			if (ValaTile.getDistanceTo(this.getTile()) <= 3 && this.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
 			{
 				return false;
 			}
