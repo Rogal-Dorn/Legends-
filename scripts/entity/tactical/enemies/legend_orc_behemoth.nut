@@ -230,7 +230,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		injury_body.setBrush("legend_orc_behemoth_body_01_bloodied");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
-		head.setBrush("legend_orc_behemoth_head_01";
+		head.setBrush("legend_orc_behemoth_head_01");
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		local injury = this.addSprite("injury");
