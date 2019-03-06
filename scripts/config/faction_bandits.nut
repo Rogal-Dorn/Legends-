@@ -49,16 +49,16 @@ gt.Const.Tactical.Actor.WarWolf <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.BanditRabble <- {
-	XP = 70,
+	XP = 40,
 	ActionPoints = 9,
-	Hitpoints = 30,
+	Hitpoints = 35,
 	Bravery = 30,
 	Stamina = 80,
 	MeleeSkill = 40,
 	RangedSkill = 30,
-	MeleeDefense = -5,
-	RangedDefense = -5,
-	Initiative = 85,
+	MeleeDefense = 0,
+	RangedDefense = 0,
+	Initiative = 100,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [

@@ -90,6 +90,26 @@ gt.Const.Tactical.Actor.LegendOrcElite <- {
 	FatigueRecoveryRate = 40,
 	DamageTotalMult = 1.25
 };
+gt.Const.Tactical.Actor.LegendOrcBehemoth <- {
+	XP = 400,
+	ActionPoints = 8,
+	Hitpoints = 400,
+	Bravery = 55,
+	Stamina = 300,
+	MeleeSkill = 70,
+	RangedSkill = 40,
+	MeleeDefense = -15,
+	RangedDefense = -15,
+	Initiative = 60,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 30,
+	DamageTotalMult = 1.5
+};
 gt.Const.Tactical.Actor.OrcWarlord <- {
 	XP = 500,
 	ActionPoints = 8,
