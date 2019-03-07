@@ -181,7 +181,7 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 			MeleeSkill = this.Math.round((_vala.MeleeSkill * 1.00) + (_vala.Bravery * 0.25)),
 			RangedSkill = this.Math.round((_vala.RangedSkill * 1.00) + (_vala.Bravery * 0.25)),
 			MeleeDefense = this.Math.round((_vala.MeleeDefense * 1.00) + (_vala.Bravery * 0.25)),
-			RangedDefense = this.Math.round((_vala.RangedDefense * 1.00) + (_vala.Bravery * 0.50)),
+			RangedDefense = this.Math.round((_vala.RangedDefense * 1.00) + (_vala.Bravery * 0.33)),
 			Initiative = this.Math.round((_vala.Initiative * 0.50) + (_vala.Bravery * 0.25)),
 			FatigueEffectMult = 0.0,
 			MoraleEffectMult = 0.0,
