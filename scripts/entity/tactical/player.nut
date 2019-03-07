@@ -2131,7 +2131,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getBackground().getID() == "background.vazl_vala")
 		{
-			this.m.Talents[this.Const.Attributes.Bravery] = this.Math.rand(1, 3);;
+			this.m.Talents[this.Const.Attributes.Bravery] = this.Math.rand(1, 3);
 
 			for( local done = 0; done < 2;  )
 			{
