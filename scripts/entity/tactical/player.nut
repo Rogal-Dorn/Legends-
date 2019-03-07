@@ -2129,28 +2129,60 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return;
 		}
 
-		for( local done = 0; done < 3;  )
+		if (this.getBackground().getID() == "background.vazl_vala")
 		{
-			local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
+			this.m.Talents[this.Const.Attributes.Bravery] = this.Math.rand(1, 3);;
 
-			if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+			for( local done = 0; done < 2;  )
 			{
-				local r = this.Math.rand(1, 100);
+				local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
+	
+				if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				{
+					local r = this.Math.rand(1, 100);
+	
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
 
-				if (r <= 60)
-				{
-					this.m.Talents[i] = 1;
+					done = ++done;
 				}
-				else if (r <= 90)
+			}
+		}
+		else
+		{
+			for( local done = 0; done < 3;  )
+			{
+				local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
+	
+				if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
 				{
-					this.m.Talents[i] = 2;
-				}
-				else
-				{
-					this.m.Talents[i] = 3;
-				}
+					local r = this.Math.rand(1, 100);
+	
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
 
-				done = ++done;
+					done = ++done;
+				}
 			}
 		}
 	}
