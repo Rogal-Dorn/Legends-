@@ -524,21 +524,15 @@ this.camp_screen <- {
 	{
 		local night = !this.World.getTime().IsDaytime;
 		local highest = this.getUITerrain();
-		local foreground = this.Const.World.TerrainSettlementImages[highest].Foreground;
+		local foreground = this.Const.World.TerrainCampImages[highest].Foreground;
 		local result = {
 			Title = this.World.Assets.getName() + " Camp",
 			SubTitle = this.getTimeRequired(),
 			Assets = this.queryAssetsInformation(),
 			HeaderImagePath = null,
-			Background =  this.Const.World.TerrainSettlementImages[highest].Background + (night ? "_night" : "") + ".jpg",
-			// BackgroundCenter = this.m.UIBackgroundCenter + (night ? "_night" : "") + ".png",
-			// BackgroundLeft = this.m.UIBackgroundLeft + (night ? "_night" : "") + ".png",
-			// BackgroundRight = this.m.UIBackgroundRight + (night ? "_night" : "") + ".png",
-			Ramp = this.Const.World.TerrainSettlementImages[highest].Ramp + (night ? "_night" : "") + ".png",
-			// RampPathway = this.m.UIRampPathway != null ? this.m.UIRampPathway + (night ? "_night" : "") + ".png" : null,
-			// Mood = this.m.UIMood + ".png",
+			Background =  this.Const.World.TerrainCampImages[highest].Background + (night ? "_night" : "") + ".jpg",
+			Mood =this.Const.World.TerrainCampImages[highest].Mood  + ".png",
 			Foreground = foreground != null ? foreground + (night ? "_night" : "") + ".png" : null,
-			// Water = water != null ? water + (night ? "_night" : "") + ".png" : null,
 			Slots = [],
 			Situations = []
 		};
