@@ -122,20 +122,12 @@ gt.Const.Perks.PerksVala <- [
 	],
 	[
 		{
-			ID = "perk.nimble",
-			Script = "scripts/skills/perks/perk_nimble",
-			Name = this.Const.Strings.PerkName.Nimble,
-			Tooltip = this.Const.Strings.PerkDescription.Nimble,
-			Icon = "ui/perks/perk_29.png",
-			IconDisabled = "ui/perks/perk_29_sw.png"
-		},
-		{
-			ID = "perk.battle_forged",
-			Script = "scripts/skills/perks/perk_battle_forged",
-			Name = this.Const.Strings.PerkName.BattleForged,
-			Tooltip = this.Const.Strings.PerkDescription.BattleForged,
-			Icon = "ui/perks/perk_03.png",
-			IconDisabled = "ui/perks/perk_03_sw.png"
+			ID = "perk.vazl_vala_spiritual_bond",
+			Script = "scripts/skills/perks/vazl_vala_spiritual_bond",
+			Name = this.Const.Strings.PerkName.vazl_ValaSpiritualBond,
+			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaSpiritualBond,
+			Icon = "ui/perks/vazl_vala_spiritual_bond.png",
+			IconDisabled = "ui/perks/vazl_vala_spiritual_bond_sw.png"
 		}
 	],
 	[

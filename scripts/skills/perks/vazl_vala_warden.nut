@@ -42,6 +42,12 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 			local WardenRangedSkill = this.Math.round(this.m.WardenEntity.m.CurrentProperties.RangedSkill);
 			local WardenRangedDefense = this.Math.round(this.m.WardenEntity.m.CurrentProperties.RangedDefense);
 			local WardenInitiative = this.Math.round(this.m.WardenEntity.m.CurrentProperties.Initiative);
+			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4));
+
+			if (SpiritualBondReduction >= 50)
+			{
+				SpiritualBondReduction = 50;
+			}
 
 			local tooltip =
 			[
@@ -56,10 +62,40 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = this.getContainer().getActor().m.Name + "\'s Warden is present and has the following attributes:\n\nHitpoints " + WardenHitpoints + "\nMelee skill " + WardenMeleeSkill + "\nMelee defense " + WardenMeleeDefense + "\nRanged skill " + WardenRangedSkill + "\nRanged defense " + WardenRangedDefense + "\nInitiative " + WardenInitiative + "\n\nThe Warden also has the Steel Brow and Anticipation perks."
+				text = this.getContainer().getActor().m.Name + "\'s Warden is present and has the following attributes:\n\nMaximum hitpoints " + WardenHitpoints + "\nMelee skill " + WardenMeleeSkill + "\nMelee defense " + WardenMeleeDefense + "\nRanged skill " + WardenRangedSkill + "\nRanged defense " + WardenRangedDefense + "\nInitiative " + WardenInitiative
 			});
 
+			tooltip.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "The Warden has the Steel Brow and Anticipation perks."
+			});
+
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_spiritual_bond"))
+			{
+				if (this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
+				{
+					tooltip.push({
+						id = 8,
+						type = "text",
+						icon = "ui/icons/special.png",
+						text = "The strong bond between the Vala and her Warden makes the Warden absorb " + SpiritualBondReduction + "% of the Vala\'s incoming health damage."
+					});
+				}
+			}
+
 			return tooltip;
+		}
+	}
+
+
+	function onDeath()
+	{
+		if (this.m.WardenEntity != null)
+		{
+			this.m.WardenEntity.killSilently();
+			this.m.WardenEntity = null;
 		}
 	}
 
@@ -104,9 +140,27 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 				entity.setName(this.getContainer().getActor().m.Name + "\'s Warden");
 				entity.setFaction(this.Const.Faction.PlayerAnimals);
 				entity.setItem(this);
-				entity.setWardenStats(this.getContainer().getActor().getBaseProperties());
+				entity.setWardenStats(this.getContainer().getActor().getCurrentProperties());
 				this.m.WardenSummonSpent = true;
 				this.m.WardenEntity = entity;
+
+				if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_spiritual_bond"))
+				{
+					if (!this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
+					{
+						local bond = this.new("scripts/skills/effects/vazl_vala_spiritual_bond_effect");
+						bond.setItem(this);
+						this.getContainer().getActor().getSkills().add(bond);
+					}
+				}
+			}
+		}
+
+		if (this.m.WardenEntity != null)
+		{
+			if (this.m.WardenEntity.m.Hitpoints <= 0)
+			{
+				this.m.WardenEntity.killSilently();
 			}
 		}
 	}
@@ -116,5 +170,13 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.WardenSummonSpent = false;
 		this.m.WardenEntity = null;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_spiritual_bond"))
+		{
+			if (this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
+			{
+				this.getContainer().getActor().getSkills().removeByID("effects.vazl_vala_spiritual_bond_effect");
+			}
+		}
 	}
 });

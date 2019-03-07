@@ -669,7 +669,7 @@ this.item <- {
 				break;
 
 			case 2:
-				return "This item is inscribed with the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged skills"
+				return "This item is inscribed with the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged skill"
 				break;
 
 			case 3:

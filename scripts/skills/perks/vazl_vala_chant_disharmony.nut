@@ -70,7 +70,7 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Enemy units within 3 tiles of the Vala are unable to enforce Zones of Control until the Vala's next turn"
+				text = "Enemy units within 2 tiles of the Vala are unable to enforce Zones of Control until the Vala's next turn"
 			},
 		];
 
@@ -87,7 +87,7 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		if (this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_currently_chanting"))
 		{
 			ret.push({
-				id = 9,
+				id = 10,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Already chanting[/color]"

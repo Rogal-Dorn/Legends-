@@ -1077,7 +1077,8 @@ gt.Const.Strings.PerkName <- {
 
 	vazl_ValaTranceMastery = "Trance Mastery",
 
-	vazl_ValaWarden = "Warden"
+	vazl_ValaWarden = "Warden",
+	vazl_ValaSpiritualBond = "Spiritual Bond"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1176,11 +1177,12 @@ gt.Const.Strings.PerkDescription <- {
 	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again.",
 
 	vazl_ValaChantingMastery = "Chants build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
-	vazl_ValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies within 3 tiles of the Vala won't be able to enforce Zones of Control, letting your units move in and out safely.",
+	vazl_ValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies within 2 tiles of the Vala won't be able to enforce Zones of Control, letting your units move in and out safely.",
 
 	vazl_ValaTranceMastery = "Trances build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
 
-	vazl_ValaWarden = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. The Warden can be beaten, but it never dies. The Warden\'s stats scales with the Vala\'s own stats; especially her Resolve."
+	vazl_ValaWarden = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. The Warden can be beaten, but it never dies. The Warden\'s stats scales with the Vala\'s own stats; especially her Resolve.",
+	vazl_ValaSpiritualBond = "The bond between the Vala and her Warden grows deeper over time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, based on the Vala\'s Resolve and up to a maximum of 50%.\n\nThis perk does nothing unless the Vala has the Warden perk."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

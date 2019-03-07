@@ -31,7 +31,7 @@ this.vazl_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill", {
 
 		if (ValaTile != null)
 		{
-			if (ValaTile.getDistanceTo(this.getContainer().getActor().getTile()) <= 3)
+			if (ValaTile.getDistanceTo(this.getContainer().getActor().getTile()) <= 2)
 			{
 				return false;
 			}
