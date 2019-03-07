@@ -36,7 +36,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			CurrentWeaponUses = 0
 		},
 		Formations = null,
-		VeteranPerks = 0
+		VeteranPerks = 0,
+		CampAssignment = ""
 	},
 	function setName( _value )
 	{
@@ -2522,6 +2523,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Formations.onSerialize(_out);
 		_out.writeU8(this.m.VeteranPerks);
 		_out.writeBool(this.m.IsCommander);
+		_out.writeString(this.m.CampAssignment);
 
 	}
 
@@ -2616,6 +2618,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 48)
 		{
 			this.m.IsCommander = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.CampAssignment = _in.readString();
 		}
 
 	}

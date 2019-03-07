@@ -75,7 +75,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		DebugMap = false,
 		Campaign = "",
 		CommanderDied = null,
-		LegendsMod = null
+		LegendsMod = null,
+		Camp = null
 	},
 	function getPlayer()
 	{
@@ -476,6 +477,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Assets <- this.WeakTableRef(this.m.Assets);
 		this.m.LegendsMod = this.new("scripts/mods/legends_mod"); 
 		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
+		this.m.Camp = this.new("scripts/states/world/camp_manager");
+		this.World.Camp <- this.WeakTableRef(this.m.Camp);
 		this.onInitUI();
 		this.init();
 	}
@@ -605,6 +608,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.Root.setBackgroundTaskCallback(null);
 		this.m.LegendsMod = null;
 		this.World.LegendsMod = null;
+		this.m.Camp.destroy();
+		this.m.Camp = null;
+		this.World.Camp = null;		
 		this.onDestroyUI();
 		this.Sound.stopAmbience();
 	}
@@ -679,6 +685,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			if (!this.isPaused())
 			{
 				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
+				this.m.Camp.update(this);
 			}
 		}
 
@@ -1083,6 +1090,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
 		this.m.Assets.init();
+		this.m.Camp.init();
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 
 		if (this.m.CampaignSettings != null)
