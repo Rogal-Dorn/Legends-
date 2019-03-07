@@ -178,6 +178,7 @@ Beta 0.9.5
 *Poachers can spawn with bows as well as slings now
 *Fixed error that would prevent Orc elites from spawning
 *Fixed error that prevented scenarios from working
+*Fixed tool consumption rate error (was increasing rate instead of decrease). Fixed tooltips to show correct repair time.
 
 Beta 0.10
 *Adds Orc Behemoth
