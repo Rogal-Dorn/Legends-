@@ -1134,7 +1134,9 @@ gt.Const.Strings.PerkName <- {
 	vazl_ValaInscribeArmor = "Inscribe Armor",
 	vazl_ValaInscribeShield = "Inscribe Shield",
 	LegendGuideSteps = "Guide Steps",
-	LegendBerserkerRage = "Berserker Rage"
+	LegendBerserkerRage = "Berserker Rage",
+	LegendAssuredConquest = "Assured Conquest",
+	LegendTasteThePain = "Taste the Pain"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1288,8 +1290,10 @@ gt.Const.Strings.PerkDescription <- {
 	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe any helmet currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing helmets again.",
 	vazl_ValaInscribeArmor = "Allows the Vala to inscribe any armor currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing armors again.",
 	vazl_ValaInscribeShield = "Allows the Vala to inscribe any shield currently equipped by anyone in the company with a random rune sigil.\n\nPossibilities: none\n\nUpon success, she needs to wait 20 days before she can begin inscribing shields again.",
-	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all allies within 40 tiles",
-	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you hit, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. "
+	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all your allies",
+	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you hit, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. ",
+	LegendAssuredConquest = "+10% melee skill, melee defense and ranged defense when at confident morale",
+	LegendTasteThePain = "Whenever getting hurt would normally trigger a morale check, instead gain 10 morale"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

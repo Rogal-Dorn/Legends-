@@ -1,4 +1,4 @@
-this.legends_zombie_med_xbow <- this.inherit("scripts/entity/tactical/legend_zombie", {
+this.legends_zombie_high_xbow <- this.inherit("scripts/entity/tactical/legend_zombie", {
 	m = {},
 
 	function onInit()

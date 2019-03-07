@@ -66,7 +66,7 @@ gt.Const.CharacterBackgrounds <- [
 	"legend_necro_background"
 	"legend_witch_background"
 	"legend_healer_background"
-	"legend_beserker_background"
+	"legend_berserker_background"
 	"vazl_inventor_background"
 ];
 gt.Const.CharacterLaborerBackgrounds <- [

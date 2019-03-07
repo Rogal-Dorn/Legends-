@@ -151,3 +151,36 @@ Beta 9
 *Organized order of skills in toolbar
 *Rebalanced starting stats of all commander backgrounds.
 *Fix crash on inventory screen for hexen/firstborn contracts.
+
+
+Beta 0.9.4
+*Magic spell rework
+	-Each magic spell has it's own base Min/Max damage
+	-Min/Max damage is increased for every point of initiative over 100
+	-Ranged magic attacks use Range skill for hitchance
+	-Melee Magic attacks use Melee skill for hitchance
+*Reworkd Warlocks Wither, Rust and Deathtouch spells
+*Fixed Warlock Siphon giving health on attacks other than Siphon
+*Fixed being able to loot weapons off of Warlock summons
+*Berserk start gets 4 attributes with Stars.
+*Ranger start removes two start companions (roster slots still available) and give Guided Step perk instead (everyone in battle gets free pathfinder)
+*Medical supplies for Warlock summons will not be used during any contract that provides provisions.
+
+Beta 0.9.5
+*Lowers contract difficulty floor, making early game contracts easier
+*Raises contract difficulty roof, making late game contracts harder
+*Increases player strength scaling, making late game harder
+*Makes contract pay scale with player strength, making early game contracts pay less and late game pay more
+*Stops rabble spawning mid game, and makes them spawn in higher numbers
+*Increase ambush strength on caravans
+*Increases rabble hp, initiative and defenses, lowers their xp reward
+*Removes most early game weapons from zombies, goblin fighters and thugs
+*Poachers can spawn with bows as well as slings now
+*Fixed error that would prevent Orc elites from spawning
+*Fixed error that prevented scenarios from working
+
+Beta 0.10
+*Adds Orc Behemoth
+
+
+

@@ -47,7 +47,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				skeletonSummonLevel = 2;
 			}
 
-			this.m.Strength += ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2.0; 
+			this.m.Strength +=  9 + ((bro.getLevel() / 3) + (bro.getLevel() * 3.0)); 
 		}
 
 		if  (zombieSummonLevel == 0 && skeletonSummonLevel == 0)
@@ -93,7 +93,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			zCount = this.Math.floor(zCount / 2.0);
 			for (local i = 0; i < zCount; i = ++i)
 			{
-				this.m.Strength += ((zombieSummonLevel / 2) + (zombieSummonLevel - 1)) * 2.0;
+				this.m.Strength += 3 + (((zombieSummonLevel / 2) + (zombieSummonLevel - 1)) * 2.0);
 			}
 		}
 		if (sCount > 1)
@@ -101,7 +101,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			sCount = this.Math.floor(sCount / 2.0);
 			for (local i = 0; i < sCount; i = ++i)
 			{
-				this.m.Strength += ((skeletonSummonLevel / 2) + (skeletonSummonLevel - 1)) * 2.0;
+				this.m.Strength += 3 + (((skeletonSummonLevel / 2) + (skeletonSummonLevel - 1)) * 2.0);
 			}
 		}
 	}

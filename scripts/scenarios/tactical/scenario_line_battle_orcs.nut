@@ -159,10 +159,10 @@ this.scenario_line_battle_orcs <- this.inherit("scripts/scenarios/tactical/scena
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_young", x, x, 14, 14);
 		entity.setFaction(this.Const.Faction.Orcs);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_young", x, x, 15, 15);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_orc_elite", x, x, 15, 15);
 		entity.setFaction(this.Const.Faction.Orcs);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_young", x, x, 16, 16);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_orc_behemoth", x, x, 16, 16);
 		entity.setFaction(this.Const.Faction.Orcs);
 		entity.assignRandomEquipment();
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_berserker", x, x, 17, 17);

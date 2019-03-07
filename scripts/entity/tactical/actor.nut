@@ -1591,9 +1591,13 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 			if (this.m.MoraleState != this.Const.MoraleState.Ignore && damage > this.Const.Morale.OnHitMinDamage)
 			{
-				if (!this.isPlayerControlled() || !this.m.Skills.hasSkill("trait.deathwish") && !this.m.Skills.hasSkill("effects.berserker_mushrooms"))
+				if (!this.isPlayerControlled() || !this.m.Skills.hasSkill("trait.deathwish") && !this.m.Skills.hasSkill("effects.berserker_mushrooms") && !this.m.Skills.hasSkill("perk.legend_taste_the_pain")
 				{
 					this.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - this.getHitpoints() / this.getHitpointsMax()), this.Const.MoraleCheckType.Default, "", true);
+				}
+			   if (this.m.Skills.hasSkill("perk.legend_taste_the_pain"))
+				{
+				this.setMorale(this.getMorale() + 10);
 				}
 			}
 

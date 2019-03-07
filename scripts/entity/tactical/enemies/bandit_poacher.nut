@@ -55,8 +55,18 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
+		if (this.Math.rand(1, 100) <= 50)
+		{
 		this.m.Items.equip(this.new("scripts/items/weapons/legend_sling"));
 		this.m.Items.equip(this.new("scripts/items/ammo/bag_of_pebbles"));
+		}
+		else
+		{
+		this.m.Items.equip(this.new("scripts/items/weapons/wonky_bow"));
+		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		}
+
+
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
@@ -64,7 +74,7 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/legend_wooden_spear"));
+			this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 		}
 
 		this.m.Items.equip(this.new("scripts/items/armor/leather_wraps"));

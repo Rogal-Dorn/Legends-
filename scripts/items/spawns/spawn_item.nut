@@ -114,12 +114,12 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 	{
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			if (!bro.getSkills().hasSkill("perk.legends_conservation"))
+			if (!bro.getSkills().hasSkill("perk.legend_conservation"))
 			{
 				continue
 			}
 
-			local skill = bro.getSkills().getSkillByID("perk.legends_conservation")
+			local skill = bro.getSkills().getSkillByID("perk.legend_conservation")
 			return this.Math.floor(this.m.MedicinePerDay * skill.m.MedicinePerDayMult);
 		}
 		return this.m.MedicinePerDay;
@@ -145,6 +145,12 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 
 	function onNewDay()
 	{
+
+		if (!this.World.Assets.isUsingProvisions())
+		{
+			return;
+		}
+		
 		if (this.World.Assets.getMedicine() >= this.getMedicinePerDay()) {
 			this.World.Assets.addMedicine(-this.getMedicinePerDay());
 			if (this.m.Condition < this.m.ConditionMax) 

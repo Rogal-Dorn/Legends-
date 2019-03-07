@@ -1,10 +1,10 @@
-this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
+this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.LegendOrcElite;
+		this.m.Type = this.Const.EntityType.LegendOrcBehemoth;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.LegendOrcElite.XP;
+		this.m.XP = this.Const.Tactical.Actor.LegendOrcBehemoth.XP;
 		this.m.BloodSplatterOffset = this.createVec(0, 0);
 		this.m.DecapitateSplatterOffset = this.createVec(20, -20);
 		this.m.DecapitateBloodAmount = 3.0;
@@ -73,7 +73,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/orc_fatigue_02.wav",
 			"sounds/enemies/orc_fatigue_03.wav"
 		];
-		this.m.SoundPitch = 0.9;
+		this.m.SoundPitch = 0.6;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 1.25;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 1.0;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.75;
@@ -220,25 +220,25 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		this.m.Items.getAppearance().Body = "bust_orc_03_body";
+		this.m.Items.getAppearance().Body = "legend_orc_behemoth_body_01";
 		this.addSprite("socket").setBrush("bust_base_orcs");
 		local body = this.addSprite("body");
-		body.setBrush("bust_orc_03_body");
+		body.setBrush("legend_orc_behemoth_body_01");
 		body.varyColor(0.09, 0.09, 0.09);
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
-		injury_body.setBrush("bust_orc_03_body_injured");
+		injury_body.setBrush("legend_orc_behemoth_body_01_bloodied");
 		this.addSprite("armor");
 		local head = this.addSprite("head");
-		head.setBrush("bust_orc_03_head_0" + this.Math.rand(1, 3));
+		head.setBrush("legend_orc_behemoth_head_01");
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
-		injury.setBrush("bust_orc_03_head_injured");
+		injury.setBrush("bust_orc_01_head_bloodied");
 		this.addSprite("helmet");
 		local body_blood = this.addSprite("body_blood");
-		body_blood.setBrush("bust_orc_03_body_bloodied");
+		body_blood.setBrush("legend_orc_behemoth_01_body_bloodied");
 		body_blood.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.6;
@@ -248,12 +248,9 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/line_breaker"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_believer"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_perfect_focus"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_assured_conquest"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_taste_the_pain"));
 	}
 
 	function onFinish()
@@ -266,21 +263,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		local r;
 
 		if (this.Math.rand(1, 100) <= 10)
-		{
-			r = this.Math.rand(1, 2);
 
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_cleaver"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_axe"));
-			}
-
-		}
-		else
-		{
 			r = this.Math.rand(1, 3);
 
 			if (r == 1)
@@ -297,22 +280,12 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 			}
 					else if (r == 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullsmasher"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullbreaker"));
 			}
-		}
+		
 
-		if (this.Math.rand(1, 100) <= 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/shields/named/named_orc_heavy_shield"));
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/shields/greenskins/orc_heavy_shield"));
-		}
-
-
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warrior_heavy_armor"));
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warrior_heavy_helmet"));
+			this.m.Items.equip(this.new("scripts/items/armor/greenskins/legend_orc_behemoth_armor"));
+			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/legend_orc_behemoth_helmt"));
 	
 	}
 
