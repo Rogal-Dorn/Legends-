@@ -1,7 +1,11 @@
-this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
+this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 	m = {},
 	function create()
 	{
+		this.legend_magic_skill.create();
+		this.m.AdditionalAccuracy = 10;
+		this.m.DamageInitiativeMin = 15;
+		this.m.DamageInitiativeMax = 35;
 		this.m.ID = "actives.legend_deathtouch";
 		this.m.Name = "Death Touch";
 		this.m.Description = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim ";
@@ -19,51 +23,21 @@ this.legend_deathtouch <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = false;
 		this.m.DirectDamageMult = 1.0;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
 
-		function getTooltip()
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local CurrentInit = actor.getInitiative();
-		local MinDam =  CurrentInit - 100;
-		local MaxDam =  CurrentInit - 80;
-		local p = this.getContainer().getActor().getCurrentProperties();
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 4,
-				type = "text",
-				icon = "/ui/icons/health.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + MinDam + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + MaxDam + "[/color] damage, ignores armor. Damage output scales with your fatigue level"
-			}
-		];
-	}
-
-	function onUpdate( _properties )
-	{
-		local CurrentInit = this.getContainer().getActor().getInitiative();
-		_properties.DamageRegularMin += this.Math.floor(CurrentInit - 100);
-		_properties.DamageRegularMax += this.Math.floor(CurrentInit - 80);
-		_properties.IsIgnoringArmorOnAttack = true;
+		this.legend_magic_skill.onAnySkillUsed(_skill, _targetEntity, _properties )
+		if (_skill == this)
+		{
+			_properties.IsIgnoringArmorOnAttack = true;
+		}
 	}
 
 	function onUse( _user, _targetTile )

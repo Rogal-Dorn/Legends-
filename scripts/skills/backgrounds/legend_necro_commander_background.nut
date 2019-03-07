@@ -17,7 +17,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		}
 		else if (r == 2)
 		{
-			this.m.Name = "Sorceror";
+			this.m.Name = "Sorcerer";
 		}
 		else if (r == 3)
 		{

@@ -124,6 +124,10 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
+		if (_skill != this)
+		{
+			return;
+		}
 		local actor = this.getContainer().getActor();
 		local maxHP = actor.getHitpointsMax();
 		actor.setHitpoints(this.Math.min(actor.getHitpoints() + _damageInflictedHitpoints, maxHP));
