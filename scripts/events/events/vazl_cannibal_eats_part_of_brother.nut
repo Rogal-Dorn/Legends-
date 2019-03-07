@@ -176,7 +176,7 @@ this.vazl_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event", 
 
 
 		this.m.Dinner = dinner_candidates[this.Math.rand(0, dinner_candidates.len() - 1)];
-		this.m.Score = 5.5 + (dinner_candidates.len() / 2);
+		this.m.Score = 5.5 + (dinner_candidates.len() / 2.00);
 	}
 
 	function onPrepare()

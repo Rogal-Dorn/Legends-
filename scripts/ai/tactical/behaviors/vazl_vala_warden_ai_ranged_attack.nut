@@ -155,17 +155,6 @@ this.vazl_vala_warden_ai_ranged_attack <- this.inherit("scripts/ai/tactical/beha
 				score = score + s.Score;
 			}
 
-			local blockedTiles = this.Const.Tactical.Common.getBlockedTiles(myTile, targetTile, _entity.getFaction());
-
-			foreach( tile in blockedTiles )
-			{
-				if (!tile.IsOccupiedByActor || tile.getEntity().isAlliedWith(_entity))
-				{
-					score = score * this.Const.AI.Behavior.AttackLineOfFireBlockedMult;
-					break;
-				}
-			}
-
 			if (myTile.getDistanceTo(targetTile) > 1)
 			{
 				for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
@@ -184,16 +173,12 @@ this.vazl_vala_warden_ai_ranged_attack <- this.inherit("scripts/ai/tactical/beha
 						{
 							if (tile.getEntity().isAlliedWith(_entity))
 							{
-								if (this.getProperties().TargetPriorityHittingAlliesMult < 1.0)
-								{
-									score = score - 1.0 / 6.0 * 4.0 * (1.0 - this.getProperties().TargetPriorityHittingAlliesMult);
-								}
-
+								score = score + 1.0 / 2.0 * this.queryTargetValue(_entity, tile.getEntity(), null);
 								alliesAdjacent = ++alliesAdjacent;
 							}
 							else
 							{
-								score = score + 1.0 / 6.0 * this.queryTargetValue(_entity, tile.getEntity(), null) * this.Const.AI.Behavior.AttackRangedHitBystandersMult;
+								score = score + 1.0 / 1.0 * this.queryTargetValue(_entity, tile.getEntity(), null);
 								opponentsAdjacent = ++opponentsAdjacent;
 							}
 						}

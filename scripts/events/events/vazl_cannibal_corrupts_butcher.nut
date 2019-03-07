@@ -65,7 +65,7 @@ this.vazl_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 
 		this.m.Cannibal = cannibal_candidates[this.Math.rand(0, cannibal_candidates.len() - 1)];
 		this.m.Butcher = butcher_candidates[this.Math.rand(0, butcher_candidates.len() - 1)];
-		this.m.Score = 5 + (((this.m.Cannibal.getLevel() + this.m.Butcher.getLevel()) / this.Const.LevelXP.len()) * 5);
+		this.m.Score = 5 + (((this.m.Cannibal.getLevel() + this.m.Butcher.getLevel() + 0.00) * 5.00) / this.Const.LevelXP.len());
 	}
 
 	function onPrepare()

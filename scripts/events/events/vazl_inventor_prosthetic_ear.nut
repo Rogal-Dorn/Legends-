@@ -156,7 +156,7 @@ this.vazl_inventor_prosthetic_ear <- this.inherit("scripts/events/event", {
 		}
 
 
-		this.m.Score = 5 + ((this.m.Inventor.getLevel() / this.Const.LevelXP.len()) * 10);
+		this.m.Score = 5 + ((this.m.Inventor.getLevel() * 10.00) / this.Const.LevelXP.len());
 	}
 
 	function onPrepare()

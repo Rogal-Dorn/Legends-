@@ -92,7 +92,7 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.Item.m.WardenEntity != null)
 		{
-			local reduction = 1 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400));
+			local reduction = 1 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00));
 
 			if (reduction <= 0.5)
 			{
@@ -111,7 +111,7 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400);
+		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00);
 
 		if (transfer >= 0.5)
 		{

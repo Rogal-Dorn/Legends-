@@ -192,13 +192,6 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 		WardenStats.setValues(NewWardenStats);
 		this.m.Hitpoints = WardenStats.Hitpoints;
 		this.m.CurrentProperties = WardenStats;
-
-		this.logInfo("Warden HP " + this.m.CurrentProperties.Hitpoints);
-		this.logInfo("Warden mSkill " + this.m.CurrentProperties.MeleeSkill);
-		this.logInfo("Warden mDef " + this.m.CurrentProperties.MeleeDefense);
-		this.logInfo("Warden rSkill " + this.m.CurrentProperties.RangedSkill);
-		this.logInfo("Warden rDef " + this.m.CurrentProperties.RangedDefense);
-		this.logInfo("Warden Init " + this.m.CurrentProperties.Initiative);
 	}
 
 
