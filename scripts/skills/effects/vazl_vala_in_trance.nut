@@ -8,7 +8,7 @@ this.vazl_vala_in_trance <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "status_effect_53_mini";
 		this.m.Overlay = "status_effect_53";
 		this.m.Type = this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.Last;
+		this.m.Order = this.Const.SkillOrder.VeryLast + 5;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
@@ -36,7 +36,7 @@ this.vazl_vala_in_trance <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "This character is currently in trance"
+					text = "This character is currently in trance."
 				}
 			];
 		}

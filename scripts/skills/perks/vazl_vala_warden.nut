@@ -10,7 +10,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Manifestation of the Vala's warden.";
 		this.m.Icon = "ui/perks/vazl_vala_warden.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.VeryLast;
+		this.m.Order = this.Const.SkillOrder.VeryLast + 10;
 		this.m.IsSerialized = true;
 		this.m.IsActive = false;
 		this.m.IsTargeted = false;
@@ -42,7 +42,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 			local WardenRangedSkill = this.Math.round(this.m.WardenEntity.m.CurrentProperties.RangedSkill);
 			local WardenRangedDefense = this.Math.round(this.m.WardenEntity.m.CurrentProperties.RangedDefense);
 			local WardenInitiative = this.Math.round(this.m.WardenEntity.m.CurrentProperties.Initiative);
-			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4));
+			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4.00));
 
 			if (SpiritualBondReduction >= 50)
 			{

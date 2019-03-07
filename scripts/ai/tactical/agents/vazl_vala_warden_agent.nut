@@ -12,7 +12,7 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
 		this.m.Properties.TargetPriorityDamageMult = 0.2;
 		this.m.Properties.TargetPriorityFleeingMult = 0.6;
-		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
+		this.m.Properties.TargetPriorityHittingAlliesMult = 0.0;
 		this.m.Properties.TargetPriorityFinishTreshhold = 1.2;
 		this.m.Properties.TargetPriorityFinishOpponentMult = 3.0;
 		this.m.Properties.TargetPriorityFinishArmorMult = 1.5;
@@ -36,9 +36,11 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.0;
 		this.m.Properties.EngageLockDownTargetMult = 1.0;
 		this.m.Properties.EngageFlankingMult = 1.0;
+//		this.m.Properties.EngageRangeIdeal = 1;
+//		this.m.Properties.EngageRangeMax = 1;
+		this.m.Properties.EngageRangeIdeal = 3;
+		this.m.Properties.EngageRangeMax = 3;
 		this.m.Properties.EngageRangeMin = 1;
-		this.m.Properties.EngageRangeMax = 1;
-		this.m.Properties.EngageRangeIdeal = 1;
 		this.m.Properties.EngageTileLimit = 0;
 		this.m.Properties.EngageEnemiesInLinePreference = 1;
 		this.m.Properties.PreferWait = false;
@@ -71,22 +73,22 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 				continue;
 			}
 
-			if (t.Actor.getMoraleState() != this.Const.MoraleState.Fleeing && t.Actor.getTile().getDistanceTo(myTile) <= 5)
+			if (t.Actor.getTile().getDistanceTo(myTile) <= 5)
 			{
 				opponentNearby = true;
 				break;
 			}
 		}
 
-		if (opponentNearby)
-		{
-			this.m.Properties.EngageRangeIdeal = 3;
-			this.m.Properties.EngageRangeMax = 3;
-		}
-		else
-		{
-			this.m.Properties.EngageRangeIdeal = 1;
-			this.m.Properties.EngageRangeMax = 1;
-		}
+//		if (opponentNearby)
+//		{
+//			this.m.Properties.EngageRangeIdeal = 3;
+//			this.m.Properties.EngageRangeMax = 3;
+//		}
+//		else
+//		{
+//			this.m.Properties.EngageRangeIdeal = 1;
+//			this.m.Properties.EngageRangeMax = 1;
+//		}
 	}
 });

@@ -61,7 +61,7 @@ this.vazl_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "Unable to enforce Zone of Control"
+					text = "Unable to enforce Zone of Control."
 				}
 			];
 		}

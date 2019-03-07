@@ -76,12 +76,12 @@ gt.Const.Perks.PerksVala <- [
 	],
 	[
 		{
-			ID = "perk.anticipation",
-			Script = "scripts/skills/perks/perk_anticipation",
-			Name = this.Const.Strings.PerkName.Anticipation,
-			Tooltip = this.Const.Strings.PerkDescription.Anticipation,
-			Icon = "ui/perks/perk_10.png",
-			IconDisabled = "ui/perks/perk_10_sw.png"
+			ID = "perk.vazl_vala_precognition",
+			Script = "scripts/skills/perks/vazl_vala_precognition",
+			Name = this.Const.Strings.PerkName.vazl_ValaPrecognition,
+			Tooltip = this.Const.Strings.PerkDescription.vazl_ValaPrecognition,
+			Icon = "ui/perks/vazl_vala_precognition.png",
+			IconDisabled = "ui/perks/vazl_vala_precognition_sw.png"
 		}
 	],
 	[

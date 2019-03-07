@@ -75,7 +75,7 @@ this.vazl_cannibal_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		this.m.Score = 10 + (((brotherlevels / totalbrothers) / this.Const.LevelXP.len()) * 5);
+		this.m.Score = 10 + ((brotherlevels / totalbrothers * 5.00) / this.Const.LevelXP.len());
 	}
 
 	function onPrepare()

@@ -74,7 +74,7 @@ this.vazl_vala_inscribe_shield <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can start inscribing another shield"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can start inscribing another shield."
 			});
 		}
 
@@ -109,7 +109,7 @@ this.vazl_vala_inscribe_shield <- this.inherit("scripts/skills/skill", {
 
 		if ((this.getTimeSinceInscriptionTry() >= this.m.InscriptionTryCooldown && this.getDaysSinceInscriptionSuccess() >= this.m.InscriptionSuccessCooldown && this.World.Assets.getStash().hasEmptySlot()) || (this.m.FirstTime == true && this.World.Assets.getStash().hasEmptySlot()))
 		{
-			local expertise = 15 + ((this.getContainer().getActor().getLevel() / this.Const.LevelXP.len()) * 15);
+			local expertise = 15 + ((this.getContainer().getActor().getLevel() * 15.00) / this.Const.LevelXP.len());
 
 			if ((this.Math.rand(1, 400) <= expertise) || this.m.FirstTime == true)
 			{
