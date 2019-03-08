@@ -35,3 +35,7 @@ while read -r line; do
     fi
 
 done <<< "$FILES"
+
+cd ../bin
+./masscompile.bat "c:\Steam\steamapps\common\Battle Brothers\data\scripts"
+cd ../battlebrothers

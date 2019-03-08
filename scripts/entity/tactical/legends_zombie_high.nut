@@ -116,11 +116,6 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 			armor = this.new("scripts/items/armor/decayed_reinforced_mail_hauberk");
 		}
 
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			armor.setArmor(armor.getArmorMax() / 2 - 1);
-		}
-
 		this.m.Items.equip(armor);
 
 		if (this.Math.rand(1, 100) <= 90)
@@ -146,11 +141,6 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 			else if (r == 3)
 			{
 				helmet = this.new("scripts/items/helmets/decayed_great_helm");
-			}
-
-			if (this.Math.rand(1, 100) <= 33)
-			{
-				helmet.setArmor(helmet.getArmorMax() / 2 - 1);
 			}
 
 			this.m.Items.equip(helmet);

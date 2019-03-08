@@ -182,19 +182,19 @@ Beta 0.9.5
 
 
 Beta 0.9.5 b 
-changes reward scaling, making the late game harder
-Fixes staves not working at two tiles 
-decreases sling range, increases accuracy slightly
-Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
-miasma, chain lightning, firefield, miasma set to ranged
-miasma and firefield reduced to two rounds from three
-firefield and chain lightning require a staff
-Triple strike requires a ranged weapon
-Triple strike buffed to 0.5 damage per strike 
-Discover location payout increased, decreased time before hint
-Berserker commanders can no longer be converted into cultists
-
-
+*Reduces late game reward payout scaling.
+*Fixes staves not working at two tiles 
+*Decreases sling range, increases accuracy slightly
+*Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
+*Miasma, chain lightning, firefield, miasma set to ranged
+*Miasma and firefield reduced to two rounds from three
+*Firefield and chain lightning require a staff
+*Triple strike requires a ranged weapon
+*Triple strike buffed to 0.5 damage per strike 
+*Discover location payout increased, decreased time before hint
+*Berserker commanders can no longer be converted into cultists
+*Warlock zombie summons now alway spawn with full armor health
+*Reduced Warlock low tier zombie summon with no weapons chance.
 
 Beta 0.10
 *Adds Orc Behemoth
