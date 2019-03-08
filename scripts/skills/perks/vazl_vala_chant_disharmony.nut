@@ -106,7 +106,6 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		if (actor.getSkills().hasSkill("effects.vazl_vala_currently_chanting"))
 		{
 			actor.getSkills().removeByID("effects.vazl_vala_currently_chanting");
-			actor.getSkills().update();
 		}
 
 		foreach (tar in targets)
@@ -116,7 +115,6 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 				if (t.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
 				{
 					t.getSkills().removeByID("effects.vazl_vala_chant_disharmony_effect");
-					t.getSkills().update();
 				}
 			}
 		}
@@ -131,7 +129,6 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		if (actor.getSkills().hasSkill("effects.vazl_vala_currently_chanting"))
 		{
 			actor.getSkills().removeByID("effects.vazl_vala_currently_chanting");
-			actor.getSkills().update();
 		}
 
 		foreach (tar in targets)
@@ -141,7 +138,6 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 				if (t.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
 				{
 					t.getSkills().removeByID("effects.vazl_vala_chant_disharmony_effect");
-					t.getSkills().update();
 				}
 			}
 		}
@@ -156,7 +152,6 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		if (actor.getSkills().hasSkill("effects.vazl_vala_currently_chanting"))
 		{
 			actor.getSkills().removeByID("effects.vazl_vala_currently_chanting");
-			actor.getSkills().update();
 		}
 
 		foreach (tar in targets)
@@ -166,7 +161,6 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 				if (t.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
 				{
 					t.getSkills().removeByID("effects.vazl_vala_chant_disharmony_effect");
-					t.getSkills().update();
 				}
 			}
 		}
@@ -224,7 +218,6 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			if (!actor.getSkills().hasSkill("effects.vazl_vala_currently_chanting"))
 			{
 				actor.getSkills().add(this.new("scripts/skills/effects/vazl_vala_currently_chanting"));
-				actor.getSkills().update();
 			}
 
 			foreach (tar in targets)
@@ -233,8 +226,9 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 				{
 					if (!t.isAlliedWith(actor) && !t.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
 					{
-						t.getSkills().add(this.new("scripts/skills/effects/vazl_vala_chant_disharmony_effect"));
-						t.getSkills().update();
+						local disharmony = this.new("scripts/skills/effects/vazl_vala_chant_disharmony_effect");
+						disharmony.setVala(this.getContainer().getActor());
+						t.getSkills().add(disharmony);
 					}
 				}
 			}

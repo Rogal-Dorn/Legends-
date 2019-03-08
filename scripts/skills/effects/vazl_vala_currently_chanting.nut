@@ -12,7 +12,6 @@ this.vazl_vala_currently_chanting <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
-//		this.m.IsRemovedAfterBattle = true;
 	}
 
 
@@ -44,6 +43,12 @@ this.vazl_vala_currently_chanting <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
+	}
+
+
+	function onUpdate( _properties )
+	{
+		_properties.TargetAttractionMult *= 1.25;
 	}
 
 

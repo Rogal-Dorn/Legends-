@@ -6,6 +6,8 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.ID = this.Const.AI.Agent.ID.Ghost;
 
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 1.0;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.AttackBow] = 0.67;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.AttackDefault] = 1.0;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.5;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.3;
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
@@ -50,40 +52,10 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/vazl_vala_warden_ai_melee_attack"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/vazl_vala_warden_ai_ranged_attack"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/vazl_vala_warden_ai_protect"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
 	}
 
 	function onUpdate()
 	{
 		this.getStrategy().compileKnownOpponents();
-
-		local myTile = this.getActor().getTile();
-		local opponentNearby = false;
-		local opponents = this.getKnownOpponents();
-
-		foreach( t in opponents )
-		{
-			if (t.Actor.isNull())
-			{
-				continue;
-			}
-
-			if (t.Actor.getTile().getDistanceTo(myTile) <= 5)
-			{
-				opponentNearby = true;
-				break;
-			}
-		}
-
-		if (opponentNearby)
-		{
-			this.m.Properties.EngageRangeIdeal = 3;
-			this.m.Properties.EngageRangeMax = 3;
-		}
-		else
-		{
-			this.m.Properties.EngageRangeIdeal = 1;
-			this.m.Properties.EngageRangeMax = 1;
-		}
 	}
 });

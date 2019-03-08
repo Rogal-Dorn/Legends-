@@ -56,13 +56,13 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [-4, -6],
-			Bravery = [8, 12],
-			Stamina = [6, 9],
+			Bravery = [10, 15],
+			Stamina = [8, 12],
 			MeleeSkill = [0, 0],
 			RangedSkill = [0, 0],
 			MeleeDefense = [0, 0],
 			RangedDefense = [0, 0],
-			Initiative = [10, 15]
+			Initiative = [6, 9]
 		};
 		return c;
 	}

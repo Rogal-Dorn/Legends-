@@ -1,5 +1,20 @@
 this.vazl_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Vala = null
+	},
+	function setVala(_c)
+	{
+		if (typeof _c == "instance")
+		{
+			this.m.Vala = _c;
+		}
+		else
+		{
+			this.m.Vala = this.WeakTableRef(_c);
+		}
+	}
+
+
 	function create()
 	{
 		this.m.ID = "effects.vazl_vala_chant_disharmony_effect";
@@ -12,33 +27,14 @@ this.vazl_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
-//		this.m.IsRemovedAfterBattle = true;
 	}
 
 
 	function isHidden()
 	{
-		local AllBrothers = this.World.getPlayerRoster().getAll();
-		local ValaTile = null;		
-
-		foreach (bro in AllBrothers)
+		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 2)
 		{
-			if (bro.isAlive() && bro.isPlacedOnMap() && bro.getBackground().getID() == "background.vazl_vala")
-			{
-				ValaTile = bro.getTile();
-			}
-		}
-
-		if (ValaTile != null)
-		{
-			if (ValaTile.getDistanceTo(this.getContainer().getActor().getTile()) <= 2)
-			{
-				return false;
-			}
-			else
-			{
-				return true;
-			}
+			return false;
 		}
 		else
 		{
@@ -72,8 +68,41 @@ this.vazl_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onMovementCompleted()
+	{
+		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 2)
+		{
+			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
+		}
+		else
+		{
+			this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+		}
+	}
+
+
 	function onUpdate( _properties )
 	{
+		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 2)
+		{
+			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
+		}
+		else
+		{
+			this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+		}
+	}
+
+
+	function onRemoved()
+	{
+		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+	}
+
+
+	function onDeath()
+	{
+		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 	}
 
 

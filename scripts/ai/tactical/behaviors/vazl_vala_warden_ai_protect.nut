@@ -2,7 +2,6 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 	m = {
 		TargetTile = null,
 		IsWaitingAfterMove = false,
-		IsWaitingBeforeMove = false,
 		IsHoldingPosition = true,
 		IsDoneThisTurn = false
 	},
@@ -20,8 +19,12 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 		this.m.TargetTile = null;
 		this.m.IsWaitingAfterMove = false;
 		this.m.IsHoldingPosition = false;
-		this.m.IsWaitingBeforeMove = false;
-		local score = 1.0;
+		local score = this.getProperties().BehaviorMult[this.m.ID];
+
+		if (_entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions()))
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
 
 		if (_entity.getActionPoints() < this.Const.Movement.AutoEndTurnBelowAP || score == 0.0)
 		{
@@ -47,8 +50,6 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 
 		local AllBrothers = this.World.getPlayerRoster().getAll();
 		local vips = 0;
-		local vipStillToMove = 0;
-		local vipStillToMoveAndAdjacent = 0;
 
 		foreach( a in AllBrothers )
 		{
@@ -62,16 +63,6 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 				continue;
 			}
 
-			if (!a.isTurnDone() && a.getActionPoints() >= 4 && !a.getCurrentProperties().IsStunned && !a.getCurrentProperties().IsRooted)
-			{
-				vipStillToMove = ++vipStillToMove;
-
-				if (a.getTile().getDistanceTo(myTile) == 1)
-				{
-					vipStillToMoveAndAdjacent = ++vipStillToMoveAndAdjacent;
-				}
-			}
-
 			vips = ++vips;
 			break;
 		}
@@ -81,26 +72,19 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if ((vipStillToMoveAndAdjacent > 0 || vipStillToMoveAndAdjacent == 0 && vipStillToMove >= 1) && this.Tactical.TurnSequenceBar.canEntityWait(_entity))
-		{
-			this.m.IsWaitingBeforeMove = true;
-		}
-		else
-		{
-			local func = this.selectBestTargetTile(_entity);
+		local func = this.selectBestTargetTile(_entity);
 
-			while (resume func == null)
-			{
-				yield null;
-			}
-
-			if (this.m.TargetTile == null)
-			{
-				return this.Const.AI.Behavior.Score.Zero;
-			}
+		while (resume func == null)
+		{
+			yield null;
 		}
 
-		if (!this.m.IsWaitingBeforeMove && myTile.isSameTileAs(this.m.TargetTile))
+		if (this.m.TargetTile == null)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		if (myTile.isSameTileAs(this.m.TargetTile))
 		{
 			if (this.m.IsHoldingPosition)
 			{
@@ -140,20 +124,6 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 
 	function onExecute( _entity )
 	{
-		if (this.m.IsWaitingBeforeMove)
-		{
-			if (this.Tactical.TurnSequenceBar.entityWaitTurn(_entity))
-			{
-				if (this.Const.AI.VerboseMode)
-				{
-					this.logInfo("* " + _entity.getName() + ": Waiting until others have moved!");
-				}
-
-				this.m.TargetTile = null;
-				return true;
-			}
-		}
-
 		if (this.m.IsHoldingPosition)
 		{
 			return true;
@@ -246,13 +216,13 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 				local dist = o.Actor.getTile().getDistanceTo(importantAllyTile);
 				local score = 1.0;
 
-				if (dist <= 11 && this.isRangedUnit(o.Actor))
+				if (dist <= 12 && this.isRangedUnit(o.Actor))
 				{
 					score = 1.0;
 				}
-				else if (dist <= 6)
+				else if (dist <= 12)
 				{
-					score = 0.5;
+					score = this.Math.maxf(0.0, 1.0 - dist / 12.0);
 				}
 				else
 				{

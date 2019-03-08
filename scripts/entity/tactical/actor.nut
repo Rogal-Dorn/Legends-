@@ -2443,25 +2443,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function onMovementInZoneOfControl( _entity, _isOnEnter )
 	{
-		local AllBrothers = this.World.getPlayerRoster().getAll();
-		local ValaTile = null;		
-
-		foreach (bro in AllBrothers)
-		{
-			if (bro.isAlive() && bro.isPlacedOnMap() && bro.getBackground().getID() == "background.vazl_vala")
-			{
-				ValaTile = bro.getTile();
-			}
-		}
-
-		if (ValaTile != null)
-		{
-			if (ValaTile.getDistanceTo(this.getTile()) <= 2 && this.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
-			{
-				return false;
-			}
-		}
-
 		if (!this.m.IsActingEachTurn)
 		{
 			return false;
@@ -2497,25 +2478,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function onAttackOfOpportunity( _entity, _isOnEnter )
 	{
-		local AllBrothers = this.World.getPlayerRoster().getAll();
-		local ValaTile = null;		
-
-		foreach (bro in AllBrothers)
-		{
-			if (bro.isAlive() && bro.isPlacedOnMap() && bro.getBackground().getID() == "background.vazl_vala")
-			{
-				ValaTile = bro.getTile();
-			}
-		}
-
-		if (ValaTile != null)
-		{
-			if (ValaTile.getDistanceTo(this.getTile()) <= 2 && this.getSkills().hasSkill("effects.vazl_vala_chant_disharmony_effect"))
-			{
-				return false;
-			}
-		}
-
 		if (!this.m.IsActingEachTurn)
 		{
 			return false;

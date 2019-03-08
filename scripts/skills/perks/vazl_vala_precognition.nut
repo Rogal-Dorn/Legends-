@@ -55,15 +55,15 @@ this.vazl_vala_precognition <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		local RerollBonus = 10 + ((this.getContainer().getActor().getLevel() * 10.00) / this.Const.LevelXP.len());
+		local RerollBonus = 10.0 + ((this.getContainer().getActor().getLevel() * 10.00) / this.Const.LevelXP.len());
 
 		if (RerollBonus >= 20)
 		{
 			RerollBonus = 20;
 		}
 
-		local Attraction = 10 + ((this.getContainer().getActor().getLevel() * 10.00) / this.Const.LevelXP.len());
-		local AttractionMult = 1 - ((Attraction + 0.00) / 100);
+		local Attraction = 10.0 + ((this.getContainer().getActor().getLevel() * 10.00) / this.Const.LevelXP.len());
+		local AttractionMult = 1.0 - ((Attraction + 0.00) / 100.00);
 
 		if (AttractionMult <= 0.8)
 		{

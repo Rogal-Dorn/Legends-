@@ -15,16 +15,6 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function setName( _n )
-	{
-		this.m.Name = _n;
-	}
-	function getName()
-	{
-		return this.m.Name;
-	}
-
-
 	function create()
 	{
 		this.m.ID = "effects.vazl_vala_spiritual_bond_effect";
@@ -38,7 +28,6 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = true;
-//		this.m.IsRemovedAfterBattle = true;
 	}
 
 
@@ -93,7 +82,7 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.Item.m.WardenEntity != null)
 		{
-			local reduction = 1 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00));
+			local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
 
 			if (reduction <= 0.5)
 			{
@@ -117,7 +106,7 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00);
+		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00);
 
 		if (transfer >= 0.5)
 		{

@@ -56,10 +56,10 @@ this.vazl_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
-				_properties.DamageRegularMin = 10;
-				_properties.DamageRegularMax = 15;
+				_properties.DamageRegularMin = 8;
+				_properties.DamageRegularMax = 12;
 				_properties.IsIgnoringArmorOnAttack = true;
-				_properties.HitChanceAdditionalWithEachTile -= 2;
+				_properties.HitChanceAdditionalWithEachTile -= 1;
 			}
 		}
 	}
