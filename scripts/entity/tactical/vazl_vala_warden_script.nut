@@ -174,15 +174,15 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local NewWardenStats = {
 			XP = 0,
-			Hitpoints = this.Math.ceil((_vala.Hitpoints * 0.75) + (_vala.Bravery * 0.75)),
-			ActionPoints = 6,
+			Hitpoints = this.Math.ceil(50 + (_vala * 1.50)),
+			ActionPoints = 9,
 			Bravery = 200,
 			Stamina = 200,
-			MeleeSkill = this.Math.ceil((_vala.MeleeSkill * 0.75) + (_vala.Bravery * 0.375)),
-			RangedSkill = this.Math.ceil((_vala.RangedSkill * 0.75) + (_vala.Bravery * 0.375)),
-			MeleeDefense = this.Math.ceil((_vala.MeleeDefense * 0.75) + (_vala.Bravery * 0.375)),
-			RangedDefense = this.Math.ceil((_vala.RangedDefense * 0.75) + (_vala.Bravery * 0.375)),
-			Initiative = this.Math.ceil((_vala.Initiative * 0.375) + (_vala.Bravery * 0.375)),
+			MeleeSkill = this.Math.ceil(47 + (_vala * 0.25)),
+			RangedSkill = this.Math.ceil(32 + (_vala * 0.33)),
+			MeleeDefense = this.Math.ceil(0 + (_vala * 0.33)),
+			RangedDefense = this.Math.ceil(0 + (_vala * 0.33)),
+			Initiative = this.Math.ceil(50 + (_vala * 0.33)),
 			FatigueEffectMult = 0.0,
 			MoraleEffectMult = 0.0,
 			Armor = [0,	0]
@@ -199,7 +199,7 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local WardenProperties = {
 			XP = 0,
-			ActionPoints = 6,
+			ActionPoints = 9,
 			Hitpoints = 1,
 			Bravery = 200,
 			Stamina = 200,

@@ -42,7 +42,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 			local WardenRangedSkill = this.m.WardenEntity.m.CurrentProperties.RangedSkill;
 			local WardenRangedDefense = this.m.WardenEntity.m.CurrentProperties.RangedDefense;
 			local WardenInitiative = this.m.WardenEntity.m.CurrentProperties.Initiative;
-			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4.00));
+			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 5.00));
 
 			if (SpiritualBondReduction >= 50)
 			{
@@ -72,17 +72,14 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 				text = "The Warden has the Steel Brow and Anticipation perks."
 			});
 
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_spiritual_bond"))
+			if (this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
 			{
-				if (this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
-				{
-					tooltip.push({
-						id = 8,
-						type = "text",
-						icon = "ui/icons/special.png",
-						text = "The strong bond between the Vala and her Warden makes the Warden absorb " + SpiritualBondReduction + "% of the Vala\'s incoming health damage."
-					});
-				}
+				tooltip.push({
+					id = 8,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "The strong bond between the Vala and her Warden makes the Warden absorb " + SpiritualBondReduction + "% of the Vala\'s incoming health damage."
+				});
 			}
 
 			return tooltip;
@@ -141,10 +138,9 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 				entity.setName(this.getContainer().getActor().m.Name + "\'s Warden");
 				entity.setFaction(this.Const.Faction.PlayerAnimals);
 				entity.setItem(this);
-				entity.setWardenStats(this.getContainer().getActor().getCurrentProperties());
+				entity.setWardenStats(this.getContainer().getActor().getCurrentProperties().Bravery);
 				this.m.WardenSummonSpent = true;
 				this.m.WardenEntity = entity;
-				this.Sound.play("sounds/enemies/ghost_death_01.wav");
 
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_spiritual_bond"))
 				{
@@ -218,6 +214,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 					]
 				};
 				this.Tactical.spawnParticleEffect(false, effect.Brushes, this.m.WardenEntity.getTile(), effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
+				this.Sound.play("sounds/enemies/ghost_death_01.wav");
 			}
 		}
 	}
@@ -233,12 +230,9 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 		this.m.WardenSummonSpent = false;
 		this.m.WardenEntity = null;
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_spiritual_bond"))
+		if (this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
 		{
-			if (this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
-			{
-				this.getContainer().getActor().getSkills().removeByID("effects.vazl_vala_spiritual_bond_effect");
-			}
+			this.getContainer().getActor().getSkills().removeByID("effects.vazl_vala_spiritual_bond_effect");
 		}
 	}
 });
