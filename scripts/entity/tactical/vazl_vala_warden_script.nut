@@ -174,15 +174,15 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local NewWardenStats = {
 			XP = 0,
-			Hitpoints = this.Math.round((_vala.Hitpoints * 1.00) + (_vala.Bravery * 0.50)),
+			Hitpoints = this.Math.ceil((_vala.Hitpoints * 0.75) + (_vala.Bravery * 0.75)),
 			ActionPoints = 6,
 			Bravery = 200,
 			Stamina = 200,
-			MeleeSkill = this.Math.round((_vala.MeleeSkill * 1.00) + (_vala.Bravery * 0.25)),
-			RangedSkill = this.Math.round((_vala.RangedSkill * 1.00) + (_vala.Bravery * 0.25)),
-			MeleeDefense = this.Math.round((_vala.MeleeDefense * 1.00) + (_vala.Bravery * 0.25)),
-			RangedDefense = this.Math.round((_vala.RangedDefense * 1.00) + (_vala.Bravery * 0.33)),
-			Initiative = this.Math.round((_vala.Initiative * 0.50) + (_vala.Bravery * 0.25)),
+			MeleeSkill = this.Math.ceil((_vala.MeleeSkill * 0.75) + (_vala.Bravery * 0.375)),
+			RangedSkill = this.Math.ceil((_vala.RangedSkill * 0.75) + (_vala.Bravery * 0.375)),
+			MeleeDefense = this.Math.ceil((_vala.MeleeDefense * 0.75) + (_vala.Bravery * 0.375)),
+			RangedDefense = this.Math.ceil((_vala.RangedDefense * 0.75) + (_vala.Bravery * 0.375)),
+			Initiative = this.Math.ceil((_vala.Initiative * 0.375) + (_vala.Bravery * 0.375)),
 			FatigueEffectMult = 0.0,
 			MoraleEffectMult = 0.0,
 			Armor = [0,	0]
@@ -221,7 +221,7 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToKnockBackAndGrab = true;
 		b.IsImmuneToStun = true;
 		b.IsImmuneToRoot = true;
-		b.IsImmuneToZoneOfControl = true;
+		b.IsImmuneToZoneOfControl = false;
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
@@ -253,9 +253,11 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(-5, -5));
+
 		this.m.Skills.add(this.new("scripts/skills/actives/vazl_vala_warden_pale_touch"));
 		this.m.Skills.add(this.new("scripts/skills/actives/vazl_vala_warden_wail"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+		// additional skills based on Vala's daily swap?
 	}
 });

@@ -36,12 +36,12 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.isHidden())
 		{
-			local WardenHitpoints = this.Math.round(this.m.WardenEntity.m.CurrentProperties.Hitpoints);
-			local WardenMeleeSkill = this.Math.round(this.m.WardenEntity.m.CurrentProperties.MeleeSkill);
-			local WardenMeleeDefense = this.Math.round(this.m.WardenEntity.m.CurrentProperties.MeleeDefense);
-			local WardenRangedSkill = this.Math.round(this.m.WardenEntity.m.CurrentProperties.RangedSkill);
-			local WardenRangedDefense = this.Math.round(this.m.WardenEntity.m.CurrentProperties.RangedDefense);
-			local WardenInitiative = this.Math.round(this.m.WardenEntity.m.CurrentProperties.Initiative);
+			local WardenHitpoints = this.m.WardenEntity.m.CurrentProperties.Hitpoints;
+			local WardenMeleeSkill = this.m.WardenEntity.m.CurrentProperties.MeleeSkill;
+			local WardenMeleeDefense = this.m.WardenEntity.m.CurrentProperties.MeleeDefense;
+			local WardenRangedSkill = this.m.WardenEntity.m.CurrentProperties.RangedSkill;
+			local WardenRangedDefense = this.m.WardenEntity.m.CurrentProperties.RangedDefense;
+			local WardenInitiative = this.m.WardenEntity.m.CurrentProperties.Initiative;
 			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4.00));
 
 			if (SpiritualBondReduction >= 50)
@@ -112,7 +112,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 			{
 				local tile = this.Tactical.getTileSquare(x, y);
 
-				if (tile.IsEmpty && tile.getDistanceTo(ActorTile) > 1 && tile.getDistanceTo(ActorTile) < 4 && (tile.Coords.X - ActorTile.SquareCoords.X) < -1)
+				if (tile.IsEmpty && tile.getDistanceTo(ActorTile) > 0 && tile.getDistanceTo(ActorTile) < 3 && (tile.Coords.X - ActorTile.SquareCoords.X) < 0)
 				{
 					EmptyTiles.push(tile);
 				}
@@ -121,14 +121,15 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 
 		if (EmptyTiles.len() != 0)
 		{
-			return EmptyTiles[this.Math.rand(0, EmptyTiles.len() - 1)];
+			local random = this.Math.rand(0, EmptyTiles.len() - 1);
+			return EmptyTiles[random];
 		}
 
 		return null;
 	}
 
 
-	function onTurnStart()
+	function onCombatStarted()
 	{
 		if (this.m.WardenSummonSpent == false)
 		{
@@ -143,6 +144,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 				entity.setWardenStats(this.getContainer().getActor().getCurrentProperties());
 				this.m.WardenSummonSpent = true;
 				this.m.WardenEntity = entity;
+				this.Sound.play("sounds/enemies/ghost_death_01.wav");
 
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_spiritual_bond"))
 				{
@@ -153,16 +155,76 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 						this.getContainer().getActor().getSkills().add(bond);
 					}
 				}
-			}
-		}
 
-		if (this.m.WardenEntity != null)
-		{
-			if (this.m.WardenEntity.m.Hitpoints <= 0)
-			{
-				this.m.WardenEntity.killSilently();
+				local effect = {
+					Delay = 0,
+					Quantity = 12,
+					LifeTimeQuantity = 12,
+					SpawnRate = 100,
+					Brushes = [
+						"bust_ghost_01"
+					],
+					Stages = [
+						{
+							LifeTimeMin = 1.0,
+							LifeTimeMax = 1.0,
+							ColorMin = this.createColor("ffffff5f"),
+							ColorMax = this.createColor("ffffff5f"),
+							ScaleMin = 1.0,
+							ScaleMax = 1.0,
+							RotationMin = 0,
+							RotationMax = 0,
+							VelocityMin = 80,
+							VelocityMax = 100,
+							DirectionMin = this.createVec(-1.0, -1.0),
+							DirectionMax = this.createVec(1.0, 1.0),
+							SpawnOffsetMin = this.createVec(-10, -10),
+							SpawnOffsetMax = this.createVec(10, 10),
+							ForceMin = this.createVec(0, 0),
+							ForceMax = this.createVec(0, 0)
+						},
+						{
+							LifeTimeMin = 1.0,
+							LifeTimeMax = 1.0,
+							ColorMin = this.createColor("ffffff2f"),
+							ColorMax = this.createColor("ffffff2f"),
+							ScaleMin = 0.9,
+							ScaleMax = 0.9,
+							RotationMin = 0,
+							RotationMax = 0,
+							VelocityMin = 80,
+							VelocityMax = 100,
+							DirectionMin = this.createVec(-1.0, -1.0),
+							DirectionMax = this.createVec(1.0, 1.0),
+							ForceMin = this.createVec(0, 0),
+							ForceMax = this.createVec(0, 0)
+						},
+						{
+							LifeTimeMin = 0.1,
+							LifeTimeMax = 0.1,
+							ColorMin = this.createColor("ffffff00"),
+							ColorMax = this.createColor("ffffff00"),
+							ScaleMin = 0.1,
+							ScaleMax = 0.1,
+							RotationMin = 0,
+							RotationMax = 0,
+							VelocityMin = 80,
+							VelocityMax = 100,
+							DirectionMin = this.createVec(-1.0, -1.0),
+							DirectionMax = this.createVec(1.0, 1.0),
+							ForceMin = this.createVec(0, 0),
+							ForceMax = this.createVec(0, 0)
+						}
+					]
+				};
+				this.Tactical.spawnParticleEffect(false, effect.Brushes, this.m.WardenEntity.getTile(), effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
 			}
 		}
+	}
+
+
+	function onTurnStart()
+	{
 	}
 
 

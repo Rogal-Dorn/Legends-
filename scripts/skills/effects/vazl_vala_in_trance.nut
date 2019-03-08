@@ -47,6 +47,12 @@ this.vazl_vala_in_trance <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onUpdate( _properties )
+	{
+//		_properties.TargetAttractionMult *= 1.20;
+	}
+
+
 	function onCombatFinished()
 	{
 		this.removeSelf();

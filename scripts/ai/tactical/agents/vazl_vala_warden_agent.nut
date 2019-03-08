@@ -5,8 +5,7 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.agent.create();
 		this.m.ID = this.Const.AI.Agent.ID.Ghost;
 
-//		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 1.0;
-		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 2.0;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Protect] = 1.0;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.5;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.3;
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
@@ -23,8 +22,7 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityAoEMult = 1.0;
 		this.m.Properties.OverallMagnetismMult = 1.0;
 		this.m.Properties.OverallDefensivenessMult = 1.0;
-//		this.m.Properties.OverallFormationMult = 1.0;
-		this.m.Properties.OverallFormationMult = 2.0;
+		this.m.Properties.OverallFormationMult = 1.0;
 		this.m.Properties.OverallHideMult = 0.0;
 		this.m.Properties.EngageWhenAlreadyEngagedMult = 0.2;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.0;
@@ -36,10 +34,8 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.0;
 		this.m.Properties.EngageLockDownTargetMult = 1.0;
 		this.m.Properties.EngageFlankingMult = 1.0;
-//		this.m.Properties.EngageRangeIdeal = 1;
-//		this.m.Properties.EngageRangeMax = 1;
-		this.m.Properties.EngageRangeIdeal = 3;
-		this.m.Properties.EngageRangeMax = 3;
+		this.m.Properties.EngageRangeIdeal = 1;
+		this.m.Properties.EngageRangeMax = 1;
 		this.m.Properties.EngageRangeMin = 1;
 		this.m.Properties.EngageTileLimit = 0;
 		this.m.Properties.EngageEnemiesInLinePreference = 1;
@@ -53,9 +49,8 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 	{
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/vazl_vala_warden_ai_melee_attack"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/vazl_vala_warden_ai_ranged_attack"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/vazl_vala_warden_ai_protect"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_protect"));
 	}
 
 	function onUpdate()
@@ -80,15 +75,15 @@ this.vazl_vala_warden_agent <- this.inherit("scripts/ai/tactical/agent", {
 			}
 		}
 
-//		if (opponentNearby)
-//		{
-//			this.m.Properties.EngageRangeIdeal = 3;
-//			this.m.Properties.EngageRangeMax = 3;
-//		}
-//		else
-//		{
-//			this.m.Properties.EngageRangeIdeal = 1;
-//			this.m.Properties.EngageRangeMax = 1;
-//		}
+		if (opponentNearby)
+		{
+			this.m.Properties.EngageRangeIdeal = 3;
+			this.m.Properties.EngageRangeMax = 3;
+		}
+		else
+		{
+			this.m.Properties.EngageRangeIdeal = 1;
+			this.m.Properties.EngageRangeMax = 1;
+		}
 	}
 });

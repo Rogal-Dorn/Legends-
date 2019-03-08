@@ -8,7 +8,7 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "ui/perks/vazl_vala_chant_disharmony_active.png";
 		this.m.IconDisabled = "ui/perks/vazl_vala_chant_disharmony_active_sw.png";
 		this.m.Type = this.Const.SkillType.Active | this.Const.SkillType.Perk;
-		this.m.Order = this.Const.SkillOrder.NonTargeted;
+		this.m.Order = this.Const.SkillOrder.NonTargeted + 1;
 		this.m.IsSerialized = true;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;

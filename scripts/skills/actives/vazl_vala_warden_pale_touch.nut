@@ -40,7 +40,6 @@ this.vazl_vala_warden_pale_touch <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin = 10;
 			_properties.DamageRegularMax = 15;
 			_properties.IsIgnoringArmorOnAttack = true;
-			_properties.HitChanceAdditionalWithEachTile -= 2;
 		}
 	}
 });
