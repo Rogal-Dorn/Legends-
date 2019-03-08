@@ -188,7 +188,11 @@ decreases sling range, increases accuracy slightly
 Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
 miasma, chain lightning, firefield, miasma set to ranged
 miasma and firefield reduced to two rounds from three
+firefield and chain lightning require a staff
+Triple strike requires a ranged weapon
+Triple strike buffed to 0.5 damage per strike 
 Discover location payout increased, decreased time before hint
+Hand to hand does a minimum of 5 damage, still does the average of hp and init -100 if over 105
 
 
 Beta 0.10
