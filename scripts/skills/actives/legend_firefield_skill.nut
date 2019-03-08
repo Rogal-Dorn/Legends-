@@ -27,7 +27,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsRanged = false;
+		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
@@ -82,7 +82,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
-			Timeout = this.Time.getRound() + 3,
+			Timeout = this.Time.getRound() + 2,
 			Callback = this.Const.Tactical.Common.onApplyFirefield
 		};
 
@@ -90,7 +90,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (tile.Properties.Effect != null && tile.Properties.Effect.Type == "legend_firefield")
 			{
-				tile.Properties.Effect.Timeout = this.Time.getRound() + 3;
+				tile.Properties.Effect.Timeout = this.Time.getRound() + 2;
 			}
 			else
 			{
