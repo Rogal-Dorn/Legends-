@@ -50,7 +50,7 @@ this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 8;
 		this.m.ProjectileType = this.Const.ProjectileType.Pebble;
 	}
@@ -168,7 +168,7 @@ this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -4 + this.m.AdditionalHitChance;
+			_properties.HitChanceAdditionalWithEachTile += -2 + this.m.AdditionalHitChance;
 		}
 	}
 
