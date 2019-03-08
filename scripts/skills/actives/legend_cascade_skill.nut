@@ -64,9 +64,14 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function isUsable()
+
+		function isUsable()
 	{
-	return this.m.IsUsable && this.getContainer().getActor().isArmedWithRangedWeapon()
+		if (!this.getContainer().getActor().isArmedWithRangedWeapon()) 
+		{
+			return false
+		}
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
 

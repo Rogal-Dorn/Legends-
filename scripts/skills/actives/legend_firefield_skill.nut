@@ -61,6 +61,15 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 	}
 
+	function isUsable()
+	{
+		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
+		{
+			return false
+		}
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local targets = [];
