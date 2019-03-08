@@ -193,6 +193,8 @@ Triple strike requires a ranged weapon
 Triple strike buffed to 0.5 damage per strike 
 Discover location payout increased, decreased time before hint
 Hand to hand does a minimum of 5 damage, still does the average of hp and init -100 if over 105
+Berserker commanders can no longer be converted into cultists
+
 
 
 Beta 0.10
