@@ -186,6 +186,10 @@ changes reward scaling, making the late game harder
 Fixes staves not working at two tiles 
 decreases sling range, increases accuracy slightly
 Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
+miasma, chain lightning, firefield, miasma set to ranged
+miasma and firefield reduced to two rounds from three
+Discover location payout increased, decreased time before hint
+
 
 Beta 0.10
 *Adds Orc Behemoth
