@@ -1,6 +1,6 @@
 this.legend_aimed_pebble <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = -10,
+		AdditionalAccuracy = -5,
 		AdditionalHitChance = -1
 	},
 	function onItemSet()
@@ -54,7 +54,7 @@ this.legend_aimed_pebble <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 8;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Pebble;
 	}
@@ -199,7 +199,7 @@ this.legend_aimed_pebble <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.RangedSkill += 10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -2 + this.m.AdditionalHitChance;
+			_properties.HitChanceAdditionalWithEachTile += -1 + this.m.AdditionalHitChance;
 			_properties.DamageRegularMult *= 1.1;
 		}
 	}

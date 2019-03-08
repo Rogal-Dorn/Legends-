@@ -33,8 +33,8 @@ this.legend_staff <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
-		this.addSkill(this.new("scripts/skills/actives/knock_out"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_knock_out"));
 	}
 
 });
