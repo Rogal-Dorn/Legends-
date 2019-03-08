@@ -209,6 +209,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.m.CampAssignment;
 	}
 
+	function setCampAssignment( _id )
+	{
+		this.m.CampAssignment = _id;
+	}
+
 	function getMood()
 	{
 		return this.m.Mood;

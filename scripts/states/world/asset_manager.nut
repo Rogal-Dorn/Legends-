@@ -187,7 +187,7 @@ this.asset_manager <- {
 
 	function isCamping()
 	{
-		return this.m.IsCamping;
+		return this.World.Camp.isCamping();
 	}
 
 	function isUsingProvisions()
@@ -203,12 +203,6 @@ this.asset_manager <- {
 	function setBrothersMax( _v )
 	{
 		this.m.BrothersMax = _v;
-	}
-
-	function setCamping( _c )
-	{
-		this.m.IsCamping = _c;
-		this.World.State.getPlayer().setCamping(_c);
 	}
 
 	function setUseProvisions( _p )

@@ -13,16 +13,25 @@ this.camp_building <- {
 
     function init()
     {
-        this.Bros = [];
+    }
+
+    function completed()
+    {
     }
 
     function update ()
     {
     }
 
+    function getResults()
+    {
+        return [];
+    }
+
+
     function assignBro( _bro )
     {
-
+        bro.setCampAssignment(this.m.ID);
     }
 
     function setCamp ( _camp )

@@ -324,7 +324,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			if (!_f)
 			{
-				if (this.World.Assets.isCamping())
+				if (this.World.Camp.isCamping())
 				{
 					this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
 				}
@@ -678,7 +678,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.setAutoPause(false);
 		}
 
-		if (this.World.Assets.isCamping())
+		if (this.World.Camp.isCamping())
 		{
 			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 
@@ -881,7 +881,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.AutoAttack = null;
 				this.m.LastAutoAttackPath = 0.0;
 
-				if (!this.World.Assets.isCamping())
+				if (!this.World.Camp.isCamping())
 				{
 					local entities = this.World.getAllEntitiesAndOneLocationAtPos(this.World.getCamera().screenToWorld(_mouse.getX(), _mouse.getY()), 1.0);
 
@@ -950,7 +950,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 				if (this.getVecDistance(dest, this.m.Player.getPos()) <= this.Const.World.MovementSettings.PlayerDirectMoveRadius)
 				{
-					if (this.World.Assets.isCamping())
+					if (this.World.Camp.isCamping())
 					{
 						this.onCamp();
 					}
@@ -960,7 +960,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				}
 				else if (this.World.isValidTile(destTile.X, destTile.Y))
 				{
-					if (this.World.Assets.isCamping())
+					if (this.World.Camp.isCamping())
 					{
 						this.onCamp();
 					}
@@ -1665,9 +1665,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return;
 		}
 
-		this.World.Assets.setCamping(!this.World.Assets.isCamping());
+		this.World.Camp.onCamp();
 
-		if (this.World.Assets.isCamping())
+		if (this.World.Camp.isCamping())
 		{
 			this.m.Player.setDestination(null);
 			this.m.Player.setPath(null);
@@ -1675,7 +1675,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.m.AutoAttack = null;
 		}
 
-		if (this.World.Assets.isCamping())
+		if (this.World.Camp.isCamping())
 		{
 			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
@@ -1708,7 +1708,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		if (!this.isPaused())
 		{
-			if (this.World.Assets.isCamping())
+			if (this.World.Camp.isCamping())
 			{
 				this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
 			}
@@ -1969,7 +1969,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			if (!this.World.Assets.isCamping() && this.m.EscortedEntity == null)
+			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
 			{
 				this.m.LastWorldSpeedMult = 1.0;
 			}
@@ -1982,7 +1982,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			if (!this.World.Assets.isCamping() && this.m.EscortedEntity == null)
+			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
 			{
 				this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.FastMult;
 			}
@@ -2095,7 +2095,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			allyBanners.push(this.World.Assets.getBanner());
 		}
 
-		if (!_isPlayerInitiated && this.World.Assets.isCamping())
+		if (!_isPlayerInitiated && this.World.Camp.isCamping())
 		{
 			_allowFormationPicking = false;
 		}
@@ -2485,7 +2485,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
 			this.setAutoPause(false);
-			this.setPause(true);
+			this.setPause(false);
 		}, function ()
 		{
 			return !this.m.CampScreen.isAnimating();

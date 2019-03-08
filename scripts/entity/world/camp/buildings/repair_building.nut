@@ -1,5 +1,7 @@
 this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
+        ToolsUsed = 0,
+        PointsRepaired = 0
 	},
     function create()
     {
@@ -13,11 +15,24 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     function init()
     {
+        this.m.ToolsUsed = 0;
+        this.m.PointsRepaired = 0;
     }
+    
+    function getResults()
+    {
+        return [{
+				id = 10,
+				icon = "ui/icons/asset_supplies.png",
+				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ToolsUsed + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] points of armor."
+			}];
+    }
+
 
     function getModifiers()
     {
-        local ret = {
+        local ret = 
+        {
             Repair = 2.0,
             Consumption = 1.0
         }
@@ -44,6 +59,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         }
 
         local modifiers = this.getModifiers();
+        local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
         {
             local items = bro.getItems().getAllItems();
@@ -54,12 +70,14 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 if (item.getCondition() < item.getConditionMax())
                 {
                     local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * modifiers.Repair, item.getConditionMax() - item.getCondition());
+                    this.m.PointsRepaired += d;
                     item.setCondition(item.getCondition() + d);
                     updateBro = true;
 
                     if (this.World.Assets.isConsumingAssets())
                     {
                         local consumed = this.Math.maxf(0, this.World.Assets.getArmorParts() - d * this.Const.World.Assets.ArmorPartsPerArmor * modifiers.Consumption);
+                        this.m.ToolsUsed += consumed;
                         this.World.Assets.setArmorParts(consumed)
                     }
                 }
@@ -102,11 +120,13 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             if (item.getCondition() < item.getConditionMax())
             {
                 local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * modifiers.Repair, item.getConditionMax() - item.getCondition());
+                this.m.PointsRepaired += d;
                 item.setCondition(item.getCondition() + d);
 
                 if (this.World.Assets.isConsumingAssets())
                 {
                     local consumed = this.Math.maxf(0, this.World.Assets.getArmorParts() - d * this.Const.World.Assets.ArmorPartsPerArmor * modifiers.Consumption);
+                    this.m.ToolsUsed += consumed;
                     this.World.Assets.setArmorParts(consumed)
                 }
             }
@@ -122,5 +142,4 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
         }
     }
-    
-}
+});
