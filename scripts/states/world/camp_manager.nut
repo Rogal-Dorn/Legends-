@@ -32,23 +32,19 @@ this.camp_manager <- {
         {
             return;
         }
-        
-        if (!this.World.Assets.isConsumingAssets())
-		{
-            return;
-        }
 
         this.m.LastHourUpdated = this.World.getTime().Hours;
         foreach(b in this.m.Buildings)
         {
             b.update();
         }
-        
+
     }
 
 	function addBuilding( _building, _slot = null )
 	{
-		_building.setCamp(this);
+        _building.setCamp(this);
+        this.m.Buildings.push(_building)
 	}
 
     function onSerialize( _out )

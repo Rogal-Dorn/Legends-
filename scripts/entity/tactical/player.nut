@@ -204,6 +204,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.IsTryoutDone = _t;
 	}
 
+	function getCampAssignment()
+	{
+		return this.m.CampAssignment;
+	}
+
 	function getMood()
 	{
 		return this.m.Mood;
