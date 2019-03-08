@@ -26,18 +26,22 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = true;
+		this.m.IsIgnoredAsAOO = true;
+		this.m.IsShowingProjectile = true;
 		this.m.IsShieldRelevant = false;
 		this.m.Delay = 250;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 50;
+		this.m.ProjectileType = this.Const.ProjectileType.Arrow;
 	}
 
 	function getTooltip()
@@ -48,7 +52,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Will make three separate strikes for one third of the weapon\'s damage each"
+				text = "Will make three separate strikes for one half of the weapon\'s damage each"
 			},
 			{
 				id = 8,
@@ -97,7 +101,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageTotalMult *= 0.33;
+			_properties.DamageTotalMult *= 0.5;
 			_properties.DamageTooltipMaxMult *= 3.0;
 		}
 	}
