@@ -29,6 +29,7 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.vazl_vala_spiritual_bond_effect";
 		this.m.Name = "Spiritual Bond";
+		this.m.KilledString = "Died from damage transfer";
 		this.m.Icon = "skills/status_effect_87.png";
 		this.m.IconMini = "status_effect_87_mini";
 		this.m.Overlay = "status_effect_87";
@@ -111,6 +112,11 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+		if (_damageHitpoints < 1)
+		{
+			return;
+		}
+
 		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00);
 
 		if (transfer >= 0.5)
@@ -118,16 +124,12 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			transfer = 0.5;
 		}
 
-		local transfer_total = _damageHitpoints * transfer;
-
-		if (transfer_total > 0)
-		{
-			this.m.Item.m.WardenEntity.m.Hitpoints = this.Math.round(this.m.Item.m.WardenEntity.m.Hitpoints - transfer_total);
-		}
-
-		if (this.m.Item.m.WardenEntity.m.Hitpoints <= 0)
-		{
-			this.m.Item.m.WardenEntity.killSilently();
-		}
+		local hitInfo = clone this.Const.Tactical.HitInfo;
+		hitInfo.DamageRegular = this.Math.ceil(_damageHitpoints * transfer);
+		hitInfo.DamageDirect = 1.0;
+		hitInfo.BodyPart = this.Const.BodyPart.Body;
+		hitInfo.BodyDamageMult = 1.0;
+		hitInfo.FatalityChanceMult = 0.0;
+		this.m.Item.m.WardenEntity.onDamageReceived(_attacker, this, hitInfo);
 	}
 });

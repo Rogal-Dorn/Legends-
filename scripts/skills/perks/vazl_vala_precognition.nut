@@ -36,7 +36,7 @@ this.vazl_vala_precognition <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] chance to have any attacker require two successful attack rolls in order to hit."
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] chance to have any attacker require two successful attack rolls in order to hit."
 				}
 //				{
 //					id = 11,
