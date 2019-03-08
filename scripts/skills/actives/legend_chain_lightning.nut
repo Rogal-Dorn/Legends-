@@ -78,6 +78,15 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function isUsable()
+	{
+		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
+		{
+			return false
+		}
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+	}
+
 	function applyEffect( _data, _delay )
 	{
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, _delay, function ( _data )
