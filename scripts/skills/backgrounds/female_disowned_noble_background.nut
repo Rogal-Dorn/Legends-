@@ -14,7 +14,6 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.clumsy",
-			"trait.fragile",
 			"trait.spartan",
 			"trait.clubfooted"
 		];
@@ -72,24 +71,24 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 				5
 			],
 			MeleeSkill = [
-				8,
-				10
-			],
-			RangedSkill = [
 				3,
 				6
+			],
+			RangedSkill = [
+				8,
+				15
 			],
 			MeleeDefense = [
 				0,
 				3
 			],
 			RangedDefense = [
-				0,
-				0
+				3,
+				8
 			],
 			Initiative = [
 				0,
-				0
+				3
 			]
 		};
 		return c;
@@ -103,27 +102,17 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/shortsword"));
+			items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/hatchet"));
+			items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/militia_spear"));
+			items.equip(this.new("scripts/items/weapons/short_bow"));
 		}
 
-		r = this.Math.rand(0, 2);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/shields/wooden_shield"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/shields/buckler_shield"));
-		}
 
 		r = this.Math.rand(0, 4);
 

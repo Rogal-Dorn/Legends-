@@ -180,6 +180,13 @@ Beta 0.9.5
 *Fixed error that prevented scenarios from working
 *Fixed tool consumption rate error (was increasing rate instead of decrease). Fixed tooltips to show correct repair time.
 
+
+Beta 0.9.5 b 
+changes reward scaling, making the late game harder
+Fixes staves not working at two tiles 
+decreases sling range, increases accuracy slightly
+Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
+
 Beta 0.10
 *Adds Orc Behemoth
 
