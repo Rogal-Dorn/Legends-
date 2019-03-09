@@ -37,6 +37,9 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = true;
+		this.m.IsIgnoredAsAOO = true;
+		this.m.IsShowingProjectile = true;
 		this.m.Delay = 1250;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
@@ -50,6 +53,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDisembowel = 3;
 		this.m.ChanceSmash = 0;
 		this.m.MaxLevelDifference = 8;
+		this.m.ProjectileType = this.Const.ProjectileType.Missile;
 	}
 
 	function getTooltip()
@@ -72,6 +76,15 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		{
 			this.Tactical.addResource(r);
 		}
+	}
+
+	function isUsable()
+	{
+		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
+		{
+			return false
+		}
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
 	function applyEffect( _data, _delay )
