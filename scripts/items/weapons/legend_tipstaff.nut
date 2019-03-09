@@ -21,7 +21,7 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
 		this.m.StaminaModifier = -4;
-		this.m.RangeMin = 2;
+		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 30;
@@ -33,8 +33,8 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
-		this.addSkill(this.new("scripts/skills/actives/knock_out"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_knock_out"));
 	}
 
 });
