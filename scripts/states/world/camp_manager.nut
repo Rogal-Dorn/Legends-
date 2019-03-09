@@ -9,6 +9,7 @@ this.camp_manager <- {
     function create()
     {
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/repair_building"));
+        this.addBuilding(this.new("scripts/entity/world/camp/buildings/rest_building"));        
     }
 
     function destroy()
@@ -86,7 +87,6 @@ this.camp_manager <- {
         }
 
         this.m.LastHourUpdated = this.World.getTime().Hours;
-        this.logInfo("camping last hour = " + this.m.LastHourUpdated);
         foreach(b in this.m.Buildings)
         {
             b.update();

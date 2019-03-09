@@ -1118,14 +1118,14 @@ this.asset_manager <- {
 			local campMultiplier = this.isCamping() ? 2.0 : 1.0;
 
 			local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
-			local healingModifier = 1.0;
+			//local healingModifier = 1.0;
 			//local repairModifier = 1.0;
 			//local toolConsumptionModifier = 1.0;
 			//local medsConsumptionModifier = 1.0;
 			foreach( bro in roster )
 			{
 				stashSize += this.Const.LegendMod.getMaxStash(bro.getBackground().getID());
-				healingModifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
+				// healingModifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
 				// repairModifier += this.Const.LegendMod.getRepairModifier(bro.getBackground().getID());
 				// local v = this.Math.maxf(0.66, toolConsumptionModifier - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
 				// toolConsumptionModifier = v;
@@ -1138,15 +1138,15 @@ this.asset_manager <- {
 				this.m.Stash.resize(stashSize);
 			}
 
-			foreach( bro in roster )
-			{
-				local d = bro.getHitpointsMax() - bro.getHitpoints();
+			// foreach( bro in roster )
+			// {
+			// 	local d = bro.getHitpointsMax() - bro.getHitpoints();
 
-				if (bro.getHitpoints() < bro.getHitpointsMax())
-				{
-					bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier * healingModifier));
-				}
-			}
+			// 	if (bro.getHitpoints() < bro.getHitpointsMax())
+			// 	{
+			// 		bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * campMultiplier * healingModifier));
+			// 	}
+			// }
 
 			// foreach( bro in roster )
 			// {

@@ -905,7 +905,7 @@ WorldTownScreenShopDialogModule.prototype.createItemSlot = function (_owner, _in
                 {
                     if (repairItem === true)
                     {
-                        //console.info('destroy');
+                        console.info('destroy');
                         self.repairItem(itemIdx);
                     }
                     else
