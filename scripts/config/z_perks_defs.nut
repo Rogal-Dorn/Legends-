@@ -1069,7 +1069,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendBerserkerRage,
 		Icon = "ui/perks/berserker_rage_circle.png",
 		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
-	}							
+	},
+	{
+		ID = "perk.legend_become_berserker",
+		Script = "scripts/skills/perks/perk_legend_become_berserker",
+		Name = this.Const.Strings.PerkName.LegendBecomeBerserker,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBecomeBerserker,
+		Icon = "ui/perks/berserker_rage_circle.png",
+		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
+	}								
 ];
 
 
@@ -1206,5 +1214,6 @@ gt.Const.Perks.PerkDefs <- {
 	VazlInscribeArmor = 129,
 	VazlInscribeMastery = 130,
 	LegendGuidedSteps = 131,
-	LegendBerserkerRage = 132
+	LegendBerserkerRage = 132,
+	LegendBecomeBerserker = 133
 };

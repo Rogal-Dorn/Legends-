@@ -1136,7 +1136,8 @@ gt.Const.Strings.PerkName <- {
 	LegendGuideSteps = "Guide Steps",
 	LegendBerserkerRage = "Berserker Rage",
 	LegendAssuredConquest = "Assured Conquest",
-	LegendTasteThePain = "Taste the Pain"
+	LegendTasteThePain = "Taste the Pain",
+	LegendBecomeBerserker = "Become Berserker"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1293,7 +1294,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all your allies",
 	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you hit, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. ",
 	LegendAssuredConquest = "+10% melee skill, melee defense and ranged defense when at confident morale",
-	LegendTasteThePain = "Whenever getting hurt would normally trigger a morale check, instead gain 10 morale"
+	LegendTasteThePain = "Whenever getting hurt would normally trigger a morale check, instead gain 10 morale",
+	LegendBecomeBerserker = "This character background changes into a berserker, losing all current perks"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

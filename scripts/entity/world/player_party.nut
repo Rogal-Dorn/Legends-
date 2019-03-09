@@ -47,7 +47,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				skeletonSummonLevel = 2;
 			}
 
-			this.m.Strength +=  9 + ((bro.getLevel() / 3) + (bro.getLevel() * 3.0)); 
+			this.m.Strength +=  6 + ((bro.getLevel() / 3) + (pow(bro.getLevel(),1.3))); 
 		}
 
 		if  (zombieSummonLevel == 0 && skeletonSummonLevel == 0)
