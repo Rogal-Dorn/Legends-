@@ -181,6 +181,7 @@ Beta 0.9.5
 
 Beta 0.10
 *Adds Orc Behemoth
-
+*removes underdog from berserker in party start
+*increases late game difficulty scaling, reduces early game (even more)
 
 
