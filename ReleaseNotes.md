@@ -208,3 +208,10 @@ Beta 0.10
 *stun overlay icon updated
 
 
+-Battlesite brush images added (can be called from their exact names)
+-legendary locations brush images added (can be called by their name preceded by "legend_"
+-player figure brush images added (can be called by their exact name)
+-Inventory tool icons added for two carts, donkey and tent to allow creation of items for each. 
+
+
+
