@@ -1243,7 +1243,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPush = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe.",
 	LegendEntice = "With a trick of the light, captivate your target in such a way that they can\'t help but approach you."
 	LegendSleep  = "Enshroud the area with thick smoke that draws the vigor out of your foes. Those that breathe in too much are forced into a light sleep.",
-	LegendFirefield = "throw a noxious concoction that sets the ground alight",
+	LegendFirefield = "throw a noxious concoction that sets the ground alight. Requires a staff",
 	LegendPossessUndead = "Allows you to boost the attacks of an undead minion",
 	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled.",
 	LegendRoster = "Increase roster size",
@@ -1260,7 +1260,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative",
 	LegendForwardPush = "Direct your troops to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
-	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor",
+	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor. Requires a staff",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies",
 	LegendMasteryStaves = "Master the art of fighting with staves. Use less action points and fatigue when using Missile, Revolt, Entice, Chain Lightning and Firefield. Missile gains 1 range",

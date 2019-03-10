@@ -6,8 +6,8 @@ this.cat_bite <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Bite";
 		this.m.Description = "";
 		this.m.KilledString = "Mangled";
-		this.m.Icon = "skills/active_84.png";
-		this.m.Overlay = "active_84";
+		this.m.Icon = "skills/cat_bite.png";
+		this.m.Overlay = "cat_bite";
 		this.m.SoundOnUse = [
 			"sounds/enemies/cat_attack_01.wav",
 			"sounds/enemies/cat_attack_02.wav",
@@ -33,8 +33,8 @@ this.cat_bite <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 20;
-		_properties.DamageRegularMax += 35;
+		_properties.DamageRegularMin += 15;
+		_properties.DamageRegularMax += 25;
 		_properties.DamageArmorMult *= 0.4;
 	}
 

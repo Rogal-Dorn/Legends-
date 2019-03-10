@@ -65,9 +65,16 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles on even ground, more if shooting downhill"
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color] tiles on even ground, more if shooting downhill. Damage based on current initiative. Requires a staff"
 			}
 		]);
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "Accuracy based on ranged skill, damage based on current initiative. requires a staff"
+			});
+
 		return ret;
 	}
 

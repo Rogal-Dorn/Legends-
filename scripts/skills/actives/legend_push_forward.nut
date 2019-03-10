@@ -7,9 +7,9 @@ this.legend_push_forward <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Advance as one, increasing your melee effectiveness";
 		this.m.Icon = "skills/spears_square.png";
 		this.m.IconDisabled = "skills/spears_square_bw.png";
-		this.m.Overlay = "active_22";
+		this.m.Overlay = "spears_square";
 		this.m.SoundOnUse = [
-		
+			"sounds/combat/pushforward_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;

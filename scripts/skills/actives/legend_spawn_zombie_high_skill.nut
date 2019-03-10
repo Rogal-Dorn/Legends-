@@ -8,7 +8,7 @@ this.legend_spawn_zombie_high_skill <- this.inherit("scripts/skills/actives/lege
 		this.m.Description = "Unleash your zombie and send him charging into the enemy. Needs a free tile adjacent.";
 		this.m.Icon = "skills/remake_man.png",
 		this.m.IconDisabled = "skills/remake_man_bw.png",
-		this.m.Overlay = "active_26";
+		this.m.Overlay = "remake_man";
 		 this.m.SoundOnUse = [
 		 	"sounds/combat/meat_01.wav",
 		 	"sounds/combat/meat_02.wav",

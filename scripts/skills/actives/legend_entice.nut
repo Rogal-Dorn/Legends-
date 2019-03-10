@@ -4,10 +4,10 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_entice";
 		this.m.Name = "Entice";
-		this.m.Description = "With a trick of the light, captivate your target in such a way that they can’t help but approach you.";
+		this.m.Description = "With a trick of the light, captivate your target in such a way that they can’t help but approach you. Requires a staff";
 		this.m.Icon = "skills/entice.png";
 		this.m.IconDisabled = "skills/entice_bw.png";
-		this.m.Overlay = "active_31";
+		this.m.Overlay = "entice";
 		this.m.SoundOnUse = [
 			"sounds/combat/hook_01.wav",
 			"sounds/combat/hook_02.wav",
@@ -25,6 +25,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
+		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.HitChanceBonus = 10;
 		this.m.ActionPointCost = 4;
@@ -40,7 +41,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]6[/color] tiles"
 		});
 		ret.push({
 			id = 7,
@@ -192,12 +193,19 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 
 		return true;
 	}
-
+	function isUsable()
+	{
+		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
+		{
+			return false
+		}
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+	}
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
-			_properties.MeleeSkill += 10;
+			_properties.RangedSkill += 10;
 		}
 	}
 

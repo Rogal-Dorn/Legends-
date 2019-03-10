@@ -8,7 +8,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Dazed";
 		this.m.Icon = "skills/daze_square.png";
 		this.m.IconDisabled = "skills/daze_square_bw.png";
-		this.m.Overlay = "active_133";
+		this.m.Overlay = "daze_square";
 		this.m.SoundOnUse = [
 			"sounds/combat/stupefy_01.wav",
 			"sounds/combat/stupefy_02.wav",
@@ -18,10 +18,10 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 		];
 		this.m.SoundOnHit = [
-			"sounds/combat/cudgel_hit_01.wav",
-			"sounds/combat/cudgel_hit_02.wav",
-			"sounds/combat/cudgel_hit_03.wav",
-			"sounds/combat/cudgel_hit_04.wav"
+			"sounds/human/0/human_fatigue_01.wav",
+			"sounds/human/0/human_fatigue_01.wav",
+			"sounds/human/0/human_fatigue_01.wav",
+			"sounds/human/0/human_fatigue_01.wav"
 		];
 		this.m.SoundVolume = 1.25;
 		this.m.Type = this.Const.SkillType.Active;

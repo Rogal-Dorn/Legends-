@@ -8,7 +8,7 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Stunned";
 		this.m.Icon = "skills/stun56.png";
 		this.m.IconDisabled = "skills/stun56_bw.png";
-		this.m.Overlay = "active_133";
+		this.m.Overlay = "stun56";
 		this.m.SoundOnUse = [
 			"sounds/combat/cudgel_01.wav",
 			"sounds/combat/cudgel_02.wav",

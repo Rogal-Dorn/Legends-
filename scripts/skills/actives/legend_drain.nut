@@ -8,9 +8,12 @@ this.legend_drain <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Drained";
 		this.m.Icon = "skills/blooddrop_square.png";
 		this.m.IconDisabled = "skills/blooddrop_square_bw.png";
-		this.m.Overlay = "active_42";
+		this.m.Overlay = "blooddrop_square";
 		this.m.SoundOnUse = [
-			"sounds/enemies/ghastly_touch_01.wav"
+			"sounds/combat/drain_01.wav",
+			"sounds/combat/drain_02.wav",
+			"sounds/combat/drain_03.wav",
+			"sounds/combat/drain_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Item +10;

@@ -8,7 +8,7 @@ this.legend_spawn_zombie_low_skill <- this.inherit("scripts/skills/actives/legen
 		this.m.Description = "Unleash your zombie and send him charging into the enemy. Needs a free tile adjacent.";
 		this.m.Icon = "skills/mold_carrion.png",
 		this.m.IconDisabled = "skills/mold_carrion_bw.png",
-		this.m.Overlay = "active_26";
+		this.m.Overlay = "mold_carrion";
 		 this.m.SoundOnUse = [
 		 	"sounds/combat/meat_01.wav",
 		 	"sounds/combat/meat_02.wav",
