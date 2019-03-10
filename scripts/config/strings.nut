@@ -1137,7 +1137,15 @@ gt.Const.Strings.PerkName <- {
 	LegendBerserkerRage = "Berserker Rage",
 	LegendAssuredConquest = "Assured Conquest",
 	LegendTasteThePain = "Taste the Pain",
-	LegendBecomeBerserker = "Become Berserker"
+	LegendBecomeBerserker = "Become Berserker",
+	LegendSkillfulStacking = "Skillful Stacking",
+	LegendEfficientPacking = "Efficient Packing",
+	LegendAmmoBinding = "Ammunition Binding",
+	LegendAmmoBundles = "Ammunition Bundles",
+	LegendMedPackages = "Medicine Packages",
+	LegendMedIngredients = "Medicine Ingredients",
+	LegendToolsDrawers = "Tools Drawers",
+	LegendToolsSpares = "Spare Parts"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1295,7 +1303,15 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you hit, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. ",
 	LegendAssuredConquest = "+10% melee skill, melee defense and ranged defense when at confident morale",
 	LegendTasteThePain = "Whenever getting hurt would normally trigger a morale check, instead gain 10 morale",
-	LegendBecomeBerserker = "This character background changes into a berserker, losing all current perks"
+	LegendBecomeBerserker = "This character background changes into a berserker, losing all current perks",
+	LegendSkillfulStacking = "Balancing things is an art, by creating neat stacks and tying them down well you can carry more gear. Grants 10 additional stash spaces.",
+	LegendEfficientPacking = "Arranging gear in just the right way, you're able to squeeze more things into the same space. Grants 5 additional stash spaces.",
+	LegendAmmoBinding = "Expertise in making ammunition lets you strip it down to pack the parts for storage. Increases maximum ammunition storage by 10.",
+	LegendAmmoBundles = "Using blankets and ropes to group large bundles of ammunition together you are able to carry far more. Increases maximum ammunition storage by 20.",
+	LegendMedPackages = "Your knowledge of medicines lets you repack them into more efficient packages. Increases maximum medicine storage by 10.",
+	LegendMedIngredients = "Not all of a plant is required for healing, your knowledge of the active ingredients lets you throw away excess leaves and roots. Increases maximum medicine storage by 20. ",
+	LegendToolsDrawers = "Organising your tools into labeled compartments lets you carry more. Increases maximum tool storage by 10",
+	LegendToolsSpares = "Your experience with repairs has taught you to save your scraps and left over parts. These spares take up little space but are often just what you need for field repairs. Increases maximum tool storage by 20."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

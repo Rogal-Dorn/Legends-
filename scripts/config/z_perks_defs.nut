@@ -1077,7 +1077,72 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendBecomeBerserker,
 		Icon = "ui/perks/berserker_rage_circle.png",
 		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
-	}								
+	},
+	{
+		ID = "perk.legend_skillful_stacking",
+		Script = "scripts/skills/perks/perk_legend_skillful_stacking",
+		Name = this.Const.Strings.PerkName.LegendSkillfulStacking,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSkillfulStacking,
+		Icon = "ui/perks/MaxStashT2.png",
+		IconDisabled = "ui/perks/MaxStashT2_bw.png"
+	},
+	{
+		ID = "perk.legend_efficient_packing",
+		Script = "scripts/skills/perks/perk_legend_efficient_packing",
+		Name = this.Const.Strings.PerkName.LegendEfficientPacking,
+		Tooltip = this.Const.Strings.PerkDescription.LegendEfficientPacking,
+		Icon = "ui/perks/MaxStashT1.png",
+		IconDisabled = "ui/perks/MaxStashT1_bw.png"
+	},
+	{
+		ID = "perk.legend_ammo_binding",
+		Script = "scripts/skills/perks/perk_legend_ammo_binding",
+		Name = this.Const.Strings.PerkName.LegendAmmoBinding,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAmmoBinding,
+		Icon = "ui/perks/MaxAmmoT1.png",
+		IconDisabled = "ui/perks/MaxAmmoT1_bw.png"
+	},
+	{
+		ID = "perk.legend_ammo_bundles",
+		Script = "scripts/skills/perks/perk_legend_ammo_bundles",
+		Name = this.Const.Strings.PerkName.LegendAmmoBundles,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAmmoBundles,
+		Icon = "ui/perks/MaxAmmoT2.png",
+		IconDisabled = "ui/perks/MaxAmmoT2_bw.png"
+	},
+	{
+		ID = "perk.legend_med_packages",
+		Script = "scripts/skills/perks/perk_legend_med_packages",
+		Name = this.Const.Strings.PerkName.LegendMedPackages,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMedPackages,
+		Icon = "ui/perks/MaxMedsT1.png",
+		IconDisabled = "ui/perks/MaxMedsT1_bw.png"
+	},
+	{
+		ID = "perk.legend_med_ingredients",
+		Script = "scripts/skills/perks/perk_legend_med_ingredients",
+		Name = this.Const.Strings.PerkName.LegendMedIngredients,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMedIngredients,
+		Icon = "ui/perks/MaxMedsT2.png",
+		IconDisabled = "ui/perks/MaxMedsT2_bw.png"
+	},
+	{
+		ID = "perk.legend_tools_drawers",
+		Script = "scripts/skills/perks/perk_legend_tools_drawers",
+		Name = this.Const.Strings.PerkName.LegendToolsDrawers,
+		Tooltip = this.Const.Strings.PerkDescription.LegendToolsDrawers,
+		Icon = "ui/perks/MaxToolsT1.png",
+		IconDisabled = "ui/perks/MaxToolsT1_bw.png"
+	},
+	{
+		ID = "perk.legend_tools_spares",
+		Script = "scripts/skills/perks/perk_legend_tools_spares",
+		Name = this.Const.Strings.PerkName.LegendToolsSpares,
+		Tooltip = this.Const.Strings.PerkDescription.LegendToolsSpares,
+		Icon = "ui/perks/MaxToolsT2.png",
+		IconDisabled = "ui/perks/MaxToolsT2_bw.png"
+	}		
+	
 ];
 
 
@@ -1215,5 +1280,13 @@ gt.Const.Perks.PerkDefs <- {
 	VazlInscribeMastery = 130,
 	LegendGuidedSteps = 131,
 	LegendBerserkerRage = 132,
-	LegendBecomeBerserker = 133
+	LegendBecomeBerserker = 133,
+	LegendSkillfulStacking = 134,
+	LegendEfficientPacking = 135,
+	LegendAmmoBinding = 136,
+	LegendAmmoBundles = 137,
+	LegendMedPackages = 138, 
+	LegendMedIngredients = 139,
+	LegendToolsDrawers = 140,
+	LegendToolsSpares = 141
 };

@@ -208,6 +208,8 @@ Beta 0.10
 *stun overlay icon updated
 *fixes missing icon errors for rabble, cat and orc elites
 *fixes missing inventory icon for limb lopper
+*Adds max resource perks: Ammo binding, Ammo bundles, efficient packing, med ingredients, med packages, skillful stacking, tools drawers, tools spares 
+
 
 -Battlesite brush images added (can be called from their exact names)
 -legendary locations brush images added (can be called by their name preceded by "legend_"
