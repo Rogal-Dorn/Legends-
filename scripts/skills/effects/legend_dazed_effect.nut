@@ -6,9 +6,9 @@ this.legend_dazed_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_dazed";
 		this.m.Name = "Stupefied";
-		this.m.Icon = "skills/status_effect_87.png";
-		this.m.IconMini = "status_effect_87_mini";
-		this.m.Overlay = "status_effect_87";
+		this.m.Icon = "ui/perks/status_daze56_circle.png";
+		this.m.IconMini = "mini_daze56_circle";
+		this.m.Overlay = "status_daze56_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;

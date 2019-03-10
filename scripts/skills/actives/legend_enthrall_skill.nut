@@ -6,7 +6,7 @@ this.legend_enthrall_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Enthrall";
 		this.m.Icon = "skills/enthrall.png",
 		this.m.IconDisabled = "skills/enthrall_bw.png",
-		this.m.Overlay = "active_26";
+		this.m.Overlay = "enthrall";
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
 			"sounds/enemies/necromancer_02.wav",

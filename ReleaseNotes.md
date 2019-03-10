@@ -180,8 +180,31 @@ Beta 0.9.5
 *Fixed error that prevented scenarios from working
 
 Beta 0.10
-*Adds Orc Behemoth
+*Adds Orc Behemoth (broken)
 *removes underdog from berserker in party start
 *increases late game difficulty scaling, reduces early game (even more)
+
+
+*Aimed rock and aimed pebble overlay icon, tooltip and sounds updated
+*Cat bite damage nerfed, overlay icon updated
+*Tripleshot sounds, skill icons and overlay icons updated
+*Chain lightning skill icon and overlay icons updated
+*Coordinated volleys sound, overlay icon and effect icon updated
+*Daze sounds, overlay icons and effect icons updated. 
+*Death touch overlay icon and tooltip updated
+*Entrall skill icon fixed, overlay icon updated 
+*Entice requires staff, overlay icon and tooltip updated
+*Evasion fixed, overlay icon updated 
+*Firefield damaged reduced, fixed disabled icon, sounds fixed, updated tool tip and description to mention staff requirement and damage values.
+*Guided Steps sound, overlay icon and effect icon updated
+*Hold the line sound, overlay icon and effect icons updated
+*Magic missile overlay icon fixed
+*Miasma overlay icon fixed
+*Push forward sound, overlay icon and effect icon updated 
+*Revolt overlay icon fixed
+*Rust overlay icon fixed
+*Siphon sound, description and overlay icon updated
+*summon zombies, cat and skeletons all have overlay icons updated
+*stun overlay icon updated
 
 

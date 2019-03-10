@@ -55,7 +55,7 @@ this.legend_unleash_cat <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Summon your cat, hopefully it wont just run away. Needs a free tile adjacent.";
 		this.m.Icon = "skills/cat_square.png";
 		this.m.IconDisabled = "skills/cat_square_bw.png";
-		this.m.Overlay = "active_83";
+		this.m.Overlay = "cat_square";
 		this.m.SoundOnUse = [
 			"sounds/enemies/cat_purr_01.wav",
 			"sounds/enemies/cat_purr_02.wav"

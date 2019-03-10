@@ -9,7 +9,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Enables the character for one turn to move swiftly and safely through any Zone of Control without incurring any free attacks.";
 		this.m.Icon = "skills/evasion.png";
 		this.m.IconDisabled = "skills/evasion_bw.png";
-		this.m.Overlay = "active_12";
+		this.m.Overlay = "evasion";
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OtherTargeted;
 		this.m.IsSerialized = false;
@@ -17,7 +17,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -47,7 +47,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.m.IsSpent && this.skill.isUsable();
+		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.evasion");
 	}
 
 	function isHidden()
@@ -62,11 +62,13 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.m.IsSpent)
+		if (!this.getContainer().hasSkill("effects.evasion"))
 		{
 			this.m.Container.add(this.new("scripts/skills/effects/evasion_effect"));
-			this.m.IsSpent = true;
+			return true;
 		}
+
+		return false;
 	}
 
 	function onTurnStart()

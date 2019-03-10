@@ -8,7 +8,7 @@ this.legend_spawn_skeleton_low_archer_skill <- this.inherit("scripts/skills/acti
 		this.m.Description = "Unleash your skeleton and send him charging into the enemy. Needs a free tile adjacent.";
 		this.m.Icon = "skills/skeleton_archer_01_square.png",
 		this.m.IconDisabled = "skills/skeleton_archer_01_square_bw.png",
-		this.m.Overlay = "active_26";
+		this.m.Overlay = "skeleton_archer_01_square";
 		 this.m.SoundOnUse = [
 		 	"sounds/combat/bones_01.wav",
 		 	"sounds/combat/bones_02.wav",

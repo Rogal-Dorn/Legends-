@@ -6,7 +6,7 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Wither";
 		this.m.Icon = "skills/wither56_skill.png";
 		this.m.IconDisabled = "skills/wither56_skill_bw.png";
-		this.m.Overlay = "perk_34_active";
+		this.m.Overlay = "wither";
 		this.m.SoundOnHit = [
 			"sounds/enemies/necromancer_01.wav",
 			"sounds/enemies/necromancer_02.wav",

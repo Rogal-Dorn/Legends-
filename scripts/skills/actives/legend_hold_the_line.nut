@@ -7,9 +7,9 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Instruct your mercenaries to push their advantages, raising melee defence by 10 within 4 tiles";
 		this.m.Icon = "skills/holdtheline_square.png";
 		this.m.IconDisabled = "skills/holdtheline_square_bw.png";
-		this.m.Overlay = "active_22";
+		this.m.Overlay = "holdtheline_square";
 		this.m.SoundOnUse = [
-		
+			"sounds/combat/holdtheline_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.BeforeLast;
