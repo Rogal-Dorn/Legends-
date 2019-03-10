@@ -206,12 +206,13 @@ Beta 0.10
 *Siphon sound, description and overlay icon updated
 *summon zombies, cat and skeletons all have overlay icons updated
 *stun overlay icon updated
-
+*fixes missing icon errors for rabble, cat and orc elites
+*fixes missing inventory icon for limb lopper
 
 -Battlesite brush images added (can be called from their exact names)
 -legendary locations brush images added (can be called by their name preceded by "legend_"
 -player figure brush images added (can be called by their exact name)
 -Inventory tool icons added for two carts, donkey and tent to allow creation of items for each. 
-
+-placeholder entity and item scripts for donkey and carts
 
 
