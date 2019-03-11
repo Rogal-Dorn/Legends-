@@ -20,6 +20,7 @@ gt.Const.LegendMod.StartTypes <- {
     Noble = "legends_noble",
     Inventor = "legends_inventor"
 	Hoggart = "legends_hoggart",
+	Trader = "legends_trader",
 	Party = "legends_party"
 }
 
@@ -78,7 +79,13 @@ gt.Const.LegendMod.Starts <- [
     //     description = "Experimental acedemic",
     //     banner = gt.Const.LegendMod.StartTypes.Inventor
     // },
-  {
+  	{
+        name = "Trader",
+        description = "Hard. Specialises in barter and storage",
+        intro = "[img]gfx/ui/events/event_24.png[/img]The open road calls you to profit. The only rule is acquisition",
+        banner = gt.Const.LegendMod.StartTypes.Trader
+    },
+	{
         name = "Beggar",
         description = "Hardest. No money, no skill. Very Hard",
         banner = gt.Const.LegendMod.StartTypes.Beggar

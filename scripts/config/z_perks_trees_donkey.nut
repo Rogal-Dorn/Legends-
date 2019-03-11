@@ -29,13 +29,13 @@ local DonkeyTree = [
 		gt.Const.Perks.PerkDefs.LegendEfficientPacking,
 		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
 		gt.Const.Perks.PerkDefs.LegendMedPackages,
-		gt.Const.Perks.PerkDefs.LegendtoolsDrawers
+		gt.Const.Perks.PerkDefs.LegendToolsDrawers
 		
 	],
 	[
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Footwork,
-		gt.Const.Perks.PerkDefs.LegendBattleheart,
+		gt.Const.Perks.PerkDefs.LegendBattleheart
 	],
 	[
 		gt.Const.Perks.PerkDefs.Nimble,
@@ -49,8 +49,7 @@ local DonkeyTree = [
 		gt.Const.Perks.PerkDefs.LegendSkillfulStacking
 		gt.Const.Perks.PerkDefs.LegendAmmoBundles,
 		gt.Const.Perks.PerkDefs.LegendMedIngredients,
-		gt.Const.Perks.PerkDefs.LegendtoolsSpares
-
+		gt.Const.Perks.PerkDefs.LegendToolsSpares
 	],
 	[],
 	[],

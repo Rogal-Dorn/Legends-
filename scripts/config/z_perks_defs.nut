@@ -1141,7 +1141,31 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendToolsSpares,
 		Icon = "ui/perks/MaxToolsT2.png",
 		IconDisabled = "ui/perks/MaxToolsT2_bw.png"
-	}		
+	},
+	{
+		ID = "perk.legend_barter_convincing",
+		Script = "scripts/skills/perks/perk_legend_barter_convincing",
+		Name = this.Const.Strings.PerkName.LegendBarterConvincing,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBarterConvincing,
+		Icon = "ui/perks/BarterT1.png",
+		IconDisabled = "ui/perks/BarterT1_bw.png"
+	},
+	{
+		ID = "perk.legend_barter_trustworthy",
+		Script = "scripts/skills/perks/perk_legend_barter_trustworthy",
+		Name = this.Const.Strings.PerkName.LegendBarterTrustworthy,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBarterTrustworthy,
+		Icon = "ui/perks/BarterT2.png",
+		IconDisabled = "ui/perks/BarterT2_bw.png"
+	},
+	{
+		ID = "perk.legend_bribe",
+		Script = "scripts/skills/perks/perk_legend_bribe",
+		Name = this.Const.Strings.PerkName.LegendBribe,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBribe,
+		Icon = "ui/perks/coins_circle.png",
+		IconDisabled = "ui/perks/coins_circle_bw.png"
+	}			
 	
 ];
 
@@ -1288,5 +1312,8 @@ gt.Const.Perks.PerkDefs <- {
 	LegendMedPackages = 138, 
 	LegendMedIngredients = 139,
 	LegendToolsDrawers = 140,
-	LegendToolsSpares = 141
+	LegendToolsSpares = 141,
+	LegendBarterConvincing = 142,
+	LegendBarterTrustworthy = 143,
+	LegendBribe
 };

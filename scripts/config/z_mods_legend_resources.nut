@@ -248,9 +248,12 @@ gt.Const.LegendMod.getBarterModifier <- function ( _background )
 			return 0.025
 			break;
 		case "background.peddler":
+
 			return 0.10;
 			break;
-
+		case "background.legend_commander_trader":
+			return 0.20;
+			break;
 		default:
 			return 0.0;
 	}

@@ -69,6 +69,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.legend_donkey":
 			return gt.Const.Perks.TreeDonkeyLookupMap
 			break;
+		case "background.legend_commander_trader":
+			return gt.Const.Perks.TreeTraderLookupMap
+			break;
 		// case "background.vazl_inventor":
 		// 	return gt.Const.Perks.TreeInventorLookupMap;
 		// 	break;
@@ -126,6 +129,9 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			break;
 		case "background.legend_donkey":
 			return gt.Const.Perks.PerksTreeDonkey;
+			break;
+		case "background.legend_commander_trader":
+			return gt.Const.Perks.PerksTreeTrader;
 			break;
 		// case "background.vazl_inventor":
 		// 	return gt.Const.Perks.PerksTreeInventor;
