@@ -175,14 +175,12 @@ Beta 0.9.5
 *Increase ambush strength on caravans
 *Increases rabble hp, initiative and defenses, lowers their xp reward
 *Removes most early game weapons from zombies, goblin fighters and thugs
+*Warlock zombie summons now alway spawn with full armor health
+*Reduced Warlock low tier zombie summon with no weapons chance.
 *Poachers can spawn with bows as well as slings now
 *Fixed error that would prevent Orc elites from spawning
 *Fixed error that prevented scenarios from working
 *Fixed tool consumption rate error (was increasing rate instead of decrease). Fixed tooltips to show correct repair time.
-
-
-Beta 0.9.5 b 
-*Reduces late game reward payout scaling.
 *Fixes staves not working at two tiles 
 *Decreases sling range, increases accuracy slightly
 *Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
@@ -193,8 +191,6 @@ Beta 0.9.5 b
 *Triple strike buffed to 0.5 damage per strike 
 *Discover location payout increased, decreased time before hint
 *Berserker commanders can no longer be converted into cultists
-*Warlock zombie summons now alway spawn with full armor health
-*Reduced Warlock low tier zombie summon with no weapons chance.
 
 Beta 0.10
 *Adds Orc Behemoth

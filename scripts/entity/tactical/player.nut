@@ -37,7 +37,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		},
 		Formations = null,
 		VeteranPerks = 0,
-		CampAssignment = ""
+		CampAssignment = "",
+		CampHealing = 0,
+		LastCampTime = 0
 	},
 	function setName( _value )
 	{
@@ -2484,6 +2486,27 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	function getCampHealing() 
+	{
+		return this.m.CampHealing;
+	}
+
+	function setCampHealing( _v )
+	{
+		this.m.CampHealing = _v;
+	}
+
+
+	function getLastCampTime()
+	{
+		return this.m.LastCampTime;
+	}
+
+	function setLastCampTime( _t )
+	{
+		this.m.LastCampTime = _t;
+	}
+
 	function onSerialize( _out )
 	{
 		this.actor.onSerialize(_out);
@@ -2534,6 +2557,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU8(this.m.VeteranPerks);
 		_out.writeBool(this.m.IsCommander);
 		_out.writeString(this.m.CampAssignment);
+		_out.writeF32(this.m.LastCampTime);
 
 	}
 
@@ -2633,6 +2657,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 52)
 		{
 			this.m.CampAssignment = _in.readString();
+			this.m.LastCampTime = _in.readF32();
 		}
 
 	}

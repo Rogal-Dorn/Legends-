@@ -4071,6 +4071,23 @@ this.tooltip_events <- {
 					text = "If enabled. All settlements will be hidden at campaign start. For the true explorer experience!"
 				}
 			];
+		
+		case "camp.commander":
+		case "camp.rest":
+		case "camp.repair":
+		case "camp.barber":
+		case "camp.crafting":
+		case "camp.enchanter":
+		case "camp.fletcher":
+		case "camp.healer":
+		case "camp.hunter":
+		case "camp.repair":
+		case "camp.rest":
+		case "camp.scout":
+		case "camp.training":
+		case "camp.gatherer":
+		case "camp.workshop":
+			return this.World.Camp.getBuildingByID(_elementId).getTooltip();
 
 		}
 

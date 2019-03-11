@@ -2,18 +2,22 @@ this.camp_screen <- {
 	m = {
 		JSHandle = null,
 		MainDialogModule = null,
-		HireDialogModule = null,
-		ShopDialogModule = null,
-		TravelDialogModule = null,
+		CommanderDialogModule = null,
 		BarberDialogModule = null,
-		TempleDialogModule = null,
-		TavernDialogModule = null,
+		CraftingDialogModule = null,
+		EnchanterDialogModule = null,
+		FletcherDialogModule = null,
+		HealerDialogModule = null,
+		HunterDialogModule = null,
+		RepairDialogModule = null,
+		RestDialogModule = null,
+		ScoutDialogModule = null,
 		TrainingDialogModule = null,
-		TaxidermistDialogModule = null,
+		GathererDialogModule = null,
+		WorkshopDialogModule = null,
 		Visible = null,
-		Animating = null,
+		Animating = false,
 		LastActiveModule = null,
-		Town = null,
 		OnConnectedListener = null,
 		OnDisconnectedListener = null,
 		OnBrothersButtonPressedListener = null,
@@ -27,14 +31,7 @@ this.camp_screen <- {
 
 	function isAnimating()
 	{
-		if (this.m.Animating != null && this.m.MainDialogModule != null && this.m.HireDialogModule != null && this.m.ShopDialogModule != null)
-		{
-			return this.m.Animating == true || this.m.MainDialogModule.isAnimating() || this.m.HireDialogModule.isAnimating() || this.m.ShopDialogModule.isAnimating() || this.m.TrainingDialogModule.isAnimating() || this.m.BarberDialogModule.isAnimating();
-		}
-		else
-		{
-			return false;
-		}
+		return this.m.Animating == true || this.m.MainDialogModule.isAnimating() || this.m.CommanderDialogModule.isAnimating();
 	}
 
 	function getMainDialogModule()
@@ -42,34 +39,54 @@ this.camp_screen <- {
 		return this.m.MainDialogModule;
 	}
 
-	function getHireDialogModule()
-	{
-		return this.m.HireDialogModule;
-	}
-
-	function getShopDialogModule()
-	{
-		return this.m.ShopDialogModule;
-	}
-
-	function getTravelDialogModule()
-	{
-		return this.m.TravelDialogModule;
-	}
-
 	function getBarberDialogModule()
 	{
 		return this.m.BarberDialogModule;
 	}
 
-	function getTavernDialogModule()
+	function getCommanderDialogModule()
 	{
-		return this.m.TavernDialogModule;
+		return this.m.CommanderDialogModule;
 	}
 
-	function getTempleDialogModule()
+	function getCraftingDialogModule()
 	{
-		return this.m.TempleDialogModule;
+		return this.m.CraftingDialogModule;
+	}
+
+	function getEnchanterDialogModule()
+	{
+		return this.m.EnchanterDialogModule;
+	}
+
+	function getFletcherDialogModule()
+	{
+		return this.m.FletcherDialogModule;
+	}
+
+	function getHealerDialogModule()
+	{
+		return this.m.HealerDialogModule;
+	}
+
+	function getHunterDialogModule()
+	{
+		return this.m.HunterDialogModule;
+	}
+
+	function getRepairDialogModule()
+	{
+		return this.m.RepairDialogModule;
+	}
+
+	function getRestDialogModule()
+	{
+		return this.m.RestDialogModule;
+	}
+
+	function getScoutDialogModule()
+	{
+		return this.m.ScoutDialogModule;
 	}
 
 	function getTrainingDialogModule()
@@ -77,9 +94,14 @@ this.camp_screen <- {
 		return this.m.TrainingDialogModule;
 	}
 
-	function getTaxidermistDialogModule()
+	function getGathererDialogModule()
 	{
-		return this.m.TaxidermistDialogModule;
+		return this.m.GathererDialogModule;
+	}
+
+	function getWorkshopDialogModule()
+	{
+		return this.m.WorkshopDialogModule;
 	}
 
 	function setOnConnectedListener( _listener )
@@ -124,68 +146,98 @@ this.camp_screen <- {
 		this.m.MainDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_main_dialog_module");
 		this.m.MainDialogModule.setParent(this);
 		this.m.MainDialogModule.connectUI(this.m.JSHandle);
-		// this.m.HireDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_hire_dialog_module");
-		// this.m.HireDialogModule.setParent(this);
-		// this.m.HireDialogModule.connectUI(this.m.JSHandle);
-		// this.m.ShopDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_shop_dialog_module");
-		// this.m.ShopDialogModule.setParent(this);
-		// this.m.ShopDialogModule.connectUI(this.m.JSHandle);
-		// this.m.TravelDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_travel_dialog_module");
-		// this.m.TravelDialogModule.setParent(this);
-		// this.m.TravelDialogModule.connectUI(this.m.JSHandle);
-		// this.m.BarberDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_barber_dialog_module");
-		// this.m.BarberDialogModule.setParent(this);
-		// this.m.BarberDialogModule.connectUI(this.m.JSHandle);
-		// this.m.TavernDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_tavern_dialog_module");
-		// this.m.TavernDialogModule.setParent(this);
-		// this.m.TavernDialogModule.connectUI(this.m.JSHandle);
-		// this.m.TempleDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_temple_dialog_module");
-		// this.m.TempleDialogModule.setParent(this);
-		// this.m.TempleDialogModule.connectUI(this.m.JSHandle);
-		// this.m.TrainingDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_training_dialog_module");
-		// this.m.TrainingDialogModule.setParent(this);
-		// this.m.TrainingDialogModule.connectUI(this.m.JSHandle);
-		// this.m.TaxidermistDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_taxidermist_dialog_module");
-		// this.m.TaxidermistDialogModule.setParent(this);
-		// this.m.TaxidermistDialogModule.connectUI(this.m.JSHandle);
+		this.m.CommanderDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_commander_dialog_module");
+		this.m.CommanderDialogModule.setParent(this);
+		this.m.CommanderDialogModule.connectUI(this.m.JSHandle);
+		this.m.BarberDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_barber_dialog_module");
+		this.m.BarberDialogModule.setParent(this);
+		this.m.BarberDialogModule.connectUI(this.m.JSHandle);
+		this.m.CraftingDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_crafting_dialog_module");
+		this.m.CraftingDialogModule.setParent(this);
+		this.m.CraftingDialogModule.connectUI(this.m.JSHandle);
+		this.m.EnchanterDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_enchanter_dialog_module");
+		this.m.EnchanterDialogModule.setParent(this);
+		this.m.EnchanterDialogModule.connectUI(this.m.JSHandle);
+		this.m.FletcherDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_fletcher_dialog_module");
+		this.m.FletcherDialogModule.setParent(this);
+		this.m.FletcherDialogModule.connectUI(this.m.JSHandle);			
+		this.m.HealerDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_healer_dialog_module");
+		this.m.HealerDialogModule.setParent(this);
+		this.m.HealerDialogModule.connectUI(this.m.JSHandle);
+		this.m.HunterDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_hunter_dialog_module");
+		this.m.HunterDialogModule.setParent(this);
+		this.m.HunterDialogModule.connectUI(this.m.JSHandle);	
+		this.m.RepairDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_repair_dialog_module");
+		this.m.RepairDialogModule.setParent(this);
+		this.m.RepairDialogModule.connectUI(this.m.JSHandle);
+		this.m.RestDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_rest_dialog_module");
+		this.m.RestDialogModule.setParent(this);
+		this.m.RestDialogModule.connectUI(this.m.JSHandle);
+		this.m.ScoutDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_scout_dialog_module");
+		this.m.ScoutDialogModule.setParent(this);
+		this.m.ScoutDialogModule.connectUI(this.m.JSHandle);
+		this.m.TrainingDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_training_dialog_module");
+		this.m.TrainingDialogModule.setParent(this);
+		this.m.TrainingDialogModule.connectUI(this.m.JSHandle);
+		this.m.GathererDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_gatherer_dialog_module");
+		this.m.GathererDialogModule.setParent(this);
+		this.m.GathererDialogModule.connectUI(this.m.JSHandle);
+		this.m.WorkshopDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_workshop_dialog_module");
+		this.m.WorkshopDialogModule.setParent(this);
+		this.m.WorkshopDialogModule.connectUI(this.m.JSHandle);		
 	}
 
 	function destroy()
 	{
 		this.clearEventListener();
-		// this.m.ShopDialogModule.destroy();
-		// this.m.ShopDialogModule = null;
-		// this.m.HireDialogModule.destroy();
-		// this.m.HireDialogModule = null;
-		// this.m.TravelDialogModule.destroy();
-		// this.m.TravelDialogModule = null;
-		// this.m.BarberDialogModule.destroy();
-		// this.m.BarberDialogModule = null;
-		// this.m.TavernDialogModule.destroy();
-		// this.m.TavernDialogModule = null;
-		// this.m.TempleDialogModule.destroy();
-		// this.m.TempleDialogModule = null;
-		// this.m.TrainingDialogModule.destroy();
-		// this.m.TrainingDialogModule = null;
-		// this.m.TaxidermistDialogModule.destroy();
-		// this.m.TaxidermistDialogModule = null;
 		this.m.MainDialogModule.destroy();
 		this.m.MainDialogModule = null;
+		this.m.CommanderDialogModule.destroy();
+		this.m.CommanderDialogModule = null;
+		this.m.BarberDialogModule.destroy();
+		this.m.CraftingDialogModule.destroy();
+		this.m.EnchanterDialogModule.destroy();
+		this.m.FletcherDialogModule.destroy();
+		this.m.HealerDialogModule.destroy();
+		this.m.HunterDialogModule.destroy();		
+		this.m.RepairDialogModule.destroy();	
+		this.m.RestDialogModule.destroy();
+		this.m.ScoutDialogModule.destroy();
+		this.m.TrainingDialogModule.destroy();
+		this.m.GathererDialogModule.destroy();
+		this.m.WorkshopDialogModule.destroy();
+		this.m.BarberDialogModule = null;
+		this.m.CraftingDialogModule = null;
+		this.m.EnchanterDialogModule = null;
+		this.m.FletcherDialogModule = null;
+		this.m.HealerDialogModule = null;
+		this.m.HunterDialogModule = null;
+		this.m.RepairDialogModule = null;
+		this.m.RestDialogModule = null;
+		this.m.ScoutDialogModule = null;
+		this.m.TrainingDialogModule = null;
+		this.m.GathererDialogModule = null;
+		this.m.WorkshopDialogModule = null;		
+
 		this.m.JSHandle = this.UI.disconnect(this.m.JSHandle);
 	}
 
 	function clear()
 	{
-		this.m.Town = null;
-		// this.m.ShopDialogModule.clear();
-		// this.m.HireDialogModule.clear();
-		// this.m.TravelDialogModule.clear();
-		// this.m.BarberDialogModule.clear();
-		// this.m.TavernDialogModule.clear();
-		// this.m.TempleDialogModule.clear();
-		// this.m.TrainingDialogModule.clear();
-		// this.m.TaxidermistDialogModule.clear();
 		this.m.MainDialogModule.clear();
+		this.m.CommanderDialogModule.clear();
+		this.m.BarberDialogModule.clear();
+		this.m.CraftingDialogModule.clear();
+		this.m.EnchanterDialogModule.clear();
+		this.m.FletcherDialogModule.clear();
+		this.m.HealerDialogModule.clear();
+		this.m.HunterDialogModule.clear();		
+		this.m.RepairDialogModule.clear();	
+		this.m.RestDialogModule.clear();
+		this.m.ScoutDialogModule.clear();
+		this.m.TrainingDialogModule.clear();
+		this.m.GathererDialogModule.clear();
+		this.m.WorkshopDialogModule.clear();
 	}
 
 	function show()
@@ -273,37 +325,25 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = null;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showMainDialog", this.queryAssetsInformation());
-		}
-	}
-
-	function showHireDialog()
+		function showCommanderDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
 		{
-			this.m.LastActiveModule = this.m.HireDialogModule;
+			this.m.LastActiveModule = this.m.CommanderDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showHireDialog", this.m.HireDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showCommanderDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}		this.m.JSHandle.asyncCall("showMainDialog", this.queryAssetsInformation());
 		}
 	}
 
-	function showShopDialog()
+	function showCommanderDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
 		{
-			this.m.LastActiveModule = this.m.ShopDialogModule;
+			this.m.LastActiveModule = this.m.CommanderDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showShopDialog", this.m.ShopDialogModule.queryShopInformation());
-		}
-	}
-
-	function showTravelDialog()
-	{
-		if (this.m.JSHandle != null && this.isVisible())
-		{
-			this.m.LastActiveModule = this.m.TravelDialogModule;
-			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showTravelDialog", this.m.TravelDialogModule.queryTravelInformation());
+			this.m.JSHandle.asyncCall("showCommanderDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
 
@@ -313,17 +353,77 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.BarberDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showBarberDialog", this.m.BarberDialogModule.queryRosterInformation());
+			this.m.JSHandle.asyncCall("showBarberDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
 
-	function showTempleDialog()
+	function showCraftingDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
 		{
-			this.m.LastActiveModule = this.m.TempleDialogModule;
+			this.m.LastActiveModule = this.m.CraftingDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showTempleDialog", this.m.TempleDialogModule.queryRosterInformation());
+			this.m.JSHandle.asyncCall("showCraftingDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}
+
+	function showEnchanterDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.EnchanterDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showEnchanterDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}
+
+	function showFletcherDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.FletcherDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showFletcherDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}
+
+	function showHunterDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.HunterDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showHunterDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}
+
+	function showRepairDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.RepairDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showRepairDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}
+
+	function showRestDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.RestDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showRestDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}
+
+	function showScoutDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.ScoutDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showScoutDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
 
@@ -333,30 +433,29 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.TrainingDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showTrainingDialog", this.m.TrainingDialogModule.queryRosterInformation());
+			this.m.JSHandle.asyncCall("showTrainingDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
 
-	function showTaxidermistDialog()
+	function showGathererDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
 		{
-			this.m.LastActiveModule = this.m.TaxidermistDialogModule;
+			this.m.LastActiveModule = this.m.GathererDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showTaxidermistDialog", this.m.TaxidermistDialogModule.queryBlueprints());
+			this.m.JSHandle.asyncCall("showGathererDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
 
-	function showTavernDialog()
+	function showWorkshopDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
 		{
-			this.m.LastActiveModule = this.m.TavernDialogModule;
+			this.m.LastActiveModule = this.m.WorkshopDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showTavernDialog", this.m.TavernDialogModule.queryData());
+			this.m.JSHandle.asyncCall("showWorkshopDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
-
 
 	function updateAssets()
 	{
@@ -423,22 +522,14 @@ this.camp_screen <- {
 			return;
 		}
 
-		if (this.m.Town != null)
-		{
-			this.m.Town.onSlotClicked(_data, this);
-		}
-	}
-
-	function onContractClicked( _data )
-	{
-		if (this.isAnimating())
+		local building = this.World.Camp.getBuildingByID(_data);
+		if (building == null)
 		{
 			return;
 		}
 
-		this.World.Contracts.showContractByID(_data);
+		building.onClicked(this);
 	}
-
 
 	function getTimeRequired()
 	{
@@ -537,6 +628,23 @@ this.camp_screen <- {
 			Situations = []
 		};
 
+		foreach( building in this.World.Camp.getBuildings())
+		{
+			if (building == null || building.isHidden())
+			{
+				result.Slots.push(null);
+			}
+			else
+			{
+				local b = {
+					Image = building.getUIImage(),
+					Tooltip = building.getTooltipID(),
+					Slot = building.getSlot(),
+					CanEnter = building.canEnter()
+				};
+				result.Slots.push(b);
+			}
+		}
 		return result;
 	}
 
