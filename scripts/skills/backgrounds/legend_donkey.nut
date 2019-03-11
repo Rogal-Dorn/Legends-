@@ -19,9 +19,9 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		];
 		this.m.Faces = this.Const.Faces.Donkey;
 		this.m.Hairs = this.Const.Hair.None;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Female;
-		this.m.Body = "bust_naked_body_donkey";
+		this.m.HairColors = this.Const.HairColors.None;
+		this.m.Body = "bust_naked_body_05";
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -87,7 +87,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
-		this.m.Container.add(this.new("scripts/skills/perks/legend_donkey_kick"));
+		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
 	}	
 
 

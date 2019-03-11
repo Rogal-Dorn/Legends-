@@ -66,6 +66,7 @@ gt.Const.LegendMod.getMaxAmmo <- function ( _background )
 		case "background.legend_ranger":
 			return 30;
 			break;
+		case "background.legend_donkey":
 		case "background.female_bowyer":
 			return 50;
 			break;
@@ -103,7 +104,9 @@ gt.Const.LegendMod.getMaxArmorParts <- function ( _background )
 		case "background.legend_blacksmith":
 			return 20;
 			break;
-
+		case "background.legend_donkey":
+			return 30;
+			break;
 		default:
 			return 2;
 	}
@@ -126,6 +129,9 @@ gt.Const.LegendMod.getMaxMedicine <- function ( _background )
 		case "background.female_butcher":
 		case "background.vazl_vala":
 			return 15;
+			break;
+		case "background.legend_donkey":
+			return 30;
 			break;
 		case "background.legend_commander_necro":
 		case "background.legend_necro":
@@ -153,6 +159,9 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 			break;
 		case "background.caravan_hand":
 			return 15;
+			break;
+		case "background.legend_donkey":
+			return 30;
 			break;
 		case "background.legend_commander_ranger":
 		case "background.legend_ranger":
