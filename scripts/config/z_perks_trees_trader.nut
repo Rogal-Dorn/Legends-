@@ -70,7 +70,7 @@ local TraderTree = [
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Indomitable,
 		gt.Const.Perks.PerkDefs.LegendSkillfulStacking,
-		gt.Const.Perks.PerkDefs.LegendBarterTrustworthy
+		gt.Const.Perks.PerkDefs.LegendBarterTrustworthy,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],
