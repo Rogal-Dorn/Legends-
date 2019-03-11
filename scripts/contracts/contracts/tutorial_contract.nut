@@ -120,7 +120,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("StartingBattle");
 		} 
-		else if (this.World.Tags.get("LegendsParty"))
+		else if (this.World.Tags.get("IsLegendsParty"))
 		{
 			this.setState("LegendsParty");
 		} 
@@ -702,7 +702,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 
 			function update()
 			{
-				this.Contract.setScreen("LegendsTraderrSuccess");
+				this.Contract.setScreen("LegendsTraderSuccess");
 				this.World.Contracts.showActiveContract();
 			}
 	});	

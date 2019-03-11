@@ -1165,6 +1165,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		if (this.m.Campaign == "legends_healer") {
 			this.World.Tags.set("IsLegendsHealer", true);
 		}
+		if (this.m.Campaign == "legends_party") {
+			this.World.Tags.set("IsLegendsParty", true);
+		}
+		if (this.m.Campaign == "legends_trader") {
+			this.World.Tags.set("IsLegendsTrader", true);
+		}
 		if (this.m.Campaign == "legends_hoggart") {
 			this.World.Tags.set("IsLegendsHoggart", true);
 		}

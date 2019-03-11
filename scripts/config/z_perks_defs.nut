@@ -1315,5 +1315,5 @@ gt.Const.Perks.PerkDefs <- {
 	LegendToolsSpares = 141,
 	LegendBarterConvincing = 142,
 	LegendBarterTrustworthy = 143,
-	LegendBribe
+	LegendBribe = 144
 };
