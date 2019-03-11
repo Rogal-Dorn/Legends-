@@ -1,16 +1,16 @@
 this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		Item = null
+		Vala = null
 	},
-	function setItem( _i )
+	function setVala(_v)
 	{
-		if (typeof _i == "instance")
+		if (typeof _v == "instance")
 		{
-			this.m.Item = _i;
+			this.m.Vala = _v;
 		}
 		else
 		{
-			this.m.Item = this.WeakTableRef(_i);
+			this.m.Vala = this.WeakTableRef(_v);
 		}
 	}
 
@@ -80,7 +80,7 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (this.m.Item.m.WardenEntity != null)
+		if (this.m.Vala.m.WardenEntity != null)
 		{
 			local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
 
@@ -96,7 +96,7 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		if (this.m.Item.m.WardenEntity == null)
+		if (this.m.Vala.m.WardenEntity == null)
 		{
 			return;
 		}
@@ -119,6 +119,6 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 		hitInfo.BodyPart = this.Const.BodyPart.Body;
 		hitInfo.BodyDamageMult = 1.0;
 		hitInfo.FatalityChanceMult = 0.0;
-		this.m.Item.m.WardenEntity.onDamageReceived(_attacker, this, hitInfo);
+		this.m.Vala.m.WardenEntity.onDamageReceived(_attacker, this, hitInfo);
 	}
 });

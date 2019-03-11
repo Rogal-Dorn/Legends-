@@ -42,12 +42,16 @@ this.vazl_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onUpdate( _properties )
+	{
+		_properties.RangedAttackBlockedChanceMult = 0.0;
+	}
+
+
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
-			_properties.RangedAttackBlockedChanceMult = 0.0;
-
 			if (_skill.isAttack() && _targetEntity != null && _targetEntity.getID() != this.getContainer().getActor().getID() && _targetEntity.getFaction() == this.getContainer().getActor().getFaction())
 			{
 				_properties.DamageRegularMin = 0;
@@ -56,10 +60,10 @@ this.vazl_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
-				_properties.DamageRegularMin = 8;
-				_properties.DamageRegularMax = 12;
+				_properties.DamageRegularMin += 10;
+				_properties.DamageRegularMax += 15;
 				_properties.IsIgnoringArmorOnAttack = true;
-				_properties.HitChanceAdditionalWithEachTile -= 1;
+				_properties.HitChanceAdditionalWithEachTile -= 2;
 			}
 		}
 	}

@@ -113,8 +113,8 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 	{
 		this.getAgent().getOrders().IsEngaging = false;
 		this.getAgent().getOrders().IsDefending = true;
-		this.getAgent().getIntentions().IsDefendingPosition = true;
 		this.getAgent().getIntentions().IsEngaging = false;
+		this.getAgent().getIntentions().IsDefendingPosition = true;
 
 		if (this.m.IsWaitingAfterMove || this.m.IsHoldingPosition)
 		{

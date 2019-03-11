@@ -37,8 +37,8 @@ this.vazl_vala_warden_pale_touch <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMin = 8;
-			_properties.DamageRegularMax = 12;
+			_properties.DamageRegularMin += 10;
+			_properties.DamageRegularMax += 15;
 			_properties.IsIgnoringArmorOnAttack = true;
 		}
 	}
