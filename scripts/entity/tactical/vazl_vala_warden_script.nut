@@ -1,28 +1,23 @@
 this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		Item = null
+		Vala = null
 	},
-	function setItem( _i )
+	function setVala(_v)
 	{
-		if (typeof _i == "instance")
+		if (typeof _v == "instance")
 		{
-			this.m.Item = _i;
+			this.m.Vala = _v;
 		}
 		else
 		{
-			this.m.Item = this.WeakTableRef(_i);
+			this.m.Vala = this.WeakTableRef(_v);
 		}
 	}
-
-
 	function setName( _n )
 	{
 		this.m.Name = _n;
 	}
-	function getName()
-	{
-		return this.m.Name;
-	}
+
 
 
 	function create()
@@ -118,10 +113,10 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.spawnParticleEffect(false, effect.Brushes, _tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
 		}
 
-		if (this.m.Item != null)
+		if (this.m.Vala != null)
 		{
-			this.m.Item.m.WardenEntity = null;
-			this.m.Item = null;
+			this.m.Vala.m.WardenEntity = null;
+			this.m.Vala = null;
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
@@ -175,7 +170,7 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 		local NewWardenStats = {
 			XP = 0,
 			Hitpoints = this.Math.ceil(50 + (_vala * 1.50)),
-			ActionPoints = 9,
+			ActionPoints = 7,
 			Bravery = 200,
 			Stamina = 200,
 			MeleeSkill = this.Math.ceil(47 + (_vala * 0.25)),
@@ -199,7 +194,7 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local WardenProperties = {
 			XP = 0,
-			ActionPoints = 9,
+			ActionPoints = 7,
 			Hitpoints = 1,
 			Bravery = 200,
 			Stamina = 200,

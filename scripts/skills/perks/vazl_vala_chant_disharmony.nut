@@ -70,7 +70,7 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Enemy units within 2 tiles of the Vala are unable to enforce Zones of Control until the Vala's next turn."
+				text = "Until the start of her next turn, enemies adjacent to the Vala are unable to enforce Zones of Control."
 			},
 		];
 

@@ -49,11 +49,19 @@ this.vazl_vala_in_trance <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.TargetAttractionMult *= 1.33;
+		this.getContainer().getActor().m.IsUsingZoneOfControl = false;
+	}
+
+
+	function onRemoved()
+	{
+		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 	}
 
 
 	function onCombatFinished()
 	{
+		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 		this.removeSelf();
 	}
 });

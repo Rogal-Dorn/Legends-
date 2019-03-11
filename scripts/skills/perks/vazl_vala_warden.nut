@@ -137,7 +137,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 				local entity = this.Tactical.spawnEntity("scripts/entity/tactical/vazl_vala_warden_script", WardenSpawnTile.Coords.X, WardenSpawnTile.Coords.Y);
 				entity.setName(this.getContainer().getActor().m.Name + "\'s Warden");
 				entity.setFaction(this.Const.Faction.PlayerAnimals);
-				entity.setItem(this);
+				entity.setVala(this);
 				entity.setWardenStats(this.getContainer().getActor().getCurrentProperties().Bravery);
 				this.m.WardenSummonSpent = true;
 				this.m.WardenEntity = entity;
@@ -147,7 +147,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 					if (!this.getContainer().getActor().getSkills().hasSkill("effects.vazl_vala_spiritual_bond_effect"))
 					{
 						local bond = this.new("scripts/skills/effects/vazl_vala_spiritual_bond_effect");
-						bond.setItem(this);
+						bond.setVala(this);
 						this.getContainer().getActor().getSkills().add(bond);
 					}
 				}

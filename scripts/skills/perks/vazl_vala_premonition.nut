@@ -1,11 +1,11 @@
-this.vazl_vala_precognition <- this.inherit("scripts/skills/skill", {
+this.vazl_vala_premonition <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.vazl_vala_precognition";
-		this.m.Name = "Precognition";
-		this.m.Description = "Precognition";
-		this.m.Icon = "ui/perks/vazl_vala_precognition.png";
+		this.m.ID = "perk.vazl_vala_premonition";
+		this.m.Name = "Premonition";
+		this.m.Description = "Premonition";
+		this.m.Icon = "ui/perks/vazl_vala_premonition.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast + 9;
 		this.m.IsActive = false;
