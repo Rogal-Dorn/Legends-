@@ -516,6 +516,16 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_donkey"
+			]);
+			bro.setPlaceInFormation(12);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
 			break;
 
 		case this.Const.LegendMod.StartTypes.Party:
