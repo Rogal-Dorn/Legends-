@@ -209,6 +209,10 @@ Beta 0.10
 *fixes missing icon errors for rabble, cat and orc elites
 *fixes missing inventory icon for limb lopper
 *Adds max resource perks: Ammo binding, Ammo bundles, efficient packing, med ingredients, med packages, skillful stacking, tools drawers, tools spares 
+*Adds Trader commander start with barter and bribe perks 
+*Adds recruitable donkeys with perks for increasing max stash, ammo, meds and armor parts 
+*fixes icon on sleep perk 
+
 
 
 -Battlesite brush images added (can be called from their exact names)
