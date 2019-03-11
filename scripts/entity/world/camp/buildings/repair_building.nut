@@ -7,6 +7,12 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = "camp.repair";
+        this.m.Slot = "repair";
+        this.m.Name = "Repair Tent";
+        this.m.Description = "Manage the repair of company items"
+		this.m.UIImage = "ui/settlements/building_01";
+		this.m.UIImageNight = "ui/settlements/building_01_night";
+		this.m.TooltipIcon = "ui/icons/buildings/armorsmith.png";        
     }
 
     function destroy()
@@ -142,4 +148,11 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
         }
     }
+
+	function onClicked( _campScreen )
+	{
+        _campScreen.showRepairDialog();
+        this.camp_building.onClicked(_campScreen);
+	}
+
 });

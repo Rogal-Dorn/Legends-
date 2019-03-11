@@ -1,7 +1,17 @@
 this.camp_building <- {
 	m = {
         Camp = null,
-        ID = ""
+        ID = "",
+        Slot = "",
+        Name = "",
+        Description = "",
+		UIImage = null,
+		UIImageNight = null,
+		Tooltip = null,
+		TooltipIcon = "",
+		Sounds = [],
+		SoundsAtNight = [],
+        CanEnter = true
 	},
     function create()
     {
@@ -23,11 +33,72 @@ this.camp_building <- {
     {
     }
 
+    function canEnter()
+    {
+        return this.m.CanEnter;
+    }
+
+    function getID()
+    {
+        return this.m.ID;
+    }
+
+    function getSlot()
+    {
+        return this.m.Slot;
+    }
+
     function getResults()
     {
         return [];
     }
 
+    function isHidden()
+    {
+        return false;
+    }
+
+	function getUIImage()
+	{
+		return this.World.getTime().IsDaytime ? this.m.UIImage : this.m.UIImageNight;
+	}
+
+	function getTooltipID()
+	{
+		return this.m.ID;
+	}
+
+    function getTooltip()
+    {
+        return [
+            {
+                id = 1,
+                type = "title",
+                text = this.m.Name
+            },
+            {
+                id = 2,
+                type = "description",
+                text = this.m.Description
+            }
+        ];        
+    }
+
+	function getTooltipIcon()
+	{
+		return this.m.TooltipIcon;
+	}
+
+	function pushUIMenuStack()
+	{
+		this.World.State.getMenuStack().push(function ()
+		{
+			this.World.State.getCampScreen().showMainDialog();
+		}, function ()
+		{
+			return !this.World.State.getCampScreen().isAnimating();
+		});
+	}
 
     function assignBro( _bro )
     {
@@ -39,6 +110,16 @@ this.camp_building <- {
         this.m.Camp = this.WeakTableRef(_camp);
     }
 
+	function onClicked( _campScreen )
+	{
+        this.World.State.getMenuStack().push(function ()
+		{
+			this.World.State.getCampScreen().showMainDialog();
+		}, function ()
+		{
+			return !this.World.State.getCampScreen().isAnimating();
+		});
+	}
 
     function onSerialize( _out )
 	{

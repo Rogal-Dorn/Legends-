@@ -5,6 +5,12 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     {
         this.camp_building.create();
         this.m.ID = "camp.rest";
+        this.m.Slot = "rest";
+        this.m.Name = "Rest";
+        this.m.Description = "Company personnel who have not been assigned a task will relax and rest here. Brothers who are relaxing will heal healthpoint twice as fast as others. The mood of anyone relaxing is sure to increase as well.";
+		this.m.UIImageNight =  "ui/settlements/crowd_01";
+		this.m.UIImage = "ui/settlements/crowd_01";
+        this.m.CanEnter = false
     }
 
     function destroy()
@@ -13,16 +19,67 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
     function init()
     {
+        local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+            bro.setCampHealing(0);
+        }
+    }
+
+    function completed()
+    {
+        local roster = this.World.getPlayerRoster().getAll();
+
+        if (this.m.Camp.getCampTimeHours() < 4)
+        {
+            return;
+        }
+
+        local mood = 1.0;
+        if (this.m.Camp.getCampTimeHours() >= 8)
+        {
+            mood = 2.0;
+        }
+
+        foreach( b in roster )
+        {
+            if (b.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			if (b.getLastCampTime() == 0 || this.Time.getVirtualTimeF() - b.getLastCampTime() > this.World.getTime().SecondsPerDay)
+			{
+				b.improveMood(mood, "Was able to rest in camp");
+                b.setLastCamptime(this.m.Camp.getLastCampTime());
+			}
+        }
     }
     
     function getResults()
     {
-        // return [{
-		// 		id = 10,
-		// 		icon = "ui/icons/asset_supplies.png",
-		// 		text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ToolsUsed + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] points of armor."
-		// 	}];
-        return [];
+        local res = [];
+        local roster = this.World.getPlayerRoster().getAll();
+        foreach( b in roster )
+        {
+            if (b.getCampHealing() > 0)
+            {
+                res.push({
+                    id = 11,
+                    icon = "ui/icons/health.png",
+                    text = b.getName() + " healed [color=" + this.Const.UI.Color.PositiveEventValue + "]" + b.getCampHealing() + "[/color] points."
+                })
+            }
+            if (b.getLastCampTime() == this.m.Camp.getLastCampTime())
+            {
+                res.push({
+                    id = 12,
+                    icon =  this.Const.MoodStateIcon[b.getMoodState()],
+                    text = b.getName() + this.Const.MoodStateEvent[b.getMoodState()]
+                })
+            }
+        }
+        return res;
     }
 
 
@@ -52,6 +109,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     function update ()
     {
         local modifiers = this.getModifiers();
+        local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
         {
             local d = bro.getHitpointsMax() - bro.getHitpoints();
@@ -67,7 +125,14 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
                 heal = 2.0;
             }
 
-            bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * heal * modifiers.Modifier));
+            local points =  this.Const.World.Assets.HitpointsPerHour * heal * modifiers.Modifier;
+            bro.setCampHealing(bro.getCampHealing() + points);
+            bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + points));
         }
     }
+
+	function onClicked( _campScreen )
+	{
+	}
+
 });

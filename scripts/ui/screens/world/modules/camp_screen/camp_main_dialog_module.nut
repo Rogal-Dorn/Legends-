@@ -6,15 +6,6 @@ this.camp_main_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.ui_module.create();
 	}
 
-	function destroy()
-	{
-		this.ui_module.destroy();
-	}
-
-	function clear()
-	{
-	}
-
 	function reload()
 	{
 		this.m.JSHandle.asyncCall("loadFromData", this.m.Parent.queryTownInformation());
