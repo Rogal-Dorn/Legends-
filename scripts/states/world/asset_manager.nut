@@ -620,8 +620,8 @@ this.asset_manager <- {
 				"legend_trader_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
-			bro.setVeteranPerks(3);
-			this.setBrothersMax(2);
+			bro.setVeteranPerks(2);
+			this.setBrothersMax(6);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			
 			bro = roster.create("scripts/entity/tactical/player");
@@ -630,7 +630,7 @@ this.asset_manager <- {
 				"legend_donkey"
 			]);
 			bro.setPlaceInFormation(3);
-			bro.setVeteranPerks(3);
+			bro.setVeteranPerks(5);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 

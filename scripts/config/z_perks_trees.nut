@@ -61,16 +61,16 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeBeggarLookupMap;
 			break;	
 		case "background.legend_commander_berserker":
-			return gt.Const.Perks.TreeBerserkerLookupMap
+			return gt.Const.Perks.TreeBerserkerLookupMap;
 			break;
 		case "background.legend_berserker":
-			return gt.Const.Perks.TreeBerserkerWeakLookupMap
+			return gt.Const.Perks.TreeBerserkerWeakLookupMap;
 			break;
 		case "background.legend_donkey":
-			return gt.Const.Perks.TreeDonkeyLookupMap
+			return gt.Const.Perks.TreeDonkeyLookupMap;
 			break;
 		case "background.legend_commander_trader":
-			return gt.Const.Perks.TreeTraderLookupMap
+			return gt.Const.Perks.TreeTraderLookupMap;
 			break;
 		// case "background.vazl_inventor":
 		// 	return gt.Const.Perks.TreeInventorLookupMap;
@@ -122,7 +122,7 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeBeggar;
 			break;
 		case "background.legend_commander_berserker":
-			return gt.Const.Perks.PerksTreeBerserker	
+			return gt.Const.Perks.PerksTreeBerserker;	
 			break;
 		case "background.legend_berserker":
 			return gt.Const.Perks.PerksTreeBerserkerWeak;

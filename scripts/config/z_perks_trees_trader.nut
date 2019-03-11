@@ -60,9 +60,8 @@ local TraderTree = [
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Nimble,
-		gt.Const.Perks.PerkDefs.Battleforged,
+		gt.Const.Perks.PerkDefs.BattleForged,
 		gt.Const.Perks.PerkDefs.Rebound,
-		gt.Const.Perks.PerkDefs.LegendMuscularity,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[

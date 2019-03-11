@@ -106,7 +106,6 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_3"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 	}
 
 	function onAddEquipment()

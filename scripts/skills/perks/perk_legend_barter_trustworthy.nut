@@ -15,13 +15,13 @@ this.perk_legend_barter_trustworthy <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		local BarterMod = this.Const.LegendMod.getBarterModifier
+		local BarterMod = this.Const.LegendMod.getBarterModifier;
 		BarterMod += 0.1; 
 
 	}
 		function onRemoved()
 	{
-		local BarterMod = this.Const.LegendMod.getBarterModifier
+		local BarterMod = this.Const.LegendMod.getBarterModifier;
 		BarterMod -= 0.1; 
 	}
 });

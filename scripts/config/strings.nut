@@ -1146,6 +1146,8 @@ gt.Const.Strings.PerkName <- {
 	LegendMedIngredients = "Medicine Ingredients",
 	LegendToolsDrawers = "Tools Drawers",
 	LegendToolsSpares = "Spare Parts",
+	LegendBarterConvincing = "Convincing Proposals",
+	LegendBarterTrustworthy = "Trustworthy Demeanour",
 	LegendBribe = "Bribe"
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1312,7 +1314,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMedPackages = "Your knowledge of medicines lets you repack them into more efficient packages. Increases maximum medicine storage by 10.",
 	LegendMedIngredients = "Not all of a plant is required for healing, your knowledge of the active ingredients lets you throw away excess leaves and roots. Increases maximum medicine storage by 20. ",
 	LegendToolsDrawers = "Organising your tools into labeled compartments lets you carry more. Increases maximum tool storage by 10",
-	LegendToolsSpares = "Your experience with repairs has taught you to save your scraps and left over parts. These spares take up little space but are often just what you need for field repairs. Increases maximum tool storage by 20.",
+	LegendToolsSpares = "Your experience with repairs has taught you to save your scraps and left over parts. These spares take up little space but are often just what you need for field repairs. Increases maximum tool storage by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color].",
+	LegendBarterConvincing = "This character\'s skill with words makes their trade proposals more acceptable. Grants +5% barter",
+	LegendBarterTrustworthy = "This character\'s body language makes people believe them, leading to more favourable trade agreements. Grants +10% barter",
 	LegendBribe = "Throw coins at your enemies to bribe them away from battle, only works on humans."
 };
 gt.Const.Strings.Tooltip <- {
