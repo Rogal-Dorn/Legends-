@@ -665,51 +665,51 @@ this.item <- {
 		switch (_rune)
 		{
 			case 1:
-				return "This item is inscribed with the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Damage inflicted.";
+				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Damage inflicted.";
 				break;
 
 			case 2:
-				return "This item is inscribed with the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged skill.";
+				return "This item has the power of the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged skill.";
 				break;
 
 			case 3:
-				return "This item is inscribed with the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of inflicted health damage recovers fatigue.";
+				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of inflicted health damage recovers fatigue.";
 				break;
 
 			case 11:
-				return "This item is inscribed with the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision, [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience gain.";
+				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision, [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience gain.";
 				break;
 
 			case 12:
-				return "This item is inscribed with the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Resolve, [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve at all morale checks.";
+				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Resolve, [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve at all morale checks.";
 				break;
 
 			case 13:
-				return "This item is inscribed with the rune sigil of Luck:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to have any attacker require two successful attack rolls in order to hit.";
+				return "This item has the power of the rune sigil of Luck:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to have any attacker require two successful attack rolls in order to hit.";
 				break;
 
 			case 21:
-				return "This item is inscribed with the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Fatigue recovery per turn, [color=" + this.Const.UI.Color.PositiveValue + "]-10%[/color] Fatigue cost and effects multiplier.";
+				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Fatigue recovery per turn, [color=" + this.Const.UI.Color.PositiveValue + "]-10%[/color] Fatigue cost and effects multiplier.";
 				break;
 
 			case 22:
-				return "This item is inscribed with the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Hitpoints, [color=" + this.Const.UI.Color.PositiveValue + "]-5%[/color] Damage received.";
+				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Hitpoints, [color=" + this.Const.UI.Color.PositiveValue + "]-5%[/color] Damage received.";
 				break;
 
 			case 23:
-				return "This item is inscribed with the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs.";
+				return "This item has the power of the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs.";
 				break;
 
 			case 31:
-				return "This item is inscribed with the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense.";
+				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense.";
 				break;
 
 			case 32:
-				return "This item is inscribed with the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense.";
+				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense.";
 				break;
 
 			case 33:
-				return "This item is inscribed with the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense.";
+				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged defense.";
 				break;
 
 			default:
@@ -724,91 +724,91 @@ this.item <- {
 		{
 			case 1:
 				this.m.Name = "Weapon Rune Sigil: Power";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s weapon.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_w.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_w.png";
 				break;
 
 			case 2:
 				this.m.Name = "Weapon Rune Sigil: Accuracy";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s weapon.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_w.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_w.png";
 				break;
 
 			case 3:
 				this.m.Name = "Weapon Rune Sigil: Feeding";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s weapon.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_w.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_w.png";
 				break;
 
 			case 11:
 				this.m.Name = "Helmet Rune Sigil: Clarity";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s helmet.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_h.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_h.png";
 				break;
 
 			case 12:
 				this.m.Name = "Helmet Rune Sigil: Bravery";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s helmet.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_h.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_h.png";
 				break;
 
 			case 13:
 				this.m.Name = "Helmet Rune Sigil: Luck";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s helmet.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_h.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_h.png";
 				break;
 
 			case 21:
 				this.m.Name = "Armor Rune Sigil: Endurance";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s armor.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s armor.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_a.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_a.png";
 				break;
 
 			case 22:
 				this.m.Name = "Armor Rune Sigil: Safety";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s armor.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s armor.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_a.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_a.png";
 				break;
 
 			case 23:
 				this.m.Name = "Armor Rune Sigil: Resilience";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s armor.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s armor.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_a.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_a.png";
 				break;
 
 			case 31:
 				this.m.Name = "Shield Rune Sigil: Defense";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s shield.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_s.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_s.png";
 				break;
 
 			case 32:
 				this.m.Name = "Shield Rune Sigil: Defense";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s shield.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_s.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_s.png";
 				break;
 
 			case 33:
 				this.m.Name = "Shield Rune Sigil: Defense";
-				this.m.Description = "A rune sigil that can be inscribed on a character\'s shield.";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_s.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_s.png";
 				break;
 
 			default:
 				this.m.Name = "Unknown Rune Sigil: Error";
-				this.m.Description = "A rune sigil that cannot be fused with a character\'s items.";
+				this.m.Description = "An inscribed rock that cannot be attached to a character\'s equipment.";
 				this.m.Icon = "rune_sigils/vazl_vala_rune_sigil_blank.png";
 				this.m.IconLarge = "rune_sigils/vazl_vala_rune_sigil_blank.png";
 				break;

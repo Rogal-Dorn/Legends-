@@ -1067,10 +1067,10 @@ gt.Const.Strings.PerkName <- {
 	SpecFlail = "Flail Mastery",
 
 	vazl_ValaInscriptionMastery = "Inscription Mastery",
-	vazl_ValaInscribeWeapon = "Inscribe Weapon",
-	vazl_ValaInscribeHelmet = "Inscribe Helmet",
-	vazl_ValaInscribeArmor = "Inscribe Armor",
-	vazl_ValaInscribeShield = "Inscribe Shield",
+	vazl_ValaInscribeWeapon = "Weapon Rune Sigils",
+	vazl_ValaInscribeHelmet = "Helmet Rune Sigils",
+	vazl_ValaInscribeArmor = "Armor Rune Sigils",
+	vazl_ValaInscribeShield = "Shield Rune Sigils",
 
 	vazl_ValaChantingMastery = "Chanting Mastery",
 	vazl_ValaChantDisharmony = "Chant of Disharmony",
@@ -1172,11 +1172,11 @@ gt.Const.Strings.PerkDescription <- {
 	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.",
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
 
-	vazl_ValaInscriptionMastery = "Lowers the cooldown until the Vala can begin creating rune sigils again (after a successful rune sigil creation) from 20 to 15 days, and increases her rune sigil creation speed from 4 to 5.5 tries per day.",
-	vazl_ValaInscribeWeapon = "Allows the Vala to create random weapon rune sigils. Her first rune sigil is automatically created when you learn this perk, but the rest of the time the game checks 4 times per day to see if a rune sigil is successfully created.\n\nPossibilities: accuracy, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin creating weapon rune sigils again.",
-	vazl_ValaInscribeHelmet = "Allows the Vala to create random helmet rune sigils. Her first rune sigil is automatically created when you learn this perk, but the rest of the time the game checks 4 times per day to see if a rune sigil is successfully created.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin creating helmet rune sigils again.",
-	vazl_ValaInscribeArmor = "Allows the Vala to create random armor rune sigils. Her first rune sigil is automatically created when you learn this perk, but the rest of the time the game checks 4 times per day to see if a rune sigil is successfully created.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin creating armor rune sigils again.",
-	vazl_ValaInscribeShield = "Allows the Vala to create random shield rune sigils. Her first rune sigil is automatically created when you learn this perk, but the rest of the time the game checks 4 times per day to see if a rune sigil is successfully created.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin creating shield rune sigils again.",
+	vazl_ValaInscriptionMastery = "Lowers the cooldown until the Vala can begin inscribing rune sigils again (after a successful inscription) from 20 to 15 days, and increases her inscription speed from 4 to 5.5 tries per day.",
+	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe rocks with random weapon rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: accuracy, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with weapon rune sigils again.",
+	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe rocks with random helmet rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with helmet rune sigils again.",
+	vazl_ValaInscribeArmor = "Allows the Vala to inscribe rocks with random armor rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with armor rune sigils again.",
+	vazl_ValaInscribeShield = "Allows the Vala to inscribe rocks with random shield rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with shield rune sigils again.",
 
 	vazl_ValaChantingMastery = "Chants build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
 	vazl_ValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies within 2 tiles of the Vala won't be able to enforce Zones of Control, letting your units move in and out safely.",
