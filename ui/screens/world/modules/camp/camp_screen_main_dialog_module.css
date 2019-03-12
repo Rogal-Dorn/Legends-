@@ -165,24 +165,24 @@
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 5.0rem;
-    top: 5.0rem;
+    left: 65.0rem;
+    top: 30.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-enchanter
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 25.0rem;
-    top: 5.0rem;
+    left: 60.0rem;
+    top: 25.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-fletcher
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 45.0rem;
-    top: 5.0rem;
+    left: 80.0rem;
+    top: 48.0rem;
 }
 
 /* center (marketplace) */
@@ -190,24 +190,24 @@
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 25.0rem;
-    top: 34.0rem;
+    left: 40.0rem;
+    top: 33.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-barber
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 5.0rem;
-    top: 34.0rem;
+    left: 10.0rem;
+    top: 35.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-crafting
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 65.0rem;
-    top: 34.0rem;
+    left: 12.0rem;
+    top: 25.0rem;
 }
 
 /* center bottom (recruitment) */
@@ -215,56 +215,56 @@
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 42.0rem;
-    top: 48.0rem;
+    left: 12.0rem;
+    top: 35.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-healer
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 2.0rem;
-    top: 48.0rem;
+    left: 25.0rem;
+    top: 30.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-hunter
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 12.0rem;
-    top: 48.0rem;
+    left: 80.0rem;
+    top: 25.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-scout
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 22.0rem;
-    top: 48.0rem;
+    left: 35.0rem;
+    top: 25.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-training
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 32.0rem;
-    top: 48.0rem;
+    left: 15.0rem;
+    top: 45.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-gatherer
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 32.0rem;
-    top: 5.0rem;
+    left: 60.0rem;
+    top: 40.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-workshop
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 32.0rem;
-    top: 60.0rem;
+    left: 70.0rem;
+    top: 40.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .is-contract

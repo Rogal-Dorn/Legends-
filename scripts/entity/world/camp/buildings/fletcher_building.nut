@@ -7,8 +7,8 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "fletcher";
         this.m.Name = "Fletcher";
         this.m.Description = "Make some ammo"
-		this.m.UIImage = "ui/settlements/building_11";
-		this.m.UIImageNight = "ui/settlements/building_11";
+		this.m.UIImage = "ui/settlements/camp_fletcher_full_day";
+		this.m.UIImageNight = "ui/settlements/camp_fletcher_full_night";
     }
 
 	function onClicked( _campScreen )
