@@ -20,7 +20,7 @@ this.vazl_vala_warden_pale_touch <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.DirectDamageMult = 1.0;
-		this.m.ActionPointCost = 3;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;

@@ -27,7 +27,7 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
 			{
-				if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.vazl_vala_staff")
+				if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_staff_vala")
 				{
 					return true;
 				}
@@ -74,7 +74,7 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			},
 		];
 
-		if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.vazl_vala_staff"))
+		if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala"))
 		{
 			ret.push({
 				id = 9,

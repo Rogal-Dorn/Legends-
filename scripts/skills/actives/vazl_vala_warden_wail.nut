@@ -23,7 +23,7 @@ this.vazl_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
 		this.m.DirectDamageMult = 1.0;
-		this.m.ActionPointCost = 3;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 3;
