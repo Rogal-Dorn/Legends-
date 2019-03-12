@@ -6,6 +6,11 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.ID = "CampRepairDialogModule";
 		this.ui_module.create();
 	}
+
+	function destroy()
+	{
+		this.ui_module.destroy();
+	}
 	
 	function onLeaveButtonPressed()
 	{

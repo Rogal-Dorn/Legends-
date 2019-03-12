@@ -192,8 +192,8 @@ this.camp_screen <- {
 		this.clearEventListener();
 		this.m.MainDialogModule.destroy();
 		this.m.MainDialogModule = null;
+		
 		this.m.CommanderDialogModule.destroy();
-		this.m.CommanderDialogModule = null;
 		this.m.BarberDialogModule.destroy();
 		this.m.CraftingDialogModule.destroy();
 		this.m.EnchanterDialogModule.destroy();
@@ -206,6 +206,8 @@ this.camp_screen <- {
 		this.m.TrainingDialogModule.destroy();
 		this.m.GathererDialogModule.destroy();
 		this.m.WorkshopDialogModule.destroy();
+		
+		this.m.CommanderDialogModule = null;
 		this.m.BarberDialogModule = null;
 		this.m.CraftingDialogModule = null;
 		this.m.EnchanterDialogModule = null;
@@ -281,37 +283,57 @@ this.camp_screen <- {
 
 	function showLastActiveDialog()
 	{
-		if (this.m.LastActiveModule == this.m.HireDialogModule)
+		if (this.m.LastActiveModule == this.m.CommanderDialogModule)
 		{
-			this.showHireDialog();
-		}
-		else if (this.m.LastActiveModule == this.m.ShopDialogModule)
-		{
-			this.showShopDialog();
-		}
-		else if (this.m.LastActiveModule == this.m.TravelDialogModule)
-		{
-			this.showTravelDialog();
+			this.showCommanderDialog();
 		}
 		else if (this.m.LastActiveModule == this.m.BarberDialogModule)
 		{
 			this.showBarberDialog();
 		}
-		else if (this.m.LastActiveModule == this.m.TavernDialogModule)
+		else if (this.m.LastActiveModule == this.m.CraftingDialogModule)
 		{
-			this.showTavernDialog();
+			this.showCraftingDialog();
 		}
-		else if (this.m.LastActiveModule == this.m.TempleDialogModule)
+		else if (this.m.LastActiveModule == this.m.EnchanterDialogModule)
 		{
-			this.showTempleDialog();
+			this.showEnchanterDialog();
+		}
+		else if (this.m.LastActiveModule == this.m.FletcherDialogModule)
+		{
+			this.showFletcherDialog();
+		}
+		else if (this.m.LastActiveModule == this.m.HealerDialogModule)
+		{
+			this.showHealerDialog();
+		}
+		else if (this.m.LastActiveModule == this.m.HunterDialogModule)
+		{
+			this.showHunterDialog();
+		}
+		else if (this.m.LastActiveModule == this.m.RepairDialogModule)
+		{
+			this.showRepairDialog();
+		}
+		else if (this.m.LastActiveModule == this.m.RestDialogModule)
+		{
+			this.showRestDialog();
+		}
+		else if (this.m.LastActiveModule == this.m.GathererDialogModule)
+		{
+			this.showGathererDialog();
+		}
+		else if (this.m.LastActiveModule == this.m.ScoutDialogModule)
+		{
+			this.showScoutDialog();
 		}
 		else if (this.m.LastActiveModule == this.m.TrainingDialogModule)
 		{
 			this.showTrainingDialog();
 		}
-		else if (this.m.LastActiveModule == this.m.TaxidermistDialogModule)
+		else if (this.m.LastActiveModule == this.m.WorkshopDialogModule)
 		{
-			this.showTaxidermistDialog();
+			this.showWorkshopDialog();
 		}
 		else
 		{
@@ -325,15 +347,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = null;
 			this.Tooltip.hide();
-		function showCommanderDialog()
-	{
-		if (this.m.JSHandle != null && this.isVisible())
-		{
-			this.m.LastActiveModule = this.m.CommanderDialogModule;
-			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showCommanderDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
-		}
-	}		this.m.JSHandle.asyncCall("showMainDialog", this.queryAssetsInformation());
+			this.m.JSHandle.asyncCall("showMainDialog", this.queryAssetsInformation());
 		}
 	}
 
@@ -345,7 +359,7 @@ this.camp_screen <- {
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("showCommanderDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
-	}
+	}		
 
 	function showBarberDialog()
 	{
@@ -379,11 +393,23 @@ this.camp_screen <- {
 
 	function showFletcherDialog()
 	{
+		this.logInfo("***** SHOWING FLETCHER DIALOG ****")
 		if (this.m.JSHandle != null && this.isVisible())
 		{
 			this.m.LastActiveModule = this.m.FletcherDialogModule;
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("showFletcherDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+		}
+	}
+
+
+	function showHealerDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.HealerDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showHealerDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
 
@@ -509,6 +535,10 @@ this.camp_screen <- {
 		{
 			this.m.OnModuleClosedListener();
 		}
+	}
+	
+	function onCampClosed()
+	{
 		if (this.m.OnCampListener != null)
 		{
 			this.m.OnCampListener();
@@ -521,7 +551,7 @@ this.camp_screen <- {
 		{
 			return;
 		}
-
+		
 		local building = this.World.Camp.getBuildingByID(_data);
 		if (building == null)
 		{

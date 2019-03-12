@@ -13,6 +13,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function onClicked( _campScreen )
 	{
+        _campScreen.showFletcherDialog();
+        this.camp_building.onClicked(_campScreen);
 	}
-
 });
