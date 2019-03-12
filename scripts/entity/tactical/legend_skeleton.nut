@@ -152,7 +152,7 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		local XPgroup = _actor.getXPValue() * (1.0 - this.Const.XP.XPForKillerPct);
         
         local summoner = getTags().get("Summoner");
-        if (summoner != null)
+        if (summoner != null && "addXP" in summoner)
         {
             summoner.addXP(this.Math.floor(XPkiller * 0.50));
         }

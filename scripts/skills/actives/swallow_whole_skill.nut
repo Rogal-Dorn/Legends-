@@ -46,6 +46,16 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		local target = _targetTile.getEntity();
+		if (target == null)
+		{
+			return false;
+		}
+		if (target.getTags().has("IsSummoned"))
+		{
+			return false;
+		}
+
 		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.getEntity().isPlayerControlled();
 	}
 
