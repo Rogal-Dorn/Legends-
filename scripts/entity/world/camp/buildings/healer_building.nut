@@ -8,8 +8,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "healer";
         this.m.Name = "Healer";
         this.m.Description = "Heal wounds and speed up recovery";
-		this.m.UIImageNight =  "ui/settlements/building_03";
-		this.m.UIImage = "ui/settlements/building_03";
+		this.m.UIImageNight =  "ui/settlements/camp_med_empty_night";
+		this.m.UIImage = "ui/settlements/camp_med_empty_day";
     }
 
 	function onClicked( _campScreen )

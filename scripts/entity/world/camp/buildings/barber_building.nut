@@ -7,8 +7,8 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "barber";
         this.m.Name = "Barber";
         this.m.Description = "or Plastic surgeon.."
-		this.m.UIImage = "ui/settlements/building_12";
-		this.m.UIImageNight = "ui/settlements/building_12";
+		this.m.UIImage = "ui/settlements/camp_barber_full_day";
+		this.m.UIImageNight = "ui/settlements/camp_barber_full_night";
     }
 
 	function onClicked( _campScreen )

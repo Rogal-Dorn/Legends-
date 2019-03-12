@@ -8,8 +8,8 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "workshop";
         this.m.Name = "Workshop";
         this.m.Description = "Turn scrap into useable parts";
-		this.m.UIImageNight =  "ui/settlements/crowd_01";
-		this.m.UIImage = "ui/settlements/crowd_01";
+		this.m.UIImageNight =  "ui/settlements/camp_scrap_full_night";
+		this.m.UIImage = "ui/settlements/camp_scrap_full_day";
         this.m.CanEnter = false
     }
 
