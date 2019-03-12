@@ -113,59 +113,11 @@ this.vazl_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 
 			if ((this.Math.rand(1, 400) <= expertise) || this.m.FirstTime == true)
 			{
-				local brothers = this.World.getPlayerRoster().getAll();
-				local person_candidates = [];
-				local weapon_candidates = [];
-
-				local IgnoredWeapons = [
-					"weapon.throwing_spear",
-					"weapon.lute",
-					"weapon.wonky_bow"
-				];
-
-				foreach (bro in brothers)
-				{
-					if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
-					{
-						continue;
-					}
-					if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isRuned())
-					{
-						continue;
-					}
-					if (IgnoredWeapons.find(bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID()) != null)
-					{
-						continue;
-					}
-
-					person_candidates.push(bro);
-					weapon_candidates.push(bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand));
-				}
-
-				if (person_candidates.len() < 1 || weapon_candidates.len() < 1)
-				{
-					return;
-				}
-
-				local personandweapon = this.Math.rand(0, person_candidates.len() - 1);
-				local person = person_candidates[personandweapon];
-				local weapon = weapon_candidates[personandweapon];
-				local inscriber = this.getContainer().getActor();
-
-				weapon.setRuneVariant(this.Math.rand(1, 3));
-                weapon.updateRuneSigil();
-				person.getItems().unequip(weapon);
-				person.getItems().equip(weapon);
-
-				if (person.getID() == inscriber.getID())
-				{
-					inscriber.improveMood(0.5, "Carved a rune sigil onto her weapon");
-				}
-				else
-				{
-					inscriber.improveMood(0.5, "Carved a rune sigil onto " + person.m.Name + "\'s weapon");
-					person.improveMood(1.0, "Had a rune sigil carved onto their weapon, courtesy of " + inscriber.m.Name);
-				}
+				local stash = this.World.Assets.getStash();
+				local token = this.new("scripts/items/rune_sigils/vazl_vala_inscription_token");
+				token.setRuneVariant(this.Math.rand(1, 3));
+				token.updateRuneSigilToken();
+				stash.add(token);
 
 				this.m.InscriptionSuccessTime = this.getCurrentTime();
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_inscription_mastery"))

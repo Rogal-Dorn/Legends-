@@ -113,49 +113,11 @@ this.vazl_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 
 			if ((this.Math.rand(1, 400) <= expertise) || this.m.FirstTime == true)
 			{
-				local brothers = this.World.getPlayerRoster().getAll();
-				local person_candidates = [];
-				local armor_candidates = [];
-
-				foreach (bro in brothers)
-				{
-					if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body) == null)
-					{
-						continue;
-					}
-					if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body).isRuned())
-					{
-						continue;
-					}
-
-					person_candidates.push(bro);
-					armor_candidates.push(bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body));
-				}
-
-				if (person_candidates.len() < 1 || armor_candidates.len() < 1)
-				{
-					return;
-				}
-
-				local personandarmor = this.Math.rand(0, person_candidates.len() - 1);
-				local person = person_candidates[personandarmor];
-				local armor = armor_candidates[personandarmor];
-				local inscriber = this.getContainer().getActor();
-
-				armor.setRuneVariant(this.Math.rand(21, 23));
-                armor.updateRuneSigil();
-				person.getItems().unequip(armor);
-				person.getItems().equip(armor);
-
-				if (person.getID() == inscriber.getID())
-				{
-					inscriber.improveMood(0.5, "Carved a rune sigil onto her armor");
-				}
-				else
-				{
-					inscriber.improveMood(0.5, "Carved a rune sigil onto " + person.m.Name + "\'s armor");
-					person.improveMood(1.0, "Had a rune sigil carved onto their armor, courtesy of " + inscriber.m.Name);
-				}
+				local stash = this.World.Assets.getStash();
+				local token = this.new("scripts/items/rune_sigils/vazl_vala_inscription_token");
+				token.setRuneVariant(this.Math.rand(21, 23));
+				token.updateRuneSigilToken();
+				stash.add(token);
 
 				this.m.InscriptionSuccessTime = this.getCurrentTime();
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_inscription_mastery"))

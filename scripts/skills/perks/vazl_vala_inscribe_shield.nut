@@ -113,53 +113,11 @@ this.vazl_vala_inscribe_shield <- this.inherit("scripts/skills/skill", {
 
 			if ((this.Math.rand(1, 400) <= expertise) || this.m.FirstTime == true)
 			{
-				local brothers = this.World.getPlayerRoster().getAll();
-				local person_candidates = [];
-				local shield_candidates = [];
-
-				foreach (bro in brothers)
-				{
-					if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
-					{
-						continue;
-					}
-					if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).isRuned())
-					{
-						continue;
-					}
-					if (bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).getID().find("shield") == null)
-					{
-						continue;
-					}
-
-					person_candidates.push(bro);
-					shield_candidates.push(bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand));
-				}
-
-				if (person_candidates.len() < 1 || shield_candidates.len() < 1)
-				{
-					return;
-				}
-
-				local personandshield = this.Math.rand(0, person_candidates.len() - 1);
-				local person = person_candidates[personandshield];
-				local shield = shield_candidates[personandshield];
-				local inscriber = this.getContainer().getActor();
-
-				shield.setRuneVariant(this.Math.rand(31, 33));
-                shield.updateRuneSigil();
-				person.getItems().unequip(shield);
-				person.getItems().equip(shield);
-
-				if (person.getID() == inscriber.getID())
-				{
-					inscriber.improveMood(0.5, "Carved a rune sigil onto her shield");
-				}
-				else
-				{
-					inscriber.improveMood(0.5, "Carved a rune sigil onto " + person.m.Name + "\'s shield");
-					person.improveMood(1.0, "Had a rune sigil carved onto their shield, courtesy of " + inscriber.m.Name);
-				}
+				local stash = this.World.Assets.getStash();
+				local token = this.new("scripts/items/rune_sigils/vazl_vala_inscription_token");
+				token.setRuneVariant(this.Math.rand(31, 33));
+				token.updateRuneSigilToken();
+				stash.add(token);
 
 				this.m.InscriptionSuccessTime = this.getCurrentTime();
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.vazl_vala_inscription_mastery"))
