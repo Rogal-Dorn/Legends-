@@ -6,6 +6,11 @@ this.camp_rest_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.ID = "CampRestDialogModule";
 		this.ui_module.create();
 	}
+
+	function destroy()
+	{
+		this.ui_module.destroy();
+	}
 	
 	function onLeaveButtonPressed()
 	{

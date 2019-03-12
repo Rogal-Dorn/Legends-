@@ -58,9 +58,9 @@ CampScreenEnchanterDialogModule.prototype.createDIV = function (_parentDiv)
     var self = this;
 
     // create: containers (init hidden!)
-    this.mContainer = $('<div class="l-commander-dialog-container display-none opacity-none"/>');
+    this.mContainer = $('<div class="l-enchanter-dialog-container display-none opacity-none"/>');
     _parentDiv.append(this.mContainer);
-    this.mDialogContainer = this.mContainer.createDialog('Commander', '', '', true, 'dialog-1024-768');
+    this.mDialogContainer = this.mContainer.createDialog('Enchant', '', '', true, 'dialog-1024-768');
 
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');

@@ -11,6 +11,11 @@ this.camp_main_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.JSHandle.asyncCall("loadFromData", this.m.Parent.queryTownInformation());
 	}
 
+	function destroy()
+	{
+		this.ui_module.destroy();
+	}
+
 	function preload( _settlement )
 	{
 		if (_settlement == null || !("getUIPreloadInformation" in _settlement))
@@ -24,6 +29,7 @@ this.camp_main_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();
+		this.m.Parent.onCampClosed();
 	}
 
 });

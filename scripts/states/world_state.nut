@@ -506,6 +506,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldTownScreen.setOnBrothersPressedListener(this.town_screen_main_dialog_module_onBrothersButtonClicked.bindenv(this));
 		this.m.WorldTownScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
 		this.m.CampScreen <- this.new("scripts/ui/screens/world/camp_screen");
+		this.m.CampScreen.setOnBrothersPressedListener(this.camp_screen_main_dialog_module_onBrothersButtonClicked.bindenv(this));
 		this.m.CampScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
 		this.m.CampScreen.setOnCampListener(this.onCamp.bindenv(this));
 		this.m.WorldEventPopupScreen <- this.new("scripts/ui/screens/world/world_event_popup_screen");
@@ -2502,6 +2503,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.showCharacterScreenFromTown();
 	}
 
+	function camp_screen_main_dialog_module_onBrothersButtonClicked()
+	{
+		this.showCharacterScreenFromCamp();
+	}
+
 	function initLoadingScreenHandler()
 	{
 		this.LoadingScreen.clearEventListener();
@@ -2629,6 +2635,22 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.m.CharacterScreen.hide();
 			this.m.WorldTownScreen.showLastActiveDialog();
+		}, function ()
+		{
+			return !this.m.CharacterScreen.isAnimating();
+		});
+	}
+
+
+	function showCharacterScreenFromCamp()
+	{
+		this.World.Assets.updateFormation();
+		this.m.CampScreen.hideAllDialogs();
+		this.m.CharacterScreen.show();
+		this.m.MenuStack.push(function ()
+		{
+			this.m.CharacterScreen.hide();
+			this.m.CampScreen.showLastActiveDialog();
 		}, function ()
 		{
 			return !this.m.CharacterScreen.isAnimating();

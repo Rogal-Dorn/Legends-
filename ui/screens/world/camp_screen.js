@@ -20,7 +20,7 @@ var CampScreen = function()
 
     // modules
     this.mMainDialogModule		    = null;
-    this.CommanderDialogModule	    = null;
+    this.mCommanderDialogModule	    = null;
     this.mBarberDialogModule	    = null;
     this.mCraftingDialogModule		    = null;
 	this.mEnchanterDialogModule	    = null;

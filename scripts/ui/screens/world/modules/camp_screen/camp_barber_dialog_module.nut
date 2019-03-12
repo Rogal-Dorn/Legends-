@@ -7,6 +7,11 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.ui_module.create();
 	}
 
+	function destroy()
+	{
+		this.ui_module.destroy();
+	}
+
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();

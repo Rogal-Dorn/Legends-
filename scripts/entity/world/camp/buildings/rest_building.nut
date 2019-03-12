@@ -13,9 +13,11 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.m.CanEnter = false
     }
 
-    function destroy()
-    {
-    }
+
+	function destroy()
+	{
+		this.ui_module.destroy();
+	}
 
     function init()
     {
@@ -133,6 +135,8 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
 	function onClicked( _campScreen )
 	{
+        _campScreen.showRestDialog();
+        this.camp_building.onClicked(_campScreen);
 	}
 
 });
