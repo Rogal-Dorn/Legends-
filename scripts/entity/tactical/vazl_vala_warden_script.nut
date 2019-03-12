@@ -170,7 +170,7 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 		local NewWardenStats = {
 			XP = 0,
 			Hitpoints = this.Math.ceil(50 + (_vala * 1.50)),
-			ActionPoints = 7,
+			ActionPoints = 9,
 			Bravery = 200,
 			Stamina = 200,
 			MeleeSkill = this.Math.ceil(47 + (_vala * 0.25)),
@@ -194,7 +194,7 @@ this.vazl_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local WardenProperties = {
 			XP = 0,
-			ActionPoints = 7,
+			ActionPoints = 9,
 			Hitpoints = 1,
 			Bravery = 200,
 			Stamina = 200,

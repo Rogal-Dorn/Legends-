@@ -80,6 +80,6 @@ this.vazl_vala_background <- this.inherit("scripts/skills/backgrounds/character_
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.new("scripts/items/armor/wizard_robe"));
-		items.equip(this.new("scripts/items/weapons/vazl_vala_staff"));
+		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
 	}
 });
