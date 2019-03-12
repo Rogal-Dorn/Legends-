@@ -15,6 +15,8 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mContainer = null;
     this.mDialogContainer = null;
 
+    this.mListScrollContainer = null;
+    this.mSlots = null;
     // buttons
     this.mLeaveButton = null;
 
@@ -62,6 +64,37 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     _parentDiv.append(this.mContainer);
     this.mDialogContainer = this.mContainer.createDialog('Commander', '', '', true, 'dialog-1024-768');
 
+    // create content
+    var content = this.mDialogContainer.findDialogContentContainer();
+
+    // left column
+    var column = $('<div class="left-column"/>');
+    content.append(column);
+
+
+    // right column
+    column = $('<div class="right-column"/>');
+    content.append(column);
+
+    var top = $('<div class="top"/>');
+    column.append(top);
+    var listContainerLayout = $('<div class="l-list-container"/>');
+    top.append(listContainerLayout);
+    this.createBrotherSlots(listContainerLayout);
+
+    var bottom = $('<div class="bottom"/>');
+    column.append(bottom);
+    listContainerLayout = $('<div class="l-list-container"/>');
+    bottom.append(listContainerLayout);
+    this.createBrotherSlots(listContainerLayout, true);
+    // var listContainerLayout = $('<div class="l-list-container"/>');
+    // column.append(listContainerLayout);
+    // this.mListScrollContainer = listContainerLayout;
+
+    // create empty slots
+    // this.createBrotherSlots(this.mListScrollContainer);
+
+
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');
     this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
@@ -81,14 +114,85 @@ CampScreenCommanderDialogModule.prototype.destroyDIV = function ()
 	this.mLeaveButton.remove();
     this.mLeaveButton = null;
 
+    this.mListScrollContainer.empty();
+    this.mListScrollContainer = null;
+
     this.mDialogContainer.empty();
     this.mDialogContainer.remove();
     this.mDialogContainer = null;
+
+
 
     this.mContainer.empty();
     this.mContainer.remove();
     this.mContainer = null;
 };
+
+CampScreenCommanderDialogModule.prototype.createBrotherSlots = function (_parentDiv, reserve)
+{
+    var self = this;
+
+    var mSlots = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ];
+
+    var dropHandler = function (ev, dd)
+    {
+        var drag = $(dd.drag);
+        var drop = $(dd.drop);
+        var proxy = $(dd.proxy);
+
+        if (proxy === undefined || proxy.data('idx') === undefined || drop === undefined || drop.data('idx') === undefined)
+        {
+            return false;
+        }
+
+        drag.removeClass('is-dragged');
+
+        if (drag.data('idx') == drop.data('idx'))
+        {
+            return false;
+        }
+
+        // number in formation is limited
+        if (self.mNumActive >= self.mNumActiveMax && drag.data('idx') > 27 && drop.data('idx') <= 27 && self.mSlots[drop.data('idx')].data('child') == null)
+        {
+            return false;
+        }
+
+        // always keep at least 1 in formation
+        if (self.mNumActive == 1 && drag.data('idx') <= 27 && drop.data('idx') > 27 && self.mSlots[drop.data('idx')].data('child') == null)
+        {
+            return false;
+        }
+
+        // do the swapping
+        self.swapSlots(drag.data('idx'), drop.data('idx'));
+    };
+
+    for (var i = 0; i < 27; ++i)
+    {
+        if(!reserve)
+            mSlots[i] = $('<div class="ui-control is-brother-slot is-roster-slot"/>');
+        else
+            mSlots[i] = $('<div class="ui-control is-brother-slot is-reserve-slot"/>');
+
+        _parentDiv.append(mSlots[i]);
+
+        mSlots[i].data('idx', i);
+        mSlots[i].data('child', null);
+        mSlots[i].drop("end", dropHandler);
+    }
+    return mSlots;
+
+    /*$('.is-brother-slot')
+      .drop("start", function ()
+      {
+          $(this).addClass("is-active-slot");
+      })
+      .drop("end", function ()
+      {
+          $(this).removeClass("is-active-slot");
+      });*/
+}
 
 
 CampScreenCommanderDialogModule.prototype.bindTooltips = function ()
