@@ -74,7 +74,7 @@ this.vazl_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can start creating another armor rune sigil."
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can begin inscribing rocks with armor rune sigils again."
 			});
 		}
 

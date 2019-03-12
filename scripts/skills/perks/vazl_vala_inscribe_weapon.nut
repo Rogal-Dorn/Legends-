@@ -74,7 +74,7 @@ this.vazl_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can start creating another weapon rune sigil."
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can begin inscribing rocks with weapon rune sigils again."
 			});
 		}
 
