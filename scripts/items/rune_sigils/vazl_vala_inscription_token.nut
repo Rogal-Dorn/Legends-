@@ -31,7 +31,7 @@ this.vazl_vala_inscription_token <- this.inherit("scripts/items/item", {
 			}
 		];
 		result.push({
-			id = 66,
+			id = 3,
 			type = "text",
 			text = this.getValueString()
 		});
@@ -39,7 +39,7 @@ this.vazl_vala_inscription_token <- this.inherit("scripts/items/item", {
 		if (this.getIconLarge() != null)
 		{
 			result.push({
-				id = 3,
+				id = 4,
 				type = "image",
 				image = this.getIconLarge(),
 				isLarge = true
@@ -48,7 +48,7 @@ this.vazl_vala_inscription_token <- this.inherit("scripts/items/item", {
 		else
 		{
 			result.push({
-				id = 3,
+				id = 4,
 				type = "image",
 				image = this.getIcon()
 			});
