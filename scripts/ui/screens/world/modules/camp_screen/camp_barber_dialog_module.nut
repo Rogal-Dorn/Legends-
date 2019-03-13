@@ -17,8 +17,6 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.Parent.onModuleClosed();
 	}
 
-});
-
 	function queryRosterInformation()
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
