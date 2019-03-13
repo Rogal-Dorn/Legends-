@@ -43,6 +43,11 @@ this.camp_building <- {
         return this.m.ID;
     }
 
+    function getName()
+    {
+        return this.m.Name;
+    }
+
     function getSlot()
     {
         return this.m.Slot;
@@ -88,6 +93,21 @@ this.camp_building <- {
 	{
 		return this.m.TooltipIcon;
 	}
+
+    function getNumberAssigned()
+    {
+        local count = 0;
+        local roster = this.World.getPlayerRoster().getAll();
+        foreach( b in roster )
+        {
+            if (b.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+            ++count;
+        }
+        return count;
+    }
 
 	function pushUIMenuStack()
 	{

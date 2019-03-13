@@ -15,8 +15,14 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mContainer = null;
     this.mDialogContainer = null;
 
-    this.mListScrollContainer = null;
+
+    this.mTentListScrollContainer = null;
+    this.mTents = null;
+
+    this.mNumActive = 0;
+    this.IsMoodVisible = true;
     this.mSlots = null;
+
     // buttons
     this.mLeaveButton = null;
 
@@ -62,38 +68,31 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     // create: containers (init hidden!)
     this.mContainer = $('<div class="l-commander-dialog-container display-none opacity-none"/>');
     _parentDiv.append(this.mContainer);
-    this.mDialogContainer = this.mContainer.createDialog('Commander', '', '', true, 'dialog-1024-768');
+    this.mDialogContainer = this.mContainer.createDialog('Commander', '', '', true, 'dialog-1280-768');
 
     // create content
     var content = this.mDialogContainer.findDialogContentContainer();
 
-    // left column
-    var column = $('<div class="left-column"/>');
-    content.append(column);
-
-
-    // right column
-    column = $('<div class="right-column"/>');
-    content.append(column);
-
-    var top = $('<div class="top"/>');
-    column.append(top);
+    // top row
+    var row = $('<div class="top-row"/>');
+    content.append(row);
     var listContainerLayout = $('<div class="l-list-container"/>');
-    top.append(listContainerLayout);
-    this.createBrotherSlots(listContainerLayout);
+    row.append(listContainerLayout)
+    this.mTentListContainer = listContainerLayout.createList(1.24/*8.63*/);
+    this.mTentListScrollContainer = this.mTentListContainer.findListScrollContainer();
+    this.mTents = this.createActionSlots(this.mTentListScrollContainer)
 
-    var bottom = $('<div class="bottom"/>');
-    column.append(bottom);
-    listContainerLayout = $('<div class="l-list-container"/>');
-    bottom.append(listContainerLayout);
-    this.createBrotherSlots(listContainerLayout, true);
-    // var listContainerLayout = $('<div class="l-list-container"/>');
-    // column.append(listContainerLayout);
-    // this.mListScrollContainer = listContainerLayout;
+    var row = $('<div class="middle-row"/>');
+    content.append(row);
 
-    // create empty slots
-    // this.createBrotherSlots(this.mListScrollContainer);
-
+    // bottom row
+    row = $('<div class="bottom-row"/>');
+    content.append(row);
+    var stats = $('<div class="stats"/>');
+    row.append(stats);
+    var listContainerLayout = $('<div class="l-list-container"/>');
+    row.append(listContainerLayout);
+    this.mSlots = this.createBrotherSlots(listContainerLayout);
 
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');
@@ -114,21 +113,50 @@ CampScreenCommanderDialogModule.prototype.destroyDIV = function ()
 	this.mLeaveButton.remove();
     this.mLeaveButton = null;
 
-    this.mListScrollContainer.empty();
-    this.mListScrollContainer = null;
+    this.mTentListScrollContainer.empty();
+    this.mTentListScrollContainer = null;
 
     this.mDialogContainer.empty();
     this.mDialogContainer.remove();
     this.mDialogContainer = null;
-
-
 
     this.mContainer.empty();
     this.mContainer.remove();
     this.mContainer = null;
 };
 
-CampScreenCommanderDialogModule.prototype.createBrotherSlots = function (_parentDiv, reserve)
+CampScreenCommanderDialogModule.prototype.createActionSlots = function (_parentDiv)
+{
+    var mSlots = [null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+
+    var dropHandler = function (ev, dd)
+    {
+        var drag = $(dd.drag);
+        var drop = $(dd.drop);
+        var proxy = $(dd.proxy);
+
+        if (proxy === undefined || proxy.data('idx') === undefined || drop === undefined || drop.data('idx') === undefined)
+        {
+            return false;
+        }
+
+        drag.removeClass('is-dragged');
+
+        // do the swapping
+        //self.swapSlots(drag.data('idx'), drop.data('idx'));
+    };
+    for (var i = 0; i < 14; ++i)
+    {
+        mSlots[i] = $('<div class="ui-control is-camp-action-slot"/>');
+        _parentDiv.append(mSlots[i]);
+        mSlots[i].data('idx', i);
+        mSlots[i].data('child', null);
+        mSlots[i].drop("end", dropHandler);
+    }
+    return mSlots;
+}
+
+CampScreenCommanderDialogModule.prototype.createBrotherSlots = function (_parentDiv)
 {
     var self = this;
 
@@ -170,10 +198,10 @@ CampScreenCommanderDialogModule.prototype.createBrotherSlots = function (_parent
 
     for (var i = 0; i < 27; ++i)
     {
-        if(!reserve)
-            mSlots[i] = $('<div class="ui-control is-brother-slot is-roster-slot"/>');
-        else
-            mSlots[i] = $('<div class="ui-control is-brother-slot is-reserve-slot"/>');
+        // if(!reserve)
+        //     mSlots[i] = $('<div class="ui-control is-brother-slot is-roster-slot"/>');
+        // else
+        mSlots[i] = $('<div class="ui-control is-brother-slot is-roster-slot"/>');
 
         _parentDiv.append(mSlots[i]);
 
@@ -347,8 +375,11 @@ CampScreenCommanderDialogModule.prototype.loadFromData = function (_data)
     {
         return;
     }
-};
 
+    this.onBrothersListLoaded(_data.brothers);
+    this.onTentsListLoaded(_data.buildings);
+
+};
 
 CampScreenCommanderDialogModule.prototype.notifyBackendModuleShown = function ()
 {
@@ -368,4 +399,217 @@ CampScreenCommanderDialogModule.prototype.notifyBackendModuleAnimating = functio
 CampScreenCommanderDialogModule.prototype.notifyBackendLeaveButtonPressed = function ()
 {
 	SQ.call(this.mSQHandle, 'onLeaveButtonPressed');
+};
+
+
+
+
+CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_parentDiv, _data, _index, _allowReordering)
+{
+    var self = this;
+
+    // create: slot & background layer
+    var result = _parentDiv.createListBrother(_data[CharacterScreenIdentifier.Entity.Id]);
+    result.attr('id', 'slot-index_' + _data[CharacterScreenIdentifier.Entity.Id]);
+    result.data('ID', _data[CharacterScreenIdentifier.Entity.Id]);
+    result.data('idx', _index);
+
+    this.mSlots[_index].data('child', result);
+
+    if (_index <= 27)
+        ++this.mNumActive;
+
+    // drag handler
+    if (_allowReordering)
+    {
+        result.drag("start", function (ev, dd)
+        {
+            // dont allow drag if this is an empty slot
+            /*var data = $(this).data('item');
+            if (data.isEmpty === true)
+            {
+                return false;
+            }*/
+
+            // build proxy
+            var proxy = $('<div class="ui-control brother is-proxy"/>');
+            proxy.appendTo(document.body);
+            proxy.data('idx', _index);
+
+            var imageLayer = result.find('.image-layer:first');
+            if (imageLayer.length > 0)
+            {
+                imageLayer = imageLayer.clone();
+                proxy.append(imageLayer);
+            }
+
+            $(dd.drag).addClass('is-dragged');
+
+            return proxy;
+        }, { distance: 3 });
+
+        result.drag(function (ev, dd)
+        {
+            $(dd.proxy).css({ top: dd.offsetY, left: dd.offsetX });
+        }, { relative: false, distance: 3 });
+
+        result.drag("end", function (ev, dd)
+        {
+            var drag = $(dd.drag);
+            var drop = $(dd.drop);
+            var proxy = $(dd.proxy);
+
+            var allowDragEnd = true; // TODO: check what we're dropping onto
+
+            // not dropped into anything?
+            if (drop.length === 0 || allowDragEnd === false)
+            {
+                proxy.velocity("finish", true).velocity({ top: dd.originalY, left: dd.originalX },
+			    {
+			        duration: 300,
+			        complete: function ()
+			        {
+			            proxy.remove();
+			            drag.removeClass('is-dragged');
+			        }
+			    });
+            }
+            else
+            {
+                proxy.remove();
+            }
+        }, { drop: '.is-brother-slot' });
+    }
+
+    // update image & name
+    var character = _data[CharacterScreenIdentifier.Entity.Character.Key];
+    var imageOffsetX = (CharacterScreenIdentifier.Entity.Character.ImageOffsetX in character ? character[CharacterScreenIdentifier.Entity.Character.ImageOffsetX] : 0);
+    var imageOffsetY = (CharacterScreenIdentifier.Entity.Character.ImageOffsetY in character ? character[CharacterScreenIdentifier.Entity.Character.ImageOffsetY] : 0);
+
+    result.assignListBrotherImage(Path.PROCEDURAL + character[CharacterScreenIdentifier.Entity.Character.ImagePath], imageOffsetX, imageOffsetY, 0.66);
+    //result.assignListBrotherName(character[CharacterScreenIdentifier.Entity.Character.Name]);
+    //result.assignListBrotherDailyMoneyCost(character[CharacterScreenIdentifier.Entity.Character.DailyMoneyCost]);
+
+    if(CharacterScreenIdentifier.Entity.Character.LeveledUp in character && character[CharacterScreenIdentifier.Entity.Character.LeveledUp] === true)
+    {
+        result.assignListBrotherLeveledUp();
+    }
+
+    /*if(CharacterScreenIdentifier.Entity.Character.DaysWounded in character && character[CharacterScreenIdentifier.Entity.Character.DaysWounded] === true)
+    {
+        result.assignListBrotherDaysWounded();
+    }*/
+
+    if('moodIcon' in character)
+    {
+    	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
+    }
+
+    for(var i = 0; i != _data['injuries'].length && i < 3; ++i)
+    {
+        result.assignListBrotherStatusEffect(_data['injuries'][i].imagePath, _data[CharacterScreenIdentifier.Entity.Id], _data['injuries'][i].id)
+    }
+
+    if(_data['injuries'].length <= 2 && _data['stats'].hitpoints < _data['stats'].hitpointsMax)
+    {
+    	result.assignListBrotherDaysWounded();
+    }
+
+    result.assignListBrotherClickHandler(function (_brother, _event)
+	{
+        var data = _brother.data('brother');
+        //self.mDataSource.selectedBrotherById(data.id);
+    });
+};
+
+
+CampScreenCommanderDialogModule.prototype.clearBrothersList = function ()
+{
+    for(var i=0; i != this.mSlots.length; ++i)
+    {
+        this.mSlots[i].empty();
+        this.mSlots[i].data('child', null);
+    }
+
+    this.mNumActive = 0;
+};
+
+
+CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brothers)
+{
+	this.clearBrothersList();
+
+	if (_brothers === null || !jQuery.isArray(_brothers) || _brothers.length === 0)
+	{
+		return;
+	}
+
+	for (var i = 0; i < _brothers.length; ++i)
+	{
+	    var brother = _brothers[i];
+
+		if (brother !== null)
+		{
+		    this.addBrotherSlotDIV(this.mSlots[i], brother, i, true);
+		}
+	}
+	//this.updateBrotherSlotLocks(inventoryMode);
+	//this.updateRosterLabel();
+};
+
+
+
+CampScreenCommanderDialogModule.prototype.addTentSlotDIV = function (_parentDiv, _data, _index, _allowReordering)
+{
+    var self = this;
+
+    this.mTents[_index].data('id', _data.id);
+    this.mTents[_index].data('idx', _index);
+    var layout = $('<div class="l-button"/>');
+    _parentDiv.append(layout);
+    layout.createTabTextButton(_data.name + "(" + _data.count + ")", function()
+    {
+        if (self.mOnSwitchToInventoryCallback !== null && jQuery.isFunction(self.mOnSwitchToInventoryCallback))
+        {
+            self.mOnSwitchToInventoryCallback();
+        }
+    }, null, 'tab-button', 75);
+
+    var image = $('<div class="is-reserve-slot"/>');
+    _parentDiv.append(image);
+
+};
+
+
+CampScreenCommanderDialogModule.prototype.clearTentsList = function ()
+{
+    for(var i=0; i != this.mTents.length; ++i)
+    {
+        this.mSlots[i].empty();
+        this.mSlots[i].data('child', null);
+    }
+
+    this.mNumActive = 0;
+};
+
+CampScreenCommanderDialogModule.prototype.onTentsListLoaded = function (_tents)
+{
+	this.clearTentsList();
+
+	if (_tents === null || !jQuery.isArray(_tents) || _tents.length === 0)
+	{
+		return;
+	}
+
+	for (var i = 0; i < _tents.length; ++i)
+	{
+	    var tent = _tents[i];
+
+		if (tent !== null)
+		{
+		    this.addTentSlotDIV(this.mTents[i], tent, i, true);
+		}
+	}
+	//this.updateBrotherSlotLocks(inventoryMode);
+	//this.updateRosterLabel();
 };

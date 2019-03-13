@@ -357,7 +357,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.CommanderDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showCommanderDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showCommanderDialog", this.m.CommanderDialogModule.queryLoad());
 		}
 	}		
 
@@ -393,7 +393,6 @@ this.camp_screen <- {
 
 	function showFletcherDialog()
 	{
-		this.logInfo("***** SHOWING FLETCHER DIALOG ****")
 		if (this.m.JSHandle != null && this.isVisible())
 		{
 			this.m.LastActiveModule = this.m.FletcherDialogModule;
@@ -401,7 +400,6 @@ this.camp_screen <- {
 			this.m.JSHandle.asyncCall("showFletcherDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
 		}
 	}
-
 
 	function showHealerDialog()
 	{
