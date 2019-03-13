@@ -344,11 +344,11 @@ CampScreen.prototype.showCommanderDialog = function (/*_withSlideAnimation,*/ _d
 
 	this.mActiveModule = this.mCommanderDialogModule;
 
-	// if(_data !== undefined && _data !== null && typeof(_data) === 'object')
-    // {
-	// 	this.loadAssetData(_data.Assets);
-	// 	this.mHireDialogModule.loadFromData(_data.Roster);
-    // }
+	if(_data !== undefined && _data !== null && typeof(_data) === 'object')
+    {
+		//this.loadAssetData(_data.Assets);
+		this.mCommanderDialogModule.loadFromData(_data);
+    }
 
     this.mCommanderDialogModule.show(_withSlideAnimation);
 };

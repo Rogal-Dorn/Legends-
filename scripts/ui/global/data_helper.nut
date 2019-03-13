@@ -827,4 +827,15 @@ this.data_helper <- {
 		return result;
 	}
 
+	function convertCampBuildingToUIData( _entity )
+	{
+		local result = {
+			id = _entity.getID(),
+			name = _entity.getName(),
+			count = _entity.getNumberAssigned()
+		};
+
+		return result;
+	}
+
 };
