@@ -68,7 +68,7 @@ var CampScreenBarberDialogModule = function (_parent) {
 	};
 
 	// assets labels
-	this.mAssets = new worldTownScreenAssets(_parent);
+	this.mAssets = new WorldTownScreenAssets(_parent);
 
 
 	// buttons
@@ -411,7 +411,7 @@ CampScreenBarberDialogModule.prototype.updateDetailsPanel = function (_element) 
 };
 CampScreenBarberDialogModule.prototype.bindTooltips = function () {
 	//this.mAssets.bindTooltips();
-	this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CampScreen.HireDialogModule.LeaveButton });
+	this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
 };
 
 CampScreenBarberDialogModule.prototype.unbindTooltips = function () {
