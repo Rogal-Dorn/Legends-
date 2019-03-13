@@ -39,7 +39,10 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
-
+		if (this.getAgent().getKnownOpponents().len() <= 1)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
 		this.m.Skill = this.selectSkill(this.m.PossibleSkills);
 
 		if (this.m.Skill == null)
