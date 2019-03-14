@@ -62,7 +62,7 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
-			"vazl_shieldmaiden_background"
+			"legend_shieldmaiden_background"
 		];
 		this.m.UIDescription = "This stone keep shelters a garrison from the snow";
 		this.m.Description = "This stone-built keep offers protection both from the cold and any invaders.";

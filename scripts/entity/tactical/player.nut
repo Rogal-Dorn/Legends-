@@ -810,35 +810,35 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			foreach (inj in injuries)
 			{
-				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_forearm"))
+				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_leg"))
+				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_foot"))
+				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_ear"))
+				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_eye"))
+				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_finger"))
+				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_hand"))
+				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
 				{
 					potential.push(inj);
 				}
-				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.vazl_prosthetic_nose"))
+				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
 				{
 					potential.push(inj);
 				}
@@ -2129,7 +2129,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return;
 		}
 
-		if (this.getBackground().getID() == "background.vazl_vala")
+		if (this.getBackground().getID() == "background.legend_vala")
 		{
 			this.m.Talents[this.Const.Attributes.Bravery] = this.Math.rand(1, 3);
 

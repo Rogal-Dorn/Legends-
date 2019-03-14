@@ -73,7 +73,7 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"squire_background",
 			"swordmaster_background",
-			"vazl_inventor_background"
+			"legend_inventor_background"
 		];
 		this.m.UIDescription = "A large city thriving on trade and agriculture";
 		this.m.Description = "A large city surrounded by lush green meadows, orchards and fields. Food stocks are usually filled to the brim.";

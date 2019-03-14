@@ -69,7 +69,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"swordmaster_background",
 			"cripple_background",
-			"vazl_shieldmaiden_background"
+			"legend_shieldmaiden_background"
 		];
 
 		if (this.Const.DLC.Unhold)

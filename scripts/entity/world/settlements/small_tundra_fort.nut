@@ -49,7 +49,7 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"retired_soldier_background",
 			"retired_soldier_background",
-			"vazl_shieldmaiden_background"
+			"legend_shieldmaiden_background"
 		];
 		this.m.UIDescription = "A wooden motte towering above the tundra";
 		this.m.Description = "In the flat lands of the tundra, this small fortification can be spotted from quite a distance.";

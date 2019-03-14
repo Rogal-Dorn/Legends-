@@ -79,7 +79,7 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"cripple_background",
 			"eunuch_background",
-			"vazl_inventor_background"
+			"legend_inventor_background"
 		];
 
 		if (this.Const.DLC.Unhold)

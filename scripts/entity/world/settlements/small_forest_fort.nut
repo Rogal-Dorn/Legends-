@@ -52,7 +52,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"retired_soldier_background",
 			"retired_soldier_background",
-			"vazl_shieldmaiden_background"
+			"legend_shieldmaiden_background"
 		];
 
 		if (this.Const.DLC.Unhold)

@@ -67,7 +67,7 @@ this.large_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"cripple_background",
 			"eunuch_background",
-			"vazl_inventor_background"
+			"legend_inventor_background"
 		];
 
 		if (this.Const.DLC.Unhold)
