@@ -16,12 +16,12 @@ this.perk_legend_barter_convincing <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		local BarterMod = this.Const.LegendMod.getBarterModifier;
-		BarterMod += 0.05; 
+		BarterMod += 0.025; 
 
 	}
 		function onRemoved()
 	{
 		local BarterMod = this.Const.LegendMod.getBarterModifier;
-		BarterMod -= 0.05; 
+		BarterMod -= 0.025; 
 	}
 });
