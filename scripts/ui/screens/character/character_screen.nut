@@ -355,6 +355,13 @@ this.character_screen <- {
 			brothers = this.onQueryBrothersList()
 		};
 
+		if ("Assets" in this.World)
+		{
+			result.formationIndex <- this.World.Assets.getFormationIndex(),
+			result.formationName <- this.World.Assets.getFormationName(),
+			result.maxBrothers <- this.World.Assets.getBrothersMax()
+		}
+
 		if (this.m.InventoryMode != this.Const.CharacterScreen.InventoryMode.Ground)
 		{
 			result.stash <- this.onQueryStashList();
@@ -367,6 +374,7 @@ this.character_screen <- {
 			this.m.PerkTreesLoaded = true;
 			result.perkTrees <- this.onQueryPerkTrees();
 		}
+		//this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
 
 		return result;
 	}
@@ -565,6 +573,10 @@ this.character_screen <- {
 
 			foreach( entity in entities )
 			{
+				if (entity.isSummoned())
+				{
+					continue;
+				}
 				result.push(this.UIDataHelper.convertEntityToUIData(entity, activeEntity));
 			}
 
@@ -2224,6 +2236,26 @@ this.character_screen <- {
 			error = errorString,
 			code = _errorCode
 		};
+	}
+
+	function onFormationChanged( _data )
+	{
+		local index = _data[0];
+		this.World.Assets.changeFormation(index);
+		this.loadData();
+	}
+
+	function onFormationClear( _data )
+	{
+		this.World.Assets.clearFormation();
+		this.loadData();
+	}
+
+	function onUpdateFormationName( _data )
+	{
+		local name = _data[0];
+		this.World.Assets.changeFormationName(name);
+		return this.World.Assets.getFormationName();
 	}
 
 };

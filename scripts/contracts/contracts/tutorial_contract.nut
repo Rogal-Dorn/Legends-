@@ -76,7 +76,55 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		this.World.getCamera().jumpTo(this.World.State.getPlayer());
 		this.m.Flags.set("BossName", "Hoggart the Weasel");
 		this.m.Flags.set("LocationName", "Hoggart\'s Refuge");
-		this.setState("StartingBattle");
+		if (this.World.Tags.get("IsLegendsNoble"))
+		{
+			this.setState("LegendsNoble");
+		} 
+		else if (this.World.Tags.get("IsLegendsBeggar"))
+		{
+			this.setState("LegendsBeggarA");
+		} 
+		else if (this.World.Tags.get("IsLegendsCrusader"))
+		{
+			this.setState("LegendsCrusader");
+		} 
+		else if (this.World.Tags.get("IsLegendsHunter"))
+		{
+			this.setState("LegendsHunter");
+		} 
+		else if (this.World.Tags.get("IsLegendsNecro"))
+		{
+			this.setState("LegendsNecro");
+		} 
+		else if (this.World.Tags.get("IsLegendsWitch"))
+		{
+			this.setState("LegendsWitch");
+		} 
+		else if (this.World.Tags.get("IsLegendsHealer"))
+		{
+			this.setState("LegendsHealer");
+		} 
+			else if (this.World.Tags.get("IsLegendsBerserker"))
+		{
+			this.setState("LegendsBerserker");
+		} 
+		else if (this.World.Tags.get("IsLegendsInventor"))
+		{
+			this.setState("LegendsInventor");
+		} 
+			else if (this.World.Tags.get("IsLegendsHoggart"))
+		{
+			this.setState("StartingBattle");
+		} 
+		else if (this.World.Tags.get("LegendsParty"))
+		{
+			this.setState("LegendsParty");
+		} 
+
+		else 
+		{
+			this.setState("StartingBattle");
+		}
 		this.contract.start();
 	}
 
@@ -239,7 +287,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				e.getBaseProperties().MeleeSkill = -200;
 				e.getBaseProperties().RangedSkill = 0;
 				e.getBaseProperties().MeleeDefense = -200;
-				e.getBaseProperties().DamageTotalMult = 0.1;
+				e.getBaseProperties().DamageTotalMult = 0.100000001;
 				e.getBaseProperties().Initiative = 250;
 				e.getSkills().update();
 				e.setHitpoints(5);
@@ -549,6 +597,170 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			}
 
 		});
+		this.m.States.push({
+			ID = "LegendsNoble",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsNobleSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+		this.m.States.push({
+			ID = "LegendsCrusader",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsCrusaderSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+
+		this.m.States.push({
+			ID = "LegendsHunter",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsHunterSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+			this.m.States.push({
+			ID = "LegendsNecro",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsNecroSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+			this.m.States.push({
+			ID = "LegendsWitch",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsWitchSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+			this.m.States.push({
+			ID = "LegendsHealer",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsHealerSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+			this.m.States.push({
+			ID = "LegendsBerserker",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsBerserkerSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+	});	
+			this.m.States.push({
+			ID = "LegendsHoggart",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsHoggartSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+			this.m.States.push({
+			ID = "LegendsParty",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsPartySuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+		this.m.States.push({
+			ID = "LegendsInventor",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsInventorSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+		});	
+
+
+
+		this.m.States.push({
+			ID = "LegendsBeggarA",
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsBeggarSuccessA");
+				this.World.Contracts.showActiveContract();
+			}
+		});
+		this.m.States.push({
+			ID = "LegendsBeggarB",
+			function update()
+			{
+				this.Contract.setScreen("LegendsBeggarSuccessB");
+				this.World.Contracts.showActiveContract();
+			}
+		});
+		this.m.States.push({
+			ID = "LegendsBeggarC",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsBeggarSuccessC");
+				this.World.Contracts.showActiveContract();
+			}
+		});					
 	}
 
 	function createScreens()
@@ -824,6 +1036,345 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			}
 
 		});
+		this.m.Screens.push({
+			ID = "LegendsNobleSuccess",
+			Title = "Noble",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Noble),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "LegendsCrusaderSuccess",
+			Title = "Crusader",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Crusader),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+				this.m.Screens.push({
+			ID = "LegendsHunterSuccess",
+			Title = "Hunter",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Rangers),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		
+		this.m.Screens.push({
+			ID = "LegendsNecroSuccess",
+			Title = "Necro",
+			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Necro),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "LegendsHealerSuccess",
+			Title = "Healer",
+			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Healer),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+
+
+		this.m.Screens.push({
+			ID = "LegendsWitchSuccess",
+			Title = "Necro",
+			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Witch),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		
+		this.m.Screens.push({
+			ID = "LegendsBerserkerSuccess",
+			Title = "Berserker",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Berserker),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+
+		this.m.Screens.push({
+			ID = "LegendsHoggartSuccess",
+			Title = "Hoggart",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Hoggart),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", false);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+
+		this.m.Screens.push({
+			ID = "LegendsPartySuccess",
+			Title = "Party",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Party),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+		});
+		this.m.Screens.push({
+			ID = "LegendsInventorSuccess",
+			Title = "Inventor",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Inventor),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To arms!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "LegendsBeggarSuccessA",
+			Title = "Beggar",
+			Text =  "[img]gfx/ui/events/event_51.png[/img]Two crowns. A whole week and all you have for it is two crowns.\n\nYou sigh as you amble through %bigcity%\'s narrow streets, heading toward your alley for the night. You've seen a lot in the square. There, your hand is on the pulse of the town. You can tell when things aren't right, you see it in the way they walk. Have they been walking differently?\n\nYour thoughts are cut short by a sudden commotion.\n\nTwo men are standing right where you usually sleep. One of them is short, youthful, and clothed in red fabric. A noble\'s son. A cloaked man has him cornered against the stone wall. The brat speaks, his voice a panicked quiver all but lost in the gloom. %SPEECH_ON%Wait \'till father hears what you\'ve done!%SPEECH_OFF% The second man responds with a swift motion. The young man cries out, but the scream is cut short by a hand over his mouth. He slumps down to the ground, leaving a crimson stain on the wall.",
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "A gruesome sight",
+					function getResult()
+					{
+						this.Contract.setState("LegendsBeggarB");
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "LegendsBeggarSuccessB",
+			Title = "Beggar",
+			Text = "[img]gfx/ui/events/event_50.png[/img]You must\'ve cried out in turn, as the man\'s head snaps around. Your eyes meet. In an instant, he clambers up a wall and vanishes among the rooftops. You step towards the body. His face is familiar. %bro1%\'s boy, his indifference towards your plight all too normal for a highborn.\n\nDead men make poor companions, and a noble\'s corpse brings danger. As you make to leave, it catches your eye. A golden glimmer. A sack practically bursting with crowns, screaming its value to your shrewd gaze.\n\nYou shouldn\'t. You do.\n\nIt's heavy. Hundreds of crowns heavy, far too large to conceal under hood or rag. As you search for a temporary hiding spot, a faint flickering seeps into the alley. Soldiers. A voice calls out, terse and convinced of trouble. %SPEECH_ON%What\'s going on here? What have you...%SPEECH_OFF%The footman\'s gaze falls upon the dead noble. %SPEECH_ON%You murdering swine!%SPEECH_OFF%",
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "Time to run!",
+					function getResult()
+					{
+						this.Contract.setState("LegendsBeggarC");
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+		this.m.Screens.push({
+			ID = "LegendsBeggarSuccessC",
+			Title = "Beggar",
+			Text = "[img]gfx/ui/events/event_04.png[/img]Shock does little to lend a man speed, and the soldier\'s outrage slows the drawing of his sword. Retreading the cloaked man\'s steps, you vault onto and over a decaying roof, landing amidst another street. A horn bellows nearby.\n\nYour safety is brief, snuffed out of your mind by the growing swell of clattering armor. The only way out is to skip town entirely.\n\nAs the adrenaline wears off, you begin to realize the true impact of this ordeal. Wholly convinced of your guilt, the vengeful weight of (Noble House) will crash down upon you in time. Your gold may buy you weapons and those to wield them, but for how long? \n\nYou stare at the shimmering fortune in your hands. Was it worth it? A heave of your plunder convinces you. With dreams of a fresh start, you continue on.",
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "No going back now",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});							
 	}
 
 	function spawnCorpse( _x, _y )
@@ -844,26 +1395,26 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		local armorSprite = armors[this.Math.rand(0, armors.len() - 1)];
 		local flip = this.Math.rand(0, 1) == 1;
 		local decal = tile.spawnDetail(armorSprite, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.9;
-		decal.setBrightness(0.9);
+		decal.Scale = 0.899999976;
+		decal.setBrightness(0.899999976);
 		decal = tile.spawnDetail("bust_naked_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.9;
-		decal.setBrightness(0.9);
+		decal.Scale = 0.899999976;
+		decal.setBrightness(0.899999976);
 
 		if (this.Math.rand(1, 100) <= 25)
 		{
 			decal = tile.spawnDetail("bust_body_guts_0" + this.Math.rand(1, 3), this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
+			decal.Scale = 0.899999976;
 		}
 		else if (this.Math.rand(1, 100) <= 25)
 		{
 			decal = tile.spawnDetail("bust_head_smashed_01", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
+			decal.Scale = 0.899999976;
 		}
 		else
 		{
 			decal = tile.spawnDetail(armorSprite + "_arrows", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
+			decal.Scale = 0.899999976;
 		}
 
 		local color = this.Const.HairColors.All[this.Math.rand(0, this.Const.HairColors.All.len() - 1)];
@@ -871,21 +1422,21 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		local beardSprite = "beard_" + color + "_" + this.Const.Beards.All[this.Math.rand(0, this.Const.Beards.All.len() - 1)];
 		local headSprite = this.Const.Faces.AllMale[this.Math.rand(0, this.Const.Faces.AllMale.len() - 1)];
 		local decal = tile.spawnDetail(headSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-		decal.Scale = 0.9;
-		decal.setBrightness(0.9);
+		decal.Scale = 0.899999976;
+		decal.setBrightness(0.899999976);
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
 			local decal = tile.spawnDetail(beardSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
-			decal.setBrightness(0.9);
+			decal.Scale = 0.899999976;
+			decal.setBrightness(0.899999976);
 		}
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
 			local decal = tile.spawnDetail(hairSprite + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Scale = 0.9;
-			decal.setBrightness(0.9);
+			decal.Scale = 0.899999976;
+			decal.setBrightness(0.899999976);
 		}
 
 		local pools = this.Math.rand(this.Const.Combat.BloodPoolsAtDeathMin, this.Const.Combat.BloodPoolsAtDeathMax);

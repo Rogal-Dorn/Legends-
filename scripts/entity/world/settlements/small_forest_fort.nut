@@ -36,11 +36,12 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Waldenwehr"
 		]);
 		this.m.DraftList = [
+			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
-			"bowyer_background",
+			"female_bowyer_background",
 			"brawler_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"hunter_background",
 			"hunter_background",
 			"lumberjack_background",
@@ -51,8 +52,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"deserter_background",
 			"retired_soldier_background",
-			"retired_soldier_background",
-			"legend_shieldmaiden_background"
+			"retired_soldier_background"
 		];
 
 		if (this.Const.DLC.Unhold)

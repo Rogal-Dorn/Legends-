@@ -46,10 +46,12 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
+
 
 
 		local towns = this.World.EntityManager.getSettlements();
@@ -77,6 +79,14 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		foreach (bro in brothers)
 		{
 			if (bro.getBackground().getID() == "background.legend_vala")
+			{
+				return;
+			}
+			if (bro.getBackground().getID() == "background.legend_commander_witch")
+			{
+				return;
+			}
+			if (bro.getBackground().getID() == "background.legend_witch")
 			{
 				return;
 			}

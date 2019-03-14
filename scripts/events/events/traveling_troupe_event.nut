@@ -71,7 +71,7 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Entertainer",
-			Text = "[img]gfx/ui/events/event_26.png[/img]%entertainer% steps forward and picks up some of the troupe\'s tools of trade. He tests them out, impressing the entertainers with how well he\'s able to use their own equipment. The mime asks if perhaps they could play a couple of tunes with him. He nods and joins the entertainers, putting on a show that\'s for the ages. When it\'s all over, the troupe is so impressed that they try and recruit the man. You tell them that ain\'t happening and %entertainer% nods.%SPEECH_ON%My time is with the %companyname% now, but I appreciate the compliment.%SPEECH_OFF%You ask how much for the show, but the troupe leader shakes his head.%SPEECH_ON%No need. It was a pleasure playing with him. We\'ve not put on a show like that in some time and the practice will do us well.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_26.png[/img]%entertainer% steps forward and picks up some of the troupe\'s tools of trade.  %entertainer% tests them out, impressing the entertainers with how well the mercenary is able to use their own equipment. The mime asks if perhaps they could play a couple of tunes together.  Joining the entertainers with a nod, putting on a show that\'s for the ages. When it\'s all over, the troupe is so impressed that they try and recruit the mercenary. You tell them that ain\'t happening and %entertainer% nods.%SPEECH_ON%My time is with the %companyname% now, but I appreciate the compliment.%SPEECH_OFF%You ask how much for the show, but the troupe leader shakes his head.%SPEECH_ON%No need. It was a pleasure playing. We\'ve not put on a show like that in some time and the practice will do us well.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -108,7 +108,7 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Noble",
-			Text = "[img]gfx/ui/events/event_26.png[/img]Before the troupe can start, %nobleman% the nobleman gets up and asks if they know of a particular song from his days in the court.%SPEECH_ON%They used to sing it when I was a little lad. It\'s been years since I\'ve heard it.%SPEECH_OFF%The mime, again breaking character, grins and loudly proclaims that they know it. He snaps his fingers and the musicians of the group pick up their instruments. When they start, the tune is instantly catchy. It\'s a stringed and horn orchestration, played alongside a large woman singing from both heart and belly. She is a tempest of a singer, bringing both the quiet and ferocity of a large storm\'s coming and going, and her lyrics are that of incredible heroism of yore.\n\n After the troupe finishes, you ask how much you owe them. The mime shakes his head.%SPEECH_ON%No, sir, payment is not necessary. It\'s been awhile since that got requested and it was a pleasure to play it for you.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_26.png[/img]Before the troupe can start, %nobleman% the noble gets up and asks if they know of a particular song from their days in the court.%SPEECH_ON%They used to sing it when I was a little child. It\'s been years since I\'ve heard it.%SPEECH_OFF%The mime, again breaking character, grins and loudly proclaims that they know it. He snaps his fingers and the musicians of the group pick up their instruments. When they start, the tune is instantly catchy. It\'s a stringed and horn orchestration, played alongside a large woman singing from both heart and belly. She is a tempest of a singer, bringing both the quiet and ferocity of a large storm\'s coming and going, and her lyrics are that of incredible heroism of yore.\n\n After the troupe finishes, you ask how much you owe them. The mime shakes his head.%SPEECH_ON%No, sir, payment is not necessary. It\'s been awhile since that got requested and it was a pleasure to play it for you.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -267,11 +267,11 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.juggler" || bro.getBackground().getID() == "background.minstrel")
+			if (bro.getBackground().getID() == "background.juggler" || bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
 			{
 				candidates_entertainer.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble")
+			else if (bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.female_disowned_noble" || bro.getBackground().getID() == "background.female_adventurous_noble")
 			{
 				candidates_noble.push(bro);
 			}

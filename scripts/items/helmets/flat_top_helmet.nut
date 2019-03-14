@@ -21,7 +21,7 @@ this.flat_top_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			120,
 			121,
 			123,
-			172
+			176
 		];
 		this.m.Variant = variants[this.Math.rand(0, variants.len() - 1)];
 		this.updateVariant();

@@ -89,6 +89,11 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 			{
 				R = 10,
 				P = 1.0,
+				S = "weapons/legend_sling"
+			},
+			{
+				R = 10,
+				P = 1.0,
 				S = "weapons/short_bow"
 			},
 			{
@@ -110,6 +115,11 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				R = 20,
 				P = 1.0,
 				S = "weapons/war_bow"
+			},			
+			{
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_slingstaff"
 			},
 			{
 				R = 10,
@@ -155,6 +165,11 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				R = 0,
 				P = 1.0,
 				S = "ammo/quiver_of_arrows"
+			},
+				{
+				R = 0,
+				P = 1.0,
+				S = "ammo/bag_of_pebbles"
 			},
 			{
 				R = 0,
@@ -235,6 +250,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 	function onUpdateDraftList( _list )
 	{
 		_list.push("bowyer_background");
+		_list.push("female_bowyer_background");
 	}
 
 	function onSerialize( _out )

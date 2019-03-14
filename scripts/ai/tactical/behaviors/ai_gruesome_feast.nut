@@ -85,74 +85,86 @@ this.ai_gruesome_feast <- this.inherit("scripts/ai/tactical/behavior", {
 		local allies = this.getAgent().getKnownAllies();
 		local potentialCorpses = [];
 
-		foreach( c in corpses )
+		if (myTile.IsCorpseSpawned && myTile.Properties.get("Corpse").IsConsumable)
 		{
-			if (!c.IsCorpseSpawned || !c.Properties.get("Corpse").IsConsumable)
+			potentialCorpses.push({
+				Tile = myTile,
+				Distance = 0,
+				Score = 10.0
+			});
+		}
+		else
+		{
+			foreach( c in corpses )
 			{
-				continue;
-			}
-
-			if ((!c.IsEmpty && !c.isSameTileAs(myTile)) && !(_entity.isAbleToWait() && c.IsOccupiedByActor && c.getEntity().getType() == this.Const.EntityType.Ghoul && c.getEntity().getMoraleState() == this.Const.MoraleState.Fleeing && !c.getEntity().isTurnDone() && c.getDistanceTo(myTile) == 1))
-			{
-				continue;
-			}
-
-			local score = 4.0;
-			local dist = c.getDistanceTo(myTile);
-
-			if (dist > this.Const.AI.Behavior.GruesomeFeastMaxDistance)
-			{
-				continue;
-			}
-
-			score = score - dist * this.Const.AI.Behavior.GruesomeFeastDistanceMult;
-
-			if (this.getAgent().getIntentions().IsDefendingPosition && dist > this.m.Skill.getMaxRange())
-			{
-				continue;
-			}
-
-			score = score - this.Const.AI.Behavior.GruesomeFeastWaitPenalty;
-			local mag = this.queryOpponentMagnitude(c, this.Const.AI.Behavior.GruesomeFeastMagnitudeMaxRange);
-			score = score - mag.Opponents * (1.0 - mag.AverageDistanceScore) * this.Math.maxf(0.5, 1.0 - mag.AverageEngaged) * this.Const.AI.Behavior.GruesomeFeastOpponentValue;
-
-			if (isInMelee && !c.isSameTileAs(myTile))
-			{
-				score = score - this.Const.AI.Behavior.GruesomeFeastLeaveZOC;
-			}
-
-			if (dist > 1)
-			{
-				local letComradeGo = false;
-
-				foreach( ally in allies )
-				{
-					if (!ally.isTurnDone() && ally.getTile().getDistanceTo(c) == 1 && ally.getType() == this.Const.EntityType.Ghoul && _entity.getSize() < 3)
-					{
-						letComradeGo = true;
-						break;
-					}
-				}
-
-				if (letComradeGo)
+				if (!c.IsCorpseSpawned || !c.Properties.get("Corpse").IsConsumable)
 				{
 					continue;
 				}
+
+				if ((!c.IsEmpty && !c.isSameTileAs(myTile)) && !(_entity.isAbleToWait() && c.IsOccupiedByActor && c.getEntity().getType() == this.Const.EntityType.Ghoul && c.getEntity().getMoraleState() == this.Const.MoraleState.Fleeing && !c.getEntity().isTurnDone() && c.getDistanceTo(myTile) == 1))
+				{
+					continue;
+				}
+
+				local score = 4.0;
+				local dist = c.getDistanceTo(myTile);
+
+				if (dist > this.Const.AI.Behavior.GruesomeFeastMaxDistance)
+				{
+					continue;
+				}
+
+				score = score - dist * this.Const.AI.Behavior.GruesomeFeastDistanceMult;
+
+				if (this.getAgent().getIntentions().IsDefendingPosition && dist > this.m.Skill.getMaxRange())
+				{
+					continue;
+				}
+
+				score = score - this.Const.AI.Behavior.GruesomeFeastWaitPenalty;
+				local mag = this.queryOpponentMagnitude(c, this.Const.AI.Behavior.GruesomeFeastMagnitudeMaxRange);
+				score = score - mag.Opponents * (1.0 - mag.AverageDistanceScore) * this.Math.maxf(0.5, 1.0 - mag.AverageEngaged) * this.Const.AI.Behavior.GruesomeFeastOpponentValue;
+
+				if (isInMelee && !c.isSameTileAs(myTile))
+				{
+					score = score - this.Const.AI.Behavior.GruesomeFeastLeaveZOC;
+				}
+
+				if (dist > 1)
+				{
+					local letComradeGo = false;
+
+					foreach( ally in allies )
+					{
+						if (!ally.isTurnDone() && ally.getTile().getDistanceTo(c) == 1 && ally.getType() == this.Const.EntityType.Ghoul && _entity.getSize() < 3)
+						{
+							letComradeGo = true;
+							break;
+						}
+					}
+
+					if (letComradeGo)
+					{
+						continue;
+					}
+				}
+
+				potentialCorpses.push({
+					Tile = c,
+					Distance = dist,
+					Score = score
+				});
 			}
 
-			potentialCorpses.push({
-				Tile = c,
-				Distance = dist,
-				Score = score
-			});
+			if (potentialCorpses.len() == 0)
+			{
+				return this.Const.AI.Behavior.Score.Zero;
+			}
+
+			potentialCorpses.sort(this.onSortByScore);
 		}
 
-		if (potentialCorpses.len() == 0)
-		{
-			return this.Const.AI.Behavior.Score.Zero;
-		}
-
-		potentialCorpses.sort(this.onSortByScore);
 		local navigator = this.Tactical.getNavigator();
 		local bestTarget;
 		local bestIntermediateTile;
@@ -295,7 +307,7 @@ this.ai_gruesome_feast <- this.inherit("scripts/ai/tactical/behavior", {
 		this.m.TargetTile = bestTarget;
 		this.m.IsTravelling = bestTarget.getDistanceTo(myTile) > this.m.Skill.getMaxRange();
 
-		if (!bestTarget.IsEmpty)
+		if (!bestTarget.IsEmpty && !bestTarget.isSameTileAs(myTile))
 		{
 			this.m.IsWaiting = true;
 		}

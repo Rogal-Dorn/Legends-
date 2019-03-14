@@ -922,6 +922,13 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(money);
+						local xp = money * 0.50;
+						local playerRoster = this.World.getPlayerRoster().getAll();
+						foreach( bro in playerRoster )
+						{
+							bro.addXP(xp);
+							bro.updateLevel();
+						}
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
 						this.World.Contracts.finishActiveContract();
 						return 0;
@@ -932,10 +939,11 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
+				local xpGained = this.Math.round(money * 0.10 * this.Const.Combat.GlobalXPMult);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + money + "[/color] Crowns"
+					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + money + "[/color] Crowns and [color=" + this.Const.UI.Color.PositiveEventValue + "]" + xpGained + "[/color] Experience"
 				});
 				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/well_supplied_situation"), 3, this.Contract.m.Destination, this.List);
 			}
@@ -1099,7 +1107,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 			if (bandits_dist <= goblins_dist && bandits_dist <= orcs_dist)
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(90, 110) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
 				party.setDescription("A rough and tough band of brigands preying on the weak.");
 				party.getLoot().Money = this.Math.rand(50, 100);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
@@ -1132,7 +1140,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			}
 			else if (goblins_dist <= bandits_dist && goblins_dist <= orcs_dist)
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(90, 110) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
 				party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
 				party.getLoot().Medicine = this.Math.rand(0, 2);
@@ -1156,7 +1164,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			}
 			else
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(90, 110) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
 				party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 				party.getLoot().ArmorParts = this.Math.rand(0, 25);
 				party.getLoot().Ammo = this.Math.rand(0, 10);

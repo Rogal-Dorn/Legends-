@@ -63,7 +63,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 11);
+		local r = this.Math.rand(1, 12);
 
 		if (r == 1)
 		{
@@ -118,28 +118,33 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r == 6)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
+				this.m.Items.equip(this.new("scripts/items/weapons/pickaxe"));
 			}
 			else if (r == 7)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/pickaxe"));
+				this.m.Items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
 			}
 			else if (r == 8)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
+				this.m.Items.equip(this.new("scripts/items/weapons/wooden_flail"));
 			}
 			else if (r == 9)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/wooden_flail"));
+				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 			}
 			else if (r == 10)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
-			}
+				this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
+			}		
 			else if (r == 11)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe"));
 			}
+			else if (r == 12)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
+			}
+
 
 			if (this.Math.rand(1, 100) <= 33)
 			{
@@ -195,7 +200,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 
-		if (this.Math.rand(1, 100) <= 50)
+		if (this.Math.rand(1, 100) <= 40)
 		{
 			local r = this.Math.rand(1, 6);
 

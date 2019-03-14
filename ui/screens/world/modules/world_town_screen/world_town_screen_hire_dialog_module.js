@@ -30,8 +30,10 @@ var WorldTownScreenHireDialogModule = function(_parent)
         TryoutCostsContainer: null,
         DailyMoneyCostsText: null,
         HireButton: null,
-        TryoutButton: null
+        TryoutButton: null,
+        DismissButton: null
     };
+    this.dismissButtonLayout = null;
 
     // assets labels
 	this.mAssets = new WorldTownScreenAssets(_parent);
@@ -232,6 +234,21 @@ WorldTownScreenHireDialogModule.prototype.createDIV = function (_parentDiv)
         }
     }, '', 1);
 
+    this.dismissButtonLayout = $('<div class="l-tryout-button"/>');
+    detailsRow.append(this.dismissButtonLayout);
+    this.mDetailsPanel.DismissButton = this.dismissButtonLayout.createTextButton("Dismiss", function()
+	{
+        if(self.mSelectedEntry !== null)
+        {
+            var data = self.mSelectedEntry.data('entry');
+            if('ID' in data && data['ID'] !== null)
+            {
+                self.dismissRosterEntry(data['ID']);
+            }
+        }
+    }, '', 1);
+    this.dismissButtonLayout.hide();
+
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');
     this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
@@ -308,6 +325,7 @@ WorldTownScreenHireDialogModule.prototype.destroyDIV = function ()
     this.mContainer.empty();
     this.mContainer.remove();
     this.mContainer = null;
+    this.dismissButtonLayout = null;
 };
 
 WorldTownScreenHireDialogModule.prototype.addListEntry = function (_data)
@@ -473,6 +491,58 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
                 icon.bindTooltip({ contentType: 'status-effect', entityId: data.ID, statusEffectId: data.Traits[i].id });
                 this.mDetailsPanel.CharacterTraitsContainer.append(icon);
             }
+
+            for(var i = 0; i < data.Talents.length; ++i)
+            {
+                var stars = $('<img></img>');
+                stars.attr('src', Path.GFX + 'ui/icons/talent_' + data.Talents[i].value.toString() + '.png');
+                stars.css({ 'width': '3.6rem', 'height': '1.8rem', 'margin-bottom': '1.5rem'});
+                var icon = "";
+                var tooltipId = null
+                switch (data.Talents[i].talent) 
+                {
+                    case "HP":
+                        icon = Asset.ICON_HEALTH;
+                        tooltipId = TooltipIdentifier.CharacterStats.Hitpoints;
+                        break;
+                    case "FAT":
+                        icon = Asset.ICON_FATIGUE;
+                        tooltipId = TooltipIdentifier.CharacterStats.Fatigue;
+                        break;
+                    case "RES":
+                        icon = Asset.ICON_BRAVERY;
+                        tooltipId = TooltipIdentifier.CharacterStats.Bravery;
+                        break;
+                    case "INIT":
+                        icon = Asset.ICON_INITIATIVE;
+                        tooltipId = TooltipIdentifier.CharacterStats.Initiative;
+                        break;
+                    case "MA":
+                        icon = Asset.ICON_MELEE_SKILL;
+                        tooltipId = TooltipIdentifier.CharacterStats.MeleeSkill;
+                        break;
+                    case "MD":
+                        icon = Asset.ICON_MELEE_DEFENCE;
+                        tooltipId = TooltipIdentifier.CharacterStats.MeleeDefense;
+                        break;
+                    case "RA":
+                        icon = Asset.ICON_RANGE_SKILL;
+                        tooltipId = TooltipIdentifier.CharacterStats.RangeSkill;
+                        break;
+                    case "RD":
+                        icon = Asset.ICON_RANGE_DEFENCE;
+                        tooltipId = TooltipIdentifier.CharacterStats.RangeDefense;
+                        break;
+                }
+                var img = $('<img src="' + Path.GFX + icon + '"/>');
+                img.bindTooltip({ contentType: 'ui-element', elementId: tooltipId });
+               // img.css({ 'width': '3.6rem', 'height': '1.8rem' });
+               // + data.Talents[i].talent + '
+                var text = $('<span class="text-font-small font-color-assets-positive-value"></span>');
+                text.append(img)
+                text.append(stars)
+                this.mDetailsPanel.CharacterTraitsContainer.append(text);
+            }
         }
         else
         {
@@ -510,12 +580,18 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
         if(data['IsTryoutDone'])
         {
             this.mDetailsPanel.TryoutButton.removeClass('display-block').addClass('display-none');
+            this.dismissButtonLayout.show();
+            this.mDetailsPanel.DismissButton.removeClass('display-none').addClass('display-block');
             this.mDetailsPanel.TryoutCostsContainer.removeClass('display-block').addClass('display-none');
+            this.mDetailsPanel.DismissButton.bindTooltip({ contentType: 'ui-element', elementId: "world-town-screen.hire-dialog-module.DismissButton" });
         }
         else
         {
             this.mDetailsPanel.TryoutButton.addClass('display-block').removeClass('display-none');
             this.mDetailsPanel.TryoutCostsContainer.addClass('display-block').removeClass('display-none');
+            this.mDetailsPanel.DismissButton.unbindTooltip();
+            this.dismissButtonLayout.hide();
+            this.mDetailsPanel.DismissButton.removeClass('display-block').addClass('display-none');
         }
 
         this.mDetailsPanel.Container.removeClass('display-none').addClass('display-block');
@@ -572,6 +648,7 @@ WorldTownScreenHireDialogModule.prototype.bindTooltips = function ()
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
     this.mDetailsPanel.HireButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.HireButton });
     this.mDetailsPanel.TryoutButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.TryoutButton });
+    this.mDetailsPanel.DismissButton.bindTooltip({ contentType: 'ui-element', elementId: "world-town-screen.hire-dialog-module.DismissButton" });
 };
 
 WorldTownScreenHireDialogModule.prototype.unbindTooltips = function ()
@@ -580,6 +657,7 @@ WorldTownScreenHireDialogModule.prototype.unbindTooltips = function ()
     this.mLeaveButton.unbindTooltip();
     this.mDetailsPanel.HireButton.unbindTooltip();
     this.mDetailsPanel.TryoutButton.unbindTooltip();
+    this.mDetailsPanel.DismissButton.unbindTooltip();
     this.mDetailsPanel.CharacterBackgroundImage.unbindTooltip();
 };
 
@@ -792,6 +870,49 @@ WorldTownScreenHireDialogModule.prototype.removeRosterEntry  = function (_data)
     }
 };
 
+WorldTownScreenHireDialogModule.prototype.dismissRosterEntry = function (_entryID)
+{
+    var self = this;
+    this.notifyBackendDismissRosterEntry(_entryID, function (data)
+    {
+        // error?
+        if (data.Result != 0)
+        {
+            if (data.Result == ErrorCode.NotEnoughMoney)
+            {
+                self.mAssets.mMoneyAsset.shakeLeftRight();
+            }
+            else if (data.Result == ErrorCode.NotEnoughRosterSpace)
+            {
+                self.mAssets.mBrothersAsset.shakeLeftRight();
+            }
+            else
+            {
+                console.error("Failed to hire. Reason: Unknown");
+            }
+
+            return;
+        }
+
+        // remove entity from list
+        for (var i = 0; i < self.mRoster.length; ++i)
+        {
+            if (self.mRoster[i]['ID'] == _entryID)
+            {
+                self.removeRosterEntry({ item: self.mRoster[i], index: i });
+                break;
+            }
+        }
+
+        // update assets
+        self.mParent.loadAssetData(data.Assets);
+        self.updateListEntryValues();
+
+        self.updateDetailsPanel(self.mSelectedEntry);
+    });
+};
+
+
 WorldTownScreenHireDialogModule.prototype.hireRosterEntry = function (_entryID)
 {
     var self = this;
@@ -871,6 +992,34 @@ WorldTownScreenHireDialogModule.prototype.tryoutRosterEntry = function (_entryID
     });
 };
 
+// WorldTownScreenHireDialogModule.prototype.dismissRosterEntry = function (_entryID)
+// {
+//     var self = this;
+//     this.notifyBackendDismissRosterEntry(_entryID, function (data)
+//     {
+//         // error?
+//         if (data.Result != 0)
+//         {
+//             return;
+//         }
+
+//         // update assets
+//         self.mRoster = data.Roster;
+
+//         var container = self.mListContainer.findListScrollContainer();
+//         container.find('.list-entry').each(function (index, element)
+//         {
+//             var entry = $(element);
+//             entry.data('entry', self.mRoster[index]);
+//         });
+
+//         self.mParent.loadAssetData(data.Assets);
+//         self.updateListEntryValues();
+
+//         self.updateDetailsPanel(self.mSelectedEntry);
+//     });
+// };
+
 WorldTownScreenHireDialogModule.prototype.notifyBackendModuleShown = function ()
 {
     SQ.call(this.mSQHandle, 'onModuleShown');
@@ -899,6 +1048,11 @@ WorldTownScreenHireDialogModule.prototype.notifyBackendBrothersButtonPressed = f
 WorldTownScreenHireDialogModule.prototype.notifyBackendHireRosterEntry = function (_entryID, _callback)
 {
 	SQ.call(this.mSQHandle, 'onHireRosterEntry', _entryID, _callback);
+};
+
+WorldTownScreenHireDialogModule.prototype.notifyBackendDismissRosterEntry = function (_entryID, _callback)
+{
+	SQ.call(this.mSQHandle, 'onDismissRosterEntry', _entryID, _callback);
 };
 
 WorldTownScreenHireDialogModule.prototype.notifyBackendTryoutRosterEntry = function (_entryID, _callback)

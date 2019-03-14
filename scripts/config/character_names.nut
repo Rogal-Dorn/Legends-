@@ -5,6 +5,7 @@ if (!("Strings" in gt.Const))
 	gt.Const.Strings <- {};
 }
 
+
 gt.Const.Strings.CharacterNames <- [
 	"Sigurd",
 	"Siegfried",
@@ -238,24 +239,49 @@ gt.Const.Strings.CharacterNames <- [
 	"Markolf",
 	"Hadebrand",
 	"Roderick",
-	"Rambert",
-	"Meinrad"
+	"Rambert"
+
 ];
+
 gt.Const.Strings.CharacterNamesFemale <- [
 	"Ingrid",
 	"Helga",
 	"Irma",
 	"Adela",
 	"Birgit",
+	"Beatrix",
 	"Bertha",
+	"Blanche",
 	"Borghild",
 	"Brunhild",
 	"Frida",
+	"Gisela",
 	"Gudrun",
 	"Hilda",
+	"Judith",
 	"Sigrid",
+	"Sibyle",
+	"Sophia",
+	"Joanna",
 	"Mathilda",
-	"Gerhild"
+	"Gerhild",
+	"Amalie",
+	"Agnise",
+	"Agathe",
+	"Clare",
+	"Helena",
+	"Ursular",
+	"Vronika",
+	"Magrit",
+	"Eneyde",
+	"Elsa",
+	"Birgitte",
+	"Gissela",
+	"Lena",
+	"Agness",
+	"Adela",
+	"Jenna"
+
 ];
 gt.Const.Strings.NobleTitles <- [
 	"Count",
@@ -299,7 +325,9 @@ gt.Const.Strings.HedgeKnightTitles <- [
 	"Strongface",
 	"the Defiler",
 	"the Knightslayer",
-	"the Hedge Knight"
+	"the Hedge Knight",
+	"the Shrubbery",
+	"who says ni"
 ];
 gt.Const.Strings.MasonTitles <- [
 	"the Builder",
@@ -332,6 +360,9 @@ gt.Const.Strings.WitchhunterTitles <- [
 	"the Nighthunter",
 	"the Witchhunter",
 	"the Exorciser",
+	"the Saltzpire",
+	"the Inquisitor",
+	"the Righteous",
 	"the Torturer"
 ];
 gt.Const.Strings.GravediggerTitles <- [
@@ -424,7 +455,51 @@ gt.Const.Strings.KnightNames <- [
 	"Sir Kunibert",
 	"Sir Dankrad",
 	"Sir Leberecht"
+
 ];
+gt.Const.Strings.LadyNames <- [
+	"Lady Jean",
+	"Lady Hatchet",
+	"Lady Matilda",
+	"Lady Isabella",
+	"Lady Deborah",
+	"Lady Gwendolen",
+	"Lady Mavia",
+	"Lady Lilliard",
+	"Lady Madeira",
+	"Lady Hille",
+	"Lady Amina",
+	"Lady Mary",
+	"Lady Beaton",
+	"Lady Jean",
+	"Lady Avice",
+	"Lady Emma",
+	"Lady Joan",
+	"Lady Margery",
+	"Lady Albree",
+	"Lady Alia",
+	"Lady Ela",
+	"Lady Gisella",
+	"Lady Elisa",
+	"Lady Tamsin",
+	"Lady Anabella",
+	"Lady Beatrice",
+	"Lady Clarae",
+	"Lady Emilia",
+	"Lady Constance",
+	"Lady Florencia",
+	"Lady Joye",
+	"Lady Lucia",
+	"Lady Arrianna",
+	"Lady Pavia",
+	"Lady Prudence",
+	"Lady Sabina",
+	"Lady Ursula",
+	"Lady Grace",
+	"Lady Yvone"
+];
+
+
 gt.Const.Strings.OrcWarlordNames <- [
 	"Illska Ghul",
 	"Skabskra",
@@ -471,6 +546,7 @@ gt.Const.Strings.OrcWarlordNames <- [
 	"Ilska Sapat",
 	"Grug Zartum",
 	"Grommok",
+	"Arvius",
 	"Ogrul",
 	"Shura Nak"
 ];

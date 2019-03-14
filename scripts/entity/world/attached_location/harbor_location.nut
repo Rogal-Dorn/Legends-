@@ -239,6 +239,7 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 		{
 			return;
 		}
+		_list.push("female_butcher_background");
 	}
 
 	function onUpdateShopList( _id, _list )

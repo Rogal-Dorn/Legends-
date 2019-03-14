@@ -5,14 +5,14 @@ this.perfect_focus <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.perfect_focus";
 		this.m.Name = "Perfect Focus";
 		this.m.Description = "Become one with your weapon and gain perfect focus as if time itself were to stand still.";
-		this.m.Icon = "ui/perks/perk_37_active.png";
-		this.m.IconDisabled = "ui/perks/perk_37_active_sw.png";
+		this.m.Icon = "skills/perfectfocus_square.png";
+		this.m.IconDisabled = "skills/perfectfocus_square_bw.png";
 		this.m.Overlay = "perk_37_active";
 		this.m.SoundOnUse = [
 			"sounds/combat/perfect_focus_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
+		this.m.Order = this.Const.SkillOrder.BeforeLast;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;

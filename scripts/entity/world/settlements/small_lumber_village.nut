@@ -58,7 +58,22 @@ this.small_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"wildman_background",
 			"hunter_background",
 			"hunter_background",
-			"tailor_background"
+			"tailor_background",
+						"apprentice_background",
+			"female_bowyer_background",
+			"female_bowyer_background",
+			"female_butcher_background",
+			"female_daytaler_background",
+			"lumberjack_background",
+			"lumberjack_background",
+			"lumberjack_background",
+			"poacher_background",
+			"poacher_background",
+			"poacher_background",
+			"wildman_background",
+			"hunter_background",
+			"hunter_background",
+			"female_tailor_background"
 		];
 
 		if (this.Const.DLC.Unhold)

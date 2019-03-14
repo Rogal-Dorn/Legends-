@@ -4,7 +4,8 @@ this.entity <- {
 		ContentID = this.Math.rand(),
 		IsAlive = true,
 		IsDirty = false,
-		IsAttackable = false
+		IsAttackable = false,
+		IsSummoned = false
 	},
 	function getName()
 	{
@@ -104,6 +105,11 @@ this.entity <- {
 	function onFinish()
 	{
 		this.m.IsAlive = false;
+	}
+
+	function isSummoned()
+	{
+		return this.m.IsSummoned;
 	}
 
 	function onSerialize( _out )

@@ -36,6 +36,16 @@ this.winery_location <- this.inherit("scripts/entity/world/attached_location", {
 				P = 1.0,
 				S = "supplies/wine_item"
 			});
+				_list.push({
+				R = 10,
+				P = 1.0,
+				S = "supplies/roots_and_berries_item"
+			});
+				_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_sickle"
+			});
 		}
 		else if (_id == "building.specialized_trader")
 		{

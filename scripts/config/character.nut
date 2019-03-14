@@ -12,7 +12,7 @@ gt.Const.Movement <- {
 	EnemySelectionFadeTime = 500
 };
 gt.Const.XP <- {
-	XPForKillerPct = 0.2,
+	XPForKillerPct = 0.200000003,
 	MaxLevelWithPerkpoints = 11
 };
 gt.Const.BusinessReputation <- [
@@ -70,7 +70,7 @@ gt.Const.Combat <- {
 	AttackOfOpportunityLimit = 999,
 	RangedAttackBlockedChance = 0.75,
 	FallingDamage = 10,
-	ArmorDirectDamageMitigationMult = 0.1,
+	ArmorDirectDamageMitigationMult = 0.100000001,
 	PoisonEffectMinDamage = 6,
 	AlertWeaponBreakingCondition = 12,
 	WeaponDurabilityLossOnHit = 3.0,
@@ -81,19 +81,19 @@ gt.Const.Combat <- {
 	ShieldWallMaxAllies = 4,
 	RiposteDelay = 300,
 	SpawnBloodMinDamage = 10,
-	SpawnBloodSameTileChance = 90,
-	SpawnBloodAdjacentTileChance = 75,
-	SpawnBloodAttempts = 3,
+	SpawnBloodSameTileChance = 95,
+	SpawnBloodAdjacentTileChance = 80,
+	SpawnBloodAttempts = 4,
 	SpawnBloodEffectMinDamage = 8,
 	PlayHitSoundMinDamage = 1,
 	PlayPainSoundMinDamage = 6,
 	PlayPainVolumeMaxDamage = 20.0,
-	BloodSplattersAtDeathMult = 1.0,
-	BloodSplattersAtOriginalPosMult = 0.05,
-	DustSplattersAtResurrectionMult = 1.0,
-	BloodPoolsAtDeathMin = 4,
+	BloodSplattersAtDeathMult = 2.0,
+	BloodSplattersAtOriginalPosMult = 0.5,
+	DustSplattersAtResurrectionMult = 1.5,
+	BloodPoolsAtDeathMin = 2,
 	BloodPoolsAtDeathMax = 4,
-	BloodiedBustCount = 4,
+	BloodiedBustCount = 2,
 	FliesRoundDelay = 15,
 	DiversionMaxLevelDifference = 1,
 	DiversionMinDist = 2,
@@ -115,7 +115,7 @@ gt.Const.Combat <- {
 	ShakeEffectSplitShieldColor = this.createColor("#ffffff"),
 	ShakeEffectSplitShieldHighlight = this.createColor("#ffffff"),
 	ShakeEffectSplitShieldFactor = 0.5,
-	ResurrectAnimationTime = 1.0,
+	ResurrectAnimationTime = 0.5,
 	ResurrectAnimationDistance = -200.0,
 	RootedAnimationTime = 0.5,
 	ZweihanderFatigueMult = 0.8,
@@ -130,13 +130,13 @@ gt.Const.Corpse <- {
 	Tile = null,
 	Value = 1.0,
 	IsConsumable = true,
-	IsResurrectable = false,
+	IsResurrectable = true,
 	IsRestoringSkin = false,
 	IsHeadAttached = true,
 	IsPlayer = false,
 	Color = this.createColor("#ffffff"),
 	Saturation = 1.0,
-	Hitpoints = 0.45,
+	Hitpoints = 0.449999988,
 	Armor = [
 		0,
 		0
@@ -187,14 +187,14 @@ gt.Const.ShakeCharacterLayers <- [
 ];
 gt.Const.Morale <- {
 	EnemyKilledBaseDifficulty = -30,
-	EnemyKilledXPMult = 0.04,
+	EnemyKilledXPMult = 0.0399999991,
 	EnemyKilledDistancePow = 3.0,
 	EnemyKilledSelfBonus = 15,
 	AllyKilledBaseDifficulty = 20,
-	AllyKilledXPMult = 0.035,
+	AllyKilledXPMult = 0.0350000001,
 	AllyKilledDistancePow = 2.4000001,
 	AllyFleeingBaseDifficulty = 30,
-	AllyFleeingXPMult = 0.035,
+	AllyFleeingXPMult = 0.0350000001,
 	AllyFleeingDistancePow = 3.0,
 	OnHitMinDamage = 15,
 	OnHitBaseDifficulty = -40,
@@ -321,20 +321,20 @@ gt.Const.MoodChange <- {
 	BrotherDismissed = 0.5,
 	VeteranDismissed = 1.0,
 	BattleWithoutMe = 0.2,
-	BattleWon = 0.35,
-	BattleLost = 0.45,
+	BattleWon = 0.349999994,
+	BattleLost = 0.449999988,
 	BattleRetreat = 0.25,
-	PermanentInjury = 1.35,
-	Injury = 0.15,
-	NearCity = 0.1,
+	PermanentInjury = 1.35000002,
+	Injury = 0.150000006,
+	NearCity = 0.100000001,
 	StandardLost = 0.25,
 	AmbitionFulfilled = 1.0,
 	AmbitionFailed = 0.75,
-	OptimistMult = 1.33,
-	PessimistMult = 1.33,
+	OptimistMult = 1.33000004,
+	PessimistMult = 1.33000004,
 	CheckIntervalHours = 4,
-	RecoveryPerHour = 0.015,
-	RelativeRecoveryPerHour = 0.01,
+	RecoveryPerHour = 0.0149999997,
+	RelativeRecoveryPerHour = 0.00999999978,
 	Timeout = 5.0 * this.World.getTime().SecondsPerDay
 };
 gt.Const.MoodState <- {
@@ -572,7 +572,10 @@ gt.Const.ProjectileType <- {
 	Axe = 4,
 	Flask = 5,
 	Flask2 = 6,
-	COUNT = 7
+	Pebble = 7,
+	Missile = 8,
+	Blood = 9,
+	COUNT = 10
 };
 gt.Const.ProjectileDecals <- [
 	[],
@@ -601,6 +604,9 @@ gt.Const.ProjectileDecals <- [
 		"axe_missed_03"
 	],
 	[],
+	[],
+	[],
+	[],
 	[]
 ];
 gt.Const.ProjectileSprite <- [
@@ -610,7 +616,10 @@ gt.Const.ProjectileSprite <- [
 	"projectile_03",
 	"projectile_04",
 	"projectile_05",
-	"projectile_06"
+	"projectile_06",
+	"projectile_pebble",
+	"projectile_missile",
+	"projectile_blood"
 ];
 gt.Const.FliesDecals <- [
 	"detail_flies_01",
@@ -849,7 +858,14 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInPolearms = false,
 	IsSpecializedInDaggers = false,
 	IsSpecializedInShields = false,
+	IsSpecializedInSlings = false,
+	IsSpecializedInStaves = false,
+	IsSpecializedInSummons = false,
 	IsContentWithBeingInReserve = false,
+	DamageInitiativeMin = 0,
+	DamageInitiativeMax = 0,
+	DamageInitiativeCutoff = 100
+
 	DailyWage = 0,
 	DailyWageMult = 1.0,
 	DailyFood = 2.0,
@@ -900,6 +916,16 @@ gt.Const.CharacterProperties <- {
 	function getInitiative()
 	{
 		return this.Math.floor(this.Initiative * (this.InitiativeMult >= 0 ? this.InitiativeMult : 1.0 / this.InitiativeMult));
+	}
+
+	function getInitiativeMinDamage()
+	{
+		return this.DamageInitiativeMin + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
+	}
+
+	function getInitiativeMaxDamage()
+	{
+		return this.DamageInitiativeMax + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
 	}
 
 	function getRegularDamageAverage()

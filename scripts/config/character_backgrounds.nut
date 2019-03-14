@@ -2,25 +2,32 @@ local gt = this.getroottable();
 gt.Const.CharacterBackgrounds <- [
 	"deserter_background",
 	"beggar_background",
+	"female_beggar_background",
 	"farmhand_background",
+	"female_farmhand_background",
 	"farmhand_background",
 	"disowned_noble_background",
+	"female_disowned_noble_background",
 	"adventurous_noble_background",
+	"female_adventurous_noble_background",
 	"monk_background",
 	"juggler_background",
 	"sellsword_background",
 	"daytaler_background",
-	"daytaler_background",
+	"female_daytaler_background",
 	"fisherman_background",
 	"retired_soldier_background",
 	"thief_background",
+	"female_thief_background",
 	"lumberjack_background",
 	"witchhunter_background",
 	"caravan_hand_background",
+	"female_miller_background",
 	"miller_background",
 	"squire_background",
 	"peddler_background",
 	"servant_background",
+	"female_servant_background",
 	"poacher_background",
 	"bastard_background",
 	"gravedigger_background",
@@ -38,21 +45,33 @@ gt.Const.CharacterBackgrounds <- [
 	"apprentice_background",
 	"killer_on_the_run_background",
 	"bowyer_background",
+	"female_bowyer_background",
 	"cultist_background",
 	"gambler_background",
 	"minstrel_background",
 	"graverobber_background",
 	"butcher_background",
+	"female_butcher_background",
 	"miner_background",
 	"messenger_background",
 	"raider_background",
 	"historian_background",
 	"tailor_background",
+	"female_tailor_background",
 	"shepherd_background",
 	"houndmaster_background"
+	"legend_crusader_background"
+	"legend_hunter_background"
+	"legend_noble_background"
+	"legend_necro_background"
+	"legend_witch_background"
+	"legend_healer_background"
+	"legend_berserker_background"
+	"vazl_inventor_background"
 ];
 gt.Const.CharacterLaborerBackgrounds <- [
 	"farmhand_background",
+	"female_farmhand_background",
 	"daytaler_background",
 	"gravedigger_background",
 	"miner_background",
@@ -61,26 +80,35 @@ gt.Const.CharacterLaborerBackgrounds <- [
 ];
 gt.Const.CharacterVillageBackgrounds <- [
 	"farmhand_background",
+	"female_farmhand_background",
 	"daytaler_background",
+	"female_daytaler_background",
 	"gravedigger_background",
 	"miner_background",
 	"tailor_background",
+	"female_tailor_background",
+	"female_miller_background",
 	"miller_background",
 	"lumberjack_background",
 	"refugee_background"
 ];
 gt.Const.CharacterThiefBackgrounds <- [
 	"thief_background",
+	"female_thief_background",
 	"beggar_background",
+	"female_beggar_background",
 	"vagabond_background",
 	"refugee_background"
 ];
 gt.Const.CharacterPiracyBackgrounds <- [
-	"thief_background"
+	"thief_background",
+	"female_thief_background"
 ];
 gt.Const.CharacterVeteranBackgrounds <- [
 	"disowned_noble_background",
+	"female_disowned_noble_background",
 	"adventurous_noble_background",
+	"female_adventurous_noble_background",
 	"sellsword_background",
 	"bastard_background",
 	"raider_background"

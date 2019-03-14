@@ -7,7 +7,7 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "";
 		this.m.KilledString = "Bitten";
 		this.m.Icon = "skills/active_24.png";
-		this.m.IconDisabled = "skills/active_24_sw.png";
+		this.m.IconDisabled = "skills/active_24_bw.png";
 		this.m.Overlay = "active_24";
 		this.m.SoundOnUse = [
 			"sounds/enemies/zombie_bite_01.wav",

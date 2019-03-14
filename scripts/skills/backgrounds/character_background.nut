@@ -22,8 +22,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsUntalented = false,
 		IsOffendedByViolence = false,
 		IsCombatBackground = false,
+		Name = "",
 		IsNoble = false,
-		IsLowborn = false
+		IsLowborn = false,
+		IsFemaleBackground = false
 	},
 	function isExcluded( _id )
 	{
@@ -43,6 +45,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isOffendedByViolence()
 	{
 		return this.m.IsOffendedByViolence;
+	}
+
+	function isFemaleBackground()
+	{
+		return this.m.IsFemaleBackground;
 	}
 
 	function isCombatBackground()
@@ -97,9 +104,88 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.Name;
 	}
 
-	function getBackgroundDescription()
+	function getBackgroundDescription( _desc )
 	{
-		return this.m.BackgroundDescription;
+		local text = ""
+		if (_desc)
+		{
+			text = text + this.m.BackgroundDescription + "\n";
+		}
+
+		local repairs = this.Const.LegendMod.getRepairModifier(this.m.ID) * 100.0;
+		if (repairs > 0)
+		{
+			text += "Repairs +" + repairs +"%"
+		}
+		local meds = this.Const.LegendMod.getHealingModifier(this.m.ID) * 100.0;
+		if (meds > 0)
+		{
+			if (repairs != 0)
+			{
+				text += "\n"
+			}
+			text += "Healing +" + meds +"%"
+		}
+		local barter = this.Const.LegendMod.getBarterModifier(this.m.ID) * 100.0
+		if (barter > 0)
+		{
+			if (repairs != 0 || meds != 0)
+			{
+				text += "\n"
+			}
+			text += "Barter +" + barter + "%"
+		}
+		
+		text += "\n\nResource Modifiers:"
+		text += "\nAmmo +" + this.Const.LegendMod.getMaxAmmo(this.m.ID);
+		text += "\nTools +" + this.Const.LegendMod.getMaxArmorParts(this.m.ID);
+		text += "\nMedicine +" + this.Const.LegendMod.getMaxMedicine(this.m.ID);
+		text += "\nStash +" + this.Const.LegendMod.getMaxStash(this.m.ID);
+
+		text += "\n\nTerrain Movement Modifiers:"
+		local terrains = this.Const.LegendMod.getTerrainSpeedModifier(this.m.ID);
+		local val = 0.0
+		val = terrains[2] * 100.0;
+		if (val > 0) {
+			text += "\nPlains +" + val +"%"
+		}
+		val = terrains[3] * 100.0;
+		if (val > 0) {
+			text += "\nSwamp +" + val +"%"
+		}
+		val = terrains[4] * 100.0;
+		if (val > 0) {
+			text += "\nHills +" + val +"%"
+		}		
+		val = terrains[5] * 100.0;
+		if (val > 0) {
+			text += "\nForests +" + val +"%"
+		}
+		val = terrains[9] * 100.0;
+		if (val > 0) {
+			text += "\nMountains +" + val +"%"
+		}
+		val = terrains[11] * 100.0;
+		if (val > 0) {
+			text += "\nFarmland +" + val +"%"
+		}		
+		val = terrains[12] * 100.0;
+		if (val > 0) {
+			text += "\nSnow +" + val +"%"
+		}
+		val = terrains[13] * 100.0;
+		if (val > 0) {
+			text += "\nBadlands +" + val +"%"
+		}
+		val = terrains[14] * 100.0;
+		if (val > 0) {
+			text += "\nHighlands +" + val +"%"
+		}
+		val = terrains[15] * 100.0;
+		if (val > 0) {
+			text += "\nStepps +" + val +"%"
+		}		
+		return text;
 	}
 
 	function getGenericTooltip()
@@ -113,7 +199,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			{
 				id = 2,
 				type = "description",
-				text = this.getBackgroundDescription()
+				text = this.getBackgroundDescription(true)
 			}
 		];
 	}
@@ -148,6 +234,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			[
 				"randomnoble",
 				this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]
+			],
+			[
+				"randomnamefemale",
+				this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]
 			],
 			[
 				"companyname",

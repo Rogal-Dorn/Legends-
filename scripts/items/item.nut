@@ -1,6 +1,7 @@
 this.item <- {
 	m = {
 		ID = "",
+		OldID = "",
 		Name = "",
 		Icon = "",
 		IconLarge = "",
@@ -9,6 +10,7 @@ this.item <- {
 		Variant = 0,
 		Condition = 1.0,
 		ConditionMax = 1.0,
+		MedicinePerDay = 0,
 		SlotType = this.Const.ItemSlot.Bag,
 		CurrentSlotType = this.Const.ItemSlot.None,
 		BlockedSlotType = null,
@@ -58,6 +60,11 @@ this.item <- {
 	function getID()
 	{
 		return this.m.ID;
+	}
+
+	function getOldInstanceID()
+	{
+		return this.m.OldID;
 	}
 
 	function getInstanceID()
@@ -839,14 +846,6 @@ this.item <- {
 
 	function updateRuneSigil()
 	{
-		if (this.m.Name.find("(Runed)") == null)
-		{
-			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
-		}
-	}
-
-	function updateRuneSigilAppearance()
-	{
 		local iconLargeParts = split(this.m.IconLarge, "/");
 		local iconParts = split(this.m.Icon, "/");
 		local text = ""
@@ -873,7 +872,19 @@ this.item <- {
 			}
 		}
 		this.m.Icon = text;
-		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
+		if (this.m.Name.find("(Runed)") == null)
+		{
+			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		}
+	}
+
+	function onNewDay()
+	{
+	}
+
+	function getMedicinePerDay()
+	{
+		return this.m.MedicinePerDay;
 	}
 
 	function onSerialize( _out )
@@ -882,6 +893,7 @@ this.item <- {
 		_out.writeU16(this.m.Variant);
 		_out.writeF32(this.m.Condition);
 		_out.writeF32(this.m.PriceMult);
+		_out.writeString(this.getInstanceID()); //Need old ID for saved formations	
 		_out.writeU8(this.m.RuneVariant);
 	}
 
@@ -900,8 +912,15 @@ this.item <- {
 
 		this.m.Condition = _in.readF32();
 		this.m.PriceMult = _in.readF32();
-
-		if (_in.getMetaData().getVersion() >= 48)
+		if (_in.getMetaData().getVersion() >= 46)
+		{
+			this.m.OldID = _in.readString();
+		}
+		if (_in.getMetaData().getVersion() == 50)
+		{
+			local runed = _in.readBool;
+		}
+		if (_in.getMetaData().getVersion() >= 51)
 		{
 			this.m.RuneVariant = _in.readU8();
 

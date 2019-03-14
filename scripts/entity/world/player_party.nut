@@ -7,19 +7,102 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		this.m.Strength = 0.0;
 		local roster = clone this.World.getPlayerRoster().getAll();
 
-		if (roster.len() > 12)
+		if (roster.len() > 27)
 		{
 			roster.sort(this.onLevelCompare);
 		}
 
+		local zombieSummonLevel = 0
+		local skeletonSummonLevel = 0
 		foreach( i, bro in roster )
 		{
-			if (i >= 12)
+			if (i >= 27)
 			{
 				break;
 			}
 
-			this.m.Strength += 10.0 + (bro.getLevel() - 1) * 2.0;
+			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))
+			{
+				zombieSummonLevel = 7;
+			} 
+			else if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_med"))
+			{
+				zombieSummonLevel = 5;
+			}
+			else if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_low"))
+			{
+				zombieSummonLevel = 2;
+			}
+
+			if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_high"))
+			{
+				skeletonSummonLevel = 7;
+			} 
+			else if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_med"))
+			{
+				skeletonSummonLevel = 5;
+			}
+			else if (bro.getSkills().hasSkill("perk.legend_spawn_skeleton_low"))
+			{
+				skeletonSummonLevel = 2;
+			}
+
+			this.m.Strength +=  9 + ((bro.getLevel() / 3) + (bro.getLevel() * 3.0)); 
+		}
+
+		if  (zombieSummonLevel == 0 && skeletonSummonLevel == 0)
+		{
+			return
+		}
+
+
+		//When playing a warlock build, we need to account for the summons he can add
+		local stash = this.World.Assets.getStash().getItems();
+	
+		local zCount = 0
+		local sCount = 0
+		foreach (item in stash)
+		{
+			if (item == null)
+			{
+				continue;
+			}
+
+			switch( item.getID())
+			{
+				case "spawns.zombie":
+					if (zombieSummonLevel == 0)
+					{
+						continue
+					}
+					++zCount;
+					
+					break;
+				case "spawns.skeleton":
+					if (skeletonSummonLevel == 0)
+					{
+						continue
+					}
+					++sCount;
+					break;
+			}
+		}
+
+		if (zCount > 1)
+		{
+			zCount = this.Math.floor(zCount / 2.0);
+			for (local i = 0; i < zCount; i = ++i)
+			{
+				this.m.Strength += 3 + (((zombieSummonLevel / 2) + (zombieSummonLevel - 1)) * 2.0);
+			}
+		}
+		if (sCount > 1)
+		{
+			sCount = this.Math.floor(sCount / 2.0);
+			for (local i = 0; i < sCount; i = ++i)
+			{
+				this.m.Strength += 3 + (((skeletonSummonLevel / 2) + (skeletonSummonLevel - 1)) * 2.0);
+			}
 		}
 	}
 
@@ -62,16 +145,18 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	{
 		local smoke = this.Const.World.CampSmokeParticles;
 
-		for( local i = 0; i < smoke.len(); i = ++i )
+		for( local i = 0; i < smoke.len(); i = i )
 		{
 			this.World.spawnParticleEffect(smoke[i].Brushes, smoke[i].Delay, smoke[i].Quantity, smoke[i].LifeTime, smoke[i].SpawnRate, smoke[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), -200 + this.Const.World.ZLevel.Particles, true);
+			i = ++i;
 		}
 
 		local fire = this.Const.World.CampFireParticles;
 
-		for( local i = 0; i < fire.len(); i = ++i )
+		for( local i = 0; i < fire.len(); i = i )
 		{
 			this.World.spawnParticleEffect(fire[i].Brushes, fire[i].Delay, fire[i].Quantity, fire[i].LifeTime, fire[i].SpawnRate, fire[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), -200 + this.Const.World.ZLevel.Particles - 3, true);
+			i = ++i;
 		}
 	}
 

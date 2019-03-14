@@ -71,7 +71,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Flags.set("Region", this.World.State.getTileRegion(this.m.Location.getTile()).Name);
 		this.m.Flags.set("Location", this.m.Location.getName());
 		this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
-		this.m.Payment.Pool = this.Math.max(300, 100 + lowestDistance * 15.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
+		this.m.Payment.Pool = this.Math.max(100, 10 + lowestDistance * 30.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
@@ -118,7 +118,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 					this.Flags.set("IsShowingAnotherParty", true);
 				}
 
-				this.Contract.m.LastHelpTime = this.Time.getVirtualTimeF() + this.Math.rand(10, 40);
+				this.Contract.m.LastHelpTime = this.Time.getVirtualTimeF() + this.Math.rand(10, 30);
 				this.Contract.setScreen("Overview");
 				this.World.Contracts.setActiveContract(this.Contract);
 			}
@@ -553,6 +553,13 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
+						local playerRoster = this.World.getPlayerRoster().getAll();
+						local xp = this.Contract.m.Payment.getOnCompletion() * 0.50;
+						foreach( bro in playerRoster )
+							{
+								bro.addXP(this.Contract.m.Payment.getOnCompletion() * 0.10);
+								bro.updateLevel();
+							}
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Hired to find the " + this.Flags.get("Location"));
 						this.World.Contracts.finishActiveContract();
 						return 0;
@@ -562,10 +569,11 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 			],
 			function start()
 			{
+				local xpGained = this.Math.round(this.Contract.m.Payment.getOnCompletion() * 0.10 * this.Const.Combat.GlobalXPMult);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns and [color=" + this.Const.UI.Color.PositiveEventValue + "]" + xpGained + "[/color] Experience"
 				});
 			}
 

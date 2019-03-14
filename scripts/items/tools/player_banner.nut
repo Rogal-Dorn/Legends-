@@ -73,15 +73,15 @@ this.player_banner <- this.inherit("scripts/items/weapons/weapon", {
 			prefix = "player_runed_banner_";
 		}
 
-        if (actor.hasSprite("background"))
-        {
-            actor.getSprite("background").setBrush(prefix + variant);
-        }
+		if (actor.hasSprite("background"))
+		{
+			actor.getSprite("background").setBrush(prefix + variant);
+		}
 
-        if (actor.hasSprite("shaft"))
-        {
-            actor.getSprite("shaft").setBrush(prefix + variant + "_shaft");
-        }
+		if (actor.hasSprite("shaft"))
+		{
+			actor.getSprite("shaft").setBrush(prefix + variant + "_shaft");
+		}
 
 		actor.setDirty(true);
 		this.weapon.onEquip();

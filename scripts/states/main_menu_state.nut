@@ -19,6 +19,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		if (!this.isScenarioDemo())
 		{
 			mainMenuModule.setOnNewCampaignPressedListener(this.main_menu_module_onNewCampaignPressed.bindenv(this));
+			mainMenuModule.setOnNewLegendCampaignPressedListener(this.main_menu_module_onNewLegendCampaignPressed.bindenv(this));
 			mainMenuModule.setOnLoadCampaignPressedListener(this.main_menu_module_onLoadCampaignPressed.bindenv(this));
 		}
 
@@ -32,6 +33,9 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		local newCampaignMenuModule = this.m.MainMenuScreen.getNewCampaignMenuModule();
 		newCampaignMenuModule.setOnStartButtonPressedListener(this.campaign_menu_module_onStartPressed.bindenv(this));
 		newCampaignMenuModule.setOnCancelButtonPressedListener(this.campaign_menu_module_onCancelPressed.bindenv(this));
+		local newLegendCampaignMenuModule = this.m.MainMenuScreen.getNewLegendCampaignMenuModule();
+		newLegendCampaignMenuModule.setOnStartButtonPressedListener(this.campaign_menu_module_onStartLegendPressed.bindenv(this));
+		newLegendCampaignMenuModule.setOnCancelButtonPressedListener(this.campaign_menu_module_onCancelPressed.bindenv(this));
 		local scenarioMenuModule = this.m.MainMenuScreen.getScenarioMenuModule();
 		scenarioMenuModule.setOnPlayButtonPressedListener(this.scenario_menu_module_onPlayPressed.bindenv(this));
 		scenarioMenuModule.setOnCancelButtonPressedListener(this.scenario_menu_module_onCancelPressed.bindenv(this));
@@ -54,6 +58,11 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setBanners(this.Const.PlayerBanners);
+
+		this.m.MainMenuScreen.getNewLegendCampaignMenuModule().setBanners(this.Const.PlayerBanners);
+		this.m.MainMenuScreen.getNewLegendCampaignMenuModule().setConfigOpts(this.Const.World.NewCampaignOpts());
+
+
 	}
 
 	function onFinish()
@@ -286,7 +295,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		{
 			this.RootState.add("WorldState", "scripts/states/world_state");
 		}
-
+		
 		this.hide();
 	}
 
@@ -309,6 +318,18 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		this.m.MenuStack.push(function ()
 		{
 			this.m.MainMenuScreen.hideNewCampaignMenu();
+		}, function ()
+		{
+			return !this.m.MainMenuScreen.isAnimating();
+		});
+	}
+
+	function main_menu_module_onNewLegendCampaignPressed()
+	{
+		this.m.MainMenuScreen.showNewLegendCampaignMenu();
+		this.m.MenuStack.push(function ()
+		{
+			this.m.MainMenuScreen.hideNewLegendCampaignMenu();
 		}, function ()
 		{
 			return !this.m.MainMenuScreen.isAnimating();
@@ -374,6 +395,13 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 	}
 
 	function campaign_menu_module_onStartPressed( _settings )
+	{
+		this.m.NewCampaignSettings = _settings;
+		this.m.SelectedScenarioID = 999;
+		this.LoadingScreen.show();
+	}
+
+	function campaign_menu_module_onStartLegendPressed( _settings )
 	{
 		this.m.NewCampaignSettings = _settings;
 		this.m.SelectedScenarioID = 999;

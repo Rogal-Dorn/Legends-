@@ -49,7 +49,6 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			local currentBrothers = entities.len();
 			local brothersMax = this.World.Assets.getBrothersMax();
 			local hiringCost = entry.getHiringCost();
-
 			if (currentMoney < hiringCost)
 			{
 				return {
@@ -65,7 +64,6 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 					Assets = null
 				};
 			}
-
 			this.World.getPlayerRoster().add(entry);
 			this.World.getRoster(this.m.RosterID).remove(entry);
 			entry.onHired();
@@ -112,6 +110,34 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			return {
 				Result = 0,
 				Roster = this.UIDataHelper.convertHireRosterToUIData(this.m.RosterID),
+				Assets = this.m.Parent.queryAssetsInformation()
+			};
+		}
+
+		return {
+			Result = this.Const.UI.Error.RosterEntryNotFound,
+			Assets = null
+		};
+	}
+
+	function onDismissRosterEntry( _entityID )
+	{
+		local entry = this.findEntityWithinRoster(_entityID);
+
+		if (entry != null)
+		{
+			local roster = this.World.getPlayerRoster();
+			local entities = roster.getAll();
+
+			this.World.getRoster(this.m.RosterID).remove(entry);
+
+			if (this.World.getRoster(this.m.RosterID).getSize() == 0)
+			{
+				this.m.Parent.getMainDialogModule().reload();
+			}
+
+			return {
+				Result = 0,
 				Assets = this.m.Parent.queryAssetsInformation()
 			};
 		}

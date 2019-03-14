@@ -13,6 +13,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		HireTime = 0.0,
 		IsTryoutDone = false,
 		IsGuest = false,
+		IsCommander = false,
 		Attributes = [],
 		Talents = [],
 		CombatStats = {
@@ -33,7 +34,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			FavoriteWeapon = "",
 			FavoriteWeaponUses = 0,
 			CurrentWeaponUses = 0
-		}
+		},
+		Formations = null,
+		VeteranPerks = 0
 	},
 	function setName( _value )
 	{
@@ -127,7 +130,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getTryoutCost()
 	{
-		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * 0.1));
+		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult));
 	}
 
 	function getDailyCost()
@@ -165,6 +168,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.IsGuest = _f;
 	}
 
+	function setCommander( _f )
+	{
+		this.m.IsCommander = _f;
+	}
+
+	function setVeteranPerks( _f )
+	{
+		this.m.VeteranPerks = _f;
+	}
+
 	function isLeveled()
 	{
 		return (this.m.PerkPoints != 0 || this.m.LevelUps != 0) && !this.m.IsGuest;
@@ -173,6 +186,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function isGuest()
 	{
 		return this.m.IsGuest;
+	}
+
+	function isCommander()
+	{
+		return this.m.IsCommander
 	}
 
 	function isTryoutDone()
@@ -202,7 +220,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function improveMood( _a = 1.0, _reason = "" )
 	{
-		this.m.Mood = this.Math.minf(this.m.Mood + _a, this.Const.MoodState.len() - 0.05);
+		this.m.Mood = this.Math.minf(this.m.Mood + _a, this.Const.MoodState.len() - 0.0500000007);
 
 		if (_reason != "")
 		{
@@ -318,6 +336,68 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					id = s.getID(),
 					icon = s.getIconColored()
 				});
+			}
+		}
+
+		return ret;
+	}
+
+	function getHiringTalents()
+	{
+		local ret = [];
+
+		if (!this.m.IsTryoutDone)
+		{
+			return ret;
+		}
+
+		local talents = this.getTalents()
+
+		for (local i = 0; i < this.Const.Attributes.COUNT; i = ++i)
+		{
+			if (talents[i] > 0)
+			{
+				local r = {
+					talent = "",
+					value = talents[i]
+				};
+
+				switch(i)
+				{
+				case 0:
+					r.talent = "HP";
+					break;
+
+				case 1:
+					r.talent = "RES";
+					break;
+
+				case 2:
+					r.talent = "FAT";
+					break;
+
+				case 3:
+					r.talent = "INIT";
+					break;
+
+				case 4:
+					r.talent = "MA";
+					break;
+
+				case 5:
+					r.talent = "RA";
+					break;
+
+				case 6:
+					r.talent = "MD";
+					break;
+
+				case 7:
+					r.talent = "RD";
+					break;
+				}
+
+				ret.push(r);
 			}
 		}
 
@@ -528,7 +608,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				text = this.Const.MoodStateName[this.getMoodState()]
 			});
 
-			if (this.m.PlaceInFormation <= 17)
+			if (this.m.PlaceInFormation <= 26)
 			{
 				tooltip.push({
 					id = 6,
@@ -546,6 +626,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					text = "In reserve"
 				});
 			}
+
+			tooltip.push({
+				id = 7,
+				type = "hint",
+				text = this.getBackground().getBackgroundDescription(false)
+			})
 		}
 
 		local injuries = this.getSkills().query(this.Const.SkillType.Injury | this.Const.SkillType.SemiInjury);
@@ -670,7 +756,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local injury_body = this.getSprite("injury_body");
 		local p = this.m.Hitpoints / this.getHitpointsMax();
 
-		if (p > 0.67)
+		if (p > 0.670000017)
 		{
 			this.setDirty(this.m.IsDirty || injury.Visible || injury_body.Visible);
 			injury.Visible = false;
@@ -682,7 +768,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			injury.Visible = true;
 			injury_body.Visible = true;
 
-			if (p > 0.33)
+			if (p > 0.330000013)
 			{
 				injury.setBrush("bust_head_injured_01");
 			}
@@ -691,7 +777,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				injury.setBrush("bust_head_injured_02");
 			}
 
-			if (p > 0.4)
+			if (p > 0.400000006)
 			{
 				injury_body.Visible = false;
 			}
@@ -715,6 +801,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.getTags().set("PotionsUsed", 0);
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.Formations = this.new("scripts/entity/tactical/formations_container")
 	}
 
 	function onHired()
@@ -894,7 +981,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local flip = this.Math.rand(0, 100) < 50;
 		this.m.IsCorpseFlipped = flip;
-		local isResurrectable = _fatalityType == this.Const.FatalityType.None || _fatalityType == this.Const.FatalityType.Disemboweled;
+		local isResurrectable = true;
 		local appearance = this.getItems().getAppearance();
 		local sprite_body = this.getSprite("body");
 		local sprite_head = this.getSprite("head");
@@ -909,6 +996,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (!this.isGuest())
 		{
 			local stub = this.Tactical.getCasualtyRoster().create("scripts/entity/tactical/player_corpse_stub");
+			stub.setCommander(this.isCommander());
 			stub.setOriginalID(this.getID());
 			stub.setName(this.getNameOnly());
 			stub.setTitle(this.getTitle());
@@ -1049,37 +1137,37 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 			decal.Color = sprite_head.Color;
 			decal.Saturation = sprite_head.Saturation;
-			decal.Scale = 0.9;
-			decal.setBrightness(0.9);
+			decal.Scale = 0.899999976;
+			decal.setBrightness(0.899999976);
 
 			if (tattoo_body.HasBrush)
 			{
 				decal = _tile.spawnDetail(tattoo_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 				decal.Color = tattoo_body.Color;
 				decal.Saturation = tattoo_body.Saturation;
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
+				decal.Scale = 0.899999976;
+				decal.setBrightness(0.899999976);
 			}
 
 			if (appearance.CorpseArmor != "")
 			{
 				decal = _tile.spawnDetail(appearance.CorpseArmor, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
+				decal.Scale = 0.899999976;
+				decal.setBrightness(0.899999976);
 			}
 
 			if (sprite_surcoat.HasBrush && this.doesBrushExist("surcoat_" + (this.m.Surcoat < 10 ? "0" + this.m.Surcoat : this.m.Surcoat) + "_dead"))
 			{
 				decal = _tile.spawnDetail("surcoat_" + (this.m.Surcoat < 10 ? "0" + this.m.Surcoat : this.m.Surcoat) + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
+				decal.Scale = 0.899999976;
+				decal.setBrightness(0.899999976);
 			}
 
 			if (sprite_accessory.HasBrush)
 			{
 				decal = _tile.spawnDetail(sprite_accessory.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
+				decal.Scale = 0.899999976;
+				decal.setBrightness(0.899999976);
 			}
 
 			if (_fatalityType == this.Const.FatalityType.None && (!_skill || _skill.getProjectileType() == this.Const.ProjectileType.None) && this.Math.rand(1, 100) <= 33)
@@ -1091,7 +1179,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (_fatalityType == this.Const.FatalityType.Disemboweled)
 			{
 				decal = _tile.spawnDetail("bust_body_guts_0" + this.Math.rand(1, 3), this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
+				decal.Scale = 0.899999976;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
@@ -1104,7 +1192,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 				}
 
-				decal.Scale = 0.9;
+				decal.Scale = 0.899999976;
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
@@ -1117,7 +1205,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 				}
 
-				decal.Scale = 0.9;
+				decal.Scale = 0.899999976;
 			}
 
 			if (_fatalityType != this.Const.FatalityType.Decapitated)
@@ -1127,16 +1215,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					local decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 					decal.Color = sprite_head.Color;
 					decal.Saturation = sprite_head.Saturation;
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
+					decal.Scale = 0.899999976;
+					decal.setBrightness(0.899999976);
 
 					if (tattoo_head.HasBrush)
 					{
 						decal = _tile.spawnDetail(tattoo_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 						decal.Color = tattoo_head.Color;
 						decal.Saturation = tattoo_head.Saturation;
-						decal.Scale = 0.9;
-						decal.setBrightness(0.9);
+						decal.Scale = 0.899999976;
+						decal.setBrightness(0.899999976);
 					}
 				}
 
@@ -1145,16 +1233,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					local decal = _tile.spawnDetail(sprite_beard.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 					decal.Color = sprite_beard.Color;
 					decal.Saturation = sprite_beard.Saturation;
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
+					decal.Scale = 0.899999976;
+					decal.setBrightness(0.899999976);
 
 					if (sprite_beard_top.HasBrush)
 					{
 						local decal = _tile.spawnDetail(sprite_beard_top.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 						decal.Color = sprite_beard.Color;
 						decal.Saturation = sprite_beard.Saturation;
-						decal.Scale = 0.9;
-						decal.setBrightness(0.9);
+						decal.Scale = 0.899999976;
+						decal.setBrightness(0.899999976);
 					}
 				}
 
@@ -1163,20 +1251,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					local decal = _tile.spawnDetail(sprite_hair.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 					decal.Color = sprite_hair.Color;
 					decal.Saturation = sprite_hair.Saturation;
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
+					decal.Scale = 0.899999976;
+					decal.setBrightness(0.899999976);
 				}
 
 				if (_fatalityType == this.Const.FatalityType.Smashed)
 				{
 					decal = _tile.spawnDetail("bust_head_smashed_01", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Scale = 0.9;
+					decal.Scale = 0.899999976;
 				}
 				else if (appearance.HelmetCorpse != "")
 				{
 					local decal = _tile.spawnDetail(this.getItems().getAppearance().HelmetCorpse, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
+					decal.Scale = 0.899999976;
+					decal.setBrightness(0.899999976);
 				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
@@ -1220,8 +1308,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					decap[idx].Color = sprite_head.Color;
 					decap[idx].Saturation = sprite_head.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
+					decap[idx].Scale = 0.899999976;
+					decap[idx].setBrightness(0.899999976);
 					idx = ++idx;
 				}
 
@@ -1229,8 +1317,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					decap[idx].Color = tattoo_head.Color;
 					decap[idx].Saturation = tattoo_head.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
+					decap[idx].Scale = 0.899999976;
+					decap[idx].setBrightness(0.899999976);
 					idx = ++idx;
 				}
 
@@ -1238,8 +1326,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					decap[idx].Color = sprite_beard.Color;
 					decap[idx].Saturation = sprite_beard.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
+					decap[idx].Scale = 0.899999976;
+					decap[idx].setBrightness(0.899999976);
 					idx = ++idx;
 				}
 
@@ -1247,15 +1335,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					decap[idx].Color = sprite_hair.Color;
 					decap[idx].Saturation = sprite_hair.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
+					decap[idx].Scale = 0.899999976;
+					decap[idx].setBrightness(0.899999976);
 					idx = ++idx;
 				}
 
 				if (appearance.HelmetCorpse.len() != 0)
 				{
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
+					decap[idx].Scale = 0.899999976;
+					decap[idx].setBrightness(0.899999976);
 					idx = ++idx;
 				}
 
@@ -1263,8 +1351,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					decap[idx].Color = sprite_beard.Color;
 					decap[idx].Saturation = sprite_beard.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
+					decap[idx].Scale = 0.899999976;
+					decap[idx].setBrightness(0.899999976);
 					idx = ++idx;
 				}
 			}
@@ -1505,13 +1593,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		++this.m.PerkPointsSpent;
-		this.m.Skills.add(this.new(perk.Script));
+		local p = this.new(perk.Script);
+		this.m.Skills.add(p);
 		this.m.Skills.update();
 
 		if (this.m.Level >= 11 && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
+
+		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
 
 		return true;
 	}
@@ -1580,6 +1671,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (this.m.Level == 11)
 			{
 				this.updateAchievement("OldAndWise", 1, 1);
+			}
+
+			if (this.m.Level > 11 && this.m.VeteranPerks > 0)
+			{
+				if ((this.m.Level - 1) % this.m.VeteranPerks == 0) {
+					++this.m.PerkPoints;
+				}
 			}
 		}
 	}
@@ -2061,14 +2159,23 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		if (this.m.Name.len() == 0)
-		{
-			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
-		}
-
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
+		
+		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
+		{
+			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
+		}
+		if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
+		{
+			this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
+		}
+
+		if (background.isFemaleBackground()) {
+			this.m.Gender = 1;
+		}
+	
 		background.buildAttributes();
 		background.buildDescription();
 		local maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
@@ -2116,73 +2223,41 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.update();
 		local p = this.m.CurrentProperties;
 		this.m.Hitpoints = p.Hitpoints;
-		this.fillTalentValues();
+		this.fillTalentValues(3);
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
 
-	function fillTalentValues()
+	function fillTalentValues( _num, _force = false )
 	{
 		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);
 
-		if (this.getBackground() != null && this.getBackground().isUntalented())
+		if (this.getBackground() != null && this.getBackground().isUntalented() && !_force)
 		{
 			return;
 		}
 
-		if (this.getBackground().getID() == "background.legend_vala")
+		for( local done = 0; done < _num;  )
 		{
-			this.m.Talents[this.Const.Attributes.Bravery] = this.Math.rand(1, 3);
+			local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
 
-			for( local done = 0; done < 2;  )
+			if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
 			{
-				local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
-	
-				if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
-				{
-					local r = this.Math.rand(1, 100);
-	
-					if (r <= 60)
-					{
-						this.m.Talents[i] = 1;
-					}
-					else if (r <= 90)
-					{
-						this.m.Talents[i] = 2;
-					}
-					else
-					{
-						this.m.Talents[i] = 3;
-					}
+				local r = this.Math.rand(1, 100);
 
-					done = ++done;
-				}
-			}
-		}
-		else
-		{
-			for( local done = 0; done < 3;  )
-			{
-				local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
-	
-				if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				if (r <= 60)
 				{
-					local r = this.Math.rand(1, 100);
-	
-					if (r <= 60)
-					{
-						this.m.Talents[i] = 1;
-					}
-					else if (r <= 90)
-					{
-						this.m.Talents[i] = 2;
-					}
-					else
-					{
-						this.m.Talents[i] = 3;
-					}
-
-					done = ++done;
+					this.m.Talents[i] = 1;
 				}
+				else if (r <= 90)
+				{
+					this.m.Talents[i] = 2;
+				}
+				else
+				{
+					this.m.Talents[i] = 3;
+				}
+
+				done = ++done;
 			}
 		}
 	}
@@ -2355,6 +2430,49 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
 	}
 
+	function saveFormation()
+	{
+		this.m.Formations.savePosition(this.m.PlaceInFormation);
+		this.m.Formations.saveItems(this.getItems());
+	}
+	
+	function setFormation( _i )
+	{
+		if (_i == this.m.Formations.getCurrentIndex()) 
+		{
+			return;
+		}
+
+		this.m.Formations.setFormation(_i)
+		this.setPlaceInFormation(this.m.Formations.getPosition());
+		local items = this.m.Formations.getItems();
+		//Find the item in the stash, remove from stash and equip it
+		foreach (itemId in items)
+		{
+			local res = this.Stash.getItemByInstanceID(itemId);
+			if (res == null) {
+				this.logInfo("saveFormation::could not find item for " + itemId);
+				continue
+			}
+
+			this.Stash.remove(res.item);
+			this.m.Items.equip(res.item);
+		}
+
+		local bags = this.m.Formations.getBags();
+		foreach (itemId in bags)
+		{
+			local res = this.Stash.getItemByInstanceID(itemId);
+			if (res == null) {
+				this.logInfo("saveFormation::could not find item for " + itemId);
+				continue
+			}
+
+			this.Stash.remove(res.item);
+			this.m.Items.addToBag(res.item);
+		}
+	}
+
 	function onSerialize( _out )
 	{
 		this.actor.onSerialize(_out);
@@ -2401,6 +2519,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU32(this.m.LifetimeStats.FavoriteWeaponUses);
 		_out.writeU32(this.m.LifetimeStats.CurrentWeaponUses);
 		_out.writeBool(this.m.IsTryoutDone);
+		this.m.Formations.onSerialize(_out);
+		_out.writeU8(this.m.VeteranPerks);
+		_out.writeBool(this.m.IsCommander);
+
 	}
 
 	function onDeserialize( _in )
@@ -2453,6 +2575,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background = ret[0];
 			this.m.Background.adjustHiringCostBasedOnEquipment();
 			this.m.Background.buildDescription(true);
+			if (this.m.Background.isFemaleBackground())
+			{
+				this.m.Gender = 1;
+			}
 		}
 
 		this.m.PlaceInFormation = _in.readU8();
@@ -2476,6 +2602,22 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.LifetimeStats.CurrentWeaponUses = _in.readU32();
 		this.m.IsTryoutDone = _in.readBool();
 		this.m.Skills.update();
+
+		if (_in.getMetaData().getVersion() >= 46)
+		{
+			this.m.Formations.onDeserialize(_in);
+		}
+		
+		if (_in.getMetaData().getVersion() >= 47)
+		{
+			this.m.VeteranPerks = _in.readU8();
+		}
+
+		if (_in.getMetaData().getVersion() >= 48)
+		{
+			this.m.IsCommander = _in.readBool();
+		}
+
 	}
 
 });

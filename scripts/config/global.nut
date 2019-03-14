@@ -271,6 +271,9 @@ gt.Const.EntityType <- {
 	KrakenTentacle = 67,
 	ZombieBetrayer = 68,
 	AlpShadow = 69,
+	BanditRabble = 70,
+	LegendCat = 71,
+	LegendOrcElite = 72,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -503,5 +506,8 @@ gt.Const.EntityIcon <- [
 	"kraken_01_orientation",
 	"kraken_02_orientation",
 	"zombie_03_orientation",
-	"alp_02_orientation"
+	"alp_02_orientation",
+	"rabble_orientation",
+	"cat_orientation",
+	"orc_elite_orientation"
 ];

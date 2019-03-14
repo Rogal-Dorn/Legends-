@@ -56,6 +56,20 @@ this.small_snow_village <- this.inherit("scripts/entity/world/settlement", {
 			"thief_background",
 			"vagabond_background",
 			"wildman_background",
+			"wildman_background",
+						"female_beggar_background",
+			"brawler_background",
+			"brawler_background",
+			"cultist_background",
+			"female_daytaler_background",
+			"lumberjack_background",
+			"mason_background",
+			"miner_background",
+			"flagellant_background",
+			"poacher_background",
+			"female_thief_background",
+			"vagabond_background",
+			"wildman_background",
 			"wildman_background"
 		];
 		this.m.UIDescription = "Some huts huddled together";

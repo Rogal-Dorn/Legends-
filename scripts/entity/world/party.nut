@@ -307,18 +307,43 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 			local myTile = this.getTile();
 			local speed = this.m.BaseMovementSpeed;
+			
+			local terrainTable = this.Const.World.TerrainTypeSpeedMult;
+			if (this.getFaction() == this.Const.Faction.Player)
+			{
+				local tTable = [];
+				tTable.resize(terrainTable.len(), 0);
+				for (local i=0; i < terrainTable.len() ; ++i) 
+				{
+					tTable[i] += this.Const.World.TerrainTypeSpeedMult[i];
+				}
+				local broTable = [];
+				foreach( bro in this.World.getPlayerRoster().getAll() )
+				{
+					broTable = this.Const.LegendMod.getTerrainSpeedModifier(bro.getBackground().getID());
+					if (broTable == null)
+					{
+						continue
+					}
+					for (local i=0; i < broTable.len() ; ++i) 
+					{
+						tTable[i] += broTable[i];
+					}
+				}
+				terrainTable = tTable;
+			}
+
 			speed = speed * (1.0 - this.Math.minf(0.5, this.m.Troops.len() * this.Const.World.MovementSettings.SlowDownPartyPerTroop));
 			speed = speed * this.Const.World.MovementSettings.GlobalMult;
-
 			if (!this.isIgnoringCollision())
 			{
 				if (myTile.HasRoad)
 				{
-					speed = speed * this.Math.maxf(this.Const.World.TerrainTypeSpeedMult[myTile.Type] * this.Const.World.MovementSettings.RoadMult, 1.0);
+					speed = speed * this.Math.maxf(terrainTable[myTile.Type] * this.Const.World.MovementSettings.RoadMult, 1.0);
 				}
 				else
 				{
-					speed = speed * this.Const.World.TerrainTypeSpeedMult[myTile.Type];
+					speed = speed * terrainTable[myTile.Type];
 				}
 			}
 

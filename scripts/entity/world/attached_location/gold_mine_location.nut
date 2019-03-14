@@ -68,6 +68,7 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("miner_background");
 		_list.push("miner_background");
 		_list.push("miner_background");
+		_list.push("legend_ironmonger_background");
 		_list.push("sellsword_background");
 		_list.push("caravan_hand_background");
 		_list.push("thief_background");
@@ -86,6 +87,11 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 				R = 90,
 				P = 1.0,
 				S = "weapons/military_pick"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_hammer"
 			});
 		}
 		else if (_id == "building.specialized_trader")

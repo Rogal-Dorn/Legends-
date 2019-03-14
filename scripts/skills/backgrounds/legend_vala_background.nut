@@ -26,9 +26,10 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.AllFemale;
+		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -81,7 +82,6 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
 
 		local r = this.Math.rand(0, 1);
-
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/armor/legend_vala_cloak"));

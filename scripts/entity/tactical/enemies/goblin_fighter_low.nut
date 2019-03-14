@@ -20,7 +20,7 @@ this.goblin_fighter_low <- this.inherit("scripts/entity/tactical/enemies/goblin_
 	function assignRandomEquipment()
 	{
 		local r;
-		r = this.Math.rand(1, 3);
+		r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{
@@ -34,6 +34,12 @@ this.goblin_fighter_low <- this.inherit("scripts/entity/tactical/enemies/goblin_
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
 		}
+
+		else if (r == 4)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_chain"));
+		}
+
 
 		if (this.Math.rand(1, 100) <= 66 && this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.goblin_spear")
 		{

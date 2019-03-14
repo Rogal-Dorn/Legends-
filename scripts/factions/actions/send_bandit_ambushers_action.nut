@@ -91,7 +91,7 @@ this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
 		local mult = this.World.FactionManager.isCivilWar() ? 1.1 : 1.0;
-		local party = this.getFaction().spawnEntity(settlement.getTile(), "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyLightMult() * mult);
+		local party = this.getFaction().spawnEntity(settlement.getTile(), "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(75, 120) * this.getReputationToDifficultyMult() * mult);
 		party.getSprite("banner").setBrush(settlement.getBanner());
 		party.setDescription("A rough and tough band of brigands preying on the weak.");
 		party.getLoot().Money = this.Math.rand(50, 200);

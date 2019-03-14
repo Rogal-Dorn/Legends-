@@ -42,6 +42,16 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 				S = "armor/apron"
 			});
 			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_sickle"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_shovel"
+			});
+			_list.push({
 				R = 20,
 				P = 1.0,
 				S = "supplies/medicine_item"

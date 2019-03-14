@@ -68,6 +68,10 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_pike"));
 		}
+			else if (r == 5)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_chain"));
+		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.goblin_spear")
 		{

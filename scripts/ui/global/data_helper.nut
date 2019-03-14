@@ -8,6 +8,11 @@ this.data_helper <- {
 	{
 	}
 
+	function convertLegendCampaignsToUIData()
+	{
+		return this.Const.LegendMod.Starts;
+	}
+
 	function convertCampaignStoragesToUIData()
 	{
 		local isWorldmap = ("Assets" in this.World) && this.World.Assets != null;
@@ -155,6 +160,7 @@ this.data_helper <- {
 			Brothers = entities != null ? entities.len() : 0,
 			BrothersMax = this.World.Assets.getBrothersMax()
 		};
+		
 	}
 
 	function convertStashAndEntityToUIData( _entity = null, _activeEntity = null, _withoutStash = false, _filter = 0 )
@@ -299,7 +305,8 @@ this.data_helper <- {
 			ImageOffsetY = _entity.getImageOffsetY(),
 			BackgroundImagePath = background.getIconColored(),
 			BackgroundText = background.getDescription(),
-			Traits = _entity.getHiringTraits()
+			Traits = _entity.getHiringTraits(),
+			Talents = _entity.getHiringTalents()
 		};
 	}
 
@@ -331,7 +338,14 @@ this.data_helper <- {
 		_target.daysWounded <- _entity.getDaysWounded();
 		_target.leveledUp <- _entity.isLeveled();
 		_target.moodIcon <- "ui/icons/mood_0" + (_entity.getMoodState() + 1) + ".png";
-		_target.background <- _entity.getBackground().getID();
+		if (_entity.getBackground() != null)
+		{
+			_target.background <- _entity.getBackground().getID();
+		}
+		else 
+		{
+			_target.background <- "";
+		}
 
 		if (_entity.getLevelUps() > 0)
 		{

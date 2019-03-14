@@ -36,9 +36,10 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Bredaswold"
 		]);
 		this.m.DraftList = [
+			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"militia_background",
 			"militia_background",
 			"miner_background",
@@ -48,8 +49,7 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"deserter_background",
 			"retired_soldier_background",
-			"retired_soldier_background",
-			"legend_shieldmaiden_background"
+			"retired_soldier_background"
 		];
 		this.m.UIDescription = "A wooden motte towering above the tundra";
 		this.m.Description = "In the flat lands of the tundra, this small fortification can be spotted from quite a distance.";
