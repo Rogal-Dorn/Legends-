@@ -222,3 +222,4 @@ Beta 0.10
 -placeholder entity and item scripts for donkey and carts
 
 
+Adds specialisation skills for butcher's cleaver, hammer, knife, lute, militia spear, pickaxe, pitchfork, shortbow, shovel and woodaxe. 

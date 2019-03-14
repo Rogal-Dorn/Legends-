@@ -1165,7 +1165,167 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendBribe,
 		Icon = "ui/perks/coins_circle.png",
 		IconDisabled = "ui/perks/coins_circle_bw.png"
-	}			
+	},
+	{
+		ID = "perk.legend_specialist_butcher_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_butcher_damage",
+		Name = this.Const.Strings.PerkName.SpecialistButcherDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistButcherDamage,
+		Icon = "ui/perks/cleaver_01.png",
+		IconDisabled = "ui/perks/cleaver_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_butcher_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_butcher_skill",
+		Name = this.Const.Strings.PerkName.SpecialistButcherSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistButcherSkill,
+		Icon = "ui/perks/cleaver_02.png",
+		IconDisabled = "ui/perks/cleaver_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_hammer_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_hammer_damage",
+		Name = this.Const.Strings.PerkName.SpecialistHammerDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistHammerDamage,
+		Icon = "ui/perks/cleaver_01.png",
+		IconDisabled = "ui/perks/cleaver_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_hammer_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_hammer_skill",
+		Name = this.Const.Strings.PerkName.SpecialistHammerSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistHammerSkill,
+		Icon = "ui/perks/cleaver_02.png",
+		IconDisabled = "ui/perks/cleaver_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_knife_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_knife_damage",
+		Name = this.Const.Strings.PerkName.SpecialistKnifeDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistKnifeDamage,
+		Icon = "ui/perks/knife_01.png",
+		IconDisabled = "ui/perks/knife_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_knife_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_knife_skill",
+		Name = this.Const.Strings.PerkName.SpecialistKnifeSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistKnifeSkill,
+		Icon = "ui/perks/knife_02.png",
+		IconDisabled = "ui/perks/knife_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_lute_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_lute_damage",
+		Name = this.Const.Strings.PerkName.SpecialistLuteDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistLuteDamage,
+		Icon = "ui/perks/lute_01.png",
+		IconDisabled = "ui/perks/lute_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_lute_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_lute_skill",
+		Name = this.Const.Strings.PerkName.SpecialistLuteSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistLuteSkill,
+		Icon = "ui/perks/lute_02.png",
+		IconDisabled = "ui/perks/lute_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_militia_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_militia_damage",
+		Name = this.Const.Strings.PerkName.SpecialistMilitiaDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistMilitiaDamage,
+		Icon = "ui/perks/militia_01.png",
+		IconDisabled = "ui/perks/militia_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_militia_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_militia_skill",
+		Name = this.Const.Strings.PerkName.SpecialistMilitiaSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistMilitiaSkill,
+		Icon = "ui/perks/militia_02.png",
+		IconDisabled = "ui/perks/militia_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pickaxe_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_pickaxe_damage",
+		Name = this.Const.Strings.PerkName.SpecialistPickaxeDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistPickaxeDamage,
+		Icon = "ui/perks/pickaxe_01.png",
+		IconDisabled = "ui/perks/pickaxe_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pickaxe_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_pickaxe_skill",
+		Name = this.Const.Strings.PerkName.SpecialistPickaxeSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistPickaxeSkill,
+		Icon = "ui/perks/pickaxe_02.png",
+		IconDisabled = "ui/perks/pickaxe_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pitchfork_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_pitchfork_damage",
+		Name = this.Const.Strings.PerkName.SpecialistPitchforkDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistPitchforkDamage,
+		Icon = "ui/perks/pitchfork_01.png",
+		IconDisabled = "ui/perks/pitchfork_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pitchfork_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_pitchfork_skill",
+		Name = this.Const.Strings.PerkName.SpecialistPitchforkSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistPitchforkSkill,
+		Icon = "ui/perks/pitchfork_02.png",
+		IconDisabled = "ui/perks/pitchfork_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shortbow_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_shortbow_damage",
+		Name = this.Const.Strings.PerkName.SpecialistShortbowDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistShortbowDamage,
+		Icon = "ui/perks/pitchfork_01.png",
+		IconDisabled = "ui/perks/pitchfork_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shortbow_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_shortbow_skill",
+		Name = this.Const.Strings.PerkName.SpecialistShortbowSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistShortbowSkill,
+		Icon = "ui/perks/pitchfork_02.png",
+		IconDisabled = "ui/perks/pitchfork_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shovel_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_shovel_damage",
+		Name = this.Const.Strings.PerkName.SpecialistShovelDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistShovelDamage,
+		Icon = "ui/perks/shovel_01.png",
+		IconDisabled = "ui/perks/shovel_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shovel_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_shovel_skill",
+		Name = this.Const.Strings.PerkName.SpecialistShovelSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistShovelSkill,
+		Icon = "ui/perks/shovel_02.png",
+		IconDisabled = "ui/perks/shovel_02_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_woodaxe_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_woodaxe_damage",
+		Name = this.Const.Strings.PerkName.SpecialistWoodaxeDamage,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistWoodaxeDamage,
+		Icon = "ui/perks/woodaxe_01.png",
+		IconDisabled = "ui/perks/woodaxe_01_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_woodaxe_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_woodaxe_skill",
+		Name = this.Const.Strings.PerkName.SpecialistWoodaxeSkill,
+		Tooltip = this.Const.Strings.PerkDescription.SpecialistWoodaxeSkill,
+		Icon = "ui/perks/woodaxe_02.png",
+		IconDisabled = "ui/perks/woodaxe_02_bw.png"
+	}										
 	
 ];
 
@@ -1315,5 +1475,25 @@ gt.Const.Perks.PerkDefs <- {
 	LegendToolsSpares = 141,
 	LegendBarterConvincing = 142,
 	LegendBarterTrustworthy = 143,
-	LegendBribe = 144
+	LegendBribe = 144,
+	LegendSpecialistButcherDamage = 145,
+	LegendSpecialistButcherSkill = 146,
+	LegendSpecialistHammerDamage = 147,
+	LegendSpecialistHammerSkill = 148,
+	LegendSpecialistKnifeDamage = 149,
+	LegendSpecialistKnifeSkill = 150,
+	LegendSpecialistLuteDamage = 151,
+	LegendSpecialistLuteSkill = 152,
+	LegendSpecialistMilitiaDamage = 153,
+	LegendSpecialistMilitiaSkill = 154,
+	LegendSpecialistPickaxeDamage = 155,
+	LegendSpecialistPickaxeSkill = 156,
+	LegendSpecialistPitchforkDamage = 157,
+	LegendSpecialistPitchforkSkill = 158,
+	LegendSpecialistShortbowDamage = 159,
+	LegendSpecialistShortbowSkill = 160,
+	LegendSpecialistShovelDamage = 161,
+	LegendSpecialistShovelSkill = 162,
+	LegendSpecialistWoodaxeDamage = 163,
+	LegendSpecialistWoodaxeSkill = 164
 };

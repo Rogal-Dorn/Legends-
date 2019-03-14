@@ -1148,7 +1148,27 @@ gt.Const.Strings.PerkName <- {
 	LegendToolsSpares = "Spare Parts",
 	LegendBarterConvincing = "Convincing Proposals",
 	LegendBarterTrustworthy = "Trustworthy Demeanour",
-	LegendBribe = "Bribe"
+	LegendBribe = "Bribe",
+	LegendSpecialistButcherDamage = "Butcher\'s Strikes",
+	LegendSpecialistButcherSkill = "Butcher\'s Fillet",
+	LegendSpecialistHammerDamage = "Blacksmith\'s Heavy Hammer",
+	LegendSpecialistHammerSkill = "Blacksmith\'s Technique",
+	LegendSpecialistKnifeDamage = "Knife fighting",
+	LegendSpecialistKnifeSkill = "Prisoner\'s rush",
+	LegendSpecialistLuteDamage = "Lute Solo",
+	LegendSpecialistLuteSkill = "Entrancing Song",
+	LegendSpecialistMilitiaDamage = "Militia training",
+	LegendSpecialistMilitiaSkill = "Militia practice",
+	LegendSpecialistPickaxeDamage = "Miner\'s Strikes",
+	LegendSpecialistPickaxeSkill = "Ore hunter",
+	LegendSpecialistPitchforkDamage = "Stable Shoveler",
+	LegendSpecialistPitchforkSkill = "Hay Bailing",
+	LegendSpecialistShortbowDamage = "Small Game",
+	LegendSpecialistShortbowSkill = "Poacher\'s Arm",
+	LegendSpecialistShovelDamage = "Dig deep",
+	LegendSpecialistShovelSkill = "Gravesman",
+	LegendSpecialistWoodaxeDamage = "Timber!",
+	LegendSpecialistWoodaxeSkill = "Woodsman\'s Cuts"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1318,6 +1338,27 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBarterConvincing = "This character\'s skill with words makes their trade proposals more acceptable. Grants +5% barter",
 	LegendBarterTrustworthy = "This character\'s body language makes people believe them, leading to more favourable trade agreements. Grants +10% barter",
 	LegendBribe = "Throw coins at your enemies to bribe them away from battle, only works on humans."
+	LegendSpecialistButcherDamage = "Gain 10-15 damage while using a Butcher\'s Cleaver. Does not apply to other cleavers.",
+	LegendSpecialistButcherSkill = "Gain 15 melee skill while using a Butcher\'s Cleaver. Does not apply to other cleavers.",
+	LegendSpecialistHammerDamage = "Gain 5-15 damage while using a Blacksmith\'s Hammer. Does not apply to other hammers.",
+	LegendSpecialistHammerSkill = "Gain 15 melee skill and +50% armor damage while using a Blacksmith\'s Hammer. Does not apply to other hammers.",
+	LegendSpecialistKnifeDamage = "Gain 5-15 damage while using a Knife. Does not apply to other daggers.",
+	LegendSpecialistKnifeSkill = "Gain 15 melee skill and +50% armor penetration while using a knife. Does not apply to other daggers.",
+	LegendSpecialistLuteDamage = "Gain 10-20 damage while using a lute.",
+	LegendSpecialistLuteSkill = "Gain the \'Entice\' skill while using a lute",
+	LegendSpecialistMilitiaDamage = "Gain 5-10 damage while using a militia spear. Does not apply to other spears",
+	LegendSpecialistMilitiaSkill = "gain 15 melee skill while using a militia spear. Does not apply to other spears",
+	LegendSpecialistPickaxeDamage = "Gain 5-10 damage while using a pickaxe. Does not apply to hammers",
+	LegendSpecialistPickaxeSkill = "Gain 15 melee skill while using a pickaxe. Does not apply to hammers",
+	LegendSpecialistPitchforkDamage = "Gain 10-20 damage while using a pitchfork. Does not apply to other pikes.",
+	LegendSpecialistPitchforkSkill = "Gain 15 melee skills and 25% armor damage while using a pitchfork. Does not apply to other pikes.",
+	LegendSpecialistShortbowDamage = "Gain 10-20 damage while using a shortbow. Does not apply to other bows.",
+	LegendSpecialistShortbowSkill = "Gain 15 ranged skill and 25% armor damage while using a shortbow. Does not apply to other bows. ",
+	LegendSpecialistShovelDamage = "Gain 10-20 damage while using a shovel. Does not apply to maces.",
+	LegendSpecialistShovelSkill = "Gain 15 melee skill and gain the \'Knock Out\' skill while using a shovel.",
+	LegendSpecialistWoodaxeDamage = "Gain 10-20 damage while using a woodaxe. Does not apply to other axes.",
+	LegendSpecialistWoodaxeSkill = "Gain 15 melee skill while using a woodaxe. Does not apply to other axes"
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
