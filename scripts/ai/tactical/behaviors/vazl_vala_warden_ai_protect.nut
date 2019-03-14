@@ -222,7 +222,7 @@ this.vazl_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior",
 				}
 				else if (dist <= 12 && !this.isRangedUnit(o.Actor))
 				{
-					score = this.Math.maxf(0.0, 1.25 - dist / 12.0);
+					score = this.Math.maxf(0.0, 1.33 - dist / 9.0);
 				}
 				else
 				{
