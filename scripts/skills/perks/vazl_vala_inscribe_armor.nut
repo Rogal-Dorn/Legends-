@@ -9,8 +9,8 @@ this.vazl_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.vazl_vala_inscribe_armor";
-		this.m.Name = this.Const.Strings.PerkName.vazl_ValaInscribeArmor;
-		this.m.Description = this.Const.Strings.PerkDescription.vazl_ValaInscribeArmor;
+		this.m.Name = "Armor Rune Sigils";
+		this.m.Description = "";
 		this.m.Icon = "ui/perks/vazl_vala_inscribe_armor.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast + 3;

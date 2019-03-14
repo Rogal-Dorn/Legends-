@@ -3,7 +3,7 @@ this.vazl_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.vazl_vala_chant_disharmony";
-		this.m.Name = "Chant of Disharmony";
+		this.m.Name = "Disharmony";
 		this.m.Description = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.";
 		this.m.Icon = "ui/perks/vazl_vala_chant_disharmony_active.png";
 		this.m.IconDisabled = "ui/perks/vazl_vala_chant_disharmony_active_sw.png";

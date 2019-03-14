@@ -7,7 +7,7 @@ this.vazl_vala_warden <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "perk.vazl_vala_warden";
 		this.m.Name = "Warden";
-		this.m.Description = "Manifestation of the Vala's warden.";
+		this.m.Description = "";
 		this.m.Icon = "ui/perks/vazl_vala_warden.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast + 10;
