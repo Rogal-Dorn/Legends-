@@ -223,3 +223,6 @@ Beta 0.10
 
 
 Adds specialisation skills for butcher's cleaver, hammer, knife, lute, militia spear, pickaxe, pitchfork, shortbow, shovel and woodaxe. 
+Creates wizard tower and event
+Creates chain hook skill, adds to the chain, adds to the ai hook ability and changes optimum engage range for orc young. 
+
