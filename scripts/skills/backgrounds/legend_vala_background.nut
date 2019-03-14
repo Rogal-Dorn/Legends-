@@ -58,7 +58,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			Hitpoints = [-4, -6],
 			Bravery = [10, 15],
 			Stamina = [8, 12],
-			MeleeSkill = [0, 0],
+			MeleeSkill = [-2, -3],
 			RangedSkill = [0, 0],
 			MeleeDefense = [0, 0],
 			RangedDefense = [0, 0],
