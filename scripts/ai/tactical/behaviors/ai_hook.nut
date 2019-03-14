@@ -2,7 +2,8 @@ this.ai_hook <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		TargetTile = null,
 		PossibleSkills = [
-			"actives.hook"
+			"actives.hook",
+			"actives.legend_chain_hook"
 		],
 		Skill = null
 	},
