@@ -106,15 +106,23 @@ this.vazl_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
 		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00);
+
+		if (reduction <= 0.5)
+		{
+			reduction = 0.5;
+		}
 
 		if (transfer >= 0.5)
 		{
 			transfer = 0.5;
 		}
 
+		local DamageToWarden = (_damageHitpoints / reduction) * transfer;
+
 		local hitInfo = clone this.Const.Tactical.HitInfo;
-		hitInfo.DamageRegular = this.Math.ceil(_damageHitpoints * transfer);
+		hitInfo.DamageRegular = this.Math.ceil(DamageToWarden);
 		hitInfo.DamageDirect = 1.0;
 		hitInfo.BodyPart = this.Const.BodyPart.Body;
 		hitInfo.BodyDamageMult = 1.0;
