@@ -25,12 +25,12 @@ gt.Const.LegendMod.StartTypes <- {
 }
 
 gt.Const.LegendMod.Starts <- [
-	{
-        name = "Party",
-        description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",
-        intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
-        banner = gt.Const.LegendMod.StartTypes.Party
-    },
+   // {
+   //     name = "Party",
+   //     description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",
+   //     intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
+   //     banner = gt.Const.LegendMod.StartTypes.Party
+   // },
 	{
        name = "Berserker",
        intro = "[img]gfx/ui/events/event_24.png[/img]So tired. You have been walking for weeks and haven't slept in... too long. You stop and rest a moment, and the thoughts return. The wooden hut you built together. The plot of yams she had planted. The evening you returned from a hunt. They had come. Burned it all. The stores, the hut, the woman, the child. Their screams echo in your blood, calling you to avenge them. You should have been there in time. Her tortured last moments fill your mind. What they did to her was...  too unspeakable. The disgust and loathing well up again. What kind of filth could rape and kill a mother in front of her child? Your heart pounds now, cold sweat, the froth forms at the edge of your mouth. What kind of monster could then do those things to an infant child?  Your mind snaps at the memory of their broken bodies. You scream with unbridled rage. Your muscles push you on again, running blindly into another day. You must find the killers, those swine will know vengeance",
