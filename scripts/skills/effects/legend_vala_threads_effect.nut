@@ -70,6 +70,7 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 		_properties.RangedSkillMult *= 1.0 - (this.m.Threads / 20.0);
 		_properties.MeleeDefenseMult *= 1.0 - (this.m.Threads / 20.0);
 		_properties.RangedDefenseMult *= 1.0 - (this.m.Threads / 20.0);
+		_properties.DamageReceivedTotalMult *= 1.0 + (this.m.Threads / 20.0);
 	}
 
 

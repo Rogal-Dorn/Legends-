@@ -79,7 +79,7 @@ gt.Const.Perks.PerksVala <- [
 			ID = "perk.legend_vala_threads",
 			Script = "scripts/skills/perks/legend_vala_threads",
 			Name = "Threads of Fate",
-			Tooltip = "Swinging your staff spins and twines the threads of fate of those you hit.\n\nThe Vala needs her staff equipped for this perk to work, and each point of Resolve increases her chance to apply a stacking debuff by 1%. Each stack lowers all of the target\'s main attributes.",
+			Tooltip = "Swinging your staff spins and twines the threads of fate of those you hit.\n\nThe Vala needs her staff equipped for this perk to work, and each point of Resolve increases her chance to apply a stacking debuff. Each stack lowers all of the target\'s main attributes and increases the amount of damage they receive.",
 			Icon = "ui/perks/legend_vala_threads.png",
 			IconDisabled = "ui/perks/legend_vala_threads_sw.png"
 		},
