@@ -21,7 +21,7 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 100.0;
 		this.m.ConditionMax = 100.0;
 		this.m.StaminaModifier = -4;
-		this.m.RangeMin = 2;
+		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 40;
@@ -33,7 +33,7 @@ this.legend_mystic_staff <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
 		//this.addSkill(this.new("scripts/skills/actives/legend_magic_missile"));
 	}
 
