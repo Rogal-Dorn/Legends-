@@ -9,18 +9,18 @@ this.camp_manager <- {
     function create()
     {
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/commander_building"));
-        this.addBuilding(this.new("scripts/entity/world/camp/buildings/repair_building"));
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/rest_building"));
-        this.addBuilding(this.new("scripts/entity/world/camp/buildings/barber_building"));
+        this.addBuilding(this.new("scripts/entity/world/camp/buildings/repair_building"));
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/crafting_building"));
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/enchanter_building"));          
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/fletcher_building"));
+        this.addBuilding(this.new("scripts/entity/world/camp/buildings/gatherer_building"));  
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/healer_building"));
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/hunter_building"));   
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/scout_building"));
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/training_building"));  
-        this.addBuilding(this.new("scripts/entity/world/camp/buildings/gatherer_building"));  
-        this.addBuilding(this.new("scripts/entity/world/camp/buildings/workshop_building"));          
+        this.addBuilding(this.new("scripts/entity/world/camp/buildings/workshop_building"));
+        this.addBuilding(this.new("scripts/entity/world/camp/buildings/barber_building"));        
     }
 
     function destroy()

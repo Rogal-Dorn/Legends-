@@ -37,7 +37,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		},
 		Formations = null,
 		VeteranPerks = 0,
-		CampAssignment = "",
+		CampAssignment = "camp.rest",
 		CampHealing = 0,
 		LastCampTime = 0
 	},

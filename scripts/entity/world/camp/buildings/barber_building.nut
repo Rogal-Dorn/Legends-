@@ -9,6 +9,7 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Description = "or Plastic surgeon.."
 		this.m.UIImage = "ui/settlements/camp_barber_full_day";
 		this.m.UIImageNight = "ui/settlements/camp_barber_full_night";
+        this.m.InCommanderTent = false;
     }
 
 	function onClicked( _campScreen )
