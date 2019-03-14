@@ -15,10 +15,35 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 	function queryLoad()
 	{
 		local result = {
-			brothers = this.onQueryBrothersList(),
-			buildings = this.onQueryBuildingsList()
+			brothers = this.queryRosterInformation(),
+			buildings = this.onQueryBuildingsList(),
+			assets = this.m.Parent.queryAssetsInformation()
 		};
 		return result;
+	}
+
+	function queryRosterInformation()
+	{
+		local brothers = this.World.getPlayerRoster().getAll();
+		local roster = [];
+
+		foreach( b in brothers )
+		{
+			local background = b.getBackground();
+			local e = {
+				ID = b.getID(),
+				Name = b.getName(),
+				ImagePath = b.getImagePath(),
+				ImageOffsetX = b.getImageOffsetX(),
+				ImageOffsetY = b.getImageOffsetY(),
+				BackgroundImagePath = background.getIconColored(),
+				BackgroundText = background.getDescription(),
+				CampAssignment = b.getCampAssignment()
+			};
+			roster.push(e);
+		}
+
+		return roster
 	}
 
 	function onQueryBrothersList()
@@ -43,6 +68,11 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		foreach (b in buildings)
 		{
 			if (b == null)
+			{
+				continue;
+			}
+
+			if (!b.inCommanderTent())
 			{
 				continue;
 			}

@@ -9,6 +9,7 @@ this.commander_building <- this.inherit("scripts/entity/world/camp/camp_building
         this.m.Description = "Assign company members to different tasks while encamped"
 		this.m.UIImage = "ui/settlements/camp_commander_day";
 		this.m.UIImageNight = "ui/settlements/camp_commander_night";
+        this.m.InCommanderTent = false;
     }
 
 	function onClicked( _campScreen )

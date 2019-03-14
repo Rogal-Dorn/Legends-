@@ -15,7 +15,12 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mContainer = null;
     this.mDialogContainer = null;
 
+    //Brother list
+    this.mListContainer = null;
+    this.mListScrollContainer = null;
+    this.mSelectedEntry = null;
 
+    this.mTentListContainer = null
     this.mTentListScrollContainer = null;
     this.mTents = null;
 
@@ -73,21 +78,31 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     // create content
     var content = this.mDialogContainer.findDialogContentContainer();
 
+    var column = $('<div class="left-column"/>');
+    content.append(column);
+    var listContainerLayout = $('<div class="l-list-container"/>');
+    column.append(listContainerLayout);
+    this.mListContainer = listContainerLayout.createList(1.77/*8.85*/);
+    this.mListScrollContainer = this.mListContainer.findListScrollContainer();
+
+    column = $('<div class="right-column"/>');
+    content.append(column);
+
     // top row
     var row = $('<div class="top-row"/>');
-    content.append(row);
+    column.append(row);
     var listContainerLayout = $('<div class="l-list-container"/>');
     row.append(listContainerLayout)
     this.mTentListContainer = listContainerLayout.createList(1.24/*8.63*/);
     this.mTentListScrollContainer = this.mTentListContainer.findListScrollContainer();
-    this.mTents = this.createActionSlots(this.mTentListScrollContainer)
+    //this.mTents = this.createActionSlots(this.mTentListScrollContainer)
 
     var row = $('<div class="middle-row"/>');
-    content.append(row);
+    column.append(row);
 
     // bottom row
     row = $('<div class="bottom-row"/>');
-    content.append(row);
+    column.append(row);
     var stats = $('<div class="stats"/>');
     row.append(stats);
     var listContainerLayout = $('<div class="l-list-container"/>');
@@ -113,8 +128,17 @@ CampScreenCommanderDialogModule.prototype.destroyDIV = function ()
 	this.mLeaveButton.remove();
     this.mLeaveButton = null;
 
+    this.mListScrollContainer.empty();
+    this.mListScrollContainer = null;
+    this.mListContainer.destroyList();
+    this.mListContainer.remove();
+    this.mListContainer = null;
+
     this.mTentListScrollContainer.empty();
     this.mTentListScrollContainer = null;
+    this.mTentListContainer.destroyList();
+    this.mTentListContainer.remove();
+    this.mTentListContainer = null;
 
     this.mDialogContainer.empty();
     this.mDialogContainer.remove();
@@ -376,8 +400,22 @@ CampScreenCommanderDialogModule.prototype.loadFromData = function (_data)
         return;
     }
 
-    this.onBrothersListLoaded(_data.brothers);
-    this.onTentsListLoaded(_data.buildings);
+    //this.onBrothersListLoaded(_data.brothers);
+    this.mTentListScrollContainer.empty();
+    for(var i = 0; i < _data.buildings.length; ++i)
+    {
+		var entry = _data.buildings[i];
+        this.addTentEntry(entry, i);
+    }
+    
+    this.mListScrollContainer.empty();
+    for(var i = 0; i < _data.brothers.length; ++i)
+    {
+		var entry = _data.brothers[i];
+        this.addListEntry(entry);
+    }
+
+    this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
 
 };
 
@@ -401,6 +439,159 @@ CampScreenCommanderDialogModule.prototype.notifyBackendLeaveButtonPressed = func
 	SQ.call(this.mSQHandle, 'onLeaveButtonPressed');
 };
 
+
+CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _scrollToEntry)
+{
+    if (_element !== null && _element.length > 0)
+    {
+        // check if this is already selected
+        //if (_element.hasClass('is-selected') !== true)
+        {
+            this.mTentListContainer.deselectListEntries();
+            _element.addClass('is-selected');
+
+            // give the renderer some time to layout his shit...
+            if (_scrollToEntry !== undefined && _scrollToEntry === true)
+            {
+                this.mTentListContainer.scrollListToElement(_element);
+            }
+
+            this.mSelectedTent = _element;
+            //this.updateDetailsPanel(this.mSelectedEntry);
+            //this.updateListEntryValues();
+        }
+    }
+    else
+    {
+        this.mSelectedTent = null;
+        //this.updateDetailsPanel(this.mSelectedEntry);
+        //this.updateListEntryValues();
+    }
+};
+
+
+CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index)
+{
+    var self = this;
+    var dropHandler = function (ev, dd)
+    {
+        var drag = $(dd.drag);
+        var drop = $(dd.drop);
+        var proxy = $(dd.proxy);
+
+        if (proxy === undefined || proxy.data('idx') === undefined || drop === undefined || drop.data('idx') === undefined)
+        {
+            return false;
+        }
+
+        drag.removeClass('is-dragged');
+
+        // do the swapping
+        //self.swapSlots(drag.data('idx'), drop.data('idx'));
+    };
+    var result = $('<div class="ui-control is-camp-action-slot"/>');
+    this.mTentListScrollContainer.append(result);
+    result.data('idx', _index);
+    result.drop("end", dropHandler);
+
+    var entry = $('<div class="ui-control list-entry"/>');
+    result.append(entry);
+    entry.data('entry', _data);
+    entry.click(this, function(_event)
+	{
+        var self = _event.data;
+        self.selectTentEntry($(this));
+    });
+
+    var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data.name + ' (' + _data.count + ')</div>');
+    entry.append(name);
+    var image = $('<div class="is-reserve-slot"/>');
+    entry.append(image);
+};
+
+
+CampScreenCommanderDialogModule.prototype.selectListEntry = function(_element, _scrollToEntry)
+{
+    if (_element !== null && _element.length > 0)
+    {
+        // check if this is already selected
+        //if (_element.hasClass('is-selected') !== true)
+        {
+            this.mListContainer.deselectListEntries();
+            _element.addClass('is-selected');
+
+            // give the renderer some time to layout his shit...
+            if (_scrollToEntry !== undefined && _scrollToEntry === true)
+            {
+                this.mListContainer.scrollListToElement(_element);
+            }
+
+            this.mSelectedEntry = _element;
+            //this.updateDetailsPanel(this.mSelectedEntry);
+            //this.updateListEntryValues();
+        }
+    }
+    else
+    {
+        this.mSelectedEntry = null;
+        //this.updateDetailsPanel(this.mSelectedEntry);
+        //this.updateListEntryValues();
+    }
+};
+
+
+CampScreenCommanderDialogModule.prototype.addListEntry = function (_data)
+{
+    var result = $('<div class="l-row"/>');
+    this.mListScrollContainer.append(result);
+
+    var entry = $('<div class="ui-control list-entry"/>');
+    result.append(entry);
+    entry.data('entry', _data);
+    entry.click(this, function(_event)
+	{
+        var self = _event.data;
+        self.selectListEntry($(this));
+    });
+
+    // left column
+    var column = $('<div class="column is-left"/>');
+    entry.append(column);
+
+    var imageOffsetX = ('ImageOffsetX' in _data ? _data['ImageOffsetX'] : 0);
+    var imageOffsetY = ('ImageOffsetY' in _data ? _data['ImageOffsetY'] : 0);
+    column.createImage(Path.PROCEDURAL + _data['ImagePath'], function (_image)
+	{
+        _image.centerImageWithinParent(imageOffsetX, imageOffsetY, 0.64);
+        _image.removeClass('opacity-none');
+    }, null, 'opacity-none');
+
+    // right column
+    column = $('<div class="column is-right"/>');
+    entry.append(column);
+
+    // top row
+    var row = $('<div class="row is-top"/>');
+    column.append(row);
+
+    var image = $('<img/>');
+    image.attr('src', Path.GFX + _data['BackgroundImagePath']);
+    row.append(image);
+
+    // bind tooltip
+    image.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterBackgrounds.Generic, elementOwner: TooltipIdentifier.ElementOwner.HireScreen, entityId: _data.ID });
+
+    var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data[WorldTownScreenIdentifier.HireRosterEntry.Name] + '</div>');
+    row.append(name);
+
+	// bottom row
+    row = $('<div class="row is-bottom"/>');
+    column.append(row);
+    var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data.CampAssignment + '</div>');
+    row.append(name);
+    // var assetsCenterContainer = $('<div class="l-assets-center-container"/>');
+    // row.append(assetsCenterContainer);
+};
 
 
 
@@ -555,29 +746,6 @@ CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brot
 	}
 	//this.updateBrotherSlotLocks(inventoryMode);
 	//this.updateRosterLabel();
-};
-
-
-
-CampScreenCommanderDialogModule.prototype.addTentSlotDIV = function (_parentDiv, _data, _index, _allowReordering)
-{
-    var self = this;
-
-    this.mTents[_index].data('id', _data.id);
-    this.mTents[_index].data('idx', _index);
-    var layout = $('<div class="l-button"/>');
-    _parentDiv.append(layout);
-    layout.createTabTextButton(_data.name + "(" + _data.count + ")", function()
-    {
-        if (self.mOnSwitchToInventoryCallback !== null && jQuery.isFunction(self.mOnSwitchToInventoryCallback))
-        {
-            self.mOnSwitchToInventoryCallback();
-        }
-    }, null, 'tab-button', 75);
-
-    var image = $('<div class="is-reserve-slot"/>');
-    _parentDiv.append(image);
-
 };
 
 

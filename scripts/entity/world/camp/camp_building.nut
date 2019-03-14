@@ -11,7 +11,8 @@ this.camp_building <- {
 		TooltipIcon = "",
 		Sounds = [],
 		SoundsAtNight = [],
-        CanEnter = true
+        CanEnter = true,
+        InCommanderTent = true
 	},
     function create()
     {
@@ -107,6 +108,11 @@ this.camp_building <- {
             ++count;
         }
         return count;
+    }
+
+    function inCommanderTent()
+    {
+        return this.m.InCommanderTent;
     }
 
 	function pushUIMenuStack()
