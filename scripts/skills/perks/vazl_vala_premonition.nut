@@ -4,7 +4,7 @@ this.vazl_vala_premonition <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "perk.vazl_vala_premonition";
 		this.m.Name = "Premonition";
-		this.m.Description = "Premonition";
+		this.m.Description = "";
 		this.m.Icon = "ui/perks/vazl_vala_premonition.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast + 9;

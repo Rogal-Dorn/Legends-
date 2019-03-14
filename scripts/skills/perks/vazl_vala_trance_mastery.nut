@@ -3,8 +3,8 @@ this.vazl_vala_trance_mastery <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.vazl_vala_trance_mastery";
-		this.m.Name = this.Const.Strings.PerkName.vazl_ValaTranceMastery;
-		this.m.Description = this.Const.Strings.PerkDescription.vazl_ValaTranceMastery;
+		this.m.Name = "Trance Mastery";
+		this.m.Description = "";
 		this.m.Icon = "ui/perks/vazl_vala_trance_mastery.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.VeryLast;

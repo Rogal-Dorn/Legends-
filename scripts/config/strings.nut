@@ -1064,23 +1064,7 @@ gt.Const.Strings.PerkName <- {
 	SpecPolearm = "Polearm Mastery",
 	SpecHammer = "Hammer Mastery",
 	SpecMace = "Mace Mastery",
-	SpecFlail = "Flail Mastery",
-
-	vazl_ValaInscriptionMastery = "Inscription Mastery",
-	vazl_ValaInscribeWeapon = "Weapon Rune Sigils",
-	vazl_ValaInscribeHelmet = "Helmet Rune Sigils",
-	vazl_ValaInscribeArmor = "Armor Rune Sigils",
-	vazl_ValaInscribeShield = "Shield Rune Sigils",
-
-	vazl_ValaChantingMastery = "Chanting Mastery",
-	vazl_ValaChantDisharmony = "Chant of Disharmony",
-
-	vazl_ValaTranceMastery = "Trance Mastery",
-
-	vazl_ValaWarden = "Warden",
-	vazl_ValaSpiritualBond = "Spiritual Bond",
-
-	vazl_ValaPrecognition = "Precognition"
+	SpecFlail = "Flail Mastery"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1170,23 +1154,7 @@ gt.Const.Strings.PerkDescription <- {
 	SpecPolearm = "Master polearms and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nPolearm skills have their Action Point cost reduced to [color=" + this.Const.UI.Color.NegativeValue + "]5[/color], and no longer have a penalty for attacking targets directly adjacent.",
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
 	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.",
-	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
-
-	vazl_ValaInscriptionMastery = "Lowers the cooldown until the Vala can begin inscribing rune sigils again (after a successful inscription) from 20 to 15 days, and increases her inscription speed from 4 to 5.5 tries per day.",
-	vazl_ValaInscribeWeapon = "Allows the Vala to inscribe rocks with random weapon rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: accuracy, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with weapon rune sigils again.",
-	vazl_ValaInscribeHelmet = "Allows the Vala to inscribe rocks with random helmet rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with helmet rune sigils again.",
-	vazl_ValaInscribeArmor = "Allows the Vala to inscribe rocks with random armor rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with armor rune sigils again.",
-	vazl_ValaInscribeShield = "Allows the Vala to inscribe rocks with random shield rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with shield rune sigils again.",
-
-	vazl_ValaChantingMastery = "Chants build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
-	vazl_ValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies within 2 tiles of the Vala won't be able to enforce Zones of Control, letting your units move in and out safely.",
-
-	vazl_ValaTranceMastery = "Trances build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.",
-
-	vazl_ValaWarden = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. The Warden can be beaten, but it never dies. The Warden\'s stats scales with the Vala\'s own stats; especially her Resolve.",
-	vazl_ValaSpiritualBond = "The bond between the Vala and her Warden grows deeper over time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, based on the Vala\'s Resolve and up to a maximum of 50%.\n\nThis perk does nothing unless the Vala has the Warden perk.",
-
-	vazl_ValaPrecognition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced."
+	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

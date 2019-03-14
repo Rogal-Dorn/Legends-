@@ -3,8 +3,8 @@ this.vazl_vala_spiritual_bond <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.vazl_vala_spiritual_bond";
-		this.m.Name = this.Const.Strings.PerkName.vazl_ValaSpiritualBond;
-		this.m.Description = this.Const.Strings.PerkDescription.vazl_ValaSpiritualBond;
+		this.m.Name = "Spiritual Bond";
+		this.m.Description = "";
 		this.m.Icon = "ui/perks/vazl_vala_spiritual_bond.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.VeryLast;
