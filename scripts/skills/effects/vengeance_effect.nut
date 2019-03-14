@@ -4,7 +4,7 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.vengeance";
 		this.m.Name = "Vengeance!";
-		this.m.Icon = "skills/status_effect_01.png";
+		this.m.Icon = "skills/vengeance_square.png";
 		this.m.IconMini = "status_effect_01_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
@@ -19,6 +19,11 @@ this.vengeance_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
+		if (_targetEntity == null)
+		{
+			return;
+		}
+
 		if (!this.m.IsGarbage && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
 			_properties.DamageTotalMult *= 1.2;

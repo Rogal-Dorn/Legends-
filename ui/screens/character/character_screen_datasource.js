@@ -33,7 +33,9 @@ var CharacterScreenDatasourceIdentifier =
 				Removed: 'removed',
 				Updated: 'updated'
 			}
-		}
+        },
+        FormationIndex: 'inventory.formation-selected',
+        FormationName: 'inventory.formation-name'
 	},
 
     InventoryMode:
@@ -74,6 +76,10 @@ var CharacterScreenDatasource = function(_isTacticalMode)
     this.mInventoryModule = null;
     this.mIsPopupOpen = false;
 
+    this.mFormationIndex = 0;
+    this.mFormationName = "";
+
+    this.mMaxBrothers = 27;
 	// init the datasource
 	this.init();
 };
@@ -151,9 +157,12 @@ CharacterScreenDatasource.prototype.createEventChannels = function()
 
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.ModeUpdated] = [ ];
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.StashLoaded] = [ ];
-	this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key] = [ ];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key] = [ ];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.FormationIndex] = [ ];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.FormationName] = [ ];
 
     this.mEventListener[CharacterScreenDatasourceIdentifier.Perks.TreesLoaded] = [ ];
+
 };
 
 
@@ -248,12 +257,27 @@ CharacterScreenDatasource.prototype.getTooltipItemOwner = function()
 };
 
 
+CharacterScreenDatasource.prototype.getFormationIndex = function ()
+{
+    return this.mFormationIndex;
+};
+
+CharacterScreenDatasource.prototype.getFormationName = function ()
+{
+    return this.mFormationName;
+};
+
 CharacterScreenDatasource.prototype.loadFromData = function(_data)
 {
     if (_data === undefined || _data == null || typeof(_data) !== 'object')
     {
         console.error('ERROR: Failed to query character screen result data. Reason: Invalid result.');
         return;
+    }
+
+    if ('maxBrothers' in _data)
+    {
+        this.mMaxBrothers = _data.maxBrothers;
     }
 
     if ('stashSpaceUsed' in _data)
@@ -266,15 +290,23 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
     {
         this.loadPerkTrees(_data[CharacterScreenIdentifier.QueryResult.PerkTrees]);
     }
-
     if (CharacterScreenIdentifier.QueryResult.Brothers in _data)
     {
         this.loadBrothersList(_data[CharacterScreenIdentifier.QueryResult.Brothers]);
     }
-
     if (CharacterScreenIdentifier.QueryResult.Stash in _data)
     {
         this.loadStashList(_data[CharacterScreenIdentifier.QueryResult.Stash]);
+    }
+    if ('formationIndex' in _data)
+    {
+        this.mFormationIndex = _data.formationIndex;
+        this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationIndex, _data.formationIndex);
+    }
+    if ('formationName' in _data)
+    {
+        this.mFormationName = _data.formationName;
+        this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationName, _data.formationName);
     }
 };
 
@@ -344,7 +376,7 @@ CharacterScreenDatasource.prototype.loadBrothersList = function(_data, _withoutN
 	// notify every listener
 	if (_withoutNotify === undefined || _withoutNotify !== true)
 	{
-		this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, this.mBrothersList);
+        this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, this.mBrothersList);
 		this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.Selected, this.getSelectedBrother());
 	}
 
@@ -400,6 +432,10 @@ CharacterScreenDatasource.prototype.setSelectedBrotherIndex = function (_rosterP
         this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.Selected, this.getSelectedBrother());
     }
 };
+
+function isStudentPerkUnlocked(_perksUnlocked) {
+	return _perksUnlocked.indexOf('perk.student') !== -1
+}
 
 
 CharacterScreenDatasource.prototype.getBrotherPerkPoints = function(_brother)
@@ -1607,6 +1643,26 @@ CharacterScreenDatasource.prototype.commitLevelUpStats = function(_brotherId, _s
     });
 };
 
+CharacterScreenDatasource.prototype.updateFormationName = function(_src, _name)
+{
+    var self = this;
+    this.notifyBackendUpdateFormationName(_name, function (data)
+    {
+        if (data === undefined || data === null)
+        {
+            console.error('ERROR: Failed to update formation name. Invalid data result.');
+            return;
+        }
+
+        self.mFormationName = data;
+        self.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationName,  self.mFormationName);
+    });
+};
+
+CharacterScreenDatasource.prototype.getMaxBrothers = function ()
+{
+	return this.mMaxBrothers;
+}
 
 /*CharacterScreenDatasource.prototype.notifyBackendQueryBrothersList = function ()
 {
@@ -1653,6 +1709,11 @@ CharacterScreenDatasource.prototype.notifyBackendUnlockPerk = function (_brother
 CharacterScreenDatasource.prototype.notifyBackendUpdateNameAndTitle = function (_brotherId, _name, _title, _callback)
 {
     SQ.call(this.mSQHandle, 'onUpdateNameAndTitle', [_brotherId, _name, _title], _callback);
+};
+
+CharacterScreenDatasource.prototype.notifyBackendUpdateFormationName = function (_name, _callback)
+{
+    SQ.call(this.mSQHandle, 'onUpdateFormationName', [_name], _callback);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendCommitStatIncreaseValues = function (_brotherId, _statsIncreaseValues, _callback)
@@ -1780,3 +1841,12 @@ CharacterScreenDatasource.prototype.notifyBackendUpdateRosterPosition = function
 {
     SQ.call(this.mSQHandle, 'onUpdateRosterPosition', [ _id, _pos ]);
 };
+
+CharacterScreenDatasource.prototype.notifyBackendFormationClicked = function (_formationIndex) {
+    SQ.call(this.mSQHandle, 'onFormationChanged', [_formationIndex]);
+};
+
+CharacterScreenDatasource.prototype.notifyBackendClearFormationButtonClicked = function (_formationIndex) {
+    SQ.call(this.mSQHandle, 'onFormationClear', [_formationIndex]);
+};
+

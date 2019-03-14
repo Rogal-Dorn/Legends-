@@ -1,0 +1,203 @@
+### Legend Mod Release Notes
+
+## Alpha 1
+
+Mod Features:
+
+* Alternate Starts
+    - Beggar: Start with nothing but the rags on your back.
+    - Noble: Focus on leadership skills.
+    - Crusader: Level 6 with good melee stats and equipment. Focus on heavy armor and 2-handers.
+    - Hunter: Strong archers with footwork and pathfinder. 
+	- Seer: Old and powerful, but sleepy. Focus on control spells.
+    - Warlock: Weak character with the ability to raise the dead and debuff enemies.
+	- Berserker: Wildman with great tanking perks.
+* Commander Centric Starts
+	- Commander starts with company size of 6.
+	- Commander-only perks that increase the size of roster up to 27.
+	- Extra perk point for every 3rd veteran level.
+	- If the Commander dies, it's game over.
+* Unique Perk Trees for different Backgrounds
+* Max resources are now tied to the Backgrounds of your mercs
+	- Backgrounds can add different amounts of food, ammo, tools, and stash size.
+	- Check Background icon tooltips for details.
+* Certain Backgrounds now improve the map movement speed over different terrains
+	- Bonuses stack.
+	- Having a Messenger in the company improves communications and overall speed across all terrains.
+	- Moving through the mountains? Having some Miners who know the terrain helps.
+	- Hunters, Poachers, and Lumberjacks make a living in the woods, having a few certainly helps the company navigate the thick foilage.
+	- Wildmen, hailing from the lands of the north, know their way around the frozen terrain.
+	- Farmhands, Vagabonds, Caravan Hands, Beast Slayers, Witchhunters, all contribute their knowledge of terrain.
+	- Check Background icon tooltips for details.
+* Removed Cart and Wagon ambitions
+	- Utilize Background bonuses to manage stash size.
+* Different Backgrounds can now improve both repair and heal rates.
+	- Add a couple extra Apprentices and or Tailors to speed up repair of items.
+	- Add a Monk or two to help injured bros recover.
+* Enhanced Spawn lists
+	- Low level spawns added for single character starts.
+	- Increased variety of spawn options in the mid game.
+	- High level spawns added for parties beyond 12 mercs. 
+    - End game battles now feature hundreds of opponents.	
+* Increased maximum company size to 27 brothers
+	- No reserves tent, every man in every battle.
+	- Getting 27 bros takes dedication and perk points - only commanders can increase company pool size.
+	- Increased level scaling to support 27 mercs, previously difficulty stopped at 12. Be careful increasing your roster too early.
+* Battle Sisters 
+	- Increased recruitable character faces from 18 to 30 faces.
+	- Includes female bodies, faces and names (and no more beards!).
+	- Includes correct gender text and events. 
+* Formations Mod - Save and change all merc positions and equipment
+    - Total of 6 formation slots.
+    - Each formation can be individually labeled.
+* Bigger world 
+	- Increased world size.
+	- Increased number of cities.
+	- Added 6 AI faction archetypes: Questing warriors, populist authoritarian, surveilence police state, iron fisted collector, beloved schemers, altruistic marauders.
+* Endless war 
+	- Reduced crises interval from ~100 days to ~30 days.
+	- Noble houses don't start allied
+	- Greenskins don't start allied
+	- Bandits don't start allied
+	- increased ambushes, can be ambushed closer to settlements
+* Alp nerf
+	- Only spawns 1 nightmare per turn.
+* Hexen nerf
+	- Only uses one ability per turn.
+* More blood
+* Tryout Talents
+    - Reveals star attributes when trying out a brother in hire screen.
+* Increased Event spawn rate by 10%.
+
+
+Recommended addons:
+* More Music 
+	- Adds 48 new tracks to the game.
+* Dark Reskin 
+	- Reworks all graphics.
+
+
+Beta 08
+
+*Seer starts with a mystic staff that shoots magic missiles. Daze upgraded, gains Chain lightning
+*Warlock starts with grizzly scythe that drains life, health and melee buffed
+*Ranger gains Nightvision and Composure (stun immunity)
+*Berserker, Noble Warlock, and Crusader gain composure
+*New low level enemy, the bandit rabble, weaker than thugs. 
+*New low level weapons: hammer, hoe, scythe, shiv, shovel, sickle, sling, staff, tipstaff, wooden pitchfork and wooden spear. Each spawns near the appropriate industry.
+*Low level weapons given to civilians, rabble and zombies. Taught AI how to use slings, though they sling arrows for the moment.
+*You can now start with three companions and 18 roster slots, like the base game, but still in legends world. 
+*Veteran perks come every 2 levels for commanders, and three levels for companions, beserker now gains levels as he should.
+*Custom icons for fishwife, washerwoman, baker, milkmaid, housemaid and seamstress
+*Deliver goods, Escort Caravan, and Discover location contracts now give an XP reward as well.
+*4 new backgrounds (Inventor, Vala, Cannibal, Shieldmaiden).
+*Through events, Inventor can add prosthetic body parts that alleviate various permanent injuries.
+*Through event, can get new Vala class that is able to inscribed rune weapons with accompanying graphics (event).
+*Cannibal can provide free food provision (Ewww!) (provided by a cannibal and/or a cannibalistically corrupted butcher).
+*New sounds added for some perks and weapons.
+*Improved tooltips
+
+Beta 9
+*Warlock rework
+	* Gains ability to summon zombies and skeletons
+	* New item types, human carrion and human bones, the 'ammo' for summoning
+	* Human carrion & human bones have a medicine upkeep (no wages for these guys, just lots of bandages to keep em' patched up)
+	* 3 tiers of zombie summoning
+		- All Tiers have Double Grip and Zombie Bite.
+		- Teir 1 : Low end armor/weapons; Have BattleForged, Fast Adaptation, Footwork
+		- Teir 2 : Medium end armor/weapons; Have BattleForged, Rotation
+		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
+	* 3 tiers of skeleton summoning
+		- All Tiers have Skeleton Racial, Double Grip, Hand-to-Hand, and Pathfinder
+		- Teir 1 : Low end ancient weapons/armor; Mastery Sword, Mastery Spear
+		- Teir 2 : Medium end armor/weapons; Steel Brow, Shield Expert
+		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
+	* Summoning requires a flesh sacrifice. The higher the tier, the higher the flesh sacrifice required.
+	* New Perks: Siphon, Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition
+*Noble now has 5 retainers
+*Ranger Commander begins with two rangers
+*Crusader starts with custom armor and weapon and The Apprentice perk.
+*Warlock starts with custom armor and weapon and The Apprentice perk.
+*Seer starts with custom armor and weapon and The Apprentice perk.
+*Updated start icons to reflect new party sizes
+*5 new Berserker perks: TrueBeleiver, PoisonImmunity, Battleheart, Muscularity and Nudist
+*5 new Crusader perks: SteelBrow, InspiringPresence, Rebound, TrueBeliever, Battleheart; Looses Underdog
+*1 new Seer perk: SummonCat
+*New custom starting armor for Berserker 
+*New Blacksmith and ironmonger backgrounds. Both give advantages to tool repair speed and tool consumption.
+*Staves now have a range of 2
+*Balance pass on all spells altering increasing fatigue and lowering range. ranger is range king
+*Changes magic damage scaling to be base off of a flat range plus Initiatvie over 100
+*Changes hand to hand to ((initiative + maxhp)/2) - 80)  
+*Adds magic missile projectile to seer. Needs a staff to be equiped.
+*Runed versions of all armours, shields, banners and weapons using standardised naming scheme. 
+*Added Bone Carver, Bough, Limb Lopper, Man Mangler, Meat Hacker, Skin Flayer Skull Breaker, Spine Smasher and Footman's axe.
+*Berserkers and Orc elites get the new weapons.
+*Adds Orc elites, truly terrifying beasts, helps make the late game not just swarms
+*Adds new orc weapons. Big weapons mostly seen on berserkers and elites
+*Fixes heart icon not found
+*Removes quivers from slingers
+*Fixes alignment on maids aprons and rabble tunics
+*New low teir armors for female boyers, female dayteler, femal farmhand, blacksmith, ironmonger
+*Improved small arrows, tools, medicine stash images.
+*Fixes issues due to faction size limits
+*Fixes crash when using the clear formation button
+*Nerfs sleep skill - can only sleep your target, ont adjacent ones
+*Adds slings and ammo 
+*Fixes wither crash on undead
+*Fixed shovel label
+*Took berserker commander head out the general pool since he looks funny with some hairs
+*Increased size of Rabble spawns.
+*Organized order of skills in toolbar
+*Rebalanced starting stats of all commander backgrounds.
+*Fix crash on inventory screen for hexen/firstborn contracts.
+
+
+Beta 0.9.4
+*Magic spell rework
+	-Each magic spell has it's own base Min/Max damage
+	-Min/Max damage is increased for every point of initiative over 100
+	-Ranged magic attacks use Range skill for hitchance
+	-Melee Magic attacks use Melee skill for hitchance
+*Reworkd Warlocks Wither, Rust and Deathtouch spells
+*Fixed Warlock Siphon giving health on attacks other than Siphon
+*Fixed being able to loot weapons off of Warlock summons
+*Berserk start gets 4 attributes with Stars.
+*Ranger start removes two start companions (roster slots still available) and give Guided Step perk instead (everyone in battle gets free pathfinder)
+*Medical supplies for Warlock summons will not be used during any contract that provides provisions.
+
+Beta 0.9.5
+*Lowers contract difficulty floor, making early game contracts easier
+*Raises contract difficulty roof, making late game contracts harder
+*Increases player strength scaling, making late game harder
+*Makes contract pay scale with player strength, making early game contracts pay less and late game pay more
+*Stops rabble spawning mid game, and makes them spawn in higher numbers
+*Increase ambush strength on caravans
+*Increases rabble hp, initiative and defenses, lowers their xp reward
+*Removes most early game weapons from zombies, goblin fighters and thugs
+*Poachers can spawn with bows as well as slings now
+*Fixed error that would prevent Orc elites from spawning
+*Fixed error that prevented scenarios from working
+*Fixed tool consumption rate error (was increasing rate instead of decrease). Fixed tooltips to show correct repair time.
+
+
+Beta 0.9.5 b 
+*Reduces late game reward payout scaling.
+*Fixes staves not working at two tiles 
+*Decreases sling range, increases accuracy slightly
+*Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
+*Miasma, chain lightning, firefield, miasma set to ranged
+*Miasma and firefield reduced to two rounds from three
+*Firefield and chain lightning require a staff
+*Triple strike requires a ranged weapon
+*Triple strike buffed to 0.5 damage per strike 
+*Discover location payout increased, decreased time before hint
+*Berserker commanders can no longer be converted into cultists
+*Warlock zombie summons now alway spawn with full armor health
+*Reduced Warlock low tier zombie summon with no weapons chance.
+
+Beta 0.10
+*Adds Orc Behemoth
+
+
+
