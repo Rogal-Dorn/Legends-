@@ -62,9 +62,10 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 			this.m.Threads = 5;
 		}
 
-		_properties.Bravery -= 3 * this.m.Threads;
-		_properties.Stamina -= 5 * this.m.Threads;
-		_properties.Initiative -= 7 * this.m.Threads;
+		_properties.HitpointsMult *= 1.0 - (this.m.Threads / 20.0);
+		_properties.BraveryMult *= 1.0 - (this.m.Threads / 20.0);
+		_properties.StaminaMult *= 1.0 - (this.m.Threads / 20.0);
+		_properties.InitiativeMult *= 1.0 - (this.m.Threads / 20.0);
 		_properties.MeleeSkillMult *= 1.0 - (this.m.Threads / 20.0);
 		_properties.RangedSkillMult *= 1.0 - (this.m.Threads / 20.0);
 		_properties.MeleeDefenseMult *= 1.0 - (this.m.Threads / 20.0);
