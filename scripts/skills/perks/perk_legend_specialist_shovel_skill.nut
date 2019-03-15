@@ -1,4 +1,4 @@
-this.legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill", {
+this.perk_legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -15,12 +15,12 @@ this.legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (!this.m.Container.hasSkill("actives.knock_out") && this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() = "weapon.legend_shovel")
+		if (!this.m.Container.hasSkill("actives.knock_out") && this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_shovel")
 		{
 			_properties.MeleeSkill += 15;
 			this.m.Container.add(this.new("scripts/skills/actives/knock_out"));
 		}
-		else if (this.m.Container.hasSkill("actives.knock_out") && !this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() = "weapon.legend_shovel")
+		else if (this.m.Container.hasSkill("actives.knock_out") && !this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_shovel")
 		{
 			this.m.Container.removeByID("actives.knock_out");
 		}

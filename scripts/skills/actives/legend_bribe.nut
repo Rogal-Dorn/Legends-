@@ -28,7 +28,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 	}
 
-		function getTooltip()
+		function getTooltip(  _targetTile )
 	{
 		local target = _targetTile.getEntity();
 		local xp = target.getBaseProperties().XP;
@@ -53,11 +53,11 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function isUsable()
+	function isUsable( _targetTile )
 	{
 		local target = _targetTile.getEntity();
 		local xp = target.getBaseProperties().XP;
-		if (this.World.Assets.getMoney() >= xp  && if (target.getTags().has("human")))
+		if (this.World.Assets.getMoney() >= xp  && target.getTags().has("human"))
 		{
 			return true;
 		}

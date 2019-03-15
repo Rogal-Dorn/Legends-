@@ -1,4 +1,4 @@
-this.legend_specialist_butcher_damage <- this.inherit("scripts/skills/skill", {
+this.perk_legend_specialist_butcher_damage <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -15,7 +15,8 @@ this.legend_specialist_butcher_damage <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() = "weapon.butchers_cleaver")
+		local item = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.butchers_cleaver")
 		{
 			_properties.DamageRegularMin += 10;
 			_properties.DamageRegularMax += 15;

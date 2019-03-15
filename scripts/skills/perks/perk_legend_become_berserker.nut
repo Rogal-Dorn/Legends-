@@ -19,7 +19,7 @@ this.perk_legend_become_berserker <- this.inherit("scripts/skills/skill", {
 		
 		local actor = this.getContainer().getActor();
 		local originalbackground = actor.getBackground().getID();
-		local newbackground = this.new(scripts/skills/backgrounds/legend_berserker_background");
+		local newbackground = this.new("scripts/skills/backgrounds/legend_berserker_background");
 		actor.getSkills().RemoveByID(originalbackground);
 		actor.getSkills().add(newbackground);
 	}
