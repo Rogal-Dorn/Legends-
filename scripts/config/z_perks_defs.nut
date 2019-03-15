@@ -1278,5 +1278,5 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaChantMastery = 137,
 	LegendValaTranceMastery = 138,
 	LegendValaChantDisharmony = 139,
-	LegendValaSpiritualBond = 140,
+	LegendValaSpiritualBond = 140
 };
