@@ -1082,7 +1082,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_vala_warden",
 		Script = "scripts/skills/perks/legend_vala_warden",
 		Name = "Warden",
-		Tooltip = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in a semi-physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. I can be beaten, but it never dies. The Warden\'s attributes are reinforced by the strength of the Vala\'s Resolve.",
+		Tooltip = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in a semi-physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. It can be beaten, but it never dies. The Warden\'s attributes are reinforced by the strength of the Vala\'s Resolve.",
 		Icon = "ui/perks/legend_vala_warden.png",
 		IconDisabled = "ui/perks/legend_vala_warden_sw.png"
 	},
@@ -1090,7 +1090,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_vala_threads",
 		Script = "scripts/skills/perks/legend_vala_threads",
 		Name = "Threads of Fate",
-		Tooltip = "Swinging your staff spins and twines the threads of fate of those you hit.\n\nThe Vala needs her staff equipped for this perk to work, and each point of Resolve increases her chance to apply a stacking debuff. Each stack lowers all of the target\'s main attributes and increases the amount of damage they receive.",
+		Tooltip = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and each point of Resolve increases her chance to apply a stacking debuff. Every stack lowers all main attributes and increases the amount of damage taken.",
 		Icon = "ui/perks/legend_vala_threads.png",
 		IconDisabled = "ui/perks/legend_vala_threads_sw.png"
 	},
@@ -1114,7 +1114,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_vala_trance_mastery",
 		Script = "scripts/skills/perks/legend_vala_trance_mastery",
 		Name = "Trance Mastery",
-		Tooltip = "Entering trances builds up 25% less Fatigue.",
+		Tooltip = "Entering trances builds up 25% less Fatigue. Successful trances are more likely to happen. Gain a chance to not drop out of trance when receiving damage.",
 		Icon = "ui/perks/legend_vala_trance_mastery.png",
 		IconDisabled = "ui/perks/legend_vala_trance_mastery_sw.png"
 	},
@@ -1122,7 +1122,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_vala_chant_disharmony",
 		Script = "scripts/skills/perks/legend_vala_chant_disharmony",
 		Name = "Disharmony",
-		Tooltip = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies adjacent to the Vala are unable to enforce Zones of Control, making it easy to slip past them.",
+		Tooltip = "A very disagreeable and cacophonous chant that makes it almost impossible for the Vala\'s enemies to focus and concentrate properly.\n\nEnemies adjacent to the Vala are unable to enforce Zones of Control, making it easy to slip past them.",
 		Icon = "ui/perks/legend_vala_chant_disharmony.png",
 		IconDisabled = "ui/perks/legend_vala_chant_disharmony_sw.png"
 	},
