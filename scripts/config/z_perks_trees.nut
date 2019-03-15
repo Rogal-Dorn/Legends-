@@ -77,7 +77,52 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		// 	break;
 		case "background.vazl_vala":
 			return gt.Const.Perks.TreeValaLookupMap;
-			break;				
+			break;
+		case "background.apprentice":
+			return gt.Const.Perks.TreeTemplateLookupMap;
+			break;
+		case "background.peddler":
+			return gt.Const.Perks.TreePeddlerLookupMap;
+			break;
+		case "background.miner":
+			return gt.Const.Perks.TreePickaxeLookupMap;
+			break;
+		case "background.militia":
+			return gt.Const.Perks.TreeMilitiaLookupMap;
+			break;
+		case "background.minstrel":
+			return gt.Const.Perks.TreeLuteLookupMap;
+			break;
+		case "background.female_minstrel":
+			return gt.Const.Perks.TreeLuteLookupMap;
+			break;
+		case "background.legend_blacksmith":
+			return gt.Const.Perks.TreeHammerLookupMap;
+			break;
+		case "background.legend_ironmonger":
+			return gt.Const.Perks.TreeHammerLookupMap;
+			break;
+		case "background.farmhand":
+			return gt.Const.Perks.TreePitchforkLookupMap;
+			break;
+		case "background.poacher":
+			return gt.Const.Perks.TreeShortbowLookupMap;
+			break;
+		case "background.gravedigger":
+			return gt.Const.Perks.TreeShovelLookupMap;
+			break;
+		case "background.graverobber":
+			return gt.Const.Perks.TreeShovelLookupMap;
+			break;
+		case "background.lumberjack":
+			return gt.Const.Perks.TreeWoodaxeLookupMap;
+			break;
+		case "background.thief":
+			return gt.Const.Perks.TreeKnifeLookupMap;
+			break;
+		case "background.female_thief":
+			return gt.Const.Perks.TreeKnifeLookupMap;
+			break;
 		default:
 			return  gt.Const.Perks.LookupMap;
 	}
@@ -138,6 +183,51 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		// 	break;
 		case "background.vazl_vala":
 			return gt.Const.Perks.PerksTreeVala;
+			break;
+		case "background.apprentice":
+			return gt.Const.Perks.PerksTreeTemplate;
+			break;
+		case "background.peddler":
+			return gt.Const.Perks.PerksTreePeddler;
+			break;
+		case "background.miner":
+			return gt.Const.Perks.PerksTreePickaxe;
+			break;
+		case "background.militia":
+			return gt.Const.Perks.PerksTreeMilitia;
+			break;
+		case "background.minstrel":
+			return gt.Const.Perks.PerksTreeLute;
+			break;
+		case "background.female_minstrel":
+			return gt.Const.Perks.PerksTreeLute;
+			break;
+		case "background.legend_blacksmith":
+			return gt.Const.Perks.PerksTreeHammer;
+			break;
+		case "background.legend_ironmonger":
+			return gt.Const.Perks.PerksTreeHammer;
+			break;
+		case "background.farmhand":
+			return gt.Const.Perks.PerksTreePitchfork;
+			break;
+		case "background.poacher":
+			return gt.Const.Perks.PerksTreeShortbow;
+			break;
+		case "background.gravedigger":
+			return gt.Const.Perks.PerksTreeShovel;
+			break;
+		case "background.graverobber":
+			return gt.Const.Perks.PerksTreeShovel;
+			break;
+		case "background.lumberjack":
+			return gt.Const.Perks.PerksTreeWoodaxe;
+			break;
+		case "background.thief":
+			return gt.Const.Perks.PerksTreeKnife;
+			break;
+		case "background.female_thief":
+			return gt.Const.Perks.PerksTreeKnife;
 			break;
 		default:
 			return  gt.Const.Perks.Perks;
