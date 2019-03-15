@@ -22,11 +22,12 @@ var CampScreenCommanderDialogModule = function(_parent)
 
     this.mTentListContainer = null
     this.mTentListScrollContainer = null;
-    this.mTents = null;
+    this.mTentMap = {};
 
-    this.mNumActive = 0;
+    this.mBroListContainer = null;
+    this.mBroListScrollContainer = null;
+
     this.IsMoodVisible = true;
-    this.mSlots = null;
 
     // buttons
     this.mLeaveButton = null;
@@ -95,7 +96,6 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     row.append(listContainerLayout)
     this.mTentListContainer = listContainerLayout.createList(1.24/*8.63*/);
     this.mTentListScrollContainer = this.mTentListContainer.findListScrollContainer();
-    //this.mTents = this.createActionSlots(this.mTentListScrollContainer)
 
     var row = $('<div class="middle-row"/>');
     column.append(row);
@@ -107,7 +107,8 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     row.append(stats);
     var listContainerLayout = $('<div class="l-list-container"/>');
     row.append(listContainerLayout);
-    this.mSlots = this.createBrotherSlots(listContainerLayout);
+    //this.mBroListContainer = listContainerLayout.createList(1.24/*8.63*/);
+    this.mBroListScrollContainer = listContainerLayout;//this.mBroListContainer.findListScrollContainer();
 
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');
@@ -140,6 +141,12 @@ CampScreenCommanderDialogModule.prototype.destroyDIV = function ()
     this.mTentListContainer.remove();
     this.mTentListContainer = null;
 
+    this.mBroListScrollContainer.empty();
+    this.mBroListScrollContainer = null;
+    //this.mBroListContainer.destroyList();
+    //this.mBroListContainer.remove();
+    //this.mBroListContainer = null;
+
     this.mDialogContainer.empty();
     this.mDialogContainer.remove();
     this.mDialogContainer = null;
@@ -148,37 +155,6 @@ CampScreenCommanderDialogModule.prototype.destroyDIV = function ()
     this.mContainer.remove();
     this.mContainer = null;
 };
-
-CampScreenCommanderDialogModule.prototype.createActionSlots = function (_parentDiv)
-{
-    var mSlots = [null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-
-    var dropHandler = function (ev, dd)
-    {
-        var drag = $(dd.drag);
-        var drop = $(dd.drop);
-        var proxy = $(dd.proxy);
-
-        if (proxy === undefined || proxy.data('idx') === undefined || drop === undefined || drop.data('idx') === undefined)
-        {
-            return false;
-        }
-
-        drag.removeClass('is-dragged');
-
-        // do the swapping
-        //self.swapSlots(drag.data('idx'), drop.data('idx'));
-    };
-    for (var i = 0; i < 14; ++i)
-    {
-        mSlots[i] = $('<div class="ui-control is-camp-action-slot"/>');
-        _parentDiv.append(mSlots[i]);
-        mSlots[i].data('idx', i);
-        mSlots[i].data('child', null);
-        mSlots[i].drop("end", dropHandler);
-    }
-    return mSlots;
-}
 
 CampScreenCommanderDialogModule.prototype.createBrotherSlots = function (_parentDiv)
 {
@@ -393,7 +369,7 @@ CampScreenCommanderDialogModule.prototype.updateAssets = function (_data)
 	//this.updateListEntryValues();
 }
 
-CampScreenCommanderDialogModule.prototype.loadFromData = function (_data)
+CampScreenCommanderDialogModule.prototype.loadFromData = function (_data, bro, camp)
 {
 	if(_data === undefined || _data === null)
     {
@@ -405,18 +381,25 @@ CampScreenCommanderDialogModule.prototype.loadFromData = function (_data)
     for(var i = 0; i < _data.buildings.length; ++i)
     {
 		var entry = _data.buildings[i];
-        this.addTentEntry(entry, i);
+        this.addTentEntry(entry, i, camp);
     }
-    
+
     this.mListScrollContainer.empty();
     for(var i = 0; i < _data.brothers.length; ++i)
     {
 		var entry = _data.brothers[i];
-        this.addListEntry(entry);
+        var el = this.addListEntry(entry, bro);
+        if (entry.ID === bro) {
+            this.mSelectedEntry = el;
+        }
     }
 
-    this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
-
+    if (this.mSelectedEntry)
+    {
+        this.selectListEntry( this.mSelectedEntry, true, camp);
+    } else {
+        this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
+    }
 };
 
 CampScreenCommanderDialogModule.prototype.notifyBackendModuleShown = function ()
@@ -445,7 +428,7 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
     if (_element !== null && _element.length > 0)
     {
         // check if this is already selected
-        //if (_element.hasClass('is-selected') !== true)
+        if (_element.hasClass('is-selected') !== true)
         {
             this.mTentListContainer.deselectListEntries();
             _element.addClass('is-selected');
@@ -457,20 +440,21 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
             }
 
             this.mSelectedTent = _element;
-            //this.updateDetailsPanel(this.mSelectedEntry);
-            //this.updateListEntryValues();
+            var id = _element.data('ID');
+            var self = this;
+            this.notifyBackendTentSelected(id, function(_brothers) {
+                self.onBrothersListLoaded(_brothers);
+            });            
         }
     }
     else
     {
         this.mSelectedTent = null;
-        //this.updateDetailsPanel(this.mSelectedEntry);
-        //this.updateListEntryValues();
     }
 };
 
 
-CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index)
+CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index, _camp)
 {
     var self = this;
     var dropHandler = function (ev, dd)
@@ -485,6 +469,15 @@ CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index
         }
 
         drag.removeClass('is-dragged');
+        var currentBro = self.mSelectedEntry.data('ID');
+        var currentTent = self.mSelectedTent.data('ID');
+        self.notifyBackendBrotherAssigned(drag.data('ID'), drop.data('id'), function( _load ) {
+            if (currentBro === drag.data('ID')) 
+            {
+                currentTent = drop.data('id');
+            }
+            self.loadFromData(_load, currentBro, currentTent);
+        })
 
         // do the swapping
         //self.swapSlots(drag.data('idx'), drop.data('idx'));
@@ -492,11 +485,13 @@ CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index
     var result = $('<div class="ui-control is-camp-action-slot"/>');
     this.mTentListScrollContainer.append(result);
     result.data('idx', _index);
+    result.data('id', _data.id);
     result.drop("end", dropHandler);
 
     var entry = $('<div class="ui-control list-entry"/>');
     result.append(entry);
     entry.data('entry', _data);
+    entry.data('ID', _data.id);
     entry.click(this, function(_event)
 	{
         var self = _event.data;
@@ -507,10 +502,16 @@ CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index
     entry.append(name);
     var image = $('<div class="is-reserve-slot"/>');
     entry.append(image);
+    this.mTentMap[_data.id] = entry;
+
+    if (_camp === _data.id)
+    {
+        this.selectTentEntry(entry);
+    }
 };
 
 
-CampScreenCommanderDialogModule.prototype.selectListEntry = function(_element, _scrollToEntry)
+CampScreenCommanderDialogModule.prototype.selectListEntry = function(_element, _scrollToEntry, _camp)
 {
     if (_element !== null && _element.length > 0)
     {
@@ -527,15 +528,17 @@ CampScreenCommanderDialogModule.prototype.selectListEntry = function(_element, _
             }
 
             this.mSelectedEntry = _element;
-            //this.updateDetailsPanel(this.mSelectedEntry);
-            //this.updateListEntryValues();
+            if (!_camp)
+            {
+                var data = _element.data('entry');
+                _camp = data.CampAssignment;
+            }
+            this.selectTentEntry( this.mTentMap[_camp], true);
         }
     }
     else
     {
         this.mSelectedEntry = null;
-        //this.updateDetailsPanel(this.mSelectedEntry);
-        //this.updateListEntryValues();
     }
 };
 
@@ -547,6 +550,7 @@ CampScreenCommanderDialogModule.prototype.addListEntry = function (_data)
 
     var entry = $('<div class="ui-control list-entry"/>');
     result.append(entry);
+    entry.data('ID', _data.id);
     entry.data('entry', _data);
     entry.click(this, function(_event)
 	{
@@ -591,13 +595,17 @@ CampScreenCommanderDialogModule.prototype.addListEntry = function (_data)
     row.append(name);
     // var assetsCenterContainer = $('<div class="l-assets-center-container"/>');
     // row.append(assetsCenterContainer);
+    return entry
 };
 
 
 
-CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_parentDiv, _data, _index, _allowReordering)
+CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _index)
 {
+
     var self = this;
+    var _parentDiv = $('<div class="ui-control is-brother-slot is-reserve-slot"/>')
+    this.mBroListScrollContainer.append(_parentDiv);
 
     // create: slot & background layer
     var result = _parentDiv.createListBrother(_data[CharacterScreenIdentifier.Entity.Id]);
@@ -605,72 +613,64 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_parentD
     result.data('ID', _data[CharacterScreenIdentifier.Entity.Id]);
     result.data('idx', _index);
 
-    this.mSlots[_index].data('child', result);
-
-    if (_index <= 27)
-        ++this.mNumActive;
-
     // drag handler
-    if (_allowReordering)
+    result.drag("start", function (ev, dd)
     {
-        result.drag("start", function (ev, dd)
+        // dont allow drag if this is an empty slot
+        /*var data = $(this).data('item');
+        if (data.isEmpty === true)
         {
-            // dont allow drag if this is an empty slot
-            /*var data = $(this).data('item');
-            if (data.isEmpty === true)
-            {
-                return false;
-            }*/
+            return false;
+        }*/
 
-            // build proxy
-            var proxy = $('<div class="ui-control brother is-proxy"/>');
-            proxy.appendTo(document.body);
-            proxy.data('idx', _index);
+        // build proxy
+        var proxy = $('<div class="ui-control brother is-proxy"/>');
+        proxy.appendTo(document.body);
+        proxy.data('idx', _index);
 
-            var imageLayer = result.find('.image-layer:first');
-            if (imageLayer.length > 0)
-            {
-                imageLayer = imageLayer.clone();
-                proxy.append(imageLayer);
-            }
-
-            $(dd.drag).addClass('is-dragged');
-
-            return proxy;
-        }, { distance: 3 });
-
-        result.drag(function (ev, dd)
+        var imageLayer = result.find('.image-layer:first');
+        if (imageLayer.length > 0)
         {
-            $(dd.proxy).css({ top: dd.offsetY, left: dd.offsetX });
-        }, { relative: false, distance: 3 });
+            imageLayer = imageLayer.clone();
+            proxy.append(imageLayer);
+        }
 
-        result.drag("end", function (ev, dd)
+        $(dd.drag).addClass('is-dragged');
+
+        return proxy;
+    }, { distance: 3 });
+
+    result.drag(function (ev, dd)
+    {
+        $(dd.proxy).css({ top: dd.offsetY, left: dd.offsetX });
+    }, { relative: false, distance: 3 });
+
+    result.drag("end", function (ev, dd)
+    {
+        var drag = $(dd.drag);
+        var drop = $(dd.drop);
+        var proxy = $(dd.proxy);
+
+        var allowDragEnd = true; // TODO: check what we're dropping onto
+
+        // not dropped into anything?
+        if (drop.length === 0 || allowDragEnd === false)
         {
-            var drag = $(dd.drag);
-            var drop = $(dd.drop);
-            var proxy = $(dd.proxy);
-
-            var allowDragEnd = true; // TODO: check what we're dropping onto
-
-            // not dropped into anything?
-            if (drop.length === 0 || allowDragEnd === false)
+            proxy.velocity("finish", true).velocity({ top: dd.originalY, left: dd.originalX },
             {
-                proxy.velocity("finish", true).velocity({ top: dd.originalY, left: dd.originalX },
-			    {
-			        duration: 300,
-			        complete: function ()
-			        {
-			            proxy.remove();
-			            drag.removeClass('is-dragged');
-			        }
-			    });
-            }
-            else
-            {
-                proxy.remove();
-            }
-        }, { drop: '.is-brother-slot' });
-    }
+                duration: 300,
+                complete: function ()
+                {
+                    proxy.remove();
+                    drag.removeClass('is-dragged');
+                }
+            });
+        }
+        else
+        {
+            proxy.remove();
+        }
+    }, { drop: '.is-camp-action-slot' });
 
     // update image & name
     var character = _data[CharacterScreenIdentifier.Entity.Character.Key];
@@ -714,22 +714,9 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_parentD
 };
 
 
-CampScreenCommanderDialogModule.prototype.clearBrothersList = function ()
-{
-    for(var i=0; i != this.mSlots.length; ++i)
-    {
-        this.mSlots[i].empty();
-        this.mSlots[i].data('child', null);
-    }
-
-    this.mNumActive = 0;
-};
-
-
 CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brothers)
 {
-	this.clearBrothersList();
-
+    this.mBroListScrollContainer.empty();
 	if (_brothers === null || !jQuery.isArray(_brothers) || _brothers.length === 0)
 	{
 		return;
@@ -741,43 +728,19 @@ CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brot
 
 		if (brother !== null)
 		{
-		    this.addBrotherSlotDIV(this.mSlots[i], brother, i, true);
+		    this.addBrotherSlotDIV(brother, i);
 		}
 	}
 	//this.updateBrotherSlotLocks(inventoryMode);
 	//this.updateRosterLabel();
 };
 
-
-CampScreenCommanderDialogModule.prototype.clearTentsList = function ()
+CampScreenCommanderDialogModule.prototype.notifyBackendTentSelected = function (_entryID, _callback)
 {
-    for(var i=0; i != this.mTents.length; ++i)
-    {
-        this.mSlots[i].empty();
-        this.mSlots[i].data('child', null);
-    }
-
-    this.mNumActive = 0;
+	SQ.call(this.mSQHandle, 'onTentSelected', _entryID, _callback);
 };
 
-CampScreenCommanderDialogModule.prototype.onTentsListLoaded = function (_tents)
+CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = function (_broID, _tentID, _callback)
 {
-	this.clearTentsList();
-
-	if (_tents === null || !jQuery.isArray(_tents) || _tents.length === 0)
-	{
-		return;
-	}
-
-	for (var i = 0; i < _tents.length; ++i)
-	{
-	    var tent = _tents[i];
-
-		if (tent !== null)
-		{
-		    this.addTentSlotDIV(this.mTents[i], tent, i, true);
-		}
-	}
-	//this.updateBrotherSlotLocks(inventoryMode);
-	//this.updateRosterLabel();
+	SQ.call(this.mSQHandle, 'onBroAssigned', [_broID, _tentID], _callback);
 };

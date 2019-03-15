@@ -81,6 +81,32 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		return result;
 	}
 
+	function onTentSelected ( _id )
+	{
+		local brothers = this.World.getPlayerRoster().getAll();
+		local roster = [];
+
+		foreach( b in brothers )
+		{
+			if (b.getCampAssignment() != _id)
+			{
+				continue
+			}
+			roster.push(this.UIDataHelper.convertEntityToUIData(b, null));
+		}
+
+		return roster
+	}
+
+	function onBroAssigned ( _data )
+	{
+		local broID = _data[0];
+		local campID = _data[1];
+		local bro = this.Tactical.getEntityByID(broID);
+		bro.setCampAssignment(campID);
+		return this.queryLoad();
+	}
+
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();
