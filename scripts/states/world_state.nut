@@ -3664,6 +3664,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.FactionManager.clear();
 		this.World.Statistics.clear();
 		this.World.Assets.clear();
+		this.World.Camp.clear();
 		this.setEscortedEntity(null);
 		this.logInfo("Save version: " + _in.getMetaData().getVersion());
 	}
@@ -3693,6 +3694,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Statistics.onSerialize(_out);
 		_out.writeBool(this.m.IsCampingAllowed);
 		_out.writeI32(this.m.CombatSeed);
+		this.World.Camp.onSerialize(_out);
 	}
 
 	function onDeserialize( _in )
@@ -3771,6 +3773,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.State.setEscortedEntity(null);
 			this.World.State.getPlayer().setVisible(true);
 			this.World.Assets.setUseProvisions(true);
+		}
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.World.Camp.onDeserialize(_in);
 		}
 	}
 

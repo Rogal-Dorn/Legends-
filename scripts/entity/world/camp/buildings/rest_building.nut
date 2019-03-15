@@ -139,4 +139,15 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.camp_building.onClicked(_campScreen);
 	}
 
+    
+	function onSerialize( _out )
+	{
+		this.camp_building.onSerialize(_out);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.camp_building.onDeserialize(_in);
+	}
+    
 });
