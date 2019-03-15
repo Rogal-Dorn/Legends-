@@ -1,4 +1,4 @@
-this.legend_specialist_pickaxe_skill <- this.inherit("scripts/skills/skill", {
+this.perk_legend_specialist_pickaxe_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -15,7 +15,7 @@ this.legend_specialist_pickaxe_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() = "weapon.pickaxe")
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.pickaxe")
 		{
 		_properties.MeleeSkill += 15;
 		}

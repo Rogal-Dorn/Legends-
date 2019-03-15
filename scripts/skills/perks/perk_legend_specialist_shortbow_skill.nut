@@ -1,4 +1,4 @@
-this.legend_specialist_shortbow_skill <- this.inherit("scripts/skills/skill", {
+this.perk_legend_specialist_shortbow_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -15,7 +15,7 @@ this.legend_specialist_shortbow_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() = "weapon.short_bow")
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.short_bow")
 		{
 		_properties.RangedSkill += 15;
 		_properties.ArmorDamageMult += 0.25;

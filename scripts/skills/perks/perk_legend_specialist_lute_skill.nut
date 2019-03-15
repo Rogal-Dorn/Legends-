@@ -1,4 +1,4 @@
-this.legend_specialist_lute_skill <- this.inherit("scripts/skills/skill", {
+this.perk_legend_specialist_lute_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -15,12 +15,12 @@ this.legend_specialist_lute_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (!this.m.Container.hasSkill("actives.legend_pull") && this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() = "weapon.lute")
+		if (!this.m.Container.hasSkill("actives.legend_pull") && this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.lute")
 		{
 			_properties.MeleeSkill += 15;
 			this.m.Container.add(this.new("scripts/skills/actives/legend_pull"));
 		}
-		else if (this.m.Container.hasSkill("actives.legend_pull") && !this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() = "weapon.lute")
+		else if (this.m.Container.hasSkill("actives.legend_pull") && !this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.lute")
 		{
 			this.m.Container.removeByID("actives.legend_pull");
 		}
