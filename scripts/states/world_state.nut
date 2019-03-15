@@ -3778,6 +3778,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Camp.onDeserialize(_in);
 		}
+
+		if (this.Const.LegendMod.Beta10 && !this.World.Tags.get("IsLegendCampSupport"))
+		{
+			this.World.Tags.set("IsLegendCampSupport", true);
+			this.Time.scheduleEvent(this.TimeUnit.Real, 6000, function ( _tag )
+			{
+				this.showDialogPopup("Old Legends Campaign Loaded", "This campaign was created before you activated the Camp mechanics were added. Please be aware that even though you can continue to play this campaign, there may be unstability and odd behavior. It is recommend to start a new campaign.", null, null, true);
+			}.bindenv(this), null);
+		}
+
 	}
 
 });
