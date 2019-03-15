@@ -2440,6 +2440,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		this.spawnTerrainDropdownEffect(_tile);
 		this.m.Skills.update();
+		this.m.Skills.MovementCompleted();
 		this.m.Items.onMovementFinished();
 		this.setDirty(true);
 	}

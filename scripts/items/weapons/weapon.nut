@@ -550,6 +550,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		this.item.onDeserialize(_in);
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
 		this.m.Ammo = _in.readU16();
+
 		if (this.isRuned())
 		{
 			this.updateRuneSigil();

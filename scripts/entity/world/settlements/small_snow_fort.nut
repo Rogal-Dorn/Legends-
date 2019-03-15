@@ -42,7 +42,7 @@ this.small_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Hakonswold"
 		]);
 		this.m.DraftList = [
-			"vazl_shieldmaiden_background",
+			"legend_shieldmaiden_background",
 			"female_beggar_background",
 			"houndmaster_background",
 			"brawler_background",

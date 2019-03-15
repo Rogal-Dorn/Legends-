@@ -32,8 +32,7 @@ this.large_snow_village <- this.inherit("scripts/entity/world/settlement", {
 			"Ovarsted"
 		]);
 		this.m.DraftList = [
-			"vazl_inventor_background",
-			"vazl_shieldmaiden_background",
+			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"female_beggar_background",
 			"female_bowyer_background",
@@ -74,7 +73,8 @@ this.large_snow_village <- this.inherit("scripts/entity/world/settlement", {
 			"raider_background",
 			"raider_background",
 			"sellsword_background",
-			"swordmaster_background"
+			"swordmaster_background",
+			"legend_inventor_background"
 		];
 
 		if (this.Const.DLC.Unhold)

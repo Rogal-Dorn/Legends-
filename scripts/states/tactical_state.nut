@@ -489,11 +489,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		local CannibalisticButchersInRoster = 0;
 		foreach (bro in EntireCompanyRoster)
 		{
-			if (bro.isAlive() && bro.getBackground().getID() == "background.vazl_cannibal")
+			if (bro.isAlive() && bro.getBackground().getID() == "background.legend_cannibal")
 			{
 				CannibalsInRoster += 1;
 			}
-			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
+			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.legend_cannibalistic"))
 			{
 				CannibalisticButchersInRoster += 1;
 			}
@@ -525,14 +525,14 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				{
 					if (CannibalisticButchersInRoster >= 1)
 					{
-						local humanmeat = this.new("scripts/items/supplies/vazl_yummy_sausages");
+						local humanmeat = this.new("scripts/items/supplies/legend_yummy_sausages");
 						humanmeat.randomizeAmount();
 						humanmeat.randomizeBestBefore();
 						loot.push(humanmeat);
 					}
 					else if (CannibalisticButchersInRoster < 1 && CannibalsInRoster >= 1)
 					{
-						local humanmeat = this.new("scripts/items/supplies/vazl_human_parts");
+						local humanmeat = this.new("scripts/items/supplies/legend_human_parts");
 						humanmeat.randomizeAmount();
 						humanmeat.randomizeBestBefore();
 						loot.push(humanmeat);

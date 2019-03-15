@@ -34,7 +34,6 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"Niedermark"
 		]);
 		this.m.DraftList = [
-			"vazl_inventor_background",
 			"female_beggar_background",
 			"female_beggar_background",
 			"brawler_background",
@@ -79,7 +78,8 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"swordmaster_background",
 			"cripple_background",
-			"eunuch_background"
+			"eunuch_background",
+			"legend_inventor_background"
 		];
 
 		if (this.Const.DLC.Unhold)

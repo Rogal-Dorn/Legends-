@@ -29,8 +29,7 @@ this.large_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"Konigshain"
 		]);
 		this.m.DraftList = [
-			"vazl_inventor_background",
-			"vazl_shieldmaiden_background",
+			"legend_shieldmaiden_background"
 			"apprentice_background",
 			"beggar_background",
 			"female_bowyer_background",
@@ -68,7 +67,8 @@ this.large_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"hedge_knight_background",
 			"retired_soldier_background",
 			"cripple_background",
-			"eunuch_background"
+			"eunuch_background",
+			"legend_inventor_background"
 		];
 
 		if (this.Const.DLC.Unhold)

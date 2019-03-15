@@ -227,5 +227,9 @@ gt.Const.CharacterTraits <- [
 	[
 		"trait.huge",
 		"scripts/skills/traits/huge_trait"
+	],
+	[
+		"trait.lucky",
+		"scripts/skills/traits/lucky_trait"
 	]
 ];

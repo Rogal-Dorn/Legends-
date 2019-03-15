@@ -32,8 +32,7 @@ this.large_tundra_village <- this.inherit("scripts/entity/world/settlement", {
 			"Lorrested"
 		]);
 		this.m.DraftList = [
-			"vazl_inventor_background",
-			"vazl_shieldmaiden_background",
+			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"female_beggar_background",
 			"brawler_background",
@@ -66,7 +65,8 @@ this.large_tundra_village <- this.inherit("scripts/entity/world/settlement", {
 			"female_disowned_noble_background",
 			"raider_background",
 			"sellsword_background",
-			"swordmaster_background"
+			"swordmaster_background",
+			"legend_inventor_background"
 		];
 		this.m.UIDescription = "A large city and trading hub surrounded by barren tundra";
 		this.m.Description = "Surrounded by barren tundra, this large city has lasted as an important trading hub and home to thinkers and fine arts.";

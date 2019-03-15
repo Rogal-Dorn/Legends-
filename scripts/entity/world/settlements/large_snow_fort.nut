@@ -37,7 +37,6 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Jarlsborg"
 		]);
 		this.m.DraftList = [
-			"vazl_shieldmaiden_background",
 			"apprentice_background",
 			"brawler_background",
 			"female_daytaler_background",
@@ -72,7 +71,8 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"sellsword_background",
 			"squire_background",
-			"cripple_background"
+			"cripple_background",
+			"legend_shieldmaiden_background"
 		];
 
 		if (this.Const.DLC.Unhold)
