@@ -32,6 +32,11 @@ this.camp_manager <- {
         this.m.Buildings = [];
     }
 
+	function clear()
+	{
+		this.m.Buildings = [];
+	}
+
     function init()
     {
         foreach(b in this.m.Buildings)
@@ -185,7 +190,7 @@ this.camp_manager <- {
                 b.onDeserialize(_in);
                 this.m.Buildings.push(b);
 			}
-		}        
+		} 
 		_in.readBool();
 	}
 

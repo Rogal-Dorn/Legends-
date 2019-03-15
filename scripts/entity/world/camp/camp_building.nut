@@ -147,14 +147,12 @@ this.camp_building <- {
 		});
 	}
 
-    function onSerialize( _out )
+	function onSerialize( _out )
 	{
-		_out.writeBool(false);
 	}
 
 	function onDeserialize( _in )
 	{
-		_in.readBool();
 	}
 
 }
