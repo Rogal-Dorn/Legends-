@@ -23,11 +23,13 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (this.skill.isUsable() && !this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_currently_chanting"))
+		local actor = this.getContainer().getActor();
+
+		if (this.skill.isUsable() && !actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
 		{
-			if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
+			if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
 			{
-				if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_staff_vala")
+				if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_staff_vala")
 				{
 					return true;
 				}
@@ -50,6 +52,8 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local actor = this.getContainer().getActor();
+
 		local ret = [
 			{
 				id = 1,
@@ -74,7 +78,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			},
 		];
 
-		if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala"))
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala"))
 		{
 			ret.push({
 				id = 9,
@@ -84,7 +88,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_currently_chanting"))
+		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
 		{
 			ret.push({
 				id = 10,
@@ -169,7 +173,9 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
+		local actor = this.getContainer().getActor();
+
+		if (actor.getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
 		{
 			this.m.FatigueCostMult = 0.75;
 		}

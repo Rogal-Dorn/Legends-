@@ -69,7 +69,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		// case "background.vazl_inventor":
 		// 	return gt.Const.Perks.TreeInventorLookupMap;
 		// 	break;
-		case "background.vazl_vala":
+		case "background.legend_vala":
 			return gt.Const.Perks.TreeValaLookupMap;
 			break;				
 		default:
@@ -124,7 +124,7 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		// case "background.vazl_inventor":
 		// 	return gt.Const.Perks.PerksTreeInventor;
 		// 	break;
-		case "background.vazl_vala":
+		case "background.legend_vala":
 			return gt.Const.Perks.PerksTreeVala;
 			break;
 		default:
