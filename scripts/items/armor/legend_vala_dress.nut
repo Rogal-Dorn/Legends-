@@ -5,7 +5,7 @@ this.legend_vala_dress <- this.inherit("scripts/items/armor/armor", {
 		this.armor.create();
 		this.m.ID = "armor.body.legend_vala_dress";
 		this.m.Name = "Vala\'s Dress";
-		this.m.Description = "A strong leather dress worn by a vala on her travels";
+		this.m.Description = "A strong leather dress worn by a vala on her travels.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = 507;
