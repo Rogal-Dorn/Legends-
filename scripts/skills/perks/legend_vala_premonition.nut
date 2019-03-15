@@ -57,7 +57,7 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 	{
 		local RerollBonus = 10.0 + ((this.getContainer().getActor().getLevel() * 10.0) / this.Const.LevelXP.len());
 
-		if (RerollBonus > 20)
+		if (RerollBonus >= 20)
 		{
 			RerollBonus = 20;
 		}
@@ -65,7 +65,7 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 		local Attraction = 10.0 + ((this.getContainer().getActor().getLevel() * 10.0) / this.Const.LevelXP.len());
 		local AttractionMult = 1.0 - ((Attraction + 0.0) / 100.0);
 
-		if (AttractionMult < 0.8)
+		if (AttractionMult <= 0.8)
 		{
 			AttractionMult = 0.8;
 		}

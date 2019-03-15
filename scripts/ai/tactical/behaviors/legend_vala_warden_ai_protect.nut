@@ -20,6 +20,7 @@ this.legend_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior
 		this.m.IsWaitingAfterMove = false;
 		this.m.IsHoldingPosition = false;
 		local score = this.getProperties().BehaviorMult[this.m.ID];
+		local WardenTile = _entity.getTile();
 		local AllOpponents = this.getAgent().getKnownOpponents();
 		local ZOC = 0;
 
