@@ -34,6 +34,8 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"female_bowyer_background",
 			"caravan_hand_background",
 			"caravan_hand_background",
+			"legend_donkey",
+			"legend_donkey",
 			"caravan_hand_background",
 			"gambler_background",
 			"female_daytaler_background",

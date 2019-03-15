@@ -39,6 +39,7 @@ this.large_tundra_village <- this.inherit("scripts/entity/world/settlement", {
 			"brawler_background",
 			"brawler_background",
 			"caravan_hand_background",
+			"legend_donkey",
 			"cultist_background",
 			"cultist_background",
 			"female_daytaler_background",
