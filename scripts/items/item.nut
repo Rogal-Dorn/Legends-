@@ -851,7 +851,6 @@ this.item <- {
 		local text = ""
 		for (local i = 0; i < iconLargeParts.len(); i = ++i)
 		{
-			this.logInfo(iconLargeParts[i]);
 			if (i == iconLargeParts.len() - 1)
 			{
 				text = text + "runed_" + iconLargeParts[i]
