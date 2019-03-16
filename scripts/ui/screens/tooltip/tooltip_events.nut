@@ -1125,7 +1125,6 @@ this.tooltip_events <- {
 			foreach (bro in this.World.getPlayerRoster().getAll())
 			{
 				local brofood = this.Math.ceil( bro.getDailyFood() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type]);
-				dailyFood = dailyFood + brofood;
 				brolist.push([brofood, bro.getName()]);
 			}
 
