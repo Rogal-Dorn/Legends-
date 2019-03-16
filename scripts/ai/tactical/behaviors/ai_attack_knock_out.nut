@@ -3,7 +3,8 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 		TargetTile = null,
 		PossibleSkills = [
 			"actives.knock_out",
-			"actives.strike_down"
+			"actives.strike_down",
+			"actives.legend_staff_knock_out"
 		],
 		Skill = null
 	},

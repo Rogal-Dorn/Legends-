@@ -7,6 +7,12 @@
         o.m.DeathBloodAmount = 1.5;
         o.m.BloodPoolScale = 1.25;
     }
+    local fn = o.onMovementFinish;
+    o.onMovementFinish = function (_tile)
+    {
+        fn(_tile);
+        this.m.Skills.MovementCompleted();
+    }
 
     o.isArmedWithMagicStaff <- function()
 	{

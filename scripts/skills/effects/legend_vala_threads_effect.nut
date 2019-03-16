@@ -6,9 +6,9 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_vala_threads_effect";
 		this.m.Name = "Threads of Fate";
-		this.m.Icon = "skills/status_effect_87.png";
-		this.m.IconMini = "status_effect_87_mini";
-		this.m.Overlay = "status_effect_87";
+		this.m.Icon = "skills/status_effect_78.png";
+		this.m.IconMini = "status_effect_78_mini";
+		this.m.Overlay = "status_effect_78";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsActive = false;
@@ -79,7 +79,7 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.Threads < 5)
 		{
 			++this.m.Threads;
-			this.spawnIcon("status_effect_87", this.getContainer().getActor().getTile());
+			this.spawnIcon("status_effect_78", this.getContainer().getActor().getTile());
 		}
 	}
 

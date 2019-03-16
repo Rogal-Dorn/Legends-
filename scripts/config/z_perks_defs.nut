@@ -1025,32 +1025,32 @@ gt.Const.Perks.PerkDefObjects <- [
 	{
 		ID = "perk.legend_vala_inscribe_weapon",
 		Script = "scripts/skills/perks/legend_vala_inscribe_weapon",
-		Name = "Weapon Rune Sigils",
-		Tooltip = "Allows the Vala to inscribe rocks with random weapon rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: accuracy, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with weapon rune sigils again.",
+		Name = "Rune Sigils: Weapons",
+		Tooltip = "Allows the Vala to inscribe rocks with random weapon-specific rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: accuracy, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with these rune sigils again.",
 		Icon = "ui/perks/legend_vala_inscribe_weapon.png",
 		IconDisabled = "ui/perks/legend_vala_inscribe_weapon_sw.png"
 	},
 	{
 		ID = "perk.legend_vala_inscribe_helmet",
 		Script = "scripts/skills/perks/legend_vala_inscribe_helmet",
-		Name = "Helmet Rune Sigils",
-		Tooltip = "Allows the Vala to inscribe rocks with random helmet rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with helmet rune sigils again.",
+		Name = "Rune Sigils: Helmets",
+		Tooltip = "Allows the Vala to inscribe rocks with random helmet-specific rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with these rune sigils again.",
 		Icon = "ui/perks/legend_vala_inscribe_helmet.png",
 		IconDisabled = "ui/perks/legend_vala_inscribe_helmet_sw.png"
 	},
 	{
 		ID = "perk.legend_vala_inscribe_armor",
 		Script = "scripts/skills/perks/legend_vala_inscribe_armor",
-		Name = "Armor Rune Sigils",
-		Tooltip = "Allows the Vala to inscribe rocks with random armor rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with armor rune sigils again.",
+		Name = "Rune Sigils: Armors",
+		Tooltip = "Allows the Vala to inscribe rocks with random armor-specific rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with these rune sigils again.",
 		Icon = "ui/perks/legend_vala_inscribe_armor.png",
 		IconDisabled = "ui/perks/legend_vala_inscribe_armor_sw.png"
 	},
 	{
 		ID = "perk.legend_vala_inscribe_shield",
 		Script = "scripts/skills/perks/legend_vala_inscribe_shield",
-		Name = "Shield Rune Sigils",
-		Tooltip = "Allows the Vala to inscribe rocks with random shield rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with shield rune sigils again.",
+		Name = "Rune Sigils: Shields",
+		Tooltip = "Allows the Vala to inscribe rocks with random shield-specific rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with these rune sigils again.",
 		Icon = "ui/perks/legend_vala_inscribe_shield.png",
 		IconDisabled = "ui/perks/legend_vala_inscribe_shield_sw.png"
 	},
@@ -1133,6 +1133,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, based on the Vala\'s Resolve and up to a maximum of 50%.\n\nThis perk does nothing unless the Vala has the Warden perk.",
 		Icon = "ui/perks/legend_vala_spiritual_bond.png",
 		IconDisabled = "ui/perks/legend_vala_spiritual_bond_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_trance_perspective",
+		Script = "scripts/skills/perks/legend_vala_trance_perspective",
+		Name = "Incorporeal Perspective",
+		Tooltip = "Incorporeal Perspective.",
+		Icon = "ui/perks/legend_vala_trance_perspective.png",
+		IconDisabled = "ui/perks/legend_vala_trance_perspective_sw.png"
 	}	
 ];
 
@@ -1278,5 +1286,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaChantMastery = 137,
 	LegendValaTranceMastery = 138,
 	LegendValaChantDisharmony = 139,
-	LegendValaSpiritualBond = 140
+	LegendValaSpiritualBond = 140,
+	LegendValaPerspective = 141
 };
