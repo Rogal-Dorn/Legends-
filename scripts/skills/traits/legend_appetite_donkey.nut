@@ -43,7 +43,7 @@ this.legend_appetite_donkey <- this.inherit("scripts/skills/traits/character_tra
 
 	function onUpdate( _properties )
 	{
-		_properties.DailyFood += 6.0;
+		_properties.DailyFood += 4.0;
 	}
 
 });
