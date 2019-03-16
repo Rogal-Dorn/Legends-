@@ -28,47 +28,55 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 	}
 
-		function getTooltip(  _targetTile )
+
+		function getTooltip( )
 	{
-		local target = _targetTile.getEntity();
-		local xp = target.getBaseProperties().XP;
-		local cost = xp * -1;
 		local ret = this.getDefaultTooltip();
 		ret.extend([
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target humans."
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target humans or goblins."
 			}
 		]);
 			ret.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "Will cost [color=" + this.Const.UI.Color.PositiveValue + "]" + cost + "[/color] crowns"
+				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"] TODO [/color] crowns"
 			});
 
 		return ret;
 	}
 
-
-	function isUsable( _targetTile )
+	function onVerifyTarget( _originTile, _targetTile )
 	{
-		local target = _targetTile.getEntity();
-		local xp = target.getBaseProperties().XP;
-		if (this.World.Assets.getMoney() >= xp  && target.getTags().has("human"))
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
 		{
-			return true;
+			return false;
 		}
 
-	}
+		local target = _targetTile.getEntity();
+		local xp = target.getXPValue();
+		local money = this.World.Assets.getMoney();
+		if (!target.getTags().has("human"))
+		{
+			return false;
+		}
 
+		if (money < xp )
+		{
+			return false;
+		}
+
+		return true;
+	}
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
-		local xp = target.getBaseProperties().XP;
-		local cost = xp * -1;
+		local xp = target.getXPValue();
+		local cost = xp * -1.5;
 		this.World.Assets.addMoney(cost);
 		target.setMoraleState(this.Const.MoraleState.Fleeing);
 		return true;

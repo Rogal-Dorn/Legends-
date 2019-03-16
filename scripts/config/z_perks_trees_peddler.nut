@@ -37,8 +37,8 @@ local PeddlerTree = [
 		gt.Const.Perks.PerkDefs.Brawny,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
-		gt.Const.Perks.PerkDefs.LegendBarterConvincing,
-		gt.Const.Perks.PerkDefs.Taunt
+		gt.Const.Perks.PerkDefs.Taunt,
+		gt.Const.Perks.PerkDefs.LegendBarterConvincing
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,
@@ -73,8 +73,8 @@ local PeddlerTree = [
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
-		gt.Const.Perks.PerkDefs.LegendBarterTrustworthy,
-		gt.Const.Perks.PerkDefs.Indomitable
+		gt.Const.Perks.PerkDefs.Indomitable,
+		gt.Const.Perks.PerkDefs.LegendBarterTrustworthy
 		
 	],
 	[],

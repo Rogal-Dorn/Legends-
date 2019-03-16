@@ -327,9 +327,9 @@ gt.Const.World.MovementSettings <- {
 	PlayerDirectMoveRadius = 400.0
 };
 gt.Const.World.SpeedSettings <- {
-	FastMult = 2.0,
-	EscortMult = 3.75,
-	CampMult = 4.0
+	FastMult = 2.5,
+	EscortMult = 5,
+	CampMult = 7.5
 };
 gt.Const.World.CombatSettings <- {
 	CombatDistance = 100,

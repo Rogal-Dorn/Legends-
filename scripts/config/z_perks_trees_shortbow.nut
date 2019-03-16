@@ -16,8 +16,7 @@ local ShortbowTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.LegendSpecialistShortbowDamage,
-		gt.Const.Perks.PerkDefs.Student
+		gt.Const.Perks.PerkDefs.LegendSpecialistShortbowDamage
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -35,9 +34,9 @@ local ShortbowTree = [
 		gt.Const.Perks.PerkDefs.ShieldExpert,
 		gt.Const.Perks.PerkDefs.Brawny,
 		gt.Const.Perks.PerkDefs.Rotation,
-		gt.Const.Perks.PerkDefs.LegendSpecialistShortbowSkill,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
-		gt.Const.Perks.PerkDefs.Taunt
+		gt.Const.Perks.PerkDefs.Taunt,
+		gt.Const.Perks.PerkDefs.LegendSpecialistShortbowSkill
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,

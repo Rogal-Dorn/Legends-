@@ -219,10 +219,13 @@ Beta 0.10
 -legendary locations brush images added (can be called by their name preceded by "legend_"
 -player figure brush images added (can be called by their exact name)
 -Inventory tool icons added for two carts, donkey and tent to allow creation of items for each. 
--placeholder entity and item scripts for donkey and carts
 
 
 Adds specialisation skills for butcher's cleaver, hammer, knife, lute, militia spear, pickaxe, pitchfork, shortbow, shovel and woodaxe. 
 Creates wizard tower and event
 Creates chain hook skill, adds to the chain, adds to the ai hook ability and changes optimum engage range for orc young. 
-
+Makes staff apply daze instead of stun, staff bash and staff knockout skills use staff mastery
+Increases caravan and camp speed to encourage those playstyles
+Ties caravan and item delivery contracts to barter modifier (needs testing, may be OP)
+Removes excess student perks from trees
+Makes donkeys hungry
