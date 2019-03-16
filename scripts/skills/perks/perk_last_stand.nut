@@ -16,7 +16,12 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		local bonus = 2.0 - this.getContainer().getActor().getHitpoints() / this.getContainer().getActor().getHitpointsMax();
+		local maxHP = this.getContainer().getActor().getHitpointsMax();
+		local percentHP = maxHP / 100;
+		local currentHP = this.getContainer().getActor().getHitpoints();
+		local ratio = currentHP / percentHP;
+		local ratioPoint = ratio / 100;
+		local bonus = 2.0 - ratioPoint;
 		_properties.MeleeDefenseMult *= bonus;
 		_properties.RangedDefenseMult *= bonus;
 	}
