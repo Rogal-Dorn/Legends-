@@ -42,7 +42,5 @@ this.legend_vala_threads <- this.inherit("scripts/skills/skill", {
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_vala_threads_effect"));
 		}
-
-		this.logInfo("THREADS OF FATE :: expertise is " + expertise);
 	}
 });

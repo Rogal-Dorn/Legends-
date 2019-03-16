@@ -56,6 +56,12 @@ this.legend_vala_trance_perspective_effect <- this.inherit("scripts/skills/skill
 	}
 
 
+	function shareVisibility()
+	{
+		this.getContainer().getActor().updateVisibility(this.getContainer().getActor().getTile(), 1, this.m.Vala.getContainer().getActor().getFaction());
+	}
+
+
 	function onUpdate( _properties )
 	{
 		if (this.m.Vala == null)
@@ -65,7 +71,7 @@ this.legend_vala_trance_perspective_effect <- this.inherit("scripts/skills/skill
 
 		_properties.Vision -= 1;
 
-		this.getContainer().getActor().updateVisibility(this.getContainer().getActor().getTile(), 1, this.m.Vala.getContainer().getActor().getFaction());
+		this.shareVisibility();
 	}
 
 
@@ -76,7 +82,7 @@ this.legend_vala_trance_perspective_effect <- this.inherit("scripts/skills/skill
 			this.removeSelf();
 		}
 
-		this.getContainer().getActor().updateVisibility(this.getContainer().getActor().getTile(), 1, this.m.Vala.getContainer().getActor().getFaction());
+		this.shareVisibility();
 	}
 
 
@@ -87,7 +93,7 @@ this.legend_vala_trance_perspective_effect <- this.inherit("scripts/skills/skill
 			this.removeSelf();
 		}
 
-		this.getContainer().getActor().updateVisibility(this.getContainer().getActor().getTile(), 1, this.m.Vala.getContainer().getActor().getFaction());
+		this.shareVisibility();
 	}
 
 
@@ -111,7 +117,7 @@ this.legend_vala_trance_perspective_effect <- this.inherit("scripts/skills/skill
 		{
 			this.m.TurnsLeft = 3;
 			this.spawnIcon("status_effect_52", this.getContainer().getActor().getTile());
-			this.getContainer().getActor().updateVisibility(this.getContainer().getActor().getTile(), 1, this.m.Vala.getContainer().getActor().getFaction());
+			this.shareVisibility();
 		}
 	}
 

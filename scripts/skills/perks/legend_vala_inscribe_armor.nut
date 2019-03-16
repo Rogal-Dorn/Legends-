@@ -9,7 +9,7 @@ this.legend_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_inscribe_armor";
-		this.m.Name = "Armor Rune Sigils";
+		this.m.Name = "Rune Sigils: Armors";
 		this.m.Description = "";
 		this.m.Icon = "ui/perks/legend_vala_inscribe_armor.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
