@@ -108,20 +108,10 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (actor.getSkills().hasSkill("effects.legend_vala_in_trance"))
-		{
-			ret.push({
-				id = 11,
-				type = "text",
-				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Already in a trance.[/color]"
-			});
-		}
-
 		if (this.Tactical.isActive() && actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions()))
 		{
 			ret.push({
-				id = 12,
+				id = 11,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Cannot enter a trance while engaged in melee.[/color]"
@@ -148,9 +138,9 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				{
 					local distance = e.getTile().getDistanceTo(actor.getTile());
 
-					if (distance <= 4 && e.isAlliedWith(actor))
+					if (distance <= 3 && e.isAlliedWith(actor))
 					{
-						expertise += this.Math.maxf(0.0, 2.5 - distance / 2.0);
+						expertise += this.Math.maxf(0.0, 2.0 - distance / 2.0);
 					}
 				}
 			}

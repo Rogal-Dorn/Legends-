@@ -74,17 +74,19 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (this.m.Vala.m.WardenEntity != null)
+		if (this.m.Vala.m.WardenEntity == null)
 		{
-			local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
-
-			if (reduction < 0.5)
-			{
-				reduction = 0.5;
-			}
-
-			_properties.DamageReceivedRegularMult *= reduction;
+			return;
 		}
+
+		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
+
+		if (reduction < 0.5)
+		{
+			reduction = 0.5;
+		}
+
+		_properties.DamageReceivedRegularMult *= reduction;
 	}
 
 	
