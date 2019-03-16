@@ -56,13 +56,13 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 2 + "[/color] extra fatigue"
 		});
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInMaces)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to daze on a hit"
 			});
 		}
 		else
@@ -71,7 +71,7 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to stun on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to daze on a hit"
 			});
 		}
 
@@ -80,7 +80,7 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInMaces ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )
@@ -97,13 +97,13 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInMaces || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.stunned"))
+			if ((_user.getCurrentProperties().IsSpecializedInStaves || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.dazed"))
 			{
-				target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+				target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
 
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has stunned " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed" + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 				}
 
 				if (this.m.IsFromLute && _user.isPlayerControlled())

@@ -10,7 +10,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.GoodEnding = "%name% the donkey was retired to a lovely paddock and spent the days eating and carousing with other donkeys.";
 		this.m.BadEnding = "%name% the donkey was sold to a trader, their caravan was attacked by orcs and the remains of %name% were never found";
 		this.m.HiringCost = 5000;
-		this.m.DailyCost = 5;
+		this.m.DailyCost = 1;
 		this.m.Excluded = [
 			"trait.tiny",
 			"trait.clubfooted",
@@ -88,6 +88,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
+		this.m.Container.add(this.new("scripts/skills/traits/legend_appetite_donkey"));
 	}	
 
 
