@@ -1412,7 +1412,6 @@ this.tooltip_events <- {
 				ret.push({
 					id = id,
 					type = "text",
-					icon = "ui/"
 					text = bro[0] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + bro[1] + "%[/color]"
 				})
 				++id;
