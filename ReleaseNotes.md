@@ -229,3 +229,5 @@ Increases caravan and camp speed to encourage those playstyles
 Ties caravan and item delivery contracts to barter modifier (needs testing, may be OP)
 Removes excess student perks from trees
 Makes donkeys hungry
+Adds, Mark Target,  Big Game Hunter, Second Wind skills
+Adds Danger Pay, Field Repairs and Field Triage skills
