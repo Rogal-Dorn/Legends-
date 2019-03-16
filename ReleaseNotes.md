@@ -198,6 +198,8 @@ Beta 0.9.5 b
 
 Beta 0.10
 *Adds Orc Behemoth
+*Fixes formations mod stash size exploit
+*Fixes Food tooltip showing double consumption rate
 
 
 
