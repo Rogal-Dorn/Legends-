@@ -4,7 +4,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "perk.legend_vala_chant_disharmony";
 		this.m.Name = "Disharmony";
-		this.m.Description = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.";
+		this.m.Description = "A very disagreeable and cacophonous chant that makes it almost impossible for the Vala\'s enemies to focus and concentrate properly.";
 		this.m.Icon = "ui/perks/legend_vala_chant_disharmony_active.png";
 		this.m.IconDisabled = "ui/perks/legend_vala_chant_disharmony_active_sw.png";
 		this.m.Type = this.Const.SkillType.Active | this.Const.SkillType.Perk;
@@ -25,28 +25,27 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		if (this.skill.isUsable() && !actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
-		{
-			if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
-			{
-				if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_staff_vala")
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			else
-			{
-				return false;
-			}
-		}
-		else
+		if (!this.skill.isUsable())
 		{
 			return false;
 		}
+
+		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
+		{
+			return false;
+		}
+
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			return false;
+		}
+
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala")
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 

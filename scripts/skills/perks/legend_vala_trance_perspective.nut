@@ -29,34 +29,48 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		if (this.Tactical.isActive() && !actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions()) && this.skill.isUsable() && !this.m.TranceIsActive && !actor.getSkills().hasSkill("effects.legend_vala_currently_chanting") && !actor.getSkills().hasSkill("effects.legend_vala_in_trance"))
-		{
-			if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
-			{
-				if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_staff_vala")
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			else
-			{
-				return false;
-			}
-		}
-		else
+		if (!this.Tactical.isActive())
 		{
 			return false;
 		}
+
+		if (actor.getTile().hasZoneOfControlOtherThan(actor.getAlliedFactions()))
+		{
+			return false;
+		}
+
+		if (!this.skill.isUsable())
+		{
+			return false;
+		}
+
+		if (this.m.TranceIsActive)
+		{
+			return false;
+		}
+
+		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting") || actor.getSkills().hasSkill("effects.legend_vala_in_trance"))
+		{
+			return false;
+		}
+
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			return false;
+		}
+
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala")
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 
 	function getTranceCostString()
 	{
-		return "Costs [b][color=" + this.Const.UI.Color.NegativeValue + "]all (at least 6) AP[/color][/b] to use and builds up " + (this.isAffordableBasedOnFatiguePreview() ? "[b][color=" + this.Const.UI.Color.PositiveValue + "]" + this.getFatigueCost() : "[b][color=" + this.Const.UI.Color.NegativeValue + "]" + this.getFatigueCost()) + " Fatigue[/color][/b]\n";
+		return "[i]Costs [b][color=" + this.Const.UI.Color.NegativeValue + "]all (at least 6) AP[/color][/b] to use and builds up " + (this.isAffordableBasedOnFatiguePreview() ? "[b][color=" + this.Const.UI.Color.PositiveValue + "]" + this.getFatigueCost() : "[b][color=" + this.Const.UI.Color.NegativeValue + "]" + this.getFatigueCost()) + " Fatigue[/color][/b][/i]\n";
 	}
 
 
@@ -175,7 +189,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 					{
 						if (!t.isAlliedWith(actor))
 						{
-							if (this.Math.rand(1, 100) <= expertise)  //  APPLICATION SUCCESS
+							if (this.Math.rand(1, 100) <= expertise)  // APPLICATION SUCCESS
 							{
 								local effect = this.new("scripts/skills/effects/legend_vala_trance_perspective_effect");
 								effect.setVala(this);
