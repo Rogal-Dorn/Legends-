@@ -1168,7 +1168,18 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecialistShovelDamage = "Dig deep",
 	LegendSpecialistShovelSkill = "Gravesman",
 	LegendSpecialistWoodaxeDamage = "Timber",
-	LegendSpecialistWoodaxeSkill = "Woodsmans Cuts"
+	LegendSpecialistWoodaxeSkill = "Woodsmans Cuts",
+	LegendSpecialistSickleDamage = "Gatherers cuts",
+	LegendSpecialistSickleSkill = "Harvest twist",
+	LegendSpecialistSlingDamage = "Heavy rocks",
+	LegendSpecialistSlingSkill = "Slingers spins",
+	LegendBigGameHunter = "Big Game Hunter",
+	LegendSecondWind = "Second Wind",
+	LegendMarkTarget = "Mark Target",
+	LegendFieldTriage = "Field Triage",
+	LegendFieldRepairs = "Field Repairs",
+	LegendDangerPay = "Danger Pay"
+
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1357,8 +1368,17 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistShovelDamage = "Gain 10-20 damage while using a shovel. Does not apply to maces.",
 	LegendSpecialistShovelSkill = "Gain 15 melee skill and gain the \'Knock Out\' skill while using a shovel.",
 	LegendSpecialistWoodaxeDamage = "Gain 10-20 damage while using a woodaxe. Does not apply to other axes.",
-	LegendSpecialistWoodaxeSkill = "Gain 15 melee skill while using a woodaxe. Does not apply to other axes"
-
+	LegendSpecialistWoodaxeSkill = "Gain 15 melee skill while using a woodaxe. Does not apply to other axes",
+	LegendSpecialistSickleDamage = "Gain 15-30 damage while using a sickle. Does not apply to swords.",
+	LegendSpecialistSickleSkill = "Gain 15 melee skill and +25% armor piercing while using a sickle. ",
+	LegendSpecialistSlingDamage = "Gain 10-30 damage while using a sling. Does not apply to sling staves",
+	LegendSpecialistSlingSkill = "Gain 15 melee skill and +25% armor damage while using a sling.",
+	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their hitpoints divided by your hitpoints",
+	LegendSecondWind = "When dropping below 30hp, regain half of your fatigue",
+	LegendMarkTarget = "Mark a target, reducing their ranged defense by 20",
+	LegendFieldTriage = "Spend medicine to heal a unit on the battlefield",
+	LegendFieldRepairs = "Spend armor parts to repair armor on the battlefield",
+	LegendDangerPay = "Spend 10 times a units daily wage to set them at confident morale"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

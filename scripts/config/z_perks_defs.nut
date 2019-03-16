@@ -1325,7 +1325,87 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistWoodaxeSkill,
 		Icon = "ui/perks/woodaxe_02.png",
 		IconDisabled = "ui/perks/woodaxe_bw.png"
-	}										
+	},
+	{
+		ID = "perk.legend_specialist_sickle_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_sickle_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSickleDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSickleDamage,
+		Icon = "ui/perks/sickle_01.png",
+		IconDisabled = "ui/perks/sickle_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_sickle_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_sickle_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSickleSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSickleSkill,
+		Icon = "ui/perks/sickle_02.png",
+		IconDisabled = "ui/perks/sickle_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_sling_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_sling_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSlingDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSlingDamage,
+		Icon = "ui/perks/sling_01.png",
+		IconDisabled = "ui/perks/sling_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_sling_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_sling_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSlingSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSlingSkill,
+		Icon = "ui/perks/sling_02.png",
+		IconDisabled = "ui/perks/sling_bw.png"
+	},
+	{
+		ID = "perk.legend_big_game_hunter",
+		Script = "scripts/skills/perks/perk_legend_big_game_hunter",
+		Name = this.Const.Strings.PerkName.LegendBigGameHunter,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBigGameHunter,
+		Icon = "ui/perks/sling_02.png",
+		IconDisabled = "ui/perks/sling_bw.png"
+	},
+	{
+		ID = "perk.legend_second_wind",
+		Script = "scripts/skills/perks/perk_legend_second_wind",
+		Name = this.Const.Strings.PerkName.LegendSecondWind,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSecondWind,
+		Icon = "ui/perks/sling_02.png",
+		IconDisabled = "ui/perks/sling_bw.png"
+	},
+	{
+		ID = "perk.legend_mark_target",
+		Script = "scripts/skills/perks/perk_legend_mark_target",
+		Name = this.Const.Strings.PerkName.LegendMarkTarget,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMarkTarget,
+		Icon = "ui/perks/mark_target.png",
+		IconDisabled = "ui/perks/mark_target_bw.png"
+	},
+	{
+		ID = "perk.legend_field_triage",
+		Script = "scripts/skills/perks/perk_legend_field_triage",
+		Name = this.Const.Strings.PerkName.LegendFieldTriage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFieldTriage,
+		Icon = "ui/perks/MaxMedsT2.png",
+		IconDisabled = "ui/perks/MaxMedsT2_bw.png"
+	},
+	{
+		ID = "perk.legend_field_repairs",
+		Script = "scripts/skills/perks/perk_legend_field_repairs",
+		Name = this.Const.Strings.PerkName.LegendFieldRepairs,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFieldRepairs,
+		Icon = "ui/perks/MaxToolsT2.png",
+		IconDisabled = "ui/perks/MaxToolsT2_bw.png"
+	},
+	{
+		ID = "perk.legend_danger_pay",
+		Script = "scripts/skills/perks/perk_legend_danger_pay",
+		Name = this.Const.Strings.PerkName.LegendDangerPay,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDangerPay,
+		Icon = "ui/perks/coins_circle.png",
+		IconDisabled = "ui/perks/coins_circle_bw.png"
+	}															
 	
 ];
 
@@ -1495,5 +1575,16 @@ gt.Const.Perks.PerkDefs <- {
 	LegendSpecialistShovelDamage = 161,
 	LegendSpecialistShovelSkill = 162,
 	LegendSpecialistWoodaxeDamage = 163,
-	LegendSpecialistWoodaxeSkill = 164
+	LegendSpecialistWoodaxeSkill = 164,
+	LegendSpecialistSickleDamage = 165,
+	LegendSpecialistSickleSkill = 166,
+	LegendSpecialistSlingDamage = 167,
+	LegendSpecialistSlingSkill = 168,
+	LegendBigGameHunter = 169,
+	LegendSecondWind = 170,
+	LegendMarkTarget = 171,
+	LegendFieldTriage = 172,
+	LegendFieldRepairs = 173,
+	LegendDangerPay = 174
+
 };

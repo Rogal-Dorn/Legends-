@@ -90,6 +90,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.militia":
 			return gt.Const.Perks.TreeMilitiaLookupMap;
 			break;
+		case "background.legend_noble_shield":
+			return gt.Const.Perks.TreeMilitiaLookupMap;
+			break;
 		case "background.minstrel":
 			return gt.Const.Perks.TreeLuteLookupMap;
 			break;
@@ -115,6 +118,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeShovelLookupMap;
 			break;
 		case "background.lumberjack":
+			return gt.Const.Perks.TreeWoodaxeLookupMap;
+			break;
+		case "background.legend_noble_2h":
 			return gt.Const.Perks.TreeWoodaxeLookupMap;
 			break;
 		case "background.thief":
@@ -196,6 +202,9 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		case "background.militia":
 			return gt.Const.Perks.PerksTreeMilitia;
 			break;
+		case "background.legend_noble_shield":
+			return gt.Const.Perks.PerksTreeMilitia;
+			break;
 		case "background.minstrel":
 			return gt.Const.Perks.PerksTreeLute;
 			break;
@@ -221,6 +230,9 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeShovel;
 			break;
 		case "background.lumberjack":
+			return gt.Const.Perks.PerksTreeWoodaxe;
+			break;
+		case "background.legend_noble_2h":
 			return gt.Const.Perks.PerksTreeWoodaxe;
 			break;
 		case "background.thief":

@@ -231,3 +231,10 @@ Removes excess student perks from trees
 Makes donkeys hungry
 Adds, Mark Target,  Big Game Hunter, Second Wind skills
 Adds Danger Pay, Field Repairs and Field Triage skills
+Adds Legendary Difficulty options
+Fixes missing icons for slings
+Adds icons for mark target
+Fixes icon for shortbow specialisation
+Adds specialisations for sickle and sling 
+Adds the new skills into perk defs and strings 
+ 
