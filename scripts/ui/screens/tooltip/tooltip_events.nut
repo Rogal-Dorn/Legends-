@@ -1987,6 +1987,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.LegendaryDifficulty":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Legendary Difficulty"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Your opponents will be brutal and endless.\n\n This is where legends are forged."
+				}
+			];
+
 		case "menu-screen.new-campaign.EasyDifficultyEconomic":
 			return [
 				{
@@ -2029,6 +2043,19 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.LegendaryDifficultyEconomic":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Legendary Difficulty"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Contract pay will be pitiful.\n\n Recommended for those who want the most challenging experience."
+				}
+			];
 		case "menu-screen.new-campaign.EasyDifficultyBudget":
 			return [
 				{
@@ -2081,7 +2108,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Recommended for the best experience once you\'ve learned the game.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds."
+					text = "Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Recommended for the best experience once you\'ve learned the game.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds. "
 				}
 			];
 

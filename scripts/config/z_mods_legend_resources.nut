@@ -26,6 +26,13 @@ gt.Const.LegendMod.MaxResources <- [
 		Medicine = 5,
 		ArmorParts = 5,
 		Stash = 15
+	},
+	{
+		Food = 50,
+		Ammo =  0,
+		Medicine = 0,
+		ArmorParts = 0,
+		Stash = 5
 	}
 ]
 
@@ -44,6 +51,12 @@ gt.Const.LegendMod.StartResources <- [
 	},
 	{
 		Money = 250,
+		Ammo = 0,
+		Medicine = 0,
+		ArmorParts = 0
+	},
+	{
+		Money = 0,
 		Ammo = 0,
 		Medicine = 0,
 		ArmorParts = 0
