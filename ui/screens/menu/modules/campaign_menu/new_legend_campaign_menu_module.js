@@ -38,6 +38,8 @@ var NewLegendCampaignMenuModule = function()
 	this.mDifficultyNormalLabel = null;
 	this.mDifficultyHardCheckbox = null;
 	this.mDifficultyHardLabel = null;
+	this.mDifficultyLegendaryCheckbox = null;
+	this.mDifficultyLegendaryLabel = null;
 
 	this.mEconomicDifficultyEasyCheckbox = null;
 	this.mEconomicDifficultyEasyLabel = null;
@@ -45,6 +47,8 @@ var NewLegendCampaignMenuModule = function()
 	this.mEconomicDifficultyNormalLabel = null;
 	this.mEconomicDifficultyHardCheckbox = null;
 	this.mEconomicDifficultyHardLabel = null;
+	this.mEconomicDifficultyLegendaryCheckbox = null;
+	this.mEconomicDifficultyLegendaryLabel = null;
 
 	this.mBudgetDifficultyEasyCheckbox = null;
 	this.mBudgetDifficultyEasyLabel = null;
@@ -52,6 +56,8 @@ var NewLegendCampaignMenuModule = function()
 	this.mBudgetDifficultyNormalLabel = null;
 	this.mBudgetDifficultyHardCheckbox = null;
 	this.mBudgetDifficultyHardLabel = null;
+	this.mBudgetDifficultyLegendaryCheckbox = null;
+	this.mBudgetDifficultyLegendaryLabel = null;
 
 	this.mIronmanCheckbox = null;
 	this.mIronmanCheckboxLabel = null;
@@ -494,6 +500,23 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			self.mEconomicDifficulty = 2;
 		});
 
+		var legendaryDifficultyControl = $('<div class="control"></div>');
+		row.append(legendaryDifficultyControl);
+		this.mEconomicDifficultyLegendaryCheckbox = $('<input type="radio" id="cb-economic-difficulty-legendary" name="economic-difficulty" />');
+		legendaryDifficultyControl.append(this.mEconomicDifficultyLegendaryCheckbox);
+		this.mEconomicDifficultyLegendaryLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-economic-difficulty-legendary">Legendary</label>');
+		legendaryDifficultyControl.append(this.mEconomicDifficultyLegendaryLabel);
+		this.mEconomicDifficultyLegendaryCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+		});
+		this.mEconomicDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event) {
+			var self = _event.data;
+			self.mEconomicDifficulty = 3;
+		});
+
+
 		// starting budget difficulty
 		var row = $('<div class="row" />');
 		leftColumn.append(row);
@@ -551,6 +574,22 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			self.mBudgetDifficulty = 2;
 		});
 
+		var legendaryDifficultyControl = $('<div class="control"></div>');
+		row.append(legendaryDifficultyControl);
+		this.mBudgetDifficultyLegendaryCheckbox = $('<input type="radio" id="cb-budget-difficulty-legendary" name="budget-difficulty" />');
+		legendaryDifficultyControl.append(this.mBudgetDifficultyLegendaryCheckbox);
+		this.mBudgetDifficultyLegendaryLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-budget-difficulty-legendary">None</label>');
+		legendaryDifficultyControl.append(this.mBudgetDifficultyLegendaryLabel);
+		this.mBudgetDifficultyLegendaryCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+		});
+		this.mBudgetDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event) {
+			var self = _event.data;
+			self.mBudgetDifficulty = 3;
+		});
+
 		// combat difficulty
 		var row = $('<div class="row" />');
 		rightColumn.append(row);
@@ -606,6 +645,23 @@ NewLegendCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		{
 			var self = _event.data;
 			self.mDifficulty = 2;
+		});
+
+
+		var legendaryDifficultyControl = $('<div class="control"></div>');
+		row.append(legendaryDifficultyControl);
+		this.mDifficultyLegendaryCheckbox = $('<input type="radio" id="cb-difficulty-legendary" name="difficulty" />');
+		legendaryDifficultyControl.append(this.mDifficultyLegendaryCheckbox);
+		this.mDifficultyLegendaryLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-difficulty-legendary">Legendary</label>');
+		legendaryDifficultyControl.append(this.mDifficultyLegendaryLabel);
+		this.mDifficultyLegendaryCheckbox.iCheck({
+			checkboxClass: 'icheckbox_flat-orange',
+			radioClass: 'iradio_flat-orange',
+			increaseArea: '30%'
+		});
+		this.mDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event) {
+			var self = _event.data;
+			self.mDifficulty = 3;
 		});
 
 		// combat difficulty
