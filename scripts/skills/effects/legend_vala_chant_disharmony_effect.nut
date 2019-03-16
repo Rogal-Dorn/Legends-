@@ -19,9 +19,9 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	{
 		this.m.ID = "effects.legend_vala_chant_disharmony_effect";
 		this.m.Name = "Disharmonic";
-		this.m.Icon = "skills/status_effect_87.png";
-		this.m.IconMini = "status_effect_87_mini";
-		this.m.Overlay = "status_effect_87";
+		this.m.Icon = "skills/status_effect_65.png";
+		this.m.IconMini = "status_effect_65_mini";
+		this.m.Overlay = "status_effect_65";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsActive = false;

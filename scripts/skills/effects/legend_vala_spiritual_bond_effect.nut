@@ -19,7 +19,7 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_vala_spiritual_bond_effect";
 		this.m.Name = "Spiritual Bond";
-		this.m.KilledString = "Died from damage transfer";
+		this.m.Description = "";
 		this.m.Icon = "skills/status_effect_87.png";
 		this.m.IconMini = "status_effect_87_mini";
 		this.m.Overlay = "status_effect_87";
@@ -46,12 +46,6 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 					id = 1,
 					type = "title",
 					text = this.getName()
-				},
-				{
-					id = 10,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = ""
 				}
 			];
 		}

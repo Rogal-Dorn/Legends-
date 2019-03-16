@@ -17,12 +17,16 @@ this.legend_staff_vala <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_staff_05";
 		this.m.Value = 1000;
+		this.m.ShieldDamage = 0;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
-		this.m.StaminaModifier = -4;
-		this.m.RegularDamage = 30;
-		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 0.7;
+		this.m.StaminaModifier = -6;
+		this.m.RangeMin = 1;
+		this.m.RangeMax = 2;
+		this.m.RangeIdeal = 2;
+		this.m.RegularDamage = 20;
+		this.m.RegularDamageMax = 30;
+		this.m.ArmorDamageMult = 0.6;
 		this.m.DirectDamageMult = 0.4;
 //		this.m.IsChangeableInBattle = false;
 	}
@@ -33,5 +37,4 @@ this.legend_staff_vala <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
 		this.addSkill(this.new("scripts/skills/actives/legend_staff_knock_out"));
 	}
-
 });
