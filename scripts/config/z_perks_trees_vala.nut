@@ -8,7 +8,6 @@ if (!("Perks" in gt.Const))
 
 local ValaTree = [
 	[
-		gt.Const.Perks.PerkDefs.LegendValaPerspective,
 		gt.Const.Perks.PerkDefs.LegendValaWarden,
 		gt.Const.Perks.PerkDefs.VazlInscribeShield
 	],

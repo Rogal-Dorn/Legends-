@@ -13,10 +13,10 @@ this.legend_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "";
 		this.m.Icon = "ui/perks/legend_vala_inscribe_weapon.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.VeryLast + 1;
+		this.m.Order = this.Const.SkillOrder.VeryLast + 4;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		this.m.IsHidden = true;
 		this.m.IsSerialized = true;
 	}
 
@@ -43,14 +43,7 @@ this.legend_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		if (this.Math.ceil((this.m.InscriptionSuccessCooldown - this.getDaysSinceInscriptionSuccess())) > 0 && this.World.State.getCombatStartTime() == 0)
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
+		return true;
 	}
 
 
@@ -74,7 +67,7 @@ this.legend_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can begin inscribing rocks with weapon rune sigils again."
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + countdown + "[/color] days until " + valaname + " can begin inscribing rocks with weapon specific rune sigils again."
 			});
 		}
 
@@ -142,5 +135,20 @@ this.legend_vala_inscribe_weapon <- this.inherit("scripts/skills/skill", {
 				this.m.InscriptionTryCooldown = 0.25;
 			}
 		}
+	}
+
+
+	function onAdded()
+	{
+		if (!this.getContainer().getActor().getSkills().hasSkill("special.legend_vala_inscription_information"))
+		{
+			this.getContainer().getActor().getSkills().add(this.new("scripts/skills/perks/legend_vala_inscription_information"));
+		}
+	}
+
+
+	function getCountdownTime()
+	{
+		return this.Math.ceil((this.m.InscriptionSuccessCooldown - this.getDaysSinceInscriptionSuccess()));
 	}
 });
