@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 51
+	Version = 52
 };
 
 if (!("LegendMod" in gt.Const))
