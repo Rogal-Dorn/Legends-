@@ -242,3 +242,5 @@ Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and sp
 Adds Taxidermist and taxidermist apron - reduces med usage, spawns near trappers, tanners and pig farms
 Adds Ranger armor 
 Adds traveler's pack, accessory that lets you gain more stash space
+Adds trader world icon
+Player world figurine changes based on start 
