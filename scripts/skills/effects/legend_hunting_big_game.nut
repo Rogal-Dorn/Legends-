@@ -19,9 +19,11 @@ this.legend_hunting_big_game <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-
-		local targetHP = _targetEntity.getHitpoints();
-		local ourHP =  _user.getHitpoints();
+	if (_targetEntity != null)
+		{
+		local actor = this.getContainer().getActor();
+		local targetHP = _targetEntity.getHitpoints()
+		local ourHP =  actor.getHitpoints();
 		local HPratio = targetHP / ourHP;
 
 		if ( HPratio > 1 )
@@ -29,6 +31,7 @@ this.legend_hunting_big_game <- this.inherit("scripts/skills/skill", {
 		_properties.DamageRegularMult += HPratio; 
 
 			}
+		}
 	}
 
 });

@@ -25,8 +25,6 @@ this.perk_legend_second_wind <- this.inherit("scripts/skills/skill", {
 		{
 		actor.setFatigue(_user.getFatigue() / 2);
 		}
-		_properties.MeleeDefenseMult *= bonus;
-		_properties.RangedDefenseMult *= bonus;
 	}
 
 });

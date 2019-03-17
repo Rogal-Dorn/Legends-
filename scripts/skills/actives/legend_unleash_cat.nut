@@ -1,7 +1,7 @@
 this.legend_unleash_cat <- this.inherit("scripts/skills/skill", {
 	m = {
-		Entity = null,
-		EntityName = "Fred",
+		Entity = null,			
+		EntityName = "Cleo",
 		Script = "scripts/entity/tactical/legend_cat",
 		Sounds0 = [
 			"sounds/enemies/cat_hurt_01.wav",
