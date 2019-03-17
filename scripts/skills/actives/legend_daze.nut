@@ -18,10 +18,10 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 
 		];
 		this.m.SoundOnHit = [
-			"sounds/human/0/human_fatigue_01.wav",
-			"sounds/human/0/human_fatigue_01.wav",
-			"sounds/human/0/human_fatigue_01.wav",
-			"sounds/human/0/human_fatigue_01.wav"
+			"sounds/humans/0/human_fatigue_01.wav",
+			"sounds/humans/0/human_fatigue_01.wav",
+			"sounds/humans/0/human_fatigue_01.wav",
+			"sounds/humans/0/human_fatigue_01.wav"
 		];
 		this.m.SoundVolume = 1.25;
 		this.m.Type = this.Const.SkillType.Active;

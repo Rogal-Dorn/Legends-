@@ -31,19 +31,20 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		];
 		this.m.Titles = [
 			"the Pious",
-			"the Monk",
+			"the Nun",
 			"the Scholar",
 			"the Preacher",
 			"the Devoted",
 			"the Quiet",
 			"the Calm"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.Monk;
+		this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Monk;
-		this.m.Body = "bust_naked_body_00";
-		this.m.IsOffendedByViolence = true;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Body = "bust_naked_body_03";
+		this.m.IsFemaleBackground = true;
 	}
 
 	function getTooltip()
@@ -110,7 +111,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/helmets/legend_nun_habit"));
-
+		local r;
 		r = this.Math.rand(0, 3);
 
 		if (r <= 2)

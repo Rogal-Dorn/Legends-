@@ -35,6 +35,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Debilitate,
 		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.Sprint,
+		gt.Const.Perks.PerkDefs.LegendSecondWind,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[

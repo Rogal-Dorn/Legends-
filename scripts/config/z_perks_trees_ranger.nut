@@ -14,6 +14,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Lookout,
+		gt.Const.Perks.PerkDefs.LegendMarkTarget
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -56,6 +57,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendCascade,
+		gt.Const.Perks.PerkDefs.LegendSecondWind,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[
@@ -64,6 +66,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.LegendGuidedSteps,
 		gt.Const.Perks.PerkDefs.LegendEvasion,
+		gt.Const.Perks.PerkDefs.LegendBigGameHunter,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],

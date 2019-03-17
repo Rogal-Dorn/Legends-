@@ -13,6 +13,7 @@ local TraderTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
+		gt.Const.Perks.PerkDefs.Lookout,
 		gt.Const.Perks.PerkDefs.LegendBribe,
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
@@ -23,8 +24,8 @@ local TraderTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
-		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.SteelBrow,
+		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 
 	],
@@ -34,6 +35,7 @@ local TraderTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.Sprint,
+		gt.Const.Perks.PerkDefs.LegendDangerPay,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[

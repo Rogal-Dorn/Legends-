@@ -16,7 +16,7 @@ local SlingTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.LegendSpecialistSlingDamage
+		gt.Const.Perks.PerkDefs.LegendSpecialistSlingSkill
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -36,7 +36,7 @@ local SlingTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
-		gt.Const.Perks.PerkDefs.LegendSpecialistSlingSkill
+		gt.Const.Perks.PerkDefs.LegendSpecialistSlingDamage
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,

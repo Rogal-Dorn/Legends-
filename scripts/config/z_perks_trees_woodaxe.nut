@@ -16,7 +16,6 @@ local WoodaxeTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.LegendSpecialistWoodaxeSkill
 	],
 	[
