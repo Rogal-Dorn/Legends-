@@ -129,6 +129,12 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.female_thief":
 			return gt.Const.Perks.TreeKnifeLookupMap;
 			break;
+		case "background.legend_herbalist":
+			return gt.Const.Perks.TreeSickleLookupMap;
+			break;
+		case "background.legend_noble_ranged":
+			return gt.Const.Perks.TreeSlingLookupMap;
+			break;
 		default:
 			return  gt.Const.Perks.LookupMap;
 	}
@@ -240,6 +246,12 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			break;
 		case "background.female_thief":
 			return gt.Const.Perks.PerksTreeKnife;
+			break;
+		case "background.legend_herbalist":
+			return gt.Const.Perks.PerksTreeSickle;
+			break;
+		case "background.legend_noble_ranged":
+			return gt.Const.Perks.PerksTreeSling;
 			break;
 		default:
 			return  gt.Const.Perks.Perks;

@@ -237,4 +237,8 @@ Adds icons for mark target
 Fixes icon for shortbow specialisation
 Adds specialisations for sickle and sling 
 Adds the new skills into perk defs and strings 
- 
+Adds Nun, Nun robes and nun habit - she helps heal and spawns near wineries, beekeepers, breweries and herbalist groves
+Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and spawns near herbalist groves, gatherers huts and mushroom groves  
+Adds Taxidermist and taxidermist apron - reduces med usage, spawns near trappers, tanners and pig farms
+Adds Ranger armor 
+Adds traveler's pack, accessory that lets you gain more stash space

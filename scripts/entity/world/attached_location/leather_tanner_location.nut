@@ -16,10 +16,12 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		{
 			return;
 		}
-
+		_list.push("legend_taxidermist_background");
+		_list.push("legend_taxidermist_background");
 		_list.push("militia_background");
 		_list.push("apprentice_background");
 		_list.push("retired_soldier_background");
+		_list.push("butcher_background");
 		_list.push("butcher_background");
 	}
 

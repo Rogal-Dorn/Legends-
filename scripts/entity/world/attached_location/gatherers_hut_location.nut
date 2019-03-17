@@ -21,7 +21,7 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		{
 			return;
 		}
-
+		_list.push("legend_herbalist_background");
 		_list.push("daytaler_background");
 	}
 
