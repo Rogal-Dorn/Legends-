@@ -3,7 +3,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legends_noble_shield";
+		this.m.ID = "background.legend_noble_shield";
 		this.m.Name = "Soldier";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 0;

@@ -1,15 +1,15 @@
-this.legend_travel_pack_small <- this.inherit("scripts/items/accessory/accessory", {
+this.legend_pack_small <- this.inherit("scripts/items/accessory/accessory", {
 	m = {},
 	function create()
 	{
 		this.accessory.create();
-		this.m.ID = "accessory.legend_travel_pack_small";
+		this.m.ID = "accessory.legend_pack_small";
 		this.m.Name = "Traveler\'s Pack";
 		this.m.Description = "A sash worn by traveler\'s to help carry additional supplies";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.IconLarge = "";
+		this.m.IconLarge = "accessory/legend_pack_small.png";
 		this.m.Icon = "accessory/legend_pack_small.png";
 		this.m.Sprite = "legend_pack_small";
 		this.m.Value = 100;
@@ -57,7 +57,7 @@ this.legend_travel_pack_small <- this.inherit("scripts/items/accessory/accessory
 			id = 10,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Stash"
+			text = "Provides [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] stash spaces. If you remove the bag, spaces at the bottom of the stash will be lost, along with any items in those spaces."
 		});
 		return result;
 	}
@@ -66,10 +66,17 @@ this.legend_travel_pack_small <- this.inherit("scripts/items/accessory/accessory
 	{
 		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
 	}
-
-	function onUpdateProperties( _properties )
+	function isAllowedInBag()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
+		return false;
+	}
+
+
+	function onEquip()
+	{
+		this.accessory.onEquip();
+		local economicdifficulty = this.World.Assets.getEconomicDifficulty();
+		local stashSize = this.Const.LegendMod.MaxResources[economicdifficulty].Stash
 		stashSize += 3; 
 	}
 

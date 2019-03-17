@@ -3,25 +3,23 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_mark_target";
-		this.m.Name = "Daze";
+		this.m.Name = "Mark Target";
 		this.m.Description = "Analyse the weak points on an opponent and tell your comrades, reducing the targets ranged defense by 20";
 		this.m.KilledString = "Marked";
-		this.m.Icon = "skills/daze_square.png";
-		this.m.IconDisabled = "skills/daze_square_bw.png";
+		this.m.Icon = "skills/mark_target_square.png";
+		this.m.IconDisabled = "skills/mark_target_square_bw.png";
 		this.m.Overlay = "daze_square";
 		this.m.SoundOnUse = [
-			"sounds/combat/stupefy_01.wav",
-			"sounds/combat/stupefy_02.wav",
-			"sounds/combat/stupefy_03.wav",
-			"sounds/combat/stupefy_04.wav",
-			"sounds/combat/stupefy_05.wav"
+			"sounds/combat/puncture_01.wav",
+			"sounds/combat/puncture_02.wav",
+			"sounds/combat/puncture_03.wav"
 
 		];
 		this.m.SoundOnHit = [
-			"sounds/human/0/human_fatigue_01.wav",
-			"sounds/human/0/human_fatigue_01.wav",
-			"sounds/human/0/human_fatigue_01.wav",
-			"sounds/human/0/human_fatigue_01.wav"
+			"sounds/humans/0/human_fatigue_01.wav",
+			"sounds/humans/0/human_fatigue_01.wav",
+			"sounds/humans/0/human_fatigue_01.wav",
+			"sounds/humans/0/human_fatigue_01.wav"
 		];
 		this.m.SoundVolume = 1.25;
 		this.m.Type = this.Const.SkillType.Active;
