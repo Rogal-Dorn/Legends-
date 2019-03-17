@@ -246,3 +246,10 @@ Adds trader world icon
 Player world figurine changes based on start 
 fixes some female backgrounds occassionally showing up to hire naked
 fixes daze sound crash
+fixes nun's habit 
+adds cannibal recruitment images
+fixes order of specialist skills
+makes nuns women
+makes cat female 
+fixes errors in perks 
+
