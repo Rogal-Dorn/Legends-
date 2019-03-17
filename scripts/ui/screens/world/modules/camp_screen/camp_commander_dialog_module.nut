@@ -1,6 +1,9 @@
 
 this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
-	m = {},
+	m = {
+		Title = "Commanders Tent",
+		Description = "Assign company members to various camp related tasks by dragging members from bottom panel to the tasks/' tent in the upper panel."
+	},
 	function create()
 	{
 		this.m.ID = "CampCommanderDialogModule";
@@ -15,6 +18,8 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 	function queryLoad()
 	{
 		local result = {
+			Title = this.m.Title,
+			SubTitle = this.m.Description,
 			brothers = this.queryRosterInformation(),
 			buildings = this.onQueryBuildingsList(),
 			assets = this.m.Parent.queryAssetsInformation()

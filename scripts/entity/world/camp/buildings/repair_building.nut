@@ -1,12 +1,13 @@
 this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
         ToolsUsed = 0,
-        PointsRepaired = 0
+        PointsRepaired = 0,
+        Items = []
 	},
     function create()
     {
         this.camp_building.create();
-        this.m.ID = "camp.repair";
+        this.m.ID = this.Const.World.CampBuildings.Repair;
         this.m.Slot = "repair";
         this.m.Name = "Repair Tent";
         this.m.Description = "Manage the repair of company items"
@@ -146,6 +147,73 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 break;
             }
         }
+    }
+
+    function getListOfItemsNeedingRepair()
+    {
+        local items = [];
+        local stash = [];
+        local roster = this.World.getPlayerRoster().getAll()
+        foreach( bro in roster)
+        {
+			local bitems = bro.getItems().getAllItems();
+			foreach( item in bitems )
+			{
+                if (item == null)
+                {
+                    continue
+                }
+
+                if (item.getCondition() >= item.getConditionMax())
+                {
+                    continue;
+                }
+
+                if (item.isToBeRepaired())
+                {
+                    items.push({
+                        Bro = bro.getID(),
+                        Item = item
+                    });
+                }
+                else 
+                {
+                    stash.push({
+                        Bro = bro.getID(),
+                        Item = item
+                    });
+                }
+            }
+        }
+        local stashItems = this.Stash.getItems();
+        foreach( item in stashItems)
+        {
+            if (item == null)
+            {
+                continue;
+            }
+
+            if (item.getCondition() >= item.getConditionMax())
+            {
+                continue
+            }
+
+            if (item.isToBeRepaired())
+            {
+                items.push({
+                    Bro = null,
+                    Item = item
+                });
+            }
+            else 
+            {
+                stash.push({
+                    Bro = null,
+                    Item = item
+                });
+            }
+        }
+        return {Items = items, Stash = stash};
     }
 
 	function onClicked( _campScreen )

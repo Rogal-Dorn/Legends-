@@ -1,5 +1,21 @@
 local gt = this.getroottable();
 
+gt.Const.World.CampBuildings <- {
+	Commander = "camp.commander",
+	Barber = "camp.barber",
+	Crafting = "camp.crafting",
+	Enchanter = "camp.enchanter",
+	Fletcher = "camp.fletcher",
+	Gatherer = "camp.gatherer",
+	Healer = "camp.healer",
+	Hunter = "camp.hunter",
+	Repair = "camp.repair",
+	Rest = "camp.rest",
+	Scout = "camp.scout",
+	Training = "camp.training",
+	Workshop = "camp.workshop"
+}
+
 gt.Const.World.TerrainCampImages <- [
 	{},
 	{

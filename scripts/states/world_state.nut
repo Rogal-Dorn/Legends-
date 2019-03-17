@@ -3665,7 +3665,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.FactionManager.clear();
 		this.World.Statistics.clear();
 		this.World.Assets.clear();
-		this.World.Camp.clear();
 		this.setEscortedEntity(null);
 		this.logInfo("Save version: " + _in.getMetaData().getVersion());
 	}
@@ -3777,8 +3776,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 		if (_in.getMetaData().getVersion() >= 52)
 		{
+			this.World.Camp.clear();
 			this.World.Camp.onDeserialize(_in);
 		}
+
 
 		if (_in.getMetaData().getVersion() == 51)
 		{

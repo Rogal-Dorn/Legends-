@@ -3,7 +3,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
     function create()
     {
         this.camp_building.create();
-        this.m.ID = "camp.enchanter";
+        this.m.ID = this.Const.World.CampBuildings.Enchanter;
         this.m.Slot = "enchanter";
         this.m.Name = "Enchanter";
         this.m.Description = "Oooo.. Pretty glowing things..."

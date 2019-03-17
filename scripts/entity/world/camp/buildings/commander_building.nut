@@ -3,7 +3,7 @@ this.commander_building <- this.inherit("scripts/entity/world/camp/camp_building
     function create()
     {
         this.camp_building.create();
-        this.m.ID = "camp.commander";
+        this.m.ID = this.Const.World.CampBuildings.Commander;
         this.m.Slot = "commander";
         this.m.Name = "Commanders Tent";
         this.m.Description = "Assign company members to different tasks while encamped"

@@ -827,6 +827,33 @@ this.data_helper <- {
 		return result;
 	}
 
+	function convertRepairItemsToUIData( _items, _target, _owner = null, _filter = 0 )
+	{
+		if (_filter == 0)
+		{
+			_filter = this.Const.Items.ItemFilter.All;
+		}
+
+		if (_items == null || _items.len() == 0)
+		{
+			return;
+		}
+
+		for( local i = 0; i < _items.len(); i = ++i )
+		{
+			if (_items[i] != null && (_items[i].Item.getItemType() & _filter) != 0)
+			{
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				r.bro <- _items[i].Bro;
+				_target.push(r);
+			}
+			else
+			{
+				_target.push(null);
+			}
+		}
+	}
+
 	function convertCampBuildingToUIData( _entity )
 	{
 		local result = {

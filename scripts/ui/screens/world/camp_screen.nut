@@ -367,7 +367,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.BarberDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showBarberDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showBarberDialog", this.m.BarberDialogModule.queryLoad());
 		}
 	}
 
@@ -377,7 +377,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.CraftingDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showCraftingDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showCraftingDialog", this.m.CraftingDialogModule.queryLoad());
 		}
 	}
 
@@ -387,7 +387,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.EnchanterDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showEnchanterDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showEnchanterDialog", this.m.EnchanterDialogModule.queryLoad());
 		}
 	}
 
@@ -397,7 +397,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.FletcherDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showFletcherDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showFletcherDialog", this.m.FletcherDialogModule.queryLoad());
 		}
 	}
 
@@ -407,7 +407,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.HealerDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showHealerDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showHealerDialog", this.m.HealerDialogModule.queryLoad());
 		}
 	}
 
@@ -417,7 +417,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.HunterDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showHunterDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showHunterDialog", this.m.HunterDialogModule.queryLoad());
 		}
 	}
 
@@ -427,7 +427,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.RepairDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showRepairDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showRepairDialog", this.m.RepairDialogModule.queryLoad());
 		}
 	}
 
@@ -437,7 +437,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.RestDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showRestDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showRestDialog", this.m.RestDialogModule.queryLoad());
 		}
 	}
 
@@ -447,7 +447,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.ScoutDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showScoutDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showScoutDialog", this.m.ScoutDialogModule.queryLoad());
 		}
 	}
 
@@ -457,7 +457,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.TrainingDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showTrainingDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showTrainingDialog", this.m.TrainingDialogModule.queryLoad());
 		}
 	}
 
@@ -467,7 +467,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.GathererDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showGathererDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showGathererDialog", this.m.GathererDialogModule.queryLoad());
 		}
 	}
 
@@ -477,7 +477,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.WorkshopDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showWorkshopDialog", null)//this.m.CommanderDialogModule.queryHireInformation());
+			this.m.JSHandle.asyncCall("showWorkshopDialog", this.m.WorkshopDialogModule.queryLoad());
 		}
 	}
 
@@ -655,8 +655,8 @@ this.camp_screen <- {
 			Slots = [],
 			Situations = []
 		};
-
-		foreach( building in this.World.Camp.getBuildings())
+		local slots = this.World.Camp.getBuildings()
+		foreach( building in slots)
 		{
 			if (building == null || building.isHidden())
 			{
