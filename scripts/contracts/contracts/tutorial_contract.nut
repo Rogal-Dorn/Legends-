@@ -1069,6 +1069,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_noble");
 						return 0;
 					}
 
@@ -1095,6 +1096,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_crusader");
 						return 0;
 					}
 
@@ -1121,6 +1123,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_ranger");
 						return 0;
 					}
 
@@ -1148,6 +1151,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+							this.World.State.getPlayer().getSprite("body").setBrush("figure_player_warlock");
 						return 0;
 					}
 
@@ -1202,6 +1206,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_seer");
 						return 0;
 					}
 
@@ -1229,6 +1234,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_berserker");
 						return 0;
 					}
 
@@ -1255,6 +1261,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_trader");
 						return 0;
 					}
 
@@ -1308,6 +1315,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_party");
 						return 0;
 					}
 
