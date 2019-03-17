@@ -401,6 +401,7 @@ this.asset_manager <- {
 				"legend_noble_commander_background"
 			]);
 			bro.setPlaceInFormation(13);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_noble");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);		
@@ -450,6 +451,7 @@ this.asset_manager <- {
 				"legend_crusader_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_crusader");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
@@ -465,6 +467,7 @@ this.asset_manager <- {
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
 			bro.setPlaceInFormation(4);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_ranger");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
 			
@@ -476,6 +479,7 @@ this.asset_manager <- {
 				"legend_necro_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_warlock");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
@@ -489,6 +493,7 @@ this.asset_manager <- {
 				"legend_witch_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_seer");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
@@ -515,6 +520,7 @@ this.asset_manager <- {
 				"legend_berserker_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_berserker");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
@@ -530,6 +536,7 @@ this.asset_manager <- {
 				"legend_berserker_background"
 			]);
 			bro.setPlaceInFormation(3);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_party");
 			bro.setVeteranPerks(2);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			
@@ -620,6 +627,7 @@ this.asset_manager <- {
 				"legend_trader_commander_background"
 			]);
 			bro.setPlaceInFormation(4);
+			this.World.State.getPlayer().getSprite("body").setBrush("figure_player_trader");
 			bro.setVeteranPerks(2);
 			this.setBrothersMax(6);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
