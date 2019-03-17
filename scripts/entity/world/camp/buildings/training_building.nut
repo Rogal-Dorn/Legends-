@@ -3,7 +3,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function create()
     {
         this.camp_building.create();
-        this.m.ID = "camp.training";
+        this.m.ID = this.Const.World.CampBuildings.Training;
         this.m.Slot = "training";
         this.m.Name = "Training Grounds";
         this.m.Description = "Training"

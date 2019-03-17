@@ -4,7 +4,7 @@ this.camp_manager <- {
         LastHourUpdated = 0,
         StartTime = 0,
         LastCampTime = 0,
-        Buildings = []
+        Tents = []
 	},
     function create()
     {
@@ -20,26 +20,26 @@ this.camp_manager <- {
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/scout_building"));
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/training_building"));  
         this.addBuilding(this.new("scripts/entity/world/camp/buildings/workshop_building"));
-        this.addBuilding(this.new("scripts/entity/world/camp/buildings/barber_building"));        
+        this.addBuilding(this.new("scripts/entity/world/camp/buildings/barber_building"));
     }
 
     function destroy()
     {
-        foreach(b in this.m.Buildings)
+        foreach(b in this.m.Tents)
         {
             b.destroy();
         }
-        this.m.Buildings = [];
+        this.m.Tents = [];
     }
 
 	function clear()
 	{
-		this.m.Buildings = [];
+		this.m.Tents = [];
 	}
 
     function init()
     {
-        foreach(b in this.m.Buildings)
+        foreach(b in this.m.Tents)
         {
             b.init();
         }
@@ -47,7 +47,7 @@ this.camp_manager <- {
 
     function completed()
     {
-        foreach(b in this.m.Buildings)
+        foreach(b in this.m.Tents)
         {
             b.completed();
         }
@@ -55,7 +55,7 @@ this.camp_manager <- {
 
     function getBuildingByID( _id )
     {
-        foreach (b in this.m.Buildings)
+        foreach (b in this.m.Tents)
         {
             if (b.getID() != _id)
             {
@@ -97,7 +97,7 @@ this.camp_manager <- {
     function getResults()
     {
         local L = [];
-        foreach(b in this.m.Buildings)
+        foreach(b in this.m.Tents)
         {
             L.extend(b.getResults())
         }
@@ -106,7 +106,7 @@ this.camp_manager <- {
 
     function getBuildings()
     {
-        return this.m.Buildings;
+        return this.m.Tents;
     }
 
     function onCamp()
@@ -137,7 +137,7 @@ this.camp_manager <- {
         }
 
         this.m.LastHourUpdated = this.World.getTime().Hours;
-        foreach(b in this.m.Buildings)
+        foreach(b in this.m.Tents)
         {
             b.update();
         }
@@ -147,7 +147,7 @@ this.camp_manager <- {
 	function addBuilding( _building, _slot = null )
 	{
         _building.setCamp(this);
-        this.m.Buildings.push(_building)
+        this.m.Tents.push(_building);
 	}
 
     function onSerialize( _out )
@@ -156,8 +156,8 @@ this.camp_manager <- {
 		_out.writeU8(this.m.LastHourUpdated);
         _out.writeF32(this.m.StartTime);
         _out.writeF32(this.m.LastCampTime);
-        _out.writeU8(this.m.Buildings.len());
-		foreach( building in this.m.Buildings )
+        _out.writeU8(this.m.Tents.len());
+		foreach( building in this.m.Tents )
 		{
 			if (building == null)
 			{
@@ -178,19 +178,22 @@ this.camp_manager <- {
 		this.m.LastHourUpdated = _in.readU8();
         this.m.StartTime = _in.readF32();
         this.m.LastCampTime = _in.readF32();
-		this.m.Buildings = [];
-		local numBuildings = _in.readU8();
-		for( local i = 0; i < numBuildings; i = ++i )
+        if (_in.getMetaData().getVersion() >= 52)
 		{
-			local id = _in.readU32();
-			if (id != 0)
-			{
-                local b =  this.new(this.IO.scriptFilenameByHash(id));
-                b.setCamp(this);
-                b.onDeserialize(_in);
-                this.m.Buildings.push(b);
-			}
-		} 
+            this.m.Tents = [];
+            local numBuildings = _in.readU8();
+            for( local i = 0; i < numBuildings; i = ++i )
+            {
+                local id = _in.readU32();
+                if (id != 0)
+                {
+                    local b =  this.new(this.IO.scriptFilenameByHash(id));
+                    b.setCamp(this);
+                    b.onDeserialize(_in);
+                    this.m.Tents.push(b);
+                }
+            } 
+        }
 		_in.readBool();
 	}
 

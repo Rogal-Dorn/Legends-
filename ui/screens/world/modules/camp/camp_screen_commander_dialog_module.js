@@ -74,7 +74,7 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     // create: containers (init hidden!)
     this.mContainer = $('<div class="l-commander-dialog-container display-none opacity-none"/>');
     _parentDiv.append(this.mContainer);
-    this.mDialogContainer = this.mContainer.createDialog('Commander', '', '', true, 'dialog-1280-768');
+    this.mDialogContainer = this.mContainer.createDialog('', '', '', true, 'dialog-1280-768');
 
     // create content
     var content = this.mDialogContainer.findDialogContentContainer();
@@ -375,7 +375,17 @@ CampScreenCommanderDialogModule.prototype.loadFromData = function (_data, bro, c
     {
         return;
     }
+    
+    if('Title' in _data && _data.Title !== null)
+	{
+		 this.mDialogContainer.findDialogTitle().html(_data.Title);
+	}
 
+	if('SubTitle' in _data && _data.SubTitle !== null)
+	{
+		 this.mDialogContainer.findDialogSubTitle().html(_data.SubTitle);
+    }
+    
     //this.onBrothersListLoaded(_data.brothers);
     this.mTentListScrollContainer.empty();
     for(var i = 0; i < _data.buildings.length; ++i)

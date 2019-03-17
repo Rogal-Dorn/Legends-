@@ -4,7 +4,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function create()
     {
         this.camp_building.create();
-        this.m.ID = "camp.gatherer";
+        this.m.ID = this.Const.World.CampBuildings.Gatherer;
         this.m.Slot = "gatherer";
         this.m.Name = "Gatherer";
         this.m.Description = "Forgage for herbs and medicine";

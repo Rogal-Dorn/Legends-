@@ -4,7 +4,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function create()
     {
         this.camp_building.create();
-        this.m.ID = "camp.workshop";
+        this.m.ID = this.Const.World.CampBuildings.Workshop;
         this.m.Slot = "workshop";
         this.m.Name = "Workshop";
         this.m.Description = "Turn scrap into useable parts";

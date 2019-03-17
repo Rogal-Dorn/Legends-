@@ -4,7 +4,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     function create()
     {
         this.camp_building.create();
-        this.m.ID = "camp.rest";
+        this.m.ID = this.Const.World.CampBuildings.Rest;
         this.m.Slot = "rest";
         this.m.Name = "Rest";
         this.m.Description = "Company personnel who have not been assigned a task will rest and relax here. Brothers who are relaxing will heal healthpoint twice as fast as others. The mood of anyone relaxing is sure to increase as well.";
