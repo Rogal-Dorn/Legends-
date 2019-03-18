@@ -50,6 +50,11 @@ gt.Const.HairColors.Zombie <- [
 	"black",
 	"grey"
 ];
+gt.Const.HairColors.None <- [
+	""
+];
+
+
 gt.Const.HairColors.Lineage <- [
 	[
 		"black",

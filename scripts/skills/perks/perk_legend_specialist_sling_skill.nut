@@ -15,10 +15,12 @@ this.perk_legend_specialist_sling_skill <- this.inherit("scripts/skills/skill", 
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_sling")
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.legend_sling")
 		{
 		_properties.RangedSkill += 15;
-		_properties.ArmorDamageMult += 0.25;
+		_properties.DamageDirectMult += 0.25;
 		}
 	}
 

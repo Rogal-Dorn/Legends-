@@ -15,7 +15,9 @@ this.perk_legend_specialist_lute_damage <- this.inherit("scripts/skills/skill", 
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.lute")
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.lute")
 		{
 			_properties.DamageRegularMin += 10;
 			_properties.DamageRegularMax += 20;

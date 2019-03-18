@@ -15,10 +15,12 @@ this.perk_legend_specialist_pitchfork_skill <- this.inherit("scripts/skills/skil
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_pitchfork")
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.legend_pitchfork")
 		{
 		_properties.MeleeSkill += 15;
-		_properties.ArmorDamageMult += 0.25;
+		_properties.DamageArmorMult += 0.25;
 		}
 	}
 
