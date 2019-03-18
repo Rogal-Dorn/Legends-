@@ -63,7 +63,8 @@ gt.Const.Strings.Quantity <- [
 gt.Const.Strings.Difficulty <- [
 	"Beginner",
 	"Veteran",
-	"Expert"
+	"Expert",
+	"Legendary"
 ];
 gt.Const.Strings.EntityName <- [
 	"Necromancer",
