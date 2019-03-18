@@ -75,9 +75,7 @@ this.legend_pack_small <- this.inherit("scripts/items/accessory/accessory", {
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local economicdifficulty = this.World.Assets.getEconomicDifficulty();
-		local stashSize = this.Const.LegendMod.MaxResources[economicdifficulty].Stash
-		stashSize += 3; 
+		this.addSkill(this.new("scripts/skills/effects/legend_small_pack_effect"));
 	}
 
 });
