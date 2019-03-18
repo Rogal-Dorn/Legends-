@@ -107,6 +107,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_3"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 
 	}

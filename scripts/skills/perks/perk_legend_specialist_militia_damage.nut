@@ -15,7 +15,9 @@ this.perk_legend_specialist_militia_damage <- this.inherit("scripts/skills/skill
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.militia_spear")
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.militia_spear")
 		{
 			_properties.DamageRegularMin += 5;
 			_properties.DamageRegularMax += 10;

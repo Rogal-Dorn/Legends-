@@ -15,7 +15,9 @@ this.perk_legend_specialist_shortbow_damage <- this.inherit("scripts/skills/skil
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.short_bow")
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.short_bow")
 		{
 			_properties.DamageRegularMin += 10;
 			_properties.DamageRegularMax += 20;

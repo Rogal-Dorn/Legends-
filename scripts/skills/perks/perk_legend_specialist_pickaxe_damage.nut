@@ -15,7 +15,9 @@ this.perk_legend_specialist_pickaxe_damage <- this.inherit("scripts/skills/skill
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.pickaxe")
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.pickaxe")
 		{
 			_properties.DamageRegularMin += 5;
 			_properties.DamageRegularMax += 10;

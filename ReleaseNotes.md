@@ -252,4 +252,7 @@ fixes order of specialist skills
 makes nuns women
 makes cat female 
 fixes errors in perks 
+makes commanders loyal so they don't abandon themselves
+reworks the specialist skills to stop errors
+gives lutes bash
 

@@ -15,7 +15,9 @@ this.perk_legend_specialist_butcher_skill <- this.inherit("scripts/skills/skill"
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.butchers_cleaver")
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.getID() == "weapon.butchers_cleaver")
 		{
 			_properties.MeleeSkill += 15;
 		}
