@@ -95,11 +95,11 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 
 			if (missingHeadArmor > missingBodyArmor)
 				{
-					if (missingHeadArmor => maxRepair)
+					if (missingHeadArmor >= maxRepair)
 						{
 						local cost = armorParts * -1;
 						this.World.Assets.addArmorParts(cost);
-						target.setArmor(this.Math.min(currentHeadArmor + maxRepair, maxHeadArmor);
+						target.setArmor(this.Math.min(currentHeadArmor + maxRepair, maxHeadArmor));
 						}
 					else if (missingHeadArmor < maxRepair)
 						{
@@ -110,11 +110,11 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 				}
 				else if (missingHeadArmor <= missingBodyArmor)
 				{
-					if (missingBodyArmor => maxRepair)
+					if (missingBodyArmor >= maxRepair)
 						{
 						local cost = armorParts * -1;
 						this.World.Assets.addArmorParts(cost);
-						target.setArmor(this.Math.min(currentBodyArmor + maxRepair, maxBodyArmor);
+						target.setArmor(this.Math.min(currentBodyArmor + maxRepair, maxBodyArmor));
 						}
 					else if (missingBodyArmor < maxRepair)
 						{
