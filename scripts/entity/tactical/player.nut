@@ -2430,6 +2430,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
 	}
 
+
+
 	function saveFormation()
 	{
 		this.m.Formations.savePosition(this.m.PlaceInFormation);

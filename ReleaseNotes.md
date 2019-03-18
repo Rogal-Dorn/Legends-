@@ -255,4 +255,4 @@ fixes errors in perks
 makes commanders loyal so they don't abandon themselves
 reworks the specialist skills to stop errors
 gives lutes bash
-
+makes resource perks and backpack work, fixes icons

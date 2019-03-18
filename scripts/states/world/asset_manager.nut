@@ -121,6 +121,14 @@ this.asset_manager <- {
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			ammo += this.Const.LegendMod.getMaxAmmo(bro.getBackground().getID());
+			if( bro.getSkills().getSkillByID("perk.legend_ammo_bundles"))
+				{
+				ammo +=20;
+				}
+			if( bro.getSkills().getSkillByID("perk.legend_ammo_binding"))
+				{
+				ammo +=10;
+				}
 		}
 		return ammo;
 	}
@@ -131,6 +139,14 @@ this.asset_manager <- {
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			parts += this.Const.LegendMod.getMaxArmorParts(bro.getBackground().getID());
+			if( bro.getSkills().getSkillByID("perk.legend_tools_spares"))
+				{
+				parts +=20;
+				}
+			if( bro.getSkills().getSkillByID("perk.legend_tools_drawers"))
+				{
+				parts +=10;
+				}
 		}
 		return parts;
 	}
@@ -141,6 +157,15 @@ this.asset_manager <- {
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			meds += this.Const.LegendMod.getMaxMedicine(bro.getBackground().getID());
+			if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
+				{
+				meds +=10;
+				}
+			if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
+				{
+				meds +=10;
+				}
+
 		}
 		return meds;
 	}
@@ -1153,7 +1178,20 @@ this.asset_manager <- {
 			//local medsConsumptionModifier = 1.0;
 			foreach( bro in roster )
 			{
-				stashSize += this.Const.LegendMod.getMaxStash(bro.getBackground().getID());
+				local broStash = this.Const.LegendMod.getMaxStash(bro.getBackground().getID());
+				if( bro.getSkills().getSkillByID("effects.legend_small_pack"))
+				{
+				broStash +=3;
+				}
+				if( bro.getSkills().getSkillByID("perk.legend_skillful_stacking"))
+				{
+				broStash +=10;
+				}
+				if( bro.getSkills().getSkillByID("perk.legend_efficient_packing"))
+				{
+				broStash +=5;
+				}
+				stashSize += broStash
 				healingModifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
 				repairModifier += this.Const.LegendMod.getRepairModifier(bro.getBackground().getID());
 				toolConsumptionModifier += this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID());

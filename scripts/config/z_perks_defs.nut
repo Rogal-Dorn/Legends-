@@ -1187,16 +1187,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_specialist_hammer_damage",
 		Name = this.Const.Strings.PerkName.LegendSpecialistHammerDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistHammerDamage,
-		Icon = "ui/perks/cleaver_01.png",
-		IconDisabled = "ui/perks/cleaver_bw.png"
+		Icon = "ui/perks/hammer_01.png",
+		IconDisabled = "ui/perks/hammer_bw.png"
 	},
 	{
 		ID = "perk.legend_specialist_hammer_skill",
 		Script = "scripts/skills/perks/perk_legend_specialist_hammer_skill",
 		Name = this.Const.Strings.PerkName.LegendSpecialistHammerSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistHammerSkill,
-		Icon = "ui/perks/cleaver_02.png",
-		IconDisabled = "ui/perks/cleaver_bw.png"
+		Icon = "ui/perks/hammer_02.png",
+		IconDisabled = "ui/perks/hammer_bw.png"
 	},
 	{
 		ID = "perk.legend_specialist_knife_damage",
@@ -1235,16 +1235,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_specialist_militia_damage",
 		Name = this.Const.Strings.PerkName.LegendSpecialistMilitiaDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistMilitiaDamage,
-		Icon = "ui/perks/militia_01.png",
-		IconDisabled = "ui/perks/militia_bw.png"
+		Icon = "ui/perks/spear_01.png",
+		IconDisabled = "ui/perks/spear_bw.png"
 	},
 	{
 		ID = "perk.legend_specialist_militia_skill",
 		Script = "scripts/skills/perks/perk_legend_specialist_militia_skill",
 		Name = this.Const.Strings.PerkName.LegendSpecialistMilitiaSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistMilitiaSkill,
-		Icon = "ui/perks/militia_02.png",
-		IconDisabled = "ui/perks/militia_bw.png"
+		Icon = "ui/perks/spear_02.png",
+		IconDisabled = "ui/perks/spear_bw.png"
 	},
 	{
 		ID = "perk.legend_specialist_pickaxe_damage",
@@ -1283,16 +1283,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_specialist_shortbow_damage",
 		Name = this.Const.Strings.PerkName.LegendSpecialistShortbowDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShortbowDamage,
-		Icon = "ui/perks/pitchfork_01.png",
-		IconDisabled = "ui/perks/pitchfork_bw.png"
+		Icon = "ui/perks/shortbow_01.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
 	},
 	{
 		ID = "perk.legend_specialist_shortbow_skill",
 		Script = "scripts/skills/perks/perk_legend_specialist_shortbow_skill",
 		Name = this.Const.Strings.PerkName.LegendSpecialistShortbowSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShortbowSkill,
-		Icon = "ui/perks/pitchfork_02.png",
-		IconDisabled = "ui/perks/pitchfork_bw.png"
+		Icon = "ui/perks/shortbow_02.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
 	},
 	{
 		ID = "perk.legend_specialist_shovel_damage",
@@ -1363,16 +1363,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_big_game_hunter",
 		Name = this.Const.Strings.PerkName.LegendBigGameHunter,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBigGameHunter,
-		Icon = "ui/perks/sling_02.png",
-		IconDisabled = "ui/perks/sling_bw.png"
+		Icon = "ui/perks/shortbow_02.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
 	},
 	{
 		ID = "perk.legend_second_wind",
 		Script = "scripts/skills/perks/perk_legend_second_wind",
 		Name = this.Const.Strings.PerkName.LegendSecondWind,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSecondWind,
-		Icon = "ui/perks/sling_02.png",
-		IconDisabled = "ui/perks/sling_bw.png"
+		Icon = "ui/perks/shortbow_02.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
 	},
 	{
 		ID = "perk.legend_mark_target",
