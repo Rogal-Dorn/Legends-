@@ -86,11 +86,11 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 		local missingPercent = 100 - currentPercent;
 		local maxHeal = meds * 5; 
 		
-		if (missingPercent => maxHeal)
+		if (missingPercent >= maxHeal)
 			{
 			local cost = meds * -1;
 			this.World.Assets.addMedicine(cost);
-			targetSetHitpoints(this.Math.min(actor.getHitpoints() + maxHeal, maxHP);
+			targetSetHitpoints(this.Math.min(actor.getHitpoints() + maxHeal, maxHP));
 			}
 		else if (missingPercent < maxHeal)
 			{
