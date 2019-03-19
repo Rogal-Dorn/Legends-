@@ -6,8 +6,8 @@ var WorldTownScreenShop =
 {
 	ItemOwner:
 	{
-		Stash: 'world-town-screen-shop-dialog-module.stash',
-		Shop: 'world-town-screen-shop-dialog-module.shop'
+		Stash: 'camp-screen-repair-dialog-module.stash',
+		Shop: 'camp-screen-repair-dialog-module.shop'
 	},
 
 	ItemFlag:
@@ -231,7 +231,7 @@ CampScreenRepairDialogModule.prototype.createDIV = function (_parentDiv)
     // create shop loot
     var rightColumn = $('<div class="column is-right"/>');
     content.append(rightColumn);
-    headerRow = $('<div class="row is-header title-font-normal font-bold font-color-title">Shop</div>');
+    headerRow = $('<div class="row is-header title-font-normal font-bold font-color-title">Repairs</div>');
     rightColumn.append(headerRow);
     contentRow = $('<div class="row is-content"/>');
     rightColumn.append(contentRow);
@@ -535,16 +535,16 @@ CampScreenRepairDialogModule.prototype.loadFromData = function (_data)
     
 	if('Stash' in _data && _data.Stash !== null)
 	{
-		this.loadStashData(_data.Stash);
+		this.loadStashData(_data.Stash, _data.Capacity);
 	}
 
 	if('Repairs' in _data && _data.Repairs !== null)
 	{
-		this.loadShopData(_data.Shop);
+		this.loadShopData(_data.Repairs, _data.Capacity);
     }
 };
 
-CampScreenRepairDialogModule.prototype.loadStashData = function (_data)
+CampScreenRepairDialogModule.prototype.loadStashData = function (_data, _capacity)
 {
     if(_data === undefined || _data === null || !jQuery.isArray(_data))
     {
@@ -562,10 +562,10 @@ CampScreenRepairDialogModule.prototype.loadStashData = function (_data)
     var arrayRef = { val: this.mStashSlots };
     var containerRef = { val: this.mStashListScrollContainer };
 
-    this.assignItems(WorldTownScreenShop.ItemOwner.Stash, _data, arrayRef.val, containerRef.val);
+    this.assignItems(WorldTownScreenShop.ItemOwner.Stash, _data, _capacity, arrayRef.val, containerRef.val);
 };
 
-CampScreenRepairDialogModule.prototype.loadShopData = function (_data)
+CampScreenRepairDialogModule.prototype.loadShopData = function (_data, _capacity)
 {
     if(_data === undefined || _data === null || !jQuery.isArray(_data))
     {
@@ -583,7 +583,7 @@ CampScreenRepairDialogModule.prototype.loadShopData = function (_data)
     var arrayRef = { val: this.mShopSlots };
     var containerRef = { val: this.mShopListScrollContainer };
 
-    this.assignItems(WorldTownScreenShop.ItemOwner.Shop, _data, arrayRef.val, containerRef.val);
+    this.assignItems(WorldTownScreenShop.ItemOwner.Shop, _data, _capacity, arrayRef.val, containerRef.val);
 };
 
 CampScreenRepairDialogModule.prototype.querySlotByIndex = function(_itemArray, _index)
@@ -638,14 +638,12 @@ CampScreenRepairDialogModule.prototype.assignItemToSlot = function(_owner, _slot
     }
 };
 
-CampScreenRepairDialogModule.prototype.assignItems = function (_owner, _items, _itemArray, _itemContainer)
+CampScreenRepairDialogModule.prototype.assignItems = function (_owner, _items, _capacity, _itemArray, _itemContainer)
 {
-	this.destroyItemSlots(_itemArray, _itemContainer);
-
+    this.destroyItemSlots(_itemArray, _itemContainer);
+    this.createItemSlots(_owner, _capacity, _itemArray, _itemContainer);
     if(_items.length > 0)
     {
-    	this.createItemSlots(_owner, _items.length, _itemArray, _itemContainer);
-
         for(var i = 0; i < _items.length; ++i)
         {
             // ignore empty slots
@@ -654,9 +652,7 @@ CampScreenRepairDialogModule.prototype.assignItems = function (_owner, _items, _
                 this.assignItemToSlot(_owner, _itemArray[i], _items[i]);
             }
         }
-
         //this.updateItemPriceLabels(_itemArray, _items, _owner === WorldTownScreenShop.ItemOwner.Stash);
-
     }
 };
 
@@ -687,7 +683,7 @@ CampScreenRepairDialogModule.prototype.createItemSlots = function (_owner, _size
     var screen = $('.camp-screen');
     for(var i = 0; i < _size; ++i)
     {
-        _itemArray.push(this.createItemSlot(_owner, _itemArray.length, _itemContainer, screen));
+        _itemArray.push(this.createItemSlot(_owner, i, _itemContainer, screen));
     }
 };
 
@@ -803,12 +799,12 @@ CampScreenRepairDialogModule.prototype.swapItem = function (_sourceItemIdx, _sou
 
         if ('Stash' in data)
         {
-            self.updateStashList(data.Stash);
+            self.updateStashList(data.Stash, data.Capacity);
         }
 
-        if ('Shop' in data)
+        if ('Repairs' in data)
         {
-            self.updateShopList(data.Shop);
+            self.updateShopList(data.Repairs, data.Capacity);
         }
     });
 };
@@ -840,20 +836,20 @@ CampScreenRepairDialogModule.prototype.updateSlotItem = function (_owner, _itemA
     }
 };
 
-CampScreenRepairDialogModule.prototype.updateStashList = function (_data)
+CampScreenRepairDialogModule.prototype.updateStashList = function (_data, _capacity)
 {
     if(this.mStashList === null || !jQuery.isArray(this.mStashList) || this.mStashList.length === 0)
     {
-        this.loadStashData(_data);
+        this.loadStashData(_data, _capacity);
         return;
     }
 
     // stash size changed (shouldn't happen)
-    if(this.mStashList.length !== _data.length)
-    {
-        console.error('ERROR: Failed to update stash. Stash changed in size.');
-        return;
-    }
+    // if(this.mStashList.length !== _data.length)
+    // {
+    //     console.error('ERROR: Failed to update stash. Stash changed in size.');
+    //     return;
+    // }
 
     // check stash for changes
     for(var i = 0; i < this.mStashList.length; ++i)
@@ -893,11 +889,11 @@ CampScreenRepairDialogModule.prototype.updateStashList = function (_data)
     }
 };
 
-CampScreenRepairDialogModule.prototype.updateShopList = function (_data)
+CampScreenRepairDialogModule.prototype.updateShopList = function (_data, _capacity)
 {
     if(this.mShopList === null || !jQuery.isArray(this.mShopList) || this.mShopList.length === 0)
     {
-		this.loadShopData(_data);
+		this.loadShopData(_data, _capacity);
         return;
     }
 

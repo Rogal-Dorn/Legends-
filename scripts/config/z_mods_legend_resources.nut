@@ -145,7 +145,7 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 		case "background.vazl_inventor":
 		case "background.legend_commander_crusader":
 		case "background.legend_noble":
-			return 5;
+			return 5;	
 			break;
 		case "background.peddler":
 		case "background.legend_commander_noble":
@@ -208,18 +208,18 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 {
 	switch ( _background )
 	{
-		case "background.legend_crusader":
-		return 0.1;
-			 break;
 		case "background.legend_commander_crusader":
+		case "background.legend_crusader":
+			return 0.25;
+			 break;
 		case "background.legend_ironmonger":
 		case "background.tailor":
 		case "background.female_tailor":
-			return 0.2;
+			return 0.5;
 			break;
 		case "background.legend_blacksmith":
 		case "background.vazl_inventor":
-			return 0.5;
+			return 1.0;
 			break;
 
 		default:

@@ -441,19 +441,8 @@ this.character_screen <- {
 		{
 			return false;
 		}
-		else
-		{
-			local item = this.World.Assets.getStash().getItemByInstanceID(_data).item;
-
-			if (item != null)
-			{
-				return item.setToBeRepaired(!item.isToBeRepaired());
-			}
-			else
-			{
-				return false;
-			}
-		}
+		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair);
+		return tent.onRepairInventoryItem(_data);
 	}
 
 	function onEquipInventoryItem( _data )

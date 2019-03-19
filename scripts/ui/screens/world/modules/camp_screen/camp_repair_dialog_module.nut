@@ -16,30 +16,37 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.ui_module.destroy();
 	}
 
+	function onShow()
+	{
+		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair);
+		tent.onInit();
+		return this.queryLoad();
+	}
+
 	function queryLoad()
 	{
 		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
-		local items = tent.getListOfItemsNeedingRepair();
 		local result = {
 			Title = this.m.Title,
 			SubTitle = this.m.Description,
 			Assets = this.m.Parent.queryAssetsInformation(),
 			Stash = [],
-			Repairs = []
+			Repairs = [],
+			Capacity = tent.getCapacity()
 		};
-		this.UIDataHelper.convertRepairItemsToUIData(items.Items, result.Repairs, this.Const.UI.ItemOwner.Shop);
-		this.UIDataHelper.convertRepairItemsToUIData(items.Stash, result.Stash, this.Const.UI.ItemOwner.Stash, this.m.InventoryFilter);
+		this.UIDataHelper.convertRepairItemsToUIData(tent.getRepairs(), result.Repairs, this.Const.UI.ItemOwner.Shop);
+		this.UIDataHelper.convertRepairItemsToUIData(tent.getStash(), result.Stash, this.Const.UI.ItemOwner.Stash, this.m.InventoryFilter);
 		return result;
 	}
 
 	function loadStashList()
 	{
 		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
-		local items = tent.getListOfItemsNeedingRepair();
 		local result = {
-			Stash = []
+			Stash = [],
+			Capacity = tent.getCapacity()
 		};
-		this.UIDataHelper.convertRepairItemsToUIData(items.Stash, result.Stash, this.Const.UI.ItemOwner.Stash, this.m.InventoryFilter);
+		this.UIDataHelper.convertRepairItemsToUIData(tent.getStash(), result.Stash, this.Const.UI.ItemOwner.Stash, this.m.InventoryFilter);
 		this.m.JSHandle.asyncCall("loadFromData", result);
 	}
 
@@ -100,6 +107,17 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			this.m.InventoryFilter = this.Const.Items.ItemFilter.Usable;
 			this.loadStashList();
 		}
+	}
+
+	function onSwapItem( _data )
+	{
+		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+		local sourceItemIdx = _data[0];
+		local sourceItemOwner = _data[1];
+		local targetItemIdx = _data[2];
+		local targetItemOwner = _data[3];
+		tent.swapItems(sourceItemOwner, sourceItemIdx, targetItemOwner, targetItemIdx)
+		return this.queryLoad();
 	}
 
 	function onLeaveButtonPressed()

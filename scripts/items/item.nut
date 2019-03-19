@@ -174,7 +174,8 @@ this.item <- {
 
 	function isToBeRepaired()
 	{
-		return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
+		return this.m.IsToBeRepaired;
+		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
 	}
 
 	function isConsumed()
