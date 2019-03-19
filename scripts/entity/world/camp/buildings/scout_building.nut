@@ -7,8 +7,10 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.m.Slot = "scout";
         this.m.Name = "Scouting";
         this.m.Description = "Send out a scouting party"
-		this.m.UIImage = "ui/settlements/camp_scout_full_day";
-		this.m.UIImageNight = "ui/settlements/camp_scout_full_night";
+		this.m.UIImage = "ui/settlements/scout_day_empty;
+		this.m.UIImageNight = "ui/settlements/scout_night_empty";
+		this.m.UIImageFull = "ui/settlements/scout_day_full;
+		this.m.UIImageNightFull = "ui/settlements/scout_night_full";
     }
 
 	function onClicked( _campScreen )
