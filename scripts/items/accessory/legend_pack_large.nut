@@ -1,20 +1,20 @@
 this.legend_pack_large <- this.inherit("scripts/items/accessory/accessory", {
 	m = {
-		StashSize = 10
+		StashSize = 6
 	},
 	function create()
 	{
 		this.accessory.create();
 		this.m.ID = "accessory.legend_pack_large";
-		this.m.Name = "Taveler's Backpack";
-		this.m.Description = "A backpack worn by travelers to help carry additional supplies";
+		this.m.Name = "Merchant's pack";
+		this.m.Description = "A backpack worn by merchants to carry many more supplies";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.IconLarge = "accessory/legend_pack_small.png";
-		this.m.Icon = "accessory/legend_pack_small.png";
-		this.m.Sprite = "legend_pack_small";
-		this.m.Value = 100;
+		this.m.IconLarge = "accessory/legend_pack_large.png";
+		this.m.Icon = "accessory/legend_pack_large.png";
+		this.m.Sprite = "legend_pack_large";
+		this.m.Value = 1000;
 	}
 
 	function getTooltip()
