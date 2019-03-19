@@ -7,8 +7,10 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "crafting";
         this.m.Name = "Craft";
         this.m.Description = "Craft items"
-		this.m.UIImage = "ui/settlements/camp_taxidermist_full_day";
-		this.m.UIImageNight = "ui/settlements/camp_taxidermist_full_night";
+		this.m.UIImage = "ui/settlements/taxidermist_day_empty";
+		this.m.UIImageNight = "ui/settlements/taxidermist_night_empty";
+		this.m.UIImageFull = "ui/settlements/taxidermist_day_full";
+		this.m.UIImageNightFull = "ui/settlements/taxidermist_night_full";
     }
 
 	function onClicked( _campScreen )

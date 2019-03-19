@@ -8,8 +8,10 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "gatherer";
         this.m.Name = "Gatherer";
         this.m.Description = "Forgage for herbs and medicine";
-		this.m.UIImage = "ui/settlements/camp_gatherer_full_day";
-		this.m.UIImageNight =  "ui/settlements/camp_gatherer_full_night";
+		this.m.UIImage = "ui/settlements/gatherer_day_empty";
+		this.m.UIImageNight =  "ui/settlements/gatherer_night_empty";
+		this.m.UIImageFull = "ui/settlements/gatherer_day_full";
+		this.m.UIImageNightFull =  "ui/settlements/gatherer_night_full";
         this.m.CanEnter = false
     }
 
