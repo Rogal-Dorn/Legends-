@@ -1502,20 +1502,31 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 		return;
 	}
 
-	// stash size changed .. shouldn't happen..
-	if (this.mStashList.length !== _data.length)
+    
+    if (this.mStashList.length !== _data.length)
+    {
+        this.mStashList = _data;
+        this.setInventoryMode(this.mInventoryMode);
+        return;
+    }
+
+    // stash size changed .. shouldn't happen..
+    var numItems = this.mStashList.length;
+    if (this.mStashList.length < _data.length)
 	{
-		console.error('ERROR: Failed to updated stash. Stash dataset changed in size.');
-		this.mStashList = _data;
-		return;
+        // console.error('ERROR: Failed to updated stash. Stash dataset changed in size.');
+        //this.loadStashList(_data, true)
+        numItems = _data.length;
+		//this.mStashList = _data;
+		// return;
 	}
 
 	// check stash for changes
-	for (var i = 0; i < this.mStashList.length; ++i)
+	for (var i = 0; i < numItems; ++i)
 	{
 		var sourceItem = this.mStashList[i];
-		var targetItem = _data[i];
-		
+        var targetItem = _data[i];
+    
 		// item added to stash slot
 		if (sourceItem === null && targetItem !== null)
 		{
@@ -1550,7 +1561,8 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 				this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key, { item: targetItem, index: i, flag: CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Flag.Updated });
 			}
 		}
-	}
+    }
+
 };
 
 CharacterScreenDatasource.prototype.updateNameAndTitle = function(_brotherId, _name, _title)

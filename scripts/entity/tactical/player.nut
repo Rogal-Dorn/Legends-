@@ -2475,6 +2475,69 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	function getStashModifier()
+	{
+		local broStash = this.Const.LegendMod.getMaxStash(this.getBackground().getID());
+		local item = this.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+		if (item != null && item.getID() == "accessory.legend_pack_small")
+		{
+			broStash += item.m.StashSize;
+		}
+		local skill = this.getSkills().getSkillByID("perk.legend_skillful_stacking")
+		if( skill != null)
+		{
+			broStash += skill.m.StashSize;
+		}
+		skill = this.getSkills().getSkillByID("perk.legend_efficient_packing")
+		if( skill != null)
+		{
+			broStash += skill.m.StashSize;
+		}		
+		return broStash;
+	}
+
+	function getAmmoModifier()
+	{
+		local ammo = this.Const.LegendMod.getMaxAmmo(this.getBackground().getID());
+		if( this.getSkills().getSkillByID("perk.legend_ammo_bundles"))
+		{
+			ammo +=20;
+		}
+		if( this.getSkills().getSkillByID("perk.legend_ammo_binding"))
+		{
+			ammo +=10;
+		}
+		return ammo
+	}
+
+	function getArmorPartsModifier()
+	{
+		local parts = this.Const.LegendMod.getMaxArmorParts(bro.getBackground().getID());
+		if( bro.getSkills().getSkillByID("perk.legend_tools_spares"))
+		{
+			parts +=20;
+		}
+		if( bro.getSkills().getSkillByID("perk.legend_tools_drawers"))
+		{
+			parts +=10;
+		}
+		return parts;
+	}
+
+	function getMedsModifier()
+	{
+		local meds = this.Const.LegendMod.getMaxMedicine(bro.getBackground().getID());
+		if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
+		{
+			meds +=10;
+		}
+		if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
+		{
+			meds +=10;
+		}
+		return meds;
+	}
+
 	function onSerialize( _out )
 	{
 		this.actor.onSerialize(_out);

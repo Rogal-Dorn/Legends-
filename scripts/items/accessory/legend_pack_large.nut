@@ -1,13 +1,13 @@
-this.legend_pack_small <- this.inherit("scripts/items/accessory/accessory", {
+this.legend_pack_large <- this.inherit("scripts/items/accessory/accessory", {
 	m = {
-		StashSize = 3
+		StashSize = 10
 	},
 	function create()
 	{
 		this.accessory.create();
-		this.m.ID = "accessory.legend_pack_small";
-		this.m.Name = "Traveler\'s Sash";
-		this.m.Description = "A sash worn by travelers to help carry additional supplies";
+		this.m.ID = "accessory.legend_pack_large";
+		this.m.Name = "Taveler's Backpack";
+		this.m.Description = "A backpack worn by travelers to help carry additional supplies";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;

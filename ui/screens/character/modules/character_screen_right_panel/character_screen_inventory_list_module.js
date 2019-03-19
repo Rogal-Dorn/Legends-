@@ -799,6 +799,9 @@ CharacterScreenInventoryListModule.prototype.updateSlotItem = function (_entityI
 
 			break;
         }
+        case 'Grow':
+        
+            break;
     }
 
     /*
@@ -1101,7 +1104,7 @@ CharacterScreenInventoryListModule.prototype.onBrotherSelected = function (_data
     this.assignItems(_data[CharacterScreenIdentifier.Entity.Id], CharacterScreenIdentifier.ItemOwner.Ground, _data[CharacterScreenIdentifier.Entity.Ground], arrayRef.val, containerRef.val);
 };
 
-CharacterScreenInventoryListModule.prototype.onStashLoaded = function (_dataSource, _data)
+CharacterScreenInventoryListModule.prototype.onStashLoaded = function (_dataSource, _data, _reset)
 {
 	if (_data === undefined || _data === null || !jQuery.isArray(_data))
     {
@@ -1116,7 +1119,7 @@ CharacterScreenInventoryListModule.prototype.onStashLoaded = function (_dataSour
 	}
     */
 
-    if (this.mInventorySlots === null)
+    if (this.mInventorySlots === null || _reset)
     {
         this.mInventorySlots = [];
     }

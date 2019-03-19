@@ -241,7 +241,7 @@ Adds Nun, Nun robes and nun habit - she helps heal and spawns near wineries, bee
 Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and spawns near herbalist groves, gatherers huts and mushroom groves  
 Adds Taxidermist and taxidermist apron - reduces med usage, spawns near trappers, tanners and pig farms
 Adds Ranger armor 
-Adds traveler's pack, accessory that lets you gain more stash space
+Adds traveler's pack, accessory that lets you gain more stash space.
 Adds trader world icon
 Player world figurine changes based on start 
 fixes some female backgrounds occassionally showing up to hire naked
@@ -256,3 +256,4 @@ makes commanders loyal so they don't abandon themselves
 reworks the specialist skills to stop errors
 gives lutes bash
 makes resource perks and backpack work, fixes icons
+*Add blueprint for a small and large carry pack (+3, +10 stash size when equipped. Requies cloth,silk and cloth,silk,unhold hide)

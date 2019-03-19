@@ -120,15 +120,7 @@ this.asset_manager <- {
 		local ammo = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo;
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			ammo += this.Const.LegendMod.getMaxAmmo(bro.getBackground().getID());
-			if( bro.getSkills().getSkillByID("perk.legend_ammo_bundles"))
-				{
-				ammo +=20;
-				}
-			if( bro.getSkills().getSkillByID("perk.legend_ammo_binding"))
-				{
-				ammo +=10;
-				}
+			ammo += bro.getAmmoModifier();
 		}
 		return ammo;
 	}
@@ -138,15 +130,7 @@ this.asset_manager <- {
 		local parts = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts;
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			parts += this.Const.LegendMod.getMaxArmorParts(bro.getBackground().getID());
-			if( bro.getSkills().getSkillByID("perk.legend_tools_spares"))
-				{
-				parts +=20;
-				}
-			if( bro.getSkills().getSkillByID("perk.legend_tools_drawers"))
-				{
-				parts +=10;
-				}
+			parts += bro.getArmorPartsModifier();
 		}
 		return parts;
 	}
@@ -156,16 +140,7 @@ this.asset_manager <- {
 		local meds = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine;
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			meds += this.Const.LegendMod.getMaxMedicine(bro.getBackground().getID());
-			if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
-				{
-				meds +=10;
-				}
-			if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
-				{
-				meds +=10;
-				}
-
+			meds += bro.getMedsModifier();
 		}
 		return meds;
 	}
@@ -371,6 +346,7 @@ this.asset_manager <- {
 		{
 			this.m.Stash.add(this.new(item));
 		}
+		this.m.Stash.add(this.new("scripts/items/accessory/legend_pack_small"))
 
 		this.updateFood();
 		local names = [];
@@ -1178,20 +1154,7 @@ this.asset_manager <- {
 			//local medsConsumptionModifier = 1.0;
 			foreach( bro in roster )
 			{
-				local broStash = this.Const.LegendMod.getMaxStash(bro.getBackground().getID());
-				if( bro.getSkills().getSkillByID("effects.legend_small_pack"))
-				{
-				broStash +=3;
-				}
-				if( bro.getSkills().getSkillByID("perk.legend_skillful_stacking"))
-				{
-				broStash +=10;
-				}
-				if( bro.getSkills().getSkillByID("perk.legend_efficient_packing"))
-				{
-				broStash +=5;
-				}
-				stashSize += broStash
+				stashSize += bro.getStashModifier()
 				healingModifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
 				repairModifier += this.Const.LegendMod.getRepairModifier(bro.getBackground().getID());
 				toolConsumptionModifier += this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID());

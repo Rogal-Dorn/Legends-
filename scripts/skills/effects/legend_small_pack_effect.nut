@@ -9,8 +9,7 @@ this.legend_small_pack_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "status_effect_56_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
-		this.m.IsRemovedAfterBattle = true;
+		this.m.IsRemovedAfterBattle = false;
 	}
-
 
 });

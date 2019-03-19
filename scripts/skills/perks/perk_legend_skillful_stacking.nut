@@ -1,5 +1,7 @@
 this.perk_legend_skillful_stacking <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		StashSize = 10
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_skillful_stacking";
@@ -15,13 +17,11 @@ this.perk_legend_skillful_stacking <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
-		stashSize += 10; 
-
+		this.Stash.resize(this.Stash.getCapacity() + this.m.StashSize)
 	}
-		function onRemoved()
+	
+	function onRemoved()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Stash
-		stashSize -= 10; 
+		this.Stash.resize(this.Stash.getCapacity() - this.m.StashSize)
 	}
 });
