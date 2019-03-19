@@ -14,8 +14,10 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "repair";
         this.m.Name = "Repair Tent";
         this.m.Description = "Manage the repair of company items"
-		this.m.UIImage = "ui/settlements/camp_repair_large_full_day";
-		this.m.UIImageNight = "ui/icons/buildings/camp_repair_large_full_night.png";    
+		this.m.UIImage = "ui/settlements/blacksmith_day_empty_large";
+		this.m.UIImageNight = "ui/icons/buildings/blacksmith_night_empty_large"; 
+		this.m.UIImageFull = "ui/settlements/blacksmith_day_full_large";
+		this.m.UIImageNightFull = "ui/icons/buildings/blacksmith_night_full_large";   
     }
 
     function destroy()

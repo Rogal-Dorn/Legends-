@@ -8,8 +8,10 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.m.Slot = "rest";
         this.m.Name = "Rest";
         this.m.Description = "Company personnel who have not been assigned a task will rest and relax here. Brothers who are relaxing will heal healthpoint twice as fast as others. The mood of anyone relaxing is sure to increase as well.";
-		this.m.UIImageNight =  "ui/settlements/camp_fire_night";
-		this.m.UIImage = "ui/settlements/camp_fire_day";
+		this.m.UIImage = "ui/settlements/rest_day_empty";
+		this.m.UIImageNight =  "ui/settlements/rest_night_empty";
+		this.m.UIImageFull = "ui/settlements/rest_day_full";
+		this.m.UIImageNightFull =  "ui/settlements/rest_night_full";
         this.m.CanEnter = false
     }
 
