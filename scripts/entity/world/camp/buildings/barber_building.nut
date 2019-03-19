@@ -7,8 +7,10 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "barber";
         this.m.Name = "Barber";
         this.m.Description = "or Plastic surgeon.."
-		this.m.UIImage = "ui/settlements/camp_barber_full_day";
-		this.m.UIImageNight = "ui/settlements/camp_barber_full_night";
+		this.m.UIImage = "ui/settlements/barber_day_empty";
+		this.m.UIImageNight = "ui/settlements/barber_night_empty";
+		this.m.UIImageFull = "ui/settlements/barber_day_full";
+		this.m.UIImageNightFull = "ui/settlements/barber_night_full";
         this.m.InCommanderTent = false;
     }
 

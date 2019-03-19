@@ -7,6 +7,8 @@ this.camp_building <- {
         Description = "",
 		UIImage = null,
 		UIImageNight = null,
+		UIImageFull = null,
+		UIImageNightFull = null,
 		Tooltip = null,
 		TooltipIcon = "",
 		Sounds = [],
