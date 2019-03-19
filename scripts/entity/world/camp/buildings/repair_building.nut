@@ -114,6 +114,11 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             return
         }
 
+        if (this.m.Repairs == null)
+        {
+            return
+        }
+
         local modifiers = this.getModifiers();
         foreach (i, r in this.m.Repairs)
         {
