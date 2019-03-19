@@ -427,7 +427,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.RepairDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showRepairDialog", this.m.RepairDialogModule.queryLoad());
+			this.m.JSHandle.asyncCall("showRepairDialog", this.m.RepairDialogModule.onShow());
 		}
 	}
 
