@@ -17,7 +17,7 @@ this.perk_legend_specialist_knife_skill <- this.inherit("scripts/skills/skill", 
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.getID() == "weapon.knife")
+		if (item != null && item.getID() == "weapon.knife")
 		{
 			_properties.MeleeSkill += 15;
 			_properties.DamageDirectMult += 0.5;

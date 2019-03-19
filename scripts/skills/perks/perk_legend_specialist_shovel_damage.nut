@@ -17,7 +17,7 @@ this.perk_legend_specialist_shovel_damage <- this.inherit("scripts/skills/skill"
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.getID() == "weapon.legend_shovel")
+		if (item != null && item.getID() == "weapon.legend_shovel")
 		{
 			_properties.DamageRegularMin += 10;
 			_properties.DamageRegularMax += 20;

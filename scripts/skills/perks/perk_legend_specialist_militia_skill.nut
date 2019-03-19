@@ -17,10 +17,11 @@ this.perk_legend_specialist_militia_skill <- this.inherit("scripts/skills/skill"
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.getID() == "weapon.militia_spear")
+		if (item != null && item.getID() == "weapon.militia_spear")
 		{
 			_properties.MeleeSkill += 15;
 		}
 	}
+
 
 });

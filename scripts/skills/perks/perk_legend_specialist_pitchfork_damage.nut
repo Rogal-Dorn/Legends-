@@ -17,7 +17,7 @@ this.perk_legend_specialist_pitchfork_damage <- this.inherit("scripts/skills/ski
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.getID() == "weapon.legend_pitchfork")
+		if (item != null && item.getID() == "weapon.legend_pitchfork")
 		{
 			_properties.DamageRegularMin += 10;
 			_properties.DamageRegularMax += 20;

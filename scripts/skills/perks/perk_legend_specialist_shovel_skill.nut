@@ -17,7 +17,7 @@ this.perk_legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill",
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (!actor.hasSkill("actives.knock_out") && item.getID() == "weapon.legend_shovel")
+		if (item != null && !actor.hasSkill("actives.knock_out") && item.getID() == "weapon.legend_shovel")
 		{
 			_properties.MeleeSkill += 15;
 			this.m.Container.addSkill(this.new("scripts/skills/actives/knock_out"));

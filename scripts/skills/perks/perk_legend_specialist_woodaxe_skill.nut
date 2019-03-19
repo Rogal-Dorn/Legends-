@@ -17,7 +17,7 @@ this.perk_legend_specialist_woodaxe_skill <- this.inherit("scripts/skills/skill"
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.getID() == "weapon.woodcutters_axe")
+		if (item != null && item.getID() == "weapon.woodcutters_axe")
 		{
 		_properties.MeleeSkill += 15;
 		}
