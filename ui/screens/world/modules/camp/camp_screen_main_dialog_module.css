@@ -173,22 +173,22 @@
 .camp-screen > .l-main-dialog-container .slot-training {
 	-webkit-transform: scale(-0.7, 0.7);
 	position: absolute;
-	left: 25.0rem;
+	left: 23.0rem;
 	top: 48.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-rest {
 	-webkit-transform: scale(-0.7, 0.7);
 	position: absolute;
-	left: 12.0rem;
-	top: 35.0rem;
+	left: 45.0rem;
+	top: 50.0rem;
 }
 
 
 	.camp-screen > .l-main-dialog-container .slot-barber {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
-		left: 65.0rem;
+		left: 68.0rem;
 		top: 50.0rem;
 	}
 
@@ -201,7 +201,7 @@
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
 		left: 5.0rem;
-		top: 37.0rem;
+		top: 35.0rem;
 	}
 
 .camp-screen > .l-main-dialog-container .slot-healer {
@@ -216,7 +216,7 @@
 	-webkit-transform: scale(-0.7, 0.7);
 	position: absolute;
 	left: 40.0rem;
-	top: 35.0rem;
+	top: 32.0rem;
 }
 
 
@@ -225,7 +225,7 @@
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
     left: 62.0rem;
-    top: 35.0rem;
+    top: 32.0rem;
 }
 
 	.camp-screen > .l-main-dialog-container .slot-enchanter {
@@ -240,21 +240,21 @@
 {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
-		left: 10.0rem;
-		top: 28.0rem;
+		left: 15.0rem;
+		top: 20.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-gatherer {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
-		left: 30.0rem;
-		top: 27.0rem;
+		left: 33.0rem;
+		top: 20.0rem;
 	}
 
 .camp-screen > .l-main-dialog-container .slot-workshop {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
-		left: 55.0rem;
+		left: 57.0rem;
 		top: 28.0rem;
 	}
 
@@ -263,7 +263,7 @@
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
     left: 75.0rem;
-    top: 28.0rem;
+    top: 21.0rem;
 }
 
 
