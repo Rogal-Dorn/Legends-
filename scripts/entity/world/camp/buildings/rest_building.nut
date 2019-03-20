@@ -64,20 +64,24 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     {
         local res = [];
         local roster = this.World.getPlayerRoster().getAll();
+        local hpCount = 100;
+        local moodCount = 150;
         foreach( b in roster )
         {
+            ++hpCount
             if (b.getCampHealing() > 0)
             {
                 res.push({
-                    id = 11,
+                    id = hpCount,
                     icon = "ui/icons/health.png",
                     text = b.getName() + " healed [color=" + this.Const.UI.Color.PositiveEventValue + "]" + b.getCampHealing() + "[/color] points."
                 })
             }
             if (b.getLastCampTime() == this.m.Camp.getLastCampTime())
             {
+                ++moodCount
                 res.push({
-                    id = 12,
+                    id = moodCount,
                     icon =  this.Const.MoodStateIcon[b.getMoodState()],
                     text = b.getName() + this.Const.MoodStateEvent[b.getMoodState()]
                 })

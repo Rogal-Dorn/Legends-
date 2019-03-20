@@ -841,7 +841,13 @@ this.data_helper <- {
 
 		for( local i = 0; i < _items.len(); i = ++i )
 		{
-			if (_items[i] != null && (_items[i].Item.getItemType() & _filter) != 0)
+			if (_items[i] != null && _filter == 99 && _items[i].Bro != null)
+			{
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				r.bro <- _items[i].Bro;
+				_target.push(r);
+			}
+			else if (_items[i] != null && (_items[i].Item.getItemType() & _filter) != 0)
 			{
 				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
 				r.bro <- _items[i].Bro;

@@ -37,7 +37,11 @@ var CampScreenRepairDialogModule = function(_parent)
     this.mShopListScrollContainer = null;
 
     // assets labels
-    this.mAssets = new WorldTownScreenAssets(_parent);
+    this.mAssetValues = null;
+    this.mSuppliesAsset = null;
+    this.mRequiredAsset = null;
+    this.mTimeAsset = null;
+    this.mBrothersAsset	= null;
 
     // buttons
     this.mLeaveButton = null;
@@ -59,11 +63,12 @@ var CampScreenRepairDialogModule = function(_parent)
 
 	// sort & filter
 	this.mSortInventoryButton = null;
-	this.mFilterAllButton = null;
+    this.mFilterAllButton = null;
+    this.mFilterBroButton = null;
 	this.mFilterWeaponsButton = null;
 	this.mFilterArmorButton = null;
-	this.mFilterMiscButton = null;
-    this.mFilterUsableButton = null;
+	this.mAssignAllButton = null;
+    this.mRemoveAllButton = null;
 
 	this.mIsRepairOffered = false;
 
@@ -102,11 +107,143 @@ CampScreenRepairDialogModule.prototype.onDisconnection = function ()
     }
 };
 
+
+CampScreenRepairDialogModule.prototype.updateAssetValue = function (_container, _value, _valueMax, _valueDifference)
+{
+    var label = _container.find('.label:first');
+
+    if(label.length > 0)
+    {
+        if(_valueMax !== undefined && _valueMax !== null)
+		{
+            label.html('' + Helper.numberWithCommas(_value) + '/' + Helper.numberWithCommas(_valueMax));
+        }
+        else
+		{
+            label.html(Helper.numberWithCommas(_value));
+        }
+
+        if(_valueDifference !== null && _valueDifference !== 0)
+		{
+            label.animateValueAndFadeOut(_valueDifference < 0, function (_element)
+			{
+                _element.html(_valueDifference);
+            });
+        }
+
+        if(_value <= 0)
+		{
+            label.removeClass('font-color-assets-positive-value').addClass('font-color-assets-negative-value');
+        }
+        else
+		{
+            label.removeClass('font-color-assets-negative-value').addClass('font-color-assets-positive-value');
+        }
+    }
+};
+
 CampScreenRepairDialogModule.prototype.updateAssets = function (_data)
 {
-	this.mAssets.loadFromData(_data);
-	//this.updateItemPriceLabels(this.mShopSlots, this.mShopList, false);
+    if(_data === undefined || _data === null || !(typeof(_data) === 'object'))
+    {
+        return;
+    }
+
+    var value = null;
+    var previousValue = null;
+    var valueDifference = null;
+    var currentAssetInformation = _data;
+    var previousAssetInformation = this.mAssetValues;
+    
+    if('Supplies' in currentAssetInformation && 'SuppliesMax' in currentAssetInformation &&
+        currentAssetInformation['Supplies'] !== null && currentAssetInformation['SuppliesMax'] !== null)
+    {
+
+        value = currentAssetInformation['Supplies'];
+        var maxValue = currentAssetInformation['SuppliesMax'];
+        valueDifference = null;
+        if(previousAssetInformation !== null && 'Supplies' in previousAssetInformation && previousAssetInformation['Supplies'] !== null)
+        {
+            previousValue = previousAssetInformation['Supplies'];
+            valueDifference = value - previousValue;
+        }
+        this.updateAssetValue(this.mSuppliesAsset, value, maxValue, valueDifference);
+    }
+
+    if('SuppliesRequired' in currentAssetInformation && currentAssetInformation['SuppliesRequired'] !== null)
+    {
+        value = currentAssetInformation['SuppliesRequired'];
+        valueDifference = null;
+        if(previousAssetInformation !== null && 'SuppliesRequired' in previousAssetInformation && previousAssetInformation['SuppliesRequired'] !== null)
+        {
+            previousValue = previousAssetInformation['SuppliesRequired'];
+            valueDifference = value - previousValue;
+        }
+        this.updateAssetValue(this.mRequiredAsset, value, null, valueDifference);
+    }
+    
+    if('Time' in currentAssetInformation && currentAssetInformation['Time'] !== null)
+    {
+        value = currentAssetInformation['Time'];
+        valueDifference = null;
+        if(previousAssetInformation !== null && 'Time' in previousAssetInformation && previousAssetInformation['Time'] !== null)
+        {
+            previousValue = previousAssetInformation['Time'];
+            valueDifference = value - previousValue;
+        }
+        this.updateAssetValue(this.mTimeAsset, value, null, valueDifference);
+    }
+
+    if('Brothers' in currentAssetInformation && currentAssetInformation['Brothers'] !== null)
+    {
+        value = currentAssetInformation['Brothers'];
+        valueDifference = null;
+        if(previousAssetInformation !== null && 'Brothers' in previousAssetInformation && previousAssetInformation['Brothers'] !== null)
+        {
+            previousValue = previousAssetInformation['Brothers'];
+            valueDifference = value - previousValue;
+        }
+        this.updateAssetValue(this.mBrothersAsset, value, null, valueDifference);
+    }
+
+    this.mAssetValues = currentAssetInformation;
+
 }
+
+CampScreenRepairDialogModule.prototype.createAssetDIV = function (_parentDiv, _imagePath, _classExtra)
+{
+    var layout = $('<div class="l-tab-asset"/>');
+    layout.addClass(_classExtra);
+    _parentDiv.append(layout);
+
+    var image = $('<img/>');
+    image.attr('src', _imagePath);
+    layout.append(image);
+    var text = $('<div class="label text-font-normal font-color-assets-positive-value"/>');
+    layout.append(text);
+
+    return layout;
+};
+
+CampScreenRepairDialogModule.prototype.createImageButton = function (_parentDiv, _imagePath, _callback)
+{
+    var layout = $('<div class="l-assets-container"/>');
+    var image = $('<img/>');
+    image.attr('src', _imagePath);
+    layout.append(image);
+    var text = $('<div class="label text-font-small font-bold font-bottom-shadow font-color-assets-positive-value"/>');
+    layout.append(text);
+
+    if (_callback === undefined)
+    {
+        _parentDiv.append(layout);
+        return layout;
+    }
+    else
+    {
+        return _parentDiv.createCustomButton(layout, _callback, '', 2);
+    }
+};
 
 CampScreenRepairDialogModule.prototype.createDIV = function (_parentDiv)
 {
@@ -123,7 +260,15 @@ CampScreenRepairDialogModule.prototype.createDIV = function (_parentDiv)
     this.mDialogContainer.findDialogTabContainer().append(tabButtonsContainer);
     
 	//create assets
-    this.mAssets.createDIV(tabButtonsContainer);
+    this.mSuppliesAsset = this.createAssetDIV(tabButtonsContainer, Path.GFX + Asset.ICON_ASSET_SUPPLIES, 'is-supplies');
+    this.mRequiredAsset = this.createAssetDIV(tabButtonsContainer, Path.GFX + 'ui/buttons/asset_supplies_down.png', 'is-num-required');
+    this.mTimeAsset = this.createAssetDIV(tabButtonsContainer, Path.GFX + 'ui/buttons/icon_time.png', 'is-time-required');
+    var assetContainer = $('<div class="l-tab-asset is-brothers"></div>');
+    this.mBrothersAsset = this.createImageButton(assetContainer, Path.GFX + Asset.ICON_ASSET_BROTHERS, function()
+	{
+        self.notifyBackendBrothersButtonPressed();
+    });
+    tabButtonsContainer.append(assetContainer);
 
     // create content
     var content = this.mDialogContainer.findDialogContentContainer();
@@ -166,58 +311,56 @@ CampScreenRepairDialogModule.prototype.createDIV = function (_parentDiv)
 		self.mFilterAllButton.addClass('is-active');
 		self.mFilterWeaponsButton.removeClass('is-active');
 		self.mFilterArmorButton.removeClass('is-active');
-        self.mFilterMiscButton.removeClass('is-active');
-        self.mFilterUsableButton.removeClass('is-active');
+        self.mFilterBroButton.removeClass('is-active');
 		self.notifyBackendFilterAllButtonClicked();
     }, '', 3);
 	self.mFilterAllButton.addClass('is-active');
 
+    var layout = $('<div class="l-button is-bro-filter"/>');
+    buttonContainer.append(layout);
+    this.mFilterBroButton = layout.createImageButton(Path.GFX + 'ui/buttons/icon_person.png', function()
+	{
+		self.mFilterAllButton.removeClass('is-active');
+		self.mFilterWeaponsButton.removeClass('is-active');
+		self.mFilterArmorButton.removeClass('is-active');
+        self.mFilterBroButton.addClass('is-active');
+		self.notifyBackendFilterBroButtonClicked();
+    }, '', 3);
+
 	var layout = $('<div class="l-button is-weapons-filter"/>');
     buttonContainer.append(layout);
-    this.mFilterWeaponsButton = layout.createImageButton(Path.GFX + Asset.BUTTON_WEAPONS_FILTER, function()
+    this.mFilterWeaponsButton = layout.createImageButton(Path.GFX + 'ui/buttons/icon_weapons.png', function()
 	{
 		self.mFilterAllButton.removeClass('is-active');
 		self.mFilterWeaponsButton.addClass('is-active');
 		self.mFilterArmorButton.removeClass('is-active');
-        self.mFilterMiscButton.removeClass('is-active');
-        self.mFilterUsableButton.removeClass('is-active');
+        self.mFilterBroButton.removeClass('is-active');
 		self.notifyBackendFilterWeaponsButtonClicked();
     }, '', 3);
 
 	var layout = $('<div class="l-button is-armor-filter"/>');
     buttonContainer.append(layout);
-    this.mFilterArmorButton = layout.createImageButton(Path.GFX + Asset.BUTTON_ARMOR_FILTER, function()
+    this.mFilterArmorButton = layout.createImageButton(Path.GFX + 'ui/buttons/icon_armor.png', function()
 	{
 		self.mFilterAllButton.removeClass('is-active');
 		self.mFilterWeaponsButton.removeClass('is-active');
 		self.mFilterArmorButton.addClass('is-active');
-        self.mFilterMiscButton.removeClass('is-active');
-        self.mFilterUsableButton.removeClass('is-active');
+        self.mFilterBroButton.removeClass('is-active');
 		self.notifyBackendFilterArmorButtonClicked();
     }, '', 3);
 
-	var layout = $('<div class="l-button is-misc-filter"/>');
+	var layout = $('<div class="l-button is-assign-all"/>');
     buttonContainer.append(layout);
-    this.mFilterMiscButton = layout.createImageButton(Path.GFX + Asset.BUTTON_MISC_FILTER, function()
+    this.mAssignAllButton = layout.createImageButton(Path.GFX + 'ui/buttons/arrow_right.png', function()
 	{
-		self.mFilterAllButton.removeClass('is-active');
-		self.mFilterWeaponsButton.removeClass('is-active');
-		self.mFilterArmorButton.removeClass('is-active');
-        self.mFilterMiscButton.addClass('is-active');
-        self.mFilterUsableButton.removeClass('is-active');
-        self.notifyBackendFilterMiscButtonClicked();
+        self.notifyBackendAssignAllButtonClicked();
     }, '', 3);
 
-    var layout = $('<div class="l-button is-usable-filter"/>');
+    var layout = $('<div class="l-button is-remove-all"/>');
     buttonContainer.append(layout);
-    this.mFilterUsableButton = layout.createImageButton(Path.GFX + Asset.BUTTON_USABLE_FILTER, function ()
+    this.mRemoveAllButton = layout.createImageButton(Path.GFX + 'ui/buttons/arrow_left.png', function ()
     {
-        self.mFilterAllButton.removeClass('is-active');
-        self.mFilterWeaponsButton.removeClass('is-active');
-        self.mFilterArmorButton.removeClass('is-active');
-        self.mFilterMiscButton.removeClass('is-active');
-        self.mFilterUsableButton.addClass('is-active');
-        self.notifyBackendFilterUsableButtonClicked();
+        self.notifyBackendRemoveAllButtonClicked();
     }, '', 3);
 
     this.mStashSlotSizeContainer = $('<div class="slot-count-container"/>');
@@ -278,8 +421,14 @@ CampScreenRepairDialogModule.prototype.destroyDIV = function ()
     this.mShopListScrollContainer = null;
     this.mShopListContainer = null;
 
-    this.mAssets.destroyDIV();
-	//this.mAssets = null;
+    this.mSuppliesAsset.remove();
+    this.mSuppliesAsset = null;
+    this.mRequiredAsset.remove();
+    this.mRequiredAsset = null;
+    this.mTimeAsset.remove();
+    this.mTimeAsset = null;
+    this.mBrothersAsset.remove();
+    this.mBrothersAsset = null;
 
     this.mLeaveButton.remove();
     this.mLeaveButton = null;
@@ -363,16 +512,21 @@ CampScreenRepairDialogModule.prototype.setupEventHandler = function ()
 
 CampScreenRepairDialogModule.prototype.bindTooltips = function ()
 {
-	this.mAssets.bindTooltips();
     this.mStashSlotSizeContainer.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.Stash.FreeSlots });
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.ShopDialogModule.LeaveButton });
 
-	this.mSortInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.SortButton });
-	this.mFilterAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterAllButton });
+    this.mSortInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.SortButton });
+    this.mFilterAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterAllButton });
+	this.mFilterBroButton.bindTooltip({ contentType: 'ui-element', elementId: 'camp-screen.repair.filterbro.button' });
 	this.mFilterWeaponsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterWeaponsButton });
 	this.mFilterArmorButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterArmorButton });
-    this.mFilterMiscButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterMiscButton });
-    this.mFilterUsableButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterUsableButton });
+    this.mAssignAllButton.bindTooltip({ contentType: 'ui-element', elementId: 'camp-screen.repair.assignall.button' });
+    this.mRemoveAllButton.bindTooltip({ contentType: 'ui-element', elementId: 'camp-screen.repair.removeall.button' });
+
+    this.mRequiredAsset.bindTooltip({ contentType: 'ui-element', elementId: 'repairs.Required' });
+    this.mSuppliesAsset.bindTooltip({ contentType: 'ui-element', elementId: 'repairs.Supplies' });
+    this.mTimeAsset.bindTooltip({ contentType: 'ui-element', elementId:  'repairs.Time' });
+    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'repairs.Bros' });    
 };
 
 CampScreenRepairDialogModule.prototype.unbindTooltips = function ()
@@ -382,11 +536,17 @@ CampScreenRepairDialogModule.prototype.unbindTooltips = function ()
     this.mLeaveButton.unbindTooltip();
 
 	this.mSortInventoryButton.unbindTooltip();
-	this.mFilterAllButton.unbindTooltip();
+    this.mFilterAllButton.unbindTooltip();
+    this.mFilterBroButton.unbindTooltip();
 	this.mFilterWeaponsButton.unbindTooltip();
 	this.mFilterArmorButton.unbindTooltip();
-    this.mFilterMiscButton.unbindTooltip();
-    this.mFilterUsableButton.unbindTooltip();
+    this.mAssignAllButton.unbindTooltip();
+    this.mRemoveAllButton.unbindTooltip();
+
+    this.mRequiredAsset.unbindTooltip();
+    this.mSuppliesAsset.unbindTooltip();
+    this.mTimeAsset.unbindTooltip();
+    this.mBrothersAsset.unbindTooltip();
 };
 
 CampScreenRepairDialogModule.prototype.create = function(_parentDiv)
@@ -521,6 +681,11 @@ CampScreenRepairDialogModule.prototype.loadFromData = function (_data)
     if(_data === undefined || _data === null || !(typeof(_data) === 'object'))
 	{
         return;
+    }
+
+    if ('Assets' in _data)
+    {
+        this.updateAssets(_data.Assets);
     }
 
     if('Title' in _data && _data.Title !== null)
@@ -981,6 +1146,11 @@ CampScreenRepairDialogModule.prototype.notifyBackendFilterAllButtonClicked = fun
 	SQ.call(this.mSQHandle, 'onFilterAll');
 };
 
+CampScreenRepairDialogModule.prototype.notifyBackendFilterBroButtonClicked = function ()
+{
+	SQ.call(this.mSQHandle, 'onFilterBro');
+};
+
 CampScreenRepairDialogModule.prototype.notifyBackendFilterWeaponsButtonClicked = function ()
 {
 	SQ.call(this.mSQHandle, 'onFilterWeapons');
@@ -991,14 +1161,14 @@ CampScreenRepairDialogModule.prototype.notifyBackendFilterArmorButtonClicked = f
 	SQ.call(this.mSQHandle, 'onFilterArmor');
 };
 
-CampScreenRepairDialogModule.prototype.notifyBackendFilterMiscButtonClicked = function ()
+CampScreenRepairDialogModule.prototype.notifyBackendAssignAllButtonClicked = function ()
 {
-	SQ.call(this.mSQHandle, 'onFilterMisc');
+	SQ.call(this.mSQHandle, 'onAssignAll');
 };
 
-CampScreenRepairDialogModule.prototype.notifyBackendFilterUsableButtonClicked = function ()
+CampScreenRepairDialogModule.prototype.notifyBackendRemoveAllButtonClicked = function ()
 {
-    SQ.call(this.mSQHandle, 'onFilterUsable');
+    SQ.call(this.mSQHandle, 'onRemoveAll');
 };
 
 CampScreenRepairDialogModule.prototype.notifyBackendSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _callback)

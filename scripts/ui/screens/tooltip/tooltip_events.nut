@@ -1231,24 +1231,25 @@ this.tooltip_events <- {
 			];
 
 		case "assets.Supplies":
-			local repair = this.World.Assets.getRepairRequired();
-			local desc = "Assorted tools and supplies to keep your weapons, armor, helmets and shields in good condition. One point is required to repair 15 points of item condition. Running out of supplies may result in weapons breaking in combat and will leave your armor damaged and useless.";
+			local desc = "Assorted tools and supplies to keep your weapons, armor, helmets and shields in good condition. Running out of supplies may result in weapons breaking in combat and will leave your armor damaged and useless. Items can only be repaired while camping. More tools can be purchased in town or salvaged from equipment while camping.";
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
 
-			if (repair.ArmorParts > 0)
-			{
-				desc = desc + ("\n\nRepairing all your equipment will take [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Hours + "[/color] hours and requires ");
-
-				if (repair.ArmorParts <= this.World.Assets.getArmorParts())
+			local ret = [
 				{
-					desc = desc + ("[color=" + this.Const.UI.Color.PositiveValue + "]");
-				}
-				else
+					id = 1,
+					type = "title",
+					text = "Tools and Supplies"
+				},
 				{
-					desc = desc + ("[color=" + this.Const.UI.Color.NegativeValue + "]");
+					id = 2,
+					type = "description",
+					text = desc
 				}
+			];
+			return ret;
 
-				desc = desc + (repair.ArmorParts + "[/color] tools and supplies.");
-			}
+		case "repairs.Supplies":
+			local desc = "Number of tools on hand to repair equipment. One tool is required to repair 15 points of item condition. More tools can be purchased in towns or can be salvaged from equipment while camping ";
 
 			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
 
@@ -1262,12 +1263,48 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = desc
+				}
+			];
+			return ret;
+
+		case "repairs.Required":
+			local desc = "Number of tools required to repair the selected equipment. One point is required to repair 15 points of item condition.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Required Supplies"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "repairs.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to repair duty. The more assigned, the quicker equipment can be repaired.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Assigned Brothers"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
 				},
 				{
 					id = 3,
 					type = "text",
 					icon = "ui/icons/repair_item.png",
-					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Modifier + "%[/color]"
+					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Repair + " units per hour[/color]"
 				}
 			];
 			local id = 4;
@@ -1277,10 +1314,27 @@ this.tooltip_events <- {
 					id = id,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
 				})
 				++id;
 			}
+			return ret;
+
+		case "repairs.Time":
+			local desc = "Total number of hours required to repair all the queued equipment. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
 			return ret;
 
 		case "assets.Medicine":
@@ -4087,6 +4141,47 @@ this.tooltip_events <- {
 		case "camp.workshop":
 			return this.World.Camp.getBuildingByID(_elementId).getTooltip();
 
+		case "camp-screen.repair.filterbro.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Filter items by type"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Show only items that are currently equipped."
+				}
+			];
+
+		case "camp-screen.repair.assignall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Assign All"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Add all equipment to the repair queue."
+				}
+			];
+
+		case "camp-screen.repair.removeall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Remove all"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all equipment from the repair queue."
+				}
+			];						
 		}
 
 		return null;

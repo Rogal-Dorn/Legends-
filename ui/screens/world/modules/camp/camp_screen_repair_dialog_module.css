@@ -34,29 +34,19 @@
     position: absolute;
 }
 
-.camp-screen > .l-repair-dialog-container .l-tab-asset.is-money
+.camp-screen > .l-repair-dialog-container .l-tab-asset.is-supplies
 {
     left: 0;
 }
 
-.camp-screen > .l-repair-dialog-container .l-tab-asset.is-food
+.camp-screen > .l-repair-dialog-container .l-tab-asset.is-num-required
 {
     left: 15.0rem;
 }
 
-.camp-screen > .l-repair-dialog-container .l-tab-asset.is-supplies
+.camp-screen > .l-repair-dialog-container .l-tab-asset.is-time-required
 {
     left: 30.0rem;
-}
-
-.camp-screen > .l-repair-dialog-container .l-tab-asset.is-ammo
-{
-    left: 45.0rem;
-}
-
-.camp-screen > .l-repair-dialog-container .l-tab-asset.is-medicine
-{
-    left: 60.0rem;
 }
 
 .camp-screen > .l-repair-dialog-container .l-tab-asset.is-brothers
@@ -174,7 +164,7 @@
     top: 4.0rem;
 }
 
-.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-weapons-filter
+.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-bro-filter
 {
     position: absolute;
     
@@ -183,7 +173,7 @@
     top: 8.0rem;
 }
 
-.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-armor-filter
+.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-weapons-filter
 {
     position: absolute;
  
@@ -192,7 +182,7 @@
     top: 12.0rem;
 }
 
-.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-usable-filter
+.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-armor-filter
 {
     position: absolute;
     
@@ -201,13 +191,22 @@
     top: 16.0rem;
 }
 
-.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-misc-filter
+.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-assign-all
 {
     position: absolute;
     
     width: 5.2rem;
     height: 4.1rem;
     top: 20.0rem;
+}
+
+.camp-screen > .l-repair-dialog-container .content .row.is-content .l-button.is-remove-all
+{
+    position: absolute;
+    
+    width: 5.2rem;
+    height: 4.1rem;
+    top: 24.0rem;
 }
 
 .camp-screen > .l-repair-dialog-container .content .row.is-content .slot-count-container

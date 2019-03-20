@@ -1,7 +1,7 @@
 
 this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
-		Title = "Repar Tent",
+		Title = "Repair Tent",
 		Description = "Items in the queue will be repaired from left to right, top to bottom. Assign workers to repair items in the commanders tent.",
 		InventoryFilter = this.Const.Items.ItemFilter.All
 	},
@@ -29,7 +29,7 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		local result = {
 			Title = this.m.Title,
 			SubTitle = this.m.Description,
-			Assets = this.m.Parent.queryAssetsInformation(),
+			Assets = this.assetsInformation(),
 			Stash = [],
 			Repairs = [],
 			Capacity = tent.getCapacity()
@@ -39,14 +39,21 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		return result;
 	}
 
-	function loadStashList()
+	function assetsInformation()
 	{
 		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
-		local result = {
-			Stash = [],
-			Capacity = tent.getCapacity()
+		return {
+			Supplies = this.World.Assets.getArmorParts(),
+			SuppliesMax  = this.World.Assets.getMaxArmorParts(),
+			SuppliesRequired = tent.getRequiredSupplies(),
+			Time = tent.getRequiredTime(),
+			Brothers = tent.getAssignedBros()
 		};
-		this.UIDataHelper.convertRepairItemsToUIData(tent.getStash(), result.Stash, this.Const.UI.ItemOwner.Stash, this.m.InventoryFilter);
+	}
+
+	function loadStashList()
+	{
+		local result = this.queryLoad()
 		this.m.JSHandle.asyncCall("loadFromData", result);
 	}
 
@@ -61,6 +68,8 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			this.World.Assets.getStash().sort();
 		}
 
+		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+		tent.onInit();
 		this.loadStashList();
 	}
 
@@ -91,22 +100,27 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		}
 	}
 
-	function onFilterMisc()
+	function onFilterBro()
 	{
-		if (this.m.InventoryFilter != this.Const.Items.ItemFilter.Misc)
+		if (this.m.InventoryFilter != 99)
 		{
-			this.m.InventoryFilter = this.Const.Items.ItemFilter.Misc;
+			this.m.InventoryFilter = 99;
 			this.loadStashList();
 		}
 	}
 
-	function onFilterUsable()
+	function onAssignAll()
 	{
-		if (this.m.InventoryFilter != this.Const.Items.ItemFilter.Usable)
-		{
-			this.m.InventoryFilter = this.Const.Items.ItemFilter.Usable;
-			this.loadStashList();
-		}
+		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+		tent.assignAll();
+		return this.queryLoad();		
+	}
+
+	function onRemoveAll()
+	{
+		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+		tent.removeAll();
+		return this.queryLoad();		
 	}
 
 	function onSwapItem( _data )
