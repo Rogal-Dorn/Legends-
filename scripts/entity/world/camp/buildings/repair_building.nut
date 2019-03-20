@@ -1,6 +1,6 @@
 this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-        BaseRepair = 100,
+        BaseRepair = 50,
         ToolsUsed = 0,
         PointsRepaired = 0,
         Stash = null,
@@ -83,7 +83,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return [{
 				id = 10,
 				icon = "ui/icons/asset_supplies.png",
-				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ToolsUsed + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] pieces of equipment."
+				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.Math.floor(this.m.ToolsUsed) + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] pieces of equipment."
 			}];
     }
 
@@ -91,8 +91,11 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         local ret = 
         {
-            Repair = this.m.BaseRepair,
-            Consumption = 0.01
+            Repair = 25,
+            Consumption = 0.067,
+            Assigned = 0,
+            Modifiers = []
+
         }
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
@@ -102,11 +105,54 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-            ret.Repair += (this.m.BaseRepair + this.m.BaseRepair * this.Const.LegendMod.getRepairModifier(bro.getBackground().getID()))
+            local rm 
+
+            local rm = (this.m.BaseRepair + this.m.BaseRepair * this.Const.LegendMod.getRepairModifier(bro.getBackground().getID()))
+            ret.Repair += rm
+            ++ret.Assigned
+			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
             //local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
             //ret.Consumption = v;
         }
         return ret;
+    }
+
+    function getRequiredSupplies()
+    {
+        local points = 0;
+        foreach (i, r in this.m.Repairs)
+        {
+            if (r == null)
+            {
+                continue;
+            }
+            
+            points += r.Item.getConditionMax() - r.Item.getCondition()
+        }
+        local modifiers = this.getModifiers();
+        return this.Math.ceil(points * modifiers.Consumption);
+    }
+
+    function getRequiredTime()
+    {
+        local points = 0;
+        foreach (i, r in this.m.Repairs)
+        {
+            if (r == null)
+            {
+                continue;
+            }
+            
+            points += r.Item.getConditionMax() - r.Item.getCondition()
+        }
+        local modifiers = this.getModifiers();
+        return this.Math.ceil(points / modifiers.Repair);
+    }
+
+    function getAssignedBros()
+    {
+        local mod = this.getModifiers();
+        return mod.Assigned;
     }
 
     function update ()
@@ -124,6 +170,11 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         local modifiers = this.getModifiers();
         foreach (i, r in this.m.Repairs)
         {
+            if (r == null)
+            {
+                continue;
+            }
+
             local needed = r.Item.getConditionMax() - r.Item.getCondition()
             if (modifiers.Repair < needed)
             {
@@ -139,7 +190,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
             if (this.World.Assets.isConsumingAssets())
             {
-                local consumed = this.Math.maxf(0, this.World.Assets.getArmorParts() - needed * modifiers.Consumption);
+                local consumed = this.Math.maxf(0, this.World.Assets.getArmorParts() - needed / modifiers.Consumption);
                 this.m.ToolsUsed += consumed;
                 this.World.Assets.setArmorParts(consumed)
             }
@@ -227,6 +278,68 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
         }
         return {Items = items, Stash = stash};
+    }
+
+    function assignAll()
+    {
+        local index = 0
+        foreach (i, s in this.m.Stash)
+        {
+            if (s == null)
+            {
+                continue
+            }
+
+            for (local j = index; j < this.m.Repairs.len(); j = ++j)
+            {
+                if (this.m.Repairs[j] == null)
+                {
+                    break;
+                }
+            }
+
+            s.Item.setToBeRepaired(true);
+            if (index >= this.m.Repairs.len())
+            {
+                this.m.Repairs.push(s);
+            } 
+            else
+            {
+                this.m.Repairs[index] = s;
+            }
+            this.m.Stash[i] = null;
+        }
+    }
+
+    function removeAll()
+    {
+        local index = 0;
+        foreach (i, s in this.m.Repairs)
+        {
+            if (s == null)
+            {
+                continue
+            }
+
+            for (local j = index; j < this.m.Stash.len(); j = ++j)
+            {
+                if (this.m.Stash[j] == null)
+                {
+                    break;
+                }
+            }
+
+            s.Item.setToBeRepaired(false);
+            if (index >= this.m.Stash.len())
+            {
+                this.m.Stash.push(s);
+            } 
+            else
+            {
+                this.m.Stash[index] = s;
+            }
+            this.m.Repairs[i] = null;
+        }
     }
 
 	function swapItems( sourceItemOwner, sourceItemIdx, targetItemOwner, targetItemIdx )
