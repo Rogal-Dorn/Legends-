@@ -505,7 +505,6 @@ CampScreenRepairDialogModule.prototype.setupEventHandler = function ()
 
 CampScreenRepairDialogModule.prototype.bindTooltips = function ()
 {
-    this.mStashSlotSizeContainer.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.Stash.FreeSlots });
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.ShopDialogModule.LeaveButton });
 
     this.mSortInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.SortButton });
@@ -524,8 +523,6 @@ CampScreenRepairDialogModule.prototype.bindTooltips = function ()
 
 CampScreenRepairDialogModule.prototype.unbindTooltips = function ()
 {
-    this.mAssets.unbindTooltips();
-	this.mStashSlotSizeContainer.unbindTooltip();
     this.mLeaveButton.unbindTooltip();
 
 	this.mSortInventoryButton.unbindTooltip();
@@ -1162,6 +1159,11 @@ CampScreenRepairDialogModule.prototype.notifyBackendAssignAllButtonClicked = fun
 CampScreenRepairDialogModule.prototype.notifyBackendRemoveAllButtonClicked = function ()
 {
     SQ.call(this.mSQHandle, 'onRemoveAll');
+};
+
+CampScreenRepairDialogModule.prototype.notifyBackendBrothersButtonPressed = function ()
+{
+    SQ.call(this.mSQHandle, 'onBrothersButtonPressed');
 };
 
 CampScreenRepairDialogModule.prototype.notifyBackendSwapItem = function (_sourceItemIdx, _sourceItemOwner, _targetItemIdx, _targetItemOwner, _callback)
