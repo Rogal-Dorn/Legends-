@@ -404,12 +404,13 @@ CampScreenCommanderDialogModule.prototype.loadFromData = function (_data, bro, c
         }
     }
 
-    if (this.mSelectedEntry)
-    {
-        this.selectListEntry( this.mSelectedEntry, true, camp);
-    } else {
-        this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
-    }
+    this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
+    // if (this.mSelectedEntry)
+    // {
+    //     this.selectListEntry( this.mSelectedEntry, true, camp);
+    // } else {
+    //     this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
+    // }
 };
 
 CampScreenCommanderDialogModule.prototype.notifyBackendModuleShown = function ()

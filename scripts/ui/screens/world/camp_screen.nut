@@ -18,9 +18,11 @@ this.camp_screen <- {
 		Visible = null,
 		Animating = false,
 		LastActiveModule = null,
+		returnModule = null,
 		OnConnectedListener = null,
 		OnDisconnectedListener = null,
 		OnBrothersButtonPressedListener = null,
+		OnCommanderButtonPressedListener = null,		
 		OnModuleClosedListener = null
 		OnCampListener = null
 	},
@@ -119,6 +121,11 @@ this.camp_screen <- {
 		this.m.OnBrothersButtonPressedListener = _listener;
 	}
 
+	function setOnCommanderPressedListener( _listener )
+	{
+		this.m.OnCommanderButtonPressedListener = _listener;
+	}
+
 	function setOnModuleClosedListener( _listener )
 	{
 		this.m.OnModuleClosedListener = _listener;
@@ -134,6 +141,7 @@ this.camp_screen <- {
 		this.m.OnConnectedListener = null;
 		this.m.OnDisconnectedListener = null;
 		this.m.OnBrothersButtonPressedListener = null;
+		this.m.OnCommanderButtonPressedListener = null;
 		this.m.OnModuleClosedListener = null;
 		this.m.OnCampListener = null;
 	}
@@ -281,6 +289,12 @@ this.camp_screen <- {
 		}
 	}
 
+	function showLastReturnDialog()
+	{
+		this.m.LastActiveModule = this.m.returnModule;
+		this.showLastActiveDialog();
+	}
+
 	function showLastActiveDialog()
 	{
 		if (this.m.LastActiveModule == this.m.CommanderDialogModule)
@@ -358,6 +372,15 @@ this.camp_screen <- {
 			this.m.LastActiveModule = this.m.CommanderDialogModule;
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("showCommanderDialog", this.m.CommanderDialogModule.queryLoad());
+		}
+	}		
+
+	function hideCommanderDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("hideCommanderDialog", this.m.CommanderDialogModule.queryLoad());
 		}
 	}		
 
@@ -524,6 +547,15 @@ this.camp_screen <- {
 		if (this.m.OnBrothersButtonPressedListener != null)
 		{
 			this.m.OnBrothersButtonPressedListener();
+		}
+	}
+
+	function onCommanderButtonPressed()
+	{
+		if (this.m.OnCommanderButtonPressedListener != null)
+		{
+			this.m.returnModule = this.m.LastActiveModule;
+			this.m.OnCommanderButtonPressedListener();
 		}
 	}
 

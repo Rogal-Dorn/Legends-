@@ -137,6 +137,7 @@ this.camp_manager <- {
         }
 
         this.m.LastHourUpdated = this.World.getTime().Hours;
+        this.logInfo(" LAST HOUR = " + this.m.LastHourUpdated)
         foreach(b in this.m.Tents)
         {
             b.update();

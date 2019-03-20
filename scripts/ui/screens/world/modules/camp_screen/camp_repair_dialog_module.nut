@@ -139,5 +139,10 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.Parent.onModuleClosed();
 	}
 
+	function onBrothersButtonPressed()
+	{
+		this.m.Parent.onCommanderButtonPressed();
+	}
+
 
 });

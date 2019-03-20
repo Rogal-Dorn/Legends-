@@ -507,6 +507,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldTownScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
 		this.m.CampScreen <- this.new("scripts/ui/screens/world/camp_screen");
 		this.m.CampScreen.setOnBrothersPressedListener(this.camp_screen_main_dialog_module_onBrothersButtonClicked.bindenv(this));
+		this.m.CampScreen.setOnCommanderPressedListener(this.camp_screen_main_dialog_module_onCommanderButtonClicked.bindenv(this));
 		this.m.CampScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
 		this.m.CampScreen.setOnCampListener(this.onCamp.bindenv(this));
 		this.m.WorldEventPopupScreen <- this.new("scripts/ui/screens/world/world_event_popup_screen");
@@ -2509,6 +2510,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.showCharacterScreenFromCamp();
 	}
 
+	function camp_screen_main_dialog_module_onCommanderButtonClicked()
+	{
+		this.showCommanderScreenFromCamp();
+	}
+
 	function initLoadingScreenHandler()
 	{
 		this.LoadingScreen.clearEventListener();
@@ -2657,6 +2663,20 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return !this.m.CharacterScreen.isAnimating();
 		});
 	}
+
+	function showCommanderScreenFromCamp()
+	{
+		this.m.CampScreen.hideAllDialogs();
+		this.m.CampScreen.showCommanderDialog()
+		this.m.MenuStack.push(function ()
+		{
+			this.m.CampScreen.showLastReturnDialog();
+		}, function ()
+		{
+			return !this.m.CampScreen.isAnimating();
+		});
+	}
+
 
 	function toggleCharacterScreen()
 	{
