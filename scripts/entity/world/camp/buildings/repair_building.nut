@@ -83,7 +83,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return [{
 				id = 10,
 				icon = "ui/icons/asset_supplies.png",
-				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.Math.floor(this.m.ToolsUsed) + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] pieces of equipment."
+				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ToolsUsed + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] pieces of equipment."
 			}];
     }
 
@@ -190,7 +190,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
             if (this.World.Assets.isConsumingAssets())
             {
-                local consumed = this.Math.maxf(0, this.World.Assets.getArmorParts() - needed / modifiers.Consumption);
+                local consumed = this.Math.maxf(0, this.World.Assets.getArmorParts() - needed * modifiers.Consumption);
                 this.m.ToolsUsed += consumed;
                 this.World.Assets.setArmorParts(consumed)
             }
@@ -290,9 +290,9 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-            for (local j = index; j < this.m.Repairs.len(); j = ++j)
+            for (index; index < this.m.Repairs.len(); index = ++index)
             {
-                if (this.m.Repairs[j] == null)
+                if (this.m.Repairs[index] == null)
                 {
                     break;
                 }
@@ -307,6 +307,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             {
                 this.m.Repairs[index] = s;
             }
+            s.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
             this.m.Stash[i] = null;
         }
     }
@@ -321,9 +322,9 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-            for (local j = index; j < this.m.Stash.len(); j = ++j)
+            for (index; index < this.m.Repairs.len(); index = ++index)
             {
-                if (this.m.Stash[j] == null)
+                if (this.m.Stash[index] == null)
                 {
                     break;
                 }
@@ -338,6 +339,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             {
                 this.m.Stash[index] = s;
             }
+            s.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
             this.m.Repairs[i] = null;
         }
     }
