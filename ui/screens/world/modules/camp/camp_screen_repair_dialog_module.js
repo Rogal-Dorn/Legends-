@@ -108,7 +108,7 @@ CampScreenRepairDialogModule.prototype.onDisconnection = function ()
 };
 
 
-CampScreenRepairDialogModule.prototype.updateAssetValue = function (_container, _value, _valueMax, _valueDifference)
+CampScreenRepairDialogModule.prototype.updateAssetValue = function (_container, _value, _valueMax, _valueDifference, _negative)
 {
     var label = _container.find('.label:first');
 
@@ -131,7 +131,7 @@ CampScreenRepairDialogModule.prototype.updateAssetValue = function (_container, 
             });
         }
 
-        if(_value <= 0)
+        if(_value <= 0 || _negative)
 		{
             label.removeClass('font-color-assets-positive-value').addClass('font-color-assets-negative-value');
         }
@@ -179,7 +179,8 @@ CampScreenRepairDialogModule.prototype.updateAssets = function (_data)
             previousValue = previousAssetInformation['SuppliesRequired'];
             valueDifference = value - previousValue;
         }
-        this.updateAssetValue(this.mRequiredAsset, value, null, valueDifference);
+        
+        this.updateAssetValue(this.mRequiredAsset, value, null, valueDifference, value > currentAssetInformation['Supplies']);
     }
     
     if('Time' in currentAssetInformation && currentAssetInformation['Time'] !== null)
@@ -362,14 +363,6 @@ CampScreenRepairDialogModule.prototype.createDIV = function (_parentDiv)
     {
         self.notifyBackendRemoveAllButtonClicked();
     }, '', 3);
-
-    this.mStashSlotSizeContainer = $('<div class="slot-count-container"/>');
-    buttonContainer.append(this.mStashSlotSizeContainer);
-    var slotSizeImage = $('<img/>');
-    slotSizeImage.attr('src', Path.GFX + Asset.ICON_BAG);
-    this.mStashSlotSizeContainer.append(slotSizeImage);
-    this.mStashSlotSizeLabel = $('<div class="label text-font-small font-bold font-color-value"/>');
-    this.mStashSlotSizeContainer.append(this.mStashSlotSizeLabel);
 
     // create shop loot
     var rightColumn = $('<div class="column is-right"/>');

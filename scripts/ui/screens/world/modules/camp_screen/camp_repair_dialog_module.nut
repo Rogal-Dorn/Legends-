@@ -113,14 +113,14 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	{
 		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
 		tent.assignAll();
-		return this.queryLoad();		
+		this.loadStashList();
 	}
 
 	function onRemoveAll()
 	{
 		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
 		tent.removeAll();
-		return this.queryLoad();		
+		this.loadStashList();
 	}
 
 	function onSwapItem( _data )

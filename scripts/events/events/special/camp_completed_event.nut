@@ -3,7 +3,7 @@ this.camp_completed_event <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.camp_completed";
-		this.m.Title = "Camp Stricken";
+		this.m.Title = "Camp Report";
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
