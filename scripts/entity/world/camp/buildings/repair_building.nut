@@ -190,9 +190,9 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
             if (this.World.Assets.isConsumingAssets())
             {
-                local consumed = this.Math.maxf(0, this.World.Assets.getArmorParts() - needed * modifiers.Consumption);
+                local consumed = needed * modifiers.Consumption;   
                 this.m.ToolsUsed += consumed;
-                this.World.Assets.setArmorParts(consumed)
+                this.World.Assets.setArmorParts(this.Math.maxf(0, this.World.Assets.getArmorParts() - consumed))
             }
 
             if (r.Item.getCondition() >= r.Item.getConditionMax())
