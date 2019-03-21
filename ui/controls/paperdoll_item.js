@@ -59,9 +59,9 @@ var PaperdollItemIdentifier = {
     var repairLayer;
 	
 	if(_isBig)
-		repairLayer = $('<div class="repair-layer repair-layer-big display-none"/>');
+		repairLayer = $('<div class="repair-layers repair-layer-big display-none"/>');
 	else
-		repairLayer = $('<div class="repair-layer display-none"/>');
+		repairLayer = $('<div class="repair-layers display-none"/>');
 
     result.append(repairLayer);
     var repairImage = $('<img/>');

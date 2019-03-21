@@ -375,15 +375,6 @@ this.camp_screen <- {
 		}
 	}		
 
-	function hideCommanderDialog()
-	{
-		if (this.m.JSHandle != null && this.isVisible())
-		{
-			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("hideCommanderDialog", this.m.CommanderDialogModule.queryLoad());
-		}
-	}		
-
 	function showBarberDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
@@ -500,7 +491,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.WorkshopDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showWorkshopDialog", this.m.WorkshopDialogModule.queryLoad());
+			this.m.JSHandle.asyncCall("showWorkshopDialog", this.m.WorkshopDialogModule.onShow());
 		}
 	}
 

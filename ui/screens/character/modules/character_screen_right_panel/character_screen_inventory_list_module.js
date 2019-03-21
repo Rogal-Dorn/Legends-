@@ -650,6 +650,7 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
 	{
         var data = _item.data('item');
 
+
         var isEmpty = (data !== null && 'isEmpty' in data) ? data.isEmpty : true;
         //var owner = (data !== null && 'owner' in data) ? data.owner : null;
         var itemId = (data !== null && 'itemId' in data) ? data.itemId : null;
@@ -676,14 +677,13 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
             {
                 if (repairItem === true)
                 {
-                    self.mDataSource.repairInventoryItem(itemId, function(ret)
-					{
-						if(ret)
-                        {
-                            data['repair'] = !data['repair'];
-                            result.setRepairImageVisible(data['repair']);
-                        }
-					});
+                    self.mDataSource.toggleInventoryItem(itemId, function(ret)
+                    {
+                        data['repair'] = ret['repair'];
+                        data['salvage'] = ret['salvage'];
+                        result.setRepairImageVisible(data['repair'], data['salvage']);
+                        //result.setSalvageImageVisible(data['salvage']);
+                    })
                 }
                 else
                 {
@@ -760,7 +760,8 @@ CharacterScreenInventoryListModule.prototype.assignItemToSlot = function(_entity
 
 		// show repair icon?
 		itemData.repair = _item['repair'];
-		_slot.setRepairImageVisible(_item['repair']);
+        itemData.salvage = _item['salvage'];
+        _slot.setRepairImageVisible(_item['repair'], _item['salvage']);
 
         // show amount
         if(_item['showAmount'] === true && _item[CharacterScreenIdentifier.Item.Amount] != '')
@@ -814,7 +815,7 @@ CharacterScreenInventoryListModule.prototype.removeItemFromSlot = function(_slot
     // remove item image
     _slot.assignListItemImage();
     _slot.assignListItemOverlayImage();
-	_slot.setRepairImageVisible(false);
+    _slot.setRepairImageVisible(false, false);
 
     // update item data
     var itemData = _slot.data('item') || {};
