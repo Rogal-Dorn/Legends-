@@ -200,7 +200,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				}
 
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
-//				this.Sound.play("sounds/legend_vala_perspective.wav");
+//				this.Sound.play("sounds/combat/legend_vala_perspective.wav");
 				this.m.TranceIsActive = false;
 				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
@@ -208,7 +208,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 			else  // TRANCE FAILURE
 			{
 				++this.m.Failures;
-				this.Sound.play("sounds/legend_vala_trance.wav");
+				this.Sound.play("sounds/combat/legend_vala_trance.wav");
 				actor.m.ActionPoints = 0;
 			}
 		}
@@ -279,7 +279,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 			}
 
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " trembles and hums as they drift into a trance.");
-			this.Sound.play("sounds/legend_vala_trance.wav");
+			this.Sound.play("sounds/combat/legend_vala_trance.wav");
 			actor.m.ActionPoints = 0;
 			this.m.TranceIsActive = true;
 		}
