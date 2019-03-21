@@ -1,5 +1,6 @@
 this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
+        Conversion = 15.0,
         BaseRepair = 50,
         ToolsUsed = 0,
         PointsRepaired = 0,
@@ -45,8 +46,14 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             {
                 if (r == null)
                 {
-                    continue
+                    continue;
                 }
+
+                if (!r.Item.isToBeRepaired())
+                {
+                    continue;
+                }
+
                 repairs.push(r);
             }
             this.m.Repairs = repairs;
@@ -61,6 +68,12 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         {
             this.m.Repairs.push(null);
         }
+    }
+
+
+    function getConversionRate()
+    {
+        return this.m.Conversion;
     }
 
     function getStash()
@@ -92,7 +105,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         local ret = 
         {
             Repair = 25,
-            Consumption = 0.067,
+            Consumption = 1.0 / this.m.Conversion,
             Assigned = 0,
             Modifiers = []
 
@@ -104,8 +117,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             {
                 continue
             }
-
-            local rm 
 
             local rm = (this.m.BaseRepair + this.m.BaseRepair * this.Const.LegendMod.getRepairModifier(bro.getBackground().getID()))
             ret.Repair += rm
@@ -432,16 +443,25 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return true
 	}
 
-	function onRepairInventoryItem( _data )
+	function onRepairInventoryItem( _data, _value )
 	{
         local item = this.Stash.getItemByInstanceID(_data).item;
         if (item == null)
         {
             return false;
         }
-        this.onInit();
-        local res = item.setToBeRepaired(!item.isToBeRepaired());
-        
+
+		if (_value == item.isToBeRepaired())
+		{
+			return false;
+		}
+		
+		this.onInit();
+        if (!item.setToBeRepaired(_value))
+		{
+			return false;
+		}
+
         local sourceItemOwner = "camp-screen-repair-dialog-module.shop";
         local targetItemOwner = "camp-screen-repair-dialog-module.stash";
         local sourceList = this.m.Repairs;
@@ -469,7 +489,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             break;
         }
 
-        return res;
+        return true;
 	}
 
 	function onClicked( _campScreen )

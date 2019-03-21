@@ -13,6 +13,19 @@ this.camp_completed_event <- this.inherit("scripts/events/event", {
 			List = [],
 			Characters = [],
 			Options = [],
+			function onSortByID( _a, _b )
+			{
+				if (_a.id > _b.id)
+				{
+					return -1;
+				}
+				else if (_a.id < _b.id)
+				{
+					return 1;
+				}
+
+				return 0;
+			},
 			function start( _event )
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
@@ -25,10 +38,19 @@ this.camp_completed_event <- this.inherit("scripts/events/event", {
 							this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 							return 0;
 						}
+					},
+					{
+						Text = "Back to camp",
+						function getResult( _event )
+						{
+							this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+							return 0;
+						}
 
-					}
+					}					
 				];
 				this.List = this.World.Camp.getResults();
+				this.List.sort(this.onSortByID)
 			}
 
 		});

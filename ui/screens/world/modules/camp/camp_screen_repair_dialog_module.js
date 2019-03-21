@@ -2,7 +2,7 @@
 "use strict";
 
 
-var WorldTownScreenShop =
+var RepairScreenShop =
 {
 	ItemOwner:
 	{
@@ -491,12 +491,12 @@ CampScreenRepairDialogModule.prototype.setupEventHandler = function ()
     // create drop handler for the stash & shop container
     $.drop({ mode: 'middle' });
 
-    this.mStashListContainer.data('item', { owner: WorldTownScreenShop.ItemOwner.Stash });
+    this.mStashListContainer.data('item', { owner: RepairScreenShop.ItemOwner.Stash });
     //this.mStashListContainer.drop('start', dropStartHandler);
     this.mStashListContainer.drop(dropHandler);
     //this.mStashListContainer.drop('end', dropEndHandler);
 
-    this.mShopListContainer.data('item', { owner: WorldTownScreenShop.ItemOwner.Shop });
+    this.mShopListContainer.data('item', { owner: RepairScreenShop.ItemOwner.Shop });
     //this.mShopListContainer.drop('start', dropStartHandler);
     this.mShopListContainer.drop(dropHandler);
     //this.mShopListContainer.drop('end', dropEndHandler);
@@ -717,7 +717,7 @@ CampScreenRepairDialogModule.prototype.loadStashData = function (_data, _capacit
     var arrayRef = { val: this.mStashSlots };
     var containerRef = { val: this.mStashListScrollContainer };
 
-    this.assignItems(WorldTownScreenShop.ItemOwner.Stash, _data, _capacity, arrayRef.val, containerRef.val);
+    this.assignItems('world-town-screen-shop-dialog-module.stash', _data, _capacity, arrayRef.val, containerRef.val);
 };
 
 CampScreenRepairDialogModule.prototype.loadShopData = function (_data, _capacity)
@@ -738,7 +738,7 @@ CampScreenRepairDialogModule.prototype.loadShopData = function (_data, _capacity
     var arrayRef = { val: this.mShopSlots };
     var containerRef = { val: this.mShopListScrollContainer };
 
-    this.assignItems(WorldTownScreenShop.ItemOwner.Shop, _data, _capacity, arrayRef.val, containerRef.val);
+    this.assignItems('world-town-screen-shop-dialog-module.shop', _data, _capacity, arrayRef.val, containerRef.val);
 };
 
 CampScreenRepairDialogModule.prototype.querySlotByIndex = function(_itemArray, _index)
@@ -807,7 +807,7 @@ CampScreenRepairDialogModule.prototype.assignItems = function (_owner, _items, _
                 this.assignItemToSlot(_owner, _itemArray[i], _items[i]);
             }
         }
-        //this.updateItemPriceLabels(_itemArray, _items, _owner === WorldTownScreenShop.ItemOwner.Stash);
+        //this.updateItemPriceLabels(_itemArray, _items, _owner === RepairScreenShop.ItemOwner.Stash);
     }
 };
 
@@ -923,11 +923,11 @@ CampScreenRepairDialogModule.prototype.createItemSlot = function (_owner, _index
             // buy, sell or destroy
             switch(owner)
             {
-                case WorldTownScreenShop.ItemOwner.Stash:
-                    self.swapItem(itemIdx, owner, null, WorldTownScreenShop.ItemOwner.Shop);
+                case RepairScreenShop.ItemOwner.Stash:
+                    self.swapItem(itemIdx, owner, null, RepairScreenShop.ItemOwner.Shop);
                     break;
-                case WorldTownScreenShop.ItemOwner.Shop:
-                    self.swapItem(itemIdx, owner, null, WorldTownScreenShop.ItemOwner.Stash);
+                case RepairScreenShop.ItemOwner.Shop:
+                    self.swapItem(itemIdx, owner, null, RepairScreenShop.ItemOwner.Stash);
                     break;
             }
         }
@@ -975,15 +975,15 @@ CampScreenRepairDialogModule.prototype.updateSlotItem = function (_owner, _itemA
 
     switch(_flag)
     {
-        case WorldTownScreenShop.ItemFlag.Inserted:
-        case WorldTownScreenShop.ItemFlag.Updated:
+        case RepairScreenShop.ItemFlag.Inserted:
+        case RepairScreenShop.ItemFlag.Updated:
         {
             this.removeItemFromSlot(slot);
             this.assignItemToSlot(_owner, slot, _item);
-            //this.updateItemPriceLabel(slot, _item, _owner === WorldTownScreenShop.ItemOwner.Stash);
+            //this.updateItemPriceLabel(slot, _item, _owner === RepairScreenShop.ItemOwner.Stash);
 			break;
         }
-        case WorldTownScreenShop.ItemFlag.Removed:
+        case RepairScreenShop.ItemFlag.Removed:
         {
             this.removeItemFromSlot(slot);
 			break;
@@ -1019,7 +1019,7 @@ CampScreenRepairDialogModule.prototype.updateStashList = function (_data, _capac
             {
                 //console.info('STASH: Item inserted (Index: ' + i + ')');
                 this.mStashList[i] = targetItem;
-				this.updateSlotItem(WorldTownScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, WorldTownScreenShop.ItemFlag.Inserted);
+				this.updateSlotItem(RepairScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, RepairScreenShop.ItemFlag.Inserted);
             }
         }
 
@@ -1028,7 +1028,7 @@ CampScreenRepairDialogModule.prototype.updateStashList = function (_data, _capac
         {
             //console.info('STASH: Item removed (Index: ' + i + ')');
             this.mStashList[i] = targetItem;
-			this.updateSlotItem(WorldTownScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, WorldTownScreenShop.ItemFlag.Removed);
+			this.updateSlotItem(RepairScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, RepairScreenShop.ItemFlag.Removed);
         }
 
         // item might have changed within stash slot
@@ -1038,7 +1038,7 @@ CampScreenRepairDialogModule.prototype.updateStashList = function (_data, _capac
             {
                 //console.info('STASH: Item updated (Index: ' + i + ')');
                 this.mStashList[i] = targetItem;
-				this.updateSlotItem(WorldTownScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, WorldTownScreenShop.ItemFlag.Updated);
+				this.updateSlotItem(RepairScreenShop.ItemOwner.Stash, this.mStashSlots, targetItem, i, RepairScreenShop.ItemFlag.Updated);
             }
         }
     }
@@ -1055,7 +1055,7 @@ CampScreenRepairDialogModule.prototype.updateShopList = function (_data, _capaci
 	// create more slots?
 	if(_data.length > this.mShopSlots.length)
 	{
-		this.createItemSlots(WorldTownScreenShop.ItemOwner.Shop, _data.length - this.mShopSlots.length, this.mShopSlots, this.mShopListScrollContainer);
+		this.createItemSlots(RepairScreenShop.ItemOwner.Shop, _data.length - this.mShopSlots.length, this.mShopSlots, this.mShopListScrollContainer);
 	}
 
     // check shop for changes
@@ -1070,14 +1070,14 @@ CampScreenRepairDialogModule.prototype.updateShopList = function (_data, _capaci
         if(i >= this.mShopList.length || (oldItem === null && newItem !== null))
         {
 			//console.info('SHOP: Item inserted (Index: ' + i + ')');
-			this.updateSlotItem(WorldTownScreenShop.ItemOwner.Shop, this.mShopSlots, newItem, i, WorldTownScreenShop.ItemFlag.Inserted);
+			this.updateSlotItem(RepairScreenShop.ItemOwner.Shop, this.mShopSlots, newItem, i, RepairScreenShop.ItemFlag.Inserted);
         }
 
         // item removed from shop slot
         else if(i >= _data.length || (oldItem !== null && newItem === null))
         {
 			//console.info('SHOP: Item removed (Index: ' + i + ')');
-			this.updateSlotItem(WorldTownScreenShop.ItemOwner.Shop, this.mShopSlots, oldItem, i, WorldTownScreenShop.ItemFlag.Removed);
+			this.updateSlotItem(RepairScreenShop.ItemOwner.Shop, this.mShopSlots, oldItem, i, RepairScreenShop.ItemFlag.Removed);
         }
 
         // item might have changed within shop slot
@@ -1088,7 +1088,7 @@ CampScreenRepairDialogModule.prototype.updateShopList = function (_data, _capaci
 				if(oldItem.id !== newItem.id)
 				{
 					//console.info('SHOP: Item updated (Index: ' + i + ')');
-					this.updateSlotItem(WorldTownScreenShop.ItemOwner.Shop, this.mShopSlots, newItem, i, WorldTownScreenShop.ItemFlag.Updated);
+					this.updateSlotItem(RepairScreenShop.ItemOwner.Shop, this.mShopSlots, newItem, i, RepairScreenShop.ItemFlag.Updated);
 				}
             }			
         }

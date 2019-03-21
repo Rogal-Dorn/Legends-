@@ -578,16 +578,33 @@ this.tooltip_events <- {
 				});
 			}
 
-			if (_item.getCondition() < _item.getConditionMax())
+			if (_item.getCondition() >= _item.getConditionMax())
 			{
 				tooltip.push({
 					id = 3,
 					type = "hint",
 					icon = "ui/icons/mouse_right_button_alt.png",
-					text = _item.isToBeRepaired() ? "Set item not to be repaired" : "Set item to be repaired"
+					text = "Set item to be salvaged"
 				});
-			}
-
+			} 
+			else if (_item.getCondition() < _item.getConditionMax())
+			{
+				local text = "Set item to be repaired"
+				if (_item.isToBeRepaired()) 
+				{
+					text = "Set item to be salvaged"
+				} 
+				else if (_item.isToBeSalvaged())
+				{
+					text = "Set item to not be salvaged or repaired"
+				}
+				tooltip.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/icons/mouse_right_button_alt.png",
+					text = text
+				});
+			} 
 			break;
 
 		case "tactical-combat-result-screen.stash":
@@ -1268,7 +1285,8 @@ this.tooltip_events <- {
 			return ret;
 
 		case "repairs.Required":
-			local desc = "Number of tools required to repair the selected equipment. One point is required to repair 15 points of item condition.";
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+			local desc = "Number of tools required to repair the selected equipment. One point is required to repair " + tent.getConversionRate() +" points of item condition.";
 
 			local ret = [
 				{
@@ -4181,7 +4199,108 @@ this.tooltip_events <- {
 					type = "description",
 					text = "Remove all equipment from the repair queue."
 				}
-			];						
+			];
+
+		case "camp-screen.workshop.assignall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Remove all"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Add all equipment to the salvage queue."
+				}
+			];
+
+
+		case "camp-screen.workshop.removeall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Remove all"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all equipment from the salvage queue."
+				}
+			];
+
+		case "workshop.Required":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
+			local desc = "Number of tools that will be salvaged from selected equipment. " + tent.getConversionRate() + " points of item condition equals 1 tool. Once a tools condition reaches zero it will be destroyed.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Salvaged Tools"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "workshop.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to repair duty. The more assigned, the quicker equipment can be salvaged.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Assigned Brothers"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/repair_item.png",
+					text = "Total salvage modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Salvage + " units per hour[/color]"
+				}
+			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
+
+		case "workshop.Time":
+			local desc = "Total number of hours required to salvage all the queued equipment. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
 		}
 
 		return null;

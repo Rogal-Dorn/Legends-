@@ -808,6 +808,7 @@ this.data_helper <- {
 		result.amount <- _item.getAmountString();
 		result.amountColor <- _item.getAmountColor();
 		result.repair <- _item.isToBeRepaired();
+		result.salvage <- _item.isToBeSalvaged();
 		result.price <- 0;
 
 		if (_owner != null)

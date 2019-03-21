@@ -435,14 +435,57 @@ this.character_screen <- {
 		}
 	}
 
-	function onRepairInventoryItem( _data )
+	function onToggleInventoryItem( _data )
 	{
+		local result = {
+			repair = false,
+			salvage = false
+		}
+
 		if (this.Tactical.isActive())
 		{
-			return false;
+			return result;
 		}
-		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair);
-		return tent.onRepairInventoryItem(_data);
+		local item = this.World.Assets.getStash().getItemByInstanceID(_data).item;
+		if (item == null)
+		{
+			return result;
+		}
+
+		local rTent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+ 		local wTent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
+
+		if (item.isIndestructible())
+		{
+			rTent.onRepairInventoryItem(_data, !item.isToBeRepaired());
+		}
+		else if (!item.isToBeRepaired() && !item.isToBeSalvaged())
+		{
+			if (rTent.onRepairInventoryItem(_data, true))
+			{
+				wTent.onSalvageInventoryItem(_data, false);
+			} 
+			else
+			{
+				wTent.onSalvageInventoryItem(_data, true);
+			}
+			
+		}
+		else if (item.isToBeRepaired())
+		{
+			rTent.onRepairInventoryItem(_data, false);
+			wTent.onSalvageInventoryItem(_data, true);
+		}
+		else
+		{
+			rTent.onRepairInventoryItem(_data, false);
+			wTent.onSalvageInventoryItem(_data, false);
+		}
+
+		return {
+			repair = item.isToBeRepaired(),
+			salvage = item.isToBeSalvaged()
+		}
 	}
 
 	function onEquipInventoryItem( _data )
