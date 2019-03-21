@@ -81,7 +81,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
@@ -97,7 +97,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
@@ -113,7 +113,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
@@ -133,7 +133,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);

@@ -10,7 +10,7 @@ this.legend_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_41.png";
 		this.m.Overlay = "active_41";
 		this.m.SoundOnUse = [
-			"sounds/legend_vala_warden_wail.wav"
+			"sounds/combat/legend_vala_warden_wail.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
