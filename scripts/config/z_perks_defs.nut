@@ -1055,14 +1055,6 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/legend_vala_inscribe_shield_sw.png"
 	},
 	{
-		ID = "perk.legend_vala_inscription_mastery",
-		Script = "scripts/skills/perks/legend_vala_inscription_mastery",
-		Name = "Inscription Mastery",
-		Tooltip = "Lowers the cooldown until the Vala can begin inscribing rune sigils again (after a successful inscription) from 20 to 15 days, and increases her inscription speed from 4 to 5.5 tries per day.",
-		Icon = "ui/perks/legend_vala_inscription_mastery.png",
-		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png"
-	},
-	{
 		ID = "perk.legend_guide_steps",
 		Script = "scripts/skills/perks/perk_legend_guide_steps",
 		Name = this.Const.Strings.PerkName.LegendGuideSteps,
@@ -1413,8 +1405,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendDangerPay,
 		Icon = "ui/perks/coins_circle.png",
 		IconDisabled = "ui/perks/coins_circle_bw.png"
-	}															
-	
+	},															
+	{
+		ID = "perk.legend_vala_inscription_mastery",
+		Script = "scripts/skills/perks/legend_vala_inscription_mastery",
+		Name = "Inscription Mastery",
+		Tooltip = "Lowers the cooldown until the Vala can begin inscribing rune sigils again (after a successful inscription) from 20 to 15 days, and increases her inscription speed from 4 to 5.5 tries per day.",
+		Icon = "ui/perks/legend_vala_inscription_mastery.png",
+		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png"
+	},	
+	{
 		ID = "perk.legend_vala_warden",
 		Script = "scripts/skills/perks/legend_vala_warden",
 		Name = "Warden",
@@ -1601,6 +1601,10 @@ gt.Const.Perks.PerkDefs <- {
 	LegendViolentDecomposition = 124,
 	LegendPossession = 125,
 	LegendSiphon = 126,
+	VazlInscribeWeapon = 127,
+	VazlInscribeHelmet = 128,
+	VazlInscribeArmor = 129,
+	VazlInscribeShield = 130,
 	LegendGuidedSteps = 131,
 	LegendBerserkerRage = 132,
 	LegendBecomeBerserker = 133,
@@ -1645,16 +1649,12 @@ gt.Const.Perks.PerkDefs <- {
 	LegendFieldTriage = 172,
 	LegendFieldRepairs = 173,
 	LegendDangerPay = 174,
-	VazlInscribeWeapon = 175,
-	VazlInscribeHelmet = 176,
-	VazlInscribeArmor = 177,
-	VazlInscribeShield = 178
-	VazlInscribeMastery = 179,
-	LegendValaWarden = 180,
-	LegendValaThreads = 181,
-	LegendValaPremonition = 182,
-	LegendValaChantMastery = 183,
-	LegendValaTranceMastery = 184,
-	LegendValaChantDisharmony = 185,
-	LegendValaSpiritualBond = 186
+	VazlInscribeMastery = 175,
+	LegendValaWarden = 176,
+	LegendValaThreads = 177,
+	LegendValaPremonition = 178,
+	LegendValaChantMastery = 179,
+	LegendValaTranceMastery = 180,
+	LegendValaChantDisharmony = 181,
+	LegendValaSpiritualBond = 182
 };

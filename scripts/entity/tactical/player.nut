@@ -2525,12 +2525,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getArmorPartsModifier()
 	{
-		local parts = this.Const.LegendMod.getMaxArmorParts(bro.getBackground().getID());
-		if( bro.getSkills().getSkillByID("perk.legend_tools_spares"))
+		local parts = this.Const.LegendMod.getMaxArmorParts(this.getBackground().getID());
+		if( this.getSkills().getSkillByID("perk.legend_tools_spares"))
 		{
 			parts +=20;
 		}
-		if( bro.getSkills().getSkillByID("perk.legend_tools_drawers"))
+		if( this.getSkills().getSkillByID("perk.legend_tools_drawers"))
 		{
 			parts +=10;
 		}
@@ -2539,14 +2539,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getMedsModifier()
 	{
-		local meds = this.Const.LegendMod.getMaxMedicine(bro.getBackground().getID());
-		if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
+		local meds = this.Const.LegendMod.getMaxMedicine(this.getBackground().getID());
+		if( this.getSkills().getSkillByID("perk.legend_med_packages"))
 		{
 			meds +=10;
 		}
-		if( bro.getSkills().getSkillByID("perk.legend_med_ingredients"))
+		if( this.getSkills().getSkillByID("perk.legend_med_ingredients"))
 		{
-			meds +=10;
+			meds +=20;
 		}
 		return meds;
 	}
