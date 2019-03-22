@@ -391,7 +391,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.CraftingDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showCraftingDialog", this.m.CraftingDialogModule.queryLoad());
+			this.m.JSHandle.asyncCall("showCraftingDialog", this.m.CraftingDialogModule.onShow());
 		}
 	}
 
