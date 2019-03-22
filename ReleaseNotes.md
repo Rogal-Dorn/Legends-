@@ -178,11 +178,31 @@ Beta 0.9.5
 *Poachers can spawn with bows as well as slings now
 *Fixed error that would prevent Orc elites from spawning
 *Fixed error that prevented scenarios from working
+*Fixed tool consumption rate error (was increasing rate instead of decrease). Fixed tooltips to show correct repair time.
+
+
+Beta 0.9.5 b 
+*Reduces late game reward payout scaling.
+*Fixes staves not working at two tiles 
+*Decreases sling range, increases accuracy slightly
+*Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
+*Miasma, chain lightning, firefield, miasma set to ranged
+*Miasma and firefield reduced to two rounds from three
+*Firefield and chain lightning require a staff
+*Triple strike requires a ranged weapon
+*Triple strike buffed to 0.5 damage per strike 
+*Discover location payout increased, decreased time before hint
+*Berserker commanders can no longer be converted into cultists
+*Warlock zombie summons now alway spawn with full armor health
+*Reduced Warlock low tier zombie summon with no weapons chance.
 
 Beta 0.10
 *Adds Orc Behemoth (broken)
 *removes underdog from berserker in party start
 *increases late game difficulty scaling, reduces early game (even more)
+*Adds Orc Behemoth
+*Fixes formations mod stash size exploit
+*Fixes Food tooltip showing double consumption rate
 
 
 *Aimed rock and aimed pebble overlay icon, tooltip and sounds updated

@@ -457,6 +457,49 @@ gt.Const.Strings.KnightNames <- [
 	"Sir Leberecht"
 
 ];
+gt.Const.Strings.LadyNames <- [
+	"Lady Jean",
+	"Lady Hatchet",
+	"Lady Matilda",
+	"Lady Isabella",
+	"Lady Deborah",
+	"Lady Gwendolen",
+	"Lady Mavia",
+	"Lady Lilliard",
+	"Lady Madeira",
+	"Lady Hille",
+	"Lady Amina",
+	"Lady Mary",
+	"Lady Beaton",
+	"Lady Jean",
+	"Lady Avice",
+	"Lady Emma",
+	"Lady Joan",
+	"Lady Margery",
+	"Lady Albree",
+	"Lady Alia",
+	"Lady Ela",
+	"Lady Gisella",
+	"Lady Elisa",
+	"Lady Tamsin",
+	"Lady Anabella",
+	"Lady Beatrice",
+	"Lady Clarae",
+	"Lady Emilia",
+	"Lady Constance",
+	"Lady Florencia",
+	"Lady Joye",
+	"Lady Lucia",
+	"Lady Arrianna",
+	"Lady Pavia",
+	"Lady Prudence",
+	"Lady Sabina",
+	"Lady Ursula",
+	"Lady Grace",
+	"Lady Yvone"
+];
+
+
 gt.Const.Strings.OrcWarlordNames <- [
 	"Illska Ghul",
 	"Skabskra",

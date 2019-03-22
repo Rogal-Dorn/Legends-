@@ -56,10 +56,6 @@ this.legends_zombie_low_xbow <- this.inherit("scripts/entity/tactical/legend_zom
 			armor = this.new("scripts/items/armor/monk_robe");
 		}
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			armor.setArmor(armor.getArmorMax() / 2 - 1);
-		}
 
 		this.m.Items.equip(armor);
 
@@ -89,10 +85,6 @@ this.legends_zombie_low_xbow <- this.inherit("scripts/entity/tactical/legend_zom
 				helmet = this.new("scripts/items/helmets/full_leather_cap");
 			}
 
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				helmet.setArmor(helmet.getArmorMax() / 2 - 1);
-			}
 
 			this.m.Items.equip(helmet);
 		}

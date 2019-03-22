@@ -766,6 +766,16 @@ this.asset_manager <- {
 			Modifiers = []
 		};
 		local roster = this.World.getPlayerRoster().getAll();
+		local campMultiplier = this.isCamping() ? 2.0 : 1.0;
+		local toolConsumptionModifier = 1.0;
+		local repairModifier = 1.0;
+		foreach( bro in roster )
+		{
+			repairModifier += this.Const.LegendMod.getRepairModifier(bro.getBackground().getID());
+			local v = this.Math.maxf(0.66, toolConsumptionModifier - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
+			toolConsumptionModifier = v
+		}
+
 
 		foreach( bro in roster )
 		{
@@ -775,11 +785,11 @@ this.asset_manager <- {
 			{
 				if (item.getCondition() < item.getConditionMax())
 				{
-					d = item.getConditionMax() - item.getCondition();
+					d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier * repairModifier, item.getConditionMax() - item.getCondition());
 
 					if (d > 0)
 					{
-						ret.ArmorParts += d * this.Const.World.Assets.ArmorPartsPerArmor;
+						ret.ArmorParts += d * this.Const.World.Assets.ArmorPartsPerArmor * toolConsumptionModifier;
 
 						if (d / this.Const.World.Assets.ArmorPerHour > ret.Hours)
 						{
@@ -809,12 +819,12 @@ this.asset_manager <- {
 
 			if (item.isToBeRepaired())
 			{
-				d = item.getConditionMax() - item.getCondition();
+				d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * campMultiplier * repairModifier, item.getConditionMax() - item.getCondition());
 			}
 
 			if (d > 0)
 			{
-				ret.ArmorParts += d * this.Const.World.Assets.ArmorPartsPerArmor;
+				ret.ArmorParts += d * this.Const.World.Assets.ArmorPartsPerArmor * toolConsumptionModifier;
 
 				if (d / this.Const.World.Assets.ArmorPerHour > ret.Hours)
 				{
@@ -1157,9 +1167,11 @@ this.asset_manager <- {
 				stashSize += bro.getStashModifier()
 				healingModifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
 				repairModifier += this.Const.LegendMod.getRepairModifier(bro.getBackground().getID());
-				toolConsumptionModifier += this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID());
+				local v = this.Math.maxf(0.66, toolConsumptionModifier - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
+				toolConsumptionModifier = v;
 				//medsConsumptionModifier += this.Const.LegendMod.getMedsConsumptionModifier(bro.getBackground().getID());
 			}
+
 			
 			if (stashSize != this.m.Stash.getCapacity())
 			{

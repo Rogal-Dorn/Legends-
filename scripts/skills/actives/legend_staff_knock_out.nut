@@ -11,7 +11,7 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_staff_knock_out";
-		this.m.Name = "Knock Out";
+		this.m.Name = "Staff Knock Out";
 		this.m.Description = "A heavy blow intended to stun or incapacitate anyone unlucky enough to be hit for one turn, but not to do the most damage. Stunned targets can not keep up their Shieldwall, Spearwall or similar defensive skills.";
 		this.m.Icon = "skills/active_32.png";
 		this.m.IconDisabled = "skills/active_32_sw.png";
