@@ -275,6 +275,8 @@ makes resource perks and backpack work, fixes icons
 fixes zombies rising without heads
 fixes limb lopper being double grippable
 fixes infinite training bug for backliners 
+Buffed steadfast to remove all fatigue on hit, not just reduce the fatigue multiplier on hit
+Makes spiders not inflict poison on characters who are poison immune 
 *Add blueprint for a small and large carry pack (+3, +10 stash size when equipped. Requies cloth,silk and cloth,silk,unhold hide)
 Camp Documentation:
 
