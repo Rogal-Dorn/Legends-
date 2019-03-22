@@ -19,9 +19,9 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	{
 		this.m.ID = "effects.legend_vala_chant_disharmony_effect";
 		this.m.Name = "Disharmonic";
-		this.m.Icon = "skills/status_effect_65.png";
-		this.m.IconMini = "status_effect_65_mini";
-		this.m.Overlay = "status_effect_65";
+		this.m.Icon = "";
+		this.m.IconMini = "";
+		this.m.Overlay = "";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsActive = false;
@@ -34,10 +34,16 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
 		{
+			this.m.Icon = "skills/status_effect_65.png";
+			this.m.IconMini = "status_effect_65_mini";
+			this.m.Overlay = "status_effect_65";
 			return false;
 		}
 		else
 		{
+			this.m.Icon = "";
+			this.m.IconMini = "";
+			this.m.Overlay = "";
 			return true;
 		}
 	}
@@ -73,10 +79,17 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
+			this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
+			this.m.Icon = "skills/status_effect_65.png";
+			this.m.IconMini = "status_effect_65_mini";
+			this.m.Overlay = "status_effect_65";
 		}
 		else
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+			this.m.Icon = "";
+			this.m.IconMini = "";
+			this.m.Overlay = "";
 		}
 	}
 
@@ -86,10 +99,16 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
+			this.m.Icon = "skills/status_effect_65.png";
+			this.m.IconMini = "status_effect_65_mini";
+			this.m.Overlay = "status_effect_65";
 		}
 		else
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+			this.m.Icon = "";
+			this.m.IconMini = "";
+			this.m.Overlay = "";
 		}
 	}
 

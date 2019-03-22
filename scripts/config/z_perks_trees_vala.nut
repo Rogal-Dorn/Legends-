@@ -9,11 +9,14 @@ if (!("Perks" in gt.Const))
 local ValaTree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendValaWarden,
+		gt.Const.Perks.PerkDefs.Pathfinder,
+		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.VazlInscribeShield
 	],
 	[
-		gt.Const.Perks.PerkDefs.Pathfinder,
-		gt.Const.Perks.PerkDefs.Recover
+		gt.Const.Perks.PerkDefs.LegendValaMalevolent,
+		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.BackStabber
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,

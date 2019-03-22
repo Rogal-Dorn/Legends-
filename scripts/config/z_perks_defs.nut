@@ -1090,7 +1090,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_vala_threads",
 		Script = "scripts/skills/perks/legend_vala_threads",
 		Name = "Threads of Fate",
-		Tooltip = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and each point of Resolve increases her chance to apply a stacking debuff. Every stack lowers all main attributes and increases the amount of damage taken.",
+		Tooltip = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and each point of Resolve increases her chance to apply a stacking debuff. Each stack lowers maximum hitpoints and increases amount of damage taken.",
 		Icon = "ui/perks/legend_vala_threads.png",
 		IconDisabled = "ui/perks/legend_vala_threads_sw.png"
 	},
@@ -1114,7 +1114,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_vala_trance_mastery",
 		Script = "scripts/skills/perks/legend_vala_trance_mastery",
 		Name = "Trance Mastery",
-		Tooltip = "Entering trances builds up 25% less Fatigue. Successful trances are more likely to happen. Gain a chance to not drop out of trance when receiving damage.",
+		Tooltip = "Entering trances builds up 25% less Fatigue. Gain a 50% chance to not drop out of trance when receiving damage. Successful trances are more likely to occur.",
 		Icon = "ui/perks/legend_vala_trance_mastery.png",
 		IconDisabled = "ui/perks/legend_vala_trance_mastery_sw.png"
 	},
@@ -1141,7 +1141,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = "Incorporeal Perspective.",
 		Icon = "ui/perks/legend_vala_trance_perspective.png",
 		IconDisabled = "ui/perks/legend_vala_trance_perspective_sw.png"
-	}	
+	},
+	{
+		ID = "perk.legend_vala_trance_malevolent",
+		Script = "scripts/skills/perks/legend_vala_trance_malevolent",
+		Name = "Malevolent Spirits",
+		Tooltip = "The spirit world is home to many malevolent beings, and the Vala knows how to contact them. Once her access to their realm has been established, she calls upon these ill-willed spirits in hopes of receiving their help. If she\'s successful, these spirits will harass, torment and weaken her foes.\n\nWhen the Vala enters a trance she will remain in that state until her task is either completed or interrupted. Trance completion is checked at the start of her turns, and failure causes her to remain in trance (while gaining additional success chance for her next completion check). Receiving damage of any kind, or becoming too fatigued, will drop the Vala out of an active trance.",
+		Icon = "ui/perks/legend_vala_trance_malevolent.png",
+		IconDisabled = "ui/perks/legend_vala_trance_malevolent_sw.png"
+	}
 ];
 
 
@@ -1287,5 +1295,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaTranceMastery = 138,
 	LegendValaChantDisharmony = 139,
 	LegendValaSpiritualBond = 140,
-	LegendValaPerspective = 141
+	LegendValaPerspective = 141,
+	LegendValaMalevolent = 142
 };

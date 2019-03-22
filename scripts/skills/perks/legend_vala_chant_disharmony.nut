@@ -15,6 +15,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 		this.m.IsAttack = false;
+		this.m.IsIgnoredAsAOO = true;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 30;
@@ -192,7 +193,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
 		{
-			this.Sound.play("sounds/combat/legend_vala_chant.wav");
+			this.Sound.play("sounds/combat/legend_vala_disharmony.wav");
 		}
 
 		foreach (tar in targets)
@@ -201,6 +202,11 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			{
 				if (t.getSkills().hasSkill("effects.legend_vala_chant_disharmony_effect"))
 				{
+					if (actor.getTile().getDistanceTo(t.getTile()) <= 1)
+					{
+						this.spawnIcon("status_effect_65", t.getTile());
+					}
+
 					t.getSkills().update();
 				}
 			}
@@ -234,11 +240,16 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 						local disharmony = this.new("scripts/skills/effects/legend_vala_chant_disharmony_effect");
 						disharmony.setVala(this.getContainer().getActor());
 						t.getSkills().add(disharmony);
+
+						if (actor.getTile().getDistanceTo(t.getTile()) <= 1)
+						{
+							this.spawnIcon("status_effect_65", t.getTile());
+						}
 					}
 				}
 			}
 
-			this.Sound.play("sounds/combat/legend_vala_chant.wav");
+			this.Sound.play("sounds/combat/legend_vala_disharmony.wav");
 		}
 	}
 });
