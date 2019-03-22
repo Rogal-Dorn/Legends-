@@ -40,7 +40,7 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Lundirsholm"
 		]);
 		this.m.DraftList = [
-			"vazl_shieldmaiden_background",
+			"legend_shieldmaiden_background",
 			"houndmaster_background",
 			"female_bowyer_background",
 			"brawler_background",

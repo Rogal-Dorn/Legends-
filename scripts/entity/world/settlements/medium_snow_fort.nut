@@ -37,7 +37,7 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Wallhovel"
 		]);
 		this.m.DraftList = [
-			"vazl_shieldmaiden_background",
+			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
 			"brawler_background",

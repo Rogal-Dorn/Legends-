@@ -36,7 +36,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			CurrentWeaponUses = 0
 		},
 		Formations = null,
-		VeteranPerks = 0
+		VeteranPerks = 0,
+		CampAssignment = "camp.rest",
+		CampHealing = 0,
+		LastCampTime = 0
 	},
 	function setName( _value )
 	{
@@ -201,6 +204,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setTryoutDone( _t )
 	{
 		this.m.IsTryoutDone = _t;
+	}
+
+	function getCampAssignment()
+	{
+		return this.m.CampAssignment;
+	}
+
+	function setCampAssignment( _id )
+	{
+		this.m.CampAssignment = _id;
 	}
 
 	function getMood()
@@ -2538,6 +2551,26 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return meds;
 	}
 
+	function getCampHealing() 
+	{
+		return this.m.CampHealing;
+	}
+
+	function setCampHealing( _v )
+	{
+		this.m.CampHealing = _v;
+	}
+
+	function getLastCampTime()
+	{
+		return this.m.LastCampTime;
+	}
+
+	function setLastCampTime( _t )
+	{
+		this.m.LastCampTime = _t;
+	}
+
 	function onSerialize( _out )
 	{
 		this.actor.onSerialize(_out);
@@ -2587,6 +2620,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Formations.onSerialize(_out);
 		_out.writeU8(this.m.VeteranPerks);
 		_out.writeBool(this.m.IsCommander);
+		_out.writeString(this.m.CampAssignment);
+		_out.writeF32(this.m.LastCampTime);
 
 	}
 
@@ -2681,6 +2716,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 48)
 		{
 			this.m.IsCommander = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.CampAssignment = _in.readString();
+			this.m.LastCampTime = _in.readF32();
 		}
 
 	}

@@ -212,7 +212,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		local brothers = this.World.getPlayerRoster().getAll();
 		foreach (bro in brothers)
 		{
-			if (bro.getSkills().hasSkill("perk.vazl_vala_inscribe_weapon") || bro.getSkills().hasSkill("perk.vazl_vala_inscribe_helmet") || bro.getSkills().hasSkill("perk.vazl_vala_inscribe_armor"))
+			if (bro.getSkills().hasSkill("perk.legend_vala_inscribe_weapon") || bro.getSkills().hasSkill("perk.legend_vala_inscribe_helmet") || bro.getSkills().hasSkill("perk.legend_vala_inscribe_armor") || bro.getSkills().hasSkill("perk.legend_vala_inscribe_shield"))
 			{
 				bro.getSkills().update();
 			}

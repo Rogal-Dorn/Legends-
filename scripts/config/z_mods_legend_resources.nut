@@ -269,17 +269,56 @@ gt.Const.LegendMod.getRepairModifier <- function ( _background )
 		return 0.05;
 			 break;
 		case "background.legend_crusader":
-		return 0.1;
+			return 0.25;
 			 break;
-		case "background.legend_commander_crusader":
 		case "background.legend_ironmonger":
 		case "background.tailor":
 		case "background.female_tailor":
-			return 0.2;
+			return 0.5;
 			break;
 		case "background.legend_blacksmith":
 		case "background.vazl_inventor":
+			return 1.0;
+			break;
+
+		default:
+			return 0.0;
+	}
+	return 0.0;
+};
+
+gt.Const.LegendMod.getSalvageModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.legend_ironmonger":
+		case "background.tailor":
+		case "background.female_tailor":
 			return 0.5;
+			break;
+		case "background.legend_blacksmith":
+		case "background.vazl_inventor":
+			return 1.0;
+			break;
+
+		default:
+			return 0.0;
+	}
+	return 0.0;
+};
+
+gt.Const.LegendMod.getCraftingModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.legend_ironmonger":
+		case "background.tailor":
+		case "background.female_tailor":
+			return 0.5;
+			break;
+		case "background.legend_blacksmith":
+		case "background.vazl_inventor":
+			return 1.0;
 			break;
 
 		default:

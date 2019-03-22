@@ -87,12 +87,21 @@ var ListItemIdentifier =
     return result;
 };
 
-$.fn.setRepairImageVisible = function(_isVisible)
+$.fn.setRepairImageVisible = function(_isVisible, _isSalvage)
 {
     var imageLayer = this.find('.repair-layer:first');
+    var iconLayer = this.find('.repair-layer:first > img');
     if (imageLayer.length > 0)
     {
-        if(_isVisible)
+        if (_isSalvage)
+        {
+            iconLayer.attr('src', Path.GFX + 'ui/icons/salvage_item.png');
+        }
+        else
+        {
+            iconLayer.attr('src', Path.GFX + Asset.ICON_REPAIR_ITEM);
+        }
+        if(_isVisible || _isSalvage)
 		{
 			imageLayer.removeClass('display-none');
 			imageLayer.addClass('display-block');
@@ -101,9 +110,11 @@ $.fn.setRepairImageVisible = function(_isVisible)
 		{
 			imageLayer.addClass('display-none');
 			imageLayer.removeClass('display-block');
-		}
+        }
+        
     }
 };
+
 
 $.fn.assignListItemImage = function(_imagePath)
 {
@@ -350,6 +361,7 @@ $.fn.assignListItemTooltip = function(_itemId, _owner, _entityId)
 {
     if(_itemId !== undefined && _itemId !== null)
     {
+
         this.bindTooltip({ contentType: 'ui-item', entityId: _entityId, itemId: _itemId, itemOwner: _owner });
     }
     else

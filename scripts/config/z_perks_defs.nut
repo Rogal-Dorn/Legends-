@@ -1023,36 +1023,44 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/siphon_circle_bw.png"
 	},
 	{
-		ID = "perk.vazl_vala_inscribe_weapon",
-		Script = "scripts/skills/perks/vazl_vala_inscribe_weapon",
-		Name = this.Const.Strings.PerkName.vazl_ValaInscribeWeapon,
-		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscribeWeapon,
-		Icon = "ui/perks/vazl_vala_inscribe_weapon.png",
-		IconDisabled = "ui/perks/vazl_vala_inscribe_weapon_sw.png"
+		ID = "perk.legend_vala_inscribe_weapon",
+		Script = "scripts/skills/perks/legend_vala_inscribe_weapon",
+		Name = "Weapon Rune Sigils",
+		Tooltip = "Allows the Vala to inscribe rocks with random weapon rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: accuracy, feeding, power\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with weapon rune sigils again.",
+		Icon = "ui/perks/legend_vala_inscribe_weapon.png",
+		IconDisabled = "ui/perks/legend_vala_inscribe_weapon_sw.png"
 	},
 	{
-		ID = "perk.vazl_vala_inscribe_helmet",
-		Script = "scripts/skills/perks/vazl_vala_inscribe_helmet",
-		Name = this.Const.Strings.PerkName.vazl_ValaInscribeHelmet,
-		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscribeHelmet,
-		Icon = "ui/perks/vazl_vala_inscribe_helmet.png",
-		IconDisabled = "ui/perks/vazl_vala_inscribe_helmet_sw.png"
+		ID = "perk.legend_vala_inscribe_helmet",
+		Script = "scripts/skills/perks/legend_vala_inscribe_helmet",
+		Name = "Helmet Rune Sigils",
+		Tooltip = "Allows the Vala to inscribe rocks with random helmet rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: bravery, clarity, luck\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with helmet rune sigils again.",
+		Icon = "ui/perks/legend_vala_inscribe_helmet.png",
+		IconDisabled = "ui/perks/legend_vala_inscribe_helmet_sw.png"
 	},
 	{
-		ID = "perk.vazl_vala_inscribe_armor",
-		Script = "scripts/skills/perks/vazl_vala_inscribe_armor",
-		Name = this.Const.Strings.PerkName.vazl_ValaInscribeArmor,
-		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscribeArmor,
-		Icon = "ui/perks/vazl_vala_inscribe_armor.png",
-		IconDisabled = "ui/perks/vazl_vala_inscribe_armor_sw.png"
+		ID = "perk.legend_vala_inscribe_armor",
+		Script = "scripts/skills/perks/legend_vala_inscribe_armor",
+		Name = "Armor Rune Sigils",
+		Tooltip = "Allows the Vala to inscribe rocks with random armor rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: endurance, resilience, safety\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with armor rune sigils again.",
+		Icon = "ui/perks/legend_vala_inscribe_armor.png",
+		IconDisabled = "ui/perks/legend_vala_inscribe_armor_sw.png"
 	},
 	{
-		ID = "perk.vazl_vala_inscription_mastery",
-		Script = "scripts/skills/perks/vazl_vala_inscription_mastery",
-		Name = this.Const.Strings.PerkName.vazl_ValaInscriptionMastery,
-		Tooltip = this.Const.Strings.PerkDescription.vazl_ValaInscriptionMastery,
-		Icon = "ui/perks/vazl_vala_inscription_mastery.png",
-		IconDisabled = "ui/perks/vazl_vala_inscription_mastery_sw.png"
+		ID = "perk.legend_vala_inscribe_shield",
+		Script = "scripts/skills/perks/legend_vala_inscribe_shield",
+		Name = "Shield Rune Sigils",
+		Tooltip = "Allows the Vala to inscribe rocks with random shield rune sigils. Her first inscription happens automatically when you learn this perk, but the rest of the time the game checks 4 times per day to see if an inscription is successful.\n\nPossibilities: defense\n\nUpon success, she needs to wait 20 days before she can begin inscribing rocks with shield rune sigils again.",
+		Icon = "ui/perks/legend_vala_inscribe_shield.png",
+		IconDisabled = "ui/perks/legend_vala_inscribe_shield_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_inscription_mastery",
+		Script = "scripts/skills/perks/legend_vala_inscription_mastery",
+		Name = "Inscription Mastery",
+		Tooltip = "Lowers the cooldown until the Vala can begin inscribing rune sigils again (after a successful inscription) from 20 to 15 days, and increases her inscription speed from 4 to 5.5 tries per day.",
+		Icon = "ui/perks/legend_vala_inscription_mastery.png",
+		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png"
 	},
 	{
 		ID = "perk.legend_guide_steps",
@@ -1407,6 +1415,61 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/coins_circle_bw.png"
 	}															
 	
+		ID = "perk.legend_vala_warden",
+		Script = "scripts/skills/perks/legend_vala_warden",
+		Name = "Warden",
+		Tooltip = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in a semi-physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. I can be beaten, but it never dies. The Warden\'s attributes are reinforced by the strength of the Vala\'s Resolve.",
+		Icon = "ui/perks/legend_vala_warden.png",
+		IconDisabled = "ui/perks/legend_vala_warden_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_threads",
+		Script = "scripts/skills/perks/legend_vala_threads",
+		Name = "Threads of Fate",
+		Tooltip = "Swinging your staff spins and twines the threads of fate of those you hit.\n\nThe Vala needs her staff equipped for this perk to work, and each point of Resolve increases her chance to apply a stacking debuff. Each stack lowers all of the target\'s main attributes and increases the amount of damage they receive.",
+		Icon = "ui/perks/legend_vala_threads.png",
+		IconDisabled = "ui/perks/legend_vala_threads_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_premonition",
+		Script = "scripts/skills/perks/legend_vala_premonition",
+		Name = "Premonition",
+		Tooltip = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced.",
+		Icon = "ui/perks/legend_vala_premonition.png",
+		IconDisabled = "ui/perks/legend_vala_premonition_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_chanting_mastery",
+		Script = "scripts/skills/perks/legend_vala_chanting_mastery",
+		Name = "Chanting Mastery",
+		Tooltip = "Chanting builds up 25% less Fatigue.",
+		Icon = "ui/perks/legend_vala_chanting_mastery.png",
+		IconDisabled = "ui/perks/legend_vala_chanting_mastery_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_trance_mastery",
+		Script = "scripts/skills/perks/legend_vala_trance_mastery",
+		Name = "Trance Mastery",
+		Tooltip = "Entering trances builds up 25% less Fatigue.",
+		Icon = "ui/perks/legend_vala_trance_mastery.png",
+		IconDisabled = "ui/perks/legend_vala_trance_mastery_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_chant_disharmony",
+		Script = "scripts/skills/perks/legend_vala_chant_disharmony",
+		Name = "Disharmony",
+		Tooltip = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.\n\nEnemies adjacent to the Vala are unable to enforce Zones of Control, making it easy to slip past them.",
+		Icon = "ui/perks/legend_vala_chant_disharmony.png",
+		IconDisabled = "ui/perks/legend_vala_chant_disharmony_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_spiritual_bond",
+		Script = "scripts/skills/perks/legend_vala_spiritual_bond",
+		Name = "Spiritual Bond",
+		Tooltip = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, based on the Vala\'s Resolve and up to a maximum of 50%.\n\nThis perk does nothing unless the Vala has the Warden perk.",
+		Icon = "ui/perks/legend_vala_spiritual_bond.png",
+		IconDisabled = "ui/perks/legend_vala_spiritual_bond_sw.png"
+	}	
 ];
 
 
@@ -1538,10 +1601,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendViolentDecomposition = 124,
 	LegendPossession = 125,
 	LegendSiphon = 126,
-	VazlInscribeWeapon = 127,
-	VazlInscribeHelmet = 128,
-	VazlInscribeArmor = 129,
-	VazlInscribeMastery = 130,
 	LegendGuidedSteps = 131,
 	LegendBerserkerRage = 132,
 	LegendBecomeBerserker = 133,
@@ -1585,6 +1644,17 @@ gt.Const.Perks.PerkDefs <- {
 	LegendMarkTarget = 171,
 	LegendFieldTriage = 172,
 	LegendFieldRepairs = 173,
-	LegendDangerPay = 174
-
+	LegendDangerPay = 174,
+	VazlInscribeWeapon = 175,
+	VazlInscribeHelmet = 176,
+	VazlInscribeArmor = 177,
+	VazlInscribeShield = 178
+	VazlInscribeMastery = 179,
+	LegendValaWarden = 180,
+	LegendValaThreads = 181,
+	LegendValaPremonition = 182,
+	LegendValaChantMastery = 183,
+	LegendValaTranceMastery = 184,
+	LegendValaChantDisharmony = 185,
+	LegendValaSpiritualBond = 186
 };

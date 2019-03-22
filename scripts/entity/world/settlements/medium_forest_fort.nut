@@ -32,7 +32,7 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Findelsburg"
 		]);
 		this.m.DraftList = [
-			"vazl_shieldmaiden_background",
+			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
 			"female_bowyer_background",

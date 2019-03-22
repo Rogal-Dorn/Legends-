@@ -437,6 +437,19 @@ this.skill_container <- {
 		this.m.Actor.updateOverlay();
 	}
 
+	function MovementCompleted()
+	{
+		if (!this.m.Actor.isAlive())
+		{
+			return;
+		}
+
+		foreach( skill in this.m.Skills )
+		{
+			skill.onMovementCompleted();
+		}
+	}
+
 	function buildPropertiesForUse( _caller, _targetEntity )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();

@@ -74,7 +74,7 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			"cripple_background",
 			"hedge_knight_background",
 			"hedge_knight_background",
-						"apprentice_background",
+			"apprentice_background",
 			"apprentice_background",
 			"brawler_background",
 			"caravan_hand_background",
