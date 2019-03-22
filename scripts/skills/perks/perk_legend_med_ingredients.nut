@@ -19,7 +19,8 @@ this.perk_legend_med_ingredients <- this.inherit("scripts/skills/skill", {
 		stashSize += 20; 
 
 	}
-		function onRemoved()
+	
+	function onRemoved()
 	{
 		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine
 		stashSize -= 20; 
