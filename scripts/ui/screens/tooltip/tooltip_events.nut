@@ -4301,6 +4301,59 @@ this.tooltip_events <- {
 			];
 			return ret;
 
+		case "crafting.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to crafting duty. The more assigned, the quicker items can be crafted.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Assigned Brothers"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/repair_item.png",
+					text = "Total crafting modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Craft + " units per hour[/color]"
+				}
+			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
+
+		case "crafting.Time":
+			local desc = "Total number of hours required to craft all the queued items. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
 		}
 
 		return null;

@@ -34,29 +34,9 @@
     position: absolute;
 }
 
-.camp-screen > .l-crafting-dialog-container .l-tab-asset.is-money
-{
-    left: 0;
-}
-
-.camp-screen > .l-crafting-dialog-container .l-tab-asset.is-food
-{
-    left: 15.0rem;
-}
-
-.camp-screen > .l-crafting-dialog-container .l-tab-asset.is-supplies
+.camp-screen > .l-crafting-dialog-container .l-tab-asset.is-time-required
 {
     left: 30.0rem;
-}
-
-.camp-screen > .l-crafting-dialog-container .l-tab-asset.is-ammo
-{
-    left: 45.0rem;
-}
-
-.camp-screen > .l-crafting-dialog-container .l-tab-asset.is-medicine
-{
-    left: 60.0rem;
 }
 
 .camp-screen > .l-crafting-dialog-container .l-tab-asset.is-brothers
@@ -343,7 +323,6 @@
     line-height: 3.0rem;
 }
 
-
 .camp-screen > .l-crafting-dialog-container .content .l-details-frame
 {
     width: 100%;
@@ -374,114 +353,65 @@
     position: absolute;
 }
 
-.camp-screen > .l-crafting-dialog-container .content .details-container > .row.is-character-container
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-character-container
 {
     top: 0;
     left: 0;
     height: 39.0rem;
 }
 
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-portrait-container
-{
-    top: 0;
-    left: 0;
-    width: 13.0rem;
-    height: 16.0rem;
-}
-
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-portrait-container > img
-{
-    top: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: auto;
-
-    display: block;
-}
-
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container
-{
-    top: 0;
-    left: 13.0rem;
-    right: 0;
-}
-
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container > img
-{
-    top: 1.0rem;
-    left: 0;
-    width: 4.0rem;
-    height: 4.0rem;
-    position: absolute;
-
-    display: block;
-}
-
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container .row
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-character-container > .row
 {
     left: 1.0rem;
     right: 1.0rem;
     position: absolute;
 }
 
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container .row.is-top
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-character-container > .row.is-header
 {
     top: 0;
-    height: 4.4rem;
-
-    /*border-bottom: 1px rgba(130, 130, 130, 1) solid;*/
-}
-
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container .row.is-top .border
-{
-    top: 0;
-    left: 0.0rem;
-    right: 0;
-    height: 4.4rem;
+    height: 4.0rem;
 
     border-image: url("coui://gfx/ui/skin/line_metal.png") 0% 0% 100% 0%;
     border-image-outset: 0 0 -0.5rem 0;
 }
 
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container .row.is-top > img
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-character-container > .row.is-header .label
 {
-    left: 0;
-    bottom: 0.2rem;
-    width: 2.6rem;
-    height: 2.6rem;
+    top: 1.0rem;
+    left: 1.0rem;
+    height: 3.0rem;
     position: absolute;
 
-    display: block;
-}
-
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container .row.is-top .name
-{
-    left: 0.4rem;
-    right: 1.0rem;
-    bottom: 0.2rem;
-    height: 2.6rem;
-    position: absolute;
-    overflow: hidden;
-
+    text-align: left;
     line-height: 3.0rem;
 }
 
-.camp-screen > .l-crafting-dialog-container .content .details-container .column.is-character-background-container .row.is-bottom
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-queue-container
 {
-    top: 5.5rem;
-    left: 1.0rem;
+    top: 5.0;
     height: 20.0rem;
-
-    text-align: left;
-    line-height: 2.6rem;
 }
 
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-queue-container > .l-list-container
+{
+    top: 4.0rem;
+    left: 2.0rem;
+    right: 2.0rem;
+    position: absolute;
 
+    width: 40.0rem;
+    height: 20.0rem;
+}
+
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-queue-container > .l-list-container .scroll-container
+{
+    margin-bottom: 0.0rem;
+}
 
 .camp-screen > .l-crafting-dialog-container .content .details-container .row.is-ingredients-container
 {
-    top: 20.0rem;
+    top: 25.0rem;
     height: 20.0rem;
 }
 

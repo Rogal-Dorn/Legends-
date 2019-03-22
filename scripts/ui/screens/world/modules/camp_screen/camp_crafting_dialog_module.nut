@@ -2,7 +2,7 @@
 this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
 		Title = "Crafting",
-		Description = "While encamped, craft all manner of useful items from ingrediedents you have collected."	,
+		Description = "While encamped, craft all manner of useful items.",
 		Tent = null
 	},
 	function create()
@@ -30,6 +30,15 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 		return result;
 	}
 
+	function queryQueue()
+	{
+		local result = {
+			Assets = this.assetsInformation(),
+			Queue = this.m.Tent.getQueue()
+		};
+		return result;
+	}
+
 	function assetsInformation()
 	{
 		return {
@@ -40,7 +49,7 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 
 	function loadCraftList()
 	{
-		local result = this.queryLoad()
+		local result = this.queryQueue()
 		this.m.JSHandle.asyncCall("loadFromData", result);
 	}
 
