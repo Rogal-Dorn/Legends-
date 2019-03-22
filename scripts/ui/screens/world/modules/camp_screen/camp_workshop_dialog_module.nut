@@ -1,7 +1,7 @@
 
 this.camp_workshop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
-		Title = "Workshop Tent",
+		Title = "Workshop",
 		Description = "Salvage equipment and produce tools. Queue is eft to right, top to bottom. Assign workers to salvage items in the commanders tent.",
 		InventoryFilter = this.Const.Items.ItemFilter.All
 	},

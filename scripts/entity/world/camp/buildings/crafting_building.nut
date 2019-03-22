@@ -1,6 +1,6 @@
 this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-        BaseCraft = 50.0,
+        BaseCraft = 10.0,
         ItemsCrafted = [],
         Queue = []
 	},
@@ -73,8 +73,8 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			res.push({
 		 		id = id,
-		 		icon = b.getIcon(),
-		 		text = "You craft a " + b.getName()
+		 		icon = "ui/items/" + b.getIcon(),
+		 		text = "You craft an " + b.getName()
 			})
 			++id;
 		}
@@ -135,7 +135,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				continue
 			}
 			local r = b.Blueprint.getUIData();
-			r.Percentage <- (r.Points / (b.Blueprint.getCost() * 1.0)) * 100
+			r.Percentage <- (b.Points / (b.Blueprint.getCost() * 1.0)) * 100
 			ret.push(r);
 		}
 		return ret;
@@ -154,6 +154,10 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
             points += r.Blueprint.getCost();
         }
         local modifiers = this.getModifiers();
+		if (modifiers.Craft <= 0)
+		{
+			return 0
+		}
         return this.Math.ceil(points / modifiers.Craft);
     }
 
@@ -201,7 +205,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.Queue[_target] = item;
 		if (item.Blueprint.getSounds().len() != 0)
 		{
-			this.Sound.play(item.Blueprint.getSounds()[this.Math.rand(0, blueprint.getSounds().len() - 1)], 1.0);
+			this.Sound.play(item.Blueprint.getSounds()[this.Math.rand(0, item.Blueprint.getSounds().len() - 1)], 1.0);
 		}
 	}
 

@@ -18,19 +18,23 @@ var CampScreenCraftingDialogModule = function(_parent)
     this.mListScrollContainer = null;
     this.mNoCraftablesLabel = null;
 
+    this.mQueueContainer = null;
+    this.mQueueScrollContainer = null;
+    this.mQueueList = null;
+    this.mQueueSlots = null;
+
     this.mDetailsPanel =
     {
         Container: null,
-        CharacterImage: null,
-        CharacterName: null,
-        DescriptionTextContainer: null,
-        ScrollContainerList: null,
         Components: null,
         Cost: null,
         CraftButton: null
     };
+
     // assets labels
-	this.mAssets = new WorldTownScreenAssets(_parent);
+    this.mAssetValues = null;
+    this.mTimeAsset = null;
+    this.mBrothersAsset	= null;
 
     // buttons
     this.mLeaveButton = null;
@@ -84,7 +88,13 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
     this.mDialogContainer.findDialogTabContainer().append(tabButtonsContainer);
 
 	// create assets
-    this.mAssets.createDIV(tabButtonsContainer);
+    this.mTimeAsset = this.createAssetDIV(tabButtonsContainer, Path.GFX + 'ui/buttons/icon_time.png', 'is-time-required');
+    var assetContainer = $('<div class="l-tab-asset is-brothers"></div>');
+    this.mBrothersAsset = this.createImageButton(assetContainer, Path.GFX + Asset.ICON_ASSET_BROTHERS, function()
+	{
+        self.notifyBackendBrothersButtonPressed();
+    });
+    tabButtonsContainer.append(assetContainer);
 
 	// create content
     var content = this.mDialogContainer.findDialogContentContainer();
@@ -110,47 +120,21 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
     this.mDetailsPanel.Container = $('<div class="details-container display-none"/>');
     detailsFrame.append(this.mDetailsPanel.Container);
 
+    
     // details: character container
     var detailsRow = $('<div class="row is-character-container"/>');
     this.mDetailsPanel.Container.append(detailsRow);
-    var detailsColumn = $('<div class="column is-character-portrait-container"/>');
-    detailsRow.append(detailsColumn);
-    this.mDetailsPanel.CharacterImage = detailsColumn.createImage(null, function (_image)
-    {
-        var offsetX = 0;
-        var offsetY = 0;
+    var queueHeader = $('<div class="row is-header"/>');
+    detailsRow.append(queueHeader);
+    var queueHeaderLabel = $('<div class="label title-font-normal font-bold font-bottom-shadow font-color-title">Crafting Queue</div>');
+    queueHeader.append(queueHeaderLabel);
 
-        if (self.mSelectedEntry !== null)
-        {
-            var data = self.mSelectedEntry.data('entry');
-            if ('ImageOffsetX' in data && data['ImageOffsetX'] !== null &&
-                'ImageOffsetY' in data && data['ImageOffsetY'] !== null)
-            {
-                offsetX = data['ImageOffsetX'];
-                offsetY = data['ImageOffsetY'];
-            }
-        }
-
-        _image.centerImageWithinParent(offsetX, offsetY, 1.0);
-        _image.removeClass('opacity-none');
-    }, null, 'opacity-none');
-    detailsColumn = $('<div class="column is-character-background-container"/>');
-    detailsRow.append(detailsColumn);
-
-    // details: background
-    var backgroundRow = $('<div class="row is-top"/>');
-    detailsColumn.append(backgroundRow);
-    var backgroundRowBorder = $('<div class="row is-top border"/>');
-    backgroundRow.append(backgroundRowBorder);
-
-    /*this.mDetailsPanel.CharacterBackgroundImage = $('<img />');
-    detailsColumn.append(this.mDetailsPanel.CharacterBackgroundImage);*/
-    this.mDetailsPanel.CharacterName = $('<div class="name title-font-normal font-bold font-color-brother-name"/>');
-    backgroundRow.append(this.mDetailsPanel.CharacterName);
-    backgroundRow = $('<div class="row is-bottom"/>');
-    detailsColumn.append(backgroundRow);
-    this.mDetailsPanel.DescriptionTextContainer = backgroundRow.createList(20, 'description-font-medium font-bottom-shadow font-color-description', true);
-    this.mDetailsPanel.ScrollContainerList = this.mDetailsPanel.DescriptionTextContainer.findListScrollContainer();
+    detailsRow = $('<div class="row is-queue-container"/>');
+    this.mDetailsPanel.Container.append(detailsRow);
+    listContainerLayout = $('<div class="l-list-container"></div>');
+    detailsRow.append(listContainerLayout);
+    this.mQueueContainer = listContainerLayout.createList(1.24/*8.63*/);
+    this.mQueueScrollContainer = this.mQueueContainer.findListScrollContainer();
 
     // details: ingredients
     detailsRow = $('<div class="row is-ingredients-container"/>');
@@ -162,26 +146,6 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
 
     this.mDetailsPanel.Components = $('<div class="row is-components-container"/>');
     detailsRow.append(this.mDetailsPanel.Components);
-
-    // details: costs
-    detailsRow = $('<div class="row is-costs-container"/>');
-    this.mDetailsPanel.Container.append(detailsRow);
-    var costsHeader = $('<div class="row is-header"/>');
-    detailsRow.append(costsHeader);
-    var costsHeaderLabel = $('<div class="label title-font-normal font-bold font-bottom-shadow font-color-title">Costs</div>');
-    costsHeader.append(costsHeaderLabel);
-    var costsInitial = $('<div class="row is-initial-costs"/>');
-    detailsRow.append(costsInitial);
-    var costsLabel = $('<div class="costs-label title-font-normal font-bold font-bottom-shadow font-color-title">Up Front</div>');
-    costsInitial.append(costsLabel);
-    var costsContainer = $('<div class="l-costs-container"/>');
-    costsInitial.append(costsContainer);
-    var costsImage = $('<img/>');
-    costsImage.attr('src', Path.GFX + Asset.ICON_ASSET_MONEY);
-    costsContainer.append(costsImage);
-    costsImage.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.Assets.Fee });
-    this.mDetailsPanel.Cost = $('<div class="label text-font-normal font-bottom-shadow font-color-description"/>');
-    costsContainer.append(this.mDetailsPanel.Cost);
 
     // details: buttons
     detailsRow = $('<div class="row is-button-container"/>');
@@ -195,16 +159,7 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
             var data = self.mSelectedEntry.data('entry');
             if ('ID' in data && data['ID'] !== null)
             {
-                self.notifyBackendCraft(data['ID'], function (_result)
-                {
-                    self.mAssets.loadFromData(_result.Assets);
-
-                    if (_result != null)
-                    {
-                        self.loadFromData(_result);
-                        self.updateDetailsPanel(self.mSelectedEntry);
-                    }
-                });
+                self.notifyBackendCraft(data['ID'], null);
             }
         }
     }, '', 1);
@@ -226,7 +181,10 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
 
 CampScreenCraftingDialogModule.prototype.destroyDIV = function ()
 {
-	this.mAssets.destroyDIV();
+    this.mTimeAsset.remove();
+    this.mTimeAsset = null;
+    this.mBrothersAsset.remove();
+    this.mBrothersAsset = null;
 
 	this.mSelectedEntry = null;
 
@@ -236,7 +194,11 @@ CampScreenCraftingDialogModule.prototype.destroyDIV = function ()
     this.mListContainer.remove();
     this.mListContainer = null;
 
-	this.mLeaveButton.remove();
+    this.mQueueContainer.destroyList();
+    this.mQueueContainer= null;
+    this.mQueueScrollContainer= null;
+    
+    this.mLeaveButton.remove();
     this.mLeaveButton = null;
 
     this.mDialogContainer.empty();
@@ -246,6 +208,177 @@ CampScreenCraftingDialogModule.prototype.destroyDIV = function ()
     this.mContainer.empty();
     this.mContainer.remove();
     this.mContainer = null;
+};
+
+CampScreenCraftingDialogModule.prototype.loadQueueData = function (_data)
+{
+    if(_data === undefined || _data === null || !jQuery.isArray(_data))
+    {
+        return;
+    }
+
+	this.mQueueList = _data;
+
+    if(this.mQueueSlots === null)
+    {
+        this.mQueueSlots = [];
+    }
+
+    // call by ref hack
+    var arrayRef = { val: this.mQueueSlots };
+    var containerRef = { val: this.mQueueScrollContainer };
+
+    this.assignItems('camp-screen-crafting-dialog-module.shop', _data, _data.length, arrayRef.val, containerRef.val);
+};
+
+CampScreenCraftingDialogModule.prototype.assignItemToSlot = function(_owner, _slot, _item)
+{
+    var remove = false;
+
+    if(!('ID' in _item) || !('ImagePath' in _item))
+    {
+        remove = true;
+    }
+
+    if(remove === true)
+    {
+        this.removeItemFromSlot(_slot);
+    }
+    else
+    {
+        // update item data
+        var itemData = _slot.data('item') || {};
+        itemData.id = _item.ID;
+        _slot.data('item', itemData);
+
+        // assign image
+        _slot.assignListItemImage(Path.ITEMS + _item.ImagePath);
+        _slot.assignListItemOverlayImage();
+
+        // show amount
+		_slot.assignListItemAmount('' + _item.Percentage +'%', '#ffffff');
+
+        // bind tooltip
+        _slot.assignListItemTooltip('', _item.ID, "stash");
+    }
+};
+
+CampScreenCraftingDialogModule.prototype.assignItems = function (_owner, _items, _capacity, _itemArray, _itemContainer)
+{
+    this.destroyItemSlots(_itemArray, _itemContainer);
+    this.createItemSlots(_owner, _capacity, _itemArray, _itemContainer);
+    if(_items.length > 0)
+    {
+        for(var i = 0; i < _items.length; ++i)
+        {
+            // ignore empty slots
+            if(_items[i] !== undefined && _items[i] !== null)
+            {
+                this.assignItemToSlot(_owner, _itemArray[i], _items[i]);
+            }
+        }
+        //this.updateItemPriceLabels(_itemArray, _items, _owner === RepairScreenShop.ItemOwner.Stash);
+    }
+};
+
+CampScreenCraftingDialogModule.prototype.createItemSlots = function (_owner, _size, _itemArray, _itemContainer)
+{
+    var screen = $('.camp-screen');
+    for(var i = 0; i < _size; ++i)
+    {
+        _itemArray.push(this.createItemSlot(_owner, i, _itemContainer, screen));
+    }
+};
+
+CampScreenCraftingDialogModule.prototype.destroyItemSlots = function (_itemArray, _itemContainer)
+{
+    this.clearItemSlots(_itemArray);
+
+    _itemContainer.empty();
+    _itemArray.length = 0;
+};
+
+
+CampScreenCraftingDialogModule.prototype.createItemSlot = function (_owner, _index, _parentDiv, _screenDiv)
+{
+    var self = this;
+
+    var result = _parentDiv.createListItem(true);
+    result.attr('id', 'slot-index_' + _index);
+
+    // update item data
+    var itemData = result.data('item') || {};
+    itemData.index = _index;
+    itemData.owner = _owner;
+    result.data('item', itemData);
+
+    // add event handler
+    var dropHandler = function (_source, _target)
+	{
+        var sourceData = _source.data('item');
+        var targetData = _target.data('item');
+
+        var sourceOwner = (sourceData !== null && 'owner' in sourceData) ? sourceData.owner : null;
+        var targetOwner = (targetData !== null && 'owner' in targetData) ? targetData.owner : null;
+
+        if(sourceOwner === null || targetOwner === null)
+        {
+            console.error('Failed to drop item. Owner are invalid.');
+            return;
+        }
+
+        var sourceItemIdx = (sourceData !== null && 'index' in sourceData) ? sourceData.index : null;
+        var targetItemIdx = (targetData !== null && 'index' in targetData) ? targetData.index : null;
+
+        if(sourceItemIdx === null)
+        {
+            console.error('Failed to drop item. Source idx is invalid.');
+            return;
+        }
+
+        self.notifyBackendSwap(sourceItemIdx, targetItemIdx, null)
+    };
+
+    var dragEndHandler = function (_source, _target)
+	{
+        if(_source.length === 0 || _target.length === 0)
+        {
+            return false;
+        }
+
+        var sourceData = _source.data('item');
+        var targetData = _target.data('item');
+
+        var sourceOwner = (sourceData !== null && 'owner' in sourceData) ? sourceData.owner : null;
+        var targetOwner = (targetData !== null && 'owner' in targetData) ? targetData.owner : null;
+        var itemIdx = (sourceData !== null && 'index' in sourceData) ? sourceData.index : null;
+
+        if(sourceOwner === null || targetOwner === null)
+        {
+            console.error('Failed to drop item. Owner is invalid.');
+            return false;
+        }
+
+        return true;
+    };
+
+    result.assignListItemDragAndDrop(_screenDiv, null, dragEndHandler, dropHandler);
+
+    result.assignListItemRightClick(function (_item, _event)
+	{
+        var data = _item.data('item');
+
+        var isEmpty = (data !== null && 'isEmpty' in data) ? data.isEmpty : true;
+        var owner = (data !== null && 'owner' in data) ? data.owner : null;
+        //var itemId = (data !== null && 'id' in data) ? data.id : null;
+        var itemIdx = (data !== null && 'index' in data) ? data.index : null;
+        if(/*doSomething &&*/ isEmpty === false && owner !== null /*&& itemId !== null*/ && itemIdx !== null)
+        {
+            self.notifyBackendRemove(itemIdx, null);
+        }
+    });
+
+    return result;
 };
 
 CampScreenCraftingDialogModule.prototype.addListEntry = function (_data)
@@ -350,19 +483,40 @@ CampScreenCraftingDialogModule.prototype.selectListEntry = function(_element, _s
     }
 };
 
+CampScreenCraftingDialogModule.prototype.clearItemSlots = function (_itemArray)
+{
+    if(_itemArray === null || _itemArray.length === 0)
+    {
+        return;
+    }
+
+    for(var i = 0; i < _itemArray.length; ++i)
+    {
+        // remove item image
+        this.removeItemFromSlot(_itemArray[i]);
+    }
+};
+
+CampScreenCraftingDialogModule.prototype.removeItemFromSlot = function(_slot)
+{
+    // remove item image
+	_slot.assignListItemImage();
+    _slot.assignListItemOverlayImage();
+	_slot.assignListItemTooltip();
+};
+
 CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
 {
     if(_element !== null && _element.length > 0)
     {
-        var currentMoney = this.mAssets.getValues().Money;
         var data = _element.data('entry');
         
-        this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);     
-        this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0); 
-        this.mDetailsPanel.CharacterImage.bindTooltip({ contentType: 'ui-item', itemId: data.ID, itemOwner: 'craft' });
+        // this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);     
+        // this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0); 
+        // this.mDetailsPanel.CharacterImage.bindTooltip({ contentType: 'ui-item', itemId: data.ID, itemOwner: 'craft' });
 
-        this.mDetailsPanel.CharacterName.html(data['Name']);
-        this.mDetailsPanel.DescriptionTextContainer.html(data['Description']);
+        // this.mDetailsPanel.CharacterName.html(data['Name']);
+        // this.mDetailsPanel.DescriptionTextContainer.html(data['Description']);
 
         this.mDetailsPanel.Components.empty();
         for(var i = 0; i < data.Ingredients.length; ++i)
@@ -384,17 +538,8 @@ CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
 
         this.mDetailsPanel.Container.removeClass('display-none').addClass('display-block');
 
-        this.mDetailsPanel.Cost.html(Helper.numberWithCommas(data['Cost']));
-        if(currentMoney < data['Cost'])
-        {
-            this.mDetailsPanel.Cost.removeClass('font-color-description').addClass('font-color-assets-negative-value');           
-        }
-        else
-        {
-            this.mDetailsPanel.Cost.removeClass('font-color-assets-negative-value').addClass('font-color-description');
-        }
 
-        if(currentMoney < data['Cost'] || !data['IsCraftable'])
+        if(!data['IsCraftable'])
         {
             this.mDetailsPanel.CraftButton.enableButton(false);
         }
@@ -412,14 +557,16 @@ CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
 
 CampScreenCraftingDialogModule.prototype.bindTooltips = function ()
 {
-    this.mAssets.bindTooltips();
+    this.mTimeAsset.bindTooltip({ contentType: 'ui-element', elementId:  'crafting.Time' });
+    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'crafting.Bros' });    
     this.mDetailsPanel.CraftButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.TaxiDermistDialogModule.CraftButton });
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
 };
 
 CampScreenCraftingDialogModule.prototype.unbindTooltips = function ()
 {
-	this.mAssets.unbindTooltips();
+    this.mTimeAsset.unbindTooltip();
+    this.mBrothersAsset.unbindTooltip();
     this.mDetailsPanel.CraftButton.unbindTooltip();
     this.mLeaveButton.unbindTooltip();
 };
@@ -559,15 +706,9 @@ CampScreenCraftingDialogModule.prototype.isVisible = function ()
     return this.mIsVisible;
 };
 
-CampScreenCraftingDialogModule.prototype.updateAssets = function (_data)
-{
-	this.mAssets.loadFromData(_data);
-	//this.updateListEntryValues();
-}
-
 CampScreenCraftingDialogModule.prototype.loadFromData = function (_data)
 {
-    if(_data === undefined || _data === null || _data.Blueprints == null)
+    if(_data === undefined || _data === null)
     {
         return;
     }
@@ -581,26 +722,151 @@ CampScreenCraftingDialogModule.prototype.loadFromData = function (_data)
 	{
 		 this.mDialogContainer.findDialogSubTitle().html(_data.SubTitle);
 	}
+    
+	if('Assets' in _data && _data.Assets !== null)
+	{
+		this.updateAssets(_data.Assets);
+    }
 
-	this.mBlueprints = _data.Blueprints;
+	if('Queue' in _data && _data.Queue !== null)
+	{
+		this.loadQueueData(_data.Queue);
+    }
 
-    this.mListScrollContainer.empty();
-
-    if (_data.Blueprints.length != 0)
+    if ('Blueprints' in _data && _data.Blueprints !== null) 
     {
-    	this.mNoCraftablesLabel.addClass('display-none');
+        this.mBlueprints = _data.Blueprints;
 
-        for (var i = 0; i < _data.Blueprints.length; ++i)
-    	{
-            this.addListEntry(_data.Blueprints[i]);
-    	}
+        this.mListScrollContainer.empty();
+    
+        if (_data.Blueprints.length != 0)
+        {
+            this.mNoCraftablesLabel.addClass('display-none');
+    
+            for (var i = 0; i < _data.Blueprints.length; ++i)
+            {
+                this.addListEntry(_data.Blueprints[i]);
+            }
+        }
+        else
+        {
+            this.mNoCraftablesLabel.removeClass('display-none');
+        }
+    
+        this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);    
+    }
+
+
+};
+
+CampScreenCraftingDialogModule.prototype.updateAssetValue = function (_container, _value, _valueMax, _valueDifference, _negative)
+{
+    var label = _container.find('.label:first');
+
+    if(label.length > 0)
+    {
+        if(_valueMax !== undefined && _valueMax !== null)
+		{
+            label.html('' + Helper.numberWithCommas(_value) + '/' + Helper.numberWithCommas(_valueMax));
+        }
+        else
+		{
+            label.html(Helper.numberWithCommas(_value));
+        }
+
+        if(_valueDifference !== null && _valueDifference !== 0)
+		{
+            label.animateValueAndFadeOut(_valueDifference < 0, function (_element)
+			{
+                _element.html(_valueDifference);
+            });
+        }
+
+        if(_value <= 0 || _negative)
+		{
+            label.removeClass('font-color-assets-positive-value').addClass('font-color-assets-negative-value');
+        }
+        else
+		{
+            label.removeClass('font-color-assets-negative-value').addClass('font-color-assets-positive-value');
+        }
+    }
+};
+
+CampScreenCraftingDialogModule.prototype.updateAssets = function (_data)
+{
+    if(_data === undefined || _data === null || !(typeof(_data) === 'object'))
+    {
+        return;
+    }
+
+    var value = null;
+    var previousValue = null;
+    var valueDifference = null;
+    var currentAssetInformation = _data;
+    var previousAssetInformation = this.mAssetValues;
+
+    if('Time' in currentAssetInformation && currentAssetInformation['Time'] !== null)
+    {
+        value = currentAssetInformation['Time'];
+        valueDifference = null;
+        if(previousAssetInformation !== null && 'Time' in previousAssetInformation && previousAssetInformation['Time'] !== null)
+        {
+            previousValue = previousAssetInformation['Time'];
+            valueDifference = value - previousValue;
+        }
+        this.updateAssetValue(this.mTimeAsset, value, null, valueDifference);
+    }
+
+    if('Brothers' in currentAssetInformation && currentAssetInformation['Brothers'] !== null)
+    {
+        value = currentAssetInformation['Brothers'];
+        valueDifference = null;
+        if(previousAssetInformation !== null && 'Brothers' in previousAssetInformation && previousAssetInformation['Brothers'] !== null)
+        {
+            previousValue = previousAssetInformation['Brothers'];
+            valueDifference = value - previousValue;
+        }
+        this.updateAssetValue(this.mBrothersAsset, value, null, valueDifference);
+    }
+
+    this.mAssetValues = currentAssetInformation;
+
+}
+
+CampScreenCraftingDialogModule.prototype.createAssetDIV = function (_parentDiv, _imagePath, _classExtra)
+{
+    var layout = $('<div class="l-tab-asset"/>');
+    layout.addClass(_classExtra);
+    _parentDiv.append(layout);
+
+    var image = $('<img/>');
+    image.attr('src', _imagePath);
+    layout.append(image);
+    var text = $('<div class="label text-font-normal font-color-assets-positive-value"/>');
+    layout.append(text);
+
+    return layout;
+};
+
+CampScreenCraftingDialogModule.prototype.createImageButton = function (_parentDiv, _imagePath, _callback)
+{
+    var layout = $('<div class="l-assets-container"/>');
+    var image = $('<img/>');
+    image.attr('src', _imagePath);
+    layout.append(image);
+    var text = $('<div class="label text-font-small font-bold font-bottom-shadow font-color-assets-positive-value"/>');
+    layout.append(text);
+
+    if (_callback === undefined)
+    {
+        _parentDiv.append(layout);
+        return layout;
     }
     else
     {
-    	this.mNoCraftablesLabel.removeClass('display-none');
+        return _parentDiv.createCustomButton(layout, _callback, '', 2);
     }
-
-    this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
 };
 
 
@@ -629,7 +895,17 @@ CampScreenCraftingDialogModule.prototype.notifyBackendBrothersButtonPressed = fu
     SQ.call(this.mSQHandle, 'onBrothersButtonPressed');
 };
 
+CampScreenCraftingDialogModule.prototype.notifyBackendSwap = function (_source, _target, _callback)
+{
+    SQ.call(this.mSQHandle, 'onSwap', [_source, _target], _callback);
+};
+
+CampScreenCraftingDialogModule.prototype.notifyBackendRemove = function (_index, _callback)
+{
+    SQ.call(this.mSQHandle, 'onRemove', _index, _callback);
+};
+
 CampScreenCraftingDialogModule.prototype.notifyBackendCraft = function (_blueprintID, _callback)
 {
-    SQ.call(this.mSQHandle, 'onCraft', _blueprintID, _callback);
+    SQ.call(this.mSQHandle, 'onAdd', _blueprintID, _callback);
 };
