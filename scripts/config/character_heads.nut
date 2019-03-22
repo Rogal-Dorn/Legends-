@@ -50,6 +50,11 @@ gt.Const.HairColors.Zombie <- [
 	"black",
 	"grey"
 ];
+gt.Const.HairColors.None <- [
+	""
+];
+
+
 gt.Const.HairColors.Lineage <- [
 	[
 		"black",
@@ -146,6 +151,11 @@ gt.Const.Faces.PrettyFemale <- [
 	"bust_head_21"
 ];
 
+gt.Const.Faces.Donkey <- [
+	"bust_head_donkey"
+];
+
+
 gt.Const.Faces.NormalFemale <- [
 	"bust_head_23",
 	"bust_head_24",
@@ -235,6 +245,11 @@ gt.Const.Hair.Berserker <- [
 	"08",
 	"18"
 ];
+
+gt.Const.Hair.None <- [
+	""
+];
+
 
 gt.Const.Hair.BarberFemale <- [
 	"",

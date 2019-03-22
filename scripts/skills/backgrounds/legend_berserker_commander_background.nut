@@ -93,16 +93,16 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 	{
 		local c = {
 			Hitpoints = [
-				15,
-				15
+				20,
+				20
 			],
 			Bravery = [
-				15,
-				15
+				10,
+				10
 			],
 			Stamina = [
-				15,
-				15
+				20,
+				20
 			],
 			MeleeSkill = [
 				20,
@@ -163,6 +163,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		actor.setTitle("The Berserker");
 		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 	}	
 
 

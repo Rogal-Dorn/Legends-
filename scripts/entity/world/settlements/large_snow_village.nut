@@ -42,6 +42,7 @@ this.large_snow_village <- this.inherit("scripts/entity/world/settlement", {
 			"caravan_hand_background",
 			"gambler_background",
 			"cultist_background",
+			"legend_donkey",
 			"female_daytaler_background",
 			"female_daytaler_background",
 			"female_farmhand_background",

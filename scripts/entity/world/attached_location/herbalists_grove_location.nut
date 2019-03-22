@@ -24,8 +24,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 			return;
 		}
 
+		_list.push("legend_nun_background");
 		_list.push("monk_background");
-		_list.push("flagellant_background");
+		_list.push("legend_herbalist_background");
+		_list.push("legend_herbalist_background");
+		_list.push("legend_herbalist_background");
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -51,6 +54,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 				R = 50,
 				P = 1.0,
 				S = "accessory/antidote_item"
+			});
+				_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_sickle"
 			});
 		}
 		else if (_id == "building.specialized_trader")

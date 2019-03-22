@@ -808,6 +808,7 @@ this.data_helper <- {
 		result.amount <- _item.getAmountString();
 		result.amountColor <- _item.getAmountColor();
 		result.repair <- _item.isToBeRepaired();
+		result.salvage <- _item.isToBeSalvaged();
 		result.price <- 0;
 
 		if (_owner != null)
@@ -823,6 +824,50 @@ this.data_helper <- {
 				break;
 			}
 		}
+
+		return result;
+	}
+
+	function convertRepairItemsToUIData( _items, _target, _owner = null, _filter = 0 )
+	{
+		if (_filter == 0)
+		{
+			_filter = this.Const.Items.ItemFilter.All;
+		}
+
+		if (_items == null || _items.len() == 0)
+		{
+			return;
+		}
+
+		for( local i = 0; i < _items.len(); i = ++i )
+		{
+			if (_items[i] != null && _filter == 99 && _items[i].Bro != null)
+			{
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				r.bro <- _items[i].Bro;
+				_target.push(r);
+			}
+			else if (_items[i] != null && (_items[i].Item.getItemType() & _filter) != 0)
+			{
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				r.bro <- _items[i].Bro;
+				_target.push(r);
+			}
+			else
+			{
+				_target.push(null);
+			}
+		}
+	}
+
+	function convertCampBuildingToUIData( _entity )
+	{
+		local result = {
+			id = _entity.getID(),
+			name = _entity.getName(),
+			count = _entity.getNumberAssigned()
+		};
 
 		return result;
 	}

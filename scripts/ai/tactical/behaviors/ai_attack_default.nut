@@ -13,6 +13,7 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.prong",
 			"actives.stab",
 			"actives.bash",
+			"actives.legend_staff_bash",
 			"actives.cleave",
 			"actives.hammer",
 			"actives.overhead_strike",

@@ -30,6 +30,7 @@ this.large_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 			"female_beggar_background",
 			"brawler_background",
 			"caravan_hand_background",
+			"legend_donkey",
 			"caravan_hand_background",
 			"gambler_background",
 			"cultist_background",

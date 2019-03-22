@@ -104,9 +104,13 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("LegendsHealer");
 		} 
-			else if (this.World.Tags.get("IsLegendsBerserker"))
+		else if (this.World.Tags.get("IsLegendsBerserker"))
 		{
 			this.setState("LegendsBerserker");
+		} 
+		else if (this.World.Tags.get("IsLegendsTrader"))
+		{
+			this.setState("LegendsTrader");
 		} 
 		else if (this.World.Tags.get("IsLegendsInventor"))
 		{
@@ -116,7 +120,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("StartingBattle");
 		} 
-		else if (this.World.Tags.get("LegendsParty"))
+		else if (this.World.Tags.get("IsLegendsParty"))
 		{
 			this.setState("LegendsParty");
 		} 
@@ -689,6 +693,20 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Contracts.showActiveContract();
 			}
 	});	
+	this.m.States.push({
+			ID = "LegendsTrader",
+			function start()
+			{
+				this.World.State.getPlayer().setAttackable(true);
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsTraderSuccess");
+				this.World.Contracts.showActiveContract();
+			}
+	});	
+
 			this.m.States.push({
 			ID = "LegendsHoggart",
 			function start()
@@ -1051,6 +1069,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_noble");
 						return 0;
 					}
 
@@ -1077,6 +1096,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_crusader");
 						return 0;
 					}
 
@@ -1103,6 +1123,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_ranger");
 						return 0;
 					}
 
@@ -1130,6 +1151,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+							this.World.State.getPlayer().getSprite("body").setBrush("figure_player_warlock");
 						return 0;
 					}
 
@@ -1184,6 +1206,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_seer");
 						return 0;
 					}
 
@@ -1211,6 +1234,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_berserker");
 						return 0;
 					}
 
@@ -1222,7 +1246,33 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			}
 
 		});
+			this.m.Screens.push({
+			ID = "LegendsTraderSuccess",
+			Title = "Trader",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Trader),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "To trade!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_trader");
+						return 0;
+					}
 
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
 		this.m.Screens.push({
 			ID = "LegendsHoggartSuccess",
 			Title = "Hoggart",
@@ -1265,6 +1315,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_party");
 						return 0;
 					}
 

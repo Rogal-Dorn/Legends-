@@ -46,7 +46,6 @@ local BerserkerWeakTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.LoneWolf,
-		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
 		gt.Const.Perks.PerkDefs.Slaughter,
 		gt.Const.Perks.PerkDefs.Vengeance,

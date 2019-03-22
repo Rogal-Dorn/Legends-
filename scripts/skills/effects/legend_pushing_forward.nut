@@ -6,7 +6,7 @@ this.legend_pushing_forward <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Pushing Forward";
 		this.m.Description = "Into the Breach! An inspirational leader is guiding this character/'s attacks.";
 		this.m.Icon = "skills/spears_square.png";
-		this.m.IconMini = "status_effect_56_mini";
+		this.m.IconMini = "mini_spears_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.Special;;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;

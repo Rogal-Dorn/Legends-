@@ -132,20 +132,7 @@ gt.Const.Tactical.Common <- {
 	{
 
 		this.Tactical.spawnIconEffect("status_effect_00", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
-		local sounds = [];
-
-		if (_entity.getTags().has("human"))
-		{
-			sounds = [
-				"sounds/humans/human_coughing_01.wav",
-				"sounds/humans/human_coughing_02.wav",
-				"sounds/humans/human_coughing_03.wav",
-				"sounds/humans/human_coughing_04.wav"
-			];
-		}
-		else
-		{
-			sounds = [
+		local sounds = [
 				"sounds/combat/fire_01.wav",
 				"sounds/combat/fire_02.wav",
 				"sounds/combat/fire_03.wav",
@@ -153,11 +140,10 @@ gt.Const.Tactical.Common <- {
 				"sounds/combat/fire_05.wav",
 				"sounds/combat/fire_06.wav"
 			];
-		}
 
 		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
 		local hitInfo = clone this.Const.Tactical.HitInfo;
-		hitInfo.DamageRegular = this.Math.rand(20, 30);
+		hitInfo.DamageRegular = this.Math.rand(10, 20);
 		hitInfo.DamageDirect = 1.0;
 		hitInfo.BodyPart = this.Const.BodyPart.Body;
 		hitInfo.BodyDamageMult = 1.0;

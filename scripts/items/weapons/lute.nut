@@ -21,11 +21,11 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_lute";
 		this.m.Value = 120;
-		this.m.Condition = 2.0;
-		this.m.ConditionMax = 2.0;
+		this.m.Condition = 20.0;
+		this.m.ConditionMax = 20.0;
 		this.m.StaminaModifier = -4;
-		this.m.RegularDamage = 5;
-		this.m.RegularDamageMax = 10;
+		this.m.RegularDamage = 10;
+		this.m.RegularDamageMax = 15;
 		this.m.ArmorDamageMult = 0.1;
 		this.m.DirectDamageMult = 0.4;
 	}
@@ -33,6 +33,7 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
+		this.addSkill(this.new("scripts/skills/actives/bash"));
 		local s = this.new("scripts/skills/actives/knock_out");
 		s.m.IsFromLute = true;
 		s.m.Icon = "skills/active_88.png";

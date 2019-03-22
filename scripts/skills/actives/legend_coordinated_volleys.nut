@@ -7,9 +7,9 @@ this.legend_coordinated_volleys <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Time and call the shots for archers, increasing their chance to hit";
 		this.m.Icon = "skills/coordinated_volleys_square.png";
 		this.m.IconDisabled = "skills/coordinated_volleys_square_bw.png";
-		this.m.Overlay = "active_22";
+		this.m.Overlay = "coordinated_volleys_square";
 		this.m.SoundOnUse = [
-		
+			"sounds/combat/coordinated_volleys.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.BeforeLast;
@@ -19,7 +19,7 @@ this.legend_coordinated_volleys <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;

@@ -33,7 +33,8 @@ this.item <- {
 		IsUsable = false,
 		IsSold = false,
 		IsBought = false,
-		RuneVariant = 0
+		RuneVariant = 0,
+		IsToBeSalvaged = false
 	},
 	function setContainer( _c )
 	{
@@ -174,7 +175,14 @@ this.item <- {
 
 	function isToBeRepaired()
 	{
-		return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
+		return this.m.IsToBeRepaired;
+		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
+	}
+
+	function isToBeSalvaged()
+	{
+		return this.m.IsToBeSalvaged;
+		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
 	}
 
 	function isConsumed()
@@ -200,6 +208,17 @@ this.item <- {
 		}
 
 		this.m.IsToBeRepaired = _r;
+		return true;
+	}
+
+	function setToBeSalvaged( _r )
+	{
+		if (_r && this.getCondition() <= 0)
+		{
+			return false;
+		}
+
+		this.m.IsToBeSalvaged = _r;
 		return true;
 	}
 
@@ -608,6 +627,11 @@ this.item <- {
 		{
 			this.onEquipRuneSigil();
 		}
+
+		if (this.isToBeSalvaged())
+		{
+			this.setToBeSalvaged(false);
+		}
 	}
 
 	function onEquipRuneSigil()
@@ -851,7 +875,6 @@ this.item <- {
 		local text = ""
 		for (local i = 0; i < iconLargeParts.len(); i = ++i)
 		{
-			this.logInfo(iconLargeParts[i]);
 			if (i == iconLargeParts.len() - 1)
 			{
 				text = text + "runed_" + iconLargeParts[i]
@@ -895,6 +918,7 @@ this.item <- {
 		_out.writeF32(this.m.PriceMult);
 		_out.writeString(this.getInstanceID()); //Need old ID for saved formations	
 		_out.writeU8(this.m.RuneVariant);
+		_out.writeBool(this.m.IsToBeSalvaged);
 	}
 
 	function onDeserialize( _in )
@@ -930,6 +954,12 @@ this.item <- {
 			}
 		}		
 	
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.IsToBeSalvaged = _in.readBool();
+		}		
+	
+
 		this.updateVariant();
 	}
 

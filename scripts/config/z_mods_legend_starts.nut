@@ -1,6 +1,8 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 51
+	Version = 52
+    //51 Added Runes
+    //52 Adds Camps
 };
 
 if (!("LegendMod" in gt.Const))
@@ -20,16 +22,17 @@ gt.Const.LegendMod.StartTypes <- {
     Noble = "legends_noble",
     Inventor = "legends_inventor"
 	Hoggart = "legends_hoggart",
+	Trader = "legends_trader",
 	Party = "legends_party"
 }
 
 gt.Const.LegendMod.Starts <- [
-	{
-        name = "Party",
-        description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",
-        intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
-        banner = gt.Const.LegendMod.StartTypes.Party
-    },
+   // {
+   //     name = "Party",
+   //     description = "Easy. Very powerful skill combinations, but each slightly weaker than in their own starts. ",
+   //     intro = "[img]gfx/ui/events/event_24.png[/img]its a party",
+   //     banner = gt.Const.LegendMod.StartTypes.Party
+   // },
 	{
        name = "Berserker",
        intro = "[img]gfx/ui/events/event_24.png[/img]So tired. You have been walking for weeks and haven't slept in... too long. You stop and rest a moment, and the thoughts return. The wooden hut you built together. The plot of yams she had planted. The evening you returned from a hunt. They had come. Burned it all. The stores, the hut, the woman, the child. Their screams echo in your blood, calling you to avenge them. You should have been there in time. Her tortured last moments fill your mind. What they did to her was...  too unspeakable. The disgust and loathing well up again. What kind of filth could rape and kill a mother in front of her child? Your heart pounds now, cold sweat, the froth forms at the edge of your mouth. What kind of monster could then do those things to an infant child?  Your mind snaps at the memory of their broken bodies. You scream with unbridled rage. Your muscles push you on again, running blindly into another day. You must find the killers, those swine will know vengeance",
@@ -78,7 +81,13 @@ gt.Const.LegendMod.Starts <- [
     //     description = "Experimental acedemic",
     //     banner = gt.Const.LegendMod.StartTypes.Inventor
     // },
-  {
+  	{
+        name = "Trader",
+        description = "Hard. Specialises in barter and storage",
+        intro = "[img]gfx/ui/events/event_24.png[/img]The open road calls you to profit. The only rule is acquisition",
+        banner = gt.Const.LegendMod.StartTypes.Trader
+    },
+	{
         name = "Beggar",
         description = "Hardest. No money, no skills.",
         banner = gt.Const.LegendMod.StartTypes.Beggar

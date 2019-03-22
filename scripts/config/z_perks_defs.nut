@@ -1055,14 +1055,6 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/legend_vala_inscribe_shield_sw.png"
 	},
 	{
-		ID = "perk.legend_vala_inscription_mastery",
-		Script = "scripts/skills/perks/legend_vala_inscription_mastery",
-		Name = "Inscription Mastery",
-		Tooltip = "Lowers the cooldown until the Vala can begin inscribing rune sigils again (after a successful inscription) from 20 to 15 days, and increases her inscription speed from 4 to 5.5 tries per day.",
-		Icon = "ui/perks/legend_vala_inscription_mastery.png",
-		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png"
-	},
-	{
 		ID = "perk.legend_guide_steps",
 		Script = "scripts/skills/perks/perk_legend_guide_steps",
 		Name = this.Const.Strings.PerkName.LegendGuideSteps,
@@ -1078,6 +1070,350 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/berserker_rage_circle.png",
 		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
 	},
+	{
+		ID = "perk.legend_become_berserker",
+		Script = "scripts/skills/perks/perk_legend_become_berserker",
+		Name = this.Const.Strings.PerkName.LegendBecomeBerserker,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBecomeBerserker,
+		Icon = "ui/perks/berserker_rage_circle.png",
+		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_skillful_stacking",
+		Script = "scripts/skills/perks/perk_legend_skillful_stacking",
+		Name = this.Const.Strings.PerkName.LegendSkillfulStacking,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSkillfulStacking,
+		Icon = "ui/perks/MaxStashT2.png",
+		IconDisabled = "ui/perks/MaxStashT2_bw.png"
+	},
+	{
+		ID = "perk.legend_efficient_packing",
+		Script = "scripts/skills/perks/perk_legend_efficient_packing",
+		Name = this.Const.Strings.PerkName.LegendEfficientPacking,
+		Tooltip = this.Const.Strings.PerkDescription.LegendEfficientPacking,
+		Icon = "ui/perks/MaxStashT1.png",
+		IconDisabled = "ui/perks/MaxStashT1_bw.png"
+	},
+	{
+		ID = "perk.legend_ammo_binding",
+		Script = "scripts/skills/perks/perk_legend_ammo_binding",
+		Name = this.Const.Strings.PerkName.LegendAmmoBinding,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAmmoBinding,
+		Icon = "ui/perks/MaxAmmoT1.png",
+		IconDisabled = "ui/perks/MaxAmmoT1_bw.png"
+	},
+	{
+		ID = "perk.legend_ammo_bundles",
+		Script = "scripts/skills/perks/perk_legend_ammo_bundles",
+		Name = this.Const.Strings.PerkName.LegendAmmoBundles,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAmmoBundles,
+		Icon = "ui/perks/MaxAmmoT2.png",
+		IconDisabled = "ui/perks/MaxAmmoT2_bw.png"
+	},
+	{
+		ID = "perk.legend_med_packages",
+		Script = "scripts/skills/perks/perk_legend_med_packages",
+		Name = this.Const.Strings.PerkName.LegendMedPackages,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMedPackages,
+		Icon = "ui/perks/MaxMedsT1.png",
+		IconDisabled = "ui/perks/MaxMedsT1_bw.png"
+	},
+	{
+		ID = "perk.legend_med_ingredients",
+		Script = "scripts/skills/perks/perk_legend_med_ingredients",
+		Name = this.Const.Strings.PerkName.LegendMedIngredients,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMedIngredients,
+		Icon = "ui/perks/MaxMedsT2.png",
+		IconDisabled = "ui/perks/MaxMedsT2_bw.png"
+	},
+	{
+		ID = "perk.legend_tools_drawers",
+		Script = "scripts/skills/perks/perk_legend_tools_drawers",
+		Name = this.Const.Strings.PerkName.LegendToolsDrawers,
+		Tooltip = this.Const.Strings.PerkDescription.LegendToolsDrawers,
+		Icon = "ui/perks/MaxToolsT1.png",
+		IconDisabled = "ui/perks/MaxToolsT1_bw.png"
+	},
+	{
+		ID = "perk.legend_tools_spares",
+		Script = "scripts/skills/perks/perk_legend_tools_spares",
+		Name = this.Const.Strings.PerkName.LegendToolsSpares,
+		Tooltip = this.Const.Strings.PerkDescription.LegendToolsSpares,
+		Icon = "ui/perks/MaxToolsT2.png",
+		IconDisabled = "ui/perks/MaxToolsT2_bw.png"
+	},
+	{
+		ID = "perk.legend_barter_convincing",
+		Script = "scripts/skills/perks/perk_legend_barter_convincing",
+		Name = this.Const.Strings.PerkName.LegendBarterConvincing,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBarterConvincing,
+		Icon = "ui/perks/BarterT1.png",
+		IconDisabled = "ui/perks/BarterT1_bw.png"
+	},
+	{
+		ID = "perk.legend_barter_trustworthy",
+		Script = "scripts/skills/perks/perk_legend_barter_trustworthy",
+		Name = this.Const.Strings.PerkName.LegendBarterTrustworthy,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBarterTrustworthy,
+		Icon = "ui/perks/BarterT2.png",
+		IconDisabled = "ui/perks/BarterT2_bw.png"
+	},
+	{
+		ID = "perk.legend_bribe",
+		Script = "scripts/skills/perks/perk_legend_bribe",
+		Name = this.Const.Strings.PerkName.LegendBribe,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBribe,
+		Icon = "ui/perks/coins_circle.png",
+		IconDisabled = "ui/perks/coins_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_butcher_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_butcher_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistButcherDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistButcherDamage,
+		Icon = "ui/perks/cleaver_01.png",
+		IconDisabled = "ui/perks/cleaver_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_butcher_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_butcher_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistButcherSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistButcherSkill,
+		Icon = "ui/perks/cleaver_02.png",
+		IconDisabled = "ui/perks/cleaver_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_hammer_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_hammer_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistHammerDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistHammerDamage,
+		Icon = "ui/perks/hammer_01.png",
+		IconDisabled = "ui/perks/hammer_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_hammer_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_hammer_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistHammerSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistHammerSkill,
+		Icon = "ui/perks/hammer_02.png",
+		IconDisabled = "ui/perks/hammer_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_knife_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_knife_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistKnifeDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistKnifeDamage,
+		Icon = "ui/perks/knife_01.png",
+		IconDisabled = "ui/perks/knife_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_knife_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_knife_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistKnifeSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistKnifeSkill,
+		Icon = "ui/perks/knife_02.png",
+		IconDisabled = "ui/perks/knife_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_lute_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_lute_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistLuteDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistLuteDamage,
+		Icon = "ui/perks/lute_01.png",
+		IconDisabled = "ui/perks/lute_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_lute_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_lute_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistLuteSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistLuteSkill,
+		Icon = "ui/perks/lute_02.png",
+		IconDisabled = "ui/perks/lute_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_militia_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_militia_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistMilitiaDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistMilitiaDamage,
+		Icon = "ui/perks/spear_01.png",
+		IconDisabled = "ui/perks/spear_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_militia_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_militia_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistMilitiaSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistMilitiaSkill,
+		Icon = "ui/perks/spear_02.png",
+		IconDisabled = "ui/perks/spear_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pickaxe_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_pickaxe_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistPickaxeDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPickaxeDamage,
+		Icon = "ui/perks/pickaxe_01.png",
+		IconDisabled = "ui/perks/pickaxe_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pickaxe_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_pickaxe_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistPickaxeSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPickaxeSkill,
+		Icon = "ui/perks/pickaxe_02.png",
+		IconDisabled = "ui/perks/pickaxe_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pitchfork_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_pitchfork_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistPitchforkDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPitchforkDamage,
+		Icon = "ui/perks/pitchfork_01.png",
+		IconDisabled = "ui/perks/pitchfork_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_pitchfork_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_pitchfork_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistPitchforkSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPitchforkSkill,
+		Icon = "ui/perks/pitchfork_02.png",
+		IconDisabled = "ui/perks/pitchfork_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shortbow_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_shortbow_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistShortbowDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShortbowDamage,
+		Icon = "ui/perks/shortbow_01.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shortbow_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_shortbow_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistShortbowSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShortbowSkill,
+		Icon = "ui/perks/shortbow_02.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shovel_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_shovel_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistShovelDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShovelDamage,
+		Icon = "ui/perks/shovel_01.png",
+		IconDisabled = "ui/perks/shovel_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shovel_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_shovel_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistShovelSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShovelSkill,
+		Icon = "ui/perks/shovel_02.png",
+		IconDisabled = "ui/perks/shovel_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_woodaxe_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_woodaxe_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistWoodaxeDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistWoodaxeDamage,
+		Icon = "ui/perks/woodaxe_01.png",
+		IconDisabled = "ui/perks/woodaxe_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_woodaxe_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_woodaxe_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistWoodaxeSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistWoodaxeSkill,
+		Icon = "ui/perks/woodaxe_02.png",
+		IconDisabled = "ui/perks/woodaxe_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_sickle_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_sickle_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSickleDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSickleDamage,
+		Icon = "ui/perks/sickle_01.png",
+		IconDisabled = "ui/perks/sickle_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_sickle_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_sickle_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSickleSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSickleSkill,
+		Icon = "ui/perks/sickle_02.png",
+		IconDisabled = "ui/perks/sickle_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_sling_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_sling_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSlingDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSlingDamage,
+		Icon = "ui/perks/sling_01.png",
+		IconDisabled = "ui/perks/sling_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_sling_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_sling_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistSlingSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSlingSkill,
+		Icon = "ui/perks/sling_02.png",
+		IconDisabled = "ui/perks/sling_bw.png"
+	},
+	{
+		ID = "perk.legend_big_game_hunter",
+		Script = "scripts/skills/perks/perk_legend_big_game_hunter",
+		Name = this.Const.Strings.PerkName.LegendBigGameHunter,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBigGameHunter,
+		Icon = "ui/perks/shortbow_02.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
+	},
+	{
+		ID = "perk.legend_second_wind",
+		Script = "scripts/skills/perks/perk_legend_second_wind",
+		Name = this.Const.Strings.PerkName.LegendSecondWind,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSecondWind,
+		Icon = "ui/perks/shortbow_02.png",
+		IconDisabled = "ui/perks/shortbow_bw.png"
+	},
+	{
+		ID = "perk.legend_mark_target",
+		Script = "scripts/skills/perks/perk_legend_mark_target",
+		Name = this.Const.Strings.PerkName.LegendMarkTarget,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMarkTarget,
+		Icon = "ui/perks/mark_target.png",
+		IconDisabled = "ui/perks/mark_target_bw.png"
+	},
+	{
+		ID = "perk.legend_field_triage",
+		Script = "scripts/skills/perks/perk_legend_field_triage",
+		Name = this.Const.Strings.PerkName.LegendFieldTriage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFieldTriage,
+		Icon = "ui/perks/MaxMedsT2.png",
+		IconDisabled = "ui/perks/MaxMedsT2_bw.png"
+	},
+	{
+		ID = "perk.legend_field_repairs",
+		Script = "scripts/skills/perks/perk_legend_field_repairs",
+		Name = this.Const.Strings.PerkName.LegendFieldRepairs,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFieldRepairs,
+		Icon = "ui/perks/MaxToolsT2.png",
+		IconDisabled = "ui/perks/MaxToolsT2_bw.png"
+	},
+	{
+		ID = "perk.legend_danger_pay",
+		Script = "scripts/skills/perks/perk_legend_danger_pay",
+		Name = this.Const.Strings.PerkName.LegendDangerPay,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDangerPay,
+		Icon = "ui/perks/coins_circle.png",
+		IconDisabled = "ui/perks/coins_circle_bw.png"
+	},															
+	{
+		ID = "perk.legend_vala_inscription_mastery",
+		Script = "scripts/skills/perks/legend_vala_inscription_mastery",
+		Name = "Inscription Mastery",
+		Tooltip = "Lowers the cooldown until the Vala can begin inscribing rune sigils again (after a successful inscription) from 20 to 15 days, and increases her inscription speed from 4 to 5.5 tries per day.",
+		Icon = "ui/perks/legend_vala_inscription_mastery.png",
+		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png"
+	},	
 	{
 		ID = "perk.legend_vala_warden",
 		Script = "scripts/skills/perks/legend_vala_warden",
@@ -1284,17 +1620,59 @@ gt.Const.Perks.PerkDefs <- {
 	VazlInscribeWeapon = 127,
 	VazlInscribeHelmet = 128,
 	VazlInscribeArmor = 129,
-	VazlInscribeShield = 130
-	VazlInscribeMastery = 131,
-	LegendGuidedSteps = 132,
-	LegendBerserkerRage = 133,
-	LegendValaWarden = 134,
-	LegendValaThreads = 135,
-	LegendValaPremonition = 136,
-	LegendValaChantMastery = 137,
-	LegendValaTranceMastery = 138,
-	LegendValaChantDisharmony = 139,
-	LegendValaSpiritualBond = 140,
-	LegendValaPerspective = 141,
-	LegendValaMalevolent = 142
+	VazlInscribeShield = 130,
+	LegendGuidedSteps = 131,
+	LegendBerserkerRage = 132,
+	LegendBecomeBerserker = 133,
+	LegendSkillfulStacking = 134,
+	LegendEfficientPacking = 135,
+	LegendAmmoBinding = 136,
+	LegendAmmoBundles = 137,
+	LegendMedPackages = 138, 
+	LegendMedIngredients = 139,
+	LegendToolsDrawers = 140,
+	LegendToolsSpares = 141,
+	LegendBarterConvincing = 142,
+	LegendBarterTrustworthy = 143,
+	LegendBribe = 144,
+	LegendSpecialistButcherDamage = 145,
+	LegendSpecialistButcherSkill = 146,
+	LegendSpecialistHammerDamage = 147,
+	LegendSpecialistHammerSkill = 148,
+	LegendSpecialistKnifeDamage = 149,
+	LegendSpecialistKnifeSkill = 150,
+	LegendSpecialistLuteDamage = 151,
+	LegendSpecialistLuteSkill = 152,
+	LegendSpecialistMilitiaDamage = 153,
+	LegendSpecialistMilitiaSkill = 154,
+	LegendSpecialistPickaxeDamage = 155,
+	LegendSpecialistPickaxeSkill = 156,
+	LegendSpecialistPitchforkDamage = 157,
+	LegendSpecialistPitchforkSkill = 158,
+	LegendSpecialistShortbowDamage = 159,
+	LegendSpecialistShortbowSkill = 160,
+	LegendSpecialistShovelDamage = 161,
+	LegendSpecialistShovelSkill = 162,
+	LegendSpecialistWoodaxeDamage = 163,
+	LegendSpecialistWoodaxeSkill = 164,
+	LegendSpecialistSickleDamage = 165,
+	LegendSpecialistSickleSkill = 166,
+	LegendSpecialistSlingDamage = 167,
+	LegendSpecialistSlingSkill = 168,
+	LegendBigGameHunter = 169,
+	LegendSecondWind = 170,
+	LegendMarkTarget = 171,
+	LegendFieldTriage = 172,
+	LegendFieldRepairs = 173,
+	LegendDangerPay = 174,
+	VazlInscribeMastery = 175,
+	LegendValaWarden = 176,
+	LegendValaThreads = 177,
+	LegendValaPremonition = 178,
+	LegendValaChantMastery = 179,
+	LegendValaTranceMastery = 180,
+	LegendValaChantDisharmony = 181,
+	LegendValaSpiritualBond = 182,
+	LegendValaPerspective = 183,
+	LegendValaMalevolent = 184
 };

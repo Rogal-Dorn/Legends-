@@ -3,7 +3,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legends_noble_shield";
+		this.m.ID = "background.legend_noble_shield";
 		this.m.Name = "Soldier";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 0;
@@ -136,6 +136,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		talents[this.Const.Attributes.Bravery] = 1;
 		local items = this.getContainer().getActor().getItems();
 		local r;
+		
 		items.equip(this.new("scripts/items/weapons/militia_spear"));
 		items.equip(this.new("scripts/items/shields/buckler_shield"));
 		r = this.Math.rand(0, 2);

@@ -4,13 +4,16 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_siphon_skill";
 		this.m.Name = "Life Siphon";
-		this.m.Description = "Siphon the life force from your foe to yourself - replinishing your health and diminishing theirs. It will never kill your victim and you can\'t draw more health than you are missing";
+		this.m.Description = "Siphon the life force from your foe to yourself - replinishing your health and diminishing theirs. It will never kill your victim and you can\'t draw more health than you are missing. Damage drops off over distance.";
 		this.m.KilledString = "Frightened to death";
 		this.m.Icon = "skills/siphon_square.png";
 		this.m.IconDisabled = "skills/siphon_square_bw.png";
-		this.m.Overlay = "active_42";
+		this.m.Overlay = "siphon_square";
 		this.m.SoundOnUse = [
-			"sounds/enemies/ghastly_touch_01.wav"
+			"sounds/combat/drain_01.wav",
+			"sounds/combat/drain_02.wav",
+			"sounds/combat/drain_03.wav",
+			"sounds/combat/drain_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;

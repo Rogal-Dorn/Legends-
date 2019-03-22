@@ -36,7 +36,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			CurrentWeaponUses = 0
 		},
 		Formations = null,
-		VeteranPerks = 0
+		VeteranPerks = 0,
+		CampAssignment = "camp.rest",
+		CampHealing = 0,
+		LastCampTime = 0
 	},
 	function setName( _value )
 	{
@@ -201,6 +204,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setTryoutDone( _t )
 	{
 		this.m.IsTryoutDone = _t;
+	}
+
+	function getCampAssignment()
+	{
+		return this.m.CampAssignment;
+	}
+
+	function setCampAssignment( _id )
+	{
+		this.m.CampAssignment = _id;
 	}
 
 	function getMood()
@@ -2430,6 +2443,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
 	}
 
+
+
 	function saveFormation()
 	{
 		this.m.Formations.savePosition(this.m.PlaceInFormation);
@@ -2471,6 +2486,89 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.Stash.remove(res.item);
 			this.m.Items.addToBag(res.item);
 		}
+	}
+
+	function getStashModifier()
+	{
+		local broStash = this.Const.LegendMod.getMaxStash(this.getBackground().getID());
+		local item = this.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+		if (item != null && item.getID() == "accessory.legend_pack_small")
+		{
+			broStash += item.m.StashSize;
+		}
+		local skill = this.getSkills().getSkillByID("perk.legend_skillful_stacking")
+		if( skill != null)
+		{
+			broStash += skill.m.StashSize;
+		}
+		skill = this.getSkills().getSkillByID("perk.legend_efficient_packing")
+		if( skill != null)
+		{
+			broStash += skill.m.StashSize;
+		}		
+		return broStash;
+	}
+
+	function getAmmoModifier()
+	{
+		local ammo = this.Const.LegendMod.getMaxAmmo(this.getBackground().getID());
+		if( this.getSkills().getSkillByID("perk.legend_ammo_bundles"))
+		{
+			ammo +=20;
+		}
+		if( this.getSkills().getSkillByID("perk.legend_ammo_binding"))
+		{
+			ammo +=10;
+		}
+		return ammo
+	}
+
+	function getArmorPartsModifier()
+	{
+		local parts = this.Const.LegendMod.getMaxArmorParts(this.getBackground().getID());
+		if( this.getSkills().getSkillByID("perk.legend_tools_spares"))
+		{
+			parts +=20;
+		}
+		if( this.getSkills().getSkillByID("perk.legend_tools_drawers"))
+		{
+			parts +=10;
+		}
+		return parts;
+	}
+
+	function getMedsModifier()
+	{
+		local meds = this.Const.LegendMod.getMaxMedicine(this.getBackground().getID());
+		if( this.getSkills().getSkillByID("perk.legend_med_packages"))
+		{
+			meds +=10;
+		}
+		if( this.getSkills().getSkillByID("perk.legend_med_ingredients"))
+		{
+			meds +=20;
+		}
+		return meds;
+	}
+
+	function getCampHealing() 
+	{
+		return this.m.CampHealing;
+	}
+
+	function setCampHealing( _v )
+	{
+		this.m.CampHealing = _v;
+	}
+
+	function getLastCampTime()
+	{
+		return this.m.LastCampTime;
+	}
+
+	function setLastCampTime( _t )
+	{
+		this.m.LastCampTime = _t;
 	}
 
 	function onSerialize( _out )
@@ -2522,6 +2620,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Formations.onSerialize(_out);
 		_out.writeU8(this.m.VeteranPerks);
 		_out.writeBool(this.m.IsCommander);
+		_out.writeString(this.m.CampAssignment);
+		_out.writeF32(this.m.LastCampTime);
 
 	}
 
@@ -2616,6 +2716,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 48)
 		{
 			this.m.IsCommander = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.CampAssignment = _in.readString();
+			this.m.LastCampTime = _in.readF32();
 		}
 
 	}
