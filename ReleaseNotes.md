@@ -274,6 +274,7 @@ gives lutes bash
 makes resource perks and backpack work, fixes icons
 fixes zombies rising without heads
 fixes limb lopper being double grippable
+fixes infinite training bug for backliners 
 *Add blueprint for a small and large carry pack (+3, +10 stash size when equipped. Requies cloth,silk and cloth,silk,unhold hide)
 Camp Documentation:
 
