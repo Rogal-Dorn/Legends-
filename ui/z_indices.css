@@ -118,6 +118,11 @@
     z-index: 20 !important;
 }
 
+.camp-screen
+{
+    z-index: 20 !important;
+}
+
 .world-game-finish-screen
 {
     z-index: 30 !important;

@@ -175,14 +175,12 @@ Beta 0.9.5
 *Increase ambush strength on caravans
 *Increases rabble hp, initiative and defenses, lowers their xp reward
 *Removes most early game weapons from zombies, goblin fighters and thugs
+*Warlock zombie summons now alway spawn with full armor health
+*Reduced Warlock low tier zombie summon with no weapons chance.
 *Poachers can spawn with bows as well as slings now
 *Fixed error that would prevent Orc elites from spawning
 *Fixed error that prevented scenarios from working
 *Fixed tool consumption rate error (was increasing rate instead of decrease). Fixed tooltips to show correct repair time.
-
-
-Beta 0.9.5 b 
-*Reduces late game reward payout scaling.
 *Fixes staves not working at two tiles 
 *Decreases sling range, increases accuracy slightly
 *Makes female nobles skilled in ranged instead of melee, named Lady instead of Sir
@@ -193,8 +191,6 @@ Beta 0.9.5 b
 *Triple strike buffed to 0.5 damage per strike 
 *Discover location payout increased, decreased time before hint
 *Berserker commanders can no longer be converted into cultists
-*Warlock zombie summons now alway spawn with full armor health
-*Reduced Warlock low tier zombie summon with no weapons chance.
 
 Beta 0.10
 *Adds Orc Behemoth (broken)
@@ -277,3 +273,25 @@ reworks the specialist skills to stop errors
 gives lutes bash
 makes resource perks and backpack work, fixes icons
 *Add blueprint for a small and large carry pack (+3, +10 stash size when equipped. Requies cloth,silk and cloth,silk,unhold hide)
+Camp Documentation:
+
+*Repair Tent*
+	-Repairs can now only happen while encamped.
+	-All gear has to be explicitly queued up for repairs (In vanilla, equipped gear was always repaired - not so anymore).
+	-Select equipment to be repaired using the Repair tent interface. (you can still use inventory + alt-right click to queue stash items for repair)
+	-Drag gear from stash side to repair side to queue up (equipped gear is included in this view - you do not have to unequip it manually). You can also right click any piece to swap it to the other side.
+	-Gear is repaired linearly. Left to right, top to bottom in the queue. 
+	-Each hour encamped, durability is added to the queued equipment. 
+	-The amount of durability added per hour is based on how many people have been assigned to repair duty (and their backgrounds also influence how much they can repair per hour).
+	-1 unit of tools can repair 15 durability.
+
+*Workshop Tent*
+	-Workshop allows converting weapons and armor in your stash into tools for repair.
+	-Salvage can only happend while encamped.
+	-Select equipment to be salvaged using the Workshop tent interface. (you can use inventory + alt-right click to queue stash items for salvage)
+	-Drag gear from stash side to salvage side to queue up (You can not salvage equipped gear). You can also right click any piece to swap it to the other side.
+	-Gear is salvaged linearly. Left to right, top to bottom in the queue. 
+	-Each hour encamped, durability is subtracted from equipment and converted into tools. 
+	-Once a piece of equipment reaches 0 durability, it is destroyed.
+	-The amount of durability converted into tools per hour is based on how many people have been assigned to salvage duty (and their backgrounds also influence how much they can salvage per hour).
+	-15 points of durability equals 1 tool.

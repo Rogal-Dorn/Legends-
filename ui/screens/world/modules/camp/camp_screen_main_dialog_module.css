@@ -1,0 +1,367 @@
+
+.camp-screen > .l-main-dialog-container
+{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 102.4rem;
+    height: 76.8rem;
+    position: absolute;
+    margin: auto;
+    z-index: 2;
+}
+
+.camp-screen > .l-main-dialog-container .settlement-container
+{
+    top: -0.8rem; /* -1.4rem */
+    padding-left: 0.1rem;
+    width: 102.3rem;
+    height: 58.8rem;
+    position: absolute;
+    overflow: hidden;
+}
+
+
+.camp-screen > .l-main-dialog-container .l-tab-container
+{
+    top: -1.0rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 88.0rem;
+    height: 3.0rem;
+    position: absolute;
+    margin: auto;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset
+{
+    top: 0;
+    bottom: 0;
+    width: 13.0rem;
+    height: 4.3rem;
+    position: absolute;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset.is-money
+{
+    left: 0;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset.is-food
+{
+    left: 15.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset.is-supplies
+{
+    left: 30.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset.is-ammo
+{
+    left: 45.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset.is-medicine
+{
+    left: 60.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset.is-brothers
+{
+    left: 75.0rem;
+    width: 9.8rem;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset img
+{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: auto;
+    margin-left: 1.0rem;
+    position: absolute;
+}
+
+.camp-screen > .l-main-dialog-container .l-tab-asset .label
+{
+    top: 0;
+    bottom: 0;
+    left: 3.4rem;
+    width: 11.2rem;
+    height: 3.0rem;
+    margin: auto;
+    margin-left: 1.0rem;
+    position: absolute;
+
+    text-align : left;
+    line-height: 3.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .background
+{
+    position: absolute;
+    pointer-events: none;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+.camp-screen > .l-main-dialog-container .ramp
+{
+    position: absolute;
+    pointer-events: none;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+.camp-screen > .l-main-dialog-container .ramp-pathway
+{
+    position: absolute;
+    pointer-events: none;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+.camp-screen > .l-main-dialog-container .background-left
+{
+    position: absolute;
+    pointer-events: none;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+.camp-screen > .l-main-dialog-container .background-right
+{
+    position: absolute;
+    pointer-events: none;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+/* center top (townhall) */
+.camp-screen > .l-main-dialog-container .background-center
+{
+    position: absolute;
+    pointer-events: none;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+.camp-screen > .l-main-dialog-container .water
+{
+    position: absolute;
+    pointer-events: none;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+/* buildings */
+
+/* Bottow row of tents */
+	.camp-screen > .l-main-dialog-container .slot-crafting {
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 12.0rem;
+		top: 43.0rem;
+	}
+
+.camp-screen > .l-main-dialog-container .slot-training {
+	-webkit-transform: scale(-0.7, 0.7);
+	position: absolute;
+	left: 23.0rem;
+	top: 35.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .slot-rest {
+	-webkit-transform: scale(-0.7, 0.7);
+	position: absolute;
+	left: 45.0rem;
+	top: 45.0rem;
+}
+
+
+	.camp-screen > .l-main-dialog-container .slot-barber {
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 55.0rem;
+		top: 38.0rem;
+	}
+
+
+
+
+	/* Mid row of tents */
+
+	.camp-screen > .l-main-dialog-container .slot-fletcher {
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 5.0rem;
+		top: 35.0rem;
+	}
+
+.camp-screen > .l-main-dialog-container .slot-healer {
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 27.0rem;
+		top: 30.0rem;
+	}
+
+/* center (marketplace) */
+.camp-screen > .l-main-dialog-container .slot-commander {
+	-webkit-transform: scale(-0.7, 0.7);
+	position: absolute;
+	left: 40.0rem;
+	top: 28.0rem;
+}
+
+
+.camp-screen > .l-main-dialog-container .slot-repair
+{
+    -webkit-transform: scale(-0.7, 0.7);
+    position: absolute;
+    left: 62.0rem;
+    top: 32.0rem;
+}
+
+	.camp-screen > .l-main-dialog-container .slot-enchanter {
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 83.0rem;
+		top: 35.0rem;
+	}
+
+	/* back row tents */
+.camp-screen > .l-main-dialog-container .slot-hunter
+{
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 15.0rem;
+		top: 20.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .slot-gatherer {
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 33.0rem;
+		top: 20.0rem;
+	}
+
+.camp-screen > .l-main-dialog-container .slot-workshop {
+		-webkit-transform: scale(-0.7, 0.7);
+		position: absolute;
+		left: 45.0rem;
+		top: 20.0rem;
+	}
+
+.camp-screen > .l-main-dialog-container .slot-scout
+{
+    -webkit-transform: scale(-0.7, 0.7);
+    position: absolute;
+    left: 65.0rem;
+    top: 21.0rem;
+}
+
+
+
+
+
+
+.camp-screen > .l-main-dialog-container .is-contract
+{
+     max-width: 5.0rem;
+     height: auto;
+     top: 2.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .is-scroll
+{
+     top: 3.4rem;
+     margin-left: 0.6rem;
+     pointer-events: none;
+}
+
+.camp-screen > .l-main-dialog-container .is-difficulty
+{
+     top: 1.5rem;
+     margin-left: 0.5rem;
+     pointer-events: none;
+}
+
+.camp-screen > .l-main-dialog-container .is-highlighted
+{
+	/*-webkit-filter: brightness(125%);*/
+}
+
+.camp-screen > .l-main-dialog-container .is-negotiated
+{
+   
+}
+
+.camp-screen > .l-main-dialog-container .is-disabled
+{
+   /*-webkit-filter: grayscale(100%);*/
+}
+
+.camp-screen > .l-main-dialog-container .status-effect
+{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.camp-screen > .l-main-dialog-container .is-status-effect
+{
+     max-width: 5.6rem;
+     height: auto;
+     top: 2.0rem;
+}
+
+.camp-screen > .l-main-dialog-container .mood
+{
+    position: absolute;
+    pointer-events: none;
+}
+
+.camp-screen > .l-main-dialog-container .foreground
+{
+    position: absolute;
+    pointer-events: none;
+    bottom: 0;
+	width: 102.4rem;
+	height: 58.8rem;
+}
+
+.camp-screen > .l-main-dialog-container .content img
+{
+    position: absolute;
+    z-index: 1;
+}
+
+.camp-screen > .l-main-dialog-container .footer .l-button-bar
+{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 16.0rem;
+    height: 4.3rem;
+    position: absolute;
+    margin: auto;
+}
+
+.camp-screen > .l-main-dialog-container .footer .l-leave-button
+{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 17.5rem;
+    position: absolute;
+
+    line-height: 3.0rem;
+}

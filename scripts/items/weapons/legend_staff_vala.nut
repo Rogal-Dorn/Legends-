@@ -15,8 +15,7 @@ this.legend_staff_vala <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_staff_05";
-		this.m.Value = 150;
-		this.m.ShieldDamage = 0;
+		this.m.Value = 1000;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -4;
@@ -25,8 +24,9 @@ this.legend_staff_vala <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 40;
-		this.m.ArmorDamageMult = 0.3;
-		this.m.DirectDamageMult = 0.3;
+		this.m.ArmorDamageMult = 0.7;
+		this.m.DirectDamageMult = 0.4;
+//		this.m.IsChangeableInBattle = false;
 	}
 
 	function onEquip()

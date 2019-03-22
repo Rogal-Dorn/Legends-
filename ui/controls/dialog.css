@@ -84,6 +84,14 @@
     background-repeat: no-repeat;
 }
 
+.ui-control.dialog-1280-768
+{
+    background-image: url("coui://gfx/ui/skin/dialog_background_01_wide.png");
+    background-size: 128.0rem 76.8rem;
+    background-repeat: no-repeat;
+}
+
+
 .ui-control.dialog *
 {
     -webkit-box-sizing: border-box;
