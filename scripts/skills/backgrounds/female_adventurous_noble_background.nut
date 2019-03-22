@@ -75,24 +75,24 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 				10
 			],
 			MeleeSkill = [
-				10,
-				10
+				0,
+				5
 			],
 			RangedSkill = [
-				0,
-				0
+				10,
+				15
 			],
 			MeleeDefense = [
-				5,
-				8
+				-5,
+				3
 			],
 			RangedDefense = [
-				-10,
-				-5
+				8,
+				10
 			],
 			Initiative = [
 				0,
-				0
+				3
 			]
 		};
 		return c;
@@ -102,7 +102,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
+		actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
 	}
 
 	function onAddEquipment()
@@ -113,27 +113,19 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/arming_sword"));
+			items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/winged_mace"));
+			items.equip(this.new("scripts/items/weapons/crossbow"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/hand_axe"));
+			items.equip(this.new("scripts/items/weapons/short_bow"));
 		}
 
 		r = this.Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/shields/heater_shield"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/shields/kite_shield"));
-		}
 
 		r = this.Math.rand(0, 2);
 

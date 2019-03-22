@@ -21,7 +21,7 @@ this.legend_staff_vala <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -4;
 		this.m.RangeMin = 1;
-		this.m.RangeMax = 1;
+		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 40;
@@ -32,8 +32,8 @@ this.legend_staff_vala <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
-		this.addSkill(this.new("scripts/skills/actives/knock_out"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_knock_out"));
 	}
 
 });

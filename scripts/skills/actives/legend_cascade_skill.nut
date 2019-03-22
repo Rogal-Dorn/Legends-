@@ -33,6 +33,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsShowingProjectile = true;
 		this.m.IsShieldRelevant = false;
 		this.m.IsShowingProjectile = true;
 		this.m.Delay = 250;
@@ -40,7 +41,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.ChanceDecapitate = 0;
@@ -58,7 +59,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Will make three separate strikes for one third of the weapon\'s damage each"
+				text = "Will make three separate strikes for one half of the weapon\'s damage each"
 			},
 			{
 				id = 8,
@@ -70,9 +71,14 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function isUsable()
+
+		function isUsable()
 	{
-	return this.m.IsUsable && this.getContainer().getActor().isArmedWithRangedWeapon()
+		if (!this.getContainer().getActor().isArmedWithRangedWeapon()) 
+		{
+			return false
+		}
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
 

@@ -14,7 +14,7 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 	{
 		local r;
 
-		if (this.Math.rand(1, 100) <= 66)
+		if (this.Math.rand(1, 100) <= 75)
 		{
 			r = this.Math.rand(1, 16);
 
@@ -124,11 +124,6 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 			armor = this.new("scripts/items/armor/monk_robe");
 		}
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			armor.setArmor(armor.getArmorMax() / 2 - 1);
-		}
-
 		this.m.Items.equip(armor);
 
 		if (this.Math.rand(1, 100) <= 33)
@@ -155,11 +150,6 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 			else if (r == 5)
 			{
 				helmet = this.new("scripts/items/helmets/full_leather_cap");
-			}
-
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				helmet.setArmor(helmet.getArmorMax() / 2 - 1);
 			}
 
 			this.m.Items.equip(helmet);

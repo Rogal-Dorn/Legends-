@@ -450,7 +450,7 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 			corpse.Tile = _tile;
 			corpse.Value = this.m.ResurrectionValue;
 			corpse.Armor = this.m.BaseProperties.Armor;
-			corpse.Items = this.getItems();
+			//corpse.Items = this.getItems();
 			corpse.Color = sprite_body.Color;
 			corpse.Saturation = sprite_body.Saturation;
 			corpse.Custom = custom;
