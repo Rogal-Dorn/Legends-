@@ -1,28 +1,36 @@
-this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
+this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 	m = {
 		TranceIsActive = false,
 		Failures = 0,
-		Difficulty = 1.0
+		Difficulty = 1.25
 	},
+
+
 	function create()
 	{
-		this.m.ID = "perk.legend_vala_trance_perspective";
-		this.m.Name = "Incorporeal Perspective";
-		this.m.Description = "Incorporeal Perspective.";
-		this.m.Icon = "ui/perks/legend_vala_trance_perspective_active.png";
-		this.m.IconDisabled = "ui/perks/legend_vala_trance_perspective_active_sw.png";
+		this.m.ID = "perk.legend_vala_trance_malevolent";
+		this.m.Name = "Malevolent Spirits";
+		this.m.Description = "The spirit world is home to many malevolent beings, and the Vala knows how to contact them. Once her access to their realm has been established, she calls upon these ill-willed spirits in hopes of receiving their help.";
+		this.m.Icon = "ui/perks/legend_vala_trance_malevolent_active.png";
+		this.m.IconDisabled = "ui/perks/legend_vala_trance_malevolent_active_sw.png";
 		this.m.Type = this.Const.SkillType.Active | this.Const.SkillType.Perk;
-		this.m.Order = this.Const.SkillOrder.NonTargeted + 11;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted + 11;
 		this.m.IsSerialized = true;
 		this.m.IsActive = true;
-		this.m.IsTargeted = false;
+		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
-		this.m.IsAttack = false;
+		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.IsVisibleTileNeeded = false;
+		this.m.IsShowingProjectile = false;
+		this.m.IsUsingHitchance = false;
+		this.m.IsDoingForwardMove = false;
+		this.m.IsVisibleTileNeeded = true;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 30;
+		this.m.MinRange = 2;
+		this.m.MaxRange = 7;
+		this.m.MaxLevelDifference = 4;
 	}
 
 
@@ -99,7 +107,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Enter a trance and bla bla bla."
+				text = "If the Vala is successful in her dealings with these harmful spirits, they will haunt and weaken her opponents."
 			},
 		];
 
@@ -140,20 +148,42 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
+		local targets = this.Tactical.Entities.getAllInstances();
 
 		if (actor.getSkills().hasSkill("effects.legend_vala_in_trance") && this.m.TranceIsActive)
 		{
+			local TotalVictims = 0;
+			foreach (tar in targets)
+			{
+				foreach (t in tar)
+				{
+					if (t.getFlags().get("IsSpiritVictim"))
+					{
+						TotalVictims = 1;
+						break;
+					}
+				}
+			}
+
+			if (TotalVictims == 0)  //  CANCEL TRANCE BECAUSE TARGET IS DEAD OR DYING
+			{
+				this.m.TranceIsActive = false;
+				this.m.Failures = 0;
+				actor.getSkills().removeByID("effects.legend_vala_in_trance");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
+				this.logInfo("MALEVOLENT SPIRITS :: onTurnStart victim is dead or dying");
+				return;
+			}
+
 			local expertise = actor.getCurrentProperties().Bravery / this.m.Difficulty;
 			expertise += this.m.Failures * 20.0 / this.m.Difficulty;
-
-			local everyone = this.Tactical.Entities.getAllInstances();
-			foreach (ever in everyone)
+			foreach (tar in targets)
 			{
-				foreach (e in ever)
+				foreach (t in tar)
 				{
-					local distance = e.getTile().getDistanceTo(actor.getTile());
+					local distance = t.getTile().getDistanceTo(actor.getTile());
 
-					if (distance <= 3 && e.isAlliedWith(actor))
+					if (distance <= 3 && t.isAlliedWith(actor))
 					{
 						expertise += this.Math.maxf(0.0, 1.33 - distance / 3.0);
 					}
@@ -177,34 +207,29 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				}
 			}
 
-			this.logInfo("INCORPOREAL PERSPECTIVE :: expertise is " + expertise);
+			this.logInfo("MALEVOLENT SPIRITS :: expertise is " + expertise);
 
 			if (this.Math.rand(1, 100) <= expertise)  // TRANCE SUCCESS
 			{
-				expertise += 10.0;
-
-				local targets = this.Tactical.Entities.getAllInstances();
 				foreach (tar in targets)
 				{
 					foreach (t in tar)
 					{
-						if (!t.isAlliedWith(actor))
+						if (!t.getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect") && t.getFlags().get("IsSpiritVictim"))
 						{
-							if (this.Math.rand(1, 100) <= expertise)  // APPLICATION SUCCESS
-							{
-								local effect = this.new("scripts/skills/effects/legend_vala_trance_perspective_effect");
-								effect.setVala(this);
-								t.getSkills().add(effect);
-							}
+							local effect = this.new("scripts/skills/effects/legend_vala_trance_malevolent_effect");
+							effect.setPower(this.getContainer().getActor().getCurrentProperties().Bravery);
+							t.getSkills().add(effect);
+							t.getFlags().set("IsSpiritVictim", false);
 						}
 					}
 				}
 
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
-//				this.Sound.play("sounds/combat/legend_vala_perspective.wav");
+//				this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
 				this.m.TranceIsActive = false;
 				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
 			}
 			else  // TRANCE FAILURE
 			{
@@ -221,6 +246,18 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 					this.m.TranceIsActive = false;
 					this.m.Failures = 0;
 					actor.getSkills().removeByID("effects.legend_vala_in_trance");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
+
+					foreach (tar in targets)
+					{
+						foreach (t in tar)
+						{
+							if (t.getFlags().get("IsSpiritVictim"))
+							{
+								t.getFlags().set("IsSpiritVictim", false);
+							}
+						}
+					}
 				}
 			}
 		}
@@ -259,6 +296,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
 		local actor = this.getContainer().getActor();
+		local targets = this.Tactical.Entities.getAllInstances();
 
 		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID())
 		{
@@ -274,6 +312,18 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 					this.m.TranceIsActive = false;
 					this.m.Failures = 0;
 					actor.getSkills().removeByID("effects.legend_vala_in_trance");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
+
+					foreach (tar in targets)
+					{
+						foreach (t in tar)
+						{
+							if (t.getFlags().get("IsSpiritVictim"))
+							{
+								t.getFlags().set("IsSpiritVictim", false);
+							}
+						}
+					}
 				}
 			}
 			else
@@ -281,6 +331,18 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				this.m.TranceIsActive = false;
 				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
+
+				foreach (tar in targets)
+				{
+					foreach (t in tar)
+					{
+						if (t.getFlags().get("IsSpiritVictim"))
+						{
+							t.getFlags().set("IsSpiritVictim", false);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -291,21 +353,57 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
 
-		if (actor.getSkills().hasSkill("effects.legend_vala_in_trance"))
-		{
-			actor.getSkills().removeByID("effects.legend_vala_in_trance");
-		}
-
 		foreach (tar in targets)
 		{
 			foreach (t in tar)
 			{
-				if (t.getSkills().hasSkill("effects.legend_vala_trance_perspective_effect"))
+				if (t.getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect"))
 				{
-					t.getSkills().removeByID("effects.legend_vala_trance_perspective_effect");
+					t.getSkills().removeByID("effects.legend_vala_trance_malevolent_effect");
+				}
+
+				if (t.getFlags().get("IsSpiritVictim"))
+				{
+					t.getFlags().set("IsSpiritVictim", false);
 				}
 			}
 		}
+	}
+
+
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!_targetTile.IsOccupiedByActor)
+		{
+			return false;
+		}
+
+		if (!_targetTile.getEntity().isAlive() || _targetTile.getEntity().isDying())
+		{
+			return false;
+		}
+
+		if (_targetTile.IsEmpty)
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().isAlliedWith(this.getContainer().getActor()))
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect"))
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().getFlags().get("IsSpiritVictim"))
+		{
+			return false;
+		}
+
+		return this.skill.onVerifyTarget(_originTile, _targetTile);
 	}
 
 
@@ -320,6 +418,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				actor.getSkills().add(this.new("scripts/skills/effects/legend_vala_in_trance"));
 			}
 
+			_targetTile.getEntity().getFlags().set("IsSpiritVictim", true);
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " trembles and hums as they drift into a trance.");
 			this.Sound.play("sounds/combat/legend_vala_trance.wav");
 			actor.m.ActionPoints = 0;

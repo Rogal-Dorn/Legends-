@@ -42,7 +42,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 			local WardenRangedSkill = this.m.WardenEntity.m.CurrentProperties.RangedSkill;
 			local WardenRangedDefense = this.m.WardenEntity.m.CurrentProperties.RangedDefense;
 			local WardenInitiative = this.m.WardenEntity.m.CurrentProperties.Initiative;
-			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 5.00));
+			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4.00));
 
 			if (SpiritualBondReduction >= 50)
 			{

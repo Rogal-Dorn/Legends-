@@ -79,7 +79,7 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
+		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00));
 
 		if (reduction < 0.5)
 		{
@@ -102,8 +102,8 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
-		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00);
+		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00));
+		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00);
 
 		if (reduction < 0.5)
 		{
