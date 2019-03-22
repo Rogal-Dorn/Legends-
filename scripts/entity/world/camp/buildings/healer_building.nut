@@ -12,6 +12,40 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.UIImageNight =  "ui/settlements/med_night_empty";
 		this.m.UIImageFull = "ui/settlements/med_day_full";
 		this.m.UIImageNightFull =  "ui/settlements/med_night_full";
+		this.m.Sounds = [
+			{
+				File = "ambience/camp/healer_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/healer_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/healer_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
+		this.m.SoundsAtNight = [
+			{
+				File = "ambience/camp/healer_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/healer_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/healer_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
     }
 
 	function onClicked( _campScreen )

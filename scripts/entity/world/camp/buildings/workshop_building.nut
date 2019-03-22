@@ -20,6 +20,70 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.UIImageNight =  "ui/settlements/scrap_night_empty";
 		this.m.UIImageFull = "ui/settlements/scrap_day_full";
 		this.m.UIImageNightFull =  "ui/settlements/scrap_night_full";
+		this.m.Sounds = [
+			{
+				File = "ambience/camp/camp_scrap_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
+		this.m.SoundsAtNight = [
+					{
+				File = "ambience/camp/camp_scrap_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_scrap_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
     }
 
 

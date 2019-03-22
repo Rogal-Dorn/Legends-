@@ -12,6 +12,81 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.UIImageFull = "ui/settlements/barber_day_full";
 		this.m.UIImageNightFull = "ui/settlements/barber_night_full";
         this.m.InCommanderTent = false;
+		this.m.Sounds = [
+			{
+				File = "ambience/camp/barber_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
+		this.m.SoundsAtNight = [
+					{
+				File = "ambience/camp/barber_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/barber_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
+
     }
 
 	function onClicked( _campScreen )
