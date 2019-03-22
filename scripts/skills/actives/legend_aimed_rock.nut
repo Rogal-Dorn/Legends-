@@ -15,16 +15,16 @@ this.legend_aimed_rock <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Shot";
 		this.m.Icon = "skills/stone_aim_square.png";
 		this.m.IconDisabled = "skills/stone_aim_square_sw.png";
-		this.m.Overlay = "active_18";
+		this.m.Overlay = "stone_aim_square";
 		this.m.SoundOnUse = [
 			"sounds/combat/aimed_shot_01.wav",
 			"sounds/combat/aimed_shot_02.wav",
 			"sounds/combat/aimed_shot_03.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/combat/arrow_hit_01.wav",
-			"sounds/combat/arrow_hit_02.wav",
-			"sounds/combat/arrow_hit_03.wav"
+			"sounds/combat/cudgel_hit_01.wav",
+			"sounds/combat/cudgel_hit_02.wav",
+			"sounds/combat/cudgel_hit_03.wav"
 		];
 		this.m.SoundOnHitShield = [
 			"sounds/combat/shield_hit_arrow_01.wav",
@@ -107,7 +107,7 @@ this.legend_aimed_rock <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty quiver of pebbles equipped[/color]"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty bag of pebbles equipped[/color]"
 			});
 		}
 

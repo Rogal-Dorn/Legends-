@@ -64,7 +64,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]15[/color] - [color=" + this.Const.UI.Color.DamageValue + "]40[/color] damage that ignores armor to up to three targets"
+				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]15[/color] - [color=" + this.Const.UI.Color.DamageValue + "]40[/color] damage that ignores armor to up to three targets. Requires a staff"
 			}
 		]);
 		return ret;

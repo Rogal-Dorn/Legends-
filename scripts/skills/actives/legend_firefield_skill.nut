@@ -6,7 +6,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Fire Field";
 		this.m.Description = "Release a field of fire that burns all beings";
 		this.m.Icon = "skills/fire_square.png";
-		this.m.IconDisabled = "skills/fire_square.png";
+		this.m.IconDisabled = "skills/fire_square_bw.png";
 		this.m.Overlay = "active_100";
 		this.m.SoundOnUse = [
 			"sounds/enemies/miasma_spell_01.wav",
@@ -34,10 +34,24 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 5;
-		this.m.FatigueCost = 40;
+		this.m.FatigueCost = 50;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
-		this.m.MaxLevelDifference = 4;
+		this.m.MaxLevelDifference = 6;
+	}
+
+		function getTooltip()
+	{
+		local ret = this.getDefaultTooltip();
+		ret.extend([
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]10[/color] - [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage per turn for two turns across six tiles. Burns allies. Requires a staff"
+			}
+		]);
+		return ret;
 	}
 
 	function isViableTarget( _user, _target )

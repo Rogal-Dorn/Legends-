@@ -24,8 +24,8 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 322.0;
 		this.m.StaminaModifier = -6;
 		this.m.RangeMin = 1;
-		this.m.RangeMax = 2;
-		this.m.RangeIdeal = 2;
+		this.m.RangeMax = 4;
+		this.m.RangeIdeal = 1;
 		this.m.RegularDamage = 5;
 		this.m.RegularDamageMax = 30;
 		this.m.ArmorDamageMult = 0.3;
@@ -46,7 +46,7 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 		lash.m.IconDisabled = "skills/active_94_sw.png";
 		lash.m.Overlay = "active_94";
 		this.addSkill(lash);
-		local lash = this.new("scripts/skills/actives/hook");
+		local lash = this.new("scripts/skills/actives/legend_chain_hook");
 		lash.m.Icon = "skills/active_31.png";
 		lash.m.IconDisabled = "skills/active_31_sw.png";
 		lash.m.Overlay = "active_31";

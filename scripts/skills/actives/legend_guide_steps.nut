@@ -7,9 +7,9 @@ this.legend_guide_steps <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Point out dips and obstacles in the landscape, increasing movement for your troops";
 		this.m.Icon = "skills/guided_steps_square.png";
 		this.m.IconDisabled = "skills/guided_steps_square_bw.png";
-		this.m.Overlay = "active_22";
+		this.m.Overlay = "guided_steps_square";
 		this.m.SoundOnUse = [
-		
+			"sounds/combat/guided_steps_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.BeforeLast;

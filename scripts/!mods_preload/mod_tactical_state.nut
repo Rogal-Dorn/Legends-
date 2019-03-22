@@ -19,7 +19,6 @@
 		local dead = this.Tactical.getCasualtyRoster().getAll();
 		foreach (d in dead)
 		{
-            this.logInfo(d.isCommander());
 			if (d.isCommander())
 			{
 				this.World.State.setCommanderDied(true);

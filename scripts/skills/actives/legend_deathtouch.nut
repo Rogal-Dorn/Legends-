@@ -12,7 +12,7 @@ this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.KilledString = "Frightened to death";
 		this.m.Icon = "skills/deathtouch_square.png";
 		this.m.IconDisabled = "skills/deathtouch_square_bw.png";
-		this.m.Overlay = "active_42";
+		this.m.Overlay = "deathtouch_square";
 		this.m.SoundOnUse = [
 			"sounds/enemies/ghastly_touch_01.wav"
 		];
@@ -29,6 +29,17 @@ this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
+	}
+		function getTooltip()
+	{
+		local ret = this.getDefaultTooltip();
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Damage scales with current initiative"
+		});
+		return ret;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

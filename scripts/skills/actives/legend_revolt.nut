@@ -7,7 +7,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe. Targets hit will receive fatigue and may take damage if they are pushed down several levels of height. Shieldwall, Spearwall and Riposte will be canceled for a target that is successfully knocked back. A rooted target can not be knocked back.";
 		this.m.Icon = "skills/revolt_square.png";
 		this.m.IconDisabled = "skills/revolt_square_bw.png";
-		this.m.Overlay = "active_10";
+		this.m.Overlay = "revolt_square";
 		this.m.SoundOnHit = [
 			"sounds/combat/knockback_hit_01.wav",
 			"sounds/combat/knockback_hit_02.wav",
@@ -28,7 +28,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsTooCloseShown = true;
 		this.m.HitChanceBonus = 10;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
@@ -113,7 +113,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
+		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 2 : 3;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -228,7 +228,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 
 			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
-				_properties.MeleeSkill += -15;
+				_properties.RangedSkill += -15;
 				this.m.HitChanceBonus = -5;
 			}
 			else

@@ -5,7 +5,7 @@ this.perk_legend_sleep <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_sleep";
 		this.m.Name = this.Const.Strings.PerkName.LegendSleep;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendSleep;
-		this.m.Icon = "skills/sleep56.png";
+		this.m.Icon = "ui/perks/sleep56.png";
 		this.m.IconDisabled = "ui/perks/sleep56_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
