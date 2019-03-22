@@ -11,8 +11,196 @@ this.camp_building <- {
 		UIImageNightFull = null,
 		Tooltip = null,
 		TooltipIcon = "",
-		Sounds = [],
-		SoundsAtNight = [],
+		Sounds = [
+			{
+				File = "ambience/camp/camp_rest_campfire.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_08.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_09.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_laugh_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_laugh_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_laugh_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		],
+		SoundsAtNight = [
+			{
+				File = "ambience/camp/camp_rest_campfire.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_08.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_general_09.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_laugh_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_laugh_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_laugh_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_snore_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_snore_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_rest_snore_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_gatherer_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		
+		],
         CanEnter = true,
         InCommanderTent = true
 	},

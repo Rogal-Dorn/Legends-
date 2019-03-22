@@ -15,6 +15,80 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.UIImageNight = "ui/settlements/taxidermist_night_empty";
 		this.m.UIImageFull = "ui/settlements/taxidermist_day_full";
 		this.m.UIImageNightFull = "ui/settlements/taxidermist_night_full";
+this.m.Sounds = [
+			{
+				File = "ambience/camp/camp_taxidermist_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
+		this.m.SoundsAtNight = [
+			{
+				File = "ambience/camp/camp_taxidermist_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_taxidermist_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
     }
 
     function init()
