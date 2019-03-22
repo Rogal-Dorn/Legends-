@@ -19,6 +19,64 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.UIImageNight = "ui/icons/buildings/blacksmith_night_empty_large"; 
 		this.m.UIImageFull = "ui/settlements/blacksmith_day_full_large";
 		this.m.UIImageNightFull = "ui/icons/buildings/blacksmith_night_full_large";   
+		this.m.Sounds = [
+			{
+				File = "ambience/camp/camp_blacksmith_01.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_02.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_03.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_04.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_05.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_06.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_07.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_08.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_09.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_10.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/camp/camp_blacksmith_11.wav",
+				Volume = 1.0,
+				Pitch = 1.0
+			}
+		];
+		this.m.SoundsAtNight = [];
     }
 
     function destroy()
