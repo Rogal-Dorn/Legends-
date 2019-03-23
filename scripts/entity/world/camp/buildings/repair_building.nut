@@ -79,10 +79,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.SoundsAtNight = [];
     }
 
-    function destroy()
-    {
-    }
-
     function init()
     {
         this.m.ToolsUsed = 0;
