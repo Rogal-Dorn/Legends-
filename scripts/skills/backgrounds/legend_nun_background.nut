@@ -5,7 +5,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.character_background.create();
 		this.m.ID = "background.legend_nun";
 		this.m.Name = "Nun";
-		this.m.Icon = "ui/backgrounds/background_13.png";
+		this.m.Icon = "ui/backgrounds/nun.png";
 		this.m.BackgroundDescription = "Nuns tend to have a high resolve in what they do, but are not used to hard physical labor or warfare.";
 		this.m.GoodEnding = "%name% the nun retired back into calmer spiritual duties. She is currently out in a mountain convent, enjoying the quiet while reflecting on her time in the mercenary company. The other nuns hate her for fighting and killing, but she\'s penning a world-changing tome on the balance between peace and violence.";
 		this.m.BadEnding = "After having a spiritual breakdown, %name% retired from fighting and found home in a monastery. All her fellow sisters and abbesses ostracized her for taking part in such a violent venture. Word has it she was eventually exiled when a mother superior caught her stealing an offertory.";
