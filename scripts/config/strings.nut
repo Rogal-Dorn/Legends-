@@ -1185,8 +1185,9 @@ gt.Const.Strings.PerkName <- {
 	LegendStrictSermons = "Strict Sermons",
 	LegendInfectiousRage = "InfectiousRage",
 	LegendTeacher = "Teacher",
-	LegendResurrectionist = "Resurrectionist"
-
+	LegendResurrectionist = "Resurrectionist",
+	LegendScry = "Scry",
+	LegendPiercingShot = "Piercing Shot"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1391,7 +1392,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendStrictSermons = "Endlessly repeating the lessons of the old gods to your mercenaries will imbue them with faith in the heat of battle. Grants the \'Fortified Mind\' perk to anyone you fight with.",
 	LegendInfectiousRage = "The frenzy of the berserker rage is aided with clouds of herbs and ritual dances. These can be spread to your allies granting the \'Berserk\' perk to anyone you fight with.",
 	LegendTeacher = "The technqiues you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with.",
-	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body from the battlefied."
+	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body from the battlefied.",
+	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
+	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

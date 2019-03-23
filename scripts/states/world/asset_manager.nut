@@ -621,7 +621,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(6);
+			this.setBrothersMax(1);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			
 			bro = roster.create("scripts/entity/tactical/player");

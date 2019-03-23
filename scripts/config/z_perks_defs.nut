@@ -1525,7 +1525,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendScry,
 		Icon = "ui/perks/scry_perk.png",
 		IconDisabled = "ui/perks/scry_perk_bw.png"
-	}			
+	},
+	{
+		ID = "perk.legend_piercing_shot",
+		Script = "scripts/skills/perks/perk_legend_piercing_shot",
+		Name = this.Const.Strings.PerkName.LegendPiercingShot,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPiercingShot,
+		Icon = "ui/perks/PiercingBoltPerk.png",
+		IconDisabled = "ui/perks/PiercingBoltPerk_bw.png"
+	}		
 ];
 
 
@@ -1719,5 +1727,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendInfectiousRage = 186,
 	LegendTeacher = 188,
 	LegendResurrectionist = 189,
-	LegendScry = 190
+	LegendScry = 190,
+	LegendPiercingShot = 191
 };

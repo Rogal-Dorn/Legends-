@@ -59,6 +59,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendCascade,
+		gt.Const.Perks.PerkDefs.LegendPiercingShot,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
