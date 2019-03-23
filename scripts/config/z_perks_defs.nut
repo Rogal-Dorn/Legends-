@@ -1363,24 +1363,24 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_big_game_hunter",
 		Name = this.Const.Strings.PerkName.LegendBigGameHunter,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBigGameHunter,
-		Icon = "ui/perks/shortbow_02.png",
-		IconDisabled = "ui/perks/shortbow_bw.png"
+		Icon = "ui/perks/BigGameHunterPerk.png",
+		IconDisabled = "ui/perks/BigGameHunterPerk_bw.png"
 	},
 	{
 		ID = "perk.legend_second_wind",
 		Script = "scripts/skills/perks/perk_legend_second_wind",
 		Name = this.Const.Strings.PerkName.LegendSecondWind,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSecondWind,
-		Icon = "ui/perks/shortbow_02.png",
-		IconDisabled = "ui/perks/shortbow_bw.png"
+		Icon = "ui/perks/SecondWindPerk.png",
+		IconDisabled = "ui/perks/SecondWindPerk_bw.png"
 	},
 	{
 		ID = "perk.legend_mark_target",
 		Script = "scripts/skills/perks/perk_legend_mark_target",
 		Name = this.Const.Strings.PerkName.LegendMarkTarget,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMarkTarget,
-		Icon = "ui/perks/mark_target.png",
-		IconDisabled = "ui/perks/mark_target_bw.png"
+		Icon = "ui/perks/MarkTargetPerk.png",
+		IconDisabled = "ui/perks/MarkTargetPerk_bw.png"
 	},
 	{
 		ID = "perk.legend_field_triage",
@@ -1509,7 +1509,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendTeacher,
 		Icon = "ui/perks/perk_21.png",
 		IconDisabled = "ui/perks/perk_21_sw.png"
-	}				
+	},
+	{
+		ID = "perk.legend_resurrectionist",
+		Script = "scripts/skills/perks/perk_legend_resurrectionist",
+		Name = this.Const.Strings.PerkName.LegendResurrectionist,
+		Tooltip = this.Const.Strings.PerkDescription.LegendResurrectionist,
+		Icon = "ui/perks/reclamation_circle.png",
+		IconDisabled = "ui/perks/reclamation_circle_bw.png"
+	}			
 ];
 
 
@@ -1701,5 +1709,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendBrinkOfDeath = 184,
 	LegendStrictSermons = 185,
 	LegendInfectiousRage = 186,
-	LegendTeacher = 188
+	LegendTeacher = 188,
+	LegendResurrectionist = 189
 };

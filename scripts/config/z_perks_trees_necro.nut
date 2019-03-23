@@ -60,6 +60,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendMiasma,
 		gt.Const.Perks.PerkDefs.LegendHex,
 		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.LegendBrinkOfDeath,
 		gt.Const.Perks.PerkDefs.LegendChanneledPower,
 		gt.Const.Perks.PerkDefs.LegendPossession
 	],
