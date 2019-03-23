@@ -1473,16 +1473,16 @@ gt.Const.Perks.PerkDefObjects <- [
 	{
 		ID = "perk.legend_vala_trance_perspective",
 		Script = "scripts/skills/perks/legend_vala_trance_perspective",
-		Name = this.Const.Strings.PerkName.xxxxxxxxxxxxx,
-		Tooltip = this.Const.Strings.PerkDescription.xxxxxxxxxxxxx,
+		Name = this.Const.Strings.PerkName.LegendValaTrancePerspective,
+		Tooltip = this.Const.Strings.PerkDescription.LegendValaTrancePerspective,
 		Icon = "ui/perks/legend_vala_trance_perspective.png",
 		IconDisabled = "ui/perks/legend_vala_trance_perspective_sw.png"
 	},
 	{
 		ID = "perk.legend_vala_trance_malevolent",
 		Script = "scripts/skills/perks/legend_vala_trance_malevolent",
-		Name = this.Const.Strings.PerkName.LegendValaTrancePerspective,
-		Tooltip = this.Const.Strings.PerkDescription.LegendValaTrancePerspective,
+		Name = this.Const.Strings.PerkName.LegendValaTranceMalevolent,
+		Tooltip = this.Const.Strings.PerkDescription.LegendValaTranceMalevolent,
 		Icon = "ui/perks/legend_vala_trance_malevolent.png",
 		IconDisabled = "ui/perks/legend_vala_trance_malevolent_sw.png"
 	},
