@@ -14,7 +14,8 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Lookout,
-		gt.Const.Perks.PerkDefs.LegendMarkTarget
+		gt.Const.Perks.PerkDefs.LegendMarkTarget,
+		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -32,8 +33,8 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.DoubleStrike,
-		gt.Const.Perks.PerkDefs.DevastatingStrikes,
-		gt.Const.Perks.PerkDefs.LegendRoster3
+		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
+		gt.Const.Perks.PerkDefs.DevastatingStrikes
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryPoison,
@@ -48,6 +49,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Footwork,
 		gt.Const.Perks.PerkDefs.CloseCombatArcher,
 		gt.Const.Perks.PerkDefs.Ballistics,
+		gt.Const.Perks.PerkDefs.LegendAmmoBundles,
 		gt.Const.Perks.PerkDefs.LegendRoster5		
 	],
 	[

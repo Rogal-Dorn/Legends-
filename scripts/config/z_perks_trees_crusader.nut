@@ -33,7 +33,8 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
 		gt.Const.Perks.PerkDefs.Rebound,
-		gt.Const.Perks.PerkDefs.LegendRoster3
+		gt.Const.Perks.PerkDefs.LegendToolsDrawers,
+		gt.Const.Perks.PerkDefs.LegendSecondWind
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,
@@ -49,6 +50,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.FullForce,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
+		gt.Const.Perks.PerkDefs.LegendToolsSpares,
 		gt.Const.Perks.PerkDefs.InspiringPresence,		
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],

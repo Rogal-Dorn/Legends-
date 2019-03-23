@@ -24,7 +24,8 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
-		gt.Const.Perks.PerkDefs.DevastatingStrikes
+		gt.Const.Perks.PerkDefs.DevastatingStrikes,
+		gt.Const.Perks.PerkDefs.LegendRoster2
 		
 	],
 	[
@@ -36,7 +37,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.Sprint,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,
-		gt.Const.Perks.PerkDefs.LegendRoster2
+		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,
@@ -47,6 +48,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.MasterySword,
 		gt.Const.Perks.PerkDefs.LegendPoisonImmunity,
 		gt.Const.Perks.PerkDefs.MasteryThrowing
+
 		
 	],
 	[
@@ -56,7 +58,8 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Vengeance,
 		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.SunderingStrike,
-		gt.Const.Perks.PerkDefs.LegendRoster3
+		gt.Const.Perks.PerkDefs.LegendRoster4
+
 	],
 	[
 		// This hard crashes the game // gt.Const.Perks.PerkDefs.Ironside,
@@ -67,7 +70,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendMuscularity,
 		gt.Const.Perks.PerkDefs.LegendPushForward,
-		gt.Const.Perks.PerkDefs.LegendRoster4
+		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
@@ -76,8 +79,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.LegendBerserkerRage,
-		gt.Const.Perks.PerkDefs.LegendUberNimble,
-		gt.Const.Perks.PerkDefs.LegendRoster5
+		gt.Const.Perks.PerkDefs.LegendUberNimble
 	],
 	[],
 	[],

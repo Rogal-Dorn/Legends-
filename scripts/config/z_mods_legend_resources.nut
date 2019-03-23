@@ -142,13 +142,13 @@ gt.Const.LegendMod.getMaxMedicine <- function ( _background )
 		case "background.legend_noble":
 		case "background.legend_commander_witch":
 		case "background.legend_witch":
+		case "background.butcher":
+		case "background.female_butcher":
 		case "background.legend_taxidermist":
 			return 10;
 			break;
 		case "background.monk":
 		case "background.legend_nun":
-		case "background.butcher":
-		case "background.female_butcher":
 		case "background.vazl_vala":
 			return 15;
 			break;
@@ -318,6 +318,9 @@ gt.Const.LegendMod.getCraftingModifier <- function ( _background )
 			break;
 		case "background.legend_blacksmith":
 		case "background.vazl_inventor":
+			return 0.75;
+			break;
+		case "background.legend_taxidermist":
 			return 1.0;
 			break;
 

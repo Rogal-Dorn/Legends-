@@ -989,7 +989,7 @@ gt.Const.Strings.PerkName <- {
 	Crusher = "Crusher",
 	CloseCombatArcher = "Close Combat Archer",
 	Bullseye = "Bullseye",
-	Ballistics = "Ballistics",
+	Ballistics = "Balistics",
 	Berserk = "Berserk",
 	Slaughterer = "Slaughterer",
 	BetweenTheEyes = "Between the Eyes",
