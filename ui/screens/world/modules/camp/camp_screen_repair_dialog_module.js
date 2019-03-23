@@ -46,10 +46,6 @@ var CampScreenRepairDialogModule = function(_parent)
     // buttons
     this.mLeaveButton = null;
 
-    // stash labels
-    this.mStashSlotSizeContainer = null;
-    this.mStashSlotSizeLabel = null;
-
     this.mStashSpaceUsed = 0;
     this.mStashSpaceMax = 0;
 
@@ -400,12 +396,6 @@ CampScreenRepairDialogModule.prototype.destroyDIV = function ()
     this.mStashSlots = null;
     this.mShopSlots = null;
 
-    this.mStashSlotSizeLabel.remove();
-    this.mStashSlotSizeLabel = null;
-    this.mStashSlotSizeContainer.empty();
-    this.mStashSlotSizeContainer.remove();
-    this.mStashSlotSizeContainer = null;
-
     this.mStashListContainer.destroyList();
     this.mStashListScrollContainer = null;
     this.mStashListContainer = null;
@@ -717,7 +707,7 @@ CampScreenRepairDialogModule.prototype.loadStashData = function (_data, _capacit
     var arrayRef = { val: this.mStashSlots };
     var containerRef = { val: this.mStashListScrollContainer };
 
-    this.assignItems('world-town-screen-shop-dialog-module.stash', _data, _capacity, arrayRef.val, containerRef.val);
+    this.assignItems(RepairScreenShop.ItemOwner.Stash, _data, _capacity, arrayRef.val, containerRef.val);
 };
 
 CampScreenRepairDialogModule.prototype.loadShopData = function (_data, _capacity)
@@ -738,7 +728,7 @@ CampScreenRepairDialogModule.prototype.loadShopData = function (_data, _capacity
     var arrayRef = { val: this.mShopSlots };
     var containerRef = { val: this.mShopListScrollContainer };
 
-    this.assignItems('world-town-screen-shop-dialog-module.shop', _data, _capacity, arrayRef.val, containerRef.val);
+    this.assignItems(RepairScreenShop.ItemOwner.Shop, _data, _capacity, arrayRef.val, containerRef.val);
 };
 
 CampScreenRepairDialogModule.prototype.querySlotByIndex = function(_itemArray, _index)

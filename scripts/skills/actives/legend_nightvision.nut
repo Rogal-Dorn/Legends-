@@ -55,14 +55,15 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-
-function onUse( _user, _targetTile )
+	function onUse( _user, _targetTile )
 	{
 		local myTile = _user.getTile();
 		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		local target = _targetTile.getEntity();
 
-		foreach( a in actors )
+		foreach( a in actors)
 		{
+
 			if (a.getID() == _user.getID())
 			{
 				continue;
@@ -72,18 +73,20 @@ function onUse( _user, _targetTile )
 			{
 				continue;
 			}
-			
-			if (a.getFaction() == _user.getFaction())
+
+			if (a.getFaction() != _user.getFaction())
 			{
-			if (!_target.getCurrentProperties().IsAffectedByNight || !_target.getSkills().hasSkill("special.night"))
-				{
+				continue
+			}
+
+			if (!target.getCurrentProperties().IsAffectedByNight || !target.getSkills().hasSkill("special.night"))
+		 	{
 				this.spawnIcon("status_effect_98", target.getTile());
 				target.getSkills().removeByID("special.night");
-				{
-			}
+		 	}
+			
 		}
 
 		return true;
 	}
-
 });

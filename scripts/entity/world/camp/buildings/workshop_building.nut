@@ -86,11 +86,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
-
-    function destroy()
-    {
-    }
-
     function init()
     {
         this.m.ToolsCreated = 0;
