@@ -176,6 +176,8 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 		case "background.mason":
 		case "background.miner":
 		case "background.lumberjack":
+		case "background.legend_blacksmith":
+		case "background.legend_ironmonger":
 			return 5;
 			break;
 		case "background.daytaler":
@@ -198,11 +200,12 @@ gt.Const.LegendMod.getMaxStash <- function ( _background )
 		case "background.farmhand":
 		case "background.female_farmhand":
 		case "background.brawler":
-		case "background.wildman":
+		case "backgcripplround.wildman":
 		case "background.shepard":
 		case "background.refugee":
 		case "background.servant":
 		case "background.eunuch":
+		case "background.miller":
 		case "background.fisherman":
 		case "background.female_servant":
 		case "background.gravedigger":
@@ -338,8 +341,11 @@ gt.Const.LegendMod.getBarterModifier <- function ( _background )
 		case "background.legend_noble":
 		case "background.minstrel":
 		case "background.female_minstrel":
+		case "background.thief":
+		
 			return 0.025
 			break;
+		case "background.female_thief":
 		case "background.peddler":
 
 			return 0.05;
@@ -359,6 +365,7 @@ gt.Const.LegendMod.getToolConsumptionModifier <- function ( _background )
 	{
 		case "background.mason":
 		case "background.tailor":
+		case "background.female_tailor":
 			return 0.05;
 			break;
 
@@ -525,6 +532,7 @@ gt.Const.LegendMod.getTerrainSpeedModifier <- function ( _background )
 			];
 			break;
 		case "background.farmhand":
+		case "background.female_farmhand":
 			return [
 				0.0, // ?
 				0.0, //ocean

@@ -4,7 +4,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_herbalist";
-		this.m.Name = "Monk";
+		this.m.Name = "Harbalist";
 		this.m.Icon = "ui/backgrounds/herbalist.png";
 		this.m.BackgroundDescription = "Herbalists are skilled with a sickle, harvesting herbs for use in medicine";
 		this.m.GoodEnding = "%name% the herbalist left to start an apocathery in the wetlands, business is good and remedies abound. Last you heard %name% had discovered a cure for bunions and people traveled from far and wide to try the soup";
@@ -14,6 +14,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.hate_beasts",
+			"trait.fear_beasts",
 			"trait.swift",
 			"trait.impatient",
 			"trait.clubfooted",
@@ -21,9 +22,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.gluttonous",
 			"trait.disloyal",
 			"trait.cocky",
-			"trait.quick",
 			"trait.dumb",
-			"trait.superstitious",
 			"trait.iron_lungs",
 			"trait.craven",
 			"trait.greedy",
@@ -79,12 +78,12 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 				0
 			],
 			Stamina = [
-				0,
+				5,
 				0
 			],
 			MeleeSkill = [
 				11,
-				11
+				5
 			],
 			RangedSkill = [
 				0,
