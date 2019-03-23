@@ -294,6 +294,7 @@ Adds Taxidermist and taxidermist apron - reduces med usage, helps with camp craf
 
 
 Changes for recruitable backgrounds:
+Vala has the correct perk tree, with a new set of chants. 
 Peddlers have lower initial barter bonus but can unlock perks to increase their barter skill
 Militia gain perks to increase effectiveness with milita spears 
 Minstrels and troubadours gain skill to cast entice and deal more damage while wielding a lute. lute durability buffed, gains bash. 
