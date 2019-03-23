@@ -101,8 +101,8 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0
 			],
 			Initiative = [
-				5,
-				0
+				15,
+				5
 			]
 		};
 		return c;

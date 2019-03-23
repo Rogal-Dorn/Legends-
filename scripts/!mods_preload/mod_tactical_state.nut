@@ -156,7 +156,12 @@
 				case "background.vazl_cannibal":
 					CannibalsInRoster += 1;
 					break;
-				
+				case "background.gravedigger":
+					zombieSalvage += 5;
+					break;
+				case "background.graverobber":
+					zombieSalvage += 5;
+					break;
 				case "background.butcher":
 					if (bro.getSkills().hasSkill("trait.vazl_cannibalistic"))
 					{
@@ -168,7 +173,13 @@
 			if (bro.getSkills().hasSkill("perk.legends_reclamation"))
 			{
 				local skill = bro.getSkills().getSkillByID("perk.legends_reclamation")
-				zombieSalvage = skill.m.LootChance;
+				zombieSalvage += skill.m.LootChance;
+			}
+
+			if (bro.getSkills().hasSkill("perk.legend_resurrectionist"))
+			{
+				local skill = bro.getSkills().getSkillByID("perk.legend_resurrectionist")
+				zombieSalvage += skill.m.LootChance;
 			}
 
 			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_low") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_med") || bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))

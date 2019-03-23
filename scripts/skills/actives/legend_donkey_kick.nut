@@ -6,8 +6,8 @@ this.legend_donkey_kick <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Donkey Kick";
 		this.m.Description = "The main attack of a donkey, more for defense than attack";
 		this.m.KilledString = "Kicked to death";
-		this.m.Icon = "skills/active_08.png";
-		this.m.IconDisabled = "skills/active_08_sw.png";
+		this.m.Icon = "skills/horse_kick.png";
+		this.m.IconDisabled = "skills/horse_kick_bw.png";
 		this.m.Overlay = "active_08";
 		this.m.SoundOnUse = [
 			"sounds/combat/hand_01.wav",

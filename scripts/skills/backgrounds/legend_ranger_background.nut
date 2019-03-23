@@ -116,6 +116,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
+		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 	}	
 
 
@@ -137,8 +139,9 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		local stash =this.World.Assets.getStash()
 		stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
+		stash.add(this.new("scripts/items/accessory/wardog_item"));
 		stash.removeByID("supplies.ground_grains");
-
+		stash.removeByID("supplies.ground_grains");
 
 
 		r = this.Math.rand(0, 1);

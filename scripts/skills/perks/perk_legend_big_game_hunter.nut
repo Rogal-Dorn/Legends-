@@ -5,8 +5,8 @@ this.perk_legend_big_game_hunter <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_big_game_hunter";
 		this.m.Name = this.Const.Strings.PerkName.LegendBigGameHunter;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendBigGameHunter;
-		this.m.Icon = "ui/perks/doublestrike_circle.png";
-		this.m.IconDisabled = "ui/perks/doublestrike_circle_bw.png"
+		this.m.Icon = "ui/perks/BigGameHunterPerk.png";
+		this.m.IconDisabled = "ui/perks/BigGameHunterPerk_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

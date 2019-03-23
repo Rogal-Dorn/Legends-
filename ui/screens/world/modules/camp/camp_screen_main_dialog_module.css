@@ -173,7 +173,7 @@
 	-webkit-transform: scale(-0.7, 0.7);
 	position: absolute;
 	left: 23.0rem;
-	top: 35.0rem;
+	top: 45.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-rest {
@@ -187,8 +187,8 @@
 	.camp-screen > .l-main-dialog-container .slot-barber {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
-		left: 55.0rem;
-		top: 38.0rem;
+		left: 65.0rem;
+		top: 48.0rem;
 	}
 
 
@@ -253,15 +253,15 @@
 .camp-screen > .l-main-dialog-container .slot-workshop {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
-		left: 45.0rem;
-		top: 20.0rem;
+		left: 55.0rem;
+		top: 22.0rem;
 	}
 
 .camp-screen > .l-main-dialog-container .slot-scout
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 65.0rem;
+    left: 75.0rem;
     top: 21.0rem;
 }
 

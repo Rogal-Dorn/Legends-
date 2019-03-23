@@ -250,6 +250,12 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		case "background.thief":
 			return gt.Const.Perks.PerksTreeKnife;
 			break;
+		case "background.female_butcher":
+			return gt.Const.Perks.PerksTreeButcher;
+			break;
+		case "background.butcher":
+			return gt.Const.Perks.PerksTreeButcher;
+			break;
 		case "background.female_thief":
 			return gt.Const.Perks.PerksTreeKnife;
 			break;

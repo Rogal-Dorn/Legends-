@@ -443,16 +443,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_roster_5",
 		Name = this.Const.Strings.PerkName.LegendRoster5,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster5,
-		Icon = "ui/perks/recruit5.png",
-		IconDisabled = "ui/perks/recruit5_bw.png"
+		Icon = "ui/perks/recruit4.png",
+		IconDisabled = "ui/perks/recruit4_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_6",
 		Script = "scripts/skills/perks/perk_legend_roster_6",
 		Name = this.Const.Strings.PerkName.LegendRoster6,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster6,
-		Icon = "ui/perks/recruit6.png",
-		IconDisabled = "ui/perks/recruit6_bw.png"
+		Icon = "ui/perks/recruit5.png",
+		IconDisabled = "ui/perks/recruit5_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_7",
@@ -1363,24 +1363,24 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_big_game_hunter",
 		Name = this.Const.Strings.PerkName.LegendBigGameHunter,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBigGameHunter,
-		Icon = "ui/perks/shortbow_02.png",
-		IconDisabled = "ui/perks/shortbow_bw.png"
+		Icon = "ui/perks/BigGameHunterPerk.png",
+		IconDisabled = "ui/perks/BigGameHunterPerk_bw.png"
 	},
 	{
 		ID = "perk.legend_second_wind",
 		Script = "scripts/skills/perks/perk_legend_second_wind",
 		Name = this.Const.Strings.PerkName.LegendSecondWind,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSecondWind,
-		Icon = "ui/perks/shortbow_02.png",
-		IconDisabled = "ui/perks/shortbow_bw.png"
+		Icon = "ui/perks/SecondWindPerk.png",
+		IconDisabled = "ui/perks/SecondWindPerk_bw.png"
 	},
 	{
 		ID = "perk.legend_mark_target",
 		Script = "scripts/skills/perks/perk_legend_mark_target",
 		Name = this.Const.Strings.PerkName.LegendMarkTarget,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMarkTarget,
-		Icon = "ui/perks/mark_target.png",
-		IconDisabled = "ui/perks/mark_target_bw.png"
+		Icon = "ui/perks/MarkTargetPerk.png",
+		IconDisabled = "ui/perks/MarkTargetPerk_bw.png"
 	},
 	{
 		ID = "perk.legend_field_triage",
@@ -1486,6 +1486,69 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/legend_vala_trance_malevolent.png",
 		IconDisabled = "ui/perks/legend_vala_trance_malevolent_sw.png"
 	}
+		ID = "perk.legend_prepared_for_anything",
+		Script = "scripts/skills/perks/legend_prepared_for_anything",
+		Name = this.Const.Strings.PerkName.LegendPreparedForAnything,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPreparedForAnything,
+		Icon = "ui/perks/perk_20.png",
+		IconDisabled = "ui/perks/perk_20_sw.png"
+	},
+	{
+		ID = "perk.legend_brink_of_death",
+		Script = "scripts/skills/perks/legend_brink_of_death",
+		Name = this.Const.Strings.PerkName.LegendBrinkOfDeath,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBrinkOfDeath,
+		Icon = "ui/perks/perk_04.png",
+		IconDisabled = "ui/perks/perk_04_sw.png"
+	},
+	{
+		ID = "perk.legend_strict_sermons",
+		Script = "scripts/skills/perks/legend_strict_sermons",
+		Name = this.Const.Strings.PerkName.LegendStrictSermons,
+		Tooltip = this.Const.Strings.PerkDescription.LegendStrictSermons,
+		Icon = "ui/perks/perk_08.png",
+		IconDisabled = "ui/perks/perk_08_sw.png"
+	},
+	{
+		ID = "perk.legend_infectious_rage",
+		Script = "scripts/skills/perks/legend_infectious_rage",
+		Name = this.Const.Strings.PerkName.LegendInfectiousRage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendInfectiousRage,
+		Icon = "ui/perks/perk_35.png",
+		IconDisabled = "ui/perks/perk_35_sw.png"
+	},
+	{
+		ID = "perk.legend_teacher",
+		Script = "scripts/skills/perks/legend_teacher",
+		Name = this.Const.Strings.PerkName.LegendTeacher,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTeacher,
+		Icon = "ui/perks/perk_21.png",
+		IconDisabled = "ui/perks/perk_21_sw.png"
+	},
+	{
+		ID = "perk.legend_resurrectionist",
+		Script = "scripts/skills/perks/perk_legend_resurrectionist",
+		Name = this.Const.Strings.PerkName.LegendResurrectionist,
+		Tooltip = this.Const.Strings.PerkDescription.LegendResurrectionist,
+		Icon = "ui/perks/reclamation_circle.png",
+		IconDisabled = "ui/perks/reclamation_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_scry",
+		Script = "scripts/skills/perks/perk_legend_scry",
+		Name = this.Const.Strings.PerkName.LegendScry,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScry,
+		Icon = "ui/perks/scry_perk.png",
+		IconDisabled = "ui/perks/scry_perk_bw.png"
+	},
+	{
+		ID = "perk.legend_piercing_shot",
+		Script = "scripts/skills/perks/perk_legend_piercing_shot",
+		Name = this.Const.Strings.PerkName.LegendPiercingShot,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPiercingShot,
+		Icon = "ui/perks/PiercingBoltPerk.png",
+		IconDisabled = "ui/perks/PiercingBoltPerk_bw.png"
+	}		
 ];
 
 
@@ -1675,4 +1738,12 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaSpiritualBond = 182,
 	LegendValaPerspective = 183,
 	LegendValaMalevolent = 184
+	LegendPreparedForAnything = 185,
+	LegendBrinkOfDeath = 186,
+	LegendStrictSermons = 187,
+	LegendInfectiousRage = 188,
+	LegendTeacher = 189,
+	LegendResurrectionist = 190,
+	LegendScry = 191,
+	LegendPiercingShot = 192
 };

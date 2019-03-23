@@ -24,6 +24,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRust,
+		gt.Const.Perks.PerkDefs.LegendMedPackages,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
@@ -32,6 +33,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendDeathTouch,
 		gt.Const.Perks.PerkDefs.Lookout,
 		gt.Const.Perks.PerkDefs.LegendExtendendAura,
+		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryDagger,
@@ -41,7 +43,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.MasteryPoison,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieMed,
 		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonMed,
-		gt.Const.Perks.PerkDefs.LegendRoster3
+		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[
 		gt.Const.Perks.PerkDefs.LoneWolf,
@@ -49,6 +51,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.Footwork,
 		gt.Const.Perks.PerkDefs.LegendGruesomeFeast,
 		gt.Const.Perks.PerkDefs.LegendReclamation,
+		gt.Const.Perks.PerkDefs.LegendMedIngredients,
 		gt.Const.Perks.PerkDefs.LegendConservation
 	],
 	[
@@ -57,6 +60,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendMiasma,
 		gt.Const.Perks.PerkDefs.LegendHex,
 		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.LegendBrinkOfDeath,
 		gt.Const.Perks.PerkDefs.LegendChanneledPower,
 		gt.Const.Perks.PerkDefs.LegendPossession
 	],
@@ -69,7 +73,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendViolentDecomposition,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
 		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh,
-		gt.Const.Perks.PerkDefs.LegendRoster6
+		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],
 	[],

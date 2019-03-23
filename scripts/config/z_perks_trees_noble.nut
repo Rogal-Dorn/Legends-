@@ -8,10 +8,13 @@ if (!("Perks" in gt.Const))
 local NobleTree = [
 	[
 		gt.Const.Perks.PerkDefs.Adrenalin,
+		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.NineLives,
+		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.BagsAndBelts
+		gt.Const.Perks.PerkDefs.BagsAndBelts,
+		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -31,12 +34,15 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.InspiringPresence,
+		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryPolearm,
 		gt.Const.Perks.PerkDefs.MasterySword,
 		gt.Const.Perks.PerkDefs.LegendMasteryBandage,
+		gt.Const.Perks.PerkDefs.LegendEfficientPacking,
+		gt.Const.Perks.PerkDefs.LegendBarterConvincing,
 		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[
@@ -44,6 +50,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Underdog,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendBribe,
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
@@ -60,6 +67,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Inspire,
 		gt.Const.Perks.PerkDefs.LegendRelax,
+		gt.Const.Perks.PerkDefs.LegendPreparedForAnything,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],
