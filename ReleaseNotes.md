@@ -263,7 +263,7 @@ Warlock:
 Ranger: 
 Max party size 24
 Gains ranger armor
-Gains Mark Target, Big Game Hunter, Second Wind, ammunition binding and ammunition bundles
+Gains Mark Target, Piercing Shot, Big Game Hunter, Second Wind, ammunition binding and ammunition bundles
 *Nightvision changed to 2 tile radius around self
 *Guided Steps sound, overlay icon and effect icon updated
 *Tripleshot sounds, skill icons and overlay icons updated
