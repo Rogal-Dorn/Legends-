@@ -490,8 +490,6 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-
-
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:
@@ -516,8 +514,6 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-
-
 			break;
 
 		case this.Const.LegendMod.StartTypes.Party:
@@ -632,9 +628,23 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(3);
 			bro.setVeteranPerks(5);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-
-
 			break
+
+
+		case this.Const.LegendMod.StartTypes.Vala:
+			this.setBrothersMax(1);
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_vala_commander_background"
+			]);
+			bro.setPlaceInFormation(4);
+			
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(2);
+			break;
+
 
 		case this.Const.LegendMod.StartTypes.Hoggart:
 			this.setBrothersMax(18);
@@ -701,6 +711,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			this.setBrothersMax(18);
 			break;
+
 		}
 		this.m.FounderNames = [];
 		this.m.LastRosterSize = roster.getSize();

@@ -1198,6 +1198,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		if (this.m.Campaign == "legends_berserker") {
 			this.World.Tags.set("IsLegendsBerserker", true);
 		}
+		if (this.m.Campaign == "legends_vala") {
+			this.World.Tags.set("IsLegendsVala", true);
+		}
 		
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
