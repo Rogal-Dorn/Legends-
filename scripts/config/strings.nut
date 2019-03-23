@@ -1188,7 +1188,8 @@ gt.Const.Strings.PerkName <- {
 	LegendResurrectionist = "Resurrectionist",
 	LegendScry = "Scry",
 	LegendPiercingShot = "Piercing Shot",
-	LegendLevitate = "Levitate"
+	LegendLevitate = "Levitate",
+	LegendTeleport = "Teleport"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1396,7 +1397,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body from the battlefied.",
 	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
 	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line",
-	LegendLevitate = "Levitate above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile"
+	LegendLevitate = "Levitate above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
+	LegendTeleport = "Teleport"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

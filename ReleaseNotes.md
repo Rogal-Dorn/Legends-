@@ -237,7 +237,7 @@ Barter bonus now effects pay scaling of caravan and delivery contracts
 
 Seer: 
 *Max party size 22
-*Gains Scry and Levitation
+*Gains Scry, Teleport and Levitation
 *Gains Teacher perk that grants "student" perk to all allies on the field.
 *Daze sounds, overlay icons and effect icons updated. fixes sound crash
 *Magic missile overlay icon fixed
