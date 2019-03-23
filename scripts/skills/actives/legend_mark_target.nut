@@ -6,8 +6,8 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Mark Target";
 		this.m.Description = "Analyse the weak points on an opponent and tell your comrades, reducing the targets ranged defense by 20";
 		this.m.KilledString = "Marked";
-		this.m.Icon = "skills/mark_target_square.png";
-		this.m.IconDisabled = "skills/mark_target_square_bw.png";
+		this.m.Icon = "skills/MarkTargetSkill.png";
+		this.m.IconDisabled = "skills/MarkTargetSkill_bw.png";
 		this.m.Overlay = "daze_square";
 		this.m.SoundOnUse = [
 			"sounds/combat/puncture_01.wav",
