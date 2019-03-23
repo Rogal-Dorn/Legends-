@@ -48,8 +48,8 @@ this.legend_aimed_rock <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
 		this.m.IsDoingForwardMove = false;
-		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
-		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
+		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
+		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 8;
 		this.m.FatigueCost = 25;
