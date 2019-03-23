@@ -8,7 +8,9 @@ if (!("Perks" in gt.Const))
 local SeerTree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.CripplingStrikes, 
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
+		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.LegendSummonCat,
@@ -16,6 +18,9 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
+		gt.Const.Perks.PerkDefs.CoupDeGrace,
+		gt.Const.Perks.PerkDefs.Bullseye,
+		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.Bullseye,
@@ -24,6 +29,7 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
