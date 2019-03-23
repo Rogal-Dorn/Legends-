@@ -5,8 +5,8 @@ this.perk_legend_second_wind <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_second_wind";
 		this.m.Name = this.Const.Strings.PerkName.LegendSecondWind;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendSecondWind;
-		this.m.Icon = "ui/perks/laststand_circle.png";
-		this.m.IconDisabled = "ui/perks/laststand_circle_bw.png"
+		this.m.Icon = "ui/perks/SecondWindPerk.png";
+		this.m.IconDisabled = "ui/perks/SecondWindPerk_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
