@@ -237,7 +237,7 @@ Barter bonus now effects pay scaling of caravan and delivery contracts
 
 Seer: 
 *Max party size 22
-*Gains Scry, Teleport and Levitation
+*Gains Scry, Teleport, Levitation, Crippling Strikes, Nine Lives, Executioner, Bullseye, Dodge and Backstabber
 *Gains Teacher perk that grants "student" perk to all allies on the field.
 *Daze sounds, overlay icons and effect icons updated. fixes sound crash
 *Magic missile overlay icon fixed
@@ -280,7 +280,7 @@ Gains Prepared for Anything, Efficient Packing, Convincing Barter, Bribe, True b
 
 Berserker: 
 max party size 16 
-Gains Infectious Rage that grants Berserker perk to all allies
+Gains Infectious Rage that grants Berserker perk to all allies battle
 Gains second wind, regaining half fatigue at 1/3rd health. 
 Poison immunity fixed to work vs spiders 
 Steadfast buffed to remove all fatigue on damage, not just multiplier
@@ -288,7 +288,8 @@ Steadfast buffed to remove all fatigue on damage, not just multiplier
 Crusader:
 max party size 20
 Gains second wind 
-gains tools drawers and tools spares
+Gains Strict Sermons perk that grants Fortified mind to all allies in battle
+gains tools drawers and tools spares perks
 
 
 
@@ -322,10 +323,11 @@ Daytaler, washerwoman, milkmaids, refugee, fisherman, thief, vagabond, shepard, 
 
 Other changes: 
 Player world figurine changes based on commander
-Increases caravan and camp speed to encourage those playstyles
-Increases crises phase length to ~50 days
-Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
 increases late game difficulty scaling, reduces early game (even more)
+Increases crises phase length to ~50 days
+Increases caravan and camp speed to encourage those playstyles
+Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
+Slings apply blunt force trauma instead of piercing
 
 Bug fixes:
 Hexen won't use charm if there is one opponent 
