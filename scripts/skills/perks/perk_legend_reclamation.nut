@@ -1,6 +1,6 @@
 this.perk_legend_reclamation <- this.inherit("scripts/skills/skill", {
 	m = {
-        LootChance = 30
+        LootChance = 20
     },
 	function create()
 	{
