@@ -1725,8 +1725,8 @@ gt.Const.Perks.PerkDefs <- {
 	LegendBrinkOfDeath = 184,
 	LegendStrictSermons = 185,
 	LegendInfectiousRage = 186,
-	LegendTeacher = 188,
-	LegendResurrectionist = 189,
-	LegendScry = 190,
-	LegendPiercingShot = 191
+	LegendTeacher = 187,
+	LegendResurrectionist = 188,
+	LegendScry = 189,
+	LegendPiercingShot = 190
 };
