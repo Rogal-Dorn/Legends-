@@ -1517,6 +1517,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendResurrectionist,
 		Icon = "ui/perks/reclamation_circle.png",
 		IconDisabled = "ui/perks/reclamation_circle_bw.png"
+	},
+	{
+		ID = "perk.legend_scry",
+		Script = "scripts/skills/perks/perk_legend_scry",
+		Name = this.Const.Strings.PerkName.LegendScry,
+		Tooltip = this.Const.Strings.PerkDescription.LegendScry,
+		Icon = "ui/perks/scry_perk.png",
+		IconDisabled = "ui/perks/scry_perk_bw.png"
 	}			
 ];
 
@@ -1710,5 +1718,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendStrictSermons = 185,
 	LegendInfectiousRage = 186,
 	LegendTeacher = 188,
-	LegendResurrectionist = 189
+	LegendResurrectionist = 189,
+	LegendScry = 190
 };

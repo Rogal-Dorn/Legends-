@@ -195,10 +195,6 @@ Beta 0.9.5
 Beta 0.10
 
 Camp Documentation:
-*Repair Tent*
-	-
-	
-
 
 *Repair Tent*
 	-Repairs can now only happen while encamped.
@@ -241,7 +237,8 @@ Barter bonus now effects pay scaling of caravan and delivery contracts
 
 Seer: 
 *Max party size 22
-*Gains Teacher perk that grants students to all allies
+*Gains Teacher perk that grants "student" perk to all allies on the field.
+*Gains Scry
 *Daze sounds, overlay icons and effect icons updated. fixes sound crash
 *Magic missile overlay icon fixed
 *Firefield damaged reduced, fixed disabled icon, sounds fixed, updated tool tip and description to mention staff requirement and damage values.
@@ -288,7 +285,7 @@ Gains second wind, regaining half fatigue at 1/3rd health.
 Poison immunity fixed to work vs spiders 
 Steadfast buffed to remove all fatigue on damage, not just multiplier
 
-Crusader
+Crusader:
 max party size 20
 Gains second wind 
 gains tools drawers and tools spares
@@ -308,7 +305,7 @@ Militia gain perks to increase effectiveness with milita spears
 Minstrels and troubadours gain skill to cast entice and deal more damage while wielding a lute. lute durability buffed, gains bash. 
 Blacksmiths and ironmongers gain perks to increase effectiveness with blacksmith's hammer, big bonuses to craft, scrap and repair in camp.
 Farmhands gain perks for pitchforks, increase stash capacity 
-Gravediggers and graverobbers gain perks for shovels, 
+Gravediggers and graverobbers gain perks for shovels, and an upgradable chance to find bodies after a battle 
 Lumberjacks gain perks for wood axes
 thieves and pickpockets gain perks for knives
 Poachers gain perks for shortbows 
