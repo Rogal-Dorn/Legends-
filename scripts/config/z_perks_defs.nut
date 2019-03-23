@@ -1485,7 +1485,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = "The spirit world is home to many malevolent beings, and the Vala knows how to contact them. Once her access to their realm has been established, she calls upon these ill-willed spirits in hopes of receiving their help. If she\'s successful, these spirits will harass, torment and weaken her foes.\n\nWhen the Vala enters a trance she will remain in that state until her task is either completed or interrupted. Trance completion is checked at the start of her turns, and failure causes her to remain in trance (while gaining additional success chance for her next completion check). Receiving damage of any kind, or becoming too fatigued, will drop the Vala out of an active trance.",
 		Icon = "ui/perks/legend_vala_trance_malevolent.png",
 		IconDisabled = "ui/perks/legend_vala_trance_malevolent_sw.png"
-	}
+	},
+	{
 		ID = "perk.legend_prepared_for_anything",
 		Script = "scripts/skills/perks/legend_prepared_for_anything",
 		Name = this.Const.Strings.PerkName.LegendPreparedForAnything,
