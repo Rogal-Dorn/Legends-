@@ -12,7 +12,8 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.HiringCost = 250;
 		this.m.DailyCost = 10;
 		this.m.Excluded = [
-			"trait.hate_undead",
+			"trait.hate_beasts",
+			"trait.fear_beasts",
 			"trait.athletic",
 			"trait.clumsy",
 			"trait.spartan",
