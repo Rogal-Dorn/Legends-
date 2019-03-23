@@ -193,92 +193,7 @@ Beta 0.9.5
 *Berserker commanders can no longer be converted into cultists
 
 Beta 0.10
-*Adds Orc Behemoth (broken)
-*removes underdog from berserker in party start
-*increases late game difficulty scaling, reduces early game (even more)
-*Adds Orc Behemoth
-*Fixes formations mod stash size exploit
-*Fixes Food tooltip showing double consumption rate
 
-
-*Aimed rock and aimed pebble overlay icon, tooltip and sounds updated
-*Cat bite damage nerfed, overlay icon updated
-*Tripleshot sounds, skill icons and overlay icons updated
-*Chain lightning skill icon and overlay icons updated
-*Coordinated volleys sound, overlay icon and effect icon updated
-*Daze sounds, overlay icons and effect icons updated. 
-*Death touch overlay icon and tooltip updated
-*Entrall skill icon fixed, overlay icon updated 
-*Entice requires staff, overlay icon and tooltip updated
-*Evasion fixed, overlay icon updated 
-*Firefield damaged reduced, fixed disabled icon, sounds fixed, updated tool tip and description to mention staff requirement and damage values.
-*Guided Steps sound, overlay icon and effect icon updated
-*Hold the line sound, overlay icon and effect icons updated
-*Magic missile overlay icon fixed
-*Miasma overlay icon fixed
-*Push forward sound, overlay icon and effect icon updated 
-*Revolt overlay icon fixed
-*Rust overlay icon fixed
-*Siphon sound, description and overlay icon updated
-*summon zombies, cat and skeletons all have overlay icons updated
-*stun overlay icon updated
-*fixes missing icon errors for rabble, cat and orc elites
-*fixes missing inventory icon for limb lopper
-*Adds max resource perks: Ammo binding, Ammo bundles, efficient packing, med ingredients, med packages, skillful stacking, tools drawers, tools spares 
-*Adds Trader commander start with barter and bribe perks 
-*Adds recruitable donkeys with perks for increasing max stash, ammo, meds and armor parts 
-*fixes icon on sleep perk 
-
-
-
--Battlesite brush images added (can be called from their exact names)
--legendary locations brush images added (can be called by their name preceded by "legend_"
--player figure brush images added (can be called by their exact name)
--Inventory tool icons added for two carts, donkey and tent to allow creation of items for each. 
-
-
-Adds specialisation skills for butcher's cleaver, hammer, knife, lute, militia spear, pickaxe, pitchfork, shortbow, shovel and woodaxe. 
-Creates wizard tower and event
-Creates chain hook skill, adds to the chain, adds to the ai hook ability and changes optimum engage range for orc young. 
-Makes staff apply daze instead of stun, staff bash and staff knockout skills use staff mastery
-Increases caravan and camp speed to encourage those playstyles
-Ties caravan and item delivery contracts to barter modifier (needs testing, may be OP)
-Removes excess student perks from trees
-Makes donkeys hungry
-Adds, Mark Target,  Big Game Hunter, Second Wind skills
-Adds Danger Pay, Field Repairs and Field Triage skills
-Adds Legendary Difficulty options
-Fixes missing icons for slings
-Adds icons for mark target
-Fixes icon for shortbow specialisation
-Adds specialisations for sickle and sling 
-Adds the new skills into perk defs and strings 
-Adds Nun, Nun robes and nun habit - she helps heal and spawns near wineries, beekeepers, breweries and herbalist groves
-Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and spawns near herbalist groves, gatherers huts and mushroom groves  
-Adds Taxidermist and taxidermist apron - reduces med usage, spawns near trappers, tanners and pig farms
-Adds Ranger armor 
-Adds traveler's pack, accessory that lets you gain more stash space.
-Adds trader world icon
-Player world figurine changes based on start 
-fixes some female backgrounds occassionally showing up to hire naked
-fixes daze sound crash
-fixes nun's habit 
-adds cannibal recruitment images
-fixes order of specialist skills
-makes nuns women
-makes cat female 
-fixes errors in perks 
-makes commanders loyal so they don't abandon themselves
-reworks the specialist skills to stop errors
-gives lutes bash
-makes resource perks and backpack work, fixes icons
-fixes zombies rising without heads
-fixes limb lopper being double grippable
-fixes infinite training bug for backliners 
-Buffed steadfast to remove all fatigue on hit, not just reduce the fatigue multiplier on hit
-Makes spiders not inflict poison on characters who are poison immune 
-Stops recruitment over 27 bros which results in errors 
-*Add blueprint for a small and large carry pack (+3, +10 stash size when equipped. Requies cloth,silk and cloth,silk,unhold hide)
 Camp Documentation:
 
 *Repair Tent*
@@ -301,3 +216,135 @@ Camp Documentation:
 	-Once a piece of equipment reaches 0 durability, it is destroyed.
 	-The amount of durability converted into tools per hour is based on how many people have been assigned to salvage duty (and their backgrounds also influence how much they can salvage per hour).
 	-15 points of durability equals 1 tool.
+
+
+Legendary Difficulty options
+"Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating
+"Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
+"None" starting funds setting starts you with no resources except food. 
+ 
+Donkeys and backpacks:
+Recruitable beasts of burden that can massively increase your stash size, but they are very hungry and must be protected in battle.  With their own perk trees to increase carrying capacity and defenses. 
+Backpacks can be bought in most towns or crafted in your camp. 
+
+Trader commander:
+Begins with 20% barter bonus that can be upgraded through perks. 
+Begins with a donkey and skills that increase carrying capacity to allow for large trading missions
+Bribe skill allows you to pay human opponents to make them flee from battle. 
+Danger Pay skill lets you pay your mercenaries more to raise their morale in battle. 
+Barter bonus now effects pay scaling of caravan and delivery contracts 
+
+
+Seer: 
+*Max party size 22
+*Daze sounds, overlay icons and effect icons updated. fixes sound crash
+*Magic missile overlay icon fixed
+*Firefield damaged reduced, fixed disabled icon, sounds fixed, updated tool tip and description to mention staff requirement and damage values.
+*Entice requires staff, overlay icon and tooltip updated
+*stun overlay icon updated
+*Revolt overlay icon fixed
+*Chain lightning skill icon and overlay icons updated
+*Cat bite damage nerfed, cat overlay icon updated, cat icon errors fixed
+*Sleep perk icon fixed 
+
+Warlock:
+*Max party size 18, not including summons
+*Gains med ingredients and med packages
+*Death touch overlay icon and tooltip updated
+*Entrall skill icon fixed, overlay icon updated 
+*Miasma overlay icon fixed
+*Rust overlay icon fixed
+*Siphon sound, description and overlay icon updated
+*summon zombies, cat and skeletons all have overlay icons updated
+
+Ranger: 
+Max party size 24
+Gains ranger armor 
+Gains Mark Target,  Big Game Hunter, Second Wind, ammunition binding and ammunition bundles
+*Guided Steps sound, overlay icon and effect icon updated
+*Tripleshot sounds, skill icons and overlay icons updated
+*Coordinated volleys sound, overlay icon and effect icon updated
+*Evasion fixed, overlay icon updated 
+
+
+Noble: 
+max party size 27
+Each starting companion has weapon specific perks
+Gains efficient packing, convincing barter, bribe, true believer, student and crippling strikes 
+*Push forward sound, overlay icon and effect icon updated 
+*Hold the line sound, overlay icon and effect icons updated
+
+Berserker: 
+max party size 16 
+Gains second wind
+Poison immunity fixed to work vs spiders 
+Steadfast buffed to remove all fatigue on damage, not just multiplier
+
+Crusader
+max party size 20
+Gains second wind 
+gains tools drawers and tools spares
+
+
+
+New recruitable backgrounds: 
+Adds Nun, Nun robes and nun habit - she helps heal and spawns near wineries, beekeepers, breweries and herbalist groves
+Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and spawns near herbalist groves, gatherer's huts and mushroom groves  
+Adds Taxidermist and taxidermist apron - reduces med usage, helps with camp crafting, spawns near trappers, tanners and pig farms
+
+
+Changes for recruitable backgrounds:
+Peddlers have lower initial barter bonus but can unlock perks to increase their barter skill
+Militia gain perks to increase effectiveness with milita spears 
+Minstrels and troubadours gain skill to cast entice and deal more damage while wielding a lute. lute durability buffed, gains bash. 
+Blacksmiths and ironmongers gain perks to increase effectiveness with blacksmith's hammer, big bonuses to craft, scrap and repair in camp.
+Farmhands gain perks for pitchforks, increase stash capacity 
+Gravediggers and graverobbers gain perks for shovels, 
+Lumberjacks gain perks for wood axes
+thieves and pickpockets gain perks for knives
+Poachers gain perks for shortbows 
+Miners gain perks for pickaxes
+Butchers and fishwives gain perks for butcher's cleavers and can carry more medicine 
+Servants, Maids, eunechs, widows, cripplies and flagelants all help heal slightly, though far less than monks and nuns.
+Servants, maids and eunuchs help repair very slightly 
+Tailors and seamstresses can carry more armor parts, help craft and scrap in camp and help with repairs, though not as much as ironmongers, blacksmiths and inventors.  
+Brawlers initiative buffed now that hand to hand scales off initiative, can carry more 
+daytaler and peddler stash capcity at 10
+Mason, miner, inventor and lumberjack stash capacity increased to 5
+Daytaler, washerwoman, milkmaids, refugee, fisherman, thief, vagabond, shepard, servant, maid, eunech all increased stash capacity to 3
+
+
+Other changes: 
+Player world figurine changes based on commander
+Increases caravan and camp speed to encourage those playstyles
+Increases crises phase length to ~50 days
+Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
+increases late game difficulty scaling, reduces early game (even more)
+
+Bug fixes:
+Hexen won't use charm if there is one opponent 
+Creates chain hook skill, adds to the chain, i hook ability and changes optimum engage range for orc young. 
+Fixes AI not using staff
+Fixes missing icons for slings, aimed rock and aimed pebble overlay icon, tooltip and sounds updated
+fixes some female backgrounds occassionally showing up to hire naked
+fixes missing cannibal event iamges 
+fixes zombies rising without heads
+fixes limb lopper being double grippable and having missing icon 
+fixes infinite training bug for backliners 
+Makes spiders not inflict poison on characters who are poison immune 
+Stops recruitment over 27 bros which results in errors 
+fixes missing icon errors for rabble, cat and orc elites
+fixes missing inventory icon for limb lopper
+Berserker can no longer be converted into a cultist 
+Maskes all commanders loyal so they don't abandon themselves
+*Fixes formations mod stash size exploit
+*Fixes Food tooltip showing double consumption rate
+
+
+In progress: 
+*Adds Orc Behemoth (broken)
+*Battlesite icons added but not implemented
+*Legendary locations designed but not implemented
+*Camp tent functionality not complete, new designs in progress. 
+
+	
