@@ -67,6 +67,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Inspire,
 		gt.Const.Perks.PerkDefs.LegendRelax,
+		gt.Const.Perks.PerkDefs.PreparedForAnything,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],

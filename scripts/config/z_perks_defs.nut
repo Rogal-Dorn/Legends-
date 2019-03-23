@@ -1469,7 +1469,47 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, based on the Vala\'s Resolve and up to a maximum of 50%.\n\nThis perk does nothing unless the Vala has the Warden perk.",
 		Icon = "ui/perks/legend_vala_spiritual_bond.png",
 		IconDisabled = "ui/perks/legend_vala_spiritual_bond_sw.png"
-	}	
+	},
+	{
+		ID = "perk.legend_prepared_for_anything",
+		Script = "scripts/skills/perks/legend_prepared_for_anything",
+		Name = this.Const.Strings.PerkName.LegendPreparedForAnything,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPreparedForAnything,
+		Icon = "ui/perks/perk_20.png",
+		IconDisabled = "ui/perks/perk_20_sw.png"
+	},
+	{
+		ID = "perk.legend_brink_of_death",
+		Script = "scripts/skills/perks/legend_brink_of_death",
+		Name = this.Const.Strings.PerkName.LegendBrinkOfDeath,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBrinkOfDeath,
+		Icon = "ui/perks/perk_04.png",
+		IconDisabled = "ui/perks/perk_04_sw.png"
+	},
+	{
+		ID = "perk.legend_strict_sermons",
+		Script = "scripts/skills/perks/legend_strict_sermons",
+		Name = this.Const.Strings.PerkName.LegendStrictSermons,
+		Tooltip = this.Const.Strings.PerkDescription.LegendStrictSermons,
+		Icon = "ui/perks/perk_08.png",
+		IconDisabled = "ui/perks/perk_08_sw.png"
+	},
+	{
+		ID = "perk.legend_infectious_rage",
+		Script = "scripts/skills/perks/legend_infectious_rage",
+		Name = this.Const.Strings.PerkName.LegendInfectiousRage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendInfectiousRage,
+		Icon = "ui/perks/perk_35.png",
+		IconDisabled = "ui/perks/perk_35_sw.png"
+	},
+	{
+		ID = "perk.legend_teacher",
+		Script = "scripts/skills/perks/legend_teacher",
+		Name = this.Const.Strings.PerkName.LegendTeacher,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTeacher,
+		Icon = "ui/perks/perk_21.png",
+		IconDisabled = "ui/perks/perk_21_sw.png"
+	}				
 ];
 
 
@@ -1656,5 +1696,10 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaChantMastery = 179,
 	LegendValaTranceMastery = 180,
 	LegendValaChantDisharmony = 181,
-	LegendValaSpiritualBond = 182
+	LegendValaSpiritualBond = 182,
+	LegendPreparedForAnything = 183,
+	LegendBrinkOfDeath = 184,
+	LegendStrictSermons = 185,
+	LegendInfectiousRage = 186,
+	LegendTeacher = 188
 };

@@ -1179,7 +1179,12 @@ gt.Const.Strings.PerkName <- {
 	LegendMarkTarget = "Mark Target",
 	LegendFieldTriage = "Field Triage",
 	LegendFieldRepairs = "Field Repairs",
-	LegendDangerPay = "Danger Pay"
+	LegendDangerPay = "Danger Pay",
+	LegendPreparedForAnything = "Prepare For Anything",
+	LegendBrinkOfDeath = "Brink of Death",
+	LegendStrictSermons = "Strict Sermons",
+	LegendInfectiousRage = "InfectiousRage",
+	LegendTeacher = "Teacher"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1379,7 +1384,12 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by 20",
 	LegendFieldTriage = "Spend medicine to heal a unit on the battlefield",
 	LegendFieldRepairs = "Spend armor parts to repair armor on the battlefield",
-	LegendDangerPay = "Spend 10 times a units daily wage to set them at confident morale"
+	LegendDangerPay = "Spend 10 times a units daily wage to set them at confident morale",
+	LegendPreparedForAnything = "Instruct your mercenaries how to secret additional supplies about their person during battle, granting the \'Bags and Belts\' perk to anyone you fight with.",
+	LegendBrinkOfDeath = "Use your knowledge of undeath to keep your mercenaries fighting at the brink of death, granting the \'Nine Lives\' perk to anyone you fight with.",
+	LegendStrictSermons = "Endlessly repeating the lessons of the old gods to your mercenaries will imbue them with faith in the heat of battle. Grants the \'Fortified Mind\' perk to anyone you fight with.",
+	LegendInfectiousRage = "The frenzy of the berserker rage is aided with clouds of herbs and ritual dances. These can be spread to your allies granting the \'Berserk\' perk to anyone you fight with.",
+	LegendTeacher = "The technqiues you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -3,8 +3,8 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_nightvision";
-		this.m.Name = "Night Vision";
-		this.m.Description = "Use your superior vision to pick out enemies in the dark";
+		this.m.Name = "Nightvision";
+		this.m.Description = "Use your superior vision to pick out enemies in the dark and point them out to your mercenaries";
 		this.m.Icon = "skills/nightvision_square.png";
 		this.m.IconDisabled = "skills/nightvision_square_bw.png";
 		this.m.Overlay = "nightvision_square";
@@ -14,85 +14,73 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/shaman_skill_nightvision_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
-		this.m.Delay = 0;
+		this.m.Order = this.Const.SkillOrder.BeforeLast;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
-		this.m.IsTargeted = true;
+		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.IsRanged = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.IsShowingProjectile = false;
-		this.m.IsUsingHitchance = false;
-		this.m.IsDoingForwardMove = false;
-		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 5;
-		this.m.MaxLevelDifference = 8;
+		this.m.FatigueCost = 20;
+		this.m.MinRange = 0;
+		this.m.MaxRange = 0;
 	}
 
-	function isViableTarget( _user, _target )
+	function getTooltip()
 	{
-		if (!_target.isAlliedWith(_user))
-		{
-			return false;
-		}
-
-		if (!_target.getCurrentProperties().IsAffectedByNight || !_target.getSkills().hasSkill("special.night"))
-		{
-			return false;
-		}
-
-		return true;
+		local p = this.getContainer().getActor().getCurrentProperties();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text =  "Removes night penalties from all allies within [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
+			}
+		];
 	}
 
-	function onUse( _user, _targetTile )
+
+function onUse( _user, _targetTile )
 	{
-		local targets = [];
+		local myTile = _user.getTile();
+		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
 
-		if (_targetTile.IsOccupiedByActor)
+		foreach( a in actors )
 		{
-			local entity = _targetTile.getEntity();
-
-			if (this.isViableTarget(_user, entity))
+			if (a.getID() == _user.getID())
 			{
-				targets.push(entity);
+				continue;
 			}
-		}
 
-		for( local i = 0; i < 6; i = ++i )
-		{
-			if (!_targetTile.hasNextTile(i))
+			if (myTile.getDistanceTo(a.getTile()) > 2)
 			{
+				continue;
 			}
-			else
+			
+			if (a.getFaction() == _user.getFaction())
 			{
-				local adjacent = _targetTile.getNextTile(i);
-
-				if (adjacent.IsOccupiedByActor)
+			if (!_target.getCurrentProperties().IsAffectedByNight || !_target.getSkills().hasSkill("special.night"))
 				{
-					local entity = adjacent.getEntity();
-
-					if (this.isViableTarget(_user, entity))
-					{
-						targets.push(entity);
-					}
-				}
+				this.spawnIcon("status_effect_98", target.getTile());
+				target.getSkills().removeByID("special.night");
+				{
 			}
-		}
-
-		foreach( target in targets )
-		{
-			this.spawnIcon("status_effect_98", target.getTile());
-			target.getSkills().removeByID("special.night");
-		}
-
-		if (!_user.isHiddenToPlayer())
-		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " casts Grant Night Vision");
 		}
 
 		return true;

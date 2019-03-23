@@ -79,6 +79,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.LegendBerserkerRage,
+		gt.Const.Perks.PerkDefs.LegendInfectiousRage,
 		gt.Const.Perks.PerkDefs.LegendUberNimble
 	],
 	[],

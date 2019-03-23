@@ -67,6 +67,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.BattleFlow,
+		gt.Const.Perks.PerkDefs.LegendStrictSermons,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],

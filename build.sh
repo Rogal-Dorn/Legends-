@@ -20,7 +20,13 @@ while read -r line; do
     elif [ "$line" == "scripts/entity/tactical/actor.nut" ]; then
         echo "skipping $line"
     elif [ "$line" == "scripts/entity/tactical/tactical_entity_manager.nut" ]; then
-        echo "skipping $line"                           
+        echo "skipping $line" 
+    elif [ "$line" == "scripts/ai/tactical/behaviours/ai_attack_default.nut" ]; then
+        echo "skipping $line" 
+    elif [ "$line" == "scripts/ai/tactical/behaviours/ai_attack_knock_out.nut" ]; then
+        echo "skipping $line"     		
+    elif [ "$line" == "scripts/ai/tactical/behaviours/ai_hook.nut" ]; then
+        echo "skipping $line"     
     else
         echo "$line"
         path=$( echo ${line%/*} )
