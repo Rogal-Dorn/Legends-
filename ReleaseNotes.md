@@ -195,6 +195,10 @@ Beta 0.9.5
 Beta 0.10
 
 Camp Documentation:
+*Repair Tent*
+	-
+	
+
 
 *Repair Tent*
 	-Repairs can now only happen while encamped.
@@ -237,6 +241,7 @@ Barter bonus now effects pay scaling of caravan and delivery contracts
 
 Seer: 
 *Max party size 22
+*Gains Teacher perk that grants students to all allies
 *Daze sounds, overlay icons and effect icons updated. fixes sound crash
 *Magic missile overlay icon fixed
 *Firefield damaged reduced, fixed disabled icon, sounds fixed, updated tool tip and description to mention staff requirement and damage values.
@@ -249,7 +254,8 @@ Seer:
 
 Warlock:
 *Max party size 18, not including summons
-*Gains med ingredients and med packages
+*Gains Brink of Death perk that grants nine lives to all allies
+*Gains medical ingredients, medical packages to icnrease medical supply carrying capacity
 *Death touch overlay icon and tooltip updated
 *Entrall skill icon fixed, overlay icon updated 
 *Miasma overlay icon fixed
@@ -259,8 +265,9 @@ Warlock:
 
 Ranger: 
 Max party size 24
-Gains ranger armor 
-Gains Mark Target,  Big Game Hunter, Second Wind, ammunition binding and ammunition bundles
+Gains ranger armor
+Gains Mark Target, Big Game Hunter, Second Wind, ammunition binding and ammunition bundles
+*Nightvision changed to 2 tile radius around self
 *Guided Steps sound, overlay icon and effect icon updated
 *Tripleshot sounds, skill icons and overlay icons updated
 *Coordinated volleys sound, overlay icon and effect icon updated
@@ -270,13 +277,14 @@ Gains Mark Target,  Big Game Hunter, Second Wind, ammunition binding and ammunit
 Noble: 
 max party size 27
 Each starting companion has weapon specific perks
-Gains efficient packing, convincing barter, bribe, true believer, student and crippling strikes 
+Gains Prepared for Anything, Efficient Packing, Convincing Barter, Bribe, True believer, Student and Crippling strikes 
 *Push forward sound, overlay icon and effect icon updated 
 *Hold the line sound, overlay icon and effect icons updated
 
 Berserker: 
 max party size 16 
-Gains second wind
+Gains Infectious Rage that grants Berserker perk to all allies
+Gains second wind, regaining half fatigue at 1/3rd health. 
 Poison immunity fixed to work vs spiders 
 Steadfast buffed to remove all fatigue on damage, not just multiplier
 
@@ -326,6 +334,7 @@ Bug fixes:
 Hexen won't use charm if there is one opponent 
 Creates chain hook skill, adds to the chain, i hook ability and changes optimum engage range for orc young. 
 Fixes AI not using staff
+Fixes a game freeze when AI couldn't make up its mind
 Fixes missing icons for slings, aimed rock and aimed pebble overlay icon, tooltip and sounds updated
 fixes some female backgrounds occassionally showing up to hire naked
 fixes missing cannibal event iamges 
