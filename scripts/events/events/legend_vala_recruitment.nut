@@ -82,6 +82,10 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			{
 				return;
 			}
+			if (bro.getBackground().getID() == "background.legend_commander_vala")
+			{
+				return;
+			}
 			if (bro.getBackground().getID() == "background.legend_commander_witch")
 			{
 				return;
@@ -100,7 +104,8 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 
 		this.m.Town = town;
-		this.m.Score = 20 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
+//		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
+		this.m.Score = 0;
 	}
 
 	function onPrepare()
