@@ -13,7 +13,6 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.LegendSummonCat,
 		gt.Const.Perks.PerkDefs.LegendDaze,
-		gt.Const.Perks.PerkDefs.VazlInscribeWeapon,
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
@@ -22,7 +21,6 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.Bullseye,
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendStun,
-		gt.Const.Perks.PerkDefs.VazlInscribeHelmet,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
@@ -31,14 +29,12 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.LegendHorrify,
-		gt.Const.Perks.PerkDefs.VazlInscribeArmor,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryDagger,
 		gt.Const.Perks.PerkDefs.MasteryThrowing,
 		gt.Const.Perks.PerkDefs.LegendMasteryStaves,
-		gt.Const.Perks.PerkDefs.VazlInscribeMastery,
 		gt.Const.Perks.PerkDefs.LegendEntice,
 		gt.Const.Perks.PerkDefs.LegendPush,
 		gt.Const.Perks.PerkDefs.LegendRoster4
@@ -55,6 +51,7 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.LegendRelax,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.Ballistics,
+		gt.Const.Perks.PerkDefs.LegendLevitate,
 		gt.Const.Perks.PerkDefs.LegendScry
 	],
 	[

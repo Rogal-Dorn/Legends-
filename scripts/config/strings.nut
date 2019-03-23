@@ -1187,7 +1187,8 @@ gt.Const.Strings.PerkName <- {
 	LegendTeacher = "Teacher",
 	LegendResurrectionist = "Resurrectionist",
 	LegendScry = "Scry",
-	LegendPiercingShot = "Piercing Shot"
+	LegendPiercingShot = "Piercing Shot",
+	LegendLevitate = "Levitate"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1394,7 +1395,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTeacher = "The technqiues you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with.",
 	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body from the battlefied.",
 	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
-	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line"
+	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line",
+	LegendLevitate = "Levitate above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
