@@ -1533,7 +1533,23 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendPiercingShot,
 		Icon = "ui/perks/PiercingBoltPerk.png",
 		IconDisabled = "ui/perks/PiercingBoltPerk_bw.png"
-	}		
+	},
+	{
+		ID = "perk.legend_levitate",
+		Script = "scripts/skills/perks/perk_legend_levitate",
+		Name = this.Const.Strings.PerkName.LegendLevitate,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLevitate,
+		Icon = "ui/perks/levitate.png",
+		IconDisabled = "ui/perks/levitate_bw.png"
+	},
+	{
+		ID = "perk.legend_teleport",
+		Script = "scripts/skills/perks/perk_legend_teleport",
+		Name = this.Const.Strings.PerkName.LegendTeleport,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTeleport,
+		Icon = "ui/perks/teleport.png",
+		IconDisabled = "ui/perks/teleport_bw.png"
+	}			
 ];
 
 
@@ -1728,5 +1744,7 @@ gt.Const.Perks.PerkDefs <- {
 	LegendTeacher = 187,
 	LegendResurrectionist = 188,
 	LegendScry = 189,
-	LegendPiercingShot = 190
+	LegendPiercingShot = 190,
+	LegendLevitate = 191,
+	LegendTeleport = 192
 };
