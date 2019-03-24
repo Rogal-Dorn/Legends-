@@ -286,7 +286,7 @@ CampScreenHealerDialogModule.prototype.createDIV = function (_parentDiv)
     listContainerLayout = $('<div class="l-list-container"></div>');
     detailsRow.append(listContainerLayout);
     this.mDetailsPanel.ScrollContainer = listContainerLayout.createList(1.24, 'is-injury-list', true);
-    this.mDetailsPanel.ScrollContainerList = this.mQueueContainer.findListScrollContainer();
+    this.mDetailsPanel.ScrollContainerList = this.mDetailsPanel.ScrollContainer.findListScrollContainer();
 
 	// create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');
@@ -404,10 +404,8 @@ CampScreenHealerDialogModule.prototype.assignItems = function (_owner, _items, _
         for(var i = 0; i < _items.length; ++i)
         {
             // ignore empty slots
-            console.error("assigningItemToSlot:: " + _items[i]);
             if(_items[i] !== undefined && _items[i] !== null)
             {
-                console.error("assigningItemToSlot")
                 this.assignItemToSlot(_owner, _itemArray[i], _items[i]);
             }
         }
@@ -672,7 +670,8 @@ CampScreenHealerDialogModule.prototype.createInjuryControlDIV = function (_i, _p
 {
 	var self = this;
 
-	var row = $('<div class="is-injury-row display-block"/>');
+    var row = $('<div class="is-injury-row display-block"/>');
+    row.css({ 'top': ((7.5*_i) + 'rem') });
 	_parentDiv.append(row);
 
 	var icon = $('<img class="is-icon"/>');
@@ -687,18 +686,23 @@ CampScreenHealerDialogModule.prototype.createInjuryControlDIV = function (_i, _p
 	row.append(layout);
 
     var price;
-	if (!_data.queued)
+	if (_data.treatable)
 		price = $('<div class="is-price"><div class="is-price-ffs font-color-assets-negative-value"><img src="' + Path.GFX + Asset.ICON_ASSET_MEDICINE + '"/> ' + Helper.numberWithCommas(_data.price) + '</div></div>');
 	else
 		price = $('<div class="is-price"><div class="is-price-ffs"><img src="' + Path.GFX + Asset.ICON_ASSET_MEDICINE + '"/> ' + Helper.numberWithCommas(_data.price) + '</div></div>');
 
 	var button = layout.createCustomButton(price, function ()
 	{
-		self.notifyBackendTreatInjury(_entityID, _data.id, null);
+        self.notifyBackendTreatInjury(_entityID, _data.id, function(res)
+        {
+            console.error("INJURY ADD RESPONSE " + res + button);
+            button.attr('disabled', 'disabled');
+            //button.enableButton(true);
+        });
 	}, '', 1);
 
-	// if (_data.queued)
-	// 	button.enableButton(false);
+	if (!_data.treatable)
+		button.enableButton(false);
 };
 
 CampScreenHealerDialogModule.prototype.bindTooltips = function ()
@@ -872,7 +876,6 @@ CampScreenHealerDialogModule.prototype.loadFromData = function (_data)
 
 	if('Queue' in _data && _data.Queue !== null)
 	{
-        console.error("Loading QUEUE" + _data.Queue)
 		this.loadQueueData(_data.Queue);
     }
 

@@ -29,6 +29,11 @@
 				continue;
 			}
 
+			if (_properties.IsPlayerInitiated && p.isInReserves())
+			{
+				continue;
+			}
+
 			players.push(p);
 			local items = p.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
 
