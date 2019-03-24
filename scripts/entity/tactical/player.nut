@@ -802,6 +802,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	function isInReserves()
+	{
+		return this.CampAssignment == this.Const.World.CampBuildings.Healer
+	}
+
 	function create()
 	{
 		this.m.IsControlledByPlayer = true;

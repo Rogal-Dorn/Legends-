@@ -29,7 +29,7 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
-		gt.Const.Perks.PerkDefs.Backstabber,
+		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
