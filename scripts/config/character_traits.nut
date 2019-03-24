@@ -193,6 +193,10 @@ gt.Const.CharacterTraits <- [
 		"scripts/skills/traits/paranoid_trait"
 	],
 	[
+		"trait.hate_nobles",
+		"scripts/skills/traits/hate_nobles_trait"
+	],
+	[
 		"trait.hate_greenskins",
 		"scripts/skills/traits/hate_greenskins_trait"
 	],
@@ -207,6 +211,10 @@ gt.Const.CharacterTraits <- [
 	[
 		"trait.fear_beasts",
 		"scripts/skills/traits/fear_beasts_trait"
+	],
+	[
+		"trait.fear_nobles",
+		"scripts/skills/traits/fear_nobles_trait"
 	],
 	[
 		"trait.fear_undead",

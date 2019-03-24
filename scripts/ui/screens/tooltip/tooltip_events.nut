@@ -637,7 +637,9 @@ this.tooltip_events <- {
 			}
 
 			break;
-
+		
+		case "camp-screen-repair-dialog-module.stash":
+		case "camp-screen-workshop-dialog-module.stash":
 		case "world-town-screen-shop-dialog-module.stash":
 			tooltip.push({
 				id = 1,
@@ -674,6 +676,8 @@ this.tooltip_events <- {
 
 			break;
 
+		case "camp-screen-repair-dialog-module.shop":
+		case "camp-screen-workshop-dialog-module.shop":
 		case "world-town-screen-shop-dialog-module.shop":
 			if (this.Stash.hasEmptySlot())
 			{

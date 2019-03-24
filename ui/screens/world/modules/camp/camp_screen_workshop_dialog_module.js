@@ -46,10 +46,6 @@ var CampScreenWorkshopDialogModule = function(_parent)
     // buttons
     this.mLeaveButton = null;
 
-    // stash labels
-    this.mStashSlotSizeContainer = null;
-    this.mStashSlotSizeLabel = null;
-
     this.mStashSpaceUsed = 0;
     this.mStashSpaceMax = 0;
 
@@ -389,12 +385,6 @@ CampScreenWorkshopDialogModule.prototype.destroyDIV = function ()
     this.mStashSlots = null;
     this.mShopSlots = null;
 
-    this.mStashSlotSizeLabel.remove();
-    this.mStashSlotSizeLabel = null;
-    this.mStashSlotSizeContainer.empty();
-    this.mStashSlotSizeContainer.remove();
-    this.mStashSlotSizeContainer = null;
-
     this.mStashListContainer.destroyList();
     this.mStashListScrollContainer = null;
     this.mStashListContainer = null;
@@ -706,7 +696,7 @@ CampScreenWorkshopDialogModule.prototype.loadStashData = function (_data, _capac
     var arrayRef = { val: this.mStashSlots };
     var containerRef = { val: this.mStashListScrollContainer };
 
-    this.assignItems('world-town-screen-shop-dialog-module.stash', _data, _capacity, arrayRef.val, containerRef.val);
+    this.assignItems(WorkshopScreenShop.ItemOwner.Stash, _data, _capacity, arrayRef.val, containerRef.val);
 };
 
 CampScreenWorkshopDialogModule.prototype.loadShopData = function (_data, _capacity)
@@ -727,7 +717,7 @@ CampScreenWorkshopDialogModule.prototype.loadShopData = function (_data, _capaci
     var arrayRef = { val: this.mShopSlots };
     var containerRef = { val: this.mShopListScrollContainer };
 
-    this.assignItems('world-town-screen-shop-dialog-module.shop', _data, _capacity, arrayRef.val, containerRef.val);
+    this.assignItems(WorkshopScreenShop.ItemOwner.Shop, _data, _capacity, arrayRef.val, containerRef.val);
 };
 
 CampScreenWorkshopDialogModule.prototype.querySlotByIndex = function(_itemArray, _index)

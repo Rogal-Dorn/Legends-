@@ -42,6 +42,11 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		this.m.IsTreated = _f;
 	}
 
+	function setTreatable( _f )
+	{
+		this.m.IsTreatable = _f;
+	}
+
 	function setOutOfCombat( _f )
 	{
 		this.m.IsShownOutOfCombat = _f;
@@ -55,6 +60,11 @@ this.injury <- this.inherit("scripts/skills/skill", {
 	function getName()
 	{
 		return this.m.IsTreated ? this.m.Name + " (Treated)" : this.m.Name;
+	}
+
+	function getCost()
+	{
+		return this.m.HealingTimeMax + this.m.HealingTimeMin;
 	}
 
 	function getPrice()
@@ -314,6 +324,7 @@ this.injury <- this.inherit("scripts/skills/skill", {
 	{
 		_out.writeF32(this.m.TimeApplied);
 		_out.writeBool(this.m.IsTreated);
+		_out.writeBool(this.m.IsTreatable);
 		_out.writeBool(false);
 	}
 
@@ -323,6 +334,10 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		this.m.IsShownOutOfCombat = true;
 		this.m.TimeApplied = _in.readF32();
 		this.m.IsTreated = _in.readBool();
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.Treatable = _in.readBool();
+		}		
 		_in.readBool();
 	}
 

@@ -15,12 +15,6 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.m.CanEnter = false
     }
 
-
-	function destroy()
-	{
-		this.ui_module.destroy();
-	}
-
     function init()
     {
         local roster = this.World.getPlayerRoster().getAll();

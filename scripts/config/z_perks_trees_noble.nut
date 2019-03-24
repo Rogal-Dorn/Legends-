@@ -8,6 +8,7 @@ if (!("Perks" in gt.Const))
 local NobleTree = [
 	[
 		gt.Const.Perks.PerkDefs.Adrenalin,
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -24,6 +25,7 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.Sprint,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
@@ -54,6 +56,8 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
+		gt.Const.Perks.PerkDefs.Berserk,
+		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.BattleForged,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
