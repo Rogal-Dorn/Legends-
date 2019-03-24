@@ -72,6 +72,7 @@ this.camp_healer_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	{
 		this.m.Tent.onAdd( _data[0], _data[1] );
 		this.loadQueueList();
+		return true;
 	}
 
 	function onLeaveButtonPressed()

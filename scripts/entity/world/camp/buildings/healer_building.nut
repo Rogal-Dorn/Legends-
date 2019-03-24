@@ -76,7 +76,6 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     function onInit()
     {
 		local q = [];
-		this.m.QueueMap = {};
 		for (local i = 0; i < this.m.Queue.len(); i = ++i)
 		{
 			if (this.m.Queue[i] == null)
@@ -104,8 +103,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			res.push({
 		 		id = id,
-		 		icon = "ui/items/" + b.getIcon(),
-		 		text = "Treated injury" + b.getName()
+		 		icon = "" + b.getIcon(),
+		 		text = b.getName()
 			})
 			++id;
 		}
@@ -236,7 +235,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 						icon = inj.getIconColored(),
 						name = inj.getNameOnly(),
 						price = inj.getCost(),
-						queued = inj.isTreatable()
+						treatable = inj.isTreatable()
 					});
 				}
 			}
