@@ -274,7 +274,8 @@ Gains Mark Target, Piercing Shot, Big Game Hunter, Second Wind, ammunition bindi
 Noble: 
 max party size 27
 Each starting companion has weapon specific perks
-Gains Prepared for Anything, Efficient Packing, Convincing Barter, Bribe, True believer, Student and Crippling strikes 
+Gains noble killer trait
+Gains Prepared for Anything, Efficient Packing, Convincing Barter, Bribe, True believer, Backstabber, Sprint, Student, Berserk, Headhunter and Crippling strikes 
 *Push forward sound, overlay icon and effect icon updated 
 *Hold the line sound, overlay icon and effect icons updated
 
@@ -287,8 +288,9 @@ Steadfast buffed to remove all fatigue on damage, not just multiplier
 
 Crusader:
 max party size 20
-Gains second wind 
 Gains Strict Sermons perk that grants Fortified mind to all allies in battle
+Gains undead killer trait
+Gains second wind, last stand, reach advantage, overwhelm, throwing mastery, quick hands, crippling strikes, pathfinder and bags and belts
 gains tools drawers and tools spares perks
 
 
