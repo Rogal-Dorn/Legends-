@@ -11,9 +11,6 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
-			"trait.hate_greenskins",
-			"trait.hate_beasts",
-			"trait.hate_undead",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.swift",
@@ -129,8 +126,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				-5
 			],
 			MeleeDefense = [
-				15,
-				15
+				20,
+				20
 			],
 			RangedDefense = [
 				-5,
@@ -150,6 +147,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		local actor = this.getContainer().getActor();
 		actor.setTitle("the Crusader");
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rebound"));
 	}
 
