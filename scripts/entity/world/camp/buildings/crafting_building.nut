@@ -15,7 +15,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.UIImageNight = "ui/settlements/taxidermist_night_empty";
 		this.m.UIImageFull = "ui/settlements/taxidermist_day_full";
 		this.m.UIImageNightFull = "ui/settlements/taxidermist_night_full";
-this.m.Sounds = [
+		this.m.Sounds = [
 			{
 				File = "ambience/camp/camp_taxidermist_01.wav",
 				Volume = 1.0,
@@ -307,7 +307,7 @@ this.m.Sounds = [
 		for( local i = 0; i < num; i = ++i )
 		{
 			this.m.Queue.push({
-				Blueprint = this.getBlueprint(_in.readString()),
+				Blueprint =  this.World.Crafting.getBlueprint(_in.readString()),
 				Points = _in.readF32(),
 			})
 		}

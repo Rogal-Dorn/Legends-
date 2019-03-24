@@ -88,8 +88,8 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				5
 			],
 			RangedDefense = [
-				-5,
-				-5
+				0,
+				0
 			],
 			Initiative = [
 				0,
@@ -103,7 +103,11 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-			this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		this.m.Container.add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_3"));
 	}
 
 	function onAddEquipment()
