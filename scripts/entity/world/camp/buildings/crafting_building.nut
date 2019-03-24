@@ -307,7 +307,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		for( local i = 0; i < num; i = ++i )
 		{
 			this.m.Queue.push({
-				Blueprint = this.getBlueprint(_in.readString()),
+				Blueprint =  this.World.Crafting.getBlueprint(_in.readString()),
 				Points = _in.readF32(),
 			})
 		}

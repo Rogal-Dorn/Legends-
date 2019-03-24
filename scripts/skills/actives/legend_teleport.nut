@@ -1,4 +1,4 @@
-this.legend_teleport<- this.inherit("scripts/skills/skill", {
+this.legend_teleport <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -44,6 +44,7 @@ this.legend_teleport<- this.inherit("scripts/skills/skill", {
 
 		return true;
 	}
+
 
 	function onUse( _user, _targetTile )
 	{
