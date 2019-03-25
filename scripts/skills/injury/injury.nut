@@ -108,7 +108,7 @@ this.injury <- this.inherit("scripts/skills/skill", {
 
 	function getTreatedPercentage()
 	{
- 		return this.m.Points / this.getCost()
+ 		return this.m.Points / this.getCost();
 	}
 
 	function create()
@@ -262,8 +262,8 @@ this.injury <- this.inherit("scripts/skills/skill", {
 
 			local time = this.getTime();
 			local daysPassed = this.Math.ceil((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay);
-			local minTime = this.m.HealingTimeMin * (this.m.IsTreated ? 0.5 : 1.0);
-			local maxTime = this.m.HealingTimeMax * (this.m.IsTreated ? 0.5 : 1.0);
+			local minTime = this.m.HealingTimeMin * (this.m.IsTreated ? 0.5 : (1.0 - 0.5 * this.getTreatedPercentage()));
+			local maxTime = this.m.HealingTimeMax * (this.m.IsTreated ? 0.5 : (1.0 - 0.5 * this.getTreatedPercentage()));
 
 			if (daysPassed < minTime)
 			{
