@@ -81,7 +81,7 @@ this.camp_manager <- {
 
     function getCampTime()
     {
-        return this.m.LastCampTime - this.m.StartTime;
+        return  this.m.LastCampTime - this.m.StartTime;
     }
 
     function getCampTimeHours()

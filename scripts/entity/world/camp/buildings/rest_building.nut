@@ -27,6 +27,9 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     function completed()
     {
         local roster = this.World.getPlayerRoster().getAll();
+        // this.logInfo("** TIME SINCE LAST CAMP " + this.m.Camp.getCampTime());
+        // this.logInfo("** ELAPSED TIME = " + this.m.Camp.getElapsedTime());
+        // this.logInfo("** CAMP TIME IN HOURS " + this.m.Camp.getCampTimeHours())
 
         if (this.m.Camp.getCampTimeHours() < 4)
         {
@@ -95,7 +98,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
         {
-            if (bro.getCampAssignment() != "camp.healing")
+            if (bro.getCampAssignment() != this.m.ID)
             {
                 continue
             }
