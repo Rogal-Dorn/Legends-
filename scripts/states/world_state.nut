@@ -1205,6 +1205,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Contracts.setActiveContract(c, true);
 		this.World.setFogOfWar(!this.m.DebugMap);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
+		
+		this.World.Tags.set("IsLegendCampSupport", true);
 	}
 
 	function showIntroductionScreen( _tag = null )

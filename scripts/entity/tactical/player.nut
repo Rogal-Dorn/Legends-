@@ -143,7 +143,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyFood()
 	{
-		return this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		if (this.isInReserves())
+		{
+			food = food * 3;
+		}
+		return food;
 	}
 
 	function getBackground()
@@ -621,7 +626,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				text = this.Const.MoodStateName[this.getMoodState()]
 			});
 
-			if (this.m.PlaceInFormation <= 26)
+			if (!this.isInReserves())
 			{
 				tooltip.push({
 					id = 6,

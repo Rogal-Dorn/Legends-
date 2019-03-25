@@ -351,6 +351,7 @@ this.data_helper <- {
 		{
 			_target.levelUp = _entity.getAttributeLevelUpValues();
 		}
+		_target.inReserves <- _entity.isInReserves()
 	}
 
 	function addStatsToUIData( _entity, _target )

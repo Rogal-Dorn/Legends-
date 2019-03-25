@@ -1361,7 +1361,7 @@ this.tooltip_events <- {
 
 		case "assets.Medicine":
 			local heal = this.World.Assets.getHealingRequired();
-			local desc = "Medical supplies consist of bandages, herbs, salves and the like, and are used to heal the more severe injuries sustained by your men in battle. One point of medical supplies is required each day for every injury to improve and ultimately heal. Lost hitpoints heal on their own.\n\nRunning out of medical supplies will leave your men unable to recover from severe injuries.";
+			local desc = "Medical supplies consist of bandages, herbs, salves and the like, and are used to heal the more severe injuries sustained by your men in battle. One point of medical supplies is required each day for every injury to improve and ultimately heal. Lost hitpoints heal while encamped.\n\nRunning out of medical supplies will leave your men unable to recover from severe injuries.";
 
 			if (heal.MedicineMin > 0)
 			{
@@ -1407,9 +1407,6 @@ this.tooltip_events <- {
 
 			desc = desc + ("\n\nYou can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
 
-
-			
-			
 			local ret = [
 				{
 					id = 1,
@@ -1420,26 +1417,26 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = desc
-				},
-				{
-					id = 6,
-					type = "text",
-					icon = "ui/icons/health.png",
-					text = "Total healing modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + heal.Modifier + "%[/color]"
 				}
+				// {
+				// 	id = 6,
+				// 	type = "text",
+				// 	icon = "ui/icons/health.png",
+				// 	text = "Total healing modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + heal.Modifier + "%[/color]"
+				// }
 			];
 
 			local id = 4;
-			foreach (bro in heal.Modifiers)
-			{
-				ret.push({
-					id = id,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
-				})
-				++id;
-			}
+			// foreach (bro in heal.Modifiers)
+			// {
+			// 	ret.push({
+			// 		id = id,
+			// 		type = "text",
+			// 		icon = "ui/icons/special.png",
+			// 		text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+			// 	})
+			// 	++id;
+			// }
 			if (heal.Injuries.len() > 0) 
 			{
 				ret.push({
@@ -4370,6 +4367,97 @@ this.tooltip_events <- {
 
 		case "crafting.Time":
 			local desc = "Total number of hours required to craft all the queued items. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+
+		case "healer.Supplies":
+			local desc = "Medicine on hand to heal injuries. Medicine can be purchased in towns or can foraged for while camping ";
+
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Medicine"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "healer.Required":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Healer)
+			local desc = "Quantity of Medicine required to treat selected injuries.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Required Medicine"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "healer.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Healer)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to tent duty. The more assigned, the quicker injuries can be treated.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Assigned Brothers"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/asset_medicine.png",
+					text = "Total treatment modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Craft + " units per hour[/color]"
+				}
+			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
+
+		case "healer.Time":
+			local desc = "Total number of hours required to treat all the the selected injuries. Assign more people to this task to decrease the amout of time required. Some backgrounds are better than others!";
 
 			local ret = [
 				{

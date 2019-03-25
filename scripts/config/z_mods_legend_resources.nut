@@ -262,6 +262,41 @@ gt.Const.LegendMod.getHealingModifier <- function ( _background )
 	return 0.0;
 }
 
+//Med units / hour in the healing tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getInjuryModifier <- function ( _background )
+{
+		switch ( _background )
+	{
+
+		case "background.female_beggar":
+		case "background.cripple":
+		case "background.flagellant":
+		case "background.servant":
+		case "background.eunuch":
+		case "background.female_servant":
+			return 0.25;
+			break;
+
+		case "background.legend_witch":
+		case "background.legend_necro":
+		case "background.legend_herbalist":
+		case "background.legend_commander_witch":
+		case "background.legend_commander_necro":
+			return 0.5;
+			break;
+		case "background.monk":
+		case "background.legend_nun":
+		case "background.vazl_vala":
+			return 1.0;
+			break;
+
+		default:
+			return 0.0;
+	}
+	return 0.0;
+}
+
 gt.Const.LegendMod.getRepairModifier <- function ( _background )
 {
 	switch ( _background )

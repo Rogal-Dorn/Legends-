@@ -702,7 +702,11 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _
         result.assignListBrotherDaysWounded();
     }*/
 
-    if('moodIcon' in character)
+    if('inReserves' in character && character['inReserves'])
+    {
+    	result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+    }
+    else if('moodIcon' in character)
     {
     	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
     }

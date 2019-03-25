@@ -91,8 +91,17 @@ CharacterScreenBrothersListModule.prototype.toggleMoodVisibility = function ()
 
 	for(var i = 0; i < this.mSlots.length; ++i)
 	{
-		if(this.mSlots[i].data('child') != null)
-			this.mSlots[i].data('child').showListBrotherMoodImage(this.IsMoodVisible);
+        if(this.mSlots[i].data('child') != null)
+        {
+            if ((this.mSlots[i]).data('child').data('inReserves'))
+            {
+                this.mSlots[i].data('child').showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+            }
+            else 
+            {
+                this.mSlots[i].data('child').showListBrotherMoodImage(this.IsMoodVisible);
+            }
+        }
 	}
 
 	return this.IsMoodVisible;
@@ -175,6 +184,7 @@ CharacterScreenBrothersListModule.prototype.addBrotherSlotDIV = function (_paren
     result.attr('id', 'slot-index_' + _data[CharacterScreenIdentifier.Entity.Id]);
     result.data('ID', _data[CharacterScreenIdentifier.Entity.Id]);
     result.data('idx', _index);
+    result.data('inReserves', _data['inReserves']);
 
     this.mSlots[_index].data('child', result);
 
@@ -262,7 +272,11 @@ CharacterScreenBrothersListModule.prototype.addBrotherSlotDIV = function (_paren
         result.assignListBrotherDaysWounded();
     }*/
 
-    if('moodIcon' in character && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
+    if('inReserves' in character && character['inReserves'] && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
+    {
+    	result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+    }
+    else if('moodIcon' in character && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
     {
     	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
     }

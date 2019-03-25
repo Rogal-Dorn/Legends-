@@ -337,6 +337,14 @@ this.camp_building <- {
 		});
 	}
 
+	function onBroLeave ( _bro )
+	{
+	}
+
+	function onBroEnter ( _bro )
+	{
+	}
+
 	function onSerialize( _out )
 	{
 	}
