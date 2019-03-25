@@ -217,6 +217,24 @@ Camp Documentation:
 	-The amount of durability converted into tools per hour is based on how many people have been assigned to salvage duty (and their backgrounds also influence how much they can salvage per hour).
 	-15 points of durability equals 1 tool.
 
+*Reserves/Healing Tent*
+	-Reserve/Healing tent is where injuries can be treated and brothers can be held in reserves
+	-Injuries are still healed over time, whether encamped or not
+	-Injuries will heal quicker while encamped
+	-When bro is assigned to Reserve/Heal tent, any injury can be added to the Queue.
+	-The cost of an injuery to be treated is measured in Medicine units
+	-On average, each bro assigned to the tent contributes 1 Med unit/hour to the queue. Once Injury cost is met, the injury is treated.
+	-Injuries in the queue are treated linearly. Left to right, top to bottom.
+	-Bros assigned to the Reserve/Injury tent will not particiapate in player initiated combat. If the player is attacked, everyone is in included in the combat.
+	-All Bros in the Reserve/Heal tent consume x3 the normal amount of rations. 
+
+*Crafting Tent*
+	-Crafting tent is the taxidermist on-the-go for the company.
+	-Crafting requirements for each blueprint are the same as the taxidermist.
+	-Crafting can only happend while encamped.
+	-Each hour encamped, crafting 'units' are added to the first item in the Queue. Once the time cost is met, the item will be added to the stash.
+	-The amount of crafting each hour is based on how many people have been assigned to crafting duty (and their backgrounds also influence how much they can craft per hour).
+
 
 Legendary Difficulty options
 "Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating

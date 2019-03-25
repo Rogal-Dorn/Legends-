@@ -43,6 +43,7 @@ var CampScreenHealerDialogModule = function(_parent)
 
     // selected entry
     this.mSelectedEntry = null;
+    this.mSelectedID = null;
 };
 
 
@@ -314,7 +315,8 @@ CampScreenHealerDialogModule.prototype.destroyDIV = function ()
     this.mBrothersAsset.remove();
     this.mBrothersAsset = null;
 
-	this.mSelectedEntry = null;
+    this.mSelectedEntry = null;
+    this.mSelectedID = null;
 
     this.mQueueContainer.destroyList();
     this.mQueueContainer= null;
@@ -589,6 +591,7 @@ CampScreenHealerDialogModule.prototype.addListEntry = function (_data)
     	icon.bindTooltip({ contentType: 'status-effect', entityId: _data.ID, statusEffectId: _data.Injuries[i].id });
     	row.append(icon);
     }
+    return entry;
 };
 
 
@@ -622,20 +625,17 @@ CampScreenHealerDialogModule.prototype.selectListEntry = function(_element, _scr
 {
     if (_element !== null && _element.length > 0)
     {
-        // check if this is already selected
-        //if (_element.hasClass('is-selected') !== true)
-        {
-            this.mListContainer.deselectListEntries();
-            _element.addClass('is-selected');
+        this.mSelectedEntry = _element;
+        this.mListContainer.deselectListEntries();
+        _element.addClass('is-selected');
 
-            // give the renderer some time to layout his shit...
-            if (_scrollToEntry !== undefined && _scrollToEntry === true)
-            {
-                this.mListContainer.scrollListToElement(_element);
-            }
-            this.mSelectedEntry = _element;
-            this.updateDetailsPanel(this.mSelectedEntry);
+        // give the renderer some time to layout his shit...
+        if (_scrollToEntry !== undefined && _scrollToEntry === true)
+        {
+            this.mListContainer.scrollListToElement(_element);
         }
+        this.mSelectedEntry = _element;
+        this.updateDetailsPanel(this.mSelectedEntry);
     }
     else
     {
@@ -652,7 +652,7 @@ CampScreenHealerDialogModule.prototype.updateDetailsPanel = function(_element)
         var data = _element.data('entry');
         
         this.mDetailsPanel.ScrollContainerList.empty();
-        this.mDetailsPanel.CharacterName.html(data.name);
+        //this.mDetailsPanel.CharacterName.html(data.name);
         for (var i = 0; i < data.Injuries.length; ++i)
         {
             this.createInjuryControlDIV(i, this.mDetailsPanel.ScrollContainerList, data.ID, data.Injuries[i], currentMoney);
@@ -668,8 +668,7 @@ CampScreenHealerDialogModule.prototype.updateDetailsPanel = function(_element)
 
 CampScreenHealerDialogModule.prototype.createInjuryControlDIV = function (_i, _parentDiv, _entityID, _data, _money)
 {
-	var self = this;
-
+    var self = this;
     var row = $('<div class="is-injury-row display-block"/>');
     row.css({ 'top': ((7.5*_i) + 'rem') });
 	_parentDiv.append(row);
@@ -693,12 +692,7 @@ CampScreenHealerDialogModule.prototype.createInjuryControlDIV = function (_i, _p
 
 	var button = layout.createCustomButton(price, function ()
 	{
-        self.notifyBackendTreatInjury(_entityID, _data.id, function(res)
-        {
-            console.error("INJURY ADD RESPONSE " + res + button);
-            button.attr('disabled', 'disabled');
-            //button.enableButton(true);
-        });
+        self.notifyBackendTreatInjury(_entityID, _data.id, null);
 	}, '', 1);
 
 	if (!_data.treatable)
@@ -708,10 +702,10 @@ CampScreenHealerDialogModule.prototype.createInjuryControlDIV = function (_i, _p
 CampScreenHealerDialogModule.prototype.bindTooltips = function ()
 {
 
-    this.mRequiredAsset.bindTooltip({ contentType: 'ui-element', elementId: 'workshop.Required' });
-    this.mSuppliesAsset.bindTooltip({ contentType: 'ui-element', elementId: 'repairs.Supplies' });
-    this.mTimeAsset.bindTooltip({ contentType: 'ui-element', elementId:  'workshop.Time' });
-    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'workshop.Bros' });   
+    this.mRequiredAsset.bindTooltip({ contentType: 'ui-element', elementId: 'healer.Required' });
+    this.mSuppliesAsset.bindTooltip({ contentType: 'ui-element', elementId: 'healer.Supplies' });
+    this.mTimeAsset.bindTooltip({ contentType: 'ui-element', elementId:  'healer.Time' });
+    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'healer.Bros' });   
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
 };
 
@@ -882,8 +876,19 @@ CampScreenHealerDialogModule.prototype.loadFromData = function (_data)
     if ('Roster' in _data && _data.Roster !== null) 
     {
         this.mRoster = _data.Roster;
+
+        var selectedID = null;
+        if (this.mSelectedEntry !== null)
+        {
+            var data = this.mSelectedEntry.data('entry');
+            if (data)
+            {
+                selectedID = data.ID;
+            }
+        }
         this.mListScrollContainer.empty();
 
+        var selectedElement = null;
         if (_data.Roster.length != 0)
         {
             this.mNoInjuredLabel.addClass('display-none');
@@ -891,19 +896,22 @@ CampScreenHealerDialogModule.prototype.loadFromData = function (_data)
             for (var i = 0; i < _data.Roster.length; ++i)
             {
                 var entry = _data.Roster[i];
-                this.addListEntry(entry);
+                var element = this.addListEntry(entry);
+                if (entry.ID === selectedID)
+                {
+                    selectedElement = element;
+                }
             }
         }
         else
         {
             this.mNoInjuredLabel.removeClass('display-none');
         }
-        this.mSelectedEntry = this.mListContainer.findListEntryByIndex(0);
-    }
-
-    if (this.mSelectedEntry)
-    {
-        this.selectListEntry(this.mSelectedEntry, true);
+        if (selectedElement === null)
+        {
+            selectedElement = this.mListContainer.findListEntryByIndex(0) 
+        }
+        this.selectListEntry(selectedElement, true);
     }
 
 };

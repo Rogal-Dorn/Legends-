@@ -64,15 +64,16 @@ this.camp_healer_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 	function onRemove ( _idx)
 	{
-		this.m.Tent.onRemove( _idx );
-		this.loadQueueList();
+		local res = this.m.Tent.onRemove( _idx );
+		local result = this.queryLoad()
+		this.m.JSHandle.asyncCall("loadFromData", result);
 	}
 
 	function onAdd( _data )
 	{
-		this.m.Tent.onAdd( _data[0], _data[1] );
-		this.loadQueueList();
-		return true;
+		local res = this.m.Tent.onAdd( _data[0], _data[1] );
+		local result = this.queryLoad()
+		this.m.JSHandle.asyncCall("loadFromData", result);
 	}
 
 	function onLeaveButtonPressed()
