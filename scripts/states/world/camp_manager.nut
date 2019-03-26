@@ -3,7 +3,9 @@ this.camp_manager <- {
         IsCamping = false,
         LastHourUpdated = 0,
         StartTime = 0,
+        StopTime = 0,
         LastCampTime = 0,
+        lasttick = 0.0
         Tents = []
 	},
     function create()
@@ -71,27 +73,34 @@ this.camp_manager <- {
 		return this.m.IsCamping;
 	}
 
+    function getStopTime()
+    {
+        return this.m.StopTime;
+    }
+
     function getElapsedTime()
     {
         return this.Time.getVirtualTimeF() - this.m.StartTime;
-        // local h = this.Math.max(0, this.World.getTime().Days - this.m.StartDay - 1) * 24;
-        // h += (24 - this.Math.abs(this.World.getTime().Hours - this.m.StartHour));
-        // return h;
+    }
+
+    function getElapsedHours()
+    {
+        return (this.Time.getVirtualTimeF() - this.m.StartTime) / (this.World.getTime().SecondsPerDay / 24);
     }
 
     function getCampTime()
     {
-        return  this.m.LastCampTime - this.m.StartTime;
+        return  this.m.StopTime - this.m.StartTime;
     }
 
     function getCampTimeHours()
     {
-        return this.getCampTime() * this.World.getTime().SecondsPerDay * 24;
+        return this.getCampTime() / (this.World.getTime().SecondsPerDay / 24);
     }
 
-    function getLastCampTime()
+    function getHoursSinceLastCamp()
     {
-        return this.m.LastCampTime;
+        return  (this.m.LastCampTime - this.m.StartTime) / (this.World.getTime().SecondsPerDay / 24);
     }
 
     function getResults()
@@ -117,14 +126,15 @@ this.camp_manager <- {
         //Transition to Camping
         if (this.m.IsCamping)
         {
-            this.m.LastHourUpdated = 0;
             this.m.StartTime = this.Time.getVirtualTimeF();
+            this.m.LastHourUpdated = this.World.getTime().Hours;
             this.init();
         }
          else 
         {
-            this.m.LastCampTime = this.Time.getVirtualTimeF();
+            this.m.StopTime = this.Time.getVirtualTimeF();
             this.completed();
+            this.m.LastCampTime = this.m.StopTime;
             this.World.Events.fire("event.camp_completed");
         }
     }

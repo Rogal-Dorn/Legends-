@@ -1,5 +1,9 @@
 this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", {
-	m = {},
+	m = {
+		Base = 5.0,
+		Points = 0.0,
+		Items = []
+	},
     function create()
     {
         this.camp_building.create();
@@ -36,6 +40,130 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			}
 		];
     }
+
+    function init()
+    {
+		this.m.Points = 0;
+		this.m.Items = [];
+    }
+
+    function getModifiers()
+    {
+        local ret = 
+        {
+            Craft = 0.0,
+            Assigned = 0,
+            Modifiers = []
+        }
+		local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+            local rm = (this.m.Base + this.m.Base * this.Const.LegendMod.getHuntingModifier(bro.getBackground().getID()))
+            ret.Craft += rm
+            ++ret.Assigned
+			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
+        }
+        return ret;
+    }
+
+	function getResults()
+    {
+		local res = []
+		local id = 80;
+		foreach (b in this.m.Items)
+		{
+			res.push({
+		 		id = id,
+		 		icon = "ui/items/" + b.getIcon(),
+		 		text = "You gained " + b.getName()
+			})
+			++id;
+		}
+        return res;
+    }
+	
+	function getAssignedBros()
+    {
+        local mod = this.getModifiers();
+        return mod.Assigned;
+    }
+
+
+    function completed()
+    {
+		local item = null
+		while (this.m.Points > 0)
+		{
+			if (this.Stash.getNumberOfEmptySlots() == 0)
+			{
+				return
+			}
+
+			local r = this.Math.rand(1, 4);
+			local item = null;
+			local secondary = [];
+			if (r == 1 || r == 2)
+			{
+				item = this.new("scripts/items/supplies/strange_meat_item");
+				secondary = [
+					"scripts/items/misc/adrenaline_gland_item",
+					"scripts/items/misc/poison_gland_item",
+					"scripts/items/misc/spider_silk_item",
+					"scripts/items/misc/werewolf_pelt_item",
+					"scripts/items/accessory/spider_poison_item"
+				];
+			}
+			else if (r == 3)
+			{
+				item = this.new("scripts/items/supplies/roots_and_berries_item");
+				secondary = [
+					"scripts/items/accessory/berserker_mushrooms_item"
+				];
+			}
+			else if (r == 4)
+			{
+				item = this.new("scripts/items/supplies/cured_venison_item");
+			}
+
+			if (this.m.Points < item.m.Value)
+			{
+				return
+			}
+
+			this.m.Points -= item.m.Value;
+			item.randomizeAmount();
+			item.randomizeBestBefore();
+			this.m.Items.push(item);
+			this.Stash.add(item);
+
+			if (secondary.len() == 0)
+			{
+				continue;
+			}
+
+			//this can be upgrade system
+			if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
+			{
+				item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
+				this.m.Items.push(item);
+				this.Stash.add(item);				
+			}
+
+		}
+
+    }
+    
+	function update ()
+    {
+        local modifiers = this.getModifiers();
+		this.m.Points += modifiers.Craft;
+    }
+
 
 	function onClicked( _campScreen )
 	{

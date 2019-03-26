@@ -27,20 +27,23 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     function completed()
     {
         local roster = this.World.getPlayerRoster().getAll();
-        // this.logInfo("** TIME SINCE LAST CAMP " + this.m.Camp.getCampTime());
-        // this.logInfo("** ELAPSED TIME = " + this.m.Camp.getElapsedTime());
-        // this.logInfo("** CAMP TIME IN HOURS " + this.m.Camp.getCampTimeHours())
 
         if (this.m.Camp.getCampTimeHours() < 4)
         {
             return;
         }
 
-        local mood = 1.0;
+        local mood = 0.5;
         if (this.m.Camp.getCampTimeHours() >= 8)
         {
-            mood = 2.0;
+            mood = 1.0;
         }
+
+        if (this.m.Camp.getCampTimeHours() >= 12)
+        {
+            mood = 1.5;
+        }
+
 
         foreach( b in roster )
         {
@@ -52,7 +55,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			if (b.getLastCampTime() == 0 || this.Time.getVirtualTimeF() - b.getLastCampTime() > this.World.getTime().SecondsPerDay)
 			{
 				b.improveMood(mood, "Was able to rest in camp");
-                b.setLastCampTime(this.m.Camp.getLastCampTime());
+                b.setLastCampTime(this.m.Camp.getStopTime());
 			}
         }
     }
@@ -74,7 +77,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
                     text = b.getName() + " healed [color=" + this.Const.UI.Color.PositiveEventValue + "]" + b.getCampHealing() + "[/color] points."
                 })
             }
-            if (b.getLastCampTime() == this.m.Camp.getLastCampTime())
+            if (b.getLastCampTime() == this.m.Camp.getStopTime())
             {
                 ++moodCount
                 res.push({
@@ -142,7 +145,6 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.camp_building.onClicked(_campScreen);
 	}
 
-    
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);
