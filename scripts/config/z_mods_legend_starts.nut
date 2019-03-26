@@ -72,7 +72,7 @@ gt.Const.LegendMod.Starts <- [
     },
     {
         name = "Vala",
-        intro = "[img]gfx/ui/events/event_24.png[/img]Vala",
+        intro = "[img]gfx/ui/events/event_24.png[/img]In Norse society, a vala was a woman who had released herself from the strong family bonds that normally surrounded women in Norse clans. She travelled the land, usually followed by a retinue of people, going from estate to estate selling her spiritual services. She would be summoned in times of crisis, had immense authority and she charged well for her services.",
         description = "Harder. Solo avatar.",
         banner = gt.Const.LegendMod.StartTypes.Vala
     },    
@@ -85,7 +85,7 @@ gt.Const.LegendMod.Starts <- [
     // {
     //     name = "Inventor",
     //     intro = "[img]gfx/ui/events/event_24.png[/img]This is an experimental work in progress",
-    //     description = "Experimental acedemic",
+    //     description = "Experimental academic",
     //     banner = gt.Const.LegendMod.StartTypes.Inventor
     // },
   	{
