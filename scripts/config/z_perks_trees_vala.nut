@@ -28,18 +28,17 @@ local ValaTree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantMastery,
 		gt.Const.Perks.PerkDefs.LegendValaTranceMastery,
-		gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery,
-		gt.Const.Perks.PerkDefs.LegendRoster4
+		gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantDisharmony,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeArmor,
-		gt.Const.Perks.PerkDefs.LegendRoster5
+		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaThreads,
 		gt.Const.Perks.PerkDefs.LegendValaSpiritualBond,
-		gt.Const.Perks.PerkDefs.LegendRoster6
+		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
