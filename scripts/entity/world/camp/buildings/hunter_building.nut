@@ -15,6 +15,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.UIImageNight = "ui/settlements/hunter_night_empty";
 		this.m.UIImageFull = "ui/settlements/hunter_day_full";
 		this.m.UIImageNightFull = "ui/settlements/hunter_night_full";
+		this.m.CanEnter = false
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/hunter_01.wav",

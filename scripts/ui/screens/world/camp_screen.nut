@@ -684,17 +684,15 @@ this.camp_screen <- {
 			if (building == null || building.isHidden())
 			{
 				result.Slots.push(null);
+				continue
 			}
-			else
-			{
-				local b = {
-					Image = building.getUIImage(),
-					Tooltip = building.getTooltipID(),
-					Slot = building.getSlot(),
-					CanEnter = building.canEnter()
-				};
-				result.Slots.push(b);
-			}
+			local b = {
+				Image = building.getUIImage(),
+				Tooltip = building.getTooltipID(),
+				Slot = building.getSlot(),
+				CanEnter = building.canEnter()
+			};
+			result.Slots.push(b);
 		}
 		return result;
 	}

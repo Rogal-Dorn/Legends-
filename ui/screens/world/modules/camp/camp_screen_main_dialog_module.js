@@ -345,7 +345,7 @@ CampScreenMainDialogModule.prototype.createSlot = function (_data, _i, _content)
 	}
 	
 	var self = this;
-	var isUsable = 'CanEnter' in _data && _data.CanEnter !== null;
+	var isUsable = 'CanEnter' in _data && _data.CanEnter == true;
 	var slot_placeholder = null;
 
 	if (isUsable)
@@ -360,9 +360,10 @@ CampScreenMainDialogModule.prototype.createSlot = function (_data, _i, _content)
 		}
 	}, null, 'slot-' + _data.Slot);
 
+	slot.bindTooltip({ contentType: 'ui-element', elementId: _data.Tooltip });
+
 	if(isUsable)
-	{
-		slot.bindTooltip({ contentType: 'ui-element', elementId: _data.Tooltip });
+	{	
 		slot.click(function(_event)
 		{
 			self.mParent.notifyBackendSlotClicked(_data.Tooltip);

@@ -240,10 +240,14 @@ Camp Documentation:
 	-Each hour spent out hunting increases the amount of food that is collected.
 	-Depending on the type of food hunted and the amount of time spent out, additional items can be gained from the hunt.
 
-*Gathers' Tent*
+*Gathering Tent*
 	-Send people out to forage for herbs and create salves and concotions for medical supplies.
 	-Each hour spent out increases the amount of medicine that is collected.
 	-The longer spent out gathering supplies, the greate chance that additional items might be found!
+
+*Fletching Tent*
+	-Assign people to create and manufactor ammo.
+	-Each hour spent increases the amount of ammo that is created.
 
 Legendary Difficulty options
 "Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating

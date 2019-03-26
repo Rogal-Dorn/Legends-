@@ -591,6 +591,32 @@ gt.Const.LegendMod.getHuntingModifier <- function ( _background )
 	return 0;
 };
 
+
+//Food units / hour in the hunting tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getFletcherModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.poacher":
+		case "background.hunter":
+		case "background.legend_ranger":
+			return 3;
+			break;
+		case "background.bowyer":
+		case "background.legend_commander_ranger":
+			return 1;
+			break;
+		case "background.female_bowyer":
+			return 1;
+			break;
+
+		default:
+			return 0;
+	}
+	return 0;
+};
+
 //Med units / hour in the hunting tent
 // = BasePoints + BasePoints * Modifier
 gt.Const.LegendMod.getGatheringModifier <- function ( _background )
