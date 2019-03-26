@@ -74,6 +74,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		local actor = this.getContainer().getActor();
 		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
 		actor.setTitle("the Vala");
+		this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
 	}
 
 	function onAddEquipment()
