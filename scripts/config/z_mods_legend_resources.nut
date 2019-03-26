@@ -590,6 +590,48 @@ gt.Const.LegendMod.getHuntingModifier <- function ( _background )
 	}
 	return 0;
 };
+
+//Med units / hour in the hunting tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getGatheringModifier <- function ( _background )
+{
+		switch ( _background )
+	{
+
+		case "background.female_beggar":
+		case "background.cripple":
+		case "background.flagellant":
+			return 0.5;
+			break;
+
+		case "background.legend_commander_noble":
+		case "background.legend_noble":
+		case "background.servant":
+		case "background.eunuch":
+		case "background.female_servant":
+			return 0.5;
+			break;
+
+		case "background.legend_witch":
+		case "background.legend_necro":
+		case "background.legend_herbalist":
+			return 1;
+			break;
+		case "background.legend_commander_witch":
+		case "background.legend_commander_necro":
+			return 1;
+			break;
+		case "background.monk":
+		case "background.legend_nun":
+		case "background.vazl_vala":
+			return 1;
+			break;
+
+		default:
+			return 0.0;
+	}
+	return 0.0;
+}
 // gt.Const.World.TerrainTypeSpeedMult <- [
 // 	0.0,
 // 	0.0,
