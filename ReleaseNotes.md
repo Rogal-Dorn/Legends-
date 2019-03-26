@@ -235,6 +235,11 @@ Camp Documentation:
 	-Each hour encamped, crafting 'units' are added to the first item in the Queue. Once the time cost is met, the item will be added to the stash.
 	-The amount of crafting each hour is based on how many people have been assigned to crafting duty (and their backgrounds also influence how much they can craft per hour).
 
+*Hunting Tent*
+	-Send people out on a hunting party to collect food and possible spoils from the hunt.
+	-Each hour spent out hunting increases the amount of food that is collected.
+	-Depending on the type of food hunted and the amount of time spent out, additional items can be gained from the hunt.
+
 
 Legendary Difficulty options
 "Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating
