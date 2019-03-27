@@ -131,7 +131,7 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 						local effect = this.new("scripts/skills/effects/legend_vala_trance_malevolent_effect");
 						effect.setPower(this.m.Power);
 						e.getSkills().add(effect);
-//						this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
+						this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
 					}
 
 					this.logInfo("MALEVOLENT SPIRITS EFFECT :: onTurnStart spread chance = " + chance);
