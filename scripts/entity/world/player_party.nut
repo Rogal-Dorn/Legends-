@@ -179,6 +179,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function getVisionRadius()
 	{
+		if (this.World.Assets.isCamping())
+		{
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout)
+			return tent.getVisionRadius();
+		}
 		return this.m.VisionRadius * this.World.getGlobalVisibilityMult() * this.Const.World.TerrainTypeVisionRadiusMult[this.getTile().Type] * (this.World.Assets.isCamping() ? 0.75 : 1.0);
 	}
 

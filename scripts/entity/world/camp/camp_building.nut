@@ -224,6 +224,10 @@ this.camp_building <- {
     {
     }
 
+	function updateTick (_hours)
+	{
+	}
+
     function canEnter()
     {
         return this.m.CanEnter;

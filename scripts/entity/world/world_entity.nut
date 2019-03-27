@@ -44,6 +44,8 @@ this.world_entity <- {
 
 	function getVisibilityMult()
 	{
+		
+		this.logInfo("GET VIZ MULT FROM WORLD ENTITY!!")
 		return this.m.VisibilityMult;
 	}
 

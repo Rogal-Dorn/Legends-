@@ -253,7 +253,9 @@ Legendary Difficulty options
 "Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating
 "Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
 "None" starting funds setting starts you with no resources except food. 
- 
+*Enemy scaling is now tied to the combat difficulty option.
+
+
 Donkeys and backpacks:
 Recruitable beasts of burden that can massively increase your stash size, but they are very hungry and must be protected in battle.  With their own perk trees to increase carrying capacity and defenses. 
 Backpacks can be bought in most towns or crafted in your camp. 

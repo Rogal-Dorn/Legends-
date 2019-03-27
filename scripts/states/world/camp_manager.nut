@@ -141,6 +141,11 @@ this.camp_manager <- {
 
     function update ( _worldState )
     {
+        foreach(b in this.m.Tents)
+        {
+            b.updateTick(this.getElapsedHours())
+        }
+
 		if (this.World.getTime().Hours == this.m.LastHourUpdated)
         {
             return;
