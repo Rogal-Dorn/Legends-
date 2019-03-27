@@ -4,9 +4,9 @@ this.legend_vala_information <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "special.legend_vala_information";
 		this.m.Name = "Vala Information: Skills";
-		this.m.Icon = "ui/perks/legend_vala_information.png";
-		this.m.Type = this.Const.SkillType.Special | this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.VeryLast + 100;
+		this.m.Icon = "ui/backgrounds/legend_vala.png";
+		this.m.Type = this.Const.SkillType.Background | this.Const.SkillType.Trait;
+		this.m.Order = this.Const.SkillOrder.Background + 1;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
