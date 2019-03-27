@@ -121,9 +121,13 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 					{
 						chance /= 2.0;
 					}
-					if (chance < 1)
+					if (chance > 95)
 					{
-						chance = 1;
+						chance = 95;
+					}
+					if (chance < 5)
+					{
+						chance = 5;
 					}
 
 					if (this.Math.rand(1, 100) <= chance)

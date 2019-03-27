@@ -194,9 +194,9 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 			{
 				expertise += 10.0;
 
-				if (expertise > 100)
+				if (expertise > 95)
 				{
-					expertise = 100;
+					expertise = 95;
 				}
 			}
 			else
@@ -205,6 +205,11 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 				{
 					expertise = 85;
 				}
+			}
+
+			if (expertise < 5)
+			{
+				expertise = 5;
 			}
 
 			this.logInfo("MALEVOLENT SPIRITS :: expertise is " + expertise);
