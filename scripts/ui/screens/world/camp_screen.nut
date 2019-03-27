@@ -381,7 +381,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.BarberDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showBarberDialog", this.m.BarberDialogModule.queryLoad());
+			this.m.JSHandle.asyncCall("showBarberDialog", this.m.BarberDialogModule.queryRosterInformation());
 		}
 	}
 
