@@ -54,16 +54,16 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
 			{
-			this.m.Strength +=  6 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
+			this.m.Strength +=  10 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
 			}
 
 		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
 			{
-			this.m.Strength +=  6 + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.3)));
+			this.m.Strength +=  3 + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
 			}
 		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Strength +=  9 + (bro.getLevel() + (pow(bro.getLevel(),1.4)));
+			this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;
 			}
 		}
 
