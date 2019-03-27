@@ -33,6 +33,14 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
+			}
+
 	}
 
 	function assignRandomEquipment()

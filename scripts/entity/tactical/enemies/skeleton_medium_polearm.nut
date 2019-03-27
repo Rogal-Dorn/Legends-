@@ -26,6 +26,13 @@ this.skeleton_medium_polearm <- this.inherit("scripts/entity/tactical/skeleton",
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			}
+
 	}
 
 	function assignRandomEquipment()

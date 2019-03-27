@@ -330,6 +330,15 @@ this.orc_berserker <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_flow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			b.MeleeSkill += 10;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function onFinish()
