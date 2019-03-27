@@ -50,7 +50,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 
 	function onBuildDescription()
 	{
-		return "{%name% is a travelling seer, shaman and sorceress.}";
+		return "{%name% is a travelling seer, shaman and sorceress. Besides the ability to inscribe objects with magical rune sigils she also knows sorcerous incantations in the form of chants, and can induce trance states through which she may perceive and interact with the spirit world and the spirits therein.}";
 	}
 
 	function onChangeAttributes()
