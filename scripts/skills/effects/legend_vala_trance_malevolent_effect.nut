@@ -103,7 +103,7 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 	}
 
 
-	function onTurnStart()
+	function SpiritSpread()
 	{
 		local actor = this.getContainer().getActor();
 		local everyone = this.Tactical.Entities.getAllInstances();
@@ -113,13 +113,13 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 			foreach (e in ever)
 			{
 				local distance = e.getTile().getDistanceTo(actor.getTile());
-				if (distance <= 1 && e.isAlliedWith(actor) && e.isAlive() && !e.isDying() && !e.getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect"))
+				if (distance <= 2 && e.isAlliedWith(actor) && e.isAlive() && !e.isDying() && !e.getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect"))
 				{
 					local chance = this.m.Power - e.getCurrentProperties().Bravery;
 
-					if (chance > 100)
+					if (distance > 1)
 					{
-						chance = 100;
+						chance /= 2.0;
 					}
 					if (chance < 1)
 					{
@@ -134,48 +134,22 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 						this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
 					}
 
-					this.logInfo("MALEVOLENT SPIRITS EFFECT :: onTurnStart spread chance = " + chance);
+					this.logInfo("MALEVOLENT SPIRITS EFFECT :: spread chance = " + chance);
 				}
 			}
 		}
 	}
 
 
+	function onTurnStart()
+	{
+		this.SpiritSpread();
+	}
+
+
 	function onResumeTurn()
 	{
-		local actor = this.getContainer().getActor();
-		local everyone = this.Tactical.Entities.getAllInstances();
-
-		foreach (ever in everyone)
-		{
-			foreach (e in ever)
-			{
-				local distance = e.getTile().getDistanceTo(actor.getTile());
-				if (distance <= 1 && e.isAlliedWith(actor) && e.isAlive() && !e.isDying() && !e.getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect"))
-				{
-					local chance = this.m.Power - e.getCurrentProperties().Bravery;
-
-					if (chance > 100)
-					{
-						chance = 100;
-					}
-					if (chance < 1)
-					{
-						chance = 1;
-					}
-
-					if (this.Math.rand(1, 100) <= chance)
-					{
-						local effect = this.new("scripts/skills/effects/legend_vala_trance_malevolent_effect");
-						effect.setPower(this.m.Power);
-						e.getSkills().add(effect);
-						this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
-					}
-
-					this.logInfo("MALEVOLENT SPIRITS EFFECT :: onResumeTurn spread chance = " + chance);
-				}
-			}
-		}
+		this.SpiritSpread();
 	}
 
 
