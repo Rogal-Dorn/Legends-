@@ -9,7 +9,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BackgroundDescription = "A Vala is a travelling seer, shaman and sorceress.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 240;
+		this.m.HiringCost = 20000;
 		this.m.DailyCost = 24;
 		this.m.Excluded = [
 			"trait.asthmatic",

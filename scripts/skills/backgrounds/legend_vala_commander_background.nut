@@ -10,7 +10,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
 		this.m.HiringCost = 240;
-		this.m.DailyCost = 24;
+		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
