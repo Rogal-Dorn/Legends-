@@ -225,7 +225,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 					}
 				}
 
-//				this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
+				this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
 				this.m.TranceIsActive = false;
 				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
