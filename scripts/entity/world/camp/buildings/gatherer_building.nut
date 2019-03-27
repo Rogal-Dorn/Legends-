@@ -92,6 +92,11 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(this.m.Points / 2.0)))
 		this.World.Assets.addMedicine(this.m.MedsAdded);
 
+		if (this.m.MedsAdded = 0)
+		{
+			return
+		}
+		
 		if (this.Stash.getNumberOfEmptySlots() == 0)
 		{
 			return
