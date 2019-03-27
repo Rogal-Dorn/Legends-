@@ -3,7 +3,7 @@ this.legend_vala_information <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "special.legend_vala_information";
-		this.m.Name = "Vala Information: Chants and Trances";
+		this.m.Name = "Vala Information: Skills";
 		this.m.Icon = "ui/perks/legend_vala_information.png";
 		this.m.Type = this.Const.SkillType.Special | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast + 100;
@@ -21,8 +21,7 @@ this.legend_vala_information <- this.inherit("scripts/skills/skill", {
 			return true;
 		}
 
-//		return false;
-		return true;
+		return false;
 	}
 
 
@@ -38,7 +37,7 @@ this.legend_vala_information <- this.inherit("scripts/skills/skill", {
 			{
 				id = 2,
 				type = "description",
-				text = "Besides having assorted passive skills, and the ability inscribe objects with magical rune sigils, the Vala also has two somewhat mechanically similar types of active skills at her disposal: sorcerous incantations in the form of chants, and induced trance states through which she may perceive and interact with the spirit world and the spirits therein."
+				text = "Besides having assorted passive skills, and the ability inscribe objects with magical rune sigils, the Vala also has two somewhat mechanically similar types of active skills at her disposal: sorcerous incantations in the form of chants, and induced trance states through which she may perceive and interact with the spirit world and the spirits therein.\n\nMost of the Vala\'s skills scale in one way or another with her Resolve."
 			},
 			{
 				id = 3,
