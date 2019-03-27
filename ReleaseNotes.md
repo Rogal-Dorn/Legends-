@@ -249,6 +249,16 @@ Camp Documentation:
 	-Assign people to create and manufactor ammo.
 	-Each hour spent increases the amount of ammo that is created.
 
+*Patrol Tent*
+	-Send brothers out on patrol to gain intelligence and get advanced warning of incoming enemies
+	-Without a patrol, the camp is effectively blind to all outside activity.
+	-The more brothers assigned, the faster and further you can see.
+	-Some backgrounds are better suited at patrolling than others.
+
+ *Barber Tent*
+	-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
+
+
 Legendary Difficulty options
 "Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating
 "Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
