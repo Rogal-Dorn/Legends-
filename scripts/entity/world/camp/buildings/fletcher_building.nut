@@ -1,7 +1,6 @@
 this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
 		Base = 1.0,
-		Points = 0.0,
 		Items = [],
 		AmmoAdded = 0
 	},
@@ -49,7 +48,6 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     function init()
     {
-		this.m.Points = 0;
 		this.m.AmmoAdded = 0;
 		this.m.Items = [];
     }
@@ -108,15 +106,17 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return
 		}
 
-		this.m.AmmoAdded = this.Math.min(this.World.Assets.getMaxAmmo(), (this.Math.floor(this.m.Points / 2.0)))
+		local mod = this.getModifiers();
+		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
+		if (points == 0)
+		{
+			return;
+		}
+
+		this.m.AmmoAdded = this.Math.min(this.World.Assets.getMaxAmmo(), (this.Math.floor(points / 2.0)))
 		this.World.Assets.addAmmo(this.m.AmmoAdded);
     }
     
-	function update ()
-    {
-        local modifiers = this.getModifiers();
-		this.m.Points += modifiers.Craft;
-    }
 
 	function onClicked( _campScreen )
 	{

@@ -1,9 +1,8 @@
 this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
 		Base = 1.0,
-		Points = 0.0,
 		Items = [],
-		MedsAdded = 0
+		MedsAdded = 0,
 	},
     function create()
     {
@@ -21,7 +20,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     function init()
     {
-		this.m.Points = 0;
 		this.m.MedsAdded = 0;
 		this.m.Items = [];
     }
@@ -89,7 +87,14 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return
 		}
 
-		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(this.m.Points / 2.0)))
+		local mod = this.getModifiers();
+		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
+		if (points == 0)
+		{
+			return;
+		}
+
+		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(points / 2.0)))
 		this.World.Assets.addMedicine(this.m.MedsAdded);
 
 		if (this.m.MedsAdded = 0)
@@ -118,12 +123,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     }
     
-	function update ()
-    {
-        local modifiers = this.getModifiers();
-		this.m.Points += modifiers.Craft;
-    }
-
 	function onClicked( _campScreen )
 	{
         _campScreen.showGathererDialog();

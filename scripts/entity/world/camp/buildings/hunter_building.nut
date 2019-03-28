@@ -1,7 +1,6 @@
 this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
 		Base = 5.0,
-		Points = 0.0,
 		Items = []
 	},
     function create()
@@ -44,7 +43,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     function init()
     {
-		this.m.Points = 0;
 		this.m.Items = [];
     }
 
@@ -97,8 +95,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     function completed()
     {
+		local mod = this.getModifiers();
+		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
+		if (points == 0)
+		{
+			return;
+		}
+
+
 		local item = null
-		while (this.m.Points > 0)
+		while (points > 0)
 		{
 			if (this.Stash.getNumberOfEmptySlots() == 0)
 			{
@@ -131,12 +137,12 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				item = this.new("scripts/items/supplies/cured_venison_item");
 			}
 
-			if (this.m.Points < item.m.Value)
+			if (oints < item.m.Value)
 			{
 				return
 			}
 
-			this.m.Points -= item.m.Value;
+			points -= item.m.Value;
 			item.randomizeAmount();
 			item.randomizeBestBefore();
 			this.m.Items.push(item);
@@ -159,13 +165,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     }
     
-	function update ()
-    {
-        local modifiers = this.getModifiers();
-		this.m.Points += modifiers.Craft;
-    }
-
-
 	function onClicked( _campScreen )
 	{
         _campScreen.showHunterDialog();

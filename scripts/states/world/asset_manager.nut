@@ -411,7 +411,6 @@ this.asset_manager <- {
 			bro.setStartValuesEx([
 				"legend_noble_2h"
 			]);
-			bro.addInjury(this.Const.Injury.BluntHead);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setVeteranPerks(3);
@@ -436,9 +435,6 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(14);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setVeteranPerks(3);
-			bro.addInjury(this.Const.Injury.CuttingBody);
-			bro.addInjury(this.Const.Injury.CuttingHead);
-
 
 		break;
 

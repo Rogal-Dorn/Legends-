@@ -730,3 +730,115 @@ gt.Const.Injury.Cannibal <- [
 		Script = "injury_permanent/missing_hand_injury"
 	}
 ];
+gt.Const.Injury.CampTraining <- [
+	{
+		ID = "injury.fractured_hand",
+		Threshold = 0.25000000,
+		Script = "injury/fractured_hand_injury"
+	},
+	{
+		ID = "injury.fractured_ribs",
+		Threshold = 0.25000000,
+		Script = "injury/fractured_ribs_injury"
+	},
+	{
+		ID = "injury.crushed_finger",
+		Threshold = 0.25000000,
+		Script = "injury/crushed_finger_injury"
+	},
+	{
+		ID = "injury.fractured_elbow",
+		Threshold = 0.25000000,
+		Script = "injury/fractured_elbow_injury"
+	},
+	{
+		ID = "injury.sprained_ankle",
+		Threshold = 0.25000000,
+		Script = "injury/sprained_ankle_injury"
+	},
+	{
+		ID = "injury.bruised_leg",
+		Threshold = 0.25000000,
+		Script = "injury/bruised_leg_injury"
+	},
+	{
+		ID = "injury.dislocated_shoulder",
+		Threshold = 0.50000000,
+		Script = "injury/dislocated_shoulder_injury"
+	},
+	{
+		ID = "injury.broken_arm",
+		Threshold = 0.50000000,
+		Script = "injury/broken_arm_injury"
+	},
+	{
+		ID = "injury.smashed_hand",
+		Threshold = 0.50000000,
+		Script = "injury/smashed_hand_injury"
+	},
+	{
+		ID = "injury.broken_ribs",
+		Threshold = 0.50000000,
+		Script = "injury/broken_ribs_injury"
+	},
+	{
+		ID = "injury.broken_leg",
+		Threshold = 0.50000000,
+		Script = "injury/broken_leg_injury"
+	},
+	{
+		ID = "injury.broken_nose",
+		Threshold = 0.25000000,
+		Script = "injury/broken_nose_injury"
+	},
+	{
+		ID = "injury.severe_concussion",
+		Threshold = 0.50000000,
+		Script = "injury/severe_concussion_injury"
+	},
+	{
+		ID = "injury.split_hand",
+		Threshold = 0.50000000,
+		Script = "injury/split_hand_injury"
+	},
+	{
+		ID = "injury.cut_arm",
+		Threshold = 0.25000000,
+		Script = "injury/cut_arm_injury"
+	},
+	{
+		ID = "injury.ripped_ear",
+		Threshold = 0.25000000,
+		Script = "injury/ripped_ear_injury"
+	},
+	{
+		ID = "injury.split_nose",
+		Threshold = 0.25000000,
+		Script = "injury/split_nose_injury"
+	},
+	{
+		ID = "injury.pierced_cheek",
+		Threshold = 0.25000000,
+		Script = "injury/pierced_cheek_injury"
+	},
+	{
+		ID = "injury.grazed_neck",
+		Threshold = 0.25000000,
+		Script = "injury/grazed_neck_injury"
+	},
+	{
+		ID = "injury.injured_shoulder",
+		Threshold = 0.25000000,
+		Script = "injury/injured_shoulder_injury"
+	},
+	{
+		ID = "injury.pierced_hand",
+		Threshold = 0.25000000,
+		Script = "injury/pierced_hand_injury"
+	},
+	{
+		ID = "injury.injured_knee_cap",
+		Threshold = 0.50000000,
+		Script = "injury/injured_knee_cap_injury"
+	}		
+];
