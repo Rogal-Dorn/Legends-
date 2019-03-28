@@ -30,7 +30,15 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			}
 		this.m.Skills.update();
+
+
 	}
 
 	function assignRandomEquipment()

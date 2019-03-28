@@ -53,6 +53,13 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("helmet_damage").Saturation = 0.8;
 		this.getSprite("shield_icon").Saturation = 0.8;
 		this.getSprite("shield_icon").setBrightness(0.9);
+
+			 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )

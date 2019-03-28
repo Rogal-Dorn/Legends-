@@ -121,6 +121,13 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 		wolf_bite.m.ActionPointCost = 0;
 		this.m.Skills.add(wolf_bite);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function onAfterInit()
