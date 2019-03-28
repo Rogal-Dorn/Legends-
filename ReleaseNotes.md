@@ -254,6 +254,14 @@ Camp Documentation:
 	-Without a patrol, the camp is effectively blind to all outside activity.
 	-The more brothers assigned, the faster and further you can see.
 	-Some backgrounds are better suited at patrolling than others.
+	-Depending on skill of bros on patrol, there is a chance they can discover the direction and distance to an enemy camp.
+
+*Training Tent*
+	-Training tent allows the company to train and prepare for combat.
+	-A successfull training session for a brother results in a 20% XP increase for his next fight
+	-Success chance scales with brother level and length of time training.
+	-Lower the level, the higher the chance of success. Longer training time improves chance for everyone.
+	-There is a very small chance the brother could have a breakthrough training session and permanently improve a skill. Chance improves the longer the training session.
 
  *Barber Tent*
 	-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
