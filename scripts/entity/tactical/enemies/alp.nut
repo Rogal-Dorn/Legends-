@@ -193,8 +193,7 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
 				local r = this.Math.rand(1, 100);
-				local tokenloot;
-
+				local loot;
 				if (r <= 40)
 				{
 					loot = this.new("scripts/items/misc/parched_skin_item");
@@ -208,13 +207,15 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 					loot = this.new("scripts/items/misc/petrified_scream_item");
 				}
 
-				local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-				token.setRuneVariant(this.Math.rand(1, 3));
-				token.updateRuneSigilToken();
-
 				loot.drop(_tile);
-				token.drop(_tile);
 
+				if (this.Math.rand(1, 100) < 15)
+				{
+					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					token.setRuneVariant(this.Math.rand(1, 3));
+					token.updateRuneSigilToken();
+					token.drop(_tile);
+				}
 			}
 		}
 

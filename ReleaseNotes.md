@@ -267,11 +267,15 @@ Camp Documentation:
 	-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
 
 
-Legendary Difficulty options
-"Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating
+*Enemy scaling is now tied to the combat difficulty option:
+	-Normal is BB default
+	-Easy is modified Normal
+	-Expert is the curved scaling from previous mod iterations
+	-Legendary is same as Easy, but all enemies are a lot harder
+
+"Legendary" combat difficulty adds terrifying perk combinations for all enemy types. (Nimble direwolves, fearless battle forged raiders, Unholds on whole new level of resilient )
 "Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
 "None" starting funds setting starts you with no resources except food. 
-*Enemy scaling is now tied to the combat difficulty option.
 
 
 Donkeys and backpacks:
@@ -378,7 +382,7 @@ Other changes:
 Player world figurine changes based on commander
 increases late game difficulty scaling, reduces early game (even more)
 Increases crises phase length to ~50 days
-Increases caravan and camp speed to encourage those playstyles
+Increases caravan speed to encourage playstyles
 Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
 Slings apply blunt force trauma instead of piercing
 
