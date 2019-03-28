@@ -7,7 +7,7 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "";
 		this.m.Icon = "ui/perks/legend_vala_premonition.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.VeryLast + 1;
+		this.m.Order = this.Const.SkillOrder.VeryLast + 9;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;

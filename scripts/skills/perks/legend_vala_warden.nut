@@ -25,10 +25,9 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 		{
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+
+		return false;
+
 	}
 
 
