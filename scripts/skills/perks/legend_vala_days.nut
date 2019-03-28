@@ -61,43 +61,43 @@ this.legend_vala_days <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getWeekDay() == "sunday")
 		{
-			this.m.Name = "Sunday";
+			this.m.Name = "Sunday: Sol\'s Day";
 			this.m.Description = "";
 			this.m.Icon = "ui/perks/legend_vala_days.png";
 		}
 		else if (this.getWeekDay() == "monday")
 		{
-			this.m.Name = "Monday";
+			this.m.Name = "Monday: Mani\'s Day";
 			this.m.Description = "";
 			this.m.Icon = "ui/perks/legend_vala_days.png";
 		}
 		else if (this.getWeekDay() == "tuesday")
 		{
-			this.m.Name = "Tuesday";
+			this.m.Name = "Tuesday: Tyr\'s Day";
 			this.m.Description = "";
 			this.m.Icon = "ui/perks/legend_vala_days.png";
 		}
 		else if (this.getWeekDay() == "wednesday")
 		{
-			this.m.Name = "Wednesday";
+			this.m.Name = "Wednesday: Odin\'s Day";
 			this.m.Description = "";
 			this.m.Icon = "ui/perks/legend_vala_days.png";
 		}
 		else if (this.getWeekDay() == "thursday")
 		{
-			this.m.Name = "Thursday";
+			this.m.Name = "Thursday: Thor\'s Day";
 			this.m.Description = "";
 			this.m.Icon = "ui/perks/legend_vala_days.png";
 		}
 		else if (this.getWeekDay() == "friday")
 		{
-			this.m.Name = "Friday";
+			this.m.Name = "Friday: Frigg\'s Day";
 			this.m.Description = "";
 			this.m.Icon = "ui/perks/legend_vala_days.png";
 		}
 		else
 		{
-			this.m.Name = "Saturday";
+			this.m.Name = "Saturday: Bathing Day";
 			this.m.Description = "";
 			this.m.Icon = "ui/perks/legend_vala_days.png";
 		}
