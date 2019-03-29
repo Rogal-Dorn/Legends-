@@ -7,13 +7,18 @@ this.commander_building <- this.inherit("scripts/entity/world/camp/camp_building
         this.m.Slot = "commander";
         this.m.Name = "Commanders Tent";
         this.m.Description = "Assign company members to different tasks while encamped"
-		this.m.UIImage = "ui/settlements/commander_day";
-		this.m.UIImageNight = "ui/settlements/commander_night";
-		this.m.UIImageFull = "ui/settlements/commander_day";
-		this.m.UIImageNightFull = "ui/settlements/commander_night";
+		// this.m.UIImage = "ui/settlements/commander_day";
+		// this.m.UIImageNight = "ui/settlements/commander_night";
+		// this.m.UIImageFull = "ui/settlements/commander_day";
+		// this.m.UIImageNightFull = "ui/settlements/commander_night";
         this.m.InCommanderTent = false;
     }
-
+	
+	function getLevel()
+	{
+		return "full";
+	}
+	
 	function onClicked( _campScreen )
 	{
         _campScreen.showCommanderDialog();

@@ -8,10 +8,10 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
         this.m.Name = "Enchanter";
         this.m.Description = "Oooo.. Pretty glowing things..."
 		this.m.BannerImage = "ui/buttons/banner_enchant.png"
-		this.m.UIImage = "ui/settlements/vala_day_empty";
-		this.m.UIImageNight = "ui/settlements/vala_night_empty";
-		this.m.UIImageFull = "ui/settlements/vala_day_full";
-		this.m.UIImageNightFull = "ui/settlements/vala_night_full";
+		// this.m.UIImage = "ui/settlements/vala_day_empty";
+		// this.m.UIImageNight = "ui/settlements/vala_night_empty";
+		// this.m.UIImageFull = "ui/settlements/vala_day_full";
+		// this.m.UIImageNightFull = "ui/settlements/vala_night_full";
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/camp_vala_chanting_01.wav",
@@ -184,7 +184,11 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
         // return this.Math.ceil(points / modifiers.Craft);
     }
 
-
+	function getLevel()
+	{
+		return "empty";
+	}
+	
 	function getResourceImage()
 	{
 		return "ui/buttons/icon_time.png";

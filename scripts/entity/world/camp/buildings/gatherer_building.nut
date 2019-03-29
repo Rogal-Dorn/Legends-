@@ -12,12 +12,18 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Name = "Gatherer";
         this.m.Description = "Forgage for herbs and medicine";
 		this.m.BannerImage = "ui/buttons/banner_gather.png";
-		this.m.UIImage = "ui/settlements/gatherer_day_empty";
-		this.m.UIImageNight =  "ui/settlements/gatherer_night_empty";
-		this.m.UIImageFull = "ui/settlements/gatherer_day_full";
-		this.m.UIImageNightFull =  "ui/settlements/gatherer_night_full";
+		// this.m.UIImage = "ui/settlements/gatherer_day_empty";
+		// this.m.UIImageNight =  "ui/settlements/gatherer_night_empty";
+		// this.m.UIImageFull = "ui/settlements/gatherer_day_full";
+		// this.m.UIImageNightFull =  "ui/settlements/gatherer_night_full";
         this.m.CanEnter = false
     }
+	
+	function getLevel()
+	{
+		return "dude_empty";
+	}
+	
 
     function init()
     {

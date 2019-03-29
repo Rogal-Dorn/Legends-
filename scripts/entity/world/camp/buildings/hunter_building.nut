@@ -11,10 +11,10 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"
 		this.m.BannerImage = "ui/buttons/banner_hunt.png"
-		this.m.UIImage = "ui/settlements/hunter_day_empty";
-		this.m.UIImageNight = "ui/settlements/hunter_night_empty";
-		this.m.UIImageFull = "ui/settlements/hunter_day_full";
-		this.m.UIImageNightFull = "ui/settlements/hunter_night_full";
+		// this.m.UIImage = "ui/settlements/hunter_day_empty";
+		// this.m.UIImageNight = "ui/settlements/hunter_night_empty";
+		// this.m.UIImageFull = "ui/settlements/hunter_day_full";
+		// this.m.UIImageNightFull = "ui/settlements/hunter_night_full";
 		this.m.CanEnter = false
 		this.m.Sounds = [
 			{
@@ -41,6 +41,12 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			}
 		];
     }
+
+	
+	function getLevel()
+	{
+		return "dude_empty";
+	}
 
     function init()
     {

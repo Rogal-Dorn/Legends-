@@ -15,10 +15,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Name = "Heal/Reserves";
         this.m.Description = "Place brothers in reserves in order to heal from wounds.";
 		this.m.BannerImage = "ui/buttons/banner_heal.png"
-		this.m.UIImage = "ui/settlements/med_day_empty";
-		this.m.UIImageNight =  "ui/settlements/med_night_empty";
-		this.m.UIImageFull = "ui/settlements/med_day_full";
-		this.m.UIImageNightFull =  "ui/settlements/med_night_full";
+		// this.m.UIImage = "ui/settlements/med_day_empty";
+		// this.m.UIImageNight =  "ui/settlements/med_night_empty";
+		// this.m.UIImageFull = "ui/settlements/med_day_full";
+		// this.m.UIImageNightFull =  "ui/settlements/med_night_full";
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/healer_01.wav",
@@ -66,6 +66,12 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			},
 		]
     }
+
+	
+	function getLevel()
+	{
+		return "dude_empty";
+	}
 
     function init()
     {
@@ -426,10 +432,12 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         
 	function onSerialize( _out )
 	{
+		this.camp_building.onSerialize(_out);
 	}
 
 	function onDeserialize( _in )
 	{
+		this.camp_building.onDeserialize(_in);
 	}
 
 

@@ -6,6 +6,7 @@ this.camp_building <- {
         Name = "",
         Description = "",
 		BannerImage = "",
+		Level = 0,
 		UIImage = null,
 		UIImageNight = null,
 		UIImageFull = null,
@@ -259,9 +260,20 @@ this.camp_building <- {
         return false;
     }
 
-	function getUIImage()
+	function getLevel()
 	{
-		return this.World.getTime().IsDaytime ? this.m.UIImage : this.m.UIImageNight;
+		return "empty";
+	}
+
+	function getUIImage( _terrain )
+	{
+		local terrainlabel = _terrain;
+		if (_terrain < 10)
+		{
+			terrainlabel = "0" + _terrain;
+		}
+		local day = this.World.getTime().IsDaytime ? "day" : "night";
+		return "ui/settlements/" + terrainlabel + "_" + this.getSlot() + "_" + this.getLevel() + "_" + day; 
 	}
 
 	function getTooltipID()
