@@ -12,10 +12,10 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Name = "Craft";
         this.m.Description = "Craft items"
 		this.m.BannerImage = "ui/buttons/banner_craft.png"
-		this.m.UIImage = "ui/settlements/taxidermist_day_empty";
-		this.m.UIImageNight = "ui/settlements/taxidermist_night_empty";
-		this.m.UIImageFull = "ui/settlements/taxidermist_day_full";
-		this.m.UIImageNightFull = "ui/settlements/taxidermist_night_full";
+		// this.m.UIImage = "ui/settlements/taxidermist_day_empty";
+		// this.m.UIImageNight = "ui/settlements/taxidermist_night_empty";
+		// this.m.UIImageFull = "ui/settlements/taxidermist_day_full";
+		// this.m.UIImageNightFull = "ui/settlements/taxidermist_night_full";
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/camp_taxidermist_01.wav",
@@ -92,6 +92,11 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
+	function getLevel()
+	{
+		return "empty";
+	}
+	
     function init()
     {
 		this.m.ItemsCrafted = [];
@@ -308,6 +313,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function onSerialize( _out )
 	{
 		this.onInit(); //clear out null queue items
+		this.camp_building.onSerialize(_out);
 		_out.writeU16(this.m.Queue.len());
 		foreach( b in this.m.Queue )
 		{
@@ -319,6 +325,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function onDeserialize( _in )
 	{
 		this.m.Queue = [];
+		this.camp_building.onDeserialize(_in);
 		local num = _in.readU16();
 		for( local i = 0; i < num; i = ++i )
 		{

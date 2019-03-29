@@ -780,7 +780,7 @@ this.camp_screen <- {
 				continue
 			}
 			local b = {
-				Image = building.getUIImage(),
+				Image = building.getUIImage(0),
 				Tooltip = building.getTooltipID(),
 				Slot = building.getSlot(),
 				CanEnter = building.canEnter()
