@@ -1,6 +1,6 @@
 this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		Base = 5.0,
+		Base = 6.5,
 		Items = []
 	},
     function create()
@@ -10,6 +10,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "hunter";
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"
+		this.m.BannerImage = "ui/buttons/banner_hunt.png"
 		this.m.UIImage = "ui/settlements/hunter_day_empty";
 		this.m.UIImageNight = "ui/settlements/hunter_night_empty";
 		this.m.UIImageFull = "ui/settlements/hunter_day_full";
@@ -97,6 +98,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
 		local mod = this.getModifiers();
 		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
+		this.logInfo("HUNTER " + mod.Craft + " : " + this.m.Camp.getCampTimeHours());		
 		if (points == 0)
 		{
 			return;
@@ -137,7 +139,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				item = this.new("scripts/items/supplies/cured_venison_item");
 			}
 
-			if (oints < item.m.Value)
+			if (points < item.m.Value)
 			{
 				return
 			}

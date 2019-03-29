@@ -2,7 +2,7 @@
 this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
 		Title = "Commanders Tent",
-		Description = "Assign company members to various camp related tasks by dragging members from bottom panel to the tasks/' tent in the upper panel."
+		Description = "Assign company members to various camp related tasks by dragging members from the bottom panel to the tents in the upper panel."
 	},
 	function create()
 	{
@@ -22,7 +22,7 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 			SubTitle = this.m.Description,
 			brothers = this.queryRosterInformation(),
 			buildings = this.onQueryBuildingsList(),
-			assets = this.m.Parent.queryAssetsInformation()
+			Assets = this.m.Parent.queryAssetsInformation()
 		};
 		return result;
 	}
@@ -35,6 +35,36 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		foreach( b in brothers )
 		{
 			local background = b.getBackground();
+			local tent = this.World.Camp.getBuildingByID(b.getCampAssignment());
+			local injuries = [];
+			local allInjuries = b.getSkills().query(this.Const.SkillType.TemporaryInjury);
+
+			for( local i = 0; i != allInjuries.len(); i = ++i )
+			{
+				local inj = allInjuries[i];
+				if (!inj.isTreated())
+				{
+					injuries.push({
+						id = inj.getID(),
+						icon = inj.getIconColored(),
+						name = inj.getNameOnly(),
+						price = inj.getCost(),
+						treatable = inj.isTreatable() && inj.getQueue() == 0,
+						points = inj.getPoints()
+					});
+				}
+			}
+
+			local skills = [];
+			if (b.getSkills().hasSkill("effects.trained")) 
+			{
+				local _skill = b.getSkills().getSkillByID("effects.trained")
+				skills.push({
+					id = _skill.getID(),
+					icon = "skills/status_effect_75.png"
+				});
+			}
+
 			local e = {
 				ID = b.getID(),
 				Name = b.getName(),
@@ -43,7 +73,10 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 				ImageOffsetY = b.getImageOffsetY(),
 				BackgroundImagePath = background.getIconColored(),
 				BackgroundText = background.getDescription(),
-				CampAssignment = b.getCampAssignment()
+				CampAssignment = b.getCampAssignment(),
+				CampBanner = tent.getBanner(),
+				Injuries = injuries,
+				Skills = skills
 			};
 			roster.push(e);
 		}
@@ -81,8 +114,16 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 			{
 				continue;
 			}
-			result.push(this.UIDataHelper.convertCampBuildingToUIData(b));
+			result.push({
+				id = b.getID(),
+				name = b.getName(),
+				count = b.getNumberAssigned(),
+				bannerImage = b.getBanner(),
+				resourceImage = b.getResourceImage(),
+				resourceCount = b.getResourceCount()
+			})
 		}
+
 		return result;
 	}
 
@@ -100,7 +141,12 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 			roster.push(this.UIDataHelper.convertEntityToUIData(b, null));
 		}
 
-		return roster
+		local tent = this.World.Camp.getBuildingByID( _id );
+		return {
+			Roster = roster,
+			Label = tent.getName(),
+			Enabled = tent.canEnter()
+		}
 	}
 
 	function onBroAssigned ( _data )
@@ -120,6 +166,11 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();
+	}
+
+	function onTentBuldingClicked( _id )
+	{
+		this.m.Parent.onShowTentBuilding( _id );
 	}
 
 });

@@ -12,10 +12,12 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.m.Slot = "scout";
         this.m.Name = "Patrol";
         this.m.Description = "Send out a patrol to keep an eye on the surrounding terrain";
-		this.m.UIImage = "ui/settlements/scout_day_empty";
+		this.m.BannerImage = "ui/buttons/banner_scout.png"
+        this.m.UIImage = "ui/settlements/scout_day_empty";
 		this.m.UIImageNight = "ui/settlements/scout_night_empty";
 		this.m.UIImageFull = "ui/settlements/scout_day_full";
 		this.m.UIImageNightFull = "ui/settlements/scout_night_full";
+        this.m.CanEnter = false;
     }
 
 	function getVisionRadius()

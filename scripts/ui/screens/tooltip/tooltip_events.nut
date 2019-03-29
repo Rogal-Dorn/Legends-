@@ -4473,6 +4473,21 @@ this.tooltip_events <- {
 			];
 			return ret;
 
+
+		case "camp-screen.main-dialog-module.CampButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Camp"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Setup camp."
+				}
+			];
+			
 		}
 
 		return null;

@@ -10,6 +10,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "training";
         this.m.Name = "Training Grounds";
         this.m.Description = "Training"
+		this.m.BannerImage = "ui/buttons/banner_train.png"
 		this.m.UIImage = "ui/settlements/training_day_empty";
 		this.m.UIImageNight = "ui/settlements/training_night_empty";
 		this.m.UIImageFull = "ui/settlements/training_day_full";
@@ -119,8 +120,8 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	{
 		local injury = bro.addInjury(this.Const.Injury.CampTraining);
 		this.m.Results.push({
-			icon = injury.getIcon(),
-			text = bro.getName() + " suffers " + injury.getNameOnly() + " while training."
+			Icon = injury.getIcon(),
+			Text = bro.getName() + " suffers " + injury.getNameOnly() + " while training."
 		});
 	}
 
@@ -224,7 +225,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		else 
 		{
 			local attr = this.Math.rand(0, this.Const.Attributes.COUNT);
-			switch (p)
+			switch (attr)
 			{
 				case 0:
 					bro.getBaseProperties().Hitpoints += 1

@@ -5,6 +5,7 @@ this.camp_building <- {
         Slot = "",
         Name = "",
         Description = "",
+		BannerImage = "",
 		UIImage = null,
 		UIImageNight = null,
 		UIImageFull = null,
@@ -303,6 +304,21 @@ this.camp_building <- {
         }
         return count;
     }
+
+	function getBanner()
+	{
+		return this.m.BannerImage;
+	}
+
+	function getResourceImage()
+	{
+		return "";
+	}
+
+	function getResourceCount()
+	{
+		return 0;
+	}
 
     function inCommanderTent()
     {

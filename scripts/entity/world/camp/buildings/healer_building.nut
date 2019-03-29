@@ -14,6 +14,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "healer";
         this.m.Name = "Heal/Reserves";
         this.m.Description = "Place brothers in reserves in order to heal from wounds.";
+		this.m.BannerImage = "ui/buttons/banner_heal.png"
 		this.m.UIImage = "ui/settlements/med_day_empty";
 		this.m.UIImageNight =  "ui/settlements/med_night_empty";
 		this.m.UIImageFull = "ui/settlements/med_day_full";
@@ -136,11 +137,17 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     function getResults()
     {
 		local id = 30;
-        local res = [{
-			id = id,
-			icon = "ui/buttons/asset_medicine_down.png",
-			text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.MedsUsed + "[/color] units of medicine and treated [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.InjuriesTreated + "[/color] injuries."
-		}];
+		local res = [];
+        
+		if (this.m.MedsUsed > 0)
+		{
+			res.push({
+				id = id,
+				icon = "ui/buttons/asset_medicine_down.png",
+				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.Math.floor(this.m.MedsUsed) + "[/color] units of medicine and treated [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.InjuriesTreated + "[/color] injuries."
+			});
+		}
+
 		foreach (b in this.m.InjuriesHealed)
 		{
 			res.push({
@@ -327,6 +334,11 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     function getRequiredTime()
     {
         local points = 0;
+		if (this.m.Queue == null)
+        {
+            return 0;
+        }
+				
         foreach (r in this.m.Queue)
         {
             if (r == null)
@@ -349,6 +361,17 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         local mod = this.getModifiers();
         return mod.Assigned;
     }
+
+
+	function getResourceImage()
+	{
+		return "ui/buttons/icon_time.png";
+	}
+
+	function getResourceCount()
+	{
+		return this.getRequiredTime();
+	}
 
 	function onAdd( _entityID, _injuryID  )
 	{

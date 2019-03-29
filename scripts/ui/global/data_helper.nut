@@ -155,8 +155,11 @@ this.data_helper <- {
 			Money = this.World.Assets.getMoney(),
 			Food = this.World.Assets.getFood(),
 			Supplies = this.World.Assets.getArmorParts(),
+			SuppliesMax = this.World.Assets.getMaxArmorParts(),
 			Ammo = this.World.Assets.getAmmo(),
+			AmmoMax = this.World.Assets.getMaxAmmo(),
 			Medicine = this.World.Assets.getMedicine(),
+			MedicineMax = this.World.Assets.getMaxMedicine(),
 			Brothers = entities != null ? entities.len() : 0,
 			BrothersMax = this.World.Assets.getBrothersMax()
 		};
@@ -860,17 +863,6 @@ this.data_helper <- {
 				_target.push(null);
 			}
 		}
-	}
-
-	function convertCampBuildingToUIData( _entity )
-	{
-		local result = {
-			id = _entity.getID(),
-			name = _entity.getName(),
-			count = _entity.getNumberAssigned()
-		};
-
-		return result;
 	}
 
 };
