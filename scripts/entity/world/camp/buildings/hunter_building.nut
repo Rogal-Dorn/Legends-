@@ -98,7 +98,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
 		local mod = this.getModifiers();
 		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
-		this.logInfo("HUNTER " + mod.Craft + " : " + this.m.Camp.getCampTimeHours());		
 		if (points == 0)
 		{
 			return;
