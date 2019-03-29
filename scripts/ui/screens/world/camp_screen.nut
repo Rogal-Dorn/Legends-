@@ -22,7 +22,8 @@ this.camp_screen <- {
 		OnConnectedListener = null,
 		OnDisconnectedListener = null,
 		OnBrothersButtonPressedListener = null,
-		OnCommanderButtonPressedListener = null,		
+		OnCommanderButtonPressedListener = null,
+		OnTentButtonPressedListener = null,			
 		OnModuleClosedListener = null
 		OnCampListener = null
 	},
@@ -126,6 +127,11 @@ this.camp_screen <- {
 		this.m.OnCommanderButtonPressedListener = _listener;
 	}
 
+	function setOnTentPressedListener( _listener )
+	{
+		this.m.OnTentButtonPressedListener = _listener;
+	}
+
 	function setOnModuleClosedListener( _listener )
 	{
 		this.m.OnModuleClosedListener = _listener;
@@ -142,6 +148,7 @@ this.camp_screen <- {
 		this.m.OnDisconnectedListener = null;
 		this.m.OnBrothersButtonPressedListener = null;
 		this.m.OnCommanderButtonPressedListener = null;
+		this.m.OnTentButtonPressedListener = null;		
 		this.m.OnModuleClosedListener = null;
 		this.m.OnCampListener = null;
 	}
@@ -292,6 +299,7 @@ this.camp_screen <- {
 	function showLastReturnDialog()
 	{
 		this.m.LastActiveModule = this.m.returnModule;
+		this.m.returnModule = null;
 		this.showLastActiveDialog();
 	}
 
@@ -365,6 +373,65 @@ this.camp_screen <- {
 		}
 	}
 
+	function showTentBuildingDialog( _id )
+	{
+		switch (_id)
+		{
+			case this.Const.World.CampBuildings.Commander:
+			this.showCommanderDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Barber:
+				this.showBarberDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Crafting:
+				this.showCraftingDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Enchanter:
+				this.showEnchanterDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Fletcher:
+				this.showFletcherDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Gatherer:
+				this.showGathererDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Healer:
+				this.showHealerDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Hunter:
+				this.showHunterDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Repair:
+				this.showRepairDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Rest:
+				this.showRestDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Scout:
+				this.showScoutDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Training:
+				this.showTrainingDialog();
+				break;
+
+			case this.Const.World.CampBuildings.Workshop:
+				this.showWorkshopDialog();
+				break;
+		}
+	}		
+
+
 	function showCommanderDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
@@ -381,7 +448,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.BarberDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showBarberDialog", this.m.BarberDialogModule.queryLoad());
+			this.m.JSHandle.asyncCall("showBarberDialog", this.m.BarberDialogModule.queryRosterInformation());
 		}
 	}
 
@@ -421,7 +488,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.HealerDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showHealerDialog", this.m.HealerDialogModule.queryLoad());
+			this.m.JSHandle.asyncCall("showHealerDialog", this.m.HealerDialogModule.onShow());
 		}
 	}
 
@@ -543,13 +610,39 @@ this.camp_screen <- {
 
 	function onCommanderButtonPressed()
 	{
-		if (this.m.OnCommanderButtonPressedListener != null)
+		if (this.m.returnModule != null)
 		{
-			this.m.returnModule = this.m.LastActiveModule;
-			this.m.OnCommanderButtonPressedListener();
+			return false;
 		}
+
+		if (this.m.OnCommanderButtonPressedListener == null)
+		{
+			return false
+		}
+
+		this.m.returnModule = this.m.LastActiveModule;
+		this.m.OnCommanderButtonPressedListener();
+		return true
 	}
 
+	function onShowTentBuilding ( _id )
+	{
+		if (this.m.returnModule != null)
+		{
+			return false;
+		}
+
+		if (this.m.OnTentButtonPressedListener == null)
+		{
+			return false
+		}
+
+		this.m.returnModule = this.m.LastActiveModule;
+		this.m.OnTentButtonPressedListener( _id );
+		return true
+		
+	}
+	
 	function onModuleClosed()
 	{
 		if (this.m.OnModuleClosedListener != null)
@@ -684,17 +777,15 @@ this.camp_screen <- {
 			if (building == null || building.isHidden())
 			{
 				result.Slots.push(null);
+				continue
 			}
-			else
-			{
-				local b = {
-					Image = building.getUIImage(),
-					Tooltip = building.getTooltipID(),
-					Slot = building.getSlot(),
-					CanEnter = building.canEnter()
-				};
-				result.Slots.push(b);
-			}
+			local b = {
+				Image = building.getUIImage(),
+				Tooltip = building.getTooltipID(),
+				Slot = building.getSlot(),
+				CanEnter = building.canEnter()
+			};
+			result.Slots.push(b);
 		}
 		return result;
 	}

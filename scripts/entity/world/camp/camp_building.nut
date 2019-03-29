@@ -5,6 +5,7 @@ this.camp_building <- {
         Slot = "",
         Name = "",
         Description = "",
+		BannerImage = "",
 		UIImage = null,
 		UIImageNight = null,
 		UIImageFull = null,
@@ -224,6 +225,10 @@ this.camp_building <- {
     {
     }
 
+	function updateTick (_hours)
+	{
+	}
+
     function canEnter()
     {
         return this.m.CanEnter;
@@ -300,6 +305,21 @@ this.camp_building <- {
         return count;
     }
 
+	function getBanner()
+	{
+		return this.m.BannerImage;
+	}
+
+	function getResourceImage()
+	{
+		return "";
+	}
+
+	function getResourceCount()
+	{
+		return 0;
+	}
+
     function inCommanderTent()
     {
         return this.m.InCommanderTent;
@@ -335,6 +355,14 @@ this.camp_building <- {
 		{
 			return !this.World.State.getCampScreen().isAnimating();
 		});
+	}
+
+	function onBroLeave ( _bro )
+	{
+	}
+
+	function onBroEnter ( _bro )
+	{
 	}
 
 	function onSerialize( _out )

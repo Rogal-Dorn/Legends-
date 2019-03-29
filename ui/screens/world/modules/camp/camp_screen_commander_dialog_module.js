@@ -7,6 +7,8 @@ var CampScreenCommanderDialogModule = function(_parent)
     this.mParent = _parent;
 
 	this.mRoster = null;
+    // assets labels
+	this.mAssets = new WorldTownScreenAssets(_parent, true);
 
     // event listener
     this.mEventListener = null;
@@ -18,7 +20,7 @@ var CampScreenCommanderDialogModule = function(_parent)
     //Brother list
     this.mListContainer = null;
     this.mListScrollContainer = null;
-    this.mSelectedEntry = null;
+    this.mSelectedTent = null;
 
     this.mTentListContainer = null
     this.mTentListScrollContainer = null;
@@ -76,6 +78,14 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     _parentDiv.append(this.mContainer);
     this.mDialogContainer = this.mContainer.createDialog('', '', '', true, 'dialog-1280-768');
 
+    // create tabs
+    var tabButtonsContainer = $('<div class="l-tab-container"/>');
+    this.mDialogContainer.findDialogTabContainer().append(tabButtonsContainer);
+        
+	// create assets
+	this.mAssets.createDIV(tabButtonsContainer);
+
+
     // create content
     var content = this.mDialogContainer.findDialogContentContainer();
 
@@ -103,12 +113,24 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     // bottom row
     row = $('<div class="bottom-row"/>');
     column.append(row);
-    var stats = $('<div class="stats"/>');
-    row.append(stats);
     var listContainerLayout = $('<div class="l-list-container"/>');
     row.append(listContainerLayout);
     //this.mBroListContainer = listContainerLayout.createList(1.24/*8.63*/);
     this.mBroListScrollContainer = listContainerLayout;//this.mBroListContainer.findListScrollContainer();
+
+    var stats = $('<div class="stats"/>');
+    row.append(stats);
+    var tentButtonLayout = $('<div class="tent-button"/>');
+    stats.append(tentButtonLayout);
+    this.mTentButton = tentButtonLayout.createTextButton("Building", function()
+	{
+        if(self.mSelectedTent !== null)
+        {
+            var data = self.mSelectedTent.data('ID');
+            self.notifyBackendTentButtonPressed(data);
+        }
+
+    }, '', 1);
 
     // create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');
@@ -126,6 +148,8 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 
 CampScreenCommanderDialogModule.prototype.destroyDIV = function ()
 {
+    this.mAssets.destroyDIV();
+
 	this.mLeaveButton.remove();
     this.mLeaveButton = null;
 
@@ -225,13 +249,13 @@ CampScreenCommanderDialogModule.prototype.createBrotherSlots = function (_parent
 
 CampScreenCommanderDialogModule.prototype.bindTooltips = function ()
 {
-    //this.mAssets.bindTooltips();
+    this.mAssets.bindTooltips();
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
 };
 
 CampScreenCommanderDialogModule.prototype.unbindTooltips = function ()
 {
-	//this.mAssets.unbindTooltips();
+	this.mAssets.unbindTooltips();
     this.mLeaveButton.unbindTooltip();
 };
 
@@ -363,13 +387,8 @@ CampScreenCommanderDialogModule.prototype.isVisible = function ()
     return this.mIsVisible;
 };
 
-CampScreenCommanderDialogModule.prototype.updateAssets = function (_data)
-{
-	this.mAssets.loadFromData(_data);
-	//this.updateListEntryValues();
-}
 
-CampScreenCommanderDialogModule.prototype.loadFromData = function (_data, bro, camp)
+CampScreenCommanderDialogModule.prototype.loadFromData = function (_data)
 {
 	if(_data === undefined || _data === null)
     {
@@ -385,32 +404,46 @@ CampScreenCommanderDialogModule.prototype.loadFromData = function (_data, bro, c
 	{
 		 this.mDialogContainer.findDialogSubTitle().html(_data.SubTitle);
     }
+
+    if('Assets' in _data && _data.Assets !== null)
+    {
+        this.mAssets.loadFromData(_data.Assets);
+    }
     
     //this.onBrothersListLoaded(_data.brothers);
+    var selectedID = null;
+    if (this.mSelectedTent !== null)
+    {
+        selectedID = this.mSelectedTent.data('ID');
+    }
+
     this.mTentListScrollContainer.empty();
     for(var i = 0; i < _data.buildings.length; ++i)
     {
-		var entry = _data.buildings[i];
-        this.addTentEntry(entry, i, camp);
+        var entry = _data.buildings[i];
+        var element = this.addTentEntry(entry, i);
+        if (entry.id === selectedID)
+        {
+            this.mSelectedTent = element;
+        }
     }
 
     this.mListScrollContainer.empty();
     for(var i = 0; i < _data.brothers.length; ++i)
     {
 		var entry = _data.brothers[i];
-        var el = this.addListEntry(entry, bro);
-        if (entry.ID === bro) {
-            this.mSelectedEntry = el;
-        }
+        this.addListEntry(entry);
     }
 
-    this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
-    // if (this.mSelectedEntry)
-    // {
-    //     this.selectListEntry( this.mSelectedEntry, true, camp);
-    // } else {
-    //     this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
-    // }
+    if (this.mSelectedTent === null)
+    {
+        this.selectTentEntry(this.mTentListContainer.findListEntryByIndex(0, '.tent-panel'), true);
+    }
+    else 
+    {
+        this.selectTentEntry(this.mSelectedTent);
+    }
+
 };
 
 CampScreenCommanderDialogModule.prototype.notifyBackendModuleShown = function ()
@@ -453,8 +486,10 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
             this.mSelectedTent = _element;
             var id = _element.data('ID');
             var self = this;
-            this.notifyBackendTentSelected(id, function(_brothers) {
-                self.onBrothersListLoaded(_brothers);
+            this.notifyBackendTentSelected(id, function(res) {
+                self.onBrothersListLoaded(res.Roster);
+                self.mTentButton.changeButtonText(res.Label);
+                self.mTentButton.enableButton(res.Enabled);
             });            
         }
     }
@@ -465,7 +500,7 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
 };
 
 
-CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index, _camp)
+CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index)
 {
     var self = this;
     var dropHandler = function (ev, dd)
@@ -480,76 +515,75 @@ CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index
         }
 
         drag.removeClass('is-dragged');
-        var currentBro = self.mSelectedEntry.data('ID');
-        var currentTent = self.mSelectedTent.data('ID');
         self.notifyBackendBrotherAssigned(drag.data('ID'), drop.data('id'), function( _load ) {
-            if (currentBro === drag.data('ID')) 
-            {
-                currentTent = drop.data('id');
-            }
-            self.loadFromData(_load, currentBro, currentTent);
+            self.loadFromData(_load);
         })
-
-        // do the swapping
-        //self.swapSlots(drag.data('idx'), drop.data('idx'));
     };
+
     var result = $('<div class="ui-control is-camp-action-slot"/>');
     this.mTentListScrollContainer.append(result);
     result.data('idx', _index);
     result.data('id', _data.id);
     result.drop("end", dropHandler);
 
-    var entry = $('<div class="ui-control list-entry"/>');
+    var entry = $('<div class="ui-control tent-panel"/>');
     result.append(entry);
     entry.data('entry', _data);
     entry.data('ID', _data.id);
     entry.click(this, function(_event)
 	{
         var self = _event.data;
+        //self.selectListEntry(null);
         self.selectTentEntry($(this));
     });
 
-    var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data.name + ' (' + _data.count + ')</div>');
-    entry.append(name);
-    var image = $('<div class="is-reserve-slot"/>');
+    var image = $('<img class="banner"/>');
+    image.attr('src', Path.GFX + _data['bannerImage']);
     entry.append(image);
-    this.mTentMap[_data.id] = entry;
 
-    if (_camp === _data.id)
+    var image = $('<img class="bro-count"/>');
+    image.attr('src', Path.GFX + "ui/icons/asset_brothers.png");
+    entry.append(image);
+
+    var label = $('<div class="bro-count-label text-font-normal font-bold font-color-brother-name">'+ _data.count + '</div>');
+    entry.append(label);
+
+    if (_data.resourceImage !== '')
     {
-        this.selectTentEntry(entry);
+        var image = $('<img class="asset-count"/>');
+        image.attr('src', Path.GFX + _data.resourceImage);
+        entry.append(image);
+    
+        var label = $('<div class="asset-count-label text-font-normal font-bold font-color-brother-name">'+ _data.resourceCount + '</div>');
+        entry.append(label);    
     }
+
+    this.mTentMap[_data.id] = entry;
+    return entry
+
 };
 
 
-CampScreenCommanderDialogModule.prototype.selectListEntry = function(_element, _scrollToEntry, _camp)
+CampScreenCommanderDialogModule.prototype.selectListEntry = function(_element, _scrollToEntry)
 {
+    this.mListContainer.deselectListEntries();
     if (_element !== null && _element.length > 0)
     {
         // check if this is already selected
         //if (_element.hasClass('is-selected') !== true)
         {
-            this.mListContainer.deselectListEntries();
-            _element.addClass('is-selected');
-
+           
+            //_element.addClass('is-selected');
             // give the renderer some time to layout his shit...
             if (_scrollToEntry !== undefined && _scrollToEntry === true)
             {
                 this.mListContainer.scrollListToElement(_element);
             }
 
-            this.mSelectedEntry = _element;
-            if (!_camp)
-            {
-                var data = _element.data('entry');
-                _camp = data.CampAssignment;
-            }
+            var data = _element.data('entry');
+            var _camp = data.CampAssignment;
             this.selectTentEntry( this.mTentMap[_camp], true);
         }
-    }
-    else
-    {
-        this.mSelectedEntry = null;
     }
 };
 
@@ -561,7 +595,7 @@ CampScreenCommanderDialogModule.prototype.addListEntry = function (_data)
 
     var entry = $('<div class="ui-control list-entry"/>');
     result.append(entry);
-    entry.data('ID', _data.id);
+    entry.data('ID', _data.ID);
     entry.data('entry', _data);
     entry.click(this, function(_event)
 	{
@@ -585,6 +619,10 @@ CampScreenCommanderDialogModule.prototype.addListEntry = function (_data)
     column = $('<div class="column is-right"/>');
     entry.append(column);
 
+    var banner = $('<img class="bro-list-banner"/>');
+    banner.attr('src', Path.GFX + _data.CampBanner);
+    column.append(banner);
+
     // top row
     var row = $('<div class="row is-top"/>');
     column.append(row);
@@ -601,11 +639,22 @@ CampScreenCommanderDialogModule.prototype.addListEntry = function (_data)
 
 	// bottom row
     row = $('<div class="row is-bottom"/>');
+    entry.data('bottom', row);
     column.append(row);
-    var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data.CampAssignment + '</div>');
-    row.append(name);
-    // var assetsCenterContainer = $('<div class="l-assets-center-container"/>');
-    // row.append(assetsCenterContainer);
+
+    for (var i = 0; i < _data.Skills.length; ++i)
+    {
+    	var icon = $('<img src="' + Path.GFX + _data.Skills[i].icon + '"/>');
+    	icon.bindTooltip({ contentType: 'status-effect', entityId: _data.ID, statusEffectId: _data.Skills[i].id });
+    	row.append(icon);
+    }
+
+    for (var i = 0; i < _data.Injuries.length; ++i)
+    {
+    	var icon = $('<img src="' + Path.GFX + _data.Injuries[i].icon + '"/>');
+    	icon.bindTooltip({ contentType: 'status-effect', entityId: _data.ID, statusEffectId: _data.Injuries[i].id });
+    	row.append(icon);
+    }
     return entry
 };
 
@@ -702,7 +751,11 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _
         result.assignListBrotherDaysWounded();
     }*/
 
-    if('moodIcon' in character)
+    if('inReserves' in character && character['inReserves'])
+    {
+    	result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+    }
+    else if('moodIcon' in character)
     {
     	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
     }
@@ -722,6 +775,14 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _
         var data = _brother.data('brother');
         //self.mDataSource.selectedBrotherById(data.id);
     });
+        
+    result.assignListItemRightClick(function (_item, _event)
+    {
+        self.notifyBackendBrotherAssigned(_item.data('ID'), 'camp.rest', function( _load ) {
+            self.loadFromData(_load);
+        })
+    });
+
 };
 
 
@@ -744,6 +805,11 @@ CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brot
 	}
 	//this.updateBrotherSlotLocks(inventoryMode);
 	//this.updateRosterLabel();
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendTentButtonPressed = function (_entryID, _callback)
+{
+	SQ.call(this.mSQHandle, 'onTentBuldingClicked', _entryID, _callback);
 };
 
 CampScreenCommanderDialogModule.prototype.notifyBackendTentSelected = function (_entryID, _callback)

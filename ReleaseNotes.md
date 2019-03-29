@@ -217,12 +217,67 @@ Camp Documentation:
 	-The amount of durability converted into tools per hour is based on how many people have been assigned to salvage duty (and their backgrounds also influence how much they can salvage per hour).
 	-15 points of durability equals 1 tool.
 
+*Reserves/Healing Tent*
+	-Reserve/Healing tent is where injuries can be treated and brothers can be held in reserves
+	-Injuries are still healed over time, whether encamped or not
+	-Injuries will heal quicker while encamped
+	-When bro is assigned to Reserve/Heal tent, any injury can be added to the Queue.
+	-The cost of an injuery to be treated is measured in Medicine units
+	-On average, each bro assigned to the tent contributes 1 Med unit/hour to the queue. Once Injury cost is met, the injury is treated.
+	-Injuries in the queue are treated linearly. Left to right, top to bottom.
+	-Bros assigned to the Reserve/Injury tent will not particiapate in player initiated combat. If the player is attacked, everyone is in included in the combat.
+	-All Bros in the Reserve/Heal tent consume x3 the normal amount of rations. 
 
-Legendary Difficulty options
-"Legendary" combat difficulty increases enemy numbers by 30%, decreases hit chance by 10%, removes defense bonus when retreating
+*Crafting Tent*
+	-Crafting tent is the taxidermist on-the-go for the company.
+	-Crafting requirements for each blueprint are the same as the taxidermist.
+	-Crafting can only happend while encamped.
+	-Each hour encamped, crafting 'units' are added to the first item in the Queue. Once the time cost is met, the item will be added to the stash.
+	-The amount of crafting each hour is based on how many people have been assigned to crafting duty (and their backgrounds also influence how much they can craft per hour).
+
+*Hunting Tent*
+	-Send people out on a hunting party to collect food and possible spoils from the hunt.
+	-Each hour spent out hunting increases the amount of food that is collected.
+	-Depending on the type of food hunted and the amount of time spent out, additional items can be gained from the hunt.
+
+*Gathering Tent*
+	-Send people out to forage for herbs and create salves and concotions for medical supplies.
+	-Each hour spent out increases the amount of medicine that is collected.
+	-The longer spent out gathering supplies, the greate chance that additional items might be found!
+
+*Fletching Tent*
+	-Assign people to create and manufactor ammo.
+	-Each hour spent increases the amount of ammo that is created.
+
+*Patrol Tent*
+	-Send brothers out on patrol to gain intelligence and get advanced warning of incoming enemies
+	-Without a patrol, the camp is effectively blind to all outside activity.
+	-The more brothers assigned, the faster and further you can see.
+	-Some backgrounds are better suited at patrolling than others.
+	-Depending on skill of bros on patrol, there is a chance they can discover the direction and distance to an enemy camp.
+
+*Training Tent*
+	-Training tent allows the company to train and prepare for combat.
+	-A successfull training session for a brother results in a 20% XP increase for his next fight
+	-Success chance scales with brother level and length of time training.
+	-Lower the level, the higher the chance of success. Longer training time improves chance for everyone.
+	-There is a very small chance the brother could have a breakthrough training session and permanently improve a skill. Chance improves the longer the training session.
+
+ *Barber Tent*
+	-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
+
+
+*Enemy scaling is now tied to the combat difficulty option:
+	-Normal is BB default
+	-Easy is modified Normal
+	-Expert is the curved scaling from previous mod iterations
+	-Legendary is same as Easy, but all enemies are a lot harder
+
+"Legendary" combat difficulty adds terrifying perk combinations for all enemy types. (Nimble direwolves, fearless battle forged raiders, Unholds on whole new level of resilient )
 "Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
 "None" starting funds setting starts you with no resources except food. 
- 
+
+
 Donkeys and backpacks:
 Recruitable beasts of burden that can massively increase your stash size, but they are very hungry and must be protected in battle.  With their own perk trees to increase carrying capacity and defenses. 
 Backpacks can be bought in most towns or crafted in your camp. 
@@ -327,7 +382,7 @@ Other changes:
 Player world figurine changes based on commander
 increases late game difficulty scaling, reduces early game (even more)
 Increases crises phase length to ~50 days
-Increases caravan and camp speed to encourage those playstyles
+Increases caravan speed to encourage playstyles
 Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
 Slings apply blunt force trauma instead of piercing
 

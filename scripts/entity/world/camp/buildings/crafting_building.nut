@@ -11,6 +11,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "crafting";
         this.m.Name = "Craft";
         this.m.Description = "Craft items"
+		this.m.BannerImage = "ui/buttons/banner_craft.png"
 		this.m.UIImage = "ui/settlements/taxidermist_day_empty";
 		this.m.UIImageNight = "ui/settlements/taxidermist_night_empty";
 		this.m.UIImageFull = "ui/settlements/taxidermist_day_full";
@@ -215,9 +216,24 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return ret;
 	}
 
+	function getResourceImage()
+	{
+		return "ui/buttons/icon_time.png";
+	}
+
+	function getResourceCount()
+	{
+		return this.getRequiredTime();
+	}
+
     function getRequiredTime()
     {
         local points = 0;
+		if (this.m.Queue == null)
+        {
+            return 0;
+        }
+        
         foreach (r in this.m.Queue)
         {
             if (r == null)

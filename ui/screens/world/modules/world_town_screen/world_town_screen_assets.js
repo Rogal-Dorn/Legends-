@@ -1,7 +1,7 @@
 
 "use strict";
 
-var WorldTownScreenAssets = function(_parent)
+var WorldTownScreenAssets = function(_parent, showMax)
 {
     // assets labels
     this.mMoneyAsset		= null;
@@ -11,7 +11,8 @@ var WorldTownScreenAssets = function(_parent)
     this.mMedicineAsset		= null;
     this.mBrothersAsset		= null;
 
-	this.mParent			= _parent;
+    this.mParent			= _parent;
+    this.mShowMax            = showMax;
 };
 
 
@@ -192,7 +193,13 @@ WorldTownScreenAssets.prototype.loadFromData = function (_data)
             valueDifference = value - previousValue;
         }
 
-        this.updateAssetValue(this.mAmmoAsset, value, null, valueDifference);
+        var max = null;
+        if (this.mShowMax && 'AmmoMax' in currentAssetInformation && currentAssetInformation['AmmoMax'] !== null)
+        {
+            max =  currentAssetInformation['AmmoMax'];
+        }
+
+        this.updateAssetValue(this.mAmmoAsset, value, max, valueDifference);
     }
     
     if('Supplies' in currentAssetInformation && currentAssetInformation['Supplies'] !== null)
@@ -205,7 +212,13 @@ WorldTownScreenAssets.prototype.loadFromData = function (_data)
             valueDifference = value - previousValue;
         }
 
-        this.updateAssetValue(this.mSuppliesAsset, value, null, valueDifference);
+        var max = null;
+        if (this.mShowMax && 'SuppliesMax' in currentAssetInformation && currentAssetInformation['SuppliesMax'] !== null)
+        {
+            max =  currentAssetInformation['SuppliesMax'];
+        }
+
+        this.updateAssetValue(this.mSuppliesAsset, value, max, valueDifference);
     }
     
     if('Medicine' in currentAssetInformation && currentAssetInformation['Medicine'] !== null)
@@ -218,7 +231,13 @@ WorldTownScreenAssets.prototype.loadFromData = function (_data)
             valueDifference = value - previousValue;
         }
 
-        this.updateAssetValue(this.mMedicineAsset, value, null, valueDifference);
+        var max = null;
+        if (this.mShowMax && 'MedicineMax' in currentAssetInformation && currentAssetInformation['MedicineMax'] !== null)
+        {
+            max =  currentAssetInformation['MedicineMax'];
+        }
+
+        this.updateAssetValue(this.mMedicineAsset, value, max, valueDifference);
     }
     
     if('Brothers' in currentAssetInformation && 'BrothersMax' in currentAssetInformation &&

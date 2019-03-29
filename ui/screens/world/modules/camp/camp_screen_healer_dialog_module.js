@@ -43,6 +43,7 @@ var CampScreenHealerDialogModule = function(_parent)
 
     // selected entry
     this.mSelectedEntry = null;
+    this.mSelectedID = null;
 };
 
 
@@ -286,7 +287,7 @@ CampScreenHealerDialogModule.prototype.createDIV = function (_parentDiv)
     listContainerLayout = $('<div class="l-list-container"></div>');
     detailsRow.append(listContainerLayout);
     this.mDetailsPanel.ScrollContainer = listContainerLayout.createList(1.24, 'is-injury-list', true);
-    this.mDetailsPanel.ScrollContainerList = this.mQueueContainer.findListScrollContainer();
+    this.mDetailsPanel.ScrollContainerList = this.mDetailsPanel.ScrollContainer.findListScrollContainer();
 
 	// create footer button bar
     var footerButtonBar = $('<div class="l-button-bar"/>');
@@ -314,7 +315,8 @@ CampScreenHealerDialogModule.prototype.destroyDIV = function ()
     this.mBrothersAsset.remove();
     this.mBrothersAsset = null;
 
-	this.mSelectedEntry = null;
+    this.mSelectedEntry = null;
+    this.mSelectedID = null;
 
     this.mQueueContainer.destroyList();
     this.mQueueContainer= null;
@@ -404,10 +406,8 @@ CampScreenHealerDialogModule.prototype.assignItems = function (_owner, _items, _
         for(var i = 0; i < _items.length; ++i)
         {
             // ignore empty slots
-            console.error("assigningItemToSlot:: " + _items[i]);
             if(_items[i] !== undefined && _items[i] !== null)
             {
-                console.error("assigningItemToSlot")
                 this.assignItemToSlot(_owner, _itemArray[i], _items[i]);
             }
         }
@@ -591,6 +591,7 @@ CampScreenHealerDialogModule.prototype.addListEntry = function (_data)
     	icon.bindTooltip({ contentType: 'status-effect', entityId: _data.ID, statusEffectId: _data.Injuries[i].id });
     	row.append(icon);
     }
+    return entry;
 };
 
 
@@ -624,20 +625,17 @@ CampScreenHealerDialogModule.prototype.selectListEntry = function(_element, _scr
 {
     if (_element !== null && _element.length > 0)
     {
-        // check if this is already selected
-        //if (_element.hasClass('is-selected') !== true)
-        {
-            this.mListContainer.deselectListEntries();
-            _element.addClass('is-selected');
+        this.mSelectedEntry = _element;
+        this.mListContainer.deselectListEntries();
+        _element.addClass('is-selected');
 
-            // give the renderer some time to layout his shit...
-            if (_scrollToEntry !== undefined && _scrollToEntry === true)
-            {
-                this.mListContainer.scrollListToElement(_element);
-            }
-            this.mSelectedEntry = _element;
-            this.updateDetailsPanel(this.mSelectedEntry);
+        // give the renderer some time to layout his shit...
+        if (_scrollToEntry !== undefined && _scrollToEntry === true)
+        {
+            this.mListContainer.scrollListToElement(_element);
         }
+        this.mSelectedEntry = _element;
+        this.updateDetailsPanel(this.mSelectedEntry);
     }
     else
     {
@@ -654,7 +652,7 @@ CampScreenHealerDialogModule.prototype.updateDetailsPanel = function(_element)
         var data = _element.data('entry');
         
         this.mDetailsPanel.ScrollContainerList.empty();
-        this.mDetailsPanel.CharacterName.html(data.name);
+        //this.mDetailsPanel.CharacterName.html(data.name);
         for (var i = 0; i < data.Injuries.length; ++i)
         {
             this.createInjuryControlDIV(i, this.mDetailsPanel.ScrollContainerList, data.ID, data.Injuries[i], currentMoney);
@@ -670,9 +668,9 @@ CampScreenHealerDialogModule.prototype.updateDetailsPanel = function(_element)
 
 CampScreenHealerDialogModule.prototype.createInjuryControlDIV = function (_i, _parentDiv, _entityID, _data, _money)
 {
-	var self = this;
-
-	var row = $('<div class="is-injury-row display-block"/>');
+    var self = this;
+    var row = $('<div class="is-injury-row display-block"/>');
+    row.css({ 'top': ((7.5*_i) + 'rem') });
 	_parentDiv.append(row);
 
 	var icon = $('<img class="is-icon"/>');
@@ -687,27 +685,27 @@ CampScreenHealerDialogModule.prototype.createInjuryControlDIV = function (_i, _p
 	row.append(layout);
 
     var price;
-	if (!_data.queued)
+	if (_data.treatable)
 		price = $('<div class="is-price"><div class="is-price-ffs font-color-assets-negative-value"><img src="' + Path.GFX + Asset.ICON_ASSET_MEDICINE + '"/> ' + Helper.numberWithCommas(_data.price) + '</div></div>');
 	else
 		price = $('<div class="is-price"><div class="is-price-ffs"><img src="' + Path.GFX + Asset.ICON_ASSET_MEDICINE + '"/> ' + Helper.numberWithCommas(_data.price) + '</div></div>');
 
 	var button = layout.createCustomButton(price, function ()
 	{
-		self.notifyBackendTreatInjury(_entityID, _data.id, null);
+        self.notifyBackendTreatInjury(_entityID, _data.id, null);
 	}, '', 1);
 
-	// if (_data.queued)
-	// 	button.enableButton(false);
+	if (!_data.treatable)
+		button.enableButton(false);
 };
 
 CampScreenHealerDialogModule.prototype.bindTooltips = function ()
 {
 
-    this.mRequiredAsset.bindTooltip({ contentType: 'ui-element', elementId: 'workshop.Required' });
-    this.mSuppliesAsset.bindTooltip({ contentType: 'ui-element', elementId: 'repairs.Supplies' });
-    this.mTimeAsset.bindTooltip({ contentType: 'ui-element', elementId:  'workshop.Time' });
-    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'workshop.Bros' });   
+    this.mRequiredAsset.bindTooltip({ contentType: 'ui-element', elementId: 'healer.Required' });
+    this.mSuppliesAsset.bindTooltip({ contentType: 'ui-element', elementId: 'healer.Supplies' });
+    this.mTimeAsset.bindTooltip({ contentType: 'ui-element', elementId:  'healer.Time' });
+    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'healer.Bros' });   
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
 };
 
@@ -872,15 +870,25 @@ CampScreenHealerDialogModule.prototype.loadFromData = function (_data)
 
 	if('Queue' in _data && _data.Queue !== null)
 	{
-        console.error("Loading QUEUE" + _data.Queue)
 		this.loadQueueData(_data.Queue);
     }
 
     if ('Roster' in _data && _data.Roster !== null) 
     {
         this.mRoster = _data.Roster;
+
+        var selectedID = null;
+        if (this.mSelectedEntry !== null)
+        {
+            var data = this.mSelectedEntry.data('entry');
+            if (data)
+            {
+                selectedID = data.ID;
+            }
+        }
         this.mListScrollContainer.empty();
 
+        var selectedElement = null;
         if (_data.Roster.length != 0)
         {
             this.mNoInjuredLabel.addClass('display-none');
@@ -888,19 +896,22 @@ CampScreenHealerDialogModule.prototype.loadFromData = function (_data)
             for (var i = 0; i < _data.Roster.length; ++i)
             {
                 var entry = _data.Roster[i];
-                this.addListEntry(entry);
+                var element = this.addListEntry(entry);
+                if (entry.ID === selectedID)
+                {
+                    selectedElement = element;
+                }
             }
         }
         else
         {
             this.mNoInjuredLabel.removeClass('display-none');
         }
-        this.mSelectedEntry = this.mListContainer.findListEntryByIndex(0);
-    }
-
-    if (this.mSelectedEntry)
-    {
-        this.selectListEntry(this.mSelectedEntry, true);
+        if (selectedElement === null)
+        {
+            selectedElement = this.mListContainer.findListEntryByIndex(0) 
+        }
+        this.selectListEntry(selectedElement, true);
     }
 
 };
