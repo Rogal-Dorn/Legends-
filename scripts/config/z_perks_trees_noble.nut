@@ -8,7 +8,7 @@ if (!("Perks" in gt.Const))
 local NobleTree = [
 	[
 		gt.Const.Perks.PerkDefs.Adrenalin,
-		gt.Const.Perks.PerkDefs.Backstabber,
+		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.NineLives,

@@ -16,7 +16,7 @@ this.perk_legend_teleport <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_teleport))
+		if (!this.m.Container.hasSkill("actives.legend_teleport"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_teleport"));
 		}

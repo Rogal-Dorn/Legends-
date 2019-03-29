@@ -37,6 +37,14 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_composure"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )

@@ -29,6 +29,12 @@ this.camp_main_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();
+		//this.m.Parent.onCampClosed();
+	}
+
+	function onCampButtonPressed()
+	{
+		this.m.Parent.onModuleClosed();
 		this.m.Parent.onCampClosed();
 	}
 

@@ -42,6 +42,14 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 					b.RangedSkill += 5;
 				}
 			}
+			 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			b.RangedSkill += 10;
+			}
+
 
 			this.m.Skills.update();
 		}
@@ -77,6 +85,13 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 		{
 			this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_spiked_balls"));
 		}
+
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_spiked_balls"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_spiked_balls"));
+		}
+
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 		{

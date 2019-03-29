@@ -5,6 +5,118 @@ if (!("LegendMod" in gt.Const))
 	gt.Const.LegendMod <- {};
 }
 
+
+local template = function (_background)
+{
+	switch (_background)
+	{
+		case "background.adventurous_noble":
+		case "background.apprentice":
+		case "background.assassin":
+		case "background.bastard":
+		case "background.beast_hunter":
+		case "background.beggar":
+		case "background.bowyer":
+		case "background.brawler":
+		case "background.butcher":
+		case "background.caravan_hand":
+		case "background.companion":
+		case "background.converted_cultist":
+		case "background.cripple":
+		case "background.crusader":
+		case "background.cultist":
+		case "background.daytaler":
+		case "background.deserter":
+		case "background.disowned_noble":
+		case "background.eunuch":
+		case "background.farmhand":
+		case "background.female_adventurous_noble":
+		case "background.female_beggar":
+		case "background.female_bowyer":
+		case "background.female_butcher":
+		case "background.female_daytaler":
+		case "background.female_disowned_noble":
+		case "background.female_farmhand":
+		case "background.female_miller":
+		case "background.female_minstrel":
+		case "background.female_servant":
+		case "background.female_tailor":
+		case "background.female_thief":
+		case "background.fisherman":
+		case "background.flagellant":
+		case "background.gambler":
+		case "background.gravedigger":
+		case "background.graverobber":
+		case "background.hedge_knight":
+		case "background.historian":
+		case "background.houndmaster":
+		case "background.hunter":
+		case "background.juggler":
+		case "background.killer_on_the_run":
+		case "background.legend_commander_beggar":
+		case "background.legend_berserker":
+		case "background.legend_commander_berserker":
+		case "background.legend_blacksmith":
+		case "background.legend_cannibal":
+		case "background.legend_crusader":
+		case "background.legend_commander_crusader":
+		case "background.legend_donkey":
+		case "background.legend_healer":
+		case "background.legend_herbalist":
+		case "background.legend_inventor":
+		case "background.legend_ironmonger":
+		case "background.legend_necro":
+		case "background.legend_commander_necro":
+		case "background.legend_noble_2h":
+		case "background.legend_noble":
+		case "background.legend_commander_noble":
+		case "background.legend_noble_ranged":
+		case "background.legend_noble_shield":
+		case "background.legend_nun":
+		case "background.legend_ranger":
+		case "background.legend_commander_ranger":
+		case "background.legend_shieldmaiden":
+		case "background.legend_squire":
+		case "background.legend_taxidermist":
+		case "background.legend_commander_trader":
+		case "background.legend_vala":
+		case "background.legend_witch":
+		case "background.legend_commander_witch":
+		case "background.lumberjack":
+		case "background.mage":
+		case "background.mason":
+		case "background.messenger":
+		case "background.militia":
+		case "background.miller":
+		case "background.miner":
+		case "background.minstrel":
+		case "background.monk":
+		case "background.monk_turned_flagellant":
+		case "background.orc_slayer":
+		case "background.pacified_flagellant":
+		case "background.peddler":
+		case "background.pimp":
+		case "background.poacher":
+		case "background.raider":
+		case "background.ratcatcher":
+		case "background.refugee":
+		case "background.retired_soldier":
+		case "background.sellsword":
+		case "background.servant":
+		case "background.shepherd":
+		case "background.squire":
+		case "background.swordmaster":
+		case "background.tailor":
+		case "background.thief":
+		case "background.vagabond":
+		case "background.wildman":
+		case "background.witchhunter":
+			return 0;
+		default:
+			return 0;
+	}
+}
+
 gt.Const.LegendMod.MaxResources <- [
 	{
 		Food = 300,
@@ -262,6 +374,41 @@ gt.Const.LegendMod.getHealingModifier <- function ( _background )
 	return 0.0;
 }
 
+//Med units / hour in the healing tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getInjuryModifier <- function ( _background )
+{
+		switch ( _background )
+	{
+
+		case "background.female_beggar":
+		case "background.cripple":
+		case "background.flagellant":
+		case "background.servant":
+		case "background.eunuch":
+		case "background.female_servant":
+			return 0.25;
+			break;
+
+		case "background.legend_witch":
+		case "background.legend_necro":
+		case "background.legend_herbalist":
+		case "background.legend_commander_witch":
+		case "background.legend_commander_necro":
+			return 0.5;
+			break;
+		case "background.monk":
+		case "background.legend_nun":
+		case "background.vazl_vala":
+			return 1.0;
+			break;
+
+		default:
+			return 0.0;
+	}
+	return 0.0;
+}
+
 gt.Const.LegendMod.getRepairModifier <- function ( _background )
 {
 	switch ( _background )
@@ -417,6 +564,149 @@ gt.Const.LegendMod.getMedsConsumptionModifier <- function ( _background )
 			return 0.0;
 	}
 	return 0.0;
+};
+
+//Food units / hour in the hunting tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getHuntingModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.poacher":
+		case "background.hunter":
+		case "background.legend_ranger":
+			return 3;
+			break;
+		case "background.bowyer":
+		case "background.legend_commander_ranger":
+			return 1;
+			break;
+		case "background.female_bowyer":
+			return 1;
+			break;
+
+		default:
+			return 0;
+	}
+	return 0;
+};
+
+
+//Food units / hour in the hunting tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getFletcherModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.poacher":
+		case "background.hunter":
+		case "background.legend_ranger":
+			return 3;
+			break;
+		case "background.bowyer":
+		case "background.legend_commander_ranger":
+			return 1;
+			break;
+		case "background.female_bowyer":
+			return 1;
+			break;
+
+		default:
+			return 0;
+	}
+	return 0;
+};
+
+//Food units / hour in the hunting tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getScoutModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.poacher":
+		case "background.hunter":
+		case "background.legend_ranger":
+			return 3;
+			break;
+		case "background.bowyer":
+		case "background.legend_commander_ranger":
+			return 1;
+			break;
+		case "background.female_bowyer":
+			return 1;
+			break;
+
+		default:
+			return 1;
+	}
+	return 0;
+};
+
+//Med units / hour in the hunting tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getGatheringModifier <- function ( _background )
+{
+		switch ( _background )
+	{
+
+		case "background.female_beggar":
+		case "background.cripple":
+		case "background.flagellant":
+			return 0.5;
+			break;
+
+		case "background.legend_commander_noble":
+		case "background.legend_noble":
+		case "background.servant":
+		case "background.eunuch":
+		case "background.female_servant":
+			return 0.5;
+			break;
+
+		case "background.legend_witch":
+		case "background.legend_necro":
+		case "background.legend_herbalist":
+			return 1;
+			break;
+		case "background.legend_commander_witch":
+		case "background.legend_commander_necro":
+			return 1;
+			break;
+		case "background.monk":
+		case "background.legend_nun":
+		case "background.vazl_vala":
+			return 1;
+			break;
+
+		default:
+			return 0.0;
+	}
+	return 0.0;
+}
+
+//Food units / hour in the hunting tent
+// = BasePoints + BasePoints * Modifier
+gt.Const.LegendMod.getTrainingModifier <- function ( _background )
+{
+	switch ( _background )
+	{
+		case "background.poacher":
+		case "background.hunter":
+		case "background.legend_ranger":
+			return 3;
+			break;
+		case "background.bowyer":
+		case "background.legend_commander_ranger":
+			return 1;
+			break;
+		case "background.female_bowyer":
+			return 1;
+			break;
+
+		default:
+			return 0;
+	}
+	return 0;
 };
 
 // gt.Const.World.TerrainTypeSpeedMult <- [

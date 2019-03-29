@@ -135,7 +135,7 @@ CampScreen.prototype.createModules = function()
 {
     this.mMainDialogModule = new CampScreenMainDialogModule(this);
     this.mCommanderDialogModule = new CampScreenCommanderDialogModule(this);
-    this.mBarberDialogModule = new CampScreenBarberDialogModule(this);
+    this.mBarberDialogModule = new WorldTownScreenBarberDialogModule(this);
     this.mCraftingDialogModule = new CampScreenCraftingDialogModule(this);
 	this.mEnchanterDialogModule = new CampScreenEnchanterDialogModule(this);
 	this.mFletcherDialogModule = new CampScreenFletcherDialogModule(this);

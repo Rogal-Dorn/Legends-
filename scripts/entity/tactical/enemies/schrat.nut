@@ -210,6 +210,14 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/grow_shield_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/uproot_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/uproot_zoc_skill"));
+			 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function assignRandomEquipment()

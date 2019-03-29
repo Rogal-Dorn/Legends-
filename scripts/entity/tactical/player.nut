@@ -143,7 +143,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyFood()
 	{
-		return this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		if (this.isInReserves())
+		{
+			food = food * 3;
+		}
+		return food;
 	}
 
 	function getBackground()
@@ -621,7 +626,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				text = this.Const.MoodStateName[this.getMoodState()]
 			});
 
-			if (this.m.PlaceInFormation <= 26)
+			if (!this.isInReserves())
 			{
 				tooltip.push({
 					id = 6,
@@ -804,7 +809,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function isInReserves()
 	{
-		return this.CampAssignment == this.Const.World.CampBuildings.Healer
+		return this.m.CampAssignment == this.Const.World.CampBuildings.Healer
 	}
 
 	function create()
@@ -999,7 +1004,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local flip = this.Math.rand(0, 100) < 50;
 		this.m.IsCorpseFlipped = flip;
-		local isResurrectable = _fatalityType == this.Const.FatalityType.None || _fatalityType == this.Const.FatalityType.Disembowled;
+		local isResurrectable = _fatalityType == this.Const.FatalityType.None || _fatalityType == this.Const.FatalityType.Disemboweled;
 		local appearance = this.getItems().getAppearance();
 		local sprite_body = this.getSprite("body");
 		local sprite_head = this.getSprite("head");

@@ -43,6 +43,13 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_full_force"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
 	}
 
 	function assignRandomEquipment()

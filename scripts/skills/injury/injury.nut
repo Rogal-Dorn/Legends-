@@ -15,7 +15,9 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		IsShownOnBody = false,
 		IsShownOnHead = false,
 		IsShownOutOfCombat = false,
-		IsContentWithReserve = true
+		IsContentWithReserve = true,
+		Points = 0.0
+		Queue = 0
 	},
 	function isFresh()
 	{
@@ -42,9 +44,14 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		this.m.IsTreated = _f;
 	}
 
-	function setTreatable( _f )
+	function getQueue()
 	{
-		this.m.IsTreatable = _f;
+		return this.m.Queue;
+	}
+	
+	function setQueue( _f )
+	{
+		this.m.Queue = _f;
 	}
 
 	function setOutOfCombat( _f )
@@ -87,6 +94,21 @@ this.injury <- this.inherit("scripts/skills/skill", {
 			Min = mint,
 			Max = maxt
 		};
+	}
+
+	function getPoints()
+	{
+		return this.m.Points;
+	}
+
+	function setPoints( _v)
+	{
+		this.m.Points = _v;
+	}
+
+	function getTreatedPercentage()
+	{
+ 		return this.m.Points / this.getCost();
 	}
 
 	function create()
@@ -240,8 +262,8 @@ this.injury <- this.inherit("scripts/skills/skill", {
 
 			local time = this.getTime();
 			local daysPassed = this.Math.ceil((time - this.m.TimeApplied) / this.World.getTime().SecondsPerDay);
-			local minTime = this.m.HealingTimeMin * (this.m.IsTreated ? 0.5 : 1.0);
-			local maxTime = this.m.HealingTimeMax * (this.m.IsTreated ? 0.5 : 1.0);
+			local minTime = this.m.HealingTimeMin * (this.m.IsTreated ? 0.5 : (1.0 - 0.5 * this.getTreatedPercentage()));
+			local maxTime = this.m.HealingTimeMax * (this.m.IsTreated ? 0.5 : (1.0 - 0.5 * this.getTreatedPercentage()));
 
 			if (daysPassed < minTime)
 			{
@@ -324,7 +346,8 @@ this.injury <- this.inherit("scripts/skills/skill", {
 	{
 		_out.writeF32(this.m.TimeApplied);
 		_out.writeBool(this.m.IsTreated);
-		_out.writeBool(this.m.IsTreatable);
+		_out.writeU8(this.m.Queue);
+		_out.writeF32(this.m.Points);
 		_out.writeBool(false);
 	}
 
@@ -336,8 +359,9 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		this.m.IsTreated = _in.readBool();
 		if (_in.getMetaData().getVersion() >= 52)
 		{
-			this.m.Treatable = _in.readBool();
-		}		
+			this.m.Queue = _in.readU8();
+			this.m.Points = _in.readF32();
+		}
 		_in.readBool();
 	}
 

@@ -7,6 +7,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
         this.m.Slot = "enchanter";
         this.m.Name = "Enchanter";
         this.m.Description = "Oooo.. Pretty glowing things..."
+		this.m.BannerImage = "ui/buttons/banner_enchant.png"
 		this.m.UIImage = "ui/settlements/vala_day_empty";
 		this.m.UIImageNight = "ui/settlements/vala_night_empty";
 		this.m.UIImageFull = "ui/settlements/vala_day_full";
@@ -156,6 +157,43 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 			}
 		];
     }
+
+    function getRequiredTime()
+    {
+		return 0;
+        // local points = 0;
+		// if (this.m.Queue == null)
+        // {
+        //     return 0;
+        // }
+        
+        // foreach (r in this.m.Queue)
+        // {
+        //     if (r == null)
+        //     {
+        //         continue;
+        //     }
+            
+        //     points += r.Blueprint.getCost();
+        // }
+        // local modifiers = this.getModifiers();
+		// if (modifiers.Craft <= 0)
+		// {
+		// 	return 0
+		// }
+        // return this.Math.ceil(points / modifiers.Craft);
+    }
+
+
+	function getResourceImage()
+	{
+		return "ui/buttons/icon_time.png";
+	}
+
+	function getResourceCount()
+	{
+		return this.getRequiredTime();
+	}
 
 	function onClicked( _campScreen )
 	{

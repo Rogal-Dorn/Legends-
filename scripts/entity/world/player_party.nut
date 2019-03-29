@@ -47,7 +47,24 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				skeletonSummonLevel = 2;
 			}
 
-			this.m.Strength +=  6 + ((bro.getLevel() / 3) + (pow(bro.getLevel(),1.3))); 
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
+			{
+			this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;
+			}
+
+		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
+			{
+			this.m.Strength +=  10 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
+			}
+
+		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
+			{
+			this.m.Strength +=  3 + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
+			}
+		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;
+			}
 		}
 
 		if  (zombieSummonLevel == 0 && skeletonSummonLevel == 0)
@@ -162,6 +179,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 	function getVisionRadius()
 	{
+		if (this.World.Assets.isCamping())
+		{
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout)
+			return tent.getVisionRadius();
+		}
 		return this.m.VisionRadius * this.World.getGlobalVisibilityMult() * this.Const.World.TerrainTypeVisionRadiusMult[this.getTile().Type] * (this.World.Assets.isCamping() ? 0.75 : 1.0);
 	}
 

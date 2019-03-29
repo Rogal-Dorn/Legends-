@@ -508,6 +508,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.CampScreen <- this.new("scripts/ui/screens/world/camp_screen");
 		this.m.CampScreen.setOnBrothersPressedListener(this.camp_screen_main_dialog_module_onBrothersButtonClicked.bindenv(this));
 		this.m.CampScreen.setOnCommanderPressedListener(this.camp_screen_main_dialog_module_onCommanderButtonClicked.bindenv(this));
+		this.m.CampScreen.setOnTentPressedListener(this.camp_screen_main_dialog_module_onTentButtonClicked.bindenv(this));
 		this.m.CampScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
 		this.m.CampScreen.setOnCampListener(this.onCamp.bindenv(this));
 		this.m.WorldEventPopupScreen <- this.new("scripts/ui/screens/world/world_event_popup_screen");
@@ -952,7 +953,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 				if (this.getVecDistance(dest, this.m.Player.getPos()) <= this.Const.World.MovementSettings.PlayerDirectMoveRadius)
 				{
-					if (this.World.Camp.isCamping())
+					if (this.World.Camp.isCamping() && !this.isPaused())
 					{
 						this.onCamp();
 					}
@@ -962,7 +963,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				}
 				else if (this.World.isValidTile(destTile.X, destTile.Y))
 				{
-					if (this.World.Camp.isCamping())
+					if (this.World.Camp.isCamping() && !this.isPaused())
 					{
 						this.onCamp();
 					}
@@ -1208,6 +1209,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Contracts.setActiveContract(c, true);
 		this.World.setFogOfWar(!this.m.DebugMap);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
+		
+		this.World.Tags.set("IsLegendCampSupport", true);
 	}
 
 	function showIntroductionScreen( _tag = null )
@@ -1685,54 +1688,47 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.m.Player.setPath(null);
 			this.m.AutoEnterLocation = null;
 			this.m.AutoAttack = null;
-		}
-
-		if (this.World.Camp.isCamping())
-		{
 			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
-
-			if (!this.isPaused())
-			{
-				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
-				this.World.TopbarDayTimeModule.updateTimeButtons(2);
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
+			this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
+			this.World.TopbarDayTimeModule.updateTimeButtons(2);
+			this.setPause(false);
 		}
 		else
 		{
+			this.updateTopbarAssets();
 			this.m.LastWorldSpeedMult = 1.0;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
-
-			if (!this.isPaused())
-			{
-				this.World.setSpeedMult(1.0);
-				this.World.TopbarDayTimeModule.updateTimeButtons(1);
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
+			this.World.setSpeedMult(1.0);
+			this.World.TopbarDayTimeModule.updateTimeButtons(1);			
+			this.setPause(true);
 		}
 
-		if (!this.isPaused())
-		{
-			if (this.World.Camp.isCamping())
-			{
-				this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.hideMessage();
-			}
-		}
-		else
-		{
-			this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
-		}
+		// 	if (!this.isPaused())
+		// 	{
+
+		// 	}
+		// 	else
+		// 	{
+		// 		this.World.TopbarDayTimeModule.updateTimeButtons(0);
+		// 	}
+		// }
+
+		// if (!this.isPaused())
+		// {
+		// 	if (this.World.Camp.isCamping())
+		// 	{
+		// 		this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
+		// 	}
+		// 	else
+		// 	{
+		// 		this.World.TopbarDayTimeModule.hideMessage();
+		// 	}
+		// }
+		// else
+		// {
+		// 	this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
+		// }
 	}
 
 	function showDialogPopup( _title, _text, _okCallback, _cancelCallback, _isMonologue = false )
@@ -2464,7 +2460,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			return;
 		}
+
+		if (this.World.Camp.isCamping())
+		{
+			this.onCamp();
+			return
+		}
 		//this.Music.setTrackList(this.m.LastEnteredTown.getMusic(), this.Const.Music.CrossFadeTime);
+		//this.setPause(true);
 		this.setAutoPause(true);
 		this.Tooltip.hide();
 		this.m.WorldScreen.hide();
@@ -2478,13 +2481,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrain, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
 			this.Sound.setAmbience(1, this.getSurroundingLocationSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceOutsideSettlement, this.Const.Sound.AmbienceOutsideDelay);
 			this.World.getCamera().zoomTo(this.m.CustomZoom, 4.0);
-			this.World.Assets.consumeItems();
-			this.World.Assets.refillAmmo();
-			this.World.Assets.updateAchievements();
-			this.World.Assets.checkAmbitionItems();
-			this.World.Ambitions.resetTime(false, 2.0);
-			this.updateTopbarAssets();
-			this.World.State.getPlayer().updateStrength();
+			// this.World.Assets.consumeItems();
+			// this.World.Assets.refillAmmo();
+			// this.World.Assets.updateAchievements();
+			// this.World.Assets.checkAmbitionItems();
+			// this.World.Ambitions.resetTime(false, 2.0);
+			// this.updateTopbarAssets();
+			// this.World.State.getPlayer().updateStrength();
 			this.m.CampScreen.clear();
 			this.m.CampScreen.hide();
 			this.m.WorldScreen.show();
@@ -2497,7 +2500,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
 			this.setAutoPause(false);
-			this.setPause(false);
+			this.setPause(true);
 		}, function ()
 		{
 			return !this.m.CampScreen.isAnimating();
@@ -2522,6 +2525,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function camp_screen_main_dialog_module_onCommanderButtonClicked()
 	{
 		this.showCommanderScreenFromCamp();
+	}
+
+	function camp_screen_main_dialog_module_onTentButtonClicked( _id )
+	{
+		this.showTentScreenFromCamp( _id );
 	}
 
 	function initLoadingScreenHandler()
@@ -2686,6 +2694,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 		});
 	}
 
+	function showTentScreenFromCamp( _id )
+	{
+		this.m.CampScreen.hideAllDialogs();
+		this.m.CampScreen.showTentBuildingDialog( _id )
+		this.m.MenuStack.push(function ()
+		{
+			this.m.CampScreen.showLastReturnDialog();
+		}, function ()
+		{
+			return !this.m.CampScreen.isAnimating();
+		});
+	}
 
 	function toggleCharacterScreen()
 	{

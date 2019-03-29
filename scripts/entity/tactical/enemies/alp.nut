@@ -194,7 +194,6 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				local r = this.Math.rand(1, 100);
 				local loot;
-
 				if (r <= 40)
 				{
 					loot = this.new("scripts/items/misc/parched_skin_item");
@@ -209,6 +208,14 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 				}
 
 				loot.drop(_tile);
+
+				if (this.Math.rand(1, 100) < 15)
+				{
+					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					token.setRuneVariant(this.Math.rand(1, 3));
+					token.updateRuneSigilToken();
+					token.drop(_tile);
+				}
 			}
 		}
 
@@ -266,6 +273,13 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/shadows_skill"));
 		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 });
