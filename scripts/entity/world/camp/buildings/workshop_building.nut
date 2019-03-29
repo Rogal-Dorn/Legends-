@@ -16,6 +16,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "workshop";
         this.m.Name = "Workshop";
         this.m.Description = "Turn scrap into useable parts";
+        this.m.BannerImage = "ui/buttons/banner_scrap.png";
 		this.m.UIImage = "ui/settlements/scrap_day_empty";
 		this.m.UIImageNight =  "ui/settlements/scrap_night_empty";
 		this.m.UIImageFull = "ui/settlements/scrap_day_full";
@@ -154,10 +155,15 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     
     function getResults()
     {
+        if (this.m.ToolsCreated == 0) 
+        {
+            return [];
+        }
+
         return [{
 				id = 11,
 				icon = "ui/icons/asset_supplies.png",
-				text = "You created [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.ToolsCreated + "[/color] units of tools and salvaged [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ItemsDestroyed + "[/color] pieces of equipment."
+				text = "You created [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Math.floor(this.m.ToolsCreated) + "[/color] units of tools and salvaged [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ItemsDestroyed + "[/color] pieces of equipment."
 			}];
     }
 
@@ -208,6 +214,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function getRequiredTime()
     {
         local points = 0;
+        if (this.m.Salvage == null)
+        {
+            return 0;
+        }
+        
         foreach (i, r in this.m.Salvage)
         {
             if (r == null)
@@ -230,6 +241,16 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         local mod = this.getModifiers();
         return mod.Assigned;
     }
+
+	function getResourceImage()
+	{
+		return "ui/buttons/icon_time.png";
+	}
+
+	function getResourceCount()
+	{
+		return this.getRequiredTime();
+	}
 
     function update ()
     {

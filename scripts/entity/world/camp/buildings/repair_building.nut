@@ -15,6 +15,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "repair";
         this.m.Name = "Repair Tent";
         this.m.Description = "Manage the repair of company items"
+        this.m.BannerImage = "ui/buttons/banner_repair.png";
 		this.m.UIImage = "ui/settlements/blacksmith_day_empty_large";
 		this.m.UIImageNight = "ui/icons/buildings/blacksmith_night_empty_large"; 
 		this.m.UIImageFull = "ui/settlements/blacksmith_day_full_large";
@@ -147,10 +148,15 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     
     function getResults()
     {
+        if (this.m.ToolsUsed == 0) 
+        {
+            return [];
+        }
+
         return [{
 				id = 10,
 				icon = "ui/icons/asset_supplies.png",
-				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.m.ToolsUsed + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] pieces of equipment."
+				text = "You used [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.Math.floor(this.m.ToolsUsed) + "[/color] units of tools and repaired [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.m.PointsRepaired + "[/color] pieces of equipment."
 			}];
     }
 
@@ -201,6 +207,11 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     function getRequiredTime()
     {
         local points = 0;
+        if (this.m.Repairs == null)
+        {
+            return 0;
+        }
+        
         foreach (i, r in this.m.Repairs)
         {
             if (r == null)
@@ -220,6 +231,17 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return mod.Assigned;
     }
 
+
+	function getResourceImage()
+	{
+		return "ui/buttons/icon_time.png";
+	}
+
+	function getResourceCount()
+	{
+		return this.getRequiredTime();
+	}
+    
     function update ()
     {
         if (this.World.Assets.getArmorParts() == 0)

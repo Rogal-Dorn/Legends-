@@ -11,6 +11,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "gatherer";
         this.m.Name = "Gatherer";
         this.m.Description = "Forgage for herbs and medicine";
+		this.m.BannerImage = "ui/buttons/banner_gather.png";
 		this.m.UIImage = "ui/settlements/gatherer_day_empty";
 		this.m.UIImageNight =  "ui/settlements/gatherer_night_empty";
 		this.m.UIImageFull = "ui/settlements/gatherer_day_full";
@@ -94,14 +95,13 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return;
 		}
 
-		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(points / 2.0)))
-		this.World.Assets.addMedicine(this.m.MedsAdded);
-
-		if (this.m.MedsAdded = 0)
+		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(points / 3.0)))
+		if (this.m.MedsAdded == 0)
 		{
 			return
 		}
-		
+
+		this.World.Assets.addMedicine(this.m.MedsAdded);
 		if (this.Stash.getNumberOfEmptySlots() == 0)
 		{
 			return
