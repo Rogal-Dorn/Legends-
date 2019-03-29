@@ -21,7 +21,8 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Body = "bust_naked_body_05";
-		this.m.IsFemaleBackground = true;
+		this.m.IsFemaleBackground = false;
+		this.m.IsUntalented = true;
 	}
 
 	function getTooltip()

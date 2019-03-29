@@ -192,7 +192,13 @@ Beta 0.9.5
 *Discover location payout increased, decreased time before hint
 *Berserker commanders can no longer be converted into cultists
 
-Beta 0.10
+Beta 0.10 Test Build 1
+
+****DISCLAIMER!!!!****
+THIS IS A TEST BUILD! 
+!!Camp screen art work is placeholder (we know it looks like shit) New Art still in work.
+!!Camp system is unbalanced! In progress
+!!We ask to please not treat this as release, test to help us get v10 released quicker
 
 Camp Documentation:
 
@@ -263,9 +269,8 @@ Camp Documentation:
 	-Lower the level, the higher the chance of success. Longer training time improves chance for everyone.
 	-There is a very small chance the brother could have a breakthrough training session and permanently improve a skill. Chance improves the longer the training session.
 
- *Barber Tent*
+*Barber Tent*
 	-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
-
 
 *Enemy scaling is now tied to the combat difficulty option:
 	-Normal is BB default
@@ -273,22 +278,20 @@ Camp Documentation:
 	-Expert is the curved scaling from previous mod iterations
 	-Legendary is same as Easy, but all enemies are a lot harder
 
-"Legendary" combat difficulty adds terrifying perk combinations for all enemy types. (Nimble direwolves, fearless battle forged raiders, Unholds on whole new level of resilient )
-"Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
-"None" starting funds setting starts you with no resources except food. 
+*"Legendary" combat difficulty adds terrifying perk combinations for all enemy types. (Nimble direwolves, fearless battle forged raiders, Unholds on whole new level of resilient )
+*"Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
+*"None" starting funds setting starts you with no resources except food. 
 
-
-Donkeys and backpacks:
-Recruitable beasts of burden that can massively increase your stash size, but they are very hungry and must be protected in battle.  With their own perk trees to increase carrying capacity and defenses. 
-Backpacks can be bought in most towns or crafted in your camp. 
+*Donkeys and backpacks:
+*Recruitable beasts of burden that can massively increase your stash size, but they are very hungry and must be protected in battle.  With their own perk trees to increase carrying capacity and defenses. 
+*Backpacks can be bought in most towns or crafted in your camp. 
 
 Trader commander:
-Begins with 20% barter bonus that can be upgraded through perks. 
-Begins with a donkey and skills that increase carrying capacity to allow for large trading missions
-Bribe skill allows you to pay human opponents to make them flee from battle. 
-Danger Pay skill lets you pay your mercenaries more to raise their morale in battle. 
-Barter bonus now effects pay scaling of caravan and delivery contracts 
-
+*Begins with 20% barter bonus that can be upgraded through perks. 
+*Begins with a donkey and skills that increase carrying capacity to allow for large trading missions
+*Bribe skill allows you to pay human opponents to make them flee from battle. 
+*Danger Pay skill lets you pay your mercenaries more to raise their morale in battle. 
+*Barter bonus now effects pay scaling of caravan and delivery contracts 
 
 Seer: 
 *Max party size 22
@@ -316,75 +319,69 @@ Warlock:
 *summon zombies, cat and skeletons all have overlay icons updated
 
 Ranger: 
-Max party size 24
-Gains ranger armor
-Gains Mark Target, Piercing Shot, Big Game Hunter, Second Wind, ammunition binding and ammunition bundles
+*Max party size 24
+*Gains ranger armor
+*Gains Mark Target, Piercing Shot, Big Game Hunter, Second Wind, ammunition binding and ammunition bundles
 *Nightvision changed to 2 tile radius around self
 *Guided Steps sound, overlay icon and effect icon updated
 *Tripleshot sounds, skill icons and overlay icons updated
 *Coordinated volleys sound, overlay icon and effect icon updated
 *Evasion fixed, overlay icon updated 
 
-
 Noble: 
-max party size 27
-Each starting companion has weapon specific perks
-Gains noble killer trait
-Gains Prepared for Anything, Efficient Packing, Convincing Barter, Bribe, True believer, Backstabber, Sprint, Student, Berserk, Headhunter and Crippling strikes 
+*Max party size 27
+*Each starting companion has weapon specific perks
+*Gains noble killer trait
+8Gains Prepared for Anything, Efficient Packing, Convincing Barter, Bribe, True believer, Backstabber, Sprint, Student, Berserk, Headhunter and Crippling strikes 
 *Push forward sound, overlay icon and effect icon updated 
 *Hold the line sound, overlay icon and effect icons updated
 
 Berserker: 
-max party size 16 
-Gains Infectious Rage that grants Berserker perk to all allies battle
-Gains second wind, regaining half fatigue at 1/3rd health. 
-Poison immunity fixed to work vs spiders 
-Steadfast buffed to remove all fatigue on damage, not just multiplier
+*Max party size 16 
+*Gains Infectious Rage that grants Berserker perk to all allies battle
+*Gains second wind, regaining half fatigue at 1/3rd health. 
+*Poison immunity fixed to work vs spiders 
+*Steadfast buffed to remove all fatigue on damage, not just multiplier
 
 Crusader:
-max party size 20
-Gains Strict Sermons perk that grants Fortified mind to all allies in battle
-Gains undead killer trait
-Gains second wind, last stand, reach advantage, overwhelm, throwing mastery, quick hands, crippling strikes, pathfinder and bags and belts
-gains tools drawers and tools spares perks
-
-
+*Max party size 20
+*Gains Strict Sermons perk that grants Fortified mind to all allies in battle
+*Gains undead killer trait
+*Gains second wind, last stand, reach advantage, overwhelm, throwing mastery, quick hands, crippling strikes, pathfinder and bags and belts
+*Gains tools drawers and tools spares perks
 
 New recruitable backgrounds: 
-Adds Nun, Nun robes and nun habit - she helps heal and spawns near wineries, beekeepers, breweries and herbalist groves
-Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and spawns near herbalist groves, gatherer's huts and mushroom groves  
-Adds Taxidermist and taxidermist apron - reduces med usage, helps with camp crafting, spawns near trappers, tanners and pig farms
-
+*Adds Nun, Nun robes and nun habit - she helps heal and spawns near wineries, beekeepers, breweries and herbalist groves
+*Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and spawns near herbalist groves, gatherer's huts and mushroom groves  
+*Adds Taxidermist and taxidermist apron - reduces med usage, helps with camp crafting, spawns near trappers, tanners and pig farms
 
 Changes for recruitable backgrounds:
-Vala has the correct perk tree, with a new set of chants. 
-Peddlers have lower initial barter bonus but can unlock perks to increase their barter skill
-Militia gain perks to increase effectiveness with milita spears 
-Minstrels and troubadours gain skill to cast entice and deal more damage while wielding a lute. lute durability buffed, gains bash. 
-Blacksmiths and ironmongers gain perks to increase effectiveness with blacksmith's hammer, big bonuses to craft, scrap and repair in camp.
-Farmhands gain perks for pitchforks, increase stash capacity 
-Gravediggers and graverobbers gain perks for shovels, and an upgradable chance to find bodies after a battle 
-Lumberjacks gain perks for wood axes
-thieves and pickpockets gain perks for knives
-Poachers gain perks for shortbows 
-Miners gain perks for pickaxes
-Butchers and fishwives gain perks for butcher's cleavers and can carry more medicine 
-Servants, Maids, eunechs, widows, cripplies and flagelants all help heal slightly, though far less than monks and nuns.
-Servants, maids and eunuchs help repair very slightly 
-Tailors and seamstresses can carry more armor parts, help craft and scrap in camp and help with repairs, though not as much as ironmongers, blacksmiths and inventors.  
-Brawlers initiative buffed now that hand to hand scales off initiative, can carry more 
-daytaler and peddler stash capcity at 10
-Mason, miner, inventor and lumberjack stash capacity increased to 5
-Daytaler, washerwoman, milkmaids, refugee, fisherman, thief, vagabond, shepard, servant, maid, eunech all increased stash capacity to 3
-
+*Vala has the correct perk tree, with a new set of chants. 
+*Peddlers have lower initial barter bonus but can unlock perks to increase their barter skill
+*Militia gain perks to increase effectiveness with milita spears 
+*Minstrels and troubadours gain skill to cast entice and deal more damage while wielding a lute. lute durability buffed, gains bash. 
+*Blacksmiths and ironmongers gain perks to increase effectiveness with blacksmith's hammer, big bonuses to craft, scrap and repair in camp.
+*Farmhands gain perks for pitchforks, increase stash capacity 
+*Gravediggers and graverobbers gain perks for shovels, and an upgradable chance to find bodies after a battle 
+*Lumberjacks gain perks for wood axes
+*Thieves and pickpockets gain perks for knives
+*Poachers gain perks for shortbows 
+*Miners gain perks for pickaxes
+*Butchers and fishwives gain perks for butcher's cleavers and can carry more medicine 
+*Servants, Maids, eunechs, widows, cripplies and flagelants all help heal slightly, though far less than monks and nuns.
+*Servants, maids and eunuchs help repair very slightly 
+*Tailors and seamstresses can carry more armor parts, help craft and scrap in camp and help with repairs, though not as much as ironmongers, blacksmiths and inventors.  
+*Brawlers initiative buffed now that hand to hand scales off initiative, can carry more 
+*Daytaler and peddler stash capcity at 10
+*Mason, miner, inventor and lumberjack stash capacity increased to 5
+*Daytaler, washerwoman, milkmaids, refugee, fisherman, thief, vagabond, shepard, servant, maid, eunech all increased stash capacity to 3
 
 Other changes: 
-Player world figurine changes based on commander
-increases late game difficulty scaling, reduces early game (even more)
-Increases crises phase length to ~50 days
-Increases caravan speed to encourage playstyles
-Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
-Slings apply blunt force trauma instead of piercing
+*Player world figurine changes based on commander
+*Increases crises phase length to ~50 days
+*Increases caravan speed to encourage playstyles
+*Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
+*Slings apply blunt force trauma instead of piercing
 
 Bug fixes:
 Hexen won't use charm if there is one opponent 
@@ -403,14 +400,13 @@ fixes missing icon errors for rabble, cat and orc elites
 fixes missing inventory icon for limb lopper
 Berserker can no longer be converted into a cultist 
 Maskes all commanders loyal so they don't abandon themselves
-*Fixes formations mod stash size exploit
-*Fixes Food tooltip showing double consumption rate
+Fixes formations mod stash size exploit
+Fixes Food tooltip showing double consumption rate
 
 
 In progress: 
-*Adds Orc Behemoth (broken)
+*Orc Behemoth
 *Battlesite icons added but not implemented
 *Legendary locations designed but not implemented
-*Camp tent functionality not complete, new designs in progress. 
-
+*Vala Runestones
 	
