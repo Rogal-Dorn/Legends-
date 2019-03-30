@@ -88,8 +88,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				10
 			],
 			RangedDefense = [
-				-5,
-				-5
+				0,
+				0
 			],
 			Initiative = [
 				0,

@@ -87,12 +87,12 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				25
 			],
 			Bravery = [
-				0,
-				0
+				5,
+				5
 			],
 			Stamina = [
-				10,
-				10
+				15,
+				15
 			],
 			MeleeSkill = [
 				15,
@@ -103,12 +103,12 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				0
 			],
 			MeleeDefense = [
-				0,
-				0
+				5,
+				5
 			],
 			RangedDefense = [
-				-10,
-				-10
+				0,
+				0
 			],
 			Initiative = [
 				15,

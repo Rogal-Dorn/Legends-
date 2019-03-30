@@ -77,8 +77,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				0
 			],
 			Bravery = [
-				0,
-				0
+				5,
+				5
 			],
 			Stamina = [
 				20,
@@ -97,8 +97,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				0
 			],
 			RangedDefense = [
-				5,
-				5
+				10,
+				10
 			],
 			Initiative = [
 				0,
