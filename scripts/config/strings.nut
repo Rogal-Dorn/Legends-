@@ -1382,7 +1382,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistSickleDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15-30[/color] damage while using a sickle. Does not apply to swords.",
 	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a sickle. ",
 	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10-30[/color] damage while using a sling. Does not apply to sling staves",
-	LegendSpecialistSlingSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling.",
+	LegendSpecialistSlingSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling.",
 	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their hitpoints divided by your hitpoints",
 	LegendSecondWind = "When dropping below 30hp, regain half of your fatigue",
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]",
