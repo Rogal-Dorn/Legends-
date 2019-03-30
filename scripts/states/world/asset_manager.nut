@@ -390,7 +390,7 @@ this.asset_manager <- {
 		switch(_settings.Campaign)
 		{
 		case this.Const.LegendMod.StartTypes.Noble:
-			this.setBrothersMax(1);		
+			this.setBrothersMax(6);	
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
 				"legend_noble_commander_background"
@@ -452,7 +452,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Rangers:
-			this.setBrothersMax(1);
+			this.setBrothersMax(3);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -621,7 +621,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(1);
+			this.setBrothersMax(6);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			
 			bro = roster.create("scripts/entity/tactical/player");
