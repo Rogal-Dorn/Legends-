@@ -421,3 +421,8 @@ fixes donkey heads again
 fixes teleport perk icon
 adds overlay icons and effect icons for Big Game Hunter, Mark Target, donkey kick, scry and piercing shot
 Inverts pentagram to save players from meme magic  
+Restores party start
+Buffs solo starts proportional to their max party size. 
+Updates confusing perk descriptions
+Updates start descriptions
+
