@@ -9,7 +9,7 @@ this.legend_scry <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Gain vision of the surrounding 12 tiles for the duration of the current round.";
 		this.m.Icon = "skills/scry_skill.png";
 		this.m.IconDisabled = "skills/scry_skill_bw.png";
-		this.m.Overlay = "active_104";
+		this.m.Overlay = "scry";
 		this.m.SoundOnUse = [
 			"sounds/combat/scry_01.wav"
 		];

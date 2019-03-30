@@ -1547,8 +1547,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_teleport",
 		Name = this.Const.Strings.PerkName.LegendTeleport,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTeleport,
-		Icon = "ui/perks/teleport.png",
-		IconDisabled = "ui/perks/teleport_bw.png"
+		Icon = "ui/perks/teleport_perk.png",
+		IconDisabled = "ui/perks/teleport_perk_bw.png"
 	}			
 ];
 
