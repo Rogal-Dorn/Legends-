@@ -158,19 +158,9 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getUpdateText()
 	{
-		if (this.getRequiredTime() <= 0 && this.m.ItemsCrafted.len() > 0)
-		{
-			return "Crafted ... 100%";
-		}
-
-		if (this.getRequiredTime() <= 0)
+		if (this.m.Queue.len() <= 0)
 		{
 			return null;
-		}
-
-		if (this.m.Camp.getElapsedHours() > this.getRequiredTime())
-		{
-			return "Crafted ... 100%";
 		}
 
 		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;

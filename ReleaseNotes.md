@@ -410,16 +410,27 @@ In progress:
 *Legendary locations designed but not implemented
 *Vala Runestones
 
-since v10 test 1
+
+
+Beta v10 test 2
+
+fixes crash when staves are used to daze
 adds human's weapon skins and background icons 
 fixes tooltip for sling perk
 fixes donkey heads again 
 fixes teleport perk icon
+fixes tooltip on fear of nobles
 adds overlay icons and effect icons for Big Game Hunter, Mark Target, donkey kick, scry and piercing shot
 Inverts pentagram to save players from meme magic  
 Restores party start
 Buffs solo starts proportional to their max party size. 
 Updates confusing perk descriptions
 Updates start descriptions
-On screen stats while encamped
+On screen stats while encamped WIP!
 
+Beta v10 test 3
+*Increase healing rate (heal tent and rest tent both give double bonus to HP restore rate)
+*While encamped, all tent activites should give a report on world screen map if applicable.
+*Fixed Trustworthy and Convincing Barter perks (now correctly applied)
+*Fixed repairing
+*Fixed salvaging

@@ -2561,6 +2561,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return meds;
 	}
 
+	function getBarterModifier()
+	{
+		local barter = this.Const.LegendMod.getBarterModifier(this.getBackground().getID());
+		if( this.getSkills().getSkillByID("perk.legend_barter_trustworthy"))
+		{
+			barter += 0.05;
+		}
+		if( this.getSkills().getSkillByID("perk.legend_barter_convincing"))
+		{
+			barter += 0.025;
+		}
+		return barter;
+	}
+
 	function getCampHealing() 
 	{
 		return this.m.CampHealing;
