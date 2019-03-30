@@ -189,26 +189,31 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		if (this.getRequiredTime() <= 0 && this.m.InjuriesTreated > 0)
 		{
-			return "Healed ... 100%";
+			return "Injuries Treated ... 100%";
 		}
 
 		if (this.getRequiredTime() <= 0)
 		{
-			return null;
+			return "";
 		}
 
 		if (this.m.Camp.getElapsedHours() > this.getRequiredTime())
 		{
-			return "Healed ... 100%";
+			return "Injuries Treated ... 100%";
 		}
 
 		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
 		if (percent >= 100)
 		{
-			return "Healed ... 100%";
+			return "Injuries Treated ... 100%";
 		}
 		
-		return "Healed ... " + percent + "%";
+		local text =  "Injuries Treated ... " + percent + "%";
+		if (this.World.Assets.getMedicine() <= 0)
+		{
+			return text + " (Out of medicine!)"
+		}
+		return text;
 	}
 
     function update ()
@@ -217,7 +222,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			this.onInit();
 		}
-		
+
         local modifiers = this.getModifiers();
         foreach (i, r in this.m.Queue)
         {

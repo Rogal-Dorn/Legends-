@@ -1,5 +1,8 @@
 this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
+        Rate = 0,
+        PointsNeeded = 0,
+        TotalPoints = 0
 	},
     function create()
     {
@@ -19,10 +22,16 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     function init()
     {
         local roster = this.World.getPlayerRoster().getAll();
+        local points = 0
+        this.m.PointsNeeded = 0
         foreach( bro in roster )
         {
             bro.setCampHealing(0);
+            this.m.PointsNeeded += (bro.getHitpointsMax() - bro.getHitpoints());
         }
+        this.m.TotalPoints = 0;
+        local mod = this.getModifiers();
+        this.m.Rate = mod.Modifier;
     }
 
     function completed()
@@ -91,7 +100,6 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         return res;
     }
 
-
     function getModifiers()
     {
         local ret = 
@@ -117,25 +125,17 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
 	function getUpdateText()
 	{
-        return "Resting ..."
+		local percent = (this.m.TotalPoints / this.m.PointsNeeded) * 100.0;
+		if (percent >= 100)
+		{
+			return "Rested ... 100%";
+		}
 		
-        // if (this.getRequiredTime() <= 0)
-		// {
-		// 	return "Rested ... 100%";
-		// }
-
-		// local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
-		// if (percent >= 100)
-		// {
-		// 	return "Rested ... 100%";
-		// }
-		
-		// return "Rested ... " + percent;
+		return "Rested ... " + percent + "%";
 	}
 
     function update ()
     {
-        local modifiers = this.getModifiers();
         local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
         {
@@ -146,16 +146,18 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
             }
 
             //Any bro that is resting heals quicker
-            local heal = 1.0;
-            if (bro.getCampAssignment() == this.m.ID)
+            local heal = 1.25;
+            if (bro.getCampAssignment() == this.m.ID || bro.getCampAssignment() == this.Const.World.CampBuildings.Healer)
             {
                 heal = 2.0;
             }
 
-            local points =  this.Const.World.Assets.HitpointsPerHour * heal * modifiers.Modifier;
+            local points =  this.Const.World.Assets.HitpointsPerHour * heal * this.m.Rate;
+            this.m.TotalPoints += points;
             bro.setCampHealing(bro.getCampHealing() + points);
             bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + points));
         }
+        return this.getUpdateText();
     }
 
 	function onClicked( _campScreen )

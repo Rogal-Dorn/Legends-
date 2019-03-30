@@ -170,7 +170,7 @@ this.camp_manager <- {
         this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
     }
 
-	function addBuilding( _building, _slot = null )
+	function addBuilding( _building)
 	{
         _building.setCamp(this);
         this.m.Tents.push(_building);

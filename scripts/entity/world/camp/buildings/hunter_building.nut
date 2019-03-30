@@ -2,7 +2,10 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	m = {
 		Base = 6.5,
 		Items = [],
-		NumBros = 0
+		NumBros = 0,
+		Points = 0,
+		FoodAmount = 0,
+		Craft = 0
 	},
     function create()
     {
@@ -46,8 +49,11 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     function init()
     {
 		this.m.Items = [];
+		this.m.Points = 0;
+		this.m.FoodAmount = 0;
 		local mod = this.getModifiers();
-        this.m.NumBros = mod.Assigned;	
+        this.m.NumBros = mod.Assigned;
+		this.m.Craft = mod.Craft;
     }
 
     function getModifiers()
@@ -103,82 +109,81 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return null;
 		}
 
-		return "Hunting ... ";
+		local text =  "Hunted ... " + this.m.FoodAmount + " food";
+		if (this.Stash.getNumberOfEmptySlots() == 0)
+		{
+			return text + " (Inventory is full!)";
+		}
+		return text;
 	}
 
-
-    function completed()
-    {
-		local mod = this.getModifiers();
-		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
-		if (points == 0)
+	function update()
+	{
+		if (this.m.NumBros == 0)
 		{
-			return;
+			return this.getUpdateText();
+		}
+		
+		this.m.Points += this.m.Craft;
+		if (this.Stash.getNumberOfEmptySlots() == 0)
+		{
+			return this.getUpdateText();
 		}
 
-
-		local item = null
-		while (points > 0)
+		local r = this.Math.rand(1, 4);
+		local item = null;
+		local secondary = [];
+		if (r == 1 || r == 2)
 		{
-			if (this.Stash.getNumberOfEmptySlots() == 0)
-			{
-				return
-			}
+			item = this.new("scripts/items/supplies/strange_meat_item");
+			secondary = [
+				"scripts/items/misc/adrenaline_gland_item",
+				"scripts/items/misc/poison_gland_item",
+				"scripts/items/misc/spider_silk_item",
+				"scripts/items/misc/werewolf_pelt_item",
+				"scripts/items/accessory/spider_poison_item"
+			];
+		}
+		else if (r == 3)
+		{
+			item = this.new("scripts/items/supplies/roots_and_berries_item");
+			secondary = [
+				"scripts/items/accessory/berserker_mushrooms_item"
+			];
+		}
+		else if (r == 4)
+		{
+			item = this.new("scripts/items/supplies/cured_venison_item");
+		}
 
-			local r = this.Math.rand(1, 4);
-			local item = null;
-			local secondary = [];
-			if (r == 1 || r == 2)
-			{
-				item = this.new("scripts/items/supplies/strange_meat_item");
-				secondary = [
-					"scripts/items/misc/adrenaline_gland_item",
-					"scripts/items/misc/poison_gland_item",
-					"scripts/items/misc/spider_silk_item",
-					"scripts/items/misc/werewolf_pelt_item",
-					"scripts/items/accessory/spider_poison_item"
-				];
-			}
-			else if (r == 3)
-			{
-				item = this.new("scripts/items/supplies/roots_and_berries_item");
-				secondary = [
-					"scripts/items/accessory/berserker_mushrooms_item"
-				];
-			}
-			else if (r == 4)
-			{
-				item = this.new("scripts/items/supplies/cured_venison_item");
-			}
+		if (this.m.Points < item.m.Value)
+		{
+			return this.getUpdateText();
+		}
 
-			if (points < item.m.Value)
-			{
-				return
-			}
+		this.m.Points -= item.m.Value;
+		item.randomizeAmount();
+		this.m.FoodAmount += item.getAmount();
+		item.randomizeBestBefore();
+		this.m.Items.push(item);
+		this.Stash.add(item);
 
-			points -= item.m.Value;
-			item.randomizeAmount();
-			item.randomizeBestBefore();
+		if (secondary.len() == 0)
+		{
+			return this.getUpdateText();
+		}
+
+		//this can be upgrade system
+		if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
+		{
+			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);
-			this.Stash.add(item);
-
-			if (secondary.len() == 0)
-			{
-				continue;
-			}
-
-			//this can be upgrade system
-			if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
-			{
-				item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
-				this.m.Items.push(item);
-				this.Stash.add(item);				
-			}
-
+			this.Stash.add(item);				
 		}
 
-    }
-    
+		return this.getUpdateText();
+	}
+
 	function onClicked( _campScreen )
 	{
         _campScreen.showHunterDialog();

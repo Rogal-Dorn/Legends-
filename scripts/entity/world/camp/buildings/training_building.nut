@@ -1,7 +1,8 @@
 this.training_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
 		Base = 0,
-		Results = []
+		Results = [],
+		NumBros = 0
 	},
     function create()
     {
@@ -55,6 +56,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function init()
     {
 		this.m.Results = [];
+		this.m.NumBros = this.getAssignedBros();
     }
 
     function getModifiers()
@@ -276,6 +278,16 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		});
 	}
 
+	function getUpdateText()
+	{
+		if (this.m.NumBros == 0)
+		{
+			return null;
+		}
+		
+		return "Training ... " + this.m.NumBros + " brothers";
+	}
+
     function completed()
     {
 		local roster = this.World.getPlayerRoster().getAll();
@@ -286,7 +298,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-			local r = this.Math.min(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())));
+			local r = this.Math.max(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())));
 			//Positive
 			if (this.Math.rand(1, 100) < r)
 			{
@@ -300,7 +312,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 
 			//Negative
-			local r = this.Math.max(5, 10 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())) - bro.getLevel());			
+			local r = this.Math.min(5, 10 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())) - bro.getLevel());			
 			if (this.Math.rand(1, 100) < r)
 			{
 				this.getInjury(bro);

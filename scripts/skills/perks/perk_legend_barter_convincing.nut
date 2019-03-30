@@ -13,15 +13,4 @@ this.perk_legend_barter_convincing <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
-	{
-		local BarterMod = this.Const.LegendMod.getBarterModifier;
-		BarterMod += 0.025; 
-
-	}
-		function onRemoved()
-	{
-		local BarterMod = this.Const.LegendMod.getBarterModifier;
-		BarterMod -= 0.025; 
-	}
 });
