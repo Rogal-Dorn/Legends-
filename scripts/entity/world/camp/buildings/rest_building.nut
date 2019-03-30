@@ -115,6 +115,24 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         return ret;
     }
 
+	function getUpdateText()
+	{
+        return "Resting ..."
+		
+        // if (this.getRequiredTime() <= 0)
+		// {
+		// 	return "Rested ... 100%";
+		// }
+
+		// local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		// if (percent >= 100)
+		// {
+		// 	return "Rested ... 100%";
+		// }
+		
+		// return "Rested ... " + percent;
+	}
+
     function update ()
     {
         local modifiers = this.getModifiers();

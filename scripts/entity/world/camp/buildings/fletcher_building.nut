@@ -2,7 +2,9 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	m = {
 		Base = 1.0,
 		Items = [],
-		AmmoAdded = 0
+		AmmoAdded = 0,
+		NumBros = 0,
+		Craft = 0
 	},
     function create()
     {
@@ -51,6 +53,9 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
 		this.m.AmmoAdded = 0;
 		this.m.Items = [];
+		local mod = this.getModifiers();
+        this.m.NumBros = mod.Assigned;
+		this.m.Craft = mod.Craft;
     }
 
     function getModifiers()
@@ -99,6 +104,18 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
         return mod.Assigned;
     }
 
+	function update()
+	{
+		if (this.m.NumBros == 0)
+		{
+			return null
+		}
+
+		local points = this.Math.floor(this.m.Craft * this.m.Camp.getElapsedHours());
+		local ammoAdded = this.Math.min(this.World.Assets.getMaxAmmo(), (this.Math.floor(points / 2.0)));
+		return "Fletched ... " + ammoAdded + " ammo";
+	}
+
     function completed()
     {
 		local item = null
@@ -107,8 +124,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return
 		}
 
-		local mod = this.getModifiers();
-		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
+		local points = this.Math.floor(this.m.Craft * this.m.Camp.getCampTimeHours());
 		if (points == 0)
 		{
 			return;

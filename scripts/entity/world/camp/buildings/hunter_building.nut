@@ -1,7 +1,8 @@
 this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
 		Base = 6.5,
-		Items = []
+		Items = [],
+		NumBros = 0
 	},
     function create()
     {
@@ -45,6 +46,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     function init()
     {
 		this.m.Items = [];
+		local mod = this.getModifiers();
+        this.m.NumBros = mod.Assigned;	
     }
 
     function getModifiers()
@@ -92,6 +95,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         local mod = this.getModifiers();
         return mod.Assigned;
     }
+
+	function getUpdateText()
+	{
+		if (this.m.NumBros == 0)
+		{
+			return null;
+		}
+
+		return "Hunting ... ";
+	}
 
 
     function completed()

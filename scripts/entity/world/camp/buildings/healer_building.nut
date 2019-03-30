@@ -185,6 +185,32 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return ret;
     }
 
+	function getUpdateText()
+	{
+		if (this.getRequiredTime() <= 0 && this.m.InjuriesTreated > 0)
+		{
+			return "Healed ... 100%";
+		}
+
+		if (this.getRequiredTime() <= 0)
+		{
+			return null;
+		}
+
+		if (this.m.Camp.getElapsedHours() > this.getRequiredTime())
+		{
+			return "Healed ... 100%";
+		}
+
+		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		if (percent >= 100)
+		{
+			return "Healed ... 100%";
+		}
+		
+		return "Healed ... " + percent + "%";
+	}
+
     function update ()
     {
 		if (this.m.Queue == null)
@@ -245,6 +271,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 
         }
+
+		return this.getUpdateText();
     }
 
 	function getQueue()

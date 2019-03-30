@@ -3,6 +3,8 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		Base = 1.0,
 		Items = [],
 		MedsAdded = 0,
+		NumBros = 0,
+		Craft = 0
 	},
     function create()
     {
@@ -23,6 +25,9 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
 		this.m.MedsAdded = 0;
 		this.m.Items = [];
+		local mod = this.getModifiers();
+        this.m.NumBros = mod.Assigned;
+		this.m.Craft = mod.Craft;
     }
 
     function getModifiers()
@@ -80,6 +85,18 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
         return mod.Assigned;
     }
 
+	function update()
+	{
+		if (this.m.NumBros == 0)
+		{
+			return null
+		}
+
+		local points = this.Math.floor(this.m.Craft * this.m.Camp.getElapsedHours());
+		local medsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(points / 3.0)))
+		return "Gathered ... " + medsAdded + " meds";
+	}
+
     function completed()
     {
 		local item = null
@@ -88,8 +105,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return
 		}
 
-		local mod = this.getModifiers();
-		local points = this.Math.floor(mod.Craft * this.m.Camp.getCampTimeHours());
+		local points = this.Math.floor(this.m.Craft * this.m.Camp.getCampTimeHours());
 		if (points == 0)
 		{
 			return;

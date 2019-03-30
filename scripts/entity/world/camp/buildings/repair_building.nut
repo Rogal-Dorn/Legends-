@@ -241,17 +241,33 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		return this.getRequiredTime();
 	}
-    
+
+	function getUpdateText()
+	{
+		if (this.getRequiredTime() <= 0)
+		{
+			return "Repaired ... 100%";
+		}
+
+		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		if (percent >= 100)
+		{
+			return "Repaired ... 100%";
+		}
+		
+		return "Repaired ... " + percent + "%";
+	}
+
     function update ()
     {
-        if (this.World.Assets.getArmorParts() == 0)
-        {
-            return
-        }
-
         if (this.m.Repairs == null)
         {
-            return
+            return null
+        }
+
+        if (this.World.Assets.getArmorParts() == 0)
+        {
+            return "Repairs ... No tools left!"
         }
 
         local modifiers = this.getModifiers();
@@ -298,6 +314,8 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 break;
             }
         }
+
+        return this.getUpdateText();
     }
 
     function getListOfItemsNeedingRepair()
