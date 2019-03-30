@@ -7,7 +7,8 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		ItemsDestroyed = 0,
         Stash = null,
         Salvage = null,
-        Capacity = 0
+        Capacity = 0,
+        NumBros = 0
 	},
     function create()
     {
@@ -92,6 +93,8 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.ToolsCreated = 0;
         this.m.PointsSalvaged = 0;
 		this.m.ItemsDestroyed = 0;
+        local mod = this.getModifiers();
+        this.m.NumBros = mod.Assigned;	
     }
 
     function onInit()
@@ -175,7 +178,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             Consumption = 1.0 / this.m.Conversion,
             Assigned = 0,
             Modifiers = []
-
         }
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
@@ -252,16 +254,37 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return this.getRequiredTime();
 	}
 
+	function getUpdateText()
+	{
+        if (this.m.NumBros == 0)
+        {
+            return null;
+        }
+
+		if (this.getRequiredTime() <= 0)
+		{
+			return "Salvaged ... 100%";
+		}
+
+		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		if (percent >= 100)
+		{
+			return "Salvaged ... 100%";
+		}
+		
+		return "Salvaged ... " + percent + "%";
+	}
+
     function update ()
     {
         if (this.World.Assets.getArmorParts() >= this.World.Assets.getMaxArmorParts())
         {
-            return
+            return this.getUpdateText();
         }
 
         if (this.m.Salvage == null)
         {
-            return
+            return this.getUpdateText();
         }
 
         local modifiers = this.getModifiers();
@@ -303,6 +326,9 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				this.m.Salvage[i] = null;
             }
         }
+
+        return this.getUpdateText();
+
     }
 
     function getListOfEquipment()

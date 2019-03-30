@@ -157,11 +157,17 @@ this.camp_manager <- {
         }
 
         this.m.LastHourUpdated = this.World.getTime().Hours;
+        local updates = []
+        local text;
         foreach(b in this.m.Tents)
         {
-            b.update();
+            text = b.update();
+            if (text) 
+            {
+                updates.push(text);
+            }
         }
-
+        this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
     }
 
 	function addBuilding( _building, _slot = null )
