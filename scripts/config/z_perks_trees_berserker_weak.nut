@@ -29,10 +29,11 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.Brawny,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
-		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.Debilitate,
-		gt.Const.Perks.PerkDefs.Sprint
+		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
+		gt.Const.Perks.PerkDefs.Sprint,
+		gt.Const.Perks.PerkDefs.LegendSecondWind
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,
@@ -58,8 +59,8 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
 		gt.Const.Perks.PerkDefs.LastStand,
-		gt.Const.Perks.PerkDefs.LegendMuscularity,
 		gt.Const.Perks.PerkDefs.Rebound,
+		gt.Const.Perks.PerkDefs.LegendMuscularity,
 		gt.Const.Perks.PerkDefs.LegendPushForward
 	],
 	[

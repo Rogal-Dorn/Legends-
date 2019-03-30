@@ -10,10 +10,11 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
-		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.Lookout
+		gt.Const.Perks.PerkDefs.Pathfinder,
+		gt.Const.Perks.PerkDefs.Lookout,
+		gt.Const.Perks.PerkDefs.LegendMarkTarget
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -30,6 +31,7 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.DoubleStrike,
+		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
 		gt.Const.Perks.PerkDefs.DevastatingStrikes
 	],
 	[
@@ -50,14 +52,17 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.Rebound,
-		gt.Const.Perks.PerkDefs.LegendCascade
+		gt.Const.Perks.PerkDefs.LegendCascade,
+		gt.Const.Perks.PerkDefs.LegendPiercingShot,
+		gt.Const.Perks.PerkDefs.LegendSecondWind
 	],
 	[
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
-		gt.Const.Perks.PerkDefs.LegendEvasion
+		gt.Const.Perks.PerkDefs.LegendEvasion,
+		gt.Const.Perks.PerkDefs.LegendBigGameHunter
 	],
 	[],
 	[],

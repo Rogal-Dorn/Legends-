@@ -8,7 +8,7 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Pierced";
 		this.m.Icon = "skills/PiercingBoltSkill.png";
 		this.m.IconDisabled = "skills/PiercingBoltSkill_bw.png";
-		this.m.Overlay = "triplestrike_square";
+		this.m.Overlay = "piercing_bot";
 		this.m.SoundOnUse = [
 			"sounds/combat/quick_shot_01.wav",
 			"sounds/combat/quick_shot_02.wav",
