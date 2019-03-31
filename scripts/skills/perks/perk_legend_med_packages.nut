@@ -15,13 +15,15 @@ this.perk_legend_med_packages <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine
+		local economicDifficulty = this.World.Assets.getEconomicDifficulty(); 
+		local stashSize = this.Const.LegendMod.MaxResources[economicDifficulty].Medicine
 		stashSize += 10; 
 
 	}
 		function onRemoved()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine
+		local economicDifficulty = this.World.Assets.getEconomicDifficulty(); 
+		local stashSize = this.Const.LegendMod.MaxResources[economicDifficulty].Medicine
 		stashSize -= 10; 
 	}
 });
