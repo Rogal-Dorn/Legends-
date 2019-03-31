@@ -434,3 +434,9 @@ Beta v10 test 3
 *Fixed Trustworthy and Convincing Barter perks (now correctly applied)
 *Fixed repairing
 *Fixed salvaging
+
+Beta v10 test 4
+*Fix AI Crashes and lock ups
+
+Beta v10 test 5
+*Alt + Right click on paperdoll/equipped items in inventory screen to tag them to be repaired.

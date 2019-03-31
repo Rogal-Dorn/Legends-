@@ -440,11 +440,23 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (_index, _pare
         //var itemIdx = (data !== null && 'index' in data) ? data.index : null;
         var entityId = (data !== null && 'entityId' in data) ? data.entityId : null;
         var dropIntoInventory = (KeyModiferConstants.CtrlKey in _event && _event[KeyModiferConstants.CtrlKey] === true);
+        var repairItem = (KeyModiferConstants.AltKey in _event && _event[KeyModiferConstants.AltKey] === true);
+        console.error("REPAIR ITEM " + repairItem)
 
         if (isEmpty === false && itemId !== null && entityId !== null /*&& itemIdx !== null*/)
         {
             // equip or drop into inventory
-            if (dropIntoInventory === true)
+            if (repairItem === true)
+            {
+                self.mDataSource.toggleInventoryItem(itemId, entityId, function(ret)
+                {
+                    data['repair'] = ret['repair'];
+                    data['salvage'] = ret['salvage'];
+                    result.setRepairImageVisible(data['repair'], data['salvage']);
+                    //result.setSalvageImageVisible(data['salvage']);
+                })
+            }
+            else if (dropIntoInventory === true)
             {
                 //console.info('drop item into inventory: ' + itemId);
                 self.mDataSource.dropPaperdollItem(entityId, itemId, null);
@@ -846,11 +858,22 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (_slot, 
         //var itemIdx = (data !== null && 'index' in data) ? data.index : null;
         var entityId = (data !== null && 'entityId' in data) ? data.entityId : null;
         var dropIntoInventory = (KeyModiferConstants.CtrlKey in _event && _event[KeyModiferConstants.CtrlKey] === true);
+        var repairItem = (KeyModiferConstants.AltKey in _event && _event[KeyModiferConstants.AltKey] === true);
 
         if (isEmpty === false && itemId !== null && entityId !== null /*&& itemIdx !== null*/)
         {
+            if (repairItem === true)
+            {
+                self.mDataSource.toggleInventoryItem(itemId, entityId, function(ret)
+                {
+                    data['repair'] = ret['repair'];
+                    data['salvage'] = ret['salvage'];
+                    _slot.Container.setRepairImageVisible(data['repair'], data['salvage']);
+                    //result.setSalvageImageVisible(data['salvage']);
+                })
+            }
             // equip or drop in bag
-            if (dropIntoInventory === true)
+            else if (dropIntoInventory === true)
             {
                 //console.info('drop item: ' + itemId);
                 self.mDataSource.dropPaperdollItem(entityId, itemId, null);

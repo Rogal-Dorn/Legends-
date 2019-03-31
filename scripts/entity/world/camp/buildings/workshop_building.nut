@@ -553,23 +553,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         return true
 	}
 
-	function onSalvageInventoryItem( _data, _value )
-	{
-        local obj = this.Stash.getItemByInstanceID(_data);
-        if (obj == null)
-        {
-            return;
-        }
-
-		if (_value == obj.item.isToBeSalvaged())
-		{
-			return;
-		}
-		
-        local index = _value ? obj.index : 0
-        return obj.item.setToBeSalvaged(_value, index);
-	}
-
 	function onClicked( _campScreen )
 	{
         _campScreen.showWorkshopDialog();
