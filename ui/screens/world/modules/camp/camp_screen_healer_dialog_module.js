@@ -381,7 +381,7 @@ CampScreenHealerDialogModule.prototype.assignItemToSlot = function(_owner, _slot
     else
     {
         // update item data
-        var itemData = _slot.data('item') || {};
+        var itemData = _slot.data('item') || _item;
         itemData.id = _item.ID;
         _slot.data('item', itemData);
 
