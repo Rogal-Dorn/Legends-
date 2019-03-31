@@ -15,13 +15,15 @@ this.perk_legend_tools_spares <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts
+		local economicDifficulty = this.World.Assets.getEconomicDifficulty(); 
+		local stashSize = this.Const.LegendMod.MaxResources[economicDifficulty].ArmorParts
 		stashSize += 20; 
 
 	}
 		function onRemoved()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts
+		local economicDifficulty = this.World.Assets.getEconomicDifficulty(); 
+		local stashSize = this.Const.LegendMod.MaxResources[economicDifficulty].ArmorParts
 		stashSize -= 20; 
 	}
 });

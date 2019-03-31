@@ -15,13 +15,18 @@ this.perk_legend_ammo_bundles <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo
+
+		local economicDifficulty = this.World.Assets.getEconomicDifficulty(); 
+		local stashSize = this.Const.LegendMod.MaxResources[economicDifficulty].Ammo
 		stashSize += 20; 
 
 	}
 		function onRemoved()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo
+		local economicDifficulty = this.World.Assets.getEconomicDifficulty(); 
+		local stashSize = this.Const.LegendMod.MaxResources[economicDifficulty].Ammo
 		stashSize -= 20; 
 	}
+
+
 });
