@@ -568,23 +568,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return true
 	}
 
-	function onRepairInventoryItem( _data, _value )
-	{
-        local obj = this.Stash.getItemByInstanceID(_data);
-        if (obj == null)
-        {
-            return false;
-        }
-
-		if (_value == obj.item.isToBeRepaired())
-		{
-			return false;
-		}
-
-        local index = _value ? obj.index : 0
-        return obj.item.setToBeRepaired(_value, index)
-	}
-
 	function onClicked( _campScreen )
 	{
         _campScreen.showRepairDialog();
