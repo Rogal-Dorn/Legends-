@@ -47,6 +47,9 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 		this.m.Level = 4;
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+
 	}
 
 	function getTooltip()

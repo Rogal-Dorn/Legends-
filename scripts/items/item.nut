@@ -28,6 +28,8 @@ this.item <- {
 		IsChangeableInBattle = true,
 		IsIndestructible = false,
 		IsToBeRepaired = false,
+		IsToBeRepairedQueue = 0,
+		IsToBeSalvagedQueue = 0,
 		IsConsumed = false,
 		IsAllowedInBag = true,
 		IsUsable = false,
@@ -179,9 +181,21 @@ this.item <- {
 		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
 	}
 
+	function isToBeRepairedQ()
+	{
+		return this.m.IsToBeRepairedQueue;
+		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
+	}
+
 	function isToBeSalvaged()
 	{
 		return this.m.IsToBeSalvaged;
+		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
+	}
+	
+	function isToBeSalvagedQ()
+	{
+		return this.m.IsToBeSalvagedQueue;
 		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
 	}
 
@@ -200,25 +214,29 @@ this.item <- {
 		return this.m.IsUsable;
 	}
 
-	function setToBeRepaired( _r )
+	function setToBeRepaired( _r, _idx )
 	{
 		if (_r && this.getCondition() == this.getConditionMax())
 		{
+			this.m.IsToBeRepairedQueue = 0;
 			return false;
 		}
 
 		this.m.IsToBeRepaired = _r;
+		this.m.IsToBeRepairedQueue = _idx;
 		return true;
 	}
 
-	function setToBeSalvaged( _r )
+	function setToBeSalvaged( _r, _idx )
 	{
 		if (_r && this.getCondition() <= 0)
 		{
+			this.m.IsToBeSalvagedQueue = 0;
 			return false;
 		}
 
 		this.m.IsToBeSalvaged = _r;
+		this.m.IsToBeSalvagedQueue = _idx;
 		return true;
 	}
 
@@ -919,6 +937,9 @@ this.item <- {
 		_out.writeString(this.getInstanceID()); //Need old ID for saved formations	
 		_out.writeU8(this.m.RuneVariant);
 		_out.writeBool(this.m.IsToBeSalvaged);
+		_out.writeU16(this.m.IsToBeRepairedQueue);
+		_out.writeU16(this.m.IsToBeSalvagedQueue);
+
 	}
 
 	function onDeserialize( _in )
@@ -959,6 +980,11 @@ this.item <- {
 			this.m.IsToBeSalvaged = _in.readBool();
 		}		
 	
+		if (_in.getMetaData().getVersion() >= 53)
+		{
+			this.m.IsToBeRepairedQueue = _in.readU16();
+			this.m.IsToBeSalvagedQueue = _in.readU16();
+		}
 
 		this.updateVariant();
 	}

@@ -4,8 +4,8 @@ this.legend_hunting_big_game <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_hunting_big_game";
 		this.m.Name = "Hunting big game";
-		this.m.Icon = "skills/vengeance_square.png";
-		this.m.IconMini = "status_effect_01_mini";
+		this.m.Icon = "ui/perks/BigGameHunterPerk.png";
+		this.m.IconMini = "mini_big_game_hunter";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;

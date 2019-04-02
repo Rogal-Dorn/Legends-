@@ -8,28 +8,31 @@ if (!("Perks" in gt.Const))
 local SeerWeakTree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.CripplingStrikes, 
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
+		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.LegendSummonCat,
-		gt.Const.Perks.PerkDefs.LegendDaze,
-		gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon
+		gt.Const.Perks.PerkDefs.LegendDaze
 	],
 	[
+		gt.Const.Perks.PerkDefs.CoupDeGrace,
+		gt.Const.Perks.PerkDefs.Bullseye,
+		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.Bullseye,
 		gt.Const.Perks.PerkDefs.Gifted,
-		gt.Const.Perks.PerkDefs.LegendStun,
-		gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet
+		gt.Const.Perks.PerkDefs.LegendStun
 	],
 	[
+		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
-		gt.Const.Perks.PerkDefs.LegendHorrify,
-		gt.Const.Perks.PerkDefs.LegendValaInscribeArmor
+		gt.Const.Perks.PerkDefs.LegendHorrify
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryDagger,
@@ -50,11 +53,14 @@ local SeerWeakTree = [
 		gt.Const.Perks.PerkDefs.LegendRelax,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.Ballistics
+		gt.Const.Perks.PerkDefs.LegendLevitate,
+		gt.Const.Perks.PerkDefs.LegendScry
 	],
 	[
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendSleep,
+		gt.Const.Perks.PerkDefs.LegendTeleport,
 		gt.Const.Perks.PerkDefs.LegendFireField
 		
 	],

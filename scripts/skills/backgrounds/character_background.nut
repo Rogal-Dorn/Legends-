@@ -25,7 +25,45 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		Name = "",
 		IsNoble = false,
 		IsLowborn = false,
-		IsFemaleBackground = false
+		IsFemaleBackground = false,
+		Modifiers = {
+			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
+			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
+			Meds = this.Const.LegendMod.ResourceModifiers.Meds[0],
+			Stash = this.Const.LegendMod.ResourceModifiers.Stash[0],
+			Healing = this.Const.LegendMod.ResourceModifiers.Healing[0],
+			Injury = this.Const.LegendMod.ResourceModifiers.Injury[0],
+			Repair = this.Const.LegendMod.ResourceModifiers.Repair[0],
+			Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[0],
+			Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[0],
+			Barter = this.Const.LegendMod.ResourceModifiers.Barter[0],
+			ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[0],
+			MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[0],
+			Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[0],
+			Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[0],
+			Scout = this.Const.LegendMod.ResourceModifiers.Scout[0],
+			Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0],
+			Training = this.Const.LegendMod.ResourceModifiers.Training[0],
+			Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0,//plains
+				0.0, //swamp
+				0.0, //hills
+				0.0, //forest
+				0.0, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.0, // snow
+				0.0, // badlands
+				0.0, //highlands
+				0.0, //stepps
+				0.0 //ocean
+			]
+		}
 	},
 	function isExcluded( _id )
 	{
@@ -82,6 +120,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.BadEnding;
 	}
 
+	function getModifiers()
+	{
+		return this.m.Modifiers;
+	}
+
 	function create()
 	{
 		this.m.Type = this.Const.SkillType.Background | this.Const.SkillType.Trait;
@@ -112,38 +155,42 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			text = text + this.m.BackgroundDescription + "\n";
 		}
 
-		local repairs = this.Const.LegendMod.getRepairModifier(this.m.ID) * 100.0;
-		if (repairs > 0)
+		foreach (k, v in this.m.Modifiers)
 		{
-			text += "Repairs +" + repairs +"%"
-		}
-		local meds = this.Const.LegendMod.getHealingModifier(this.m.ID) * 100.0;
-		if (meds > 0)
-		{
-			if (repairs != 0)
+			if (k == "Terrain")
 			{
-				text += "\n"
+				continue;
 			}
-			text += "Healing +" + meds +"%"
-		}
-		local barter = this.Const.LegendMod.getBarterModifier(this.m.ID) * 100.0
-		if (barter > 0)
-		{
-			if (repairs != 0 || meds != 0)
+
+			if (v == 0)
 			{
-				text += "\n"
+				continue;
 			}
-			text += "Barter +" + barter + "%"
+
+			switch (k)
+			{
+				case "Repair":
+				case "Healing":
+				case "Injury":
+				case "Barter":
+				case "Salvage":
+				case "Crafting":
+				case "ToolConsumption":
+				case "MedConsumption":
+				case "Gather":
+					v = v * 100;
+					text += k + " " + v + "%\n";
+					break;
+				case "ArmorParts":
+					text += "Tools " + v + "\n";
+					break;
+				default:
+					text += k + " " + v + "\n";
+			}
 		}
-		
-		text += "\n\nResource Modifiers:"
-		text += "\nAmmo +" + this.Const.LegendMod.getMaxAmmo(this.m.ID);
-		text += "\nTools +" + this.Const.LegendMod.getMaxArmorParts(this.m.ID);
-		text += "\nMedicine +" + this.Const.LegendMod.getMaxMedicine(this.m.ID);
-		text += "\nStash +" + this.Const.LegendMod.getMaxStash(this.m.ID);
 
 		text += "\n\nTerrain Movement Modifiers:"
-		local terrains = this.Const.LegendMod.getTerrainSpeedModifier(this.m.ID);
+		local terrains = this.m.Modifiers.Terrain;
 		local val = 0.0
 		val = terrains[2] * 100.0;
 		if (val > 0) {

@@ -60,6 +60,30 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
+
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0,//plains
+				0.025, //swamp
+				0.025, //hills
+				0.0, //forest
+				0.0, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.025, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.025, // snow
+				0.025, // badlands
+				0.025, //highlands
+				0.0, //stepps
+				0.0 //ocean
+			];		
 	}
 
 	function getTooltip()
@@ -93,32 +117,32 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 	{
 		local c = {
 			Hitpoints = [
-				20,
-				20
+				25,
+				25
 			],
 			Bravery = [
-				10,
-				10
+				15,
+				15
 			],
 			Stamina = [
 				20,
 				20
 			],
 			MeleeSkill = [
-				20,
-				20
+				25,
+				25
 			],
 			RangedSkill = [
-				-5,
-				-5
+				0,
+				0
 			],
 			MeleeDefense = [
 				0,
 				0
 			],
 			RangedDefense = [
-				-10,
-				-10
+				0,
+				0
 			],
 			Initiative = [
 				0,

@@ -21,7 +21,8 @@ local NecroWeakTree = [
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendComposure,
-		gt.Const.Perks.PerkDefs.LegendRust
+		gt.Const.Perks.PerkDefs.LegendRust,
+		gt.Const.Perks.PerkDefs.LegendMedPackages
 	],
 	[
 		gt.Const.Perks.PerkDefs.BackStabber,

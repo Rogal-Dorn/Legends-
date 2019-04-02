@@ -221,8 +221,14 @@ this.camp_building <- {
     {
     }
 
+	function getUpdateText()
+	{
+		return null;
+	}
+
     function update ()
     {
+		return this.getUpdateText();
     }
 
 	function updateTick (_hours)

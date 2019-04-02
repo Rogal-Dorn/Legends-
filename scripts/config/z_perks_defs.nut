@@ -1488,7 +1488,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_prepared_for_anything",
-		Script = "scripts/skills/perks/legend_prepared_for_anything",
+		Script = "scripts/skills/perks/perk_legend_prepared_for_anything",
 		Name = this.Const.Strings.PerkName.LegendPreparedForAnything,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPreparedForAnything,
 		Icon = "ui/perks/perk_20.png",
@@ -1496,7 +1496,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_brink_of_death",
-		Script = "scripts/skills/perks/legend_brink_of_death",
+		Script = "scripts/skills/perks/perk_legend_brink_of_death",
 		Name = this.Const.Strings.PerkName.LegendBrinkOfDeath,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBrinkOfDeath,
 		Icon = "ui/perks/perk_04.png",
@@ -1504,7 +1504,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_strict_sermons",
-		Script = "scripts/skills/perks/legend_strict_sermons",
+		Script = "scripts/skills/perks/perk_legend_strict_sermons",
 		Name = this.Const.Strings.PerkName.LegendStrictSermons,
 		Tooltip = this.Const.Strings.PerkDescription.LegendStrictSermons,
 		Icon = "ui/perks/perk_08.png",
@@ -1512,7 +1512,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_infectious_rage",
-		Script = "scripts/skills/perks/legend_infectious_rage",
+		Script = "scripts/skills/perks/perk_legend_infectious_rage",
 		Name = this.Const.Strings.PerkName.LegendInfectiousRage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendInfectiousRage,
 		Icon = "ui/perks/perk_35.png",
@@ -1520,7 +1520,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_teacher",
-		Script = "scripts/skills/perks/legend_teacher",
+		Script = "scripts/skills/perks/perk_legend_teacher",
 		Name = this.Const.Strings.PerkName.LegendTeacher,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTeacher,
 		Icon = "ui/perks/perk_21.png",
@@ -1563,8 +1563,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_teleport",
 		Name = this.Const.Strings.PerkName.LegendTeleport,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTeleport,
-		Icon = "ui/perks/teleport.png",
-		IconDisabled = "ui/perks/teleport_bw.png"
+		Icon = "ui/perks/teleport_perk.png",
+		IconDisabled = "ui/perks/teleport_perk_bw.png"
 	}			
 ];
 

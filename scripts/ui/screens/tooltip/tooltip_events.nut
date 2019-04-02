@@ -1007,7 +1007,7 @@ this.tooltip_events <- {
 				local L = []
 				dailyMoney = dailyMoney + bro.getDailyCost();
 				local L = [bro.getDailyCost(), bro.getName(), bro.getBackground().getNameOnly()];
-				local bm = this.Const.LegendMod.getBarterModifier(bro.getBackground().getID()) * 100.0;
+				local bm = bro.getBarterModifier() * 100.0;
 				if (bm > 0)
 				{
 					barterMult += bm;

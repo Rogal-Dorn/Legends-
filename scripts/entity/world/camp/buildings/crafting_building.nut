@@ -132,7 +132,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = (this.m.BaseCraft + this.m.BaseCraft * this.Const.LegendMod.getCraftingModifier(bro.getBackground().getID()))
+            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Salvage;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
@@ -155,6 +155,22 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
         return res;
     }
+
+	function getUpdateText()
+	{
+		if (this.m.Queue.len() <= 0)
+		{
+			return null;
+		}
+
+		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		if (percent >= 100)
+		{
+			return "Crafted ... 100%";
+		}
+		
+		return "Crafted ... " + percent + "%";
+	}
 
     function update ()
     {
@@ -196,8 +212,9 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 break
             }
-
         }
+
+		return this.getUpdateText();
     }
 
 	function getQueue()

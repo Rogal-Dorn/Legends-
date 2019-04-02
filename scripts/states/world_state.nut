@@ -326,7 +326,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			{
 				if (this.World.Camp.isCamping())
 				{
-					this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
+					this.World.TopbarDayTimeModule.showMessage("ENCAMPED", []);
 				}
 				else
 				{
@@ -335,7 +335,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 			else
 			{
-				this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
+				this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);
 			}
 		}
 

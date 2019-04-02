@@ -152,7 +152,7 @@ gt.Const.Faces.PrettyFemale <- [
 ];
 
 gt.Const.Faces.Donkey <- [
-	"bust_head_donkey"
+	"bust_head_33"
 ];
 
 
