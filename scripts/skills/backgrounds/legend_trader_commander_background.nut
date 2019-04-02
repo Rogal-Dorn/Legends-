@@ -38,7 +38,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.IsUntalented = true;
 
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[4];
 	}
 
 	function getTooltip()

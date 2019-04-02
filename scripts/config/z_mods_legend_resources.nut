@@ -73,7 +73,7 @@ gt.Const.LegendMod.ResourceModifiers <- {
 	Repair = [0.0, 0.10, 0.30, 0.50, 1.0],
 	Salvage = [0.0, 0.10, 0.30, 0.50],
 	Crafting = [0.0, 0.50, 0.75, 1.0],
-	Barter = [0.0, 0.025, 0.05, 0.2],
+	Barter = [0.0, 0.025, 0.05, 0.10, 0.20],
 	ToolConsumption = [0.0, 0.05, 0.10, 0.20],
 	MedConsumption = [0.0, 0.05, 0.10, 0.20],
 	Hunting = [0, 1, 2, 3], // = BasePoints + BasePoints * Modifier
