@@ -25,7 +25,7 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsCombatBackground = true;
-		this.m.Modifiers.Scouting = this.Const.LegendMod.ResourceModifiers.Scouting[2];
+		this.m.Modifiers.Scouting = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Terrain = [
 				0.0, // ?

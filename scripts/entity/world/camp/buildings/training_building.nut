@@ -298,7 +298,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-			local r = this.Math.max(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())));
+			local r = this.Math.min(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())));
 			//Positive
 			if (this.Math.rand(1, 100) < r)
 			{
