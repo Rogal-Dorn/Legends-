@@ -26,6 +26,7 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
+		this.m.IsRanged = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
