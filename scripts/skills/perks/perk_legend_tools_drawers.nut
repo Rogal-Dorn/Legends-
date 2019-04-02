@@ -1,5 +1,7 @@
 this.perk_legend_tools_drawers <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Amount = 10
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_tools_drawers";
@@ -12,16 +14,8 @@ this.perk_legend_tools_drawers <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-
-	function onAdded()
+	function getModifier()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts
-		stashSize += 10; 
-
-	}
-		function onRemoved()
-	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts
-		stashSize -= 10; 
+		return this.m.Amount;
 	}
 });

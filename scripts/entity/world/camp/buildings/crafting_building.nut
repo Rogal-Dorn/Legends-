@@ -132,7 +132,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = (this.m.BaseCraft + this.m.BaseCraft * this.Const.LegendMod.getCraftingModifier(bro.getBackground().getID()))
+            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Salvage;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	

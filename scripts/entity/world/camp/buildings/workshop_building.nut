@@ -177,7 +177,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = (this.m.BaseSalvage + this.m.BaseSalvage * this.Const.LegendMod.getSalvageModifier(bro.getBackground().getID()))
+            local rm = this.m.BaseSalvage + this.m.BaseSalvage * bro.getBackground().getModifiers().Salvage;
             ret.Salvage += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	

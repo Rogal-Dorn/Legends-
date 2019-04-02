@@ -52,6 +52,13 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.IsFemaleBackground = true;
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
+
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
+
 	}
 
 	function getTooltip()

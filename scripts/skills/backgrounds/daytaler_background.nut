@@ -23,6 +23,11 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 	}
 
 	function onBuildDescription()

@@ -42,6 +42,12 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 	}
 
 	function onBuildDescription()

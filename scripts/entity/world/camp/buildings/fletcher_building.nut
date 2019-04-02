@@ -74,7 +74,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = (this.m.Base + this.m.Base * this.Const.LegendMod.getFletcherModifier(bro.getBackground().getID()))
+            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Fletching;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	

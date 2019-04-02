@@ -2500,79 +2500,103 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getStashModifier()
 	{
-		local broStash = this.Const.LegendMod.getMaxStash(this.getBackground().getID());
+		local broStash = this.getBackground().getModifiers().Stash;
 		local item = this.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-		if (item != null && item.getID() == "accessory.legend_pack_small")
+		if (item != null)
 		{
-			broStash += item.m.StashSize;
+			broStash += item.getStashModifier();
 		}
-		local skill = this.getSkills().getSkillByID("perk.legend_skillful_stacking")
-		if( skill != null)
+
+		local skills = 
+		[
+			"perk.legend_skillful_stacking",
+			"perk.legend_efficient_packing"
+		]
+		foreach (s in skills)
 		{
-			broStash += skill.m.StashSize;
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				broStash += skill.getModifier();
+			}
 		}
-		skill = this.getSkills().getSkillByID("perk.legend_efficient_packing")
-		if( skill != null)
-		{
-			broStash += skill.m.StashSize;
-		}		
 		return broStash;
 	}
 
 	function getAmmoModifier()
 	{
-		local ammo = this.Const.LegendMod.getMaxAmmo(this.getBackground().getID());
-		if( this.getSkills().getSkillByID("perk.legend_ammo_bundles"))
+		local mod = this.getBackground().getModifiers().Ammo;
+		local skills = 
+		[
+			"perk.legend_ammo_bundles",
+			"perk.legend_ammo_binding"
+		]
+		foreach (s in skills)
 		{
-			ammo +=20;
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
 		}
-		if( this.getSkills().getSkillByID("perk.legend_ammo_binding"))
-		{
-			ammo +=10;
-		}
-		return ammo
+		return mod;
 	}
 
 	function getArmorPartsModifier()
 	{
-		local parts = this.Const.LegendMod.getMaxArmorParts(this.getBackground().getID());
-		if( this.getSkills().getSkillByID("perk.legend_tools_spares"))
+		local mod = this.getBackground().getModifiers().ArmorParts;
+		local skills = 
+		[
+			"perk.legend_tools_spares",
+			"perk.legend_tools_drawers"
+		];
+		foreach (s in skills)
 		{
-			parts +=20;
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
 		}
-		if( this.getSkills().getSkillByID("perk.legend_tools_drawers"))
-		{
-			parts +=10;
-		}
-		return parts;
+		return mod;
 	}
 
 	function getMedsModifier()
 	{
-		local meds = this.Const.LegendMod.getMaxMedicine(this.getBackground().getID());
-		if( this.getSkills().getSkillByID("perk.legend_med_packages"))
+		local mod = this.getBackground().getModifiers().Meds;
+		local skills = 
+		[
+			"perk.legend_med_packages",
+			"perk.legend_med_ingredients"
+		];
+		foreach (s in skills)
 		{
-			meds +=10;
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
 		}
-		if( this.getSkills().getSkillByID("perk.legend_med_ingredients"))
-		{
-			meds +=20;
-		}
-		return meds;
+		return mod;
 	}
 
 	function getBarterModifier()
 	{
-		local barter = this.Const.LegendMod.getBarterModifier(this.getBackground().getID());
-		if( this.getSkills().getSkillByID("perk.legend_barter_trustworthy"))
+		local mod = this.getBackground().getModifiers().Barter;
+		local skills = 
+		[
+			"perk.legend_barter_trustworthy",
+			"perk.legend_barter_convincing"
+		];
+		foreach (s in skills)
 		{
-			barter += 0.05;
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
 		}
-		if( this.getSkills().getSkillByID("perk.legend_barter_convincing"))
-		{
-			barter += 0.025;
-		}
-		return barter;
+		return mod;		
 	}
 
 	function getCampHealing() 

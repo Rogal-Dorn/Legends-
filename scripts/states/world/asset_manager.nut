@@ -341,6 +341,9 @@ this.asset_manager <- {
 			this.m.Stash.add(this.new(item));
 		}
 		this.m.Stash.add(this.new("scripts/items/accessory/legend_pack_small"))
+		// this.m.Stash.add(this.new("scripts/items/trade/cloth_rolls_item"))
+		// this.m.Stash.add(this.new("scripts/items/misc/spider_silk_item"))
+
 
 		this.updateFood();
 		local names = [];
@@ -791,7 +794,7 @@ this.asset_manager <- {
 				ret.Injuries.push([ht.Min, ht.Max, bro.getName()]);
 			}
 
-			local rm = this.Const.LegendMod.getHealingModifier(bro.getBackground().getID()) * 100.0;
+			local rm = bro.getBackground().getModifiers().Healing * 100.0;
 			if (rm > 0) 
 			{
 				ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
@@ -2338,7 +2341,7 @@ this.asset_manager <- {
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			local terrains = this.Const.LegendMod.getTerrainSpeedModifier(bro.getBackground().getID());
+			local terrains = bro.getBackground().getModifiers().Terrain;
 			ret.TerrainModifiers[0][0] = "Plains";
 			ret.TerrainModifiers[0][1] += terrains[2] * 100.0;
 

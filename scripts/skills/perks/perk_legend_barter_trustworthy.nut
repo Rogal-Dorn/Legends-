@@ -1,5 +1,7 @@
 this.perk_legend_barter_trustworthy <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Amount = 0.05
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_barter_trustworthy";
@@ -12,4 +14,10 @@ this.perk_legend_barter_trustworthy <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+
+	function getModifier()
+	{
+		return this.m.Amount;
+	}
+
 });

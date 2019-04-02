@@ -24,6 +24,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = this.Const.Bodies.AllMale[this.Math.rand(0, this.Const.Bodies.AllMale.len() - 1)];
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 	}
 
 	function getTooltip()
