@@ -34,6 +34,8 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 	}
 
 	function getTooltip()

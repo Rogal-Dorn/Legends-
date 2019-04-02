@@ -25,6 +25,27 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsCombatBackground = true;
+		this.m.Modifiers.Scouting = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.025,//plains
+				0.01, //swamp
+				0.01, //hills
+				0.01, //forest
+				0.01, //forest
+				0.01, //forest_leaves
+				0.01, //autumn_forest
+				0.01, //mountains
+				0.0, // ?
+				0.025, //farmland
+				0.011, // snow
+				0.015, // badlands
+				0.015, //highlands
+				0.025, //stepps
+				0.0 //ocean
+			];
 	}
 
 	function getTooltip()

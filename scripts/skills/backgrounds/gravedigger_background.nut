@@ -31,6 +31,7 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 	}
 
 	function getTooltip()

@@ -26,6 +26,11 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
+
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 	}
 
 	function getTooltip()

@@ -36,6 +36,29 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
+
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
+		this.m.Modifiers.Terrain =  [
+				0.0, // ?
+				0.0, //ocean
+				0.0,//plains
+				0.0, //swamp
+				0.1, //hills
+				0.0, //forest
+				0.0, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.075, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.0, // snow
+				0.0, // badlands
+				0.0, //highlands
+				0.0, //stepps
+				0.0 //ocean
+			];
 	}
 
 	function getTooltip()

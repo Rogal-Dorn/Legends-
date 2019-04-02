@@ -44,6 +44,10 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
+
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 	}
 
 	function onBuildDescription()

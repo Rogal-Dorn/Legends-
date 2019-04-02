@@ -36,6 +36,9 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Body = "bust_naked_body_02";
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
+
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[4];
 	}
 
 	function getTooltip()

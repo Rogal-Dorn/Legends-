@@ -1,5 +1,7 @@
 this.perk_legend_barter_convincing <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Amount = 0.025
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_barter_convincing";
@@ -13,15 +15,9 @@ this.perk_legend_barter_convincing <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
+	function getModifier()
 	{
-		local BarterMod = this.Const.LegendMod.getBarterModifier;
-		BarterMod += 0.025; 
+		return this.m.Amount;
+	}
 
-	}
-		function onRemoved()
-	{
-		local BarterMod = this.Const.LegendMod.getBarterModifier;
-		BarterMod -= 0.025; 
-	}
 });

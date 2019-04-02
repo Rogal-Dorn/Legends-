@@ -1,5 +1,7 @@
 this.perk_legend_ammo_binding <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Ammo = 10
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_ammo_binding";
@@ -13,15 +15,9 @@ this.perk_legend_ammo_binding <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
+	function getModifier()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo
-		stashSize += 10; 
+		return this.m.Ammo;
+	}
 
-	}
-		function onRemoved()
-	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Ammo
-		stashSize -= 10; 
-	}
 });

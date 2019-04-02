@@ -34,6 +34,11 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
+
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
 	}
 
 	function getTooltip()

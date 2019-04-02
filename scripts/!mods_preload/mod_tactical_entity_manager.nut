@@ -29,7 +29,7 @@
 				continue;
 			}
 
-			if (_properties.IsPlayerInitiated && p.isInReserves())
+			if (_properties.IsPlayerInitiated && p.isInReserves() && all_players.len() > 1)
 			{
 				continue;
 			}

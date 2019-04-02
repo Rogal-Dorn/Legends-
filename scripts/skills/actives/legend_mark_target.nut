@@ -8,7 +8,7 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 		this.m.KilledString = "Marked";
 		this.m.Icon = "skills/MarkTargetSkill.png";
 		this.m.IconDisabled = "skills/MarkTargetSkill_bw.png";
-		this.m.Overlay = "daze_square";
+		this.m.Overlay = "mark_target";
 		this.m.SoundOnUse = [
 			"sounds/combat/puncture_01.wav",
 			"sounds/combat/puncture_02.wav",

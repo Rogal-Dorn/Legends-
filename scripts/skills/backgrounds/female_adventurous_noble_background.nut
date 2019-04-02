@@ -36,6 +36,11 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.IsFemaleBackground = true;
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 	}
 
 	function getTooltip()

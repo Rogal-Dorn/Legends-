@@ -43,6 +43,7 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 	}
 
 	function getTooltip()

@@ -33,7 +33,7 @@ this.fear_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Resolve when in battle with beasts"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Resolve when in battle with nobles"
 			}
 		];
 	}

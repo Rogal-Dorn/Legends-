@@ -40,6 +40,13 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
+
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 	}
 
 	function onBuildDescription()
