@@ -306,7 +306,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             this.m.PointsSalvaged += consumed;
 			local created = consumed * modifiers.Consumption;
 			this.m.ToolsCreated += created;   
-			this.World.Assets.setArmorParts(this.Math.maxf( this.World.Assets.getMaxArmorParts(), this.World.Assets.getArmorParts() + created))
+			this.World.Assets.setArmorParts(this.Math.minf( this.World.Assets.getMaxArmorParts(), this.World.Assets.getArmorParts() + created))
 
             if (r.Item.getCondition() <= 0)
             {

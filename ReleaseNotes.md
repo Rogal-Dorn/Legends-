@@ -439,4 +439,8 @@ Beta v10 test 4
 *Fix AI Crashes and lock ups
 
 Beta v10 test 5
+*Reworked all background passive resource modifiers for ammo,stash,tools,meds, and all camp related tasks. Check character tooltips in commander tent (and background tooltip when hiring)
+*Fixes tool salvage camp activity always giving max tools
+*Fixes training Tent always giving training perk
+*Perks Prepared For Anything, Brink of Death, Strict Sermons, Infectious Rage, Teacher should now work
 *Alt + Right click on paperdoll/equipped items in inventory screen to tag them to be repaired.
