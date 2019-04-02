@@ -22,7 +22,6 @@ local SeerWeakTree = [
 		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
-		gt.Const.Perks.PerkDefs.Bullseye,
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendStun
 	],
