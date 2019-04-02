@@ -1,5 +1,7 @@
 this.perk_legend_tools_spares <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Amount = 20
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_tools_spares";
@@ -13,15 +15,9 @@ this.perk_legend_tools_spares <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
+	function getModifier()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts
-		stashSize += 20; 
+		return this.m.Amount;
+	}
 
-	}
-		function onRemoved()
-	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].ArmorParts
-		stashSize -= 20; 
-	}
 });

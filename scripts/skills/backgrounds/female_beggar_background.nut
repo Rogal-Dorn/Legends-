@@ -48,6 +48,9 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gathering[1];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
+
 	}
 
 	function getTooltip()

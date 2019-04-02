@@ -68,7 +68,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
                 continue
             }
 
-            local rm = (this.m.Base + this.m.Base * this.Const.LegendMod.getScoutModifier(bro.getBackground().getID()))
+            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Scout;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	

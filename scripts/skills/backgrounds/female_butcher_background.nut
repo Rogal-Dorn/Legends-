@@ -42,6 +42,11 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];		
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 	}
 
 	function getTooltip()

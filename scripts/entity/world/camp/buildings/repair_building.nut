@@ -98,7 +98,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             
             this.m.PointsNeeded += r.Item.getConditionMax() - r.Item.getCondition()
         }
-        this.logInfo("ONinit RepairsNeeded :: " + this.m.PointsNeeded);
     }
 
     function onInit()
@@ -172,7 +171,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-            local rm = (this.m.BaseRepair + this.m.BaseRepair * this.Const.LegendMod.getRepairModifier(bro.getBackground().getID()))
+            local rm = this.m.BaseRepair + this.m.BaseRepair * bro.getBackground().getModifiers().Repair;
             ret.Repair += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	

@@ -44,6 +44,12 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Beards = this.Const.Beards.Monk;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
+
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 	}
 
 	function getTooltip()

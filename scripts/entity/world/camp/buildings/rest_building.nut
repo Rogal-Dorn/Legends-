@@ -116,8 +116,8 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
             }
 
             //Bros assigned to the healing activity improve the heal rate for everyone
-            ret.Modifier += this.Const.LegendMod.getHealingModifier(bro.getBackground().getID());
-            local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getMedsConsumptionModifier(bro.getBackground().getID()));
+            ret.Modifier += bro.getBackground().getModifiers().Healing;
+            local v = this.Math.maxf(0.50, ret.Consumption - bro.getBackground().getModifiers().MedConsumption);
             ret.Consumption = v;
         }
         return ret;

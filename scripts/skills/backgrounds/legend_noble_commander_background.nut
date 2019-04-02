@@ -35,6 +35,35 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.IsUntalented = true;
+
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.025,//plains
+				0.01, //swamp
+				0.01, //hills
+				0.01, //forest
+				0.01, //forest
+				0.01, //forest_leaves
+				0.01, //autumn_forest
+				0.01, //mountains
+				0.0, // ?
+				0.025, //farmland
+				0.011, // snow
+				0.015, // badlands
+				0.015, //highlands
+				0.025, //stepps
+				0.0 //ocean
+			];
 	}
 
 	function getTooltip()

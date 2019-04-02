@@ -43,6 +43,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsCombatBackground = true;
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 	}
 
 	function getTooltip()
