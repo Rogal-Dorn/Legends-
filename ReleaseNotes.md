@@ -441,4 +441,10 @@ Beta v10 test 4
 Beta v10 test 5
 *Alt + Right click on paperdoll/equipped items in inventory screen to tag them to be repaired.
 *Changed scaling on expert and legendary so that each bro you hire adds more difficulty than the last. On expert this means the 26th guy you hire adds as much difficulty as the first seven you hire combined.  On legendary this effect is doubled. 
- 
+*Fixes training tent always giving training perk and salvage tent always giving max tools.
+*Ranger Mark Target is now ranged
+*Removes duplicate seer perks
+*Prepared For Anything, Brink of Death, Strict Sermons, Infectious Rage, Teacher should now work.
+*Reworked all background passive resource modifiers for ammo,stash,tools,meds, and all camp related tasks. Check character tooltips in commander tent (and background tooltip when hiring) https://docs.google.com/document/d/16bC2sRNXsizN6Bv4Ip3k3LtvR5Jei3CRpTc6V9g8yq0
+*New Vala! Vala is now her own start with her own very unique Perk tree. (Tree is still being worked on and flushed out)
+*New Vala inscribing mechanics. When Vala is with your party, enchant tent will be available in the camp. Use Vala perks to unlock craftable runes that can be attached to weapons, armor, helmets, shields.
