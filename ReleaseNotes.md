@@ -439,8 +439,6 @@ Beta v10 test 4
 *Fix AI Crashes and lock ups
 
 Beta v10 test 5
-*Reworked all background passive resource modifiers for ammo,stash,tools,meds, and all camp related tasks. Check character tooltips in commander tent (and background tooltip when hiring) https://docs.google.com/document/d/16bC2sRNXsizN6Bv4Ip3k3LtvR5Jei3CRpTc6V9g8yq0/edit
-*Fixes tool salvage camp activity always giving max tools
-*Fixes training tent always giving training perk
-*Prepared For Anything, Brink of Death, Strict Sermons, Infectious Rage, Teacher should now work.
 *Alt + Right click on paperdoll/equipped items in inventory screen to tag them to be repaired.
+*Changed scaling on expert and legendary so that each bro you hire adds more difficulty than the last. On expert this means the 26th guy you hire adds as much difficulty as the first seven you hire combined.  On legendary this effect is doubled. 
+ 
