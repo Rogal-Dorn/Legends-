@@ -79,7 +79,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeValaLookupMap;
 			break;
 		case "background.legend_vala":
-			return gt.Const.Perks.TreeValaLWeakookupMap;
+			return gt.Const.Perks.TreeValaWeaklookupMap;
 			break;			
 		case "background.apprentice":
 			return gt.Const.Perks.TreeTemplateLookupMap;
