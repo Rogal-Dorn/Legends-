@@ -369,6 +369,7 @@ this.camp_building <- {
 
 	function onBroEnter ( _bro )
 	{
+		return true
 	}
 
 	function onSerialize( _out )
