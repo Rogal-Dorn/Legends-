@@ -154,11 +154,14 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		local broID = _data[0];
 		local campID = _data[1];
 		local bro = this.Tactical.getEntityByID(broID);
+		local tent = this.World.Camp.getBuildingByID(campID);
+		if (!tent.onBroEnter(bro))
+		{
+			return 
+		}
 		local tent = this.World.Camp.getBuildingByID(bro.getCampAssignment());
 		tent.onBroLeave(bro);
 		bro.setCampAssignment(campID);
-		tent = this.World.Camp.getBuildingByID(bro.getCampAssignment());
-		tent.onBroEnter(bro);
 		this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
 		return this.queryLoad();
 	}

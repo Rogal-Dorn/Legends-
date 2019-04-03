@@ -132,7 +132,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Salvage;
+            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Crafting;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
@@ -258,7 +258,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
             
-            points += r.Blueprint.getCost();
+            points += (r.Blueprint.getCost() - r.Points);
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)

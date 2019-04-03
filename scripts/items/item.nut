@@ -774,85 +774,85 @@ this.item <- {
 			case 1:
 				this.m.Name = "Weapon Rune Sigil: Power";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_w.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_w.png";
+				this.m.Icon = "rune_sigils/rune_stone_1.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_1.png";
 				break;
 
 			case 2:
 				this.m.Name = "Weapon Rune Sigil: Accuracy";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_w.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_w.png";
+				this.m.Icon = "rune_sigils/rune_stone_1.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_1.png";
 				break;
 
 			case 3:
 				this.m.Name = "Weapon Rune Sigil: Feeding";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_w.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_w.png";
+				this.m.Icon = "rune_sigils/rune_stone_1.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_1.png";
 				break;
 
 			case 11:
 				this.m.Name = "Helmet Rune Sigil: Clarity";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_h.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_h.png";
+				this.m.Icon = "rune_sigils/rune_stone_2.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_2.png";
 				break;
 
 			case 12:
 				this.m.Name = "Helmet Rune Sigil: Bravery";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_h.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_h.png";
+				this.m.Icon = "rune_sigils/rune_stone_2.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_2.png";
 				break;
 
 			case 13:
 				this.m.Name = "Helmet Rune Sigil: Luck";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_h.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_h.png";
+				this.m.Icon = "rune_sigils/rune_stone_2.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_2.png";
 				break;
 
 			case 21:
 				this.m.Name = "Armor Rune Sigil: Endurance";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s armor.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_a.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_a.png";
+				this.m.Icon = "rune_sigils/rune_stone_3.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_3.png";
 				break;
 
 			case 22:
 				this.m.Name = "Armor Rune Sigil: Safety";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s armor.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_a.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_a.png";
+				this.m.Icon = "rune_sigils/rune_stone_3.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_3.png";
 				break;
 
 			case 23:
 				this.m.Name = "Armor Rune Sigil: Resilience";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s armor.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_a.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_a.png";
+				this.m.Icon = "rune_sigils/rune_stone_3.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_3.png";
 				break;
 
 			case 31:
 				this.m.Name = "Shield Rune Sigil: Defense";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_s.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_s.png";
+				this.m.Icon = "rune_sigils/rune_stone_4.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_4.png";
 				break;
 
 			case 32:
 				this.m.Name = "Shield Rune Sigil: Defense";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_s.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_s.png";
+				this.m.Icon = "rune_sigils/rune_stone_4.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_4.png";
 				break;
 
 			case 33:
 				this.m.Name = "Shield Rune Sigil: Defense";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
-				this.m.Icon = "rune_sigils/legend_vala_rune_sigil_s.png";
-				this.m.IconLarge = "rune_sigils/legend_vala_rune_sigil_s.png";
+				this.m.Icon = "rune_sigils/rune_stone_4.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_4.png";
 				break;
 
 			default:

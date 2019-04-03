@@ -44,6 +44,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Scout = this.Const.LegendMod.ResourceModifiers.Scout[0],
 			Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0],
 			Training = this.Const.LegendMod.ResourceModifiers.Training[0],
+			Enchanting = 0.0
 			Terrain = [
 				0.0, // ?
 				0.0, //ocean

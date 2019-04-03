@@ -32,7 +32,9 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsFemaleBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
-		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];		
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
+		this.m.Modifiers.Enchanting = 1.0;		
+
 	}
 
 	function getTooltip()

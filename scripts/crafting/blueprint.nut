@@ -5,7 +5,8 @@ this.blueprint <- {
 		PreviewComponents = [],
 		Sounds = this.Const.Sound.CraftingGeneral,
 		Cost = 0,
-		TimesCrafted = 0
+		TimesCrafted = 0,
+		Enchanter = false
 	},
 	function isValid()
 	{
@@ -110,12 +111,27 @@ this.blueprint <- {
 
 	function isQualified()
 	{
+		if (this.m.Enchanter)
+		{
+			return false
+		}
+
 		if (this.m.TimesCrafted >= 1)
 		{
 			return true;
 		}
 
 		return this.isCraftable();
+	}
+
+	function isQualifiedEnchant()
+	{
+		if (this.m.Enchanter)
+		{
+			return true;
+		}
+
+		return false;
 	}
 
 	function getUIData()

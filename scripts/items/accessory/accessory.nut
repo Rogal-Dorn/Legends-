@@ -134,7 +134,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() + this.m.StashSize)
+			this.Stash.resize(this.Stash.getCapacity() + this.getStashModifier())
 		}
 		
 	}
@@ -152,7 +152,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 		if (this.m.StashModifier > 0)
 		{
-			this.Stash.resize(this.Stash.getCapacity() - this.m.StashSize)
+			this.Stash.resize(this.Stash.getCapacity() - this.getStashModifier())
 		}
 
 	}

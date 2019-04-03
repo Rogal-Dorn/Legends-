@@ -140,10 +140,8 @@ this.legend_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.getContainer().getActor().getSkills().hasSkill("special.legend_vala_inscription_information"))
-		{
-			this.getContainer().getActor().getSkills().add(this.new("scripts/skills/perks/legend_vala_inscription_information"));
-		}
+		local stash = this.World.Assets.getStash()
+		stash.add(this.new("scripts/items/trade/uncut_gems_item"));
 	}
 
 
