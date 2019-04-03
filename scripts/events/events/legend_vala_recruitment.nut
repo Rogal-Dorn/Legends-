@@ -52,8 +52,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-
-
 		local towns = this.World.EntityManager.getSettlements();
 		local nearTown = false;
 		local town;
@@ -86,14 +84,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			{
 				return;
 			}
-			if (bro.getBackground().getID() == "background.legend_commander_witch")
-			{
-				return;
-			}
-			if (bro.getBackground().getID() == "background.legend_witch")
-			{
-				return;
-			}
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}
@@ -104,8 +94,8 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 
 		this.m.Town = town;
-//		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
-		this.m.Score = 0;
+		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
+		//this.m.Score = 0;
 	}
 
 	function onPrepare()
