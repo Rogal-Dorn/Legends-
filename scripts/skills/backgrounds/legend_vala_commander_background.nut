@@ -93,7 +93,6 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
-
 		local r = this.Math.rand(0, 1);
 		if (r == 0)
 		{
