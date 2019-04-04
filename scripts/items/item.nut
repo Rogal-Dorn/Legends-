@@ -746,7 +746,7 @@ this.item <- {
 				break;
 
 			case 21:
-				local bonus = 5 + _mult;
+				local bonus = 8 + _mult;
 				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Fatigue recovery per turn, [color=" + this.Const.UI.Color.PositiveValue + "]-" + bonus + "%[/color] Fatigue cost and effects multiplier.";
 				break;
 
