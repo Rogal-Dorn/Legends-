@@ -442,3 +442,6 @@ Beta v10 test 5
 *Alt + Right click on paperdoll/equipped items in inventory screen to tag them to be repaired.
 *Changed scaling on expert and legendary so that each bro you hire adds more difficulty than the last. On expert this means the 26th guy you hire adds as much difficulty as the first seven you hire combined.  On legendary this effect is doubled. 
  
+ Beta v10 test 6
+ *Fixes runes not being added to stash
+ *Fixes the crafting and enchanting queues being removed upon loading a save

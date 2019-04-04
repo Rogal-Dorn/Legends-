@@ -2,7 +2,10 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	m = {
         BaseCraft = 10.0,
         ItemsCrafted = [],
-        Queue = []
+        Queue = [],
+		PointsNeeded = 0,
+		PointsCrafted = 0,
+		NumBros = 0		
 	},
     function create()
     {
@@ -94,7 +97,21 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     function init()
     {
+		this.onInit();
 		this.m.ItemsCrafted = [];
+		this.m.PointsNeeded = 0;
+		this.m.PointsCrafted = 0;
+		local mod = this.getModifiers()
+		this.m.NumBros = mod.Assigned;
+        foreach (i, r in this.m.Queue)
+        {
+            if (r == null)
+            {
+                continue;
+            }
+            
+            this.m.PointsNeeded += r.Blueprint.getCost() - r.Points;
+        }				
     }
 
     function onInit()
@@ -163,7 +180,12 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return null;
 		}
 
-		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		if (this.m.NumBros == 0)
+		{
+			return "No one assigned to craft";
+		}
+
+		local percent = (this.m.PointsCrafted / this.m.PointsNeeded) * 100.0;
 		if (percent >= 100)
 		{
 			return "Crafted ... 100%";
@@ -199,6 +221,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 needed = modifiers.Craft;
             }
 			r.Points += needed;
+			this.m.PointsCrafted += needed
             modifiers.Craft -= needed;
 
 			if (r.Points >= r.Blueprint.getCost())

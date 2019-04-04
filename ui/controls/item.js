@@ -122,6 +122,7 @@ $.fn.assignListItemImage = function(_imagePath)
     if (imageLayer.length > 0)
     {
         var itemData = this.data('item');
+        //console.error(itemData);
 
         // update image
         var image = imageLayer.find('img:first');
