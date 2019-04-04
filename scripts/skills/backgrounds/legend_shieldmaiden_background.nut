@@ -34,6 +34,10 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsFemaleBackground = true;
+
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 	}
 
 	function getTooltip()

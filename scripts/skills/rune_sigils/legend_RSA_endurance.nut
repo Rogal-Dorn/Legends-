@@ -17,6 +17,6 @@ this.legend_RSA_endurance <- this.inherit("scripts/skills/skill", {
 	function onUpdate (_properties)
 	{
 		_properties.FatigueRecoveryRate += 1;
-		_properties.FatigueEffectMult *= 0.9;
+		_properties.FatigueEffectMult *= 0.95 - (this.m.Item.RuneMultiplier / 100);
 	}
 });

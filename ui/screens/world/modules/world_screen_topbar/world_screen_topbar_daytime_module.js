@@ -234,7 +234,14 @@ WorldScreenTopbarDayTimeModule.prototype.showMessage = function(_data)
 	this.mPausedSpacebarDiv.addClass('display-block');
 
 	this.mPausedDiv.html(_data.Header)
-	this.mPausedSpacebarDiv.html(_data.Subheader);
+	this.mPausedSpacebarDiv.empty()
+	for(var i = 0; i < _data.Subheader.length; ++i)
+	{
+		var text = $('<div>' + _data.Subheader[i] + '</div>')
+		this.mPausedSpacebarDiv.append(text);
+	}
+ 
+	//this.mPausedSpacebarDiv.html(_data.Subheader);
 }
 
 WorldScreenTopbarDayTimeModule.prototype.hideMessage = function()

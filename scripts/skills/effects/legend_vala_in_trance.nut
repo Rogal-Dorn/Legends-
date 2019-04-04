@@ -8,7 +8,7 @@ this.legend_vala_in_trance <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "status_effect_53_mini";
 		this.m.Overlay = "status_effect_53";
 		this.m.Type = this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.VeryLast + 5;
+		this.m.Order = this.Const.SkillOrder.VeryLast + 7;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;

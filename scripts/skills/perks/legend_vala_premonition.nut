@@ -33,17 +33,16 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 					text = this.getName()
 				},
 				{
+					id = 2,
+					type = "description",
+					text = this.getDescription()
+				},
+				{
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
 					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] chance to have any attacker require two successful attack rolls in order to hit."
 				}
-//				{
-//					id = 11,
-//					type = "text",
-//					icon = "ui/icons/special.png",
-//					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] less likely to get targeted by enemies."
-//				}
 			];
 		}
 		else
@@ -57,7 +56,7 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 	{
 		local RerollBonus = 10.0 + ((this.getContainer().getActor().getLevel() * 10.0) / this.Const.LevelXP.len());
 
-		if (RerollBonus >= 20)
+		if (RerollBonus > 20)
 		{
 			RerollBonus = 20;
 		}
@@ -65,7 +64,7 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 		local Attraction = 10.0 + ((this.getContainer().getActor().getLevel() * 10.0) / this.Const.LevelXP.len());
 		local AttractionMult = 1.0 - ((Attraction + 0.0) / 100.0);
 
-		if (AttractionMult <= 0.8)
+		if (AttractionMult < 0.8)
 		{
 			AttractionMult = 0.8;
 		}

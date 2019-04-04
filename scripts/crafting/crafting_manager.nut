@@ -51,6 +51,22 @@ this.crafting_manager <- {
 		return ret;
 	}
 
+	function getQualifiedEnchanterBlueprintsForUI()
+	{
+		local ret = [];
+
+		foreach( b in this.m.Blueprints )
+		{
+			if (b.isQualifiedEnchant())
+			{
+				ret.push(b.getUIData());
+			}
+		}
+
+		ret.sort(this.onSortBlueprints);
+		return ret;
+	}
+
 	function create()
 	{
 		if (!this.Const.DLC.Unhold)

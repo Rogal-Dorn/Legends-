@@ -28,6 +28,31 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
+
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
+		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0,//plains
+				0.0, //swamp
+				0.0, //hills
+				0.05, //forest
+				0.05, //forest
+				0.05, //forest_leaves
+				0.05, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.01, // snow
+				0.01, // badlands
+				0.01, //highlands
+				0.0, //stepps
+				0.0 //ocean
+			];
 	}
 
 	function getTooltip()

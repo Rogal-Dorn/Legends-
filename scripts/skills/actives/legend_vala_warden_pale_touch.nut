@@ -10,7 +10,7 @@ this.legend_vala_warden_pale_touch <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_42.png";
 		this.m.Overlay = "active_42";
 		this.m.SoundOnUse = [
-			"sounds/legend_vala_warden_pale_touch.wav"
+			"sounds/combat/legend_vala_warden_pale_touch.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;

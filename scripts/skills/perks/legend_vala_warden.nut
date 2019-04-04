@@ -25,10 +25,9 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 		{
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+
+		return false;
+
 	}
 
 
@@ -42,7 +41,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 			local WardenRangedSkill = this.m.WardenEntity.m.CurrentProperties.RangedSkill;
 			local WardenRangedDefense = this.m.WardenEntity.m.CurrentProperties.RangedDefense;
 			local WardenInitiative = this.m.WardenEntity.m.CurrentProperties.Initiative;
-			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 5.00));
+			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4.00));
 
 			if (SpiritualBondReduction >= 50)
 			{
@@ -55,21 +54,19 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 					id = 1,
 					type = "title",
 					text = this.getName()
-				}
+				},
+				{
+					id = 2,
+					type = "description",
+					text = this.getDescription()
+				},
 			];
 
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = this.getContainer().getActor().m.Name + "\'s Warden is present and has the following attributes:\n\nMaximum hitpoints " + WardenHitpoints + "\nMelee skill " + WardenMeleeSkill + "\nMelee defense " + WardenMeleeDefense + "\nRanged skill " + WardenRangedSkill + "\nRanged defense " + WardenRangedDefense + "\nInitiative " + WardenInitiative
-			});
-
-			tooltip.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "The Warden has the Steel Brow and Anticipation perks."
+				text = "Hitpoints: " + WardenHitpoints + "\nMelee skill: " + WardenMeleeSkill + "\nMelee defense: " + WardenMeleeDefense + "\nRanged skill: " + WardenRangedSkill + "\nRanged defense: " + WardenRangedDefense + "\nInitiative: " + WardenInitiative
 			});
 
 			if (this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_spiritual_bond_effect"))

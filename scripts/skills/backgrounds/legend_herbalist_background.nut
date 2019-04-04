@@ -43,6 +43,33 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Beards = this.Const.Beards.Monk;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
+
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[1];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[2];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[3];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0,//plains
+				0.0, //swamp
+				0.0, //hills
+				0.05, //forest
+				0.05, //forest
+				0.05, //forest_leaves
+				0.05, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.01, // snow
+				0.01, // badlands
+				0.01, //highlands
+				0.0, //stepps
+				0.0 //ocean
+			];
 	}
 
 	function getTooltip()

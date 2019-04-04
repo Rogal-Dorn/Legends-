@@ -341,6 +341,9 @@ this.asset_manager <- {
 			this.m.Stash.add(this.new(item));
 		}
 		this.m.Stash.add(this.new("scripts/items/accessory/legend_pack_small"))
+		// this.m.Stash.add(this.new("scripts/items/trade/cloth_rolls_item"))
+		// this.m.Stash.add(this.new("scripts/items/misc/spider_silk_item"))
+
 
 		this.updateFood();
 		local names = [];
@@ -390,7 +393,7 @@ this.asset_manager <- {
 		switch(_settings.Campaign)
 		{
 		case this.Const.LegendMod.StartTypes.Noble:
-			this.setBrothersMax(1);		
+			this.setBrothersMax(6);	
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
 				"legend_noble_commander_background"
@@ -452,7 +455,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Rangers:
-			this.setBrothersMax(1);
+			this.setBrothersMax(3);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -490,8 +493,6 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-
-
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:
@@ -516,8 +517,6 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setCommander(true);
 			bro.setVeteranPerks(2);
-
-
 			break;
 
 		case this.Const.LegendMod.StartTypes.Party:
@@ -621,7 +620,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(1);
+			this.setBrothersMax(6);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			
 			bro = roster.create("scripts/entity/tactical/player");
@@ -632,9 +631,23 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(3);
 			bro.setVeteranPerks(5);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-
-
 			break
+
+
+		case this.Const.LegendMod.StartTypes.Vala:
+			this.setBrothersMax(1);
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[1][1]);
+			bro.setStartValuesEx([
+				"legend_vala_commander_background"
+			]);
+			bro.setPlaceInFormation(4);
+			
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setCommander(true);
+			bro.setVeteranPerks(2);
+			break;
+
 
 		case this.Const.LegendMod.StartTypes.Hoggart:
 			this.setBrothersMax(18);
@@ -701,6 +714,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			this.setBrothersMax(18);
 			break;
+
 		}
 		this.m.FounderNames = [];
 		this.m.LastRosterSize = roster.getSize();
@@ -791,7 +805,7 @@ this.asset_manager <- {
 				ret.Injuries.push([ht.Min, ht.Max, bro.getName()]);
 			}
 
-			local rm = this.Const.LegendMod.getHealingModifier(bro.getBackground().getID()) * 100.0;
+			local rm = bro.getBackground().getModifiers().Healing * 100.0;
 			if (rm > 0) 
 			{
 				ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
@@ -2338,7 +2352,7 @@ this.asset_manager <- {
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			local terrains = this.Const.LegendMod.getTerrainSpeedModifier(bro.getBackground().getID());
+			local terrains = bro.getBackground().getModifiers().Terrain;
 			ret.TerrainModifiers[0][0] = "Plains";
 			ret.TerrainModifiers[0][1] += terrains[2] * 100.0;
 

@@ -19,7 +19,7 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_vala_spiritual_bond_effect";
 		this.m.Name = "Spiritual Bond";
-		this.m.KilledString = "Died from damage transfer";
+		this.m.Description = "";
 		this.m.Icon = "skills/status_effect_87.png";
 		this.m.IconMini = "status_effect_87_mini";
 		this.m.Overlay = "status_effect_87";
@@ -46,12 +46,6 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 					id = 1,
 					type = "title",
 					text = this.getName()
-				},
-				{
-					id = 10,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = ""
 				}
 			];
 		}
@@ -80,17 +74,19 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (this.m.Vala.m.WardenEntity != null)
+		if (this.m.Vala.m.WardenEntity == null)
 		{
-			local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
-
-			if (reduction < 0.5)
-			{
-				reduction = 0.5;
-			}
-
-			_properties.DamageReceivedRegularMult *= reduction;
+			return;
 		}
+
+		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00));
+
+		if (reduction < 0.5)
+		{
+			reduction = 0.5;
+		}
+
+		_properties.DamageReceivedRegularMult *= reduction;
 	}
 
 	
@@ -106,8 +102,8 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00));
-		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 500.00);
+		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00));
+		local transfer = 0.1 + (this.getContainer().getActor().getCurrentProperties().Bravery / 400.00);
 
 		if (reduction < 0.5)
 		{

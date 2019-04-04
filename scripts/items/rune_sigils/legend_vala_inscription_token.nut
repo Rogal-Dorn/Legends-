@@ -12,7 +12,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 		this.m.IsDroppedAsLoot = true;
 		this.m.IsAllowedInBag = false;
 		this.m.IsUsable = true;
-		this.m.Value = 1000;
+		this.m.Value = 1200;
 	}
 
 
@@ -63,7 +63,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 			id = 66,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = this.getRuneSigilTooltip(this.m.RuneVariant)
+			text = this.getRuneSigilTooltip(this.m.RuneVariant, this.m.RuneMultiplier)
 		});
 
 		return result;
@@ -81,8 +81,9 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);
@@ -97,8 +98,9 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);
@@ -113,8 +115,9 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);
@@ -133,8 +136,9 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 				return false;
 			}
 
-			this.Sound.play("sounds/legend_vala_inscribe.wav");
+			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);

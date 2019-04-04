@@ -149,7 +149,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		local barterMult = 0.0;
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			barterMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID());
+			barterMult += bro.getBarterModifier();
 		}
 		local bartermod = 100 * barterMult;
 		local modrate = sqrt(bartermod);

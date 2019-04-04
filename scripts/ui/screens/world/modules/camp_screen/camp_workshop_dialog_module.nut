@@ -11,6 +11,11 @@ this.camp_workshop_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 		this.ui_module.create();
 	}
 
+	function getTent()
+	{
+		return this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop);
+	}
+
 	function destroy()
 	{
 		this.ui_module.destroy();
@@ -18,14 +23,13 @@ this.camp_workshop_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 
 	function onShow()
 	{
-		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop);
-		tent.onInit();
+		this.getTent().onInit();
 		return this.queryLoad();
 	}
 
 	function queryLoad()
 	{
-		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
+		local tent = this.getTent();
 		local result = {
 			Title = this.m.Title,
 			SubTitle = this.m.Description,
@@ -41,7 +45,7 @@ this.camp_workshop_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 
 	function assetsInformation()
 	{
-		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
+		local tent = this.getTent();
 		return {
 			Supplies = this.World.Assets.getArmorParts(),
 			SuppliesMax  = this.World.Assets.getMaxArmorParts(),
@@ -102,26 +106,23 @@ this.camp_workshop_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 	
 	function onAssignAll()
 	{
-		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
-		tent.assignAll();
+		this.getTent().assignAll();
 		this.loadStashList();
 	}
 
 	function onRemoveAll()
 	{
-		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
-		tent.removeAll();
+		this.getTent().removeAll();
 		this.loadStashList();
 	}
 
 	function onSwapItem( _data )
 	{
-		local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
 		local sourceItemIdx = _data[0];
 		local sourceItemOwner = _data[1];
 		local targetItemIdx = _data[2];
 		local targetItemOwner = _data[3];
-		tent.swapItems(sourceItemOwner, sourceItemIdx, targetItemOwner, targetItemIdx)
+		this.getTent().swapItems(sourceItemOwner, sourceItemIdx, targetItemOwner, targetItemIdx)
 		return this.queryLoad();
 	}
 

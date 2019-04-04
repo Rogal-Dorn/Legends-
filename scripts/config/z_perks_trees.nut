@@ -75,9 +75,12 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		// case "background.vazl_inventor":
 		// 	return gt.Const.Perks.TreeInventorLookupMap;
 		// 	break;
-		case "background.vazl_vala":
+		case "background.legend_commander_vala":
 			return gt.Const.Perks.TreeValaLookupMap;
 			break;
+		case "background.legend_vala":
+			return gt.Const.Perks.TreeValaWeakLookupMap;
+			break;			
 		case "background.apprentice":
 			return gt.Const.Perks.TreeTemplateLookupMap;
 			break;
@@ -193,9 +196,12 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		// case "background.vazl_inventor":
 		// 	return gt.Const.Perks.PerksTreeInventor;
 		// 	break;
-		case "background.vazl_vala":
+		case "background.legend_commander_vala":
 			return gt.Const.Perks.PerksTreeVala;
 			break;
+		case "background.legend_vala":
+			return gt.Const.Perks.PerksTreeValaWeak;
+			break;			
 		case "background.apprentice":
 			return gt.Const.Perks.PerksTreeTemplate;
 			break;

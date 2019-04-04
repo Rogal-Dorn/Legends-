@@ -6,9 +6,9 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_vala_threads_effect";
 		this.m.Name = "Threads of Fate";
-		this.m.Icon = "skills/status_effect_87.png";
-		this.m.IconMini = "status_effect_87_mini";
-		this.m.Overlay = "status_effect_87";
+		this.m.Icon = "skills/status_effect_78.png";
+		this.m.IconMini = "status_effect_78_mini";
+		this.m.Overlay = "status_effect_78";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsActive = false;
@@ -25,14 +25,7 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 
 	function getName()
 	{
-		if (this.m.Threads <= 1)
-		{
-			return this.m.Name;
-		}
-		else
-		{
-			return this.m.Name + " (x" + this.m.Threads + ")";
-		}
+		return this.m.Name + " (x" + this.m.Threads + ")";
 	}
 
 
@@ -57,29 +50,22 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Threads > 5)
+		if (this.m.Threads > 10)
 		{
-			this.m.Threads = 5;
+			this.m.Threads = 10;
 		}
 
 		_properties.HitpointsMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.BraveryMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.StaminaMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.InitiativeMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.MeleeSkillMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.RangedSkillMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.MeleeDefenseMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.RangedDefenseMult *= 1.0 - (this.m.Threads / 20.0);
 		_properties.DamageReceivedTotalMult *= 1.0 + (this.m.Threads / 20.0);
 	}
 
 
 	function onRefresh()
 	{
-		if (this.m.Threads < 5)
+		if (this.m.Threads < 10)
 		{
 			++this.m.Threads;
-			this.spawnIcon("status_effect_87", this.getContainer().getActor().getTile());
+			this.spawnIcon("status_effect_78", this.getContainer().getActor().getTile());
 		}
 	}
 

@@ -183,7 +183,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-            local rm = (this.m.BaseCraft + this.m.BaseCraft * this.Const.LegendMod.getInjuryModifier(bro.getBackground().getID()))
+            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Injury;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
@@ -191,13 +191,44 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return ret;
     }
 
+	function getUpdateText()
+	{
+		if (this.getRequiredTime() <= 0 && this.m.InjuriesTreated > 0)
+		{
+			return "Injuries Treated ... 100%";
+		}
+
+		if (this.getRequiredTime() <= 0)
+		{
+			return "";
+		}
+
+		if (this.m.Camp.getElapsedHours() > this.getRequiredTime())
+		{
+			return "Injuries Treated ... 100%";
+		}
+
+		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		if (percent >= 100)
+		{
+			return "Injuries Treated ... 100%";
+		}
+		
+		local text =  "Injuries Treated ... " + percent + "%";
+		if (this.World.Assets.getMedicine() <= 0)
+		{
+			return text + " (Out of medicine!)"
+		}
+		return text;
+	}
+
     function update ()
     {
 		if (this.m.Queue == null)
 		{
 			this.onInit();
 		}
-		
+
         local modifiers = this.getModifiers();
         foreach (i, r in this.m.Queue)
         {
@@ -251,6 +282,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 
         }
+
+		return this.getUpdateText();
     }
 
 	function getQueue()

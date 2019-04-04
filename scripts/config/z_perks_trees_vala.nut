@@ -10,32 +10,39 @@ local ValaTree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendValaWarden,
 		gt.Const.Perks.PerkDefs.Pathfinder,
-		gt.Const.Perks.PerkDefs.Student,
-		gt.Const.Perks.PerkDefs.Recover
+		gt.Const.Perks.PerkDefs.Recover,
+		gt.Const.Perks.PerkDefs.LegendValaInscribeShield,
+		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
-		gt.Const.Perks.PerkDefs.VazlInscribeWeapon,
-		gt.Const.Perks.PerkDefs.VazlInscribeHelmet,
-		gt.Const.Perks.PerkDefs.VazlInscribeArmor,
-		gt.Const.Perks.PerkDefs.VazlInscribeShield
+		gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
+		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.BackStabber,
+		gt.Const.Perks.PerkDefs.LegendRoster2
+	],
+	[
+		gt.Const.Perks.PerkDefs.LegendValaPremonition,
+		gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
+		gt.Const.Perks.PerkDefs.LegendRoster3
+	],
+	[
+		gt.Const.Perks.PerkDefs.LegendValaChantMastery,
+		gt.Const.Perks.PerkDefs.LegendValaTranceMastery,
+		gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery
+	],
+	[
+		gt.Const.Perks.PerkDefs.LegendValaChantDisharmony,
+		gt.Const.Perks.PerkDefs.LegendValaInscribeArmor,
+		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaThreads,
-		gt.Const.Perks.PerkDefs.LegendValaPremonition
+		gt.Const.Perks.PerkDefs.LegendValaSpiritualBond,
+		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
-		gt.Const.Perks.PerkDefs.VazlInscribeMastery,
-		gt.Const.Perks.PerkDefs.LegendValaChantMastery,
-		gt.Const.Perks.PerkDefs.LegendValaTranceMastery
-	],
-	[
-		gt.Const.Perks.PerkDefs.LegendValaChantDisharmony
-	],
-	[
-		gt.Const.Perks.PerkDefs.LegendValaSpiritualBond
-	],
-	[
-		gt.Const.Perks.PerkDefs.Indomitable
+		gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
+		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],
 	[],

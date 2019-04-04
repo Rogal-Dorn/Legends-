@@ -6,7 +6,8 @@ this.legend_teleport <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Teleport";
 		this.m.Description = "";
 		this.m.Icon = "skills/teleport_skill.png";
-		this.m.Overlay = "active_149";
+		this.m.IconDisabled = "skills/teleport_skill_bw.png";
+		this.m.Overlay = "teleport";
 		this.m.SoundOnUse = [
 			"sounds/combat/teleport_01.wav",
 			"sounds/combat/teleport_02.wav",

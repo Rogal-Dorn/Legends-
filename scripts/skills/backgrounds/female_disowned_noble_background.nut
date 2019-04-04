@@ -32,6 +32,10 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.IsFemaleBackground = true;
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
+		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];	
 	}
 
 	function getTooltip()

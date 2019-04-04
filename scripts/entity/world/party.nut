@@ -320,7 +320,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 				local broTable = [];
 				foreach( bro in this.World.getPlayerRoster().getAll() )
 				{
-					broTable = this.Const.LegendMod.getTerrainSpeedModifier(bro.getBackground().getID());
+					broTable = bro.getBackground().getModifiers().Terrain;
 					if (broTable == null)
 					{
 						continue

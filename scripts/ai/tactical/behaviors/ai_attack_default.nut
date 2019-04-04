@@ -44,6 +44,7 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.kraken_devour",
 			"actives.ghost_overhead_strike",
 			"actives.cat_bite",
+			"actives.legend_staff_bash"
 		],
 		Skill = null,
 		Hitchance = 0

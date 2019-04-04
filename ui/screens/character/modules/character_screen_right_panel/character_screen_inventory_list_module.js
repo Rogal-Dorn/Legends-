@@ -677,7 +677,7 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
             {
                 if (repairItem === true)
                 {
-                    self.mDataSource.toggleInventoryItem(itemId, function(ret)
+                    self.mDataSource.toggleInventoryItem(itemId, null, function(ret)
                     {
                         data['repair'] = ret['repair'];
                         data['salvage'] = ret['salvage'];

@@ -9,7 +9,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BackgroundDescription = "A Vala is a travelling seer, shaman and sorceress.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 240;
+		this.m.HiringCost = 20000;
 		this.m.DailyCost = 24;
 		this.m.Excluded = [
 			"trait.asthmatic",
@@ -30,6 +30,12 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
 		this.m.IsFemaleBackground = true;
+		this.m.IsUntalented = true;
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
+		this.m.Modifiers.Enchanting = 1.0;		
+
 	}
 
 	function getTooltip()
@@ -50,7 +56,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function onBuildDescription()
 	{
-		return "{%name% is a travelling seer, shaman and sorceress.}";
+		return "{%name% is a travelling seer, shaman and sorceress. Besides the ability to inscribe objects with magical rune sigils she also knows sorcerous incantations in the form of chants, and can induce trance states through which she may perceive and interact with the spirit world and the spirits therein.}";
 	}
 
 	function onChangeAttributes()
@@ -74,10 +80,16 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 		local actor = this.getContainer().getActor();
 		actor.setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
 		actor.setTitle("the Vala");
+		this.m.Container.add(this.new("scripts/skills/perks/legend_vala_information"));
 	}
 
 	function onAddEquipment()
 	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Bravery] = this.Math.rand(1, 3);
+		this.getContainer().getActor().fillTalentValues(2, true);
+
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
 

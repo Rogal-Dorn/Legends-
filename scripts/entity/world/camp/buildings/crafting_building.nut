@@ -2,7 +2,10 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	m = {
         BaseCraft = 10.0,
         ItemsCrafted = [],
-        Queue = []
+        Queue = [],
+		PointsNeeded = 0,
+		PointsCrafted = 0,
+		NumBros = 0		
 	},
     function create()
     {
@@ -99,7 +102,21 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	
     function init()
     {
+		this.onInit();
 		this.m.ItemsCrafted = [];
+		this.m.PointsNeeded = 0;
+		this.m.PointsCrafted = 0;
+		local mod = this.getModifiers()
+		this.m.NumBros = mod.Assigned;
+        foreach (i, r in this.m.Queue)
+        {
+            if (r == null)
+            {
+                continue;
+            }
+            
+            this.m.PointsNeeded += r.Blueprint.getCost() - r.Points;
+        }				
     }
 
     function onInit()
@@ -137,7 +154,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = (this.m.BaseCraft + this.m.BaseCraft * this.Const.LegendMod.getCraftingModifier(bro.getBackground().getID()))
+            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Crafting;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
@@ -160,6 +177,27 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
         return res;
     }
+
+	function getUpdateText()
+	{
+		if (this.m.Queue.len() <= 0)
+		{
+			return null;
+		}
+
+		if (this.m.NumBros == 0)
+		{
+			return "No one assigned to craft";
+		}
+
+		local percent = (this.m.PointsCrafted / this.m.PointsNeeded) * 100.0;
+		if (percent >= 100)
+		{
+			return "Crafted ... 100%";
+		}
+		
+		return "Crafted ... " + percent + "%";
+	}
 
     function update ()
     {
@@ -188,6 +226,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 needed = modifiers.Craft;
             }
 			r.Points += needed;
+			this.m.PointsCrafted += needed
             modifiers.Craft -= needed;
 
 			if (r.Points >= r.Blueprint.getCost())
@@ -201,8 +240,9 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 break
             }
-
         }
+
+		return this.getUpdateText();
     }
 
 	function getQueue()
@@ -246,7 +286,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
             
-            points += r.Blueprint.getCost();
+            points += (r.Blueprint.getCost() - r.Points);
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)

@@ -167,7 +167,7 @@ this.vazl_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 					this.m.InscriptionSuccessCooldown = 20;
 				}
 				this.m.FirstTime = false;
-				this.Sound.play("sounds/vazl_vala_inscribe.wav");
+				this.Sound.play("sounds/legend_vala_inscribe.wav");
 			}
 
 			this.m.InscriptionTryTime = this.getCurrentTime();

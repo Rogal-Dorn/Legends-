@@ -443,44 +443,67 @@ this.character_screen <- {
 			salvage = false
 		}
 
+		local itemId = _data[0];
+		local entityId = _data[1];
+
 		if (this.Tactical.isActive())
 		{
 			return result;
 		}
-		local item = this.World.Assets.getStash().getItemByInstanceID(_data).item;
+
+		local obj = null
+		local item = null;
+		local index = 0;
+		if (entityId != null)
+		{
+			obj = this.Tactical.getEntityByID(entityId).getItems().getItemByInstanceID(itemId);
+			if (obj != null)
+			{
+				item = obj
+			}
+		}
+		else 
+		{
+			obj = this.Stash.getItemByInstanceID(itemId);
+			if (obj != null)
+			{
+				item = obj.item;
+				index = obj.index;
+			}
+		}
+
 		if (item == null)
 		{
 			return result;
 		}
 
-		local rTent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
- 		local wTent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
-
-		if (item.isIndestructible())
+		if (item.isIndestructible() || entityId != null)
 		{
-			rTent.onRepairInventoryItem(_data, !item.isToBeRepaired());
+			item.setToBeRepaired(!item.isToBeRepaired(), index)
+			item.setToBeSalvaged(false, 0);
 		}
 		else if (!item.isToBeRepaired() && !item.isToBeSalvaged())
 		{
-			if (rTent.onRepairInventoryItem(_data, true))
+			this.logInfo("!repair && !salvage")
+			if (item.setToBeRepaired(true, index))
 			{
-				wTent.onSalvageInventoryItem(_data, false);
+				item.setToBeSalvaged(false, 0);
 			} 
 			else
 			{
-				wTent.onSalvageInventoryItem(_data, true);
+				item.setToBeSalvaged(true, index);
 			}
 			
 		}
 		else if (item.isToBeRepaired())
 		{
-			rTent.onRepairInventoryItem(_data, false);
-			wTent.onSalvageInventoryItem(_data, true);
+			item.setToBeRepaired(false, 0);
+			item.setToBeSalvaged(true, index);
 		}
 		else
 		{
-			rTent.onRepairInventoryItem(_data, false);
-			wTent.onSalvageInventoryItem(_data, false);
+			item.setToBeRepaired(false, 0);
+			item.setToBeSalvaged(false, 0);
 		}
 
 		return {
