@@ -2,7 +2,10 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 	m = {
 		BaseCraft = 10.0,
         ItemsCrafted = [],
-        Queue = []
+        Queue = [],
+		PointsNeeded = 0,
+		PointsCrafted = 0,
+		NumBros = 0
 	},
     function create()
     {
@@ -164,7 +167,21 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
     function init()
     {
+		this.onInit();
 		this.m.ItemsCrafted = [];
+		this.m.PointsNeeded = 0;
+		this.m.PointsCrafted = 0;
+		local mod = this.getModifiers()
+		this.m.NumBros = mod.Assigned;
+        foreach (i, r in this.m.Queue)
+        {
+            if (r == null)
+            {
+                continue;
+            }
+            
+            this.m.PointsNeeded += r.Blueprint.getCost() - r.Points;
+        }		
     }
 
 	function isHidden()
@@ -197,7 +214,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 			if (this.m.Queue[i].Blueprint == null)
 			{
 				continue
-			}			
+			}
 			q.push(this.m.Queue[i])
 		}
 		this.m.Queue = q
@@ -255,7 +272,12 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 			return null;
 		}
 
-		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		if (this.m.NumBros == 0)
+		{
+			return "No one assigned to enchant";
+		}
+
+		local percent = (this.m.PointsCrafted / this.m.PointsNeeded) * 100.0;
 		if (percent >= 100)
 		{
 			return "Enchanted ... 100%";
@@ -291,11 +313,12 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
                 needed = modifiers.Craft;
             }
 			r.Points += needed;
+			this.m.PointsCrafted += needed
             modifiers.Craft -= needed;
 
 			if (r.Points >= r.Blueprint.getCost())
 			{
-				r.Blueprint.craft();
+				r.Blueprint.enchant();
 				this.m.ItemsCrafted.push(r.Blueprint)
 				this.m.Queue[i] = null;
 			}
@@ -386,7 +409,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		if (blueprint.getSounds().len() != 0)
 		{
 			this.Sound.play(blueprint.getSounds()[this.Math.rand(0, blueprint.getSounds().len() - 1)], 1.0);
-		}		
+		}
 	}
 
 	function onRemove ( _idx )
@@ -433,7 +456,6 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
 	function onDeserialize( _in )
 	{
-		this.m.Queue = [];
 		local num = _in.readU16();
 		for( local i = 0; i < num; i = ++i )
 		{

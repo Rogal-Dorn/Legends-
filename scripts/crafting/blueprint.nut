@@ -209,6 +209,27 @@ this.blueprint <- {
 		this.onCraft(stash);
 	}
 
+	function enchant()
+	{
+		if (!this.isQualifiedEnchant())
+		{
+			return;
+		}
+
+		local stash = this.World.Assets.getStash();
+
+		foreach( c in this.m.PreviewComponents )
+		{
+			for( local j = 0; j < c.Num; j = ++j )
+			{
+				stash.removeByID(c.Instance.getID());
+			}
+		}
+
+		++this.m.TimesCrafted;
+		this.onCraft(stash);
+	}
+
 	function onCraft( _stash )
 	{
 	}

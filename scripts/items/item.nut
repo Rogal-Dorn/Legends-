@@ -992,7 +992,6 @@ this.item <- {
 		if (_in.getMetaData().getVersion() >= 51)
 		{
 			this.m.RuneVariant = _in.readU8();
-			this.m.RuneMultiplier = _in.readU8();
 
 			if (this.m.ID == "token.legend_vala_inscription")
 			{
@@ -1009,6 +1008,7 @@ this.item <- {
 		{
 			this.m.IsToBeRepairedQueue = _in.readU16();
 			this.m.IsToBeSalvagedQueue = _in.readU16();
+			this.m.RuneMultiplier = _in.readU8();
 		}
 
 		this.updateVariant();

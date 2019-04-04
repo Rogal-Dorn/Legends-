@@ -4,13 +4,16 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		Title = "Repairs",
 		Description = "Items in the queue will be repaired from left to right, top to bottom. Assign workers to repair items in the commanders tent.",
 		InventoryFilter = this.Const.Items.ItemFilter.All
-		Tent = null
 	},
 	function create()
 	{
 		this.m.ID = "CampRepairDialogModule";
-		this.m.Tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair);
 		this.ui_module.create();
+	}
+
+	function getTent()
+	{
+		this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair);
 	}
 
 	function destroy()
@@ -20,7 +23,7 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 	function onShow()
 	{
-		this.m.Tent.onInit();
+		this.getTent().onInit();
 		return this.queryLoad();
 	}
 
@@ -32,10 +35,10 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Assets = this.assetsInformation(),
 			Stash = [],
 			Repairs = [],
-			Capacity = this.m.Tent.getCapacity()
+			Capacity = this.getTent().getCapacity()
 		};
-		this.UIDataHelper.convertRepairItemsToUIData(this.m.Tent.getRepairs(), result.Repairs, this.Const.UI.ItemOwner.Shop);
-		this.UIDataHelper.convertRepairItemsToUIData(this.m.Tent.getStash(), result.Stash, this.Const.UI.ItemOwner.Stash, this.m.InventoryFilter);
+		this.UIDataHelper.convertRepairItemsToUIData(this.getTent().getRepairs(), result.Repairs, this.Const.UI.ItemOwner.Shop);
+		this.UIDataHelper.convertRepairItemsToUIData(this.getTent().getStash(), result.Stash, this.Const.UI.ItemOwner.Stash, this.m.InventoryFilter);
 		return result;
 	}
 
@@ -44,9 +47,9 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		return {
 			Supplies = this.World.Assets.getArmorParts(),
 			SuppliesMax  = this.World.Assets.getMaxArmorParts(),
-			SuppliesRequired = this.m.Tent.getRequiredSupplies(),
-			Time = this.m.Tent.getRequiredTime(),
-			Brothers = this.m.Tent.getAssignedBros()
+			SuppliesRequired = this.getTent().getRequiredSupplies(),
+			Time = this.getTent().getRequiredTime(),
+			Brothers = this.getTent().getAssignedBros()
 		};
 	}
 
@@ -67,7 +70,7 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			this.World.Assets.getStash().sort();
 		}
 
-		this.m.Tent.onInit();
+		this.getTent().onInit();
 		this.loadStashList();
 	}
 
@@ -109,13 +112,13 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 	function onAssignAll()
 	{
-		this.m.Tent.assignAll();
+		this.getTent().assignAll();
 		this.loadStashList();
 	}
 
 	function onRemoveAll()
 	{
-		this.m.Tent.removeAll();
+		this.getTent().removeAll();
 		this.loadStashList();
 	}
 
@@ -125,7 +128,7 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		local sourceItemOwner = _data[1];
 		local targetItemIdx = _data[2];
 		local targetItemOwner = _data[3];
-		this.m.Tent.swapItems(sourceItemOwner, sourceItemIdx, targetItemOwner, targetItemIdx)
+		this.getTent().swapItems(sourceItemOwner, sourceItemIdx, targetItemOwner, targetItemIdx)
 		return this.queryLoad();
 	}
 
