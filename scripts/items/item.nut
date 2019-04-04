@@ -730,8 +730,9 @@ this.item <- {
 				break;
 
 			case 11:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Vision, [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Experience gain.";
+				local bonus = this.Math.round(1.0 + (_mult / 10.0));
+				local bonusTwo = 8 + _mult;
+				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Vision, [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonusTwo + "%[/color] Experience gain.";
 				break;
 
 			case 12:
@@ -746,8 +747,9 @@ this.item <- {
 				break;
 
 			case 21:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Fatigue recovery per turn, [color=" + this.Const.UI.Color.PositiveValue + "]-" + bonus + "%[/color] Fatigue cost and effects multiplier.";
+				local bonus = this.Math.round(1.0 + (_mult / 10.0));
+				local bonusTwo = 8 + _mult;
+				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Fatigue recovery per turn, [color=" + this.Const.UI.Color.PositiveValue + "]-" + bonusTwo + "%[/color] Fatigue cost and effects multiplier.";
 				break;
 
 			case 22:
