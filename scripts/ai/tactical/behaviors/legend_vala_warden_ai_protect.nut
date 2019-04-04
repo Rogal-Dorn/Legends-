@@ -69,7 +69,7 @@ this.legend_vala_warden_ai_protect <- this.inherit("scripts/ai/tactical/behavior
 		{
 			if (a.getBackground().getID() != "background.legend_vala" && a.getBackground().getID() != "background.legend_commander_vala")
 			{
-				continue
+				continue;
 			}
 
 			if (!a.isAlive() || !a.isPlacedOnMap())
