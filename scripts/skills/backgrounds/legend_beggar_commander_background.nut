@@ -51,6 +51,24 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
 		this.m.Level = 1;
+
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[0];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[0];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[0];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[0];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[0];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[0];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[0];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[0];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[0];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[0];
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[0];
+		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[0];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[0];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[0];
 	}
 
 	function getTooltip()

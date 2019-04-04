@@ -24,4 +24,10 @@ this.perk_legend_efficient_packing <- this.inherit("scripts/skills/skill", {
 	{
 		this.Stash.resize(this.Stash.getCapacity() - this.m.StashSize)
 	}
+
+	function getModifier()
+	{
+		return this.m.StashSize;
+	}
+
 });

@@ -50,6 +50,14 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsUntalented = true;
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[3];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+
 	}
 
 	function getTooltip()
@@ -109,12 +117,12 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				5
-			],
-			Bravery = [
 				10,
 				10
+			],
+			Bravery = [
+				15,
+				15
 			],
 			Stamina = [
 				15,
@@ -133,8 +141,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				20
 			],
 			RangedDefense = [
-				-5,
-				-5
+				 5,
+				 5
 			],
 			Initiative = [
 				-5,

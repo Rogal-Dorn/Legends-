@@ -3,7 +3,8 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		Base = 0.1,
 		Radius = 0,
 		Rate = 0,
-        Results = []
+        Results = [],
+        NumBros = 0
 	},
     function create()
     {
@@ -37,6 +38,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		local mod = this.getModifiers()
 		this.m.Rate = mod.Craft;
         this.m.Results = [];
+        this.m.NumBros = mod.Assigned;
     }
 
 
@@ -72,7 +74,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
                 continue
             }
 
-            local rm = (this.m.Base + this.m.Base * this.Const.LegendMod.getScoutModifier(bro.getBackground().getID()))
+            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Scout;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
@@ -160,6 +162,16 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         });
 
     }
+
+	function getUpdateText()
+	{
+		if (this.m.NumBros == 0)
+		{
+			return "No one on patrol!";
+		}
+		
+		return "Patrol radius ... " + this.m.Radius;
+	}
 
 	function updateTick ( _hours )
     {

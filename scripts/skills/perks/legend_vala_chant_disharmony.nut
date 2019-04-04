@@ -4,7 +4,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "perk.legend_vala_chant_disharmony";
 		this.m.Name = "Disharmony";
-		this.m.Description = "A very disagreeable and cacophonous chant that makes it hard for your enemies to focus properly.";
+		this.m.Description = "A very disagreeable and cacophonous chant that makes it almost impossible for the Vala\'s enemies to focus and concentrate properly.";
 		this.m.Icon = "ui/perks/legend_vala_chant_disharmony_active.png";
 		this.m.IconDisabled = "ui/perks/legend_vala_chant_disharmony_active_sw.png";
 		this.m.Type = this.Const.SkillType.Active | this.Const.SkillType.Perk;
@@ -15,6 +15,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 		this.m.IsAttack = false;
+		this.m.IsIgnoredAsAOO = true;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 30;
@@ -23,33 +24,36 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (this.skill.isUsable() && !this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_currently_chanting"))
-		{
-			if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
-			{
-				if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.legend_staff_vala")
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			else
-			{
-				return false;
-			}
-		}
-		else
+		local actor = this.getContainer().getActor();
+
+		if (!this.skill.isUsable())
 		{
 			return false;
 		}
+
+		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
+		{
+			return false;
+		}
+
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			return false;
+		}
+
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala")
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 
 	function getTooltip()
 	{
+		local actor = this.getContainer().getActor();
+
 		local ret = [
 			{
 				id = 1,
@@ -74,7 +78,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			},
 		];
 
-		if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala"))
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala"))
 		{
 			ret.push({
 				id = 9,
@@ -84,7 +88,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_currently_chanting"))
+		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
 		{
 			ret.push({
 				id = 10,
@@ -169,7 +173,9 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
+		local actor = this.getContainer().getActor();
+
+		if (actor.getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
 		{
 			this.m.FatigueCostMult = 0.75;
 		}
@@ -187,7 +193,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
 		{
-			this.Sound.play("sounds/legend_vala_chant.wav");
+			this.Sound.play("sounds/combat/legend_vala_disharmony.wav");
 		}
 
 		foreach (tar in targets)
@@ -196,6 +202,11 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			{
 				if (t.getSkills().hasSkill("effects.legend_vala_chant_disharmony_effect"))
 				{
+					if (actor.getTile().getDistanceTo(t.getTile()) <= 1)
+					{
+						this.spawnIcon("status_effect_65", t.getTile());
+					}
+
 					t.getSkills().update();
 				}
 			}
@@ -229,11 +240,16 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 						local disharmony = this.new("scripts/skills/effects/legend_vala_chant_disharmony_effect");
 						disharmony.setVala(this.getContainer().getActor());
 						t.getSkills().add(disharmony);
+
+						if (actor.getTile().getDistanceTo(t.getTile()) <= 1)
+						{
+							this.spawnIcon("status_effect_65", t.getTile());
+						}
 					}
 				}
 			}
 
-			this.Sound.play("sounds/legend_vala_chant.wav");
+			this.Sound.play("sounds/combat/legend_vala_disharmony.wav");
 		}
 	}
 });

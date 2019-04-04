@@ -40,6 +40,11 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_02";
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
+
 	}
 
 	function getTooltip()

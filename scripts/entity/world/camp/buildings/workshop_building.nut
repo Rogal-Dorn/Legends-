@@ -1,13 +1,15 @@
 this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
         Conversion = 15.0,
-        BaseSalvage = 50,
+        BaseSalvage = 10,
         ToolsCreated = 0,
+        PointsNeeded = 0,
         PointsSalvaged = 0,
 		ItemsDestroyed = 0,
         Stash = null,
         Salvage = null,
-        Capacity = 0
+        Capacity = 0,
+        NumBros = 0
 	},
     function create()
     {
@@ -95,38 +97,29 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     function init()
     {
+        this.onInit();
         this.m.ToolsCreated = 0;
         this.m.PointsSalvaged = 0;
 		this.m.ItemsDestroyed = 0;
+        local mod = this.getModifiers();
+        this.m.NumBros = mod.Assigned;
+        this.m.PointsNeeded = 0;
+        foreach (i, r in this.m.Salvage)
+        {
+            if (r == null)
+            {
+                continue;
+            }
+            
+            this.m.PointsNeeded += r.Item.getCondition();
+        }        
     }
 
     function onInit()
     {
         local items = this.getListOfEquipment()
         this.m.Stash = items.Stash;
-        if (this.m.Salvage == null)
-        {
-            this.m.Salvage = items.Items;
-        }
-        else 
-        {
-            local repairs = [];
-            foreach ( r in this.m.Salvage)
-            {
-                if (r == null)
-                {
-                    continue;
-                }
-
-				if (!r.Item.isToBeSalvaged())
-				{
-					continue;
-				}
-
-                repairs.push(r);
-            }
-            this.m.Salvage = repairs;
-        }
+        this.m.Salvage = items.Items;
         local capacity =  this.m.Salvage.len() + this.m.Stash.len();
         this.m.Capacity = capacity;
         while (this.m.Stash.len() < capacity)
@@ -181,7 +174,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             Consumption = 1.0 / this.m.Conversion,
             Assigned = 0,
             Modifiers = []
-
         }
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
@@ -191,7 +183,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = (this.m.BaseSalvage + this.m.BaseSalvage * this.Const.LegendMod.getSalvageModifier(bro.getBackground().getID()))
+            local rm = this.m.BaseSalvage + this.m.BaseSalvage * bro.getBackground().getModifiers().Salvage;
             ret.Salvage += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
@@ -258,16 +250,38 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return this.getRequiredTime();
 	}
 
+	function getUpdateText()
+	{
+        if (this.m.PointsNeeded == 0)
+        {
+            return "No salvage queued";
+        }
+
+		local percent = (this.m.PointsSalvaged / this.m.PointsNeeded) * 100.0;
+		if (percent >= 100)
+		{
+			return "Salvaged ... 100%";
+		}
+		
+		local text = "Salvaged ... " + percent + "%";
+        
+        if (this.World.Assets.getArmorParts() == this.World.Assets.getMaxArmorParts())
+        {
+            return text + " (At max tools!)";
+        }
+        return text;
+	}
+
     function update ()
     {
         if (this.World.Assets.getArmorParts() >= this.World.Assets.getMaxArmorParts())
         {
-            return
+            return this.getUpdateText();
         }
 
-        if (this.m.Salvage == null)
+        if (this.m.Salvage.len() == 0)
         {
-            return
+            return this.getUpdateText();
         }
 
         local modifiers = this.getModifiers();
@@ -288,19 +302,17 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 break
             }
 
-
             local consumed = r.Item.getCondition()
             if (modifiers.Salvage < consumed)
             {
                 consumed = modifiers.Salvage;
             }
             r.Item.setCondition(r.Item.getCondition() - consumed);
-
             modifiers.Salvage -= consumed;
-			this.m.PointsSalvaged += consumed;
+            this.m.PointsSalvaged += consumed;
 			local created = consumed * modifiers.Consumption;
 			this.m.ToolsCreated += created;   
-			this.World.Assets.setArmorParts(this.Math.maxf( this.World.Assets.getMaxArmorParts(), this.World.Assets.getArmorParts() + created))
+			this.World.Assets.setArmorParts(this.Math.minf( this.World.Assets.getMaxArmorParts(), this.World.Assets.getArmorParts() + created))
 
             if (r.Item.getCondition() <= 0)
             {
@@ -309,7 +321,27 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				this.m.Salvage[i] = null;
             }
         }
+
+        return this.getUpdateText();
+
     }
+
+
+    function sortSalvageQueue( _f1, _f2 )
+	{
+		if (_f1.Item.isToBeRepairedQ() > _f2.Item.isToBeRepairedQ())
+		{
+			return 1;
+		}
+		else if (_f1.Item.isToBeRepairedQ() < _f2.Item.isToBeRepairedQ())
+		{
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 
     function getListOfEquipment()
     {
@@ -354,6 +386,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 });
             }
         }
+        items.sort(this.sortSalvageQueue);
         return {Items = items, Stash = stash};
     }
 
@@ -375,7 +408,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 }
             }
 
-            s.Item.setToBeSalvaged(true);
+            s.Item.setToBeSalvaged(true, index);
             if (index >= this.m.Salvage.len())
             {
                 this.m.Salvage.push(s);
@@ -407,7 +440,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 }
             }
 
-            s.Item.setToBeSalvaged(false);
+            s.Item.setToBeSalvaged(false, 0);
             if (index >= this.m.Stash.len())
             {
                 this.m.Stash.push(s);
@@ -474,7 +507,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             return false;
         }
 
-        sourceItem.Item.setToBeSalvaged(isRepair);
         //We've picked a spot to drop it
         if (targetItemIdx != null)
         {
@@ -486,6 +518,12 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             sourceList[sourceItemIdx] = targetList[targetItemIdx];
             targetList[targetItemIdx] = sourceItem;
             sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
+            local index = 0
+            if (isRepair)
+            {
+                index = targetItemIdx
+            }
+            sourceItem.Item.setToBeSalvaged(isRepair, index);            
             return true
         }
 
@@ -499,6 +537,12 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             targetList[i] = sourceItem;
             sourceList[sourceItemIdx] = null;
             sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
+            local index = 0
+            if (isRepair)
+            {
+                index = i
+            }
+            sourceItem.Item.setToBeSalvaged(isRepair, index);            
             return true
         }
         
@@ -506,56 +550,13 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         targetList.push(sourceItem);
         sourceList[sourceItemIdx] = null;
         sourceItem.Item.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag)
+        local index = 0
+        if (isRepair)
+        {
+            index = targetList.len() - 1
+        }
+        sourceItem.Item.setToBeSalvaged(isRepair, index);        
         return true
-	}
-
-	function onSalvageInventoryItem( _data, _value )
-	{
-        local item = this.Stash.getItemByInstanceID(_data).item;
-        if (item == null)
-        {
-            return;
-        }
-
-		if (_value == item.isToBeSalvaged())
-		{
-			return;
-		}
-		
-		this.onInit();
-        if (!item.setToBeSalvaged(_value))
-		{
-			return;
-		}
-
-        local sourceItemOwner = "camp-screen-workshop-dialog-module.shop";
-        local targetItemOwner = "camp-screen-workshop-dialog-module.stash";
-        local sourceList = this.m.Salvage;
-        //Came from stash
-        if ( _value )
-        {
-            sourceItemOwner = "camp-screen-workshop-dialog-module.stash";
-            targetItemOwner = "camp-screen-workshop-dialog-module.shop"
-            sourceList = this.m.Stash;
-        }
-
-        local sourceItemIdx = -1;
-        foreach (i,slot in sourceList)
-        {
-            if (slot == null)
-            {
-                continue
-            }
-            if (slot.Item.getInstanceID() != _data)
-            {
-                continue
-            }
-            sourceItemIdx = i;
-            this.swapItems( sourceItemOwner, sourceItemIdx, targetItemOwner, null )
-            break;
-        }
-
-        return
 	}
 
 	function onClicked( _campScreen )

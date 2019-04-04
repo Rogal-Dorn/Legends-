@@ -222,8 +222,14 @@ this.camp_building <- {
     {
     }
 
+	function getUpdateText()
+	{
+		return null;
+	}
+
     function update ()
     {
+		return this.getUpdateText();
     }
 
 	function updateTick (_hours)
@@ -375,6 +381,7 @@ this.camp_building <- {
 
 	function onBroEnter ( _bro )
 	{
+		return true
 	}
 
 	function onSerialize( _out )

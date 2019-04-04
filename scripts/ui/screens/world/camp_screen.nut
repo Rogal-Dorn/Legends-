@@ -468,7 +468,7 @@ this.camp_screen <- {
 		{
 			this.m.LastActiveModule = this.m.EnchanterDialogModule;
 			this.Tooltip.hide();
-			this.m.JSHandle.asyncCall("showEnchanterDialog", this.m.EnchanterDialogModule.queryLoad());
+			this.m.JSHandle.asyncCall("showEnchanterDialog", this.m.EnchanterDialogModule.onShow());
 		}
 	}
 

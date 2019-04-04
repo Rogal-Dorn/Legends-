@@ -16,7 +16,7 @@ this.legend_RSA_safety <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		_properties.HitpointsMult *= 1.05;
-		_properties.DamageReceivedTotalMult *= 0.95;
+		_properties.HitpointsMult *= 1.03 + (this.m.Item.RuneMultiplier / 100);
+		_properties.DamageReceivedTotalMult *= 0.97 - (this.m.Item.RuneMultiplier / 100);
 	}
 });

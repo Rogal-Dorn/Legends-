@@ -16,7 +16,7 @@ this.legend_RSS_defense <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		_properties.MeleeDefenseMult *= 1.1;
-		_properties.RangedDefenseMult *= 1.1;
+		_properties.MeleeDefenseMult *= 1.08 + (this.m.Item.RuneMultiplier / 100);
+		_properties.RangedDefenseMult *= 1.08 + (this.m.Item.RuneMultiplier / 100);
 	}
 });

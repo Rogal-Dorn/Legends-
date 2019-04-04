@@ -75,7 +75,7 @@ this.legend_cannibal_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		this.m.Score = 10 + ((brotherlevels / totalbrothers * 5.00) / this.Const.LevelXP.len());
+		this.m.Score = 2.50 + ((brotherlevels / totalbrothers * 5.00) / this.Const.LevelXP.len());
 	}
 
 	function onPrepare()

@@ -142,7 +142,7 @@
 		local broMult = 0.0;
 		foreach( bro in roster )
 		{
-			broMult += this.Const.LegendMod.getBarterModifier(bro.getBackground().getID());
+			broMult += bro.getBarterModifier();
 		}
 		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult);
 	}

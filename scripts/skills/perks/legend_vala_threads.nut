@@ -41,6 +41,7 @@ this.legend_vala_threads <- this.inherit("scripts/skills/skill", {
 		if (this.Math.rand(1, 100) <= expertise)
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_vala_threads_effect"));
+			this.Sound.play("sounds/combat/legend_vala_threads.wav");
 		}
 	}
 });

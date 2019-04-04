@@ -21,13 +21,13 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/entity/tactical/tactical_entity_manager.nut" ]; then
         echo "skipping $line"        
-    elif [ "$line" == "scripts/entity/tactical/behaviours/ai_attack_default.nut" ]; then
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_default.nut" ]; then
         echo "skipping $line"     	
-    elif [ "$line" == "scripts/entity/tactical/behaviours/ai_attack_knock_out.nut" ]; then
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_attack_knock_out.nut" ]; then
         echo "skipping $line"  		
-    elif [ "$line" == "scripts/entity/tactical/behaviours/ai_hook.nut" ]; then
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_hook.nut" ]; then
         echo "skipping $line"  
-    elif [ "$line" == "scripts/entity/tactical/behaviours/ai_charm.nut" ]; then
+    elif [ "$line" == "scripts/ai/tactical/behaviors/ai_charm.nut" ]; then
         echo "skipping $line"  		
     else
         echo "$line"

@@ -45,6 +45,32 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Level = 2;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
+
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
+		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0,//plains
+				0.0, //swamp
+				0.0, //hills
+				0.05, //forest
+				0.05, //forest
+				0.05, //forest_leaves
+				0.05, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.01, // snow
+				0.01, // badlands
+				0.01, //highlands
+				0.0, //stepps
+				0.0 //ocean
+			];		
+
 	}
 
 	function getTooltip()
@@ -77,8 +103,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				0
 			],
 			Bravery = [
-				0,
-				0
+				5,
+				5
 			],
 			Stamina = [
 				20,
@@ -97,8 +123,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				0
 			],
 			RangedDefense = [
-				5,
-				5
+				10,
+				10
 			],
 			Initiative = [
 				0,

@@ -904,9 +904,9 @@ CharacterScreenDatasource.prototype.destroyInventoryItem = function(_brotherId, 
     }
 };
 
-CharacterScreenDatasource.prototype.toggleInventoryItem = function(_itemId, _callback)
+CharacterScreenDatasource.prototype.toggleInventoryItem = function(_itemId, _entityId, _callback)
 {
-   this.notifyBackendToggleInventoryItem(_itemId, _callback);
+   this.notifyBackendToggleInventoryItem(_itemId, _entityId, _callback);
 };
 
 
@@ -1759,9 +1759,9 @@ CharacterScreenDatasource.prototype.notifyBackendSwapInventoryItem = function (_
     return null;
 };*/
 
-CharacterScreenDatasource.prototype.notifyBackendToggleInventoryItem = function (_sourceItemId, _callback)
+CharacterScreenDatasource.prototype.notifyBackendToggleInventoryItem = function (_sourceItemId, _entityId, _callback)
 {
-    SQ.call(this.mSQHandle, 'onToggleInventoryItem', _sourceItemId, _callback);
+    SQ.call(this.mSQHandle, 'onToggleInventoryItem', [_sourceItemId, _entityId], _callback);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendEquipInventoryItem = function (_brotherId, _sourceItemId, _sourceItemIdx, _callback)

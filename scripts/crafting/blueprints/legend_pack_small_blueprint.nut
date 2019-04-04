@@ -19,6 +19,11 @@ this.legend_pack_small_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.init(ingredients);
 	}
 
+	function isQualified()
+	{
+		return true;
+	}
+
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/accessory/legend_pack_small"));

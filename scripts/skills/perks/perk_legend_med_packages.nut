@@ -1,5 +1,7 @@
 this.perk_legend_med_packages <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Amount = 10
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_med_packages";
@@ -13,15 +15,9 @@ this.perk_legend_med_packages <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
+	function getModifier()
 	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine
-		stashSize += 10; 
+		return this.m.Amount;
+	}
 
-	}
-		function onRemoved()
-	{
-		local stashSize = this.Const.LegendMod.MaxResources[this.m.EconomicDifficulty].Medicine
-		stashSize -= 10; 
-	}
 });
