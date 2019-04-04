@@ -63,7 +63,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 			id = 66,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = this.getRuneSigilTooltip(this.m.RuneVariant)
+			text = this.getRuneSigilTooltip(this.m.RuneVariant, this.m.RuneMultiplier)
 		});
 
 		return result;
@@ -83,6 +83,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 
 			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);
@@ -99,6 +100,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 
 			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);
@@ -115,6 +117,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 
 			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);
@@ -135,6 +138,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 
 			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
 			target.setRuneVariant(this.m.RuneVariant);
+			target.setRuneMultiplier(this.m.RuneMultiplier);
 			target.updateRuneSigil();
 			_actor.getItems().unequip(target);
 			_actor.getItems().equip(target);

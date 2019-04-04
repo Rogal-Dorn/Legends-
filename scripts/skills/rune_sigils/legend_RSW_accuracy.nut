@@ -16,7 +16,7 @@ this.legend_RSW_accuracy <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		_properties.MeleeSkillMult *= 1.1;
-		_properties.RangedSkillMult *= 1.1;
+		_properties.MeleeSkillMult *= 1.08 + (this.m.Item.RuneMultiplier / 100);
+		_properties.RangedSkillMult *= 1.08 + (this.m.Item.RuneMultiplier / 100);
 	}
 });

@@ -16,6 +16,6 @@ this.legend_RSH_luck <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		_properties.RerollDefenseChance += 10;
+		_properties.RerollDefenseChance += 8 + this.m.Item.RuneMultiplier;
 	}
 });

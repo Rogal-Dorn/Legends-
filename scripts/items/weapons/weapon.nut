@@ -341,7 +341,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 				id = 20,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = this.getRuneSigilTooltip(this.m.RuneVariant)
+				text = this.getRuneSigilTooltip(this.m.RuneVariant, this.m.RuneMultiplier)
 			});
 		}
 
