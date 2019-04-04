@@ -39,6 +39,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 	{
 		local rune =  this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 		rune.setRuneVariant(this.m.Rune);
+		rune.setRuneMultiplier(this.Math.rand(0, 5));
 		rune.updateRuneSigilToken();
 		_stash.add(rune);
 	}

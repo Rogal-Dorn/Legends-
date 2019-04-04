@@ -35,7 +35,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
 		this.m.Modifiers.Enchanting = 1.0;		
-		this.m.Level = 2;	
+		this.m.Level = 2;
 	}
 
 	function getTooltip()
