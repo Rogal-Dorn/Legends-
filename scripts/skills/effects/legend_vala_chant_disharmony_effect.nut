@@ -2,18 +2,6 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	m = {
 		Vala = null
 	},
-	function setVala(_v)
-	{
-		if (typeof _v == "instance")
-		{
-			this.m.Vala = _v;
-		}
-		else
-		{
-			this.m.Vala = this.WeakTableRef(_v);
-		}
-	}
-
 
 	function create()
 	{
@@ -27,6 +15,18 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
+	}
+
+	function setVala(_v)
+	{
+		if (typeof _v == "instance")
+		{
+			this.m.Vala = _v;
+		}
+		else
+		{
+			this.m.Vala = this.WeakTableRef(_v);
+		}
 	}
 
 

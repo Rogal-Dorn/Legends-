@@ -450,8 +450,12 @@ Beta v10 test 5
 *New Vala inscribing mechanics. When Vala is with your party, enchant tent will be available in the camp. Use Vala perks to unlock craftable runes that can be attached to weapons, armor, helmets, shields.
 
  Beta v10 test 6
+ https://drive.google.com/open?id=1UywXYMo6Rz6Fq2cCXZzjzTm91Ax97tLI
+ ***WILL BREAK test 5 Saves if you have any Vala stuff in it***
  *Crafted runes now have variable stat perks (no longer fixed).
  *Fixes runes not being added to stash
  *Fixes the crafting and enchanting queues being removed upon loading a save
  *Adds new camp background art
  *Fixes party sizes for starting heroes.
+ *Fix Double Grip and Limb Lopper
+ *Fixes reported errors selecting new perks

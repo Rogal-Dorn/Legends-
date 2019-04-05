@@ -28,6 +28,7 @@ this.legend_limb_lopper <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.DirectDamageMult = 0.25;
 	}
 
+
 	function getTooltip()
 	{
 		local ret = this.weapon.getTooltip();

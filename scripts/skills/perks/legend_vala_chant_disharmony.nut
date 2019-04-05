@@ -23,7 +23,6 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 30;
 	}
 
-
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();
