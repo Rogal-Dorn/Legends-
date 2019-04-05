@@ -1,10 +1,10 @@
-this.legend_scry <- this.inherit("scripts/skills/skill", {
+this.legend_scry_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		Item = null
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_scry";
+		this.m.ID = "actives.legend_scry_skill";
 		this.m.Name = "Scry";
 		this.m.Description = "Gain vision of the surrounding 12 tiles for the duration of the current round.";
 		this.m.Icon = "skills/scry_skill.png";

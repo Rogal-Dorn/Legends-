@@ -15,7 +15,7 @@ this.perk_legend_roster_5 <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() + 4);
+		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() + 5);
 	}
 	
 	function onRemoved()

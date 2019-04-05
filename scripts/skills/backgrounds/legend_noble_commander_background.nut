@@ -132,7 +132,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_3"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
