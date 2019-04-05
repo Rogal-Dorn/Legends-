@@ -32,7 +32,7 @@ while read -r line; do
     else
         echo "$line"
         path=$( echo ${line%/*} )
-        mkdir -p "C:\Users\Vazl\Documents\Battle Brothers\BB Mod Kit\bin\Vazl_TEMP\\$path"
-        cp "$line" "C:\Users\Vazl\Documents\Battle Brothers\BB Mod Kit\bin\Vazl_TEMP\\$line"
+        mkdir -p "c:\Steam\steamapps\common\Battle Brothers\data\\$path"
+        cp "$line" "c:\Steam\steamapps\common\Battle Brothers\data\\$line"
     fi
 done <<< "$FILES"
