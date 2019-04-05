@@ -21,7 +21,7 @@ this.legend_RSW_feeding <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local drain = 0.08 + (this.m.Item.RuneMultiplier / 100);
+		local drain = 0.08 + (this.m.Item.RuneMultiplier / 100.0);
 		local actor = this.m.Container.getActor();
 		actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.ceil(_damageInflictedHitpoints * drain)));
 	}
