@@ -4,7 +4,7 @@ this.legend_rune_feeding_blueprint <- this.inherit("scripts/crafting/legend_rune
 	{
 		this.m.Rune = 3;
 		this.m.Skill = "perk.legend_vala_inscribe_weapon";
-		this.blueprint.create();
+		this.legend_rune.create();
 		this.m.ID = "blueprint.legend_rune_feeding";
 	}
 

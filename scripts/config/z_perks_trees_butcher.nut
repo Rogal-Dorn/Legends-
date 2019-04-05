@@ -16,8 +16,7 @@ local ButcherTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.LegendSpecialistButcherSkill,
-		gt.Const.Perks.PerkDefs.Student
+		gt.Const.Perks.PerkDefs.LegendSpecialistButcherSkill
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,

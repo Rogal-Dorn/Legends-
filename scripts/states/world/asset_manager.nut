@@ -202,7 +202,7 @@ this.asset_manager <- {
 
 	function setBrothersMax( _v )
 	{
-		this.m.BrothersMax = _v;
+		this.m.BrothersMax = this.Math.min(27, _v);
 	}
 
 	function setUseProvisions( _p )
@@ -393,7 +393,7 @@ this.asset_manager <- {
 		switch(_settings.Campaign)
 		{
 		case this.Const.LegendMod.StartTypes.Noble:
-			this.setBrothersMax(0);	
+			this.setBrothersMax(1);	
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
 				"legend_noble_commander_background"
@@ -442,7 +442,7 @@ this.asset_manager <- {
 		break;
 
 		case this.Const.LegendMod.StartTypes.Crusader:
-			this.setBrothersMax(0);
+			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx([
 				"legend_crusader_commander_background"
@@ -455,7 +455,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Rangers:
-			this.setBrothersMax(0);
+			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -468,7 +468,7 @@ this.asset_manager <- {
 			break;
 			
 		case this.Const.LegendMod.StartTypes.Necro:
-			this.setBrothersMax(0);
+			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -482,7 +482,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Witch:
-			this.setBrothersMax(0);
+			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -520,7 +520,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Party:
-			this.setBrothersMax(0);
+			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -579,6 +579,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Inventor:
+			this.setBrothersMax(2);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -596,10 +597,10 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			this.setBrothersMax(2);
 			break;
 
 		case this.Const.LegendMod.StartTypes.Beggar:
+			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -607,11 +608,11 @@ this.asset_manager <- {
 			]);
 			bro.setPlaceInFormation(4);
 			bro.setVeteranPerks(3);
-			this.setBrothersMax(1);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			break;
 
 		case this.Const.LegendMod.StartTypes.Trader:
+			this.setBrothersMax(1);		
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -620,7 +621,6 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			
 			bro.setVeteranPerks(2);
-			this.setBrothersMax(0);
 			bro.m.HireTime = this.Time.getVirtualTimeF();		
 			
 			bro = roster.create("scripts/entity/tactical/player");
@@ -635,7 +635,7 @@ this.asset_manager <- {
 
 
 		case this.Const.LegendMod.StartTypes.Vala:
-			this.setBrothersMax(0);
+			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -684,6 +684,7 @@ this.asset_manager <- {
 			break;
 
 		default:
+			this.setBrothersMax(18);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[0][1]);
 			bro.setStartValuesEx([
@@ -712,7 +713,6 @@ this.asset_manager <- {
 			bro.setVeteranPerks(3);
 			bro.worsenMood(0.5, "Lost most of the company");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			this.setBrothersMax(18);
 			break;
 
 		}

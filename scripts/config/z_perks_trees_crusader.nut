@@ -27,7 +27,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
 		gt.Const.Perks.PerkDefs.Steadfast,
-		gt.Const.Perks.PerkDefs.LegendRoster3
+		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -38,7 +38,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendToolsDrawers,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,
-		gt.Const.Perks.PerkDefs.LegendRoster4
+		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryMace,
@@ -47,7 +47,9 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.MasterySword,
 		gt.Const.Perks.PerkDefs.MasteryPolearm,
 		gt.Const.Perks.PerkDefs.MasteryAxe,
-		gt.Const.Perks.PerkDefs.MasteryThrowing
+		gt.Const.Perks.PerkDefs.MasteryThrowing,
+		gt.Const.Perks.PerkDefs.LegendRoster4
+
 	],
 	[
 		gt.Const.Perks.PerkDefs.Footwork,
@@ -67,7 +69,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.SunderingStrike,
-		gt.Const.Perks.PerkDefs.LegendRoster7
+		gt.Const.Perks.PerkDefs.LegendRoster7		
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,

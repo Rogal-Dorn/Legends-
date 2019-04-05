@@ -79,6 +79,7 @@ local TraderTree = [
 	[]	
 ];
 
+
 gt.Const.Perks.PerksTreeTrader <- [];
 gt.Const.Perks.TreeTraderLookupMap <- {};
 
