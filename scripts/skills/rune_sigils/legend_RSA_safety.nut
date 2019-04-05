@@ -13,7 +13,6 @@ this.legend_RSA_safety <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-
 	function onUpdate (_properties)
 	{
 		_properties.HitpointsMult *= 1.03 + (this.m.Item.RuneMultiplier / 100.0);

@@ -13,7 +13,6 @@ this.legend_RSW_feeding <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (_damageInflictedHitpoints <= 0)

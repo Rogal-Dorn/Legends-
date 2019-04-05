@@ -13,7 +13,6 @@ this.legend_RSA_endurance <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-
 	function onUpdate (_properties)
 	{
 		_properties.FatigueRecoveryRate += this.Math.round(1.0 + (this.m.Item.RuneMultiplier / 10.0));

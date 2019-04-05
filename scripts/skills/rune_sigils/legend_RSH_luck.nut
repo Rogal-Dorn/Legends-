@@ -13,7 +13,6 @@ this.legend_RSH_luck <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-
 	function onUpdate (_properties)
 	{
 		_properties.RerollDefenseChance += 8 + this.m.Item.RuneMultiplier;

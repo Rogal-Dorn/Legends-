@@ -13,7 +13,6 @@ this.legend_RSH_bravery <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-
 	function onUpdate (_properties)
 	{
 		_properties.Bravery *= 1.08 + (this.m.Item.RuneMultiplier / 100.0);

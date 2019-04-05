@@ -15,7 +15,6 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 		this.m.Value = 1200;
 	}
 
-
 	function getTooltip()
 	{
 		local result = [

@@ -39,6 +39,7 @@ this.item <- {
 		RuneMultiplier = 0,
 		IsToBeSalvaged = false
 	},
+	
 	function setContainer( _c )
 	{
 		if (_c != null)

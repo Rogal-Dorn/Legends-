@@ -13,7 +13,6 @@ this.legend_RSA_resilience <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-
 	function onUpdate (_properties)
 	{
 		_properties.IsImmuneToStun = true;
