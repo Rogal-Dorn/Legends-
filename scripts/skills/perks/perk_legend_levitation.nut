@@ -3,8 +3,8 @@ this.perk_legend_levitation <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_levitation";
-		this.m.Name = this.Const.Strings.PerkName.LegendLevitation;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendLevitation;
+		this.m.Name = this.Const.Strings.PerkName.LegendLevitate;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendLevitate;
 		this.m.Icon = "ui/perks/levitate.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;

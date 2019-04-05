@@ -453,3 +453,5 @@ Beta v10 test 5
  *Crafted runes now have variable stat perks (no longer fixed).
  *Fixes runes not being added to stash
  *Fixes the crafting and enchanting queues being removed upon loading a save
+ *Adds new camp background art
+ *Fixes party sizes for starting heroes.

@@ -443,16 +443,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_roster_5",
 		Name = this.Const.Strings.PerkName.LegendRoster5,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster5,
-		Icon = "ui/perks/recruit4.png",
-		IconDisabled = "ui/perks/recruit4_bw.png"
+		Icon = "ui/perks/recruit5.png",
+		IconDisabled = "ui/perks/recruit5_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_6",
 		Script = "scripts/skills/perks/perk_legend_roster_6",
 		Name = this.Const.Strings.PerkName.LegendRoster6,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster6,
-		Icon = "ui/perks/recruit5.png",
-		IconDisabled = "ui/perks/recruit5_bw.png"
+		Icon = "ui/perks/recruit6.png",
+		IconDisabled = "ui/perks/recruit6_bw.png"
 	},
 	{
 		ID = "perk.legend_roster_7",
@@ -1551,8 +1551,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/PiercingBoltPerk_bw.png"
 	},
 	{
-		ID = "perk.legend_levitate",
-		Script = "scripts/skills/perks/perk_legend_levitate",
+		ID = "perk.legend_levitation",
+		Script = "scripts/skills/perks/perk_legend_levitation",
 		Name = this.Const.Strings.PerkName.LegendLevitate,
 		Tooltip = this.Const.Strings.PerkDescription.LegendLevitate,
 		Icon = "ui/perks/levitate.png",

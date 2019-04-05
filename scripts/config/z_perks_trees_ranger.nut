@@ -15,7 +15,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Lookout,
 		gt.Const.Perks.PerkDefs.LegendMarkTarget,
-		gt.Const.Perks.PerkDefs.LegendRoster1
+		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -25,8 +25,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendNightvision,
 		gt.Const.Perks.PerkDefs.Debilitate,
-		gt.Const.Perks.PerkDefs.Sprint,
-		gt.Const.Perks.PerkDefs.LegendRoster2
+		gt.Const.Perks.PerkDefs.Sprint
 	],
 	[
 		gt.Const.Perks.PerkDefs.BackStabber,
@@ -34,14 +33,14 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.DoubleStrike,
 		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
-		gt.Const.Perks.PerkDefs.DevastatingStrikes
+		gt.Const.Perks.PerkDefs.DevastatingStrikes,
+		gt.Const.Perks.PerkDefs.LegendRoster4		
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryPoison,
 		gt.Const.Perks.PerkDefs.MasteryBow,
 		gt.Const.Perks.PerkDefs.MasteryCrossbow,
-		gt.Const.Perks.PerkDefs.MasteryThrowing,
-		gt.Const.Perks.PerkDefs.LegendRoster4
+		gt.Const.Perks.PerkDefs.MasteryThrowing
 	],
 	[
 		gt.Const.Perks.PerkDefs.Overwhelm,
