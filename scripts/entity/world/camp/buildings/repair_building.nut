@@ -83,9 +83,25 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     }
 
 	
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "dude_empty";
+		local pro = "dude";
+		if (this.getUpgraded())
+		{
+			pro = "tent";
+		}
+
+		local sub = "empty";
+		
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
 
     function init()

@@ -15,7 +15,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Workshop;
-        this.m.Slot = "workshop";
+        this.m.Slot = "scrap";
         this.m.Name = "Workshop";
         this.m.Description = "Turn scrap into useable parts";
         this.m.BannerImage = "ui/buttons/banner_scrap.png";
@@ -89,10 +89,25 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
-	
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "dude_empty";
+		local pro = "dude";
+		if (this.getUpgraded())
+		{
+			pro = "tent";
+		}
+
+		local sub = "empty";
+		
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
 
     function init()

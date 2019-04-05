@@ -11,7 +11,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Healer;
-        this.m.Slot = "healer";
+        this.m.Slot = "heal";
         this.m.Name = "Heal/Reserves";
         this.m.Description = "Place brothers in reserves in order to heal from wounds.";
 		this.m.BannerImage = "ui/buttons/banner_heal.png"
@@ -67,10 +67,25 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		]
     }
 
-	
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "dude_empty";
+		local pro = "dude";
+		if (this.getUpgraded())
+		{
+			pro = "tent";
+		}
+
+		local sub = "empty";
+		
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
 
     function init()

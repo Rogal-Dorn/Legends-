@@ -11,7 +11,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Enchanter;
-        this.m.Slot = "enchanter";
+        this.m.Slot = "enchant";
         this.m.Name = "Enchanter";
         this.m.Description = "Oooo.. Pretty glowing things..."
 		this.m.BannerImage = "ui/buttons/banner_enchant.png"
@@ -265,9 +265,25 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
         return res;
     }
 
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "empty";
+		local pro = "dude";
+		if (this.getUpgraded())
+		{
+			pro = "tent";
+		}
+
+		local sub = "empty";
+		
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
 	
 	function getUpdateText()
