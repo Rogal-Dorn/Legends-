@@ -11,8 +11,8 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_staff_knock_out";
-		this.m.Name = "Staff Knock Out";
-		this.m.Description = "A heavy blow intended to stun or incapacitate anyone unlucky enough to be hit for one turn, but not to do the most damage. Stunned targets can not keep up their Shieldwall, Spearwall or similar defensive skills.";
+		this.m.Name = "Staff Daze";
+		this.m.Description = "A heavy blow intended to daze anyone unlucky enough to be hit for one turn, but not to do the most damage. Dazed targets have tier damage, initiative and stamina reduced by 35%";
 		this.m.Icon = "skills/active_32.png";
 		this.m.IconDisabled = "skills/active_32_sw.png";
 		this.m.Overlay = "active_32";
