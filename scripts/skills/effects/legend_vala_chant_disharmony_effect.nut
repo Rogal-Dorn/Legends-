@@ -18,7 +18,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	function create()
 	{
 		this.m.ID = "effects.legend_vala_chant_disharmony_effect";
-		this.m.Name = "Disharmonic";
+		this.m.Name = "";
 		this.m.Icon = "";
 		this.m.IconMini = "";
 		this.m.Overlay = "";
@@ -34,6 +34,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
 		{
+			this.m.Name = "Disharmonic";
 			this.m.Icon = "skills/status_effect_65.png";
 			this.m.IconMini = "status_effect_65_mini";
 			this.m.Overlay = "status_effect_65";
@@ -41,6 +42,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		}
 		else
 		{
+			this.m.Name = "";
 			this.m.Icon = "";
 			this.m.IconMini = "";
 			this.m.Overlay = "";
@@ -74,12 +76,12 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	}
 
 
-	function onMovementCompleted()
+	function ChantUpdate()
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
-			this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
+			this.m.Name = "Disharmonic";
 			this.m.Icon = "skills/status_effect_65.png";
 			this.m.IconMini = "status_effect_65_mini";
 			this.m.Overlay = "status_effect_65";
@@ -87,6 +89,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		else
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+			this.m.Name = "";
 			this.m.Icon = "";
 			this.m.IconMini = "";
 			this.m.Overlay = "";
@@ -94,22 +97,20 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	}
 
 
-	function onUpdate( _properties )
+	function onMovementCompleted()
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
 		{
-			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
-			this.m.Icon = "skills/status_effect_65.png";
-			this.m.IconMini = "status_effect_65_mini";
-			this.m.Overlay = "status_effect_65";
+			this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
 		}
-		else
-		{
-			this.getContainer().getActor().m.IsUsingZoneOfControl = true;
-			this.m.Icon = "";
-			this.m.IconMini = "";
-			this.m.Overlay = "";
-		}
+
+		this.ChantUpdate();
+	}
+
+
+	function onUpdate( _properties )
+	{
+		this.ChantUpdate();
 	}
 
 

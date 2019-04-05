@@ -1,5 +1,7 @@
 this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		ChantIsActive = false
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_chant_disharmony";
@@ -27,6 +29,11 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 
 		if (!this.skill.isUsable())
+		{
+			return false;
+		}
+
+		if (this.m.ChantIsActive)
 		{
 			return false;
 		}
@@ -102,7 +109,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onTurnStart()
+	function ChantFinished()
 	{
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
@@ -122,52 +129,26 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+
+		this.m.ChantIsActive = false;
+	}
+
+
+	function onTurnStart()
+	{
+		this.ChantFinished();
 	}
 
 
 	function onCombatFinished()
 	{
-		local actor = this.getContainer().getActor();
-		local targets = this.Tactical.Entities.getAllInstances();
-
-		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
-		{
-			actor.getSkills().removeByID("effects.legend_vala_currently_chanting");
-		}
-
-		foreach (tar in targets)
-		{
-			foreach (t in tar)
-			{
-				if (t.getSkills().hasSkill("effects.legend_vala_chant_disharmony_effect"))
-				{
-					t.getSkills().removeByID("effects.legend_vala_chant_disharmony_effect");
-				}
-			}
-		}
+		this.ChantFinished();
 	}
 
 
 	function onDeath()
 	{
-		local actor = this.getContainer().getActor();
-		local targets = this.Tactical.Entities.getAllInstances();
-
-		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
-		{
-			actor.getSkills().removeByID("effects.legend_vala_currently_chanting");
-		}
-
-		foreach (tar in targets)
-		{
-			foreach (t in tar)
-			{
-				if (t.getSkills().hasSkill("effects.legend_vala_chant_disharmony_effect"))
-				{
-					t.getSkills().removeByID("effects.legend_vala_chant_disharmony_effect");
-				}
-			}
-		}
+		this.ChantFinished();
 	}
 
 
@@ -191,7 +172,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
 
-		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting"))
+		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting") && this.m.ChantIsActive)
 		{
 			this.Sound.play("sounds/combat/legend_vala_disharmony.wav");
 		}
@@ -250,6 +231,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 			}
 
 			this.Sound.play("sounds/combat/legend_vala_disharmony.wav");
+			this.m.ChantIsActive = true;
 		}
 	}
 });
