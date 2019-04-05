@@ -7,10 +7,6 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Slot = "barber";
         this.m.Name = "Barber";
         this.m.Description = "or Plastic surgeon.."
-		this.m.UIImage = "ui/settlements/barber_day_empty";
-		this.m.UIImageNight = "ui/settlements/barber_night_empty";
-		this.m.UIImageFull = "ui/settlements/barber_day_full";
-		this.m.UIImageNightFull = "ui/settlements/barber_night_full";
         this.m.InCommanderTent = false;
 		this.m.Sounds = [
 			{
@@ -88,6 +84,12 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		];
 
     }
+
+	function getLevel()
+	{
+		return "dude_full";
+	}
+	
 
 	function onClicked( _campScreen )
 	{

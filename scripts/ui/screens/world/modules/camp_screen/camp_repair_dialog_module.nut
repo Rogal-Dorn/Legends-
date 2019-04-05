@@ -13,7 +13,7 @@ this.camp_repair_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 	function getTent()
 	{
-		this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair);
+		return this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair);
 	}
 
 	function destroy()

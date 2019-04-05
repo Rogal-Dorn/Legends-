@@ -20,11 +20,27 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     }
 
 	
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "dude_empty";
+		local pro = "dude";
+		local sub = "empty";
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
-    
+
+    function getAssignedBros()
+    {
+        local mod = this.getModifiers();
+        return mod.Assigned;
+    }
+
     function init()
     {
         local roster = this.World.getPlayerRoster().getAll();
@@ -111,6 +127,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         local ret = 
         {
             Modifier = 1.0
+            Assigned = 0,
             Consumption = 1.0
         }
 		local roster = this.World.getPlayerRoster().getAll();
@@ -123,6 +140,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
             //Bros assigned to the healing activity improve the heal rate for everyone
             ret.Modifier += bro.getBackground().getModifiers().Healing;
+            ret.Assigned += 1;
             local v = this.Math.maxf(0.50, ret.Consumption - bro.getBackground().getModifiers().MedConsumption);
             ret.Consumption = v;
         }

@@ -11,7 +11,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Crafting;
-        this.m.Slot = "crafting";
+        this.m.Slot = "craft";
         this.m.Name = "Craft";
         this.m.Description = "Craft items"
 		this.m.BannerImage = "ui/buttons/banner_craft.png"
@@ -95,9 +95,25 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "empty";
+		local pro = "dude";
+		if (this.getUpgraded())
+		{
+			pro = "tent";
+		}
+
+		local sub = "empty";
+		
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
 	
     function init()

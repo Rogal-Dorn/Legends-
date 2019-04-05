@@ -11,7 +11,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Hunter;
-        this.m.Slot = "hunter";
+        this.m.Slot = "hunt";
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"
 		this.m.BannerImage = "ui/buttons/banner_hunt.png"
@@ -47,9 +47,25 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     }
 
 	
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "dude_empty";
+		local pro = "dude";
+		if (this.getUpgraded())
+		{
+			pro = "tent";
+		}
+
+		local sub = "empty";
+		
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
 
     function init()

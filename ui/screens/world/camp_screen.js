@@ -328,7 +328,7 @@ CampScreen.prototype.showMainDialog = function (/*_withSlideAnimation,*/ _data)
 	    _withSlideAnimation = false;
 
 	this.loadAssetData(_data);
-	this.mMainDialogModule.show(_withSlideAnimation);
+    this.mMainDialogModule.show(_withSlideAnimation);
 };
 
 CampScreen.prototype.showCommanderDialog = function (/*_withSlideAnimation,*/ _data)

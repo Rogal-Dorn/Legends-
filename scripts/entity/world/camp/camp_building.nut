@@ -369,6 +369,7 @@ this.camp_building <- {
         this.World.State.getMenuStack().push(function ()
 		{
 			this.World.State.getCampScreen().showMainDialog();
+			this.World.State.getCampScreen().refresh();			
 		}, function ()
 		{
 			return !this.World.State.getCampScreen().isAnimating();

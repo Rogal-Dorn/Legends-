@@ -162,60 +162,60 @@
 /* buildings */
 
 /* Bottow row of tents */
-	.camp-screen > .l-main-dialog-container .slot-crafting {
-		-webkit-transform: scale(-0.7, 0.7);
-		position: absolute;
-		left: 12.0rem;
-		top: 43.0rem;
-	}
+.camp-screen > .l-main-dialog-container .slot-craft {
+    -webkit-transform: scale(-0.7, 0.7);
+    position: absolute;
+    left: 5.0rem;
+    top: 38.0rem;
+}
 
-.camp-screen > .l-main-dialog-container .slot-training {
+.camp-screen > .l-main-dialog-container .slot-train {
 	-webkit-transform: scale(-0.7, 0.7);
 	position: absolute;
-	left: 23.0rem;
-	top: 45.0rem;
+	left: 20.0rem;
+	top: 43.0rem;
 }
 
 .camp-screen > .l-main-dialog-container .slot-rest {
 	-webkit-transform: scale(-0.7, 0.7);
 	position: absolute;
-	left: 45.0rem;
-	top: 45.0rem;
+	left: 44.0rem;
+	top: 43.0rem;
 }
 
 
-	.camp-screen > .l-main-dialog-container .slot-barber {
-		-webkit-transform: scale(-0.7, 0.7);
-		position: absolute;
-		left: 65.0rem;
-		top: 48.0rem;
-	}
+.camp-screen > .l-main-dialog-container .slot-barber {
+    -webkit-transform: scale(-0.7, 0.7);
+    position: absolute;
+    left: 60.0rem;
+    top: 42.0rem;
+}
 
 
 
 
 	/* Mid row of tents */
 
-	.camp-screen > .l-main-dialog-container .slot-fletcher {
-		-webkit-transform: scale(-0.7, 0.7);
-		position: absolute;
-		left: 5.0rem;
-		top: 35.0rem;
-	}
+.camp-screen > .l-main-dialog-container .slot-fletch {
+    -webkit-transform: scale(-0.7, 0.7);
+    position: absolute;
+    left: 3.0rem;
+    top: 30.0rem;
+}
 
-.camp-screen > .l-main-dialog-container .slot-healer {
+.camp-screen > .l-main-dialog-container .slot-heal {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
-		left: 27.0rem;
-		top: 30.0rem;
+		left: 21.0rem;
+		top: 25.0rem;
 	}
 
 /* center (marketplace) */
 .camp-screen > .l-main-dialog-container .slot-commander {
 	-webkit-transform: scale(-0.7, 0.7);
 	position: absolute;
-	left: 40.0rem;
-	top: 28.0rem;
+	left: 33.0rem;
+	top: 24.0rem;
 }
 
 
@@ -223,19 +223,19 @@
 {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 62.0rem;
-    top: 32.0rem;
+    left: 58.0rem;
+    top: 22.0rem;
 }
 
-	.camp-screen > .l-main-dialog-container .slot-enchanter {
-		-webkit-transform: scale(-0.7, 0.7);
-		position: absolute;
-		left: 83.0rem;
-		top: 35.0rem;
-	}
+.camp-screen > .l-main-dialog-container .slot-scrap {
+    -webkit-transform: scale(-1.1, 1.1);
+    position: absolute;
+    left: 71.0rem;
+    top: 38.0rem;
+}
 
 	/* back row tents */
-.camp-screen > .l-main-dialog-container .slot-hunter
+.camp-screen > .l-main-dialog-container .slot-enchant
 {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
@@ -243,23 +243,23 @@
 		top: 20.0rem;
 }
 
-.camp-screen > .l-main-dialog-container .slot-gatherer {
+.camp-screen > .l-main-dialog-container .slot-gather {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
 		left: 33.0rem;
 		top: 20.0rem;
 	}
 
-.camp-screen > .l-main-dialog-container .slot-workshop {
+.camp-screen > .l-main-dialog-container .slot-hunt {
 		-webkit-transform: scale(-0.7, 0.7);
 		position: absolute;
 		left: 55.0rem;
-		top: 22.0rem;
+		top: 19.0rem;
 	}
 
 .camp-screen > .l-main-dialog-container .slot-scout
 {
-    -webkit-transform: scale(-0.7, 0.7);
+    -webkit-transform: scale(-0.8, 0.8);
     position: absolute;
     left: 75.0rem;
     top: 21.0rem;

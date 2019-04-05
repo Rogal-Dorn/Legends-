@@ -10,7 +10,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Fletcher;
-        this.m.Slot = "fletcher";
+        this.m.Slot = "fletch";
         this.m.Name = "Fletcher";
         this.m.Description = "Make some ammo"
 		this.m.BannerImage = "ui/buttons/banner_fletch.png"
@@ -49,9 +49,25 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.SoundsAtNight = [];
     }
 
+	function getUpgraded()
+	{
+		return true;
+	}
+
 	function getLevel()
 	{
-		return "empty";
+		local pro = "dude";
+		if (this.getUpgraded())
+		{
+			pro = "tent";
+		}
+
+		local sub = "empty";
+		
+		if (this.getAssignedBros() > 0) {
+			sub =  "full";
+		}
+		return pro + "_" + sub;
 	}
 	
     function init()
