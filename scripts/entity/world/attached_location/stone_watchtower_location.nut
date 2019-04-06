@@ -171,6 +171,16 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 				P = 1.0,
 				S = "weapons/legend_sling"
 			});
+				_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_train"
+			});
+				_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_scout"
+			});
 			_list.push({
 				R = 10,
 				P = 1.0,

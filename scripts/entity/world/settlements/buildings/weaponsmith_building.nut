@@ -193,6 +193,11 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/javelin"
 			},
 			{
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_repair"
+			},
+			{
 				R = 10,
 				P = 1.0,
 				S = "weapons/javelin"

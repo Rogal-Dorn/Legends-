@@ -162,6 +162,11 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				S = "weapons/throwing_axe"
 			},
 			{
+				R = 80,
+				P = 1.0,
+				S = "tents/legend_tent_fletcher"
+			},
+			{
 				R = 0,
 				P = 1.0,
 				S = "ammo/quiver_of_arrows"

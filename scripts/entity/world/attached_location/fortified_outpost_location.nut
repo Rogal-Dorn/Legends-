@@ -259,6 +259,11 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 				S = "weapons/crossbow"
 			});
 			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_train"
+			});
+			_list.push({
 				R = 50,
 				P = 1.0,
 				S = "weapons/light_crossbow"

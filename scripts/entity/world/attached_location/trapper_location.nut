@@ -47,6 +47,11 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 				P = 1.0,
 				S = "weapons/legend_shiv"
 			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_hunter"
+			});
 				_list.push({
 				R = 50,
 				P = 1.0,

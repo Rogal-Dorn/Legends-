@@ -152,6 +152,11 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 				S = "supplies/armor_parts_item"
 			});
 			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_craft"
+			});
+			_list.push({
 				R = 20,
 				P = 1.0,
 				S = "supplies/armor_parts_item"
