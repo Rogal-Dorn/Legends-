@@ -6,7 +6,7 @@ this.tent_craft <- this.inherit("scripts/items/trade/trading_good_item", {
 		this.m.ID = "tent.craft_tent";
 		this.m.Name = "Craft Tent";
 		this.m.Description = "A tent for storing and processing crafting supplies, upgrades your camp. Comes with the sewing equipment, bottles and mundane ingedients used in crafting.";
-		this.m.Icon = "tents/tent_scrap_70x70.png";
+		this.m.Icon = "tents/tent_craft_70x70.png";
 		this.m.Value = 10000;
 	}
 

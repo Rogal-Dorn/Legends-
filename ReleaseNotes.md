@@ -462,6 +462,7 @@ Beta v10 test 5
 
 
 Beta v10 Test 7
+https://drive.google.com/open?id=1UGt-_mBDX2-YVzM2mJf8yw8p0D_7lWOj
 *Assign all in the Repair and Salvage tent works with filters now
 *After a battle, all equipped gear that is damaged is automatically added to the repair queue.
 *Reserve mechanism removed from camp/tent. Reserve is now assigned from the character inventory/stash screen. Upper left near the dismiss bro button.
@@ -469,3 +470,5 @@ Beta v10 Test 7
 *Fixes item disappearing when runed twice
 *Fixes rune variant values not reloading correctly
 *Only Weapons and Armor can be salvaged now
+*Fix Enchant tent rune blueprint tooltips
+*Adds Tent upgrade system - Purchase tents in marketplaces to upgrade camp tent visuals and functionality (Still WIP)

@@ -10,6 +10,7 @@ this.tent_hunter <- this.inherit("scripts/items/trade/trading_good_item", {
 		this.m.Value = 5000;
 	}
 
+
 	function getBuyPrice()
 	{
 		if (this.m.IsSold)

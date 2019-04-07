@@ -69,7 +69,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getUpgraded()
 	{
-		return true;
+        return this.Stash.hasItem("tent.healer_tent");
 	}
 
 	function getLevel()

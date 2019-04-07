@@ -56,7 +56,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	
 	function getUpgraded()
 	{
-		return true;
+        return this.Stash.hasItem("tent.training_tent");
 	}
 
 	function getLevel()
@@ -238,6 +238,11 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getBonus( bro )
 	{
+		if (!this.getUpgraded())
+		{
+			return 
+		}
+		
 		local text = ""
 		local icon = ""
 		if (this.Math.rand(1, 100) <= 1)

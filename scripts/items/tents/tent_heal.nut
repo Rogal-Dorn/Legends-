@@ -1,4 +1,4 @@
-this.legend_tent_healer <- this.inherit("scripts/items/trade/trading_good_item", {
+this.tent_heal <- this.inherit("scripts/items/trade/trading_good_item", {
 	m = {},
 	function create()
 	{
