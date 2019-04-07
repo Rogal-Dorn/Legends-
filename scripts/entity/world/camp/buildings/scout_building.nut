@@ -24,7 +24,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	
 	function getUpgraded()
 	{
-		return true;
+        return this.Stash.hasItem("tent.scout_tent");
 	}
 
 	function getLevel()
@@ -112,6 +112,11 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
             return;
         }
 
+		if (!this.getUpgraded())
+		{
+			return 
+		}
+        
         local r = this.Math.min(75, 10 * this.Math.pow(this.m.Camp.getCampTimeHours(), mod.Craft/2));
 		
         if (this.Math.rand(1, 100) > r)

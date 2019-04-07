@@ -23,7 +23,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	
 	function getUpgraded()
 	{
-		return true;
+        return this.Stash.hasItem("tent.gather_tent");
 	}
 
 	function getLevel()
@@ -120,6 +120,11 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     function completed()
     {
+		if (!this.getUpgraded())
+		{
+			return 
+		}
+
 		local item = null
 		if (this.World.Assets.getMedicine() >= this.World.Assets.getMaxMedicine())
 		{

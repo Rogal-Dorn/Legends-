@@ -19,12 +19,6 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.m.CanEnter = false
     }
 
-	
-	function getUpgraded()
-	{
-		return true;
-	}
-
 	function getLevel()
 	{
 		local pro = "dude";

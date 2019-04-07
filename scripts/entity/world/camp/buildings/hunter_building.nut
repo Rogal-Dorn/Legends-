@@ -49,7 +49,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	
 	function getUpgraded()
 	{
-		return true;
+        return this.Stash.hasItem("tent.hunter_tent");
 	}
 
 	function getLevel()
@@ -190,10 +190,11 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.Items.push(item);
 		this.Stash.add(item);
 
-		if (secondary.len() == 0)
+		if (secondary.len() == 0 || !this.getUpgraded())
 		{
 			return this.getUpdateText();
 		}
+
 
 		//this can be upgrade system
 		if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
