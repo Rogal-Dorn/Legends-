@@ -6,10 +6,10 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.ID = "background.legend_shieldmaiden";
 		this.m.Name = "Shieldmaiden";
 		this.m.Icon = "ui/backgrounds/legend_shieldmaiden.png";
-		this.m.BackgroundDescription = "Shieldmaidens are female warriors.";
+		this.m.BackgroundDescription = "Shieldmaidens are fierce female warriors from the northern settlements.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 180;
+		this.m.HiringCost = 580;
 		this.m.DailyCost = 18;
 		this.m.Excluded = [
 			"trait.asthmatic",
@@ -19,7 +19,6 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 			"trait.tiny"
 		];
 		this.m.ExcludedTalents = [
-			this.Const.Attributes.Bravery,
 			this.Const.Attributes.Initiative
 		];
 		this.m.Titles = [
@@ -134,21 +133,21 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/shields/buckler_shield"));
+			items.equip(this.new("scripts/items/shields/heater_shield"));
 		}
 
-		r = this.Math.rand(0, 3);
-		if (r <= 1)
+		r = this.Math.rand(0, 4);
+		if (r <= 2)
 		{
 			items.equip(this.new("scripts/items/weapons/militia_spear"));
 		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/shortsword"));
-		}
 		else if (r == 3)
 		{
-			items.equip(this.new("scripts/items/weapons/hatchet"));
+			items.equip(this.new("scripts/items/weapons/legend_wooden_spear"));
+		}
+		else if (r == 4)
+		{
+			items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
 		}
 	}
 });

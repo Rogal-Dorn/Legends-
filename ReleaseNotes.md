@@ -211,6 +211,7 @@ Camp Documentation:
 	-Each hour encamped, durability is added to the queued equipment. 
 	-The amount of durability added per hour is based on how many people have been assigned to repair duty (and their backgrounds also influence how much they can repair per hour).
 	-1 unit of tools can repair 15 durability.
+	-Tent upgrade found at weaponsmith
 
 *Workshop Tent*
 	-Workshop allows converting weapons and armor in your stash into tools for repair.
@@ -222,8 +223,9 @@ Camp Documentation:
 	-Once a piece of equipment reaches 0 durability, it is destroyed.
 	-The amount of durability converted into tools per hour is based on how many people have been assigned to salvage duty (and their backgrounds also influence how much they can salvage per hour).
 	-15 points of durability equals 1 tool.
+	-Tent upgrade found at armorsmith or near blast furnaces
 
-*Reserves/Healing Tent*
+*Healing Tent*
 	-Reserve/Healing tent is where injuries can be treated and brothers can be held in reserves
 	-Injuries are still healed over time, whether encamped or not
 	-Injuries will heal quicker while encamped
@@ -233,6 +235,7 @@ Camp Documentation:
 	-Injuries in the queue are treated linearly. Left to right, top to bottom.
 	-Bros assigned to the Reserve/Injury tent will not particiapate in player initiated combat. If the player is attacked, everyone is in included in the combat.
 	-All Bros in the Reserve/Heal tent consume x3 the normal amount of rations. 
+	-Tent Upgrade found near herbalist groves, gatherer huts and wool spinners
 
 *Crafting Tent*
 	-Crafting tent is the taxidermist on-the-go for the company.
@@ -240,20 +243,24 @@ Camp Documentation:
 	-Crafting can only happend while encamped.
 	-Each hour encamped, crafting 'units' are added to the first item in the Queue. Once the time cost is met, the item will be added to the stash.
 	-The amount of crafting each hour is based on how many people have been assigned to crafting duty (and their backgrounds also influence how much they can craft per hour).
+	-Tent upgrade found near tanners, workshops and wool spinners
 
 *Hunting Tent*
 	-Send people out on a hunting party to collect food and possible spoils from the hunt.
 	-Each hour spent out hunting increases the amount of food that is collected.
 	-Depending on the type of food hunted and the amount of time spent out, additional items can be gained from the hunt.
+	- tent upgrade found near hunters cabins, tanners and trappers 
 
 *Gathering Tent*
 	-Send people out to forage for herbs and create salves and concotions for medical supplies.
 	-Each hour spent out increases the amount of medicine that is collected.
 	-The longer spent out gathering supplies, the greate chance that additional items might be found!
+	-Tent upgrade found near gatherers huts, mushroom groves and herbalists groves
 
 *Fletching Tent*
 	-Assign people to create and manufactor ammo.
 	-Each hour spent increases the amount of ammo that is created.
+	-Tent upgrade found in fletchers and near wool spinners
 
 *Patrol Tent*
 	-Send brothers out on patrol to gain intelligence and get advanced warning of incoming enemies
@@ -261,6 +268,7 @@ Camp Documentation:
 	-The more brothers assigned, the faster and further you can see.
 	-Some backgrounds are better suited at patrolling than others.
 	-Depending on skill of bros on patrol, there is a chance they can discover the direction and distance to an enemy camp.
+	-Tent upgrade found near wooden or stone watch towers, gaurded checkpoints or militia training camps
 
 *Training Tent*
 	-Training tent allows the company to train and prepare for combat.
@@ -268,6 +276,11 @@ Camp Documentation:
 	-Success chance scales with brother level and length of time training.
 	-Lower the level, the higher the chance of success. Longer training time improves chance for everyone.
 	-There is a very small chance the brother could have a breakthrough training session and permanently improve a skill. Chance improves the longer the training session.
+	-Tent upgrade found near fortified outposts, gaurded checkpoints, militia training camps or stone watch towers
+
+*Enchanting tent*
+	- Use Vala perks to unlock craftable runes that can be attached to weapons, armor, helmets
+	- Tent upgrade found near amber collectors, gem mines or wool spinners
 
 *Barber Tent*
 	-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
@@ -356,25 +369,26 @@ New recruitable backgrounds:
 *Adds Taxidermist and taxidermist apron - reduces med usage, helps with camp crafting, spawns near trappers, tanners and pig farms
 
 Changes for recruitable backgrounds:
-*Vala has the correct perk tree, with a new set of chants. 
-*Peddlers have lower initial barter bonus but can unlock perks to increase their barter skill
-*Militia gain perks to increase effectiveness with milita spears 
-*Minstrels and troubadours gain skill to cast entice and deal more damage while wielding a lute. lute durability buffed, gains bash. 
-*Blacksmiths and ironmongers gain perks to increase effectiveness with blacksmith's hammer, big bonuses to craft, scrap and repair in camp.
-*Farmhands gain perks for pitchforks, increase stash capacity 
+
+*Blacksmiths and ironmongers gain perks for blacksmith's hammer
+*Butchers and fishwives gain perks for butcher's cleavers 
+*Farmhands gain perks for pitchforks
+*Fishermen and beast hunters gain a net perk 
 *Gravediggers and graverobbers gain perks for shovels, and an upgradable chance to find bodies after a battle 
 *Lumberjacks gain perks for wood axes
-*Thieves and pickpockets gain perks for knives
-*Poachers gain perks for shortbows 
+*Militia gain perks for milita spears 
 *Miners gain perks for pickaxes
-*Butchers and fishwives gain perks for butcher's cleavers and can carry more medicine 
-*Servants, Maids, eunechs, widows, cripplies and flagelants all help heal slightly, though far less than monks and nuns.
-*Servants, maids and eunuchs help repair very slightly 
-*Tailors and seamstresses can carry more armor parts, help craft and scrap in camp and help with repairs, though not as much as ironmongers, blacksmiths and inventors.  
-*Brawlers initiative buffed now that hand to hand scales off initiative, can carry more 
-*Daytaler and peddler stash capcity at 10
-*Mason, miner, inventor and lumberjack stash capacity increased to 5
-*Daytaler, washerwoman, milkmaids, refugee, fisherman, thief, vagabond, shepard, servant, maid, eunech all increased stash capacity to 3
+*Minstrels and troubadours gain skill to cast entice and deal more damage while wielding a lute. lute durability buffed, gains bash. 
+*Peddlers gain perks to increase their barter skill
+*Poachers gain perks for shortbows 
+*Shieldmaiden gain perks for shields
+*Shepared gain perks for slings
+*Thieves and pickpockets gain perks for knives
+
+Nearly all backgrounds have skills to help around the camp, details in the wiki  https://legendmod.fandom.com/wiki/Backgrounds
+
+
+
 
 Other changes: 
 *Player world figurine changes based on commander
