@@ -386,6 +386,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				continue;
             }
 
+            if (!item.canBeSalvaged())
+            {
+                continue
+            }
+
             if (item.isToBeSalvaged())
             {
                 items.push({
@@ -393,7 +398,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                     Item = item
                 });
             }
-            else if ((item.getItemType() & (this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MagicStaff)) != 0 || (item.getItemType() & this.Const.Items.ItemFilter.Armor) != 0)
+            else 
             {
                 stash.push({
                     Bro = null,
@@ -405,8 +410,13 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         return {Items = items, Stash = stash};
     }
 
-    function assignAll()
+    function assignAll( _filter = 0 )
     {
+        if (_filter == 0)
+		{
+			_filter = this.Const.Items.ItemFilter.All;
+		}
+
         local index = 0
         foreach (i, s in this.m.Stash)
         {
@@ -415,6 +425,15 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
+            if (_filter == 99 && s.Bro != null)
+            {
+                continue;
+            } 
+            else if ((s.Item.getItemType() & _filter) == 0)
+            {
+                continue;
+            }
+            
             for (index; index < this.m.Salvage.len(); index = ++index)
             {
                 if (this.m.Salvage[index] == null)

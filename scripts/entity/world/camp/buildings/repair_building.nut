@@ -10,6 +10,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         ItemsRepaired = 0,
         PointsRepaired = 0,        
 	},
+
     function create()
     {
         this.camp_building.create();
@@ -82,7 +83,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.SoundsAtNight = [];
     }
 
-	
 	function getUpgraded()
 	{
 		return true;
@@ -140,7 +140,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         }
     }
 
-
     function getConversionRate()
     {
         return this.m.Conversion;
@@ -183,7 +182,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             Consumption = 1.0 / this.m.Conversion,
             Assigned = 0,
             Modifiers = []
-
         }
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
@@ -398,7 +396,12 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
             if (item.getCondition() >= item.getConditionMax())
             {
-                continue
+                continue;
+            }
+
+            if (item.isToBeSalvaged())
+            {
+                continue;
             }
 
             if (item.isToBeRepaired())
@@ -420,14 +423,56 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         return {Items = items, Stash = stash};
     }
 
-    function assignAll()
+    function assignEquipped()
     {
+        local roster = this.World.getPlayerRoster().getAll()
+        foreach( bro in roster)
+        {
+			local bitems = bro.getItems().getAllItems();
+			foreach( item in bitems )
+			{
+                if (item == null)
+                {
+                    continue
+                }
+
+                if (item.getCondition() >= item.getConditionMax())
+                {
+                    continue;
+                }
+
+                if (item.isToBeRepaired())
+                {
+                    continue;
+                }
+
+                item.setToBeRepaired(true, 0);
+            }
+        }
+    }
+
+    function assignAll( _filter = 0 )
+    {
+        if (_filter == 0)
+		{
+			_filter = this.Const.Items.ItemFilter.All;
+		}
+
         local index = 0
         foreach (i, s in this.m.Stash)
         {
             if (s == null)
             {
                 continue
+            }
+
+            if (_filter == 99 && s.Bro != null)
+            {
+                continue;
+            } 
+            else if ((s.Item.getItemType() & _filter) == 0)
+            {
+                continue;
             }
 
             for (index; index < this.m.Repairs.len(); index = ++index)

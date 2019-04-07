@@ -340,7 +340,7 @@ this.camp_building <- {
 
     function inCommanderTent()
     {
-        return this.m.InCommanderTent;
+        return this.m.InCommanderTent && !this.isHidden();
     }
 
 	function pushUIMenuStack()

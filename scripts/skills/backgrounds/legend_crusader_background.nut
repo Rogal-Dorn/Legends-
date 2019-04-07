@@ -157,7 +157,6 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rebound"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 	}
 
 	function onAddEquipment()

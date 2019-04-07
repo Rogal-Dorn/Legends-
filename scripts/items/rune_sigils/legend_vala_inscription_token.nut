@@ -62,7 +62,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 			id = 66,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = this.getRuneSigilTooltip(this.m.RuneVariant, this.m.RuneMultiplier)
+			text = this.getRuneSigilTooltip()
 		});
 
 		return result;
@@ -71,60 +71,37 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 
 	function onUse( _actor, _item = null )
 	{
+		local target = null;
 		if (this.m.RuneVariant >= 1 && this.m.RuneVariant <= 10)
 		{
-			local target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
 			if (target == null)
 			{
 				return false;
 			}
-
-			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
-			target.setRuneVariant(this.m.RuneVariant);
-			target.setRuneMultiplier(this.m.RuneMultiplier);
-			target.updateRuneSigil();
-			_actor.getItems().unequip(target);
-			_actor.getItems().equip(target);
-			return true;
 		}
 		else if (this.m.RuneVariant >= 11 && this.m.RuneVariant <= 20)
 		{
-			local target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+			target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
 			if (target == null)
 			{
 				return false;
 			}
-
-			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
-			target.setRuneVariant(this.m.RuneVariant);
-			target.setRuneMultiplier(this.m.RuneMultiplier);
-			target.updateRuneSigil();
-			_actor.getItems().unequip(target);
-			_actor.getItems().equip(target);
-			return true;
 		}
 		else if (this.m.RuneVariant >= 21 && this.m.RuneVariant <= 30)
 		{
-			local target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+			target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 
 			if (target == null)
 			{
 				return false;
 			}
-
-			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
-			target.setRuneVariant(this.m.RuneVariant);
-			target.setRuneMultiplier(this.m.RuneMultiplier);
-			target.updateRuneSigil();
-			_actor.getItems().unequip(target);
-			_actor.getItems().equip(target);
-			return true;
 		}
 		else if (this.m.RuneVariant >= 31 && this.m.RuneVariant <= 40)
 		{
-			local target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+			target = _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 			if (target == null)
 			{
@@ -134,18 +111,30 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 			{
 				return false;
 			}
-
-			this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
-			target.setRuneVariant(this.m.RuneVariant);
-			target.setRuneMultiplier(this.m.RuneMultiplier);
-			target.updateRuneSigil();
-			_actor.getItems().unequip(target);
-			_actor.getItems().equip(target);
-			return true;
 		}
 		else
 		{
 			return false;
 		}
+
+		this.Sound.play("sounds/combat/legend_vala_inscribe.wav");
+		local alreadyRuned = target.isRuned();
+		target.setRuneVariant(this.m.RuneVariant);
+		target.setRuneBonus1(this.m.RuneBonus1);
+		target.setRuneBonus2(this.m.RuneBonus2);
+		if (!alreadyRuned)
+		{
+			target.updateRuneSigil();
+		}
+		_actor.getItems().unequip(target);
+		_actor.getItems().equip(target);
+		return true;		
 	}
+
+	function onDeserialize( _in )
+	{
+		this.item.onDeserialize(_in);
+		this.updateRuneSigilToken();
+	}
+
 });
