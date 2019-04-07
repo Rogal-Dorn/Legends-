@@ -9,8 +9,8 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.BackgroundDescription = "Poachers tend to have some skill in using bow and arrow to hunt down rabbits and the like.";
 		this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned he found a bit of mountain land and works it for a local nobleman. Ironically, his job is to hunt down poachers.";
 		this.m.BadEnding = "No longer seeing the point in risking his life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the man down. You declined the offer, but the writing was on the wall: his days are numbered.";
-		this.m.HiringCost = 65;
-		this.m.DailyCost = 8;
+		this.m.HiringCost = 100;
+		this.m.DailyCost = 10;
 		this.m.Excluded = [
 			"trait.hate_undead",
 			"trait.night_blind",
