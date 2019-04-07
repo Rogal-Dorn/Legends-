@@ -1873,6 +1873,31 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		light.Alpha = 0;
 	}
 
+	function onLeave()
+	{
+		local eventID = "";
+		if (!this.World.Tags.get("HasLegendCampTraining" && this.hasBuilding("building.training_hall")))
+		{
+			eventID = "event.legend_camp_unlock_training";
+		}
+
+		if (eventID == "")
+		{
+			return;
+		}
+
+		local event = this.World.Events.getEvent(eventID);
+		if (event == null)
+		{
+			return;
+		}
+		event.setTownName(this.getName());
+		this.Time.scheduleEvent(this.TimeUnit.Real, 2000, function ( _t )
+		{
+			this.World.Events.fire(eventID);
+		}, null);
+	}
+
 	function onFinish()
 	{
 		this.location.onFinish();
