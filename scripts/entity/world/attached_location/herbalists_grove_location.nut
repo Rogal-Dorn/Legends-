@@ -51,6 +51,21 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 				S = "accessory/bandage_item"
 			});
 			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_heal"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_gather"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_enchant"
+			});
+			_list.push({
 				R = 50,
 				P = 1.0,
 				S = "accessory/antidote_item"

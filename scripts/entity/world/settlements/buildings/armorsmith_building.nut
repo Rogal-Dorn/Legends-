@@ -248,6 +248,11 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "helmets/padded_flat_top_helmet"
 			},
 			{
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_scrap"
+			},
+			{
 				R = 50,
 				P = 1.0,
 				S = "armor/leather_lamellar"

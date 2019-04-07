@@ -56,6 +56,11 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "helmets/hood"
 			});
 			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_hunter"
+			});
+			_list.push({
 				R = 10,
 				P = 1.0,
 				S = "helmets/hunters_hat"

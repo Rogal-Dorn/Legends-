@@ -92,6 +92,16 @@ this.guarded_checkpoint_location <- this.inherit("scripts/entity/world/attached_
 				P = 1.0,
 				S = "weapons/military_cleaver"
 			});
+				_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_train"
+			});
+				_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_scout"
+			});
 			_list.push({
 				R = 30,
 				P = 1.0,
