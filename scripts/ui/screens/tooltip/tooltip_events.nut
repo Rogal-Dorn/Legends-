@@ -2975,6 +2975,26 @@ this.tooltip_events <- {
 			];
 			return result;
 
+		case "character-screen.left-panel-header-module.Reserves":
+			local text = "This character is currently in the fighting line. Click to toggle character into reserves status."
+			if (entity.isInReserves())
+			{
+				text = "This character is currently in reserves. Click to toggle character into the fighting line. While in reserves, character will only participate in combat if company is under attack."
+			}
+
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Reserves/Fighting Status"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = text
+				}
+			];
+
 		case "character-screen.left-panel-header-module.Dismiss":
 			return [
 				{

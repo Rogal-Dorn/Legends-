@@ -31,7 +31,8 @@ var CharacterScreenLeftPanelHeaderModule = function(_parent, _dataSource)
 	this.mLevelContainer = null;
 	this.mXPProgressbar = null;
 
-	this.mDismissButton	= null;
+    this.mDismissButton	= null;
+    this.mReserveButton	= null;    
 	this.mPayDismissalWage = false;
 
     // current popup dialog
@@ -215,6 +216,15 @@ CharacterScreenLeftPanelHeaderModule.prototype.createDIV = function (_parentDiv)
 
         self.mCurrentPopupDialog.addPopupDialogContent(self.createDismissDialogContent(self.mCurrentPopupDialog));
     }, 'display-none', 6);
+
+    var layout = $('<div class="l-button is-reserve"/>');
+    portraitContainer.append(layout);
+    this.mReserveButton = layout.createImageButton(Path.GFX + "ui/icons/stat_screen_dmg_dealt.png", function (_event)
+    {
+        self.mDataSource.notifyBackendToggleReservesCharacter();
+    }, 'display-none', 6);
+
+    
 
     this.mNameContainer = $('<div class="name-container"/>');
     this.mContainer.append(this.mNameContainer);
@@ -713,7 +723,9 @@ CharacterScreenLeftPanelHeaderModule.prototype.bindTooltips = function ()
 
     this.mXPProgressbar.bindProgressbarTooltip(TooltipIdentifier.CharacterScreen.LeftPanelHeaderModule.Experience);
     this.mLevelContainer.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.LeftPanelHeaderModule.Level });
-	this.mDismissButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.LeftPanelHeaderModule.Dismiss });
+    this.mDismissButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.LeftPanelHeaderModule.Dismiss });
+	this.mReserveButton.bindTooltip({ contentType: 'ui-element', entityId: "", elementId: TooltipIdentifier.CharacterScreen.LeftPanelHeaderModule.Reserves });
+    
 };
 
 CharacterScreenLeftPanelHeaderModule.prototype.unbindTooltips = function ()
@@ -725,7 +737,8 @@ CharacterScreenLeftPanelHeaderModule.prototype.unbindTooltips = function ()
 
     this.mXPProgressbar.bindProgressbarTooltip();
     this.mLevelContainer.unbindTooltip();
-	this.mDismissButton.unbindTooltip();
+    this.mDismissButton.unbindTooltip();
+    this.mReserveButton.unbindTooltip();
 };
 
 
@@ -886,7 +899,7 @@ CharacterScreenLeftPanelHeaderModule.prototype.setXP = function(_xpValue, _xpVal
 };
 
 
-CharacterScreenLeftPanelHeaderModule.prototype.updateControls = function(_data)
+CharacterScreenLeftPanelHeaderModule.prototype.updateControls = function(_id, _data)
 {
     /*this.mLevelContainer.css('backgroundColor', 'transparent');
     this.mLevelContainer.stop();*/
@@ -933,7 +946,28 @@ CharacterScreenLeftPanelHeaderModule.prototype.updateControls = function(_data)
 	else
 	{
 		this.mDismissButton.addClass('display-none').removeClass('display-block');
+    }
+    
+    // update reserve button
+	if (!this.mDataSource.isTacticalMode())
+	{
+		this.mReserveButton.removeClass('display-none').addClass('display-block');
 	}
+	else
+	{
+		this.mReserveButton.addClass('display-none').removeClass('display-block');
+    }
+    
+    if (_data['inReserves'])
+    {
+        this.mReserveButton.changeButtonImage(Path.GFX + "ui/buttons/mood_heal.png")
+    }
+    else
+    {
+        this.mReserveButton.changeButtonImage(Path.GFX + "ui/icons/stat_screen_dmg_dealt.png")
+    }
+    this.mReserveButton.unbindTooltip();
+    this.mReserveButton.bindTooltip({ contentType: 'ui-element', entityId: _id, elementId: TooltipIdentifier.CharacterScreen.LeftPanelHeaderModule.Reserves });
 };
 
 
@@ -944,7 +978,7 @@ CharacterScreenLeftPanelHeaderModule.prototype.onBrotherUpdated = function (_dat
     
 	if (this.mDataSource.isSelectedBrother(_brother) && CharacterScreenIdentifier.Entity.Character.Key in _brother)
 	{
-		this.updateControls(_brother[CharacterScreenIdentifier.Entity.Character.Key]);
+		this.updateControls(_brother[CharacterScreenIdentifier.Entity.Id], _brother[CharacterScreenIdentifier.Entity.Character.Key]);
 	}
 };
 
@@ -955,6 +989,6 @@ CharacterScreenLeftPanelHeaderModule.prototype.onBrotherSelected = function (_da
     
 	if (_brother !== null && (CharacterScreenIdentifier.Entity.Id in _brother && CharacterScreenIdentifier.Entity.Character.Key in _brother))
 	{
-		this.updateControls(_brother[CharacterScreenIdentifier.Entity.Character.Key]);
+		this.updateControls(_brother[CharacterScreenIdentifier.Entity.Id], _brother[CharacterScreenIdentifier.Entity.Character.Key]);
 	}
 };

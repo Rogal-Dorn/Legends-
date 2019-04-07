@@ -36,7 +36,8 @@ this.item <- {
 		IsSold = false,
 		IsBought = false,
 		RuneVariant = 0,
-		RuneMultiplier = 0,
+		RuneBonus1 = 0,
+		RuneBonus2 = 0,
 		IsToBeSalvaged = false
 	},
 	
@@ -240,6 +241,11 @@ this.item <- {
 		this.m.IsToBeSalvaged = _r;
 		this.m.IsToBeSalvagedQueue = _idx;
 		return true;
+	}
+
+	function canBeSalvaged()
+	{
+		return (this.getItemType() & (this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MagicStaff)) != 0 || (this.getItemType() & this.Const.Items.ItemFilter.Armor) != 0
 	}
 
 	function getVariant()
@@ -650,7 +656,7 @@ this.item <- {
 
 		if (this.isToBeSalvaged())
 		{
-			this.setToBeSalvaged(false);
+			this.setToBeSalvaged(false, 0);
 		}
 	}
 
@@ -711,51 +717,40 @@ this.item <- {
 		}
 	}
 
-	function getRuneSigilTooltip(_rune, _mult)
+	function getRuneSigilTooltip()
 	{
-		switch (_rune)
+		switch (this.m.RuneVariant)
 		{
 			case 1:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Damage inflicted.";
+				return "This item has the power of the rune sigil of Power:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Damage inflicted.";
 				break;
 
 			case 2:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Melee and Ranged skill.";
+				return "This item has the power of the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee skill\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged skill.";
 				break;
 
 			case 3:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] of inflicted health damage recovers fatigue.";
+				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "%[/color] of inflicted health damage recovers fatigue.";
 				break;
 
 			case 11:
-				local bonus = this.Math.round(1.0 + (_mult / 10.0));
-				local bonusTwo = 8 + _mult;
-				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Vision, [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonusTwo + "%[/color] Experience gain.";
+				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] Vision\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Experience gain.";
 				break;
 
 			case 12:
-				local bonus = 8 + _mult;
-				local bonusTwo = 3 + _mult;
-				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Resolve, [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonusTwo + "[/color] Resolve at all morale checks.";
+				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Resolve\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "[/color] Resolve at all morale checks.";
 				break;
 
 			case 13:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Luck:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] chance to have any attacker require two successful attack rolls in order to hit.";
+				return "This item has the power of the rune sigil of Luck:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] chance to have any attacker require two successful attack rolls in order to hit.";
 				break;
 
 			case 21:
-				local bonus = this.Math.round(1.0 + (_mult / 10.0));
-				local bonusTwo = 8 + _mult;
-				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Fatigue recovery per turn, [color=" + this.Const.UI.Color.PositiveValue + "]-" + bonusTwo + "%[/color] Fatigue cost and effects multiplier.";
+				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] Fatigue recovery per turn\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] Fatigue cost and effects multiplier.";
 				break;
 
 			case 22:
-				local bonus = 3 + _mult;
-				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Hitpoints, [color=" + this.Const.UI.Color.PositiveValue + "]-" + bonus + "%[/color] Damage received.";
+				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Hitpoints\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] Damage received.";
 				break;
 
 			case 23:
@@ -763,18 +758,15 @@ this.item <- {
 				break;
 
 			case 31:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Melee and Ranged defense.";
+				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee defense\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged defense.";
 				break;
 
 			case 32:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Melee and Ranged defense.";
+				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee and Ranged defense.";
 				break;
 
 			case 33:
-				local bonus = 8 + _mult;
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] Melee and Ranged defense.";
+				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee and Ranged defense.";
 				break;
 
 			default:
@@ -890,14 +882,24 @@ this.item <- {
 		return this.m.RuneVariant;
 	}
 
-	function setRuneMultiplier(_mult)
+	function setRuneBonus1(_mult)
 	{
-		this.m.RuneMultiplier = _mult;
+		this.m.RuneBonus1 = _mult;
 	}
 
-	function getRuneMultiplier()
+	function getRuneBonus1()
 	{
-		return this.m.RuneMultiplier;
+		return this.m.RuneBonus1;
+	}
+
+	function setRuneBonus2(_mult)
+	{
+		this.m.RuneBonus2 = _mult;
+	}
+
+	function getRuneBonus2()
+	{
+		return this.m.RuneBonus2;
 	}
 
 	function isRuned()
@@ -962,11 +964,11 @@ this.item <- {
 		_out.writeF32(this.m.PriceMult);
 		_out.writeString(this.getInstanceID()); //Need old ID for saved formations	
 		_out.writeU8(this.m.RuneVariant);
-		_out.writeU8(this.m.RuneMultiplier);
 		_out.writeBool(this.m.IsToBeSalvaged);
 		_out.writeU16(this.m.IsToBeRepairedQueue);
 		_out.writeU16(this.m.IsToBeSalvagedQueue);
-
+		_out.writeU8(this.m.RuneBonus1);
+		_out.writeU8(this.m.RuneBonus2);
 	}
 
 	function onDeserialize( _in )
@@ -988,18 +990,10 @@ this.item <- {
 		{
 			this.m.OldID = _in.readString();
 		}
-		if (_in.getMetaData().getVersion() == 50)
-		{
-			local runed = _in.readBool;
-		}
+
 		if (_in.getMetaData().getVersion() >= 51)
 		{
 			this.m.RuneVariant = _in.readU8();
-
-			if (this.m.ID == "token.legend_vala_inscription")
-			{
-				this.updateRuneSigilToken();
-			}
 		}		
 	
 		if (_in.getMetaData().getVersion() >= 52)
@@ -1011,9 +1005,13 @@ this.item <- {
 		{
 			this.m.IsToBeRepairedQueue = _in.readU16();
 			this.m.IsToBeSalvagedQueue = _in.readU16();
-			this.m.RuneMultiplier = _in.readU8();
+			this.m.RuneBonus1 =  _in.readU8();
 		}
-
+		
+		if (_in.getMetaData().getVersion() >= 54)
+		{
+			this.m.RuneBonus2 =  _in.readU8();
+		}
 		this.updateVariant();
 	}
 

@@ -14,7 +14,8 @@ local TraderTree = [
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.Lookout,
-		gt.Const.Perks.PerkDefs.LegendBribe
+		gt.Const.Perks.PerkDefs.LegendBribe,
+		gt.Const.Perks.PerkDefs.LegendRoster1		
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,

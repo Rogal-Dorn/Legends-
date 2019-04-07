@@ -1821,6 +1821,15 @@ CharacterScreenDatasource.prototype.notifyBackendDismissCharacter = function (_p
     SQ.call(this.mSQHandle, 'onDismissCharacter', [ activeCharacterID, _payCompensation ]);
 };
 
+CharacterScreenDatasource.prototype.notifyBackendToggleReservesCharacter = function ()
+{
+    var self = this;
+	var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
+    SQ.call(this.mSQHandle, 'onToggleReserveCharacter', activeCharacterID, function (_data) {
+        self.updateBrother(_data);
+    });
+};
+
 CharacterScreenDatasource.prototype.notifyBackendFilterAllButtonClicked = function ()
 {
 	SQ.call(this.mSQHandle, 'onFilterAll');

@@ -106,7 +106,7 @@ this.camp_workshop_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 	
 	function onAssignAll()
 	{
-		this.getTent().assignAll();
+		this.getTent().assignAll(this.m.InventoryFilter);
 		this.loadStashList();
 	}
 

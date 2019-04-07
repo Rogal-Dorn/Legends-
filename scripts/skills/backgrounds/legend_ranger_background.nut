@@ -142,7 +142,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 	}	
 
 

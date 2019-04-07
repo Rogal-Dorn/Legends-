@@ -160,7 +160,7 @@ this.shield <- this.inherit("scripts/items/item", {
 				id = 20,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = this.getRuneSigilTooltip(this.m.RuneVariant, this.m.RuneMultiplier)
+				text = this.getRuneSigilTooltip()
 			});
 		}
 
@@ -382,6 +382,48 @@ this.shield <- this.inherit("scripts/items/item", {
 	function onCombatFinished()
 	{
 		this.updateAppearance();
+	}
+
+	function updateRuneSigil()
+	{
+		local iconLargeParts = split(this.m.IconLarge, "/");
+		local iconParts = split(this.m.Icon, "/");
+		local text = ""
+		for (local i = 0; i < iconLargeParts.len(); i = ++i)
+		{
+			if (i == iconLargeParts.len() - 1)
+			{
+				text = text + "runed_" + iconLargeParts[i]
+			} else {
+				text = text + iconLargeParts[i] + "/";
+			}
+		}
+		this.m.IconLarge = text;
+
+		text = ""
+		for (local i = 0; i < iconParts.len(); i = ++i)
+		{
+			if (i == iconParts.len() - 1)
+			{
+				local shieldP = split(iconParts[i], "_");
+				text = text + "runed";
+				for (local j=0; j < shieldP.len(); j = ++j)
+				{
+					if (shieldP[j] == "icon")
+					{
+						continue;
+					}
+					text = text + "_" + shieldP[j];
+				}
+			} else {
+				text = text + iconParts[i] + "/";
+			}
+		}
+		this.m.Icon = text;
+		if (this.m.Name.find("(Runed)") == null)
+		{
+			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		}
 	}
 
 	function onSerialize( _out )

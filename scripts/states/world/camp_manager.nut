@@ -144,6 +144,11 @@ this.camp_manager <- {
         }
     }
 
+    function assignRepairs()
+    {
+        this.getBuildingByID(this.Const.World.CampBuildings.Repair).assignEquipped()
+    }
+
     function update ( _worldState )
     {
         foreach(b in this.m.Tents)

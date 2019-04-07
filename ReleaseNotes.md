@@ -459,3 +459,13 @@ Beta v10 test 5
  *Fixes party sizes for starting heroes.
  *Fix Double Grip and Limb Lopper
  *Fixes reported errors selecting new perks
+
+
+Beta v10 Test 7
+*Assign all in the Repair and Salvage tent works with filters now
+*After a battle, all equipped gear that is damaged is automatically added to the repair queue.
+*Reserve mechanism removed from camp/tent. Reserve is now assigned from the character inventory/stash screen. Upper left near the dismiss bro button.
+*Fixes moving camp while paused.
+*Fixes item disappearing when runed twice
+*Fixes rune variant values not reloading correctly
+*Only Weapons and Armor can be salvaged now

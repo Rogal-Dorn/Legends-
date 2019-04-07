@@ -14,7 +14,8 @@ local NobleWeakTree = [
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.BagsAndBelts
+		gt.Const.Perks.PerkDefs.BagsAndBelts,
+		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,

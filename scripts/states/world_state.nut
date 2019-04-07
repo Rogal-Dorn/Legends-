@@ -953,9 +953,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 				if (this.getVecDistance(dest, this.m.Player.getPos()) <= this.Const.World.MovementSettings.PlayerDirectMoveRadius)
 				{
-					if (this.World.Camp.isCamping() && !this.isPaused())
+					if (this.World.Camp.isCamping())
 					{
+						if (this.isPaused())
+						{
+							return false;
+						}
 						this.onCamp();
+						return true;
 					}
 
 					this.m.Player.setPath(null);
@@ -963,9 +968,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 				}
 				else if (this.World.isValidTile(destTile.X, destTile.Y))
 				{
-					if (this.World.Camp.isCamping() && !this.isPaused())
+					if (this.World.Camp.isCamping())
 					{
+						if (this.isPaused())
+						{
+							return false;
+						}
 						this.onCamp();
+						return true;
 					}
 
 					local navSettings = this.World.getNavigator().createSettings();

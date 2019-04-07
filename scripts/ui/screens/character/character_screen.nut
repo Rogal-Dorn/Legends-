@@ -344,6 +344,18 @@ this.character_screen <- {
 		}
 	}
 
+
+	function onToggleReserveCharacter( _id )
+	{
+		local bro = this.Tactical.getEntityByID(_id);
+		if (bro == null)
+		{
+			return this.UIDataHelper.convertEntityToUIData(bro, null);
+		}
+		bro.setInReserves(!bro.isInReserves());
+		return this.UIDataHelper.convertEntityToUIData(bro, null);
+	}
+
 	function onDiceThrow()
 	{
 		this.Sound.play(this.Const.Sound.DiceThrow[this.Math.rand(0, this.Const.Sound.DiceThrow.len() - 1)], this.Const.Sound.Volume.Inventory);
@@ -484,18 +496,17 @@ this.character_screen <- {
 		}
 		else if (!item.isToBeRepaired() && !item.isToBeSalvaged())
 		{
-			this.logInfo("!repair && !salvage")
 			if (item.setToBeRepaired(true, index))
 			{
 				item.setToBeSalvaged(false, 0);
 			} 
-			else
+			else if (item.canBeSalvaged())
 			{
 				item.setToBeSalvaged(true, index);
 			}
 			
 		}
-		else if (item.isToBeRepaired())
+		else if (item.isToBeRepaired() && item.canBeSalvaged())
 		{
 			item.setToBeRepaired(false, 0);
 			item.setToBeSalvaged(true, index);

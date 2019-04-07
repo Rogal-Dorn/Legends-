@@ -128,6 +128,39 @@
 		this.Time.scheduleEvent(this.TimeUnit.Real, 800, this.onBattleEndedDelayed.bindenv(this), isVictory);
 	}
 
+	o.onBattleEndedDelayed = function ( _isVictory )
+	{
+		if (this.m.IsGameFinishable)
+		{
+			this.Tooltip.hide();
+			this.m.TacticalCombatResultScreen.show();
+			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+			this.m.MenuStack.push(function ()
+			{
+				if (this.m.TacticalCombatResultScreen != null)
+				{
+					if (_isVictory && this.Settings.getGameplaySettings().AutoLoot)
+					{
+						this.m.TacticalCombatResultScreen.onLootAllItemsButtonPressed();
+						this.World.Assets.consumeItems();
+						this.World.Assets.refillAmmo();
+						this.World.Assets.updateAchievements();
+						this.World.Assets.checkAmbitionItems();
+						this.World.State.updateTopbarAssets();
+					}
+
+					this.World.Camp.assignRepairs();
+
+					this.m.TacticalScreen.show();
+					this.m.TacticalCombatResultScreen.hide();
+				}
+			}, function ()
+			{
+				return false;
+			});
+		}
+	}
+
 	o.gatherLoot = function()
 	{
 		local playerKills = 0;

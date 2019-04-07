@@ -556,7 +556,16 @@ CharacterScreenBrothersListModule.prototype.updateBrotherSlot = function (_data)
     slot.assignListBrotherDailyMoneyCost(character[CharacterScreenIdentifier.Entity.Character.DailyMoneyCost]);
 
     if(this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
-        slot.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
+    {
+        if(character['inReserves'])
+        {
+            slot.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+        }
+        else
+        {
+            slot.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
+        }
+    }
 
     slot.removeListBrotherStatusEffects();
 

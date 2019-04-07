@@ -303,7 +303,8 @@ var TooltipIdentifier =
             ChangeNameAndTitle: 'character-screen.left-panel-header-module.ChangeNameAndTitle',
             Experience: 'character-screen.left-panel-header-module.Experience',
 			Level: 'character-screen.left-panel-header-module.Level',
-			Dismiss: 'character-screen.left-panel-header-module.Dismiss'
+			Dismiss: 'character-screen.left-panel-header-module.Dismiss',
+			Reserves: 'character-screen.left-panel-header-module.Reserves'
         },
 
 		PaperdollModule:

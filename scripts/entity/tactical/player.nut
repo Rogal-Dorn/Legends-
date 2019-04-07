@@ -39,7 +39,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		VeteranPerks = 0,
 		CampAssignment = "camp.rest",
 		CampHealing = 0,
-		LastCampTime = 0
+		LastCampTime = 0,
+		InReserves = false
 	},
 	function setName( _value )
 	{
@@ -809,7 +810,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function isInReserves()
 	{
-		return this.m.CampAssignment == this.Const.World.CampBuildings.Healer
+		return this.m.InReserves //this.m.CampAssignment == this.Const.World.CampBuildings.Healer
+	}
+
+	function setInReserves(_v)
+	{
+		this.m.InReserves = _v;
 	}
 
 	function create()
@@ -2670,6 +2676,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeBool(this.m.IsCommander);
 		_out.writeString(this.m.CampAssignment);
 		_out.writeF32(this.m.LastCampTime);
+		_out.writeBool(this.m.InReserves);
 
 	}
 
@@ -2772,6 +2779,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.LastCampTime = _in.readF32();
 		}
 
+		if (_in.getMetaData().getVersion() >= 54)
+		{
+			this.m.InReserves = _in.readBool();
+		}
 	}
 
 });
