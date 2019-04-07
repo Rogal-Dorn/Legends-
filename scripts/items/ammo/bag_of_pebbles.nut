@@ -10,8 +10,8 @@ this.bag_of_pebbles <- this.inherit("scripts/items/ammo/ammo", {
 		this.m.SlotType = this.Const.ItemSlot.Ammo;
 		this.m.ItemType = this.Const.Items.ItemType.Ammo;
 		this.m.AmmoType = this.Const.Items.AmmoType.Pebbles;
-		this.m.ShowOnCharacter = true;
-		this.m.ShowQuiver = true;
+		this.m.ShowOnCharacter = false;
+		this.m.ShowQuiver = false;
 		this.m.Sprite = "bust_quiver_01";
 		this.m.Value = 5;
 		this.m.Ammo = 10;
