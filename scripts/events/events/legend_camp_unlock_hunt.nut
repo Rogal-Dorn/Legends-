@@ -7,7 +7,7 @@ this.legend_camp_unlock_hunt <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 1.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_52.png[/img]You notice food stocks are running low, perhaps it is time to camp and go hunting?",
+			Text = "[img]gfx/ui/events/legend_camp_hunt.png[/img]You notice food stocks are running low, perhaps it is time to camp and go hunting?",
 			Image = "",
 			List = [],
 			Characters = [],
