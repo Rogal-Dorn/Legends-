@@ -86,8 +86,8 @@ this.large_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.IsMilitary = false;
 		this.m.Size = 3;
 		this.m.HousesType = 3;
-		this.m.HousesMin = 3;
-		this.m.HousesMax = 5;
+		this.m.HousesMin = 4;
+		this.m.HousesMax = 6;
 		this.m.AttachedLocationsMax = 6 + 2;
 		this.m.ProduceString = "fish";
 	}
