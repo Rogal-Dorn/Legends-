@@ -164,7 +164,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 			{
 				R = 80,
 				P = 1.0,
-				S = "tents/legend_tent_fletcher"
+				S = "tents/tent_fletcher"
 			},
 			{
 				R = 0,
