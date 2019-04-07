@@ -1565,7 +1565,39 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendTeleport,
 		Icon = "ui/perks/teleport_perk.png",
 		IconDisabled = "ui/perks/teleport_perk_bw.png"
-	}			
+	},
+	{
+		ID = "perk.legend_specialist_shield_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_shield_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistShieldSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShieldSkill,
+		Icon = "ui/perks/perk_05.png",
+		IconDisabled = "ui/perks/perk_05_sw.png"
+	},
+	{
+		ID = "perk.legend_specialist_shield_push",
+		Script = "scripts/skills/perks/perk_legend_specialist_shield_push",
+		Name = this.Const.Strings.PerkName.LegendSpecialistShieldPush,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShieldPush,
+		Icon = "ui/perks/perk_22.png",
+		IconDisabled = "ui/perks/perk_22_sw.png"
+	},
+	{
+		ID = "perk.shield_bash",
+		Script = "scripts/skills/perks/perk_shield_bash",
+		Name = this.Const.Strings.PerkName.ShieldBash,
+		Tooltip = this.Const.Strings.PerkDescription.ShieldBash,
+		Icon = "ui/perks/perk_22.png",
+		IconDisabled = "ui/perks/perk_22_sw.png"
+	},
+	{
+		ID = "perk.legend_mastery_nets",
+		Script = "scripts/skills/perks/perk_legend_mastery_nets",
+		Name = this.Const.Strings.PerkName.LegendMasteryNets,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryNets,
+		Icon = "ui/perks/net_perk.png",
+		IconDisabled = "ui/perks/net_perk_bw.png"
+	}
 ];
 
 
@@ -1764,5 +1796,9 @@ gt.Const.Perks.PerkDefs <- {
 	LegendScry = 191,
 	LegendPiercingShot = 192
 	LegendLevitate = 193,
-	LegendTeleport = 194
+	LegendTeleport = 194,
+	LegendSpecialistShieldSkill = 195,
+	LegendSpecialistShieldPush = 196,
+	ShieldBash = 197,
+	LegendMasteryNets = 198
 };

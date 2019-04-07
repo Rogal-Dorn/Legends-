@@ -6,11 +6,11 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.shepherd";
 		this.m.Name = "Shepherd";
 		this.m.Icon = "ui/backgrounds/background_44.png";
-		this.m.BackgroundDescription = "Shepherds are used to physical labor.";
+		this.m.BackgroundDescription = "Shepherds are used to physical labor, and using a sling to scare away foxes";
 		this.m.GoodEnding = "It was unusual that a shepherd such as %name% ever found his way into a company of sellswords, but he did prove himself an able warrior. With injuries mounting, he eventually retired, returning to a meadow, staff in hand, and herding sheep until his final, peaceful days.";
 		this.m.BadEnding = "You\'d think a shepherd would have no place in the company of sellsword and, eventually, %name% agreed. He left the %companyname% not long after you and last you heard he was back to tending his sheep. While most men left the company in poor spirits, %name%\'s injuries did not bring down his docile lifestyle of staring at fluffy white critters about as dangerous as a bad dream.";
-		this.m.HiringCost = 60;
-		this.m.DailyCost = 6;
+		this.m.HiringCost = 80;
+		this.m.DailyCost = 8;
 		this.m.Excluded = [
 			"trait.hate_undead",
 			"trait.impatient",
@@ -76,7 +76,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			RangedSkill = [
 				5,
-				5
+				13
 			],
 			MeleeDefense = [
 				0,
@@ -121,6 +121,20 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			items.equip(this.new("scripts/items/helmets/straw_hat"));
 		}
+
+		
+		r = this.Math.rand(0, 4);
+
+		if (r <= 3)
+		{
+			items.equip(this.new("scripts/items/ammo/bag_of_pebbles"));
+			items.equip(this.new("scripts/items/weapons/legend_sling"));
+		}
+		else if (r == 4)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
+		}
+
 	}
 
 });

@@ -1200,7 +1200,10 @@ gt.Const.Strings.PerkName <- {
 	LegendScry = "Scry",
 	LegendPiercingShot = "Piercing Shot",
 	LegendLevitate = "Levitate",
-	LegendTeleport = "Teleport"
+	LegendTeleport = "Teleport",
+	LegendSpecialistShieldSkill = "Born with a board",
+	LegendSpecialistShieldPush = "Push it",
+	LegendMasteryNets = "Net Mastery"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1405,7 +1408,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a sickle. ",
 	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10-30[/color] damage while using a sling. Does not apply to sling staves",
 	LegendSpecialistSlingSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling.",
-	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their hitpoints divided by your hitpoints",
+	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints",
 	LegendSecondWind = "When dropping below 30hp, regain half of your fatigue",
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]",
 	LegendFieldTriage = "Spend medicine to heal a unit on the battlefield",
@@ -1420,7 +1423,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
 	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line",
 	LegendLevitate = "Levitate above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
-	LegendTeleport = "Teleport"
+	LegendTeleport = "Step through the world, disapearing from one place and reappearing in another place immediately.",
+	LegendSpecialistShieldSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Melee Defense while using a shield",
+	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points",
+	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

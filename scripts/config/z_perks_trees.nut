@@ -138,6 +138,18 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.legend_noble_ranged":
 			return gt.Const.Perks.TreeSlingLookupMap;
 			break;
+		case "background.shepherd":
+			return gt.Const.Perks.TreeSlingLookupMap;
+			break;
+		case "background.legend_shieldmaiden":
+			return gt.Const.Perks.TreeShieldLookupMap;
+			break;
+		case "background.fisherman":
+			return gt.Const.Perks.TreeNetsLookupMap;
+			break;
+		case "background.beast_hunter":
+			return gt.Const.Perks.TreeNetsLookupMap;
+			break;
 		default:
 			return  gt.Const.Perks.LookupMap;
 	}
@@ -264,6 +276,18 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			break;
 		case "background.legend_noble_ranged":
 			return gt.Const.Perks.PerksTreeSling;
+			break;
+		case "background.shepard":
+			return gt.Const.Perks.PerksTreeSling;
+			break;
+		case "background.legend_shieldmaiden":
+			return gt.Const.Perks.PerksTreeShield;
+			break;
+		case "background.fisherman":
+			return gt.Const.Perks.PerksTreeNets;
+			break;
+		case "background.beast_hunter":
+			return gt.Const.Perks.PerksTreeNets;
 			break;
 		default:
 			return  gt.Const.Perks.Perks;
