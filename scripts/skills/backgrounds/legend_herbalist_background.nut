@@ -137,6 +137,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/armor/legend_herbalist_robe"));
+		items.equip(this.new("scripts/items/weapons/legend_sickle"));
 	}
 
 });
