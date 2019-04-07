@@ -7,7 +7,7 @@ this.legend_camp_unlock_gather <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 4.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_52.png[/img]You are out of medical supplies, perhaps it is time to camp and gather medicinal herbs?",
+			Text = "[img]gfx/ui/events/legend_camp_gather.png[/img]You are out of medical supplies, perhaps it is time to camp and gather medicinal herbs?",
 			Image = "",
 			List = [],
 			Characters = [],

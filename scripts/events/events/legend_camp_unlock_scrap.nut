@@ -7,7 +7,7 @@ this.legend_camp_unlock_scrap <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 5.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_52.png[/img]You are out of armor parts, perhaps it is time to camp and scrap some gear?",
+			Text = "[img]gfx/ui/events/llegend_camp_scrap.png[/img]You are out of armor parts, perhaps it is time to camp and scrap some gear?",
 			Image = "",
 			List = [],
 			Characters = [],

@@ -9,7 +9,7 @@ this.legend_camp_unlock_heal <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 1.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_52.png[/img]You notice %hurtbrother% wincing in pain from the fight, the mercenary says its fine, but you can see they should be lying down to heal.",
+			Text = "[img]gfx/ui/events/legend_camp_heal.png[/img]You notice %hurtbrother% wincing in pain from the fight, the mercenary says its fine, but you can see they should be lying down to heal.",
 			Image = "",
 			List = [],
 			Characters = [],

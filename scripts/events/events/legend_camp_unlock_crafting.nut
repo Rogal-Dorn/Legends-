@@ -9,7 +9,7 @@ this.legend_camp_unlock_crafting <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 21.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_85.png[/img]{As you approach %townname% talk turns to the taxidermist. A mercenary murmurs %SPEECH_ON%Taxidermists are strange ones, talking to them puts me on edge. Do we have to go there?%SPEECH_OFF%  The others point out the goods provided make the transactions worthwhile, but the mercenary continues %SPEECH_ON%Its just stitching dead things right? I bet i could do that, my mother showed me how to darn my socks, and stuffing dead things aint so different. %SPEECH_OFF%  ",
+			Text = "[img]gfx/ui/events/legend_camp_crafting.png[/img]{As you approach %townname% talk turns to the taxidermist. A mercenary murmurs %SPEECH_ON%Taxidermists are strange ones, talking to them puts me on edge. Do we have to go there?%SPEECH_OFF%  The others point out the goods provided make the transactions worthwhile, but the mercenary continues %SPEECH_ON%Its just stitching dead things right? I bet i could do that, my mother showed me how to darn my socks, and stuffing dead things aint so different. %SPEECH_OFF%  ",
 			Image = "",
 			List = [],
 			Characters = [],
