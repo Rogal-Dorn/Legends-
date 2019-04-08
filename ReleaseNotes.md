@@ -486,3 +486,6 @@ https://drive.google.com/open?id=1UGt-_mBDX2-YVzM2mJf8yw8p0D_7lWOj
 *Only Weapons and Armor can be salvaged now
 *Fix Enchant tent rune blueprint tooltips
 *Adds Tent upgrade system - Purchase tents in marketplaces to upgrade camp tent visuals and functionality (Still WIP)
+
+
+adds 3 new female hairstyles, fixes the nun's habit 
