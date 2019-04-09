@@ -123,7 +123,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onCombatStarted()
+	function SummonWarden()
 	{
 		if (this.m.WardenSummonSpent == false)
 		{
@@ -217,8 +217,15 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onCombatStarted()
+	{
+		this.SummonWarden();
+	}
+
+
 	function onTurnStart()
 	{
+		this.SummonWarden();
 	}
 
 
