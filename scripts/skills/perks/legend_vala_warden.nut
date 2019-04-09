@@ -41,7 +41,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 			local WardenRangedSkill = this.m.WardenEntity.m.CurrentProperties.RangedSkill;
 			local WardenRangedDefense = this.m.WardenEntity.m.CurrentProperties.RangedDefense;
 			local WardenInitiative = this.m.WardenEntity.m.CurrentProperties.Initiative;
-			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getCurrentProperties().Bravery / 4.00));
+			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getBravery() / 4.00));
 
 			if (SpiritualBondReduction >= 50)
 			{
@@ -135,7 +135,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 				entity.setName(this.getContainer().getActor().m.Name + "\'s Warden");
 				entity.setFaction(this.Const.Faction.PlayerAnimals);
 				entity.setVala(this);
-				entity.setWardenStats(this.getContainer().getActor().getCurrentProperties().Bravery);
+				entity.setWardenStats(this.getContainer().getActor().getBravery());
 				this.m.WardenSummonSpent = true;
 				this.m.WardenEntity = entity;
 

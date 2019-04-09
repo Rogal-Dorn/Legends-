@@ -26,7 +26,7 @@ this.legend_vala_threads <- this.inherit("scripts/skills/skill", {
 			return true;
 		}
 
-		local expertise = this.getContainer().getActor().getCurrentProperties().Bravery;
+		local expertise = this.getContainer().getActor().getBravery();
 
 		if (expertise < 1)
 		{

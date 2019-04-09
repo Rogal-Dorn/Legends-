@@ -175,7 +175,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			local expertise = actor.getCurrentProperties().Bravery / this.m.Difficulty;
+			local expertise = actor.getBravery() / this.m.Difficulty;
 			expertise += this.m.Failures * 20.0 / this.m.Difficulty;
 			foreach (tar in targets)
 			{
@@ -223,7 +223,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 						if (!t.getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect") && t.getFlags().get("IsSpiritVictim"))
 						{
 							local effect = this.new("scripts/skills/effects/legend_vala_trance_malevolent_effect");
-							effect.setPower(this.getContainer().getActor().getCurrentProperties().Bravery);
+							effect.setPower(this.getContainer().getActor().getBravery());
 							t.getSkills().add(effect);
 							t.getFlags().set("IsSpiritVictim", false);
 						}
