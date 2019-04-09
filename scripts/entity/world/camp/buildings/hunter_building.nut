@@ -46,7 +46,11 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		];
     }
 
-	
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampHunting")
+	}	
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.hunter_tent");
