@@ -19,6 +19,7 @@ local ValaTree = [
 		gt.Const.Perks.PerkDefs.BackStabber
 	],
 	[
+		gt.Const.Perks.PerkDefs.LegendValaChantFury,
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet
 	],
