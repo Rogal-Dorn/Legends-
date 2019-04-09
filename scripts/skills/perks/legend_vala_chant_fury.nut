@@ -185,7 +185,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 				{
 					if (actor.getTile().getDistanceTo(t.getTile()) <= 3 && actor.getID() != t.getID())
 					{
-						this.spawnIcon("status_effect_65", t.getTile());
+						this.spawnIcon("perk_36", t.getTile());
 					}
 
 					t.getSkills().update();
@@ -224,7 +224,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 
 						if (actor.getTile().getDistanceTo(t.getTile()) <= 3)
 						{
-							this.spawnIcon("status_effect_65", t.getTile());
+							this.spawnIcon("perk_36", t.getTile());
 						}
 					}
 				}
