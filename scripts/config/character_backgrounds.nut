@@ -60,14 +60,6 @@ gt.Const.CharacterBackgrounds <- [
 	"female_tailor_background",
 	"shepherd_background",
 	"houndmaster_background"
-	"legend_crusader_background"
-	"legend_hunter_background"
-	"legend_noble_background"
-	"legend_necro_background"
-	"legend_witch_background"
-	"legend_healer_background"
-	"legend_berserker_background"
-	"vazl_inventor_background"
 ];
 gt.Const.CharacterLaborerBackgrounds <- [
 	"farmhand_background",
