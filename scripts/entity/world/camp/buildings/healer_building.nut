@@ -67,6 +67,11 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		]
     }
 
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampHealing")
+	}	
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.healer_tent");

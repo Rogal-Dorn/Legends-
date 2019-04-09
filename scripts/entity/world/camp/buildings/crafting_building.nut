@@ -95,6 +95,11 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampCrafting")
+	}	
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.craft_tent");

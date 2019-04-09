@@ -1,13 +1,14 @@
 this.legend_camp_unlock_scrap <- this.inherit("scripts/events/event", {
-	m = {},
+	m = {
+		TownName = ""
+	},
 	function create()
 	{
 		this.m.ID = "event.legend_camp_unlock_scrap";
-		this.m.Title = "Along the way...";
-		this.m.Cooldown = 5.0 * this.World.getTime().SecondsPerDay;
+		this.m.Title = "At %townname%";
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/llegend_camp_scrap.png[/img]You are out of armor parts, perhaps it is time to camp and scrap some gear?",
+			Text = "[img]gfx/ui/events/legend_camp_scrap.png[/img]{As you leave %townname%, %randombrother% says %SPEECH_ON%I was watching how they were recycling gear into tools in that last town. I think with a little work we could do the same with our gear.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -16,7 +17,7 @@ this.legend_camp_unlock_scrap <- this.inherit("scripts/events/event", {
 					Text = "Scrapping unlocked in camp",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampScrap", true);
+						this.World.Tags.set("HasLegendCampScraping", true);
 					}
 
 				}
@@ -28,14 +29,14 @@ this.legend_camp_unlock_scrap <- this.inherit("scripts/events/event", {
 		});
 	}
 
+	function setTownName(_v)
+	{
+		this.m.TownName = _v;
+	}
+
 	function onUpdateScore()
 	{
-		if (this.World.Assets.getArmorParts() < 1 && !this.World.Tags.get("HasLegendCampScrap"))
-		{
-			return;
-		}
-
-		this.m.Score = 1;
+		return
 	}
 
 	function onPrepare()
@@ -44,10 +45,10 @@ this.legend_camp_unlock_scrap <- this.inherit("scripts/events/event", {
 
 	function onPrepareVariables( _vars )
 	{
-	}
-
-	function onClear()
-	{
+		_vars.push([
+			"townname",
+			this.m.TownName
+		]);
 	}
 
 });

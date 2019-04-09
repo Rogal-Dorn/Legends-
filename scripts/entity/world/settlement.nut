@@ -1876,11 +1876,43 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function onLeave()
 	{
 		local eventID = "";
-		if (!this.World.Tags.get("HasLegendCampTraining" && this.hasBuilding("building.training_hall")))
+		if (!this.World.Tags.get("HasLegendCampTraining") && this.hasBuilding("building.training_hall"))
 		{
 			eventID = "event.legend_camp_unlock_training";
 		}
-
+		else if (!this.World.Tags.get("HasLegendCampBarber") && this.hasBuilding("building.barber"))
+		{
+			eventID = "event.legend_camp_unlock_barber";
+		}
+		else if (!this.World.Tags.get("HasLegendCampCrafting") && this.hasBuilding("building.taxidermist"))
+		{
+			eventID = "event.legend_camp_unlock_crafting";
+		}
+		else if (!this.World.Tags.get("HasLegendCampFletching") && (this.hasAttachedLocation("attached_location.fletchers_hut") || this.hasBuilding("building.weaponsmith")))
+		{
+			eventID = "event.legend_camp_unlock_fletching";
+		}
+		else if (!this.World.Tags.get("HasLegendCampGathering") && (this.hasAttachedLocation("attached_location.gatherers_hut") || this.hasAttachedLocation("attached_location.herbalists_grove")))
+		{
+			eventID = "event.legend_camp_unlock_gather";
+		}		
+		else if (!this.World.Tags.get("HasLegendCampHunting") && (this.hasAttachedLocation("attached_location.trapper") || this.hasAttachedLocation("attached_location.hunters_cabin")))
+		{
+			eventID = "event.legend_camp_unlock_hunt";
+		}
+		else if (!this.World.Tags.get("HasLegendCampHealing") && this.hasBuilding("building.temple"))
+		{
+			eventID = "event.legend_camp_unlock_heal";
+		}
+		else if (!this.World.Tags.get("HasLegendCampScraping") &&  (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith")))
+		{
+			eventID = "event.legend_camp_unlock_scrap";
+		}
+		else if (!this.World.Tags.get("HasLegendCampScouting") && (this.hasAttachedLocation("attached_location.wooden_watchtower") || this.hasAttachedLocation("attached_location.fortified_outpost")))
+		{
+			eventID = "event.legend_camp_unlock_scouting";
+		}
+												
 		if (eventID == "")
 		{
 			return;

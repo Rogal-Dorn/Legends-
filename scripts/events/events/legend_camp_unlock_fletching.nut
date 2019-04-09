@@ -1,5 +1,7 @@
 this.legend_camp_unlock_fletching <- this.inherit("scripts/events/event", {
-	m = {},
+	m = {
+		TownName = ""
+	},
 	function create()
 	{
 		this.m.ID = "event.legend_camp_unlock_fletching";
@@ -16,7 +18,7 @@ this.legend_camp_unlock_fletching <- this.inherit("scripts/events/event", {
 					Text = "Fletching unlocked in camp",
 					function getResult( _event )
 					{
-						this.World.Tags.set("HasLegendCampFletch", true);
+						this.World.Tags.set("HasLegendCampFletching", true);
 					}
 
 				}
@@ -28,14 +30,14 @@ this.legend_camp_unlock_fletching <- this.inherit("scripts/events/event", {
 		});
 	}
 
+	function setTownName(_v)
+	{
+		this.m.TownName = _v;
+	}
+
 	function onUpdateScore()
 	{
-		if (this.World.Assets.getFood() < 10 && !this.World.Tags.get("HasLegendCampFletch"))
-		{
-			return;
-		}
-
-		this.m.Score = 1;
+		return
 	}
 
 	function onPrepare()
@@ -44,10 +46,10 @@ this.legend_camp_unlock_fletching <- this.inherit("scripts/events/event", {
 
 	function onPrepareVariables( _vars )
 	{
-	}
-
-	function onClear()
-	{
+		_vars.push([
+			"townname",
+			this.m.TownName
+		]);
 	}
 
 });

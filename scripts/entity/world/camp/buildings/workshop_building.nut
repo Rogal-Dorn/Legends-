@@ -89,6 +89,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampScraping")
+	}	
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.scrap_tent")
