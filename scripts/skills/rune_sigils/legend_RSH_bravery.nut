@@ -16,8 +16,8 @@ this.legend_RSH_bravery <- this.inherit("scripts/skills/skill", {
 	function onUpdate (_properties)
 	{
 		_properties.Bravery *= (1.0 + ((this.getItem().getRuneBonus1() * 1.0) / 100.0));
-		_properties.MoraleCheckBravery[0] += 3.0 + this.getItem().getRuneBonus2();
-		_properties.MoraleCheckBravery[1] += 3.0 + this.getItem().getRuneBonus2();
-		_properties.MoraleCheckBravery[2] += 3.0 + this.getItem().getRuneBonus2();
+		_properties.MoraleCheckBravery[0] += this.getItem().getRuneBonus2();
+		_properties.MoraleCheckBravery[1] += this.getItem().getRuneBonus2();
+		_properties.MoraleCheckBravery[2] += this.getItem().getRuneBonus2();
 	}
 });
