@@ -35,9 +35,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 3)
 		{
 			this.m.Name = "Fury";
-			this.m.Icon = "skills/status_effect_65.png";
-			this.m.IconMini = "status_effect_65_mini";
-			this.m.Overlay = "status_effect_65";
+			this.m.Icon = "ui/perks/perk_36.png";
+			this.m.IconMini = "perk_36_mini";
+			this.m.Overlay = "perk_36";
 			return false;
 		}
 		else
@@ -167,9 +167,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 3)
 		{
 			this.m.Name = "Fury";
-			this.m.Icon = "skills/status_effect_65.png";
-			this.m.IconMini = "status_effect_65_mini";
-			this.m.Overlay = "status_effect_65";
+			this.m.Icon = "ui/perks/perk_36.png";
+			this.m.IconMini = "perk_36_mini";
+			this.m.Overlay = "perk_36";
 		}
 		else
 		{
@@ -199,7 +199,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 3)
 		{
-			local bonus = this.m.Vala.getBravery / 800.0;
+			local bonus = this.m.Vala.getBravery() / 800.0;
 			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 
 			if (distance == 2)
