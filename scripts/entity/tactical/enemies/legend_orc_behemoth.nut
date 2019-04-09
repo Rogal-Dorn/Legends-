@@ -222,21 +222,29 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.m.Items.getAppearance().Body = "legend_orc_behemoth_body_01";
 		this.addSprite("socket").setBrush("bust_base_orcs");
+
 		local body = this.addSprite("body");
 		body.setBrush("legend_orc_behemoth_body_01");
 		body.varyColor(0.09, 0.09, 0.09);
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
 		injury_body.setBrush("legend_orc_behemoth_body_01_bloodied");
+
 		this.addSprite("armor");
+
 		local head = this.addSprite("head");
 		head.setBrush("legend_orc_behemoth_head_01");
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
+
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
 		injury.setBrush("bust_orc_01_head_bloodied");
+
 		this.addSprite("helmet");
+		head.setBrush("legend_orc_behemoth_helmet_01");
+		head.Saturation = body.Saturation;
+		head.Color = body.Color;
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("legend_orc_behemoth_01_body_bloodied");
 		body_blood.Visible = false;
@@ -262,9 +270,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local r;
 
-		if (this.Math.rand(1, 100) <= 10)
-
-			r = this.Math.rand(1, 3);
+			r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -278,14 +284,14 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_man_mangler"));
 			}
-					else if (r == 2)
+					else if (r == 4)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullbreaker"));
 			}
 		
 
 			this.m.Items.equip(this.new("scripts/items/armor/greenskins/legend_orc_behemoth_armor"));
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/legend_orc_behemoth_helmt"));
+			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/legend_orc_behemoth_helmet"));
 	
 	}
 
