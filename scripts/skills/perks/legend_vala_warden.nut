@@ -106,7 +106,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 			{
 				local tile = this.Tactical.getTileSquare(x, y);
 
-				if (tile.IsEmpty && tile.getDistanceTo(ActorTile) > 0 && tile.getDistanceTo(ActorTile) < 3 && (tile.Coords.X - ActorTile.SquareCoords.X) < 0)
+				if (tile.IsEmpty && tile.getDistanceTo(ActorTile) > 0 && tile.getDistanceTo(ActorTile) < 4 && (tile.Coords.X - ActorTile.SquareCoords.X) < 1)
 				{
 					EmptyTiles.push(tile);
 				}
