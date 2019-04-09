@@ -174,7 +174,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting") && this.m.ChantIsActive)
 		{
-			this.Sound.play("sounds/combat/legend_vala_chant.wav");
+			this.Sound.play("sounds/combat/legend_vala_fury.wav");
 		}
 
 		foreach (tar in targets)
@@ -230,7 +230,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 				}
 			}
 
-			this.Sound.play("sounds/combat/legend_vala_chant.wav");
+			this.Sound.play("sounds/combat/legend_vala_fury.wav");
 			this.m.ChantIsActive = true;
 		}
 	}
