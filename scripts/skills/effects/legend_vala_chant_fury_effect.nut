@@ -76,7 +76,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 3)
 		{
@@ -212,12 +212,6 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			}
 
 			_properties.DamageTotalMult *= 1.0 + bonus;
-
-			if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
-			{
-				_properties.DamageTotalMult = 0.5;
-				_properties.FatigueEffectMult = 0.5;
-			}
 		}
 
 		this.ChantUpdate();
