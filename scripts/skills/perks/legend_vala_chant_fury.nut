@@ -6,7 +6,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "perk.legend_vala_chant_fury";
 		this.m.Name = "Fury";
-		this.m.Description = "Fury.";
+		this.m.Description = "A chant that really gets the blood boiling, making your allies excited about going into battle.";
 		this.m.Icon = "ui/perks/legend_vala_chant_fury_active.png";
 		this.m.IconDisabled = "ui/perks/legend_vala_chant_fury_active_sw.png";
 		this.m.Type = this.Const.SkillType.Active | this.Const.SkillType.Perk;
@@ -81,7 +81,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Until the start of her next turn, the Vala and any allies within 3 tiles of her receive a bonus to their damage output and a chance to retaliate against melee attackers. Being closer to the Vala increases bonus amount and retaliation chance."
+				text = "Until the start of her next turn the Vala, and any allies within 3 tiles of her, receives a bonus to their damage output and a chance to retaliate against melee attackers that hit them. Being closer to the Vala increases bonus amount and retaliation chance."
 			},
 		];
 
