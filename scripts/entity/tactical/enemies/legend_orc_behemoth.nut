@@ -148,7 +148,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 					layers.push(appearance.HelmetCorpse);
 				}
 
-				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-50, 30), 180.0, "bust_orc_03_head_dead_bloodpool");
+				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-50, 30), 180.0, "legend_orc_behemoth_head_01_dead_bloodpool");
 				local idx = 0;
 
 				if (!appearance.HideCorpseHead)
@@ -221,35 +221,29 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.m.Items.getAppearance().Body = "legend_orc_behemoth_body_01";
-		this.addSprite("socket").setBrush("bust_base_orcs");
 
+
+		this.addSprite("socket").setBrush("bust_base_orcs");
 		local body = this.addSprite("body");
 		body.setBrush("legend_orc_behemoth_body_01");
-		body.varyColor(0.09, 0.09, 0.09);
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
 		injury_body.setBrush("legend_orc_behemoth_body_01_bloodied");
-
 		this.addSprite("armor");
-
 		local head = this.addSprite("head");
 		head.setBrush("legend_orc_behemoth_head_01");
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
-
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
-		injury.setBrush("bust_orc_01_head_bloodied");
+		injury.setBrush("legend_orc_behemoth_head_01_bloodied");
 
 		this.addSprite("helmet");
-		head.setBrush("legend_orc_behemoth_helmet_01");
-		head.Saturation = body.Saturation;
-		head.Color = body.Color;
 		local body_blood = this.addSprite("body_blood");
-		body_blood.setBrush("legend_orc_behemoth_01_body_bloodied");
+		body_blood.setBrush("bust_orc_03_body_bloodied");
 		body_blood.Visible = false;
 		this.addDefaultStatusSprites();
-		this.getSprite("status_rooted").Scale = 0.6;
+		this.getSprite("status_rooted").Scale = 0.8;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 5));
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
