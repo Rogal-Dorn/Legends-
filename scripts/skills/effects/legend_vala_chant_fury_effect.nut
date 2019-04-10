@@ -55,6 +55,21 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.isHidden())
 		{
+			local damage = this.m.Vala.getBravery() / 10.0;
+			local payback = 10.0 + (this.m.Vala.getBravery() / 2.0) + (this.getContainer().getActor().getInitiative() / 4.0);
+			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
+
+			if (distance == 2)
+			{
+				damage *= 0.67;
+				payback *= 0.67;
+			}
+			else if (distance == 3)
+			{
+				damage *= 0.33;
+				payback *= 0.33;
+			}
+
 			return [
 				{
 					id = 1,
@@ -65,7 +80,13 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "Raaawr!"
+					text = damage + "% increased damage."
+				},
+				{
+					id = 11,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = payback + "% chance to retaliate against a melee attacker for 50% damage."
 				}
 			];
 		}
@@ -82,8 +103,8 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
 			{
-				_properties.DamageTotalMult = 0.5;
-				_properties.FatigueEffectMult = 0.5;
+				_properties.DamageTotalMult *= 0.5;
+				_properties.FatigueEffectMult *= 0.5;
 			}
 		}
 	}
