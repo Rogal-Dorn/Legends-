@@ -81,7 +81,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Rawr!"
+				text = "Until the start of her next turn, the Vala and any allies within 3 tiles of her receive a bonus to their damage output and a chance to retaliate against melee attackers. Being closer to the Vala increases bonus amount and retaliation chance."
 			},
 		];
 
