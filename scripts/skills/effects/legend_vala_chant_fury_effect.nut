@@ -70,9 +70,6 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 				payback *= 0.33;
 			}
 
-			damage = this.Math.round(damage);
-			payback = this.Math.round(payback);
-
 			if (payback > 95)
 			{
 				payback = 95;
@@ -92,13 +89,13 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = damage + "% increased damage."
+					text = this.Math.round(damage) + "% increased damage."
 				},
 				{
 					id = 11,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = payback + "% chance to retaliate against a melee attacker for 50% damage."
+					text = this.Math.round(payback) + "% chance to retaliate against a melee attacker for 50% damage."
 				}
 			];
 		}
