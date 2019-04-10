@@ -171,6 +171,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		this.m.ItemsCrafted = [];
 		this.m.PointsNeeded = 0;
 		this.m.PointsCrafted = 0;
+		
 		local mod = this.getModifiers()
 		this.m.NumBros = mod.Assigned;
         foreach (i, r in this.m.Queue)
@@ -264,6 +265,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 	{
         return this.Stash.hasItem("tent.enchant_tent");
 	}
+
 	function getLevel()
 	{
 		local pro = "dude";

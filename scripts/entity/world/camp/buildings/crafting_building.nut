@@ -97,7 +97,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function isHidden()
 	{
-		return !this.World.Tags.get("HasLegendCampCrafting")
+		return !this.World.Tags.get("HasLegendCampCrafting") || !this.Const.DLC.Unhold
 	}	
 
 	function getUpgraded()

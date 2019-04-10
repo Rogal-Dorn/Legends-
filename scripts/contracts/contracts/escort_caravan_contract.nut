@@ -295,6 +295,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				}
 
 				this.World.State.setEscortedEntity(this.Contract.m.Caravan);
+				this.World.Camp.onEscort();
 			}
 
 			function update()
@@ -317,6 +318,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.State.getPlayer().setVisible(false);
 				this.World.Assets.setUseProvisions(false);
 				this.World.getCamera().moveTo(this.World.State.getPlayer());
+				this.World.Camp.update(null);
 
 				if (!this.World.State.isPaused())
 				{
@@ -463,6 +465,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.State.setEscortedEntity(null);
 				this.World.State.getPlayer().setVisible(true);
 				this.World.Assets.setUseProvisions(true);
+				this.World.Camp.onEscort();
 
 				if (!this.World.State.isPaused())
 				{

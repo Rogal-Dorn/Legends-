@@ -599,6 +599,7 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
 
+
 		case this.Const.LegendMod.StartTypes.Beggar:
 			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
