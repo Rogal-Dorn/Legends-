@@ -70,6 +70,18 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 				payback *= 0.33;
 			}
 
+			damage = this.Math.round(damage);
+			payback = this.Math.round(payback);
+
+			if (payback > 95)
+			{
+				payback = 95;
+			}
+			if (payback < 5)
+			{
+				payback = 5;
+			}
+
 			return [
 				{
 					id = 1,
