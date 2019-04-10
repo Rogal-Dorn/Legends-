@@ -16,14 +16,16 @@ local ValaTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
+		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.FastAdaptation,
-		gt.Const.Perks.PerkDefs.BackStabber
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,
+		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet
 	],
 	[
+		gt.Const.Perks.PerkDefs.LegendMasteryStaves,
 		gt.Const.Perks.PerkDefs.LegendValaChantMastery,
 		gt.Const.Perks.PerkDefs.LegendValaTranceMastery,
 		gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery
