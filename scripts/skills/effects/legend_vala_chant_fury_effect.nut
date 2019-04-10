@@ -199,7 +199,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 3)
 		{
-			local bonus = this.m.Vala.getBravery() / 800.0;
+			local bonus = this.m.Vala.getBravery() / 1000.0;
 			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 
 			if (distance == 2)
