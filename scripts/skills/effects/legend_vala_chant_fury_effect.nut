@@ -89,13 +89,13 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = this.Math.round(damage) + "% increased damage."
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(damage) + "%[/color] increased damage."
 				},
 				{
 					id = 11,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = this.Math.round(payback) + "% chance to retaliate against a melee attacker for 50% damage."
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(payback) + "%[/color] chance to retaliate against a melee attacker that hits you (for 50% damage)."
 				}
 			];
 		}
@@ -113,7 +113,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
 			{
 				_properties.DamageTotalMult *= 0.5;
-				_properties.FatigueEffectMult *= 0.5;
+				_properties.FatigueEffectMult *= 0.25;
 			}
 		}
 	}
@@ -217,7 +217,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.getContainer().getActor().getID() != this.m.Vala.getID())
 			{
-				this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
+				this.spawnIcon("perk_36", this.getContainer().getActor().getTile());
 			}
 		}
 

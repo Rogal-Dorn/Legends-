@@ -28,14 +28,14 @@ this.legend_vala_threads <- this.inherit("scripts/skills/skill", {
 
 		local expertise = this.getContainer().getActor().getBravery();
 
-		if (expertise < 1)
+		if (expertise < 5)
 		{
-			expertise = 1;
+			expertise = 5;
 		}
 
-		if (expertise > 100)
+		if (expertise > 95)
 		{
-			expertise = 100;
+			expertise = 95;
 		}
 
 		if (this.Math.rand(1, 100) <= expertise)
