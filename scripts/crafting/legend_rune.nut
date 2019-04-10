@@ -12,7 +12,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		token.updateRuneSigilToken();
 		token.getRuneSigilTooltip = this.getRuneSigilTooltip;
 		this.m.PreviewCraftable = token;
-		this.m.Cost = 100;
+		this.m.Cost = 1200;
 		this.m.Enchanter = true;
 		// local ingredients = [
 		// 	{

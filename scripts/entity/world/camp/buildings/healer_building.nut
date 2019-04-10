@@ -94,6 +94,16 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		return pro + "_" + sub;
 	}
 
+	function getCost(_injury)
+	{
+		local cost = _injury.getCost();
+		if (this.getUpgraded()) 
+        {  
+            cost = this.Math.floor(cost * 0.75);
+        }
+		return cost;
+	}
+
     function init()
     {
         this.m.MedsUsed = 0;
@@ -209,6 +219,12 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Craft *= 1.15;
+        }
+
         return ret;
     }
 
@@ -278,7 +294,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
-            local needed = r.getCost() - r.getPoints();
+            local needed = this.getCost(r) - r.getPoints();
 
             if (modifiers.Craft < needed)
             {
@@ -286,9 +302,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 			r.setPoints(r.getPoints() + needed);
             modifiers.Craft -= needed;
+
 			this.World.Assets.addMedicine(-needed)
 
-			if (r.getPoints() >= r.getCost())
+			if (r.getPoints() >= this.getCost(r))
 			{
 				r.setTreated(true);
 				r.setQueue(0);
@@ -353,7 +370,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 						id = inj.getID(),
 						icon = inj.getIconColored(),
 						name = inj.getNameOnly(),
-						price = inj.getCost(),
+						price = this.getCost(inj),
 						treatable = inj.isTreatable() && inj.getQueue() == 0,
 						points = inj.getPoints()
 					});
@@ -386,7 +403,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue;
             }
             
-            points += r.getCost();
+            points += this.getCost(r);
         }
 		return points;
     }
@@ -406,7 +423,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue;
             }
             
-            points += r.getCost();
+            points += this.getCost(r);
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)

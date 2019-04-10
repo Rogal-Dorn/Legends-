@@ -199,6 +199,20 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             //local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
             //ret.Consumption = v;
         }
+        if (ret.Assigned == 0)
+        {
+            ret.Repair *= 2.0;
+        }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Consumption = 1.0 / 10.0
+            if (ret.Assigned > 0)
+            {
+                ret.Repair *= 1.15;
+            }
+        }
+
         return ret;
     }
 
@@ -291,20 +305,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         }
 
         local modifiers = this.getModifiers();
-        if (modifiers.Assigned == 0)
-        {
-            modifiers.Repair *= 2.0;
-        }
-
-        if (this.getUpgraded()) 
-        {  
-            modifiers.Consumption = 1.0 / 10.0
-            if (this.modifiers.Assigned > 0)
-            {
-                modifiers.Repair *= 1.15;
-            }
-        }
-
         foreach (i, r in this.m.Repairs)
         {
             if (r == null)

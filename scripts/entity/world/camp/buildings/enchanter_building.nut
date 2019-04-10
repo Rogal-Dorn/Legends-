@@ -242,6 +242,12 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Craft *= 1.15;
+        }
+
         return ret;
     }
 
@@ -391,6 +397,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
             }
             
             points += (r.Blueprint.getCost() - r.Points);
+			this.logInfo("points" + points)
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)
