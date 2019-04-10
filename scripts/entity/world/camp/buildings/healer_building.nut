@@ -11,6 +11,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Healer;
+		this.m.Escorting = true;
         this.m.Slot = "heal";
         this.m.Name = "Heal/Reserves";
         this.m.Description = "Place brothers in reserves in order to heal from wounds.";

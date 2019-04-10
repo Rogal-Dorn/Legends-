@@ -489,3 +489,8 @@ https://drive.google.com/open?id=1UGt-_mBDX2-YVzM2mJf8yw8p0D_7lWOj
 *Adds 3 new female hairstyles, fixes the nun's habit 
 *Camp now only starts with Repairing and Resting - visit settlements to learn and discover additional camping skills.
 *Adds new ambition to find camping skills.
+*Alps can now drop Weapon runes as loot.
+*Hex can now drop Helmet runes as loot.
+*Lindwurms can now drop Armor runes as loot.
+*Schrat can now drop Sheild runes as loot.
+*Camp repairs and healing will run while on caravan escort missions

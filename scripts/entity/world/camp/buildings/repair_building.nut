@@ -15,6 +15,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Repair;
+        this.m.Escorting = true;
         this.m.Slot = "repair";
         this.m.Name = "Repair Tent";
         this.m.Description = "Manage the repair of company items"
@@ -290,6 +291,20 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         }
 
         local modifiers = this.getModifiers();
+        if (modifiers.Assigned == 0)
+        {
+            modifiers.Repair *= 2.0;
+        }
+
+        if (this.getUpgraded()) 
+        {  
+            modifiers.Consumption = 1.0 / 10.0
+            if (this.modifiers.Assigned > 0)
+            {
+                modifiers.Repair *= 1.15;
+            }
+        }
+
         foreach (i, r in this.m.Repairs)
         {
             if (r == null)
