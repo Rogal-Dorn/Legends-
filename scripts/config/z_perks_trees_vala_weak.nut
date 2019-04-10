@@ -9,6 +9,7 @@ if (!("Perks" in gt.Const))
 local ValaTree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendValaWarden,
+		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.Student,
@@ -16,8 +17,9 @@ local ValaTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
+		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaptation
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,
