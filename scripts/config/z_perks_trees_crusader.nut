@@ -26,8 +26,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
-		gt.Const.Perks.PerkDefs.Steadfast,
-		gt.Const.Perks.PerkDefs.LegendRoster2
+		gt.Const.Perks.PerkDefs.Steadfast
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -69,7 +68,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.SunderingStrike,
-		gt.Const.Perks.PerkDefs.LegendRoster7		
+		gt.Const.Perks.PerkDefs.LegendRoster6		
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,

@@ -14,8 +14,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Steadfast,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.BloodyHarvest,
-		gt.Const.Perks.PerkDefs.LegendRoster1
+		gt.Const.Perks.PerkDefs.BloodyHarvest
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -69,8 +68,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendMuscularity,
-		gt.Const.Perks.PerkDefs.LegendPushForward,
-		gt.Const.Perks.PerkDefs.LegendRoster5
+		gt.Const.Perks.PerkDefs.LegendPushForward
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
@@ -80,7 +78,8 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.LegendBerserkerRage,
 		gt.Const.Perks.PerkDefs.LegendInfectiousRage,
-		gt.Const.Perks.PerkDefs.LegendUberNimble
+		gt.Const.Perks.PerkDefs.LegendUberNimble,
+		gt.Const.Perks.PerkDefs.LegendRoster6		
 	],
 	[],
 	[],

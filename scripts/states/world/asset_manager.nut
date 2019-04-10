@@ -496,7 +496,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:
-			this.setBrothersMax(1);
+			this.setBrothersMax(0);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
