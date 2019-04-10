@@ -77,6 +77,12 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Craft *= 1.15;
+        }
+
         return ret;
     }
 

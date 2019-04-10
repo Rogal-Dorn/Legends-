@@ -475,8 +475,8 @@ Beta v10 test 5
  *Fixes reported errors selecting new perks
 
 
-Beta v10 Test 7
-https://drive.google.com/open?id=1UGt-_mBDX2-YVzM2mJf8yw8p0D_7lWOj
+Beta v10 Test 6.6
+https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
 *Assign all in the Repair and Salvage tent works with filters now
 *After a battle, all equipped gear that is damaged is automatically added to the repair queue.
 *Reserve mechanism removed from camp/tent. Reserve is now assigned from the character inventory/stash screen. Upper left near the dismiss bro button.

@@ -139,6 +139,7 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
             local v = this.Math.maxf(0.50, ret.Consumption - bro.getBackground().getModifiers().MedConsumption);
             ret.Consumption = v;
         }
+
         return ret;
     }
 
