@@ -97,9 +97,9 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 
 	function onUpdate( _properties )
 	{
-		_properties.FatigueOnSkillUse += this.Math.ceil(this.m.Power / 30.0);
-		_properties.StaminaMult *= 1.0 - (this.m.Power / 400.0);
-		_properties.DamageTotalMult *= 1.0 - (this.m.Power / 800.0);
+		_properties.FatigueOnSkillUse += this.Math.round(this.m.Power / 25.0);
+		_properties.StaminaMult *= 1.0 - (this.m.Power / 500.0);
+		_properties.DamageTotalMult *= 1.0 - (this.m.Power / 1000.0);
 	}
 
 
