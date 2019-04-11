@@ -125,7 +125,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 
 	function SummonWarden()
 	{
-		if (this.m.WardenSummonSpent == false)
+		if (this.m.WardenSummonSpent == false && this.m.WardenEntity == null)
 		{
 			local WardenSpawnTile = this.findTileToSpawnWarden();
 

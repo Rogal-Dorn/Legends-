@@ -95,7 +95,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 					id = 11,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(payback) + "%[/color] chance to retaliate against a melee attacker that hits you (for 50% damage)."
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(payback) + "%[/color] chance to retaliate against an attacker that hits you in melee range (for 50% damage)."
 				}
 			];
 		}
@@ -113,7 +113,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
 			{
 				_properties.DamageTotalMult *= 0.5;
-				_properties.FatigueEffectMult *= 0.25;
+				_properties.FatigueEffectMult *= 0.0;
 			}
 		}
 	}
@@ -188,7 +188,11 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	function onPerformPaypack(_attackinfo)
 	{
 		_attackinfo.Skill.getContainer().setBusy(false);
-		return _attackinfo.Skill.attackEntity(_attackinfo.User, _attackinfo.TargetTile.getEntity());
+
+		if (_attackinfo.User.isAlive() && _attackinfo.TargetTile.getEntity().isAlive())
+		{
+			return _attackinfo.Skill.attackEntity(_attackinfo.User, _attackinfo.TargetTile.getEntity());
+		}
 	}
 
 
