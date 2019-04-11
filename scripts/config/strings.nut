@@ -1360,7 +1360,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendValaInscribeWeapon = "Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped.\n\nPossibilities: accuracy, feeding, power.",
 	LegendValaInscribeHelmet = "Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped.\n\nPossibilities: bravery, clarity, luck.",
 	LegendValaInscribeArmor = "Allows the Vala to inscribe rocks with armor specific rune sigils while encamped.\n\nPossibilities: endurance, resilience, safety.",
-	LegendValaInscribeShield = "Allows the Vala to inscribe rocks with shield specific rune sigils while encamped.\n\nPossibilities: defense.",
+	LegendValaInscribeShield = "Allows the Vala to inscribe rocks with shield specific rune sigils while encamped.\n\nPossibilities: defense, radiance.",
 	LegendValaChantMastery = "Chanting builds up 25% less Fatigue.",
 	LegendValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it almost impossible for the Vala\'s enemies to focus and concentrate properly.\n\nEnemies adjacent to the Vala are unable to enforce Zones of Control, making it easy to slip past them.",
 	LegendValaChantFury = "A chant that really gets the blood boiling, making your allies eager to fight.\n\nAllies within 3 tiles of the Vala, including the Vala herself, receive a bonus to their damage output and a chance to retaliate against attackers that hit them in melee range.",

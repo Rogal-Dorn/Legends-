@@ -89,7 +89,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(damage) + "%[/color] increased damage."
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(damage) + "%[/color] damage inflicted."
 				},
 				{
 					id = 11,

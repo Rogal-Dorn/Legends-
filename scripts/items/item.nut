@@ -705,11 +705,7 @@ this.item <- {
 				break;
 
 			case 32:
-				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSS_defense"));
-				break;
-
-			case 33:
-				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSS_defense"));
+				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSS_radiance"));
 				break;
 
 			default:
@@ -726,7 +722,7 @@ this.item <- {
 				break;
 
 			case 2:
-				return "This item has the power of the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee skill\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged skill.";
+				return "This item has the power of the rune sigil of Accuracy:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee skill.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged skill.";
 				break;
 
 			case 3:
@@ -734,11 +730,11 @@ this.item <- {
 				break;
 
 			case 11:
-				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] Vision\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Experience gain.";
+				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] Vision.\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Experience gain.";
 				break;
 
 			case 12:
-				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Resolve\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "[/color] Resolve at all morale checks.";
+				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Resolve.\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "[/color] Resolve at all morale checks.";
 				break;
 
 			case 13:
@@ -746,11 +742,11 @@ this.item <- {
 				break;
 
 			case 21:
-				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] Fatigue recovery per turn\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] Fatigue cost and effects multiplier.";
+				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] Fatigue recovery per turn.\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] Fatigue cost and effects multiplier.";
 				break;
 
 			case 22:
-				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Hitpoints\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] Damage received.";
+				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Hitpoints.\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] Damage received.";
 				break;
 
 			case 23:
@@ -758,15 +754,11 @@ this.item <- {
 				break;
 
 			case 31:
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee defense\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged defense.";
+				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee defense.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged defense.";
 				break;
 
 			case 32:
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee defense\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged defense.";
-				break;
-
-			case 33:
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "%[/color] Melee defense\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "%[/color] Ranged defense.";
+				return "This item has the power of the rune sigil of Radiance:\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus1 + "%[/color] adjacent enemies\' Melee skill.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] adjacent enemies\' Melee defense.";
 				break;
 
 			default:
@@ -827,13 +819,8 @@ this.item <- {
 				break;
 
 			case 32:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)		
-				break;
-
-			case 33:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)		
+				bonus = this.Math.rand(3, 9)
+				bonus2 = this.Math.rand(3, 9)
 				break;
 
 			default:
@@ -918,14 +905,7 @@ this.item <- {
 				break;
 
 			case 32:
-				this.m.Name = "Shield Rune Sigil: Defense";
-				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
-				this.m.Icon = "rune_sigils/rune_stone_4.png";
-				this.m.IconLarge = "rune_sigils/rune_stone_4.png";
-				break;
-
-			case 33:
-				this.m.Name = "Shield Rune Sigil: Defense";
+				this.m.Name = "Shield Rune Sigil: Radiance";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s shield.";
 				this.m.Icon = "rune_sigils/rune_stone_4.png";
 				this.m.IconLarge = "rune_sigils/rune_stone_4.png";

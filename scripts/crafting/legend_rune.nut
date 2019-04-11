@@ -40,11 +40,11 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				break;
 
 			case 11:
-				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+0 to +2[/color] Vision\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Experience gain.";
+				return "This item has the power of the rune sigil of Clarity:\n[color=" + this.Const.UI.Color.PositiveValue + "]+0 to +2[/color] Vision.\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Experience gain.";
 				break;
 
 			case 12:
-				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Resolve\n [color=" + this.Const.UI.Color.PositiveValue + "]+1 to +5[/color] Resolve at all morale checks.";
+				return "This item has the power of the rune sigil of Bravery:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Resolve.\n [color=" + this.Const.UI.Color.PositiveValue + "]+1 to +5[/color] Resolve at all morale checks.";
 				break;
 
 			case 13:
@@ -52,11 +52,11 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				break;
 
 			case 21:
-				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+0 to +3[/color] Fatigue recovery per turn\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -12%[/color] Fatigue cost and effects multiplier.";
+				return "This item has the power of the rune sigil of Endurance:\n[color=" + this.Const.UI.Color.PositiveValue + "]+0 to +3[/color] Fatigue recovery per turn.\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -12%[/color] Fatigue cost and effects multiplier.";
 				break;
 
 			case 22:
-				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Hitpoints\n [color=" + this.Const.UI.Color.PositiveValue + "]-3% to -12%[/color] Damage received.";
+				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Hitpoints.\n [color=" + this.Const.UI.Color.PositiveValue + "]-3% to -12%[/color] Damage received.";
 				break;
 
 			case 23:
@@ -68,11 +68,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				break;
 
 			case 32:
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Melee and Ranged defense.";
-				break;
-
-			case 33:
-				return "This item has the power of the rune sigil of Defense:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +12%[/color] Melee and Ranged defense.";
+				return "This item has the power of the rune sigil of Radiance:\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -9%[/color] adjacent enemies\' Melee skill and Melee defense.";
 				break;
 
 			default:
