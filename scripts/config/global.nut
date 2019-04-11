@@ -183,24 +183,24 @@ gt.Const.Difficulty <- {
 		{
 			Food = 300,
 			Ammo = 500,
-			Medicine = 150,
+			Medicine = 200,
 			ArmorParts = 200
 		},
 		{
 			Food = 250,
 			Ammo = 300,
-			Medicine = 100,
+			Medicine = 150,
 			ArmorParts = 150
 		},
 		{
 			Food = 200,
-			Ammo = 300,
+			Ammo = 250,
 			Medicine = 100,
 			ArmorParts = 150
 		},
 		{
 			Food = 100,
-			Ammo = 200,
+			Ammo = 150,
 			Medicine = 60,
 			ArmorParts = 80
 		}
