@@ -761,7 +761,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 1
 			}
 		]
@@ -782,7 +782,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 2
 			}
 		]
@@ -803,7 +803,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 3
 			}
 		]
@@ -824,7 +824,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 4
 			}
 		]
@@ -845,7 +845,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 4
 			}
 		]
@@ -866,7 +866,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 4
 			}
 		]
@@ -887,7 +887,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 12
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 4
 			}
 		]
@@ -908,7 +908,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 4
 			}
 		]
@@ -929,7 +929,7 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 5
 			}
 		]
@@ -950,11 +950,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 5
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -975,11 +975,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1000,11 +1000,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1025,11 +1025,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1050,11 +1050,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 5
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1075,11 +1075,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1100,11 +1100,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 3
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 2
 			}
 		]
@@ -1125,11 +1125,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 2
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 3
 			}
 		]
@@ -1146,11 +1146,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 4
 			}
 		]
@@ -1585,7 +1585,7 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 1
 			}
 		]
@@ -1606,7 +1606,7 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 2
 			}
 		]
@@ -1627,7 +1627,7 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 3
 			}
 		]
@@ -1648,7 +1648,7 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 4
 			}
 		]
@@ -1669,7 +1669,7 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 5
 			}
 		]
@@ -1690,11 +1690,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 5
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1715,11 +1715,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1740,11 +1740,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1765,11 +1765,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1786,11 +1786,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1807,11 +1807,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 2
 			}
 		]
@@ -1828,11 +1828,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 3
 			}
 		]
@@ -1849,11 +1849,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 4
 			}
 		]
@@ -1870,11 +1870,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			}
 		]
@@ -1891,11 +1891,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 5
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			}
 		]
@@ -1912,11 +1912,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			}
 		]
@@ -1933,11 +1933,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 2
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 12
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 6
 			}
 		]
@@ -1954,11 +1954,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 12
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 6
 			}
 		]
@@ -1971,11 +1971,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 		Body = "figure_orc_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 13
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 6
 			}
 		]
@@ -1988,11 +1988,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 		Body = "figure_orc_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 14
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 6
 			}
 		]
@@ -2005,11 +2005,11 @@ gt.Const.World.Spawn.OrcScouts <- [
 		Body = "figure_orc_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 14
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 7
 			}
 		]
@@ -3098,7 +3098,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -3127,7 +3127,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 2
 			}
 		]
@@ -3156,7 +3156,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 3
 			}
 		]
@@ -3181,7 +3181,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 4
 			}
 		]
@@ -3206,7 +3206,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			}
 		]
@@ -3231,7 +3231,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			}
 		]
@@ -3256,7 +3256,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			}
 		]
@@ -3281,7 +3281,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 6
 			}
 		]
@@ -3306,7 +3306,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 6
 			}
 		]
@@ -3331,32 +3331,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 6
 			}
 		]
@@ -3381,7 +3356,32 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 7
 			}
 		]
@@ -3406,7 +3406,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 7
 			}
 		]
@@ -3431,7 +3431,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 7
 			}
 		]
@@ -3456,7 +3456,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 7
 			}
 		]
@@ -3481,7 +3481,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 7
 			}
 		]
@@ -3506,7 +3506,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 7
 			}
 		]
@@ -3531,7 +3531,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 8
 			}
 		]

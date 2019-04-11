@@ -95,6 +95,64 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
+	function getName()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Come here to craft potions, trophies and other useful items. Recipes added to the crafting queue will be worked on by any "
+		desc += "personel assigned to this tent. Crafting only occurs while encamped. Progress is saved, so items do not have to be crafted in "
+		desc += "a single session. The more people assigned to the tent, the quicker items will be crafted."
+		desc += "\n\n"
+		desc += "The crafting tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 15% increase in crafting speed."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		this.init();
+		local mod = this.getModifiers();
+		local ret = [
+			{
+				id = 3,
+				type = "text",
+				icon = "ui/icons/plus.png",
+				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Queue.len() + "[/color] items in the crafting queue."
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "ui/buttons/icon_time.png",
+				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to craft all items."
+			},				
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/icons/repair_item.png",
+				text = "Total crafting modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft + "[/color] units per hour."
+			}
+		];
+		local id = 6;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+			})
+			++id;
+		}
+		return ret;
+	}
+
 	function isHidden()
 	{
 		return !this.World.Tags.get("HasLegendCampCrafting") || !this.Const.DLC.Unhold

@@ -125,9 +125,14 @@ this.camp_manager <- {
         return this.m.Tents;
     }
 
-    function onEscort()
+    function onEscort(_val)
     {
-		this.m.IsEscorting = !this.m.IsEscorting;
+        if (this.m.IsEscorting == _val)
+        {
+            return;
+        }
+
+		this.m.IsEscorting = _val;
 
         //Transition to Camping
         if (this.m.IsEscorting)

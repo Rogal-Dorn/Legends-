@@ -558,6 +558,8 @@ CampScreenCommanderDialogModule.prototype.addTentEntry = function (_data, _index
         entry.append(label);    
     }
 
+    entry.bindTooltip({ contentType: 'ui-element', elementId: _data.id });
+
     this.mTentMap[_data.id] = entry;
     return entry
 

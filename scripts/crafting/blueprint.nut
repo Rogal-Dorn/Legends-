@@ -209,7 +209,7 @@ this.blueprint <- {
 		this.onCraft(stash);
 	}
 
-	function enchant()
+	function enchant( _bonus )
 	{
 		if (!this.isQualifiedEnchant())
 		{
@@ -227,7 +227,11 @@ this.blueprint <- {
 		}
 
 		++this.m.TimesCrafted;
-		this.onCraft(stash);
+		this.onEnchant(stash, _bonus);
+	}
+
+	function onEnchant( _stash, _bonus )
+	{
 	}
 
 	function onCraft( _stash )

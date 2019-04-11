@@ -767,60 +767,150 @@ this.item <- {
 		}
 	}
 
-	function setRuneBonus()
+	function setRuneBonus( _bonus = false)
 	{
 		local bonus = 0;
 		local bonus2 = 0;
 		switch (this.m.RuneVariant)
 		{
 			case 1:
-				bonus = this.Math.rand(3, 12)
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+				}
 				break;
 
 			case 2:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)				
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
+				}		
 				break;
 
 			case 3:
-				bonus = this.Math.rand(3, 12)
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+				}
 				break;
 
 			case 11:
-				bonus = this.Math.rand(0, 2)
-				bonus2 = this.Math.rand(3, 12)
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(0, 2)
+					bonus2 = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(0, 1)
+					bonus2 = this.Math.rand(3, 9)
+				}	
 				break;
 
 			case 12:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(1, 5)
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(1, 5)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(1, 3)
+				}	
 				break;
 
 			case 13:
-				bonus = this.Math.rand(3, 12)
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+				}
 				break;
 
 			case 21:
-				bonus = this.Math.rand(0, 3);
-				bonus2 = this.Math.rand(3, 12)
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(0, 3)
+					bonus2 = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(0, 1)
+					bonus2 = this.Math.rand(3, 9)
+				}	
 				break;
 
 			case 22:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)			
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
+				}			
 				break;
 
 			case 23:
 				break;
 
 			case 31:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)		
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
+				}		
 				break;
 
 			case 32:
-				bonus = this.Math.rand(3, 9)
-				bonus2 = this.Math.rand(3, 9)
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(3, 12)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
+				}		
+				break;
+
+			case 33:
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(3, 9)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 5)
+					bonus2 = this.Math.rand(3, 5)
+				}		
 				break;
 
 			default:
