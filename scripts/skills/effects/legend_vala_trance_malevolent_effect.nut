@@ -133,7 +133,7 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 					if (this.Math.rand(1, 100) <= chance)
 					{
 						local effect = this.new("scripts/skills/effects/legend_vala_trance_malevolent_effect");
-						effect.setPower(this.m.Power);
+						effect.setPower(this.m.Power * 0.75);
 						e.getSkills().add(effect);
 						this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
 					}

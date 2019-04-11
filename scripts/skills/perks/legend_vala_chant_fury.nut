@@ -134,7 +134,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.m.ChantIsActive = false;
+		this.resetChant();
 	}
 
 
