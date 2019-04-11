@@ -7,7 +7,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_trance_perspective";
-		this.m.Name = "Incorporeal Perspective";
+		this.m.Name = "Incorporeal Perspective (Trance)";
 		this.m.Description = "Incorporeal Perspective.";
 		this.m.Icon = "ui/perks/legend_vala_trance_perspective_active.png";
 		this.m.IconDisabled = "ui/perks/legend_vala_trance_perspective_active_sw.png";
