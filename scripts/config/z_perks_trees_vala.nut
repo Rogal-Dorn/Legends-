@@ -14,7 +14,7 @@ local ValaTree = [
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeShield,
-		gt.Const.Perks.PerkDefs.LegendRoster2
+		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
@@ -49,7 +49,8 @@ local ValaTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantFury,
-		gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon
+		gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
+		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],
 	[],
