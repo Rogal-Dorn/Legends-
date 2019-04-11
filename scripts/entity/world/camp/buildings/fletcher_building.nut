@@ -49,6 +49,11 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.SoundsAtNight = [];
     }
 
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampFletching")
+	}	
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.fletcher_tent");
@@ -100,6 +105,12 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Craft *= 1.15;
+        }
+
         return ret;
     }
 

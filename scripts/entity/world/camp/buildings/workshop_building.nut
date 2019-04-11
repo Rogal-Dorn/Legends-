@@ -89,6 +89,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampScraping")
+	}	
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.scrap_tent")
@@ -191,13 +196,36 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             Modifiers = []
         }
 		local roster = this.World.getPlayerRoster().getAll();
+    //     local craft = 0;
+    //     local craftmod = 0;
+
+    //     local roster = this.World.getPlayerRoster().getAll();
+    //     local totalcraft = 0;
+    //     local totalcraftmod = 0;
+    //     foreach( bro in roster )
+    //     {
+    //         if (bro.getCampAssignment() != this.m.ID)
+    //         {
+    //             continue
+    //         }
+    //         totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Injury);
+    //         totalcraft += this.m.BaseCraft;
+    //          ++ret.Assigned
+    //         ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
+    //     }
+    //     totalcraft = pow(totalcraft, 0.5);
+    //    totalbonus = pow((totalcraft * totalcraftmod),0.5)
+    //     combinedcraft = totalcraft + totalbonux;
+    //     ret.Craft += combinedcraft;
+    //     return ret;
+
+
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
             {
                 continue
             }
-
             local rm = this.m.BaseSalvage + this.m.BaseSalvage * bro.getBackground().getModifiers().Salvage;
             ret.Salvage += rm
             ++ret.Assigned
@@ -205,6 +233,13 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             //local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
             //ret.Consumption = v;
         }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Consumption = 1.0 / 10.0
+            ret.Salvage *= 1.15;
+        }
+
         return ret;
     }
 

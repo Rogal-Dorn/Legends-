@@ -141,9 +141,19 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 					else
 					{
 						loot = this.new("scripts/items/misc/lindwurm_bones_item");
-					}
+					}			
 
 					loot.drop(_tile);
+
+					if (this.Math.rand(1, 100) < 10)
+					{
+						local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+						token.setRuneVariant(this.Math.rand(21, 23));
+						token.setRuneBonus();
+						token.updateRuneSigilToken();
+						token.drop(_tile);
+					}
+					
 				}
 				else
 				{

@@ -204,7 +204,9 @@ this.camp_building <- {
 		
 		],
         CanEnter = true,
-        InCommanderTent = true
+        InCommanderTent = true,
+		Camping = true,
+		Escorting = false
 	},
     function create()
     {
@@ -221,6 +223,16 @@ this.camp_building <- {
     function completed()
     {
     }
+
+	function Camping() 
+	{
+		return this.m.Camping;
+	}
+
+	function Escorting() 
+	{
+		return this.m.Escorting;
+	}
 
 	function getUpdateText()
 	{

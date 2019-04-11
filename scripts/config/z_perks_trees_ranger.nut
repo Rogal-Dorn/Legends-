@@ -34,7 +34,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.DoubleStrike,
 		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
 		gt.Const.Perks.PerkDefs.DevastatingStrikes,
-		gt.Const.Perks.PerkDefs.LegendRoster4		
+		gt.Const.Perks.PerkDefs.LegendRoster3		
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryPoison,

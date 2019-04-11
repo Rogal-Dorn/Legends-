@@ -20,7 +20,12 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		// this.m.UIImageNightFull =  "ui/settlements/gatherer_night_full";
         this.m.CanEnter = false
     }
-	
+
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampGathering")
+	}	
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.gather_tent");
@@ -72,6 +77,12 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Craft *= 1.15;
+        }
+
         return ret;
     }
 

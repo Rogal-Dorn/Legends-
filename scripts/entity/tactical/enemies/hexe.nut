@@ -190,6 +190,15 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 					food.randomizeBestBefore();
 					food.drop(_tile);
 				}
+
+				if (this.Math.rand(1, 100) < 10)
+				{
+					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					token.setRuneVariant(this.Math.rand(11, 13));
+					token.setRuneBonus();
+					token.updateRuneSigilToken();
+					token.drop(_tile);
+				}
 			}
 		}
 

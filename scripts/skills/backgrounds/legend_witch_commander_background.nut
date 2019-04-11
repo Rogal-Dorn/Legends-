@@ -128,7 +128,6 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));	
 	}
 
 	function onAddEquipment()
