@@ -5,7 +5,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_chant_fury";
-		this.m.Name = "Fury";
+		this.m.Name = "Fury (Chant)";
 		this.m.Description = "A chant that really gets the blood boiling, making your allies eager to fight.";
 		this.m.Icon = "ui/perks/legend_vala_chant_fury_active.png";
 		this.m.IconDisabled = "ui/perks/legend_vala_chant_fury_active_sw.png";

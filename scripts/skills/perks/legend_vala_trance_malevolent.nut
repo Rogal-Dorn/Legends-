@@ -9,7 +9,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_trance_malevolent";
-		this.m.Name = "Malevolent Spirits";
+		this.m.Name = "Malevolent Spirits (Trance)";
 		this.m.Description = "The spirit world is home to many malevolent beings, and the Vala knows how to contact them. Once her access to their realm has been established, she calls upon these ill-willed spirits in hopes of receiving their help.";
 		this.m.Icon = "ui/perks/legend_vala_trance_malevolent_active.png";
 		this.m.IconDisabled = "ui/perks/legend_vala_trance_malevolent_active_sw.png";
