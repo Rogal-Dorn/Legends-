@@ -49,6 +49,7 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 					local blinded = this.new("scripts/skills/rune_sigils/legend_RSS_radiance_effect");
 					blinded.setMalus(this.getItem().getRuneBonus1(), this.getItem().getRuneBonus2());
 					t.getSkills().add(blinded);
+					t.getSkills().update();
 				}
 			}
 		}

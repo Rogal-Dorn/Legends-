@@ -53,13 +53,11 @@ this.legend_vala_in_trance <- this.inherit("scripts/skills/skill", {
 
 		if (TrancePerspective != null)
 		{
-			TrancePerspective.m.TranceIsActive = false;
-			TrancePerspective.m.Failures = 0;
+			TrancePerspective.resetTrance();
 		}
 		if (TranceMalevolent != null)
 		{
-			TranceMalevolent.m.TranceIsActive = false;
-			TranceMalevolent.m.Failures = 0;
+			TranceMalevolent.resetTrance();
 		}
 
 		if (this.Tactical.isActive())

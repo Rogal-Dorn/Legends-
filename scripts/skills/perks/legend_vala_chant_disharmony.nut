@@ -2,6 +2,10 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 	m = {
 		ChantIsActive = false
 	},
+	function resetChant()
+	{
+		this.m.ChantIsActive = false;
+	}
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_chant_disharmony";
