@@ -46,16 +46,35 @@ this.legend_vala_in_trance <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onRemoved()
+	{
+		local TrancePerspective = this.getContainer().getActor().getSkills().getSkillByID("perk.legend_vala_trance_perspective");
+		local TranceMalevolent = this.getContainer().getActor().getSkills().getSkillByID("perk.legend_vala_trance_malevolent");
+
+		if (TrancePerspective != null)
+		{
+			TrancePerspective.m.TranceIsActive = false;
+			TrancePerspective.m.Failures = 0;
+		}
+		if (TranceMalevolent != null)
+		{
+			TranceMalevolent.m.TranceIsActive = false;
+			TranceMalevolent.m.Failures = 0;
+		}
+
+		if (this.Tactical.isActive())
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
+		}
+
+		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+	}
+
+
 	function onUpdate( _properties )
 	{
 		_properties.TargetAttractionMult *= 1.33;
 		this.getContainer().getActor().m.IsUsingZoneOfControl = false;
-	}
-
-
-	function onRemoved()
-	{
-		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 	}
 
 
