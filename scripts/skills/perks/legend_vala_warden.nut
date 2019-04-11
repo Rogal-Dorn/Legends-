@@ -219,6 +219,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 
 	function onCombatStarted()
 	{
+		this.m.WardenSummonSpent = false;
 		this.SummonWarden();
 	}
 
@@ -231,7 +232,6 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 
 	function onCombatFinished()
 	{
-		this.m.WardenSummonSpent = false;
 		this.m.WardenEntity = null;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_spiritual_bond_effect"))

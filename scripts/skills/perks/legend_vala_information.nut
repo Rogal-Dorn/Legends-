@@ -43,7 +43,7 @@ this.legend_vala_information <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Most of the Vala\'s skills scale in one way or another with the strength of her Resolve."
+				text = "Most of the Vala\'s skills require her staff and scale in one way or another with the strength of her Resolve."
 			},
 			{
 				id = 4,

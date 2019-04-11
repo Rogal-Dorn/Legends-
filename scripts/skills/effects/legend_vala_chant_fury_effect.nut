@@ -55,8 +55,8 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.isHidden())
 		{
-			local damage = this.m.Vala.getBravery() / 10.0;
-			local payback = 10.0 + (this.m.Vala.getBravery() / 2.0) + (this.getContainer().getActor().getInitiative() / 4.0);
+			local damage = this.m.Vala.getBravery() / 12.5;
+			local payback = 7.5 + (this.m.Vala.getBravery() / 2.5) + (this.getContainer().getActor().getInitiative() / 5.0);
 			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 
 			if (distance == 2)
@@ -146,7 +146,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local chance = 10.0 + (this.m.Vala.getBravery() / 2.0) + (this.getContainer().getActor().getInitiative() / 4.0);
+		local chance = 7.5 + (this.m.Vala.getBravery() / 2.5) + (this.getContainer().getActor().getInitiative() / 5.0);
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 
 		if (distance == 2)
@@ -233,7 +233,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 3)
 		{
-			local bonus = this.m.Vala.getBravery() / 1000.0;
+			local bonus = this.m.Vala.getBravery() / 1250.0;
 			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 
 			if (distance == 2)
