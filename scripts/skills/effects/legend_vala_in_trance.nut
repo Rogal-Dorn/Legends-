@@ -62,7 +62,7 @@ this.legend_vala_in_trance <- this.inherit("scripts/skills/skill", {
 
 		if (this.Tactical.isActive())
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " returns to this realm.");
 		}
 
 		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
