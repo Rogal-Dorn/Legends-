@@ -758,7 +758,7 @@ this.item <- {
 				break;
 
 			case 32:
-				return "This item has the power of the rune sigil of Radiance:\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus1 + "%[/color] adjacent enemies\' Melee skill.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] adjacent enemies\' Melee defense.";
+				return "This item has the power of the rune sigil of Radiance:\n[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus1 + "%[/color] to all adjacent enemies\' Melee skill.\n" + "[color=" + this.Const.UI.Color.PositiveValue + "]-" + this.m.RuneBonus2 + "%[/color] to all adjacent enemies\' Melee defense.";
 				break;
 
 			default:
