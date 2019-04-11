@@ -94,11 +94,11 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		return false;
 	}
 
-	function onCraft( _stash )
+	function onEnchant( _stash, _bonus )
 	{
 		local rune =  this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 		rune.setRuneVariant(this.m.Rune);
-		rune.setRuneBonus();	
+		rune.setRuneBonus(_bonus);	
 		rune.updateRuneSigilToken();
 		_stash.add(rune);
 	}

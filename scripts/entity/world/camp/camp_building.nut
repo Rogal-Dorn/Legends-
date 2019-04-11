@@ -299,21 +299,42 @@ this.camp_building <- {
 		return this.m.ID;
 	}
 
+	function getName()
+	{
+		return this.m.Name;
+	}
+
     function getTooltip()
     {
-        return [
+		local res = [
             {
                 id = 1,
                 type = "title",
-                text = this.m.Name
+                text = this.getName()
             },
             {
                 id = 2,
                 type = "description",
-                text = this.m.Description
+                text = this.getDescription()
             }
-        ];        
+        ];
+		local mod = this.getModifierToolip()
+		foreach (i in mod)
+		{
+			res.push(i);
+		}
+		return res;
     }
+
+    function getModifierToolip()
+    {
+		return [];
+	}
+
+	function getDescription()
+	{
+		return this.m.Description;
+	}
 
 	function getTooltipIcon()
 	{

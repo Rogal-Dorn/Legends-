@@ -498,3 +498,4 @@ https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
 *Added more default perks to the Vala perk trees.
 *New chant (Fury).
 *Warden has more tiles it can spawn on, and if it doesn't spawn onCombatStarted it will now try to spawn one every onTurnStart.
+
