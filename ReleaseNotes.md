@@ -494,3 +494,7 @@ https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
 *Lindwurms can now drop Armor runes as loot.
 *Schrat can now drop Sheild runes as loot.
 *Camp repairs and healing will run while on caravan escort missions
+*Chant and Trance perks now have (Chant) or (Trance) in their perk name to more clearly let the player know it's a chant or a trance skill.
+*Added more default perks to the Vala perk trees.
+*New chant (Fury).
+*Warden has more tiles it can spawn on, and if it doesn't spawn onCombatStarted it will now try to spawn one every onTurnStart.
