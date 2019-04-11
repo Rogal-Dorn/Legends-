@@ -147,7 +147,7 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 				if (this.Math.rand(1, 100) < 10)
 				{
 					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-					token.setRuneVariant(this.Math.rand(31, 33));
+					token.setRuneVariant(this.Math.rand(31, 32));
 					token.setRuneBonus();
 					token.updateRuneSigilToken();
 					token.drop(_tile);
