@@ -354,7 +354,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
+				Num = 15
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
 			}
 		]
 	},
@@ -388,7 +392,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
+				Num = 15
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
 			}
 		]
 	},
@@ -405,7 +413,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 17
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
 			}
 		]
 	},
@@ -422,7 +434,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
 			}
 		]
 	},
@@ -439,7 +455,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 20
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
 			}
 		]
 	},
@@ -456,7 +476,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 19
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
 			}
 		]
 	},
@@ -473,7 +497,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
 			}
 		]
 	},
@@ -490,7 +518,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
 			}
 		]
 	},
@@ -507,7 +539,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 22
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
 			}
 		]
 	},
@@ -524,7 +560,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 21
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
 			}
 		]
 	},
@@ -541,7 +581,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 20
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
 			}
 		]
 	},
@@ -558,7 +602,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 21
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
 			}
 		]
 	},
@@ -571,28 +619,36 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_03",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
 			}
 		]
 	},
@@ -609,7 +665,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 12
 			}
 		]
 	},
@@ -626,7 +686,11 @@ gt.Const.World.Spawn.OrcRoamers <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 12
 			}
 		]
 	},
@@ -642,8 +706,8 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 12
 			}
 		]
 	},
@@ -659,8 +723,8 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 11
 			}
 		]
 	},
@@ -676,8 +740,8 @@ gt.Const.World.Spawn.OrcRoamers <- [
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
 			}
 		]
 	},
@@ -690,11 +754,15 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 11
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 1
 			}
 		]
 	},
@@ -707,11 +775,120 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 12
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 4
 			}
 		]
 	},
@@ -724,11 +901,15 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 13
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 4
 			}
 		]
 	},
@@ -741,11 +922,15 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 14
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 5
 			}
 		]
 	},
@@ -758,11 +943,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 15
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -775,11 +968,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 16
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -792,11 +993,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 17
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -809,11 +1018,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 18
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -826,11 +1043,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 19
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -843,11 +1068,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 20
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -860,11 +1093,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 21
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 2
 			}
 		]
 	},
@@ -877,11 +1118,19 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 22
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 3
 			}
 		]
 	},
@@ -894,28 +1143,15 @@ gt.Const.World.Spawn.OrcRoamers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 23
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_03",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 4
 			}
 		]
 	}
@@ -1122,6 +1358,10 @@ gt.Const.World.Spawn.OrcScouts <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
 			}
 		]
 	},
@@ -1133,11 +1373,28 @@ gt.Const.World.Spawn.OrcScouts <- [
 		Body = "figure_orc_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 7
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 2
 			}
 		]
@@ -1147,24 +1404,15 @@ gt.Const.World.Spawn.OrcScouts <- [
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
-		Body = "figure_orc_02",
+		Body = "figure_orc_01",
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 10
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_02",
-		Troops = [
+			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 11
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
 			}
 		]
 	},
@@ -1176,8 +1424,190 @@ gt.Const.World.Spawn.OrcScouts <- [
 		Body = "figure_orc_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 12
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 2
 			}
 		]
 	},
@@ -1193,8 +1623,394 @@ gt.Const.World.Spawn.OrcScouts <- [
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
 				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 7
 			}
 		]
 	}
@@ -2171,36 +2987,11 @@ gt.Const.World.Spawn.OrcRaiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 8
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -2217,7 +3008,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 9
+				Num = 8
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
@@ -2225,7 +3016,32 @@ gt.Const.World.Spawn.OrcRaiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -2250,11 +3066,148 @@ gt.Const.World.Spawn.OrcRaiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 2
+			}
+		]
+	},
+		{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 5
 			}
 		]
 	},
@@ -2270,16 +3223,16 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 11
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 2
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
+				Num = 5
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 5
 			}
 		]
 	},
@@ -2296,36 +3249,40 @@ gt.Const.World.Spawn.OrcRaiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 12
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
+			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
 				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
 			}
 		]
 	},
@@ -2336,542 +3293,21 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		VisionMult = 1.0,
 		Body = "figure_orc_05",
 		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_03",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 7
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_06",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 17
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 13
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 8
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 5
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 6
 			}
 		]
 	},
@@ -2883,57 +3319,7 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 14
 			},
 			{
@@ -2941,12 +3327,37 @@ gt.Const.World.Spawn.OrcRaiders <- [
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 14
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 7
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 6
 			}
 		]
 	},
@@ -2958,45 +3369,20 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 14
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 16
+				Num = 7
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 7
 			}
 		]
 	},
@@ -3008,20 +3394,20 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 16
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 7
 			}
 		]
 	},
@@ -3033,20 +3419,20 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 18
+				Num = 9
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 7
 			}
 		]
 	},
@@ -3058,270 +3444,20 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 26
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 26
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 7
 			}
 		]
 	},
@@ -3333,20 +3469,20 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 15
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 7
 			}
 		]
 	},
@@ -3358,74 +3494,24 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 16
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 7
 			}
 		]
 	},
-	{
+		{
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
@@ -3433,174 +3519,23 @@ gt.Const.World.Spawn.OrcRaiders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 16
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
+				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 4
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 8
 			}
 		]
 	}
-
 ];
 gt.Const.World.Spawn.OrcDefenders <- [
 	{
@@ -3690,7 +3625,20 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 5
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 7
 			}
 		]
 	},
@@ -3742,7 +3690,11 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 11
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 1
 			}
 		]
 	},
@@ -3755,7 +3707,11 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 12
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 2
 			}
 		]
 	},
@@ -3768,7 +3724,127 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 14
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 9
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_01",
+		Troops = [
+
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
 			}
 		]
 	},
@@ -3784,7 +3860,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 4
 			}
 		]
@@ -3818,12 +3894,8 @@ gt.Const.World.Spawn.OrcDefenders <- [
 				Num = 2
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 3
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 3
+				Num = 5
 			}
 		]
 	},
@@ -3839,7 +3911,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 7
 			}
 		]
@@ -3870,10 +3942,367 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 2
 			}
 		]
@@ -3890,25 +4319,8 @@ gt.Const.World.Spawn.OrcDefenders <- [
 				Num = 9
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 3
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
 			}
 		]
 	},
@@ -3921,141 +4333,10 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 3
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 4
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
 				Num = 2
 			}
 		]
@@ -4065,208 +4346,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
-		Body = "figure_orc_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 5
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
 		Body = "figure_orc_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
@@ -4275,6 +4355,567 @@ gt.Const.World.Spawn.OrcDefenders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			}
+		]
+	},
+
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			}
+		]
+	},
+
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
@@ -4295,7 +4936,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
+				Num = 5
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
@@ -4329,6 +4970,31 @@ gt.Const.World.Spawn.OrcDefenders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -4344,7 +5010,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 4
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
@@ -4352,7 +5018,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 8
+				Num = 9
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
@@ -4372,8 +5038,8 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 5
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
@@ -4381,7 +5047,182 @@ gt.Const.World.Spawn.OrcDefenders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 7
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
@@ -4401,7 +5242,198 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			},
 			{
@@ -4410,6 +5442,176 @@ gt.Const.World.Spawn.OrcDefenders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 3
 			},
 			{
@@ -4418,7 +5620,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 2
 			}
 		]
 	},
@@ -4435,48 +5637,19 @@ gt.Const.World.Spawn.OrcDefenders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
 				Num = 6
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 2
 			}
 		]
 	},
@@ -4489,255 +5662,205 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 7
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
+				Num = 5
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 2
 			}
 		]
 	},
@@ -4748,25 +5871,25 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		VisionMult = 1.0,
 		Body = "figure_orc_05",
 		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 8
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 8
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 2
 			}
 		]
 	},
@@ -4778,19 +5901,202 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
 			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 6
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
 			},
 			{
@@ -4807,455 +6113,16 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
+				Num = 5
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -5271,843 +6138,23 @@ gt.Const.World.Spawn.OrcDefenders <- [
 		Body = "figure_orc_05",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 14
+				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 14
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 2
+				Num = 4
 			}
 		]
 	}
-	,
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 4
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 4
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 4
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 5
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 5
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 30
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 30
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 34
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 38
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 30
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 34
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 38
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 6
-			}
-		]
-	}
-	,
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 7
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 44
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 44
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 44
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 7
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 48
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 48
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 48
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 7
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 8
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 10
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_orc_05",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 12
-			}
-		]
-	}
-
 ];
 gt.Const.World.Spawn.OrcBoss <- [
 	{
@@ -6446,15 +6493,15 @@ gt.Const.World.Spawn.OrcBoss <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 19
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 3
+				Num = 9
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -6470,11 +6517,11 @@ gt.Const.World.Spawn.OrcBoss <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 1
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -6486,699 +6533,763 @@ gt.Const.World.Spawn.OrcBoss <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 11
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 2
 			}
 		]
 	},
 	{
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 16
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
+				Num = 11
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 3
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 12
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 3
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 5
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 3
 			}
 		]
 	},
 	{
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 22
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
+				Num = 7
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 3
 			}
 		]
 	},
 	{
 		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 6
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 4
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 4
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 4
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 5
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 9
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 5
 			}
 		]
 	},
 	{
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
 				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 14
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 10
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 16
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 5
 			}
 		]
 	},
 	{
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 30
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 14
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 38
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 30
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 44
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 50
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 50
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 40
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarlord,
-				Num = 1
+				Num = 6
 			}
 		]
 	}
@@ -7600,6 +7711,10 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7615,7 +7730,31 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 13
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 14
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7631,7 +7770,31 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 15
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 16
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 16
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7647,7 +7810,31 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 17
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 18
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 18
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7663,7 +7850,32 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 19
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 20
+			}
+
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7679,7 +7891,31 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 21
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 22
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 22
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7695,6 +7931,18 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 23
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 24
 			}
 		]
@@ -7703,7 +7951,31 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 24
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 25
+			}
+		]
+	},
+	{
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 25
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7727,7 +7999,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
+				Num = 26
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -7735,7 +8011,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 29
+				Num = 25
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
 			}
 		]
 	},
@@ -7743,7 +8023,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 30
+				Num = 24
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 3
 			}
 		]
 	},
@@ -7751,7 +8035,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 31
+				Num = 23
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
 			}
 		]
 	},
@@ -7759,7 +8047,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 32
+				Num = 22
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 5
 			}
 		]
 	},
@@ -7767,7 +8059,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 33
+				Num = 21
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
 			}
 		]
 	},
@@ -7775,7 +8071,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 34
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 7
 			}
 		]
 	},
@@ -7783,7 +8083,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 35
+				Num = 19
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 8
 			}
 		]
 	},
@@ -7791,7 +8095,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 36
+				Num = 18
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 9
 			}
 		]
 	},
@@ -7799,71 +8107,11 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 37
-			}
-		]
-	},
-	{
-		Troops = [
+				Num = 17
+			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 38
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 39
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 42
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 44
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 46
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 48
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 50
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 10
 			}
 		]
 	}
@@ -8146,7 +8394,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 28
+				Num = 26
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -8154,7 +8406,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 30
+				Num = 25
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
 			}
 		]
 	},
@@ -8162,7 +8418,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 32
+				Num = 24
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 3
 			}
 		]
 	},
@@ -8170,7 +8430,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 34
+				Num = 23
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
 			}
 		]
 	},
@@ -8178,7 +8442,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 36
+				Num = 22
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 5
 			}
 		]
 	},
@@ -8186,7 +8454,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 38
+				Num = 21
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 6
 			}
 		]
 	},
@@ -8194,7 +8466,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 40
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 7
 			}
 		]
 	},
@@ -8202,7 +8478,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 42
+				Num = 19
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 8
 			}
 		]
 	},
@@ -8210,7 +8490,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 44
+				Num = 18
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 9
 			}
 		]
 	},
@@ -8218,23 +8502,11 @@ gt.Const.World.Spawn.BerserkersOnly <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 46
-			}
-		]
-	},
-	{
-		Troops = [
+				Num = 17
+			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 48
-			}
-		]
-	},
-	{
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 50
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 10
 			}
 		]
 	}

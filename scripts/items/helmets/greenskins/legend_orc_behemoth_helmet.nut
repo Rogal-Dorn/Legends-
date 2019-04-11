@@ -5,7 +5,7 @@ this.legend_orc_behemoth_helmet <- this.inherit("scripts/items/helmets/helmet", 
 		this.helmet.create();
 		this.updateVariant();
 		this.m.ID = "armor.head.legend_orc_behemoth_helmet";
-		this.m.Name = "Looted Kettle Hat";
+		this.m.Name = "Behemoth Helm";
 		this.m.Description = "";
 		this.m.ShowOnCharacter = true;
 		this.m.IconLarge = "";

@@ -66,7 +66,7 @@ local SeerTree = [
 		gt.Const.Perks.PerkDefs.LegendTeacher,
 		gt.Const.Perks.PerkDefs.LegendTeleport,
 		gt.Const.Perks.PerkDefs.LegendFireField,
-		gt.Const.Perks.PerkDefs.LegendRoster7
+		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[],
 	[],

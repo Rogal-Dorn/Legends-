@@ -37,7 +37,6 @@ local SeerWeakTree = [
 		gt.Const.Perks.PerkDefs.MasteryDagger,
 		gt.Const.Perks.PerkDefs.MasteryThrowing,
 		gt.Const.Perks.PerkDefs.LegendMasteryStaves,
-		gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery,
 		gt.Const.Perks.PerkDefs.LegendEntice,
 		gt.Const.Perks.PerkDefs.LegendPush
 	],

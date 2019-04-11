@@ -475,8 +475,8 @@ Beta v10 test 5
  *Fixes reported errors selecting new perks
 
 
-Beta v10 Test 7
-https://drive.google.com/open?id=1UGt-_mBDX2-YVzM2mJf8yw8p0D_7lWOj
+Beta v10 Test 6.6
+https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
 *Assign all in the Repair and Salvage tent works with filters now
 *After a battle, all equipped gear that is damaged is automatically added to the repair queue.
 *Reserve mechanism removed from camp/tent. Reserve is now assigned from the character inventory/stash screen. Upper left near the dismiss bro button.
@@ -486,3 +486,11 @@ https://drive.google.com/open?id=1UGt-_mBDX2-YVzM2mJf8yw8p0D_7lWOj
 *Only Weapons and Armor can be salvaged now
 *Fix Enchant tent rune blueprint tooltips
 *Adds Tent upgrade system - Purchase tents in marketplaces to upgrade camp tent visuals and functionality (Still WIP)
+*Adds 3 new female hairstyles, fixes the nun's habit 
+*Camp now only starts with Repairing and Resting - visit settlements to learn and discover additional camping skills.
+*Adds new ambition to find camping skills.
+*Alps can now drop Weapon runes as loot.
+*Hex can now drop Helmet runes as loot.
+*Lindwurms can now drop Armor runes as loot.
+*Schrat can now drop Sheild runes as loot.
+*Camp repairs and healing will run while on caravan escort missions

@@ -496,7 +496,7 @@ this.asset_manager <- {
 			break;
 
 		case this.Const.LegendMod.StartTypes.Healer:
-			this.setBrothersMax(1);
+			this.setBrothersMax(0);
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
@@ -598,6 +598,7 @@ this.asset_manager <- {
 			bro.setPlaceInFormation(4);
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			break;
+
 
 		case this.Const.LegendMod.StartTypes.Beggar:
 			this.setBrothersMax(1);

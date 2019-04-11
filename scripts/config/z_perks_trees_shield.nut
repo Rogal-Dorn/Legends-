@@ -81,7 +81,7 @@ local ShieldTree = [
 ];
 
 gt.Const.Perks.PerksTreeShield <- [];
-gt.Const.Perks.TreeshieldLookupMap <- {};
+gt.Const.Perks.TreeShieldLookupMap <- {};
 
 for( local row = 0; row < ShieldTree.len(); row = ++row )
 {
