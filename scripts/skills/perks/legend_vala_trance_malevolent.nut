@@ -4,8 +4,11 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 		Failures = 0,
 		Difficulty = 1.25
 	},
-
-
+	function resetTrance()
+	{
+		this.m.TranceIsActive = false;
+		this.m.Failures = 0;
+	}
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_trance_malevolent";

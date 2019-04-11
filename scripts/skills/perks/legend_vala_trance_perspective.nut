@@ -4,6 +4,11 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 		Failures = 0,
 		Difficulty = 1.0
 	},
+	function resetTrance()
+	{
+		this.m.TranceIsActive = false;
+		this.m.Failures = 0;
+	}
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_trance_perspective";
