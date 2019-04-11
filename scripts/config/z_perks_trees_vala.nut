@@ -22,14 +22,14 @@ local ValaTree = [
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.BackStabber,
-		gt.Const.Perks.PerkDefs.LegendRoster3
+		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,
 		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
-		gt.Const.Perks.PerkDefs.LegendRoster4
+		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantMastery,
@@ -40,17 +40,17 @@ local ValaTree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantDisharmony,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeArmor,
-		gt.Const.Perks.PerkDefs.LegendRoster5
+		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaThreads,
 		gt.Const.Perks.PerkDefs.LegendValaSpiritualBond,
-		gt.Const.Perks.PerkDefs.LegendRoster6
+		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantFury,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
-		gt.Const.Perks.PerkDefs.LegendRoster7
+		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[],
 	[],
