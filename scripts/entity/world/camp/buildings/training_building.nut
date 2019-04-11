@@ -53,7 +53,11 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
-	
+	function isHidden()
+	{
+ 		return !this.World.Tags.get("HasLegendCampTraining");
+	}
+
 	function getUpgraded()
 	{
         return this.Stash.hasItem("tent.training_tent");
@@ -102,6 +106,13 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Craft *= 1.15;
+        }
+
+
         return ret;
     }
 

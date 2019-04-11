@@ -1,6 +1,6 @@
 this.legend_camp_unlock_barber <- this.inherit("scripts/events/event", {
 	m = {
-		Town = null
+		TownName = ""
 	},
 	function create()
 	{
@@ -30,37 +30,14 @@ this.legend_camp_unlock_barber <- this.inherit("scripts/events/event", {
 		});
 	}
 
+	function setTownName(_v)
+	{
+		this.m.TownName = _v;
+	}
+
 	function onUpdateScore()
 	{
-		if (!this.World.getTime().IsDaytime)
-		{
-			return;
-		}
-
-		local towns = this.World.EntityManager.getSettlements();
-		local playerTile = this.World.State.getPlayer().getTile();
-		local nearTown = false;
-		local town;
-
-		foreach( t in towns )
-		{
-
-
-			if (t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer() && !this.World.Tags.get("HasLegendCampBarber" && t.hasBuilding(building.barber)))
-			{
-				nearTown = true;
-				town = t;
-				break;
-			}
-		}
-
-		if (!nearTown)
-		{
-			return;
-		}
-
-		this.m.Town = town;
-		this.m.Score = 1;
+		return
 	}
 
 	function onPrepare()
@@ -71,13 +48,8 @@ this.legend_camp_unlock_barber <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"townname",
-			this.m.Town.getName()
+			this.m.TownName
 		]);
-	}
-
-	function onClear()
-	{
-		this.m.Town = null;
 	}
 
 });
