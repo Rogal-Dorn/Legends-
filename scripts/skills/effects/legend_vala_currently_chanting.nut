@@ -46,6 +46,22 @@ this.legend_vala_currently_chanting <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onRemoved()
+	{
+		local ChantDisharmony = this.getContainer().getActor().getSkills().getSkillByID("perk.legend_vala_chant_disharmony");
+		local ChantFury = this.getContainer().getActor().getSkills().getSkillByID("perk.legend_vala_chant_fury");
+
+		if (ChantDisharmony != null)
+		{
+			ChantDisharmony.m.ChantIsActive = false;
+		}
+		if (ChantFury != null)
+		{
+			ChantFury.m.ChantIsActive = false;
+		}
+	}
+
+
 	function onUpdate( _properties )
 	{
 		_properties.TargetAttractionMult *= 1.25;
