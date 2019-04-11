@@ -165,6 +165,65 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		];
     }
 
+	function getName()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Tha Vala emporium of mystical (and maybe even magical) mischief. While encamped, the Vala can retreat into her books and experiements. "
+		desc += "Rune requests can be queued up for the Vala to try her hand at. What comes of them, you'll just have to wait and see what she inscribes. "
+		desc += "Only the Vala can be assigned to the Enchating tent. Vala's ability to inscribe runes is determined by learning the correct inscriptions via her perks."
+		desc += "\n\n"
+		desc += "The Enchanting tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 15% increase in enchanting speed. "
+		desc += "Additionally, the upgraded tools and equipment from the cart allows the Vala to produces potentially more powerful Runes."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		this.init();
+		local mod = this.getModifiers();
+		local ret = [
+			{
+				id = 3,
+				type = "text",
+				icon = "ui/icons/plus.png",
+				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Queue.len() + "[/color] rune inscriptions in the queue."
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "ui/buttons/icon_time.png",
+				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to inscribe all runes."
+			},				
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/icons/repair_item.png",
+				text = "Total enchanting modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft + "[/color] units per hour."
+			}
+		];
+		local id = 6;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+			})
+			++id;
+		}
+		return ret;
+	}
+
     function init()
     {
 		this.onInit();
@@ -341,7 +400,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
 			if (r.Points >= r.Blueprint.getCost())
 			{
-				r.Blueprint.enchant();
+				r.Blueprint.enchant(this.getUpgraded());
 				this.m.ItemsCrafted.push(r.Blueprint)
 				this.m.Queue[i] = null;
 			}

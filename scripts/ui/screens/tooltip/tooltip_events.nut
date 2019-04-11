@@ -2026,7 +2026,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "You\'ll face fewer and less challenging opponents, and retreating from battle is easier.\n\nYour men get a small bonus to hit chance, and the enemy gets a small penalty, to ease you into the game.\n\nRecommended for players new to the game."
+					text = "You\'ll face fewer and less challenging opponents, and retreating from battle is easier.\n\nYour men get a small bonus to hit chance, and the enemy gets a small penalty, to ease you into the game.\n\nRecommended for players new to the game.\n\nEnemy scaling is same as normal, but 25% easier per bro."
 				}
 			];
 
@@ -2040,7 +2040,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Provides for a balanced playing experience that can be quite challenging.\n\nRecommended for veterans of the game or the genre."
+					text = "Provides for a balanced playing experience that can be quite challenging.\n\nRecommended for veterans of the game or the genre.\n\nDefault vanilla linear enemy scaling but extending up to 27 bros instead of 12."
 				}
 			];
 
@@ -2054,7 +2054,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Your opponents will be more challenging and numerous.\n\nRecommended for experts in the game who want an even deadlier challenge."
+					text = "Your opponents will be more challenging and numerous.\n\nRecommended for experts in the game who want an even deadlier challenge.\n\nUses exponential enemy scaling. Easier early game, then about 1.5x as hard as normal for mid to late game."
 				}
 			];
 
@@ -2068,7 +2068,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Your opponents will be brutal and endless.\n\n This is where legends are forged."
+					text = "Your opponents will be brutal and endless.\n\n This is where legends are forged.\n\nSame exponential enemey scaling as expert, but with fewer and more powerful enemies."
 				}
 			];
 

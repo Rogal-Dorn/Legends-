@@ -40,7 +40,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 			_list.push({
 				R = 95,
 				P = 1.0,
-				S = "tents/tent_echant"
+				S = "tents/tent_enchant"
 			});
 		}
 		else if (_id == "building.specialized_trader")

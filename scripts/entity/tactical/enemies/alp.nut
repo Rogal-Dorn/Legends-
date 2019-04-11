@@ -213,7 +213,7 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 					token.setRuneVariant(this.Math.rand(1, 3));
-					token.setRuneBonus();
+					token.setRuneBonus(true);
 					token.updateRuneSigilToken();
 					token.drop(_tile);	
 				}
