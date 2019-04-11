@@ -951,6 +951,10 @@ NewLegendCampaignMenuModule.prototype.destroyDIV = function ()
 	this.mDifficultyHardCheckbox = null;
 	this.mDifficultyHardLabel.remove();
 	this.mDifficultyHardLabel = null;
+	this.mDifficultyLegendaryCheckbox.remove();
+	this.mDifficultyLegendaryCheckbox = null;
+	this.mDifficultyLegendaryLabel.remove();
+	this.mDifficultyLegendaryLabel = null;	
 	this.mCompanyName.remove();
 	this.mCompanyName = null;
 
@@ -1006,6 +1010,9 @@ NewLegendCampaignMenuModule.prototype.bindTooltips = function ()
 	this.mDifficultyHardLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHard });
 	this.mDifficultyHardCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHard });
 
+	this.mDifficultyLegendaryLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyLegendary });
+	this.mDifficultyLegendaryCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyLegendary });
+
 	this.mIronmanCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 	this.mIronmanCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
 
@@ -1017,6 +1024,9 @@ NewLegendCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mEconomicDifficultyHardLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyHard });
 	this.mEconomicDifficultyHardCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyHard });
+	
+	this.mEconomicDifficultyLegendaryLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyLegendary });
+	this.mEconomicDifficultyLegendaryCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyLegendary });
 
 	this.mBudgetDifficultyEasyLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyEasy });
 	this.mBudgetDifficultyEasyCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyEasy });
@@ -1026,6 +1036,9 @@ NewLegendCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mBudgetDifficultyHardLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyHard });
 	this.mBudgetDifficultyHardCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyHard });
+
+	this.mBudgetDifficultyLegendaryLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyLegendary });
+	this.mBudgetDifficultyLegendaryCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyLegendary });
 
 	this.mEvilRandomLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilRandom });
 	this.mEvilRandomCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilRandom });
@@ -1093,6 +1106,9 @@ NewLegendCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mDifficultyHardLabel.unbindTooltip();
 	this.mDifficultyHardCheckbox.unbindTooltip();
 
+	this.mDifficultyLegendaryLabel.unbindTooltip();
+	this.mDifficultyLegendaryCheckbox.unbindTooltip();
+
 	this.mEconomicDifficultyEasyLabel.unbindTooltip();
 	this.mEconomicDifficultyEasyCheckbox.unbindTooltip();
 
@@ -1102,6 +1118,9 @@ NewLegendCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mEconomicDifficultyHardLabel.unbindTooltip();
 	this.mEconomicDifficultyHardCheckbox.unbindTooltip();
 
+	this.mEconomicDifficultyLegendaryLabel.unbindTooltip();
+	this.mEconomicDifficultyLegendaryCheckbox.unbindTooltip();
+
 	this.mBudgetDifficultyEasyLabel.unbindTooltip();
 	this.mBudgetDifficultyEasyCheckbox.unbindTooltip();
 
@@ -1110,6 +1129,9 @@ NewLegendCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mBudgetDifficultyHardLabel.unbindTooltip();
 	this.mBudgetDifficultyHardCheckbox.unbindTooltip();
+
+	this.mBudgetDifficultyLegendaryLabel.unbindTooltip();
+	this.mBudgetDifficultyLegendaryCheckbox.unbindTooltip();
 
 	this.mIronmanCheckboxLabel.unbindTooltip();
 	this.mIronmanCheckbox.unbindTooltip();
