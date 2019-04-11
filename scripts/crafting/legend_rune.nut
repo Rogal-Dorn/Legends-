@@ -12,7 +12,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		token.updateRuneSigilToken();
 		token.getRuneSigilTooltip = this.getRuneSigilTooltip;
 		this.m.PreviewCraftable = token;
-		this.m.Cost = 100;
+		this.m.Cost = 1200;
 		this.m.Enchanter = true;
 		// local ingredients = [
 		// 	{
@@ -98,70 +98,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 	{
 		local rune =  this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 		rune.setRuneVariant(this.m.Rune);
-		local bonus = 0;
-		local bonus2 = 0;
-		switch (this.m.Rune)
-		{
-			case 1:
-				bonus = this.Math.rand(3, 12)
-				break;
-
-			case 2:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)				
-				break;
-
-			case 3:
-				bonus = this.Math.rand(3, 12)
-				break;
-
-			case 11:
-				bonus = this.Math.rand(0, 2)
-				bonus2 = this.Math.rand(3, 12)
-				break;
-
-			case 12:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(1, 5)
-				break;
-
-			case 13:
-				bonus = this.Math.rand(3, 12)
-				break;
-
-			case 21:
-				bonus = this.Math.rand(0, 3);
-				bonus2 = this.Math.rand(3, 12)
-				break;
-
-			case 22:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)			
-				break;
-
-			case 23:
-				break;
-
-			case 31:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)		
-				break;
-
-			case 32:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)		
-				break;
-
-			case 33:
-				bonus = this.Math.rand(3, 12)
-				bonus2 = this.Math.rand(3, 12)		
-				break;
-
-			default:
-				break;
-		}
-		rune.setRuneBonus1(bonus);
-		rune.setRuneBonus2(bonus2);		
+		rune.setRuneBonus();	
 		rune.updateRuneSigilToken();
 		_stash.add(rune);
 	}

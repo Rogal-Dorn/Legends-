@@ -1,6 +1,7 @@
 this.camp_manager <- {
 	m = {
         IsCamping = false,
+        IsEscorting = false,
         LastHourUpdated = 0,
         StartTime = 0,
         StopTime = 0,
@@ -43,7 +44,10 @@ this.camp_manager <- {
     {
         foreach(b in this.m.Tents)
         {
-            b.init();
+            if (this.m.IsCamping && b.Camping() || this.m.IsEscorting && b.Escorting())
+            {
+                b.init();
+            }
         }
     }
 
@@ -51,7 +55,10 @@ this.camp_manager <- {
     {
         foreach(b in this.m.Tents)
         {
-            b.completed();
+            if (this.m.IsCamping && b.Camping() || this.m.IsEscorting && b.Escorting())
+            {
+                b.completed();
+            }
         }
     }
 
@@ -118,6 +125,27 @@ this.camp_manager <- {
         return this.m.Tents;
     }
 
+    function onEscort()
+    {
+		this.m.IsEscorting = !this.m.IsEscorting;
+
+        //Transition to Camping
+        if (this.m.IsEscorting)
+        {
+            this.m.StartTime = this.Time.getVirtualTimeF();
+            this.m.LastHourUpdated = this.World.getTime().Hours;
+            this.init();
+        }
+         else 
+        {
+            this.m.StopTime = this.Time.getVirtualTimeF();
+            this.completed();
+            this.m.LastCampTime = this.m.StopTime;
+			this.World.State.getPlayer().updateStrength();
+            this.World.TopbarDayTimeModule.hideMessage();
+        }        
+    }
+
     function onCamp()
     {
 		this.m.IsCamping = !this.m.IsCamping;
@@ -153,7 +181,10 @@ this.camp_manager <- {
     {
         foreach(b in this.m.Tents)
         {
-            b.updateTick(this.getElapsedHours())
+            if (this.m.IsCamping && b.Camping() || this.m.IsEscorting && b.Escorting())
+            {
+                b.updateTick(this.getElapsedHours())
+            }
         }
 
 		if (this.World.getTime().Hours == this.m.LastHourUpdated)
@@ -166,13 +197,23 @@ this.camp_manager <- {
         local text;
         foreach(b in this.m.Tents)
         {
-            text = b.update();
-            if (text) 
+            if (this.m.IsCamping && b.Camping() || this.m.IsEscorting && b.Escorting())
             {
-                updates.push(text);
+                text = b.update();
+                if (text) 
+                {
+                    updates.push(text);
+                }
             }
         }
-        this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
+        if (this.m.IsCamping)
+        {
+            this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
+        }
+        else if (this.m.IsEscorting)
+        {
+            this.World.TopbarDayTimeModule.showMessage("ESCORTING", updates);
+        }
     }
 
 	function addBuilding( _building)

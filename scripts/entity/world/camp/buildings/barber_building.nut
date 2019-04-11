@@ -90,6 +90,10 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		return "dude_full";
 	}
 	
+	function isHidden()
+	{
+		return !this.World.Tags.get("HasLegendCampBarber")
+	}	
 
 	function onClicked( _campScreen )
 	{

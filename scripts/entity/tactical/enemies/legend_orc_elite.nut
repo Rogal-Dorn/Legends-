@@ -254,6 +254,13 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_perfect_focus"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
+		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+			this.m.Skills.add(this.new("scripts/skills/traits/perk_legend_second_wind"));
+		}
+
 	}
 
 	function onFinish()
@@ -265,7 +272,7 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local r;
 
-		if (this.Math.rand(1, 100) <= 10)
+		if (this.Math.rand(1, 100) <= 15)
 		{
 			r = this.Math.rand(1, 2);
 
@@ -281,27 +288,27 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 3);
+			r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_limb_lopper"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullsmasher"));
 			}
 			else if (r == 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_bough"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_axe"));
 			}
 				else if (r == 3)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_man_mangler"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
 			}
-					else if (r == 2)
+					else if (r == 4)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skullsmasher"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/legend_skin_flayer"));
 			}
 		}
 
-		if (this.Math.rand(1, 100) <= 1)
+		if (this.Math.rand(1, 100) <= 2)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/named/named_orc_heavy_shield"));
 		}
@@ -311,8 +318,8 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warrior_heavy_armor"));
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warrior_heavy_helmet"));
+			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_elite_heavy_armor"));
+			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_elite_heavy_helmet"));
 	
 	}
 

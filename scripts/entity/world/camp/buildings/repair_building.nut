@@ -15,6 +15,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Repair;
+        this.m.Escorting = true;
         this.m.Slot = "repair";
         this.m.Name = "Repair Tent";
         this.m.Description = "Manage the repair of company items"
@@ -198,6 +199,20 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             //local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
             //ret.Consumption = v;
         }
+        if (ret.Assigned == 0)
+        {
+            ret.Repair *= 2.0;
+        }
+
+        if (this.getUpgraded()) 
+        {  
+            ret.Consumption = 1.0 / 10.0
+            if (ret.Assigned > 0)
+            {
+                ret.Repair *= 1.15;
+            }
+        }
+
         return ret;
     }
 
