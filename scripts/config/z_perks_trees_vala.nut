@@ -34,7 +34,7 @@ local ValaTree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantMastery,
 		gt.Const.Perks.PerkDefs.LegendValaTranceMastery,
-		gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery,
+		gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery
 
 	],
 	[
