@@ -158,20 +158,36 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				{
 					local distance = e.getTile().getDistanceTo(actor.getTile());
 
-					if (distance <= 3 && e.isAlliedWith(actor))
+					if (distance <= 3 && t.isAlliedWith(actor))
 					{
-						expertise += this.Math.maxf(0.0, 1.33 - distance / 3.0);
+						switch (distance)
+						{
+							case 1:
+								expertise += 2.0 / this.m.Difficulty;
+								break;
+
+							case 2:
+								expertise += 1.0 / this.m.Difficulty;
+								break;
+
+							case 3:
+								expertise += 0.5 / this.m.Difficulty;
+								break;
+
+							default:
+								break
+						}
 					}
 				}
 			}
 
 			if (actor.getSkills().hasSkill("perk.legend_vala_trance_mastery"))
 			{
-				expertise += 10.0;
+				expertise += 15.0 / this.m.Difficulty;
 
-				if (expertise > 100)
+				if (expertise > 95)
 				{
-					expertise = 100;
+					expertise = 95;
 				}
 			}
 			else
@@ -180,6 +196,11 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				{
 					expertise = 85;
 				}
+			}
+
+			if (expertise < 5)
+			{
+				expertise = 5;
 			}
 
 			this.logInfo("INCORPOREAL PERSPECTIVE :: expertise is " + expertise);
