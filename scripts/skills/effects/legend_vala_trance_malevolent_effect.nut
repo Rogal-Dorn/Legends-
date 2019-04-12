@@ -81,6 +81,7 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 		local actor = this.getContainer().getActor();
 		this.addSprite(1, "bust_ghost_fog_02");
 		this.addSprite(2, "bust_ghost_fog_02", true);
+		this.spawnIcon("status_effect_52", actor.getTile());
 
 		this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
 	}
