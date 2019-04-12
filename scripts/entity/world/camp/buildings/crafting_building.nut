@@ -15,10 +15,6 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Name = "Craft";
         this.m.Description = "Craft items"
 		this.m.BannerImage = "ui/buttons/banner_craft.png"
-		// this.m.UIImage = "ui/settlements/taxidermist_day_empty";
-		// this.m.UIImageNight = "ui/settlements/taxidermist_night_empty";
-		// this.m.UIImageFull = "ui/settlements/taxidermist_day_full";
-		// this.m.UIImageNightFull = "ui/settlements/taxidermist_night_full";
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/camp_taxidermist_01.wav",

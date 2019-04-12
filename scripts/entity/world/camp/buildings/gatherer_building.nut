@@ -14,12 +14,55 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Name = "Gatherer";
         this.m.Description = "Forgage for herbs and medicine";
 		this.m.BannerImage = "ui/buttons/banner_gather.png";
-		// this.m.UIImage = "ui/settlements/gatherer_day_empty";
-		// this.m.UIImageNight =  "ui/settlements/gatherer_night_empty";
-		// this.m.UIImageFull = "ui/settlements/gatherer_day_full";
-		// this.m.UIImageNightFull =  "ui/settlements/gatherer_night_full";
         this.m.CanEnter = false
     }
+
+	function getName()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Cuts, scrapes, bruises, missing limbs and other body parts - all part of the job. "
+		desc += "Make sure you always have enough medicines on hand to keep the company patched up and in fighting condition. "
+		desc += "Brothers assigned to this task will go out and forage for herbs and plants of medicinal quality. The more people assigned, the more medicine gathered. "
+		desc += "\n\n"
+		desc += "The Gathering tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 15% increase in gathering speed. "
+		desc += "Additionally, there's a chance that some more potent and useful medicines will be discovered."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		local mod = this.getModifiers();
+		local ret = [			
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/buttons/asset_medicine_up.png",
+				text = "Produces [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft / 3.0 + "[/color] units of medicine per hour."
+			}
+		];
+		local id = 6;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] / 3.0 + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+			})
+			++id;
+		}
+		return ret;
+	}
+
 
 	function isHidden()
 	{
@@ -95,7 +138,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			res.push({
 		 		id = id,
 		 		icon = "ui/buttons/asset_medicine_up.png",
-		 		text = "You gathered " + this.m.MedsAdded + " units of medicine"
+		 		text = "You gathered " + this.Math.floor(this.m.MedsAdded) + " units of medicine"
 			})
 			++id;
 		}
@@ -124,37 +167,30 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return null
 		}
 
+		if (this.World.Assets.getMedicine() + this.m.MedsAdded >= this.World.Assets.getMaxMedicine())
+		{
+			return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds";
+		}
+
 		local points = this.Math.floor(this.m.Craft * this.m.Camp.getElapsedHours());
-		local medsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(points / 3.0)))
-		return "Gathered ... " + medsAdded + " meds";
+		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (points / 3.0));
+		return "Gathered ... " + this.Math.floor(this.m.AmmoAdded) + " meds";
 	}
 
     function completed()
     {
+		local item = null
+
+		if (this.m.MedsAdded > 0)
+		{
+			this.World.Assets.addMedicine(this.Math.floor(this.m.MedsAdded));
+		}
+
 		if (!this.getUpgraded())
 		{
 			return 
 		}
 
-		local item = null
-		if (this.World.Assets.getMedicine() >= this.World.Assets.getMaxMedicine())
-		{
-			return
-		}
-
-		local points = this.Math.floor(this.m.Craft * this.m.Camp.getCampTimeHours());
-		if (points == 0)
-		{
-			return;
-		}
-
-		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (this.Math.floor(points / 3.0)))
-		if (this.m.MedsAdded == 0)
-		{
-			return
-		}
-
-		this.World.Assets.addMedicine(this.m.MedsAdded);
 		if (this.Stash.getNumberOfEmptySlots() == 0)
 		{
 			return

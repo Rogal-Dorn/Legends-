@@ -92,8 +92,8 @@ gt.Const.Tactical.Actor.LegendOrcElite <- {
 };
 gt.Const.Tactical.Actor.LegendOrcBehemoth <- {
 	XP = 600,
-	ActionPoints = 8,
-	Hitpoints = 400,
+	ActionPoints = 9,
+	Hitpoints = 500,
 	Bravery = 55,
 	Stamina = 400,
 	MeleeSkill = 70,
