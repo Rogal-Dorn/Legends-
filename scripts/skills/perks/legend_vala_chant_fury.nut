@@ -2,6 +2,10 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 	m = {
 		ChantIsActive = false
 	},
+	function resetChant()
+	{
+		this.m.ChantIsActive = false;
+	}
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_chant_fury";
@@ -130,7 +134,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.m.ChantIsActive = false;
+		this.resetChant();
 	}
 
 
@@ -222,7 +226,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 						firststrike.setVala(this.getContainer().getActor());
 						t.getSkills().add(firststrike);
 
-						if (actor.getTile().getDistanceTo(t.getTile()) <= 3)
+						if (actor.getTile().getDistanceTo(t.getTile()) <= 3 && actor.getID() != t.getID())
 						{
 							this.spawnIcon("perk_36", t.getTile());
 						}

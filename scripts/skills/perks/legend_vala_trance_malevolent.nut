@@ -4,8 +4,11 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 		Failures = 0,
 		Difficulty = 1.25
 	},
-
-
+	function resetTrance()
+	{
+		this.m.TranceIsActive = false;
+		this.m.Failures = 0;
+	}
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_trance_malevolent";
@@ -167,10 +170,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 
 			if (TotalVictims == 0)  //  CANCEL TRANCE BECAUSE TARGET IS DEAD OR DYING
 			{
-				this.m.TranceIsActive = false;
-				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
 				this.logInfo("MALEVOLENT SPIRITS :: onTurnStart victim is dead or dying");
 				return;
 			}
@@ -231,10 +231,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 				}
 
 				this.Sound.play("sounds/combat/legend_vala_malevolent.wav");
-				this.m.TranceIsActive = false;
-				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
 			}
 			else  // TRANCE FAILURE
 			{
@@ -248,10 +245,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 				}
 				else  //  CANCEL TRANCE BECAUSE OF FATIGUE
 				{
-					this.m.TranceIsActive = false;
-					this.m.Failures = 0;
 					actor.getSkills().removeByID("effects.legend_vala_in_trance");
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
 
 					foreach (tar in targets)
 					{
@@ -278,8 +272,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 			actor.getSkills().removeByID("effects.legend_vala_in_trance");
 		}
 
-		this.m.TranceIsActive = false;
-		this.m.Failures = 0;
+		this.resetTrance();
 	}
 
 
@@ -314,10 +307,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 			{
 				if (this.Math.rand(1, 100) <= 50)  //  MASTERY GRANTS A 50% CHANCE TO AVOID DROPPING OUT OF TRANCE
 				{
-					this.m.TranceIsActive = false;
-					this.m.Failures = 0;
 					actor.getSkills().removeByID("effects.legend_vala_in_trance");
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
 
 					foreach (tar in targets)
 					{
@@ -333,10 +323,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
-				this.m.TranceIsActive = false;
-				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
 
 				foreach (tar in targets)
 				{

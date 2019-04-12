@@ -53,11 +53,11 @@ this.legend_vala_currently_chanting <- this.inherit("scripts/skills/skill", {
 
 		if (ChantDisharmony != null)
 		{
-			ChantDisharmony.m.ChantIsActive = false;
+			ChantDisharmony.resetChant();
 		}
 		if (ChantFury != null)
 		{
-			ChantFury.m.ChantIsActive = false;
+			ChantFury.resetChant();
 		}
 	}
 

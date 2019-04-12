@@ -4,6 +4,11 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 		Failures = 0,
 		Difficulty = 1.0
 	},
+	function resetTrance()
+	{
+		this.m.TranceIsActive = false;
+		this.m.Failures = 0;
+	}
 	function create()
 	{
 		this.m.ID = "perk.legend_vala_trance_perspective";
@@ -202,8 +207,6 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
 //				this.Sound.play("sounds/combat/legend_vala_perspective.wav");
-				this.m.TranceIsActive = false;
-				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
 			}
 			else  // TRANCE FAILURE
@@ -218,8 +221,6 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 				}
 				else  //  CANCEL TRANCE BECAUSE OF FATIGUE
 				{
-					this.m.TranceIsActive = false;
-					this.m.Failures = 0;
 					actor.getSkills().removeByID("effects.legend_vala_in_trance");
 				}
 			}
@@ -236,8 +237,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 			actor.getSkills().removeByID("effects.legend_vala_in_trance");
 		}
 
-		this.m.TranceIsActive = false;
-		this.m.Failures = 0;
+		this.resetTrance();
 	}
 
 
@@ -271,15 +271,11 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 			{
 				if (this.Math.rand(1, 100) <= 50)  //  MASTERY GRANTS A 50% CHANCE TO AVOID DROPPING OUT OF TRANCE
 				{
-					this.m.TranceIsActive = false;
-					this.m.Failures = 0;
 					actor.getSkills().removeByID("effects.legend_vala_in_trance");
 				}
 			}
 			else
 			{
-				this.m.TranceIsActive = false;
-				this.m.Failures = 0;
 				actor.getSkills().removeByID("effects.legend_vala_in_trance");
 			}
 		}
@@ -290,11 +286,6 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
-
-		if (actor.getSkills().hasSkill("effects.legend_vala_in_trance"))
-		{
-			actor.getSkills().removeByID("effects.legend_vala_in_trance");
-		}
 
 		foreach (tar in targets)
 		{
