@@ -5,7 +5,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.character_background.create();
 		this.m.ID = "background.minstrel";
 		this.m.Name = "Minstrel";
-		this.m.Icon = "ui/backgrounds/background_42.png";
+		this.m.Icon = "ui/backgrounds/troubadour.png";
 		this.m.BackgroundDescription = "A good minstrel will sing a saga to inspire the men, play the flute to calm them, or entertain them with poetry around the camp fire. A lute is not a weapon, however, and minstrels are often not used to physical labor or bloodshed.";
 		this.m.GoodEnding = "Ah, %name%. What an addition to the %companyname%! The minstrel not only became an excellent fighter, but was crucial in keeping the men\'s spirits high in the toughest of times. A poet and actor at heart, he eventually retired from the company and started up a theater company. He current performs plays for both the nobility and laymen. The minstrel does not yet realize it, but his playful wit and sharp commentary are slowly bringing the classes together.";
 		this.m.BadEnding = "Never a fighter at heart, %name% the minstrel quickly left the declining %companyname%. He and a group of musicians and jesters spend their evenings performing for drunken noblemen. You managed to see one of these performances for yourself. %name% spent much of the time being berated by the inebriated and having half-eaten chicken bones thrown at him. One of the nobles even thought it\'d be funny to set a dog loose on one of the jesters. You could see the minstrel\'s dreams dying in his eyes, but the show went on.";
