@@ -49,13 +49,13 @@ this.legend_vala_information <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "When the Vala starts chanting she will cause immediate effects. These effects usually last until the start of her next turn. Taking damage does not interrupt her chanting."
+				text = "Chants are sorcerous incantations delivered by song. These affect an area around the Vala and last until the start of her next turn."
 			},
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "When the Vala enters a trance she will remain in that state until her task is either completed or interrupted. Trance completion is checked at the start of her turns, and failure causes her to remain in trance (while gaining additional success chance for her next completion check). Receiving damage of any kind, or becoming too fatigued, will drop the Vala out of an active trance."
+				text = "Trances are altered states entered into by the Vala. She will remain in these until her task is either completed or interrupted. Receiving damage of any kind, or becoming too fatigued to continue, will drop the Vala out of an active trance."
 			}
 		];
 
