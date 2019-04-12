@@ -15,10 +15,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"
 		this.m.BannerImage = "ui/buttons/banner_hunt.png"
-		// this.m.UIImage = "ui/settlements/hunter_day_empty";
-		// this.m.UIImageNight = "ui/settlements/hunter_night_empty";
-		// this.m.UIImageFull = "ui/settlements/hunter_day_full";
-		// this.m.UIImageNightFull = "ui/settlements/hunter_night_full";
 		this.m.CanEnter = false
 		this.m.Sounds = [
 			{
@@ -45,6 +41,52 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			}
 		];
     }
+
+	function getName()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Armies march on their stomachs...And apparently so do mercenary companies! "
+		desc += "Keep the company's bellies full by sending your highly skilled killing machines to hunt the land for food. "
+		desc += "Hunting parties can only be sent out while encamped. The more people assigned, the more food that can be hunted."
+		desc += "\n\n"
+		desc += "The Hunting tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 10% increase in hunting efficiency. "
+		desc += "Additionally, there's a chance that some of the spoils of the hunt, other than food, can also be salvaged and brought back to camp."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		local mod = this.getModifiers();
+		local ret = [			
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/buttons/asset_food_up.png",
+				text = "Successful hunt will take approxiamtely [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(55.0 / mod.Craft) + "[/color] hours."
+			}
+		];
+		local id = 6;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + (bro[0] / 55.0) * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+			})
+			++id;
+		}
+		return ret;
+	}
 
 	function isHidden()
 	{
@@ -206,8 +248,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return this.getUpdateText();
 		}
 
-
-		//this can be upgrade system
 		if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
 		{
 			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
