@@ -53,18 +53,16 @@ this.legend_vala_in_trance <- this.inherit("scripts/skills/skill", {
 
 		if (TrancePerspective != null)
 		{
-			TrancePerspective.m.TranceIsActive = false;
-			TrancePerspective.m.Failures = 0;
+			TrancePerspective.resetTrance();
 		}
 		if (TranceMalevolent != null)
 		{
-			TranceMalevolent.m.TranceIsActive = false;
-			TranceMalevolent.m.Failures = 0;
+			TranceMalevolent.resetTrance();
 		}
 
 		if (this.Tactical.isActive())
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " returns to this realm.");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " returns to this realm.");
 		}
 
 		this.getContainer().getActor().m.IsUsingZoneOfControl = true;

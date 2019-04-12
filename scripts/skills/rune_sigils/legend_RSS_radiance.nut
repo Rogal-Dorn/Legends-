@@ -35,7 +35,7 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onCombatStarted()
+	function applyRadianceFoundation()
 	{
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
@@ -52,6 +52,18 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+	}
+
+
+	function onTurnStart()
+	{
+		this.applyRadianceFoundation();
+	}
+
+
+	function onCombatStarted()
+	{
+		this.applyRadianceFoundation();
 	}
 
 
