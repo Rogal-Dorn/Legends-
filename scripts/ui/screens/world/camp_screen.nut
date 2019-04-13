@@ -723,25 +723,6 @@ this.camp_screen <- {
 		}
 
 		return highest
-
-		return this.Const.World.TerrainSettlementImages[highest].Background;
-		// this.m.UIRamp = this.Const.World.TerrainSettlementImages[highest].Ramp;
-		// this.m.UIForeground = this.m.HousesMax < 5 ? this.Const.World.TerrainSettlementImages[highest].Foreground : "ui/settlements/foreground_04";
-		// this.m.UIMood = this.Const.World.TerrainSettlementImages[highest].Mood;
-		// this.World.createRoster(this.getID());
-		// this.registerThinker();
-		// local body = this.addSprite("body");
-		// body.setBrush(this.m.Sprite);
-		// local light = this.addSprite("lighting");
-		// this.setSpriteColorization("lighting", false);
-
-		// if (this.m.Lighting != "")
-		// {
-		// 	light.setBrush(this.m.Lighting);
-		// }
-
-		// light.IgnoreAmbientColor = true;
-		// light.Alpha = 0;
 	}
 
 	function queryCampInformation()
@@ -779,8 +760,22 @@ this.camp_screen <- {
 				result.Slots.push(null);
 				continue
 			}
+			local image
+
+			switch (highest) 
+			{
+				case 9:
+				case 8:
+				case 4:
+					image =  building.getUIImage(highest)
+					break;
+				default:
+					image = building.getUIImage(0)
+					break;
+			}
+
 			local b = {
-				Image = building.getUIImage(0),
+				Image = image,
 				Tooltip = building.getTooltipID(),
 				Slot = building.getSlot(),
 				CanEnter = building.canEnter()

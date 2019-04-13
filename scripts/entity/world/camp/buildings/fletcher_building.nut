@@ -45,7 +45,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.SoundsAtNight = [];
     }
 
-	function getName()
+	function getTitle()
 	{
 		if (this.getUpgraded())
 		{
@@ -73,7 +73,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			{
 				id = 5,
 				type = "text",
-				icon = "ui/icons/asset_ammo_up.png",
+				icon = "ui/buttons/asset_ammo_up.png",
 				text = "Produces [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft / 2.0 + "[/color] units of ammo per hour."
 			}
 		];

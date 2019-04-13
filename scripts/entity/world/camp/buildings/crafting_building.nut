@@ -91,7 +91,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
-	function getName()
+	function getTitle()
 	{
 		if (this.getUpgraded())
 		{
@@ -103,8 +103,8 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getDescription()
 	{
 		local desc = "";
-		desc += "Come here to craft potions, trophies and other useful items. Recipes added to the crafting queue will be worked on by any "
-		desc += "personel assigned to this tent. Crafting only occurs while encamped. Progress is saved, so items do not have to be crafted in "
+		desc += "Come here to craft potions, trophies and other useful items. Recipes added to the crafting queue will be worked on by anyone "
+		desc += "assigned to this tent. Crafting only occurs while encamped. Progress is saved, so items do not have to be crafted in "
 		desc += "a single session. The more people assigned to the tent, the quicker items will be crafted."
 		desc += "\n\n"
 		desc += "The crafting tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 15% increase in crafting speed."

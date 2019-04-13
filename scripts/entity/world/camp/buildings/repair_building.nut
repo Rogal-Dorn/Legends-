@@ -20,10 +20,6 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.Name = "Repair Tent";
         this.m.Description = "Manage the repair of company items"
         this.m.BannerImage = "ui/buttons/banner_repair.png";
-		// this.m.UIImage = "ui/settlements/blacksmith_day_empty_large";
-		// this.m.UIImageNight = "ui/icons/buildings/blacksmith_night_empty_large"; 
-		// this.m.UIImageFull = "ui/settlements/blacksmith_day_full_large";
-		// this.m.UIImageNightFull = "ui/icons/buildings/blacksmith_night_full_large";   
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/camp_blacksmith_01.wav",
@@ -83,6 +79,67 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		];
 		this.m.SoundsAtNight = [];
     }
+
+	function getTitle()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "Better your armor and weapons take a beating than your brothers! This is the place to fix all those dents and polish up those scuffs. ";
+		desc += "Queue items in your stash and equipped bros to be repaired. Equipment is repaired in a linear fashion (unlike in parallel in vanilla), so "
+		desc += "order in the queue has significance. Each brother assigned to the tent repairs an amount of durability each hour. "
+		desc += "The more people assigned to the tent, the quicker items will be repaired. Unlike vanilla, repairs only occur while encamped."
+		desc += "\n\n"
+        desc += "Any equipped gear that is damaged will automatically be added to the front of the queue at the end of all battles. "
+        desc += "If no brothers are assigned to the repair tent, repairs will still be made, albeit at a slower rate. "
+        desc += "\n\n"
+		desc += "The crafting tent can be upgraded by purchasing a repair cart from a settlement merchant. An upgraded tent has a 15% increase in repair speed."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		this.init();
+		local mod = this.getModifiers();
+		local ret = [
+			{
+				id = 3,
+				type = "text",
+				icon = "ui/icons/plus.png",
+				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Repairs.len() + "[/color] items in the repair queue."
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "ui/buttons/icon_time.png",
+				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to repair all items in the queue."
+			},				
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/icons/repair_item.png",
+				text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Repair + "[/color] units per hour."
+			}
+		];
+		local id = 6;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+			})
+			++id;
+		}
+		return ret;
+	}
 
 	function getUpgraded()
 	{

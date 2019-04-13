@@ -17,7 +17,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.CanEnter = false
     }
 
-	function getName()
+	function getTitle()
 	{
 		if (this.getUpgraded())
 		{
