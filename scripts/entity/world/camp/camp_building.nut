@@ -420,7 +420,7 @@ this.camp_building <- {
 
 	function onBroEnter ( _bro )
 	{
-		return true
+		return _bro.getBackground().getID() != "background.legend_donkey"
 	}
 
 	function onSerialize( _out )
