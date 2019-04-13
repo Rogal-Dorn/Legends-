@@ -475,8 +475,8 @@ Beta v10 test 5
  *Fixes reported errors selecting new perks
 
 
-Beta v10 Test 7
-https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
+Beta v10 Release Candidate (Feature complete)
+https://drive.google.com/open?id=12557T2DziboD_BnmnSZ46nLpkxcQY2PR
 *Assign all in the Repair and Salvage tent works with filters now
 *After a battle, all equipped gear that is damaged is automatically added to the repair queue.
 *Reserve mechanism removed from camp/tent. Reserve is now assigned from the character inventory/stash screen. Upper left near the dismiss bro button.
@@ -501,5 +501,7 @@ https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
 *Warden has more tiles it can spawn on, and if it doesn't spawn onCombatStarted it will now try to spawn one every onTurnStart.
 *New Shield Rune: Radiance
 *New Behemoth Orc added
+*Healing tent change - it is now an active job (it is consistent now with all other tents) Hurt or injured bros do not need to be assigned to healing tent. Healing happens all the time now, no matter where they are. Assigning bros to tent increases healing and allows wounds to be treated.
+
 
 
