@@ -33,7 +33,7 @@ this.legend_camp_unlock_scouting <- this.inherit("scripts/events/event", {
 	{
 		local text = "{On the out skirts of %townname%, you pass a local guard force on patrol. "
 		text += "You over hear them talking about a camp they came upon where they found everyone slaughtered... "
-		text += "Something about how tehy were all caught unaware because they had no one on patrol.}"
+		text += "Something about how they were all caught unaware because they had no one on patrol.}"
 		text += "\n\n"
 		text += this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout).getDescription();
 		return text;

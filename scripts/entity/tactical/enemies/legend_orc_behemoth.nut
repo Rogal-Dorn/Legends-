@@ -11,14 +11,10 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/orc_death_01.wav",
-			"sounds/enemies/orc_death_02.wav",
-			"sounds/enemies/orc_death_03.wav",
-			"sounds/enemies/orc_death_04.wav",
-			"sounds/enemies/orc_death_05.wav",
-			"sounds/enemies/orc_death_06.wav",
-			"sounds/enemies/orc_death_07.wav",
-			"sounds/enemies/orc_death_08.wav"
+			"sounds/enemies/orcgiant_death_01.wav",
+			"sounds/enemies/orcgiant_death_02.wav",
+			"sounds/enemies/orcgiant_death_03.wav",
+			"sounds/enemies/orcgiant_death_04.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
 			"sounds/enemies/orc_flee_01.wav",
@@ -26,47 +22,33 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/orc_flee_03.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/orc_hurt_01.wav",
-			"sounds/enemies/orc_hurt_02.wav",
-			"sounds/enemies/orc_hurt_03.wav",
-			"sounds/enemies/orc_hurt_04.wav",
-			"sounds/enemies/orc_hurt_05.wav",
-			"sounds/enemies/orc_hurt_06.wav",
-			"sounds/enemies/orc_hurt_07.wav"
+			"sounds/enemies/orcgiant_hurt_01.wav",
+			"sounds/enemies/orcgiant_hurt_02.wav",
+			"sounds/enemies/orcgiant_hurt_03.wav",
+			"sounds/enemies/orcgiant_hurt_04.wav",
+			"sounds/enemies/orcgiant_hurt_05.wav",
+			"sounds/enemies/orcgiant_hurt_06.wav",
+			"sounds/enemies/orcgiant_hurt_07.wav",
+			"sounds/enemies/orcgiant_hurt_08.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/orc_idle_01.wav",
-			"sounds/enemies/orc_idle_02.wav",
-			"sounds/enemies/orc_idle_03.wav",
-			"sounds/enemies/orc_idle_04.wav",
-			"sounds/enemies/orc_idle_05.wav",
-			"sounds/enemies/orc_idle_06.wav",
-			"sounds/enemies/orc_idle_07.wav",
-			"sounds/enemies/orc_idle_08.wav",
-			"sounds/enemies/orc_idle_09.wav",
-			"sounds/enemies/orc_idle_10.wav",
-			"sounds/enemies/orc_idle_11.wav",
-			"sounds/enemies/orc_idle_12.wav",
-			"sounds/enemies/orc_idle_13.wav",
-			"sounds/enemies/orc_idle_14.wav",
-			"sounds/enemies/orc_idle_15.wav",
-			"sounds/enemies/orc_idle_16.wav",
-			"sounds/enemies/orc_idle_17.wav",
-			"sounds/enemies/orc_idle_18.wav",
-			"sounds/enemies/orc_idle_19.wav",
-			"sounds/enemies/orc_idle_20.wav",
-			"sounds/enemies/orc_idle_21.wav",
-			"sounds/enemies/orc_idle_22.wav",
-			"sounds/enemies/orc_idle_23.wav",
-			"sounds/enemies/orc_idle_24.wav",
-			"sounds/enemies/orc_idle_25.wav",
-			"sounds/enemies/orc_idle_26.wav",
-			"sounds/enemies/orc_idle_27.wav",
-			"sounds/enemies/orc_idle_28.wav",
-			"sounds/enemies/orc_idle_29.wav",
-			"sounds/enemies/orc_fatigue_01.wav",
-			"sounds/enemies/orc_fatigue_02.wav",
-			"sounds/enemies/orc_fatigue_03.wav"
+			"sounds/enemies/orcgiant_idle_01.wav",
+			"sounds/enemies/orcgiant_idle_02.wav",
+			"sounds/enemies/orcgiant_idle_03.wav",
+			"sounds/enemies/orcgiant_idle_04.wav",
+			"sounds/enemies/orcgiant_idle_05.wav",
+			"sounds/enemies/orcgiant_idle_06.wav",
+			"sounds/enemies/orcgiant_idle_07.wav",
+			"sounds/enemies/orcgiant_idle_08.wav",
+			"sounds/enemies/orcgiant_idle_09.wav",
+			"sounds/enemies/orcgiant_idle_10.wav",
+			"sounds/enemies/orcgiant_idle_11.wav",
+			"sounds/enemies/orcgiant_idle_12.wav",
+			"sounds/enemies/orcgiant_idle_13.wav",
+			"sounds/enemies/orcgiant_idle_14.wav",
+			"sounds/enemies/orcgiant_idle_15.wav",
+			"sounds/enemies/orcgiant_idle_16.wav",
+			"sounds/enemies/orgiantc_idle_17.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
 			"sounds/enemies/orc_fatigue_01.wav",
