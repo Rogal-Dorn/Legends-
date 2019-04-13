@@ -8,7 +8,7 @@ this.legend_camp_unlock_scouting <- this.inherit("scripts/events/event", {
 		this.m.Title = "At %townname%";
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_camp_train.png[/img]{On the out skirts of %townname%, you pass a local guard force on patrol. You over hear them talking about a camp they came upon where they found everyone slaughtered... Something about how tehy were all caught unaware because they had no one on patrol.}",
+			Text = "[img]gfx/ui/events/legend_camp_train.png[/img]{On the out skirts of %townname%, you pass a local guard force on patrol. You over hear them talking about a camp they came upon where they found everyone slaughtered... Something about how they were all caught unaware because they had no one on patrol.}",
 			Image = "",
 			List = [],
 			Characters = [],
