@@ -49,7 +49,7 @@ this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.45;
-		this.m.ActionPointCost = 1;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;

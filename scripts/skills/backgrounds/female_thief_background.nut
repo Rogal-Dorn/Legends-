@@ -5,7 +5,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.character_background.create();
 		this.m.ID = "background.female_thief";
 		this.m.Name = "Pickpocket";
-		this.m.Icon = "ui/backgrounds/background_11.png";
+		this.m.Icon = "ui/backgrounds/pickpocket.png";
 		this.m.BackgroundDescription = "A good pickpocket will have quick reflexes and the ability to evade any captors.";
 		this.m.GoodEnding = "%name% the pickpocket retired from fighting and disappeared off the map. You haven\'t heard word of the woman since, but there are rumors that a certain nobleman had one of his vaults completely drained in a perfectly executed heist.";
 		this.m.BadEnding = "%name% the thief read the lines being drawn in the sands and retired from the %companyname% while she still could. She took what money she had made and threw together a crew of thieves and brigands. Last you heard, she pulled off a perfect heist only for one of her partners to stab her in the back and take off with all the goods.";

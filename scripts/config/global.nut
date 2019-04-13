@@ -165,7 +165,7 @@ gt.Const.Difficulty <- {
 		0.85,
 		1.0,
 		1.15,
-		1.3
+		1.0
 	],
 	PaymentMult = [
 		1.1,
