@@ -4746,7 +4746,7 @@ gt.Const.World.Spawn.OrcDefenders <- [
 				Num = 3
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcLegendOrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			},
 			{

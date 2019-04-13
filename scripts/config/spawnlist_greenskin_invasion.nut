@@ -3589,7 +3589,7 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			},
 			{
