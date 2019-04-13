@@ -11,15 +11,55 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Scout;
         this.m.Slot = "scout";
-        this.m.Name = "Patrol";
+        this.m.Name = "Patrol Station";
         this.m.Description = "Send out a patrol to keep an eye on the surrounding terrain";
 		this.m.BannerImage = "ui/buttons/banner_scout.png"
-        // this.m.UIImage = "ui/settlements/scout_day_empty";
-		// this.m.UIImageNight = "ui/settlements/scout_night_empty";
-		// this.m.UIImageFull = "ui/settlements/scout_day_full";
-		// this.m.UIImageNightFull = "ui/settlements/scout_night_full";
         this.m.CanEnter = false;
     }
+
+	function getTitle()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Getting ambushed while camping is the surest way to ruin a good nights sleep."
+		desc += "Make sure someone is on patrol in order to have eyes and ears and the local landscape."
+		desc += "The more men assigned on patrol, the faster and further your visibility grows."
+		desc += "\n\n"
+		desc += "The Patrol station be upgraded by purchasing a patrol cart from a settlement merchant. An upgraded tent has a 15% increase in patrol speed. "
+		desc += "Additionally, while on patrol there's a chance that the location of enemy outposts can be determined."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		local mod = this.getModifiers();
+		local ret = [{
+            id = 6,
+            type = "text",
+            icon = "ui/buttons/asset_vision_up.png",
+            text = "Total patrol modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft * 100.0 + "%[/color]."
+		}]
+        local id = 7;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+			})
+            ++id;
+		}
+		return ret;
+	}
 
 	function isHidden()
 	{

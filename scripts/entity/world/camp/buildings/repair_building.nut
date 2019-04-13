@@ -91,8 +91,8 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getDescription()
 	{
-		local desc = "Better your armor and weapons take a beating than your brothers! This is the place to fix all those dents and polish up those scuffs. ";
-		desc += "Queue items in your stash and equipped bros to be repaired. Equipment is repaired in a linear fashion (unlike in parallel in vanilla), so "
+		local desc = "";
+		desc += "Repair damaged items in your stash and equipped bros. Equipment is repaired in a linear fashion (unlike in parallel in vanilla), so "
 		desc += "order in the queue has significance. Each brother assigned to the tent repairs an amount of durability each hour. "
 		desc += "The more people assigned to the tent, the quicker items will be repaired. Unlike vanilla, repairs only occur while encamped."
 		desc += "\n\n"

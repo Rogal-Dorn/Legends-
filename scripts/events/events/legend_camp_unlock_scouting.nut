@@ -8,13 +8,13 @@ this.legend_camp_unlock_scouting <- this.inherit("scripts/events/event", {
 		this.m.Title = "At %townname%";
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_camp_train.png[/img]{On the out skirts of %townname%, you pass a local guard force on patrol. You over hear them talking about a camp they came upon where they found everyone slaughtered... Something about how tehy were all caught unaware because they had no one on patrol.}",
+			Text = "[img]gfx/ui/events/legend_camp_scout.png[/img]",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Scouting unlocked in camp.",
+					Text = "Patrol unlocked in camp.",
 					function getResult( _event )
 					{
 						this.World.Tags.set("HasLegendCampScouting", true);
@@ -28,11 +28,23 @@ this.legend_camp_unlock_scouting <- this.inherit("scripts/events/event", {
 
 		});
 	}
+
+	function getText()
+	{
+		local text = "{On the out skirts of %townname%, you pass a local guard force on patrol. "
+		text += "You over hear them talking about a camp they came upon where they found everyone slaughtered... "
+		text += "Something about how tehy were all caught unaware because they had no one on patrol.}"
+		text += "\n\n"
+		text += this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout).getDescription();
+		return text;
+	}
+
 	function setTownName(_v)
 	{
 		this.m.TownName = _v;
+		this.m.Screens[0].Text += this.getText()
 	}
-
+	
 	function onUpdateScore()
 	{
 		return

@@ -475,7 +475,7 @@ Beta v10 test 5
  *Fixes reported errors selecting new perks
 
 
-Beta v10 Test 6.6
+Beta v10 Test 7
 https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
 *Assign all in the Repair and Salvage tent works with filters now
 *After a battle, all equipped gear that is damaged is automatically added to the repair queue.
@@ -485,9 +485,10 @@ https://drive.google.com/open?id=1cDp0KeD6g_rr8QcWU4blP-HLMdLsWhCV
 *Fixes rune variant values not reloading correctly
 *Only Weapons and Armor can be salvaged now
 *Fix Enchant tent rune blueprint tooltips
-*Adds Tent upgrade system - Purchase tents in marketplaces to upgrade camp tent visuals and functionality (Still WIP)
+*Adds Tent upgrade system - Purchase tents in marketplaces to upgrade camp tent visuals and functionality
 *Adds 3 new female hairstyles, fixes the nun's habit 
 *Camp now only starts with Repairing and Resting - visit settlements to learn and discover additional camping skills.
+*Tooltips added for camp tents
 *Adds new ambition to find camping skills.
 *Alps can now drop Weapon runes as loot.
 *Hex can now drop Helmet runes as loot.

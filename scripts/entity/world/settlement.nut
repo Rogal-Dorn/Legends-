@@ -1900,15 +1900,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			eventID = "event.legend_camp_unlock_hunt";
 		}
-		else if (!this.World.Tags.get("HasLegendCampHealing") && this.hasBuilding("building.temple"))
-		{
-			eventID = "event.legend_camp_unlock_heal";
-		}
 		else if (!this.World.Tags.get("HasLegendCampScraping") &&  (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith")))
 		{
 			eventID = "event.legend_camp_unlock_scrap";
 		}
-		else if (!this.World.Tags.get("HasLegendCampScouting") && (this.hasAttachedLocation("attached_location.wooden_watchtower") || this.hasAttachedLocation("attached_location.fortified_outpost")))
+		else if (!this.World.Tags.get("HasLegendCampScouting") && (this.hasAttachedLocation("attached_location.wooden_watchtower") || this.hasAttachedLocation("attached_location.stone_watchtower") || this.hasAttachedLocation("attached_location.fortified_outpost")))
 		{
 			eventID = "event.legend_camp_unlock_scouting";
 		}
@@ -1918,16 +1914,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			return;
 		}
 
-		local event = this.World.Events.getEvent(eventID);
-		if (event == null)
-		{
-			return;
-		}
-		event.setTownName(this.getName());
-		this.Time.scheduleEvent(this.TimeUnit.Real, 2000, function ( _t )
-		{
-			this.World.Events.fire(eventID);
-		}, null);
+		this.World.Camp.fireEvent(eventID, this.getName());
 	}
 
 	function onFinish()

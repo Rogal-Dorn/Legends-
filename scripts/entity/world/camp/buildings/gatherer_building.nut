@@ -174,7 +174,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		local points = this.Math.floor(this.m.Craft * this.m.Camp.getElapsedHours());
 		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (points / 3.0));
-		return "Gathered ... " + this.Math.floor(this.m.AmmoAdded) + " meds";
+		return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds";
 	}
 
     function completed()
