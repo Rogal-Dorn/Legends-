@@ -304,13 +304,18 @@ this.camp_building <- {
 		return this.m.Name;
 	}
 
+	function getTitle()
+	{
+		return this.m.Name;
+	}
+
     function getTooltip()
     {
 		local res = [
             {
                 id = 1,
                 type = "title",
-                text = this.getName()
+                text = this.getTitle()
             },
             {
                 id = 2,

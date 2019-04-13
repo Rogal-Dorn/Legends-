@@ -13,13 +13,9 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.ID = this.Const.World.CampBuildings.Healer;
 		this.m.Escorting = true;
         this.m.Slot = "heal";
-        this.m.Name = "Heal/Reserves";
+        this.m.Name = "Healing";
         this.m.Description = "Place brothers in reserves in order to heal from wounds.";
 		this.m.BannerImage = "ui/buttons/banner_heal.png"
-		// this.m.UIImage = "ui/settlements/med_day_empty";
-		// this.m.UIImageNight =  "ui/settlements/med_night_empty";
-		// this.m.UIImageFull = "ui/settlements/med_day_full";
-		// this.m.UIImageNightFull =  "ui/settlements/med_night_full";
 		this.m.Sounds = [
 			{
 				File = "ambience/camp/healer_01.wav",
@@ -68,6 +64,65 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		]
     }
 
+	function getTitle()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Injuries are a prerequisite for any self respecting battle brother. The quicker temporary injuries are patched up, the quicker a battle brother can get some more! "
+		desc += "Send any brother who has sustained injuries to this tent. Those injuries can be queued up to be treated. Treated injuries take half the time to heal. "
+		desc += "Treating an injury requires a cost of medicine and time (vs coin in a temple). The more people assigned to the tent, the quicker injuries will be treated. "
+		desc += "Anyone in the healing tent will also regenerate missing health points twice as fast as normal."
+		desc += "\n\n"
+		desc += "The healing tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 15% increase in treatment speed and a 25% decrease in medicine cost for each injury."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		this.onInit();
+		local mod = this.getModifiers();
+		local ret = [
+			{
+				id = 3,
+				type = "text",
+				icon = "ui/icons/plus.png",
+				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Queue.len() + "[/color] injuries queued to be treated."
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "ui/buttons/icon_time.png",
+				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to treat all queued injuries."
+			},				
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/buttons/asset_medicine_down.png",
+				text = "Total treatment modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft + "[/color] units per hour."
+			}
+		];
+		local id = 6;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+			})
+			++id;
+		}
+		return ret;
+	}
+
 	function isHidden()
 	{
 		return !this.World.Tags.get("HasLegendCampHealing")
@@ -109,6 +164,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.MedsUsed = 0;
 		this.m.InjuriesTreated = 0;
 		this.m.InjuriesHealed = [];
+		this.onInit();
     }
 
     function onInit()
@@ -204,7 +260,6 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             Craft = 0.0,
             Assigned = 0,
             Modifiers = []
-
         }
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
@@ -261,11 +316,6 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     function update ()
     {
-		if (this.m.Queue == null)
-		{
-			this.onInit();
-		}
-
         local modifiers = this.getModifiers();
         foreach (i, r in this.m.Queue)
         {

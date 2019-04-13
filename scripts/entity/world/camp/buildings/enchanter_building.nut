@@ -161,7 +161,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		];
     }
 
-	function getName()
+	function getTitle()
 	{
 		if (this.getUpgraded())
 		{
