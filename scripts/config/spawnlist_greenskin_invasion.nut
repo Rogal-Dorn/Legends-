@@ -238,6 +238,182 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Body = "figure_orc_02",
 		Troops = [
 			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_02",
+		Troops = [
+			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 8
 			},
@@ -307,6 +483,30 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
+		Body = "figure_goblin_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
 		Body = "figure_orc_02",
 		Troops = [
 			{
@@ -415,12 +615,52 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 12
 			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
 		]
 	},
 	{
@@ -451,11 +691,55 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -648,6 +932,170 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		]
 	},
 	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			}
+		]
+	},
+	{
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
@@ -847,6 +1295,64 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Body = "figure_orc_04",
 		Troops = [
 			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 6
 			},
@@ -860,6 +1366,56 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
 				Num = 1
 			}
 		]
@@ -915,6 +1471,39 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -985,6 +1574,151 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
 				Num = 4
 			},
 			{
@@ -1027,6 +1761,212 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -1138,6 +2078,537 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 5
+			}
+		]
+	},
+{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 7
+			}
+		]
+	},
+{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
 				Num = 12
 			},
 			{
@@ -1151,6 +2622,28 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
 				Num = 6
+			}
+		]
+	},
+
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
 			}
 		]
 	},
@@ -1172,6 +2665,10 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
 			}
 		]
 	},
@@ -1193,6 +2690,31 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 9
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
 			}
 		]
 	},
@@ -1289,6 +2811,31 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+				{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -1456,6 +3003,31 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 5
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -1538,7 +3110,11 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcYoung,
-				Num = 17
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
@@ -1646,6 +3222,424 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+		{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_orc_05",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 8
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarlord,
@@ -1741,6 +3735,31 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcYoung,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 1
 			}
 		]
@@ -1879,6 +3898,10 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -2020,6 +4043,10 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -2153,6 +4180,10 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
 			}
 		]
 	},
@@ -2341,8 +4372,8 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-				Num = 6
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
@@ -2359,7 +4390,229 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 16
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
@@ -2375,15 +4628,15 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinShaman,
-				Num = 3
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 3
+				Num = 8
 			}
 		]
 	},
@@ -2396,31 +4649,64 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 14
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
-				Num = 8
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 11
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
 				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinShaman,
-				Num = 2
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 4
 			}
 		]
 	},
@@ -2432,69 +4718,28 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Body = "figure_goblin_04",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 18
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.GoblinShaman,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 5
-			}
-		]
-	},
-{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_goblin_04",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.GoblinShaman,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
 				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 8
 			}
 		]
 	},
@@ -2506,16 +4751,12 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Body = "figure_goblin_04",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 24
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
-				Num = 14
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
-				Num = 18
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
@@ -2526,11 +4767,15 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 				Num = 2
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 14
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
 				Num = 7
 			}
 		]
@@ -2543,16 +4788,12 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Body = "figure_goblin_04",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 28
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
-				Num = 16
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
-				Num = 20
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
@@ -2560,15 +4801,19 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinShaman,
-				Num = 3
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 8
+				Num = 6
 			}
 		]
 	},
@@ -2580,16 +4825,138 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 		Body = "figure_goblin_04",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher,
-				Num = 30
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
-				Num = 18
+				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
-				Num = 24
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
@@ -2597,15 +4964,579 @@ gt.Const.World.Spawn.GreenskinHorde <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarrior,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.OrcWarrior,
-				Num = 18
+				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.OrcBerserker,
-				Num = 9
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 1
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+
+		]
+	}
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
+			}
+
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_goblin_04",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinShaman,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.OrcWarlord,
+				Num = 2
 			}
 		]
 	}
