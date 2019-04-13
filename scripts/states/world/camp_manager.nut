@@ -221,6 +221,29 @@ this.camp_manager <- {
         }
     }
 
+    function fireEvent( _eventID, _name )
+    {
+        local event = this.World.Events.getEvent(_eventID);
+		if (event == null)
+		{
+			return;
+		}
+
+		event.setTownName(_name);
+        if (this.World.Events.canFireEvent(true))
+        {
+            this.World.Events.fire(_eventID);
+        } 
+        else 
+        {
+            local me = this;
+            this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _t )
+            {
+                me.fireEvent(_eventID, _name);
+            }, null);            
+        }
+    }
+
 	function addBuilding( _building)
 	{
         _building.setCamp(this);

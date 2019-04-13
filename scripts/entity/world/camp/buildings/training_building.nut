@@ -11,11 +11,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
         this.m.Slot = "train";
         this.m.Name = "Training Grounds";
         this.m.Description = "Training"
-		this.m.BannerImage = "ui/buttons/banner_train.png"
-		// this.m.UIImage = "ui/settlements/training_day_empty";
-		// this.m.UIImageNight = "ui/settlements/training_night_empty";
-		// this.m.UIImageFull = "ui/settlements/training_day_full";
-		// this.m.UIImageNightFull = "ui/settlements/training_night_full";
+		this.m.BannerImage = "ui/buttons/banner_train.png";
 		this.m.CanEnter = false
 		this.m.Sounds = [
 			{
@@ -52,6 +48,50 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 		];
     }
+
+	function getTitle()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Whether a seasoned veteran or a green recruit, there's always something new to learn. "
+		desc += "Anyone assigned to train has a chance to get a 20% increase in xp on their next combat. "
+		desc += "Time and having highly skilled teachers in the grounds increases the chances of successfully learning something new. "
+		desc += "There's always a slight chance someone can be injured."
+		desc += "\n\n"
+		desc += "Training grounds can be upgraded by purchasing an upgrade set in local markets. Upgraded grounds reduce the "
+		desc += "risk of accidents and also give the chance of a permanant skill increase."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		local mod = this.getModifiers();
+		local ret = [{
+            id = 6,
+            type = "text",
+            icon = "ui/buttons/asset_vision_up.png",
+            text = "Total training modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft * 100.0 + "%[/color]."
+		}]
+		foreach (bro in mod.Modifiers)
+		{
+            ++id
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] * 100.0 + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+			})
+		}
+		return ret;
+	}
 
 	function isHidden()
 	{
@@ -350,7 +390,12 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 
 			//Negative
-			local r = this.Math.min(5, 10 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())) - bro.getLevel());			
+			local min = 10;
+			if (this.getUpgraded())
+			{
+				min = 5;
+			}
+			local r = this.Math.min(min, 10 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())) - bro.getLevel());			
 			if (this.Math.rand(1, 100) < r)
 			{
 				this.getInjury(bro);

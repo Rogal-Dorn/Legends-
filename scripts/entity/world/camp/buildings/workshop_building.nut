@@ -89,6 +89,65 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
     }
 
+	function getTitle()
+	{
+		if (this.getUpgraded())
+		{
+			return this.m.Name + " *Upgraded*"
+		} 
+		return this.m.Name +  " *Not Upgraded*"
+	}
+
+	function getDescription()
+	{
+		local desc = "";
+		desc += "Repairing equipment takes supplies. Break down and reuse equipment in your stash to help repair existing gear. "
+		desc += "Each brother assigned to the tent salvages an amount of durability each hour and converts it into tools. "
+        desc += "Once an item reaches zero durability, it will be consumed and destroyed. Every 15 durability equals a tool."
+		desc += "The more people assigned to the tent, the quicker items will be salvaged."
+		desc += "\n\n"
+		desc += "The salvage tent can be upgraded by purchasing a salvage cart from a settlement merchant. An upgraded tent has a 15% increase in salvage speed and every 10 durability equals a tool."
+		return desc;
+	}
+
+	function getModifierToolip()
+    {
+		this.init();
+		local mod = this.getModifiers();
+		local ret = [
+			{
+				id = 3,
+				type = "text",
+				icon = "ui/icons/plus.png",
+				text = "There are [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Salvage.len() + "[/color] items in the salvage queue."
+			},
+			{
+				id = 4,
+				type = "text",
+				icon = "ui/buttons/icon_time.png",
+				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to salvage all items in the queue."
+			},				
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/icons/asset_supplies.png",
+				text = "Total salvage modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Salvage + "[/color] units per hour."
+			}
+		];
+		local id = 6;
+		foreach (bro in mod.Modifiers)
+		{
+			ret.push({
+				id = id,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "[/color] units/hour " + bro[1] + " (" + bro[2] + ")"
+			})
+			++id;
+		}
+		return ret;
+	}
+
 	function isHidden()
 	{
 		return !this.World.Tags.get("HasLegendCampScraping")
@@ -196,29 +255,6 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             Modifiers = []
         }
 		local roster = this.World.getPlayerRoster().getAll();
-    //     local craft = 0;
-    //     local craftmod = 0;
-
-    //     local roster = this.World.getPlayerRoster().getAll();
-    //     local totalcraft = 0;
-    //     local totalcraftmod = 0;
-    //     foreach( bro in roster )
-    //     {
-    //         if (bro.getCampAssignment() != this.m.ID)
-    //         {
-    //             continue
-    //         }
-    //         totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Injury);
-    //         totalcraft += this.m.BaseCraft;
-    //          ++ret.Assigned
-    //         ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
-    //     }
-    //     totalcraft = pow(totalcraft, 0.5);
-    //    totalbonus = pow((totalcraft * totalcraftmod),0.5)
-    //     combinedcraft = totalcraft + totalbonux;
-    //     ret.Craft += combinedcraft;
-    //     return ret;
-
 
         foreach( bro in roster )
         {

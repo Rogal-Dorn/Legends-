@@ -25,7 +25,6 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 		local fletching = false;
 		local hunting = false;
 		local gathering = false;
-		local healing = false;
 		local scraping = false;
 		local scouting = false;
 
@@ -54,11 +53,6 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 		if (this.World.Tags.get("HasLegendCampGathering"))
 		{
 			gathering = true;
-		}
-
-		if (this.World.Tags.get("HasLegendCampHealing"))
-		{
-			healing = true;
 		}
 
 		if (this.World.Tags.get("HasLegendCampScraping"))
@@ -96,11 +90,6 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 			ret = ret + "\n- Gathering";
 		}
 
-		if (!healing)
-		{
-			ret = ret + "\n- Healing";
-		}
-
 		if (!hunting)
 		{
 			ret = ret + "\n- Hunting";
@@ -132,7 +121,6 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 		local fletching = false;
 		local hunting = false;
 		local gathering = false;
-		local healing = false;
 		local scraping = false;
 		local scouting = false;
 
@@ -160,12 +148,7 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 		{
 			gathering = true;
 		}
-
-		if (this.World.Tags.get("HasLegendCampHealing"))
-		{
-			healing = true;
-		}
-
+		
 		if (this.World.Tags.get("HasLegendCampScraping"))
 		{
 			scraping = true;
