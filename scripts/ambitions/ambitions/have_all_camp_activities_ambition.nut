@@ -164,7 +164,7 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 			training = true;
 		}
 
-		return barber && crafting && training && fletching && hunting && gathering && healing && scraping && scouting;
+		return barber && crafting && training && fletching && hunting && gathering && scraping && scouting;
 	}
 
 	function onUpdateScore()
