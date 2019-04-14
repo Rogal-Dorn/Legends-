@@ -51,17 +51,6 @@ this.camp_manager <- {
         }
     }
 
-    function completed()
-    {
-        foreach(b in this.m.Tents)
-        {
-            if (this.m.IsCamping && b.Camping() || this.m.IsEscorting && b.Escorting())
-            {
-                b.completed();
-            }
-        }
-    }
-
     function getBuildingByID( _id )
     {
         foreach (b in this.m.Tents)
@@ -141,10 +130,16 @@ this.camp_manager <- {
             this.m.LastHourUpdated = this.World.getTime().Hours;
             this.init();
         }
-         else 
+        else 
         {
             this.m.StopTime = this.Time.getVirtualTimeF();
-            this.completed();
+            foreach(b in this.m.Tents)
+            {
+                if (b.Escorting())
+                {
+                    b.completed();
+                }
+            }
             this.m.LastCampTime = this.m.StopTime;
 			this.World.State.getPlayer().updateStrength();
             this.World.TopbarDayTimeModule.hideMessage();
@@ -163,10 +158,16 @@ this.camp_manager <- {
             this.m.LastHourUpdated = this.World.getTime().Hours;
             this.init();
         }
-         else 
+        else 
         {
             this.m.StopTime = this.Time.getVirtualTimeF();
-            this.completed();
+            foreach(b in this.m.Tents)
+            {
+                if (b.Camping())
+                {
+                    b.completed();
+                }
+            }
             this.m.LastCampTime = this.m.StopTime;
             this.World.Assets.consumeItems();
 			this.World.Assets.refillAmmo();
