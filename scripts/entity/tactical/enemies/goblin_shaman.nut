@@ -29,7 +29,7 @@ this.goblin_shaman <- this.inherit("scripts/entity/tactical/goblin", {
 		this.m.Skills.add(this.new("scripts/skills/actives/root_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/insects_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/grant_night_vision_skill"));
-		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		 if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));

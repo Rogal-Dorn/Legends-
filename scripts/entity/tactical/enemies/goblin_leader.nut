@@ -28,7 +28,7 @@ this.goblin_leader <- this.inherit("scripts/entity/tactical/goblin", {
 		b.IsSpecializedInCrossbows = true;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_captain"));
 		this.m.Skills.add(this.new("scripts/skills/actives/goblin_whip"));
-			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));

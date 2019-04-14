@@ -48,7 +48,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/orcgiant_idle_14.wav",
 			"sounds/enemies/orcgiant_idle_15.wav",
 			"sounds/enemies/orcgiant_idle_16.wav",
-			"sounds/enemies/orgiantc_idle_17.wav"
+			"sounds/enemies/orcgiant_idle_17.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
 			"sounds/enemies/orc_fatigue_01.wav",
@@ -236,7 +236,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_assured_conquest"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_taste_the_pain"));
-		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		 if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));

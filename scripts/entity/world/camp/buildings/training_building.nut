@@ -80,6 +80,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
             icon = "ui/buttons/asset_vision_up.png",
             text = "Total training modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft * 100.0 + "%[/color]."
 		}]
+		local id = 7
 		foreach (bro in mod.Modifiers)
 		{
             ++id

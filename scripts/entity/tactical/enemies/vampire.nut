@@ -232,7 +232,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
-		 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		 if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
 			{
 			b.MeleeSkill += 10;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_composure"));
