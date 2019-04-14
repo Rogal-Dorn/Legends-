@@ -5,7 +5,7 @@ this.tent_scout <- this.inherit("scripts/items/trade/trading_good_item", {
 		this.trading_good_item.create();
 		this.m.ID = "tent.scout_tent";
 		this.m.Name = "Scout\'s station";
-		this.m.Description = "A station for ogranising scouting parties, upgrades your camp. Comes with maps, compasses and spyglasses";
+		this.m.Description = "A station for ogranising scouting parties, comes with maps, compasses and spyglasses. Having this in your stash upgrades your camp.";
 		this.m.Icon = "tents/tent_scout_70x70.png";
 		this.m.Value = 3000;
 	}

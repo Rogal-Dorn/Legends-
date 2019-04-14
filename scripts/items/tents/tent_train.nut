@@ -5,9 +5,9 @@ this.tent_train <- this.inherit("scripts/items/trade/trading_good_item", {
 		this.trading_good_item.create();
 		this.m.ID = "tent.training_tent";
 		this.m.Name = "Training equipment";
-		this.m.Description = "A collection of equipment for training mercenaries, upgrades your camp. Comes with a training dummy, wooden weapons and ring pegs";
+		this.m.Description = "A collection of equipment for training mercenaries, comes with a training dummy, wooden weapons and ring pegs. Having this in your stash upgrades your camp.";
 		this.m.Icon = "tents/tent_training_70x70.png";
-		this.m.Value = 3000;
+		this.m.Value = 5000;
 	}
 
 	function getBuyPrice()
