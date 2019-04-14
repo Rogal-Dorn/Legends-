@@ -139,6 +139,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_seer_robes"));
+		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

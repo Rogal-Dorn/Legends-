@@ -1251,7 +1251,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_seer");
+						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_vala");
 						return 0;
 					}
 
