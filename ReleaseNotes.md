@@ -508,6 +508,7 @@ Beta 10.1
 *Fixes crash loading orc scenario
 *Fixes training camp tooltip disappearing
 *Fixes camp activities ambition not completing
+*Adds ReachAdvantage perk for Blacksmith and Ironmonger
 
 
 
