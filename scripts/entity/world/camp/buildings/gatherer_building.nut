@@ -180,7 +180,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function completed()
     {
 		local item = null
-
 		if (this.m.MedsAdded > 0)
 		{
 			this.World.Assets.addMedicine(this.Math.floor(this.m.MedsAdded));
