@@ -503,5 +503,11 @@ https://drive.google.com/open?id=12557T2DziboD_BnmnSZ46nLpkxcQY2PR
 *New Behemoth Orc added
 *Healing tent change - it is now an active job (it is consistent now with all other tents) Hurt or injured bros do not need to be assigned to healing tent. Healing happens all the time now, no matter where they are. Assigning bros to tent increases healing and allows wounds to be treated.
 
+Beta 10.1
+*Fixes Crash loading bad orc sound
+*Fixes crash loading orc scenario
+*Fixes training camp tooltip disappearing
+*Fixes camp activities ambition not completing
+
 
 
