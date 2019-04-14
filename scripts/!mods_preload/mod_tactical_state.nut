@@ -139,7 +139,7 @@
 			{
 				if (this.m.TacticalCombatResultScreen != null)
 				{
-					if (_isVictory && this.Settings.getGameplaySettings().AutoLoot)
+					if (_isVictory && this.Settings.getGameplaySettings().AutoLoot && "Assets" in this.World && this.World.Assets != null)
 					{
 						this.m.TacticalCombatResultScreen.onLootAllItemsButtonPressed();
 						this.World.Assets.consumeItems();
@@ -149,7 +149,10 @@
 						this.World.State.updateTopbarAssets();
 					}
 
-					this.World.Camp.assignRepairs();
+					if ("Camp" in this.World && this.World.Camp != null)
+					{
+						this.World.Camp.assignRepairs();
+					}
 
 					this.m.TacticalScreen.show();
 					this.m.TacticalCombatResultScreen.hide();

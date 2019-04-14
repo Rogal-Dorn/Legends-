@@ -21,7 +21,7 @@ this.legend_orc_behemoth_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		this.m.Sprite = "legend_orc_behemoth_armour_01";
 		this.m.SpriteDamaged = "legend_orc_behemoth_armour_01_damaged";
-		this.m.SpriteCorpse = "blegend_orc_behemoth_armour_01_dead";
+		this.m.SpriteCorpse = "legend_orc_behemoth_armour_01_dead";
 	}
 
 });

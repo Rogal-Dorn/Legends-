@@ -26,7 +26,6 @@ local NobleWeakTree = [
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.Sprint,
 		gt.Const.Perks.PerkDefs.LegendComposure,
-		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
