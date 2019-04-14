@@ -1,6 +1,7 @@
 this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		Vala = null
+		Vala = null,
+		Range = 1
 	},
 	function setVala(_v)
 	{
@@ -32,7 +33,13 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 
 	function isHidden()
 	{
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
+		local distance = this.getDistance()
+		if (distance == null)
+		{
+			return true
+		}
+
+		if (distance <= this.m.Range)
 		{
 			this.m.Name = "Disharmonic";
 			this.m.Icon = "skills/status_effect_65.png";
@@ -75,10 +82,31 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		}
 	}
 
-
-	function ChantUpdate()
+	function getDistance()
 	{
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
+		local actor = this.getContainer().getActor();
+		if (actor == null) 
+		{
+			return;
+		}
+
+		local tile = actor.getTile();
+		if (tile == null)
+		{
+			return;
+		}
+
+		if (this.m.Vala.getTile() == null)
+		{
+			return;
+		}
+
+		return tile.getDistanceTo(this.m.Vala.getTile())
+	}
+
+	function ChantUpdate( _inRange )
+	{
+		if (_inRange)
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
 			this.m.Name = "Disharmonic";
@@ -99,18 +127,32 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 
 	function onMovementCompleted()
 	{
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= 1)
+		local distance = this.getDistance();
+
+		if (distance == null)
+		{
+			return
+		}
+
+		if (distance <= this.m.Range)
 		{
 			this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
 		}
 
-		this.ChantUpdate();
+		this.ChantUpdate(distance <= this.m.Range);
 	}
 
 
 	function onUpdate( _properties )
 	{
-		this.ChantUpdate();
+		local distance = this.getDistance();
+		
+		if (distance == null)
+		{
+			return
+		}
+
+		this.ChantUpdate( distance <= this.m.Range);
 	}
 
 
