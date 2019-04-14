@@ -48,7 +48,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/orcgiant_idle_14.wav",
 			"sounds/enemies/orcgiant_idle_15.wav",
 			"sounds/enemies/orcgiant_idle_16.wav",
-			"sounds/enemies/orgiantc_idle_17.wav"
+			"sounds/enemies/orcgiant_idle_17.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
 			"sounds/enemies/orc_fatigue_01.wav",
