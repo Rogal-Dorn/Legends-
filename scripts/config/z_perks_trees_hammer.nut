@@ -5,6 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
+
 local HammerTree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
