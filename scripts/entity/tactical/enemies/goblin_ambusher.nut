@@ -38,7 +38,7 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/racial/goblin_ambusher_racial"));
-		 if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
@@ -70,7 +70,7 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		{
 			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
 		}
-		if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
 			}

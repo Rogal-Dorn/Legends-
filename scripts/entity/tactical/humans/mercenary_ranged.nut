@@ -39,7 +39,7 @@ this.mercenary_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
-		if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_close_combat_archer"));

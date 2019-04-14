@@ -159,7 +159,7 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/ghastly_touch"));
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
-		if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));

@@ -30,7 +30,7 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.m.Skills.add(this.new("scripts/skills/actives/horror_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/miasma_skill"));
-		 if (if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary))
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
