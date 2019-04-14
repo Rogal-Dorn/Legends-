@@ -511,4 +511,10 @@ Beta 10.1
 *Adds ReachAdvantage perk for Blacksmith and Ironmonger
 
 
+Beta 0.10.2 Released on Nexus
+*Fixes camp tents not getting results when completed 
+*Fixes Orc Behemoth not dieing
+*Removes duplicate student perk on noble perk tree
 
+Beta 0.10.3
+*Ranger starts with higher ammo.
