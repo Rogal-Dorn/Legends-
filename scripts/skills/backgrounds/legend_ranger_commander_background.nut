@@ -46,6 +46,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
