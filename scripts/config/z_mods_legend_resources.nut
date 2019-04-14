@@ -76,9 +76,9 @@ gt.Const.LegendMod.ResourceModifiers <- {
 	Barter = [0.0, 0.025, 0.05, 0.10, 0.20],
 	ToolConsumption = [0.0, 0.05, 0.10, 0.20],
 	MedConsumption = [0.0, 0.05, 0.10, 0.20],
-	Hunting = [0, 1, 2, 3], // = BasePoints + BasePoints * Modifier
-	Fletching = [0, 1, 2, 3], // = BasePoints + BasePoints * Modifier
-	Scout = [1, 2, 3, 3], // = BasePoints + BasePoints * Modifier
+	Hunting = [0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Fletching = [0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Scout = [0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
 	Gather = [0.0, 0.30, 0.50, 1.0], // = BasePoints + BasePoints * Modifier
-	Training = [0, 1, 2, 3] // = BasePoints + BasePoints * Modifier
+	Training = [0, 0.1, 0.2, 0.3] // = BasePoints + BasePoints * Modifier
 }

@@ -170,23 +170,17 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 			switch (k)
 			{
-				case "Repair":
-				case "Healing":
-				case "Injury":
-				case "Barter":
-				case "Salvage":
-				case "Crafting":
-				case "ToolConsumption":
-				case "MedConsumption":
-				case "Gather":
-					v = v * 100;
-					text += k + " +" + v + "%\n";
+				case "Ammo":
+				case "Meds":
+				case "Stash":
+					text += k + " +" + v + "\n";
 					break;
 				case "ArmorParts":
 					text += "Tools +" + v + "\n";
 					break;
 				default:
-					text += k + " +" + v + "\n";
+					v = v * 100;
+					text += k + " +" + v + "%\n";
 			}
 		}
 

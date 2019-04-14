@@ -134,7 +134,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
                 continue
             }
 
-            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Scout;
+            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Scout * 10;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
