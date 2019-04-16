@@ -113,7 +113,7 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function ChantFinished()
+	function endChant()
 	{
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
@@ -140,19 +140,19 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 	function onTurnStart()
 	{
-		this.ChantFinished();
+		this.endChant();
 	}
 
 
 	function onCombatFinished()
 	{
-		this.ChantFinished();
+		this.endChant();
 	}
 
 
 	function onDeath()
 	{
-		this.ChantFinished();
+		this.endChant();
 	}
 
 

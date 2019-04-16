@@ -104,7 +104,7 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 	}
 
 
-	function SpiritSpread()
+	function spreadEffect()
 	{
 		local actor = this.getContainer().getActor();
 		local everyone = this.Tactical.Entities.getAllInstances();
@@ -148,13 +148,13 @@ this.legend_vala_trance_malevolent_effect <- this.inherit("scripts/skills/skill"
 
 	function onTurnStart()
 	{
-		this.SpiritSpread();
+		this.spreadEffect();
 	}
 
 
 	function onResumeTurn()
 	{
-		this.SpiritSpread();
+		this.spreadEffect();
 	}
 
 

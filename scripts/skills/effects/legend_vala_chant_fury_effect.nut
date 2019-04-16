@@ -33,7 +33,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		if (this.inRange())
+		this.checkEntities();
+
+		if (this.isInRange())
 		{
 			this.m.Name = "Fury";
 			this.m.Icon = "ui/perks/perk_36.png";
@@ -60,6 +62,13 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			local regulardamage = (this.m.Vala.getBravery() / 30.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 30.0);
 			local paybackchance = (this.m.Vala.getBravery() / 4.0) + (this.getContainer().getActor().getHitpoints() / 3.0);
 			local paybackdamage = (this.m.Vala.getBravery() / 3.0) + (this.getContainer().getActor().getCurrentProperties().getMeleeSkill() / 4.0);
+
+			if (this.isMastered())
+			{
+				regulardamage *= 1.1;
+				paybackchance *= 1.1;
+				paybackdamage *= 1.1;
+			}
 
 			if (distance == 2)
 			{
@@ -117,12 +126,17 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (this.inRange())
+		if (this.isInRange())
 		{
 			if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
 			{
 				local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 				local damage = (this.m.Vala.getBravery() / 300.0) + (this.getContainer().getActor().getCurrentProperties().getMeleeSkill() / 400.0);
+
+				if (this.isMastered())
+				{
+					damage *= 1.1;
+				}
 
 				if (distance == 2)
 				{
@@ -162,7 +176,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (!this.inRange())
+		if (!this.isInRange())
 		{
 			return;
 		}
@@ -174,6 +188,11 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 		local chance = (this.m.Vala.getBravery() / 4.0) + (this.getContainer().getActor().getHitpoints() / 3.0);
+
+		if (this.isMastered())
+		{
+			chance *= 1.1;
+		}
 
 		if (distance == 2)
 		{
@@ -222,9 +241,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function ChantUpdate()
+	function updateEffect()
 	{
-		if (this.inRange())
+		if (this.isInRange())
 		{
 			this.m.Name = "Fury";
 			this.m.Icon = "ui/perks/perk_36.png";
@@ -241,29 +260,51 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function inRange()
+	function checkEntities()
 	{
-		if (this.getContainer().getActor() == null) 
+		local actor = this.getContainer().getActor();
+		if (actor == null) 
 		{
-			return false;
+			return;
 		}
 
-		if (this.getContainer().getActor().getTile() == null)
+		local tile = actor.getTile();
+		if (tile == null)
 		{
-			return false;
+			return;
 		}
 
+		if (this.m.Vala == null)
+		{
+			return;
+		}
+
+		if (this.m.Vala.getTile() == null)
+		{
+			return;
+		}
+	}
+
+
+	function isInRange()
+	{
+		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+
+	function isMastered()
+	{
 		if (this.m.Vala == null)
 		{
 			return false;
 		}
 
-		if (this.m.Vala.getTile() == null)
-		{
-			return false;
-		}
-
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
+		if (this.m.Vala.getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
 		{
 			return true;
 		}
@@ -274,7 +315,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 
 	function onMovementCompleted()
 	{
-		if (this.inRange())
+		this.checkEntities();
+
+		if (this.isInRange())
 		{
 			if (this.getContainer().getActor().getID() != this.m.Vala.getID())
 			{
@@ -282,16 +325,23 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.ChantUpdate();
+		this.updateEffect();
 	}
 
 
 	function onUpdate(_properties)
 	{
-		if (this.inRange())
+		this.checkEntities();
+
+		if (this.isInRange())
 		{
 			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 			local bonus = (this.m.Vala.getBravery() / 3000.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 3000.0);
+
+			if (this.isMastered())
+			{
+				bonus *= 1.1;
+			}
 
 			if (distance == 2)
 			{
@@ -305,7 +355,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			_properties.DamageTotalMult *= 1.0 + bonus;
 		}
 
-		this.ChantUpdate();
+		this.updateEffect();
 	}
 
 

@@ -33,7 +33,9 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 
 	function isHidden()
 	{
-		if (this.inRange())
+		this.checkEntities();
+
+		if (this.isInRange())
 		{
 			this.m.Name = "Disharmony";
 			this.m.Icon = "skills/status_effect_65.png";
@@ -77,9 +79,9 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	}
 
 
-	function ChantUpdate()
+	function updateEffect()
 	{
-		if (this.inRange())
+		if (this.isInRange())
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
 			this.m.Name = "Disharmony";
@@ -98,28 +100,34 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	}
 
 
-	function inRange()
+	function checkEntities()
 	{
-		if (this.getContainer().getActor() == null) 
+		local actor = this.getContainer().getActor();
+		if (actor == null) 
 		{
-			return false;
+			return;
 		}
 
-		if (this.getContainer().getActor().getTile() == null)
+		local tile = actor.getTile();
+		if (tile == null)
 		{
-			return false;
+			return;
 		}
 
 		if (this.m.Vala == null)
 		{
-			return false;
+			return;
 		}
 
 		if (this.m.Vala.getTile() == null)
 		{
-			return false;
+			return;
 		}
+	}
 
+
+	function isInRange()
+	{
 		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
 		{
 			return true;
@@ -131,18 +139,21 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 
 	function onMovementCompleted()
 	{
-		if (this.inRange())
+		this.checkEntities();
+
+		if (this.isInRange())
 		{
 			this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
 		}
 
-		this.ChantUpdate();
+		this.updateEffect();
 	}
 
 
 	function onUpdate( _properties )
 	{
-		this.ChantUpdate();
+		this.checkEntities();
+		this.updateEffect();
 	}
 
 
