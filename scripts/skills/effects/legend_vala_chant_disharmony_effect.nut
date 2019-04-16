@@ -33,15 +33,9 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 
 	function isHidden()
 	{
-		local distance = this.getDistance()
-		if (distance == null)
+		if (this.inRange())
 		{
-			return true
-		}
-
-		if (distance <= this.m.Range)
-		{
-			this.m.Name = "Disharmonic";
+			this.m.Name = "Disharmony";
 			this.m.Icon = "skills/status_effect_65.png";
 			this.m.IconMini = "status_effect_65_mini";
 			this.m.Overlay = "status_effect_65";
@@ -82,34 +76,13 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		}
 	}
 
-	function getDistance()
+
+	function ChantUpdate()
 	{
-		local actor = this.getContainer().getActor();
-		if (actor == null) 
-		{
-			return;
-		}
-
-		local tile = actor.getTile();
-		if (tile == null)
-		{
-			return;
-		}
-
-		if (this.m.Vala.getTile() == null)
-		{
-			return;
-		}
-
-		return tile.getDistanceTo(this.m.Vala.getTile())
-	}
-
-	function ChantUpdate( _inRange )
-	{
-		if (_inRange)
+		if (this.inRange())
 		{
 			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
-			this.m.Name = "Disharmonic";
+			this.m.Name = "Disharmony";
 			this.m.Icon = "skills/status_effect_65.png";
 			this.m.IconMini = "status_effect_65_mini";
 			this.m.Overlay = "status_effect_65";
@@ -125,34 +98,51 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	}
 
 
-	function onMovementCompleted()
+	function inRange()
 	{
-		local distance = this.getDistance();
-
-		if (distance == null)
+		if (this.getContainer().getActor() == null) 
 		{
-			return
+			return false;
 		}
 
-		if (distance <= this.m.Range)
+		if (this.getContainer().getActor().getTile() == null)
+		{
+			return false;
+		}
+
+		if (this.m.Vala == null)
+		{
+			return false;
+		}
+
+		if (this.m.Vala.getTile() == null)
+		{
+			return false;
+		}
+
+		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+
+	function onMovementCompleted()
+	{
+		if (this.inRange())
 		{
 			this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
 		}
 
-		this.ChantUpdate(distance <= this.m.Range);
+		this.ChantUpdate();
 	}
 
 
 	function onUpdate( _properties )
 	{
-		local distance = this.getDistance();
-		
-		if (distance == null)
-		{
-			return
-		}
-
-		this.ChantUpdate( distance <= this.m.Range);
+		this.ChantUpdate();
 	}
 
 
