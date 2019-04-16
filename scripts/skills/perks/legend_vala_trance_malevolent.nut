@@ -110,7 +110,7 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "If the Vala is successful in her dealings with these harmful spirits, they will haunt and weaken her opponents."
+				text = "If the Vala is successful in her dealings with these harmful spirits, they will haunt and weaken her opponents. Lowers damage, lowers maximum fatigue, increases fatigue cost for skills."
 			},
 		];
 
@@ -241,6 +241,13 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 							local effect = this.new("scripts/skills/effects/legend_vala_trance_malevolent_effect");
 							effect.setPower(this.getContainer().getActor().getBravery());
 							t.getSkills().add(effect);
+							t.getFlags().set("IsSpiritVictim", false);
+						}
+
+						if (t.getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect") && t.getFlags().get("IsSpiritVictim"))
+						{
+							local effect = t.getSkills().getSkillByID("effects.legend_vala_trance_malevolent_effect");
+							effect.setPower(this.getContainer().getActor().getBravery());
 							t.getFlags().set("IsSpiritVictim", false);
 						}
 					}
@@ -397,16 +404,6 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 		}
 
 		if (_targetTile.getEntity().isAlliedWith(this.getContainer().getActor()))
-		{
-			return false;
-		}
-
-		if (_targetTile.getEntity().getSkills().hasSkill("effects.legend_vala_trance_malevolent_effect"))
-		{
-			return false;
-		}
-
-		if (_targetTile.getEntity().getFlags().get("IsSpiritVictim"))
 		{
 			return false;
 		}
