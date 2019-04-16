@@ -254,7 +254,8 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			b.MeleeSkill += 10;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}

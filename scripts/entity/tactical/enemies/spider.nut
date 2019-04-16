@@ -296,7 +296,6 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 
