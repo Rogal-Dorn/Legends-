@@ -518,3 +518,18 @@ Beta 0.10.2 Released on Nexus
 
 Beta 0.10.3
 *Ranger starts with higher ammo.
+
+Beta 0.10.4
+Rebalance legendary combat difficulty skills
+Legendary unhold loses nimble, colossus and muscularity. Gainst last stand. Gains +100% health, heal rate doubled.
+Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health,  heal rate quadrupled. 
+Legendary frost unhold loses executioner and nimble. Keeps muscularity. Gains +100% health double healing rate. 
+Legendary raiders gain nimble 
+Legendary bandits gain backstabber
+Legendary skeletons gain shield expert
+Fixes legendary stun immunity on hexen 
+Fixes legendary stun immunity on necrosavants
+Legendary spiders lose overwhelm, their poison does double damage
+Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured 
+Legendary orc young lose battle forged and gain crippling strikes, 
+
