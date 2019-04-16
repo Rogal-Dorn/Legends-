@@ -22,6 +22,7 @@ local ValaTree = [
 		gt.Const.Perks.PerkDefs.FortifiedMind
 	],
 	[
+		gt.Const.Perks.PerkDefs.LegendValaChantSenses,
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,
 		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.HoldOut,

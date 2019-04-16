@@ -1605,6 +1605,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaChantFury,
 		Icon = "ui/perks/legend_vala_chant_fury.png",
 		IconDisabled = "ui/perks/legend_vala_chant_fury_sw.png"
+	},
+	{
+		ID = "perk.legend_vala_chant_senses",
+		Script = "scripts/skills/perks/legend_vala_chant_senses",
+		Name = this.Const.Strings.PerkName.LegendValaChantSenses,
+		Tooltip = this.Const.Strings.PerkDescription.LegendValaChantSenses,
+		Icon = "ui/perks/legend_vala_chant_senses.png",
+		IconDisabled = "ui/perks/legend_vala_chant_senses_sw.png"
 	}
 ];
 
@@ -1809,5 +1817,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendSpecialistShieldPush = 196,
 	ShieldBash = 197,
 	LegendMasteryNets = 198,
-	LegendValaChantFury = 199
+	LegendValaChantFury = 199,
+	LegendValaChantSenses = 200
 };

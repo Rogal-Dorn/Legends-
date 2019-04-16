@@ -1,4 +1,4 @@
-this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
+this.legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 	m = {
 		ChantIsActive = false
 	},
@@ -8,11 +8,11 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 	}
 	function create()
 	{
-		this.m.ID = "perk.legend_vala_chant_fury";
-		this.m.Name = "Fury (Chant)";
-		this.m.Description = "A chant that really gets the blood boiling, making your allies eager to fight.";
-		this.m.Icon = "ui/perks/legend_vala_chant_fury_active.png";
-		this.m.IconDisabled = "ui/perks/legend_vala_chant_fury_active_sw.png";
+		this.m.ID = "perk.legend_vala_chant_senses";
+		this.m.Name = "Heightened Senses (Chant)";
+		this.m.Description = "An intriguing chant that stimulates the senses, increasing all allies\' awareness.";
+		this.m.Icon = "ui/perks/legend_vala_chant_senses_active.png";
+		this.m.IconDisabled = "ui/perks/legend_vala_chant_senses_active_sw.png";
 		this.m.Type = this.Const.SkillType.Active | this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 2;
 		this.m.IsSerialized = true;
@@ -24,7 +24,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 30;
+		this.m.FatigueCost = 25;
 	}
 
 
@@ -85,7 +85,7 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Until the start of her next turn all allies within 3 tiles of the Vala receive a bonus to their damage output and a chance to retaliate against attackers that hit them in melee range. Being closer to the Vala increases bonus amount and retaliation chance."
+				text = "Until the start of her next turn all allies within 3 tiles of the Vala receive a bonus to their melee and ranged defenses. Being closer to the Vala increases the bonus amount."
 			},
 		];
 
@@ -127,9 +127,9 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 		{
 			foreach (t in tar)
 			{
-				if (t.getSkills().hasSkill("effects.legend_vala_chant_fury_effect"))
+				if (t.getSkills().hasSkill("effects.legend_vala_chant_senses_effect"))
 				{
-					t.getSkills().removeByID("effects.legend_vala_chant_fury_effect");
+					t.getSkills().removeByID("effects.legend_vala_chant_senses_effect");
 				}
 			}
 		}
@@ -178,18 +178,18 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getSkills().hasSkill("effects.legend_vala_currently_chanting") && this.m.ChantIsActive)
 		{
-			this.Sound.play("sounds/combat/legend_vala_fury.wav");
+			this.Sound.play("sounds/combat/legend_vala_senses.wav");
 		}
 
 		foreach (tar in targets)
 		{
 			foreach (t in tar)
 			{
-				if (t.getSkills().hasSkill("effects.legend_vala_chant_fury_effect"))
+				if (t.getSkills().hasSkill("effects.legend_vala_chant_senses_effect"))
 				{
 					if (actor.getTile().getDistanceTo(t.getTile()) <= 3 && actor.getID() != t.getID())
 					{
-						this.spawnIcon("perk_36", t.getTile());
+						this.spawnIcon("status_effect_73", t.getTile());
 					}
 
 					t.getSkills().update();
@@ -220,21 +220,21 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 			{
 				foreach (t in tar)
 				{
-					if (t.isAlliedWith(actor) && !t.getSkills().hasSkill("effects.legend_vala_chant_fury_effect"))
+					if (t.isAlliedWith(actor) && !t.getSkills().hasSkill("effects.legend_vala_chant_senses_effect"))
 					{
-						local fury = this.new("scripts/skills/effects/legend_vala_chant_fury_effect");
-						fury.setVala(this.getContainer().getActor());
-						t.getSkills().add(fury);
+						local senses = this.new("scripts/skills/effects/legend_vala_chant_senses_effect");
+						senses.setVala(this.getContainer().getActor());
+						t.getSkills().add(senses);
 
 						if (actor.getTile().getDistanceTo(t.getTile()) <= 3 && actor.getID() != t.getID())
 						{
-							this.spawnIcon("perk_36", t.getTile());
+							this.spawnIcon("status_effect_73", t.getTile());
 						}
 					}
 				}
 			}
 
-			this.Sound.play("sounds/combat/legend_vala_fury.wav");
+			this.Sound.play("sounds/combat/legend_vala_senses.wav");
 			this.m.ChantIsActive = true;
 		}
 	}

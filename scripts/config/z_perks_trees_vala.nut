@@ -25,6 +25,7 @@ local ValaTree = [
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
+		gt.Const.Perks.PerkDefs.LegendValaChantSenses,
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,
 		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.HoldOut,

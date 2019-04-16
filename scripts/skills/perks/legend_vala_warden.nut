@@ -41,7 +41,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 			local WardenRangedSkill = this.m.WardenEntity.m.CurrentProperties.RangedSkill;
 			local WardenRangedDefense = this.m.WardenEntity.m.CurrentProperties.RangedDefense;
 			local WardenInitiative = this.m.WardenEntity.m.CurrentProperties.Initiative;
-			local SpiritualBondReduction = this.Math.round(10 + (this.getContainer().getActor().getBravery() / 4.00));
+			local SpiritualBondReduction = this.Math.round(10.0 + (this.getContainer().getActor().getBravery() / 4.0));
 
 			if (SpiritualBondReduction >= 50)
 			{
@@ -123,7 +123,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function SummonWarden()
+	function summonWarden()
 	{
 		if (this.m.WardenSummonSpent == false && this.m.WardenEntity == null)
 		{
@@ -220,13 +220,13 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 	function onCombatStarted()
 	{
 		this.m.WardenSummonSpent = false;
-		this.SummonWarden();
+		this.summonWarden();
 	}
 
 
 	function onTurnStart()
 	{
-		this.SummonWarden();
+		this.summonWarden();
 	}
 
 
