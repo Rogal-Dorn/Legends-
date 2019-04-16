@@ -68,7 +68,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				break;
 
 			case 32:
-				return "This item has the power of the rune sigil of Radiance:\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -9%[/color] to all adjacent enemies\' Melee skill and Melee defense.";
+				return "This item has the power of the rune sigil of Radiance:\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -12%[/color] to all adjacent enemies\' Melee skill and Melee defense.";
 				break;
 
 			default:
