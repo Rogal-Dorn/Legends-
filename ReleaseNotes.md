@@ -518,3 +518,5 @@ Beta 0.10.2 Released on Nexus
 
 Beta 0.10.3
 *Ranger starts with higher ammo.
+*Fix player base image resetting after camp.
+
