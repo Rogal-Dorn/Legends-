@@ -289,7 +289,6 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		{
 			image = "figure_player_vala";
 		} 
-		this.logInfo("Setting base image to " + image);
 		this.getSprite("body").setBrush(image);
 	}
 

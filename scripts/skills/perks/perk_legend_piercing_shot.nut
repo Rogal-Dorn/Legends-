@@ -16,14 +16,34 @@ this.perk_legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_piercing_shot"))
+		if (!this.getContainer().getActor().isArmedWithRangedWeapon()) 
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_piercing_shot"));
+			return
 		}
+
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item == null)
+		{
+			return;
+		}
+		this.getContainer().getActor().getItems().unequip(item);
+		this.getContainer().getActor().getItems().equip(item);
 	}
-		function onRemoved()
+	
+	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_piercing_shot");
+		if (!this.getContainer().getActor().isArmedWithRangedWeapon()) 
+		{
+			return
+		}
+
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item == null)
+		{
+			return;
+		}
+		this.getContainer().getActor().getItems().unequip(item);
+		this.getContainer().getActor().getItems().equip(item);
 	}
 
 });
