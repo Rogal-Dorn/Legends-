@@ -35,7 +35,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.bleeder",
 			"trait.dastard",
 			"trait.insecure",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.loyal"			
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,

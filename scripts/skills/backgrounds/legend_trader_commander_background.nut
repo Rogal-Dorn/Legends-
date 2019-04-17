@@ -27,7 +27,9 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 			"trait.dexterous",
 			"trait.dumb",
 			"trait.deathwish",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.disloyal",
+			"trait.loyal"			
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
