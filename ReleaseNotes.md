@@ -545,3 +545,4 @@ Beta 0.10.3
 *Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured 
 *Legendary orc young lose battle forged and gain crippling strikes, 
 *Fixed missing sickle perks icons 
+*Makes throwing flasks and nets cost the same as throwing a weapon
