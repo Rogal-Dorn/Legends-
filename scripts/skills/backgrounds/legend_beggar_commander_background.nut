@@ -140,6 +140,12 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		dirt.Visible = true;
 	}
 
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+	}
+
 	function onAddEquipment()
 	{
 		this.World.Assets.addMoney(-208);
