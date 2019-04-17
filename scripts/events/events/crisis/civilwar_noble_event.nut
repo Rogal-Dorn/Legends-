@@ -39,7 +39,7 @@ this.civilwar_noble_event <- this.inherit("scripts/events/event", {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
-					"legend_noble_background"
+					"legend_noble_event_background"
 				]);
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 				this.Characters.push(_event.m.Dude.getImagePath());
