@@ -44,6 +44,7 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/skill", {
 			this.updateEffect(false);
 			return true;
 		}
+
 		this.updateEffect(true);
 		return false;
 	}
@@ -133,7 +134,8 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		return true
+
+		return true;
 	}
 
 
@@ -169,19 +171,20 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/skill", {
 		if (!this.checkEntities())
 		{
 			this.updateEffect(false);
-			return
+			return;
 		}
 
 		if (!this.isInRange())
 		{
 			this.updateEffect(false);
-			return 
+			return;
 		}
 
 		if (this.getContainer().getActor().getID() != this.m.Vala.getID())
 		{
 			this.spawnIcon("status_effect_73", this.getContainer().getActor().getTile());
 		}
+
 		this.updateEffect(true);
 	}
 
