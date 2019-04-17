@@ -246,6 +246,52 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	{
 	}
 
+	function setBaseImage( _version = -1)
+	{
+		local image = "figure_player_01";
+		if (_version > 1)
+		{
+			image = "figure_player_0" + _version;
+		}
+		else if (this.World.Tags.get("IsLegendsNoble"))
+		{
+			image = "figure_player_noble";
+		} 
+		else if (this.World.Tags.get("IsLegendsCrusader"))
+		{
+			image = "figure_player_crusader";
+		} 
+		else if (this.World.Tags.get("IsLegendsHunter"))
+		{
+			image = "figure_player_ranger";
+		} 
+		else if (this.World.Tags.get("IsLegendsNecro"))
+		{
+			image = "figure_player_warlock";
+		} 
+		else if (this.World.Tags.get("IsLegendsWitch"))
+		{
+			image = "figure_player_seer";
+		} 
+		else if (this.World.Tags.get("IsLegendsBerserker"))
+		{
+			image = "figure_player_berserker";
+		} 
+		else if (this.World.Tags.get("IsLegendsTrader"))
+		{
+			image = "figure_player_trader";
+		} 
+		else if (this.World.Tags.get("IsLegendsParty"))
+		{
+			image = "figure_player_party";
+		} 
+		else if (this.World.Tags.get("IsLegendsVala"))
+		{
+			image = "figure_player_vala";
+		} 
+		this.getSprite("body").setBrush(image);
+	}
+
 	function onInit()
 	{
 		this.setFaction(this.Const.FactionType.Player);
@@ -253,7 +299,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		this.m.VisionRadius = this.Const.World.Settings.Vision;
 		this.getSprite("base").setBrush("world_base_01");
 		this.getSprite("banner").setBrush(this.World.Assets.getBanner());
-		this.getSprite("body").setBrush("figure_player_01");
+		this.setBaseImage();
 		local lighting = this.addSprite("lighting");
 		this.setSpriteColorization("lighting", false);
 		lighting.setBrush("world_player_camp_01_fire");

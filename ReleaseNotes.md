@@ -518,3 +518,22 @@ Beta 0.10.2 Released on Nexus
 
 Beta 0.10.3
 *Ranger starts with higher ammo.
+*Fix player base image resetting after camp.
+*Removes loyal and disloyal traits from all commanders
+*Fixes Rangers' Piercing Shot not using ammo and useable by something other than bow or xbow.
+*Herbalist is slighty more expensive now with slight reduction in melee skill.
+*Reduces barter XP bonus gain from caravan missions.
+*Fixes nun's habit graphics.
+*Rebalance legendary combat difficulty skills
+*Legendary unhold loses nimble, colossus and muscularity. Gains last stand. Gains +100% health, heal rate doubled.
+*Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health,  heal rate quadrupled. 
+*Legendary frost unhold loses executioner and nimble. Keeps muscularity. Gains +100% health double healing rate. 
+*Legendary raiders gain nimble 
+*Legendary bandits gain backstabber
+*Legendary skeletons gain shield expert
+*Fixes legendary stun immunity on hexen 
+*Fixes legendary stun immunity on necrosavants
+*Legendary spiders lose overwhelm, their poison does double damage
+*Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured 
+*Legendary orc young lose battle forged and gain crippling strikes, 
+

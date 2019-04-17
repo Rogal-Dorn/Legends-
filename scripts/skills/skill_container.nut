@@ -936,7 +936,6 @@ this.skill_container <- {
 	{
 		this.m.IsUpdating = true;
 		local numSkills = _in.readU16();
-
 		for( local i = 0; i < numSkills; i = ++i )
 		{
 			local skill = this.new(this.IO.scriptFilenameByHash(_in.readI32()));

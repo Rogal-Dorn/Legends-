@@ -1086,7 +1086,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_noble");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1113,7 +1113,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_crusader");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1140,7 +1140,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_ranger");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1168,7 +1168,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-							this.World.State.getPlayer().getSprite("body").setBrush("figure_player_warlock");
+							this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1223,7 +1223,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_seer");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1251,7 +1251,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_vala");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1279,7 +1279,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_berserker");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1306,7 +1306,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_trader");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 
@@ -1360,7 +1360,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Tags.set("IsHoggartDead", true);
 						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
 						this.World.Contracts.finishActiveContract();
-						this.World.State.getPlayer().getSprite("body").setBrush("figure_player_party");
+						this.World.State.getPlayer().setBaseImage();
 						return 0;
 					}
 

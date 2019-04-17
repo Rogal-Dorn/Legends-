@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 54
+	Version = 55
     //51 Added Runes
     //52 Adds Camps
 };

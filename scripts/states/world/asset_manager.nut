@@ -1690,7 +1690,7 @@ this.asset_manager <- {
 		}
 
 		this.m.Look = _updateTo;
-		this.World.State.getPlayer().getSprite("body").setBrush("figure_player_0" + _updateTo);
+		this.World.State.getPlayer().setBaseImage(_updateTo);
 	}
 
 	function saveEquipment()
