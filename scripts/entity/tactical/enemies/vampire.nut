@@ -235,7 +235,7 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			b.MeleeSkill += 10;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_composure"));
+			b.IsImmuneToStun = true;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));

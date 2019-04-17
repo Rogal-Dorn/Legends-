@@ -60,6 +60,12 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 
 			local hitInfo = clone this.Const.Tactical.HitInfo;
 			hitInfo.DamageRegular = this.m.Damage;
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			hitInfo.DamageRegular = 2 * this.m.Damage;
+			}
+
+
 			hitInfo.DamageDirect = 1.0;
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
