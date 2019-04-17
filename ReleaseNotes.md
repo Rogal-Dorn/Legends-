@@ -522,6 +522,8 @@ Beta 0.10.3
 *Removes loyal and disloyal traits from all commanders
 *Fixes Rangers' Piercing Shot not using ammo and useable by something other than bow or xbow.
 *Herbalist is slighty more expensive now with slight reduction in melee skill.
+*Reduces barter XP bonus gain from caravan missions.
+*Fixes nun's habit graphics.
 *Rebalance legendary combat difficulty skills
 *Legendary unhold loses nimble, colossus and muscularity. Gains last stand. Gains +100% health, heal rate doubled.
 *Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health,  heal rate quadrupled. 
