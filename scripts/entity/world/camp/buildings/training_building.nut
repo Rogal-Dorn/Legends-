@@ -2,7 +2,8 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	m = {
 		Base = 0,
 		Results = [],
-		NumBros = 0
+		NumBros = 0,
+		UnTrained = 0
 	},
     function create()
     {
@@ -67,7 +68,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		desc += "There's always a slight chance someone can be injured."
 		desc += "\n\n"
 		desc += "Training grounds can be upgraded by purchasing an upgrade set in local markets. Upgraded grounds reduce the "
-		desc += "risk of accidents and also give the chance of a permanant skill increase."
+		desc += "risk of accidents from a minimum of 5% to 1% and also give the chance of a permanant skill increase."
 		return desc;
 	}
 
@@ -124,6 +125,22 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
 		this.m.Results = [];
 		this.m.NumBros = this.getAssignedBros();
+		this.m.UnTrained = 0;
+		local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue;
+            }
+
+			if (this.isTrained(bro))
+			{
+				continue;
+			}
+
+			++this.m.UnTrained;
+		}		
     }
 
     function getModifiers()
@@ -142,7 +159,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Training;
+            local rm = bro.getBackground().getModifiers().Training;
             ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
@@ -201,12 +218,13 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		});
 	}
 
+	function isTrained( bro )
+	{
+		return bro.getSkills().hasSkill("effects.trained");
+	}
+
 	function getTrained( bro )
 	{
-		if (bro.getSkills().hasSkill("effects.trained")) 
-		{
-			return
-		}
 		local effect = this.new("scripts/skills/effects_world/new_trained_effect");
 		effect.m.Duration = 1;
 		effect.m.XPGainMult = 1.2;
@@ -286,15 +304,12 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			Icon = effect.getIcon(),
 			Text = adjectives[this.Math.rand(0, adjectives.len() - 1)] + " and gains a [color=" + this.Const.UI.Color.PositiveEventValue + "]20%[/color] xp increase for the next battle."
 		})
+
+		return true;
 	}
 
 	function getBonus( bro )
 	{
-		if (!this.getUpgraded())
-		{
-			return 
-		}
-		
 		local text = ""
 		local icon = ""
 		if (this.Math.rand(1, 100) <= 1)
@@ -363,8 +378,13 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			return null;
 		}
-		
-		return "Training ... " + this.m.NumBros + " brothers";
+
+		if (this.getUpgraded())
+		{
+			return "Training ... " + this.m.NumBros + " brothers";
+		}
+
+		return "Training ... " + this.m.UnTrained + " / " + this.m.NumBros + " brothers";
 	}
 
     function completed()
@@ -377,26 +397,38 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-			local r = this.Math.min(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())));
 			//Positive
-			if (this.Math.rand(1, 100) < r)
+			local training = false
+			if (!this.isTrained(bro))
 			{
-				this.getTrained(bro);
+				training = true;
+				local r = this.Math.min(95, 100 * this.Math.pow(this.m.Camp.getCampTimeHours() / 12.0, 0.6 + (0.1 * bro.getLevel())));
+				if (this.Math.rand(1, 100) < r)
+				{
+					this.getTrained(bro);
+				}
+			}
 
-				//this can be upgrade system
-				if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
+			//Negative
+			local min = 5;
+			if (this.getUpgraded())
+			{
+				training = true;
+				min = 1;
+				local mod = this.getModifiers();
+				if (this.Math.rand(1, 100) <= (this.m.Camp.getCampTimeHours() + mod.Craft * this.m.Camp.getCampTimeHours()))
 				{
 					this.getBonus(bro);
 				}
 			}
 
-			//Negative
-			local min = 10;
-			if (this.getUpgraded())
+			//Only get injury if we were actually training
+			if (!training)
 			{
-				min = 5;
+				return 
 			}
-			local r = this.Math.min(min, 10 * this.Math.pow(this.m.Camp.getCampTimeHours() / 10.0, 0.2 + (0.1 * bro.getLevel())) - bro.getLevel());			
+
+			local r = this.Math.min(min, 4 * this.Math.pow(this.m.Camp.getCampTimeHours() , 0.5) - bro.getLevel());
 			if (this.Math.rand(1, 100) < r)
 			{
 				this.getInjury(bro);

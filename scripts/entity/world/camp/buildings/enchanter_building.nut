@@ -1,6 +1,6 @@
 this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		BaseCraft = 10.0,
+		BaseCraft = 13.0,
         ItemsCrafted = [],
         Queue = [],
 		PointsNeeded = 0,
@@ -278,7 +278,6 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
             Craft = 0.0,
             Assigned = 0,
             Modifiers = []
-
         }
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( bro in roster )
@@ -452,7 +451,6 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
             }
             
             points += (r.Blueprint.getCost() - r.Points);
-			this.logInfo("points" + points)
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)

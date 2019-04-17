@@ -356,7 +356,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             return this.getUpdateText();
         }
 
-        if (this.World.Assets.getArmorParts() == 0)
+        if (this.World.Assets.getArmorPartsF() == 0)
         {
             return this.getUpdateText();
         }
@@ -383,7 +383,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             {
                 local consumed = needed * modifiers.Consumption;   
                 this.m.ToolsUsed += consumed;
-                this.World.Assets.setArmorParts(this.Math.maxf(0, this.World.Assets.getArmorParts() - consumed))
+                this.World.Assets.addArmorPartsF(consumed * -1.0);
             }
 
             if (r.Item.getCondition() >= r.Item.getConditionMax())
@@ -397,7 +397,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 break
             }
 
-            if ( this.World.Assets.getArmorParts() == 0)
+            if ( this.World.Assets.getArmorPartsF() == 0)
             {
                 break;
             }

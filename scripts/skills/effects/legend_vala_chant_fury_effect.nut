@@ -33,24 +33,20 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		this.checkEntities();
-
-		if (this.isInRange())
+		if (!this.checkEntities())
 		{
-			this.m.Name = "Fury";
-			this.m.Icon = "ui/perks/perk_36.png";
-			this.m.IconMini = "perk_36_mini";
-			this.m.Overlay = "perk_36";
-			return false;
-		}
-		else
-		{
-			this.m.Name = "";
-			this.m.Icon = "";
-			this.m.IconMini = "";
-			this.m.Overlay = "";
+			this.updateEffect(false);
 			return true;
 		}
+
+		if (!this.isInRange())
+		{
+			this.updateEffect(false);
+			return true;
+		}
+
+		this.updateEffect(true);
+		return false;
 	}
 
 
@@ -241,9 +237,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function updateEffect()
+	function updateEffect(_v)
 	{
-		if (this.isInRange())
+		if (_v)
 		{
 			this.m.Name = "Fury";
 			this.m.Icon = "ui/perks/perk_36.png";
@@ -265,24 +261,26 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (actor == null) 
 		{
-			return;
+			return false;
 		}
 
 		local tile = actor.getTile();
 		if (tile == null)
 		{
-			return;
+			return false;
 		}
 
 		if (this.m.Vala == null)
 		{
-			return;
+			return false;
 		}
 
 		if (this.m.Vala.getTile() == null)
 		{
-			return;
+			return false;
 		}
+
+		return true;
 	}
 
 
@@ -315,47 +313,61 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 
 	function onMovementCompleted()
 	{
-		this.checkEntities();
-
-		if (this.isInRange())
+		if (!this.checkEntities())
 		{
-			if (this.getContainer().getActor().getID() != this.m.Vala.getID())
-			{
-				this.spawnIcon("perk_36", this.getContainer().getActor().getTile());
-			}
+			this.updateEffect(false);
+			return
 		}
 
-		this.updateEffect();
+		if (!this.isInRange())
+		{
+			this.updateEffect(false);
+			return 
+		}
+
+		if (this.getContainer().getActor().getID() != this.m.Vala.getID())
+		{
+			this.spawnIcon("perk_36", this.getContainer().getActor().getTile());
+		}
+
+		this.updateEffect(true);
 	}
 
 
 	function onUpdate(_properties)
 	{
-		this.checkEntities();
-
-		if (this.isInRange())
+		if (!this.checkEntities())
 		{
-			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-			local bonus = (this.m.Vala.getBravery() / 3000.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 3000.0);
-
-			if (this.isMastered())
-			{
-				bonus *= 1.1;
-			}
-
-			if (distance == 2)
-			{
-				bonus *= 0.75;
-			}
-			else if (distance == 3)
-			{
-				bonus *= 0.5;
-			}
-
-			_properties.DamageTotalMult *= 1.0 + bonus;
+			this.updateEffect(false);
+			return
 		}
 
-		this.updateEffect();
+		if (!this.isInRange())
+		{
+			this.updateEffect(false);
+			return 
+		}
+
+		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
+		local bonus = (this.m.Vala.getBravery() / 3000.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 3000.0);
+
+		if (this.isMastered())
+		{
+			bonus *= 1.1;
+		}
+
+		if (distance == 2)
+		{
+			bonus *= 0.75;
+		}
+		else if (distance == 3)
+		{
+			bonus *= 0.5;
+		}
+
+		_properties.DamageTotalMult *= 1.0 + bonus;
+
+		this.updateEffect(true);
 	}
 
 
