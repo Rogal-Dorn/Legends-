@@ -33,7 +33,7 @@ this.throw_holy_water <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = true;
-		this.m.ActionPointCost = 5;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
