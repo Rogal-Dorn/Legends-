@@ -532,7 +532,10 @@ Beta 0.10.3
 *Fixed rounding errors in Repair and Workshop camp tents which gave wonky results.
 *Fixed Camp training tooltip
 *Training tent now has a chance to give permanent stat increases everytime you train (not just when you successfully get XP upgrade). Percentage is directly related to how long you are in camp plus training tent bonus.
-*Rebalance legendary combat difficulty skills
+*Fixed missing sickle perks icons 
+*Legends Crusader, Noble and Ranger can be obtained through crisis events  (replaces the vanilla crusader and orc slayer, noble is new event)
+
+*Rebalance legendary combat difficulty skills:
 *Legendary unhold loses nimble, colossus and muscularity. Gains last stand. Gains +100% health, heal rate doubled.
 *Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health,  heal rate quadrupled. 
 *Legendary frost unhold loses executioner and nimble. Keeps muscularity. Gains +100% health double healing rate. 
@@ -543,12 +546,12 @@ Beta 0.10.3
 *Fixes stun immunity on legendary necrosavants
 *Legendary spiders lose overwhelm, their poison does double damage
 *Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured 
-*Legendary orc young lose battle forged and gain crippling strikes, 
-*Fixed missing sickle perks icons 
+*Legendary orc young lose battle forged and gain crippling strikes
+*Legndary Bandit and Marksman get nimble
+
+*Credit to LeVillainJoueur for the cool balance ideas:
 *Crossbow shots cost 3AP and reload costs 4AP. adds manueverability and berserk synergy to crossbows. 
 *Makes throwing flasks and nets cost the same as throwing a weapon
 *indomitable and stalwart grant immunity from being swallowed 
-*Crusader and Noble can be obtained through crisis events  
 *Spider poison disables Unhold healing  
  
- Credit to LeVillainJoueur for the balance cool ideas

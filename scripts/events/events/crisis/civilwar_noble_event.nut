@@ -55,14 +55,28 @@ this.civilwar_noble_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getBusinessReputation() < 3000)
+		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
 
-		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
-		{
-			return;
+        local roster = this.World.getPlayerRoster().getAll()
+        foreach( bro in roster)
+        {
+			if (bro.getBackground().getID() == "background.legend_noble_event")
+			{
+				return
+			}
+
+			if (bro.getBackground().getID() == "background.legend_commander_noble")
+			{
+				return
+			}
+
+			if (bro.getBackground().getID() == "background.legend_noble")
+			{
+				return
+			}
 		}
 
 		this.m.Score = 10;
