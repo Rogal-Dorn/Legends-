@@ -9,7 +9,7 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_35.png[/img]While marching, a man crosses paths with the %companyname%. He is well armored and appears rather knightly save for one feature: a bone necklace hanging from his neck. With each step it clatters with sickly hollowness against his breastplate. You regard this stranger and his skeletal adornments with caution, lest he make a belt out of yer cock and a breast plate out of yer...%SPEECH_ON%Evening, sellswords.%SPEECH_OFF%The warrior waves. There\'s an unseen weight to this man, as though surrounded by dead air or perhaps the souls of his victims. He nods and continues speaking.%SPEECH_ON%You seem the greenskin skinnin\' sort, and that\'s the sort of company I\'d be most agreeable to joining.%SPEECH_OFF%%randombrother% exchanges a glance with you and shrugs. He whispers his indifference.%SPEECH_ON%If he\'s a problem, we can handle him.%SPEECH_OFF%The man shakes his head.%SPEECH_ON%Oh, I\'ll be no problem. I just want to kill orcs and goblins. What more do you need to know? Once these greenskins are taken care of, I\'ll be out of your hair.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_35.png[/img]While marching, a man crosses paths with the %companyname%. He wears light armor and carries a fine bow, he looks aloof and distant at first as if staring off at something you can\'t see. %SPEECH_ON%Evening, sellswords.%SPEECH_OFF%The warrior waves. There\'s an uncanny air to this man, as though you can barely see him while he is standing right in front of you. He nods and continues speaking.%SPEECH_ON%You seem the greenskin skinnin\' sort, and that\'s the sort of company I\'d be most agreeable to joining.%SPEECH_OFF%%randombrother% exchanges a glance with you and shrugs. He whispers his indifference.%SPEECH_ON%If he\'s a problem, we can handle him.%SPEECH_OFF%The man shakes his head.%SPEECH_ON%Oh, I\'ll be no problem. I just want to kill orcs and goblins. What more do you need to know? Once these greenskins are taken care of, I\'ll be out of your hair.%SPEECH_OFF%",
 			Banner = "",
 			Characters = [],
 			Options = [
@@ -41,7 +41,7 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
-					"orc_slayer_background"
+					"legend_ranger_background"
 				]);
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_greenskins_trait"));
 				local necklace = this.new("scripts/items/accessory/special/slayer_necklace_item");
