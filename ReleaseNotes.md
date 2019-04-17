@@ -539,8 +539,8 @@ Beta 0.10.3
 *Legendary raiders gain nimble 
 *Legendary bandits gain backstabber
 *Legendary skeletons gain shield expert
-*Fixes legendary stun immunity on hexen 
-*Fixes legendary stun immunity on necrosavants
+*Fixes stun immunity on legendary hexen 
+*Fixes stun immunity on legendary necrosavants
 *Legendary spiders lose overwhelm, their poison does double damage
 *Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured 
 *Legendary orc young lose battle forged and gain crippling strikes, 
@@ -548,5 +548,6 @@ Beta 0.10.3
 *Crossbow shots cost 3AP and reload costs 4AP. adds manueverability and berserk synergy to crossbows. 
 *Makes throwing flasks and nets cost the same as throwing a weapon
 *indomitable and stalwart grant immunity from being swallowed 
+*Crusader and Noble can be obtained through crisis events  
  
  Credit to LeVillainJoueur for the balance cool ideas
