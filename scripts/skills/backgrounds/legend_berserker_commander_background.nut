@@ -40,7 +40,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			"trait.bright",
 			"trait.cocky",
 			"trait.dastard",
-			"trait.drunkard"
+			"trait.drunkard",
+			"trait.disloyal",
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Savage",

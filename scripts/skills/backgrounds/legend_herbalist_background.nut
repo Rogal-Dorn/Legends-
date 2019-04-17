@@ -9,8 +9,8 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.BackgroundDescription = "Herbalists are skilled with a sickle, harvesting herbs for use in medicine";
 		this.m.GoodEnding = "%name% the herbalist left to start an apocathery in the wetlands, business is good and remedies abound. Last you heard %name% had discovered a cure for bunions and people traveled from far and wide to try the soup";
 		this.m.BadEnding = "%name% went off to become a herbalist again, but the cures didn't work and they soon got a reputation as a quack. Looking for more potent cures, %name% poisoned themself and never recovered.";
-		this.m.HiringCost = 60;
-		this.m.DailyCost = 5;
+		this.m.HiringCost = 300;
+		this.m.DailyCost = 12;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.hate_beasts",
@@ -109,8 +109,8 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 				0
 			],
 			MeleeSkill = [
-				11,
-				5
+				5,
+				0
 			],
 			RangedSkill = [
 				0,
@@ -135,7 +135,6 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
 		items.equip(this.new("scripts/items/armor/legend_herbalist_robe"));
 		items.equip(this.new("scripts/items/weapons/legend_sickle"));
 	}
