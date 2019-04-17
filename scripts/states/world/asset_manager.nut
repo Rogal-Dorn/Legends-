@@ -110,6 +110,11 @@ this.asset_manager <- {
 		return this.Math.floor(this.m.ArmorParts);
 	}
 
+	function getArmorPartsF()
+	{
+		return this.m.ArmorParts;
+	}
+
 	function getMedicine()
 	{
 		return this.Math.floor(this.m.Medicine);
@@ -249,6 +254,11 @@ this.asset_manager <- {
 	function addArmorParts( _f )
 	{
 		this.m.ArmorParts = this.Math.min(this.Math.max(0, this.m.ArmorParts + _f), this.getMaxArmorParts());
+	}
+
+	function addArmorPartsF( _f )
+	{
+		this.m.ArmorParts = this.Math.minf(this.Math.maxf(0, this.m.ArmorParts + _f), this.getMaxArmorParts());
 	}
 
 	function addMedicine( _f )

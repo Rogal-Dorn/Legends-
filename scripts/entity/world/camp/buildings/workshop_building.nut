@@ -351,7 +351,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		
 		local text = "Salvaged ... " + percent + "%";
         
-        if (this.World.Assets.getArmorParts() == this.World.Assets.getMaxArmorParts())
+        if (this.World.Assets.getArmorPartsF() == this.World.Assets.getMaxArmorParts())
         {
             return text + " (At max tools!)";
         }
@@ -360,7 +360,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     function update ()
     {
-        if (this.World.Assets.getArmorParts() >= this.World.Assets.getMaxArmorParts())
+        if (this.World.Assets.getArmorPartsF() >= this.World.Assets.getMaxArmorParts())
         {
             return this.getUpdateText();
         }
@@ -378,7 +378,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
 
-            if ( this.World.Assets.getArmorParts() >= this.World.Assets.getMaxArmorParts())
+            if ( this.World.Assets.getArmorPartsF() >= this.World.Assets.getMaxArmorParts())
             {
                 break;
             }
@@ -398,7 +398,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             this.m.PointsSalvaged += consumed;
 			local created = consumed * modifiers.Consumption;
 			this.m.ToolsCreated += created;   
-			this.World.Assets.setArmorParts(this.Math.minf( this.World.Assets.getMaxArmorParts(), this.World.Assets.getArmorParts() + created))
+			this.World.Assets.addArmorPartsF(created);
 
             if (r.Item.getCondition() <= 0)
             {

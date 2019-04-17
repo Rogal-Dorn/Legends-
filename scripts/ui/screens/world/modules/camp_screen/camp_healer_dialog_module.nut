@@ -1,8 +1,8 @@
 
 this.camp_healer_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
-		Title = "Heal/Reserves",
-		Description = "Tend to wounded brothers and place them in reserve status"
+		Title = "Healing",
+		Description = "Tend to wounded brothers"
 	},
 
 	function create()

@@ -332,6 +332,11 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return "";
 		}
 
+		if (this.World.Assets.getMedicine() <= 0)
+		{
+			return "No injuries being treated (Out of medicine!)"
+		}
+
 		if (this.m.Camp.getElapsedHours() > this.getRequiredTime())
 		{
 			return "Injuries Treated ... 100%";
@@ -344,10 +349,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 		
 		local text =  "Injuries Treated ... " + percent + "%";
-		if (this.World.Assets.getMedicine() <= 0)
-		{
-			return text + " (Out of medicine!)"
-		}
+
 		return text;
 	}
 
@@ -421,7 +423,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local text = this.getUpdateText()
 		if (text != "")
 		{
-			text += "\n"
+			text += "</br>"
 		}
 
         local roster = this.World.getPlayerRoster().getAll();
@@ -468,11 +470,6 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		foreach( b in brothers )
 		{
-            if (b.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-
 			local injuries = [];
 			local allInjuries = b.getSkills().query(this.Const.SkillType.TemporaryInjury);
 
@@ -490,6 +487,11 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 						points = inj.getPoints()
 					});
 				}
+			}
+
+			if (injuries.len() == 0)
+			{
+				continue;
 			}
 
 			local background = b.getBackground();
