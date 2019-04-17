@@ -50,7 +50,7 @@ this.civilwar_noble_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (!this.World.FactionManager.isCivilWar))
+		if (!this.World.FactionManager.isCivilWar())
 		{
 			return;
 		}
