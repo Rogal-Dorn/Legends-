@@ -519,4 +519,7 @@ Beta 0.10.2 Released on Nexus
 Beta 0.10.3
 *Ranger starts with higher ammo.
 *Fix player base image resetting after camp.
+*Removes loyal and disloyal traits from all commanders
+*Fixes Rangers' Piercing Shot not using ammo and useable by something other than bow or xbow.
+
 
