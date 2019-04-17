@@ -38,7 +38,8 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.quick",
 			"trait.swift",
 			"trait.suser_footing",
-			"trait.tough"
+			"trait.tough",
+			"trait.disloyal"
 		];
 		this.m.Titles = [
 			"the Sickening",

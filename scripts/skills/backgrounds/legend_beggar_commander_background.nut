@@ -23,7 +23,9 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			"trait.determined",
 			"trait.deathwish",
 			"trait.greedy",
-			"trait.athletic"
+			"trait.athletic",
+			"trait.disloyal",
+			"trait.loyal"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,

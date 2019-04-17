@@ -18,7 +18,9 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			"trait.craven",
 			"trait.dastard",
 			"trait.fainthearted",
-			"trait.insecure"
+			"trait.insecure",
+			"trait.disloyal",
+			"trait.loyal"			
 		];
 		this.m.Titles = [
 			"the Vala"
