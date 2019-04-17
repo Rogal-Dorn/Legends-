@@ -1,21 +1,18 @@
 this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
-	m = {
-		AdditionalAccuracy = 0,
-		AdditionalHitChance = 0
-	},
+	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_piercing_shot";
-		this.m.Name = "Piercing Shot";
+		this.m.ID = "actives.legend_piercing_bolt";
+		this.m.Name = "Piercing Bolt";
 		this.m.Description = "A shot with so much force that it passes straight through one enemy to the enemy behind them";
 		this.m.KilledString = "Pierced";
 		this.m.Icon = "skills/PiercingBoltSkill.png";
 		this.m.IconDisabled = "skills/PiercingBoltSkill_bw.png";
 		this.m.Overlay = "piercing_bolt";
 		this.m.SoundOnUse = [
-			"sounds/combat/aimed_shot_01.wav",
-			"sounds/combat/aimed_shot_02.wav",
-			"sounds/combat/aimed_shot_03.wav"
+			"sounds/combat/bolt_shot_01.wav",
+			"sounds/combat/bolt_shot_02.wav",
+			"sounds/combat/bolt_shot_03.wav"
 		];
 		this.m.SoundOnHit = [
 			"sounds/combat/split_hit_01.wav",
@@ -28,13 +25,13 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/shield_hit_arrow_03.wav"
 		];
 		this.m.SoundOnMiss = [
-			"sounds/combat/arrow_miss_01.wav",
-			"sounds/combat/arrow_miss_02.wav",
-			"sounds/combat/arrow_miss_03.wav"
-		];		
+			"sounds/combat/bolt_shot_miss_01.wav",
+			"sounds/combat/bolt_shot_miss_02.wav",
+			"sounds/combat/bolt_shot_miss_03.wav"
+		];	
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
-		this.m.Delay = 1000;		
+		this.m.Delay = 100;		
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -48,11 +45,11 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		this.m.IsAOE = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
-		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 8;
-		this.m.FatigueCost = 30;
+		this.m.DirectDamageMult = 0.4;
+		this.m.ActionPointCost = 2;
+		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
+		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;		
 		this.m.ChanceDecapitate = 10;
 		this.m.ChanceDisembowel = 50;
@@ -77,25 +74,12 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
 		});
 
-		if (this.m.AdditionalAccuracy >= 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.AdditionalAccuracy + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-4 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.AdditionalAccuracy + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-4 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
-
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/hitchance.png",
+			text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]-3%[/color] per tile of distance"
+		});
 		local ammo = this.getAmmo();
 
 		if (ammo > 0)
@@ -104,7 +88,7 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] arrows left"
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] bolts left"
 			});
 		}
 		else
@@ -113,25 +97,26 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty quiver of arrows equipped[/color]"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty quiver of bolts equipped[/color]"
 			});
 		}
 
-		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		if (!this.getItem().isLoaded())
 		{
 			ret.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Must be reloaded before firing again[/color]"
 			});
 		}
+
 		return ret;
 	}
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return this.skill.isUsable() && this.getItem().isLoaded();
 	}
 
 	function getAmmo()
@@ -143,11 +128,12 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
-		if (item.getAmmoType() == this.Const.Items.AmmoType.Arrows)
+		if (item.getAmmoType() == this.Const.Items.AmmoType.Bolts)
 		{
 			return item.getAmmo();
 		}
 	}
+
 
 	function consumeAmmo()
 	{
@@ -161,51 +147,29 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.MaxRange = this.m.Item.getRangeMax() - 1 + (_properties.IsSpecializedInBows ? 1 : 0);
-		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
-		this.m.FatigueCostMult = _properties.IsSpecializedInBows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
 	}
 
 	function onUse( _user, _targetTile )
 	{
-		this.consumeAmmo();
-		local tag = {
-			Skill = this,
-			User = _user,
-			TargetTile = _targetTile
-		};
-		if (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer)
+		this.spawnAttackEffect(_tag.TargetTile, this.Const.Tactical.AttackEffectSplit);
+		local ret = this.attackEntity(_user, _targetTile.getEntity());
+		local ownTile = _user.getTile();
+		local dir = ownTile.getDirectionTo(_targetTile);
+		if (_targetTile.hasNextTile(dir))
 		{
-			this.getContainer().setBusy(true);
-
-			this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.Delay, this.onPerformAttack, tag);
-
-			if (!_user.isPlayerControlled() && _targetTile.getEntity().isPlayerControlled())
-			{
-				_user.getTile().addVisibilityForFaction(this.Const.Faction.Player);
-			}
-			return true;
-		}
-
-		return this.onPerformAttack(tag);
-	}
-
-	function onPerformAttack( _tag )
-	{
-		_tag.Skill.spawnAttackEffect(_tag.TargetTile, this.Const.Tactical.AttackEffectSplit);		
-		_tag.Skill.getContainer().setBusy(false);
-		local ret = _tag.Skill.attackEntity(_tag.User, _tag.TargetTile.getEntity());
-		local ownTile = _tag.User.getTile();
-		local dir = ownTile.getDirectionTo(_tag.TargetTile);
-		if (_tag.TargetTile.hasNextTile(dir))
-		{
-			local forwardTile = _tag.TargetTile.getNextTile(dir);
+			local forwardTile = _targetTile.getNextTile(dir);
 
 			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
 			{
-				ret = _tag.Skill.attackEntity(_tag.User, forwardTile.getEntity()) || ret;
+				ret = this.attackEntity(_user, forwardTile.getEntity()) || ret;
 			}
 		}
+		this.getItem().setLoaded(false);
+		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
+		skillToAdd.setItem(this.getItem());
+		this.getContainer().add(skillToAdd);
 		return ret
 	}
 
@@ -230,8 +194,8 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -4 + this.m.AdditionalHitChance;
+			_properties.RangedSkill += 15;
+			_properties.HitChanceAdditionalWithEachTile -= 3;
 		}
 	}
 
