@@ -524,6 +524,11 @@ Beta 0.10.3
 *Herbalist is slighty more expensive now with slight reduction in melee skill.
 *Reduces barter XP bonus gain from caravan missions.
 *Fixes nun's habit graphics.
+*Added a new Vala perk: Heightened Senses (Chant)
+*Added information about what Malevolent SPirits actually does (active skill tooltip)
+*Vala may now target enemies that already have the Malevolent Spirits effect on them, updating it's power
+*Fury's effect now scales with the Vala's Resolve and various stats of the affected ally
+
 *Rebalance legendary combat difficulty skills
 *Legendary unhold loses nimble, colossus and muscularity. Gains last stand. Gains +100% health, heal rate doubled.
 *Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health,  heal rate quadrupled. 
