@@ -526,7 +526,7 @@ Beta 0.10.3
 *Fixes nun's habit graphics.
 *Reduces time is takes for Vala Rune enchanting.
 *Added a new Vala perk: Heightened Senses (Chant)
-*Added information about what Malevolent SPirits actually does (active skill tooltip)
+*Added information about what Malevolent Spirits actually does (active skill tooltip)
 *Vala may now target enemies that already have the Malevolent Spirits effect on them, updating it's power
 *Fury's effect now scales with the Vala's Resolve and various stats of the affected ally
 *Fixed rounding errors in Repair and Workshop camp tents which gave wonky results.
@@ -544,4 +544,4 @@ Beta 0.10.3
 *Legendary spiders lose overwhelm, their poison does double damage
 *Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured 
 *Legendary orc young lose battle forged and gain crippling strikes, 
-
+*Fixed missing sickle perks icons 
