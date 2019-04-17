@@ -56,7 +56,7 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.getEntity().isPlayerControlled();
+		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.getEntity().isPlayerControlled() && !_targetTile.getEntity().getCurrentProperties().IsImmuneToKnockBackAndGrab;
 	}
 
 	function onUse( _user, _targetTile )
