@@ -549,5 +549,6 @@ Beta 0.10.3
 *Makes throwing flasks and nets cost the same as throwing a weapon
 *indomitable and stalwart grant immunity from being swallowed 
 *Crusader and Noble can be obtained through crisis events  
+*Spider poison disables Unhold healing  
  
  Credit to LeVillainJoueur for the balance cool ideas
