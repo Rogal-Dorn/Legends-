@@ -35,17 +35,17 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	{
 		if (!this.checkEntities())
 		{
-			this.updateEffect(false, false);
+			this.updateEffect(false);
 			return true;
 		}
 
 		if (!this.isInRange())
 		{
-			this.updateEffect(false, false);
+			this.updateEffect(false);
 			return true;
 		}
 
-		this.updateEffect(true, false);
+		this.updateEffect(true);
 		return false;
 	}
 
@@ -75,14 +75,11 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	}
 
 
-	function updateEffect(_v, _zone = true)
+	function updateEffect(_v)
 	{
 		if (_v)
 		{
-			if (_zone)
-			{
-				this.getContainer().getActor().m.IsUsingZoneOfControl = false;
-			}
+			this.getContainer().getActor().m.IsUsingZoneOfControl = false;
 			this.m.Name = "Disharmony";
 			this.m.Icon = "skills/status_effect_65.png";
 			this.m.IconMini = "status_effect_65_mini";
@@ -90,10 +87,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		}
 		else
 		{
-			if (_zone)
-			{
-				this.getContainer().getActor().m.IsUsingZoneOfControl = true;
-			}
+			this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 			this.m.Name = "";
 			this.m.Icon = "";
 			this.m.IconMini = "";
@@ -147,13 +141,13 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		if (!this.checkEntities())
 		{
 			this.updateEffect(false);
-			return
+			return;
 		}
 
 		if (!this.isInRange())
 		{
 			this.updateEffect(false);
-			return 
+			return;
 		}
 
 		this.spawnIcon("status_effect_65", this.getContainer().getActor().getTile());
@@ -163,8 +157,19 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 
 	function onUpdate( _properties )
 	{
-		this.checkEntities();
-		this.updateEffect();
+		if (!this.checkEntities())
+		{
+			this.updateEffect(false);
+			return;
+		}
+
+		if (!this.isInRange())
+		{
+			this.updateEffect(false);
+			return;
+		}
+
+		this.updateEffect(true);
 	}
 
 

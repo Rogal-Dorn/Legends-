@@ -88,7 +88,7 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function EffectUpdate()
+	function updateEffect()
 	{
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
@@ -143,7 +143,7 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.EffectUpdate();
+		this.updateEffect();
 	}
 
 
@@ -171,7 +171,7 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeDefenseMult *= (1.0 - ((this.m.MalusTwo * 1.0) / 100.0));
 		}
 
-		this.EffectUpdate();
+		this.updateEffect();
 	}
 
 
