@@ -31,6 +31,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		return this.buildTextFromTemplate(this.Const.Strings.BanditLeaderNames[this.Math.rand(0, this.Const.Strings.BanditLeaderNames.len() - 1)], vars);
 	}
 
+
 	function onInit()
 	{
 		this.human.onInit();

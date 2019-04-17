@@ -60,14 +60,24 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getBusinessReputation() < 3000)
+		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
 
-		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
-		{
-			return;
+
+        local roster = this.World.getPlayerRoster().getAll()
+        foreach( bro in roster)
+        {
+			if (bro.getBackground().getID() == "background.legend_ranger")
+			{
+				return
+			}
+
+			if (bro.getBackground().getID() == "background.legend_commander_ranger")
+			{
+				return
+			}
 		}
 
 		this.m.Score = 10;

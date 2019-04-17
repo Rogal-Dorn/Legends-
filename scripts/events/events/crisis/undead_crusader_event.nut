@@ -55,14 +55,23 @@ this.undead_crusader_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getBusinessReputation() < 3000)
+		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
 
-		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
-		{
-			return;
+        local roster = this.World.getPlayerRoster().getAll()
+        foreach( bro in roster)
+        {
+			if (bro.getBackground().getID() == "background.legend_commander_crusader")
+			{
+				return
+			}
+
+			if (bro.getBackground().getID() == "background.legend_crusader")
+			{
+				return
+			}
 		}
 
 		this.m.Score = 10;
