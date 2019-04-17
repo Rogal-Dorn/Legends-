@@ -57,6 +57,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.legend_noble":
 			return gt.Const.Perks.TreeNobleWeakLookupMap;
 			break;
+		case "background.legend_noble_event":
+			return gt.Const.Perks.TreeNobleEventLookupMap;
+			break;			
 		case "background.legend_commander_beggar":
 			return gt.Const.Perks.TreeBeggarLookupMap;
 			break;	
