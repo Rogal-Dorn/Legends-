@@ -39,7 +39,7 @@ this.undead_crusader_event <- this.inherit("scripts/events/event", {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
-					"crusader_background"
+					"legend_crusader_background"
 				]);
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_undead_trait"));
 				this.Characters.push(_event.m.Dude.getImagePath());

@@ -40,36 +40,6 @@ this.greenskins_slayer_leaves_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (this.World.FactionManager.isGreenskinInvasion())
-		{
-			return;
-		}
-
-		local brothers = this.World.getPlayerRoster().getAll();
-
-		if (brothers.len() == 1)
-		{
-			return;
-		}
-
-		local slayer;
-
-		foreach( bro in brothers )
-		{
-			if (bro.getBackground().getID() == "background.orc_slayer")
-			{
-				slayer = bro;
-				break;
-			}
-		}
-
-		if (slayer == null)
-		{
-			return;
-		}
-
-		this.m.Dude = slayer;
-		this.m.Score = 100;
 	}
 
 	function onPrepare()

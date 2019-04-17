@@ -40,36 +40,6 @@ this.undead_crusader_leaves_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (this.World.FactionManager.isUndeadScourge())
-		{
-			return;
-		}
-
-		local brothers = this.World.getPlayerRoster().getAll();
-
-		if (brothers.len() == 1)
-		{
-			return;
-		}
-
-		local crusader;
-
-		foreach( bro in brothers )
-		{
-			if (bro.getBackground().getID() == "background.crusader")
-			{
-				crusader = bro;
-				break;
-			}
-		}
-
-		if (crusader == null)
-		{
-			return;
-		}
-
-		this.m.Dude = crusader;
-		this.m.Score = 100;
 	}
 
 	function onPrepare()
