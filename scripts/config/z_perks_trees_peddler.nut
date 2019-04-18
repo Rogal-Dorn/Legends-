@@ -11,7 +11,6 @@ local PeddlerTree = [
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
-		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
