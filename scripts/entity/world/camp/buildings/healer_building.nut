@@ -368,6 +368,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     function update ()
     {
         local modifiers = this.getModifiers();
+		if (this.m.Queue == null)
+		{
+			this.init();
+		}
         foreach (i, r in this.m.Queue)
         {
             if (r == null)
