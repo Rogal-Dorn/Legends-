@@ -15,6 +15,11 @@ this.legend_RSH_luck <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
+		if (this.getItem() == null)
+		{
+			return;
+		}
+
 		_properties.RerollDefenseChance += this.getItem().getRuneBonus1();
 	}
 });

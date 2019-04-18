@@ -15,6 +15,10 @@ this.legend_RSA_safety <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
+		if (this.getItem() == null)
+		{
+			return;
+		}
 		_properties.HitpointsMult *= (1.0 + ((this.getItem().getRuneBonus1() * 1.0) / 100.0));
 		_properties.DamageReceivedTotalMult *= (1.0 - ((this.getItem().getRuneBonus2() * 1.0) / 100.0));
 	}
