@@ -563,6 +563,7 @@ Beta 0.10.4
 *Removed double student perk from Peddler
 *Reworks Warlock perk tree to make it a viable solo run.
 *Buff warlock's grizly scythe.
-*Small buff to legendary difficulty enemy scaling.
+*Slightly increase late game difficulty scaling on legendary 
+*Legendary economic doubles the penalty for failing caravan missions 
 *Fix for Vala Radiance effect.
 *Fix naked bakers.
