@@ -113,11 +113,21 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-		r = this.Math.rand(0, 0);
+		r = this.Math.rand(0, 4);
 
-		if (r == 0)
+		if (r == 0 || r == 1)
 		{
-			local item = this.new("scripts/items/armor/legend_maid_apron");
+			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
+		}
+		else 
+		{
+			local item = this.new("scripts/items/armor/linen_tunic");
+			item.setVariant(this.Math.rand(6, 7));
+			items.equip(item);
 		}
 	}
 

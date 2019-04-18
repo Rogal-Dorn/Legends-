@@ -526,22 +526,41 @@ Beta 0.10.3
 *Fixes nun's habit graphics.
 *Reduces time is takes for Vala Rune enchanting.
 *Added a new Vala perk: Heightened Senses (Chant)
-*Added information about what Malevolent SPirits actually does (active skill tooltip)
+*Added information about what Malevolent Spirits actually does (active skill tooltip)
 *Vala may now target enemies that already have the Malevolent Spirits effect on them, updating it's power
 *Fury's effect now scales with the Vala's Resolve and various stats of the affected ally
 *Fixed rounding errors in Repair and Workshop camp tents which gave wonky results.
 *Fixed Camp training tooltip
 *Training tent now has a chance to give permanent stat increases everytime you train (not just when you successfully get XP upgrade). Percentage is directly related to how long you are in camp plus training tent bonus.
-*Rebalance legendary combat difficulty skills
+*Fixed missing sickle perks icons 
+*Legends Crusader, Noble and Ranger can be obtained through crisis events  (replaces the vanilla crusader and orc slayer, noble is new event)
+
+*Rebalance legendary combat difficulty skills:
 *Legendary unhold loses nimble, colossus and muscularity. Gains last stand. Gains +100% health, heal rate doubled.
 *Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health,  heal rate quadrupled. 
 *Legendary frost unhold loses executioner and nimble. Keeps muscularity. Gains +100% health double healing rate. 
 *Legendary raiders gain nimble 
 *Legendary bandits gain backstabber
 *Legendary skeletons gain shield expert
-*Fixes legendary stun immunity on hexen 
-*Fixes legendary stun immunity on necrosavants
+*Fixes stun immunity on legendary hexen 
+*Fixes stun immunity on legendary necrosavants
 *Legendary spiders lose overwhelm, their poison does double damage
 *Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured 
-*Legendary orc young lose battle forged and gain crippling strikes, 
+*Legendary orc young lose battle forged and gain crippling strikes
+*Legndary Bandit and Marksman get nimble
 
+*Credit to LeVillainJoueur for the cool balance ideas:
+*Crossbow shots cost 3AP and reload costs 4AP. adds manueverability and berserk synergy to crossbows. 
+*Makes throwing flasks and nets cost the same as throwing a weapon
+*indomitable and stalwart grant immunity from being swallowed 
+*Spider poison disables Unhold healing  
+ 
+Beta 0.10.4
+*Fix crash when loading save that has an active escort caravan contract.
+*Fixes PoisonMastery perk not being enabled in combat.
+*Fixes armor not dropping as loot for zombies and skelies.
+*Fixes bros in third row not resetting equipment after battle.
+*Removed double student perk from Peddler
+*Reworks Warlock perk tree to make it a viable solo run.
+*Buff warlock's grizly scythe.
+*Fix naked bakers.
