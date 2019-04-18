@@ -74,7 +74,7 @@ this.legend_poison_weapon<- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		!this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
 	function onUse( _user, _targetTile )

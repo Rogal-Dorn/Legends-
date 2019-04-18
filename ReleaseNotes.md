@@ -557,3 +557,5 @@ Beta 0.10.3
  
 Beta 0.10.4
 *Fix crash when loading save that has an active escort caravan contract
+*Fixes PoisonMastery perk not being enabled in combat.
+*Fixes armor not dropping as loot for zombies and skelies
