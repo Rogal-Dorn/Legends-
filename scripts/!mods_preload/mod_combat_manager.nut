@@ -1,36 +1,5 @@
 ::mods_hookNewObject("entity/world/combat_manager", function(o) {
 
-	o.joinCombat = function( _combat, _party )
-	{
-		if (_party == null)
-		{
-			return;
-		}
-
-		local troops = _party.getTroops();
-
-		foreach( t in troops )
-		{
-			t.Initiative <- this.Math.rand(1, 100);
-			_combat.Combatants.push(t);
-		}
-
-		_combat.Combatants.sort(this.onInitiativeCompare);
-		_party.setCombatID(_combat.ID);
-		
-
-        // if (_party.getFaction() >= _combat.Factions.len()) {
-        //     _combat.Factions.resize(_party.getFaction() + 1);
-        //     for( local f = _party.getFaction(); f != _party.getFaction() + 1; f = ++f )
-        //     {
-        //         _combat.Factions[f] = [];
-        //     }
-        // }
-
-		_combat.Factions[_party.getFaction()].push(this.WeakTableRef(_party));
-		_party.onCombatStarted();
-	}
-
     o.startCombat = function( _p1, _p2 )
 	{
 		local p1 = typeof _p1 == "instance" ? _p1.get() : _p1;

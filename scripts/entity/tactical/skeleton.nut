@@ -312,6 +312,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.Entities.addCorpse(_tile);
 		}
 
+
 		this.getItems().dropAll(_tile, _killer, !flip);
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
