@@ -564,3 +564,5 @@ Beta 0.10.4
 *Reworks Warlock perk tree to make it a viable solo run.
 *Buff warlock's grizly scythe.
 *Fix naked bakers.
+*slightly increase late game difficulty scaling on legendary 
+* legendary economic doubles the penalty for failing caravan missions 
