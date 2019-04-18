@@ -555,3 +555,5 @@ Beta 0.10.3
 *indomitable and stalwart grant immunity from being swallowed 
 *Spider poison disables Unhold healing  
  
+Beta 0.10.4
+*Fix crash when loading save that has an active escort caravan contract
