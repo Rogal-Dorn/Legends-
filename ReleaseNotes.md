@@ -556,6 +556,11 @@ Beta 0.10.3
 *Spider poison disables Unhold healing  
  
 Beta 0.10.4
-*Fix crash when loading save that has an active escort caravan contract
+*Fix crash when loading save that has an active escort caravan contract.
 *Fixes PoisonMastery perk not being enabled in combat.
-*Fixes armor not dropping as loot for zombies and skelies
+*Fixes armor not dropping as loot for zombies and skelies.
+*Fixes bros in third row not resetting equipment after battle.
+*Removed double student perk from Peddler
+*Reworks Warlock perk tree to make it a viable solo run.
+*Buff warlock's grizly scythe.
+*Fix naked bakers.
