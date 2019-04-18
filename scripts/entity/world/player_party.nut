@@ -63,7 +63,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			}
 		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Strength +=  (i / 2) + pow(bro.getLevel(),1.2);
+			this.m.Strength +=  (i / 2) + pow(bro.getLevel(),1.25);
 			}
 		}
 
