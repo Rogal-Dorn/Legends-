@@ -11,7 +11,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.FastAdaptation,
-		gt.Const.Perks.PerkDefs.Collosus,
+		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.Student,
