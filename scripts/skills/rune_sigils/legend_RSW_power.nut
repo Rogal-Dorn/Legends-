@@ -15,6 +15,10 @@ this.legend_RSW_power <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
+		if (this.getItem() == null)
+		{
+			return;
+		}
 		_properties.DamageTotalMult *= (1.0 + ((this.getItem().getRuneBonus1() * 1.0) / 100.0));
 	}
 });
