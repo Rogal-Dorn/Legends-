@@ -351,6 +351,11 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     function update ()
     {
+        if (this.m.Repairs == null)
+		{
+			this.init();
+		}
+
         if (this.m.Repairs.len() == 0)
         {
             return this.getUpdateText();
