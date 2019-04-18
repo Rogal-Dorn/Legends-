@@ -291,14 +291,13 @@
 				}
 
 
-				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null && !tile.Properties.has("IsSummons"))
+				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null && !tile.Properties.has("IsSummoned"))
 				{
 					local items = tile.Properties.get("Corpse").Items.getAllItems();
 
 					foreach( item in items )
 					{
 						item.onCombatFinished();
-
 						if (!item.isChangeableInBattle() && item.isDroppedAsLoot())
 						{
 							if (item.getCondition() > 1 && item.getConditionMax() > 1 && item.getCondition() > item.getConditionMax() * 0.66 && this.Math.rand(1, 100) <= 66)

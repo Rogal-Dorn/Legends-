@@ -1710,7 +1710,7 @@ this.asset_manager <- {
 
 		foreach( bro in roster )
 		{
-			if (bro.getPlaceInFormation() > 17)
+			if (bro.getPlaceInFormation() > 27)
 			{
 				continue;
 			}

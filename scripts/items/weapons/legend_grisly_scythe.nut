@@ -22,8 +22,8 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 30.0;
 		this.m.ConditionMax = 30.0;
 		this.m.StaminaModifier = -9;
-		this.m.RegularDamage = 15;
-		this.m.RegularDamageMax = 30;
+		this.m.RegularDamage = 25;
+		this.m.RegularDamageMax = 35;
 		this.m.ArmorDamageMult = 0.25;
 		this.m.DirectDamageMult = 0.25;
 	}
