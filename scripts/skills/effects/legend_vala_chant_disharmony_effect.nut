@@ -1,54 +1,11 @@
-this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill", {
-	m = {
-		Vala = null,
-		Range = 1
-	},
-	function setVala(_v)
-	{
-		if (typeof _v == "instance")
-		{
-			this.m.Vala = _v;
-		}
-		else
-		{
-			this.m.Vala = this.WeakTableRef(_v);
-		}
-	}
-
-
+this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects/legend_vala_chant", {
+	m = {},
 	function create()
 	{
+		this.legend_vala_chant.create();
+		this.m.Range = 1;
 		this.m.ID = "effects.legend_vala_chant_disharmony_effect";
-		this.m.Name = "";
-		this.m.Icon = "";
-		this.m.IconMini = "";
-		this.m.Overlay = "";
-		this.m.Type = this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.Last;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = false;
 	}
-
-
-	function isHidden()
-	{
-		if (!this.checkEntities())
-		{
-			this.updateEffect(false);
-			return true;
-		}
-
-		if (!this.isInRange())
-		{
-			this.updateEffect(false);
-			return true;
-		}
-
-		this.updateEffect(true);
-		return false;
-	}
-
 
 	function getTooltip()
 	{
@@ -74,7 +31,6 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		}
 	}
 
-
 	function updateEffect(_v)
 	{
 		if (_v)
@@ -96,46 +52,6 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 	}
 
 
-	function checkEntities()
-	{
-		local actor = this.getContainer().getActor();
-		if (actor == null) 
-		{
-			return false;
-		}
-
-		local tile = actor.getTile();
-		if (tile == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala.getTile() == null)
-		{
-			return false;
-		}
-
-		return true;
-	}
-
-
-
-	function isInRange()
-	{
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-
 	function onMovementCompleted()
 	{
 		if (!this.checkEntities())
@@ -154,36 +70,15 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/skill",
 		this.updateEffect(true);
 	}
 
-
-	function onUpdate( _properties )
-	{
-		if (!this.checkEntities())
-		{
-			this.updateEffect(false);
-			return;
-		}
-
-		if (!this.isInRange())
-		{
-			this.updateEffect(false);
-			return;
-		}
-
-		this.updateEffect(true);
-	}
-
-
 	function onRemoved()
 	{
 		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 	}
 
-
 	function onDeath()
 	{
 		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 	}
-
 
 	function onCombatFinished()
 	{

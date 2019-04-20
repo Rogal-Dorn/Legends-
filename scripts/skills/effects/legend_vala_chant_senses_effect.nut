@@ -1,54 +1,11 @@
-this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/skill", {
-	m = {
-		Vala = null,
-		Range = 3
-	},
-	function setVala(_v)
-	{
-		if (typeof _v == "instance")
-		{
-			this.m.Vala = _v;
-		}
-		else
-		{
-			this.m.Vala = this.WeakTableRef(_v);
-		}
-	}
-
-
+this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/effects/legend_vala_chant", {
+	m = {},
 	function create()
 	{
+		this.legend_vala_chant.create();
 		this.m.ID = "effects.legend_vala_chant_senses_effect";
-		this.m.Name = "";
-		this.m.Icon = "";
-		this.m.IconMini = "";
-		this.m.Overlay = "";
-		this.m.Type = this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.Last;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		this.m.Range = 3;
 	}
-
-
-	function isHidden()
-	{
-		if (!this.checkEntities())
-		{
-			this.updateEffect(false);
-			return true;
-		}
-
-		if (!this.isInRange())
-		{
-			this.updateEffect(false);
-			return true;
-		}
-
-		this.updateEffect(true);
-		return false;
-	}
-
 
 	function getTooltip()
 	{
@@ -91,7 +48,6 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-
 	function updateEffect( _v)
 	{
 		if (_v)
@@ -109,46 +65,6 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/skill", {
 			this.m.Overlay = "";
 		}
 	}
-
-
-	function checkEntities()
-	{
-		local actor = this.getContainer().getActor();
-		if (actor == null) 
-		{
-			return false;
-		}
-
-		local tile = actor.getTile();
-		if (tile == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala.getTile() == null)
-		{
-			return false;
-		}
-
-		return true;
-	}
-
-
-	function isInRange()
-	{
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
-		{
-			return true;
-		}
-
-		return false;
-	}
-
 
 	function isMastered()
 	{
@@ -226,9 +142,4 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/skill", {
 		this.updateEffect(true);
 	}
 
-
-	function onCombatFinished()
-	{
-		this.removeSelf();
-	}
 });
