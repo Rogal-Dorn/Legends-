@@ -15,10 +15,6 @@ this.legend_RSH_clarity <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		if (this.getItem() == null)
-		{
-			return;
-		}
 		_properties.Vision += this.getItem().getRuneBonus1();
 		_properties.XPGainMult *=  (1.0 + ((this.getItem().getRuneBonus2() * 1.0) / 100.0));
 	}

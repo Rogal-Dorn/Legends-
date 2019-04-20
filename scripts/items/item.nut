@@ -676,6 +676,14 @@ this.item <- {
 				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSW_feeding"));
 				break;
 
+			case 4:
+				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSW_poison"));
+				break;
+
+			case 5:
+				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSW_bleeding"));
+				break;
+
 			case 11:
 				this.addSkill(this.new("scripts/skills/rune_sigils/legend_RSH_clarity"));
 				break;
@@ -727,6 +735,14 @@ this.item <- {
 
 			case 3:
 				return "This item has the power of the rune sigil of Feeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "%[/color] of inflicted health damage recovers fatigue.";
+				break;
+
+			case 4:
+				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] turns of poison applied.\nLowers action points, initiative and vision.";
+				break;
+
+			case 5:
+				return "This item has the power of the rune sigil of Bleeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] bleed damage every turn.\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "[/color] turns.";
 				break;
 
 			case 11:
@@ -805,6 +821,30 @@ this.item <- {
 				else
 				{
 					bonus = this.Math.rand(3, 9)
+				}
+				break;
+
+			case 4:
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(2, 4)
+				}
+				else
+				{
+					bonus = this.Math.rand(1, 3)
+				}
+				break;
+
+			case 5:
+				if (_bonus) 
+				{
+					bonus = this.Math.rand(3, 12)
+					bonus2 = this.Math.rand(1, 3)
+				}
+				else
+				{
+					bonus = this.Math.rand(3, 9)
+					bonus2 = this.Math.rand(1, 2)
 				}
 				break;
 
@@ -940,6 +980,20 @@ this.item <- {
 
 			case 3:
 				this.m.Name = "Weapon Rune Sigil: Feeding";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
+				this.m.Icon = "rune_sigils/rune_stone_1.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_1.png";
+				break;
+
+			case 4:
+				this.m.Name = "Weapon Rune Sigil: Poison";
+				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
+				this.m.Icon = "rune_sigils/rune_stone_1.png";
+				this.m.IconLarge = "rune_sigils/rune_stone_1.png";
+				break;
+
+			case 5:
+				this.m.Name = "Weapon Rune Sigil: Bleeding";
 				this.m.Description = "An inscribed rock that can be attached to a character\'s weapon.";
 				this.m.Icon = "rune_sigils/rune_stone_1.png";
 				this.m.IconLarge = "rune_sigils/rune_stone_1.png";

@@ -15,11 +15,6 @@ this.legend_RSS_defense <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		if (this.getItem() == null)
-		{
-			return;
-		}
-
 		_properties.MeleeDefenseMult *= (1.0 + ((this.getItem().getRuneBonus1() * 1.0) / 100.0));
 		_properties.RangedDefenseMult *= (1.0 + ((this.getItem().getRuneBonus2() * 1.0) / 100.0));
 	}
