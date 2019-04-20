@@ -15,6 +15,11 @@ this.legend_RSW_bleeding <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
+		if (this.getItem() == null)
+		{
+			return;
+		}
+
 		local actor = this.getContainer().getActor();
 
 		if (!actor.isAlive() || actor.isDying())
