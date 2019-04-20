@@ -1613,6 +1613,22 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaChantSenses,
 		Icon = "ui/perks/legend_vala_chant_senses.png",
 		IconDisabled = "ui/perks/legend_vala_chant_senses_sw.png"
+	},
+	{
+		ID = "perk.legend_specialist_scythe_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_scythe_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistScytheSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistScytheSkill,
+		Icon = "ui/perks/scythe_01.png",
+		IconDisabled = "ui/perks/scythe_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_scythe_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_scythe_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistScytheDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistScytheDamage,
+		Icon = "ui/perks/scythe_02.png",
+		IconDisabled = "ui/perks/scythe_bw.png"
 	}
 ];
 
@@ -1818,5 +1834,7 @@ gt.Const.Perks.PerkDefs <- {
 	ShieldBash = 197,
 	LegendMasteryNets = 198,
 	LegendValaChantFury = 199,
-	LegendValaChantSenses = 200
+	LegendValaChantSenses = 200,
+	LegendSpecialistScytheSkill = 201,
+	LegendSpecialistScytheDamage = 202
 };
