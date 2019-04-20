@@ -324,44 +324,44 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			switch (attr)
 			{
 				case 0:
-					bro.getBaseProperties().Hitpoints += 1
+					bro.getBaseProperties().Hitpoints += 1;
 					icon = "ui/icons/health.png";
-					text = "Hitpoint"					
+					text = "Hitpoint";					
 					break;
 				case 1:
-					bro.getBaseProperties().Bravery += 1
+					bro.getBaseProperties().Bravery += 1;
 					icon = "ui/icons/bravery.png";
-					text = "Resolve"					
+					text = "Resolve";					
 					break;
 				case 2:
-					bro.getBaseProperties().Fatigue += 1
+					bro.getBaseProperties().Stamina += 1;
 					icon = "ui/icons/fatigue.png";
-					text = "Fatigue"
+					text = "Fatigue";
 					break;
 				case 3:
-					bro.getBaseProperties().Initiative += 1
+					bro.getBaseProperties().Initiative += 1;
 					icon = "ui/icons/initiative.png";
-					text = "Initiative"
+					text = "Initiative";
 					break;
 				case 4:
-					bro.getBaseProperties().MeleeSkill += 1
+					bro.getBaseProperties().MeleeSkill += 1;
 					icon = "ui/icons/melee_skill.png";
-					text = "Melee Skill"
+					text = "Melee Skill";
 					break;
 				case 5:
-					bro.getBaseProperties().RangedSkill += 1
+					bro.getBaseProperties().RangedSkill += 1;
 					icon = "ui/icons/ranged_skill.png";
-					text = "Ranged Skill"
+					text = "Ranged Skill";
 					break;
 				case 6:
-					bro.getBaseProperties().MeleeDefense += 1
+					bro.getBaseProperties().MeleeDefense += 1;
 					icon = "ui/icons/melee_defense.png";
-					text = "Melee Defense"					
+					text = "Melee Defense";					
 					break;
 				case 7:
-					bro.getBaseProperties().RangedDefense += 1
+					bro.getBaseProperties().RangedDefense += 1;
 					icon = "ui/icons/ranged_defense.png";
-					text = "Ranged Defense"
+					text = "Ranged Defense";
 					break;
 			}
 			bro.getSkills().update();
