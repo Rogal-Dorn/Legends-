@@ -567,3 +567,6 @@ Beta 0.10.4
 *Legendary economic doubles the penalty for failing caravan missions 
 *Fix for Vala Radiance effect.
 *Fix naked bakers.
+
+Beta 0.10.4.2 Released on Nexus
+*Fixes crashes related to Vala chants when finishing a battle and when starting a battle.
