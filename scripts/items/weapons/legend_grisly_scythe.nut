@@ -5,7 +5,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_grisly_scythe";
 		this.m.Name = "Grisly Scythe";
-		this.m.Description = "While looking like a regular agricultural tool from a distance, this scythe has an otherworldy aura that draws you in.";
+		this.m.Description = "While looking like a regular agricultural tool from a distance, this scythe has an otherworldy aura that draws you in. Resurrects humans it kills, if they aren't too damaged.";
 		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_scythe_02.png";
 		this.m.Icon = "weapons/melee/legend_scythe_02_70x70.png";
@@ -18,14 +18,14 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_scythe_02";
 		this.m.Value = 750;
-		this.m.ShieldDamage = 10;
-		this.m.Condition = 30.0;
-		this.m.ConditionMax = 30.0;
+		this.m.ShieldDamage = 20;
+		this.m.Condition = 60.0;
+		this.m.ConditionMax = 60.0;
 		this.m.StaminaModifier = -9;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 35;
-		this.m.ArmorDamageMult = 0.25;
-		this.m.DirectDamageMult = 0.25;
+		this.m.ArmorDamageMult = 0.5;
+		this.m.DirectDamageMult = 0.5;
 	}
 
 	function onEquip()
@@ -37,6 +37,32 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(this.new("scripts/skills/actives/reap_skill"));
 		//this.addSkill(this.new("scripts/skills/actives/legend_drain"));
 
+	}
+
+		function onDamageDealt( _target, _skill, _hitInfo )
+	{
+		this.weapon.onDamageDealt(_target, _skill, _hitInfo);
+
+		if (!this.isKindOf(_target, "player") && !this.isKindOf(_target, "human"))
+		{
+			return;
+		}
+
+		if (_target.getHitpoints() > 0)
+		{
+			return;
+		}
+
+		if (_hitInfo.Tile.IsCorpseSpawned && _hitInfo.Tile.Properties.get("Corpse").IsResurrectable)
+		{
+			local corpse = _hitInfo.Tile.Properties.get("Corpse");
+			corpse.Faction = this.Const.Faction.PlayerAnimals;
+			corpse.Hitpoints = 1.0;
+			corpse.Items = _target.getItems();
+			corpse.IsConsumable = false;
+			corpse.IsResurrectable = false;
+			this.Time.scheduleEvent(this.TimeUnit.Rounds, this.Math.rand(1, 1), this.Tactical.Entities.resurrect, corpse);
+		}
 	}
 
 });

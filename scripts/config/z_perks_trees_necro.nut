@@ -10,7 +10,6 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendSiphon,
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
-		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
@@ -18,11 +17,11 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieLow,
-		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonLow
+		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
+		gt.Const.Perks.PerkDefs.LegendSpecialistScytheSkill,
 
 	],
 	[
-		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
 		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.FortifiedMind,
@@ -40,6 +39,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Brawny,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
+		gt.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 		gt.Const.Perks.PerkDefs.LegendDeathTouch,
 		gt.Const.Perks.PerkDefs.Lookout,
 		gt.Const.Perks.PerkDefs.LegendExtendendAura,
