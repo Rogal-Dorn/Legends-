@@ -1,54 +1,11 @@
-this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
-	m = {
-		Vala = null,
-		Range = 3
-	},
-	function setVala(_v)
-	{
-		if (typeof _v == "instance")
-		{
-			this.m.Vala = _v;
-		}
-		else
-		{
-			this.m.Vala = this.WeakTableRef(_v);
-		}
-	}
-
-
+this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legend_vala_chant", {
+	m = {},
 	function create()
 	{
+		this.legend_vala_chant.create();
 		this.m.ID = "effects.legend_vala_chant_fury_effect";
-		this.m.Name = "";
-		this.m.Icon = "";
-		this.m.IconMini = "";
-		this.m.Overlay = "";
-		this.m.Type = this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.Last;
-		this.m.IsActive = false;
-		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		this.m.Range = 3;
 	}
-
-
-	function isHidden()
-	{
-		if (!this.checkEntities())
-		{
-			this.updateEffect(false);
-			return true;
-		}
-
-		if (!this.isInRange())
-		{
-			this.updateEffect(false);
-			return true;
-		}
-
-		this.updateEffect(true);
-		return false;
-	}
-
 
 	function getTooltip()
 	{
@@ -118,7 +75,6 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 	}
-
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
@@ -225,7 +181,6 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-
 	function onPerformPaypack(_attackinfo)
 	{
 		_attackinfo.Skill.getContainer().setBusy(false);
@@ -235,7 +190,6 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			return _attackinfo.Skill.attackEntity(_attackinfo.User, _attackinfo.TargetTile.getEntity());
 		}
 	}
-
 
 	function updateEffect(_v)
 	{
@@ -254,46 +208,6 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 			this.m.Overlay = "";
 		}
 	}
-
-
-	function checkEntities()
-	{
-		local actor = this.getContainer().getActor();
-		if (actor == null) 
-		{
-			return false;
-		}
-
-		local tile = actor.getTile();
-		if (tile == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala.getTile() == null)
-		{
-			return false;
-		}
-
-		return true;
-	}
-
-
-	function isInRange()
-	{
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
-		{
-			return true;
-		}
-
-		return false;
-	}
-
 
 	function isMastered()
 	{
@@ -370,9 +284,4 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/skill", {
 		this.updateEffect(true);
 	}
 
-
-	function onCombatFinished()
-	{
-		this.removeSelf();
-	}
 });
