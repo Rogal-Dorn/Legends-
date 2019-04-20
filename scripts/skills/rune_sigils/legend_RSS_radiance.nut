@@ -17,14 +17,6 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 	function onMovementCompleted()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor == null)
-		{
-			return;
-		}
-		if (this.getItem() == null)
-		{
-			return;
-		}
 		local targets = this.Tactical.Entities.getAllInstances();
 
 		foreach (tar in targets)
@@ -45,15 +37,7 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 
 	function applyRadianceFoundation()
 	{
-		if (this.getItem() == null)
-		{
-			return;
-		}
 		local actor = this.getContainer().getActor();
-		if (actor == null)
-		{
-			return;
-		}
 		local targets = this.Tactical.Entities.getAllInstances();
 
 		foreach (tar in targets)
