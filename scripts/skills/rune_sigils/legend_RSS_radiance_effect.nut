@@ -28,6 +28,10 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 	function isHidden()
 	{
 		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return;
+		}
 		local targets = this.Tactical.Entities.getAllInstances();
 		local BlindAdjacent = false;
 
@@ -91,6 +95,10 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 	function updateEffect()
 	{
 		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return;
+		}
 		local targets = this.Tactical.Entities.getAllInstances();
 		local BlindAdjacent = false;
 
@@ -126,6 +134,10 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 	function onMovementCompleted()
 	{
 		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return;
+		}
 		local targets = this.Tactical.Entities.getAllInstances();
 
 		foreach (tar in targets)
