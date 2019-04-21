@@ -279,6 +279,11 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 			bonus *= 0.5;
 		}
 
+		if (bonus < 0)
+		{
+			bonus = 0;
+		}
+
 		_properties.DamageTotalMult *= 1.0 + bonus;
 
 		this.updateEffect(true);
