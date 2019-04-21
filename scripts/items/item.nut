@@ -738,11 +738,11 @@ this.item <- {
 				break;
 
 			case 4:
-				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] turns of poison applied. Lowers action points, initiative and vision.";
+				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "[/color] turn(s) of poison applied. Lowers action points, initiative and vision.";
 				break;
 
 			case 5:
-				return "This item has the power of the rune sigil of Bleeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus1 + "[/color] bleed damage every turn for [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.RuneBonus2 + "[/color] turns.";
+				return "This item has the power of the rune sigil of Bleeding:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "[/color] bleed damage every turn for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus2 + "[/color] turn(s).";
 				break;
 
 			case 11:
