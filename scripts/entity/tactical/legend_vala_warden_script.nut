@@ -253,6 +253,7 @@ this.legend_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", 
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_vala_warden_wail"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		// additional skills based on Vala's daily swap?
 	}
 });
