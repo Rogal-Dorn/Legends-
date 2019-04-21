@@ -827,11 +827,11 @@ this.item <- {
 			case 4:
 				if (_bonus) 
 				{
-					bonus = this.Math.rand(2, 4)
+					bonus = this.Math.rand(1, 3)
 				}
 				else
 				{
-					bonus = this.Math.rand(1, 3)
+					bonus = this.Math.rand(1, 2)
 				}
 				break;
 

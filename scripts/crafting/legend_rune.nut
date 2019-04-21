@@ -40,7 +40,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				break;
 
 			case 4:
-				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]1 to 4[/color] turn(s) of poison applied. Lowers action points, initiative and vision.";
+				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]1 to 3[/color] turn(s) of poison applied. Lowers action points, initiative and vision.";
 				break;
 
 			case 5:
