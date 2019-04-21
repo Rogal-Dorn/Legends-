@@ -26,7 +26,7 @@ this.legend_RSW_feeding <- this.inherit("scripts/skills/skill", {
 		}
 
 		local drain = this.getItem().getRuneBonus1() / 100.0;
-		local actor = this.m.Container.getActor();
+		local actor = this.getContainer().getActor();
 		actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.ceil(_damageInflictedHitpoints * drain)));
 		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " recovers " + this.Math.ceil(_damageInflictedHitpoints * drain) + " fatigue.");
 	}
