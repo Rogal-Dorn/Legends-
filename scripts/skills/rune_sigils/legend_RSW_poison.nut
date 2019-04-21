@@ -20,17 +20,24 @@ this.legend_RSW_poison <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
+		local actor = this.getContainer().getActor();
+
+		if (!actor.isAlive() || actor.isDying())
 		{
 			return;
 		}
 
-		if (!_targetEntity.isAlive())
+		if (!_targetEntity.isAlive() || _targetEntity.isDying())
 		{
 			return;
 		}
 
 		if (_targetEntity.getTags().has("undead"))
+		{
+			return;
+		}
+
+		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _damageInflictedHitpoints < this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
 		{
 			return;
 		}
