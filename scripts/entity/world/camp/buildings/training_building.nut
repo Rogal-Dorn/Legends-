@@ -143,7 +143,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}		
     }
 
-    function getModifiers()
+ function getModifiers()
     {
         local ret = 
         {
@@ -152,24 +152,37 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
             Modifiers = []
         }
 		local roster = this.World.getPlayerRoster().getAll();
+		local totalcraft = 0;
+        local totalcraftmod = 0;
+		local totalbonus = 0;
+		local combinedcraft = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
             {
                 continue
             }
-
-            local rm = bro.getBackground().getModifiers().Training;
-            ret.Craft += rm
+			if (totalcraftmod == 0)
+			{
+			totalcraftmod == bro.getBackground().getModifiers().Training;
+			}
+			else 
+			{
+			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Training);
+			}
+            totalcraft += this.m.Base;
+			local rm = totalcraftmod + totalcraft;
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+		totalbonus = totalcraft * totalcraftmod;
+		combinedcraft =  pow((totalcraft + totalbonus), 0.5);
 
         if (this.getUpgraded()) 
         {  
-            ret.Craft *= 1.15;
+            combinedcraft *= 1.15;
         }
-
+		ret.Craft += combinedcraft;
 
         return ret;
     }
