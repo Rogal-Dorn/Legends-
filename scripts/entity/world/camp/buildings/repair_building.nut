@@ -246,6 +246,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         local totalcraftmod = 0;
 		local totalbonus = 0;
 		local combinedcraft = 0;
+		local brostat = 0;
 		local difficultyRepairMult = this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]; 
         foreach( bro in roster )
         {
@@ -255,14 +256,14 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 			if (totalcraftmod == 0)
 			{
-			totalcraftmod == bro.getBackground().getModifiers().Repair;
+			totalcraftmod = bro.getBackground().getModifiers().Repair;
 			}
 			else 
 			{
-			totalcraftmod == totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Repair);
+			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Repair);
 			}
             totalcraft += this.m.BaseRepair;
-			local brostat = totalcraftmod + totalcraft;
+			brostat = totalcraftmod + totalcraft;
             ++ret.Assigned
 			ret.Modifiers.push([brostat, bro.getName(), bro.getBackground().getNameOnly()]);	
             //local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
