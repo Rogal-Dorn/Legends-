@@ -567,3 +567,13 @@ Beta 0.10.4
 *Legendary economic doubles the penalty for failing caravan missions 
 *Fix for Vala Radiance effect.
 *Fix naked bakers.
+
+0.10.5
+Enables heal outside of camp, rate set by economic difficulty 66%, 33%, 10%, 1% 
+Enables repair outside of camp rate set by economic difficulty  66%, 33%, 10%, 1% 
+Makes tents give diminishing returns when adding additional people (may be over nerfed, tooltips need work) 
+Fixes Sickle skills
+Makes piercing shot more reliable and cheaper 
+Warlock's scythe now summons the dead, he now has scythe skills 
+
+
