@@ -1140,7 +1140,7 @@ this.asset_manager <- {
 
 			 		if (item.getCondition() >= item.getConditionMax())
 			 		{
-			 			item.setToBeRepaired(false);
+			 			item.setToBeRepaired(false, 0);
 			 		}
 
 			 		if (this.m.ArmorParts == 0)
@@ -1180,7 +1180,7 @@ this.asset_manager <- {
 
 			 		if (item.getCondition() >= item.getConditionMax())
 			 		{
-			 			item.setToBeRepaired(false);
+			 			item.setToBeRepaired(false, 0);
 			 		}
 			 	}
 			 }
