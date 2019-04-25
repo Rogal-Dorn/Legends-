@@ -158,7 +158,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         }
 	
 		totalbonus = totalcraft + totalcraftmod;
-		combinedcraft = 4 * pow((totalcraft + totalcraftmod), 0.5);
+		combinedcraft = 2 * pow((totalcraft + totalcraftmod), 0.5);
 
         if (this.getUpgraded()) 
         {  

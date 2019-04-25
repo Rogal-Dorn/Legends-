@@ -271,7 +271,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         }
 		
 		totalbonus == (totalcraft * totalcraftmod);
-		combinedcraft == pow((totalcraft + totalbonus), 0.5);
+		combinedcraft == 2 * pow((totalcraft + totalbonus), 0.5);
 
 
         if (ret.Assigned == 0)
