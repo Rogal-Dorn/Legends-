@@ -1149,6 +1149,8 @@ gt.Const.Strings.PerkName <- {
 	LegendValaThreads = "Threads of Fate",
 	LegendValaPremonition = "Premonition",
 
+	LegendInventorAnatomy = "Anatomical Studies",
+
 	LegendGuideSteps = "Guide Steps",
 	LegendBerserkerRage = "Berserker Rage",
 	LegendAssuredConquest = "Assured Conquest",
@@ -1373,6 +1375,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendValaSpiritualBond = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, up to a maximum of 50%.\n\nThis perk does nothing unless the Vala has the Warden perk.",
 	LegendValaThreads = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and then each attack has a chance to apply a stacking debuff. Each stack lowers maximum hitpoints and increases amount of damage taken.",
 	LegendValaPremonition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced.",
+
+	LegendInventorAnatomy = "Anatomical Studies",
 
 	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all your allies",
 	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you hit, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. ",
