@@ -581,3 +581,5 @@ Fixes steadfast so it reduces fatigue when being hit, not when hitting.
 fixes situation where extreme barter values had negative effects, by placing an upper cap. 
 increases durability of slings 
 pimp background is now good at barter and scouting
+removes double student perk from apprentices 
+makes easy economic buy and sell values 5% easier on all difficulties except normal. 

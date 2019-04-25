@@ -150,16 +150,16 @@ gt.Const.Difficulty <- {
 	Hard = 2,
 	Legendary = 3,
 	BuyPriceMult = [
+		0.95,
 		1.0,
-		1.0,
-		1.0
+		1.05
 		1.1
 	],
 	SellPriceMult = [
+		1.05,
 		1.0,
-		1.0,
-		0.9,
-		0.8
+		0.95,
+		0.9
 	],
 	EnemyMult = [
 		0.85,
@@ -170,8 +170,8 @@ gt.Const.Difficulty <- {
 	PaymentMult = [
 		1.1,
 		1.0,
-		0.9,
-		0.8
+		0.95,
+		0.9
 	],
 	HealMult = [
 		0.66,
