@@ -24,7 +24,7 @@ this.legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 30;
 	}
 
 
