@@ -209,21 +209,6 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		}
 	}
 
-	function isMastered()
-	{
-		if (this.m.Vala == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala.getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
-		{
-			return true;
-		}
-
-		return false;
-	}
-
 
 	function onMovementCompleted()
 	{
