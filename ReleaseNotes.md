@@ -576,6 +576,7 @@ Fixes Sickle skills
 Makes piercing shot more reliable and cheaper 
 Warlock's scythe now summons the dead, he now has scythe skills 
 fixes AP cost on gobline crossbows
-Buffs last stand
-Fixes steadfast
-
+Buffs last stand, may be too stronk 
+Fixes steadfast so it reduces fatigue when being hit, not when hitting.
+fixes situation where extreme barter values had negative effects, by placing an upper cap. 
+ 
