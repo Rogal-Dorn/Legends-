@@ -21,8 +21,8 @@ this.legend_sling <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeMax = 6;
 		this.m.RangeIdeal = 6;
 		this.m.StaminaModifier = -2;
-		this.m.Condition = 30.0;
-		this.m.ConditionMax = 30.0;
+		this.m.Condition = 50.0;
+		this.m.ConditionMax = 50.0;
 		this.m.RegularDamage = 10;
 		this.m.RegularDamageMax = 30;
 		this.m.ArmorDamageMult = 0.45;
