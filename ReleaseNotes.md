@@ -575,5 +575,7 @@ Makes tents give diminishing returns when adding additional people (may be over 
 Fixes Sickle skills
 Makes piercing shot more reliable and cheaper 
 Warlock's scythe now summons the dead, he now has scythe skills 
-
+fixes AP cost on gobline crossbows
+Buffs last stand
+Fixes steadfast
 
