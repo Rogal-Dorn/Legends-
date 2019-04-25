@@ -579,4 +579,5 @@ fixes AP cost on gobline crossbows
 Buffs last stand, may be too stronk 
 Fixes steadfast so it reduces fatigue when being hit, not when hitting.
 fixes situation where extreme barter values had negative effects, by placing an upper cap. 
- 
+increases durability of slings 
+pimp background is now good at barter and scouting
