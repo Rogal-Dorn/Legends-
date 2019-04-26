@@ -567,3 +567,15 @@ Beta 0.10.4
 *Legendary economic doubles the penalty for failing caravan missions 
 *Fix for Vala Radiance effect.
 *Fix naked bakers.
+
+
+Beta 0.10.5
+*Made sure there is both a commander and weak version of the Inventor (in case he gets back to having a start in the future)
+*Added Anatomical Studies perk for Inventor (weak), tier 7
+*Anatomical Studies are now required for the prosthetic events to work
+*Both the Inventor and the one he's making prosthetics for now shows up in all events
+*The Inventor can now alleviate his own permanent wounds (not really sure I ever made it so he couldn't..)
+
+VALA
+*Heightened Senses has 30 fatigue cost now (like all other current chants)
+*Chants should be working again.
