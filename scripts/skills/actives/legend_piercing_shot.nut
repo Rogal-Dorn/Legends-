@@ -129,6 +129,22 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isHidden()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return true;
+		}
+
+		if (!actor.getSkills().hasSkill("perk.legend_piercing_shot"))
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	function isUsable()
 	{
 		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
