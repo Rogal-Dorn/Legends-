@@ -79,15 +79,20 @@ this.poison_coat_effect <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is poisoned");
 		}
 
-		local poison = _targetEntity.getSkills().getSkillByID("effects.goblin_poison");
+		local runePoison = _targetEntity.getSkills().getSkillByID("effects.legend_RSW_poison_effect");
+		local gobboPoison = _targetEntity.getSkills().getSkillByID("effects.goblin_poison");
 
-		if (poison == null)
+		if (runePoison == null && gobboPoison == null)
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/goblin_poison_effect"));
 		}
-		else
+		else if (runePoison != null && gobboPoison == null)
 		{
-			poison.resetTime();
+			runePoison.resetTime();
+		}
+		else if (runePoison == null && gobboPoison != null)
+		{
+			gobboPoison.resetTime();
 		}
 	}
 

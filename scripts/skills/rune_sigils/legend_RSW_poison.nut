@@ -52,17 +52,23 @@ this.legend_RSW_poison <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is poisoned");
 		}
 
-		local poison = _targetEntity.getSkills().getSkillByID("effects.legend_RSW_poison_effect");
+		local runePoison = _targetEntity.getSkills().getSkillByID("effects.legend_RSW_poison_effect");
+		local gobboPoison = _targetEntity.getSkills().getSkillByID("effects.goblin_poison");
 
-		if (poison == null)
+		if (runePoison == null && gobboPoison == null)
 		{
 			local effect = this.new("scripts/skills/rune_sigils/legend_RSW_poison_effect");
-			effect.setDuration(this.getItem().getRuneBonus1());
+			effect.setStats(this.getItem().getRuneBonus1(), this.getItem().getRuneBonus2());
 			_targetEntity.getSkills().add(effect);
 		}
-		else
+		else if (runePoison != null && gobboPoison == null)
 		{
-			poison.resetTime();
+			runePoison.setStats(this.getItem().getRuneBonus1(), this.getItem().getRuneBonus2());
+			runePoison.resetTime();
+		}
+		else if (runePoison == null && gobboPoison != null)
+		{
+			gobboPoison.resetTime();
 		}
 	}
 });
