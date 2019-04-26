@@ -694,9 +694,9 @@ this.faction_manager <- {
 			}
 			else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse)
 			{
-				if (this.m.Factions[i].getPlayerRelation() > -30)
+				if (this.m.Factions[i].getPlayerRelation() > -80)
 				{
-					this.m.Factions[i].setPlayerRelation(-30.0);
+					this.m.Factions[i].setPlayerRelation(-80.0);
 					this.logInfo("Making nobles unfriendly");
 				}
 			}
@@ -729,7 +729,7 @@ this.faction_manager <- {
 	{
 		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
 		local randomHouseID = nobleHouses[this.Math.rand(0, nobleHouses.len() - 1)].getID();
-	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-50.0); 
+	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-80.0); 
 		this.logInfo("Making a noble house unfriendly");
 	}
 
@@ -743,9 +743,9 @@ this.faction_manager <- {
 			}
 			else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement)
 			{
-				if (this.m.Factions[i].getPlayerRelation() > -30)
+				if (this.m.Factions[i].getPlayerRelation() > -80)
 				{
-					this.m.Factions[i].setPlayerRelation(-30.0);
+					this.m.Factions[i].setPlayerRelation(-80.0);
 					this.logInfo("Making settlement unfriendly");
 				}
 			}
