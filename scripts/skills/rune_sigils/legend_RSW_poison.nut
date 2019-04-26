@@ -44,11 +44,12 @@ this.legend_RSW_poison <- this.inherit("scripts/skills/skill", {
 
 		if (!_targetEntity.isHiddenToPlayer())
 		{
-			if (this.m.SoundOnUse.len() != 0)
-			{
-				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.5, _targetEntity.getPos());
-			}
+			local poisonSound = [
+				"sounds/combat/poison_applied_01.wav",
+				"sounds/combat/poison_applied_02.wav"
+			];
 
+			this.Sound.play(poisonSound[this.Math.rand(0, poisonSound.len() - 1)], this.Const.Sound.Volume.Actor, _targetEntity.getPos());
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is poisoned.");
 		}
 
