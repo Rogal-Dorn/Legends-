@@ -600,11 +600,14 @@ Fixes butcher skills
 fixes missing inventory images for runed slings
 Factions can now conquer each other's cities outside a noble war 
 Hand to Hand buffed, always does a minimum damage 
-Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another
+Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another. begins with bags and belts
 Ranger is friendly with beasts, begins with fletching, hunting and scouting unlocked
-Warlock is friendly with zombies
+Warlock is friendly with zombies. Starts with brink of death, which now grants survivor instead of nine lives
+Berserker begins with infectious rage
+Crusader begins with strict sermons
+Seer begins with teacher 
 Beggar begins at war with all noble factions, but not settlements
-A new Bandit start, 8 characters, begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
+A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
 
 
 

@@ -21,9 +21,9 @@ this.perk_legend_brink_of_death <- this.inherit("scripts/skills/skill", {
 
 		foreach( a in actors )
 		{
-			if (!a.getSkills().hasSkill("perk.nine_lives"))
+			if (!a.getSkills().hasSkill("trait.survivor"))
 			{
-				a.getSkills().add(this.new("scripts/skills/perks/perk_nine_lives"));
+				a.getSkills().add(this.new("scripts/skills/traits/survivor_trait"));
 			}
 		}		
 	}

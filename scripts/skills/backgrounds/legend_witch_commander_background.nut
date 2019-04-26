@@ -130,6 +130,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
 	}
 
