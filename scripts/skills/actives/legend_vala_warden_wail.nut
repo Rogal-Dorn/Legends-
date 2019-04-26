@@ -52,6 +52,14 @@ this.legend_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
+			local bonus = 0;
+			local scaling = this.getContainer().getActor().getSkills().getSkillByID("special.legend_vala_warden_damage");
+
+			if (scaling != null)
+			{
+				bonus = scaling.getDamageBonus() / 20.0;
+			}
+
 			if (_skill.isAttack() && _targetEntity != null && _targetEntity.getID() != this.getContainer().getActor().getID() && _targetEntity.getFaction() == this.getContainer().getActor().getFaction())
 			{
 				_properties.DamageRegularMin = 0;
@@ -60,8 +68,8 @@ this.legend_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
-				_properties.DamageRegularMin += 10;
-				_properties.DamageRegularMax += 15;
+				_properties.DamageRegularMin += 10 + this.Math.round(bonus * 0.67);
+				_properties.DamageRegularMax += 15 + this.Math.round(bonus);
 				_properties.IsIgnoringArmorOnAttack = true;
 				_properties.HitChanceAdditionalWithEachTile -= 2;
 			}

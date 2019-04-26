@@ -51,6 +51,22 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function isMastered()
+	{
+		if (this.m.Vala == null)
+		{
+			return false;
+		}
+
+		if (this.m.Vala.getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+
 	function checkEntities()
 	{
 		local actor = this.getContainer().getActor();
@@ -61,6 +77,11 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 
 		if (!actor.isPlacedOnMap())
 		{ 
+			return false;
+		}
+
+		if (("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+		{
 			return false;
 		}
 

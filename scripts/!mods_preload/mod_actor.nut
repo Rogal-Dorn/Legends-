@@ -24,8 +24,8 @@
 	{
 		this.entity.onSerialize(_out);
 		this.m.BaseProperties.onSerialize(_out);
+		this.m.Items.onSerialize(_out);        
 		this.m.Skills.onSerialize(_out);
-		this.m.Items.onSerialize(_out);
 		_out.writeString(this.m.Name);
 		_out.writeString(this.m.Title);
 		_out.writeF32(this.getHitpointsPct());
@@ -37,7 +37,7 @@
 		this.entity.onDeserialize(_in);
 		this.m.BaseProperties.onDeserialize(_in);
 
-		if (_in.getMetaData().getVersion() >= 55)
+		if (_in.getMetaData().getVersion() == 55)
 		{
             this.m.Skills.onDeserialize(_in);
             this.m.Items.onDeserialize(_in);
