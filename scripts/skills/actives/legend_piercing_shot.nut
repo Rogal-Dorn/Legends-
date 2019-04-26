@@ -1,6 +1,6 @@
 this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 0,
+		AdditionalAccuracy = 20,
 		AdditionalHitChance = 0
 	},
 	function create()
@@ -49,11 +49,11 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 8;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 7;
-		this.m.MaxLevelDifference = 4;		
+		this.m.MaxLevelDifference = 8;		
 		this.m.ChanceDecapitate = 10;
 		this.m.ChanceDisembowel = 50;
 		this.m.ChanceSmash = 0;

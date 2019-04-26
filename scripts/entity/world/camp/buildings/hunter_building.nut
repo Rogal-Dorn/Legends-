@@ -133,24 +133,38 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             Modifiers = []
         }
 		local roster = this.World.getPlayerRoster().getAll();
+		local totalcraft = 0;
+        local totalcraftmod = 0;
+		local totalbonus = 0;
+		local combinedcraft = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
             {
                 continue
             }
-
-            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Hunting * 10;
-            ret.Craft += rm
+			if (totalcraftmod == 0)
+			{
+			totalcraftmod == bro.getBackground().getModifiers().Hunting * 10;
+			}
+			else 
+			{
+			totalcraftmod = totalcraftmod + (totalcraftmod * ( bro.getBackground().getModifiers().Hunting * 10));
+			}
+            totalcraft += this.m.Base;
+			local brostat = totalcraftmod + totalcraft;
             ++ret.Assigned
-			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
+			ret.Modifiers.push([brostat, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
+	
+		totalbonus = totalcraft + totalcraftmod;
+		combinedcraft = 2 * pow((totalcraft + totalcraftmod), 0.5);
 
         if (this.getUpgraded()) 
         {  
-            ret.Craft *= 1.10;
+            combinedcraft *= 1.15;
         }
-
+		ret.Craft += combinedcraft;
 
         return ret;
     }

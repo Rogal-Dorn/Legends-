@@ -568,5 +568,19 @@ Beta 0.10.4
 *Fix for Vala Radiance effect.
 *Fix naked bakers.
 
-Beta 0.10.4.2 Released on Nexus
-*Fixes crashes related to Vala chants when finishing a battle and when starting a battle.
+0.10.5
+Enables heal outside of camp, rate set by economic difficulty 66%, 33%, 10%, 1% 
+Enables repair outside of camp rate set by economic difficulty  66%, 33%, 10%, 1% 
+makes easy economic buy and sell values 5% easier on all difficulties except normal. 
+Makes tents give diminishing returns when adding additional people (may be over nerfed, tooltips need work) 
+Fixes Sickle skills
+Makes piercing shot more reliable and cheaper 
+Warlock's scythe now summons the dead, he now has scythe skills 
+fixes AP cost on gobline crossbows
+Buffs last stand, may be too stronk 
+Fixes steadfast so it reduces fatigue when being hit, not when hitting.
+fixes situation where extreme barter values had negative effects, by placing an upper cap. 
+increases durability of slings 
+pimp background is now good at barter and scouting
+removes double student perk from apprentices 
+adds reach advantage back to all the backgrounds with custom perks 

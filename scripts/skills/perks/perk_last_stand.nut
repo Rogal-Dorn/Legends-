@@ -19,11 +19,11 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		local maxHP = this.getContainer().getActor().getHitpointsMax();
 		local percentHP = maxHP / 100;
 		local currentHP = this.getContainer().getActor().getHitpoints();
-		local ratio = currentHP / percentHP;
-		local ratioPoint = ratio / 100;
-		local bonus = 2.0 - ratioPoint;
-		_properties.MeleeDefenseMult *= bonus;
-		_properties.RangedDefenseMult *= bonus;
+		local currentPercent = currentHP / percentHP;
+		local missingPercent = 100 - currentPercent;
+		local bonus = missingPercent / 100;
+		_properties.MeleeDefenseMult += bonus;
+		_properties.RangedDefenseMult += bonus;
 	}
 
 });
