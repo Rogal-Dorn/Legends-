@@ -494,7 +494,6 @@ this.asset_manager <- {
 		case this.Const.LegendMod.StartTypes.Witch:
 			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_witch_commander_background"
 			]);
@@ -529,6 +528,8 @@ this.asset_manager <- {
 			bro.setVeteranPerks(2);
 			break;
 
+	
+
 		case this.Const.LegendMod.StartTypes.Party:
 			this.setBrothersMax(0);
 			bro = roster.create("scripts/entity/tactical/player");
@@ -542,7 +543,6 @@ this.asset_manager <- {
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_witch_background"
 			]);
@@ -648,7 +648,6 @@ this.asset_manager <- {
 		case this.Const.LegendMod.StartTypes.Vala:
 			this.setBrothersMax(1);
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(this.m.FounderNames[1][1]);
 			bro.setStartValuesEx([
 				"legend_vala_commander_background"
 			]);
@@ -659,6 +658,77 @@ this.asset_manager <- {
 			bro.setVeteranPerks(2);
 			break;
 
+		case this.Const.LegendMod.StartTypes.Bandit:
+			this.setBrothersMax(27);
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[2][1]);
+			bro.setStartValuesEx([
+				"raider_background"
+			]);
+			bro.setPlaceInFormation(14);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[3][1]);
+			bro.setStartValuesEx([
+				"thief_background"
+			]);
+			bro.setPlaceInFormation(12);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setName(this.m.FounderNames[4][1]);
+			bro.setStartValuesEx([
+				"poacher_background"
+			]);
+			bro.setPlaceInFormation(13);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx([
+				"deserter_background"
+			]);
+			bro.setPlaceInFormation(13);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx([
+				"graverobber_background"
+			]);
+			bro.setPlaceInFormation(13);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx([
+				"female_thief_background"
+			]);
+			bro.setPlaceInFormation(13);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx([
+				"female_disowned_noble_background"
+			]);
+			bro.setPlaceInFormation(13);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx([
+				"killer_on_the_run_background"
+			]);
+			bro.setPlaceInFormation(13);
+			bro.setVeteranPerks(2);
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+
+			break;
 
 		case this.Const.LegendMod.StartTypes.Hoggart:
 			this.setBrothersMax(18);
@@ -1175,7 +1245,7 @@ this.asset_manager <- {
 			 		{
 			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getConditionMax() - item.getCondition());
 			 			item.setCondition(item.getCondition() + d);
-						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * toolConsumptionModifier);
+						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor);
 			 		}
 
 			 		if (item.getCondition() >= item.getConditionMax())

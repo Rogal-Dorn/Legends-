@@ -128,6 +128,10 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			this.setState("LegendsVala");
 		} 
+		else if (this.World.Tags.get("IsLegendsBandit"))
+		{
+			this.setState("LegendsBandit");
+		} 
 		else 
 		{
 			this.setState("StartingBattle");
@@ -736,6 +740,23 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Contracts.showActiveContract();
 			}
 		});	
+			this.m.States.push({
+			ID = "LegendsBandit",
+			function start()
+			{
+				
+				this.World.State.getPlayer().setAttackable(true);
+
+			}
+
+			function update()
+			{
+				this.Contract.setScreen("LegendsBanditSuccess");
+				this.World.Contracts.showActiveContract();
+
+
+			}
+		});	
 		this.m.States.push({
 			ID = "LegendsInventor",
 			function start()
@@ -1095,6 +1116,12 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Making you well known");
+				this.World.Assets.addBusinessReputation(1000);
+				this.logInfo("Making a noble house like you");
+				this.World.FactionManager.makeRandomNoblesFriendlyToPlayer();
+				this.logInfo("Making a noble house hate you");
+				this.World.FactionManager.makeRandomNoblesUnfriendlyToPlayer();
 			}
 
 		});
@@ -1149,13 +1176,21 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Making beasts like you");
+				this.World.FactionManager.makeBeastsFriendlyToPlayer();
+				this.logInfo("Unlocking fletching");
+				this.World.Tags.set("HasLegendCampFletching", true);
+				this.logInfo("Unlocking hunting");
+				this.World.Tags.set("HasLegendCampHunting", true);
+				this.logInfo("Unlocking scouting");
+				this.World.Tags.set("HasLegendCampScouting", true);
 			}
 
 		});
 		
 		this.m.Screens.push({
 			ID = "LegendsNecroSuccess",
-			Title = "Necro",
+			Title = "Warlock",
 			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Necro),
 			ShowEmployer = true,
 			Image = "",
@@ -1177,6 +1212,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Making zombies like you");
+				this.World.FactionManager.makeZombiesFriendlyToPlayer();
 			}
 
 		});
@@ -1210,7 +1247,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Screens.push({
 			ID = "LegendsWitchSuccess",
-			Title = "Necro",
+			Title = "Seer",
 			Text =  this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Witch),
 			ShowEmployer = true,
 			Image = "",
@@ -1288,6 +1325,53 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+			}
+
+		});
+
+		this.m.Screens.push({
+			ID = "LegendsBanditSuccess",
+			Title = "Bandit",
+			Text = this.Const.LegendMod.GetIntro(this.Const.LegendMod.StartTypes.Bandit),
+			ShowEmployer = true,
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "Might makes right!",
+					function getResult()
+					{
+						this.World.Tags.set("IsHoggartDead", true);
+						this.Music.setTrackList(this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime, true);
+						this.World.Contracts.finishActiveContract();
+
+						this.World.State.getPlayer().setBaseImage();
+						return 0;
+					}
+
+				}
+			],
+			function start()
+			{
+				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Making nobles hate you");
+				this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
+				this.logInfo("Making all settlements hate you");
+				this.World.FactionManager.makeSettlementsUnfriendlyToPlayer();
+				this.logInfo("Making bandits like you");
+				this.World.FactionManager.makeBanditsFriendlyToPlayer()
+				this.World.FactionManager.makeRandomNoblesFriendlyToPlayer()
+				this.logInfo("Unlocking all camp tasks");
+				this.World.Tags.set("HasLegendCampGathering", true);
+				this.World.Tags.set("HasLegendCampBarber", true);
+				this.World.Tags.set("HasLegendCampCrafting", true);
+				this.World.Tags.set("HasLegendCampFletching", true);
+				this.World.Tags.set("HasLegendCampHealing", true);
+				this.World.Tags.set("HasLegendCampHunting", true);
+				this.World.Tags.set("HasLegendCampScouting", true);
+				this.World.Tags.set("HasLegendCampScraping", true);
+				this.World.Tags.set("HasLegendCampTraining", true);
+				
 			}
 
 		});
@@ -1468,6 +1552,9 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
+				this.Contract.m.BigCity.getSprite("selection").Visible = true;
+				this.World.FactionManager.makeFactionFriendlyToPlayer(this.Contract.m.BigCity);
 			}
 
 		});							

@@ -597,3 +597,14 @@ Runes are now all working correctly again.
 Added combat log entry for Feeding weapon rune sigil (displays how much fatigue was recovered)
 Added slight damage scaling to the Warden's basic attacks
 Fixes butcher skills 
+fixes missing inventory images for runed slings
+Factions can now conquer each other's cities outside a noble war 
+Hand to Hand buffed, always does a minimum damage 
+Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another
+Ranger is friendly with beasts, begins with fletching, hunting and scouting unlocked
+Warlock is friendly with zombies
+Beggar begins at war with all noble factions, but not settlements
+A new Bandit start, 8 characters, begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
+
+
+
