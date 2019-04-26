@@ -570,8 +570,8 @@ Beta 0.10.4
 
 Beta 0.10.5
 https://drive.google.com/open?id=1kRaoKLt_umetj70uemthad3w67t-fD9v
-*Enables heal outside of camp, rate set by economic difficulty 66%, 33%, 10%, 1% 
-*Enables repair outside of camp rate set by economic difficulty  66%, 33%, 10%, 1%
+*Enables heal outside of camp, rate set by economic difficulty 100%, 75%, 50%, 25% 
+*Enables repair outside of camp rate set by economic difficulty  100%, 75%, 50%, 25%
 *Bro modifiers in camp all now have diminishing returns. No more stacking 
 Makes easy economic buy and sell values 5% easier on all difficulties except normal. 
 Makes tents give diminishing returns when adding additional people (may be over nerfed, tooltips need work) 
