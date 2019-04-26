@@ -942,19 +942,6 @@ this.item <- {
 				}		
 				break;
 
-			case 33:
-				if (_bonus) 
-				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
-				}
-				else
-				{
-					bonus = this.Math.rand(3, 5)
-					bonus2 = this.Math.rand(3, 5)
-				}		
-				break;
-
 			default:
 				break;
 		}
