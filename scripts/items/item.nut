@@ -738,7 +738,7 @@ this.item <- {
 				break;
 
 			case 4:
-				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "[/color] turn(s) of poison applied. Lowers action points, initiative and vision.";
+				return "This item has the power of the rune sigil of Poison:\n[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus1 + "[/color] turn(s) of poison applied, with a strength of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.RuneBonus2 + "[/color]. Lowers action points and initiative.";
 				break;
 
 			case 5:
@@ -828,10 +828,12 @@ this.item <- {
 				if (_bonus) 
 				{
 					bonus = this.Math.rand(1, 3)
+					bonus2 = this.Math.rand(3, 12)
 				}
 				else
 				{
 					bonus = this.Math.rand(1, 2)
+					bonus2 = this.Math.rand(3, 9)
 				}
 				break;
 

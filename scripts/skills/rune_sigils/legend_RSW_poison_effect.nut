@@ -1,12 +1,14 @@
 this.legend_RSW_poison_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 3,
-		TurnsLeftMax = 3
+		TurnsLeftMax = 3,
+		Strength = 10
 	},
-	function setDuration(_d)
+	function setStats(_s1, _s2)
 	{
-		this.m.TurnsLeft = _d;
-		this.m.TurnsLeftMax = _d;
+		this.m.TurnsLeft = _s1;
+		this.m.TurnsLeftMax = _s1;
+		this.m.Strength = _s2;
 	}
 	function create()
 	{
@@ -80,9 +82,8 @@ this.legend_RSW_poison_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.ActionPoints -= 1 * this.m.TurnsLeft;
-		_properties.Initiative -= 10 * this.m.TurnsLeft;
-		_properties.Vision -= 1 * this.m.TurnsLeft;
+		_properties.ActionPoints -= this.Math.round(1.0 * this.m.TurnsLeft);
+		_properties.Initiative -= this.Math.round(10.0 * (this.m.Strength / 8.0) * this.m.TurnsLeft);
 	}
 
 	function onTurnEnd()
