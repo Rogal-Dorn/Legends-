@@ -66,21 +66,6 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/effects/leg
 		}
 	}
 
-	function isMastered()
-	{
-		if (this.m.Vala == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala.getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
-		{
-			return true;
-		}
-
-		return false;
-	}
-
 
 	function onMovementCompleted()
 	{

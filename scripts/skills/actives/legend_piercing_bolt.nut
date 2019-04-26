@@ -119,6 +119,22 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		return this.skill.isUsable() && this.getItem().isLoaded();
 	}
 
+	function isHidden()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return true;
+		}
+
+		if (!actor.getSkills().hasSkill("perk.legend_piercing_bolt"))
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	function getAmmo()
 	{
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);

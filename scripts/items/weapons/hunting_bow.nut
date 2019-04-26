@@ -40,10 +40,7 @@ this.hunting_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/quick_shot"));
 		this.addSkill(this.new("scripts/skills/actives/aimed_shot"));
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_piercing_shot"))
-		{
-			this.addSkill(this.new("scripts/skills/actives/legend_piercing_shot"));
-		}
+		this.addSkill(this.new("scripts/skills/actives/legend_piercing_shot"));
 	}
 
 });

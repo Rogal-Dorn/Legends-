@@ -1629,6 +1629,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistScytheDamage,
 		Icon = "ui/perks/scythe_02.png",
 		IconDisabled = "ui/perks/scythe_bw.png"
+	},
+	{
+		ID = "perk.legend_inventor_anatomy",
+		Script = "scripts/skills/perks/legend_inventor_anatomy",
+		Name = this.Const.Strings.PerkName.LegendInventorAnatomy,
+		Tooltip = this.Const.Strings.PerkDescription.LegendInventorAnatomy,
+		Icon = "ui/perks/legend_inventor_anatomy.png",
+		IconDisabled = "ui/perks/legend_inventor_anatomy_sw.png"
 	}
 ];
 
@@ -1837,4 +1845,5 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaChantSenses = 200,
 	LegendSpecialistScytheSkill = 201,
 	LegendSpecialistScytheDamage = 202
+	LegendInventorAnatomy = 203
 };

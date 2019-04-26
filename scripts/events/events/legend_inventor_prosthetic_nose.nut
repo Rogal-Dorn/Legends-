@@ -33,6 +33,7 @@ this.legend_inventor_prosthetic_nose <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
+				this.Characters.push(_event.m.Nofoot.getImagePath());
 			}
 		});
 		this.m.Screens.push({
@@ -53,6 +54,7 @@ this.legend_inventor_prosthetic_nose <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
+				this.Characters.push(_event.m.Nofoot.getImagePath());
 				this.World.Assets.addMoney(-1000);
 				this.List.push({
 					id = 10,
@@ -105,6 +107,7 @@ this.legend_inventor_prosthetic_nose <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
+				this.Characters.push(_event.m.Nofoot.getImagePath());
 			}
 		});
 	}
@@ -124,7 +127,7 @@ this.legend_inventor_prosthetic_nose <- this.inherit("scripts/events/event", {
 
 		foreach (bro in brothers)
 		{
-			if (bro.getBackground().getID() == "background.legend_inventor")
+			if (bro.getSkills().hasSkill("perk.legend_inventor_anatomy"))
 			{
 				inventor_candidates.push(bro);
 			}
@@ -141,7 +144,7 @@ this.legend_inventor_prosthetic_nose <- this.inherit("scripts/events/event", {
 
 		foreach (bro in brothers)
 		{
-			if (bro.getSkills().hasSkill("injury.missing_nose") && !bro.getSkills().hasSkill("trait.legend_prosthetic_nose") && bro.getID() != this.m.Inventor.getID())
+			if (bro.getSkills().hasSkill("injury.missing_nose") && !bro.getSkills().hasSkill("trait.legend_prosthetic_nose"))
 			{
 				nofoot_candidates.push(bro);
 			}
@@ -156,7 +159,7 @@ this.legend_inventor_prosthetic_nose <- this.inherit("scripts/events/event", {
 		}
 
 
-		this.m.Score = 5 + ((this.m.Inventor.getLevel() * 10.00) / this.Const.LevelXP.len());
+		this.m.Score = 5.0 + ((this.m.Inventor.getLevel() * 10.0) / this.Const.LevelXP.len());
 	}
 
 	function onPrepare()
