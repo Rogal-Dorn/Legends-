@@ -1362,7 +1362,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSiphon = "Draw from the lifeforce of your victim and transfer up to 30% of their health to yourself. You may not drain more health than you are missing nor drain a victim to their death. Effectiveness drops off 5% for each tile away.",
 
 	LegendValaInscriptionMastery = "The Vala becomes a master at inscribing the intricate and subtle signs, allowing her to create the rune sigils at faster rate.",
-	LegendValaInscribeWeapon = "Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped.\n\nPossibilities: accuracy, feeding, power.",
+	LegendValaInscribeWeapon = "Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped.\n\nPossibilities: accuracy, bleeding, feeding, poison, power.",
 	LegendValaInscribeHelmet = "Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped.\n\nPossibilities: bravery, clarity, luck.",
 	LegendValaInscribeArmor = "Allows the Vala to inscribe rocks with armor specific rune sigils while encamped.\n\nPossibilities: endurance, resilience, safety.",
 	LegendValaInscribeShield = "Allows the Vala to inscribe rocks with shield specific rune sigils while encamped.\n\nPossibilities: defense, radiance.",
