@@ -32,12 +32,12 @@ this.legend_RSW_bleeding <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (!_targetEntity.getCurrentProperties().IsImmuneToBleeding && _damageInflictedHitpoints >= this.Const.Combat.MinDamageToApplyBleeding)
+		if (!_targetEntity.getCurrentProperties().IsImmuneToBleeding)
 		{
 			local effect = this.new("scripts/skills/rune_sigils/legend_RSW_bleeding_effect");
 			effect.setStats(this.getItem().getRuneBonus1(), this.getItem().getRuneBonus2());
 			_targetEntity.getSkills().add(effect);
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is bleeding");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is bleeding.");
 		}
 	}
 });
