@@ -596,3 +596,4 @@ Two new weapon rune sigils (poison, similar to gobbo poison and bleeding, simila
 Runes are now all working correctly again.
 Added combat log entry for Feeding weapon rune sigil (displays how much fatigue was recovered)
 Added slight damage scaling to the Warden's basic attacks
+Fixes butcher skills 
