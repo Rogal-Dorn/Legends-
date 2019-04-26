@@ -270,8 +270,8 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             //ret.Consumption = v;
         }
 		
-		totalbonus == (totalcraft * totalcraftmod);
-		combinedcraft == 2 * pow((totalcraft + totalbonus), 0.5);
+		totalbonus = (totalcraft * totalcraftmod);
+		combinedcraft = 2 * pow((totalcraft + totalbonus), 0.5);
 
 
         if (ret.Assigned == 0)
