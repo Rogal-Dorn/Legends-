@@ -1122,6 +1122,9 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.FactionManager.makeRandomNoblesFriendlyToPlayer();
 				this.logInfo("Making a noble house hate you");
 				this.World.FactionManager.makeRandomNoblesUnfriendlyToPlayer();
+				this.logInfo("Unlocking scouting");
+				this.World.Tags.set("HasLegendCampScouting", true);
+
 			}
 
 		});
@@ -1149,6 +1152,10 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Unlocking scraping");
+				this.World.Tags.set("HasLegendCampScraping", true);
+				this.logInfo("Unlocking training");
+				this.World.Tags.set("HasLegendCampTraining", true);
 			}
 
 		});
@@ -1197,7 +1204,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "Arise!",
 					function getResult()
 					{
 						this.World.Tags.set("IsHoggartDead", true);
@@ -1214,6 +1221,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
 				this.logInfo("Making zombies like you");
 				this.World.FactionManager.makeZombiesFriendlyToPlayer();
+				this.logInfo("Unlocking gathering");
+				this.World.Tags.set("HasLegendCampGathering", true);
 			}
 
 		});
@@ -1240,6 +1249,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Unlocking gathering");
+				this.World.Tags.set("HasLegendCampGathering", true);
 			}
 
 		});
@@ -1254,7 +1265,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "Let us begin!",
 					function getResult()
 					{
 						this.World.Tags.set("IsHoggartDead", true);
@@ -1269,6 +1280,10 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Unlocking gathering");
+				this.World.Tags.set("HasLegendCampGathering", true);
+				this.logInfo("Unlocking training");
+				this.World.Tags.set("HasLegendCampTraining", true);
 			}
 
 		});
@@ -1310,7 +1325,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			List = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "Onwards!",
 					function getResult()
 					{
 						this.World.Tags.set("IsHoggartDead", true);
@@ -1325,6 +1340,12 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
+				this.logInfo("Unlocking hunting");
+				this.World.Tags.set("HasLegendCampHunting", true);
+				this.logInfo("Unlocking scouting");
+				this.World.Tags.set("HasLegendCampScouting", true);
+				this.logInfo("Unlocking gathering");
+				this.World.Tags.set("HasLegendCampGathering", true);
 			}
 
 		});
@@ -1553,8 +1574,8 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
 				this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
-				this.Contract.m.BigCity.getSprite("selection").Visible = true;
-				this.World.FactionManager.makeFactionFriendlyToPlayer(this.Contract.m.BigCity);
+				this.logInfo("Unlocking scouting");
+				this.World.Tags.set("HasLegendCampScouting", true);
 			}
 
 		});							
