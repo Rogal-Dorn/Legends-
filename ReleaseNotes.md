@@ -569,9 +569,10 @@ Beta 0.10.4
 *Fix naked bakers.
 
 Beta 0.10.5
-Enables heal outside of camp, rate set by economic difficulty 66%, 33%, 10%, 1% 
-Enables repair outside of camp rate set by economic difficulty  66%, 33%, 10%, 1%
-Bro modifiers in camp all now have diminishing returns. No more stacking 
+https://drive.google.com/open?id=1kRaoKLt_umetj70uemthad3w67t-fD9v
+*Enables heal outside of camp, rate set by economic difficulty 66%, 33%, 10%, 1% 
+*Enables repair outside of camp rate set by economic difficulty  66%, 33%, 10%, 1%
+*Bro modifiers in camp all now have diminishing returns. No more stacking 
 Makes easy economic buy and sell values 5% easier on all difficulties except normal. 
 Makes tents give diminishing returns when adding additional people (may be over nerfed, tooltips need work) 
 Fixes Sickle skills
@@ -585,15 +586,13 @@ Increases durability of slings
 Pimp background is now good at barter and scouting
 Removes double student perk from apprentices 
 Adds reach advantage back to all the backgrounds with custom perks 
-
-Made sure there is both a commander and weak version of the Inventor (in case he gets back to having a start in the future)
+Recruited Female nobles have ammo now.
 Added Anatomical Studies perk for Inventor (weak), tier 7
 Anatomical Studies are now required for the prosthetic events to work
 Both the Inventor and the one he's making prosthetics for now shows up in all events
 The Inventor can now alleviate his own permanent wounds (not really sure I ever made it so he couldn't..)
-
 Vala Heightened Senses has 30 fatigue cost now (like all other current chants)
-Vala Chants should be working again.
 Two new weapon rune sigils (poison, similar to gobbo poison and bleeding, similar to regular bleed effect).
+Runes are now all working correctly again.
 Added combat log entry for Feeding weapon rune sigil (displays how much fatigue was recovered)
 Added slight damage scaling to the Warden's basic attacks
