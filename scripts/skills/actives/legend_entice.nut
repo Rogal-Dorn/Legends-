@@ -28,7 +28,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.HitChanceBonus = 10;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 6;

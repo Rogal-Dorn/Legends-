@@ -27,7 +27,7 @@ this.legend_pull <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.HitChanceBonus = 10;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 8;
