@@ -605,8 +605,8 @@ Ranger is friendly with beasts, begins with fletching, hunting and scouting unlo
 Warlock is friendly with zombies. Starts with brink of death, which now grants survivor instead of nine lives
 Berserker begins with infectious rage
 Crusader begins with strict sermons
-Seer begins with teacher 
-Beggar begins at war with all noble factions, but not settlements
+Seer begins with teacher, revolt and entice AP reduced, levitate can now be cast on others  
+Beggar begins at war with all noble factions
 A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
 
 

@@ -28,7 +28,7 @@ this.legend_revolt <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsTooCloseShown = true;
 		this.m.HitChanceBonus = 10;
-		this.m.ActionPointCost = 3;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
