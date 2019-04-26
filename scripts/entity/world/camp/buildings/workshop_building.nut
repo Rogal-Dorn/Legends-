@@ -1,7 +1,5 @@
 this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-        Conversion = 15.0,
-        BaseSalvage = 10,
         ToolsCreated = 0,
         PointsNeeded = 0,
         PointsSalvaged = 0,
@@ -14,6 +12,9 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function create()
     {
         this.camp_building.create();
+        this.m.BaseCraft = 10;
+        this.m.Conversion = 15.0;
+        this.m.ModName = "Salvage";
         this.m.ID = this.Const.World.CampBuildings.Workshop;
         this.m.Slot = "scrap";
         this.m.Name = "Workshop";
@@ -131,7 +132,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				id = 5,
 				type = "text",
 				icon = "ui/icons/asset_supplies.png",
-				text = "Total salvage modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Salvage + "[/color] units per hour."
+				text = "Total salvage modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft + "[/color] units per hour."
 			}
 		];
 		local id = 6;
@@ -247,50 +248,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
     function getModifiers()
     {
-        local ret = 
-        {
-            Salvage = 0,
-            Consumption = 1.0 / this.m.Conversion,
-            Assigned = 0,
-            Modifiers = []
-        }
-		local roster = this.World.getPlayerRoster().getAll();
-		local totalcraft = 0;
-        local totalcraftmod = 0;
-		local totalbonus = 0;
-		local combinedcraft = 0;
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-			if (totalcraftmod == 0)
-			{
-			totalcraftmod == bro.getBackground().getModifiers().Salvage;
-			}
-			else 
-			{
-			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Salvage);
-			}
-            totalcraft += this.m.BaseSalvage;
-			local rm = totalcraftmod + totalcraft;
-            ++ret.Assigned
-			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
-            //local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
-            //ret.Consumption = v;
-        }
-
-		totalbonus = totalcraft * totalcraftmod;
-		combinedcraft =  pow((totalcraft + totalbonus), 0.5);
-
+        local ret = this.camp_building.getModifiers();
         if (this.getUpgraded()) 
         {  
-            ret.Consumption = 1.0 / 10.0
-            combinedcraft *= 1.15;
+            ret.Consumption = 1.0 / 20.0
         }
-		ret.Salvage = combinedcraft;
-
         return ret;
     }
 
@@ -328,11 +290,11 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             points += r.Item.getCondition()
         }
         local modifiers = this.getModifiers();
-		if (modifiers.Salvage <= 0)
+		if (modifiers.Craft <= 0)
 		{
 			return 0;
 		}
-        return this.Math.ceil(points / modifiers.Salvage);
+        return this.Math.ceil(points / modifiers.Craft);
     }
 
     function getAssignedBros()
@@ -398,18 +360,18 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 break;
             }
 
-			if (modifiers.Salvage <= 0) 
+			if (modifiers.Craft <= 0) 
             {
                 break
             }
 
             local consumed = r.Item.getCondition()
-            if (modifiers.Salvage < consumed)
+            if (modifiers.Craft < consumed)
             {
-                consumed = modifiers.Salvage;
+                consumed = modifiers.Craft;
             }
             r.Item.setCondition(r.Item.getCondition() - consumed);
-            modifiers.Salvage -= consumed;
+            modifiers.Craft -= consumed;
             this.m.PointsSalvaged += consumed;
 			local created = consumed * modifiers.Consumption;
 			this.m.ToolsCreated += created;   

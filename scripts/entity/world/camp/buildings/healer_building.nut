@@ -1,6 +1,5 @@
 this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		BaseCraft = 1.0,
 		MedsUsed = 0,
 		InjuriesTreated = 0,
         Rate = 0,
@@ -13,6 +12,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Healer;
+		this.m.BaseCraft = 1.0;
+        this.m.ModName = "Healing";   
 		this.m.Escorting = true;
         this.m.Slot = "heal";
         this.m.Name = "Healing";
@@ -190,7 +191,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             this.m.PointsNeeded = this.Math.max(this.m.PointsNeeded, (bro.getHitpointsMax() - bro.getHitpoints()));
         }
         local mod = this.getModifiers();
-        this.m.Rate = mod.Modifier;		
+        this.m.Rate = mod.Craft;
 		this.onInit();
     }
 
@@ -290,55 +291,14 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
     function getModifiers()
     {
-        local ret = 
-        {
-            Craft = 0.0,
-            Assigned = 0,
-			Modifier = 0.0
-            Modifiers = []
-        }
-		local roster = this.World.getPlayerRoster().getAll();
-		local totalcraft = 0;
-        local totalcraftmod = 0;
-		local totalbonus = 0;
-		local combinedcraft = 0;
-		local difficultyHealMult = this.Const.Difficulty.HealMult[this.World.Assets.getEconomicDifficulty()]; 
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-			if (totalcraftmod == 0)
-			{
-			totalcraftmod = bro.getBackground().getModifiers().Healing;
-			}
-			else 
-			{
-			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Healing);
-			}
-            totalcraft += this.m.BaseCraft;
-            ret.Modifier += bro.getBackground().getModifiers().Healing;
-            ++ret.Assigned
-			ret.Modifiers.push([bro.getBackground().getModifiers().Healing, bro.getName(), bro.getBackground().getNameOnly()]);	
-        }
-
-		totalbonus = (totalcraft * totalcraftmod) ;
-		combinedcraft = pow((totalcraft + totalbonus), 0.5);
-	
+        local ret = this.camp_building.getModifiers();
         if (ret.Assigned == 0)
         {
-            ret.Craft *= difficultyHealMult;
+            ret.Craft = this.m.BaseCraft *  this.Const.Difficulty.HealMult[this.World.Assets.getEconomicDifficulty()];
         }
-  
-		if (this.getUpgraded()) 
-        {  
-            combinedcraft *= 1.15;
-        }
-		ret.Craft += combinedcraft;
-
         return ret;
     }
+
 
 	function getUpdateText()
 	{

@@ -1,6 +1,5 @@
 this.training_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		Base = 0,
 		Results = [],
 		NumBros = 0,
 		UnTrained = 0
@@ -9,6 +8,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Training;
+		this.m.ModName = "Training";
         this.m.Slot = "train";
         this.m.Name = "Training Grounds";
         this.m.Description = "Training"
@@ -143,7 +143,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}		
     }
 
- function getModifiers()
+    function getModifiers()
     {
         local ret = 
         {
@@ -152,38 +152,27 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
             Modifiers = []
         }
 		local roster = this.World.getPlayerRoster().getAll();
-		local totalcraft = 0;
-        local totalcraftmod = 0;
-		local totalbonus = 0;
-		local combinedcraft = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
             {
                 continue
             }
-			if (totalcraftmod == 0)
-			{
-			totalcraftmod == bro.getBackground().getModifiers().Training;
-			}
-			else 
-			{
-			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Training);
-			}
-            totalcraft += this.m.Base;
-			local rm = totalcraftmod + totalcraft;
+            local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Training;
             ++ret.Assigned
-			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
+			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);			
         }
-		totalbonus = totalcraft * totalcraftmod;
-		combinedcraft =  pow((totalcraft + totalbonus), 0.5);
 
-        if (this.getUpgraded()) 
-        {  
-            combinedcraft *= 1.15;
+        ret.Modifiers.sort(this.sortModifiers);
+        for (local i = 0; i < ret.Modifiers.len(); i = ++i)
+        {
+            ret.Modifiers[i][0] = ret.Modifiers[i][0] * this.Math.pow(i + 1, -0.5);
+			if (this.getUpgraded()) 
+			{  
+				ret.Modifiers[i][0] *= 1.15;
+			}
+            ret.Craft += ret.Modifiers[i][0];
         }
-		ret.Craft += combinedcraft;
-
         return ret;
     }
 

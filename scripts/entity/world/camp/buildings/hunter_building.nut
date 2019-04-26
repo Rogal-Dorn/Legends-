@@ -1,6 +1,5 @@
 this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		Base = 6.5,
 		Items = [],
 		NumBros = 0,
 		Points = 0,
@@ -11,6 +10,9 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Hunter;
+        this.m.ModName = "Hunting";
+        this.m.ModMod = 10.0;
+        this.m.BaseCraft = 6.5;		
         this.m.Slot = "hunt";
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"
@@ -122,51 +124,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local mod = this.getModifiers();
         this.m.NumBros = mod.Assigned;
 		this.m.Craft = mod.Craft;
-    }
-
-    function getModifiers()
-    {
-        local ret = 
-        {
-            Craft = 0.0,
-            Assigned = 0,
-            Modifiers = []
-        }
-		local roster = this.World.getPlayerRoster().getAll();
-		local totalcraft = 0;
-        local totalcraftmod = 0;
-		local totalbonus = 0;
-		local combinedcraft = 0;
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-			if (totalcraftmod == 0)
-			{
-			totalcraftmod == bro.getBackground().getModifiers().Hunting * 10;
-			}
-			else 
-			{
-			totalcraftmod = totalcraftmod + (totalcraftmod * ( bro.getBackground().getModifiers().Hunting * 10));
-			}
-            totalcraft += this.m.Base;
-			local brostat = totalcraftmod + totalcraft;
-            ++ret.Assigned
-			ret.Modifiers.push([brostat, bro.getName(), bro.getBackground().getNameOnly()]);	
-        }
-	
-		totalbonus = totalcraft + totalcraftmod;
-		combinedcraft = 2 * pow((totalcraft + totalcraftmod), 0.5);
-
-        if (this.getUpgraded()) 
-        {  
-            combinedcraft *= 1.15;
-        }
-		ret.Craft += combinedcraft;
-
-        return ret;
     }
 
 	function getResults()

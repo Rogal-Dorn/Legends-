@@ -1,6 +1,5 @@
 this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		Base = 1.0,
 		Items = [],
 		MedsAdded = 0,
 		NumBros = 0,
@@ -10,6 +9,8 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Gatherer;
+		this.m.ModName = "Gathering";
+		this.m.BaseCraft = 1.0;
         this.m.Slot = "gather";
         this.m.Name = "Gatherer";
         this.m.Description = "Forgage for herbs and medicine";
@@ -97,51 +98,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		local mod = this.getModifiers();
         this.m.NumBros = mod.Assigned;
 		this.m.Craft = mod.Craft;
-    }
-
-   function getModifiers()
-    {
-        local ret = 
-        {
-            Craft = 0.0,
-            Assigned = 0,
-            Modifiers = []
-        }
-		local roster = this.World.getPlayerRoster().getAll();
-		local totalcraft = 0;
-        local totalcraftmod = 0;
-		local totalbonus = 0;
-		local combinedcraft = 0;
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-			if (totalcraftmod == 0)
-			{
-			totalcraftmod == bro.getBackground().getModifiers().Gathering;
-			}
-			else 
-			{
-			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Gathering);
-			}
-            totalcraft += this.m.Base;
-			local rm = totalcraftmod + totalcraft;
-            ++ret.Assigned
-			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
-        }
-
-		totalbonus = totalcraft * totalcraftmod;
-		combinedcraft =  pow((totalcraft + totalbonus), 0.5);
-
-        if (this.getUpgraded()) 
-        {  
-            combinedcraft *= 1.15;
-        }
-		ret.Craft += combinedcraft;
-
-        return ret;
     }
 
 	function getResults()

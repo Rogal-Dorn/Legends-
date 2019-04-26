@@ -1,6 +1,5 @@
 this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-        BaseCraft = 10.0,
         ItemsCrafted = [],
         Queue = [],
 		PointsNeeded = 0,
@@ -11,6 +10,8 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Crafting;
+		this.m.ModName = "Crafting";
+        this.m.BaseCraft = 10.0;
         this.m.Slot = "craft";
         this.m.Name = "Craft";
         this.m.Description = "Craft items"
@@ -211,52 +212,6 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 		this.m.Queue = q
 	}
-
-    function getModifiers()
-    {
-        local ret = 
-        {
-            Craft = 0.0,
-            Assigned = 0,
-            Modifiers = []
-        }
-		local roster = this.World.getPlayerRoster().getAll();
-		local totalcraft = 0;
-        local totalcraftmod = 0;
-		local totalbonus = 0;
-		local combinedcraft = 0;
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-			if (totalcraftmod == 0)
-			{
-			totalcraftmod == bro.getBackground().getModifiers().Crafting;
-			}
-			else 
-			{
-			totalcraftmod = totalcraftmod + (totalcraftmod * ( bro.getBackground().getModifiers().Crafting));
-			}
-            totalcraft += this.m.BaseCraft;
-			local rm = totalcraftmod + totalcraft;
-
-            ++ret.Assigned
-			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
-        }
-
-		totalbonus = totalcraft * totalcraftmod;
-		combinedcraft =  pow((totalcraft + totalbonus), 0.5);
-
-        if (this.getUpgraded()) 
-        {  
-            combinedcraft *= 1.15;
-        }
-		ret.Craft += combinedcraft;
-
-        return ret;
-    }
 
 	function getResults()
     {
