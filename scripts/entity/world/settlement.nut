@@ -641,7 +641,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			barterMult += bro.getBarterModifier();
 		}
+		if ((this.m.Modifiers.BuyPriceMult - barterMult) > 0.01)
+		{
 		p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
+		}
+		if ((this.m.Modifiers.BuyPriceMult - barterMult) <= 0.01)
+		{
+		p = 0.01;
+		}
 		return p;
 	}
 

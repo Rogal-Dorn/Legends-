@@ -55,6 +55,7 @@ local PitchforkTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.Underdog,
+		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Footwork

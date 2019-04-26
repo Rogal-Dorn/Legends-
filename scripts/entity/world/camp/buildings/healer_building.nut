@@ -298,24 +298,44 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             Modifiers = []
         }
 		local roster = this.World.getPlayerRoster().getAll();
+		local totalcraft = 0;
+        local totalcraftmod = 0;
+		local totalbonus = 0;
+		local combinedcraft = 0;
+		local difficultyHealMult = this.Const.Difficulty.HealMult[this.World.Assets.getEconomicDifficulty()]; 
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
             {
                 continue
             }
-
-            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Injury;
-            ret.Craft += rm
+			if (totalcraftmod == 0)
+			{
+			totalcraftmod = bro.getBackground().getModifiers().Healing;
+			}
+			else 
+			{
+			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Healing);
+			}
+            totalcraft += this.m.BaseCraft;
             ret.Modifier += bro.getBackground().getModifiers().Healing;
             ++ret.Assigned
 			ret.Modifiers.push([bro.getBackground().getModifiers().Healing, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
 
-        if (this.getUpgraded()) 
-        {  
-            ret.Craft *= 1.15;
+		totalbonus = (totalcraft * totalcraftmod) ;
+		combinedcraft = pow((totalcraft + totalbonus), 0.5);
+	
+        if (ret.Assigned == 0)
+        {
+            ret.Craft *= difficultyHealMult;
         }
+  
+		if (this.getUpgraded()) 
+        {  
+            combinedcraft *= 1.15;
+        }
+		ret.Craft += combinedcraft;
 
         return ret;
     }

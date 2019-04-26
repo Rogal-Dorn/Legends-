@@ -18,7 +18,7 @@ local NecroTree = [
 		gt.Const.Perks.PerkDefs.LegendWither,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieLow,
 		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
-		gt.Const.Perks.PerkDefs.LegendSpecialistScytheSkill,
+		gt.Const.Perks.PerkDefs.LegendSpecialistScytheSkill
 
 	],
 	[

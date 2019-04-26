@@ -219,26 +219,41 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
             Craft = 0.0,
             Assigned = 0,
             Modifiers = []
-
         }
 		local roster = this.World.getPlayerRoster().getAll();
+		local totalcraft = 0;
+        local totalcraftmod = 0;
+		local totalbonus = 0;
+		local combinedcraft = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
             {
                 continue
             }
+			if (totalcraftmod == 0)
+			{
+			totalcraftmod == bro.getBackground().getModifiers().Crafting;
+			}
+			else 
+			{
+			totalcraftmod = totalcraftmod + (totalcraftmod * ( bro.getBackground().getModifiers().Crafting));
+			}
+            totalcraft += this.m.BaseCraft;
+			local rm = totalcraftmod + totalcraft;
 
-            local rm = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers().Crafting;
-            ret.Craft += rm
             ++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
         }
 
+		totalbonus = totalcraft * totalcraftmod;
+		combinedcraft =  pow((totalcraft + totalbonus), 0.5);
+
         if (this.getUpgraded()) 
         {  
-            ret.Craft *= 1.15;
+            combinedcraft *= 1.15;
         }
+		ret.Craft += combinedcraft;
 
         return ret;
     }
