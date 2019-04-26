@@ -602,10 +602,10 @@ Factions can now conquer each other's cities outside a noble war
 Hand to Hand buffed, always does a minimum damage 
 Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another. begins with bags and belts and scouting unlocked.
 Ranger is friendly with beasts, begins with fletching, hunting and scouting unlocked
-Warlock is friendly with zombies. Starts with brink of death, which now grants survivor instead of nine lives. begins with gathering unlocked 
+Warlock is friendly with zombies. Starts with brink of death, which now grants survivor instead of nine lives. gains a roster slot, begins with gathering unlocked 
 Berserker begins with infectious rage. begins with gathering, hunting and scouting 
 Crusader begins with strict sermons. Begins with scraping and training 
-Seer begins with teacher, revolt and entice AP reduced, levitate can now be cast on others. begins with gathering and training 
+Seer begins with teacher, revolt and entice AP reduced, levitate can now be cast on others. gains a roster slot, begins with gathering and training 
 Beggar begins at war with all noble factions, begins with scouting 
 A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
 
