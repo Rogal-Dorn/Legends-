@@ -71,7 +71,7 @@ this.legend_vala_in_trance <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.TargetAttractionMult *= 1.33;
+		_properties.TargetAttractionMult *= 1.50;
 		this.getContainer().getActor().m.IsUsingZoneOfControl = false;
 	}
 
