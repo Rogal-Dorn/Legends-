@@ -1,7 +1,5 @@
 this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-        Conversion = 15.0,
-        BaseRepair = 10,
         ToolsUsed = 0,
         Stash = null,
         Repairs = null,
@@ -15,6 +13,9 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Repair;
+        this.m.BaseCraft = 10.0;
+        this.m.Conversion = 15.0;
+        this.m.ModName = "Repair";        
         this.m.Escorting = true;
         this.m.Slot = "repair";
         this.m.Name = "Repair Tent";
@@ -124,7 +125,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = 5,
 				type = "text",
 				icon = "ui/icons/repair_item.png",
-				text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Repair + "[/color] units per hour."
+				text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + mod.Craft + "[/color] units per hour."
 			}
 		];
 		local id = 6;
@@ -232,64 +233,19 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			}];
     }
 
+
     function getModifiers()
     {
-        local ret = 
-        {
-            Repair = this.m.BaseRepair,
-            Consumption = 1.0 / this.m.Conversion,
-            Assigned = 0,
-            Modifiers = []
+        local ret = this.camp_building.getModifiers();
+        if (this.getUpgraded()) 
+        {  
+            ret.Consumption = 1.0 / 20.0
         }
-		local roster = this.World.getPlayerRoster().getAll();
-		local totalcraft = 0;
-        local totalcraftmod = 0;
-		local totalbonus = 0;
-		local combinedcraft = 0;
-		local brostat = 0;
-		local difficultyRepairMult = this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]; 
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-			if (totalcraftmod == 0)
-			{
-			totalcraftmod = bro.getBackground().getModifiers().Repair;
-			}
-			else 
-			{
-			totalcraftmod = totalcraftmod + (totalcraftmod * bro.getBackground().getModifiers().Repair);
-			}
-            totalcraft += this.m.BaseRepair;
-			brostat = totalcraftmod + totalcraft;
-            ++ret.Assigned
-			ret.Modifiers.push([brostat, bro.getName(), bro.getBackground().getNameOnly()]);	
-            //local v = this.Math.maxf(0.50, ret.Consumption - this.Const.LegendMod.getToolConsumptionModifier(bro.getBackground().getID()));
-            //ret.Consumption = v;
-        }
-		
-		totalbonus == (totalcraft * totalcraftmod);
-		combinedcraft == 2 * pow((totalcraft + totalbonus), 0.5);
-
 
         if (ret.Assigned == 0)
         {
-            ret.Repair *= difficultyRepairMult;
+            ret.Craft = 2 * this.m.BaseCraft * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()];
         }
-
-        if (this.getUpgraded()) 
-        {  
-            ret.Consumption == 1.0 / 10.0
-            if (ret.Assigned > 0)
-            {
-                combinedcraft *= 1.15;
-            }
-        }
-
-		ret.Repair += combinedcraft;
-
         return ret;
     }
 
@@ -327,7 +283,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             points += r.Item.getConditionMax() - r.Item.getCondition()
         }
         local modifiers = this.getModifiers();
-        return this.Math.ceil(points / modifiers.Repair);
+        return this.Math.ceil(points / modifiers.Craft);
     }
 
     function getAssignedBros()
@@ -395,14 +351,14 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 
             local needed = r.Item.getConditionMax() - r.Item.getCondition()
-            if (modifiers.Repair < needed)
+            if (modifiers.Craft < needed)
             {
-                needed = modifiers.Repair;
+                needed = modifiers.Craft;
             }
 
             r.Item.setCondition(r.Item.getCondition() + needed);
             this.m.PointsRepaired += needed;
-            modifiers.Repair -= needed;
+            modifiers.Craft -= needed;
 
             if (this.World.Assets.isConsumingAssets())
             {
@@ -417,7 +373,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 this.swapItems("camp-screen-repair-dialog-module.shop", i, "camp-screen-repair-dialog-module.stash", null);
             }
 
-            if (modifiers.Repair <= 0) 
+            if (modifiers.Craft <= 0) 
             {
                 break
             }

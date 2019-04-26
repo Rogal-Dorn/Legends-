@@ -207,6 +207,10 @@ this.camp_building <- {
         InCommanderTent = true,
 		Camping = true,
 		Escorting = false
+		ModName = "",
+		ModMod = 1.0,
+		BaseCraft = 0.0,
+		Conversion = 1.0
 	},
     function create()
     {
@@ -430,5 +434,55 @@ this.camp_building <- {
 	function onDeserialize( _in )
 	{
 	}
+
+    function sortModifiers( _f1, _f2 )
+	{
+		if (_f1[0] > _f2[0])
+		{
+			return -11;
+		}
+		else if (_f1[0] < _f2[0])
+		{
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+    function getModifiers()
+    {
+        local ret = 
+        {
+			Consumption = 1.0 / this.m.Conversion,
+            Craft = 0.0,
+            Assigned = 0,
+            Modifiers = []
+        }
+		local roster = this.World.getPlayerRoster().getAll();
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+            local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers()[this.m.ModName] * this.m.ModMod;
+            ++ret.Assigned
+			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);			
+        }
+
+        ret.Modifiers.sort(this.sortModifiers);
+        for (local i = 0; i < ret.Modifiers.len(); i = ++i)
+        {
+            ret.Modifiers[i][0] = ret.Modifiers[i][0] * this.Math.pow(i + 1, -0.5);
+			if (this.getUpgraded()) 
+			{  
+				ret.Modifiers[i][0] *= 1.15;
+			}
+            ret.Craft += ret.Modifiers[i][0];
+        }
+        return ret;
+    }
 
 }

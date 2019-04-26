@@ -1,4 +1,4 @@
-this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
+this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

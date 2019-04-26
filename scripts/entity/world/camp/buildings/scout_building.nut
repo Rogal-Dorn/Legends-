@@ -1,6 +1,5 @@
 this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		Base = 0.1,
 		Radius = 0,
 		Rate = 0,
         Results = [],
@@ -10,6 +9,9 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
     {
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Scout;
+        this.m.ModName = "Scout";
+        this.m.ModMod = 10.0;
+        this.m.BaseCraft = 0.1;
         this.m.Slot = "scout";
         this.m.Name = "Patrol Station";
         this.m.Description = "Send out a patrol to keep an eye on the surrounding terrain";
@@ -116,36 +118,6 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 			++id;
 		}
         return res;
-    }
-
-    function getModifiers()
-    {
-        local ret = 
-        {
-            Craft = 0.0,
-            Assigned = 0,
-            Modifiers = []
-        }
-		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-
-            local rm = this.m.Base + this.m.Base * bro.getBackground().getModifiers().Scout * 10;
-            ret.Craft += rm
-            ++ret.Assigned
-			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
-        }
-
-        if (this.getUpgraded()) 
-        {  
-            ret.Craft *= 1.15;
-        }
-
-        return ret;
     }
 
 	function getAssignedBros()
