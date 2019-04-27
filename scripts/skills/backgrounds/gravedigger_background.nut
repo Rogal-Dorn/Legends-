@@ -106,7 +106,7 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 
 		r = this.Math.rand(0, 1);
