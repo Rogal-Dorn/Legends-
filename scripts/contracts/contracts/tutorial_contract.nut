@@ -1183,8 +1183,7 @@ this.tutorial_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
-				this.logInfo("Making beasts like you");
-				this.World.FactionManager.makeBeastsFriendlyToPlayer();
+
 				this.logInfo("Unlocking fletching");
 				this.World.Tags.set("HasLegendCampFletching", true);
 				this.logInfo("Unlocking hunting");
