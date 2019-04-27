@@ -595,10 +595,8 @@ Two new weapon rune sigils (poison, similar to gobbo poison and bleeding, simila
 Runes are now all working correctly again.
 Added combat log entry for Feeding weapon rune sigil (displays how much fatigue was recovered)
 Added slight damage scaling to the Warden's basic attacks
-Fixes butcher skills 
-fixes missing inventory images for runed slings
-Factions can now conquer each other's cities outside a noble war 
-Hand to Hand buffed, always does a minimum damage 
+
+A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
 Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another. begins with bags and belts and scouting unlocked.
 Ranger is friendly with beasts, begins with fletching, hunting and scouting unlocked
 Warlock is friendly with zombies. Starts with brink of death, which now grants survivor instead of nine lives. gains a roster slot, begins with gathering unlocked 
@@ -606,7 +604,14 @@ Berserker begins with infectious rage. begins with gathering, hunting and scouti
 Crusader begins with strict sermons. Begins with scraping and training 
 Seer begins with teacher, revolt and entice AP reduced, levitate can now be cast on others. gains a roster slot, begins with gathering and training 
 Beggar begins at war with all noble factions, begins with scouting 
-A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
-
+Fixes butcher skills 
+fixes missing inventory images for runed slings
+Factions can now conquer each other's cities outside a noble war 
+fixes towns not being enterable when female nobles spawned 
+difficulty tooltips, start descriptions and sigil tooltips updated
+Poison and bleed runes buffed to apply more often
+Vala prmonition buffed to max of 33% 
+Hand to Hand buffed, always does a minimum damage 
+Fixed lute entice ruining other weapons 
 
 
