@@ -24,7 +24,12 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.isHidden())
 		{
-			local bonus = this.Math.round(10.0 + ((this.getContainer().getActor().getLevel() * 10.0) / this.Const.LevelXP.len()));
+			local bonus = this.Math.round(11.0 + ((this.getContainer().getActor().getLevel() * 22.0) / this.Const.LevelXP.len()));
+
+			if (bonus > 33)
+			{
+				bonus = 33;
+			}
 
 			return [
 				{
@@ -54,19 +59,19 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate (_properties)
 	{
-		local RerollBonus = 10.0 + ((this.getContainer().getActor().getLevel() * 10.0) / this.Const.LevelXP.len());
+		local RerollBonus = 11.0 + ((this.getContainer().getActor().getLevel() * 22.0) / this.Const.LevelXP.len());
 
-		if (RerollBonus > 20)
+		if (RerollBonus > 33)
 		{
-			RerollBonus = 20;
+			RerollBonus = 33;
 		}
 
-		local Attraction = 10.0 + ((this.getContainer().getActor().getLevel() * 10.0) / this.Const.LevelXP.len());
+		local Attraction = 11.0 + ((this.getContainer().getActor().getLevel() * 22.0) / this.Const.LevelXP.len());
 		local AttractionMult = 1.0 - ((Attraction + 0.0) / 100.0);
 
-		if (AttractionMult < 0.8)
+		if (AttractionMult < 0.67)
 		{
-			AttractionMult = 0.8;
+			AttractionMult = 0.67;
 		}
 
 		_properties.RerollDefenseChance += RerollBonus;
