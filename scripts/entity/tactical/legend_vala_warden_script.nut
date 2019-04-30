@@ -151,6 +151,12 @@ this.legend_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", 
 	function onActorKilled( _actor, _tile, _skill )
 	{
 		this.actor.onActorKilled(_actor, _tile, _skill);
+		local XPkiller = this.Math.floor(_actor.getXPValue() * this.Const.XP.XPForKillerPct);
+
+        if (this.m.Vala != null)
+        {
+            this.m.Vala.addXP(this.Math.floor(XPkiller * 0.50));
+        }
 
 		if (this.getFaction() == this.Const.Faction.Player || this.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
