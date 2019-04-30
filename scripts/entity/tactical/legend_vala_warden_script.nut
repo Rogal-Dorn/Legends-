@@ -153,11 +153,6 @@ this.legend_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", 
 		this.actor.onActorKilled(_actor, _tile, _skill);
 		local XPkiller = this.Math.floor(_actor.getXPValue() * this.Const.XP.XPForKillerPct);
 
-        if (this.m.Vala != null)
-        {
-            this.m.Vala.addXP(this.Math.floor(XPkiller * 0.50));
-        }
-
 		if (this.getFaction() == this.Const.Faction.Player || this.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
 			local XPgroup = _actor.getXPValue();
@@ -165,6 +160,11 @@ this.legend_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", 
 
 			foreach( bro in brothers )
 			{
+				if (this.m.Vala != null && bro.getID() == this.m.Vala.getID())
+				{
+					bro.addXP(this.Math.floor(XPkiller * 0.50));
+				}
+
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
