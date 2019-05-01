@@ -619,5 +619,5 @@ Slings use sling mastery, available to poachers and shepards
 Legendary zombies lose nine lives when resurrected, gain backstabber and their bites infect 
 Hexen can't charm loyal characters
 Legendary hexen gain magic missile, gnarled staff and the skills to use them 
-
+Nachos can't swallow whole if there is only one player character 
 
