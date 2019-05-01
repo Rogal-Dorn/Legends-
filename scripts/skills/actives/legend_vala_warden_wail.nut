@@ -64,7 +64,7 @@ this.legend_vala_warden_wail <- this.inherit("scripts/skills/skill", {
 
 			if (fury != null)
 			{
-				bonus2 = fury.getRegularDamage();
+				bonus2 = fury.getWardenDamage();
 			}
 
 			if (_skill.isAttack() && _targetEntity != null && _targetEntity.getID() != this.getContainer().getActor().getID() && _targetEntity.getFaction() == this.getContainer().getActor().getFaction())
