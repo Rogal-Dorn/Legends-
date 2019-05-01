@@ -621,4 +621,6 @@ Legendary skeletons gain 25% damage reduction and cause a minor bleed on every h
 Hexen can't charm loyal characters
 Legendary hexen gain magic missile, gnarled staff and the skills to use them 
 Nachos can't swallow whole if there is only one player character 
+Nobles don't need to be in civil war to attack other noble houses they don't like, and will attack more frequently.
+
 
