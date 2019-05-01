@@ -573,45 +573,51 @@ https://drive.google.com/open?id=1kRaoKLt_umetj70uemthad3w67t-fD9v
 *Enables heal outside of camp, rate set by economic difficulty 100%, 66%, 33%, 10% 
 *Enables repair outside of camp rate set by economic difficulty  100%, 66%, 33%, 10% 
 *Bro modifiers in camp all now have diminishing returns. No more stacking 
-Makes easy economic buy and sell values 5% easier on all difficulties except normal. 
-Fixes Sickle skills
-Makes piercing shot more reliable and cheaper 
+Makes easy economic buy and sell values 5% easier on all difficulties except normal.
+A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
+Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another. begins with bags and belts and scouting unlocked.
+Warlock is friendly with zombies. Starts with brink of death, which now grants survivor instead of nine lives. gains a roster slot, begins with gathering unlocked 
 Warlock's scythe now summons the dead, he now has scythe skills 
-Fixes AP cost on gobline crossbows
+Berserker begins with infectious rage. begins with gathering, hunting and scouting 
+Crusader begins with strict sermons. Begins with scrapping and training 
+Ranger begins with fletching, hunting and scouting unlocked
+Seer begins with teacher, revolt and entice AP reduced, levitate can now be cast on others. gains a roster slot, begins with gathering and training 
+Beggar begins at war with all noble factions, begins with scouting  
+Runes are now all working correctly again.
+Two new weapon rune sigils (poison, similar to gobbo poison and bleeding, similar to regular bleed effect).
+Added combat log entry for Feeding weapon rune sigil (displays how much fatigue was recovered)
+Added Anatomical Studies perk for Inventor required for the prosthetic events to work
+Both the Inventor and the one he's making prosthetics for now shows up in all events
+The Inventor can now alleviate his own permanent wounds
+Vala Heightened Senses fatigue cost standardised 
+Vala prmonition buffed to max of 33% 
+Pimp background is now good at barter and scouting
+Recruited Female nobles have ammo now.
+Added slight damage scaling to the Warden's basic attacks
+Removes double student perk from apprentices 
+Adds reach advantage back to all the backgrounds with custom perks 
+Recruited Female nobles have ammo now. 
 Buffs last stand, may be too stronk 
 Fixes steadfast so it reduces fatigue when being hit, not when hitting.
 Fixes situation where extreme barter values had negative effects, by placing an upper cap. 
-Increases durability of slings 
-Pimp background is now good at barter and scouting
-Removes double student perk from apprentices 
-Adds reach advantage back to all the backgrounds with custom perks 
-Recruited Female nobles have ammo now.
-Added Anatomical Studies perk for Inventor (weak), tier 7
-Anatomical Studies are now required for the prosthetic events to work
-Both the Inventor and the one he's making prosthetics for now shows up in all events
-The Inventor can now alleviate his own permanent wounds (not really sure I ever made it so he couldn't..)
-Vala Heightened Senses has 30 fatigue cost now (like all other current chants)
-Two new weapon rune sigils (poison, similar to gobbo poison and bleeding, similar to regular bleed effect).
-Runes are now all working correctly again.
-Added combat log entry for Feeding weapon rune sigil (displays how much fatigue was recovered)
-Added slight damage scaling to the Warden's basic attacks
-
-A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
-Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another. begins with bags and belts and scouting unlocked.
-Ranger is friendly with beasts, begins with fletching, hunting and scouting unlocked
-Warlock is friendly with zombies. Starts with brink of death, which now grants survivor instead of nine lives. gains a roster slot, begins with gathering unlocked 
-Berserker begins with infectious rage. begins with gathering, hunting and scouting 
-Crusader begins with strict sermons. Begins with scraping and training 
-Seer begins with teacher, revolt and entice AP reduced, levitate can now be cast on others. gains a roster slot, begins with gathering and training 
-Beggar begins at war with all noble factions, begins with scouting 
-Fixes butcher skills 
-fixes missing inventory images for runed slings
-Factions can now conquer each other's cities outside a noble war 
-fixes towns not being enterable when female nobles spawned 
-difficulty tooltips, start descriptions and sigil tooltips updated
-Poison and bleed runes buffed to apply more often
-Vala prmonition buffed to max of 33% 
+Makes piercing shot more reliable and cheaper 
 Hand to Hand buffed, always does a minimum damage 
+Factions can now conquer each other's cities outside a noble war 
+Increases durability of slings 
+Fixes Sickle skills
+Fixes butcher skills 
+Fixes AP cost on goblin crossbows
+fixes missing inventory images for runed slings
 Fixed lute entice ruining other weapons 
+fixes towns not being enterable when female nobles spawned
+difficulty tooltips, start descriptions and sigil tooltips updated
+
+
+
+Beta 0.10.6
+Slings use sling mastery, available to poachers and shepards
+Legendary zombies lose nine lives when resurrected, gain backstabber and their bites infect 
+Hexen can't charm loyal characters
+Legendary hexen gain magic missile, gnarled staff and the skills to use them 
 
 
