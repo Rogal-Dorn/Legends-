@@ -39,7 +39,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 
 	}
 
-		function onDamageDealt( _target, _skill, _hitInfo )
+	function onDamageDealt( _target, _skill, _hitInfo )
 	{
 		this.weapon.onDamageDealt(_target, _skill, _hitInfo);
 
