@@ -626,5 +626,9 @@ Nobles don't need to be in civil war to attack other noble houses they don't lik
 Settlments are attackable
 Settlement defenders scale with player strength and will display strength 
 Legendary direwolves gain the direwolf racial ability they had lost in vanilla, dealing more damage as they get hurt
-
-
+Fixes inventors double student
+Vala gets more xp from warden kills 
+Vala trances get up to 95% success 
+Vala threads of fate is twice as strong but can build half as many stacks 
+Vala's warden benefits from fury chant
+Fixes item tooltips to remove decimals due to repair 
