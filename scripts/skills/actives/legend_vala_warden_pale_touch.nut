@@ -37,16 +37,23 @@ this.legend_vala_warden_pale_touch <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			local bonus = 0;
 			local scaling = this.getContainer().getActor().getSkills().getSkillByID("special.legend_vala_warden_damage");
+			local fury = this.getContainer().getActor().getSkills().getSkillByID("effects.legend_vala_chant_fury_effect");
+			local bonus1 = 0;
+			local bonus2 = 0;
 
 			if (scaling != null)
 			{
-				bonus = scaling.getDamageBonus() / 20.0;
+				bonus1 = scaling.getDamageBonus();
 			}
 
-			_properties.DamageRegularMin += 10 + this.Math.round(bonus * 0.67);
-			_properties.DamageRegularMax += 15 + this.Math.round(bonus);
+			if (fury != null)
+			{
+				bonus2 = fury.getRegularDamage();
+			}
+
+			_properties.DamageRegularMin += 10 + this.Math.round(bonus1 * 0.67) + this.Math.round(bonus2 * 0.67);
+			_properties.DamageRegularMax += 15 + this.Math.round(bonus1) + this.Math.round(bonus2);
 			_properties.IsIgnoringArmorOnAttack = true;
 		}
 	}

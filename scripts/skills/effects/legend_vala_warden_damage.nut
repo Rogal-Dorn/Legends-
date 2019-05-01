@@ -8,7 +8,7 @@ this.legend_vala_warden_damage <- this.inherit("scripts/skills/skill", {
 	}
 	function getDamageBonus()
 	{
-		return this.m.DamageBonus;
+		return (this.m.DamageBonus / 20.0);
 	}
 	function create()
 	{

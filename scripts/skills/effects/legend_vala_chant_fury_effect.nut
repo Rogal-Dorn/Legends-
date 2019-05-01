@@ -6,6 +6,10 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		this.m.ID = "effects.legend_vala_chant_fury_effect";
 		this.m.Range = 3;
 	}
+	function getRegularDamage()
+	{
+		return (this.m.Vala.getBravery() / 30.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 30.0);
+	}
 
 	function getTooltip()
 	{
