@@ -209,18 +209,11 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 			if (actor.getSkills().hasSkill("perk.legend_vala_trance_mastery"))
 			{
 				expertise += 15.0 / this.m.Difficulty;
-
-				if (expertise > 95)
-				{
-					expertise = 95;
-				}
 			}
-			else
+
+			if (expertise > 95)
 			{
-				if (expertise > 85)
-				{
-					expertise = 85;
-				}
+				expertise = 95;
 			}
 
 			if (expertise < 5)

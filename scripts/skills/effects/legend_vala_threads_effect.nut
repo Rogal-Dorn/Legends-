@@ -50,19 +50,19 @@ this.legend_vala_threads_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.m.Threads > 10)
+		if (this.m.Threads > 5)
 		{
-			this.m.Threads = 10;
+			this.m.Threads = 5;
 		}
 
-		_properties.HitpointsMult *= 1.0 - (this.m.Threads / 20.0);
-		_properties.DamageReceivedTotalMult *= 1.0 + (this.m.Threads / 20.0);
+		_properties.HitpointsMult *= 1.0 - (this.m.Threads / 10.0);
+		_properties.DamageReceivedTotalMult *= 1.0 + (this.m.Threads / 10.0);
 	}
 
 
 	function onRefresh()
 	{
-		if (this.m.Threads < 10)
+		if (this.m.Threads < 5)
 		{
 			++this.m.Threads;
 			this.spawnIcon("status_effect_78", this.getContainer().getActor().getTile());
