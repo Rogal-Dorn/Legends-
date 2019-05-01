@@ -21,6 +21,8 @@ this.zombie_poison_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local remaining = (10 - this.m.TurnsLeft);
+
 		return [
 			{
 				id = 1,
@@ -36,19 +38,19 @@ this.zombie_poison_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/action_points.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 1 * (10 - this.m.TurnsLeft) + "[/color] Action Points"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 1 * remaining + "[/color] Action Points"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 1 * (10 - this.m.TurnsLeft) + "[/color] Vision"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 1 * remaining + "[/color] Vision"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 10 * (10 - this.m.TurnsLeft) + "[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + 10 * remaining + "[/color] Initiative"
 			}
 		];
 	}
