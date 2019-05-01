@@ -92,7 +92,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = this.Math.rand(1, 3);
+		talents[this.Const.Attributes.Bravery] = this.Math.rand(2, 3);
 		this.getContainer().getActor().fillTalentValues(2, true);
 
 		local items = this.getContainer().getActor().getItems();

@@ -9,6 +9,10 @@ this.legend_RSW_bleeding_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Damage = _s1;
 		this.m.TurnsLeft = _s2;
 	}
+	function getDamage()
+	{
+		return this.m.Damage;
+	}
 
 	function create()
 	{

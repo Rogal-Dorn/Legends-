@@ -217,9 +217,9 @@ this.weapon <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "progressbar",
 				icon = "ui/icons/asset_supplies.png",
-				value = this.m.Condition,
-				valueMax = this.m.ConditionMax,
-				text = "" + this.m.Condition + " / " + this.m.ConditionMax + "",
+				value = this.Math.floor(this.m.Condition),
+				valueMax = this.Math.floor(this.m.ConditionMax),
+				text = "" + this.Math.floor(this.m.Condition) + " / " + this.Math.floor(this.m.ConditionMax) + "",
 				style = "armor-body-slim"
 			});
 		}

@@ -156,9 +156,9 @@ this.armor <- this.inherit("scripts/items/item", {
 			id = 4,
 			type = "progressbar",
 			icon = "ui/icons/armor_body.png",
-			value = this.m.Condition,
-			valueMax = this.m.ConditionMax,
-			text = "" + this.getArmor() + " / " + this.getArmorMax() + "",
+			value = this.Math.floor(this.m.Condition),
+			valueMax = this.Math.floor(this.m.ConditionMax),
+			text = "" + this.Math.floor(this.getArmor()) + " / " + this.Math.floor(this.getArmorMax()) + "",
 			style = "armor-body-slim"
 		});
 
