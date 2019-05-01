@@ -1331,6 +1331,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 					this.showCombatDialog();
 				}
 			}
+			else if (this.m.IsForcingAttack == true  && _location.isAttackable() && _location.isAlliedWithPlayer())
+			{
+				if (_location.onEnteringCombatWithPlayer())
+				{
+					this.showCombatDialog();
+				}
+			}
+
 		}
 
 		return true;
