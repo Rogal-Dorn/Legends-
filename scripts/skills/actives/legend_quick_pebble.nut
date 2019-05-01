@@ -152,9 +152,9 @@ this.legend_quick_pebble <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.MaxRange = this.m.Item.getRangeMax() - 1 + (_properties.IsSpecializedInBows ? 1 : 0);
-		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
-		this.m.FatigueCostMult = _properties.IsSpecializedInBows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.MaxRange = this.m.Item.getRangeMax() - 1 + (_properties.IsSpecializedInSlings ? 1 : 0);
+		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? 0 : -10;
+		this.m.AdditionalHitChance= _properties.IsSpecializedInSlings ? -1 : -2;
 	}
 
 	function onUse( _user, _targetTile )
