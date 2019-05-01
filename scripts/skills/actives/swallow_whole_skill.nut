@@ -46,6 +46,12 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+	    local brothers = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
+		if (brothers.len() == 1)
+		{
+			return false;
+		}
+
 		local target = _targetTile.getEntity();
 		if (target == null)
 		{
