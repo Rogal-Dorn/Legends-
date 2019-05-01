@@ -49,7 +49,7 @@ this.legend_vala_warden_pale_touch <- this.inherit("scripts/skills/skill", {
 
 			if (fury != null)
 			{
-				bonus2 = fury.getRegularDamage();
+				bonus2 = fury.getWardenDamage();
 			}
 
 			_properties.DamageRegularMin += 10 + this.Math.round(bonus1 * 0.67) + this.Math.round(bonus2 * 0.67);
