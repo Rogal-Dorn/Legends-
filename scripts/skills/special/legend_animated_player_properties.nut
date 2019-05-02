@@ -133,6 +133,7 @@ this.legend_animated_player_properties <- this.inherit("scripts/skills/skill", {
 		_properties.IsAffectedByInjuries = false;
 		_properties.IsAffectedByFreshInjuries = false;
 		_properties.IsAffectedByFleeingAllies = false;
+		_properties.MoraleEffectMult = 0;
 		_properties.FatigueEffectMult = 0;
 		_properties.MovementFatigueCostMult = 0;
 	}

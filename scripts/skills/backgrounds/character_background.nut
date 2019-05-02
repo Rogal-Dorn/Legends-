@@ -320,8 +320,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			a = {
 				Hitpoints = [
-					50,
-					60
+					65,
+					75
 				],
 				Bravery = [
 					30,
@@ -332,33 +332,33 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 					100
 				],
 				MeleeSkill = [
-					47,
-					57
+					42,
+					52
 				],
 				RangedSkill = [
-					32,
-					42
+					27,
+					37
 				],
 				MeleeDefense = [
 					0,
-					5
+					0
 				],
 				RangedDefense = [
 					0,
-					5
+					0
 				],
 				Initiative = [
-					100,
-					110
+					85,
+					95
 				]
 			};
 		}
 		else if (_tag == "skeleton")
 		{
 			a = {
-				Hitpoints = [
-					50,
-					60
+				Hitpoints = [     // will start with a minimum of 15 health, set below
+					1,
+					1
 				],
 				Bravery = [
 					30,
@@ -369,12 +369,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 					100
 				],
 				MeleeSkill = [
-					47,
-					57
+					42,
+					52
 				],
 				RangedSkill = [
-					32,
-					42
+					27,
+					37
 				],
 				MeleeDefense = [
 					0,
@@ -385,8 +385,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 					5
 				],
 				Initiative = [
-					100,
-					110
+					90,
+					100
 				]
 			};
 		}
@@ -459,7 +459,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			b.ActionPoints = 9;
 		}
-		b.Hitpoints = this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]);
+
+		b.Hitpoints = this.Math.max(15, this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]));
 		b.Bravery = this.Math.rand(a.Bravery[0], a.Bravery[1]);
 		b.Stamina = this.Math.rand(a.Stamina[0], a.Stamina[1]);
 		b.MeleeSkill = this.Math.rand(a.MeleeSkill[0], a.MeleeSkill[1]);

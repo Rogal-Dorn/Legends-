@@ -2205,6 +2205,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Gender = 1;
 		}
 
+		local maxTraits = 0;
 		if (this.getTags().has("PlayerZombie"))
 		{
 			background.buildAttributes("zombie");
@@ -2216,10 +2217,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		else
 		{
 			background.buildAttributes();
+			maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
 		}
 
 		background.buildDescription();
-		local maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
 		local traits = [
 			background
 		];
@@ -2294,24 +2295,71 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
 
-			if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+			if (this.getTags().has("PlayerZombie"))
 			{
-				local r = this.Math.rand(1, 100);
+				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Initiative && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				{
+					local r = this.Math.rand(1, 100);
 
-				if (r <= 60)
-				{
-					this.m.Talents[i] = 1;
-				}
-				else if (r <= 90)
-				{
-					this.m.Talents[i] = 2;
-				}
-				else
-				{
-					this.m.Talents[i] = 3;
-				}
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
 
-				done = ++done;
+					done = ++done;
+				}
+			}
+			else if (this.getTags().has("PlayerSkeleton"))
+			{
+				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Hitpoints && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				{
+					local r = this.Math.rand(1, 100);
+
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
+
+					done = ++done;
+				}
+			}
+			else
+			{
+				if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				{
+					local r = this.Math.rand(1, 100);
+
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
+
+					done = ++done;
+				}
 			}
 		}
 	}
