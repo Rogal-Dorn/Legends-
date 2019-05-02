@@ -134,5 +134,7 @@ this.legend_animated_player_properties <- this.inherit("scripts/skills/skill", {
 		_properties.MoraleEffectMult = 0;
 		_properties.FatigueEffectMult = 0;
 		_properties.MovementFatigueCostMult = 0;
+		_properties.DailyWageMult = 0;
+		_properties.DailyFood = 0;
 	}
 });
