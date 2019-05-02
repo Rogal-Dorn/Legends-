@@ -159,7 +159,6 @@ gt.Const.CharacterBackgroundsAnimated <- [
 	"minstrel_background",
 	"monk_background",
 	"peddler_background",
-	"pimp_background",
 	"poacher_background",
 	"raider_background",
 	"ratcatcher_background",

@@ -2297,7 +2297,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (this.getTags().has("PlayerZombie"))
 			{
-				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Initiative && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Fatigue && i != this.Const.Attributes.Initiative && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
 				{
 					local r = this.Math.rand(1, 100);
 
@@ -2319,7 +2319,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (this.getTags().has("PlayerSkeleton"))
 			{
-				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Hitpoints && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Fatigue && i != this.Const.Attributes.Hitpoints && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
 				{
 					local r = this.Math.rand(1, 100);
 

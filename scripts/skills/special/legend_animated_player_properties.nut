@@ -4,12 +4,10 @@ this.legend_animated_player_properties <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "special.legend_animated_player_properties";
 		this.m.Name = "";
-		this.m.Description = "";
 		this.m.Icon = "";
-		this.m.IconMini = "";
-		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.Special;
-		this.m.IsHidden = true;
 		this.m.IsActive = false;
+		this.m.IsStacking = false;
+		this.m.IsHidden = false;
 		this.m.IsSerialized = true;
 	}
 
