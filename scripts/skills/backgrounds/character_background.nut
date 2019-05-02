@@ -312,42 +312,122 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 	}
 
-	function buildAttributes()
+	function buildAttributes(_tag = null)
 	{
-		local a = {
-			Hitpoints = [
-				50,
-				60
-			],
-			Bravery = [
-				30,
-				40
-			],
-			Stamina = [
-				90,
-				100
-			],
-			MeleeSkill = [
-				47,
-				57
-			],
-			RangedSkill = [
-				32,
-				42
-			],
-			MeleeDefense = [
-				0,
-				5
-			],
-			RangedDefense = [
-				0,
-				5
-			],
-			Initiative = [
-				100,
-				110
-			]
-		};
+		local a = [];
+
+		if (_tag == "zombie")
+		{
+			a = {
+				Hitpoints = [
+					50,
+					60
+				],
+				Bravery = [
+					30,
+					40
+				],
+				Stamina = [
+					90,
+					100
+				],
+				MeleeSkill = [
+					47,
+					57
+				],
+				RangedSkill = [
+					32,
+					42
+				],
+				MeleeDefense = [
+					0,
+					5
+				],
+				RangedDefense = [
+					0,
+					5
+				],
+				Initiative = [
+					100,
+					110
+				]
+			};
+		}
+		else if (_tag == "skeleton")
+		{
+			a = {
+				Hitpoints = [
+					50,
+					60
+				],
+				Bravery = [
+					30,
+					40
+				],
+				Stamina = [
+					90,
+					100
+				],
+				MeleeSkill = [
+					47,
+					57
+				],
+				RangedSkill = [
+					32,
+					42
+				],
+				MeleeDefense = [
+					0,
+					5
+				],
+				RangedDefense = [
+					0,
+					5
+				],
+				Initiative = [
+					100,
+					110
+				]
+			};
+		}
+		else
+		{
+			a = {
+				Hitpoints = [
+					50,
+					60
+				],
+				Bravery = [
+					30,
+					40
+				],
+				Stamina = [
+					90,
+					100
+				],
+				MeleeSkill = [
+					47,
+					57
+				],
+				RangedSkill = [
+					32,
+					42
+				],
+				MeleeDefense = [
+					0,
+					5
+				],
+				RangedDefense = [
+					0,
+					5
+				],
+				Initiative = [
+					100,
+					110
+				]
+			};
+		}
+
 		local c = this.onChangeAttributes();
 		a.Hitpoints[0] += c.Hitpoints[0];
 		a.Hitpoints[1] += c.Hitpoints[1];
@@ -365,8 +445,20 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		a.RangedDefense[1] += c.RangedDefense[1];
 		a.Initiative[0] += c.Initiative[0];
 		a.Initiative[1] += c.Initiative[1];
+		
 		local b = this.getContainer().getActor().getBaseProperties();
-		b.ActionPoints = 9;
+		if (_tag == "zombie")
+		{
+			b.ActionPoints = 6;
+		}
+		else if (_tag == "skeleton")
+		{
+			b.ActionPoints = 9;
+		}
+		else
+		{
+			b.ActionPoints = 9;
+		}
 		b.Hitpoints = this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]);
 		b.Bravery = this.Math.rand(a.Bravery[0], a.Bravery[1]);
 		b.Stamina = this.Math.rand(a.Stamina[0], a.Stamina[1]);
@@ -421,61 +513,135 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		actor.m.HiringCost *= 10;
 	}
 
-	function setAppearance()
+	function setAppearance(_tag = null)
 	{
 		if (this.m.HairColors == null)
 		{
 			return;
 		}
 
-		local actor = this.getContainer().getActor();
-		local hairColor = this.m.HairColors[this.Math.rand(0, this.m.HairColors.len() - 1)];
-
-		if (this.m.Faces != null)
+		if (_tag == "zombie")
 		{
-			local sprite = actor.getSprite("head");
-			sprite.setBrush(this.m.Faces[this.Math.rand(0, this.m.Faces.len() - 1)]);
-			sprite.Color = this.createColor("#fbffff");
-			sprite.varyColor(0.05, 0.05, 0.05);
-			sprite.varySaturation(0.1);
+			local actor = this.getContainer().getActor();
+			local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
+
 			local body = actor.getSprite("body");
-			body.Color = sprite.Color;
-			body.Saturation = sprite.Saturation;
-		}
+			body.setBrush(this.m.Body);
+			body.Saturation = 0.5;
+			body.varySaturation(0.2);
+			body.Color = this.createColor("#c1ddaa");
+			body.varyColor(0.05, 0.05, 0.05);
+			actor.getSprite("injury_body").setBrush("zombify_body_01");
 
-		if (this.m.Hairs != null && this.Math.rand(0, this.m.Hairs.len()) != this.m.Hairs.len())
-		{
-			local sprite = actor.getSprite("hair");
-			sprite.setBrush("hair_" + hairColor + "_" + this.m.Hairs[this.Math.rand(0, this.m.Hairs.len() - 1)]);
+			local head = actor.getSprite("head");
+			head.setBrush(this.m.Faces[this.Math.rand(0, this.m.Faces.len() - 1)]);
+			head.Saturation = body.Saturation;
+			head.Color = body.Color;
 
-			if (hairColor != "grey")
+			local hair = actor.getSprite("hair");
+			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Zombie[this.Math.rand(0, this.Const.Hair.Zombie.len() - 1)]);
+			hair.varyColor(0.02, 0.02, 0.02);
+
+			if (this.Math.rand(1, 100) <= this.m.BeardChance)
 			{
-				sprite.varyColor(0.1, 0.1, 0.1);
-			}
-			else
-			{
-				sprite.varyBrightness(0.1);
-			}
-		}
+				local beard = actor.getSprite("beard");
+				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.Zombie[this.Math.rand(0, this.Const.Beards.Zombie.len() - 1)]);
+				beard.Color = hair.Color;
 
-		if (this.m.Beards != null && this.Math.rand(1, 100) <= this.m.BeardChance)
-		{
-			local beard = actor.getSprite("beard");
-			beard.setBrush("beard_" + hairColor + "_" + this.m.Beards[this.Math.rand(0, this.m.Beards.len() - 1)]);
-			beard.Color = actor.getSprite("hair").Color;
-
-			if (this.doesBrushExist(beard.getBrush().Name + "_top"))
-			{
-				local sprite = actor.getSprite("beard_top");
-				sprite.setBrush(beard.getBrush().Name + "_top");
-				sprite.Color = actor.getSprite("hair").Color;
+				if (this.doesBrushExist(beard.getBrush().Name + "_top"))
+				{
+					local sprite = actor.getSprite("beard_top");
+					sprite.setBrush(beard.getBrush().Name + "_top");
+					sprite.Color = actor.getSprite("hair").Color;
+				}
 			}
 		}
-
-		if (this.m.Body != null)
+		else if (_tag == "skeleton")
 		{
-			actor.getSprite("body").setBrush(this.m.Body);
-			actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
+			local actor = this.getContainer().getActor();
+			local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
+
+			local body = actor.getSprite("body");
+			body.setBrush("bust_skeleton_body_0" + this.Math.rand(1, 2));
+			body.Saturation = 0.8;
+			body.varySaturation(0.2);
+			body.varyColor(0.025, 0.025, 0.025);
+			actor.getSprite("injury_body").setBrush("bust_skeleton_body_injured");
+
+			local head = actor.getSprite("head");
+			head.setBrush("bust_skeleton_head");
+			head.Color = body.Color;
+			head.Saturation = body.Saturation;
+
+			local hair = actor.getSprite("hair");
+			hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.ZombieOnly[this.Math.rand(0, this.Const.Hair.ZombieOnly.len() - 1)]);
+			hair.varyColor(0.02, 0.02, 0.02);
+
+			if (this.Math.rand(1, 100) <= this.m.BeardChance)
+			{
+				local beard = actor.getSprite("beard");
+				beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.ZombieOnly[this.Math.rand(0, this.Const.Beards.ZombieOnly.len() - 1)]);
+				beard.Color = hair.Color;
+
+				if (this.doesBrushExist(beard.getBrush().Name + "_top"))
+				{
+					local sprite = actor.getSprite("beard_top");
+					sprite.setBrush(beard.getBrush().Name + "_top");
+					sprite.Color = actor.getSprite("hair").Color;
+				}
+			}
+		}
+		else
+		{
+			local actor = this.getContainer().getActor();
+			local hairColor = this.m.HairColors[this.Math.rand(0, this.m.HairColors.len() - 1)];
+
+			if (this.m.Faces != null)
+			{
+				local sprite = actor.getSprite("head");
+				sprite.setBrush(this.m.Faces[this.Math.rand(0, this.m.Faces.len() - 1)]);
+				sprite.Color = this.createColor("#fbffff");
+				sprite.varyColor(0.05, 0.05, 0.05);
+				sprite.varySaturation(0.1);
+				local body = actor.getSprite("body");
+				body.Color = sprite.Color;
+				body.Saturation = sprite.Saturation;
+			}
+
+			if (this.m.Hairs != null && this.Math.rand(0, this.m.Hairs.len()) != this.m.Hairs.len())
+			{
+				local sprite = actor.getSprite("hair");
+				sprite.setBrush("hair_" + hairColor + "_" + this.m.Hairs[this.Math.rand(0, this.m.Hairs.len() - 1)]);
+
+				if (hairColor != "grey")
+				{
+					sprite.varyColor(0.1, 0.1, 0.1);
+				}
+				else
+				{
+					sprite.varyBrightness(0.1);
+				}
+			}
+
+			if (this.m.Beards != null && this.Math.rand(1, 100) <= this.m.BeardChance)
+			{
+				local beard = actor.getSprite("beard");
+				beard.setBrush("beard_" + hairColor + "_" + this.m.Beards[this.Math.rand(0, this.m.Beards.len() - 1)]);
+				beard.Color = actor.getSprite("hair").Color;
+
+				if (this.doesBrushExist(beard.getBrush().Name + "_top"))
+				{
+					local sprite = actor.getSprite("beard_top");
+					sprite.setBrush(beard.getBrush().Name + "_top");
+					sprite.Color = actor.getSprite("hair").Color;
+				}
+			}
+
+			if (this.m.Body != null)
+			{
+				actor.getSprite("body").setBrush(this.m.Body);
+				actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
+			}
 		}
 
 		this.onSetAppearance();

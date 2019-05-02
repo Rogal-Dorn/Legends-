@@ -1844,6 +1844,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaChantFury = 199,
 	LegendValaChantSenses = 200,
 	LegendSpecialistScytheSkill = 201,
-	LegendSpecialistScytheDamage = 202
+	LegendSpecialistScytheDamage = 202,
 	LegendInventorAnatomy = 203
 };

@@ -2204,8 +2204,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (background.isFemaleBackground()) {
 			this.m.Gender = 1;
 		}
-	
-		background.buildAttributes();
+
+		if (this.getTags().has("PlayerZombie"))
+		{
+			background.buildAttributes("zombie");
+		}
+		else if (this.getTags().has("PlayerSkeleton"))
+		{
+			background.buildAttributes("skeleton");
+		}
+		else
+		{
+			background.buildAttributes();
+		}
+
 		background.buildDescription();
 		local maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
 		local traits = [
@@ -2247,7 +2259,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		background.addEquipment();
-		background.setAppearance();
+
+		if (this.getTags().has("PlayerZombie"))
+		{
+			background.setAppearance("zombie");
+		}
+		else if (this.getTags().has("PlayerSkeleton"))
+		{
+			background.setAppearance("skeleton");
+		}
+		else
+		{
+			background.setAppearance();
+		}
+
 		background.buildDescription(true);
 		this.m.Skills.update();
 		local p = this.m.CurrentProperties;
