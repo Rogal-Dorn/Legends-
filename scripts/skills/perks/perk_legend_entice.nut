@@ -16,9 +16,9 @@ this.perk_legend_entice <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_pull"))
+		if (!this.m.Container.hasSkill("actives.legend_entice"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_pull"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_entice"));
 		}
 	}
 	function onRemoved()
