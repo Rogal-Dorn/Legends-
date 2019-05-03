@@ -124,8 +124,8 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{
 			local actor = this.getContainer().getActor();
 			local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
-			_properties.DamageRegularMin += this.Math.floor(Avg - 100);
-			_properties.DamageRegularMax += this.Math.floor(Avg - 80);
+			_properties.DamageRegularMin += 5 + this.Math.floor(Avg - 100);
+			_properties.DamageRegularMax += 5 + this.Math.floor(Avg - 80);
 			_properties.MeleeSkill -= 10;
 		}
 	}
