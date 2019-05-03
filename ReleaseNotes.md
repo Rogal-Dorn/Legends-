@@ -621,14 +621,16 @@ Legendary skeletons gain 25% damage reduction and cause a minor bleed on every h
 Ranger's triple strike and piercing bolt have reduced damage vs skeletons
 Hexen can't charm loyal characters
 Legendary hexen gain magic missile, gnarled staff and the skills to use them 
-Nachos can't swallow whole if there is only one player character 
+The 'swallow whole' ability can't target one player character. 
 Nobles don't need to be in civil war to attack other noble houses they don't like, and will attack more frequently.
-Settlments are attackable
-Settlement defenders scale with player strength and will display strength 
-Legendary direwolves gain the direwolf racial ability they had lost in vanilla, dealing more damage as they get hurt
+Settlements are more attackable, Settlement defenders scale with player strength and will display strength 
+Legendary direwolves gain a buffed version of the vanilla direwolf racial ability that isn't applied in in vanilla, dealing more damage as they get hurt
 Fixes inventors double student
 Vala gets more xp from warden kills 
 Vala trances get up to 95% success 
 Vala threads of fate is twice as strong but can build half as many stacks 
 Vala's warden benefits from fury chant
 Fixes item tooltips to remove decimals due to repair 
+Fixes situation where upgraded repair tent wouldn't show up in snowy environments
+Hand to hand has a 5 damage minimum, so you can still slap even if you're weak or tired. 
+Added main menu logo 
