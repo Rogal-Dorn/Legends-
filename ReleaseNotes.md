@@ -632,5 +632,7 @@ Vala threads of fate is twice as strong but can build half as many stacks
 Vala's warden benefits from fury chant
 Fixes item tooltips to remove decimals due to repair 
 Fixes situation where upgraded repair tent wouldn't show up in snowy environments
+Fixes a lute perk skill causing a crash on load
+Fixes entice perk causing a crash on load 
 Hand to hand has a 5 damage minimum, so you can still slap even if you're weak or tired. 
 Added main menu logo 
