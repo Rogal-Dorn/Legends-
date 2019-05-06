@@ -1211,7 +1211,8 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecialistShieldPush = "Push it",
 	LegendMasteryNets = "Net Mastery",
 	LegendSpecialistScytheSkill = "Harvest swathes",
-	LegendSpecialistScytheDamage = "Slicing arcs"
+	LegendSpecialistScytheDamage = "Slicing arcs",
+	LegendMasterySlings = "Sling Mastery"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1362,7 +1363,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSiphon = "Draw from the lifeforce of your victim and transfer up to 30% of their health to yourself. You may not drain more health than you are missing nor drain a victim to their death. Effectiveness drops off 5% for each tile away.",
 
 	LegendValaInscriptionMastery = "The Vala becomes a master at inscribing the intricate and subtle signs, allowing her to create the rune sigils at faster rate.",
-	LegendValaInscribeWeapon = "Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped.\n\nPossibilities: accuracy, feeding, power.",
+	LegendValaInscribeWeapon = "Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped.\n\nPossibilities: accuracy, bleeding, feeding, poison, power.",
 	LegendValaInscribeHelmet = "Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped.\n\nPossibilities: bravery, clarity, luck.",
 	LegendValaInscribeArmor = "Allows the Vala to inscribe rocks with armor specific rune sigils while encamped.\n\nPossibilities: endurance, resilience, safety.",
 	LegendValaInscribeShield = "Allows the Vala to inscribe rocks with shield specific rune sigils while encamped.\n\nPossibilities: defense, radiance.",
@@ -1374,7 +1375,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendValaTrancePerspective = "Incorporeal Perspective.",
 	LegendValaTranceMalevolent = "The spirit world is home to many malevolent beings, and the Vala knows how to contact them. Once her access to their realm has been established, she calls upon these ill-willed spirits in hopes of receiving their help.\n\nIf she\'s successful, these spirits will harass, torment and weaken her foes. They may also spread out to affect additional entities.",
 	LegendValaWarden = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in a semi-physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. It can be beaten, but it never dies.",
-	LegendValaSpiritualBond = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, up to a maximum of 50%.\n\nThis perk does nothing unless the Vala has the Warden perk.",
+	LegendValaSpiritualBond = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, up to a maximum of 50%. The Warden also gain a scaling damage bonus.\n\nThis perk does nothing unless the Vala has the Warden perk.",
 	LegendValaThreads = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and then each attack has a chance to apply a stacking debuff. Each stack lowers maximum hitpoints and increases amount of damage taken.",
 	LegendValaPremonition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced.",
 
@@ -1427,20 +1428,21 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFieldRepairs = "Spend armor parts to repair armor on the battlefield",
 	LegendDangerPay = "Spend 10 times a units daily wage to set them at confident morale",
 	LegendPreparedForAnything = "Instruct your mercenaries how to secret additional supplies about their person during battle, granting the \'Bags and Belts\' perk to anyone you fight with.",
-	LegendBrinkOfDeath = "Use your knowledge of undeath to keep your mercenaries fighting at the brink of death, granting the \'Nine Lives\' perk to anyone you fight with.",
+	LegendBrinkOfDeath = "Use your knowledge of undeath to keep your mercenaries fighting at the brink of death, granting the \'Survivor\' trait to anyone you fight with.",
 	LegendStrictSermons = "Endlessly repeating the lessons of the old gods to your mercenaries will imbue them with faith in the heat of battle. Grants the \'Fortified Mind\' perk to anyone you fight with.",
 	LegendInfectiousRage = "The frenzy of the berserker rage is aided with clouds of herbs and ritual dances. These can be spread to your allies granting the \'Berserk\' perk to anyone you fight with.",
 	LegendTeacher = "The technqiues you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with.",
 	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body from the battlefied.",
 	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
 	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line",
-	LegendLevitate = "Levitate above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
+	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
 	LegendTeleport = "Step through the world, disapearing from one place and reappearing in another place immediately.",
 	LegendSpecialistShieldSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Melee Defense while using a shield",
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points",
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]"
+	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is incerased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

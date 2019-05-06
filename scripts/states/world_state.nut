@@ -1212,6 +1212,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		if (this.m.Campaign == "legends_vala") {
 			this.World.Tags.set("IsLegendsVala", true);
 		}
+		if (this.m.Campaign == "legends_bandit") {
+			this.World.Tags.set("IsLegendsBandit", true);
+		}
 		
 		local c = this.new("scripts/contracts/contracts/tutorial_contract");
 		c.start();
@@ -1328,6 +1331,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 					this.showCombatDialog();
 				}
 			}
+			else if (this.m.IsForcingAttack == true  && _location.isAttackable() && _location.isAlliedWithPlayer())
+			{
+				if (_location.onEnteringCombatWithPlayer())
+				{
+					this.showCombatDialog();
+				}
+			}
+
 		}
 
 		return true;
@@ -3268,15 +3279,15 @@ this.world_state <- this.inherit("scripts/states/state", {
 			break;
 
 		case 25:
-			if (!this.m.IsDeveloperModeEnabled)
-			{
-				break;
-			}
+			// if (!this.m.IsDeveloperModeEnabled)
+			// {
+			// 	break;
+			// }
 
 			if (this.m.LastTileHovered != null)
 			{
-				local faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs);
-				local party = faction.spawnEntity(this.m.LastTileHovered, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, 200);
+				local faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits);
+				local party = faction.spawnEntity(this.m.LastTileHovered, "TEST GROUP", false, this.Const.World.Spawn.BanditRoamers, 200);
 				party.getSprite("banner").setBrush("banner_orcs_04");
 				party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 				local c = party.getController();

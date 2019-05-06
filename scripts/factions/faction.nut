@@ -315,7 +315,12 @@ this.faction <- {
 
 	function getPlayerRelationAsText()
 	{
+		if (this.m.PlayerRelation <= 0)
+		{
+		this.m.PlayerRelation = 1
+		}
 		return this.Const.Strings.Relations[this.Math.min(this.Const.Strings.Relations.len() - 1, this.m.PlayerRelation / 10)];
+		
 	}
 
 	function updatePlayerRelation()
@@ -555,6 +560,40 @@ this.faction <- {
 		return party;
 	}
 
+
+	function spawnEntityDynamic( _tile, _name, _uniqueName, _template, _resources )
+	{
+		local party = this.World.spawnEntity("scripts/entity/world/party", _tile.Coords);
+		party.setFaction(this.getID());
+
+		if (_uniqueName)
+		{
+			_name = this.getUniqueName(_name);
+		}
+
+		party.setName(_name);
+		local t;
+
+		if (_template != null)
+		{
+			t = this.World.LegendsMod.assignTroops(party, _template, _resources);
+		}
+
+		party.getSprite("base").setBrush(this.m.Base);
+
+		if (t != null)
+		{
+			party.getSprite("body").setBrush(_template.Body);
+		}
+
+		if (this.m.BannerPrefix != "")
+		{
+			party.getSprite("banner").setBrush(this.m.BannerPrefix + (this.m.Banner < 10 ? "0" + this.m.Banner : this.m.Banner));
+		}
+
+		this.addUnit(party);
+		return party;
+	}
 	function getNearestSettlement( _tile, _notOfType = 0 )
 	{
 		local d = 9000;

@@ -50,6 +50,7 @@ local SlingTree = [
 		gt.Const.Perks.PerkDefs.MasterySpear,
 		gt.Const.Perks.PerkDefs.MasteryCrossbow,
 		gt.Const.Perks.PerkDefs.MasteryBow,
+		gt.Const.Perks.PerkDefs.LegendMasterySlings,
 		gt.Const.Perks.PerkDefs.MasteryThrowing
 
 	],

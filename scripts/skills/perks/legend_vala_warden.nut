@@ -139,10 +139,6 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 				this.m.WardenSummonSpent = true;
 				this.m.WardenEntity = entity;
 
-				local WardenScaling = this.new("scripts/skills/effects/legend_vala_warden_damage");
-				WardenScaling.setDamageBonus(this.getContainer().getActor().getBravery());
-				this.m.WardenEntity.getSkills().add(WardenScaling);
-
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_vala_spiritual_bond"))
 				{
 					if (!this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_spiritual_bond_effect"))
@@ -151,6 +147,10 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 						bond.setVala(this);
 						this.getContainer().getActor().getSkills().add(bond);
 					}
+
+					local WardenScaling = this.new("scripts/skills/effects/legend_vala_warden_damage");
+					WardenScaling.setDamageBonus(this.getContainer().getActor().getBravery());
+					this.m.WardenEntity.getSkills().add(WardenScaling);
 				}
 
 				local effect = {

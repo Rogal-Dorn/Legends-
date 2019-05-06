@@ -14,7 +14,7 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 	{
 		local r;
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (this.Math.rand(1, 100) <= 85)
 		{
 			r = this.Math.rand(1, 16);
 
