@@ -2068,7 +2068,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Your opponents will be brutal and endless.\n\n This is where legends are forged.\n\nSame exponential enemey scaling as expert, but with fewer and more powerful enemies."
+					text = "Your opponents will be brutal. This is where legends are forged.\n\nEach enemy gains a series of new perks. Zombies with nine lives, battleforged orcs, nimble lindwurms."
 				}
 			];
 
@@ -2082,7 +2082,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Contracts will pay more, and you\'ll be able to carry more resources at once.\n\nRecommended for players new to the game."
+					text = "Contracts will pay more, and you\'ll be able to carry more resources at once. \n\n 100%  heal and repair rate outside camp. +5% buy + 5% sell + 10% payments \n\nRecommended for players new to the game."
 				}
 			];
 
@@ -2096,7 +2096,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Provides for a balanced playing experience that can be quite challenging. Recommended for veterans of the game or the genre."
+					text = "Provides for a balanced playing experience that can be quite challenging. 66% heal and repair rate outside camp. \n\nRecommended for veterans of the game or the genre."
 				}
 			];
 
@@ -2110,7 +2110,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Contracts will pay less, and deserters will take their equipment with them.\n\nRecommended for experts in the game who want more of a challenge managing the company\'s funds and supplies."
+					text = "Contracts will pay less, and deserters will take their equipment with them.\n\n 33% heal and repair rate outside camp. -5% buy -5% sell -5% payments \n\n Recommended for experts in the game who want more of a challenge managing the company\'s funds and supplies."
 				}
 			];
 
@@ -2124,7 +2124,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Contract pay will be pitiful.\n\n Recommended for those who want the most challenging experience."
+					text = "Contract pay will be pitiful.\n\n  10% heal and repair rate outside camp. -10% buy, -10% sell, -10% payments  \n\nRecommended for those who want the most challenging experience."
 				}
 			];
 		case "menu-screen.new-campaign.EasyDifficultyBudget":
@@ -2137,7 +2137,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "You\'ll start with more crowns and resources.\n\nRecommended for new players."
+					text = "You\'ll start with more crowns and resources.\n\n 750 gold. 15/30 ammo. 10/20 meds. 10/20 armor parts. 60 stash. Plus starting bonuses. \n\nRecommended for new players."
 				}
 			];
 
@@ -2151,7 +2151,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Recommended for a balanced experience."
+					text = "Recommended for a balanced experience. \n\n 500 gold. 250 max food. 10/20 ammo. 5/10 meds. 5/10 armor parts. 30 stash. Plus starting bonuses."
 				}
 			];
 
@@ -2165,7 +2165,21 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "You\'ll start with fewer crowns and resources.\n\nRecommended for expert players."
+					text = "You\'ll start with fewer crowns and resources.\n\n 250 gold.  0/10 ammo. 0/5 meds. 0/5 armor parts. 15 stash. Plus starting bonuses.\n\nRecommended for expert players."
+				}
+			];
+		
+		case "menu-screen.new-campaign.LegendaryDifficultyBudget":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "No Starting Funds"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "You\'ll start without crowns or resources.\n\n 0 gold.  0/0 ammo. 0/0 meds. 0/0 armor parts. 5 stash. Only starting bonuses.\n\n Recommended for insane players."
 				}
 			];
 
@@ -2179,7 +2193,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Recommended for the best experience once you\'ve learned the game.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds. "
+					text = "Dangerous in Legends Beta! Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Recommended for the best experience once you\'ve learned the game.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds. "
 				}
 			];
 

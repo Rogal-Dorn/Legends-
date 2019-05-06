@@ -1211,7 +1211,8 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecialistShieldPush = "Push it",
 	LegendMasteryNets = "Net Mastery",
 	LegendSpecialistScytheSkill = "Harvest swathes",
-	LegendSpecialistScytheDamage = "Slicing arcs"
+	LegendSpecialistScytheDamage = "Slicing arcs",
+	LegendMasterySlings = "Sling Mastery"
 };
 gt.Const.Strings.PerkDescription <- {
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to stun any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply.",
@@ -1427,20 +1428,21 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFieldRepairs = "Spend armor parts to repair armor on the battlefield",
 	LegendDangerPay = "Spend 10 times a units daily wage to set them at confident morale",
 	LegendPreparedForAnything = "Instruct your mercenaries how to secret additional supplies about their person during battle, granting the \'Bags and Belts\' perk to anyone you fight with.",
-	LegendBrinkOfDeath = "Use your knowledge of undeath to keep your mercenaries fighting at the brink of death, granting the \'Nine Lives\' perk to anyone you fight with.",
+	LegendBrinkOfDeath = "Use your knowledge of undeath to keep your mercenaries fighting at the brink of death, granting the \'Survivor\' trait to anyone you fight with.",
 	LegendStrictSermons = "Endlessly repeating the lessons of the old gods to your mercenaries will imbue them with faith in the heat of battle. Grants the \'Fortified Mind\' perk to anyone you fight with.",
 	LegendInfectiousRage = "The frenzy of the berserker rage is aided with clouds of herbs and ritual dances. These can be spread to your allies granting the \'Berserk\' perk to anyone you fight with.",
 	LegendTeacher = "The technqiues you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with.",
 	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body from the battlefied.",
 	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
 	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line",
-	LegendLevitate = "Levitate above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
+	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
 	LegendTeleport = "Step through the world, disapearing from one place and reappearing in another place immediately.",
 	LegendSpecialistShieldSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Melee Defense while using a shield",
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points",
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]"
+	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is incerased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

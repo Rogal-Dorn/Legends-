@@ -123,6 +123,12 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.graverobber":
 			return gt.Const.Perks.TreeShovelLookupMap;
 			break;
+		case "background.butcher":
+			return gt.Const.Perks.TreeButcherLookupMap;
+			break;
+		case "background.female_butcher":
+			return gt.Const.Perks.TreeButcherLookupMap;
+			break;
 		case "background.lumberjack":
 			return gt.Const.Perks.TreeWoodaxeLookupMap;
 			break;

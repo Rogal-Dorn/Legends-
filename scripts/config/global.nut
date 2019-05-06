@@ -174,16 +174,16 @@ gt.Const.Difficulty <- {
 		0.9
 	],
 	HealMult = [
+		1.0,
 		0.66,
 		0.33,
-		0.1,
-		0.01
+		0.1
 	],
 	RepairMult = [
+		1.0,
 		0.66,
 		0.33,
-		0.1,
-		0.01
+		0.1
 	],
 	RetreatDefenseBonus = [
 		30,

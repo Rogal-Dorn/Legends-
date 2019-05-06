@@ -593,6 +593,183 @@ this.faction_manager <- {
 		}
 	}
 
+
+
+	function makeGoblinsFriendlyToPlayer()
+	{
+		for( local i = 0; i < this.m.Factions.len(); i = ++i )
+		{
+			if (this.m.Factions[i] == null)
+			{
+			}
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.Goblins)
+			{
+				if (this.m.Factions[i].getPlayerRelation() < 30)
+				{
+					this.m.Factions[i].setPlayerRelation(30.0);
+					this.logInfo("Making goblins friendly");
+				}
+			}
+		}
+	}
+
+	function makeBanditsFriendlyToPlayer()
+	{
+		for( local i = 0; i < this.m.Factions.len(); i = ++i )
+		{
+			if (this.m.Factions[i] == null)
+			{
+			}
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.Bandits)
+			{
+				if (this.m.Factions[i].getPlayerRelation() < 30)
+				{
+					this.m.Factions[i].setPlayerRelation(30.0);
+					this.logInfo("Making bandits friendly");
+				}
+			}
+		}
+	}
+
+	function makeZombiesFriendlyToPlayer()
+	{
+		for( local i = 0; i < this.m.Factions.len(); i = ++i )
+		{
+			if (this.m.Factions[i] == null)
+			{
+			}
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies)
+			{
+				if (this.m.Factions[i].getPlayerRelation() < 30)
+				{
+					this.m.Factions[i].setPlayerRelation(30.0);
+					this.logInfo("Making zombies friendly");
+				}
+			}
+		}
+	}
+
+	function makeUndeadFriendlyToPlayer()
+	{
+		for( local i = 0; i < this.m.Factions.len(); i = ++i )
+		{
+			if (this.m.Factions[i] == null)
+			{
+			}
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead)
+			{
+				if (this.m.Factions[i].getPlayerRelation() < 30)
+				{
+					this.m.Factions[i].setPlayerRelation(30.0);
+					this.logInfo("Making undead friendly");
+				}
+			}
+		}
+	}
+
+	function makeBeastsFriendlyToPlayer()
+	{
+		for( local i = 0; i < this.m.Factions.len(); i = ++i )
+		{
+			if (this.m.Factions[i] == null)
+			{
+			}
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.Beasts)
+			{
+				if (this.m.Factions[i].getPlayerRelation() < 30)
+				{
+					this.m.Factions[i].setPlayerRelation(30.0);
+					this.logInfo("Making beasts friendly");
+				}
+			}
+		}
+	}
+
+	function makeNoblesUnfriendlyToPlayer()
+	{
+		for( local i = 0; i < this.m.Factions.len(); i = ++i )
+		{
+			if (this.m.Factions[i] == null)
+			{
+			}
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse)
+			{
+				if (this.m.Factions[i].getPlayerRelation() > -80)
+				{
+					this.m.Factions[i].setPlayerRelation(-80.0);
+					this.logInfo("Making nobles unfriendly");
+				}
+			}
+		}
+	}
+
+	function makeRandomNoblesFriendlyToPlayer()
+	{
+		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
+		local randomHouseID = nobleHouses[this.Math.rand(0, nobleHouses.len() - 1)].getID();
+	//	local camp = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse).getNearestSettlement(this.World.State.getPlayer().getTile());
+	//	local nearestHouseID = nearestSettlement.getOwner().getID();
+	//	local destination = this.WeakTableRef(camp);
+		local settlements = this.World.EntityManager.getSettlements();
+		foreach( s in settlements )
+		{
+		if (s.getOwner() != null && s.getOwner().getID() == randomHouseID && s.isMilitary())
+			{
+			s.setDiscovered(true);
+			this.World.uncoverFogOfWar(s.getTile().Pos, 500.0);
+			}
+		}
+
+	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(80.0); 
+		this.logInfo("Making a noble house friendly");
+
+	}
+
+	function makeRandomNoblesUnfriendlyToPlayer()
+	{
+		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
+		local randomHouseID = nobleHouses[this.Math.rand(0, nobleHouses.len() - 1)].getID();
+	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-80.0); 
+		this.logInfo("Making a noble house unfriendly");
+	}
+
+
+	function makeSettlementsUnfriendlyToPlayer()
+	{
+		for( local i = 0; i < this.m.Factions.len(); i = ++i )
+		{
+			if (this.m.Factions[i] == null)
+			{
+			}
+			else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement)
+			{
+				if (this.m.Factions[i].getPlayerRelation() > -80)
+				{
+					this.m.Factions[i].setPlayerRelation(-80.0);
+					this.logInfo("Making settlement unfriendly");
+				}
+			}
+		}
+	}
+
+		function makeRandomSettlementFriendlyToPlayer()
+	{
+		local settlements = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.Settlement);
+		local randomSettlementID = settlements[this.Math.rand(0, settlements.len() - 1)].getID();
+	    this.World.FactionManager.getFaction(randomSettlementID).setPlayerRelation(50.0); 
+		this.logInfo("Making a settlement friendly");
+		local settlements = this.World.EntityManager.getSettlements();
+		foreach( s in settlements )
+		{
+		if (s.getOwner() != null && s.getOwner().getID() == randomHsettlementID)
+			{
+			s.setDiscovered(true);
+			this.World.uncoverFogOfWar(s.getTile().Pos, 500.0);
+			}
+		}
+	}
+
+
 	function onCombatFinished()
 	{
 		foreach( f in this.m.Factions )

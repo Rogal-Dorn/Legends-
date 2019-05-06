@@ -1637,6 +1637,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendInventorAnatomy,
 		Icon = "ui/perks/legend_inventor_anatomy.png",
 		IconDisabled = "ui/perks/legend_inventor_anatomy_sw.png"
+	},
+	{
+		ID = "perk.legend_mastery_slings",
+		Script = "scripts/skills/perks/legend_mastery_slings",
+		Name = this.Const.Strings.PerkName.LegendMasterySlings,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasterySlings,
+		Icon = "ui/perks/sling_03.png",
+		IconDisabled = "ui/perks/sling_bw.png"
 	}
 ];
 
@@ -1844,6 +1852,7 @@ gt.Const.Perks.PerkDefs <- {
 	LegendValaChantFury = 199,
 	LegendValaChantSenses = 200,
 	LegendSpecialistScytheSkill = 201,
-	LegendSpecialistScytheDamage = 202,
-	LegendInventorAnatomy = 203
+	LegendSpecialistScytheDamage = 202
+	LegendInventorAnatomy = 203,
+	LegendMasterySlings = 204
 };
