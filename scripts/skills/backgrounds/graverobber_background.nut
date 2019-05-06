@@ -106,11 +106,11 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/dagger"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 		else if (r == 3)
 		{

@@ -4,7 +4,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_entice";
 		this.m.Name = "Entice";
-		this.m.Description = "With a trick of the light, captivate your target in such a way that they can’t help but approach you. Requires a staff";
+		this.m.Description = "With a trick of the light, captivate your target in such a way that they can’t help but approach you. ";
 		this.m.Icon = "skills/entice.png";
 		this.m.IconDisabled = "skills/entice_bw.png";
 		this.m.Overlay = "entice";
@@ -28,7 +28,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.HitChanceBonus = 10;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 6;
@@ -195,10 +195,6 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 	}
 	function isUsable()
 	{
-		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
-		{
-			return false
-		}
 		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
