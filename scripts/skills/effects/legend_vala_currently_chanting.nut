@@ -64,7 +64,7 @@ this.legend_vala_currently_chanting <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.TargetAttractionMult *= 1.25;
+		_properties.TargetAttractionMult *= 1.33;
 	}
 
 

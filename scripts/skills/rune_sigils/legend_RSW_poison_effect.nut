@@ -16,9 +16,10 @@ this.legend_RSW_poison_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Poisoned";
 		this.m.Icon = "skills/status_effect_54.png";
 		this.m.IconMini = "status_effect_54_mini";
+		this.m.Overlay = "status_effect_54";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
-		this.m.IsStacking = true;
+		this.m.IsStacking = false;
 	}
 
 	function getDescription()
@@ -68,6 +69,8 @@ this.legend_RSW_poison_effect <- this.inherit("scripts/skills/skill", {
 		{
 			++this.m.TurnsLeft;
 		}
+
+		this.spawnIcon("status_effect_54", this.getContainer().getActor().getTile());
 	}
 
 	function onAdded()
