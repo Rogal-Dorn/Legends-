@@ -8,6 +8,7 @@ local priorityScriptFiles = [
 	scriptsConfigPath + "global",
 	scriptsConfigPath + "ui",
 	scriptsConfigPath + "strings",
+	scriptsConfigPath + "character_names",
 	scriptsConfigPath + "spawnlist_master"
 ];
 

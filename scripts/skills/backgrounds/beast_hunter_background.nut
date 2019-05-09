@@ -3,7 +3,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.beast_hunter";
+		this.m.ID = "background.beast_slayer";
 		this.m.Name = "Beast Slayer";
 		this.m.Icon = "ui/backgrounds/background_57.png";
 		this.m.BackgroundDescription = "Beast Slayers are used to expertly hunt monstrous beasts at all ranges.";
@@ -72,7 +72,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		local c = {
 			Hitpoints = [
 				0,
-				0
+				3
 			],
 			Bravery = [
 				5,
@@ -106,6 +106,26 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		return c;
 	}
 
+	function onSetAppearance()
+	{
+		local actor = this.getContainer().getActor();
+		local tattoo_body = actor.getSprite("tattoo_body");
+		local tattoo_head = actor.getSprite("tattoo_head");
+
+		if (this.Math.rand(1, 100) <= 75)
+		{
+			local body = actor.getSprite("body");
+			tattoo_body.setBrush("scar_02_" + body.getBrush().Name);
+			tattoo_body.Visible = true;
+		}
+
+		if (this.Math.rand(1, 100) <= 75)
+		{
+			tattoo_head.setBrush("scar_02_head");
+			tattoo_head.Visible = true;
+		}
+	}
+
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
@@ -129,6 +149,11 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		else if (r == 4)
 		{
 			items.equip(this.new("scripts/items/weapons/javelin"));
+		}
+
+		if (this.Math.rand(1, 100) <= 50 && items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		{
+			items.equip(this.new("scripts/items/tools/throwing_net"));
 		}
 
 		r = this.Math.rand(0, 2);

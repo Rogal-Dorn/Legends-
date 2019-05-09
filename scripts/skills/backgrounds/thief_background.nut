@@ -27,7 +27,6 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"trait.fat",
 			"trait.strong",
 			"trait.hesitant",
-			"trait.slow",
 			"trait.insecure",
 			"trait.clubfooted",
 			"trait.short_sighted",

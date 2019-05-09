@@ -119,7 +119,8 @@ var TooltipIdentifier =
 			EvilGreenskins: 'menu-screen.new-campaign.EvilGreenskins',
 			EvilUndead: 'menu-screen.new-campaign.EvilUndead',
 			EvilExtraLate: 'menu-screen.new-campaign.EvilExtraLate',
-			EvilPermanentDestruction: 'menu-screen.new-campaign.EvilPermanentDestruction'
+            EvilPermanentDestruction: 'menu-screen.new-campaign.EvilPermanentDestruction',
+            StartingScenario: 'menu-screen.new-campaign.StartingScenario'
 		},
 
 		Options:
@@ -142,6 +143,7 @@ var TooltipIdentifier =
 			AlwaysHideTrees: 'menu-screen.options.AlwaysHideTrees',
 			AutoEndTurns: 'menu-screen.options.AutoEndTurns',
             RestoreEquipment: 'menu-screen.options.RestoreEquipment',
+            AutoPauseAfterCity: 'menu-screen.options.AutoPauseAfterCity',
 
             HardwareSound: 'menu-screen.options.HardwareSound',
 		}

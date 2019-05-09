@@ -125,17 +125,16 @@ var TacticalScreenTurnSequenceBarModule = function()
 	// timing
 	this.mFadeInDuration                                 = 150;
 	this.mFadeOutDuration                                = 250;
-	this.mFadeOutDurationIfHiddenToPlayer                = 60;//90;
+	this.mFadeOutDurationIfHiddenToPlayer                = 60;
 	this.mSlideInDuration                                = 100;
 	this.mSlideOutDuration                               = 260;
-	this.mSlideOutDurationIfHiddenToPlayer				 = 30;//90;
-    this.mResizeFirstSlotTime                            = 200;
+	this.mSlideOutDurationIfHiddenToPlayer				 = 30;
+    this.mResizeFirstSlotTime                            = 180;
 
-    this.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer = 30;//60;
+    this.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer = 30;
 	this.mResizeFirstSlotImageTime                       = 180;
 	this.mSelectionFadeInDuration                        = 100;
 	this.mSelectionFadeOutDuration                       = 100;
-	//this.mHoverAnimationDuration                         = 60;
 	this.mProgressbarMovementDuration                    = 600;
 	this.mSkillPreviewFadeIn                             = 200;
 	this.mSkillPreviewFadeOut                            = 200;

@@ -108,7 +108,7 @@ this.ai_corruption <- this.inherit("scripts/ai/tactical/behavior", {
 			myTile
 		];
 		local nearestOpponentDist = 9000;
-		local advancedAI = false;
+		local advancedAI = !this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100;
 
 		foreach( o in _targets )
 		{

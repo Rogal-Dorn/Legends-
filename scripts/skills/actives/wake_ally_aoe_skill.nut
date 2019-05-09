@@ -9,12 +9,12 @@ this.wake_ally_aoe_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_118_sw.png";
 		this.m.Overlay = "active_118";
 		this.m.SoundOnHit = [
-			"sounds/enemies/wake_up_01.wav",
-			"sounds/enemies/wake_up_02.wav",
-			"sounds/enemies/wake_up_03.wav",
-			"sounds/enemies/wake_up_04.wav",
-			"sounds/enemies/wake_up_05.wav",
-			"sounds/enemies/wake_up_06.wav"
+			"sounds/enemies/dlc2/wake_up_01.wav",
+			"sounds/enemies/dlc2/wake_up_02.wav",
+			"sounds/enemies/dlc2/wake_up_03.wav",
+			"sounds/enemies/dlc2/wake_up_04.wav",
+			"sounds/enemies/dlc2/wake_up_05.wav",
+			"sounds/enemies/dlc2/wake_up_06.wav"
 		];
 		this.m.SoundVolume = 0.9;
 		this.m.Type = this.Const.SkillType.Active;

@@ -10,12 +10,12 @@ this.nightmare_touch_zoc_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_117.png";
 		this.m.Overlay = "active_117";
 		this.m.SoundOnUse = [
-			"sounds/enemies/alp_nightmare_01.wav",
-			"sounds/enemies/alp_nightmare_02.wav",
-			"sounds/enemies/alp_nightmare_03.wav",
-			"sounds/enemies/alp_nightmare_04.wav",
-			"sounds/enemies/alp_nightmare_05.wav",
-			"sounds/enemies/alp_nightmare_06.wav"
+			"sounds/enemies/dlc2/alp_nightmare_01.wav",
+			"sounds/enemies/dlc2/alp_nightmare_02.wav",
+			"sounds/enemies/dlc2/alp_nightmare_03.wav",
+			"sounds/enemies/dlc2/alp_nightmare_04.wav",
+			"sounds/enemies/dlc2/alp_nightmare_05.wav",
+			"sounds/enemies/dlc2/alp_nightmare_06.wav"
 		];
 		this.m.IsUsingActorPitch = true;
 		this.m.Type = this.Const.SkillType.Active;

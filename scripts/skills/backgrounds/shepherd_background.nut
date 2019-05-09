@@ -72,7 +72,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			RangedSkill = [
 				5,
-				5
+				7
 			],
 			MeleeDefense = [
 				0,
@@ -94,6 +94,15 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
+
+		if (this.Const.DLC.Wildmen)
+		{
+			if (this.Math.rand(1, 100) <= 66)
+			{
+				items.equip(this.new("scripts/items/weapons/staff_sling"));
+			}
+		}
+
 		r = this.Math.rand(0, 2);
 
 		if (r == 0)

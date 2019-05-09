@@ -65,6 +65,7 @@ MainMenuScreen.prototype.onModuleOnConnectionCalled = function (_module)
         (this.mLoadCampaignModule !== null && this.mLoadCampaignModule.isConnected()) &&
 		(this.mNewCampaignModule !== null && this.mNewCampaignModule.isConnected()) &&
         (this.mOptionsMenuModule !== null && this.mOptionsMenuModule.isConnected()) &&
+        (this.mCreditsModule !== null && this.mCreditsModule.isConnected()) &&
         (this.mScenarioMenuModule !== null && this.mScenarioMenuModule.isConnected()))
     {
         this.notifyBackendOnConnected();
@@ -101,6 +102,15 @@ MainMenuScreen.prototype.createDIV = function (_parentDiv)
     {
         _image.fitImageToParent();
     }, 'display-none');
+
+    this.mBackgroundImage.velocity("finish", true).velocity({ scaleX: 1.45, scaleY: 1.45, translateY: 50.0 },
+    {
+        duration: 0
+    }).velocity("finish", true).velocity({ scaleX: 1.0, scaleY: 1.0, translateY: 0.0 },
+    {
+        duration: 25000,
+        easing: 'ease-out'
+    });
 
     this.mVersion = $('<div class="text-font-medium font-color-subtitle version"/>');
     this.mContainer.append(this.mVersion);

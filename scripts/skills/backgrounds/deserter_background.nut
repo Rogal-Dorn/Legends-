@@ -12,6 +12,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HiringCost = 100;
 		this.m.DailyCost = 11;
 		this.m.Excluded = [
+			"trait.teamplayer",
 			"trait.impatient",
 			"trait.clubfooted",
 			"trait.fearless",
@@ -43,6 +44,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_00";
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
+		this.m.IsLowborn = true;
 	}
 
 	function getTooltip()

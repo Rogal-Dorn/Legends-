@@ -58,7 +58,6 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
-		this.m.IsLowborn = true;
 	}
 
 	function getTooltip()
