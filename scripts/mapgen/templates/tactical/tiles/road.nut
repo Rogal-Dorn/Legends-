@@ -44,7 +44,7 @@ this.road <- this.inherit("scripts/mapgen/tactical_template", {
 		{
 			tile.spawnObject(this.m.Objects[this.Math.rand(0, this.m.Objects.len() - 1)]);
 		}
-		else
+		else if (this.m.Details.len() > 0)
 		{
 			while (this.Math.rand(0, 100) < this.m.ChanceToSpawnDetails && n++ < this.m.LimitOfSpawnedDetails)
 			{

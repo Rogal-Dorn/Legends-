@@ -39,17 +39,21 @@ this.make_nobles_aware_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onReward()
 	{
-		this.World.Assets.updateLook(2);
 		this.m.SuccessList.push({
 			id = 10,
 			icon = "ui/icons/special.png",
 			text = "Nobles will now give you contracts"
 		});
-		this.m.SuccessList.push({
-			id = 10,
-			icon = "ui/icons/special.png",
-			text = "Your look on the worldmap has been updated"
-		});
+
+		if (!this.World.Assets.getOrigin().isFixedLook())
+		{
+			this.World.Assets.updateLook(2);
+			this.m.SuccessList.push({
+				id = 10,
+				icon = "ui/icons/special.png",
+				text = "Your look on the worldmap has been updated"
+			});
+		}
 	}
 
 	function onSerialize( _out )

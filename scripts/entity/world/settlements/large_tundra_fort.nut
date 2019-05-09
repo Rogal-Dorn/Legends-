@@ -121,10 +121,10 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/fortified_outpost_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 2, true);
 		}
@@ -135,10 +135,10 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fortified_outpost_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 2, true);
 		}
@@ -146,22 +146,22 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 		if (this.Math.rand(1, 100) <= 70)
 		{
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/pig_farm_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 1);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/brewery_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 1);
 		}
 		else
 		{
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/pig_farm_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 1);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/brewery_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 1);
 		}
@@ -169,18 +169,18 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", [
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Hills
 		]);
 		this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", [
-			this.Const.World.TerrainType.Highlands,
+			this.Const.World.TerrainType.Tundra,
 			this.Const.World.TerrainType.Hills
 		], [
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		]);
 		this.buildAttachedLocation(this.Math.rand(1, 1), "scripts/entity/world/attached_location/workshop_location", [
-			this.Const.World.TerrainType.Highlands,
+			this.Const.World.TerrainType.Tundra,
 			this.Const.World.TerrainType.Hills
 		], []);
 	}

@@ -43,13 +43,6 @@ this.guard_order <- this.inherit("scripts/ai/world/world_behavior", {
 	{
 		if (_entity.getTile().ID == this.m.TargetTile.ID)
 		{
-			if (_entity.getName() == "3rd Kammfeste Company")
-			{
-				this.logInfo("guarding");
-				this.logInfo("known opponent: " + this.getController().hasKnownOpponent());
-				this.logInfo("time up: " + (this.m.WaitTimeStart + this.m.WaitTime <= this.Time.getVirtualTimeF()));
-			}
-
 			_entity.setOrders("Guarding");
 
 			if (this.m.WaitTimeStart == 0)

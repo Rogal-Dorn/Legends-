@@ -100,16 +100,39 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		local items = this.getContainer().getActor().getItems();
 		local r;
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (this.Const.DLC.Wildmen)
 		{
-			items.equip(this.new("scripts/items/weapons/short_bow"));
+			r = this.Math.rand(1, 100);
+
+			if (r <= 50)
+			{
+				items.equip(this.new("scripts/items/weapons/short_bow"));
+				items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+			}
+			else if (r <= 80)
+			{
+				items.equip(this.new("scripts/items/weapons/staff_sling"));
+			}
+			else
+			{
+				items.equip(this.new("scripts/items/weapons/wonky_bow"));
+				items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+			}
 		}
 		else
 		{
-			items.equip(this.new("scripts/items/weapons/wonky_bow"));
+			if (this.Math.rand(1, 100) <= 75)
+			{
+				items.equip(this.new("scripts/items/weapons/short_bow"));
+			}
+			else
+			{
+				items.equip(this.new("scripts/items/weapons/wonky_bow"));
+			}
+
+			items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		}
 
-		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		r = this.Math.rand(0, 4);
 
 		if (r == 0)

@@ -29,6 +29,7 @@ var OptionsMenuModuleGameplayPanel = function(_dataSource)
 	this.mAlwaysHideTreesCheckbox		= null;
 	this.mAutoEndTurnCheckbox			= null;
 	this.mRestoreEquipmentCheckbox		= null;
+    this.mAutoPauseAfterCityCheckbox    = null;
 
 	this.mCameraFollowLabel				= null;
 	this.mCameraAdjustLevelLabel		= null;
@@ -39,7 +40,8 @@ var OptionsMenuModuleGameplayPanel = function(_dataSource)
 	this.mAutoLootLabel					= null;
 	this.mAlwaysHideTreesLabel			= null;
 	this.mAutoEndTurnLabel				= null;
-	this.mRestoreEquipmentLabel			= null;
+    this.mRestoreEquipmentLabel         = null;
+    this.mAutoPauseAfterCityLabel       = null;
 
     this.registerDatasourceListener();
 };
@@ -203,7 +205,20 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-	});
+    });
+
+    control = $('<div class="control"></div>');
+    row.append(control);
+    this.mAutoPauseAfterCityCheckbox = $('<input type="checkbox" id="cb-auto-pause-after-city" name="auto-pause-after-city" />');
+    control.append(this.mAutoPauseAfterCityCheckbox);
+    var autoPauseAfterCityLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-auto-pause-after-city">Auto-Pause After Leaving City</label>');
+    this.mAutoPauseAfterCityLabel = autoPauseAfterCityLabel;
+    control.append(autoPauseAfterCityLabel);
+    this.mAutoPauseAfterCityCheckbox.iCheck({
+        checkboxClass: 'icheckbox_flat-orange',
+        radioClass: 'iradio_flat-orange',
+        increaseArea: '30%'
+    });
 
     this.setupEventHandler();
 };
@@ -299,7 +314,13 @@ OptionsMenuModuleGameplayPanel.prototype.setupEventHandler = function ()
 	{
 		var self = _event.data;
 		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.RestoreEquipment, self.mRestoreEquipmentCheckbox.prop('checked') === true);
-	});
+    });
+
+    this.mAutoPauseAfterCityCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+    {
+        var self = _event.data;
+        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity, self.mAutoPauseAfterCityCheckbox.prop('checked') === true);
+    });
 };
 
 /*
@@ -323,7 +344,8 @@ OptionsMenuModuleGameplayPanel.prototype.bindTooltips = function ()
 	this.mAutoLootLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoLoot });
 	this.mAlwaysHideTreesLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AlwaysHideTrees });
 	this.mAutoEndTurnLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoEndTurns });
-	this.mRestoreEquipmentLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.RestoreEquipment });
+    this.mRestoreEquipmentLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.RestoreEquipment });
+    this.mAutoPauseAfterCityLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoPauseAfterCity });
 };
 
 OptionsMenuModuleGameplayPanel.prototype.unbindTooltips = function ()
@@ -337,7 +359,8 @@ OptionsMenuModuleGameplayPanel.prototype.unbindTooltips = function ()
 	this.mAutoLootLabel.unbindTooltip();
 	this.mAlwaysHideTreesLabel.unbindTooltip();
 	this.mAutoEndTurnLabel.unbindTooltip();
-	this.mRestoreEquipmentLabel.unbindTooltip();
+    this.mRestoreEquipmentLabel.unbindTooltip();
+    this.mAutoPauseAfterCityLabel.unbindTooltip();
 };
 
 
@@ -476,7 +499,12 @@ OptionsMenuModuleGameplayPanel.prototype.onOptionsLoaded = function (_dataSource
 	if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.RestoreEquipment in gameplayOptions)
 	{
 		this.selectCheckboxOption(this.mRestoreEquipmentCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.RestoreEquipment]);
-	}
+    }
+
+    if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity in gameplayOptions)
+    {
+        this.selectCheckboxOption(this.mAutoPauseAfterCityCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity]);
+    }
 };
 
 OptionsMenuModuleGameplayPanel.prototype.onDefaultsLoaded = function (_dataSource, _data)

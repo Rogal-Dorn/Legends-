@@ -20,7 +20,7 @@ gt.Const.TipOfTheDay <- [
 	"Bows perform better against unarmored targets.",
 	"Daggers can be used to attack weak spots in armor and deal damage directly to hitpoints.",
 	"Ranged weapons work best when firing into groups of enemies - they are bound to hit someone.",
-	"Consider forming a shieldwall when overwhelmed.",
+	"Consider forming a shieldwall when surrounded.",
 	"Conserve your stamina when in prolonged engagements.",
 	"Success in Battle Brothers is also about picking the right fights.",
 	"Undead are unaffected by fatigue and morale.",
@@ -37,6 +37,7 @@ gt.Const.TipOfTheDay <- [
 	"Losing is fun.",
 	"The higher their level, the more your men will demand in wages.",
 	"Selling in rich and big cities will net you the most crowns for your goods.",
+	"Use throwing nets to restrict the movement of particularly dangerous enemies.",
 	"Use trading to supplement your income.",
 	"Learn the \'Rotation\' or \'Footwork\' perks for additional mobility in battle.",
 	"View range is decreased at night, both in combat and on the worldmap.",
@@ -62,7 +63,6 @@ gt.Const.TipOfTheDay <- [
 	"Wiedergangers are the dead walking again.",
 	"Difficult terrain, such as mountains and swamp, has your men use more supplies on the worldmap.",
 	"If you can not win, retreat to fight another day.",
-	"Try to reach the very edges of the map before retreating, or you\'ll risk your men sustaining serious injuries.",
 	"Retreat. Flee. Don\'t fight every battle to the death.",
 	"Use the spacebar key to pause on the worldmap.",
 	"Elevated terrain like hills and mountains allow you to see farther on the worldmap.",
@@ -94,10 +94,10 @@ gt.Const.TipOfTheDay <- [
 	"Use wardogs to hunt down elusive or fleeing enemies.",
 	"Use a trained falcon to discover hidden enemies in difficult terrain.",
 	"Cleavers can inflict bleeding wounds.",
-	"Fulfilling ambitions will raise everyone\'s mood and grant you unique rewards.",
+	"Fulfilling ambitions will raise everyone\'s mood and grant you renown, as well as some unique rewards.",
 	"Use CTRL + Left Click to attack allied parties on the worldmap. This only works if you are currently unemployed.",
 	"Your men will interact with each other differently depending on their backgrounds and traits.",
-	"Stunned characters get no attack of opportunity when moving inside their zone of control.",
+	"Stunned characters get no attack of opportunity when someone moves inside their zone of control.",
 	"Try playing a campaign in veteran mode once you\'ve gained some experience - it\'s the recommended difficulty.",
 	"The minimum hit chance for any attack is 5%, and the maximum hit chance for any attack is 95%.",
 	"Characters may sometimes be struck down during combat, but not outright killed, and will survive with a permanent injury.",
@@ -106,7 +106,9 @@ gt.Const.TipOfTheDay <- [
 	"You can enable faster AI turns in the options menu.",
 	"Trees can be hidden in combat using the \'T\' key.",
 	"Higher renown will unlock more difficult contracts and better pay.",
-	"If your plan can fail with bad luck, maybe it isn\'t good enough of a plan."
+	"If your plan can fail with bad luck, maybe it isn\'t good enough of a plan.",
+	"Do the job. Survive. Get paid.",
+	"If a character waits their turn, their position in the turn order of the next round is determined with a penalty of 25% to Initiative."
 ];
 gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_01.jpg",
@@ -115,6 +117,7 @@ gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_03.jpg",
 	"ui/screens/loading_screen_04.jpg",
 	"ui/screens/loading_screen_04.jpg",
-	"ui/screens/loading_screen_07.jpg"
+	"ui/screens/loading_screen_07.jpg",
+	"ui/screens/loading_screen_08.jpg"
 ];
 

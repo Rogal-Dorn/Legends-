@@ -113,13 +113,13 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		{
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/wool_spinner_location", [
 				this.Const.World.TerrainType.Plains,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Plains
 			], 1, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/brewery_location", [
 				this.Const.World.TerrainType.Plains,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Plains
 			], 1, true);
@@ -128,13 +128,13 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		{
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/wool_spinner_location", [
 				this.Const.World.TerrainType.Plains,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Plains
 			], 1, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/brewery_location", [
 				this.Const.World.TerrainType.Plains,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Plains
 			], 1, true);
@@ -147,14 +147,14 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/militia_trainingcamp_location", [
 				this.Const.World.TerrainType.Plains,
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, true);
 		}
 		else
@@ -164,14 +164,14 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/militia_trainingcamp_location", [
 				this.Const.World.TerrainType.Plains,
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, true);
 		}
 
@@ -189,7 +189,7 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.AutumnForest,
 			this.Const.World.TerrainType.LeaveForest,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [], 2);
 	}
 

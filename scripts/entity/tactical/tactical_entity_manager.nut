@@ -12,8 +12,7 @@ this.tactical_entity_manager <- {
 		IsEnemyRetreating = false,
 		IsLineVSLine = false,
 		CombatResult = this.Const.Tactical.CombatResult.None,
-		LastCombatResult = this.Const.Tactical.CombatResult.None,
-		IsDLCCompatible = true
+		LastCombatResult = this.Const.Tactical.CombatResult.None
 	},
 	function getInstancesOfFaction( _f )
 	{
@@ -104,13 +103,13 @@ this.tactical_entity_manager <- {
 
 		if (this.Tactical.State.isScenarioMode())
 		{
-			for( local i = this.Const.Faction.Player + 1; i != this.Const.Faction.COUNT; i = ++i )
+			for( local i = this.Const.Faction.Player + 2; i != this.Const.Faction.COUNT; i = ++i )
 			{
 				if (this.Const.FactionAlliance[i].find(this.Const.Faction.Player) == null)
 				{
 					foreach( e in this.m.Instances[i] )
 					{
-						if (!(e.isNonCombatant() || e.getAIAgent().getOrders().IsRetreating || e.getMoraleState() == this.Const.MoraleState.Fleeing || e.getXPValue() == 0))
+						if (!e.isNonCombatant() && !e.getAIAgent().getOrders().IsRetreating && e.getMoraleState() != this.Const.MoraleState.Fleeing && e.getXPValue() != 0)
 						{
 							return;
 						}
@@ -120,13 +119,13 @@ this.tactical_entity_manager <- {
 		}
 		else
 		{
-			for( local i = 0; i != this.World.FactionManager.getFactions().len(); i = ++i )
+			for( local i = this.Const.Faction.Player + 2; i != this.World.FactionManager.getFactions().len(); i = ++i )
 			{
 				if (!this.World.FactionManager.isAlliedWithPlayer(i))
 				{
 					foreach( e in this.m.Instances[i] )
 					{
-						if (!(e.isNonCombatant() || e.getAIAgent().getOrders().IsRetreating || e.getMoraleState() == this.Const.MoraleState.Fleeing || e.getXPValue() == 0))
+						if (!e.isNonCombatant() && !e.getAIAgent().getOrders().IsRetreating && e.getMoraleState() != this.Const.MoraleState.Fleeing && e.getXPValue() != 0)
 						{
 							return;
 						}
@@ -875,7 +874,7 @@ this.tactical_entity_manager <- {
 		this.Time.setRound(0);
 		this.World.Assets.updateFormation();
 		local isPlayerInFormation = false;
-		local all_players = this.World.getPlayerRoster().getAll();
+		local all_players = _properties.IsUsingSetPlayers ? _properties.Players : this.World.getPlayerRoster().getAll();
 		local players = [];
 
 		foreach( e in _properties.TemporaryEnemies )
@@ -890,7 +889,7 @@ this.tactical_entity_manager <- {
 
 		foreach( p in all_players )
 		{
-			if (p.getPlaceInFormation() > 17)
+			if (!_properties.IsUsingSetPlayers && p.getPlaceInFormation() > 17)
 			{
 				continue;
 			}
@@ -908,7 +907,7 @@ this.tactical_entity_manager <- {
 
 			num = ++num;
 
-			if (num >= 12)
+			if (num >= this.World.Assets.getBrothersMaxInCombat())
 			{
 				break;
 			}
@@ -1133,7 +1132,18 @@ this.tactical_entity_manager <- {
 				e.Callback(entity, "Tag" in e ? e.Tag : null);
 			}
 
+			if (e.Variant != 0)
+			{
+				entity.makeMiniboss();
+			}
+
 			entity.assignRandomEquipment();
+
+			if (("Name" in e) && e.Name != "")
+			{
+				entity.setName(e.Name);
+				entity.m.IsGeneratingKillName = false;
+			}
 
 			if (!this.World.getTime().IsDaytime && entity.getBaseProperties().IsAffectedByNight)
 			{
@@ -1211,7 +1221,18 @@ this.tactical_entity_manager <- {
 				e.Callback(entity, "Tag" in e ? e.Tag : null);
 			}
 
+			if (e.Variant != 0)
+			{
+				entity.makeMiniboss();
+			}
+
 			entity.assignRandomEquipment();
+
+			if (("Name" in e) && e.Name != "")
+			{
+				entity.setName(e.Name);
+				entity.m.IsGeneratingKillName = false;
+			}
 
 			if (!this.World.getTime().IsDaytime && entity.getBaseProperties().IsAffectedByNight)
 			{
@@ -1235,7 +1256,7 @@ this.tactical_entity_manager <- {
 			false,
 			false
 		];
-		flanks.resize(4, false);
+		local barbarians = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians);
 
 		for( local i = 0; i < dir_row_offset.len(); i = ++i )
 		{
@@ -1267,6 +1288,16 @@ this.tactical_entity_manager <- {
 					{
 						dir = ++dir;
 						backup_dir = dir;
+
+						if (!this.Tactical.State.isScenarioMode() && barbarians != null && e.Faction == barbarians.getID() && this.Math.rand(1, 100) <= 50)
+						{
+							flanks[dir] = true;
+
+							for( local i = 0; i < dir_row_offset.len(); i = ++i )
+							{
+								dir_row_offset[dir][i] = max_per_row;
+							}
+						}
 					}
 					else
 					{
@@ -1352,11 +1383,11 @@ this.tactical_entity_manager <- {
 
 					if (!this.Tactical.isValidTileSquare(x, y) || !this.Tactical.getTileSquare(x, y).IsEmpty || this.isTileIsolated(this.Tactical.getTileSquare(x, y)))
 					{
-						if (current_row < row_offset.len() - 1 && (current_row == 1 && row_offset[current_row] == 0 && flanks[dir] || (current_row != 1 || !flanks[dir]) && row_offset[current_row] > max_per_row))
+						if (current_row < row_offset.len() - 1 && (row_offset[current_row] == 0 && flanks[dir] || !flanks[dir] && row_offset[current_row] > max_per_row))
 						{
 							current_row = ++current_row;
 						}
-						else if (current_row == 1 && flanks[dir])
+						else if (flanks[dir])
 						{
 							if (row_offset[current_row] <= 0)
 							{
@@ -1394,7 +1425,18 @@ this.tactical_entity_manager <- {
 					e.Callback(entity, "Tag" in e ? e.Tag : null);
 				}
 
+				if (e.Variant != 0)
+				{
+					entity.makeMiniboss();
+				}
+
 				entity.assignRandomEquipment();
+
+				if (("Name" in e) && e.Name != "")
+				{
+					entity.setName(e.Name);
+					entity.m.IsGeneratingKillName = false;
+				}
 
 				if (!this.World.getTime().IsDaytime && entity.getBaseProperties().IsAffectedByNight)
 				{
@@ -1448,7 +1490,18 @@ this.tactical_entity_manager <- {
 				e.Callback(entity, "Tag" in e ? e.Tag : null);
 			}
 
+			if (e.Variant != 0)
+			{
+				entity.makeMiniboss();
+			}
+
 			entity.assignRandomEquipment();
+
+			if (("Name" in e) && e.Name != "")
+			{
+				entity.setName(e.Name);
+				entity.m.IsGeneratingKillName = false;
+			}
 
 			if (!this.World.getTime().IsDaytime && entity.getBaseProperties().IsAffectedByNight)
 			{

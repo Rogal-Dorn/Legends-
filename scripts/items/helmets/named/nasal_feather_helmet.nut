@@ -13,7 +13,6 @@ this.nasal_feather_helmet <- this.inherit("scripts/items/helmets/named/named_hel
 			"Protector"
 		];
 		this.m.ShowOnCharacter = true;
-		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 		this.m.Variant = 51;

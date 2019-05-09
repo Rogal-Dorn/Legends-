@@ -34,14 +34,30 @@ this.perk_head_hunter <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.m.SkillCount = this.Const.SkillCounter;
+		local dirty = false;
 
 		if (_bodyPart == this.Const.BodyPart.Head)
 		{
+			if (this.m.Stacks != 0)
+			{
+				dirty = true;
+			}
+
 			this.m.Stacks = 0;
 		}
 		else
 		{
 			++this.m.Stacks;
+
+			if (this.m.Stacks == 1)
+			{
+				dirty = true;
+			}
+		}
+
+		if (dirty)
+		{
+			this.getContainer().getActor().setDirty(true);
 		}
 	}
 

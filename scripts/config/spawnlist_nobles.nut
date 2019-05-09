@@ -2529,6 +2529,64 @@ gt.Const.World.Spawn.NobleCaravan <- [
 				Num = 2
 			}
 		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.5,
+		VisibilityMult = 1.0,
+		VisionMult = 0.25,
+		Body = "cart_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
+				Num = 2
+			}
+		]
 	}
 ];
 function onCostCompare( _t1, _t2 )

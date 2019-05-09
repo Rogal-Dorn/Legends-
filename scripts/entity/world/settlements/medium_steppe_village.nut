@@ -100,7 +100,7 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/winery_location", [
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Hills
 			], 1);
@@ -112,7 +112,7 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 2);
 		}
 		else
@@ -120,7 +120,7 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/winery_location", [
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Hills
 			], 1);
@@ -132,21 +132,21 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 2);
 		}
 
 		this.buildAttachedLocation(this.Math.rand(1, 2), "scripts/entity/world/attached_location/dye_maker_location", [
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], []);
 		this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/gatherers_hut_location", [
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Steppe
 		]);
@@ -155,7 +155,7 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Steppe
 		]);
@@ -164,7 +164,7 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [], 3, true);
 	}
 

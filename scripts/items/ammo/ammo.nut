@@ -6,7 +6,8 @@ this.ammo <- this.inherit("scripts/items/item", {
 		IconEmpty = "",
 		AmmoType = this.Const.Items.AmmoType.None,
 		Ammo = 0.0,
-		AmmoMax = 0.0
+		AmmoMax = 0.0,
+		AmmoCost = 1
 	},
 	function getAmmo()
 	{
@@ -26,6 +27,11 @@ this.ammo <- this.inherit("scripts/items/item", {
 	function setAmmo( _a )
 	{
 		this.m.Ammo = _a;
+	}
+
+	function getAmmoCost()
+	{
+		return this.m.AmmoCost;
 	}
 
 	function isAmountShown()

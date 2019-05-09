@@ -12,6 +12,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		RangeIdeal = 1,
 		Ammo = 0,
 		AmmoMax = 0,
+		AmmoCost = 3,
 		ShieldDamage = 0,
 		RegularDamage = 0,
 		RegularDamageMax = 0,
@@ -20,6 +21,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		DirectDamageAdd = 0.0,
 		ChanceToHitHead = 0,
 		AdditionalAccuracy = 0,
+		FatigueOnSkillUse = 0,
 		StaminaModifier = 0,
 		IsDoubleGrippable = false,
 		IsAgainstShields = false,
@@ -99,6 +101,11 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function setAmmo( _a )
 	{
 		this.m.Ammo = _a;
+	}
+
+	function getAmmoCost()
+	{
+		return this.m.AmmoCost;
 	}
 
 	function isAmountShown()
@@ -313,6 +320,25 @@ this.weapon <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		if (this.m.FatigueOnSkillUse > 0)
+		{
+			result.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Weapon skills build up [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.FatigueOnSkillUse + "[/color] more fatigue"
+			});
+		}
+		else if (this.m.FatigueOnSkillUse < 0)
+		{
+			result.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Weapon skills build up [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.FatigueOnSkillUse + "[/color] less fatigue"
+			});
+		}
+
 		if (this.m.AmmoMax > 0)
 		{
 			if (this.m.Ammo != 0)
@@ -351,7 +377,8 @@ this.weapon <- this.inherit("scripts/items/item", {
 		}
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
-		return (this.m.AmmoMax == 0 || isPlayer || this.m.Ammo > 0 && this.getCurrentSlotType() != this.Const.ItemSlot.Bag) && (this.m.Condition >= 12 || this.m.ConditionMax <= 1 || isPlayer || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary)) && (isPlayer || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90);
+		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
+		return (this.m.AmmoMax == 0 || isPlayer || this.m.Ammo > 0 && this.getCurrentSlotType() != this.Const.ItemSlot.Bag) && (this.m.Condition >= 12 || this.m.ConditionMax <= 1 || isPlayer || isLucky || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary)) && (isPlayer || isLucky || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90);
 	}
 
 	function consumeAmmo()
@@ -397,6 +424,16 @@ this.weapon <- this.inherit("scripts/items/item", {
 		if (changed)
 		{
 			this.getContainer().updateAppearance();
+		}
+	}
+
+	function addSkill( _skill )
+	{
+		this.item.addSkill(_skill);
+
+		if (_skill.isType(this.Const.SkillType.Active))
+		{
+			_skill.setFatigueCost(this.Math.max(0, _skill.getFatigueCostRaw() + this.m.FatigueOnSkillUse));
 		}
 	}
 
@@ -534,6 +571,11 @@ this.weapon <- this.inherit("scripts/items/item", {
 		this.item.onDeserialize(_in);
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
 		this.m.Ammo = _in.readU16();
+
+		if (this.m.Ammo != 0 && this.m.AmmoMax == 0)
+		{
+			this.m.AmmoMax = this.m.Ammo;
+		}
 	}
 
 });

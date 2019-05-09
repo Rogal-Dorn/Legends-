@@ -69,6 +69,12 @@ this.donkey <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.Entities.addCorpse(_tile);
 		}
 
+		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
+		{
+			local loot = this.new("scripts/items/supplies/strange_meat_item");
+			loot.drop(_tile);
+		}
+
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 
 		if (this.m.WorldTroop != null && ("Party" in this.m.WorldTroop) && this.m.WorldTroop.Party != null)
@@ -110,7 +116,7 @@ this.donkey <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToPoison = true;
 		b.IsAffectedByNight = false;
 		b.IsMovable = false;
-		b.TargetAttractionMult = 1.5;
+		b.TargetAttractionMult = 1.25;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

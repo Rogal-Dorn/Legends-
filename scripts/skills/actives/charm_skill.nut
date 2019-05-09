@@ -31,16 +31,16 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_120.png";
 		this.m.Overlay = "active_120";
 		this.m.SoundOnUse = [
-			"sounds/enemies/hexe_charm_kiss_01.wav",
-			"sounds/enemies/hexe_charm_kiss_02.wav",
-			"sounds/enemies/hexe_charm_kiss_03.wav",
-			"sounds/enemies/hexe_charm_kiss_04.wav"
+			"sounds/enemies/dlc2/hexe_charm_kiss_01.wav",
+			"sounds/enemies/dlc2/hexe_charm_kiss_02.wav",
+			"sounds/enemies/dlc2/hexe_charm_kiss_03.wav",
+			"sounds/enemies/dlc2/hexe_charm_kiss_04.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/enemies/hexe_charm_chimes_01.wav",
-			"sounds/enemies/hexe_charm_chimes_02.wav",
-			"sounds/enemies/hexe_charm_chimes_03.wav",
-			"sounds/enemies/hexe_charm_chimes_04.wav"
+			"sounds/enemies/dlc2/hexe_charm_chimes_01.wav",
+			"sounds/enemies/dlc2/hexe_charm_chimes_02.wav",
+			"sounds/enemies/dlc2/hexe_charm_chimes_03.wav",
+			"sounds/enemies/dlc2/hexe_charm_chimes_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;

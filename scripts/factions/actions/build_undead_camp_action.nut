@@ -129,7 +129,7 @@ this.build_undead_camp_action <- this.inherit("scripts/factions/faction_action",
 
 			for( local i = 0; i != this.Const.World.TerrainType.COUNT; i = ++i )
 			{
-				if (i != this.Const.World.TerrainType.Snow && i != this.Const.World.TerrainType.Highlands)
+				if (i != this.Const.World.TerrainType.Snow && i != this.Const.World.TerrainType.Tundra)
 				{
 					disallowTerrain.push(i);
 				}

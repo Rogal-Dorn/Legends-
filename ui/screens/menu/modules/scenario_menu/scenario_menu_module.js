@@ -358,7 +358,8 @@ ScenarioMenuModule.prototype.onMouseLeaveScenario = function(_event)
 ScenarioMenuModule.prototype.selectFirstScenario = function()
 {
 	// deselect all entries first
-	this.mListScrollContainer.find('.is-selected').each(function(index, el) {
+    this.mListScrollContainer.find('.is-selected').each(function (index, el)
+    {
 		$(el).removeClass('is-selected');
 	});
 
@@ -376,7 +377,8 @@ ScenarioMenuModule.prototype.updateDescription = function (_data)
 {
 	if (_data !== null && ScenarioMenuModuleIdentifier.Scenario.Description in _data && typeof(_data[ScenarioMenuModuleIdentifier.Scenario.Description]) == 'string')
 	{
-		var parsedText = XBBCODE.process({
+        var parsedText = XBBCODE.process(
+        {
 			text: _data[ScenarioMenuModuleIdentifier.Scenario.Description],
 			removeMisalignedTags: false,
 			addInLineBreaks: true

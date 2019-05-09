@@ -60,25 +60,25 @@ this.kraken_tentacle <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.DecapitateBloodAmount = 1.0;
 		this.m.DeathBloodAmount = 0.0;
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/tentacle_death_01.wav",
-			"sounds/enemies/tentacle_death_02.wav",
-			"sounds/enemies/tentacle_death_03.wav",
-			"sounds/enemies/tentacle_death_04.wav",
-			"sounds/enemies/tentacle_death_05.wav"
+			"sounds/enemies/dlc2/tentacle_death_01.wav",
+			"sounds/enemies/dlc2/tentacle_death_02.wav",
+			"sounds/enemies/dlc2/tentacle_death_03.wav",
+			"sounds/enemies/dlc2/tentacle_death_04.wav",
+			"sounds/enemies/dlc2/tentacle_death_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/tentacle_hurt_01.wav",
-			"sounds/enemies/tentacle_hurt_02.wav",
-			"sounds/enemies/tentacle_hurt_03.wav",
-			"sounds/enemies/tentacle_hurt_04.wav",
-			"sounds/enemies/tentacle_hurt_05.wav"
+			"sounds/enemies/dlc2/tentacle_hurt_01.wav",
+			"sounds/enemies/dlc2/tentacle_hurt_02.wav",
+			"sounds/enemies/dlc2/tentacle_hurt_03.wav",
+			"sounds/enemies/dlc2/tentacle_hurt_04.wav",
+			"sounds/enemies/dlc2/tentacle_hurt_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
-			"sounds/enemies/krake_choke_01.wav",
-			"sounds/enemies/krake_choke_02.wav",
-			"sounds/enemies/krake_choke_03.wav",
-			"sounds/enemies/krake_choke_04.wav",
-			"sounds/enemies/krake_choke_05.wav"
+			"sounds/enemies/dlc2/krake_choke_01.wav",
+			"sounds/enemies/dlc2/krake_choke_02.wav",
+			"sounds/enemies/dlc2/krake_choke_03.wav",
+			"sounds/enemies/dlc2/krake_choke_04.wav",
+			"sounds/enemies/dlc2/krake_choke_05.wav"
 		];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 2.0;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/kraken_tentacle_agent");
@@ -95,6 +95,7 @@ this.kraken_tentacle <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToPoison = true;
 		b.IsMovable = false;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

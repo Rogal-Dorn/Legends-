@@ -25,8 +25,8 @@ this.goblin_spiked_balls <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_goblin_weapon_07";
 		this.m.Value = 200;
-		this.m.Ammo = 5;
-		this.m.AmmoMax = 5;
+		this.m.Ammo = 6;
+		this.m.AmmoMax = 6;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 4;
 		this.m.RangeIdeal = 4;

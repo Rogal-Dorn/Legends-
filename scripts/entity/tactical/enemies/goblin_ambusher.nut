@@ -42,27 +42,52 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 
 	function assignRandomEquipment()
 	{
-		local r;
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			local r = this.Math.rand(1, 2);
+
+			if (r == 1)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_bow"));
+			}
+			else if (r == 2)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_heavy_bow"));
+			}
+		}
+
 		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		local r = this.Math.rand(1, 2);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_bow"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_heavy_bow"));
-		}
-
 		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
-		this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_skirmisher_armor"));
-		this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_skirmisher_helmet"));
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_skirmisher_armor"));
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_skirmisher_helmet"));
+		}
 
 		if (this.Math.rand(1, 100) <= 10)
 		{
 			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
 		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_goblin_heavy_bow"
+		];
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		return true;
 	}
 
 });

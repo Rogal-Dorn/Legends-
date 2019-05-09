@@ -11,9 +11,9 @@ this.web_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_114.png";
 		this.m.Overlay = "active_114";
 		this.m.SoundOnUse = [
-			"sounds/enemies/giant_spider_shoot_net_hit_01.wav",
-			"sounds/enemies/giant_spider_shoot_net_hit_02.wav",
-			"sounds/enemies/giant_spider_shoot_net_hit_03.wav"
+			"sounds/enemies/dlc2/giant_spider_shoot_net_hit_01.wav",
+			"sounds/enemies/dlc2/giant_spider_shoot_net_hit_02.wav",
+			"sounds/enemies/dlc2/giant_spider_shoot_net_hit_03.wav"
 		];
 		this.m.SoundOnHitHitpoints = [
 			"sounds/combat/break_free_net_01.wav",

@@ -17,6 +17,7 @@ gt.Const.FactionTrait <- {
 	Undead = 14,
 	Zombies = 15,
 	Beasts = 16,
+	Barbarians = 17,
 	Actions = [
 		[],
 		[],
@@ -35,6 +36,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/marauding_greenskins_action",
 			"scripts/factions/contracts/raid_caravan_action",
 			"scripts/factions/contracts/big_game_hunt_action",
+			"scripts/factions/contracts/barbarian_king_action",
 			"scripts/factions/contracts/free_greenskin_prisoners_action",
 			"scripts/factions/contracts/confront_warlord_action",
 			"scripts/factions/contracts/break_siege_action",
@@ -58,6 +60,7 @@ gt.Const.FactionTrait <- {
 		[],
 		[
 			"scripts/factions/contracts/drive_away_bandits_action",
+			"scripts/factions/contracts/drive_away_barbarians_action",
 			"scripts/factions/contracts/investigate_cemetery_action",
 			"scripts/factions/contracts/roaming_beasts_action",
 			"scripts/factions/contracts/item_delivery_action",
@@ -127,6 +130,12 @@ gt.Const.FactionTrait <- {
 		],
 		[
 			"scripts/factions/actions/send_beast_roamers_action"
+		],
+		[
+			"scripts/factions/actions/build_barbarian_camp_action",
+			"scripts/factions/actions/send_barbarian_ambushers_action",
+			"scripts/factions/actions/send_barbarian_roamers_action",
+			"scripts/factions/actions/defend_barbarians_action"
 		]
 	]
 };

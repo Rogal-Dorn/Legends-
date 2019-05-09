@@ -84,6 +84,22 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		}
 
 		party.getLoot().Money = this.Math.rand(0, 100);
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			party.getLoot().ArmorParts = this.Math.rand(0, 10);
+		}
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			party.getLoot().Medicine = this.Math.rand(0, 10);
+		}
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			party.getLoot().Ammo = this.Math.rand(0, 25);
+		}
+
 		local r = this.Math.rand(1, 4);
 
 		if (r == 1)

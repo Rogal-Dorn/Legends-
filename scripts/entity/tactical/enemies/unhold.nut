@@ -39,8 +39,14 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/unhold_idle_06.wav",
 			"sounds/enemies/unhold_idle_07.wav"
 		];
+		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
+			"sounds/enemies/unhold_confused_01.wav",
+			"sounds/enemies/unhold_confused_02.wav",
+			"sounds/enemies/unhold_confused_03.wav",
+			"sounds/enemies/unhold_confused_04.wav"
+		];
 		this.m.SoundPitch = this.Math.rand(0.9, 1.1);
-		this.m.SoundVolumeOverall = 10.0;
+		this.m.SoundVolumeOverall = 1.25;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/unhold_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -90,6 +96,13 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 					decal.Scale = 0.9;
 					decal.setBrightness(0.9);
 				}
+
+				if (appearance.HelmetCorpse.len() != 0)
+				{
+					decal = _tile.spawnDetail(appearance.HelmetCorpse, this.Const.Tactical.DetailFlag.Corpse, flip);
+					decal.Scale = 0.9;
+					decal.setBrightness(0.9);
+				}
 			}
 			else if (_fatalityType == this.Const.FatalityType.Decapitated)
 			{
@@ -100,6 +113,11 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 					layers.push(sprite_head.getBrush().Name + "_dead");
 				}
 
+				if (appearance.HelmetCorpse.len() != 0)
+				{
+					layers.push(appearance.HelmetCorpse);
+				}
+
 				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-75, 50), 90.0, sprite_head.getBrush().Name + "_dead_bloodpool");
 				local idx = 0;
 
@@ -107,6 +125,13 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					decap[idx].Color = sprite_head.Color;
 					decap[idx].Saturation = sprite_head.Saturation;
+					decap[idx].Scale = 0.9;
+					decap[idx].setBrightness(0.9);
+					idx = ++idx;
+				}
+
+				if (appearance.HelmetCorpse.len() != 0)
+				{
 					decap[idx].Scale = 0.9;
 					decap[idx].setBrightness(0.9);
 					idx = ++idx;
@@ -143,30 +168,35 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
-			local r = this.Math.rand(1, 100);
-			local loot;
+			local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
-			if (r <= 40)
+			for( local i = 0; i < n; i = ++i )
 			{
-				loot = this.new("scripts/items/misc/unhold_bones_item");
-			}
-			else if (r <= 80)
-			{
-				if (this.isKindOf(this, "unhold_frost"))
+				local r = this.Math.rand(1, 100);
+				local loot;
+
+				if (r <= 40)
 				{
-					loot = this.new("scripts/items/misc/frost_unhold_fur_item");
+					loot = this.new("scripts/items/misc/unhold_bones_item");
+				}
+				else if (r <= 80)
+				{
+					if (this.isKindOf(this, "unhold_frost"))
+					{
+						loot = this.new("scripts/items/misc/frost_unhold_fur_item");
+					}
+					else
+					{
+						loot = this.new("scripts/items/misc/unhold_hide_item");
+					}
 				}
 				else
 				{
-					loot = this.new("scripts/items/misc/unhold_hide_item");
+					loot = this.new("scripts/items/misc/unhold_heart_item");
 				}
-			}
-			else
-			{
-				loot = this.new("scripts/items/misc/unhold_heart_item");
-			}
 
-			loot.drop(_tile);
+				loot.drop(_tile);
+			}
 
 			if (this.Math.rand(1, 100) <= 33)
 			{
@@ -183,6 +213,7 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Unhold);
+		b.IsImmuneToDisarm = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
 		{
@@ -203,10 +234,12 @@ this.unhold <- this.inherit("scripts/entity/tactical/actor", {
 		local injury_body = this.addSprite("injury");
 		injury_body.Visible = false;
 		injury_body.setBrush("bust_unhold_02_injured");
+		this.addSprite("armor");
 		local head = this.addSprite("head");
 		head.setBrush("bust_unhold_head_02");
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
+		this.addSprite("helmet");
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));

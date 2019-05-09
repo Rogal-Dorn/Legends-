@@ -120,8 +120,8 @@ this.armor_upgrade <- this.inherit("scripts/items/item", {
 	{
 		if (this.m.Armor.m.Condition / this.m.Armor.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
-			_app.ArmorUpgradeFront = this.m.SpriteFront != null ? this.m.SpriteDamagedFront : "";
-			_app.ArmorUpgradeBack = this.m.SpriteBack != null ? this.m.SpriteDamagedBack : "";
+			_app.ArmorUpgradeFront = this.m.SpriteDamagedFront != null ? this.m.SpriteDamagedFront : this.m.SpriteFront != null ? this.m.SpriteFront : "";
+			_app.ArmorUpgradeBack = this.m.SpriteDamagedBack != null ? this.m.SpriteDamagedBack : this.m.SpriteBack != null ? this.m.SpriteBack : "";
 		}
 		else
 		{

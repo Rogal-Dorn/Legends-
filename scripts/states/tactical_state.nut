@@ -165,11 +165,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.m.CombatResultLoot.setResizable(true);
 		this.Tactical.CombatResultLoot <- this.WeakTableRef(this.m.CombatResultLoot);
 
-		if (!("IsDLCCompatible" in this.Tactical.Entities.m))
-		{
-			this.crash(1);
-		}
-
 		if (this.Const.AI.ParallelizationMode)
 		{
 			this.Root.setBackgroundTaskCallback(this.onProcessAI.bindenv(this));
@@ -320,6 +315,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	function onShow()
 	{
 		this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+
+		if (("State" in this.World) && this.World.State.getLastLocation() != null)
+		{
+			this.World.State.getLastLocation().setVisited(true);
+		}
 
 		if (this.Stash.isLocked() == true)
 		{
@@ -510,7 +510,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 						if (!item.isChangeableInBattle() && item.isDroppedAsLoot())
 						{
-							if (item.getCondition() > 1 && item.getConditionMax() > 1 && item.getCondition() > item.getConditionMax() * 0.66 && this.Math.rand(1, 100) <= 66)
+							if (item.getCondition() > 1 && item.getConditionMax() > 1 && item.getCondition() > item.getConditionMax() * 0.66 && this.Math.rand(1, 100) <= 50)
 							{
 								local c = this.Math.minf(item.getCondition(), this.Math.rand(this.Math.maxf(10, item.getConditionMax() * 0.35), item.getConditionMax()));
 								item.setCondition(c);
@@ -618,6 +618,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		if (!this.isScenarioMode() && dead.len() > 1 && dead.len() >= this.m.CombatResultRoster.len() / 2)
 		{
 			this.updateAchievement("TimeToRebuild", 1, 1);
+		}
+
+		if (!this.isScenarioMode() && this.World.getPlayerRoster().getSize() == 0 && this.m.Factions.getHostileFactionWithMostInstances() == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID())
+		{
+			this.updateAchievement("GiveMeBackMyLegions", 1, 1);
 		}
 	}
 
@@ -1800,7 +1805,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 						{
 							bro.worsenMood(this.Const.MoodChange.BattleLost, "Lost a battle");
 						}
-						else
+						else if (this.World.Assets.getOrigin().getID() != "scenario.deserters")
 						{
 							bro.worsenMood(this.Const.MoodChange.BattleRetreat, "Retreated from battle");
 						}
@@ -2029,18 +2034,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
-		if (this.Tactical.TurnSequenceBar.getCurrentEntities().len() <= 1)
-		{
-			this.Tactical.Entities.checkEnemyRetreating();
-
-			if (!this.m.IsEnemyRetreatDialogShown && (this.m.StrategicProperties == null || !this.m.StrategicProperties.IsFleeingProhibited) && this.Tactical.Entities.isEnemyRetreating() && !this.m.MenuStack.hasBacksteps() && !this.m.CharacterScreen.isVisible() && !this.m.CharacterScreen.isAnimating())
-			{
-				this.m.IsEnemyRetreatDialogShown = true;
-				this.showRetreatScreen();
-				return false;
-			}
-		}
-
 		return true;
 	}
 
@@ -2079,6 +2072,17 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.Tactical.Entities.updateTileEffects();
 		this.Tactical.TopbarRoundInformation.update();
 		this.m.MaxHostiles = this.Math.max(this.m.MaxHostiles, this.Tactical.Entities.getHostilesNum());
+
+		if (_round > 1)
+		{
+			this.Tactical.Entities.checkEnemyRetreating();
+
+			if (!this.m.IsEnemyRetreatDialogShown && (this.m.StrategicProperties == null || !this.m.StrategicProperties.IsFleeingProhibited) && this.Tactical.Entities.isEnemyRetreating() && !this.m.MenuStack.hasBacksteps() && !this.m.CharacterScreen.isVisible() && !this.m.CharacterScreen.isAnimating())
+			{
+				this.m.IsEnemyRetreatDialogShown = true;
+				this.showRetreatScreen();
+			}
+		}
 	}
 
 	function turnsequencebar_onEntitySkillClicked( _skillId )
@@ -2665,20 +2669,20 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				break;
 			}
 
-			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			if (this.Tactical.getNavigator().IsTravelling)
 			{
-				local e;
+				break;
+			}
 
-				if (this.Math.rand(1, 100) <= 50)
-				{
-					e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/direwolf_high");
-				}
-				else
-				{
-					e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/direwolf");
-				}
+			if (this.m.LastTileHovered != null && !this.m.LastTileHovered.IsEmpty)
+			{
+				local entity = this.m.LastTileHovered.getEntity();
 
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				if (entity != null && this.isKindOf(entity, "actor"))
+				{
+					entity.getSkills().add(this.new("scripts/skills/effects/chilled_effect"));
+					return true;
+				}
 			}
 
 			break;
@@ -2691,9 +2695,10 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/zombie");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/orc_warlord");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Goblins : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID());
 				e.assignRandomEquipment();
+				e.makeMiniboss();
 			}
 
 			break;
@@ -2706,7 +2711,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/orc_warrior");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/armored_warhound");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Orcs : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
 				e.assignRandomEquipment();
 			}
@@ -2721,7 +2726,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_light");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/warhound");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 				e.assignRandomEquipment();
 			}
@@ -2739,6 +2744,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/orc_warrior");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Bandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID());
 				e.assignRandomEquipment();
+				e.makeMiniboss();
 			}
 
 			break;
@@ -2858,8 +2864,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/kraken");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_thrall");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				e.assignRandomEquipment();
 			}
 
 			break;
@@ -2872,8 +2879,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_marksman");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Bandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_marauder");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2887,8 +2894,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_raider");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Bandits : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_champion");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2902,8 +2909,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/lindwurm");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_chosen");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				e.makeMiniboss();
 				e.assignRandomEquipment();
 			}
 
@@ -2917,8 +2925,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_drummer");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				e.assignRandomEquipment();
 			}
 
 			break;
@@ -2931,8 +2940,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Goblins : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_beastmaster");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2946,8 +2955,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/spider");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/unhold");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2961,8 +2970,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/hexe");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Goblins : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/unhold_frost_armored");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2976,8 +2985,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp_shadow");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Goblins : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_madman");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -2989,11 +2998,13 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 				break;
 			}
 
-			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			if (this.Tooltip.getDelay() < 1000)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp_illusion");
-				e.setFaction(this.Const.Faction.Beasts);
-				e.assignRandomEquipment();
+				this.Tooltip.setDelay(900000);
+			}
+			else
+			{
+				this.Tooltip.setDelay(150);
 			}
 
 			break;
@@ -3006,8 +3017,24 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/unhold");
-				e.setFaction(this.Const.Faction.Bandits);
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_marksman");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				e.assignRandomEquipment();
+			}
+
+			break;
+
+		case 53:
+			if (!this.m.IsDeveloperModeEnabled)
+			{
+				break;
+			}
+
+			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
+			{
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_raider");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				e.assignRandomEquipment();
 			}
 
 			break;
@@ -3150,14 +3177,10 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			}
 			else
 			{
-				if (this.m.LastTileHovered != null)
+				if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 				{
-					local n = 0;
-
-					for( local i = 0; i < this.Const.Tactical.LightningParticles.len(); i = ++i )
-					{
-						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.LightningParticles[i].Brushes, this.m.LastTileHovered, this.Const.Tactical.LightningParticles[i].Delay, this.Const.Tactical.LightningParticles[i].Quantity, this.Const.Tactical.LightningParticles[i].LifeTimeQuantity, this.Const.Tactical.LightningParticles[i].SpawnRate, this.Const.Tactical.LightningParticles[i].Stages);
-					}
+					local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/ghoul");
+					e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 				}
 
 				break;

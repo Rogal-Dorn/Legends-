@@ -30,7 +30,6 @@ this.orc_warlord_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_warcry"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_line_breaker"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_splitshield"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_thresh"));

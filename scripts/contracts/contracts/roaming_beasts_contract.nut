@@ -101,7 +101,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
-				this.Contract.addFootPrintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, 0.75);
+				this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, 0.75);
 				this.Contract.m.Target = this.WeakTableRef(party);
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				local c = party.getController();

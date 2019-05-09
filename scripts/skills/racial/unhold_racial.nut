@@ -45,5 +45,15 @@ this.unhold_racial <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onUpdate( _properties )
+	{
+		local actor = this.getContainer().getActor().get();
+
+		if ((!this.Tactical.State.isScenarioMode() && this.Time.getRound() <= 2 || this.Tactical.State.isScenarioMode() && this.Time.getRound() <= 3) && (this.isKindOf(actor, "unhold_armored") || this.isKindOf(actor, "unhold_frost_armored")))
+		{
+			_properties.InitiativeForTurnOrderAdditional += 40;
+		}
+	}
+
 });
 

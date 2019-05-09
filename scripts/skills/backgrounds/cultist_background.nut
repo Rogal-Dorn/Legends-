@@ -37,10 +37,14 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Cultist",
 			"the Mad",
 			"the Believer",
+			"the Occultist",
 			"the Insane",
 			"the Follower",
 			"the Lost",
-			"the Odd"
+			"the Odd",
+			"the Misguided",
+			"the Fanatic",
+			"the Zealot"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
@@ -156,31 +160,36 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/weapons/dagger"));
 		}
 
-		r = this.Math.rand(0, 2);
+		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
 		}
-
-		if (r == 1)
+		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/leather_wraps"));
 		}
-
-		if (r == 2)
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/armor/monk_robe"));
 		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
+		}
 
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/helmets/cultist_hood"));
 		}
-
-		if (r == 1)
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
+		}
+		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}

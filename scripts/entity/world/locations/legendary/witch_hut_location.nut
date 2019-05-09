@@ -24,7 +24,7 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 		this.m.Name = "Witch Hut";
 		this.location.onSpawned();
 
-		for( local i = 0; i < 5; i = ++i )
+		for( local i = 0; i < 4; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.Hexe

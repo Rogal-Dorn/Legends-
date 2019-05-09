@@ -8,7 +8,8 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 		Inertia = 0,
 		PossibleSkills = [
 			"actives.charge",
-			"actives.unstoppable_charge"
+			"actives.unstoppable_charge",
+			"actives.gore"
 		],
 		IsDoneThisTurn = false,
 		IsEngagedThisTurn = false,
@@ -56,14 +57,17 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (this.getAgent().getIntentions().IsDefendingPosition || this.getAgent().getIntentions().IsRecuperating)
+		if (this.getAgent().getIntentions().IsRecuperating)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
 		if (_entity.getFaction() != this.Const.Faction.PlayerAnimals && this.getStrategy().isDefending())
 		{
-			return this.Const.AI.Behavior.Score.Zero;
+			if (this.getStrategy().isEscortedByPlayer() || this.getStrategy().getStats().EnemyRangedFiring == 0 && !_entity.isArmedWithRangedWeapon())
+			{
+				return this.Const.AI.Behavior.Score.Zero;
+			}
 		}
 
 		if (!this.getAgent().hasKnownOpponent())
@@ -92,12 +96,23 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
+		if (!this.getStrategy().getStats().IsEngaged && this.getStrategy().isDelayedAttack() && _entity.isAbleToWait() && this.Tactical.TurnSequenceBar.isOpponentStillToAct(_entity))
+		{
+			this.m.IsWaitingBeforeMove = true;
+			return this.Const.AI.Behavior.Score.Engage * score;
+		}
+
 		local myTile = _entity.getTile();
 		local targetsInMelee = this.queryTargetsInMeleeRange(this.getProperties().EngageRangeMin, this.Math.max(_entity.getIdealRange(), this.getProperties().EngageRangeMax));
 		local AlreadyEngagedWithNum = targetsInMelee.len();
 		local inZonesOfControl = myTile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions());
 		local knownAllies = this.getAgent().getKnownAllies();
 		this.m.Skill = this.selectSkill(this.m.PossibleSkills);
+
+		if (this.m.Skill == null && _entity.getActionPointCostsRaw() == this.Const.ImmobileMovementAPCost)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
 
 		if (inZonesOfControl > 1 && (this.m.Skill == null || !this.m.Skill.isDisengagement()))
 		{
@@ -160,6 +175,11 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 		foreach( t in targets )
 		{
 			if (t.Actor.isNull())
+			{
+				continue;
+			}
+
+			if (this.m.Skill != null && _entity.getActionPointCostsRaw() == this.Const.ImmobileMovementAPCost && t.Actor.getTile().getDistanceTo(myTile) > this.m.Skill.getMaxRange() + 1)
 			{
 				continue;
 			}
@@ -286,6 +306,10 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 				{
 					isSkillUsable = true;
 					tileScore = tileScore + this.Const.AI.Behavior.EngageWithSkillBonus;
+				}
+				else if (this.m.Skill != null && _entity.getActionPointCostsRaw() == this.Const.ImmobileMovementAPCost)
+				{
+					continue;
 				}
 				else if (inZonesOfControl > 0 && this.m.Skill != null && this.m.Skill.isDisengagement())
 				{
@@ -452,6 +476,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 
 		local hasShieldWall = _entity.getSkills().hasSkill("effects.shieldwall");
 		local canUseShieldWall = !hasShieldWall && _entity.getSkills().hasSkill("actives.shieldwall");
+		local hasAdrenaline = _entity.getSkills().hasSkill("actives.adrenaline");
 		local bestTarget;
 		local bestIntermediateTile;
 		local bestTargetDistance = 0;
@@ -464,7 +489,12 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 		local bestLockable = false;
 		local bestWaitAfterMove = false;
 		local bestWithSkill = false;
+		local bestComplete = false;
+		local bestWaitBeforeMove = false;
+		local bestAttackAfterMove = false;
 		local n = 0;
+		local attackSkill = _entity.getSkills().getAttackOfOpportunity();
+		local apRequiredForAttack = attackSkill != null ? attackSkill.getActionPointCost() : 4;
 		local navigator = this.Tactical.getNavigator();
 
 		if (potentialDestinations[0].IsSkillUsable && (!this.m.Skill.isDisengagement() || potentialDestinations[0].Distance == 1))
@@ -479,6 +509,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			bestLocked = potentialDestinations[0].IsTargetLocked;
 			bestLockable = potentialDestinations[0].IsTargetLockable;
 			bestScoreMult = potentialDestinations[0].ScoreMult;
+			bestComplete = true;
 			actorTargeted = potentialDestinations[0].Actor;
 		}
 		else
@@ -486,8 +517,6 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			local entityActionPointCosts = _entity.getActionPointCosts();
 			local entityFatiguePointCosts = _entity.getFatigueCosts();
 			local hasRangedWeapon = _entity.hasRangedWeapon();
-			local attackSkill = _entity.getSkills().getAttackOfOpportunity();
-			local apRequiredForAttack = attackSkill != null ? attackSkill.getActionPointCost() : 4;
 
 			foreach( t in potentialDestinations )
 			{
@@ -512,6 +541,9 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 				local waitAfterMove = false;
 				local apCost = 0;
 				local useSkill = false;
+				local isComplete = false;
+				local waitBeforeMove = false;
+				local attackAfterMove = false;
 				local settings = navigator.createSettings();
 				settings.ActionPointCosts = entityActionPointCosts;
 				settings.FatigueCosts = entityFatiguePointCosts;
@@ -553,12 +585,21 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 						}
 					}
 
-					apCost = movementCosts.ActionPointsRequired;
-
 					if (AlreadyEngagedWithNum != 0 && !movementCosts.IsComplete)
 					{
 						continue;
 					}
+
+					if (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat() && (hasAdrenaline || _entity.getTurnOrderInitiative() >= 125) && _entity.isAbleToWait() && !this.getStrategy().getStats().IsEngaged && !movementCosts.IsComplete && movementCosts.End.getDistanceTo(t.Tile) == 1 && movementCosts.Tiles > 1)
+					{
+						navigator.clipPathToDistance(myTile, myTile.getDistanceTo(movementCosts.End) - 1);
+						waitAfterMove = true;
+						movementCosts = navigator.getCostForPath(_entity, settings, _entity.getActionPoints(), _entity.getFatigueMax() - _entity.getFatigue());
+						movementCosts.IsComplete = false;
+						intermediateTile = movementCosts.End;
+					}
+
+					apCost = movementCosts.ActionPointsRequired;
 
 					if (movementCosts.IsComplete && acceptableDistanceFromDest == 0 && !t.IsTargetLocked && t.IsTargetLockable && !t.Actor.getCurrentProperties().IsImmuneToZoneOfControl && t.LevelDifference >= 0 && (!t.Tile.IsBadTerrain || t.Actor.getTile().IsBadTerrain))
 					{
@@ -568,6 +609,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 					if (_entity.getActionPoints() - movementCosts.ActionPointsRequired >= apRequiredForAttack)
 					{
 						score = score + this.Const.AI.Behavior.EngageReachAndAttackBonus;
+						attackAfterMove = true;
 					}
 
 					local willRunIntoSpearwall = this.querySpearwallValueForTile(_entity, movementCosts.End) != 0;
@@ -599,7 +641,11 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 							waitAfterMove = true;
 						}
 					}
-					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && this.getStrategy().getStats().EnemyRangedReadyRatio <= this.getStrategy().getStats().AllyRangedReadyRatio + 0.5 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && (!willRunIntoSpearwall || useSkill && !this.m.Skill.isSpearwallRelevant()) && !t.Actor.getCurrentProperties().IsStunned && !t.Actor.getSkills().hasSkill("actives.spearwall") && !t.IsTargetLocked && !t.Actor.isNonCombatant() && t.Actor.getIdealRange() < 2 && t.TargetValue <= 0.9 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult)
+					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && !t.Actor.isTurnDone() && t.Actor.getActionPoints() >= 6 && t.Actor.getIdealRange() < 2 && (hasAdrenaline || _entity.getTurnOrderInitiative() * t.Actor.getCurrentProperties().InitiativeAfterWaitMult > t.Actor.getTurnOrderInitiative()) && !t.IsTargetLocked && t.TargetValue <= 1.0 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult && _entity.isAbleToWait() && inZonesOfControl == 0)
+					{
+						waitBeforeMove = true;
+					}
+					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && this.getStrategy().getStats().EnemyRangedReadyRatio <= this.getStrategy().getStats().AllyRangedReadyRatio + 0.5 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && (!willRunIntoSpearwall || useSkill && !this.m.Skill.isSpearwallRelevant()) && !t.IsTargetLocked && t.TargetValue <= 1.0 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult && !this.isEngageRecommended(_entity, t.Tile))
 					{
 						local alternative;
 						local nextToLastAlternative;
@@ -774,6 +820,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 					}
 
 					tiles = movementCosts.Tiles;
+					isComplete = intermediateTile.ID == t.Tile.ID;
 				}
 				else
 				{
@@ -798,6 +845,9 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 					bestScoreMult = t.ScoreMult * localScoreMult;
 					bestAP = apCost;
 					bestWithSkill = useSkill;
+					bestComplete = isComplete;
+					bestWaitBeforeMove = waitBeforeMove;
+					bestAttackAfterMove = attackAfterMove;
 					actorTargeted = t.Actor;
 				}
 			}
@@ -811,7 +861,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (bestTarget != null && bestTiles != 0 && bestTarget.ID != myTile.ID)
 		{
-			if (this.m.IsEngagedThisTurn && _entity.getActionPoints() <= 4)
+			if (this.m.IsEngagedThisTurn && _entity.getActionPoints() <= 4 && !bestComplete && _entity.isAbleToWait())
 			{
 				return this.Const.AI.Behavior.Score.Zero;
 			}
@@ -859,6 +909,18 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			this.m.TargetActor = actorTargeted;
 			this.m.TargetDistance = bestTargetDistance;
 			this.m.IsWaitingAfterMove = bestWaitAfterMove;
+			this.m.IsWaitingBeforeMove = bestWaitBeforeMove;
+
+			if (!this.getProperties().IgnoreTargetValueOnEngage && bestComplete)
+			{
+				score = score * (1.0 + this.queryTargetValue(_entity, actorTargeted));
+			}
+
+			if (bestWaitBeforeMove)
+			{
+				this.logInfo("Waiting before move!");
+			}
+
 			score = score * bestScoreMult;
 			this.getAgent().getIntentions().Target = actorTargeted;
 			this.getAgent().getIntentions().TargetTile = bestTarget;
@@ -873,6 +935,11 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			else
 			{
 				this.m.Skill = null;
+			}
+
+			if (bestAttackAfterMove)
+			{
+				score = score * this.Const.AI.Behavior.EngageAndAttackMult;
 			}
 
 			if (this.getProperties().EngageOnGoodTerrainBonusMult != 0.0)
@@ -1142,6 +1209,44 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		return 0;
+	}
+
+	function isEngageRecommended( _entity, _tile )
+	{
+		for( local i = 0; i < 6; i = ++i )
+		{
+			if (!_tile.hasNextTile(i))
+			{
+			}
+			else
+			{
+				local t = _tile.getNextTile(i);
+
+				if (!t.IsOccupiedByActor)
+				{
+				}
+				else
+				{
+					local target = t.getEntity();
+
+					if (target.isNonCombatant() || target.isAlliedWith(_entity))
+					{
+					}
+					else if (target.getCurrentProperties().IsStunned || !target.getCurrentProperties().IsAbleToUseWeaponSkills || target.isTurnDone() || target.getActionPoints() <= 5)
+					{
+					}
+					else if (target.getIdealRange() >= 2)
+					{
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
+		}
+
+		return true;
 	}
 
 });

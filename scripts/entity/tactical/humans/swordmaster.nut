@@ -57,98 +57,101 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r;
-
-		if (this.Math.rand(1, 100) <= 1)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/named/named_sword"));
+			local weapons = [
+				"weapons/noble_sword",
+				"weapons/arming_sword"
+			];
+
+			if (this.Const.DLC.Wildmen)
+			{
+				weapons.extend([
+					"weapons/noble_sword",
+					"weapons/arming_sword",
+					"weapons/shamshir"
+				]);
+			}
+
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
+		{
+			local armor = [
+				"armor/mail_shirt",
+				"armor/mail_hauberk",
+				"armor/basic_mail_shirt"
+			];
+
+			if (this.Const.DLC.Unhold)
+			{
+				armor.extend([
+					"armor/footman_armor",
+					"armor/leather_scale_armor",
+					"armor/light_scale_armor"
+				]);
+			}
+
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		}
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head) && this.Math.rand(1, 100) <= 90)
+		{
+			local helmet = [
+				"helmets/nasal_helmet",
+				"helmets/nasal_helmet_with_mail",
+				"helmets/mail_coif",
+				"helmets/headscarf",
+				"helmets/feathered_hat"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_sword"
+		];
+
+		if (this.Const.DLC.Wildmen)
+		{
+			weapons.extend([
+				"weapons/named/named_sword",
+				"weapons/named/named_shamshir"
+			]);
+		}
+
+		local armor = [
+			"armor/named/black_leather_armor",
+			"armor/named/blue_studded_mail_armor"
+		];
+
+		if (this.Const.DLC.Wildmen)
+		{
+			armor.extend([
+				"armor/named/named_noble_mail_armor"
+			]);
+		}
+
+		if (this.Math.rand(1, 100) <= 70)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		else
 		{
-			r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/noble_sword"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-			}
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		if (this.Const.DLC.Unhold)
-		{
-			r = this.Math.rand(1, 6);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/mail_hauberk"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/footman_armor"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/leather_scale_armor"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/light_scale_armor"));
-			}
-		}
-		else
-		{
-			r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/mail_hauberk"));
-			}
-		}
-
-		if (this.Math.rand(1, 100) <= 90)
-		{
-			local r = this.Math.rand(1, 5);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
-			}
-		}
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+		return true;
 	}
 
 });

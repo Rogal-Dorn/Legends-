@@ -45,6 +45,7 @@ this.aimed_shot <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsRanged = true;
+		this.m.IsWeaponSkill = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
 		this.m.IsDoingForwardMove = false;

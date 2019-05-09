@@ -11,17 +11,17 @@ this.hex_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_119.png";
 		this.m.Overlay = "active_119";
 		this.m.SoundOnHit = [
-			"sounds/enemies/hexe_hex_01.wav",
-			"sounds/enemies/hexe_hex_02.wav",
-			"sounds/enemies/hexe_hex_03.wav",
-			"sounds/enemies/hexe_hex_04.wav",
-			"sounds/enemies/hexe_hex_05.wav"
+			"sounds/enemies/dlc2/hexe_hex_01.wav",
+			"sounds/enemies/dlc2/hexe_hex_02.wav",
+			"sounds/enemies/dlc2/hexe_hex_03.wav",
+			"sounds/enemies/dlc2/hexe_hex_04.wav",
+			"sounds/enemies/dlc2/hexe_hex_05.wav"
 		];
 		this.m.SoundOnMiss = [
-			"sounds/enemies/hexe_hex_damage_01.wav",
-			"sounds/enemies/hexe_hex_damage_02.wav",
-			"sounds/enemies/hexe_hex_damage_03.wav",
-			"sounds/enemies/hexe_hex_damage_04.wav"
+			"sounds/enemies/dlc2/hexe_hex_damage_01.wav",
+			"sounds/enemies/dlc2/hexe_hex_damage_02.wav",
+			"sounds/enemies/dlc2/hexe_hex_damage_03.wav",
+			"sounds/enemies/dlc2/hexe_hex_damage_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;

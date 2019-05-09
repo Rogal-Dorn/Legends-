@@ -84,7 +84,22 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		}
 
 		party.getLoot().Money = this.Math.floor(this.Math.rand(0, 100) * r);
-		local r = this.Math.rand(1, 4);
+		local r = this.Math.rand(1, 3);
+
+		if (r == 1)
+		{
+			party.getLoot().ArmorParts = this.Math.rand(15 * r, 30 * r);
+		}
+		else if (r == 2)
+		{
+			party.getLoot().Medicine = this.Math.rand(10 * r, 20 * r);
+		}
+		else if (r == 3)
+		{
+			party.getLoot().Ammo = this.Math.rand(25 * r, 50 * r);
+		}
+
+		r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{

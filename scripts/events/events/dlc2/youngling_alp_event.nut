@@ -66,7 +66,7 @@ this.youngling_alp_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{The alp is alone and possibly a youngling. Even monsters have to cut their cloth and put in the work to become truly horrible beasts, and this one just doesn\'t seem there yet. You send a pair of sellswords to slay the beast. They close in on it through the shroud of darkness. You see the silhouettes rising up in ambush and there\'s a clatter and a scream, and another scream which is nothing humanlike at all. Shrieking now. And this time a man crying. Someone speaking. Quiet. A long, long quiet. Then the pair comes back. One is clutching his head as though taken by a terrific ache, the other looks at you and nods.%SPEECH_ON%We killed it and, uh, I think we need to lie down.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_122.png[/img]{The alp is alone and possibly a youngling. Even monsters have to cut their cloth and put in the work to become truly horrible beasts, and this one just doesn\'t seem there yet. You send a pair of sellswords to slay the beast. They close in on it through the shroud of darkness. You see the silhouettes rising up in ambush and there\'s a clatter and a scream, and another scream which is nothing humanlike at all. Shrieking now. And this time a man crying. Someone speaking. Quiet. A long, long quiet. Then the pair comes back. One is clutching his head as though taken by a terrific ache, the other looks at you and nods.%SPEECH_ON%We killed it and, uh, I think we need to lie down.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -84,8 +84,8 @@ this.youngling_alp_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Callbrother.getImagePath());
 				this.Characters.push(_event.m.Other.getImagePath());
-				_event.m.Callbrother.addXP(200);
-				_event.m.Other.addXP(200);
+				_event.m.Callbrother.addXP(200, false);
+				_event.m.Other.addXP(200, false);
 				this.List.push({
 					id = 16,
 					icon = "ui/icons/xp_received.png",
@@ -142,7 +142,7 @@ this.youngling_alp_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getLevel() <= 3 || bro.getBackground().getID() == "background.beast_hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getSkills().hasSkill("trait.hate_beasts") || bro.getSkills().hasSkill("trait.fear_beasts") || bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.paranoid") || bro.getSkills().hasSkill("trait.superstitious"))
+					if (bro.getLevel() <= 3 || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.witchhunter" || bro.getSkills().hasSkill("trait.hate_beasts") || bro.getSkills().hasSkill("trait.fear_beasts") || bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.paranoid") || bro.getSkills().hasSkill("trait.superstitious"))
 					{
 						bro.worsenMood(0.75, "You let some alp live which may haunt the company later");
 
@@ -161,7 +161,7 @@ this.youngling_alp_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{%beastslayer% the beast slayer comes over.%SPEECH_ON%It ain\'t dangerous, it\'s confused. I\'ll take care of this.%SPEECH_OFF%He\'s chewing on a dried biscuit and grunts and puts the biscuit in his pocket and sets off into the dark all by himself. A moment later, the alp\'s silhouette suddenly falls away and disappears. A few minutes later and the slayer returns, shoving the last morsels of the biscuit into his mouth. You ask why the alp didn\'t put up much of a fight. The beast slayer laughs.%SPEECH_ON%You said %callbrother% fetched you from your tent, right? Right. And where is %callbrother%?%SPEECH_OFF%The beast slayer points toward the campfire. The sellsword is there. Asleep. Deeply asleep. %beastslayer% gets himself another biscuit.%SPEECH_ON%Young alps are still learning how to pry into your mind. They\'re not good at it and often call attention to themselves while trying. They\'re like thieves who can\'t pick a lock, so they knock on the door instead.%SPEECH_OFF%A few of the men listen to this and are emboldened by the apparent flaws of these otherwise horrifying creatures.}  ",
+			Text = "[img]gfx/ui/events/event_122.png[/img]{%beastslayer% the beast slayer comes over.%SPEECH_ON%It ain\'t dangerous, it\'s confused. I\'ll take care of this.%SPEECH_OFF%He\'s chewing on a dried biscuit and grunts and puts the biscuit in his pocket and sets off into the dark all by himself. A moment later, the alp\'s silhouette suddenly falls away and disappears. A few minutes later and the slayer returns, shoving the last morsels of the biscuit into his mouth. You ask why the alp didn\'t put up much of a fight. The beast slayer laughs.%SPEECH_ON%You said %callbrother% fetched you from your tent, right? Right. And where is %callbrother%?%SPEECH_OFF%The beast slayer points toward the campfire. The sellsword is there. Asleep. Deeply asleep. %beastslayer% gets himself another biscuit.%SPEECH_ON%Young alps are still learning how to pry into your mind. They\'re not good at it and often call attention to themselves while trying. They\'re like thieves who can\'t pick a lock, so they knock on the door instead.%SPEECH_OFF%A few of the men listen to this and are emboldened by the apparent flaws of these otherwise horrifying creatures.}  ",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -270,7 +270,7 @@ this.youngling_alp_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.beast_hunter")
+			if (bro.getBackground().getID() == "background.beast_slayer")
 			{
 				candidates_beastslayer.push(bro);
 			}

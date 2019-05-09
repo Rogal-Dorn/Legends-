@@ -1,6 +1,8 @@
 this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 	m = {
-		NameList = []
+		PrefixList = this.Const.Strings.RandomWeaponPrefix,
+		NameList = [],
+		UseRandomName = true
 	},
 	function create()
 	{
@@ -26,11 +28,9 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 
 	function createRandomName()
 	{
-		local r = this.Math.rand(1, 100);
-
-		if (r <= 60)
+		if (!this.m.UseRandomName || this.Math.rand(1, 100) <= 60)
 		{
-			return this.Const.Strings.RandomWeaponPrefix[this.Math.rand(0, this.Const.Strings.RandomWeaponPrefix.len() - 1)] + " ";
+			return this.m.PrefixList[this.Math.rand(0, this.m.PrefixList.len() - 1)] + " ";
 		}
 		else if (this.Math.rand(1, 2) == 1)
 		{
@@ -48,7 +48,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 
 		if (this.m.Name.len() == 0)
 		{
-			if (this.Math.rand(1, 100) <= 75)
+			if (this.Math.rand(1, 100) <= 25)
 			{
 				this.setName(this.getContainer().getActor().getName() + "\'s ");
 			}
@@ -74,51 +74,76 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 
 	function randomizeValues()
 	{
-		for( local picked = []; picked.len() != 3;  )
+		this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(80, 140) * 0.01) * 1.0;
+		this.m.ConditionMax = this.m.Condition;
+		local available = [];
+		available.push(function ( _i )
 		{
-			local r = this.Math.rand(1, 8);
+			local f = this.Math.rand(110, 130) * 0.01;
+			_i.m.RegularDamage = this.Math.round(_i.m.RegularDamage * f);
+			_i.m.RegularDamageMax = this.Math.round(_i.m.RegularDamageMax * f);
+		});
+		available.push(function ( _i )
+		{
+			_i.m.ArmorDamageMult = _i.m.ArmorDamageMult + this.Math.rand(10, 30) * 0.01;
+		});
 
-			if (picked.find(r) != null)
+		if (this.m.ChanceToHitHead > 0)
+		{
+			available.push(function ( _i )
 			{
-				continue;
-			}
+				_i.m.ChanceToHitHead = _i.m.ChanceToHitHead + this.Math.rand(5, 10);
+			});
+		}
 
-			if (r != 8 || this.m.ShieldDamage > 0)
-			{
-				picked.push(r);
-			}
+		available.push(function ( _i )
+		{
+			_i.m.DirectDamageAdd = this.Math.rand(8, 16) * 0.01;
+		});
 
-			if (r == 1)
+		if (this.m.StaminaModifier >= 8)
+		{
+			available.push(function ( _i )
 			{
-				local f = this.Math.rand(110, 130) * 0.01;
-				this.m.RegularDamage = this.Math.round(this.m.RegularDamage * f);
-				this.m.RegularDamageMax = this.Math.round(this.m.RegularDamageMax * f);
-			}
-			else if (r == 2)
+				_i.m.StaminaModifier = this.Math.round(_i.m.StaminaModifier * this.Math.rand(50, 80) * 0.01);
+			});
+		}
+
+		if (this.m.ShieldDamage > 0)
+		{
+			available.push(function ( _i )
 			{
-				this.m.ArmorDamageMult = this.m.ArmorDamageMult + this.Math.rand(15, 35) * 0.01;
-			}
-			else if (r == 3)
+				_i.m.ShieldDamage = this.Math.round(_i.m.ShieldDamage * this.Math.rand(110, 133) * 0.01);
+			});
+		}
+
+		if (this.m.AmmoMax > 0)
+		{
+			available.push(function ( _i )
 			{
-				this.m.ChanceToHitHead = this.m.ChanceToHitHead + this.Math.rand(5, 10);
-			}
-			else if (r == 5)
+				_i.m.AmmoMax = _i.m.AmmoMax + this.Math.rand(1, 3);
+				_i.m.Ammo = _i.m.AmmoMax;
+			});
+		}
+
+		if (this.m.AdditionalAccuracy != 0 || this.isItemType(this.Const.Items.ItemType.RangedWeapon))
+		{
+			available.push(function ( _i )
 			{
-				this.m.DirectDamageAdd = this.Math.rand(8, 16) * 0.01;
-			}
-			else if (r == 6)
-			{
-				this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(80, 140) * 0.01) * 1.0;
-				this.m.ConditionMax = this.m.Condition;
-			}
-			else if (r == 7)
-			{
-				this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(50, 90) * 0.01);
-			}
-			else if (r == 8 && this.m.ShieldDamage > 0)
-			{
-				this.m.ShieldDamage = this.Math.round(this.m.ShieldDamage * this.Math.rand(110, 130) * 0.01);
-			}
+				_i.m.AdditionalAccuracy = _i.m.AdditionalAccuracy + this.Math.rand(5, 15);
+			});
+		}
+
+		available.push(function ( _i )
+		{
+			_i.m.FatigueOnSkillUse = _i.m.FatigueOnSkillUse - this.Math.rand(1, 3);
+		});
+
+		for( local n = 2; n != 0 && available.len() != 0; n = --n )
+		{
+			local r = this.Math.rand(0, available.len() - 1);
+			available[r](this);
+			available.remove(r);
 		}
 	}
 
@@ -134,7 +159,8 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		_out.writeU16(this.m.ShieldDamage);
 		_out.writeU16(this.m.AdditionalAccuracy);
 		_out.writeF32(this.m.DirectDamageAdd);
-		_out.writeF32(0);
+		_out.writeI16(this.m.FatigueOnSkillUse);
+		_out.writeU16(this.m.AmmoMax);
 		_out.writeF32(0);
 		this.weapon.onSerialize(_out);
 	}
@@ -151,7 +177,8 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShieldDamage = _in.readU16();
 		this.m.AdditionalAccuracy = _in.readU16();
 		this.m.DirectDamageAdd = _in.readF32();
-		_in.readF32();
+		this.m.FatigueOnSkillUse = _in.readI16();
+		this.m.AmmoMax = _in.readU16();
 		_in.readF32();
 		this.weapon.onDeserialize(_in);
 		this.updateVariant();

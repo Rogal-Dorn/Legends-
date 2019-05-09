@@ -42,6 +42,11 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill
 		];
+		this.m.Titles = [
+			"the Legend",
+			"the Old Guard",
+			"the Master"
+		];
 		this.m.Faces = this.Const.Faces.SmartMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.Old;

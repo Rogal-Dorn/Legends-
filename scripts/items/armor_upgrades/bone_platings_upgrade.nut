@@ -6,7 +6,7 @@ this.bone_platings_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 	{
 		this.armor_upgrade.create();
 		this.m.ID = "armor_upgrade.bone_platings";
-		this.m.Name = "Bone Platings";
+		this.m.Name = "Bone Plating";
 		this.m.Description = "Crafted from strong but surprisingly light bones, these ornate platings make for an ablative armor to be worn ontop of regular armor.";
 		this.m.ArmorDescription = "A layer of ornate bone plates is attached to this armor.";
 		this.m.Icon = "armor_upgrades/upgrade_06.png";

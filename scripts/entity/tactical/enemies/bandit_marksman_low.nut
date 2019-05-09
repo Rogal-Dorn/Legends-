@@ -16,15 +16,25 @@ this.bandit_marksman_low <- this.inherit("scripts/entity/tactical/enemies/bandit
 
 	function assignRandomEquipment()
 	{
-		if (this.Math.rand(1, 3) != 3)
+		local weapons = [
+			[
+				"weapons/short_bow",
+				"ammo/quiver_of_arrows"
+			],
+			[
+				"weapons/short_bow",
+				"ammo/quiver_of_arrows"
+			],
+			[
+				"weapons/light_crossbow",
+				"ammo/quiver_of_bolts"
+			]
+		];
+		local n = this.Math.rand(0, weapons.len() - 1);
+
+		foreach( w in weapons[n] )
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
-			this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/light_crossbow"));
-			this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+			this.m.Items.equip(this.new("scripts/items/" + w));
 		}
 
 		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));

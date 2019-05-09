@@ -57,12 +57,12 @@ this.ai_rally <- this.inherit("scripts/ai/tactical/behavior", {
 				continue;
 			}
 
-			if (a.getSkills().hasSkill("effects.rallied"))
+			if (a.getMoraleState() == this.Const.MoraleState.Ignore || a.getMoraleState() >= this.Const.MoraleState.Steady)
 			{
 				continue;
 			}
 
-			if (a.getMoraleState() == this.Const.MoraleState.Ignore || a.getMoraleState() >= this.Const.MoraleState.Steady)
+			if (a.getSkills().hasSkill("effects.rallied"))
 			{
 				continue;
 			}

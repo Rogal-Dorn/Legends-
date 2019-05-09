@@ -50,6 +50,7 @@ this.snow3 <- this.inherit("scripts/mapgen/tactical_template", {
 			return;
 		}
 
+		local isSpawningObjects = !("SpawnObjects" in _rect) || _rect.SpawnObjects;
 		tile.Type = this.Const.Tactical.TerrainType.FlatGround;
 		tile.Subtype = this.Const.Tactical.TerrainSubtype.LightSnow;
 		tile.BlendPriority = this.Const.Tactical.TileBlendPriority.Snow3;
@@ -57,7 +58,7 @@ this.snow3 <- this.inherit("scripts/mapgen/tactical_template", {
 		tile.setBrush("tile_snow_03");
 		local n = 0;
 
-		if (this.Math.rand(0, 100) < this.m.ChanceToSpawnObject * _objectSpawnChanceMult)
+		if (isSpawningObjects && this.Math.rand(0, 100) < this.m.ChanceToSpawnObject * _objectSpawnChanceMult)
 		{
 			if (!tile.hasNextTile(this.Const.Direction.S) || tile.getNextTile(this.Const.Direction.S).IsEmpty)
 			{

@@ -54,6 +54,16 @@ gt.Const.Strings.SwordNames <- [
 	"Windblade",
 	"Swiftblade"
 ];
+gt.Const.Strings.SabreNames <- [
+	"Curved Blade",
+	"Saber",
+	"Beheader",
+	"Arched Blade",
+	"Crescent",
+	"Half Moon",
+	"South Star",
+	"Shamshir"
+];
 gt.Const.Strings.CleaverNames <- [
 	"Chopper",
 	"Ripper",
@@ -80,6 +90,17 @@ gt.Const.Strings.CleaverNames <- [
 	"Maimer",
 	"Tormentor",
 	"Render"
+];
+gt.Const.Strings.WhipNames <- [
+	"Whip",
+	"Tongue",
+	"Snake",
+	"Lightning",
+	"Strangler",
+	"Reach",
+	"Painbringer",
+	"Punisher",
+	"Castigator"
 ];
 gt.Const.Strings.AxeNames <- [
 	"Splitter",
@@ -471,6 +492,15 @@ gt.Const.Strings.TwoHandedMaceNames <- [
 	"Pummel",
 	"Earthshaker"
 ];
+gt.Const.Strings.WarscytheNames <- [
+	"Warscythe",
+	"Reaper",
+	"Sickle",
+	"Blade",
+	"Edge",
+	"Scythe",
+	"Harvester"
+];
 gt.Const.Strings.OldWeaponPrefix <- [
 	"Ancient",
 	"Forefather\'s",
@@ -496,7 +526,44 @@ gt.Const.Strings.OldWeaponPrefix <- [
 	"Battle-scarred",
 	"Curio",
 	"Remnant",
-	"Keepsake"
+	"Keepsake",
+	"Empire\'s",
+	"Legion\'s",
+	"Ancient"
+];
+gt.Const.Strings.BarbarianPrefix <- [
+	"Forefather\'s",
+	"Conqueror\'s",
+	"Chieftain\'s",
+	"Warlord\'s",
+	"Champion\'s",
+	"Ancestors\'",
+	"Fire Bringer\'s",
+	"Despoiler\'s",
+	"Blood-drenched",
+	"Reaver\'s",
+	"Frozen",
+	"Chilling",
+	"Tribal",
+	"Barbarian",
+	"Bloodied",
+	"Chosen"
+];
+gt.Const.Strings.GoblinWeaponPrefix <- [
+	"Razor-sharp",
+	"Quick",
+	"Pointy",
+	"Stinging",
+	"Barbed",
+	"Spiky",
+	"Sly",
+	"Backstabbing",
+	"Assassin\'s",
+	"Cruel",
+	"Perfidious",
+	"Sticky",
+	"Vile",
+	"Malicious"
 ];
 gt.Const.Strings.RandomWeaponPrefix <- [
 	"The",

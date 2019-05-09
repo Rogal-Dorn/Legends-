@@ -159,7 +159,7 @@ this.ai_swarm_of_insects <- this.inherit("scripts/ai/tactical/behavior", {
 
 			score = score * target.getCurrentProperties().TargetAttractionMult;
 
-			if (target.getSkills().hasSkill("perk.perfect_focus") || target.getSkills().hasSkill("perk.killing_frenzy"))
+			if (target.getSkills().hasSkill("perk.killing_frenzy"))
 			{
 				score = score * this.Const.AI.Behavior.InsectSwarmPerfectFocusMult;
 			}

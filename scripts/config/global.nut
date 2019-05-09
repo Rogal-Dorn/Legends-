@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 45
+	Version = 49
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -8,6 +8,9 @@ gt.Const.DLC <- {
 	Fangshire = false,
 	Lindwurm = false,
 	Unhold = false,
+	UnholdSupporter = false,
+	Wildmen = false,
+	WildmenSupporter = false,
 	function isCompatible( _meta )
 	{
 		local maskInSave = _meta.getInt("dlc");
@@ -36,6 +39,12 @@ this.Const.DLC.Info[2] = {
 	Icon = "ui/images/dlc_2.png",
 	IconDisabled = "ui/images/dlc_2_sw.png",
 	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/961930/Battle_Brothers__Beasts__Exploration/" : "https://www.gog.com/game/battle_brothers_beasts_exploration"
+};
+this.Const.DLC.Info[4] = {
+	Announce = true,
+	Icon = "ui/images/dlc_4.png",
+	IconDisabled = "ui/images/dlc_4_sw.png",
+	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1067690/Battle_Brothers__Warriors_of_the_North" : "https://www.gog.com/game/battle_brothers_warriors_of_the_north"
 };
 gt.Const.Direction <- {
 	N = 0,
@@ -175,19 +184,16 @@ gt.Const.Difficulty <- {
 	],
 	MaxResources = [
 		{
-			Food = 300,
 			Ammo = 500,
 			Medicine = 150,
 			ArmorParts = 200
 		},
 		{
-			Food = 250,
 			Ammo = 300,
 			Medicine = 100,
 			ArmorParts = 150
 		},
 		{
-			Food = 200,
 			Ammo = 300,
 			Medicine = 100,
 			ArmorParts = 150
@@ -271,6 +277,17 @@ gt.Const.EntityType <- {
 	KrakenTentacle = 67,
 	ZombieBetrayer = 68,
 	AlpShadow = 69,
+	BarbarianThrall = 70,
+	BarbarianMarauder = 71,
+	BarbarianChampion = 72,
+	BarbarianDrummer = 73,
+	BarbarianBeastmaster = 74,
+	BarbarianUnhold = 75,
+	BarbarianUnholdFrost = 76,
+	BarbarianChosen = 77,
+	Warhound = 78,
+	TricksterGod = 79,
+	BarbarianMadman = 80,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -503,6 +520,17 @@ gt.Const.EntityIcon <- [
 	"kraken_01_orientation",
 	"kraken_02_orientation",
 	"zombie_03_orientation",
-	"alp_02_orientation"
+	"alp_02_orientation",
+	"wildman_01_orientation",
+	"wildman_02_orientation",
+	"wildman_03_orientation",
+	"wildman_05_orientation",
+	"wildman_04_orientation",
+	"unhold_01_orientation",
+	"unhold_02_orientation",
+	"wildman_06_orientation",
+	"dog_02_orientation",
+	"thing_orientation",
+	"wildman_06_orientation"
 ];
 

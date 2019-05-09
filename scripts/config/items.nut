@@ -67,11 +67,12 @@ gt.Const.Items.InventoryEventType <- {
 	PlacedOnGround = 4
 };
 gt.Const.Items.Paint <- {
-	Black = 0,
-	WhiteBlue = 1,
-	WhiteGreenYellow = 2,
-	OrangeRed = 3,
-	Red = 4
+	None = 0,
+	Black = 1,
+	WhiteBlue = 2,
+	WhiteGreenYellow = 3,
+	OrangeRed = 4,
+	Red = 5
 };
 gt.Const.Items.ConditionColor <- [
 	"#ff1e00",
@@ -79,5 +80,73 @@ gt.Const.Items.ConditionColor <- [
 	"#ffea00",
 	"#c0ff00",
 	"#ffffff"
+];
+gt.Const.Items.NamedArmors <- [
+	"armor/named/black_leather_armor",
+	"armor/named/blue_studded_mail_armor",
+	"armor/named/brown_coat_of_plates_armor",
+	"armor/named/golden_scale_armor",
+	"armor/named/green_coat_of_plates_armor",
+	"armor/named/heraldic_mail_armor"
+];
+gt.Const.Items.NamedHelmets <- [
+	"helmets/named/golden_feathers_helmet",
+	"helmets/named/heraldic_mail_helmet",
+	"helmets/named/nasal_feather_helmet",
+	"helmets/named/sallet_green_helmet",
+	"helmets/named/wolf_helmet",
+	"helmets/named/lindwurm_helmet"
+];
+gt.Const.Items.NamedShields <- [
+	"shields/named/named_dragon_shield",
+	"shields/named/named_full_metal_heater_shield",
+	"shields/named/named_golden_round_shield",
+	"shields/named/named_red_white_shield",
+	"shields/named/named_rider_on_horse_shield",
+	"shields/named/named_wing_shield"
+];
+gt.Const.Items.NamedBanditShields <- [
+	"shields/named/named_bandit_kite_shield",
+	"shields/named/named_bandit_heater_shield"
+];
+gt.Const.Items.NamedUndeadShields <- [
+	"shields/named/named_undead_heater_shield",
+	"shields/named/named_undead_kite_shield"
+];
+gt.Const.Items.NamedOrcShields <- [
+	"shields/named/named_orc_heavy_shield"
+];
+gt.Const.Items.NamedOrcWeapons <- [
+	"weapons/named/named_orc_axe",
+	"weapons/named/named_orc_cleaver"
+];
+gt.Const.Items.NamedWeapons <- [
+	"weapons/named/named_axe",
+	"weapons/named/named_billhook",
+	"weapons/named/named_cleaver",
+	"weapons/named/named_crossbow",
+	"weapons/named/named_dagger",
+	"weapons/named/named_flail",
+	"weapons/named/named_greataxe",
+	"weapons/named/named_greatsword",
+	"weapons/named/named_javelin",
+	"weapons/named/named_longaxe",
+	"weapons/named/named_mace",
+	"weapons/named/named_spear",
+	"weapons/named/named_sword",
+	"weapons/named/named_throwing_axe",
+	"weapons/named/named_two_handed_hammer",
+	"weapons/named/named_warbow",
+	"weapons/named/named_warbrand",
+	"weapons/named/named_warhammer"
+];
+gt.Const.Items.NamedBarbarianWeapons <- [];
+gt.Const.Items.NamedBarbarianHelmets <- [];
+gt.Const.Items.NamedBarbarianArmors <- [];
+gt.Const.Items.NamedUndeadWeapons <- [
+	"weapons/named/named_bladed_pike",
+	"weapons/named/named_crypt_cleaver",
+	"weapons/named/named_warscythe",
+	"weapons/named/named_khopesh"
 ];
 

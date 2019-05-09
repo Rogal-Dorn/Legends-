@@ -242,7 +242,7 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 11,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				local brothers = this.World.getPlayerRoster().getAll();
 

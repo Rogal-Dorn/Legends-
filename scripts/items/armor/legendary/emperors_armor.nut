@@ -15,8 +15,8 @@ this.emperors_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 20000;
-		this.m.Condition = 380;
-		this.m.ConditionMax = 380;
+		this.m.Condition = 400;
+		this.m.ConditionMax = 400;
 		this.m.StaminaModifier = -30;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}

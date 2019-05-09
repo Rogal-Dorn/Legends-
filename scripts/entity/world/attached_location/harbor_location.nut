@@ -262,12 +262,8 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 
 	function onDeserialize( _in )
 	{
-		if (_in.getMetaData().getVersion() >= 19)
-		{
-			this.m.Sprite = _in.readString();
-			this.m.SpriteDestroyed = _in.readString();
-		}
-
+		this.m.Sprite = _in.readString();
+		this.m.SpriteDestroyed = _in.readString();
 		this.attached_location.onDeserialize(_in);
 	}
 

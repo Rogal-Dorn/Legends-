@@ -3,6 +3,7 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 		TargetTile = null,
 		PossibleSkills = [
 			"actives.split",
+			"actives.split_axe",
 			"actives.tail_slam_split",
 			"actives.uproot",
 			"actives.ghost_split"

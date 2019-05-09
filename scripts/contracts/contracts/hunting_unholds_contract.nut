@@ -98,7 +98,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
 				party.getTags().set("IsUnholds", true);
-				this.Contract.addFootPrintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
+				this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
 				this.Contract.m.Target = this.WeakTableRef(party);
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				local c = party.getController();
@@ -164,7 +164,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == "background.beast_hunter" || bro.getBackground().getID() == "background.wildman" || bro.getSkills().hasSkill("trait.dumb"))
+						if (bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.wildman" || bro.getSkills().hasSkill("trait.dumb"))
 						{
 							candidates.push(bro);
 						}

@@ -23,6 +23,8 @@ this.undead_vampire_coven_location <- this.inherit("scripts/entity/world/locatio
 
 		this.m.Resources = 250;
 		this.m.RoamerSpawnList = this.Const.World.Spawn.Vampires;
+		this.m.NamedWeaponsList = this.Const.Items.NamedUndeadWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedUndeadShields;
 	}
 
 	function onSpawned()

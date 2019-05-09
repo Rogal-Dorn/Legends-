@@ -161,7 +161,7 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				item = this.new("scripts/items/supplies/roots_and_berries_item");
 				this.World.Assets.getStash().add(item);
@@ -233,7 +233,7 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				item = this.new("scripts/items/supplies/roots_and_berries_item");
 				this.World.Assets.getStash().add(item);
@@ -325,14 +325,14 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				item = this.new("scripts/items/weapons/knife");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				item = this.new("scripts/items/supplies/roots_and_berries_item");
 				this.World.Assets.getStash().add(item);

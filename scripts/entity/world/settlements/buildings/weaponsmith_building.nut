@@ -368,7 +368,7 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 					S = "weapons/two_handed_flanged_mace"
 				},
 				{
-					R = 85,
+					R = 80,
 					P = 1.0,
 					S = "weapons/fencing_sword"
 				},
@@ -378,186 +378,49 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 					S = "weapons/throwing_spear"
 				}
 			]);
+		}
 
+		if (this.Const.DLC.Wildmen)
+		{
+			if (this.m.Settlement.getTile().SquareCoords.Y > this.World.getMapSize().Y * 0.7)
+			{
+				list.push({
+					R = 70,
+					P = 1.0,
+					S = "weapons/bardiche"
+				});
+			}
+			else if (this.m.Settlement.getTile().SquareCoords.Y < this.World.getMapSize().Y * 0.4)
+			{
+				list.push({
+					R = 75,
+					P = 1.0,
+					S = "weapons/scimitar"
+				});
+				list.push({
+					R = 85,
+					P = 1.0,
+					S = "weapons/shamshir"
+				});
+			}
+
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "weapons/battle_whip"
+			});
+		}
+
+		foreach( i in this.Const.Items.NamedWeapons )
+		{
 			if (this.Math.rand(1, 100) <= 33)
 			{
 				list.push({
 					R = 99,
 					P = 2.0,
-					S = "weapons/named/named_fencing_sword"
+					S = i
 				});
 			}
-
-			if (this.Math.rand(1, 100) <= 33)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_polehammer"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 33)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_spetum"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 33)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_three_headed_flail"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 33)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_two_handed_mace"
-				});
-			}
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_flail"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_greataxe"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_mace"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_sword"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_warhammer"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_two_handed_hammer"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_warbrand"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_greatsword"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_dagger"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_billhook"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_cleaver"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_pike"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_longaxe"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_axe"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 33)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_spear"
-			});
 		}
 
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);

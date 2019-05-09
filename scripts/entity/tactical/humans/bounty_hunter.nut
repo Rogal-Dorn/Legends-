@@ -53,82 +53,48 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(0, 8);
+		local r;
 
-		if (r <= 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
+			local weapons = [
+				"weapons/billhook",
+				"weapons/pike",
+				"weapons/warbrand",
+				"weapons/hand_axe",
+				"weapons/boar_spear",
+				"weapons/morning_star",
+				"weapons/falchion",
+				"weapons/arming_sword",
+				"weapons/flail",
+				"weapons/dagger"
+			];
+
 			if (this.Const.DLC.Unhold)
 			{
-				r = this.Math.rand(0, 3);
+				weapons.extend([
+					"weapons/spetum"
+				]);
+			}
 
-				if (r == 0)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/billhook"));
-				}
-				else if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/spetum"));
-				}
-			}
-			else
+			if (this.Const.DLC.Wildmen)
 			{
-				r = this.Math.rand(0, 2);
+				weapons.extend([
+					"weapons/battle_whip"
+				]);
+			}
 
-				if (r == 0)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/billhook"));
-				}
-				else if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-				}
-			}
-		}
-		else
-		{
-			if (r == 2)
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() == "weapon.dagger")
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/falchion"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/flail"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
 			}
+		}
 
-			if (r != 8 && this.Math.rand(1, 100) <= 75)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null && !this.m.Skills.hasSkill("perk.duelist"))
+		{
+			if (this.Math.rand(1, 100) <= 75)
 			{
 				r = this.Math.rand(0, 2);
 
@@ -194,36 +160,24 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
-			local r = this.Math.rand(1, 7);
+			local helmets = [
+				"scripts/items/helmets/nasal_helmet",
+				"scripts/items/helmets/nasal_helmet_with_mail",
+				"scripts/items/helmets/mail_coif",
+				"scripts/items/helmets/reinforced_mail_coif",
+				"scripts/items/helmets/headscarf",
+				"scripts/items/helmets/kettle_hat",
+				"scripts/items/helmets/kettle_hat_with_mail"
+			];
 
-			if (r == 1)
+			if (this.Const.DLC.Wildmen)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
+				helmets.extend([
+					"scripts/items/helmets/nordic_helmet"
+				]);
 			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_mail"));
-			}
+
+			this.m.Items.equip(this.new(helmets[this.Math.rand(1, helmets.len() - 1)]));
 		}
 	}
 

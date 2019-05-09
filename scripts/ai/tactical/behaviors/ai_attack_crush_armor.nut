@@ -120,12 +120,12 @@ this.ai_attack_crush_armor <- this.inherit("scripts/ai/tactical/behavior", {
 
 				local p = _entity.getCurrentProperties();
 				local armor = target.getArmor(this.Const.BodyPart.Body) * p.getHitchance(this.Const.BodyPart.Body) * 0.01 + target.getArmor(this.Const.BodyPart.Head) * p.getHitchance(this.Const.BodyPart.Head) * 0.01;
+				local damage = _skill.getExpectedDamage(target).ArmorDamage;
 
-				for( ; armor <= p.getArmorDamageAverage();  )
+				for( ; armor <= damage;  )
 				{
 				}
 
-				local damage = _skill.getExpectedDamage(target).ArmorDamage;
 				local score = damage / _entity.getCurrentProperties().getArmorDamageAverage();
 				score = score * (target.getHitpoints() / target.getHitpointsMax());
 				score = score * (_skill.getHitchance(target) * 0.01);

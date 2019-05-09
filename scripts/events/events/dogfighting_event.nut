@@ -404,7 +404,7 @@ this.dogfighting_event <- this.inherit("scripts/events/event", {
 		{
 			local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
-			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 			{
 				candidates.push(bro);
 			}

@@ -138,17 +138,6 @@ this.ambition <- {
 		return this.Time.getVirtualTimeF() - this.m.StartTime >= this.m.Duration || this.onCheckFailure();
 	}
 
-	function getArticle( _object )
-	{
-		return this.isFirstCharacter(_object, [
-			"A",
-			"E",
-			"I",
-			"O",
-			"U"
-		]) ? "an " : "a ";
-	}
-
 	function onUpdateScore()
 	{
 	}

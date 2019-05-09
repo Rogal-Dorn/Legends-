@@ -83,11 +83,7 @@ this.discover_locations_ambition <- this.inherit("scripts/ambitions/ambition", {
 	function onDeserialize( _in )
 	{
 		this.ambition.onDeserialize(_in);
-
-		if (_in.getMetaData().getVersion() >= 15)
-		{
-			this.m.LocationsDiscovered = _in.readU8();
-		}
+		this.m.LocationsDiscovered = _in.readU8();
 	}
 
 });

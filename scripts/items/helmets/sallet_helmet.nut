@@ -44,6 +44,10 @@ this.sallet_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		switch(_color)
 		{
+		case this.Const.Items.Paint.None:
+			this.m.Variant = 163;
+			break;
+
 		case this.Const.Items.Paint.Black:
 			this.m.Variant = 164;
 			break;

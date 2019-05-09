@@ -14,6 +14,8 @@ this.orc_ruins_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsShowingBanner = false;
 		this.setDefenderSpawnList(this.Const.World.Spawn.YoungOrcsAndBerserkers);
 		this.m.Resources = 150;
+		this.m.NamedWeaponsList = this.Const.Items.NamedOrcWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedOrcShields;
 	}
 
 	function onSpawned()

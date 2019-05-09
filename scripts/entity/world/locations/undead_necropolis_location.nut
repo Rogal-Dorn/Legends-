@@ -31,6 +31,8 @@ this.undead_necropolis_location <- this.inherit("scripts/entity/world/location",
 		local r = this.Math.rand(1, 3);
 		this.setDefenderSpawnList(this.Const.World.Spawn.UndeadScourge);
 		this.m.Resources = 350;
+		this.m.NamedWeaponsList = this.Const.Items.NamedUndeadWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedUndeadShields;
 	}
 
 	function onSpawned()

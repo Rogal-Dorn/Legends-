@@ -137,7 +137,7 @@ gt.Const.Tactical.Actor.GoblinWolfrider <- {
 	MeleeSkill = 75,
 	RangedSkill = 50,
 	MeleeDefense = 15,
-	RangedDefense = 10,
+	RangedDefense = 15,
 	Initiative = 130,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,

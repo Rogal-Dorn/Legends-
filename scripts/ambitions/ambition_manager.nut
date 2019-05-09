@@ -145,7 +145,7 @@ this.ambition_manager <- {
 
 		if (this.m.ActiveAmbition != null)
 		{
-			if (this.m.ActiveAmbition.isSuccess() && this.World.Events.canFireEvent(true))
+			if (this.m.ActiveAmbition.isSuccess() && this.World.Events.canFireEvent())
 			{
 				if (this.World.Events.fire("event.ambition_fulfilled"))
 				{
@@ -171,7 +171,7 @@ this.ambition_manager <- {
 				this.m.Thread = null;
 			}
 		}
-		else if (this.m.Selection.len() != 0 && this.World.Events.canFireEvent(true))
+		else if (this.m.Selection.len() != 0 && this.World.Events.canFireEvent())
 		{
 			if (this.World.Events.fire("event.choose_ambition"))
 			{

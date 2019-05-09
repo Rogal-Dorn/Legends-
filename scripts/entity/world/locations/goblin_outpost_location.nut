@@ -29,14 +29,16 @@ this.goblin_outpost_location <- this.inherit("scripts/entity/world/location", {
 		this.dropAmmo(this.Math.rand(30, 60), _lootTable);
 		this.dropMedicine(this.Math.rand(0, 5), _lootTable);
 		local treasure = [
-			"trade/furs_item",
 			"trade/salt_item",
 			"trade/amber_shards_item",
 			"loot/silverware_item",
 			"loot/silver_bowl_item",
 			"loot/ancient_gold_coins_item",
 			"loot/silver_bowl_item",
-			"loot/signet_ring_item"
+			"loot/signet_ring_item",
+			"loot/goblin_carved_ivory_iconographs_item",
+			"loot/goblin_minted_coins_item",
+			"loot/goblin_rank_insignia_item"
 		];
 
 		if (this.Const.DLC.Unhold)

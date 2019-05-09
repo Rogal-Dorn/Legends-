@@ -188,12 +188,13 @@ this.faction_action <- {
 		return ret;
 	}
 
-	function getTileToSpawnLocation( _maxTries = 10, _notOnTerrain = [], _minDistToSettlements = 7, _maxDistToSettlements = 1000, _maxDistanceToAllies = 1000, _minDistToEnemyLocations = 7, _minDistToAlliedLocations = 7, _nearTile = null )
+	function getTileToSpawnLocation( _maxTries = 10, _notOnTerrain = [], _minDistToSettlements = 7, _maxDistToSettlements = 1000, _maxDistanceToAllies = 1000, _minDistToEnemyLocations = 7, _minDistToAlliedLocations = 7, _nearTile = null, _minY = 0.0, _maxY = 1.0 )
 	{
 		local mapSize = this.World.getMapSize();
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
 		navSettings.RoadMult = 1.0;
+		local used = [];
 		local tries = 0;
 
 		while (tries++ < _maxTries)
@@ -209,10 +210,17 @@ this.faction_action <- {
 			else
 			{
 				x = this.Math.rand(3, mapSize.X - 3);
-				y = this.Math.rand(3, mapSize.Y - 4);
+				y = this.Math.rand(this.Math.max(3, mapSize.Y * _minY), this.Math.min(mapSize.Y - 4, mapSize.Y * _maxY));
 			}
 
 			local tile = this.World.getTileSquare(x, y);
+
+			if (used.find(tile.ID) != null)
+			{
+				continue;
+			}
+
+			used.push(tile.ID);
 
 			if (tile.IsOccupied || tile.HasRoad || tile.HasRiver)
 			{

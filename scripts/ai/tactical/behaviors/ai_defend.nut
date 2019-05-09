@@ -50,17 +50,12 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (this.getAgent().getIntentions().IsEngaging)
-		{
-			return this.Const.AI.Behavior.Score.Zero;
-		}
-
 		if (!this.getStrategy().isDefending())
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect).getScore() > 0)
+		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageMelee).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackBow).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Reload).getScore() > 0 || this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Protect).getScore() > 0)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -138,7 +133,7 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (item.getAmmoMax() == 0 || item.getAmmo() > 0)
 			{
-				local targets = this.queryTargetsInMeleeRange(2, item.getRangeMax());
+				local targets = this.queryTargetsInMeleeRange(2, this.Math.min(item.getRangeMax(), _entity.getCurrentProperties().Vision));
 				score = score * this.Math.pow(this.Const.AI.Behavior.DefendUseRangedWeaponMult, targets.len());
 			}
 		}
@@ -377,10 +372,6 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 						{
 							local dist = finalTile.getDistanceTo(myTile);
 							local scoreBonus = finalTile.TVTotal * this.Const.AI.Behavior.DefendTerrainValueMult;
-							local allies = this.queryAllyMagnitude(finalTile, this.Const.AI.Behavior.DefendMaxOpponentToAllyDistance);
-							scoreBonus = scoreBonus + allies.Allies * allies.AverageDistanceScore * allies.AverageMagnetism * this.getProperties().OverallFormationMult;
-							local opponents = this.queryOpponentMagnitude(finalTile, this.Const.AI.Behavior.DefendMaxOpponentToAllyDistance);
-							scoreBonus = scoreBonus - opponents.Opponents * opponents.AverageDistanceScore * this.Const.AI.Behavior.DefendOpponentImportanceMult;
 							t.ScoreBonus = scoreBonus;
 						}
 					}
@@ -466,9 +457,8 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (!entityIsRangedUnit && _entity.getCurrentProperties().TargetAttractionMult <= 1.0)
 			{
-				local importantAlly;
-				local importantAllyTile;
-				local importantAllies = 0;
+				local importantAllies = [];
+				local secondaryAllies = [];
 
 				for( local i = 0; i < 6; i = ++i )
 				{
@@ -486,46 +476,64 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 						{
 							local entity = adjacentTile.getEntity();
 
-							if (entity.isAlliedWith(_entity) && (entity.getCurrentProperties().TargetAttractionMult > 1.0 || this.isRangedUnit(entity)))
+							if (entity.getFaction() == _entity.getFaction())
 							{
-								importantAllies = ++importantAllies;
-
-								if (importantAlly == null || importantAlly.getCurrentProperties().TargetAttractionMult < entity.getCurrentProperties().TargetAttractionMult)
+								if (entity.getCurrentProperties().TargetAttractionMult > 1.0 || this.isRangedUnit(entity))
 								{
-									importantAlly = entity;
-									importantAllyTile = adjacentTile;
+									importantAllies.push(entity);
+								}
+								else if (_entity.isArmedWithShield() && !entity.isArmedWithShield())
+								{
+									secondaryAllies.push(entity);
 								}
 							}
 						}
 					}
 				}
 
-				if (importantAlly != null && targets.len() != 0)
+				if (importantAllies.len() == 0)
 				{
-					local dir = importantAllyTile.getDirectionTo(t.Tile);
-					local dir_left = dir - 1 >= 0 ? dir - 1 : this.Const.Direction.COUNT - 1;
-					local dir_right = dir + 1 < this.Const.Direction.COUNT ? dir + 1 : 0;
+					importantAllies = secondaryAllies;
+				}
+
+				foreach( a in importantAllies )
+				{
+					local tile = a.getTile();
+					local checkDirs = [];
+					checkDirs.push(tile.getDirectionTo(t.Tile));
+					checkDirs.push(checkDirs[0] - 1 >= 0 ? checkDirs[0] - 1 : this.Const.Direction.COUNT - 1);
+					checkDirs.push(checkDirs[0] + 1 < this.Const.Direction.COUNT ? checkDirs[0] + 1 : 0);
 					local hasCover = false;
 
-					if (!t.Tile.isSameTileAs(myTile))
+					foreach( d in checkDirs )
 					{
-						if (importantAlly.getTile().hasNextTile(dir) && !importantAlly.getTile().getNextTile(dir).IsEmpty)
+						if (!tile.hasNextTile(d))
 						{
-							hasCover = true;
+							continue;
 						}
-					}
 
-					if (!hasCover && importantAlly.getTile().hasNextTile(dir_left) && !importantAlly.getTile().getNextTile(dir_left).IsEmpty)
-					{
+						local next = tile.getNextTile(d);
+
+						if (next.IsEmpty || myTile.isSameTileAs(next))
+						{
+							continue;
+						}
+
+						if (next.IsOccupiedByActor)
+						{
+							local occupant = next.getEntity();
+
+							if (occupant.isAlliedWith(_entity) && (occupant.getCurrentProperties().TargetAttractionMult > 1.0 || this.isRangedUnit(occupant)))
+							{
+								continue;
+							}
+						}
+
 						hasCover = true;
+						break;
 					}
 
-					if (!hasCover && importantAlly.getTile().hasNextTile(dir_right) && !importantAlly.getTile().getNextTile(dir_right).IsEmpty)
-					{
-						hasCover = true;
-					}
-
-					allyDefendBonus = dirs[dir] / targets.len() * this.Const.AI.Behavior.DefendImportantAllyPosMult * (!hasCover ? this.Const.AI.Behavior.DefendImportantAllyPosMult : 1.0) * importantAllies;
+					allyDefendBonus = allyDefendBonus + dirs[checkDirs[0]] / targets.len() * this.Const.AI.Behavior.DefendImportantAllyPosMult * (!hasCover ? this.Const.AI.Behavior.DefendImportantAllyPosMult : 1.0) * a.getCurrentProperties().TargetAttractionMult;
 				}
 			}
 
@@ -569,18 +577,12 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
-		local allies = _tag.Behavior.queryAllyMagnitude(_tile, this.Const.AI.Behavior.DefendMaxOpponentToAllyDistance);
-		score = score + allies.Allies * allies.AverageDistanceScore * allies.AverageMagnetism * _tag.Behavior.getProperties().OverallFormationMult;
-		scoreBonus = scoreBonus + allies.Allies * allies.AverageDistanceScore * allies.AverageMagnetism * _tag.Behavior.getProperties().OverallFormationMult;
-		local opponents = _tag.Behavior.queryOpponentMagnitude(_tile, this.Const.AI.Behavior.DefendMaxOpponentToAllyDistance);
-		score = score - opponents.Opponents * opponents.AverageDistanceScore * this.Const.AI.Behavior.DefendOpponentImportanceMult;
-		scoreBonus = scoreBonus - opponents.Opponents * opponents.AverageDistanceScore * this.Const.AI.Behavior.DefendOpponentImportanceMult;
 		_tag.Tiles.push({
 			Tile = _tile,
 			Score = score,
 			ScoreBonus = scoreBonus,
-			Allies = allies,
-			Opponents = opponents
+			Allies = 0.0,
+			Opponents = 0.0
 		});
 	}
 

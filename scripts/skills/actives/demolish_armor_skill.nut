@@ -28,6 +28,7 @@ this.demolish_armor_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsTooCloseShown = true;
+		this.m.IsWeaponSkill = true;
 		this.m.DirectDamageMult = 0.0;
 		this.m.HitChanceBonus = 0;
 		this.m.ActionPointCost = 6;

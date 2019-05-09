@@ -47,7 +47,7 @@ this.unhold_exposition_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (currentTile.Type != this.Const.World.TerrainType.Highlands)
+		if (currentTile.Type != this.Const.World.TerrainType.Tundra)
 		{
 			return;
 		}

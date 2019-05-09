@@ -8,6 +8,7 @@ this.ancient_temple_enter_event <- this.inherit("scripts/events/event", {
 		this.m.ID = "event.location.ancient_temple_enter";
 		this.m.Title = "As you approach...";
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
+		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_111.png[/img]{Only half of the temple\'s entrance is visible, the rest long since sunk into the earth as though unsure whether to be coffin or mausoleum. Along a visible frieze you can see a stony relief of tables being thrown and monied men running from what looks like an armored skeleton with a whip. A few of the mercenaries seem uncomfortable with the idea of going in, but you\'ve the notion that others have felt that way as well and have thus left the place unmolested.\n\n You take out a torch and enter with a sellsword\'s spirit and robber\'s resolve. After gathering supplies, you crouch and enter the temple by slinging your legs over the earth and jumping into the steps below. The clap of your boots snickers into the marbled halls and you wave the torch before you as if to watch the echoes go. Looking back, the light between the shelf of earth and the temple top silhouetting your company as though they were a throng of sextons satisfied at their work. %volunteer% shakes his head and says he\'s coming with. The rest of the company mutually agrees to keep watch.}",
@@ -69,7 +70,7 @@ this.ancient_temple_enter_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 
@@ -154,7 +155,7 @@ this.ancient_temple_enter_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 
@@ -245,7 +246,7 @@ this.ancient_temple_enter_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 
@@ -289,7 +290,7 @@ this.ancient_temple_enter_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 

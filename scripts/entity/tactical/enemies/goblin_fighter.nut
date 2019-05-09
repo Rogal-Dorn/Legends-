@@ -49,32 +49,23 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 
 	function assignRandomEquipment()
 	{
-		local r;
-		r = this.Math.rand(1, 4);
-
-		if (r == 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_falchion"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_spear"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/goblin_pike"));
+			local weapons = [
+				"weapons/greenskins/goblin_falchion",
+				"weapons/greenskins/goblin_spear",
+				"weapons/greenskins/goblin_notched_blade",
+				"weapons/greenskins/goblin_pike"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.goblin_spear")
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.goblin_spear" && this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.named_goblin_spear")
 		{
 			this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_spiked_balls"));
 		}
 
-		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
 			if (this.Math.rand(1, 100) <= 50)
 			{
@@ -82,35 +73,25 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 			}
 			else
 			{
-				r = this.Math.rand(1, 2);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/greenskins/goblin_light_shield"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/greenskins/goblin_heavy_shield"));
-				}
+				local shields = [
+					"shields/greenskins/goblin_light_shield",
+					"shields/greenskins/goblin_heavy_shield"
+				];
+				this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 			}
 		}
 
-		r = this.Math.rand(1, 3);
-
-		if (r == 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_light_armor"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_medium_armor"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/goblin_heavy_armor"));
+			local armor = [
+				"armor/greenskins/goblin_light_armor",
+				"armor/greenskins/goblin_medium_armor",
+				"armor/greenskins/goblin_heavy_armor"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		if (this.Math.rand(1, 100) <= 66)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
 			if (this.Math.rand(1, 100) <= 75)
 			{
@@ -121,6 +102,24 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 				this.m.Items.equip(this.new("scripts/items/helmets/greenskins/goblin_heavy_helmet"));
 			}
 		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_goblin_falchion",
+			"weapons/named/named_goblin_pike",
+			"weapons/named/named_goblin_spear"
+		];
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		return true;
 	}
 
 });

@@ -13,6 +13,8 @@ this.orc_hideout_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsDespawningDefenders = false;
 		this.setDefenderSpawnList(this.Const.World.Spawn.YoungOrcsOnly);
 		this.m.Resources = 70;
+		this.m.NamedWeaponsList = this.Const.Items.NamedOrcWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedOrcShields;
 	}
 
 	function onSpawned()

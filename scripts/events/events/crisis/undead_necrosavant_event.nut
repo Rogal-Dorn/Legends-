@@ -77,7 +77,7 @@ this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 
@@ -103,7 +103,7 @@ this.undead_necrosavant_event <- this.inherit("scripts/events/event", {
 						properties.Music = this.Const.Music.UndeadTracks;
 						properties.IsAutoAssigningBases = false;
 						properties.Entities = [];
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Zombies, this.Math.rand(80, 120), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Zombies, this.Math.rand(80, 120), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 						properties.Entities.push({
 							ID = this.Const.EntityType.Necromancer,
 							Variant = 0,

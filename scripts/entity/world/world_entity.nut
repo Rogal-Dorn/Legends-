@@ -5,6 +5,7 @@ this.world_entity <- {
 		VisionRadius = this.Const.World.Settings.Vision,
 		VisibilityMult = 1.0,
 		CombatID = 0,
+		CombatSeed = 0,
 		OnCombatWithPlayerCallback = null,
 		Troops = [],
 		Strength = 0.0,
@@ -50,6 +51,11 @@ this.world_entity <- {
 	function getCombatID()
 	{
 		return this.m.CombatID;
+	}
+
+	function getCombatSeed()
+	{
+		return this.m.CombatSeed;
 	}
 
 	function getTroops()
@@ -294,6 +300,7 @@ this.world_entity <- {
 	function getTroopComposition()
 	{
 		local entities = [];
+		local champions = [];
 		local entityTypes = [];
 		entityTypes.resize(this.Const.EntityType.len(), 0);
 
@@ -301,8 +308,25 @@ this.world_entity <- {
 		{
 			if (t.Script.len() != "")
 			{
-				++entityTypes[t.ID];
+				if (t.Variant != 0)
+				{
+					champions.push(t);
+				}
+				else
+				{
+					++entityTypes[t.ID];
+				}
 			}
+		}
+
+		foreach( c in champions )
+		{
+			entities.push({
+				id = 20,
+				type = "text",
+				icon = "ui/orientation/" + this.Const.EntityIcon[c.ID] + ".png",
+				text = c.Name
+			});
 		}
 
 		for( local i = 0; i < entityTypes.len(); i = ++i )
@@ -657,6 +681,11 @@ this.world_entity <- {
 			debug_vision.Scale = this.m.VisionRadius / 100.0;
 			debug_vision.Visible = false;
 		}
+
+		if (this.m.CombatSeed == 0)
+		{
+			this.m.CombatSeed = this.Math.rand();
+		}
 	}
 
 	function onAfterInit()
@@ -686,7 +715,7 @@ this.world_entity <- {
 	{
 		_out.writeString(this.m.Name);
 		_out.writeString(this.m.Description);
-		_out.writeU8(this.m.Troops.len());
+		_out.writeU8(this.Math.min(255, this.m.Troops.len()));
 
 		foreach( t in this.m.Troops )
 		{
@@ -694,10 +723,12 @@ this.world_entity <- {
 			_out.writeU8(t.Variant);
 			_out.writeF32(t.Strength);
 			_out.writeI8(t.Row);
+			_out.writeString(t.Name);
 			_out.writeI32(this.IO.scriptHashByFilename(t.Script));
 		}
 
 		_out.writeI32(this.m.CombatID);
+		_out.writeI32(this.m.CombatSeed);
 		_out.writeF32(this.m.VisionRadius);
 		_out.writeF32(this.m.VisibilityMult);
 		local numInventoryItems = this.Math.min(255, this.m.Inventory.len());
@@ -746,7 +777,11 @@ this.world_entity <- {
 			troop.Party = this.WeakTableRef(this);
 			troop.Faction = this.getFaction();
 
-			if (_in.getMetaData().getVersion() < 40)
+			if (_in.getMetaData().getVersion() >= 48)
+			{
+				troop.Name = _in.readString();
+			}
+			else if (_in.getMetaData().getVersion() < 40)
 			{
 				troop.ID = this.Const.EntityType.convertOldToNew(troop.ID);
 			}
@@ -764,12 +799,17 @@ this.world_entity <- {
 			else
 			{
 				this.m.Troops.push(troop);
-				this.m.Strength += troop.Strength;
 			}
 		}
 
 		this.updateStrength();
 		this.m.CombatID = _in.readI32();
+
+		if (_in.getMetaData().getVersion() >= 49)
+		{
+			this.m.CombatSeed = _in.readI32();
+		}
+
 		this.m.VisionRadius = _in.readF32();
 		this.m.VisibilityMult = _in.readF32();
 		local numInventoryItems = _in.readU8();
@@ -779,11 +819,7 @@ this.world_entity <- {
 			this.m.Inventory.push(_in.readString());
 		}
 
-		if (_in.getMetaData().getVersion() >= 16)
-		{
-			this.m.LootScale = _in.readF32();
-		}
-
+		this.m.LootScale = _in.readF32();
 		this.m.IsAttackable = _in.readBool();
 		this.m.IsAttackableByAI = _in.readBool();
 		this.m.IsUsingGlobalVision = _in.readBool();

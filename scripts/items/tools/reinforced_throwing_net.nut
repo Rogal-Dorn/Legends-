@@ -100,6 +100,11 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		return result;
 	}
 
+	function playInventorySound( _eventType )
+	{
+		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
+	}
+
 	function onEquip()
 	{
 		this.weapon.onEquip();

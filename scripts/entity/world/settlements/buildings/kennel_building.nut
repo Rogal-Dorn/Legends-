@@ -214,11 +214,6 @@ this.kennel_building <- this.inherit("scripts/entity/world/settlements/buildings
 			{
 				R = 0,
 				P = 1.0,
-				S = "accessory/wardog_item"
-			},
-			{
-				R = 0,
-				P = 1.0,
 				S = "accessory/armored_wardog_item"
 			}
 		];
@@ -234,15 +229,26 @@ this.kennel_building <- this.inherit("scripts/entity/world/settlements/buildings
 			]);
 		}
 
-		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
+		if (this.Const.DLC.Wildmen && this.m.Settlement.getTile().SquareCoords.Y > this.World.getMapSize().Y * 0.7)
 		{
-			list = [
-				{
-					R = 0,
-					P = 1.0,
-					S = "supplies/goat_cheese_item"
-				}
-			];
+			list.push({
+				R = 0,
+				P = 1.0,
+				S = "accessory/warhound_item"
+			});
+			list.push({
+				R = 0,
+				P = 1.0,
+				S = "accessory/armored_warhound_item"
+			});
+		}
+		else
+		{
+			list.push({
+				R = 0,
+				P = 1.0,
+				S = "accessory/wardog_item"
+			});
 		}
 
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);

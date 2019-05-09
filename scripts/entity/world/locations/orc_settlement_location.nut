@@ -12,6 +12,8 @@ this.orc_settlement_location <- this.inherit("scripts/entity/world/location", {
 		this.m.LocationType = this.Const.World.LocationType.Lair | this.Const.World.LocationType.Mobile;
 		this.setDefenderSpawnList(this.Const.World.Spawn.OrcBoss);
 		this.m.Resources = 350;
+		this.m.NamedWeaponsList = this.Const.Items.NamedOrcWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedOrcShields;
 	}
 
 	function onSpawned()

@@ -25,12 +25,15 @@ this.strategy <- {
 			AllyRangedFiring = 0,
 			AllyRangedTotal = 0,
 			EnemyRangedTotal = 0,
+			ShortestDistanceToEnemy = 0,
 			IsOutrangedByEnemy = false,
 			IsOutrangingEnemy = false,
 			IsEngaged = false,
 			IsOwnFactionEngaged = false
 		},
 		IsDefending = false,
+		IsEscortedByPlayer = false,
+		IsDelayedAttack = false,
 		IsOffensiveLastTurn = false,
 		IsAttackingOnWorldmap = false
 	},
@@ -94,6 +97,16 @@ this.strategy <- {
 		return this.m.IsDefending;
 	}
 
+	function isDelayedAttack()
+	{
+		return this.m.IsDelayedAttack;
+	}
+
+	function isEscortedByPlayer()
+	{
+		return this.m.IsEscortedByPlayer;
+	}
+
 	function create()
 	{
 	}
@@ -124,6 +137,7 @@ this.strategy <- {
 		local enemyRangedFiring = 0.0;
 		local allyRangedTotal = 0;
 		local enemyRangedTotal = 0;
+		local distToEnemy = 9000;
 		local allies = [];
 		local enemies = [];
 		local time = this.Time.getExactTime();
@@ -310,6 +324,7 @@ this.strategy <- {
 			if (allyTile.hasZoneOfControlOtherThan(ally.Entity.getAlliedFactions()))
 			{
 				allyEngaged = ++allyEngaged;
+				distToEnemy = 1;
 
 				if (ally.Entity.getFaction() == this.m.Faction)
 				{
@@ -321,6 +336,16 @@ this.strategy <- {
 
 			foreach( enemy in enemies )
 			{
+				if (distToEnemy > 1)
+				{
+					local d = allyTile.getDistanceTo(enemy.Entity.getTile());
+
+					if (d < distToEnemy)
+					{
+						distToEnemy = d;
+					}
+				}
+
 				if (enemy.HasRangedWeapon)
 				{
 					continue;
@@ -363,6 +388,7 @@ this.strategy <- {
 		this.m.Stats.EnemyRangedTotal = enemyRangedTotal;
 		this.m.Stats.AllyRangedTotal = allyRangedTotal;
 		this.m.Stats.IsEngaged = this.m.Stats.EngagedAlliesRatio > 0.1;
+		this.m.Stats.ShortestDistanceToEnemy = distToEnemy;
 		local players = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
 		local levels = 0;
 		local armors = 0;
@@ -375,6 +401,7 @@ this.strategy <- {
 
 		this.m.AveragePlayerLevel = levels / (players.len() * 1.0);
 		this.m.AveragePlayerArmor = armors / (players.len() * 1.0);
+		this.m.IsEscortedByPlayer = false;
 		this.m.IsDefending = this.updateDefending();
 		return true;
 	}
@@ -393,6 +420,7 @@ this.strategy <- {
 	{
 		if (!this.m.Stats.IsOwnFactionEngaged && !this.Tactical.State.isScenarioMode() && this.World.State.getEscortedEntity() != null && !this.World.State.getEscortedEntity().isNull() && this.World.State.getEscortedEntity().getFaction() == this.m.Faction && this.World.FactionManager.getFaction(this.World.State.getEscortedEntity().getFaction()) != null && this.World.FactionManager.getFaction(this.World.State.getEscortedEntity().getFaction()).getType() == this.Const.FactionType.Settlement)
 		{
+			this.m.IsEscortedByPlayer = true;
 			return true;
 		}
 

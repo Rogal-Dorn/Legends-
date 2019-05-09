@@ -5,6 +5,7 @@ this.waterwheel_enter_event <- this.inherit("scripts/events/event", {
 		this.m.ID = "event.location.waterwheel_enter";
 		this.m.Title = "As you approach...";
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
+		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_109.png[/img]{The waterwheel totters at the hinges as its buckets dip and draw water. Attached to its side is a stonewalled abode with a chimney piping bulbs of black. There are pelts and traps hanging outside on the walls, and an oaken chair sets on the porch. Its windows are too blurry to look through, but you can hear the mill inside rising and churning with wooden groans. Drawing your sword, you step up to the porch and open the door.\n\n A man welcomes you in the first and only room there is. He\'s standing beside the mill well, running his hand through the grains. He is an elderly fellow yet of modest stature, as though time had no warrant for his posture or abilities. There is a sword hilt hanging above the fireplace. Its glint is unmistakably rich and the old man regards your stare with a warm smile.%SPEECH_ON%Only those who are worthy may have the hilt of the %weapon%. You, stranger, are not.%SPEECH_OFF%}",

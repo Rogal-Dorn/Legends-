@@ -52,101 +52,45 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(0, 8);
+		local r;
 
-		if (r <= 1)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
+			local weapons = [
+				"weapons/billhook",
+				"weapons/pike",
+				"weapons/warbrand",
+				"weapons/longsword",
+				"weapons/hand_axe",
+				"weapons/boar_spear",
+				"weapons/morning_star",
+				"weapons/falchion",
+				"weapons/arming_sword",
+				"weapons/flail",
+				"weapons/military_pick"
+			];
+
 			if (this.Const.DLC.Unhold)
 			{
-				local r = this.Math.rand(1, 5);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/billhook"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-				}
-				else if (r == 4)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/longsword"));
-				}
-				else if (r == 5)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/polehammer"));
-				}
+				weapons.extend([
+					"weapons/polehammer",
+					"weapons/three_headed_flail"
+				]);
 			}
-			else
+
+			if (this.Const.DLC.Wildmen)
 			{
-				local r = this.Math.rand(1, 4);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/billhook"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-				}
-				else if (r == 4)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
-				}
+				weapons.extend([
+					"weapons/bardiche",
+					"weapons/scimitar"
+				]);
 			}
+
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-		else
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
-			if (this.Const.DLC.Unhold)
-			{
-				r = this.Math.rand(2, 9);
-			}
-			else
-			{
-				r = this.Math.rand(2, 8);
-			}
-
-			if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/falchion"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/flail"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/military_pick"));
-			}
-			else if (r == 9)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/three_headed_flail"));
-			}
-
 			if (this.Math.rand(1, 100) <= 75)
 			{
 				r = this.Math.rand(0, 2);
@@ -289,56 +233,30 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 95)
 		{
-			local r = this.Math.rand(1, 12);
+			local helmets = [
+				"scripts/items/helmets/nasal_helmet",
+				"scripts/items/helmets/nasal_helmet_with_mail",
+				"scripts/items/helmets/mail_coif",
+				"scripts/items/helmets/reinforced_mail_coif",
+				"scripts/items/helmets/headscarf",
+				"scripts/items/helmets/kettle_hat",
+				"scripts/items/helmets/kettle_hat_with_mail",
+				"scripts/items/helmets/flat_top_helmet",
+				"scripts/items/helmets/flat_top_with_mail",
+				"scripts/items/helmets/closed_flat_top_helmet",
+				"scripts/items/helmets/closed_mail_coif",
+				"scripts/items/helmets/bascinet_with_mail"
+			];
 
-			if (r == 1)
+			if (this.Const.DLC.Wildmen)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet"));
+				helmets.extend([
+					"scripts/items/helmets/nordic_helmet",
+					"scripts/items/helmets/steppe_helmet_with_mail"
+				]);
 			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/mail_coif"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/reinforced_mail_coif"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_mail"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/flat_top_helmet"));
-			}
-			else if (r == 9)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/flat_top_with_mail"));
-			}
-			else if (r == 10)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-			}
-			else if (r == 11)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
-			}
-			else if (r == 12)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-			}
+
+			this.m.Items.equip(this.new(helmets[this.Math.rand(1, helmets.len() - 1)]));
 		}
 	}
 

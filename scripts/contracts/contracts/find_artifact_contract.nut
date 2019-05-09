@@ -76,7 +76,7 @@ this.find_artifact_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Flags.set("NemesisName", nemesisNames[n]);
 		this.m.Flags.set("NemesisNameC", nemesisNamesC[n]);
 		this.m.Flags.set("NemesisNameS", nemesisNamesS[n]);
-		this.m.Payment.Pool = 1900 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 2000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 		local r = this.Math.rand(1, 2);
 
 		if (r == 1)
@@ -606,7 +606,7 @@ this.find_artifact_contract <- this.inherit("scripts/contracts/contract", {
 						roam.setTerrain(this.Const.World.TerrainType.Shore, false);
 						roam.setTerrain(this.Const.World.TerrainType.Mountains, false);
 						c.addOrder(roam);
-						this.Contract.addFootPrintsFromTo(playerTile, this.Contract.m.Destination.getTile(), this.Const.GenericFootprints, 0.75);
+						this.Const.World.Common.addFootprintsFromTo(playerTile, this.Contract.m.Destination.getTile(), this.Const.GenericFootprints, 0.75);
 						this.Contract.setState("Running_TooLate");
 						return 0;
 					}

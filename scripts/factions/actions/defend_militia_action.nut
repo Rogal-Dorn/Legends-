@@ -126,10 +126,13 @@ this.defend_militia_action <- this.inherit("scripts/factions/faction_action", {
 			party.getSprite("banner").setBrush(this.m.Settlement.getBanner());
 			party.setDescription("Brave men defending their homes with their lives. Farmers, craftsmen, artisans - but not one real soldier.");
 			local c = party.getController();
+			local sleep = this.new("scripts/ai/world/orders/sleep_order");
+			sleep.setTime(1.0);
 			local guard = this.new("scripts/ai/world/orders/guard_order");
 			guard.setTarget(spawnpoints[i]);
 			guard.setTime(30.0);
 			local despawn = this.new("scripts/ai/world/orders/despawn_order");
+			c.addOrder(sleep);
 			c.addOrder(guard);
 			c.addOrder(despawn);
 		}

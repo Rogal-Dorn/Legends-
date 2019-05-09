@@ -926,7 +926,7 @@ CharacterScreenLeftPanelHeaderModule.prototype.updateControls = function(_data)
 	}
 
 	// update dismiss button
-	if (this.mDataSource.getNumBrothers() > 1 && !this.mDataSource.isTacticalMode())
+    if (this.mDataSource.getNumBrothers() > 1 && !this.mDataSource.isTacticalMode() && !_data[CharacterScreenIdentifier.Entity.Character.IsPlayerCharacter])
 	{
 		this.mDismissButton.removeClass('display-none').addClass('display-block');
 	}

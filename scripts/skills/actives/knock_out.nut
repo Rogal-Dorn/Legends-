@@ -34,6 +34,7 @@ this.knock_out <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.4;
@@ -76,6 +77,23 @@ this.knock_out <- this.inherit("scripts/skills/skill", {
 		}
 
 		return ret;
+	}
+
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		local target = _targetTile.getEntity();
+
+		if (target.getCurrentProperties().IsImmuneToStun || target.getCurrentProperties().IsStunned)
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	function onAfterUpdate( _properties )

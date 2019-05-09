@@ -33,7 +33,7 @@ gt.Const.World.TerrainType <- {
 	Farmland = 11,
 	Snow = 12,
 	Badlands = 13,
-	Highlands = 14,
+	Tundra = 14,
 	Steppe = 15,
 	Shore = 16,
 	COUNT = 17
@@ -361,7 +361,7 @@ gt.Const.World.Settings <- {
 	SizeY = 140,
 	LandMassMult = 1.4,
 	WaterConnectivity = 38,
-	MinLandToWaterRatio = 1.4,
+	MinLandToWaterRatio = 1.45,
 	Snowline = 0.9,
 	Vision = 500.0
 };
@@ -433,7 +433,7 @@ gt.Const.World.RoadBrushes <- {
 		}
 		else
 		{
-			this.logError("Road Brush undefined (" + _d + ")!");
+			this.logWarning("Road Brush undefined (" + _d + ")!");
 			return "undefined road brush";
 		}
 	}
@@ -522,7 +522,7 @@ gt.Const.World.RiverBrushes <- {
 		}
 		else
 		{
-			this.logError("River Brush undefined!");
+			this.logWarning("River Brush undefined!");
 			return "undefined river brush";
 		}
 	}
@@ -603,7 +603,7 @@ gt.Const.World.BridgeBrushes <- {
 		}
 		else
 		{
-			this.logError("Bridge Brush undefined!");
+			this.logWarning("Bridge Brush undefined!");
 			return "undefined bridge brush";
 		}
 	}
@@ -636,7 +636,7 @@ gt.Const.World.CrossingBrushes <- {
 		}
 		else
 		{
-			this.logError("Crossing Brush undefined!");
+			this.logWarning("Crossing Brush undefined!");
 			return "undefined crossing brush";
 		}
 	}
@@ -662,7 +662,7 @@ gt.Const.World.ShoreBrushes <- {
 		}
 		else
 		{
-			this.logError("Shore Brush undefined!");
+			this.logWarning("Shore Brush undefined!");
 			return "undefined shore brush";
 		}
 	}

@@ -81,211 +81,114 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 8);
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			local weapons = [
+				"weapons/greatsword",
+				"weapons/greataxe",
+				"weapons/warbrand",
+				"weapons/noble_sword",
+				"weapons/fighting_axe",
+				"weapons/warhammer",
+				"weapons/boar_spear",
+				"weapons/winged_mace",
+				"weapons/arming_sword",
+				"weapons/military_cleaver"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		{
+			local shields = [
+				"shields/wooden_shield",
+				"shields/heater_shield",
+				"shields/kite_shield"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		}
+
+		if (this.Math.rand(1, 100) <= 75)
+		{
+			local weapons = [
+				"weapons/throwing_axe",
+				"weapons/javelin"
+			];
+			this.m.Items.addToBag(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
+		{
+			local armor = [
+				"armor/reinforced_mail_hauberk",
+				"armor/worn_mail_shirt",
+				"armor/patched_mail_shirt",
+				"armor/mail_shirt",
+				"armor/lamellar_harness"
+			];
+
+			if (this.Const.DLC.Unhold)
+			{
+				armor.extend([
+					"armor/footman_armor",
+					"armor/leather_scale_armor",
+					"armor/light_scale_armor"
+				]);
+			}
+
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
+		{
+			local helmet = [
+				"helmets/closed_mail_coif",
+				"helmets/padded_kettle_hat",
+				"helmets/kettle_hat_with_closed_mail",
+				"helmets/kettle_hat_with_mail",
+				"helmets/padded_flat_top_helmet",
+				"helmets/nasal_helmet_with_mail",
+				"helmets/flat_top_with_mail",
+				"helmets/padded_nasal_helmet",
+				"helmets/bascinet_with_mail"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local shields = clone this.Const.Items.NamedShields;
+		shields.extend([
+			"shields/named/named_bandit_kite_shield",
+			"shields/named/named_bandit_heater_shield"
+		]);
+		local r = this.Math.rand(1, 4);
 
 		if (r == 1)
 		{
-			r = this.Math.rand(0, 3);
-
-			if (r <= 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greataxe"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-			}
-		}
-		else
-		{
-			if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/noble_sword"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/warhammer"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
-			}
-
-			if (this.Math.rand(1, 100) <= 75)
-			{
-				r = this.Math.rand(1, 2);
-
-				if (r == 1)
-				{
-					this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_axe"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
-				}
-			}
-
-			if (this.Math.rand(1, 100) <= 1)
-			{
-				r = this.Math.rand(1, 3);
-
-				if (r <= 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/named/named_bandit_heater_shield"));
-				}
-				else
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/named/named_bandit_kite_shield"));
-				}
-			}
-			else
-			{
-				r = this.Math.rand(1, 3);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/heater_shield"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
-				}
-			}
-		}
-
-		if (this.Const.DLC.Unhold)
-		{
-			r = this.Math.rand(1, 9);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/reinforced_mail_hauberk"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/worn_mail_shirt"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/patched_mail_shirt"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/lamellar_harness"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/footman_armor"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/leather_scale_armor"));
-			}
-			else if (r == 9)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/light_scale_armor"));
-			}
-		}
-		else
-		{
-			r = this.Math.rand(1, 6);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/reinforced_mail_hauberk"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/worn_mail_shirt"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/patched_mail_shirt"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/mail_shirt"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/armor/lamellar_harness"));
-			}
-		}
-
-		local r = this.Math.rand(1, 9);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_mail_coif"));
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedWeapons[this.Math.rand(0, this.Const.Items.NamedWeapons.len() - 1)]));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/padded_kettle_hat"));
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_closed_mail"));
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmor[this.Math.rand(0, this.Const.Items.NamedArmor.len() - 1)]));
 		}
-		else if (r == 4)
+		else
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/kettle_hat_with_mail"));
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedHelmets[this.Math.rand(0, this.Const.Items.NamedHelmets.len() - 1)]));
 		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/padded_flat_top_helmet"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
-		}
-		else if (r == 7)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/flat_top_with_mail"));
-		}
-		else if (r == 8)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
-		}
-		else if (r == 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-		}
+
+		return true;
 	}
 
 });

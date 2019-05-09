@@ -13,6 +13,8 @@ this.orc_cave_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsDespawningDefenders = false;
 		this.setDefenderSpawnList(this.Const.World.Spawn.BerserkersOnly);
 		this.m.Resources = 100;
+		this.m.NamedWeaponsList = this.Const.Items.NamedOrcWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedOrcShields;
 	}
 
 	function onSpawned()

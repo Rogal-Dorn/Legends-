@@ -36,7 +36,7 @@ this.witch_hair_item <- this.inherit("scripts/items/item", {
 
 	function playInventorySound( _eventType )
 	{
-		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
 	}
 
 });

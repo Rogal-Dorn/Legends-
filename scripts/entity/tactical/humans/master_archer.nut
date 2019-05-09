@@ -60,90 +60,84 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r;
-
-		if (this.Math.rand(1, 100) <= 66)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			if (this.Math.rand(1, 100) <= 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_warbow"));
-			}
-			else
+			if (this.Math.rand(1, 100) <= 66)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/war_bow"));
-			}
-
-			this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		}
-		else
-		{
-			if (this.Math.rand(1, 100) <= 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_crossbow"));
+				this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 			}
 			else
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/heavy_crossbow"));
+				this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 			}
-
-			this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		}
 
-		r = this.Math.rand(1, 3);
+		local weapon = [
+			"weapons/dagger",
+			"weapons/scramasax",
+			"weapons/hatchet"
+		];
+		this.m.Items.addToBag(this.new("scripts/items/" + this.weapons[this.Math.rand(0, this.weapons.len() - 1)]));
 
-		if (r == 1)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/dagger"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/scramasax"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/hatchet"));
-		}
-
-		r = this.Math.rand(1, 6);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/thick_tunic"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_lamellar"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ragged_surcoat"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
+			local armor = [
+				"armor/thick_tunic",
+				"armor/padded_surcoat",
+				"armor/leather_lamellar",
+				"armor/basic_mail_shirt",
+				"armor/ragged_surcoat",
+				"armor/basic_mail_shirt"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		if (this.Math.rand(1, 100) <= 50)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head) && this.Math.rand(1, 100) <= 50)
 		{
-			local r = this.Math.rand(1, 2);
+			local helmet = [
+				"helmets/hood",
+				"helmets/headscarf"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		}
+	}
 
-			if (r == 1)
+	function makeMiniboss()
+	{
+		this.actor.makeMiniboss();
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			[
+				"weapons/named/named_warbow",
+				"ammo/quiver_of_arrows"
+			],
+			[
+				"weapons/named/named_crossbow",
+				"ammo/quiver_of_bolts"
+			]
+		];
+		local armor = [
+			"armor/named/black_leather_armor",
+			"armor/named/blue_studded_mail_armor"
+		];
+
+		if (this.Math.rand(1, 100) <= 70)
+		{
+			local r = this.Math.rand(0, weapons.len() - 1);
+
+			foreach( w in weapons[r] )
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
+				this.m.Items.equip(this.new("scripts/items/" + w));
 			}
 		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		}
+
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 	}
 
 });

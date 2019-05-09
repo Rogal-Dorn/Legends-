@@ -17,12 +17,22 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 	{
 		if (this.m.Target != "")
 		{
-			return "In an effort to rebuild the nearby " + this.m.Target + ", building materials are in high demand and low supply.";
+			return "In an effort to rebuild the nearby " + this.m.Target.tolower() + ", building materials are in high demand and low supply.";
 		}
 		else
 		{
 			return this.m.Description;
 		}
+	}
+
+	function isValid()
+	{
+		if (this.m.Target == "")
+		{
+			return false;
+		}
+
+		return this.situation.isValid();
 	}
 
 	function onAdded( _settlement )

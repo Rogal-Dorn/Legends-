@@ -111,6 +111,16 @@ this.send_greenskin_army_action <- this.inherit("scripts/factions/faction_action
 			party.addToInventory("supplies/strange_meat_item");
 		}
 
+		if (this.Math.rand(1, 100) <= 25)
+		{
+			local loot = [
+				"loot/goblin_carved_ivory_iconographs_item",
+				"loot/goblin_minted_coins_item",
+				"loot/goblin_rank_insignia_item"
+			];
+			party.addToInventory(loot[this.Math.rand(0, loot.len() - 1)]);
+		}
+
 		local c = party.getController();
 
 		if (targets.len() != 0)

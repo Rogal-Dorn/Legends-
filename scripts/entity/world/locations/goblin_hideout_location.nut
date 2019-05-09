@@ -36,7 +36,8 @@ this.goblin_hideout_location <- this.inherit("scripts/entity/world/location", {
 			"loot/signet_ring_item",
 			"trade/amber_shards_item",
 			"trade/cloth_rolls_item",
-			"trade/salt_item"
+			"trade/salt_item",
+			"loot/goblin_carved_ivory_iconographs_item"
 		], _lootTable);
 	}
 

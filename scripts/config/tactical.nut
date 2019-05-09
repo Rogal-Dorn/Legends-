@@ -26,10 +26,10 @@ gt.Const.Tactical.CameraEventState <- {
 };
 gt.Const.Tactical.CombatResult <- {
 	None = 0,
-	EnemyDestroyed = 1,
-	EnemyRetreated = 2,
-	PlayerDestroyed = 3,
-	PlayerRetreated = 4
+	EnemyRetreated = 1,
+	EnemyDestroyed = 2,
+	PlayerRetreated = 3,
+	PlayerDestroyed = 4
 };
 gt.Const.Tactical.MovementType <- {
 	Default = 0,
@@ -712,6 +712,7 @@ gt.Const.Tactical.CombatInfo <- {
 	LocationTemplate = null,
 	Tile = null,
 	Entities = [],
+	Players = [],
 	Parties = [],
 	Music = [],
 	TemporaryEnemies = [],
@@ -730,6 +731,7 @@ gt.Const.Tactical.CombatInfo <- {
 	IsAttackingLocation = false,
 	IsFleeingProhibited = false,
 	IsAutoAssigningBases = true,
+	IsUsingSetPlayers = false,
 	function getClone()
 	{
 		local p = clone this;
@@ -742,6 +744,7 @@ gt.Const.Tactical.CombatInfo <- {
 		];
 		p.EnemyBanners = [];
 		p.Loot = [];
+		p.Players = [];
 		return p;
 	}
 

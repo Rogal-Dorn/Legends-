@@ -70,7 +70,7 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 				if (nextTile.IsOccupied || nextTile.HasRoad)
 				{
 				}
-				else if (nextTile.Type != this.Const.World.TerrainType.Plains && nextTile.Type != this.Const.World.TerrainType.Highlands && nextTile.Type != this.Const.World.TerrainType.Steppe)
+				else if (nextTile.Type != this.Const.World.TerrainType.Plains && nextTile.Type != this.Const.World.TerrainType.Tundra && nextTile.Type != this.Const.World.TerrainType.Steppe)
 				{
 				}
 				else

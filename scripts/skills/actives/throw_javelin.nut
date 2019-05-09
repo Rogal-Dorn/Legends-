@@ -1,5 +1,7 @@
 this.throw_javelin <- this.inherit("scripts/skills/skill", {
 	m = {
+		AdditionalAccuracy = 0,
+		AdditionalHitChance = 0,
 		SoundOnMissTarget = [
 			"sounds/combat/javelin_miss_01.wav",
 			"sounds/combat/javelin_miss_02.wav",
@@ -35,6 +37,7 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
+		this.m.IsWeaponSkill = true;
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
@@ -60,20 +63,32 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if throwing downhill"
-			},
-			{
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if throwing downhill"
+		});
+
+		if (30 + this.m.AdditionalAccuracy >= 0)
+		{
+			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] per tile of distance"
-			}
-		]);
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + (30 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (30 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+			});
+		}
+
 		local ammo = this.getAmmo();
 
 		if (ammo > 0)
@@ -138,6 +153,7 @@ this.throw_javelin <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
 	}
 
 	function onUse( _user, _targetTile )

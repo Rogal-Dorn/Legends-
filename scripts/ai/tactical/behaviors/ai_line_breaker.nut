@@ -104,6 +104,14 @@ this.ai_line_breaker <- this.inherit("scripts/ai/tactical/behavior", {
 				score = score * this.Const.AI.Behavior.LineBreakerExecuteMult;
 			}
 
+			local numAllyZOC = pushTile.getZoneOfControlCountOtherThan(t.getAlliedFactions());
+
+			if (numAllyZOC - 1 >= 2 && numAllyZOC - 1 > pushTile.getZoneOfControlCount(t.getFaction()))
+			{
+				score = score * (1.0 + (numAllyZOC - 1) * this.Const.AI.Behavior.LineBreakerSetupAlliesBonus);
+				isGoodReason = true;
+			}
+
 			local numPotentialNewTargets = 0;
 
 			for( local i = 0; i < 6; i = ++i )

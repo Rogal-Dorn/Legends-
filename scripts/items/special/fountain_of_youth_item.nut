@@ -86,6 +86,7 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 		_actor.getSkills().removeByID("effects.exhausted");
 		_actor.setHitpoints(_actor.getHitpointsMax());
 		_actor.getFlags().set("PotionsUsed", 0);
+		_actor.getFlags().set("IsRejuvinated", true);
 		_actor.getSprite("permanent_injury_1").Visible = false;
 		_actor.getSprite("permanent_injury_2").Visible = false;
 		_actor.getSprite("permanent_injury_3").Visible = false;

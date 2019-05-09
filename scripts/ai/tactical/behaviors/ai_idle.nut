@@ -22,7 +22,9 @@ this.ai_idle <- this.inherit("scripts/ai/tactical/behavior", {
 
 			foreach( t in targets )
 			{
-				if (t.Actor.getTile().getDistanceTo(myTile) <= 6)
+				local d = t.Actor.getTile().getDistanceTo(myTile);
+
+				if (d <= 6 || d <= _entity.getIdealRange() || d <= this.getProperties().EngageRangeMax)
 				{
 					closeEnough = true;
 					break;

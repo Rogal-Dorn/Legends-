@@ -179,53 +179,40 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 			]);
 		}
 
-		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
+		if (this.Math.rand(1, 100) <= 50)
 		{
-			list = [
-				{
-					R = 0,
-					P = 1.0,
-					S = "supplies/goat_cheese_item"
-				}
-			];
+			list.push({
+				R = 99,
+				P = 2.0,
+				S = "weapons/named/named_crossbow"
+			});
 		}
-		else
+
+		if (this.Math.rand(1, 100) <= 50)
 		{
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_crossbow"
-				});
-			}
+			list.push({
+				R = 99,
+				P = 2.0,
+				S = "weapons/named/named_warbow"
+			});
+		}
 
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_warbow"
-				});
-			}
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			list.push({
+				R = 99,
+				P = 2.0,
+				S = "weapons/named/named_throwing_axe"
+			});
+		}
 
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_throwing_axe"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "weapons/named/named_javelin"
-				});
-			}
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			list.push({
+				R = 99,
+				P = 2.0,
+				S = "weapons/named/named_javelin"
+			});
 		}
 
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);

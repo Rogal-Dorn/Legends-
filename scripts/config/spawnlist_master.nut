@@ -18,7 +18,8 @@ gt.Const.World.Spawn.Unit <- {
 	Party = null,
 	Faction = null,
 	Tag = null,
-	Script = ""
+	Script = "",
+	Name = ""
 };
 gt.Const.World.Spawn.Troops <- {
 	Necromancer = {
@@ -47,11 +48,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	ZombieKnight = {
 		ID = this.Const.EntityType.ZombieKnight,
-		Variant = 0,
+		Variant = 1,
 		Strength = 20,
 		Cost = 25,
 		Row = -1,
-		Script = "scripts/entity/tactical/enemies/zombie_knight"
+		Script = "scripts/entity/tactical/enemies/zombie_knight",
+		NameList = this.Const.Strings.KnightNames,
+		TitleList = this.Const.Strings.FallenHeroTitles
 	},
 	ZombieBodyguard = {
 		ID = this.Const.EntityType.Zombie,
@@ -127,11 +130,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	SkeletonHeavy = {
 		ID = this.Const.EntityType.SkeletonHeavy,
-		Variant = 0,
+		Variant = 1,
 		Strength = 30,
 		Cost = 35,
 		Row = 0,
-		Script = "scripts/entity/tactical/enemies/skeleton_heavy"
+		Script = "scripts/entity/tactical/enemies/skeleton_heavy",
+		NameList = this.Const.Strings.AncientDeadNames,
+		TitleList = null
 	},
 	SkeletonHeavyPolearm = {
 		ID = this.Const.EntityType.SkeletonHeavy,
@@ -207,11 +212,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	OrcWarrior = {
 		ID = this.Const.EntityType.OrcWarrior,
-		Variant = 0,
+		Variant = 1,
 		Strength = 40,
 		Cost = 40,
 		Row = 1,
-		Script = "scripts/entity/tactical/enemies/orc_warrior"
+		Script = "scripts/entity/tactical/enemies/orc_warrior",
+		NameList = this.Const.Strings.OrcWarlordNames,
+		TitleList = null
 	},
 	OrcWarriorLOW = {
 		ID = this.Const.EntityType.OrcWarrior,
@@ -223,11 +230,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	OrcWarlord = {
 		ID = this.Const.EntityType.OrcWarlord,
-		Variant = 0,
+		Variant = 10,
 		Strength = 45,
 		Cost = 50,
 		Row = 2,
-		Script = "scripts/entity/tactical/enemies/orc_warlord"
+		Script = "scripts/entity/tactical/enemies/orc_warlord",
+		NameList = this.Const.Strings.OrcWarlordNames,
+		TitleList = null
 	},
 	GreenskinCatapult = {
 		ID = this.Const.EntityType.GreenskinCatapult,
@@ -239,11 +248,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	GoblinSkirmisher = {
 		ID = this.Const.EntityType.GoblinFighter,
-		Variant = 0,
+		Variant = 1,
 		Strength = 18,
 		Cost = 15,
 		Row = 0,
-		Script = "scripts/entity/tactical/enemies/goblin_fighter"
+		Script = "scripts/entity/tactical/enemies/goblin_fighter",
+		NameList = this.Const.Strings.GoblinNames,
+		TitleList = this.Const.Strings.GoblinTitles
 	},
 	GoblinSkirmisherLOW = {
 		ID = this.Const.EntityType.GoblinFighter,
@@ -255,11 +266,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	GoblinAmbusher = {
 		ID = this.Const.EntityType.GoblinAmbusher,
-		Variant = 0,
+		Variant = 1,
 		Strength = 20,
 		Cost = 20,
 		Row = 1,
-		Script = "scripts/entity/tactical/enemies/goblin_ambusher"
+		Script = "scripts/entity/tactical/enemies/goblin_ambusher",
+		NameList = this.Const.Strings.GoblinNames,
+		TitleList = this.Const.Strings.GoblinTitles
 	},
 	GoblinAmbusherLOW = {
 		ID = this.Const.EntityType.GoblinAmbusher,
@@ -421,13 +434,13 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/kraken"
 	},
-	Wildman = {
-		ID = this.Const.EntityType.Wildman,
+	TricksterGod = {
+		ID = this.Const.EntityType.TricksterGod,
 		Variant = 0,
-		Strength = 20,
-		Cost = 20,
-		Row = -1,
-		Script = "scripts/entity/tactical/humans/wildman"
+		Strength = 0,
+		Cost = 0,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/trickster_god"
 	},
 	Militia = {
 		ID = this.Const.EntityType.Militia,
@@ -519,27 +532,33 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	Swordmaster = {
 		ID = this.Const.EntityType.Swordmaster,
-		Variant = 0,
+		Variant = 1,
 		Strength = 40,
 		Cost = 40,
 		Row = 0,
-		Script = "scripts/entity/tactical/humans/swordmaster"
+		Script = "scripts/entity/tactical/humans/swordmaster",
+		NameList = this.Const.Strings.CharacterNames,
+		TitleList = this.Const.Strings.SwordmasterTitles
 	},
 	HedgeKnight = {
 		ID = this.Const.EntityType.HedgeKnight,
-		Variant = 0,
+		Variant = 1,
 		Strength = 40,
 		Cost = 40,
 		Row = 0,
-		Script = "scripts/entity/tactical/humans/hedge_knight"
+		Script = "scripts/entity/tactical/humans/hedge_knight",
+		NameList = this.Const.Strings.HedgeKnightTitles,
+		TitleList = null
 	},
 	MasterArcher = {
 		ID = this.Const.EntityType.MasterArcher,
-		Variant = 0,
+		Variant = 1,
 		Strength = 40,
 		Cost = 40,
 		Row = 1,
-		Script = "scripts/entity/tactical/humans/master_archer"
+		Script = "scripts/entity/tactical/humans/master_archer",
+		NameList = this.Const.Strings.MasterArcherNames,
+		TitleList = null
 	},
 	Cultist = {
 		ID = this.Const.EntityType.Cultist,
@@ -639,11 +658,13 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	Knight = {
 		ID = this.Const.EntityType.Knight,
-		Variant = 0,
+		Variant = 2,
 		Strength = 40,
 		Cost = 35,
 		Row = 2,
-		Script = "scripts/entity/tactical/humans/knight"
+		Script = "scripts/entity/tactical/humans/knight",
+		NameList = this.Const.Strings.KnightNames,
+		TitleList = null
 	},
 	MilitaryDonkey = {
 		ID = this.Const.EntityType.MilitaryDonkey,
@@ -711,11 +732,93 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	BanditLeader = {
 		ID = this.Const.EntityType.BanditLeader,
-		Variant = 0,
+		Variant = 1,
 		Strength = 30,
 		Cost = 25,
 		Row = 2,
-		Script = "scripts/entity/tactical/enemies/bandit_leader"
+		Script = "scripts/entity/tactical/enemies/bandit_leader",
+		NameList = this.Const.Strings.BanditLeaderNames,
+		TitleList = null
+	},
+	Warhound = {
+		ID = this.Const.EntityType.Warhound,
+		Variant = 0,
+		Strength = 10,
+		Cost = 10,
+		Row = 0,
+		Script = "scripts/entity/tactical/warhound"
+	},
+	BarbarianThrall = {
+		ID = this.Const.EntityType.BarbarianThrall,
+		Variant = 0,
+		Strength = 12,
+		Cost = 12,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/barbarian_thrall"
+	},
+	BarbarianMarauder = {
+		ID = this.Const.EntityType.BarbarianMarauder,
+		Variant = 0,
+		Strength = 25,
+		Cost = 25,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/barbarian_marauder"
+	},
+	BarbarianChampion = {
+		ID = this.Const.EntityType.BarbarianChampion,
+		Variant = 1,
+		Strength = 35,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/barbarian_champion",
+		NameList = this.Const.Strings.BarbarianNames,
+		TitleList = this.Const.Strings.BarbarianTitles
+	},
+	BarbarianChosen = {
+		ID = this.Const.EntityType.BarbarianChosen,
+		Variant = 10,
+		Strength = 500,
+		Cost = 45,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/barbarian_chosen",
+		NameList = [
+			"The King of the North"
+		],
+		TitleList = [
+			""
+		]
+	},
+	BarbarianDrummer = {
+		ID = this.Const.EntityType.BarbarianDrummer,
+		Variant = 0,
+		Strength = 30,
+		Cost = 20,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/barbarian_drummer"
+	},
+	BarbarianUnhold = {
+		ID = this.Const.EntityType.BarbarianUnhold,
+		Variant = 0,
+		Strength = 50,
+		Cost = 50,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/unhold_armored"
+	},
+	BarbarianUnholdFrost = {
+		ID = this.Const.EntityType.BarbarianUnholdFrost,
+		Variant = 0,
+		Strength = 70,
+		Cost = 70,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/unhold_frost_armored"
+	},
+	BarbarianBeastmaster = {
+		ID = this.Const.EntityType.BarbarianBeastmaster,
+		Variant = 0,
+		Strength = 20,
+		Cost = 5,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/barbarian_beastmaster"
 	}
 };
 gt.Const.World.Spawn.Caravan <- [

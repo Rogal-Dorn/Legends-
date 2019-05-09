@@ -256,6 +256,11 @@ this.shady_character_offers_map_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.State.getEscortedEntity() != null)
+		{
+			return;
+		}
+
 		local currentTile = this.World.State.getPlayer().getTile();
 
 		if (!currentTile.HasRoad)

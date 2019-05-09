@@ -46,7 +46,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 6;
+		this.m.Level = 9;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 	}

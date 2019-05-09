@@ -26,7 +26,7 @@ this.miner_fresh_air_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Miner.getImagePath());
-				_event.m.Miner.improveMood(1.0, "Happy to have a new life surface side");
+				_event.m.Miner.improveMood(1.0, "Happy to have a new life surface-side");
 
 				if (_event.m.Miner.getMoodState() >= this.Const.MoodState.Neutral)
 				{

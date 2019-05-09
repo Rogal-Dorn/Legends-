@@ -21,7 +21,7 @@ this.hunting_schrats_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (this.World.Assets.getBusinessReputation() < 1400)
+		if (this.World.Assets.getBusinessReputation() < 1500)
 		{
 			return;
 		}

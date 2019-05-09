@@ -35,7 +35,7 @@ this.no_food_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		this.m.Score = 50;
+		this.m.Score = 150;
 	}
 
 	function onPrepare()

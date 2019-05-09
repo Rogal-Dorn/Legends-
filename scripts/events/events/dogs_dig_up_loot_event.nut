@@ -29,7 +29,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + _event.m.FoundItem.getIcon(),
-					text = "You gain " + _event.getArticle(_event.m.FoundItem.getName()) + _event.m.FoundItem.getName()
+					text = "You gain " + this.Const.Strings.getArticle(_event.m.FoundItem.getName()) + _event.m.FoundItem.getName()
 				});
 			}
 
@@ -57,7 +57,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 		{
 			local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
-			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 			{
 				numWardogs = ++numWardogs;
 			}
@@ -69,7 +69,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 
 			foreach( item in stash )
 			{
-				if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+				if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 				{
 					numWardogs = ++numWardogs;
 
@@ -143,7 +143,7 @@ this.dogs_dig_up_loot_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"finding",
-			this.getArticle(this.m.FoundItem.getName()) + this.m.FoundItem.getName()
+			this.Const.Strings.getArticle(this.m.FoundItem.getName()) + this.m.FoundItem.getName()
 		]);
 	}
 

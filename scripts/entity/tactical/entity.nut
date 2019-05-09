@@ -62,7 +62,7 @@ this.entity <- {
 
 	function getImagePath()
 	{
-		return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket)";
+		return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket,miniboss)";
 	}
 
 	function getTooltip( _targetedWidthSkill = null )

@@ -180,30 +180,35 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 
 			if ((_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals) && this.Math.rand(1, 100) <= 50)
 			{
-				if (this.Const.DLC.Unhold)
-				{
-					local r = this.Math.rand(1, 100);
-					local loot;
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
-					if (r <= 35)
+				for( local i = 0; i < n; i = ++i )
+				{
+					if (this.Const.DLC.Unhold)
 					{
-						loot = this.new("scripts/items/misc/ghoul_teeth_item");
-					}
-					else if (r <= 70)
-					{
-						loot = this.new("scripts/items/misc/ghoul_horn_item");
+						local r = this.Math.rand(1, 100);
+						local loot;
+
+						if (r <= 35)
+						{
+							loot = this.new("scripts/items/misc/ghoul_teeth_item");
+						}
+						else if (r <= 70)
+						{
+							loot = this.new("scripts/items/misc/ghoul_horn_item");
+						}
+						else
+						{
+							loot = this.new("scripts/items/misc/ghoul_brain_item");
+						}
+
+						loot.drop(_tile);
 					}
 					else
 					{
-						loot = this.new("scripts/items/misc/ghoul_brain_item");
+						local loot = this.new("scripts/items/misc/ghoul_teeth_item");
+						loot.drop(_tile);
 					}
-
-					loot.drop(_tile);
-				}
-				else
-				{
-					local loot = this.new("scripts/items/misc/ghoul_teeth_item");
-					loot.drop(_tile);
 				}
 			}
 		}
@@ -246,6 +251,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Ghoul);
 		b.IsAffectedByNight = false;
+		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

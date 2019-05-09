@@ -12,71 +12,71 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.IsUsingZoneOfControl = false;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/hexe_hurt_01.wav",
-			"sounds/enemies/hexe_hurt_02.wav",
-			"sounds/enemies/hexe_hurt_03.wav",
-			"sounds/enemies/hexe_hurt_04.wav",
-			"sounds/enemies/hexe_hurt_05.wav",
-			"sounds/enemies/hexe_hurt_06.wav",
-			"sounds/enemies/hexe_hurt_07.wav",
-			"sounds/enemies/hexe_hurt_08.wav",
-			"sounds/enemies/hexe_hurt_09.wav",
-			"sounds/enemies/hexe_hurt_10.wav",
-			"sounds/enemies/hexe_hurt_11.wav",
-			"sounds/enemies/hexe_hurt_12.wav",
-			"sounds/enemies/hexe_hurt_13.wav"
+			"sounds/enemies/dlc2/hexe_hurt_01.wav",
+			"sounds/enemies/dlc2/hexe_hurt_02.wav",
+			"sounds/enemies/dlc2/hexe_hurt_03.wav",
+			"sounds/enemies/dlc2/hexe_hurt_04.wav",
+			"sounds/enemies/dlc2/hexe_hurt_05.wav",
+			"sounds/enemies/dlc2/hexe_hurt_06.wav",
+			"sounds/enemies/dlc2/hexe_hurt_07.wav",
+			"sounds/enemies/dlc2/hexe_hurt_08.wav",
+			"sounds/enemies/dlc2/hexe_hurt_09.wav",
+			"sounds/enemies/dlc2/hexe_hurt_10.wav",
+			"sounds/enemies/dlc2/hexe_hurt_11.wav",
+			"sounds/enemies/dlc2/hexe_hurt_12.wav",
+			"sounds/enemies/dlc2/hexe_hurt_13.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/hexe_death_01.wav",
-			"sounds/enemies/hexe_death_02.wav",
-			"sounds/enemies/hexe_death_03.wav",
-			"sounds/enemies/hexe_death_04.wav",
-			"sounds/enemies/hexe_death_05.wav"
+			"sounds/enemies/dlc2/hexe_death_01.wav",
+			"sounds/enemies/dlc2/hexe_death_02.wav",
+			"sounds/enemies/dlc2/hexe_death_03.wav",
+			"sounds/enemies/dlc2/hexe_death_04.wav",
+			"sounds/enemies/dlc2/hexe_death_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/hexe_idle_01.wav",
-			"sounds/enemies/hexe_idle_02.wav",
-			"sounds/enemies/hexe_idle_03.wav",
-			"sounds/enemies/hexe_idle_04.wav",
-			"sounds/enemies/hexe_idle_05.wav"
+			"sounds/enemies/dlc2/hexe_idle_01.wav",
+			"sounds/enemies/dlc2/hexe_idle_02.wav",
+			"sounds/enemies/dlc2/hexe_idle_03.wav",
+			"sounds/enemies/dlc2/hexe_idle_04.wav",
+			"sounds/enemies/dlc2/hexe_idle_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
-			"sounds/enemies/hexe_idle_06.wav",
-			"sounds/enemies/hexe_idle_07.wav",
-			"sounds/enemies/hexe_idle_08.wav",
-			"sounds/enemies/hexe_idle_09.wav",
-			"sounds/enemies/hexe_idle_05.wav",
-			"sounds/enemies/hexe_idle_10.wav",
-			"sounds/enemies/hexe_idle_11.wav",
-			"sounds/enemies/hexe_idle_12.wav",
-			"sounds/enemies/hexe_idle_13.wav",
-			"sounds/enemies/hexe_idle_14.wav",
-			"sounds/enemies/hexe_idle_15.wav",
-			"sounds/enemies/hexe_idle_16.wav",
-			"sounds/enemies/hexe_idle_17.wav",
-			"sounds/enemies/hexe_idle_18.wav",
-			"sounds/enemies/hexe_idle_19.wav",
-			"sounds/enemies/hexe_idle_20.wav",
-			"sounds/enemies/hexe_idle_21.wav",
-			"sounds/enemies/hexe_idle_22.wav",
-			"sounds/enemies/hexe_idle_23.wav",
-			"sounds/enemies/hexe_idle_24.wav",
-			"sounds/enemies/hexe_idle_25.wav",
-			"sounds/enemies/hexe_idle_26.wav",
-			"sounds/enemies/hexe_idle_27.wav",
-			"sounds/enemies/hexe_idle_28.wav",
-			"sounds/enemies/hexe_idle_29.wav",
-			"sounds/enemies/hexe_idle_30.wav"
+			"sounds/enemies/dlc2/hexe_idle_06.wav",
+			"sounds/enemies/dlc2/hexe_idle_07.wav",
+			"sounds/enemies/dlc2/hexe_idle_08.wav",
+			"sounds/enemies/dlc2/hexe_idle_09.wav",
+			"sounds/enemies/dlc2/hexe_idle_05.wav",
+			"sounds/enemies/dlc2/hexe_idle_10.wav",
+			"sounds/enemies/dlc2/hexe_idle_11.wav",
+			"sounds/enemies/dlc2/hexe_idle_12.wav",
+			"sounds/enemies/dlc2/hexe_idle_13.wav",
+			"sounds/enemies/dlc2/hexe_idle_14.wav",
+			"sounds/enemies/dlc2/hexe_idle_15.wav",
+			"sounds/enemies/dlc2/hexe_idle_16.wav",
+			"sounds/enemies/dlc2/hexe_idle_17.wav",
+			"sounds/enemies/dlc2/hexe_idle_18.wav",
+			"sounds/enemies/dlc2/hexe_idle_19.wav",
+			"sounds/enemies/dlc2/hexe_idle_20.wav",
+			"sounds/enemies/dlc2/hexe_idle_21.wav",
+			"sounds/enemies/dlc2/hexe_idle_22.wav",
+			"sounds/enemies/dlc2/hexe_idle_23.wav",
+			"sounds/enemies/dlc2/hexe_idle_24.wav",
+			"sounds/enemies/dlc2/hexe_idle_25.wav",
+			"sounds/enemies/dlc2/hexe_idle_26.wav",
+			"sounds/enemies/dlc2/hexe_idle_27.wav",
+			"sounds/enemies/dlc2/hexe_idle_28.wav",
+			"sounds/enemies/dlc2/hexe_idle_29.wav",
+			"sounds/enemies/dlc2/hexe_idle_30.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
-			"sounds/enemies/hexe_flee_01.wav",
-			"sounds/enemies/hexe_flee_02.wav",
-			"sounds/enemies/hexe_flee_03.wav",
-			"sounds/enemies/hexe_flee_04.wav",
-			"sounds/enemies/hexe_flee_05.wav",
-			"sounds/enemies/hexe_flee_06.wav",
-			"sounds/enemies/hexe_flee_07.wav",
-			"sounds/enemies/hexe_flee_08.wav"
+			"sounds/enemies/dlc2/hexe_flee_01.wav",
+			"sounds/enemies/dlc2/hexe_flee_02.wav",
+			"sounds/enemies/dlc2/hexe_flee_03.wav",
+			"sounds/enemies/dlc2/hexe_flee_04.wav",
+			"sounds/enemies/dlc2/hexe_flee_05.wav",
+			"sounds/enemies/dlc2/hexe_flee_06.wav",
+			"sounds/enemies/dlc2/hexe_flee_07.wav",
+			"sounds/enemies/dlc2/hexe_flee_08.wav"
 		];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 1.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 5.0;
@@ -165,30 +165,35 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
-				local r = this.Math.rand(1, 100);
-				local loot;
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
-				if (r <= 35)
+				for( local i = 0; i < n; i = ++i )
 				{
-					loot = this.new("scripts/items/misc/witch_hair_item");
-				}
-				else if (r <= 70)
-				{
-					loot = this.new("scripts/items/misc/mysterious_herbs_item");
-				}
-				else
-				{
-					loot = this.new("scripts/items/misc/poisoned_apple_item");
-				}
+					local r = this.Math.rand(1, 100);
+					local loot;
 
-				loot.drop(_tile);
+					if (r <= 35)
+					{
+						loot = this.new("scripts/items/misc/witch_hair_item");
+					}
+					else if (r <= 70)
+					{
+						loot = this.new("scripts/items/misc/mysterious_herbs_item");
+					}
+					else
+					{
+						loot = this.new("scripts/items/misc/poisoned_apple_item");
+					}
 
-				if (this.Math.rand(1, 100) <= 15)
-				{
-					local food = this.new("scripts/items/supplies/black_marsh_stew_item");
-					food.randomizeAmount();
-					food.randomizeBestBefore();
-					food.drop(_tile);
+					loot.drop(_tile);
+
+					if (this.Math.rand(1, 100) <= 15)
+					{
+						local food = this.new("scripts/items/supplies/black_marsh_stew_item");
+						food.randomizeAmount();
+						food.randomizeBestBefore();
+						food.drop(_tile);
+					}
 				}
 			}
 		}
@@ -216,6 +221,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Hexe);
 		b.TargetAttractionMult = 3.0;
+		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

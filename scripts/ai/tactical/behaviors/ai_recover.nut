@@ -15,6 +15,7 @@ this.ai_recover <- this.inherit("scripts/ai/tactical/behavior", {
 	function onEvaluate( _entity )
 	{
 		this.m.Skill = null;
+		local scoreMult = 1.0;
 
 		if (_entity.getMoraleState() == this.Const.MoraleState.Fleeing)
 		{
@@ -26,7 +27,12 @@ this.ai_recover <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (_entity.getFatigue() < _entity.getFatigueMax() / 2)
+		if (_entity.getFatigue() < _entity.getFatigueMax() / 2 || _entity.getFatigue() <= _entity.getCurrentProperties().FatigueRecoveryRate + 5)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
+		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Adrenaline) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Adrenaline).getUsedLast() == this.Time.getRound() - 1)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -53,7 +59,8 @@ this.ai_recover <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		local scoreMult = _entity.getFatigue() / (_entity.getFatigueMax() * 1.0);
+		scoreMult = scoreMult * (_entity.getFatigue() / (_entity.getFatigueMax() * 1.0));
+		scoreMult = scoreMult * this.Math.minf(1.0, this.Math.maxf(0.5, this.Tactical.TurnSequenceBar.getTurnPosition() / (1.0 * this.Tactical.TurnSequenceBar.getAllEntities().len())));
 		return this.Const.AI.Behavior.Score.Recover * scoreMult;
 	}
 

@@ -61,7 +61,7 @@ this.ai_pickup_weapon <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		_entity.pickupMeleeWeaponAndShield(_entity.getTile());
-		_entity.getItems().payForAction();
+		_entity.getItems().payForAction([]);
 		return true;
 	}
 

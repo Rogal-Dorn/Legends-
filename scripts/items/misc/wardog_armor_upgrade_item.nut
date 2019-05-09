@@ -69,13 +69,23 @@ this.wardog_armor_upgrade_item <- this.inherit("scripts/items/item", {
 	{
 		local dog = _item == null ? _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory) : _item;
 
-		if (dog == null || dog.getID() != "accessory.wardog")
+		if (dog == null || dog.getID() != "accessory.wardog" && dog.getID() != "accessory.warhound")
 		{
 			return false;
 		}
 
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
-		local new_dog = this.new("scripts/items/accessory/armored_wardog_item");
+		local new_dog;
+
+		if (dog.getID() == "accessory.wardog")
+		{
+			new_dog = this.new("scripts/items/accessory/armored_wardog_item");
+		}
+		else
+		{
+			new_dog = this.new("scripts/items/accessory/armored_warhound_item");
+		}
+
 		new_dog.setName(dog.getName());
 		new_dog.setVariant(dog.getVariant());
 		_actor.getItems().unequip(dog);

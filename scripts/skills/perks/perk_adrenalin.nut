@@ -2,9 +2,9 @@ this.perk_adrenalin <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.adrenalin";
-		this.m.Name = this.Const.Strings.PerkName.Adrenalin;
-		this.m.Description = this.Const.Strings.PerkDescription.Adrenalin;
+		this.m.ID = "perk.adrenaline";
+		this.m.Name = this.Const.Strings.PerkName.Adrenaline;
+		this.m.Description = this.Const.Strings.PerkDescription.Adrenaline;
 		this.m.Icon = "ui/perks/perk_37.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -15,15 +15,20 @@ this.perk_adrenalin <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.adrenalin"))
+		if (!this.m.Container.hasSkill("actives.adrenaline"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/adrenalin_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/adrenaline_skill"));
 		}
 	}
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.adrenalin");
+		this.m.Container.removeByID("actives.adrenaline");
+	}
+
+	function onUpdated( _properties )
+	{
+		_properties.TargetAttractionMult *= 1.1;
 	}
 
 });

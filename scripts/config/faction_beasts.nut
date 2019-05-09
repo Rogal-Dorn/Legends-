@@ -278,10 +278,29 @@ gt.Const.Tactical.Actor.SchratSmall <- {
 		0
 	]
 };
+gt.Const.Tactical.Actor.TricksterGod <- {
+	XP = 1500,
+	ActionPoints = 9,
+	Hitpoints = 2000,
+	Bravery = 999,
+	Stamina = 400,
+	MeleeSkill = 90,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 10,
+	Initiative = 90,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 30,
+	Armor = [
+		100,
+		100
+	]
+};
 gt.Const.Tactical.Actor.Kraken <- {
 	XP = 2500,
 	ActionPoints = 9,
-	Hitpoints = 4600,
+	Hitpoints = 4400,
 	Bravery = 999,
 	Stamina = 999,
 	MeleeSkill = 999,

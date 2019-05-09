@@ -69,9 +69,9 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(0, 10);
+		local r;
 
-		if (r <= 1)
+		if (this.Math.rand(1, 100) <= 20)
 		{
 			if (this.Const.DLC.Unhold)
 			{
@@ -142,6 +142,8 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
+			r = this.Math.rand(2, 10);
+
 			if (r == 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));

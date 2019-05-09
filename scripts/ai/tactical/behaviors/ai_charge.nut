@@ -23,11 +23,13 @@ this.ai_charge <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (targetsInMelee.len() != 0)
 			{
+				this.getProperties().EngageRangeMin = _entity.getIdealRange();
 				this.getProperties().EngageRangeMax = _entity.getIdealRange();
 				this.getProperties().EngageRangeIdeal = _entity.getIdealRange();
 			}
 			else
 			{
+				this.getProperties().EngageRangeMin = skill.getMinRange();
 				this.getProperties().EngageRangeMax = skill.getMaxRange() + 1;
 				this.getProperties().EngageRangeIdeal = skill.getMaxRange() + 1;
 			}

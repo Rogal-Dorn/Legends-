@@ -292,7 +292,7 @@ this.dog_in_swamp_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_houndmaster.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.beast_hunter")
+			else if (bro.getBackground().getID() == "background.beast_slayer")
 			{
 				candidates_beastslayer.push(bro);
 			}

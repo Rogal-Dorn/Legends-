@@ -7,8 +7,6 @@ if (!("World" in gt.Const))
 
 gt.Const.World.Assets <- {
 	NewCampaignEquipment = [
-		"scripts/items/supplies/ground_grains_item",
-		"scripts/items/supplies/ground_grains_item",
 		"scripts/items/accessory/bandage_item"
 	],
 	MedicinePerHitpoint = 0.1,

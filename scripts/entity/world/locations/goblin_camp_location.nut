@@ -32,13 +32,15 @@ this.goblin_camp_location <- this.inherit("scripts/entity/world/location", {
 			"roots_and_berries_item"
 		], _lootTable);
 		this.dropTreasure(this.Math.rand(1, 2), [
-			"trade/furs_item",
 			"trade/salt_item",
 			"trade/amber_shards_item",
 			"loot/silverware_item",
 			"loot/silver_bowl_item",
 			"loot/silver_bowl_item",
-			"loot/signet_ring_item"
+			"loot/signet_ring_item",
+			"loot/goblin_carved_ivory_iconographs_item",
+			"loot/goblin_minted_coins_item",
+			"loot/goblin_rank_insignia_item"
 		], _lootTable);
 	}
 

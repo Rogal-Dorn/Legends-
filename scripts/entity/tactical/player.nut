@@ -636,7 +636,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getImagePath( _ignoreLayers = [] )
 	{
-		local result = "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket,arrow";
+		local result = "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket,miniboss,arrow";
 
 		for( local i = 0; i < _ignoreLayers.len(); i = ++i )
 		{
@@ -1428,18 +1428,26 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.actor.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}
 
-	function addXP( _xp )
+	function addXP( _xp, _scale = true )
 	{
 		if (this.m.Level >= this.Const.LevelXP.len() || this.isGuest())
 		{
 			return;
 		}
 
-		_xp = _xp * this.Const.Combat.GlobalXPMult;
+		if (_scale)
+		{
+			_xp = _xp * this.Const.Combat.GlobalXPMult;
+		}
 
 		if (this.m.Level >= 11)
 		{
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
+		{
+			_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
 		}
 
 		if (this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[this.Const.LevelXP.len() - 1])
@@ -1548,6 +1556,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (this.m.Level == 11)
 			{
 				this.updateAchievement("OldAndWise", 1, 1);
+			}
+
+			if (this.m.Level == 11 && this.m.Skills.hasSkill("trait.player"))
+			{
+				this.updateAchievement("TooStubbornToDie", 1, 1);
 			}
 		}
 	}
@@ -2022,7 +2035,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
 
-	function setStartValuesEx( _backgrounds )
+	function setStartValuesEx( _backgrounds, _addTraits = true )
 	{
 		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
 		{
@@ -2039,42 +2052,46 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Background = background;
 		background.buildAttributes();
 		background.buildDescription();
-		local maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
-		local traits = [
-			background
-		];
 
-		for( local i = 0; i < maxTraits; i = ++i )
+		if (_addTraits)
 		{
-			for( local j = 0; j < 10; j = ++j )
-			{
-				local trait = this.Const.CharacterTraits[this.Math.rand(0, this.Const.CharacterTraits.len() - 1)];
-				local nextTrait = false;
+			local maxTraits = this.Math.rand(this.Math.rand(0, 1) == 0 ? 0 : 1, 2);
+			local traits = [
+				background
+			];
 
-				for( local k = 0; k < traits.len(); k = ++k )
+			for( local i = 0; i < maxTraits; i = ++i )
+			{
+				for( local j = 0; j < 10; j = ++j )
 				{
-					if (traits[k].getID() == trait[0] || traits[k].isExcluded(trait[0]))
+					local trait = this.Const.CharacterTraits[this.Math.rand(0, this.Const.CharacterTraits.len() - 1)];
+					local nextTrait = false;
+
+					for( local k = 0; k < traits.len(); k = ++k )
 					{
-						nextTrait = true;
+						if (traits[k].getID() == trait[0] || traits[k].isExcluded(trait[0]))
+						{
+							nextTrait = true;
+							break;
+						}
+					}
+
+					if (!nextTrait)
+					{
+						traits.push(this.new(trait[1]));
 						break;
 					}
 				}
-
-				if (!nextTrait)
-				{
-					traits.push(this.new(trait[1]));
-					break;
-				}
 			}
-		}
 
-		for( local i = 1; i < traits.len(); i = ++i )
-		{
-			this.m.Skills.add(traits[i]);
-
-			if (traits[i].getContainer() != null)
+			for( local i = 1; i < traits.len(); i = ++i )
 			{
-				traits[i].addTitle();
+				this.m.Skills.add(traits[i]);
+
+				if (traits[i].getContainer() != null)
+				{
+					traits[i].addTitle();
+				}
 			}
 		}
 
@@ -2084,8 +2101,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.update();
 		local p = this.m.CurrentProperties;
 		this.m.Hitpoints = p.Hitpoints;
-		this.fillTalentValues();
-		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+
+		if (_addTraits)
+		{
+			this.fillTalentValues();
+			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+		}
 	}
 
 	function fillTalentValues()
@@ -2394,11 +2415,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.PlaceInFormation = _in.readU8();
 		this.m.LifetimeStats.Kills = _in.readU32();
 		this.m.LifetimeStats.Battles = _in.readU32();
-
-		if (_in.getMetaData().getVersion() >= 20)
-		{
-			this.m.LifetimeStats.BattlesWithoutMe = _in.readU32();
-		}
+		this.m.LifetimeStats.BattlesWithoutMe = _in.readU32();
 
 		if (_in.getMetaData().getVersion() >= 37)
 		{

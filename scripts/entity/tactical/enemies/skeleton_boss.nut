@@ -21,6 +21,7 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
 		b.IsImmuneToStun = false;
+		b.IsImmuneToDisarm = true;
 		b.IsSpecializedInCleavers = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;

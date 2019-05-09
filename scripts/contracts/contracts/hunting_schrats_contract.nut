@@ -124,7 +124,7 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 
 					if (nearTile != null)
 					{
-						this.Contract.addFootPrintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
+						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
 					}
 				}
 

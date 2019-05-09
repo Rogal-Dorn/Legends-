@@ -78,6 +78,7 @@ this.wolf <- this.inherit("scripts/entity/tactical/actor", {
 		b.setValues(this.Const.Tactical.Actor.Wolf);
 		b.TargetAttractionMult = 0.5;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

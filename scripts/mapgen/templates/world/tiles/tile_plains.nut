@@ -126,7 +126,7 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 				{
 					urban = ++urban;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Highlands)
+				else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
 				{
 					highlands = ++highlands;
 				}

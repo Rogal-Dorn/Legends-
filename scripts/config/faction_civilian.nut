@@ -144,9 +144,9 @@ gt.Const.Tactical.Actor.CaravanGuard <- {
 	FatigueRecoveryRate = 15
 };
 gt.Const.Tactical.Actor.Donkey <- {
-	XP = 100,
+	XP = 50,
 	ActionPoints = 1,
-	Hitpoints = 300,
+	Hitpoints = 180,
 	Bravery = 100,
 	Stamina = 200,
 	MeleeSkill = 1,

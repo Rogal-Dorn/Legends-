@@ -30,6 +30,11 @@ gt.Const.BanditBanners <- [
 	"banner_bandits_05",
 	"banner_bandits_06"
 ];
+gt.Const.BarbarianBanners <- [
+	"banner_wildmen_01",
+	"banner_wildmen_02",
+	"banner_wildmen_03"
+];
 gt.Const.GoblinBanners <- [
 	"banner_goblins_01",
 	"banner_goblins_02",

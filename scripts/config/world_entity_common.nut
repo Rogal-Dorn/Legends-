@@ -12,11 +12,50 @@ gt.Const.World.Common <- {
 		Strongest = 2,
 		Weakest = 3
 	},
-	function addTroop( _party, _troop, _updateStrength = true )
+	function generateName( _list )
+	{
+		local vars = [
+			[
+				"randomname",
+				this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]
+			],
+			[
+				"randomknightname",
+				this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]
+			],
+			[
+				"randomtown",
+				this.Const.World.LocationNames.VillageWestern[this.Math.rand(0, this.Const.World.LocationNames.VillageWestern.len() - 1)]
+			]
+		];
+		return this.buildTextFromTemplate(_list[this.Math.rand(0, _list.len() - 1)], vars);
+	}
+
+	function addTroop( _party, _troop, _updateStrength = true, _minibossify = 0 )
 	{
 		local troop = clone _troop.Type;
 		troop.Party <- this.WeakTableRef(_party);
 		troop.Faction <- _party.getFaction();
+		troop.Name <- "";
+
+		if (troop.Variant > 0)
+		{
+			if (this.Math.rand(1, 100) > troop.Variant + _minibossify + (this.World.getTime().Days > 100 ? 0 : -1))
+			{
+				troop.Variant = 0;
+			}
+			else
+			{
+				troop.Strength = this.Math.round(troop.Strength * 1.35);
+				troop.Variant = this.Math.rand(1, 255);
+
+				if ("NameList" in _troop.Type)
+				{
+					troop.Name = this.generateName(_troop.Type.NameList) + (_troop.Type.TitleList != null ? " " + _troop.Type.TitleList[this.Math.rand(0, _troop.Type.TitleList.len() - 1)] : "");
+				}
+			}
+		}
+
 		_party.getTroops().push(troop);
 
 		if (_updateStrength)
@@ -133,6 +172,138 @@ gt.Const.World.Common <- {
 
 		_party.updateStrength();
 		return p;
+	}
+
+	function addUnitsToCombat( _into, _partyList, _resources, _faction, _minibossify = 0 )
+	{
+		local total_weight = 0;
+		local potential = [];
+
+		foreach( party in _partyList )
+		{
+			if (party.Cost < _resources * 0.7)
+			{
+				continue;
+			}
+
+			if (party.Cost > _resources)
+			{
+				break;
+			}
+
+			potential.push(party);
+			total_weight = total_weight + party.Cost;
+		}
+
+		local p;
+
+		if (potential.len() == 0)
+		{
+			local best;
+			local bestCost = 9000;
+
+			foreach( party in _partyList )
+			{
+				if (this.Math.abs(_resources - party.Cost) <= bestCost)
+				{
+					best = party;
+					bestCost = this.Math.abs(_resources - party.Cost);
+				}
+			}
+
+			p = best;
+		}
+		else
+		{
+			local pick = this.Math.rand(1, total_weight);
+
+			foreach( party in potential )
+			{
+				if (pick <= party.Cost)
+				{
+					p = party;
+					break;
+				}
+
+				pick = pick - party.Cost;
+			}
+		}
+
+		foreach( t in p.Troops )
+		{
+			for( local i = 0; i != t.Num; i = ++i )
+			{
+				local unit = clone t.Type;
+				unit.Faction <- _faction;
+				unit.Name <- "";
+
+				if (unit.Variant > 0)
+				{
+					if (this.Math.rand(1, 100) > unit.Variant + _minibossify + (this.World.getTime().Days > 100 ? 0 : -1))
+					{
+						unit.Variant = 0;
+					}
+					else
+					{
+						unit.Strength = this.Math.round(unit.Strength * 1.35);
+						unit.Variant = this.Math.rand(1, 255);
+
+						if ("NameList" in unit.Type)
+						{
+							unit.Name = this.generateName(unit.Type.NameList) + (unit.Type.TitleList != null ? " " + unit.Type.TitleList[this.Math.rand(0, unit.Type.TitleList.len() - 1)] : "");
+						}
+					}
+				}
+
+				_into.push(unit);
+			}
+		}
+	}
+
+	function addFootprintsFromTo( _from, _to, _type, _scale = 0.5, _visibility = 1.0 )
+	{
+		local navSettings = this.World.getNavigator().createSettings();
+		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Sneak;
+		navSettings.RoadMult = 1.0;
+		local path = this.World.getNavigator().findPath(_from, _to, navSettings, 0);
+		local left = true;
+		local pos = _from.Pos;
+
+		for( local dest; !path.isEmpty(); pos = this.World.move(pos, dest, speed) )
+		{
+			local dest;
+
+			if (path.isAtWaypoint(pos))
+			{
+				path.pop();
+
+				if (path.isEmpty())
+				{
+					break;
+				}
+
+				dest = this.World.tileToWorld(path.getCurrent());
+			}
+			else if (dest == null)
+			{
+				dest = this.World.tileToWorld(path.getCurrent());
+			}
+
+			local tile = this.World.getTile(this.World.worldToTile(pos));
+			local speed = 100.0;
+			speed = speed * this.Const.World.MovementSettings.GlobalMult;
+
+			if (tile.HasRoad)
+			{
+				speed = speed * this.Const.World.MovementSettings.RoadMult;
+			}
+
+			if (!tile.IsOccupied)
+			{
+				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0, _visibility * this.World.Assets.getFootprintVision());
+				left = !left;
+			}
+		}
 	}
 
 	function getRect( _x, _y, _width, _height )

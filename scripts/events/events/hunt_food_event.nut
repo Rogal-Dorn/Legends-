@@ -81,7 +81,7 @@ this.hunt_food_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher")
+			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.barbarian")
 			{
 				candidates.push(bro);
 			}

@@ -14,7 +14,6 @@ this.heraldic_mail_helmet <- this.inherit("scripts/items/helmets/named/named_hel
 			"Knightly Helm"
 		];
 		this.m.ShowOnCharacter = true;
-		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 		this.m.Variant = 53;

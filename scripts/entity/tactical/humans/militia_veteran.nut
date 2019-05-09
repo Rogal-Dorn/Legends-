@@ -32,80 +32,42 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 7);
+		local r;
 
-		if (r == 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
+			local weapons = [
+				"weapons/hooked_blade",
+				"weapons/pike",
+				"weapons/woodcutters_axe",
+				"weapons/bludgeon",
+				"weapons/hand_axe",
+				"weapons/militia_spear",
+				"weapons/boar_spear",
+				"weapons/falchion",
+				"weapons/shortsword"
+			];
+
 			if (this.Const.DLC.Unhold)
 			{
-				r = this.Math.rand(1, 4);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/hooked_blade"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-				}
-				else if (r == 4)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/goedendag"));
-				}
+				weapons.extend([
+					"weapons/goedendag"
+				]);
 			}
-			else
+
+			if (this.Const.DLC.Wildmen)
 			{
-				r = this.Math.rand(1, 3);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/hooked_blade"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/pike"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-				}
+				weapons.extend([
+					"weapons/warfork"
+				]);
 			}
+
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-		else
-		{
-			if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/bludgeon"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/militia_spear"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/falchion"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
-			}
 
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
-			}
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
 		}
 
 		r = this.Math.rand(1, 6);

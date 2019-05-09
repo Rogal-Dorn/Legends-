@@ -83,7 +83,8 @@ var OptionsMenuModuleIdentifier = {
 			AutoLoot: 'autoLoot',
 			AutoEndTurn: 'autoEndTurn',
 			AlwaysHideTrees: 'alwaysHideTrees',
-			RestoreEquipment: 'restoreEquipment',
+            RestoreEquipment: 'restoreEquipment',
+            AutoPauseAfterCity: 'autoPauseAfterCity'
 		}
 		
 	}

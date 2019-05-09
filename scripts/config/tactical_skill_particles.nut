@@ -939,4 +939,308 @@ gt.Const.Tactical.ShadowParticles <- [
 		]
 	}
 ];
+gt.Const.Tactical.SpiritWalkEndParticles <- [
+	{
+		Delay = 0,
+		Quantity = 30,
+		LifeTimeQuantity = 30,
+		SpawnRate = 30,
+		Brushes = [
+			"snow_particle_01",
+			"snow_particle_02",
+			"snow_particle_03",
+			"snow_particle_04"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = 0,
+				RotationMax = 359,
+				TorqueMin = -10,
+				TorqueMax = 10,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.25, -0.5),
+				DirectionMax = this.createVec(0.25, -1.0),
+				SpawnOffsetMin = this.createVec(-30, 100),
+				SpawnOffsetMax = this.createVec(30, 150),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 10)
+			},
+			{
+				LifeTimeMin = 1.0,
+				LifeTimeMax = 1.5,
+				ColorMin = this.createColor("4cccf39d"),
+				ColorMax = this.createColor("ffffff9d"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.25, -0.5),
+				DirectionMax = this.createVec(0.25, -1.0),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 10)
+			},
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 1.0,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 10)
+			}
+		]
+	},
+	{
+		Delay = 0,
+		Quantity = 30,
+		LifeTimeQuantity = 30,
+		SpawnRate = 30,
+		Brushes = [
+			"snow_particle_01",
+			"snow_particle_02",
+			"snow_particle_03",
+			"snow_particle_04"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = 0,
+				RotationMax = 359,
+				TorqueMin = -10,
+				TorqueMax = 10,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.25, 0.5),
+				DirectionMax = this.createVec(0.25, 1.0),
+				SpawnOffsetMin = this.createVec(-30, -100),
+				SpawnOffsetMax = this.createVec(30, 50),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 10)
+			},
+			{
+				LifeTimeMin = 1.0,
+				LifeTimeMax = 1.5,
+				ColorMin = this.createColor("4cccf39d"),
+				ColorMax = this.createColor("ffffff9d"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.25, 0.5),
+				DirectionMax = this.createVec(0.25, 1.0),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 10)
+			},
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 1.0,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 10)
+			}
+		]
+	},
+	{
+		Delay = 0,
+		Quantity = 30,
+		LifeTimeQuantity = 30,
+		SpawnRate = 30,
+		Brushes = [
+			"snow_particle_01",
+			"snow_particle_02",
+			"snow_particle_03",
+			"snow_particle_04"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = 0,
+				RotationMax = 359,
+				TorqueMin = -10,
+				TorqueMax = 10,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.5, -0.2),
+				DirectionMax = this.createVec(-1.0, 0.2),
+				SpawnOffsetMin = this.createVec(50, 0),
+				SpawnOffsetMax = this.createVec(100, 75),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 1.0,
+				LifeTimeMax = 1.5,
+				ColorMin = this.createColor("4cccf39d"),
+				ColorMax = this.createColor("ffffff9d"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-0.5, -0.25),
+				DirectionMax = this.createVec(-1.0, 0.25),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 1.0,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			}
+		]
+	},
+	{
+		Delay = 0,
+		Quantity = 30,
+		LifeTimeQuantity = 30,
+		SpawnRate = 30,
+		Brushes = [
+			"snow_particle_01",
+			"snow_particle_02",
+			"snow_particle_03",
+			"snow_particle_04"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.5,
+				ScaleMax = 0.75,
+				RotationMin = 0,
+				RotationMax = 359,
+				TorqueMin = -10,
+				TorqueMax = 10,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(0.5, -0.2),
+				DirectionMax = this.createVec(1.0, 0.2),
+				SpawnOffsetMin = this.createVec(-100, 0),
+				SpawnOffsetMax = this.createVec(-50, 75),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 1.0,
+				LifeTimeMax = 1.5,
+				ColorMin = this.createColor("4cccf39d"),
+				ColorMax = this.createColor("ffffff9d"),
+				ScaleMin = 0.75,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(0.5, -0.25),
+				DirectionMax = this.createVec(1.0, 0.25),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.5,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("4cccf300"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 1.0,
+				ScaleMax = 1.0,
+				VelocityMin = 50,
+				VelocityMax = 100,
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			}
+		]
+	},
+	{
+		Delay = 200,
+		Quantity = 12,
+		LifeTimeQuantity = 12,
+		SpawnRate = 100,
+		Brushes = [
+			"trickster_god_effect"
+		],
+		Stages = [
+			{
+				LifeTimeMin = 1.0,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("ffffff3f"),
+				ColorMax = this.createColor("ffffff3f"),
+				ScaleMin = 1.0,
+				ScaleMax = 1.0,
+				RotationMin = 0,
+				RotationMax = 0,
+				VelocityMin = 80,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-1.0, -1.0),
+				DirectionMax = this.createVec(1.0, 1.0),
+				SpawnOffsetMin = this.createVec(-10, -10),
+				SpawnOffsetMax = this.createVec(10, 10),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 1.0,
+				LifeTimeMax = 1.0,
+				ColorMin = this.createColor("ffffff1f"),
+				ColorMax = this.createColor("ffffff1f"),
+				ScaleMin = 0.9,
+				ScaleMax = 0.9,
+				RotationMin = 0,
+				RotationMax = 0,
+				VelocityMin = 80,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-1.0, -1.0),
+				DirectionMax = this.createVec(1.0, 1.0),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			},
+			{
+				LifeTimeMin = 0.1,
+				LifeTimeMax = 0.1,
+				ColorMin = this.createColor("ffffff00"),
+				ColorMax = this.createColor("ffffff00"),
+				ScaleMin = 0.1,
+				ScaleMax = 0.1,
+				RotationMin = 0,
+				RotationMax = 0,
+				VelocityMin = 80,
+				VelocityMax = 100,
+				DirectionMin = this.createVec(-1.0, -1.0),
+				DirectionMax = this.createVec(1.0, 1.0),
+				ForceMin = this.createVec(0, 0),
+				ForceMax = this.createVec(0, 0)
+			}
+		]
+	}
+];
+gt.Const.Tactical.SpiritWalkStartParticles <- this.Const.Tactical.SpiritWalkEndParticles;
 

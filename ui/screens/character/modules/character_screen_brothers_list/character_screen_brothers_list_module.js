@@ -306,7 +306,8 @@ CharacterScreenBrothersListModule.prototype.registerDatasourceListener = functio
 {
     //this.mDataSource.addListener(ErrorCode.Key, jQuery.proxy(this.onDataSourceError, this));
 
-	this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, jQuery.proxy(this.onBrothersListLoaded, this));
+    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, jQuery.proxy(this.onBrothersListLoaded, this));
+    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.SettingsChanged, jQuery.proxy(this.onBrothersSettingsChanged, this));
 	this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Updated, jQuery.proxy(this.onBrotherUpdated, this));
 	this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Selected, jQuery.proxy(this.onBrotherSelected, this));
 
@@ -646,6 +647,12 @@ CharacterScreenBrothersListModule.prototype.updateBrotherSlotLocks = function(_i
 	        break;
 	    } 
 	}
+};
+
+CharacterScreenBrothersListModule.prototype.onBrothersSettingsChanged = function (_dataSource, _brothers)
+{
+    this.mNumActiveMax = _brothers;
+    this.updateRosterLabel();
 };
 
 CharacterScreenBrothersListModule.prototype.onBrothersListLoaded = function (_dataSource, _brothers)

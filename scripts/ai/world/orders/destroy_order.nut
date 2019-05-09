@@ -50,12 +50,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 		local x = _in.readI16();
 		local y = _in.readI16();
 		this.m.TargetTile = this.World.getTile(x, y);
-
-		if (_in.getMetaData().getVersion() >= 18)
-		{
-			this.m.TargetID = _in.readU32();
-		}
-
+		this.m.TargetID = _in.readU32();
 		this.m.IsSafetyOverride = _in.readBool();
 		this.m.Time = _in.readF32();
 		this.m.Start = _in.readF32();

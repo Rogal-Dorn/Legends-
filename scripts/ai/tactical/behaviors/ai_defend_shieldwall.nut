@@ -46,6 +46,12 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		score = score * this.getFatigueScoreMult(this.m.Skill);
+
+		if (_entity.getSkills().hasSkill("effects.adrenaline"))
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		local dotDamage = 0;
 		local effects = _entity.getSkills().getAllSkillsOfType(this.Const.SkillType.DamageOverTime);
 
@@ -299,7 +305,7 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 
 				local danger = this.queryActorTurnsNearTarget(t.Actor, myTile, _entity);
 
-				if (danger.TurnsWithAttack < 1.0 && danger.InZonesOfControl <= (this.getProperties().OverallDefensivenessMult <= 1.5 ? 0 : 1))
+				if (dist <= t.Actor.getIdealRange() || danger.TurnsWithAttack < 1.0 && danger.InZonesOfControl <= (this.getProperties().OverallDefensivenessMult <= 1.5 ? 0 : 1))
 				{
 					opponentCount = ++opponentCount;
 				}
@@ -328,6 +334,7 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 			score = score * this.Const.AI.Behavior.ShieldwallWithThrowingWeaponMult;
 		}
 
+		this.logInfo("#D");
 		return this.Const.AI.Behavior.Score.Shieldwall * this.Math.maxf(0.25, this.getProperties().OverallDefensivenessMult) * score;
 	}
 

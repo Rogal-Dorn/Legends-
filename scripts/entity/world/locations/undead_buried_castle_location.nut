@@ -11,6 +11,8 @@ this.undead_buried_castle_location <- this.inherit("scripts/entity/world/locatio
 		this.m.TypeID = "location.undead_buried_castle";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
 		this.setDefenderSpawnList(this.Const.World.Spawn.UndeadArmy);
+		this.m.NamedWeaponsList = this.Const.Items.NamedUndeadWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedUndeadShields;
 		this.m.Resources = 350;
 	}
 

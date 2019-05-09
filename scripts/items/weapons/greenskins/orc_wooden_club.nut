@@ -27,18 +27,7 @@ this.orc_wooden_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.75;
 		this.m.DirectDamageMult = 0.4;
-	}
-
-	function getTooltip()
-	{
-		local ret = this.weapon.getTooltip();
-		ret.push({
-			id = 18,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
-		});
-		return ret;
+		this.m.FatigueOnSkillUse = 5;
 	}
 
 	function onEquip()
@@ -46,10 +35,8 @@ this.orc_wooden_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		local skill;
 		skill = this.new("scripts/skills/actives/bash");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/knock_out");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 	}
 

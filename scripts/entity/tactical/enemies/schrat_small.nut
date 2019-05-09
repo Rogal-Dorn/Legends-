@@ -12,36 +12,36 @@ this.schrat_small <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/schrat_hurt_shield_up_01.wav",
-			"sounds/enemies/schrat_hurt_shield_up_02.wav",
-			"sounds/enemies/schrat_hurt_shield_up_03.wav",
-			"sounds/enemies/schrat_hurt_shield_up_04.wav",
-			"sounds/enemies/schrat_hurt_shield_up_05.wav",
-			"sounds/enemies/schrat_hurt_shield_up_06.wav"
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_01.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_02.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_03.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_04.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_05.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_06.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Resurrect] = [
-			"sounds/enemies/schrat_regrowth_01.wav",
-			"sounds/enemies/schrat_regrowth_02.wav",
-			"sounds/enemies/schrat_regrowth_03.wav",
-			"sounds/enemies/schrat_regrowth_04.wav"
+			"sounds/enemies/dlc2/schrat_regrowth_01.wav",
+			"sounds/enemies/dlc2/schrat_regrowth_02.wav",
+			"sounds/enemies/dlc2/schrat_regrowth_03.wav",
+			"sounds/enemies/dlc2/schrat_regrowth_04.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/sapling_death_01.wav",
-			"sounds/enemies/sapling_death_02.wav",
-			"sounds/enemies/sapling_death_03.wav",
-			"sounds/enemies/sapling_death_04.wav",
-			"sounds/enemies/sapling_death_05.wav"
+			"sounds/enemies/dlc2/sapling_death_01.wav",
+			"sounds/enemies/dlc2/sapling_death_02.wav",
+			"sounds/enemies/dlc2/sapling_death_03.wav",
+			"sounds/enemies/dlc2/sapling_death_04.wav",
+			"sounds/enemies/dlc2/sapling_death_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/schrat_idle_01.wav",
-			"sounds/enemies/schrat_idle_02.wav",
-			"sounds/enemies/schrat_idle_03.wav",
-			"sounds/enemies/schrat_idle_04.wav",
-			"sounds/enemies/schrat_idle_05.wav",
-			"sounds/enemies/schrat_idle_06.wav",
-			"sounds/enemies/schrat_idle_07.wav",
-			"sounds/enemies/schrat_idle_08.wav",
-			"sounds/enemies/schrat_idle_09.wav",
+			"sounds/enemies/dlc2/schrat_idle_01.wav",
+			"sounds/enemies/dlc2/schrat_idle_02.wav",
+			"sounds/enemies/dlc2/schrat_idle_03.wav",
+			"sounds/enemies/dlc2/schrat_idle_04.wav",
+			"sounds/enemies/dlc2/schrat_idle_05.wav",
+			"sounds/enemies/dlc2/schrat_idle_06.wav",
+			"sounds/enemies/dlc2/schrat_idle_07.wav",
+			"sounds/enemies/dlc2/schrat_idle_08.wav",
+			"sounds/enemies/dlc2/schrat_idle_09.wav",
 			"sounds/ambience/terrain/forest_branch_crack_00.wav",
 			"sounds/ambience/terrain/forest_branch_crack_01.wav",
 			"sounds/ambience/terrain/forest_branch_crack_02.wav",
@@ -96,6 +96,7 @@ this.schrat_small <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

@@ -16,12 +16,6 @@ this.hidden_effect <- this.inherit("scripts/skills/skill", {
 	function getDescription()
 	{
 		local ret = this.m.Description;
-
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.boondock_blade"))
-		{
-			ret = ret + ("\n\nBecause of Boondock Blade, the character also gains:\n[color=" + this.Const.UI.Color.PositiveValue + "]+10 Melee Skill[/color]\n[color=" + this.Const.UI.Color.PositiveValue + "]+10 Ranged Skill[/color]\n[color=" + this.Const.UI.Color.PositiveValue + "]+10 Melee Defense[/color]\n[color=" + this.Const.UI.Color.PositiveValue + "]+10 Ranged Defense[/color]");
-		}
-
 		return ret;
 	}
 

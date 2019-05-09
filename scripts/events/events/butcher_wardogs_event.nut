@@ -61,7 +61,7 @@ this.butcher_wardogs_event <- this.inherit("scripts/events/event", {
 
 				foreach( i, item in stash )
 				{
-					if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+					if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 					{
 						numWardogsToSlaughter = --numWardogsToSlaughter;
 						stash[i] = null;
@@ -86,7 +86,7 @@ this.butcher_wardogs_event <- this.inherit("scripts/events/event", {
 					{
 						local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
-						if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+						if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 						{
 							numWardogsToSlaughter = --numWardogsToSlaughter;
 							bro.getItems().unequip(item);
@@ -171,7 +171,7 @@ this.butcher_wardogs_event <- this.inherit("scripts/events/event", {
 
 			local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
-			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 			{
 				numWardogs = ++numWardogs;
 			}
@@ -188,7 +188,7 @@ this.butcher_wardogs_event <- this.inherit("scripts/events/event", {
 
 			foreach( item in stash )
 			{
-				if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+				if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 				{
 					numWardogs = ++numWardogs;
 

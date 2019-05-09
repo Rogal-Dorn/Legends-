@@ -423,13 +423,17 @@ this.tooltip_events <- {
 				return tooltip;
 			}
 
-			if (_activeEntity != null && _activeEntity.getItems().isActionAffordable() == false)
+			if (_activeEntity != null && _activeEntity.getItems().isActionAffordable([
+				_item
+			]) == false)
 			{
 				tooltip.push({
 					id = 1,
 					type = "hint",
 					icon = "ui/tooltips/warning.png",
-					text = "Not enough Action Points to change items ([b][color=" + this.Const.UI.Color.NegativeValue + "]" + _activeEntity.getItems().getActionCost() + "[/color][/b] required)"
+					text = "Not enough Action Points to change items ([b][color=" + this.Const.UI.Color.NegativeValue + "]" + _activeEntity.getItems().getActionCost([
+						_item
+					]) + "[/color][/b] required)"
 				});
 				return tooltip;
 			}
@@ -448,7 +452,9 @@ this.tooltip_events <- {
 							id = 1,
 							type = "hint",
 							icon = "ui/icons/mouse_right_button.png",
-							text = "Equip item ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost() + "[/color][/b] AP)"
+							text = "Equip item ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
+								_item
+							]) + "[/color][/b] AP)"
 						});
 					}
 
@@ -456,7 +462,9 @@ this.tooltip_events <- {
 						id = 2,
 						type = "hint",
 						icon = "ui/icons/mouse_right_button_ctrl.png",
-						text = "Drop item on ground ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost() + "[/color][/b] AP)"
+						text = "Drop item on ground ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
+							_item
+						]) + "[/color][/b] AP)"
 					});
 				}
 				else
@@ -487,7 +495,9 @@ this.tooltip_events <- {
 						id = 1,
 						type = "hint",
 						icon = "ui/icons/mouse_right_button.png",
-						text = "Place item in bag ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost() + "[/color][/b] AP)"
+						text = "Place item in bag ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
+							_item
+						]) + "[/color][/b] AP)"
 					});
 				}
 
@@ -495,7 +505,9 @@ this.tooltip_events <- {
 					id = 2,
 					type = "hint",
 					icon = "ui/icons/mouse_right_button_ctrl.png",
-					text = "Drop item on ground ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost() + "[/color][/b] AP)"
+					text = "Drop item on ground ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
+						_item
+					]) + "[/color][/b] AP)"
 				});
 			}
 			else
@@ -530,7 +542,9 @@ this.tooltip_events <- {
 						id = 1,
 						type = "hint",
 						icon = "ui/icons/mouse_right_button.png",
-						text = "Equip item ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost() + "[/color][/b] AP)"
+						text = "Equip item ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
+							_item
+						]) + "[/color][/b] AP)"
 					});
 				}
 
@@ -540,7 +554,9 @@ this.tooltip_events <- {
 						id = 2,
 						type = "hint",
 						icon = "ui/icons/mouse_right_button_ctrl.png",
-						text = "Place item in bag ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost() + "[/color][/b] AP)"
+						text = "Place item in bag ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
+							_item
+						]) + "[/color][/b] AP)"
 					});
 				}
 			}
@@ -979,9 +995,24 @@ this.tooltip_events <- {
 		case "assets.Money":
 			local money = this.World.Assets.getMoney();
 			local dailyMoney = this.World.Assets.getDailyMoneyCost();
-			local time = this.Math.floor(money / dailyMoney);
+			local time = this.Math.floor(money / this.Math.max(1, dailyMoney));
 
-			if (time >= 1.0 && money > 0)
+			if (dailyMoney == 0)
+			{
+				return [
+					{
+						id = 1,
+						type = "title",
+						text = "Crowns"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou currently don\'t pay anyone."
+					}
+				];
+			}
+			else if (time >= 1.0 && money > 0)
 			{
 				return [
 					{
@@ -1875,6 +1906,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.StartingScenario":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Starting Scenario"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Choose how your company starts out in the world. Depending on your choice, you\'ll start with different men, equipment, resources, and special rules."
+				}
+			];
+
 		case "menu-screen.new-campaign.Ironman":
 			return [
 				{
@@ -2194,6 +2239,20 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Automatically place equipment back into the inventory slot it was in before battle, if possible. For example, if a character starts battle with a crossbow, but changes to a pike during battle, they\'ll automatically have the crossbow in hand again when the battle is concluded."
+				}
+			];
+
+		case "menu-screen.options.AutoPauseAfterCity":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Auto-Pause After Leaving City"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Automatically pause the game after leaving a city so that you don\'t waste any time - but at the expense of having to manually unpause each time."
 				}
 			];
 
@@ -2565,13 +2624,13 @@ this.tooltip_events <- {
 					id = 1,
 					type = "text",
 					icon = "ui/icons/regular_damage.png",
-					text = "Dealt [color=" + this.Const.UI.Color.PositiveValue + "]" + combatStats.DamageDealtHitpoints + "[/color] hitpoint damage"
+					text = "Dealt [color=" + this.Const.UI.Color.PositiveValue + "]" + combatStats.DamageDealtHitpoints + "[/color] damage to hitpoints"
 				});
 				result.push({
 					id = 2,
 					type = "text",
 					icon = "ui/icons/shield_damage.png",
-					text = "Dealt [color=" + this.Const.UI.Color.PositiveValue + "]" + combatStats.DamageDealtArmor + "[/color] armor damage"
+					text = "Dealt [color=" + this.Const.UI.Color.PositiveValue + "]" + combatStats.DamageDealtArmor + "[/color] damage to armor"
 				});
 			}
 
@@ -3636,6 +3695,37 @@ this.tooltip_events <- {
 			];
 
 			if (this.Const.DLC.Unhold == true)
+			{
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.PositiveValue + "]This DLC has been installed.[/color]";
+			}
+			else
+			{
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for purchase on Steam and GOG![/color]";
+			}
+
+			ret.push({
+				id = 1,
+				type = "hint",
+				icon = "ui/icons/mouse_left_button.png",
+				text = "Open store page in browser"
+			});
+			return ret;
+
+		case "dlc_4":
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Warriors of the North"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "The Warriors of the North DLC adds a new human faction of northern barbarians with their own fighting style and equipment, different starting scenarios for your company, new nordic and rus inspired equipment, as well as new contracts and events."
+				}
+			];
+
+			if (this.Const.DLC.Wildmen == true)
 			{
 				ret[1].text += "\n\n[color=" + this.Const.UI.Color.PositiveValue + "]This DLC has been installed.[/color]";
 			}

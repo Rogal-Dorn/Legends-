@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Factions <- {
-	GlobalMinDelay = 4.0,
+	GlobalMinDelay = 3.0,
 	BuildCampTries = 1,
 	RelationDecayPerDay = 0.33,
 	CyclesOnNewCampaign = 2000,
@@ -30,7 +30,8 @@ gt.Const.FactionType <- {
 	Zombies = 9,
 	Beasts = 10,
 	Generic = 11,
-	COUNT = 12
+	Barbarians = 12,
+	COUNT = 13
 };
 gt.Const.Faction <- {
 	None = 0,
@@ -45,7 +46,8 @@ gt.Const.Faction <- {
 	Zombies = 9,
 	Orcs = 10,
 	Goblins = 11,
-	COUNT = 12
+	Barbarians = 12,
+	COUNT = 13
 };
 gt.Const.FactionColor <- [
 	this.createColor("#ffffff"),
@@ -60,7 +62,8 @@ gt.Const.FactionColor <- [
 	this.createColor("#bd00c4"),
 	this.createColor("#bd00c4"),
 	this.createColor("#1aa83f"),
-	this.createColor("#537117")
+	this.createColor("#537117"),
+	this.createColor("#ff9595")
 ];
 gt.Const.FactionBase <- [
 	"",
@@ -74,7 +77,8 @@ gt.Const.FactionBase <- [
 	"bust_base_undead",
 	"bust_base_undead",
 	"bust_base_orcs",
-	"bust_base_goblins"
+	"bust_base_goblins",
+	"bust_base_wildmen_01"
 ];
 gt.Const.FactionAlliance <- [
 	[
@@ -139,6 +143,9 @@ gt.Const.FactionAlliance <- [
 	],
 	[
 		this.Const.Faction.Goblins
+	],
+	[
+		this.Const.Faction.Barbarians
 	]
 ];
 gt.Const.GenericFootprints <- [

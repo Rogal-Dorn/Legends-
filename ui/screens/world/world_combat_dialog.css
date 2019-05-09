@@ -120,6 +120,19 @@
     text-align: center;
 }
 
+.world-combat-dialog > .l-dialog-container .right-column .entity-div
+{
+   position: relative;
+   height: 4.5rem;
+}
+
+.world-combat-dialog > .l-dialog-container .right-column .entity-overlay
+{
+    position: relative;
+    left: 3.0rem;
+    top: -2.0rem;
+}
+
 .world-combat-dialog > .l-dialog-container .right-column .entity-label
 {
     width: 100%;

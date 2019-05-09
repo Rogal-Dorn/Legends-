@@ -7,6 +7,7 @@ this.golden_goose_event <- this.inherit("scripts/events/event", {
 		this.m.ID = "event.location.golden_goose";
 		this.m.Title = "As you approach...";
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
+		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_125.png[/img]{The ship is wrecked amongst the trees some of which have long since started to grow through it. As far as you\'re aware, there is neither sea nor river for miles. %observer% walks up and halts at the very sight.%SPEECH_ON%By the old gods, is that a ship?%SPEECH_OFF%You sigh and tell the company to stay here while you and the very observant sellsword go take a look.}",

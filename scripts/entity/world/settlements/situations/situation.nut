@@ -74,6 +74,11 @@ this.situation <- {
 		return _s + " no longer has " + this.m.Name;
 	}
 
+	function invalidate()
+	{
+		this.m.ValidUntil = 1;
+	}
+
 	function create()
 	{
 	}

@@ -75,7 +75,19 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 
 	function onPrepareVariables( _vars )
 	{
-		_vars.extend(this.World.Assets.getFounderNames());
+		local brothers = this.World.getPlayerRoster().getAll();
+		_vars.push([
+			"1h",
+			brothers.len() >= 1 ? brothers[0].getName() : ""
+		]);
+		_vars.push([
+			"2h",
+			brothers.len() >= 2 ? brothers[1].getName() : ""
+		]);
+		_vars.push([
+			"ranged",
+			brothers.len() >= 3 ? brothers[2].getName() : ""
+		]);
 	}
 
 	function onChangeAttributes()

@@ -73,8 +73,8 @@ this.treant_vs_giants_event <- this.inherit("scripts/events/event", {
 						properties.Entities = [];
 						properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Edge;
 						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Random;
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.UnholdBog, 100, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Schrats, 100, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.UnholdBog, 100, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Schrats, 100, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
 					}

@@ -7,6 +7,7 @@ this.named_orc_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.updateVariant();
 		this.m.ID = "weapon.named_orc_cleaver";
 		this.m.NameList = this.Const.Strings.CleaverNames;
+		this.m.UseRandomName = false;
 		this.m.Description = "A sharp and crude shard of metal with a wrapped grip resembling a sword but a lot heavier. Not made for human hands.";
 		this.m.Categories = "Cleaver, One-Handed";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
@@ -24,6 +25,7 @@ this.named_orc_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.25;
+		this.m.FatigueOnSkillUse = 5;
 		this.randomizeValues();
 	}
 
@@ -34,27 +36,13 @@ this.named_orc_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.ArmamentIcon = "icon_orc_weapon_04_named_0" + this.m.Variant;
 	}
 
-	function getTooltip()
-	{
-		local ret = this.weapon.getTooltip();
-		ret.push({
-			id = 18,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
-		});
-		return ret;
-	}
-
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
 		local skill;
 		skill = this.new("scripts/skills/actives/cleave");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/decapitate");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 	}
 

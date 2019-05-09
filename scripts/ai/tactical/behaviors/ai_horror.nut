@@ -184,6 +184,12 @@ this.ai_horror <- this.inherit("scripts/ai/tactical/behavior", {
 
 				target_score = target_score * (1.0 - this.Math.minf(1.0, target.getCurrentProperties().getBravery() * 0.01));
 				target_score = target_score * (1.0 / target.getCurrentProperties().MoraleCheckBraveryMult[this.Const.MoraleCheckType.MentalAttack]);
+
+				if (target.isTurnDone() && target.getSkills().hasSkill("effects.adrenaline"))
+				{
+					target_score = target_score + this.Const.AI.Behavior.HorrorAdrenalineBonus;
+				}
+
 				target_score = target_score * target.getCurrentProperties().TargetAttractionMult;
 
 				if (!target.isTurnDone())

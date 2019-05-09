@@ -102,7 +102,7 @@ this.ai_gruesome_feast <- this.inherit("scripts/ai/tactical/behavior", {
 					continue;
 				}
 
-				if ((!c.IsEmpty && !c.isSameTileAs(myTile)) && !(_entity.isAbleToWait() && c.IsOccupiedByActor && c.getEntity().getType() == this.Const.EntityType.Ghoul && c.getEntity().getMoraleState() == this.Const.MoraleState.Fleeing && !c.getEntity().isTurnDone() && c.getDistanceTo(myTile) == 1))
+				if (!c.IsEmpty && !(_entity.isAbleToWait() && c.IsOccupiedByActor && c.getEntity().getType() == this.Const.EntityType.Ghoul && c.getEntity().getMoraleState() == this.Const.MoraleState.Fleeing && !c.getEntity().isTurnDone() && c.getDistanceTo(myTile) == 1))
 				{
 					continue;
 				}

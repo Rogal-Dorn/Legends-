@@ -5,16 +5,21 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	function updateStrength()
 	{
 		this.m.Strength = 0.0;
-		local roster = clone this.World.getPlayerRoster().getAll();
+		local roster = this.World.getPlayerRoster().getAll();
 
-		if (roster.len() > 12)
+		if (roster.len() > this.World.Assets.getBrothersScaleMax())
 		{
 			roster.sort(this.onLevelCompare);
 		}
 
+		if (roster.len() < this.World.Assets.getBrothersScaleMin())
+		{
+			this.m.Strength += 10.0 * (this.World.Assets.getBrothersScaleMin() - roster.len());
+		}
+
 		foreach( i, bro in roster )
 		{
-			if (i >= 12)
+			if (i >= this.World.Assets.getBrothersScaleMax())
 			{
 				break;
 			}

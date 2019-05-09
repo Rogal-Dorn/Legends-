@@ -1,5 +1,17 @@
 this.decapitate <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		ApplySwordMastery = false
+	},
+	function isSwordMasteryApplied()
+	{
+		return this.m.ApplySwordMastery;
+	}
+
+	function setApplySwordMastery( _f )
+	{
+		this.m.ApplySwordMastery = _f;
+	}
+
 	function create()
 	{
 		this.m.ID = "actives.decapitate";
@@ -26,6 +38,7 @@ this.decapitate <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.25;
@@ -76,7 +89,7 @@ this.decapitate <- this.inherit("scripts/skills/skill", {
 				id = 5,
 				type = "text",
 				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] armor damage"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] damage to armor"
 			});
 		}
 
@@ -85,7 +98,14 @@ this.decapitate <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInCleavers ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if (this.m.ApplySwordMastery)
+		{
+			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		}
+		else
+		{
+			this.m.FatigueCostMult = _properties.IsSpecializedInCleavers ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		}
 	}
 
 	function onUse( _user, _targetTile )

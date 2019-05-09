@@ -28,18 +28,7 @@ this.orc_flail_2h <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmorDamageMult = 1.25;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 15;
-	}
-
-	function getTooltip()
-	{
-		local ret = this.weapon.getTooltip();
-		ret.push({
-			id = 18,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
-		});
-		return ret;
+		this.m.FatigueOnSkillUse = 5;
 	}
 
 	function onEquip()
@@ -47,10 +36,8 @@ this.orc_flail_2h <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		local skill;
 		skill = this.new("scripts/skills/actives/pound");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/thresh");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 	}
 

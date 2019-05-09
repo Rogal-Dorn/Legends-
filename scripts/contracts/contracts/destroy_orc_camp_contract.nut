@@ -173,7 +173,7 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
 						p.IsAutoAssigningBases = false;
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.OrcRaiders, 150 * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.OrcRaiders, 150 * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 					}
 				}
@@ -311,7 +311,7 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 						p.Music = this.Const.Music.NobleTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 140 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 140 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}

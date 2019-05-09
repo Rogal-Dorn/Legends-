@@ -333,7 +333,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 		this.m.Screens.push({
 			ID = "MilitiaAttack",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_16.png[/img]{You reach %location% and immediately tell your men to hold and get down. Peasants are afoot, but so are militia. This was not part of the deal and you must reassess the situation accordingly. | As you near %location%, %randombrother% returns to you with a scouting report. Apparently, there are not just peasants there. A few militiamen are in the area. If you are to do this, you\'ll have to fight them, too. What now? | Militia! They were not part of the plan at all! If you are to proceed, you\'ll have to take care of them along with the peasants. Time to think carefully about this... | What is this? You see militiamen marching around %location%. Now you\'ll have to do some real fighting if you want to complete your task. | As you ready to attack %location%, %randombrother% points out something in the distance. Slimming your eyes, you bring into focus a handful of what look like militiamen. This was not part of the agreement! You can still go through with the attack, but there will be some resistance...}",
+			Text = "[img]gfx/ui/events/event_141.png[/img]{You reach %location% and immediately tell your men to hold and get down. Peasants are afoot, but so are militia. This was not part of the deal and you must reassess the situation accordingly. | As you near %location%, %randombrother% returns to you with a scouting report. Apparently, there are not just peasants there. A few militiamen are in the area. If you are to do this, you\'ll have to fight them, too. What now? | Militia! They were not part of the plan at all! If you are to proceed, you\'ll have to take care of them along with the peasants. Time to think carefully about this... | What is this? You see militiamen marching around %location%. Now you\'ll have to do some real fighting if you want to complete your task. | As you ready to attack %location%, %randombrother% points out something in the distance. Slimming your eyes, you bring into focus a handful of what look like militiamen. This was not part of the agreement! You can still go through with the attack, but there will be some resistance...}",
 			Image = "",
 			List = [],
 			Options = [
@@ -403,7 +403,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.Music = this.Const.Music.NobleTracks;
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 150 * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 150 * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}

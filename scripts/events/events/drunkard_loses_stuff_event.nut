@@ -47,7 +47,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + _event.m.Item.getIcon(),
-					text = "You lose " + _event.getArticle(_event.m.Item.getName()) + _event.m.Item.getName()
+					text = "You lose " + this.Const.Strings.getArticle(_event.m.Item.getName()) + _event.m.Item.getName()
 				});
 			}
 
@@ -336,7 +336,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 		]);
 		_vars.push([
 			"item",
-			this.getArticle(this.m.Item.getName()) + this.m.Item.getName()
+			this.Const.Strings.getArticle(this.m.Item.getName()) + this.m.Item.getName()
 		]);
 	}
 

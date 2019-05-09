@@ -21,47 +21,47 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/giant_spider_hurt_01.wav",
-			"sounds/enemies/giant_spider_hurt_02.wav",
-			"sounds/enemies/giant_spider_hurt_03.wav",
-			"sounds/enemies/giant_spider_hurt_04.wav",
-			"sounds/enemies/giant_spider_hurt_05.wav",
-			"sounds/enemies/giant_spider_hurt_06.wav",
-			"sounds/enemies/giant_spider_hurt_07.wav"
+			"sounds/enemies/dlc2/giant_spider_hurt_01.wav",
+			"sounds/enemies/dlc2/giant_spider_hurt_02.wav",
+			"sounds/enemies/dlc2/giant_spider_hurt_03.wav",
+			"sounds/enemies/dlc2/giant_spider_hurt_04.wav",
+			"sounds/enemies/dlc2/giant_spider_hurt_05.wav",
+			"sounds/enemies/dlc2/giant_spider_hurt_06.wav",
+			"sounds/enemies/dlc2/giant_spider_hurt_07.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/giant_spider_death_01.wav",
-			"sounds/enemies/giant_spider_death_02.wav",
-			"sounds/enemies/giant_spider_death_03.wav",
-			"sounds/enemies/giant_spider_death_04.wav",
-			"sounds/enemies/giant_spider_death_05.wav",
-			"sounds/enemies/giant_spider_death_06.wav",
-			"sounds/enemies/giant_spider_death_07.wav",
-			"sounds/enemies/giant_spider_death_08.wav"
+			"sounds/enemies/dlc2/giant_spider_death_01.wav",
+			"sounds/enemies/dlc2/giant_spider_death_02.wav",
+			"sounds/enemies/dlc2/giant_spider_death_03.wav",
+			"sounds/enemies/dlc2/giant_spider_death_04.wav",
+			"sounds/enemies/dlc2/giant_spider_death_05.wav",
+			"sounds/enemies/dlc2/giant_spider_death_06.wav",
+			"sounds/enemies/dlc2/giant_spider_death_07.wav",
+			"sounds/enemies/dlc2/giant_spider_death_08.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
-			"sounds/enemies/giant_spider_flee_01.wav",
-			"sounds/enemies/giant_spider_flee_02.wav",
-			"sounds/enemies/giant_spider_flee_03.wav",
-			"sounds/enemies/giant_spider_flee_04.wav"
+			"sounds/enemies/dlc2/giant_spider_flee_01.wav",
+			"sounds/enemies/dlc2/giant_spider_flee_02.wav",
+			"sounds/enemies/dlc2/giant_spider_flee_03.wav",
+			"sounds/enemies/dlc2/giant_spider_flee_04.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/giant_spider_idle_01.wav",
-			"sounds/enemies/giant_spider_idle_02.wav",
-			"sounds/enemies/giant_spider_idle_03.wav",
-			"sounds/enemies/giant_spider_idle_04.wav",
-			"sounds/enemies/giant_spider_idle_05.wav",
-			"sounds/enemies/giant_spider_idle_06.wav",
-			"sounds/enemies/giant_spider_idle_07.wav",
-			"sounds/enemies/giant_spider_idle_08.wav",
-			"sounds/enemies/giant_spider_idle_09.wav",
-			"sounds/enemies/giant_spider_idle_10.wav",
-			"sounds/enemies/giant_spider_idle_11.wav",
-			"sounds/enemies/giant_spider_idle_12.wav",
-			"sounds/enemies/giant_spider_idle_13.wav",
-			"sounds/enemies/giant_spider_idle_14.wav",
-			"sounds/enemies/giant_spider_idle_15.wav",
-			"sounds/enemies/giant_spider_idle_16.wav"
+			"sounds/enemies/dlc2/giant_spider_idle_01.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_02.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_03.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_04.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_05.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_06.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_07.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_08.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_09.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_10.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_11.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_12.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_13.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_14.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_15.wav",
+			"sounds/enemies/dlc2/giant_spider_idle_16.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = this.m.Sound[this.Const.Sound.ActorEvent.Idle];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.7;
@@ -206,19 +206,24 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 
 			if ((_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals) && this.m.Size > 0.75 && this.Math.rand(1, 100) <= 60)
 			{
-				local r = this.Math.rand(1, 100);
-				local loot;
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
-				if (r <= 60)
+				for( local i = 0; i < n; i = ++i )
 				{
-					loot = this.new("scripts/items/misc/spider_silk_item");
-				}
-				else
-				{
-					loot = this.new("scripts/items/misc/poison_gland_item");
-				}
+					local r = this.Math.rand(1, 100);
+					local loot;
 
-				loot.drop(_tile);
+					if (r <= 60)
+					{
+						loot = this.new("scripts/items/misc/spider_silk_item");
+					}
+					else
+					{
+						loot = this.new("scripts/items/misc/poison_gland_item");
+					}
+
+					loot.drop(_tile);
+				}
 			}
 		}
 
@@ -233,6 +238,7 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		b.setValues(this.Const.Tactical.Actor.Spider);
 		b.IsAffectedByNight = false;
 		b.IsImmuneToPoison = true;
+		b.IsImmuneToDisarm = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 30)
 		{

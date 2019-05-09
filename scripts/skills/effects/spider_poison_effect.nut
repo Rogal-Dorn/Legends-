@@ -22,8 +22,8 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/status_effect_54.png";
 		this.m.IconMini = "status_effect_54_mini";
 		this.m.SoundOnUse = [
-			"sounds/enemies/giant_spider_poison_01.wav",
-			"sounds/enemies/giant_spider_poison_02.wav"
+			"sounds/enemies/dlc2/giant_spider_poison_01.wav",
+			"sounds/enemies/dlc2/giant_spider_poison_02.wav"
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.DamageOverTime;
 		this.m.IsActive = false;

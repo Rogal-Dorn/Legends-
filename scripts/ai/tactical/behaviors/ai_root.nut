@@ -217,6 +217,11 @@ this.ai_root <- this.inherit("scripts/ai/tactical/behavior", {
 					{
 						target_score = target_score + this.Const.AI.Behavior.RootCantAttackAnyoneBonus;
 					}
+
+					if (!canHit && target.isTurnDone() && target.getSkills().hasSkill("effects.adrenaline"))
+					{
+						target_score = target_score + this.Const.AI.Behavior.RootAdrenalineBonus;
+					}
 				}
 
 				if (target.getTile().IsBadTerrain)

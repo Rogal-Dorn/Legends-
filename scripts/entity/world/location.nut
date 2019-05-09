@@ -10,6 +10,10 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		Resources = 0,
 		LastSpawnTime = -1000.0,
 		Loot = null,
+		NamedWeaponsList = null,
+		NamedShieldsList = null,
+		NamedArmorsList = null,
+		NamedHelmetsList = null,
 		OnDiscovered = null,
 		OnEnter = null,
 		OnDestroyed = null,
@@ -60,7 +64,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 	function isShowingDefenders()
 	{
-		return this.m.IsShowingDefenders;
+		return this.m.IsShowingDefenders || this.World.Assets.getOrigin().getID() == "scenario.rangers";
 	}
 
 	function isVisited()
@@ -239,7 +243,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 		if (!this.isAlliedWithPlayer())
 		{
-			if (this.m.IsShowingDefenders && !this.isHiddenToPlayer() && this.m.Troops.len() != 0 && this.getFaction() != 0)
+			if (this.isShowingDefenders() && !this.isHiddenToPlayer() && this.m.Troops.len() != 0 && this.getFaction() != 0)
 			{
 				ret.extend(this.getTroopComposition());
 			}
@@ -419,220 +423,51 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 					if (type <= 40)
 					{
-						local i;
+						local weapons = clone this.Const.Items.NamedWeapons;
 
-						if (this.Const.DLC.Unhold)
+						if (this.m.NamedWeaponsList != null && this.m.NamedWeaponsList.len() != 0)
 						{
-							i = this.Math.rand(1, 24);
-						}
-						else
-						{
-							i = this.Math.rand(1, 18);
+							weapons.extend(this.m.NamedWeaponsList);
+							weapons.extend(this.m.NamedWeaponsList);
 						}
 
-						if (i == 1)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_axe"));
-						}
-						else if (i == 2)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_billhook"));
-						}
-						else if (i == 3)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_cleaver"));
-						}
-						else if (i == 4)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_crossbow"));
-						}
-						else if (i == 5)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_dagger"));
-						}
-						else if (i == 6)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_flail"));
-						}
-						else if (i == 7)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_greataxe"));
-						}
-						else if (i == 8)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_greatsword"));
-						}
-						else if (i == 9)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_javelin"));
-						}
-						else if (i == 10)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_longaxe"));
-						}
-						else if (i == 11)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_mace"));
-						}
-						else if (i == 12)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_spear"));
-						}
-						else if (i == 13)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_sword"));
-						}
-						else if (i == 14)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_throwing_axe"));
-						}
-						else if (i == 15)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_hammer"));
-						}
-						else if (i == 16)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_warbow"));
-						}
-						else if (i == 17)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_warbrand"));
-						}
-						else if (i == 18)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_warhammer"));
-						}
-						else if (i == 19)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_polehammer"));
-						}
-						else if (i == 20)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_fencing_sword"));
-						}
-						else if (i == 21)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_mace"));
-						}
-						else if (i == 22)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_two_handed_flail"));
-						}
-						else if (i == 23)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_three_headed_flail"));
-						}
-						else if (i == 24)
-						{
-							this.m.Loot.add(this.new("scripts/items/weapons/named/named_spetum"));
-						}
+						this.m.Loot.add(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 					}
 					else if (type <= 60)
 					{
-						local i = this.Math.rand(1, 10);
+						local shields = clone this.Const.Items.NamedShields;
 
-						if (i == 1)
+						if (this.m.NamedShieldsList != null && this.m.NamedShieldsList.len() != 0)
 						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_bandit_kite_shield"));
+							shields.extend(this.m.NamedShieldsList);
+							shields.extend(this.m.NamedShieldsList);
 						}
-						else if (i == 2)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_bandit_heater_shield"));
-						}
-						else if (i == 3)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_dragon_shield"));
-						}
-						else if (i == 4)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_full_metal_heater_shield"));
-						}
-						else if (i == 5)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_golden_round_shield"));
-						}
-						else if (i == 6)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_red_white_shield"));
-						}
-						else if (i == 7)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_rider_on_horse_shield"));
-						}
-						else if (i == 8)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_wing_shield"));
-						}
-						else if (i == 9)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_undead_heater_shield"));
-						}
-						else if (i == 10)
-						{
-							this.m.Loot.add(this.new("scripts/items/shields/named/named_undead_kite_shield"));
-						}
+
+						this.m.Loot.add(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 					}
 					else if (type <= 80)
 					{
-						local i = this.Math.rand(1, 7);
+						local helmets = clone this.Const.Items.NamedHelmets;
 
-						if (i == 1)
+						if (this.m.NamedHelmetsList != null && this.m.NamedHelmetsList.len() != 0)
 						{
-							this.m.Loot.add(this.new("scripts/items/helmets/named/golden_feathers_helmet"));
+							helmets.extend(this.m.NamedHelmetsList);
+							helmets.extend(this.m.NamedHelmetsList);
 						}
-						else if (i == 2)
-						{
-							this.m.Loot.add(this.new("scripts/items/helmets/named/heraldic_mail_helmet"));
-						}
-						else if (i == 3)
-						{
-							this.m.Loot.add(this.new("scripts/items/helmets/named/nasal_feather_helmet"));
-						}
-						else if (i == 4)
-						{
-							this.m.Loot.add(this.new("scripts/items/helmets/named/norse_helmet"));
-						}
-						else if (i == 5)
-						{
-							this.m.Loot.add(this.new("scripts/items/helmets/named/sallet_green_helmet"));
-						}
-						else if (i == 6)
-						{
-							this.m.Loot.add(this.new("scripts/items/helmets/named/wolf_helmet"));
-						}
-						else if (i == 7)
-						{
-							this.m.Loot.add(this.new("scripts/items/helmets/named/lindwurm_helmet"));
-						}
+
+						this.m.Loot.add(this.new("scripts/items/" + helmets[this.Math.rand(0, helmets.len() - 1)]));
 					}
 					else if (type <= 100)
 					{
-						local i = this.Math.rand(1, 6);
+						local armor = clone this.Const.Items.NamedArmors;
 
-						if (i == 1)
+						if (this.m.NamedArmorsList != null && this.m.NamedArmorsList.len() != 0)
 						{
-							this.m.Loot.add(this.new("scripts/items/armor/named/black_leather_armor"));
+							armor.extend(this.m.NamedArmorsList);
+							armor.extend(this.m.NamedArmorsList);
 						}
-						else if (i == 2)
-						{
-							this.m.Loot.add(this.new("scripts/items/armor/named/blue_studded_mail_armor"));
-						}
-						else if (i == 3)
-						{
-							this.m.Loot.add(this.new("scripts/items/armor/named/brown_coat_of_plates_armor"));
-						}
-						else if (i == 4)
-						{
-							this.m.Loot.add(this.new("scripts/items/armor/named/golden_scale_armor"));
-						}
-						else if (i == 5)
-						{
-							this.m.Loot.add(this.new("scripts/items/armor/named/green_coat_of_plates_armor"));
-						}
-						else if (i == 6)
-						{
-							this.m.Loot.add(this.new("scripts/items/armor/named/heraldic_mail_armor"));
-						}
+
+						this.m.Loot.add(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 					}
 				}
 				else
@@ -666,6 +501,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		selection.Visible = this.m.IsShowingBanner;
 		this.setSpriteScaling("location_banner", false);
 		this.world_entity.onAfterInit();
+		this.onUpdate();
 	}
 
 	function onFinish()
@@ -682,11 +518,6 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		{
 			this.World.FactionManager.getFaction(this.getFaction()).removeSettlement(this);
 		}
-	}
-
-	function onUpdate()
-	{
-		this.world_entity.onUpdate();
 	}
 
 	function onDiscovered()
@@ -830,6 +661,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		this.m.IsVisited = _in.readBool();
 		this.m.Loot.onDeserialize(_in);
 		this.getLabel("name").Visible = this.Const.World.AI.VisualizeNameOfLocations && this.m.IsShowingLabel;
+		this.onUpdate();
 	}
 
 });

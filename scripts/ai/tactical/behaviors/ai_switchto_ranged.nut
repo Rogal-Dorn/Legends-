@@ -120,16 +120,22 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (this.getAgent().getBehavior(this.Const.AI.Behavior.Order.EngageRanged) == null)
 		{
-			local targets = this.queryTargetsInMeleeRange(this.m.WeaponToEquip.getRangeMin(), this.m.WeaponToEquip.getRangeMax() + myTile.Level, 3);
-			local bestTarget = this.queryBestRangedTarget(_entity, null, targets, this.m.WeaponToEquip.getRangeMax());
-
-			if (bestTarget.Target == null || bestTarget.Score < 0)
+			if (this.getStrategy().isDefending() && (this.getStrategy().getStats().EnemyRangedFiring > 0 || this.getStrategy().getStats().AllyRangedFiring > 0))
 			{
-				return this.Const.AI.Behavior.Score.Zero;
+			}
+			else
+			{
+				local targets = this.queryTargetsInMeleeRange(this.Math.min(this.m.WeaponToEquip.getRangeMin(), _entity.getCurrentProperties().Vision), this.Math.min(this.m.WeaponToEquip.getRangeMax(), _entity.getCurrentProperties().Vision) + myTile.Level, 3);
+				local bestTarget = this.queryBestRangedTarget(_entity, null, targets, this.Math.min(this.m.WeaponToEquip.getRangeMax(), _entity.getCurrentProperties().Vision));
+
+				if (bestTarget.Target == null || bestTarget.Score < 0)
+				{
+					return this.Const.AI.Behavior.Score.Zero;
+				}
 			}
 		}
 
-		targets = this.queryTargetsInMeleeRange(this.m.WeaponToEquip.getRangeMin(), this.m.WeaponToEquip.getRangeMax());
+		targets = this.queryTargetsInMeleeRange(this.Math.min(this.m.WeaponToEquip.getRangeMin(), _entity.getCurrentProperties().Vision), this.Math.min(this.m.WeaponToEquip.getRangeMax(), _entity.getCurrentProperties().Vision));
 		scoreMult = scoreMult * this.Math.pow(this.Const.AI.Behavior.SwitchToEnemyInRangeMult, targets.len());
 
 		if (_entity.getCurrentProperties().getRangedSkill() < 50)
@@ -170,6 +176,16 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 			scoreMult = scoreMult * (0.25 + this.getStrategy().getStats().RangedAlliedVSEnemies * 0.75);
 		}
 
+		if (!_entity.getCurrentProperties().IsAbleToUseWeaponSkills)
+		{
+			scoreMult = scoreMult * this.Const.AI.Behavior.SwitchWeaponBecauseDisarmedMult;
+		}
+
+		if (_entity.getSkills().hasSkill("special.night"))
+		{
+			scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToRangedAtNightMult;
+		}
+
 		return this.Const.AI.Behavior.Score.SwitchToRanged * scoreMult;
 	}
 
@@ -177,7 +193,7 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		if (this.Const.AI.VerboseMode)
 		{
-			this.logInfo("* " + _entity.getName() + ": Switching to ranged weapon!");
+			this.logInfo("* " + _entity.getName() + ": Switching to ranged weapon \'" + this.m.WeaponToEquip.getName() + "\'!");
 		}
 
 		local oldWeapon = _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
@@ -218,8 +234,8 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 			_entity.getItems().addToBag(oldWeapon);
 		}
 
+		_entity.getItems().payForAction([]);
 		this.m.WeaponToEquip = null;
-		_entity.getItems().payForAction();
 		this.getAgent().getIntentions().IsChangingWeapons = true;
 		return true;
 	}

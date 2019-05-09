@@ -71,7 +71,7 @@ this.corpses_in_forest_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				local money = this.Math.rand(10, 100);
 				this.World.Assets.addMoney(money);
@@ -148,7 +148,7 @@ this.corpses_in_forest_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 
@@ -178,7 +178,7 @@ this.corpses_in_forest_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				item = this.new("scripts/items/armor/basic_mail_shirt");
 				item.setCondition(this.Math.rand(25, 60) * 1.0);
@@ -186,7 +186,7 @@ this.corpses_in_forest_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 
@@ -241,7 +241,7 @@ this.corpses_in_forest_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.beast_hunter")
+			if (bro.getBackground().getID() == "background.beast_slayer")
 			{
 				candidates_beastslayer.push(bro);
 			}

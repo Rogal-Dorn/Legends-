@@ -419,7 +419,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 							}
 						}
 
-						this.Contract.addFootPrintsFromTo(playerTile, this.Contract.m.Destination.getTile(), this.Const.OrcFootprints, 0.75);
+						this.Const.World.Common.addFootprintsFromTo(playerTile, this.Contract.m.Destination.getTile(), this.Const.OrcFootprints, 0.75);
 						this.Contract.setState("Pursuit");
 						return 0;
 					}
@@ -479,7 +479,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 
 						p.EnemyBanners.push(camp.getBanner());
 						p.Entities = [];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.GreenskinHorde, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.GreenskinHorde, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -655,7 +655,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + this.Contract.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 			}
 
@@ -683,7 +683,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 						local nearest_goblins = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getNearestSettlement(tile);
 						p.EnemyBanners.push(nearest_goblins.getBanner());
 						p.Entities = [];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.GoblinRaiders, 125 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.GoblinRaiders, 125 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}

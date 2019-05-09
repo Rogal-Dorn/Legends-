@@ -184,9 +184,6 @@ this.scenario_line_battle_orcs <- this.inherit("scripts/scenarios/tactical/scena
 		entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_warrior", x, x, 16, 16);
 		entity.setFaction(this.Const.Faction.Orcs);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/orc_berserker", x, x, 17, 17);
-		entity.setFaction(this.Const.Faction.Orcs);
-		entity.assignRandomEquipment();
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )

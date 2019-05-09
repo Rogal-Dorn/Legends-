@@ -497,7 +497,7 @@ this.world_controller <- {
 			}
 		}
 
-		if (this.m.Orders.len() != 0 && bestScore < this.Const.World.AI.Behavior.Score.Order)
+		if (this.m.Orders.len() != 0 && (bestScore < this.Const.World.AI.Behavior.Score.Order || this.m.Orders[0].getID() == this.Const.World.AI.Behavior.ID.Sleep))
 		{
 			return this.m.Orders[0];
 		}

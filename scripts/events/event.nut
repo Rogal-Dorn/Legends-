@@ -55,17 +55,6 @@ this.event <- {
 		return null;
 	}
 
-	function getArticle( _object )
-	{
-		return this.isFirstCharacter(_object, [
-			"A",
-			"E",
-			"I",
-			"O",
-			"U"
-		]) ? "an " : "a ";
-	}
-
 	function create()
 	{
 	}
@@ -192,7 +181,11 @@ this.event <- {
 		{
 			this.m.TerrainImage = "[img]gfx/ui/events/event_76.png[/img]";
 		}
-		else if (currentTile.Type == this.Const.World.TerrainType.Snow || currentTile.Type == this.Const.World.TerrainType.SnowyForest)
+		else if (currentTile.Type == this.Const.World.TerrainType.Snow)
+		{
+			this.m.TerrainImage = "[img]gfx/ui/events/event_143.png[/img]";
+		}
+		else if (currentTile.Type == this.Const.World.TerrainType.SnowyForest)
 		{
 			this.m.TerrainImage = "[img]gfx/ui/events/event_08.png[/img]";
 		}
@@ -220,7 +213,7 @@ this.event <- {
 		{
 			this.m.TerrainImage = "[img]gfx/ui/events/event_76.png[/img]";
 		}
-		else if (currentTile.Type == this.Const.World.TerrainType.Highlands)
+		else if (currentTile.Type == this.Const.World.TerrainType.Tundra)
 		{
 			this.m.TerrainImage = "[img]gfx/ui/events/event_126.png[/img]";
 		}
@@ -246,6 +239,14 @@ this.event <- {
 			[
 				"SPEECH_OFF",
 				"\"[/color]\n\n"
+			],
+			[
+				"OOC",
+				"[color=#f6eedb]"
+			],
+			[
+				"OOC_OFF",
+				"[/color]"
 			],
 			[
 				"companyname",
@@ -407,67 +408,6 @@ this.event <- {
 	function onDeserialize( _in )
 	{
 		this.m.CooldownUntil = _in.readF32();
-	}
-
-	function addUnitsToCombat( _into, _partyList, _resources, _faction )
-	{
-		local total_weight = 0;
-		local potential = [];
-
-		foreach( party in _partyList )
-		{
-			if (party.Cost < _resources * 0.7)
-			{
-				continue;
-			}
-
-			if (party.Cost > _resources)
-			{
-				break;
-			}
-
-			potential.push(party);
-			total_weight = total_weight + party.Cost;
-		}
-
-		local p;
-
-		if (potential.len() == 0)
-		{
-			if (_partyList[_partyList.len() - 1].Cost <= _resources)
-			{
-				p = _partyList[_partyList.len() - 1];
-			}
-			else
-			{
-				p = _partyList[0];
-			}
-		}
-		else
-		{
-			local pick = this.Math.rand(1, total_weight);
-
-			foreach( party in potential )
-			{
-				if (pick <= party.Cost)
-				{
-					p = party;
-					break;
-				}
-
-				pick = pick - party.Cost;
-			}
-		}
-
-		foreach( t in p.Troops )
-		{
-			for( local i = 0; i != t.Num; i = ++i )
-			{
-				local unit = clone t.Type;
-				unit.Faction <- _faction;
-				_into.push(unit);
-			}
-		}
 	}
 
 	function getNearestNobleHouse( _originTile )

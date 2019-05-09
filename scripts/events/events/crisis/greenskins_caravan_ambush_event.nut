@@ -55,7 +55,7 @@ this.greenskins_caravan_ambush_event <- this.inherit("scripts/events/event", {
 						properties.CombatID = "Event";
 						properties.Music = this.Const.Music.GoblinsTracks;
 						properties.Entities = [];
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(90, 110) * _event.getReputationToDifficultyLightMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(90, 110) * _event.getReputationToDifficultyLightMult(), this.Const.Faction.Enemy);
 						_event.registerToShowAfterCombat("AftermathB", null);
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
@@ -119,8 +119,8 @@ this.greenskins_caravan_ambush_event <- this.inherit("scripts/events/event", {
 						properties.Entities = [];
 						properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Edge;
 						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Random;
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(90, 110) * _event.getReputationToDifficultyLightMult(), this.Const.Faction.Enemy);
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Peasants, this.Math.rand(40, 50) * _event.getReputationToDifficultyLightMult(), this.Const.Faction.PlayerAnimals);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(90, 110) * _event.getReputationToDifficultyLightMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Peasants, this.Math.rand(40, 50) * _event.getReputationToDifficultyLightMult(), this.Const.Faction.PlayerAnimals);
 						_event.registerToShowAfterCombat("AftermathC", null);
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;

@@ -13,6 +13,7 @@ this.bandit_hideout_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsDespawningDefenders = false;
 		this.setDefenderSpawnList(this.Const.World.Spawn.BanditDefenders);
 		this.m.Resources = 70;
+		this.m.NamedShieldsList = this.Const.Items.NamedBanditShields;
 	}
 
 	function onSpawned()

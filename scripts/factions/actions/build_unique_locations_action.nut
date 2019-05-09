@@ -10,7 +10,9 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 		BuildLandShip = true,
 		BuildAncientWatchTower = true,
 		BuildWaterWheel = true,
-		BuildKrakenCult = true
+		BuildKrakenCult = true,
+		BuildIcyCave = true,
+		BuildHuntingGround = true
 	},
 	function create()
 	{
@@ -33,41 +35,60 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			{
 				this.m.BuildGoblinCity = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.ancient_statue")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.ancient_statue")
 			{
 				this.m.BuildAncientStatue = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.unhold_graveyard")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.unhold_graveyard")
 			{
 				this.m.BuildUnholdGraveyard = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.fountain_of_youth")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.fountain_of_youth")
 			{
 				this.m.BuildFountainOfYouth = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.ancient_temple")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.ancient_temple")
 			{
 				this.m.BuildAncientTemple = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.witch_hut")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.witch_hut")
 			{
 				this.m.BuildWitchHut = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.land_ship")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.land_ship")
 			{
 				this.m.BuildLandShip = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.ancient_watchtower")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.ancient_watchtower")
 			{
 				this.m.BuildAncientWatchTower = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.waterwheel")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.waterwheel")
 			{
 				this.m.BuildWaterWheel = false;
 			}
-			else if (!this.Const.DLC.Unhold || v.getTypeID() == "location.kraken_cult")
+
+			if (!this.Const.DLC.Unhold || v.getTypeID() == "location.kraken_cult")
 			{
 				this.m.BuildKrakenCult = false;
+			}
+
+			if (!this.Const.DLC.Wildmen || v.getTypeID() == "location.icy_cave_location")
+			{
+				this.m.BuildIcyCave = false;
+			}
+
+			if (!this.Const.DLC.Wildmen || v.getTypeID() == "location.tundra_elk_location")
+			{
+				this.m.BuildHuntingGround = false;
 			}
 		}
 	}
@@ -98,7 +119,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 
 			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 			{
-				if (i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Steppe || i == this.Const.World.TerrainType.Highlands)
+				if (i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Steppe || i == this.Const.World.TerrainType.Tundra)
 				{
 				}
 				else
@@ -277,6 +298,62 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 			if (tile != null)
 			{
 				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/kraken_cult_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildIcyCave)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Snow || i == this.Const.World.TerrainType.SnowyForest)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 10, 35, 1000, distanceToOthers, distanceToOthers);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/icy_cave_location", tile.Coords);
+			}
+
+			if (camp != null)
+			{
+				this.World.Tags.set("IjirokStage", 0);
+				tile.TacticalType = this.Const.World.TerrainTacticalType.Snow;
+				camp.onSpawned();
+			}
+		}
+		else if (this.m.BuildHuntingGround)
+		{
+			local disallowedTerrain = [];
+
+			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+			{
+				if (i == this.Const.World.TerrainType.Tundra)
+				{
+				}
+				else
+				{
+					disallowedTerrain.push(i);
+				}
+			}
+
+			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries * 100, disallowedTerrain, 15, 99, 1000, distanceToOthers, distanceToOthers);
+
+			if (tile != null)
+			{
+				camp = this.World.spawnLocation("scripts/entity/world/locations/legendary/tundra_elk_location", tile.Coords);
 			}
 
 			if (camp != null)

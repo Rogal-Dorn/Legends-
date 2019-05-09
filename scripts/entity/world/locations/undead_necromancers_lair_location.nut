@@ -13,6 +13,7 @@ this.undead_necromancers_lair_location <- this.inherit("scripts/entity/world/loc
 		this.setDefenderSpawnList(this.Const.World.Spawn.Necromancer);
 		this.m.Resources = 150;
 		this.m.RoamerSpawnList = this.Const.World.Spawn.Zombies;
+		this.m.NamedShieldsList = this.Const.Items.NamedUndeadShields;
 	}
 
 	function onSpawned()

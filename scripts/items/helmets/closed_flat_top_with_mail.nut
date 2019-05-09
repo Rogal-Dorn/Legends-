@@ -44,6 +44,10 @@ this.closed_flat_top_with_mail <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		switch(_color)
 		{
+		case this.Const.Items.Paint.None:
+			this.m.Variant = 18;
+			break;
+
 		case this.Const.Items.Paint.Black:
 			this.m.Variant = 147;
 			break;

@@ -39,6 +39,10 @@ this.bascinet_with_mail <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		switch(_color)
 		{
+		case this.Const.Items.Paint.None:
+			this.m.Variant = 54;
+			break;
+
 		case this.Const.Items.Paint.Black:
 			this.m.Variant = 154;
 			break;

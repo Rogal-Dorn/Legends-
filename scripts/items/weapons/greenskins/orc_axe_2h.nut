@@ -27,18 +27,7 @@ this.orc_axe_2h <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmorDamageMult = 1.6;
 		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 0;
-	}
-
-	function getTooltip()
-	{
-		local ret = this.weapon.getTooltip();
-		ret.push({
-			id = 18,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
-		});
-		return ret;
+		this.m.FatigueOnSkillUse = 5;
 	}
 
 	function onEquip()
@@ -46,14 +35,12 @@ this.orc_axe_2h <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		local skill;
 		skill = this.new("scripts/skills/actives/split_man");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/round_swing");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/split_shield");
 		skill.setApplyAxeMastery(true);
-		skill.setFatigueCost(skill.getFatigueCostRaw() + 10);
+		skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
 		this.addSkill(skill);
 	}
 

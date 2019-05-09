@@ -6,7 +6,7 @@ this.unstoppable_charge_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.unstoppable_charge";
 		this.m.Name = "Unstoppable Charge";
-		this.m.Description = "TODO";
+		this.m.Description = "";
 		this.m.Icon = "skills/active_110.png";
 		this.m.IconDisabled = "skills/active_110.png";
 		this.m.Overlay = "active_110";
@@ -145,7 +145,7 @@ this.unstoppable_charge_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone, tag, false, 2.0);
+		this.Tactical.getNavigator().teleport(_user, _targetTile, this.onTeleportDone, tag, false, 2.5);
 		return true;
 	}
 

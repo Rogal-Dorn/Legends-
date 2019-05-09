@@ -1,6 +1,8 @@
 this.named_shield <- this.inherit("scripts/items/shields/shield", {
 	m = {
-		NameList = []
+		PrefixList = this.Const.Strings.RandomShieldPrefix,
+		NameList = [],
+		UseRandomName = true
 	},
 	function create()
 	{
@@ -25,11 +27,9 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 
 	function createRandomName()
 	{
-		local r = this.Math.rand(1, 100);
-
-		if (r <= 60)
+		if (!this.m.UseRandomName || this.Math.rand(1, 100) <= 75)
 		{
-			return this.Const.Strings.RandomShieldPrefix[this.Math.rand(0, this.Const.Strings.RandomShieldPrefix.len() - 1)] + " ";
+			return this.m.PrefixList[this.Math.rand(0, this.m.PrefixList.len() - 1)] + " ";
 		}
 		else if (this.Math.rand(1, 2) == 1)
 		{
@@ -48,25 +48,34 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 
 	function randomizeValues()
 	{
-		if (this.Math.rand(1, 100) <= 50)
+		local available = [];
+		available.push(function ( _i )
 		{
-			this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(70, 100) * 0.01);
-		}
+			_i.m.MeleeDefense = this.Math.round(_i.m.MeleeDefense * this.Math.rand(120, 140) * 0.01);
+		});
+		available.push(function ( _i )
+		{
+			_i.m.RangedDefense = this.Math.round(_i.m.RangedDefense * this.Math.rand(120, 140) * 0.01);
+		});
+		available.push(function ( _i )
+		{
+			_i.m.FatigueOnSkillUse = _i.m.FatigueOnSkillUse - this.Math.rand(1, 3);
+		});
+		available.push(function ( _i )
+		{
+			_i.m.Condition = this.Math.round(_i.m.Condition * this.Math.rand(120, 150) * 0.01) * 1.0;
+			_i.m.ConditionMax = _i.m.Condition;
+		});
+		available.push(function ( _i )
+		{
+			_i.m.StaminaModifier = this.Math.round(_i.m.StaminaModifier * this.Math.rand(70, 90) * 0.01);
+		});
 
-		local r = this.Math.rand(1, 3);
-
-		if (r == 1)
+		for( local n = 2; n != 0 && available.len() != 0; n = --n )
 		{
-			this.m.MeleeDefense = this.Math.round(this.m.MeleeDefense * this.Math.rand(120, 140) * 0.01);
-		}
-		else if (r == 2)
-		{
-			this.m.RangedDefense = this.Math.round(this.m.RangedDefense * this.Math.rand(120, 140) * 0.01);
-		}
-		else if (r == 3)
-		{
-			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(120, 150) * 0.01) * 1.0;
-			this.m.ConditionMax = this.m.Condition;
+			local r = this.Math.rand(0, available.len() - 1);
+			available[r](this);
+			available.remove(r);
 		}
 	}
 
@@ -76,7 +85,7 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 
 		if (this.m.Name.len() == 0)
 		{
-			if (this.Math.rand(1, 100) <= 75)
+			if (this.Math.rand(1, 100) <= 25)
 			{
 				this.setName(this.getContainer().getActor().getName() + "\'s ");
 			}
@@ -103,6 +112,7 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 		_out.writeI8(this.m.StaminaModifier);
 		_out.writeU16(this.m.MeleeDefense);
 		_out.writeU16(this.m.RangedDefense);
+		_out.writeI16(this.m.FatigueOnSkillUse);
 	}
 
 	function onDeserialize( _in )
@@ -113,6 +123,15 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.StaminaModifier = _in.readI8();
 		this.m.MeleeDefense = _in.readU16();
 		this.m.RangedDefense = _in.readU16();
+
+		if (_in.getMetaData().getVersion() >= 47)
+		{
+			this.m.FatigueOnSkillUse = _in.readI16();
+		}
+		else
+		{
+			this.m.FatigueOnSkillUse = 0;
+		}
 	}
 
 });

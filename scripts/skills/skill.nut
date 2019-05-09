@@ -41,6 +41,7 @@ this.skill <- {
 		IsTargeted = false,
 		IsStacking = false,
 		IsAttack = false,
+		IsWeaponSkill = false,
 		IsTargetingActor = true,
 		IsVisibleTileNeeded = true,
 		IsRanged = false,
@@ -334,7 +335,7 @@ this.skill <- {
 	{
 		if (this.m.Container != null)
 		{
-			return this.Math.round(this.Math.ceil(this.m.FatigueCost * this.m.FatigueCostMult * this.m.Container.getActor().getCurrentProperties().FatigueEffectMult) + this.m.Container.getActor().getCurrentProperties().FatigueOnSkillUse);
+			return this.Math.max(0, this.Math.round(this.Math.ceil(this.m.FatigueCost * this.m.FatigueCostMult * this.m.Container.getActor().getCurrentProperties().FatigueEffectMult) + this.m.Container.getActor().getCurrentProperties().FatigueOnSkillUse));
 		}
 		else
 		{
@@ -459,7 +460,7 @@ this.skill <- {
 
 	function isUsable()
 	{
-		return this.m.IsUsable && this.m.Container.getActor().getCurrentProperties().IsAbleToUseSkills && !this.isHidden();
+		return this.m.IsUsable && this.m.Container.getActor().getCurrentProperties().IsAbleToUseSkills && (!this.m.IsWeaponSkill || this.m.Container.getActor().getCurrentProperties().IsAbleToUseWeaponSkills) && !this.isHidden();
 	}
 
 	function isAffordable()
@@ -688,10 +689,10 @@ this.skill <- {
 		local actor = this.m.Container.getActor();
 		local p = this.m.Container.buildPropertiesForUse(this, _target);
 		local d = _target.getSkills().buildPropertiesForDefense(actor, this);
-		local critical = p.getHitchance(this.Const.BodyPart.Head) / 100.0 * p.DamageAgainstMult[this.Const.BodyPart.Head];
+		local critical = 1.0 + p.getHitchance(this.Const.BodyPart.Head) / 100.0 * (p.DamageAgainstMult[this.Const.BodyPart.Head] - 1.0);
 		local armor = _target.getArmor(this.Const.BodyPart.Head) * (p.getHitchance(this.Const.BodyPart.Head) / 100.0) + _target.getArmor(this.Const.BodyPart.Body) * (this.Math.max(0, p.getHitchance(this.Const.BodyPart.Body)) / 100.0);
 		local armorDamage = this.Math.min(armor, p.getArmorDamageAverage());
-		local directDamage = this.Math.max(0, p.getRegularDamageAverage() * this.m.DirectDamageMult * critical - (this.m.DirectDamageMult < 1.0 ? armor * this.Const.Combat.ArmorDirectDamageMitigationMult : 1.0));
+		local directDamage = this.Math.max(0, p.getRegularDamageAverage() * this.m.DirectDamageMult * critical - (this.m.DirectDamageMult < 1.0 ? armor * this.Const.Combat.ArmorDirectDamageMitigationMult : 0));
 		local hitpointDamage = this.Math.max(0, p.getRegularDamageAverage() * critical - directDamage - armorDamage);
 		armorDamage = armorDamage * (d.DamageReceivedArmorMult * d.DamageReceivedTotalMult);
 		directDamage = directDamage * (d.DamageReceivedDirectMult * d.DamageReceivedTotalMult);
@@ -824,6 +825,10 @@ this.skill <- {
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+	}
+
+	function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )
 	{
 	}
 
@@ -1155,6 +1160,14 @@ this.skill <- {
 			});
 		}
 
+		if (_targetTile.IsOccupiedByActor && targetEntity.getCurrentProperties().IsImmuneToDisarm && this.m.ID == "actives.disarm")
+		{
+			ret.push({
+				icon = "ui/tooltips/negative.png",
+				text = "Immune to being disarmed"
+			});
+		}
+
 		if (_targetTile.IsOccupiedByActor && targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab && (this.m.ID == "actives.knock_back" || this.m.ID == "actives.hook" || this.m.ID == "actives.repel"))
 		{
 			ret.push({
@@ -1216,12 +1229,12 @@ this.skill <- {
 
 			if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
 			{
-				local shieldExpert = _targetEntity.getCurrentProperties().IsSpecializedInShields;
-				toHit = toHit + shield.getMeleeDefense() * (shieldExpert ? 1.25 : 1.0);
+				local shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0);
+				toHit = toHit + shieldBonus;
 
 				if (!this.m.IsShieldwallRelevant && _targetEntity.getSkills().hasSkill("effects.shieldwall"))
 				{
-					toHit = toHit + shield.getMeleeDefense() * (shieldExpert ? 1.25 : 1.0);
+					toHit = toHit + shieldBonus;
 				}
 			}
 		}
@@ -1305,23 +1318,21 @@ this.skill <- {
 
 		if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
 		{
-			local shieldExpert = _targetEntity.getCurrentProperties().IsSpecializedInShields;
+			shieldBonus = (this.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (_targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0);
 
 			if (!this.m.IsShieldRelevant)
 			{
-				toHit = toHit + shield.getMeleeDefense() * (shieldExpert ? 1.25 : 1.0);
+				toHit = toHit + shieldBonus;
 			}
-
-			shieldBonus = shieldBonus + shield.getMeleeDefense() * (shieldExpert ? 1.25 : 1.0);
 
 			if (_targetEntity.getSkills().hasSkill("effects.shieldwall"))
 			{
 				if (!this.m.IsShieldwallRelevant)
 				{
-					toHit = toHit + shield.getMeleeDefense() * (shieldExpert ? 1.25 : 1.0);
+					toHit = toHit + shieldBonus;
 				}
 
-				shieldBonus = shieldBonus + shield.getMeleeDefense() * (shieldExpert ? 1.25 : 1.0);
+				shieldBonus = shieldBonus * 2;
 			}
 		}
 
@@ -1331,6 +1342,7 @@ this.skill <- {
 		if (this.m.IsRanged && !_allowDiversion)
 		{
 			toHit = toHit - 15;
+			properties.DamageTotalMult *= 0.75;
 		}
 
 		if (defense > -100 && skill > -100)
@@ -1714,6 +1726,7 @@ this.skill <- {
 		hitInfo.Injuries = injuries;
 		hitInfo.InjuryThresholdMult = _info.Properties.ThresholdToInflictInjuryMult;
 		hitInfo.Tile = _info.TargetEntity.getTile();
+		_info.Container.onBeforeTargetHit(_info.Skill, _info.TargetEntity, hitInfo);
 		local pos = _info.TargetEntity.getPos();
 		local hasArmorHitSound = _info.TargetEntity.getItems().getAppearance().ImpactSound[bodyPart].len() != 0;
 		_info.TargetEntity.onDamageReceived(_info.User, _info.Skill, hitInfo);

@@ -10,16 +10,16 @@ this.uproot_small_zoc_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_122.png";
 		this.m.Overlay = "active_122";
 		this.m.SoundOnUse = [
-			"sounds/enemies/schrat_uproot_short_01.wav",
-			"sounds/enemies/schrat_uproot_short_02.wav",
-			"sounds/enemies/schrat_uproot_short_03.wav",
-			"sounds/enemies/schrat_uproot_short_04.wav"
+			"sounds/enemies/dlc2/schrat_uproot_short_01.wav",
+			"sounds/enemies/dlc2/schrat_uproot_short_02.wav",
+			"sounds/enemies/dlc2/schrat_uproot_short_03.wav",
+			"sounds/enemies/dlc2/schrat_uproot_short_04.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/enemies/schrat_uproot_hit_01.wav",
-			"sounds/enemies/schrat_uproot_hit_02.wav",
-			"sounds/enemies/schrat_uproot_hit_03.wav",
-			"sounds/enemies/schrat_uproot_hit_04.wav"
+			"sounds/enemies/dlc2/schrat_uproot_hit_01.wav",
+			"sounds/enemies/dlc2/schrat_uproot_hit_02.wav",
+			"sounds/enemies/dlc2/schrat_uproot_hit_03.wav",
+			"sounds/enemies/dlc2/schrat_uproot_hit_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;

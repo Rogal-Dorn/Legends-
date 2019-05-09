@@ -295,6 +295,7 @@ this.options_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		settings.DontAutoEndTurns = !_data[7];
 		settings.AutoLoot = _data[8];
 		settings.RestoreEquipment = _data[9];
+		settings.AutoPauseAfterCity = _data[10];
 		this.Settings.save();
 		settings = this.Settings.getTempGameplaySettings();
 		settings.ShowOverlayStats = _data[1];
@@ -314,6 +315,7 @@ this.options_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		_target.autoEndTurn <- !settings.DontAutoEndTurns;
 		_target.autoLoot <- settings.AutoLoot;
 		_target.restoreEquipment <- settings.RestoreEquipment;
+		_target.autoPauseAfterCity <- settings.AutoPauseAfterCity;
 	}
 
 });

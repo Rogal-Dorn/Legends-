@@ -1,8 +1,8 @@
 this.slash_lightning <- this.inherit("scripts/skills/skill", {
 	m = {
 		SoundOnLightning = [
-			"sounds/combat/legendary_lightning_01.wav",
-			"sounds/combat/legendary_lightning_02.wav"
+			"sounds/combat/dlc2/legendary_lightning_01.wav",
+			"sounds/combat/dlc2/legendary_lightning_02.wav"
 		]
 	},
 	function create()
@@ -31,6 +31,7 @@ this.slash_lightning <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsWeaponSkill = true;
 		this.m.Delay = 1250;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
@@ -53,7 +54,7 @@ this.slash_lightning <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]10[/color] - [color=" + this.Const.UI.Color.DamageValue + "]30[/color] damage that ignores armor to up to three targets"
+				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]10[/color] - [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage that ignores armor to up to three targets"
 			},
 			{
 				id = 7,
@@ -91,7 +92,7 @@ this.slash_lightning <- this.inherit("scripts/skills/skill", {
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, _delay + 200, function ( _data )
 		{
 			local hitInfo = clone this.Const.Tactical.HitInfo;
-			hitInfo.DamageRegular = this.Math.rand(10, 30);
+			hitInfo.DamageRegular = this.Math.rand(10, 20);
 			hitInfo.DamageDirect = 1.0;
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;

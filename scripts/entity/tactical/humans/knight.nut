@@ -5,8 +5,6 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Type = this.Const.EntityType.Knight;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.Knight.XP;
-		this.m.Name = this.generateName();
-		this.m.IsGeneratingKillName = false;
 		this.human.create();
 		this.m.Faces = this.Const.Faces.SmartMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
@@ -84,11 +82,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
-		if (this.Math.rand(1, 100) <= 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/named/named_sword"));
-		}
-		else
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
 			r = this.Math.rand(1, 2);
 
@@ -102,49 +96,99 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		r = this.Math.rand(1, 2);
-		local shield;
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+		{
+			r = this.Math.rand(1, 2);
+			local shield;
+
+			if (r == 1)
+			{
+				shield = this.new("scripts/items/shields/faction_heater_shield");
+			}
+			else if (r == 2)
+			{
+				shield = this.new("scripts/items/shields/faction_kite_shield");
+			}
+
+			shield.setFaction(banner);
+			this.m.Items.equip(shield);
+		}
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
+		{
+			r = this.Math.rand(1, 3);
+
+			if (r == 1)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/coat_of_plates"));
+			}
+			else if (r == 2)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/coat_of_scales"));
+			}
+			else if (r == 3)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/reinforced_mail_hauberk"));
+			}
+		}
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
+		{
+			r = this.Math.rand(1, 2);
+
+			if (r == 1)
+			{
+				local helmet = this.new("scripts/items/helmets/full_helm");
+				helmet.setPlainVariant();
+				this.m.Items.equip(helmet);
+			}
+			else if (r == 2)
+			{
+				local helm = this.new("scripts/items/helmets/faction_helm");
+				helm.setVariant(banner);
+				this.m.Items.equip(helm);
+			}
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_axe",
+			"weapons/named/named_greatsword",
+			"weapons/named/named_mace",
+			"weapons/named/named_sword"
+		];
+		local shields = clone this.Const.Items.NamedShields;
+		local armor = [
+			"armor/named/brown_coat_of_plates_armor",
+			"armor/named/golden_scale_armor",
+			"armor/named/green_coat_of_plates_armor",
+			"armor/named/heraldic_mail_armor"
+		];
+		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
 		{
-			shield = this.new("scripts/items/shields/faction_heater_shield");
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		else if (r == 2)
 		{
-			shield = this.new("scripts/items/shields/faction_kite_shield");
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		shield.setFaction(banner);
-		this.m.Items.equip(shield);
-		r = this.Math.rand(1, 3);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_plates"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_scales"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/reinforced_mail_hauberk"));
-		}
-
-		r = this.Math.rand(1, 2);
-
-		if (r == 1)
-		{
-			local helmet = this.new("scripts/items/helmets/full_helm");
-			helmet.setPlainVariant();
-			this.m.Items.equip(helmet);
-		}
-		else if (r == 2)
-		{
-			local helm = this.new("scripts/items/helmets/faction_helm");
-			helm.setVariant(banner);
-			this.m.Items.equip(helm);
-		}
+		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		return true;
 	}
 
 });

@@ -33,7 +33,7 @@ this.throw_acid_flask <- this.inherit("scripts/skills/skill", {
 		this.m.IsShowingProjectile = true;
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = true;
-		this.m.ActionPointCost = 5;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
@@ -85,6 +85,11 @@ this.throw_acid_flask <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.spawnIcon("status_effect_78", _target.getTile());
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )

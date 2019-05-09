@@ -139,7 +139,12 @@ WorldCombatDialog.prototype.loadFromData = function (_data)
 			if(i > 6)
 				break;
 
-			table += '<tr><td width="10%"><img src="' + Path.GFX + 'ui/orientation/' + entities[i]['Icon'] + '.png" /></td><td width="5%"/><td width="85%" class="entity-label text-font-medium font-color-description">' + entities[i]['Name'] + '</td></tr>';	
+            table += '<tr><td width="10%"><div class="entity-div"><img src="' + Path.GFX + 'ui/orientation/' + entities[i]['Icon'] + '.png" />';
+
+            if(entities[i]['Overlay'] != null)
+                table += '<img src="' + Path.GFX + 'ui/' + entities[i]['Overlay'] + '" class="entity-overlay"/>';
+
+            table += '</div></td > <td width="5%"/> <td width="85%" class="entity-label text-font-medium font-color-description">' + entities[i]['Name'] + '</td></tr >';	
 		}
 
 		table += '</table>';

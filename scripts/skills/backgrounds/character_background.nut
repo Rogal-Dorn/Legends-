@@ -259,14 +259,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local level = this.getContainer().getActor().getLevel();
-		local wage = this.Math.round(this.m.DailyCost * this.m.DailyCostMult);
-		_properties.DailyWage += wage * this.Math.pow(1.1, this.Math.min(10, level - 1));
-
-		if (level > 11)
+		if (this.getContainer().hasSkill("trait.player"))
 		{
-			local previous = wage * this.Math.pow(1.1, 10);
-			_properties.DailyWage += previous * this.Math.pow(1.03, level - 1 - 10) - previous;
+			_properties.DailyWage = 0;
+		}
+		else
+		{
+			local level = this.getContainer().getActor().getLevel();
+			local wage = this.Math.round(this.m.DailyCost * this.m.DailyCostMult);
+			_properties.DailyWage += wage * this.Math.pow(1.1, this.Math.min(10, level - 1));
+
+			if (level > 11)
+			{
+				local previous = wage * this.Math.pow(1.1, 10);
+				_properties.DailyWage += previous * this.Math.pow(1.03, level - 1 - 10) - previous;
+			}
 		}
 	}
 

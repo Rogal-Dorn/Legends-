@@ -5,7 +5,8 @@ this.ai_attack_bow <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.quick_shot",
 			"actives.aimed_shot",
 			"actives.shoot_bolt",
-			"actives.shoot_stake"
+			"actives.shoot_stake",
+			"actives.sling_stone"
 		],
 		SelectedSkill = null
 	},

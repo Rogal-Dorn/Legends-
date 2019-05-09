@@ -677,7 +677,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 						allyStrength = allyStrength - 20;
 					}
 
-					this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, allyStrength * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, allyStrength * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
 					p.Entities.push({
 						ID = this.Const.EntityType.Knight,
 						Variant = 0,
@@ -698,8 +698,8 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 						enemyStrength = enemyStrength + 25;
 					}
 
-					this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, enemyStrength * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
-					this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 60 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, enemyStrength * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 60 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
 					p.Entities.push({
 						ID = this.Const.EntityType.Knight,
 						Variant = 0,
@@ -1039,8 +1039,8 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 							this.Const.PlayerBanners[n - 1],
 							"banner_noble_11"
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.PeasantsArmed, 40 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.PeasantsArmed, 40 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -1150,7 +1150,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 						p.EnemyBanners = [
 							"banner_noble_11"
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Peasants, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Peasants, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.Enemy);
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -1349,7 +1349,7 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 				party.setAttackableByAI(false);
 				party.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 				party.setFootprintSizeOverride(0.75);
-				this.Contract.addFootPrintsFromTo(playerTile, party.getTile(), this.Const.GenericFootprints, 0.75);
+				this.Const.World.Common.addFootprintsFromTo(playerTile, party.getTile(), this.Const.GenericFootprints, 0.75);
 				this.Contract.m.Destination = this.WeakTableRef(party);
 				party.getLoot().Money = this.Math.rand(50, 100);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
@@ -1476,6 +1476,11 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getSkills().hasSkill("trait.player"))
+					{
+						continue;
+					}
+
 					if (bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.brute") || bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.hedge_knight" || bro.getBackground().getID() == "background.brawler")
 					{
 						candidates.push(bro);
@@ -1572,6 +1577,11 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getSkills().hasSkill("trait.player"))
+					{
+						continue;
+					}
+
 					if (bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.brute") || bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.hedge_knight" || bro.getBackground().getID() == "background.brawler")
 					{
 						candidates.push(bro);

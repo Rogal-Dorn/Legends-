@@ -104,6 +104,19 @@ gt.Const.Faces.SmartMale <- [
 	"bust_head_13",
 	"bust_head_14"
 ];
+gt.Const.Faces.WildMale <- [
+	"bust_head_02",
+	"bust_head_03",
+	"bust_head_09",
+	"bust_head_10",
+	"bust_head_11",
+	"bust_head_12",
+	"bust_head_14",
+	"bust_head_15",
+	"bust_head_16",
+	"bust_head_19",
+	"bust_head_20"
+];
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",
 	"bust_head_necro_02"
@@ -130,7 +143,8 @@ gt.Const.Hair.BarberMale <- [
 	"17",
 	"18",
 	"19",
-	"20"
+	"20",
+	"21"
 ];
 gt.Const.Hair.AllMale <- [
 	"shaved",
@@ -149,7 +163,8 @@ gt.Const.Hair.AllMale <- [
 	"14",
 	"15",
 	"16",
-	"20"
+	"20",
+	"21"
 ];
 gt.Const.Hair.CommonMale <- [
 	"shaved",
@@ -198,12 +213,15 @@ gt.Const.Hair.UntidyMale <- [
 	"15",
 	"16",
 	"17",
-	"18"
+	"18",
+	"21"
 ];
 gt.Const.Hair.WildMale <- [
 	"03",
 	"08",
-	"18"
+	"18",
+	"21",
+	"shaved"
 ];
 gt.Const.Hair.YoungMale <- [
 	"shaved",
@@ -286,7 +304,8 @@ gt.Const.Beards.Barber <- [
 	"13",
 	"14",
 	"15",
-	"16"
+	"16",
+	"17"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -304,7 +323,8 @@ gt.Const.Beards.All <- [
 	"13",
 	"14",
 	"15",
-	"16"
+	"16",
+	"17"
 ];
 gt.Const.Beards.Tidy <- [
 	"01",
@@ -323,7 +343,8 @@ gt.Const.Beards.Untidy <- [
 	"07",
 	"08",
 	"09",
-	"14"
+	"14",
+	"17"
 ];
 gt.Const.Beards.Raider <- [
 	"01",
@@ -345,7 +366,8 @@ gt.Const.Beards.WildExtended <- [
 	"12",
 	"13",
 	"14",
-	"15"
+	"15",
+	"17"
 ];
 gt.Const.Beards.Monk <- [
 	"01",

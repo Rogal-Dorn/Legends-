@@ -104,10 +104,10 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/fortified_outpost_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 2, true);
 		}
@@ -118,10 +118,10 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fortified_outpost_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 2, true);
 		}
@@ -131,15 +131,15 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", [
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Hills
 			], 1, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/blast_furnace_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], 1, true);
 		}
 		else
@@ -147,15 +147,15 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/ore_smelters_location", [
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Hills
 			], 1, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], 1, true);
 		}
 
@@ -169,7 +169,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Shore
 		]);
@@ -178,14 +178,14 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], []);
 		this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/amber_collector_location", [
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Shore
 		]);

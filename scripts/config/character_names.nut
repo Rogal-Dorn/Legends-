@@ -257,6 +257,53 @@ gt.Const.Strings.CharacterNamesFemale <- [
 	"Mathilda",
 	"Gerhild"
 ];
+gt.Const.Strings.BarbarianNames <- [
+	"Smud",
+	"Hirguld",
+	"Braum",
+	"Grimner",
+	"Harif",
+	"Skallag",
+	"Hylle",
+	"Guder",
+	"Asberk",
+	"Iyrd",
+	"Brand",
+	"Obrun",
+	"Jormal",
+	"Joltul",
+	"Jotnar",
+	"Huggur",
+	"Eirik",
+	"Hafgufa",
+	"Vaettir",
+	"Frugar",
+	"Brokkr",
+	"Hurik",
+	"Skarbrand"
+];
+gt.Const.Strings.BarbarianTitles <- [
+	"the Slayer",
+	"the Destroyer",
+	"the Ravager",
+	"the Pillager",
+	"the Conquerer",
+	"the Slayer",
+	"the Defiler",
+	"the Despoiler",
+	"the Menace",
+	"the Headhunter",
+	"the Ravager",
+	"Skullcrusher",
+	"Bonebreaker",
+	"Slaughterborne",
+	"the Chosen",
+	"Battleborn",
+	"Ironside",
+	"the Bloodied",
+	"the Beast",
+	"Beastblood"
+];
 gt.Const.Strings.NobleTitles <- [
 	"Count",
 	"Count",
@@ -284,22 +331,46 @@ gt.Const.Strings.SellswordTitles <- [
 ];
 gt.Const.Strings.SwordmasterTitles <- [
 	"the Legend",
-	"the Old Guard",
-	"the Master"
+	"the Master",
+	"the Fencer",
+	"the Fast",
+	"Quickblade",
+	"the Serpent",
+	"the Swift",
+	"Bladedancer",
+	"the Undefeated",
+	"the Unbeaten",
+	"the Champion",
+	"Master of the Realm"
 ];
 gt.Const.Strings.HedgeKnightTitles <- [
-	"the Lone Wolf",
-	"the Wolf",
-	"the Hound",
+	"The Lone Wolf",
+	"The Wolf",
+	"The Hound",
 	"Steelwielder",
-	"the Slayer",
-	"the Jouster",
-	"the Giant",
-	"the Mountain",
-	"Strongface",
-	"the Defiler",
-	"the Knightslayer",
-	"the Hedge Knight"
+	"The Slayer",
+	"The Giant",
+	"The Mountain",
+	"The Defiler",
+	"The Knightslayer",
+	"The Hedge Knight",
+	"The Scourge",
+	"The Fallen Knight",
+	"Mancrusher",
+	"The Exiled",
+	"Warshout",
+	"The Skulltaker",
+	"The Cleaver"
+];
+gt.Const.Strings.MasterArcherNames <- [
+	"%randomname% the Marksman",
+	"Sureshot",
+	"%randomname% the Master Archer",
+	"%randomname% the Hunter",
+	"%randomname% the Sniper",
+	"Hundred Paces",
+	"%randomname% Quick Shot",
+	"The Headhunter"
 ];
 gt.Const.Strings.MasonTitles <- [
 	"the Builder",
@@ -542,5 +613,90 @@ gt.Const.Strings.KrakenNames <- [
 	"Thohochoth the All-Ender",
 	"Naccorath the Eternal",
 	"Xapocathlu the All-Reaching"
+];
+gt.Const.Strings.AncientDeadNames <- [
+	"Brasus",
+	"Gudila",
+	"Ostracon",
+	"Dardanos",
+	"Duras",
+	"Mucatra",
+	"Cothelas",
+	"Arzaru",
+	"Decalus",
+	"Akamas",
+	"Kavaros",
+	"Comoscius",
+	"Moskon",
+	"Rholes",
+	"Tarbus",
+	"Apulon",
+	"Napucon",
+	"Barsobis"
+];
+gt.Const.Strings.AncientDeadTitles <- [
+	"the Returned",
+	"the Restorator",
+	"the Ancient",
+	"the Destroyer",
+	"the Guardian",
+	"the Hunter",
+	"the Second",
+	"the Herald",
+	"the Unearthed",
+	"the Forgotten",
+	"the Protector",
+	"the Honored",
+	"the Defender",
+	"of the North"
+];
+gt.Const.Strings.GoblinNames <- [
+	"Nox",
+	"Grubb",
+	"Sharax",
+	"Zuggut",
+	"Grisnik",
+	"Zatak",
+	"Finex",
+	"Zugtakr",
+	"Velok",
+	"Zatox",
+	"Naxanix",
+	"Vlixix",
+	"Snarf",
+	"Ratox"
+];
+gt.Const.Strings.GoblinTitles <- [
+	"the Stabber",
+	"the Insidious",
+	"Throatcutter",
+	"Knifelicker",
+	"the Skinner",
+	"the Headhunter",
+	"Eyegouger",
+	"Rotgut",
+	"Longnose",
+	"the Cutter",
+	"Nosebiter",
+	"the Sticker"
+];
+gt.Const.Strings.FallenHeroTitles <- [
+	"the Decayed",
+	"the Unburied",
+	"the Rotten",
+	"the Defiled",
+	"the Returned",
+	"the Undying",
+	"the Cursed",
+	"the Corrupted",
+	"the Unbreakable",
+	"the Oathbreaker",
+	"the Forgotten",
+	"the Lost",
+	"the Fallen Hero",
+	"the Cruel",
+	"the Returned",
+	"the Prince of Rot",
+	"the Hollow"
 ];
 

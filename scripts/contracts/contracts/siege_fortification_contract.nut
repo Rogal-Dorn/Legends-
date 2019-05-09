@@ -545,7 +545,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 					p.EnemyBanners = [
 						this.Contract.m.Origin.getOwner().getBannerSmall()
 					];
-					this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
 					p.Entities.push({
 						ID = this.Const.EntityType.Knight,
 						Variant = 0,
@@ -676,7 +676,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 				if (_dest.getDistanceTo(this.Contract.m.Origin) <= 400)
 				{
-					this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
 
 					foreach( id in this.Contract.m.UnitsSpawned )
 					{
@@ -913,7 +913,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 						p.EnemyBanners = [
 							this.Contract.m.Origin.getOwner().getBannerSmall()
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 110 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -953,7 +953,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 						p.EnemyBanners = [
 							this.Contract.m.Origin.getOwner().getBannerSmall()
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
 						p.Entities.push({
 							ID = this.Const.EntityType.Knight,
 							Variant = 0,
@@ -963,7 +963,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 							Callback = this.Contract.onCommanderPlaced.bindenv(this.Contract),
 							Tag = this.Contract
 						});
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
 						p.Entities.push({
 							ID = this.Const.EntityType.Knight,
 							Variant = 0,
@@ -1017,7 +1017,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 						p.EnemyBanners = [
 							this.Contract.m.Origin.getOwner().getBannerSmall()
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -1139,7 +1139,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 						p.EnemyBanners = [
 							this.Contract.m.Origin.getOwner().getBannerSmall()
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -1372,7 +1372,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 						p.EnemyBanners = [
 							this.Contract.m.Origin.getOwner().getBannerSmall()
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 100 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.getFaction());
 						p.Entities.push({
 							ID = this.Const.EntityType.Knight,
 							Variant = 0,
@@ -1381,7 +1381,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 							Faction = this.Contract.getFaction(),
 							Callback = this.Contract.onCommanderPlaced.bindenv(this.Contract)
 						});
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.Origin.getOwner().getID());
 						p.Entities.push({
 							ID = this.Const.EntityType.Knight,
 							Variant = 0,

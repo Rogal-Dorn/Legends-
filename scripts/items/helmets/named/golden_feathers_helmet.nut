@@ -13,7 +13,6 @@ this.golden_feathers_helmet <- this.inherit("scripts/items/helmets/named/named_h
 			"Helm with Coif"
 		];
 		this.m.ShowOnCharacter = true;
-		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
 		this.m.HideBeard = true;
 		this.m.Variant = 50;

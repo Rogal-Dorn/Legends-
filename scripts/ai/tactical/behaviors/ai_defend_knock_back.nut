@@ -60,6 +60,7 @@ this.ai_defend_knock_back <- this.inherit("scripts/ai/tactical/behavior", {
 		local idealEngageRange = this.getProperties().EngageRangeIdeal;
 		local myTile = _entity.getTile();
 		local skillCost = this.m.Skill.getActionPointCost();
+		local zoc = myTile.getZoneOfControlCountOtherThan(_entity.getAlliedFactions());
 
 		foreach( t in targets )
 		{
@@ -69,6 +70,7 @@ this.ai_defend_knock_back <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 
 			local targetTile = t.getTile();
+			local targetHasZOC = !t.getCurrentProperties().IsStunned && !t.isArmedWithRangedWeapon();
 
 			if (!this.m.Skill.isUsableOn(targetTile))
 			{
@@ -215,7 +217,7 @@ this.ai_defend_knock_back <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 			}
 
-			if (!isGoodReason && targets.len() == 1 && _entity.getActionPoints() - skillCost >= 2)
+			if (!isGoodReason && zoc == 1 && targetHasZOC && _entity.getActionPoints() - skillCost >= 2)
 			{
 				local targetValue = this.queryTargetValue(_entity, t, null);
 				local opponents = this.getAgent().getKnownOpponents();
@@ -377,17 +379,17 @@ this.ai_defend_knock_back <- this.inherit("scripts/ai/tactical/behavior", {
 			{
 				score = score * this.Const.AI.Behavior.KnockBackForPositionMult;
 
-				if (targets.len() == 1 && targetTile.Level > myTile.Level && tile.Level <= targetTile.Level)
+				if (zoc == 1 && targetHasZOC && targetTile.Level > myTile.Level && tile.Level <= targetTile.Level)
 				{
 					isGoodReason = true;
 				}
 
-				if (!isGoodReason && targets.len() == 1 && !targetTile.IsBadTerrain && myTile.IsBadTerrain && targetTile.Level >= myTile.Level && tile.Level <= targetTile.Level)
+				if (!isGoodReason && zoc == 1 && targetHasZOC && !targetTile.IsBadTerrain && myTile.IsBadTerrain && targetTile.Level >= myTile.Level && tile.Level <= targetTile.Level)
 				{
 					isGoodReason = true;
 				}
 
-				if (!isGoodReason && targets.len() == 1 && !targetTile.IsBadTerrain && tile.IsBadTerrain && targetTile.Level >= myTile.Level && tile.Level <= targetTile.Level)
+				if (!isGoodReason && zoc == 1 && targetHasZOC && !targetTile.IsBadTerrain && tile.IsBadTerrain && targetTile.Level >= myTile.Level && tile.Level <= targetTile.Level)
 				{
 					isGoodReason = true;
 				}

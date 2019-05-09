@@ -239,7 +239,7 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 							party.setAttackableByAI(false);
 							this.Contract.m.UnitsSpawned.push(party.getID());
 							local footPrintsOrigin = this.Contract.getTileToSpawnLocation(nearTile, 4, 8);
-							this.Contract.addFootPrintsFromTo(footPrintsOrigin, party.getTile(), this.Const.BeastFootprints, party.getFootprintsSize());
+							this.Const.World.Common.addFootprintsFromTo(footPrintsOrigin, party.getTile(), this.Const.BeastFootprints, party.getFootprintsSize(), 1.1);
 							break;
 						}
 					}

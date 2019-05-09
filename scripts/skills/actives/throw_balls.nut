@@ -29,6 +29,7 @@ this.throw_balls <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
+		this.m.IsWeaponSkill = true;
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntAndPiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntAndPiercingHead;

@@ -78,7 +78,7 @@ this.ailing_recovers_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_ailing.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.beast_hunter")
+			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.beast_slayer")
 			{
 				candidates_healer.push(bro);
 			}

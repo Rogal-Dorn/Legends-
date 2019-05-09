@@ -244,7 +244,7 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 				{
 					this.Contract.m.LastRandomEventShown = this.Time.getVirtualTimeF();
 
-					if (!this.Flags.get("IsBurnedFarmsteadShown") && playerTile.Type == this.Const.World.TerrainType.Plains || playerTile.Type == this.Const.World.TerrainType.Hills || playerTile.Type == this.Const.World.TerrainType.Highlands || playerTile.Type == this.Const.World.TerrainType.Steppe)
+					if (!this.Flags.get("IsBurnedFarmsteadShown") && playerTile.Type == this.Const.World.TerrainType.Plains || playerTile.Type == this.Const.World.TerrainType.Hills || playerTile.Type == this.Const.World.TerrainType.Tundra || playerTile.Type == this.Const.World.TerrainType.Steppe)
 					{
 						this.Flags.set("IsBurnedFarmsteadShown", true);
 						this.Contract.setScreen("BurnedFarmstead");

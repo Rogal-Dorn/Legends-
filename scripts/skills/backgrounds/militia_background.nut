@@ -27,6 +27,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
+		this.m.IsLowborn = true;
 	}
 
 	function onBuildDescription()
@@ -88,37 +89,26 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 4);
+		local weapons = [
+			"weapons/hooked_blade",
+			"weapons/bludgeon",
+			"weapons/hand_axe",
+			"weapons/militia_spear",
+			"weapons/shortsword"
+		];
 
-		if (r == 0)
+		if (this.Const.DLC.Wildmen)
 		{
-			items.equip(this.new("scripts/items/weapons/billhook"));
+			weapons.extend([
+				"weapons/warfork"
+			]);
 		}
-		else
+
+		items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+
+		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null && this.Math.rand(1, 100) <= 50)
 		{
-			if (r == 1)
-			{
-				items.equip(this.new("scripts/items/weapons/bludgeon"));
-			}
-			else if (r == 2)
-			{
-				items.equip(this.new("scripts/items/weapons/hand_axe"));
-			}
-			else if (r == 3)
-			{
-				items.equip(this.new("scripts/items/weapons/militia_spear"));
-			}
-			else if (r == 4)
-			{
-				items.equip(this.new("scripts/items/weapons/shortsword"));
-			}
-
-			r = this.Math.rand(0, 1);
-
-			if (r == 0)
-			{
-				items.equip(this.new("scripts/items/shields/buckler_shield"));
-			}
+			items.equip(this.new("scripts/items/shields/buckler_shield"));
 		}
 
 		r = this.Math.rand(0, 4);

@@ -18,8 +18,8 @@ this.emperors_countenance <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 20000;
-		this.m.Condition = 380.0;
-		this.m.ConditionMax = 380.0;
+		this.m.Condition = 400.0;
+		this.m.ConditionMax = 400.0;
 		this.m.StaminaModifier = -20;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}

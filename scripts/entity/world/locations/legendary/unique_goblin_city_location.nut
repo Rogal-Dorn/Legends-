@@ -25,7 +25,7 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 		this.m.Name = "Rul\'gazhix";
 		this.location.onSpawned();
 
-		for( local i = 0; i < 16; i = ++i )
+		for( local i = 0; i < 14; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GoblinSkirmisher
@@ -53,7 +53,7 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 			}, false);
 		}
 
-		for( local i = 0; i < 11; i = ++i )
+		for( local i = 0; i < 10; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GoblinWolfrider
@@ -74,7 +74,7 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 			}, false);
 		}
 
-		for( local i = 0; i < 2; i = ++i )
+		for( local i = 0; i < 1; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.GoblinShaman
@@ -97,7 +97,7 @@ this.unique_goblin_city_location <- this.inherit("scripts/entity/world/location"
 	{
 		this.location.onBeforeCombatStarted();
 
-		for( local added = 0; this.m.Troops.len() < 47;  )
+		for( local added = 0; this.m.Troops.len() < 43;  )
 		{
 			local r = this.Math.rand(1, 3);
 

@@ -99,7 +99,7 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 				party.setAttackableByAI(false);
 				party.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 				party.setFootprintSizeOverride(0.75);
-				this.Contract.addFootPrintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.GenericFootprints, 0.75);
+				this.Const.World.Common.addFootprintsFromTo(this.Contract.m.Home.getTile(), party.getTile(), this.Const.GenericFootprints, 0.75);
 				this.Contract.m.Target = this.WeakTableRef(party);
 				party.getSprite("banner").setBrush("banner_bandits_0" + this.Math.rand(1, 6));
 				local c = party.getController();
@@ -263,9 +263,9 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 					Text = "To Arms!",
 					function getResult()
 					{
-						local unit = clone this.Const.World.Spawn.Troops.Necromancer;
-						unit.Faction <- this.Contract.m.Target.getFaction();
-						this.Contract.m.Target.getTroops().push(unit);
+						this.Const.World.Common.addTroop(this.Contract.m.Target, {
+							Type = this.Const.World.Spawn.Troops.Necromancer
+						});
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, true);
 						return 0;
 					}

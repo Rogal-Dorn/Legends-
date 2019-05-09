@@ -115,7 +115,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -132,7 +132,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], []);
 		}
 		else
@@ -146,7 +146,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -163,7 +163,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], []);
 		}
 
@@ -176,7 +176,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.LeaveForest,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Forest,
 			this.Const.World.TerrainType.SnowyForest,
@@ -188,7 +188,7 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Forest,
 			this.Const.World.TerrainType.SnowyForest,
@@ -200,13 +200,13 @@ this.small_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], 4, true);
 	}
 

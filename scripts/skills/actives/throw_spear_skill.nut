@@ -10,27 +10,27 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_138_sw.png";
 		this.m.Overlay = "active_138";
 		this.m.SoundOnUse = [
-			"sounds/combat/throwing_spear_throw_01.wav",
-			"sounds/combat/throwing_spear_throw_02.wav",
-			"sounds/combat/throwing_spear_throw_03.wav"
+			"sounds/combat/dlc2/throwing_spear_throw_01.wav",
+			"sounds/combat/dlc2/throwing_spear_throw_02.wav",
+			"sounds/combat/dlc2/throwing_spear_throw_03.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/combat/throwing_spear_hit_01.wav",
-			"sounds/combat/throwing_spear_hit_02.wav",
-			"sounds/combat/throwing_spear_hit_03.wav",
-			"sounds/combat/throwing_spear_hit_04.wav"
+			"sounds/combat/dlc2/throwing_spear_hit_01.wav",
+			"sounds/combat/dlc2/throwing_spear_hit_02.wav",
+			"sounds/combat/dlc2/throwing_spear_hit_03.wav",
+			"sounds/combat/dlc2/throwing_spear_hit_04.wav"
 		];
 		this.m.SoundOnMiss = [
-			"sounds/combat/throwing_spear_miss_01.wav",
-			"sounds/combat/throwing_spear_miss_02.wav",
-			"sounds/combat/throwing_spear_miss_03.wav",
-			"sounds/combat/throwing_spear_miss_04.wav"
+			"sounds/combat/dlc2/throwing_spear_miss_01.wav",
+			"sounds/combat/dlc2/throwing_spear_miss_02.wav",
+			"sounds/combat/dlc2/throwing_spear_miss_03.wav",
+			"sounds/combat/dlc2/throwing_spear_miss_04.wav"
 		];
 		this.m.SoundOnHitShield = [
-			"sounds/combat/throwing_spear_hit_shield_01.wav",
-			"sounds/combat/throwing_spear_hit_shield_02.wav",
-			"sounds/combat/throwing_spear_hit_shield_03.wav",
-			"sounds/combat/throwing_spear_hit_shield_04.wav"
+			"sounds/combat/dlc2/throwing_spear_hit_shield_01.wav",
+			"sounds/combat/dlc2/throwing_spear_hit_shield_02.wav",
+			"sounds/combat/dlc2/throwing_spear_hit_shield_03.wav",
+			"sounds/combat/dlc2/throwing_spear_hit_shield_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
@@ -43,6 +43,7 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
+		this.m.IsWeaponSkill = true;
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;

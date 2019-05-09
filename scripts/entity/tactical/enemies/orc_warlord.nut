@@ -270,54 +270,55 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		{
+			local weapons = [
+				"weapons/greenskins/orc_axe",
+				"weapons/greenskins/orc_cleaver",
+				"weapons/greenskins/orc_axe_2h",
+				"weapons/greenskins/orc_axe_2h"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warlord_armor"));
+		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
+		{
+			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warlord_helmet"));
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss_greenskins");
+		local weapons = [
+			"weapons/named/named_orc_cleaver",
+			"weapons/named/named_orc_axe"
+		];
+		local shields = [
+			"shields/named/named_orc_heavy_shield"
+		];
+
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			if (this.Math.rand(1, 100) <= 15)
-			{
-				local r = this.Math.rand(1, 2);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_cleaver"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_axe"));
-				}
-			}
-			else
-			{
-				local r = this.Math.rand(1, 2);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_axe"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
-				}
-			}
-
-			if (this.Math.rand(1, 100) <= 85)
-			{
-				if (this.Math.rand(1, 100) <= 20)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/named/named_orc_heavy_shield"));
-				}
-				else
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/greenskins/orc_heavy_shield"));
-				}
-			}
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_axe_2h"));
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warlord_armor"));
-		this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warlord_helmet"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+		return true;
 	}
 
 });

@@ -28,6 +28,7 @@ this.impale <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsRanged = false;
 		this.m.IsTooCloseShown = true;
+		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.3;

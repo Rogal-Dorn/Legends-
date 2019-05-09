@@ -59,7 +59,7 @@ this.named_javelin <- this.inherit("scripts/items/weapons/named/named_weapon", {
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/throw_javelin"));
 	}
 

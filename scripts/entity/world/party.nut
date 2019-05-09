@@ -252,7 +252,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		{
 			if (this.World.getTime().IsDaytime)
 			{
-				this.m.VisibilityMult = 0.1;
+				this.m.VisibilityMult = 0.0;
 				this.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 				this.m.IsLeavingFootprints = false;
 			}
@@ -354,7 +354,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 						scale = this.m.FootprintSizeOverride;
 					}
 
-					this.World.spawnFootprint(this.createVec(this.getPos().X - 5, this.getPos().Y - 15), this.m.Footprints[this.getDirection8To(this.m.Destination)] + "_0" + this.m.LastFootprintType, scale, this.m.FootprintSizeOverride != 0.0 ? 30.0 : 0.0);
+					this.World.spawnFootprint(this.createVec(this.getPos().X - 5, this.getPos().Y - 15), this.m.Footprints[this.getDirection8To(this.m.Destination)] + "_0" + this.m.LastFootprintType, scale, this.m.FootprintSizeOverride != 0.0 ? 30.0 : 0.0, this.World.Assets.getFootprintVision());
 					this.m.LastFootprintTime = this.Time.getVirtualTimeF();
 					this.m.LastFootprintType = this.m.LastFootprintType == 1 ? 2 : 1;
 				}

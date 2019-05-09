@@ -294,6 +294,11 @@ this.troublemakers_bully_peasants_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.brute") || bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.hedge_knight" || bro.getBackground().getID() == "background.brawler")
 			{
 				candidates_troublemaker.push(bro);

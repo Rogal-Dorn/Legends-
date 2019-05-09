@@ -100,7 +100,7 @@ this.small_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		], [], 1);
 		this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/wool_spinner_location", [
 			this.Const.World.TerrainType.Plains,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Plains
 		]);
@@ -112,7 +112,7 @@ this.small_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.AutumnForest,
 			this.Const.World.TerrainType.LeaveForest,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [], 2, true);
 	}
 

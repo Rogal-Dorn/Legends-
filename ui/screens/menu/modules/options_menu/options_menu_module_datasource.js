@@ -406,7 +406,10 @@ OptionsMenuModuleDatasource.prototype.applyGameplayOptions = function ()
 	options.push(value);
 
 	value = this.getGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.RestoreEquipment);
-	options.push(value);
+    options.push(value);
+
+    value = this.getGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity);
+    options.push(value);
 
 	this.notifyBackendApplyGameplayOptions(options);
 };

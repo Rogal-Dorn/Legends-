@@ -1019,17 +1019,6 @@ this.contract <- {
 		return this.getVecDistance(_location.getPos(), _entity.getPos()) <= 175;
 	}
 
-	function getArticle( _object )
-	{
-		return this.isFirstCharacter(_object, [
-			"A",
-			"E",
-			"I",
-			"O",
-			"U"
-		]) ? "an " : "a ";
-	}
-
 	function getDaysRequiredToTravel( _numTiles, _speed, _onRoadOnly )
 	{
 		local speed = _speed * this.Const.World.MovementSettings.GlobalMult;
@@ -1108,113 +1097,6 @@ this.contract <- {
 		return false;
 	}
 
-	function addFootPrintsFromTo( _from, _to, _type, _scale = 0.5 )
-	{
-		local navSettings = this.World.getNavigator().createSettings();
-		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Sneak;
-		navSettings.RoadMult = 1.0;
-		local path = this.World.getNavigator().findPath(_from, _to, navSettings, 0);
-		local left = true;
-		local pos = _from.Pos;
-
-		for( local dest; !path.isEmpty(); pos = this.World.move(pos, dest, speed) )
-		{
-			local dest;
-
-			if (path.isAtWaypoint(pos))
-			{
-				path.pop();
-
-				if (path.isEmpty())
-				{
-					break;
-				}
-
-				dest = this.World.tileToWorld(path.getCurrent());
-			}
-			else if (dest == null)
-			{
-				dest = this.World.tileToWorld(path.getCurrent());
-			}
-
-			local tile = this.World.getTile(this.World.worldToTile(pos));
-			local speed = 100.0;
-			speed = speed * this.Const.World.MovementSettings.GlobalMult;
-
-			if (tile.HasRoad)
-			{
-				speed = speed * this.Const.World.MovementSettings.RoadMult;
-			}
-
-			if (!tile.IsOccupied)
-			{
-				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0);
-				left = !left;
-			}
-		}
-	}
-
-	function addUnitsToCombat( _into, _partyList, _resources, _faction )
-	{
-		local total_weight = 0;
-		local potential = [];
-
-		foreach( party in _partyList )
-		{
-			if (party.Cost < _resources * 0.7)
-			{
-				continue;
-			}
-
-			if (party.Cost > _resources)
-			{
-				break;
-			}
-
-			potential.push(party);
-			total_weight = total_weight + party.Cost;
-		}
-
-		local p;
-
-		if (potential.len() == 0)
-		{
-			if (_partyList[_partyList.len() - 1].Cost <= _resources)
-			{
-				p = _partyList[_partyList.len() - 1];
-			}
-			else
-			{
-				p = _partyList[0];
-			}
-		}
-		else
-		{
-			local pick = this.Math.rand(1, total_weight);
-
-			foreach( party in potential )
-			{
-				if (pick <= party.Cost)
-				{
-					p = party;
-					break;
-				}
-
-				pick = pick - party.Cost;
-			}
-		}
-
-		foreach( t in p.Troops )
-		{
-			for( local i = 0; i != t.Num; i = ++i )
-			{
-				local unit = clone t.Type;
-				unit.Faction <- _faction;
-				_into.push(unit);
-			}
-		}
-	}
-
 	function addUnitsToEntity( _entity, _partyList, _resources )
 	{
 		local total_weight = 0;
@@ -1240,14 +1122,19 @@ this.contract <- {
 
 		if (potential.len() == 0)
 		{
-			if (_partyList[_partyList.len() - 1].Cost <= _resources)
+			local best;
+			local bestCost = 9000;
+
+			foreach( party in _partyList )
 			{
-				p = _partyList[_partyList.len() - 1];
+				if (this.Math.abs(_resources - party.Cost) <= bestCost)
+				{
+					best = party;
+					bestCost = this.Math.abs(_resources - party.Cost);
+				}
 			}
-			else
-			{
-				p = _partyList[0];
-			}
+
+			p = best;
 		}
 		else
 		{
@@ -1267,9 +1154,24 @@ this.contract <- {
 
 		foreach( t in p.Troops )
 		{
+			local mb;
+
+			if (this.getDifficultyMult() >= 1.15)
+			{
+				mb = 4;
+			}
+			else if (this.getDifficultyMult() >= 0.85)
+			{
+				mb = 0;
+			}
+			else
+			{
+				mb = -99;
+			}
+
 			for( local i = 0; i != t.Num; i = ++i )
 			{
-				this.Const.World.Common.addTroop(_entity, t, false);
+				this.Const.World.Common.addTroop(_entity, t, false, mb);
 			}
 		}
 
@@ -1287,6 +1189,7 @@ this.contract <- {
 		local tries = 0;
 		local myTile = _pivot;
 		local minDistToLocations = this.Math.min(4, _minDist - 1);
+		local used = [];
 
 		while (1)
 		{
@@ -1312,6 +1215,13 @@ this.contract <- {
 			}
 
 			local tile = this.World.getTileSquare(x, y);
+
+			if (used.find(tile.ID) != null)
+			{
+				continue;
+			}
+
+			used.push(tile.ID);
 
 			if (tile.Type == this.Const.World.TerrainType.Ocean)
 			{
@@ -1480,19 +1390,25 @@ this.contract <- {
 			party.getLoot().ArmorParts = this.Math.rand(0, 10);
 			party.getLoot().Medicine = this.Math.rand(0, 2);
 			party.getLoot().Ammo = this.Math.rand(0, 30);
-			local r = this.Math.rand(1, 4);
 
-			if (r == 1)
+			if (this.Math.rand(1, 100) <= 75)
 			{
-				party.addToInventory("supplies/strange_meat_item");
+				local loot = [
+					"supplies/strange_meat_item",
+					"supplies/roots_and_berries_item",
+					"supplies/pickled_mushrooms_item"
+				];
+				party.addToInventory(loot[this.Math.rand(0, loot.len() - 1)]);
 			}
-			else if (r == 2)
+
+			if (this.Math.rand(1, 100) <= 33)
 			{
-				party.addToInventory("supplies/roots_and_berries_item");
-			}
-			else if (r == 3)
-			{
-				party.addToInventory("supplies/pickled_mushrooms_item");
+				local loot = [
+					"loot/goblin_carved_ivory_iconographs_item",
+					"loot/goblin_minted_coins_item",
+					"loot/goblin_rank_insignia_item"
+				];
+				party.addToInventory(loot[this.Math.rand(0, loot.len() - 1)]);
 			}
 		}
 		else if (_factionType == this.Const.FactionType.Orcs)

@@ -70,7 +70,7 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 				items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));
 			}
 
-			items.equip(this.new("scripts/items/weapons/three_headed_flail"));
+			items.equip(this.new("scripts/items/weapons/battle_whip"));
 			local r = this.Math.rand(0, 2);
 		}
 

@@ -20,7 +20,8 @@ this.reload_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsRemovedAfterBattle = true;
-		this.m.ActionPointCost = 7;
+		this.m.IsWeaponSkill = true;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;

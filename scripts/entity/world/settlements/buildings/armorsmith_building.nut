@@ -178,11 +178,6 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "helmets/kettle_hat"
 			},
 			{
-				R = 70,
-				P = 1.0,
-				S = "helmets/flat_top_helmet"
-			},
-			{
 				R = 15,
 				P = 1.0,
 				S = "shields/buckler_shield"
@@ -318,139 +313,32 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "helmets/nasal_helmet_with_closed_mail"
 			},
 			{
-				R = 75,
-				P = 1.0,
-				S = "helmets/flat_top_with_mail"
-			},
-			{
-				R = 75,
-				P = 1.0,
-				S = "helmets/flat_top_with_closed_mail"
-			},
-			{
 				R = 45,
 				P = 1.0,
 				S = "helmets/reinforced_mail_coif"
 			}
 		];
 
-		if (this.isSomethingToSee() && this.World.getTime().Days >= 7)
+		foreach( i in this.Const.Items.NamedArmors )
 		{
-			list = [
-				{
-					R = 0,
-					P = 1.0,
-					S = "supplies/goat_cheese_item"
-				}
-			];
+			if (this.Math.rand(1, 100) <= 40)
+			{
+				list.push({
+					R = 99,
+					P = 2.0,
+					S = i
+				});
+			}
 		}
-		else
+
+		foreach( i in this.Const.Items.NamedHelmets )
 		{
 			if (this.Math.rand(1, 100) <= 40)
 			{
 				list.push({
 					R = 99,
 					P = 2.0,
-					S = "helmets/named/norse_helmet"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "helmets/named/heraldic_mail_helmet"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "helmets/named/nasal_feather_helmet"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "helmets/named/sallet_green_helmet"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "helmets/named/golden_feathers_helmet"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "helmets/named/wolf_helmet"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "armor/named/black_leather_armor"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "armor/named/blue_studded_mail_armor"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "armor/named/heraldic_mail_armor"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "armor/named/brown_coat_of_plates_armor"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "armor/named/green_coat_of_plates_armor"
-				});
-			}
-
-			if (this.Math.rand(1, 100) <= 40)
-			{
-				list.push({
-					R = 99,
-					P = 2.0,
-					S = "armor/named/golden_scale_armor"
+					S = i
 				});
 			}
 		}
@@ -498,27 +386,32 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "misc/paint_set_item"
 			});
 			list.push({
-				R = 80,
+				R = 75,
+				P = 1.0,
+				S = "misc/paint_remover_item"
+			});
+			list.push({
+				R = 75,
 				P = 1.0,
 				S = "misc/paint_black_item"
 			});
 			list.push({
-				R = 80,
+				R = 75,
 				P = 1.0,
 				S = "misc/paint_red_item"
 			});
 			list.push({
-				R = 80,
+				R = 75,
 				P = 1.0,
 				S = "misc/paint_orange_red_item"
 			});
 			list.push({
-				R = 80,
+				R = 75,
 				P = 1.0,
 				S = "misc/paint_white_blue_item"
 			});
 			list.push({
-				R = 80,
+				R = 75,
 				P = 1.0,
 				S = "misc/paint_white_green_yellow_item"
 			});
@@ -561,6 +454,53 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				R = 85,
 				P = 1.25,
 				S = "armor_upgrades/double_mail_upgrade"
+			});
+		}
+
+		if (this.Const.DLC.Wildmen && this.m.Settlement.getTile().SquareCoords.Y > this.World.getMapSize().Y * 0.7)
+		{
+			list.push({
+				R = 70,
+				P = 1.0,
+				S = "helmets/nordic_helmet"
+			});
+			list.push({
+				R = 70,
+				P = 1.0,
+				S = "helmets/steppe_helmet_with_mail"
+			});
+			list.push({
+				R = 75,
+				P = 1.0,
+				S = "helmets/conic_helmet_with_closed_mail"
+			});
+			list.push({
+				R = 75,
+				P = 1.0,
+				S = "helmets/nordic_helmet_with_closed_mail"
+			});
+			list.push({
+				R = 80,
+				P = 1.0,
+				S = "helmets/conic_helmet_with_faceguard"
+			});
+		}
+		else
+		{
+			list.push({
+				R = 70,
+				P = 1.0,
+				S = "helmets/flat_top_helmet"
+			});
+			list.push({
+				R = 75,
+				P = 1.0,
+				S = "helmets/flat_top_with_mail"
+			});
+			list.push({
+				R = 75,
+				P = 1.0,
+				S = "helmets/flat_top_with_closed_mail"
 			});
 		}
 

@@ -14,10 +14,10 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.BloodSplatterOffset = this.createVec(0, 0);
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/giant_spider_egg_spawn_01.wav",
-			"sounds/enemies/giant_spider_egg_spawn_02.wav",
-			"sounds/enemies/giant_spider_egg_spawn_03.wav",
-			"sounds/enemies/giant_spider_egg_spawn_04.wav"
+			"sounds/enemies/dlc2/giant_spider_egg_spawn_01.wav",
+			"sounds/enemies/dlc2/giant_spider_egg_spawn_02.wav",
+			"sounds/enemies/dlc2/giant_spider_egg_spawn_03.wav",
+			"sounds/enemies/dlc2/giant_spider_egg_spawn_04.wav"
 		];
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/donkey_agent");
 		this.m.AIAgent.setActor(this);
@@ -60,6 +60,7 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByNight = false;
 		b.IsMovable = false;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToDisarm = true;
 		b.TargetAttractionMult = 1.0;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;

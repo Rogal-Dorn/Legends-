@@ -12,51 +12,51 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.IsUsingZoneOfControl = false;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/alp_idle_01.wav",
-			"sounds/enemies/alp_idle_02.wav",
-			"sounds/enemies/alp_idle_03.wav",
-			"sounds/enemies/alp_idle_04.wav",
-			"sounds/enemies/alp_idle_05.wav",
-			"sounds/enemies/alp_idle_06.wav",
-			"sounds/enemies/alp_idle_07.wav",
-			"sounds/enemies/alp_idle_08.wav",
-			"sounds/enemies/alp_idle_09.wav",
-			"sounds/enemies/alp_idle_10.wav",
-			"sounds/enemies/alp_idle_11.wav",
-			"sounds/enemies/alp_idle_12.wav"
+			"sounds/enemies/dlc2/alp_idle_01.wav",
+			"sounds/enemies/dlc2/alp_idle_02.wav",
+			"sounds/enemies/dlc2/alp_idle_03.wav",
+			"sounds/enemies/dlc2/alp_idle_04.wav",
+			"sounds/enemies/dlc2/alp_idle_05.wav",
+			"sounds/enemies/dlc2/alp_idle_06.wav",
+			"sounds/enemies/dlc2/alp_idle_07.wav",
+			"sounds/enemies/dlc2/alp_idle_08.wav",
+			"sounds/enemies/dlc2/alp_idle_09.wav",
+			"sounds/enemies/dlc2/alp_idle_10.wav",
+			"sounds/enemies/dlc2/alp_idle_11.wav",
+			"sounds/enemies/dlc2/alp_idle_12.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
-			"sounds/enemies/alp_idle_13.wav",
-			"sounds/enemies/alp_idle_14.wav",
-			"sounds/enemies/alp_idle_15.wav",
-			"sounds/enemies/alp_idle_16.wav",
-			"sounds/enemies/alp_idle_17.wav",
-			"sounds/enemies/alp_idle_18.wav",
-			"sounds/enemies/alp_idle_19.wav",
-			"sounds/enemies/alp_idle_20.wav",
-			"sounds/enemies/alp_idle_21.wav",
-			"sounds/enemies/alp_idle_22.wav",
-			"sounds/enemies/alp_idle_23.wav"
+			"sounds/enemies/dlc2/alp_idle_13.wav",
+			"sounds/enemies/dlc2/alp_idle_14.wav",
+			"sounds/enemies/dlc2/alp_idle_15.wav",
+			"sounds/enemies/dlc2/alp_idle_16.wav",
+			"sounds/enemies/dlc2/alp_idle_17.wav",
+			"sounds/enemies/dlc2/alp_idle_18.wav",
+			"sounds/enemies/dlc2/alp_idle_19.wav",
+			"sounds/enemies/dlc2/alp_idle_20.wav",
+			"sounds/enemies/dlc2/alp_idle_21.wav",
+			"sounds/enemies/dlc2/alp_idle_22.wav",
+			"sounds/enemies/dlc2/alp_idle_23.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/alp_death_01.wav",
-			"sounds/enemies/alp_death_02.wav",
-			"sounds/enemies/alp_death_03.wav",
-			"sounds/enemies/alp_death_04.wav",
-			"sounds/enemies/alp_death_05.wav"
+			"sounds/enemies/dlc2/alp_death_01.wav",
+			"sounds/enemies/dlc2/alp_death_02.wav",
+			"sounds/enemies/dlc2/alp_death_03.wav",
+			"sounds/enemies/dlc2/alp_death_04.wav",
+			"sounds/enemies/dlc2/alp_death_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/alp_hurt_01.wav",
-			"sounds/enemies/alp_hurt_02.wav",
-			"sounds/enemies/alp_hurt_03.wav",
-			"sounds/enemies/alp_hurt_04.wav"
+			"sounds/enemies/dlc2/alp_hurt_01.wav",
+			"sounds/enemies/dlc2/alp_hurt_02.wav",
+			"sounds/enemies/dlc2/alp_hurt_03.wav",
+			"sounds/enemies/dlc2/alp_hurt_04.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [
-			"sounds/enemies/alp_flee_01.wav",
-			"sounds/enemies/alp_flee_02.wav",
-			"sounds/enemies/alp_flee_03.wav",
-			"sounds/enemies/alp_flee_04.wav",
-			"sounds/enemies/alp_flee_05.wav"
+			"sounds/enemies/dlc2/alp_flee_01.wav",
+			"sounds/enemies/dlc2/alp_flee_02.wav",
+			"sounds/enemies/dlc2/alp_flee_03.wav",
+			"sounds/enemies/dlc2/alp_flee_04.wav",
+			"sounds/enemies/dlc2/alp_flee_05.wav"
 		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
@@ -83,12 +83,12 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.loadResources();
 		local r3 = [
-			"sounds/enemies/alp_nightmare_01.wav",
-			"sounds/enemies/alp_nightmare_02.wav",
-			"sounds/enemies/alp_nightmare_03.wav",
-			"sounds/enemies/alp_nightmare_04.wav",
-			"sounds/enemies/alp_nightmare_05.wav",
-			"sounds/enemies/alp_nightmare_06.wav"
+			"sounds/enemies/dlc2/alp_nightmare_01.wav",
+			"sounds/enemies/dlc2/alp_nightmare_02.wav",
+			"sounds/enemies/dlc2/alp_nightmare_03.wav",
+			"sounds/enemies/dlc2/alp_nightmare_04.wav",
+			"sounds/enemies/dlc2/alp_nightmare_05.wav",
+			"sounds/enemies/dlc2/alp_nightmare_06.wav"
 		];
 		local r4 = [
 			"sounds/enemies/ghost_death_01.wav",
@@ -192,23 +192,28 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
-				local r = this.Math.rand(1, 100);
-				local loot;
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
-				if (r <= 40)
+				for( local i = 0; i < n; i = ++i )
 				{
-					loot = this.new("scripts/items/misc/parched_skin_item");
-				}
-				else if (r <= 80)
-				{
-					loot = this.new("scripts/items/misc/third_eye_item");
-				}
-				else
-				{
-					loot = this.new("scripts/items/misc/petrified_scream_item");
-				}
+					local r = this.Math.rand(1, 100);
+					local loot;
 
-				loot.drop(_tile);
+					if (r <= 40)
+					{
+						loot = this.new("scripts/items/misc/parched_skin_item");
+					}
+					else if (r <= 80)
+					{
+						loot = this.new("scripts/items/misc/third_eye_item");
+					}
+					else
+					{
+						loot = this.new("scripts/items/misc/petrified_scream_item");
+					}
+
+					loot.drop(_tile);
+				}
 			}
 		}
 
@@ -245,6 +250,7 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		b.setValues(this.Const.Tactical.Actor.Alp);
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

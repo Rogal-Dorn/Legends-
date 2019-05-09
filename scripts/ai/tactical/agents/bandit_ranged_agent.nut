@@ -3,7 +3,7 @@ this.bandit_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function create()
 	{
 		this.agent.create();
-		this.m.ID = this.Const.AI.Agent.ID.BountyHunterRanged;
+		this.m.ID = this.Const.AI.Agent.ID.BanditRanged;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Defend] = 1.0;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.EngageMelee] = 0.0;
 		this.m.Properties.IsRangedUnit = true;
@@ -31,7 +31,6 @@ this.bandit_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_rotation"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_reload"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_bow"));

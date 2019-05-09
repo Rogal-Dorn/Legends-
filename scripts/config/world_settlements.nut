@@ -17,7 +17,7 @@ gt.Const.World.Settlements.Villages_small_coast <- [
 		Script = "scripts/entity/world/settlements/small_fishing_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -35,7 +35,7 @@ gt.Const.World.Settlements.Villages_small <- [
 		Script = "scripts/entity/world/settlements/small_fishing_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -65,7 +65,7 @@ gt.Const.World.Settlements.Villages_small <- [
 		Script = "scripts/entity/world/settlements/small_tundra_village",
 		function isSuitable( _terrain )
 		{
-			if (_terrain.Local == this.Const.World.TerrainType.Highlands && _terrain.Adjacent[this.Const.World.TerrainType.Highlands] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if (_terrain.Local == this.Const.World.TerrainType.Tundra && _terrain.Adjacent[this.Const.World.TerrainType.Tundra] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -95,7 +95,7 @@ gt.Const.World.Settlements.Villages_small <- [
 		Script = "scripts/entity/world/settlements/small_mining_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Hills || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Snow || _terrain.Local == this.Const.World.TerrainType.Steppe) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Hills || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Snow || _terrain.Local == this.Const.World.TerrainType.Steppe) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -110,7 +110,7 @@ gt.Const.World.Settlements.Villages_small <- [
 		Script = "scripts/entity/world/settlements/small_swamp_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Swamp || _terrain.Local == this.Const.World.TerrainType.Highlands) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Swamp || _terrain.Local == this.Const.World.TerrainType.Tundra) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -125,7 +125,7 @@ gt.Const.World.Settlements.Villages_small <- [
 		Script = "scripts/entity/world/settlements/small_lumber_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Forest || _terrain.Local == this.Const.World.TerrainType.AutumnForest || _terrain.Local == this.Const.World.TerrainType.LeaveForest) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Forest || _terrain.Local == this.Const.World.TerrainType.AutumnForest || _terrain.Local == this.Const.World.TerrainType.LeaveForest) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
 			{
 				return true;
 			}
@@ -158,7 +158,7 @@ gt.Const.World.Settlements.Villages_medium_coast <- [
 		Script = "scripts/entity/world/settlements/medium_fishing_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -176,7 +176,7 @@ gt.Const.World.Settlements.Villages_medium <- [
 		Script = "scripts/entity/world/settlements/medium_fishing_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -206,7 +206,7 @@ gt.Const.World.Settlements.Villages_medium <- [
 		Script = "scripts/entity/world/settlements/medium_tundra_village",
 		function isSuitable( _terrain )
 		{
-			if (_terrain.Local == this.Const.World.TerrainType.Highlands && _terrain.Adjacent[this.Const.World.TerrainType.Highlands] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if (_terrain.Local == this.Const.World.TerrainType.Tundra && _terrain.Adjacent[this.Const.World.TerrainType.Tundra] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -236,7 +236,7 @@ gt.Const.World.Settlements.Villages_medium <- [
 		Script = "scripts/entity/world/settlements/medium_mining_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Hills || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Snow || _terrain.Local == this.Const.World.TerrainType.Steppe) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Hills || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Snow || _terrain.Local == this.Const.World.TerrainType.Steppe) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -251,7 +251,7 @@ gt.Const.World.Settlements.Villages_medium <- [
 		Script = "scripts/entity/world/settlements/medium_swamp_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Swamp || _terrain.Local == this.Const.World.TerrainType.Highlands) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Swamp || _terrain.Local == this.Const.World.TerrainType.Tundra) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -266,7 +266,7 @@ gt.Const.World.Settlements.Villages_medium <- [
 		Script = "scripts/entity/world/settlements/medium_lumber_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Forest || _terrain.Local == this.Const.World.TerrainType.AutumnForest || _terrain.Local == this.Const.World.TerrainType.LeaveForest) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Forest || _terrain.Local == this.Const.World.TerrainType.AutumnForest || _terrain.Local == this.Const.World.TerrainType.LeaveForest) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
 			{
 				return true;
 			}
@@ -299,7 +299,7 @@ gt.Const.World.Settlements.Villages_large_coast <- [
 		Script = "scripts/entity/world/settlements/large_fishing_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -317,7 +317,7 @@ gt.Const.World.Settlements.Villages_large <- [
 		Script = "scripts/entity/world/settlements/large_fishing_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -347,7 +347,7 @@ gt.Const.World.Settlements.Villages_large <- [
 		Script = "scripts/entity/world/settlements/large_tundra_village",
 		function isSuitable( _terrain )
 		{
-			if (_terrain.Local == this.Const.World.TerrainType.Highlands && _terrain.Adjacent[this.Const.World.TerrainType.Highlands] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if (_terrain.Local == this.Const.World.TerrainType.Tundra && _terrain.Adjacent[this.Const.World.TerrainType.Tundra] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -377,7 +377,7 @@ gt.Const.World.Settlements.Villages_large <- [
 		Script = "scripts/entity/world/settlements/large_swamp_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Swamp || _terrain.Local == this.Const.World.TerrainType.Highlands) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Swamp || _terrain.Local == this.Const.World.TerrainType.Tundra) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -392,7 +392,7 @@ gt.Const.World.Settlements.Villages_large <- [
 		Script = "scripts/entity/world/settlements/large_lumber_village",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
 			{
 				return true;
 			}
@@ -425,7 +425,7 @@ gt.Const.World.Settlements.Fortifications_small <- [
 		Script = "scripts/entity/world/settlements/small_coast_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -455,7 +455,7 @@ gt.Const.World.Settlements.Fortifications_small <- [
 		Script = "scripts/entity/world/settlements/small_tundra_fort",
 		function isSuitable( _terrain )
 		{
-			if (_terrain.Local == this.Const.World.TerrainType.Highlands && _terrain.Adjacent[this.Const.World.TerrainType.Highlands] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if (_terrain.Local == this.Const.World.TerrainType.Tundra && _terrain.Adjacent[this.Const.World.TerrainType.Tundra] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -485,7 +485,7 @@ gt.Const.World.Settlements.Fortifications_small <- [
 		Script = "scripts/entity/world/settlements/small_forest_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
 			{
 				return true;
 			}
@@ -500,7 +500,7 @@ gt.Const.World.Settlements.Fortifications_small <- [
 		Script = "scripts/entity/world/settlements/small_mountains_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Hills) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Hills) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -515,7 +515,7 @@ gt.Const.World.Settlements.Fortifications_small <- [
 		Script = "scripts/entity/world/settlements/small_swamp_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Swamp) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] > 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Swamp) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] > 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -548,7 +548,7 @@ gt.Const.World.Settlements.Fortifications_medium <- [
 		Script = "scripts/entity/world/settlements/medium_coast_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -578,7 +578,7 @@ gt.Const.World.Settlements.Fortifications_medium <- [
 		Script = "scripts/entity/world/settlements/medium_tundra_fort",
 		function isSuitable( _terrain )
 		{
-			if (_terrain.Local == this.Const.World.TerrainType.Highlands && _terrain.Adjacent[this.Const.World.TerrainType.Highlands] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if (_terrain.Local == this.Const.World.TerrainType.Tundra && _terrain.Adjacent[this.Const.World.TerrainType.Tundra] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -608,7 +608,7 @@ gt.Const.World.Settlements.Fortifications_medium <- [
 		Script = "scripts/entity/world/settlements/medium_forest_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
 			{
 				return true;
 			}
@@ -623,7 +623,7 @@ gt.Const.World.Settlements.Fortifications_medium <- [
 		Script = "scripts/entity/world/settlements/medium_mountains_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Hills) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Hills) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -638,7 +638,7 @@ gt.Const.World.Settlements.Fortifications_medium <- [
 		Script = "scripts/entity/world/settlements/medium_swamp_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Swamp) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] > 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Swamp) && _terrain.Adjacent[this.Const.World.TerrainType.Swamp] > 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -671,7 +671,7 @@ gt.Const.World.Settlements.Fortifications_large <- [
 		Script = "scripts/entity/world/settlements/large_coast_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe) && (_terrain.Adjacent[this.Const.World.TerrainType.Ocean] > 0 || _terrain.Adjacent[this.Const.World.TerrainType.Shore] > 0))
 			{
 				return true;
 			}
@@ -701,7 +701,7 @@ gt.Const.World.Settlements.Fortifications_large <- [
 		Script = "scripts/entity/world/settlements/large_tundra_fort",
 		function isSuitable( _terrain )
 		{
-			if (_terrain.Local == this.Const.World.TerrainType.Highlands && _terrain.Adjacent[this.Const.World.TerrainType.Highlands] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if (_terrain.Local == this.Const.World.TerrainType.Tundra && _terrain.Adjacent[this.Const.World.TerrainType.Tundra] >= 4 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}
@@ -731,7 +731,7 @@ gt.Const.World.Settlements.Fortifications_large <- [
 		Script = "scripts/entity/world/settlements/large_forest_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra) && (_terrain.Adjacent[this.Const.World.TerrainType.Forest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.LeaveForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.SnowyForest] >= 2 || _terrain.Adjacent[this.Const.World.TerrainType.AutumnForest] >= 2 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0))
 			{
 				return true;
 			}
@@ -746,7 +746,7 @@ gt.Const.World.Settlements.Fortifications_large <- [
 		Script = "scripts/entity/world/settlements/large_mountains_fort",
 		function isSuitable( _terrain )
 		{
-			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Highlands || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Hills) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
+			if ((_terrain.Local == this.Const.World.TerrainType.Plains || _terrain.Local == this.Const.World.TerrainType.Tundra || _terrain.Local == this.Const.World.TerrainType.Steppe || _terrain.Local == this.Const.World.TerrainType.Hills) && _terrain.Adjacent[this.Const.World.TerrainType.Hills] >= 2 && _terrain.Region[this.Const.World.TerrainType.Mountains] >= 1 && _terrain.Adjacent[this.Const.World.TerrainType.Ocean] == 0 && _terrain.Adjacent[this.Const.World.TerrainType.Shore] == 0)
 			{
 				return true;
 			}

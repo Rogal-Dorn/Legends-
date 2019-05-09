@@ -608,7 +608,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 						];
 						properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
 						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-						this.Contract.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(90, 110), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.GreenskinHorde, this.Math.rand(90, 110), this.Const.Faction.Enemy);
 						this.World.Contracts.startScriptedCombat(properties, false, true, true);
 						return 0;
 					}
@@ -641,7 +641,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 						properties.EnemyBanners = [
 							"banner_bandits_03"
 						];
-						this.Contract.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.BanditRaiders, this.Math.rand(90, 110), this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.BanditRaiders, this.Math.rand(90, 110), this.Const.Faction.Enemy);
 						this.World.Contracts.startScriptedCombat(properties, false, true, true);
 						return 0;
 					}
@@ -948,7 +948,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 			return;
 		}
 
-		if (_actor.getType() == this.Const.EntityType.GoblinWolfrider || _actor.getType() == this.Const.EntityType.Wardog || _actor.getType() == this.Const.EntityType.ArmoredWardog || _actor.getType() == this.Const.EntityType.SpiderEggs || this.isKindOf(_actor, "lindwurm_tail"))
+		if (_actor.getType() == this.Const.EntityType.GoblinWolfrider || _actor.getType() == this.Const.EntityType.Wardog || _actor.getType() == this.Const.EntityType.Warhound || _actor.getType() == this.Const.EntityType.SpiderEggs || this.isKindOf(_actor, "lindwurm_tail"))
 		{
 			return;
 		}
@@ -1051,19 +1051,25 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
 				party.getLoot().Medicine = this.Math.rand(0, 2);
 				party.getLoot().Ammo = this.Math.rand(0, 30);
-				local r = this.Math.rand(1, 4);
 
-				if (r == 1)
+				if (this.Math.rand(1, 100) <= 75)
 				{
-					party.addToInventory("supplies/strange_meat_item");
+					local loot = [
+						"supplies/strange_meat_item",
+						"supplies/roots_and_berries_item",
+						"supplies/pickled_mushrooms_item"
+					];
+					party.addToInventory(loot[this.Math.rand(0, loot.len() - 1)]);
 				}
-				else if (r == 2)
+
+				if (this.Math.rand(1, 100) <= 33)
 				{
-					party.addToInventory("supplies/roots_and_berries_item");
-				}
-				else if (r == 3)
-				{
-					party.addToInventory("supplies/pickled_mushrooms_item");
+					local loot = [
+						"loot/goblin_carved_ivory_iconographs_item",
+						"loot/goblin_minted_coins_item",
+						"loot/goblin_rank_insignia_item"
+					];
+					party.addToInventory(loot[this.Math.rand(0, loot.len() - 1)]);
 				}
 
 				origin = nearest_goblins;

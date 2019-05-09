@@ -9,11 +9,11 @@ this.kraken_devour_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/active_150.png";
 		this.m.Overlay = "active_150";
 		this.m.SoundOnUse = [
-			"sounds/enemies/krake_devour_01.wav",
-			"sounds/enemies/krake_devour_02.wav",
-			"sounds/enemies/krake_devour_03.wav",
-			"sounds/enemies/krake_devour_04.wav",
-			"sounds/enemies/krake_devour_05.wav"
+			"sounds/enemies/dlc2/krake_devour_01.wav",
+			"sounds/enemies/dlc2/krake_devour_02.wav",
+			"sounds/enemies/dlc2/krake_devour_03.wav",
+			"sounds/enemies/dlc2/krake_devour_04.wav",
+			"sounds/enemies/dlc2/krake_devour_05.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;

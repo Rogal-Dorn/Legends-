@@ -119,6 +119,7 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToKnockBackAndGrab = true;
 		b.IsImmuneToStun = true;
 		b.IsImmuneToRoot = true;
+		b.IsImmuneToDisarm = true;
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;

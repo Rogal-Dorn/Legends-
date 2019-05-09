@@ -729,6 +729,24 @@ this.skill_container <- {
 		this.update();
 	}
 
+	function onBeforeTargetHit( _caller, _targetEntity, _hitInfo )
+	{
+		this.m.IsUpdating = true;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onBeforeTargetHit(_caller, _targetEntity, _hitInfo);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
+	}
+
 	function onTargetHit( _caller, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		this.m.IsUpdating = true;
@@ -877,8 +895,18 @@ this.skill_container <- {
 		{
 			return 1;
 		}
-
-		return 0;
+		else if (_skill1.getID() < _skill2.getID())
+		{
+			return -1;
+		}
+		else if (_skill1.getID() > _skill2.getID())
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	function compareSkillsByType( _skill1, _skill2 )

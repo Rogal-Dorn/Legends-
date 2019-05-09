@@ -9,7 +9,8 @@ this.shield <- this.inherit("scripts/items/item", {
 		ShieldDecal = this.Const.Items.Default.ShieldDecal,
 		MeleeDefense = 0,
 		RangedDefense = 0,
-		StaminaModifier = 0
+		StaminaModifier = 0,
+		FatigueOnSkillUse = 0
 	},
 	function isAmountShown()
 	{
@@ -144,6 +145,25 @@ this.shield <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		if (this.m.FatigueOnSkillUse > 0)
+		{
+			result.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Shield skills build up [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.FatigueOnSkillUse + "[/color] more fatigue"
+			});
+		}
+		else if (this.m.FatigueOnSkillUse < 0)
+		{
+			result.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Shield skills build up [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.FatigueOnSkillUse + "[/color] less fatigue"
+			});
+		}
+
 		if (this.m.Condition == 0)
 		{
 			result.push({
@@ -165,8 +185,9 @@ this.shield <- this.inherit("scripts/items/item", {
 		}
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
+		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
 
-		if (this.m.Condition >= 6 && this.m.Condition / this.m.ConditionMax >= 0.25 && (isPlayer || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90))
+		if (this.m.Condition >= 6 && (isPlayer || this.m.Condition / this.m.ConditionMax >= 0.25) && (isPlayer || isLucky || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90))
 		{
 			return true;
 		}
@@ -322,6 +343,16 @@ this.shield <- this.inherit("scripts/items/item", {
 			}
 
 			this.getContainer().updateAppearance();
+		}
+	}
+
+	function addSkill( _skill )
+	{
+		this.item.addSkill(_skill);
+
+		if (_skill.isType(this.Const.SkillType.Active))
+		{
+			_skill.setFatigueCost(this.Math.max(0, _skill.getFatigueCostRaw() + this.m.FatigueOnSkillUse));
 		}
 	}
 

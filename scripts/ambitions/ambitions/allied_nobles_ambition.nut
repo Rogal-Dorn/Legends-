@@ -112,7 +112,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.SuccessList.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 		item = this.new("scripts/items/armor/special/heraldic_armor");
 		item.setFaction(banner);
@@ -120,7 +120,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.SuccessList.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 		item = this.new("scripts/items/shields/faction_heater_shield");
 		item.setFaction(banner);
@@ -129,7 +129,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.SuccessList.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 		item = this.new("scripts/items/shields/faction_heater_shield");
 		item.setFaction(banner);
@@ -138,7 +138,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.SuccessList.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 		item = this.new("scripts/items/shields/faction_kite_shield");
 		item.setFaction(banner);
@@ -147,7 +147,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.SuccessList.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 		item = this.new("scripts/items/shields/faction_kite_shield");
 		item.setFaction(banner);
@@ -156,7 +156,7 @@ this.allied_nobles_ambition <- this.inherit("scripts/ambitions/ambition", {
 		this.m.SuccessList.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 	}
 

@@ -127,7 +127,7 @@ gt.Const.Tactical.Actor.StandardBearer <- {
 gt.Const.Tactical.Actor.Knight <- {
 	XP = 450,
 	ActionPoints = 9,
-	Hitpoints = 120,
+	Hitpoints = 125,
 	Bravery = 90,
 	Stamina = 140,
 	MeleeSkill = 90,

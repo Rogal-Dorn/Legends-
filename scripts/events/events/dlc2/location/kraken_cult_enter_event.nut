@@ -12,6 +12,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 		this.m.ID = "event.location.kraken_cult_enter";
 		this.m.Title = "As you approach...";
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
+		this.m.IsSpecial = true;
 		this.m.Texts.resize(4);
 		this.m.Texts[0] = "And who are you?";
 		this.m.Texts[1] = "So what all do you know?";
@@ -140,7 +141,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 					this.List.push({
 						id = 10,
 						icon = "ui/items/" + item.getIcon(),
-						text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 					});
 				}
 			}
@@ -179,7 +180,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 						this.List.push({
 							id = 10,
 							icon = "ui/items/" + item.getIcon(),
-							text = "You lose " + _event.getArticle(item.getName()) + item.getName()
+							text = "You lose " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 						});
 						items[i] = null;
 						num = ++num;
@@ -227,7 +228,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 					this.List.push({
 						id = 10,
 						icon = "ui/items/" + item.getIcon(),
-						text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 					});
 				}
 			}

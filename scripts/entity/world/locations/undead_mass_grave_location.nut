@@ -11,6 +11,8 @@ this.undead_mass_grave_location <- this.inherit("scripts/entity/world/location",
 		this.m.TypeID = "location.undead_mass_grave";
 		this.m.LocationType = this.Const.World.LocationType.Lair;
 		this.setDefenderSpawnList(this.Const.World.Spawn.UndeadArmy);
+		this.m.NamedWeaponsList = this.Const.Items.NamedUndeadWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedUndeadShields;
 		this.m.Resources = 200;
 	}
 

@@ -24,7 +24,6 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.fat",
 			"trait.strong",
 			"trait.hesitant",
-			"trait.slow",
 			"trait.insecure",
 			"trait.clubfooted",
 			"trait.short_sighted",

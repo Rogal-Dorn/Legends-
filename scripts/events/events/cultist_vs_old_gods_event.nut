@@ -127,6 +127,11 @@ this.cultist_vs_old_gods_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 
 		if (brothers.len() < 3)

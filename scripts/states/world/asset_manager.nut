@@ -10,7 +10,7 @@ this.asset_manager <- {
 		EconomicDifficulty = 1,
 		CombatDifficulty = 1,
 		SeedString = "",
-		FounderNames = [],
+		Origin = null,
 		RestoreEquipment = [],
 		Money = 0,
 		Food = 0.0,
@@ -18,11 +18,18 @@ this.asset_manager <- {
 		ArmorParts = 0.0,
 		Medicine = 0.0,
 		BusinessReputation = 0,
+		BusinessReputationRate = 1.0,
 		MoralReputation = 50.0,
 		Score = 0.0,
+		BuyPriceMult = 1.0,
+		SellPriceMult = 1.0,
+		ExtraLootChance = 0,
+		FootprintVision = 1.0,
 		AverageMoodState = this.Const.MoodState.Neutral,
 		BrothersMax = 20,
 		BrothersMaxInCombat = 12,
+		BrothersScaleMax = 12,
+		BrothersScaleMin = 3,
 		LastDayPaid = 1,
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
@@ -55,6 +62,11 @@ this.asset_manager <- {
 	function getBannerID()
 	{
 		return this.m.BannerID;
+	}
+
+	function getOrigin()
+	{
+		return this.m.Origin;
 	}
 
 	function getEconomicDifficulty()
@@ -122,14 +134,44 @@ this.asset_manager <- {
 		return this.m.MoralReputation;
 	}
 
+	function getBuyPriceMult()
+	{
+		return this.m.BuyPriceMult;
+	}
+
+	function getSellPriceMult()
+	{
+		return this.m.SellPriceMult;
+	}
+
+	function getExtraLootChance()
+	{
+		return this.m.ExtraLootChance;
+	}
+
+	function getFootprintVision()
+	{
+		return this.m.FootprintVision;
+	}
+
 	function getBrothersMax()
 	{
 		return this.m.BrothersMax;
 	}
 
-	function getFounderNames()
+	function getBrothersMaxInCombat()
 	{
-		return this.m.FounderNames;
+		return this.m.BrothersMaxInCombat;
+	}
+
+	function getBrothersScaleMax()
+	{
+		return this.m.BrothersScaleMax;
+	}
+
+	function getBrothersScaleMin()
+	{
+		return this.m.BrothersScaleMin;
 	}
 
 	function isIronman()
@@ -252,7 +294,7 @@ this.asset_manager <- {
 
 	function addBusinessReputation( _f )
 	{
-		this.m.BusinessReputation += _f;
+		this.m.BusinessReputation += this.Math.ceil(_f * this.m.BusinessReputationRate);
 
 		if (this.m.BusinessReputation >= 1000)
 		{
@@ -280,7 +322,8 @@ this.asset_manager <- {
 		this.m.EconomicDifficulty = _settings.EconomicDifficulty;
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
-		this.m.BusinessReputation = 100;
+		this.m.Origin = _settings.StartingScenario;
+		this.m.BusinessReputation = 0;
 		this.m.SeedString = _settings.Seed;
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
 		this.World.FactionManager.getGreaterEvil().IsExtraLate = false;
@@ -310,6 +353,18 @@ this.asset_manager <- {
 		}
 
 		this.m.Stash.clear();
+		this.m.Origin.onSpawnAssets();
+		local bros = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in bros )
+		{
+			bro.getBackground().buildDescription(true);
+			bro.m.XP = this.Const.LevelXP[bro.m.Level - 1];
+			bro.m.Attributes = [];
+			bro.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+		}
+
+		this.updateFormation();
 
 		foreach( item in this.Const.World.Assets.NewCampaignEquipment )
 		{
@@ -317,61 +372,6 @@ this.asset_manager <- {
 		}
 
 		this.updateFood();
-		local names = [];
-
-		for( local i = 0; i < 3; i = ++i )
-		{
-			while (true)
-			{
-				local n = this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)];
-
-				if (names.find(n) == null)
-				{
-					names.push(n);
-					break;
-				}
-			}
-		}
-
-		this.m.FounderNames.push([
-			"1h",
-			names[0]
-		]);
-		this.m.FounderNames.push([
-			"2h",
-			names[1]
-		]);
-		this.m.FounderNames.push([
-			"ranged",
-			names[2]
-		]);
-		local roster = this.World.getPlayerRoster();
-		local bro;
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[0][1]);
-		bro.setStartValuesEx([
-			"companion_1h_background"
-		]);
-		bro.setPlaceInFormation(3);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[1][1]);
-		bro.setStartValuesEx([
-			"companion_2h_background"
-		]);
-		bro.setPlaceInFormation(4);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setName(this.m.FounderNames[2][1]);
-		bro.setStartValuesEx([
-			"companion_ranged_background"
-		]);
-		bro.setPlaceInFormation(5);
-		bro.worsenMood(0.5, "Lost most of the company");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
-		this.m.FounderNames = [];
 	}
 
 	function getBusinessReputationAsText()
@@ -389,7 +389,7 @@ this.asset_manager <- {
 
 	function getMoralReputationAsText()
 	{
-		return this.Const.Strings.MoralReputation[this.Math.min(this.Const.Strings.MoralReputation.len() - 1, this.m.MoralReputation / 10)];
+		return this.Const.Strings.MoralReputation[this.Math.max(0, this.Math.min(this.Const.Strings.MoralReputation.len() - 1, this.m.MoralReputation / 10))];
 	}
 
 	function getDailyMoneyCost()
@@ -561,6 +561,10 @@ this.asset_manager <- {
 	{
 		this.m.Stash.clear();
 		this.m.SeedString = "";
+		this.m.BrothersMax = 20;
+		this.m.BrothersMaxInCombat = 12;
+		this.m.BrothersScaleMax = 12;
+		this.m.BrothersScaleMin = 3;
 	}
 
 	function create()
@@ -746,6 +750,11 @@ this.asset_manager <- {
 			this.m.AverageMoodState = this.Math.round(mood / roster.len());
 			_worldState.updateTopbarAssets();
 
+			if (this.World.getPlayerRoster().getSize() == this.m.BrothersMax && this.m.Origin.getID() == "scenario.militia")
+			{
+				this.updateAchievement("HumanWave", 1, 1);
+			}
+
 			if (this.m.EconomicDifficulty >= 1 && this.m.CombatDifficulty >= 1)
 			{
 				if (this.World.getTime().Days >= 365)
@@ -888,7 +897,10 @@ this.asset_manager <- {
 			mood = mood + bro.getMoodState();
 		}
 
-		this.m.AverageMoodState = this.Math.round(mood / roster.len());
+		if (roster.len() > 0)
+		{
+			this.m.AverageMoodState = this.Math.round(mood / roster.len());
+		}
 	}
 
 	function updateFood()
@@ -1085,6 +1097,11 @@ this.asset_manager <- {
 
 		foreach( bro in roster )
 		{
+			if (bro.getTags().has("IsPlayerCharacter"))
+			{
+				continue;
+			}
+
 			if (bro.getMood() < 1.0)
 			{
 				local chance = (1.0 - bro.getMood()) * 100;
@@ -1144,11 +1161,11 @@ this.asset_manager <- {
 			{
 				if (item.isItemType(this.Const.Items.ItemType.Ammo) && item.getAmmo() < item.getAmmoMax())
 				{
-					local a = this.Math.ceil((1.0 - item.getAmmo() / (item.getAmmoMax() * 1.0)) * 10.0);
+					local a = this.Math.min(this.m.Ammo, this.Math.ceil(item.getAmmoMax() - item.getAmmo()) * item.getAmmoCost());
 
 					if (this.m.Ammo >= a)
 					{
-						item.setAmmo(item.getAmmoMax());
+						item.setAmmo(item.getAmmo() + this.Math.ceil(a / item.getAmmoCost()));
 						this.m.Ammo -= a;
 					}
 				}
@@ -1284,13 +1301,9 @@ this.asset_manager <- {
 			_updateTo = this.m.Look;
 		}
 
-		if (_updateTo < this.m.Look)
-		{
-			return;
-		}
-
 		this.m.Look = _updateTo;
-		this.World.State.getPlayer().getSprite("body").setBrush("figure_player_0" + _updateTo);
+		_updateTo = _updateTo < 10 ? "0" + _updateTo : _updateTo;
+		this.World.State.getPlayer().getSprite("body").setBrush("figure_player_" + _updateTo);
 	}
 
 	function saveEquipment()
@@ -1952,6 +1965,7 @@ this.asset_manager <- {
 		_out.writeU8(this.m.CombatDifficulty);
 		_out.writeBool(this.m.IsIronman);
 		_out.writeBool(!this.m.IsPermanentDestruction);
+		_out.writeString(this.m.Origin.getID());
 		_out.writeString(this.m.SeedString);
 		_out.writeF32(this.m.Money);
 		_out.writeF32(this.m.Ammo);
@@ -2000,6 +2014,17 @@ this.asset_manager <- {
 
 		this.m.IsIronman = _in.readBool();
 		this.m.IsPermanentDestruction = !_in.readBool();
+
+		if (_in.getMetaData().getVersion() >= 46)
+		{
+			this.m.Origin = _in.readString();
+			this.m.Origin = this.Const.ScenarioManager.getScenario(this.m.Origin);
+		}
+
+		if (this.m.Origin == null)
+		{
+			this.m.Origin = this.Const.ScenarioManager.getScenario("scenario.tutorial");
+		}
 
 		if (_in.getMetaData().getVersion() >= 41)
 		{
@@ -2063,6 +2088,7 @@ this.asset_manager <- {
 		}
 
 		_in.readBool();
+		this.m.Origin.onInit();
 	}
 
 };

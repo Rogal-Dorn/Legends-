@@ -34,16 +34,16 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return mainhand == null && this.skill.isUsable();
+		return (mainhand == null || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
 	}
 
 	function onUpdate( _properties )
 	{
 		if (this.isUsable())
 		{
-			_properties.DamageRegularMin += 15;
-			_properties.DamageRegularMax += 35;
-			_properties.DamageArmorMult *= 0.4;
+			_properties.DamageRegularMin = 15;
+			_properties.DamageRegularMax = 35;
+			_properties.DamageArmorMult = 0.5;
 			_properties.HitChance[this.Const.BodyPart.Head] += 15;
 		}
 	}

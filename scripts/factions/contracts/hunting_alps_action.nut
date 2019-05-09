@@ -26,7 +26,7 @@ this.hunting_alps_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (this.World.Assets.getBusinessReputation() < 325)
+		if (this.World.Assets.getBusinessReputation() < 400)
 		{
 			return;
 		}

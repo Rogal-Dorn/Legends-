@@ -120,10 +120,10 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/fortified_outpost_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 2, true);
 		}
@@ -134,10 +134,10 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 4, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fortified_outpost_location", [
-				this.Const.World.TerrainType.Highlands,
+				this.Const.World.TerrainType.Tundra,
 				this.Const.World.TerrainType.Hills
 			], [], 2, true);
 		}
@@ -152,7 +152,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, false, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/herbalists_grove_location", [
 				this.Const.World.TerrainType.Plains,
@@ -163,7 +163,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -181,7 +181,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, false, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/herbalists_grove_location", [
 				this.Const.World.TerrainType.Plains,
@@ -192,7 +192,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -208,14 +208,14 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/blast_furnace_location", [
 				this.Const.World.TerrainType.Plains,
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, true);
 		}
 		else
@@ -225,14 +225,14 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", [
 				this.Const.World.TerrainType.Plains,
 				this.Const.World.TerrainType.Steppe,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, true);
 		}
 
@@ -245,7 +245,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.LeaveForest,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Forest,
 			this.Const.World.TerrainType.SnowyForest,
@@ -261,7 +261,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.LeaveForest,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [
 			this.Const.World.TerrainType.Forest,
 			this.Const.World.TerrainType.SnowyForest,

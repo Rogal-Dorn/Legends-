@@ -12,7 +12,6 @@ this.sallet_green_helmet <- this.inherit("scripts/items/helmets/named/named_helm
 			"Ribboned Sallet"
 		];
 		this.m.ShowOnCharacter = true;
-		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
 		this.m.Variant = 49;
 		this.updateVariant();

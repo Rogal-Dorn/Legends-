@@ -22,7 +22,7 @@ this.perk_bags_and_belts <- this.inherit("scripts/skills/skill", {
 	{
 		local items = this.getContainer().getActor().getItems();
 		local item;
-		item = items.getItemAtBagSlot(3);
+		item = items.getItemAtBagSlot(2);
 
 		if (item != null)
 		{
@@ -30,7 +30,7 @@ this.perk_bags_and_belts <- this.inherit("scripts/skills/skill", {
 			this.World.Assets.getStash().add(item);
 		}
 
-		item = items.getItemAtBagSlot(4);
+		item = items.getItemAtBagSlot(3);
 
 		if (item != null)
 		{

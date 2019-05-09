@@ -29,6 +29,25 @@ gt.Const.Tactical.Actor.Wardog <- {
 	],
 	FatigueRecoveryRate = 15
 };
+gt.Const.Tactical.Actor.Warhound <- {
+	XP = 100,
+	ActionPoints = 11,
+	Hitpoints = 70,
+	Bravery = 50,
+	Stamina = 140,
+	MeleeSkill = 55,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 20,
+	Initiative = 110,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
 gt.Const.Tactical.Actor.WarWolf <- {
 	XP = 150,
 	ActionPoints = 12,
@@ -90,7 +109,7 @@ gt.Const.Tactical.Actor.BanditMarksman <- {
 	XP = 225,
 	ActionPoints = 9,
 	Hitpoints = 60,
-	Bravery = 45,
+	Bravery = 50,
 	Stamina = 115,
 	MeleeSkill = 50,
 	RangedSkill = 60,
@@ -131,7 +150,7 @@ gt.Const.Tactical.Actor.BanditLeader <- {
 	Bravery = 70,
 	Stamina = 130,
 	MeleeSkill = 75,
-	RangedSkill = 60,
+	RangedSkill = 65,
 	MeleeDefense = 15,
 	RangedDefense = 10,
 	Initiative = 125,
@@ -142,24 +161,5 @@ gt.Const.Tactical.Actor.BanditLeader <- {
 		0
 	],
 	FatigueRecoveryRate = 25
-};
-gt.Const.Tactical.Actor.Wildman <- {
-	XP = 250,
-	ActionPoints = 9,
-	Hitpoints = 100,
-	Bravery = 80,
-	Stamina = 150,
-	MeleeSkill = 70,
-	RangedSkill = 40,
-	MeleeDefense = 15,
-	RangedDefense = 5,
-	Initiative = 120,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
 };
 

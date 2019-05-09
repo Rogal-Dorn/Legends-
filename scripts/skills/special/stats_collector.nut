@@ -92,7 +92,7 @@ this.stats_collector <- this.inherit("scripts/skills/skill", {
 
 	function onBeingAttacked( _attacker, _skill, _properties )
 	{
-		if (("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode())
+		if (!("State" in this.Tactical) || this.Tactical.State == null || this.Tactical.State.isScenarioMode())
 		{
 			return;
 		}
@@ -100,6 +100,19 @@ this.stats_collector <- this.inherit("scripts/skills/skill", {
 		if (this.getContainer().getActor().isPlacedOnMap() && this.Tactical.State.isAutoRetreat() && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == this.getContainer().getActor().getID())
 		{
 			_properties.MeleeDefense += this.Const.Difficulty.RetreatDefenseBonus[this.World.Assets.getDifficulty()];
+		}
+	}
+
+	function onUpdate( _properties )
+	{
+		if (!("State" in this.Tactical) || this.Tactical.State == null || this.Tactical.State.isScenarioMode())
+		{
+			return;
+		}
+
+		if (this.Time.getRound() <= 1 && this.World.Assets.getOrigin().getID() == "scenario.deserters")
+		{
+			_properties.InitiativeForTurnOrderAdditional += 4000;
 		}
 	}
 

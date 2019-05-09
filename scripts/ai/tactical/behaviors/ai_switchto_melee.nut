@@ -56,16 +56,22 @@ this.ai_switchto_melee <- this.inherit("scripts/ai/tactical/behavior", {
 				scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToOutOfAmmoMult;
 			}
 
-			if (this.getAgent().getBehavior(this.Const.AI.Behavior.Order.EngageRanged) == null)
+			if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.EngageRanged) == null)
 			{
-				local targets = this.queryTargetsInMeleeRange(item.getRangeMin(), item.getRangeMax() + myTile.Level, 3);
-				local bestTarget = this.queryBestRangedTarget(_entity, null, targets, item.getRangeMax());
-
-				if (bestTarget.Target == null || bestTarget.Score < 0)
+				if (this.getStrategy().isDefending() && (this.getStrategy().getStats().EnemyRangedFiring > 0 || this.getStrategy().getStats().AllyRangedFiring > 0))
 				{
-					this.logInfo("switching to melee weapon - noone to hit from here!");
-					isGoodReason = true;
-					scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToOutOfAmmoMult;
+				}
+				else
+				{
+					local targets = this.queryTargetsInMeleeRange(this.Math.min(item.getRangeMin(), _entity.getCurrentProperties().Vision), this.Math.min(item.getRangeMax(), _entity.getCurrentProperties().Vision) + myTile.Level, 3);
+					local bestTarget = this.queryBestRangedTarget(_entity, null, targets, this.Math.min(item.getRangeMax(), _entity.getCurrentProperties().Vision));
+
+					if (bestTarget.Target == null || bestTarget.Score < 0)
+					{
+						this.logInfo("switching to melee weapon - noone to hit from here!");
+						isGoodReason = true;
+						scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToOutOfAmmoMult;
+					}
 				}
 			}
 
@@ -123,6 +129,16 @@ this.ai_switchto_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToCurrentlyUnarmedMult;
 		}
 
+		if (!_entity.getCurrentProperties().IsAbleToUseWeaponSkills)
+		{
+			scoreMult = scoreMult * this.Const.AI.Behavior.SwitchWeaponBecauseDisarmedMult;
+		}
+
+		if (_entity.getSkills().hasSkill("special.night"))
+		{
+			scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToMeleeAtNightMult;
+		}
+
 		return this.Const.AI.Behavior.Score.SwitchToMelee * scoreMult;
 	}
 
@@ -130,7 +146,7 @@ this.ai_switchto_melee <- this.inherit("scripts/ai/tactical/behavior", {
 	{
 		if (this.Const.AI.VerboseMode)
 		{
-			this.logInfo("* " + _entity.getName() + ": Switching to melee weapon!");
+			this.logInfo("* " + _entity.getName() + ": Switching to melee weapon \'" + this.m.WeaponToEquip.getID() + "\'!");
 		}
 
 		local oldWeapon = _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
@@ -171,8 +187,8 @@ this.ai_switchto_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			_entity.getItems().addToBag(oldWeapon);
 		}
 
+		_entity.getItems().payForAction([]);
 		this.m.WeaponToEquip = null;
-		_entity.getItems().payForAction();
 		this.getAgent().getIntentions().IsChangingWeapons = true;
 		return true;
 	}

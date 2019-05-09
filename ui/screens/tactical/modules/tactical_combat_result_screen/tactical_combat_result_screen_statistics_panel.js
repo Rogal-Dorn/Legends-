@@ -30,8 +30,13 @@ TacticalCombatResultScreenStatisticsPanel.prototype.createDIV = function (_paren
     _parentDiv.append(this.mContainer);
 
     // create list
+    this.mStatisticsContainerArch = $('<div/>');
+    this.mContainer.append(this.mStatisticsContainerArch);
+
+    this.mListContainer = this.mStatisticsContainerArch.createList(2.41, null, true);
+    this.mListScrollContainer = this.mListContainer.findListScrollContainer();
     this.mStatisticsContainer = $('<div class="l-list-container"/>');
-    this.mContainer.append(this.mStatisticsContainer);
+    this.mListScrollContainer.append(this.mStatisticsContainer);
 
     this.setupEventHandler();
 };
@@ -193,7 +198,7 @@ TacticalCombatResultScreenStatisticsPanel.prototype.addStatistics = function (_d
 
     for (var i = 0; i < _data.length; ++i)
     {
-        var result = this.createStatisticEntry(_data[i], (i === 1 || i === 4 || i === 7 || i == 10));
+        var result = this.createStatisticEntry(_data[i], _data.length <= 12 && i % 3 == 1);
         if (result !== null)
         {
             this.mStatisticsContainer.append(result);

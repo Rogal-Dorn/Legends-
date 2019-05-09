@@ -36,6 +36,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		IsAutosaving = true,
 		IsTriggeringContractUpdatesOnce = true,
 		IsForcingAttack = false,
+		IsUpdatedOnce = false,
 		LastEntityHovered = null,
 		LastTileHovered = null,
 		AutoEnterLocation = null,
@@ -624,7 +625,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function onProcessInThread()
 	{
-		if (!this.isPaused())
+		if (!this.isPaused() && this.m.IsUpdatedOnce)
 		{
 			this.World.EntityManager.update();
 			this.World.FactionManager.update();
@@ -634,12 +635,23 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function onUpdate()
 	{
+		if (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished())
+		{
+			this.showGameFinishScreen(false);
+			return;
+		}
+
 		this.Root.setBackgroundTaskCallback(this.onProcessInThread.bindenv(this));
 
 		if (this.Time.getFrame() == this.m.AutoUnpauseFrame)
 		{
 			this.m.AutoUnpauseFrame = 0;
 			this.setAutoPause(false);
+
+			if (this.Settings.getGameplaySettings().AutoPauseAfterCity)
+			{
+				this.setPause(true);
+			}
 		}
 
 		if (this.World.Assets.isCamping())
@@ -773,6 +785,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 				}
 			}
 		}
+
+		this.m.IsUpdatedOnce = true;
 	}
 
 	function onRender()
@@ -853,7 +867,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 						if (entity.isParty())
 						{
-							if (!isEscorting && entity.isAttackable() && !entity.isHiddenToPlayer() && (!entity.isAlliedWith(this.m.Player) || forceAttack))
+							if (!isEscorting && entity.isAttackable() && entity.getVisibilityMult() != 0 && !entity.isHiddenToPlayer() && (!entity.isAlliedWith(this.m.Player) || forceAttack))
 							{
 								if (this.m.Player.getDistanceTo(entity) <= this.Const.World.CombatSettings.CombatPlayerDistance)
 								{
@@ -998,6 +1012,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		this.setAutoPause(true);
 		this.Time.setVirtualTime(0);
+		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = worldmap.getMinX();
@@ -1018,62 +1033,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		if (this.m.CampaignSettings != null)
 		{
 			this.m.Assets.setCampaignSettings(this.m.CampaignSettings);
+			this.m.CampaignSettings.StartingScenario.onSpawnPlayer();
+			this.m.CampaignSettings.StartingScenario.onInit();
 			this.m.CampaignSettings = null;
 		}
 
-		local randomVillage;
-
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
-		{
-			randomVillage = this.World.EntityManager.getSettlements()[i];
-
-			if (!randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() == 1)
-			{
-				break;
-			}
-		}
-
-		local randomVillageTile = randomVillage.getTile();
-		local navSettings = this.World.getNavigator().createSettings();
-		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
-
-		do
-		{
-			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 8), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 8));
-			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 8), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 8));
-
-			if (!this.World.isValidTileSquare(x, y))
-			{
-			}
-			else
-			{
-				local tile = this.World.getTileSquare(x, y);
-
-				if (tile.IsOccupied)
-				{
-				}
-				else if (tile.getDistanceTo(randomVillageTile) <= 3)
-				{
-				}
-				else if (tile.Type != this.Const.World.TerrainType.Plains && tile.Type != this.Const.World.TerrainType.Steppe && tile.Type != this.Const.World.TerrainType.Highlands && tile.Type != this.Const.World.TerrainType.Snow)
-				{
-				}
-				else
-				{
-					local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
-
-					if (!path.isEmpty())
-					{
-						randomVillageTile = tile;
-						break;
-					}
-				}
-			}
-		}
-		while (1);
-
-		this.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.getCamera().setPos(this.m.Player.getPos());
 		this.setupWeather();
 		this.Math.seedRandom(this.Time.getRealTime());
 
@@ -1082,17 +1046,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
 
-		local c = this.new("scripts/contracts/contracts/tutorial_contract");
-		c.start();
-		this.World.Contracts.addContract(c);
-		this.World.Contracts.setActiveContract(c, true);
-		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
-	}
-
-	function showIntroductionScreen( _tag = null )
-	{
-		this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
-		this.World.Contracts.update(true);
+		if (this.Const.DLC.Wildmen)
+		{
+			this.World.Tags.set("IsWildmenCampaign", true);
+		}
 	}
 
 	function initOptions()
@@ -1213,7 +1170,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				continue;
 			}
 
-			if (!party.isAttackable() || party.getFaction() == 0)
+			if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
 			{
 				continue;
 			}
@@ -1238,7 +1195,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				continue;
 			}
 
-			if (!party.isAttackable() || party.getFaction() == 0)
+			if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
 			{
 				continue;
 			}
@@ -1254,7 +1211,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 				foreach( other in raw_parties )
 				{
-					if (party.isAlive() && !party.isAlliedWith(other))
+					if (other.isAlive() && !party.isAlliedWith(other))
 					{
 						hasOpponent = true;
 						break;
@@ -1309,7 +1266,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 				party.onCombatStarted();
 				properties.Parties.push(party);
 				this.m.PartiesInCombat.push(party);
-				this.logInfo("party name: " + party.getName());
 
 				if (party.isAlliedWithPlayer())
 				{
@@ -1371,7 +1327,19 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.CombatSeed == 0)
 			{
-				this.m.CombatSeed = this.Math.rand();
+				foreach( p in this.m.CombatProperties.Parties )
+				{
+					if (p.getCombatSeed() != 0 && !p.isAlliedWithPlayer())
+					{
+						this.m.CombatSeed = p.getCombatSeed();
+						break;
+					}
+				}
+
+				if (this.m.CombatSeed == 0)
+				{
+					this.m.CombatSeed = this.Math.rand();
+				}
 			}
 
 			this.autosave();
@@ -1409,7 +1377,19 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		if (this.m.CombatSeed == 0)
 		{
-			this.m.CombatSeed = this.Math.rand();
+			foreach( p in properties.Parties )
+			{
+				if (p.getCombatSeed() != 0 && !p.isAlliedWithPlayer())
+				{
+					this.m.CombatSeed = p.getCombatSeed();
+					break;
+				}
+			}
+
+			if (this.m.CombatSeed == 0)
+			{
+				this.m.CombatSeed = this.Math.rand();
+			}
 		}
 
 		this.autosave();
@@ -1492,8 +1472,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		if (this.World.getPlayerRoster().getSize() == 0)
+		if (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished())
 		{
+			if (this.World.Assets.isIronman())
+			{
+				this.autosave();
+			}
+
 			this.show();
 			this.showGameFinishScreen(false);
 			return;
@@ -1985,8 +1970,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 			_allowFormationPicking = false;
 		}
 
-		if (_isCombatantsVisible && (_isPlayerInitiated || this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && this.World.getTime().IsDaytime))
+		if (_isCombatantsVisible && (_isPlayerInitiated || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && this.World.getTime().IsDaytime))
 		{
+			local champions = [];
 			local entityTypes = [];
 			entityTypes.resize(this.Const.EntityType.len(), 0);
 
@@ -2000,7 +1986,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				local parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
 				local isAtUniqueLocation = false;
 
-				if (parties.len() == 0)
+				if (parties.len() <= 1)
 				{
 					this.m.EngageCombatPos = null;
 					return;
@@ -2013,7 +1999,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 						continue;
 					}
 
-					if (!party.isAttackable() || party.getFaction() == 0)
+					if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
 					{
 						continue;
 					}
@@ -2038,7 +2024,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 						continue;
 					}
 
-					if (!party.isAttackable() || party.getFaction() == 0)
+					if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
 					{
 						continue;
 					}
@@ -2078,7 +2064,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 					{
 						if (t.Script.len() != "")
 						{
-							++entityTypes[t.ID];
+							if (t.Variant != 0)
+							{
+								champions.push(t);
+							}
+							else
+							{
+								++entityTypes[t.ID];
+							}
 						}
 					}
 				}
@@ -2087,8 +2080,24 @@ this.world_state <- this.inherit("scripts/states/state", {
 			{
 				foreach( t in _properties.Entities )
 				{
-					++entityTypes[t.ID];
+					if (t.Variant != 0)
+					{
+						champions.push(t);
+					}
+					else
+					{
+						++entityTypes[t.ID];
+					}
 				}
+			}
+
+			foreach( c in champions )
+			{
+				entities.push({
+					Name = c.Name,
+					Icon = this.Const.EntityIcon[c.ID],
+					Overlay = "icons/miniboss.png"
+				});
 			}
 
 			for( local i = 0; i < entityTypes.len(); i = ++i )
@@ -2106,7 +2115,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 						]) ? "An " : "A ";
 						entities.push({
 							Name = start + this.Const.Strings.EntityName[i],
-							Icon = this.Const.EntityIcon[i]
+							Icon = this.Const.EntityIcon[i],
+							Overlay = null
 						});
 					}
 					else
@@ -2114,7 +2124,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 						local num = this.Const.Strings.EngageEnemyNumbers[this.Math.max(0, this.Math.floor(this.Math.minf(1.0, entityTypes[i] / 14.0) * (this.Const.Strings.EngageEnemyNumbers.len() - 1)))];
 						entities.push({
 							Name = num + " " + this.Const.Strings.EntityNamePlural[i],
-							Icon = this.Const.EntityIcon[i]
+							Icon = this.Const.EntityIcon[i],
+							Overlay = null
 						});
 					}
 				}
@@ -2575,7 +2586,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 						this.Cursor.setCursor(this.Const.UI.Cursor.Attack);
 					}
 				}
-				else if (entity.isAttackable() && !entity.isAlliedWith(this.World.getPlayerEntity()))
+				else if (entity.isAttackable() && entity.getVisibilityMult() != 0 && !entity.isAlliedWith(this.World.getPlayerEntity()))
 				{
 					this.Cursor.setCursor(this.Const.UI.Cursor.Attack);
 				}
@@ -2647,6 +2658,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 							if (this.m.WasInCameraMovementMode == false && xOffset <= this.Const.Camera.MouseMoveThreshold && yOffset <= this.Const.Camera.MouseMoveThreshold)
 							{
 								return;
+							}
+
+							if (this.Settings.getTempGameplaySettings().CameraLocked)
+							{
+								this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
 							}
 
 							local camera = this.World.getCamera();
@@ -3058,7 +3074,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			foreach( bro in playerRoster )
 			{
-				bro.addXP(1000);
+				bro.addXP(1000, false);
 				bro.updateLevel();
 			}
 
@@ -3326,6 +3342,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			case 48:
 				if (_key.getModifier() != 2)
 				{
+					if (this.Settings.getTempGameplaySettings().CameraLocked)
+					{
+						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
+					}
+
 					this.World.getCamera().move(-1500.0 * this.Time.getDelta(), 0);
 					return true;
 				}
@@ -3336,6 +3357,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			case 50:
 				if (_key.getModifier() != 2)
 				{
+					if (this.Settings.getTempGameplaySettings().CameraLocked)
+					{
+						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
+					}
+
 					this.World.getCamera().move(1500.0 * this.Time.getDelta(), 0);
 					return true;
 				}
@@ -3347,6 +3373,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			case 49:
 				if (_key.getModifier() != 2)
 				{
+					if (this.Settings.getTempGameplaySettings().CameraLocked)
+					{
+						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
+					}
+
 					this.World.getCamera().move(0, 1500.0 * this.Time.getDelta());
 					return true;
 				}
@@ -3357,6 +3388,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			case 51:
 				if (_key.getModifier() != 2)
 				{
+					if (this.Settings.getTempGameplaySettings().CameraLocked)
+					{
+						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
+					}
+
 					this.World.getCamera().move(0, -1500.0 * this.Time.getDelta());
 					return true;
 				}
@@ -3514,15 +3550,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		this.World.Statistics.onDeserialize(_in);
 		this.m.LastIsDaytime = !this.World.getTime().IsDaytime;
-
-		if (_in.getMetaData().getVersion() >= 15)
-		{
-			this.setCampingAllowed(_in.readBool());
-		}
-		else
-		{
-			this.setCampingAllowed(true);
-		}
+		this.setCampingAllowed(_in.readBool());
 
 		if (_in.getMetaData().getVersion() >= 38)
 		{
@@ -3537,18 +3565,19 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.showDialogPopup("Old Campaign Loaded", "This campaign was created before you activated the \'Beasts & Exploration\' DLC. Please be aware that even though you can continue to play this campaign, you won\'t have access to all of the new content unless you start a new campaign.", null, null, true);
 			}.bindenv(this), null);
 		}
+		else if (this.Const.DLC.Wildmen && !this.World.Tags.get("IsWildmenCampaign"))
+		{
+			this.World.Tags.set("IsWildmenCampaign", true);
+			this.Time.scheduleEvent(this.TimeUnit.Real, 6000, function ( _tag )
+			{
+				this.showDialogPopup("Old Campaign Loaded", "This campaign was created before you activated the \'Warriors of the North\' DLC. Please be aware that even though you can continue to play this campaign, you won\'t have access to all of the new content unless you start a new campaign.", null, null, true);
+			}.bindenv(this), null);
+		}
 
 		this.World.Ambitions.updateUI();
 		this.updateDayTime();
 		this.updateTopbarAssets();
-
-		if (this.m.EscortedEntity == null)
-		{
-			this.World.State.setCampingAllowed(true);
-			this.World.State.setEscortedEntity(null);
-			this.World.State.getPlayer().setVisible(true);
-			this.World.Assets.setUseProvisions(true);
-		}
+		this.m.IsUpdatedOnce = false;
 	}
 
 });

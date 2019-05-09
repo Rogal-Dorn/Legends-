@@ -55,8 +55,26 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
-		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		local weapons = [
+			[
+				"weapons/short_bow",
+				"ammo/quiver_of_arrows"
+			]
+		];
+
+		if (this.Const.DLC.Wildmen)
+		{
+			weapons.push([
+				"weapons/staff_sling"
+			]);
+		}
+
+		local n = this.Math.rand(0, weapons.len() - 1);
+
+		foreach( w in weapons[n] )
+		{
+			this.m.Items.equip(this.new("scripts/items/" + w));
+		}
 
 		if (this.Math.rand(1, 100) <= 50)
 		{

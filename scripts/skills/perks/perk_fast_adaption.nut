@@ -36,10 +36,16 @@ this.perk_fast_adaption <- this.inherit("scripts/skills/skill", {
 	{
 		if (_targetEntity != null && this.isKindOf(_targetEntity, "actor"))
 		{
+			local dirty = this.m.Stacks != 0;
 			this.m.Stacks = 0;
 			this.m.Frame = 0;
 			this.m.SkillCount = 0;
 			this.m.IsHidden = true;
+
+			if (dirty)
+			{
+				this.getContainer().getActor().setDirty(true);
+			}
 		}
 	}
 
@@ -51,6 +57,11 @@ this.perk_fast_adaption <- this.inherit("scripts/skills/skill", {
 			this.m.Frame = this.Time.getFrame();
 			this.m.SkillCount = this.Const.SkillCounter;
 			this.m.IsHidden = false;
+
+			if (this.m.Stacks == 1)
+			{
+				this.getContainer().getActor().setDirty(true);
+			}
 		}
 	}
 

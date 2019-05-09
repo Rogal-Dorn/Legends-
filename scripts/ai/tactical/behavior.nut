@@ -104,6 +104,11 @@ this.behavior <- {
 		{
 			this.m.Score = this.onEvaluate(_entity);
 
+			if (this.getID() != this.Const.AI.Behavior.ID.Idle && this.m.Score > 0 && this.m.Score < 10)
+			{
+				this.m.Score = 10;
+			}
+
 			if (this.Const.AI.BenchmarkMode && !_entity.isPlayerControlled())
 			{
 				local timeTaken = this.Time.getExactTime() - startTime;
@@ -182,9 +187,13 @@ this.behavior <- {
 		{
 			expectedDamage = _skill.getExpectedDamage(_target);
 		}
+		else if (_entity.getSkills().getAttackOfOpportunity() != null)
+		{
+			expectedDamage = _entity.getSkills().getAttackOfOpportunity().getExpectedDamage(_target);
+		}
 		else
 		{
-			local critical = _entity.getCurrentProperties().getHitchance(this.Const.BodyPart.Head) / 100.0 * _entity.getCurrentProperties().DamageAgainstMult[this.Const.BodyPart.Head];
+			local critical = 1.0 + _entity.getCurrentProperties().getHitchance(this.Const.BodyPart.Head) / 100.0 * (_entity.getCurrentProperties().DamageAgainstMult[this.Const.BodyPart.Head] - 1.0);
 			expectedDamage = {
 				ArmorDamage = _entity.getCurrentProperties().getArmorDamageAverage(),
 				HitpointDamage = 0,
@@ -209,7 +218,7 @@ this.behavior <- {
 			hitchance = _entity.getCurrentProperties().getMeleeSkill() - _target.getCurrentProperties().getMeleeDefense();
 		}
 
-		local hitpoints = this.Math.minf(1.0, this.Math.max(expectedDamage.HitpointDamage, expectedDamage.DirectDamage) / _target.getHitpoints());
+		local hitpoints = this.Math.minf(1.0, (expectedDamage.HitpointDamage + expectedDamage.DirectDamage) / _target.getHitpoints());
 
 		if (!_entity.getCurrentProperties().IsIgnoringArmorOnAttack && (!_skill || _skill.getDirectDamage() < 1.0))
 		{
@@ -273,12 +282,20 @@ this.behavior <- {
 			}
 		}
 
+		if (_skill == null && _target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && _target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.TwoHanded))
+		{
+			if (_entity.getSkills().hasSkill("actives.knock_out") || _entity.getSkills().hasSkill("actives.strike_down") || _entity.getSkills().hasSkill("actives.charge") || _entity.getSkills().hasSkill("actives.disarm"))
+			{
+				score = score + 0.1;
+			}
+		}
+
 		if (_skill != null && targetTile.getDistanceTo(myTile) == 1 && _target.getSkills().hasSkill("effects.riposte"))
 		{
 			score = score * this.getProperties().TargetPriorityCounterSkillsMult;
 		}
 
-		if (this.Math.max(expectedDamage.HitpointDamage, expectedDamage.DirectDamage) * this.getProperties().TargetPriorityFinishTreshhold >= _target.getHitpoints())
+		if (expectedDamage.HitpointDamage + expectedDamage.DirectDamage * this.getProperties().TargetPriorityFinishTreshhold >= _target.getHitpoints())
 		{
 			score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
 		}
@@ -311,7 +328,7 @@ this.behavior <- {
 				score = score * this.Const.AI.Behavior.LikelyPlayerBaitMult;
 			}
 		}
-		else if (this.isKindOf(_target, "wardog") && _target.getFaction() == this.Const.Faction.PlayerAnimals && _skill != null)
+		else if ((this.isKindOf(_target, "wardog") || this.isKindOf(_target, "warhound")) && _target.getFaction() == this.Const.Faction.PlayerAnimals && _skill != null)
 		{
 			score = score * this.Const.AI.Behavior.LikelyPlayerBaitMult;
 		}

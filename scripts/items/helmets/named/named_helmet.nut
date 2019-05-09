@@ -1,12 +1,15 @@
 this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	m = {
-		NameList = []
+		PrefixList = this.Const.Strings.RandomArmorPrefix,
+		NameList = [],
+		UseRandomName = true
 	},
 	function create()
 	{
 		this.helmet.create();
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Named;
 		this.m.IsDroppedWhenDamaged = true;
+		this.m.IsDroppedAsLoot = true;
 	}
 
 	function getRandomCharacterName( _list )
@@ -26,11 +29,16 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function createRandomName()
 	{
-		local r = this.Math.rand(1, 100);
-
-		if (r <= 60)
+		if (!this.m.UseRandomName || this.Math.rand(1, 100) <= 75)
 		{
-			return this.Const.Strings.RandomArmorPrefix[this.Math.rand(0, this.Const.Strings.RandomArmorPrefix.len() - 1)] + " ";
+			if (this.Math.rand(1, 100) <= 25)
+			{
+				return "";
+			}
+			else
+			{
+				return this.m.PrefixList[this.Math.rand(0, this.m.PrefixList.len() - 1)] + " ";
+			}
 		}
 		else if (this.Math.rand(1, 2) == 1)
 		{
@@ -48,7 +56,7 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		if (this.m.Name.len() == 0)
 		{
-			if (this.Math.rand(1, 100) <= 75)
+			if (this.Math.rand(1, 100) <= 25)
 			{
 				this.setName(this.getContainer().getActor().getName() + "\'s ");
 			}
@@ -74,9 +82,15 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 130) * 0.01) * 1.0;
-		this.m.ConditionMax = this.m.Condition;
-		this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(75, 110) * 0.01);
+		if (this.Math.rand(1, 100) <= 66)
+		{
+			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 130) * 0.01) * 1.0;
+			this.m.ConditionMax = this.m.Condition;
+		}
+		else
+		{
+			this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(70, 90) * 0.01);
+		}
 	}
 
 	function onSerialize( _out )

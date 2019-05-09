@@ -37,6 +37,20 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			this.Const.Attributes.Initiative,
 			this.Const.Attributes.RangedSkill
 		];
+		this.m.Titles = [
+			"the Lone Wolf",
+			"the Wolf",
+			"the Hound",
+			"Steelwielder",
+			"the Slayer",
+			"the Jouster",
+			"the Giant",
+			"the Mountain",
+			"Strongface",
+			"the Defiler",
+			"the Knightslayer",
+			"the Hedge Knight"
+		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;

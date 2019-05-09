@@ -21,7 +21,7 @@ this.wardog_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.EngageOnBadTerrainPenaltyMult = 0.0;
 		this.m.Properties.EngageAgainstSpearwallMult = 0.0;
 		this.m.Properties.EngageAgainstSpearwallWithShieldwallMult = 0.0;
-		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 0.0;
+		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 1.25;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.5;
 		this.m.Properties.EngageLockDownTargetMult = 1.5;
 		this.m.Properties.PreferCarefulEngage = false;

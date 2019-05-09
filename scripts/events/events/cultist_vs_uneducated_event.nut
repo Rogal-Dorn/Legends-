@@ -10,7 +10,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 30.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]A few brothers come to you looking rather worried. They say %cultist% has been sitting with %uneducated% for a few hours now. When you ask what\'s the worry, they remind you that the cultist has a scarred forehead and speaks of incredibly strange things. Ah, right.\n\nYou go and see the two men. %uneducated% looks up at you, smiling, and says the cultist actually has a lot to teach him. Grimacing, you wonder if you should put a stop to these.. lessons.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]A few brothers come to you looking rather worried. They say %cultist% has been sitting with %uneducated% for a few hours now. When you ask what\'s the worry, they remind you that the cultist has a scarred forehead and speaks of incredibly strange things. Ah, right.\n\nYou go and see the two men. %uneducated% looks up at you, smiling, and says the cultist actually has a lot to teach him. Grimacing, you wonder if you should put a stop to these... lessons.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -118,6 +118,11 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 
 		if (brothers.len() < 4)

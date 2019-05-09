@@ -259,77 +259,71 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
-		local r;
-
-		if (this.Math.rand(1, 100) <= 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
-			r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_cleaver"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_axe"));
-			}
-		}
-		else
-		{
-			r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_axe"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
-			}
+			local weapons = [
+				"weapons/greenskins/orc_axe",
+				"weapons/greenskins/orc_cleaver"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		if (this.Math.rand(1, 100) <= 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/shields/named/named_orc_heavy_shield"));
-		}
-		else
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/greenskins/orc_heavy_shield"));
 		}
 
-		r = this.Math.rand(1, 4);
-
-		if (r == 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warrior_light_armor"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warrior_medium_armor"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warrior_heavy_armor"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/greenskins/orc_warrior_heavy_armor"));
+			local armor = [
+				"armor/greenskins/orc_warrior_light_armor",
+				"armor/greenskins/orc_warrior_medium_armor",
+				"armor/greenskins/orc_warrior_heavy_armor",
+				"armor/greenskins/orc_warrior_heavy_armor"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		r = this.Math.rand(1, 3);
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
+		{
+			local helmet = [
+				"helmets/greenskins/orc_warrior_light_helmet",
+				"helmets/greenskins/orc_warrior_medium_helmet",
+				"helmets/greenskins/orc_warrior_heavy_helmet"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		}
+	}
 
-		if (r == 1)
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warrior_light_helmet"));
+			return false;
 		}
-		else if (r == 2)
+
+		this.actor.makeMiniboss();
+		this.getSprite("miniboss").setBrush("bust_miniboss_greenskins");
+		local weapons = [
+			"weapons/named/named_orc_cleaver",
+			"weapons/named/named_orc_axe"
+		];
+		local shields = [
+			"shields/named/named_orc_heavy_shield"
+		];
+
+		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warrior_medium_helmet"));
+			this.m.Items.unequip(this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
-		else if (r == 3)
+		else
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/greenskins/orc_warrior_heavy_helmet"));
+			this.m.Items.unequip(this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
+
+		return true;
 	}
 
 });

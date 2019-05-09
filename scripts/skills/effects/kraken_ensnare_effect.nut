@@ -32,11 +32,11 @@ this.kraken_ensnare_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "status_effect_95_mini";
 		this.m.Overlay = "status_effect_95";
 		this.m.SoundOnUse = [
-			"sounds/enemies/krake_choke_01.wav",
-			"sounds/enemies/krake_choke_02.wav",
-			"sounds/enemies/krake_choke_03.wav",
-			"sounds/enemies/krake_choke_04.wav",
-			"sounds/enemies/krake_choke_05.wav"
+			"sounds/enemies/dlc2/krake_choke_01.wav",
+			"sounds/enemies/dlc2/krake_choke_02.wav",
+			"sounds/enemies/dlc2/krake_choke_03.wav",
+			"sounds/enemies/dlc2/krake_choke_04.wav",
+			"sounds/enemies/dlc2/krake_choke_05.wav"
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;

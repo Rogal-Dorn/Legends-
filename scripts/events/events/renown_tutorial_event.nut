@@ -37,6 +37,11 @@ this.renown_tutorial_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.Assets.getOrigin().getID() != "scenario.tutorial")
+		{
+			return;
+		}
+
 		this.m.Score = 5000;
 	}
 
@@ -50,11 +55,6 @@ this.renown_tutorial_event <- this.inherit("scripts/events/event", {
 			"bro1",
 			this.World.getPlayerRoster().getAll()[0].getName()
 		]);
-	}
-
-	function onDetermineStartScreen()
-	{
-		return "A";
 	}
 
 	function onClear()

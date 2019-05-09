@@ -34,7 +34,6 @@ this.goblin_settlement_location <- this.inherit("scripts/entity/world/location",
 			"pickled_mushrooms_item"
 		], _lootTable);
 		this.dropTreasure(this.Math.rand(2, 3), [
-			"trade/furs_item",
 			"trade/salt_item",
 			"trade/dies_item",
 			"trade/amber_shards_item",
@@ -42,7 +41,10 @@ this.goblin_settlement_location <- this.inherit("scripts/entity/world/location",
 			"loot/silver_bowl_item",
 			"loot/ancient_gold_coins_item",
 			"loot/silver_bowl_item",
-			"loot/signet_ring_item"
+			"loot/signet_ring_item",
+			"loot/goblin_carved_ivory_iconographs_item",
+			"loot/goblin_minted_coins_item",
+			"loot/goblin_rank_insignia_item"
 		], _lootTable);
 	}
 

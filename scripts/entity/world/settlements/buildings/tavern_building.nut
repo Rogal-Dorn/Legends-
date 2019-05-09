@@ -129,7 +129,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 		local villages = this.World.EntityManager.getSettlements();
 		local distance = this.m.Location != null && !this.m.Location.isNull() ? this.m.Settlement.getTile().getDistanceTo(this.m.Location.getTile()) : 0;
 		distance = this.Const.Strings.Distance[this.Math.min(this.Const.Strings.Distance.len() - 1, distance / 30.0 * (this.Const.Strings.Distance.len() - 1))];
-		local mercCompany = this.World.EntityManager.getMercenaries()[this.Math.rand(0, this.World.EntityManager.getMercenaries().len() - 1)].getName();
+		local mercCompany = this.World.EntityManager.getMercenaries().len() != 0 ? this.World.EntityManager.getMercenaries()[this.Math.rand(0, this.World.EntityManager.getMercenaries().len() - 1)].getName() : this.Const.Strings.MercenaryCompanyNames[this.Math.rand(0, this.Const.Strings.MercenaryCompanyNames.len() - 1)];
 		local text;
 		local vars = [
 			[

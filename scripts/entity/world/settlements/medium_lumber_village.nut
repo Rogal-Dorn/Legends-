@@ -142,7 +142,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, false, true);
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/leather_tanner_location", [
 				this.Const.World.TerrainType.Plains,
@@ -159,7 +159,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [], 1, false, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/leather_tanner_location", [
 				this.Const.World.TerrainType.Plains,
@@ -178,7 +178,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -194,7 +194,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -213,7 +213,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -229,7 +229,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.LeaveForest,
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], [
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
@@ -246,14 +246,14 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.AutumnForest,
 			this.Const.World.TerrainType.LeaveForest,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [], 2);
 		this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/wooden_watchtower_location", [
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Snow,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [], 3, true);
 		this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/wheat_fields_location", [
 			this.Const.World.TerrainType.Plains

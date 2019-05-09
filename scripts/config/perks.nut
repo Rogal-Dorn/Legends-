@@ -56,10 +56,10 @@ gt.Const.Perks.Perks <- [
 			IconDisabled = "ui/perks/perk_23_sw.png"
 		},
 		{
-			ID = "perk.adrenalin",
+			ID = "perk.adrenaline",
 			Script = "scripts/skills/perks/perk_adrenalin",
-			Name = this.Const.Strings.PerkName.Adrenalin,
-			Tooltip = this.Const.Strings.PerkDescription.Adrenalin,
+			Name = this.Const.Strings.PerkName.Adrenaline,
+			Tooltip = this.Const.Strings.PerkDescription.Adrenaline,
 			Icon = "ui/perks/perk_37.png",
 			IconDisabled = "ui/perks/perk_37_sw.png"
 		},
@@ -178,6 +178,14 @@ gt.Const.Perks.Perks <- [
 			Tooltip = this.Const.Strings.PerkDescription.Brawny,
 			Icon = "ui/perks/perk_40.png",
 			IconDisabled = "ui/perks/perk_40_sw.png"
+		},
+		{
+			ID = "perk.relentless",
+			Script = "scripts/skills/perks/perk_relentless",
+			Name = this.Const.Strings.PerkName.Relentless,
+			Tooltip = this.Const.Strings.PerkDescription.Relentless,
+			Icon = "ui/perks/perk_26.png",
+			IconDisabled = "ui/perks/perk_26_sw.png"
 		},
 		{
 			ID = "perk.rotation",

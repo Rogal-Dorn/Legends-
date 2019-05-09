@@ -4,6 +4,7 @@ this.item_container <- {
 		Items = [],
 		UnlockedBagSlots = 2,
 		ActionCost = this.Const.Tactical.Settings.SwitchItemAPCost,
+		ActionCost2H = this.Const.Tactical.Settings.SwitchItemAPCost,
 		Appearance = {
 			ShowQuiver = false,
 			HideHead = false,
@@ -66,11 +67,6 @@ this.item_container <- {
 		this.m.ActionCost = _v;
 	}
 
-	function getActionCost()
-	{
-		return this.m.ActionCost;
-	}
-
 	function create()
 	{
 		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
@@ -99,15 +95,58 @@ this.item_container <- {
 		}
 	}
 
-	function isActionAffordable()
+	function isActionAffordable( _items )
 	{
-		return this.m.Actor.getActionPoints() >= this.m.ActionCost;
+		local twoHanded = false;
+
+		foreach( i in _items )
+		{
+			if (i != null && i.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				twoHanded = true;
+				break;
+			}
+		}
+
+		return this.m.Actor.getActionPoints() >= (twoHanded ? this.m.ActionCost2H : this.m.ActionCost);
 	}
 
-	function payForAction()
+	function getActionCost( _items )
 	{
-		this.m.Actor.setActionPoints(this.Math.max(0, this.m.Actor.getActionPoints() - this.m.ActionCost));
-		this.m.ActionCost = this.Const.Tactical.Settings.SwitchItemAPCost;
+		local twoHanded = false;
+
+		foreach( i in _items )
+		{
+			if (i != null && i.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				twoHanded = true;
+				break;
+			}
+		}
+
+		return twoHanded ? this.m.ActionCost2H : this.m.ActionCost;
+	}
+
+	function payForAction( _items )
+	{
+		local twoHanded = false;
+
+		foreach( i in _items )
+		{
+			if (i != null && i.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				twoHanded = true;
+				break;
+			}
+		}
+
+		this.m.Actor.setActionPoints(this.Math.max(0, this.m.Actor.getActionPoints() - (twoHanded ? this.m.ActionCost2H : this.m.ActionCost)));
+
+		if (!twoHanded)
+		{
+			this.m.ActionCost = this.Const.Tactical.Settings.SwitchItemAPCost;
+		}
+
 		this.m.Actor.getSkills().update();
 	}
 
@@ -563,6 +602,11 @@ this.item_container <- {
 			IsDroppingLoot = false;
 		}
 
+		if (!this.m.Actor.isPlayerControlled() && this.m.Actor.isAlliedWithPlayer())
+		{
+			IsDroppingLoot = false;
+		}
+
 		if (_killer != null && _killer.isPlayerControlled() && !isPlayer && _killer.isAlliedWith(this.m.Actor))
 		{
 			IsDroppingLoot = false;
@@ -591,16 +635,9 @@ this.item_container <- {
 				{
 					if (IsDroppingLoot)
 					{
-						if (isPlayer || this.m.Items[i][j].isDroppedAsLoot())
-						{
-							this.m.Items[i][j].drop(_tile);
-						}
-						else
-						{
-							this.m.Items[i][j].m.IsDroppedAsLoot = false;
-						}
+						this.m.Items[i][j].drop(_tile);
 					}
-					else
+					else if (!this.m.Items[i][j].isItemType(this.Const.Items.ItemType.Legendary))
 					{
 						this.m.Items[i][j].m.IsDroppedAsLoot = false;
 					}

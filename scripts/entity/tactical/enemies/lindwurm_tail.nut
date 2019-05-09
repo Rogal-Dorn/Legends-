@@ -380,12 +380,9 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage");
 			}
 
-			if (this.m.Body.m.MoraleState != this.Const.MoraleState.Ignore && damage > this.Const.Morale.OnHitMinDamage)
+			if (this.m.Body.m.MoraleState != this.Const.MoraleState.Ignore && damage > this.Const.Morale.OnHitMinDamage && this.getCurrentProperties().IsAffectedByLosingHitpoints)
 			{
-				if (!this.isPlayerControlled() || !this.m.Body.m.Skills.hasSkill("trait.deathwish") && !this.m.Body.m.Skills.hasSkill("effects.berserker_mushrooms"))
-				{
-					this.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - this.getHitpoints() / this.getHitpointsMax()), this.Const.MoraleCheckType.Default, "", true);
-				}
+				this.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - this.getHitpoints() / this.getHitpointsMax()), this.Const.MoraleCheckType.Default, "", true);
 			}
 
 			this.m.Body.m.Skills.onAfterDamageReceived();
@@ -477,6 +474,7 @@ this.lindwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToKnockBackAndGrab = true;
 		b.IsImmuneToStun = true;
 		b.IsMovable = false;
+		b.IsImmuneToDisarm = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 180)
 		{

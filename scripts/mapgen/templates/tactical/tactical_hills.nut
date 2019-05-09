@@ -37,7 +37,7 @@ this.tactical_hills <- this.inherit("scripts/mapgen/tactical_template", {
 		local hillPatches = this.Math.rand(2, 3);
 		local hillAttempts = 0;
 
-		while (hillPatches != 0 && hillAttempts < 3000)
+		while (hillPatches != 0 && hillAttempts < 2000)
 		{
 			hillAttempts = ++hillAttempts;
 			local sizeX = this.Math.rand(10, 20);

@@ -3,7 +3,8 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 		TargetTile = null,
 		PossibleSkills = [
 			"actives.knock_out",
-			"actives.strike_down"
+			"actives.strike_down",
+			"actives.disarm"
 		],
 		Skill = null
 	},
@@ -43,7 +44,8 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		score = score * this.getFatigueScoreMult(this.m.Skill);
-		local targets = this.queryTargetsInMeleeRange();
+		local myTile = _entity.getTile();
+		local targets = this.queryTargetsInMeleeRange(this.m.Skill.getMinRange(), this.m.Skill.getMaxRange() + (this.m.Skill.isRanged() ? myTile.Level : 0), this.m.Skill.getMaxLevelDifference());
 
 		if (targets.len() == 0)
 		{
@@ -93,6 +95,9 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 
 	function getBestTarget( _entity, _skill, _targets )
 	{
+		local attackSkill = _entity.getSkills().getAttackOfOpportunity();
+		local apRequiredForAttack = attackSkill != null ? attackSkill.getActionPointCost() : 4;
+		local canAttackNext = this.m.Skill.getActionPointCost() + apRequiredForAttack <= _entity.getActionPointsMax();
 		local bestTarget;
 		local bestScore = 0.0;
 
@@ -104,40 +109,42 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 				{
 				}
 
-				if (target.getCurrentProperties().IsStunned || target.getCurrentProperties().IsImmuneToStun)
+				if (target.getCurrentProperties().IsStunned || !target.getCurrentProperties().IsAbleToUseWeaponSkills)
 				{
 					continue;
 				}
 
-				local p = _entity.getCurrentProperties();
-				local armor = target.getArmor(this.Const.BodyPart.Body) * (p.HitChance[this.Const.BodyPart.Body] / 100.0) + target.getArmor(this.Const.BodyPart.Head) * (p.HitChance[this.Const.BodyPart.Head] / 100.0);
-				local hitpoints = target.getHitpoints();
-				local armorDamage = this.Math.min(armor, p.getArmorDamageAverage());
-				local hitpointDamage = this.Math.max(0, p.getRegularDamageAverage() - armorDamage);
+				if (!canAttackNext && target.getCurrentProperties().TargetAttractionMult <= 1.0 && target.getTile().getZoneOfControlCountOtherThan(target.getAlliedFactions()) <= 1)
+				{
+					continue;
+				}
 
-				for( ; hitpoints <= hitpointDamage;  )
+				local expectedDamage = attackSkill.getExpectedDamage(target);
+
+				for( ; target.getHitpoints() <= expectedDamage.HitpointDamage + expectedDamage.DirectDamage;  )
 				{
 				}
 
 				local score = target.getHitpoints() / target.getHitpointsMax();
 				score = score * (_skill.getHitchance(target) * 0.01);
+				score = score * target.getCurrentProperties().TargetAttractionMult;
 
-				if (target.getSkills().hasSkill("actives.rally_the_troops"))
+				if (target.getMoraleState() == this.Const.MoraleState.Fleeing)
+				{
+					score = score * this.Const.AI.Behavior.KnockoutFleeingMult;
+				}
+
+				if (target.isTurnDone() && target.getSkills().hasSkill("effects.adrenaline"))
 				{
 					score = score * this.Const.AI.Behavior.KnockoutPriorityMult;
 				}
 
-				if (target.getSkills().hasSkill("perk.berserk"))
+				if (target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.TwoHanded) && target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.MeleeWeapon))
 				{
 					score = score * this.Const.AI.Behavior.KnockoutPriorityMult;
 				}
 
-				if (target.getSkills().hasSkill("effects.killing_frenzy"))
-				{
-					score = score * this.Const.AI.Behavior.KnockoutPriorityMult;
-				}
-
-				if (target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isAoE() && target.getTile().getZoneOfControlCountOtherThan(target.getAlliedFactions()) >= 3)
+				if (target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isAoE())
 				{
 					score = score * this.Const.AI.Behavior.KnockoutPriorityMult;
 				}

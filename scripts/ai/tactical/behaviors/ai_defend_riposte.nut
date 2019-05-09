@@ -41,6 +41,12 @@ this.ai_defend_riposte <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		score = score * this.getFatigueScoreMult(this.m.Skill);
+
+		if (_entity.getSkills().hasSkill("effects.adrenaline"))
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		local dotDamage = 0;
 		local effects = _entity.getSkills().getAllSkillsOfType(this.Const.SkillType.DamageOverTime);
 

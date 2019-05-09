@@ -13,19 +13,19 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 
 		if (this.World.FactionManager.isCivilWar() && this.World.FactionManager.getGreaterEvilStrength() >= 20.0)
 		{
-			if (settlements.len() > 16)
+			if (settlements.len() > (this.Const.DLC.Wildmen ? 12 : 16))
 			{
 				return;
 			}
 		}
 		else if (this.World.FactionManager.isGreaterEvil())
 		{
-			if (settlements.len() > 8)
+			if (settlements.len() > (this.Const.DLC.Wildmen ? 6 : 8))
 			{
 				return;
 			}
 		}
-		else if (settlements.len() > 12)
+		else if (settlements.len() > (this.Const.DLC.Wildmen ? 9 : 12))
 		{
 			return;
 		}
@@ -41,13 +41,14 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 	{
 		local camp;
 		local r = this.Math.rand(1, 3);
+		local maxY = this.Const.DLC.Wildmen ? 0.75 : 1.0;
 
 		if (r == 1)
 		{
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Snow
-			], 7, 16);
+			], 7, 16, 1000, 7, 7, null, 0.0, maxY);
 
 			if (tile != null)
 			{
@@ -59,7 +60,7 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Snow
-			], 6, 12);
+			], 6, 12, 1000, 7, 7, null, 0.0, maxY);
 
 			if (tile != null)
 			{
@@ -71,7 +72,7 @@ this.build_bandit_camp_action <- this.inherit("scripts/factions/faction_action",
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 				this.Const.World.TerrainType.Mountains,
 				this.Const.World.TerrainType.Snow
-			], 10, 20);
+			], 10, 20, 1000, 7, 7, null, 0.0, maxY);
 
 			if (tile != null)
 			{

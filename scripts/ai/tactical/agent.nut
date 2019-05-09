@@ -470,10 +470,6 @@ this.agent <- {
 
 	function onTurnEnd()
 	{
-		if (this.Const.AI.VerboseMode && !this.m.Actor.isPlayerControlled())
-		{
-		}
-
 		this.m.IsTurnStarted = false;
 		this.m.Intentions = clone this.Const.AI.Agent.Intentions;
 		this.m.KnownAllies = [];
@@ -698,6 +694,10 @@ this.agent <- {
 		}
 		else
 		{
+			this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Defend] = 1.0;
+			this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.EngageMelee] = 0.0;
+			this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.EngageRanged] = 1.0;
+			this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.SwitchToRanged] = 1.0;
 			this.m.Properties.PreferWait = false;
 		}
 	}

@@ -151,6 +151,7 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 				score = score + target.getCurrentProperties().getMeleeSkill() * this.Const.AI.Behavior.CharmSkillMult;
 			}
 
+			score = score + target.getCurrentProperties().getMeleeDefense() * this.Const.AI.Behavior.CharmDefenseSkillMult;
 			score = score - distanceToTarget * this.Const.AI.Behavior.CharmDistanceMult;
 			local targets = 0;
 			local targetsInRange = this.queryEnemiesInMeleeRange(1, target.getIdealRange(), target);
@@ -186,7 +187,7 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 				score = score * this.Const.AI.Behavior.CharmRemoveDangerMult;
 			}
 
-			if (target.getType() == this.Const.EntityType.Wardog)
+			if (target.getType() == this.Const.EntityType.Wardog || target.getType() == this.Const.EntityType.Warhound)
 			{
 				score = score * this.Const.AI.Behavior.CharmWardogMult;
 			}
@@ -225,6 +226,13 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 			else
 			{
 				score = score * this.Const.AI.Behavior.CharmRangedTargetMult;
+			}
+
+			local currentZOC = opponentTile.getZoneOfControlCountOtherThan(target.getAlliedFactions());
+
+			if (currentZOC >= 3 || currentZOC >= 2 && target.getHitpointsPct() <= 0.25)
+			{
+				score = score * this.Const.AI.Behavior.CharmEasierToKillMult;
 			}
 
 			if (!target.isTurnDone())

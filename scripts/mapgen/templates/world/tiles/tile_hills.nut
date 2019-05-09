@@ -62,7 +62,7 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 				{
 					steppe = ++steppe;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Highlands || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Highlands)
+				else if (nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Tundra)
 				{
 					tundra = ++tundra;
 				}
@@ -137,7 +137,7 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 		else if (tundra >= 2)
 		{
 			tile.setBrush("world_highlands_01");
-			tile.Subregion = this.Const.World.TerrainType.Highlands;
+			tile.Subregion = this.Const.World.TerrainType.Tundra;
 			tile.TacticalType = this.Const.World.TerrainTacticalType.HighlandsHills;
 
 			if (mountains.len() >= 1)

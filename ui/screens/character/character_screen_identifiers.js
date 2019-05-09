@@ -99,7 +99,8 @@ var CharacterScreenIdentifier =
             ImageOffsetX: 'imageOffsetX',
             ImageOffsetY: 'imageOffsetY',
             PerkPoints: 'perkPoints',
-			PerkPointsSpent: 'perkPointsSpent',
+            PerkPointsSpent: 'perkPointsSpent',
+            IsPlayerCharacter: 'isPlayerCharacter',
             Level: 'level',
             LevelUp: {
                 Key: 'levelUp',

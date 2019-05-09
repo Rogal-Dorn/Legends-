@@ -23,6 +23,7 @@ this.goblin_whip <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsShieldRelevant = false;
+		this.m.IsWeaponSkill = true;
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;

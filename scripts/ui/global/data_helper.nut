@@ -21,6 +21,11 @@ this.data_helper <- {
 				continue;
 			}
 
+			if (storageMeta.getInt("difficulty") >= this.Const.Strings.Difficulty.len())
+			{
+				continue;
+			}
+
 			result.push(this.convertCampaignStorageToUIData(storageMeta));
 		}
 
@@ -53,7 +58,7 @@ this.data_helper <- {
 			banner = _meta.getString("banner"),
 			dayName = "Day " + _meta.getInt("days") + d,
 			creationDate = _meta.getCreationDate(),
-			isIncompatibleVersion = _meta.getVersion() < 14 && _meta.getVersion() != this.Const.Serialization.Version || !this.Const.DLC.isCompatible(_meta),
+			isIncompatibleVersion = _meta.getVersion() < 21 || _meta.getVersion() > this.Const.Serialization.Version || !this.Const.DLC.isCompatible(_meta),
 			isIronman = _meta.getInt("ironman") == 1
 		};
 	}
@@ -329,6 +334,7 @@ this.data_helper <- {
 		_target.daysWounded <- _entity.getDaysWounded();
 		_target.leveledUp <- _entity.isLeveled();
 		_target.moodIcon <- "ui/icons/mood_0" + (_entity.getMoodState() + 1) + ".png";
+		_target.isPlayerCharacter <- _entity.getTags().get("IsPlayerCharacter");
 
 		if (_entity.getLevelUps() > 0)
 		{

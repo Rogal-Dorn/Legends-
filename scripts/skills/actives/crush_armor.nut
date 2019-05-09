@@ -26,6 +26,7 @@ this.crush_armor <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsWeaponSkill = true;
 		this.m.DirectDamageMult = 0.0;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 25;

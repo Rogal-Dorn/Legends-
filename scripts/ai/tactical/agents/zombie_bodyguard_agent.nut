@@ -36,6 +36,7 @@ this.zombie_bodyguard_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_swing"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_split"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_thresh"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_pickup_weapon"));
 	}
 
 	function onUpdate()

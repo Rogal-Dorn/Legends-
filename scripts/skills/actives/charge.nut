@@ -4,7 +4,7 @@ this.charge <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.charge";
 		this.m.Name = "Charge";
-		this.m.Description = "TODO";
+		this.m.Description = "";
 		this.m.Icon = "skills/active_52.png";
 		this.m.IconDisabled = "skills/active_52_sw.png";
 		this.m.Overlay = "active_52";

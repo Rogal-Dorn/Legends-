@@ -193,7 +193,12 @@ this.ai_attack_throw_net <- this.inherit("scripts/ai/tactical/behavior", {
 
 			score = score * target.getCurrentProperties().TargetAttractionMult;
 
-			if (target.getType() == this.Const.EntityType.Wardog)
+			if (!canHit && target.isTurnDone() && target.getSkills().hasSkill("effects.adrenaline"))
+			{
+				score = score * this.Const.AI.Behavior.ThrowNetVSAdrenalineMult;
+			}
+
+			if (target.getType() == this.Const.EntityType.Wardog || target.getType() == this.Const.EntityType.Warhound)
 			{
 				score = score * this.Const.AI.Behavior.ThrowNetVSWardogsMult;
 			}

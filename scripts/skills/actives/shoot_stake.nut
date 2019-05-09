@@ -1,5 +1,8 @@
 this.shoot_stake <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		AdditionalAccuracy = 0,
+		AdditionalHitChance = 0
+	},
 	function onItemSet()
 	{
 		this.m.MaxRange = this.m.Item.getRangeMax();
@@ -49,7 +52,7 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.5;
-		this.m.ActionPointCost = 2;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
@@ -68,12 +71,26 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
 			}
 		]);
-		ret.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/hitchance.png",
-			text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]-3%[/color] per tile of distance"
-		});
+
+		if (10 + this.m.AdditionalAccuracy >= 0)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + (10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-3 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-3 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+			});
+		}
+
 		local ammo = this.getAmmo();
 
 		if (ammo > 0)
@@ -149,6 +166,7 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
+		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
 	}
 
 	function onUse( _user, _targetTile )
@@ -165,8 +183,8 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += 10;
-			_properties.HitChanceAdditionalWithEachTile -= 3;
+			_properties.RangedSkill += 10 + this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile -= 3 + this.m.AdditionalHitChance;
 		}
 	}
 

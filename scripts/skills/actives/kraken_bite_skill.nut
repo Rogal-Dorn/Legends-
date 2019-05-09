@@ -9,11 +9,11 @@ this.kraken_bite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/active_146.png";
 		this.m.Overlay = "active_146";
 		this.m.SoundOnUse = [
-			"sounds/enemies/tentacle_bite_01.wav",
-			"sounds/enemies/tentacle_bite_02.wav",
-			"sounds/enemies/tentacle_bite_03.wav",
-			"sounds/enemies/tentacle_bite_04.wav",
-			"sounds/enemies/tentacle_bite_05.wav"
+			"sounds/enemies/dlc2/tentacle_bite_01.wav",
+			"sounds/enemies/dlc2/tentacle_bite_02.wav",
+			"sounds/enemies/dlc2/tentacle_bite_03.wav",
+			"sounds/enemies/dlc2/tentacle_bite_04.wav",
+			"sounds/enemies/dlc2/tentacle_bite_05.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;

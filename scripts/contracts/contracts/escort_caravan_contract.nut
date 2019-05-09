@@ -623,7 +623,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 							}
 						}
 
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.NobleHouseID);
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Noble, 120 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Contract.m.NobleHouseID);
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -885,7 +885,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						p.Music = this.Const.Music.UndeadTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Vampires, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Vampires, 80 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 						this.World.Contracts.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
@@ -1018,7 +1018,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			return;
 		}
 
-		if (_actor.getType() == this.Const.EntityType.GoblinWolfrider || _actor.getType() == this.Const.EntityType.Wardog || _actor.getType() == this.Const.EntityType.ArmoredWardog || _actor.getType() == this.Const.EntityType.SpiderEggs || this.isKindOf(_actor, "lindwurm_tail"))
+		if (_actor.getType() == this.Const.EntityType.GoblinWolfrider || _actor.getType() == this.Const.EntityType.Wardog || _actor.getType() == this.Const.EntityType.Warhound || _actor.getType() == this.Const.EntityType.SpiderEggs || this.isKindOf(_actor, "lindwurm_tail"))
 		{
 			return;
 		}

@@ -146,7 +146,7 @@ this.item <- {
 
 	function isDroppedAsLoot()
 	{
-		return this.m.IsDroppedAsLoot && (this.m.LastEquippedByFaction == 0 || this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player") || ("State" in this.World) && this.World.State != null && !this.World.FactionManager.isAlliedWithPlayer(this.m.LastEquippedByFaction));
+		return this.m.IsDroppedAsLoot;
 	}
 
 	function isDroppedWhenDamaged()
@@ -459,19 +459,23 @@ this.item <- {
 			}
 		}
 
+		if (!isDropped)
+		{
+			this.m.IsDroppedAsLoot = false;
+			return false;
+		}
+
 		if (_tile == null)
 		{
 			this.logWarning("Attempted to drop item, but no tile specified!");
-			return;
+			return false;
 		}
 
-		if (isDropped)
-		{
-			_tile.Items.push(this);
-			_tile.IsContainingItems = true;
-			this.m.Tile = _tile;
-			this.onDrop(_tile);
-		}
+		_tile.Items.push(this);
+		_tile.IsContainingItems = true;
+		this.m.Tile = _tile;
+		this.onDrop(_tile);
+		return true;
 	}
 
 	function removeFromTile()

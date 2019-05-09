@@ -11,14 +11,14 @@ this.nightmare_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "status_effect_81_mini";
 		this.m.Overlay = "status_effect_81";
 		this.m.SoundOnUse = [
-			"sounds/enemies/nightmare_01.wav",
-			"sounds/enemies/nightmare_02.wav",
-			"sounds/enemies/nightmare_03.wav",
-			"sounds/enemies/nightmare_04.wav",
-			"sounds/enemies/nightmare_05.wav",
-			"sounds/enemies/nightmare_06.wav",
-			"sounds/enemies/nightmare_07.wav",
-			"sounds/enemies/nightmare_08.wav"
+			"sounds/enemies/dlc2/nightmare_01.wav",
+			"sounds/enemies/dlc2/nightmare_02.wav",
+			"sounds/enemies/dlc2/nightmare_03.wav",
+			"sounds/enemies/dlc2/nightmare_04.wav",
+			"sounds/enemies/dlc2/nightmare_05.wav",
+			"sounds/enemies/dlc2/nightmare_06.wav",
+			"sounds/enemies/dlc2/nightmare_07.wav",
+			"sounds/enemies/dlc2/nightmare_08.wav"
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;

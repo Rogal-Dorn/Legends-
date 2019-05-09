@@ -6,7 +6,7 @@ this.lucky_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.lucky";
 		this.m.Name = "Lucky";
 		this.m.Icon = "ui/traits/trait_icon_54.png";
-		this.m.Description = "This character has a natural talent for getting out of harms way in the last second.";
+		this.m.Description = "This character has a natural talent for getting out of harm\'s way in the last second.";
 		this.m.Titles = [
 			"the Lucky",
 			"the Blessed"

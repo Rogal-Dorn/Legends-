@@ -286,11 +286,6 @@ this.bowyer_crafts_masterwork_event <- this.inherit("scripts/events/event", {
 		]);
 	}
 
-	function onDetermineStartScreen()
-	{
-		return "A";
-	}
-
 	function onClear()
 	{
 		this.m.Bowyer = null;

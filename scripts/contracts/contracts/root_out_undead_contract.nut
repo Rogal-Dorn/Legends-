@@ -253,12 +253,12 @@ this.root_out_undead_contract <- this.inherit("scripts/contracts/contract", {
 						if (this.Flags.get("IsBanditsCoop"))
 						{
 							p.AllyBanners.push("banner_bandits_06");
-							this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditRaiders, 90 * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.PlayerAnimals);
+							this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditRaiders, 90 * this.Contract.getReputationToDifficultyMult(), this.Const.Faction.PlayerAnimals);
 						}
 						else
 						{
 							p.EnemyBanners.push("banner_bandits_06");
-							this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditRaiders, 90 * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
+							this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.BanditRaiders, 90 * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getID());
 						}
 					}
 

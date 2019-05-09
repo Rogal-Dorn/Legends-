@@ -52,11 +52,26 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/scramasax"));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
+		r = this.Math.rand(1, 2);
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/helmets/cultist_hood"));
+			this.m.Items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
+		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
+		}
+
+		r = this.Math.rand(1, 2);
+
+		if (r == 1)
+		{
+			this.items.equip(this.new("scripts/items/helmets/cultist_hood"));
+		}
+		else if (r == 2)
+		{
+			this.items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
 		}
 	}
 

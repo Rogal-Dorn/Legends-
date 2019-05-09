@@ -193,6 +193,11 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.cultists")
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 
 		if (brothers.len() < 12)

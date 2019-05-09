@@ -43,10 +43,10 @@ this.hex_slave_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/status_effect_84.png";
 		this.m.IconMini = "status_effect_84_mini";
 		this.m.SoundOnUse = [
-			"sounds/enemies/hexe_hex_damage_01.wav",
-			"sounds/enemies/hexe_hex_damage_02.wav",
-			"sounds/enemies/hexe_hex_damage_03.wav",
-			"sounds/enemies/hexe_hex_damage_04.wav"
+			"sounds/enemies/dlc2/hexe_hex_damage_01.wav",
+			"sounds/enemies/dlc2/hexe_hex_damage_02.wav",
+			"sounds/enemies/dlc2/hexe_hex_damage_03.wav",
+			"sounds/enemies/dlc2/hexe_hex_damage_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;

@@ -175,7 +175,7 @@ this.faction_manager <- {
 
 		if (++this.m.NextFactionToUpdate >= this.m.Factions.len())
 		{
-			this.m.NextFactionToUpdate = 0;
+			this.m.NextFactionToUpdate = 3;
 		}
 
 		if (this.m.Factions[this.m.NextFactionToUpdate] != null)
@@ -189,6 +189,7 @@ this.faction_manager <- {
 	function runSimulation()
 	{
 		this.logInfo("Running simulation for " + this.Const.Factions.CyclesOnNewCampaign + " cycles...");
+		local barbarians = this.Const.DLC.Wildmen ? this.getFactionOfType(this.Const.FactionType.Barbarians) : null;
 		local bandits = this.getFactionOfType(this.Const.FactionType.Bandits);
 		local orcs = this.getFactionOfType(this.Const.FactionType.Orcs);
 		local goblins = this.getFactionOfType(this.Const.FactionType.Goblins);
@@ -198,12 +199,18 @@ this.faction_manager <- {
 
 		for( local i = 0; i < this.Const.Factions.CyclesOnNewCampaign; i = ++i )
 		{
+			if (barbarians != null)
+			{
+				barbarians.update(true);
+			}
+
 			bandits.update(true);
 			goblins.update(true);
 			orcs.update(true);
 			undead.update(true);
 			zombies.update(true);
 			beasts.update(true);
+			this.__ping();
 		}
 	}
 
@@ -223,6 +230,7 @@ this.faction_manager <- {
 		this.assignSettlementsToNobleHouses(nobles);
 		this.uncoverSettlements();
 		this.createBandits();
+		this.createBarbarians();
 		this.createOrcs();
 		this.createGoblins();
 		this.createUndead();
@@ -268,6 +276,21 @@ this.faction_manager <- {
 		f.setName("Bandits");
 		f.setDiscovered(true);
 		f.addTrait(this.Const.FactionTrait.Bandit);
+		this.m.Factions.push(f);
+	}
+
+	function createBarbarians()
+	{
+		if (!this.Const.DLC.Wildmen)
+		{
+			return;
+		}
+
+		local f = this.new("scripts/factions/barbarian_faction");
+		f.setID(this.m.Factions.len());
+		f.setName("Barbarians");
+		f.setDiscovered(true);
+		f.addTrait(this.Const.FactionTrait.Barbarians);
 		this.m.Factions.push(f);
 	}
 
@@ -398,7 +421,7 @@ this.faction_manager <- {
 				],
 				[
 					"regionname",
-					"(REGION NAME TODO)"
+					""
 				],
 				[
 					"factionfortressname",
@@ -860,12 +883,7 @@ this.faction_manager <- {
 		this.m.LastRelationUpdateDay = _in.readU32();
 		this.m.GreaterEvil.Type = _in.readU8();
 		this.m.GreaterEvil.LastType = _in.readU8();
-
-		if (_in.getMetaData().getVersion() >= 17)
-		{
-			this.m.GreaterEvil.TypesUsed = _in.readU32();
-		}
-
+		this.m.GreaterEvil.TypesUsed = _in.readU32();
 		this.m.GreaterEvil.Phase = _in.readU8();
 		this.m.GreaterEvil.NextPhaseTime = _in.readF32();
 		this.m.GreaterEvil.Strength = _in.readF32();

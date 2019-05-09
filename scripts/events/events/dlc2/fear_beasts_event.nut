@@ -74,7 +74,7 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.beast_hunter" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.wildman")
+			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.wildman")
 			{
 				continue;
 			}

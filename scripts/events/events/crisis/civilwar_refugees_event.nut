@@ -207,7 +207,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + sword.getIcon(),
-					text = "You gain " + _event.getArticle(sword.getName()) + sword.getName()
+					text = "You gain " + this.Const.Strings.getArticle(sword.getName()) + sword.getName()
 				});
 				this.World.Assets.getStash().add(sword);
 			}
@@ -291,7 +291,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			_list.push({
 				id = 10,
 				icon = "ui/items/" + item.getIcon(),
-				text = "You gain " + this.getArticle(item.getName()) + item.getName()
+				text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 			});
 		}
 	}

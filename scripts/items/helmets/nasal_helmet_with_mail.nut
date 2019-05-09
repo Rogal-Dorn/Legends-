@@ -44,6 +44,10 @@ this.nasal_helmet_with_mail <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		switch(_color)
 		{
+		case this.Const.Items.Paint.None:
+			this.m.Variant = 3;
+			break;
+
 		case this.Const.Items.Paint.Black:
 			this.m.Variant = 99;
 			break;

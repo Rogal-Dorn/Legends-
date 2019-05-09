@@ -116,7 +116,7 @@ this.darkflight <- this.inherit("scripts/skills/skill", {
 
 	function onTeleportStart( _tag )
 	{
-		this.Tactical.getNavigator().teleport(_tag.User, _tag.TargetTile, _tag.OnDone, _tag, false);
+		this.Tactical.getNavigator().teleport(_tag.User, _tag.TargetTile, _tag.OnDone, _tag, false, 2.0);
 	}
 
 	function onTeleportDone( _entity, _tag )

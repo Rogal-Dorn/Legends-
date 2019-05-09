@@ -91,148 +91,121 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 	function assignRandomEquipment()
 	{
 		local r;
-		r = this.Math.rand(0, 8);
 
-		if (r <= 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
+			local weapons = [
+				"weapons/longsword",
+				"weapons/greataxe",
+				"weapons/winged_mace",
+				"weapons/hand_axe",
+				"weapons/fighting_axe",
+				"weapons/morning_star",
+				"weapons/arming_sword",
+				"weapons/flail",
+				"weapons/military_cleaver"
+			];
+
 			if (this.Const.DLC.Unhold)
 			{
-				r = this.Math.rand(1, 3);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/longsword"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/greataxe"));
-				}
-				else if (r == 3)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/two_handed_flail"));
-				}
-			}
-			else
-			{
-				r = this.Math.rand(1, 2);
-
-				if (r == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/longsword"));
-				}
-				else if (r == 2)
-				{
-					this.m.Items.equip(this.new("scripts/items/weapons/greataxe"));
-				}
-			}
-		}
-		else
-		{
-			if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/flail"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
+				weapons.extend([
+					"weapons/two_handed_flail"
+				]);
 			}
 
-			if (this.isKindOf(this, "zombie_knight_bodyguard") && this.Math.rand(1, 100) <= 2)
-			{
-				if (this.Math.rand(1, 2) == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/named/named_undead_heater_shield"));
-				}
-				else
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/named/named_undead_kite_shield"));
-				}
-			}
-			else if (this.Math.rand(1, 2) == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/worn_heater_shield"));
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/worn_kite_shield"));
-			}
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		r = this.Math.rand(1, 3);
-		local armor;
-
-		if (r == 1)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
-			armor = this.new("scripts/items/armor/decayed_coat_of_plates");
-		}
-		else if (r == 2)
-		{
-			armor = this.new("scripts/items/armor/decayed_coat_of_scales");
-		}
-		else if (r == 3)
-		{
-			armor = this.new("scripts/items/armor/decayed_reinforced_mail_hauberk");
+			local shields = [
+				"shields/worn_heater_shield",
+				"shields/worn_kite_shield"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
-			armor.setArmor(armor.getArmorMax() / 2 - 1);
-		}
-
-		this.m.Items.equip(armor);
-
-		if (this.Math.rand(1, 100) <= 90)
-		{
-			r = this.Math.rand(1, 3);
-			local helmet;
-
-			if (r == 1)
-			{
-				if (this.Math.rand(1, 4) <= 3)
-				{
-					helmet = this.new("scripts/items/helmets/decayed_closed_flat_top_with_mail");
-				}
-				else
-				{
-					helmet = this.new("scripts/items/helmets/decayed_closed_flat_top_with_sack");
-				}
-			}
-			else if (r == 2)
-			{
-				helmet = this.new("scripts/items/helmets/decayed_full_helm");
-			}
-			else if (r == 3)
-			{
-				helmet = this.new("scripts/items/helmets/decayed_great_helm");
-			}
+			local armor = [
+				"armor/decayed_coat_of_plates",
+				"armor/decayed_coat_of_scales",
+				"armor/decayed_reinforced_mail_hauberk"
+			];
+			local a = this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]);
 
 			if (this.Math.rand(1, 100) <= 33)
 			{
-				helmet.setArmor(helmet.getArmorMax() / 2 - 1);
+				a.setArmor(a.getArmorMax() / 2 - 1);
 			}
 
-			this.m.Items.equip(helmet);
+			this.m.Items.equip(a);
 		}
+
+		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null && this.Math.rand(1, 100) <= 90)
+		{
+			local helmet = [
+				"helmets/decayed_closed_flat_top_with_sack",
+				"helmets/decayed_closed_flat_top_with_mail",
+				"helmets/decayed_closed_flat_top_with_mail",
+				"helmets/decayed_closed_flat_top_with_mail",
+				"helmets/decayed_full_helm",
+				"helmets/decayed_full_helm",
+				"helmets/decayed_full_helm",
+				"helmets/decayed_great_helm",
+				"helmets/decayed_great_helm",
+				"helmets/decayed_great_helm"
+			];
+			local h = this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]);
+
+			if (this.Math.rand(1, 100) <= 33)
+			{
+				h.setArmor(h.getArmorMax() / 2 - 1);
+			}
+
+			this.m.Items.equip(h);
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_axe",
+			"weapons/named/named_cleaver",
+			"weapons/named/named_flail",
+			"weapons/named/named_greataxe",
+			"weapons/named/named_greatsword",
+			"weapons/named/named_mace",
+			"weapons/named/named_two_handed_hammer"
+		];
+
+		if (this.Const.DLC.Unhold)
+		{
+			weapons.extend([
+				"weapons/named/named_two_handed_mace",
+				"weapons/named/named_two_handed_flail"
+			]);
+		}
+
+		local shields = clone this.Const.Items.NamedUndeadShields;
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		}
+
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
+		return true;
 	}
 
 });

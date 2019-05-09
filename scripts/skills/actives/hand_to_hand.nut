@@ -38,53 +38,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
-		local mult = 1.0;
-
-		if (this.getContainer().hasSkill("background.brawler"))
-		{
-			mult = 2.0;
-		}
-
-		local damage_regular_min = this.Math.floor((p.DamageRegularMin + 5) * p.DamageRegularMult * p.DamageTotalMult * mult);
-		local damage_regular_max = this.Math.floor((p.DamageRegularMax + 10) * p.DamageRegularMult * p.DamageTotalMult * mult);
-		local damage_Armor_min = this.Math.floor((p.DamageRegularMin + 5) * p.DamageArmorMult * p.DamageTotalMult * mult);
-		local damage_Armor_max = this.Math.floor((p.DamageRegularMax + 10) * p.DamageArmorMult * p.DamageTotalMult * mult);
-		local damage_direct_max = this.Math.floor(damage_regular_max * this.m.DirectDamageMult);
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
-		ret.push({
-			id = 4,
-			type = "text",
-			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
-		});
-
-		if (damage_Armor_max > 0)
-		{
-			ret.push({
-				id = 5,
-				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_Armor_max + "[/color] armor damage"
-			});
-		}
-
+		local ret = this.getDefaultTooltip();
 		ret.push({
 			id = 6,
 			type = "text",
@@ -97,20 +51,22 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return mainhand == null && this.skill.isUsable();
+		return (mainhand == null || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
 	}
 
 	function isHidden()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return mainhand != null || this.skill.isHidden();
+		return mainhand != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden();
 	}
 
 	function onUpdate( _properties )
 	{
-		if (!this.isHidden())
+		if (this.isUsable())
 		{
-			_properties.DamageArmorMult *= 0.5;
+			_properties.DamageRegularMin = 5;
+			_properties.DamageRegularMax = 10;
+			_properties.DamageArmorMult = 0.5;
 		}
 	}
 
@@ -118,8 +74,6 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMin += 5;
-			_properties.DamageRegularMax += 10;
 			_properties.MeleeSkill -= 10;
 		}
 	}

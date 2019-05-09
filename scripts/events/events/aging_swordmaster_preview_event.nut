@@ -50,7 +50,7 @@ this.aging_swordmaster_preview_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 6 && bro.getBackground().getID() == "background.swordmaster" && !bro.getTags().has("aging_preview") && !bro.getSkills().hasSkill("trait.old"))
+			if (bro.getLevel() >= 6 && bro.getBackground().getID() == "background.swordmaster" && !bro.getTags().has("aging_preview") && !bro.getSkills().hasSkill("trait.old") && !bro.getTags().has("IsRejuvinated"))
 			{
 				candidates.push(bro);
 			}

@@ -14,6 +14,8 @@ this.undead_monolith_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsShowingBanner = false;
 		this.m.VisibilityMult = 0.8;
 		this.m.Resources = 500;
+		this.m.NamedWeaponsList = this.Const.Items.NamedUndeadWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedUndeadShields;
 		this.m.OnEnter = "event.location.monolith_enter";
 	}
 

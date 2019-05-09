@@ -479,9 +479,9 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 					Text = "To Arms!",
 					function getResult()
 					{
-						local unit = clone this.Const.World.Spawn.Troops.Swordmaster;
-						unit.Faction <- this.Contract.m.Target.getFaction();
-						this.Contract.m.Target.getTroops().push(unit);
+						this.Const.World.Common.addTroop(this.Contract.m.Target, {
+							Type = this.Const.World.Spawn.Troops.Swordmaster
+						}, true, this.Contract.getDifficultyMult() >= 1.1 ? 5 : 0);
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, true);
 						return 0;
 					}
@@ -516,7 +516,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 							enemyFaction.getBannerSmall(),
 							this.Const.ZombieBanners[0]
 						];
-						this.Contract.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Necromancer, 100 * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Necromancer, 100 * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, false);
 						return 0;
 					}

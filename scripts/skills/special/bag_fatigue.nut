@@ -18,7 +18,7 @@ this.bag_fatigue <- this.inherit("scripts/skills/skill", {
 
 		foreach( item in items )
 		{
-			if (!hasBagsAndBelts || item.isItemType(this.Const.Items.ItemType.TwoHanded) || item.isItemType(this.Const.Items.ItemType.Shield))
+			if (!hasBagsAndBelts || item.getBlockedSlotType() != null)
 			{
 				_properties.Stamina += item.getStaminaModifier() / 2;
 			}

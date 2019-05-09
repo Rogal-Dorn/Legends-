@@ -181,7 +181,7 @@ this.spooky_forest_event <- this.inherit("scripts/events/event", {
 						properties.Music = this.Const.Music.BeastsTracks;
 						properties.Entities = [];
 						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Schrats, this.Math.rand(90, 110), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Schrats, this.Math.rand(90, 110), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
 					}

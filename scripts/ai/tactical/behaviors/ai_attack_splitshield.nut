@@ -34,6 +34,11 @@ this.ai_attack_splitshield <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		if (_entity.getActionPoints() < _entity.getActionPointsMax() - 2)
+		{
+			score = score * this.Const.AI.Behavior.SplitShieldNotFirstActionMult;
+		}
+
 		this.m.Skill = this.selectSkill(this.m.PossibleSkills);
 
 		if (this.m.Skill == null)

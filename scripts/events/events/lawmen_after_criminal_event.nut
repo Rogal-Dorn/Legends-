@@ -133,7 +133,7 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 						properties.TemporaryEnemies = [
 							_event.m.NobleHouse.getID()
 						];
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Noble, this.Math.rand(80, 100) * _event.getReputationToDifficultyLightMult(), _event.m.NobleHouse.getID());
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Noble, this.Math.rand(80, 100) * _event.getReputationToDifficultyLightMult(), _event.m.NobleHouse.getID());
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
 					}
@@ -202,7 +202,7 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 						properties.TemporaryEnemies = [
 							_event.m.NobleHouse.getID()
 						];
-						_event.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Noble, this.Math.rand(80, 100) * _event.getReputationToDifficultyLightMult(), _event.m.NobleHouse.getID());
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Noble, this.Math.rand(80, 100) * _event.getReputationToDifficultyLightMult(), _event.m.NobleHouse.getID());
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
 					}

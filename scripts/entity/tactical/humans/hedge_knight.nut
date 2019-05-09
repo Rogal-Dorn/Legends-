@@ -51,128 +51,132 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r;
-
-		if (this.Math.rand(1, 100) <= 3)
+		if (this.Math.rand(1, 100) <= 5)
 		{
-			r = this.Math.rand(1, 5);
-
-			if (r == 1)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_flail"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_axe"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_sword"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_greataxe"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_two_handed_hammer"));
-			}
+			this.makeMiniboss();
 		}
-		else
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
+			local weapons = [
+				"weapons/fighting_axe",
+				"weapons/noble_sword",
+				"weapons/arming_sword",
+				"weapons/greatsword",
+				"weapons/greataxe",
+				"weapons/warbrand",
+				"weapons/two_handed_hammer"
+			];
+
 			if (this.Const.DLC.Unhold)
 			{
-				r = this.Math.rand(1, 9);
-			}
-			else
-			{
-				r = this.Math.rand(1, 7);
+				weapons.extend([
+					"weapons/two_handed_flanged_mace",
+					"weapons/two_handed_flail"
+				]);
 			}
 
-			if (r == 1)
+			if (this.Const.DLC.Wildmen)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
+				weapons.extend([
+					"weapons/bardiche"
+				]);
 			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/noble_sword"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
-			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/greataxe"));
-			}
-			else if (r == 6)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-			}
-			else if (r == 7)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/two_handed_hammer"));
-			}
-			else if (r == 8)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/two_handed_flanged_mace"));
-			}
-			else if (r == 9)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/two_handed_flail"));
-			}
+
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 		{
-			r = this.Math.rand(1, 2);
-			local shield;
-
-			if (r == 1)
-			{
-				shield = this.new("scripts/items/shields/kite_shield");
-			}
-			else if (r == 2)
-			{
-				shield = this.new("scripts/items/shields/heater_shield");
-			}
-
-			this.m.Items.equip(shield);
+			local shields = [
+				"shields/heater_shield",
+				"shields/kite_shield"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		r = this.Math.rand(1, 4);
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
+		{
+			local armor = [
+				"armor/coat_of_plates",
+				"armor/coat_of_scales",
+				"armor/reinforced_mail_hauberk",
+				"armor/heavy_lamellar_armor"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+		}
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
+		{
+			local helmet = [
+				"helmets/full_helm",
+				"helmets/closed_flat_top_with_mail"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = [
+			"weapons/named/named_axe",
+			"weapons/named/named_cleaver",
+			"weapons/named/named_greataxe",
+			"weapons/named/named_greatsword",
+			"weapons/named/named_mace",
+			"weapons/named/named_sword",
+			"weapons/named/named_two_handed_hammer",
+			"weapons/named/named_warbrand"
+		];
+
+		if (this.Const.DLC.Unhold)
+		{
+			weapons.extend([
+				"weapons/named/named_two_handed_mace",
+				"weapons/named/named_two_handed_flail"
+			]);
+		}
+
+		if (this.Const.DLC.Wildmen)
+		{
+			weapons.extend([
+				"weapons/named/named_bardiche"
+			]);
+		}
+
+		local shields = clone this.Const.Items.NamedShields;
+		shields.extend([
+			"shields/named/named_bandit_kite_shield",
+			"shields/named/named_bandit_heater_shield"
+		]);
+		local armor = [
+			"armor/named/brown_coat_of_plates_armor",
+			"armor/named/golden_scale_armor",
+			"armor/named/green_coat_of_plates_armor"
+		];
+		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_plates"));
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/coat_of_scales"));
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
-		else if (r == 3)
+		else
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/reinforced_mail_hauberk"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/heavy_lamellar_armor"));
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		r = this.Math.rand(1, 2);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/full_helm"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/helmets/closed_flat_top_with_mail"));
-		}
+		this.m.Skills.add(this.new("scripts/skills/actives/indomitable"));
+		return true;
 	}
 
 });

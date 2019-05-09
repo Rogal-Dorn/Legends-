@@ -624,7 +624,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getBuyPriceMult()
 	{
-		local p = this.getPriceMult();
+		local p = this.getPriceMult() * this.World.Assets.getBuyPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
 
 		if (r < 50)
@@ -642,7 +642,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getSellPriceMult()
 	{
-		local p = this.getPriceMult();
+		local p = this.getPriceMult() * this.World.Assets.getSellPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
 
 		if (r < 50)
@@ -1142,11 +1142,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					if (nextTile.IsOccupied)
 					{
 					}
-					else if (nextTile.Type == this.Const.World.TerrainType.Plains || nextTile.Type == this.Const.World.TerrainType.Highlands || nextTile.Type == this.Const.World.TerrainType.Steppe || nextTile.Type == this.Const.World.TerrainType.Snow || nextTile.Type == this.Const.World.TerrainType.Hills)
+					else if (nextTile.Type == this.Const.World.TerrainType.Plains || nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Steppe || nextTile.Type == this.Const.World.TerrainType.Snow)
 					{
 						candidates.push(nextTile);
 					}
-					else if (nextTile.Type == this.Const.World.TerrainType.Forest || nextTile.Type == this.Const.World.TerrainType.SnowyForest || nextTile.Type == this.Const.World.TerrainType.LeaveForest || nextTile.Type == this.Const.World.TerrainType.AutumnForest || nextTile.Type == this.Const.World.TerrainType.Swamp)
+					else if (nextTile.Type == this.Const.World.TerrainType.Hills || nextTile.Type == this.Const.World.TerrainType.Forest || nextTile.Type == this.Const.World.TerrainType.SnowyForest || nextTile.Type == this.Const.World.TerrainType.LeaveForest || nextTile.Type == this.Const.World.TerrainType.AutumnForest || nextTile.Type == this.Const.World.TerrainType.Swamp)
 					{
 						poorCandidates.push(nextTile);
 					}
@@ -1292,6 +1292,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			bro.setStartValuesEx(draftList);
 			current.push(bro);
 		}
+
+		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
 	}
 
 	function updateImportedProduce()

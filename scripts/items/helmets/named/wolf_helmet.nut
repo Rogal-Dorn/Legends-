@@ -14,7 +14,6 @@ this.wolf_helmet <- this.inherit("scripts/items/helmets/named/named_helmet", {
 			"Predator Crown"
 		];
 		this.m.ShowOnCharacter = true;
-		this.m.IsDroppedAsLoot = true;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
 		this.m.Variant = 48;

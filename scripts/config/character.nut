@@ -571,7 +571,8 @@ gt.Const.ProjectileType <- {
 	Axe = 4,
 	Flask = 5,
 	Flask2 = 6,
-	COUNT = 7
+	Stone = 7,
+	COUNT = 8
 };
 gt.Const.ProjectileDecals <- [
 	[],
@@ -600,7 +601,14 @@ gt.Const.ProjectileDecals <- [
 		"axe_missed_03"
 	],
 	[],
-	[]
+	[],
+	[
+		"detail_stone_00",
+		"detail_stone_01",
+		"detail_stone_02",
+		"detail_stone_03",
+		"detail_stone_04"
+	]
 ];
 gt.Const.ProjectileSprite <- [
 	"",
@@ -609,7 +617,8 @@ gt.Const.ProjectileSprite <- [
 	"projectile_03",
 	"projectile_04",
 	"projectile_05",
-	"projectile_06"
+	"projectile_06",
+	"projectile_07"
 ];
 gt.Const.FliesDecals <- [
 	"detail_flies_01",
@@ -642,6 +651,17 @@ gt.Const.PathfinderMovementAPCost <- [
 	3,
 	3,
 	3
+];
+gt.Const.ImmobileMovementAPCost <- [
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
 ];
 gt.Const.SameMovementAPCost <- [
 	0,
@@ -720,10 +740,12 @@ gt.Const.CharacterProperties <- {
 	FatigueRecoveryRate = 15,
 	FatigueRecoveryRateMult = 1.0,
 	FatigueArmorMult = 1.0,
+	FatigueToInitiativeRate = 1.0,
 	Initiative = 0,
 	InitiativeMult = 1.0,
 	InitiativeForTurnOrderMult = 1.0,
 	InitiativeForTurnOrderAdditional = 0,
+	InitiativeAfterWaitMult = this.Const.Combat.InitiativeAfterWaitMult,
 	MeleeSkill = 0,
 	MeleeSkillMult = 1.0,
 	RangedSkill = 0,
@@ -815,6 +837,7 @@ gt.Const.CharacterProperties <- {
 	IsImmuneToStun = false,
 	IsImmuneToRoot = false,
 	IsImmuneToKnockBackAndGrab = false,
+	IsImmuneToDisarm = false,
 	IsImmuneToSurrounding = false,
 	IsImmuneToBleeding = false,
 	IsImmuneToPoison = false,
@@ -824,6 +847,7 @@ gt.Const.CharacterProperties <- {
 	IsStunned = false,
 	IsMovable = true,
 	IsAbleToUseSkills = true,
+	IsAbleToUseWeaponSkills = true,
 	IsAttackingOnZoneOfControlEnter = false,
 	IsAttackingOnZoneOfControlAlways = false,
 	IsRiposting = false,
@@ -833,6 +857,8 @@ gt.Const.CharacterProperties <- {
 	IsAffectedByInjuries = true,
 	IsAffectedByFreshInjuries = true,
 	IsAffectedByFleeingAllies = true,
+	IsAffectedByDyingAllies = true,
+	IsAffectedByLosingHitpoints = true,
 	IsStealthed = false,
 	IsFleetfooted = false,
 	IsSpecializedInBows = false,

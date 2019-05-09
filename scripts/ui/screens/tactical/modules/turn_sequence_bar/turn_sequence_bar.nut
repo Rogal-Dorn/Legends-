@@ -2,6 +2,7 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
 		CurrentEntities = [],
 		AllEntities = [],
+		TurnPosition = 0,
 		MaxVisibleEntities = 7,
 		CurrentRound = 0,
 		LastRemoveTime = 0,
@@ -125,6 +126,11 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 		return this.m.LastRemoveTime + 2.0 >= this.Time.getRealTimeF();
 	}
 
+	function getTurnPosition()
+	{
+		return this.m.TurnPosition;
+	}
+
 	function create()
 	{
 		this.m.ID = "TurnSequenceBarModule";
@@ -168,7 +174,6 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 
 		if (!this.isRemovingEntity() && this.m.CurrentEntities.len() >= 1)
 		{
-			this.logDebug("inserting entity, index = " + 1);
 			this.m.AllEntities.push(_entity);
 			this.m.CurrentEntities.insert(1, _entity);
 			this.m.JSHandle.call("insertEntity", {
@@ -326,6 +331,7 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 
 			this.m.CurrentEntities[0].onBeforeActivation();
+			this.m.TurnPosition = 0;
 			local entitiesToAdd = this.Math.min(this.m.CurrentEntities.len(), this.m.MaxVisibleEntities);
 
 			for( local i = 0; i < entitiesToAdd; i = ++i )
@@ -380,6 +386,7 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.JSHandle.asyncCall("removeEntity", activeEntity.getID());
 		activeEntity.onTurnEnd();
 		this.m.CurrentEntities.remove(0);
+		++this.m.TurnPosition;
 
 		if (this.m.CurrentEntities.len() >= this.m.MaxVisibleEntities)
 		{
@@ -431,6 +438,7 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.CurrentEntities.remove(0);
 		this.m.CurrentEntities.push(activeEntity);
 		activeEntity.wait();
+		++this.m.TurnPosition;
 		local entityToAddIndex = this.Math.min(this.m.CurrentEntities.len() - 1, this.m.MaxVisibleEntities - 1);
 		this.m.JSHandle.asyncCall("addEntity", this.convertEntityToUIData(this.m.CurrentEntities[entityToAddIndex], entityToAddIndex == this.m.CurrentEntities.len() - 1));
 	}
@@ -775,7 +783,20 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 	{
 		foreach( e in this.m.CurrentEntities )
 		{
-			if (e.getID() != _entity.getID() && e.isAlliedWith(_entity))
+			if (e.getID() != _entity.getID() && e.isAlliedWith(_entity) && !e.getCurrentProperties().IsStunned && e.getMoraleState() != this.Const.MoraleState.Fleeing)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	function isOpponentStillToAct( _entity )
+	{
+		foreach( e in this.m.CurrentEntities )
+		{
+			if (e.getID() != _entity.getID() && !e.isAlliedWith(_entity) && !e.getCurrentProperties().IsStunned && e.getMoraleState() != this.Const.MoraleState.Fleeing)
 			{
 				return true;
 			}
@@ -1218,8 +1239,8 @@ this.turn_sequence_bar <- this.inherit("scripts/ui/screens/ui_module", {
 
 	function compareEntitiesByInitiative( _entity1, _entity2 )
 	{
-		local initiative1 = (_entity1.getInitiative() + _entity1.getCurrentProperties().InitiativeForTurnOrderAdditional) * _entity1.getCurrentProperties().InitiativeForTurnOrderMult * (_entity1.isWaitActionSpent() ? this.Const.Combat.InitiativeAfterWaitMult : 1.0);
-		local initiative2 = (_entity2.getInitiative() + _entity2.getCurrentProperties().InitiativeForTurnOrderAdditional) * _entity2.getCurrentProperties().InitiativeForTurnOrderMult * (_entity2.isWaitActionSpent() ? this.Const.Combat.InitiativeAfterWaitMult : 1.0);
+		local initiative1 = _entity1.getTurnOrderInitiative();
+		local initiative2 = _entity2.getTurnOrderInitiative();
 
 		if (initiative1 > initiative2)
 		{

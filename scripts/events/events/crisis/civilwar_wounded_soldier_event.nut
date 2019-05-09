@@ -124,7 +124,7 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 		_list.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 		r = this.Math.rand(1, 4);
 
@@ -153,7 +153,7 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 		_list.push({
 			id = 10,
 			icon = "ui/items/" + item.getIcon(),
-			text = "You gain " + this.getArticle(item.getName()) + item.getName()
+			text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 		});
 	}
 

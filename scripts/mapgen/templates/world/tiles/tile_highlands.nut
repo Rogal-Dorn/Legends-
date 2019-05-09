@@ -45,7 +45,7 @@ this.tile_highlands <- this.inherit("scripts/mapgen/map_template", {
 			return;
 		}
 
-		tile.Type = this.Const.World.TerrainType.Highlands;
+		tile.Type = this.Const.World.TerrainType.Tundra;
 		tile.TacticalType = this.Const.World.TerrainTacticalType.Highlands;
 		local r = this.Math.rand(1, 100);
 

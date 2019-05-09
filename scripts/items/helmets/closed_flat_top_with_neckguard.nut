@@ -44,6 +44,10 @@ this.closed_flat_top_with_neckguard <- this.inherit("scripts/items/helmets/helme
 	{
 		switch(_color)
 		{
+		case this.Const.Items.Paint.None:
+			this.m.Variant = 17;
+			break;
+
 		case this.Const.Items.Paint.Black:
 			this.m.Variant = 143;
 			break;

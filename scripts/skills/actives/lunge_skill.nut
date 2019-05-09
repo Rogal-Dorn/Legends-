@@ -1,10 +1,10 @@
 this.lunge_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		SoundOnAttack = [
-			"sounds/combat/lunge_attack_01.wav",
-			"sounds/combat/lunge_attack_02.wav",
-			"sounds/combat/lunge_attack_03.wav",
-			"sounds/combat/lunge_attack_04.wav"
+			"sounds/combat/dlc2/lunge_attack_01.wav",
+			"sounds/combat/dlc2/lunge_attack_02.wav",
+			"sounds/combat/dlc2/lunge_attack_03.wav",
+			"sounds/combat/dlc2/lunge_attack_04.wav"
 		]
 	},
 	function create()
@@ -17,16 +17,16 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_135_sw.png";
 		this.m.Overlay = "active_135";
 		this.m.SoundOnUse = [
-			"sounds/combat/lunge_move_01.wav",
-			"sounds/combat/lunge_move_02.wav",
-			"sounds/combat/lunge_move_03.wav",
-			"sounds/combat/lunge_move_04.wav"
+			"sounds/combat/dlc2/lunge_move_01.wav",
+			"sounds/combat/dlc2/lunge_move_02.wav",
+			"sounds/combat/dlc2/lunge_move_03.wav",
+			"sounds/combat/dlc2/lunge_move_04.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/combat/lunge_attack_hit_01.wav",
-			"sounds/combat/lunge_attack_hit_02.wav",
-			"sounds/combat/lunge_attack_hit_03.wav",
-			"sounds/combat/lunge_attack_hit_04.wav"
+			"sounds/combat/dlc2/lunge_attack_hit_01.wav",
+			"sounds/combat/dlc2/lunge_attack_hit_02.wav",
+			"sounds/combat/dlc2/lunge_attack_hit_03.wav",
+			"sounds/combat/dlc2/lunge_attack_hit_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
@@ -36,6 +36,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.HitChanceBonus = 0;

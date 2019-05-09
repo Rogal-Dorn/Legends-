@@ -163,7 +163,7 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 			return;
 		}
 
-		if (this.m.Settlement.isDiscovered() && this.World.getTime().IsDaytime && this.Time.getRealTimeF() - this.m.LastFireTime >= 10.0)
+		if (this.m.Settlement != null && this.m.Settlement.isDiscovered() && this.World.getTime().IsDaytime && this.Time.getRealTimeF() - this.m.LastFireTime >= 10.0)
 		{
 			this.m.LastFireTime = this.Time.getRealTimeF();
 			local smoke = this.Const.World.CampSmokeParticles;

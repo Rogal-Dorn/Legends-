@@ -31,7 +31,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + _event.m.FoundItem.getIcon(),
-					text = "You gain " + _event.getArticle(_event.m.FoundItem.getName()) + _event.m.FoundItem.getName()
+					text = "You gain " + this.Const.Strings.getArticle(_event.m.FoundItem.getName()) + _event.m.FoundItem.getName()
 				});
 			}
 
@@ -173,7 +173,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		]);
 		_vars.push([
 			"finding",
-			this.getArticle(this.m.FoundItem.getName()) + this.m.FoundItem.getName()
+			this.Const.Strings.getArticle(this.m.FoundItem.getName()) + this.m.FoundItem.getName()
 		]);
 	}
 

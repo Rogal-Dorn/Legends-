@@ -15,7 +15,7 @@ this.perk_hold_out <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.NegativeStatusEffectDuration += -1;
+		_properties.NegativeStatusEffectDuration += -5;
 	}
 
 });

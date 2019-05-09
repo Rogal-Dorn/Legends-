@@ -4,11 +4,14 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		MenuStack = null,
 		SelectedScenarioID = null,
 		SelectedCampaignFileName = null,
+		ScenarioManager = null,
 		NewCampaignSettings = null,
 		IsShown = false
 	},
 	function onInit()
 	{
+		this.m.ScenarioManager <- this.new("scripts/scenarios/scenario_manager");
+		this.Const.ScenarioManager <- this.m.ScenarioManager;
 		this.m.MenuStack <- this.new("scripts/ui/global/menu_stack");
 		this.m.MenuStack.setEnviroment(this);
 		this.m.MainMenuScreen <- this.new("scripts/ui/screens/menu/main_menu_screen");
@@ -54,6 +57,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setBanners(this.Const.PlayerBanners);
+		this.m.MainMenuScreen.getNewCampaignMenuModule().setStartingScenarios(this.m.ScenarioManager.getScenariosForUI());
 	}
 
 	function onFinish()
@@ -376,6 +380,13 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 	function campaign_menu_module_onStartPressed( _settings )
 	{
 		this.m.NewCampaignSettings = _settings;
+		this.m.NewCampaignSettings.StartingScenario = this.m.NewCampaignSettings.StartingScenario == "scenario.random" ? this.m.ScenarioManager.getRandomScenario() : this.m.ScenarioManager.getScenario(this.m.NewCampaignSettings.StartingScenario);
+
+		if (this.m.NewCampaignSettings.StartingScenario == null)
+		{
+			this.m.NewCampaignSettings.StartingScenario = this.m.ScenarioManager.getScenario("scenario.tutorial");
+		}
+
 		this.m.SelectedScenarioID = 999;
 		this.LoadingScreen.show();
 	}
@@ -426,12 +437,12 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 			{
 				id = 1,
 				name = "Swipe",
-				description = "[p=c][img]gfx/ui/events/event_25.png[/img][/p]\n[p=c]Few and easy opponents all over a map with lots of terrain features blocking sight. Well suited to get used to lines of sight, fog of war and ranged combat. Easy.[/p]"
+				description = "[p=c][img]gfx/ui/events/event_133.png[/img][/p]\n[p=c]Few and easy opponents all over a map with lots of terrain features blocking sight. Well suited to get used to lines of sight, fog of war and ranged combat. Easy.[/p]"
 			},
 			{
 				id = 4,
 				name = "Early Game",
-				description = "[p=c][img]gfx/ui/events/event_29.png[/img][/p]\n[p=c]A possible early game encounter in enemy composition and equipment available. Moderate difficulty.[/p]"
+				description = "[p=c][img]gfx/ui/events/event_09.png[/img][/p]\n[p=c]A possible early game encounter in enemy composition and equipment available. Moderate difficulty.[/p]"
 			},
 			{
 				id = 15,
@@ -441,7 +452,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 			{
 				id = 6,
 				name = "Line Battle (Undead)",
-				description = "[p=c][img]gfx/ui/events/event_08.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
+				description = "[p=c][img]gfx/ui/events/event_143.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
 			},
 			{
 				id = 9,
@@ -461,7 +472,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 			{
 				id = 3,
 				name = "A Walk in the Woods",
-				description = "[p=c][img]gfx/ui/events/event_46.png[/img][/p]\n[p=c]A possible late game encounter in enemy composition and equipment available. Difficult.[/p]"
+				description = "[p=c][img]gfx/ui/events/event_127.png[/img][/p]\n[p=c]A possible late game encounter in enemy composition and equipment available. Difficult.[/p]"
 			}
 		];
 

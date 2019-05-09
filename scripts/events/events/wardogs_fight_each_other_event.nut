@@ -287,7 +287,7 @@ this.wardogs_fight_each_other_event <- this.inherit("scripts/events/event", {
 
 		foreach( item in stash )
 		{
-			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog"))
+			if (item != null && (item.getID() == "accessory.wardog" || item.getID() == "accessory.armored_wardog" || item.getID() == "accessory.warhound" || item.getID() == "accessory.armored_warhound"))
 			{
 				candidates_wardog.push(item);
 			}

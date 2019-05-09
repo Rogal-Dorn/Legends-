@@ -34,7 +34,8 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Titles = [
 			"the Cripple",
 			"the Maimed",
-			"the Broken"
+			"the Broken",
+			"the Grotesque"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;

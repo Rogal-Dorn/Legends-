@@ -176,7 +176,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 				{
-					if (i == this.Const.World.TerrainType.Highlands || i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Mountains)
+					if (i == this.Const.World.TerrainType.Tundra || i == this.Const.World.TerrainType.Hills || i == this.Const.World.TerrainType.Mountains)
 					{
 					}
 					else
@@ -209,7 +209,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				roam.setNoTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Forest, true);
 				roam.setTerrain(this.Const.World.TerrainType.Hills, true);
-				roam.setTerrain(this.Const.World.TerrainType.Highlands, true);
+				roam.setTerrain(this.Const.World.TerrainType.Tundra, true);
 				roam.setTerrain(this.Const.World.TerrainType.Mountains, true);
 				party.getController().addOrder(roam);
 				return true;
@@ -228,7 +228,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 				{
-					if (i == this.Const.World.TerrainType.Snow || i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.Highlands && isTundraAllowed)
+					if (i == this.Const.World.TerrainType.Snow || i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.Tundra && isTundraAllowed)
 					{
 					}
 					else
@@ -265,7 +265,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				if (isTundraAllowed)
 				{
-					roam.setTerrain(this.Const.World.TerrainType.Highlands, true);
+					roam.setTerrain(this.Const.World.TerrainType.Tundra, true);
 				}
 
 				party.getController().addOrder(roam);
@@ -329,7 +329,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 					return false;
 				}
 
-				if (this.World.getTime().Days < 10 && _nearTile == null)
+				if (this.World.getTime().Days < 15 && _nearTile == null)
 				{
 					return false;
 				}
@@ -374,7 +374,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			this.m.BeastsMedium.push(beast);
 			beast = function ( _action, _nearTile = null )
 			{
-				if (this.World.getTime().Days < 15 && _nearTile == null)
+				if (this.World.getTime().Days < 20 && _nearTile == null)
 				{
 					return false;
 				}
@@ -420,7 +420,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			this.m.BeastsMedium.push(beast);
 			beast = function ( _action, _nearTile = null )
 			{
-				if (this.World.getTime().Days < 20 && _nearTile == null)
+				if (this.World.getTime().Days < 25 && _nearTile == null)
 				{
 					return false;
 				}

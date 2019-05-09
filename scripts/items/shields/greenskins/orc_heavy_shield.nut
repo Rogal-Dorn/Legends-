@@ -16,6 +16,7 @@ this.orc_heavy_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.StaminaModifier = -22;
 		this.m.Condition = 72;
 		this.m.ConditionMax = 72;
+		this.m.FatigueOnSkillUse = 5;
 	}
 
 	function updateVariant()

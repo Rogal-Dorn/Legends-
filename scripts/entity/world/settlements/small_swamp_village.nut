@@ -101,7 +101,7 @@ this.small_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/pig_farm_location", [
 				this.Const.World.TerrainType.Plains,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], []);
 		}
 		else
@@ -112,7 +112,7 @@ this.small_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/pig_farm_location", [
 				this.Const.World.TerrainType.Plains,
 				this.Const.World.TerrainType.Hills,
-				this.Const.World.TerrainType.Highlands
+				this.Const.World.TerrainType.Tundra
 			], []);
 		}
 
@@ -127,7 +127,7 @@ this.small_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.AutumnForest,
 			this.Const.World.TerrainType.LeaveForest,
 			this.Const.World.TerrainType.Hills,
-			this.Const.World.TerrainType.Highlands
+			this.Const.World.TerrainType.Tundra
 		], [], 2);
 	}
 

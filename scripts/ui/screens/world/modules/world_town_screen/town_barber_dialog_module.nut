@@ -174,6 +174,35 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		else if (_layerID == "tattoo")
 		{
 			this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), _change, "", "", temp.getSprite("body").getBrush().Name);
+
+			if (temp.getSprite("tattoo_body").HasBrush)
+			{
+				local name = temp.getSprite("tattoo_body").getBrush().Name;
+				name = this.String.remove(name, "_" + temp.getSprite("body").getBrush().Name);
+				local index = 0;
+
+				foreach( i, s in this.Const.Tattoos.All )
+				{
+					if (s == name)
+					{
+						index = i;
+						break;
+					}
+				}
+
+				if (this.doesBrushExist(this.Const.Tattoos.All[index] + "_head"))
+				{
+					temp.getSprite("tattoo_head").setBrush(this.Const.Tattoos.All[index] + "_head");
+				}
+				else
+				{
+					temp.getSprite("tattoo_head").resetBrush();
+				}
+			}
+			else
+			{
+				temp.getSprite("tattoo_head").resetBrush();
+			}
 		}
 
 		temp.setDirty(true);
@@ -275,7 +304,16 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 		if (_list[index] != "")
 		{
-			_sprite.setBrush(_prefix + (_prefix != "" ? "_" : "") + _midfix + (_midfix != "" ? "_" : "") + _list[index] + (_suffix != "" ? "_" : "") + _suffix);
+			local brush = _prefix + (_prefix != "" ? "_" : "") + _midfix + (_midfix != "" ? "_" : "") + _list[index] + (_suffix != "" ? "_" : "") + _suffix;
+
+			if (this.doesBrushExist(brush))
+			{
+				_sprite.setBrush(brush);
+			}
+			else
+			{
+				_sprite.resetBrush();
+			}
 		}
 		else
 		{

@@ -689,7 +689,7 @@ gt.Const.World.LocationNames.OrcCave <- [
 	"Bonebreaker\'s Cavern",
 	"Cavern of the Boar",
 	"Greenskin\'s Den",
-	"Cavern of lost Screams",
+	"Cavern of Lost Screams",
 	"Plunderer\'s Den",
 	"Cave of the Flesheaters",
 	"Skullsmasher\'s Grotto",
@@ -699,5 +699,53 @@ gt.Const.World.LocationNames.OrcCave <- [
 	"Grunter\'s Grotto",
 	"Orc infested Cave",
 	"Flesheater\'s Cavern"
+];
+gt.Const.World.LocationNames.BarbarianShelter <- [
+	"Barbarian Tents",
+	"Free People\'s Hideout",
+	"Barbarian Fur Huts",
+	"Makeshift Fur Huts",
+	"Thrall\'s Shelter",
+	"Tribal Hovels",
+	"Tribal Shacks",
+	"Raider\'s Tents",
+	"Tribal Jurts",
+	"Jurts of the Free Folk",
+	"Northern Jurts",
+	"Nordic Huts",
+	"Outpost of the Tribes",
+	"Tribal Vanguard",
+	"Barbarian Outpost"
+];
+gt.Const.World.LocationNames.BarbarianCamp <- [
+	"Barbarian Encampment",
+	"Tribal Camp",
+	"Reaver\'s Basecamp",
+	"Pillager\'s Jurts",
+	"Slavetaker\'s Rest",
+	"Northern Hideout",
+	"Makeshift Barbarian Camp",
+	"Barbarian Hideaway",
+	"Defended Barbarian Camp",
+	"Reaver\'s Jurts",
+	"Clansmen\'s Retreat",
+	"Jurts of the Ancestors",
+	"Camp of the Slavetakers"
+];
+gt.Const.World.LocationNames.BarbarianSanctuary <- [
+	"Champion\'s Rallyfield",
+	"Stone of the Ancients",
+	"Barbarian War Camp",
+	"Ancestors\' Jurt City",
+	"Rallying Stone of the Elders",
+	"Forefather\'s Gathering",
+	"Barbarians\'s Place of Power",
+	"Tribal Warriors Camp",
+	"Barbarian\'s Ritual Site",
+	"Fur Tent Encampment",
+	"Camp of the Ancestors",
+	"Sacrifical Altar",
+	"Altar of the Ancestors",
+	"Fortified Barbarian Huts"
 ];
 

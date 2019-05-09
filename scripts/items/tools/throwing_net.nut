@@ -100,5 +100,10 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(this.new("scripts/skills/actives/throw_net"));
 	}
 
+	function playInventorySound( _eventType )
+	{
+		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
+	}
+
 });
 

@@ -34,6 +34,7 @@ this.split_shield <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsUsingHitchance = false;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsWeaponSkill = true;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;

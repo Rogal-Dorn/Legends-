@@ -156,7 +156,7 @@ this.event_manager <- {
 
 		if (this.m.ActiveEvent != null)
 		{
-			if (!this.m.IsEventShown && this.m.ActiveEvent.getScore() != 0)
+			if (!this.m.IsEventShown && (this.m.ActiveEvent.getScore() != 0 || this.m.ActiveEvent.isSpecial()))
 			{
 				if (this.m.ActiveEvent.getScore() < 500)
 				{

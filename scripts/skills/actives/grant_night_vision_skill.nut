@@ -1,5 +1,7 @@
 this.grant_night_vision_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		IsSpent = false
+	},
 	function create()
 	{
 		this.m.ID = "actives.grant_night_vision";
@@ -27,11 +29,16 @@ this.grant_night_vision_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
+		this.m.ActionPointCost = 3;
+		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 7;
 		this.m.MaxLevelDifference = 4;
+	}
+
+	function isUsable()
+	{
+		return this.skill.isUsable() && !this.m.IsSpent;
 	}
 
 	function isViableTarget( _user, _target )
@@ -51,6 +58,7 @@ this.grant_night_vision_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		this.m.IsSpent = true;
 		local targets = [];
 
 		if (_targetTile.IsOccupiedByActor)
@@ -96,6 +104,11 @@ this.grant_night_vision_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true;
+	}
+
+	function onTurnStart()
+	{
+		this.m.IsSpent = false;
 	}
 
 });

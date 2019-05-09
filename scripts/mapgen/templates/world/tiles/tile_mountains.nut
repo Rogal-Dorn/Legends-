@@ -50,7 +50,7 @@ this.tile_mountains <- this.inherit("scripts/mapgen/map_template", {
 				{
 					forest = ++forest;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Highlands)
+				else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
 				{
 					highlands = ++highlands;
 				}
@@ -137,7 +137,7 @@ this.tile_mountains <- this.inherit("scripts/mapgen/map_template", {
 			{
 				local nextTile = _tile.getNextTile(i);
 
-				if (nextTile.Type == this.Const.World.TerrainType.Highlands || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Highlands)
+				if (nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Tundra)
 				{
 					tundra = ++tundra;
 				}

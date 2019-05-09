@@ -22,39 +22,39 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.RenderAnimationDistanceMult = 3.0;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/krake_hurt_01.wav",
-			"sounds/enemies/krake_hurt_02.wav",
-			"sounds/enemies/krake_hurt_03.wav",
-			"sounds/enemies/krake_hurt_04.wav",
-			"sounds/enemies/krake_hurt_05.wav"
+			"sounds/enemies/dlc2/krake_hurt_01.wav",
+			"sounds/enemies/dlc2/krake_hurt_02.wav",
+			"sounds/enemies/dlc2/krake_hurt_03.wav",
+			"sounds/enemies/dlc2/krake_hurt_04.wav",
+			"sounds/enemies/dlc2/krake_hurt_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/krake_death_01.wav",
-			"sounds/enemies/krake_death_02.wav",
-			"sounds/enemies/krake_death_03.wav",
-			"sounds/enemies/krake_death_04.wav"
+			"sounds/enemies/dlc2/krake_death_01.wav",
+			"sounds/enemies/dlc2/krake_death_02.wav",
+			"sounds/enemies/dlc2/krake_death_03.wav",
+			"sounds/enemies/dlc2/krake_death_04.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/krake_idle_01.wav",
-			"sounds/enemies/krake_idle_02.wav",
-			"sounds/enemies/krake_idle_03.wav",
-			"sounds/enemies/krake_idle_04.wav",
-			"sounds/enemies/krake_idle_05.wav",
-			"sounds/enemies/krake_idle_06.wav",
-			"sounds/enemies/krake_idle_07.wav",
-			"sounds/enemies/krake_idle_08.wav",
-			"sounds/enemies/krake_idle_09.wav",
-			"sounds/enemies/krake_idle_10.wav",
-			"sounds/enemies/krake_idle_11.wav",
-			"sounds/enemies/krake_idle_12.wav",
-			"sounds/enemies/krake_idle_13.wav",
-			"sounds/enemies/krake_idle_14.wav"
+			"sounds/enemies/dlc2/krake_idle_01.wav",
+			"sounds/enemies/dlc2/krake_idle_02.wav",
+			"sounds/enemies/dlc2/krake_idle_03.wav",
+			"sounds/enemies/dlc2/krake_idle_04.wav",
+			"sounds/enemies/dlc2/krake_idle_05.wav",
+			"sounds/enemies/dlc2/krake_idle_06.wav",
+			"sounds/enemies/dlc2/krake_idle_07.wav",
+			"sounds/enemies/dlc2/krake_idle_08.wav",
+			"sounds/enemies/dlc2/krake_idle_09.wav",
+			"sounds/enemies/dlc2/krake_idle_10.wav",
+			"sounds/enemies/dlc2/krake_idle_11.wav",
+			"sounds/enemies/dlc2/krake_idle_12.wav",
+			"sounds/enemies/dlc2/krake_idle_13.wav",
+			"sounds/enemies/dlc2/krake_idle_14.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
-			"sounds/enemies/krake_enraging_01.wav",
-			"sounds/enemies/krake_enraging_02.wav",
-			"sounds/enemies/krake_enraging_03.wav",
-			"sounds/enemies/krake_enraging_04.wav"
+			"sounds/enemies/dlc2/krake_enraging_01.wav",
+			"sounds/enemies/dlc2/krake_enraging_02.wav",
+			"sounds/enemies/dlc2/krake_enraging_03.wav",
+			"sounds/enemies/dlc2/krake_enraging_04.wav"
 		];
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1] = 1.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 1.5;
@@ -267,6 +267,7 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsMovable = false;
 		b.IsAffectedByInjuries = false;
 		b.IsRooted = true;
+		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

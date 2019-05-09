@@ -23,9 +23,12 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			}
 		}
 
+		this.__ping();
+
 		while (true)
 		{
 			this.buildLandAndSea(_rect);
+			this.__ping();
 
 			if (!this.isWorldAcceptable(_rect))
 			{
@@ -39,18 +42,31 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			}
 		}
 
+		this.__ping();
 		this.buildElevation(_rect);
+		this.__ping();
 		this.buildTerrain(_rect);
+		this.__ping();
 		this.defragmentTerrain(_rect);
+		this.__ping();
 		this.removeStraits(_rect);
+		this.__ping();
 		this.refineTerrain(_rect, _properties);
+		this.__ping();
 		this.buildSettlements(_rect);
+		this.__ping();
 		this.buildRoads(_rect, _properties);
+		this.__ping();
 		this.refineSettlements(_rect);
+		this.__ping();
 		this.guaranteeAllBuildingsInSettlements();
+		this.__ping();
 		this.buildAdditionalRoads(_rect, _properties);
+		this.__ping();
 		this.buildRoadSprites(_rect, _properties);
+		this.__ping();
 		this.buildLabels(_rect);
+		this.__ping();
 	}
 
 	function isWorldAcceptable( _rect )
@@ -813,7 +829,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 							{
 								chance = chance + -200;
 							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Highlands)
+							else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
 							{
 								chance = chance + 100;
 							}
@@ -823,7 +839,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					if (this.Math.rand(1, 100) <= chance)
 					{
 						tile.Type = 0;
-						this.m.Tiles[this.Const.World.TerrainType.Highlands].fill({
+						this.m.Tiles[this.Const.World.TerrainType.Tundra].fill({
 							X = x,
 							Y = y,
 							W = 1,

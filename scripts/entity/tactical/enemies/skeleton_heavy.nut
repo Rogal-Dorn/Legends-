@@ -42,54 +42,52 @@ this.skeleton_heavy <- this.inherit("scripts/entity/tactical/skeleton", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 5);
-
-		if (r == 1)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/khopesh"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/warscythe"));
+			local weapons = [
+				"weapons/ancient/ancient_sword",
+				"weapons/ancient/crypt_cleaver",
+				"weapons/ancient/rhomphaia",
+				"weapons/ancient/khopesh",
+				"weapons/ancient/warscythe"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
-		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 		}
 
-		r = this.Math.rand(1, 4);
-
-		if (r == 1)
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_plated_scale_hauberk"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_scale_coat"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_plate_harness"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/ancient/ancient_plated_mail_hauberk"));
+			local armor = [
+				"armor/ancient/ancient_plated_scale_hauberk",
+				"armor/ancient/ancient_scale_coat",
+				"armor/ancient/ancient_plate_harness",
+				"armor/ancient/ancient_plated_mail_hauberk"
+			];
+			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_honorguard_helmet"));
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
+		{
+			this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_honorguard_helmet"));
+		}
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		local weapons = this.Const.Items.NamedUndeadWeapons;
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_devastating_strikes"));
+		return true;
 	}
 
 });

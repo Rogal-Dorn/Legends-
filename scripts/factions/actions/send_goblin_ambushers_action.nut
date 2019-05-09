@@ -85,19 +85,25 @@ this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		party.getLoot().ArmorParts = this.Math.rand(0, 10);
 		party.getLoot().Medicine = this.Math.rand(0, 3);
 		party.getLoot().Ammo = this.Math.rand(10, 30);
-		local r = this.Math.rand(1, 4);
 
-		if (r == 1)
+		if (this.Math.rand(1, 100) <= 75)
 		{
-			party.addToInventory("supplies/strange_meat_item");
+			local loot = [
+				"supplies/strange_meat_item",
+				"supplies/roots_and_berries_item",
+				"supplies/pickled_mushrooms_item"
+			];
+			party.addToInventory(loot[this.Math.rand(0, loot.len() - 1)]);
 		}
-		else if (r == 2)
+
+		if (this.Math.rand(1, 100) <= 33)
 		{
-			party.addToInventory("supplies/roots_and_berries_item");
-		}
-		else if (r == 3)
-		{
-			party.addToInventory("supplies/pickled_mushrooms_item");
+			local loot = [
+				"loot/goblin_carved_ivory_iconographs_item",
+				"loot/goblin_minted_coins_item",
+				"loot/goblin_rank_insignia_item"
+			];
+			party.addToInventory(loot[this.Math.rand(0, loot.len() - 1)]);
 		}
 
 		local c = party.getController();

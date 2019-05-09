@@ -15,7 +15,8 @@ var CharacterScreenDatasourceIdentifier =
 {
 	Brother:
     {
-		ListLoaded: 'brothers.list-loaded',
+        ListLoaded: 'brothers.list-loaded',
+        SettingsChanged: 'brothers.settings-changed',
 		Updated: 'brother.updated',
 		Selected: 'brother.selected'
 	},
@@ -145,7 +146,8 @@ CharacterScreenDatasource.prototype.createEventChannels = function()
 {
     this.mEventListener[ErrorCode.Key] = [ ];
 
-	this.mEventListener[CharacterScreenDatasourceIdentifier.Brother.ListLoaded] = [ ];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Brother.ListLoaded] = [];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Brother.SettingsChanged] = [];
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Brother.Updated] = [ ];
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Brother.Selected] = [ ];
 
@@ -556,6 +558,15 @@ CharacterScreenDatasource.prototype.selectedBrotherById = function(_brotherId, _
 		{
 			this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.Selected, this.getSelectedBrother());
 		}
+	}
+};
+
+CharacterScreenDatasource.prototype.setRosterLimit = function(_data, _withoutNotify)
+{
+    // notify every listener
+	if (_withoutNotify === undefined || _withoutNotify !== true)
+	{
+        this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.SettingsChanged, _data);
 	}
 };
 

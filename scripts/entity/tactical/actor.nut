@@ -75,7 +75,8 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		IsResurrected = false,
 		IsEmittingMovementSounds = true,
 		IsHidingHelmet = false,
-		IsGeneratingKillName = true
+		IsGeneratingKillName = true,
+		IsMiniboss = false
 	},
 	function getType()
 	{
@@ -200,6 +201,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		return this.Math.floor(this.m.CurrentProperties.Stamina * (this.m.CurrentProperties.StaminaMult >= 0 ? this.m.CurrentProperties.StaminaMult : 1.0 / this.m.CurrentProperties.StaminaMult));
 	}
 
+	function getFatiguePct()
+	{
+		return this.Math.minf(1.0, this.m.Fatigue / this.Math.maxf(1.0, this.getFatigueMax()));
+	}
+
 	function setFatigue( _f )
 	{
 		this.m.Fatigue = this.Math.max(0, this.Math.round(_f));
@@ -208,7 +214,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function getInitiative()
 	{
-		return this.Math.round(this.m.CurrentProperties.Initiative * (this.m.CurrentProperties.InitiativeMult >= 0 ? this.m.CurrentProperties.InitiativeMult : 1.0 / this.m.CurrentProperties.InitiativeMult) - this.m.Fatigue - this.Math.max(0, this.m.BaseProperties.Stamina - this.m.CurrentProperties.Stamina));
+		return this.Math.round(this.m.CurrentProperties.Initiative * (this.m.CurrentProperties.InitiativeMult >= 0 ? this.m.CurrentProperties.InitiativeMult : 1.0 / this.m.CurrentProperties.InitiativeMult) - this.m.Fatigue * this.m.CurrentProperties.FatigueToInitiativeRate - this.Math.max(0, this.m.BaseProperties.Stamina - this.m.CurrentProperties.Stamina));
+	}
+
+	function getTurnOrderInitiative()
+	{
+		return (this.getInitiative() + this.getCurrentProperties().InitiativeForTurnOrderAdditional) * this.getCurrentProperties().InitiativeForTurnOrderMult * (this.isWaitActionSpent() ? this.getCurrentProperties().InitiativeAfterWaitMult : 1.0);
 	}
 
 	function getXPValue()
@@ -291,6 +302,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	function getSoundVolume( _t )
 	{
 		return this.m.SoundVolume[_t];
+	}
+
+	function getActionPointCostsRaw()
+	{
+		return this.m.ActionPointCosts;
 	}
 
 	function getActionPointCosts()
@@ -818,7 +834,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	{
 		if (!this.isPlacedOnMap() || this.isDiscovered())
 		{
-			return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket,arrow)";
+			return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",socket,miniboss,arrow)";
 		}
 		else
 		{
@@ -1382,6 +1398,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		{
 			this.setDiscovered(true);
 			this.getTile().addVisibilityForFaction(this.Const.Faction.Player);
+			this.getTile().addVisibilityForCurrentEntity();
 		}
 
 		if (this.m.Skills.hasSkill("perk.steel_brow"))
@@ -1589,9 +1606,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage");
 			}
 
-			if (this.m.MoraleState != this.Const.MoraleState.Ignore && damage > this.Const.Morale.OnHitMinDamage)
+			if (this.m.MoraleState != this.Const.MoraleState.Ignore && damage > this.Const.Morale.OnHitMinDamage && this.getCurrentProperties().IsAffectedByLosingHitpoints)
 			{
-				if (!this.isPlayerControlled() || !this.m.Skills.hasSkill("trait.deathwish") && !this.m.Skills.hasSkill("effects.berserker_mushrooms"))
+				if (!this.isPlayerControlled() || !this.m.Skills.hasSkill("effects.berserker_mushrooms"))
 				{
 					this.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - this.getHitpoints() / this.getHitpointsMax()), this.Const.MoraleCheckType.Default, "", true);
 				}
@@ -1667,7 +1684,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return;
 		}
 
-		if (_victim.getFaction() == this.getFaction() && _victim.getCurrentProperties().TargetAttractionMult > 0.5)
+		if (_victim.getFaction() == this.getFaction() && _victim.getCurrentProperties().TargetAttractionMult > 0.5 && this.getCurrentProperties().IsAffectedByDyingAllies)
 		{
 			local difficulty = this.Const.Morale.AllyKilledBaseDifficulty - _victim.getXPValue() * this.Const.Morale.AllyKilledXPMult + this.Math.pow(_victim.getTile().getDistanceTo(this.getTile()), this.Const.Morale.AllyKilledDistancePow);
 			this.checkMorale(-1, difficulty, this.Const.MoraleCheckType.Default, "", true);
@@ -2518,9 +2535,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	{
 		if (!this.isPlayerControlled())
 		{
-			if (this.Const.Movement.AnnounceDiscoveredEntities)
+			if (this.getFaction() != this.Const.Faction.Player && this.getFaction() != this.Const.Faction.PlayerAnimals)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " discovered!");
+				if (this.Const.Movement.AnnounceDiscoveredEntities)
+				{
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " discovered!");
+				}
 			}
 
 			this.setDirty(true);
@@ -3109,6 +3129,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			_killer = null;
 		}
 
+		if (this.m.IsMiniboss && !this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
+		{
+			this.updateAchievement("GiveMeThat", 1, 1);
+		}
+
 		this.m.IsDying = true;
 		local isReallyDead = _killer == this || this.isReallyKilled(_fatalityType);
 
@@ -3248,7 +3273,10 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		}
 		else
 		{
-			this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.EnemyDestroyed);
+			if (!this.Tactical.State.isAutoRetreat())
+			{
+				this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.EnemyDestroyed);
+			}
 
 			if (_killer != null && _killer.isPlayerControlled() && !this.Tactical.State.isScenarioMode() && this.World.FactionManager.getFaction(this.getFaction()) != null && !this.World.FactionManager.getFaction(this.getFaction()).isTemporaryEnemy())
 			{
@@ -3430,6 +3458,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function addDefaultStatusSprites()
 	{
+		this.addSprite("miniboss");
 		local hex = this.addSprite("status_hex");
 		hex.Visible = false;
 		local stunned = this.addSprite("status_stunned");
@@ -3474,6 +3503,19 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function assignRandomEquipment()
 	{
+	}
+
+	function makeMiniboss()
+	{
+		if (!this.Const.DLC.Wildmen)
+		{
+			return false;
+		}
+
+		this.m.XP *= 1.5;
+		this.m.Skills.add(this.new("scripts/skills/racial/champion_racial"));
+		this.m.IsMiniboss = true;
+		return true;
 	}
 
 	function isArmed()

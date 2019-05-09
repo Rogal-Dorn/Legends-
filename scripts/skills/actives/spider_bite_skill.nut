@@ -9,19 +9,19 @@ this.spider_bite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/active_115.png";
 		this.m.Overlay = "active_115";
 		this.m.SoundOnUse = [
-			"sounds/enemies/giant_spider_attack_01.wav",
-			"sounds/enemies/giant_spider_attack_02.wav",
-			"sounds/enemies/giant_spider_attack_03.wav",
-			"sounds/enemies/giant_spider_attack_04.wav",
-			"sounds/enemies/giant_spider_attack_05.wav"
+			"sounds/enemies/dlc2/giant_spider_attack_01.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_02.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_03.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_04.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_05.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/enemies/giant_spider_attack_hit_01.wav",
-			"sounds/enemies/giant_spider_attack_hit_02.wav",
-			"sounds/enemies/giant_spider_attack_hit_03.wav",
-			"sounds/enemies/giant_spider_attack_hit_04.wav",
-			"sounds/enemies/giant_spider_attack_hit_05.wav",
-			"sounds/enemies/giant_spider_attack_hit_06.wav"
+			"sounds/enemies/dlc2/giant_spider_attack_hit_01.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_hit_02.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_hit_03.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_hit_04.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_hit_05.wav",
+			"sounds/enemies/dlc2/giant_spider_attack_hit_06.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;

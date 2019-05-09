@@ -125,30 +125,35 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
-				if (this.Const.DLC.Unhold)
-				{
-					local r = this.Math.rand(1, 100);
-					local loot;
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
-					if (r <= 35)
+				for( local i = 0; i < n; i = ++i )
+				{
+					if (this.Const.DLC.Unhold)
 					{
-						loot = this.new("scripts/items/misc/lindwurm_blood_item");
-					}
-					else if (r <= 70)
-					{
-						loot = this.new("scripts/items/misc/lindwurm_scales_item");
+						local r = this.Math.rand(1, 100);
+						local loot;
+
+						if (r <= 35)
+						{
+							loot = this.new("scripts/items/misc/lindwurm_blood_item");
+						}
+						else if (r <= 70)
+						{
+							loot = this.new("scripts/items/misc/lindwurm_scales_item");
+						}
+						else
+						{
+							loot = this.new("scripts/items/misc/lindwurm_bones_item");
+						}
+
+						loot.drop(_tile);
 					}
 					else
 					{
-						loot = this.new("scripts/items/misc/lindwurm_bones_item");
+						local loot = this.new("scripts/items/tools/acid_flask_item");
+						loot.drop(_tile);
 					}
-
-					loot.drop(_tile);
-				}
-				else
-				{
-					local loot = this.new("scripts/items/tools/acid_flask_item");
-					loot.drop(_tile);
 				}
 
 				if (!this.Const.DLC.Unhold || this.Math.rand(1, 100) <= 33)
@@ -225,6 +230,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToKnockBackAndGrab = true;
 		b.IsImmuneToStun = true;
 		b.IsMovable = false;
+		b.IsImmuneToDisarm = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 170)
 		{

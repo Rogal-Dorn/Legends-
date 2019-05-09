@@ -638,6 +638,11 @@ this.traveler_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.Const.DLC.Wildmen && currentTile.SquareCoords.Y > this.World.getMapSize().Y * 0.7)
+		{
+			return;
+		}
+
 		this.m.Score = 15;
 	}
 

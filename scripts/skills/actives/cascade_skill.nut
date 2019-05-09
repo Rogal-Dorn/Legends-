@@ -27,6 +27,7 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsShieldRelevant = false;
+		this.m.IsWeaponSkill = true;
 		this.m.Delay = 250;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;

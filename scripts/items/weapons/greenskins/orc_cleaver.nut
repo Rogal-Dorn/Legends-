@@ -25,18 +25,7 @@ this.orc_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.1;
 		this.m.DirectDamageMult = 0.25;
-	}
-
-	function getTooltip()
-	{
-		local ret = this.weapon.getTooltip();
-		ret.push({
-			id = 18,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
-		});
-		return ret;
+		this.m.FatigueOnSkillUse = 5;
 	}
 
 	function onEquip()
@@ -44,10 +33,8 @@ this.orc_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		local skill;
 		skill = this.new("scripts/skills/actives/cleave");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/decapitate");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 	}
 

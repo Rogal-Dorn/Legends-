@@ -11,46 +11,46 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/schrat_shield_damage_01.wav",
-			"sounds/enemies/schrat_shield_damage_02.wav",
-			"sounds/enemies/schrat_shield_damage_03.wav",
-			"sounds/enemies/schrat_shield_damage_04.wav",
-			"sounds/enemies/schrat_shield_damage_05.wav"
+			"sounds/enemies/dlc2/schrat_shield_damage_01.wav",
+			"sounds/enemies/dlc2/schrat_shield_damage_02.wav",
+			"sounds/enemies/dlc2/schrat_shield_damage_03.wav",
+			"sounds/enemies/dlc2/schrat_shield_damage_04.wav",
+			"sounds/enemies/dlc2/schrat_shield_damage_05.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other1] = [
-			"sounds/enemies/schrat_hurt_shield_down_01.wav",
-			"sounds/enemies/schrat_hurt_shield_down_02.wav",
-			"sounds/enemies/schrat_hurt_shield_down_03.wav",
-			"sounds/enemies/schrat_hurt_shield_down_04.wav",
-			"sounds/enemies/schrat_hurt_shield_down_05.wav",
-			"sounds/enemies/schrat_hurt_shield_down_06.wav"
+			"sounds/enemies/dlc2/schrat_hurt_shield_down_01.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_down_02.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_down_03.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_down_04.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_down_05.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_down_06.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Other2] = [
-			"sounds/enemies/schrat_hurt_shield_up_01.wav",
-			"sounds/enemies/schrat_hurt_shield_up_02.wav",
-			"sounds/enemies/schrat_hurt_shield_up_03.wav",
-			"sounds/enemies/schrat_hurt_shield_up_04.wav",
-			"sounds/enemies/schrat_hurt_shield_up_05.wav",
-			"sounds/enemies/schrat_hurt_shield_up_06.wav"
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_01.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_02.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_03.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_04.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_05.wav",
+			"sounds/enemies/dlc2/schrat_hurt_shield_up_06.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
-			"sounds/enemies/schrat_death_01.wav",
-			"sounds/enemies/schrat_death_02.wav",
-			"sounds/enemies/schrat_death_03.wav",
-			"sounds/enemies/schrat_death_04.wav",
-			"sounds/enemies/schrat_death_05.wav",
-			"sounds/enemies/schrat_death_06.wav"
+			"sounds/enemies/dlc2/schrat_death_01.wav",
+			"sounds/enemies/dlc2/schrat_death_02.wav",
+			"sounds/enemies/dlc2/schrat_death_03.wav",
+			"sounds/enemies/dlc2/schrat_death_04.wav",
+			"sounds/enemies/dlc2/schrat_death_05.wav",
+			"sounds/enemies/dlc2/schrat_death_06.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/schrat_idle_01.wav",
-			"sounds/enemies/schrat_idle_02.wav",
-			"sounds/enemies/schrat_idle_03.wav",
-			"sounds/enemies/schrat_idle_04.wav",
-			"sounds/enemies/schrat_idle_05.wav",
-			"sounds/enemies/schrat_idle_06.wav",
-			"sounds/enemies/schrat_idle_07.wav",
-			"sounds/enemies/schrat_idle_08.wav",
-			"sounds/enemies/schrat_idle_09.wav",
+			"sounds/enemies/dlc2/schrat_idle_01.wav",
+			"sounds/enemies/dlc2/schrat_idle_02.wav",
+			"sounds/enemies/dlc2/schrat_idle_03.wav",
+			"sounds/enemies/dlc2/schrat_idle_04.wav",
+			"sounds/enemies/dlc2/schrat_idle_05.wav",
+			"sounds/enemies/dlc2/schrat_idle_06.wav",
+			"sounds/enemies/dlc2/schrat_idle_07.wav",
+			"sounds/enemies/dlc2/schrat_idle_08.wav",
+			"sounds/enemies/dlc2/schrat_idle_09.wav",
 			"sounds/ambience/terrain/forest_branch_crack_00.wav",
 			"sounds/ambience/terrain/forest_branch_crack_01.wav",
 			"sounds/ambience/terrain/forest_branch_crack_02.wav",
@@ -126,23 +126,28 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 
 			if ((_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals) && this.Math.rand(1, 100) <= 90)
 			{
-				local r = this.Math.rand(1, 100);
-				local loot;
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
-				if (r <= 40)
+				for( local i = 0; i < n; i = ++i )
 				{
-					loot = this.new("scripts/items/misc/ancient_wood_item");
-				}
-				else if (r <= 80)
-				{
-					loot = this.new("scripts/items/misc/glowing_resin_item");
-				}
-				else
-				{
-					loot = this.new("scripts/items/misc/heart_of_the_forest_item");
-				}
+					local r = this.Math.rand(1, 100);
+					local loot;
 
-				loot.drop(_tile);
+					if (r <= 40)
+					{
+						loot = this.new("scripts/items/misc/ancient_wood_item");
+					}
+					else if (r <= 80)
+					{
+						loot = this.new("scripts/items/misc/glowing_resin_item");
+					}
+					else
+					{
+						loot = this.new("scripts/items/misc/heart_of_the_forest_item");
+					}
+
+					loot.drop(_tile);
+				}
 			}
 		}
 
@@ -173,6 +178,7 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToDisarm = true;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 250)
 		{

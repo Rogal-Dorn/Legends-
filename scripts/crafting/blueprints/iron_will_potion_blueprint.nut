@@ -5,7 +5,7 @@ this.iron_will_potion_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.blueprint.create();
 		this.m.ID = "blueprint.iron_will_potion";
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/iron_will_potion_item");
-		this.m.Cost = 250;
+		this.m.Cost = 200;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/adrenaline_gland_item",

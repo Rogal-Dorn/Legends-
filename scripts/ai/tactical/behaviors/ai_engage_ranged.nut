@@ -18,6 +18,7 @@ this.ai_engage_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.aimed_shot",
 			"actives.shoot_bolt",
 			"actives.shoot_stake",
+			"actives.sling_stone",
 			"actives.miasma",
 			"actives.horror",
 			"actives.root",
@@ -220,7 +221,9 @@ this.ai_engage_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
-		if (this.m.TargetTile.getZoneOfControlCount(_entity.getFaction()) > myTile.getZoneOfControlCount(_entity.getFaction()))
+		local distToTarget = this.m.TargetTile.getDistanceTo(myTile);
+
+		if (this.m.TargetTile.getZoneOfControlCount(_entity.getFaction()) + (distToTarget == 1 ? -1 : 0) > myTile.getZoneOfControlCount(_entity.getFaction()))
 		{
 			if (this.Const.AI.VerboseMode)
 			{
@@ -560,7 +563,7 @@ this.ai_engage_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 							{
 								local tile = t.Tile.getNextTile(i);
 
-								if (tile.IsEmpty)
+								if (tile.IsEmpty || tile.ID == myTile.ID)
 								{
 								}
 								else
@@ -770,7 +773,6 @@ this.ai_engage_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 		local currentDanger = 0.0;
 		local potentialDanger = [];
 		local time = this.Time.getExactTime();
-		this.m.ValidTargets <- [];
 
 		foreach( target in _targets )
 		{

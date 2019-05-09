@@ -14,6 +14,8 @@ this.orc_fortress_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsShowingBanner = true;
 		this.m.IsDespawningDefenders = false;
 		this.m.Resources = 500;
+		this.m.NamedWeaponsList = this.Const.Items.NamedOrcWeapons;
+		this.m.NamedShieldsList = this.Const.Items.NamedOrcShields;
 	}
 
 	function onSpawned()

@@ -14,6 +14,7 @@ this.bandit_ruins_location <- this.inherit("scripts/entity/world/location", {
 		this.m.IsShowingBanner = false;
 		this.setDefenderSpawnList(this.Const.World.Spawn.BanditDefenders);
 		this.m.Resources = 150;
+		this.m.NamedShieldsList = this.Const.Items.NamedBanditShields;
 	}
 
 	function onSpawned()

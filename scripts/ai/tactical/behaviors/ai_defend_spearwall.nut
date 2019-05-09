@@ -58,6 +58,11 @@ this.ai_defend_spearwall <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		if (_entity.getSkills().hasSkill("effects.adrenaline"))
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		local targets = this.getPotentialDanger(false);
 		local myTile = _entity.getTile();
 		local currentDanger = 0;
@@ -83,6 +88,12 @@ this.ai_defend_spearwall <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		scoreMult = scoreMult * (1.0 + (1.0 - this.Math.minf(1.0, _entity.getCurrentProperties().FatigueEffectMult)) * 0.5);
+
+		if (this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Defend) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Defend).getScore() >= this.Const.AI.Behavior.Score.Spearwall * scoreMult)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		return this.Const.AI.Behavior.Score.Spearwall * scoreMult;
 	}
 

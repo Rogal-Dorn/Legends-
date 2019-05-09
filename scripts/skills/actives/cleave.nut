@@ -1,5 +1,16 @@
 this.cleave <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		SoundsA = [
+			"sounds/combat/cleave_hit_hitpoints_01.wav",
+			"sounds/combat/cleave_hit_hitpoints_02.wav",
+			"sounds/combat/cleave_hit_hitpoints_03.wav"
+		],
+		SoundsB = [
+			"sounds/combat/chop_hit_01.wav",
+			"sounds/combat/chop_hit_02.wav",
+			"sounds/combat/chop_hit_03.wav"
+		]
+	},
 	function create()
 	{
 		this.m.ID = "actives.cleave";
@@ -21,6 +32,7 @@ this.cleave <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.25;
@@ -31,6 +43,19 @@ this.cleave <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDecapitate = 50;
 		this.m.ChanceDisembowel = 33;
 		this.m.ChanceSmash = 0;
+	}
+
+	function addResources()
+	{
+		foreach( r in this.m.SoundsA )
+		{
+			this.Tactical.addResource(r);
+		}
+
+		foreach( r in this.m.SoundsB )
+		{
+			this.Tactical.addResource(r);
+		}
 	}
 
 	function getTooltip()
@@ -69,21 +94,11 @@ this.cleave <- this.inherit("scripts/skills/skill", {
 			{
 				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
 				{
-					local sounds = [
-						"sounds/combat/cleave_hit_hitpoints_01.wav",
-						"sounds/combat/cleave_hit_hitpoints_02.wav",
-						"sounds/combat/cleave_hit_hitpoints_03.wav"
-					];
-					this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 				}
 				else
 				{
-					local sounds = [
-						"sounds/combat/chop_hit_01.wav",
-						"sounds/combat/chop_hit_02.wav",
-						"sounds/combat/chop_hit_03.wav"
-					];
-					this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 				}
 			}
 			else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
@@ -91,21 +106,11 @@ this.cleave <- this.inherit("scripts/skills/skill", {
 				local effect = this.new("scripts/skills/effects/bleeding_effect");
 				effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 10 : 5);
 				target.getSkills().add(effect);
-				local sounds = [
-					"sounds/combat/cleave_hit_hitpoints_01.wav",
-					"sounds/combat/cleave_hit_hitpoints_02.wav",
-					"sounds/combat/cleave_hit_hitpoints_03.wav"
-				];
-				this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 			}
 			else
 			{
-				local sounds = [
-					"sounds/combat/chop_hit_01.wav",
-					"sounds/combat/chop_hit_02.wav",
-					"sounds/combat/chop_hit_03.wav"
-				];
-				this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 			}
 		}
 

@@ -324,7 +324,7 @@ this.graverobber_heist_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 10,
 					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + _event.getArticle(item.getName()) + item.getName()
+					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
 				_event.m.Graverobber.improveMood(1.0, "Found treasure while robbing a grave");
 				this.List.push({

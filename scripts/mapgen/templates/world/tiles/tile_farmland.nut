@@ -39,7 +39,7 @@ this.tile_farmland <- this.inherit("scripts/mapgen/map_template", {
 				{
 					heath = ++heath;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Highlands)
+				else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
 				{
 					highlands = ++highlands;
 				}

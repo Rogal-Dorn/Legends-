@@ -66,6 +66,19 @@ gt.Const.Sound <- {
 		"sounds/combat/armor_halfplate_impact_02.wav",
 		"sounds/combat/armor_halfplate_impact_03.wav"
 	],
+	ArmorBoneImpact = [
+		"sounds/enemies/skeleton_hurt_01.wav",
+		"sounds/enemies/skeleton_hurt_02.wav",
+		"sounds/enemies/skeleton_hurt_03.wav",
+		"sounds/enemies/skeleton_hurt_04.wav",
+		"sounds/enemies/skeleton_hurt_06.wav"
+	],
+	ArmorUnholdImpact = [
+		"sounds/enemies/dlc4/unhold_armored_hit_01.wav",
+		"sounds/enemies/dlc4/unhold_armored_hit_02.wav",
+		"sounds/enemies/dlc4/unhold_armored_hit_03.wav",
+		"sounds/enemies/dlc4/unhold_armored_hit_04.wav"
+	],
 	JesterImpact = [
 		"sounds/jester_01.wav"
 	],
@@ -212,6 +225,10 @@ gt.Const.Music <- {
 		"music/beasts_01.ogg",
 		"music/beasts_02.ogg"
 	],
+	BarbarianTracks = [
+		"music/barbarians_01.ogg",
+		"music/barbarians_02.ogg"
+	],
 	OrcsTracks = [
 		"music/orcs_01.ogg",
 		"music/orcs_02.ogg",
@@ -258,6 +275,10 @@ gt.Const.Music <- {
 		[
 			"music/goblins_01.ogg",
 			"music/goblins_02.ogg"
+		],
+		[
+			"music/barbarians_01.ogg",
+			"music/barbarians_02.ogg"
 		]
 	]
 };
@@ -3794,33 +3815,33 @@ gt.Const.SoundPartyAmbience <- [
 		"sounds/enemies/unhold_idle_07.wav"
 	],
 	[
-		"sounds/enemies/giant_spider_idle_01.wav",
-		"sounds/enemies/giant_spider_idle_02.wav",
-		"sounds/enemies/giant_spider_idle_03.wav",
-		"sounds/enemies/giant_spider_idle_04.wav",
-		"sounds/enemies/giant_spider_idle_05.wav",
-		"sounds/enemies/giant_spider_idle_06.wav",
-		"sounds/enemies/giant_spider_idle_07.wav",
-		"sounds/enemies/giant_spider_idle_08.wav",
-		"sounds/enemies/giant_spider_idle_09.wav",
-		"sounds/enemies/giant_spider_idle_10.wav",
-		"sounds/enemies/giant_spider_idle_11.wav",
-		"sounds/enemies/giant_spider_idle_12.wav",
-		"sounds/enemies/giant_spider_idle_13.wav",
-		"sounds/enemies/giant_spider_idle_14.wav",
-		"sounds/enemies/giant_spider_idle_15.wav",
-		"sounds/enemies/giant_spider_idle_16.wav"
+		"sounds/enemies/dlc2/giant_spider_idle_01.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_02.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_03.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_04.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_05.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_06.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_07.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_08.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_09.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_10.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_11.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_12.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_13.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_14.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_15.wav",
+		"sounds/enemies/dlc2/giant_spider_idle_16.wav"
 	],
 	[
-		"sounds/enemies/schrat_idle_01.wav",
-		"sounds/enemies/schrat_idle_02.wav",
-		"sounds/enemies/schrat_idle_03.wav",
-		"sounds/enemies/schrat_idle_04.wav",
-		"sounds/enemies/schrat_idle_05.wav",
-		"sounds/enemies/schrat_idle_06.wav",
-		"sounds/enemies/schrat_idle_07.wav",
-		"sounds/enemies/schrat_idle_08.wav",
-		"sounds/enemies/schrat_idle_09.wav",
+		"sounds/enemies/dlc2/schrat_idle_01.wav",
+		"sounds/enemies/dlc2/schrat_idle_02.wav",
+		"sounds/enemies/dlc2/schrat_idle_03.wav",
+		"sounds/enemies/dlc2/schrat_idle_04.wav",
+		"sounds/enemies/dlc2/schrat_idle_05.wav",
+		"sounds/enemies/dlc2/schrat_idle_06.wav",
+		"sounds/enemies/dlc2/schrat_idle_07.wav",
+		"sounds/enemies/dlc2/schrat_idle_08.wav",
+		"sounds/enemies/dlc2/schrat_idle_09.wav",
 		"sounds/ambience/terrain/forest_branch_crack_00.wav",
 		"sounds/ambience/terrain/forest_branch_crack_01.wav",
 		"sounds/ambience/terrain/forest_branch_crack_02.wav",

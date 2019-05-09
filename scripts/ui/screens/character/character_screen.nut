@@ -71,6 +71,8 @@ this.character_screen <- {
 
 	function show()
 	{
+		this.setRosterLimit(("State" in this.World) && this.World.State != null ? this.World.Assets.getBrothersMaxInCombat() : 12);
+
 		if (this.m.JSHandle != null)
 		{
 			this.Tooltip.hide();
@@ -143,6 +145,14 @@ this.character_screen <- {
 		if (this.m.JSDataSourceHandle != null)
 		{
 			this.m.JSDataSourceHandle.asyncCall("loadFromData", this.queryData());
+		}
+	}
+
+	function setRosterLimit( _limit )
+	{
+		if (this.m.JSDataSourceHandle != null)
+		{
+			this.m.JSDataSourceHandle.asyncCall("setRosterLimit", _limit);
 		}
 	}
 
@@ -605,31 +615,31 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, false);
+		local targetItems = this.helper_queryEquipmentTargetItems(data.inventory, data.sourceItem);
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem,
+			targetItems.firstItem,
+			targetItems.secondItem
+		], false);
 
 		if (allowed != null)
 		{
 			return allowed;
 		}
 
-		local targetItems = this.helper_queryEquipmentTargetItems(data.inventory, data.sourceItem);
-
-		if (targetItems != null)
+		if (targetItems.firstItem != null)
 		{
-			if (targetItems.firstItem != null)
+			if (!targetItems.firstItem.isInBag() && !data.inventory.unequip(targetItems.firstItem) || targetItems.firstItem.isInBag() && !data.inventory.removeFromBag(targetItems.firstItem))
 			{
-				if (!targetItems.firstItem.isInBag() && !data.inventory.unequip(targetItems.firstItem) || targetItems.firstItem.isInBag() && !data.inventory.removeFromBag(targetItems.firstItem))
-				{
-					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
-				}
+				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
+			}
 
-				if (targetItems.secondItem != null)
+			if (targetItems.secondItem != null)
+			{
+				if (data.inventory.unequip(targetItems.secondItem) == false)
 				{
-					if (data.inventory.unequip(targetItems.secondItem) == false)
-					{
-						data.inventory.equip(targetItems.firstItem);
-						return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
-					}
+					data.inventory.equip(targetItems.firstItem);
+					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
 				}
 			}
 		}
@@ -664,7 +674,11 @@ this.character_screen <- {
 		}
 
 		data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.Equipped);
-		this.helper_payForAction(data.entity);
+		this.helper_payForAction(data.entity, [
+			targetItems.firstItem,
+			targetItems.secondItem,
+			data.sourceItem
+		]);
 
 		if (this.Tactical.isActive())
 		{
@@ -685,17 +699,27 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, true);
+		local targetItem;
+
+		if (data.targetItemIdx != null)
+		{
+			targetItem = data.inventory.getItemAtBagSlot(data.targetItemIdx);
+		}
+
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem,
+			targetItem
+		], true);
 
 		if (allowed != null)
 		{
 			return allowed;
 		}
 
+		local targetItem;
+
 		if (data.targetItemIdx != null)
 		{
-			local targetItem = data.inventory.getItemAtBagSlot(data.targetItemIdx);
-
 			if (targetItem != null)
 			{
 				if (data.inventory.removeFromBagSlot(data.targetItemIdx) == false)
@@ -740,7 +764,10 @@ this.character_screen <- {
 		}
 
 		data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
-		this.helper_payForAction(data.entity);
+		this.helper_payForAction(data.entity, [
+			data.sourceItem,
+			targetItem
+		]);
 
 		if (this.Tactical.isActive())
 		{
@@ -761,7 +788,10 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, false);
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem,
+			data.targetItem
+		], false);
 
 		if (allowed != null)
 		{
@@ -784,7 +814,10 @@ this.character_screen <- {
 			data.entity.setFatigue(data.entity.getFatigueMax() - fatigueDifference);
 		}
 
-		this.helper_payForAction(data.entity);
+		this.helper_payForAction(data.entity, [
+			data.sourceItem,
+			data.targetItem
+		]);
 
 		if (this.Tactical.isActive())
 		{
@@ -805,7 +838,9 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, false);
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem
+		], false);
 
 		if (allowed != null)
 		{
@@ -921,7 +956,12 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, false);
+		local targetItems = this.helper_queryEquipmentTargetItems(data.inventory, data.sourceItem);
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem,
+			targetItems.firstItem,
+			targetItems.secondItem
+		], false);
 
 		if (allowed != null)
 		{
@@ -942,29 +982,24 @@ this.character_screen <- {
 			}
 		}
 
-		local targetItems = this.helper_queryEquipmentTargetItems(data.inventory, data.sourceItem);
-
-		if (targetItems != null)
+		if (!data.stash.isResizable() && data.stash.getNumberOfEmptySlots() < targetItems.slotsNeeded - 1)
 		{
-			if (!data.stash.isResizable() && data.stash.getNumberOfEmptySlots() < targetItems.slotsNeeded - 1)
+			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.NotEnoughStashSpace);
+		}
+
+		if (targetItems.firstItem != null)
+		{
+			if (!targetItems.firstItem.isInBag() && !data.inventory.unequip(targetItems.firstItem) || targetItems.firstItem.isInBag() && !data.inventory.removeFromBag(targetItems.firstItem))
 			{
-				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.NotEnoughStashSpace);
+				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
 			}
 
-			if (targetItems.firstItem != null)
+			if (targetItems.secondItem != null)
 			{
-				if (!targetItems.firstItem.isInBag() && !data.inventory.unequip(targetItems.firstItem) || targetItems.firstItem.isInBag() && !data.inventory.removeFromBag(targetItems.firstItem))
+				if (data.inventory.unequip(targetItems.secondItem) == false)
 				{
+					data.inventory.equip(targetItems.firstItem);
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
-				}
-
-				if (targetItems.secondItem != null)
-				{
-					if (data.inventory.unequip(targetItems.secondItem) == false)
-					{
-						data.inventory.equip(targetItems.firstItem);
-						return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
-					}
 				}
 			}
 		}
@@ -1047,7 +1082,11 @@ this.character_screen <- {
 		}
 
 		data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.Equipped);
-		this.helper_payForAction(data.entity);
+		this.helper_payForAction(data.entity, [
+			data.sourceItem,
+			targetItems.firstItem,
+			targetItems.secondItem
+		]);
 
 		if (this.Tactical.isActive())
 		{
@@ -1082,7 +1121,17 @@ this.character_screen <- {
 			}
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, true);
+		local targetItem;
+
+		if (data.targetItemIdx != null)
+		{
+			targetItem = data.inventory.getItemAtBagSlot(data.targetItemIdx);
+		}
+
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem,
+			targetItem
+		], true);
 
 		if (allowed != null)
 		{
@@ -1095,8 +1144,6 @@ this.character_screen <- {
 			{
 				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
 			}
-
-			local targetItem = data.inventory.getItemAtBagSlot(data.targetItemIdx);
 
 			if (targetItem != null)
 			{
@@ -1140,7 +1187,10 @@ this.character_screen <- {
 		}
 
 		data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.PlacedInBag);
-		this.helper_payForAction(data.entity);
+		this.helper_payForAction(data.entity, [
+			data.sourceItem,
+			targetItem
+		]);
 
 		if (this.Tactical.isActive())
 		{
@@ -1161,7 +1211,12 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, false);
+		local targetItems = this.helper_queryEquipmentTargetItems(data.inventory, data.sourceItem);
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem,
+			targetItems.firstItem,
+			targetItems.secondItem
+		], false);
 
 		if (allowed != null)
 		{
@@ -1174,29 +1229,25 @@ this.character_screen <- {
 		}
 
 		local fatigueDifference = data.entity.getFatigueMax() - data.entity.getFatigue();
-		local targetItems = this.helper_queryEquipmentTargetItems(data.inventory, data.sourceItem);
 
-		if (targetItems != null)
+		if (data.inventory.getNumberOfEmptySlots(this.Const.ItemSlot.Bag) < targetItems.slotsNeeded - 1)
 		{
-			if (data.inventory.getNumberOfEmptySlots(this.Const.ItemSlot.Bag) < targetItems.slotsNeeded - 1)
+			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.NotEnoughBagSpace);
+		}
+
+		if (targetItems.firstItem != null)
+		{
+			if (!targetItems.firstItem.isInBag() && !data.inventory.unequip(targetItems.firstItem) || targetItems.firstItem.isInBag() && !data.inventory.removeFromBag(targetItems.firstItem))
 			{
-				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.NotEnoughBagSpace);
+				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
 			}
 
-			if (targetItems.firstItem != null)
+			if (targetItems.secondItem != null)
 			{
-				if (!targetItems.firstItem.isInBag() && !data.inventory.unequip(targetItems.firstItem) || targetItems.firstItem.isInBag() && !data.inventory.removeFromBag(targetItems.firstItem))
+				if (data.inventory.unequip(targetItems.secondItem) == false)
 				{
+					data.inventory.equip(targetItems.firstItem);
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
-				}
-
-				if (targetItems.secondItem != null)
-				{
-					if (data.inventory.unequip(targetItems.secondItem) == false)
-					{
-						data.inventory.equip(targetItems.firstItem);
-						return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromTargetSlot);
-					}
 				}
 			}
 		}
@@ -1343,7 +1394,11 @@ this.character_screen <- {
 			data.entity.setFatigue(data.entity.getFatigueMax() - fatigueDifference);
 		}
 
-		this.helper_payForAction(data.entity);
+		this.helper_payForAction(data.entity, [
+			data.sourceItem,
+			targetItems.firstItem,
+			targetItems.secondItem
+		]);
 
 		if (this.Tactical.isActive())
 		{
@@ -1406,7 +1461,9 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, false);
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem
+		], false);
 
 		if (allowed != null)
 		{
@@ -1446,7 +1503,9 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, false);
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem
+		], false);
 
 		if (allowed != null)
 		{
@@ -1479,7 +1538,17 @@ this.character_screen <- {
 			return data;
 		}
 
-		local allowed = this.helper_isActionAllowed(data.entity, data.sourceItem, true);
+		local targetItem;
+
+		if (data.targetItemIdx != null)
+		{
+			targetItem = data.inventory.getItemAtBagSlot(data.targetItemIdx);
+		}
+
+		local allowed = this.helper_isActionAllowed(data.entity, [
+			data.sourceItem,
+			targetItem
+		], true);
 
 		if (allowed != null)
 		{
@@ -1495,8 +1564,6 @@ this.character_screen <- {
 
 		if (data.targetItemIdx != null)
 		{
-			local targetItem = data.inventory.getItemAtBagSlot(data.targetItemIdx);
-
 			if (targetItem != null)
 			{
 				if (data.inventory.removeFromBagSlot(data.targetItemIdx) == false)
@@ -1544,7 +1611,10 @@ this.character_screen <- {
 			data.entity.setFatigue(data.entity.getFatigueMax() - fatigueDifference);
 		}
 
-		this.helper_payForAction(data.entity);
+		this.helper_payForAction(data.entity, [
+			data.sourceItem,
+			targetItem
+		]);
 
 		if (this.Tactical.isActive())
 		{
@@ -1904,7 +1974,9 @@ this.character_screen <- {
 
 		if (_pay)
 		{
-			this.helper_payForAction(_data.entity);
+			this.helper_payForAction(_data.entity, [
+				_data.sourceItem
+			]);
 		}
 
 		return null;
@@ -2009,7 +2081,10 @@ this.character_screen <- {
 		}
 
 		_data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.PlacedInStash);
-		this.helper_payForAction(_data.entity);
+		this.helper_payForAction(_data.entity, [
+			_data.sourceItem,
+			_data.targetItem
+		]);
 		return null;
 	}
 
@@ -2018,11 +2093,13 @@ this.character_screen <- {
 		local fatigueDifference = _data.entity.getFatigueMax() - _data.entity.getFatigue();
 		_data.sourceItem.drop(this.Tactical.TurnSequenceBar.getActiveEntity().getTile());
 		_data.sourceItem.playInventorySound(this.Const.Items.InventoryEventType.PlacedOnGround);
-		this.helper_payForAction(_data.entity);
+		this.helper_payForAction(_data.entity, [
+			_data.sourceItem
+		]);
 		_data.entity.setFatigue(_data.entity.getFatigueMax() - fatigueDifference);
 	}
 
-	function helper_isActionAllowed( _entity, _item, _putIntoBag )
+	function helper_isActionAllowed( _entity, _items, _putIntoBags )
 	{
 		if (this.m.InventoryMode == this.Const.CharacterScreen.InventoryMode.Ground)
 		{
@@ -2033,17 +2110,17 @@ this.character_screen <- {
 				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.OnlyActiveEntityIsAllowedToChangeItems);
 			}
 
-			if (_entity.getItems().isActionAffordable() == false)
+			if (_entity.getItems().isActionAffordable(_items) == false)
 			{
 				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.NotEnoughActionPoints);
 			}
 
-			if (_item != null && !_item.isChangeableInBattle())
+			if (_items[0] != null && !_items[0].isChangeableInBattle())
 			{
 				return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.ItemIsNotChangableInBattle);
 			}
 		}
-		else if (_item != null && !_item.isChangeableInBattle() && _putIntoBag == true)
+		else if (_items[0] != null && !_items[0].isChangeableInBattle() && _putIntoBags == true)
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.ItemIsNotChangableInBattle);
 		}
@@ -2051,70 +2128,68 @@ this.character_screen <- {
 		return null;
 	}
 
-	function helper_payForAction( _entity )
+	function helper_payForAction( _entity, _items )
 	{
 		if (this.m.InventoryMode == this.Const.CharacterScreen.InventoryMode.Ground)
 		{
 			if (_entity != null)
 			{
-				_entity.getItems().payForAction();
+				_entity.getItems().payForAction(_items);
 			}
 		}
 	}
 
 	function helper_queryEquipmentTargetItems( _inventory, _sourceItem )
 	{
-		local firstItem;
-		local secondItem;
-		local slotsNeeded = 1;
+		local ret = {
+			firstItem = null,
+			secondItem = null,
+			slotsNeeded = 0
+		};
 		local sourceSlotType = _sourceItem.getSlotType();
 
 		if (sourceSlotType == this.Const.ItemSlot.Offhand && _inventory.hasBlockedSlot(this.Const.ItemSlot.Offhand) == true)
 		{
-			firstItem = _inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			ret.firstItem = _inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		}
 		else if (sourceSlotType == this.Const.ItemSlot.Mainhand && _sourceItem.getBlockedSlotType() == this.Const.ItemSlot.Offhand)
 		{
-			firstItem = _inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			secondItem = _inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
+			ret.firstItem = _inventory.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			ret.secondItem = _inventory.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-			if (firstItem == null)
+			if (ret.firstItem == null)
 			{
-				firstItem = secondItem;
-				secondItem = null;
-			}
-
-			if (firstItem != null && secondItem != null)
-			{
-				slotsNeeded = 2;
+				ret.firstItem = ret.secondItem;
+				ret.secondItem = null;
 			}
 		}
 		else if (sourceSlotType == this.Const.ItemSlot.Bag)
 		{
 			if (_inventory.hasEmptySlot(this.Const.ItemSlot.Bag))
 			{
-				firstItem = null;
+				ret.firstItem = null;
 			}
 			else
 			{
-				firstItem = _inventory.getItemAtBagSlot(0);
+				ret.firstItem = _inventory.getItemAtBagSlot(0);
 			}
 		}
 		else
 		{
-			firstItem = _inventory.getItemAtSlot(sourceSlotType);
+			ret.firstItem = _inventory.getItemAtSlot(sourceSlotType);
 		}
 
-		if (firstItem != null)
+		if (ret.firstItem != null)
 		{
-			return {
-				firstItem = firstItem,
-				secondItem = secondItem,
-				slotsNeeded = slotsNeeded
-			};
+			++ret.slotsNeeded;
 		}
 
-		return null;
+		if (ret.secondItem != null)
+		{
+			++ret.slotsNeeded;
+		}
+
+		return ret;
 	}
 
 	function helper_convertErrorToUIData( _errorCode )

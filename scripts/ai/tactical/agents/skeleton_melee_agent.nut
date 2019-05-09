@@ -4,7 +4,7 @@ this.skeleton_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 	{
 		this.agent.create();
 		this.m.ID = this.Const.AI.Agent.ID.SkeletonMelee;
-		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Shieldwall] = 7.0;
+		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Shieldwall] = 8.0;
 		this.m.Properties.TargetPriorityMoraleMult = 0.25;
 		this.m.Properties.TargetPriorityBraveryMult = 0.25;
 		this.m.Properties.OverallDefensivenessMult = 0.25;

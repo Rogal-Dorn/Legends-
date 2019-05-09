@@ -8,32 +8,32 @@ this.kraken_ensnare_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/active_147.png";
 		this.m.Overlay = "active_147";
 		this.m.SoundOnUse = [
-			"sounds/enemies/tentacle_disappear_01.wav",
-			"sounds/enemies/tentacle_disappear_02.wav",
-			"sounds/enemies/tentacle_disappear_03.wav",
-			"sounds/enemies/tentacle_disappear_04.wav",
-			"sounds/enemies/tentacle_disappear_05.wav"
+			"sounds/enemies/dlc2/tentacle_disappear_01.wav",
+			"sounds/enemies/dlc2/tentacle_disappear_02.wav",
+			"sounds/enemies/dlc2/tentacle_disappear_03.wav",
+			"sounds/enemies/dlc2/tentacle_disappear_04.wav",
+			"sounds/enemies/dlc2/tentacle_disappear_05.wav"
 		];
 		this.m.SoundOnHit = [
-			"sounds/enemies/krake_snare_01.wav",
-			"sounds/enemies/krake_snare_02.wav",
-			"sounds/enemies/krake_snare_03.wav",
-			"sounds/enemies/krake_snare_04.wav",
-			"sounds/enemies/krake_snare_05.wav"
+			"sounds/enemies/dlc2/krake_snare_01.wav",
+			"sounds/enemies/dlc2/krake_snare_02.wav",
+			"sounds/enemies/dlc2/krake_snare_03.wav",
+			"sounds/enemies/dlc2/krake_snare_04.wav",
+			"sounds/enemies/dlc2/krake_snare_05.wav"
 		];
 		this.m.SoundOnHitHitpoints = [
-			"sounds/enemies/krake_break_free_fail_01.wav",
-			"sounds/enemies/krake_break_free_fail_02.wav",
-			"sounds/enemies/krake_break_free_fail_03.wav",
-			"sounds/enemies/krake_break_free_fail_04.wav",
-			"sounds/enemies/krake_break_free_fail_05.wav"
+			"sounds/enemies/dlc2/krake_break_free_fail_01.wav",
+			"sounds/enemies/dlc2/krake_break_free_fail_02.wav",
+			"sounds/enemies/dlc2/krake_break_free_fail_03.wav",
+			"sounds/enemies/dlc2/krake_break_free_fail_04.wav",
+			"sounds/enemies/dlc2/krake_break_free_fail_05.wav"
 		];
 		this.m.SoundOnHitArmor = [
-			"sounds/enemies/krake_break_free_success_01.wav",
-			"sounds/enemies/krake_break_free_success_02.wav",
-			"sounds/enemies/krake_break_free_success_03.wav",
-			"sounds/enemies/krake_break_free_success_04.wav",
-			"sounds/enemies/krake_break_free_success_05.wav"
+			"sounds/enemies/dlc2/krake_break_free_success_01.wav",
+			"sounds/enemies/dlc2/krake_break_free_success_02.wav",
+			"sounds/enemies/dlc2/krake_break_free_success_03.wav",
+			"sounds/enemies/dlc2/krake_break_free_success_04.wav",
+			"sounds/enemies/dlc2/krake_break_free_success_05.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
