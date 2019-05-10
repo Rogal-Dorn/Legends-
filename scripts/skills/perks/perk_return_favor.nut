@@ -5,7 +5,7 @@ this.perk_return_favor <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.return_favor";
 		this.m.Name = this.Const.Strings.PerkName.ReturnFavor;
 		this.m.Description = this.Const.Strings.PerkDescription.ReturnFavor;
-		this.m.Icon = "ui/perks/perk_31.png";
+		this.m.Icon = "ui/perks/return_favor_circle.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

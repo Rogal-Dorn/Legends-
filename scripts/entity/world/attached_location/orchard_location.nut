@@ -85,6 +85,11 @@ this.orchard_location <- this.inherit("scripts/entity/world/attached_location", 
 				P = 1.0,
 				S = "weapons/scramasax"
 			});
+				_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_shiv"
+			});
 		}
 	}
 

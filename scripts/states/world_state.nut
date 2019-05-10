@@ -2,6 +2,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	m = {
 		WorldScreen = null,
 		WorldTownScreen = null,
+		CampScreen = null,
 		WorldMenuScreen = null,
 		WorldGameFinishScreen = null,
 		WorldEventPopupScreen = null,
@@ -71,7 +72,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		GameWon = null,
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
-		CampaignSettings = null
+		CampaignSettings = null,
+		DebugMap = false,
+		Campaign = "",
+		CommanderDied = null,
+		LegendsMod = null,
+		Camp = null
 	},
 	function getPlayer()
 	{
@@ -163,6 +169,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function getTownScreen()
 	{
 		return this.m.WorldTownScreen;
+	}
+
+	function getCampScreen()
+	{
+		return this.m.CampScreen;
 	}
 
 	function getWorldScreen()
@@ -314,9 +325,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			if (!_f)
 			{
-				if (this.World.Assets.isCamping())
+				if (this.World.Camp.isCamping())
 				{
-					this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
+					this.World.TopbarDayTimeModule.showMessage("ENCAMPED", []);
 				}
 				else
 				{
@@ -325,7 +336,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 			else
 			{
-				this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
+				this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);
 			}
 		}
 
@@ -416,6 +427,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function commanderDied()
+	{
+		return this.m.CommanderDied;
+	}
+
+	function setCommanderDied( _v )
+	{
+		this.m.CommanderDied = _v
+	}
+
 	function onInit()
 	{
 		this.m.IsDeveloperModeEnabled = this.isDevmode() || !this.isReleaseBuild();
@@ -426,6 +447,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.LastWorldSpeedMult = 1.0;
 		this.m.ExitGame = false;
 		this.m.GameWon = false;
+		this.m.CommanderDied = false;
 		this.Settings.getTempGameplaySettings().CameraLocked = false;
 		this.Settings.getTempGameplaySettings().ShowTracking = true;
 		this.Tactical.setActive(false);
@@ -454,6 +476,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Tags <- this.m.Tags;
 		this.m.Assets = this.new("scripts/states/world/asset_manager");
 		this.World.Assets <- this.WeakTableRef(this.m.Assets);
+		this.m.LegendsMod = this.new("scripts/mods/legends_mod"); 
+		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
+		this.m.Camp = this.new("scripts/states/world/camp_manager");
+		this.World.Camp <- this.WeakTableRef(this.m.Camp);
 		this.onInitUI();
 		this.init();
 	}
@@ -480,6 +506,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldTownScreen <- this.new("scripts/ui/screens/world/world_town_screen");
 		this.m.WorldTownScreen.setOnBrothersPressedListener(this.town_screen_main_dialog_module_onBrothersButtonClicked.bindenv(this));
 		this.m.WorldTownScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
+		this.m.CampScreen <- this.new("scripts/ui/screens/world/camp_screen");
+		this.m.CampScreen.setOnBrothersPressedListener(this.camp_screen_main_dialog_module_onBrothersButtonClicked.bindenv(this));
+		this.m.CampScreen.setOnCommanderPressedListener(this.camp_screen_main_dialog_module_onCommanderButtonClicked.bindenv(this));
+		this.m.CampScreen.setOnTentPressedListener(this.camp_screen_main_dialog_module_onTentButtonClicked.bindenv(this));
+		this.m.CampScreen.setOnModuleClosedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
+		this.m.CampScreen.setOnCampListener(this.onCamp.bindenv(this));
 		this.m.WorldEventPopupScreen <- this.new("scripts/ui/screens/world/world_event_popup_screen");
 		this.m.WorldEventPopupScreen.setOnLeavePressedListener(this.town_screen_main_dialog_module_onLeaveButtonClicked.bindenv(this));
 		this.m.RelationsScreen <- this.new("scripts/ui/screens/world/world_relations_screen");
@@ -516,6 +548,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldEventPopupScreen.destroy();
 		this.m.WorldMenuScreen.destroy();
 		this.m.WorldTownScreen.destroy();
+		this.m.CampScreen.destroy();
 		this.m.EventScreen.destroy();
 		this.m.WorldGameFinishScreen.destroy();
 		this.m.WorldScreen.destroy();
@@ -528,6 +561,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldEventPopupScreen = null;
 		this.m.WorldMenuScreen = null;
 		this.m.WorldTownScreen = null;
+		this.m.CampScreen = null;
 		this.m.WorldGameFinishScreen = null;
 		this.m.WorldGameFinishScreen = null;
 		this.m.WorldScreen = null;
@@ -576,6 +610,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.EntityManager = null;
 		this.World.State = null;
 		this.Root.setBackgroundTaskCallback(null);
+		this.m.LegendsMod = null;
+		this.World.LegendsMod = null;
+		this.m.Camp.destroy();
+		this.m.Camp = null;
+		this.World.Camp = null;		
 		this.onDestroyUI();
 		this.Sound.stopAmbience();
 	}
@@ -654,13 +693,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		if (this.World.Assets.isCamping())
+		if (this.World.Camp.isCamping())
 		{
 			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 
 			if (!this.isPaused())
 			{
 				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
+				this.m.Camp.update(this);
 			}
 		}
 
@@ -733,7 +773,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.Player.setPath(null);
 				this.m.Player.setDestination(this.m.AutoAttack.getPos());
 			}
-			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.1)
+			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.100000001)
 			{
 				local navSettings = this.World.getNavigator().createSettings();
 				navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
@@ -809,6 +849,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
+		if (this.isInDevScreen())
+		{
+			return true;
+		}
+
 		local mouseMoved = _mouse.getID() == 6;
 
 		if (mouseMoved)
@@ -825,12 +870,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			if (_mouse.getState() == 3)
 			{
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.4);
 				return true;
 			}
 			else if (_mouse.getState() == 4)
 			{
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.4);
 				return true;
 			}
 		}
@@ -854,7 +899,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.AutoAttack = null;
 				this.m.LastAutoAttackPath = 0.0;
 
-				if (!this.World.Assets.isCamping())
+				if (!this.World.Camp.isCamping())
 				{
 					local entities = this.World.getAllEntitiesAndOneLocationAtPos(this.World.getCamera().screenToWorld(_mouse.getX(), _mouse.getY()), 1.0);
 
@@ -923,9 +968,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 				if (this.getVecDistance(dest, this.m.Player.getPos()) <= this.Const.World.MovementSettings.PlayerDirectMoveRadius)
 				{
-					if (this.World.Assets.isCamping())
+					if (this.World.Camp.isCamping())
 					{
+						if (this.isPaused())
+						{
+							return false;
+						}
 						this.onCamp();
+						return true;
 					}
 
 					this.m.Player.setPath(null);
@@ -933,9 +983,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 				}
 				else if (this.World.isValidTile(destTile.X, destTile.Y))
 				{
-					if (this.World.Assets.isCamping())
+					if (this.World.Camp.isCamping())
 					{
+						if (this.isPaused())
+						{
+							return false;
+						}
 						this.onCamp();
+						return true;
 					}
 
 					local navSettings = this.World.getNavigator().createSettings();
@@ -991,14 +1046,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function setupWeather()
 	{
 		local clouds = this.World.getWeather().createCloudSettings();
-		clouds.MinClouds = 70;
-		clouds.MaxClouds = 70;
-		clouds.MinVelocity = 35.0;
-		clouds.MaxVelocity = 65.0;
-		clouds.MinAlpha = 0.8;
-		clouds.MaxAlpha = 0.8;
-		clouds.MinScale = 1.0;
-		clouds.MaxScale = 1.25;
+		clouds.MinClouds = 60;
+		clouds.MaxClouds = 80;
+		clouds.MinVelocity = 25.0;
+		clouds.MaxVelocity = 75.0;
+		clouds.MinAlpha = 0.6;
+		clouds.MaxAlpha = 0.9;
+		clouds.MinScale = 0.8;
+		clouds.MaxScale = 1.4;
 		this.World.getWeather().buildCloudCover(clouds);
 		local birds = this.World.getWeather().createBirdSettings();
 		birds.MinBirds = 12;
@@ -1014,20 +1069,57 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.Time.setVirtualTime(0);
 		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
+		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
+		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
-		local minX = worldmap.getMinX();
-		local minY = worldmap.getMinY();
+		local minX = this.Const.World.Settings.SizeX;
+		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		worldmap.fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, null);
-		this.World.FactionManager.createFactions();
+		// worldmap.fill({
+		// 	X = 0,
+		// 	Y = 0,
+		// 	W = minX,
+		// 	H = minY
+		// }, null);
+		local tries = 200;
+		while (tries > 0)
+		{
+			local result = worldmap.fill({
+				X = 0,
+				Y = 0,
+				W = minX,
+				H = minY
+			}, null);
+			if (result) 
+			{
+				break;
+			}
+			tries = --tries
+			this.logInfo("Invalid map. Regenerating...")			
+			//Failures are because of water issues, help map generation towards default results
+			if (tries > 10)
+			{
+				if (this.Const.World.Settings.LandMassMult > 1.4) {
+					this.Const.World.Settings.LandMassMult -= 0.05;
+				} else {
+					this.Const.World.Settings.LandMassMult += 0.05;
+				}
+
+				if (this.Const.World.Settings.WaterConnectivity > 38) {
+					this.Const.World.Settings.WaterConnectivity -= 1;
+				} else {
+					this.Const.World.Settings.WaterConnectivity += 1;
+				}
+				this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult);
+				this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity);
+			}
+		}
+
+		this.World.FactionManager.createFactions(this.m.CampaignSettings);
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
 		this.m.Assets.init();
+		this.m.Camp.init();
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 
 		if (this.m.CampaignSettings != null)
@@ -1045,11 +1137,63 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
-
-		if (this.Const.DLC.Wildmen)
-		{
-			this.World.Tags.set("IsWildmenCampaign", true);
+		if (this.m.Campaign == "legends_noble") {
+			this.World.Tags.set("IsLegendsNoble", true);
 		}
+		if (this.m.Campaign == "legends_beggar") {
+			this.World.Tags.set("IsLegendsBeggar", true);
+		}
+		if (this.m.Campaign == "legends_crusader") {
+			this.World.Tags.set("IsLegendsCrusader", true);
+		}
+		if (this.m.Campaign == "legends_hunter") {
+			this.World.Tags.set("IsLegendsHunter", true);
+		}
+		if (this.m.Campaign == "legends_inventor") {
+			this.World.Tags.set("IsLegendsInventor", true);
+		}
+		if (this.m.Campaign == "legends_necro") {
+			this.World.Tags.set("IsLegendsNecro", true);
+		}
+		if (this.m.Campaign == "legends_witch") {
+			this.World.Tags.set("IsLegendsWitch", true);
+		}
+		if (this.m.Campaign == "legends_healer") {
+			this.World.Tags.set("IsLegendsHealer", true);
+		}
+		if (this.m.Campaign == "legends_party") {
+			this.World.Tags.set("IsLegendsParty", true);
+		}
+		if (this.m.Campaign == "legends_trader") {
+			this.World.Tags.set("IsLegendsTrader", true);
+		}
+		if (this.m.Campaign == "legends_hoggart") {
+			this.World.Tags.set("IsLegendsHoggart", true);
+		}
+		if (this.m.Campaign == "legends_berserker") {
+			this.World.Tags.set("IsLegendsBerserker", true);
+		}
+		if (this.m.Campaign == "legends_vala") {
+			this.World.Tags.set("IsLegendsVala", true);
+		}
+		if (this.m.Campaign == "legends_bandit") {
+			this.World.Tags.set("IsLegendsBandit", true);
+		}
+		
+	//	local c = this.new("scripts/contracts/contracts/tutorial_contract");
+	//	c.start();
+	//	this.World.Contracts.addContract(c);
+	//	this.World.Contracts.setActiveContract(c, true);
+		this.World.setFogOfWar(!this.m.DebugMap);
+	//	this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
+		
+		this.World.Tags.set("IsLegendCampSupport", true);
+	}
+
+	function showIntroductionScreen( _tag = null )
+	{
+		this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
+		this.World.Contracts.update(true);
 	}
 
 	function initOptions()
@@ -1087,6 +1231,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setupWeather();
 		this.updateDayTime();
 		this.Music.setTrackList(this.World.FactionManager.isGreaterEvil() ? this.Const.Music.WorldmapTracksGreaterEvil : this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime);
+
 		this.setPause(true);
 	}
 
@@ -1103,7 +1248,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function setNewCampaignSettings( _settings )
 	{
+		foreach(k,v in _settings) 
+		{
+			this.logInfo(k + " = " + v);
+		}
 		this.m.CampaignSettings = _settings;
+		this.m.DebugMap = _settings.Debug;
+		this.m.Campaign = _settings.Campaign;
 	}
 
 	function enterLocation( _location )
@@ -1144,6 +1295,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 					this.showCombatDialog();
 				}
 			}
+	//		else if (this.m.IsForcingAttack == true  && _location.isAttackable() && _location.isAlliedWithPlayer())
+	//		{
+	//			if (_location.onEnteringCombatWithPlayer())
+	//			{
+	//				this.showCombatDialog();
+	//			}
+	//		}
+
 		}
 
 		return true;
@@ -1161,7 +1320,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(32, 0);
+		factions.resize(128, 0);
 
 		foreach( party in raw_parties )
 		{
@@ -1256,7 +1415,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
 					{
-						++factions[party.getFaction()];
+						// if (t.Faction >= factions.len())
+						// {
+						// 	factions.resize(t.Faction + 1, 0);
+						// }
+						++factions[t.Faction];
 					}
 				}
 			}
@@ -1472,9 +1635,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		if (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished())
+		if (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished() || this.commanderDied())
 		{
-			if (this.World.Assets.isIronman())
+		if (this.World.Assets.isIronman())
 			{
 				this.autosave();
 			}
@@ -1530,62 +1693,55 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return;
 		}
 
-		this.World.Assets.setCamping(!this.World.Assets.isCamping());
+		this.World.Camp.onCamp();
 
-		if (this.World.Assets.isCamping())
+		if (this.World.Camp.isCamping())
 		{
 			this.m.Player.setDestination(null);
 			this.m.Player.setPath(null);
 			this.m.AutoEnterLocation = null;
 			this.m.AutoAttack = null;
-		}
-
-		if (this.World.Assets.isCamping())
-		{
 			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
-
-			if (!this.isPaused())
-			{
-				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
-				this.World.TopbarDayTimeModule.updateTimeButtons(2);
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
+			this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
+			this.World.TopbarDayTimeModule.updateTimeButtons(2);
+			this.setPause(false);
 		}
 		else
 		{
+			this.updateTopbarAssets();
 			this.m.LastWorldSpeedMult = 1.0;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
-
-			if (!this.isPaused())
-			{
-				this.World.setSpeedMult(1.0);
-				this.World.TopbarDayTimeModule.updateTimeButtons(1);
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
+			this.World.setSpeedMult(1.0);
+			this.World.TopbarDayTimeModule.updateTimeButtons(1);			
+			this.setPause(true);
 		}
 
-		if (!this.isPaused())
-		{
-			if (this.World.Assets.isCamping())
-			{
-				this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.hideMessage();
-			}
-		}
-		else
-		{
-			this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
-		}
+		// 	if (!this.isPaused())
+		// 	{
+
+		// 	}
+		// 	else
+		// 	{
+		// 		this.World.TopbarDayTimeModule.updateTimeButtons(0);
+		// 	}
+		// }
+
+		// if (!this.isPaused())
+		// {
+		// 	if (this.World.Camp.isCamping())
+		// 	{
+		// 		this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
+		// 	}
+		// 	else
+		// 	{
+		// 		this.World.TopbarDayTimeModule.hideMessage();
+		// 	}
+		// }
+		// else
+		// {
+		// 	this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
+		// }
 	}
 
 	function showDialogPopup( _title, _text, _okCallback, _cancelCallback, _isMonologue = false )
@@ -1834,7 +1990,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			if (!this.World.Assets.isCamping() && this.m.EscortedEntity == null)
+			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
 			{
 				this.m.LastWorldSpeedMult = 1.0;
 			}
@@ -1847,7 +2003,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			if (!this.World.Assets.isCamping() && this.m.EscortedEntity == null)
+			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
 			{
 				this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.FastMult;
 			}
@@ -1960,7 +2116,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			allyBanners.push(this.World.Assets.getBanner());
 		}
 
-		if (!_isPlayerInitiated && this.World.Assets.isCamping())
+		if (!_isPlayerInitiated && this.World.Camp.isCamping())
 		{
 			_allowFormationPicking = false;
 		}
@@ -2329,11 +2485,64 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-			this.setAutoPause(true);
-			this.m.AutoUnpauseFrame = this.Time.getFrame() + 1;
+			this.setAutoPause(false);
+			this.setPause(true);
 		}, function ()
 		{
 			return !this.m.WorldTownScreen.isAnimating();
+		});
+	}
+
+	function showCampScreen()
+	{
+		if (!this.isCampingAllowed())
+		{
+			return;
+		}
+
+		if (this.World.Camp.isCamping())
+		{
+			this.onCamp();
+			return
+		}
+		//this.Music.setTrackList(this.m.LastEnteredTown.getMusic(), this.Const.Music.CrossFadeTime);
+		//this.setPause(true);
+		this.setAutoPause(true);
+		this.Tooltip.hide();
+		this.m.WorldScreen.hide();
+		//this.m.WorldTownScreen.setTown(this.m.LastEnteredTown);
+		this.m.CampScreen.show();
+		this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+		this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrainInSettlement, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+		//this.Sound.setAmbience(1, this.m.LastEnteredTown.getSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceInSettlement, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+		this.m.MenuStack.push(function ()
+		{
+			this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrain, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+			this.Sound.setAmbience(1, this.getSurroundingLocationSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceOutsideSettlement, this.Const.Sound.AmbienceOutsideDelay);
+			this.World.getCamera().zoomTo(this.m.CustomZoom, 4.0);
+			// this.World.Assets.consumeItems();
+			// this.World.Assets.refillAmmo();
+			// this.World.Assets.updateAchievements();
+			// this.World.Assets.checkAmbitionItems();
+			// this.World.Ambitions.resetTime(false, 2.0);
+			// this.updateTopbarAssets();
+			// this.World.State.getPlayer().updateStrength();
+			this.m.CampScreen.clear();
+			this.m.CampScreen.hide();
+			this.m.WorldScreen.show();
+			this.Music.setTrackList(this.World.FactionManager.isGreaterEvil() ? this.Const.Music.WorldmapTracksGreaterEvil : this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime);
+
+			if (this.World.Assets.isIronman())
+			{
+				this.autosave();
+			}
+
+			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
+			this.setAutoPause(false);
+			this.setPause(true);
+		}, function ()
+		{
+			return !this.m.CampScreen.isAnimating();
 		});
 	}
 
@@ -2345,6 +2554,21 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function town_screen_main_dialog_module_onBrothersButtonClicked()
 	{
 		this.showCharacterScreenFromTown();
+	}
+
+	function camp_screen_main_dialog_module_onBrothersButtonClicked()
+	{
+		this.showCharacterScreenFromCamp();
+	}
+
+	function camp_screen_main_dialog_module_onCommanderButtonClicked()
+	{
+		this.showCommanderScreenFromCamp();
+	}
+
+	function camp_screen_main_dialog_module_onTentButtonClicked( _id )
+	{
+		this.showTentScreenFromCamp( _id );
 	}
 
 	function initLoadingScreenHandler()
@@ -2419,6 +2643,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 	}
 
+	function isInDevScreen()
+	{
+		if (this.m.WorldScreen != null && this.m.WorldScreen.devConsoleVisible())
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	function isInCharacterScreen()
 	{
 		if (this.m.CharacterScreen != null && (this.m.CharacterScreen.isVisible() || this.m.CharacterScreen.isAnimating()))
@@ -2467,6 +2701,48 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}, function ()
 		{
 			return !this.m.CharacterScreen.isAnimating();
+		});
+	}
+
+
+	function showCharacterScreenFromCamp()
+	{
+		this.World.Assets.updateFormation();
+		this.m.CampScreen.hideAllDialogs();
+		this.m.CharacterScreen.show();
+		this.m.MenuStack.push(function ()
+		{
+			this.m.CharacterScreen.hide();
+			this.m.CampScreen.showLastActiveDialog();
+		}, function ()
+		{
+			return !this.m.CharacterScreen.isAnimating();
+		});
+	}
+
+	function showCommanderScreenFromCamp()
+	{
+		this.m.CampScreen.hideAllDialogs();
+		this.m.CampScreen.showCommanderDialog()
+		this.m.MenuStack.push(function ()
+		{
+			this.m.CampScreen.showLastReturnDialog();
+		}, function ()
+		{
+			return !this.m.CampScreen.isAnimating();
+		});
+	}
+
+	function showTentScreenFromCamp( _id )
+	{
+		this.m.CampScreen.hideAllDialogs();
+		this.m.CampScreen.showTentBuildingDialog( _id )
+		this.m.MenuStack.push(function ()
+		{
+			this.m.CampScreen.showLastReturnDialog();
+		}, function ()
+		{
+			return !this.m.CampScreen.isAnimating();
 		});
 	}
 
@@ -3026,15 +3302,15 @@ this.world_state <- this.inherit("scripts/states/state", {
 			break;
 
 		case 25:
-			if (!this.m.IsDeveloperModeEnabled)
-			{
-				break;
-			}
+			// if (!this.m.IsDeveloperModeEnabled)
+			// {
+			// 	break;
+			// }
 
 			if (this.m.LastTileHovered != null)
 			{
-				local faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs);
-				local party = faction.spawnEntity(this.m.LastTileHovered, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, 200);
+				local faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits);
+				local party = faction.spawnEntity(this.m.LastTileHovered, "TEST GROUP", false, this.Const.World.Spawn.BanditRoamers, 200);
 				party.getSprite("banner").setBrush("banner_orcs_04");
 				party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 				local c = party.getController();
@@ -3123,6 +3399,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
+		if (this.isInDevScreen())
+		{
+			switch(_key.getKey())
+			{
+			case 41:
+				this.m.WorldScreen.hideDevConsole();
+				break;
+			}
+
+			return true;
+		}
+
 		if (this.isInCharacterScreen() && _key.getState() == 0)
 		{
 			switch(_key.getKey())
@@ -3201,12 +3489,21 @@ this.world_state <- this.inherit("scripts/states/state", {
 			case 30:
 				if (!this.m.MenuStack.hasBacksteps())
 				{
-					if (this.isCampingAllowed())
-					{
-						this.onCamp();
-					}
+					this.showCampScreen();
+					// if (this.isCampingAllowed())
+					// {
+					// 	this.onCamp();
+					// }
 				}
 
+				break;
+			
+			case 32:
+				if (!this.m.MenuStack.hasBacksteps())
+				{
+					this.m.WorldScreen.showDevConsole();
+					return true;
+				}
 				break;
 
 			case 26:
@@ -3401,12 +3698,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			case 67:
 			case 46:
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.20);
 				break;
 
 			case 68:
 			case 47:
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.20);
 				break;
 
 			case 96:
@@ -3510,6 +3807,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Statistics.onSerialize(_out);
 		_out.writeBool(this.m.IsCampingAllowed);
 		_out.writeI32(this.m.CombatSeed);
+		this.World.Camp.onSerialize(_out);
 	}
 
 	function onDeserialize( _in )
@@ -3538,6 +3836,10 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);
 		this.World.Assets.onDeserialize(_in);
+
+		this.m.Combat = this.new("scripts/entity/world/combat_manager");
+		this.World.Combat <- this.WeakTableRef(this.m.Combat);
+
 		this.World.Combat.onDeserialize(_in);
 		this.World.Contracts.onDeserialize(_in);
 		this.World.Events.onDeserialize(_in);
@@ -3550,7 +3852,15 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		this.World.Statistics.onDeserialize(_in);
 		this.m.LastIsDaytime = !this.World.getTime().IsDaytime;
-		this.setCampingAllowed(_in.readBool());
+
+		if (_in.getMetaData().getVersion() >= 15)
+		{
+			this.setCampingAllowed(_in.readBool());
+		}
+		else
+		{
+			this.setCampingAllowed(true);
+		}
 
 		if (_in.getMetaData().getVersion() >= 38)
 		{
@@ -3578,6 +3888,62 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.updateDayTime();
 		this.updateTopbarAssets();
 		this.m.IsUpdatedOnce = false;
+		if (this.m.EscortedEntity == null)
+		{
+			this.World.State.setCampingAllowed(true);
+			this.World.State.setEscortedEntity(null);
+			this.World.State.getPlayer().setVisible(true);
+			this.World.Assets.setUseProvisions(true);
+		}
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.World.Camp.clear();
+			this.World.Camp.onDeserialize(_in);
+		}
+
+
+		if (_in.getMetaData().getVersion() == 51)
+		{
+			foreach (b in this.World.getPlayerRoster().getAll())
+			{
+				local background = null;
+				switch (b.getBackground().getID())
+				{
+					case "background.vazl_vala":
+						local background = this.new("scripts/skills/backgrounds/legend_vala_background");
+						
+						break;
+					case "background.vazl_cannibal":
+						local background = this.new("scripts/skills/backgrounds/legend_cannibal_background");
+						break;
+					case "background.vazl_inventor":
+						local background = this.new("scripts/skills/backgrounds/legend_inventor_background");
+						break;
+					case "background.vazl_shieldmaiden":
+						local background = this.new("scripts/skills/backgrounds/legend_shieldmaiden_background");
+						break;
+				}
+				if (background == null)
+				{
+					continue
+				}
+				b.getSkills().removeByID(b.getBackground().getID());
+				b.getSkills().add(background);
+				background.buildDescription();
+				background.onSetAppearance();
+				b.getSkills().update();
+			}
+		}
+
+		if (this.Const.LegendMod.Beta10 && !this.World.Tags.get("IsLegendCampSupport"))
+		{
+			this.World.Tags.set("IsLegendCampSupport", true);
+			this.Time.scheduleEvent(this.TimeUnit.Real, 6000, function ( _tag )
+			{
+				this.showDialogPopup("Old Legends Campaign Loaded", "This campaign was created before the Legends Mod camp mechanics were added. Please be aware that even though you can continue to play this campaign, there may be some unstability and odd behavior. It is recommend to start a new campaign.", null, null, true);
+			}.bindenv(this), null);
+		}
+
 	}
 
 });

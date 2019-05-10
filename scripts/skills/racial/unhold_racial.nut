@@ -28,20 +28,22 @@ this.unhold_racial <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-
-		actor.setHitpoints(actor.getHitpoints() + healthAdded);
-		actor.setDirty(true);
-
-		if (!actor.isHiddenToPlayer())
+		if (!actor.getSkills().hasSkill("effects.spider_poison_effect"))
 		{
-			this.spawnIcon("status_effect_79", actor.getTile());
-
-			if (this.m.SoundOnUse.len() != 0)
+			actor.setHitpoints(actor.getHitpoints() + healthAdded);
+			actor.setDirty(true);
+	
+			if (!actor.isHiddenToPlayer())
 			{
-				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
-			}
+				this.spawnIcon("status_effect_79", actor.getTile());
 
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + healthAdded + " points");
+				if (this.m.SoundOnUse.len() != 0)
+				{
+					this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
+				}
+
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + healthAdded + " points");
+			}
 		}
 	}
 

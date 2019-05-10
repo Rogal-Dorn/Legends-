@@ -25,6 +25,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("tailor_background");
+		_list.push("female_tailor_background");
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -35,6 +36,11 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				R = 0,
 				P = 1.0,
 				S = "trade/dies_item"
+			});
+		   _list.push({
+				R = 0,
+				P = 1.0,
+				S = "weapons/legend_wooden_pitchfork"
 			});
 
 			if (this.Const.DLC.Unhold)

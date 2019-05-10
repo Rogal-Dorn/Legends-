@@ -146,6 +146,13 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Destination = this.WeakTableRef(candidates[this.Math.rand(0, candidates.len() - 1)]);
 		local distance = this.getDistanceOnRoads(this.m.Origin.getTile(), this.m.Destination.getTile());
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.6, true);
+		local barterMult = 0.0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			barterMult += bro.getBarterModifier();
+		}
+		local bartermod = 10 * barterMult;
+		local modrate = sqrt(bartermod);
 
 		if (days >= 5)
 		{
@@ -160,7 +167,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			this.m.DifficultyMult = this.Math.rand(70, 85) * 0.01;
 		}
 
-		this.m.Payment.Pool = this.Math.max(150, distance * 6.0 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
+		this.m.Payment.Pool = this.Math.max(100, distance * (4 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
 		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
@@ -288,6 +295,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				}
 
 				this.World.State.setEscortedEntity(this.Contract.m.Caravan);
+				this.World.Camp.onEscort(true);
 			}
 
 			function update()
@@ -310,6 +318,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.State.getPlayer().setVisible(false);
 				this.World.Assets.setUseProvisions(false);
 				this.World.getCamera().moveTo(this.World.State.getPlayer());
+				this.World.Camp.update(null);
 
 				if (!this.World.State.isPaused())
 				{
@@ -456,6 +465,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.State.setEscortedEntity(null);
 				this.World.State.getPlayer().setVisible(true);
 				this.World.Assets.setUseProvisions(true);
+				this.World.Camp.onEscort(false);
 
 				if (!this.World.State.isPaused())
 				{
@@ -654,6 +664,12 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
 						this.World.Contracts.finishActiveContract(true);
 						return 0;
+					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Legendary)
+						{
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a caravan");
+						this.World.FactionManager.getFaction(this.Contract.m.NobleHouseID).addPlayerRelation(this.Const.World.Assets.RelationNobleContractPoor, "Cooperated with their soldiers");
+						}
+
 					}
 
 				}
@@ -901,6 +917,13 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a caravan");
 						this.World.Contracts.finishActiveContract();
 						return 0;
+
+					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Legendary)
+						{
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a caravan");
+						this.World.FactionManager.getFaction(this.Contract.m.NobleHouseID).addPlayerRelation(this.Const.World.Assets.RelationNobleContractPoor, "Cooperated with their soldiers");
+						}
+
 					}
 
 				}
@@ -922,6 +945,13 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(money);
+						local xp = money * 0.50;
+						local playerRoster = this.World.getPlayerRoster().getAll();
+						foreach( bro in playerRoster )
+						{
+							bro.addXP(xp);
+							bro.updateLevel();
+						}
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a caravan as promised");
 						this.World.Contracts.finishActiveContract();
 						return 0;
@@ -932,10 +962,11 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			function start()
 			{
 				local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
+				local xpGained = this.Math.round(money * 0.10 * this.Const.Combat.GlobalXPMult);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + money + "[/color] Crowns"
+					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + money + "[/color] Crowns and [color=" + this.Const.UI.Color.PositiveEventValue + "]" + xpGained + "[/color] Experience"
 				});
 				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/well_supplied_situation"), 3, this.Contract.m.Destination, this.List);
 			}
@@ -994,6 +1025,13 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a caravan");
 						this.World.Contracts.finishActiveContract(true);
 						return 0;
+
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Legendary)
+						{
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "Failed to protect a caravan");
+						this.World.FactionManager.getFaction(this.Contract.m.NobleHouseID).addPlayerRelation(this.Const.World.Assets.RelationNobleContractPoor, "Cooperated with their soldiers");
+						}
+
 					}
 
 				}
@@ -1099,7 +1137,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 			if (bandits_dist <= goblins_dist && bandits_dist <= orcs_dist)
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Brigands", false, this.Const.World.Spawn.BanditRaiders, this.Math.rand(95, 115) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
 				party.setDescription("A rough and tough band of brigands preying on the weak.");
 				party.getLoot().Money = this.Math.rand(50, 100);
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
@@ -1132,7 +1170,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			}
 			else if (goblins_dist <= bandits_dist && goblins_dist <= orcs_dist)
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).spawnEntity(tile, "Goblin Raiders", false, this.Const.World.Spawn.GoblinRaiders, this.Math.rand(95, 115) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
 				party.setDescription("A band of mischievous goblins, small but cunning and not to be underestimated.");
 				party.getLoot().ArmorParts = this.Math.rand(0, 10);
 				party.getLoot().Medicine = this.Math.rand(0, 2);
@@ -1156,7 +1194,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			}
 			else
 			{
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(80, 100) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).spawnEntity(tile, "Orc Marauders", false, this.Const.World.Spawn.OrcRaiders, this.Math.rand(95, 115) * this.getDifficultyMult() * this.getReputationToDifficultyMult());
 				party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
 				party.getLoot().ArmorParts = this.Math.rand(0, 25);
 				party.getLoot().Ammo = this.Math.rand(0, 10);

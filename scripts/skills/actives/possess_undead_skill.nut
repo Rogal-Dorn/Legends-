@@ -14,7 +14,7 @@ this.possess_undead_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/necromancer_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.Order = this.Const.SkillOrder.Any +10;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

@@ -39,10 +39,9 @@ this.masterwork_bow <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local quick_shot = this.new("scripts/skills/actives/quick_shot");
-		this.addSkill(quick_shot);
-		local aimed_shot = this.new("scripts/skills/actives/aimed_shot");
-		this.addSkill(aimed_shot);
+		this.addSkill(this.new("scripts/skills/actives/quick_shot"));
+		this.addSkill(this.new("scripts/skills/actives/aimed_shot"));
+		this.addSkill(this.new("scripts/skills/actives/legend_piercing_shot"));	
 	}
 
 	function onSerialize( _out )

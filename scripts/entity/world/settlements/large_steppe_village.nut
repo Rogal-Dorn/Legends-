@@ -28,14 +28,16 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 		]);
 		this.m.DraftList = [
 			"apprentice_background",
-			"beggar_background",
-			"beggar_background",
-			"bowyer_background",
+			"female_beggar_background",
+			"female_beggar_background",
+			"female_bowyer_background",
 			"caravan_hand_background",
 			"caravan_hand_background",
+			"legend_donkey",
+			"legend_donkey",
 			"caravan_hand_background",
 			"gambler_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"gravedigger_background",
 			"graverobber_background",
 			"historian_background",
@@ -54,19 +56,20 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"refugee_background",
 			"servant_background",
 			"shepherd_background",
-			"tailor_background",
+			"female_tailor_background",
 			"thief_background",
 			"vagabond_background",
-			"adventurous_noble_background",
-			"adventurous_noble_background",
+			"female_adventurous_noble_background",
+			"female_adventurous_noble_background",
 			"bastard_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background",
 			"sellsword_background",
 			"swordmaster_background",
 			"cripple_background",
-			"eunuch_background"
+			"eunuch_background",
+			"legend_inventor_background"
 		];
 
 		if (this.Const.DLC.Unhold)

@@ -46,6 +46,22 @@ this.small_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"deserter_background",
 			"retired_soldier_background",
+			"retired_soldier_background",
+						"apprentice_background",
+			"houndmaster_background",
+			"female_beggar_background",
+			"brawler_background",
+			"female_daytaler_background",
+			"mason_background",
+			"messenger_background",
+			"militia_background",
+			"militia_background",
+			"vagabond_background",
+			"witchhunter_background",
+			"bastard_background",
+			"deserter_background",
+			"deserter_background",
+			"retired_soldier_background",
 			"retired_soldier_background"
 		];
 		this.m.UIDescription = "A small fortification built in the mountains";

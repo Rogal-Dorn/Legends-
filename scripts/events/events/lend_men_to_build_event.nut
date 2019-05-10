@@ -23,7 +23,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "Alright, I can spare a man or few.",
+					Text = "Alright, I can spare a hand or few.",
 					function getResult( _event )
 					{
 						return this.Math.rand(1, 100) <= 50 ? "B" : "C";
@@ -44,7 +44,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "Don\'t get too used to this kind of work, men.",
+					Text = "Don\'t get too used to this kind of work, mercenaries.",
 					function getResult( _event )
 					{
 						return 0;
@@ -54,7 +54,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationFavor, "You lend some men to help build a mill");
+				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationFavor, "You lend some help ro build a mill");
 				this.World.Assets.addMoney(150);
 				this.List = [
 					{
@@ -69,7 +69,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 				{
 					local id = bro.getBackground().getID();
 
-					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger")
+					if (id == "background.daytaler" || id == "background.female_daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller"|| id == "background.female_miller" || id == "background.farmhand" || id == "background.female_farmhand"  || id == "background.gravedigger")
 					{
 						if (this.Math.rand(1, 100) <= 33)
 						{
@@ -102,7 +102,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_79.png[/img]You agree to help the man. Unfortunately, it appears as though he didn\'t plan things out too well. The rooftop collapses the second one of your \'laborers\' steps foot on it, sending the man through a sinkhole of shingles. Another man hammers a nail into place only for the wooden support to splinter right in two, catching him in the face with shards of wood. Loose bricks find freedom, wet mud has men slipping, and all manner of workplace hazards ends the whole project in disaster.\n\n The local man apologizes profusely in between biting his nails and wondering how he\'s going to deal with the baron. Snapping his fingers, he exclaims that he\'ll just pay him the crowns.",
+			Text = "[img]gfx/ui/events/event_79.png[/img]You agree to help the man. Unfortunately, it appears as though he didn\'t plan things out too well. The rooftop collapses the second one of your \'laborers\' steps foot on it, sending them through a sinkhole of shingles. Another mercenary hammers a nail into place only for the wooden support to splinter right in two, catching them in the face with shards of wood. Loose bricks find freedom, wet mud has them slipping, and all manner of workplace hazards ends the whole project in disaster.\n\n The local man apologizes profusely in between biting his nails and wondering how he\'s going to deal with the baron. Snapping his fingers, he exclaims that he\'ll just pay him the crowns.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -162,7 +162,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 				{
 					local id = bro.getBackground().getID();
 
-					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger")
+					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.female_miller" || id == "background.female_farmhand" || id == "background.farmhand" || id == "background.gravedigger")
 					{
 						if (this.Math.rand(1, 100) <= 33)
 						{
@@ -211,14 +211,14 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationFavor, "You lend some men to help build a mill");
+				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationFavor, "You lend some help to build a mill");
 				local brothers = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in brothers )
 				{
 					local id = bro.getBackground().getID();
 
-					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger")
+					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.female_miller" || id == "background.female_farmhand" || id == "background.gravedigger")
 					{
 						if (this.Math.rand(1, 100) <= 33)
 						{

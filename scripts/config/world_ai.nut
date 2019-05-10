@@ -71,8 +71,8 @@ gt.Const.World.AI <- {
 			Flee = 9000
 		},
 		EnemyNearDist = 500.0,
-		AmbushMinDistToSettlements = 8,
-		AmbushMaxSpots = 10,
+		AmbushMinDistToSettlements = 6,
+		AmbushMaxSpots = 20,
 		AmbushWaitTime = this.World.getTime().SecondsPerDay * 3.0,
 		RoamMaxAttempts = 8,
 		AttackDirectMovementDistance = 250.0,

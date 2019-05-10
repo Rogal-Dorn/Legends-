@@ -21,7 +21,7 @@ this.orc_young_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.25;
 		this.m.Properties.EngageRangeMin = 1;
 		this.m.Properties.EngageRangeMax = 2;
-		this.m.Properties.EngageRangeIdeal = 2;
+		this.m.Properties.EngageRangeIdeal = 1;
 	}
 
 	function onAddBehaviors()
@@ -42,6 +42,7 @@ this.orc_young_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_switchto_ranged"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_hook"));
 	}
 
 	function onUpdate()

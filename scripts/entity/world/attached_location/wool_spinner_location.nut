@@ -25,6 +25,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("tailor_background");
+		_list.push("female_tailor_background");
 		_list.push("tailor_background");
 	}
 
@@ -48,10 +49,31 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "helmets/hood"
 			});
 			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_heal"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_fletcher"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_enchant"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_craft"
+			});
+			_list.push({
 				R = 0,
 				P = 1.0,
 				S = "trade/cloth_rolls_item"
 			});
+
 		}
 		else if (_id == "building.specialized_trader")
 		{

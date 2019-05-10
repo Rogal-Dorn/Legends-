@@ -37,42 +37,48 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"Grunhain"
 		]);
 		this.m.DraftList = [
+			"swordmaster_background",
 			"apprentice_background",
-			"beggar_background",
-			"beggar_background",
-			"butcher_background",
+			"female_beggar_background",
+			"female_beggar_background",
+			"female_butcher_background",
 			"caravan_hand_background",
 			"gambler_background",
-			"daytaler_background",
-			"daytaler_background",
-			"farmhand_background",
-			"farmhand_background",
-			"farmhand_background",
-			"farmhand_background",
+			"female_daytaler_background",
+			"female_daytaler_background",
+			"female_farmhand_background",
+			"female_farmhand_background",
+			"female_farmhand_background",
+			"female_farmhand_background",
+			"legend_donkey",
+			"legend_donkey",
+			"legend_donkey",
+			"legend_donkey",
 			"historian_background",
 			"juggler_background",
 			"militia_background",
 			"militia_background",
-			"miller_background",
-			"miller_background",
-			"miller_background",
+			"female_miller_background",
+			"female_miller_background",
+			"female_miller_background",
 			"minstrel_background",
 			"minstrel_background",
 			"peddler_background",
 			"ratcatcher_background",
 			"refugee_background",
-			"servant_background",
+			"female_servant_background",
 			"shepherd_background",
-			"tailor_background",
+			"female_tailor_background",
 			"vagabond_background",
-			"adventurous_noble_background",
+			"female_adventurous_noble_background",
 			"bastard_background",
 			"hedge_knight_background",
 			"raider_background",
 			"retired_soldier_background",
 			"sellsword_background",
 			"squire_background",
-			"swordmaster_background"
+			"swordmaster_background",
+			"legend_inventor_background"
 		];
 		this.m.UIDescription = "A large city thriving on trade and agriculture";
 		this.m.Description = "A large city surrounded by lush green meadows, orchards and fields. Food stocks are usually filled to the brim.";
@@ -87,9 +93,9 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.IsMilitary = false;
 		this.m.Size = 3;
 		this.m.HousesType = 3;
-		this.m.HousesMin = 3;
-		this.m.HousesMax = 5;
-		this.m.AttachedLocationsMax = 6;
+		this.m.HousesMin = 4;
+		this.m.HousesMax = 6;
+		this.m.AttachedLocationsMax = 7;
 	}
 
 	function onBuild()

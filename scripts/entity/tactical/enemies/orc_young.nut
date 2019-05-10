@@ -251,6 +251,15 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
 		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
+		
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			b.MeleeSkill += 10;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function onFinish()
@@ -282,10 +291,14 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					weapon = this.new("scripts/items/weapons/greenskins/orc_cleaver");
 				}
+					else if (r == 3)
+				{
+					weapon = this.new("scripts/items/weapons/greenskins/legend_skin_flayer");
+				}
 			}
 			else
 			{
-				local r = this.Math.rand(1, 2);
+				local r = this.Math.rand(1, 3);
 
 				if (r == 1)
 				{
@@ -295,11 +308,15 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					weapon = this.new("scripts/items/weapons/greenskins/orc_metal_club");
 				}
+				else if (r == 3)
+				{
+					weapon = this.new("scripts/items/weapons/legend_chain");
+				}
 			}
 		}
 		else
 		{
-			r = this.Math.rand(1, 3);
+			r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -307,11 +324,15 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 			}
 			else if (r == 2)
 			{
-				weapon = this.new("scripts/items/weapons/hatchet");
+				weapon = this.new("scripts/items/weapons/morning_star");
 			}
 			else if (r == 3)
 			{
-				weapon = this.new("scripts/items/weapons/morning_star");
+				weapon = this.new("scripts/items/weapons/greenskins/legend_meat_hacker");
+			}
+				else if (r == 4)
+			{
+				weapon = this.new("scripts/items/weapons/greenskins/legend_bone_carver");
 			}
 		}
 

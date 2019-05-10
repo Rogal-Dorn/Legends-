@@ -5,8 +5,8 @@ this.darkflight <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.darkflight";
 		this.m.Name = "Darkflight";
 		this.m.Description = "";
-		this.m.Icon = "skills/active_28.png";
-		this.m.IconDisabled = "skills/active_11_sw.png";
+		this.m.Icon = "skills/darkflight.png";
+		this.m.IconDisabled = "skills/darkflight_bw.png";
 		this.m.Overlay = "active_28";
 		this.m.SoundOnUse = [
 			"sounds/enemies/vampire_takeoff_01.wav",

@@ -65,7 +65,8 @@ gt.Const.UI <- {
 		NegativeValue = "#8f1e1e",
 		DamageValue = "#8f1e1e",
 		PositiveEventValue = "#1e861e",
-		NegativeEventValue = "#a22424"
+		NegativeEventValue = "#a22424",
+		RuneColor = "#bf2aac"
 	},
 	function getColorizedEntityName( _entity )
 	{

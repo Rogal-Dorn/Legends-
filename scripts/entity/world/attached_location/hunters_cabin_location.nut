@@ -28,6 +28,7 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("hunter_background");
 		_list.push("poacher_background");
 		_list.push("poacher_background");
+		_list.push("legend_taxidermist_background");
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -53,6 +54,11 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 				R = 10,
 				P = 1.0,
 				S = "helmets/hood"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_hunter"
 			});
 			_list.push({
 				R = 10,

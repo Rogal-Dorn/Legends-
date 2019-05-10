@@ -41,6 +41,9 @@ this.stunned_effect <- this.inherit("scripts/skills/skill", {
 			this.m.Container.removeByID("effects.riposte");
 			this.m.Container.removeByID("effects.return_favor");
 			this.m.Container.removeByID("effects.possessed_undead");
+
+			this.m.Container.removeByID("effects.legend_vala_currently_chanting");
+			this.m.Container.removeByID("effects.legend_vala_in_trance");
 		}
 		else
 		{

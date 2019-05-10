@@ -380,6 +380,9 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			corpse.Saturation = sprite_head.Saturation;
 			corpse.Custom = custom;
 			corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
+
+			corpse.isHuman = 1;
+
 			_tile.Properties.set("Corpse", corpse);
 			this.Tactical.Entities.addCorpse(_tile);
 		}

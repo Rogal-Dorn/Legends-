@@ -195,6 +195,15 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 						food.drop(_tile);
 					}
 				}
+
+				if (this.Math.rand(1, 100) < 10)
+				{
+					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					token.setRuneVariant(this.Math.rand(11, 13));
+					token.setRuneBonus(true);
+					token.updateRuneSigilToken();
+					token.drop(_tile);
+				}
 			}
 		}
 
@@ -257,6 +266,19 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/charm_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hex_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/fake_drink_night_vision_skill"));
+
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+			this.m.Skills.add(this.new("scripts/skills/actives/legend_magic_missile"));
+			b.IsImmuneToStun = true;
+			b.Initiative += 50;
+			b.RangedSkill += 75;
+			b.Stamina += 70;
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function onUpdateInjuryLayer()
@@ -291,6 +313,10 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		 {
+		 this.m.Items.equip(this.new("scripts/items/weapons/legend_gnarled_staff"));
+		 }
 	}
 
 	function setCharming( _f )

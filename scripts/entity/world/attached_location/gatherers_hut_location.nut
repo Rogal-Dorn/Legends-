@@ -21,7 +21,7 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		{
 			return;
 		}
-
+		_list.push("legend_herbalist_background");
 		_list.push("daytaler_background");
 	}
 
@@ -38,6 +38,26 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				R = 20,
 				P = 1.0,
 				S = "weapons/bludgeon"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_sickle"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_gather"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_heal"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "supplies/medicine_small_item"
 			});
 			_list.push({
 				R = 20,

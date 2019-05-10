@@ -56,7 +56,8 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 		{
 			return;
 		}
-
+		_list.push("legend_blacksmith_background");
+		_list.push("legend_ironmonger_background");
 		_list.push("apprentice_background");
 		_list.push("deserter_background");
 	}
@@ -69,6 +70,11 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 				R = 35,
 				P = 1.0,
 				S = "weapons/dagger"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_hammer"
 			});
 			_list.push({
 				R = 25,
@@ -105,6 +111,11 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 				R = 45,
 				P = 1.0,
 				S = "weapons/greatsword"
+			});
+			_list.push({
+				R = 45,
+				P = 1.0,
+				S = "weapons/legend_tipstaff"
 			});
 			_list.push({
 				R = 35,

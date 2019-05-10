@@ -224,9 +224,9 @@ this.weapon <- this.inherit("scripts/items/item", {
 				id = 4,
 				type = "progressbar",
 				icon = "ui/icons/asset_supplies.png",
-				value = this.m.Condition,
-				valueMax = this.m.ConditionMax,
-				text = "" + this.m.Condition + " / " + this.m.ConditionMax + "",
+				value = this.Math.floor(this.m.Condition),
+				valueMax = this.Math.floor(this.m.ConditionMax),
+				text = "" + this.Math.floor(this.m.Condition) + " / " + this.Math.floor(this.m.ConditionMax) + "",
 				style = "armor-body-slim"
 			});
 		}
@@ -359,6 +359,16 @@ this.weapon <- this.inherit("scripts/items/item", {
 					text = "[color=" + this.Const.UI.Color.NegativeValue + "]Is empty and useless[/color]"
 				});
 			}
+		}
+
+		if (this.isRuned())
+		{
+			result.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = this.getRuneSigilTooltip()
+			});
 		}
 
 		return result;
@@ -560,6 +570,12 @@ this.weapon <- this.inherit("scripts/items/item", {
 		this.getContainer().updateAppearance();
 	}
 
+	function updateRuneSigil()
+	{
+		this.item.updateRuneSigil();
+		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
+	}
+	
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
@@ -575,6 +591,10 @@ this.weapon <- this.inherit("scripts/items/item", {
 		if (this.m.Ammo != 0 && this.m.AmmoMax == 0)
 		{
 			this.m.AmmoMax = this.m.Ammo;
+		}
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
 		}
 	}
 

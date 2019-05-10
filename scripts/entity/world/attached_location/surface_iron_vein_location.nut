@@ -69,6 +69,7 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("miner_background");
 		_list.push("miner_background");
 		_list.push("miner_background");
+		_list.push("legend_ironmonger_background");
 		_list.push("retired_soldier_background");
 	}
 
@@ -106,6 +107,11 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 				R = 60,
 				P = 1.0,
 				S = "weapons/morning_star"
+			});
+			_list.push({
+				R = 60,
+				P = 1.0,
+				S = "weapons/legend_tipstaff"
 			});
 			_list.push({
 				R = 70,

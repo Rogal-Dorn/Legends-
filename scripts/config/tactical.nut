@@ -30,6 +30,7 @@ gt.Const.Tactical.CombatResult <- {
 	EnemyDestroyed = 2,
 	PlayerRetreated = 3,
 	PlayerDestroyed = 4
+	CommanderDestroyed = 5
 };
 gt.Const.Tactical.MovementType <- {
 	Default = 0,

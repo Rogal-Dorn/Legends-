@@ -123,7 +123,10 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.StaminaModifier = _in.readI8();
 		this.m.MeleeDefense = _in.readU16();
 		this.m.RangedDefense = _in.readU16();
-
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 		if (_in.getMetaData().getVersion() >= 47)
 		{
 			this.m.FatigueOnSkillUse = _in.readI16();

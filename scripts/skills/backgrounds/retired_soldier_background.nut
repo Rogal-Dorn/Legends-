@@ -46,6 +46,11 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(2, 3);
 		this.m.IsCombatBackground = true;
+
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
 	}
 
 	function getTooltip()

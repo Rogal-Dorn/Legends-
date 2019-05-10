@@ -77,6 +77,11 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "armor/apron"
 			});
 			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_scrap"
+			});
+			_list.push({
 				R = 25,
 				P = 1.0,
 				S = "supplies/armor_parts_item"
@@ -135,6 +140,7 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 				P = 1.0,
 				S = "helmets/closed_flat_top_with_mail"
 			});
+
 			_list.push({
 				R = 30,
 				P = 1.0,

@@ -91,7 +91,8 @@ this.world_screen_topbar_options_module <- this.inherit("scripts/ui/screens/ui_m
 
 	function onCampButtonPressed()
 	{
-		this.World.State.onCamp();
+		//this.World.State.onCamp();
+		this.World.State.showCampScreen();
 	}
 
 	function onCenterButtonPressed()

@@ -85,6 +85,11 @@ this.salt_mine_location <- this.inherit("scripts/entity/world/attached_location"
 				S = "weapons/pickaxe"
 			});
 			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_hammer"
+			});
+			_list.push({
 				R = 0,
 				P = 1.0,
 				S = "trade/salt_item"

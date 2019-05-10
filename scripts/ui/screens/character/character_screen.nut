@@ -354,6 +354,18 @@ this.character_screen <- {
 		}
 	}
 
+
+	function onToggleReserveCharacter( _id )
+	{
+		local bro = this.Tactical.getEntityByID(_id);
+		if (bro == null)
+		{
+			return this.UIDataHelper.convertEntityToUIData(bro, null);
+		}
+		bro.setInReserves(!bro.isInReserves());
+		return this.UIDataHelper.convertEntityToUIData(bro, null);
+	}
+
 	function onDiceThrow()
 	{
 		this.Sound.play(this.Const.Sound.DiceThrow[this.Math.rand(0, this.Const.Sound.DiceThrow.len() - 1)], this.Const.Sound.Volume.Inventory);
@@ -362,8 +374,16 @@ this.character_screen <- {
 	function queryData()
 	{
 		local result = {
-			brothers = this.onQueryBrothersList()
+			brothers = this.onQueryBrothersList(),
 		};
+
+		if ("Assets" in this.World && this.World.Assets != null)
+		{
+
+			result.formationIndex <- this.World.Assets.getFormationIndex(),
+			result.formationName <- this.World.Assets.getFormationName(),
+			result.maxBrothers <- this.World.Assets.getBrothersMax()			
+		}
 
 		if (this.m.InventoryMode != this.Const.CharacterScreen.InventoryMode.Ground)
 		{
@@ -377,6 +397,7 @@ this.character_screen <- {
 			this.m.PerkTreesLoaded = true;
 			result.perkTrees <- this.onQueryPerkTrees();
 		}
+		//this.logDebug("Generating stash list info :" + result.stashSpaceUsed + " : " + result.stashSpaceMax)
 
 		return result;
 	}
@@ -437,24 +458,78 @@ this.character_screen <- {
 		}
 	}
 
-	function onRepairInventoryItem( _data )
+	function onToggleInventoryItem( _data )
 	{
+		local result = {
+			repair = false,
+			salvage = false
+		}
+
+		local itemId = _data[0];
+		local entityId = _data[1];
+
 		if (this.Tactical.isActive())
 		{
-			return false;
+			return result;
+		}
+
+		local obj = null
+		local item = null;
+		local index = 0;
+		if (entityId != null)
+		{
+			obj = this.Tactical.getEntityByID(entityId).getItems().getItemByInstanceID(itemId);
+			if (obj != null)
+			{
+				item = obj
+			}
+		}
+		else 
+		{
+			obj = this.Stash.getItemByInstanceID(itemId);
+			if (obj != null)
+			{
+				item = obj.item;
+				index = obj.index;
+			}
+		}
+
+		if (item == null)
+		{
+			return result;
+		}
+
+		if (item.isIndestructible() || entityId != null)
+		{
+			item.setToBeRepaired(!item.isToBeRepaired(), index)
+			item.setToBeSalvaged(false, 0);
+		}
+		else if (!item.isToBeRepaired() && !item.isToBeSalvaged())
+		{
+			if (item.setToBeRepaired(true, index))
+			{
+				item.setToBeSalvaged(false, 0);
+			} 
+			else if (item.canBeSalvaged())
+			{
+				item.setToBeSalvaged(true, index);
+			}
+			
+		}
+		else if (item.isToBeRepaired() && item.canBeSalvaged())
+		{
+			item.setToBeRepaired(false, 0);
+			item.setToBeSalvaged(true, index);
 		}
 		else
 		{
-			local item = this.World.Assets.getStash().getItemByInstanceID(_data).item;
+			item.setToBeRepaired(false, 0);
+			item.setToBeSalvaged(false, 0);
+		}
 
-			if (item != null)
-			{
-				return item.setToBeRepaired(!item.isToBeRepaired());
-			}
-			else
-			{
-				return false;
-			}
+		return {
+			repair = item.isToBeRepaired(),
+			salvage = item.isToBeSalvaged()
 		}
 	}
 
@@ -575,6 +650,10 @@ this.character_screen <- {
 
 			foreach( entity in entities )
 			{
+				if (entity.isSummoned())
+				{
+					continue;
+				}
 				result.push(this.UIDataHelper.convertEntityToUIData(entity, activeEntity));
 			}
 
@@ -876,7 +955,7 @@ this.character_screen <- {
 
 	function general_onQueryPerkInformation( _data )
 	{
-		return this.UIDataHelper.convertPerkToUIData(_data[0]);
+		return this.UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
 	}
 
 	function general_onUnlockPerk( _data )
@@ -888,7 +967,7 @@ this.character_screen <- {
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToFindEntity);
 		}
 
-		if (!entity.unlockPerk(_data[1]))
+		if (!entity.unlockPerk(_data[1], entity.getBackground().getID()))
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToUnlockPerk);
 		}
@@ -2299,6 +2378,26 @@ this.character_screen <- {
 			error = errorString,
 			code = _errorCode
 		};
+	}
+
+	function onFormationChanged( _data )
+	{
+		local index = _data[0];
+		this.World.Assets.changeFormation(index);
+		this.loadData();
+	}
+
+	function onFormationClear( _data )
+	{
+		this.World.Assets.clearFormation();
+		this.loadData();
+	}
+
+	function onUpdateFormationName( _data )
+	{
+		local name = _data[0];
+		this.World.Assets.changeFormationName(name);
+		return this.World.Assets.getFormationName();
 	}
 
 };

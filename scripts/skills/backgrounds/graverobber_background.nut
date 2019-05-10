@@ -31,6 +31,7 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 	}
 
 	function getTooltip()
@@ -105,11 +106,11 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/dagger"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 		else if (r == 3)
 		{

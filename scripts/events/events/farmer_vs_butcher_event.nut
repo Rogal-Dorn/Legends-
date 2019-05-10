@@ -98,7 +98,7 @@ this.farmer_vs_butcher_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() <= 3 && bro.getBackground().getID() == "background.butcher")
+			if (bro.getLevel() <= 3 && bro.getBackground().getID() == "background.butcher" || bro.getLevel() <= 3 && bro.getBackground().getID() == "background.female_butcher")
 			{
 				butcher_candidates.push(bro);
 				break;
@@ -114,7 +114,7 @@ this.farmer_vs_butcher_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() <= 3 && bro.getBackground().getID() == "background.farmhand")
+			if (bro.getLevel() <= 3 && bro.getBackground().getID() == "background.farmhand" || bro.getLevel() <= 3 && bro.getBackground().getID() == "background.female_farmhand")
 			{
 				farmer_candidates.push(bro);
 			}

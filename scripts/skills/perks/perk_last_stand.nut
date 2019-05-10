@@ -5,7 +5,8 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.last_stand";
 		this.m.Name = this.Const.Strings.PerkName.LastStand;
 		this.m.Description = this.Const.Strings.PerkDescription.LastStand;
-		this.m.Icon = "skills/passive_03.png";
+		this.m.Icon = "ui/perks/laststand_circle.png";
+		this.m.IconDisabled = "ui/perks/laststand_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -15,9 +16,14 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		local bonus = 2.0 - this.getContainer().getActor().getHitpoints() / this.getContainer().getActor().getHitpointsMax();
-		_properties.MeleeDefenseMult *= bonus;
-		_properties.RangedDefenseMult *= bonus;
+		local maxHP = this.getContainer().getActor().getHitpointsMax();
+		local percentHP = maxHP / 100;
+		local currentHP = this.getContainer().getActor().getHitpoints();
+		local currentPercent = currentHP / percentHP;
+		local missingPercent = 100 - currentPercent;
+		local bonus = missingPercent / 100;
+		_properties.MeleeDefenseMult += bonus;
+		_properties.RangedDefenseMult += bonus;
 	}
 
 });

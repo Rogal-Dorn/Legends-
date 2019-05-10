@@ -109,9 +109,9 @@ this.shield <- this.inherit("scripts/items/item", {
 			id = 4,
 			type = "progressbar",
 			icon = "ui/icons/asset_supplies.png",
-			value = this.m.Condition,
-			valueMax = this.m.ConditionMax,
-			text = "" + this.m.Condition + " / " + this.m.ConditionMax + "",
+			value = this.Math.floor(this.m.Condition),
+			valueMax = this.Math.floor(this.m.ConditionMax),
+			text = "" + this.Math.floor(this.m.Condition) + " / " + this.Math.floor(this.m.ConditionMax) + "",
 			style = "armor-head-slim"
 		});
 
@@ -171,6 +171,16 @@ this.shield <- this.inherit("scripts/items/item", {
 				type = "text",
 				icon = "ui/tooltips/warning.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Broken and unusable[/color]"
+			});
+		}
+
+		if (this.isRuned())
+		{
+			result.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = this.getRuneSigilTooltip()
 			});
 		}
 
@@ -405,6 +415,48 @@ this.shield <- this.inherit("scripts/items/item", {
 		this.updateAppearance();
 	}
 
+	function updateRuneSigil()
+	{
+		local iconLargeParts = split(this.m.IconLarge, "/");
+		local iconParts = split(this.m.Icon, "/");
+		local text = ""
+		for (local i = 0; i < iconLargeParts.len(); i = ++i)
+		{
+			if (i == iconLargeParts.len() - 1)
+			{
+				text = text + "runed_" + iconLargeParts[i]
+			} else {
+				text = text + iconLargeParts[i] + "/";
+			}
+		}
+		this.m.IconLarge = text;
+
+		text = ""
+		for (local i = 0; i < iconParts.len(); i = ++i)
+		{
+			if (i == iconParts.len() - 1)
+			{
+				local shieldP = split(iconParts[i], "_");
+				text = text + "runed";
+				for (local j=0; j < shieldP.len(); j = ++j)
+				{
+					if (shieldP[j] == "icon")
+					{
+						continue;
+					}
+					text = text + "_" + shieldP[j];
+				}
+			} else {
+				text = text + iconParts[i] + "/";
+			}
+		}
+		this.m.Icon = text;
+		if (this.m.Name.find("(Runed)") == null)
+		{
+			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		}
+	}
+
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
@@ -414,6 +466,10 @@ this.shield <- this.inherit("scripts/items/item", {
 	{
 		this.item.onDeserialize(_in);
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

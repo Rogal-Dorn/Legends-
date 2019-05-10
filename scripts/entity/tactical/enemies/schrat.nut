@@ -147,7 +147,16 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 					}
 
 					loot.drop(_tile);
+
+				if (this.Math.rand(1, 100) < 10)
+				{
+					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+					token.setRuneVariant(this.Math.rand(31, 32));
+					token.setRuneBonus(true);
+					token.updateRuneSigilToken();
+					token.drop(_tile);
 				}
+
 			}
 		}
 
@@ -216,6 +225,14 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/grow_shield_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/uproot_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/uproot_zoc_skill"));
+			 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function assignRandomEquipment()

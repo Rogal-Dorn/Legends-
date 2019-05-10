@@ -51,6 +51,21 @@ this.small_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 			"peddler_background",
 			"tailor_background",
 			"vagabond_background",
+			"vagabond_background",
+						"female_beggar_background",
+			"female_beggar_background",
+			"female_daytaler_background",
+			"female_butcher_background",
+			"female_butcher_background",
+			"fisherman_background",
+			"fisherman_background",
+			"fisherman_background",
+			"fisherman_background",
+			"fisherman_background",
+			"gravedigger_background",
+			"peddler_background",
+			"female_tailor_background",
+			"vagabond_background",
 			"vagabond_background"
 		];
 		this.m.UIDescription = "A small fishing village made up of a few humble huts";

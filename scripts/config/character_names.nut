@@ -5,6 +5,7 @@ if (!("Strings" in gt.Const))
 	gt.Const.Strings <- {};
 }
 
+
 gt.Const.Strings.CharacterNames <- [
 	"Sigurd",
 	"Siegfried",
@@ -238,24 +239,49 @@ gt.Const.Strings.CharacterNames <- [
 	"Markolf",
 	"Hadebrand",
 	"Roderick",
-	"Rambert",
-	"Meinrad"
+	"Rambert"
+
 ];
+
 gt.Const.Strings.CharacterNamesFemale <- [
 	"Ingrid",
 	"Helga",
 	"Irma",
 	"Adela",
 	"Birgit",
+	"Beatrix",
 	"Bertha",
+	"Blanche",
 	"Borghild",
 	"Brunhild",
 	"Frida",
+	"Gisela",
 	"Gudrun",
 	"Hilda",
+	"Judith",
 	"Sigrid",
+	"Sibyle",
+	"Sophia",
+	"Joanna",
 	"Mathilda",
-	"Gerhild"
+	"Gerhild",
+	"Amalie",
+	"Agnise",
+	"Agathe",
+	"Clare",
+	"Helena",
+	"Ursular",
+	"Vronika",
+	"Magrit",
+	"Eneyde",
+	"Elsa",
+	"Birgitte",
+	"Gissela",
+	"Lena",
+	"Agness",
+	"Adela",
+	"Jenna"
+
 ];
 gt.Const.Strings.BarbarianNames <- [
 	"Smud",
@@ -349,11 +375,15 @@ gt.Const.Strings.HedgeKnightTitles <- [
 	"The Hound",
 	"Steelwielder",
 	"The Slayer",
+	"The Jouster",
 	"The Giant",
 	"The Mountain",
+	"Strongface",
 	"The Defiler",
 	"The Knightslayer",
 	"The Hedge Knight",
+	"the Shrubbery",
+	"who says ni",
 	"The Scourge",
 	"The Fallen Knight",
 	"Mancrusher",
@@ -403,6 +433,9 @@ gt.Const.Strings.WitchhunterTitles <- [
 	"the Nighthunter",
 	"the Witchhunter",
 	"the Exorciser",
+	"the Saltzpire",
+	"the Inquisitor",
+	"the Righteous",
 	"the Torturer"
 ];
 gt.Const.Strings.GravediggerTitles <- [
@@ -495,7 +528,51 @@ gt.Const.Strings.KnightNames <- [
 	"Sir Kunibert",
 	"Sir Dankrad",
 	"Sir Leberecht"
+
 ];
+gt.Const.Strings.LadyNames <- [
+	"Lady Jean",
+	"Lady Hatchet",
+	"Lady Matilda",
+	"Lady Isabella",
+	"Lady Deborah",
+	"Lady Gwendolen",
+	"Lady Mavia",
+	"Lady Lilliard",
+	"Lady Madeira",
+	"Lady Hille",
+	"Lady Amina",
+	"Lady Mary",
+	"Lady Beaton",
+	"Lady Jean",
+	"Lady Avice",
+	"Lady Emma",
+	"Lady Joan",
+	"Lady Margery",
+	"Lady Albree",
+	"Lady Alia",
+	"Lady Ela",
+	"Lady Gisella",
+	"Lady Elisa",
+	"Lady Tamsin",
+	"Lady Anabella",
+	"Lady Beatrice",
+	"Lady Clarae",
+	"Lady Emilia",
+	"Lady Constance",
+	"Lady Florencia",
+	"Lady Joye",
+	"Lady Lucia",
+	"Lady Arrianna",
+	"Lady Pavia",
+	"Lady Prudence",
+	"Lady Sabina",
+	"Lady Ursula",
+	"Lady Grace",
+	"Lady Yvone"
+];
+
+
 gt.Const.Strings.OrcWarlordNames <- [
 	"Illska Ghul",
 	"Skabskra",
@@ -542,6 +619,7 @@ gt.Const.Strings.OrcWarlordNames <- [
 	"Ilska Sapat",
 	"Grug Zartum",
 	"Grommok",
+	"Arvius",
 	"Ogrul",
 	"Shura Nak"
 ];
@@ -613,6 +691,72 @@ gt.Const.Strings.KrakenNames <- [
 	"Thohochoth the All-Ender",
 	"Naccorath the Eternal",
 	"Xapocathlu the All-Reaching"
+];
+gt.Const.Strings.CharacterNamesFemaleNorse <- [
+	"Agata",
+	"Alfhilda",
+	"Arnlaug",
+	"Birna",
+	"Brunhild",
+	"Bylgja",
+	"Dagrun",
+	"Drifa",
+	"Edda",
+	"Eir",
+	"Elli",
+	"Embla",
+	"Fenja",
+	"Frigg",
+	"Gigja",
+	"Groa",
+	"Gudrun",
+	"Gullveig",
+	"Halla",
+	"Heidrun",
+	"Helga",
+	"Hrefna",
+	"Hulda",
+	"Ida",
+	"Inga",
+	"Ingrid",
+	"Ingunn",
+	"Johanna",
+	"Jorunn",
+	"Katla",
+	"Kolbrun",
+	"Kristin",
+	"Laufey",
+	"Magdalena",
+	"Magna",
+	"Marta",
+	"Mette",
+	"Nanna",
+	"Oda",
+	"Ragna",
+	"Runa",
+	"Sif",
+	"Signy",
+	"Sigrid",
+	"Sigrun",
+	"Solveig",
+	"Svana",
+	"Tekla",
+	"Tora",
+	"Torunn",
+	"Una",
+	"Valborg",
+	"Valdis",
+	"Yrsa"
+];
+gt.Const.Strings.InventorTitles <- [
+	"the Inventor",
+	"the Curious",
+	"the Peculiar",
+	"the Inquisitive",
+	"the Utilitarian",
+	"the Serendipitous",
+	"the Eclectic",
+	"the Tinkerer"
 ];
 gt.Const.Strings.AncientDeadNames <- [
 	"Brasus",
@@ -699,4 +843,3 @@ gt.Const.Strings.FallenHeroTitles <- [
 	"the Prince of Rot",
 	"the Hollow"
 ];
-

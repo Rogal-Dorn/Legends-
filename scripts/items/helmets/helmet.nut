@@ -129,9 +129,9 @@ this.helmet <- this.inherit("scripts/items/item", {
 			id = 4,
 			type = "progressbar",
 			icon = "ui/icons/armor_head.png",
-			value = this.m.Condition,
-			valueMax = this.m.ConditionMax,
-			text = "" + this.getArmor() + " / " + this.getArmorMax() + "",
+			value = this.Math.floor(this.m.Condition),
+			valueMax = this.Math.floor(this.m.ConditionMax),
+			text = "" + this.Math.floor(this.getArmor()) + " / " + this.Math.floor(this.getArmorMax()) + "",
 			style = "armor-head-slim"
 		});
 
@@ -161,6 +161,16 @@ this.helmet <- this.inherit("scripts/items/item", {
 				type = "text",
 				icon = "ui/icons/vision.png",
 				text = "Vision [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Vision + "[/color]"
+			});
+		}
+
+		if (this.isRuned())
+		{
+			result.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = this.getRuneSigilTooltip()
 			});
 		}
 
@@ -356,6 +366,10 @@ this.helmet <- this.inherit("scripts/items/item", {
 		this.item.onDeserialize(_in);
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, _in.readF32());
 		this.updateVariant();
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

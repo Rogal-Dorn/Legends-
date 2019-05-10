@@ -31,12 +31,6 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-	function isUsable()
-	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return (mainhand == null || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
-	}
-
 	function onUpdate( _properties )
 	{
 		if (this.isUsable())
@@ -50,7 +44,20 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		return this.attackEntity(_user, _targetTile.getEntity());
+
+		local target = _targetTile.getEntity();
+		local success = this.attackEntity(_user, _targetTile.getEntity());
+
+		if (success)
+		{
+			if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					local effect = this.new("scripts/skills/effects/zombie_poison_effect");
+					target.getSkills().add(effect);
+				}
+		
+		return success;
+		}
 	}
 
 });

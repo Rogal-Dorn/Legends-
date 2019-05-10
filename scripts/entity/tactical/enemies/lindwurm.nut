@@ -148,6 +148,14 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 						}
 
 						loot.drop(_tile);
+							if (this.Math.rand(1, 100) < 10)
+							{
+								local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+								token.setRuneVariant(this.Math.rand(21, 23));
+								token.setRuneBonus(true);
+								token.updateRuneSigilToken();
+								token.drop(_tile);
+							}
 					}
 					else
 					{
@@ -278,6 +286,13 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 
 		if (this.m.Tail == null)
 		{

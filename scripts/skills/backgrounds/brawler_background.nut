@@ -40,6 +40,8 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Ammo[1];			
 	}
 
 	function getTooltip()
@@ -101,8 +103,8 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0
 			],
 			Initiative = [
-				5,
-				0
+				15,
+				5
 			]
 		};
 		return c;

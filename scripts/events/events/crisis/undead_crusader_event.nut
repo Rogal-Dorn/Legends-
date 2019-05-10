@@ -39,7 +39,7 @@ this.undead_crusader_event <- this.inherit("scripts/events/event", {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
-					"crusader_background"
+					"legend_crusader_background"
 				]);
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_undead_trait"));
 				this.Characters.push(_event.m.Dude.getImagePath());
@@ -55,14 +55,23 @@ this.undead_crusader_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getBusinessReputation() < 3000)
+		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
 
-		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
-		{
-			return;
+        local roster = this.World.getPlayerRoster().getAll()
+        foreach( bro in roster)
+        {
+			if (bro.getBackground().getID() == "background.legend_commander_crusader")
+			{
+				return
+			}
+
+			if (bro.getBackground().getID() == "background.legend_crusader")
+			{
+				return
+			}
 		}
 
 		this.m.Score = 10;

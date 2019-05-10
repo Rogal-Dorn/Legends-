@@ -50,11 +50,11 @@ this.conquer_order <- this.inherit("scripts/ai/world/world_behavior", {
 
 	function onExecute( _entity, _hasChanged )
 	{
-		if (!this.World.FactionManager.isCivilWar())
-		{
-			this.getController().popOrder();
-			return true;
-		}
+	//	if (!this.World.FactionManager.isCivilWar())
+	//	{
+	//		this.getController().popOrder();
+	//		return true;
+	//	}
 
 		local myTile = _entity.getTile();
 

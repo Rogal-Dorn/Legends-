@@ -600,6 +600,10 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToPoison = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
+			 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Hitpoints = b.Hitpoints * 1.5;
+			}
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
@@ -699,6 +703,20 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+
+		
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+		
+			if(!this.m.IsResurrected)
+				{
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+				}
+			}
+
+
 	}
 
 	function assignRandomEquipment()
@@ -707,7 +725,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			r = this.Math.rand(1, 7);
+			r = this.Math.rand(1, 12);
 
 			if (r == 1)
 			{
@@ -719,7 +737,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			}
 			else if (r == 3)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe"));
 			}
 			else if (r == 4)
 			{
@@ -737,6 +755,23 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 			}
+			else if (r == 8)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_hammer"));
+			}
+			else if (r == 9)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_shovel"));
+			}
+			else if (r == 10)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
+			}
+			else if (r == 11)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_scythe"));
+			}
+
 		}
 
 		r = this.Math.rand(1, 9);

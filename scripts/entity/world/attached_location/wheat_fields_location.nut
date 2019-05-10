@@ -104,13 +104,15 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 		{
 			return;
 		}
-
+		_list.push("female_farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
+		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
 		_list.push("daytaler_background");
 		_list.push("miller_background");
+		_list.push("female_miller_background");
 		_list.push("miller_background");
 	}
 
@@ -132,6 +134,16 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 				R = 20,
 				P = 1.0,
 				S = "weapons/pitchfork"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_wooden_pitchfork"
+			});
+			_list.push({
+				R = 25,
+				P = 1.0,
+				S = "weapons/legend_scythe"
 			});
 			_list.push({
 				R = 50,

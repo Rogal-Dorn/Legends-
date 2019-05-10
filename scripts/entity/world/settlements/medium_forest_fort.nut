@@ -32,12 +32,13 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Findelsburg"
 		]);
 		this.m.DraftList = [
+			"legend_shieldmaiden_background",
 			"apprentice_background",
 			"houndmaster_background",
-			"bowyer_background",
-			"bowyer_background",
+			"female_bowyer_background",
+			"female_bowyer_background",
 			"brawler_background",
-			"butcher_background",
+			"female_butcher_background",
 			"daytaler_background",
 			"gravedigger_background",
 			"hunter_background",
@@ -51,8 +52,8 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
-			"disowned_noble_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
+			"female_disowned_noble_background",
 			"retired_soldier_background",
 			"squire_background"
 		];

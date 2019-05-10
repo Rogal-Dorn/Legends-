@@ -636,7 +636,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			p = p - (r - 50.0) * 0.003;
 		}
 
-		p = p * this.m.Modifiers.BuyPriceMult;
+		local barterMult = 0.0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			barterMult += bro.getBarterModifier();
+		}
+		if ((this.m.Modifiers.BuyPriceMult - barterMult) > 0.01)
+		{
+		p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
+		}
+		if ((this.m.Modifiers.BuyPriceMult - barterMult) <= 0.01)
+		{
+		p = 0.01;
+		}
 		return p;
 	}
 
@@ -654,7 +666,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			p = p + (r - 50.0) * 0.003;
 		}
 
-		p = p * this.m.Modifiers.SellPriceMult;
+		local barterMult = 0.0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			barterMult += bro.getBarterModifier();
+		}
+		p = p * (this.m.Modifiers.SellPriceMult + barterMult);
 		return p;
 	}
 
@@ -681,10 +698,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.ShopSeed = this.Time.getRealTime() + this.Math.rand();
 		this.m.RosterSeed = this.Time.getRealTime() + this.Math.rand();
 		this.m.Modifiers = this.new("scripts/entity/world/settlement_modifiers");
-		this.m.IsAttackable = false;
+		this.m.IsAttackable = true;
 		this.m.IsDestructible = false;
-		this.m.IsShowingStrength = false;
-		this.m.IsScalingDefenders = false;
+		this.m.IsShowingStrength = true;
+		this.m.IsScalingDefenders = true;
 		this.m.IsShowingLabel = true;
 		this.m.Buildings.resize(6, null);
 	}
@@ -1863,6 +1880,50 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		light.IgnoreAmbientColor = true;
 		light.Alpha = 0;
+	}
+
+	function onLeave()
+	{
+		local eventID = "";
+		if (!this.World.Tags.get("HasLegendCampTraining") && this.hasBuilding("building.training_hall"))
+		{
+			eventID = "event.legend_camp_unlock_training";
+		}
+		else if (!this.World.Tags.get("HasLegendCampBarber") && this.hasBuilding("building.barber"))
+		{
+			eventID = "event.legend_camp_unlock_barber";
+		}
+		else if (!this.World.Tags.get("HasLegendCampCrafting") && this.hasBuilding("building.taxidermist"))
+		{
+			eventID = "event.legend_camp_unlock_crafting";
+		}
+		else if (!this.World.Tags.get("HasLegendCampFletching") && (this.hasAttachedLocation("attached_location.fletchers_hut") || this.hasBuilding("building.weaponsmith")))
+		{
+			eventID = "event.legend_camp_unlock_fletching";
+		}
+		else if (!this.World.Tags.get("HasLegendCampGathering") && (this.hasAttachedLocation("attached_location.gatherers_hut") || this.hasAttachedLocation("attached_location.herbalists_grove")))
+		{
+			eventID = "event.legend_camp_unlock_gather";
+		}		
+		else if (!this.World.Tags.get("HasLegendCampHunting") && (this.hasAttachedLocation("attached_location.trapper") || this.hasAttachedLocation("attached_location.hunters_cabin")))
+		{
+			eventID = "event.legend_camp_unlock_hunt";
+		}
+		else if (!this.World.Tags.get("HasLegendCampScraping") &&  (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith")))
+		{
+			eventID = "event.legend_camp_unlock_scrap";
+		}
+		else if (!this.World.Tags.get("HasLegendCampScouting") && (this.hasAttachedLocation("attached_location.wooden_watchtower") || this.hasAttachedLocation("attached_location.stone_watchtower") || this.hasAttachedLocation("attached_location.fortified_outpost")))
+		{
+			eventID = "event.legend_camp_unlock_scouting";
+		}
+												
+		if (eventID == "")
+		{
+			return;
+		}
+
+		this.World.Camp.fireEvent(eventID, this.getName());
 	}
 
 	function onFinish()

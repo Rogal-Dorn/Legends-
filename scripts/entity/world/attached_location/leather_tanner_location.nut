@@ -16,10 +16,12 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		{
 			return;
 		}
-
+		_list.push("legend_taxidermist_background");
+		_list.push("legend_taxidermist_background");
 		_list.push("militia_background");
 		_list.push("apprentice_background");
 		_list.push("retired_soldier_background");
+		_list.push("butcher_background");
 		_list.push("butcher_background");
 	}
 
@@ -55,7 +57,22 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 			_list.push({
 				R = 10,
 				P = 1.0,
+				S = "weapons/legend_chain"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
 				S = "helmets/full_leather_cap"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_hunter"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_craft"
 			});
 			_list.push({
 				R = 10,

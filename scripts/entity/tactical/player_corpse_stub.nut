@@ -7,7 +7,8 @@ this.player_corpse_stub <- {
 		Title = "",
 		DaysWithCompany = 0,
 		Level = 0,
-		DailyCost = 0
+		DailyCost = 0,
+		IsCommander = false
 	},
 	function getName()
 	{
@@ -39,6 +40,16 @@ this.player_corpse_stub <- {
 	function setTitle( _t )
 	{
 		this.m.Title = _t;
+	}
+
+	function setCommander( _f )
+	{
+		this.m.IsCommander = _f;
+	}
+
+	function isCommander()
+	{
+		return this.m.IsCommander;
 	}
 
 	function getCombatStats()

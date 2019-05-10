@@ -13,6 +13,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		HireTime = 0.0,
 		IsTryoutDone = false,
 		IsGuest = false,
+		IsCommander = false,
 		Attributes = [],
 		Talents = [],
 		CombatStats = {
@@ -33,7 +34,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			FavoriteWeapon = "",
 			FavoriteWeaponUses = 0,
 			CurrentWeaponUses = 0
-		}
+		},
+		Formations = null,
+		VeteranPerks = 0,
+		CampAssignment = "camp.rest",
+		CampHealing = 0,
+		LastCampTime = 0,
+		InReserves = false
 	},
 	function setName( _value )
 	{
@@ -127,7 +134,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getTryoutCost()
 	{
-		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * 0.1));
+		return this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult));
 	}
 
 	function getDailyCost()
@@ -137,7 +144,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function getDailyFood()
 	{
-		return this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
+		if (this.isInReserves())
+		{
+			food = food * 3;
+		}
+		return food;
 	}
 
 	function getBackground()
@@ -165,6 +177,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.IsGuest = _f;
 	}
 
+	function setCommander( _f )
+	{
+		this.m.IsCommander = _f;
+	}
+
+	function setVeteranPerks( _f )
+	{
+		this.m.VeteranPerks = _f;
+	}
+
 	function isLeveled()
 	{
 		return (this.m.PerkPoints != 0 || this.m.LevelUps != 0) && !this.m.IsGuest;
@@ -175,6 +197,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.m.IsGuest;
 	}
 
+	function isCommander()
+	{
+		return this.m.IsCommander
+	}
+
 	function isTryoutDone()
 	{
 		return this.m.IsTryoutDone;
@@ -183,6 +210,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setTryoutDone( _t )
 	{
 		this.m.IsTryoutDone = _t;
+	}
+
+	function getCampAssignment()
+	{
+		return this.m.CampAssignment;
+	}
+
+	function setCampAssignment( _id )
+	{
+		this.m.CampAssignment = _id;
 	}
 
 	function getMood()
@@ -318,6 +355,68 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					id = s.getID(),
 					icon = s.getIconColored()
 				});
+			}
+		}
+
+		return ret;
+	}
+
+	function getHiringTalents()
+	{
+		local ret = [];
+
+		if (!this.m.IsTryoutDone)
+		{
+			return ret;
+		}
+
+		local talents = this.getTalents()
+
+		for (local i = 0; i < this.Const.Attributes.COUNT; i = ++i)
+		{
+			if (talents[i] > 0)
+			{
+				local r = {
+					talent = "",
+					value = talents[i]
+				};
+
+				switch(i)
+				{
+				case 0:
+					r.talent = "HP";
+					break;
+
+				case 1:
+					r.talent = "RES";
+					break;
+
+				case 2:
+					r.talent = "FAT";
+					break;
+
+				case 3:
+					r.talent = "INIT";
+					break;
+
+				case 4:
+					r.talent = "MA";
+					break;
+
+				case 5:
+					r.talent = "RA";
+					break;
+
+				case 6:
+					r.talent = "MD";
+					break;
+
+				case 7:
+					r.talent = "RD";
+					break;
+				}
+
+				ret.push(r);
 			}
 		}
 
@@ -528,7 +627,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				text = this.Const.MoodStateName[this.getMoodState()]
 			});
 
-			if (this.m.PlaceInFormation <= 17)
+			if (!this.isInReserves())
 			{
 				tooltip.push({
 					id = 6,
@@ -546,6 +645,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					text = "In reserve"
 				});
 			}
+
+			tooltip.push({
+				id = 7,
+				type = "hint",
+				text = this.getBackground().getBackgroundDescription(false)
+			})
 		}
 
 		local injuries = this.getSkills().query(this.Const.SkillType.Injury | this.Const.SkillType.SemiInjury);
@@ -703,6 +808,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	function isInReserves()
+	{
+		return this.m.InReserves //this.m.CampAssignment == this.Const.World.CampBuildings.Healer
+	}
+
+	function setInReserves(_v)
+	{
+		this.m.InReserves = _v;
+	}
+
 	function create()
 	{
 		this.m.IsControlledByPlayer = true;
@@ -715,6 +830,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.getTags().set("PotionsUsed", 0);
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.Formations = this.new("scripts/entity/tactical/formations_container")
 	}
 
 	function onHired()
@@ -808,9 +924,41 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local injuries = this.Const.Injury.Permanent;
 			local numPermInjuries = 0;
 
-			foreach( inj in injuries )
+			foreach (inj in injuries)
 			{
-				if (!this.m.Skills.hasSkill(inj.ID))
+				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
+				{
+					potential.push(inj);
+				}
+				else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
 				{
 					potential.push(inj);
 				}
@@ -877,6 +1025,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (!this.isGuest())
 		{
 			local stub = this.Tactical.getCasualtyRoster().create("scripts/entity/tactical/player_corpse_stub");
+			stub.setCommander(this.isCommander());
 			stub.setOriginalID(this.getID());
 			stub.setName(this.getNameOnly());
 			stub.setTitle(this.getTitle());
@@ -1445,10 +1594,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
-		{
-			_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
-		}
+	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
+	//	{
+	//		_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);
+	//	}
 
 		if (this.m.XP + _xp * this.m.CurrentProperties.XPGainMult >= this.Const.LevelXP[this.Const.LevelXP.len() - 1])
 		{
@@ -1461,14 +1610,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CombatStats.XPGained += this.Math.floor(_xp * this.m.CurrentProperties.XPGainMult);
 	}
 
-	function unlockPerk( _id )
+	function unlockPerk( _id , _background )
 	{
 		if (this.hasPerk(_id))
 		{
 			return true;
 		}
 
-		local perk = this.Const.Perks.findById(_id);
+		local perk = this.Const.Perks.findByBackground(_id, _background);
 
 		if (perk == null)
 		{
@@ -1481,13 +1630,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		++this.m.PerkPointsSpent;
-		this.m.Skills.add(this.new(perk.Script));
+		local p = this.new(perk.Script);
+		this.m.Skills.add(p);
 		this.m.Skills.update();
 
 		if (this.m.Level >= 11 && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
+
+		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
 
 		return true;
 	}
@@ -1499,7 +1651,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return false;
 		}
 
-		local perk = this.Const.Perks.findById(_id);
+		local perk = this.Const.Perks.findByBackground(_id, this.getBackground().getID());
 
 		if (this.m.PerkPointsSpent >= perk.Unlocks)
 		{
@@ -1556,6 +1708,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (this.m.Level == 11)
 			{
 				this.updateAchievement("OldAndWise", 1, 1);
+			}
+
+			if (this.m.Level > 11 && this.m.VeteranPerks > 0)
+			{
+				if ((this.m.Level - 1) % this.m.VeteranPerks == 0) {
+					++this.m.PerkPoints;
+				}
 			}
 
 			if (this.m.Level == 11 && this.m.Skills.hasSkill("trait.player"))
@@ -2042,15 +2201,38 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
-		if (this.m.Name.len() == 0)
-		{
-			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
-		}
-
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
-		background.buildAttributes();
+		
+		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
+		{
+			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
+		}
+		if (this.m.Name.len() == 0 && background.isFemaleBackground() == true)
+		{
+			this.m.Name = this.Const.Tactical.Common.getRandomPlayerNameFemale();
+		}
+
+		if (background.isFemaleBackground()) {
+			this.m.Gender = 1;
+		}
+
+		local maxTraits = 0;
+		if (this.getTags().has("PlayerZombie"))
+		{
+			background.buildAttributes("zombie");
+		}
+		else if (this.getTags().has("PlayerSkeleton"))
+		{
+			background.buildAttributes("skeleton");
+		}
+		else
+		{
+			background.buildAttributes();
+		
+		}
+
 		background.buildDescription();
 
 		if (_addTraits)
@@ -2096,7 +2278,20 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		background.addEquipment();
-		background.setAppearance();
+
+		if (this.getTags().has("PlayerZombie"))
+		{
+			background.setAppearance("zombie");
+		}
+		else if (this.getTags().has("PlayerSkeleton"))
+		{
+			background.setAppearance("skeleton");
+		}
+		else
+		{
+			background.setAppearance();
+		}
+
 		background.buildDescription(true);
 		this.m.Skills.update();
 		local p = this.m.CurrentProperties;
@@ -2104,42 +2299,89 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (_addTraits)
 		{
-			this.fillTalentValues();
+		this.fillTalentValues(3);
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
 	}
 
-	function fillTalentValues()
+	function fillTalentValues( _num, _force = false )
 	{
 		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);
 
-		if (this.getBackground() != null && this.getBackground().isUntalented())
+		if (this.getBackground() != null && this.getBackground().isUntalented() && !_force)
 		{
 			return;
 		}
 
-		for( local done = 0; done < 3;  )
+		for( local done = 0; done < _num;  )
 		{
 			local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
 
-			if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+			if (this.getTags().has("PlayerZombie"))
 			{
-				local r = this.Math.rand(1, 100);
+				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Fatigue && i != this.Const.Attributes.Initiative && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				{
+					local r = this.Math.rand(1, 100);
 
-				if (r <= 60)
-				{
-					this.m.Talents[i] = 1;
-				}
-				else if (r <= 90)
-				{
-					this.m.Talents[i] = 2;
-				}
-				else
-				{
-					this.m.Talents[i] = 3;
-				}
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
 
-				done = ++done;
+					done = ++done;
+				}
+			}
+			else if (this.getTags().has("PlayerSkeleton"))
+			{
+				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Fatigue && i != this.Const.Attributes.Hitpoints && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				{
+					local r = this.Math.rand(1, 100);
+
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
+
+					done = ++done;
+				}
+			}
+			else
+			{
+				if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				{
+					local r = this.Math.rand(1, 100);
+
+					if (r <= 60)
+					{
+						this.m.Talents[i] = 1;
+					}
+					else if (r <= 90)
+					{
+						this.m.Talents[i] = 2;
+					}
+					else
+					{
+						this.m.Talents[i] = 3;
+					}
+
+					done = ++done;
+				}
 			}
 		}
 	}
@@ -2312,6 +2554,172 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
 	}
 
+
+
+	function saveFormation()
+	{
+		this.m.Formations.savePosition(this.m.PlaceInFormation);
+		this.m.Formations.saveItems(this.getItems());
+	}
+	
+	function setFormation( _i )
+	{
+		if (_i == this.m.Formations.getCurrentIndex()) 
+		{
+			return;
+		}
+
+		this.m.Formations.setFormation(_i)
+		this.setPlaceInFormation(this.m.Formations.getPosition());
+		local items = this.m.Formations.getItems();
+		//Find the item in the stash, remove from stash and equip it
+		foreach (itemId in items)
+		{
+			local res = this.Stash.getItemByInstanceID(itemId);
+			if (res == null) {
+				this.logInfo("saveFormation::could not find item for " + itemId);
+				continue
+			}
+
+			this.Stash.remove(res.item);
+			this.m.Items.equip(res.item);
+		}
+
+		local bags = this.m.Formations.getBags();
+		foreach (itemId in bags)
+		{
+			local res = this.Stash.getItemByInstanceID(itemId);
+			if (res == null) {
+				this.logInfo("saveFormation::could not find item for " + itemId);
+				continue
+			}
+
+			this.Stash.remove(res.item);
+			this.m.Items.addToBag(res.item);
+		}
+	}
+
+	function getStashModifier()
+	{
+		local broStash = this.getBackground().getModifiers().Stash;
+		local item = this.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+		if (item != null)
+		{
+			broStash += item.getStashModifier();
+		}
+
+		local skills = 
+		[
+			"perk.legend_skillful_stacking",
+			"perk.legend_efficient_packing"
+		]
+		foreach (s in skills)
+		{
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				broStash += skill.getModifier();
+			}
+		}
+		return broStash;
+	}
+
+	function getAmmoModifier()
+	{
+		local mod = this.getBackground().getModifiers().Ammo;
+		local skills = 
+		[
+			"perk.legend_ammo_bundles",
+			"perk.legend_ammo_binding"
+		]
+		foreach (s in skills)
+		{
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
+		}
+		return mod;
+	}
+
+	function getArmorPartsModifier()
+	{
+		local mod = this.getBackground().getModifiers().ArmorParts;
+		local skills = 
+		[
+			"perk.legend_tools_spares",
+			"perk.legend_tools_drawers"
+		];
+		foreach (s in skills)
+		{
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
+		}
+		return mod;
+	}
+
+	function getMedsModifier()
+	{
+		local mod = this.getBackground().getModifiers().Meds;
+		local skills = 
+		[
+			"perk.legend_med_packages",
+			"perk.legend_med_ingredients"
+		];
+		foreach (s in skills)
+		{
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
+		}
+		return mod;
+	}
+
+	function getBarterModifier()
+	{
+		local mod = this.getBackground().getModifiers().Barter;
+		local skills = 
+		[
+			"perk.legend_barter_trustworthy",
+			"perk.legend_barter_convincing"
+		];
+		foreach (s in skills)
+		{
+			local skill = this.getSkills().getSkillByID(s);
+			if (skill != null)
+			{
+				mod += skill.getModifier();
+			}
+		}
+		return mod;		
+	}
+
+	function getCampHealing() 
+	{
+		return this.m.CampHealing;
+	}
+
+	function setCampHealing( _v )
+	{
+		this.m.CampHealing = _v;
+	}
+
+	function getLastCampTime()
+	{
+		return this.m.LastCampTime;
+	}
+
+	function setLastCampTime( _t )
+	{
+		this.m.LastCampTime = _t;
+	}
+
 	function onSerialize( _out )
 	{
 		this.actor.onSerialize(_out);
@@ -2358,6 +2766,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeU32(this.m.LifetimeStats.FavoriteWeaponUses);
 		_out.writeU32(this.m.LifetimeStats.CurrentWeaponUses);
 		_out.writeBool(this.m.IsTryoutDone);
+		this.m.Formations.onSerialize(_out);
+		_out.writeU8(this.m.VeteranPerks);
+		_out.writeBool(this.m.IsCommander);
+		_out.writeString(this.m.CampAssignment);
+		_out.writeF32(this.m.LastCampTime);
+		_out.writeBool(this.m.InReserves);
+
 	}
 
 	function onDeserialize( _in )
@@ -2410,6 +2825,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background = ret[0];
 			this.m.Background.adjustHiringCostBasedOnEquipment();
 			this.m.Background.buildDescription(true);
+			if (this.m.Background.isFemaleBackground())
+			{
+				this.m.Gender = 1;
+			}
 		}
 
 		this.m.PlaceInFormation = _in.readU8();
@@ -2429,6 +2848,32 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.LifetimeStats.CurrentWeaponUses = _in.readU32();
 		this.m.IsTryoutDone = _in.readBool();
 		this.m.Skills.update();
+
+		if (_in.getMetaData().getVersion() >= 46)
+		{
+			this.m.Formations.onDeserialize(_in);
+		}
+		
+		if (_in.getMetaData().getVersion() >= 47)
+		{
+			this.m.VeteranPerks = _in.readU8();
+		}
+
+		if (_in.getMetaData().getVersion() >= 48)
+		{
+			this.m.IsCommander = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 52)
+		{
+			this.m.CampAssignment = _in.readString();
+			this.m.LastCampTime = _in.readF32();
+		}
+
+		if (_in.getMetaData().getVersion() >= 54)
+		{
+			this.m.InReserves = _in.readBool();
+		}
 	}
 
 });

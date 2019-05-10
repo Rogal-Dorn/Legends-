@@ -64,7 +64,7 @@
     margin : auto;
 
     background-image: url("coui://gfx/ui/skin/list_item_01.png");
-    background-size: 46.0rem 10.7rem;
+    background-size: 100% 10.7rem;
     background-repeat: no-repeat;
 
     text-shadow: 1px 1px 1px #000;
@@ -74,7 +74,7 @@
 .ui-control.list .list-entry.is-selected
 {
     background-image: url("coui://gfx/ui/skin/list_item_01_hovered.png");
-    background-size: 46.0rem 10.7rem;
+    background-size: 100% 10.7rem;
 }
 
 .ui-control.list .list-entry.is-selected
@@ -95,21 +95,21 @@
 .ui-control.list .list-entry[disabled]
 {
     background-image: url("coui://gfx/ui/skin/list_item_01_inactive.png");
-    background-size: 46.0rem 10.7rem;
+    background-size: 100% 10.7rem;
 }
 
 .ui-control.list .list-entry.is-disabled:hover,
 .ui-control.list .list-entry[disabled]:hover
 {
     background-image: url("coui://gfx/ui/skin/list_item_01_hovered_inactive.png");
-    background-size: 46.0rem 10.7rem;
+    background-size: 100% 10.7rem;
 }
 
 .ui-control.list .list-entry.is-disabled:active,
 .ui-control.list .list-entry[disabled]:active
 {
     background-image: url("coui://gfx/ui/skin/list_item_01_hovered_inactive.png");
-    background-size: 46.0rem 10.7rem;
+    background-size: 100% 10.7rem;
 }
 
 .ui-control.list .list-entry > .label

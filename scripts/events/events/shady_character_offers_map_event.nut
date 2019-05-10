@@ -300,6 +300,10 @@ this.shady_character_offers_map_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_thief.push(bro);
 			}
+			else if (bro.getBackground().getID() == "background.female_thief")
+			{
+				candidates_thief.push(bro);
+			}
 			else if (bro.getBackground().getID() == "background.peddler")
 			{
 				candidates_peddler.push(bro);

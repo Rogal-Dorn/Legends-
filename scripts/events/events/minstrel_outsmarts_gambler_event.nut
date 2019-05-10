@@ -10,7 +10,7 @@ this.minstrel_outsmarts_gambler_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img] %gambler%, the man with a gambling problem, has apparently gone around camp asking men to play a game of horseshoes - with a few crowns on the line, of course. It appears that %minstrel%, the wily minstrel, has obliged him and taken the bet. He says he\'s pretty good at the game to which the gambler responds that he is the best. \n\n The two men heave horseshoes until their arms tire and the sun wanes. Nobody is the winner as the game can\'t move off of a tie. After another indecisive round, %minstrel% says he\'ll go for a double-or-nothing round if they go left-handed. %gambler% agrees. He goes first, throwing three horseshoes. The first two go haywire, but the third manages to spin around the ring. He grins as he wishes the minstrel good luck. %minstrel% nods and rolls up his sleeves. He sticks his tongue out and slims his eyes, lining up the shot. His feet do a little tap-dance and just before he throws he looks back and says,%SPEECH_ON%I should probably let you know that I *am* left-handed.%SPEECH_OFF%Without even looking forward, the minstrel lets loose his horseshoe. The throw is perfect, landing dead center about the stake, and the next two are tossed so quickly and so seamlessly that anybody watching erupts in hooting laughter. The gambler\'s mouth can only drop in disbelief.",
+			Text = "[img]gfx/ui/events/event_26.png[/img] %gambler%, the man with a gambling problem, has apparently gone around camp asking men to play a game of horseshoes - with a few crowns on the line, of course. It appears that %minstrel%, the wily minstrel, has obliged him and taken the bet. The musician claims to be pretty good at the game to which the gambler responds that he is the best. \n\n The two heave horseshoes until their arms tire and the sun wanes. Nobody is the winner as the game can\'t move off of a tie. After another indecisive round, %minstrel% calls for a double-or-nothing round if they go left-handed. %gambler% agrees. He goes first, throwing three horseshoes. The first two go haywire, but the third manages to spin around the ring. He grins as he wishes the minstrel good luck. %minstrel% nods and rolls up their sleeves, sticks out their tongue out and slims the eyes, lining up the shot. The minstrel's feet do a little tap-dance and just before throwing looks back and says,%SPEECH_ON%I should probably let you know that I *am* left-handed.%SPEECH_OFF%Without even looking forward, the minstrel lets loose his horseshoe. The throw is perfect, landing dead center about the stake, and the next two are tossed so quickly and so seamlessly that anybody watching erupts in hooting laughter. The gambler\'s mouth can only drop in disbelief.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -56,7 +56,7 @@ this.minstrel_outsmarts_gambler_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.minstrel")
+			if (bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
 			{
 				candidates_minstrel.push(bro);
 			}

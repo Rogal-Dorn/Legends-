@@ -66,15 +66,21 @@ this.player_banner <- this.inherit("scripts/items/weapons/weapon", {
 		}
 
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
+        local prefix = "player_banner_";
+
+		if (this.isRuned())
+		{
+			prefix = "player_runed_banner_";
+		}
 
 		if (actor.hasSprite("background"))
 		{
-			actor.getSprite("background").setBrush("player_banner_" + variant);
+			actor.getSprite("background").setBrush(prefix + variant);
 		}
 
 		if (actor.hasSprite("shaft"))
 		{
-			actor.getSprite("shaft").setBrush("player_banner_" + variant + "_shaft");
+			actor.getSprite("shaft").setBrush(prefix + variant + "_shaft");
 		}
 
 		actor.setDirty(true);

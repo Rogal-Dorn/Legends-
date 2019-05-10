@@ -41,7 +41,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
-		this.m.MaxLevelDifference = 1;
+		this.m.MaxLevelDifference = 2;
 	}
 
 	function getTooltip()
@@ -128,7 +128,14 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 	}
-
+	function onAfterUpdate( _properties )
+	{
+		if (_properties.IsSpecializedInNets)
+		{
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
+			this.m.ActionPointCost = 3;
+		}
+	}
 	function onNetSpawn( _data )
 	{
 		local rooted = _data.TargetEntity.getSprite("status_rooted");

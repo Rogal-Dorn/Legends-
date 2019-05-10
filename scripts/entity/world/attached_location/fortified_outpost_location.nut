@@ -116,7 +116,8 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		{
 			return;
 		}
-
+		_list.push("legend_blacksmith_background");
+		_list.push("legend_ironmonger_background");
 		_list.push("retired_soldier_background");
 		_list.push("deserter_background");
 		_list.push("sellsword_background");
@@ -256,6 +257,11 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 				R = 50,
 				P = 1.0,
 				S = "weapons/crossbow"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_train"
 			});
 			_list.push({
 				R = 50,

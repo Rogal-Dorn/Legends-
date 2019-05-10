@@ -5,7 +5,8 @@ this.perk_double_strike <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.double_strike";
 		this.m.Name = this.Const.Strings.PerkName.DoubleStrike;
 		this.m.Description = this.Const.Strings.PerkDescription.DoubleStrike;
-		this.m.Icon = "skills/passive_03.png";
+		this.m.Icon = "ui/perks/doublestrike_circle.png";
+		this.m.IconDisabled = "ui/perks/doublestrike_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

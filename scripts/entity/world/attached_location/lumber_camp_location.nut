@@ -134,6 +134,16 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 			_list.push({
 				R = 30,
 				P = 1.0,
+				S = "weapons/legend_saw"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_saw"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
 				S = "weapons/hand_axe"
 			});
 			_list.push({

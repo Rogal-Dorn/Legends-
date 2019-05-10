@@ -46,7 +46,23 @@ this.swallow_whole_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.getEntity().isPlayerControlled();
+	    local brothers = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
+		if (brothers.len() == 1)
+		{
+			return false;
+		}
+
+		local target = _targetTile.getEntity();
+		if (target == null)
+		{
+			return false;
+		}
+		if (target.getTags().has("IsSummoned"))
+		{
+			return false;
+		}
+
+		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.getEntity().isPlayerControlled() && !_targetTile.getEntity().getCurrentProperties().IsImmuneToKnockBackAndGrab;
 	}
 
 	function onUse( _user, _targetTile )

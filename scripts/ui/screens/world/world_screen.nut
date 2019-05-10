@@ -10,7 +10,8 @@ this.world_screen <- {
 		Visible = null,
 		Animating = null,
 		OnConnectedListener = null,
-		OnDisconnectedListener = null
+		OnDisconnectedListener = null,
+		DevConsoleIsVisible = false
 	},
 	function isVisible()
 	{
@@ -19,7 +20,12 @@ this.world_screen <- {
 
 	function isAnimating()
 	{
-		return this.m.Animating != null && this.m.Animating == true;
+		return this.m.Animating != null && this.m.Animating == true
+	}
+
+	function devConsoleVisible()
+	{
+		return this.m.DevConsoleIsVisible != null && this.m.DevConsoleIsVisible == true;
 	}
 
 	function getTopbarDayTimeModule()
@@ -72,6 +78,7 @@ this.world_screen <- {
 	{
 		this.m.Visible = false;
 		this.m.Animating = false;
+		this.m.DevConsoleIsVisible = false;
 		this.m.JSHandle = this.UI.connect("WorldScreen", this);
 		this.m.TopbarDayTimeModule = this.new("scripts/ui/screens/world/modules/topbar/world_screen_topbar_daytime_module");
 		this.m.TopbarDayTimeModule.connectUI(this.m.JSHandle);
@@ -184,5 +191,30 @@ this.world_screen <- {
 		this.m.Animating = true;
 	}
 
+	function onDevConsoleCommand( _data )
+	{
+		this.World.LegendsMod.onDevConsole(_data[0], _data[1])
+	}
+
+	function onDevConsoleIsVisible( _data )
+	{
+		this.m.DevConsoleIsVisible = _data[0];
+	}
+
+	function showDevConsole(_immediately = false)
+	{
+		if (this.m.JSHandle != null)
+		{
+			this.m.JSHandle.asyncCall("showDevConsole", _immediately);
+		}
+	}
+
+	function hideDevConsole(_immediately = false)
+	{
+		if (this.m.JSHandle != null)
+		{
+			this.m.JSHandle.asyncCall("hideDevConsole", _immediately);
+		}
+	}
 };
 

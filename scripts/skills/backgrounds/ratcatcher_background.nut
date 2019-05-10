@@ -38,6 +38,10 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
+
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 	}
 
 	function getTooltip()

@@ -45,6 +45,13 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("shield_icon").setBrightness(0.85);
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
+
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )
@@ -76,13 +83,15 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + w));
 		}
 
+
+
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
+			this.m.Items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
 		}
 		else
 		{
-			this.m.Items.addToBag(this.new("scripts/items/weapons/wooden_stick"));
+			this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 		}
 
 		this.m.Items.equip(this.new("scripts/items/armor/leather_wraps"));

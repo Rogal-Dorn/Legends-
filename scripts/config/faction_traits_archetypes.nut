@@ -151,6 +151,170 @@ gt.Const.FactionArchetypes <- [
 		{
 			Traits = [
 				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.Warmonger,
+				this.Const.FactionTrait.Tyrant
+			],
+			Description = "The noble house of %noblehousename% is a proud and unrelenting family with a long and bloodstained history of conquest. Seated in their fortress of %factionfortressname%, they take with arms what they consider theirs by right. An ancestral feud with house %othernoblehouse% provides never ending reasons to keep both hate in the hearts and ore smelters burning.",
+			Mottos = [
+				"He stands by his own powers",
+				"He conquers who endures",
+				"Boldly and rightly",
+				"Under this sign thou shalt conquer",
+				"He dies not whose fame survives",
+				"No steps backwards",
+				"Through arrows and enemies",
+				"Nothing resists valour and arms",
+				"Such is the way to immortality",
+				"And we also have hurled our javelins",
+				"The heron seeks high places"
+			]
+		},
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.Warmonger,
+				this.Const.FactionTrait.Marauder
+			],
+			Description = "Disdained for their ruthlessness, brutality and greed, house %noblehousename% has little interaction with other noble families. Their captains and soldiers are known for raiding trade caravans, outlying farms and small settlements from their fortress of %factionfortressname%. A life is not worth much in the realm of house %noblehousename% and many a mercenary on the look for a quick coin only found a quick end here.",
+			Mottos = [
+				"Whatever grows perishes in ashes",
+				"We trample it under our feet",
+				"For me and for mine",
+				"The eagle catches not flies",
+				"Deeds not words",
+				"The gods feed the ravens",
+				"Always thirsty",
+				"Sons of hounds come here and get flesh",
+				"Not without booty"
+			]
+		},
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.Collector,
+				this.Const.FactionTrait.Warmonger
+			],
+			Description = "The house of %noblehousename% always has their eyes on the horizon. Always chasing riches from foreign lands, and willing to take them by force.  Missions are launched from %factionfortressname% out to claim a world they believe to be rightfully theirs",
+			Mottos = [
+				"Seize it",
+				"The thrill of the hunt",
+				"The endless hunt",
+				"The horizon calls",
+				"Find it and own it",
+				"All that we see, we own",
+				"Never stop hunting",
+				"Take it all",
+				"All belongs to us"
+			]
+		},
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.ManOfThePeople,
+				this.Const.FactionTrait.Tyrant
+			],
+			Description = "The noble house of %noblehousename% is a proud and unrelenting family with a long and bloodstained history of total control. Seated in their fortress of %factionfortressname%, their people offer up a tithe consider theirs by birthright. Though their rule is cruel, the people adore them for their staunchness.",
+			Mottos = [
+				"Love thy betters",
+				"Born to rule, destined for brutality",
+				"For the Duke, kill them all",
+				"In his name, let none stand",
+				"The Duke protects with fury",
+				"Tough love",
+				"Hard lines provide good lives",
+				"Rest in his iron grip",
+				"Beg for his mercy, love his justice",
+				"The shepard's sacrifices to save the flock",
+				"Take heart, and take hearts"
+			]
+		}
+	],
+	[
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.Schemer,
+				this.Const.FactionTrait.Sheriff
+			],
+			Description = "House %noblehousename% works in the dark to protect its lands. the agents of %noblehousename%  have eyes in every shady corner and ears in every wall, inside and outside their borders. Peace is maintained through their lands, because %noblehousename% is always watching",
+			Mottos = [
+				"Eyes on all",
+				"Security through surveilence",
+				"Total information awareness",
+				"Report thy neighbour, to protect him",
+				"All seeing",
+				"Knowledge is safety",
+				"Shadows gaurd",
+				"Loose lips sink ships",
+				"Need to know only",
+				"Protected by secrecy",
+				"The grand plan"
+			]
+		},
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.Collector,
+				this.Const.FactionTrait.Tyrant
+			],
+			Description = "The house of %noblehousename% is well known for its jealously gaurded horde of treasures. The horded treasures of %noblehousename% are whispered through the lands, and still they crave more",
+			Mottos = [
+				"One of everything",
+				"To the zoo",
+				"For the collection",
+				"Everything in its place",
+				"A place for every thing",
+				"It all comes home",
+				"One for me, and one for me",
+				"We collect",
+				"The Horde's hoard"
+			]
+		},
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.ManOfThePeople,
+				this.Const.FactionTrait.Schemer
+			],
+			Description = "The house of %noblehousename% subtley manipulates events for the greater good. From their home in %factionfortressname%, they strategise to bring wellbeing to the common man. In a brutal world they are a faint glimmer of a better world.",
+			Mottos = [
+				"Plan for the future",
+				"Nurture with foresight",
+				"Towards a higher purpose",
+				"Plan together",
+				"For the greater good",
+				"The stars align in hope",
+				"Seeing beyond the pain",
+				"A brighter morning",
+				"A harvest sown",
+				"Seeds are planted for children",
+				"Building for tomorrow"
+			]
+		},
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
+				this.Const.FactionTrait.ManOfThePeople,
+				this.Const.FactionTrait.Marauder
+			],
+			Description = "Lauded as providers for their people %noblehousename% creates bounty by raiding their enemies. Their captains and soldiers are known for raiding trade caravans, outlying farms and small settlements from their fortress of %factionfortressname%. They bring supplies back home, to share the bounty among their people.",
+			Mottos = [
+				"Our own first",
+				"We are the chosen",
+				"The heathens shall fall",
+				"Whats yours is ours",
+				"Anything for our people",
+				"Blood for my people",
+				"Bringing it home",
+				"Better us than them",
+				"Our folk are all"
+			]
+		},
+	],
+	[
+		{
+			Traits = [
+				this.Const.FactionTrait.NobleHouse,
 				this.Const.FactionTrait.Schemer,
 				this.Const.FactionTrait.Collector
 			],

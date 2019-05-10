@@ -85,6 +85,11 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		if (_target.getSkills().hasSkill("trait.loyal"))
+		{
+			return false;
+		}
+
 		return true;
 	}
 

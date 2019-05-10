@@ -37,9 +37,11 @@ this.double_grip <- this.inherit("scripts/skills/skill", {
 
 	function canDoubleGrip()
 	{
+		local missinghand = this.m.Container.getSkillByID("injury.missing_hand");
+		local newhand = this.m.Container.getSkillByID("trait.legend_prosthetic_hand");
 		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		return main != null && off == null && main.isDoubleGrippable();
+		return (missinghand == null || newhand != null) && main != null && off == null && main.isDoubleGrippable();
 	}
 
 	function isHidden()
@@ -47,13 +49,12 @@ this.double_grip <- this.inherit("scripts/skills/skill", {
 		return this.skill.isHidden() || !this.canDoubleGrip();
 	}
 
-	function onUpdate( _properties )
+	function onUpdate (_properties)
 	{
 		if (this.canDoubleGrip())
 		{
-			_properties.DamageTotalMult *= 1.25;
+			_properties.DamageTotalMult *= 1.25000000;
 		}
 	}
-
 });
 

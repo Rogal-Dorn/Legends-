@@ -1,0 +1,63 @@
+this.legend_camp_unlock_hunt <- this.inherit("scripts/events/event", {
+	m = {
+		TownName = ""
+	},
+	function create()
+	{
+		this.m.ID = "event.legend_camp_unlock_hunt";
+		this.m.Title = "Along the way...";		
+		this.m.Screens.push({
+			ID = "A",
+			Text = "[img]gfx/ui/events/legend_camp_hunt.png[/img]",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Hunting unlocked in camp",
+					function getResult( _event )
+					{
+						this.World.Tags.set("HasLegendCampHunting", true);
+					}
+
+				}
+			],
+			function start( _event )
+			{
+			}
+
+		});
+	}
+
+	function getText()
+	{
+		local text = "You notice food stocks are running low, perhaps it is time to camp and go hunting?"
+		text += "\n\n"
+		text += this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Hunter).getDescription();
+		return text;
+	}
+
+	function setTownName(_v)
+	{
+		this.m.TownName = _v;
+		this.m.Screens[0].Text += this.getText()
+	}
+
+	function onUpdateScore()
+	{
+		return
+	}
+
+	function onPrepare()
+	{
+	}
+
+	function onPrepareVariables( _vars )
+	{
+		_vars.push([
+			"townname",
+			this.m.TownName
+		]);
+	}
+
+});

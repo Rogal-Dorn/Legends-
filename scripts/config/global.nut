@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 49
+	Version = 53
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -157,46 +157,73 @@ gt.Const.Difficulty <- {
 	Easy = 0,
 	Normal = 1,
 	Hard = 2,
+	Legendary = 3,
 	BuyPriceMult = [
+		0.95,
 		1.0,
-		1.0,
-		1.0
+		1.05
+		1.1
 	],
 	SellPriceMult = [
+		1.05,
 		1.0,
-		1.0,
+		0.95,
 		0.9
 	],
 	EnemyMult = [
 		0.85,
 		1.0,
-		1.15
+		1.15,
+		1.0
 	],
 	PaymentMult = [
 		1.1,
 		1.0,
+		0.95,
 		0.9
+	],
+	HealMult = [
+		1.0,
+		0.66,
+		0.33,
+		0.1
+	],
+	RepairMult = [
+		1.0,
+		0.66,
+		0.33,
+		0.1
 	],
 	RetreatDefenseBonus = [
 		30,
 		20,
-		10
+		10,
+		0
 	],
 	MaxResources = [
 		{
+			Food = 300,
 			Ammo = 500,
-			Medicine = 150,
+			Medicine = 200,
 			ArmorParts = 200
 		},
 		{
+			Food = 250,
 			Ammo = 300,
+			Medicine = 150,
+			ArmorParts = 150
+		},
+		{
+			Food = 200,
+			Ammo = 250,
 			Medicine = 100,
 			ArmorParts = 150
 		},
 		{
-			Ammo = 300,
-			Medicine = 100,
-			ArmorParts = 150
+			Food = 100,
+			Ammo = 150,
+			Medicine = 60,
+			ArmorParts = 80
 		}
 	]
 };
@@ -288,6 +315,10 @@ gt.Const.EntityType <- {
 	Warhound = 78,
 	TricksterGod = 79,
 	BarbarianMadman = 80,
+	BanditRabble = 81,
+	LegendCat = 71,
+	LegendOrcElite = 72, 
+	LegendOrcBehemoth = 73,
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -532,5 +563,9 @@ gt.Const.EntityIcon <- [
 	"dog_02_orientation",
 	"thing_orientation",
 	"wildman_06_orientation"
+	"rabble_orientation",
+	"cat_orientation",
+	"orc_elite_orientation",
+	"orc_behemoth_orientation"
 ];
 

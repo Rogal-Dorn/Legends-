@@ -11,6 +11,11 @@ this.ui_module <- {
 		this.m.Parent = _p;
 	}
 
+	function queryLoad()
+	{
+		return null;
+	}
+
 	function isVisible()
 	{
 		return this.m.Visible != null && this.m.Visible == true;

@@ -108,6 +108,10 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.StaminaModifier = _in.readI8();
 		this.helmet.onDeserialize(_in);
 		this.updateVariant();
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

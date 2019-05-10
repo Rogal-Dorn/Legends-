@@ -182,6 +182,10 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		_in.readF32();
 		this.weapon.onDeserialize(_in);
 		this.updateVariant();
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

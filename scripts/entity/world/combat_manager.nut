@@ -74,9 +74,17 @@ this.combat_manager <- {
 			Combatants = [],
 			Factions = []
 		};
-		combat.Factions.resize(32);
+		local numFactions = 32;
+		if (p1.getFaction() >= numFactions) {
+			numFactions = p1.getFaction() + 1;
+		}
+		if (p2.getFaction() >= numFactions) {
+			numFactions = p2.getFaction() + 1;
+		}
 
-		for( local f = 0; f != 32; f = ++f )
+		combat.Factions.resize(numFactions);
+
+		for( local f = 0; f != numFactions; f = ++f )
 		{
 			combat.Factions[f] = [];
 		}
@@ -103,6 +111,7 @@ this.combat_manager <- {
 
 		_combat.Combatants.sort(this.onInitiativeCompare);
 		_party.setCombatID(_combat.ID);
+		
 		_combat.Factions[_party.getFaction()].push(this.WeakTableRef(_party));
 		_party.onCombatStarted();
 	}
@@ -227,61 +236,65 @@ this.combat_manager <- {
 
 			if (combatant.Party == null || combatant.Party.isNull())
 			{
+				continue;
 			}
-			else
+
+			local potentialOpponentFactions = [];
+
+			for( local f = 0; f < _combat.Factions.len(); f = ++f )
 			{
-				local potentialOpponentFactions = [];
-
-				for( local f = 0; f < _combat.Factions.len(); f = ++f )
+				local lFaction = _combat.Factions[f];
+				if (lFaction == null || lFaction.len() == 0)
 				{
-					if (_combat.Factions[f].len() != 0 && combatant.Party.getFaction() != f && !this.World.FactionManager.isAllied(combatant.Party.getFaction(), f))
-					{
-						potentialOpponentFactions.push(f);
-					}
+					continue
 				}
 
-				if (potentialOpponentFactions.len() == 0)
+				if (combatant.Party.getFaction() != f && !this.World.FactionManager.isAllied(combatant.Party.getFaction(), f))
 				{
-				}
-				else
-				{
-					local opponentFaction = potentialOpponentFactions[this.Math.rand(0, potentialOpponentFactions.len() - 1)];
-					local opponentParty = _combat.Factions[opponentFaction][this.Math.rand(0, _combat.Factions[opponentFaction].len() - 1)];
-
-					if (opponentParty == null || opponentParty.isNull() || opponentParty.getTroops().len() == 0)
-					{
-					}
-					else
-					{
-						local opponentIndex = this.Math.rand(0, opponentParty.getTroops().len() - 1);
-						local opponent = opponentParty.getTroops()[opponentIndex];
-						attackOccured = true;
-						opponent.Strength -= this.Math.max(1, this.Math.rand(1, combatant.Strength) * this.Const.World.CombatSettings.CombatStrengthMult);
-
-						if (opponent.Strength <= 0)
-						{
-							++_combat.Stats.Dead;
-							opponentParty.getTroops().remove(opponentIndex);
-							opponentIndex = _combat.Combatants.find(opponent);
-							_combat.Combatants.remove(opponentIndex);
-
-							if (opponentIndex < i)
-							{
-								i = --i;
-							}
-
-							if (opponentParty.getTroops().len() == 0)
-							{
-								_combat.Stats.Loot.extend(opponentParty.getInventory());
-								local partyIndex = _combat.Factions[opponentParty.getFaction()].find(opponentParty);
-								opponentParty.setCombatID(0);
-								_combat.Factions[opponentParty.getFaction()].remove(partyIndex);
-								opponentParty.onCombatLost();
-							}
-						}
-					}
+					potentialOpponentFactions.push(f);
 				}
 			}
+
+			if (potentialOpponentFactions.len() == 0)
+			{
+				continue;
+			}
+
+			local opponentFaction = potentialOpponentFactions[this.Math.rand(0, potentialOpponentFactions.len() - 1)];
+			local opponentParty = _combat.Factions[opponentFaction][this.Math.rand(0, _combat.Factions[opponentFaction].len() - 1)];
+
+			if (opponentParty == null || opponentParty.isNull() || opponentParty.getTroops().len() == 0)
+			{
+				continue;
+			}
+
+			local opponentIndex = this.Math.rand(0, opponentParty.getTroops().len() - 1);
+			local opponent = opponentParty.getTroops()[opponentIndex];
+			attackOccured = true;
+			opponent.Strength -= this.Math.max(1, this.Math.rand(1, combatant.Strength) * this.Const.World.CombatSettings.CombatStrengthMult);
+
+			if (opponent.Strength <= 0)
+			{
+				++_combat.Stats.Dead;
+				opponentParty.getTroops().remove(opponentIndex);
+				opponentIndex = _combat.Combatants.find(opponent);
+				_combat.Combatants.remove(opponentIndex);
+
+				if (opponentIndex < i)
+				{
+					i = --i;
+				}
+
+				if (opponentParty.getTroops().len() == 0)
+				{
+					_combat.Stats.Loot.extend(opponentParty.getInventory());
+					local partyIndex = _combat.Factions[opponentParty.getFaction()].find(opponentParty);
+					opponentParty.setCombatID(0);
+					_combat.Factions[opponentParty.getFaction()].remove(partyIndex);
+					opponentParty.onCombatLost();
+				}
+			}
+
 		}
 
 		if (!attackOccured)
@@ -409,7 +422,12 @@ this.combat_manager <- {
 
 			for( local f = 0; f != c.Factions.len(); f = ++f )
 			{
-				for( local p = 0; p != c.Factions[f].len(); p = ++p )
+				local faction = c.Factions[f];
+				if (faction == null || faction.len() == 0){
+					continue;
+				}
+
+				for( local p = 0; p != faction.len(); p = ++p )
 				{
 					if (c.Factions[f][p] != null && !c.Factions[f][p].isNull() && c.Factions[f][p].isAlive())
 					{
@@ -427,7 +445,7 @@ this.combat_manager <- {
 		}
 	}
 
-	function onDeserialize( _in )
+	o.onDeserialize = function ( _in )
 	{
 		this.clear();
 		this.m.NextCombatID = _in.readI32();
@@ -467,7 +485,15 @@ this.combat_manager <- {
 
 			for( local p = 0; p < numParties; p = ++p )
 			{
-				this.joinCombat(combat, this.World.getEntityByID(_in.readU32()));
+				local party = this.World.getEntityByID(_in.readU32());
+				if (party.getFaction() >= combat.len()) {
+					combat.Factions.resize(party.getFaction() + 1);
+					for( local f = party.getFaction(); f != party.getFaction() + 1; f = ++f )
+					{
+						combat.Factions[f] = [];
+					}
+				}
+				this.joinCombat(combat, party);
 			}
 
 			this.m.Combats.push(combat);

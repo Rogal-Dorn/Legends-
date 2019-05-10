@@ -33,8 +33,8 @@ gt.Const.World.Spawn.Troops <- {
 	Zombie = {
 		ID = this.Const.EntityType.Zombie,
 		Variant = 0,
-		Strength = 6,
-		Cost = 6,
+		Strength = 5,
+		Cost = 5,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/zombie"
 	},
@@ -209,6 +209,22 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 25,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/orc_berserker"
+	},
+	LegendOrcElite = {
+		ID = this.Const.EntityType.LegendOrcElite,
+		Variant = 0,
+		Strength = 60,
+		Cost = 60,
+		Row = 1,
+		Script = "scripts/entity/tactical/enemies/legend_orc_elite"
+	},
+	LegendOrcBehemoth = {
+		ID = this.Const.EntityType.LegendOrcBehemoth,
+		Variant = 0,
+		Strength = 80,
+		Cost = 80,
+		Row = 1,
+		Script = "scripts/entity/tactical/enemies/legend_orc_behemoth"
 	},
 	OrcWarrior = {
 		ID = this.Const.EntityType.OrcWarrior,
@@ -682,11 +698,19 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		Script = "scripts/entity/tactical/wardog"
 	},
+		BanditRabble = {
+		ID = this.Const.EntityType.BanditRabble,
+		Variant = 0,
+		Strength = 3,
+		Cost = 3,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/bandit_rabble"
+	},
 	BanditThug = {
 		ID = this.Const.EntityType.BanditThug,
 		Variant = 0,
-		Strength = 9,
-		Cost = 9,
+		Strength = 8,
+		Cost = 8,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/bandit_thug"
 	},
@@ -701,8 +725,8 @@ gt.Const.World.Spawn.Troops <- {
 	BanditMarksmanLOW = {
 		ID = this.Const.EntityType.BanditPoacher,
 		Variant = 0,
-		Strength = 12,
-		Cost = 12,
+		Strength = 8,
+		Cost = 8,
 		Row = 1,
 		Script = "scripts/entity/tactical/enemies/bandit_poacher"
 	},

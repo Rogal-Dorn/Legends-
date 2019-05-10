@@ -437,6 +437,19 @@ this.skill_container <- {
 		this.m.Actor.updateOverlay();
 	}
 
+	function MovementCompleted()
+	{
+		if (!this.m.Actor.isAlive())
+		{
+			return;
+		}
+
+		foreach( skill in this.m.Skills )
+		{
+			skill.onMovementCompleted();
+		}
+	}
+
 	function buildPropertiesForUse( _caller, _targetEntity )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();
@@ -951,7 +964,6 @@ this.skill_container <- {
 	{
 		this.m.IsUpdating = true;
 		local numSkills = _in.readU16();
-
 		for( local i = 0; i < numSkills; i = ++i )
 		{
 			local skill = this.new(this.IO.scriptFilenameByHash(_in.readI32()));

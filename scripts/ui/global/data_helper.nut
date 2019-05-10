@@ -8,6 +8,11 @@ this.data_helper <- {
 	{
 	}
 
+	function convertLegendCampaignsToUIData()
+	{
+		return this.Const.LegendMod.Starts;
+	}
+
 	function convertCampaignStoragesToUIData()
 	{
 		local isWorldmap = ("Assets" in this.World) && this.World.Assets != null;
@@ -155,11 +160,15 @@ this.data_helper <- {
 			Money = this.World.Assets.getMoney(),
 			Food = this.World.Assets.getFood(),
 			Supplies = this.World.Assets.getArmorParts(),
+			SuppliesMax = this.World.Assets.getMaxArmorParts(),
 			Ammo = this.World.Assets.getAmmo(),
+			AmmoMax = this.World.Assets.getMaxAmmo(),
 			Medicine = this.World.Assets.getMedicine(),
+			MedicineMax = this.World.Assets.getMaxMedicine(),
 			Brothers = entities != null ? entities.len() : 0,
 			BrothersMax = this.World.Assets.getBrothersMax()
 		};
+		
 	}
 
 	function convertStashAndEntityToUIData( _entity = null, _activeEntity = null, _withoutStash = false, _filter = 0 )
@@ -194,12 +203,14 @@ this.data_helper <- {
 			statusEffects = {},
 			injuries = [],
 			perks = [],
+			perkTree = [],
 			equipment = {},
 			bag = [],
 			ground = []
 		};
 		this.addFlagsToUIData(_entity, _activeEntity, result.flags);
 		this.addCharacterToUIData(_entity, result.character);
+		result.perkTree = this.Const.Perks.getPerksTree(result.character.background);
 		this.addStatsToUIData(_entity, result.stats);
 		local skills = _entity.getSkills();
 		this.addSkillsToUIData(skills.querySortedByItems(this.Const.SkillType.Active), result.activeSkills);
@@ -302,7 +313,8 @@ this.data_helper <- {
 			ImageOffsetY = _entity.getImageOffsetY(),
 			BackgroundImagePath = background.getIconColored(),
 			BackgroundText = background.getDescription(),
-			Traits = _entity.getHiringTraits()
+			Traits = _entity.getHiringTraits(),
+			Talents = _entity.getHiringTalents()
 		};
 	}
 
@@ -335,11 +347,20 @@ this.data_helper <- {
 		_target.leveledUp <- _entity.isLeveled();
 		_target.moodIcon <- "ui/icons/mood_0" + (_entity.getMoodState() + 1) + ".png";
 		_target.isPlayerCharacter <- _entity.getTags().get("IsPlayerCharacter");
+		if (_entity.getBackground() != null)
+		{
+			_target.background <- _entity.getBackground().getID();
+		}
+		else 
+		{
+			_target.background <- "";
+		}
 
 		if (_entity.getLevelUps() > 0)
 		{
 			_target.levelUp = _entity.getAttributeLevelUpValues();
 		}
+		_target.inReserves <- _entity.isInReserves()
 	}
 
 	function addStatsToUIData( _entity, _target )
@@ -528,9 +549,9 @@ this.data_helper <- {
 		}
 	}
 
-	function convertPerkToUIData( _perkId )
+	function convertPerkToUIData( _perkId, _background )
 	{
-		local perk = this.Const.Perks.findById(_perkId);
+		local perk = this.Const.Perks.findByBackground(_perkId, _background);
 
 		if (perk != null)
 		{
@@ -797,6 +818,7 @@ this.data_helper <- {
 		result.amount <- _item.getAmountString();
 		result.amountColor <- _item.getAmountColor();
 		result.repair <- _item.isToBeRepaired();
+		result.salvage <- _item.isToBeSalvaged();
 		result.price <- 0;
 
 		if (_owner != null)
@@ -814,6 +836,39 @@ this.data_helper <- {
 		}
 
 		return result;
+	}
+
+	function convertRepairItemsToUIData( _items, _target, _owner = null, _filter = 0 )
+	{
+		if (_filter == 0)
+		{
+			_filter = this.Const.Items.ItemFilter.All;
+		}
+
+		if (_items == null || _items.len() == 0)
+		{
+			return;
+		}
+
+		for( local i = 0; i < _items.len(); i = ++i )
+		{
+			if (_items[i] != null && _filter == 99 && _items[i].Bro != null)
+			{
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				r.bro <- _items[i].Bro;
+				_target.push(r);
+			}
+			else if (_items[i] != null && (_items[i].Item.getItemType() & _filter) != 0)
+			{
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				r.bro <- _items[i].Bro;
+				_target.push(r);
+			}
+			else
+			{
+				_target.push(null);
+			}
+		}
 	}
 
 };

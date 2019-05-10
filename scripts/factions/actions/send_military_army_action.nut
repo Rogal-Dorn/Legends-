@@ -3,17 +3,17 @@ this.send_military_army_action <- this.inherit("scripts/factions/faction_action"
 	function create()
 	{
 		this.m.ID = "send_military_army_action";
-		this.m.Cooldown = 240.0;
+		this.m.Cooldown = 120.0;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
 	}
 
 	function onUpdate( _faction )
 	{
-		if (!this.World.FactionManager.isCivilWar())
-		{
-			return;
-		}
+	//	if (!this.World.FactionManager.isCivilWar())
+	//	{
+	//		return;
+	//	}
 
 		if (_faction.getUnits().len() >= 8)
 		{

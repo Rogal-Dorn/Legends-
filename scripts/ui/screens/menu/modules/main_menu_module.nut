@@ -9,7 +9,8 @@ this.main_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		OnCreditsPressedListener = null,
 		OnQuitPressedListener = null,
 		OnFleePressedListener = null,
-		OnRetirePressedListener = null
+		OnRetirePressedListener = null,
+		OnNewLegendCampaignPressedListener = null,
 	},
 	function setOnResumePressedListener( _listener )
 	{
@@ -19,6 +20,11 @@ this.main_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 	function setOnNewCampaignPressedListener( _listener )
 	{
 		this.m.OnNewCampaignPressedListener = _listener;
+	}
+
+	function setOnNewLegendCampaignPressedListener( _listener )
+	{
+		this.m.OnNewLegendCampaignPressedListener = _listener;
 	}
 
 	function setOnLoadCampaignPressedListener( _listener )
@@ -73,6 +79,7 @@ this.main_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.OnQuitPressedListener = null;
 		this.m.OnFleePressedListener = null;
 		this.m.OnRetirePressedListener = null;
+		this.m.OnNewLegendCampaignPressedListener = null;
 	}
 
 	function create()
@@ -116,6 +123,14 @@ this.main_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		if (this.m.OnNewCampaignPressedListener != null)
 		{
 			this.m.OnNewCampaignPressedListener();
+		}
+	}
+	
+	function onNewLegendCampaignButtonPressed()
+	{
+		if (this.m.OnNewLegendCampaignPressedListener != null)
+		{
+			this.m.OnNewLegendCampaignPressedListener();
 		}
 	}
 

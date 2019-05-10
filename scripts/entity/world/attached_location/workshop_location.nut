@@ -93,6 +93,7 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/armor_parts_item");
+		_list.push("supplies/armor_parts_small_item");
 	}
 
 	function onUpdateDraftList( _list )
@@ -101,10 +102,13 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		{
 			return;
 		}
-
+		_list.push("legend_ironmonger_background");
+		_list.push("legend_ironmonger_background");
+		_list.push("legend_blacksmith_background");
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("peddler_background");
+		_list.push("female_daytaler_background");
 		_list.push("daytaler_background");
 	}
 
@@ -118,6 +122,16 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 				S = "supplies/armor_parts_item"
 			});
 			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_saw"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_hammer"
+			});
+			_list.push({
 				R = 20,
 				P = 1.0,
 				S = "supplies/armor_parts_item"
@@ -125,7 +139,22 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 			_list.push({
 				R = 20,
 				P = 1.0,
+				S = "supplies/armor_parts_small_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "supplies/armor_parts_small_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
 				S = "supplies/armor_parts_item"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_craft"
 			});
 			_list.push({
 				R = 20,

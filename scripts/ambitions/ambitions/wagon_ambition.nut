@@ -14,22 +14,25 @@ this.wagon_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onUpdateScore()
 	{
-		if (!this.Const.DLC.Unhold)
-		{
-			return;
-		}
 
-		if (this.World.Ambitions.getDone() < 4)
-		{
-			return;
-		}
+		return 
 
-		if (!this.World.Ambitions.getAmbition("ambition.cart").isDone())
-		{
-			return;
-		}
+		// if (!this.Const.DLC.Unhold)
+		// {
+		// 	return;
+		// }
 
-		this.m.Score = 2 + this.Math.rand(0, 5);
+		// if (this.World.Ambitions.getDone() < 4)
+		// {
+		// 	return;
+		// }
+
+		// if (!this.World.Ambitions.getAmbition("ambition.cart").isDone())
+		// {
+		// 	return;
+		// }
+
+		// this.m.Score = 2 + this.Math.rand(0, 5);
 	}
 
 	function onCheckSuccess()

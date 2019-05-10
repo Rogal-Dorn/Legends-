@@ -47,6 +47,20 @@ this.small_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"deserter_background",
 			"deserter_background",
 			"retired_soldier_background",
+			"retired_soldier_background",
+						"female_farmhand_background",
+			"female_farmhand_background",
+			"houndmaster_background",
+			"mason_background",
+			"messenger_background",
+			"militia_background",
+			"militia_background",
+			"female_miller_background",
+			"female_adventurous_noble_background",
+			"bastard_background",
+			"deserter_background",
+			"deserter_background",
+			"retired_soldier_background",
 			"retired_soldier_background"
 		];
 		this.m.UIDescription = "A wooden motte with a bailey overlooking the surrounding fields";

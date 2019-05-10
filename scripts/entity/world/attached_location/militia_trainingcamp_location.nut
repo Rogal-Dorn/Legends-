@@ -172,6 +172,16 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 				P = 1.0,
 				S = "shields/wooden_shield"
 			});
+				_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_train"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_scout"
+			});
 			_list.push({
 				R = 50,
 				P = 1.0,

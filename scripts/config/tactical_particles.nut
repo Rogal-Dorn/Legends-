@@ -8,9 +8,9 @@ if (!("Tactical" in gt.Const))
 gt.Const.Tactical.DustParticles <- [
 	{
 		Delay = 0,
-		Quantity = 30,
-		LifeTimeQuantity = 30,
-		SpawnRate = 600,
+		Quantity = 60,
+		LifeTimeQuantity = 60,
+		SpawnRate = 1200,
 		Brushes = [
 			"dust_01",
 			"dust_02"
@@ -64,9 +64,9 @@ gt.Const.Tactical.BloodEffects <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 10,
-			LifeTimeQuantity = 10,
-			SpawnRate = 200,
+			Quantity = 20,
+			LifeTimeQuantity = 20,
+			SpawnRate = 400,
 			Brushes = [
 				"blood_splatter_red_01",
 				"blood_splatter_red_02",
@@ -82,38 +82,38 @@ gt.Const.Tactical.BloodEffects <- [
 					LifeTimeMax = 0.3,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
-					ScaleMin = 0.01,
+					ScaleMin = 0.001,
 					ScaleMax = 0.01,
 					RotationMin = 0,
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 100,
-					VelocityMax = 150,
-					DirectionMin = this.createVec(-0.2, 0.6),
-					DirectionMax = this.createVec(0.2, 0.6),
+					VelocityMin = 150,
+					VelocityMax = 450,
+					DirectionMin = this.createVec(-0.1, 0.7),
+					DirectionMax = this.createVec(0.1, 0.7),
 					SpawnOffsetMin = this.createVec(0, 0),
 					SpawnOffsetMax = this.createVec(0, 0)
 				},
 				{
-					LifeTimeMin = 1.5,
-					LifeTimeMax = 2.0,
+					LifeTimeMin = 0.7,
+					LifeTimeMax = 1.0,
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
-					ScaleMax = 0.75,
-					VelocityMin = 150,
-					VelocityMax = 150,
+					ScaleMax = 1.0,
+					VelocityMin = 225,
+					VelocityMax = 225,
 					ForceMin = this.createVec(-30, 0),
 					ForceMax = this.createVec(-10, 0)
 				},
 				{
 					LifeTimeMin = 0.1,
-					LifeTimeMax = 0.1,
+					LifeTimeMax = 0.3,
 					ColorMin = this.createColor("ffffff7f"),
 					ColorMax = this.createColor("ffffff7f"),
 					ScaleMin = 0.75,
-					ScaleMax = 0.75,
+					ScaleMax = 1.0,
 					VelocityMin = 0,
 					VelocityMax = 0,
 					ForceMin = this.createVec(0, -180),
@@ -125,7 +125,7 @@ gt.Const.Tactical.BloodEffects <- [
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.5,
-					ScaleMax = 0.75,
+					ScaleMax = 1.0,
 					VelocityMin = 0,
 					VelocityMax = 0,
 					ForceMin = this.createVec(0, 0),
@@ -137,9 +137,9 @@ gt.Const.Tactical.BloodEffects <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 10,
-			LifeTimeQuantity = 10,
-			SpawnRate = 200,
+			Quantity = 20,
+			LifeTimeQuantity = 20,
+			SpawnRate = 400,
 			Brushes = [
 				"blood_splatter_dark_01",
 				"blood_splatter_dark_05",
@@ -150,30 +150,30 @@ gt.Const.Tactical.BloodEffects <- [
 			],
 			Stages = [
 				{
-					LifeTimeMin = 0.3,
-					LifeTimeMax = 0.3,
+					LifeTimeMin = 0.2,
+					LifeTimeMax = 0.2,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.01,
-					ScaleMax = 0.01,
+					ScaleMax = 0.05,
 					RotationMin = 0,
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 100,
-					VelocityMax = 150,
+					VelocityMin = 150,
+					VelocityMax = 225,
 					DirectionMin = this.createVec(-0.2, 0.6),
 					DirectionMax = this.createVec(0.2, 0.6),
 					SpawnOffsetMin = this.createVec(0, 0),
 					SpawnOffsetMax = this.createVec(0, 0)
 				},
 				{
-					LifeTimeMin = 1.5,
-					LifeTimeMax = 2.0,
+					LifeTimeMin = 1.0,
+					LifeTimeMax = 1.5,
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
-					ScaleMax = 0.75,
+					ScaleMax = 1.0,
 					VelocityMin = 150,
 					VelocityMax = 150,
 					ForceMin = this.createVec(-30, 0),
@@ -197,7 +197,7 @@ gt.Const.Tactical.BloodEffects <- [
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.5,
-					ScaleMax = 0.75,
+					ScaleMax = 1.0,
 					VelocityMin = 0,
 					VelocityMax = 0,
 					ForceMin = this.createVec(0, 0),
@@ -211,7 +211,7 @@ gt.Const.Tactical.BloodEffects <- [
 			Delay = 0,
 			Quantity = 3,
 			LifeTimeQuantity = 3,
-			SpawnRate = 600,
+			SpawnRate = 1200,
 			Brushes = [
 				"blood_splatter_bones_04",
 				"blood_splatter_bones_05",
@@ -259,8 +259,8 @@ gt.Const.Tactical.BloodEffects <- [
 					ForceMax = this.createVec(0, -175)
 				},
 				{
-					LifeTimeMin = 0.02,
-					LifeTimeMax = 0.04,
+					LifeTimeMin = 0.01,
+					LifeTimeMax = 0.03,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.75,
@@ -277,9 +277,9 @@ gt.Const.Tactical.BloodEffects <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 10,
-			LifeTimeQuantity = 10,
-			SpawnRate = 200,
+			Quantity = 20,
+			LifeTimeQuantity = 20,
+			SpawnRate = 400,
 			Brushes = [
 				"blood_splatter_green_01",
 				"blood_splatter_green_02",
@@ -352,7 +352,7 @@ gt.Const.Tactical.BloodEffects <- [
 			Delay = 0,
 			Quantity = 3,
 			LifeTimeQuantity = 3,
-			SpawnRate = 600,
+			SpawnRate = 1200,
 			Brushes = [
 				"blood_splatter_wood_04",
 				"blood_splatter_wood_05",
@@ -360,12 +360,12 @@ gt.Const.Tactical.BloodEffects <- [
 			],
 			Stages = [
 				{
-					LifeTimeMin = 0.2,
-					LifeTimeMax = 0.2,
+					LifeTimeMin = 0.1,
+					LifeTimeMax = 0.1,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
-					ScaleMin = 0.66,
-					ScaleMax = 0.66,
+					ScaleMin = 0.6,
+					ScaleMax = 0.6,
 					RotationMin = 0,
 					RotationMax = 359,
 					VelocityMin = 100,
@@ -420,9 +420,9 @@ gt.Const.Tactical.BloodSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 20,
-			LifeTimeQuantity = 20,
-			SpawnRate = 80,
+			Quantity = 40,
+			LifeTimeQuantity = 40,
+			SpawnRate = 160,
 			Brushes = [
 				"blood_splatter_red_01",
 				"blood_splatter_red_02",
@@ -434,7 +434,7 @@ gt.Const.Tactical.BloodSplatters <- [
 			],
 			Stages = [
 				{
-					LifeTimeMin = 0.3,
+					LifeTimeMin = 0.2,
 					LifeTimeMax = 0.3,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
@@ -444,22 +444,22 @@ gt.Const.Tactical.BloodSplatters <- [
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 60,
-					VelocityMax = 150,
-					DirectionMin = this.createVec(-0.1, 0.7),
-					DirectionMax = this.createVec(0.1, 0.7),
+					VelocityMin = 100,
+					VelocityMax = 225,
+					DirectionMin = this.createVec(-0.1, 0.69),
+					DirectionMax = this.createVec(0.1, 0.69),
 					SpawnOffsetMin = this.createVec(10, 0),
 					SpawnOffsetMax = this.createVec(10, 0)
 				},
 				{
-					LifeTimeMin = 1.5,
+					LifeTimeMin = 1.0,
 					LifeTimeMax = 2.0,
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
 					ScaleMax = 0.75,
-					VelocityMin = 150,
-					VelocityMax = 150,
+					VelocityMin = 225,
+					VelocityMax = 225,
 					ForceMin = this.createVec(-30, 0),
 					ForceMax = this.createVec(-10, 0)
 				},
@@ -476,8 +476,8 @@ gt.Const.Tactical.BloodSplatters <- [
 					ForceMax = this.createVec(0, -180)
 				},
 				{
-					LifeTimeMin = 0.02,
-					LifeTimeMax = 0.04,
+					LifeTimeMin = 0.03,
+					LifeTimeMax = 0.06,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.5,
@@ -491,9 +491,9 @@ gt.Const.Tactical.BloodSplatters <- [
 		},
 		{
 			Delay = 600,
-			Quantity = 15,
-			LifeTimeQuantity = 15,
-			SpawnRate = 60,
+			Quantity = 30,
+			LifeTimeQuantity = 30,
+			SpawnRate = 120,
 			Brushes = [
 				"blood_splatter_red_01",
 				"blood_splatter_red_02",
@@ -505,38 +505,38 @@ gt.Const.Tactical.BloodSplatters <- [
 			],
 			Stages = [
 				{
-					LifeTimeMin = 0.2,
-					LifeTimeMax = 0.2,
+					LifeTimeMin = 0.4,
+					LifeTimeMax = 0.4,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.01,
-					ScaleMax = 0.01,
+					ScaleMax = 0.03,
 					RotationMin = 0,
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 60,
-					VelocityMax = 150,
+					VelocityMin = 100,
+					VelocityMax = 225,
 					DirectionMin = this.createVec(-0.1, 0.6),
 					DirectionMax = this.createVec(0.1, 0.6),
 					SpawnOffsetMin = this.createVec(-5, 10),
 					SpawnOffsetMax = this.createVec(-5, 10)
 				},
 				{
-					LifeTimeMin = 1.5,
-					LifeTimeMax = 2.0,
+					LifeTimeMin = 3.0,
+					LifeTimeMax = 4.0,
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
-					ScaleMax = 0.75,
-					VelocityMin = 150,
-					VelocityMax = 150,
+					ScaleMax = 1.0,
+					VelocityMin = 225,
+					VelocityMax = 225,
 					ForceMin = this.createVec(-30, 0),
 					ForceMax = this.createVec(-10, 0)
 				},
 				{
-					LifeTimeMin = 0.1,
-					LifeTimeMax = 0.1,
+					LifeTimeMin = 0.2,
+					LifeTimeMax = 0.2,
 					ColorMin = this.createColor("ffffff7f"),
 					ColorMax = this.createColor("ffffff7f"),
 					ScaleMin = 0.75,
@@ -547,8 +547,8 @@ gt.Const.Tactical.BloodSplatters <- [
 					ForceMax = this.createVec(0, -180)
 				},
 				{
-					LifeTimeMin = 0.02,
-					LifeTimeMax = 0.04,
+					LifeTimeMin = 0.03,
+					LifeTimeMax = 0.06,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.5,
@@ -562,9 +562,9 @@ gt.Const.Tactical.BloodSplatters <- [
 		},
 		{
 			Delay = 1200,
-			Quantity = 15,
-			LifeTimeQuantity = 15,
-			SpawnRate = 60,
+			Quantity = 30,
+			LifeTimeQuantity = 30,
+			SpawnRate = 120,
 			Brushes = [
 				"blood_splatter_red_01",
 				"blood_splatter_red_02",
@@ -586,22 +586,22 @@ gt.Const.Tactical.BloodSplatters <- [
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 60,
-					VelocityMax = 150,
+					VelocityMin = 100,
+					VelocityMax = 225,
 					DirectionMin = this.createVec(-0.1, 0.6),
 					DirectionMax = this.createVec(0.1, 0.6),
 					SpawnOffsetMin = this.createVec(-20, 20),
 					SpawnOffsetMax = this.createVec(-20, 20)
 				},
 				{
-					LifeTimeMin = 1.5,
-					LifeTimeMax = 2.0,
+					LifeTimeMin = 1.0,
+					LifeTimeMax = 1.5,
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
 					ScaleMax = 0.75,
-					VelocityMin = 150,
-					VelocityMax = 150,
+					VelocityMin = 225,
+					VelocityMax = 225,
 					ForceMin = this.createVec(-30, 0),
 					ForceMax = this.createVec(-10, 0)
 				},
@@ -635,9 +635,9 @@ gt.Const.Tactical.BloodSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 30,
-			LifeTimeQuantity = 30,
-			SpawnRate = 120,
+			Quantity = 60,
+			LifeTimeQuantity = 60,
+			SpawnRate = 240,
 			Brushes = [
 				"blood_splatter_dark_01",
 				"blood_splatter_dark_05",
@@ -658,8 +658,8 @@ gt.Const.Tactical.BloodSplatters <- [
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 30,
-					VelocityMax = 90,
+					VelocityMin = 50,
+					VelocityMax = 150,
 					DirectionMin = this.createVec(-0.1, 0.8),
 					DirectionMax = this.createVec(0.1, 0.8),
 					SpawnOffsetMin = this.createVec(0, 0),
@@ -668,14 +668,14 @@ gt.Const.Tactical.BloodSplatters <- [
 					ForceMax = this.createVec(-20, 0)
 				},
 				{
-					LifeTimeMin = 1.5,
-					LifeTimeMax = 2.0,
+					LifeTimeMin = 1.0,
+					LifeTimeMax = 1.5,
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.3,
 					ScaleMax = 0.6,
-					VelocityMin = 100,
-					VelocityMax = 100,
+					VelocityMin = 150,
+					VelocityMax = 150,
 					ForceMin = this.createVec(-20, 0),
 					ForceMax = this.createVec(-20, 0)
 				},
@@ -709,9 +709,9 @@ gt.Const.Tactical.BloodSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 40,
-			LifeTimeQuantity = 40,
-			SpawnRate = 600,
+			Quantity = 80,
+			LifeTimeQuantity = 80,
+			SpawnRate = 1200,
 			Brushes = [
 				"dust_01",
 				"dust_02"
@@ -761,9 +761,9 @@ gt.Const.Tactical.BloodSplatters <- [
 		},
 		{
 			Delay = 0,
-			Quantity = 6,
-			LifeTimeQuantity = 6,
-			SpawnRate = 600,
+			Quantity = 12,
+			LifeTimeQuantity = 12,
+			SpawnRate = 1200,
 			Brushes = [
 				"blood_splatter_bones_04",
 				"blood_splatter_bones_05",
@@ -828,9 +828,9 @@ gt.Const.Tactical.BloodSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 190,
-			LifeTimeQuantity = 190,
-			SpawnRate = 126,
+			Quantity = 400,
+			LifeTimeQuantity = 400,
+			SpawnRate = 250,
 			Brushes = [
 				"effect_fire_01",
 				"effect_fire_02",
@@ -903,9 +903,9 @@ gt.Const.Tactical.BloodSplatters <- [
 		},
 		{
 			Delay = 0,
-			Quantity = 70,
-			LifeTimeQuantity = 70,
-			SpawnRate = 84,
+			Quantity = 150,
+			LifeTimeQuantity = 150,
+			SpawnRate = 160,
 			Brushes = [
 				"ash_01"
 			],
@@ -956,9 +956,9 @@ gt.Const.Tactical.BloodSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 20,
-			LifeTimeQuantity = 20,
-			SpawnRate = 80,
+			Quantity = 40,
+			LifeTimeQuantity = 40,
+			SpawnRate = 160,
 			Brushes = [
 				"blood_splatter_green_01",
 				"blood_splatter_green_02",
@@ -970,8 +970,8 @@ gt.Const.Tactical.BloodSplatters <- [
 			],
 			Stages = [
 				{
-					LifeTimeMin = 0.3,
-					LifeTimeMax = 0.3,
+					LifeTimeMin = 0.2,
+					LifeTimeMax = 0.2,
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.01,
@@ -980,22 +980,22 @@ gt.Const.Tactical.BloodSplatters <- [
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 60,
-					VelocityMax = 150,
+					VelocityMin = 100,
+					VelocityMax = 225,
 					DirectionMin = this.createVec(-0.1, 0.7),
 					DirectionMax = this.createVec(0.1, 0.7),
 					SpawnOffsetMin = this.createVec(10, 0),
 					SpawnOffsetMax = this.createVec(10, 0)
 				},
 				{
-					LifeTimeMin = 1.5,
+					LifeTimeMin = 1.0,
 					LifeTimeMax = 2.0,
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
-					ScaleMax = 0.75,
-					VelocityMin = 150,
-					VelocityMax = 150,
+					ScaleMax = 1.0,
+					VelocityMin = 225,
+					VelocityMax = 225,
 					ForceMin = this.createVec(-30, 0),
 					ForceMax = this.createVec(-10, 0)
 				},
@@ -1027,9 +1027,9 @@ gt.Const.Tactical.BloodSplatters <- [
 		},
 		{
 			Delay = 600,
-			Quantity = 15,
-			LifeTimeQuantity = 15,
-			SpawnRate = 60,
+			Quantity = 30,
+			LifeTimeQuantity = 30,
+			SpawnRate = 120,
 			Brushes = [
 				"blood_splatter_green_01",
 				"blood_splatter_green_02",
@@ -1051,8 +1051,8 @@ gt.Const.Tactical.BloodSplatters <- [
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 60,
-					VelocityMax = 150,
+					VelocityMin = 90,
+					VelocityMax = 225,
 					DirectionMin = this.createVec(-0.1, 0.6),
 					DirectionMax = this.createVec(0.1, 0.6),
 					SpawnOffsetMin = this.createVec(-5, 10),
@@ -1065,8 +1065,8 @@ gt.Const.Tactical.BloodSplatters <- [
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
 					ScaleMax = 0.75,
-					VelocityMin = 150,
-					VelocityMax = 150,
+					VelocityMin = 225,
+					VelocityMax = 225,
 					ForceMin = this.createVec(-30, 0),
 					ForceMax = this.createVec(-10, 0)
 				},
@@ -1098,9 +1098,9 @@ gt.Const.Tactical.BloodSplatters <- [
 		},
 		{
 			Delay = 1200,
-			Quantity = 15,
-			LifeTimeQuantity = 15,
-			SpawnRate = 60,
+			Quantity = 30,
+			LifeTimeQuantity = 30,
+			SpawnRate = 120,
 			Brushes = [
 				"blood_splatter_green_01",
 				"blood_splatter_green_02",
@@ -1122,8 +1122,8 @@ gt.Const.Tactical.BloodSplatters <- [
 					RotationMax = 359,
 					TorqueMin = 10,
 					TorqueMax = 20,
-					VelocityMin = 60,
-					VelocityMax = 150,
+					VelocityMin = 90,
+					VelocityMax = 225,
 					DirectionMin = this.createVec(-0.1, 0.6),
 					DirectionMax = this.createVec(0.1, 0.6),
 					SpawnOffsetMin = this.createVec(-20, 20),
@@ -1136,8 +1136,8 @@ gt.Const.Tactical.BloodSplatters <- [
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.5,
 					ScaleMax = 0.75,
-					VelocityMin = 150,
-					VelocityMax = 150,
+					VelocityMin = 225,
+					VelocityMax = 225,
 					ForceMin = this.createVec(-30, 0),
 					ForceMax = this.createVec(-10, 0)
 				},
@@ -1171,9 +1171,9 @@ gt.Const.Tactical.BloodSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 70,
-			LifeTimeQuantity = 70,
-			SpawnRate = 600,
+			Quantity = 140,
+			LifeTimeQuantity = 140,
+			SpawnRate = 1200,
 			Brushes = [
 				"dust_01",
 				"dust_02"
@@ -1223,9 +1223,9 @@ gt.Const.Tactical.BloodSplatters <- [
 		},
 		{
 			Delay = 0,
-			Quantity = 8,
-			LifeTimeQuantity = 8,
-			SpawnRate = 600,
+			Quantity = 16,
+			LifeTimeQuantity = 16,
+			SpawnRate = 1200,
 			Brushes = [
 				"blood_splatter_wood_04",
 				"blood_splatter_wood_05",
@@ -1293,9 +1293,9 @@ gt.Const.Tactical.DecapitateSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 40,
-			LifeTimeQuantity = 40,
-			SpawnRate = 25,
+			Quantity = 80,
+			LifeTimeQuantity = 80,
+			SpawnRate = 50,
 			Brushes = [
 				"blood_splatter_red_01",
 				"blood_splatter_red_02",
@@ -1366,9 +1366,9 @@ gt.Const.Tactical.DecapitateSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 30,
-			LifeTimeQuantity = 30,
-			SpawnRate = 20,
+			Quantity = 60,
+			LifeTimeQuantity = 60,
+			SpawnRate = 40,
 			Brushes = [
 				"blood_splatter_dark_01",
 				"blood_splatter_dark_05",
@@ -1440,9 +1440,9 @@ gt.Const.Tactical.DecapitateSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 40,
-			LifeTimeQuantity = 40,
-			SpawnRate = 25,
+			Quantity = 80,
+			LifeTimeQuantity = 80,
+			SpawnRate = 50,
 			Brushes = [
 				"blood_splatter_green_01",
 				"blood_splatter_green_02",
@@ -1517,9 +1517,9 @@ gt.Const.Tactical.SmashSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 80,
-			LifeTimeQuantity = 80,
-			SpawnRate = 200,
+			Quantity = 160,
+			LifeTimeQuantity = 160,
+			SpawnRate = 400,
 			Brushes = [
 				"blood_splatter_red_01",
 				"blood_splatter_red_02",
@@ -1590,9 +1590,9 @@ gt.Const.Tactical.SmashSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 80,
-			LifeTimeQuantity = 80,
-			SpawnRate = 200,
+			Quantity = 1600,
+			LifeTimeQuantity = 160,
+			SpawnRate = 400,
 			Brushes = [
 				"blood_splatter_dark_01",
 				"blood_splatter_dark_05",
@@ -1664,9 +1664,9 @@ gt.Const.Tactical.SmashSplatters <- [
 	[
 		{
 			Delay = 0,
-			Quantity = 80,
-			LifeTimeQuantity = 80,
-			SpawnRate = 200,
+			Quantity = 160,
+			LifeTimeQuantity = 160,
+			SpawnRate = 400,
 			Brushes = [
 				"blood_splatter_green_01",
 				"blood_splatter_green_02",
@@ -1748,7 +1748,7 @@ gt.Const.Tactical.TerrainDropdownParticles <- [
 			Delay = 0,
 			Quantity = 9,
 			LifeTimeQuantity = 9,
-			SpawnRate = 600,
+			SpawnRate = 1200,
 			Brushes = [
 				"dust_01"
 			],
@@ -1805,7 +1805,7 @@ gt.Const.Tactical.TerrainDropdownParticles <- [
 			Delay = 0,
 			Quantity = 40,
 			LifeTimeQuantity = 40,
-			SpawnRate = 600,
+			SpawnRate = 1200,
 			Brushes = [
 				"swamp_splatter_01"
 			],
@@ -1816,7 +1816,7 @@ gt.Const.Tactical.TerrainDropdownParticles <- [
 					ColorMin = this.createColor("ffffff00"),
 					ColorMax = this.createColor("ffffff00"),
 					ScaleMin = 0.75,
-					ScaleMax = 1.0,
+					ScaleMax = 1.5,
 					RotationMin = 0,
 					RotationMax = 359,
 					TorqueMin = -20,
@@ -1834,7 +1834,7 @@ gt.Const.Tactical.TerrainDropdownParticles <- [
 					ColorMin = this.createColor("ffffffff"),
 					ColorMax = this.createColor("ffffffff"),
 					ScaleMin = 0.75,
-					ScaleMax = 1.0,
+					ScaleMax = 1.5,
 					VelocityMin = 60,
 					VelocityMax = 90,
 					ForceMin = this.createVec(0, 0),
@@ -1862,7 +1862,7 @@ gt.Const.Tactical.TerrainDropdownParticles <- [
 			Delay = 0,
 			Quantity = 9,
 			LifeTimeQuantity = 9,
-			SpawnRate = 600,
+			SpawnRate = 1200,
 			Brushes = [
 				"dust_01"
 			],
@@ -1921,7 +1921,7 @@ gt.Const.Tactical.BurnParticles <- [
 		Delay = 100,
 		Quantity = 230,
 		LifeTimeQuantity = 230,
-		SpawnRate = 156,
+		SpawnRate = 300,
 		Brushes = [
 			"effect_fire_01",
 			"effect_fire_02",
@@ -1996,7 +1996,7 @@ gt.Const.Tactical.BurnParticles <- [
 		Delay = 100,
 		Quantity = 80,
 		LifeTimeQuantity = 80,
-		SpawnRate = 84,
+		SpawnRate = 170,
 		Brushes = [
 			"ash_01"
 		],
@@ -2047,9 +2047,9 @@ gt.Const.Tactical.BurnParticles <- [
 gt.Const.Tactical.AcidParticles <- [
 	{
 		Delay = 0,
-		Quantity = 20,
-		LifeTimeQuantity = 20,
-		SpawnRate = 20,
+		Quantity = 40,
+		LifeTimeQuantity = 40,
+		SpawnRate = 40,
 		Brushes = [
 			"ash_01"
 		],
@@ -2102,7 +2102,7 @@ gt.Const.Tactical.LightningParticles <- [
 		Delay = 0,
 		Quantity = 10,
 		LifeTimeQuantity = 10,
-		SpawnRate = 156,
+		SpawnRate = 300,
 		Brushes = [
 			"effect_lightning_01",
 			"effect_lightning_02",
@@ -2177,7 +2177,7 @@ gt.Const.Tactical.LightningParticles <- [
 		Delay = 100,
 		Quantity = 80,
 		LifeTimeQuantity = 80,
-		SpawnRate = 84,
+		SpawnRate = 170,
 		Brushes = [
 			"ash_01"
 		],

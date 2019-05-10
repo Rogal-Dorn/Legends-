@@ -36,14 +36,14 @@ gt.Const.Strings.RumorsLocation <- [
 	"We spotted something on our way here, hidden way off the road, %terrain% %distance% %direction% of %townname%. Don\'t know what the locals call it, or if they even know about it, but it might be worth it going back there."
 ];
 gt.Const.Strings.RumorsContract <- [
-	"I\'ve heard the council of %settlement% is looking to hire mercenaries. Don\'t know what for.",
-	"A group of young lads left for %settlement% some days ago. They\'re looking to hire armed men over there, willing to pay real good. I just hope they make it back alive.",
-	"If you lot is looking for work, I\'ve heard that they\'re hiring sellswords over at %settlement%.",
-	"You heard that they\'re looking to hire fighting men at %settlement%?",
-	"Some guy from %settlement% was here just the other day, wanted to hire strong lads for some problem they have over there. Don\'t think many went with him, though.",
-	"Mercenaries, eh? We got a few of those these days. Just some days ago a bunch that called themselves %randommercenarycompany% travelled through. On their way to %settlement%, they said, good coin to be made there.",
-	"If it\'s work you\'re looking for, they\'re taking crowns in hand over at %settlement% to hire strong men.",
-	"Heard that some fancy fat merchant or so from %settlement% is looking to hire armed guards the other day. Well, I ain\'t going to die for him, no thanks. Have me my house and wife right here."
+	"I\'ve heard the council of %settlement% is looking to hire mercenaries %direction%  of here. Don\'t know what for.",
+	"A group of young lads left %direction% for %settlement% some days ago. They\'re looking to hire armed men over there, willing to pay real good. I just hope they make it back alive.",
+	"If you lot is looking for work, I\'ve heard that they\'re hiring sellswords over at %settlement% to the %direction% .",
+	"You heard that they\'re looking to hire fighting men at %settlement%? its %direction% from here",
+	"Some guy from %settlement% was here just the other day, wanted to hire strong lads for some problem they have over there. Don\'t think many went %direction% with him, though.",
+	"Mercenaries, eh? We got a few of those these days. Just some days ago a bunch that called themselves %randommercenarycompany% travelled through. On their way %direction%  to %settlement%, they said, good coin to be made there.",
+	"If it\'s work you\'re looking for, they\'re taking crowns in to the %direction% over at %settlement% to hire strong men.",
+	"Heard that some fancy fat merchant or so from %settlement% is looking to hire armed guards the other day. Well, I ain\'t going %direction% to die to the for him, no thanks. Have me my house and wife right here."
 ];
 gt.Const.Strings.RumorsGeneral <- [
 	"If you\'re looking to fetch a good price for your trading goods, my friend, you should go to one of the large cities or castles and not some run-down poor village at world\'s ass.",
@@ -185,7 +185,7 @@ gt.Const.Strings.RumorsItemsOrcs <- [
 ];
 gt.Const.Strings.RumorsItemsGoblins <- [
 	[
-		"A really pissed-off nobleman told me the other day that some stunty greenskins made off with his family heirloom after poisoning his trusted guard dogs. He swears they hid %terrain% somewhere %distance% from here, but I don\'t think he ever convinced anyone to retrieve it for him. Certainly not me.",
+		"A really pissed-off nobleman told me the other day that some stunty greenskins made off with his family heirloom after poisoning his trusted guard dogs. He swears they hid %terrain% somewhere %distance% from here, but I don\'t think he ever convinced anyone to go %direction% to retrieve it for him. Certainly not me.",
 		"Afraid of greenskins? Some real beaten up soldiers passed down through here the other day. Said they wanted to wrestle a well-known weapon from goblins %direction% of here, but it sure looked like it didn\'t go down as planned and they had to pull back. Guess their prize is still up for the taking."
 	],
 	[
@@ -202,14 +202,14 @@ gt.Const.Strings.RumorsItemsGoblins <- [
 gt.Const.Strings.RumorsItemsBandits <- [
 	[
 		"Word has it that a bunch of ne\'er do wells %direction% from here got their hands on something real fancy and sharp through a brash heist.",
-		"Buncha lowlifes tried raiding a caravan %terrain% %distance% from here. They all got slain, but rumor has it that some valuable weapon went missing during the fight. The caravan guards have been searching for it frantically since.",
+		"Buncha lowlifes tried raiding a caravan %terrain% %distance% from here. They all got slain, but rumor has it that some valuable weapon went missing during the fight. The caravan guards have been searching %direction% for it frantically since.",
 		"A bewildered patron told me he was held prisoner by some rogues %terrain% %distance% from here. Said they had something real pretty with them. Some sort of curious looking weapon.",
 		"The captain of the guard deserted a while ago to join a raider camp hidden %terrain% to the %direction%. My uncle, who served under him, claims he raided the armory before leaving and grabbed a real prize."
 	],
 	[
 		"The captain of the guard deserted a while ago to join a raider camp hidden %terrain% to the %direction%. My uncle, who served under him, claims he raided the armory before leaving and grabbed a real prize.",
 		"I hear the famous shield %item% has been sighted. %randomname% claims that it belongs to a band of hard boiled raiders camping out %direction% of here. But then, %randomname% talks lots about things he knows nothing about.",
-		"All anyone talks \'bout \'round these parts are damned raiders. \'Suppose they\'re the toast of Rumorville \'cause they gots their hands on the %item% or some such thing now. Where at? Oh, somewhere %terrain%."
+		"All anyone talks \'bout \'round these parts are damned raiders. \'Suppose they\'re the toast of Rumorville \'cause they gots their hands on the %item% or some such thing now. Where at? Oh, somewhere %terrain% to the %direction% ."
 	],
 	[
 		"A friend of a friend got robbed %direction% from here by a group of outlaws the other day. He claims the leader donned the most astonishing armor!",
@@ -225,11 +225,11 @@ gt.Const.Strings.RumorsItemsUndead <- [
 	],
 	[
 		"Supposedly a bunch of graves %direction% of here are turning up empty. Someone said graverobbers were looking for a famed shield buried there. Strangely, nobody\'s actually seen those graverobbers, so maybe it\'s all hogwash.",
-		"So I watched over the steward\'s books and came across old maps that depicted an ancient noble burial ground %terrain% %distance% from here. However, nobody was able to find it yet. Well, some things are just not meant to be found, I suppose."
+		"So I watched over the steward\'s books and came across old maps that depicted an ancient noble burial ground %terrain% %distance% %direction% from here. However, they've searched %direction% and nobody was able to find it yet. Well, some things are just not meant to be found, I suppose."
 	],
 	[
 		"So %terrain% %direction% of here is supposedly the last resting place of a mystical piece of armor. Don\'t know the name myself, I just know a lot of adventurers go there and don\'t come back. Dunno why I told you, really. I like your business.",
-		"You heard of %location%? Ask anyone around here, it\'s been haunting %townname% since before I was born. Folks say some armor from the gods is sealed there for all time, back from when man first settled here."
+		"You heard of %location%? Ask anyone around here, it\'s been haunting %townname% since before I was born. Folks say some armor from the gods is sealed there for all time, back from when man first settled to the %direction%"
 	]
 ];
 

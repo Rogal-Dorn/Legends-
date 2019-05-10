@@ -43,6 +43,11 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
+
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Hitpoints = b.Hitpoints * 1.5;
+			}
 		this.m.CurrentProperties = clone b;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));

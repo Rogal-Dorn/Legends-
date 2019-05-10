@@ -34,15 +34,17 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"Niedermark"
 		]);
 		this.m.DraftList = [
-			"beggar_background",
-			"beggar_background",
+			"female_beggar_background",
+			"female_beggar_background",
 			"brawler_background",
 			"caravan_hand_background",
+			"legend_donkey",
+			"legend_donkey",
 			"gambler_background",
 			"cultist_background",
 			"cultist_background",
 			"daytaler_background",
-			"daytaler_background",
+			"female_daytaler_background",
 			"flagellant_background",
 			"flagellant_background",
 			"gravedigger_background",
@@ -62,8 +64,8 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"ratcatcher_background",
 			"ratcatcher_background",
 			"refugee_background",
-			"servant_background",
-			"thief_background",
+			"female_servant_background",
+			"female_thief_background",
 			"vagabond_background",
 			"wildman_background",
 			"wildman_background",
@@ -72,13 +74,14 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"witchhunter_background",
 			"adventurous_noble_background",
 			"bastard_background",
-			"disowned_noble_background",
+			"female_disowned_noble_background",
 			"hedge_knight_background",
 			"retired_soldier_background",
 			"sellsword_background",
 			"swordmaster_background",
 			"cripple_background",
-			"eunuch_background"
+			"eunuch_background",
+			"legend_inventor_background"
 		];
 
 		if (this.Const.DLC.Unhold)

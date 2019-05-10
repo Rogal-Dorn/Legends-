@@ -62,9 +62,12 @@ this.dastard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	{
 		local actor = this.getContainer().getActor();
 
-		if (actor.getMoodState() >= this.Const.MoodState.Disgruntled && actor.getMoraleState() > this.Const.MoraleState.Wavering)
+		if (!actor.getTags().has("PlayerZombie") && !actor.getTags().has("PlayerSkeleton"))
 		{
-			actor.setMoraleState(this.Const.MoraleState.Wavering);
+			if (actor.getMoodState() >= this.Const.MoodState.Disgruntled && actor.getMoraleState() > this.Const.MoraleState.Wavering)
+			{
+				actor.setMoraleState(this.Const.MoraleState.Wavering);
+			}
 		}
 	}
 

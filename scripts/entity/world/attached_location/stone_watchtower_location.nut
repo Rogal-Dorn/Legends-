@@ -67,7 +67,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		{
 			return;
 		}
-
+		_list.push("legend_ironmonger_background");
 		_list.push("retired_soldier_background");
 		_list.push("deserter_background");
 	}
@@ -157,9 +157,39 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 				S = "weapons/crossbow"
 			});
 			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/legend_tipstaff"
+			});
+				_list.push({
+				R = 50,
+				P = 1.0,
+				S = "weapons/legend_slingstaff"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_sling"
+			});
+				_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_train"
+			});
+				_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_scout"
+			});
+			_list.push({
 				R = 10,
 				P = 1.0,
 				S = "ammo/quiver_of_bolts"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "ammo/bag_of_pebbles"
 			});
 
 			if (this.Const.DLC.Unhold)

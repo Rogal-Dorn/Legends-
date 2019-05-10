@@ -594,16 +594,33 @@ this.tooltip_events <- {
 				});
 			}
 
-			if (_item.getCondition() < _item.getConditionMax())
+			if (_item.getCondition() >= _item.getConditionMax())
 			{
 				tooltip.push({
 					id = 3,
 					type = "hint",
 					icon = "ui/icons/mouse_right_button_alt.png",
-					text = _item.isToBeRepaired() ? "Set item not to be repaired" : "Set item to be repaired"
+					text = "Set item to be salvaged"
 				});
-			}
-
+			} 
+			else if (_item.getCondition() < _item.getConditionMax())
+			{
+				local text = "Set item to be repaired"
+				if (_item.isToBeRepaired()) 
+				{
+					text = "Set item to be salvaged"
+				} 
+				else if (_item.isToBeSalvaged())
+				{
+					text = "Set item to not be salvaged or repaired"
+				}
+				tooltip.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/icons/mouse_right_button_alt.png",
+					text = text
+				});
+			} 
 			break;
 
 		case "tactical-combat-result-screen.stash":
@@ -636,7 +653,9 @@ this.tooltip_events <- {
 			}
 
 			break;
-
+		
+		case "camp-screen-repair-dialog-module.stash":
+		case "camp-screen-workshop-dialog-module.stash":
 		case "world-town-screen-shop-dialog-module.stash":
 			tooltip.push({
 				id = 1,
@@ -648,7 +667,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getConditionMax() > 1 && _item.getCondition() < _item.getConditionMax())
 			{
 				local price = (_item.getConditionMax() - _item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.200000003 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)
@@ -673,6 +692,8 @@ this.tooltip_events <- {
 
 			break;
 
+		case "camp-screen-repair-dialog-module.shop":
+		case "camp-screen-workshop-dialog-module.shop":
 		case "world-town-screen-shop-dialog-module.shop":
 			if (this.Stash.hasEmptySlot())
 			{
@@ -877,7 +898,8 @@ this.tooltip_events <- {
 
 	function general_queryUIPerkTooltipData( _entityId, _perkId )
 	{
-		local perk = this.Const.Perks.findById(_perkId);
+		local player = this.Tactical.getEntityByID(_entityId);
+		local perk = this.Const.Perks.findByBackground(_perkId, player.getBackground().getID());
 
 		if (perk != null)
 		{
@@ -893,7 +915,6 @@ this.tooltip_events <- {
 					text = perk.Tooltip
 				}
 			];
-			local player = this.Tactical.getEntityByID(_entityId);
 
 			if (!player.hasPerk(_perkId))
 			{
@@ -994,9 +1015,25 @@ this.tooltip_events <- {
 
 		case "assets.Money":
 			local money = this.World.Assets.getMoney();
-			local dailyMoney = this.World.Assets.getDailyMoneyCost();
-			local time = this.Math.floor(money / this.Math.max(1, dailyMoney));
+			local dailyMoney = 0;
+			local barterMult = 0.0;
+			local brolist = [];
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				local L = []
+				dailyMoney = dailyMoney + bro.getDailyCost();
+				local L = [bro.getDailyCost(), bro.getName(), bro.getBackground().getNameOnly()];
+				local bm = bro.getBarterModifier() * 100.0;
+				if (bm > 0)
+				{
+					barterMult += bm;
+					L[2] = L[2] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + bm + "%[/color] Barter"
+				}
+				brolist.push(L);
+			}
 
+			local time = this.Math.floor(money / this.Math.max(1, dailyMoney));
+			local ret = []
 			if (dailyMoney == 0)
 			{
 				return [
@@ -1014,7 +1051,7 @@ this.tooltip_events <- {
 			}
 			else if (time >= 1.0 && money > 0)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1023,13 +1060,13 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.PositiveValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
+						text = "The amount of coin your mercenary company has. Used to pay every man daily at noon, as well as to hire new people and purchase equipment.\n\nYou pay out [color=" + this.Const.UI.Color.NegativeValue + "]" + dailyMoney + "[/color] crowns per day. Your [color=" + this.Const.UI.Color.PositiveValue + "]" + money + "[/color] crowns will last you for [color=" + this.Const.UI.Color.PositiveValue + "]" + time + "[/color] more days."
 					}
 				];
 			}
 			else
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1042,6 +1079,39 @@ this.tooltip_events <- {
 					}
 				];
 			}
+
+			local id = 4;
+			local sortfn = function (first, second) 
+			{
+				if (first[0] == second[0])
+				{
+					return 0
+				}
+				if (first[0] > second[0]) 
+				{
+					return -1
+				}
+				return 1
+			}
+			brolist.sort(sortfn);
+			foreach (bro in brolist)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = "ui/tooltips/money.png",
+					text ="[color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			ret.push({
+				id = id,
+				type = "text",
+				icon = "ui/icons/asset_moral_reputation.png",
+				text ="[color=" + this.Const.UI.Color.PositiveValue + "]" + barterMult + "[/color]% Barter Multiplier"
+			})
+			++id;
+			return ret
 
 		case "assets.InitialMoney":
 			return [
@@ -1102,11 +1172,19 @@ this.tooltip_events <- {
 		case "assets.Food":
 			local food = this.World.Assets.getFood();
 			local dailyFood = this.Math.ceil(this.World.Assets.getDailyFoodCost() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type]);
-			local time = this.Math.floor(food / dailyFood);
 
+			local brolist = [];
+			foreach (bro in this.World.getPlayerRoster().getAll())
+			{
+				local brofood = this.Math.ceil( bro.getDailyFood() * this.Const.World.TerrainFoodConsumption[this.World.State.getPlayer().getTile().Type]);
+				brolist.push([brofood, bro.getName()]);
+			}
+
+			local time = this.Math.floor(food / dailyFood);
+			local ret = [];
 			if (food > 0 && time > 1)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1121,7 +1199,7 @@ this.tooltip_events <- {
 			}
 			else if (food > 0 && time == 1)
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1136,7 +1214,7 @@ this.tooltip_events <- {
 			}
 			else
 			{
-				return [
+				ret = [
 					{
 						id = 1,
 						type = "title",
@@ -1149,6 +1227,32 @@ this.tooltip_events <- {
 					}
 				];
 			}
+
+			local id = 4;
+			local sortfn = function (first, second) 
+			{
+				if (first[0] == second[0])
+				{
+					return 0
+				}
+				if (first[0] > second[0]) 
+				{
+					return -1
+				}
+				return 1
+			}
+			brolist.sort(sortfn);			
+			foreach (bro in brolist)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/asset_daily_food.png",
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] " + bro[1]
+				})
+				++id;
+			}
+			return ret
 
 		case "assets.DailyFood":
 			return [
@@ -1174,32 +1278,15 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Ammo + " units at a time."
+					text = "Assorted arrows, bolts and throwing weapons used to automatically refill quivers after battle. Replacing one arrow will take up one point of ammunition, and replacing one throwing weapon will take up three. Running out of ammunition will leave your quivers empty and your people with nothing to shoot with. You can carry no more than " + this.World.Assets.getMaxAmmo() + " units at a time."
 				}
 			];
 
 		case "assets.Supplies":
-			local repair = this.World.Assets.getRepairRequired();
-			local desc = "Assorted tools and supplies to keep your weapons, armor, helmets and shields in good condition. One point is required to repair 15 points of item condition. Running out of supplies may result in weapons breaking in combat and will leave your armor damaged and useless.";
+			local desc = "Assorted tools and supplies to keep your weapons, armor, helmets and shields in good condition. Running out of supplies may result in weapons breaking in combat and will leave your armor damaged and useless. Items can only be repaired while camping. More tools can be purchased in town or salvaged from equipment while camping.";
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
 
-			if (repair.ArmorParts > 0)
-			{
-				desc = desc + ("\n\nRepairing all your equipment will take [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Hours + "[/color] hours and requires ");
-
-				if (repair.ArmorParts <= this.World.Assets.getArmorParts())
-				{
-					desc = desc + ("[color=" + this.Const.UI.Color.PositiveValue + "]");
-				}
-				else
-				{
-					desc = desc + ("[color=" + this.Const.UI.Color.NegativeValue + "]");
-				}
-
-				desc = desc + (repair.ArmorParts + "[/color] tools and supplies.");
-			}
-
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].ArmorParts + " units at most.");
-			return [
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1211,10 +1298,101 @@ this.tooltip_events <- {
 					text = desc
 				}
 			];
+			return ret;
+
+		case "repairs.Supplies":
+			local desc = "Number of tools on hand to repair equipment. One tool is required to repair 15 points of item condition. More tools can be purchased in towns or can be salvaged from equipment while camping ";
+
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxArmorParts() + " units at most.");
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Tools and Supplies"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "repairs.Required":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+			local desc = "Number of tools required to repair the selected equipment. One point is required to repair " + tent.getConversionRate() +" points of item condition.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Required Supplies"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "repairs.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Repair)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to repair duty. The more assigned, the quicker equipment can be repaired.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Assigned Brothers"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/repair_item.png",
+					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Repair + " units per hour[/color]"
+				}
+			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
+
+		case "repairs.Time":
+			local desc = "Total number of hours required to repair all the queued equipment. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
 
 		case "assets.Medicine":
 			local heal = this.World.Assets.getHealingRequired();
-			local desc = "Medical supplies consist of bandages, herbs, salves and the like, and are used to heal the more severe injuries sustained by your men in battle. One point of medical supplies is required each day for every injury to improve and ultimately heal. Lost hitpoints heal on their own.\n\nRunning out of medical supplies will leave your men unable to recover from severe injuries.";
+			local desc = "Medical supplies consist of bandages, herbs, salves and the like, and are used to heal the more severe injuries sustained by your men in battle. One point of medical supplies is required each day for every injury to improve and ultimately heal. Lost hitpoints heal while encamped.\n\nRunning out of medical supplies will leave your men unable to recover from severe injuries.";
 
 			if (heal.MedicineMin > 0)
 			{
@@ -1243,8 +1421,24 @@ this.tooltip_events <- {
 				desc = desc + (heal.MedicineMax + "[/color] Medical Supplies.");
 			}
 
-			desc = desc + ("  You can carry " + this.Const.Difficulty.MaxResources[this.World.Assets.getEconomicDifficulty()].Medicine + " units at most.");
-			return [
+			local meds = 0;
+			local stash = this.World.Assets.getStash().getItems();
+			foreach (item in stash)
+			{
+				if (item == null)
+				{
+					continue;
+				}
+				meds += item.getMedicinePerDay();
+			}
+			if (meds > 0)
+			{
+				desc = 	desc + (" You need [color=" + this.Const.UI.Color.NegativeValue + "]" + meds + "[/color] units each day to maintain your supply of flesh and bones for summoning.");
+			}
+
+			desc = desc + ("\n\nYou can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
+
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1255,10 +1449,48 @@ this.tooltip_events <- {
 					type = "description",
 					text = desc
 				}
+				// {
+				// 	id = 6,
+				// 	type = "text",
+				// 	icon = "ui/icons/health.png",
+				// 	text = "Total healing modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + heal.Modifier + "%[/color]"
+				// }
 			];
 
+			local id = 4;
+			// foreach (bro in heal.Modifiers)
+			// {
+			// 	ret.push({
+			// 		id = id,
+			// 		type = "text",
+			// 		icon = "ui/icons/special.png",
+			// 		text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + "%[/color] " + bro[1] + " (" + bro[2] + ")"
+			// 	})
+			// 	++id;
+			// }
+			if (heal.Injuries.len() > 0) 
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					text = "Injuries:"
+				})
+				++id;
+			}
+			foreach (bro in heal.Injuries)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = "ui/icons/days_wounded.png",
+					text = bro[2] + " [color=" + this.Const.UI.Color.NegativeValue + "]" + bro[0] + "[/color] to [color=" + this.Const.UI.Color.NegativeValue + "]" + bro[1] + "[/color] days"
+				})
+				++id;
+			}
+			return ret;
+
 		case "assets.Brothers":
-			return [
+			local ret = [
 				{
 					id = 1,
 					type = "title",
@@ -1270,6 +1502,41 @@ this.tooltip_events <- {
 					text = "Show the roster of the fighting force of your mercenary company."
 				}
 			];
+			local data = this.World.Assets.getRosterDescription();
+			local id = 4;
+			ret.push({
+				id = id,
+				type = "text",
+				text = "Terrain Movement Modifiers:"
+			})
+			++id;
+			foreach (bro in data.TerrainModifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					text = bro[0] + " [color=" + this.Const.UI.Color.PositiveValue + "]" + bro[1] + "%[/color]"
+				})
+				++id;
+			}
+
+			ret.push({
+				id = id,
+				type = "hint",
+				text = "Company:"
+			})
+			++id;
+			foreach (bro in data.Brothers)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					icon = bro.Mood,
+					text = "L" + bro.Level + "  " + bro.Name + " (" + bro.Background + ")"
+				})
+				++id;
+			}			
+			return ret
 
 		case "assets.BusinessReputation":
 			return [
@@ -1361,7 +1628,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Shows the current and maximium number of men placed in formation to fight in the next battle.\n\nDrag and drop your men to where you want them to be; the top row is the front facing the enemy, the second row is your back row, and the bottom row is your reserves of characters not taking part in battle."
+					text = "Shows the current and maximium number of men placed in formation to fight in the next battle.\n\nDrag and drop your men to where you want them to be; the top row is the front facing the enemy, the second row is your middle row, and the bottom row is your back row. All characters will partake in battle. There are no reserves."
 				}
 			];
 
@@ -1790,7 +2057,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "You\'ll face fewer and less challenging opponents, and retreating from battle is easier.\n\nYour men get a small bonus to hit chance, and the enemy gets a small penalty, to ease you into the game.\n\nRecommended for players new to the game."
+					text = "You\'ll face fewer and less challenging opponents, and retreating from battle is easier.\n\nYour men get a small bonus to hit chance, and the enemy gets a small penalty, to ease you into the game.\n\nRecommended for players new to the game.\n\nEnemy scaling is same as normal, but 25% easier per bro."
 				}
 			];
 
@@ -1804,7 +2071,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Provides for a balanced playing experience that can be quite challenging.\n\nRecommended for veterans of the game or the genre."
+					text = "Provides for a balanced playing experience that can be quite challenging.\n\nRecommended for veterans of the game or the genre.\n\nDefault vanilla linear enemy scaling but extending up to 27 bros instead of 12."
 				}
 			];
 
@@ -1818,7 +2085,21 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Your opponents will be more challenging and numerous.\n\nRecommended for experts in the game who want an even deadlier challenge."
+					text = "Your opponents will be more challenging and numerous.\n\nRecommended for experts in the game who want an even deadlier challenge.\n\nUses exponential enemy scaling. Easier early game, then about 1.5x as hard as normal for mid to late game."
+				}
+			];
+
+		case "menu-screen.new-campaign.LegendaryDifficulty":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Legendary Difficulty"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Your opponents will be brutal. This is where legends are forged.\n\nEach enemy gains a series of new perks. Zombies with nine lives, battleforged orcs, nimble lindwurms."
 				}
 			];
 
@@ -1832,7 +2113,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Contracts will pay more, and you\'ll be able to carry more resources at once.\n\nRecommended for players new to the game."
+					text = "Contracts will pay more, and you\'ll be able to carry more resources at once. \n\n 100%  heal and repair rate outside camp. +5% buy + 5% sell + 10% payments \n\nRecommended for players new to the game."
 				}
 			];
 
@@ -1846,7 +2127,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Provides for a balanced playing experience that can be quite challenging. Recommended for veterans of the game or the genre."
+					text = "Provides for a balanced playing experience that can be quite challenging. 66% heal and repair rate outside camp. \n\nRecommended for veterans of the game or the genre."
 				}
 			];
 
@@ -1860,10 +2141,23 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Contracts will pay less, and deserters will take their equipment with them.\n\nRecommended for experts in the game who want more of a challenge managing the company\'s funds and supplies."
+					text = "Contracts will pay less, and deserters will take their equipment with them.\n\n 33% heal and repair rate outside camp. -5% buy -5% sell -5% payments \n\n Recommended for experts in the game who want more of a challenge managing the company\'s funds and supplies."
 				}
 			];
 
+		case "menu-screen.new-campaign.LegendaryDifficultyEconomic":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Legendary Difficulty"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Contract pay will be pitiful.\n\n  10% heal and repair rate outside camp. -10% buy, -10% sell, -10% payments  \n\nRecommended for those who want the most challenging experience."
+				}
+			];
 		case "menu-screen.new-campaign.EasyDifficultyBudget":
 			return [
 				{
@@ -1874,7 +2168,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "You\'ll start with more crowns and resources.\n\nRecommended for new players."
+					text = "You\'ll start with more crowns and resources.\n\n 750 gold. 15/30 ammo. 10/20 meds. 10/20 armor parts. 60 stash. Plus starting bonuses. \n\nRecommended for new players."
 				}
 			];
 
@@ -1888,7 +2182,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Recommended for a balanced experience."
+					text = "Recommended for a balanced experience. \n\n 500 gold. 250 max food. 10/20 ammo. 5/10 meds. 5/10 armor parts. 30 stash. Plus starting bonuses."
 				}
 			];
 
@@ -1902,7 +2196,21 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "You\'ll start with fewer crowns and resources.\n\nRecommended for expert players."
+					text = "You\'ll start with fewer crowns and resources.\n\n 250 gold.  0/10 ammo. 0/5 meds. 0/5 armor parts. 15 stash. Plus starting bonuses.\n\nRecommended for expert players."
+				}
+			];
+		
+		case "menu-screen.new-campaign.LegendaryDifficultyBudget":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "No Starting Funds"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "You\'ll start without crowns or resources.\n\n 0 gold.  0/0 ammo. 0/0 meds. 0/0 armor parts. 5 stash. Only starting bonuses.\n\n Recommended for insane players."
 				}
 			];
 
@@ -1930,7 +2238,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Recommended for the best experience once you\'ve learned the game.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds."
+					text = "Dangerous in Legends Beta! Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Recommended for the best experience once you\'ve learned the game.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds. "
 				}
 			];
 
@@ -2364,7 +2672,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Rotate the map by 180° so you can see the backside of hills."
+					text = "Rotate the map by 180Â° so you can see the backside of hills."
 				}
 			];
 
@@ -2740,6 +3048,26 @@ this.tooltip_events <- {
 			];
 			return result;
 
+		case "character-screen.left-panel-header-module.Reserves":
+			local text = "This character is currently in the fighting line. Click to toggle character into reserves status."
+			if (entity.isInReserves())
+			{
+				text = "This character is currently in reserves. Click to toggle character into the fighting line. While in reserves, character will only participate in combat if company is under attack."
+			}
+
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Reserves/Fighting Status"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = text
+				}
+			];
+
 		case "character-screen.left-panel-header-module.Dismiss":
 			return [
 				{
@@ -2779,6 +3107,20 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Switch to viewing the perks of the currently selected character.\n\nThe number in braces, if any, is the number of available perk points."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.FormationButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Formations"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Switch to viewing the formation configuriations for your mercenary company."
 				}
 			];
 
@@ -2891,6 +3233,48 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Toggle between showing and hiding the mood of your men."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Change company formation and equipment loadouts."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ClearFormation":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Clear Formation Loadout"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all items and weapons from brothers and place in inventory."
+				}
+			];
+
+		case "character-screen.right-panel-header-module.ChangeFormationName":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Change Formation Name"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Give this formation a descriptive label for your reference."
 				}
 			];
 
@@ -3484,6 +3868,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "world-town-screen.hire-dialog-module.DismissButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Dismiss Recruit"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Selected recruit doesn't make the cut, give'em the boot."
+				}
+			];
+
 		case "world-town-screen.hire-dialog-module.UnknownTraits":
 			return [
 				{
@@ -3710,8 +4108,472 @@ this.tooltip_events <- {
 				text = "Open store page in browser"
 			});
 			return ret;
+		
+		case "mapconfig.width":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Map Width"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Number of tiles in wide. Default is 140. The camera renderer is hardcoded for max of 140 (this can't be modded). Above that and zoom in won't render correctly for tiles above 140"
+				}
+			];
 
-		case "dlc_4":
+		case "mapconfig.height":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Map Height"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Number of tiles in hieght. Defualt is 140. The camera renderer is hardcoded for max of 140 (this can't be modded). Above that and zoom in won't render correctly for tiles above 140"
+				}
+			];
+
+		case "mapconfig.landmass":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Land Mass Ratio"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Minimum land to water ratio for an acceptable map. Default is 40. Going either extremes on this slider can result in map never getting generated."
+				}
+			];
+
+		case "mapconfig.water":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Water Connectivity"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Impacts how connected the water masses are. Default is 4. Small value results in patchy water arund corners of map. larger numbers can create a single large island given a low enough land mass ratio."
+				}
+			];
+
+		case "mapconfig.snowline":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Snowline"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Determines where the snowline is generated. Default is 90. This value is inverted. a value of 10 would mean the top 90% of the map is snow."
+				}
+			];
+
+		case "mapconfig.mountains":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Mountain Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of mountains. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.forest":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Forest Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of forests. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.swamp":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Swamp Density"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Influences density of swamps. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
+				}
+			];
+
+		case "mapconfig.settlements":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Number of Settlements"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Maximum number of settlements. Depending on map size, this will try to add the number of settlements on the slider. It will keep the same ratio of settlement types as default Battle Brothers maps. Minimum distance between settlements is 12 tiles."
+				}
+			];
+
+		case "mapconfig.factions":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Number of Factions"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Maximum number of Factions. Depending on map size, this will try to add the number of factions on the slider."
+				}
+			];
+
+		case "mapconfig.fow":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Settlement Visibility"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled. All settlements will be hidden at campaign start. For the true explorer experience!"
+				}
+			];
+		
+		case "camp.commander":
+		case "camp.rest":
+		case "camp.repair":
+		case "camp.barber":
+		case "camp.crafting":
+		case "camp.enchanter":
+		case "camp.fletcher":
+		case "camp.healer":
+		case "camp.hunter":
+		case "camp.repair":
+		case "camp.rest":
+		case "camp.scout":
+		case "camp.training":
+		case "camp.gatherer":
+		case "camp.workshop":
+			return this.World.Camp.getBuildingByID(_elementId).getTooltip();
+
+		case "camp-screen.repair.filterbro.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Filter items by type"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Show only items that are currently equipped."
+				}
+			];
+
+		case "camp-screen.repair.assignall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Assign All"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Add all equipment to the repair queue."
+				}
+			];
+
+		case "camp-screen.repair.removeall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Remove all"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all equipment from the repair queue."
+				}
+			];
+
+		case "camp-screen.workshop.assignall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Remove all"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Add all equipment to the salvage queue."
+				}
+			];
+
+
+		case "camp-screen.workshop.removeall.button":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Remove all"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Remove all equipment from the salvage queue."
+				}
+			];
+
+		case "workshop.Required":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
+			local desc = "Number of tools that will be salvaged from selected equipment. " + tent.getConversionRate() + " points of item condition equals 1 tool. Once a tools condition reaches zero it will be destroyed.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+				},
+				{
+					id = 2,
+					type = "description",
+				}
+			];
+			return ret;
+
+		case "workshop.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Workshop)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to repair duty. The more assigned, the quicker equipment can be salvaged.";
+			if (this.Const.DLC.Wildmen == true)
+			local ret = [
+			{
+					id = 1,
+					type = "title",
+					text = "Assigned Brothers"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/repair_item.png",
+				}
+			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
+			else
+		case "workshop.Time":
+			local desc = "Total number of hours required to salvage all the queued equipment. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
+
+			local ret = [
+			{
+					id = 1,
+					type = "title",
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "crafting.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to crafting duty. The more assigned, the quicker items can be crafted.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Assigned Brothers"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/repair_item.png",
+			}
+			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+			ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+				})
+				++id;
+			}
+			return ret;
+
+		case "crafting.Time":
+			local desc = "Total number of hours required to craft all the queued items. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
+
+			local ret = [
+				{
+				id = 1,
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+				icon = "ui/icons/mouse_left_button.png",
+
+		case "healer.Supplies":
+			local desc = "Medicine on hand to heal injuries. Medicine can be purchased in towns or can foraged for while camping ";
+
+			desc = desc + ("  You can carry " + this.World.Assets.getMaxMedicine() + " units at most.");
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Medicine"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "healer.Required":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Healer)
+			local desc = "Quantity of Medicine required to treat selected injuries.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Required Medicine"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+		case "healer.Bros":
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Healer)
+			local repair = tent.getModifiers();
+			local desc = "Number of people assigned to tent duty. The more assigned, the quicker injuries can be treated.";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				},
+				{
+					id = 3,
+					type = "text",
+					icon = "ui/icons/asset_medicine.png",
+					text = "Total treatment modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Craft + " units per hour[/color]"
+				}
+			];
+			local id = 4;
+			foreach (bro in repair.Modifiers)
+			{
+				ret.push({
+					id = id,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+				++id;
+			}
+			return ret;
+
+		case "healer.Time":
+			local desc = "Total number of hours required to treat all the the selected injuries. Assign more people to this task to decrease the amout of time required. Some backgrounds are better than others!";
+
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Time Required"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = desc
+				}
+			];
+			return ret;
+
+
+		case "camp-screen.main-dialog-module.CampButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Camp"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Setup camp."
+				}
+			];
+	case "dlc_4":
 			local ret = [
 				{
 					id = 1,
@@ -3741,6 +4603,8 @@ this.tooltip_events <- {
 				text = "Open store page in browser"
 			});
 			return ret;
+			
+
 		}
 
 		return null;

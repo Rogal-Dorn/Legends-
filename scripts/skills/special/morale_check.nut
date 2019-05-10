@@ -244,6 +244,13 @@ this.morale_check <- this.inherit("scripts/skills/skill", {
 			_properties.RangedDefenseMult *= 0.7;
 			_properties.InitiativeForTurnOrderAdditional -= 1000;
 			break;
+
+		case this.Const.MoraleState.Ignore:
+			this.m.Icon = "";
+			this.m.IconMini = "";
+			this.m.Name = "";
+			this.m.IsHidden = true;
+			break;
 		}
 	}
 

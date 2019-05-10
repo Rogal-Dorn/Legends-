@@ -1155,3 +1155,104 @@
     left: 0.3rem;
 }
 
+
+/**********************************************************************
+	Button Size 7 (Tab)
+***********************************************************************/
+
+.ui-control.button-75
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+    background-image: url("coui://gfx/ui/skin/button_tab_default.png");
+    background-size: 14.0rem 4.3rem;
+	text-shadow: 1px 1px 1px #000;
+
+    color: #dda21f;
+}
+
+.ui-control.button-75:hover,
+.ui-control.button-75.is-selected
+{
+    background-image: url("coui://gfx/ui/skin/button_tab_hovered.png");
+    background-size: 14.0rem 4.3rem;
+    color: #f0b121;
+}
+
+.ui-control.button-75.is-selected
+{
+    /*text-shadow: 1px 1px #A36426, -1px -1px #000;*/
+    color: #f0b121;
+}
+
+.ui-control.button-75.is-active
+{
+    background-image: url("coui://gfx/ui/skin/button_tab_hovered.png");
+    background-size: 14.0rem 4.3rem;
+    color: #f0b121;
+}
+
+.ui-control.button-75[disabled]
+{
+	color : #a7a7a7;
+    background-image: url("coui://gfx/ui/skin/button_tab_inactive.png");
+    background-size: 14.0rem 4.3rem;
+}
+
+.ui-control.button-75[disabled]:hover
+{
+    background-image: url("coui://gfx/ui/skin/button_tab_inactive.png");
+    background-size: 14.0rem 4.3rem;
+}
+
+.ui-control.button-75[disabled]:active
+{
+    background-image: url("coui://gfx/ui/skin/button_tab_inactive.png");
+    background-size: 14.0rem 4.3rem;
+}
+
+.ui-control.button-75 > .label
+{
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	position: absolute;
+
+    margin-top: 0.4rem;
+	text-align : center;
+
+    overflow: hidden;
+}
+
+.ui-control.button-75.is-selected > .label
+{
+    top: 0;
+    left: 0;
+}
+
+.ui-control.button-75 > img
+{
+    top: -0.3rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*width: 80%;
+    height: 80%;*/
+    position: absolute;
+    margin: auto;
+}
+
+.ui-control.button-75[disabled] > img
+{
+    -webkit-filter: grayscale(100%);
+}
+
+.ui-control.button-75.is-selected > img
+{
+    top: -0.2rem;
+    left: 0.1rem;
+}

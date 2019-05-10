@@ -66,7 +66,7 @@ this.fainthearted_is_shellshocked_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() <= 4 && bro.getSkills().hasSkill("trait.fainthearted") && bro.getPlaceInFormation() <= 17 && bro.getLifetimeStats().Battles >= 1)
+			if (bro.getLevel() <= 4 && bro.getSkills().hasSkill("trait.fainthearted") && bro.getPlaceInFormation() <= 26 && bro.getLifetimeStats().Battles >= 1)
 			{
 				candidates.push(bro);
 			}

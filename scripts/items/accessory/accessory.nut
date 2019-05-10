@@ -1,6 +1,7 @@
 this.accessory <- this.inherit("scripts/items/item", {
 	m = {
 		StaminaModifier = 0,
+		StashModifier = 0,
 		AddGenericSkill = true,
 		ShowOnCharacter = false,
 		Sprite = null,
@@ -9,6 +10,11 @@ this.accessory <- this.inherit("scripts/items/item", {
 	function getStaminaModifier()
 	{
 		return this.m.StaminaModifier;
+	}
+
+	function getStashModifier()
+	{
+		return this.m.StashModifier;
 	}
 
 	function create()
@@ -86,6 +92,25 @@ this.accessory <- this.inherit("scripts/items/item", {
 				icon = "ui/icons/fatigue.png",
 				text = "Maximum Fatigue [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.StaminaModifier + "[/color]"
 			});
+		} 
+		else if (this.m.StaminaModifier > 0)
+		{
+			result.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Maximum Fatigue [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StaminaModifier + "[/color]"
+			});
+		}
+
+		if (this.m.StashModifier > 0)
+		{
+			result.push({
+				id = 9,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "Provides [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.StashModifier + "[/color] stash spaces. If you remove the bag, spaces at the bottom of the stash will be lost, along with any items in those spaces."
+			});
 		}
 
 		return result;
@@ -106,6 +131,12 @@ this.accessory <- this.inherit("scripts/items/item", {
 			app.Accessory = this.m.Sprite;
 			this.getContainer().updateAppearance();
 		}
+
+		if (this.m.StashModifier > 0)
+		{
+			this.Stash.resize(this.Stash.getCapacity() + this.getStashModifier())
+		}
+		
 	}
 
 	function onUnequip()
@@ -118,6 +149,12 @@ this.accessory <- this.inherit("scripts/items/item", {
 			app.Accessory = "";
 			this.getContainer().updateAppearance();
 		}
+
+		if (this.m.StashModifier > 0)
+		{
+			this.Stash.resize(this.Stash.getCapacity() - this.getStashModifier())
+		}
+
 	}
 
 	function onUpdateProperties( _properties )

@@ -178,12 +178,16 @@ $.fn.findFirstSelectedListEntry = function()
     return result;
 };
 
-$.fn.findListEntryByIndex = function(_index)
+$.fn.findListEntryByIndex = function(_index, _class)
 {
+    if (_class === undefined)
+    {
+        _class = '.list-entry';
+    }
     var container = this.find('.scroll-container:first');
     if (container.length > 0)
     {
-    	var entries = container.find('.list-entry');
+    	var entries = container.find(_class);
         if (entries.length > 0 && _index >= 0 && _index < entries.length)
         {
             return $(entries[_index]);

@@ -262,6 +262,10 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToPoison = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Hitpoints = b.Hitpoints * 1.5;
+			}
 		this.m.CurrentProperties = clone b;
 		this.addSprite("socket").setBrush("bust_base_undead");
 		local body = this.addSprite("body");
@@ -276,6 +280,12 @@ this.zombie_boss <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+
+			}
 	}
 
 	function assignRandomEquipment()

@@ -10,7 +10,7 @@ this.minstrel_teases_deserter_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img] As the campfire crackles, %minstrel% the minstrel gets up and stands high on his stump. He beats his chest and then points to %deserter%.%SPEECH_ON%Yo, yee man of such fleeting feet, feet that flee before you\'ve been beat! The deserter! Oh, the deserter! A dessert for the deserter! His courage he did curdle, his honor he did hurdle, his manliness he did murder! The deserter!%SPEECH_OFF%In one swift motion the minstrel claps his hands and drops back down onto his seat. He\'s only there for a moment before %deserter%\'s hands are around his neck. The company is an uproar, stuck somewhere between separating the two and succumbing to fits of manic laughter.",
+			Text = "[img]gfx/ui/events/event_26.png[/img] As the campfire crackles, %minstrel% the minstrel gets up and stands high on a stump. Beating their chest and pointing to %deserter%.%SPEECH_ON%Yo, yee man of such fleeting feet, feet that flee before you\'ve been beat! The deserter! Oh, the deserter! A dessert for the deserter! His courage he did curdle, his honor he did hurdle, his manliness he did murder! The deserter!%SPEECH_OFF%In one swift motion the minstrel claps hands and drops back down onto the seat. %minstrel%\'s only there for a moment before %deserter%\'s hands are around their neck. The company is an uproar, stuck somewhere between separating the two and succumbing to fits of manic laughter.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -56,7 +56,7 @@ this.minstrel_teases_deserter_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.minstrel")
+			if (bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
 			{
 				candidates_minstrel.push(bro);
 			}

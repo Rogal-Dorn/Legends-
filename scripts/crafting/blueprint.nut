@@ -5,7 +5,8 @@ this.blueprint <- {
 		PreviewComponents = [],
 		Sounds = this.Const.Sound.CraftingGeneral,
 		Cost = 0,
-		TimesCrafted = 0
+		TimesCrafted = 0,
+		Enchanter = false
 	},
 	function isValid()
 	{
@@ -110,12 +111,27 @@ this.blueprint <- {
 
 	function isQualified()
 	{
+		if (this.m.Enchanter)
+		{
+			return false
+		}
+
 		if (this.m.TimesCrafted >= 1)
 		{
 			return true;
 		}
 
 		return this.isCraftable();
+	}
+
+	function isQualifiedEnchant()
+	{
+		if (this.m.Enchanter)
+		{
+			return true;
+		}
+
+		return false;
 	}
 
 	function getUIData()
@@ -191,6 +207,31 @@ this.blueprint <- {
 
 		++this.m.TimesCrafted;
 		this.onCraft(stash);
+	}
+
+	function enchant( _bonus )
+	{
+		if (!this.isQualifiedEnchant())
+		{
+			return;
+		}
+
+		local stash = this.World.Assets.getStash();
+
+		foreach( c in this.m.PreviewComponents )
+		{
+			for( local j = 0; j < c.Num; j = ++j )
+			{
+				stash.removeByID(c.Instance.getID());
+			}
+		}
+
+		++this.m.TimesCrafted;
+		this.onEnchant(stash, _bonus);
+	}
+
+	function onEnchant( _stash, _bonus )
+	{
 	}
 
 	function onCraft( _stash )

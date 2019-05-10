@@ -52,6 +52,20 @@ this.small_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"vagabond_background",
 			"wildman_background",
 			"wildman_background",
+			"witchhunter_background",
+						"female_beggar_background",
+			"cultist_background",
+			"cultist_background",
+			"female_daytaler_background",
+			"female_daytaler_background",
+			"flagellant_background",
+			"poacher_background",
+			"poacher_background",
+			"ratcatcher_background",
+			"ratcatcher_background",
+			"vagabond_background",
+			"wildman_background",
+			"wildman_background",
 			"witchhunter_background"
 		];
 

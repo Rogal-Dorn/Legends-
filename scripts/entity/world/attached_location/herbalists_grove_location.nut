@@ -14,6 +14,7 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/medicine_item");
+		_list.push("supplies/medicine_small_item");
 	}
 
 	function onUpdateDraftList( _list )
@@ -23,8 +24,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 			return;
 		}
 
+		_list.push("legend_nun_background");
 		_list.push("monk_background");
-		_list.push("flagellant_background");
+		_list.push("legend_herbalist_background");
+		_list.push("legend_herbalist_background");
+		_list.push("legend_herbalist_background");
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -39,12 +43,37 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 			_list.push({
 				R = 0,
 				P = 1.0,
+				S = "supplies/medicine_small_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
 				S = "accessory/bandage_item"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_heal"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_gather"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_enchant"
 			});
 			_list.push({
 				R = 50,
 				P = 1.0,
 				S = "accessory/antidote_item"
+			});
+				_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_sickle"
 			});
 		}
 		else if (_id == "building.specialized_trader")

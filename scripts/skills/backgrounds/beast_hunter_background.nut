@@ -44,6 +44,28 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(2, 3);
 		this.m.IsCombatBackground = true;
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.00,//plains
+				0.025, //swamp
+				0.0, //hills
+				0.025, //forest
+				0.025, //forest
+				0.025, //forest_leaves
+				0.025, //autumn_forest
+				0.01, //mountains
+				0.0, // ?
+				0.00, //farmland
+				0.015, // snow
+				0.015, // badlands
+				0.015, //highlands
+				0.0, //stepps
+				0.0 //ocean
+			];	
 	}
 
 	function getTooltip()

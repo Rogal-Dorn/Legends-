@@ -156,9 +156,9 @@ this.armor <- this.inherit("scripts/items/item", {
 			id = 4,
 			type = "progressbar",
 			icon = "ui/icons/armor_body.png",
-			value = this.m.Condition,
-			valueMax = this.m.ConditionMax,
-			text = "" + this.getArmor() + " / " + this.getArmorMax() + "",
+			value = this.Math.floor(this.m.Condition),
+			valueMax = this.Math.floor(this.m.ConditionMax),
+			text = "" + this.Math.floor(this.getArmor()) + " / " + this.Math.floor(this.getArmorMax()) + "",
 			style = "armor-body-slim"
 		});
 
@@ -177,6 +177,16 @@ this.armor <- this.inherit("scripts/items/item", {
 			this.m.Upgrade.getArmorTooltip(result);
 		}
 
+		if (this.isRuned())
+		{
+			result.push({
+				id = 20,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = this.getRuneSigilTooltip()
+			});
+		}
+
 		return result;
 	}
 
@@ -189,7 +199,6 @@ this.armor <- this.inherit("scripts/items/item", {
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
 		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
-
 		if (this.m.Condition > 10 && isPlayer || this.m.Condition > 30 && this.m.Condition / this.m.ConditionMax >= 0.25 || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || isLucky)
 		{
 			return true;
@@ -448,6 +457,10 @@ this.armor <- this.inherit("scripts/items/item", {
 
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
 		this.updateVariant();
+		if (this.isRuned())
+		{
+			this.updateRuneSigil();
+		}
 	}
 
 });

@@ -55,6 +55,18 @@ this.small_tundra_village <- this.inherit("scripts/entity/world/settlement", {
 			"tailor_background",
 			"vagabond_background",
 			"wildman_background",
+			"wildman_background",
+						"brawler_background",
+			"female_daytaler_background",
+			"female_daytaler_background",
+			"female_farmhand_background",
+			"miner_background",
+			"peddler_background",
+			"poacher_background",
+			"shepherd_background",
+			"female_tailor_background",
+			"vagabond_background",
+			"wildman_background",
 			"wildman_background"
 		];
 		this.m.UIDescription = "A humble village that managed to survive in the sparse tundra";

@@ -27,6 +27,7 @@ var MainMenuScreen = function()
     this.mScenarioMenuModule = null; // TODO: Remove if Early Access
     this.mOptionsMenuModule = null;
     this.mCreditsModule = null;
+    this.mNewLegendCampaignModule = null;
 
     this.createModules();
 };
@@ -54,6 +55,7 @@ MainMenuScreen.prototype.onDisconnection = function ()
     this.mScenarioMenuModule.onDisconnection();
     this.mOptionsMenuModule.onDisconnection();
     this.mCreditsModule.onDisconnection();
+    this.mNewLegendCampaignModule.onDisconnection();
 
     this.unregister();
 };
@@ -63,7 +65,8 @@ MainMenuScreen.prototype.onModuleOnConnectionCalled = function (_module)
     // check if every module is connected
     if ((this.mMainMenuModule !== null && this.mMainMenuModule.isConnected()) &&
         (this.mLoadCampaignModule !== null && this.mLoadCampaignModule.isConnected()) &&
-		(this.mNewCampaignModule !== null && this.mNewCampaignModule.isConnected()) &&
+        (this.mNewCampaignModule !== null && this.mNewCampaignModule.isConnected()) &&
+        (this.mNewLegendCampaignModule !== null && this.mNewLegendCampaignModule.isConnected()) &&
         (this.mOptionsMenuModule !== null && this.mOptionsMenuModule.isConnected()) &&
         (this.mCreditsModule !== null && this.mCreditsModule.isConnected()) &&
         (this.mScenarioMenuModule !== null && this.mScenarioMenuModule.isConnected()))
@@ -77,7 +80,8 @@ MainMenuScreen.prototype.onModuleOnDisconnectionCalled = function (_module)
     // check if every module is disconnected
     if ((this.mMainMenuModule === null && !this.mMainMenuModule.isConnected()) &&
         (this.mLoadCampaignModule === null && !this.mLoadCampaignModule.isConnected()) &&
-		(this.mNewCampaignModule === null && !this.mNewCampaignModule.isConnected()) &&
+        (this.mNewCampaignModule === null && !this.mNewCampaignModule.isConnected()) &&
+        (this.mNewLegendCampaignModule === null && !this.mNewLegendCampaignModule.isConnected()) &&
         (this.mOptionsMenuModule === null && !this.mOptionsMenuModule.isConnected()) &&
 		(this.mCreditsModule === null && !this.mCreditsModule.isConnected()) &&
         (this.mScenarioMenuModule === null && !this.mScenarioMenuModule.isConnected()))
@@ -151,6 +155,9 @@ MainMenuScreen.prototype.createModules = function()
 	this.mNewCampaignModule = new NewCampaignMenuModule(/*this.mCampaignDatasource*/);
     this.mNewCampaignModule.registerEventListener(this);
 
+    this.mNewLegendCampaignModule = new NewLegendCampaignMenuModule(/*this.mCampaignDatasource*/);
+    this.mNewLegendCampaignModule.registerEventListener(this);
+
     this.mScenarioMenuModule = new ScenarioMenuModule();
     this.mScenarioMenuModule.registerEventListener(this);
 
@@ -166,6 +173,7 @@ MainMenuScreen.prototype.registerModules = function ()
     this.mMainMenuModule.register(this.mContentContainer);
     this.mLoadCampaignModule.register(this.mContentContainer);
     this.mNewCampaignModule.register(this.mContentContainer);
+    this.mNewLegendCampaignModule.register(this.mContentContainer);
 	this.mScenarioMenuModule.register(this.mContentContainer);
 	this.mOptionsMenuModule.register(this.mContentContainer);
 	this.mCreditsModule.register(this.mContentContainer);
@@ -175,7 +183,8 @@ MainMenuScreen.prototype.unregisterModules = function ()
 {
     this.mMainMenuModule.unregister();
     this.mLoadCampaignModule.unregister();
-	this.mNewCampaignModule.unregister();
+    this.mNewCampaignModule.unregister();
+    this.mNewLegendCampaignModule.unregister();
     this.mScenarioMenuModule.unregister();
     this.mOptionsMenuModule.unregister();
     this.mCreditsModule.unregister();
@@ -268,7 +277,8 @@ MainMenuScreen.prototype.showMainMenu = function ()
 {
     this.mMainMenuModule.show();
     this.mLoadCampaignModule.hide();
-	this.mNewCampaignModule.hide();
+    this.mNewCampaignModule.hide();
+    this.mNewLegendCampaignModule.hide();
     this.mScenarioMenuModule.hide();
     this.mOptionsMenuModule.hide();
 };
@@ -297,6 +307,18 @@ MainMenuScreen.prototype.hideNewCampaignMenu = function ()
 {
     this.mMainMenuModule.show();
     this.mNewCampaignModule.hide();
+};
+
+MainMenuScreen.prototype.showNewLegendCampaignMenu = function (_data)
+{
+    this.mMainMenuModule.hide();
+    this.mNewLegendCampaignModule.show(_data);
+};
+
+MainMenuScreen.prototype.hideNewLegendCampaignMenu = function ()
+{
+    this.mMainMenuModule.show();
+    this.mNewLegendCampaignModule.hide();
 };
 
 MainMenuScreen.prototype.showScenarioMenu = function (_data)
@@ -371,6 +393,7 @@ MainMenuScreen.prototype.getModule = function (_name)
         //case 'CampaignDatasourceModule': return this.mCampaignDatasource;
         case 'LoadCampaignModule': return this.mLoadCampaignModule;
         case 'NewCampaignModule': return this.mNewCampaignModule;
+        case 'NewLegendCampaignModule': return this.mNewLegendCampaignModule;
 		case 'ScenarioMenuModule': return this.mScenarioMenuModule;
     	case 'OptionsMenuModule': return this.mOptionsMenuModule;
     	case 'CreditsModule': return this.mCreditsModule;
@@ -385,6 +408,7 @@ MainMenuScreen.prototype.getModules = function ()
         //{ name: 'CampaignDatasourceModule', module: this.mCampaignDatasource },
         { name: 'LoadCampaignModule', module: this.mLoadCampaignModule },
         { name: 'NewCampaignModule', module: this.mNewCampaignModule },
+        { name: 'NewLegendCampaignModule', module: this.mNewLegendCampaignModule },
 		{ name: 'ScenarioMenuModule', module: this.mScenarioMenuModule },
         { name: 'OptionsMenuModule', module: this.mOptionsMenuModule },
 		{ name: 'CreditsModule', module: this.mCreditsModule }

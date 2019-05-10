@@ -81,19 +81,19 @@ gt.Const.Combat <- {
 	ShieldWallMaxAllies = 4,
 	RiposteDelay = 300,
 	SpawnBloodMinDamage = 10,
-	SpawnBloodSameTileChance = 90,
-	SpawnBloodAdjacentTileChance = 75,
-	SpawnBloodAttempts = 3,
+	SpawnBloodSameTileChance = 95,
+	SpawnBloodAdjacentTileChance = 80,
+	SpawnBloodAttempts = 4,
 	SpawnBloodEffectMinDamage = 8,
 	PlayHitSoundMinDamage = 1,
 	PlayPainSoundMinDamage = 6,
 	PlayPainVolumeMaxDamage = 20.0,
-	BloodSplattersAtDeathMult = 1.0,
-	BloodSplattersAtOriginalPosMult = 0.05,
-	DustSplattersAtResurrectionMult = 1.0,
-	BloodPoolsAtDeathMin = 4,
+	BloodSplattersAtDeathMult = 2.0,
+	BloodSplattersAtOriginalPosMult = 0.5,
+	DustSplattersAtResurrectionMult = 1.5,
+	BloodPoolsAtDeathMin = 2,
 	BloodPoolsAtDeathMax = 4,
-	BloodiedBustCount = 4,
+	BloodiedBustCount = 2,
 	FliesRoundDelay = 15,
 	DiversionMaxLevelDifference = 1,
 	DiversionMinDist = 2,
@@ -115,7 +115,7 @@ gt.Const.Combat <- {
 	ShakeEffectSplitShieldColor = this.createColor("#ffffff"),
 	ShakeEffectSplitShieldHighlight = this.createColor("#ffffff"),
 	ShakeEffectSplitShieldFactor = 0.5,
-	ResurrectAnimationTime = 1.0,
+	ResurrectAnimationTime = 0.5,
 	ResurrectAnimationDistance = -200.0,
 	RootedAnimationTime = 0.5,
 	ZweihanderFatigueMult = 0.8,
@@ -142,7 +142,8 @@ gt.Const.Corpse <- {
 		0
 	],
 	Items = null,
-	Custom = null
+	Custom = null,
+	isHuman = 0
 };
 gt.Const.ShakeCharacterLayers <- [
 	[
@@ -572,7 +573,9 @@ gt.Const.ProjectileType <- {
 	Flask = 5,
 	Flask2 = 6,
 	Stone = 7,
-	COUNT = 8
+	Missile = 8,
+	Blood = 9,
+	COUNT = 10
 };
 gt.Const.ProjectileDecals <- [
 	[],
@@ -602,6 +605,9 @@ gt.Const.ProjectileDecals <- [
 	],
 	[],
 	[],
+	[],
+	[],
+	[],
 	[
 		"detail_stone_00",
 		"detail_stone_01",
@@ -618,7 +624,9 @@ gt.Const.ProjectileSprite <- [
 	"projectile_04",
 	"projectile_05",
 	"projectile_06",
-	"projectile_07"
+	"projectile_07",
+	"projectile_missile",
+	"projectile_blood"
 ];
 gt.Const.FliesDecals <- [
 	"detail_flies_01",
@@ -663,6 +671,18 @@ gt.Const.ImmobileMovementAPCost <- [
 	0,
 	0
 ];
+gt.Const.LegendFlightMovementAPCost <- [
+	0,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1,
+	1
+];
+
 gt.Const.SameMovementAPCost <- [
 	0,
 	2,
@@ -707,6 +727,18 @@ gt.Const.PathfinderMovementFatigueCost <- [
 	6,
 	6
 ];
+gt.Const.LegendFlightMovementFatigueCost <- [
+	0,
+	2,
+	2,
+	2,
+	2,
+	2,
+	2,
+	2,
+	2
+];
+
 gt.Const.SkillCounter <- 0;
 gt.Const.CharacterProperties <- {
 	function getClone()
@@ -874,7 +906,16 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInPolearms = false,
 	IsSpecializedInDaggers = false,
 	IsSpecializedInShields = false,
+	IsSpecializedInShieldPush = false,
+	IsSpecializedInNets = false,
+	IsSpecializedInSlings = false,
+	IsSpecializedInStaves = false,
+	IsSpecializedInSummons = false,
 	IsContentWithBeingInReserve = false,
+	DamageInitiativeMin = 0,
+	DamageInitiativeMax = 0,
+	DamageInitiativeCutoff = 100
+
 	DailyWage = 0,
 	DailyWageMult = 1.0,
 	DailyFood = 2.0,
@@ -925,6 +966,16 @@ gt.Const.CharacterProperties <- {
 	function getInitiative()
 	{
 		return this.Math.floor(this.Initiative * (this.InitiativeMult >= 0 ? this.InitiativeMult : 1.0 / this.InitiativeMult));
+	}
+
+	function getInitiativeMinDamage()
+	{
+		return this.DamageInitiativeMin + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
+	}
+
+	function getInitiativeMaxDamage()
+	{
+		return this.DamageInitiativeMax + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
 	}
 
 	function getRegularDamageAverage()
