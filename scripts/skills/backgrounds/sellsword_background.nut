@@ -36,6 +36,12 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
+
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 	}
 
 	function getTooltip()

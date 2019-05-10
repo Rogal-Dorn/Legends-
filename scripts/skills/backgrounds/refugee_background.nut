@@ -42,6 +42,9 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
 		this.m.IsLowborn = true;
+
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 	}
 
 	function getTooltip()
@@ -119,16 +122,19 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			items.equip(this.new("scripts/items/weapons/wooden_stick"));
 		}
 
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/armor/tattered_sackcloth"));
 		}
-
 		if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/sackcloth"));
+		}
+		if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/legend_rabble_tunic"));
 		}
 	}
 

@@ -5,7 +5,8 @@ this.perk_full_force <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.full_force";
 		this.m.Name = this.Const.Strings.PerkName.FullForce;
 		this.m.Description = this.Const.Strings.PerkDescription.FullForce;
-		this.m.Icon = "ui/perks/perk_18.png";
+		this.m.Icon = "ui/perks/fullforce_circle.png";
+		this.m.IconDisabled = "ui/perks/fullforce_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

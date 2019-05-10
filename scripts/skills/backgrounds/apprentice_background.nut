@@ -37,6 +37,11 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[1];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[0];
+		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 	}
 
 	function getTooltip()

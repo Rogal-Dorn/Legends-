@@ -5,7 +5,8 @@ this.perk_rebound <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.rebound";
 		this.m.Name = this.Const.Strings.PerkName.Rebound;
 		this.m.Description = this.Const.Strings.PerkDescription.Rebound;
-		this.m.Icon = "skills/passive_03.png";
+		this.m.Icon = "ui/perks/rebound_circle.png";
+		this.m.IconDisabled = "ui/perks/rebound_circle_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

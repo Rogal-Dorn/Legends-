@@ -106,12 +106,15 @@ var TooltipIdentifier =
 			DifficultyEasy: 'menu-screen.new-campaign.EasyDifficulty',
 			DifficultyNormal: 'menu-screen.new-campaign.NormalDifficulty',
 			DifficultyHard: 'menu-screen.new-campaign.HardDifficulty',
+			DifficultyLegendary: 'menu-screen.new-campaign.LegendaryDifficulty',
 			EconomicDifficultyEasy: 'menu-screen.new-campaign.EasyDifficultyEconomic',
 			EconomicDifficultyNormal: 'menu-screen.new-campaign.NormalDifficultyEconomic',
 			EconomicDifficultyHard: 'menu-screen.new-campaign.HardDifficultyEconomic',
+			EconomicDifficultyLegendary: 'menu-screen.new-campaign.LegendaryDifficultyEconomic',
 			BudgetDifficultyEasy: 'menu-screen.new-campaign.EasyDifficultyBudget',
 			BudgetDifficultyNormal: 'menu-screen.new-campaign.NormalDifficultyBudget',
 			BudgetDifficultyHard: 'menu-screen.new-campaign.HardDifficultyBudget',
+			BudgetDifficultyLegendary: 'menu-screen.new-campaign.LegendaryDifficultyBudget',
 			Ironman: 'menu-screen.new-campaign.Ironman',
 			EvilRandom: 'menu-screen.new-campaign.EvilRandom',
 			EvilNone: 'menu-screen.new-campaign.EvilNone',
@@ -264,7 +267,8 @@ var TooltipIdentifier =
 		HireDialogModule:
 		{
             HireButton: 'world-town-screen.hire-dialog-module.HireButton',
-            TryoutButton: 'world-town-screen.hire-dialog-module.TryoutButton',
+			TryoutButton: 'world-town-screen.hire-dialog-module.TryoutButton',
+			DismissButton: 'world-town-screen.hire-dialog-module.DismissButton',
             LeaveButton: 'world-town-screen.hire-dialog-module.LeaveButton',
             UnknownTraits: 'world-town-screen.hire-dialog-module.UnknownTraits',
         },
@@ -301,7 +305,8 @@ var TooltipIdentifier =
             ChangeNameAndTitle: 'character-screen.left-panel-header-module.ChangeNameAndTitle',
             Experience: 'character-screen.left-panel-header-module.Experience',
 			Level: 'character-screen.left-panel-header-module.Level',
-			Dismiss: 'character-screen.left-panel-header-module.Dismiss'
+			Dismiss: 'character-screen.left-panel-header-module.Dismiss',
+			Reserves: 'character-screen.left-panel-header-module.Reserves'
         },
 
 		PaperdollModule:
@@ -320,7 +325,11 @@ var TooltipIdentifier =
 			FilterArmorButton: 'character-screen.right-panel-header-module.FilterArmorButton',
             FilterMiscButton: 'character-screen.right-panel-header-module.FilterMiscButton',
             FilterUsableButton: 'character-screen.right-panel-header-module.FilterUsableButton',
-			FilterMoodButton: 'character-screen.right-panel-header-module.FilterMoodButton'
+			FilterMoodButton: 'character-screen.right-panel-header-module.FilterMoodButton',
+			FormationButton: 'character-screen.right-panel-header-module.FormationButton',
+			ChangeFormationButton: 'character-screen.right-panel-header-module.ChangeFormation',
+			ClearFormationButton: 'character-screen.right-panel-header-module.ClearFormation',
+			ChangeFormationName: 'character-screen.right-panel-header-module.ChangeFormationName'
         },
 
 		BattleStartFooterModule:

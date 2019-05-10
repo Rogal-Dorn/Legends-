@@ -34,7 +34,9 @@ var CharacterScreenDatasourceIdentifier =
 				Removed: 'removed',
 				Updated: 'updated'
 			}
-		}
+        },
+        FormationIndex: 'inventory.formation-selected',
+        FormationName: 'inventory.formation-name'
 	},
 
     InventoryMode:
@@ -75,6 +77,10 @@ var CharacterScreenDatasource = function(_isTacticalMode)
     this.mInventoryModule = null;
     this.mIsPopupOpen = false;
 
+    this.mFormationIndex = 0;
+    this.mFormationName = "";
+
+    this.mMaxBrothers = 27;
 	// init the datasource
 	this.init();
 };
@@ -153,9 +159,12 @@ CharacterScreenDatasource.prototype.createEventChannels = function()
 
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.ModeUpdated] = [ ];
 	this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.StashLoaded] = [ ];
-	this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key] = [ ];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key] = [ ];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.FormationIndex] = [ ];
+    this.mEventListener[CharacterScreenDatasourceIdentifier.Inventory.FormationName] = [ ];
 
     this.mEventListener[CharacterScreenDatasourceIdentifier.Perks.TreesLoaded] = [ ];
+
 };
 
 
@@ -250,12 +259,27 @@ CharacterScreenDatasource.prototype.getTooltipItemOwner = function()
 };
 
 
+CharacterScreenDatasource.prototype.getFormationIndex = function ()
+{
+    return this.mFormationIndex;
+};
+
+CharacterScreenDatasource.prototype.getFormationName = function ()
+{
+    return this.mFormationName;
+};
+
 CharacterScreenDatasource.prototype.loadFromData = function(_data)
 {
     if (_data === undefined || _data == null || typeof(_data) !== 'object')
     {
         console.error('ERROR: Failed to query character screen result data. Reason: Invalid result.');
         return;
+    }
+
+    if ('maxBrothers' in _data)
+    {
+        this.mMaxBrothers = _data.maxBrothers;
     }
 
     if ('stashSpaceUsed' in _data)
@@ -268,15 +292,23 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
     {
         this.loadPerkTrees(_data[CharacterScreenIdentifier.QueryResult.PerkTrees]);
     }
-
     if (CharacterScreenIdentifier.QueryResult.Brothers in _data)
     {
         this.loadBrothersList(_data[CharacterScreenIdentifier.QueryResult.Brothers]);
     }
-
     if (CharacterScreenIdentifier.QueryResult.Stash in _data)
     {
         this.loadStashList(_data[CharacterScreenIdentifier.QueryResult.Stash]);
+    }
+    if ('formationIndex' in _data)
+    {
+        this.mFormationIndex = _data.formationIndex;
+        this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationIndex, _data.formationIndex);
+    }
+    if ('formationName' in _data)
+    {
+        this.mFormationName = _data.formationName;
+        this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationName, _data.formationName);
     }
 };
 
@@ -346,7 +378,7 @@ CharacterScreenDatasource.prototype.loadBrothersList = function(_data, _withoutN
 	// notify every listener
 	if (_withoutNotify === undefined || _withoutNotify !== true)
 	{
-		this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, this.mBrothersList);
+        this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, this.mBrothersList);
 		this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.Selected, this.getSelectedBrother());
 	}
 
@@ -402,6 +434,10 @@ CharacterScreenDatasource.prototype.setSelectedBrotherIndex = function (_rosterP
         this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.Selected, this.getSelectedBrother());
     }
 };
+
+function isStudentPerkUnlocked(_perksUnlocked) {
+	return _perksUnlocked.indexOf('perk.student') !== -1
+}
 
 
 CharacterScreenDatasource.prototype.getBrotherPerkPoints = function(_brother)
@@ -879,10 +915,11 @@ CharacterScreenDatasource.prototype.destroyInventoryItem = function(_brotherId, 
     }
 };
 
-CharacterScreenDatasource.prototype.repairInventoryItem = function(_itemId, _callback)
+CharacterScreenDatasource.prototype.toggleInventoryItem = function(_itemId, _entityId, _callback)
 {
-   this.notifyBackendRepairInventoryItem(_itemId, _callback);
+   this.notifyBackendToggleInventoryItem(_itemId, _entityId, _callback);
 };
+
 
 CharacterScreenDatasource.prototype.equipInventoryItem = function(_brotherId, _sourceItemId, _sourceItemIdx)
 {
@@ -1437,9 +1474,9 @@ CharacterScreenDatasource.prototype.unlockPerk = function(_brotherId, _perkId)
     });
 };
 
-CharacterScreenDatasource.prototype.queryPerkInformation = function(_perkId, _callback)
+CharacterScreenDatasource.prototype.queryPerkInformation = function(_perkId, _background, _callback)
 {
-    this.notifyBackendQueryPerkInformation(_perkId, _callback);
+    this.notifyBackendQueryPerkInformation(_perkId, _background, _callback);
 };
 
 
@@ -1477,20 +1514,31 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 		return;
 	}
 
-	// stash size changed .. shouldn't happen..
-	if (this.mStashList.length !== _data.length)
+    
+    if (this.mStashList.length !== _data.length)
+    {
+        this.mStashList = _data;
+        this.setInventoryMode(this.mInventoryMode);
+        return;
+    }
+
+    // stash size changed .. shouldn't happen..
+    var numItems = this.mStashList.length;
+    if (this.mStashList.length < _data.length)
 	{
-		console.error('ERROR: Failed to updated stash. Stash dataset changed in size.');
-		this.mStashList = _data;
-		return;
+        // console.error('ERROR: Failed to updated stash. Stash dataset changed in size.');
+        //this.loadStashList(_data, true)
+        numItems = _data.length;
+		//this.mStashList = _data;
+		// return;
 	}
 
 	// check stash for changes
-	for (var i = 0; i < this.mStashList.length; ++i)
+	for (var i = 0; i < numItems; ++i)
 	{
 		var sourceItem = this.mStashList[i];
-		var targetItem = _data[i];
-		
+        var targetItem = _data[i];
+    
 		// item added to stash slot
 		if (sourceItem === null && targetItem !== null)
 		{
@@ -1525,7 +1573,8 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 				this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key, { item: targetItem, index: i, flag: CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Flag.Updated });
 			}
 		}
-	}
+    }
+
 };
 
 CharacterScreenDatasource.prototype.updateNameAndTitle = function(_brotherId, _name, _title)
@@ -1618,6 +1667,26 @@ CharacterScreenDatasource.prototype.commitLevelUpStats = function(_brotherId, _s
     });
 };
 
+CharacterScreenDatasource.prototype.updateFormationName = function(_src, _name)
+{
+    var self = this;
+    this.notifyBackendUpdateFormationName(_name, function (data)
+    {
+        if (data === undefined || data === null)
+        {
+            console.error('ERROR: Failed to update formation name. Invalid data result.');
+            return;
+        }
+
+        self.mFormationName = data;
+        self.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationName,  self.mFormationName);
+    });
+};
+
+CharacterScreenDatasource.prototype.getMaxBrothers = function ()
+{
+	return this.mMaxBrothers;
+}
 
 /*CharacterScreenDatasource.prototype.notifyBackendQueryBrothersList = function ()
 {
@@ -1651,9 +1720,9 @@ CharacterScreenDatasource.prototype.notifyBackendSortButtonClicked = function ()
     return null;
 };*/
 
-CharacterScreenDatasource.prototype.notifyBackendQueryPerkInformation = function (_perkId, _callback)
+CharacterScreenDatasource.prototype.notifyBackendQueryPerkInformation = function (_perkId, _background, _callback)
 {
-    SQ.call(this.mSQHandle, 'onQueryPerkInformation', [_perkId], _callback);
+    SQ.call(this.mSQHandle, 'onQueryPerkInformation', [_perkId, _background], _callback);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendUnlockPerk = function (_brotherId, _perkId, _callback)
@@ -1664,6 +1733,11 @@ CharacterScreenDatasource.prototype.notifyBackendUnlockPerk = function (_brother
 CharacterScreenDatasource.prototype.notifyBackendUpdateNameAndTitle = function (_brotherId, _name, _title, _callback)
 {
     SQ.call(this.mSQHandle, 'onUpdateNameAndTitle', [_brotherId, _name, _title], _callback);
+};
+
+CharacterScreenDatasource.prototype.notifyBackendUpdateFormationName = function (_name, _callback)
+{
+    SQ.call(this.mSQHandle, 'onUpdateFormationName', [_name], _callback);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendCommitStatIncreaseValues = function (_brotherId, _statsIncreaseValues, _callback)
@@ -1696,9 +1770,9 @@ CharacterScreenDatasource.prototype.notifyBackendSwapInventoryItem = function (_
     return null;
 };*/
 
-CharacterScreenDatasource.prototype.notifyBackendRepairInventoryItem = function (_sourceItemId, _callback)
+CharacterScreenDatasource.prototype.notifyBackendToggleInventoryItem = function (_sourceItemId, _entityId, _callback)
 {
-    SQ.call(this.mSQHandle, 'onRepairInventoryItem', _sourceItemId, _callback);
+    SQ.call(this.mSQHandle, 'onToggleInventoryItem', [_sourceItemId, _entityId], _callback);
 };
 
 CharacterScreenDatasource.prototype.notifyBackendEquipInventoryItem = function (_brotherId, _sourceItemId, _sourceItemIdx, _callback)
@@ -1758,6 +1832,15 @@ CharacterScreenDatasource.prototype.notifyBackendDismissCharacter = function (_p
     SQ.call(this.mSQHandle, 'onDismissCharacter', [ activeCharacterID, _payCompensation ]);
 };
 
+CharacterScreenDatasource.prototype.notifyBackendToggleReservesCharacter = function ()
+{
+    var self = this;
+	var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
+    SQ.call(this.mSQHandle, 'onToggleReserveCharacter', activeCharacterID, function (_data) {
+        self.updateBrother(_data);
+    });
+};
+
 CharacterScreenDatasource.prototype.notifyBackendFilterAllButtonClicked = function ()
 {
 	SQ.call(this.mSQHandle, 'onFilterAll');
@@ -1791,3 +1874,12 @@ CharacterScreenDatasource.prototype.notifyBackendUpdateRosterPosition = function
 {
     SQ.call(this.mSQHandle, 'onUpdateRosterPosition', [ _id, _pos ]);
 };
+
+CharacterScreenDatasource.prototype.notifyBackendFormationClicked = function (_formationIndex) {
+    SQ.call(this.mSQHandle, 'onFormationChanged', [_formationIndex]);
+};
+
+CharacterScreenDatasource.prototype.notifyBackendClearFormationButtonClicked = function (_formationIndex) {
+    SQ.call(this.mSQHandle, 'onFormationClear', [_formationIndex]);
+};
+

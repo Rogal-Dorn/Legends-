@@ -13,6 +13,7 @@ this.perk_ironside <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+
 	function getDescription()
 	{
 		local bonus = this.getBonus() * 100;
@@ -38,7 +39,7 @@ this.perk_ironside <- this.inherit("scripts/skills/skill", {
 			Opponents = 0,
 			Actor = this.m.Container.getActor()
 		};
-		this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 1, this.isOpponent, this.result);
+		this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 0, 1, this.isOpponent, this.result);
 		return this.result.Opponents * 0.05;
 	}
 

@@ -39,6 +39,18 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
+
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
+		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
+		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[1];
+		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
+		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 	}
 
 	function onBuildDescription()
