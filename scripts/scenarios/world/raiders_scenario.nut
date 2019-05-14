@@ -90,21 +90,10 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
 		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
 		bros[3].setStartValuesEx([
-			"monk_background"
+			"legend_berserker_commander_background"
 		]);
-		bros[3].getBackground().m.RawDescription = "The man who put you on the path, you believe %name% may serve some greater role to your attaining immense treasures. You\'ve seen northern gimps and one-armed men who would best him in combat, but his knowledge and intelligence may be sharper blades in good time.";
-		bros[3].improveMood(2.0, "Thinks he managed to convince you to give up raiding and pillaging");
-		bros[3].setPlaceInFormation(13);
-		bros[3].m.Talents = [];
-		local talents = bros[3].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = 3;
 		this.World.Assets.m.BusinessReputation = -100;
 		this.World.Assets.m.MoralReputation = -30;
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/goat_cheese_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/loot/silverware_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/loot/silver_bowl_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;
 	}
@@ -240,6 +229,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			this.World.Events.fire("event.raiders_scenario_intro");
 		}, null);
 	}
+
 
 	function isDroppedAsLoot( _item )
 	{

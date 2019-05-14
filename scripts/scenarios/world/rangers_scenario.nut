@@ -36,19 +36,9 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local bros = roster.getAll();
 		local talents;
 		bros[0].setStartValuesEx([
-			"hunter_background"
+			"legend_ranger_commander_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{A bit of a devious runt, though a good man at heart. %name% used to hunt for his local liege, but when the nobleman died falling into an unseen ravine the hunter was blamed and kicked out of court. With some guile, he turned his hunting talents into poaching and fur trade. He is of a merchant\'s mind and was quick to engender the idea of mercenary work because of it.}";
 		bros[0].setPlaceInFormation(3);
-		bros[0].m.Talents = [];
-		talents = bros[0].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 2;
-		talents[this.Const.Attributes.RangedDefense] = 1;
-		talents[this.Const.Attributes.Initiative] = 1;
-		bros[0].m.PerkPoints = 0;
-		bros[0].m.LevelUps = 0;
-		bros[0].m.Level = 1;
 		bros[1].setStartValuesEx([
 			"poacher_background"
 		]);
