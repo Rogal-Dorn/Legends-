@@ -28,8 +28,10 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bro.setTitle("the Lone Wolf");
 		bro.getSkills().removeByID("trait.survivor");
 		bro.getSkills().removeByID("trait.greedy");
+		bro.getSkills().removeByID("trait.loyal");
+		bro.getSkills().removeByID("trait.disloyal");
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bro.setPlaceInFormation(3);
+		bro.setPlaceInFormation(4);
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();

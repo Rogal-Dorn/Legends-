@@ -40,6 +40,7 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_02";
+		this.m.IsLowborn = true;
 	}
 
 	function getTooltip()

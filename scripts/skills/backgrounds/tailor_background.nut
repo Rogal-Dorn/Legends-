@@ -40,6 +40,7 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
+		this.m.IsLowborn = true;
 	}
 
 	function onBuildDescription()
