@@ -274,10 +274,17 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			local weapons = [
 				"weapons/greenskins/orc_axe",
-				"weapons/greenskins/orc_cleaver",
-				"weapons/greenskins/orc_axe_2h",
-				"weapons/greenskins/orc_axe_2h"
+				"weapons/greenskins/orc_cleaver"
 			];
+
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+			{
+				weapons.extend([
+					"weapons/greenskins/orc_axe_2h",
+					"weapons/greenskins/orc_axe_2h"
+				]);
+			}
+
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 

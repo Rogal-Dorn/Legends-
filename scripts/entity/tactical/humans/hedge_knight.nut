@@ -61,14 +61,20 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 			local weapons = [
 				"weapons/fighting_axe",
 				"weapons/noble_sword",
-				"weapons/arming_sword",
-				"weapons/greatsword",
-				"weapons/greataxe",
-				"weapons/warbrand",
-				"weapons/two_handed_hammer"
+				"weapons/arming_sword"
 			];
 
-			if (this.Const.DLC.Unhold)
+			if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+			{
+				weapons.extend([
+					"weapons/greatsword",
+					"weapons/greataxe",
+					"weapons/warbrand",
+					"weapons/two_handed_hammer"
+				]);
+			}
+
+			if (this.Const.DLC.Unhold && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 			{
 				weapons.extend([
 					"weapons/two_handed_flanged_mace",
@@ -76,7 +82,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				]);
 			}
 
-			if (this.Const.DLC.Wildmen)
+			if (this.Const.DLC.Wildmen && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 			{
 				weapons.extend([
 					"weapons/bardiche"

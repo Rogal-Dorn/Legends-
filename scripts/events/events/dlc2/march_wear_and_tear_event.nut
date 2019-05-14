@@ -289,6 +289,11 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getBackground().getID() == "background.tailor")
 			{
 				candidates_tailor.push(bro);

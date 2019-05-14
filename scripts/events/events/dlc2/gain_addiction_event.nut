@@ -58,6 +58,11 @@ this.gain_addiction_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getFlags().get("PotionsUsed") >= 4 && bro.getFlags().get("PotionLastUsed") >= this.Time.getVirtualTimeF() - 3.0 * this.World.getTime().SecondsPerDay)
 			{
 				candidates_addict.push(bro);

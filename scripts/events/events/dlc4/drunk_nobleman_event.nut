@@ -357,6 +357,11 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.juggler")
 			{
 				candidates_servant.push(bro);

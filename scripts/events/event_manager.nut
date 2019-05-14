@@ -319,7 +319,11 @@ this.event_manager <- {
 			}
 		}
 
-		this.m.LastEventTime = this.Time.getVirtualTimeF();
+		if (this.m.ActiveEvent.getScore() < 2000)
+		{
+			this.m.LastEventTime = this.Time.getVirtualTimeF();
+		}
+
 		this.m.ActiveEvent.fire();
 		this.m.IsEventShown = this.World.State.showEventScreen(this.m.ActiveEvent);
 		return true;

@@ -157,7 +157,7 @@ this.ai_world_attack <- this.inherit("scripts/ai/world/world_behavior", {
 
 		local threshold = 0.5;
 
-		if (this.World.FactionManager.getFaction(_entity.getFaction()).getType() == this.Const.FactionType.Goblins)
+		if (this.World.FactionManager.getFaction(_entity.getFaction()) != null && this.World.FactionManager.getFaction(_entity.getFaction()).getType() == this.Const.FactionType.Goblins)
 		{
 			threshold = 0.65;
 		}

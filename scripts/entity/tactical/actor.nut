@@ -973,12 +973,34 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			if (this.m.IsActingEachTurn)
 			{
 				local turnsToGo = this.Tactical.TurnSequenceBar.getTurnsUntilActive(this.getID());
-				tooltip.push({
-					id = 4,
-					type = "text",
-					icon = "ui/icons/initiative.png",
-					text = this.Tactical.TurnSequenceBar.getActiveEntity() == this ? "Acting right now!" : this.isTurnDone() || turnsToGo == null ? "Turn done" : "Acts in " + turnsToGo + (turnsToGo > 1 ? " turns" : " turn")
-				});
+
+				if (this.Tactical.TurnSequenceBar.getActiveEntity() == this)
+				{
+					tooltip.push({
+						id = 4,
+						type = "text",
+						icon = "ui/icons/initiative.png",
+						text = "Acting right now!"
+					});
+				}
+				else if (this.isTurnDone() || turnsToGo == null)
+				{
+					tooltip.push({
+						id = 4,
+						type = "text",
+						icon = "ui/icons/initiative.png",
+						text = "Turn done"
+					});
+				}
+				else
+				{
+					tooltip.push({
+						id = 4,
+						type = "text",
+						icon = "ui/icons/initiative.png",
+						text = "Acts in " + turnsToGo + (turnsToGo > 1 ? " turns" : " turn")
+					});
+				}
 			}
 
 			tooltip.push({
@@ -3292,7 +3314,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 				foreach( bro in roster )
 				{
-					if (bro.isAlive() && !bro.isDying())
+					if (bro.isAlive() && !bro.isDying() && bro.getCurrentProperties().IsAffectedByDyingAllies)
 					{
 						bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
 					}

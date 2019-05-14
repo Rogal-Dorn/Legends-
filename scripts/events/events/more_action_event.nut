@@ -148,6 +148,11 @@ this.more_action_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.trader")
+		{
+			return;
+		}
+
 		if (this.Time.getVirtualTimeF() - this.World.Events.getLastBattleTime() < this.World.getTime().SecondsPerDay * 10)
 		{
 			return;

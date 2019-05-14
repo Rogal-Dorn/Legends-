@@ -4,7 +4,7 @@ this.valuable_furs_item <- this.inherit("scripts/items/item", {
 	{
 		this.m.ID = "misc.valuable_furs";
 		this.m.Name = "Valuable Furs";
-		this.m.Description = "A pack of valuable furs and pelts from various small animals. A very sougt-after commodity, especially in larger settlements.";
+		this.m.Description = "A pack of valuable furs and pelts from various small animals. A very sought-after commodity, especially in larger settlements.";
 		this.m.Icon = "loot/wildmen_03.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Loot;

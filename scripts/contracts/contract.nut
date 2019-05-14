@@ -462,19 +462,42 @@ this.contract <- {
 	function buildText( _text )
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
-		local brother1 = this.Math.rand(0, brothers.len() - 1);
-		local brother2 = this.Math.rand(0, brothers.len() - 1);
+		local brother1;
+		local brother2;
+		local notnagel;
 
-		if (brothers.len() >= 2)
+		for( local i = 0; i < brothers.len(); i = ++i )
 		{
-			while (brother1 == brother2)
+			if (brothers[i].getSkills().hasSkill("trait.player"))
 			{
-				brother2 = this.Math.rand(0, brothers.len() - 1);
+				notnagel = brothers[i];
+
+				if (brothers.len() > 1)
+				{
+					brothers.remove(i);
+				}
+
+				break;
 			}
 		}
 
-		brother1 = brothers[brother1].getName();
-		brother2 = brothers[brother2].getName();
+		local r = this.Math.rand(0, brothers.len() - 1);
+		brother1 = brothers[r].getName();
+		brothers.remove(r);
+
+		if (brothers.len() != 0)
+		{
+			brother2 = brothers[this.Math.rand(0, brothers.len() - 1)].getName();
+		}
+		else if (notnagel != null)
+		{
+			brother2 = notnagel.getName();
+		}
+		else
+		{
+			brother2 = brother1;
+		}
+
 		local villages = this.World.EntityManager.getSettlements();
 		local randomTown;
 

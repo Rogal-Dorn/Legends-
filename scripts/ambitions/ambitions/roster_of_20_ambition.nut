@@ -30,6 +30,11 @@ this.roster_of_20_ambition <- this.inherit("scripts/ambitions/ambition", {
 			return;
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		{
+			return;
+		}
+
 		if (this.World.getPlayerRoster().getSize() >= 15)
 		{
 			return;

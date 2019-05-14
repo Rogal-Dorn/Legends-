@@ -84,6 +84,11 @@ this.hammer_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 			}
 		}
 
+		if (not_candidates.len() == 0)
+		{
+			this.candiates = not_candidates;
+		}
+
 		_vars.push([
 			"hammerbrother",
 			candidates[this.Math.rand(0, candidates.len() - 1)].getName()

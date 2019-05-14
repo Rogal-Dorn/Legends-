@@ -128,7 +128,8 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 
 			local isAllyFleeing = ally.getMoraleState() == this.Const.MoraleState.Fleeing;
-			local isAllyDone = isAllyFleeing || ally.isTurnDone() || ally.getFatiguePct() >= 0.8 && _entity.getFatiguePct() <= 0.5;
+			local isAllyDone = isAllyFleeing || ally.isTurnDone() || ally.getFatiguePct() >= 0.8 && _entity.getFatiguePct() <= 0.5 || ally.getCurrentProperties().IsStunned || !ally.getCurrentProperties().IsAbleToUseWeaponSkills;
+			local isAllyTurnDone = isAllyFleeing || ally.isTurnDone() || ally.getCurrentProperties().IsStunned || !ally.getCurrentProperties().IsAbleToUseWeaponSkills;
 			local isAllyArmedWithShield = ally.isArmedWithShield();
 			local allyHitpointRatio = (ally.getHitpoints() + ally.getArmor(this.Const.BodyPart.Body) + ally.getArmor(this.Const.BodyPart.Head)) / (ally.getHitpointsMax() + ally.getArmorMax(this.Const.BodyPart.Body) + ally.getArmorMax(this.Const.BodyPart.Head));
 
@@ -146,11 +147,11 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 			}
 
-			if (!isAllyExpendable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && isEntityArmedWithShield && !isAllyArmedWithShield && allyZOC > zoc + 2)
+			if (!isAllyExpendable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && isEntityArmedWithShield && !isAllyArmedWithShield && !isAllyAOE && allyZOC > zoc + 2)
 			{
 				score = score * this.Const.AI.Behavior.RotationShieldInFrontMult;
 			}
-			else if (!isAllyValuable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && !isEntityArmedWithShield && isAllyArmedWithShield && zoc > allyZOC + 2)
+			else if (!isAllyValuable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && !isEntityArmedWithShield && isAllyArmedWithShield && !isEntityAOE && zoc > allyZOC + 2)
 			{
 				score = score * this.Const.AI.Behavior.RotationShieldInFrontMult;
 			}
@@ -178,11 +179,11 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 				score = score * this.Const.AI.Behavior.RotationPriorityTargetMult;
 			}
 
-			if (zoc == 0 && allyZOC >= 3 && isEntityAOE && !isAllyAOE && !isAllyFleeing && _entity.getActionPoints() >= 9 && ally.isTurnDone())
+			if (zoc == 0 && allyZOC >= 3 && isEntityAOE && !isAllyAOE && _entity.getActionPoints() >= 9 && isAllyTurnDone)
 			{
 				score = score * this.Const.AI.Behavior.RotationAOEMult;
 			}
-			else if (zoc >= 3 && allyZOC == 0 && !isEntityAOE && isAllyAOE && !isAllyFleeing && !ally.isTurnDone())
+			else if (zoc >= 3 && allyZOC == 0 && !isEntityAOE && isAllyAOE && !isAllyTurnDone)
 			{
 				score = score * this.Const.AI.Behavior.RotationAOEMult;
 			}
@@ -200,7 +201,7 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 					}
 				}
 			}
-			else if (isOffensive && _entity.getActionPoints() <= 3 && ally.getActionPoints() >= 9)
+			else if (isOffensive && _entity.getActionPoints() <= 3 && ally.getActionPoints() >= 9 && !ally.getCurrentProperties().IsStunned && ally.getCurrentProperties().IsAbleToUseWeaponSkills)
 			{
 				local potentialTargets = this.queryTargetsInMeleeRange(ally.getAIAgent().getProperties().EngageRangeMin, this.Math.max(ally.getIdealRange(), ally.getAIAgent().getProperties().EngageRangeMax), 1, myTile);
 				local bestTarget = this.queryBestMeleeTarget(ally, null, potentialTargets);
@@ -221,24 +222,24 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationWrongWeaponMult;
 
-				if (isAllyRangedUnit)
+				if (isEntityRangedUnit)
 				{
 					reverseScore = reverseScore * (this.Const.AI.Behavior.RotationWrongWeaponMult * 3.0);
 				}
 			}
 
-			if (!isAllyExpendable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && isEntityArmedWithShield && !isAllyArmedWithShield && allyZOC <= zoc + 2)
+			if (!isAllyExpendable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && isEntityArmedWithShield && !isAllyArmedWithShield && !isAllyAOE && allyZOC <= zoc + 2)
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationShieldInFrontMult;
 			}
-			else if (!isAllyValuable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && !isEntityArmedWithShield && isAllyArmedWithShield && zoc <= allyZOC + 2)
+			else if (!isAllyValuable && !isAllyFleeing && isEntityArmedWithMeleeWeapon && isAllyArmedWithMeleeWeapon && !isEntityArmedWithShield && isAllyArmedWithShield && !isEntityAOE && zoc <= allyZOC + 2)
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationShieldInFrontMult;
 			}
 
 			if (!isOffensive && !isAllyExpendable && isEntityArmedWithMeleeWeapon && allyHitpointRatio < 0.5 && allyHitpointRatio < hitpointRatio - 0.2 && allyZOC <= zoc + 1)
 			{
-				reverseScore = reverseScore * (this.Const.AI.Behavior.RotationSaveWoundedMult * (1.0 + (allyHitpointRatio - hitpointRatio)));
+				reverseScore = reverseScore * (this.Const.AI.Behavior.RotationSaveWoundedMult * (1.0 + (hitpointRatio - allyHitpointRatio)));
 			}
 			else if (!isOffensive && !isAllyValuable && !isAllyFleeing && isAllyArmedWithMeleeWeapon && hitpointRatio < 0.5 && allyHitpointRatio > hitpointRatio + 0.2 && zoc <= allyZOC + 1)
 			{
@@ -254,11 +255,11 @@ this.ai_defend_rotation <- this.inherit("scripts/ai/tactical/behavior", {
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationPriorityTargetMult;
 			}
 
-			if (allyZOC == 0 && zoc >= 3 && isEntityAOE && !isAllyAOE && !isAllyFleeing && _entity.getActionPoints() >= 9 && ally.isTurnDone())
+			if (allyZOC == 0 && zoc >= 3 && isEntityAOE && !isAllyAOE && !isAllyFleeing && _entity.getActionPoints() >= 9)
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationAOEMult;
 			}
-			else if (allyZOC >= 3 && zoc == 0 && !isEntityAOE && isAllyAOE && !isAllyFleeing && !ally.isTurnDone())
+			else if (allyZOC >= 3 && zoc == 0 && !isEntityAOE && isAllyAOE && !isAllyFleeing)
 			{
 				reverseScore = reverseScore * this.Const.AI.Behavior.RotationAOEMult;
 			}

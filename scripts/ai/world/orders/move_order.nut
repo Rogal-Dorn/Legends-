@@ -30,8 +30,18 @@ this.move_order <- this.inherit("scripts/ai/world/world_behavior", {
 	function onSerialize( _out )
 	{
 		this.world_behavior.onSerialize(_out);
-		_out.writeI16(this.m.TargetTile.Coords.X);
-		_out.writeI16(this.m.TargetTile.Coords.Y);
+
+		if (this.m.TargetTile != null)
+		{
+			_out.writeI16(this.m.TargetTile.Coords.X);
+			_out.writeI16(this.m.TargetTile.Coords.Y);
+		}
+		else
+		{
+			_out.writeI16(-1);
+			_out.writeI16(-1);
+		}
+
 		_out.writeBool(this.m.RoadsOnly);
 		_out.writeBool(this.m.AvoidSettlements);
 	}
@@ -41,7 +51,12 @@ this.move_order <- this.inherit("scripts/ai/world/world_behavior", {
 		this.world_behavior.onDeserialize(_in);
 		local x = _in.readI16();
 		local y = _in.readI16();
-		this.m.TargetTile = this.World.getTile(x, y);
+
+		if (x != -1 && y != -1)
+		{
+			this.m.TargetTile = this.World.getTile(x, y);
+		}
+
 		this.m.RoadsOnly = _in.readBool();
 		this.m.AvoidSettlements = _in.readBool();
 	}

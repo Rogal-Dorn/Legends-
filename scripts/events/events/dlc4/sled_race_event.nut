@@ -274,6 +274,11 @@ this.sled_race_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getSkills().hasSkill("trait.fat"))
 			{
 				candidates_fat.push(bro);

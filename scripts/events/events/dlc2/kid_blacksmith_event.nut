@@ -333,6 +333,11 @@ this.kid_blacksmith_event <- this.inherit("scripts/events/event", {
 
 		foreach( b in brothers )
 		{
+			if (this.bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (b.getBackground().getID() == "background.juggler")
 			{
 				candidates_juggler.push(b);

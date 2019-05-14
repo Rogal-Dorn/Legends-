@@ -515,11 +515,14 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 				candidates_helpful.push(bro);
 			}
 
-			candidates_bro1.push(bro);
-
-			if (!bro.getBackground().isOffendedByViolence() && bro.getBackground().isCombatBackground())
+			if (!bro.getSkills().hasSkill("trait.player"))
 			{
-				candidates_bro2.push(bro);
+				candidates_bro1.push(bro);
+
+				if (!bro.getBackground().isOffendedByViolence() && bro.getBackground().isCombatBackground())
+				{
+					candidates_bro2.push(bro);
+				}
 			}
 		}
 
@@ -532,7 +535,14 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 			helpful = brothers[this.Math.rand(0, brothers.len() - 1)];
 		}
 
-		bro1 = candidates_bro1[this.Math.rand(0, candidates_bro1.len() - 1)];
+		if (candidates_bro1.len() != 0)
+		{
+			bro1 = candidates_bro1[this.Math.rand(0, candidates_bro1.len() - 1)];
+		}
+		else
+		{
+			bro1 = brothers[this.Math.rand(0, brothers.len() - 1)];
+		}
 
 		if (candidates_bro2.len() > 1)
 		{

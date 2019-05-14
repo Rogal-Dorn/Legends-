@@ -565,6 +565,11 @@ this.asset_manager <- {
 		this.m.BrothersMaxInCombat = 12;
 		this.m.BrothersScaleMax = 12;
 		this.m.BrothersScaleMin = 3;
+		this.m.BusinessReputationRate = 1.0;
+		this.m.BuyPriceMult = 1.0;
+		this.m.SellPriceMult = 1.0;
+		this.m.ExtraLootChance = 0;
+		this.m.FootprintVision = 1.0;
 	}
 
 	function create()
@@ -714,7 +719,7 @@ this.asset_manager <- {
 				bro.getSkills().onNewDay();
 				bro.updateInjuryVisuals();
 
-				if (this.m.Money < bro.getDailyCost())
+				if (bro.getDailyCost() > 0 && this.m.Money < bro.getDailyCost())
 				{
 					if (bro.getSkills().hasSkill("trait.greedy"))
 					{

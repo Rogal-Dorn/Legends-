@@ -24,7 +24,7 @@ this.black_leather_armor <- this.inherit("scripts/items/armor/named/named_armor"
 		this.m.Value = 2000;
 		this.m.Condition = 110;
 		this.m.ConditionMax = 110;
-		this.m.StaminaModifier = -12;
+		this.m.StaminaModifier = -11;
 		this.randomizeValues();
 	}
 

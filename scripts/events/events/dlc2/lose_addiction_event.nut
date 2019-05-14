@@ -58,6 +58,11 @@ this.lose_addiction_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getFlags().get("PotionLastUsed") >= 14.0 * this.World.getTime().SecondsPerDay && bro.getSkills().hasSkill("trait.addict"))
 			{
 				candidates_addict.push(bro);

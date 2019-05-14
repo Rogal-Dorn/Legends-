@@ -62,33 +62,6 @@ this.disarm_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onVerifyTarget( _originTile, _targetTile )
-	{
-		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
-		{
-			return false;
-		}
-
-		local target = _targetTile.getEntity();
-
-		if (target.getCurrentProperties().IsImmuneToDisarm)
-		{
-			return false;
-		}
-
-		if (target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
-		{
-			return false;
-		}
-
-		if (target.getSkills().hasSkill("effects.disarmed"))
-		{
-			return false;
-		}
-
-		return true;
-	}
-
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInCleavers ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;

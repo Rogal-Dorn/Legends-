@@ -15,9 +15,10 @@ this.perk_duelist <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local items = this.getContainer().getActor().getItems();
+		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-		if (off == null || !this.getContainer().getActor().getItems().hasBlockedSlot(this.Const.ItemSlot.Offhand) && off.isItemType(this.Const.Items.ItemType.Tool))
+		if (off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || off != null && off.isItemType(this.Const.Items.ItemType.Tool))
 		{
 			_properties.DamageDirectAdd += 0.25;
 		}

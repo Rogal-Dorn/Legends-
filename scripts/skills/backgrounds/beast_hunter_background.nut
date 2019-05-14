@@ -12,6 +12,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HiringCost = 150;
 		this.m.DailyCost = 15;
 		this.m.Excluded = [
+			"trait.superstitious",
 			"trait.weasel",
 			"trait.fear_beasts",
 			"trait.ailing",

@@ -44,7 +44,7 @@ this.additional_padding_upgrade <- this.inherit("scripts/items/armor_upgrades/ar
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		if (_hitInfo.BodyPart == this.Const.BodyPart.Body && _attacker != null && _attacker.getID() != this.getContainer().getActor().getID())
+		if (_hitInfo.BodyPart == this.Const.BodyPart.Body && _attacker != null && _attacker.getID() != this.getArmor().getContainer().getActor().getID())
 		{
 			_properties.DamageReceivedDirectMult *= 0.66;
 		}

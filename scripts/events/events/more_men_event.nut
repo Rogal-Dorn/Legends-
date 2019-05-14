@@ -293,6 +293,11 @@ this.more_men_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		{
+			return;
+		}
+
 		if (this.World.getTime().Days <= 10)
 		{
 			return;

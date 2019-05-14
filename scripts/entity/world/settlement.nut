@@ -1286,6 +1286,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			s.onUpdateDraftList(draftList);
 		}
 
+		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
+
 		while (maxRecruits > current.len())
 		{
 			local bro = roster.create("scripts/entity/tactical/player");

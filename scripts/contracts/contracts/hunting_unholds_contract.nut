@@ -164,7 +164,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.wildman" || bro.getSkills().hasSkill("trait.dumb"))
+						if (bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian" || bro.getSkills().hasSkill("trait.dumb"))
 						{
 							candidates.push(bro);
 						}
@@ -528,73 +528,6 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 
 	function onPrepareVariables( _vars )
 	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		local candidates_helpful = [];
-		local candidates_bro1 = [];
-		local candidates_bro2 = [];
-		local helpful;
-		local bro1;
-		local bro2;
-
-		foreach( bro in brothers )
-		{
-			if (bro.getBackground().isLowborn() && !bro.getBackground().isOffendedByViolence() && !bro.getSkills().hasSkill("trait.bright") && bro.getBackground().getID() != "background.hunter")
-			{
-				candidates_helpful.push(bro);
-			}
-
-			candidates_bro1.push(bro);
-
-			if (!bro.getBackground().isOffendedByViolence() && bro.getBackground().isCombatBackground())
-			{
-				candidates_bro2.push(bro);
-			}
-		}
-
-		if (candidates_helpful.len() != 0)
-		{
-			helpful = candidates_helpful[this.Math.rand(0, candidates_helpful.len() - 1)];
-		}
-		else
-		{
-			helpful = brothers[this.Math.rand(0, brothers.len() - 1)];
-		}
-
-		bro1 = candidates_bro1[this.Math.rand(0, candidates_bro1.len() - 1)];
-
-		if (candidates_bro2.len() > 1)
-		{
-			do
-			{
-				bro2 = candidates_bro2[this.Math.rand(0, candidates_bro2.len() - 1)];
-			}
-			while (bro2.getID() == bro1.getID());
-		}
-		else if (brothers.len() > 1)
-		{
-			do
-			{
-				bro2 = brothers[this.Math.rand(0, brothers.len() - 1)];
-			}
-			while (bro2.getID() == bro1.getID());
-		}
-		else
-		{
-			bro2 = bro1;
-		}
-
-		_vars.push([
-			"helpfulbrother",
-			helpful.getName()
-		]);
-		_vars.push([
-			"bro1",
-			bro1.getName()
-		]);
-		_vars.push([
-			"bro2",
-			bro2.getName()
-		]);
 		_vars.push([
 			"shouter",
 			this.m.Dude != null ? this.m.Dude.getName() : ""

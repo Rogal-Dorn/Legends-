@@ -6,7 +6,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Name = "Beast Slayers";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your men make your living by hunting down the many beasts that beset villages on the fringes of civilization. It\'s dangerous work, but it pays well enough, and there\'s always a bigger beast to slay and more crowns to earn.\n\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away.\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 25% chance to drop an additional trophy.\n[color=#bcad8c]Prejudice:[/color] Most people don\'t trust your kind, so you get 10% worse prices.[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 4;
+		this.m.Order = 5;
 		this.m.IsFixedLook = true;
 	}
 
@@ -49,9 +49,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		talents[this.Const.Attributes.MeleeSkill] = 2;
 		talents[this.Const.Attributes.MeleeDefense] = 1;
 		talents[this.Const.Attributes.Fatigue] = 1;
-		bros[1].m.PerkPoints = 1;
-		bros[1].m.LevelUps = 1;
-		bros[1].m.Level = 2;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
@@ -70,9 +67,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		talents[this.Const.Attributes.Fatigue] = 2;
 		talents[this.Const.Attributes.MeleeSkill] = 1;
 		talents[this.Const.Attributes.Bravery] = 1;
-		bros[1].m.PerkPoints = 1;
-		bros[1].m.LevelUps = 1;
-		bros[1].m.Level = 2;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
@@ -90,9 +84,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		talents[this.Const.Attributes.RangedSkill] = 2;
 		talents[this.Const.Attributes.RangedDefense] = 1;
 		talents[this.Const.Attributes.Fatigue] = 1;
-		bros[2].m.PerkPoints = 1;
-		bros[2].m.LevelUps = 1;
-		bros[2].m.Level = 2;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
@@ -179,8 +170,8 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onInit()
 	{
-		this.World.Assets.m.BuyPriceMult *= 1.1;
-		this.World.Assets.m.SellPriceMult *= 0.9;
+		this.World.Assets.m.BuyPriceMult = 1.1;
+		this.World.Assets.m.SellPriceMult = 0.9;
 		this.World.Assets.m.ExtraLootChance = 25;
 		this.World.Assets.m.FootprintVision = 1.5;
 	}
