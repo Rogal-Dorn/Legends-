@@ -264,6 +264,11 @@ this.treasure_in_rock_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getBackground().getID() == "background.miner")
 			{
 				candidates_miner.push(bro);

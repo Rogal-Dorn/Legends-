@@ -1164,7 +1164,7 @@ this.skill <- {
 			});
 		}
 
-		if (_targetTile.IsOccupiedByActor && targetEntity.getCurrentProperties().IsImmuneToDisarm && this.m.ID == "actives.disarm")
+		if (_targetTile.IsOccupiedByActor && (targetEntity.getCurrentProperties().IsImmuneToDisarm || targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null) && this.m.ID == "actives.disarm")
 		{
 			ret.push({
 				icon = "ui/tooltips/negative.png",

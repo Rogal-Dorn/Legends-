@@ -889,7 +889,7 @@ gt.Const.AI <- {
 		AdrenalineOnBadTerrainMult = 1.25,
 		AdrenalineFresh = 0.4,
 		IndomitableSurrounded = 0.1,
-		IndomitableScoreCutoff = 3.0
+		IndomitableScoreCutoff = 2.5
 	}
 };
 

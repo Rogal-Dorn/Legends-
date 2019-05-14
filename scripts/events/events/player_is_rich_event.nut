@@ -54,6 +54,11 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getSkills().hasSkill("trait.player"))
+					{
+						continue;
+					}
+
 					bro.getBaseProperties().DailyWage += 4;
 					bro.improveMood(2.0, "Got a pay raise");
 
@@ -91,6 +96,11 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getSkills().hasSkill("trait.player"))
+					{
+						continue;
+					}
+
 					if (bro.getSkills().hasSkill("trait.greedy"))
 					{
 						bro.worsenMood(2.0, "Was denied a pay raise");
@@ -139,6 +149,11 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 	function onUpdateScore()
 	{
 		if (this.World.Assets.getMoney() <= 30000)
+		{
+			return;
+		}
+
+		if (this.World.getPlayerRoster().getSize() < 3)
 		{
 			return;
 		}

@@ -861,7 +861,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 
 		if (bestTarget != null && bestTiles != 0 && bestTarget.ID != myTile.ID)
 		{
-			if (this.m.IsEngagedThisTurn && _entity.getActionPoints() <= 4 && !bestComplete && _entity.isAbleToWait())
+			if (this.m.IsEngagedThisTurn && !bestComplete)
 			{
 				return this.Const.AI.Behavior.Score.Zero;
 			}
@@ -1060,6 +1060,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 	function onTurnResumed()
 	{
 		this.m.IsDoneThisTurn = false;
+		this.m.IsEngagedThisTurn = false;
 	}
 
 	function onBeforeExecute( _entity )

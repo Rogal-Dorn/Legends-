@@ -34,6 +34,11 @@ this.dismiss_injured_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getSkills().hasSkill("trait.player"))
+					{
+						continue;
+					}
+
 					if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury))
 					{
 						bro.worsenMood(1.5, "Afraid to be dismissed on account of his injury");

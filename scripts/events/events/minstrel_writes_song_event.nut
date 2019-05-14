@@ -69,6 +69,11 @@ this.minstrel_writes_song_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
 			{
 				candidates_minstrel.push(bro);

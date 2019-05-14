@@ -101,6 +101,7 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 		local canAttackNext = this.m.Skill.getActionPointCost() + apRequiredForAttack <= _entity.getActionPointsMax();
 		local bestTarget;
 		local bestScore = 0.0;
+		local isDisarm = _skill.getID() == "actives.disarm";
 
 		foreach( target in _targets )
 		{
@@ -110,7 +111,11 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 				{
 				}
 
-				if (target.getCurrentProperties().IsStunned || !target.getCurrentProperties().IsAbleToUseWeaponSkills)
+				if (isDisarm && (target.getCurrentProperties().IsImmuneToDisarm || !target.getCurrentProperties().IsAbleToUseWeaponSkills || target.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null))
+				{
+					continue;
+				}
+				else if (!isDisarm && (target.getCurrentProperties().IsStunned || target.getCurrentProperties().IsImmuneToStun))
 				{
 					continue;
 				}

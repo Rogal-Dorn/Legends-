@@ -82,12 +82,12 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		local weapon = [
+		local weapons = [
 			"weapons/dagger",
 			"weapons/scramasax",
 			"weapons/hatchet"
 		];
-		this.m.Items.addToBag(this.new("scripts/items/" + this.weapons[this.Math.rand(0, this.weapons.len() - 1)]));
+		this.m.Items.addToBag(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{

@@ -453,7 +453,9 @@ this.tooltip_events <- {
 							type = "hint",
 							icon = "ui/icons/mouse_right_button.png",
 							text = "Equip item ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
-								_item
+								_item,
+								_entity.getItems().getItemAtSlot(_item.getSlotType()),
+								_entity.getItems().getItemAtSlot(_item.getBlockedSlotType())
 							]) + "[/color][/b] AP)"
 						});
 					}
@@ -489,7 +491,7 @@ this.tooltip_events <- {
 			}
 			else if (stashLocked == true)
 			{
-				if (_item.isChangeableInBattle() && _item.isAllowedInBag())
+				if (_item.isChangeableInBattle() && _item.isAllowedInBag() && _entity.getItems().hasEmptySlot(this.Const.ItemSlot.Bag))
 				{
 					tooltip.push({
 						id = 1,
@@ -543,7 +545,9 @@ this.tooltip_events <- {
 						type = "hint",
 						icon = "ui/icons/mouse_right_button.png",
 						text = "Equip item ([b][color=" + this.Const.UI.Color.PositiveValue + "]" + _activeEntity.getItems().getActionCost([
-							_item
+							_item,
+							_entity.getItems().getItemAtSlot(_item.getSlotType()),
+							_entity.getItems().getItemAtSlot(_item.getBlockedSlotType())
 						]) + "[/color][/b] AP)"
 					});
 				}

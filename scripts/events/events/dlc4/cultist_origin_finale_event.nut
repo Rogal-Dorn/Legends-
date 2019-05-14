@@ -229,16 +229,26 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 				{
 					bestCultist = bro;
 				}
-			}
-			else if (bro.getLevel() >= 11)
-			{
-				sacrifice_candidates.push(bro);
+
+				if (bro.getLevel() >= 11)
+				{
+					sacrifice_candidates.push(bro);
+				}
 			}
 		}
 
-		if (cultist_candidates.len() <= 5 || bestCultist == null || bestCultist.getLevel() < 11 || sacrifice_candidates.len() == 0)
+		if (cultist_candidates.len() <= 5 || bestCultist == null || bestCultist.getLevel() < 11 || sacrifice_candidates.len() < 2)
 		{
 			return;
+		}
+
+		for( local i = 0; i < sacrifice_candidates.len(); i = ++i )
+		{
+			if (bestCultist.getID() == sacrifice_candidates[i].getID())
+			{
+				sacrifice_candidates.remove(i);
+				break;
+			}
 		}
 
 		this.m.Cultist = bestCultist;

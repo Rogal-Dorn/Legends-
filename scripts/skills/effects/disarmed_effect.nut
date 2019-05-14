@@ -39,10 +39,10 @@ this.disarmed_effect <- this.inherit("scripts/skills/skill", {
 
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && !this.m.Container.getActor().getCurrentProperties().IsImmuneToDisarm)
 		{
+			this.m.WeaponID = items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getInstanceID();
 			this.m.Container.removeByID("effects.spearwall");
 			this.m.Container.removeByID("effects.riposte");
 			this.m.Container.removeByID("effects.return_favor");
-			this.m.WeaponID = items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getInstanceID();
 		}
 		else
 		{

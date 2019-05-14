@@ -137,6 +137,11 @@ this.wildman_testing_money_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getBackground().getID() == "background.wildman" && !bro.getTags().get("IsConceptionOfMoneyTested"))
 			{
 				candidates.push(bro);

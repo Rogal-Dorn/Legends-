@@ -326,7 +326,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 
 		foreach( i in this.Const.Items.NamedArmors )
 		{
-			if (this.Math.rand(1, 100) <= 40)
+			if (this.Math.rand(1, 100) <= 33)
 			{
 				list.push({
 					R = 99,
@@ -338,7 +338,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 
 		foreach( i in this.Const.Items.NamedHelmets )
 		{
-			if (this.Math.rand(1, 100) <= 40)
+			if (this.Math.rand(1, 100) <= 33)
 			{
 				list.push({
 					R = 99,

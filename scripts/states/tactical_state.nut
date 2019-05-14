@@ -316,11 +316,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	{
 		this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
 
-		if (("State" in this.World) && this.World.State.getLastLocation() != null)
-		{
-			this.World.State.getLastLocation().setVisited(true);
-		}
-
 		if (this.Stash.isLocked() == true)
 		{
 			if (this.m.Scenario != null)
@@ -334,6 +329,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				if (this.m.StrategicProperties != null)
 				{
+					if (this.m.StrategicProperties.IsAttackingLocation && this.World.State.getLastLocation() != null)
+					{
+						this.World.State.getLastLocation().setVisited(true);
+					}
+
 					this.Music.setTrackList(this.m.StrategicProperties.Music, this.Const.Music.CrossFadeTime);
 
 					if (this.m.StrategicProperties.IsFleeingProhibited)
@@ -662,7 +662,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			this.updateAchievement("TimeToRebuild", 1, 1);
 		}
 
-		if (!this.isScenarioMode() && this.World.getPlayerRoster().getSize() == 0 && this.m.Factions.getHostileFactionWithMostInstances() == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID())
+		if (!this.isScenarioMode() && this.World.getPlayerRoster().getSize() == 0 && this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians) != null && this.m.Factions.getHostileFactionWithMostInstances() == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID())
 		{
 			this.updateAchievement("GiveMeBackMyLegions", 1, 1);
 		}
@@ -2902,7 +2902,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/skeleton_priest");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/necromancer");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
 				e.assignRandomEquipment();
 			}

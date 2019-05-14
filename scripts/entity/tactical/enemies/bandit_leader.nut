@@ -94,9 +94,6 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
 			local weapons = [
-				"weapons/greatsword",
-				"weapons/greataxe",
-				"weapons/warbrand",
 				"weapons/noble_sword",
 				"weapons/fighting_axe",
 				"weapons/warhammer",
@@ -105,6 +102,16 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/arming_sword",
 				"weapons/military_cleaver"
 			];
+
+			if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+			{
+				weapons.extend([
+					"weapons/greatsword",
+					"weapons/greataxe",
+					"weapons/warbrand"
+				]);
+			}
+
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
@@ -191,7 +198,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmor[this.Math.rand(0, this.Const.Items.NamedArmor.len() - 1)]));
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
 		}
 		else
 		{

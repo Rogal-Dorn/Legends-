@@ -161,6 +161,7 @@ this.icy_cave_enter_event <- this.inherit("scripts/events/event", {
 						properties.Players.push(_event.m.Champion);
 						properties.IsUsingSetPlayers = true;
 						properties.IsFleeingProhibited = true;
+						properties.IsAttackingLocation = true;
 						properties.BeforeDeploymentCallback = function ()
 						{
 							local size = this.Tactical.getMapSize();

@@ -418,7 +418,7 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 
 		foreach( i in this.Const.Items.NamedWeapons )
 		{
-			if (this.Math.rand(1, 100) <= 33)
+			if (this.Math.rand(1, 100) <= 25)
 			{
 				list.push({
 					R = 99,

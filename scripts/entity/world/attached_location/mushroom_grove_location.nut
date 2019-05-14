@@ -23,6 +23,7 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 		}
 
 		_list.push("cultist_background");
+		_list.push("cultist_background");
 		_list.push("flagellant_background");
 		_list.push("wildman_background");
 		_list.push("legend_herbalist_background");

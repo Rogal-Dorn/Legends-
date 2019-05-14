@@ -296,7 +296,7 @@ this.dog_in_swamp_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_beastslayer.push(bro);
 			}
-			else
+			else if (!bro.getSkills().hasSkill("trait.player"))
 			{
 				candidates_other.push(bro);
 			}

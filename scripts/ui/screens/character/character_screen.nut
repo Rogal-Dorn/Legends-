@@ -307,19 +307,19 @@ this.character_screen <- {
 			{
 				this.World.Assets.addMoney(-10 * this.Math.max(1, bro.getDaysWithCompany()));
 			}
-			else if (bro.getLevel() >= 11 && !this.World.Statistics.hasNews("dismiss_legend"))
+			else if (bro.getLevel() >= 11 && !this.World.Statistics.hasNews("dismiss_legend") && this.World.getPlayerRoster().getSize() > 1)
 			{
 				local news = this.World.Statistics.createNews();
 				news.set("Name", bro.getName());
 				this.World.Statistics.addNews("dismiss_legend", news);
 			}
-			else if (bro.getDaysWithCompany() >= 50 && !this.World.Statistics.hasNews("dismiss_veteran") && this.Math.rand(1, 100) <= 33)
+			else if (bro.getDaysWithCompany() >= 50 && !this.World.Statistics.hasNews("dismiss_veteran") && this.World.getPlayerRoster().getSize() > 1 && this.Math.rand(1, 100) <= 33)
 			{
 				local news = this.World.Statistics.createNews();
 				news.set("Name", bro.getName());
 				this.World.Statistics.addNews("dismiss_veteran", news);
 			}
-			else if (bro.getLevel() >= 3 && bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) && !this.World.Statistics.hasNews("dismiss_injured") && this.Math.rand(1, 100) <= 33)
+			else if (bro.getLevel() >= 3 && bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) && !this.World.Statistics.hasNews("dismiss_injured") && this.World.getPlayerRoster().getSize() > 1 && this.Math.rand(1, 100) <= 33)
 			{
 				local news = this.World.Statistics.createNews();
 				news.set("Name", bro.getName());

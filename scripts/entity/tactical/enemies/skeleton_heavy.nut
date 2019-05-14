@@ -54,11 +54,18 @@ this.skeleton_heavy <- this.inherit("scripts/entity/tactical/skeleton", {
 		{
 			local weapons = [
 				"weapons/ancient/ancient_sword",
-				"weapons/ancient/crypt_cleaver",
-				"weapons/ancient/rhomphaia",
-				"weapons/ancient/khopesh",
-				"weapons/ancient/warscythe"
+				"weapons/ancient/khopesh"
 			];
+
+			if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+			{
+				weapons.extend([
+					"weapons/ancient/warscythe",
+					"weapons/ancient/crypt_cleaver",
+					"weapons/ancient/rhomphaia"
+				]);
+			}
+
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 

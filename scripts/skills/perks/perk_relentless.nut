@@ -15,8 +15,7 @@ this.perk_relentless <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.FatigueToInitiativeRate *= 0.66;
-		_properties.InitiativeAfterWaitMult = 1.0;
+		_properties.FatigueToInitiativeRate *= 0.5;
 	}
 
 });

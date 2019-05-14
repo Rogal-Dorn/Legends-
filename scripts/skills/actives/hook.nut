@@ -26,6 +26,7 @@ this.hook <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsWeaponSkill = true;
 		this.m.HitChanceBonus = 10;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 30;

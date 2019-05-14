@@ -76,6 +76,11 @@ this.wildman_offers_mushrooms_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getBackground().getID() == "background.wildman")
 			{
 				candidates_wildman.push(bro);

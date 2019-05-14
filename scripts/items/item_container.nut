@@ -152,7 +152,7 @@ this.item_container <- {
 
 	function getItemAtSlot( _slotType )
 	{
-		if (_slotType == this.Const.ItemSlot.None)
+		if (_slotType == null || _slotType == this.Const.ItemSlot.None)
 		{
 			return null;
 		}

@@ -295,14 +295,17 @@ this.behavior <- {
 			score = score * this.getProperties().TargetPriorityCounterSkillsMult;
 		}
 
-		if (expectedDamage.HitpointDamage + expectedDamage.DirectDamage * this.getProperties().TargetPriorityFinishTreshhold >= _target.getHitpoints())
+		if (!_target.isNonCombatant())
 		{
-			score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
-		}
+			if (expectedDamage.HitpointDamage + expectedDamage.DirectDamage * this.getProperties().TargetPriorityFinishTreshhold >= _target.getHitpoints())
+			{
+				score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
+			}
 
-		if (expectedDamage.ArmorDamage * this.getProperties().TargetPriorityFinishTreshhold >= armorValue)
-		{
-			score = score * (_skill != null ? this.getProperties().TargetPriorityFinishArmorMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishArmorMult * 0.66));
+			if (expectedDamage.ArmorDamage * this.getProperties().TargetPriorityFinishTreshhold >= armorValue)
+			{
+				score = score * (_skill != null ? this.getProperties().TargetPriorityFinishArmorMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishArmorMult * 0.66));
+			}
 		}
 
 		if (_target.getMoraleState() == this.Const.MoraleState.Fleeing)

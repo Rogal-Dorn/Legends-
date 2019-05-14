@@ -96,6 +96,9 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		]);
 		bros[7].getBackground().m.RawDescription = "%name% has apparently been in many militias, all of which eventually dissolved for one reason or another. At no point has he made any money in any of them, so he hopes to changes that with this whole new sellswording schtick.";
 		bros[7].improveMood(3.0, "Has recently become a father");
+		bros[7].m.PerkPoints = 0;
+		bros[7].m.LevelUps = 0;
+		bros[7].m.Level = 1;
 		bros[8].setStartValuesEx([
 			"minstrel_background"
 		]);
@@ -113,6 +116,9 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		]);
 		bros[10].getBackground().m.RawDescription = "Like yourself, %name% was fed up with militias being overused to solve the crises of unprepared nobles. He was arguably the most earnest of the men in joining the transition to mercenary work.";
 		bros[10].worsenMood(0.5, "Disliked that some members of the militia were involved in a brawl");
+		bros[10].m.PerkPoints = 0;
+		bros[10].m.LevelUps = 0;
+		bros[10].m.Level = 1;
 		bros[11].setStartValuesEx([
 			"butcher_background",
 			"tailor_background",

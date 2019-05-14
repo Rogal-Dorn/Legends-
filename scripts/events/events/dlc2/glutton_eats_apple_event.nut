@@ -74,6 +74,11 @@ this.glutton_eats_apple_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getSkills().hasSkill("trait.gluttonous"))
 			{
 				candidates_glutton.push(bro);

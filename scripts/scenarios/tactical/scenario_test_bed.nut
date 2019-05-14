@@ -53,24 +53,9 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			entity.setScenarioValues();
 			local items = entity.getItems();
 			local r = this.Math.rand(1, 3);
-
-			if (r == 1)
-			{
-				items.equip(this.new("scripts/items/armor/named/lindwurm_armor"));
-				items.equip(this.new("scripts/items/helmets/jesters_hat"));
-			}
-			else if (r == 2)
-			{
-				items.equip(this.new("scripts/items/helmets/named/lindwurm_helmet"));
-				items.equip(this.new("scripts/items/armor/special/heraldic_armor"));
-			}
-			else
-			{
-				items.equip(this.new("scripts/items/helmets/jesters_hat"));
-				items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));
-			}
-
-			items.equip(this.new("scripts/items/weapons/battle_whip"));
+			items.equip(this.new("scripts/items/armor/legendary/ijirok_armor"));
+			items.equip(this.new("scripts/items/helmets/legendary/ijirok_helmet"));
+			items.equip(this.new("scripts/items/weapons/winged_mace"));
 			local r = this.Math.rand(0, 2);
 		}
 

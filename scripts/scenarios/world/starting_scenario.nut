@@ -80,6 +80,10 @@ this.starting_scenario <- {
 	{
 	}
 
+	function onUpdateDraftList( _list )
+	{
+	}
+
 	function onCombatFinished()
 	{
 		return true;

@@ -100,8 +100,6 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
 			local weapons = [
-				"weapons/longsword",
-				"weapons/greataxe",
 				"weapons/winged_mace",
 				"weapons/hand_axe",
 				"weapons/fighting_axe",
@@ -111,7 +109,15 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 				"weapons/military_cleaver"
 			];
 
-			if (this.Const.DLC.Unhold)
+			if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+			{
+				weapons.extend([
+					"weapons/longsword",
+					"weapons/greataxe"
+				]);
+			}
+
+			if (this.Const.DLC.Unhold && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 			{
 				weapons.extend([
 					"weapons/two_handed_flail"

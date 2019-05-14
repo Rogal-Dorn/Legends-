@@ -70,9 +70,16 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 				"weapons/greenskins/goblin_falchion",
 				"weapons/greenskins/goblin_spear",
 				"weapons/legend_chain",
-				"weapons/greenskins/goblin_notched_blade",
-				"weapons/greenskins/goblin_pike"
+				"weapons/greenskins/goblin_notched_blade"
 			];
+
+			if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+			{
+				weapons.extend([
+					"weapons/greenskins/goblin_pike"
+				]);
+			}
+
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 

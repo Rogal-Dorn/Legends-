@@ -213,6 +213,11 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function isValid()
+	{
+		return true;
+	}
+
 	function onAdded()
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())

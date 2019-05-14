@@ -34,6 +34,11 @@ this.dismiss_legend_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getSkills().hasSkill("trait.player"))
+					{
+						continue;
+					}
+
 					bro.worsenMood(this.Const.MoodChange.VeteranDismissed, "You dismissed " + _event.m.Fired + ", a legend of the company");
 
 					if (bro.getMoodState() < this.Const.MoodState.Neutral)

@@ -143,23 +143,4 @@ gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.ArmoredUnhold <- {
-	XP = 500,
-	ActionPoints = 9,
-	Hitpoints = 600,
-	Bravery = 150,
-	Stamina = 400,
-	MeleeSkill = 75,
-	RangedSkill = 0,
-	MeleeDefense = 10,
-	RangedDefense = 0,
-	Initiative = 85,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	FatigueRecoveryRate = 30,
-	Armor = [
-		0,
-		0
-	]
-};
 

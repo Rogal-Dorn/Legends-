@@ -361,7 +361,7 @@ gt.Const.World.Settings <- {
 	SizeY = 140,
 	LandMassMult = 1.4,
 	WaterConnectivity = 38,
-	MinLandToWaterRatio = 1.45,
+	MinLandToWaterRatio = 1.5,
 	Snowline = 0.9,
 	Vision = 500.0
 };

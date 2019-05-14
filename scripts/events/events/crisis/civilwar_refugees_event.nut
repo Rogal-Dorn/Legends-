@@ -329,7 +329,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_refugees.push(bro);
 			}
-			else
+			else if (!bro.getSkills().hasSkill("trait.player"))
 			{
 				candidates_other.push(bro);
 			}

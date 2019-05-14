@@ -155,8 +155,8 @@ this.throw_axe <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += 20;
-			_properties.HitChanceAdditionalWithEachTile -= 10;
+			_properties.RangedSkill += 20 + this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile -= 10 + this.m.AdditionalHitChance;
 		}
 	}
 

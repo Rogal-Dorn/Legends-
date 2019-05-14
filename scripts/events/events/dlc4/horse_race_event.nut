@@ -306,6 +306,11 @@ this.horse_race_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getSkills().hasSkill("trait.fat"))
 			{
 				candidates_fat.push(bro);
@@ -346,7 +351,7 @@ this.horse_race_event <- this.inherit("scripts/events/event", {
 			this.m.Dumb = candidates_dumb[this.Math.rand(0, candidates_dumb.len() - 1)];
 		}
 
-		this.m.Reward = this.Math.rand(3, 7) * 100;
+		this.m.Reward = this.Math.rand(3, 6) * 100;
 		this.m.Score = 10;
 	}
 

@@ -202,10 +202,15 @@ this.ball_on_roof_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_surefooted.push(b);
 			}
-			else
+			else if (b.getSkills().hasSkill("trait.player"))
 			{
 				candidates_other.push(b);
 			}
+		}
+
+		if (candidates_other.len() == 0)
+		{
+			return;
 		}
 
 		this.m.Other = candidates_other[this.Math.rand(0, candidates_other.len() - 1)];
