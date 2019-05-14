@@ -150,5 +150,13 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		}, null);
 	}
 
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() >= 10)
+		{
+			_list.push("cultist_background");
+		}
+	}
+
 });
 
