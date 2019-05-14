@@ -671,7 +671,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getConditionMax() > 1 && _item.getCondition() < _item.getConditionMax())
 			{
 				local price = (_item.getConditionMax() - _item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.200000003 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)
@@ -1632,7 +1632,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Shows the current and maximium number of men placed in formation to fight in the next battle.\n\nDrag and drop your men to where you want them to be; the top row is the front facing the enemy, the second row is your middle row, and the bottom row is your back row. All characters will partake in battle. There are no reserves."
+					text = "Shows the current and maximium number of men placed in formation to fight in the next battle.\n\nDrag and drop your men to where you want them to be; the top row is the front facing the enemy, the second row is your middle row, and the bottom row is your back row. All characters will partake in battle. There are no reserves slots but you can toggle anyone into reserves using the button near their portrait."
 				}
 			];
 
@@ -2242,7 +2242,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Dangerous in Legends Beta! Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Recommended for the best experience once you\'ve learned the game.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds. "
+					text = "Not recommended in Legends Beta. Ironman mode disables manual saving. Only a single save will exist for the company, and the game is automatically saved during the game and on exiting it. Losing the whole company means losing the save. Not recommended in while Legends is in Beta due to possible save corruptions.\n\nNote that on weaker computers autosaves may result in the game pausing for a few seconds. "
 				}
 			];
 
@@ -4405,7 +4405,7 @@ this.tooltip_events <- {
 				++id;
 			}
 			return ret;
-			else
+
 		case "workshop.Time":
 			local desc = "Total number of hours required to salvage all the queued equipment. Assign more people to this task to decrease the amout of time required. Some backgrounds are quicker than others!";
 
@@ -4473,7 +4473,6 @@ this.tooltip_events <- {
 				}
 			];
 			return ret;
-				icon = "ui/icons/mouse_left_button.png",
 
 		case "healer.Supplies":
 			local desc = "Medicine on hand to heal injuries. Medicine can be purchased in towns or can foraged for while camping ";
@@ -4534,16 +4533,16 @@ this.tooltip_events <- {
 					text = "Total treatment modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Craft + " units per hour[/color]"
 				}
 			];
-			local id = 4;
-			foreach (bro in repair.Modifiers)
-			{
-				ret.push({
-					id = id,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
-				++id;
-			}
+		//	local id = 4;
+		//	foreach (bro in repair.Modifiers)
+		//	{
+		//		ret.push({
+		//			id = id,
+		//			type = "text",
+		//			icon = "ui/icons/special.png",
+		//			text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bro[0] + " units/hour [/color] " + bro[1] + " (" + bro[2] + ")"
+		//		++id
+		//	}
 			return ret;
 
 		case "healer.Time":
@@ -4577,7 +4576,7 @@ this.tooltip_events <- {
 					text = "Setup camp."
 				}
 			];
-	case "dlc_4":
+		case "dlc_4":
 			local ret = [
 				{
 					id = 1,
