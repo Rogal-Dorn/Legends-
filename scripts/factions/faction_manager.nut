@@ -206,10 +206,10 @@ this.faction_manager <- {
 
 			bandits.update(true);
 			goblins.update(true);
-			orcs.update(true);	
-			undead.update(true);		
-			zombies.update(true);	
-			beasts.update(true);		
+			orcs.update(true);
+			undead.update(true);
+			zombies.update(true);
+			beasts.update(true);
 			this.__ping();
 		}
 	}
@@ -222,13 +222,13 @@ this.faction_manager <- {
 		this.m.Factions.push(null);
 	}
 
-	function createFactions( _settings )
+	function createFactions()
 	{
 		this.createGenericEnemy();
 		this.createSettlements();
-		local nobles = this.createNobleHouses(_settings.NumFactions);
+		local nobles = this.createNobleHouses();
 		this.assignSettlementsToNobleHouses(nobles);
-		this.uncoverSettlements( _settings.FOW );
+		this.uncoverSettlements();
 		this.createBandits();
 		this.createBarbarians();
 		this.createOrcs();
@@ -246,21 +246,16 @@ this.faction_manager <- {
 		}
 	}
 
-	function uncoverSettlements( _fow )
+	function uncoverSettlements()
 	{
 		foreach( s in this.World.EntityManager.getSettlements() )
 		{
 			s.setDiscovered(true);
-			if (s.getOwner() != null || s.getSize() >= 1)
-			{
-				local vis = 2100;
-				if (_fow)
-				{
-					vis = 0;
-				}
-				this.World.uncoverFogOfWar(s.getTile().Pos, vis);
-			}
 
+			if (s.getOwner() != null || s.getSize() >= 2)
+			{
+				this.World.uncoverFogOfWar(s.getTile().Pos, 2100.0);
+			}
 		}
 	}
 
@@ -339,23 +334,21 @@ this.faction_manager <- {
 		this.m.Factions.push(f);
 	}
 
-	function createNobleHouses( _num )
+	function createNobleHouses()
 	{
 		local banners = [];
 		local names = [];
 		local nobleHouses = [];
 
-		local houses = this.Const.GetFactionArchetypesList();
-		for (local i = 0; i < _num; i = ++i)
+		foreach( i, g in this.Const.FactionArchetypes )
 		{
-			local index = houses.remove(this.Math.rand(0, houses.len() - 1));
-			local a = this.Const.FactionArchetypes[index[0]][index[1]];
+			local a = g[this.Math.rand(0, g.len() - 1)];
 			local f = this.new("scripts/factions/noble_faction");
 			local banner;
 
 			do
 			{
-				banner = this.Math.rand(1, 10);
+				banner = this.Math.rand(2, 10);
 			}
 			while (banners.find(banner) != null);
 
@@ -410,11 +403,6 @@ this.faction_manager <- {
 
 		foreach( i, n in _nobleHouses )
 		{
-			if (military.len() == 0)
-			{
-				break;
-			}
-
 			n.addSettlement(military[0]);
 			military.remove(0);
 			local other;
@@ -510,50 +498,43 @@ this.faction_manager <- {
 		{
 			if (this.m.Factions[i] == null)
 			{
-				continue
 			}
-
-			for( local j = 0; j < this.m.Factions.len(); j = ++j )
+			else
 			{
-				if ((j == 1 || j == 2) && (this.m.Factions[i].getType() == this.Const.FactionType.Settlement || this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse))
+				for( local j = 0; j < this.m.Factions.len(); j = ++j )
 				{
-					this.m.Factions[i].addAlly(j);
+					if ((j == 1 || j == 2) && (this.m.Factions[i].getType() == this.Const.FactionType.Settlement || this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse))
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[j] == null)
+					{
+						continue;
+					}
+					else if (i == j || this.m.Factions[i].getType() == this.m.Factions[j].getType())
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.NobleHouse)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
 				}
-				else if (this.m.Factions[j] == null)
-				{
-					continue;
-				}
-				else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
-				{
-					this.m.Factions[i].addAlly(j);
-				}
-				else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
-				{
-					this.m.Factions[i].addAlly(j);
-				}
-				else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.NobleHouse)
-				{
-					this.m.Factions[i].addAlly(j);
-				}
-				else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
-				{
-					this.m.Factions[i].addAlly(j);
-				}
-				else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
-				{
-					this.m.Factions[i].addAlly(j);
-				}
-				else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead && this.m.Factions[j].getType() == this.Const.FactionType.Zombies)
-				{
-					this.m.Factions[i].addAlly(j);
-				}
-				else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
-				{
-					this.m.Factions[i].addAlly(j);
-				}
-			}
 
-			this.m.Factions[i].updatePlayerRelation();
+				this.m.Factions[i].updatePlayerRelation();
+			}
 		}
 	}
 
@@ -612,183 +593,6 @@ this.faction_manager <- {
 			}
 		}
 	}
-
-
-
-	function makeGoblinsFriendlyToPlayer()
-	{
-		for( local i = 0; i < this.m.Factions.len(); i = ++i )
-		{
-			if (this.m.Factions[i] == null)
-			{
-			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.Goblins)
-			{
-				if (this.m.Factions[i].getPlayerRelation() < 30)
-				{
-					this.m.Factions[i].setPlayerRelation(30.0);
-					this.logInfo("Making goblins friendly");
-				}
-			}
-		}
-	}
-
-	function makeBanditsFriendlyToPlayer()
-	{
-		for( local i = 0; i < this.m.Factions.len(); i = ++i )
-		{
-			if (this.m.Factions[i] == null)
-			{
-			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.Bandits)
-			{
-				if (this.m.Factions[i].getPlayerRelation() < 30)
-				{
-					this.m.Factions[i].setPlayerRelation(30.0);
-					this.logInfo("Making bandits friendly");
-				}
-			}
-		}
-	}
-
-	function makeZombiesFriendlyToPlayer()
-	{
-		for( local i = 0; i < this.m.Factions.len(); i = ++i )
-		{
-			if (this.m.Factions[i] == null)
-			{
-			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies)
-			{
-				if (this.m.Factions[i].getPlayerRelation() < 30)
-				{
-					this.m.Factions[i].setPlayerRelation(30.0);
-					this.logInfo("Making zombies friendly");
-				}
-			}
-		}
-	}
-
-	function makeUndeadFriendlyToPlayer()
-	{
-		for( local i = 0; i < this.m.Factions.len(); i = ++i )
-		{
-			if (this.m.Factions[i] == null)
-			{
-			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.Undead)
-			{
-				if (this.m.Factions[i].getPlayerRelation() < 30)
-				{
-					this.m.Factions[i].setPlayerRelation(30.0);
-					this.logInfo("Making undead friendly");
-				}
-			}
-		}
-	}
-
-	function makeBeastsFriendlyToPlayer()
-	{
-		for( local i = 0; i < this.m.Factions.len(); i = ++i )
-		{
-			if (this.m.Factions[i] == null)
-			{
-			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.Beasts)
-			{
-				if (this.m.Factions[i].getPlayerRelation() < 30)
-				{
-					this.m.Factions[i].setPlayerRelation(30.0);
-					this.logInfo("Making beasts friendly");
-				}
-			}
-		}
-	}
-
-	function makeNoblesUnfriendlyToPlayer()
-	{
-		for( local i = 0; i < this.m.Factions.len(); i = ++i )
-		{
-			if (this.m.Factions[i] == null)
-			{
-			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse)
-			{
-				if (this.m.Factions[i].getPlayerRelation() > -80)
-				{
-					this.m.Factions[i].setPlayerRelation(-80.0);
-					this.logInfo("Making nobles unfriendly");
-				}
-			}
-		}
-	}
-
-	function makeRandomNoblesFriendlyToPlayer()
-	{
-		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
-		local randomHouseID = nobleHouses[this.Math.rand(0, nobleHouses.len() - 1)].getID();
-	//	local camp = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse).getNearestSettlement(this.World.State.getPlayer().getTile());
-	//	local nearestHouseID = nearestSettlement.getOwner().getID();
-	//	local destination = this.WeakTableRef(camp);
-		local settlements = this.World.EntityManager.getSettlements();
-		foreach( s in settlements )
-		{
-		if (s.getOwner() != null && s.getOwner().getID() == randomHouseID && s.isMilitary())
-			{
-			s.setDiscovered(true);
-			this.World.uncoverFogOfWar(s.getTile().Pos, 500.0);
-			}
-		}
-
-	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(80.0); 
-		this.logInfo("Making a noble house friendly");
-
-	}
-
-	function makeRandomNoblesUnfriendlyToPlayer()
-	{
-		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
-		local randomHouseID = nobleHouses[this.Math.rand(0, nobleHouses.len() - 1)].getID();
-	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-80.0); 
-		this.logInfo("Making a noble house unfriendly");
-	}
-
-
-	function makeSettlementsUnfriendlyToPlayer()
-	{
-		for( local i = 0; i < this.m.Factions.len(); i = ++i )
-		{
-			if (this.m.Factions[i] == null)
-			{
-			}
-			else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement)
-			{
-				if (this.m.Factions[i].getPlayerRelation() > -80)
-				{
-					this.m.Factions[i].setPlayerRelation(-80.0);
-					this.logInfo("Making settlement unfriendly");
-				}
-			}
-		}
-	}
-
-		function makeRandomSettlementFriendlyToPlayer()
-	{
-		local settlements = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.Settlement);
-		local randomSettlementID = settlements[this.Math.rand(0, settlements.len() - 1)].getID();
-	    this.World.FactionManager.getFaction(randomSettlementID).setPlayerRelation(50.0); 
-		this.logInfo("Making a settlement friendly");
-		local settlements = this.World.EntityManager.getSettlements();
-		foreach( s in settlements )
-		{
-		if (s.getOwner() != null && s.getOwner().getID() == randomHsettlementID)
-			{
-			s.setDiscovered(true);
-			this.World.uncoverFogOfWar(s.getTile().Pos, 500.0);
-			}
-		}
-	}
-
 
 	function onCombatFinished()
 	{
@@ -857,11 +661,11 @@ this.faction_manager <- {
 		{
 			if (GE.IsExtraLate)
 			{
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(55, 60) * this.World.getTime().SecondsPerDay;
+				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(100, 120) * this.World.getTime().SecondsPerDay;
 			}
 			else
 			{
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(50, 60) * this.World.getTime().SecondsPerDay;
+				GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(55, 65) * this.World.getTime().SecondsPerDay;
 			}
 
 			if (this.World.Assets.isIronman())
@@ -871,11 +675,11 @@ this.faction_manager <- {
 		}
 		else if (GE.NextPhaseTime <= this.Time.getVirtualTimeF())
 		{
-			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 100)
+			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 210)
 			{
 				this.logInfo("STARTING GREATER EVIL - WARNING PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Warning;
-				GE.NextPhaseTime = this.Time.getVirtualTimeF() + 30 * this.World.getTime().SecondsPerDay;
+				GE.NextPhaseTime = this.Time.getVirtualTimeF() + 20 * this.World.getTime().SecondsPerDay;
 
 				if (GE.Type == 0)
 				{
@@ -921,7 +725,7 @@ this.faction_manager <- {
 					}
 				}
 			}
-			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 80)
+			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 210)
 			{
 				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Live;
@@ -985,7 +789,7 @@ this.faction_manager <- {
 					GE.LastType = GE.Type;
 					GE.Type = this.Const.World.GreaterEvilType.Random;
 					GE.Phase = this.Const.World.GreaterEvilPhase.NotSet;
-					GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(50, 60) * this.World.getTime().SecondsPerDay;
+					GE.NextPhaseTime = this.Time.getVirtualTimeF() + this.Math.rand(25, 35) * this.World.getTime().SecondsPerDay;
 					this.World.Statistics.getFlags().increment("GreaterEvilsDefeated");
 				}
 			}
@@ -999,7 +803,7 @@ this.faction_manager <- {
 
 		foreach( n in nobles )
 		{
-			if (n.getSettlements().len() >= 1)
+			if (n.getSettlements().len() >= 2)
 			{
 				feuding = ++feuding;
 			}
@@ -1079,12 +883,7 @@ this.faction_manager <- {
 		this.m.LastRelationUpdateDay = _in.readU32();
 		this.m.GreaterEvil.Type = _in.readU8();
 		this.m.GreaterEvil.LastType = _in.readU8();
-
-		if (_in.getMetaData().getVersion() >= 17)
-		{
-			this.m.GreaterEvil.TypesUsed = _in.readU32();
-		}
-
+		this.m.GreaterEvil.TypesUsed = _in.readU32();
 		this.m.GreaterEvil.Phase = _in.readU8();
 		this.m.GreaterEvil.NextPhaseTime = _in.readF32();
 		this.m.GreaterEvil.Strength = _in.readF32();

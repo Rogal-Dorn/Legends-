@@ -1069,8 +1069,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.Time.setVirtualTime(0);
 		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
-		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
-		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
@@ -1115,7 +1113,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		this.World.FactionManager.createFactions(this.m.CampaignSettings);
+		this.World.FactionManager.createFactions();
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
 		this.m.Assets.init();
@@ -1253,8 +1251,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.logInfo(k + " = " + v);
 		}
 		this.m.CampaignSettings = _settings;
-		this.m.DebugMap = _settings.Debug;
-		this.m.Campaign = _settings.Campaign;
 	}
 
 	function enterLocation( _location )

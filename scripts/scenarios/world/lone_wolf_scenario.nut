@@ -21,7 +21,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		local bro;
 		bro = roster.create("scripts/entity/tactical/player");
 		bro.setStartValuesEx([
-			"hedge_knight_background"
+			"legend_crusader_commander_background"
 		]);
 		bro.getBackground().m.RawDescription = "A wandering hedge knight, you were a veteran of jousting and sparring tournaments. You were also a veteran of victory. Tis a scary thought for many, but if it were anything at all that turned your eye toward mercenary work it was boredom. Outwardly you state it is for the coin, but a part of you knows it\'s also for the company.";
 		bro.getBackground().buildDescription(true);

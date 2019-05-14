@@ -36,27 +36,14 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"caravan_hand_background"
+			"legend_donkey"
 		]);
-		bros[0].getBackground().m.RawDescription = "A daytaler, mason, miller, %name% had done it all, passing from task to task with no dallying in making a one of them a true vocation. You weren\'t sure if he was long to stay as a caravan hand either, but when asked to turn to mercenary work he had no problem agreeing to that...";
 		bros[0].setPlaceInFormation(3);
-		bros[0].m.Talents = [];
-		local talents = bros[0].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 2;
-		talents[this.Const.Attributes.MeleeDefense] = 1;
-		talents[this.Const.Attributes.Fatigue] = 1;
 		bros[1].setStartValuesEx([
-			"caravan_hand_background"
+			"legend_trader_commander_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance was little more than a drunken miscreant. But you watched as he fought off three would-be muggers. They managed to take his boots in the end, sure, but they couldn\'t truly defeat his spirit. Impressed, you took him on as a caravan hand.";
 		bros[1].setPlaceInFormation(4);
-		bros[1].m.Talents = [];
-		local talents = bros[1].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 2;
-		talents[this.Const.Attributes.MeleeDefense] = 1;
-		talents[this.Const.Attributes.Hitpoints] = 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));

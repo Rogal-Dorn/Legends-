@@ -160,7 +160,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeNetsLookupMap;
 			break;
 		default:
-			return  gt.Const.Perks.LookupMap;
+			return gt.Const.Perks.TreeTemplateLookupMap;
 	}
 	return null;
 };
@@ -299,7 +299,7 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeNets;
 			break;
 		default:
-			return  gt.Const.Perks.Perks;
+			return gt.Const.Perks.PerksTreeTemplate;
 	}
 	return null;
 };

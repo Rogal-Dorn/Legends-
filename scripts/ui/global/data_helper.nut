@@ -568,7 +568,7 @@ this.data_helper <- {
 
 	function convertPerksToUIData()
 	{
-		return this.Const.Perks.Perks;
+		return Const.Perks.PerksTreeTemplate;
 	}
 
 	function convertCombatResultRosterToUIData()

@@ -37,13 +37,8 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"farmhand_background"
+			"legend_noble_commander_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "%name% is a farmer\'s son, and presumably wishes to be the father of his own son at some point. For now, he\'s with you which is quite a regrettable clash between dreams and reality.";
-		bros[0].improveMood(3.0, "Has recently fallen in love");
-		local items = bros[0].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/pitchfork"));
 		bros[1].setStartValuesEx([
 			"farmhand_background"
 		]);
