@@ -153,7 +153,7 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		{
 			items.equip(this.new("scripts/items/armor/thick_tunic"));
 		}
-		else if (r == 2)
+		else
 		{
 			items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
@@ -164,7 +164,7 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		{
 			items.equip(this.new("scripts/items/helmets/hood"));
 		}
-		else if (r == 0)
+		else
 		{
 			items.equip(this.new("scripts/items/helmets/hunters_hat"));
 		}
