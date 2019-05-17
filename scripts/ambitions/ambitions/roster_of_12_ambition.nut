@@ -14,14 +14,14 @@ this.roster_of_12_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 	function onUpdateScore()
 	{
-		if (this.World.getPlayerRoster().getSize() >= 12)
+		if (this.World.Assets.getOrigin().getID() == "scenario.militia")
 		{
-			this.m.IsDone = true;
 			return;
 		}
 
-		if (this.World.Assets.getOrigin().getID() == "scenario.militia")
+		if (this.World.getPlayerRoster().getSize() >= 12)
 		{
+			this.m.IsDone = true;
 			return;
 		}
 

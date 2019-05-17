@@ -57,7 +57,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
-		if (this.getAgent().getIntentions().IsRecuperating)
+		if (this.getAgent().getIntentions().IsDefendingPosition || this.getAgent().getIntentions().IsRecuperating)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}

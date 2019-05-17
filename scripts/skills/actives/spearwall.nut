@@ -1,6 +1,5 @@
 this.spearwall <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsSpent = false,
 		BaseAttackName = "Thrust"
 	},
 	function create()
@@ -69,7 +68,7 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || !this.m.IsSpent && this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && !this.getContainer().hasSkill("effects.spearwall");
 	}
 
 	function onAfterUpdate( _properties )
@@ -84,25 +83,15 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.m.IsSpent)
+		this.m.Container.add(this.new("scripts/skills/effects/spearwall_effect"));
+
+		if (!_user.isHiddenToPlayer())
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/spearwall_effect"));
-			this.m.IsSpent = true;
-
-			if (!_user.isHiddenToPlayer())
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Spearwall");
-			}
-
-			return true;
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Spearwall");
 		}
 
+		return true;
 		return false;
-	}
-
-	function onTurnStart()
-	{
-		this.m.IsSpent = false;
 	}
 
 	function onRemoved()

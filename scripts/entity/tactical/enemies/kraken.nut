@@ -105,6 +105,12 @@ this.kraken <- this.inherit("scripts/entity/tactical/actor", {
 			loot.drop(_tile);
 			loot = this.new("scripts/items/misc/kraken_tentacle_item");
 			loot.drop(_tile);
+
+			if (!this.Tactical.State.isScenarioMode() && this.World.Assets.getExtraLootChance() > 0)
+			{
+				loot = this.new("scripts/items/misc/kraken_horn_plate_item");
+				loot.drop(_tile);
+			}
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);

@@ -367,7 +367,7 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 
 		if (candidates_minstrel.len() != 0)
 		{
-			this.m.Minstrel = candidates_thief[this.Math.rand(0, candidates_minstrel.len() - 1)];
+			this.m.Minstrel = candidates_minstrel[this.Math.rand(0, candidates_minstrel.len() - 1)];
 		}
 
 		if (candidates_butcher.len() != 0)

@@ -61,7 +61,7 @@ this.build_barbarian_camp_action <- this.inherit("scripts/factions/faction_actio
 		{
 			local tile = this.getTileToSpawnLocation(this.Const.Factions.BuildCampTries, [
 				this.Const.World.TerrainType.Mountains
-			], 12, 35, 1000, 7, 7, null, 0.75);
+			], 13, 35, 1000, 7, 7, null, 0.75);
 
 			if (tile != null)
 			{

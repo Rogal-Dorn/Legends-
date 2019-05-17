@@ -99,12 +99,18 @@ this.ai_adrenaline <- this.inherit("scripts/ai/tactical/behavior", {
 		local additionalScore = 0.0;
 		local actingBeforeMe = 0;
 		local stillToAct = 0;
+		local reachable = 0;
 
 		foreach( target in targets )
 		{
 			if (target.isNonCombatant())
 			{
 				continue;
+			}
+
+			if (target.getTile().getDistanceTo(myTile) <= _entity.getIdealRange() + (apRequiredForAttack <= 4 ? 2 : 1))
+			{
+				reachable = ++reachable;
 			}
 
 			if (target.isTurnDone() && target.getCurrentProperties().IsStunned || target.getMoraleState() == this.Const.MoraleState.Fleeing)
@@ -124,7 +130,7 @@ this.ai_adrenaline <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
-		if (actingBeforeMe == 0 || isEngaged && actingBeforeMe <= targets.len() / 6)
+		if (actingBeforeMe == 0 || isEngaged && actingBeforeMe <= targets.len() / 6 || !isEngaged && reachable == 0)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}

@@ -83,14 +83,14 @@ this.named_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function randomizeValues()
 	{
-		if (this.Math.rand(1, 100) <= 66)
+		if (this.m.StaminaModifier <= -10 && this.Math.rand(1, 100) <= 33)
 		{
-			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 130) * 0.01) * 1.0;
-			this.m.ConditionMax = this.m.Condition;
+			this.m.StaminaModifier = this.Math.floor(this.m.StaminaModifier * this.Math.rand(70, 90) * 0.01);
 		}
 		else
 		{
-			this.m.StaminaModifier = this.Math.round(this.m.StaminaModifier * this.Math.rand(70, 90) * 0.01);
+			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 130) * 0.01) * 1.0;
+			this.m.ConditionMax = this.m.Condition;
 		}
 	}
 

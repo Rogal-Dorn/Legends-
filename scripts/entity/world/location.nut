@@ -228,6 +228,14 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 	function getTooltip()
 	{
+		if (this.m.IsSpawningDefenders && this.m.DefenderSpawnList != null && this.m.Resources != 0)
+		{
+			if (!(this.m.Troops.len() != 0 && this.m.DefenderSpawnDay != 0 && this.World.getTime().Days - this.m.DefenderSpawnDay < 10))
+			{
+				this.createDefenders();
+			}
+		}
+
 		local ret = [
 			{
 				id = 1,

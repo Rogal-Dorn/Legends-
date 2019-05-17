@@ -38,6 +38,16 @@ this.split_nose_injury <- this.inherit("scripts/skills/injury/injury", {
 		return ret;
 	}
 
+	function isValid( _actor )
+	{
+		if (_actor.getSkills().hasSkill("injury.missing_nose"))
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 	function onUpdate( _properties )
 	{
 		this.injury.onUpdate(_properties);

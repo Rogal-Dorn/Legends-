@@ -115,7 +115,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (this.Math.rand(1, 100) <= 35)
 		{
 			local weapons = [
 				"weapons/throwing_axe",

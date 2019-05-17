@@ -76,8 +76,8 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 				3
 			],
 			Bravery = [
-				5,
-				7
+				13,
+				10
 			],
 			Stamina = [
 				5,

@@ -108,7 +108,8 @@ gt.Const.TipOfTheDay <- [
 	"Higher renown will unlock more difficult contracts and better pay.",
 	"If your plan can fail with bad luck, maybe it isn\'t good enough of a plan.",
 	"Do the job. Survive. Get paid.",
-	"If a character waits their turn, their position in the turn order of the next round is determined with a penalty of 25% to Initiative."
+	"If a character waits their turn, their position in the turn order of the next round is determined with a penalty of 25% to Initiative.",
+	"A 95% chance to hit is also a 5% chance to miss."
 ];
 gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_01.jpg",

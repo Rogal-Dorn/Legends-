@@ -532,7 +532,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	Swordmaster = {
 		ID = this.Const.EntityType.Swordmaster,
-		Variant = 1,
+		Variant = 2,
 		Strength = 40,
 		Cost = 40,
 		Row = 0,
@@ -542,7 +542,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	HedgeKnight = {
 		ID = this.Const.EntityType.HedgeKnight,
-		Variant = 1,
+		Variant = 2,
 		Strength = 40,
 		Cost = 40,
 		Row = 0,
@@ -552,7 +552,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	MasterArcher = {
 		ID = this.Const.EntityType.MasterArcher,
-		Variant = 1,
+		Variant = 2,
 		Strength = 40,
 		Cost = 40,
 		Row = 1,

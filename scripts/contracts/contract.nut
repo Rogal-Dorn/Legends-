@@ -1005,7 +1005,7 @@ this.contract <- {
 
 	function getReputationToPaymentMult()
 	{
-		local r = this.Math.minf(2.7, this.Math.maxf(1.3, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.39)));
+		local r = this.Math.minf(2.7, this.Math.maxf(1.35, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.39)));
 		return r * this.Const.Difficulty.PaymentMult[this.World.Assets.getEconomicDifficulty()];
 	}
 

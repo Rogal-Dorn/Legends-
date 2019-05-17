@@ -55,7 +55,7 @@ this.scenario_test_bed <- this.inherit("scripts/scenarios/tactical/scenario_temp
 			local r = this.Math.rand(1, 3);
 			items.equip(this.new("scripts/items/armor/legendary/ijirok_armor"));
 			items.equip(this.new("scripts/items/helmets/legendary/ijirok_helmet"));
-			items.equip(this.new("scripts/items/weapons/winged_mace"));
+			items.equip(this.new("scripts/items/weapons/battle_whip"));
 			local r = this.Math.rand(0, 2);
 		}
 
