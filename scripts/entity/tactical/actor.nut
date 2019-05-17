@@ -1603,24 +1603,42 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 					}
 				}
 
-				if (potentialInjuries.len() != 0)
+				local appliedInjury = false;
+
+				while (potentialInjuries.len() != 0)
 				{
-					local injury = this.new("scripts/skills/" + potentialInjuries[this.Math.rand(0, potentialInjuries.len() - 1)]);
-					this.m.Skills.add(injury);
+					local r = this.Math.rand(0, potentialInjuries.len() - 1);
+					local injury = this.new("scripts/skills/" + potentialInjuries[r]);
 
-					if (this.isPlayerControlled() && this.isKindOf(this, "player"))
+					if (injury.isValid(this))
 					{
-						this.worsenMood(this.Const.MoodChange.Injury, "Suffered an injury");
+						this.m.Skills.add(injury);
+
+						if (this.isPlayerControlled() && this.isKindOf(this, "player"))
+						{
+							this.worsenMood(this.Const.MoodChange.Injury, "Suffered an injury");
+						}
+
+						if (this.isPlayerControlled() || !this.isHiddenToPlayer())
+						{
+							this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage and suffers " + injury.getNameOnly() + "!");
+						}
+
+						appliedInjury = true;
+						break;
 					}
-
-					if (this.isPlayerControlled() || !this.isHiddenToPlayer())
+					else
 					{
-						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage and suffers " + injury.getNameOnly() + "!");
+						potentialInjuries.remove(r);
 					}
 				}
-				else if (damage > 0 && !this.isHiddenToPlayer())
+
+				if (!appliedInjury)
 				{
-					this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage");
+					if (damage > 0 && !this.isHiddenToPlayer())
+					{
+						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage");
+					}
 				}
 			}
 			else if (damage > 0 && !this.isHiddenToPlayer())

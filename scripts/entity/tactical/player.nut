@@ -2514,7 +2514,27 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return null;
 		}
 
-		local injury = this.new("scripts/skills/" + candidates[this.Math.rand(0, candidates.len() - 1)]);
+		local injury;
+
+		while (candidates.len() != 0)
+		{
+			local r = this.Math.rand(0, candidates.len() - 1);
+			injury = this.new("scripts/skills/" + candidates[r]);
+
+			if (!injury.isValid(this))
+			{
+				candidates.remove(r);
+				injury = null;
+				continue;
+			}
+
+			break;
+		}
+
+		if (injury == null)
+		{
+			return null;
+		}
 
 		if (_isOutOfCombat)
 		{

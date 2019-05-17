@@ -187,7 +187,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 
 					loot.drop(_tile);
 
-					if (this.Math.rand(1, 100) <= 15)
+					if (this.Math.rand(1, 100) <= 20)
 					{
 						local food = this.new("scripts/items/supplies/black_marsh_stew_item");
 						food.randomizeAmount();

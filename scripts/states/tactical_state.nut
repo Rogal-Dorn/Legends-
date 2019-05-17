@@ -2365,10 +2365,12 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 					if (bro.getSkills().hasSkill("effects.charmed"))
 					{
 						local agent = bro.getSkills().getSkillByID("effects.charmed").m.OriginalAgent;
+						agent.setUseHeat(true);
 						agent.getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 1.0;
 					}
 					else
 					{
+						bro.getAIAgent().setUseHeat(true);
 						bro.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 1.0;
 					}
 

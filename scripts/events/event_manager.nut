@@ -104,7 +104,7 @@ this.event_manager <- {
 
 	function canFireEvent( _ignoreEvaluating = false )
 	{
-		if (this.World.State.getMenuStack().hasBacksteps() || this.LoadingScreen != null && (this.LoadingScreen.isAnimating() || this.LoadingScreen.isVisible()))
+		if (this.World.State.getMenuStack().hasBacksteps() || this.LoadingScreen != null && (this.LoadingScreen.isAnimating() || this.LoadingScreen.isVisible()) || this.World.State.m.EventScreen.isVisible() || this.World.State.m.EventScreen.isAnimating())
 		{
 			return false;
 		}

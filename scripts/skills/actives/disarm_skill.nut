@@ -27,7 +27,7 @@ this.disarm_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
 		this.m.DirectDamageMult = 0.0;
 		this.m.HitChanceBonus = -15;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;

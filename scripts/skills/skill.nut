@@ -565,15 +565,19 @@ this.skill <- {
 		return true;
 	}
 
-	function use( _targetTile )
+	function use( _targetTile, _forFree = false )
 	{
-		if (!this.isAffordable() || !this.isUsable())
+		if (!_forFree && !this.isAffordable() || !this.isUsable())
 		{
 			return false;
 		}
 
 		local user = this.m.Container.getActor();
-		this.logDebug(user.getName() + " uses skill " + this.getName());
+
+		if (!_forFree)
+		{
+			this.logDebug(user.getName() + " uses skill " + this.getName());
+		}
 
 		if (this.isTargeted())
 		{
@@ -621,8 +625,12 @@ this.skill <- {
 		}
 
 		this.spawnOverlay(user, _targetTile);
-		user.setActionPoints(user.getActionPoints() - this.getActionPointCost() - user.getCurrentProperties().AdditionalActionPointCost);
-		user.setFatigue(user.getFatigue() + this.getFatigueCost());
+
+		if (!_forFree)
+		{
+			user.setActionPoints(user.getActionPoints() - this.getActionPointCost() - user.getCurrentProperties().AdditionalActionPointCost);
+			user.setFatigue(user.getFatigue() + this.getFatigueCost());
+		}
 
 		if (this.m.Item != null && !this.m.Item.isNull())
 		{
@@ -634,54 +642,7 @@ this.skill <- {
 
 	function useForFree( _targetTile )
 	{
-		if (!this.m.IsUsable)
-		{
-			return false;
-		}
-
-		local user = this.m.Container.getActor();
-
-		if (this.isTargeted())
-		{
-			if (this.m.IsVisibleTileNeeded && !_targetTile.IsVisibleForEntity)
-			{
-				return false;
-			}
-
-			if (!this.onVerifyTarget(user.getTile(), _targetTile))
-			{
-				return false;
-			}
-
-			local d = user.getTile().getDistanceTo(_targetTile);
-			local levelDifference = user.getTile().Level - _targetTile.Level;
-
-			if (d < this.m.MinRange || !this.m.IsRanged && d > this.getMaxRange())
-			{
-				return false;
-			}
-
-			if (this.m.IsRanged && d > this.getMaxRange() + this.Math.max(0, levelDifference))
-			{
-				return false;
-			}
-		}
-
-		++this.Const.SkillCounter;
-
-		if (this.m.SoundOnUse.len() != 0)
-		{
-			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill * this.m.SoundVolume, user.getPos());
-		}
-
-		this.spawnOverlay(user, _targetTile);
-
-		if (this.m.Item != null && !this.m.Item.isNull())
-		{
-			this.m.Item.onUse(this);
-		}
-
-		return this.onUse(user, _targetTile);
+		return this.use(_targetTile, true);
 	}
 
 	function getExpectedDamage( _target )

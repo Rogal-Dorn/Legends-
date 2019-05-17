@@ -445,7 +445,7 @@ this.ai_defend <- this.inherit("scripts/ai/tactical/behavior", {
 					{
 						local adjacentTile = t.Tile.getNextTile(i);
 
-						if (dirs[i] >= 8 && !adjacentTile.IsEmpty && adjacentTile.getEntity().getID() != _entity.getID())
+						if (dirs[i] >= 8 && !adjacentTile.IsEmpty && adjacentTile.getEntity().getID() != _entity.getID() && (!adjacentTile.IsOccupiedByActor || !this.isRangedUnit(adjacentTile.getEntity())))
 						{
 							coverBonus = coverBonus + dirs[i] / targets.len() * this.Const.AI.Behavior.DefendSeekCoverMult;
 						}

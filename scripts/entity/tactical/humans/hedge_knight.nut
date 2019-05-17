@@ -58,11 +58,6 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		if (this.Math.rand(1, 100) <= 5)
-		{
-			this.makeMiniboss();
-		}
-
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
 			local weapons = [

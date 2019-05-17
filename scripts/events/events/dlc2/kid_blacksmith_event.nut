@@ -333,7 +333,7 @@ this.kid_blacksmith_event <- this.inherit("scripts/events/event", {
 
 		foreach( b in brothers )
 		{
-			if (this.bro.getSkills().hasSkill("trait.player"))
+			if (b.getSkills().hasSkill("trait.player"))
 			{
 				continue;
 			}

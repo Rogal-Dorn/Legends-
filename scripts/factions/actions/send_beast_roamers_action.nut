@@ -407,7 +407,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				party.setDescription("A malevolent old crone, said to lure and abduct little children to make broth and concoctions out of, strike sinister pacts with villagers, and weave curses.");
 				party.setSlowerAtNight(false);
 				party.setUsingGlobalVision(false);
-				party.setLooting(true);
+				party.setLooting(false);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setAllTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Mountains, false);

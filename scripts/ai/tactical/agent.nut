@@ -39,6 +39,11 @@ this.agent <- {
 		this.m.IsFinished = _f;
 	}
 
+	function setUseHeat( _f )
+	{
+		this.m.IsUsingHeat = _f;
+	}
+
 	function getID()
 	{
 		return this.m.ID;

@@ -213,7 +213,7 @@ this.injury <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function isValid()
+	function isValid( _actor )
 	{
 		return true;
 	}

@@ -2467,7 +2467,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.Assets.refillAmmo();
 			this.World.Assets.updateAchievements();
 			this.World.Assets.checkAmbitionItems();
-			this.World.Ambitions.resetTime(false, 2.0);
+			this.World.Ambitions.resetTime(false, 3.0);
 			this.updateTopbarAssets();
 			this.World.State.getPlayer().updateStrength();
 			this.m.WorldTownScreen.clear();

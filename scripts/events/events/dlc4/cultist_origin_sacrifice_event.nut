@@ -162,7 +162,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 							this.List.push({
 								id = 10,
 								icon = skill.getIcon(),
-								text = bro.getName() + " is now a " + skill.getName()
+								text = bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
 							});
 						}
 					}
@@ -227,7 +227,6 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 		brothers.remove(r);
 		r = this.Math.rand(0, this.Math.min(2, brothers.len() - 1));
 		this.m.Sacrifice2 = brothers[r];
-		brothers.remove(r);
 		this.m.Score = 75;
 	}
 

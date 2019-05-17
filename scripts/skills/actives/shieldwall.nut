@@ -1,7 +1,5 @@
 this.shieldwall <- this.inherit("scripts/skills/skill", {
-	m = {
-		IsSpent = false
-	},
+	m = {},
 	function create()
 	{
 		this.m.ID = "actives.shieldwall";
@@ -78,7 +76,7 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.m.IsSpent && this.skill.isUsable();
+		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.shieldwall");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -88,25 +86,15 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.m.IsSpent)
+		this.m.Container.add(this.new("scripts/skills/effects/shieldwall_effect"));
+
+		if (!_user.isHiddenToPlayer())
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/shieldwall_effect"));
-			this.m.IsSpent = true;
-
-			if (!_user.isHiddenToPlayer())
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Shieldwall");
-			}
-
-			return true;
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Shieldwall");
 		}
 
+		return true;
 		return false;
-	}
-
-	function onTurnStart()
-	{
-		this.m.IsSpent = false;
 	}
 
 	function onRemoved()

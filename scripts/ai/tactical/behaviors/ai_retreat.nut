@@ -264,7 +264,7 @@ this.ai_retreat <- this.inherit("scripts/ai/tactical/behavior", {
 			{
 				foreach( opponent in instances[i] )
 				{
-					if (myTile.getDistanceTo(opponent.getTile()) <= 10 && !this.isKindOf(opponent, "alp"))
+					if (myTile.getDistanceTo(opponent.getTile()) <= 20 && !this.isKindOf(opponent, "alp"))
 					{
 						opponents.push(opponent);
 					}
@@ -296,16 +296,19 @@ this.ai_retreat <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
+		local ap = _entity.getActionPoints();
+
 		for( local y = 0; y < mapSize.Y; y = ++y )
 		{
 			local tile = this.Tactical.getTileSquare(mapSize.X - 1, y);
 
 			if (tile.IsEmpty)
 			{
+				local d = myTile.getDistanceTo(tile);
 				targets.push({
 					Tile = tile,
-					Score = myTile.getDistanceTo(tile),
-					Dir = dirs[myTile.getDirectionTo(tile)]
+					Score = d * 2 <= ap ? 0 : d,
+					Dir = d * 2 <= ap ? 0 : dirs[myTile.getDirectionTo(tile)]
 				});
 			}
 		}
@@ -316,10 +319,11 @@ this.ai_retreat <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (tile.IsEmpty)
 			{
+				local d = myTile.getDistanceTo(tile);
 				targets.push({
 					Tile = tile,
-					Score = myTile.getDistanceTo(tile),
-					Dir = dirs[myTile.getDirectionTo(tile)]
+					Score = d * 2 <= ap ? 0 : d,
+					Dir = d * 2 <= ap ? 0 : dirs[myTile.getDirectionTo(tile)]
 				});
 			}
 		}
@@ -330,10 +334,11 @@ this.ai_retreat <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (tile.IsEmpty)
 			{
+				local d = myTile.getDistanceTo(tile);
 				targets.push({
 					Tile = tile,
-					Score = myTile.getDistanceTo(tile),
-					Dir = dirs[myTile.getDirectionTo(tile)]
+					Score = d * 2 <= ap ? 0 : d,
+					Dir = d * 2 <= ap ? 0 : dirs[myTile.getDirectionTo(tile)]
 				});
 			}
 		}
@@ -344,10 +349,11 @@ this.ai_retreat <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (tile.IsEmpty)
 			{
+				local d = myTile.getDistanceTo(tile);
 				targets.push({
 					Tile = tile,
-					Score = myTile.getDistanceTo(tile),
-					Dir = dirs[myTile.getDirectionTo(tile)]
+					Score = d * 2 <= ap ? 0 : d,
+					Dir = d * 2 <= ap ? 0 : dirs[myTile.getDirectionTo(tile)]
 				});
 			}
 		}
@@ -384,6 +390,7 @@ this.ai_retreat <- this.inherit("scripts/ai/tactical/behavior", {
 			settings.ZoneOfControlCost = this.Const.AI.Behavior.ZoneOfControlAPPenalty * 4;
 			settings.AlliedFactions = _entity.getAlliedFactions();
 			settings.Faction = _entity.getFaction();
+			settings.HeatCost = this.getAgent().isUsingHeat() ? this.Const.AI.Behavior.EngageHeatCost : 0;
 
 			if (!navigator.findPath(myTile, target.Tile, settings, 0))
 			{

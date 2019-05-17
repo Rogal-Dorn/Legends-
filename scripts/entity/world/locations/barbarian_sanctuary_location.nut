@@ -12,7 +12,7 @@ this.barbarian_sanctuary_location <- this.inherit("scripts/entity/world/location
 		this.m.LocationType = this.Const.World.LocationType.Lair;
 		this.m.IsDespawningDefenders = false;
 		this.setDefenderSpawnList(this.Const.World.Spawn.Barbarians);
-		this.m.Resources = 350;
+		this.m.Resources = 325;
 		this.m.NamedWeaponsList = this.Const.Items.NamedBarbarianWeapons;
 		this.m.NamedArmorsList = this.Const.Items.NamedBarbarianArmors;
 		this.m.NamedHelmetsList = this.Const.Items.NamedBarbarianHelmets;

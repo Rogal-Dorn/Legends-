@@ -107,7 +107,7 @@ this.ambition_manager <- {
 			return false;
 		}
 
-		if (this.m.Thread == null && this.m.Selection == null && this.Time.getVirtualTimeF() - this.m.LastTime <= 4.0 * this.World.getTime().SecondsPerHour)
+		if (this.m.Thread == null && this.m.Selection == null && this.Time.getVirtualTimeF() - this.m.LastTime < 3.0 * this.World.getTime().SecondsPerHour)
 		{
 			return false;
 		}
@@ -156,7 +156,12 @@ this.ambition_manager <- {
 					this.World.TopbarAmbitionModule.setText(null);
 					this.setDelay(24);
 					++this.m.Completed;
+					this.m.LastTime = this.Time.getVirtualTimeF();
 				}
+			}
+			else
+			{
+				this.m.LastTime = this.Time.getVirtualTimeF();
 			}
 		}
 		else if (this.m.Selection == null)
@@ -176,10 +181,9 @@ this.ambition_manager <- {
 			if (this.World.Events.fire("event.choose_ambition"))
 			{
 				this.m.Selection = null;
+				this.m.LastTime = this.Time.getVirtualTimeF();
 			}
 		}
-
-		this.m.LastTime = this.Time.getVirtualTimeF();
 	}
 
 	function selectAmbitions()
