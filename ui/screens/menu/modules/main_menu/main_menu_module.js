@@ -115,28 +115,14 @@ MainMenuModule.prototype.createMainMenuButtons = function ()
     this.mButtonContainer.empty();
 
     // buttons
-    // var row = $('<div class="row"></div>');
-    // this.mButtonContainer.append(row);
-    // var buttonLayout = $('<div class="l-center"></div>');
-    // row.append(buttonLayout);
-    // var button = buttonLayout.createTextButton("New Campaign", function ()
-    // {
-    //     self.notifyBackendNewCampaignButtonPressed();
-    // }, '', 4);
-    // if (this.mIsDemoModus === true)
-    // {
-    //     button.attr('disabled', 'disabled');
-    // }
-
     var row = $('<div class="row"></div>');
     this.mButtonContainer.append(row);
     var buttonLayout = $('<div class="l-center"></div>');
     row.append(buttonLayout);
-    var button = buttonLayout.createTextButton("New Legends Campaign", function ()
+    var button = buttonLayout.createTextButton("New Campaign", function ()
     {
-        self.notifyBackendNewLegendCampaignButtonPressed();
+        self.notifyBackendNewCampaignButtonPressed();
     }, '', 4);
-    
     if (this.mIsDemoModus === true)
     {
         button.attr('disabled', 'disabled');
@@ -584,11 +570,6 @@ MainMenuModule.prototype.notifyBackendResumeButtonPressed = function ()
 MainMenuModule.prototype.notifyBackendNewCampaignButtonPressed = function ()
 {
     SQ.call(this.mSQHandle, 'onNewCampaignButtonPressed');
-};
-
-MainMenuModule.prototype.notifyBackendNewLegendCampaignButtonPressed = function ()
-{
-    SQ.call(this.mSQHandle, 'onNewLegendCampaignButtonPressed');
 };
 
 MainMenuModule.prototype.notifyBackendLoadCampaignButtonPressed = function ()
