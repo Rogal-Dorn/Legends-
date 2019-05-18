@@ -636,3 +636,29 @@ Fixes a lute perk skill causing a crash on load
 Fixes entice perk causing a crash on load 
 Hand to hand has a 5 damage minimum, so you can still slap even if you're weak or tired. 
 Added main menu logo 
+
+Beta 11 test 1
+updated to WotN 
+lone wolf is crusader
+militia is noble
+raiders is berserker
+rangers is rangers
+trader is trader
+warlock isn't in yet
+seer isn't in yet
+party isn't in yet
+increased variance on speed, opacity and size of clouds, rain, snow and leaves.
+increased worlmap camera pan speed
+reduced base barter impact and xp on delivery quests, also reduced difficulty of events during the delivery 
+beast hunter trophy trait effects drop rate of runestones 
+
+Beta 11 test 2
+updated to 1.3.0.16
+runed versions of all DLC items - 382 new images 
+fixes legendary difficulties 
+fixed mod perks not applying
+fixes crash on lone wolf start due to stash size
+lone wolf gets crusader gear 
+cultists get a warlock 
+barter skill is one tenth of previous value to align with DLC trader start
+

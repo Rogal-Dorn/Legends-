@@ -36,7 +36,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"cultist_background"
+			"legend_necro_commander_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "When %name% joined, he warmly called you captain, saying \"tis a proper manner to pursue the path into the black from whence we came\".";
 		bros[0].setPlaceInFormation(2);
