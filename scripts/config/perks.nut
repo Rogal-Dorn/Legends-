@@ -58,8 +58,8 @@ gt.Const.Perks.Perks <- [
 		{
 			ID = "perk.adrenaline",
 			Script = "scripts/skills/perks/perk_adrenalin",
-			Name = this.Const.Strings.PerkName.Adrenaline,
-			Tooltip = this.Const.Strings.PerkDescription.Adrenaline,
+			Name = this.Const.Strings.PerkName.Adrenalin,
+			Tooltip = this.Const.Strings.PerkDescription.Adrenalin,
 			Icon = "ui/perks/perk_37.png",
 			IconDisabled = "ui/perks/perk_37_sw.png"
 		},
