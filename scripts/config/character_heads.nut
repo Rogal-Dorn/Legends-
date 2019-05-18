@@ -442,7 +442,8 @@ gt.Const.Beards.Barber <- [
 	"14",
 	"15",
 	"16",
-	"17"
+	"17",
+	"18"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -461,11 +462,12 @@ gt.Const.Beards.All <- [
 	"14",
 	"15",
 	"16",
-	"17"
+	"17",
+	"18"
 ];
 
 gt.Const.Beards.Berserker <- [
-	"17",
+	"18",
 	"14"
 ];
 
@@ -495,7 +497,8 @@ gt.Const.Beards.Untidy <- [
 	"08",
 	"09",
 	"14",
-	"17"
+	"17",
+	"18"
 ];
 gt.Const.Beards.Raider <- [
 	"01",
