@@ -5,7 +5,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_crusader";
 		this.m.Name = "Holy Crusader";
-		this.m.Icon = "ui/backgrounds/background_60.png";
+		this.m.Icon = "ui/backgrounds/crusader.png";
 		this.m.HiringCost = 20000;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [
