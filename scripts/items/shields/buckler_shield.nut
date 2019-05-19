@@ -12,7 +12,7 @@ this.buckler_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Variant = 1;
 		this.updateVariant();
 		this.m.Value = 45;
-		this.m.MeleeDefense = 10;
+		this.m.MeleeDefense = 5;
 		this.m.RangedDefense = 5;
 		this.m.StaminaModifier = -4;
 		this.m.Condition = 16;
@@ -32,6 +32,7 @@ this.buckler_shield <- this.inherit("scripts/items/shields/shield", {
 	{
 		this.shield.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
+		this.addSkill(this.new("scripts/skills/effects/legend_buckler_effect"));
 	}
 
 });

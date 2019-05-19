@@ -68,6 +68,16 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 				P = 1.0,
 				S = "accessory/berserker_mushrooms_item"
 			});
+
+		if (this.Const.DLC.Wildmen)
+		{
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_cat_o_nine_tails"
+			});
+		}
+
 		}
 	}
 

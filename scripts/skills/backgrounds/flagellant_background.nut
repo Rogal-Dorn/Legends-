@@ -130,15 +130,38 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 2);
+		r = this.Math.rand(0, 4);
 
 		if (r == 1)
 		{
+
 			items.equip(this.new("scripts/items/weapons/wooden_flail"));
 		}
 		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
+		}
+		else if (r == 3)
+		{
+			if (this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+			}
+			else if (!this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
+			}
+		}
+		else if (r == 4)
+		{
+			if (this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/battle_whip"));
+			}
+			else if (!this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
+			}
 		}
 
 		r = this.Math.rand(1, 4);

@@ -149,7 +149,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
@@ -158,6 +158,28 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/weapons/dagger"));
+		}
+		else if (r == 2)
+		{
+			if (this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+			}
+			else if (!this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/knife"));
+			}
+		}
+		else if (r == 3)
+		{
+			if (this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+			}
+			else if (!this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/legend_shiv"));
+			}
 		}
 
 		r = this.Math.rand(0, 3);

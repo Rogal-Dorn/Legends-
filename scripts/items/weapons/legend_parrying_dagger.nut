@@ -30,7 +30,7 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 	function onEquip()
 	{
 		this.shield.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/shieldwall"));
+		this.addSkill(this.new("scripts/skills/effects/legend_parrying_dagger_effect"));
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
 	}
 

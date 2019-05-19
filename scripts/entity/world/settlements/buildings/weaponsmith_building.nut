@@ -258,6 +258,11 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/arming_sword"
 			},
 			{
+				R = 90,
+				P = 1.0,
+				S = "weapons/legend_parrying_dagger"
+			},
+			{
 				R = 50,
 				P = 1.0,
 				S = "weapons/arming_sword"
@@ -323,7 +328,7 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 		{
 			list.extend([
 				{
-					R = 60,
+					R = 50,
 					P = 1.0,
 					S = "weapons/two_handed_wooden_hammer"
 				},
@@ -338,9 +343,14 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 					S = "weapons/three_headed_flail"
 				},
 				{
-					R = 65,
+					R = 70,
 					P = 1.0,
 					S = "weapons/two_handed_flail"
+				},
+				{
+					R = 65,
+					P = 1.0,
+					S = "weapons/legend_reinforced_flail"
 				},
 				{
 					R = 60,
@@ -363,9 +373,19 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 					S = "weapons/goedendag"
 				},
 				{
+					R = 90,
+					P = 1.0,
+					S = "weapons/legend_military_goedendag"
+				},
+				{
 					R = 55,
 					P = 1.0,
 					S = "weapons/two_handed_mace"
+				},
+				{
+					R = 40,
+					P = 1.0,
+					S = "weapons/legend_two_handed_club"
 				},
 				{
 					R = 65,
@@ -376,6 +396,11 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 					R = 80,
 					P = 1.0,
 					S = "weapons/fencing_sword"
+				},
+				{
+					R = 90,
+					P = 1.0,
+					S = "weapons/legend_estoc"
 				},
 				{
 					R = 10,
@@ -413,6 +438,11 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 80,
 				P = 1.0,
 				S = "weapons/battle_whip"
+			});
+			list.push({
+				R = 70,
+				P = 1.0,
+				S = "weapons/legend_cat_o_nine_tails"
 			});
 		}
 
