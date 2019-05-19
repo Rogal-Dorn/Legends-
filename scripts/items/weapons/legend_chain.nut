@@ -21,7 +21,7 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 50;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 22.0;
-		this.m.ConditionMax = 322.0;
+		this.m.ConditionMax = 32.0;
 		this.m.StaminaModifier = -6;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 4;
