@@ -654,11 +654,25 @@ beast hunter trophy trait effects drop rate of runestones
 
 Beta 11 test 2
 updated to 1.3.0.16
-runed versions of all DLC items - 382 new images 
 fixes legendary difficulties 
 fixed mod perks not applying
-fixes crash on lone wolf start due to stash size
-lone wolf gets crusader gear 
-cultists get a warlock 
-barter skill is one tenth of previous value to align with DLC trader start
+fixes invisble runed DLC weapons - 382 new images
+fixes berserker beard clashing with barbarian beard 
+fixes crash on lone wolf start due to stash size, also gets crusader gear 
+cultists get a warlock - doesn't have a scythe yet  
+barter skill is roughly one tenth of previous value to align with DLC trader start
 
+
+Beta 11 test 3 
+fixes DLC backgrounds having the wrong icons 
+Adds Estoc, Two handed club, reinforced wooden flail, cat o nine tails, parrying dagger and military goedendag
+
+Known issues:
+Map configuration disabled
+starts not properly integrated yet
+party sizes not implemented yet
+seer and party aren't in, vala doesn't have a start
+the new perk isn't in yet
+slings aren't integrated 
+Some tooltips are incorrect
+berserker grants berserk perk, doesn't show on tree 
