@@ -109,7 +109,9 @@ gt.Const.Faces.AllHuman <- [
 	"bust_head_29",
 	"bust_head_30",
 	"bust_head_31",
-	"bust_head_32"
+	"bust_head_32",
+	"bust_head_50",
+	"bust_head_51"
 ];
 gt.Const.Faces.AllMale <- [
 	"bust_head_01",
@@ -129,11 +131,11 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_15",
 	"bust_head_16",
 	"bust_head_17",
-	"bust_head_18"
+	"bust_head_18",
+	"bust_head_19",
+	"bust_head_20"
 ];
 gt.Const.Faces.AllFemale <- [
-	"bust_head_19",
-	"bust_head_20",
 	"bust_head_21",
 	"bust_head_22",
 	"bust_head_23",
@@ -143,12 +145,14 @@ gt.Const.Faces.AllFemale <- [
 	"bust_head_27",
 	"bust_head_28",
 	"bust_head_29",
-	"bust_head_30"
+	"bust_head_30",
+	"bust_head_50",
+	"bust_head_51"
 ];
 gt.Const.Faces.PrettyFemale <- [
-	"bust_head_19",
-	"bust_head_20",
-	"bust_head_21"
+	"bust_head_21",
+	"bust_head_50",
+	"bust_head_51"
 ];
 
 gt.Const.Faces.Donkey <- [
