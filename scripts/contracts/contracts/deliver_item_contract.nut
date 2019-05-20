@@ -99,7 +99,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 			barterMult += bro.getBarterModifier();
 		}
 		local bartermod = 100 * barterMult;
-		local modrate = this.Math.sqrt(bartermod);
+		local modrate = sqrt(bartermod);
 		
 
 		if (days >= 2 || distance >= 40)

@@ -665,6 +665,7 @@ barter skill is roughly one tenth of previous value to align with DLC trader sta
 
 Beta 11 test 3 
 fixes DLC backgrounds having the wrong icons 
+Fixes pretty females having ugly barbarian heads 
 Bucklers are now stronger against a single opponent, but weaker against more than one. 
 Adds Parrying dagger, an offhand weapon for debuffing opponents. rare. Found and weaponsmiths.
 Adds Estoc, a high tier two handed fencing sword, rare, found at weaponsmiths. Requires B&E 
@@ -672,6 +673,9 @@ Adds Military goedendag, high tier goedendag. rare, found at weaponsmiths requir
 Adds Two handed club, mid range two handed mace.  found at weaponsmiths. Requires B&E.  
 Adds reinforced wooden flail, mid tier two handed flail. found at weaponsmiths. Requires B&E  
 Adds cat 'o nine tails, low tier multihead whip. found at weaponsmiths and mushroom groves, and on cultists and flagelents. Requires WotN  
+Adds new Warden graphic 
+warlock has his gear 
+fixed a bug with deliver item contract rewards 
 
 
 

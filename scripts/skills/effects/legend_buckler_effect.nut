@@ -11,11 +11,37 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.VeryLast;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.Bonus = 5;
 	}
 
 	function getTooltip()
 	{
+		local bonus = 5;
+		foreach( i in actors )
+		{
+			foreach( a in i )
+			{
+				if (a.getID() == _tag.User.getID())
+				{
+					continue;
+				}
+
+				if (a.getFaction() != myFaction)
+				{
+					if (ally.getTile().getDistanceTo(myTile) <= 2)
+						{
+							++nearbyEnemies;
+							break;
+						}
+
+				}
+			}
+		}
+		if (nearbyEnemies > 0)
+		{
+		bonus = 20 / nearbyEnemies;
+		}
+
+
 		return [
 			{
 				id = 1,
@@ -31,13 +57,13 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Bonus + "[/color] Melee Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] Melee Defense"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Bonus + "[/color]  Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color]  Ranged Defense"
 			}
 		];
 	}
@@ -79,19 +105,15 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		}
 		if (nearbyEnemies > 0)
 		{
-		this.m.Bonus = 20 / nearbyEnemies;
+		tbonus = 20 / nearbyEnemies;
 		}
 
-		_properties.MeleeSkill += this.m.Bonus;
-		_properties.RangedSkill += this.m.Bonus;
+		_properties.MeleeSkill += bonus;
+		_properties.RangedSkill += bonus;
 
 
 
 	}
 
-	function onCombatFinished()
-	{
-		this.m.IsHidden = true;
-	}
 
 });
