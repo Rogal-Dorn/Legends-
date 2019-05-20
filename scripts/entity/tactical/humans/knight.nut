@@ -5,6 +5,8 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Type = this.Const.EntityType.Knight;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.Knight.XP;
+		this.m.Name = this.generateName();
+		this.m.IsGeneratingKillName = false;
 		this.human.create();
 		this.m.Faces = this.Const.Faces.SmartMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;

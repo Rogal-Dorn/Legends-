@@ -22,9 +22,9 @@ this.named_metal_bull_helmet <- this.inherit("scripts/items/helmets/named/named_
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 8000;
-		this.m.Condition = 250;
-		this.m.ConditionMax = 250;
-		this.m.StaminaModifier = -23;
+		this.m.Condition = 320;
+		this.m.ConditionMax = 320;
+		this.m.StaminaModifier = -22;
 		this.m.Vision = -3;
 		this.randomizeValues();
 	}

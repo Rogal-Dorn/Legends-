@@ -23,7 +23,7 @@ this.norse_helmet <- this.inherit("scripts/items/helmets/named/named_helmet", {
 		this.m.Value = 2000;
 		this.m.Condition = 125;
 		this.m.ConditionMax = 125;
-		this.m.StaminaModifier = -7;
+		this.m.StaminaModifier = -6;
 		this.m.Vision = -1;
 		this.randomizeValues();
 	}

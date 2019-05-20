@@ -637,6 +637,7 @@ this.skill <- {
 			this.m.Item.onUse(this);
 		}
 
+		user.setPreviewSkillID("");
 		return this.onUse(user, _targetTile);
 	}
 

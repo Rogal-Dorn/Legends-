@@ -149,7 +149,7 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				this.Contract.m.IsPlayerAttacking = _isPlayerAttacking;
 
-				if (!this.Flags.get("IsKingEncountered"))
+				if (!_dest.isInCombat() && !this.Flags.get("IsKingEncountered"))
 				{
 					this.Flags.set("IsKingEncountered", true);
 

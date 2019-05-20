@@ -120,6 +120,12 @@ gt.Const.Items.NamedOrcWeapons <- [
 	"weapons/named/named_orc_axe",
 	"weapons/named/named_orc_cleaver"
 ];
+gt.Const.Items.NamedGoblinWeapons <- [
+	"weapons/named/named_goblin_falchion",
+	"weapons/named/named_goblin_heavy_bow",
+	"weapons/named/named_goblin_pike",
+	"weapons/named/named_goblin_spear"
+];
 gt.Const.Items.NamedWeapons <- [
 	"weapons/named/named_axe",
 	"weapons/named/named_billhook",

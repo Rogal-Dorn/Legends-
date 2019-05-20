@@ -98,7 +98,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 
 		available.push(function ( _i )
 		{
-			_i.m.DirectDamageAdd = this.Math.rand(8, 16) * 0.01;
+			_i.m.DirectDamageAdd = _i.m.DirectDamageAdd + this.Math.rand(8, 16) * 0.01;
 		});
 
 		if (this.m.StaminaModifier >= 8)
@@ -109,7 +109,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 			});
 		}
 
-		if (this.m.ShieldDamage > 0)
+		if (this.m.ShieldDamage >= 16)
 		{
 			available.push(function ( _i )
 			{

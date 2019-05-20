@@ -1181,7 +1181,7 @@ this.contract <- {
 
 			if (this.getDifficultyMult() >= 1.15)
 			{
-				mb = 4;
+				mb = 5;
 			}
 			else if (this.getDifficultyMult() >= 0.85)
 			{

@@ -590,7 +590,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 						continue;
 					}
 
-					if (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat() && (hasAdrenaline || _entity.getTurnOrderInitiative() >= 125) && _entity.isAbleToWait() && !this.getStrategy().getStats().IsEngaged && !movementCosts.IsComplete && movementCosts.End.getDistanceTo(t.Tile) == 1 && movementCosts.Tiles > 1)
+					if (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat() && (hasAdrenaline || _entity.getTurnOrderInitiative() >= 125) && _entity.isAbleToWait() && !this.getStrategy().getStats().IsEngaged && !movementCosts.IsComplete && movementCosts.End.getDistanceTo(t.Tile) == 1 && movementCosts.Tiles > 1 && movementCosts.LastBeforeEnd.IsEmpty)
 					{
 						navigator.clipPathToDistance(myTile, myTile.getDistanceTo(movementCosts.End) - 1);
 						waitAfterMove = true;

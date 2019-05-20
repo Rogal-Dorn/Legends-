@@ -41,7 +41,7 @@ this.shadows_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 0;
 		this.m.MinRange = 0;
-		this.m.MaxRange = 10;
+		this.m.MaxRange = 9;
 		this.m.MaxLevelDifference = 4;
 	}
 

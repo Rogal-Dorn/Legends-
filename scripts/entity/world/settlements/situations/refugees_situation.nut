@@ -65,6 +65,9 @@ this.refugees_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");
+		_draftList.push("refugee_background");
+		_draftList.push("refugee_background");
+		_draftList.push("refugee_background");
 	}
 
 });

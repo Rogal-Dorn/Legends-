@@ -18,8 +18,8 @@ this.named_bronze_armor <- this.inherit("scripts/items/armor/named/named_armor",
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 9000;
-		this.m.Condition = 230;
-		this.m.ConditionMax = 230;
+		this.m.Condition = 280;
+		this.m.ConditionMax = 280;
 		this.m.StaminaModifier = -35;
 		this.randomizeValues();
 	}

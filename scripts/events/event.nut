@@ -121,7 +121,12 @@ this.event <- {
 		}
 
 		this.m.ActiveScreen = clone _screen;
-		this.m.ActiveScreen.Options = clone _screen.Options;
+		this.m.ActiveScreen.Options = [];
+
+		foreach( option in _screen.Options )
+		{
+			this.m.ActiveScreen.Options.push(clone option);
+		}
 
 		if ("List" in this.m.ActiveScreen)
 		{

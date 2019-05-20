@@ -19,8 +19,8 @@ this.named_skull_and_chain_armor <- this.inherit("scripts/items/armor/named/name
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 5500;
-		this.m.Condition = 170;
-		this.m.ConditionMax = 170;
+		this.m.Condition = 190;
+		this.m.ConditionMax = 190;
 		this.m.StaminaModifier = -24;
 		this.randomizeValues();
 	}

@@ -164,7 +164,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		], [
 			this.Const.World.TerrainType.Ocean,
 			this.Const.World.TerrainType.Shore
-		], -1, false, false);
+		], 1, false, false);
 		this.buildAttachedLocation(this.Math.rand(1, 2), "scripts/entity/world/attached_location/fishing_huts_location", [
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,
