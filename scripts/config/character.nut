@@ -47,7 +47,7 @@ gt.Const.LevelXP <- [
 	15000
 ];
 
-for( local i = 0; i < 22; i = ++i )
+for( local i = 0; i < 88; i = ++i )
 {
 	this.Const.LevelXP.push(this.Const.LevelXP[this.Const.LevelXP.len() - 1] + 4000 + 1000 * i);
 }
