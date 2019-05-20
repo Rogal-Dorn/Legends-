@@ -38,15 +38,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bros[0].setStartValuesEx([
 			"legend_necro_commander_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "When %name% joined, he warmly called you captain, saying \"tis a proper manner to pursue the path into the black from whence we came\".";
 		bros[0].setPlaceInFormation(2);
-		local items = bros[0].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.equip(this.new("scripts/items/weapons/scramasax"));
-		items.equip(this.new("scripts/items/helmets/cultist_hood"));
-		items.equip(this.new("scripts/items/armor/leather_wraps"));
 		bros[1].setStartValuesEx([
 			"cultist_background"
 		]);
