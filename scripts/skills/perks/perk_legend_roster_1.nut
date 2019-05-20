@@ -15,12 +15,12 @@ this.perk_legend_roster_1 <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() + 1);
+		this.World.Assets.m.BrothersMax += 1;
 	}
 	
 	function onRemoved()
 	{
-		this.World.Assets.setBrothersMax(this.World.Assets.getBrothersMax() - 1);
+		this.World.Assets.m.BrothersMax -= 1;
 	}
 
 });
