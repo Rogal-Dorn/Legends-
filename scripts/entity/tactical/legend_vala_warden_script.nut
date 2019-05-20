@@ -55,7 +55,7 @@ this.legend_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", 
 				LifeTimeQuantity = 12,
 				SpawnRate = 100,
 				Brushes = [
-					"bust_ghost_01"
+					"bust_warden_01"
 				],
 				Stages = [
 					{
