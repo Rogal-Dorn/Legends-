@@ -84,7 +84,7 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		if (this.m.StaminaModifier <= -10 && this.Math.rand(1, 100) <= 33)
 		{
-			this.m.StaminaModifier = this.Math.floor(this.m.StaminaModifier * this.Math.rand(70, 90) * 0.01);
+			this.m.StaminaModifier = this.Math.ceil(this.m.StaminaModifier * this.Math.rand(70, 90) * 0.01);
 		}
 		else
 		{

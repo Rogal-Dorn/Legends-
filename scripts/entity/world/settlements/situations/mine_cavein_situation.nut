@@ -71,6 +71,7 @@ this.mine_cavein_situation <- this.inherit("scripts/entity/world/settlements/sit
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");
+		_draftList.push("miner_background");
 	}
 
 });

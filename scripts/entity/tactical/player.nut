@@ -477,7 +477,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				id = 2,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = this.Tactical.TurnSequenceBar.getActiveEntity() == this ? "Acting right now!" : this.isTurnDone() || turnsToGo == null ? "Turn done" : "Acts in " + turnsToGo + (turnsToGo > 1 ? " turns" : " turn")
+				text = this.Tactical.TurnSequenceBar.getActiveEntity() == this ? "Acting right now!" : this.m.IsTurnDone || turnsToGo == null ? "Turn done" : "Acts in " + turnsToGo + (turnsToGo > 1 ? " turns" : " turn")
 			},
 			{
 				id = 3,
@@ -868,6 +868,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.onCombatFinished();
 		this.m.LifetimeStats.Battles += 1;
 		this.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 0.0;
+		this.getAIAgent().setUseHeat(false);
 	}
 
 	function onCombatFinished()

@@ -346,7 +346,7 @@ this.world_entity <- {
 						id = 20,
 						type = "text",
 						icon = "ui/orientation/" + this.Const.EntityIcon[i] + ".png",
-						text = start + this.Const.Strings.EntityName[i]
+						text = start + this.removeFromBeginningOfText("The ", this.Const.Strings.EntityName[i])
 					});
 				}
 				else

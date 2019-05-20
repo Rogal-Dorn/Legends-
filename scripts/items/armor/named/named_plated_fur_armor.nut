@@ -18,9 +18,9 @@ this.named_plated_fur_armor <- this.inherit("scripts/items/armor/named/named_arm
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 4000;
-		this.m.Condition = 140;
-		this.m.ConditionMax = 140;
-		this.m.StaminaModifier = -20;
+		this.m.Condition = 150;
+		this.m.ConditionMax = 150;
+		this.m.StaminaModifier = -18;
 		this.randomizeValues();
 	}
 

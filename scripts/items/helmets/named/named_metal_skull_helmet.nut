@@ -26,9 +26,9 @@ this.named_metal_skull_helmet <- this.inherit("scripts/items/helmets/named/named
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 5000;
-		this.m.Condition = 160;
-		this.m.ConditionMax = 160;
-		this.m.StaminaModifier = -15;
+		this.m.Condition = 210;
+		this.m.ConditionMax = 210;
+		this.m.StaminaModifier = -13;
 		this.m.Vision = -2;
 		this.randomizeValues();
 	}

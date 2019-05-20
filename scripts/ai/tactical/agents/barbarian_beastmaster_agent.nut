@@ -3,7 +3,7 @@ this.barbarian_beastmaster_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function create()
 	{
 		this.agent.create();
-		this.m.ID = this.Const.AI.Agent.ID.BarbarianDrummer;
+		this.m.ID = this.Const.AI.Agent.ID.BarbarianBeastmaster;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.Defend] = 1.0;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.6;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.2;

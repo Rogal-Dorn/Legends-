@@ -6,6 +6,7 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.m.XP = this.Const.Tactical.Actor.SkeletonBoss.XP;
 		this.m.ResurrectionValue = 15.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/skeleton_boss";
+		this.m.IsGeneratingKillName = false;
 		this.skeleton.create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
 		this.m.AIAgent.setActor(this);

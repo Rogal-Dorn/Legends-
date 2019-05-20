@@ -96,7 +96,7 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 					icon = injury.getIcon(),
 					text = _event.m.Clown.getName() + " suffers " + injury.getNameOnly()
 				});
-				_event.m.Archer.worsenMood(2.0, "Severely injured " + this.event.m.Clown.getName() + " by accident");
+				_event.m.Archer.worsenMood(2.0, "Severely injured " + _event.m.Clown.getName() + " by accident");
 
 				if (_event.m.Archer.getMoodState() < this.Const.MoodState.Neutral)
 				{

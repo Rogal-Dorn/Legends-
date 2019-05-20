@@ -42,6 +42,11 @@ this.permanent_injury <- this.inherit("scripts/skills/skill", {
 		this.onApplyAppearance();
 	}
 
+	function isValid( _actor )
+	{
+		return true;
+	}
+
 	function onAdded()
 	{
 		this.onApplyAppearance();

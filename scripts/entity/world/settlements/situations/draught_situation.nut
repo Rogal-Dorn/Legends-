@@ -4,7 +4,7 @@ this.draught_situation <- this.inherit("scripts/entity/world/settlements/situati
 	{
 		this.situation.create();
 		this.m.ID = "situation.draught";
-		this.m.Name = "Draught";
+		this.m.Name = "Drought";
 		this.m.Description = "An unexpected heatwave burnt many of the local crops. There is less food available and prices are higher.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_16.png";
 		this.m.IsStacking = false;
@@ -34,6 +34,7 @@ this.draught_situation <- this.inherit("scripts/entity/world/settlements/situati
 
 	function onUpdateDraftList( _draftList )
 	{
+		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");

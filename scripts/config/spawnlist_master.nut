@@ -840,7 +840,7 @@ gt.Const.World.Spawn.Troops <- {
 		ID = this.Const.EntityType.BarbarianBeastmaster,
 		Variant = 0,
 		Strength = 20,
-		Cost = 5,
+		Cost = 15,
 		Row = 2,
 		Script = "scripts/entity/tactical/humans/barbarian_beastmaster"
 	}

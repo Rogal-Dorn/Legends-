@@ -651,9 +651,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 		else if (_stateName == "TacticalFromWorldState" && _message == "QuitToMenu")
 		{
-			if (this.World.Assets.isIronman() && this.World.getTime().Days > 1)
+			if (this.World.Assets.isIronman() && (this.World.getTime().Days > 1 || !this.World.getTime().IsDaytime))
 			{
-				this.showGameFinishScreen(true);
+				this.World.getPlayerRoster().clear();
+				this.autosave();
+				this.showGameFinishScreen(false);
 			}
 			else
 			{
@@ -2266,7 +2268,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 							"U"
 						]) ? "An " : "A ";
 						entities.push({
-							Name = start + this.Const.Strings.EntityName[i],
+							Name = start + this.removeFromBeginningOfText("The ", this.Const.Strings.EntityName[i]),
 							Icon = this.Const.EntityIcon[i],
 							Overlay = null
 						});

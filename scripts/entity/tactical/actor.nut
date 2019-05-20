@@ -983,7 +983,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 						text = "Acting right now!"
 					});
 				}
-				else if (this.isTurnDone() || turnsToGo == null)
+				else if (this.m.IsTurnDone || turnsToGo == null)
 				{
 					tooltip.push({
 						id = 4,
@@ -3565,6 +3565,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.XP *= 1.5;
 		this.m.Skills.add(this.new("scripts/skills/racial/champion_racial"));
 		this.m.IsMiniboss = true;
+		this.m.IsGeneratingKillName = false;
 		return true;
 	}
 

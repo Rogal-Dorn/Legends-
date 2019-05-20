@@ -138,6 +138,19 @@ this.skill_container <- {
 		}
 	}
 
+	function removeAllByID( _skillID )
+	{
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.getID() == _skillID)
+			{
+				skill.removeSelf();
+			}
+		}
+
+		this.update();
+	}
+
 	function removeByType( _type )
 	{
 		foreach( i, skill in this.m.Skills )

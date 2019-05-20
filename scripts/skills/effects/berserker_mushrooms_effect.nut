@@ -163,6 +163,21 @@ this.berserker_mushrooms_effect <- this.inherit("scripts/skills/skill", {
 			chance = chance + 10;
 		}
 
+		if (bro.getSkills().hasSkill("trait.huge"))
+		{
+			chance = chance - 10;
+		}
+
+		if (bro.getSkills().hasSkill("trait.ailing"))
+		{
+			chance = chance + 10;
+		}
+
+		if (bro.getSkills().hasSkill("trait.lucky"))
+		{
+			chance = chance - 10;
+		}
+
 		if (this.Math.rand(1, 100) <= this.Math.max(5, chance))
 		{
 			local effect = this.new("scripts/skills/injury/sickness_injury");

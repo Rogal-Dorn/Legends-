@@ -44,6 +44,8 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		_draftList.push("hunter_background");
 		_draftList.push("hunter_background");
 		_draftList.push("hunter_background");
+		_draftList.push("hunter_background");
+		_draftList.push("poacher_background");
 		_draftList.push("poacher_background");
 		_draftList.push("poacher_background");
 		_draftList.push("poacher_background");
@@ -63,6 +65,7 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 
 		if (this.Const.DLC.Unhold)
 		{
+			_draftList.push("beast_hunter_background");
 			_draftList.push("beast_hunter_background");
 			_draftList.push("beast_hunter_background");
 			_draftList.push("beast_hunter_background");
