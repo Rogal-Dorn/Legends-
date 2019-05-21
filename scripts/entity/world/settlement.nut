@@ -698,7 +698,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.ShopSeed = this.Time.getRealTime() + this.Math.rand();
 		this.m.RosterSeed = this.Time.getRealTime() + this.Math.rand();
 		this.m.Modifiers = this.new("scripts/entity/world/settlement_modifiers");
-		this.m.IsAttackable = true;
+		this.m.IsAttackable = false;
 		this.m.IsDestructible = false;
 		this.m.IsShowingStrength = true;
 		this.m.IsScalingDefenders = true;
