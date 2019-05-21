@@ -15,15 +15,18 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+
+		local actor = this.getContainer().getActor();
+		local myTile = actor.getTile();
+		local myFaction = actor.getFaction();
+		local nearbyEnemies = 0;
+		local actors = this.Tactical.Entities.getAllInstances();
+		local bonus = 5;
 		local bonus = 5;
 		foreach( i in actors )
 		{
 			foreach( a in i )
 			{
-				if (a.getID() == _tag.User.getID())
-				{
-					continue;
-				}
 
 				if (a.getFaction() != myFaction)
 				{
@@ -87,10 +90,6 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		{
 			foreach( a in i )
 			{
-				if (a.getID() == _tag.User.getID())
-				{
-					continue;
-				}
 
 				if (a.getFaction() != myFaction)
 				{

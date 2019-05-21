@@ -55,11 +55,6 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		{
 			foreach( a in i )
 			{
-				if (a.getID() == _tag.User.getID())
-				{
-					continue;
-				}
-
 				if (a.getFaction() != myFaction)
 				{
 					if (ally.getTile().getDistanceTo(myTile) <= 2)
@@ -73,7 +68,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		}
 		if (nearbyEnemies == 1)
 		{
-		this.m.Bonus = 40;
+		this.m.Bonus = 30;
 		}
 		if (nearbyEnemies == 2)
 		{
