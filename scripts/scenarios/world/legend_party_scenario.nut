@@ -14,7 +14,7 @@ this.legend_party_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 6; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -45,21 +45,21 @@ this.legend_party_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		]);
 		bros[2].getBackground().m.RawDescription = "%name% is a righteous man, constantly chanting religious hymns and passages. He exists to fight the undead and has a burning passion against any kind of necromancy, how he ever agreed to join forces with a warlock is beyond you.";
 		bros[2].setPlaceInFormation(5);
-		bros[2].setStartValuesEx([
+		bros[3].setStartValuesEx([
 			"legend_witch_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "%name% is a cunning woman, knowledgable on nearly ever subject. She spends her time gathering ingredients and tinkering with concoctions to use in battle, she assures you nothing she does is magic, but it sure looks like it.";
-		bros[2].setPlaceInFormation(12);
-		bros[2].setStartValuesEx([
+		bros[3].getBackground().m.RawDescription = "%name% is a cunning woman, knowledgable on nearly ever subject. She spends her time gathering ingredients and tinkering with concoctions to use in battle, she assures you nothing she does is magic, but it sure looks like it.";
+		bros[3].setPlaceInFormation(12);
+		bros[4].setStartValuesEx([
 			"legend_noble_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "You can tell %name% is nobleborn from a thousand yards. The way he holds himself, his upper class mannerisms, and his uncanny ability to never get dirty as the rest of the party. He is also a coniving selfish liar with a silver tongue, like any noble. Despite this, he denies all connections to nobility and claims he is a commoner like everyone else.";
-		bros[2].setPlaceInFormation(13);
-		bros[2].setStartValuesEx([
+		bros[4].getBackground().m.RawDescription = "You can tell %name% is nobleborn from a thousand yards. The way he holds himself, his upper class mannerisms, and his uncanny ability to never get dirty as the rest of the party. He is also a coniving selfish liar with a silver tongue, like any noble. Despite this, he denies all connections to nobility and claims he is a commoner like everyone else.";
+		bros[4].setPlaceInFormation(13);
+		bros[5].setStartValuesEx([
 			"legend_ranger_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "There is a quiet calm to %name%, with an intense gaze that seems to see more detail than anyone else. He speaks little of himself, but it is clear he holds a deep affinity with the land, and sees orcs as a symbol of all that is wrong with the world.";
-		bros[2].setPlaceInFormation(14);
+		bros[5].getBackground().m.RawDescription = "There is a quiet calm to %name%, with an intense gaze that seems to see more detail than anyone else. He speaks little of himself, but it is clear he holds a deep affinity with the land, and sees orcs as a symbol of all that is wrong with the world.";
+		bros[5].setPlaceInFormation(14);
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
 	}
 

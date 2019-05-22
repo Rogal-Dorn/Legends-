@@ -4,7 +4,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.m.ID = "scenario.militia";
 		this.m.Name = "Peasant Militia";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_141.png[/img][/p][p]It started as a ragtag militia made up of anyone brave or desperate enough to volunteer for defending their homes, but has grown into a small army. An army that needs to be fed each day. Perhaps the militia\'s services could be rented out?\n\n[color=#bcad8c]Peasant Army:[/color] Start with a roster of 12 poorly equipped peasants.\n[color=#bcad8c]Human Wave[/color]: Take up to 16 men into battle at once, and have up to 25 in your roster.\n[color=#bcad8c]Dirty Peasants[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_141.png[/img][/p][p]It started as a ragtag militia made up of anyone brave or desperate enough to volunteer for defending their homes, but has grown into a small army. An army that needs to be fed each day. Perhaps the militia\'s services could be rented out?\n\n[color=#bcad8c]Peasant Army:[/color] Start with a roster of 12 poorly equipped peasants.\n[color=#bcad8c]Human Wave[/color]: Take up to 27 men into battle at once, and have up to 27 in your roster.\n[color=#bcad8c]Dirty Peasants[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 2;
 	}
@@ -37,10 +37,8 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"legend_beggar_commander_background"
+			"female_thief_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "this is you, what a sorry sack of dung you are. If you die, its game over";
-		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 
 		bros[1].setStartValuesEx([
 			"farmhand_background"
@@ -110,7 +108,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[9].getBackground().m.RawDescription = "Daytaler, laborer, caravan hand, sailor, militiaman, %name%\'s done a bit of it all. Hopefully this new foray into mercenary work will stick for him.";
 		bros[9].worsenMood(1.0, "Had his trusty scramasax stolen");
 		bros[10].setStartValuesEx([
-			"militia_background"
+			"female_beggar_background"
 		]);
 		bros[10].getBackground().m.RawDescription = "Like yourself, %name% was fed up with militias being overused to solve the crises of unprepared nobles. He was arguably the most earnest of the men in joining the transition to mercenary work.";
 		bros[10].worsenMood(0.5, "Disliked that some members of the militia were involved in a brawl");
@@ -205,10 +203,9 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 14;
+		this.World.Assets.m.BrothersMax = 27;
 		this.World.Assets.m.BrothersMaxInCombat = 27;
-		this.World.Assets.m.BrothersScaleMax = 27;
-		this.World.Tags.set("IsLegendsBeggar", true);
+		this.World.Assets.m.BrothersScaleMax = 20;
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -230,20 +227,6 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		}
 	}
 
-		function onCombatFinished()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-
-		foreach( bro in roster )
-		{
-			if (bro.getTags().get("IsPlayerCharacter"))
-			{
-				return true;
-			}
-		}
-
-		return false;
-	}
 
 });
 
