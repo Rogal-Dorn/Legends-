@@ -124,6 +124,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				this.m.Strength += 3 + (((skeletonSummonLevel / 2) + (skeletonSummonLevel - 1)) * 2.0);
 			}
 		}
+		if (this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+		this.m.Strength * 0.8;
+		}
+
 	}
 
 	function onLevelCompare( _bro1, _bro2 )
