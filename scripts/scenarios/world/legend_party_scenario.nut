@@ -60,14 +60,13 @@ this.legend_party_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		]);
 		bros[2].getBackground().m.RawDescription = "There is a quiet calm to %name%, with an intense gaze that seems to see more detail than anyone else. He speaks little of himself, but it is clear he holds a deep affinity with the land, and sees orcs as a symbol of all that is wrong with the world.";
 		bros[2].setPlaceInFormation(14);
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
 	}
 
 	function onInit()
 	{
 		this.World.Assets.m.BrothersMax = 6;
+		this.World.Tags.set("IsLegendsParty", true);
 	}
 
 

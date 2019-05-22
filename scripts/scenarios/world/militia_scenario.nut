@@ -37,8 +37,11 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"legend_noble_commander_background"
+			"legend_beggar_commander_background"
 		]);
+		bros[0].getBackground().m.RawDescription = "this is you, what a sorry sack of dung you are. If you die, its game over";
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+
 		bros[1].setStartValuesEx([
 			"farmhand_background"
 		]);
@@ -202,9 +205,10 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 25;
-		this.World.Assets.m.BrothersMaxInCombat = 16;
-		this.World.Assets.m.BrothersScaleMax = 14;
+		this.World.Assets.m.BrothersMax = 14;
+		this.World.Assets.m.BrothersMaxInCombat = 27;
+		this.World.Assets.m.BrothersScaleMax = 27;
+		this.World.Tags.set("IsLegendsBeggar", true);
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -224,6 +228,21 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		{
 			_roster.remove(g);
 		}
+	}
+
+		function onCombatFinished()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			if (bro.getTags().get("IsPlayerCharacter"))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 });

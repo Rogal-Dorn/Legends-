@@ -38,6 +38,9 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[0].setStartValuesEx([
 			"legend_ranger_commander_background"
 		]);
+		bros[0].getBackground().m.RawDescription = "this is you. If you die, its game over";
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+	
 		bros[0].setPlaceInFormation(3);
 		bros[1].setStartValuesEx([
 			"poacher_background"
@@ -153,6 +156,23 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	function onInit()
 	{
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
+		this.World.Assets.m.BrothersMax = 3;
+		this.World.Tags.set("IsLegendsHunter", true);
+	}
+
+	function onCombatFinished()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			if (bro.getTags().get("IsPlayerCharacter"))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 });

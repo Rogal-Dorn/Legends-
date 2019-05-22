@@ -122,7 +122,8 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 	function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 12;
+		this.World.Assets.m.BrothersMax = 2;
+		this.World.Tags.set("IsLegendsCrusader", true);
 	}
 
 	function onCombatFinished()

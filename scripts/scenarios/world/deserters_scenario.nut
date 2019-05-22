@@ -4,7 +4,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.deserters";
 		this.m.Name = "Deserters";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]the noble houses are fickle and the winds have turned against you. Last night, you absconded with two body gaurds. You\'re dressed like soldiers, but you\'re deserters, and the noose will be your end if you stay here for too long.\n\n[color=#bcad8c]Deserters:[/color] Start with a captain, two deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#bcad8c]Prepared for anything:[/color] Anyone you hire gains bags n belts in combat[/p]\n[color=#bcad8c]Avatar:[/color] if the captain dies, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 6;
 	}
@@ -16,6 +16,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 	function setupBro( _bro, _faction )
 	{
+
 		_bro.setStartValuesEx([
 			"deserter_background"
 		]);
@@ -79,8 +80,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 	function onSpawnAssets()
 	{
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
+
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
@@ -214,6 +214,11 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+		bros[3].setStartValuesEx([
+			"legend_noble_commander_background"
+		]);
+		bros[3].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[3].getTags().set("IsPlayerCharacter", true);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList([
@@ -222,6 +227,25 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			this.World.Events.fire("event.deserters_scenario_intro");
 		}, null);
 	}
+	function onCombatFinished()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
 
+		foreach( bro in roster )
+		{
+			if (bro.getTags().get("IsPlayerCharacter"))
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	function onInit()
+	{
+		this.World.Assets.m.BrothersMax = 4;
+		this.World.Tags.set("IsLegendsNoble", true);
+	}
 });
 

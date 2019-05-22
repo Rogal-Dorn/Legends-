@@ -1,4 +1,4 @@
-this.legend_party_scenario_intro<- this.inherit("scripts/events/event", {
+this.legend_party_intro_event<- this.inherit("scripts/events/event", {
 	m = {},
 	function create()
 	{
