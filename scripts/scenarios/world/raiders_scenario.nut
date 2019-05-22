@@ -4,7 +4,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.m.ID = "scenario.raiders";
 		this.m.Name = "Northern Raiders";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]For all your adult life you\'ve been raiding and pillaging in these lands. But with the local peasantry poor as mice, you may want to finally expand into the profitable field of mercenary work - that is, if your potential employers are willing to forgive your past transgressions.\n\n[color=#bcad8c]Warband:[/color] Start with three experienced barbarians.\n[color=#bcad8c]Pillagers:[/color] You have a higher chance to get any items from slain enemies as loot.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]For all your adult life you\'ve been raiding and pillaging in these lands. But with the local peasantry poor as mice, you may want to finally expand into the profitable field of mercenary work - that is, if your potential employers are willing to forgive your past transgressions.\n\n[color=#bcad8c]Warband:[/color] Start with three experienced barbarians.\n[color=#bcad8c]Pillagers:[/color] You have a higher chance to get any items from slain enemies as loot.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions.\n[color=#bcad8c]Berserkers:[/color] Anyone you hire gains the berserk ability.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 8;
 	}
@@ -92,6 +92,9 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[3].setStartValuesEx([
 			"legend_berserker_commander_background"
 		]);
+		bros[3].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[3].getTags().set("IsPlayerCharacter", true);
+
 		this.World.Assets.m.BusinessReputation = -100;
 		this.World.Assets.m.MoralReputation = -30;
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
@@ -230,6 +233,26 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		}, null);
 	}
 
+	function onInit()
+	{
+		this.World.Assets.m.BrothersMax = 4;
+		this.World.Tags.set("IsLegendsBerserker", true);
+	}
+
+	function onCombatFinished()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			if (bro.getTags().get("IsPlayerCharacter"))
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 	function isDroppedAsLoot( _item )
 	{

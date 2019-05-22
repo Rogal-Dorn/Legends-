@@ -38,6 +38,9 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bros[0].setStartValuesEx([
 			"legend_necro_commander_background"
 		]);
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_prophet_trait"));
+		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
 		bros[1].setStartValuesEx([
 			"cultist_background"
@@ -141,7 +144,26 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			this.World.Events.fire("event.cultists_scenario_intro");
 		}, null);
 	}
+		function onInit()
+	{
+		this.World.Assets.m.BrothersMax = 4;
+		this.World.Tags.set("IsLegendsNecro", true);
+	}
 
+	function onCombatFinished()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			if (bro.getTags().get("IsPlayerCharacter"))
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
 	function onUpdateDraftList( _list )
 	{
 		if (_list.len() >= 10)
