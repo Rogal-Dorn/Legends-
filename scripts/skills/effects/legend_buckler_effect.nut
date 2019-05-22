@@ -93,7 +93,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 
 				if (a.getFaction() != myFaction)
 				{
-					if (ally.getTile().getDistanceTo(myTile) <= 2)
+					if (a.getTile().getDistanceTo(myTile) <= 2)
 						{
 							++nearbyEnemies;
 							break;

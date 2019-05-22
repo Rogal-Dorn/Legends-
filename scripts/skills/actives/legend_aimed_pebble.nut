@@ -56,7 +56,7 @@ this.legend_aimed_pebble <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
-		this.m.ProjectileType = this.Const.ProjectileType.Pebble;
+		this.m.ProjectileType = this.Const.ProjectileType.Stone;
 	}
 
 	function getTooltip()
