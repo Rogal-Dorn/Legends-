@@ -3,8 +3,8 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	function create()
 	{
 		this.m.ID = "scenario.lone_wolf";
-		this.m.Name = "Lone Wolf";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You\'ve been traveling alone for a long time, taking part in tourneys and sparring with young nobles. A hedge knight tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment, but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 12 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your hedge knight dies, the campaign ends.[/p]";
+		this.m.Name = "Crusader";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You\'ve been traveling alone for a long time, taking part in tourneys and sparring with young nobles. A crusader tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment, but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 20 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 9;
 		this.m.IsFixedLook = true;
@@ -23,8 +23,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bro.setStartValuesEx([
 			"legend_crusader_commander_background"
 		]);
-		bro.getBackground().m.RawDescription = "A wandering hedge knight, you were a veteran of jousting and sparring tournaments. You were also a veteran of victory. Tis a scary thought for many, but if it were anything at all that turned your eye toward mercenary work it was boredom. Outwardly you state it is for the coin, but a part of you knows it\'s also for the company.";
-		bro.getBackground().buildDescription(true);
+	bro.getBackground().buildDescription(true);
 		bro.setTitle("the Lone Wolf");
 		bro.getSkills().removeByID("trait.survivor");
 		bro.getSkills().removeByID("trait.greedy");

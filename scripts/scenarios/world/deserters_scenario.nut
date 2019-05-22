@@ -170,16 +170,11 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		}
 
 		local bros = roster.getAll();
-		bros[0].getBackground().m.RawDescription = "{Prior to his conscription into the army, %name% was a failed, illiterate baker. His poor work and frequent dessert errors made him prone to being pulled into military ranks. Having always hated the life, the deserter was quick to join your cause and company.}";
-		bros[0].getBackground().buildDescription(true);
-		local talents = bros[0].getTalents();
-		talents[this.Const.Attributes.MeleeSkill] = 2;
-		talents[this.Const.Attributes.Hitpoints] = 1;
-		talents[this.Const.Attributes.Fatigue] = 1;
-		bros[0].m.PerkPoints = 1;
-		bros[0].m.LevelUps = 1;
-		bros[0].m.Level = 2;
-		bros[0].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+		bros[0].setStartValuesEx([
+			"legend_noble_commander_background"
+		]);
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getTags().set("IsPlayerCharacter", true);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
@@ -214,11 +209,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-		bros[3].setStartValuesEx([
-			"legend_noble_commander_background"
-		]);
-		bros[3].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[3].getTags().set("IsPlayerCharacter", true);
+
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList([
