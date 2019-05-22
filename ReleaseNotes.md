@@ -681,18 +681,20 @@ level cap raised to 99
 
 Beta 11 test 4
 Adds party start 
-Adds party size restrictions for ranger, crusader, berserker, trader and warlock
-Warlock, Seer, Vala and donkeys no longer disturbed by cultist events 
+Warlock, Seer, Vala and donkeys are now ok with cultist events 
+Warlock is now a cultist prophet, and cultists lose if the warlock dies 
+Noble is now a captain, in the deserter start. they lose if the captain dies 
+Rangers now lose if the ranger dies, initial party size 3 
+Raiders lose if the berserker dies, initial party size 4
 Adds relentless perk to most perk trees
-buckler and parrying dagger script error resolved
-Adds world icons for most starts with commanders 
-
+Trader loses if the trader dies, party size 3 
+Fixed issue with battles not loading when taking a sling, buckler or parrying dagger 
 
 Known issues:
 Map configuration disabled
 starts not properly integrated yet
 seer and vala don't have a start
-slings aren't integrated 
+slings aren't integrated - partially resolved 
 Some tooltips are incorrect
 ? berserker grants berserk perk, doesn't show on tree 
 ? ranger world image doesn't show
