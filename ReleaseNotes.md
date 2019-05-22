@@ -680,14 +680,17 @@ fixed a bug with deliver item contract rewards
 level cap raised to 99 
 
 Beta 11 test 4
-Adds party start 
+Adds Party start  
 Noble is now a captain for the deserters
 Warlock is now a prophet for the cultists
 Warlock, Seer, Vala and donkeys are now ok with cultist events 
 Warlock, Noble, Ranger, Berserker, Trader are all avatars 
 Milita can scale to 27, but has 20% bonus to strength calculations 
-Towns no longer attackable but then trapping you in a load screen 
-Fixed issue with battles not loading when taking a sling, buckler or parrying dagger 
+Fixed towns being attackable but then trapping you in a load screen 
+Fixed issue with some battles not loading when taking a buckler or parrying dagger
+Fixed issues with some battles not loading when some slings were diring pebbles instead of stones 
+Fixed warden graphic not showing in all situations 
+Various start text, backgrounds and tooltips updated 
 
 
 Known issues:
