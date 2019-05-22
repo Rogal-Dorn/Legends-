@@ -31,6 +31,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.BackStabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
+		gt.Const.Perks.PerkDefs.Relentless,
 		gt.Const.Perks.PerkDefs.DoubleStrike,
 		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
 		gt.Const.Perks.PerkDefs.DevastatingStrikes,

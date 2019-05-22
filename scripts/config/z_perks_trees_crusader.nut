@@ -34,6 +34,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
+		gt.Const.Perks.PerkDefs.Relentless,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendToolsDrawers,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,

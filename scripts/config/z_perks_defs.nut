@@ -1645,6 +1645,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendMasterySlings,
 		Icon = "ui/perks/sling_03.png",
 		IconDisabled = "ui/perks/sling_bw.png"
+	},
+	{
+		ID = "perk.relentless",
+		Script = "scripts/skills/perks/perk_relentless",
+		Name = this.Const.Strings.PerkName.Relentless,
+		Tooltip = this.Const.Strings.PerkDescription.Relentless,
+		Icon = "ui/perks/perk_26.png",
+		IconDisabled = "ui/perks/perk_26_sw.png"
 	}
 ];
 
@@ -1854,5 +1862,6 @@ gt.Const.Perks.PerkDefs <- {
 	LegendSpecialistScytheSkill = 201,
 	LegendSpecialistScytheDamage = 202
 	LegendInventorAnatomy = 203,
-	LegendMasterySlings = 204
+	LegendMasterySlings = 204,
+	Relentless = 205
 };

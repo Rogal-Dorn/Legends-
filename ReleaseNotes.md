@@ -679,14 +679,20 @@ Adds Dem Avalon's new Warden art
 fixed a bug with deliver item contract rewards 
 level cap raised to 99 
 
+Beta 11 test 4
+Adds party start 
+Adds party size restrictions for ranger, crusader, berserker, trader and warlock
+Warlock, Seer, Vala and donkeys no longer disturbed by cultist events 
+Adds relentless perk to most perk trees
+buckler and parrying dagger script error resolved
+Adds world icons for most starts with commanders 
 
 
 Known issues:
 Map configuration disabled
 starts not properly integrated yet
-party sizes not implemented yet
-seer and party aren't in, vala doesn't have a start
-the new perk isn't in yet
+seer and vala don't have a start
 slings aren't integrated 
 Some tooltips are incorrect
-berserker grants berserk perk, doesn't show on tree 
+? berserker grants berserk perk, doesn't show on tree 
+? ranger world image doesn't show

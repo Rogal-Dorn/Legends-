@@ -29,6 +29,7 @@ local NobleWeakTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
+		gt.Const.Perks.PerkDefs.Relentless,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,

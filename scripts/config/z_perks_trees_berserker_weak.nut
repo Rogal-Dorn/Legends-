@@ -20,6 +20,7 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
 		gt.Const.Perks.PerkDefs.Dodge,
 		gt.Const.Perks.PerkDefs.HoldOut,
+		gt.Const.Perks.PerkDefs.Relentless,
 		gt.Const.Perks.PerkDefs.LegendComposure,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
