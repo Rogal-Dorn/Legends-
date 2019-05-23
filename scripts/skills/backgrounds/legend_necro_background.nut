@@ -137,7 +137,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/necromancer_robes"));
+		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 	}
