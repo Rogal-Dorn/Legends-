@@ -1075,12 +1075,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
 		this.World.resizeScene(minX, minY);
-		// worldmap.fill({
-		// 	X = 0,
-		// 	Y = 0,
-		// 	W = minX,
-		// 	H = minY
-		// }, null);
 		local tries = 200;
 		while (tries > 0)
 		{
