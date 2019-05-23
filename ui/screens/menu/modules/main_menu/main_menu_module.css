@@ -22,6 +22,8 @@
 
     background-image: url("coui://gfx/ui/skin/main_menu_banner.png");
     background-size: 24.5rem 59.5rem;
+
+    pointer-events: auto;
 }
 
 .main-menu-module.is-right

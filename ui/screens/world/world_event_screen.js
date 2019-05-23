@@ -235,7 +235,8 @@ WorldEventScreen.prototype.show = function (_data)
 		else
 		{
 			this.mContainer.css({ opacity: 0 });
-			this.mContainer.velocity("finish", true).velocity({ opacity: 1 }, {
+            this.mContainer.velocity("finish", true).velocity({ opacity: 1 },
+            {
 				duration: Constants.SCREEN_FADE_IN_OUT_DELAY,
 				easing: 'swing',
 				begin: function() {

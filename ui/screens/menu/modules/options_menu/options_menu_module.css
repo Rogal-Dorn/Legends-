@@ -20,6 +20,7 @@
 	position: absolute;
 	margin: auto;
 	z-index : 1;
+    pointer-events: auto;
 }
 
 .options-menu-module.is-center
