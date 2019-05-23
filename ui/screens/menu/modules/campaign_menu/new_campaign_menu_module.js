@@ -514,7 +514,8 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
     	{
     		self.mFirstPanel.removeClass('display-block').addClass('display-none');
     		self.mSecondPanel.addClass('display-block').removeClass('display-none');
-    		self.mCancelButton.changeButtonText("Previous");
+            self.mCancelButton.changeButtonText("Previous");
+            self.mStartButton.enableButton(self.mCompanyName.getInputTextLength() >= 1);
         }
         else if(self.mSecondPanel.hasClass('display-block'))
         {
@@ -532,9 +533,9 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
     footerButtonBar.append(layout);
     this.mCancelButton = layout.createTextButton("Cancel", function ()
     {
-    	if (self.mFirstPanel.hasClass('display-block'))
+    	if(self.mFirstPanel.hasClass('display-block'))
     	{
-    		self.notifyBackendCancelButtonPressed();
+            self.notifyBackendCancelButtonPressed();
         }
         else if(self.mThirdPanel.hasClass('display-block'))
         {
@@ -548,7 +549,8 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			self.mFirstPanel.addClass('display-block').removeClass('display-none');
 			self.mSecondPanel.removeClass('display-block').addClass('display-none');
 			self.mStartButton.changeButtonText("Next");
-    		self.mCancelButton.changeButtonText("Cancel");
+            self.mCancelButton.changeButtonText("Cancel");
+            self.mStartButton.enableButton(true);
     	}    	
     }, '', 1);
 

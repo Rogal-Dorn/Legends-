@@ -118,11 +118,11 @@ MainMenuScreen.prototype.createDIV = function (_parentDiv)
     this.mDLC = $('<div class="dlc-container"/>');
     this.mContainer.append(this.mDLC);
 
-    // header & footer
-   /* var header = $('<div class="screen-header ui-control"/>');
-    this.mContainer.append(header);
-    var footer = $('<div class="screen-footer ui-control"/>');
-    this.mContainer.append(footer);*/
+    this.mMOTDContainer = $('<div class="motd-container"/>');
+    this.mContainer.append(this.mMOTDContainer);
+
+    this.mMOTD = $('<div class="motd text-font-medium font-color-subtitle"/>');
+    this.mMOTDContainer.append(this.mMOTD);
 
     // content container
     this.mContentContainer = $('<div class="screen-content"/>');
@@ -361,6 +361,17 @@ MainMenuScreen.prototype.setDLCClickHandler = function (_obj, _url)
     {
         openURL(_url);
     });
+};
+
+MainMenuScreen.prototype.setMOTD = function (_data)
+{
+    var parsedDescriptionText = XBBCODE.process({
+        text: _data,
+        removeMisalignedTags: false,
+        addInLineBreaks: true
+    });
+
+    this.mMOTD.html(parsedDescriptionText.html);
 };
 
 MainMenuScreen.prototype.getModule = function (_name)
