@@ -37,7 +37,11 @@
 				this.m.Tiles[i] = this.MapGen.get(this.Const.World.TerrainScript[i]);
 			}
 		}
+
+		this.__ping();
+
 		this.buildLandAndSea(_rect);
+		this.__ping();
         if (!this.isWorldAcceptable(_rect))
         {
             this.clearWorld(_rect);
@@ -45,21 +49,36 @@
         }
 
         local result;
+		this.__ping();
 		this.buildElevation(_rect);
+		this.__ping();
 		this.buildTerrain(_rect);
+		this.__ping();
 		this.defragmentTerrain(_rect);
+		this.__ping();
 		this.removeStraits(_rect);
+		this.__ping();
 		this.refineTerrain(_rect, _properties);
+		this.__ping();
         if (!this.buildSettlements(_rect))
         {
+			this.clearWorld(_rect);
+			this.World.clearScene();
             return false;
         }
+		this.__ping();
 		this.buildRoads(_rect, _properties);
+		this.__ping();
 		this.refineSettlements(_rect);
+		this.__ping();
 		this.guaranteeAllBuildingsInSettlements();
+		this.__ping();
 		this.buildAdditionalRoads(_rect, _properties);
+		this.__ping();
 		this.buildRoadSprites(_rect, _properties);
+		this.__ping();
 		this.buildLabels(_rect);
+		this.__ping();
         return true;
 	}
 
@@ -190,5 +209,5 @@
 
 		this.logInfo("Created " + settlementTiles.len() + " settlements.");
 		return settlementTiles.len() >= 19
-	}
+	}	
 })

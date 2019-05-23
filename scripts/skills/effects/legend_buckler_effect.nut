@@ -13,38 +13,40 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 	}
 
-	function getTooltip()
+	function getBonus()
 	{
-
 		local actor = this.getContainer().getActor();
 		local myTile = actor.getTile();
 		local myFaction = actor.getFaction();
 		local nearbyEnemies = 0;
 		local actors = this.Tactical.Entities.getAllInstances();
 		local bonus = 5;
-		local bonus = 5;
 		foreach( i in actors )
 		{
 			foreach( a in i )
 			{
-
 				if (a.getFaction() != myFaction)
 				{
-					if (ally.getTile().getDistanceTo(myTile) <= 2)
-						{
-							++nearbyEnemies;
-							break;
-						}
-
+					if (a.getTile().getDistanceTo(myTile) <= 2)
+					{
+						++nearbyEnemies;
+						break;
+					}
 				}
 			}
 		}
+
 		if (nearbyEnemies > 0)
 		{
-		bonus = 20 / nearbyEnemies;
+			bonus = 20 / nearbyEnemies;
 		}
 
+		return bonus;
+	}
 
+	function getTooltip()
+	{
+		local bonus = this.getBonus();
 		return [
 			{
 				id = 1,
@@ -78,40 +80,9 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 			this.m.IsHidden = true;
 			return;
 		}
-
-		local actor = this.getContainer().getActor();
-		local myTile = actor.getTile();
-		local myFaction = actor.getFaction();
-		local nearbyEnemies = 0;
-		local actors = this.Tactical.Entities.getAllInstances();
-		local bonus = 5;
-
-		foreach( i in actors )
-		{
-			foreach( a in i )
-			{
-
-				if (a.getFaction() != myFaction)
-				{
-					if (a.getTile().getDistanceTo(myTile) <= 2)
-						{
-							++nearbyEnemies;
-							break;
-						}
-
-				}
-			}
-		}
-		if (nearbyEnemies > 0)
-		{
-		tbonus = 20 / nearbyEnemies;
-		}
-
+		local bonus = this.getBonus();
 		_properties.MeleeSkill += bonus;
 		_properties.RangedSkill += bonus;
-
-
-
 	}
 
 
