@@ -4,9 +4,9 @@ this.legend_sling <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.create();
 		this.m.ID = "weapon.legend_sling";
-		this.m.Name = "sling";
-		this.m.Description = "A very simple sling, for hurling rocks at your rivals";
-		this.m.Categories = "Bow, One-Handed";
+		this.m.Name = "Sling";
+		this.m.Description = "A very simple sling, for hurling rocks at your rivals. With stones abundant everywhere, it will never run out of ammunition.";
+		this.m.Categories = "Throwing Weapon, One-Handed";
 		this.m.IconLarge = "weapons/ranged/legend_sling_02.png";
 		this.m.Icon = "weapons/ranged/legend_sling_02_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
@@ -16,43 +16,25 @@ this.legend_sling <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_sling_02";
-		this.m.Value = 15;
+		this.m.Value = 150;
+		this.m.StaminaModifier = -4;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 6;
 		this.m.RangeIdeal = 6;
-		this.m.StaminaModifier = -2;
 		this.m.Condition = 50.0;
 		this.m.ConditionMax = 50.0;
-		this.m.RegularDamage = 10;
-		this.m.RegularDamageMax = 30;
-		this.m.ArmorDamageMult = 0.45;
-		this.m.DirectDamageMult = 0.3;
+		this.m.RegularDamage = 25;
+		this.m.RegularDamageMax = 40;
+		this.m.ArmorDamageMult = 0.5;
+		this.m.DirectDamageMult = 0.35;
 	}
 
-	function getAmmoID()
-	{
-		return "ammo.pebbles";
-	}
 
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local quick_shot = this.new("scripts/skills/actives/legend_quick_pebble");
+		local quick_shot = this.new("scripts/skills/actives/sling_stone_skill");
 		this.addSkill(quick_shot);
-		local aimed_shot = this.new("scripts/skills/actives/legend_aimed_pebble");
-		this.addSkill(aimed_shot);
-	}
-
-	function onSerialize( _out )
-	{
-		this.weapon.onSerialize(_out);
-		_out.writeString(this.m.Name);
-	}
-
-	function onDeserialize( _in )
-	{
-		this.weapon.onDeserialize(_in);
-		this.m.Name = _in.readString();
 	}
 
 });

@@ -692,6 +692,11 @@ Fixed issues with some battles not loading when some slings were diring pebbles 
 Fixed warden graphic not showing in all situations 
 Various start text, backgrounds and tooltips updated 
 
+Beta 11 test 5 
+Merged the three slings into two slings. 
+Slings buffed to DLC stats and behaviour
+Sling staffs nerfed to 40-55 damage, 8 range, but free ammo. 
+
 
 Known issues:
 Map configuration disabled

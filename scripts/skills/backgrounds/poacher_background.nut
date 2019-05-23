@@ -136,7 +136,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			}
 			else if (r <= 80)
 			{
-				items.equip(this.new("scripts/items/weapons/staff_sling"));
+				items.equip(this.new("scripts/items/weapons/legend_sling"));
 			}
 			else
 			{
