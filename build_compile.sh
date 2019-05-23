@@ -5,7 +5,11 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "unstaged_build.sh" ]; then
         echo "skipping $line"
+    elif [ "$line" == "unstaged_build_poss.sh" ]; then
+        echo "skipping $line"
     elif [ "$line" == "build_compile.sh" ]; then
+        echo "skipping $line"                   
+    elif [ "$line" == "build_compile_poss.sh" ]; then
         echo "skipping $line"                   
     elif [ "$line" == "ReleaseNotes.md" ]; then
         echo "skipping $line"
@@ -28,7 +32,7 @@ while read -r line; do
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_hook.nut" ]; then
         echo "skipping $line"  
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_charm.nut" ]; then
-        echo "skipping $line"  		
+        echo "skipping $line"                
     else
         echo "$line"
         path=$( echo ${line%/*} )

@@ -11,6 +11,12 @@ while read -r line; do
         if [ "$xpath" == "build.sh" ]; then
             echo "skipping $xpath"
         elif [ "$xpath" == "unstaged_build.sh" ]; then
+            echo "skipping $xpath"
+        elif [ "$xpath" == "unstaged_build_poss.sh" ]; then
+            echo "skipping $xpath"
+        elif [ "$xpath" == "build_compile.sh" ]; then
+            echo "skipping $xpath"                   
+        elif [ "$xpath" == "build_compile_poss.sh" ]; then
             echo "skipping $xpath"                    
         elif [ "$xpath" == "ReleaseNotes.md" ]; then
             echo "skipping $xpath"
