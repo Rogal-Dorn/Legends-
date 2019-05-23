@@ -171,11 +171,6 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				P = 1.0,
 				S = "ammo/quiver_of_arrows"
 			},
-				{
-				R = 0,
-				P = 1.0,
-				S = "ammo/bag_of_pebbles"
-			},
 			{
 				R = 0,
 				P = 1.0,

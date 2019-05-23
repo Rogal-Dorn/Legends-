@@ -186,11 +186,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 				P = 1.0,
 				S = "ammo/quiver_of_bolts"
 			});
-			_list.push({
-				R = 10,
-				P = 1.0,
-				S = "ammo/bag_of_pebbles"
-			});
+
 
 			if (this.Const.DLC.Unhold)
 			{

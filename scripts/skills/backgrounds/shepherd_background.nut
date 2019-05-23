@@ -103,7 +103,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			if (this.Math.rand(1, 100) <= 66)
 			{
-				items.equip(this.new("scripts/items/weapons/staff_sling"));
+				items.equip(this.new("scripts/items/weapons/legend_sling"));
 			}
 		}
 

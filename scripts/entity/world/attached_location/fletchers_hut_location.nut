@@ -106,11 +106,6 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 			_list.push({
 				R = 0,
 				P = 0.8,
-				S = "ammo/bag_of_pebbles"
-			});
-			_list.push({
-				R = 0,
-				P = 0.8,
 				S = "ammo/quiver_of_bolts"
 			});
 			_list.push({

@@ -57,7 +57,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].addLightInjury();
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/staff_sling"));
+		items.equip(this.new("scripts/items/weapons/legend_sling"));
 		bros[3].setStartValuesEx([
 			"vagabond_background",
 			"thief_background",

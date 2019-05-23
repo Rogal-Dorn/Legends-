@@ -72,7 +72,7 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 		if (this.Const.DLC.Wildmen)
 		{
 			weapons.push([
-				"weapons/staff_sling"
+				"weapons/legend_sling"
 			]);
 		}
 

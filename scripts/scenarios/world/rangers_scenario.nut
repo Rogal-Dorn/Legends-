@@ -71,7 +71,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
-		items.equip(this.new("scripts/items/weapons/staff_sling"));
+		items.equip(this.new("scripts/items/weapons/legend_sling"));
 		this.World.Assets.m.BusinessReputation = 50;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));

@@ -236,11 +236,6 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "ammo/quiver_of_arrows"
 			},
 			{
-				R = 15,
-				P = 1.0,
-				S = "ammo/bag_of_pebbles"
-			},
-			{
 				R = 10,
 				P = 1.0,
 				S = "armor/sackcloth"
