@@ -147,9 +147,9 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 				user.getSkills().removeByID("effects.goblin_poison");
 			}
 
-			while (user.getSkills().hasSkill("effects.goblin_poison"))
+			while (user.getSkills().hasSkill("effects.spider_poison"))
 			{
-				user.getSkills().removeByID("effects.goblin_poison");
+				user.getSkills().removeByID("effects.spider_poison");
 			}
 
 			if (!user.isHiddenToPlayer())

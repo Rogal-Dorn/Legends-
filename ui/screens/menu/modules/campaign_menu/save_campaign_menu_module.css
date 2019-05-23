@@ -18,6 +18,7 @@
 	position: absolute;
 	margin: auto;
 	z-index : 1;
+    pointer-events: auto;
 }
 
 .save-campaign-menu-module.is-center
