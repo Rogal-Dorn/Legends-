@@ -3,8 +3,8 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_necro";
-		this.m.Name = "Legends Necro";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_140.png[/img][/p][p]Davkul awaits. You lead a small flock devoted to the elder god, and it\'s time to spread the word. Find more followers, acquire riches, and please Davkul with sacrifices.\n\n[color=#bcad8c]Cultists:[/color] Start with a group of four cultists with poor equipment. More cultists may flock to you for free.\n[color=#bcad8c]Sacrifices:[/color] Davkul will occasionally demand sacrifices from you, but also bestow boons upon those loyal to him.[/p]";
+		this.m.Name = "Legends Necromancer";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_140.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but you embrace the other side. \n\n[color=#bcad8c]Necromancy:[/color] Start with undead companions and a scythe that summons the dead\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies\n[color=#bcad8c]Blood magic:[/color]Drain blood, feast on corpses and use your own blood in rituals\n[color=#bcad8c]Avatar:[/color]When the warlock dies, the spells fade and the game ends[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 13;
 	}
@@ -19,12 +19,11 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 4; i = ++i )
+		for( local i = 0; i < 3; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
+			bro.m.HireTime = this.Time.getVirtualTimeF();;
 
 			while (names.find(bro.getNameOnly()) != null)
 			{
@@ -42,44 +41,26 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_prophet_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
-		bros[1].setStartValuesEx([
-			"cultist_background"
-		]);
-		bros[1].getBackground().m.RawDescription = "%name% found you upon the road. He stated that he knew you were a mercenary captain. You wore but ordinary cloth at that moment, but he said by Davkul\'s darkness you had an aura of wanted black about you.";
+
+		bros[1].getBackground().m.RawDescription = "You found %name% starved to death on the road, you tease him endlessly about being skin and bones. You enjoy the ribbing, but he does not find it humerous.";
 		bros[1].setPlaceInFormation(3);
-		local items = bros[1].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
-		items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
-		items.equip(this.new("scripts/items/helmets/hood"));
-		bros[2].setStartValuesEx([
-			"cultist_background"
-		]);
-		bros[2].getBackground().m.RawDescription = "A quiet man, %name% has shadows beneath his fingerprints, running like the brine beneath a pallid shore. When he shook your hand, it was as though you could hear the hissing of your sanity.";
+        bros[1].getTags().add("PlayerSkeleton");
+        bros[1].getTags().add("undead");
+        bros[1].getTags().add("skeleton");
+        bros[1].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
+        bros[1].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+
 		bros[2].setPlaceInFormation(4);
-		local items = bros[2].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.equip(this.new("scripts/items/weapons/battle_whip"));
-		items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
-		bros[3].setStartValuesEx([
-			"cultist_background"
-		]);
-		bros[3].getBackground().m.RawDescription = "%name% banded with you outside a tavern. The first time you saw him he had scars running up his arms and across veins that would imply he should not still be living. But each morning it appears as though his scars move, slowly creeping in one direction: toward his forehead.";
-		bros[3].setPlaceInFormation(5);
-		local items = bros[3].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/weapons/bludgeon"));
-		items.equip(this.new("scripts/items/helmets/cultist_hood"));
-		items.equip(this.new("scripts/items/armor/leather_wraps"));
-		this.World.Assets.addMoralReputation(-10);
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money + 400;
+        bros[2].getTags().add("PlayerZombie");
+        bros[2].getTags().add("undead");
+        bros[2].getTags().add("zombie_minion");
+        bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
+		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
+        bros[2].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+        newRecruit.onHired();
+
+		this.World.Assets.addMoralReputation(-50);
+		this.World.Assets.m.Money = this.World.Assets.m.Money;
 	}
 
 	function onSpawnPlayer()
@@ -146,7 +127,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	}
 		function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 4;
+		this.World.Assets.m.BrothersMax = 3;
 		this.World.Tags.set("IsLegendsNecro", true);
 	}
 
@@ -168,7 +149,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		if (_list.len() >= 10)
 		{
-			_list.push("cultist_background");
+			_list.push("gravedigger_background");
 		}
 	}
 
