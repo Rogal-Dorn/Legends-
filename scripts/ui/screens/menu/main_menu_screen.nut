@@ -138,7 +138,7 @@ this.main_menu_screen <- {
 		}
 
 		this.m.JSHandle.asyncCall("setDLC", dlc);
-		this.m.JSHandle.asyncCall("setMOTD", "Battle Brothers is a hard game.\n\nEven if you\'ve played similar games before, it\'s recommended that you start with \'Beginner\' difficulty and play the tutorial!");
+		this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends Beta.\n\n To report bugs, share strategies and ideas, or try out new test builds, join us on discord.gg/ZfCHGuC");
 	}
 
 	function destroy()
