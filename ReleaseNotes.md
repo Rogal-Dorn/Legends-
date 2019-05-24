@@ -692,14 +692,22 @@ Fixed issues with some battles not loading when some slings were diring pebbles 
 Fixed warden graphic not showing in all situations 
 Various start text, backgrounds and tooltips updated 
 
-Beta 11 test 5 
+Beta 11 WotN Test 5
 Merged the three slings into two slings. 
 Slings buffed to DLC stats and behaviour
 Sling staffs nerfed to 40-55 damage, 8 range, but free ammo. 
+Adds back map configurtion when starting a new campaign
+Fixes necro start armor errors
+Fixes crashes when using bucklers
+Fixes alp sleep sound file crash
+Fixes party size getting reset after a reload
+Adds back all vanilla orgin starts
+Adds some Legends origin starts (this is still WIP - these all need passes)
+Fixes the incorrect pre-wildman campaign warning when reloading a save game
+https://drive.google.com/file/d/134GjxkcoswQE7U31I1faFuLv6Tg6d6kT/view?usp=sharing
 
 
 Known issues:
-Map configuration disabled
 starts not properly integrated yet
 seer and vala don't have a start
 slings aren't integrated - partially resolved 
