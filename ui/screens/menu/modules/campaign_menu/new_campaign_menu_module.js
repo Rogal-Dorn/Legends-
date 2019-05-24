@@ -94,7 +94,8 @@ var NewCampaignMenuModule = function()
     // scenario
     this.mScenarios = null;
     this.mSelectedScenario = 0;
-    this.mScenariosRow = null;
+	this.mScenarioContainer = null;
+	this.mScenarioScrollContainer = null;
 
 	// Map config
 	this.mMapOptions = {
@@ -675,8 +676,13 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
         leftColumn.append(row);
         var title = $('<div class="title title-font-big font-color-title">Company Origin</div>');
         row.append(title);
-        this.mScenariosRow = row;
+        //this.mScenariosRow = row;
 
+		var listContainerLayout = $('<div class="l-list-container"/>');
+		row.append(listContainerLayout);
+		this.mScenarioContainer = listContainerLayout.createList(8.85);
+		this.mScenarioScrollContainer = this.mScenarioContainer.findListScrollContainer();
+	
         var row = $('<div class="row3 text-font-medium font-color-description" />');
         rightColumn.append(row);
         this.mScenariosDesc = row;
@@ -745,27 +751,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			self.mStartButton.changeButtonText("Next");
 			self.mCancelButton.changeButtonText("Previous");
 			self.mRandomButton.removeClass('display-block').addClass('display-none');
-		}
-
-    	// if(self.mFirstPanel.hasClass('display-block'))
-    	// {
-        //     self.notifyBackendCancelButtonPressed();
-        // }
-        // else if(self.mThirdPanel.hasClass('display-block'))
-        // {
-        //     self.mSecondPanel.addClass('display-block').removeClass('display-none');
-        //     self.mThirdPanel.removeClass('display-block').addClass('display-none');
-        //     self.mStartButton.changeButtonText("Next");
-        //     self.mCancelButton.changeButtonText("Previous");
-        // }
-    	// else
-    	// {
-		// 	self.mFirstPanel.addClass('display-block').removeClass('display-none');
-		// 	self.mSecondPanel.removeClass('display-block').addClass('display-none');
-		// 	self.mStartButton.changeButtonText("Next");
-        //     self.mCancelButton.changeButtonText("Cancel");
-        //     self.mStartButton.enableButton(true);
-    	// }    	
+		} 	
     }, '', 1);
 
     this.mIsVisible = false;
@@ -809,6 +795,12 @@ NewCampaignMenuModule.prototype.destroyDIV = function ()
     this.mCancelButton.remove();
     this.mCancelButton = null;
 
+	this.mScenarioScrollContainer.empty();
+    this.mScenarioScrollContainer = null;
+    this.mScenarioContainer.destroyList();
+    this.mScenarioContainer.remove();
+	this.mScenarioContainer = null;
+	
     this.mFirstPanel.empty();
     this.mFirstPanel.remove();
     this.mFirstPanel = null;
@@ -1388,8 +1380,8 @@ NewCampaignMenuModule.prototype.setStartingScenarios = function (_data)
 
         for (var i = 0; i < _data.length; ++i)
         {
-            this.addStartingScenario(i, _data[i], this.mScenariosRow);
-        }
+            this.addStartingScenario(i, _data[i], this.mScenarioScrollContainer);
+		}
     }
 }
 
@@ -1399,7 +1391,7 @@ NewCampaignMenuModule.prototype.addStartingScenario = function (_index, _data, _
     var self = this;
 
     var control = $('<div class="control"></div>');
-    this.mScenariosRow.append(control);
+    _row.append(control);
 
     var radioButton = $('<input type="radio" id="cb-scenario-' + _index + '" name="scenario" ' + (_index == 0 ? 'checked' : '') + '/>');
     control.append(radioButton);

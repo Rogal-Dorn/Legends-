@@ -9,18 +9,18 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/sleep_square_bw.png";
 		this.m.Overlay = "active_116";
 		this.m.SoundOnUse = [
-			"sounds/enemies/alp_sleep_01.wav",
-			"sounds/enemies/alp_sleep_02.wav",
-			"sounds/enemies/alp_sleep_03.wav",
-			"sounds/enemies/alp_sleep_04.wav",
-			"sounds/enemies/alp_sleep_05.wav",
-			"sounds/enemies/alp_sleep_06.wav",
-			"sounds/enemies/alp_sleep_07.wav",
-			"sounds/enemies/alp_sleep_08.wav",
-			"sounds/enemies/alp_sleep_09.wav",
-			"sounds/enemies/alp_sleep_10.wav",
-			"sounds/enemies/alp_sleep_11.wav",
-			"sounds/enemies/alp_sleep_12.wav"
+			"sounds/enemies/dlc2/alp_sleep_01.wav",
+			"sounds/enemies/dlc2/alp_sleep_02.wav",
+			"sounds/enemies/dlc2/alp_sleep_03.wav",
+			"sounds/enemies/dlc2/alp_sleep_04.wav",
+			"sounds/enemies/dlc2/alp_sleep_05.wav",
+			"sounds/enemies/dlc2/alp_sleep_06.wav",
+			"sounds/enemies/dlc2/alp_sleep_07.wav",
+			"sounds/enemies/dlc2/alp_sleep_08.wav",
+			"sounds/enemies/dlc2/alp_sleep_09.wav",
+			"sounds/enemies/dlc2/alp_sleep_10.wav",
+			"sounds/enemies/dlc2/alp_sleep_11.wav",
+			"sounds/enemies/dlc2/alp_sleep_12.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
