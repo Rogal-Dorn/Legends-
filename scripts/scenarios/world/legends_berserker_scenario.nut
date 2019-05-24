@@ -164,7 +164,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			this.Music.setTrackList([
 				"music/barbarians_02.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.raiders_scenario_intro");
+		//	this.World.Events.fire("event.raiders_scenario_intro");
 		}, null);
 	}
 

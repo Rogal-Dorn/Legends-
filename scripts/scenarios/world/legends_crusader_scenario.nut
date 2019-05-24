@@ -23,41 +23,12 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.setStartValuesEx([
 			"legend_crusader_commander_background"
 		]);
-	bro.getBackground().buildDescription(true);
-		bro.setTitle("the Lone Wolf");
-		bro.getSkills().removeByID("trait.survivor");
-		bro.getSkills().removeByID("trait.greedy");
-		bro.getSkills().removeByID("trait.loyal");
-		bro.getSkills().removeByID("trait.disloyal");
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.setPlaceInFormation(4);
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
-		bro.m.PerkPoints = 3;
-		bro.m.LevelUps = 3;
-		bro.m.Level = 4;
-		bro.getBaseProperties().MeleeDefense -= 2;
-		bro.m.Talents = [];
-		bro.m.Attributes = [];
-		local talents = bro.getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeDefense] = 2;
-		talents[this.Const.Attributes.Fatigue] = 3;
-		talents[this.Const.Attributes.MeleeSkill] = 3;
-		bro.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-	//	local items = bro.getItems();
-	//	items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-	//	items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-	//	items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-	//	items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-	//	items.equip(this.new("scripts/items/armor/sellsword_armor"));
-	//	items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
-	//	items.equip(this.new("scripts/items/weapons/longsword"));
-		this.World.Assets.m.BusinessReputation = 200;
-		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 - (this.World.Assets.getEconomicDifficulty() == 0 ? 0 : 100);
-		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
-		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 3;
+		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
 	}
 
@@ -115,7 +86,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			this.Music.setTrackList([
 				"music/noble_02.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.lone_wolf_scenario_intro");
+		//	this.World.Events.fire("event.lone_wolf_scenario_intro");
 		}, null);
 	}
 

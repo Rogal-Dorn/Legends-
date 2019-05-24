@@ -706,6 +706,14 @@ Adds some Legends origin starts (this is still WIP - these all need passes)
 Fixes the incorrect pre-wildman campaign warning when reloading a save game
 https://drive.google.com/file/d/134GjxkcoswQE7U31I1faFuLv6Tg6d6kT/view?usp=sharing
 
+Beta 11 WotN Test 6
+Warlock begins with undead followers, description updated
+Berserker begin alone, description updated
+Noble begins with noble companions, can only recruit nobles, description updated
+Ranger begins with two rangers, description updated
+Beggar begins alone and hated by a noble house
+Sisterhood start begins with seer, vala, shieldmaiden, noblewoman, fletcher and pickpocket. Can only hire women 
+
 
 Known issues:
 starts not properly integrated yet
