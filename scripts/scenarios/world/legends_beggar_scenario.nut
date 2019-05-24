@@ -113,7 +113,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			this.Music.setTrackList([
 				"music/retirement_01.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.militia_scenario_intro");
+		//	this.World.Events.fire("event.militia_scenario_intro");
 		}, null);
 	}
 
