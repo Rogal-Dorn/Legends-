@@ -605,7 +605,10 @@ this.skill <- {
 			}
 		}
 
-		++this.Const.SkillCounter;
+		if (!_forFree)
+		{
+			++this.Const.SkillCounter;
+		}
 
 		if ((this.m.IsAudibleWhenHidden || user.getTile().IsVisibleForPlayer) && this.m.SoundOnUse.len() != 0)
 		{
@@ -1692,8 +1695,6 @@ this.skill <- {
 		local pos = _info.TargetEntity.getPos();
 		local hasArmorHitSound = _info.TargetEntity.getItems().getAppearance().ImpactSound[bodyPart].len() != 0;
 		_info.TargetEntity.onDamageReceived(_info.User, _info.Skill, hitInfo);
-		_info.Container.onTargetHit(_info.Skill, _info.TargetEntity, hitInfo.BodyPart, hitInfo.DamageInflictedHitpoints, hitInfo.DamageInflictedArmor);
-		_info.User.getItems().onDamageDealt(_info.TargetEntity, this, hitInfo);
 
 		if (hitInfo.DamageInflictedHitpoints >= this.Const.Combat.PlayHitSoundMinDamage)
 		{
@@ -1711,10 +1712,13 @@ this.skill <- {
 			}
 		}
 
-		if (!_info.User.isAlive())
+		if (typeof _info.User == "instance" && _info.User.isNull() || !_info.User.isAlive() || _info.User.isDying())
 		{
 			return;
 		}
+
+		_info.Container.onTargetHit(_info.Skill, _info.TargetEntity, hitInfo.BodyPart, hitInfo.DamageInflictedHitpoints, hitInfo.DamageInflictedArmor);
+		_info.User.getItems().onDamageDealt(_info.TargetEntity, this, hitInfo);
 
 		if (hitInfo.DamageInflictedHitpoints >= this.Const.Combat.SpawnBloodMinDamage && !_info.Skill.isRanged() && (_info.TargetEntity.getBloodType() == this.Const.BloodType.Red || _info.TargetEntity.getBloodType() == this.Const.BloodType.Dark))
 		{

@@ -702,7 +702,8 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 					this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.Mercenaries, 60 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.Flags.get("EnemyNobleHouse"));
 					p.Entities.push({
 						ID = this.Const.EntityType.Knight,
-						Variant = 0,
+						Variant = this.Const.DLC.Wildmen && this.Contract.getDifficultyMult() >= 1.15 ? 1 : 0,
+						Name = this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)],
 						Row = 2,
 						Script = "scripts/entity/tactical/humans/knight",
 						Faction = this.Flags.get("EnemyNobleHouse"),

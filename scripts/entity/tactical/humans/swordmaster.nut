@@ -35,6 +35,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 	}
@@ -150,6 +151,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
 		}
 
+		this.m.BaseProperties.DamageDirectMult *= 1.25;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		return true;
 	}

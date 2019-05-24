@@ -307,8 +307,14 @@ this.combat_manager <- {
 				{
 					for( local p = 0; p != combat.Factions[f].len(); p = ++p )
 					{
-						numParties = ++numParties;
-						combat.Factions[f][p].setCombatID(0);
+						if (combat.Factions[f][p].isNull() || !combat.Factions[f][p].isAlive())
+						{
+						}
+						else
+						{
+							numParties = ++numParties;
+							combat.Factions[f][p].setCombatID(0);
+						}
 					}
 				}
 

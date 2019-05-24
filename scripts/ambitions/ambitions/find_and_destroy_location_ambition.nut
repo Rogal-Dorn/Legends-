@@ -44,6 +44,18 @@ this.find_and_destroy_location_ambition <- this.inherit("scripts/ambitions/ambit
 		local workers = [];
 		local not_farmers = [];
 
+		if (brothers.len() > 2)
+		{
+			for( local i = 0; i < brothers.len(); i = ++i )
+			{
+				if (brothers[i].getSkills().hasSkill("trait.player"))
+				{
+					brothers.remove(i);
+					break;
+				}
+			}
+		}
+
 		foreach( bro in brothers )
 		{
 			if (bro.getBackground().getID() == "background.farmhand")

@@ -20,7 +20,7 @@ this.named_goblin_spear <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.Value = 800;
 		this.m.Condition = 36.0;
 		this.m.ConditionMax = 36.0;
-		this.m.StaminaModifier = -3;
+		this.m.StaminaModifier = -2;
 		this.m.RegularDamage = 25;
 		this.m.RegularDamageMax = 35;
 		this.m.ArmorDamageMult = 0.7;

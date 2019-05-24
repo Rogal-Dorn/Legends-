@@ -439,7 +439,7 @@ gt.Const.World.Spawn.Troops <- {
 		Variant = 0,
 		Strength = 0,
 		Cost = 0,
-		Row = 0,
+		Row = 1,
 		Script = "scripts/entity/tactical/enemies/trickster_god"
 	},
 	Militia = {

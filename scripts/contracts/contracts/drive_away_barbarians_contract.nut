@@ -351,6 +351,7 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 							properties.Entities = [];
 							properties.Entities.push({
 								ID = this.Const.EntityType.BarbarianChampion,
+								Name = name,
 								Variant = difficulty >= 1.15 ? 1 : 0,
 								Row = 0,
 								Script = "scripts/entity/tactical/humans/barbarian_champion",

@@ -132,6 +132,17 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 			spawn.setSize(this.Math.rand(60, 75) * 0.01);
 			spawn.setFaction(this.getFaction());
 			spawn.m.XP = spawn.m.XP / 2;
+			local allies = this.Tactical.Entities.getInstancesOfFaction(this.getFaction());
+
+			foreach( a in allies )
+			{
+				if (a.getType() == this.Const.EntityType.Hexe)
+				{
+					spawn.getSkills().add(this.new("scripts/skills/effects/fake_charmed_effect"));
+					break;
+				}
+			}
+
 			++this.m.Count;
 		}
 

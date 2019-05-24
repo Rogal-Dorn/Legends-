@@ -67,6 +67,18 @@ this.allied_civilians_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 		local brothers = this.World.getPlayerRoster().getAll();
 
+		if (brothers.len() > 1)
+		{
+			for( local i = 0; i < brothers.len(); i = ++i )
+			{
+				if (brothers[i].getSkills().hasSkill("trait.player"))
+				{
+					brothers.remove(i);
+					break;
+				}
+			}
+		}
+
 		foreach( bro in brothers )
 		{
 			if (bro.getBackground().getID() == "background.brawler")

@@ -150,7 +150,7 @@ this.ai_disengage <- this.inherit("scripts/ai/tactical/behavior", {
 								goodReason = true;
 							}
 
-							if (numNewZOC < inZonesOfControl - 1 && numNewZOC != 0 && currentBestTargetScore >= bestTargetScore)
+							if (_entity.getCurrentProperties().getMeleeDefense() <= 75 && numNewZOC < inZonesOfControl - 1 && numNewZOC != 0 && currentBestTargetScore >= bestTargetScore)
 							{
 								score = score * (this.Math.pow(this.Const.AI.Behavior.DisengageLessOpponentsMult, inZonesOfControl - numNewZOC) + bestTargetScore * this.Const.AI.Behavior.DisengageTargetMult);
 								goodReason = true;
