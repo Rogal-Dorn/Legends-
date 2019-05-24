@@ -42,6 +42,11 @@
     width: 35.0rem;
 }
 
+.new-campaign-menu-module > .dialog .content .column2 .l-list-container
+{
+    height: 80%;
+}
+
 .new-campaign-menu-module > .dialog .content .column3
 {
     width: 45.0rem;
