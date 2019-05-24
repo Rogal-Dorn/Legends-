@@ -20,7 +20,7 @@ this.named_goblin_falchion <- this.inherit("scripts/items/weapons/named/named_we
 		this.m.Value = 1800;
 		this.m.Condition = 52.0;
 		this.m.ConditionMax = 52.0;
-		this.m.StaminaModifier = -4;
+		this.m.StaminaModifier = -2;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.7;

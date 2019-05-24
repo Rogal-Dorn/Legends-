@@ -89,6 +89,18 @@ this.visit_settlements_ambition <- this.inherit("scripts/ambitions/ambition", {
 		local bestBravery = 0;
 		local bravest;
 
+		if (brothers.len() > 1)
+		{
+			for( local i = 0; i < brothers.len(); i = ++i )
+			{
+				if (brothers[i].getSkills().hasSkill("trait.player"))
+				{
+					brothers.remove(i);
+					break;
+				}
+			}
+		}
+
 		foreach( bro in brothers )
 		{
 			if (bro.getCurrentProperties().getBravery() > bestBravery)

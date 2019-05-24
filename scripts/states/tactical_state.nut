@@ -2126,11 +2126,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.Tactical.TopbarRoundInformation.update();
 		this.m.MaxHostiles = this.Math.max(this.m.MaxHostiles, this.Tactical.Entities.getHostilesNum());
 
-		if (_round > 1)
+		if (_round > 1 && !this.Tactical.Entities.isCombatFinished())
 		{
 			this.Tactical.Entities.checkEnemyRetreating();
 
-			if (!this.m.IsEnemyRetreatDialogShown && (this.m.StrategicProperties == null || !this.m.StrategicProperties.IsFleeingProhibited) && this.Tactical.Entities.isEnemyRetreating() && !this.m.MenuStack.hasBacksteps() && !this.m.CharacterScreen.isVisible() && !this.m.CharacterScreen.isAnimating())
+			if (!this.m.IsEnemyRetreatDialogShown && (this.m.StrategicProperties == null || !this.m.StrategicProperties.IsFleeingProhibited) && this.Tactical.Entities.isEnemyRetreating() && !this.m.MenuStack.hasBacksteps() && !this.m.CharacterScreen.isVisible() && !this.m.CharacterScreen.isAnimating() && !this.m.TacticalMenuScreen.isVisible() && !this.m.TacticalMenuScreen.isAnimating() && !this.m.TacticalDialogScreen.isVisible() && !this.m.TacticalDialogScreen.isAnimating())
 			{
 				this.m.IsEnemyRetreatDialogShown = true;
 				this.showRetreatScreen();
@@ -3087,8 +3087,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_raider");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/swordmaster");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+				e.makeMiniboss();
 				e.assignRandomEquipment();
 			}
 

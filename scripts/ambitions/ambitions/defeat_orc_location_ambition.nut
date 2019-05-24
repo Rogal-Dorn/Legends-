@@ -64,6 +64,18 @@ this.defeat_orc_location_ambition <- this.inherit("scripts/ambitions/ambition", 
 		local fearful = [];
 		local lowborn = [];
 
+		if (brothers.len() > 1)
+		{
+			for( local i = 0; i < brothers.len(); i = ++i )
+			{
+				if (brothers[i].getSkills().hasSkill("trait.player"))
+				{
+					brothers.remove(i);
+					break;
+				}
+			}
+		}
+
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasSkill("trait.superstitious"))

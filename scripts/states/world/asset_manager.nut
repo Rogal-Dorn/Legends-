@@ -406,6 +406,7 @@ this.asset_manager <- {
 			bro.m.XP = this.Const.LevelXP[bro.m.Level - 1];
 			bro.m.Attributes = [];
 			bro.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+			bro.getSkills().update();
 		}
 
 		this.updateFormation();

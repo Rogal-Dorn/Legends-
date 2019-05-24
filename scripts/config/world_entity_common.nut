@@ -40,7 +40,7 @@ gt.Const.World.Common <- {
 
 		if (troop.Variant > 0)
 		{
-			if (this.Math.rand(1, 100) > troop.Variant + _minibossify + (this.World.getTime().Days > 100 ? 0 : -1))
+			if (!this.Const.DLC.Wildmen || this.Math.rand(1, 100) > troop.Variant + _minibossify + (this.World.getTime().Days > 100 ? 0 : -1))
 			{
 				troop.Variant = 0;
 			}
@@ -239,7 +239,7 @@ gt.Const.World.Common <- {
 
 				if (unit.Variant > 0)
 				{
-					if (this.Math.rand(1, 100) > unit.Variant + _minibossify + (this.World.getTime().Days > 100 ? 0 : -1))
+					if (!this.Const.DLC.Wildmen || this.Math.rand(1, 100) > unit.Variant + _minibossify + (this.World.getTime().Days > 100 ? 0 : -1))
 					{
 						unit.Variant = 0;
 					}

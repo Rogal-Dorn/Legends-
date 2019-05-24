@@ -292,7 +292,7 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 			local corpse = clone this.Const.Corpse;
 			corpse.Type = this.m.ResurrectWithScript;
 			corpse.Faction = this.getFaction();
-			corpse.CorpseName = this.Const.Strings.getArticleCapitalized(this.getName()) + this.getName();
+			corpse.CorpseName = (this.m.IsGeneratingKillName ? this.Const.Strings.getArticleCapitalized(this.getName()) : "") + this.getName();
 			corpse.Tile = _tile;
 			corpse.Value = this.m.ResurrectionValue;
 			corpse.Armor = this.m.BaseProperties.Armor;

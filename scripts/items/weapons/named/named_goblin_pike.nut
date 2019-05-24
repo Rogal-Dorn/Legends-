@@ -21,7 +21,7 @@ this.named_goblin_pike <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 40.0;
 		this.m.ConditionMax = 40.0;
-		this.m.StaminaModifier = -8;
+		this.m.StaminaModifier = -6;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;

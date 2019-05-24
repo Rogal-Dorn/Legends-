@@ -146,6 +146,7 @@ this.trickster_god <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToDisarm = true;
 		b.IsImmuneToRoot = true;
 		b.IsImmuneToStun = true;
+		b.IsAffectedByNight = false;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

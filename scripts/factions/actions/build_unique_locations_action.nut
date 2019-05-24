@@ -202,7 +202,7 @@ this.build_unique_locations_action <- this.inherit("scripts/factions/faction_act
 
 			for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 			{
-				if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest)
+				if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest)
 				{
 				}
 				else

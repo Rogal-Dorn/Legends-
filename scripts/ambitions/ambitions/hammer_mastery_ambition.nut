@@ -70,6 +70,18 @@ this.hammer_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 		local candidates = [];
 		local not_candidates = [];
 
+		if (brothers.len() > 2)
+		{
+			for( local i = 0; i < brothers.len(); i = ++i )
+			{
+				if (brothers[i].getSkills().hasSkill("trait.player"))
+				{
+					brothers.remove(i);
+					break;
+				}
+			}
+		}
+
 		foreach( bro in brothers )
 		{
 			local p = bro.getCurrentProperties();

@@ -2171,7 +2171,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 					{
 						if (t.Script.len() != "")
 						{
-							if (t.Variant != 0)
+							if (t.Variant != 0 && this.Const.DLC.Wildmen)
 							{
 								champions.push(t);
 							}
@@ -2187,7 +2187,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			{
 				foreach( t in _properties.Entities )
 				{
-					if (t.Variant != 0)
+					if (t.Variant != 0 && this.Const.DLC.Wildmen)
 					{
 						champions.push(t);
 					}
