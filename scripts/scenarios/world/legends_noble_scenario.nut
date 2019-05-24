@@ -4,7 +4,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_noble";
 		this.m.Name = "Legends Noble";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Deserters:[/color] Start with a captain, two deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#bcad8c]Prepared for anything:[/color] Anyone you hire gains bags n belts in combat[/p]\n[color=#bcad8c]Snob:[/color] You can only hire noble born[/p]\n[color=#bcad8c]Avatar:[/color] if the captain dies, it is game over[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Deserters:[/color] Start with a captain, two deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#bcad8c]Prepared for anything:[/color] Anyone you hire gains bags n belts in combat\n[color=#bcad8c]Snob:[/color] You can only hire noble born or military recruits\n[color=#bcad8c]Avatar:[/color] if the captain dies, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 14;
 	}
@@ -82,7 +82,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		f.addPlayerRelation(-100.0, "You and your men deserted");
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 6; i = ++i )
 		{
 			while (true)
 			{
@@ -101,7 +101,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		for( local i = 0; i < 6; i = ++i )
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
-			bro.setName(names[i]);
 			bro.setPlaceInFormation(3 + i);
 
 		}
@@ -160,7 +159,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 4;
+		this.World.Assets.m.BrothersMax = 6;
 		this.World.Tags.set("IsLegendsNoble", true);
 	}
 
@@ -171,7 +170,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isNoble())
+			if (!bro.getBackground().isNoble() && !bro.getBackground(IsCombatBackground())
 			{
 				garbage.push(bro);
 			}

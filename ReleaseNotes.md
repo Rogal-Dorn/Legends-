@@ -707,12 +707,13 @@ Fixes the incorrect pre-wildman campaign warning when reloading a save game
 https://drive.google.com/file/d/134GjxkcoswQE7U31I1faFuLv6Tg6d6kT/view?usp=sharing
 
 Beta 11 WotN Test 6
-Warlock begins with undead followers, description updated
-Berserker begin alone, description updated
-Noble begins with noble companions, can only recruit nobles, description updated
-Ranger begins with two rangers, description updated
+Warlock begins with undead followers
+Berserker begin alone
+Noble begins with noble companions, can only recruit nobles or combat backgrounds
+Ranger begins with two rangers
 Beggar begins alone and hated by a noble house
 Sisterhood start begins with seer, vala, shieldmaiden, noblewoman, fletcher and pickpocket. Can only hire women 
+Fixed not being able to enter cities with shepards in them 
 
 
 Known issues:

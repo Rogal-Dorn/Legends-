@@ -3,8 +3,8 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	function create()
 	{
 		this.m.ID = "scenario.legends_sisterhood";
-		this.m.Name = "Sisterhood";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]Born into a world dominated by kings and bishops, as a woman you were told you could never be anything. After years of studying in secret, you have made connections and drawn together a group of powerful women. Now you set out to forge your own destinies  \n\n[color=#bcad8c]Sisterhood:[/color] You can only hire women.\n[color=#bcad8c]Wisdom:[/color] Anyone you hire gains the Student perk in battle.\n[color=#bcad8c]Secret knowledge:[/color] You can unlock rare and powerful abilities and weapons.\n[color=#bcad8c]Avatar:[/color] If you die, it is game over[/p]";
+		this.m.Name = "Legends Sisterhood";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_91.png[/img][/p][p]Born into a world dominated by kings and bishops, as a woman you were told you could never be anything. After years of studying in secret, you have made connections and drawn together a group of powerful women. Now you set out to forge your own destinies  \n\n[color=#bcad8c]Sisterhood:[/color] You can only hire women.\n[color=#bcad8c]Wisdom:[/color] Anyone you hire gains the Student perk in battle.\n[color=#bcad8c]Secret knowledge:[/color] You can unlock rare and powerful abilities and weapons.\n[color=#bcad8c]Avatar:[/color] If you die, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
 		this.m.IsFixedLook = true;
@@ -44,7 +44,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		]);
 		bros[3].setPlaceInFormation(14);
 		bros[4].setStartValuesEx([
-			"legend_seer_commander_background"
+			"legend_witch_commander_background"
 		]);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[4].getTags().set("IsPlayerCharacter", true);

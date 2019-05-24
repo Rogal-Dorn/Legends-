@@ -4,7 +4,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.m.ID = "scenario.raiders";
 		this.m.Name = "Northern Raiders";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]For all your adult life you\'ve been raiding and pillaging in these lands. But with the local peasantry poor as mice, you may want to finally expand into the profitable field of mercenary work - that is, if your potential employers are willing to forgive your past transgressions.\n\n[color=#bcad8c]Warband:[/color] Start with three experienced barbarians.\n[color=#bcad8c]Pillagers:[/color] You have a higher chance to get any items from slain enemies as loot.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_135.png[/img][/p][p]For all your adult life you\'ve been raiding and pillaging in these lands. But with the local peasantry poor as mice, you may want to finally expand into the profitable field of mercenary work - that is, if your potential employers are willing to forgive your past transgressions.\n\n[color=#bcad8c]Warband:[/color] Start with three experienced barbarians.\n[color=#bcad8c]Pillagers:[/color] You have a higher chance to get any items from slain enemies as loot.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 8;
 	}
