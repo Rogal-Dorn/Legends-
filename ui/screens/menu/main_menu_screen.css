@@ -61,6 +61,16 @@
 
 .main-menu-screen .version
 {
+	bottom: 3.0rem;
+    right: 1.0rem;
+    position: absolute;
+    z-index: 3;
+
+	/*display: none;*/
+}
+
+.main-menu-screen .legends-version
+{
 	bottom: 1.0rem;
     right: 1.0rem;
     position: absolute;
@@ -68,6 +78,8 @@
 
 	/*display: none;*/
 }
+
+
 
 .main-menu-screen .dlc-container
 {

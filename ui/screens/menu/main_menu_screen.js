@@ -115,6 +115,9 @@ MainMenuScreen.prototype.createDIV = function (_parentDiv)
     this.mVersion = $('<div class="text-font-medium font-color-subtitle version"/>');
     this.mContainer.append(this.mVersion);
 
+    this.mLegendsVersion = $('<div class="text-font-medium font-color-subtitle legends-version"/>');
+    this.mContainer.append(this.mLegendsVersion);
+
     this.mDLC = $('<div class="dlc-container"/>');
     this.mContainer.append(this.mDLC);
 
@@ -337,7 +340,8 @@ MainMenuScreen.prototype.hideOptionsMenu = function ()
 
 MainMenuScreen.prototype.setVersion = function (_v)
 {
-	this.mVersion.text(_v);
+    this.mVersion.text(_v[0]);
+    this.mLegendsVersion.text(_v[1]);
 };
 
 MainMenuScreen.prototype.setDLC = function (_data)
