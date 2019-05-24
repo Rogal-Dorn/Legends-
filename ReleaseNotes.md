@@ -707,7 +707,7 @@ Fixes the incorrect pre-wildman campaign warning when reloading a save game
 https://drive.google.com/file/d/134GjxkcoswQE7U31I1faFuLv6Tg6d6kT/view?usp=sharing
 
 Beta 11 WotN Test 6
-Warlock begins with undead followers
+Warlock begins with undead followers, resurrects followers as undead 
 Berserker begin alone
 Noble begins with noble companions, can only recruit nobles or combat backgrounds
 Ranger begins with two rangers
@@ -717,9 +717,9 @@ Fixed not being able to enter cities with shepards in them
 
 
 Known issues:
-starts not properly integrated yet
-seer and vala don't have a start
-slings aren't integrated - partially resolved 
-Some tooltips are incorrect
+Healing tooltips are incorrect
 ? berserker grants berserk perk, doesn't show on tree 
-? ranger world image doesn't show
+Legends player icons don't show
+World generation issues 
+
+
