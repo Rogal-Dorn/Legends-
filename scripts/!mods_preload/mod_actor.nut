@@ -20,38 +20,6 @@
 		return item != null && item.isItemType(this.Const.Items.ItemType.MagicStaff);
 	}
 
-	o.onSerialize = function ( _out )
-	{
-		this.entity.onSerialize(_out);
-		this.m.BaseProperties.onSerialize(_out);
-		this.m.Items.onSerialize(_out);        
-		this.m.Skills.onSerialize(_out);
-		_out.writeString(this.m.Name);
-		_out.writeString(this.m.Title);
-		_out.writeF32(this.getHitpointsPct());
-		_out.writeI32(this.m.XP);
-	}
-
-	o.onDeserialize = function ( _in )
-	{
-		this.entity.onDeserialize(_in);
-		this.m.BaseProperties.onDeserialize(_in);
-
-		if (_in.getMetaData().getVersion() == 55)
-		{
-            this.m.Skills.onDeserialize(_in);
-            this.m.Items.onDeserialize(_in);
-		} 
-        else 
-        {
-            this.m.Items.onDeserialize(_in);
-            this.m.Skills.onDeserialize(_in);
-        }
-		this.m.Name = _in.readString();
-		this.m.Title = _in.readString();
-		this.setHitpointsPct(this.Math.maxf(0.0, _in.readF32()));
-		this.m.XP = _in.readI32();
-	}
         //
     // local onResurrected = o.onResurrected;
     // o.onResurrected = function ( _info ) 

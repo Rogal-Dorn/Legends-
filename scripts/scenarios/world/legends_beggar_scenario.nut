@@ -6,7 +6,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		this.m.Name = "Legends Beggar";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_141.png[/img][/p][p]It started as a ragtag militia made up of anyone brave or desperate enough to volunteer for defending their homes, but has grown into a small army. An army that needs to be fed each day. Perhaps the militia\'s services could be rented out?\n\n[color=#bcad8c]Peasant Army:[/color] Start with a roster of 12 poorly equipped peasants.\n[color=#bcad8c]Human Wave[/color]: Take up to 27 men into battle at once, and have up to 27 in your roster.\n[color=#bcad8c]Dirty Peasants[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
 		this.m.Difficulty = 1;
-		this.m.Order = 2;
+		this.m.Order = 11;
 	}
 
 	function isValid()
