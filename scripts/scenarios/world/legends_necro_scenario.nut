@@ -1,9 +1,9 @@
-this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "scenario.cultists";
-		this.m.Name = "Davkul Cultists";
+		this.m.ID = "scenario.legends_necro";
+		this.m.Name = "Legends Necro";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_140.png[/img][/p][p]Davkul awaits. You lead a small flock devoted to the elder god, and it\'s time to spread the word. Find more followers, acquire riches, and please Davkul with sacrifices.\n\n[color=#bcad8c]Cultists:[/color] Start with a group of four cultists with poor equipment. More cultists may flock to you for free.\n[color=#bcad8c]Sacrifices:[/color] Davkul will occasionally demand sacrifices from you, but also bestow boons upon those loyal to him.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 7;
