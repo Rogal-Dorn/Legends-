@@ -170,7 +170,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isNoble() && !bro.getBackground(IsCombatBackground())
+			if (!bro.getBackground().isNoble() && !bro.getBackground.IsCombatBackground())
 			{
 				garbage.push(bro);
 			}
