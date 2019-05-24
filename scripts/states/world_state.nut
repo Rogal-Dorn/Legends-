@@ -1071,6 +1071,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.Time.setVirtualTime(0);
 		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
+		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
+		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
@@ -1109,7 +1111,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
-		this.World.FactionManager.createFactions();
+		this.World.FactionManager.createFactions(this.m.CampaignSettings);
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
 		this.m.Assets.init();
@@ -1131,57 +1133,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
-		if (this.m.Campaign == "legends_noble") {
-			this.World.Tags.set("IsLegendsNoble", true);
-		}
-		if (this.m.Campaign == "legends_beggar") {
-			this.World.Tags.set("IsLegendsBeggar", true);
-		}
-		if (this.m.Campaign == "legends_crusader") {
-			this.World.Tags.set("IsLegendsCrusader", true);
-		}
-		if (this.m.Campaign == "legends_hunter") {
-			this.World.Tags.set("IsLegendsHunter", true);
-		}
-		if (this.m.Campaign == "legends_inventor") {
-			this.World.Tags.set("IsLegendsInventor", true);
-		}
-		if (this.m.Campaign == "legends_necro") {
-			this.World.Tags.set("IsLegendsNecro", true);
-		}
-		if (this.m.Campaign == "legends_witch") {
-			this.World.Tags.set("IsLegendsWitch", true);
-		}
-		if (this.m.Campaign == "legends_healer") {
-			this.World.Tags.set("IsLegendsHealer", true);
-		}
-		if (this.m.Campaign == "legends_party") {
-			this.World.Tags.set("IsLegendsParty", true);
-		}
-		if (this.m.Campaign == "legends_trader") {
-			this.World.Tags.set("IsLegendsTrader", true);
-		}
-		if (this.m.Campaign == "legends_hoggart") {
-			this.World.Tags.set("IsLegendsHoggart", true);
-		}
-		if (this.m.Campaign == "legends_berserker") {
-			this.World.Tags.set("IsLegendsBerserker", true);
-		}
-		if (this.m.Campaign == "legends_vala") {
-			this.World.Tags.set("IsLegendsVala", true);
-		}
-		if (this.m.Campaign == "legends_bandit") {
-			this.World.Tags.set("IsLegendsBandit", true);
-		}
 		
-	//	local c = this.new("scripts/contracts/contracts/tutorial_contract");
-	//	c.start();
-	//	this.World.Contracts.addContract(c);
-	//	this.World.Contracts.setActiveContract(c, true);
 		this.World.setFogOfWar(!this.m.DebugMap);
-	//	this.Time.scheduleEvent(this.TimeUnit.Real, 1000, this.showIntroductionScreen.bindenv(this), null);
-		
-		this.World.Tags.set("IsLegendCampSupport", true);
 	}
 
 	function showIntroductionScreen( _tag = null )
@@ -1247,6 +1200,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.logInfo(k + " = " + v);
 		}
 		this.m.CampaignSettings = _settings;
+		this.m.DebugMap = _settings.Debug;
 	}
 
 	function enterLocation( _location )

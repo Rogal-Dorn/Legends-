@@ -420,53 +420,7 @@ this.asset_manager <- {
 
 
 		this.updateFood();
-		local names = [];
-
-		for( local i = 0; i < 6; i = ++i )
-		{
-			while (true)
-			{
-				local n = this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)];
-
-				if (names.find(n) == null)
-				{
-					names.push(n);
-					break;
-				}
-			}
-		}
-
-		this.m.FounderNames.push([
-			"1h",
-			names[0]
-		]);
-		this.m.FounderNames.push([
-			"2h",
-			names[1]
-		]);
-		this.m.FounderNames.push([
-			"ranged",
-			names[2]
-		]);
-		this.m.FounderNames.push([
-			"fourth",
-			names[3]
-		]);
-		this.m.FounderNames.push([
-			"fifth",
-			names[4]
-		]);
-		this.m.FounderNames.push([
-			"sixth",
-			names[5]
-		]);
-		local roster = this.World.getPlayerRoster();
-		local bro;
-
-
-
-		this.m.FounderNames = [];
-		this.m.LastRosterSize = roster.getSize();
+		this.m.LastRosterSize = this.World.getPlayerRoster().getSize();
 
 	}
 

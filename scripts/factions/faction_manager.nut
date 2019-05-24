@@ -222,13 +222,13 @@ this.faction_manager <- {
 		this.m.Factions.push(null);
 	}
 
-	function createFactions()
+	function createFactions( _settings )
 	{
 		this.createGenericEnemy();
 		this.createSettlements();
-		local nobles = this.createNobleHouses();
+		local nobles = this.createNobleHouses( _settings.NumFactions );
 		this.assignSettlementsToNobleHouses(nobles);
-		this.uncoverSettlements();
+		this.uncoverSettlements( _settings.FOW );
 		this.createBandits();
 		this.createBarbarians();
 		this.createOrcs();
@@ -246,15 +246,20 @@ this.faction_manager <- {
 		}
 	}
 
-	function uncoverSettlements()
+	function uncoverSettlements( _fow )
 	{
 		foreach( s in this.World.EntityManager.getSettlements() )
 		{
 			s.setDiscovered(true);
 
-			if (s.getOwner() != null || s.getSize() >= 2)
+			if (s.getOwner() != null || s.getSize() >= 1)
 			{
-				this.World.uncoverFogOfWar(s.getTile().Pos, 2100.0);
+				local vis = 2100;
+				if (_fow)
+				{
+					vis = 0;
+				}
+				this.World.uncoverFogOfWar(s.getTile().Pos, vis);
 			}
 		}
 	}
@@ -334,15 +339,17 @@ this.faction_manager <- {
 		this.m.Factions.push(f);
 	}
 
-	function createNobleHouses()
+	function createNobleHouses( _num )
 	{
 		local banners = [];
 		local names = [];
 		local nobleHouses = [];
 
-		foreach( i, g in this.Const.FactionArchetypes )
+		local houses = this.Const.GetFactionArchetypesList();
+		for (local i = 0; i < _num; i = ++i)
 		{
-			local a = g[this.Math.rand(0, g.len() - 1)];
+			local index = houses.remove(this.Math.rand(0, houses.len() - 1));
+			local a = this.Const.FactionArchetypes[index[0]][index[1]];
 			local f = this.new("scripts/factions/noble_faction");
 			local banner;
 
