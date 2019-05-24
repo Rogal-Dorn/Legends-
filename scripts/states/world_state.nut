@@ -1134,6 +1134,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
 		
+		if (this.Const.DLC.Wildmen)
+		{
+			this.World.Tags.set("IsWildmenCampaign", true);
+		}
+
 		this.World.setFogOfWar(!this.m.DebugMap);
 	}
 
@@ -3841,53 +3846,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.State.getPlayer().setVisible(true);
 			this.World.Assets.setUseProvisions(true);
 		}
+
 		if (_in.getMetaData().getVersion() >= 52)
 		{
 			this.World.Camp.clear();
 			this.World.Camp.onDeserialize(_in);
-		}
-
-
-		if (_in.getMetaData().getVersion() == 51)
-		{
-			foreach (b in this.World.getPlayerRoster().getAll())
-			{
-				local background = null;
-				switch (b.getBackground().getID())
-				{
-					case "background.vazl_vala":
-						local background = this.new("scripts/skills/backgrounds/legend_vala_background");
-						
-						break;
-					case "background.vazl_cannibal":
-						local background = this.new("scripts/skills/backgrounds/legend_cannibal_background");
-						break;
-					case "background.vazl_inventor":
-						local background = this.new("scripts/skills/backgrounds/legend_inventor_background");
-						break;
-					case "background.vazl_shieldmaiden":
-						local background = this.new("scripts/skills/backgrounds/legend_shieldmaiden_background");
-						break;
-				}
-				if (background == null)
-				{
-					continue
-				}
-				b.getSkills().removeByID(b.getBackground().getID());
-				b.getSkills().add(background);
-				background.buildDescription();
-				background.onSetAppearance();
-				b.getSkills().update();
-			}
-		}
-
-		if (this.Const.LegendMod.Beta10 && !this.World.Tags.get("IsLegendCampSupport"))
-		{
-			this.World.Tags.set("IsLegendCampSupport", true);
-			this.Time.scheduleEvent(this.TimeUnit.Real, 6000, function ( _tag )
-			{
-				this.showDialogPopup("Old Legends Campaign Loaded", "This campaign was created before the Legends Mod camp mechanics were added. Please be aware that even though you can continue to play this campaign, there may be some unstability and odd behavior. It is recommend to start a new campaign.", null, null, true);
-			}.bindenv(this), null);
 		}
 
 	}

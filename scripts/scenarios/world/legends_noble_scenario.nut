@@ -6,7 +6,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Name = "Legends Noble";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]the noble houses are fickle and the winds have turned against you. Last night, you absconded with two body gaurds. You\'re dressed like soldiers, but you\'re deserters, and the noose will be your end if you stay here for too long.\n\n[color=#bcad8c]Deserters:[/color] Start with a captain, two deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#bcad8c]Prepared for anything:[/color] Anyone you hire gains bags n belts in combat[/p]\n[color=#bcad8c]Avatar:[/color] if the captain dies, it is game over[/p]";
 		this.m.Difficulty = 2;
-		this.m.Order = 6;
+		this.m.Order = 14;
 	}
 
 	function isValid()

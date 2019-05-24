@@ -2292,7 +2292,9 @@ this.asset_manager <- {
 		}
 
 		_in.readBool();
+		local maxBrothers = this.m.BrothersMax;
 		this.m.Origin.onInit();
+		this.World.Assets.m.BrothersMax = maxBrothers; 
 	}
 
 };

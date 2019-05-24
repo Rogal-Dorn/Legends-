@@ -1,9 +1,4 @@
 local gt = this.getroottable();
-gt.Const.Serialization <- {
-	Version = 56
-    //51 Added Runes
-    //52 Adds Camps
-};
 
 if (!("LegendMod" in gt.Const))
 {
