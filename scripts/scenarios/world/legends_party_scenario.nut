@@ -1,9 +1,9 @@
-this.legend_party_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "scenario.legend_party";
-		this.m.Name = "Adventuring Party";
+		this.m.ID = "scenario.legends_party";
+		this.m.Name = "Legends Party";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_134.png[/img][/p][p]After an unlikely meeting in a tavern, an unlikely group of strangers have formed an adventuring party. They have set out in search of both dragons and dungeons.\n\n[color=#bcad8c]A party of overpowered adventurers, each with their own skills[/color][/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 1;
