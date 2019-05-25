@@ -257,11 +257,8 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	function setBaseImage( _version = -1)
 	{
 		local image = "figure_player_01";
-		if (_version > 1)
-		{
-			image = "figure_player_0" + _version;
-		}
-		else if (this.World.Tags.get("IsLegendsNoble"))
+
+		if (this.World.Tags.get("IsLegendsNoble"))
 		{
 			image = "figure_player_noble";
 		} 
@@ -297,6 +294,10 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		{
 			image = "figure_player_vala";
 		} 
+		else if (_version > 1)
+		{
+			image = "figure_player_0" + _version;
+		}
 		this.getSprite("body").setBrush(image);
 	}
 

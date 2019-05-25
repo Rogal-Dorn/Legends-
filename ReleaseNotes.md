@@ -716,6 +716,10 @@ Sisterhood start begins with seer, vala, shieldmaiden, noblewoman, fletcher and 
 Fixed not being able to enter cities with shepards in them 
 
 
+Beta 11 WotN Test 7
+Worldmap figures fixed for all legends starts
+All bros in all starts have veteran perk points, every 3 levels for milita, every 2 for everyone else 
+
 Known issues:
 Healing tooltips are incorrect
 ? berserker grants berserk perk, doesn't show on tree 

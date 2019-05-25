@@ -38,6 +38,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bro.m.PerkPoints = 3;
 		bro.m.LevelUps = 3;
 		bro.m.Level = 4;
+		bro.setVeteranPerks(2);	
 		bro.getBaseProperties().MeleeDefense -= 2;
 		bro.m.Talents = [];
 		bro.m.Attributes = [];

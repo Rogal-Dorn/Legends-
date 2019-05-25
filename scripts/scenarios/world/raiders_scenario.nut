@@ -36,6 +36,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[0].m.LevelUps = 2;
 		bros[0].m.Level = 3;
 		bros[0].m.Talents = [];
+		bros[0].setVeteranPerks(2);	
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -59,6 +60,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[1].m.LevelUps = 2;
 		bros[1].m.Level = 3;
 		bros[1].m.Talents = [];
+		bros[1].setVeteranPerks(2);	
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -79,6 +81,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].m.LevelUps = 2;
 		bros[2].m.Level = 3;
 		bros[2].m.Talents = [];
+		bros[2].setVeteranPerks(2);	
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 1;
@@ -96,6 +99,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[3].improveMood(2.0, "Thinks he managed to convince you to give up raiding and pillaging");
 		bros[3].setPlaceInFormation(13);
 		bros[3].m.Talents = [];
+		bros[3].setVeteranPerks(2);	
 		local talents = bros[3].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;

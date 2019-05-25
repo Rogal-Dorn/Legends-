@@ -32,6 +32,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
+		bros[0].setVeteranPerks(2);	
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
 	}
@@ -157,7 +158,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		houses[1].Faction.addPlayerRelation(18.0);
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.Assets.updateLook(5);
+		this.World.State.m.Player.getSprite("body").setBrush("figure_player_berserker");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
