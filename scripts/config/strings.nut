@@ -1237,7 +1237,21 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecialistScytheDamage = "Slicing arcs",
 	LegendMasterySlings = "Sling Mastery",
 	LegendSpecialistNinetailsDamage = "Flesh mortification",
-	LegendSpecialistNintailsSkill = "Scourging"
+	LegendSpecialistNintailsSkill = "Scourging",
+	LegendFavouredEnemyGhoul = "Favoured Enemy - Nachzehrers",
+	LegendFavouredEnemyHexen = "Favoured Enemy - Hexen",
+	LegendFavouredEnemyAlps = "Favoured Enemy - Alps",
+	LegendFavouredEnemyUnhold = "Favoured Enemy - Unholds",
+	LegendFavouredEnemyLindwurm = "Favoured Enemy - Lindwurms",
+	LegendFavouredEnemyDirewolf = "Favoured Enemy - Direwolf",
+	LegendFavouredEnemySpider = "Favoured Enemy - Spiders",
+	LegendFavouredEnemySchrat = "Favoured Enemy - Schrats",
+	LegendFavouredEnemyOrk = "Favoured Enemy - Orks",
+	LegendFavouredEnemyGoblin = "Favoured Enemy - Goblins",
+	LegendFavouredEnemyVampire = "Favoured Enemy - Necrosavants",
+	LegendFavouredEnemySkeleton = "Favoured Enemy - Ancient dead",
+	LegendFavouredEnemyZombie = "Favoured Enemy - Weirdergangers"
+
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
@@ -1470,7 +1484,20 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]"
 	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is incerased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color].",
 	LegendSpecialistNinetailsDamage = "Turn the tips of the cattail to inflict maximum injury, increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]+5-10[/color] while using the cat o nine tails, does not apply to other whips.",
-	LegendSpecialistNintailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon, granting [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while using the cat o nine tails, does not apply to other whips."
+	LegendSpecialistNintailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon, granting [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while using the cat o nine tails, does not apply to other whips.",
+	LegendFavouredEnemyGhoul = "Studying these monstrosities has given you insights into the strengths and weaknesses of the palid necrophilic flesh devourers. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color]  maximum damage for any attack on an Nachzehrer ",
+	LegendFavouredEnemyHexen = "Understanding the techniques of the malevolent crones gives you protection against their coven. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] resolve for any attack on a Hexe",
+	LegendFavouredEnemyAlps = "Preparing for the nightmare creepers gives you techniques against their haggard curses. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] resolve for any attack on an Alp or Alp Nightmare",
+	LegendFavouredEnemyUnhold = "These gigantic ravenous creatures are dangerous but stupid, that can be used to your advantage. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on an Unhold",
+	LegendFavouredEnemyLindwurm = "Understanding the morphology of these noxious serpents opens up weak spots in their scales. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Lindwurm ",
+	LegendFavouredEnemyDirewolf = "The vicious jaws of a direwolf can tear limbs assunder. In the heat of their blood soaked frenzy, they leave themselves open for counter attack. Understanding these weaknesses grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a wolf",
+	LegendFavouredEnemySpider = "These skittering deadly bugs can be bested by studyign the behaviour of arachnids. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Spider ",
+	LegendFavouredEnemySchrat = "The strong branches of a living tree are deadly foes, but trees can be felled with the right knowledge. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Scratt or Sappling",
+	LegendFavouredEnemyOrk = "These marauding brutes are a force to be reckoned with, though their fighting style lacks finesse and can be countered with the right techniques. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on an Ork",
+	LegendFavouredEnemyGoblin = "Forces may be gathering to take over the world, but ask someone else, i have no interest in anything but goblins. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Goblin ",
+	LegendFavouredEnemyVampire = "The terrifying abilities of the Necrosavants are developed over time beyond memory. Their techniques are honed to perfection, but that also makes them predictable. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Necrosavant",
+	LegendFavouredEnemySkeleton = "The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Skeleton",
+	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves. They lose something crucial in death, and that can be exploited. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a wiederganger"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

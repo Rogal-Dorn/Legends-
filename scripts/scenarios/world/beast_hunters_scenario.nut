@@ -179,5 +179,13 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.FootprintVision = 1.5;
 	}
 
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() >= 10)
+		{
+			_list.push("beast_hunter_background");
+		}
+	}
+
 });
 

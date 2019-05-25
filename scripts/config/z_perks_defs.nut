@@ -1669,6 +1669,110 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistNinetailsskill,
 		Icon = "ui/perks/ninetails_02.png",
 		IconDisabled = "ui/perks/ninetails_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_ghoul",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_ghoul",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyGhoul,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyGhoul,
+		Icon = "ui/perks/favoured_ghoul_01.png",
+		IconDisabled = "ui/perks/favoured_ghoul_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_hexen",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_hexen",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyHexen,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyHexen,
+		Icon = "ui/perks/favoured_hexen_01.png",
+		IconDisabled = "ui/perks/favoured_hexen_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_alps",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_alps",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyAlps,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyAlps,
+		Icon = "ui/perks/favoured_alps_01.png",
+		IconDisabled = "ui/perks/favoured_alps_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_unhold",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_unhold",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyUnhold,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyUnhold,
+		Icon = "ui/perks/favoured_unhold_01.png",
+		IconDisabled = "ui/perks/favoured_unhold_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_lindwurm",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_lindwurm",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyLindwurm,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyLindwurm,
+		Icon = "ui/perks/favoured_lindwurm_01.png",
+		IconDisabled = "ui/perks/favoured_lindwurm_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_direwolf",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_direwolf",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyDirewolf,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyDirewolf,
+		Icon = "ui/perks/favoured_direwolf_01.png",
+		IconDisabled = "ui/perks/favoured_direwolf_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_spider",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_spider",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemySpider,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySpider,
+		Icon = "ui/perks/favoured_spider_01.png",
+		IconDisabled = "ui/perks/favoured_spider_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_schrat",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_schrat",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemySchrat,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySchrat,
+		Icon = "ui/perks/favoured_schrat_01.png",
+		IconDisabled = "ui/perks/favoured_schrat_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_ork",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_ork",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyOrk,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyOrk,
+		Icon = "ui/perks/favoured_ork_01.png",
+		IconDisabled = "ui/perks/favoured_ork_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_goblin",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_goblin",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyGoblin,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyGoblin,
+		Icon = "ui/perks/favoured_goblin_01.png",
+		IconDisabled = "ui/perks/favoured_goblin_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_vampire",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_vampire",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyVampire,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyVampire,
+		Icon = "ui/perks/favoured_vampire_01.png",
+		IconDisabled = "ui/perks/favoured_vampire_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_skeleton",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_skeleton",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemySkeleton,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySkeleton,
+		Icon = "ui/perks/favoured_skeleton_01.png",
+		IconDisabled = "ui/perks/favoured_skeleton_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_zombie",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_zombie",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyZombie,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyZombie,
+		Icon = "ui/perks/favoured_zombie_01.png",
+		IconDisabled = "ui/perks/favoured_zombie_bw.png"
 	}
 ];
 
@@ -1881,5 +1985,18 @@ gt.Const.Perks.PerkDefs <- {
 	LegendMasterySlings = 204,
 	Relentless = 205,
 	LegendSpecialistNinetailseDamage = 206,
-	LegendSpecialistNinetailsSkill = 207
+	LegendSpecialistNinetailsSkill = 207,
+	LegendFavouredEnemyGhoul = 208,
+	LegendFavouredEnemyHexen = 209, 
+	LegendFavouredEnemyAlps = 210,
+	LegendFavouredEnemyUnhold = 211, 
+	LegendFavouredEnemyLindwurm = 212, 
+	LegendFavouredEnemyDirewolf = 213, 
+	LegendFavouredEnemySpider = 214,
+	LegendFavouredEnemySchrat = 215, 
+	LegendFavouredEnemyOrk = 216, 
+	LegendFavouredEnemyGoblin = 217,
+	LegendFavouredEnemyVampire = 218,
+	LegendFavouredEnemySkeleton = 219, 
+	LegendFavouredEnemyZombie = 220
 };

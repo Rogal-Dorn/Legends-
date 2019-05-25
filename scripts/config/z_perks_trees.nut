@@ -157,7 +157,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeNetsLookupMap;
 			break;
 		case "background.beast_hunter":
-			return gt.Const.Perks.TreeNetsLookupMap;
+			return gt.Const.Perks.TreeBeastHunterLookupMap;
 			break;
 		case "background.flagellant":
 			return gt.Const.Perks.TreeNinetailLookupMap;
@@ -174,6 +174,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.converted_cultist":
 			return gt.Const.Perks.TreeNinetailLookupMap;
 			break;
+
 		default:
 			return gt.Const.Perks.TreeTemplateLookupMap;
 	}
@@ -311,7 +312,7 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeNets;
 			break;
 		case "background.beast_hunter":
-			return gt.Const.Perks.PerksTreeNets;
+			return gt.Const.Perks.PerksTreeBeastHunter;
 			break;
 		case "background.flagellant":
 			return gt.Const.Perks.PerksTreeNinetail;
