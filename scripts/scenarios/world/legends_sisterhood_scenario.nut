@@ -31,28 +31,34 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			"legend_shieldmaiden_background"
 		]);
 		bros[0].setPlaceInFormation(3);
+		bros[0].setVeteranPerks(2);	
 		bros[1].setStartValuesEx([
 			"female_adventurous_noble_background"
 		]);
 		bros[1].setPlaceInFormation(4);
+		bros[1].setVeteranPerks(2);	
 		bros[2].setStartValuesEx([
 			"female_thief_background"
 		]);
 		bros[2].setPlaceInFormation(5);
+		bros[2].setVeteranPerks(2);	
 		bros[3].setStartValuesEx([
 			"female_bowyer_background"
 		]);
 		bros[3].setPlaceInFormation(14);
+		bros[3].setVeteranPerks(2);	
 		bros[4].setStartValuesEx([
 			"legend_witch_commander_background"
 		]);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[4].getTags().set("IsPlayerCharacter", true);
 		bros[4].setPlaceInFormation(15);
+		bros[4].setVeteranPerks(2);	
 		bros[5].setStartValuesEx([
 			"legend_vala_background"
 		]);
 		bros[5].setPlaceInFormation(16);
+		bros[5].setVeteranPerks(2);	
 
 	}
 
@@ -107,7 +113,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.Assets.updateLook(11);
+		this.World.State.m.Player.getSprite("body").setBrush("figure_player_seer");
 		this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", randomVillageTile.Coords).setSize(1);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )

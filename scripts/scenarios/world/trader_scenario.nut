@@ -41,6 +41,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		bros[0].getBackground().m.RawDescription = "A daytaler, mason, miller, %name% had done it all, passing from task to task with no dallying in making a one of them a true vocation. You weren\'t sure if he was long to stay as a caravan hand either, but when asked to turn to mercenary work he had no problem agreeing to that...";
 		bros[0].setPlaceInFormation(3);
 		bros[0].m.Talents = [];
+		bros[0].setVeteranPerks(2);	
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -52,6 +53,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance was little more than a drunken miscreant. But you watched as he fought off three would-be muggers. They managed to take his boots in the end, sure, but they couldn\'t truly defeat his spirit. Impressed, you took him on as a caravan hand.";
 		bros[1].setPlaceInFormation(4);
 		bros[1].m.Talents = [];
+		bros[1].setVeteranPerks(2);	
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;

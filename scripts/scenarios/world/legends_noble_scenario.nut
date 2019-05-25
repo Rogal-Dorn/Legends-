@@ -76,7 +76,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.Assets.updateLook(12);
+		this.World.State.m.Player.getSprite("body").setBrush("figure_player_noble");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-100.0, "You and your men deserted");
@@ -112,27 +112,32 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(14);
-
+		bros[0].setVeteranPerks(2);	
 		bros[1].setStartValuesEx([
 		"legend_noble_shield"
 		]);
 		bros[1].setPlaceInFormation(3);
+		bros[1].setVeteranPerks(2);	
 		bros[2].setStartValuesEx([
 		"legend_noble_2h"
 		]);
 		bros[2].setPlaceInFormation(4);
+		bros[2].setVeteranPerks(2);	
 		bros[3].setStartValuesEx([
 		"legend_noble_shield"
 		]);
 		bros[3].setPlaceInFormation(5);
+		bros[3].setVeteranPerks(2);	
 		bros[4].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
 		bros[4].setPlaceInFormation(13);
+		bros[4].setVeteranPerks(2);	
 		bros[5].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
 		bros[5].setPlaceInFormation(15);
+		bros[5].setVeteranPerks(2);	
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{

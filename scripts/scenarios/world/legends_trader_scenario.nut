@@ -39,12 +39,14 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			"legend_donkey"
 		]);
 		bros[0].setPlaceInFormation(3);
+		bros[0].setVeteranPerks(2);	
 		bros[1].setStartValuesEx([
 			"legend_trader_commander_background"
 		]);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[1].getTags().set("IsPlayerCharacter", true);
 		bros[1].setPlaceInFormation(4);
+		bros[1].setVeteranPerks(2);	
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));

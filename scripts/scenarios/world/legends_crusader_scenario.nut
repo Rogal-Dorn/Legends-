@@ -25,6 +25,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.setPlaceInFormation(4);
+		bro.setVeteranPerks(2);	
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -79,7 +80,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.Assets.updateLook(6);
+		this.World.State.m.Player.getSprite("body").setBrush("figure_player_crusader");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{

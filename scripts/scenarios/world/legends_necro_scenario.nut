@@ -41,7 +41,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_prophet_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
-
+		bros[0].setVeteranPerks(2);	
 		bros[1].setPlaceInFormation(3);
         bros[1].getTags().add("PlayerSkeleton");
         bros[1].getTags().add("undead");
@@ -49,7 +49,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[1].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[1].getBackground().m.RawDescription = "You found %name% starved to death on the road, you tease him endlessly about being skin and bones. You enjoy the ribbing, but he does not find it humerous.";
         bros[1].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
-
+		bros[1].setVeteranPerks(3);	
 		bros[2].setPlaceInFormation(4);
         bros[2].getTags().add("PlayerZombie");
         bros[2].getTags().add("undead");
@@ -57,6 +57,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
         bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
         bros[2].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
+		bros[2].setVeteranPerks(3);	
 		this.World.Assets.addMoralReputation(-50);
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
 	}
@@ -115,6 +116,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
+		this.World.State.m.Player.getSprite("body").setBrush("figure_player_warlock");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{

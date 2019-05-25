@@ -41,17 +41,19 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
+		bros[0].setVeteranPerks(2);	
 		bros[1].setStartValuesEx([
 			"legend_ranger_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
 		bros[1].setPlaceInFormation(4);
-
+		bros[1].setVeteranPerks(2);	
 		bros[2].setStartValuesEx([
 			"legend_ranger_background"
 		]);
 		bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
 		bros[2].setPlaceInFormation(5);
+		bros[2].setVeteranPerks(2);	
 		this.World.Assets.m.BusinessReputation = 50;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
@@ -120,8 +122,9 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 		while (1);
 
+
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", spawnTile.Coords.X, spawnTile.Coords.Y);
-		this.World.Assets.updateLook(10);
+		this.World.State.m.Player.getSprite("body").setBrush("figure_player_ranger");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = nearestVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-20.0, "Heard rumors of you poaching in their woods");
