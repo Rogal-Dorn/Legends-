@@ -4,7 +4,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	{
 		this.m.ID = "scenario.legends_berserker";
 		this.m.Name = "Legends Berserker";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]For all your adult life you\'ve been raiding and pillaging in these lands. But with the local peasantry poor as mice, you may want to finally expand into the profitable field of mercenary work - that is, if your potential employers are willing to forgive your past transgressions.\n\n[color=#bcad8c]Warband:[/color] Start with three experienced barbarians.\n[color=#bcad8c]Pillagers:[/color] You have a higher chance to get any items from slain enemies as loot.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions.\n[color=#bcad8c]Berserkers:[/color] Anyone you hire gains the berserk ability.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family slaughtered drove you into a self destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker madness:[/color] Unlock powerful abilities allow you to fight naked and bare handed.\n[color=#bcad8c]Infectious rage:[/color] Anyone you hire gains berserk.\n[color=#bcad8c]Avatar:[/color]Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 12;
 	}
@@ -18,7 +18,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	{
 		local roster = this.World.getPlayerRoster();
 
-		for( local i = 0; i < 4; i = ++i )
+		for( local i = 0; i < 1; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -26,79 +26,14 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		}
 
 		local bros = roster.getAll();
+
 		bros[0].setStartValuesEx([
-			"barbarian_background"
-		]);
-		bros[0].getBackground().m.RawDescription = "A sturdy warrior, %name% has been through many campaigns of raiding and pillaging. Although a man of few words, the raider is an absolutely vicious specimen in battle. Even for a raider, what he does to defeated villagers irks many. It is likely he came with you to satiate his more sadistic lusts.";
-		bros[0].improveMood(1.0, "Had a successful raid");
-		bros[0].setPlaceInFormation(3);
-		bros[0].m.PerkPoints = 2;
-		bros[0].m.LevelUps = 2;
-		bros[0].m.Level = 3;
-		bros[0].m.Talents = [];
-		local talents = bros[0].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 2;
-		talents[this.Const.Attributes.Hitpoints] = 2;
-		talents[this.Const.Attributes.Fatigue] = 1;
-		local items = bros[0].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		local warhound = this.new("scripts/items/accessory/warhound_item");
-		warhound.m.Name = "Fenrir the Warhound";
-		items.equip(warhound);
-		items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
-		items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
-		bros[1].setStartValuesEx([
-			"barbarian_background"
-		]);
-		bros[1].getBackground().m.RawDescription = "%name% was a boy when taken from a southern village and raised amongst the barbarians of the wastes. While he learned the language and culture, he never fit in and was a constant victim of cruel jokes and games. You\'re not sure if he\'s followed you to return home or to get away from his northern \'family\'.";
-		bros[1].improveMood(1.0, "Had a successful raid");
-		bros[1].setPlaceInFormation(4);
-		bros[1].m.PerkPoints = 2;
-		bros[1].m.LevelUps = 2;
-		bros[1].m.Level = 3;
-		bros[1].m.Talents = [];
-		local talents = bros[1].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 2;
-		talents[this.Const.Attributes.Hitpoints] = 1;
-		talents[this.Const.Attributes.Fatigue] = 2;
-		local items = bros[1].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
-		items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
-		bros[2].setStartValuesEx([
-			"barbarian_background"
-		]);
-		bros[2].getBackground().m.RawDescription = "Barbarian raiders often take from lands foreign to them. Most see their raids as a matter of material and women, but occasionally they will enslave formidable boys with great potential. %name%, a northerner, was such a child and he was raised to be a raider himself. Half his life was with his primitive clan, and the other half with those who took him. This has made him as hardy and brutish a warrior as one can get.";
-		bros[2].improveMood(1.0, "Had a successful raid");
-		bros[2].setPlaceInFormation(5);
-		bros[2].m.PerkPoints = 2;
-		bros[2].m.LevelUps = 2;
-		bros[2].m.Level = 3;
-		bros[2].m.Talents = [];
-		local talents = bros[2].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 1;
-		talents[this.Const.Attributes.MeleeDefense] = 2;
-		talents[this.Const.Attributes.Hitpoints] = 2;
-		local items = bros[2].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
-		items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
-		bros[3].setStartValuesEx([
 			"legend_berserker_commander_background"
 		]);
-		bros[3].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[3].getTags().set("IsPlayerCharacter", true);
-
-		this.World.Assets.m.BusinessReputation = -100;
-		this.World.Assets.m.MoralReputation = -30;
-		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
-		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getTags().set("IsPlayerCharacter", true);
+		this.World.Assets.m.Money = this.World.Assets.m.Money;
+		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo;
 	}
 
 	function onSpawnPlayer()
@@ -229,13 +164,13 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			this.Music.setTrackList([
 				"music/barbarians_02.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.raiders_scenario_intro");
+		//	this.World.Events.fire("event.raiders_scenario_intro");
 		}, null);
 	}
 
 	function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 4;
+		this.World.Assets.m.BrothersMax = 1;
 		this.World.Tags.set("IsLegendsBerserker", true);
 	}
 

@@ -149,7 +149,6 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/legend_sling"));
-		items.equip(this.new("scripts/items/ammo/bag_of_pebbles"));
 		items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
 		r = this.Math.rand(0, 1);
 
