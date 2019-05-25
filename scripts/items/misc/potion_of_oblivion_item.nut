@@ -69,15 +69,23 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 	{
 		this.Sound.play("sounds/combat/drink_03.wav", this.Const.Sound.Volume.Inventory);
 		local perks = _actor.m.PerkPointsSpent;
+		local hasStudent = false;
 
 		if (_actor.getSkills().hasSkill("perk.student"))
 		{
 			perks = perks - 1;
+			hasStudent = true;
 		}
 
 		_actor.m.PerkPoints += perks;
 		_actor.m.PerkPointsSpent = 0;
 		_actor.getSkills().removeByType(this.Const.SkillType.Perk);
+
+		if (hasStudent && _actor.getLevel() >= 11)
+		{
+			_actor.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+		}
+
 		this.Const.Tactical.Common.checkDrugEffect(_actor);
 		this.updateAchievement("MemoryLoss", 1, 1);
 		return true;

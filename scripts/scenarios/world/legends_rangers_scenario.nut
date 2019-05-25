@@ -4,7 +4,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	{
 		this.m.ID = "scenario.legends_rangers";
 		this.m.Name = "Legends Ranger";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]For years you\'ve made a decent living by poaching in the local woods, evading your lord\'s men by being quick on your feet. But pickings have become slimmer and slimmer, and you\'re faced with a decision - how to make a living when all you know is how to use a bow?\n\n[color=#bcad8c]Hunters:[/color] Start with a group of three woodsmen.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, it is game over.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Rangers:[/color] Start with a group of three skilled rangers, anyone you hire gains pathfinder.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
 	}
@@ -42,36 +42,16 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[1].setStartValuesEx([
-			"poacher_background"
+			"legend_ranger_background"
 		]);
-		bros[1].getBackground().m.RawDescription = "{%name% fell into poaching after a drought ravaged his farmstead. Like most poachers, he is not truly of the criminal mind. Long grouped together in the hunting gangs, %name% was quick to nominate you as captain of the new sellsword outfit.}";
+		bros[1].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
 		bros[1].setPlaceInFormation(4);
-		bros[1].m.Talents = [];
-		talents = bros[1].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 2;
-		talents[this.Const.Attributes.Fatigue] = 1;
-		talents[this.Const.Attributes.Initiative] = 1;
-		local items = bros[1].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
-		items.equip(this.new("scripts/items/weapons/short_bow"));
-		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+
 		bros[2].setStartValuesEx([
-			"poacher_background"
+			"legend_ranger_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "{A former jester whose gag was to shoot three water jugs out of the sky. You don\'t know how he got into poaching, and in fact seems rather bitter about some jester-related drama, but he is an excellent archer. He also likes to remind you that he is a far better shot than you.}";
+		bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
 		bros[2].setPlaceInFormation(5);
-		bros[2].m.Talents = [];
-		talents = bros[2].getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 2;
-		talents[this.Const.Attributes.Bravery] = 1;
-		talents[this.Const.Attributes.Initiative] = 1;
-		local items = bros[2].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
-		items.equip(this.new("scripts/items/weapons/legend_sling"));
 		this.World.Assets.m.BusinessReputation = 50;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));

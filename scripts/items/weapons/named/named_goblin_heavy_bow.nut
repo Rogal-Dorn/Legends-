@@ -20,7 +20,7 @@ this.named_goblin_heavy_bow <- this.inherit("scripts/items/weapons/named/named_w
 		this.m.Value = 1100;
 		this.m.Condition = 62.0;
 		this.m.ConditionMax = 62.0;
-		this.m.StaminaModifier = -4;
+		this.m.StaminaModifier = -2;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 7;
 		this.m.RangeIdeal = 7;

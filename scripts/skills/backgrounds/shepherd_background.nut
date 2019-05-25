@@ -136,7 +136,6 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 		if (r <= 3)
 		{
-			items.equip(this.new("scripts/items/ammo/bag_of_pebbles"));
 			items.equip(this.new("scripts/items/weapons/legend_sling"));
 		}
 		else if (r == 4)

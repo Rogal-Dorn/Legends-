@@ -45,6 +45,7 @@ this.goblin_city_destroyed_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
+				this.World.Tags.set("IsGoblinCityDestroyed", true);
 			}
 
 		});

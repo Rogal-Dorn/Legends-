@@ -112,7 +112,11 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 						local skills = bro.getSkills();
 						local skill;
 
-						if (skills.hasSkill("trait.cultist_chosen"))
+						if (skills.hasSkill("trait.cultist_prophet"))
+						{
+							continue;
+						}
+						else if (skills.hasSkill("trait.cultist_chosen"))
 						{
 							if (hasProphet)
 							{

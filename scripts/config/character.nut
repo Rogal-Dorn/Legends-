@@ -891,6 +891,7 @@ gt.Const.CharacterProperties <- {
 	IsAffectedByFleeingAllies = true,
 	IsAffectedByDyingAllies = true,
 	IsAffectedByLosingHitpoints = true,
+	SurvivesAsUndead = false,
 	IsStealthed = false,
 	IsFleetfooted = false,
 	IsSpecializedInBows = false,
@@ -915,6 +916,7 @@ gt.Const.CharacterProperties <- {
 	DamageInitiativeMin = 0,
 	DamageInitiativeMax = 0,
 	DamageInitiativeCutoff = 100
+	
 
 	DailyWage = 0,
 	DailyWageMult = 1.0,

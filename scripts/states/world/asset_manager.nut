@@ -406,6 +406,7 @@ this.asset_manager <- {
 			bro.m.XP = this.Const.LevelXP[bro.m.Level - 1];
 			bro.m.Attributes = [];
 			bro.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
+			bro.getSkills().update();
 		}
 
 		this.updateFormation();
@@ -819,10 +820,19 @@ this.asset_manager <- {
 			 {
 			 	local d = bro.getHitpointsMax() - bro.getHitpoints();
 
-			 	if (bro.getHitpoints() < bro.getHitpointsMax())
+			 	if (bro.getHitpoints() < bro.getHitpointsMax() )
 			 	{
+					 if (bro.getTags().has("undead"))
+			 		{
+			 		bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + (this.Const.World.Assets.HitpointsPerHour / 10) * this.Const.Difficulty.HealMult[this.World.Assets.getEconomicDifficulty()]));
+					}
+
+					else
+					{
 			 		bro.setHitpoints(this.Math.minf(bro.getHitpointsMax(), bro.getHitpoints() + this.Const.World.Assets.HitpointsPerHour * this.Const.Difficulty.HealMult[this.World.Assets.getEconomicDifficulty()]));
+					}
 			 	}
+
 			 }
 
 			 foreach( bro in roster )

@@ -142,7 +142,7 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 				}
 				else
 				{
-					local skill = 1.0 - this.Math.max(1.0, (targetsInMelee[0].getCurrentProperties().MeleeSkill - _entity.getCurrentProperties().MeleeDefense) / 100.0);
+					local skill = 1.0 - this.Math.max(1.0, (targetsInMelee[0].getCurrentProperties().getMeleeSkill() - _entity.getCurrentProperties().getMeleeDefense()) / 100.0);
 					score = score * (1.0 - this.Const.AI.Behavior.EngageWhenAlreadyEngagedDefenseMult + skill * this.Const.AI.Behavior.EngageWhenAlreadyEngagedDefenseMult);
 				}
 
