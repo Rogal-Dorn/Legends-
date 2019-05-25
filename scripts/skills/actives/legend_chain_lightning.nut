@@ -1,8 +1,8 @@
 this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	m = {
 		SoundOnLightning = [
-			"sounds/combat/legendary_lightning_01.wav",
-			"sounds/combat/legendary_lightning_02.wav",
+			"sounds/combat/dlc2/legendary_lightning_01.wav",
+			"sounds/combat/dlc2/legendary_lightning_02.wav",
 			"sounds/combat/electricity_01.wav",
 			"sounds/combat/electricity_02.wav",
 			"sounds/combat/electricity_03.wav",
