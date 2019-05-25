@@ -1235,7 +1235,9 @@ gt.Const.Strings.PerkName <- {
 	LegendMasteryNets = "Net Mastery",
 	LegendSpecialistScytheSkill = "Harvest swathes",
 	LegendSpecialistScytheDamage = "Slicing arcs",
-	LegendMasterySlings = "Sling Mastery"
+	LegendMasterySlings = "Sling Mastery",
+	LegendSpecialistNinetailsDamage = "Flesh mortification",
+	LegendSpecialistNintailsSkill = "Scourging"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
@@ -1466,7 +1468,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]"
-	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is incerased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]."
+	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is incerased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color].",
+	LegendSpecialistNinetailsDamage = "Turn the tips of the cattail to inflict maximum injury, increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]+5-10[/color] while using the cat o nine tails, does not apply to other whips.",
+	LegendSpecialistNintailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon, granting [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while using the cat o nine tails, does not apply to other whips."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

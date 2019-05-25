@@ -1653,6 +1653,22 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.Relentless,
 		Icon = "ui/perks/perk_26.png",
 		IconDisabled = "ui/perks/perk_26_sw.png"
+	},
+	{
+		ID = "perk.legend_specialist_ninetails_damage",
+		Script = "scripts/skills/perks/perk_legend_specialist_ninetails_damage",
+		Name = this.Const.Strings.PerkName.LegendSpecialistNinetailsDamage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistNinetailsDamage,
+		Icon = "ui/perks/ninetails_01.png",
+		IconDisabled = "ui/perks/ninetails_bw.png"
+	},
+	{
+		ID = "perk.legend_specialist_ninetails_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_ninetails_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecialistNinetailsSkill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistNinetailsskill,
+		Icon = "ui/perks/ninetails_02.png",
+		IconDisabled = "ui/perks/ninetails_bw.png"
 	}
 ];
 
@@ -1863,5 +1879,7 @@ gt.Const.Perks.PerkDefs <- {
 	LegendSpecialistScytheDamage = 202
 	LegendInventorAnatomy = 203,
 	LegendMasterySlings = 204,
-	Relentless = 205
+	Relentless = 205,
+	LegendSpecialistNinetailseDamage = 206,
+	LegendSpecialistNinetailsSkill = 207
 };

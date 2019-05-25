@@ -718,7 +718,10 @@ Fixed not being able to enter cities with shepards in them
 
 Beta 11 WotN Test 7
 Worldmap figures fixed for all legends starts
-All bros in all starts have veteran perk points, every 3 levels for milita, every 2 for everyone else 
+Veteran perk points for starting bros, every 3 levels for milita, every 2 for everyone else 
+cat 'o nine tails now uses the Flaggelate ability with a range of 1, applying three stacks of bleed 
+Cultists and Flaggelants gain Scourging and Flesh Mortification perks for the cat 'o nine tails
+
 
 Known issues:
 Healing tooltips are incorrect
