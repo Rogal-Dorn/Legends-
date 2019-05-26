@@ -3,7 +3,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function create()
 	{
 		this.m.ID = "scenario.legends_rangers";
-		this.m.Name = "Rangers";
+		this.m.Name = "Ranger";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Selective Recruitment:[/color] The rangers will not accept just anyone in their ranks. Potential recruits must be open to the ways of forests, beasts and the bow.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
