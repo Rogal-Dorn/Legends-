@@ -64,7 +64,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 	function isShowingDefenders()
 	{
-		return this.m.IsShowingDefenders || this.World.Assets.getOrigin().getID() == "scenario.rangers";
+		return this.m.IsShowingDefenders || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.World.Assets.getOrigin().getID() == "scenario.legends_rangers";
 	}
 
 	function isVisited()

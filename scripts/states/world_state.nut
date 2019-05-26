@@ -2079,7 +2079,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			_allowFormationPicking = false;
 		}
 
-		if (_isCombatantsVisible && (_isPlayerInitiated || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && this.World.getTime().IsDaytime))
+		if (_isCombatantsVisible && (_isPlayerInitiated || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.World.Assets.getOrigin().getID() == "scenario.legends_rangers"|| this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && this.World.getTime().IsDaytime))
 		{
 			local champions = [];
 			local entityTypes = [];
