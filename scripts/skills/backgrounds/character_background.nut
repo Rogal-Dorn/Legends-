@@ -26,6 +26,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsNoble = false,
 		IsLowborn = false,
 		IsFemaleBackground = false,
+		IsRangerRecruitBackground = false,
+		IsCrusaderRecruitBackground = false,
+		IsOutlawBackground = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
 			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
@@ -104,6 +107,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isLowborn()
 	{
 		return this.m.IsLowborn;
+	}
+
+	function isRangerRecruitBackground()
+	{
+		return this.m.IsRangerRecruitBackground;
+	}
+
+	function isCrusaderRecruitBackground()
+	{
+		return this.m.IsCrusaderRecruitBackground;
+	}
+
+	function isOutLawBackground()
+	{
+		return this.m.IsOutLawBackground;
 	}
 
 	function getExcludedTalents()

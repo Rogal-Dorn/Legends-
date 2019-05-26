@@ -11,6 +11,7 @@ this.kings_guard_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BadEnding = "";
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 30;
+		this.m.IsCrusaderRecruitBackground = true;
 	}
 
 	function getTooltip()

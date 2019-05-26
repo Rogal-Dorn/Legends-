@@ -59,6 +59,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
+		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];

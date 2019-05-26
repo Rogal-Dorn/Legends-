@@ -3,7 +3,7 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	function create()
 	{
 		this.m.ID = "scenario.legends_trader";
-		this.m.Name = "Legends Trader";
+		this.m.Name = "Trading Caravan";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p][p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n[color=#bcad8c]Caravan:[/color] Start with two caravan hands in your employ.\n[color=#bcad8c]Trader:[/color] Get 10% better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate.\n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 16;
@@ -149,6 +149,29 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		return false;
+	}
+
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() >= 10)
+		{
+				local r;
+				r = this.Math.rand(0, 1);
+				if (r == 0)
+						{
+						_list.push("legend_donkey");
+						}
+				r = this.Math.rand(0, 4);
+				if (r == 0)
+						{
+						_list.push("peddler_background");
+						}
+				r = this.Math.rand(0, 2);
+				if (r == 0)
+						{
+						_list.push("caravan_hand_background");
+						}
+		}
 	}
 
 });

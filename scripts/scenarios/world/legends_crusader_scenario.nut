@@ -3,8 +3,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	function create()
 	{
 		this.m.ID = "scenario.legends_crusader";
-		this.m.Name = "Legends Crusader";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You\'ve been traveling alone for a long time, taking part in tourneys and sparring with young nobles. A crusader tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment, but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 20 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
+		this.m.Name = "Crusader";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path alone. \n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single crusader with great abilities and equipment.\n[color=#bcad8c]Strict Sermons[/color] Anyone you fight with gains Fortified Mind.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 17;
 		this.m.IsFixedLook = true;
@@ -110,6 +110,40 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 
 		return false;
+	}
+
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() >= 10)
+		{
+			_list.push("monk_background");
+			local r;
+			r = this.Math.rand(0, 99);
+			
+			if (r == 0)
+					{
+						_list.push("legend_crusader_background");
+					}
+		}
+	}
+
+	function onUpdateHiringRoster( _roster )
+	{
+		local garbage = [];
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (!bro.getBackground().IsCrusaderRecruitBackground() && !bro.getBackground.IsCombatBackground() && !bro.getBackground.IsLowborn())
+			{
+				garbage.push(bro);
+			}
+		}
+
+		foreach( g in garbage )
+		{
+			_roster.remove(g);
+		}
 	}
 
 });

@@ -44,7 +44,7 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
-
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[3];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];

@@ -37,7 +37,8 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsCombatBackground = true;
-
+		this.m.IsRangerRecruitBackground = true;
+		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
