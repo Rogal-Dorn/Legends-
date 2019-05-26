@@ -294,9 +294,13 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		{
 			image = "figure_player_vala";
 		} 
-		else if (_version > 1)
+		else if (_version > 1 && _version < 10)
 		{
 			image = "figure_player_0" + _version;
+		}
+		else if (_version > 9)
+		{
+			image = "figure_player_" + _version;
 		}
 		this.getSprite("body").setBrush(image);
 	}
