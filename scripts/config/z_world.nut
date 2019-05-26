@@ -44,6 +44,68 @@ foreach(s in gt.Const.World.Settlements.Master)
 	s.Percentage <- s.Amount / total;
 }
 
+gt.Const.World.Settlements.LegendsMaster <- [
+	{
+		Ratio = 0.30,
+		List = [
+			{
+				Ratio = 5,
+				Amount = 1,
+				List = this.Const.World.Settlements.Villages_small_coast
+			},
+			{
+				Ratio = 3
+				Amount = 1,
+				List = this.Const.World.Settlements.Villages_medium_coast
+			},
+			{
+				Ratio = 2
+				Amount = 1,
+				List = this.Const.World.Settlements.Villages_large_coast
+			}
+		]
+	},
+	{
+		Ratio = 0.45,
+		List = [
+			{
+				Ratio = 5,
+				Amount = 1,
+				List = this.Const.World.Settlements.Villages_small
+			},
+			{
+				Ratio = 3,
+				Amount = 1,
+				List = this.Const.World.Settlements.Villages_medium
+			},
+			{
+				Ratio = 2,
+				Amount = 1,
+				List = this.Const.World.Settlements.Villages_large
+			}
+		]
+	},
+	{
+		Ratio = 0.25,
+		List = [
+			{
+				Ratio = 5,
+				Amount = 1,
+				List = this.Const.World.Settlements.Fortifications_small
+			},
+			{
+				Ratio = 3,
+				Amount = 1,
+				List = this.Const.World.Settlements.Fortifications_medium
+			},
+			{
+				Ratio = 2,
+				Amount = 1,
+				List = this.Const.World.Settlements.Fortifications_large
+			}
+		]
+	}
+];
 
 gt.Const.World.NewCampaignOpts <- function ()
 {
@@ -66,8 +128,8 @@ gt.Const.World.NewCampaignOpts <- function ()
 		Snowline = this.Const.World.Settings.Snowline * 100,
 		SnowlineMin = 40,
 		SnowlineMax = 100,
-		NumSettlements = 19,
-		NumSettlementsMax = 30,
+		NumSettlements = 27,
+		NumSettlementsMax = 40,
 		NumSettlementsMin = 19,
 		NumFactions = 3,
 		NumFactionsMin = 1,

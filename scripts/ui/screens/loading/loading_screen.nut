@@ -81,6 +81,11 @@ this.loading_screen <- {
 		}
 	}
 
+	function updateProgress( _text )
+	{
+		this.m.JSHandle.asyncCall("updateProgress", _text );
+	}
+
 	function onScreenHidden()
 	{
 		this.m.Visible = false;

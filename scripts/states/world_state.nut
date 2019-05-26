@@ -1085,7 +1085,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				Y = 0,
 				W = minX,
 				H = minY
-			}, null);
+			}, this.m.CampaignSettings);
 			if (result) 
 			{
 				break;
@@ -1093,7 +1093,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			tries = --tries
 			this.logInfo("Invalid map. Regenerating...")			
 			//Failures are because of water issues, help map generation towards default results
-			if (tries > 10)
+			if (tries < 195)
 			{
 				if (this.Const.World.Settings.LandMassMult > 1.4) {
 					this.Const.World.Settings.LandMassMult -= 0.05;
@@ -1111,7 +1111,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 
+		this.LoadingScreen.updateProgress("Creating Factions ...");
 		this.World.FactionManager.createFactions(this.m.CampaignSettings);
+		this.LoadingScreen.updateProgress("Adding Roads ...");
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.World.FactionManager.runSimulation();
 		this.m.Assets.init();

@@ -189,6 +189,8 @@ this.faction_manager <- {
 	function runSimulation()
 	{
 		this.logInfo("Running simulation for " + this.Const.Factions.CyclesOnNewCampaign + " cycles...");
+		this.LoadingScreen.updateProgress("Simulating World ... 0%");
+
 		local barbarians = this.Const.DLC.Wildmen ? this.getFactionOfType(this.Const.FactionType.Barbarians) : null;
 		local bandits = this.getFactionOfType(this.Const.FactionType.Bandits);
 		local orcs = this.getFactionOfType(this.Const.FactionType.Orcs);
@@ -210,6 +212,11 @@ this.faction_manager <- {
 			undead.update(true);
 			zombies.update(true);
 			beasts.update(true);
+			if (i % 20 == 0)
+			{
+				local progress = (i * 1.0) / (this.Const.Factions.CyclesOnNewCampaign * 1.0);
+				this.LoadingScreen.updateProgress("Simulating World ... " + progress  * 100 + "%");
+			}
 			this.__ping();
 		}
 	}

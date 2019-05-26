@@ -524,6 +524,7 @@ this.asset_manager <- {
 		return ret;
 	}
 
+
 	function getAllBrotherNames()
 	{
 		local ret = "";
