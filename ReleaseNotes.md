@@ -729,8 +729,8 @@ Ranger starts alone, and can only hire people worthy of joining the Rangers.  In
 Crusader prefers to hire the pure of heart or the battle hardened, though he may choose to take on lowborn. Increased chance of finding monks for hire, 1/100 chance of finding a crusader for hire in large towns 
 Noble has an increased chance of finding disowned nobles and soldiers willing to join his cause in large towns. 
 Band of Poachers have a 1/1000 chance of finding a ranger to recruit in small towns 
-Trading caravan has increased chance of finding donkeys, peddlers and caravan hands 
 Sisterhood are more likely to find women willing to join their cause in towns 
+Trading caravan has increased chance of finding donkeys, peddlers and caravan hands, default trading caravan removed.  
 
 Known issues:
 World generation crashes 

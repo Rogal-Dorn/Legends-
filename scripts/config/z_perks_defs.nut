@@ -1666,7 +1666,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_specialist_ninetails_skill",
 		Script = "scripts/skills/perks/perk_legend_specialist_ninetails_skill",
 		Name = this.Const.Strings.PerkName.LegendSpecialistNinetailsSkill,
-		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistNinetailsskill,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistNinetailsSkill,
 		Icon = "ui/perks/ninetails_02.png",
 		IconDisabled = "ui/perks/ninetails_bw.png"
 	},
@@ -1984,7 +1984,7 @@ gt.Const.Perks.PerkDefs <- {
 	LegendInventorAnatomy = 203,
 	LegendMasterySlings = 204,
 	Relentless = 205,
-	LegendSpecialistNinetailseDamage = 206,
+	LegendSpecialistNinetailsDamage = 206,
 	LegendSpecialistNinetailsSkill = 207,
 	LegendFavouredEnemyGhoul = 208,
 	LegendFavouredEnemyHexen = 209, 

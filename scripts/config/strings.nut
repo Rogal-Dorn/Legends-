@@ -1237,7 +1237,7 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecialistScytheDamage = "Slicing arcs",
 	LegendMasterySlings = "Sling Mastery",
 	LegendSpecialistNinetailsDamage = "Flesh mortification",
-	LegendSpecialistNintailsSkill = "Scourging",
+	LegendSpecialistNinetailsSkill = "Scourging",
 	LegendFavouredEnemyGhoul = "Favoured Enemy - Nachzehrers",
 	LegendFavouredEnemyHexen = "Favoured Enemy - Hexen",
 	LegendFavouredEnemyAlps = "Favoured Enemy - Alps",
@@ -1484,7 +1484,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]"
 	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is incerased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color].",
 	LegendSpecialistNinetailsDamage = "Turn the tips of the cattail to inflict maximum injury, increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]+5-10[/color] while using the cat o nine tails, does not apply to other whips.",
-	LegendSpecialistNintailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon, granting [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while using the cat o nine tails, does not apply to other whips.",
+	LegendSpecialistNinetailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon, granting [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while using the cat o nine tails, does not apply to other whips.",
 	LegendFavouredEnemyGhoul = "Studying these monstrosities has given you insights into the strengths and weaknesses of the palid necrophilic flesh devourers. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color]  maximum damage for any attack on an Nachzehrer ",
 	LegendFavouredEnemyHexen = "Understanding the techniques of the malevolent crones gives you protection against their coven. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] resolve for any attack on a Hexe",
 	LegendFavouredEnemyAlps = "Preparing for the nightmare creepers gives you techniques against their haggard curses. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] resolve for any attack on an Alp or Alp Nightmare",
