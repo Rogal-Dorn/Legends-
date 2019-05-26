@@ -156,7 +156,7 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.fisherman":
 			return gt.Const.Perks.TreeNetsLookupMap;
 			break;
-		case "background.beast_hunter":
+		case "background.beast_slayer":
 			return gt.Const.Perks.TreeBeastHunterLookupMap;
 			break;
 		case "background.flagellant":
@@ -311,7 +311,7 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		case "background.fisherman":
 			return gt.Const.Perks.PerksTreeNets;
 			break;
-		case "background.beast_hunter":
+		case "background.beast_slayer":
 			return gt.Const.Perks.PerksTreeBeastHunter;
 			break;
 		case "background.flagellant":
