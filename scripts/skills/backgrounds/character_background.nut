@@ -22,6 +22,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsUntalented = false,
 		IsOffendedByViolence = false,
 		IsCombatBackground = false,
+		IsEducatedBackground = false,
 		Name = "",
 		IsNoble = false,
 		IsLowborn = false,
@@ -117,6 +118,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function isCrusaderRecruitBackground()
 	{
 		return this.m.IsCrusaderRecruitBackground;
+	}
+
+	function isEducatedBackground()
+	{
+		return this.m.IsEducatedBackground;
 	}
 
 	function isOutLawBackground()

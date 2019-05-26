@@ -718,9 +718,10 @@ Fixed not being able to enter cities with shepards in them
 
 Beta 11 WotN Test 7
 Worldmap figures fixed for all legends starts
-Veteran perk points for starting bros, every 3 levels for milita, every 2 for everyone else 
-Cat 'o nine tails now uses the Flagellate ability with a range of 1, applying three stacks of bleed 
+Veteran perk points for starting bros, every 3 levels for milita, every 2 for everyone else
+Adds Seer scenario, educated recruits cost less, uneducated recruits cost more. 
 Cultists and Flaggelants gain Scourging and Flesh Mortification perks for the cat 'o nine tails
+Cat 'o nine tails now uses the Flagellate ability with a range of 1, applying three stacks of bleed 
 Beast Hunters gain 13 Favoured Enemy perks, allowing them to specialise in hunting specific enemies. 
 Beast Hunter scenario will now find more beast hunters to hire in large cities.
 Raiders have a hard time attracting recruits, anyone who isn't an outlaw costs 50% more. Outlaws will cost 10% less and have a 50% chance of gaining a trait. They have an increased chance of finding thieves, raiders and barbarians for hire. With a small chance of finding killers and assasins for hire. 
@@ -735,6 +736,7 @@ Sisterhood are more likely to find women willing to join their cause in towns.
 Trading caravan has increased chance of finding donkeys, peddlers and caravan hands, default trading caravan removed.  
 Fixed Worldgeneration crashes.
 Added more variance in the types of settlements created on each map.
+
 
 Known issues:
 Warlock summons causing a crash on load? 

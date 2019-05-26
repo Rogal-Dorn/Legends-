@@ -46,6 +46,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsOffendedByViolence = true;
 		this.m.IsCrusaderRecruitBackground = true;
+		this.m.IsEducatedBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
