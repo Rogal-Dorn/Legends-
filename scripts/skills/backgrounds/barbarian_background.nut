@@ -39,6 +39,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
+		this.m.IsOutlawBackground = true;
 	}
 
 	function getTooltip()

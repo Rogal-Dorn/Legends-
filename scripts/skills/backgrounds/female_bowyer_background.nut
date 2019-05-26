@@ -44,6 +44,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[2];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];

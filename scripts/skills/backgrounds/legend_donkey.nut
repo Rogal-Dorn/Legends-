@@ -22,6 +22,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Body = "bust_naked_body_05";
 		this.m.IsFemaleBackground = false;
+		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[4];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[5];

@@ -3,7 +3,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	function create()
 	{
 		this.m.ID = "scenario.legends_sisterhood";
-		this.m.Name = "Legends Sisterhood";
+		this.m.Name = "The Sisterhood";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_91.png[/img][/p][p]Born into a world dominated by kings and bishops, as a woman you were told you could never be anything. After years of studying in secret, you have made connections and drawn together a group of powerful women. Now you set out to forge your own destinies  \n\n[color=#bcad8c]Sisterhood:[/color] You can only hire women.\n[color=#bcad8c]Wisdom:[/color] Anyone you hire gains the Student perk in battle.\n[color=#bcad8c]Secret knowledge:[/color] You can unlock rare and powerful abilities and weapons.\n[color=#bcad8c]Avatar:[/color] If you die, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
@@ -161,6 +161,128 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		}
 
 		return false;
+	}
+
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() >= 10)
+		{			
+			local r;
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+					{
+						_list.push("legend_shieldmaiden_background");
+					}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+					{
+						_list.push("female_disowned_noble_background");
+					}			
+			r = this.Math.rand(0, 3);
+			if (r == 0)
+					{
+						_list.push("female_daytaler_background");
+					}	
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+					{
+						_list.push("female_beggar_background");
+					}				
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+					{
+						_list.push("female_bowyer_background");
+					}	
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+					{
+						_list.push("female_butcher_background");
+					}	
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+					{
+						_list.push("female_farmhand_background");
+					}				
+			r = this.Math.rand(0, 7);
+			if (r == 0)
+					{
+						_list.push("female_miller_background");
+					}	
+				r = this.Math.rand(0, 2);
+			if (r == 0)
+					{
+						_list.push("female_servant_background");
+					}	
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+					{
+						_list.push("female_tailor_background");
+					}				
+			r = this.Math.rand(0, 8);
+			if (r == 0)
+					{
+						_list.push("female_thief_background");
+					}	
+			r = this.Math.rand(0, 8);
+			if (r == 0)
+					{
+						_list.push("legend_nun_background");
+					}			
+		}
+		if (_list.len() <= 10)
+		{			
+			local r;
+			r = this.Math.rand(0, 6);
+			if (r == 0)
+					{
+						_list.push("female_daytaler_background");
+					}	
+			r = this.Math.rand(0, 10);
+			if (r == 0)
+					{
+						_list.push("female_beggar_background");
+					}				
+			r = this.Math.rand(0, 18);
+			if (r == 0)
+					{
+						_list.push("female_bowyer_background");
+					}	
+			r = this.Math.rand(0, 12);
+			if (r == 0)
+					{
+						_list.push("female_butcher_background");
+					}	
+			r = this.Math.rand(0, 8);
+			if (r == 0)
+					{
+						_list.push("female_farmhand_background");
+					}				
+			r = this.Math.rand(0, 14);
+			if (r == 0)
+					{
+						_list.push("female_miller_background");
+					}	
+				r = this.Math.rand(0, 8);
+			if (r == 0)
+					{
+						_list.push("female_servant_background");
+					}	
+			r = this.Math.rand(0, 12);
+			if (r == 0)
+					{
+						_list.push("female_tailor_background");
+					}				
+			r = this.Math.rand(0, 16);
+			if (r == 0)
+					{
+						_list.push("female_thief_background");
+					}	
+			r = this.Math.rand(0, 16);
+			if (r == 0)
+					{
+						_list.push("legend_nun_background");
+					}			
+		}
 	}
 });
 

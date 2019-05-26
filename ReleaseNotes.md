@@ -719,14 +719,25 @@ Fixed not being able to enter cities with shepards in them
 Beta 11 WotN Test 7
 Worldmap figures fixed for all legends starts
 Veteran perk points for starting bros, every 3 levels for milita, every 2 for everyone else 
-cat 'o nine tails now uses the Flaggelate ability with a range of 1, applying three stacks of bleed 
+Cat 'o nine tails now uses the Flagellate ability with a range of 1, applying three stacks of bleed 
 Cultists and Flaggelants gain Scourging and Flesh Mortification perks for the cat 'o nine tails
-
+Beast Hunters gain 13 Favoured Enemy perks, allowing them to specialise in hunting specific enemies. 
+Beast Hunter scenario will now find more beast hunters to hire in large cities, and a 1/1000 chance of finding a ranger for hire  
+Raiders can only hire outlaws and combat backgrounds. They have an increased chance of finding raiders in large towns, a 1/10 chance of finding barbarians, and a 1/1000 chance of finding a berserker for hire. 
+Berserker can only hire outlaws, lowborn and combat backgrounds has an increased chance of finding barbarians for hire in small towns, with a 1/100 chance of finding a berserker for hire in small towns. 
+Ranger starts alone, and can only hire people worthy of joining the Rangers.  Increased chance of finding poachers and hunters in small towns, with a 1/100 chance of finding a ranger for hire.
+Crusader prefers to hire the pure of heart or the battle hardened, though he may choose to take on lowborn. Increased chance of finding monks for hire, 1/100 chance of finding a crusader for hire in large towns 
+Noble has an increased chance of finding disowned nobles and soldiers willing to join his cause in large towns. 
+Band of Poachers have a 1/1000 chance of finding a ranger to recruit in small towns 
+Trading caravan has increased chance of finding donkeys, peddlers and caravan hands 
+Sisterhood are more likely to find women willing to join their cause in towns 
 
 Known issues:
+World generation crashes 
+party size perks not persisting between saves 
+Warlock summons causing a crash on load? 
 Healing tooltips are incorrect
-? berserker grants berserk perk, doesn't show on tree 
-Legends player icons don't show
-World generation issues 
+? some of the whole of party perks may not be applying  
+
 
 

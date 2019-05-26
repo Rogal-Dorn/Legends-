@@ -6,7 +6,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.legend_noble_ranged";
 		this.m.Name = "Slinger";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
-		this.m.HiringCost = 0;
+		this.m.HiringCost = 150;
 		this.m.DailyCost = 6;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
@@ -51,7 +51,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
-
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];

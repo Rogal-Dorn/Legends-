@@ -38,6 +38,7 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsLowborn = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
