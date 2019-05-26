@@ -151,6 +151,23 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			_list.push("gravedigger_background");
 		}
 	}
+	function onUpdateHiringRoster( _roster )
+	{
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (bro.getBackground().IsCrusaderRecruitBackground())
+			{
+				bro.worsenMood(1.5, "Is deeply disturbed by you");
+			}
+
+			if (bro.getBackground().isOutlawBackground())
+			{
+				bro.improveMood(1.0, "Finds perverse joy in your actions")
+			}
+		}
+
 
 });
 

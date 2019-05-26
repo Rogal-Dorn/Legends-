@@ -4,7 +4,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.m.ID = "scenario.legends_crusader";
 		this.m.Name = "Crusader";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path alone. \n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single crusader with great abilities and equipment.\n[color=#bcad8c]Strict Sermons[/color] Anyone you fight with gains Fortified Mind.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path alone. \n\n[color=#bcad8c]Pure of heart:[/color] Can not recruit outlaw backgrounds.\n[color=#bcad8c]Strict Sermons[/color] Anyone you fight with gains Fortified Mind.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 17;
 		this.m.IsFixedLook = true;
@@ -134,7 +134,19 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isCrusaderRecruitBackground() && !bro.getBackground.IsCombatBackground() && !bro.getBackground.IsLowborn())
+			if (bro.getBackground().IsCrusaderRecruitBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
+				bro.improveMood(1.5, "Joined a righteous cause");
+			}
+
+			if (!bro.getBackground().IsCrusaderRecruitBackground())
+			{
+				bro.worsenMood(0.5, "Dislikes your sermons");
+			}
+
+			if (bro.getBackground().isOutlawBackground())
 			{
 				garbage.push(bro);
 			}

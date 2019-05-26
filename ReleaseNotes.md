@@ -722,14 +722,16 @@ Veteran perk points for starting bros, every 3 levels for milita, every 2 for ev
 Cat 'o nine tails now uses the Flagellate ability with a range of 1, applying three stacks of bleed 
 Cultists and Flaggelants gain Scourging and Flesh Mortification perks for the cat 'o nine tails
 Beast Hunters gain 13 Favoured Enemy perks, allowing them to specialise in hunting specific enemies. 
-Beast Hunter scenario will now find more beast hunters to hire in large cities, and a 1/1000 chance of finding a ranger for hire  
-Raiders can only hire outlaws and combat backgrounds. They have an increased chance of finding raiders in large towns, a 1/10 chance of finding barbarians, and a 1/1000 chance of finding a berserker for hire. 
-Berserker can only hire outlaws, lowborn and combat backgrounds has an increased chance of finding barbarians for hire in small towns, with a 1/100 chance of finding a berserker for hire in small towns. 
-Ranger starts alone, and can only hire people worthy of joining the Rangers.  Increased chance of finding poachers and hunters in small towns, with a 1/100 chance of finding a ranger for hire.
-Crusader prefers to hire the pure of heart or the battle hardened, though he may choose to take on lowborn. Increased chance of finding monks for hire, 1/100 chance of finding a crusader for hire in large towns 
-Noble has an increased chance of finding disowned nobles and soldiers willing to join his cause in large towns. 
-Band of Poachers have a 1/1000 chance of finding a ranger to recruit in small towns 
-Sisterhood are more likely to find women willing to join their cause in towns 
+Beast Hunter scenario will now find more beast hunters to hire in large cities.
+Raiders have a hard time attracting recruits, anyone who isn't an outlaw costs 50% more. Outlaws will cost 10% less and have a 50% chance of gaining a trait. They have an increased chance of finding thieves, raiders and barbarians for hire. With a small chance of finding killers and assasins for hire. 
+Those willing to join outlaws are: assassin, barbarian, berserker, brawler, cultist, deserter, disowned noble, female disowned noble, pickpocket, gambler, graverobber, killer on the run, cannibal, necromancer, pimp, poacher, raider, thief, vagabond, wildman 
+Berserker has an offputing effect on all but the lowborn or outlaws, making them cost 10% more. He inspires combat backgrounds and outlaws, making them cost 10% less. Has an increased chance of finding barbarians for hire in small towns
+Crusader will not hire outlaws, but religious recruits will be more numerous, happy to join his cause and 10% cheaper. 
+Crusader will attract: adventurous noble, apprentice, eunuch, troubadour, flagellant, hedgeknight, historian, blacksmith, inventor, ironmonger, nun, shieldmaiden, squire, minstrel, monk, orc slayer, retired soldier, shepherd, swordmaster and witch hunter 
+Ranger starts alone, people who want to join the rangers will cost 10% less, others cost 10% more.  Increased chance of finding poachers and hunters in small towns, with a 1/100 chance of finding a ranger for hire.
+Ranger will attract: apprentice, assassin, beast hunter, bowyer, adventurous female noble, fletcher, disowned female noble, houndmaster, hunter, blacksmith, herbalist, inventor, taxidermist, lumberjack, orc slayer, poacher, retired soldier, swordmaster, witch hunter. 
+Noble starts with a group of gaurds and more coin, hiring nobles and military backgrounds costs 10% less, everyone else costs 10% more. Able to hire noble house soldiers to his cause. 
+Sisterhood are more likely to find women willing to join their cause in towns.
 Trading caravan has increased chance of finding donkeys, peddlers and caravan hands, default trading caravan removed.  
 Fixed Worldgeneration crashes.
 Added more variance in the types of settlements created on each map.
@@ -737,6 +739,5 @@ Added more variance in the types of settlements created on each map.
 Known issues:
 Warlock summons causing a crash on load? 
 Healing tooltips are incorrect
-
 
 

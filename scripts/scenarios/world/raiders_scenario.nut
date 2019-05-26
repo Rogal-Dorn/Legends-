@@ -4,7 +4,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.m.ID = "scenario.raiders";
 		this.m.Name = "Northern Raiders";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_135.png[/img][/p][p]For all your adult life you\'ve been raiding and pillaging in these lands. But with the local peasantry poor as mice, you may want to finally expand into the profitable field of mercenary work - that is, if your potential employers are willing to forgive your past transgressions.\n\n[color=#bcad8c]Warband:[/color] Start with three experienced barbarians, and increased chance to find more for hire.\n[color=#bcad8c]Pillagers:[/color] You have a higher chance to get any items from slain enemies as loot.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions, you can only hire outlaw backgrounds.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_135.png[/img][/p][p]For all your adult life you\'ve been raiding and pillaging in these lands. But with the local peasantry poor as mice, you may want to finally expand into the profitable field of mercenary work - that is, if your potential employers are willing to forgive your past transgressions.\n\n[color=#bcad8c]Warband:[/color] Start with three experienced barbarians, and increased chance to find more for hire.\n[color=#bcad8c]Pillagers:[/color] You have a higher chance to get any items from slain enemies as loot.\n[color=#bcad8c]Outlaws:[/color] Start with bad relations to most human factions, only other outlaws are keen to work for you[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 8;
 	}
@@ -254,21 +254,45 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		if (_list.len() >= 10)
 			{
-			
-			_list.push("raider_background");
 			local r;
+			r = this.Math.rand(0, 3);
+			if (r == 0)
+				{
+				_list.push("thief_background");
+				}
 			r = this.Math.rand(0, 9);
 			if (r == 0)
 				{
 					_list.push("barbarian_background");
 
-					local r;
-					r = this.Math.rand(0, 99);
-					if (r == 0)
-							{
-								_list.push("legend_berserker_background");
-							}
+		
 				}
+			r = this.Math.rand(0, 99);
+			if (r == 0)
+					{
+						_list.push("assassin_background");
+					}
+
+			}
+		if (_list.len() < 10)
+			{
+			local r;
+			r = this.Math.rand(0, 2);
+			if (r == 0)
+				{
+				_list.push("raider_background");
+				}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+				{
+					_list.push("barbarian_background");
+				}
+			r = this.Math.rand(0, 19);
+			if (r == 0)
+				{
+					_list.push("killer_on_the_run_background");
+				}
+
 			}
 	}
 
@@ -279,15 +303,40 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().IsOutlawBackground() && !bro.getBackground.IsCombatBackground())
+			if (!bro.getBackground().IsOutlawBackground())
 			{
-				garbage.push(bro);
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.5);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.5);
+				bro.worsenMood(0.5, "Is uncomfortable with joining raiders");
 			}
-		}
-
-		foreach( g in garbage )
-		{
-			_roster.remove(g);
+			if (!bro.getBackground().IsOutlawBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 0.9);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
+				bro.improveMood(1.5, "Is excited at becoming a raider")
+			local r;
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+				{
+				bro.getSkills().add(this.new("scripts/skills/traits/bloodthirsty_trait"));
+				}
+				if (r == 1)
+				{
+				bro.getSkills().add(this.new("scripts/skills/traits/deathwish_trait"));
+				}
+				if (r == 3)
+				{
+				bro.getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
+				}
+				if (r == 4)
+				{
+				bro.getSkills().add(this.new("scripts/skills/traits/cocky_trait"));
+				}
+				if (r == 5)
+				{
+				bro.getSkills().add(this.new("scripts/skills/traits/brute_trait"));
+				}
+			}
 		}
 	}
 });

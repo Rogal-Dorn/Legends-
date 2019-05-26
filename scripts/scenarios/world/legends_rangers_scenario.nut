@@ -190,9 +190,18 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 		foreach( i, bro in bros )
 		{
+			if (bro.getBackground().isRangerRecruitBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
+				bro.improveMood(1.0, "Supports the ranger cause");
+			}
+
 			if (!bro.getBackground().isRangerRecruitBackground())
 			{
-				garbage.push(bro);
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.1);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
+				bro.worsenMood(1.0, "Does not like sleeping in the woods");
 			}
 		}
 

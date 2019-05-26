@@ -193,17 +193,14 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() <= 3)
+		if (_list.len() <= 5)
 		{
-
-			_list.push("barbarian_background");
-			local r;
-			r = this.Math.rand(0, 99);
-			
+					local r;
+			r = this.Math.rand(0, 9);
 			if (r == 0)
-					{
-						_list.push("legend_berserker_background");
-					}
+			{
+			_list.push("barbarian_background");
+			}
 			
 		}
 	}
@@ -215,15 +212,19 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().IsLowborn() && !bro.getBackground.IsCombatBackground() && !bro.getBackground.IsOutlawBackground())
+			if (!bro.getBackground().IsLowborn() && !bro.getBackground.IsOutlawBackground())
 			{
-				garbage.push(bro);
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.1);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
+				bro.worsenMood(0.5, "Disturbed by your wild and erratic nature");
 			}
-		}
+			if (bro.getBackground.IsCombatBackground() || bro.getBackground.IsOutlawBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 0.9);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
+				bro.improveMood(1.5, "Excited by your lust for battle")
+			}
 
-		foreach( g in garbage )
-		{
-			_roster.remove(g);
 		}
 	}
 });
