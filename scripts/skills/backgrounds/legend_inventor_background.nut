@@ -35,6 +35,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Body = this.Const.Bodies.AllMale[this.Math.rand(0, this.Const.Bodies.AllMale.len() - 1)];
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsRangerRecruitBackground = true;
+		this.m.IsEducatedBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];

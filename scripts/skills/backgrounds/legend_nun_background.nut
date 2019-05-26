@@ -45,6 +45,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		this.m.IsEducatedBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];

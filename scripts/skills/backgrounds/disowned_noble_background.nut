@@ -30,6 +30,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Body = "bust_naked_body_02";
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
+		this.m.IsEducatedBackground = true;
 		this.m.IsNoble = true;
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
