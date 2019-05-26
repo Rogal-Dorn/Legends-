@@ -118,7 +118,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		{
 			_list.push("monk_background");
 			local r;
-			r = this.Math.rand(0, 99);
+			r = this.Math.rand(0, 999);
 			
 			if (r == 0)
 					{
