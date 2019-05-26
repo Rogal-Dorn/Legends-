@@ -17,8 +17,9 @@ var LoadingScreen = function()
 	
 	// generic containers
 	this.mContainer       = null;
-	this.mBackgroundImage = null;
-	this.mTipOfTheDayLabel = null;
+    this.mBackgroundImage = null;
+    this.mTipContainer    = null;
+    this.mTipOfTheDayLabel = null;
 
 	// timing	
 	this.mFadeInOutDelay = 800;//500;
@@ -49,10 +50,16 @@ LoadingScreen.prototype.createDIV = function (_parentDiv)
     var self = this;
 
 	// create: containers (init hidden!)
-	this.mContainer = $('<div class="loading-screen display-none"/>');
+    this.mContainer = $('<div class="loading-screen display-none"/>');
     _parentDiv.append(this.mContainer);
 
-	var header = $('<div class="screen-header ui-control"/>');
+    var header = $('<div class="screen-header ui-control"/>');
+    // var textContainer = $('<div class="text-container"></div>');
+    // header.append(textContainer);
+	// var title = $('<div class="title title-font-big font-align-center font-color-subtitle">Progress</div>');
+    // textContainer.append(title);
+	// this.mTipProgressLabel = $('<div class="text description-font-normal font-color-description"></div>');
+    // textContainer.append(this.mTipProgressLabel);
 	this.mContainer.append(header);
 
 /* NOTE: Not needed
@@ -91,6 +98,7 @@ LoadingScreen.prototype.createDIV = function (_parentDiv)
     footer.append(textContainer);
 	var title = $('<div class="title title-font-big font-align-center font-color-subtitle">Tip</div>');
     textContainer.append(title);
+    this.mTipContainer = textContainer;
 	this.mTipOfTheDayLabel = $('<div class="text description-font-normal font-color-description"></div>');
     textContainer.append(this.mTipOfTheDayLabel);
 };
@@ -99,7 +107,7 @@ LoadingScreen.prototype.destroyDIV = function ()
 {
     this.mTipOfTheDayLabel.remove();
     this.mTipOfTheDayLabel = null;
-
+    
     this.mBackgroundImage.remove();
     this.mBackgroundImage = null;
 
@@ -190,6 +198,13 @@ LoadingScreen.prototype.hide = function ()
 	});
 };
 
+LoadingScreen.prototype.updateProgress = function ( _text )
+{
+    this.mTipOfTheDayLabel.remove();
+    this.mTipOfTheDayLabel = $('<div class="text description-font-normal font-color-description">' + _text + '</div>');
+    this.mTipContainer.append(this.mTipOfTheDayLabel);
+    //this.mTipOfTheDayLabel.html( _text );
+}
 
 LoadingScreen.prototype.getModule = function (_name)
 {
