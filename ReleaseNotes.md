@@ -736,7 +736,8 @@ Sisterhood are more likely to find women willing to join their cause in towns.
 Trading caravan has increased chance of finding donkeys, peddlers and caravan hands, default trading caravan removed.  
 Fixed Worldgeneration crashes.
 Added more variance in the types of settlements created on each map.
-
+Fixed ranger not scouting locations 
+Beggar has 25% chance of being female 
 
 Known issues:
 Warlock summons causing a crash on load? 

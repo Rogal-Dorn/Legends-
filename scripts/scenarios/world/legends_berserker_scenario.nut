@@ -195,7 +195,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	{
 		if (_list.len() <= 5)
 		{
-					local r;
+			local r;
 			r = this.Math.rand(0, 9);
 			if (r == 0)
 			{

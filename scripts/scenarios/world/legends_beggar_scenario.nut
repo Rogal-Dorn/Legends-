@@ -3,7 +3,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	function create()
 	{
 		this.m.ID = "scenario.legends_beggar";
-		this.m.Name = "Legends Beggar";
+		this.m.Name = "Beggar";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead.  \n\n[color=#bcad8c]Knows too much:[/color] A noble house is after you.\n[color=#bcad8c]Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 11;
@@ -35,6 +35,23 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		local bros = roster.getAll();
+			
+			local r;
+			r = this.Math.rand(0, 3);
+			if (r == 0)
+			{
+				bros[0].setStartValuesEx([
+					"legend_female_beggar_commander_background"
+				]);
+			}
+			if (r => 1)
+			{}
+					bros[0].setStartValuesEx([
+					"legend_beggar_commander_background"
+				]);
+			}
+
+
 		bros[0].setStartValuesEx([
 			"legend_beggar_commander_background"
 		]);
