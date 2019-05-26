@@ -183,13 +183,12 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		if (_list.len() >= 10)
 		{
-			_list.push("beast_hunter_background");
-					local r;
-					r = this.Math.rand(0, 999);
-					if (r == 0)
-							{
-								_list.push("legend_ranger_background");
-							}
+			local r;
+			r = this.Math.rand(0, 1);
+			if (r == 0)
+					{
+							_list.push("beast_hunter_background");
+					}
 		}
 	}
 

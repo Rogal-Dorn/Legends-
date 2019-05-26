@@ -140,6 +140,10 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			{
 				garbage.push(bro);
 			}
+			if (bro.getBackground().isFemaleBackground())
+			{
+				bro.improveMood(1.5, "Joined a righteous cause");
+			}
 		}
 
 		foreach( g in garbage )

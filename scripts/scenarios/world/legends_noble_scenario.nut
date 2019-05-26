@@ -4,7 +4,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_noble";
 		this.m.Name = "Noble";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Deserters:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#bcad8c]Prepared for anything:[/color] Anyone you hire gains bags n belts in combat\n[color=#bcad8c]Snob:[/color] You can only hire noble born or military recruits\n[color=#bcad8c]Avatar:[/color] if the noble dies, it is game over[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color]Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color]Your studies at the academy gave tactical and campaign skills\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 14;
 	}
@@ -19,7 +19,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 
 		this.World.Assets.m.BusinessReputation = 100;
-		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
 	}
 
 	function onSpawnPlayer()
@@ -170,38 +170,30 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateHiringRoster( _roster )
 	{
-		local garbage = [];
 		local bros = _roster.getAll();
 
 		foreach( i, bro in bros )
 		{
+			if (bro.getBackground().isNoble() || bro.getBackground.IsCombatBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
+			}
+
 			if (!bro.getBackground().isNoble() && !bro.getBackground.IsCombatBackground())
 			{
-				garbage.push(bro);
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.1);
+				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
 			}
 		}
 
-		foreach( g in garbage )
-		{
-			_roster.remove(g);
-		}
 	}
 
 	function onUpdateDraftList( _list )
 	{
 		if (_list.len() >= 10)
 		{			
-			local r;
-			r = this.Math.rand(0, 4);
-			if (r == 0)
-					{
-						_list.push("disowned_noble_background");
-					}
-			r = this.Math.rand(0, 4);
-			if (r == 0)
-					{
-						_list.push("female_disowned_noble_background");
-					}			
+			local r;		
 			r = this.Math.rand(0, 2);
 			if (r == 0)
 					{
