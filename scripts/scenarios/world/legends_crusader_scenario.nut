@@ -134,7 +134,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().IsCrusaderRecruitBackground() && !bro.getBackground.IsCombatBackground() && !bro.getBackground.IsLowborn())
+			if (!bro.getBackground().isCrusaderRecruitBackground() && !bro.getBackground.IsCombatBackground() && !bro.getBackground.IsLowborn())
 			{
 				garbage.push(bro);
 			}
