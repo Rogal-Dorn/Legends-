@@ -16,7 +16,7 @@ local NinetailTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.Recover,
-		gt.Const.Perks.PerkDefs.LegendSpecialistNinetailSkill
+		gt.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill
 	],
 	[
 		gt.Const.Perks.PerkDefs.CoupDeGrace,
@@ -35,7 +35,7 @@ local NinetailTree = [
 		gt.Const.Perks.PerkDefs.Brawny,
 		gt.Const.Perks.PerkDefs.Relentless,
 		gt.Const.Perks.PerkDefs.Rotation,
-		gt.Const.Perks.PerkDefs.LegendSpecialistNinetailDamage,
+		gt.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt
 	],
