@@ -746,7 +746,10 @@ Fixed Worldgeneration crashes.
 Added more variance in the types of settlements created on each map.
 Fixed a or so dozen missing perks (from pre DLC)
 
-
+Beta 11 WotN Test 8
+Fixed cat o nine tails not showing in inventory 
+Fixed perks not applying for Barbarians, Hunters, Bowyers, Fletchers and female nobles
+Fixed warlock recruits not ressurecting on death 
 
 Known issues:
 Warlock summons causing a crash on load? 
