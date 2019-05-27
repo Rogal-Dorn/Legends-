@@ -293,7 +293,8 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			if (r == 0)
 					{
 						_list.push("legend_nun_background");
-					}			
+					}	
+			}
 		}
 	}
 });

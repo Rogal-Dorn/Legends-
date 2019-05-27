@@ -137,12 +137,12 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 				bro.improveMood(0.5, "Learned a new skill");
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 			}
-		if (bro.getSkills().hasSkill("trait.bright")))
+		if (bro.getSkills().hasSkill("trait.bright"))
 			{
 				bro.improveMood(0.5, "Keen to learn from a master");
 			}
 
-		if (bro.getSkills().hasSkill("trait.dumb")))
+		if (bro.getSkills().hasSkill("trait.dumb"))
 			{
 				bro.worsenMood(0.5, "Thinks you are a boring nerd");
 			}
@@ -167,13 +167,13 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
 			}
 
-			if (bro.getSkills().hasSkill("trait.bright")))
+			if (bro.getSkills().hasSkill("trait.bright"))
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 			}
 
-			if (bro.getSkills().hasSkill("trait.dumb")))
+			if (bro.getSkills().hasSkill("trait.dumb"))
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 1.1);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
