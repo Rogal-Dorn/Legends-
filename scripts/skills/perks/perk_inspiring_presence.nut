@@ -13,6 +13,7 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+
 	function onCombatStarted()
 	{
 		this.logInfo("inspiring presence: on combat started!");

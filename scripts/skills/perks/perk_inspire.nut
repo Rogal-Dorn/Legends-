@@ -28,5 +28,6 @@ this.perk_inspire <- this.inherit("scripts/skills/skill", {
 	}
 
 
+
 });
 

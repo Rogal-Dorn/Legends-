@@ -18,5 +18,6 @@ this.perk_shield_expert <- this.inherit("scripts/skills/skill", {
 		_properties.IsSpecializedInShields = true;
 	}
 
+
 });
 
