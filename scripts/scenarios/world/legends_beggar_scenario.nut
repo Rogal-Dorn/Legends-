@@ -3,7 +3,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	function create()
 	{
 		this.m.ID = "scenario.legends_beggar";
-		this.m.Name = "Beggar";
+		this.m.Name = "Solo Beggar (Legends)";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead.  \n\n[color=#bcad8c]Knows too much:[/color] A noble house is after you.\n[color=#bcad8c]Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 11;
@@ -156,6 +156,12 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		return false;
+	}
+
+	function onHiredByScenario( bro )
+	{
+		bro.getSkills().add(this.new("scripts/skills/injurt/perk_sickness_injury"));
+		bro.worsenMood(1.0, "Fell sick after joining you");
 	}
 
 	function onUpdateHiringRoster( _roster )

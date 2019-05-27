@@ -3,8 +3,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	function create()
 	{
 		this.m.ID = "scenario.legends_crusader";
-		this.m.Name = "Crusader";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path alone. \n\n[color=#bcad8c]Pure of heart:[/color] Can not recruit outlaw backgrounds.\n[color=#bcad8c]Strict Sermons[/color] Anyone you fight with gains Fortified Mind.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
+		this.m.Name = "Solo Crusader (Legends)";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path alone. \n\n[color=#bcad8c]Pure of heart:[/color] Can not recruit outlaw backgrounds, pious backgrounds will cost less\n[color=#bcad8c]Strict Sermons[/color] Anyone you fight with gains Fortified Mind.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 17;
 		this.m.IsFixedLook = true;
@@ -137,13 +137,19 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			if (bro.getBackground().IsCrusaderRecruitBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
-				bro.improveMood(1.5, "Joined a righteous cause");
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.improveMood(1.0, "Joined a righteous cause");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+				bro.improveMood(0.5, "Learned a new skill");
 			}
 
 			if (!bro.getBackground().IsCrusaderRecruitBackground())
 			{
-				bro.worsenMood(0.5, "Dislikes your sermons");
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 1.25);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
+				bro.worsenMood(1.0, "Dislikes your sermons");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+				bro.improveMood(0.5, "Learned a new skill");
 			}
 
 			if (bro.getBackground().isOutlawBackground())

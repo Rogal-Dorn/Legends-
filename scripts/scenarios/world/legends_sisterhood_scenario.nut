@@ -3,8 +3,8 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	function create()
 	{
 		this.m.ID = "scenario.legends_sisterhood";
-		this.m.Name = "The Sisterhood";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_91.png[/img][/p][p]Born into a world dominated by kings and bishops, as a woman you were told you could never be anything. After years of studying in secret, you have made connections and drawn together a group of powerful women. Now you set out to forge your own destinies  \n\n[color=#bcad8c]Sisterhood:[/color] You can only hire women.\n[color=#bcad8c]Wisdom:[/color] Anyone you hire gains the Student perk in battle.\n[color=#bcad8c]Secret knowledge:[/color] You can unlock rare and powerful abilities and weapons.\n[color=#bcad8c]Avatar:[/color] If you die, it is game over[/p]";
+		this.m.Name = "The Sisterhood (Legends)";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_91.png[/img][/p][p]Born into a world dominated by kings and bishops, you have studied the old ways of the wise women. Now you lead a band of powerful women shaping their own destinies. \n\n[color=#bcad8c]Sisterhood:[/color] You can only hire women, and each gains the Hold Out perk\n[color=#bcad8c]Threads of fate:[/color] Your chants and trances alter the minds of your allies and enemies .\n[color=#bcad8c]Rune stones:[/color] You can craft powerful items imbued with ancient runes\n[color=#bcad8c]Avatar:[/color] If you die, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
 		this.m.IsFixedLook = true;
@@ -33,31 +33,31 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
 		bros[1].setStartValuesEx([
-			"female_adventurous_noble_background"
+			"female_thief_background"
 		]);
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);	
 		bros[2].setStartValuesEx([
-			"female_thief_background"
+			"legend_shieldmaiden_background"
 		]);
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);	
 		bros[3].setStartValuesEx([
 			"female_bowyer_background"
 		]);
-		bros[3].setPlaceInFormation(14);
+		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);	
 		bros[4].setStartValuesEx([
-			"legend_witch_commander_background"
+			"legend_vala_commander_background"
 		]);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[4].getTags().set("IsPlayerCharacter", true);
-		bros[4].setPlaceInFormation(15);
+		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);	
 		bros[5].setStartValuesEx([
-			"legend_vala_background"
+			"female_adventurous_noble_background"
 		]);
-		bros[5].setPlaceInFormation(16);
+		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);	
 
 	}
@@ -113,7 +113,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.State.m.Player.getSprite("body").setBrush("figure_player_seer");
+		this.World.State.m.Player.getSprite("body").setBrush("figure_player_vala");
 		this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", randomVillageTile.Coords).setSize(1);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
@@ -126,8 +126,21 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	function onInit()
 	{
 		this.World.Assets.m.BrothersMax = 6;
-		this.World.Tags.set("IsLegendsWitch", true);
+		this.World.Tags.set("IsLegendsVala", true);
 	}
+
+	function onHiredByScenario( bro )
+	{
+		
+			if (bro.getBackground().isFemaleBackground())
+			{
+				bro.improveMood(1.0, "Joined the righteous cause of the Sisterhood");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_hold_out"));
+				bro.improveMood(0.5, "Learned a new skill");
+			}
+
+	}
+
 
 	function onUpdateHiringRoster( _roster )
 	{
@@ -139,11 +152,6 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			if (!bro.getBackground().isFemaleBackground())
 			{
 				garbage.push(bro);
-			}
-			if (bro.getBackground().isFemaleBackground())
-			{
-				bro.improveMood(1.5, "Joined a righteous cause");
-			}
 		}
 
 		foreach( g in garbage )

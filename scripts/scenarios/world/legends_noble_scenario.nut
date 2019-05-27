@@ -3,7 +3,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_noble";
-		this.m.Name = "Noble";
+		this.m.Name = "Noble (Legends)";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color]Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color]Your studies at the academy gave tactical and campaign skills\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 14;
@@ -168,6 +168,26 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Tags.set("IsLegendsNoble", true);
 	}
 
+	function onHiredByScenario( bro )
+	{
+	if (bro.getBackground().isNoble() || bro.getBackground.IsCombatBackground())
+			{
+				
+				bro.improveMood(0.5, "Supports your cause as a usurper");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_bags_and_belts"));
+				bro.improveMood(0.5, "Learned a new skill");
+			}
+
+	if (!bro.getBackground().isNoble() && !bro.getBackground.IsCombatBackground())
+			{
+			
+				bro.worsenMood(1.0, "Is uncormfortable serving a usurper");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_bags_and_belts"));
+				bro.improveMood(0.5, "Learned a new skill");
+			}
+
+	}
+
 	function onUpdateHiringRoster( _roster )
 	{
 		local bros = _roster.getAll();
@@ -177,13 +197,15 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			if (bro.getBackground().isNoble() || bro.getBackground.IsCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+
 			}
 
 			if (!bro.getBackground().isNoble() && !bro.getBackground.IsCombatBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.1);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.5);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
+
 			}
 		}
 
@@ -194,17 +216,17 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		if (_list.len() >= 10)
 		{			
 			local r;		
-			r = this.Math.rand(0, 2);
+			r = this.Math.rand(0, 3);
 			if (r == 0)
 					{
 						_list.push("legend_noble_2h");
 					}	
-			r = this.Math.rand(0, 2);
+			r = this.Math.rand(0, 3);
 			if (r == 0)
 					{
 						_list.push("legend_noble_shield");
 					}				
-			r = this.Math.rand(0, 2);
+			r = this.Math.rand(0, 3);
 			if (r == 0)
 					{
 						_list.push("legend_noble_ranged");

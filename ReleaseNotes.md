@@ -722,22 +722,25 @@ Veteran perk points for starting bros, every 3 levels for milita, every 2 for ev
 Adds Seer scenario, educated recruits cost less, uneducated recruits cost more. 
 Cultists and Flaggelants gain Scourging and Flesh Mortification perks for the cat 'o nine tails
 Cat 'o nine tails now uses the Flagellate ability with a range of 1, applying three stacks of bleed 
-Beast Hunters gain 13 Favoured Enemy perks, allowing them to specialise in hunting specific enemies. 
+Beast Hunters gain 13 new 'Favoured Enemy' perks, allowing them to specialise in hunting specific enemies. 
 Beast Hunter scenario will now find more beast hunters to hire in large cities.
+Barbarians gain Devastating Strikes, Debilitate, Second Wind, Last Stand and Battle Flow. They lose Student, Gifted, Fortified Mind, Bow and Crossbow Specialisations
 Raiders have a hard time attracting recruits, anyone who isn't an outlaw costs 50% more. Outlaws will cost 10% less and have a 50% chance of gaining a trait. They have an increased chance of finding thieves, raiders and barbarians for hire. With a small chance of finding killers and assasins for hire. 
-Those willing to join outlaws are: assassin, barbarian, berserker, brawler, cultist, deserter, disowned noble, female disowned noble, pickpocket, gambler, graverobber, killer on the run, cannibal, necromancer, pimp, poacher, raider, thief, vagabond, wildman 
-Berserker has an offputing effect on all but the lowborn or outlaws, making them cost 10% more. He inspires combat backgrounds and outlaws, making them cost 10% less. Has an increased chance of finding barbarians for hire in small towns
+Outlaw backgrounds are: assassin, barbarian, berserker, brawler, cultist, deserter, disowned noble, female disowned noble, pickpocket, gambler, graverobber, killer on the run, cannibal, necromancer, pimp, poacher, raider, thief, vagabond, wildman 
+Berserker has an offputing effect on all but the lowborn or outlaws, making them cost 25% more. He inspires combat backgrounds and outlaws, making them cost 10% less. Has an increased chance of finding barbarians for hire in small towns
 Crusader will not hire outlaws, but religious recruits will be more numerous, happy to join his cause and 10% cheaper. 
-Crusader will attract: adventurous noble, apprentice, eunuch, troubadour, flagellant, hedgeknight, historian, blacksmith, inventor, ironmonger, nun, shieldmaiden, squire, minstrel, monk, orc slayer, retired soldier, shepherd, swordmaster and witch hunter 
-Ranger starts alone, people who want to join the rangers will cost 10% less, others cost 10% more.  Increased chance of finding poachers and hunters in small towns, with a 1/100 chance of finding a ranger for hire.
-Ranger will attract: apprentice, assassin, beast hunter, bowyer, adventurous female noble, fletcher, disowned female noble, houndmaster, hunter, blacksmith, herbalist, inventor, taxidermist, lumberjack, orc slayer, poacher, retired soldier, swordmaster, witch hunter. 
+Crusader recruits are:: adventurous noble, apprentice, eunuch, troubadour, flagellant, hedgeknight, historian, blacksmith, inventor, ironmonger, nun, shieldmaiden, squire, minstrel, monk, orc slayer, retired soldier, shepherd, swordmaster and witch hunter 
+Ranger starts alone, people who want to join the rangers will cost 10% less, others demand 25% more.  Increased chance of finding poachers and hunters in small towns, with a 1/1000 chance of finding a ranger for hire.
+Ranger recruits are: apprentice, assassin, beast hunter, bowyer, adventurous female noble, fletcher, disowned female noble, houndmaster, hunter, blacksmith, herbalist, inventor, taxidermist, lumberjack, orc slayer, poacher, retired soldier, swordmaster, witch hunter. 
+Ranger will scout locations correctly now. 
+Warlock makes pious recruits deeply uncomfortable, with 33% becoming superstitious. Outlaw recruits enjoy the warlock carnage, but it leads 33% to develop paranoia. Increased chance of finding graverobbers in big towns. 
 Noble starts with a group of gaurds and more coin, hiring nobles and military backgrounds costs 10% less, everyone else costs 10% more. Able to hire noble house soldiers to his cause. 
-Sisterhood are more likely to find women willing to join their cause in towns.
+Sisterhood is led by a Vala and loses seer, recruits gain Hold Out. She is are more likely to find women willing to join her cause in towns.
 Trading caravan has increased chance of finding donkeys, peddlers and caravan hands, default trading caravan removed.  
+Beggar will make all new hires sick and unhappy. Has 25% chance of being female
 Fixed Worldgeneration crashes.
 Added more variance in the types of settlements created on each map.
-Fixed ranger not scouting locations 
-Beggar has 25% chance of being female 
+
 
 Known issues:
 Warlock summons causing a crash on load? 

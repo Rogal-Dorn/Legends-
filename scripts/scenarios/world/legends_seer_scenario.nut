@@ -3,8 +3,8 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 	function create()
 	{
 		this.m.ID = "scenario.legends_seer";
-		this.m.Name = "Seer";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]After studying alchemy and mystic secrets for years, you have set out to confront the evils of the world \n\n[color=#bcad8c]Bookworm:[/color] Educated people want to work for you, the uneducated find you boring to be around.\n[color=#bcad8c]Teacher[/color] Anyone you fight with gains the Student perk.\n[color=#bcad8c]Avatar:[/color] If your seer dies, the campaign ends.[/p]";
+		this.m.Name = "Solo Seer (Legends)";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_120.png[/img][/p][p]After studying alchemy and mystic secrets for years, you have set out to confront the evils of the world \n\n[color=#bcad8c]Bookworm:[/color] Educated people want to work for you, the uneducated find you boring to be around.\n[color=#bcad8c]Teacher[/color] Anyone you fight with gains the Student perk.\n[color=#bcad8c]Avatar:[/color] If your seer dies, the campaign ends.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 18;
 		this.m.IsFixedLook = true;
@@ -120,6 +120,34 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		}
 	}
 
+	function onHiredByScenario( bro )
+	{
+		if (bro.getBackground().IsEducatedBackground())
+			{
+				
+				bro.improveMood(1.0, "Excited to study from you");
+				bro.improveMood(0.5, "Learned a new skill");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+			}
+
+		if (!bro.getBackground().IsEducatedBackground())
+			{
+			
+				bro.worsenMood(1.0, "Wishes you would stop using big words");
+				bro.improveMood(0.5, "Learned a new skill");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+			}
+		if (bro.getSkills().hasSkill("trait.bright")))
+			{
+				bro.improveMood(0.5, "Keen to learn from a master");
+			}
+
+		if (bro.getSkills().hasSkill("trait.dumb")))
+			{
+				bro.worsenMood(0.5, "Thinks you are a boring nerd");
+			}
+	}
+
 	function onUpdateHiringRoster( _roster )
 	{
 		local garbage = [];
@@ -130,35 +158,26 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			if (bro.getBackground().IsEducatedBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
-				bro.improveMood(1.5, "Excited to study from you");
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);	
 			}
 
 			if (!bro.getBackground().IsEducatedBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 1.1);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
-				bro.worsenMood(0.5, "Does not like your big words");
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
 			}
 
 			if (bro.getSkills().hasSkill("trait.bright")))
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
-				bro.improveMood(1.0, "Keen to learn from a master");
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 			}
 
 			if (bro.getSkills().hasSkill("trait.dumb")))
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 1.1);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
-				bro.worsenMood(0.5, "Thinks you are boring");
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
 			}
-		}
-
-		foreach( g in garbage )
-		{
-			_roster.remove(g);
 		}
 	}
 

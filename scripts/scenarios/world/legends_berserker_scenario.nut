@@ -3,7 +3,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	function create()
 	{
 		this.m.ID = "scenario.legends_berserker";
-		this.m.Name = "Berserker";
+		this.m.Name = "Solo Berserker (Legends)";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family slaughtered drove you into a self destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker madness:[/color] Unlock powerful abilities allow you to fight naked and bare handed.\n[color=#bcad8c]Infectious rage:[/color] Only the insane, violent or desperate will join you. You will grant berserk to anyone who joins you in battle. You have a tiny chance of finding other berserkers for hire.\n[color=#bcad8c]Avatar:[/color]Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 12;
@@ -214,15 +214,19 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		{
 			if (!bro.getBackground().IsLowborn() && !bro.getBackground.IsOutlawBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.1);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
-				bro.worsenMood(0.5, "Disturbed by your wild and erratic nature");
+				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.25);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
+				bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
+				bro.improveMood(0.5, "Learned a new skill");
 			}
 			if (bro.getBackground.IsCombatBackground() || bro.getBackground.IsOutlawBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 0.9);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
-				bro.improveMood(1.5, "Excited by your lust for battle")
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.improveMood(1.0, "Excited by your lust for battle")
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
+				bro.improveMood(0.5, "Learned a new skill");
 			}
 
 		}
