@@ -179,40 +179,16 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 			]);
 		}
 
-		if (this.Math.rand(1, 100) <= 50)
+		foreach( i in this.Const.Items.NamedRangedWeapons )
 		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_crossbow"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_warbow"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_throwing_axe"
-			});
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			list.push({
-				R = 99,
-				P = 2.0,
-				S = "weapons/named/named_javelin"
-			});
+			if (this.Math.rand(1, 100) <= 50)
+			{
+				list.push({
+					R = 99,
+					P = 2.0,
+					S = i
+				});
+			}
 		}
 
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);

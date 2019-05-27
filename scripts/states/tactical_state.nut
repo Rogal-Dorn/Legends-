@@ -2987,7 +2987,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_madman");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/trickster_god");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
@@ -3034,7 +3034,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/swordmaster");
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_raider");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 				e.makeMiniboss();
 				e.assignRandomEquipment();

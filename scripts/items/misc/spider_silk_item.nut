@@ -9,7 +9,7 @@ this.spider_silk_item <- this.inherit("scripts/items/item", {
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Crafting;
 		this.m.IsDroppedAsLoot = true;
-		this.m.Value = 300;
+		this.m.Value = 350;
 	}
 
 	function getTooltip()

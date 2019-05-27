@@ -1773,7 +1773,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			return;
 		}
 
-		if (this.hasSprite("arms_icon"))
+		if (this.hasSprite("arms_icon") && this.m.CurrentProperties.IsAbleToUseWeaponSkills)
 		{
 			local arms_icon = this.getSprite("arms_icon");
 

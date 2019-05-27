@@ -9,7 +9,7 @@ this.mysterious_herbs_item <- this.inherit("scripts/items/item", {
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Crafting;
 		this.m.IsDroppedAsLoot = true;
-		this.m.Value = 1300;
+		this.m.Value = 1650;
 	}
 
 	function getTooltip()

@@ -9,7 +9,7 @@ this.glowing_resin_item <- this.inherit("scripts/items/item", {
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Crafting;
 		this.m.IsDroppedAsLoot = true;
-		this.m.Value = 2000;
+		this.m.Value = 2500;
 	}
 
 	function getTooltip()

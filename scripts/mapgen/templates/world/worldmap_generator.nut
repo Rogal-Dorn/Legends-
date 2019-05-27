@@ -1619,15 +1619,15 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 	function buildSettlements( _rect )
 	{
 		this.logInfo("Building settlements...");
-		local tries = 0;
 		local isLeft = this.Math.rand(0, 1);
 		local settlementTiles = [];
 
 		foreach( list in this.Const.World.Settlements.Master )
 		{
 			local num = list.Amount;
+			local tries = 0;
 
-			while (num > 0 && tries++ < 3000)
+			while (num > 0 && tries++ < 1000)
 			{
 				local x;
 				local y;

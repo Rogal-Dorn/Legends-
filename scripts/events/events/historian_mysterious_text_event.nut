@@ -18,7 +18,14 @@ this.historian_mysterious_text_event <- this.inherit("scripts/events/event", {
 					Text = "Just read it and tell me what it says already.",
 					function getResult( _event )
 					{
-						return "C";
+						if (this.Math.rand(1, 100) <= 50)
+						{
+							return "B";
+						}
+						else
+						{
+							return "C";
+						}
 					}
 
 				}

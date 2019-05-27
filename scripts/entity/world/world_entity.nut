@@ -107,7 +107,7 @@ this.world_entity <- {
 
 	function isAttackable()
 	{
-		return this.m.IsAttackable;
+		return this.m.IsAttackable && this.m.VisibilityMult > 0;
 	}
 
 	function isAttackableByAI()

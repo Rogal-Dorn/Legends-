@@ -147,6 +147,7 @@ this.trickster_god <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToRoot = true;
 		b.IsImmuneToStun = true;
 		b.IsAffectedByNight = false;
+		b.IsAffectedByInjuries = false;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
@@ -163,7 +164,7 @@ this.trickster_god <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.65;
 		this.setSpriteOffset("status_rooted", this.createVec(-10, 16));
-		this.setSpriteOffset("status_stunned", this.createVec(0, 10));
+		this.setSpriteOffset("status_stunned", this.createVec(-32, 30));
 		this.setSpriteOffset("arrow", this.createVec(0, 10));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));

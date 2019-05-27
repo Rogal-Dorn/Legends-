@@ -63,7 +63,7 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 		});
 		available.push(function ( _i )
 		{
-			_i.m.Condition = this.Math.round(_i.m.Condition * this.Math.rand(120, 150) * 0.01) * 1.0;
+			_i.m.Condition = this.Math.round(_i.m.Condition * this.Math.rand(120, 160) * 0.01) * 1.0;
 			_i.m.ConditionMax = _i.m.Condition;
 		});
 		available.push(function ( _i )

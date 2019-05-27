@@ -126,26 +126,30 @@ gt.Const.Items.NamedGoblinWeapons <- [
 	"weapons/named/named_goblin_pike",
 	"weapons/named/named_goblin_spear"
 ];
-gt.Const.Items.NamedWeapons <- [
+gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/named_axe",
 	"weapons/named/named_billhook",
 	"weapons/named/named_cleaver",
-	"weapons/named/named_crossbow",
 	"weapons/named/named_dagger",
 	"weapons/named/named_flail",
 	"weapons/named/named_greataxe",
 	"weapons/named/named_greatsword",
-	"weapons/named/named_javelin",
 	"weapons/named/named_longaxe",
 	"weapons/named/named_mace",
 	"weapons/named/named_spear",
 	"weapons/named/named_sword",
-	"weapons/named/named_throwing_axe",
 	"weapons/named/named_two_handed_hammer",
-	"weapons/named/named_warbow",
 	"weapons/named/named_warbrand",
 	"weapons/named/named_warhammer"
 ];
+gt.Const.Items.NamedRangedWeapons <- [
+	"weapons/named/named_crossbow",
+	"weapons/named/named_javelin",
+	"weapons/named/named_throwing_axe",
+	"weapons/named/named_warbow"
+];
+gt.Const.Items.NamedWeapons <- clone this.Const.Items.NamedMeleeWeapons;
+gt.Const.Items.NamedWeapons.extend(this.Const.Items.NamedRangedWeapons);
 gt.Const.Items.NamedBarbarianWeapons <- [];
 gt.Const.Items.NamedBarbarianHelmets <- [];
 gt.Const.Items.NamedBarbarianArmors <- [];

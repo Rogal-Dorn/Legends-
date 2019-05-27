@@ -229,11 +229,11 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 				{
 					bestCultist = bro;
 				}
+			}
 
-				if (bro.getLevel() >= 11)
-				{
-					sacrifice_candidates.push(bro);
-				}
+			if (bro.getLevel() >= 11)
+			{
+				sacrifice_candidates.push(bro);
 			}
 		}
 
@@ -253,7 +253,7 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 
 		this.m.Cultist = bestCultist;
 		this.m.Sacrifice = sacrifice_candidates[this.Math.rand(0, sacrifice_candidates.len() - 1)];
-		this.m.Score = 5;
+		this.m.Score = cultist_candidates.len();
 	}
 
 	function onPrepare()

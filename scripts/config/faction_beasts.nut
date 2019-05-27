@@ -293,8 +293,8 @@ gt.Const.Tactical.Actor.TricksterGod <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		100,
-		100
+		130,
+		130
 	]
 };
 gt.Const.Tactical.Actor.Kraken <- {
