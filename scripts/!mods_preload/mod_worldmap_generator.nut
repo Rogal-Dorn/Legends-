@@ -39,7 +39,7 @@
 		}
 
 		this.__ping();
-
+		this.LoadingScreen.updateProgress("Building Land and Sea ...");
 		this.buildLandAndSea(_rect);
 		this.__ping();
         if (!this.isWorldAcceptable(_rect))
@@ -50,6 +50,7 @@
 
         local result;
 		this.__ping();
+		this.LoadingScreen.updateProgress("Building Terrain ...");
 		this.buildElevation(_rect);
 		this.__ping();
 		this.buildTerrain(_rect);
@@ -235,6 +236,7 @@
 
     o.buildSettlements = function ( _rect, _properties )
 	{
+		this.LoadingScreen.updateProgress("Building Settlements ...");
 		this.logInfo("Building settlements...");
 		local tries = 0;
 		local isLeft = this.Math.rand(0, 1);

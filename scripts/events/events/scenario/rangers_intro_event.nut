@@ -24,9 +24,9 @@ this.rangers_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Banner = "ui/banners/" + this.World.Assets.getBanner() + "s.png";
-				local brothers = this.World.getPlayerRoster().getAll();
-				this.Characters.push(brothers[1].getImagePath());
-				this.Characters.push(brothers[2].getImagePath());
+				// local brothers = this.World.getPlayerRoster().getAll();
+				// this.Characters.push(brothers[1].getImagePath());
+				// this.Characters.push(brothers[2].getImagePath());
 			}
 
 		});
@@ -65,14 +65,14 @@ this.rangers_intro_event <- this.inherit("scripts/events/event", {
 			"hunter1",
 			brothers[0].getName()
 		]);
-		_vars.push([
-			"hunter2",
-			brothers[1].getName()
-		]);
-		_vars.push([
-			"hunter3",
-			brothers[2].getName()
-		]);
+		// _vars.push([
+		// 	"hunter2",
+		// 	brothers[1].getName()
+		// ]);
+		// _vars.push([
+		// 	"hunter3",
+		// 	brothers[2].getName()
+		// ]);
 		_vars.push([
 			"noble",
 			f.getRandomCharacter().getName()
