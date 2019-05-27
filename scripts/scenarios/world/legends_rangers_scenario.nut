@@ -132,7 +132,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-	//		this.World.Events.fire("event.rangers_scenario_intro");
+			this.World.Events.fire("event.legend_ranger_scenario_intro");
 		}, null);
 	}
 
@@ -160,47 +160,45 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() <= 10)
+		if (_list.len() > 10)
 		{
-				local r;
-				r = this.Math.rand(0, 1);
-				if (r == 0)
-						{
-							_list.push("poacher_background");
-						}
-				local r;
-				r = this.Math.rand(0, 9);
-				if (r == 0)
-						{
-							_list.push("hunter_background");
-						}
-				local r;
-				r = this.Math.rand(0, 999);
-				if (r == 0)
-						{
-							_list.push("legend_ranger_background");
-						}
+			return;
+		}
+
+		local r;
+		r = this.Math.rand(0, 1);
+		if (r == 0)
+		{
+			_list.push("poacher_background");
+		}
+		local r;
+		r = this.Math.rand(0, 9);
+		if (r == 0)
+		{
+			_list.push("hunter_background");
+		}
+		local r;
+		r = this.Math.rand(0, 999);
+		if (r == 0)
+		{
+			_list.push("legend_ranger_background");
 		}
 	}
 
 	function onHiredByScenario( bro )
 	{
-	if (bro.getBackground().isRangerRecruitBackground())
-			{
-				
-				bro.improveMood(1.0, "Supports the ranger cause");
-				bro.improveMood(0.5, "Learned a new skill");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
-			}
-
-	if (!bro.getBackground().isRangerRecruitBackground())
-			{
-			
-				bro.worsenMood(1.5, "Does not like sleeping in the woods");
-				bro.improveMood(0.5, "Learned a new skill");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
-			}
-
+		if (bro.getBackground().isRangerRecruitBackground())
+		{
+			bro.improveMood(1.0, "Supports the ranger cause");
+			bro.improveMood(0.5, "Learned a new skill");
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+		}
+		else
+		{
+			bro.worsenMood(1.5, "Does not like sleeping in the woods");
+			bro.improveMood(0.5, "Learned a new skill");
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+		}
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -214,8 +212,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 			}
-
-			if (!bro.getBackground().isRangerRecruitBackground())
+			else
 			{
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);

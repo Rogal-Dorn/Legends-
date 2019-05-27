@@ -121,7 +121,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
-		//	this.World.Events.fire("event.cultists_scenario_intro");
+			this.World.Events.fire("event.legend_necro_scenario_intro");
 		}, null);
 	}
 		function onInit()
@@ -144,12 +144,16 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		return false;
 	}
+
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() >= 10)
+		if (_list.len() < 10)
 		{
-			_list.push("graverobber_background");
+			return;
 		}
+		
+		_list.push("graverobber_background");
+
 	}
 
 	function onHiredByScenario( bro )

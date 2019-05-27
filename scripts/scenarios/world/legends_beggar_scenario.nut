@@ -4,7 +4,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	{
 		this.m.ID = "scenario.legends_beggar";
 		this.m.Name = "Solo Beggar (Legends)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead.  \n\n[color=#bcad8c]Knows too much:[/color] A noble house is after you.\n[color=#bcad8c]Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead.  \n\n[color=#bcad8c]Knows too much:[/color] All noble houses hate you.\n[color=#bcad8c]Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: Can never hire anyone that isn\'t a lowborn peasant.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 11;
 	}
@@ -36,25 +36,21 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		local bros = roster.getAll();
 			
-			local r;
-			r = this.Math.rand(0, 3);
-			if (r == 0)
-			{
-				bros[0].setStartValuesEx([
-					"legend_female_beggar_commander_background"
-				]);
-			}
-			else 
-			{
-					bros[0].setStartValuesEx([
-					"legend_beggar_commander_background"
-				]);
-			}
+		local r;
+		r = this.Math.rand(0, 3);
+		if (r == 0)
+		{
+			bros[0].setStartValuesEx([
+				"legend_female_beggar_commander_background"
+			]);
+		}
+		else 
+		{
+			bros[0].setStartValuesEx([
+				"legend_beggar_commander_background"
+			]);
+		}
 
-
-		bros[0].setStartValuesEx([
-			"legend_beggar_commander_background"
-		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		this.World.Assets.m.BusinessReputation = -200;
@@ -131,7 +127,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			this.Music.setTrackList([
 				"music/retirement_01.ogg"
 			], this.Const.Music.CrossFadeTime);
-		//	this.World.Events.fire("event.militia_scenario_intro");
+			this.World.Events.fire("event.legend_beggar_scenario_intro");
 		}, null);
 	}
 

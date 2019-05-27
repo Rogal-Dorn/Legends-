@@ -165,7 +165,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			this.Music.setTrackList([
 				"music/barbarians_02.ogg"
 			], this.Const.Music.CrossFadeTime);
-		//	this.World.Events.fire("event.raiders_scenario_intro");
+			this.World.Events.fire("event.legend_berserker_scenario_intro");
 		}, null);
 	}
 
@@ -214,15 +214,15 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		{
 			if (!bro.getBackground().IsLowborn() && !bro.getBackground.IsOutlawBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 				bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 				bro.improveMood(0.5, "Learned a new skill");
-			}
-			if (bro.getBackground.IsCombatBackground() || bro.getBackground.IsOutlawBackground())
+			} 
+			else if (bro.getBackground.IsCombatBackground() || bro.getBackground.IsOutlawBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 				bro.improveMood(1.0, "Excited by your lust for battle")
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));

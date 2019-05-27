@@ -253,47 +253,43 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	function onUpdateDraftList( _list )
 	{
 		if (_list.len() >= 10)
-			{
+		{
 			local r;
 			r = this.Math.rand(0, 3);
 			if (r == 0)
-				{
+			{
 				_list.push("thief_background");
-				}
+			}
 			r = this.Math.rand(0, 9);
 			if (r == 0)
-				{
-					_list.push("barbarian_background");
-
-		
-				}
+			{
+				_list.push("barbarian_background");
+			}
 			r = this.Math.rand(0, 99);
 			if (r == 0)
-					{
-						_list.push("assassin_background");
-					}
-
-			}
-		if (_list.len() < 10)
 			{
+				_list.push("assassin_background");
+			}
+		}
+		else 
+		{
 			local r;
 			r = this.Math.rand(0, 2);
 			if (r == 0)
-				{
+			{
 				_list.push("raider_background");
-				}
+			}
 			r = this.Math.rand(0, 9);
 			if (r == 0)
-				{
-					_list.push("barbarian_background");
-				}
+			{
+				_list.push("barbarian_background");
+			}
 			r = this.Math.rand(0, 19);
 			if (r == 0)
-				{
-					_list.push("killer_on_the_run_background");
-				}
-
+			{
+				_list.push("killer_on_the_run_background");
 			}
+		}
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -305,36 +301,24 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		{
 			if (!bro.getBackground().IsOutlawBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.5);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
 				bro.worsenMood(0.5, "Is uncomfortable with joining raiders");
 			}
-			if (!bro.getBackground().IsOutlawBackground())
+			else
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 				bro.improveMood(1.5, "Is excited at becoming a raider")
-			local r;
-			r = this.Math.rand(0, 9);
-			if (r == 0)
+				local r;
+				r = this.Math.rand(0, 9);
+				switch(r)
 				{
-				bro.getSkills().add(this.new("scripts/skills/traits/bloodthirsty_trait"));
-				}
-				if (r == 1)
-				{
-				bro.getSkills().add(this.new("scripts/skills/traits/deathwish_trait"));
-				}
-				if (r == 3)
-				{
-				bro.getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
-				}
-				if (r == 4)
-				{
-				bro.getSkills().add(this.new("scripts/skills/traits/cocky_trait"));
-				}
-				if (r == 5)
-				{
-				bro.getSkills().add(this.new("scripts/skills/traits/brute_trait"));
+					case 0: bro.getSkills().add(this.new("scripts/skills/traits/bloodthirsty_trait"));
+					case 1: bro.getSkills().add(this.new("scripts/skills/traits/deathwish_trait"));
+					case 2: bro.getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
+					case 3: bro.getSkills().add(this.new("scripts/skills/traits/cocky_trait"));
+					case 4: bro.getSkills().add(this.new("scripts/skills/traits/brute_trait"));
 				}
 			}
 		}

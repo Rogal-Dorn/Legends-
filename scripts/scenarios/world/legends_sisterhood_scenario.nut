@@ -119,7 +119,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
-		//	this.World.Events.fire("event.beast_hunters_scenario_intro");
+			this.World.Events.fire("event.legend_sisterhood_scenario_intro");
 		}, null);
 	}
 
@@ -131,16 +131,13 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 
 	function onHiredByScenario( bro )
 	{
-		
-			if (bro.getBackground().isFemaleBackground())
-			{
-				bro.improveMood(1.0, "Joined the righteous cause of the Sisterhood");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_hold_out"));
-				bro.improveMood(0.5, "Learned a new skill");
-			}
-
+		if (bro.getBackground().isFemaleBackground())
+		{
+			bro.improveMood(1.0, "Joined the righteous cause of the Sisterhood");
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_hold_out"));
+			bro.improveMood(0.5, "Learned a new skill");
+		}
 	}
-
 
 	function onUpdateHiringRoster( _roster )
 	{
@@ -152,6 +149,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 			if (!bro.getBackground().isFemaleBackground())
 			{
 				garbage.push(bro);
+			}
 		}
 
 		foreach( g in garbage )
@@ -241,60 +239,59 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 						_list.push("legend_nun_background");
 					}			
 		}
-		if (_list.len() <= 10)
+		else
 		{			
 			local r;
 			r = this.Math.rand(0, 6);
 			if (r == 0)
-					{
-						_list.push("female_daytaler_background");
-					}	
+			{
+				_list.push("female_daytaler_background");
+			}	
 			r = this.Math.rand(0, 10);
 			if (r == 0)
-					{
-						_list.push("female_beggar_background");
-					}				
+			{
+				_list.push("female_beggar_background");
+			}				
 			r = this.Math.rand(0, 18);
 			if (r == 0)
-					{
-						_list.push("female_bowyer_background");
-					}	
+			{
+				_list.push("female_bowyer_background");
+			}	
 			r = this.Math.rand(0, 12);
 			if (r == 0)
-					{
-						_list.push("female_butcher_background");
-					}	
+			{
+				_list.push("female_butcher_background");
+			}	
 			r = this.Math.rand(0, 8);
 			if (r == 0)
-					{
-						_list.push("female_farmhand_background");
-					}				
+			{
+				_list.push("female_farmhand_background");
+			}				
 			r = this.Math.rand(0, 14);
 			if (r == 0)
-					{
-						_list.push("female_miller_background");
-					}	
-				r = this.Math.rand(0, 8);
+			{
+				_list.push("female_miller_background");
+			}	
+			r = this.Math.rand(0, 8);
 			if (r == 0)
-					{
-						_list.push("female_servant_background");
-					}	
+			{
+				_list.push("female_servant_background");
+			}	
 			r = this.Math.rand(0, 12);
 			if (r == 0)
-					{
-						_list.push("female_tailor_background");
-					}				
+			{
+				_list.push("female_tailor_background");
+			}				
 			r = this.Math.rand(0, 16);
 			if (r == 0)
-					{
-						_list.push("female_thief_background");
-					}	
+			{
+				_list.push("female_thief_background");
+			}	
 			r = this.Math.rand(0, 16);
 			if (r == 0)
-					{
-						_list.push("legend_nun_background");
-					}	
-			}
+			{
+				_list.push("legend_nun_background");
+			}	
 		}
 	}
 });

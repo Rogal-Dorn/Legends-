@@ -744,6 +744,8 @@ Fixed ranger not scouting locations
 Fixed militia start not loading 
 Fixed Worldgeneration crashes.
 Added more variance in the types of settlements created on each map.
+Fixed a or so dozen missing perks (from pre DLC)
+
 
 
 Known issues:

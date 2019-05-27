@@ -87,7 +87,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			this.Music.setTrackList([
 				"music/noble_02.ogg"
 			], this.Const.Music.CrossFadeTime);
-		//	this.World.Events.fire("event.lone_wolf_scenario_intro");
+			this.World.Events.fire("event.legend_crusader_scenario_intro");
 		}, null);
 	}
 
@@ -114,16 +114,17 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() >= 10)
+		if (_list.len() < 10)
 		{
-			_list.push("monk_background");
-			local r;
-			r = this.Math.rand(0, 999);
-			
-			if (r == 0)
-					{
-						_list.push("legend_crusader_background");
-					}
+			return;
+		}
+
+		_list.push("monk_background");
+		local r;
+		r = this.Math.rand(0, 999);	
+		if (r == 0)
+		{
+			_list.push("legend_crusader_background");
 		}
 	}
 
@@ -134,18 +135,17 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().IsCrusaderRecruitBackground())
+			if (bro.getBackground().isCrusaderRecruitBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 				bro.improveMood(1.0, "Joined a righteous cause");
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 				bro.improveMood(0.5, "Learned a new skill");
-			}
-
-			if (!bro.getBackground().IsCrusaderRecruitBackground())
+			} 
+			else
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 				bro.worsenMood(1.0, "Dislikes your sermons");
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
