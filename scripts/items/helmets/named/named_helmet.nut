@@ -82,15 +82,9 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function randomizeValues()
 	{
-		if (this.m.StaminaModifier <= -10 && this.Math.rand(1, 100) <= 33)
-		{
-			this.m.StaminaModifier = this.Math.ceil(this.m.StaminaModifier * this.Math.rand(70, 90) * 0.01);
-		}
-		else
-		{
-			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 130) * 0.01) * 1.0;
-			this.m.ConditionMax = this.m.Condition;
-		}
+		this.m.StaminaModifier = this.Math.min(-4, this.m.StaminaModifier + this.Math.rand(1, 4));
+		this.m.Condition = this.Math.floor(this.m.Condition * this.Math.rand(110, 125) * 0.01) * 1.0;
+		this.m.ConditionMax = this.m.Condition;
 	}
 
 	function onSerialize( _out )

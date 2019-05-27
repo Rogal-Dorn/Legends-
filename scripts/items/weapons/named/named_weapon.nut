@@ -74,7 +74,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(80, 140) * 0.01) * 1.0;
+		this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(90, 140) * 0.01) * 1.0;
 		this.m.ConditionMax = this.m.Condition;
 		local available = [];
 		available.push(function ( _i )
@@ -92,7 +92,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		{
 			available.push(function ( _i )
 			{
-				_i.m.ChanceToHitHead = _i.m.ChanceToHitHead + this.Math.rand(5, 10);
+				_i.m.ChanceToHitHead = _i.m.ChanceToHitHead + this.Math.rand(10, 20);
 			});
 		}
 
@@ -101,7 +101,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 			_i.m.DirectDamageAdd = _i.m.DirectDamageAdd + this.Math.rand(8, 16) * 0.01;
 		});
 
-		if (this.m.StaminaModifier >= 8)
+		if (this.m.StaminaModifier >= 10)
 		{
 			available.push(function ( _i )
 			{
@@ -113,7 +113,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		{
 			available.push(function ( _i )
 			{
-				_i.m.ShieldDamage = this.Math.round(_i.m.ShieldDamage * this.Math.rand(110, 133) * 0.01);
+				_i.m.ShieldDamage = this.Math.round(_i.m.ShieldDamage * this.Math.rand(133, 180) * 0.01);
 			});
 		}
 

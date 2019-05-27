@@ -33,6 +33,8 @@ this.gore_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsUsingActorPitch = true;
 		this.m.IsSpearwallRelevant = false;
+		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
+		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 3;

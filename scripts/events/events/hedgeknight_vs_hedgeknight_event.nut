@@ -553,7 +553,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 
 		local brothers = this.World.getPlayerRoster().getAll();
 
-		if (brothers.len() < 3)
+		if (brothers.len() < 4)
 		{
 			return;
 		}
