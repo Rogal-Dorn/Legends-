@@ -13,6 +13,7 @@ this.perk_boondock_blade <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+
 	function onUpdate( _properties )
 	{
 		if (this.getContainer().getActor().getTile().IsHidingEntity)

@@ -19,5 +19,6 @@ this.perk_lookout <- this.inherit("scripts/skills/skill", {
 		_properties.Vision += 1;
 	}
 
+
 });
 

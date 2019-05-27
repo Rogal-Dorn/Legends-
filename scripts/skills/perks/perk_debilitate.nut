@@ -21,5 +21,6 @@ this.perk_debilitate <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+
 });
 

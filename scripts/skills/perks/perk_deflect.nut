@@ -13,5 +13,6 @@ this.perk_deflect <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+
 });
 

@@ -17,17 +17,31 @@ this.perk_legend_favoured_enemy_hexen <- this.inherit("scripts/skills/skill", {
 	{
 	if (_targetEntity != null)
 		{
-		local actor = this.getContainer().getActor();
+
 		local targetID = _targetEntity.getType()
 
-
-		if ( targetID == this.Const.EntityType.Ghoul)
+		if ( targetID == this.Const.EntityType.Hexen)
 			{
 		_properties.MeleeSkill += 10;
 		_properties.RangedSkill += 10;
-		_properties.BraveryMult *= 1.5;
+		
 			}
 		}
+	}
+
+	function onUpdate( _properties )
+	{
+		local targets = this.Tactical.Entities.getAllInstances();
+		foreach (tar in targets)
+			{
+				foreach (t in tar)
+				{
+					if (t.getType() == this.Const.EntityType.Hexen)
+					{
+						_properties.BraveryMult *= 1.5;
+					}
+				}
+			}
 	}
 });
 
