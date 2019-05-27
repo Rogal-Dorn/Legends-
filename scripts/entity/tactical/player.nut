@@ -848,6 +848,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.updateAchievement("PowerInNumbers", 1, 1);
 		}
+
+		this.World.Assets.getOrigin().onHiredByScenario(this);
+
 	}
 
 	function onCombatStart()
