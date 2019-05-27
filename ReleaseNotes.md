@@ -731,13 +731,12 @@ Noble has an increased chance of finding disowned nobles and soldiers willing to
 Band of Poachers have a 1/1000 chance of finding a ranger to recruit in small towns 
 Sisterhood are more likely to find women willing to join their cause in towns 
 Trading caravan has increased chance of finding donkeys, peddlers and caravan hands, default trading caravan removed.  
+Fixed Worldgeneration crashes.
+Added more variance in the types of settlements created on each map.
 
 Known issues:
-World generation crashes 
-party size perks not persisting between saves 
 Warlock summons causing a crash on load? 
 Healing tooltips are incorrect
-? some of the whole of party perks may not be applying  
 
 
 

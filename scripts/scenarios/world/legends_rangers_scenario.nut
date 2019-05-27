@@ -19,7 +19,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 1; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
