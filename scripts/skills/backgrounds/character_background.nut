@@ -125,9 +125,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.IsEducatedBackground;
 	}
 
-	function isOutLawBackground()
+	function isOutlawBackground()
 	{
-		return this.m.IsOutLawBackground;
+		return this.m.IsOutlawBackground;
 	}
 
 	function getExcludedTalents()

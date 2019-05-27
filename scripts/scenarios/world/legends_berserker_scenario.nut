@@ -212,7 +212,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().IsLowborn() && !bro.getBackground.IsOutlawBackground())
+			if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
@@ -220,7 +220,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 				bro.improveMood(0.5, "Learned a new skill");
 			} 
-			else if (bro.getBackground.IsCombatBackground() || bro.getBackground.IsOutlawBackground())
+			else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);

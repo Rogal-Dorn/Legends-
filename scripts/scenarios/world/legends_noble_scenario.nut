@@ -170,13 +170,13 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isNoble() || bro.getBackground.IsCombatBackground())
+		if (bro.getBackground().isNoble() || bro.getBackground().isCombatBackground())
 		{
 			bro.improveMood(0.5, "Supports your cause as a usurper");
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_bags_and_belts"));
 			bro.improveMood(0.5, "Learned a new skill");
 		}
-		else if (!bro.getBackground().isNoble() && !bro.getBackground.IsCombatBackground())
+		else if (!bro.getBackground().isNoble() && !bro.getBackground().isCombatBackground())
 		{			
 			bro.worsenMood(1.0, "Is uncormfortable serving a usurper");
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_bags_and_belts"));
@@ -190,12 +190,12 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isNoble() || bro.getBackground.IsCombatBackground())
+			if (bro.getBackground().isNoble() || bro.getBackground().isCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 			}
-			else if (!bro.getBackground().isNoble() && !bro.getBackground.IsCombatBackground())
+			else if (!bro.getBackground().isNoble() && !bro.getBackground().isCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);

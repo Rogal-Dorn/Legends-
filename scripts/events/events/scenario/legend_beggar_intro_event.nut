@@ -65,7 +65,7 @@ this.legend_beggar_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Banner = "ui/banners/" + this.World.Assets.getBanner() + "s.png";
-				this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
+				//this.World.FactionManager.makeNoblesUnfriendlyToPlayer();
 			}
 		});	          
 	}

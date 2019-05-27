@@ -26,9 +26,9 @@ this.legend_crusader_intro_event <- this.inherit("scripts/events/event", {
 				this.logInfo("Making you well known");
 				this.World.Assets.addBusinessReputation(1000);
 				this.logInfo("Making a noble house like you");
-				this.World.FactionManager.makeRandomNoblesFriendlyToPlayer();
+				//this.World.FactionManager.makeRandomNoblesFriendlyToPlayer();
 				this.logInfo("Making a noble house hate you");
-				this.World.FactionManager.makeRandomNoblesUnfriendlyToPlayer();
+				//this.World.FactionManager.makeRandomNoblesUnfriendlyToPlayer();
 				this.logInfo("Unlocking scouting");
 				this.World.Tags.set("HasLegendCampScouting", true);							
 			}
