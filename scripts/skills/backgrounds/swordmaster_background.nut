@@ -54,7 +54,8 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(3, 5);
 		this.m.IsCombatBackground = true;
-
+		this.m.IsRangerRecruitBackground = true;
+		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];

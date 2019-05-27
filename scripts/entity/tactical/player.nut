@@ -825,6 +825,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Type = this.Const.EntityType.Player;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.human.create();
+
 		this.getTags().add("human");
 		this.getTags().set("PotionLastUsed", 0.0);
 		this.getTags().set("PotionsUsed", 0);
@@ -2237,6 +2238,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (background.isFemaleBackground()) {
 			this.m.Gender = 1;
+			this.m.VoiceSet = 0;
+			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].NoDamageReceived;
+			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].DamageReceived;
+			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.WomanSounds[this.m.VoiceSet].Death;
+			this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.WomanSounds[this.m.VoiceSet].Flee;
+			this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.WomanSounds[this.m.VoiceSet].Fatigue;
 		}
 
 		local maxTraits = 0;
@@ -2915,6 +2922,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.InReserves = _in.readBool();
 		}
+
 	}
 
 });

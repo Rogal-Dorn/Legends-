@@ -55,6 +55,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsLowborn = true;
 		this.m.IsFemaleBackground = true;
+		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];

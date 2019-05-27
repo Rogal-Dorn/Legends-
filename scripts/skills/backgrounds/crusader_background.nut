@@ -48,6 +48,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = 9;
 		this.m.IsCombatBackground = true;
+		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsOffendedByViolence = true;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
