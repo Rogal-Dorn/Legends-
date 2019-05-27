@@ -174,7 +174,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.converted_cultist":
 			return gt.Const.Perks.TreeNinetailLookupMap;
 			break;
-
+		case "background.barbarian":
+			return gt.Const.Perks.BarbarianLookupMap;
+			break;
 		default:
 			return gt.Const.Perks.TreeTemplateLookupMap;
 	}
@@ -328,6 +330,9 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			break;
 		case "background.converted_cultist":
 			return gt.Const.Perks.PerksTreeNinetail;
+			break;
+		case "background.barbarian":
+			return gt.Const.Perks.PerksTreeBarbarian;
 			break;
 		default:
 			return gt.Const.Perks.PerksTreeTemplate;
