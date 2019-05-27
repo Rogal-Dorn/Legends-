@@ -3,7 +3,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_firefield";
-		this.m.Name = "Fire Pot;
+		this.m.Name = "Fire Pot";
 		this.m.Description = "Throw a pot releasing a field of fire that burns all beings";
 		this.m.Icon = "skills/fire_square.png";
 		this.m.IconDisabled = "skills/fire_square_bw.png";

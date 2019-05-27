@@ -44,8 +44,8 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 					"legend_female_beggar_commander_background"
 				]);
 			}
-			if (r => 1)
-			{}
+			else 
+			{
 					bros[0].setStartValuesEx([
 					"legend_beggar_commander_background"
 				]);
