@@ -87,7 +87,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			this.Music.setTrackList([
 				"music/noble_02.ogg"
 			], this.Const.Music.CrossFadeTime);
-		//	this.World.Events.fire("event.lone_wolf_scenario_intro");
+			this.World.Events.fire("event.legend_seer_scenario_intro");
 		}, null);
 	}
 
@@ -114,38 +114,37 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() >= 10)
+		if (_list.len() < 10)
 		{
-			_list.push("apprentice_background");
+			return;
 		}
+		_list.push("apprentice_background");
 	}
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().IsEducatedBackground())
-			{
-				
-				bro.improveMood(1.0, "Excited to study from you");
-				bro.improveMood(0.5, "Learned a new skill");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
-			}
+		if (bro.getBackground().isEducatedBackground())
+		{				
+			bro.improveMood(1.0, "Excited to study from you");
+			bro.improveMood(0.5, "Learned a new skill");
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+		}
+		else
+		{
+			bro.worsenMood(1.0, "Wishes you would stop using big words");
+			bro.improveMood(0.5, "Learned a new skill");
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+		}
 
-		if (!bro.getBackground().IsEducatedBackground())
-			{
-			
-				bro.worsenMood(1.0, "Wishes you would stop using big words");
-				bro.improveMood(0.5, "Learned a new skill");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
-			}
 		if (bro.getSkills().hasSkill("trait.bright"))
-			{
-				bro.improveMood(0.5, "Keen to learn from a master");
-			}
+		{
+			bro.improveMood(0.5, "Keen to learn from a master");
+		}
 
 		if (bro.getSkills().hasSkill("trait.dumb"))
-			{
-				bro.worsenMood(0.5, "Thinks you are a boring nerd");
-			}
+		{
+			bro.worsenMood(0.5, "Thinks you are a boring nerd");
+		}
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -155,29 +154,17 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().IsEducatedBackground())
+			if (bro.getBackground().isEducatedBackground() || bro.getSkills().hasSkill("trait.bright"))
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);	
 			}
-
-			if (!bro.getBackground().IsEducatedBackground())
+			else if (!bro.getBackground().isEducatedBackground() || bro.getSkills().hasSkill("trait.dumb"))
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 1.1);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.1);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
 			}
 
-			if (bro.getSkills().hasSkill("trait.bright"))
-			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
-			}
-
-			if (bro.getSkills().hasSkill("trait.dumb"))
-			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 1.1);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
-			}
 		}
 	}
 

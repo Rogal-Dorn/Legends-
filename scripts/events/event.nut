@@ -108,7 +108,7 @@ this.event <- {
 		{
 			return false;
 		}
-
+		this.logInfo("SCREEN = " +  this.getScreen(result))
 		this.setScreen(this.getScreen(result));
 		return true;
 	}

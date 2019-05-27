@@ -181,14 +181,16 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() >= 10)
+		if (_list.len() < 10)
 		{
-			local r;
-			r = this.Math.rand(0, 1);
-			if (r == 0)
-					{
-							_list.push("beast_hunter_background");
-					}
+			return;
+		}
+
+		local r;
+		r = this.Math.rand(0, 1);
+		if (r == 0)
+		{
+			_list.push("beast_hunter_background");
 		}
 	}
 

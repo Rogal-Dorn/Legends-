@@ -123,7 +123,7 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			this.Music.setTrackList([
 				"music/retirement_01.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.trader_scenario_intro");
+			this.World.Events.fire("event.legend_trader_scenario_intro");
 		}, null);
 	}
 
@@ -153,24 +153,25 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() >= 10)
+		if (_list.len() < 10)
 		{
-				local r;
-				r = this.Math.rand(0, 1);
-				if (r == 0)
-						{
-						_list.push("legend_donkey");
-						}
-				r = this.Math.rand(0, 4);
-				if (r == 0)
-						{
-						_list.push("peddler_background");
-						}
-				r = this.Math.rand(0, 2);
-				if (r == 0)
-						{
-						_list.push("caravan_hand_background");
-						}
+			return;
+		}
+		local r;
+		r = this.Math.rand(0, 1);
+		if (r == 0)
+		{
+			_list.push("legend_donkey");
+		}
+		r = this.Math.rand(0, 4);
+		if (r == 0)
+		{
+			_list.push("peddler_background");
+		}
+		r = this.Math.rand(0, 2);
+		if (r == 0)
+		{
+			_list.push("caravan_hand_background");
 		}
 	}
 
