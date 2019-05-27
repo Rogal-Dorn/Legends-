@@ -3,8 +3,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function create()
 	{
 		this.m.ID = "scenario.legends_rangers";
-		this.m.Name = "Ranger";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Selective Recruitment:[/color] The rangers will not accept just anyone in their ranks. Potential recruits must be open to the ways of forests, beasts and the bow.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
+		this.m.Name = "Solo Ranger (Legends)";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Ourdoorsmen:[/color] Not everyone is cut out for the Rangers, some love nature and are eager to join, others will need more coin to convince. All recruits gain Pathfinder \n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
 	}
@@ -132,7 +132,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.rangers_scenario_intro");
+	//		this.World.Events.fire("event.rangers_scenario_intro");
 		}, null);
 	}
 
@@ -183,32 +183,45 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 	}
 
+	function onHiredByScenario( bro )
+	{
+	if (bro.getBackground().isRangerRecruitBackground())
+			{
+				
+				bro.improveMood(1.0, "Supports the ranger cause");
+				bro.improveMood(0.5, "Learned a new skill");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+			}
+
+	if (!bro.getBackground().isRangerRecruitBackground())
+			{
+			
+				bro.worsenMood(1.5, "Does not like sleeping in the woods");
+				bro.improveMood(0.5, "Learned a new skill");
+				bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+			}
+
+	}
+
 	function onUpdateHiringRoster( _roster )
 	{
-		local garbage = [];
 		local bros = _roster.getAll();
 
 		foreach( i, bro in bros )
 		{
 			if (bro.getBackground().isRangerRecruitBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost * 0.9);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 0.9);
-				bro.improveMood(1.0, "Supports the ranger cause");
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 			}
 
 			if (!bro.getBackground().isRangerRecruitBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(this.m.HiringCost  * 1.1);
-				bro.m.DailyCost = this.Math.floor(this.m.DailyCost * 1.1);
-				bro.worsenMood(1.0, "Does not like sleeping in the woods");
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
 			}
 		}
 
-		foreach( g in garbage )
-		{
-			_roster.remove(g);
-		}
 	}
 });
 

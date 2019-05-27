@@ -3,7 +3,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_necro";
-		this.m.Name = "Warlock";
+		this.m.Name = "Warlock (Legends)";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_46.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but you embrace the other side. \n\n[color=#bcad8c]Necromancy:[/color] Start with undead companions and a scythe that summons the dead\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies\n[color=#bcad8c]Blood magic:[/color]Drain blood, feast on corpses and use your own blood in rituals\n[color=#bcad8c]Avatar:[/color]When the warlock dies, the spells fade and the game ends[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 13;
@@ -148,25 +148,39 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		if (_list.len() >= 10)
 		{
-			_list.push("gravedigger_background");
+			_list.push("graverobber_background");
 		}
 	}
-	function onUpdateHiringRoster( _roster )
+
+	function onHiredByScenario( bro )
 	{
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
-		{
-			if (bro.getBackground().IsCrusaderRecruitBackground())
+	if (bro.getBackground().isOutlawBackground())
 			{
+				
+				bro.improveMood(0.5, "Finds perverse joy in your actions")
+				bro.getSkills().add(this.new("scripts/skills/traits/deathly_spectre_trait"));
+				r = this.Math.rand(0, 2);
+				if (r == 0)
+						{
+						bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
+						}
+			}
+
+	if (bro.getBackground().IsCrusaderRecruitBackground())
+			{
+			
 				bro.worsenMood(1.5, "Is deeply disturbed by you");
+				bro.getSkills().add(this.new("scripts/skills/traits/deathly_spectre_trait"));
+				local r;		
+				r = this.Math.rand(0, 2);
+				if (r == 0)
+						{
+						bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
+						}
 			}
 
-			if (bro.getBackground().isOutlawBackground())
-			{
-				bro.improveMood(1.0, "Finds perverse joy in your actions")
-			}
-		}
+	}
+
 
 
 });
