@@ -18,5 +18,6 @@ this.perk_slaughterer <- this.inherit("scripts/skills/skill", {
 		_properties.FatalityChanceMult = 1000.0;
 	}
 
+
 });
 
