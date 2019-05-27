@@ -24,7 +24,7 @@ this.legend_necro_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.logInfo("Making zombies like you");
-				this.World.FactionManager.makeZombiesFriendlyToPlayer();
+				//this.World.FactionManager.makeZombiesFriendlyToPlayer();
 				this.logInfo("Unlocking gathering");
 				this.World.Tags.set("HasLegendCampGathering", true);				
 			}

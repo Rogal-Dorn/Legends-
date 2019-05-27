@@ -170,7 +170,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 						}
 			}
 
-	if (bro.getBackground().IsCrusaderRecruitBackground())
+	if (bro.getBackground().isCrusaderRecruitBackground())
 			{
 			
 				bro.worsenMood(1.5, "Is deeply disturbed by you");
