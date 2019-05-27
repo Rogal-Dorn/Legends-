@@ -25,9 +25,22 @@ this.perk_legend_favoured_enemy_alps <- this.inherit("scripts/skills/skill", {
 			{
 		_properties.MeleeSkill += 10;
 		_properties.RangedSkill += 10;
-		_properties.BraveryMult *= 1.5;
 			}
 		}
+	}
+	function onUpdate( _properties )
+	{
+		local targets = this.Tactical.Entities.getAllInstances();
+		foreach (tar in targets)
+			{
+				foreach (t in tar)
+				{
+					if (t.getType() == this.Const.EntityType.Alp)
+					{
+						_properties.BraveryMult *= 1.5;
+					}
+				}
+			}
 	}
 });
 
