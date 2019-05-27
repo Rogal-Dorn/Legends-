@@ -56,6 +56,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Body = "bust_naked_body_00";
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
+		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];

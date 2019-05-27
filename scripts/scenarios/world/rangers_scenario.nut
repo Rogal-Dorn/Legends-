@@ -167,6 +167,18 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 	}
-
+	
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() <= 10)
+		{
+			local r;
+			r = this.Math.rand(0, 999);
+			if (r == 0)
+					{
+			_list.push("legend_ranger_background");
+					}
+		}
+	}
 });
 

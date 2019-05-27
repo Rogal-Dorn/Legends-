@@ -33,7 +33,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
-
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];

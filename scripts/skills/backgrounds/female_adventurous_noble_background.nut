@@ -36,6 +36,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.IsFemaleBackground = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];

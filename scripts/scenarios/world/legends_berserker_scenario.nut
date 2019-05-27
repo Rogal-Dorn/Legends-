@@ -3,8 +3,8 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	function create()
 	{
 		this.m.ID = "scenario.legends_berserker";
-		this.m.Name = "Legends Berserker";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family slaughtered drove you into a self destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker madness:[/color] Unlock powerful abilities allow you to fight naked and bare handed.\n[color=#bcad8c]Infectious rage:[/color] Anyone you hire gains berserk.\n[color=#bcad8c]Avatar:[/color]Begin alone. If you die, it is game over.[/p]";
+		this.m.Name = "Berserker";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family slaughtered drove you into a self destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker madness:[/color] Unlock powerful abilities allow you to fight naked and bare handed.\n[color=#bcad8c]Infectious rage:[/color] Only the insane, violent or desperate will join you. You will grant berserk to anyone who joins you in battle. You have a tiny chance of finding other berserkers for hire.\n[color=#bcad8c]Avatar:[/color]Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 12;
 	}
@@ -190,10 +190,41 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		return false;
 	}
 
-	function isDroppedAsLoot( _item )
+
+	function onUpdateDraftList( _list )
 	{
-		return this.Math.rand(1, 100) <= 15;
+		if (_list.len() <= 3)
+		{
+
+			_list.push("barbarian_background");
+			local r;
+			r = this.Math.rand(0, 99);
+			
+			if (r == 0)
+					{
+						_list.push("legend_berserker_background");
+					}
+			
+		}
 	}
 
+	function onUpdateHiringRoster( _roster )
+	{
+		local garbage = [];
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (!bro.getBackground().IsLowborn() && !bro.getBackground.IsCombatBackground() && !bro.getBackground.IsOutlawBackground())
+			{
+				garbage.push(bro);
+			}
+		}
+
+		foreach( g in garbage )
+		{
+			_roster.remove(g);
+		}
+	}
 });
 

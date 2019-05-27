@@ -3,8 +3,8 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_noble";
-		this.m.Name = "Legends Noble";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Deserters:[/color] Start with a captain, two deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#bcad8c]Prepared for anything:[/color] Anyone you hire gains bags n belts in combat\n[color=#bcad8c]Snob:[/color] You can only hire noble born or military recruits\n[color=#bcad8c]Avatar:[/color] if the captain dies, it is game over[/p]";
+		this.m.Name = "Noble";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Deserters:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#bcad8c]Prepared for anything:[/color] Anyone you hire gains bags n belts in combat\n[color=#bcad8c]Snob:[/color] You can only hire noble born or military recruits\n[color=#bcad8c]Avatar:[/color] if the noble dies, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 14;
 	}
@@ -184,6 +184,40 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		foreach( g in garbage )
 		{
 			_roster.remove(g);
+		}
+	}
+
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() >= 10)
+		{			
+			local r;
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+					{
+						_list.push("disowned_noble_background");
+					}
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+					{
+						_list.push("female_disowned_noble_background");
+					}			
+			r = this.Math.rand(0, 2);
+			if (r == 0)
+					{
+						_list.push("legend_noble_2h");
+					}	
+			r = this.Math.rand(0, 2);
+			if (r == 0)
+					{
+						_list.push("legend_noble_shield");
+					}				
+			r = this.Math.rand(0, 2);
+			if (r == 0)
+					{
+						_list.push("legend_noble_ranged");
+					}	
+		
 		}
 	}
 });

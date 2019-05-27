@@ -4,7 +4,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.deserters";
 		this.m.Name = "Deserters";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 6;
 	}
@@ -142,7 +142,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.World.Assets.updateLook(12);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
-		f.addPlayerRelation(-100.0, "You and your men deserted");
+		f.addPlayerRelation(-200.0, "You and your men deserted");
 		local names = [];
 
 		for( local i = 0; i < 3; i = ++i )

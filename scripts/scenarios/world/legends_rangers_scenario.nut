@@ -3,8 +3,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function create()
 	{
 		this.m.ID = "scenario.legends_rangers";
-		this.m.Name = "Legends Ranger";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Rangers:[/color] Start with a group of three skilled rangers, anyone you hire gains pathfinder.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
+		this.m.Name = "Ranger";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Selective Recruitment:[/color] The rangers will not accept just anyone in their ranks. Potential recruits must be open to the ways of forests, beasts and the bow.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
 	}
@@ -42,18 +42,18 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
-		bros[1].setStartValuesEx([
-			"legend_ranger_background"
-		]);
-		bros[1].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
-		bros[1].setPlaceInFormation(4);
-		bros[1].setVeteranPerks(2);	
-		bros[2].setStartValuesEx([
-			"legend_ranger_background"
-		]);
-		bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
-		bros[2].setPlaceInFormation(5);
-		bros[2].setVeteranPerks(2);	
+	//	bros[1].setStartValuesEx([
+	//		"legend_ranger_background"
+	//	]);
+	//	bros[1].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
+	//	bros[1].setPlaceInFormation(4);
+	//	bros[1].setVeteranPerks(2);	
+	//	bros[2].setStartValuesEx([
+	//		"legend_ranger_background"
+	//	]);
+	//	bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
+	//	bros[2].setPlaceInFormation(5);
+	//	bros[2].setVeteranPerks(2);	
 		this.World.Assets.m.BusinessReputation = 50;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
@@ -156,6 +156,49 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 		return false;
 	}
+	
+	function onUpdateDraftList( _list )
+	{
+		if (_list.len() <= 10)
+		{
+				local r;
+				r = this.Math.rand(0, 1);
+				if (r == 0)
+						{
+							_list.push("poacher_background");
+						}
+				local r;
+				r = this.Math.rand(0, 9);
+				if (r == 0)
+						{
+							_list.push("hunter_background");
+						}
+				local r;
+				r = this.Math.rand(0, 999);
+				if (r == 0)
+						{
+							_list.push("legend_ranger_background");
+						}
+		}
+	}
 
+	function onUpdateHiringRoster( _roster )
+	{
+		local garbage = [];
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (!bro.getBackground().isRangerRecruitBackground())
+			{
+				garbage.push(bro);
+			}
+		}
+
+		foreach( g in garbage )
+		{
+			_roster.remove(g);
+		}
+	}
 });
 

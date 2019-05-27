@@ -37,7 +37,8 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
-
+		this.m.IsRangerRecruitBackground = true;
+		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
