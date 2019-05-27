@@ -16,6 +16,7 @@ this.perk_head_hunter <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
+
 	function getDescription()
 	{
 		return "This character has an additional [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.Stacks * 15 + "%[/color] chance to land a hit to the head.";

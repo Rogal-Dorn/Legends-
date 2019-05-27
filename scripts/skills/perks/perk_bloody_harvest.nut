@@ -12,6 +12,7 @@ this.perk_bloody_harvest <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+	 
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{

@@ -1112,7 +1112,7 @@ gt.Const.Strings.PerkName <- {
 	LegendPush = "Revolt",
 	LegendEntice = "Entice",
 	LegendSleep = "Sleep",
-	LegendFirefield = "Fire Field",
+	LegendFirefield = "Fire Pot",
 	LegendPossessUndead = "Possess Undead",
 	LegendSpecBandage = "Bandage Mastery",
 	LegendHoldTheLine = "Hold the line",

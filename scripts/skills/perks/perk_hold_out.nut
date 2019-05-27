@@ -13,6 +13,7 @@ this.perk_hold_out <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+
 	function onUpdate( _properties )
 	{
 		_properties.NegativeStatusEffectDuration += -5;

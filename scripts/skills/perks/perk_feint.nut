@@ -19,5 +19,6 @@ this.perk_feint <- this.inherit("scripts/skills/skill", {
 		actor.setFatigue(this.Math.max(0, actor.getFatigue() - this.Math.floor(_skill.getFatigueCost() * 0.2)));
 	}
 
+
 });
 
