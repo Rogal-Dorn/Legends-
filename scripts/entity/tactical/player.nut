@@ -981,6 +981,26 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.m.IsDying = false;
 				this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
 				this.updateAchievement("ScarsForLife", 1, 1);
+				
+					if(this.m.CurrentProperties.SurvivesAsUndead)
+					{		
+						local skill = this.new("scripts/skills/special/legend_animated_player_properties");
+						this.m.Skills.add(skill);
+						r = this.Math.rand(1, 2);
+							if (r == 1)
+							{
+								this.getTags().add("PlayerSkeleton");
+								this.getTags().add("undead");
+								this.getTags().add("skeleton");
+							}
+							if (r == 2)
+							{
+								this.getTags().add("PlayerZombie");
+								this.getTags().add("undead");
+								this.getTags().add("zombie_minion");
+							}
+					}
+
 
 				if (numPermInjuries + 1 >= 3)
 				{
@@ -990,24 +1010,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				return false;
 			}
 
-			if(this.m.CurrentProperties.SurvivesAsUndead)
-			{		
-				local skill = this.new("scripts/skills/special/legend_animated_player_properties");
-				this.m.Skills.add(skill);
-				r = this.Math.rand(1, 2);
-					if (r == 1)
-					{
-						this.getTags().add("PlayerSkeleton");
-						this.getTags().add("undead");
-						this.getTags().add("skeleton");
-					}
-					if (r == 2)
-					{
-						this.getTags().add("PlayerZombie");
-						this.getTags().add("undead");
-						this.getTags().add("zombie_minion");
-					}
-			}
 
 		}
 
