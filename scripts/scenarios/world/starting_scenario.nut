@@ -84,6 +84,10 @@ this.starting_scenario <- {
 	{
 	}
 
+	function onHiredByScenario( bro )
+	{
+	}
+
 	function onCombatFinished()
 	{
 		return true;
