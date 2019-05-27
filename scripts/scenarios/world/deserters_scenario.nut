@@ -179,6 +179,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[0].m.PerkPoints = 1;
 		bros[0].m.LevelUps = 1;
 		bros[0].m.Level = 2;
+		bros[0].m.XP = this.Const.LevelXP[bros[0].m.Level - 1];
 		bros[0].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -193,6 +194,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[1].m.PerkPoints = 0;
 		bros[1].m.LevelUps = 0;
 		bros[1].m.Level = 1;
+		bros[1].m.XP = this.Const.LevelXP[bros[1].m.Level - 1];
 		bros[1].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -207,6 +209,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[2].m.PerkPoints = 1;
 		bros[2].m.LevelUps = 1;
 		bros[2].m.Level = 2;
+		bros[2].m.XP = this.Const.LevelXP[bros[2].m.Level - 1];
 		bros[2].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
