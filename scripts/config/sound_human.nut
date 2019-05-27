@@ -285,13 +285,13 @@ gt.Const.WomanSounds <- [
 			"sounds/humans/legends/woman_death_08.wav"
 		],
 		Fatigue = [
-			"sounds/humans/legends/human_fatigue_01.wav",
-			"sounds/humans/legends/human_fatigue_02.wav",
-			"sounds/humans/legends/human_fatigue_03.wav",
-			"sounds/humans/legends/human_fatigue_04.wav",
-			"sounds/humans/legends/human_fatigue_05.wav",
-			"sounds/humans/legends/human_fatigue_06.wav",
-			"sounds/humans/legends/human_fatigue_07.wav"
+			"sounds/humans/legends/woman_fatigue_01.wav",
+			"sounds/humans/legends/woman_fatigue_02.wav",
+			"sounds/humans/legends/woman_fatigue_03.wav",
+			"sounds/humans/legends/woman_fatigue_04.wav",
+			"sounds/humans/legends/woman_fatigue_05.wav",
+			"sounds/humans/legends/woman_fatigue_06.wav",
+			"sounds/humans/legends/woman_fatigue_07.wav"
 		],
 		Flee = [
 			"sounds/humans/legends/woman_flee_01.wav",
