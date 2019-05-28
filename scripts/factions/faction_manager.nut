@@ -417,10 +417,12 @@ this.faction_manager <- {
 
 		foreach( i, n in _nobleHouses )
 		{
-			n.addSettlement(military[0]);
-			military.remove(0);
+			if (military.len() > 0)
+			{
+				n.addSettlement(military[0]);
+				military.remove(0);
+			}
 			local other;
-
 			do
 			{
 				other = this.Math.rand(0, _nobleHouses.len() - 1);
