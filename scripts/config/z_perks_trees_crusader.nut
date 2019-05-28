@@ -16,6 +16,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.LegendComposure,
+		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
@@ -38,6 +39,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendToolsDrawers,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
@@ -59,7 +61,8 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.FullForce,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
 		gt.Const.Perks.PerkDefs.LegendToolsSpares,
-		gt.Const.Perks.PerkDefs.InspiringPresence,		
+		gt.Const.Perks.PerkDefs.InspiringPresence,	
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
 		gt.Const.Perks.PerkDefs.LegendRoster5
 	],
 	[
@@ -69,6 +72,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.SunderingStrike,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 		gt.Const.Perks.PerkDefs.LegendRoster6		
 	],
 	[
@@ -79,6 +83,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.LegendStrictSermons,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],

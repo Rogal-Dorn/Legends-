@@ -756,7 +756,10 @@ Beta 11 WotN Test 9
 Fixed ranger start not loading due to using poacher size constraints
 Fixed parrying dagger ID not being unique 
 Buckler effect is now 20 defense divided by adjacent enemies. 
-
+Crusader gains Adrenalin, and favoured enemy perks for: zombie, skeleton, ghoul vampire
+Ranger gains favoured enemy perks for: spider, direwolf, goblin, ork, unhold 
+Seer gains favoured enemy perk for hexen 
+Berserker gains Adrenalin, negative status reduced with factions 
 
 Known issues:
 Warlock summons causing a crash on load? 
