@@ -762,10 +762,10 @@ Crusader gains Adrenalin, and favoured enemy perks for: zombie, skeleton, ghoul 
 Ranger gains favoured enemy perks for: spider, direwolf, goblin, ork, unhold 
 Seer gains favoured enemy perk for hexen 
 Berserker gains Adrenalin, negative status reduced with factions 
+Deserters, Sellswords and Retired Soldier: Lose student, gifted, fortified mind, dagger specialist. Gains Second wind, Sundering strikes, Composure and Steadfast 
 
 
 Known issues:
-Warlock summons causing a crash on load? 
 Healing tooltips are incorrect
 
 

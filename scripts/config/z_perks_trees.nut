@@ -192,6 +192,15 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.bowyer":
 			return gt.Const.Perks.TreeHunterLookupMap;
 			break;
+		case "background.deserter":
+			return gt.Const.Perks.TreeSoldierLookupMap;
+			break;
+		case "background.sellsword":
+			return gt.Const.Perks.TreeSoldierLookupMap;
+			break;
+		case "background.retired_soldier":
+			return gt.Const.Perks.TreeSoldierLookupMap;
+			break;
 		default:
 			return gt.Const.Perks.TreeTemplateLookupMap;
 	}
@@ -363,6 +372,15 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			break;
 		case "background.bowyer":
 			return gt.Const.Perks.PerksTreeHunter;
+			break;
+		case "background.deserter":
+			return gt.Const.Perks.PerksTreeSoldier;
+			break;
+		case "background.sellsword":
+			return gt.Const.Perks.PerksTreeSoldier;
+			break;
+		case "background.retired_soldier":
+			return gt.Const.Perks.PerksTreeSoldier;
 			break;
 		default:
 			return gt.Const.Perks.PerksTreeTemplate;
