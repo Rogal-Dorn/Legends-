@@ -153,7 +153,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		for( local i = 0; i < 2; i = ++i )
 		{
-			houses[i].Faction.addPlayerRelation(-100.0, "You are considered outlaws and barbarians");
+			houses[i].Faction.addPlayerRelation(-30.0, "You are considered a barbarian");
 		}
 
 		houses[1].Faction.addPlayerRelation(18.0);
