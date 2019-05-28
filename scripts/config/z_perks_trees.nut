@@ -175,22 +175,22 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeNinetailLookupMap;
 			break;
 		case "background.barbarian":
-			return gt.Const.Perks.BarbarianLookupMap;
+			return gt.Const.Perks.TreeBarbarianLookupMap;
 			break;
 		case "background.hunter":
-			return gt.Const.Perks.HunterLookupMap;
+			return gt.Const.Perks.TreeHunterLookupMap;
 			break;
 		case "background.female_adventurous_noble":
-			return gt.Const.Perks.HunterLookupMap;
+			return gt.Const.Perks.TreeHunterLookupMap;
 			break;
 		case "background.female_disowned_noble":
-			return gt.Const.Perks.HunterLookupMap;
+			return gt.Const.Perks.TreeHunterLookupMap;
 			break;
 		case "background.female_bowyer":
-			return gt.Const.Perks.HunterLookupMap;
+			return gt.Const.Perks.TreeHunterLookupMap;
 			break;
 		case "background.bowyer":
-			return gt.Const.Perks.HunterLookupMap;
+			return gt.Const.Perks.TreeHunterLookupMap;
 			break;
 		default:
 			return gt.Const.Perks.TreeTemplateLookupMap;
