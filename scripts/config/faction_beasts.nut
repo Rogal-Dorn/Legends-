@@ -335,4 +335,78 @@ gt.Const.Tactical.Actor.KrakenTentacle <- {
 		0
 	]
 };
-
+gt.Const.Tactical.Actor.LegendSkinGhoul <- {
+	XP = 250,
+	ActionPoints = 9,
+	Hitpoints = 150,
+	Bravery = 80,
+	Stamina = 130,
+	MeleeSkill = 80,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 15,
+	Initiative = 135,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
+	XP = 600,
+	ActionPoints = 16,
+	Hitpoints = 260,
+	Bravery = 100,
+	Stamina = 260,
+	MeleeSkill = 80,
+	RangedSkill = 0,
+	MeleeDefense = 30,
+	RangedDefense = 30,
+	Initiative = 175,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 30,
+	Armor = [
+		120,
+		120
+	]
+};
+gt.Const.Tactical.Actor.LegendRedbackSpider <- {
+	XP = 100,
+	ActionPoints = 12,
+	Hitpoints = 120,
+	Bravery = 80,
+	Stamina = 180,
+	MeleeSkill = 80,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 40,
+	Initiative = 175,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 20,
+	Armor = [
+		40,
+		40
+	]
+};
+gt.Const.Tactical.Actor.LegendRockUnhold <- {
+	XP = 800,
+	ActionPoints = 9,
+	Hitpoints = 600,
+	Bravery = 150,
+	Stamina = 400,
+	MeleeSkill = 75,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 0,
+	Initiative = 65,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 30,
+	Armor = [
+		450,
+		450
+	]
+};
