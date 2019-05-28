@@ -751,6 +751,13 @@ Fixed cat o nine tails not showing in inventory
 Fixed perks not applying for Barbarians, Hunters, Bowyers, Fletchers and female nobles
 Fixed warlock recruits not ressurecting on death 
 
+
+Beta 11 WotN Test 9  
+Fixed ranger start not loading due to using poacher size constraints
+Fixed parrying dagger ID not being unique 
+Buckler effect is now 20 defense divided by adjacent enemies. 
+
+
 Known issues:
 Warlock summons causing a crash on load? 
 Healing tooltips are incorrect

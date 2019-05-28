@@ -56,7 +56,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	//	bros[2].setPlaceInFormation(5);
 	//	bros[2].setVeteranPerks(2);	
 		this.World.Assets.m.BusinessReputation = 50;
-		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
+	//	this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
