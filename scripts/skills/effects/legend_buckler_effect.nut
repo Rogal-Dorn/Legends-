@@ -20,7 +20,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		local myFaction = actor.getFaction();
 		local nearbyEnemies = 0;
 		local actors = this.Tactical.Entities.getAllInstances();
-		local bonus = 5;
+		local bonus = 0;
 		foreach( i in actors )
 		{
 			foreach( a in i )
