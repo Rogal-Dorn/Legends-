@@ -16,17 +16,6 @@
 		this.m.TacticalScreen.hide();
 		this.Tactical.OrientationOverlay.removeOverlays();
 
-		local dead = this.Tactical.getCasualtyRoster().getAll();
-		foreach (d in dead)
-		{
-			if (d.isCommander())
-			{
-				this.World.State.setCommanderDied(true);
-				isVictory = false;
-				break;
-			}
-		}
-
 		if (isVictory)
 		{
 			this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
@@ -87,15 +76,21 @@
 
 				foreach( bro in playerRoster )
 				{
-					if (!bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
 					{
-						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
-						this.World.getPlayerRoster().remove(bro);
+						if (bro.isAlive())
+						{
+							bro.kill(null, null, this.Const.FatalityType.Devoured);
+							this.World.getPlayerRoster().remove(bro);
+						}
 					}
 					else if (bro.isPlacedOnMap() && (bro.getTags().get("Charmed") == true || bro.getTags().get("Sleeping") == true || bro.getTags().get("Nightmare") == true))
 					{
-						bro.onDeath(null, null, null, this.Const.FatalityType.Suicide);
-						this.World.getPlayerRoster().remove(bro);
+						if (bro.isAlive())
+						{
+							bro.kill(null, null, this.Const.FatalityType.Suicide);
+							this.World.getPlayerRoster().remove(bro);
+						}
 					}
 					else if (bro.isPlacedOnMap())
 					{
