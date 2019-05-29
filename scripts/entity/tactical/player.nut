@@ -2367,41 +2367,43 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Formations.saveItems(this.getItems());
 	}
 	
-	function setFormation( _i )
+	function setFormation( _i, _stash)
 	{
 		if (_i == this.m.Formations.getCurrentIndex()) 
 		{
-			return;
+			return [[], []];
 		}
 
 		this.m.Formations.setFormation(_i)
 		this.setPlaceInFormation(this.m.Formations.getPosition());
 		local items = this.m.Formations.getItems();
+		local eTransfer = []
+		local bTransfer = []
 		//Find the item in the stash, remove from stash and equip it
 		foreach (itemId in items)
 		{
-			local res = this.Stash.getItemByInstanceID(itemId);
-			if (res == null) {
-				this.logInfo("saveFormation::could not find item for " + itemId);
+			local item = _stash.remove(itemId);
+			if (item == null) {
+				this.logInfo("setFormation::Items; could not find item for " + itemId);
 				continue
 			}
+			eTransfer.push(item)
 
-			this.Stash.remove(res.item);
-			this.m.Items.equip(res.item);
+			//this.m.Items.equip(item);
 		}
 
 		local bags = this.m.Formations.getBags();
 		foreach (itemId in bags)
 		{
-			local res = this.Stash.getItemByInstanceID(itemId);
-			if (res == null) {
-				this.logInfo("saveFormation::could not find item for " + itemId);
+			local item = _stash.remove(itemId);
+			if (item == null) {
+				this.logInfo("setFormation::Bags; could not find item for " + itemId);
 				continue
 			}
-
-			this.Stash.remove(res.item);
-			this.m.Items.addToBag(res.item);
+			bTransfer.push(item);
+			//this.m.Items.addToBag(item);
 		}
+		return [eTransfer, bTransfer]
 	}
 
 	function getStashModifier()

@@ -1282,45 +1282,68 @@ this.asset_manager <- {
 
 		this.m.FormationIndex = _index;
 		local roster = this.World.getPlayerRoster().getAll();
-		local stash = this.World.Assets.getStash();
 
 		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
 		//full stash and losing the gear
-		stash.setResizable(true);
+		//this.World.Assets.getStash().setResizable(true);
 		//Save current loadout and strip all gear into stash if moving into a saved formation
+		local toTransfer = [];
 		foreach (b in roster) 
 		{
 			b.saveFormation();
-			b.getItems().transferToStash(stash);
+			b.getItems().transferToList(toTransfer);
+		}
+
+		local stash = this.World.Assets.getStash();
+		stash.setResizable(true);
+		foreach (item in toTransfer)
+		{
+			stash.add(item);
 		}
 		stash.setResizable(false);
+		//stash.sort()
+
 		//All gear now in stash, set new formation and build up the next loadout
-		foreach (b in roster) 
+		local toTransfer = [];
+		foreach (b in roster)
 		{
-			b.setFormation(_index);
+			local transfers = b.setFormation(_index, stash);
+			toTransfer.push([b, transfers]);
+		}
+
+		foreach (t in toTransfer)
+		{
+			local bro = t[0];
+			foreach( e in t[1][0])
+			{
+				bro.equipItem(e);
+			}
+			
+			foreach (b in t[1][1])
+			{
+				bro.bagItem(b);
+			}
 		}
 
 		stash.sort();
-		this.updateFormation()
+		this.updateFormation();
 	}
 
     function clearFormation()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
-		local stash = this.World.Assets.getStash();
-
 		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
 		//full stash and losing the gear
-		stash.setResizable(true);
+		this.World.Assets.getStash().setResizable(true);
 		//Clear loadout and strip all gear into stash
 		foreach (b in roster) 
 		{
 			//Strip items
-			b.getItems().transferToStash(stash);
+			b.getItems().transferToStash(this.World.Assets.getStash());
 			b.saveFormation()
 		}
-		stash.setResizable(false);
-		stash.sort();
+		this.World.Assets.getStash().setResizable(false);
+		this.World.Assets.getStash().sort();
 		this.updateFormation()
 	}
 
