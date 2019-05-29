@@ -20,7 +20,7 @@ this.deserter_origin_volunteer_event <- this.inherit("scripts/events/event", {
 					Text = "We could use fighting men like you.",
 					function getResult( _event )
 					{
-						return "C";
+						return this.Math.rand(1, 100) <= 60 ? "B" : "C";
 					}
 
 				},

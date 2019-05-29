@@ -174,11 +174,6 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( t in targets )
 		{
-			if (t.Actor.isNull())
-			{
-				continue;
-			}
-
 			if (this.m.Skill != null && _entity.getActionPointCostsRaw() == this.Const.ImmobileMovementAPCost && t.Actor.getTile().getDistanceTo(myTile) > this.m.Skill.getMaxRange() + 1)
 			{
 				continue;

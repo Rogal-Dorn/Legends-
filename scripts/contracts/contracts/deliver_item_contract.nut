@@ -719,6 +719,11 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 				this.m.Destination.getSprite("selection").Visible = false;
 			}
 
+			if (this.m.Location != null && !this.m.Location.isNull())
+			{
+				this.m.Location.getSprite("selection").Visible = false;
+			}
+
 			this.m.Home.getSprite("selection").Visible = false;
 		}
 	}

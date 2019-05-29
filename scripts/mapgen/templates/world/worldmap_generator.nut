@@ -1626,6 +1626,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			local num = list.Amount;
 			local tries = 0;
+			local used = [];
 
 			while (num > 0 && tries++ < 1000)
 			{
@@ -1643,6 +1644,13 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 				y = this.Math.rand(6, _rect.H * 0.95);
 				local tile = this.World.getTileSquare(x, y);
+
+				if (used.find(tile.ID) != null)
+				{
+					continue;
+				}
+
+				used.push(tile.ID);
 				local next = false;
 
 				foreach( settlement in settlementTiles )
@@ -1693,10 +1701,11 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					local skip = true;
 					local navSettings = this.World.getNavigator().createSettings();
 
-					foreach( s in this.World.EntityManager.getSettlements() )
+					for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 					{
+						local settlement = settlementTiles[i];
 						navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
-						local path = this.World.getNavigator().findPath(tile, s.getTile(), navSettings, 0);
+						local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);
 
 						if (!path.isEmpty())
 						{
@@ -1710,12 +1719,13 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						continue;
 					}
 				}
-				else if (settlementTiles.len() >= 1 && tries < 1000)
+				else if (settlementTiles.len() >= 1 && tries < 500)
 				{
 					local hasConnection = false;
 
-					foreach( settlement in settlementTiles )
+					for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 					{
+						local settlement = settlementTiles[i];
 						local navSettings = this.World.getNavigator().createSettings();
 						navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 						local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);

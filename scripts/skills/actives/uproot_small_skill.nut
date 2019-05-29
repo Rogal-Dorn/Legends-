@@ -23,6 +23,7 @@ this.uproot_small_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Delay = 250;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

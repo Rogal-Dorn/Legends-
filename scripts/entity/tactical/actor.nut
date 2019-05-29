@@ -3164,6 +3164,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
 	{
+		if (!this.isAlive())
+		{
+			return;
+		}
+
 		if (_killer != null && !_killer.isAlive())
 		{
 			_killer = null;
