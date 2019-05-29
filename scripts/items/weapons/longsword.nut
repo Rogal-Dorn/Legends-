@@ -28,7 +28,7 @@ this.longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 65;
 		this.m.RegularDamageMax = 85;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.35;
+		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 5;
 	}
 
