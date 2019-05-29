@@ -303,7 +303,7 @@ this.contract_manager <- {
 
 	function showContract( _c )
 	{
-		this.logInfo("showing contract: " + _c.getName() + " (id: " + _c.getID() + ")");
+		//this.logInfo("showing contract: " + _c.getName() + " (id: " + _c.getID() + ")");
 		this.m.LastShown = _c;
 
 		if (!_c.isStarted())

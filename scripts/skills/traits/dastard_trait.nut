@@ -61,14 +61,11 @@ this.dastard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	function onCombatStarted()
 	{
 		local actor = this.getContainer().getActor();
-
-		if (!actor.getTags().has("PlayerZombie") && !actor.getTags().has("PlayerSkeleton"))
+		if (actor.getTags().has("PlayerZombie") || actor.getTags().has("PlayerSkeleton"))
 		{
-			if (actor.getMoodState() >= this.Const.MoodState.Disgruntled && actor.getMoraleState() > this.Const.MoraleState.Wavering)
-			{
-				actor.setMoraleState(this.Const.MoraleState.Wavering);
-			}
+			return;
 		}
+		actor.setMoraleState(this.Const.MoraleState.Wavering);
 	}
 
 });

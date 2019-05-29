@@ -2179,6 +2179,7 @@ this.asset_manager <- {
 
 	function onDeserialize( _in )
 	{
+		this.logInfo("DESERIALIZING ASSET MANAGER")
 		this.m.Stash.resize(_in.readU16());
 		this.m.Stash.onDeserialize(_in);
 
@@ -2214,6 +2215,7 @@ this.asset_manager <- {
 		if (_in.getMetaData().getVersion() >= 46)
 		{
 			this.m.Origin = _in.readString();
+			this.logInfo("*** ORIGING == " + this.m.Origin)
 			this.m.Origin = this.Const.ScenarioManager.getScenario(this.m.Origin);
 		}
 
