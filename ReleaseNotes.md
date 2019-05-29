@@ -756,6 +756,9 @@ Beta 11 WotN Test 9
 Fixed ranger start not loading due to using poacher size constraints
 Fixed parrying dagger ID not being unique 
 Buckler effect is now 20 defense divided by adjacent enemies. 
+Fixed save game crashes introduced from previous test builds
+Fixed Warlock undead companions going negative health
+
 
 
 Known issues:
