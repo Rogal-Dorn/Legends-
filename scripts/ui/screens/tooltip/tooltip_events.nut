@@ -1361,7 +1361,7 @@ this.tooltip_events <- {
 					id = 3,
 					type = "text",
 					icon = "ui/icons/repair_item.png",
-					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Repair + " units per hour[/color]"
+					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Craft + " units per hour[/color]"
 				}
 			];
 			local id = 4;
