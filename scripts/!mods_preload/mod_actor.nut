@@ -20,6 +20,16 @@
 		return item != null && item.isItemType(this.Const.Items.ItemType.MagicStaff);
 	}
 
+    o.equipItem <- function( _item)
+    {
+        return this.getItems().equip(_item);
+    }
+
+    o.bagItem <- function (_item)
+    {
+        this.getItems().addToBag(_item);
+    }
+
         //
     // local onResurrected = o.onResurrected;
     // o.onResurrected = function ( _info ) 

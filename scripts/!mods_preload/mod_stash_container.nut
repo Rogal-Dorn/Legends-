@@ -16,4 +16,32 @@
 		return false;
 	}
 
+	o.getItemByInstanceID = function( _instanceID )
+	{
+		for( local i = 0; i < this.m.Items.len(); i = ++i )
+		{
+
+			if (this.m.Items[i] != null && this.m.Items[i].getInstanceID() == _instanceID)
+			{
+				return {
+					item = this.m.Items[i],
+					index = i
+				};
+			}
+
+			if (this.m.Items[i] != null && this.m.Items[i].getOldInstanceID() == _instanceID)
+			{
+				return {
+					item = this.m.Items[i],
+					index = i
+				};
+			}
+		}
+
+		this.logInfo("couldn't find Instance ID! . Items length = " + this.m.Items.len());
+
+		return null;
+	}
+
+
 })
