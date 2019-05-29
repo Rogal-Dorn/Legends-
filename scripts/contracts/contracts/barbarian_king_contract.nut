@@ -73,13 +73,6 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-				local r = this.Math.rand(1, 100);
-
-				if (r <= 15)
-				{
-					this.Flags.set("IsAGreaterThreat", true);
-				}
-
 				local f = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians);
 				local nearest_base = f.getNearestSettlement(this.World.State.getPlayer().getTile());
 				local party = f.spawnEntity(nearest_base.getTile(), "Barbarian King", false, this.Const.World.Spawn.Barbarians, 125 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
@@ -104,6 +97,14 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.UnitsSpawned.push(party.getID());
 				this.Contract.m.LastHelpTime = this.Time.getVirtualTimeF() + this.Math.rand(10, 40);
 				this.Flags.set("HelpReceived", 0);
+				local r = this.Math.rand(1, 100);
+
+				if (r <= 15)
+				{
+					this.Flags.set("IsAGreaterThreat", true);
+					c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
+				}
+
 				this.Contract.setScreen("Overview");
 				this.World.Contracts.setActiveContract(this.Contract);
 			}
@@ -148,6 +149,7 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 			function onCombatWithKing( _dest, _isPlayerAttacking = true )
 			{
 				this.Contract.m.IsPlayerAttacking = _isPlayerAttacking;
+				_dest.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(true);
 
 				if (!_dest.isInCombat() && !this.Flags.get("IsKingEncountered"))
 				{
