@@ -34,14 +34,14 @@ this.missing_hand_injury <- this.inherit("scripts/skills/injury_permanent/perman
 		if (items.getItemAtSlot(this.Const.ItemSlot.Mainhand) && items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getBlockedSlotType() == this.Const.ItemSlot.Offhand)
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			item.unequip();
+			//item.unequip();
 			item.drop();
 		}
 
 		if (items.getItemAtSlot(this.Const.ItemSlot.Offhand))
 		{
 			local item = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-			item.unequip();
+			//item.unequip();
 			item.drop();
 		}
 
