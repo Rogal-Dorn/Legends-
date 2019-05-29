@@ -102,8 +102,13 @@
 
 			y = this.Math.rand(6, _rect.H * 0.95);
 			local tile = this.World.getTileSquare(x, y);
-			local next = false;
+			
+			if (settlementTiles.find(tile.ID) != null)
+			{
+				continue;
+			}
 
+			local next = false;
 			local distance = 12;
 			if (tries > 3000) {
 				distance = 8;
@@ -111,6 +116,7 @@
 			if (tries > 6000) {
 				distance = 4;
 			}
+
 			foreach( settlement in settlementTiles )
 			{
 				if (tile.getDistanceTo(settlement) < distance)
@@ -186,10 +192,10 @@
 				local skip = true;
 				local navSettings = this.World.getNavigator().createSettings();
 
-				foreach( s in this.World.EntityManager.getSettlements() )
+				for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 				{
 					navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
-					local path = this.World.getNavigator().findPath(tile, s.getTile(), navSettings, 0);
+					local path = this.World.getNavigator().findPath(tile,  settlementTiles[i], navSettings, 0);
 
 					if (!path.isEmpty())
 					{
@@ -203,15 +209,15 @@
 					continue;
 				}
 			}
-			else if (settlementTiles.len() >= 1 && tries < 1000)
+			else if (settlementTiles.len() >= 1 && tries < 500)
 			{
 				local hasConnection = false;
 
-				foreach( settlement in settlementTiles )
+				for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 				{
 					local navSettings = this.World.getNavigator().createSettings();
 					navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
-					local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);
+					local path = this.World.getNavigator().findPath(tile, settlementTiles[i], navSettings, 0);
 
 					if (!path.isEmpty())
 					{
@@ -238,7 +244,6 @@
 	{
 		this.LoadingScreen.updateProgress("Building Settlements ...");
 		this.logInfo("Building settlements...");
-		local tries = 0;
 		local isLeft = this.Math.rand(0, 1);
 		local settlementTiles = [];
 
