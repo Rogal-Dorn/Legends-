@@ -57,7 +57,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.equip(this.new("scripts/items/helmets/bascinet_with_mail"));
 		items.equip(this.new("scripts/items/weapons/longsword"));
 		this.World.Assets.m.BusinessReputation = 200;
-		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 9);
+		this.World.Assets.getStash().resize(this.Math.min(5, this.World.Assets.getStash().getCapacity() - 9));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 - (this.World.Assets.getEconomicDifficulty() == 0 ? 0 : 100);
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
