@@ -765,6 +765,19 @@ Berserker gains Adrenalin, negative status reduced with factions
 Deserters, Sellswords and Retired Soldier: Lose student, gifted, fortified mind, dagger specialist. Gains Second wind, Sundering strikes, Composure and Steadfast 
 
 
+Beta WotN ll.2
+Fixes battle bug with missing hand injury
+Fix for Formations loosing items!
+When selecting a new Formation for the first time, no longer do you start with a blank/naked set. It'll use the previous formation as the starting template. (Tip, if you rename the formation to "NULL" it'll force this to happen on existing formations)
+Fixes Ranger and Lone Wolf origins not starting with Legendary difficulty
+Fixes Hex battle crashes on Legendary Difficulty
+Fixes a rare crash in battle with the ai_ranged behavior
+Fixes Alp perk bug (alps now have underdog)
+Adds a minimum contract payout: 100, 50, 30, 10 based on economic difficulty.
+New Map Config option: Gucci Citadels - all Citadels will have Training Hall, Armor, Weapons, Fletcher, Barracks, Ore Smeleter, Blast Furnace, and Workshops.
+New Map Config option: All trade locations - guarentees that at least of one of every location that produces something is on the map.
+
+
 Known issues:
 Healing tooltips are incorrect
 
