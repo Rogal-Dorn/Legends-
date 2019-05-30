@@ -586,7 +586,12 @@ this.asset_manager <- {
 		globalTable.Stash <- this.WeakTableRef(this.m.Stash);
 		for( local i = 0; i < this.Const.Formations.Count; i = ++i )
         {
-            this.m.FormationNames.push("Formation " + (i+1));
+			local name = "NULL"
+			if (i == 0)
+			{
+				name = "Formation 1"
+			}
+            this.m.FormationNames.push(name);
         }
 	}
 
@@ -1280,6 +1285,7 @@ this.asset_manager <- {
 			_index = 0;
 		}
 
+		local lastIndex = this.m.FormationIndex;
 		this.m.FormationIndex = _index;
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -1303,6 +1309,17 @@ this.asset_manager <- {
 		stash.setResizable(false);
 		//stash.sort()
 
+
+		//Check if the next Formation has been set, if not, use the previous formation 
+		if (this.getFormationName() == "NULL")
+		{
+			this.setFormationName(_index, "Formation " + (_index + 1));
+			foreach (b in roster)
+			{
+				b.copyFormation(lastIndex, _index);
+			}
+		}
+
 		//All gear now in stash, set new formation and build up the next loadout
 		local toTransfer = [];
 		foreach (b in roster)
@@ -1318,7 +1335,7 @@ this.asset_manager <- {
 			{
 				bro.equipItem(e);
 			}
-			
+
 			foreach (b in t[1][1])
 			{
 				bro.bagItem(b);
@@ -1332,19 +1349,25 @@ this.asset_manager <- {
     function clearFormation()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
-		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
-		//full stash and losing the gear
-		this.World.Assets.getStash().setResizable(true);
-		//Clear loadout and strip all gear into stash
+
+		local toTransfer = [];
 		foreach (b in roster) 
 		{
-			//Strip items
-			b.getItems().transferToStash(this.World.Assets.getStash());
-			b.saveFormation()
+			b.getItems().transferToList(toTransfer);
+			b.saveFormation();
 		}
-		this.World.Assets.getStash().setResizable(false);
-		this.World.Assets.getStash().sort();
-		this.updateFormation()
+
+		local stash = this.World.Assets.getStash();
+		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
+		//full stash and losing the gear
+		stash.setResizable(true);
+		foreach (item in toTransfer)
+		{
+			stash.add(item);
+		}
+		stash.setResizable(false);
+		stash.sort();
+		this.updateFormation();
 	}
 
 	function setFormationName(_index, _name)

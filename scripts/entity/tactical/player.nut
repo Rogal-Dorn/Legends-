@@ -2359,7 +2359,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
 	}
 
-
+	function copyFormation( _from, _to )
+	{
+		this.m.Formations.copy(_from, _to);
+	}
 
 	function saveFormation()
 	{

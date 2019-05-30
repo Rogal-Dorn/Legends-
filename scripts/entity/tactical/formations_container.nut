@@ -52,6 +52,21 @@ this.formations_container <- {
         return this.m.Bags[this.m.CurrentIndex];
     }
 
+    function copy( _from, _to)
+    {
+        this.m.Positions[_to] = this.m.Positions[_from];
+        this.m.Items[_to].clear();
+        this.m.Bags[_to].clear();
+        foreach (item in this.m.Items[_from])
+        {
+            this.m.Items[_to].push(item);
+        }
+        foreach (item in this.m.Bags[_from])
+        {
+            this.m.Bags[_to].push(item);
+        }
+    }
+
     function savePosition( _pos )
     {
         this.m.Positions[this.m.CurrentIndex] = _pos;
