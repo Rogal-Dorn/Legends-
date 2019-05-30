@@ -315,7 +315,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		 {
-		 this.m.Items.equip(this.new("scripts/items/weapons/legend_gnarled_staff"));
+		 this.m.Items.equip(this.new("scripts/items/weapons/legend_staff_gnarled"));
 		 }
 	}
 
