@@ -97,10 +97,45 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.AttachedLocationsMax = 5;
 	}
 
-	function onBuild()
+	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
+
+
+		if ( _settings.StackCitadels)
+		{
+			local ALL = [
+				this.Const.World.TerrainType.Plains,
+				this.Const.World.TerrainType.Steppe,
+				this.Const.World.TerrainType.Snow,
+				this.Const.World.TerrainType.Hills,
+				this.Const.World.TerrainType.Tundra,
+				this.Const.World.TerrainType.Forest,
+				this.Const.World.TerrainType.SnowyForest,
+				this.Const.World.TerrainType.AutumnForest,
+				this.Const.World.TerrainType.LeaveForest			
+			];			
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/stone_watchtower_location", ALL, [], 5, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fortified_outpost_location", ALL, [], 1, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fletchers_hut_location", ALL, []);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", ALL, []);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", ALL, []);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, []);
+			
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/herbalists_grove_location", ALL, []);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/hunters_cabin_location", ALL, [], 1, false, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/lumber_camp_location", ALL, [], 1, false, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/wheat_fields_location", [
+				this.Const.World.TerrainType.Plains
+			], [], 1);
+			return;
+		}
+
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
 
 		if (this.Math.rand(1, 100) <= 80)

@@ -70,7 +70,7 @@
 		this.__ping();
 		this.buildRoads(_rect, _properties);
 		this.__ping();
-		this.refineSettlements(_rect);
+		this.refineSettlements(_rect, _properties);
 		this.__ping();
 		this.guaranteeAllBuildingsInSettlements();
 		this.__ping();
@@ -253,9 +253,13 @@
 			//Add at least one of each
 			foreach (s in list.List)
 			{
-				settlementTiles = this.addSettlement(_rect, isLeft, s.List, settlementTiles);
-				num = --num;
+				for (local i = 0; i < s.MinAmount; i = ++i)
+				{
+					settlementTiles = this.addSettlement(_rect, isLeft, s.List, settlementTiles);
+					num = --num;
+				}
 			}
+
 			while (num > 0)
 			{
 				local r = this.Math.rand(1, 10);
@@ -276,5 +280,36 @@
 
 		this.logInfo("Created " + settlementTiles.len() + " settlements.");
 		return settlementTiles.len() >= 19
-	}	
+	}
+
+	o.refineSettlements = function (_rect, _properties )
+	{
+		local settlements = this.World.EntityManager.getSettlements();
+
+		foreach( s in settlements )
+		{
+			s.updateProperties();
+			s.build(_properties);
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				foreach( s in settlements )
+				{
+					local d = s.getTile().getDistanceTo(tile);
+
+					if (d > 6)
+					{
+						continue;
+					}
+
+					tile.HeatFromSettlements = tile.HeatFromSettlements + (6 - d);
+				}
+			}
+		}
+	}
 })

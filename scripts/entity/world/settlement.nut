@@ -887,6 +887,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			if (candidates.len() != 0)
 			{
 				this.m.Buildings[candidates[this.Math.rand(0, candidates.len() - 1)]] = _building;
+			} 
+			else
+			{
+				this.logInfo("***NO FREE BUILDING SLOTS!!***")
 			}
 		}
 
@@ -1056,6 +1060,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			}
 		}
 
+		this.logInfo("number of tries attaching a building " + tries)
+
 		this.updateProduce();
 	}
 
@@ -1113,9 +1119,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return name;
 	}
 
-	function build()
+	function build( _settings )
 	{
-		this.onBuild();
+		this.onBuild( _settings );
 
 		if (this.m.IsCoastal && (this.m.Buildings[3] == null || this.m.Buildings[3].getID() != "building.port"))
 		{
@@ -1701,7 +1707,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function onBuild()
+	function onBuild( _settings )
 	{
 	}
 

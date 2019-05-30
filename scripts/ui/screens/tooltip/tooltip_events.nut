@@ -4263,10 +4263,23 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled. All settlements will be hidden at campaign start. For the true explorer experience!"
+					text = "If enabled, all settlements will be hidden at campaign start. For the true explorer experience!"
 				}
 			];
-		
+		case "mapconfig.stackcitadels":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Gucci Citadels"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled, every Citadel will start with all those building attachments map scummers are re-rolling for"
+				}
+			];
+
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":
