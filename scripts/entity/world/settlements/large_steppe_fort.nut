@@ -155,13 +155,13 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			];			
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/stone_watchtower_location", ALL, [], 5, true);
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fortified_outpost_location", ALL, [], 0, true);
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fletchers_hut_location", ALL, []);
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", ALL, []);
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", ALL, []);
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, []);
-			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/goat_herd_location", ALL, []);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/stone_watchtower_location", ALL, [], 5, true, true, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fortified_outpost_location", ALL, [], 0, true, true, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/fletchers_hut_location", ALL, [], 0, false, true, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", ALL, [], 0, false, true, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", ALL, [], 0, false, true, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, [], 0, false, true, true);
+			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/goat_herd_location", ALL, [], 0, false, true, true);
 			return;
 		} 
 

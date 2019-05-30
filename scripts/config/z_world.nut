@@ -145,6 +145,7 @@ gt.Const.World.NewCampaignOpts <- function ()
 		MountainsMultMax = 100,
 		MountainsMultMin = 1,
 		Debug = false,
-		StackCitadels = false
+		StackCitadels = false,
+		AllTradeLocations = false
 	}
 }

@@ -4276,7 +4276,20 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, every Citadel will start with all those building attachments map scummers are re-rolling for"
+					text = "If enabled, every Citadel will start with all those building attachments map scummers are re-rolling for."
+				}
+			];
+		case "mapconfig.alltradelocations":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "All Trade Locations"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled, guarentees at least one of each trade location building on the map."
 				}
 			];
 

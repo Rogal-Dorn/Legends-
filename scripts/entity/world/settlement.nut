@@ -888,10 +888,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				this.m.Buildings[candidates[this.Math.rand(0, candidates.len() - 1)]] = _building;
 			} 
-			else
-			{
-				this.logInfo("***NO FREE BUILDING SLOTS!!***")
-			}
 		}
 
 		if (_building.getID() == "building.barber")
@@ -916,11 +912,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true )
+	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
 	{
 		_num = this.Math.min(_num, this.m.AttachedLocationsMax - this.m.AttachedLocations.len());
 
-		if (_num <= 0)
+		if (_num <= 0 && !_force)
 		{
 			return;
 		}
@@ -1059,8 +1055,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				continue;
 			}
 		}
-
-		this.logInfo("number of tries attaching a building " + tries)
 
 		this.updateProduce();
 	}
