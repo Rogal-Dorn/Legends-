@@ -115,6 +115,13 @@
 		return this.buildTextFromTemplate(_text, vars);
 	}
 
+	local payFn = o.m.Payment.getOnCompletion;
+	o.m.Payment.getOnCompletion = function () 
+	{
+		local val = payFn();
+		return this.Math.max(this.Const.Difficulty.MinPayments[this.World.Assets.getEconomicDifficulty()], val)
+	}
+
 	
 	o.getReputationToDifficultyMult = function()
 	{
