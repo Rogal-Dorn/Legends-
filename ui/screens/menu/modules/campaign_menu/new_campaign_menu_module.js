@@ -209,7 +209,8 @@ var NewCampaignMenuModule = function()
 		},						
 		FOW : true,
 		Debug: false,
-		StackCitadels: false
+		StackCitadels: false,
+		AllTradeLocations: false
 	};
 
 	this.mMapConfigOpts = {};
@@ -220,6 +221,8 @@ var NewCampaignMenuModule = function()
 	this.mDebugCheckboxLabel = null;	
 	this.mStackCitadelsCheckbox = null;
 	this.mStackCitadelsCheckboxLabel = null;
+	this.mAllTradeLocationsCheckbox = null;
+	this.mAllTradeLocationsCheckboxLabel = null;
 
     // generics
     this.mIsVisible = false;
@@ -935,23 +938,23 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 		this.mStackCitadelsCheckbox.iCheck('check');
 	}
 
-	// var row = $('<div class="row"></div>');
-	// rightColumn.append(row);
-	// var control = $('<div class="control"/>');
-	// row.append(control);
-	// this.mAllBuildingsCheckbox = $('<input type="checkbox" id="cb-allbuildings"/>');
-	// control.append(this.mAllBuildingsCheckbox);
-	// this.mAllBuildingsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-allbuildings">All Trade Buildings</label>');
-	// control.append(this.mAllBuildingsCheckboxLabel);
-	// this.mAllBuildingsCheckbox.iCheck({
-	// 	checkboxClass: 'icheckbox_flat-orange',
-	// 	radioClass: 'iradio_flat-orange',
-	// 	increaseArea: '30%'
-	// });
-	// if (this.mMapOptions.AllBuildings)
-	// {
-	// 	this.mAllBuildingsCheckbox.iCheck('check');
-	// }
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mAllTradeLocationsCheckbox = $('<input type="checkbox" id="cb-allbuildings"/>');
+	control.append(this.mAllTradeLocationsCheckbox);
+	this.mAllTradeLocationsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-allbuildings">All trade buildings available</label>');
+	control.append(this.mAllTradeLocationsCheckboxLabel);
+	this.mAllTradeLocationsCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	if (this.mMapOptions.AllTradeLocations)
+	{
+		this.mAllTradeLocationsCheckbox.iCheck('check');
+	}
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
@@ -1004,6 +1007,10 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 	if (this.mMapOptions.StackCitadels)
 	{
 		this.mStackCitadelsCheckbox.iCheck('check');
+	}
+	if( this.mMapOptions.AllTradeLocations)
+	{
+		this.mAllTradeLocationsCheckbox.iCheck('check');
 	}
 }
 
@@ -1150,6 +1157,9 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mStackCitadelsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.stackcitadels' });
 	this.mStackCitadelsCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.stackcitadels' });
+
+	this.mAllTradeLocationsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
+	this.mAllTradeLocationsCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function ()
@@ -1250,6 +1260,9 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mStackCitadelsCheckbox.unbindTooltip();
 	this.mStackCitadelsCheckboxLabel.unbindTooltip();
+
+	this.mAllTradeLocationsCheckbox.unbindTooltip();
+	this.mAllTradeLocationsCheckboxLabel.unbindTooltip();
 
 	
 };
@@ -1555,6 +1568,10 @@ NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 		{
 			this.mMapOptions.StackCitadels = _data['StackCitadels'];
 		}
+		if ('AllTradeLocations' in _data)
+		{
+			this.mMapOptions.AllTradeLocations = _data['AllTradeLocations'];
+		}
 	}
 	else
 	{
@@ -1597,6 +1614,7 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mMapOptions.MountainsMult.Value);
 	settings.push(this.mDebugCheckbox.is(':checked'));
 	settings.push(this.mStackCitadelsCheckbox.is(':checked'));
+	settings.push(this.mAllTradeLocationsCheckbox.is(':checked'));
     settings.push(this.mScenarios[this.mSelectedScenario].ID);
 	return settings;
 }
