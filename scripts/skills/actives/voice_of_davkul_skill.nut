@@ -45,7 +45,7 @@ this.voice_of_davkul_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		local actors = this.Tactical.Entities.getAllInstancesAsArray();
 
 		foreach( a in actors )
 		{
