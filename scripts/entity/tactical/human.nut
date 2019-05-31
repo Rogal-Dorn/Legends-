@@ -372,10 +372,10 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			corpse.Value = 8.0;
 			corpse.Hitpoints = 1.0;
 			corpse.IsResurrectable = isResurrectable;
-			corpse.IsConsumable = true;
+			corpse.IsConsumable = _fatalityType != this.Const.FatalityType.Unconscious;
 			corpse.Armor = this.m.BaseProperties.Armor;
 			corpse.Name = "Wiederganger " + this.getName();
-			corpse.Items = this.getItems();
+			corpse.Items = _fatalityType != this.Const.FatalityType.Unconscious ? this.getItems() : null;
 			corpse.Color = sprite_head.Color;
 			corpse.Saturation = sprite_head.Saturation;
 			corpse.Custom = custom;
@@ -384,7 +384,10 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.Entities.addCorpse(_tile);
 		}
 
-		this.getItems().dropAll(_tile, _killer, !flip);
+		if (_fatalityType != this.Const.FatalityType.Unconscious)
+		{
+			this.getItems().dropAll(_tile, _killer, !flip);
+		}
 
 		if (_tile != null && !this.Tactical.State.isScenarioMode() && this.World.FactionManager.isUndeadScourge() && isResurrectable && this.Math.rand(1, 100) <= 33)
 		{
