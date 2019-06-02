@@ -180,7 +180,6 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		this.LogInfo("CONSUMING AMMO FROM CASCADE SHOT")
 		item.consumeAmmo();
 		item.consumeAmmo();
 		item.consumeAmmo();
