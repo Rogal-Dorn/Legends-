@@ -54,6 +54,7 @@ this.inspire_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))

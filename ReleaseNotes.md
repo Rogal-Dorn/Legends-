@@ -783,6 +783,7 @@ Fixes all players joining Champion event battles
 Adds minimum Per Head payment for contracts - Based on economic difficulty (1,5,10,5)
 Fixes Rangers Cascade Shot to use ammo. Each shot is not a separate shot, similiar to quick shot, except with the half damage and shield bonus from this perk. 
 Fixes issue where a Runed shield isn't displayed in the inventory.
+Fixes the Nobles' Inspire and Relax perks.
 
 
 Known issues:

@@ -9,7 +9,7 @@ this.perk_inspire <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "ui/perks/inspire_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
-		this.m.IsActive = true;
+		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
