@@ -780,6 +780,7 @@ New Map Config option: All trade locations - guarentees that at least of one of 
 
 Beta 11.3
 Fixes all players joining Champion event battles
+Adds minimum Per Head payment for contracts - Based on economic difficulty (1,5,10,5)
 
 
 
