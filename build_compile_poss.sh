@@ -32,7 +32,9 @@ while read -r line; do
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_hook.nut" ]; then
         echo "skipping $line"  
     elif [ "$line" == "scripts/ai/tactical/behaviors/ai_charm.nut" ]; then
-        echo "skipping $line"  		
+        echo "skipping $line"
+    elif [ "$line" == "scripts/root_state.cnut" ]; then
+        echo "skipping $line"           
     else
         echo "$line"
         path=$( echo ${line%/*} )
