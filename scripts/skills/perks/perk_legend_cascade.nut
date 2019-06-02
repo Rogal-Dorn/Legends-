@@ -14,16 +14,4 @@ this.perk_legend_cascade <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
-	{
-		if (!this.m.Container.hasSkill("actives.legend_cascade"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_cascade_skill"));
-		}
-	}
-		function onRemoved()
-	{
-		this.m.Container.removeByID("actives.legend_cascade");
-	}
-
 });
