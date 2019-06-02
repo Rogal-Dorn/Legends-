@@ -778,6 +778,11 @@ New Map Config option: Gucci Citadels - all Citadels will have Training Hall, Ar
 New Map Config option: All trade locations - guarentees that at least of one of every location that produces something is on the map.
 
 
+Beta 11.3
+Fixes all players joining Champion event battles
+
+
+
 Known issues:
 Healing tooltips are incorrect
 

@@ -9,7 +9,7 @@
 		this.Time.setRound(0);
 		this.World.Assets.updateFormation();
 		local isPlayerInFormation = false;
-		local all_players = this.World.getPlayerRoster().getAll();
+		local all_players = _properties.IsUsingSetPlayers ? _properties.Players : this.World.getPlayerRoster().getAll();
 		local players = [];
 
 		foreach( e in _properties.TemporaryEnemies )
