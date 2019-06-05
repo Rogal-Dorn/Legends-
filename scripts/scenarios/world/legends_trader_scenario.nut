@@ -132,7 +132,7 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		this.World.Assets.m.BusinessReputationRate = 0.5;
 		this.World.Assets.m.BuyPriceMult = 0.9;
 		this.World.Assets.m.SellPriceMult = 1.1;
-		this.World.Assets.m.BrothersMax = 2;
+		this.World.Assets.m.BrothersMax = 6;
 		this.World.Tags.set("IsLegendsTrader", true);
 	}
 
