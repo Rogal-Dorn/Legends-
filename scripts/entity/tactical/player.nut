@@ -2666,6 +2666,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 47)
 		{
 			this.m.VeteranPerks = _in.readU8();
+			if (this.m.VeteranPerks == 0)
+			{
+				this.m.VeteranPerks = 5;
+			}
 		}
 
 		if (_in.getMetaData().getVersion() >= 48)
