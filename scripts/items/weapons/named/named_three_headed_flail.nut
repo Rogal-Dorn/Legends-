@@ -19,7 +19,7 @@ this.named_three_headed_flail <- this.inherit("scripts/items/weapons/named/named
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 3200;
+		this.m.Value = 3400;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;

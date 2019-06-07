@@ -97,7 +97,10 @@ this.possessed_undead_effect <- this.inherit("scripts/skills/skill", {
 					{
 						this.Time.scheduleEvent(this.TimeUnit.Real, 1800, function ( _d )
 						{
-							_d.setDirty(true);
+							if (_d.isAlive())
+							{
+								_d.setDirty(true);
+							}
 						}, actor);
 					}
 				}

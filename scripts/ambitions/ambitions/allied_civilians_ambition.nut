@@ -105,7 +105,7 @@ this.allied_civilians_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 		_vars.push([
 			"brawler",
-			brothers[this.Math.rand(0, brothers.len() - 1)]
+			brothers[this.Math.rand(0, brothers.len() - 1)].getName()
 		]);
 	}
 

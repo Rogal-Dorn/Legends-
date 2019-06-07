@@ -1232,6 +1232,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 	function onProcessAI()
 	{
+		if (this.Tactical.State.isBattleEnded())
+		{
+			return;
+		}
+
 		local activeEntity = this.Tactical.TurnSequenceBar.getActiveEntity();
 
 		if (activeEntity != null && activeEntity.getAIAgent().isEvaluating())
@@ -1791,7 +1796,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 					{
 						if (bro.isAlive())
 						{
-							bro.kill(null, null, this.Const.FatalityType.Devoured);
+							bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 							this.World.getPlayerRoster().remove(bro);
 						}
 					}
@@ -1800,7 +1805,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 						if (bro.isAlive())
 						{
 							bro.kill(null, null, this.Const.FatalityType.Suicide);
-							this.World.getPlayerRoster().remove(bro);
 						}
 					}
 					else if (bro.getPlaceInFormation() <= 17)
@@ -2858,7 +2862,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
 				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/necromancer");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -3042,7 +3046,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			{
 				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_raider");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
-				e.makeMiniboss();
 				e.assignRandomEquipment();
 			}
 

@@ -16,7 +16,7 @@ this.named_orc_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 2200;
+		this.m.Value = 2400;
 		this.m.ShieldDamage = 16;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;

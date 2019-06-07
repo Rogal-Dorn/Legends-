@@ -15,7 +15,7 @@ this.named_billhook <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 2800;
+		this.m.Value = 3200;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 72.0;
 		this.m.ConditionMax = 72.0;

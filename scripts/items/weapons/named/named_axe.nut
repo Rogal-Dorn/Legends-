@@ -16,7 +16,7 @@ this.named_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 6000;
+		this.m.Value = 4000;
 		this.m.ShieldDamage = 16;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;

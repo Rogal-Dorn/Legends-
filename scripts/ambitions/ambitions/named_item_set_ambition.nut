@@ -25,7 +25,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 		foreach( item in items )
 		{
-			if (item != null && item.isItemType(this.Const.Items.ItemType.Named))
+			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
 			{
 				++ret.Items;
 
@@ -54,7 +54,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 		{
 			local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
-			if (item != null && item.isItemType(this.Const.Items.ItemType.Named))
+			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
 			{
 				++ret.Items;
 
@@ -66,7 +66,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 			item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-			if (item != null && item != "-1" && item.isItemType(this.Const.Items.ItemType.Named))
+			if (item != null && item != "-1" && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
 			{
 				++ret.Items;
 
@@ -78,7 +78,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 			item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
-			if (item != null && item.isItemType(this.Const.Items.ItemType.Named))
+			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
 			{
 				++ret.Items;
 
@@ -90,7 +90,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 			item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 
-			if (item != null && item.isItemType(this.Const.Items.ItemType.Named))
+			if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
 			{
 				++ret.Items;
 
@@ -104,7 +104,7 @@ this.named_item_set_ambition <- this.inherit("scripts/ambitions/ambition", {
 			{
 				local item = bro.getItems().getItemAtBagSlot(i);
 
-				if (item != null && item.item.isItemType(this.Const.Items.ItemType.Named))
+				if (item != null && (item.isItemType(this.Const.Items.ItemType.Named) || item.isItemType(this.Const.Items.ItemType.Legendary)))
 				{
 					++ret.Items;
 

@@ -801,7 +801,7 @@ gt.Const.World.Spawn.Troops <- {
 	BarbarianChosen = {
 		ID = this.Const.EntityType.BarbarianChosen,
 		Variant = 10,
-		Strength = 500,
+		Strength = 999,
 		Cost = 45,
 		Row = 1,
 		Script = "scripts/entity/tactical/humans/barbarian_chosen",

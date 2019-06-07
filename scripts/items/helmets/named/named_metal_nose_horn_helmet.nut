@@ -23,9 +23,9 @@ this.named_metal_nose_horn_helmet <- this.inherit("scripts/items/helmets/named/n
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 5000;
-		this.m.Condition = 265;
-		this.m.ConditionMax = 265;
-		this.m.StaminaModifier = -18;
+		this.m.Condition = 230;
+		this.m.ConditionMax = 230;
+		this.m.StaminaModifier = -15;
 		this.m.Vision = -2;
 		this.randomizeValues();
 	}

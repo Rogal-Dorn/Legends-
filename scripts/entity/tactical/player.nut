@@ -1210,7 +1210,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.human.onDeath(_killer, _skill, _tile, _fatalityType);
 			local corpse = _tile.Properties.get("Corpse");
 			corpse.IsPlayer = true;
-			corpse.Value = 9.0;
+			corpse.Value = 10.0;
 		}
 
 		if (!this.m.IsGuest && !this.Tactical.State.isScenarioMode())

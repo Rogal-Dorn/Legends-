@@ -17,7 +17,7 @@ this.named_skullhammer <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 2600;
+		this.m.Value = 3200;
 		this.m.ShieldDamage = 26;
 		this.m.Condition = 120.0;
 		this.m.ConditionMax = 120.0;
