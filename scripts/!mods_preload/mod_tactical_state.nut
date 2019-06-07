@@ -80,7 +80,7 @@
 					{
 						if (bro.isAlive())
 						{
-							bro.kill(null, null, this.Const.FatalityType.Devoured);
+							bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 							this.World.getPlayerRoster().remove(bro);
 						}
 					}
@@ -89,7 +89,6 @@
 						if (bro.isAlive())
 						{
 							bro.kill(null, null, this.Const.FatalityType.Suicide);
-							this.World.getPlayerRoster().remove(bro);
 						}
 					}
 					else if (bro.isPlacedOnMap())
