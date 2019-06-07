@@ -36,8 +36,8 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 	function onCombatFinished()
 	{
 		local actor = this.getContainer().getActor();
-		actor.setHitpoints(actor.getHitpointsMax());
-		actor.setDirty(true);
+		local body = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		body.setArmor(body.getArmorMax());
 	}
 
 	function onTurnStart()
@@ -48,7 +48,7 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 		local bodyAdded = this.Math.min(bodyMissing, this.Math.floor(body.getArmorMax() * 0.05));
 
 
-		if (healthAdded <= 0)
+		if (bodyAdded <= 0)
 		{
 			return;
 		}
