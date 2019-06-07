@@ -129,6 +129,12 @@ this.ghost <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 140)
+		{
+			b.MeleeDefense += 5;
+		}
+
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;

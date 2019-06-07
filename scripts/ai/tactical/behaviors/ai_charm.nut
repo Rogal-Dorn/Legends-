@@ -89,11 +89,11 @@ this.ai_charm <- this.inherit("scripts/ai/tactical/behavior", {
 		}
 
 		this.m.Skill.use(this.m.TargetTile);
-		this.getAgent().declareEvaluationDelay(1500);
+		this.getAgent().declareEvaluationDelay(2000);
 
-		if (!_entity.isHiddenToPlayer())
+		if (!_entity.isHiddenToPlayer() || this.m.TargetTile.IsVisibleForPlayer)
 		{
-			this.getAgent().declareAction(1500);
+			this.getAgent().declareAction(2000);
 		}
 
 		this.m.Skill = null;

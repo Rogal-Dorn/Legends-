@@ -45,9 +45,12 @@ this.wolf_bite <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 20;
-		_properties.DamageRegularMax += 40;
-		_properties.DamageArmorMult *= 0.4;
+		if (this.isUsable())
+		{
+			_properties.DamageRegularMin += 20;
+			_properties.DamageRegularMax += 40;
+			_properties.DamageArmorMult *= 0.4;
+		}
 	}
 
 	function onUse( _user, _targetTile )

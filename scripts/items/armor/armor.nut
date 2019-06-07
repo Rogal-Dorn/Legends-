@@ -69,6 +69,11 @@ this.armor <- this.inherit("scripts/items/item", {
 
 	function setUpgrade( _upgrade )
 	{
+		if (!this.Const.DLC.Unhold && !this.Const.DLC.Wildmen)
+		{
+			return;
+		}
+
 		if (this.m.Upgrade != null)
 		{
 			this.m.Upgrade.onRemoved();

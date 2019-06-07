@@ -154,6 +154,24 @@ this.ai_attack_knock_out <- this.inherit("scripts/ai/tactical/behavior", {
 					score = score * this.Const.AI.Behavior.KnockoutPriorityMult;
 				}
 
+				local targetTile = target.getTile();
+
+				for( local i = 0; i < 6; i = ++i )
+				{
+					if (!targetTile.hasNextTile(i))
+					{
+					}
+					else
+					{
+						local adjacent = targetTile.getNextTile(i);
+
+						if (adjacent.IsOccupiedByActor && adjacent.getEntity().isAlliedWith(_entity) && adjacent.getEntity().getCurrentProperties().TargetAttractionMult > 1.0)
+						{
+							score = score * this.Const.AI.Behavior.KnockoutPriorityMult;
+						}
+					}
+				}
+
 				if (score > bestScore)
 				{
 					bestTarget = target;

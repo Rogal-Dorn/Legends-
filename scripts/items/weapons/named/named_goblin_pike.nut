@@ -17,7 +17,7 @@ this.named_goblin_pike <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 1600;
+		this.m.Value = 2400;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 40.0;
 		this.m.ConditionMax = 40.0;

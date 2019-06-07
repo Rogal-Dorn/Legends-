@@ -17,7 +17,7 @@ this.named_heavy_rusty_axe <- this.inherit("scripts/items/weapons/named/named_we
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 4000;
+		this.m.Value = 3400;
 		this.m.ShieldDamage = 36;
 		this.m.Condition = 96.0;
 		this.m.ConditionMax = 96.0;

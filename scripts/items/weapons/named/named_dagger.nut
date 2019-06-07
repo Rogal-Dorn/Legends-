@@ -17,7 +17,7 @@ this.named_dagger <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.Condition = 50.0;
 		this.m.ConditionMax = 50.0;
-		this.m.Value = 1000;
+		this.m.Value = 1500;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.7;

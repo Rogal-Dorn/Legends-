@@ -243,6 +243,11 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 30)
 		{
 			b.DamageDirectAdd += 0.05;
+
+			if (this.World.getTime().Days >= 50)
+			{
+				b.DamageDirectAdd += 0.05;
+			}
 		}
 
 		this.m.ActionPoints = b.ActionPoints;

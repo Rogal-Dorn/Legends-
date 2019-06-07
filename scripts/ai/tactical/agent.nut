@@ -243,6 +243,11 @@ this.agent <- {
 		if (!_evaluateOnly && (this.isReady() || this.m.ActiveBehavior != null && this.m.ActiveBehavior.getID() == this.Const.AI.Behavior.ID.Idle && this.m.Actor.getActionPoints() == this.m.Actor.getActionPointsMax()))
 		{
 			this.m.IsEvaluating = this.execute(this.m.Actor);
+
+			if (this.m.IsEvaluating)
+			{
+				this.m.ActiveBehavior = null;
+			}
 		}
 
 		if (!this.m.Actor.isAlive())

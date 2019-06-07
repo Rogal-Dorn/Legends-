@@ -67,11 +67,11 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 
 		if (r == 1)
 		{
-			this.items.equip(this.new("scripts/items/helmets/cultist_hood"));
+			this.m.Items.equip(this.new("scripts/items/helmets/cultist_hood"));
 		}
 		else if (r == 2)
 		{
-			this.items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
+			this.m.Items.equip(this.new("scripts/items/helmets/cultist_leather_hood"));
 		}
 	}
 

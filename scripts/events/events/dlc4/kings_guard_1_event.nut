@@ -41,6 +41,7 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.setTitle("");
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north. He claims he was a King\'s Guard once, but looking at him now you see but a cripple.";
 				_event.m.Dude.getBackground().buildDescription(true);
+				_event.m.Dude.getFlags().set("IsSpecial", true);
 				_event.m.Dude.getBaseProperties().Bravery += 15;
 				_event.m.Dude.getSkills().update();
 				_event.m.Dude.m.PerkPoints = 2;

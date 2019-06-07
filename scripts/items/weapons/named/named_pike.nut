@@ -15,7 +15,7 @@ this.named_pike <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 1800;
+		this.m.Value = 2800;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;

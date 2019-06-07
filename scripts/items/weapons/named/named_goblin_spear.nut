@@ -17,7 +17,7 @@ this.named_goblin_spear <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 800;
+		this.m.Value = 2000;
 		this.m.Condition = 36.0;
 		this.m.ConditionMax = 36.0;
 		this.m.StaminaModifier = -2;

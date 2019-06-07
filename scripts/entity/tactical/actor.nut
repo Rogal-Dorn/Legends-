@@ -3086,6 +3086,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 	function findTileToSpawnCorpse( _killer )
 	{
+		if (!this.isPlacedOnMap())
+		{
+			return null;
+		}
+
 		local ourTile = this.getTile();
 		local killerTile = _killer != null ? _killer.getTile() : null;
 
@@ -3197,7 +3202,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			this.playSound(this.Const.Sound.ActorEvent.Death, this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] * this.m.SoundVolumeOverall, this.m.SoundPitch);
 		}
 
-		local myTile = this.getTile();
+		local myTile = this.isPlacedOnMap() ? this.getTile() : null;
 		local tile = this.findTileToSpawnCorpse(_killer);
 		this.m.Skills.onDeath();
 		this.onDeath(_killer, _skill, tile, _fatalityType);
@@ -3230,7 +3235,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			}
 		}
 
-		if (!this.Tactical.State.isFleeing())
+		if (!this.Tactical.State.isFleeing() && myTile != null)
 		{
 			local actors = this.Tactical.Entities.getAllInstances();
 
@@ -3268,7 +3273,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 					}
 				}
 			}
-			else
+			else if (myTile != null)
 			{
 				this.spawnBloodSplatters(this.getTile(), this.Const.Combat.BloodSplattersAtDeathMult * this.m.DeathBloodAmount);
 			}

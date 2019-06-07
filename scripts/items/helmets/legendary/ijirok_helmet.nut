@@ -39,8 +39,12 @@ this.ijirok_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function onCombatFinished()
 	{
 		local actor = this.getContainer().getActor();
-		actor.setHitpoints(actor.getHitpointsMax());
-		actor.setDirty(true);
+
+		if (actor != null && !actor.isNull() && actor.isAlive())
+		{
+			actor.setHitpoints(actor.getHitpointsMax());
+			actor.setDirty(true);
+		}
 	}
 
 	function onTurnStart()

@@ -17,7 +17,7 @@ this.named_two_handed_flail <- this.inherit("scripts/items/weapons/named/named_w
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 2400;
+		this.m.Value = 2800;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;

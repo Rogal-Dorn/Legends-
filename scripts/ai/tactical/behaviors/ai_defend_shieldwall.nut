@@ -334,7 +334,6 @@ this.ai_defend_shieldwall <- this.inherit("scripts/ai/tactical/behavior", {
 			score = score * this.Const.AI.Behavior.ShieldwallWithThrowingWeaponMult;
 		}
 
-		this.logInfo("#D");
 		return this.Const.AI.Behavior.Score.Shieldwall * this.Math.maxf(0.25, this.getProperties().OverallDefensivenessMult) * score;
 	}
 
