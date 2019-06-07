@@ -373,7 +373,7 @@ gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendRedbackSpider <- {
-	XP = 100,
+	XP = 200,
 	ActionPoints = 12,
 	Hitpoints = 120,
 	Bravery = 80,
@@ -408,5 +408,82 @@ gt.Const.Tactical.Actor.LegendRockUnhold <- {
 	Armor = [
 		450,
 		450
+	]
+};
+gt.Const.Tactical.Actor.LegendDemonAlp <- {
+	XP = 700,
+	ActionPoints = 9,
+	Hitpoints = 100,
+	Bravery = 150,
+	Stamina = 150,
+	MeleeSkill = 0,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 20,
+	Initiative = 999,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 15,
+	Vision = 10,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.LegendStollwurm <- {
+	XP = 1500,
+	ActionPoints = 12,
+	Hitpoints = 1100,
+	Bravery = 180,
+	Stamina = 400,
+	MeleeSkill = 85,
+	RangedSkill = 0,
+	MeleeDefense = 20,
+	RangedDefense = 10,
+	Initiative = 50,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 30,
+	Armor = [
+		1200,
+		600
+	]
+};
+gt.Const.Tactical.Actor.LegendGreenwoodSchrat <- {
+	XP = 1000,
+	ActionPoints = 10,
+	Hitpoints = 900,
+	Bravery = 200,
+	Stamina = 400,
+	MeleeSkill = 80,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 10,
+	Initiative = 80,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 25,
+	Armor = [
+		0,
+		0
+	]
+};
+gt.Const.Tactical.Actor.LegendGreenwoodSchratSmall <- {
+	XP = 100,
+	ActionPoints = 7,
+	Hitpoints = 150,
+	Bravery = 150,
+	Stamina = 400,
+	MeleeSkill = 80,
+	RangedSkill = 0,
+	MeleeDefense = 15,
+	RangedDefense = 15,
+	Initiative = 80,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 15,
+	Armor = [
+		0,
+		0
 	]
 };
