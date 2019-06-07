@@ -18,7 +18,7 @@ this.named_fencing_sword <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.Condition = 48.0;
 		this.m.ConditionMax = 48.0;
 		this.m.StaminaModifier = -4;
-		this.m.Value = 5200;
+		this.m.Value = 4000;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.75;

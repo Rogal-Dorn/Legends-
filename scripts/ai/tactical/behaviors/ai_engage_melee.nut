@@ -174,6 +174,11 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( t in targets )
 		{
+			if (t.Actor.isNull())
+			{
+				continue;
+			}
+
 			if (this.m.Skill != null && _entity.getActionPointCostsRaw() == this.Const.ImmobileMovementAPCost && t.Actor.getTile().getDistanceTo(myTile) > this.m.Skill.getMaxRange() + 1)
 			{
 				continue;
@@ -636,11 +641,11 @@ this.ai_engage_melee <- this.inherit("scripts/ai/tactical/behavior", {
 							waitAfterMove = true;
 						}
 					}
-					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && !t.Actor.isTurnDone() && t.Actor.getActionPoints() >= 6 && t.Actor.getIdealRange() < 2 && (hasAdrenaline || _entity.getTurnOrderInitiative() * t.Actor.getCurrentProperties().InitiativeAfterWaitMult > t.Actor.getTurnOrderInitiative()) && !t.IsTargetLocked && t.TargetValue <= 1.0 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult && _entity.isAbleToWait() && inZonesOfControl == 0)
+					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getStrategy().getStats().IsBeingKited && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && !t.Actor.isTurnDone() && t.Actor.getActionPoints() >= 6 && t.Actor.getIdealRange() < 2 && (hasAdrenaline || _entity.getTurnOrderInitiative() * t.Actor.getCurrentProperties().InitiativeAfterWaitMult > t.Actor.getTurnOrderInitiative()) && !t.IsTargetLocked && t.TargetValue <= 1.0 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult && _entity.isAbleToWait() && inZonesOfControl == 0)
 					{
 						waitBeforeMove = true;
 					}
-					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && this.getStrategy().getStats().EnemyRangedReadyRatio <= this.getStrategy().getStats().AllyRangedReadyRatio + 0.5 && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && (!willRunIntoSpearwall || useSkill && !this.m.Skill.isSpearwallRelevant()) && !t.IsTargetLocked && t.TargetValue <= 1.0 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult && !this.isEngageRecommended(_entity, t.Tile))
+					else if (movementCosts.IsComplete && this.getProperties().EngageRangeMax == 1 && this.getStrategy().getStats().EnemyRangedReadyRatio <= this.getStrategy().getStats().AllyRangedReadyRatio + 0.5 && !this.getStrategy().getStats().IsBeingKited && (this.getProperties().PreferCarefulEngage && !this.Tactical.State.isAutoRetreat()) && !this.getProperties().IgnoreTargetValueOnEngage && (!useSkill || !this.m.Skill.isAttack()) && _entity.getActionPointsMax() >= 8 && _entity.getActionPoints() - movementCosts.ActionPointsRequired < apRequiredForAttack && (!willRunIntoSpearwall || useSkill && !this.m.Skill.isSpearwallRelevant()) && !t.IsTargetLocked && t.TargetValue <= 1.0 && t.LockDownMult < this.Const.AI.Behavior.EngageMeleeProtectPriorityTargetMult * this.getProperties().EngageLockDownTargetMult && !this.isEngageRecommended(_entity, t.Tile))
 					{
 						local alternative;
 						local nextToLastAlternative;

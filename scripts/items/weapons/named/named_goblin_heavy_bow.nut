@@ -17,7 +17,7 @@ this.named_goblin_heavy_bow <- this.inherit("scripts/items/weapons/named/named_w
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 1100;
+		this.m.Value = 2200;
 		this.m.Condition = 62.0;
 		this.m.ConditionMax = 62.0;
 		this.m.StaminaModifier = -2;
@@ -28,6 +28,7 @@ this.named_goblin_heavy_bow <- this.inherit("scripts/items/weapons/named/named_w
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.6;
 		this.m.DirectDamageMult = 0.35;
+		this.m.DirectDamageAdd = 0.1;
 		this.randomizeValues();
 	}
 

@@ -158,7 +158,7 @@ this.event_manager <- {
 		{
 			if (!this.m.IsEventShown && (this.m.ActiveEvent.getScore() != 0 || this.m.ActiveEvent.isSpecial()))
 			{
-				if (this.m.ActiveEvent.getScore() < 500)
+				if (!this.m.ActiveEvent.isSpecial() && this.m.ActiveEvent.getScore() < 500)
 				{
 					local parties = this.World.getAllEntitiesAtPos(this.World.State.getPlayer().getPos(), 400.0);
 

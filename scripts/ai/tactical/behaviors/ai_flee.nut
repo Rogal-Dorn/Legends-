@@ -39,6 +39,11 @@ this.ai_flee <- this.inherit("scripts/ai/tactical/behavior", {
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 
+		if (!_entity.getTile().hasZoneOfControlOtherThan(_entity.getAlliedFactions()) && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Retreat) != null && this.getAgent().getBehavior(this.Const.AI.Behavior.ID.Retreat).getScore() > 0)
+		{
+			return this.Const.AI.Behavior.Score.Zero;
+		}
+
 		this.m.TargetTile = this.findFleeToPosition(_entity);
 
 		if (this.m.TargetTile != null && this.m.TargetTile.IsEmpty)

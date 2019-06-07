@@ -186,6 +186,11 @@ this.ai_switchto_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 			scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToRangedAtNightMult;
 		}
 
+		if (this.getStrategy().getStats().IsBeingKited)
+		{
+			scoreMult = scoreMult * this.Const.AI.Behavior.SwitchToBeingKitedMult;
+		}
+
 		return this.Const.AI.Behavior.Score.SwitchToRanged * scoreMult;
 	}
 

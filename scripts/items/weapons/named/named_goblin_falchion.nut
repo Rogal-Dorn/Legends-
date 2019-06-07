@@ -17,7 +17,7 @@ this.named_goblin_falchion <- this.inherit("scripts/items/weapons/named/named_we
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 1800;
+		this.m.Value = 2600;
 		this.m.Condition = 52.0;
 		this.m.ConditionMax = 52.0;
 		this.m.StaminaModifier = -2;

@@ -32,7 +32,7 @@ this.named_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		if (!this.m.UseRandomName || this.Math.rand(1, 100) <= 75)
 		{
-			if (this.Math.rand(1, 100) <= 25)
+			if (this.Math.rand(1, 100) <= 20)
 			{
 				return "";
 			}

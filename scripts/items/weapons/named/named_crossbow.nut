@@ -28,7 +28,7 @@ this.named_crossbow <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 6400;
+		this.m.Value = 4400;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 6;
 		this.m.RangeIdeal = 6;

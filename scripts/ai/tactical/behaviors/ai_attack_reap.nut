@@ -4,7 +4,8 @@ this.ai_attack_reap <- this.inherit("scripts/ai/tactical/behavior", {
 		PossibleSkills = [
 			"actives.reap"
 		],
-		Skill = null
+		Skill = null,
+		MinTargets = 2
 	},
 	function create()
 	{
@@ -44,7 +45,7 @@ this.ai_attack_reap <- this.inherit("scripts/ai/tactical/behavior", {
 		score = score * this.getFatigueScoreMult(this.m.Skill);
 		local targets = this.queryTargetsInMeleeRange(this.m.Skill.getMinRange(), this.m.Skill.getMaxRange());
 
-		if (targets.len() < 2)
+		if (targets.len() < this.m.MinTargets)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -167,6 +168,11 @@ this.ai_attack_reap <- this.inherit("scripts/ai/tactical/behavior", {
 						score = score + 1;
 					}
 				}
+			}
+
+			if (score < this.m.MinTargets)
+			{
+				continue;
 			}
 
 			if (score > bestScore || score == bestScore && combinedValue > bestCombinedValue)

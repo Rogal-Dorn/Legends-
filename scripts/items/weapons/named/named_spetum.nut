@@ -15,7 +15,7 @@ this.named_spetum <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 1500;
+		this.m.Value = 2800;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
@@ -49,6 +49,7 @@ this.named_spetum <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		spearwall.m.Overlay = "active_124";
 		spearwall.m.BaseAttackName = prong.getName();
 		spearwall.setFatigueCost(spearwall.getFatigueCostRaw() + 5);
+		spearwall.m.ActionPointCost = 6;
 		this.addSkill(spearwall);
 	}
 

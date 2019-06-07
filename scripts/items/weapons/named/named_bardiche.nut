@@ -17,7 +17,7 @@ this.named_bardiche <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 4500;
+		this.m.Value = 4600;
 		this.m.ShieldDamage = 24;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;

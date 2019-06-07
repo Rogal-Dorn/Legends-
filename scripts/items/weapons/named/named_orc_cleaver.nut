@@ -16,7 +16,7 @@ this.named_orc_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 2200;
+		this.m.Value = 2400;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 52.0;
 		this.m.ConditionMax = 52.0;

@@ -17,7 +17,7 @@ this.named_two_handed_spiked_mace <- this.inherit("scripts/items/weapons/named/n
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 2000;
+		this.m.Value = 3000;
 		this.m.ShieldDamage = 20;
 		this.m.Condition = 72.0;
 		this.m.ConditionMax = 72.0;

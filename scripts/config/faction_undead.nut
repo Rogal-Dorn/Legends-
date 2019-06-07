@@ -251,7 +251,7 @@ gt.Const.Tactical.Actor.GhostKnight <- {
 	Hitpoints = 275,
 	Bravery = 100,
 	Stamina = 100,
-	MeleeSkill = 85,
+	MeleeSkill = 90,
 	RangedSkill = 0,
 	MeleeDefense = 50,
 	RangedDefense = 999,

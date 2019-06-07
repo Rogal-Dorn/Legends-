@@ -29,7 +29,8 @@ this.strategy <- {
 			IsOutrangedByEnemy = false,
 			IsOutrangingEnemy = false,
 			IsEngaged = false,
-			IsOwnFactionEngaged = false
+			IsOwnFactionEngaged = false,
+			IsBeingKited = false
 		},
 		IsDefending = false,
 		IsEscortedByPlayer = false,
@@ -403,6 +404,27 @@ this.strategy <- {
 		this.m.AveragePlayerArmor = armors / (players.len() * 1.0);
 		this.m.IsEscortedByPlayer = false;
 		this.m.IsDefending = this.updateDefending();
+		this.m.Stats.IsBeingKited = false;
+
+		if (!this.m.IsDefending && !this.m.Stats.IsEngaged && enemyRangedFiring >= 2 && (this.Tactical.State.getStrategicProperties() == null || this.Tactical.State.getStrategicProperties().PlayerDeploymentType == this.Const.Tactical.DeploymentType.Line))
+		{
+			local notKiting = false;
+
+			foreach( p in players )
+			{
+				if (p.getTile().SquareCoords.X >= 12)
+				{
+					notKiting = true;
+					break;
+				}
+			}
+
+			if (!notKiting)
+			{
+				this.m.Stats.IsBeingKited = true;
+			}
+		}
+
 		return true;
 	}
 

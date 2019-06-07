@@ -130,7 +130,7 @@ this.ai_adrenaline <- this.inherit("scripts/ai/tactical/behavior", {
 			}
 		}
 
-		if (actingBeforeMe == 0 || isEngaged && actingBeforeMe <= targets.len() / 6 || !isEngaged && reachable == 0)
+		if (actingBeforeMe == 0 || isEngaged && actingBeforeMe <= targets.len() / 6 || !isEngaged && reachable == 0 || !isEngaged && stillToAct >= actingBeforeMe)
 		{
 			return this.Const.AI.Behavior.Score.Zero;
 		}
@@ -140,6 +140,11 @@ this.ai_adrenaline <- this.inherit("scripts/ai/tactical/behavior", {
 		if (this.Time.getRound() <= 2 && !this.getStrategy().isDefending())
 		{
 			score = score * this.Const.AI.Behavior.AdrenalineFirstRoundMult;
+		}
+
+		if (this.getStrategy().getStats().IsBeingKited)
+		{
+			score = score * this.Const.AI.Behavior.AdrenalineBeingKitedMult;
 		}
 
 		score = score * (1.0 + _entity.getTile().getZoneOfControlCountOtherThan(_entity.getAlliedFactions()) * this.Const.AI.Behavior.AdrenalineSurrounded);
