@@ -439,11 +439,11 @@ this.camp_building <- {
 	{
 		if (_f1[0] > _f2[0])
 		{
-			return -11;
+			return -1;
 		}
 		else if (_f1[0] < _f2[0])
 		{
-			return -1;
+			return 1;
 		}
 		else
 		{
@@ -469,7 +469,7 @@ this.camp_building <- {
             }
             local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers()[this.m.ModName] * this.m.ModMod;
             ++ret.Assigned
-			ret.Modifiers.push([mod, bro.getName(), bro.getBackground().getNameOnly()]);			
+			ret.Modifiers.push([mod, bro.getNameOnly(), bro.getBackground().getNameOnly()]);			
         }
 
         ret.Modifiers.sort(this.sortModifiers);
@@ -485,4 +485,45 @@ this.camp_building <- {
         return ret;
     }
 
+	function onSortByModifier( _a, _b )
+	{
+		if (_a.Modifier > _b.Modifier)
+		{
+			return -1;
+		}
+		else if (_a.Modifier < _b.Modifier)
+		{
+			return 1;
+		}
+
+		return 0;
+	}
+
+	function getSortedRoster()
+	{
+		local brothers = this.World.getPlayerRoster().getAll();
+		local roster = [];
+
+		foreach( b in brothers )
+		{
+			if (!this.onBroEnter(b))
+			{
+				continue 
+			}			
+			local bro = this.UIDataHelper.convertEntityToUIData(b, null);
+			local tent = this.World.Camp.getBuildingByID( b.getCampAssignment() );
+			bro.bannerImage <- tent.getBanner()
+			bro.IsSelected <- b.getCampAssignment() == this.m.ID
+			local modifier = 0;
+			if (this.m.ModName != "")
+			{
+				modifier = b.getBackground().getModifiers()[this.m.ModName];
+			}
+			bro.Modifier <- modifier;
+			roster.push(bro);
+		}
+		
+		roster.sort(this.onSortByModifier);
+		return roster
+	}
 }
