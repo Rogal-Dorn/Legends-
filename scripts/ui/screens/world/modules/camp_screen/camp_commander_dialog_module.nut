@@ -2,7 +2,7 @@
 this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
 		Title = "Commanders Tent",
-		Description = "Assign company members to various camp related tasks by dragging members from the bottom panel to the tents in the upper panel."
+		Description = "Select a tent, then click a brother to assign him to the tent. Bros sorted from best to worse"
 	},
 	function create()
 	{
@@ -129,23 +129,12 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 
 	function onTentSelected ( _id )
 	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		local roster = [];
-
-		foreach( b in brothers )
-		{
-			if (b.getCampAssignment() != _id)
-			{
-				continue
-			}
-			roster.push(this.UIDataHelper.convertEntityToUIData(b, null));
-		}
-
 		local tent = this.World.Camp.getBuildingByID( _id );
 		return {
-			Roster = roster,
+			Roster = tent.getSortedRoster(),
 			Label = tent.getName(),
-			Enabled = tent.canEnter()
+			Enabled = tent.canEnter(),
+			Modifiers = tent.getModifiers()
 		}
 	}
 
@@ -154,13 +143,18 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		local broID = _data[0];
 		local campID = _data[1];
 		local bro = this.Tactical.getEntityByID(broID);
+		if (bro.getCampAssignment() == campID)
+		{
+			campID = bro.getLastCampAssignment();
+		}
 		local tent = this.World.Camp.getBuildingByID(campID);
 		if (!tent.onBroEnter(bro))
 		{
 			return 
 		}
-		local tent = this.World.Camp.getBuildingByID(bro.getCampAssignment());
+		tent = this.World.Camp.getBuildingByID(bro.getCampAssignment());
 		tent.onBroLeave(bro);
+		bro.setLastCampAssignment(bro.getCampAssignment());
 		bro.setCampAssignment(campID);
 		this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
 		return this.queryLoad();

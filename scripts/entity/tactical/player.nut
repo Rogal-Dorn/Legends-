@@ -38,6 +38,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		Formations = null,
 		VeteranPerks = 5,
 		CampAssignment = "camp.rest",
+		LastCampAssignment = "camp.rest",
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false
@@ -220,6 +221,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setCampAssignment( _id )
 	{
 		this.m.CampAssignment = _id;
+	}
+
+	function getLastCampAssignment()
+	{
+		return this.m.LastCampAssignment;
+	}
+
+	function setLastCampAssignment( _id )
+	{
+		this.m.LastCampAssignment = _id;
 	}
 
 	function getMood()
