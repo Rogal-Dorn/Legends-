@@ -318,7 +318,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.State.getPlayer().setVisible(false);
 				this.World.Assets.setUseProvisions(false);
 				this.World.getCamera().moveTo(this.World.State.getPlayer());
-				this.World.Camp.update(null);
+				//this.World.Camp.update(null);
 
 				if (!this.World.State.isPaused())
 				{

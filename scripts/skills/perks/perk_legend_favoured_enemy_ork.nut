@@ -15,19 +15,19 @@ this.perk_legend_favoured_enemy_ork <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-	if (_targetEntity != null)
+		if (_targetEntity == null)
 		{
-		local actor = this.getContainer().getActor();
-		local targetID = _targetEntity.getType()
-
-
-		if ( targetID == this.Const.EntityType.OrcBerserker || targetID == this.Const.EntityType.OrcYoung || targetID == this.Const.EntityType.OrcWarrior || targetID == this.Const.EntityType.OrcWarlord || targetID == this.Const.EntityType.OrcBehemoth || targetID == this.Const.EntityType.OrcElite)
-			{
-		_properties.MeleeSkill += 10;
-		_properties.RangedSkill += 10;
-		_properties.DamageRegularMax *= 1.1;
-			}
+			return;
 		}
+		
+		local targetID = _targetEntity.getType()
+		if ( targetID == this.Const.EntityType.OrcBerserker || targetID == this.Const.EntityType.OrcYoung || targetID == this.Const.EntityType.OrcWarrior || targetID == this.Const.EntityType.OrcWarlord || targetID == this.Const.EntityType.OrcBehemoth || targetID == this.Const.EntityType.OrcElite)
+		{
+			_properties.MeleeSkill += 10;
+			_properties.RangedSkill += 10;
+			_properties.DamageRegularMax *= 1.1;
+		}
+		
 	}
 });
 

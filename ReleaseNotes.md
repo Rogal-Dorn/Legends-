@@ -788,8 +788,11 @@ Fixes the Nobles' Inspire and Relax perks.
 Fixes incorrect party size for Legend Trader start.
 Reworks commander tent UI. No more drag and drop. Just select a tent, then toggle a bro to be assigned to it. Bros are listen in each tent from best to worst at the job.
 Fixes favored Hexe and Alp perks not being selectable.
-Fixes Levitate skill
-Fixes a crash when loading a save game with a bro with missing hand injury
+Fixes Levitate skill.
+Fixes a crash when loading a save game with a bro with missing hand injury.
+Fixes a crash with summoning skeletons.
+Fixes crash when using warlock hex skill.
+Fixes the buckler bonus. When using a buckler in combat, grants a +15 Melee bonus if adjacent to only 1 enemy.
 
 Known issues:
 Healing tooltips are incorrect
