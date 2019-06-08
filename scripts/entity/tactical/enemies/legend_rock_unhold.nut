@@ -175,7 +175,7 @@ this.legend_rock_unhold <- this.inherit("scripts/entity/tactical/actor", {
 				local r = this.Math.rand(1, 100);
 				local loot;
 
-				if (r <= 40)
+				if (r <= 50)
 				{
 					loot = this.new("scripts/items/misc/legend_rock_unhold_bones_item");
 				}

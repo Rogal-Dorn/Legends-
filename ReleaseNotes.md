@@ -751,6 +751,53 @@ Fixed cat o nine tails not showing in inventory
 Fixed perks not applying for Barbarians, Hunters, Bowyers, Fletchers and female nobles
 Fixed warlock recruits not ressurecting on death 
 
+Beta 12 - Monster hunt 
+
+
+Adds paintable tower shields, with fortify skill that shields surrounding allies 
+bucklers gain "buckler bash" skill to daze enemies 
+
+Adds Redback spiders - Elite spiders that have a poison dealing 10 damage each turn, decreasing by 1 damage per turn over 10 turns. Damage is doubled when in a web.  The have increased AP so they can web and bite at the same time, or bite twice in a turn. increased HP, armor, bravery, stamina, melee skill, melee defense and great ranged defense.
+Drops redback poison, can be used to craft: 
+Redback spider helm - made from the carapace of a redback spider, grants the web skill
+Redback dagger - made from the fangs and poison gland of a redback spider, inflicts redback poison 
+
+Adds White Wolves -  Elite direwolves with increased AP so they can attack three times in a turn applying overwhelm. Or howl twice increasing their allies resolve by 30 each time.  All other stats increased, and more cunning AI. Increased stats over frenzied direwolves. 
+Drops white wolf pelt that can be used to craft:
+white wolf helm - decreased the morale of adjacent enemies by 20 
+white wolf cloak - decreased the morale of adjacent enemies by 20 and increases armor by 30 
+
+Adds Skin Ghouls - Elite nimble ghouls with groteque elongated arms that can reap in an arc over two tiles, applying 5-10 damage, a 5hp bleed and a 25% chance to decapitate or disembowel. Those values are multipled by the ghoul's size so a Tier 3 skin ghoul can hit all of your units within 2 tiles for 15-30 damage, with 15 bleed, a 75% chance to decapitate and a 75% chance to disembowel. Increased stats over ghouls.   
+Drops Skin Ghoul skin that can be used to craft:
+Skin Ghoul Helmet - Medium armor that grants the wearer the ability to devour corpses to heal 
+Skin Ghoul Armor - Medium armor that grants the ability to heal each turn 
+Skin Ghoul Blood potion - Can be used to heal 10% of your missing health per turn, over 4 turns 
+
+Adds Demon Alps - Elite Alps with levitate, anticipation, a horrifying scream and the ability to feast on corpses. Increased stats 
+50% chance of dropping Demon Alp Skin 
+Demon Alp Helm - Grants horrific scream 
+80% chance of dropping a Demon's Third Eye that can be used to craft: 
+Demon Alp Trophy - Grants +10 resolve 
+50% chance of dropping helm rune stone 
+
+Adds Greenwood Schrats - Elite Schrats with an even tougher shield that spawn many more greenwood saplings, who in turn spawn regular saplings.  Increased stats 
+50% chance of dropping ancient green wood that can be used to craft:
+Heartwood shield - regenerates durability each turn in combat 
+50% chance of dropping a shield rune stone 
+
+Adds Rock Unholds - Elite Unholds with thick armor that regenerates in addition to their health. Increased stats 
+Drops Rock Unhold Bones and Hide that can be used to craft: 
+Helm of the Mountain - regenerates durability each turn 
+Armor of the Mountain - regenerates durability each turn 
+
+Adds Stollwurm - Elite wurms that can burrow across the map and regenerate health each turn. Increased stats 
+Drops stollwurm blood and scales That can be used to craft 
+Stollwurm scale cloack - Adds 80 durability and immunity to stun 
+Stollwurm helmet - very durable, gives immunity to stun  (should be improved)
+50% chance of dropping an armor rune stone 
+
+
+
 Known issues:
 Warlock summons causing a crash on load? 
 Healing tooltips are incorrect

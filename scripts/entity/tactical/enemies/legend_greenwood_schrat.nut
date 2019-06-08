@@ -133,9 +133,9 @@ this.legend_greenwood_schrat <- this.inherit("scripts/entity/tactical/actor", {
 					local r = this.Math.rand(1, 100);
 					local loot;
 
-					if (r <= 40)
+					if (r <= 50)
 					{
-						loot = this.new("scripts/items/misc/ancient_wood_item");
+						loot = this.new("scripts/items/misc/legend_ancient_green_wood_item");
 					}
 					else if (r <= 80)
 					{
@@ -148,7 +148,7 @@ this.legend_greenwood_schrat <- this.inherit("scripts/entity/tactical/actor", {
 
 					loot.drop(_tile);
 
-				if (this.Math.rand(1, 100) < 10)
+				if (this.Math.rand(1, 100) < 50)
 					{
 						local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 						token.setRuneVariant(this.Math.rand(31, 32));

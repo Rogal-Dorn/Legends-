@@ -199,13 +199,13 @@ this.legend_demonalp <- this.inherit("scripts/entity/tactical/actor", {
 
 					local r = this.Math.rand(1, 100);
 					local loot;
-					if (r <= 40)
+					if (r <= 50)
 					{
-						loot = this.new("scripts/items/misc/parched_skin_item");
+						loot = this.new("scripts/items/misc/legend_demon_alp_skin_item");
 					}
 					else if (r <= 80)
 					{
-						loot = this.new("scripts/items/misc/third_eye_item");
+						loot = this.new("scripts/items/misc/legend_demon_third_eye_item");
 					}
 					else
 					{
@@ -214,7 +214,7 @@ this.legend_demonalp <- this.inherit("scripts/entity/tactical/actor", {
 
 					loot.drop(_tile);
 
-					if (this.Math.rand(1, 100) < 10)
+					if (this.Math.rand(1, 100) < 50)
 					{
 						local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 						token.setRuneVariant(this.Math.rand(1, 3));
