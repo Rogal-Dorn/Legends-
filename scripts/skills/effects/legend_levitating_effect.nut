@@ -21,7 +21,7 @@ this.legend_levitating_effect <- this.inherit("scripts/skills/skill", {
 		actor.m.LevelActionPointCost = 0;
 	}
 
-	function onTurnStart()
+	function onTurnEnd()
 	{
 		this.removeSelf();
 	}

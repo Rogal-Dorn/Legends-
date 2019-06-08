@@ -779,13 +779,17 @@ New Map Config option: All trade locations - guarentees that at least of one of 
 
 
 Beta 11.3
+Updates mod to work with 1.3.0.21
 Fixes all players joining 1v1 champion event battles
 Adds minimum Per Head payment for contracts - Based on economic difficulty (1,5,10,5)
 Fixes Rangers Cascade Shot to use ammo. Each shot is now a separate shot, similiar to quick shot, except with the half damage and shield bonus from this perk. 
 Fixes issue where a Runed shield isn't displayed in the inventory.
 Fixes the Nobles' Inspire and Relax perks.
 Fixes incorrect party size for Legend Trader start.
-
+Reworks commander tent UI. No more drag and drop. Just select a tent, then toggle a bro to be assigned to it. Bros are listen in each tent from best to worst at the job.
+Fixes favored Hexe and Alp perks not being selectable.
+Fixes Levitate skill
+Fixes a crash when loading a save game with a bro with missing hand injury
 
 Known issues:
 Healing tooltips are incorrect
