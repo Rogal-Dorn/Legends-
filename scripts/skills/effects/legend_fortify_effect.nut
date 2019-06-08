@@ -44,8 +44,8 @@ this.legend_fortify_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 
-		_properties.MeleeDefense += 5);
-		_properties.RangedDefense += 5);
+		_properties.MeleeDefense += 5;
+		_properties.RangedDefense += 5;
 
 	}
 
