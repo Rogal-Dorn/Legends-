@@ -15,7 +15,7 @@ this.perk_student <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.getContainer().getActor().getLevel() < 11)
+		if (this.getContainer().getActor().getLevel() < 99)
 		{
 			_properties.XPGainMult *= 1.2;
 		}

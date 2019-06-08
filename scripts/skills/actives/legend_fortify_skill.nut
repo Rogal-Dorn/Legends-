@@ -141,6 +141,6 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Container.removeByID("effects.legend_fortify");
 	}
-
+	}
 });
 

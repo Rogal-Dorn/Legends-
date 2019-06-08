@@ -777,7 +777,8 @@ Adds Demon Alps - Elite Alps with levitate, anticipation, a horrifying scream an
 50% chance of dropping Demon Alp Skin 
 Demon Alp Helm - Grants horrific scream 
 80% chance of dropping a Demon's Third Eye that can be used to craft: 
-Demon Alp Trophy - Grants +10 resolve 
+Demon Alp Trophy - Grants +10% experience gain 
+Normal alp trophies now grant +5% experience gain 
 50% chance of dropping helm rune stone 
 
 Adds Greenwood Schrats - Elite Schrats with an even tougher shield that spawn many more greenwood saplings, who in turn spawn regular saplings.  Increased stats 
@@ -795,6 +796,11 @@ Drops stollwurm blood and scales That can be used to craft
 Stollwurm scale cloack - Adds 80 durability and immunity to stun 
 Stollwurm helmet - very durable, gives immunity to stun  (should be improved)
 50% chance of dropping an armor rune stone 
+
+Adds Hexen Coven Leader - Elite Hexe that can charm for five turns and cast magic missiles 
+50% chance of dropping Glowing hexen hair that can be used to craft 
+Hexen Leader charm - Grants +10 Resolve 
+Potion of Ichor - Grants +20 Health and Fatigue every turn for eight turns, also applies goblin poison for three turns 
 
 
 

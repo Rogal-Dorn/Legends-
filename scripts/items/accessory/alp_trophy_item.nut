@@ -56,8 +56,8 @@ this.alp_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 		result.push({
 			id = 10,
 			type = "text",
-			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve"
+			icon = "ui/icons/xp_received.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Experience Gain"
 		});
 		return result;
 	}
@@ -65,7 +65,7 @@ this.alp_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	function onUpdateProperties( _properties )
 	{
 		this.accessory.onUpdateProperties(_properties);
-		_properties.Bravery += 5;
+		_properties.XPGainMult *= 1.05;
 	}
 
 });

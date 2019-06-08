@@ -66,6 +66,7 @@ this.hexen_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	{
 		this.accessory.onUpdateProperties(_properties);
 		_properties.Bravery += 6;
+
 	}
 
 });

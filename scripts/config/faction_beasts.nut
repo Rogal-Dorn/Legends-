@@ -487,3 +487,23 @@ gt.Const.Tactical.Actor.LegendGreenwoodSchratSmall <- {
 		0
 	]
 };
+gt.Const.Tactical.Actor.LegendHexeLeader <- {
+	XP = 900,
+	ActionPoints = 9,
+	Hitpoints = 160,
+	Bravery = 200,
+	Stamina = 130,
+	MeleeSkill = 0,
+	RangedSkill = 75,
+	MeleeDefense = 15,
+	RangedDefense = 15,
+	Initiative = 130,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 15,
+	Vision = 8,
+	Armor = [
+		50,
+		0
+	]
+};

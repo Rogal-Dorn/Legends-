@@ -316,9 +316,17 @@ gt.Const.EntityType <- {
 	TricksterGod = 79,
 	BarbarianMadman = 80,
 	BanditRabble = 81,
-	LegendCat = 71,
-	LegendOrcElite = 72, 
-	LegendOrcBehemoth = 73,
+	LegendCat = 82,
+	LegendOrcElite = 83, 
+	LegendOrcBehemoth = 84,
+	LegendWhiteDirewolf = 85,
+	LegendSkinGhoul = 86,
+	LegendStollwurm = 87,
+	LegendRockUnhold = 88,
+	LegendRedbackSpider = 89,
+	LegendDemonAlp = 90,
+	LegendHexeLeader = 91,
+	LegendGreenwoodSchrat = 92
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -566,6 +574,14 @@ gt.Const.EntityIcon <- [
 	"rabble_orientation",
 	"cat_orientation",
 	"orc_elite_orientation",
-	"orc_behemoth_orientation"
+	"orc_behemoth_orientation",
+	"white_direwolf_orientation",
+	"skin_ghoul_orientation",
+	"stollwurm_orientation",
+	"rock_unhold_orientation",
+	"redback_spider_orientation",
+	"demonalp_orientation",
+	"hexen_leader_orientation",
+	"greenwood_schrat_orientation"
 ];
 

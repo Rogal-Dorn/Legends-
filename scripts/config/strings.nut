@@ -151,7 +151,16 @@ gt.Const.Strings.EntityName <- [
 	"Bandit Rabble",
 	"Cat",
 	"Orc Elite",
-	"Orc Behemoth"
+	"Orc Behemoth",
+	"White Direwolf",
+	"Skin Ghoul",
+	"Stollwurm",
+	"Rock Unhold",
+	"Redback Spider",
+	"Demon Alp",
+	"Hexe Coven Leader",
+	"Heartwood Schrat"
+
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -238,7 +247,15 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Bandit Rabble",
 	"Cats",
 	"Orc Elites",
-	"Orc Behemoth"
+	"Orc Behemoths",
+	"White Direwolves",
+	"Skin Ghouls",
+	"Stollwurms",
+	"Rock Unholds",
+	"Redback Spiders",
+	"Demon Alps",
+	"Hexe Coven Leaders",
+	"Heartwood Schrats"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",

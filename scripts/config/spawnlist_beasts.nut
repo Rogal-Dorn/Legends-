@@ -7226,6 +7226,5238 @@ gt.Const.World.Spawn.Hexen <- [
 		]
 	}
 ];
+gt.Const.World.Spawn.LegendHexeLeader <- [
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			},
+				{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			},
+				{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 8
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 8
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Ghoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_hexe_leader_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Hexe,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			}
+		]
+	},
+];
+gt.Const.World.Spawn.LegendRockUnhold <- [
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 1
+			}
+		]
+	},	
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_rock_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.UnholdFrost,
+				Num = 8
+			}
+		]
+	}
+];
+gt.Const.World.Spawn.LegendRedbackSpider <- [
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			}
+		]
+	},	
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 9
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.2,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_redback_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
+				Num = 4
+			}
+		]
+	},
+];
+gt.Const.World.Spawn.LegendDemonAlp <- [
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},	
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 9
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 9
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 11
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.1,
+		VisibilityMult = 0.7,
+		VisionMult = 1.3,
+		Body = "figure_demonalp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 12
+			}
+		]
+	}
+];
+gt.Const.World.Spawn.LegendStollwurm <- [
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 2
+			}
+		]
+	},	
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 9
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 9
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 11
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.9,
+		VisibilityMult = 1.0,
+		VisionMult = 1.1,
+		Body = "figure_stollwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendStollwurm,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 12
+			}
+		]
+	}
+];
+gt.Const.World.Spawn.LegendGreenwoodSchrat <- [
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 9
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 7
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 9
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 11
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 0.8,
+		VisibilityMult = 0.9,
+		VisionMult = 1.2,
+		Body = "figure_greenwood_schrat_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Schrat,
+				Num = 12
+			}
+		]
+	}
+];
 gt.Const.World.Spawn.Kraken <- [
 	{
 		MovementSpeedMult = 0.0,

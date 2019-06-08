@@ -57,7 +57,7 @@ this.legend_redback_spider_poison_effect <- this.inherit("scripts/skills/skill",
 			{
 				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.0, this.getContainer().getActor().getPos());
 			}
-			local timeDamage = (this.m.Damage * (19 - this.m.TurnsLeft);
+			local timeDamage = (this.m.Damage * this.m.TurnsLeft);
 			local hitInfo = clone this.Const.Tactical.HitInfo;
 			hitInfo.DamageRegular = timeDamage;
 		
