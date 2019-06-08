@@ -17,7 +17,7 @@ this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrad
 		this.m.SpriteDamagedBack = "upgrade_stollwurm_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_stollwurm_back_dead";
-		this.m.Value = 1600;
+		this.m.Value = 3200;
 		this.m.ConditionModifier = 80;
 		this.m.StaminaModifier = -4;
 	}
@@ -41,7 +41,7 @@ this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrad
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Unaffected by knockback"
+			text = "Immune to stun"
 		});
 		return result;
 	}
@@ -52,52 +52,29 @@ this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrad
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Unaffected by acidic Lindwurm blood"
+			text = "Immune to stun"
 		});
 	}
 
 	function onEquip()
 	{
-		this.item.onEquip();
-		local c = this.m.Armor.getContainer();
 
-		if (c != null && c.getActor() != null && !c.getActor().isNull())
-		{
-			c.getActor().getTags().add("body_immune_to_acid");
-		}
+		_properties.IsImmuneToStun = true;
 	}
 
 	function onUnequip()
 	{
-		this.item.onUnequip();
-		local c = this.m.Armor.getContainer();
-
-		if (c != null && c.getActor() != null && !c.getActor().isNull())
-		{
-			c.getActor().getTags().remove("body_immune_to_acid");
-		}
+		_properties.IsImmuneToStun = false;
 	}
 
 	function onAdded()
 	{
-		this.armor_upgrade.onAdded();
-		local c = this.m.Armor.getContainer();
-
-		if (c != null && c.getActor() != null && !c.getActor().isNull())
-		{
-			c.getActor().getTags().add("body_immune_to_acid");
-		}
+	_properties.IsImmuneToStun = true;
 	}
 
 	function onRemoved()
 	{
-		this.armor_upgrade.onRemoved();
-		local c = this.m.Armor.getContainer();
-
-		if (c != null && c.getActor() != null && !c.getActor().isNull())
-		{
-			c.getActor().getTags().remove("body_immune_to_acid");
-		}
+	_properties.IsImmuneToStun = false;
 	}
 
 });

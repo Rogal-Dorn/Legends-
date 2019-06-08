@@ -1,0 +1,44 @@
+this.legend_skin_ghoul_blood_flask_item <- this.inherit("scripts/items/accessory/accessory", {
+	m = {},
+	function create()
+	{
+		this.accessory.create();
+		this.m.ID = "accessory.legend_skin_ghoul_blood_flask";
+		this.m.Name = "Flask of Skin Ghoul Blood";
+		this.m.Description = "This flask holds the blood of a skin ghoul, it will heal to any skin it touches. If taken internally it will spread through your body, knitting flesh and closing wounds, and who knows what else.";
+		this.m.SlotType = this.Const.ItemSlot.Bag;
+		this.m.IsAllowedInBag = true;
+		this.m.IsDroppedAsLoot = true;
+		this.m.ShowOnCharacter = false;
+		this.m.IconLarge = "";
+		this.m.Icon = "consumables/potion_blood.png";
+		this.m.StaminaModifier = -2;
+		this.m.Value = 3500;
+	}
+
+	function getTooltip()
+	{
+		local result = this.accessory.getTooltip();
+		return result;
+	}
+
+	function playInventorySound( _eventType )
+	{
+		this.Sound.play("sounds/bottle_01.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function onEquip()
+	{
+		this.accessory.onEquip();
+		local skill = this.new("scripts/skills/actives/legend_drink_skin_ghoul_blood_skill");
+		skill.setItem(this);
+		this.addSkill(skill);
+	}
+
+	function onPutIntoBag()
+	{
+		this.onEquip();
+	}
+
+});
+

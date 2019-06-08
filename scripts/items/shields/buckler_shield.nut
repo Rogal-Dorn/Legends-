@@ -32,6 +32,7 @@ this.buckler_shield <- this.inherit("scripts/items/shields/shield", {
 	{
 		this.shield.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
+		this.addSkill(this.new("scripts/skills/actives/legend_buckler_bash_skill"));
 		this.addSkill(this.new("scripts/skills/effects/legend_buckler_effect"));
 	}
 
