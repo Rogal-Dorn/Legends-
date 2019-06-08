@@ -141,7 +141,7 @@ this.collector_wants_trophy_event <- this.inherit("scripts/events/event", {
 
 		foreach( item in stash )
 		{
-			if (item != null && item.isItemType(this.Const.Items.ItemType.Crafting) && item.getValue() >= 300)
+			if (item != null && item.isItemType(this.Const.Items.ItemType.Crafting) && item.getValue() >= 400)
 			{
 				candidates_items.push(item);
 			}
