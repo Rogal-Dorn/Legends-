@@ -559,6 +559,8 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		}
 
 		local candidates = [];
+		local candidates_other = [];
+		local candidates_monk = [];
 
 		foreach( bro in brothers )
 		{
@@ -571,35 +573,36 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			{
 				candidates.push(bro);
 			}
+			else
+			{
+				candidates_other.push(bro);
+
+				if (bro.getBackground().getID() == "background.monk")
+				{
+					candidates_monk.push(bro);
+				}
+			}
 		}
 
-		if (candidates.len() < 2 || candidates.len() == brothers.len())
+		if (candidates.len() < 2 || candidates_other.len() == 0 && candidates.len() <= 2)
 		{
 			return;
 		}
 
-		this.m.HedgeKnight1 = candidates[this.Math.rand(0, candidates.len() - 1)];
+		local r = this.Math.rand(0, candidates.len() - 1);
+		this.m.HedgeKnight1 = candidates[r];
+		candidates.remove(r);
+		r = this.Math.rand(0, candidates.len() - 1);
+		this.m.HedgeKnight2 = candidates[r];
+		candidates.remove(r);
 
-		do
+		if (candidates_other.len() > 0)
 		{
-			this.m.HedgeKnight2 = candidates[this.Math.rand(0, candidates.len() - 1)];
+			this.m.NonHedgeKnight = candidates_other[this.Math.rand(0, candidates_other.len() - 1)];
 		}
-		while (this.m.HedgeKnight2 == null || this.m.HedgeKnight2.getID() == this.m.HedgeKnight1.getID());
-
-		do
+		else
 		{
-			this.m.NonHedgeKnight = brothers[this.Math.rand(0, brothers.len() - 1)];
-		}
-		while (this.m.NonHedgeKnight.getID() == this.m.HedgeKnight1.getID() || this.m.NonHedgeKnight.getID() == this.m.HedgeKnight2.getID() || this.m.NonHedgeKnight.getBackground().getID() == "background.hedge_knight");
-
-		local candidates_monk = [];
-
-		foreach( bro in brothers )
-		{
-			if (bro.getBackground().getID() == "background.monk")
-			{
-				candidates_monk.push(bro);
-			}
+			this.m.NonHedgeKnight = candidates[this.Math.rand(0, candidates.len() - 1)];
 		}
 
 		if (candidates_monk.len() != 0)
@@ -607,7 +610,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			this.m.Monk = candidates_monk[this.Math.rand(0, candidates_monk.len() - 1)];
 		}
 
-		this.m.Score = candidates.len() * 6;
+		this.m.Score = (2 + candidates.len()) * 6;
 	}
 
 	function onPrepare()
