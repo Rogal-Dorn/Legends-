@@ -12,7 +12,7 @@ this.legend_redback_helmet_blueprint <- this.inherit("scripts/crafting/blueprint
 				Num = 1
 			},
 			{
-				Script = "scripts/items/helmets/barbute",
+				Script = "scripts/items/helmets/barbute_helmet",
 				Num = 1
 			},
 			{

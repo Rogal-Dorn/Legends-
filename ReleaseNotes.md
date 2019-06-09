@@ -786,14 +786,14 @@ Adds Greenwood Schrats - Elite Schrats with an even tougher shield that spawn ma
 50% chance of dropping ancient green wood that can be used to craft:
 Heartwood shield - regenerates durability each turn in combat 
 50% chance of dropping a shield rune stone 
-There is a contract to hunt them, unlocked by hiring a beast hunter and giving them 'Favoured Enemy Schrats' perk
+There is a contract to hunt them, unlocked by hiring a beast hunter and giving them 'Favoured Enemy Schrats' perk, which is available to: beast hunters, ranger, taxidermists, hunters, herbalists and lumberjacks
 
 
 Adds Rock Unholds - Elite Unholds with thick armor that regenerates in addition to their health regenerating. Increased stats 
 Drops Rock Unhold Bones and Hide that can be used to craft: 
 Helm of the Mountain - regenerates durability each turn 
 Armor of the Mountain - regenerates durability each turn 
-The contract to hunt these beasts is unlocked by a bro selecting 'Favoured Enemy Unhold' perk, which is available to beast hunters and miners. 
+The contract to hunt these beasts is unlocked by a bro selecting 'Favoured Enemy Unhold' perk, which is available to beast hunters, taxidermists, hunters, ranger, berserker, sheppards and miners. 
 
 
 Adds Stollwurm - Elite wurms that can burrow across the map and regenerate health each turn. Increased stats 
@@ -801,7 +801,7 @@ Drops stollwurm blood and scales That can be used to craft
 Stollwurm scale cloack - Adds 80 durability and immunity to stun 
 Stollwurm helmet - very durable, gives immunity to stun  (should be improved)
 50% chance of dropping an armor rune stone 
-The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy Lindwurm' perk, which is available to beast hunters, fishermen and miners. 
+The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy Lindwurm' perk, which is available to beast hunters, rangers, hunters, taxidermists, fishermen and miners. 
 
 
 Adds Hexen Coven Leader - Elite Hexe that can charm for five turns and cast magic missiles 
