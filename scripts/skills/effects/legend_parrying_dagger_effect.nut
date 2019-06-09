@@ -2,7 +2,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "effects.legend_bucker";
+		this.m.ID = "effects.legend_parrying_dagger";
 		this.m.Name = "Parry defense";
 		this.m.Description = "Parrying daggers work best against a single opponent, +40 defense when there is only a single enemy within 2 tiles";
 		this.m.Icon = "ui/perks/perk_61.png";
@@ -49,7 +49,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		local myFaction = actor.getFaction();
 		local nearbyEnemies = 0;
 		local actors = this.Tactical.Entities.getAllInstances();
-		local bonus = 5;
+		local bonus = 0;
 
 		foreach( i in actors )
 		{
@@ -57,7 +57,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 			{
 				if (a.getFaction() != myFaction)
 				{
-					if (a.getTile().getDistanceTo(myTile) <= 2)
+					if (a.getTile().getDistanceTo(myTile) <= 1)
 						{
 							++nearbyEnemies;
 							break;
@@ -68,7 +68,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		}
 		if (nearbyEnemies == 1)
 		{
-		this.m.Bonus = 30;
+		this.m.Bonus = 40;
 		}
 		if (nearbyEnemies == 2)
 		{

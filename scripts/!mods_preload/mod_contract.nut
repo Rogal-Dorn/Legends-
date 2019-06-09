@@ -115,7 +115,20 @@
 		return this.buildTextFromTemplate(_text, vars);
 	}
 
-	
+	local payFn = o.m.Payment.getOnCompletion;
+	o.m.Payment.getOnCompletion = function () 
+	{
+		local val = payFn();
+		return this.Math.max(this.Const.Difficulty.MinPayments[this.World.Assets.getEconomicDifficulty()], val)
+	}
+
+	local headFn = o.m.Payment.getPerCount
+	o.m.Payment.getPerCount = function ()
+	{
+		local val = headFn();
+		return this.Math.max(this.Const.Difficulty.MinHeadPayments[this.World.Assets.getEconomicDifficulty()], val)
+	}
+
 	o.getReputationToDifficultyMult = function()
 	{
 		local s = this.Math.maxf(0.35, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.94));

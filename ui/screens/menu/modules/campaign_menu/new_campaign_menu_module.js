@@ -208,7 +208,9 @@ var NewCampaignMenuModule = function()
 			Step: 1
 		},						
 		FOW : true,
-		Debug: false
+		Debug: false,
+		StackCitadels: false,
+		AllTradeLocations: false
 	};
 
 	this.mMapConfigOpts = {};
@@ -217,6 +219,10 @@ var NewCampaignMenuModule = function()
 	this.mFogofWarCheckboxLabel = null;
 	this.mDebugCheckbox = null;
 	this.mDebugCheckboxLabel = null;	
+	this.mStackCitadelsCheckbox = null;
+	this.mStackCitadelsCheckboxLabel = null;
+	this.mAllTradeLocationsCheckbox = null;
+	this.mAllTradeLocationsCheckboxLabel = null;
 
     // generics
     this.mIsVisible = false;
@@ -878,21 +884,21 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
-	this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', rightColumn);
-	this.createSliderControlDIV(this.mMapOptions.ForestsMult, 'Forest Density', rightColumn);
-	this.createSliderControlDIV(this.mMapOptions.SwampsMult, 'Swamp Density', rightColumn);
+	//this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', rightColumn);
+	//this.createSliderControlDIV(this.mMapOptions.ForestsMult, 'Forest Density', rightColumn);
+	//this.createSliderControlDIV(this.mMapOptions.SwampsMult, 'Swamp Density', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
 
-	this.mMapOptions.ForestsMult.Control.addClass('display-none');
-	this.mMapOptions.ForestsMult.Title.addClass('display-none');
-	this.mMapOptions.ForestsMult.Label.addClass('display-none');
-	this.mMapOptions.SwampsMult.Control.addClass('display-none');
-	this.mMapOptions.SwampsMult.Title.addClass('display-none');
-	this.mMapOptions.SwampsMult.Label.addClass('display-none');
-	this.mMapOptions.MountainsMult.Control.addClass('display-none');
-	this.mMapOptions.MountainsMult.Title.addClass('display-none');
-	this.mMapOptions.MountainsMult.Label.addClass('display-none');
+	// this.mMapOptions.ForestsMult.Control.addClass('display-none');
+	// this.mMapOptions.ForestsMult.Title.addClass('display-none');
+	// this.mMapOptions.ForestsMult.Label.addClass('display-none');
+	// this.mMapOptions.SwampsMult.Control.addClass('display-none');
+	// this.mMapOptions.SwampsMult.Title.addClass('display-none');
+	// this.mMapOptions.SwampsMult.Label.addClass('display-none');
+	// this.mMapOptions.MountainsMult.Control.addClass('display-none');
+	// this.mMapOptions.MountainsMult.Title.addClass('display-none');
+	// this.mMapOptions.MountainsMult.Label.addClass('display-none');
 
 	//this.createSliderControlDIV(this.mMapOptions.Vision, 'Vision', rightColumn);
 
@@ -918,9 +924,45 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
+	this.mStackCitadelsCheckbox = $('<input type="checkbox" id="cb-stackcitadel"/>');
+	control.append(this.mStackCitadelsCheckbox);
+	this.mStackCitadelsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-stackcitadel">Gucci Citadels</label>');
+	control.append(this.mStackCitadelsCheckboxLabel);
+	this.mStackCitadelsCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	if (this.mMapOptions.StackCitadels)
+	{
+		this.mStackCitadelsCheckbox.iCheck('check');
+	}
+
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mAllTradeLocationsCheckbox = $('<input type="checkbox" id="cb-allbuildings"/>');
+	control.append(this.mAllTradeLocationsCheckbox);
+	this.mAllTradeLocationsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-allbuildings">All trade buildings available</label>');
+	control.append(this.mAllTradeLocationsCheckboxLabel);
+	this.mAllTradeLocationsCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	if (this.mMapOptions.AllTradeLocations)
+	{
+		this.mAllTradeLocationsCheckbox.iCheck('check');
+	}
+
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
 	this.mDebugCheckbox = $('<input type="checkbox" id="cb-debug"/>');
 	control.append(this.mDebugCheckbox);
-	this.mDebugCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-debug">Debug</label>');
+	this.mDebugCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-debug">Debug Map</label>');
 	control.append(this.mDebugCheckboxLabel);
 	this.mDebugCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -942,10 +984,10 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 		this.mMapOptions.WaterConnectivity,
 		this.mMapOptions.Snowline,
 		this.mMapOptions.NumSettlements,
-		this.mMapOptions.NumFactions,
-		this.mMapOptions.ForestsMult,
-		this.mMapOptions.SwampsMult,
-		this.mMapOptions.MountainsMult
+		this.mMapOptions.NumFactions
+		// this.mMapOptions.ForestsMult,
+		// this.mMapOptions.SwampsMult,
+		// this.mMapOptions.MountainsMult
 	]
 	controls.forEach(function (_definition) {
 		_definition.Control.attr('min', _definition.Min);
@@ -962,6 +1004,14 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 	{
 		this.mDebugCheckbox.iCheck('check');
 	}	
+	if (this.mMapOptions.StackCitadels)
+	{
+		this.mStackCitadelsCheckbox.iCheck('check');
+	}
+	if( this.mMapOptions.AllTradeLocations)
+	{
+		this.mAllTradeLocationsCheckbox.iCheck('check');
+	}
 }
 
 NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
@@ -1087,14 +1137,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 	this.mMapOptions.Snowline.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.snowline' });
 	this.mMapOptions.Snowline.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.snowline' });	
 
-	this.mMapOptions.MountainsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });
-	this.mMapOptions.MountainsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });	
+	// this.mMapOptions.MountainsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });
+	// this.mMapOptions.MountainsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });	
 
-	this.mMapOptions.ForestsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });
-	this.mMapOptions.ForestsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });	
+	// this.mMapOptions.ForestsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });
+	// this.mMapOptions.ForestsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });	
 
-	this.mMapOptions.SwampsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });
-	this.mMapOptions.SwampsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });	
+	// this.mMapOptions.SwampsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });
+	// this.mMapOptions.SwampsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });	
 
 	this.mMapOptions.NumSettlements.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.settlements' });
 	this.mMapOptions.NumSettlements.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.settlements' });	
@@ -1104,6 +1154,12 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mFogofWarCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.fow' });
 	this.mFogofWarCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.fow' });
+
+	this.mStackCitadelsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.stackcitadels' });
+	this.mStackCitadelsCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.stackcitadels' });
+
+	this.mAllTradeLocationsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
+	this.mAllTradeLocationsCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function ()
@@ -1184,14 +1240,14 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mMapOptions.Snowline.Control.unbindTooltip();
 	this.mMapOptions.Snowline.Title.unbindTooltip();
 
-	this.mMapOptions.MountainsMult.Control.unbindTooltip();
-	this.mMapOptions.MountainsMult.Title.unbindTooltip();
+	// this.mMapOptions.MountainsMult.Control.unbindTooltip();
+	// this.mMapOptions.MountainsMult.Title.unbindTooltip();
 
-	this.mMapOptions.ForestsMult.Control.unbindTooltip();
-	this.mMapOptions.ForestsMult.Title.unbindTooltip();
+	// this.mMapOptions.ForestsMult.Control.unbindTooltip();
+	// this.mMapOptions.ForestsMult.Title.unbindTooltip();
 
-	this.mMapOptions.SwampsMult.Control.unbindTooltip();
-	this.mMapOptions.SwampsMult.Title.unbindTooltip();
+	// this.mMapOptions.SwampsMult.Control.unbindTooltip();
+	// this.mMapOptions.SwampsMult.Title.unbindTooltip();
 
 	this.mMapOptions.NumSettlements.Control.unbindTooltip();
 	this.mMapOptions.NumSettlements.Title.unbindTooltip();
@@ -1201,6 +1257,14 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mFogofWarCheckbox.unbindTooltip();
 	this.mFogofWarCheckboxLabel.unbindTooltip();	
+
+	this.mStackCitadelsCheckbox.unbindTooltip();
+	this.mStackCitadelsCheckboxLabel.unbindTooltip();
+
+	this.mAllTradeLocationsCheckbox.unbindTooltip();
+	this.mAllTradeLocationsCheckboxLabel.unbindTooltip();
+
+	
 };
 
 
@@ -1500,6 +1564,14 @@ NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 		if ('Debug' in _data) {
 			this.mMapOptions.Debug = _data['Debug'];
 		}
+		if ('StackCitadels' in _data)
+		{
+			this.mMapOptions.StackCitadels = _data['StackCitadels'];
+		}
+		if ('AllTradeLocations' in _data)
+		{
+			this.mMapOptions.AllTradeLocations = _data['AllTradeLocations'];
+		}
 	}
 	else
 	{
@@ -1540,7 +1612,9 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mMapOptions.ForestsMult.Value);
 	settings.push(this.mMapOptions.SwampsMult.Value);
 	settings.push(this.mMapOptions.MountainsMult.Value);
-	settings.push(this.mDebugCheckbox.is(':checked'));	
+	settings.push(this.mDebugCheckbox.is(':checked'));
+	settings.push(this.mStackCitadelsCheckbox.is(':checked'));
+	settings.push(this.mAllTradeLocationsCheckbox.is(':checked'));
     settings.push(this.mScenarios[this.mSelectedScenario].ID);
 	return settings;
 }

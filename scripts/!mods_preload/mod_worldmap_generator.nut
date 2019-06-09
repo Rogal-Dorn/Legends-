@@ -70,10 +70,15 @@
 		this.__ping();
 		this.buildRoads(_rect, _properties);
 		this.__ping();
-		this.refineSettlements(_rect);
+		this.refineSettlements(_rect, _properties);
 		this.__ping();
 		this.guaranteeAllBuildingsInSettlements();
 		this.__ping();
+		if ( _properties.AllTradeLocations )
+		{
+			this.guaranteeAllLocations(_rect, _properties);
+			this.__ping();
+		}
 		this.buildAdditionalRoads(_rect, _properties);
 		this.__ping();
 		this.buildRoadSprites(_rect, _properties);
@@ -102,8 +107,13 @@
 
 			y = this.Math.rand(6, _rect.H * 0.95);
 			local tile = this.World.getTileSquare(x, y);
-			local next = false;
+			
+			if (settlementTiles.find(tile.ID) != null)
+			{
+				continue;
+			}
 
+			local next = false;
 			local distance = 12;
 			if (tries > 3000) {
 				distance = 8;
@@ -111,6 +121,7 @@
 			if (tries > 6000) {
 				distance = 4;
 			}
+
 			foreach( settlement in settlementTiles )
 			{
 				if (tile.getDistanceTo(settlement) < distance)
@@ -186,10 +197,10 @@
 				local skip = true;
 				local navSettings = this.World.getNavigator().createSettings();
 
-				foreach( s in this.World.EntityManager.getSettlements() )
+				for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 				{
 					navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
-					local path = this.World.getNavigator().findPath(tile, s.getTile(), navSettings, 0);
+					local path = this.World.getNavigator().findPath(tile,  settlementTiles[i], navSettings, 0);
 
 					if (!path.isEmpty())
 					{
@@ -203,15 +214,15 @@
 					continue;
 				}
 			}
-			else if (settlementTiles.len() >= 1 && tries < 1000)
+			else if (settlementTiles.len() >= 1 && tries < 500)
 			{
 				local hasConnection = false;
 
-				foreach( settlement in settlementTiles )
+				for( local i = settlementTiles.len() - 1; i >= 0; i = --i )
 				{
 					local navSettings = this.World.getNavigator().createSettings();
 					navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
-					local path = this.World.getNavigator().findPath(tile, settlement, navSettings, 0);
+					local path = this.World.getNavigator().findPath(tile, settlementTiles[i], navSettings, 0);
 
 					if (!path.isEmpty())
 					{
@@ -238,7 +249,6 @@
 	{
 		this.LoadingScreen.updateProgress("Building Settlements ...");
 		this.logInfo("Building settlements...");
-		local tries = 0;
 		local isLeft = this.Math.rand(0, 1);
 		local settlementTiles = [];
 
@@ -248,9 +258,13 @@
 			//Add at least one of each
 			foreach (s in list.List)
 			{
-				settlementTiles = this.addSettlement(_rect, isLeft, s.List, settlementTiles);
-				num = --num;
+				for (local i = 0; i < s.MinAmount; i = ++i)
+				{
+					settlementTiles = this.addSettlement(_rect, isLeft, s.List, settlementTiles);
+					num = --num;
+				}
 			}
+
 			while (num > 0)
 			{
 				local r = this.Math.rand(1, 10);
@@ -271,5 +285,187 @@
 
 		this.logInfo("Created " + settlementTiles.len() + " settlements.");
 		return settlementTiles.len() >= 19
-	}	
+	}
+
+	o.refineSettlements = function (_rect, _properties )
+	{
+		local settlements = this.World.EntityManager.getSettlements();
+
+		foreach( s in settlements )
+		{
+			s.updateProperties();
+			s.build(_properties);
+		}
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				local tile = this.World.getTileSquare(x, y);
+
+				foreach( s in settlements )
+				{
+					local d = s.getTile().getDistanceTo(tile);
+
+					if (d > 6)
+					{
+						continue;
+					}
+
+					tile.HeatFromSettlements = tile.HeatFromSettlements + (6 - d);
+				}
+			}
+		}
+	}
+
+	o.guaranteeAllLocations <- function( _rect, _properties )
+	{
+		local locs = {}
+		locs["attached_location.amber_collector"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/amber_collector_location"
+		}
+		locs["attached_location.beekeeper"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/beekeeper_location"
+		};
+		locs["attached_location.brewery"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/brewery_location"
+		};
+		locs["attached_location.dye_maker"] <- { 
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/dye_maker_location"
+		};
+		locs["attached_location.fishing_huts"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/fishing_huts_location"
+		};
+		locs["attached_location.gatherers_hut"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/gatherers_hut_location"
+		};
+		locs["attached_location.gem_mine"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/gem_mine_location"
+		};
+		locs["attached_location.goat_herd"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/goat_herd_location"
+		};
+		locs["attached_location.gold_mine"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/gold_mine_location"
+		};
+		locs["attached_location.herbalists_grove"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/herbalists_grove_location"
+		};
+		locs["attached_location.hunters_cabin"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/hunters_cabin_location"
+		};
+		locs["attached_location.leather_tanner"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/leather_tanner_location"
+		};
+		locs["attached_location.lumber_camp"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/lumber_camp_location"
+		};
+		locs["attached_location.mushroom_grove"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/mushroom_grove_location"
+		};
+		locs["attached_location.orchard"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/orchard_location"
+		};
+		locs["attached_location.peat_pit"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/peat_pit_location"
+		};
+		locs["attached_location.pig_farm"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/pig_farm_location"
+		};
+		locs["attached_location.salt_mine"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/salt_mine_location"
+		};
+		locs["attached_location.surface_copper_vein"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/surface_copper_vein_location"
+		};
+		locs["attached_location.surface_iron_vein"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/surface_iron_vein_location"
+		};
+		locs["attached_location.trapper"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/trapper_location"
+		};		
+		locs["attached_location.wheat_fields"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/wheat_fields_location"
+		};
+		locs["attached_location.winery"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/winery_location"
+		};
+		locs["attached_location.wool_spinner"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/wool_spinner_location"
+		};
+		locs["attached_location.workshop"] <- {
+			Amount = 0,
+			Script = "scripts/entity/world/attached_location/workshop_location"
+		};
+
+		local settlements = this.World.EntityManager.getSettlements();
+		foreach( s in settlements )
+		{
+			foreach (a in s.getAttachedLocations())
+			{
+				if (a.getTypeID() in locs)
+				{
+					locs[a.getTypeID()].Amount += 1
+				}
+			}
+		}
+		
+		foreach (k,v in locs)
+		{
+
+			if (v.Amount > 0)
+			{
+				continue;
+			}
+
+			local ALL = [
+				this.Const.World.TerrainType.Plains,
+				this.Const.World.TerrainType.Steppe,
+				this.Const.World.TerrainType.Snow,
+				this.Const.World.TerrainType.Hills,
+				this.Const.World.TerrainType.Tundra,
+				this.Const.World.TerrainType.Forest,
+				this.Const.World.TerrainType.SnowyForest,
+				this.Const.World.TerrainType.AutumnForest,
+				this.Const.World.TerrainType.LeaveForest
+			];
+			local tries = 0;
+			while (tries++ < 1000)
+			{
+				local index = this.Math.rand(0, settlements.len() - 1)
+				settlements[index].buildAttachedLocation(1, v.Script, ALL, [], 2, false, true, true);
+				if (settlements[index].hasAttachedLocation(k)) {
+					//this.logInfo("Added " + k)
+					break;
+				}
+				tries = --tries;
+			}
+		}
+
+	}
+
 })

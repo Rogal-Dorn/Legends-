@@ -13,37 +13,5 @@ this.perk_legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-
-	function onAdded()
-	{
-		if (!this.getContainer().getActor().isArmedWithRangedWeapon()) 
-		{
-			return
-		}
-
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item == null)
-		{
-			return;
-		}
-		this.getContainer().getActor().getItems().unequip(item);
-		this.getContainer().getActor().getItems().equip(item);
-	}
 	
-	function onRemoved()
-	{
-		if (!this.getContainer().getActor().isArmedWithRangedWeapon()) 
-		{
-			return
-		}
-
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item == null)
-		{
-			return;
-		}
-		this.getContainer().getActor().getItems().unequip(item);
-		this.getContainer().getActor().getItems().equip(item);
-	}
-
 });

@@ -31,7 +31,7 @@ while read -r line; do
         elif [ "$xpath" == "scripts/entity/tactical/actor.nut" ]; then
             echo "skipping $xpath"
         elif [ "$xpath" == "scripts/entity/tactical/tactical_entity_manager.nut" ]; then
-            echo "skipping $xpath"                           
+            echo "skipping $xpath"
         else
             echo "$xpath"
             path=$( echo ${xpath%/*} )
