@@ -25,6 +25,8 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.Gifted,
 		gt.Const.Perks.PerkDefs.LegendNightvision,
 		gt.Const.Perks.PerkDefs.Debilitate,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
 		gt.Const.Perks.PerkDefs.Sprint
 	],
 	[
@@ -38,9 +40,13 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.LegendRoster3		
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryPoison,
-		gt.Const.Perks.PerkDefs.MasteryBow,
+		gt.Const.Perks.PerkDefs.MasteryAxe,
+		gt.Const.Perks.PerkDefs.MasterySword,
+		gt.Const.Perks.PerkDefs.MasteryDagger,
 		gt.Const.Perks.PerkDefs.MasteryCrossbow,
+		gt.Const.Perks.PerkDefs.MasteryBow,
+		gt.Const.Perks.PerkDefs.LegendMasteryNets,
+		gt.Const.Perks.PerkDefs.MasteryPoison,
 		gt.Const.Perks.PerkDefs.MasteryThrowing
 	],
 	[
@@ -50,6 +56,8 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.CloseCombatArcher,
 		gt.Const.Perks.PerkDefs.Ballistics,
 		gt.Const.Perks.PerkDefs.LegendAmmoBundles,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 		gt.Const.Perks.PerkDefs.LegendRoster5		
 	],
 	[
@@ -61,6 +69,9 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.LegendCascade,
 		gt.Const.Perks.PerkDefs.LegendPiercingShot,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[

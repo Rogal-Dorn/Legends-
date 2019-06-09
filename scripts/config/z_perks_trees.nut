@@ -114,6 +114,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 		case "background.farmhand":
 			return gt.Const.Perks.TreePitchforkLookupMap;
 			break;
+		case "background.female_farmhand":
+			return gt.Const.Perks.TreePitchforkLookupMap;
+			break;
 		case "background.poacher":
 			return gt.Const.Perks.TreeShortbowLookupMap;
 			break;
@@ -124,6 +127,9 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeShovelLookupMap;
 			break;
 		case "background.butcher":
+			return gt.Const.Perks.TreeButcherLookupMap;
+			break;
+		case "background.legend_cannibal":
 			return gt.Const.Perks.TreeButcherLookupMap;
 			break;
 		case "background.female_butcher":
@@ -181,16 +187,28 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeHunterLookupMap;
 			break;
 		case "background.female_adventurous_noble":
-			return gt.Const.Perks.TreeHunterLookupMap;
+			return gt.Const.Perks.TreeArcherLookupMap;
 			break;
 		case "background.female_disowned_noble":
-			return gt.Const.Perks.TreeHunterLookupMap;
+			return gt.Const.Perks.TreeArcherLookupMap;
 			break;
 		case "background.female_bowyer":
-			return gt.Const.Perks.TreeHunterLookupMap;
+			return gt.Const.Perks.TreeArcherLookupMap;
 			break;
 		case "background.bowyer":
-			return gt.Const.Perks.TreeHunterLookupMap;
+			return gt.Const.Perks.TreeArcherLookupMap;
+			break;
+		case "background.monk":
+			return gt.Const.Perks.TreeHolyLookupMap;
+			break;
+		case "background.legend_nun":
+			return gt.Const.Perks.TreeHolyLookupMap;
+			break;
+		case "background.legend_taxidermist":
+			return gt.Const.Perks.TreeTaxidermistLookupMap;
+			break;
+		case "background.witch_hunter":
+			return gt.Const.Perks.TreeWitchHunterLookupMap;
 			break;
 		default:
 			return gt.Const.Perks.TreeTemplateLookupMap;
@@ -286,6 +304,9 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 		case "background.farmhand":
 			return gt.Const.Perks.PerksTreePitchfork;
 			break;
+		case "background.female_farmhand":
+			return gt.Const.Perks.PerksTreePitchfork;
+			break;
 		case "background.poacher":
 			return gt.Const.Perks.PerksTreeShortbow;
 			break;
@@ -305,6 +326,9 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeKnife;
 			break;
 		case "background.female_butcher":
+			return gt.Const.Perks.PerksTreeButcher;
+			break;
+		case "background.legend_cannibal":
 			return gt.Const.Perks.PerksTreeButcher;
 			break;
 		case "background.butcher":
@@ -353,16 +377,28 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeHunter;
 			break;
 		case "background.female_adventurous_noble":
-			return gt.Const.Perks.PerksTreeHunter;
+			return gt.Const.Perks.PerksTreeArcher;
 			break;
 		case "background.female_disowned_noble":
-			return gt.Const.Perks.PerksTreeHunter;
+			return gt.Const.Perks.PerksTreeArcher;
 			break;
 		case "background.female_bowyer":
-			return gt.Const.Perks.PerksTreeHunter;
+			return gt.Const.Perks.PerksTreeArcher;
 			break;
 		case "background.bowyer":
-			return gt.Const.Perks.PerksTreeHunter;
+			return gt.Const.Perks.PerksTreeArcher;
+			break;
+		case "background.monk":
+			return gt.Const.Perks.PerksTreeHoly;
+			break;
+		case "background.legend_nun":
+			return gt.Const.Perks.PerksTreeHoly;
+			break;
+		case "background.legend_taxidermist":
+			return gt.Const.Perks.PerksTreeTaxidermist;
+			break;
+		case "background.witch_hunter":
+			return gt.Const.Perks.PerksTreeWitchHunter;
 			break;
 		default:
 			return gt.Const.Perks.PerksTreeTemplate;

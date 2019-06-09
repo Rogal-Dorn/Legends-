@@ -59,6 +59,7 @@ local PickaxeTree = [
 		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Overwhelm,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 		gt.Const.Perks.PerkDefs.Footwork
 
 	],
@@ -66,6 +67,7 @@ local PickaxeTree = [
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 		gt.Const.Perks.PerkDefs.BattleForged
 
 	],
@@ -73,6 +75,7 @@ local PickaxeTree = [
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 		gt.Const.Perks.PerkDefs.Indomitable
 		
 	],

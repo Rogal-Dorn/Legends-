@@ -26,7 +26,8 @@ local ShovelTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
-		gt.Const.Perks.PerkDefs.Gifted
+		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul
 	],
 	[
 		gt.Const.Perks.PerkDefs.BackStabber,	
@@ -60,7 +61,9 @@ local ShovelTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.LegendResurrectionist,
-		gt.Const.Perks.PerkDefs.Footwork
+		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyZombie
 
 	],
 	[
@@ -74,7 +77,8 @@ local ShovelTree = [
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
-		gt.Const.Perks.PerkDefs.Indomitable
+		gt.Const.Perks.PerkDefs.Indomitable,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyVampire
 		
 	],
 	[],

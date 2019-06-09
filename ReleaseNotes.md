@@ -762,6 +762,7 @@ Drops redback poison, can be used to craft:
 Redback spider helm - made from the carapace of a redback spider, grants the web skill
 Redback dagger - made from the fangs and poison gland of a redback spider, inflicts redback poison 
 
+
 Adds White Wolves -  Elite direwolves with increased AP so they can attack three times in a turn applying overwhelm. Or howl twice increasing their allies resolve by 30 each time.  All other stats increased, and more cunning AI. Increased stats over frenzied direwolves. 
 Drops white wolf pelt that can be used to craft:
 white wolf helm - decreased the morale of adjacent enemies by 20 
@@ -785,17 +786,23 @@ Adds Greenwood Schrats - Elite Schrats with an even tougher shield that spawn ma
 50% chance of dropping ancient green wood that can be used to craft:
 Heartwood shield - regenerates durability each turn in combat 
 50% chance of dropping a shield rune stone 
+There is a contract to hunt them, unlocked by hiring a beast hunter and giving them 'Favoured Enemy Schrats' perk
 
-Adds Rock Unholds - Elite Unholds with thick armor that regenerates in addition to their health. Increased stats 
+
+Adds Rock Unholds - Elite Unholds with thick armor that regenerates in addition to their health regenerating. Increased stats 
 Drops Rock Unhold Bones and Hide that can be used to craft: 
 Helm of the Mountain - regenerates durability each turn 
 Armor of the Mountain - regenerates durability each turn 
+The contract to hunt these beasts is unlocked by a bro selecting 'Favoured Enemy Unhold' perk, which is available to beast hunters and miners. 
+
 
 Adds Stollwurm - Elite wurms that can burrow across the map and regenerate health each turn. Increased stats 
 Drops stollwurm blood and scales That can be used to craft 
 Stollwurm scale cloack - Adds 80 durability and immunity to stun 
 Stollwurm helmet - very durable, gives immunity to stun  (should be improved)
 50% chance of dropping an armor rune stone 
+The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy Lindwurm' perk, which is available to beast hunters, fishermen and miners. 
+
 
 Adds Hexen Coven Leader - Elite Hexe that can charm for five turns and cast magic missiles 
 50% chance of dropping Glowing hexen hair that can be used to craft 
@@ -803,6 +810,22 @@ Hexen Leader charm - Grants +10 Resolve
 Potion of Ichor - Grants +20 Health and Fatigue every turn for eight turns, also applies goblin poison for three turns 
 
 
+Nun and Monk gain a 'Field Triage' ability to heal on the battlefield in exchange for meds. They also gain skills for storing more meds, bandage mastery and favoured enemy perks for Alps, Hexen and Vampires. They lose berserk, fearsome, headhunter, kiling frenzy, executioner and all bladed specialisations,
+Witch hunter gains True Believer, Close combat archer, piercing shot and favoured enemies for ghoul, skeleton, zombie, hexen, alp and vampire. Loses battleforged, brawny, colossus and specialisations for axe and spear. 
+Berserker gains favoured enemies ork, goblin and unhold 
+Crusader gains favoured enemies ghoul, skeleton, zombie, hexen and vampire
+Ranger gains Specialisation in axe, sword, dagger and nets. Favoured enemies direwolf, spider, ork, goblin, schrat, unhold, lindwurm 
+Hunter gains net mastery and favoured enemies Direwolf, Spider, Ork, Goblin, Schrat, Unhold and lindwurm 
+Canibal gains skills with a butcher's knife
+Butcher, fishwife and cannibal gain favoured enemies Ghoul, skeleton and zombie. They know about chopping up bodies.  
+Poachers gain favoured enemies direwolves, spiders, goblins and schrats.  
+Herbalists and lumberjacks gain favoured enemies Spiders and Schrats, lost in the woods 
+Sheppards gain favoured enemies direwolves, spiders and unholds, because thats what you use your sling on while gaurding sheep in hills
+Miners gain favoured enemies Orks, Unholds and lindwurms, because mountains. 
+Fishermen gain favoured enemy lindwurms, because seamonsters. 
+Milkmaid gains pitchfork skills
+Milkmaid and farmer gain favoured enemy direwolf, because wolves like farms. 
+Gravediggers and graverobbers gain favoured enemies ghouls, skeletons, zombies and vampires. Stay dead damnit!  
 
 Known issues:
 Warlock summons causing a crash on load? 

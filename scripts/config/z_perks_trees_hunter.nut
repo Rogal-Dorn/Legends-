@@ -25,7 +25,8 @@ local HunterTree = [
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.Lookout,
-		gt.Const.Perks.PerkDefs.Gifted
+		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf
 
 
 	],
@@ -37,17 +38,16 @@ local HunterTree = [
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.Taunt,
-		gt.Const.Perks.PerkDefs.Sprint
+		gt.Const.Perks.PerkDefs.Sprint,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySpider
 	],
 	[
 		gt.Const.Perks.PerkDefs.MasteryAxe,
-		gt.Const.Perks.PerkDefs.MasteryCleaver,
 		gt.Const.Perks.PerkDefs.MasterySword,
 		gt.Const.Perks.PerkDefs.MasteryDagger,
-		gt.Const.Perks.PerkDefs.MasteryPolearm,
-		gt.Const.Perks.PerkDefs.MasterySpear,
 		gt.Const.Perks.PerkDefs.MasteryCrossbow,
 		gt.Const.Perks.PerkDefs.MasteryBow,
+		gt.Const.Perks.PerkDefs.LegendMasteryNets,
 		gt.Const.Perks.PerkDefs.MasteryThrowing
 
 	],
@@ -57,12 +57,17 @@ local HunterTree = [
 		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin
 	],
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
-		gt.Const.Perks.PerkDefs.Ballistics
+		gt.Const.Perks.PerkDefs.Ballistics,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm
 
 	],
 	[

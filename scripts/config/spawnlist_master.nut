@@ -436,7 +436,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	Spider = {
 		ID = this.Const.EntityType.Spider,
-		Variant = 0,
+		Variant = 1,
 		Strength = 12,
 		Cost = 12,
 		Row = -1,
@@ -492,7 +492,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	Schrat = {
 		ID = this.Const.EntityType.Schrat,
-		Variant = 0,
+		Variant = 1,
 		Strength = 70,
 		Cost = 70,
 		Row = -1,

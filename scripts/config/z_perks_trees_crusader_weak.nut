@@ -25,7 +25,8 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.LegendTrueBeliever,
-		gt.Const.Perks.PerkDefs.Steadfast
+		gt.Const.Perks.PerkDefs.Steadfast,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul
 	],
 	[
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -53,7 +54,9 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.FullForce,
 		gt.Const.Perks.PerkDefs.ReturnFavor,
-		gt.Const.Perks.PerkDefs.InspiringPresence
+		gt.Const.Perks.PerkDefs.InspiringPresence,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyZombie
 	],
 	[
 		gt.Const.Perks.PerkDefs.Berserk,
@@ -70,6 +73,7 @@ local CrusaderWeakTree = [
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus
 	],
 	[],

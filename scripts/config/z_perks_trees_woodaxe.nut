@@ -26,6 +26,7 @@ local WoodaxeTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
 		gt.Const.Perks.PerkDefs.Gifted
 	],
 	[
@@ -66,6 +67,7 @@ local WoodaxeTree = [
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
 		gt.Const.Perks.PerkDefs.BattleForged
 
 	],

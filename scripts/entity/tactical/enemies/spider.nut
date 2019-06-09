@@ -328,5 +328,50 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("legs_front", offset);
 	}
 
+
+function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.actor.makeMiniboss();
+		this.m.Skills.add(this.new("scripts/skills/racial/legend_redback_spider_racial"));
+		this.m.BaseProperties.setValues(this.Const.Tactical.Actor.LegendRedbackSpider);
+
+
+		legs_back.setBrush("bust_spider_redback_legs_back");
+		local body = this.addSprite("body");
+		body.setBrush("bust_spider_redback_body_0" + this.Math.rand(1, 4));
+		if (this.Math.rand(0, 100) < 90)
+		{
+			body.varySaturation(0.3);
+		}
+
+		if (this.Math.rand(0, 100) < 90)
+		{
+			body.varyColor(0.1, 0.1, 0.1);
+		}
+
+		if (this.Math.rand(0, 100) < 90)
+		{
+			body.varyBrightness(0.1);
+		}
+		local legs_front = this.addSprite("legs_front");
+		legs_front.setBrush("bust_spider_redback_legs_front");
+		legs_front.Color = body.Color;
+		legs_front.Saturation = body.Saturation;
+		legs_back.Color = body.Color;
+		legs_back.Saturation = body.Saturation;
+		local head = this.addSprite("head");
+		head.setBrush("bust_spider_redback_head_01");
+		head.Color = body.Color;
+		head.Saturation = body.Saturation;
+
+		return true;
+	}
+
+
 });
 

@@ -26,7 +26,9 @@ local ShortbowTree = [
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.Lookout,
 		gt.Const.Perks.PerkDefs.QuickHands,
-		gt.Const.Perks.PerkDefs.Gifted
+		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySpider
 	],
 	[
 		gt.Const.Perks.PerkDefs.BackStabber,	
@@ -57,7 +59,8 @@ local ShortbowTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Sprint,
-		gt.Const.Perks.PerkDefs.Footwork
+		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin
 
 	],
 	[
@@ -65,13 +68,14 @@ local ShortbowTree = [
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.Debilitate,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemySchrat
 
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
-		gt.Const.Perks.PerkDefs.Indomitable
+		gt.Const.Perks.PerkDefs.Indomitable,
 		gt.Const.Perks.PerkDefs.DoubleStrike
 	],
 	[],
