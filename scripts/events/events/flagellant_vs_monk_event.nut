@@ -10,7 +10,7 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]The campfire shines bright, twisting the faces of men in flowing orange as though they themselves were of burning stock.\n\n It is here you find %monk% and %flagellant% talking to one another. Their discussion is, at first, an easy one. The monk pleads with the flagellant to set aside his whip. While you don\'t necessarily wish to step in, you can\'t help but agree that destroying your own body on a glorified gore-schedule is not the best way to live. But then the flagellant retorts with something that gives you both pause. It is a phrase so well crafted that to think it might justify the man\'s personal habits has you pushing the notion out of your head as fast as possible. Disturbing, too, was the ease with which he said it. That such a soothing voice could be so warmly bundled in that scarred husk of flesh. What could muster it?\n\n The monk stammers for a moment, but then puts his hands to the flagellant\'s shoulders, holding him to keep their eyes on one another. He whispers, words which tickle your ears, but don\'t pronounce themselves loud enough to have real meaning. You can only assume they are meant to, once again, persuade the flagellant to a better, less violent life.\n\n But, again, the flagellant begins to respond and so back and forth they continue to go.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]The campfire shines bright, twisting the company\'s faces in flowing orange as though they themselves were of burning stock.\n\n It is here you find %monk% and %flagellant% talking to one another. Their discussion is, at first, an easy one. The holy figure pleads with the flagellant to set aside his whip. While you don\'t necessarily wish to step in, you can\'t help but agree that destroying your own body on a glorified gore-schedule is not the best way to live. But then the flagellant retorts with something that gives you both pause. It is a phrase so well crafted that to think it might justify the man\'s personal habits has you pushing the notion out of your head as fast as possible. Disturbing, too, was the ease with which he said it. That such a soothing voice could be so warmly bundled in that scarred husk of flesh. What could muster it?\n\n The pious one stammers for a moment, but then puts hands to the flagellant\'s shoulders, holding him to keep their eyes on one another. Whispering words which tickle your ears, but don\'t pronounce themselves loud enough to have real meaning. You can only assume they are meant to, once again, persuade the flagellant to a better, less violent life.\n\n But, again, the flagellant begins to respond and so back and forth they continue to go.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -41,7 +41,7 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_05.png[/img]Deciding to let the men talk, you step away for a time. When you return, you find the flagellant sitting next to the monk. The two saw back and forth on a log, their hands clasped in prayer as whispers of heavenly words part their lips. You\'ve no urge to get closer to hear what they are saying for it is a comforting sight in and of itself. While you have no dog in what way is best to appease the gods, you can\'t help but feel a little better seeing the flagellant put down his tools of self-torture.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]Deciding to let them talk, you step away for a time. When you return, you find them sitting together. The two saw back and forth on a log, their hands clasped in prayer as whispers of heavenly words part their lips. You\'ve no urge to get closer to hear what they are saying for it is a comforting sight in and of itself. While you have no dog in what way is best to appease the gods, you can\'t help but feel a little better seeing the flagellant put down his tools of self-torture.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -83,7 +83,7 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_05.png[/img]Deciding to let the men talk, you step away for a time.\n\nWhen you come back, the monk is naked and bent over with tears in his eyes. His shape is craven, but his face is gutting as though this is always what he wanted. With a gulp of air he straightens up and flicks his wrist over his shoulder. The flagellant\'s whip is in hand and you hear the leather slap against the monk\'s back. He pulls the tool away and the sound of glass and barbs tearing flesh causes a ringing in your ears. The flagellant himself says nothing. He has set himself down by the monk\'s side. He stares out across the land, but there is hardly a shimmer of life in his eyes, though you certainly see the blood of his life leaving his backside as he treats himself to a beating.\n\nYou step away once more, but the grass beneath your feet doesn\'t have the same crunch to it and the air carries a copper scent. Little leather snickers follow you all the way back to your tent.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]Deciding to let the men talk, you step away for a time.\n\nWhen you come back, the religious official is naked and bent over with teary eyes. With a craven shape, but face gutting as though this was always wanted. They straighten up with a gulp of air and a flicked wrist over the shoulder. The flagellant\'s whip is in hand and you hear the leather slap against the clean back. He pulls the tool away and the sound of glass and barbs tearing flesh causes a ringing in your ears. The flagellant himself says nothing. He has set himself down by the religious one\'s side. He stares out across the land, but there is hardly a shimmer of life in his eyes, though you certainly see the blood of his life leaving his backside as he treats himself to a beating.\n\nYou step away once more, but the grass beneath your feet doesn\'t have the same crunch to it and the air carries a copper scent. Little leather snickers follow you all the way back to your tent.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -153,7 +153,7 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.monk")
+			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
 			{
 				monk_candidates.push(bro);
 			}

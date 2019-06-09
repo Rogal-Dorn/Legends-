@@ -856,6 +856,7 @@ Potion of Ichor - Grants +20 Health and Fatigue every turn for eight turns, also
 
 
 Nun and Monk gain a 'Field Triage' ability to heal on the battlefield in exchange for meds. They also gain skills for storing more meds, bandage mastery and favoured enemy perks for Alps, Hexen and Vampires. They lose berserk, fearsome, headhunter, kiling frenzy, executioner and all bladed specialisations,
+Nuns can now craft holy water, get in religious debates, and convert flagelents or be converted
 Witch hunter gains True Believer, Close combat archer, piercing shot and favoured enemies for ghoul, skeleton, zombie, hexen, alp and vampire. Loses battleforged, brawny, colossus and specialisations for axe and spear. 
 Berserker gains favoured enemies ork, goblin and unhold 
 Crusader gains favoured enemies ghoul, skeleton, zombie, hexen and vampire

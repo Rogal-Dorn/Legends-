@@ -11,7 +11,7 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 60.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img] Ah, the campfire is brimming with talk and chatter. The men are enjoying some beer and food when rather suddenly the shouts of two men in particular get everyone else to quiet down, not because they yell louder than the rest, but because it\'s rather out of character for the both of them: the monks %monk1% and %monk2% are screaming-deep in a theological debate.\n\nYou\'ve not the education to understand the intricacies nor complexities of what they are arguing, but you do understand that getting into another man\'s face and pointing furiously at him, or at a holy book, is probably asking for trouble one way or another.",
+			Text = "[img]gfx/ui/events/event_05.png[/img] Ah, the campfire is brimming with talk and chatter. The men are enjoying some beer and food when rather suddenly the shouts of two in particular get everyone else to quiet down, not because they yell louder than the rest, but because it\'s rather out of character for the both of them: the holy folk %monk1% and %monk2% are screaming-deep in a theological debate.\n\nYou\'ve not the education to understand the intricacies nor complexities of what they are arguing, but you do understand that getting into another person\'s face and pointing furiously, or at a holy book, is probably asking for trouble one way or another.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -42,13 +42,13 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_05.png[/img] For a moment, you think to stop the debate before it gets out of hand and into fists, but then you remember that this isn\'t the first time you\'ve seen two holy men exchanging rather heatedly. It\'s just what they do. So you decide to let the men hash it out. In time, their voices lower in volume, and their faces lower together into a book. They quietly peruse it, bumping heads as they draw their eyes over the pages. Finally, %monk1% raises up, pointing to some sentence.%SPEECH_ON%There! Right there! \'Man from mud\', not \'man from blood\'. Man can\'t be from blood, he is blood! Man can\'t be from himself, see? Now does it make sense?%SPEECH_OFF%Scratching his chin, %monk2% nods, but then wonders aloud.%SPEECH_ON%What if...%SPEECH_OFF%Before he can even finish the thought %monk1% slaps the book closed and throws his hands into the air.",
+			Text = "[img]gfx/ui/events/event_05.png[/img] For a moment, you think to stop the debate before it gets out of hand and into fists, but then you remember that this isn\'t the first time you\'ve seen two holy men exchanging rather heatedly. It\'s just what they do. So you decide to let them hash it out. In time, their voices lower in volume, and their faces lower together into a book. They quietly peruse it, bumping heads as they draw their eyes over the pages. Finally, %monk1% raises up, pointing to some sentence.%SPEECH_ON%There! Right there! \'Man from mud\', not \'man from blood\'. Man can\'t be from blood, he is blood! Man can\'t be from himself, see? Now does it make sense?%SPEECH_OFF%Scratching his chin, %monk2% nods, but then wonders aloud.%SPEECH_ON%What if...%SPEECH_OFF%Before the thought is finished %monk1% slaps the book closed with hands thrown into the air.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "The holy men avert another crisis.",
+					Text = "The holy avert another crisis.",
 					function getResult( _event )
 					{
 						return 0;
@@ -86,7 +86,7 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_06.png[/img]Now, this isn\'t the first time you\'ve seen two monks squabbling. The last time it happened the debaters hashed it out right quick. So naturally you think these two will do the same. Alas, it isn\'t to be. Their voices grow louder and louder. You never knew monks could be so sharp-tongued. Fierceness and lewdness don\'t even begin to describe the insults being thrown back and forth. It isn\'t but a few seconds later that they are on the ground, wrestling and punching until you order %otherguy% to put an end to it.\n\nThe company of sellswords and their bloody daywork, it seems, have left a mark on the once peaceful demeanor of the two.",
+			Text = "[img]gfx/ui/events/event_06.png[/img]Now, this isn\'t the first time you\'ve seen two religious types squabbling. The last time it happened the debaters hashed it out right quick. So naturally you think these two will do the same. Alas, it isn\'t to be. Their voices grow louder and louder. You never knew the pious could be so sharp-tongued. Fierceness and lewdness don\'t even begin to describe the insults being thrown back and forth. It isn\'t but a few seconds later that they are on the ground, wrestling and punching until you order %otherguy% to put an end to it.\n\nThe company of sellswords and their bloody daywork, it seems, have left a mark on the once peaceful demeanor of the two.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -201,7 +201,7 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.monk")
+			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
 			{
 				monk_candidates.push(bro);
 			}

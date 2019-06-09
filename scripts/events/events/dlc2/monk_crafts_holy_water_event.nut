@@ -9,13 +9,13 @@ this.monk_crafts_holy_water_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]{%monk% the modest monk enters your tent with a vial in hand. The flask is topped with a bark stopper and a wreath of greenery with berries hanging beneath the leaves. Inside the vial is a goldish liquid sloshing about. Whatever it is, it catches any glimpse of light and seems to capture it and swirl it around. He holds it out.%SPEECH_ON%Blessed water, sir, to fight the dead that walk again.%SPEECH_OFF%You ask if it\'s a gift from the old gods. He nods. You ask if it\'s really a gift from the old gods, though. He purses his lips.%SPEECH_ON%No, not exactly. The monasteries know how to make it, but it is an ancient recipe protected under penalty of death.%SPEECH_OFF%Of course. You thank the man for taking such a risk to contribute and tell him to put it in the inventory.}",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{%monk% the modest holy figure enters your tent with a vial in hand. The flask is topped with a bark stopper and a wreath of greenery with berries hanging beneath the leaves. Inside the vial is a goldish liquid sloshing about. Whatever it is, it catches any glimpse of light and seems to capture it and swirl it around. It is held out.%SPEECH_ON%Blessed water, sir, to fight the dead that walk again.%SPEECH_OFF%You ask if it\'s a gift from the old gods and are greeted with a nod. You ask if it\'s really a gift from the old gods, though. Through pursed lips the reply comes .%SPEECH_ON%No, not exactly. The monasteries know how to make it, but it is an ancient recipe protected under penalty of death.%SPEECH_OFF%Of course. You offer thanks for taking such a risk to contribute and intruct it be put in the inventory.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Even holy men have tricks of the trade.",
+					Text = "Even the holy have tricks of the trade.",
 					function getResult( _event )
 					{
 						return 0;
@@ -55,7 +55,7 @@ this.monk_crafts_holy_water_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.monk")
+			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
 			{
 				candidates_monk.push(bro);
 			}
