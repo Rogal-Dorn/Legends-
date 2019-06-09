@@ -28,6 +28,10 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		{
 			return 15;
 		}
+		if (this.Tactical.Entities == null)
+		{
+			return 15;
+		}
 		local actors = this.Tactical.Entities.getAllInstances();
 		local bonus = 0;
 		foreach( i in actors )
@@ -87,8 +91,8 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeSkill += bonus;
-		_properties.RangedSkill += bonus / 3;
+		_properties.MeleeDefense += bonus;
+		_properties.RangedDefense += bonus / 3;
 	}
 
 
