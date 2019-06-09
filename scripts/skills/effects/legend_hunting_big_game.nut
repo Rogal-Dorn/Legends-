@@ -19,18 +19,19 @@ this.legend_hunting_big_game <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-	if (_targetEntity != null)
+		if (_targetEntity == null)
 		{
+			return
+		}
+	
 		local actor = this.getContainer().getActor();
 		local targetHP = _targetEntity.getHitpoints()
 		local ourHP =  actor.getHitpoints();
 		local HPratio = targetHP / ourHP;
 
 		if ( HPratio > 1 )
-			{
-		_properties.DamageRegularMult += HPratio; 
-
-			}
+		{
+			_properties.DamageRegularMult += HPratio; 
 		}
 	}
 

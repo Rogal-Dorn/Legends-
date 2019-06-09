@@ -175,6 +175,11 @@ this.spartan_should_eat_more_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				continue;
+			}
+
 			if (bro.getSkills().hasSkill("trait.spartan") && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 			{
 				candidates.push(bro);

@@ -79,7 +79,7 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 
 			if (_entity.isAlive())
 			{
-				this.getAgent().declareAction();
+				this.getAgent().declareAction(this.m.Skill.getDelay());
 				this.getAgent().declareEvaluationDelay(1000);
 			}
 
@@ -123,6 +123,11 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 						{
 							combinedValue = combinedValue + this.queryTargetValue(_entity, targetTile.getEntity(), _skill);
 							score = score + 1;
+
+							if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == targetTile.getEntity().getID())
+							{
+								score = score + 1;
+							}
 						}
 					}
 
@@ -147,6 +152,11 @@ this.ai_attack_split <- this.inherit("scripts/ai/tactical/behavior", {
 								{
 									combinedValue = combinedValue + this.queryTargetValue(_entity, tile.getEntity(), _skill);
 									score = score + 1;
+
+									if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == tile.getEntity().getID())
+									{
+										score = score + 1;
+									}
 								}
 							}
 

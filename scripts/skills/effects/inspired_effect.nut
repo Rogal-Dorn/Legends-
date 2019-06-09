@@ -16,6 +16,7 @@ this.inspired_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
+
 	function onAdded()
 	{
 	}

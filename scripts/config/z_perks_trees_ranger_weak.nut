@@ -35,6 +35,7 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.Relentless,
 		gt.Const.Perks.PerkDefs.DoubleStrike,
 		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 		gt.Const.Perks.PerkDefs.DevastatingStrikes
 	],
 	[
@@ -74,6 +75,7 @@ local RangerWeakTree = [
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendEvasion,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 		gt.Const.Perks.PerkDefs.LegendBigGameHunter
 	],
 	[],

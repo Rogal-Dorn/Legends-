@@ -15,33 +15,38 @@ this.perk_legend_favoured_enemy_hexen <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-	if (_targetEntity != null)
+		if (_targetEntity == null)
 		{
-
-		local targetID = _targetEntity.getType()
-
-		if ( targetID == this.Const.EntityType.Hexen)
-			{
-		_properties.MeleeSkill += 10;
-		_properties.RangedSkill += 10;
-		
-			}
+			return;
 		}
+		
+		if ( _targetEntity.getType() == this.Const.EntityType.Hexe)
+		{
+			_properties.MeleeSkill += 10;
+			_properties.RangedSkill += 10;		
+		}
+		
 	}
 
 	function onUpdate( _properties )
 	{
+		if (!("Entities" in this.Tactical))
+		{
+			return;
+		}
+
 		local targets = this.Tactical.Entities.getAllInstances();
 		foreach (tar in targets)
+		{
+			foreach (t in tar)
 			{
-				foreach (t in tar)
+				if (t.getType() == this.Const.EntityType.Hexe)
 				{
-					if (t.getType() == this.Const.EntityType.Hexen)
-					{
-						_properties.BraveryMult *= 1.5;
-					}
+					_properties.BraveryMult *= 1.5;
+					return;
 				}
 			}
+		}
 	}
 });
 

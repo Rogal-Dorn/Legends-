@@ -482,25 +482,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			playerKills = playerKills + bro.getCombatStats().Kills;
 		}
 
-
-
-		local EntireCompanyRoster = this.World.getPlayerRoster().getAll();
-		local CannibalsInRoster = 0;
-		local CannibalisticButchersInRoster = 0;
-		foreach (bro in EntireCompanyRoster)
-		{
-			if (bro.isAlive() && bro.getBackground().getID() == "background.legend_cannibal")
-			{
-				CannibalsInRoster += 1;
-			}
-			if (bro.isAlive() && bro.getBackground().getID() == "background.butcher" && bro.getSkills().hasSkill("trait.legend_cannibalistic"))
-			{
-				CannibalisticButchersInRoster += 1;
-			}
-		}
-
-
-
 		local loot = [];
 		local size = this.Tactical.getMapSize();
 
@@ -518,29 +499,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 						loot.push(item);
 					}
 				}
-
-
-
-				if (this.Math.rand(1, 100) <= 8 && tile.Properties.has("Corpse") && tile.Properties.get("Corpse").isHuman == 1)
-				{
-					if (CannibalisticButchersInRoster >= 1)
-					{
-						local humanmeat = this.new("scripts/items/supplies/legend_yummy_sausages");
-						humanmeat.randomizeAmount();
-						humanmeat.randomizeBestBefore();
-						loot.push(humanmeat);
-					}
-					else if (CannibalisticButchersInRoster < 1 && CannibalsInRoster >= 1)
-					{
-						local humanmeat = this.new("scripts/items/supplies/legend_human_parts");
-						humanmeat.randomizeAmount();
-						humanmeat.randomizeBestBefore();
-						loot.push(humanmeat);
-					}
-				}
-
-
-
 
 				if (tile.Properties.has("Corpse") && tile.Properties.get("Corpse").Items != null)
 				{
@@ -1274,6 +1232,11 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 	function onProcessAI()
 	{
+		if (this.Tactical.State.isBattleEnded())
+		{
+			return;
+		}
+
 		local activeEntity = this.Tactical.TurnSequenceBar.getActiveEntity();
 
 		if (activeEntity != null && activeEntity.getAIAgent().isEvaluating())
@@ -1769,17 +1732,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.m.TacticalScreen.hide();
 		this.Tactical.OrientationOverlay.removeOverlays();
 
-		local dead = this.Tactical.getCasualtyRoster().getAll();
-		foreach (d in dead)
-		{
-			if (d.isCommander())
-			{
-				this.World.State.setCommanderDied(true);
-				isVictory = false;
-				break;
-			}
-		}
-
 		if (isVictory)
 		{
 			this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
@@ -1803,12 +1755,12 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
 					{
 						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 						this.World.getPlayerRoster().remove(bro);
 					}
-					else if (bro.getPlaceInFormation() <= 26)
+					else if (bro.getPlaceInFormation() <= 17)
 					{
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
 						bro.improveMood(this.Const.MoodChange.BattleWon, "Won a battle");
@@ -1840,17 +1792,22 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
+					if (bro.getPlaceInFormation() <= 17 && !bro.isPlacedOnMap() && bro.getTags().get("Devoured") == true)
 					{
-						bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
-						this.World.getPlayerRoster().remove(bro);
+						if (bro.isAlive())
+						{
+							bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
+							this.World.getPlayerRoster().remove(bro);
+						}
 					}
-					else if (bro.getPlaceInFormation() <= 26 && bro.isPlacedOnMap() && (bro.getTags().get("Charmed") == true || bro.getTags().get("Sleeping") == true || bro.getTags().get("Nightmare") == true))
+					else if (bro.getPlaceInFormation() <= 17 && bro.isPlacedOnMap() && (bro.getTags().get("Charmed") == true || bro.getTags().get("Sleeping") == true || bro.getTags().get("Nightmare") == true))
 					{
-						bro.onDeath(null, null, null, this.Const.FatalityType.Suicide);
-						this.World.getPlayerRoster().remove(bro);
+						if (bro.isAlive())
+						{
+							bro.kill(null, null, this.Const.FatalityType.Suicide);
+						}
 					}
-					else if (bro.getPlaceInFormation() <= 26)
+					else if (bro.getPlaceInFormation() <= 17)
 					{
 						bro.getLifetimeStats().BattlesWithoutMe = 0;
 
@@ -2905,7 +2862,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
 				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/necromancer");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Undead : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID());
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
 				e.assignRandomEquipment();
 			}
 
@@ -3089,7 +3046,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			{
 				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_raider");
 				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
-				e.makeMiniboss();
 				e.assignRandomEquipment();
 			}
 
@@ -3478,4 +3434,3 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 	}
 
 });
-

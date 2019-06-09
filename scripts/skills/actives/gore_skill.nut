@@ -40,7 +40,7 @@ this.gore_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MinRange = 3;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 3;
-		this.m.DirectDamageMult = 0.35;
+		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 25;
 		this.m.ChanceSmash = 25;

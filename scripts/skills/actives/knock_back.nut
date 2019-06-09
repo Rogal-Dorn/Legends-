@@ -219,12 +219,13 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (_properties.IsSpecializedInShieldPush)
+		if ("IsSpecializedInShieldPush" in _properties && _properties.IsSpecializedInShieldPush)
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost = 3;
 		}
 	}
+	
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)

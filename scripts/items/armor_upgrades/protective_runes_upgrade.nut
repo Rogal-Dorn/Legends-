@@ -27,7 +27,7 @@ this.protective_runes_upgrade <- this.inherit("scripts/items/armor_upgrades/armo
 			id = 14,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Resolve at morale checks against fear, panic or mind control effects"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
 		return result;
 	}
@@ -38,7 +38,7 @@ this.protective_runes_upgrade <- this.inherit("scripts/items/armor_upgrades/armo
 			id = 14,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Resolve at morale checks against fear, panic or mind control effects"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
 	}
 

@@ -215,7 +215,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		return true;
 	}
 

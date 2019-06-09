@@ -288,7 +288,7 @@ gt.Const.Tactical.Actor.TricksterGod <- {
 	RangedSkill = 0,
 	MeleeDefense = 10,
 	RangedDefense = 10,
-	Initiative = 90,
+	Initiative = 95,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,

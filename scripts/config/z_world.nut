@@ -50,17 +50,17 @@ gt.Const.World.Settlements.LegendsMaster <- [
 		List = [
 			{
 				Ratio = 5,
-				Amount = 1,
+				MinAmount = 1,
 				List = this.Const.World.Settlements.Villages_small_coast
 			},
 			{
 				Ratio = 3
-				Amount = 1,
+				MinAmount = 1,
 				List = this.Const.World.Settlements.Villages_medium_coast
 			},
 			{
 				Ratio = 2
-				Amount = 1,
+				MinAmount = 1,
 				List = this.Const.World.Settlements.Villages_large_coast
 			}
 		]
@@ -70,17 +70,17 @@ gt.Const.World.Settlements.LegendsMaster <- [
 		List = [
 			{
 				Ratio = 5,
-				Amount = 1,
+				MinAmount = 1,
 				List = this.Const.World.Settlements.Villages_small
 			},
 			{
 				Ratio = 3,
-				Amount = 1,
+				MinAmount = 1,
 				List = this.Const.World.Settlements.Villages_medium
 			},
 			{
 				Ratio = 2,
-				Amount = 1,
+				MinAmount = 2,
 				List = this.Const.World.Settlements.Villages_large
 			}
 		]
@@ -90,17 +90,17 @@ gt.Const.World.Settlements.LegendsMaster <- [
 		List = [
 			{
 				Ratio = 5,
-				Amount = 1,
+				MinAmount = 1,
 				List = this.Const.World.Settlements.Fortifications_small
 			},
 			{
 				Ratio = 3,
-				Amount = 1,
+				MinAmount = 1,
 				List = this.Const.World.Settlements.Fortifications_medium
 			},
 			{
 				Ratio = 2,
-				Amount = 1,
+				MinAmount = 2,
 				List = this.Const.World.Settlements.Fortifications_large
 			}
 		]
@@ -144,6 +144,8 @@ gt.Const.World.NewCampaignOpts <- function ()
 		MountainsMult = 50,
 		MountainsMultMax = 100,
 		MountainsMultMin = 1,
-		Debug = false
+		Debug = false,
+		StackCitadels = false,
+		AllTradeLocations = false
 	}
 }

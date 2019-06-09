@@ -21,10 +21,12 @@ var CampScreenCommanderDialogModule = function(_parent)
     this.mListContainer = null;
     this.mListScrollContainer = null;
     this.mSelectedTent = null;
-
     this.mTentListContainer = null
     this.mTentListScrollContainer = null;
     this.mTentMap = {};
+    
+    this.mStatsContainer = null;
+    this.mStatsList = [];
 
     this.mBroListContainer = null;
     this.mBroListScrollContainer = null;
@@ -89,14 +91,14 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     // create content
     var content = this.mDialogContainer.findDialogContentContainer();
 
-    var column = $('<div class="left-column"/>');
-    content.append(column);
-    var listContainerLayout = $('<div class="l-list-container"/>');
-    column.append(listContainerLayout);
-    this.mListContainer = listContainerLayout.createList(1.77/*8.85*/);
-    this.mListScrollContainer = this.mListContainer.findListScrollContainer();
+    // var column = $('<div class="left-column"/>');
+    // content.append(column);
+    // var listContainerLayout = $('<div class="l-list-container"/>');
+    // column.append(listContainerLayout);
+    // this.mListContainer = listContainerLayout.createList(1.77/*8.85*/);
+    // this.mListScrollContainer = this.mListContainer.findListScrollContainer();
 
-    column = $('<div class="right-column"/>');
+    var column = $('<div class="right-column"/>');
     content.append(column);
 
     // top row
@@ -118,10 +120,10 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
     //this.mBroListContainer = listContainerLayout.createList(1.24/*8.63*/);
     this.mBroListScrollContainer = listContainerLayout;//this.mBroListContainer.findListScrollContainer();
 
-    var stats = $('<div class="stats"/>');
-    row.append(stats);
+    this.mStatsContainer = $('<div class="stats"/>');
+    row.append(this.mStatsContainer);
     var tentButtonLayout = $('<div class="tent-button"/>');
-    stats.append(tentButtonLayout);
+    this.mStatsContainer.append(tentButtonLayout);
     this.mTentButton = tentButtonLayout.createTextButton("Building", function()
 	{
         if(self.mSelectedTent !== null)
@@ -152,12 +154,19 @@ CampScreenCommanderDialogModule.prototype.destroyDIV = function ()
 
 	this.mLeaveButton.remove();
     this.mLeaveButton = null;
+    this.mStatsList.forEach(function (c) {
+        c.remove();
+    })
+    this.mStatsContainer.remove();
+    this.mStatsContainer = null;
 
-    this.mListScrollContainer.empty();
-    this.mListScrollContainer = null;
-    this.mListContainer.destroyList();
-    this.mListContainer.remove();
-    this.mListContainer = null;
+
+
+    // this.mListScrollContainer.empty();
+    // this.mListScrollContainer = null;
+    // this.mListContainer.destroyList();
+    // this.mListContainer.remove();
+    // this.mListContainer = null;
 
     this.mTentListScrollContainer.empty();
     this.mTentListScrollContainer = null;
@@ -428,12 +437,12 @@ CampScreenCommanderDialogModule.prototype.loadFromData = function (_data)
         }
     }
 
-    this.mListScrollContainer.empty();
-    for(var i = 0; i < _data.brothers.length; ++i)
-    {
-		var entry = _data.brothers[i];
-        this.addListEntry(entry);
-    }
+    //this.mListScrollContainer.empty();
+    // for(var i = 0; i < _data.brothers.length; ++i)
+    // {
+	// 	var entry = _data.brothers[i];
+    //     this.addListEntry(entry);
+    // }
 
     if (this.mSelectedTent === null)
     {
@@ -490,6 +499,19 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
                 self.onBrothersListLoaded(res.Roster);
                 self.mTentButton.changeButtonText(res.Label);
                 self.mTentButton.enableButton(res.Enabled);
+
+                self.mStatsList.forEach(function (c) {
+                    c.remove();
+                });
+                if ('Modifiers' in res.Modifiers)
+                {
+                    res.Modifiers.Modifiers.forEach(function (m) {
+                        var text = m[0].toFixed(2) + "% " + m[1];
+                        var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
+                        self.mStatsList.push(stats);
+                        self.mStatsContainer.append(stats);
+                    })                
+                }
             });            
         }
     }
@@ -664,75 +686,81 @@ CampScreenCommanderDialogModule.prototype.addListEntry = function (_data)
 
 CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _index)
 {
-
     var self = this;
-    var _parentDiv = $('<div class="ui-control is-brother-slot is-reserve-slot"/>')
+    var _parentDiv = $('<div class="ui-control is-brother-slot"/>')
+    //slot.addClass('is-selected');
     this.mBroListScrollContainer.append(_parentDiv);
 
     // create: slot & background layer
-    var result = _parentDiv.createListBrother(_data[CharacterScreenIdentifier.Entity.Id]);
+    var isSelected = "";
+    if ('IsSelected' in _data && _data.IsSelected)
+    {
+        isSelected = 'is-selected';
+    }
+
+    var result = _parentDiv.createListBrother(_data[CharacterScreenIdentifier.Entity.Id], isSelected);
     result.attr('id', 'slot-index_' + _data[CharacterScreenIdentifier.Entity.Id]);
     result.data('ID', _data[CharacterScreenIdentifier.Entity.Id]);
     result.data('idx', _index);
 
-    // drag handler
-    result.drag("start", function (ev, dd)
-    {
-        // dont allow drag if this is an empty slot
-        /*var data = $(this).data('item');
-        if (data.isEmpty === true)
-        {
-            return false;
-        }*/
+    // // drag handler
+    // result.drag("start", function (ev, dd)
+    // {
+    //     // dont allow drag if this is an empty slot
+    //     /*var data = $(this).data('item');
+    //     if (data.isEmpty === true)
+    //     {
+    //         return false;
+    //     }*/
 
-        // build proxy
-        var proxy = $('<div class="ui-control brother is-proxy"/>');
-        proxy.appendTo(document.body);
-        proxy.data('idx', _index);
+    //     // build proxy
+    //     var proxy = $('<div class="ui-control brother is-proxy"/>');
+    //     proxy.appendTo(document.body);
+    //     proxy.data('idx', _index);
 
-        var imageLayer = result.find('.image-layer:first');
-        if (imageLayer.length > 0)
-        {
-            imageLayer = imageLayer.clone();
-            proxy.append(imageLayer);
-        }
+    //     var imageLayer = result.find('.image-layer:first');
+    //     if (imageLayer.length > 0)
+    //     {
+    //         imageLayer = imageLayer.clone();
+    //         proxy.append(imageLayer);
+    //     }
 
-        $(dd.drag).addClass('is-dragged');
+    //     $(dd.drag).addClass('is-dragged');
 
-        return proxy;
-    }, { distance: 3 });
+    //     return proxy;
+    // }, { distance: 3 });
 
-    result.drag(function (ev, dd)
-    {
-        $(dd.proxy).css({ top: dd.offsetY, left: dd.offsetX });
-    }, { relative: false, distance: 3 });
+    // result.drag(function (ev, dd)
+    // {
+    //     $(dd.proxy).css({ top: dd.offsetY, left: dd.offsetX });
+    // }, { relative: false, distance: 3 });
 
-    result.drag("end", function (ev, dd)
-    {
-        var drag = $(dd.drag);
-        var drop = $(dd.drop);
-        var proxy = $(dd.proxy);
+    // result.drag("end", function (ev, dd)
+    // {
+    //     var drag = $(dd.drag);
+    //     var drop = $(dd.drop);
+    //     var proxy = $(dd.proxy);
 
-        var allowDragEnd = true; // TODO: check what we're dropping onto
+    //     var allowDragEnd = true; // TODO: check what we're dropping onto
 
-        // not dropped into anything?
-        if (drop.length === 0 || allowDragEnd === false)
-        {
-            proxy.velocity("finish", true).velocity({ top: dd.originalY, left: dd.originalX },
-            {
-                duration: 300,
-                complete: function ()
-                {
-                    proxy.remove();
-                    drag.removeClass('is-dragged');
-                }
-            });
-        }
-        else
-        {
-            proxy.remove();
-        }
-    }, { drop: '.is-camp-action-slot' });
+    //     // not dropped into anything?
+    //     if (drop.length === 0 || allowDragEnd === false)
+    //     {
+    //         proxy.velocity("finish", true).velocity({ top: dd.originalY, left: dd.originalX },
+    //         {
+    //             duration: 300,
+    //             complete: function ()
+    //             {
+    //                 proxy.remove();
+    //                 drag.removeClass('is-dragged');
+    //             }
+    //         });
+    //     }
+    //     else
+    //     {
+    //         proxy.remove();
+    //     }
+    // }, { drop: '.is-camp-action-slot' });
 
     // update image & name
     var character = _data[CharacterScreenIdentifier.Entity.Character.Key];
@@ -743,24 +771,26 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _
     //result.assignListBrotherName(character[CharacterScreenIdentifier.Entity.Character.Name]);
     //result.assignListBrotherDailyMoneyCost(character[CharacterScreenIdentifier.Entity.Character.DailyMoneyCost]);
 
-    if(CharacterScreenIdentifier.Entity.Character.LeveledUp in character && character[CharacterScreenIdentifier.Entity.Character.LeveledUp] === true)
-    {
-        result.assignListBrotherLeveledUp();
-    }
+    // if(CharacterScreenIdentifier.Entity.Character.LeveledUp in character && character[CharacterScreenIdentifier.Entity.Character.LeveledUp] === true)
+    // {
+    //     result.assignListBrotherLeveledUp();
+    // }
 
     /*if(CharacterScreenIdentifier.Entity.Character.DaysWounded in character && character[CharacterScreenIdentifier.Entity.Character.DaysWounded] === true)
     {
         result.assignListBrotherDaysWounded();
     }*/
 
-    if('inReserves' in character && character['inReserves'])
-    {
-    	result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
-    }
-    else if('moodIcon' in character)
-    {
-    	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
-    }
+    result.showListBrotherMoodImage(true, _data.bannerImage);
+
+    // if('inReserves' in character && character['inReserves'])
+    // {
+    // 	result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+    // }
+    // else if('moodIcon' in character)
+    // {
+    // 	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
+    // }
 
     for(var i = 0; i != _data['injuries'].length && i < 3; ++i)
     {
@@ -774,16 +804,20 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _
 
     result.assignListBrotherClickHandler(function (_brother, _event)
 	{
-        var data = _brother.data('brother');
+        var _bro = _brother.data('brother');
+        self.notifyBackendBrotherAssigned(_bro["id"], self.mSelectedTent.data('ID') , function( _load ) {
+            self.loadFromData(_load);
+        })
+
         //self.mDataSource.selectedBrotherById(data.id);
     });
         
-    result.assignListItemRightClick(function (_item, _event)
-    {
-        self.notifyBackendBrotherAssigned(_item.data('ID'), 'camp.rest', function( _load ) {
-            self.loadFromData(_load);
-        })
-    });
+    // result.assignListItemRightClick(function (_item, _event)
+    // {
+    //     self.notifyBackendBrotherAssigned(_item.data('ID'), 'camp.rest', function( _load ) {
+    //         self.loadFromData(_load);
+    //     })
+    // });
 
 };
 
@@ -791,6 +825,7 @@ CampScreenCommanderDialogModule.prototype.addBrotherSlotDIV = function (_data, _
 CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brothers)
 {
     this.mBroListScrollContainer.empty();
+
 	if (_brothers === null || !jQuery.isArray(_brothers) || _brothers.length === 0)
 	{
 		return;
@@ -803,8 +838,9 @@ CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brot
 		if (brother !== null)
 		{
 		    this.addBrotherSlotDIV(brother, i);
-		}
-	}
+        }
+    }
+
 	//this.updateBrotherSlotLocks(inventoryMode);
 	//this.updateRosterLabel();
 };

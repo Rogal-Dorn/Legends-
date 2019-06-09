@@ -1361,7 +1361,7 @@ this.tooltip_events <- {
 					id = 3,
 					type = "text",
 					icon = "ui/icons/repair_item.png",
-					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Repair + " units per hour[/color]"
+					text = "Total repair modifier is [color=" + this.Const.UI.Color.PositiveValue + "]" + repair.Craft + " units per hour[/color]"
 				}
 			];
 			local id = 4;
@@ -4263,10 +4263,36 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled. All settlements will be hidden at campaign start. For the true explorer experience!"
+					text = "If enabled, all settlements will be hidden at campaign start. For the true explorer experience!"
 				}
 			];
-		
+		case "mapconfig.stackcitadels":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Gucci Citadels"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled, every Citadel will start with all those building attachments map scummers are re-rolling for."
+				}
+			];
+		case "mapconfig.alltradelocations":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "All Trade Locations"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled, guarentees at least one of each trade location building on the map."
+				}
+			];
+
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":

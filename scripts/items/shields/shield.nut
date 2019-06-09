@@ -195,7 +195,7 @@ this.shield <- this.inherit("scripts/items/item", {
 		}
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
-		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
+		local isLucky = !("State" in this.Tactical && this.Tactical.State.isScenarioMode()) && this.World.Assets.getOrigin().isDroppedAsLoot(this);
 
 		if ((isPlayer || this.m.Condition >= 6) && (isPlayer || this.m.Condition / this.m.ConditionMax >= 0.25) && (isPlayer || isLucky || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || this.Math.rand(1, 100) <= 90))
 		{
@@ -417,12 +417,22 @@ this.shield <- this.inherit("scripts/items/item", {
 
 	function updateRuneSigil()
 	{
+		if (this.m.Name.find("(Runed)") == null)
+		{
+			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
+		}
+
+		if (this.m.IconLarge.find("/runed_") != null)
+		{
+			return; 
+		}
+
 		local iconLargeParts = split(this.m.IconLarge, "/");
 		local iconParts = split(this.m.Icon, "/");
 		local text = ""
 		for (local i = 0; i < iconLargeParts.len(); i = ++i)
 		{
-			if (i == iconLargeParts.len() - 1)
+			if (i == iconLargeParts.len() - 1 && iconLargeParts[i].find("runed_") == null)
 			{
 				text = text + "runed_" + iconLargeParts[i]
 			} else {
@@ -451,10 +461,7 @@ this.shield <- this.inherit("scripts/items/item", {
 			}
 		}
 		this.m.Icon = text;
-		if (this.m.Name.find("(Runed)") == null)
-		{
-			this.m.Name =  this.m.Name + "[color=" + this.Const.UI.Color.RuneColor + "] (Runed)[/color]";
-		}
+
 	}
 
 	function onSerialize( _out )

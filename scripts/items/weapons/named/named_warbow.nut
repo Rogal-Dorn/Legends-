@@ -16,7 +16,7 @@ this.named_warbow <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 5800;
+		this.m.Value = 4600;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 7;
 		this.m.RangeIdeal = 7;
@@ -48,6 +48,7 @@ this.named_warbow <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.addSkill(this.new("scripts/skills/actives/quick_shot"));
 		this.addSkill(this.new("scripts/skills/actives/aimed_shot"));
 		this.addSkill(this.new("scripts/skills/actives/legend_piercing_shot"));
+		this.addSkill(this.new("scripts/skills/actives/legend_cascade_skill"));
 	}
 
 });

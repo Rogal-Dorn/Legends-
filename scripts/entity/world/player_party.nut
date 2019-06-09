@@ -15,6 +15,14 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		{
 			this.m.Strength += 10.0 * (this.World.Assets.getBrothersScaleMin() - roster.len());
 		}
+		
+		
+		if (this.World.Assets.getOrigin() == null || this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			this.m.Strength * 0.8;
+			return;
+		}
+
 		local zombieSummonLevel = 0
 		local skeletonSummonLevel = 0
 		foreach( i, bro in roster )
@@ -50,23 +58,21 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				skeletonSummonLevel = 2;
 			}
 
-		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
+			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
 			{
-			this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;
+				this.m.Strength +=  3 + ((bro.getLevel() / 4) + (bro.getLevel() - 1)) * 1.5;
 			}
-
-		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
+			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
 			{
-			this.m.Strength +=  10 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
+				this.m.Strength +=  10 + ((bro.getLevel() / 2) + (bro.getLevel() - 1)) * 2;
 			}
-
-		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
+			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
 			{
-			this.m.Strength +=  (i / 4) + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
+				this.m.Strength +=  (i / 4) + ((bro.getLevel() / 2) + (pow(bro.getLevel(),1.2)));
 			}
-		else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Strength +=  (i / 2) + pow(bro.getLevel(),1.25);
+				this.m.Strength +=  (i / 2) + pow(bro.getLevel(),1.25);
 			}
 		}
 
@@ -124,11 +130,6 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				this.m.Strength += 3 + (((skeletonSummonLevel / 2) + (skeletonSummonLevel - 1)) * 2.0);
 			}
 		}
-		if (this.World.Assets.getOrigin().getID() == "scenario.militia")
-		{
-		this.m.Strength * 0.8;
-		}
-
 	}
 
 	function onLevelCompare( _bro1, _bro2 )

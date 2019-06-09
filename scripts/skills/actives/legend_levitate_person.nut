@@ -27,7 +27,10 @@ this.legend_levitate_person <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 3;
+		this.m.IsIgnoredAsAOO = true;
+		this.m.IsUsingHitchance = false;
+
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
@@ -37,27 +40,51 @@ this.legend_levitate_person <- this.inherit("scripts/skills/skill", {
 	{
 		local ret = this.getDefaultUtilityTooltip()
 		ret.push(
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Levitate someone off the ground, granting them the ability to move across all terrain freely"
-			})
+		{
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Levitate someone off the ground, granting them the ability to move across all terrain freely"
+		})
 		return ret;
+	}
+	
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		local target = _targetTile.getEntity();
+		if (target.getSkills().hasSkill("effects.legend_levitating"))
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
 
-		if (target.isAlive())
+		if (!target.isAlive())
 		{
-			target.getSkills().add(this.new("scripts/skills/effects/legend_levitating_effect"));
+			return;
+		}
 
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " levitated " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them free to move");
-			}
+		if (target.getSkills().hasSkill("effects.legend_levitating"))
+		{
+			return;
+		}
+		
+
+		target.getSkills().add(this.new("scripts/skills/effects/legend_levitating_effect"));
+
+		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " levitated " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " leaving them free to move");
 		}
 	}
 

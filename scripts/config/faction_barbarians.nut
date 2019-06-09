@@ -127,7 +127,7 @@ gt.Const.Tactical.Actor.BarbarianDrummer <- {
 gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 80,
+	Hitpoints = 70,
 	Bravery = 90,
 	Stamina = 120,
 	MeleeSkill = 65,

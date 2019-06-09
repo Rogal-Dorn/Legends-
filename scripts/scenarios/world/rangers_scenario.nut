@@ -84,7 +84,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/staff_sling"));
 		this.World.Assets.m.BusinessReputation = 50;
-		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
+		//this.World.Assets.getStash().resize(this.Math.min(15, this.World.Assets.getStash().getCapacity() / 2));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;

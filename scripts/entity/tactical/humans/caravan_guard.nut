@@ -36,7 +36,6 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_caravan");
 		this.getSprite("dirt").Visible = true;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 	}
 

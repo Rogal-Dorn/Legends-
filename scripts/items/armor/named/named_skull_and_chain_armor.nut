@@ -6,11 +6,11 @@ this.named_skull_and_chain_armor <- this.inherit("scripts/items/armor/named/name
 		this.m.ID = "armor.body.named_skull_and_chain_armor";
 		this.m.Description = "A barbarian armor of crude making that has been adjusted to protect without being too cumbersome. It wears the typical markings of the northern barbarian tribes.";
 		this.m.NameList = [
-			"Hide",
-			"Coat",
+			"Tribal Hide",
+			"Barbarian Coat",
 			"Scavenged Armor",
-			"Pelt",
-			"Harness"
+			"Barbarian Pelt",
+			"Primitive Harness"
 		];
 		this.m.PrefixList = this.Const.Strings.BarbarianPrefix;
 		this.m.UseRandomName = false;

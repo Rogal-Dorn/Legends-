@@ -56,6 +56,7 @@ local SeerWeakTree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.BattleFlow,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendSleep,
 		gt.Const.Perks.PerkDefs.LegendTeleport,

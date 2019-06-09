@@ -135,6 +135,11 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getFlags().get("IsSpecial"))
+			{
+				continue;
+			}
+
 			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
 			{
 				cultist_candidates.push(bro);

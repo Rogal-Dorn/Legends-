@@ -1,4 +1,5 @@
-local g_modHooks = { }, g_newHooks = null, g_oneTimeHooks = { }, g_states = { }, g_cssFiles = [ ], g_jsFiles = [ ], g_mods = [ ];
+local g_modHooks = { }, g_newHooks = null, g_inheritHooks = null, g_oneTimeHooks = { }, g_states = { };
+local g_cssFiles = [ ], g_jsFiles = [ ], g_mods = [ ];
 
 local varcall = function(func, args)
 {
@@ -96,29 +97,39 @@ local wrapInstance = function(o)
 {
   if(!abstract) ::mods_hookNewObject(name, func);
 
-  local scriptName = "scripts/" + name;
-  ::mods_addHook("inherit", function(baseScript, o)
+  if(g_inheritHooks == null)
   {
-    if(baseScript != scriptName) return null;
-    return baseScript == scriptName ? func(o) : null;
-  });
+    g_inheritHooks = { };
+    ::mods_addHook("inherit", @(n,o) ::mods_callHookCore(g_inheritHooks, n, [o]));
+  }
+  ::mods_addHookCore(g_inheritHooks, "scripts/" + name, func);
 }
 
 ::mods_hookBaseClass <- function(name, func) { ::mods_hookClass(name, func, true); }
 
+::mods_addField <- function(obj, className, fieldName, value)
+{
+  ::mods_getClassForOverride(obj, className).m[fieldName] <- value;
+}
+
 ::mods_addMember <- function(obj, className, memberName, value)
 {
-  if(!("ClassName" in obj) || obj.ClassName != className)
-  {
-    for(local o = obj; "SuperName" in o; )
-    {
-      local baseName = o.SuperName;
-      o = o[baseName];
-      if(baseName == className) { obj = o; break; }
-    }
-  }
+  ::mods_getClassForOverride(obj, className)[memberName] <- value;
+}
 
-  obj[memberName] <- value;
+::mods_getClassForOverride <- function(obj, className)
+{
+  local o = className ? ::mods_isClass(obj, className) : null;
+  return o ? o : obj;
+}
+
+::mods_getField <- function(obj, fieldName)
+{
+  while(true)
+  {
+    if("m" in obj && fieldName in obj.m) return obj.m[fieldName];
+    else obj = obj[obj.SuperName];
+  }
 }
 
 ::mods_getMember <- function(obj, key)
@@ -132,13 +143,20 @@ local wrapInstance = function(o)
 
 ::mods_isClass <- function(obj, className)
 {
-  for(; obj != null; obj = obj[obj.SuperName])
+  if("ClassName" in obj && obj.ClassName == className)
   {
-    if(obj.ClassName == className) return true;
-    if(!("SuperName" in obj)) break;
+    return obj;
   }
-
-  return false;
+  else
+  {
+    for(local o = obj; "SuperName" in o; )
+    {
+      local baseName = o.SuperName;
+      o = o[baseName];
+      if(baseName == className) return o;
+    }
+    return null;
+  }
 }
 
 ::mods_override <- function(obj, key, value)
@@ -146,6 +164,15 @@ local wrapInstance = function(o)
   while(true)
   {
     if(key in obj) { obj[key] = value; break; }
+    else obj = obj[obj.SuperName];
+  }
+}
+
+::mods_overrideField <- function(obj, fieldName, value)
+{
+  while(true)
+  {
+    if("m" in obj && fieldName in obj.m) { obj.m[fieldName] = value; break; }
     else obj = obj[obj.SuperName];
   }
 }
@@ -309,6 +336,15 @@ World.getRoster = function(id)
   g_jsFiles.append("mods/" + path);
 }
 
+::mods_getRegisteredMod <- function(codeName)
+{
+  for(local i = 0; i < g_mods.len(); i++)
+  {
+    if(g_mods[i].Name == codeName) return g_mods[i];
+  }
+  return null;
+}
+
 ::mods_getRegisteredMods <- function()
 {
   return clone g_mods;
@@ -321,6 +357,7 @@ World.getRoster = function(id)
   m.Version <- version;
   m.FriendlyName <- friendlyName ? friendlyName : codeName;
   g_mods.append(m);
+  logInfo("mod_hooks: mod " + codeName + (m.FriendlyName != codeName ? " (" + friendlyName + ")" : "") + " version " + version + " registered.");
 }
 
-::mods_registerMod("mod_hooks", 10, "modding script hooks");
+::mods_registerMod("mod_hooks", 12, "modding script hooks");

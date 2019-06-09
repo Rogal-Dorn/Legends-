@@ -15,7 +15,7 @@ this.named_warhammer <- this.inherit("scripts/items/weapons/named/named_weapon",
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 5000;
+		this.m.Value = 4200;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 100.0;
 		this.m.ConditionMax = 100.0;

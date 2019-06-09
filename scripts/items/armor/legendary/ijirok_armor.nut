@@ -36,8 +36,12 @@ this.ijirok_armor <- this.inherit("scripts/items/armor/armor", {
 	function onCombatFinished()
 	{
 		local actor = this.getContainer().getActor();
-		actor.setHitpoints(actor.getHitpointsMax());
-		actor.setDirty(true);
+
+		if (actor != null && !actor.isNull() && actor.isAlive())
+		{
+			actor.setHitpoints(actor.getHitpointsMax());
+			actor.setDirty(true);
+		}
 	}
 
 	function onTurnStart()

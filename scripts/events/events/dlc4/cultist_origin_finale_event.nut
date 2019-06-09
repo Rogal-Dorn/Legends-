@@ -229,11 +229,11 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 				{
 					bestCultist = bro;
 				}
-			}
 
-			if (bro.getLevel() >= 11)
-			{
-				sacrifice_candidates.push(bro);
+				if (bro.getLevel() >= 11)
+				{
+					sacrifice_candidates.push(bro);
+				}
 			}
 		}
 

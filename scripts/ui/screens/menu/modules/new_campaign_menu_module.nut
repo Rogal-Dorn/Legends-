@@ -88,7 +88,9 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			SwampsMult = _settings[19] / 100.0 ,
 			MountainsMult = _settings[20] / 100.0,
 			Debug = _settings[21],
-			StartingScenario = _settings[22]			
+			StackCitadels = _settings[22],
+			AllTradeLocations = _settings[23],
+			StartingScenario = _settings[24]	
 		}
 
 		// local settings = {

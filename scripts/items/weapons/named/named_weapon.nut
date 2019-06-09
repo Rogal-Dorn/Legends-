@@ -74,8 +74,12 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 
 	function randomizeValues()
 	{
-		this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(90, 140) * 0.01) * 1.0;
-		this.m.ConditionMax = this.m.Condition;
+		if (this.m.ConditionMax > 1)
+		{
+			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(90, 140) * 0.01) * 1.0;
+			this.m.ConditionMax = this.m.Condition;
+		}
+
 		local available = [];
 		available.push(function ( _i )
 		{
@@ -101,7 +105,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 			_i.m.DirectDamageAdd = _i.m.DirectDamageAdd + this.Math.rand(8, 16) * 0.01;
 		});
 
-		if (this.m.StaminaModifier >= 10)
+		if (this.m.StaminaModifier <= -10)
 		{
 			available.push(function ( _i )
 			{

@@ -715,6 +715,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.m.IsTriggeringContractUpdatesOnce = false;
 			this.World.Contracts.update(true);
+			this.m.Events.update();
 		}
 
 		if (this.m.MenuStack.hasBacksteps())

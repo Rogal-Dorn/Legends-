@@ -10,6 +10,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Colossus,
+		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Steadfast,

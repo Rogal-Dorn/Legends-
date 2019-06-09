@@ -26,7 +26,7 @@ this.named_throwing_axe <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
 		this.m.IsDroppedAsLoot = true;
-		this.m.Value = 800;
+		this.m.Value = 1400;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 4;
 		this.m.RangeIdeal = 4;

@@ -18,7 +18,7 @@ this.named_battle_whip <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 3;
 		this.m.RangeIdeal = 3;
-		this.m.Value = 1200;
+		this.m.Value = 2200;
 		this.m.Condition = 40;
 		this.m.ConditionMax = 40;
 		this.m.StaminaModifier = -6;

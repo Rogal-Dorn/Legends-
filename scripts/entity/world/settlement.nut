@@ -887,7 +887,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			if (candidates.len() != 0)
 			{
 				this.m.Buildings[candidates[this.Math.rand(0, candidates.len() - 1)]] = _building;
-			}
+			} 
 		}
 
 		if (_building.getID() == "building.barber")
@@ -912,11 +912,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true )
+	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
 	{
 		_num = this.Math.min(_num, this.m.AttachedLocationsMax - this.m.AttachedLocations.len());
 
-		if (_num <= 0)
+		if (_num <= 0 && !_force)
 		{
 			return;
 		}
@@ -1113,9 +1113,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return name;
 	}
 
-	function build()
+	function build( _settings )
 	{
-		this.onBuild();
+		this.onBuild( _settings );
 
 		if (this.m.IsCoastal && (this.m.Buildings[3] == null || this.m.Buildings[3].getID() != "building.port"))
 		{
@@ -1701,7 +1701,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function onBuild()
+	function onBuild( _settings )
 	{
 	}
 

@@ -1,14 +1,17 @@
 this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		AdditionalAccuracy = 0,
+		AdditionalHitChance = 0		
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_cascade";
-		this.m.Name = "Triple Strike";
+		this.m.Name = "Cascade Strike";
 		this.m.Description = "Let loose a cascade of three striking shots on your opponent. Will strike over or around shield cover.";
 		this.m.KilledString = "Pin cushioned";
 		this.m.Icon = "skills/triplestrike_square.png";
 		this.m.IconDisabled = "skills/triplestrike_square_bw.png";
-		this.m.Overlay = "triplestrike_square";
+		this.m.Overlay = "active_05";
 		this.m.SoundOnUse = [
 			"sounds/combat/tripleshot_01.wav",
 			"sounds/combat/tripleshot_02.wav",
@@ -43,10 +46,9 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 6;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
-		this.m.ChanceSmash = 50;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Arrow;
 	}
@@ -54,6 +56,65 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
+		ret.extend([
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
+			}
+		]);
+
+		if (this.m.AdditionalAccuracy >= 0)
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.AdditionalAccuracy + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-4 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 7,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.AdditionalAccuracy + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-4 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+			});
+		}
+
+		local ammo = this.getAmmo();
+
+		if (ammo > 0)
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] arrows left"
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Needs a non-empty quiver of arrows equipped[/color]"
+			});
+		}
+
+		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		{
+			ret.push({
+				id = 9,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character is engaged in melee[/color]"
+			});
+		}
+
 		ret.extend([
 			{
 				id = 7,
@@ -71,19 +132,69 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function isHidden()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return true;
+		}
+
+		if (!actor.getSkills().hasSkill("perk.legend_cascade"))
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	function getAmmo()
+	{
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);
+
+		if (item == null)
+		{
+			return 0;
+		}
+
+		if (item.getAmmoType() == this.Const.Items.AmmoType.Arrows)
+		{
+			return item.getAmmo();
+		}
+	}
+
 	function isUsable()
 	{
 		if (!this.getContainer().getActor().isArmedWithRangedWeapon()) 
 		{
 			return false
 		}
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 2 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());	
 	}
 
 
+	function consumeAmmo()
+	{
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);
+		if (item == null)
+		{
+			return;
+		}
+		item.consumeAmmo();
+		item.consumeAmmo();
+		item.consumeAmmo();
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		this.m.MaxRange = this.m.Item.getRangeMax() - 1 + (_properties.IsSpecializedInBows ? 1 : 0);
+		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
+		this.m.FatigueCostMult = _properties.IsSpecializedInBows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+	}
+
 	function onUse( _user, _targetTile )
 	{
-		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectChop);
+		this.consumeAmmo();
 		local target = _targetTile.getEntity();
 		this.attackEntity(_user, target);
 		this.m.IsDoingAttackMove = false;
@@ -95,6 +206,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 				_skill.attackEntity(_user, target);
 			}
 		}.bindenv(this), this);
+
 		this.Time.scheduleEvent(this.TimeUnit.Virtual, 200, function ( _skill )
 		{
 			if (target.isAlive())
@@ -112,6 +224,8 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += -4 + this.m.AdditionalHitChance;
 			_properties.DamageTotalMult *= 0.5;
 			_properties.DamageTooltipMaxMult *= 3.0;
 		}

@@ -17,7 +17,7 @@ this.named_warscythe <- this.inherit("scripts/items/weapons/named/named_weapon",
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 2000;
+		this.m.Value = 2800;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 36.0;
 		this.m.ConditionMax = 36.0;

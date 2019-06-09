@@ -38,6 +38,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		Formations = null,
 		VeteranPerks = 5,
 		CampAssignment = "camp.rest",
+		LastCampAssignment = "camp.rest",
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false
@@ -220,6 +221,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setCampAssignment( _id )
 	{
 		this.m.CampAssignment = _id;
+	}
+
+	function getLastCampAssignment()
+	{
+		return this.m.LastCampAssignment;
+	}
+
+	function setLastCampAssignment( _id )
+	{
+		this.m.LastCampAssignment = _id;
 	}
 
 	function getMood()
@@ -923,97 +934,102 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return true;
 		}
 
-		if (this.Math.rand(1, 100) <= this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult)
+		if (this.Math.rand(1, 100) > this.Const.Combat.SurviveWithInjuryChance * this.m.CurrentProperties.SurviveWithInjuryChanceMult)
 		{
-			local potential = [];
-			local injuries = this.Const.Injury.Permanent;
-			local numPermInjuries = 0;
-
-			foreach (inj in injuries)
-			{
-				if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
-				{
-					potential.push(inj);
-				}
-				else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
-				{
-					potential.push(inj);
-				}
-				else
-				{
-					numPermInjuries = ++numPermInjuries;
-				}
-			}
-
-			if (potential.len() != 0)
-			{
-				local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
-				this.m.Skills.add(skill);
-				this.Tactical.getSurvivorRoster().add(this);
-				this.m.IsDying = false;
-				this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
-				this.updateAchievement("ScarsForLife", 1, 1);
-				
-					if(this.m.CurrentProperties.SurvivesAsUndead)
-					{		
-						local skill = this.new("scripts/skills/special/legend_animated_player_properties");
-						this.m.Skills.add(skill);
-						r = this.Math.rand(1, 2);
-							if (r == 1)
-							{
-								this.getTags().add("PlayerSkeleton");
-								this.getTags().add("undead");
-								this.getTags().add("skeleton");
-							}
-							if (r == 2)
-							{
-								this.getTags().add("PlayerZombie");
-								this.getTags().add("undead");
-								this.getTags().add("zombie_minion");
-							}
-					}
-
-
-				if (numPermInjuries + 1 >= 3)
-				{
-					this.updateAchievement("HardToKill", 1, 1);
-				}
-
-				return false;
-			}
-
-
+			return true;
 		}
 
-		return true;
+		local potential = [];
+		local injuries = this.Const.Injury.Permanent;
+		local numPermInjuries = 0;
+
+		foreach (inj in injuries)
+		{
+			if (inj.ID == "injury.broken_elbow_joint" && !this.m.Skills.hasSkill("injury.broken_elbow_joint") && !this.m.Skills.hasSkill("trait.legend_prosthetic_forearm"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID == "injury.broken_knee" && !this.m.Skills.hasSkill("injury.broken_knee") && !this.m.Skills.hasSkill("trait.legend_prosthetic_leg"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID == "injury.maimed_foot" && !this.m.Skills.hasSkill("injury.maimed_foot") && !this.m.Skills.hasSkill("trait.legend_prosthetic_foot"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID == "injury.missing_ear" && !this.m.Skills.hasSkill("injury.missing_ear") && !this.m.Skills.hasSkill("trait.legend_prosthetic_ear"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID == "injury.missing_eye" && !this.m.Skills.hasSkill("injury.missing_eye") && !this.m.Skills.hasSkill("trait.legend_prosthetic_eye"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID == "injury.missing_finger" && !this.m.Skills.hasSkill("injury.missing_finger") && !this.m.Skills.hasSkill("trait.legend_prosthetic_finger"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID == "injury.missing_hand" && !this.m.Skills.hasSkill("injury.missing_hand") && !this.m.Skills.hasSkill("trait.legend_prosthetic_hand"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID == "injury.missing_nose" && !this.m.Skills.hasSkill("injury.missing_nose") && !this.m.Skills.hasSkill("trait.legend_prosthetic_nose"))
+			{
+				potential.push(inj);
+			}
+			else if (inj.ID != "injury.broken_elbow_joint" && inj.ID != "injury.broken_knee" && inj.ID != "injury.maimed_foot" && inj.ID != "injury.missing_ear" && inj.ID != "injury.missing_eye" && inj.ID != "injury.missing_finger" && inj.ID != "injury.missing_hand" && inj.ID != "injury.missing_nose" && !this.m.Skills.hasSkill(inj.ID))
+			{
+				potential.push(inj);
+			}
+			else
+			{
+				numPermInjuries = ++numPermInjuries;
+			}
+		}
+
+		if (potential.len() == 0)
+		{
+			return true
+		}
+
+		if (numPermInjuries + 1 >= 3)
+		{
+			this.updateAchievement("HardToKill", 1, 1);
+		}
+
+		local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
+		this.m.Skills.add(skill);
+		this.Tactical.getSurvivorRoster().add(this);
+		this.m.IsDying = false;
+		this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
+		this.updateAchievement("ScarsForLife", 1, 1);
+
+		if (this.getTags().has("PlayerSkeleton") || this.getTags().has("PlayerZombie"))
+		{
+			return false
+		}
+
+		if(this.m.CurrentProperties.SurvivesAsUndead)
+		{
+			local skill = this.new("scripts/skills/special/legend_animated_player_properties");
+			this.m.Skills.add(skill);
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+				this.getTags().add("PlayerSkeleton");
+				this.getTags().add("undead");
+				this.getTags().add("skeleton");
+			}
+			else
+			{
+				this.getTags().add("PlayerZombie");
+				this.getTags().add("undead");
+				this.getTags().add("zombie_minion");
+			}
+		}
+
+		return false;
+
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
@@ -1098,6 +1114,12 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				{
 					decal = stub.addSprite("surcoat");
 					decal.setBrush("surcoat_" + (this.m.Surcoat < 10 ? "0" + this.m.Surcoat : this.m.Surcoat) + "_dead");
+				}
+
+				if (appearance.CorpseArmorUpgradeBack != "")
+				{
+					decal = stub.addSprite("upgrade_back");
+					decal.setBrush(appearance.CorpseArmorUpgradeBack);
 				}
 
 				if (sprite_accessory.HasBrush)
@@ -1185,284 +1207,21 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 						decal.Saturation = sprite_beard.Saturation;
 					}
 				}
+
+				if (appearance.CorpseArmorUpgradeFront != "")
+				{
+					decal = stub.addSprite("upgrade_front");
+					decal.setBrush(appearance.CorpseArmorUpgradeFront);
+				}
 			}
 		}
 
 		if (_tile != null)
 		{
-			local decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-			decal.Color = sprite_head.Color;
-			decal.Saturation = sprite_head.Saturation;
-			decal.Scale = 0.9;
-			decal.setBrightness(0.9);
-
-			if (tattoo_body.HasBrush)
-			{
-				decal = _tile.spawnDetail(tattoo_body.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Color = tattoo_body.Color;
-				decal.Saturation = tattoo_body.Saturation;
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
-			}
-
-			if (appearance.CorpseArmor != "")
-			{
-				decal = _tile.spawnDetail(appearance.CorpseArmor, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
-			}
-
-			if (sprite_surcoat.HasBrush && this.doesBrushExist("surcoat_" + (this.m.Surcoat < 10 ? "0" + this.m.Surcoat : this.m.Surcoat) + "_dead"))
-			{
-				decal = _tile.spawnDetail("surcoat_" + (this.m.Surcoat < 10 ? "0" + this.m.Surcoat : this.m.Surcoat) + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
-			}
-
-			if (sprite_accessory.HasBrush)
-			{
-				decal = _tile.spawnDetail(sprite_accessory.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-				decal.setBrightness(0.9);
-			}
-
-			if (_fatalityType == this.Const.FatalityType.None && (!_skill || _skill.getProjectileType() == this.Const.ProjectileType.None) && this.Math.rand(1, 100) <= 33)
-			{
-				decal = _tile.spawnDetail("dead_body_splatter", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Alpha = 160;
-			}
-
-			if (_fatalityType == this.Const.FatalityType.Disemboweled)
-			{
-				decal = _tile.spawnDetail("bust_body_guts_0" + this.Math.rand(1, 3), this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				decal.Scale = 0.9;
-			}
-			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
-			{
-				if (appearance.CorpseArmor != "")
-				{
-					decal = _tile.spawnDetail(appearance.CorpseArmor + "_arrows", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				}
-				else
-				{
-					decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				}
-
-				decal.Scale = 0.9;
-			}
-			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
-			{
-				if (appearance.CorpseArmor != "")
-				{
-					decal = _tile.spawnDetail(appearance.CorpseArmor + "_javelin", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				}
-				else
-				{
-					decal = _tile.spawnDetail(sprite_body.getBrush().Name + "_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-				}
-
-				decal.Scale = 0.9;
-			}
-
-			if (_fatalityType != this.Const.FatalityType.Decapitated)
-			{
-				if (!appearance.HideCorpseHead)
-				{
-					local decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Color = sprite_head.Color;
-					decal.Saturation = sprite_head.Saturation;
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
-
-					if (tattoo_head.HasBrush)
-					{
-						decal = _tile.spawnDetail(tattoo_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-						decal.Color = tattoo_head.Color;
-						decal.Saturation = tattoo_head.Saturation;
-						decal.Scale = 0.9;
-						decal.setBrightness(0.9);
-					}
-				}
-
-				if (!appearance.HideBeard && !appearance.HideCorpseHead && sprite_beard.HasBrush)
-				{
-					local decal = _tile.spawnDetail(sprite_beard.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Color = sprite_beard.Color;
-					decal.Saturation = sprite_beard.Saturation;
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
-
-					if (sprite_beard_top.HasBrush)
-					{
-						local decal = _tile.spawnDetail(sprite_beard_top.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-						decal.Color = sprite_beard.Color;
-						decal.Saturation = sprite_beard.Saturation;
-						decal.Scale = 0.9;
-						decal.setBrightness(0.9);
-					}
-				}
-
-				if (!appearance.HideHair && !appearance.HideCorpseHead && sprite_hair.HasBrush)
-				{
-					local decal = _tile.spawnDetail(sprite_hair.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Color = sprite_hair.Color;
-					decal.Saturation = sprite_hair.Saturation;
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
-				}
-
-				if (_fatalityType == this.Const.FatalityType.Smashed)
-				{
-					decal = _tile.spawnDetail("bust_head_smashed_01", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Scale = 0.9;
-				}
-				else if (appearance.HelmetCorpse != "")
-				{
-					local decal = _tile.spawnDetail(this.getItems().getAppearance().HelmetCorpse, this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
-					decal.Scale = 0.9;
-					decal.setBrightness(0.9);
-				}
-			}
-			else if (_fatalityType == this.Const.FatalityType.Decapitated)
-			{
-				local layers = [];
-
-				if (!appearance.HideCorpseHead)
-				{
-					layers.push(sprite_head.getBrush().Name + "_dead");
-				}
-
-				if (!appearance.HideCorpseHead && tattoo_head.HasBrush)
-				{
-					layers.push(tattoo_head.getBrush().Name + "_dead");
-				}
-
-				if (!appearance.HideBeard && sprite_beard.HasBrush)
-				{
-					layers.push(sprite_beard.getBrush().Name + "_dead");
-				}
-
-				if (!appearance.HideHair && sprite_hair.HasBrush)
-				{
-					layers.push(sprite_hair.getBrush().Name + "_dead");
-				}
-
-				if (appearance.HelmetCorpse.len() != 0)
-				{
-					layers.push(appearance.HelmetCorpse);
-				}
-
-				if (!appearance.HideBeard && sprite_beard_top.HasBrush)
-				{
-					layers.push(sprite_beard_top.getBrush().Name + "_dead");
-				}
-
-				local decap = this.Tactical.spawnHeadEffect(_tile, layers, this.createVec(0, 0), -90.0, "bust_head_dead_bloodpool");
-				local idx = 0;
-
-				if (!appearance.HideCorpseHead)
-				{
-					decap[idx].Color = sprite_head.Color;
-					decap[idx].Saturation = sprite_head.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
-					idx = ++idx;
-				}
-
-				if (!appearance.HideCorpseHead && tattoo_head.HasBrush)
-				{
-					decap[idx].Color = tattoo_head.Color;
-					decap[idx].Saturation = tattoo_head.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
-					idx = ++idx;
-				}
-
-				if (!appearance.HideBeard && sprite_beard.HasBrush)
-				{
-					decap[idx].Color = sprite_beard.Color;
-					decap[idx].Saturation = sprite_beard.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
-					idx = ++idx;
-				}
-
-				if (!appearance.HideHair && sprite_hair.HasBrush)
-				{
-					decap[idx].Color = sprite_hair.Color;
-					decap[idx].Saturation = sprite_hair.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
-					idx = ++idx;
-				}
-
-				if (appearance.HelmetCorpse.len() != 0)
-				{
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
-					idx = ++idx;
-				}
-
-				if (!appearance.HideBeard && sprite_beard_top.HasBrush)
-				{
-					decap[idx].Color = sprite_beard.Color;
-					decap[idx].Saturation = sprite_beard.Saturation;
-					decap[idx].Scale = 0.9;
-					decap[idx].setBrightness(0.9);
-					idx = ++idx;
-				}
-			}
-
-			this.spawnTerrainDropdownEffect(_tile);
-			this.spawnFlies(_tile);
-			local custom = {
-				IsZombified = false,
-				InjuryType = 4,
-				Face = sprite_head.getBrush().Name,
-				Body = sprite_body.getBrush().Name,
-				TattooBody = tattoo_body.HasBrush ? tattoo_body.getBrush().Name : null,
-				TattooHead = tattoo_head.HasBrush ? tattoo_head.getBrush().Name : null,
-				Hair = sprite_hair.HasBrush ? sprite_hair.getBrush().Name : null,
-				HairColor = sprite_hair.Color,
-				HairSaturation = sprite_hair.Saturation,
-				Beard = sprite_beard.HasBrush ? sprite_beard.getBrush().Name : null,
-				Surcoat = this.m.Surcoat
-			};
-			local corpse = clone this.Const.Corpse;
-			corpse.Type = "scripts/entity/tactical/enemies/zombie_player";
-			corpse.Faction = this.getFaction();
-			corpse.CorpseName = this.getName();
-			corpse.Tile = _tile;
-			corpse.Value = 9.0;
-			corpse.Hitpoints = 1.0;
-			corpse.IsResurrectable = isResurrectable;
-			corpse.IsConsumable = _fatalityType != this.Const.FatalityType.Unconscious;
-			corpse.Armor = this.m.BaseProperties.Armor;
-			corpse.Name = "Wiederganger " + this.getNameOnly();
-			corpse.Items = _fatalityType != this.Const.FatalityType.Unconscious ? this.getItems() : null;
-			corpse.Color = sprite_head.Color;
-			corpse.Saturation = sprite_head.Saturation;
-			corpse.Custom = custom;
-			corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
-			corpse.IsPlayer = true;
-			_tile.Properties.set("Corpse", corpse);
-			this.Tactical.Entities.addCorpse(_tile);
-		}
-
-		if (_fatalityType != this.Const.FatalityType.Unconscious)
-		{
-			this.getItems().dropAll(_tile, _killer, !flip);
-		}
-
-		if (_tile != null && !this.Tactical.State.isScenarioMode() && this.World.FactionManager.isUndeadScourge() && isResurrectable && this.Math.rand(1, 100) <= 50)
-		{
+			this.human.onDeath(_killer, _skill, _tile, _fatalityType);
 			local corpse = _tile.Properties.get("Corpse");
-			corpse.Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID();
-			corpse.Hitpoints = 1.0;
-			corpse.Items = this.getItems();
-			corpse.IsConsumable = false;
-			corpse.IsResurrectable = false;
-			this.Time.scheduleEvent(this.TimeUnit.Rounds, this.Math.rand(2, 3), this.Tactical.Entities.resurrect, corpse);
+			corpse.IsPlayer = true;
+			corpse.Value = 10.0;
 		}
 
 		if (!this.m.IsGuest && !this.Tactical.State.isScenarioMode())
@@ -1525,8 +1284,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			};
 			this.World.Statistics.addFallen(fallen);
 		}
-
-		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
 	function onInit()
@@ -1619,6 +1376,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Level >= 11)
 		{
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
+		}
+
+		if (this.getTags().has("PlayerSkeleton") || this.getTags().has("PlayerZombie"))
+		{
+			_xp = _xp * 0.33;
 		}
 
 	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
@@ -2332,7 +2094,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (_addTraits)
 		{
-		this.fillTalentValues(3);
+			this.fillTalentValues(3);
 			this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		}
 	}
@@ -2607,7 +2369,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerRetreated);
 	}
 
-
+	function copyFormation( _from, _to )
+	{
+		this.m.Formations.copy(_from, _to);
+	}
 
 	function saveFormation()
 	{
@@ -2615,41 +2380,43 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Formations.saveItems(this.getItems());
 	}
 	
-	function setFormation( _i )
+	function setFormation( _i, _stash)
 	{
 		if (_i == this.m.Formations.getCurrentIndex()) 
 		{
-			return;
+			return [[], []];
 		}
 
 		this.m.Formations.setFormation(_i)
 		this.setPlaceInFormation(this.m.Formations.getPosition());
 		local items = this.m.Formations.getItems();
+		local eTransfer = []
+		local bTransfer = []
 		//Find the item in the stash, remove from stash and equip it
 		foreach (itemId in items)
 		{
-			local res = this.Stash.getItemByInstanceID(itemId);
-			if (res == null) {
-				this.logInfo("saveFormation::could not find item for " + itemId);
+			local item = _stash.remove(itemId);
+			if (item == null) {
+				this.logInfo("setFormation::Items; could not find item for " + itemId);
 				continue
 			}
+			eTransfer.push(item)
 
-			this.Stash.remove(res.item);
-			this.m.Items.equip(res.item);
+			//this.m.Items.equip(item);
 		}
 
 		local bags = this.m.Formations.getBags();
 		foreach (itemId in bags)
 		{
-			local res = this.Stash.getItemByInstanceID(itemId);
-			if (res == null) {
-				this.logInfo("saveFormation::could not find item for " + itemId);
+			local item = _stash.remove(itemId);
+			if (item == null) {
+				this.logInfo("setFormation::Bags; could not find item for " + itemId);
 				continue
 			}
-
-			this.Stash.remove(res.item);
-			this.m.Items.addToBag(res.item);
+			bTransfer.push(item);
+			//this.m.Items.addToBag(item);
 		}
+		return [eTransfer, bTransfer]
 	}
 
 	function getStashModifier()
@@ -2910,6 +2677,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_in.getMetaData().getVersion() >= 47)
 		{
 			this.m.VeteranPerks = _in.readU8();
+			if (this.m.VeteranPerks == 0)
+			{
+				this.m.VeteranPerks = 5;
+			}
 		}
 
 		if (_in.getMetaData().getVersion() >= 48)

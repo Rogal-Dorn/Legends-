@@ -113,7 +113,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 		this.m.ProduceString = "wood";
 	}
 
-	function onBuild()
+	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);

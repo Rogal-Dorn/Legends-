@@ -37,6 +37,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.DoubleStrike,
 		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
 		gt.Const.Perks.PerkDefs.DevastatingStrikes,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 		gt.Const.Perks.PerkDefs.LegendRoster3		
 	],
 	[
@@ -81,6 +82,7 @@ local RangerTree = [
 		gt.Const.Perks.PerkDefs.LegendGuidedSteps,
 		gt.Const.Perks.PerkDefs.LegendEvasion,
 		gt.Const.Perks.PerkDefs.LegendBigGameHunter,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 		gt.Const.Perks.PerkDefs.LegendRoster7
 	],
 	[],

@@ -16,6 +16,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.LegendComposure,
+		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
@@ -39,6 +40,7 @@ local CrusaderTree = [
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendToolsDrawers,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[

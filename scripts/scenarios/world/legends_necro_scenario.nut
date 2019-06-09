@@ -158,30 +158,24 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onHiredByScenario( bro )
 	{
-	if (bro.getBackground().isOutlawBackground())
+		bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+		local r = this.Math.rand(0, 2);
+		if (bro.getBackground().isOutlawBackground())
+		{
+			bro.improveMood(0.5, "Finds perverse joy in your actions")
+			if (r == 0)
 			{
-				
-				bro.improveMood(0.5, "Finds perverse joy in your actions")
-				bro.getSkills().add(this.new("scripts/skills/traits/deathly_spectre_trait"));
-				r = this.Math.rand(0, 2);
-				if (r == 0)
-						{
-						bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
-						}
+				bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
 			}
-
-	if (bro.getBackground().isCrusaderRecruitBackground())
+		}
+		else if (bro.getBackground().isCrusaderRecruitBackground())
+		{
+			bro.worsenMood(1.5, "Is deeply disturbed by you");
+			if (r == 0)
 			{
-			
-				bro.worsenMood(1.5, "Is deeply disturbed by you");
-				bro.getSkills().add(this.new("scripts/skills/traits/deathly_spectre_trait"));
-				local r;		
-				r = this.Math.rand(0, 2);
-				if (r == 0)
-						{
-						bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
-						}
+				bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
 			}
+		}
 
 	}
 

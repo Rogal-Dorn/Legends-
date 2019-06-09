@@ -182,6 +182,18 @@ gt.Const.Difficulty <- {
 		0.95,
 		0.9
 	],
+	MinPayments = [
+		100,
+		50,
+		30,
+		10
+	],
+	MinHeadPayments = [
+		15,
+		10,
+		5,
+		1
+	],	
 	HealMult = [
 		1.0,
 		0.66,

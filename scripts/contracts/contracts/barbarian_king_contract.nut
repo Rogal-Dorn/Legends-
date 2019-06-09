@@ -24,7 +24,6 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Name = "The Barbarian King";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
-		this.m.DifficultyMult = 1.0;
 	}
 
 	function onImportIntro()
@@ -73,13 +72,6 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 			function end()
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
-				local r = this.Math.rand(1, 100);
-
-				if (r <= 15)
-				{
-					this.Flags.set("IsAGreaterThreat", true);
-				}
-
 				local f = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians);
 				local nearest_base = f.getNearestSettlement(this.World.State.getPlayer().getTile());
 				local party = f.spawnEntity(nearest_base.getTile(), "Barbarian King", false, this.Const.World.Spawn.Barbarians, 125 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
@@ -104,6 +96,14 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.UnitsSpawned.push(party.getID());
 				this.Contract.m.LastHelpTime = this.Time.getVirtualTimeF() + this.Math.rand(10, 40);
 				this.Flags.set("HelpReceived", 0);
+				local r = this.Math.rand(1, 100);
+
+				if (r <= 15)
+				{
+					this.Flags.set("IsAGreaterThreat", true);
+					c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
+				}
+
 				this.Contract.setScreen("Overview");
 				this.World.Contracts.setActiveContract(this.Contract);
 			}
@@ -148,6 +148,7 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 			function onCombatWithKing( _dest, _isPlayerAttacking = true )
 			{
 				this.Contract.m.IsPlayerAttacking = _isPlayerAttacking;
+				_dest.getController().getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(true);
 
 				if (!_dest.isInCombat() && !this.Flags.get("IsKingEncountered"))
 				{
@@ -166,6 +167,7 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else
 				{
+					this.Flags.set("IsAGreaterThreat", false);
 					local properties = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
 					properties.Music = this.Const.Music.BarbarianTracks;
 					this.World.Contracts.startScriptedCombat(properties, this.Contract.m.IsPlayerAttacking, true, true);
@@ -582,7 +584,7 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Success1",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% take the Barbarian King\'s head and rolls it out of the sack. It tumbles freely, knocking over a tray of goblets which go scattering and clattering about. Even in death the savage is a purveyor of chaos.%SPEECH_ON%Thank you, sellsword.%SPEECH_OFF%Your employer says, nodding to himself as he rights the head and tilts it onto the flap of neck.%SPEECH_ON%He is an ugly mutt, isn\'t he? Look at those teeth. Look at them! There\'s holes in those teeth. Absolutely disgusting.%SPEECH_OFF%You tell the man to pay you and he does so as agreed. But he keeps shaking his head and he bares his own teeth and mimics picking at them.%SPEECH_ON%How do you clean teeth like that? With a rope?%SPEECH_OFF%Shrugging, you head out the door, not bothering to tell %employer% that the first thing your men did to that godforsaken head is knife the gold out of its mouth. | You dump the Barbarian King\'s head onto %employer%\'s table. He stares at it, then at you.%SPEECH_ON%That\'s the biggest fucking head I\'ve ever seen.%SPEECH_OFF%Nodding, you ask for your pay and it is delivered in appropriate sum. Your employer starts pushing the savage\'s face around, as though he were a sorcerer looking to steal its secrets.%SPEECH_ON%I\'d wager this is where tales of ogres come from, yeah? Like a child sees this ugly thing and there it is, his imagination is set alight, and so the monster is born.%SPEECH_OFF%If only things were that simple. | Even without its massive body the head of the Barbarian King makes quite the splash when shown to %employer%. A host of nobles and servants ooh and ahh at the size of it. A man in a black robe is quick to pay you what you\'re owed. %employer% himself picks the head up and tosses it into the air as to weigh it.%SPEECH_ON%By the old gods, it is truly heavy! Oy %randomname%.%SPEECH_OFF%A servant steps forward. Your employer grins.%SPEECH_ON%Fetch me a pike. We\'re going to hoist this horror head high into the heavens.%SPEECH_OFF%A suitable stop for a savage. | Mere moments after giving %employer% the head of the Barbarian King it is being used as a plaything. Children of noblemen roll it back and forth across the stone floor, the savage\'s head knocking over walls of goblets and fortresses of dinner trays. A dog barks as it tracks the head back and forth. %employer% claps you on the shoulder.%SPEECH_ON%Outstanding work, sellsword. Truly. My scouts tell me it was a hell of a fight, that you were almost like a primitive yourself. But I suppose that\'s what it had to take, right? A savage to fight a savage? Spirit of such primacy can\'t be contained by our civilized ways!%SPEECH_OFF%One of the kids kicks the King in the face, breaking its jaw and cutting the child\'s foot on the teeth. The kid screams for help and, perhaps defending its owner, the dog sets upon the head and starts dragging it around by the flap of neck. %employer% smiles again.%SPEECH_ON%Your pay is waiting for you outside. It is in full, as promised.%SPEECH_OFF% | A man in knight\'s armor takes the Barbarian King\'s head from you. Immediately, you draw your sword, but %employer% leaps in to end any start to violence.%SPEECH_ON%Oy, sellsword, it is quite alright. Your pay, as promised.%SPEECH_OFF%The man hands you a satchel of crowns, but behind him you see the head being given to a man in a black cloak. You nod and ask what they intend to do with it. %employer% grins.%SPEECH_ON%Frankly, steins await me, sellsword, and I\'m quite thirsty.%SPEECH_OFF%The man quickly walks past you. You do not see any ale, or any drink at all, he simply follows the man in the cloak. | %employer% stares at the Barbarian King\'s head like a cat would meanly stare at anything not its own self.%SPEECH_ON%Interesting. I think I\'ll have it stuffed and put upon my mantle.%SPEECH_OFF%Speaking slightly out of turn, you remind your employer that it is the head of a man he is referring to. %employer% shrugs.%SPEECH_ON%So? It is a monstrosity. There cannot be coexistence between the civilized and the savage. By having it properly taken care of I will ruminate on that reality. What will you do? Advise me again?%SPEECH_OFF%Pursing your lips, you ask for your pay. The man points toward the corner.%SPEECH_ON%In the satchel there. You did well, sellsword, but don\'t speak to me in such a manner again. Good day.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% takes the Barbarian King\'s head and rolls it out of the sack. It tumbles freely, knocking over a tray of goblets which go scattering and clattering about. Even in death the savage is a purveyor of chaos.%SPEECH_ON%Thank you, sellsword.%SPEECH_OFF%Your employer says, nodding to himself as he rights the head and tilts it onto the flap of neck.%SPEECH_ON%He is an ugly mutt, isn\'t he? Look at those teeth. Look at them! There\'s holes in those teeth. Absolutely disgusting.%SPEECH_OFF%You tell the man to pay you and he does so as agreed. But he keeps shaking his head and he bares his own teeth and mimics picking at them.%SPEECH_ON%How do you clean teeth like that? With a rope?%SPEECH_OFF%Shrugging, you head out the door, not bothering to tell %employer% that the first thing your men did to that godforsaken head is knife the gold out of its mouth. | You dump the Barbarian King\'s head onto %employer%\'s table. He stares at it, then at you.%SPEECH_ON%That\'s the biggest fucking head I\'ve ever seen.%SPEECH_OFF%Nodding, you ask for your pay and it is delivered in appropriate sum. Your employer starts pushing the savage\'s face around, as though he were a sorcerer looking to steal its secrets.%SPEECH_ON%I\'d wager this is where tales of ogres come from, yeah? Like a child sees this ugly thing and there it is, his imagination is set alight, and so the monster is born.%SPEECH_OFF%If only things were that simple. | Even without its massive body the head of the Barbarian King makes quite the splash when shown to %employer%. A host of nobles and servants ooh and ahh at the size of it. A man in a black robe is quick to pay you what you\'re owed. %employer% himself picks the head up and tosses it into the air as to weigh it.%SPEECH_ON%By the old gods, it is truly heavy! Oy %randomname%.%SPEECH_OFF%A servant steps forward. Your employer grins.%SPEECH_ON%Fetch me a pike. We\'re going to hoist this horror head high into the heavens.%SPEECH_OFF%A suitable stop for a savage. | Mere moments after giving %employer% the head of the Barbarian King it is being used as a plaything. Children of noblemen roll it back and forth across the stone floor, the savage\'s head knocking over walls of goblets and fortresses of dinner trays. A dog barks as it tracks the head back and forth. %employer% claps you on the shoulder.%SPEECH_ON%Outstanding work, sellsword. Truly. My scouts tell me it was a hell of a fight, that you were almost like a primitive yourself. But I suppose that\'s what it had to take, right? A savage to fight a savage? Spirit of such primacy can\'t be contained by our civilized ways!%SPEECH_OFF%One of the kids kicks the King in the face, breaking its jaw and cutting the child\'s foot on the teeth. The kid screams for help and, perhaps defending its owner, the dog sets upon the head and starts dragging it around by the flap of neck. %employer% smiles again.%SPEECH_ON%Your pay is waiting for you outside. It is in full, as promised.%SPEECH_OFF% | A man in knight\'s armor takes the Barbarian King\'s head from you. Immediately, you draw your sword, but %employer% leaps in to end any start to violence.%SPEECH_ON%Oy, sellsword, it is quite alright. Your pay, as promised.%SPEECH_OFF%The man hands you a satchel of crowns, but behind him you see the head being given to a man in a black cloak. You nod and ask what they intend to do with it. %employer% grins.%SPEECH_ON%Frankly, steins await me, sellsword, and I\'m quite thirsty.%SPEECH_OFF%The man quickly walks past you. You do not see any ale, or any drink at all, he simply follows the man in the cloak. | %employer% stares at the Barbarian King\'s head like a cat would meanly stare at anything not its own self.%SPEECH_ON%Interesting. I think I\'ll have it stuffed and put upon my mantle.%SPEECH_OFF%Speaking slightly out of turn, you remind your employer that it is the head of a man he is referring to. %employer% shrugs.%SPEECH_ON%So? It is a monstrosity. There cannot be coexistence between the civilized and the savage. By having it properly taken care of I will ruminate on that reality. What will you do? Advise me again?%SPEECH_OFF%Pursing your lips, you ask for your pay. The man points toward the corner.%SPEECH_ON%In the satchel there. You did well, sellsword, but don\'t speak to me in such a manner again. Good day.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,

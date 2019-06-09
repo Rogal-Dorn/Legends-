@@ -24,7 +24,8 @@ this.ai_engage_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.root",
 			"actives.insects",
 			"actives.shadows",
-			"actives.charm"
+			"actives.charm",
+			"actives.raise_undead"
 		]
 	},
 	function create()

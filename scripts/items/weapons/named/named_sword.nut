@@ -18,7 +18,7 @@ this.named_sword <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.Condition = 72.0;
 		this.m.ConditionMax = 72.0;
 		this.m.StaminaModifier = -8;
-		this.m.Value = 6400;
+		this.m.Value = 4200;
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 50;
 		this.m.ArmorDamageMult = 0.85;
