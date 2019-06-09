@@ -9,7 +9,7 @@ this.legend_white_wolf_howl <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_22_sw.png";
 		this.m.Overlay = "active_22";
 		this.m.SoundOnUse = [
-			//"sounds/werewolf_howl.wav"
+			"sounds/enemies/werewolf_howl.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
