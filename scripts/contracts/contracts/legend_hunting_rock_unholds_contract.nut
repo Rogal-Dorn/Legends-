@@ -22,6 +22,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.importSettlementIntro();
 	}
 
+
 	function start()
 	{
 		this.m.Payment.Pool = 2200 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
@@ -399,7 +400,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 				this.List.push({
 					id = 10,
 					icon = injury2.getIcon(),
-					text = this.Contract.m.Dude.getName() + " suffers " + injury1.getNameOnly() " and " + injury2.getNameOnly()
+					text = this.Contract.m.Dude.getName() + " suffers " + injury1.getNameOnly() + " and " + injury2.getNameOnly()
 				});
 				this.Contract.m.Dude.worsenMood(1.0, "Failed to drive off unholds all by himself");
 
