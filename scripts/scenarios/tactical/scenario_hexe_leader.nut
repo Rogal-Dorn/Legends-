@@ -125,16 +125,16 @@ this.scenario_hexe_leader <- this.inherit("scripts/scenarios/tactical/scenario_t
 		// entity.setFaction(this.Const.Faction.Beasts);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_rock_unhold", x, x, 13, 13);
 		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 14, 14);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_white_direwolf", x, x, 15, 15);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 12, 12);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_alp", x, x, 17, 17);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_greenwood_schrat", x, x, 18, 18);
-		// entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 14, 14);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/hexe", x, x, 15, 15);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 12, 12);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf_bodyguard", x, x, 17, 17);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/hexe", x, x, 18, 18);
+		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_hexe_leader", x, x, 18, 18);
 		 entity.setFaction(this.Const.Faction.Beasts);
 	}
