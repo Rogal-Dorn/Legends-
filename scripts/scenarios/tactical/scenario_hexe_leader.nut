@@ -131,7 +131,7 @@ this.scenario_hexe_leader <- this.inherit("scripts/scenarios/tactical/scenario_t
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 12, 12);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf_bodyguard", x, x, 17, 17);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 17, 17);
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/hexe", x, x, 18, 18);
 		 entity.setFaction(this.Const.Faction.Beasts);

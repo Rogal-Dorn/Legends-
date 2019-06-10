@@ -802,7 +802,7 @@ Beta 12 - Monster hunt
 Adds paintable tower shields, with fortify skill that shields surrounding allies 
 bucklers gain "buckler bash" skill to daze enemies 
 
-Adds Redback spiders - Elite spiders that have a poison dealing 10 damage each turn, decreasing by 1 damage per turn over 10 turns. Damage is doubled when in a web.  The have increased AP so they can web and bite at the same time, or bite twice in a turn. increased HP, armor, bravery, stamina, melee skill, melee defense and great ranged defense.
+Adds Redback spiders - Elite spiders that have a poison dealing 10 damage each turn, decreasing by 1 damage per turn over 10 turns. Damage is doubled when in a web.  The have increased AP so they can web and bite at the same time, or bite twice in a turn. Increased stats and improved AI.
 Drops redback poison, can be used to craft: 
 Redback spider helm - made from the carapace of a redback spider, grants the web skill
 Redback dagger - made from the fangs and poison gland of a redback spider, inflicts redback poison 
@@ -813,7 +813,7 @@ Drops white wolf pelt that can be used to craft:
 white wolf helm - decreased the morale of adjacent enemies by 20 
 white wolf cloak - decreased the morale of adjacent enemies by 20 and increases armor by 30 
 
-Adds Skin Ghouls - Elite nimble ghouls with groteque elongated arms that can reap in an arc over two tiles, applying 5-10 damage, a 5hp bleed and a 25% chance to decapitate or disembowel. Those values are multipled by the ghoul's size so a Tier 3 skin ghoul can hit all of your units within 2 tiles for 15-30 damage, with 15 bleed, a 75% chance to decapitate and a 75% chance to disembowel. Increased stats over ghouls.   
+Adds Skin Ghouls - Elite nimble ghouls with groteque elongated arms that can reap in an arc over two tiles, applying 5-10 damage, a 5hp bleed and a 25% chance to decapitate or disembowel. Those values are multipled by the ghoul's size so a Tier 3 skin ghoul can hit all of your units within 2 tiles for 15-30 damage, with 15 bleed, a 75% chance to decapitate and a 75% chance to disembowel. Increased stats, improved AI, and footwork.   
 Drops Skin Ghoul skin that can be used to craft:
 Skin Ghoul Helmet - Medium armor that grants the wearer the ability to devour corpses to heal 
 Skin Ghoul Armor - Medium armor that grants the ability to heal each turn 

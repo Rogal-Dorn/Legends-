@@ -127,14 +127,18 @@ this.scenario_skin_ghoul <- this.inherit("scripts/scenarios/tactical/scenario_te
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 14, 14);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 15, 15);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul_high", x, x, 15, 15);
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 12, 12);
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 17, 17);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 18, 18);
-		// entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 18, 18);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 19, 19);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 11, 11);
+		 entity.setFaction(this.Const.Faction.Beasts);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
