@@ -171,7 +171,13 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.getTags().add("body_immune_to_acid");
 		this.getTags().add("head_immune_to_acid");
 		this.getTags().add("lindwurm");
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_stollwurm_tail_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/lindwurm_tail_agent");
+		
+		this.logInfo("AIAGENT STOLLWURM TAIL = " + this.m.AIAgent)
+		foreach(k,v in this.m.AIAgent)
+		{
+			this.logInfo("key = " + k + " : " + v)
+		}
 		this.m.AIAgent.setActor(this);
 	}
 

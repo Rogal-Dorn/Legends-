@@ -21,29 +21,37 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
-		local armorMissing = actor.getArmorMax() - actor.getArmor();
-		local armorAdded = this.Math.min(armorMissing, this.Math.floor(actor.getArmorMax() * 0.15));
+		
+		local missingBodyArmor = actor.getArmorMax(this.Const.BodyPart.Body) -  actor.getArmor(this.Const.BodyPart.Body);
+		local addedBodyArmor = this.Math.min(missingBodyArmor, this.Math.floor(actor.getArmorMax(this.Const.BodyPart.Body) * 0.15));
+				local missingHeadArmor = actor.getArmorMax(this.Const.BodyPart.Head) -  actor.getArmor(this.Const.BodyPart.Head);
+		local addedHeadArmor = this.Math.min(missingHeadArmor, this.Math.floor(actor.getArmorMax(this.Const.BodyPart.Head) * 0.15));
 
-		if (healthAdded <= 0)
+		if (addedBodyArmor <= 0 && addedHeadArmor <= 0)
 		{
 			return;
 		}
-		if (!actor.getSkills().hasSkill("effects.spider_poison_effect"))
+
+		if (actor.getSkills().hasSkill("effects.spider_poison_effect"))
 		{
-			actor.setArmor(actor.getArmor() + armorAdded);
-			actor.setDirty(true);
-	
-			if (!actor.isHiddenToPlayer())
+			return;
+		}
+
+		actor.setArmor(this.Const.BodyPart.Body, actor.getArmor(this.Const.BodyPart.Body) + addedBodyArmor);
+		actor.setArmor(this.Const.BodyPart.Head, actor.getArmor(this.Const.BodyPart.Head) + addedHeadArmor);
+		actor.setDirty(true);
+
+		if (!actor.isHiddenToPlayer())
+		{
+			this.spawnIcon("status_effect_79", actor.getTile());
+
+			if (this.m.SoundOnUse.len() != 0)
 			{
-				this.spawnIcon("status_effect_79", actor.getTile());
-
-				if (this.m.SoundOnUse.len() != 0)
-				{
-					this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
-				}
-
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " regenerated for " + armorAdded + " points of armor");
+				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
 			}
+
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " regenerated " + addedBodyArmor + " points of body armor");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " regenerated " + addedHeadArmor + " points of head armor");
 		}
 	}
 

@@ -466,6 +466,11 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
 			},
 			{
+				id = 14,
+				name = "Line Battle (Lindwurm)",
+				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
+			},			
+			{
 				id = 13,
 				name = "Wolfriders",
 				description = "[p=c][img]gfx/ui/events/event_60.png[/img][/p]\n[p=c]Defend against a pack of vicious Goblin Wolfriders. Don\'t let them encircle you! Moderate difficulty.[/p]"

@@ -30,6 +30,11 @@
         this.getItems().addToBag(_item);
     }
 
+    o.setArmor <- function (_bodyPart, _value)
+    {
+        this.m.CurrentProperties.Armor[_bodyPart] = _value;
+    }
+
         //
     // local onResurrected = o.onResurrected;
     // o.onResurrected = function ( _info ) 

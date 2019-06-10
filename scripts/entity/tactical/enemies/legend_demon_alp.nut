@@ -1,5 +1,19 @@
-this.legend_demonalp <- this.inherit("scripts/entity/tactical/actor", {
-	m = {},
+this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
+	m = {
+		Size = 1,
+		Head = 1,
+		ScaleStartTime = 0
+	},
+	function getSize()
+	{
+		return this.m.Size;
+	}
+
+	function getXP()
+	{
+		return this.m.XP * this.m.Size;
+	}
+		
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.LegendDemonAlp;
@@ -256,7 +270,7 @@ this.legend_demonalp <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.DemonAlp);
+		b.setValues(this.Const.Tactical.Actor.LegendDemonAlp);
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToDisarm = true;
@@ -280,7 +294,7 @@ this.legend_demonalp <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("status_rooted", this.createVec(0, 10));
 		this.m.Skills.add(this.new("scripts/skills/actives/shadows_skill"));
 		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
-		this.m.Skilils.add(this.new("scripts/skills/perks/perk_underdog"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
 		this.m.Skills.add(this.new("scripts/skills/actives/gruesome_feast"));

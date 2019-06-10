@@ -173,7 +173,7 @@ this.legend_white_direwolf <- this.inherit("scripts/entity/tactical/actor", {
 				for( local i = 0; i < n; i = ++i )
 				{
 	
-					local loot = this.new("scripts/items/misc/white_wolf_pelt_item");
+					local loot = this.new("scripts/items/misc/legend_white_wolf_pelt_item");
 					loot.drop(_tile);
 
 					if (this.Math.rand(1, 100) <= 33)

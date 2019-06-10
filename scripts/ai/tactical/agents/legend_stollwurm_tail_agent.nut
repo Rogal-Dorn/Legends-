@@ -3,7 +3,7 @@ this.lindwurm_tail_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function create()
 	{
 		this.agent.create();
-		this.m.ID = this.Const.AI.Agent.ID.Lindwurm;
+		this.m.ID = this.Const.AI.Agent.ID.LegendStollwurm;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.5;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.25;
 		this.m.Properties.TargetPriorityRandomMult = 0.25;
