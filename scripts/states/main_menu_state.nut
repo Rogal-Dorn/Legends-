@@ -432,28 +432,23 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		local result = [
 			{
 				id = 0,
-				name = "Combat Basics",
-				description = "[p=c][img]gfx/ui/events/event_28.png[/img][/p]\n[p=c]A simple scenario to teach combat basics. Easy.[/p]"
+				name = "Skin Ghouls",
+				description = "[p=c][img]gfx/ui/events/legend_skin_ghoul.png[/img][/p]\n[p=c]Head to head vs the creepy naked beasties[/p]"
 			},
 			{
 				id = 1,
-				name = "Swipe",
-				description = "[p=c][img]gfx/ui/events/event_133.png[/img][/p]\n[p=c]Few and easy opponents all over a map with lots of terrain features blocking sight. Well suited to get used to lines of sight, fog of war and ranged combat. Easy.[/p]"
+				name = "Redback Spiders",
+				description = "[p=c][img]gfx/ui/events/legend_redback.png[/img][/p]\n[p=c]Defend yourself from the deadly arachnids[/p]"
 			},
 			{
 				id = 4,
-				name = "Early Game",
-				description = "[p=c][img]gfx/ui/events/event_09.png[/img][/p]\n[p=c]A possible early game encounter in enemy composition and equipment available. Moderate difficulty.[/p]"
+				name = "White Wolf",
+				description = "[p=c][img]gfx/ui/events/legend_white_wolf.png[/img][/p]\n[p=c]A brutal battle against a pack led by the white wolf[/p]"
 			},
 			{
-				id = 15,
-				name = "Defend the Hill",
-				description = "[p=c][img]gfx/ui/events/event_22.png[/img][/p]\n[p=c]Survive against overwhelming odds while positioned on top of a hill. Well suited to learn about height advantage and to test sight and usability issues with height levels. Difficult.[/p]"
-			},
-			{
-				id = 6,
-				name = "Line Battle (Undead)",
-				description = "[p=c][img]gfx/ui/events/event_143.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
+				id = 8,
+				name = "Rock Unhold",
+				description = "[p=c][img]gfx/ui/events/event_104.png[/img][/p]\n[p=c]Toe to toe with a living mountain[/p]"
 			},
 			{
 				id = 9,
@@ -461,24 +456,24 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				description = "[p=c][img]gfx/ui/events/event_49.png[/img][/p]\n[p=c]ORC ORC ORC ORC ORC ORC. Difficult.[/p]"
 			},
 			{
-				id = 10,
-				name = "Line Battle (Goblins)",
-				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
-			},
-			{
 				id = 14,
-				name = "Line Battle (Lindwurm)",
-				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
+				name = "Heartwood Schrats",
+				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]It is just one tree, how bad could it be?[/p]"
 			},			
 			{
-				id = 13,
-				name = "Wolfriders",
-				description = "[p=c][img]gfx/ui/events/event_60.png[/img][/p]\n[p=c]Defend against a pack of vicious Goblin Wolfriders. Don\'t let them encircle you! Moderate difficulty.[/p]"
+				id = 6,
+				name = "Demon Alps",
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
+			},		
+			{
+				id = 2,
+				name = "Stollwurm",
+				description = "[p=c][img]gfx/ui/events/legend_stollwurm.png[/img][/p]\n[p=c]The ground is no ally, the beast approaches[/p]"
 			},
 			{
 				id = 3,
-				name = "A Walk in the Woods",
-				description = "[p=c][img]gfx/ui/events/event_127.png[/img][/p]\n[p=c]A possible late game encounter in enemy composition and equipment available. Difficult.[/p]"
+				name = "The Coven",
+				description = "[p=c][img]gfx/ui/events/legend_hexe_leader.png[/img][/p]\n[p=c]A witch approaches.[/p]"
 			}
 		];
 

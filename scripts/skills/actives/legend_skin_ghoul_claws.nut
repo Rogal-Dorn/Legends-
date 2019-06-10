@@ -28,7 +28,7 @@ this.legend_skin_ghoul_claws <- this.inherit("scripts/skills/skill", {
 		this.m.IsAOE = true;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
-		this.m.DirectDamageMult = 0.1;
+		this.m.DirectDamageMult = 0.25;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 6;
 		this.m.MinRange = 1;
@@ -80,44 +80,161 @@ this.legend_skin_ghoul_claws <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectClaws);
+		local ret = false;
+		local myTile = _user.getTile();
 		local target = _targetTile.getEntity();
+		local d = myTile.getDistanceTo(_targetTile);
 		local hp = target.getHitpoints();
 		local size = this.getContainer().getActor().getSize();
 		local success = this.attackEntity(_user, _targetTile.getEntity());
+		local result = {
+			Tiles = [],
+			MyTile = myTile,
+			TargetTile = _targetTile,
+			Num = 0
+		};
+		this.Tactical.queryTilesInRange(myTile, d, d, false, [], this.onQueryTilesHit, result);
+		local tiles = [];
+
 
 		if (!_user.isAlive() || _user.isDying())
 		{
 			return;
 		}
 
-		if (success)
+		for( local i = 0; i != result.Tiles.len(); i = ++i )
 		{
-			if (!target.isAlive() || target.isDying())
+			if (result.Tiles[i].ID == _targetTile.ID)
 			{
-				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+				tiles.push(result.Tiles[i]);
+				local idx = i - 1;
+
+				if (idx < 0)
 				{
-					this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					idx = idx + result.Tiles.len();
 				}
-				else
+
+				tiles.push(result.Tiles[idx]);
+				idx = i - 2;
+
+				if (idx < 0)
 				{
-					this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					idx = idx + result.Tiles.len();
 				}
-			}
-			else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
-			{
-				local effect = this.new("scripts/skills/effects/bleeding_effect");
-				effect.setDamage(5 * size);
-				target.getSkills().add(effect);
-				this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
-			}
-			else
-			{
-				this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+
+				tiles.push(result.Tiles[idx]);
+				break;
 			}
 		}
 
+		foreach( t in tiles )
+		{
+			if (!t.IsVisibleForEntity)
+			{
+				continue;
+			}
 
-		return success;
+			if (this.Math.abs(t.Level - myTile.Level) > 1 || this.Math.abs(t.Level - _targetTile.Level) > 1)
+			{
+				continue;
+			}
+
+			if (!t.IsEmpty && t.getEntity().isAttackable())
+			{
+				ret = this.attackEntity(_user, t.getEntity()) || ret;
+				if (!target.isAlive() || target.isDying())
+				{
+					if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+					{
+						this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					}
+					else
+					{
+						this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+					}
+				}
+				else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
+				{
+					local effect = this.new("scripts/skills/effects/bleeding_effect");
+					effect.setDamage(5 * size);
+					target.getSkills().add(effect);
+					this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				}
+				else
+				{
+					this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				}
+			}
+
+			if (!_user.isAlive() || _user.isDying())
+			{
+				break;
+			}
+		}
+
+		return ret;
+	}
+
+	function onQueryTilesHit( _tile, _result )
+	{
+		_result.Tiles.push(_tile);
+	}
+
+	function onTargetSelected( _targetTile )
+	{
+		local myTile = this.m.Container.getActor().getTile();
+		local d = myTile.getDistanceTo(_targetTile);
+		local result = {
+			Tiles = [],
+			MyTile = myTile,
+			TargetTile = _targetTile,
+			Num = 0
+		};
+		this.Tactical.queryTilesInRange(myTile, d, d, false, [], this.onQueryTilesHit, result);
+		local tiles = [];
+
+		for( local i = 0; i != result.Tiles.len(); i = ++i )
+		{
+			if (result.Tiles[i].ID == _targetTile.ID)
+			{
+				tiles.push(result.Tiles[i]);
+				local idx = i - 1;
+
+				if (idx < 0)
+				{
+					idx = idx + result.Tiles.len();
+				}
+
+				tiles.push(result.Tiles[idx]);
+				idx = i - 2;
+
+				if (idx < 0)
+				{
+					idx = idx + result.Tiles.len();
+				}
+
+				tiles.push(result.Tiles[idx]);
+				break;
+			}
+		}
+
+		foreach( t in tiles )
+		{
+			if (!t.IsVisibleForEntity)
+			{
+				continue;
+			}
+
+			if (this.Math.abs(t.Level - myTile.Level) > 1 || this.Math.abs(t.Level - _targetTile.Level) > 1)
+			{
+				continue;
+			}
+
+			if (!t.IsEmpty && t.getEntity().isAttackable())
+			{
+				this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, t, t.Pos.X, t.Pos.Y);
+			}
+		}
 	}
 
 });

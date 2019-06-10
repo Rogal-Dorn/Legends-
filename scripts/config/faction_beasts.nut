@@ -357,38 +357,38 @@ gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	XP = 600,
 	ActionPoints = 16,
 	Hitpoints = 260,
-	Bravery = 100,
+	Bravery = 150,
 	Stamina = 260,
 	MeleeSkill = 80,
 	RangedSkill = 0,
-	MeleeDefense = 30,
-	RangedDefense = 30,
+	MeleeDefense = 40,
+	RangedDefense = 40,
 	Initiative = 175,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		120,
-		120
+		240,
+		240
 	]
 };
 gt.Const.Tactical.Actor.LegendRedbackSpider <- {
 	XP = 200,
 	ActionPoints = 12,
-	Hitpoints = 120,
+	Hitpoints = 250,
 	Bravery = 80,
 	Stamina = 180,
 	MeleeSkill = 80,
 	RangedSkill = 0,
-	MeleeDefense = 20,
+	MeleeDefense = 40,
 	RangedDefense = 40,
 	Initiative = 175,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 20,
 	Armor = [
-		40,
-		40
+		120,
+		120
 	]
 };
 gt.Const.Tactical.Actor.LegendRockUnhold <- {
@@ -406,8 +406,8 @@ gt.Const.Tactical.Actor.LegendRockUnhold <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		450,
-		450
+		400,
+		400
 	]
 };
 gt.Const.Tactical.Actor.LegendDemonAlp <- {
