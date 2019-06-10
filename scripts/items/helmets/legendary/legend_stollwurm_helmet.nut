@@ -4,7 +4,7 @@ this.legend_stollwurm_helmet <- this.inherit("scripts/items/helmets/named/named_
 	{
 		this.named_helmet.create();
 		this.m.ID = "armor.head.legend_stollwurm_helmet";
-		this.m.Description = "A helmet made from the head of a stollwurm, grants muscularity";
+		this.m.Description = "A helmet made from the head of a stollwurm, grants immunity from being knocked or grabbed, immunity from morale penalties from being surrounded, and ensures you take no fatigue damage from being hit. Be warned, if you had these abilities before donning the helmet, then removing the helmet will strip those abilities.";
 		this.m.NameList = [
 			"Wurms visage",
 			"Helm of the wurm",
@@ -31,12 +31,16 @@ this.legend_stollwurm_helmet <- this.inherit("scripts/items/helmets/named/named_
 	function onEquip()
 	{
 		this.helmet.onEquip();
-		this.addSkill(this.new("scripts/skills/perks/perk_legend_composure"));
+		this.addSkill(this.new("scripts/skills/perks/perk_stalwart"));
+		this.addSkill(this.new("scripts/skills/perks/perk_steadfast"));
+		this.addSkill(this.new("scripts/skills/perks/perk_battleheart"));
 	}
 		function onUnequip()
 	{
 		this.helmet.onUnequip();
-		this.removeSkill(this.new("scripts/skills/perks/perk_legend_composure"));
+		this.removeSkill(this.new("scripts/skills/perks/perk_stalwart"));
+		this.removeSkill(this.new("scripts/skills/perks/perk_steadfast"));
+		this.removeSkill(this.new("scripts/skills/perks/perk_battleheart"));
 	}
 });
 

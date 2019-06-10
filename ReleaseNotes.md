@@ -819,7 +819,7 @@ Skin Ghoul Helmet - Medium armor that grants the wearer the ability to devour co
 Skin Ghoul Armor - Medium armor that grants the ability to heal each turn 
 Skin Ghoul Blood potion - Can be used to heal 10% of your missing health per turn, over 4 turns 
 
-Adds Demon Alps - Elite Alps with levitate, anticipation, a horrifying scream and the ability to feast on corpses. Increased stats 
+Adds Demon Alps - Elite Alps who cast a burning realm with four shadows per turn. They gain levitate, anticipation, footwork, a horrifying scream and the ability to feast on corpses. Increased stats and improved AI  
 50% chance of dropping Demon Alp Skin 
 Demon Alp Helm - Grants horrific scream 
 80% chance of dropping a Demon's Third Eye that can be used to craft: 
@@ -844,7 +844,7 @@ The contract to hunt these beasts is unlocked by a bro selecting 'Favoured Enemy
 Adds Stollwurm - Elite wurms that can burrow across the map and regenerate health each turn. Increased stats 
 Drops stollwurm blood and scales That can be used to craft 
 Stollwurm scale cloack - Adds 80 durability and immunity to stun 
-Stollwurm helmet - very durable, gives immunity to stun  (should be improved)
+Stollwurm helmet - very durable, gives immunity to knockback and grab, immunity to surround maluses, and 0 fatigue from being hit (stalwart, steadfast and battleheart)
 50% chance of dropping an armor rune stone 
 The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy Lindwurm' perk, which is available to beast hunters, rangers, hunters, taxidermists, fishermen and miners. 
 
