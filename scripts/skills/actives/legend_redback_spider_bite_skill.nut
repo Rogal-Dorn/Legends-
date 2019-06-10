@@ -43,24 +43,24 @@ this.legend_redback_spider_bite_skill <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.DamageRegularMin += 30;
-		_properties.DamageRegularMax += 60;
+		_properties.DamageRegularMax += 50;
 		_properties.DamageArmorMult *= 1.0;
 	}
 
 	function onUse( _user, _targetTile )
 	{
+		
 		local success = this.attackEntity(_user, _targetTile.getEntity());
-		return this.attackEntity(_user, _targetTile.getEntity());
 		if (!_user.isAlive() || _user.isDying())
 		{
-			return success;
+			return;
 		}
 		
-		if (success && _targetTile.IsOccupiedByActor)
+		if (success)
 		{
 			local target = _targetTile.getEntity();
 
-			if (!target.getCurrentProperties().IsImmuneToPoison && !target.getSkills().hasSkill("effects.legend_redback_spider_poison"))
+			if (!target.getCurrentProperties().IsImmuneToPoison)
 			{
 				target.getSkills().add(this.new("scripts/skills/effects/legend_redback_spider_poison_effect"));
 

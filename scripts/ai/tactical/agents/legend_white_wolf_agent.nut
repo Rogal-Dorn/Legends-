@@ -22,7 +22,6 @@ this.legend_white_wolf_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function onAddBehaviors()
 	{
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_roam"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_flee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_rotation"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_recover"));

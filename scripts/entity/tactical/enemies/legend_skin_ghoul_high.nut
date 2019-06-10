@@ -2,14 +2,14 @@ this.legend_skin_ghoul_high <- this.inherit("scripts/entity/tactical/enemies/leg
 	m = {},
 	function create()
 	{
-		this.ghoul.create();
+		this.legend_skin_ghoul.create();
 	}
 
 	function onInit()
 	{
-		this.ghoul.onInit();
-		this.grow(true);
-		this.grow(true);
+		this.legend_skin_ghoul.onInit();
+		this.legend_skin_ghoul.grow(true);
+		this.legend_skin_ghoul.grow(true);
 	}
 
 });

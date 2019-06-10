@@ -373,10 +373,10 @@ gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendRedbackSpider <- {
-	XP = 200,
-	ActionPoints = 12,
+	XP = 500,
+	ActionPoints = 16,
 	Hitpoints = 250,
-	Bravery = 80,
+	Bravery = 120,
 	Stamina = 180,
 	MeleeSkill = 80,
 	RangedSkill = 0,
@@ -387,8 +387,8 @@ gt.Const.Tactical.Actor.LegendRedbackSpider <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 20,
 	Armor = [
-		120,
-		120
+		240,
+		240
 	]
 };
 gt.Const.Tactical.Actor.LegendRockUnhold <- {
