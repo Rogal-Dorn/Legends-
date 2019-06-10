@@ -121,8 +121,8 @@ this.scenario_white_wolf <- this.inherit("scripts/scenarios/tactical/scenario_te
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 11, 11);
-		 entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 11, 11);
+		// entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 13, 13);
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf_high", x, x, 14, 14);
@@ -133,8 +133,8 @@ this.scenario_white_wolf <- this.inherit("scripts/scenarios/tactical/scenario_te
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 17, 17);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 18, 18);
-		 entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 18, 18);
+		// entity.setFaction(this.Const.Faction.Beasts);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )

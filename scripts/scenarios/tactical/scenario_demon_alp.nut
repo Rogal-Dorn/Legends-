@@ -125,16 +125,16 @@ this.scenario_demon_alp <- this.inherit("scripts/scenarios/tactical/scenario_tem
 		// entity.setFaction(this.Const.Faction.Beasts);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_rock_unhold", x, x, 13, 13);
 		// entity.setFaction(this.Const.Faction.Beasts);
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 14, 14);
-		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 15, 15);
-		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 12, 12);
-		 entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 14, 14);
+		//  entity.setFaction(this.Const.Faction.Beasts);
+		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 15, 15);
+		//  entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 12, 12);
+		//  entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_alp", x, x, 17, 17);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 18, 18);
-		 entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 18, 18);
+		// entity.setFaction(this.Const.Faction.Beasts);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )

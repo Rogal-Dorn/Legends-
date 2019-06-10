@@ -121,7 +121,7 @@ this.scenario_skin_ghoul <- this.inherit("scripts/scenarios/tactical/scenario_te
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 16, 16);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 16, 16);
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 13, 13);
 		 entity.setFaction(this.Const.Faction.Beasts);
@@ -137,8 +137,8 @@ this.scenario_skin_ghoul <- this.inherit("scripts/scenarios/tactical/scenario_te
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 19, 19);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 11, 11);
-		 entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 11, 11);
+		// entity.setFaction(this.Const.Faction.Beasts);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
