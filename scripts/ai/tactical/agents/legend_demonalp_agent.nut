@@ -22,7 +22,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.OverallHideMult = 2.0;
 		this.m.Properties.EngageWhenAlreadyEngagedMult = 0.0;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.0;
-		this.m.Properties.EngageOnGoodTerrainBonusMult = 1.0;
+		this.m.Properties.EngageOnGoodTerrainBonusMult = 1.5;
 		this.m.Properties.EngageOnBadTerrainPenaltyMult = 1.0;
 		this.m.Properties.EngageAgainstSpearwallMult = 0.25;
 		this.m.Properties.EngageAgainstSpearwallWithShieldwallMult = 0.25;
@@ -37,11 +37,14 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 
 	function onAddBehaviors()
 	{
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_roam"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_terror"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_corruption"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_spawn_shadow"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_spawn_demon_shadow"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_gruesome_feast"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_terror"));
 	}

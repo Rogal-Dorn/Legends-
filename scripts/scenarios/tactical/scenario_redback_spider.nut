@@ -121,8 +121,10 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 16, 16);
-		// entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 11, 11);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 16, 16);
+		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 13, 13);
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 15, 15);
@@ -133,8 +135,10 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 17, 17);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_greenwood_schrat", x, x, 18, 18);
-		// entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/spider, x, x, 18, 18);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/spider, x, x, 19, 19);
+		 entity.setFaction(this.Const.Faction.Beasts);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )

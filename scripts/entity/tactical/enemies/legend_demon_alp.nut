@@ -292,11 +292,12 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 10));
-		this.m.Skills.add(this.new("scripts/skills/actives/shadows_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_demon_shadows_skill"));
 		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
+		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/actives/gruesome_feast"));
 		this.m.Skills.add(this.new("scripts/skills/effects/gruesome_feast_effect"));	
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));

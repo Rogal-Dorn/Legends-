@@ -67,7 +67,7 @@ this.legend_redback_spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Move] = 0.7;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Idle] = 2.0;
 		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/spider_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_redback_spider_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -286,7 +286,7 @@ this.legend_redback_spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("status_stunned", this.createVec(0, -20));
 		this.setSpriteOffset("arrow", this.createVec(0, -20));
 		this.setSize(this.Math.rand(70, 90) * 0.01);
-		this.m.Skills.add(this.new("scripts/skills/actives/spider_bite_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_redback_spider_bite_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/web_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
