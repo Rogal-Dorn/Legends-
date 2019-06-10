@@ -104,27 +104,27 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				switch(this.m.SelectedScenarioID)
 				{
 				case 0:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_skin_ghoul"));
 					break;
 
 				case 1:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_swipe"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_redback_spider"));
 					break;
 
 				case 2:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_defend_the_hill"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_stollwurm"));
 					break;
 
 				case 3:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_advanced_combat"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_hexe_leader"));
 					break;
 
 				case 4:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_early_game"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_white_wolf"));
 					break;
 
 				case 6:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_demon_alp"));
 					break;
 
 				case 7:
@@ -132,7 +132,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					break;
 
 				case 8:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_canyon"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_rock_unhold"));
 					break;
 
 				case 9:
