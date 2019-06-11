@@ -1,12 +1,13 @@
-this.legend_stollwurm_move_skill <- this.inherit("scripts/skills/skill", {
+this.legend_stollwurm_move_tail_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_stollwurm_move";
-		this.m.Name = "Burrow";
+		this.m.ID = "actives.legend_stollwurm_move_tail";
+		this.m.Name = "Burrow Tail";
 		this.m.Description = "";
-		this.m.Icon = "skills/active_149.png";
-		this.m.Overlay = "active_149";
+		this.m.Icon = "skills/active_109.png";
+		this.m.IconDisabled = "skills/active_109.png";
+		this.m.Overlay = "active_109";
 		this.m.SoundOnUse = [
 			"sounds/enemies/digging_01.wav",
 			"sounds/enemies/digging_02.wav",
@@ -17,7 +18,7 @@ this.legend_stollwurm_move_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/digging_02.wav",
 			"sounds/enemies/digging_03.wav"
 		];
-		this.m.SoundVolume = 1.2;
+		this.m.SoundVolume = 1.1;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
@@ -28,16 +29,23 @@ this.legend_stollwurm_move_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 1;
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
+		this.m.MaxRange = 99;
 		this.m.MaxLevelDifference = 4;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (!_targetTile.IsEmpty)
+		{
+			return false;
+		}
+
+		local body = this.getContainer().getActor().getBody();
+
+		if (body == null || body.isNull() || !body.isAlive() || _targetTile.getDistanceTo(body.getTile()) > 1)
 		{
 			return false;
 		}
@@ -53,12 +61,12 @@ this.legend_stollwurm_move_skill <- this.inherit("scripts/skills/skill", {
 			TargetTile = _targetTile,
 			OnDone = this.onTeleportDone,
 			OnTeleportStart = this.onTeleportStart,
-			IgnoreColors = false
+			NoAnimations = false
 		};
 
 		if (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " burrows");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " burrows its tail");
 		}
 
 		if (_user.getTile().IsVisibleForPlayer)
@@ -81,21 +89,17 @@ this.legend_stollwurm_move_skill <- this.inherit("scripts/skills/skill", {
 
 	function onTeleportStart( _tag )
 	{
-		if (!_tag.IgnoreColors)
-		{
+
 			_tag.User.storeSpriteColors();
 			_tag.User.fadeTo(this.createColor("ffffff00"), 0);
-		}
 
 		this.Tactical.getNavigator().teleport(_tag.User, _tag.TargetTile, _tag.OnDone, _tag, false, 1000.0);
+
 	}
 
 	function onTeleportDone( _entity, _tag )
 	{
-		if (!_tag.IgnoreColors)
-		{
 			_entity.restoreSpriteColors();
-		}
 
 		if (!_entity.isHiddenToPlayer())
 		{

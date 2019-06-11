@@ -432,11 +432,11 @@ gt.Const.Tactical.Actor.LegendDemonAlp <- {
 };
 gt.Const.Tactical.Actor.LegendStollwurm <- {
 	XP = 1500,
-	ActionPoints = 12,
-	Hitpoints = 1100,
+	ActionPoints = 8,
+	Hitpoints = 1200,
 	Bravery = 180,
 	Stamina = 400,
-	MeleeSkill = 85,
+	MeleeSkill = 75,
 	RangedSkill = 0,
 	MeleeDefense = 20,
 	RangedDefense = 10,
@@ -445,8 +445,8 @@ gt.Const.Tactical.Actor.LegendStollwurm <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		1200,
-		600
+		800,
+		400
 	]
 };
 gt.Const.Tactical.Actor.LegendGreenwoodSchrat <- {

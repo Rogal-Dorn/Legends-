@@ -1,10 +1,37 @@
 this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		Tail = null
+		Tail = null,
+		Mode = 0
 	},
 	function getIdealRange()
 	{
 		return 2;
+	}
+
+	function getMode()
+	{
+		return this.m.Mode;
+	}
+
+	function setMode( _m )
+	{
+		this.m.Mode = _m;
+
+		if (this.isPlacedOnMap())
+		{
+			if (this.m.Mode == 0 && _m == 1)
+			{
+				this.m.IsUsingZoneOfControl = true;
+				this.getTile().addZoneOfControl(this.getFaction());
+			}
+
+			this.onUpdateInjuryLayer();
+		}
+	}
+
+		function getImageOffsetY()
+	{
+		return 20;
 	}
 
 	function create()
@@ -283,11 +310,10 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/racial/lindwurm_racial"));
-		this.m.Skills.add(this.new("scripts/skills/racial/unhold_racial"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
-		this.m.Skills.add(this.new("scripts/skills/actives/teleport_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_stollwurm_move_skill"));
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
@@ -342,6 +368,12 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.Tactical.TurnSequenceBar.moveEntityToFront(this.m.Tail.getID());
 		}
+	}
+
+	function onPlacedOnMap()
+	{
+		this.actor.onPlacedOnMap();
+		this.onUpdateInjuryLayer();
 	}
 
 });
