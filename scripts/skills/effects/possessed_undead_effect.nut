@@ -107,7 +107,7 @@ this.possessed_undead_effect <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		if (this.m.Possessor != null && !this.m.Possessor.isNull() && this.m.Possessor.isAlive())
+		if (this.m.Possessor != null && !this.m.Possessor.isNull() && "isAlive" in this.m.Possessor && this.m.Possessor.isAlive())
 		{
 			local skill = this.m.Possessor.getSkills().getSkillByID("effects.possessing_undead");
 
