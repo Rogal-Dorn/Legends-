@@ -202,7 +202,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				case "this.Const.EntityType.MilitiaVeteran":
 					value = 7; 
 					break;
-				case "this.Const.EntityType.BountHunter":
+				case "this.Const.EntityType.BountyHunter":
 					value = 5; 
 					break;
 				case "this.Const.EntityType.Peasant":
@@ -231,6 +231,9 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 					break;
 				case "this.Const.EntityType.Greatsword":
 					value = 4; 
+					break;
+				case "this.Const.EntityType.Swordmaster":
+					value = 2; 
 					break;
 				case "this.Const.EntityType.Billman":
 					value = 5; 

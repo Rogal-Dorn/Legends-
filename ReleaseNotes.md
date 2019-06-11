@@ -872,6 +872,14 @@ Fishermen gain favoured enemy lindwurms, because seamonsters.
 Milkmaid gains pitchfork skills
 Milkmaid and farmer gain favoured enemy direwolf, because wolves like farms. 
 Gravediggers and graverobbers gain favoured enemies ghouls, skeletons, zombies and vampires. Stay dead damnit!  
+Retired soldiers and sellswords gain "born with a board", composure, sundering strike, steadfast and Favoured enemy - Bandit. Lose lonewolf, overwhelm, student, gifted and fortified mind. 
+Deserters gain composure, sundering strikes, steadfast and favoured enemies mercenary and noble- lose rally the troops, overwhelm, student, gifted and fortified mind. 
+Swordmasters and Hedge Knights gain Vengeance, Battleflow, Sundering strike and Favoured Enemy - Swordmasters.  lose student, gifted, fortified mind, shield expert, and all non-blade specialisations. 
+Bastards and disowned nobles gain True Believer, bribe and Favoured enemy - noble. Lose fortified mind, overwhelm and shield expert 
+Female Nobles, bowyers and fletchers gain Favoured Enemy - Archers  
+Assassins gain knife skills, sprint, evasion, poison mastery and Favoured Enemy - Nobles. Lose Rally the troops, taunt, shield expert and most weapon specialisations. 
+Barbarians and raiders gain favoured enemies - Civilians and Mercenaries 
+
 
 Fixes Second Wind perk from crashing battles
 Favored Enemy perks damages now scale with the number of favored enemies killed. The more you kill, the better you get at killing them.
