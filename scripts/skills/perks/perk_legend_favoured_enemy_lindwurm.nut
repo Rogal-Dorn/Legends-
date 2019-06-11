@@ -7,11 +7,7 @@ this.perk_legend_favoured_enemy_lindwurm <- this.inherit("scripts/skills/legend_
 		this.m.Name = this.Const.Strings.PerkName.LegendFavouredEnemyLindwurm;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemyLindwurm;
 		this.m.Icon = "ui/perks/favoured_lindwurm_01.png";
-		this.m.ValidTypes = [
-			 this.Const.EntityType.Lindwurm,
-			 this.Const.EntityType.Stollwurm
-		];
-
+		this.m.ValidTypes = this.Const.LegendMod.FavoriteLindwurm;
 	}
 
 });

@@ -7,14 +7,7 @@ this.perk_legend_favoured_enemy_ork <- this.inherit("scripts/skills/legend_favou
 		this.m.Name = this.Const.Strings.PerkName.LegendFavouredEnemyOrk;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemyOrk;
 		this.m.Icon = "ui/perks/favoured_ork_01.png";
-		this.m.ValidTypes = [
-			this.Const.EntityType.OrcBerserker,
-			this.Const.EntityType.OrcYoung,
-			this.Const.EntityType.OrcWarrior,
-			this.Const.EntityType.OrcWarlord,
-			this.Const.EntityType.LegendOrcBehemoth,
-			this.Const.EntityType.LegendOrcElite
-		];
+		this.m.ValidTypes = this.Const.LegendMod.FavoriteOrc;
 
 	}
 

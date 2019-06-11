@@ -7,13 +7,7 @@ this.perk_legend_favoured_enemy_goblin <- this.inherit("scripts/skills/legend_fa
 		this.m.Name = this.Const.Strings.PerkName.LegendFavouredEnemyGoblin;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemyGoblin;
 		this.m.Icon = "ui/perks/favoured_goblin_01.png";
-		this.m.ValidTypes = [
-			this.Const.EntityType.GoblinFighter,
-			this.Const.EntityType.GoblinAmbusher,
-			this.Const.EntityType.GoblinLeader,
-			this.Const.EntityType.GoblinShaman,
-			this.Const.EntityType.GoblinWolfrider
-		];
+		this.m.ValidTypes = this.Const.LegendMod.FavoriteGoblin;
 	}
 
 });

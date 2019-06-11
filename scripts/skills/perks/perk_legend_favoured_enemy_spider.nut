@@ -7,11 +7,7 @@ this.perk_legend_favoured_enemy_spider <- this.inherit("scripts/skills/legend_fa
 		this.m.Name = this.Const.Strings.PerkName.LegendFavouredEnemySpider;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemySpider;
 		this.m.Icon = "ui/perks/favoured_spider_01.png";
-		this.m.ValidTypes = [
-			this.Const.EntityType.Spider,
-			this.Const.EntityType.SpiderEggs,
-			this.Const.EntityType.LegendRedbackSpider
-		];
+		this.m.ValidTypes = this.Const.LegendMod.FavoriteSpider;
 
 	}
 

@@ -7,13 +7,7 @@ this.perk_legend_favoured_enemy_unhold <- this.inherit("scripts/skills/legend_fa
 		this.m.Name = this.Const.Strings.PerkName.LegendFavouredEnemyUnhold;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemyUnhold;
 		this.m.Icon = "ui/perks/favoured_unhold_01.png";
-		this.m.ValidTypes = [
-			this.Const.EntityType.Unhold,
-			this.Const.EntityType.UnholdBog,
-			this.Const.EntityType.UnholdFrost,
-			 this.Const.EntityType.LegendRockUnhold
-		];
-
+		this.m.ValidTypes = this.Const.LegendMod.FavoriteUnhold;
 	}
 
 });
