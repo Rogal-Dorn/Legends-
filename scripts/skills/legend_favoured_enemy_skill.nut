@@ -123,7 +123,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-
+		
 		local stats = this.getTotalKillStats();
 		_properties.MeleeSkill += stats.HitChance;
 		_properties.RangedSkill += stats.HitChance;
