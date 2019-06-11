@@ -1783,20 +1783,20 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/favoured_noble_bw.png"
 	},
 	{
-		ID = "perk.legend_favoured_enemy_bandit",
-		Script = "scripts/skills/perks/perk_legend_favoured_enemy_bandit",
-		Name = this.Const.Strings.PerkName.LegendFavouredEnemyBandit,
-		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBandit,
-		Icon = "ui/perks/favoured_bandit_01.png",
-		IconDisabled = "ui/perks/favoured_bandit_bw.png"
-	},
-	{
 		ID = "perk.legend_favoured_enemy_barbarian",
 		Script = "scripts/skills/perks/perk_legend_favoured_enemy_barbarian",
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyBarbarian,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBarbarian,
 		Icon = "ui/perks/favoured_barbarian_01.png",
 		IconDisabled = "ui/perks/favoured_barbarian_bw.png"
+	},	
+	{
+		ID = "perk.legend_favoured_enemy_bandit",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_bandit",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyBandit,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBandit,
+		Icon = "ui/perks/favoured_bandit_01.png",
+		IconDisabled = "ui/perks/favoured_bandit_bw.png"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_archer",
@@ -1806,6 +1806,14 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/favoured_archer_01.png",
 		IconDisabled = "ui/perks/favoured_archer_bw.png"
 	},
+	{
+		ID = "perk.legend_favoured_enemy_swordmaster",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_swordmaster",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemySwordmaster,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySwordmaster,
+		Icon = "ui/perks/favoured_swordmaster_01.png",
+		IconDisabled = "ui/perks/favoured_swordmaster_bw.png"
+	},	
 	{
 		ID = "perk.legend_favoured_enemy_mercenary",
 		Script = "scripts/skills/perks/perk_legend_favoured_enemy_mercenary",
@@ -2048,8 +2056,8 @@ gt.Const.Perks.PerkDefs <- {
 	LegendFavouredEnemySkeleton = 219, 
 	LegendFavouredEnemyZombie = 220,
 	LegendFavouredEnemyNoble = 221,
-	LegendFavouredEnemyBandit = 222,
-	LegendFavouredEnemyBarbarian = 223,
+	LegendFavouredEnemyBarbarian = 222,
+	LegendFavouredEnemyBandit = 223,	
 	LegendFavouredEnemyArcher = 224,
 	LegendFavouredEnemySwordmaster = 225,
 	LegendFavouredEnemyMercenary = 226,

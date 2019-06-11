@@ -5,7 +5,8 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local VanillaTree <- [
+
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -78,15 +79,15 @@ local VanillaTree <- [
 
 gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom) 
 {
-	local tree = [],
+	local tree = []
 	local treeMap = {}
 
-	for( local row = 0; row < VanillaTree.len(); row = ++row )
+	for( local row = 0; row < Tree.len(); row = ++row )
 	{
 		local rowL = [];
-		for( local i = 0; i < VanillaTree[row].len(); i = ++i )
+		for( local i = 0; i < Tree[row].len(); i = ++i )
 		{
-			local perk = clone this.Const.Perks.PerkDefObjects[VanillaTree[row][i]];
+			local perk = clone this.Const.Perks.PerkDefObjects[Tree[row][i]];
 			perk.Row <- row;
 			perk.Unlocks <- row;
 			rowL.push(perk);
@@ -113,7 +114,7 @@ gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom)
 
 gt.Const.Perks.BuildCustomPerkTree <- function (_custom) 
 {
-	local tree = [],
+	local tree = []
 	local treeMap = {}
 
 	for( local row = 0; row < _custom.len(); row = ++row )
@@ -136,7 +137,5 @@ gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 	}	
 };
 
-local tree = gt.Const.Perks.BuildCustomPerkTree(VanillaTree);
-gt.Const.Perks.PerksTreeTemplate <- tree.Tree;
-gt.Const.Perks.TreeTemplateLookupMap <- tree.Map;
+gt.Const.Perks.PerksTreeTemplate <- gt.Const.Perks.BuildCustomPerkTree(Tree)
 
