@@ -33,7 +33,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			MostPowerfulVanquishedType = 0,
 			FavoriteWeapon = "",
 			FavoriteWeaponUses = 0,
-			CurrentWeaponUses = 0
+			CurrentWeaponUses = 0,
+			Tags = null
 		},
 		Formations = null,
 		VeteranPerks = 5,
@@ -843,6 +844,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
 		this.m.Formations = this.new("scripts/entity/tactical/formations_container")
+		this.m.LifetimeStats.Tags = this.new("scripts/tools/tag_collection");
 	}
 
 	function onHired()
@@ -2585,6 +2587,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		_out.writeString(this.m.LifetimeStats.FavoriteWeapon);
 		_out.writeU32(this.m.LifetimeStats.FavoriteWeaponUses);
 		_out.writeU32(this.m.LifetimeStats.CurrentWeaponUses);
+		this.m.LifetimeStats.Tags.onSerialize(_out);
 		_out.writeBool(this.m.IsTryoutDone);
 		this.m.Formations.onSerialize(_out);
 		_out.writeU8(this.m.VeteranPerks);
@@ -2666,6 +2669,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.LifetimeStats.FavoriteWeapon = _in.readString();
 		this.m.LifetimeStats.FavoriteWeaponUses = _in.readU32();
 		this.m.LifetimeStats.CurrentWeaponUses = _in.readU32();
+		if (_in.getMetaData().getVersion() >= 57)
+		{
+			this.m.LifetimeStats.Tags.onDeserialize(_in);
+		}
+
 		this.m.IsTryoutDone = _in.readBool();
 		this.m.Skills.update();
 

@@ -873,4 +873,6 @@ Milkmaid gains pitchfork skills
 Milkmaid and farmer gain favoured enemy direwolf, because wolves like farms. 
 Gravediggers and graverobbers gain favoured enemies ghouls, skeletons, zombies and vampires. Stay dead damnit!  
 
+Fixes Second Wind perk from crashing battles
+Favored Enemy perks damages now scale with the number of favored enemies killed. The more you kill, the better you get at killing them.
 
