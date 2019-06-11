@@ -56,7 +56,8 @@ local ArcherTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.Overwhelm,
-		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.Footwork
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyArcher
 	],
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,

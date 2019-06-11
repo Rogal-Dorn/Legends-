@@ -211,13 +211,31 @@ gt.Const.Perks.getPerksMap <- function ( _background )
 			return gt.Const.Perks.TreeWitchHunterLookupMap;
 			break;
 		case "background.deserter":
-			return gt.Const.Perks.TreeSoldierLookupMap;
+			return gt.Const.Perks.TreeDeserterLookupMap;
 			break;
 		case "background.sellsword":
 			return gt.Const.Perks.TreeSoldierLookupMap;
 			break;
 		case "background.retired_soldier":
 			return gt.Const.Perks.TreeSoldierLookupMap;
+			break;
+		case "background.squire":
+			return gt.Const.Perks.TreeSoldierLookupMap;
+			break;
+		case "background.swordmaster":
+			return gt.Const.Perks.TreeSwordmasterLookupMap;
+			break;
+		case "background.hedge_knight":
+			return gt.Const.Perks.TreeSwordmasterLookupMap;
+			break;
+		case "background.assassin":
+			return gt.Const.Perks.TreeAssassinLookupMap;
+			break;
+		case "background.bastard":
+			return gt.Const.Perks.TreeBastardLookupMap;
+			break;
+		case "background.disowned_noble":
+			return gt.Const.Perks.TreeBastardLookupMap;
 			break;
 		default:
 			return gt.Const.Perks.TreeTemplateLookupMap;
@@ -410,13 +428,31 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeWitchHunter;
 			break;
 		case "background.deserter":
-			return gt.Const.Perks.PerksTreeSoldier;
+			return gt.Const.Perks.PerksTreeDeserter;
 			break;
 		case "background.sellsword":
 			return gt.Const.Perks.PerksTreeSoldier;
 			break;
 		case "background.retired_soldier":
 			return gt.Const.Perks.PerksTreeSoldier;
+			break;
+		case "background.squire":
+			return gt.Const.Perks.PerksTreeSoldier;
+			break;
+		case "background.swordmaster":
+			return gt.Const.Perks.PerksTreeSwordmaster;
+			break;
+		case "background.hedge_knight":
+			return gt.Const.Perks.PerksTreeSwordmaster;
+			break;
+		case "background.bastard":
+			return gt.Const.Perks.PerksTreeBastard;
+			break;
+		case "background.disowned_noble":
+			return gt.Const.Perks.PerksTreeBastard;
+			break;
+		case "background.assassin":
+			return gt.Const.Perks.PerksTreeAssassin;
 			break;
 		default:
 			return gt.Const.Perks.PerksTreeTemplate;

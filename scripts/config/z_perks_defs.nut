@@ -1773,6 +1773,54 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyZombie,
 		Icon = "ui/perks/favoured_zombie_01.png",
 		IconDisabled = "ui/perks/favoured_zombie_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_noble",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_noble",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyNoble,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyNoble,
+		Icon = "ui/perks/favoured_noble_01.png",
+		IconDisabled = "ui/perks/favoured_noble_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_bandit",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_bandit",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyBandit,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBandit,
+		Icon = "ui/perks/favoured_bandit_01.png",
+		IconDisabled = "ui/perks/favoured_bandit_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_barbarian",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_barbarian",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyBarbarian,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBarbarian,
+		Icon = "ui/perks/favoured_barbarian_01.png",
+		IconDisabled = "ui/perks/favoured_barbarian_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_archer",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_archer",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyArcher,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyArcher,
+		Icon = "ui/perks/favoured_archer_01.png",
+		IconDisabled = "ui/perks/favoured_archer_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_mercenary",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_mercenary",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyMercenary,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyMercenary,
+		Icon = "ui/perks/favoured_mercenary_01.png",
+		IconDisabled = "ui/perks/favoured_mercenary_bw.png"
+	},
+	{
+		ID = "perk.legend_favoured_enemy_caravan",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_caravan",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyCaravan,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyCaravan,
+		Icon = "ui/perks/favoured_caravan_01.png",
+		IconDisabled = "ui/perks/favoured_caravan_bw.png"
 	}
 ];
 
@@ -1998,5 +2046,12 @@ gt.Const.Perks.PerkDefs <- {
 	LegendFavouredEnemyGoblin = 217,
 	LegendFavouredEnemyVampire = 218,
 	LegendFavouredEnemySkeleton = 219, 
-	LegendFavouredEnemyZombie = 220
+	LegendFavouredEnemyZombie = 220,
+	LegendFavouredEnemyNoble = 221,
+	LegendFavouredEnemyBandit = 222,
+	LegendFavouredEnemyBarbarian = 223,
+	LegendFavouredEnemyArcher = 224,
+	LegendFavouredEnemySwordmaster = 225,
+	LegendFavouredEnemyMercenary = 226,
+	LegendFavouredEnemyCaravan = 227
 };
