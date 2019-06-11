@@ -28,9 +28,21 @@ this.legend_demonalp_helmet <- this.inherit("scripts/items/helmets/named/named_h
 		this.randomizeValues();
 	}
 
+	function getTooltip()
+	{
+		local result = this.named_helmet.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Grants horrific scream"
+		});
+		return result;
+	}
+
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_helmet.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_horrific_scream"));
 	}
 });

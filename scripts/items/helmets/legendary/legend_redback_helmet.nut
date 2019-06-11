@@ -27,13 +27,33 @@ this.legend_redback_helmet <- this.inherit("scripts/items/helmets/named/named_he
 		this.m.Vision = -1;
 		this.randomizeValues();
 	}
+
+	function getTooltip()
+	{
+		local result = this.named_helmet.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Grants poison immunity"
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Grants Web Cast"
+		});
+		return result;
+	}
+
 	function onUpdateProperties( _properties )
 	{
 		_properties.IsImmuneToPoison = true;
 	}
+
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_helmet.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/web_skill"));
 	}
 });

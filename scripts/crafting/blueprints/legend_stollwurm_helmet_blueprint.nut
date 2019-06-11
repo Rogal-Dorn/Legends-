@@ -19,6 +19,11 @@ this.legend_stollwurm_helmet_blueprint <- this.inherit("scripts/crafting/bluepri
 		this.init(ingredients);
 	}
 
+	function isQualified()
+	{
+		return true;
+	}
+	
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/helmets/legendary/legend_stollwurm_helmet"));

@@ -81,8 +81,7 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 		return this.attackEntity(_user, _targetTile.getEntity());
 	}
 
-
-		function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		if (_targetEntity.getCurrentProperties().IsImmuneToPoison = true || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
 		{
@@ -136,7 +135,8 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 				_properties.DamageTotalMult /= 1.25;
 			}
 		}
-		if (_targetEntity.getSkills().hasSkill("effects.web"))
+		
+		if (_targetEntity != null && _targetEntity.getSkills().hasSkill("effects.web"))
 		{
 			_properties.DamageDirectMult *= 2.0;
 		}

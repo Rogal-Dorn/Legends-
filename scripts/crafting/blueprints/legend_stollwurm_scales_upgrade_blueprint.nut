@@ -19,6 +19,11 @@ this.legend_stollwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting
 		this.init(ingredients);
 	}
 
+	function isQualified()
+	{
+		return true;
+	}
+	
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/armor_upgrades/legend_stollwurm_scales_upgrade"));

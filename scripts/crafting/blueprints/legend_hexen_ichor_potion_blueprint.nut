@@ -23,6 +23,12 @@ this.legend_hexen_ichor_potion_blueprint <- this.inherit("scripts/crafting/bluep
 		this.init(ingredients);
 	}
 
+
+	function isQualified()
+	{
+		return true;
+	}
+	
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/accessory/legend_hexen_ichor_potion_item"));

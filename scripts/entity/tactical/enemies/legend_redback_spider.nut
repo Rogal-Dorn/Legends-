@@ -198,7 +198,7 @@ this.legend_redback_spider <- this.inherit("scripts/entity/tactical/actor", {
 			this.spawnTerrainDropdownEffect(_tile);
 			this.spawnFlies(_tile);
 			local corpse = clone this.Const.Corpse;
-			corpse.CorpseName = "A Webknecht";
+			corpse.CorpseName = "A Redback Webknecht";
 			corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
 			corpse.IsConsumable = false;
 			_tile.Properties.set("Corpse", corpse);
@@ -210,13 +210,9 @@ this.legend_redback_spider <- this.inherit("scripts/entity/tactical/actor", {
 
 				for( local i = 0; i < n; i = ++i )
 				{
-					local r = this.Math.rand(1, 100);
+					//local r = this.Math.rand(1, 100);
 					local loot;
-
-	
-						loot = this.new("scripts/items/misc/legend_redback_poison_gland_item");
-		
-
+					loot = this.new("scripts/items/misc/legend_redback_poison_gland_item");
 					loot.drop(_tile);
 				}
 			}
@@ -294,12 +290,12 @@ this.legend_redback_spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
 		this.m.Skills.add(this.new("scripts/skills/racial/legend_redback_spider_racial"));
-		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 
 	}
 

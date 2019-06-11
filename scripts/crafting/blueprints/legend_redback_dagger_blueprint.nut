@@ -19,9 +19,14 @@ this.legend_redback_dagger_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.init(ingredients);
 	}
 
+	function isQualified()
+	{
+		return true;
+	}
+
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/helmets/weapons/legend_redback_dagger"));
+		_stash.add(this.new("scripts/items/weapons/legend_redback_dagger"));
 	}
 
 });

@@ -4,7 +4,7 @@ this.legend_stollwurm_helmet <- this.inherit("scripts/items/helmets/named/named_
 	{
 		this.named_helmet.create();
 		this.m.ID = "armor.head.legend_stollwurm_helmet";
-		this.m.Description = "A helmet made from the head of a stollwurm, grants immunity from being knocked or grabbed, immunity from morale penalties from being surrounded, and ensures you take no fatigue damage from being hit. Be warned, if you had these abilities before donning the helmet, then removing the helmet will strip those abilities.";
+		this.m.Description = "A helmet made from the head of a stollwurm, grants immunity from being knocked or grabbed, immunity from morale penalties from being surrounded, and ensures you take no fatigue damage from being hit.";
 		this.m.NameList = [
 			"Wurms visage",
 			"Helm of the wurm",
@@ -16,7 +16,7 @@ this.legend_stollwurm_helmet <- this.inherit("scripts/items/helmets/named/named_
 		this.m.ShowOnCharacter = true;
 		this.m.HideHair = true;
 		this.m.HideBeard = false;
-		this.m.Variant = 515;
+		this.m.Variant = 514;
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -28,19 +28,36 @@ this.legend_stollwurm_helmet <- this.inherit("scripts/items/helmets/named/named_
 		this.randomizeValues();
 	}
 
-	function onEquip()
+	function getTooltip()
 	{
-		this.helmet.onEquip();
-		this.addSkill(this.new("scripts/skills/perks/perk_stalwart"));
-		this.addSkill(this.new("scripts/skills/perks/perk_steadfast"));
-		this.addSkill(this.new("scripts/skills/perks/perk_battleheart"));
+		local result = this.named_helmet.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Immunity from Kockback and Grab"
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Immunity from surrounded moral penalities"
+		});
+		result.push({
+			id = 8,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "No fatigue penalties from melee damage"
+		});
+		return result;
 	}
-		function onUnequip()
+
+	function onUpdateProperties( _properties )
 	{
-		this.helmet.onUnequip();
-		this.removeSkill(this.new("scripts/skills/perks/perk_stalwart"));
-		this.removeSkill(this.new("scripts/skills/perks/perk_steadfast"));
-		this.removeSkill(this.new("scripts/skills/perks/perk_battleheart"));
+		_properties.IsImmuneToKnockBackAndGrab = true;
+		_properties.FatigueReceivedPerHitMult *= 0.01;
+		_properties.IsImmuneToSurrounding = true;
 	}
+
 });
 

@@ -26,6 +26,19 @@ this.legend_white_wolf_helmet <- this.inherit("scripts/items/helmets/named/named
 		this.m.StaminaModifier = -12;
 		this.randomizeValues();
 	}
+	
+	function getTooltip()
+	{
+		local result = this.named_helmet.getTooltip();
+		result.push({
+			id = 15,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color]"
+		});
+		return result;
+	}
+
 	function onUpdateProperties( _properties )
 	{
 		_properties.Threat += 20;

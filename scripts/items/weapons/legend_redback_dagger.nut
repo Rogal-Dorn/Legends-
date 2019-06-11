@@ -25,11 +25,24 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.DirectDamageMult = 0.2;
 	}
 
+	function getTooltip()
+	{
+		local result = this.weapon.getTooltip();
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Apples redback poison to target"
+		});
+		return result;
+	}
+
+
 	function onEquip()
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/stab"));
-		this.addSkill(this.new("scripts/skills/actives/legend_reback_puncture"));
+		this.addSkill(this.new("scripts/skills/actives/legend_redback_puncture"));
 	}
 
 	function onUpdateProperties( _properties )
