@@ -49,8 +49,6 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.MasterySword,
 		gt.Const.Perks.PerkDefs.LegendPoisonImmunity,
 		gt.Const.Perks.PerkDefs.MasteryThrowing
-
-		
 	],
 	[
 		gt.Const.Perks.PerkDefs.LoneWolf,
@@ -61,6 +59,7 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.SunderingStrike,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,		
 		gt.Const.Perks.PerkDefs.LegendRoster4
 
 	],
@@ -72,7 +71,6 @@ local BerserkerTree = [
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendMuscularity,
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 		gt.Const.Perks.PerkDefs.LegendPushForward
 	],
 	[

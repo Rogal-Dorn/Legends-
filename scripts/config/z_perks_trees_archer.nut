@@ -72,7 +72,6 @@ local ArcherTree = [
 		gt.Const.Perks.PerkDefs.Indomitable,
 		gt.Const.Perks.PerkDefs.CloseCombatArcher,
 		gt.Const.Perks.PerkDefs.DoubleStrike
-		
 	],
 	[],
 	[],
@@ -80,19 +79,6 @@ local ArcherTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeArcher <- [];
-gt.Const.Perks.TreeArcherLookupMap <- {};
-
-for( local row = 0; row < ArcherTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < ArcherTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[ArcherTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeArcherLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeArcher.push(rowL);
-}
+local tree = gt.Const.Perks.BuildCustomPerkTree(VanillaTree);
+gt.Const.Perks.PerksTreeArcher <- tree.Tree;
+gt.Const.Perks.TreeArcherLookupMap <- tree.Map;

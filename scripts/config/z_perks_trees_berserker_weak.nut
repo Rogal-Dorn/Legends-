@@ -54,7 +54,8 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.LegendBattleheart,
 		gt.Const.Perks.PerkDefs.SunderingStrike,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold		
 	],
 	[
 		// This hard crashes the game // gt.Const.Perks.PerkDefs.Ironside,
@@ -64,7 +65,6 @@ local BerserkerWeakTree = [
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendMuscularity,
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 		gt.Const.Perks.PerkDefs.LegendPushForward
 	],
 	[

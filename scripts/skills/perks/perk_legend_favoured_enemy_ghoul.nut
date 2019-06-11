@@ -7,10 +7,7 @@ this.perk_legend_favoured_enemy_ghoul <- this.inherit("scripts/skills/legend_fav
 		this.m.Name = this.Const.Strings.PerkName.LegendFavouredEnemyGhoul;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemyGhoul;
 		this.m.Icon = "ui/perks/favoured_ghoul_01.png";
-		this.m.ValidTypes = [
-			this.Const.EntityType.Ghoul,
-			this.Const.EntityType.LegendSkinGhoul
-		]
+		this.m.ValidTypes = this.Const.LegendMod.FavoriteGhoul;
 	}
 
 });

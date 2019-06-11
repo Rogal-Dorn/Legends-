@@ -26,8 +26,7 @@ local ButcherTree = [
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
-		gt.Const.Perks.PerkDefs.Gifted,
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul
+		gt.Const.Perks.PerkDefs.Gifted
 	],
 	[
 		gt.Const.Perks.PerkDefs.BackStabber,	
@@ -61,6 +60,7 @@ local ButcherTree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,		
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyZombie
 

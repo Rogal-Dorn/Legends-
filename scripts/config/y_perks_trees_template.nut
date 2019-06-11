@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local TemplateTree = [
+local VanillaTree <- [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -26,8 +26,6 @@ local TemplateTree = [
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.Gifted
-
-
 	],
 	[
 		gt.Const.Perks.PerkDefs.BackStabber,	
@@ -52,7 +50,6 @@ local TemplateTree = [
 		gt.Const.Perks.PerkDefs.MasteryCrossbow,
 		gt.Const.Perks.PerkDefs.MasteryBow,
 		gt.Const.Perks.PerkDefs.MasteryThrowing
-
 	],
 	[
 		gt.Const.Perks.PerkDefs.Underdog,
@@ -60,21 +57,18 @@ local TemplateTree = [
 		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Footwork
-
 	],
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.BattleForged
-
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.Indomitable
-		
 	],
 	[],
 	[],
@@ -82,19 +76,67 @@ local TemplateTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeTemplate <- [];
-gt.Const.Perks.TreeTemplateLookupMap <- {};
-
-for( local row = 0; row < TemplateTree.len(); row = ++row )
+gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom) 
 {
-	local rowL = [];
-	for( local i = 0; i < TemplateTree[row].len(); i = ++i )
+	local tree = [],
+	local treeMap = {}
+
+	for( local row = 0; row < VanillaTree.len(); row = ++row )
 	{
-		local perk = clone this.Const.Perks.PerkDefObjects[TemplateTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeTemplateLookupMap[perk.ID] <- perk;
+		local rowL = [];
+		for( local i = 0; i < VanillaTree[row].len(); i = ++i )
+		{
+			local perk = clone this.Const.Perks.PerkDefObjects[VanillaTree[row][i]];
+			perk.Row <- row;
+			perk.Unlocks <- row;
+			rowL.push(perk);
+			treeMap[perk.ID] <- perk;
+		}
+
+		for( local i = 0; i < _custom[row].len(); i = ++i )
+		{
+			local perk = clone this.Const.Perks.PerkDefObjects[_custom[row][i]];
+			perk.Row <- row;
+			perk.Unlocks <- row;
+			rowL.push(perk);
+			treeMap[perk.ID] <- perk;
+		}
+
+		tree.push(rowL);
 	}
-	gt.Const.Perks.PerksTreeTemplate.push(rowL);
-}
+
+	return {
+		Tree = tree,
+		Map = treeMap
+	}
+};
+
+gt.Const.Perks.BuildCustomPerkTree <- function (_custom) 
+{
+	local tree = [],
+	local treeMap = {}
+
+	for( local row = 0; row < _custom.len(); row = ++row )
+	{
+		local rowL = [];
+		for( local i = 0; i < _custom[row].len(); i = ++i )
+		{
+			local perk = clone this.Const.Perks.PerkDefObjects[_custom[row][i]];
+			perk.Row <- row;
+			perk.Unlocks <- row;
+			rowL.push(perk);
+			treeMap[perk.ID] <- perk;
+		}
+		tree.push(rowL);
+	}
+
+	return {
+		Tree = tree,
+		Map = treeMap
+	}	
+};
+
+local tree = gt.Const.Perks.BuildCustomPerkTree(VanillaTree);
+gt.Const.Perks.PerksTreeTemplate <- tree.Tree;
+gt.Const.Perks.TreeTemplateLookupMap <- tree.Map;
+

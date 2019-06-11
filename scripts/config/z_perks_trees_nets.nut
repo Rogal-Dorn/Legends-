@@ -58,8 +58,8 @@ local NetsTree = [
 		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Overwhelm,
-		gt.Const.Perks.PerkDefs.Footwork
-
+		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 	],
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,
@@ -72,7 +72,6 @@ local NetsTree = [
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 		gt.Const.Perks.PerkDefs.Indomitable
 		
 	],
