@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local NecroTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendSiphon,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -97,19 +97,4 @@ local NecroTree = [
 	[]
 ];
 
-gt.Const.Perks.PerksTreeNecromancer <- [];
-gt.Const.Perks.TreeNecromancerLookupMap <- {};
-
-for( local row = 0; row < NecroTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < NecroTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[NecroTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeNecromancerLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeNecromancer.push(rowL);
-}
+gt.Const.Perks.PerksTreeNecromancer <- gt.Const.Perks.BuildCustomPerkTree(Tree)

@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local NobleTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.BackStabber,
@@ -84,19 +84,4 @@ local NobleTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeNoble <- [];
-gt.Const.Perks.TreeNobleLookupMap <- {};
-
-for( local row = 0; row < NobleTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < NobleTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[NobleTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeNobleLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeNoble.push(rowL);
-}
+gt.Const.Perks.PerksTreeNoble <- gt.Const.Perks.BuildCustomPerkTree(Tree)

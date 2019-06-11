@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local BeggarTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.Adrenalin,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -49,19 +49,4 @@ local BeggarTree = [
 	[]
 ];
 
-gt.Const.Perks.PerksTreeBeggar <- [];
-gt.Const.Perks.TreeBeggarLookupMap <- {};
-
-for( local row = 0; row < BeggarTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < BeggarTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[BeggarTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeBeggarLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeBeggar.push(rowL);
-}
+gt.Const.Perks.PerksTreeBeggar <- gt.Const.Perks.BuildCustomPerkTree(Tree)

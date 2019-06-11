@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local HolyTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.Colossus,
@@ -72,19 +72,4 @@ local HolyTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeHoly <- [];
-gt.Const.Perks.TreeHolyLookupMap <- {};
-
-for( local row = 0; row < HolyTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < HolyTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[HolyTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeHolyLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeHoly.push(rowL);
-}
+gt.Const.Perks.PerksTreeHoly <- gt.Const.Perks.BuildCustomPerkTree(Tree)

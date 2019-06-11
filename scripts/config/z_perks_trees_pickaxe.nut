@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local PickaxeTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -82,19 +82,4 @@ local PickaxeTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreePickaxe <- [];
-gt.Const.Perks.TreePickaxeLookupMap <- {};
-
-for( local row = 0; row < PickaxeTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < PickaxeTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[PickaxeTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreePickaxeLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreePickaxe.push(rowL);
-}
+gt.Const.Perks.PerksTreePickaxe <- gt.Const.Perks.BuildCustomPerkTree(Tree)

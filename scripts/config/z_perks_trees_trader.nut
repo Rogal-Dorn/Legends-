@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local TraderTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
@@ -80,19 +80,4 @@ local TraderTree = [
 ];
 
 
-gt.Const.Perks.PerksTreeTrader <- [];
-gt.Const.Perks.TreeTraderLookupMap <- {};
-
-for( local row = 0; row < TraderTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < TraderTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[TraderTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeTraderLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeTrader.push(rowL);
-}
+gt.Const.Perks.PerksTreeTrader <- gt.Const.Perks.BuildCustomPerkTree(Tree)

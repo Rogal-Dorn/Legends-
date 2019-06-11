@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local MilitiaTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -82,19 +82,4 @@ local MilitiaTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeMilitia <- [];
-gt.Const.Perks.TreeMilitiaLookupMap <- {};
-
-for( local row = 0; row < MilitiaTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < MilitiaTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[MilitiaTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeMilitiaLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeMilitia.push(rowL);
-}
+gt.Const.Perks.PerksTreeMilitia <- gt.Const.Perks.BuildCustomPerkTree(Tree)

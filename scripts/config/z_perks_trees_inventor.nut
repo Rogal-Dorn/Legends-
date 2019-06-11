@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local InventorTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes, 
@@ -84,19 +84,4 @@ local InventorTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeInventor <- [];
-gt.Const.Perks.TreeInventorLookupMap <- {};
-
-for( local row = 0; row < InventorTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < InventorTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[InventorTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeInventorLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeInventor.push(rowL);
-}
+gt.Const.Perks.PerksTreeInventor <- gt.Const.Perks.BuildCustomPerkTree(Tree)

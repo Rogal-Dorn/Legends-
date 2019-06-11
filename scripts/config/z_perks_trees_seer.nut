@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local SeerTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes, 
@@ -75,19 +75,4 @@ local SeerTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeSeer <- [];
-gt.Const.Perks.TreeSeerLookupMap <- {};
-
-for( local row = 0; row < SeerTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < SeerTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[SeerTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeSeerLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeSeer.push(rowL);
-}
+gt.Const.Perks.PerksTreeSeer <- gt.Const.Perks.BuildCustomPerkTree(Tree)

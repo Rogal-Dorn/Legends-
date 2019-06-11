@@ -6,7 +6,7 @@ if (!("Perks" in gt.Const))
 }
 
 
-local ValaTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.LegendValaWarden,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -58,19 +58,4 @@ local ValaTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeVala <- [];
-gt.Const.Perks.TreeValaLookupMap <- {};
-
-for( local row = 0; row < ValaTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < ValaTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[ValaTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeValaLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeVala.push(rowL);
-}
+gt.Const.Perks.PerksTreeVala <- gt.Const.Perks.BuildCustomPerkTree(Tree)

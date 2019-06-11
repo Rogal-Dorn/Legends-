@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local ShortbowTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -84,19 +84,4 @@ local ShortbowTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeShortbow <- [];
-gt.Const.Perks.TreeShortbowLookupMap <- {};
-
-for( local row = 0; row < ShortbowTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < ShortbowTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[ShortbowTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeShortbowLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeShortbow.push(rowL);
-}
+gt.Const.Perks.PerksTreeShortbow <- gt.Const.Perks.BuildCustomPerkTree(Tree)

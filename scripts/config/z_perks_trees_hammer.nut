@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local HammerTree = [
+local Tree = [
 	[ gt.Const.Perks.PerkDefs.LegendSpecialistHammerSkill ],
 	[],
 	[ gt.Const.Perks.PerkDefs.LegendSpecialistHammerDamage ],
@@ -19,7 +19,6 @@ local HammerTree = [
 	[]	
 ];
 
-local trees = gt.Const.Perks.BuildPerkTreeFromTemplate(HammerTree);
-gt.Const.Perks.PerksTreeHammer <- trees.Tree;
-gt.Const.Perks.TreeHammerLookupMap <- trees.Map;
+gt.Const.Perks.PerksTreeHammer <-gt.Const.Perks.BuildPerkTreeFromTemplate(Tree)
+
 

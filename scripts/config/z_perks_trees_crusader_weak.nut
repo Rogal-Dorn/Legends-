@@ -6,7 +6,7 @@ if (!("Perks" in gt.Const))
 }
 
 
-local CrusaderWeakTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -83,19 +83,4 @@ local CrusaderWeakTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeCrusaderWeak <- [];
-gt.Const.Perks.TreeCrusaderWeakLookupMap <- {};
-
-for( local row = 0; row < CrusaderWeakTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < CrusaderWeakTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[CrusaderWeakTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeCrusaderWeakLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeCrusaderWeak.push(rowL);
-}
+gt.Const.Perks.PerksTreeCrusaderWeak <- gt.Const.Perks.BuildCustomPerkTree(Tree)

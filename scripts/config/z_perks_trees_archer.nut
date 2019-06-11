@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local ArcherTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -80,6 +80,4 @@ local ArcherTree = [
 	[]	
 ];
 
-local tree = gt.Const.Perks.BuildCustomPerkTree(VanillaTree);
-gt.Const.Perks.PerksTreeArcher <- tree.Tree;
-gt.Const.Perks.TreeArcherLookupMap <- tree.Map;
+gt.Const.Perks.PerksTreeArcher <- gt.Const.Perks.BuildCustomPerkTree(Tree);

@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local LuteTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaptation,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -82,19 +82,4 @@ local LuteTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeLute <- [];
-gt.Const.Perks.TreeLuteLookupMap <- {};
-
-for( local row = 0; row < LuteTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < LuteTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[LuteTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeLuteLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeLute.push(rowL);
-}
+gt.Const.Perks.PerksTreeLute <- gt.Const.Perks.BuildCustomPerkTree(Tree)

@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-local DonkeyTree = [
+local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -57,19 +57,4 @@ local DonkeyTree = [
 	[]	
 ];
 
-gt.Const.Perks.PerksTreeDonkey <- [];
-gt.Const.Perks.TreeDonkeyLookupMap <- {};
-
-for( local row = 0; row < DonkeyTree.len(); row = ++row )
-{
-	local rowL = [];
-	for( local i = 0; i < DonkeyTree[row].len(); i = ++i )
-	{
-		local perk = clone this.Const.Perks.PerkDefObjects[DonkeyTree[row][i]];
-		perk.Row <- row;
-		perk.Unlocks <- row;
-		rowL.push(perk);
-		gt.Const.Perks.TreeDonkeyLookupMap[perk.ID] <- perk;
-	}
-	gt.Const.Perks.PerksTreeDonkey.push(rowL);
-}
+gt.Const.Perks.PerksTreeDonkey <- gt.Const.Perks.BuildCustomPerkTree(Tree)
