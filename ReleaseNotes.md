@@ -859,9 +859,11 @@ Nun and Monk gain a 'Field Triage' ability to heal on the battlefield in exchang
 Nuns can now craft holy water, get in religious debates, and convert flagelents or be converted
 Witch hunter gains True Believer, Close combat archer, piercing shot and favoured enemies for ghoul, skeleton, zombie, hexen, alp and vampire. Loses battleforged, brawny, colossus and specialisations for axe and spear. 
 Berserker gains favoured enemies ork, goblin and unhold 
+Noble gains favoured enemies - noble, bandit, barbarian, mercenary and caravan 
 Crusader gains favoured enemies ghoul, skeleton, zombie, hexen and vampire
 Ranger gains Specialisation in axe, sword, dagger and nets. Favoured enemies direwolf, spider, ork, goblin, schrat, unhold, lindwurm 
 Hunter gains net mastery and favoured enemies Direwolf, Spider, Ork, Goblin, Schrat, Unhold and lindwurm 
+Seer gains favoured enemy - hexen. Cat bite damage and AP buffed 
 Canibal gains skills with a butcher's knife
 Butcher, fishwife and cannibal gain favoured enemies Ghoul, skeleton and zombie. They know about chopping up bodies.  
 Poachers gain favoured enemies direwolves, spiders, goblins and schrats.  
@@ -872,14 +874,15 @@ Fishermen gain favoured enemy lindwurms, because seamonsters.
 Milkmaid gains pitchfork skills
 Milkmaid and farmer gain favoured enemy direwolf, because wolves like farms. 
 Gravediggers and graverobbers gain favoured enemies ghouls, skeletons, zombies and vampires. Stay dead damnit!  
-Retired soldiers and sellswords gain "born with a board", composure, sundering strike, steadfast and Favoured enemy - Bandit. Lose lonewolf, overwhelm, student, gifted and fortified mind. 
+Retired soldiers and sellswords gain "born with a board", composure, sundering strike, steadfast and Favoured enemy - Bandit and barbarian. Lose lonewolf, overwhelm, student, duelist, gifted and fortified mind. 
 Deserters gain composure, sundering strikes, steadfast and favoured enemies mercenary and noble- lose rally the troops, overwhelm, student, gifted and fortified mind. 
 Swordmasters and Hedge Knights gain Vengeance, Battleflow, Sundering strike and Favoured Enemy - Swordmasters.  lose student, gifted, fortified mind, shield expert, and all non-blade specialisations. 
 Bastards and disowned nobles gain True Believer, bribe and Favoured enemy - noble. Lose fortified mind, overwhelm and shield expert 
 Female Nobles, bowyers and fletchers gain Favoured Enemy - Archers  
 Assassins gain knife skills, sprint, evasion, poison mastery and Favoured Enemy - Nobles. Lose Rally the troops, taunt, shield expert and most weapon specialisations. 
-Barbarians and raiders gain favoured enemies - Civilians and Mercenaries 
-
+Barbarians and raiders gain favoured enemies - Civilians 
+Shieldmaiden gains favoured enemy - barbarian 
+Thieves and pickpockets gain favoured enemy - noble 
 
 Fixes Second Wind perk from crashing battles
 Favored Enemy perks damages now scale with the number of favored enemies killed. The more you kill, the better you get at killing them.
