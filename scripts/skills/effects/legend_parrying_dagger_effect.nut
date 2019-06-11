@@ -1,5 +1,7 @@
 this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Bonus = 5
+	},
 	function create()
 	{
 		this.m.ID = "effects.legend_parrying_dagger";
@@ -11,7 +13,6 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.VeryLast;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.Bonus = 5;
 	}
 
 	function getTooltip()
