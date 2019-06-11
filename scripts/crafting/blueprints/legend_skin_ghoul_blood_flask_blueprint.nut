@@ -19,6 +19,12 @@ this.legend_skin_ghoul_blood_flask_blueprint <- this.inherit("scripts/crafting/b
 		this.init(ingredients);
 	}
 
+
+	function isQualified()
+	{
+		return true;
+	}
+	
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/accessory/legend_skin_ghoul_blood_flask_item"));

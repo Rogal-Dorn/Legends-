@@ -56,25 +56,9 @@ this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrad
 		});
 	}
 
-	function onEquip()
+	function onUpdateProperties( _properties )
 	{
-
 		_properties.IsImmuneToStun = true;
-	}
-
-	function onUnequip()
-	{
-		_properties.IsImmuneToStun = false;
-	}
-
-	function onAdded()
-	{
-	_properties.IsImmuneToStun = true;
-	}
-
-	function onRemoved()
-	{
-	_properties.IsImmuneToStun = false;
 	}
 
 });

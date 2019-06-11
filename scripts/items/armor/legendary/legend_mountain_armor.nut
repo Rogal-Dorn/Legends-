@@ -53,14 +53,14 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 			return;
 		}
 
-		helm.setArmor(body.getArmor() + bodyAdded);
+		body.setArmor(body.getArmor() + bodyAdded);
 		actor.setDirty(true);
 
 		if (!actor.isHiddenToPlayer())
 		{
 			this.Tactical.spawnIconEffect("status_effect_79", actor.getTile(), this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
 			this.Sound.play("sounds/enemies/unhold_regenerate_01.wav", this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + healthAdded + " points");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + bodyAdded + " points");
 		}
 	}
 

@@ -23,9 +23,15 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.init(ingredients);
 	}
 
+
+	function isQualified()
+	{
+		return true;
+	}
+	
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/armor/legendary/legend_mountain_armort"));
+		_stash.add(this.new("scripts/items/armor/legendary/legend_mountain_armor"));
 	}
 
 });

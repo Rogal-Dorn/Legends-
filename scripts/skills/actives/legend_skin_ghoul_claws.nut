@@ -1,5 +1,16 @@
 this.legend_skin_ghoul_claws <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		SoundsA = [
+			"sounds/combat/cleave_hit_hitpoints_01.wav",
+			"sounds/combat/cleave_hit_hitpoints_02.wav",
+			"sounds/combat/cleave_hit_hitpoints_03.wav"
+		],
+		SoundsB = [
+			"sounds/combat/chop_hit_01.wav",
+			"sounds/combat/chop_hit_02.wav",
+			"sounds/combat/chop_hit_03.wav"
+		]		
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_skin_ghoul_claws";

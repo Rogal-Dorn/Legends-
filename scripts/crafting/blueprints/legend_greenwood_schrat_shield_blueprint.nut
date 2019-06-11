@@ -19,6 +19,12 @@ this.legend_greenwood_schrat_shield_blueprint <- this.inherit("scripts/crafting/
 		this.init(ingredients);
 	}
 
+
+	function isQualified()
+	{
+		return true;
+	}
+	
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/shields/special/legend_craftable_greenwood_schrat_shield"));

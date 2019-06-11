@@ -24,7 +24,7 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 		
 		local missingBodyArmor = actor.getArmorMax(this.Const.BodyPart.Body) -  actor.getArmor(this.Const.BodyPart.Body);
 		local addedBodyArmor = this.Math.min(missingBodyArmor, this.Math.floor(actor.getArmorMax(this.Const.BodyPart.Body) * 0.15));
-				local missingHeadArmor = actor.getArmorMax(this.Const.BodyPart.Head) -  actor.getArmor(this.Const.BodyPart.Head);
+		local missingHeadArmor = actor.getArmorMax(this.Const.BodyPart.Head) -  actor.getArmor(this.Const.BodyPart.Head);
 		local addedHeadArmor = this.Math.min(missingHeadArmor, this.Math.floor(actor.getArmorMax(this.Const.BodyPart.Head) * 0.15));
 
 		if (addedBodyArmor <= 0 && addedHeadArmor <= 0)

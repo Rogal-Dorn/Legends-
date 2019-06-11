@@ -23,6 +23,12 @@ this.legend_demon_alp_trophy_blueprint <- this.inherit("scripts/crafting/bluepri
 		this.init(ingredients);
 	}
 
+
+	function isQualified()
+	{
+		return true;
+	}
+	
 	function onCraft( _stash )
 	{
 		_stash.add(this.new("scripts/items/accessory/legend_demonalp_trophy_item"));
