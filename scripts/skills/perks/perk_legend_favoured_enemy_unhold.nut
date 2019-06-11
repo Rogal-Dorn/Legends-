@@ -11,7 +11,9 @@ this.perk_legend_favoured_enemy_unhold <- this.inherit("scripts/skills/legend_fa
 			this.Const.EntityType.Unhold,
 			this.Const.EntityType.UnholdBog,
 			this.Const.EntityType.UnholdFrost,
-			 this.Const.EntityType.LegendRockUnhold
+			this.Const.EntityType.BarbarianUnhold,
+			this.Const.EntityType.BarbarianUnholdFrost,
+			this.Const.EntityType.LegendRockUnhold
 		];
 
 	}
