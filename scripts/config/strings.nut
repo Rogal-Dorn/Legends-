@@ -1269,8 +1269,14 @@ gt.Const.Strings.PerkName <- {
 	LegendFavouredEnemyGoblin = "Favoured Enemy - Goblins",
 	LegendFavouredEnemyVampire = "Favoured Enemy - Necrosavants",
 	LegendFavouredEnemySkeleton = "Favoured Enemy - Ancient dead",
-	LegendFavouredEnemyZombie = "Favoured Enemy - Weirdergangers"
-
+	LegendFavouredEnemyZombie = "Favoured Enemy - Weirdergangers",
+	LegendFavouredEnemyNoble = "Favoured Enemy - Noble",
+	LegendFavouredEnemyBandit = "Favoured Enemy - Bandit",
+	LegendFavouredEnemyBarbarian = "Favoured Enemy - Barbarian",
+	LegendFavouredEnemyArcher = "Favoured Enemy - Archer",
+	LegendFavouredEnemySwordmaster = "Favoured Enemy - Sword Master",
+	LegendFavouredEnemyMercenary = "Favoured Enemy - Mercenary",
+	LegendFavouredEnemyCaravan = "Favoured Enemy - Caravan"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
@@ -1517,6 +1523,13 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemyVampire = "The terrifying abilities of the Necrosavants are developed over time beyond memory. Their techniques are honed to perfection, but that also makes them predictable. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Necrosavant",
 	LegendFavouredEnemySkeleton = "The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a Skeleton",
 	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves. They lose something crucial in death, and that can be exploited. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a wiederganger"
+	LegendFavouredEnemyNobles = "Soliders in glittering armor and colourful pennants, their pride shall be their undoing. No gods, no masters. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a noble soldier.",
+	LegendFavouredEnemyBandit = "Villainous scum, hiding in the dark and stealing from good folk. The bandits must be purged to restore order in the world. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a bandit.",
+	LegendFavouredEnemyBarbarian = "Savages, naught but savages. Civilisation must be brought to those godless brutes. They may be strong, but they lack skill. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a barbarian",
+	LegendFavouredEnemyArcher = "Some may claim to be the greatest shot in the land, but none have outshot you yet. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on an archer",
+	LegendFavouredEnemySwordmaster = "The path to martial prowess is beset by the fake and the weak. Only one can be the greatest swordsman. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a sword master",
+	LegendFavouredEnemyMercenary = "Mercenaries are the worst, no cause, no principles, no honour. They seek only coin, so they shall find only death. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a mercenary",
+	LegendFavouredEnemyCaravan = "Civilians are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a civilian"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -54,14 +54,16 @@ local BarbarianTree = [
 		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Footwork,
-		gt.Const.Perks.PerkDefs.LegendSecondWind
+		gt.Const.Perks.PerkDefs.LegendSecondWind,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan
 	],
 	[
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.BattleForged,
-		gt.Const.Perks.PerkDefs.LastStand
+		gt.Const.Perks.PerkDefs.LastStand,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,

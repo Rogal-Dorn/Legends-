@@ -72,6 +72,7 @@ local ShieldTree = [
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.Indomitable
 		

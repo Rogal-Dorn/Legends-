@@ -44,6 +44,11 @@ local NobleTree = [
 		gt.Const.Perks.PerkDefs.LegendMasteryBandage,
 		gt.Const.Perks.PerkDefs.LegendEfficientPacking,
 		gt.Const.Perks.PerkDefs.LegendBarterConvincing,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
+		gt.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 		gt.Const.Perks.PerkDefs.LegendRoster4
 	],
 	[
