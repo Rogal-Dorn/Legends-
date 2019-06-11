@@ -23,7 +23,7 @@ this.perk_legend_second_wind <- this.inherit("scripts/skills/skill", {
 		local ratio = currentHP / percentHP;
 		if (ratio < 0.3)
 		{
-		actor.setFatigue(_user.getFatigue() / 2);
+			actor.setFatigue(actor.getFatigue() / 2);
 		}
 	}
 
