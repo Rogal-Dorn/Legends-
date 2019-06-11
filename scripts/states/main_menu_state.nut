@@ -101,30 +101,32 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 
 			if (tacticalState != null)
 			{
+
+
 				switch(this.m.SelectedScenarioID)
 				{
 				case 0:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_skin_ghoul"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
 					break;
 
 				case 1:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_redback_spider"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_swipe"));
 					break;
 
 				case 2:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_stollwurm"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_defend_the_hill"));
 					break;
 
 				case 3:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_hexe_leader"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_advanced_combat"));
 					break;
 
 				case 4:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_white_wolf"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_early_game"));
 					break;
 
 				case 6:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_demon_alp"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle"));
 					break;
 
 				case 7:
@@ -132,7 +134,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					break;
 
 				case 8:
-					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_rock_unhold"));
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_canyon"));
 					break;
 
 				case 9:
@@ -169,6 +171,34 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 
 				case 22:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_test_bed_human"));
+					break;
+
+				case 30:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_skin_ghoul"));
+					break;
+
+				case 31:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_redback_spider"));
+					break;
+
+				case 32:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_line_battle_stollwurm"));
+					break;
+
+				case 33:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_hexe_leader"));
+					break;
+
+				case 34:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_white_wolf"));
+					break;
+
+				case 35:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_demon_alp"));
+					break;
+
+				case 36:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_rock_unhold"));
 					break;
 
 				default:
@@ -429,51 +459,92 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 
 	function scenario_menu_module_onQueryData()
 	{
+
 		local result = [
 			{
-				id = 0,
-				name = "Skin Ghouls",
+				id = 30,
+				name = "Skin Ghouls (Legends)",
 				description = "[p=c][img]gfx/ui/events/legend_skin_ghoul.png[/img][/p]\n[p=c]Head to head vs the creepy naked beasties[/p]"
 			},
 			{
-				id = 1,
-				name = "Redback Spiders",
+				id = 31,
+				name = "Redback Spiders (Legends)",
 				description = "[p=c][img]gfx/ui/events/legend_redback.png[/img][/p]\n[p=c]Defend yourself from the deadly arachnids[/p]"
 			},
 			{
-				id = 4,
-				name = "White Wolf",
+				id = 34,
+				name = "White Wolf (Legends)",
 				description = "[p=c][img]gfx/ui/events/legend_white_wolf.png[/img][/p]\n[p=c]A brutal battle against a pack led by the white wolf[/p]"
 			},
 			{
-				id = 8,
-				name = "Rock Unhold",
+				id = 36,
+				name = "Rock Unhold (Legends)",
 				description = "[p=c][img]gfx/ui/events/event_104.png[/img][/p]\n[p=c]Toe to toe with a living mountain[/p]"
 			},
 			{
-				id = 9,
-				name = "Line Battle (Orcs)",
-				description = "[p=c][img]gfx/ui/events/event_49.png[/img][/p]\n[p=c]ORC ORC ORC ORC ORC ORC. Difficult.[/p]"
-			},
-			{
 				id = 14,
-				name = "Heartwood Schrats",
+				name = "Heartwood Schrats (Legends)",
 				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]It is just one tree, how bad could it be?[/p]"
 			},			
 			{
-				id = 6,
-				name = "Demon Alps",
+				id = 35,
+				name = "Demon Alps (Legends)",
 				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
 			},		
 			{
-				id = 2,
-				name = "Stollwurm",
+				id = 32,
+				name = "Stollwurm (Legends)",
 				description = "[p=c][img]gfx/ui/events/legend_stollwurm.png[/img][/p]\n[p=c]The ground is no ally, the beast approaches[/p]"
 			},
 			{
-				id = 3,
-				name = "The Coven",
+				id = 33,
+				name = "The Coven (Legends)",
 				description = "[p=c][img]gfx/ui/events/legend_hexe_leader.png[/img][/p]\n[p=c]A witch approaches.[/p]"
+			},		
+			{
+				id = 9,
+				name = "Line Battle (Legends Orcs)",
+				description = "[p=c][img]gfx/ui/events/event_49.png[/img][/p]\n[p=c]ORC ORC ORC ORC ORC ORC. Difficult.[/p]"
+			},				
+			{
+				id = 0,
+				name = "Combat Basics",
+				description = "[p=c][img]gfx/ui/events/event_28.png[/img][/p]\n[p=c]A simple scenario to teach combat basics. Easy.[/p]"
+			},
+			{
+				id = 1,
+				name = "Swipe",
+				description = "[p=c][img]gfx/ui/events/event_133.png[/img][/p]\n[p=c]Few and easy opponents all over a map with lots of terrain features blocking sight. Well suited to get used to lines of sight, fog of war and ranged combat. Easy.[/p]"
+			},
+			{
+				id = 4,
+				name = "Early Game",
+				description = "[p=c][img]gfx/ui/events/event_09.png[/img][/p]\n[p=c]A possible early game encounter in enemy composition and equipment available. Moderate difficulty.[/p]"
+			},
+			{
+				id = 15,
+				name = "Defend the Hill",
+				description = "[p=c][img]gfx/ui/events/event_22.png[/img][/p]\n[p=c]Survive against overwhelming odds while positioned on top of a hill. Well suited to learn about height advantage and to test sight and usability issues with height levels. Difficult.[/p]"
+			},
+			{
+				id = 6,
+				name = "Line Battle (Undead)",
+				description = "[p=c][img]gfx/ui/events/event_143.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
+			},
+			{
+				id = 10,
+				name = "Line Battle (Goblins)",
+				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]Featuring two battle lines pitted against each other in close combat from the start. Difficult.[/p]"
+			},
+			{
+				id = 13,
+				name = "Wolfriders",
+				description = "[p=c][img]gfx/ui/events/event_60.png[/img][/p]\n[p=c]Defend against a pack of vicious Goblin Wolfriders. Don\'t let them encircle you! Moderate difficulty.[/p]"
+			},
+			{
+				id = 3,
+				name = "A Walk in the Woods",
+				description = "[p=c][img]gfx/ui/events/event_127.png[/img][/p]\n[p=c]A possible late game encounter in enemy composition and equipment available. Difficult.[/p]"
 			}
 		];
 
@@ -487,7 +558,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		}
 
 		return result;
-	}
+	}			
 
 	function options_menu_module_onOkPressed()
 	{
