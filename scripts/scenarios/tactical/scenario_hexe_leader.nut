@@ -15,7 +15,7 @@ this.scenario_hexe_leader <- this.inherit("scripts/scenarios/tactical/scenario_t
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.combat_basics");
+		local testMap = this.MapGen.get("tactical.forest_leaves");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
@@ -135,7 +135,7 @@ this.scenario_hexe_leader <- this.inherit("scripts/scenarios/tactical/scenario_t
 		 entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/hexe", x, x, 18, 18);
 		 entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_hexe_leader", x, x, 18, 18);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_hexe_leader", x, x, 19, 19);
 		 entity.setFaction(this.Const.Faction.Beasts);
 	}
 

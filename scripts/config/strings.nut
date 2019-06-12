@@ -251,7 +251,7 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Orc Behemoths",
 	"White Direwolves",
 	"Skin Ghouls",
-	"Stollwurms",
+	"Stollwurmer",
 	"Rock Unholds",
 	"Redback Spiders",
 	"Demon Alps",

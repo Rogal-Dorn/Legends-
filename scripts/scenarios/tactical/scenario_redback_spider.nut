@@ -15,7 +15,7 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.combat_basics");
+		local testMap = this.MapGen.get("tactical.forest");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
@@ -121,7 +121,7 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		for (local i = 0; i < 6; i = ++i)
+		for (local i = 0; i < 4; i = ++i)
 		{
 			entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 12 + i, 12 + i);
 			entity.setFaction(this.Const.Faction.Beasts);

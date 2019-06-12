@@ -642,8 +642,8 @@ gt.Const.Tactical.RaiseUndeadParticles <- [
 gt.Const.Tactical.RaiseFromGroundParticles <- [
 	{
 		Delay = 200,
-		Quantity = 140,
-		LifeTimeQuantity = 140,
+		Quantity = 280,
+		LifeTimeQuantity = 280,
 		SpawnRate = 120,
 		Brushes = [
 			"dust_01"
@@ -655,7 +655,7 @@ gt.Const.Tactical.RaiseFromGroundParticles <- [
 				ColorMin = this.createColor("ffffff00"),
 				ColorMax = this.createColor("ffffff00"),
 				ScaleMin = 0.5,
-				ScaleMax = 0.75,
+				ScaleMax = 1.5,
 				RotationMin = 0,
 				RotationMax = 359,
 				VelocityMin = 40,

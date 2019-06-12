@@ -25,7 +25,7 @@ this.lindwurm_tail_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_split"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_swing"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_thresh"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_teleport"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_move_tentacle"));
 		this.getBehavior(this.Const.AI.Behavior.ID.Swing).m.MinTargets = 1;
 		this.getBehavior(this.Const.AI.Behavior.ID.Thresh).m.MinTargets = 3;
 	}

@@ -224,10 +224,10 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 			return gt.Const.Perks.PerksTreeSoldier;
 			break;
 		case "background.swordmaster":
-			return gt.Const.Perks.PerksTreeSwordmaster;
+			return gt.Const.Perks.PerksTreeSwordMaster;
 			break;
 		case "background.hedge_knight":
-			return gt.Const.Perks.PerksTreeSwordmaster;
+			return gt.Const.Perks.PerksTreeSwordMaster;
 			break;
 		case "background.bastard":
 			return gt.Const.Perks.PerksTreeBastard;
