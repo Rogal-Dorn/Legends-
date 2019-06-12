@@ -1275,16 +1275,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 				killedBy = killedBy + (" by " + _killer.getKilledName());
 			}
-
-			local fallen = {
-				Name = this.getName(),
-				Time = this.World.getTime().Days,
-				TimeWithCompany = this.Math.max(1, this.getDaysWithCompany()),
-				Kills = this.m.LifetimeStats.Kills,
-				Battles = this.m.LifetimeStats.Battles + 1,
-				KilledBy = killedBy
-			};
-			this.World.Statistics.addFallen(fallen);
+			this.m.LifetimeStats.Battles += 1
+			this.World.Statistics.addFallen(this, killedBy);
 		}
 	}
 
@@ -2540,6 +2532,29 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setLastCampTime( _t )
 	{
 		this.m.LastCampTime = _t;
+	}
+
+	function getDeadTraits()
+	{
+		local skills = this.getSkills().query(this.Const.SkillType.Trait, false, true);
+		local list = [];
+
+		foreach( i, s in skills )
+		{
+			if (s.isType(this.Const.SkillType.StatusEffect) || s.isType(this.Const.SkillType.Active) || s.isType(this.Const.SkillType.Racial) || s.isType(this.Const.SkillType.Special) || s.isType(this.Const.SkillType.Perk) || s.isType(this.Const.SkillType.Terrain) || s.isType(this.Const.SkillType.Injury) || s.isType(this.Const.SkillType.PermanentInjury) || s.isType(this.Const.SkillType.SemiInjury) || s.isType(this.Const.SkillType.DrugEffect) || s.isType(this.Const.SkillType.DamageOverTime))
+			{
+				continue;
+			}
+
+			list.append(s.getIcon());
+		}
+
+		for( local i = list.len(); i < 4; i++ )
+		{
+			list.append("");
+		}
+
+		return list;
 	}
 
 	function onSerialize( _out )

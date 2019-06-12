@@ -330,4 +330,76 @@
 		this.m.CombatResultLoot.sort();
 	}
 
+	o.gatherBrothers = function ( _isVictory )
+	{
+		this.m.CombatResultRoster = [];
+		this.Tactical.CombatResultRoster <- this.m.CombatResultRoster;
+		local alive = this.Tactical.Entities.getAllInstancesAsArray();
+
+		foreach( bro in alive )
+		{
+			if (bro.isAlive() && this.isKindOf(bro, "player"))
+			{
+				bro.onBeforeCombatResult();
+
+				if (bro.isAlive() && !bro.isGuest() && bro.isPlayerControlled())
+				{
+					this.m.CombatResultRoster.push(bro);
+				}
+			}
+		}
+
+		local dead = this.Tactical.getCasualtyRoster().getAll();
+		local survivor = this.Tactical.getSurvivorRoster().getAll();
+		local retreated = this.Tactical.getRetreatRoster().getAll();
+
+		if (_isVictory)
+		{
+			foreach( s in survivor )
+			{
+				s.setIsAlive(true);
+				s.onBeforeCombatResult();
+
+				foreach( i, d in dead )
+				{
+					if (s.getID() == d.getOriginalID())
+					{
+						dead.remove(i);
+						this.Tactical.getCasualtyRoster().remove(d);
+						break;
+					}
+				}
+			}
+
+			this.m.CombatResultRoster.extend(survivor);
+		}
+		else
+		{
+			foreach( bro in survivor )
+			{
+				this.World.Statistics.addFallen(bro);
+				this.World.getPlayerRoster().remove(bro);
+				bro.die();
+			}
+		}
+
+		foreach( s in retreated )
+		{
+			s.onBeforeCombatResult();
+		}
+
+		this.m.CombatResultRoster.extend(retreated);
+		this.m.CombatResultRoster.extend(dead);
+
+		if (!this.isScenarioMode() && dead.len() > 1 && dead.len() >= this.m.CombatResultRoster.len() / 2)
+		{
+			this.updateAchievement("TimeToRebuild", 1, 1);
+		}
+
+		if (!this.isScenarioMode() && this.World.getPlayerRoster().getSize() == 0 && this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians) != null && this.m.Factions.getHostileFactionWithMostInstances() == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID())
+		{
+			this.updateAchievement("GiveMeBackMyLegions", 1, 1);
+		}
+	};
+
 })

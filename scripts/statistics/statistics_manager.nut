@@ -90,8 +90,31 @@ this.statistics_manager <- {
 		return this.new("scripts/tools/tag_collection");
 	}
 
-	function addFallen( _fallen )
+	function addFallen( _bro, _killedBy="Left to die")
 	{
+		local b = _bro.getBaseProperties();
+		local bstats = [
+			b.Hitpoints,
+			b.Stamina,
+			b.Bravery,
+			b.Initiative,
+			b.MeleeSkill,
+			b.RangedSkill,
+			b.MeleeDefense,
+			b.RangedDefense
+		];
+		local _fallen = {
+			Name = _bro.getName(),
+			Time = this.World.getTime().Days,
+			TimeWithCompany = this.Math.max(1, _bro.getDaysWithCompany()),
+			Kills = _bro.getLifetimeStats().Kills,
+			Battles = _bro.getLifetimeStats().Battles,
+			KilledBy = _killedBy,
+			level = _bro.getLevel(),
+			traits = _bro.getDeadTraits(),
+			stats = bstats,
+			talents = _bro.getTalents()
+		};		
 		this.m.Fallen.insert(0, _fallen);
 	}
 
@@ -135,6 +158,56 @@ this.statistics_manager <- {
 			_out.writeU32(f.Kills);
 			_out.writeU32(f.Battles);
 			_out.writeString(f.KilledBy);
+
+			if (f.len() > 6)
+			{
+				_out.writeU8(f.level);
+				_out.writeU8(f.traits.len());
+
+				foreach( trait in f.traits )
+				{
+					_out.writeString(trait);
+				}
+
+				_out.writeU8(f.stats.len());
+
+				foreach( stat in f.stats )
+				{
+					_out.writeU32(stat);
+				}
+
+				_out.writeU8(f.talents.len());
+
+				foreach( talent in f.talents )
+				{
+					_out.writeU8(talent);
+				}
+			}
+			else
+			{
+				_out.writeU8(-99);
+				_out.writeU8(4);
+
+				for( local i = 0; i < 4; i++ )
+				{
+					_out.writeString("");
+				}
+
+				_out.writeU8(8);
+
+				for( local i = 0; i < 8; i++ )
+				{
+					_out.writeU32(-99);
+				}
+
+				_out.writeU8(8);
+
+				for( local i = 0; i < 8; i++ )
+				{
+					_out.writeU8(-99);
+				}
+			}
+
 			_out.writeBool(false);
 		}
 	}
@@ -160,19 +233,21 @@ this.statistics_manager <- {
 		local numNews = _in.readU8();
 		this.m.News.resize(numNews);
 
-		for( local i = 0; i < numNews; i = ++i )
+		for( local i = 0; i < numNews; i = i )
 		{
 			local news = this.new("scripts/tools/tag_collection");
 			news.Type <- _in.readString();
 			news.Time <- _in.readF32();
 			news.onDeserialize(_in);
 			this.m.News[i] = news;
+			i = ++i;
+			i = i;
 		}
 
 		local numFallen = _in.readU32();
 		this.m.Fallen.resize(numFallen);
 
-		for( local i = 0; i < numFallen; i = ++i )
+		for( local i = 0; i < numFallen; i = i )
 		{
 			local f = {};
 			f.Name <- _in.readString();
@@ -181,8 +256,39 @@ this.statistics_manager <- {
 			f.Kills <- _in.readU32();
 			f.Battles <- _in.readU32();
 			f.KilledBy <- _in.readString();
+
+			if (_in.getMetaData().getVersion() >= 57)
+			{
+				f.level <- _in.readU8();
+				f.traits <- [];
+				local numtraits = _in.readU8();
+
+				for( local i = 0; i != numtraits; i++ )
+				{
+					f.traits.push(_in.readString());
+				}
+
+				f.stats <- [];
+				local numstats = _in.readU8();
+
+				for( local i = 0; i != numstats; i++ )
+				{
+					f.stats.push(_in.readU32());
+				}
+
+				f.talents <- [];
+				local numtalents = _in.readU8();
+
+				for( local i = 0; i != numtalents; i++ )
+				{
+					f.talents.push(_in.readU8());
+				}
+			}
+
 			_in.readBool();
 			this.m.Fallen[i] = f;
+			i = ++i;
+			i = i;
 		}
 	}
 

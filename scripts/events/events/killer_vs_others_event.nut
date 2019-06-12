@@ -128,6 +128,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
+				this.World.Statistics.addFallen(_event.m.Killer, "Hanged for attempted murder");				
 				this.World.getPlayerRoster().remove(_event.m.Killer);
 				_event.m.OtherGuy1.improveMood(2.0, "Got satisfaction with " + _event.m.Killer.getNameOnly() + "\'s hanging");
 
@@ -211,21 +212,14 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				local dead = _event.m.Killer;
-				local fallen = {
-					Name = dead.getName(),
-					Time = this.World.getTime().Days,
-					TimeWithCompany = this.Math.max(1, dead.getDaysWithCompany()),
-					Kills = dead.getLifetimeStats().Kills,
-					Battles = dead.getLifetimeStats().Battles,
-					KilledBy = "Murdered by his fellow brothers"
-				};
-				this.World.Statistics.addFallen(fallen);
+				this.World.Statistics.addFallen(dead,  "Murdered by his fellow brothers");
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
+				this.World.Statistics.addFallen(_event.m.Killer, "Murdered by his fellow brothers");				
 				this.World.getPlayerRoster().remove(_event.m.Killer);
 				local brothers = this.World.getPlayerRoster().getAll();
 

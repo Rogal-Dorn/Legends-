@@ -97,6 +97,7 @@ this.lawmen_after_criminal_event <- this.inherit("scripts/events/event", {
 			{
 				this.Banner = _event.m.NobleHouse.getUIBannerSmall();
 				this.Characters.push(_event.m.Criminal.getImagePath());
+				this.World.Statistics.addFallen(_event.m.Criminal, "Handed over to authorities");
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/asset_brothers.png",
