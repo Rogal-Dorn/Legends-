@@ -19,7 +19,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 
 	function start()
 	{
-		this.m.Payment.Pool = 2700 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 9000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
