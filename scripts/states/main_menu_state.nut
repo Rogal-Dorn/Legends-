@@ -463,47 +463,47 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		local result = [
 			{
 				id = 30,
-				name = "Skin Ghouls (Legends)",
+				name = "Skin Ghouls (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_skin_ghoul.png[/img][/p]\n[p=c]Head to head vs the creepy naked beasties[/p]"
 			},
 			{
 				id = 31,
-				name = "Redback Spiders (Legends)",
+				name = "Redback Spiders (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_redback.png[/img][/p]\n[p=c]Defend yourself from the deadly arachnids[/p]"
 			},
 			{
 				id = 34,
-				name = "White Wolf (Legends)",
+				name = "White Wolf (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_white_wolf.png[/img][/p]\n[p=c]A brutal battle against a pack led by the white wolf[/p]"
 			},
 			{
 				id = 36,
-				name = "Rock Unhold (Legends)",
-				description = "[p=c][img]gfx/ui/events/event_104.png[/img][/p]\n[p=c]Toe to toe with a living mountain[/p]"
+				name = "Rock Unhold (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_rock_unhold.png[/img][/p]\n[p=c]Toe to toe with a living mountain[/p]"
 			},
 			{
 				id = 14,
-				name = "Heartwood Schrats (Legends)",
-				description = "[p=c][img]gfx/ui/events/event_48.png[/img][/p]\n[p=c]It is just one tree, how bad could it be?[/p]"
+				name = "Heartwood Schrats (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_heartwood.png[/img][/p]\n[p=c]It is just one tree, how bad could it be?[/p]"
 			},			
 			{
 				id = 35,
-				name = "Demon Alps (Legends)",
+				name = "Demon Alps (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
 			},		
 			{
 				id = 32,
-				name = "Stollwurm (Legends)",
+				name = "Stollwurm (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_stollwurm.png[/img][/p]\n[p=c]The ground is no ally, the beast approaches[/p]"
 			},
 			{
 				id = 33,
-				name = "The Coven (Legends)",
+				name = "The Coven (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_hexe_leader.png[/img][/p]\n[p=c]A witch approaches.[/p]"
 			},		
 			{
 				id = 9,
-				name = "Line Battle (Legends Orcs)",
+				name = "Line Battle (Legendary)",
 				description = "[p=c][img]gfx/ui/events/event_49.png[/img][/p]\n[p=c]ORC ORC ORC ORC ORC ORC. Difficult.[/p]"
 			},				
 			{
