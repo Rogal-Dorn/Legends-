@@ -7,7 +7,7 @@ if (!("Perks" in gt.Const))
 
 local Tree = [
 	[
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
@@ -25,7 +25,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.QuickHands
 	],
 	[
-		gt.Const.Perks.PerkDefs.BackStabber,	
+		gt.Const.Perks.PerkDefs.Backstabber,	
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Brawny,
 		gt.Const.Perks.PerkDefs.Relentless,
@@ -34,9 +34,9 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Taunt
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryCleaver,
-		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.MasteryDagger,
+		gt.Const.Perks.PerkDefs.SpecCleaver,
+		gt.Const.Perks.PerkDefs.SpecSword,
+		gt.Const.Perks.PerkDefs.SpecDagger,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster
 	],
 	[
@@ -44,7 +44,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.ReachAdvantage,
 		gt.Const.Perks.PerkDefs.Overwhelm,
-		gt.Const.Perks.PerkDefs.SunderingStrike,
+		gt.Const.Perks.PerkDefs.SunderingStrikes,
 		gt.Const.Perks.PerkDefs.Footwork
 
 	],

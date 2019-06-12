@@ -7,7 +7,7 @@ if (!("Perks" in gt.Const))
 
 local Tree = [
 	[
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.NineLives,
 		gt.Const.Perks.PerkDefs.Pathfinder,
@@ -29,7 +29,7 @@ local Tree = [
 
 	],
 	[
-		gt.Const.Perks.PerkDefs.BackStabber,
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,
@@ -38,10 +38,10 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryCrossbow,
-		gt.Const.Perks.PerkDefs.MasteryPolearm,
-		gt.Const.Perks.PerkDefs.MasteryThrowing,
-		gt.Const.Perks.PerkDefs.MasteryDagger,
+		gt.Const.Perks.PerkDefs.SpecCrossbow,
+		gt.Const.Perks.PerkDefs.SpecPolearm,
+		gt.Const.Perks.PerkDefs.SpecThrowing,
+		gt.Const.Perks.PerkDefs.SpecDagger,
 		gt.Const.Perks.PerkDefs.LegendEfficientPacking,
 		gt.Const.Perks.PerkDefs.LegendAmmoBinding,
 		gt.Const.Perks.PerkDefs.LegendMedPackages,

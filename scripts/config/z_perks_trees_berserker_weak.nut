@@ -7,7 +7,7 @@ if (!("Perks" in gt.Const))
 
 local Tree = [
 	[
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -37,22 +37,22 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendSecondWind
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryMace,
-		gt.Const.Perks.PerkDefs.MasteryFlail,
-		gt.Const.Perks.PerkDefs.MasteryHammer,
-		gt.Const.Perks.PerkDefs.MasteryAxe,
-		gt.Const.Perks.PerkDefs.MasteryCleaver,
-		gt.Const.Perks.PerkDefs.MasterySword,
+		gt.Const.Perks.PerkDefs.SpecMace,
+		gt.Const.Perks.PerkDefs.SpecFlail,
+		gt.Const.Perks.PerkDefs.SpecHammer,
+		gt.Const.Perks.PerkDefs.SpecAxe,
+		gt.Const.Perks.PerkDefs.SpecCleaver,
+		gt.Const.Perks.PerkDefs.SpecSword,
 		gt.Const.Perks.PerkDefs.LegendPoisonImmunity,
-		gt.Const.Perks.PerkDefs.MasteryThrowing
+		gt.Const.Perks.PerkDefs.SpecThrowing
 	],
 	[
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Footwork,
-		gt.Const.Perks.PerkDefs.Slaughter,
+		gt.Const.Perks.PerkDefs.Slaughterer,
 		gt.Const.Perks.PerkDefs.Vengeance,
 		gt.Const.Perks.PerkDefs.LegendBattleheart,
-		gt.Const.Perks.PerkDefs.SunderingStrike,
+		gt.Const.Perks.PerkDefs.SunderingStrikes,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold		
@@ -65,7 +65,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LastStand,
 		gt.Const.Perks.PerkDefs.Rebound,
 		gt.Const.Perks.PerkDefs.LegendMuscularity,
-		gt.Const.Perks.PerkDefs.LegendPushForward
+		gt.Const.Perks.PerkDefs.LegendForwardPush
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,

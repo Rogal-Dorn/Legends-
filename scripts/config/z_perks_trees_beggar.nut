@@ -25,8 +25,8 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryDagger,
-		gt.Const.Perks.PerkDefs.MasteryThrowing,
+		gt.Const.Perks.PerkDefs.SpecDagger,
+		gt.Const.Perks.PerkDefs.SpecThrowing,
 		gt.Const.Perks.PerkDefs.LegendRoster4,
 	],
 	[

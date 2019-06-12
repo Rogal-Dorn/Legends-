@@ -8,7 +8,7 @@ if (!("Perks" in gt.Const))
 local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.Adrenalin,
-		gt.Const.Perks.PerkDefs.BackStabber,
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -40,9 +40,9 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendRoster3
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryPolearm,
-		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.LegendMasteryBandage,
+		gt.Const.Perks.PerkDefs.SpecPolearm,
+		gt.Const.Perks.PerkDefs.SpecSword,
+		gt.Const.Perks.PerkDefs.LegendSpecBandage,
 		gt.Const.Perks.PerkDefs.LegendEfficientPacking,
 		gt.Const.Perks.PerkDefs.LegendBarterConvincing,
 		gt.Const.Perks.PerkDefs.LegendRoster4
@@ -60,8 +60,8 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.BattleForged,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
-		gt.Const.Perks.PerkDefs.LegendPushForward,
-		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
+		gt.Const.Perks.PerkDefs.LegendForwardPush,
+		gt.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendRoster6
 	],
 	[

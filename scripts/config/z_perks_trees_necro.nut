@@ -35,22 +35,22 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendRoster1
 	],
 	[
-		gt.Const.Perks.PerkDefs.BackStabber,
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Brawny,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
 		gt.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
-		gt.Const.Perks.PerkDefs.LegendDeathTouch,
+		gt.Const.Perks.PerkDefs.LegendDeathtouch,
 		gt.Const.Perks.PerkDefs.Lookout,
 		gt.Const.Perks.PerkDefs.LegendExtendendAura,
 		gt.Const.Perks.PerkDefs.LegendRoster2
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryDagger,
-		gt.Const.Perks.PerkDefs.MasteryMace,
-		gt.Const.Perks.PerkDefs.MasteryCleaver,
-		gt.Const.Perks.PerkDefs.MasteryThrowing,
-		gt.Const.Perks.PerkDefs.MasteryPoison,
+		gt.Const.Perks.PerkDefs.SpecDagger,
+		gt.Const.Perks.PerkDefs.SpecMace,
+		gt.Const.Perks.PerkDefs.SpecCleaver,
+		gt.Const.Perks.PerkDefs.SpecThrowing,
+		gt.Const.Perks.PerkDefs.LegendSpecPoison,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieMed,
 		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonMed
 	],
@@ -85,7 +85,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Indomitable,
 		gt.Const.Perks.PerkDefs.LegendInsects,
 		gt.Const.Perks.PerkDefs.LegendDarkflight,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
+		gt.Const.Perks.PerkDefs.PerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendViolentDecomposition,
 		gt.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
 		gt.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh,

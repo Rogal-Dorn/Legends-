@@ -7,7 +7,7 @@ if (!("Perks" in gt.Const))
 
 local Tree = [
 	[
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.CripplingStrikes, 
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.NineLives,
@@ -23,10 +23,10 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.FortifiedMind,
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.Gifted,
-		gt.Const.Perks.PerkDefs.LegendStun
+		gt.Const.Perks.PerkDefs.LegendStunned
 	],
 	[
-		gt.Const.Perks.PerkDefs.BackStabber,
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.RallyTheTroops,
@@ -34,8 +34,8 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendHorrify
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryDagger,
-		gt.Const.Perks.PerkDefs.MasteryThrowing,
+		gt.Const.Perks.PerkDefs.SpecDagger,
+		gt.Const.Perks.PerkDefs.SpecThrowing,
 		gt.Const.Perks.PerkDefs.LegendMasteryStaves,
 		gt.Const.Perks.PerkDefs.LegendEntice,
 		gt.Const.Perks.PerkDefs.LegendPush
@@ -57,10 +57,10 @@ local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
+		gt.Const.Perks.PerkDefs.PerfectFocus,
 		gt.Const.Perks.PerkDefs.LegendSleep,
 		gt.Const.Perks.PerkDefs.LegendTeleport,
-		gt.Const.Perks.PerkDefs.LegendFireField
+		gt.Const.Perks.PerkDefs.LegendFirefield
 		
 	],
 	[],

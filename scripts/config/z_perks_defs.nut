@@ -12,7 +12,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.FastAdaption,
 		Tooltip = this.Const.Strings.PerkDescription.FastAdaption,
 		Icon = "ui/perks/perk_33.png",
-		IconDisabled = "ui/perks/perk_33_sw.png"
+		IconDisabled = "ui/perks/perk_33_sw.png",
+		Const = "FastAdaption"
 	},
 	{
 		ID = "perk.crippling_strikes",
@@ -20,7 +21,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.CripplingStrikes,
 		Tooltip = this.Const.Strings.PerkDescription.CripplingStrikes,
 		Icon = "ui/perks/perk_57.png",
-		IconDisabled = "ui/perks/perk_57_sw.png"
+		IconDisabled = "ui/perks/perk_57_sw.png",
+		Const = "CripplingStrikes"
 	},
 	{
 		ID = "perk.colossus",
@@ -28,7 +30,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Colossus,
 		Tooltip = this.Const.Strings.PerkDescription.Colossus,
 		Icon = "ui/perks/perk_06.png",
-		IconDisabled = "ui/perks/perk_06_sw.png"
+		IconDisabled = "ui/perks/perk_06_sw.png",
+		Const = "Colossus"
 	},
 	{
 		ID = "perk.nine_lives",
@@ -36,7 +39,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.NineLives,
 		Tooltip = this.Const.Strings.PerkDescription.NineLives,
 		Icon = "ui/perks/perk_07.png",
-		IconDisabled = "ui/perks/perk_07_sw.png"
+		IconDisabled = "ui/perks/perk_07_sw.png",
+		Const = "NineLives"
 	},
 	{
 		ID = "perk.bags_and_belts",
@@ -44,7 +48,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.BagsAndBelts,
 		Tooltip = this.Const.Strings.PerkDescription.BagsAndBelts,
 		Icon = "ui/perks/perk_20.png",
-		IconDisabled = "ui/perks/perk_20_sw.png"
+		IconDisabled = "ui/perks/perk_20_sw.png",
+		Const = "BagsAndBelts"
 	},
 	{
 		ID = "perk.pathfinder",
@@ -52,7 +57,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Pathfinder,
 		Tooltip = this.Const.Strings.PerkDescription.Pathfinder,
 		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png"
+		IconDisabled = "ui/perks/perk_23_sw.png",
+		Const = "Pathfinder"
 	},
 	{
 		ID = "perk.adrenaline",
@@ -61,6 +67,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.Adrenalin,
 		Icon = "ui/perks/perk_37.png",
 		IconDisabled = "ui/perks/perk_37_sw.png"
+		Const = "Adrenalin"
 	},
 	{
 		ID = "perk.recover",
@@ -68,7 +75,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Recover,
 		Tooltip = this.Const.Strings.PerkDescription.Recover,
 		Icon = "ui/perks/perk_54.png",
-		IconDisabled = "ui/perks/perk_54_sw.png"
+		IconDisabled = "ui/perks/perk_54_sw.png",
+		Const = "Recover"
 	},
 	{
 		ID = "perk.student",
@@ -76,7 +84,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Student,
 		Tooltip = this.Const.Strings.PerkDescription.Student,
 		Icon = "ui/perks/perk_21.png",
-		IconDisabled = "ui/perks/perk_21_sw.png"
+		IconDisabled = "ui/perks/perk_21_sw.png",
+		Const = "Student"
 	},
 	{
 		ID = "perk.coup_de_grace",
@@ -84,7 +93,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.CoupDeGrace,
 		Tooltip = this.Const.Strings.PerkDescription.CoupDeGrace,
 		Icon = "ui/perks/perk_16.png",
-		IconDisabled = "ui/perks/perk_16_sw.png"
+		IconDisabled = "ui/perks/perk_16_sw.png",
+		Const = "CoupDeGrace"
 	},
 	{
 		ID = "perk.bullseye",
@@ -92,7 +102,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Bullseye,
 		Tooltip = this.Const.Strings.PerkDescription.Bullseye,
 		Icon = "ui/perks/perk_17.png",
-		IconDisabled = "ui/perks/perk_17_sw.png"
+		IconDisabled = "ui/perks/perk_17_sw.png",
+		Const = "Bullseye"
 	},
 	{
 		ID = "perk.dodge",
@@ -100,7 +111,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Dodge,
 		Tooltip = this.Const.Strings.PerkDescription.Dodge,
 		Icon = "ui/perks/perk_01.png",
-		IconDisabled = "ui/perks/perk_01_sw.png"
+		IconDisabled = "ui/perks/perk_01_sw.png",
+		Const = "Dodge"
 	},
 	{
 		ID = "perk.fortified_mind",
@@ -108,7 +120,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.FortifiedMind,
 		Tooltip = this.Const.Strings.PerkDescription.FortifiedMind,
 		Icon = "ui/perks/perk_08.png",
-		IconDisabled = "ui/perks/perk_08_sw.png"
+		IconDisabled = "ui/perks/perk_08_sw.png",
+		Const = "FortifiedMind"
 	},
 	{
 		ID = "perk.hold_out",
@@ -116,7 +129,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.HoldOut,
 		Tooltip = this.Const.Strings.PerkDescription.HoldOut,
 		Icon = "ui/perks/perk_04.png",
-		IconDisabled = "ui/perks/perk_04_sw.png"
+		IconDisabled = "ui/perks/perk_04_sw.png",
+		Const = "HoldOut"
 	},
 	{
 		ID = "perk.steel_brow",
@@ -124,7 +138,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SteelBrow,
 		Tooltip = this.Const.Strings.PerkDescription.SteelBrow,
 		Icon = "ui/perks/perk_09.png",
-		IconDisabled = "ui/perks/perk_09_sw.png"
+		IconDisabled = "ui/perks/perk_09_sw.png",
+		Const = "SteelBrow"
 	},
 	{
 		ID = "perk.quick_hands",
@@ -132,7 +147,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.QuickHands,
 		Tooltip = this.Const.Strings.PerkDescription.QuickHands,
 		Icon = "ui/perks/perk_39.png",
-		IconDisabled = "ui/perks/perk_39_sw.png"
+		IconDisabled = "ui/perks/perk_39_sw.png",
+		Const = "QuickHands"
 	},
 	{
 		ID = "perk.gifted",
@@ -140,7 +156,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Gifted,
 		Tooltip = this.Const.Strings.PerkDescription.Gifted,
 		Icon = "ui/perks/perk_56.png",
-		IconDisabled = "ui/perks/perk_56_sw.png"
+		IconDisabled = "ui/perks/perk_56_sw.png",
+		Const = "Gifted"
 	},
 	{
 		ID = "perk.backstabber",
@@ -148,7 +165,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Backstabber,
 		Tooltip = this.Const.Strings.PerkDescription.Backstabber,
 		Icon = "ui/perks/perk_59.png",
-		IconDisabled = "ui/perks/perk_59_sw.png"
+		IconDisabled = "ui/perks/perk_59_sw.png",
+		Const = "Backstabber"
 	},
 	{
 		ID = "perk.anticipation",
@@ -156,7 +174,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Anticipation,
 		Tooltip = this.Const.Strings.PerkDescription.Anticipation,
 		Icon = "ui/perks/perk_10.png",
-		IconDisabled = "ui/perks/perk_10_sw.png"
+		IconDisabled = "ui/perks/perk_10_sw.png",
+		Const = "Anticipation"
 	},
 	{
 		ID = "perk.shield_expert",
@@ -164,7 +183,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.ShieldExpert,
 		Tooltip = this.Const.Strings.PerkDescription.ShieldExpert,
 		Icon = "ui/perks/perk_05.png",
-		IconDisabled = "ui/perks/perk_05_sw.png"
+		IconDisabled = "ui/perks/perk_05_sw.png",
+		Const = "ShieldExpert"
 	},
 	{
 		ID = "perk.brawny",
@@ -172,7 +192,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Brawny,
 		Tooltip = this.Const.Strings.PerkDescription.Brawny,
 		Icon = "ui/perks/perk_40.png",
-		IconDisabled = "ui/perks/perk_40_sw.png"
+		IconDisabled = "ui/perks/perk_40_sw.png",
+		Const = "Brawny"
 	},
 	{
 		ID = "perk.rotation",
@@ -180,7 +201,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Rotation,
 		Tooltip = this.Const.Strings.PerkDescription.Rotation,
 		Icon = "ui/perks/perk_11.png",
-		IconDisabled = "ui/perks/perk_11_sw.png"
+		IconDisabled = "ui/perks/perk_11_sw.png",
+		Const = "Rotation"
 	},
 	{
 		ID = "perk.rally_the_troops",
@@ -188,7 +210,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.RallyTheTroops,
 		Tooltip = this.Const.Strings.PerkDescription.RallyTheTroops,
 		Icon = "ui/perks/perk_42.png",
-		IconDisabled = "ui/perks/perk_42_sw.png"
+		IconDisabled = "ui/perks/perk_42_sw.png",
+		Const = "RallyTheTroops"
 	},
 	{
 		ID = "perk.taunt",
@@ -196,7 +219,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Taunt,
 		Tooltip = this.Const.Strings.PerkDescription.Taunt,
 		Icon = "ui/perks/perk_38.png",
-		IconDisabled = "ui/perks/perk_38_sw.png"
+		IconDisabled = "ui/perks/perk_38_sw.png",
+		Const = "Taunt"
 	},
 	{
 		ID = "perk.mastery.mace",
@@ -204,7 +228,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecMace,
 		Tooltip = this.Const.Strings.PerkDescription.SpecMace,
 		Icon = "ui/perks/perk_43.png",
-		IconDisabled = "ui/perks/perk_43_sw.png"
+		IconDisabled = "ui/perks/perk_43_sw.png",
+		Const = "SpecMace"
 	},
 	{
 		ID = "perk.mastery.flail",
@@ -212,7 +237,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecFlail,
 		Tooltip = this.Const.Strings.PerkDescription.SpecFlail,
 		Icon = "ui/perks/perk_47.png",
-		IconDisabled = "ui/perks/perk_47_sw.png"
+		IconDisabled = "ui/perks/perk_47_sw.png",
+		Const = "SpecFlail"
 	},
 	{
 		ID = "perk.mastery.hammer",
@@ -220,7 +246,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecHammer,
 		Tooltip = this.Const.Strings.PerkDescription.SpecHammer,
 		Icon = "ui/perks/perk_53.png",
-		IconDisabled = "ui/perks/perk_53_sw.png"
+		IconDisabled = "ui/perks/perk_53_sw.png",
+		Const = "SpecHammer"
 	},
 	{
 		ID = "perk.mastery.axe",
@@ -228,7 +255,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecAxe,
 		Tooltip = this.Const.Strings.PerkDescription.SpecAxe,
 		Icon = "ui/perks/perk_44.png",
-		IconDisabled = "ui/perks/perk_44_sw.png"
+		IconDisabled = "ui/perks/perk_44_sw.png",
+		Const = "SpecAxe"
 	},
 	{
 		ID = "perk.mastery.cleaver",
@@ -236,7 +264,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecCleaver,
 		Tooltip = this.Const.Strings.PerkDescription.SpecCleaver,
 		Icon = "ui/perks/perk_52.png",
-		IconDisabled = "ui/perks/perk_52_sw.png"
+		IconDisabled = "ui/perks/perk_52_sw.png",
+		Const = "SpecCleaver"
 	},
 	{
 		ID = "perk.mastery.sword",
@@ -244,7 +273,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecSword,
 		Tooltip = this.Const.Strings.PerkDescription.SpecSword,
 		Icon = "ui/perks/perk_46.png",
-		IconDisabled = "ui/perks/perk_46_sw.png"
+		IconDisabled = "ui/perks/perk_46_sw.png",
+		Const = "SpecSword"
 	},
 	{
 		ID = "perk.mastery.dagger",
@@ -252,7 +282,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecDagger,
 		Tooltip = this.Const.Strings.PerkDescription.SpecDagger,
 		Icon = "ui/perks/perk_51.png",
-		IconDisabled = "ui/perks/perk_51_sw.png"
+		IconDisabled = "ui/perks/perk_51_sw.png",
+		Const = "SpecDagger"
 	},
 	{
 		ID = "perk.mastery.polearm",
@@ -260,7 +291,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecPolearm,
 		Tooltip = this.Const.Strings.PerkDescription.SpecPolearm,
 		Icon = "ui/perks/perk_58.png",
-		IconDisabled = "ui/perks/perk_58_sw.png"
+		IconDisabled = "ui/perks/perk_58_sw.png",
+		Const = "SpecPolearm"
 	},
 	{
 		ID = "perk.mastery.spear",
@@ -268,7 +300,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecSpear,
 		Tooltip = this.Const.Strings.PerkDescription.SpecSpear,
 		Icon = "ui/perks/perk_45.png",
-		IconDisabled = "ui/perks/perk_45_sw.png"
+		IconDisabled = "ui/perks/perk_45_sw.png",
+		Const = "SpecSpear"
 	},
 	{
 		ID = "perk.mastery.crossbow",
@@ -276,7 +309,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecCrossbow,
 		Tooltip = this.Const.Strings.PerkDescription.SpecCrossbow,
 		Icon = "ui/perks/perk_48.png",
-		IconDisabled = "ui/perks/perk_48_sw.png"
+		IconDisabled = "ui/perks/perk_48_sw.png",
+		Const = "SpecCrossbow"
 	},
 	{
 		ID = "perk.mastery.bow",
@@ -284,7 +318,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecBow,
 		Tooltip = this.Const.Strings.PerkDescription.SpecBow,
 		Icon = "ui/perks/perk_49.png",
-		IconDisabled = "ui/perks/perk_49_sw.png"
+		IconDisabled = "ui/perks/perk_49_sw.png",
+		Const = "SpecBow"
 	},
 	{
 		ID = "perk.mastery.throwing",
@@ -292,7 +327,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SpecThrowing,
 		Tooltip = this.Const.Strings.PerkDescription.SpecThrowing,
 		Icon = "ui/perks/perk_50.png",
-		IconDisabled = "ui/perks/perk_50_sw.png"
+		IconDisabled = "ui/perks/perk_50_sw.png",
+		Const = "SpecThrowing"
 	},
 	{
 		ID = "perk.reach_advantage",
@@ -300,7 +336,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.ReachAdvantage,
 		Tooltip = this.Const.Strings.PerkDescription.ReachAdvantage,
 		Icon = "ui/perks/perk_19.png",
-		IconDisabled = "ui/perks/perk_19_sw.png"
+		IconDisabled = "ui/perks/perk_19_sw.png",
+		Const = "ReachAdvantage"
 	},
 	{
 		ID = "perk.overwhelm",
@@ -308,7 +345,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Overwhelm,
 		Tooltip = this.Const.Strings.PerkDescription.Overwhelm,
 		Icon = "ui/perks/perk_62.png",
-		IconDisabled = "ui/perks/perk_62_sw.png"
+		IconDisabled = "ui/perks/perk_62_sw.png",
+		Const = "Overwhelm"
 	},
 	{
 		ID = "perk.lone_wolf",
@@ -316,7 +354,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LoneWolf,
 		Tooltip = this.Const.Strings.PerkDescription.LoneWolf,
 		Icon = "ui/perks/perk_61.png",
-		IconDisabled = "ui/perks/perk_61_sw.png"
+		IconDisabled = "ui/perks/perk_61_sw.png",
+		Const = "LoneWolf"
 	},
 	{
 		ID = "perk.underdog",
@@ -324,7 +363,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Underdog,
 		Tooltip = this.Const.Strings.PerkDescription.Underdog,
 		Icon = "ui/perks/perk_60.png",
-		IconDisabled = "ui/perks/perk_60_sw.png"
+		IconDisabled = "ui/perks/perk_60_sw.png",
+		Const = "Underdog"
 	},
 	{
 		ID = "perk.footwork",
@@ -332,7 +372,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Footwork,
 		Tooltip = this.Const.Strings.PerkDescription.Footwork,
 		Icon = "ui/perks/perk_25.png",
-		IconDisabled = "ui/perks/perk_25_sw.png"
+		IconDisabled = "ui/perks/perk_25_sw.png",
+		Const = "Footwork"
 	},
 	{
 		ID = "perk.berserk",
@@ -340,7 +381,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Berserk,
 		Tooltip = this.Const.Strings.PerkDescription.Berserk,
 		Icon = "ui/perks/perk_35.png",
-		IconDisabled = "ui/perks/perk_35_sw.png"
+		IconDisabled = "ui/perks/perk_35_sw.png",
+		Const = "Berserk"
 	},
 	{
 		ID = "perk.head_hunter",
@@ -348,7 +390,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.HeadHunter,
 		Tooltip = this.Const.Strings.PerkDescription.HeadHunter,
 		Icon = "ui/perks/perk_15.png",
-		IconDisabled = "ui/perks/perk_15_sw.png"
+		IconDisabled = "ui/perks/perk_15_sw.png",
+		Const = "HeadHunter"
 	},
 	{
 		ID = "perk.nimble",
@@ -356,7 +399,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Nimble,
 		Tooltip = this.Const.Strings.PerkDescription.Nimble,
 		Icon = "ui/perks/perk_29.png",
-		IconDisabled = "ui/perks/perk_29_sw.png"
+		IconDisabled = "ui/perks/perk_29_sw.png",
+		Const = "Nimble"
 	},
 	{
 		ID = "perk.battle_forged",
@@ -364,7 +408,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.BattleForged,
 		Tooltip = this.Const.Strings.PerkDescription.BattleForged,
 		Icon = "ui/perks/perk_03.png",
-		IconDisabled = "ui/perks/perk_03_sw.png"
+		IconDisabled = "ui/perks/perk_03_sw.png",
+		Const = "BattleForged"
 	},
 	{
 		ID = "perk.fearsome",
@@ -372,7 +417,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Fearsome,
 		Tooltip = this.Const.Strings.PerkDescription.Fearsome,
 		Icon = "ui/perks/perk_27.png",
-		IconDisabled = "ui/perks/perk_27_sw.png"
+		IconDisabled = "ui/perks/perk_27_sw.png",
+		Const = "Fearsome"
 	},
 	{
 		ID = "perk.duelist",
@@ -380,7 +426,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Duelist,
 		Tooltip = this.Const.Strings.PerkDescription.Duelist,
 		Icon = "ui/perks/perk_41.png",
-		IconDisabled = "ui/perks/perk_41_sw.png"
+		IconDisabled = "ui/perks/perk_41_sw.png",
+		Const = "Duelist"
 	},
 	{
 		ID = "perk.killing_frenzy",
@@ -388,7 +435,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.KillingFrenzy,
 		Tooltip = this.Const.Strings.PerkDescription.KillingFrenzy,
 		Icon = "ui/perks/perk_36.png",
-		IconDisabled = "ui/perks/perk_36_sw.png"
+		IconDisabled = "ui/perks/perk_36_sw.png",
+		Const = "KillingFrenzy"
 	},
 	{
 		ID = "perk.indomitable",
@@ -396,7 +444,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Indomitable,
 		Tooltip = this.Const.Strings.PerkDescription.Indomitable,
 		Icon = "ui/perks/perk_30.png",
-		IconDisabled = "ui/perks/perk_30_sw.png"
+		IconDisabled = "ui/perks/perk_30_sw.png",
+		Const = "Indomitable"
 	},
 	{
 		ID = "perk.legend_daze",
@@ -404,7 +453,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendDaze,
 		Tooltip = this.Const.Strings.PerkDescription.LegendDaze,
 		Icon = "ui/perks/daze56_circle.png",
-		IconDisabled = "ui/perks/daze56_circle_bw.png"
+		IconDisabled = "ui/perks/daze56_circle_bw.png",
+		Const = "LegendDaze"
 	},
 	{
 		ID = "perk.legend_roster_1",
@@ -412,7 +462,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRoster1,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster1,
 		Icon = "ui/perks/recruit1.png",
-		IconDisabled = "ui/perks/recruit1_bw.png"
+		IconDisabled = "ui/perks/recruit1_bw.png",
+		Const = "LegendRoster1"
 	},
 	{
 		ID = "perk.legend_roster_2",
@@ -420,7 +471,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRoster2,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster2,
 		Icon = "ui/perks/recruit2.png",
-		IconDisabled = "ui/perks/recruit2_bw.png"
+		IconDisabled = "ui/perks/recruit2_bw.png",
+		Const = "LegendRoster2"
 	},			
 	{
 		ID = "perk.legend_roster_3",
@@ -428,7 +480,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRoster3,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster3,
 		Icon = "ui/perks/recruit3.png",
-		IconDisabled = "ui/perks/recruit3_bw.png"
+		IconDisabled = "ui/perks/recruit3_bw.png",
+		Const = "LegendRoster3"
 	},
 	{
 		ID = "perk.legend_roster_4",
@@ -436,7 +489,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRoster4,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster4,
 		Icon = "ui/perks/recruit4.png",
-		IconDisabled = "ui/perks/recruit4_bw.png"
+		IconDisabled = "ui/perks/recruit4_bw.png",
+		Const = "LegendRoster4"
 	},
 	{
 		ID = "perk.legend_roster_5",
@@ -444,7 +498,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRoster5,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster5,
 		Icon = "ui/perks/recruit5.png",
-		IconDisabled = "ui/perks/recruit5_bw.png"
+		IconDisabled = "ui/perks/recruit5_bw.png",
+		Const = "LegendRoster5"
 	},
 	{
 		ID = "perk.legend_roster_6",
@@ -452,7 +507,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRoster6,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster6,
 		Icon = "ui/perks/recruit6.png",
-		IconDisabled = "ui/perks/recruit6_bw.png"
+		IconDisabled = "ui/perks/recruit6_bw.png",
+		Const = "LegendRoster6"
 	},
 	{
 		ID = "perk.legend_roster_7",
@@ -460,7 +516,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRoster7,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRoster7,
 		Icon = "ui/perks/recruit7.png",
-		IconDisabled = "ui/perks/recruit7_bw.png"
+		IconDisabled = "ui/perks/recruit7_bw.png",
+		Const = "LegendRoster7"
 	},
 	{
 		ID = "perk.legend_stun",
@@ -468,7 +525,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendStunned,
 		Tooltip = this.Const.Strings.PerkDescription.LegendStunned,
 		Icon = "ui/perks/stun56_circle.png",
-		IconDisabled = "ui/perks/stun56_circle_bw.png"
+		IconDisabled = "ui/perks/stun56_circle_bw.png",
+		Const = "LegendStunned"
 	},
 	{
 		ID = "perk.legend_horrify",
@@ -476,7 +534,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendHorrify,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorrify,
 		Icon = "ui/perks/horrify56_circle.png",
-		IconDisabled = "ui/perks/horrify56_circle_bw.png"
+		IconDisabled = "ui/perks/horrify56_circle_bw.png",
+		Const = "LegendHorrify"
 	},
 	{
 		ID = "perk.legend_entice",
@@ -484,7 +543,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendEntice,
 		Tooltip = this.Const.Strings.PerkDescription.LegendEntice,
 		Icon = "ui/perks/entice_circle_56.png",
-		IconDisabled = "ui/perks/entice_circle_56_bw.png"
+		IconDisabled = "ui/perks/entice_circle_56_bw.png",
+		Const = "LegendEntice"
 	},
 	{
 		ID = "perk.legend_push",
@@ -492,7 +552,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendPush,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPush,
 		Icon = "ui/perks/revolt56_circle.png",
-		IconDisabled = "ui/perks/revolt56_circle_bw.png"
+		IconDisabled = "ui/perks/revolt56_circle_bw.png",
+		Const = "LegendPush"
 	},
 	{
 		ID = "perk.legend_perfect_focus",
@@ -500,7 +561,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.PerfectFocus,
 		Tooltip = this.Const.Strings.PerkDescription.PerfectFocus,
 		Icon = "ui/perks/perfectfocus_circle.png",
-		IconDisabled = "ui/perks/perfectfocus_circle_bw.png"
+		IconDisabled = "ui/perks/perfectfocus_circle_bw.png",
+		Const = "PerfectFocus"
 	},
 	{
 		ID = "perk.legend_firefield",
@@ -508,7 +570,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFirefield,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFirefield,
 		Icon = "ui/perks/fire_circle.png",
-		IconDisabled = "ui/perks/fire_circle_bw.png"
+		IconDisabled = "ui/perks/fire_circle_bw.png",
+		Const = "LegendFirefield"
 	},
 	{
 		ID = "perk.legend_sleep",
@@ -516,7 +579,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSleep,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSleep,
 		Icon = "ui/perks/sleep_56.png",
-		IconDisabled = "ui/perks/sleep_56_bw.png"
+		IconDisabled = "ui/perks/sleep_56_bw.png",
+		Const = "LegendSleep"
 	},
 	{
 		ID = "perk.full_force",
@@ -524,7 +588,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.FullForce,
 		Tooltip = this.Const.Strings.PerkDescription.FullForce,
 		Icon = "ui/perks/fullforce_circle.png",
-		IconDisabled = "ui/perks/fullforce_circle_bw.png"
+		IconDisabled = "ui/perks/fullforce_circle_bw.png",
+		Const = "FullForce"
 	},
 	{
 		ID = "perk.return_favor",
@@ -532,7 +597,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.ReturnFavor,
 		Tooltip = this.Const.Strings.PerkDescription.ReturnFavor,
 		Icon = "ui/perks/return_favor_circle.png",
-		IconDisabled = "ui/perks/return_favor_circle_bw.png"
+		IconDisabled = "ui/perks/return_favor_circle_bw.png",
+		Const = "ReturnFavor"
 	},
 		{
 		ID = "perk.steadfast",
@@ -540,7 +606,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Steadfast,
 		Tooltip = this.Const.Strings.PerkDescription.Steadfast,
 		Icon = "ui/perks/steadfast_circle.png",
-		IconDisabled = "ui/perks/steadfast_circle_bw.png"
+		IconDisabled = "ui/perks/steadfast_circle_bw.png",
+		Const = "Steadfast"
 		},
 	{
 		ID = "perk.sundering_strikes",
@@ -548,7 +615,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.SunderingStrikes,
 		Tooltip = this.Const.Strings.PerkDescription.SunderingStrikes,
 		Icon = "ui/perks/sunderingstrikes_circle.png",
-		IconDisabled = "ui/perks/sunderingstrikes_circle_bw.png"
+		IconDisabled = "ui/perks/sunderingstrikes_circle_bw.png",
+		Const = "SunderingStrikes"
 	},
 	{
 		ID = "perk.stalwart",
@@ -556,7 +624,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Stalwart,
 		Tooltip = this.Const.Strings.PerkDescription.Stalwart,
 		Icon = "ui/perks/stalwart.png",
-		IconDisabled = "ui/perks/stalwart_bw.png"
+		IconDisabled = "ui/perks/stalwart_bw.png",
+		Const = "Stalwart"
 	},
 	{
 		ID = "perk.battle_flow",
@@ -564,7 +633,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.BattleFlow,
 		Tooltip = this.Const.Strings.PerkDescription.BattleFlow,
 		Icon = "ui/perks/battle_flow56_circle.png",
-		IconDisabled = "ui/perks/battle_flow56_circle_bw.png"
+		IconDisabled = "ui/perks/battle_flow56_circle_bw.png",
+		Const = "BattleFlow"
 	},
 	{
 		ID = "perk.lookout",
@@ -572,7 +642,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Lookout,
 		Tooltip = this.Const.Strings.PerkDescription.Lookout,
 		Icon = "ui/perks/lookout_circle.png",
-		IconDisabled = "ui/perks/lookout_circle_bw.png"
+		IconDisabled = "ui/perks/lookout_circle_bw.png",
+		Const = "Lookout"
 	},
 	{
 		ID = "perk.sprint",
@@ -580,7 +651,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Sprint,
 		Tooltip = this.Const.Strings.PerkDescription.Sprint,
 		Icon = "ui/perks/perk_sprint.png",
-		IconDisabled = "ui/perks/perk_sprint_sw.png"
+		IconDisabled = "ui/perks/perk_sprint_sw.png",
+		Const = "Sprint"
 	},
 	{
 		ID = "perk.double_strike",
@@ -588,7 +660,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.DoubleStrike,
 		Tooltip = this.Const.Strings.PerkDescription.DoubleStrike,
 		Icon = "ui/perks/doublestrike_circle.png",
-		IconDisabled = "ui/perks/doublestrike_circle_bw.png"
+		IconDisabled = "ui/perks/doublestrike_circle_bw.png",
+		Const = "DoubleStrike"
 	},
 	{
 		ID = "perk.legend_mastery_poison",
@@ -596,7 +669,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecPoison,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecPoison,
 		Icon = "ui/perks/mastery_poison.png",
-		IconDisabled = "ui/perks/mastery_poison_bw.png"
+		IconDisabled = "ui/perks/mastery_poison_bw.png",
+		Const = "LegendSpecPoison"
 	},
 	{
 		ID = "perk.close_combat_archer",
@@ -604,7 +678,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.CloseCombatArcher,
 		Tooltip = this.Const.Strings.PerkDescription.CloseCombatArcher,
 		Icon = "ui/perks/closecombat56.png",
-		IconDisabled = "ui/perks/closecombat56_bw.png"
+		IconDisabled = "ui/perks/closecombat56_bw.png",
+		Const = "CloseCombatArcher"
 	},
 	{
 		ID = "perk.ballistics",
@@ -612,7 +687,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Ballistics,
 		Tooltip = this.Const.Strings.PerkDescription.Ballistics,
 		Icon = "ui/perks/ballistics56_circle.png",
-		IconDisabled = "ui/perks/ballistics56_circle_bw.png"
+		IconDisabled = "ui/perks/ballistics56_circle_bw.png",
+		Const = "Ballistics"
 	},
 	{
 		ID = "perk.legend_cascade",
@@ -620,7 +696,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendCascade,
 		Tooltip = this.Const.Strings.PerkDescription.LegendCascade,
 		Icon = "ui/perks/triplestrike56.png",
-		IconDisabled = "ui/perks/triplestrike56_bw.png"
+		IconDisabled = "ui/perks/triplestrike56_bw.png",
+		Const = "LegendCascade"
 	},
 	{
 		ID = "perk.legend_evasion",
@@ -628,7 +705,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendEvasion,
 		Tooltip = this.Const.Strings.PerkDescription.LegendEvasion,
 		Icon = "ui/perks/evasion_circle.png",
-		IconDisabled = "ui/perks/evasion_circle_bw.png"
+		IconDisabled = "ui/perks/evasion_circle_bw.png",
+		Const = "LegendEvasion"
 	},
 	{
 		ID = "perk.legend_rust",
@@ -637,6 +715,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendRust,
 		Icon = "ui/perks/rust56_circle.png",
 		IconDisabled = "ui/perks/rust56_circle_bw.png",
+		Const = "LegendRust",
 	},
 	{
 		ID = "perk.legend_deathtouch",
@@ -644,7 +723,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendDeathtouch,
 		Tooltip = this.Const.Strings.PerkDescription.LegendDeathtouch,
 		Icon = "ui/perks/deathtouch_circle.png",
-		IconDisabled = "ui/perks/deathtouch_circle_bw.png"
+		IconDisabled = "ui/perks/deathtouch_circle_bw.png",
+		Const = "LegendDeathtouch"
 	},
 	{
 		ID = "perk.legend_possess_undead",
@@ -652,7 +732,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendPossessUndead,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossessUndead,
 		Icon = "ui/perks/possess56.png",
-		IconDisabled = "ui/perks/possess56_bw.png"
+		IconDisabled = "ui/perks/possess56_bw.png",
+		Const = "LegendPossessUndead"
 	},
 	{
 		ID = "perk.legend_miasma",
@@ -660,7 +741,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMiasma,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMiasma,
 		Icon = "ui/perks/miasma_circle.png",
-		IconDisabled = "ui/perks/miasma_circle_bw.png"
+		IconDisabled = "ui/perks/miasma_circle_bw.png",
+		Const = "LegendMiasma"
 	},
 	{
 		ID = "perk.legend_hex",
@@ -668,7 +750,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendHex,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHex,
 		Icon = "ui/perks/hex_circle.png",
-		IconDisabled = "ui/perks/hex_circle_bw.png"
+		IconDisabled = "ui/perks/hex_circle_bw.png",
+		Const = "LegendHex"
 	},
 	{
 		ID = "perk.legend_darkflight",
@@ -676,7 +759,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendDarkflight,
 		Tooltip = this.Const.Strings.PerkDescription.LegendDarkflight,
 		Icon = "ui/perks/darkflight_circle.png",
-		IconDisabled = "ui/perks/darkflight_circle_bw.png"
+		IconDisabled = "ui/perks/darkflight_circle_bw.png",
+		Const = "LegendDarkflight"
 	},
 	{
 		ID = "perk.inspiring_presence",
@@ -684,7 +768,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.InspiringPresence,
 		Tooltip = this.Const.Strings.PerkDescription.InspiringPresence,
 		Icon = "ui/perks/perk_28.png",
-		IconDisabled = "ui/perks/perk_28_sw.png"
+		IconDisabled = "ui/perks/perk_28_sw.png",
+		Const = "InspiringPresence"
 	},
 	{
 		ID = "perk.legend_mastery_bandage",
@@ -692,7 +777,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecBandage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecBandage,
 		Icon = "ui/perks/bandage_circle.png",
-		IconDisabled = "ui/perks/bandage_circle_bw.png"
+		IconDisabled = "ui/perks/bandage_circle_bw.png",
+		Const = "LegendSpecBandage"
 	},
 	{
 		ID = "perk.legend_hold_the_line",
@@ -700,7 +786,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendHoldTheLine,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHoldTheLine,
 		Icon = "ui/perks/holdtheline_circle.png",
-		IconDisabled = "ui/perks/holdtheline_circle_bw.png"
+		IconDisabled = "ui/perks/holdtheline_circle_bw.png",
+		Const = "LegendHoldTheLine"
 	},
 	{
 		ID = "perk.inspire",
@@ -708,7 +795,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Inspire,
 		Tooltip = this.Const.Strings.PerkDescription.Inspire,
 		Icon = "ui/perks/inspire_circle.png",
-		IconDisabled = "ui/perks/inspire_circle_bw.png"
+		IconDisabled = "ui/perks/inspire_circle_bw.png",
+		Const = "Inspire"
 	},
 	{
 		ID = "perk.bloody_harvest",
@@ -716,7 +804,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.BloodyHarvest,
 		Tooltip = this.Const.Strings.PerkDescription.BloodyHarvest,
 		Icon = "ui/perks/bloody_harvest.png",
-		IconDisabled = "ui/perks/bloody_harvest_bw.png"
+		IconDisabled = "ui/perks/bloody_harvest_bw.png",
+		Const = "BloodyHarvest"
 	},
 	{
 		ID = "perk.devastating_strikes",
@@ -724,7 +813,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.DevastatingStrikes,
 		Tooltip = this.Const.Strings.PerkDescription.DevastatingStrikes,
 		Icon = "ui/perks/devastating_strikes.png",
-		IconDisabled = "ui/perks/devastating_strikes_bw.png"
+		IconDisabled = "ui/perks/devastating_strikes_bw.png",
+		Const = "DevastatingStrikes"
 	},
 	{
 		ID = "perk.debilitate",
@@ -732,7 +822,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Debilitate,
 		Tooltip = this.Const.Strings.PerkDescription.Debilitate,
 		Icon = "ui/perks/debilitate_circle_56.png",
-		IconDisabled = "ui/perks/debilitate_circle_56_bw.png"
+		IconDisabled = "ui/perks/debilitate_circle_56_bw.png",
+		Const = "Debilitate"
 	},
 	{
 		ID = "perk.slaughterer",
@@ -740,7 +831,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Slaughterer,
 		Tooltip = this.Const.Strings.PerkDescription.Slaughterer,
 		Icon = "ui/perks/slaughterer_circle.png",
-		IconDisabled = "ui/perks/slaughterer_circle_bw.png"
+		IconDisabled = "ui/perks/slaughterer_circle_bw.png",
+		Const = "Slaughterer"
 	},
 	{
 		ID = "perk.vengeance",
@@ -748,7 +840,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Vengeance,
 		Tooltip = this.Const.Strings.PerkDescription.Vengeance,
 		Icon = "ui/perks/vengeance_circle.png",
-		IconDisabled = "ui/perks/vengeance_circle_bw.png"
+		IconDisabled = "ui/perks/vengeance_circle_bw.png",
+		Const = "Vengeance"
 	},
 	{
 		ID = "perk.ironside",
@@ -756,7 +849,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Ironside,
 		Tooltip = this.Const.Strings.PerkDescription.Ironside,
 		Icon = "ui/perks/perk_101.png",
-		IconDisabled = "ui/perks/perk_101_sw.png"
+		IconDisabled = "ui/perks/perk_101_sw.png",
+		Const = "Ironside"
 	},
 	{
 		ID = "perk.last_stand",
@@ -764,7 +858,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LastStand,
 		Tooltip = this.Const.Strings.PerkDescription.LastStand,
 		Icon = "ui/perks/laststand_circle.png",
-		IconDisabled = "ui/perks/laststand_circle_bw.png"
+		IconDisabled = "ui/perks/laststand_circle_bw.png",
+		Const = "LastStand"
 	},
 	{
 		ID = "perk.legend_raise_undead",
@@ -772,7 +867,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRaiseUndead,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRaiseUndead,
 		Icon = "ui/perks/raisedead2_circle.png",
-		IconDisabled = "ui/perks/raisedead2_circle_bw.png"
+		IconDisabled = "ui/perks/raisedead2_circle_bw.png",
+		Const = "LegendRaiseUndead"
 	},
 	{
 		ID = "perk.legend_wither",
@@ -780,7 +876,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendWither,
 		Tooltip = this.Const.Strings.PerkDescription.LegendWither,
 		Icon = "ui/perks/wither56.png",
-		IconDisabled = "ui/perks/wither56_bw.png"
+		IconDisabled = "ui/perks/wither56_bw.png",
+		Const = "LegendWither"
 	},
 	{
 		ID = "perk.rebound",
@@ -788,7 +885,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Rebound,
 		Tooltip = this.Const.Strings.PerkDescription.Rebound,
 		Icon = "ui/perks/rebound_circle.png",
-		IconDisabled = "ui/perks/rebound_circle_bw.png"
+		IconDisabled = "ui/perks/rebound_circle_bw.png",
+		Const = "Rebound"
 	},
 	{
 		ID = "perk.legend_coordinated_volleys",
@@ -796,7 +894,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendCoordinatedVolleys,
 		Tooltip = this.Const.Strings.PerkDescription.LegendCoordinatedVolleys,
 		Icon = "ui/perks/coordinated_volleys_circle.png",
-		IconDisabled = "ui/perks/coordinated_volleys_circle_bw.png"
+		IconDisabled = "ui/perks/coordinated_volleys_circle_bw.png",
+		Const = "LegendCoordinatedVolleys"
 	},
 	{
 		ID = "perk.legend_push_forward",
@@ -804,7 +903,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendForwardPush,
 		Tooltip = this.Const.Strings.PerkDescription.LegendForwardPush,
 		Icon = "ui/perks/spears_circle.png",
-		IconDisabled = "ui/perks/spears_circle_bw.png"
+		IconDisabled = "ui/perks/spears_circle_bw.png",
+		Const = "LegendForwardPush"
 	},
 	{
 		ID = "perk.legend_insects",
@@ -812,7 +912,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendInsects,
 		Tooltip = this.Const.Strings.PerkDescription.LegendInsects,
 		Icon = "ui/perks/insects_circle.png",
-		IconDisabled = "ui/perks/insects_circle_bw.png"
+		IconDisabled = "ui/perks/insects_circle_bw.png",
+		Const = "LegendInsects"
 	},
 	{
 		ID = "perk.legend_chain_lightning",
@@ -820,7 +921,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendChainLightning,
 		Tooltip = this.Const.Strings.PerkDescription.LegendChainLightning,
 		Icon = "ui/perks/lightning_circle.png",
-		IconDisabled = "ui/perks/lightning_circle_bw.png"
+		IconDisabled = "ui/perks/lightning_circle_bw.png",
+		Const = "LegendChainLightning"
 	},
 	{
 		ID = "perk.legend_composure",
@@ -828,7 +930,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendComposure,
 		Tooltip = this.Const.Strings.PerkDescription.LegendComposure,
 		Icon = "ui/perks/composed_circle.png",
-		IconDisabled = "ui/perks/composed_circle_bw.png"
+		IconDisabled = "ui/perks/composed_circle_bw.png",
+		Const = "LegendComposure"
 	},
 	{
 		ID = "perk.legend_nightvision",
@@ -836,7 +939,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendNightvision,
 		Tooltip = this.Const.Strings.PerkDescription.LegendNightvision,
 		Icon = "ui/perks/nightvision_circle.png",
-		IconDisabled = "ui/perks/nightvision_circle_bw.png"
+		IconDisabled = "ui/perks/nightvision_circle_bw.png",
+		Const = "LegendNightvision"
 	},
 	{
 		ID = "perk.legend_mastery_staves",
@@ -844,7 +948,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMasteryStaves,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryStaves,
 		Icon = "ui/perks/staffmastery.png",
-		IconDisabled = "ui/perks/staffmastery_bw.png"
+		IconDisabled = "ui/perks/staffmastery_bw.png",
+		Const = "LegendMasteryStaves"
 	},
 	{
 		ID = "perk.legend_relax",
@@ -852,7 +957,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendRelax,
 		Tooltip = this.Const.Strings.PerkDescription.LegendRelax,
 		Icon = "ui/perks/relax_circle.png",
-		IconDisabled = "ui/perks/relax_circle_bw.png"
+		IconDisabled = "ui/perks/relax_circle_bw.png",
+		Const = "LegendRelax"
 	},
 	{
 		ID = "perk.legend_gruesome_feast",
@@ -860,7 +966,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendGruesomeFeast,
 		Tooltip = this.Const.Strings.PerkDescription.LegendGruesomeFeast,
 		Icon = "ui/perks/gruesome_circle.png",
-		IconDisabled = "ui/perks/gruesome_circle_bw.png"
+		IconDisabled = "ui/perks/gruesome_circle_bw.png",
+		Const = "LegendGruesomeFeast"
 	},
 	{
 		ID = "perk.legend_ubernimble",
@@ -868,7 +975,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendUberNimble,
 		Tooltip = this.Const.Strings.PerkDescription.LegendUberNimble,
 		Icon = "ui/perks/ubernimble_circle.png",
-		IconDisabled = "ui/perks/ubernimble_circle_bw.png"
+		IconDisabled = "ui/perks/ubernimble_circle_bw.png",
+		Const = "LegendUberNimble"
 	},
 	{
 		ID = "perk.legend_muscularity",
@@ -876,7 +984,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMuscularity,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMuscularity,
 		Icon = "ui/perks/muscularity_circle.png",
-		IconDisabled = "ui/perks/muscularity_circle_bw.png"
+		IconDisabled = "ui/perks/muscularity_circle_bw.png",
+		Const = "LegendMuscularity"
 	},
 	{
 		ID = "perk.legend_battleheart",
@@ -884,7 +993,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBattleheart,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBattleheart,
 		Icon = "ui/perks/battlheart_circle.png",
-		IconDisabled = "ui/perks/battlheart_circle_bw.png"
+		IconDisabled = "ui/perks/battlheart_circle_bw.png",
+		Const = "LegendBattleheart"
 	},
 	{
 		ID = "perk.legend_true_believer",
@@ -892,7 +1002,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendTrueBeliever,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTrueBeliever,
 		Icon = "ui/perks/true_believer_circle.png",
-		IconDisabled = "ui/perks/true_believer_circle_bw.png"
+		IconDisabled = "ui/perks/true_believer_circle_bw.png",
+		Const = "LegendTrueBeliever"
 	},
 	{
 		ID = "perk.legend_poison_immunity",
@@ -900,7 +1011,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendPoisonImmunity,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPoisonImmunity,
 		Icon = "ui/perks/poison_immunity.png",
-		IconDisabled = "ui/perks/poison_immunity_bw.png"
+		IconDisabled = "ui/perks/poison_immunity_bw.png",
+		Const = "LegendPoisonImmunity"
 	},
 	{
 		ID = "perk.legend_summon_cat",
@@ -908,7 +1020,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSummonCat,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSummonCat,
 		Icon = "ui/perks/cat_circle.png",
-		IconDisabled = "ui/perks/cat_circle_bw.png"
+		IconDisabled = "ui/perks/cat_circle_bw.png",
+		Const = "LegendSummonCat"
 	},
 	{
 		ID = "perk.legend_spawn_zombie_low",
@@ -916,7 +1029,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpawnZombieLow,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieLow,
 		Icon = "ui/perks/mold_carrion_circle.png",
-		IconDisabled = "ui/perks/mold_carrion_circle_bw.png"
+		IconDisabled = "ui/perks/mold_carrion_circle_bw.png",
+		Const = "LegendSpawnZombieLow"
 	},
 	{
 		ID = "perk.legend_spawn_zombie_med",
@@ -924,7 +1038,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpawnZombieMed,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieMed,
 		Icon = "ui/perks/fashion_body_circle.png",
-		IconDisabled = "ui/perks/fashion_body_circle_bw.png"
+		IconDisabled = "ui/perks/fashion_body_circle_bw.png",
+		Const = "LegendSpawnZombieMed"
 	},
 	{
 		ID = "perk.legend_spawn_zombie_high",
@@ -932,7 +1047,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpawnZombieHigh,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnZombieHigh,
 		Icon = "ui/perks/remake_man_circle.png",
-		IconDisabled = "ui/perks/remake_man_circle_bw.png"
+		IconDisabled = "ui/perks/remake_man_circle_bw.png",
+		Const = "LegendSpawnZombieHigh"
 	},
 	{
 		ID = "perk.legend_spawn_skeleton_low",
@@ -940,7 +1056,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpawnSkeletonLow,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnSkeletonLow,
 		Icon = "ui/perks/arrange_bones_circle.png",
-		IconDisabled = "ui/perks/arrange_bones_circle_bw.png"
+		IconDisabled = "ui/perks/arrange_bones_circle_bw.png",
+		Const = "LegendSpawnSkeletonLow"
 	},
 	{
 		ID = "perk.legend_spawn_skeleton_med",
@@ -948,7 +1065,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpawnSkeletonMed,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnSkeletonMed,
 		Icon = "ui/perks/align_joints_circle.png",
-		IconDisabled = "ui/perks/align_joints_circle_bw.png"
+		IconDisabled = "ui/perks/align_joints_circle_bw.png",
+		Const = "LegendSpawnSkeletonMed"
 	},
 	{
 		ID = "perk.legend_spawn_skeleton_high",
@@ -956,7 +1074,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpawnSkeletonHigh,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpawnSkeletonHigh,
 		Icon = "ui/perks/rebuild_skeleton_circle.png",
-		IconDisabled = "ui/perks/rebuild_skeleton_circle_bw.png"
+		IconDisabled = "ui/perks/rebuild_skeleton_circle_bw.png",
+		Const = "LegendSpawnSkeletonHigh"
 	},
 	{
 		ID = "perk.legend_extended_aura",
@@ -964,7 +1083,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendExtendendAura,
 		Tooltip = this.Const.Strings.PerkDescription.LegendExtendendAura,
 		Icon = "ui/perks/extended_aura_circle.png",
-		IconDisabled = "ui/perks/extended_aura_circle_bw.png"
+		IconDisabled = "ui/perks/extended_aura_circle_bw.png",
+		Const = "LegendExtendendAura"
 	},
 	{
 		ID = "perk.legend_channeled_power",
@@ -972,7 +1092,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendChanneledPower,
 		Tooltip = this.Const.Strings.PerkDescription.LegendChanneledPower,
 		Icon = "ui/perks/channeled_power_circle.png",
-		IconDisabled = "ui/perks/channeled_power_circle_bw.png"
+		IconDisabled = "ui/perks/channeled_power_circle_bw.png",
+		Const = "LegendChanneledPower"
 	},
 	{
 		ID = "perk.legend_reclamation",
@@ -980,7 +1101,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendReclamation,
 		Tooltip = this.Const.Strings.PerkDescription.LegendReclamation,
 		Icon = "ui/perks/reclamation_circle.png",
-		IconDisabled = "ui/perks/reclamation_circle_bw.png"
+		IconDisabled = "ui/perks/reclamation_circle_bw.png",
+		Const = "LegendReclamation"
 	},
 	{
 		ID = "perk.legend_conservation",
@@ -988,7 +1110,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendConservation,
 		Tooltip = this.Const.Strings.PerkDescription.LegendConservation,
 		Icon = "ui/perks/conservation_circle.png",
-		IconDisabled = "ui/perks/conservation_circle_bw.png"
+		IconDisabled = "ui/perks/conservation_circle_bw.png",
+		Const = "LegendConservation"
 	},
 	{
 		ID = "perk.legend_enthrall",
@@ -996,7 +1119,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendEnthrall,
 		Tooltip = this.Const.Strings.PerkDescription.LegendEnthrall,
 		Icon = "ui/perks/enthrall_circle.png",
-		IconDisabled = "ui/perks/enthrall_circle_bw.png"
+		IconDisabled = "ui/perks/enthrall_circle_bw.png",
+		Const = "LegendEnthrall"
 	},
 	{
 		ID = "perk.legend_violent_decomposition",
@@ -1004,7 +1128,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendViolentDecomposition,
 		Tooltip = this.Const.Strings.PerkDescription.LegendViolentDecomposition,
 		Icon = "ui/perks/violent_decomposition_circle.png",
-		IconDisabled = "ui/perks/violent_decomposition_circle_bw.png"
+		IconDisabled = "ui/perks/violent_decomposition_circle_bw.png",
+		Const = "LegendViolentDecomposition"
 	},
 	{
 		ID = "perk.legend_possession",
@@ -1012,7 +1137,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendPossession,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPossession,
 		Icon = "ui/perks/possession_circle_56.png",
-		IconDisabled = "ui/perks/possession_circle_56_bw.png"
+		IconDisabled = "ui/perks/possession_circle_56_bw.png",
+		Const = "LegendPossession"
 	},
 	{
 		ID = "perk.legend_siphon",
@@ -1020,7 +1146,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSiphon,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSiphon,
 		Icon = "ui/perks/siphon_circle.png",
-		IconDisabled = "ui/perks/siphon_circle_bw.png"
+		IconDisabled = "ui/perks/siphon_circle_bw.png",
+		Const = "LegendSiphon"
 	},
 	{
 		ID = "perk.legend_vala_inscribe_weapon",
@@ -1028,7 +1155,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaInscribeWeapon,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeWeapon,
 		Icon = "ui/perks/legend_vala_inscribe_weapon.png",
-		IconDisabled = "ui/perks/legend_vala_inscribe_weapon_sw.png"
+		IconDisabled = "ui/perks/legend_vala_inscribe_weapon_sw.png",
+		Const = "LegendValaInscribeWeapon"
 	},
 	{
 		ID = "perk.legend_vala_inscribe_helmet",
@@ -1036,7 +1164,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaInscribeHelmet,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeHelmet,
 		Icon = "ui/perks/legend_vala_inscribe_helmet.png",
-		IconDisabled = "ui/perks/legend_vala_inscribe_helmet_sw.png"
+		IconDisabled = "ui/perks/legend_vala_inscribe_helmet_sw.png",
+		Const = "LegendValaInscribeHelmet"
 	},
 	{
 		ID = "perk.legend_vala_inscribe_armor",
@@ -1044,7 +1173,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaInscribeArmor,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeArmor,
 		Icon = "ui/perks/legend_vala_inscribe_armor.png",
-		IconDisabled = "ui/perks/legend_vala_inscribe_armor_sw.png"
+		IconDisabled = "ui/perks/legend_vala_inscribe_armor_sw.png",
+		Const = "LegendValaInscribeArmor"
 	},
 	{
 		ID = "perk.legend_vala_inscribe_shield",
@@ -1052,7 +1182,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaInscribeShield,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeShield,
 		Icon = "ui/perks/legend_vala_inscribe_shield.png",
-		IconDisabled = "ui/perks/legend_vala_inscribe_shield_sw.png"
+		IconDisabled = "ui/perks/legend_vala_inscribe_shield_sw.png",
+		Const = "LegendValaInscribeShield"
 	},
 	{
 		ID = "perk.legend_guide_steps",
@@ -1060,7 +1191,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendGuideSteps,
 		Tooltip = this.Const.Strings.PerkDescription.LegendGuideSteps,
 		Icon = "ui/perks/guided_steps_circle.png",
-		IconDisabled = "ui/perks/guided_steps_circle_bw.png"
+		IconDisabled = "ui/perks/guided_steps_circle_bw.png",
+		Const = "LegendGuideSteps"
 	},
 	{
 		ID = "perk.legend_berserker_rage",
@@ -1068,7 +1200,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBerserkerRage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBerserkerRage,
 		Icon = "ui/perks/berserker_rage_circle.png",
-		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
+		IconDisabled = "ui/perks/berserker_rage_circle_bw.png",
+		Const = "LegendBerserkerRage"
 	},
 	{
 		ID = "perk.legend_become_berserker",
@@ -1076,7 +1209,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBecomeBerserker,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBecomeBerserker,
 		Icon = "ui/perks/berserker_rage_circle.png",
-		IconDisabled = "ui/perks/berserker_rage_circle_bw.png"
+		IconDisabled = "ui/perks/berserker_rage_circle_bw.png",
+		Const = "LegendBecomeBerserker"
 	},
 	{
 		ID = "perk.legend_skillful_stacking",
@@ -1084,7 +1218,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSkillfulStacking,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSkillfulStacking,
 		Icon = "ui/perks/MaxStashT2.png",
-		IconDisabled = "ui/perks/MaxStashT2_bw.png"
+		IconDisabled = "ui/perks/MaxStashT2_bw.png",
+		Const = "LegendSkillfulStacking"
 	},
 	{
 		ID = "perk.legend_efficient_packing",
@@ -1092,7 +1227,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendEfficientPacking,
 		Tooltip = this.Const.Strings.PerkDescription.LegendEfficientPacking,
 		Icon = "ui/perks/MaxStashT1.png",
-		IconDisabled = "ui/perks/MaxStashT1_bw.png"
+		IconDisabled = "ui/perks/MaxStashT1_bw.png",
+		Const = "LegendEfficientPacking"
 	},
 	{
 		ID = "perk.legend_ammo_binding",
@@ -1100,7 +1236,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendAmmoBinding,
 		Tooltip = this.Const.Strings.PerkDescription.LegendAmmoBinding,
 		Icon = "ui/perks/MaxAmmoT1.png",
-		IconDisabled = "ui/perks/MaxAmmoT1_bw.png"
+		IconDisabled = "ui/perks/MaxAmmoT1_bw.png",
+		Const = "LegendAmmoBinding"
 	},
 	{
 		ID = "perk.legend_ammo_bundles",
@@ -1108,7 +1245,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendAmmoBundles,
 		Tooltip = this.Const.Strings.PerkDescription.LegendAmmoBundles,
 		Icon = "ui/perks/MaxAmmoT2.png",
-		IconDisabled = "ui/perks/MaxAmmoT2_bw.png"
+		IconDisabled = "ui/perks/MaxAmmoT2_bw.png",
+		Const = "LegendAmmoBundles"
 	},
 	{
 		ID = "perk.legend_med_packages",
@@ -1116,7 +1254,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMedPackages,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMedPackages,
 		Icon = "ui/perks/MaxMedsT1.png",
-		IconDisabled = "ui/perks/MaxMedsT1_bw.png"
+		IconDisabled = "ui/perks/MaxMedsT1_bw.png",
+		Const = "LegendMedPackages"
 	},
 	{
 		ID = "perk.legend_med_ingredients",
@@ -1124,7 +1263,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMedIngredients,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMedIngredients,
 		Icon = "ui/perks/MaxMedsT2.png",
-		IconDisabled = "ui/perks/MaxMedsT2_bw.png"
+		IconDisabled = "ui/perks/MaxMedsT2_bw.png",
+		Const = "LegendMedIngredients"
 	},
 	{
 		ID = "perk.legend_tools_drawers",
@@ -1132,7 +1272,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendToolsDrawers,
 		Tooltip = this.Const.Strings.PerkDescription.LegendToolsDrawers,
 		Icon = "ui/perks/MaxToolsT1.png",
-		IconDisabled = "ui/perks/MaxToolsT1_bw.png"
+		IconDisabled = "ui/perks/MaxToolsT1_bw.png",
+		Const = "LegendToolsDrawers"
 	},
 	{
 		ID = "perk.legend_tools_spares",
@@ -1140,7 +1281,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendToolsSpares,
 		Tooltip = this.Const.Strings.PerkDescription.LegendToolsSpares,
 		Icon = "ui/perks/MaxToolsT2.png",
-		IconDisabled = "ui/perks/MaxToolsT2_bw.png"
+		IconDisabled = "ui/perks/MaxToolsT2_bw.png",
+		Const = "LegendToolsSpares"
 	},
 	{
 		ID = "perk.legend_barter_convincing",
@@ -1148,7 +1290,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBarterConvincing,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBarterConvincing,
 		Icon = "ui/perks/BarterT1.png",
-		IconDisabled = "ui/perks/BarterT1_bw.png"
+		IconDisabled = "ui/perks/BarterT1_bw.png",
+		Const = "LegendBarterConvincing"
 	},
 	{
 		ID = "perk.legend_barter_trustworthy",
@@ -1156,7 +1299,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBarterTrustworthy,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBarterTrustworthy,
 		Icon = "ui/perks/BarterT2.png",
-		IconDisabled = "ui/perks/BarterT2_bw.png"
+		IconDisabled = "ui/perks/BarterT2_bw.png",
+		Const = "LegendBarterTrustworthy"
 	},
 	{
 		ID = "perk.legend_bribe",
@@ -1164,7 +1308,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBribe,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBribe,
 		Icon = "ui/perks/coins_circle.png",
-		IconDisabled = "ui/perks/coins_circle_bw.png"
+		IconDisabled = "ui/perks/coins_circle_bw.png",
+		Const = "LegendBribe"
 	},
 	{
 		ID = "perk.legend_specialist_butcher_damage",
@@ -1172,7 +1317,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistButcherDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistButcherDamage,
 		Icon = "ui/perks/cleaver_01.png",
-		IconDisabled = "ui/perks/cleaver_bw.png"
+		IconDisabled = "ui/perks/cleaver_bw.png",
+		Const = "LegendSpecialistButcherDamage"
 	},
 	{
 		ID = "perk.legend_specialist_butcher_skill",
@@ -1180,7 +1326,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistButcherSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistButcherSkill,
 		Icon = "ui/perks/cleaver_02.png",
-		IconDisabled = "ui/perks/cleaver_bw.png"
+		IconDisabled = "ui/perks/cleaver_bw.png",
+		Const = "LegendSpecialistButcherSkill"
 	},
 	{
 		ID = "perk.legend_specialist_hammer_damage",
@@ -1188,7 +1335,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistHammerDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistHammerDamage,
 		Icon = "ui/perks/hammer_01.png",
-		IconDisabled = "ui/perks/hammer_bw.png"
+		IconDisabled = "ui/perks/hammer_bw.png",
+		Const = "LegendSpecialistHammerDamage"
 	},
 	{
 		ID = "perk.legend_specialist_hammer_skill",
@@ -1196,7 +1344,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistHammerSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistHammerSkill,
 		Icon = "ui/perks/hammer_02.png",
-		IconDisabled = "ui/perks/hammer_bw.png"
+		IconDisabled = "ui/perks/hammer_bw.png",
+		Const = "LegendSpecialistHammerSkill"
 	},
 	{
 		ID = "perk.legend_specialist_knife_damage",
@@ -1204,7 +1353,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistKnifeDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistKnifeDamage,
 		Icon = "ui/perks/knife_01.png",
-		IconDisabled = "ui/perks/knife_bw.png"
+		IconDisabled = "ui/perks/knife_bw.png",
+		Const = "LegendSpecialistKnifeDamage"
 	},
 	{
 		ID = "perk.legend_specialist_knife_skill",
@@ -1212,7 +1362,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistKnifeSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistKnifeSkill,
 		Icon = "ui/perks/knife_02.png",
-		IconDisabled = "ui/perks/knife_bw.png"
+		IconDisabled = "ui/perks/knife_bw.png",
+		Const = "LegendSpecialistKnifeSkill"
 	},
 	{
 		ID = "perk.legend_specialist_lute_damage",
@@ -1220,7 +1371,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistLuteDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistLuteDamage,
 		Icon = "ui/perks/lute_01.png",
-		IconDisabled = "ui/perks/lute_bw.png"
+		IconDisabled = "ui/perks/lute_bw.png",
+		Const = "LegendSpecialistLuteDamage"
 	},
 	{
 		ID = "perk.legend_specialist_lute_skill",
@@ -1228,7 +1380,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistLuteSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistLuteSkill,
 		Icon = "ui/perks/lute_02.png",
-		IconDisabled = "ui/perks/lute_bw.png"
+		IconDisabled = "ui/perks/lute_bw.png",
+		Const = "LegendSpecialistLuteSkill"
 	},
 	{
 		ID = "perk.legend_specialist_militia_damage",
@@ -1236,7 +1389,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistMilitiaDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistMilitiaDamage,
 		Icon = "ui/perks/spear_01.png",
-		IconDisabled = "ui/perks/spear_bw.png"
+		IconDisabled = "ui/perks/spear_bw.png",
+		Const = "LegendSpecialistMilitiaDamage"
 	},
 	{
 		ID = "perk.legend_specialist_militia_skill",
@@ -1244,7 +1398,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistMilitiaSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistMilitiaSkill,
 		Icon = "ui/perks/spear_02.png",
-		IconDisabled = "ui/perks/spear_bw.png"
+		IconDisabled = "ui/perks/spear_bw.png",
+		Const = "LegendSpecialistMilitiaSkill"
 	},
 	{
 		ID = "perk.legend_specialist_pickaxe_damage",
@@ -1252,7 +1407,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistPickaxeDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPickaxeDamage,
 		Icon = "ui/perks/pickaxe_01.png",
-		IconDisabled = "ui/perks/pickaxe_bw.png"
+		IconDisabled = "ui/perks/pickaxe_bw.png",
+		Const = "LegendSpecialistPickaxeDamage"
 	},
 	{
 		ID = "perk.legend_specialist_pickaxe_skill",
@@ -1260,7 +1416,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistPickaxeSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPickaxeSkill,
 		Icon = "ui/perks/pickaxe_02.png",
-		IconDisabled = "ui/perks/pickaxe_bw.png"
+		IconDisabled = "ui/perks/pickaxe_bw.png",
+		Const = "LegendSpecialistPickaxeSkill"
 	},
 	{
 		ID = "perk.legend_specialist_pitchfork_damage",
@@ -1268,7 +1425,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistPitchforkDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPitchforkDamage,
 		Icon = "ui/perks/pitchfork_01.png",
-		IconDisabled = "ui/perks/pitchfork_bw.png"
+		IconDisabled = "ui/perks/pitchfork_bw.png",
+		Const = "LegendSpecialistPitchforkDamage"
 	},
 	{
 		ID = "perk.legend_specialist_pitchfork_skill",
@@ -1276,7 +1434,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistPitchforkSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistPitchforkSkill,
 		Icon = "ui/perks/pitchfork_02.png",
-		IconDisabled = "ui/perks/pitchfork_bw.png"
+		IconDisabled = "ui/perks/pitchfork_bw.png",
+		Const = "LegendSpecialistPitchforkSkill"
 	},
 	{
 		ID = "perk.legend_specialist_shortbow_damage",
@@ -1284,7 +1443,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistShortbowDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShortbowDamage,
 		Icon = "ui/perks/shortbow_01.png",
-		IconDisabled = "ui/perks/shortbow_bw.png"
+		IconDisabled = "ui/perks/shortbow_bw.png",
+		Const = "LegendSpecialistShortbowDamage"
 	},
 	{
 		ID = "perk.legend_specialist_shortbow_skill",
@@ -1292,7 +1452,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistShortbowSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShortbowSkill,
 		Icon = "ui/perks/shortbow_02.png",
-		IconDisabled = "ui/perks/shortbow_bw.png"
+		IconDisabled = "ui/perks/shortbow_bw.png",
+		Const = "LegendSpecialistShortbowSkill"
 	},
 	{
 		ID = "perk.legend_specialist_shovel_damage",
@@ -1300,7 +1461,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistShovelDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShovelDamage,
 		Icon = "ui/perks/shovel_01.png",
-		IconDisabled = "ui/perks/shovel_bw.png"
+		IconDisabled = "ui/perks/shovel_bw.png",
+		Const = "LegendSpecialistShovelDamage"
 	},
 	{
 		ID = "perk.legend_specialist_shovel_skill",
@@ -1308,7 +1470,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistShovelSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShovelSkill,
 		Icon = "ui/perks/shovel_02.png",
-		IconDisabled = "ui/perks/shovel_bw.png"
+		IconDisabled = "ui/perks/shovel_bw.png",
+		Const = "LegendSpecialistShovelSkill"
 	},
 	{
 		ID = "perk.legend_specialist_woodaxe_damage",
@@ -1316,7 +1479,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistWoodaxeDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistWoodaxeDamage,
 		Icon = "ui/perks/woodaxe_01.png",
-		IconDisabled = "ui/perks/woodaxe_bw.png"
+		IconDisabled = "ui/perks/woodaxe_bw.png",
+		Const = "LegendSpecialistWoodaxeDamage"
 	},
 	{
 		ID = "perk.legend_specialist_woodaxe_skill",
@@ -1324,7 +1488,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistWoodaxeSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistWoodaxeSkill,
 		Icon = "ui/perks/woodaxe_02.png",
-		IconDisabled = "ui/perks/woodaxe_bw.png"
+		IconDisabled = "ui/perks/woodaxe_bw.png",
+		Const = "LegendSpecialistWoodaxeSkill"
 	},
 	{
 		ID = "perk.legend_specialist_sickle_damage",
@@ -1332,7 +1497,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistSickleDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSickleDamage,
 		Icon = "ui/perks/sickle_01.png",
-		IconDisabled = "ui/perks/sickle_bw.png"
+		IconDisabled = "ui/perks/sickle_bw.png",
+		Const = "LegendSpecialistSickleDamage"
 	},
 	{
 		ID = "perk.legend_specialist_sickle_skill",
@@ -1340,7 +1506,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistSickleSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSickleSkill,
 		Icon = "ui/perks/sickle_02.png",
-		IconDisabled = "ui/perks/sickle_bw.png"
+		IconDisabled = "ui/perks/sickle_bw.png",
+		Const = "LegendSpecialistSickleSkill"
 	},
 	{
 		ID = "perk.legend_specialist_sling_damage",
@@ -1348,7 +1515,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistSlingDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSlingDamage,
 		Icon = "ui/perks/sling_01.png",
-		IconDisabled = "ui/perks/sling_bw.png"
+		IconDisabled = "ui/perks/sling_bw.png",
+		Const = "LegendSpecialistSlingDamage"
 	},
 	{
 		ID = "perk.legend_specialist_sling_skill",
@@ -1356,7 +1524,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistSlingSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistSlingSkill,
 		Icon = "ui/perks/sling_02.png",
-		IconDisabled = "ui/perks/sling_bw.png"
+		IconDisabled = "ui/perks/sling_bw.png",
+		Const = "LegendSpecialistSlingSkill"
 	},
 	{
 		ID = "perk.legend_big_game_hunter",
@@ -1364,7 +1533,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBigGameHunter,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBigGameHunter,
 		Icon = "ui/perks/BigGameHunterPerk.png",
-		IconDisabled = "ui/perks/BigGameHunterPerk_bw.png"
+		IconDisabled = "ui/perks/BigGameHunterPerk_bw.png",
+		Const = "LegendBigGameHunter"
 	},
 	{
 		ID = "perk.legend_second_wind",
@@ -1372,7 +1542,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSecondWind,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSecondWind,
 		Icon = "ui/perks/SecondWindPerk.png",
-		IconDisabled = "ui/perks/SecondWindPerk_bw.png"
+		IconDisabled = "ui/perks/SecondWindPerk_bw.png",
+		Const = "LegendSecondWind"
 	},
 	{
 		ID = "perk.legend_mark_target",
@@ -1380,7 +1551,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMarkTarget,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMarkTarget,
 		Icon = "ui/perks/MarkTargetPerk.png",
-		IconDisabled = "ui/perks/MarkTargetPerk_bw.png"
+		IconDisabled = "ui/perks/MarkTargetPerk_bw.png",
+		Const = "LegendMarkTarget"
 	},
 	{
 		ID = "perk.legend_field_triage",
@@ -1388,7 +1560,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFieldTriage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFieldTriage,
 		Icon = "ui/perks/MaxMedsT2.png",
-		IconDisabled = "ui/perks/MaxMedsT2_bw.png"
+		IconDisabled = "ui/perks/MaxMedsT2_bw.png",
+		Const = "LegendFieldTriage"
 	},
 	{
 		ID = "perk.legend_field_repairs",
@@ -1396,7 +1569,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFieldRepairs,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFieldRepairs,
 		Icon = "ui/perks/MaxToolsT2.png",
-		IconDisabled = "ui/perks/MaxToolsT2_bw.png"
+		IconDisabled = "ui/perks/MaxToolsT2_bw.png",
+		Const = "LegendFieldRepairs"
 	},
 	{
 		ID = "perk.legend_danger_pay",
@@ -1404,7 +1578,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendDangerPay,
 		Tooltip = this.Const.Strings.PerkDescription.LegendDangerPay,
 		Icon = "ui/perks/coins_circle.png",
-		IconDisabled = "ui/perks/coins_circle_bw.png"
+		IconDisabled = "ui/perks/coins_circle_bw.png",
+		Const = "LegendDangerPay"
 	},															
 	{
 		ID = "perk.legend_vala_inscription_mastery",
@@ -1412,7 +1587,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaInscriptionMastery,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaInscriptionMastery,
 		Icon = "ui/perks/legend_vala_inscription_mastery.png",
-		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png"
+		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png",
+		Const = "LegendValaInscriptionMastery"
 	},	
 	{
 		ID = "perk.legend_vala_warden",
@@ -1420,7 +1596,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaWarden,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaWarden,
 		Icon = "ui/perks/legend_vala_warden.png",
-		IconDisabled = "ui/perks/legend_vala_warden_sw.png"
+		IconDisabled = "ui/perks/legend_vala_warden_sw.png",
+		Const = "LegendValaWarden"
 	},
 	{
 		ID = "perk.legend_vala_threads",
@@ -1428,7 +1605,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaThreads,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaThreads,
 		Icon = "ui/perks/legend_vala_threads.png",
-		IconDisabled = "ui/perks/legend_vala_threads_sw.png"
+		IconDisabled = "ui/perks/legend_vala_threads_sw.png",
+		Const = "LegendValaThreads"
 	},
 	{
 		ID = "perk.legend_vala_premonition",
@@ -1436,7 +1614,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaPremonition,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaPremonition,
 		Icon = "ui/perks/legend_vala_premonition.png",
-		IconDisabled = "ui/perks/legend_vala_premonition_sw.png"
+		IconDisabled = "ui/perks/legend_vala_premonition_sw.png",
+		Const = "LegendValaPremonition"
 	},
 	{
 		ID = "perk.legend_vala_chanting_mastery",
@@ -1444,7 +1623,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaChantMastery,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaChantMastery,
 		Icon = "ui/perks/legend_vala_chanting_mastery.png",
-		IconDisabled = "ui/perks/legend_vala_chanting_mastery_sw.png"
+		IconDisabled = "ui/perks/legend_vala_chanting_mastery_sw.png",
+		Const = "LegendValaChantMastery"
 	},
 	{
 		ID = "perk.legend_vala_trance_mastery",
@@ -1452,7 +1632,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaTranceMastery,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaTranceMastery,
 		Icon = "ui/perks/legend_vala_trance_mastery.png",
-		IconDisabled = "ui/perks/legend_vala_trance_mastery_sw.png"
+		IconDisabled = "ui/perks/legend_vala_trance_mastery_sw.png",
+		Const = "LegendValaTranceMastery"
 	},
 	{
 		ID = "perk.legend_vala_chant_disharmony",
@@ -1460,7 +1641,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaChantDisharmony,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaChantDisharmony,
 		Icon = "ui/perks/legend_vala_chant_disharmony.png",
-		IconDisabled = "ui/perks/legend_vala_chant_disharmony_sw.png"
+		IconDisabled = "ui/perks/legend_vala_chant_disharmony_sw.png",
+		Const = "LegendValaChantDisharmony"
 	},
 	{
 		ID = "perk.legend_vala_spiritual_bond",
@@ -1468,7 +1650,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaSpiritualBond,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaSpiritualBond,
 		Icon = "ui/perks/legend_vala_spiritual_bond.png",
-		IconDisabled = "ui/perks/legend_vala_spiritual_bond_sw.png"
+		IconDisabled = "ui/perks/legend_vala_spiritual_bond_sw.png",
+		Const = "LegendValaSpiritualBond"
 	},
 	{
 		ID = "perk.legend_vala_trance_perspective",
@@ -1476,7 +1659,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaTrancePerspective,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaTrancePerspective,
 		Icon = "ui/perks/legend_vala_trance_perspective.png",
-		IconDisabled = "ui/perks/legend_vala_trance_perspective_sw.png"
+		IconDisabled = "ui/perks/legend_vala_trance_perspective_sw.png",
+		Const = "LegendValaTrancePerspective"
 	},
 	{
 		ID = "perk.legend_vala_trance_malevolent",
@@ -1484,7 +1668,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaTranceMalevolent,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaTranceMalevolent,
 		Icon = "ui/perks/legend_vala_trance_malevolent.png",
-		IconDisabled = "ui/perks/legend_vala_trance_malevolent_sw.png"
+		IconDisabled = "ui/perks/legend_vala_trance_malevolent_sw.png",
+		Const = "LegendValaTranceMalevolent"
 	},
 	{
 		ID = "perk.legend_prepared_for_anything",
@@ -1492,7 +1677,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendPreparedForAnything,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPreparedForAnything,
 		Icon = "ui/perks/perk_20.png",
-		IconDisabled = "ui/perks/perk_20_sw.png"
+		IconDisabled = "ui/perks/perk_20_sw.png",
+		Const = "LegendPreparedForAnything"
 	},
 	{
 		ID = "perk.legend_brink_of_death",
@@ -1500,7 +1686,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendBrinkOfDeath,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBrinkOfDeath,
 		Icon = "ui/perks/perk_04.png",
-		IconDisabled = "ui/perks/perk_04_sw.png"
+		IconDisabled = "ui/perks/perk_04_sw.png",
+		Const = "LegendBrinkOfDeath"
 	},
 	{
 		ID = "perk.legend_strict_sermons",
@@ -1508,7 +1695,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendStrictSermons,
 		Tooltip = this.Const.Strings.PerkDescription.LegendStrictSermons,
 		Icon = "ui/perks/perk_08.png",
-		IconDisabled = "ui/perks/perk_08_sw.png"
+		IconDisabled = "ui/perks/perk_08_sw.png",
+		Const = "LegendStrictSermons"
 	},
 	{
 		ID = "perk.legend_infectious_rage",
@@ -1516,7 +1704,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendInfectiousRage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendInfectiousRage,
 		Icon = "ui/perks/perk_35.png",
-		IconDisabled = "ui/perks/perk_35_sw.png"
+		IconDisabled = "ui/perks/perk_35_sw.png",
+		Const = "LegendInfectiousRage"
 	},
 	{
 		ID = "perk.legend_teacher",
@@ -1524,7 +1713,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendTeacher,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTeacher,
 		Icon = "ui/perks/perk_21.png",
-		IconDisabled = "ui/perks/perk_21_sw.png"
+		IconDisabled = "ui/perks/perk_21_sw.png",
+		Const = "LegendTeacher"
 	},
 	{
 		ID = "perk.legend_resurrectionist",
@@ -1532,7 +1722,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendResurrectionist,
 		Tooltip = this.Const.Strings.PerkDescription.LegendResurrectionist,
 		Icon = "ui/perks/reclamation_circle.png",
-		IconDisabled = "ui/perks/reclamation_circle_bw.png"
+		IconDisabled = "ui/perks/reclamation_circle_bw.png",
+		Const = "LegendResurrectionist"
 	},
 	{
 		ID = "perk.legend_scry",
@@ -1540,7 +1731,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendScry,
 		Tooltip = this.Const.Strings.PerkDescription.LegendScry,
 		Icon = "ui/perks/scry_perk.png",
-		IconDisabled = "ui/perks/scry_perk_bw.png"
+		IconDisabled = "ui/perks/scry_perk_bw.png",
+		Const = "LegendScry"
 	},
 	{
 		ID = "perk.legend_piercing_shot",
@@ -1548,7 +1740,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendPiercingShot,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPiercingShot,
 		Icon = "ui/perks/PiercingBoltPerk.png",
-		IconDisabled = "ui/perks/PiercingBoltPerk_bw.png"
+		IconDisabled = "ui/perks/PiercingBoltPerk_bw.png",
+		Const = "LegendPiercingShot"
 	},
 	{
 		ID = "perk.legend_levitation",
@@ -1556,7 +1749,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendLevitate,
 		Tooltip = this.Const.Strings.PerkDescription.LegendLevitate,
 		Icon = "ui/perks/levitate.png",
-		IconDisabled = "ui/perks/levitate_bw.png"
+		IconDisabled = "ui/perks/levitate_bw.png",
+		Const = "LegendLevitate"
 	},
 	{
 		ID = "perk.legend_teleport",
@@ -1564,7 +1758,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendTeleport,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTeleport,
 		Icon = "ui/perks/teleport_perk.png",
-		IconDisabled = "ui/perks/teleport_perk_bw.png"
+		IconDisabled = "ui/perks/teleport_perk_bw.png",
+		Const = "LegendTeleport"
 	},
 	{
 		ID = "perk.legend_specialist_shield_skill",
@@ -1572,7 +1767,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistShieldSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShieldSkill,
 		Icon = "ui/perks/perk_05.png",
-		IconDisabled = "ui/perks/perk_05_sw.png"
+		IconDisabled = "ui/perks/perk_05_sw.png",
+		Const = "LegendSpecialistShieldSkill"
 	},
 	{
 		ID = "perk.legend_specialist_shield_push",
@@ -1580,7 +1776,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistShieldPush,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistShieldPush,
 		Icon = "ui/perks/perk_22.png",
-		IconDisabled = "ui/perks/perk_22_sw.png"
+		IconDisabled = "ui/perks/perk_22_sw.png",
+		Const = "LegendSpecialistShieldPush"
 	},
 	{
 		ID = "perk.shield_bash",
@@ -1588,7 +1785,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.ShieldBash,
 		Tooltip = this.Const.Strings.PerkDescription.ShieldBash,
 		Icon = "ui/perks/perk_22.png",
-		IconDisabled = "ui/perks/perk_22_sw.png"
+		IconDisabled = "ui/perks/perk_22_sw.png",
+		Const = "ShieldBash"
 	},
 	{
 		ID = "perk.legend_mastery_nets",
@@ -1596,7 +1794,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMasteryNets,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryNets,
 		Icon = "ui/perks/net_perk.png",
-		IconDisabled = "ui/perks/net_perk_bw.png"
+		IconDisabled = "ui/perks/net_perk_bw.png",
+		Const = "LegendMasteryNets"
 	},
 	{
 		ID = "perk.legend_vala_chant_fury",
@@ -1604,7 +1803,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaChantFury,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaChantFury,
 		Icon = "ui/perks/legend_vala_chant_fury.png",
-		IconDisabled = "ui/perks/legend_vala_chant_fury_sw.png"
+		IconDisabled = "ui/perks/legend_vala_chant_fury_sw.png",
+		Const = "LegendValaChantFury"
 	},
 	{
 		ID = "perk.legend_vala_chant_senses",
@@ -1612,7 +1812,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendValaChantSenses,
 		Tooltip = this.Const.Strings.PerkDescription.LegendValaChantSenses,
 		Icon = "ui/perks/legend_vala_chant_senses.png",
-		IconDisabled = "ui/perks/legend_vala_chant_senses_sw.png"
+		IconDisabled = "ui/perks/legend_vala_chant_senses_sw.png",
+		Const = "LegendValaChantSenses"
 	},
 	{
 		ID = "perk.legend_specialist_scythe_skill",
@@ -1620,7 +1821,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistScytheSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistScytheSkill,
 		Icon = "ui/perks/scythe_01.png",
-		IconDisabled = "ui/perks/scythe_bw.png"
+		IconDisabled = "ui/perks/scythe_bw.png",
+		Const = "LegendSpecialistScytheSkill"
 	},
 	{
 		ID = "perk.legend_specialist_scythe_damage",
@@ -1628,7 +1830,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistScytheDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistScytheDamage,
 		Icon = "ui/perks/scythe_02.png",
-		IconDisabled = "ui/perks/scythe_bw.png"
+		IconDisabled = "ui/perks/scythe_bw.png",
+		Const = "LegendSpecialistScytheDamage"
 	},
 	{
 		ID = "perk.legend_inventor_anatomy",
@@ -1636,7 +1839,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendInventorAnatomy,
 		Tooltip = this.Const.Strings.PerkDescription.LegendInventorAnatomy,
 		Icon = "ui/perks/legend_inventor_anatomy.png",
-		IconDisabled = "ui/perks/legend_inventor_anatomy_sw.png"
+		IconDisabled = "ui/perks/legend_inventor_anatomy_sw.png",
+		Const = "LegendInventorAnatomy"
 	},
 	{
 		ID = "perk.legend_mastery_slings",
@@ -1644,7 +1848,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMasterySlings,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMasterySlings,
 		Icon = "ui/perks/sling_03.png",
-		IconDisabled = "ui/perks/sling_bw.png"
+		IconDisabled = "ui/perks/sling_bw.png",
+		Const = "LegendMasterySlings"
 	},
 	{
 		ID = "perk.relentless",
@@ -1652,7 +1857,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Relentless,
 		Tooltip = this.Const.Strings.PerkDescription.Relentless,
 		Icon = "ui/perks/perk_26.png",
-		IconDisabled = "ui/perks/perk_26_sw.png"
+		IconDisabled = "ui/perks/perk_26_sw.png",
+		Const = "Relentless"
 	},
 	{
 		ID = "perk.legend_specialist_ninetails_damage",
@@ -1660,7 +1866,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistNinetailsDamage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistNinetailsDamage,
 		Icon = "ui/perks/ninetails_01.png",
-		IconDisabled = "ui/perks/ninetails_bw.png"
+		IconDisabled = "ui/perks/ninetails_bw.png",
+		Const = "LegendSpecialistNinetailsDamage"
 	},
 	{
 		ID = "perk.legend_specialist_ninetails_skill",
@@ -1668,7 +1875,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendSpecialistNinetailsSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecialistNinetailsSkill,
 		Icon = "ui/perks/ninetails_02.png",
-		IconDisabled = "ui/perks/ninetails_bw.png"
+		IconDisabled = "ui/perks/ninetails_bw.png",
+		Const = "LegendSpecialistNinetailsSkill"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_ghoul",
@@ -1676,7 +1884,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyGhoul,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyGhoul,
 		Icon = "ui/perks/favoured_ghoul_01.png",
-		IconDisabled = "ui/perks/favoured_ghoul_bw.png"
+		IconDisabled = "ui/perks/favoured_ghoul_bw.png",
+		Const = "LegendFavouredEnemyGhoul"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_hexen",
@@ -1684,7 +1893,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyHexen,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyHexen,
 		Icon = "ui/perks/favoured_hexen_01.png",
-		IconDisabled = "ui/perks/favoured_hexen_bw.png"
+		IconDisabled = "ui/perks/favoured_hexen_bw.png",
+		Const = "LegendFavouredEnemyHexen"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_alps",
@@ -1692,7 +1902,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyAlps,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyAlps,
 		Icon = "ui/perks/favoured_alps_01.png",
-		IconDisabled = "ui/perks/favoured_alps_bw.png"
+		IconDisabled = "ui/perks/favoured_alps_bw.png",
+		Const = "LegendFavouredEnemyAlps"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_unhold",
@@ -1700,7 +1911,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyUnhold,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyUnhold,
 		Icon = "ui/perks/favoured_unhold_01.png",
-		IconDisabled = "ui/perks/favoured_unhold_bw.png"
+		IconDisabled = "ui/perks/favoured_unhold_bw.png",
+		Const = "LegendFavouredEnemyUnhold"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_lindwurm",
@@ -1708,7 +1920,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyLindwurm,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyLindwurm,
 		Icon = "ui/perks/favoured_lindwurm_01.png",
-		IconDisabled = "ui/perks/favoured_lindwurm_bw.png"
+		IconDisabled = "ui/perks/favoured_lindwurm_bw.png",
+		Const = "LegendFavouredEnemyLindwurm"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_direwolf",
@@ -1716,7 +1929,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyDirewolf,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyDirewolf,
 		Icon = "ui/perks/favoured_direwolf_01.png",
-		IconDisabled = "ui/perks/favoured_direwolf_bw.png"
+		IconDisabled = "ui/perks/favoured_direwolf_bw.png",
+		Const = "LegendFavouredEnemyDirewolf"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_spider",
@@ -1724,7 +1938,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemySpider,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySpider,
 		Icon = "ui/perks/favoured_spider_01.png",
-		IconDisabled = "ui/perks/favoured_spider_bw.png"
+		IconDisabled = "ui/perks/favoured_spider_bw.png",
+		Const = "LegendFavouredEnemySpider"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_schrat",
@@ -1732,7 +1947,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemySchrat,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySchrat,
 		Icon = "ui/perks/favoured_schrat_01.png",
-		IconDisabled = "ui/perks/favoured_schrat_bw.png"
+		IconDisabled = "ui/perks/favoured_schrat_bw.png",
+		Const = "LegendFavouredEnemySchrat"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_ork",
@@ -1740,7 +1956,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyOrk,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyOrk,
 		Icon = "ui/perks/favoured_ork_01.png",
-		IconDisabled = "ui/perks/favoured_ork_bw.png"
+		IconDisabled = "ui/perks/favoured_ork_bw.png",
+		Const = "LegendFavouredEnemyOrk"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_goblin",
@@ -1748,7 +1965,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyGoblin,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyGoblin,
 		Icon = "ui/perks/favoured_goblin_01.png",
-		IconDisabled = "ui/perks/favoured_goblin_bw.png"
+		IconDisabled = "ui/perks/favoured_goblin_bw.png",
+		Const = "LegendFavouredEnemyGoblin"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_vampire",
@@ -1756,7 +1974,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyVampire,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyVampire,
 		Icon = "ui/perks/favoured_vampire_01.png",
-		IconDisabled = "ui/perks/favoured_vampire_bw.png"
+		IconDisabled = "ui/perks/favoured_vampire_bw.png",
+		Const = "LegendFavouredEnemyVampire"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_skeleton",
@@ -1764,7 +1983,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemySkeleton,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySkeleton,
 		Icon = "ui/perks/favoured_skeleton_01.png",
-		IconDisabled = "ui/perks/favoured_skeleton_bw.png"
+		IconDisabled = "ui/perks/favoured_skeleton_bw.png",
+		Const = "LegendFavouredEnemySkeleton"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_zombie",
@@ -1772,7 +1992,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyZombie,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyZombie,
 		Icon = "ui/perks/favoured_zombie_01.png",
-		IconDisabled = "ui/perks/favoured_zombie_bw.png"
+		IconDisabled = "ui/perks/favoured_zombie_bw.png",
+		Const = "LegendFavouredEnemyZombie"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_noble",
@@ -1780,7 +2001,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyNoble,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyNoble,
 		Icon = "ui/perks/favoured_noble_01.png",
-		IconDisabled = "ui/perks/favoured_noble_bw.png"
+		IconDisabled = "ui/perks/favoured_noble_bw.png",
+		Const = "LegendFavouredEnemyNoble"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_barbarian",
@@ -1788,7 +2010,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyBarbarian,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBarbarian,
 		Icon = "ui/perks/favoured_barbarian_01.png",
-		IconDisabled = "ui/perks/favoured_barbarian_bw.png"
+		IconDisabled = "ui/perks/favoured_barbarian_bw.png",
+		Const = "LegendFavouredEnemyBarbarian"
 	},	
 	{
 		ID = "perk.legend_favoured_enemy_bandit",
@@ -1796,7 +2019,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyBandit,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBandit,
 		Icon = "ui/perks/favoured_bandit_01.png",
-		IconDisabled = "ui/perks/favoured_bandit_bw.png"
+		IconDisabled = "ui/perks/favoured_bandit_bw.png",
+		Const = "LegendFavouredEnemyBandit"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_archer",
@@ -1804,7 +2028,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyArcher,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyArcher,
 		Icon = "ui/perks/favoured_archer_01.png",
-		IconDisabled = "ui/perks/favoured_archer_bw.png"
+		IconDisabled = "ui/perks/favoured_archer_bw.png",
+		Const = "LegendFavouredEnemyArcher"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_swordmaster",
@@ -1812,7 +2037,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemySwordmaster,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySwordmaster,
 		Icon = "ui/perks/favoured_swordmaster_01.png",
-		IconDisabled = "ui/perks/favoured_swordmaster_bw.png"
+		IconDisabled = "ui/perks/favoured_swordmaster_bw.png",
+		Const = "LegendFavouredEnemySwordmaster"
 	},	
 	{
 		ID = "perk.legend_favoured_enemy_mercenary",
@@ -1820,7 +2046,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyMercenary,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyMercenary,
 		Icon = "ui/perks/favoured_mercenary_01.png",
-		IconDisabled = "ui/perks/favoured_mercenary_bw.png"
+		IconDisabled = "ui/perks/favoured_mercenary_bw.png",
+		Const = "LegendFavouredEnemyMercenary"
 	},
 	{
 		ID = "perk.legend_favoured_enemy_caravan",
@@ -1828,238 +2055,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyCaravan,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyCaravan,
 		Icon = "ui/perks/favoured_caravan_01.png",
-		IconDisabled = "ui/perks/favoured_caravan_bw.png"
+		IconDisabled = "ui/perks/favoured_caravan_bw.png",
+		Const = "LegendFavouredEnemyCaravan"
 	}
 ];
 
 
-gt.Const.Perks.PerkDefs <- {
-	FastAdaptation = 0,
-	CripplingStrikes = 1,
-	Colossus = 2,
-	NineLives = 3,
-	BagsAndBelts = 4,
-	Pathfinder = 5,
-	Adrenalin = 6,
-	Recover = 7,
-	Student = 8,
-	CoupDeGrace = 9,
-	Bullseye = 10,
-	Dodge = 11,
-	FortifiedMind = 12,
-	HoldOut = 13,
-	SteelBrow = 14,
-	QuickHands = 15,
-	Gifted = 16,
-	BackStabber = 17,
-	Anticipation = 18,
-	ShieldExpert = 19,
-	Brawny = 20,
-	Rotation = 21,
-	RallyTheTroops = 22,
-	Taunt = 23,
-	MasteryMace = 24,
-	MasteryFlail = 25,
-	MasteryHammer = 26,
-	MasteryAxe = 27,
-	MasteryCleaver = 28,
-	MasterySword = 29,
-	MasteryDagger = 30,
-	MasteryPolearm = 31,
-	MasterySpear = 32,
-	MasteryCrossbow = 33,
-	MasteryBow = 34,
-	MasteryThrowing = 35,
-	ReachAdvantage = 36,
-	Overwhelm = 37,
-	LoneWolf = 38,
-	Underdog = 39,
-	Footwork = 40,
-	Berserk = 41,
-	HeadHunter = 42,
-	Nimble = 43,
-	BattleForged = 44
-	Fearsome = 45,
-	Duelist = 46,
-	KillingFrenzy = 47,
-	Indomitable = 48,
-	LegendDaze = 49,
-	LegendRoster1 = 50,
-	LegendRoster2 = 51,
-	LegendRoster3 = 52,
-	LegendRoster4 = 53,
-	LegendRoster5 = 54,
-	LegendRoster6 = 55,
-	LegendRoster7 = 56,
-	LegendStun = 57,
-	LegendHorrify = 58,
-	LegendEntice = 59,
-	LegendPush = 60,
-	LegendPerfectFocus = 61,
-	LegendFireField = 62,
-	LegendSleep = 63,
-	FullForce = 64,
-	ReturnFavor = 65,
-	Steadfast = 66,
-	SunderingStrike = 67,
-	Stalwart = 68,
-	BattleFlow = 69,
-	Lookout = 70,
-	Sprint = 71,
-	DoubleStrike = 72,
-	MasteryPoison = 73,
-	CloseCombatArcher = 74,
-	Ballistics = 75,
-	LegendCascade = 76,
-	LegendEvasion = 77,
-	LegendRust = 78,
-	LegendDeathTouch = 79,
-	LegendPossessUndead = 80,
-	LegendMiasma = 81,
-	LegendHex = 82,
-	LegendDarkflight = 83,
-	InspiringPresence = 84,
-	LegendMasteryBandage = 85,
-	LegendHoldTheLine = 86,
-	Inspire = 87,
-	BloodyHarvest = 88,
-	DevastatingStrikes = 89,
-	Debilitate = 90,
-	Slaughter = 91,
-	Vengeance = 92,
-	Ironside = 93,
-	LastStand = 94,
-	LegendRaiseUndead = 95,
-	LegendWither = 96,
-	Rebound = 97,
-	CoordinatedVolleys = 98,
-	LegendPushForward = 99,
-	LegendInsects = 100,
-	LegendChainLightning = 101,
-	LegendComposure = 102,
-	LegendNightvision = 103,
-	LegendMasteryStaves = 104,
-	LegendRelax = 105,
-	LegendGruesomeFeast = 106,
-	LegendUberNimble = 107,
-	LegendMuscularity = 108,
-	LegendBattleheart = 109,
-	LegendTrueBeliever = 110,
-	LegendPoisonImmunity = 111,
-	LegendSummonCat = 112,
-	LegendSpawnZombieLow = 113,
-	LegendSpawnZombieMed = 114,
-	LegendSpawnZombieHigh = 115,
-	LegendSpawnSkeletonLow =116,
-	LegendSpawnSkeletonMed = 117,
-	LegendSpawnSkeletonHigh = 118,
-	LegendExtendendAura = 119,
-	LegendChanneledPower = 120,
-	LegendReclamation = 121,
-	LegendConservation = 122,
-	LegendEnthrall = 123,
-	LegendViolentDecomposition = 124,
-	LegendPossession = 125,
-	LegendSiphon = 126,
-	LegendValaInscribeWeapon = 127,
-	LegendValaInscribeHelmet = 128,
-	LegendValaInscribeArmor = 129,
-	LegendValaInscribeShield = 130,
-	LegendGuidedSteps = 131,
-	LegendBerserkerRage = 132,
-	LegendBecomeBerserker = 133,
-	LegendSkillfulStacking = 134,
-	LegendEfficientPacking = 135,
-	LegendAmmoBinding = 136,
-	LegendAmmoBundles = 137,
-	LegendMedPackages = 138, 
-	LegendMedIngredients = 139,
-	LegendToolsDrawers = 140,
-	LegendToolsSpares = 141,
-	LegendBarterConvincing = 142,
-	LegendBarterTrustworthy = 143,
-	LegendBribe = 144,
-	LegendSpecialistButcherDamage = 145,
-	LegendSpecialistButcherSkill = 146,
-	LegendSpecialistHammerDamage = 147,
-	LegendSpecialistHammerSkill = 148,
-	LegendSpecialistKnifeDamage = 149,
-	LegendSpecialistKnifeSkill = 150,
-	LegendSpecialistLuteDamage = 151,
-	LegendSpecialistLuteSkill = 152,
-	LegendSpecialistMilitiaDamage = 153,
-	LegendSpecialistMilitiaSkill = 154,
-	LegendSpecialistPickaxeDamage = 155,
-	LegendSpecialistPickaxeSkill = 156,
-	LegendSpecialistPitchforkDamage = 157,
-	LegendSpecialistPitchforkSkill = 158,
-	LegendSpecialistShortbowDamage = 159,
-	LegendSpecialistShortbowSkill = 160,
-	LegendSpecialistShovelDamage = 161,
-	LegendSpecialistShovelSkill = 162,
-	LegendSpecialistWoodaxeDamage = 163,
-	LegendSpecialistWoodaxeSkill = 164,
-	LegendSpecialistSickleDamage = 165,
-	LegendSpecialistSickleSkill = 166,
-	LegendSpecialistSlingDamage = 167,
-	LegendSpecialistSlingSkill = 168,
-	LegendBigGameHunter = 169,
-	LegendSecondWind = 170,
-	LegendMarkTarget = 171,
-	LegendFieldTriage = 172,
-	LegendFieldRepairs = 173,
-	LegendDangerPay = 174,
-	LegendValaInscriptionMastery = 175,
-	LegendValaWarden = 176,
-	LegendValaThreads = 177,
-	LegendValaPremonition = 178,
-	LegendValaChantMastery = 179,
-	LegendValaTranceMastery = 180,
-	LegendValaChantDisharmony = 181,
-	LegendValaSpiritualBond = 182,
-	LegendValaTrancePerspective = 183,
-	LegendValaTranceMalevolent = 184
-	LegendPreparedForAnything = 185,
-	LegendBrinkOfDeath = 186,
-	LegendStrictSermons = 187,
-	LegendInfectiousRage = 188,
-	LegendTeacher = 189,
-	LegendResurrectionist = 190,
-	LegendScry = 191,
-	LegendPiercingShot = 192
-	LegendLevitate = 193,
-	LegendTeleport = 194,
-	LegendSpecialistShieldSkill = 195,
-	LegendSpecialistShieldPush = 196,
-	ShieldBash = 197,
-	LegendMasteryNets = 198,
-	LegendValaChantFury = 199,
-	LegendValaChantSenses = 200,
-	LegendSpecialistScytheSkill = 201,
-	LegendSpecialistScytheDamage = 202
-	LegendInventorAnatomy = 203,
-	LegendMasterySlings = 204,
-	Relentless = 205,
-	LegendSpecialistNinetailsDamage = 206,
-	LegendSpecialistNinetailsSkill = 207,
-	LegendFavouredEnemyGhoul = 208,
-	LegendFavouredEnemyHexen = 209, 
-	LegendFavouredEnemyAlps = 210,
-	LegendFavouredEnemyUnhold = 211, 
-	LegendFavouredEnemyLindwurm = 212, 
-	LegendFavouredEnemyDirewolf = 213, 
-	LegendFavouredEnemySpider = 214,
-	LegendFavouredEnemySchrat = 215, 
-	LegendFavouredEnemyOrk = 216, 
-	LegendFavouredEnemyGoblin = 217,
-	LegendFavouredEnemyVampire = 218,
-	LegendFavouredEnemySkeleton = 219, 
-	LegendFavouredEnemyZombie = 220,
-	LegendFavouredEnemyNoble = 221,
-	LegendFavouredEnemyBarbarian = 222,
-	LegendFavouredEnemyBandit = 223,	
-	LegendFavouredEnemyArcher = 224,
-	LegendFavouredEnemySwordmaster = 225,
-	LegendFavouredEnemyMercenary = 226,
-	LegendFavouredEnemyCaravan = 227
-};
+gt.Const.Perks.PerkDefs <- {}
+
+foreach(i, v in gt.Const.Perks.PerkDefObjects)
+{
+	gt.Const.Perks.PerkDefs[v.Const] <- i;
+}

@@ -8,7 +8,7 @@ if (!("Perks" in gt.Const))
 local Tree = [
 	[
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
 		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.Recover,
@@ -30,7 +30,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Sprint
 	],
 	[
-		gt.Const.Perks.PerkDefs.BackStabber,
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Relentless,
@@ -41,14 +41,14 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendRoster3		
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryAxe,
-		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.MasteryDagger,
-		gt.Const.Perks.PerkDefs.MasteryCrossbow,
-		gt.Const.Perks.PerkDefs.MasteryBow,
+		gt.Const.Perks.PerkDefs.SpecAxe,
+		gt.Const.Perks.PerkDefs.SpecSword,
+		gt.Const.Perks.PerkDefs.SpecDagger,
+		gt.Const.Perks.PerkDefs.SpecCrossbow,
+		gt.Const.Perks.PerkDefs.SpecBow,
 		gt.Const.Perks.PerkDefs.LegendMasteryNets,
-		gt.Const.Perks.PerkDefs.MasteryPoison,
-		gt.Const.Perks.PerkDefs.MasteryThrowing
+		gt.Const.Perks.PerkDefs.LegendSpecPoison,
+		gt.Const.Perks.PerkDefs.SpecThrowing
 	],
 	[
 		gt.Const.Perks.PerkDefs.Overwhelm,
@@ -66,7 +66,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.Rebound,
-		gt.Const.Perks.PerkDefs.CoordinatedVolleys,
+		gt.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 		gt.Const.Perks.PerkDefs.LegendCascade,
 		gt.Const.Perks.PerkDefs.LegendPiercingShot,
 		gt.Const.Perks.PerkDefs.LegendSecondWind,
@@ -77,9 +77,9 @@ local Tree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus,
+		gt.Const.Perks.PerkDefs.PerfectFocus,
 		gt.Const.Perks.PerkDefs.BattleFlow,
-		gt.Const.Perks.PerkDefs.LegendGuidedSteps,
+		gt.Const.Perks.PerkDefs.LegendGuideSteps,
 		gt.Const.Perks.PerkDefs.LegendEvasion,
 		gt.Const.Perks.PerkDefs.LegendBigGameHunter,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,

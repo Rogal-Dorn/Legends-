@@ -39,13 +39,13 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendSecondWind
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryMace,
-		gt.Const.Perks.PerkDefs.MasteryFlail,
-		gt.Const.Perks.PerkDefs.MasteryHammer,
-		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.MasteryPolearm,
-		gt.Const.Perks.PerkDefs.MasteryAxe,
-		gt.Const.Perks.PerkDefs.MasteryThrowing
+		gt.Const.Perks.PerkDefs.SpecMace,
+		gt.Const.Perks.PerkDefs.SpecFlail,
+		gt.Const.Perks.PerkDefs.SpecHammer,
+		gt.Const.Perks.PerkDefs.SpecSword,
+		gt.Const.Perks.PerkDefs.SpecPolearm,
+		gt.Const.Perks.PerkDefs.SpecAxe,
+		gt.Const.Perks.PerkDefs.SpecThrowing
 	],
 	[
 		gt.Const.Perks.PerkDefs.Footwork,
@@ -66,7 +66,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
 		gt.Const.Perks.PerkDefs.LastStand,
-		gt.Const.Perks.PerkDefs.SunderingStrike
+		gt.Const.Perks.PerkDefs.SunderingStrikes
 	],
 	[
 		gt.Const.Perks.PerkDefs.Fearsome,
@@ -75,7 +75,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Stalwart,
 		gt.Const.Perks.PerkDefs.BattleFlow,
 		gt.Const.Perks.PerkDefs.LegendHoldTheLine,
-		gt.Const.Perks.PerkDefs.LegendPerfectFocus
+		gt.Const.Perks.PerkDefs.PerfectFocus
 	],
 	[],
 	[],

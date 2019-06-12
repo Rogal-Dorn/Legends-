@@ -17,14 +17,14 @@ local Tree = [
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.FortifiedMind
 	],
 	[
 		gt.Const.Perks.PerkDefs.LegendValaChantSenses,
 		gt.Const.Perks.PerkDefs.LegendValaPremonition,
-		gt.Const.Perks.PerkDefs.BackStabber,
+		gt.Const.Perks.PerkDefs.Backstabber,
 		gt.Const.Perks.PerkDefs.HoldOut,
 		gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet
 	],

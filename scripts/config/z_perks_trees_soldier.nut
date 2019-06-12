@@ -7,7 +7,7 @@ if (!("Perks" in gt.Const))
 
 local Tree = [
 	[
-		gt.Const.Perks.PerkDefs.FastAdaptation,
+		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
@@ -27,7 +27,7 @@ local Tree = [
 
 	],
 	[
-		gt.Const.Perks.PerkDefs.BackStabber,	
+		gt.Const.Perks.PerkDefs.Backstabber,	
 		gt.Const.Perks.PerkDefs.Anticipation,
 		gt.Const.Perks.PerkDefs.ShieldExpert,
 		gt.Const.Perks.PerkDefs.Brawny,
@@ -38,17 +38,17 @@ local Tree = [
 		
 	],
 	[
-		gt.Const.Perks.PerkDefs.MasteryMace,
-		gt.Const.Perks.PerkDefs.MasteryFlail,
-		gt.Const.Perks.PerkDefs.MasteryHammer,
-		gt.Const.Perks.PerkDefs.MasteryAxe,
-		gt.Const.Perks.PerkDefs.MasteryCleaver,
-		gt.Const.Perks.PerkDefs.MasterySword,
-		gt.Const.Perks.PerkDefs.MasteryPolearm,
-		gt.Const.Perks.PerkDefs.MasterySpear,
-		gt.Const.Perks.PerkDefs.MasteryCrossbow,
-		gt.Const.Perks.PerkDefs.MasteryBow,
-		gt.Const.Perks.PerkDefs.MasteryThrowing
+		gt.Const.Perks.PerkDefs.SpecMace,
+		gt.Const.Perks.PerkDefs.SpecFlail,
+		gt.Const.Perks.PerkDefs.SpecHammer,
+		gt.Const.Perks.PerkDefs.SpecAxe,
+		gt.Const.Perks.PerkDefs.SpecCleaver,
+		gt.Const.Perks.PerkDefs.SpecSword,
+		gt.Const.Perks.PerkDefs.SpecPolearm,
+		gt.Const.Perks.PerkDefs.SpecSpear,
+		gt.Const.Perks.PerkDefs.SpecCrossbow,
+		gt.Const.Perks.PerkDefs.SpecBow,
+		gt.Const.Perks.PerkDefs.SpecThrowing
 
 	],
 	[
@@ -64,7 +64,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
 		gt.Const.Perks.PerkDefs.BattleForged,
-		gt.Const.Perks.PerkDefs.SunderingStrike
+		gt.Const.Perks.PerkDefs.SunderingStrikes
 		
 	],
 	[
