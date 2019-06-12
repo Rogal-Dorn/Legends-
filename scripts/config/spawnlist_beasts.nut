@@ -9222,35 +9222,651 @@ gt.Const.World.Spawn.LegendRockUnhold <- [
 		]
 	}
 ];
-gt.Const.World.Spawn.LegendRedbackSpider <- [
+gt.Const.World.Spawn.LegendWhiteDirewolf <- [
+
 	{
-		MovementSpeedMult = 1.2,
+		MovementSpeedMult = 1.3,
 		VisibilityMult = 0.3,
 		VisionMult = 1.7,
-		Body = "figure_redback_spider_01",
+		Body = "figure_white_direwolf_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 1
-			}
-		]
-	},
-	{
-		MovementSpeedMult = 1.2,
-		VisibilityMult = 0.3,
-		VisionMult = 1.7,
-		Body = "figure_redback_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.Spider,
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 12
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 14
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 16
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 14
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 14
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 12
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 16
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 10
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 18
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 8
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 6
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 5
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 1
 			}
 		]
 	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 21
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 20
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 11
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 19
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.4,
+		VisibilityMult = 0.3,
+		VisionMult = 1.7,
+		Body = "figure_white_direwolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 12
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 18
+			}
+		]
+	}
+];
+
+gt.Const.World.Spawn.LegendRedbackSpider <- [
 	{
 		MovementSpeedMult = 1.2,
 		VisibilityMult = 0.3,

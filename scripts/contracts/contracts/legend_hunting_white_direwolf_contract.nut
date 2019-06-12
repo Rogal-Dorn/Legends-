@@ -1,4 +1,4 @@
-this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/contract", {
+this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Target = null,
 		Dude = null,
@@ -12,8 +12,8 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 	function create()
 	{
 		this.contract.create();
-		this.m.Type = "contract.legend_hunting_rock_unholds";
-		this.m.Name = "Hunting a Mountain (Legendary)";
+		this.m.Type = "contract.legend_hunting_white_direwolf";
+		this.m.Name = "Hunting the white wolf (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 
@@ -25,7 +25,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 
 	function start()
 	{
-		this.m.Payment.Pool = 7500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 5000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
@@ -47,7 +47,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 			function start()
 			{
 				this.Contract.m.BulletpointsObjectives = [
-					"Hunt down the Rock Unholds around " + this.Contract.m.Home.getName()
+					"Hunt down the White Wolf around " + this.Contract.m.Home.getName()
 				];
 
 				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
@@ -69,7 +69,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 				{
 					this.Flags.set("IsDriveOff", true);
 				}
-				else if (r <= 70)
+				if (r <= 70)
 				{
 					this.Flags.set("IsSignsOfAFight", true);
 				}
@@ -81,29 +81,24 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 				]);
 				local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 8);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Unholds", false, this.Const.World.Spawn.LegendRockUnhold, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "White Wolf Pack", false, this.Const.World.Spawn.LegendWhiteDirewolf, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 
-				party.setDescription("One or more lumbering giants.");
+				party.setDescription("The wolf pack of the legendary White Wolf.");
 				party.setAttackableByAI(false);
-				party.setFootprintSizeOverride(0.85);
-				party.getTags().set("IsUnholds", true);
-				this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.85);
+				party.setFootprintSizeOverride(0.75);
+				this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
 				this.Contract.m.Target = this.WeakTableRef(party);
 				party.getSprite("banner").setBrush("banner_beasts_01");
 				local c = party.getController();
-				c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
-				c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
+				c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(true);
+				c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(true);
 				local roam = this.new("scripts/ai/world/orders/roam_order");
 				roam.setPivot(this.Contract.m.Home);
 				roam.setMinRange(2);
-				roam.setMaxRange(8);
+				roam.setMaxRange(16);
 				roam.setAllTerrainAvailable();
 				roam.setTerrain(this.Const.World.TerrainType.Ocean, false);
 				roam.setTerrain(this.Const.World.TerrainType.Shore, false);
-				roam.setTerrain(this.Const.World.TerrainType.Forest, false);
-				roam.setTerrain(this.Const.World.TerrainType.LeaveForest, false);
-				roam.setTerrain(this.Const.World.TerrainType.SnowyForest, false);
-				roam.setTerrain(this.Const.World.TerrainType.AutumnForest, false);
 				c.addOrder(roam);
 				this.Contract.m.Home.setLastSpawnTimeToNow();
 				this.Contract.setScreen("Overview");
@@ -156,7 +151,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian" || bro.getSkills().hasSkill("trait.dumb"))
+						if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.legend_ranger" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_commander_vala" || bro.getBackground().getID() == "background.legend_commander_ranger" || bro.getSkills().hasSkill("perk.legend_favoured_enemy_direwolf"))
 						{
 							candidates.push(bro);
 						}
@@ -223,14 +218,14 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{When you enter %employer%\'s keep he runs out to greet you, he looks wracked with fear. He has clearly run too fast for his fat lungs and has to catch his breath before burbling out a slew of words.%SPEECH_ON%Thank the gods you came! The mountains have come alive! I have seen it, boulders the size of a house stiring up from their slumber, standing tall like a man and then crushing a horse in a single blow%SPEECH_OFF%. He throws you a huge lump of bluish crystaline rock, %employer% continues on %SPEECH_ON% My best men chopped this off the gaint, that stone you hold is its flesh. The beast is so armored that most weapons glance right off. It took four men with axes to carve that tiny chunk off, and as soon as they had finished, the rock grew right back. The beast barely noticed we were there, it crushed three men in a single blow. We fled, and we know not where it hides now. Search the surrounding lands, it is slow and huge, so it should not be hard to track. My tracker tells me you specialise in hunting unholds, so undoubtedly you already have poison with you to stop the creature regenerating. Even so, this beast may be impossible to kill, worse than a dozen unholds. If you do manage to kill a mountain, and I will reward you like a king.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{When you arrive at %employer%\'s keep the sky is dark and the mood is ominous, you hear howling in the distance. The population are on edge and everyone keeps looking over their shoulders for an unseen assailant.%SPEECH_ON%Thank the gods you came!%SPEECH_OFF% A booming voice echoes around the courtyard and a man in resplendent finery claps his hands together as he shuffles down the stairs towards you %SPEECH_ON% The wolves are at our door, without a word of a lie. They grow bolder by the day, just this morning one crept into the town and took off with a toddler. Her mother is distraught and the villagers are terrified, they demmanded i do something. I have already sent half my men out, but only a handful have returned, each burdened with having seen their friends feasted upon. %SPEECH_OFF%. %employer% quietens his voice, only now realising the whole town is listening in. %SPEECH_ON% I know you have fought wolves before sellsword, but these are different. They are led by the king of the wolves, the legendary white wolf himself. He is huge, vicious, and cunning beyond measure. Each week he gathers more wolf packs under his rule, driving them into a rabid furvor while orchestrating their campaign of terror. %SPEECH_OFF% %employer% looks around sheepishly, as if scared his words are about to manifest in flesh. %SPEECH_ON% A task like this can not be entered into lightly, others have tried and failed, the reward has grown large. If you should suceed, you will be rich my friend. Are you up to the deed? }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Fighting mountain giants won\'t come cheap. | The %companyname% can help for the right price. | Let\'s talk crowns.}",
+					Text = "{Fighting the king of the wolves won\'t come cheap. | The %companyname% can help for the right price. | How many crowns are we talking about? | How large is the reward?}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -238,7 +233,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 
 				},
 				{
-					Text = "{This doesn\'t sound like our kind of work. | This won\'t be worth the risk.}",
+					Text = "{This doesn\'t sound like our kind of work. | This won\'t be worth the risk. | I won\'t go off to die like the others}",
 					function getResult()
 					{
 						this.World.Contracts.removeContract(this.Contract);
@@ -255,12 +250,12 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Banter",
 			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_71.png[/img]{%randombrother% returns from scouting, he has a harrowed look of a man who has passed by death. %SPEECH_ON%I climbed a hill to survey the landscape, couldn't see it in any direction. Then the earth shook something powerful and I was thrown off my feet and slid down the side of the hill landing in a bush. When i looked back up the hill was gone, and it was walking away.%SPEECH_OFF%.}",
+			Text = "[img]gfx/ui/events/event_75.png[/img]{%randombrother% has been intently scanning for tracks, with an urgency you can\'t place. At last he speaks %SPEECH_ON% My grandmother told me stories of the Wolf King when i was a child. She said he is half human from eating human brains, he walks on two legs, wears armor and even understand speech. It was meant to make me do my chores, but it only ever gave me nightmares. He can\'t be real, can he? %SPEECH_OFF%.}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "It can\'t have gotten far.",
+					Text = "We are about to find out.",
 					function getResult()
 					{
 						return 0;
@@ -272,7 +267,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{The mountain unhold is bent over, it looks for all the world like the rubble of a collapsed castle. Large boulders piled together, with plants growing from between the joins. The rocks shudder and move, grinding together in a horrific low screech. The low pile turns to face you, then stands to its full height, towering above you. It is gnawing on half a cow, and as it sees you approach it burbles a chortle, spraying rancid ichor all over you.}",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{You stop in your tracks, the hairs on the back of your neck are bristling. You feel something watching you, and turn to see wolves emerging from the tree line at full charge. The Wolf King has found you. }",
 			Image = "",
 			List = [],
 			Options = [
@@ -290,7 +285,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "DriveThemOff",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{As you put the men into formation, %shouter% goes running by you and right toward the unholds. He\'s hooting and hollering, his arms flailing like a sea cretin drawn up by the hook. The unholds pause and stare amongst one another. You\'re not sure whether this should be allowed to continue...}",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Tracking quietly you come over a small hill, and look down on a large group of wolves in a clearing. The wind is on your face, so they haven\'t caught your sent. You crouch low and creep forward to get a better view. To your amazement you see two white wolves. Each is leading a pack, and they are arrayed on either side of the clearing, with the two leaders in the middle. It appears as if some kind of parlay is underway, played out in a complex series of movements, growls and sniffs. Their stances feel as if they may start fighting at any moment, but then after one last sniff they face up, and to your amazement they bow to each other. With that the show is over, and one of the packs turns and leaves.  No sooner has the second pack left, than you notice %shouter% walking down the hill in front of you calmly and deliberately, making no attempt to hide and looking straight at the White Wolf.  }",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -305,10 +300,10 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 
 				},
 				{
-					Text = "%shouter% knows what he\'s doing.",
+					Text = "%shouter% knows how to handle this.",
 					function getResult()
 					{
-						if (this.Math.rand(1, 100) <= 5)
+						if (this.Math.rand(1, 100) <= 50)
 						{
 							return "DriveThemOffSuccess";
 						}
@@ -329,18 +324,16 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "DriveThemOffSuccess",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Against better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face as though to shield it, then starts stepping back, further and further until it\'s gone! They\'re all gone!}",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Against better judgment, you let it play out. %shouter% reaches the clearing and then bows down to the ground in front of the white wolf. Unbelievably the white wolf bows as well, and then the two of them begin growling and sniffing each other. %shouter% lets out a series of crooning hums, like a drawn out melodic growl that seems to entrance the wolves. %shouter% uses the moment of calm to do the most foolhardy thing you have ever seen. %shouter% drops trousers and pisses onto the head of the white wolf.  In that moment the whole scene changes, the white wolf rolls onto its back and wimpers, and the rest of the pack turn and disapear into the woods.  }",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "And don\'t come back!",
+					Text = "We still need to catch the other wolf",
 					function getResult()
 					{
-						this.Contract.m.Target.die();
-						this.Contract.m.Target = null;
-						this.Contract.setState("Return");
+	
 						return 0;
 					}
 
@@ -348,32 +341,36 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 			],
 			function start()
 			{
-				this.Characters.push(this.Contract.m.Dude.getImagePath());
-				this.Contract.m.Dude.improveMood(3.0, "Managed to drive off unholds all by himself");
-				this.Contract.m.Dude.addXP(1000, false)
-				if (this.Contract.m.Dude.getMoodState() >= this.Const.MoodState.Neutral)
-				{
-					this.List.push({
-						id = 10,
-						icon = this.Const.MoodStateIcon[this.Contract.m.Dude.getMoodState()],
-						text = this.Contract.m.Dude.getName() + this.Const.MoodStateEvent[this.Contract.m.Dude.getMoodState()]
-					});
-				}
+					this.Characters.push(_event.m.Dude.getImagePath());
+						local item = this.new("scripts/items/accessory/legend_white_wolf_item");
+						this.World.Assets.getStash().add(item);
+						this.List.push({
+							id = 10,
+							icon = "ui/items/" + item.getIcon(),
+							text = "You gain " + item.getName()
+						});
+						_event.m.Dude.improveMood(2.0, "Managed to tame a white wolf");
+						this.List.push({
+							id = 10,
+							icon = this.Const.MoodStateIcon[_event.m.Houndmaster.getMoodState()],
+							text = _event.m.Dude.getName() + this.Const.MoodStateEvent[_event.m.Dude.getMoodState()]
+						});
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "DriveThemOffFailure",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Against better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face and then throws it down and swats %shouter% away. The man goes cartwheeling through the air and his screams go with him like a rabbit stolen up by a hawk. His shouts somersault back to earth in an echo of dizzying whoops and he lands with a hardy thud. The giant jiggles with an earthen chuckle. It\'s amusement catches the attention of the departed unholds who all turn around and start to return.}",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Against better judgment, you let it play out. %shouter% reaches the edge of the clearing and begins to make some bizarre crooning noises like an injured dog. The white wolf tilts it\'s head for a moment quizically, before letting out a howl and charging towards %shouter%. The wolf grabs %shouter% in its jaws, shakes them viciously before throwing shouter back towards the wolves. If that weren\'t bad enough, just then you notice the other wolf pack returning, it looks like you\'ll be fighting two wolf kings. }",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "So much for that.",
+					Text = "",
 					function getResult()
 					{
+						this.Contract.addUnitsToEntity(this.Contract.m.Target, this.Const.World.Spawn.LegendWhiteDirewolf, 70 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 						this.Contract.getActiveState().onTargetAttacked(this.Contract.m.Target, false);
 						return 0;
 					}
@@ -402,7 +399,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 					icon = injury2.getIcon(),
 					text = this.Contract.m.Dude.getName() + " suffers " + injury1.getNameOnly() + " and " + injury2.getNameOnly()
 				});
-				this.Contract.m.Dude.worsenMood(1.0, "Failed to drive off unholds all by himself");
+				this.Contract.m.Dude.worsenMood(1.0, "Failed to sing to the wolves");
 
 				if (this.Contract.m.Dude.getMoodState() <= this.Const.MoodState.Neutral)
 				{
@@ -418,7 +415,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Victory",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_113.png[/img]{The giant lays broken, rocks and shattered crystals strewn across the ground. You order the men to begin hacking apart the body, you have big plans for these remains.}",
+			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{The white wolf lays mangled, upon a pile of wolf carcasses. You begin skinning the body, that head will make a lovely hat.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -435,12 +432,12 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "SignsOfAFight",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_113.png[/img]{With the giants slain, you get the men ready for a return to %employer%, but %randombrother% fetches your attention with a bit of quiver in his throat. You head on over to see him standing before one of the felled unholds. He points across its flesh which has been torn asunder in slices and hangs like the ears of a corn stalk. The damage is far beyond the ability of your own weaponry. The sellsword turns and looks past you with his eyes widening.%SPEECH_ON%What do you imagine did that?%SPEECH_OFF%Further along the skin are concave scars shaped like saucers with punctures rent right into the holes. You climb atop the unhold and crank your sword into one of these divots, wrenching free a tooth about the length of your forearm. Along its edges are barbs, teeth upon teeth it seems. The men see this and start muttering amongst themselves and you wished you\'d never saw it at all for you\'ve no sense to make of it.}",
+			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{With the beasts slain you take a moment to rest, one of your mercenaries asks you. "So if you just killed the king of the wolves, does that make you the new king?" }",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "The wilds are dark and full of terrors.",
+					Text = "If only it worked that way",
 					function getResult()
 					{
 						return 0;
@@ -456,7 +453,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% seems surprised when you return. %SPEECH_ON%If you have come back to ask for men to help, you are on your own. I already sent my best off to die, you will have to make do with what you have.%SPEECH_OFF%  You show him the remains of the giant and his eyes grow wide  %SPEECH_ON%How...  How did you?  Never mind, there will be songs written to tell the tale I am sure. For now let us feast, you have freed my lands of this horror and earned your reward.%SPEECH_OFF%  He gestures to his servants who cheer as one, then begin tending to your wounds, bringing over drinks, food, and a small chest full of crowns. }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% seems surprised when you return. %SPEECH_ON%Could it be? Have you slain the White Wolf? %SPEECH_OFF%  You show him the bloody wolf pelt and he stares in disbelief.  %SPEECH_ON% The reign of terror is over! This demands a celebration! Tonight, for the first time in many moons, we sahll drink and be merry! %SPEECH_OFF%  He gestures to his servants who cheer as one, then begin tending to your wounds, bringing over drinks, food, and a small chest full of crowns. }",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -468,45 +465,12 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
-						this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
+						this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
 						this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 						this.World.Assets.getStash().add(this.new("scripts/items/supplies/medicine_item"));
 						this.World.Assets.getStash().add(this.new("scripts/items/loot/ancient_gold_coins_item"));
-						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Rid the town of rock unholds");
+						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Rid the town of the white wolf");
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Saviour of the lands");
-						this.World.Contracts.finishActiveContract();
-						return 0;
-					}
-
-				}
-			],
-			function start()
-			{
-				this.List.push({
-					id = 10,
-					icon = "ui/icons/asset_money.png",
-					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
-				});
-				this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
-			}
-
-		});
-		this.m.Screens.push({
-			ID = "SuccessPeaceful",
-			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{%employer% drives his fingers up to the corners of his eye then fans them forward.%SPEECH_ON%Let me get this straight, one of your sellswords shouted the giants into a retreat?%SPEECH_OFF%You nod and tell him the direction they went which is, rather importantly, away from %townname%. The mayor leans back in his chair.%SPEECH_ON%Well. Alright then. I guess it ain\'t my problem now. Dead or gone, all the same I suppose.%SPEECH_OFF%He hands you a satchel, but holds his hand on it a moment.%SPEECH_ON%You know if you\'re lying and they come back I\'ll send every messenger bird I got to speak of your honor.%SPEECH_OFF%You stand up, draw your sword, and tell him they\'ll have his skull to rest in when they get there. The man nods and lets the coin go.%SPEECH_ON%No bother, sellsword, only business.%SPEECH_OFF%}",
-			Image = "",
-			Characters = [],
-			List = [],
-			ShowEmployer = true,
-			Options = [
-				{
-					Text = "A successful hunt.",
-					function getResult()
-					{
-						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
-						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
-						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Rid the town of unholds");
 						this.World.Contracts.finishActiveContract();
 						return 0;
 					}
@@ -542,7 +506,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 	{
 		if (this.m.SituationID == 0)
 		{
-			this.m.SituationID = this.m.Home.addSituation(this.new("scripts/entity/world/settlements/situations/unhold_attacks_situation"));
+			this.m.SituationID = this.m.Home.addSituation(this.new("scripts/entity/world/settlements/situations/disappearing_villagers_situation"));
 		}
 	}
 
@@ -576,7 +540,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill("perk.legend_favoured_enemy_unhold"))
+			if (bro.getSkills().hasSkill("perk.legend_favoured_enemy_direwolf"))
 			{
 			return true;
 			}
