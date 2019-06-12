@@ -23,10 +23,10 @@
 .world-obituary-screen > .l-obiturary-dialog-container
 {
     top: 0;
-    left: 0;
+    left: 5;
     right: 0;
     bottom: 0;
-    width: 102.4rem;
+    width: 171.0rem;
     height: 76.8rem;
     position: absolute;
     margin: auto;
@@ -40,7 +40,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    width: 88.0rem;
+    width: 128.0rem;
     height: 3.0rem;
     position: absolute;
     margin: auto;
@@ -73,14 +73,14 @@
 .world-obituary-screen > .l-obiturary-dialog-container .table-header .table-header-name
 {
 	top: 0.0rem;
-	left: 1.0rem;
+	left: 2.5rem;
 	position: absolute;
 }
 
 .world-obituary-screen > .l-obiturary-dialog-container .table-header .table-header-time
 {
 	top: 0.0rem;
-	left: 30.0rem;
+	left: 33.0rem;
 	position: absolute;
 }
 
@@ -94,14 +94,35 @@
 .world-obituary-screen > .l-obiturary-dialog-container .table-header .table-header-kills
 {
 	top: 0.0rem;
-	left: 53.0rem;
+	left: 51.0rem;
 	position: absolute;
 }
 
 .world-obituary-screen > .l-obiturary-dialog-container .table-header .table-header-killed-by
 {
 	top: 0.0rem;
-	left: 63.0rem;
+	left: 59.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .table-header .table-header-level
+{
+	top: 0.0rem;
+	left: 96.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .table-header .table-header-traits
+{
+	top: 0.0rem;
+	left: 101.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .table-header .table-header-stats
+{
+    top: 0.0rem;
+	left: 113.0rem;
 	position: absolute;
 }
 
@@ -109,7 +130,7 @@
 {
     width: 100%;
     height: 100%;
-    padding-top: 2.0rem;
+    padding-top: 0.0rem;
     padding-bottom: 0.9rem;
 	padding-left: 1.0rem;
 	padding-right: 1.0rem;
@@ -162,35 +183,195 @@
 .world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .name
 {
     top: 0.0rem;
-	left: 0.5rem;
+	left: 2.0rem;
 	position: absolute;
 }
 
 .world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .time
 {
     top: 0.0rem;
-	left: 31.0rem;
+	left: 33.5rem;
 	position: absolute;
 }
 
 .world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .battles
 {
     top: 0.0rem;
-	left: 42.0rem;
+	left: 43.0rem;
 	position: absolute;
 }
 
 .world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .kills
 {
     top: 0.0rem;
-	left: 54.0rem;
+	left: 52.5rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .level
+{
+    top: 0.0rem;
+	left: 96.0rem;
 	position: absolute;
 }
 
 .world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .killed-by
 {
     top: 0.0rem;
-	left: 63.0rem;
+	left: 59.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .trait1
+{
+    top: 0.0rem;
+	left: 99.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .trait2
+{
+    top: 0.0rem;
+	left: 103.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .trait3
+{
+    top: 0.0rem;
+	left: 106.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .trait4
+{
+    top: 0.0rem;
+	left: 109.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .trait > img
+{
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .stats
+{
+    top: 0.0rem;
+	left: 100.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .hpicon
+{
+	top: 0.0rem;
+	left: 113.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .hptext
+{
+	top: 0.0rem;
+	left: 113.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .fticon
+{
+	top: 0.0rem;
+	left: 120.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .fttext
+{
+	top: 0.0rem;
+	left: 120.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .bricon
+{
+	top: 0.0rem;
+	left: 127.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .brtext
+{
+	top: 0.0rem;
+	left: 127.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .iticon
+{
+	top: 0.0rem;
+	left: 134.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .ittext
+{
+	top: 0.0rem;
+	left: 134.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .maicon
+{
+	top: 0.0rem;
+	left: 141.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .matext
+{
+	top: 0.0rem;
+	left: 141.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .raicon
+{
+	top: 0.0rem;
+	left: 148.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .ratext
+{
+	top: 0.0rem;
+	left: 148.0rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .mdicon
+{
+	top: 0.0rem;
+	left: 154.6rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .mdtext
+{
+	top: 0.0rem;
+	left: 154.6rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .rdicon
+{
+	top: 0.0rem;
+	left: 161.2rem;
+	position: absolute;
+}
+
+.world-obituary-screen > .l-obiturary-dialog-container .content .scroll-container .l-row .rdtext
+{
+	top: 0.0rem;
+	left: 161.2rem;
 	position: absolute;
 }
 

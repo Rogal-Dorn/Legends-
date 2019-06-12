@@ -71,7 +71,7 @@ WorldObituaryScreen.prototype.createDIV = function (_parentDiv)
     // create: containers (init hidden!)
     var dialogLayout = $('<div class="l-obiturary-dialog-container"/>');
     this.mContainer.append(dialogLayout);
-    this.mDialogContainer = dialogLayout.createDialog('Obituary', '', '', true, 'dialog-1024-768');
+    this.mDialogContainer = dialogLayout.createDialog('Obituary', '', '', true, 'dialog-1710-768');
 
     // create tabs
     var tabButtonsContainer = $('<div class="l-tab-container"/>');
@@ -98,6 +98,15 @@ WorldObituaryScreen.prototype.createDIV = function (_parentDiv)
 
     this.mColumnKilledBy = $('<div class="table-header-killed-by title title-font-big font-bold font-color-title">Demise</div>');
     headers.append(this.mColumnKilledBy);
+
+    this.mLevel = $('<div class="table-header-level title title-font-big font-bold font-color-title">Lv</div>');
+    headers.append(this.mLevel);
+
+    this.mTraits = $('<div class="table-header-traits title title-font-big font-bold font-color-title">Traits</div>');
+    headers.append(this.mTraits);
+
+    this.mStats = $('<div class="table-header-stats title title-font-big font-bold font-color-title">Stats</div>');
+    headers.append(this.mStats);
 
     // left column
     var column = $('<div class="column is-left"/>');
@@ -144,6 +153,53 @@ WorldObituaryScreen.prototype.destroyDIV = function ()
     this.mContainer = null;
 };
 
+WorldObituaryScreen.prototype.addListEntryIcons = function ()
+{
+	var result = $('<div class="l-row"/>');
+	this.mListScrollContainer.append(result);
+
+	var name = $('<div class="name text-font-normal font-color-description">' + '</div>');
+	result.append(name);
+
+	var time = $('<div class="time text-font-normal font-color-description">' + '</div>');
+	result.append(time);
+
+	var battles = $('<div class="battles text-font-normal font-color-description">' + '</div>');
+	result.append(battles);
+
+	var kills = $('<div class="kills text-font-normal font-color-description">' + '</div>');
+	result.append(kills);
+
+	var killedBy = $('<div class="killed-by text-font-normal font-color-description">' + '</div>');
+	result.append(killedBy);
+	
+	var hpicon = $('<div class=hpicon>');
+	var fticon = $('<div class=fticon>');
+	var bricon = $('<div class=bricon>');
+	var iticon = $('<div class=iticon>');
+	var maicon = $('<div class=maicon>');
+	var raicon = $('<div class=raicon>');
+	var mdicon = $('<div class=mdicon>');
+	var rdicon = $('<div class=rdicon>');
+	
+	var hp = $('<img/>').attr('src', Path.GFX + Asset.ICON_HEALTH);
+	var ft = $('<img/>').attr('src', Path.GFX + Asset.ICON_FATIGUE);
+	var br = $('<img/>').attr('src', Path.GFX + Asset.ICON_BRAVERY);
+	var it = $('<img/>').attr('src', Path.GFX + Asset.ICON_INITIATIVE);
+	var ma = $('<img/>').attr('src', Path.GFX + Asset.ICON_MELEE_SKILL);
+	var ra = $('<img/>').attr('src', Path.GFX + Asset.ICON_RANGE_SKILL);
+	var md = $('<img/>').attr('src', Path.GFX + Asset.ICON_MELEE_DEFENCE);
+	var rd = $('<img/>').attr('src', Path.GFX + Asset.ICON_RANGE_DEFENCE);	
+	
+	hpicon.append(hp); result.append(hpicon);
+	fticon.append(ft); result.append(fticon);
+	bricon.append(br); result.append(bricon);
+	iticon.append(it); result.append(iticon);
+	maicon.append(ma); result.append(maicon);
+	raicon.append(ra); result.append(raicon);
+	mdicon.append(md); result.append(mdicon);
+	rdicon.append(rd); result.append(rdicon);
+};
 
 WorldObituaryScreen.prototype.addListEntry = function (_data)
 {
@@ -164,11 +220,59 @@ WorldObituaryScreen.prototype.addListEntry = function (_data)
 
 	var killedBy = $('<div class="killed-by text-font-normal font-color-description">' + _data.KilledBy + '</div>');
 	result.append(killedBy);
+		
+	if (typeof _data.traits != "undefined") 
+	{	// skip if no data, brothers that died before saving with mod
+		if (_data.stats[0] != -99) 
+		{	// only show for dead brothers with new stats, brothers that died before mod but saved with mod
+			var level = $('<div class="level text-font-normal font-color-description">' + _data.level + '</div>');
+			result.append(level);
+			
+			var hptext = $('<div class="hptext text-font-normal font-color-description">');
+			var fttext = $('<div class="fttext text-font-normal font-color-description">');
+			var brtext = $('<div class="brtext text-font-normal font-color-description">');
+			var ittext = $('<div class="ittext text-font-normal font-color-description">');		
+			var matext = $('<div class="matext text-font-normal font-color-description">');		
+			var ratext = $('<div class="ratext text-font-normal font-color-description">');
+			var mdtext = $('<div class="mdtext text-font-normal font-color-description">');
+			var rdtext = $('<div class="rdtext text-font-normal font-color-description">');
+			
+			var stats = [hptext,fttext,brtext,ittext,matext,ratext,mdtext,rdtext];
+			var talents = [];
+			for(var i=0; i< 8; i++)
+			{
+				talents.push(_data.talents[i])
+				stats[i].append(_data.stats[i]);
+				
+				var talent0 = $('<img/>').attr('src', Path.GFX + 'ui/icons/talent_0.png');
+				var talent1 = $('<img/>').attr('src', Path.GFX + 'ui/icons/talent_1.png');
+				var talent2 = $('<img/>').attr('src', Path.GFX + 'ui/icons/talent_2.png');
+				var talent3 = $('<img/>').attr('src', Path.GFX + 'ui/icons/talent_3.png');
+				
+				var stars = [talent0,talent1,talent2,talent3]
+				
+				stats[i].append(stars[talents[i]]); result.append(stats[i]);	
+			}
+		}
+		
+		var traiticons = [$('<div class="trait trait1">'),$('<div class="trait trait2">'),$('<div class="trait trait3">'),$('<div class="trait trait4">')];
+		for(var i=0; i< 4; i++)
+		{
+			if(_data.traits[i] != "") 
+			{
+				var trait = $('<img/>').attr('src', Path.GFX + _data.traits[i]);
+				traiticons[i].append(trait); result.append(traiticons[i]);
+			}
+		}
+	}
 };
 
 WorldObituaryScreen.prototype.bindTooltips = function ()
 {
 	this.mColumnName.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Obituary.ColumnName });
+	this.mLevel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Obituary.Level });
+	this.mStats.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Obituary.Stats });
+	this.mTraits.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Obituary.Traits });
 	this.mColumnTime.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Obituary.ColumnTime });
 	this.mColumnBattles.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Obituary.ColumnBattles });
 	this.mColumnKills.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Obituary.ColumnKills });
@@ -178,6 +282,9 @@ WorldObituaryScreen.prototype.bindTooltips = function ()
 WorldObituaryScreen.prototype.unbindTooltips = function ()
 {
 	this.mColumnName.unbindTooltip();
+	this.mLevel.unbindTooltip();
+	this.mStats.unbindTooltip();
+	this.mTraits.unbindTooltip();
 	this.mColumnTime.unbindTooltip();
 	this.mColumnBattles.unbindTooltip();
 	this.mColumnKills.unbindTooltip();
@@ -353,6 +460,8 @@ WorldObituaryScreen.prototype.loadFromData = function (_data)
     else
     	this.mDialogContainer.findDialogSubTitle().text('' + _data.Fallen.length + ' men have fallen since you took command');
 
+	this.addListEntryIcons();
+	
 	for(var i = 0; i < _data.Fallen.length; ++i)
     {
 		this.addListEntry(_data.Fallen[i]);
