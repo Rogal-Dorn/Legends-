@@ -54,6 +54,82 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.CustomePerkTree = [
+			[
+				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.CripplingStrikes,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Student,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.BagsAndBelts,
+				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.LegendComposure
+			],
+			[
+				this.Const.Perks.PerkDefs.CoupDeGrace,
+				this.Const.Perks.PerkDefs.Dodge,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.FortifiedMind,
+				this.Const.Perks.PerkDefs.SteelBrow,
+				this.Const.Perks.PerkDefs.QuickHands,
+				this.Const.Perks.PerkDefs.LegendTrueBeliever,
+				this.Const.Perks.PerkDefs.Steadfast
+			],
+			[
+				this.Const.Perks.PerkDefs.Brawny,
+				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.RallyTheTroops,
+				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.ShieldExpert,
+				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendToolsDrawers,
+				this.Const.Perks.PerkDefs.LegendSecondWind
+			],
+			[
+				this.Const.Perks.PerkDefs.SpecMace,
+				this.Const.Perks.PerkDefs.SpecFlail,
+				this.Const.Perks.PerkDefs.SpecHammer,
+				this.Const.Perks.PerkDefs.SpecSword,
+				this.Const.Perks.PerkDefs.SpecPolearm,
+				this.Const.Perks.PerkDefs.SpecAxe,
+				this.Const.Perks.PerkDefs.SpecThrowing
+			],
+			[
+				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.ReachAdvantage,
+				this.Const.Perks.PerkDefs.Overwhelm,
+				this.Const.Perks.PerkDefs.LegendBattleheart,
+				this.Const.Perks.PerkDefs.FullForce,
+				this.Const.Perks.PerkDefs.ReturnFavor,
+				this.Const.Perks.PerkDefs.InspiringPresence,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,		
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,		
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire
+			],
+			[
+				this.Const.Perks.PerkDefs.Berserk,
+				this.Const.Perks.PerkDefs.BattleForged,
+				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.KillingFrenzy,
+				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.SunderingStrikes
+			],
+			[
+				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.Duelist,
+				this.Const.Perks.PerkDefs.Indomitable,
+				this.Const.Perks.PerkDefs.Stalwart,
+				this.Const.Perks.PerkDefs.BattleFlow,
+				this.Const.Perks.PerkDefs.LegendHoldTheLine,
+				this.Const.Perks.PerkDefs.PerfectFocus
+			],
+			[],
+			[],
+			[],
+			[]				
+		];
 
 	}
 

@@ -263,7 +263,7 @@ CharacterScreen.prototype.show = function (_data)
     }
     else
     {
-        this.mDataSource.loadPerkTreesOnce();
+        //this.mDataSource.loadPerkTreesOnce();
         this.mDataSource.loadBrothersList();
         this.mDataSource.loadStashList();
     }

@@ -277,34 +277,48 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
         return;
     }
 
+    console.error("loadFromDAta 0")
     if ('maxBrothers' in _data)
     {
         this.mMaxBrothers = _data.maxBrothers;
     }
+    
+    console.error("loadFromDAta 1")
 
     if ('stashSpaceUsed' in _data)
         this.mStashSpaceUsed = _data.stashSpaceUsed;
+    
+    
+        console.error("loadFromDAta 2")
 
     if ('stashSpaceMax' in _data)
         this.mStashSpaceMax = _data.stashSpaceMax;
 
-    if (CharacterScreenIdentifier.QueryResult.PerkTrees in _data)
-    {
-        this.loadPerkTrees(_data[CharacterScreenIdentifier.QueryResult.PerkTrees]);
-    }
+    // if (CharacterScreenIdentifier.QueryResult.PerkTrees in _data)
+    // {
+    //     this.loadPerkTrees(_data[CharacterScreenIdentifier.QueryResult.PerkTrees]);
+    // }
+    console.error("loadFromDAta 3")
+
     if (CharacterScreenIdentifier.QueryResult.Brothers in _data)
     {
         this.loadBrothersList(_data[CharacterScreenIdentifier.QueryResult.Brothers]);
     }
+    console.error("loadFromDAta 4")
+
     if (CharacterScreenIdentifier.QueryResult.Stash in _data)
     {
         this.loadStashList(_data[CharacterScreenIdentifier.QueryResult.Stash]);
     }
+    console.error("loadFromDAta 5")
+
     if ('formationIndex' in _data)
     {
         this.mFormationIndex = _data.formationIndex;
         this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationIndex, _data.formationIndex);
     }
+    console.error("loadFromDAta 6")
+
     if ('formationName' in _data)
     {
         this.mFormationName = _data.formationName;
@@ -1474,10 +1488,10 @@ CharacterScreenDatasource.prototype.unlockPerk = function(_brotherId, _perkId)
     });
 };
 
-// CharacterScreenDatasource.prototype.queryPerkInformation = function(_perkId, _background, _callback)
-// {
-//     this.notifyBackendQueryPerkInformation(_perkId, _background, _callback);
-// };
+CharacterScreenDatasource.prototype.queryPerkInformation = function(_perkId, _background, _callback)
+{
+    this.notifyBackendQueryPerkInformation(_perkId, _background, _callback);
+};
 
 
 CharacterScreenDatasource.prototype.updateBrother = function (_data)
@@ -1720,10 +1734,10 @@ CharacterScreenDatasource.prototype.notifyBackendSortButtonClicked = function ()
     return null;
 };*/
 
-// CharacterScreenDatasource.prototype.notifyBackendQueryPerkInformation = function (_perkId, _background, _callback)
-// {
-//     SQ.call(this.mSQHandle, 'onQueryPerkInformation', [_perkId, _background], _callback);
-// };
+CharacterScreenDatasource.prototype.notifyBackendQueryPerkInformation = function (_perkId, _background, _callback)
+{
+    SQ.call(this.mSQHandle, 'onQueryPerkInformation', [_perkId, _background], _callback);
+};
 
 CharacterScreenDatasource.prototype.notifyBackendUnlockPerk = function (_brotherId, _perkId, _callback)
 {

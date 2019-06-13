@@ -72,6 +72,49 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[0];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[0];
+		this.m.CustomPerkTree = [
+			[
+				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.BagsAndBelts
+			],
+			[
+				this.Const.Perks.PerkDefs.Dodge,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.QuickHands,
+				this.Const.Perks.PerkDefs.LegendRoster2
+			],
+			[
+				this.Const.Perks.PerkDefs.Anticipation,
+				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.LegendRoster3
+			],
+			[
+				this.Const.Perks.PerkDefs.SpecDagger,
+				this.Const.Perks.PerkDefs.SpecThrowing,
+				this.Const.Perks.PerkDefs.LegendRoster4,
+			],
+			[
+				this.Const.Perks.PerkDefs.LoneWolf,
+				this.Const.Perks.PerkDefs.Underdog,
+				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.LegendRoster5
+			],
+			[
+				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.LegendRoster6
+			],
+			[
+				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.LegendRoster7
+			],
+			[],
+			[],
+			[],
+			[]
+		];		
 	}
 
 	function getTooltip()

@@ -29,24 +29,75 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[4];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[5];
 		this.m.Modifiers.Terrain = [
-				0.0, // ?
-				0.0, //ocean
-				0.025,//plains
-				0.01, //swamp
-				0.01, //hills
-				0.01, //forest
-				0.01, //forest
-				0.01, //forest_leaves
-				0.01, //autumn_forest
-				0.01, //mountains
-				0.0, // ?
-				0.025, //farmland
-				0.011, // snow
-				0.015, // badlands
-				0.015, //highlands
-				0.025, //stepps
-				0.0 //ocean
-			];
+			0.0, // ?
+			0.0, //ocean
+			0.025,//plains
+			0.01, //swamp
+			0.01, //hills
+			0.01, //forest
+			0.01, //forest
+			0.01, //forest_leaves
+			0.01, //autumn_forest
+			0.01, //mountains
+			0.0, // ?
+			0.025, //farmland
+			0.011, // snow
+			0.015, // badlands
+			0.015, //highlands
+			0.025, //stepps
+			0.0 //ocean
+		];
+		this.m.CustomPerkTree = [
+			[
+				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.Steadfast,
+				this.Const.Perks.PerkDefs.Recover
+			],
+			[
+				this.Const.Perks.PerkDefs.Dodge,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.LegendComposure,
+				this.Const.Perks.PerkDefs.SteelBrow
+			],
+			[
+				this.Const.Perks.PerkDefs.Anticipation,
+				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.Sprint
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendEfficientPacking,
+				this.Const.Perks.PerkDefs.LegendAmmoBinding,
+				this.Const.Perks.PerkDefs.LegendMedPackages,
+				this.Const.Perks.PerkDefs.LegendToolsDrawers
+				
+			],
+			[
+				this.Const.Perks.PerkDefs.LoneWolf,
+				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.LegendBattleheart
+			],
+			[
+				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendMuscularity
+			],
+			[
+				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.Stalwart,
+				this.Const.Perks.PerkDefs.LegendSkillfulStacking
+				this.Const.Perks.PerkDefs.LegendAmmoBundles,
+				this.Const.Perks.PerkDefs.LegendMedIngredients,
+				this.Const.Perks.PerkDefs.LegendToolsSpares
+			],
+			[],
+			[],
+			[],
+			[]	
+		];
 	}
 
 	function getTooltip()
