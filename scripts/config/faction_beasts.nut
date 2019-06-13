@@ -372,6 +372,25 @@ gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 		240
 	]
 };
+gt.Const.Tactical.Actor.LegendWhiteWarwolf <- {
+	XP = 400,
+	ActionPoints = 12,
+	Hitpoints = 200,
+	Bravery = 100,
+	Stamina = 200,
+	MeleeSkill = 60,
+	RangedSkill = 0,
+	MeleeDefense = 30,
+	RangedDefense = 30,
+	Initiative = 150,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 30,
+	Armor = [
+		200,
+		200
+	]
+};
 gt.Const.Tactical.Actor.LegendRedbackSpider <- {
 	XP = 500,
 	ActionPoints = 16,

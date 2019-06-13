@@ -20,7 +20,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 
 	function start()
 	{
-		this.m.Payment.Pool = 2400 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 8000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
