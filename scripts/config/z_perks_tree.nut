@@ -5,8 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-
-local Tree = [
+local VanillaTree = [
 	[
 		gt.Const.Perks.PerkDefs.FastAdaption,
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
@@ -82,12 +81,12 @@ gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom)
 	local tree = []
 	local treeMap = {}
 
-	for( local row = 0; row < Tree.len(); row = ++row )
+	for( local row = 0; row < VanillaTree.len(); row = ++row )
 	{
 		local rowL = [];
-		for( local i = 0; i < Tree[row].len(); i = ++i )
+		for( local i = 0; i < VanillaTree[row].len(); i = ++i )
 		{
-			local perk = clone this.Const.Perks.PerkDefObjects[Tree[row][i]];
+			local perk = clone this.Const.Perks.PerkDefObjects[VanillaTree[row][i]];
 			perk.Row <- row;
 			perk.Unlocks <- row;
 			rowL.push(perk);
@@ -136,6 +135,103 @@ gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 		Map = treeMap
 	}	
 };
+
+
+gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
+{	
+	// _mins = {
+	// 	WeaponTrees = 6,
+	// 	DefenseTrees = 2,
+	// 	TraitsTrees = 8,
+	// 	EnemyTrees = 3,
+	// 	ClassTrees = 0
+	// },
+	// _map = {
+	// 	WeaponTrees = [],
+	// 	DefenseTrees = [],
+	// 	TraitsTrees = [],
+	// 	EnemyTrees = [],
+	// 	ClassTrees = []
+	// }	
+
+	local tree = [ [], [], [], [], [], [], [], [], [], [], [] ];
+
+	//Add weapons
+	while ( _mins.Weapon <= _map.Weapon.len())
+	{
+		local _exclude = [];
+		foreach (tt in _map.Weapon)
+		{
+			_exclude.push(tt.ID);
+		}
+		local t = this.Const.Perks.WeaponTrees.getRandom(_exclude)
+		_map.Weapon.push(t);
+	}
+
+	//Add Defense
+	while ( _mins.Defense <= _map.Defense.len())
+	{
+		local _exclude = [];
+		foreach (tt in _map.Defense)
+		{
+			_exclude.push(tt.ID);
+		}
+		local t = this.Const.Perks.DefenseTrees.getRandom(_exclude)
+		_map.Defense.push(t);
+	}
+
+	//Add Traits
+	while ( _mins.Traits <= _map.Traits.len())
+	{
+		local _exclude = [];
+		foreach (tt in _map.Traits)
+		{
+			_exclude.push(tt.ID);
+		}
+		local t = this.Const.Perks.TraitsTrees.getRandom(_exclude)
+		_map.Traits.push(t);
+	}
+
+	//Add Enemy
+	while ( _mins.Enemy <= _map.TraitsTrees.len())
+	{
+		local _exclude = [];
+		foreach (tt in _map.Enemy)
+		{
+			_exclude.push(tt.ID);
+		}
+		local t = this.Const.Perks.EnemyTrees.getRandom(_exclude)
+		_map.Enemy.push(t);
+	}
+
+	//Add Class
+	while ( _mins.Class <= _map.Class.len())
+	{
+		local _exclude = [];
+		foreach (tt in _map.Class)
+		{
+			_exclude.push(tt.ID);
+		}
+		local t = this.Const.Perks.ClassTrees.getRandom(_exclude)
+		_map.Class.push(t);
+	}
+
+	foreach (v in _map)
+	{
+		foreach(mT in v)
+		{
+			foreach (i, row in mT.Tree)
+			{
+				foreach(p in row)
+				{
+					tree[i].push(p);
+				}
+			}
+		}
+	}
+
+	return tree;
+}
 
 gt.Const.Perks.PerksTreeTemplate <- gt.Const.Perks.BuildCustomPerkTree(Tree)
 

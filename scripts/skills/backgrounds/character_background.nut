@@ -68,7 +68,24 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				0.0, //stepps
 				0.0 //ocean
 			]
-		}
+		},
+		PerkTreeDynamicMins = {
+			Weapon = 6,
+			Defense = 2,
+			Traits = 8,
+			Enemy = 3,
+			Class = 0
+		},
+		PerkTreeDynamic = {
+			Weapon = [],
+			Defense = [],
+			Traits = [],
+			Enemy = [],
+			Class = []
+		},
+		CustomPerkTree = null,
+		PerkTreeMap = null,
+		PerkTree = null
 	},
 	function isExcluded( _id )
 	{
@@ -268,6 +285,40 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				text = this.getBackgroundDescription(true)
 			}
 		];
+	}
+
+	function getPerkTree()
+	{
+		if (this.m.PerkTree != null)
+		{
+			return this.m.PerkTree;
+		}
+		
+		local pT = this.Const.Perks.getPerksTree(this.getID());
+		if (pT == null)
+		{
+			return [];
+		}
+		return pT.Tree;
+	}
+
+	function getPerk( _id )
+	{
+		if ( _id == null )
+		{
+			return null;
+		}		
+
+		if (this.m.PerkTreeMap != null)
+		{
+			if (!(_id in this.m.PerkTreeMap))
+			{
+				return null;
+			}
+			return this.m.PerkTreeMap[_id];
+		}
+
+		return this.Const.Perks.findByBackground(_id, this.getID());
 	}
 
 	function buildDescription( _isFinal = false )
@@ -494,6 +545,23 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		b.Initiative = this.Math.rand(a.Initiative[0], a.Initiative[1]);
 		this.getContainer().getActor().m.CurrentProperties = clone b;
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
+	}
+
+	function buildPerkTree()
+	{
+		if (this.m.PerkTree != null)
+		{
+			return;
+		}
+
+		if (this.m.CustomPerkTree == null)
+		{
+			this.m.CustomPerkTree = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
+		}
+
+		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
+		this.m.PerkTree = pT.Tree;
+		this.m.PerkTreeMap = pT.Map;
 	}
 
 	function updateAppearance()
@@ -764,6 +832,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeU8(this.m.Level);
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
+		_out.writeU8(this.m.CustomPerkTree.len());
+		for( local i = 0; i < this.m.CustomPerkTree.len(); i = ++i )
+        {
+			_out.writeU8(this.m.CustomPerkTree[i].len());
+			for( local j = 0; j < this.m.CustomPerkTree[i].len(); j = ++j )
+			{
+				_out.writeU16(this.m.CustomPerkTree[i][j];
+			}
+        }		
 	}
 
 	function onDeserialize( _in )
@@ -781,6 +858,27 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.DailyCostMult = 1.0;
+		}
+
+		if (_in.getMetaData().getVersion() >= 57)
+		{
+			this.m.CustomPerkTree = [];
+			local numRows = _in.readU8();
+			for( local i = 0; i < numRows; i = ++i )
+	        {
+				local numPerks = _in.readU8();
+				local perks = [];
+				for( local j = 0; j < numPerks; j = ++j )
+				{
+					perks.push(_in.readU16())
+				}
+				this.m.CustomPerkTree.push(perks);
+			}
+		}
+
+		if (this.m.CustomPerkTree != null)
+		{
+			this.buildPerkTree();
 		}
 	}
 

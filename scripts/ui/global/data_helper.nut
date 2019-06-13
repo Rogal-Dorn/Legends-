@@ -209,12 +209,8 @@ this.data_helper <- {
 			ground = []
 		};
 		this.addFlagsToUIData(_entity, _activeEntity, result.flags);
-		this.addCharacterToUIData(_entity, result.character);
-		local pT = this.Const.Perks.getPerksTree(result.character.background);
-		if (pT != null)
-		{
-			result.perkTree = pT.Tree;
-		}
+		this.addCharacterToUIData(_entity, result);
+		result.perkTree = _entity.getBackground().getPerkTree();
 		this.addStatsToUIData(_entity, result.stats);
 		local skills = _entity.getSkills();
 		this.addSkillsToUIData(skills.querySortedByItems(this.Const.SkillType.Active), result.activeSkills);
@@ -553,22 +549,22 @@ this.data_helper <- {
 		}
 	}
 
-	function convertPerkToUIData( _perkId, _background )
-	{
-		local perk = this.Const.Perks.findByBackground(_perkId, _background);
+	// function convertPerkToUIData( _perkId, _background )
+	// {
+	// 	local perk = this.Const.Perks.findByBackground(_perkId, _background);
 
-		if (perk != null)
-		{
-			return {
-				id = perk.ID,
-				name = perk.Name,
-				description = perk.Tooltip,
-				imagePath = perk.Icon
-			};
-		}
+	// 	if (perk != null)
+	// 	{
+	// 		return {
+	// 			id = perk.ID,
+	// 			name = perk.Name,
+	// 			description = perk.Tooltip,
+	// 			imagePath = perk.Icon
+	// 		};
+	// 	}
 
-		return null;
-	}
+	// 	return null;
+	// }
 
 	function convertPerksToUIData()
 	{

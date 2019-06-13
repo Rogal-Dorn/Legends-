@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-
+//Keep for Beta 11 backwards compatibility
 gt.Const.Perks.findByBackground <- function ( _perkID, _background )
 {
 	if ( _perkID == null || _background == null)
@@ -27,6 +27,7 @@ gt.Const.Perks.findByBackground <- function ( _perkID, _background )
 	return null;
 };
 
+//Keep for Beta 11 backwards compatibility
 gt.Const.Perks.getPerksTree <- function ( _background )
 {
 	switch ( _background )

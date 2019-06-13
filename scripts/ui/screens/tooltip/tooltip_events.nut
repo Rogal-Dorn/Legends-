@@ -903,7 +903,7 @@ this.tooltip_events <- {
 	function general_queryUIPerkTooltipData( _entityId, _perkId )
 	{
 		local player = this.Tactical.getEntityByID(_entityId);
-		local perk = this.Const.Perks.findByBackground(_perkId, player.getBackground().getID());
+		local perk = player.getBackground().getPerk(_perkId);
 
 		if (perk != null)
 		{
