@@ -889,3 +889,13 @@ Favored Enemy perks damages now scale with the number of favored enemies killed.
 
 Integrates Boyski's Better Obituaries mod into Legends.
 
+
+
+**dynamic spawns**
+Sword mastery split into sword mastery and greatsword mastery. 
+Sword mastery - Riposte has no pentalty to hitchance, Slash, Gash and Lunge gain +5% chance to hit
+Greatsword Mastery  - Split, Swing, Overhead Strike and Great Slash gain +5% chance to hit
+Greatswords are Greatsword, Longsword, Warbrand and Rhomphaia
+Greatswords have Great Slash Instead of Slash. Great Slash costs 3 more fatigue, but grants +30% armor penetration. 
+New Perk 'Forceful Swings' grants +10% damage to AOE attacks 
+
