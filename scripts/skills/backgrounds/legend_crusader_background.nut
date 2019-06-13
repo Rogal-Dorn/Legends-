@@ -54,7 +54,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
-		this.m.CustomePerkTree = [
+		this.m.CustomPerkTree = [
 			[
 				this.Const.Perks.PerkDefs.Colossus,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
