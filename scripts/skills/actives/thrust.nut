@@ -67,6 +67,12 @@ this.thrust <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.MeleeSkill += 20;
+
+			if (_properties.IsSpecializedInSpearThrust )
+			{
+			_properties.DamageTotalMult *= 1.15;
+			}
+
 		}
 	}
 

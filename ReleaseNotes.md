@@ -898,4 +898,6 @@ Greatsword Mastery  - Split, Swing, Overhead Strike and Great Slash gain +5% cha
 Greatswords are Greatsword, Longsword, Warbrand and Rhomphaia
 Greatswords have Great Slash Instead of Slash. Great Slash costs 3 more fatigue, but grants +30% armor penetration. 
 New Perk 'Forceful Swings' grants +10% damage to AOE attacks 
+New Perk 'Spearwaller' grants -25% fatigue usage on spearwall, stacks with spear mastery
+New Perk 'Thrust Master' grants +15% damage on the 'Thrust' skill
 

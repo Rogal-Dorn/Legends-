@@ -73,7 +73,19 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInSpears ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = 1;
+
+		if (_properties.IsSpecializedInSpears )
+		{
+		this.m.FatigueCostMult *= 0.75;
+		}
+
+		if (_properties.IsSpecializedInSpearWall )
+		{
+		this.m.FatigueCostMult *= 0.75;
+		}
+
+		
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

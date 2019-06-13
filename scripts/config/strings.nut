@@ -1277,8 +1277,11 @@ gt.Const.Strings.PerkName <- {
 	LegendFavouredEnemySwordmaster = "Favoured Enemy - Sword Master",
 	LegendFavouredEnemyMercenary = "Favoured Enemy - Mercenary",
 	LegendFavouredEnemyCaravan = "Favoured Enemy - Caravan",
-	SpecSword = "Greatsword Mastery",
-	LegendForcefulSwing = "Forceful Swing"
+	LegendSpecGreatSword = "Greatsword Mastery",
+	LegendForcefulSwing = "Forceful Swing",
+	LegendSpecSpearWall = "Spearwaller",
+	LegendSpecSpearThrust = "Thrust Master"
+
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
@@ -1532,8 +1535,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemySwordmaster = "The path to martial prowess is beset by the fake and the weak. Only one can be the greatest swordsman. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a sword master",
 	LegendFavouredEnemyMercenary = "Mercenaries are the worst, no cause, no principles, no honour. They seek only coin, so they shall find only death. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a mercenary",
 	LegendFavouredEnemyCaravan = "Civilians are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a civilian",
-	SpecSword = "Master the art of fighting with a large unwieldy sword. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit, Swing, Overhead Strike and Great Slash gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	SpecGreatSword = "Master the art of fighting with a large unwieldy sword. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit, Swing, Overhead Strike and Great Slash gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
 	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage. "
+	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature. Spearwall costs[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] less fatigue. Stacks with spear mastery ",
+	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust does [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
