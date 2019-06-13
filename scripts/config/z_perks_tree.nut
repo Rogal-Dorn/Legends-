@@ -158,11 +158,12 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	// 	EnemyTrees = [],
 	// 	ClassTrees = []
 	// }	
-
+	this.logInfo("Getting dynamic perk tree")
 	local tree = [ [], [], [], [], [], [], [], [], [], [], [] ];
 
 	//Add weapons
-	while ( _mins.Weapon <= _map.Weapon.len())
+	local count = _mins.Weapon - _map.Weapon.len();
+	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
 		foreach (tt in _map.Weapon)
@@ -170,11 +171,14 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.WeaponTrees.getRandom(_exclude)
+		this.logInfo("Adding weapon perk tree " + t.ID);
 		_map.Weapon.push(t);
+		
 	}
 
 	//Add Defense
-	while ( _mins.Defense <= _map.Defense.len())
+	local count = _mins.Defense - _map.Defense.len();
+	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
 		foreach (tt in _map.Defense)
@@ -182,11 +186,13 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.DefenseTrees.getRandom(_exclude)
+		this.logInfo("Adding Defense perk tree " + t.ID);
 		_map.Defense.push(t);
 	}
 
 	//Add Traits
-	while ( _mins.Traits <= _map.Traits.len())
+	local count = _mins.Traits - _map.Traits.len();
+	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
 		foreach (tt in _map.Traits)
@@ -194,11 +200,13 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.TraitsTrees.getRandom(_exclude)
+		this.logInfo("Adding Traits perk tree " + t.ID);
 		_map.Traits.push(t);
 	}
 
 	//Add Enemy
-	while ( _mins.Enemy <= _map.Enemy.len())
+	local count = _mins.Enemy - _map.Enemy.len();
+	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
 		foreach (tt in _map.Enemy)
@@ -206,18 +214,21 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.EnemyTrees.getRandom(_exclude)
+		this.logInfo("Adding Enemy perk tree " + t.ID);
 		_map.Enemy.push(t);
 	}
 
 	//Add Class
-	while ( _mins.Class <= _map.Class.len())
+	local count = _mins.Class - _map.Class.len();
+	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
 		foreach (tt in _map.Class)
 		{
 			_exclude.push(tt.ID);
-		}
+		}		
 		local t = this.Const.Perks.ClassTrees.getRandom(_exclude)
+		this.logInfo("Adding Class perk tree " + t.ID);
 		_map.Class.push(t);
 	}
 

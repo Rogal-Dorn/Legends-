@@ -271,26 +271,19 @@ CharacterScreenDatasource.prototype.getFormationName = function ()
 
 CharacterScreenDatasource.prototype.loadFromData = function(_data)
 {
+
     if (_data === undefined || _data == null || typeof(_data) !== 'object')
     {
         console.error('ERROR: Failed to query character screen result data. Reason: Invalid result.');
         return;
     }
 
-    console.error("loadFromDAta 0")
     if ('maxBrothers' in _data)
-    {
         this.mMaxBrothers = _data.maxBrothers;
-    }
-    
-    console.error("loadFromDAta 1")
 
     if ('stashSpaceUsed' in _data)
         this.mStashSpaceUsed = _data.stashSpaceUsed;
     
-    
-        console.error("loadFromDAta 2")
-
     if ('stashSpaceMax' in _data)
         this.mStashSpaceMax = _data.stashSpaceMax;
 
@@ -298,26 +291,22 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
     // {
     //     this.loadPerkTrees(_data[CharacterScreenIdentifier.QueryResult.PerkTrees]);
     // }
-    console.error("loadFromDAta 3")
 
     if (CharacterScreenIdentifier.QueryResult.Brothers in _data)
     {
         this.loadBrothersList(_data[CharacterScreenIdentifier.QueryResult.Brothers]);
     }
-    console.error("loadFromDAta 4")
 
     if (CharacterScreenIdentifier.QueryResult.Stash in _data)
     {
         this.loadStashList(_data[CharacterScreenIdentifier.QueryResult.Stash]);
     }
-    console.error("loadFromDAta 5")
 
     if ('formationIndex' in _data)
     {
         this.mFormationIndex = _data.formationIndex;
         this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.FormationIndex, _data.formationIndex);
     }
-    console.error("loadFromDAta 6")
 
     if ('formationName' in _data)
     {

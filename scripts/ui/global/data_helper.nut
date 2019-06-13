@@ -209,7 +209,7 @@ this.data_helper <- {
 			ground = []
 		};
 		this.addFlagsToUIData(_entity, _activeEntity, result.flags);
-		this.addCharacterToUIData(_entity, result);
+		this.addCharacterToUIData(_entity, result.character);
 		result.perkTree = _entity.getBackground().getPerkTree();
 		this.addStatsToUIData(_entity, result.stats);
 		local skills = _entity.getSkills();
@@ -237,6 +237,10 @@ this.data_helper <- {
 			result.ground.push(null);
 		}
 
+		foreach(k, v in result)
+		{
+			this.logInfo("k = " + k + " : v = " + v)
+		}
 		return result;
 	}
 
@@ -550,26 +554,26 @@ this.data_helper <- {
 	}
 
 
-	// function convertPerkToUIData( _perkId, _background )
-	// {
-	// 	local perk = this.Const.Perks.findByBackground(_perkId, _background);
+	function convertPerkToUIData( _perkId, _background )
+	{
+		local perk = this.Const.Perks.findByBackground(_perkId, _background);
 
-	// 	if (perk != null)
-	// 	{
-	// 		return {
-	// 			id = perk.ID,
-	// 			name = perk.Name,
-	// 			description = perk.Tooltip,
-	// 			imagePath = perk.Icon
-	// 		};
-	// 	}
+		if (perk != null)
+		{
+			return {
+				id = perk.ID,
+				name = perk.Name,
+				description = perk.Tooltip,
+				imagePath = perk.Icon
+			};
+		}
 
-	// 	return null;
-	// }
+		return null;
+	}
 
 	function convertPerksToUIData()
 	{
-		return Const.Perks.PerksTreeTemplate;
+		return this.Const.Perks.PerksTreeTemplate;
 	}
 
 	function convertCombatResultRosterToUIData()
