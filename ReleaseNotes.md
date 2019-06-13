@@ -900,4 +900,6 @@ Greatswords have Great Slash Instead of Slash. Great Slash costs 3 more fatigue,
 New Perk 'Forceful Swings' grants +10% damage to AOE attacks 
 New Perk 'Spearwaller' grants -25% fatigue usage on spearwall, stacks with spear mastery
 New Perk 'Thrust Master' grants +15% damage on the 'Thrust' skill
-
+New Perk 'Balance' grants up to 50 bonuse melee and ranged defense if your maximum armor value matches your current initiative. The value decreases for every point of difference between the two, to a minimum of 5. 
+New Perk 'Matching Set' grants up to 5 fatigue per round if your helmet and armor values match. 
+New Perk 'Lithe' - Like nimble, but with the 15 fatigue floor raised to 30, and the bonus halved
