@@ -52,7 +52,7 @@ this.split <- this.inherit("scripts/skills/skill", {
 			text = "Can hit up to 2 targets"
 		});
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
 		{
 			ret.push({
 				id = 6,
@@ -67,7 +67,7 @@ this.split <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInGreatSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )
@@ -117,7 +117,7 @@ this.split <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+			if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
 			{
 				_properties.MeleeSkill -= 5;
 			}

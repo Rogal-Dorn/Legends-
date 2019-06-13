@@ -898,6 +898,7 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInCrossbows = false,
 	IsSpecializedInThrowing = false,
 	IsSpecializedInSwords = false,
+	IsSpecializedInGreatSwords = false,
 	IsSpecializedInCleavers = false,
 	IsSpecializedInMaces = false,
 	IsSpecializedInHammers = false,

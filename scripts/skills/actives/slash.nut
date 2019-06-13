@@ -51,6 +51,16 @@ this.slash <- this.inherit("scripts/skills/skill", {
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
 			}
 		]);
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue  + "]+5%[/color] chance to hit due to sword specialisation"
+			});
+		}
+
 		return ret;
 	}
 
@@ -70,6 +80,11 @@ this.slash <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.MeleeSkill += 10;
+
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+			{
+				_properties.MeleeSkill += 5;
+			}
 		}
 	}
 

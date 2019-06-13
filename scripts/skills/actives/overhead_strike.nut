@@ -110,7 +110,7 @@ this.overhead_strike <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInGreatSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )
@@ -143,6 +143,11 @@ this.overhead_strike <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeSkill += 5;
 			_properties.DamageRegularMin += 20;
 			_properties.DamageRegularMax += 20;
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+			{
+				_properties.MeleeSkill += 5;
+			}
+
 		}
 	}
 

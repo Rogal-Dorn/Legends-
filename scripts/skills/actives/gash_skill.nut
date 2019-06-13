@@ -58,6 +58,15 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] lower threshold to inflict injuries"
 			}
 		]);
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit due to sword specialisation"
+			});
+		}
 		return ret;
 	}
 
@@ -89,6 +98,17 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 			if (_targetEntity.isAlive() && !_targetEntity.getCurrentProperties().IsImmuneToBleeding)
 			{
 				this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, this.getContainer().getActor().getPos());
+			}
+		}
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+			{
+				_properties.MeleeSkill += 5;
 			}
 		}
 	}

@@ -78,6 +78,16 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+		{
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/hitchance.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit due to sword specialisation"
+			});
+		}
+
 		return ret;
 	}
 
@@ -259,6 +269,11 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			local a = this.getContainer().getActor();
 			local s = this.Math.minf(2.0, 2.0 * (this.Math.max(0, a.getInitiative() + (_targetEntity != null ? this.getFatigueCost() : 0)) / 175.0));
 			_properties.DamageTotalMult *= s;
+
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+			{
+				_properties.MeleeSkill += 5;
+			}
 		}
 	}
 

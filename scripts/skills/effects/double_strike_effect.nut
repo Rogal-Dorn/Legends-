@@ -16,7 +16,7 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Having just landed a hit, this character is ready to perform a powerful followup strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage to a single target. If multiple targets are hit, only the first one will receive increased damage. If the attack misses, the effect is wasted.";
+		return "Having just landed a hit, this character is ready to perform a powerful followup strike! The next attack will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] damage to a single target. If multiple targets are hit, only the first one will receive increased damage. If the attack misses, the effect is wasted.";
 	}
 
 	function onAdded()
@@ -33,7 +33,7 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.m.IsGarbage && this.m.TimeAdded + 0.1 < this.Time.getVirtualTimeF() && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
-			_properties.DamageTotalMult *= 1.2;
+			_properties.DamageTotalMult *= 1.4;
 			this.removeSelf();
 		}
 	}

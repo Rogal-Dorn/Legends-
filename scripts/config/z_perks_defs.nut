@@ -2057,7 +2057,34 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/favoured_caravan_01.png",
 		IconDisabled = "ui/perks/favoured_caravan_bw.png",
 		Const = "LegendFavouredEnemyCaravan"
-	}
+	},
+	{
+		ID = "perk.legend_favoured_enemy_caravan",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_caravan",
+		Name = this.Const.Strings.PerkName.LegendFavouredEnemyCaravan,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyCaravan,
+		Icon = "ui/perks/favoured_caravan_01.png",
+		IconDisabled = "ui/perks/favoured_caravan_bw.png",
+		Const = "LegendFavouredEnemyCaravan"
+	},
+	{
+		ID = "perk.mastery.greatsword",
+		Script = "scripts/skills/perks/perk_mastery_greatsword",
+		Name = this.Const.Strings.PerkName.SpecGreatSword,
+		Tooltip = this.Const.Strings.PerkDescription.SpecGreatSword,
+		Icon = "ui/perks/spec_greatsword.png",
+		IconDisabled = "ui/perks/spec_greatsword_bw.png",
+		Const = "SpecGreatSword"
+	},
+	{
+		ID = "perk.legend_forceful_swing",
+		Script = "scripts/skills/perks/perk_legend_forceful_swing",
+		Name = this.Const.Strings.PerkName.LegendForcefulSwing,
+		Tooltip = this.Const.Strings.PerkDescription.LegendForcefulSwing,
+		Icon = "ui/perks/forceful_swings.png",
+		IconDisabled = "ui/perks/forceful_swings_bw.png",
+		Const = "LegendForcefulSwing"
+	},
 ];
 
 

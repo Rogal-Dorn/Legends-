@@ -1276,7 +1276,9 @@ gt.Const.Strings.PerkName <- {
 	LegendFavouredEnemyArcher = "Favoured Enemy - Archer",
 	LegendFavouredEnemySwordmaster = "Favoured Enemy - Sword Master",
 	LegendFavouredEnemyMercenary = "Favoured Enemy - Mercenary",
-	LegendFavouredEnemyCaravan = "Favoured Enemy - Caravan"
+	LegendFavouredEnemyCaravan = "Favoured Enemy - Caravan",
+	SpecSword = "Greatsword Mastery",
+	LegendForcefulSwing = "Forceful Swing"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
@@ -1362,7 +1364,7 @@ gt.Const.Strings.PerkDescription <- {
 	SpecAxe = "Master combat with axes and destroying shields. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit Shield damage to shields is increased by [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] when used with axes.\n\nRound Swing gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Longaxe no longer has a penalty for attacking targets directly adjacent.",
 	SpecCleaver = "Master cleavers to inflict gruesome wounds. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nBleeding damage inflicted by cleavers and whips is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] and [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] per turn, respectively.\n\nDisarm no longer has a penalty to hit.",
 	SpecDagger = "Master swift and deadly daggers. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nStab and Puncture have a reduced Action Point cost to allow for an additional attack each turn.",
-	SpecSword = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nRiposte no longer has a penalty to hitchance.\n\nSplit and Swing gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	SpecSword = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nRiposte no longer has a penalty to hitchance.\n\n Slash, Gash and Lunge gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
 	SpecSpear = "Master fighting with spears and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSpearwall is no longer disabled once an opponent manages to overcome it. Instead, Spearwall continues to give free attacks on any further opponent attempting to enter the Zone of Control.\n\nThe Spetum and Warfork no longer have a penalty for attacking targets directly adjacent.",
 	SpecPolearm = "Master polearms and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nPolearm skills have their Action Point cost reduced to [color=" + this.Const.UI.Color.NegativeValue + "]5[/color], and no longer have a penalty for attacking targets directly adjacent.",
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
@@ -1529,7 +1531,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemyArcher = "Some may claim to be the greatest shot in the land, but none have outshot you yet. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on an archer",
 	LegendFavouredEnemySwordmaster = "The path to martial prowess is beset by the fake and the weak. Only one can be the greatest swordsman. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a sword master",
 	LegendFavouredEnemyMercenary = "Mercenaries are the worst, no cause, no principles, no honour. They seek only coin, so they shall find only death. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a mercenary",
-	LegendFavouredEnemyCaravan = "Civilians are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a civilian"
+	LegendFavouredEnemyCaravan = "Civilians are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a civilian",
+	SpecSword = "Master the art of fighting with a large unwieldy sword. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit, Swing, Overhead Strike and Great Slash gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage. "
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

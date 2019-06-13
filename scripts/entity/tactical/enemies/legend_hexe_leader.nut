@@ -238,7 +238,7 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.addSprite("socket").setBrush("bust_base_beasts");
 		local body = this.addSprite("body");
-		body.setBrush("bust_hexen_body_0" + this.Math.rand(1, 3));
+		body.setBrush("bust_hexenleader_body_01");
 		body.varySaturation(0.1);
 		body.varyColor(0.05, 0.05, 0.05);
 		local charm_body = this.addSprite("charm_body");
@@ -248,7 +248,7 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 		charm_armor.setBrush("bust_hexen_charmed_dress_0" + this.Math.rand(1, 3));
 		charm_armor.Visible = false;
 		local head = this.addSprite("head");
-		head.setBrush("bust_hexen_head_0" + this.Math.rand(1, 3));
+		head.setBrush("bust_hexenleader_head_01");
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
 		local charm_head = this.addSprite("charm_head");
