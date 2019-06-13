@@ -8,12 +8,12 @@ if (!("Perks" in gt.Const))
 gt.Const.Perks.ShieldTree <- {
 	ID = "ShieldTree",
 	Tree = [
-		[gt.Const.Perks.PerkDefs.Stun],
-		[gt.Const.Perks.PerkDefs.Daze],
 		[],
-		[gt.Const.Perks.PerkDefs.SpecMace],
 		[],
-		[],//gt.Const.Perks.PerkDefs.DefensiveStun],
+		[],
+		[],
+		[],
+		[],
 		[]
 	]
 };

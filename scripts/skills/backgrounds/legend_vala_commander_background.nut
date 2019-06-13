@@ -38,6 +38,57 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
 		this.m.Modifiers.Enchanting = 1.0;		
 		this.m.Level = 2;
+		this.m.CustomPerkTree = [
+			[
+				this.Const.Perks.PerkDefs.LegendValaWarden,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.Student,
+				this.Const.Perks.PerkDefs.LegendValaInscribeShield,
+				this.Const.Perks.PerkDefs.LegendRoster1
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
+				this.Const.Perks.PerkDefs.FastAdaption,
+				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.FortifiedMind,
+				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.LegendRoster2
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantSenses,
+				this.Const.Perks.PerkDefs.LegendValaPremonition,
+				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
+				this.Const.Perks.PerkDefs.LegendRoster3
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantMastery,
+				this.Const.Perks.PerkDefs.LegendValaTranceMastery,
+				this.Const.Perks.PerkDefs.LegendValaInscriptionMastery
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantDisharmony,
+				this.Const.Perks.PerkDefs.LegendValaInscribeArmor,
+				this.Const.Perks.PerkDefs.LegendRoster4
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaThreads,
+				this.Const.Perks.PerkDefs.LegendValaSpiritualBond,
+				this.Const.Perks.PerkDefs.LegendRoster5
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantFury,
+				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
+				this.Const.Perks.PerkDefs.LegendRoster6
+			],
+			[],
+			[],
+			[],
+			[]				
+		];
 	}
 
 	function getTooltip()

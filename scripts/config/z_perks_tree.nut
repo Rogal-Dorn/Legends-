@@ -122,6 +122,11 @@ gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 		for( local i = 0; i < _custom[row].len(); i = ++i )
 		{
 			local perk = clone this.Const.Perks.PerkDefObjects[_custom[row][i]];
+			//Dont add dupes
+			if (perk.ID in treeMap)
+			{
+				continue;
+			}
 			perk.Row <- row;
 			perk.Unlocks <- row;
 			rowL.push(perk);
@@ -193,7 +198,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	}
 
 	//Add Enemy
-	while ( _mins.Enemy <= _map.TraitsTrees.len())
+	while ( _mins.Enemy <= _map.Enemy.len())
 	{
 		local _exclude = [];
 		foreach (tt in _map.Enemy)
@@ -233,5 +238,5 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	return tree;
 }
 
-gt.Const.Perks.PerksTreeTemplate <- gt.Const.Perks.BuildCustomPerkTree(Tree)
+gt.Const.Perks.PerksTreeTemplate <- gt.Const.Perks.BuildCustomPerkTree(VanillaTree)
 

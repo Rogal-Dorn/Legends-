@@ -5,7 +5,7 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-//Keep for Beta 11 backwards compatibility
+//Keep for Beta 11backwards compatibility
 gt.Const.Perks.findByBackground <- function ( _perkID, _background )
 {
 	if ( _perkID == null || _background == null)
@@ -32,60 +32,60 @@ gt.Const.Perks.getPerksTree <- function ( _background )
 {
 	switch ( _background )
 	{
-		case "background.legend_commander_witch":
-			return gt.Const.Perks.PerksTreeSeer;
-			break;
-		case "background.legend_witch":
-			return gt.Const.Perks.PerksTreeSeerWeak;
-			break;
-		case "background.legend_commander_crusader":
-			return gt.Const.Perks.PerksTreeCrusader;
-			break;
-		case "background.legend_crusader":
-			return gt.Const.Perks.PerksTreeCrusaderWeak;
-			break;
-		case "background.legend_commander_ranger":
-			return gt.Const.Perks.PerksTreeRanger;
-			break;
-		case "background.legend_ranger":
-			return gt.Const.Perks.PerksTreeRangerWeak;
-			break;
-		case "background.legend_commander_necro":
-			return gt.Const.Perks.PerksTreeNecromancer;
-			break;
-		case "background.legend_necro":
-			return gt.Const.Perks.PerksTreeNecromancerWeak;
-			break;
-		case "background.legend_commander_noble":
-			return gt.Const.Perks.PerksTreeNoble;
-			break;
+		// case "background.legend_commander_witch":
+		// 	return gt.Const.Perks.PerksTreeSeer;
+		// 	break;
+		// case "background.legend_witch":
+		// 	return gt.Const.Perks.PerksTreeSeerWeak;
+		// 	break;
+		// case "background.legend_commander_crusader":
+		// 	return gt.Const.Perks.PerksTreeCrusader;
+		// 	break;
+		// case "background.legend_crusader":
+		// 	return gt.Const.Perks.PerksTreeCrusaderWeak;
+		// 	break;
+		// case "background.legend_commander_ranger":
+		// 	return gt.Const.Perks.PerksTreeRanger;
+		// 	break;
+		// case "background.legend_ranger":
+		// 	return gt.Const.Perks.PerksTreeRangerWeak;
+		// 	break;
+		// case "background.legend_commander_necro":
+		// 	return gt.Const.Perks.PerksTreeNecromancer;
+		// 	break;
+		// case "background.legend_necro":
+		// 	return gt.Const.Perks.PerksTreeNecromancerWeak;
+		// 	break;
+		// case "background.legend_commander_noble":
+		// 	return gt.Const.Perks.PerksTreeNoble;
+		// 	break;
 		case "background.legend_noble":
 			return gt.Const.Perks.PerksTreeNobleWeak;
 			break;
-		case "background.legend_commander_beggar":
-			return gt.Const.Perks.PerksTreeBeggar;
-			break;
-		case "background.legend_commander_berserker":
-			return gt.Const.Perks.PerksTreeBerserker;	
-			break;
-		case "background.legend_berserker":
-			return gt.Const.Perks.PerksTreeBerserkerWeak;
-			break;
-		case "background.legend_donkey":
-			return gt.Const.Perks.PerksTreeDonkey;
-			break;
-		case "background.legend_commander_trader":
-			return gt.Const.Perks.PerksTreeTrader;
-			break;
-		case "background.legend_inventor":
-			return gt.Const.Perks.PerksTreeInventorWeak;
-			break;
-		case "background.legend_commander_vala":
-			return gt.Const.Perks.PerksTreeVala;
-			break;
-		case "background.legend_vala":
-			return gt.Const.Perks.PerksTreeValaWeak;
-			break;			
+		// case "background.legend_commander_beggar":
+		// 	return gt.Const.Perks.PerksTreeBeggar;
+		// 	break;
+		// case "background.legend_commander_berserker":
+		// 	return gt.Const.Perks.PerksTreeBerserker;	
+		// 	break;
+		// case "background.legend_berserker":
+		// 	return gt.Const.Perks.PerksTreeBerserkerWeak;
+		// 	break;
+		// case "background.legend_donkey":
+		// 	return gt.Const.Perks.PerksTreeDonkey;
+		// 	break;
+		// case "background.legend_commander_trader":
+		// 	return gt.Const.Perks.PerksTreeTrader;
+		// 	break;
+		// case "background.legend_inventor":
+		// 	return gt.Const.Perks.PerksTreeInventorWeak;
+		// 	break;
+		// case "background.legend_commander_vala":
+		// 	return gt.Const.Perks.PerksTreeVala;
+		// 	break;
+		// case "background.legend_vala":
+		// 	return gt.Const.Perks.PerksTreeValaWeak;
+		// 	break;			
 		case "background.apprentice":
 			return gt.Const.Perks.PerksTreeTemplate;
 			break;

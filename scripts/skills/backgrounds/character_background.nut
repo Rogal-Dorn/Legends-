@@ -293,7 +293,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			return this.m.PerkTree;
 		}
-		
+
 		local pT = this.Const.Perks.getPerksTree(this.getID());
 		if (pT == null)
 		{
@@ -832,15 +832,22 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeU8(this.m.Level);
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
-		_out.writeU8(this.m.CustomPerkTree.len());
-		for( local i = 0; i < this.m.CustomPerkTree.len(); i = ++i )
-        {
-			_out.writeU8(this.m.CustomPerkTree[i].len());
-			for( local j = 0; j < this.m.CustomPerkTree[i].len(); j = ++j )
+		if (this.m.CustomPerkTree == null)
+		{
+			_out.writeU8(0);
+		} 
+		else 
+		{
+			_out.writeU8(this.m.CustomPerkTree.len());
+			for( local i = 0; i < this.m.CustomPerkTree.len(); i = ++i )
 			{
-				_out.writeU16(this.m.CustomPerkTree[i][j];
-			}
-        }		
+				_out.writeU8(this.m.CustomPerkTree[i].len());
+				for( local j = 0; j < this.m.CustomPerkTree[i].len(); j = ++j )
+				{
+					_out.writeU16(this.m.CustomPerkTree[i][j]);
+				}
+			}		
+		}
 	}
 
 	function onDeserialize( _in )

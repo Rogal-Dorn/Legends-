@@ -22,7 +22,6 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.importSettlementIntro();
 	}
 
-
 	function start()
 	{
 		this.m.Payment.Pool = 5000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
@@ -432,7 +431,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "SignsOfAFight",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{With the beasts slain you take a moment to rest, one of your mercenaries asks you. "So if you just killed the king of the wolves, does that make you the new king?" }",
+			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{With the beasts slain you take a moment to rest, one of your mercenaries asks you..%SPEECH_ON% So if you just killed the king of the wolves, does that make you the new king?.%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			Options = [

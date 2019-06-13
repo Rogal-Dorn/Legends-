@@ -746,6 +746,7 @@ CharacterScreenBrothersListModule.prototype.onBrotherUpdated = function (_dataSo
 
 CharacterScreenBrothersListModule.prototype.onBrotherSelected = function (_dataSource, _brother)
 {
+    console.error("list module")
 	if (_brother !== null && CharacterScreenIdentifier.Entity.Id in _brother)
 	{
 		this.removeCurrentBrotherSlotSelection();

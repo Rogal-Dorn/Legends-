@@ -83,6 +83,85 @@ this.legend_female_berserker_commander_background <- this.inherit("scripts/skill
 			0.0,
 			0.0
 		];
+		this.m.CustomPerkTree = [ 
+			[
+				this.Const.Perks.PerkDefs.FastAdaption,
+				this.Const.Perks.PerkDefs.CripplingStrikes,
+				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.Steadfast,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.BloodyHarvest
+			],
+			[
+				this.Const.Perks.PerkDefs.CoupDeGrace,
+				this.Const.Perks.PerkDefs.Dodge,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.LegendComposure,
+				this.Const.Perks.PerkDefs.SteelBrow,
+				this.Const.Perks.PerkDefs.QuickHands,
+				this.Const.Perks.PerkDefs.DevastatingStrikes,
+				this.Const.Perks.PerkDefs.LegendRoster2
+			],
+			[
+				this.Const.Perks.PerkDefs.Brawny,
+				this.Const.Perks.PerkDefs.Anticipation,
+				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.Debilitate,
+				this.Const.Perks.PerkDefs.Relentless,
+				this.Const.Perks.PerkDefs.LegendTrueBeliever,
+				this.Const.Perks.PerkDefs.Sprint,
+				this.Const.Perks.PerkDefs.LegendSecondWind,
+				this.Const.Perks.PerkDefs.LegendRoster3
+			],
+			[
+				this.Const.Perks.PerkDefs.SpecMace,
+				this.Const.Perks.PerkDefs.SpecFlail,
+				this.Const.Perks.PerkDefs.SpecHammer,
+				this.Const.Perks.PerkDefs.SpecAxe,
+				this.Const.Perks.PerkDefs.SpecCleaver,
+				this.Const.Perks.PerkDefs.SpecSword,
+				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
+				this.Const.Perks.PerkDefs.SpecThrowing
+			],
+			[
+				this.Const.Perks.PerkDefs.LoneWolf,
+				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.Slaughterer,
+				this.Const.Perks.PerkDefs.Vengeance,
+				this.Const.Perks.PerkDefs.LegendBattleheart,
+				this.Const.Perks.PerkDefs.SunderingStrikes,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,		
+				this.Const.Perks.PerkDefs.LegendRoster4
+
+			],
+			[
+				// This hard crashes the game // this.Const.Perks.PerkDefs.Ironside,
+				this.Const.Perks.PerkDefs.Berserk,
+				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.ReturnFavor,
+				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendMuscularity,
+				this.Const.Perks.PerkDefs.LegendForwardPush
+			],
+			[
+				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.Duelist,
+				this.Const.Perks.PerkDefs.KillingFrenzy,
+				this.Const.Perks.PerkDefs.BattleFlow,
+				this.Const.Perks.PerkDefs.Stalwart,
+				this.Const.Perks.PerkDefs.LegendBerserkerRage,
+				this.Const.Perks.PerkDefs.LegendInfectiousRage,
+				this.Const.Perks.PerkDefs.LegendUberNimble,
+				this.Const.Perks.PerkDefs.LegendRoster6		
+			]
+		];			
 	}
 
 	function getTooltip()

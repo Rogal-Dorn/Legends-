@@ -41,6 +41,79 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[4];
+		this.m.CustomPerkTree = [
+			[
+				this.Const.Perks.PerkDefs.FastAdaption,
+				this.Const.Perks.PerkDefs.BagsAndBelts,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.Student,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.Lookout,
+				this.Const.Perks.PerkDefs.LegendBribe
+			],
+			[
+				this.Const.Perks.PerkDefs.CoupDeGrace,
+				this.Const.Perks.PerkDefs.Dodge,
+				this.Const.Perks.PerkDefs.FortifiedMind,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.QuickHands,
+				this.Const.Perks.PerkDefs.RallyTheTroops,
+				this.Const.Perks.PerkDefs.SteelBrow,
+				this.Const.Perks.PerkDefs.LegendComposure,
+				this.Const.Perks.PerkDefs.LegendRoster2
+
+			],
+			[
+				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.Anticipation,
+				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.Sprint,
+				this.Const.Perks.PerkDefs.LegendDangerPay,
+				this.Const.Perks.PerkDefs.LegendRoster3
+			],
+			[
+				this.Const.Perks.PerkDefs.SpecCrossbow,
+				this.Const.Perks.PerkDefs.SpecPolearm,
+				this.Const.Perks.PerkDefs.SpecThrowing,
+				this.Const.Perks.PerkDefs.SpecDagger,
+				this.Const.Perks.PerkDefs.LegendEfficientPacking,
+				this.Const.Perks.PerkDefs.LegendAmmoBinding,
+				this.Const.Perks.PerkDefs.LegendMedPackages,
+				this.Const.Perks.PerkDefs.LegendToolsDrawers,
+				this.Const.Perks.PerkDefs.LegendBarterConvincing,
+				this.Const.Perks.PerkDefs.LegendRoster4
+				
+			],
+			[
+				this.Const.Perks.PerkDefs.Overwhelm,
+				this.Const.Perks.PerkDefs.ReachAdvantage,
+				this.Const.Perks.PerkDefs.LoneWolf,
+				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.Underdog,
+				this.Const.Perks.PerkDefs.LegendRoster5
+			],
+			[
+				this.Const.Perks.PerkDefs.HeadHunter,
+				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.BattleForged,
+				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendRoster6
+			],
+			[
+				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.Duelist,
+				this.Const.Perks.PerkDefs.Indomitable,
+				this.Const.Perks.PerkDefs.LegendSkillfulStacking,
+				this.Const.Perks.PerkDefs.LegendBarterTrustworthy,
+				this.Const.Perks.PerkDefs.LegendRoster7
+			],
+			[],
+			[],
+			[],
+			[]	
+		];
 	}
 
 	function getTooltip()

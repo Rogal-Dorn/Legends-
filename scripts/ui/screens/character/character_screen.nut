@@ -424,10 +424,10 @@ this.character_screen <- {
 		return this.UIDataHelper.convertPerksToUIData();
 	}
 
-	// function onQueryPerkInformation( _data )
-	// {
-	// 	return this.general_onQueryPerkInformation(_data);
-	// }
+	function onQueryPerkInformation( _data )
+	{
+		return this.general_onQueryPerkInformation(_data);
+	}
 
 	function onUnlockPerk( _data )
 	{
@@ -953,10 +953,10 @@ this.character_screen <- {
 		return roster;
 	}
 
-	// function general_onQueryPerkInformation( _data )
-	// {
-	// 	return this.UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
-	// }
+	function general_onQueryPerkInformation( _data )
+	{
+		return this.UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
+	}
 
 	function general_onUnlockPerk( _data )
 	{
@@ -967,7 +967,7 @@ this.character_screen <- {
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToFindEntity);
 		}
 
-		if (!entity.unlockPerk(_data[1])
+		if (!entity.unlockPerk(_data[1]))
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToUnlockPerk);
 		}
@@ -1330,6 +1330,7 @@ this.character_screen <- {
 				}
 			}
 		}
+
 
 		if (data.targetItemIdx != null)
 		{
