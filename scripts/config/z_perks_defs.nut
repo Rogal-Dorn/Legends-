@@ -2085,6 +2085,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/forceful_swings_bw.png",
 		Const = "LegendForcefulSwing"
 	},
+	{
+		ID = "perk.legend_balance",
+		Script = "scripts/skills/perks/perk_legend_balance",
+		Name = this.Const.Strings.PerkName.LegendBalance,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBalance,
+		Icon = "ui/perks/balance.png",
+		IconDisabled = "ui/perks/balance_bw.png",
+		Const = "LegendBalance"
+	},
+	{
+		ID = "perk.legend_matching_set",
+		Script = "scripts/skills/perks/perk_legend_matching_set",
+		Name = this.Const.Strings.PerkName.LegendMatchingSet,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMatchingSet,
+		Icon = "ui/perks/matching_set.png",
+		IconDisabled = "ui/perks/matching_set_bw.png",
+		Const = "LegendMatchingSet"
+	},
+	{
+		ID = "perk.legend_lithe",
+		Script = "scripts/skills/perks/perk_legend_lithe",
+		Name = this.Const.Strings.PerkName.LegendLithe,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLithe,
+		Icon = "ui/perks/lithe.png",
+		IconDisabled = "ui/perks/lithe_bw.png",
+		Const = "LegendLithe"
+	}
 ];
 
 

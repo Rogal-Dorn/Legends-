@@ -1280,7 +1280,10 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecGreatSword = "Greatsword Mastery",
 	LegendForcefulSwing = "Forceful Swing",
 	LegendSpecSpearWall = "Spearwaller",
-	LegendSpecSpearThrust = "Thrust Master"
+	LegendSpecSpearThrust = "Thrust Master",
+	LegendBalance = "Balance",
+	LegendMatchingSet = "Matching Set",
+	LegendLithe = "Lithe"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1539,6 +1542,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage. "
 	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature. Spearwall costs[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] less fatigue. Stacks with spear mastery ",
 	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust does [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage."
+	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] bonuse melee and ranged defense if your maximum armor value matches your current initiative. The value decreases for every point of difference between the two, to a minimum of 5",
+	LegendMatchingSet = "Proper distribution of weight is crucial for maintaining mobility. Grants up to  [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] fatigue per round if your helmet and armor values match. Decreases by 1 for every 10 points difference.",
+	LegendLithe = "Not as nimble as some, but more lithe than most. Like nimble, but with the 15 fatigue floor raised to  [color=" + this.Const.UI.Color.PositiveValue + "]30[/color], and the bonus halved"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
