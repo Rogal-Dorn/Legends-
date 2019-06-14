@@ -26,7 +26,7 @@ this.data_helper <- {
 				continue;
 			}
 
-			if (storageMeta.getInt("difficulty") >= this.Const.Strings.Difficulty.len())
+			if (storageMeta.getInt("difficulty") >= this.Const.Strings.Difficulty.len() || storageMeta.getInt("difficulty2") >= this.Const.Strings.Difficulty.len())
 			{
 				continue;
 			}
