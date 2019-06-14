@@ -133,7 +133,7 @@
 			{
 				if (this.m.TacticalCombatResultScreen != null)
 				{
-					if (_isVictory && this.Settings.getGameplaySettings().AutoLoot && "Assets" in this.World && this.World.Assets != null)
+					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.Settings.getGameplaySettings().AutoLoot && "Assets" in this.World && this.World.Assets != null)
 					{
 						this.m.TacticalCombatResultScreen.onLootAllItemsButtonPressed();
 						this.World.Assets.consumeItems();
