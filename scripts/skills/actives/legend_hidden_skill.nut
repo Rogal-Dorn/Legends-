@@ -4,8 +4,8 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_hidden";
 		this.m.Name = "Hide";
-		this.m.Icon = "skills/legend_hidden.png";
-		this.m.IconDisabled = "skills/legend_hidden_sw.png";
+		this.m.Icon = "skills/hide_square.png";
+		this.m.IconDisabled = "skills/hide_square_bw.png";
 		this.m.Overlay = "active_23";
 		this.m.SoundOnUse = [
 			"sounds/combat/spearwall_01.wav",
