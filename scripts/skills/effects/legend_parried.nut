@@ -1,4 +1,4 @@
-this.legend_parried_effect <- this.inherit("scripts/skills/skill", {
+this.legend_parried <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -16,8 +16,8 @@ this.legend_parried_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDefense -= 10;
-		_properties.RangedDefense -= 10;
+		_properties.MeleeDefense -= 20;
+		_properties.RangedDefense -= 20;
 	}
 
 
