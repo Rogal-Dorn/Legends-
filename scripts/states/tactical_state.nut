@@ -1232,7 +1232,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 	function onProcessAI()
 	{
-		if (this.Tactical.State.isBattleEnded())
+		if (this.Tactical.State == null || this.Tactical.State.isBattleEnded())
 		{
 			return;
 		}
@@ -1849,7 +1849,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			{
 				if (this.m.TacticalCombatResultScreen != null)
 				{
-					if (_isVictory && this.Settings.getGameplaySettings().AutoLoot)
+					if (_isVictory && !this.Tactical.State.isScenarioMode() && this.Settings.getGameplaySettings().AutoLoot)
 					{
 						this.m.TacticalCombatResultScreen.onLootAllItemsButtonPressed();
 						this.World.Assets.consumeItems();
