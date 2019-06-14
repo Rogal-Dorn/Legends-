@@ -160,7 +160,8 @@ gt.Const.Strings.EntityName <- [
 	"Demon Alp",
 	"Hexe Coven Leader",
 	"Heartwood Schrat",
-	"Heartwood Sapling"
+	"Heartwood Sapling",
+	"White Warwolf"
 
 ];
 gt.Const.Strings.EntityNamePlural <- [
@@ -257,7 +258,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Demon Alps",
 	"Hexe Coven Leaders",
 	"Heartwood Schrats",
-	"Heartwood Saplings"
+	"Heartwood Saplings",
+	"White Warwolves"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",

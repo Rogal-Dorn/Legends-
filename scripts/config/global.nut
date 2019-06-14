@@ -339,7 +339,8 @@ gt.Const.EntityType <- {
 	LegendDemonAlp = 90,
 	LegendHexeLeader = 91,
 	LegendGreenwoodSchrat = 92,
-	LegendGreenwoodSchratSmall = 93
+	LegendGreenwoodSchratSmall = 93,
+	LegendWhiteWarwolf = 94
 	function convertOldToNew( _id )
 	{
 		switch(_id)
