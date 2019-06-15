@@ -338,14 +338,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/direwolf_high"
 	},
-	LegendWhiteDirewolf = {
-		ID = this.Const.EntityType.LegendWhiteDirewolf,
-		Variant = 0,
-		Strength = 60,
-		Cost = 75,
-		Row = 2,
-		Script = "scripts/entity/tactical/enemies/legend_white_direwolf"
-	},
+
 	DirewolfBodyguard = {
 		ID = this.Const.EntityType.Direwolf,
 		Variant = 0,
@@ -378,14 +371,6 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/ghoul_high"
 	},
-	LegendSkinGhoul = {
-		ID = this.Const.EntityType.LegendSkinGhoul,
-		Variant = 0,
-		Strength = 75,
-		Cost = 90,
-		Row = 2,
-		Script = "scripts/entity/tactical/enemies/legend_skin_ghoul"
-	},
 	Lindwurm = {
 		ID = this.Const.EntityType.Lindwurm,
 		Variant = 0,
@@ -393,14 +378,6 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 80,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/lindwurm"
-	},
-	LegendStollwurm = {
-		ID = this.Const.EntityType.LegendStollwurm,
-		Variant = 0,
-		Strength =270,
-		Cost = 270,
-		Row = 1,
-		Script = "scripts/entity/tactical/enemies/legend_stollwurm"
 	},
 	Unhold = {
 		ID = this.Const.EntityType.Unhold,
@@ -426,14 +403,6 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/unhold_bog"
 	},
-	LegendRockUnhold = {
-		ID = this.Const.EntityType.LegendRockUnhold,
-		Variant = 0,
-		Strength = 180,
-		Cost = 180,
-		Row = 1,
-		Script = "scripts/entity/tactical/enemies/legend_rock_unhold"
-	},
 	Spider = {
 		ID = this.Const.EntityType.Spider,
 		Variant = 1,
@@ -450,14 +419,6 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 1,
 		Script = "scripts/entity/tactical/enemies/spider_bodyguard"
 	},
-	LegendRedbackSpider = {
-		ID = this.Const.EntityType.LegendRedbackSpider,
-		Variant = 0,
-		Strength = 30,
-		Cost = 30,
-		Row = 2,
-		Script = "scripts/entity/tactical/enemies/legend_redback_spider"
-	},
 	Alp = {
 		ID = this.Const.EntityType.Alp,
 		Variant = 0,
@@ -466,14 +427,6 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -2,
 		Script = "scripts/entity/tactical/enemies/alp"
 	},
-	LegendDemonAlp = {
-		ID = this.Const.EntityType.LegendDemonAlp,
-		Variant = 0,
-		Strength = 105,
-		Cost = 105,
-		Row = -2,
-		Script = "scripts/entity/tactical/enemies/legend_demon_alp"
-	},
 	Hexe = {
 		ID = this.Const.EntityType.Hexe,
 		Variant = 0,
@@ -481,14 +434,6 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 50,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/hexe"
-	},
-	LegendHexeLeader = {
-		ID = this.Const.EntityType.LegendHexeLeader,
-		Variant = 0,
-		Strength = 150,
-		Cost = 150,
-		Row = 2,
-		Script = "scripts/entity/tactical/enemies/legend_hexe_leader"
 	},
 	Schrat = {
 		ID = this.Const.EntityType.Schrat,
@@ -501,7 +446,7 @@ gt.Const.World.Spawn.Troops <- {
 	LegendGreenwoodSchrat = {
 		ID = this.Const.EntityType.LegendGreenwoodSchrat,
 		Variant = 0,
-		Strength = 210,
+		Strength = 280,
 		Cost = 210,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/legend_greenwood_schrat"
@@ -907,6 +852,62 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 15,
 		Row = 2,
 		Script = "scripts/entity/tactical/humans/barbarian_beastmaster"
+	},
+	LegendWhiteDirewolf = {
+		ID = this.Const.EntityType.LegendWhiteDirewolf,
+		Variant = 0,
+		Strength = 300,
+		Cost = 75,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_white_direwolf"
+	},
+	LegendSkinGhoul = {
+		ID = this.Const.EntityType.LegendSkinGhoul,
+		Variant = 0,
+		Strength = 50,
+		Cost = 50,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_skin_ghoul"
+	},
+	LegendStollwurm = {
+		ID = this.Const.EntityType.LegendStollwurm,
+		Variant = 0,
+		Strength =270,
+		Cost = 270,
+		Row = 1,
+		Script = "scripts/entity/tactical/enemies/legend_stollwurm"
+	},
+	LegendRockUnhold = {
+		ID = this.Const.EntityType.LegendRockUnhold,
+		Variant = 0,
+		Strength = 180,
+		Cost = 180,
+		Row = 1,
+		Script = "scripts/entity/tactical/enemies/legend_rock_unhold"
+	},
+	LegendRedbackSpider = {
+		ID = this.Const.EntityType.LegendRedbackSpider,
+		Variant = 0,
+		Strength = 120,
+		Cost = 120,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_redback_spider"
+	},
+	LegendDemonAlp = {
+		ID = this.Const.EntityType.LegendDemonAlp,
+		Variant = 0,
+		Strength = 200,
+		Cost = 105,
+		Row = -2,
+		Script = "scripts/entity/tactical/enemies/legend_demon_alp"
+	},
+	LegendHexeLeader = {
+		ID = this.Const.EntityType.LegendHexeLeader,
+		Variant = 0,
+		Strength = 200,
+		Cost = 200,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_hexe_leader"
 	}
 };
 gt.Const.World.Spawn.Caravan <- [
@@ -1376,9 +1377,3 @@ function calculateCosts( _p )
 this.calculateCosts(this.Const.World.Spawn.Caravan);
 this.calculateCosts(this.Const.World.Spawn.CaravanEscort);
 
-gt.Const.World.Spawn.TroopMap <- {}
-
-foreach (k, v in this.Const.World.Spawn.Troops)
-{
-	this.Const.World.Spawn.TroopMap[v.ID] <- v;
-}

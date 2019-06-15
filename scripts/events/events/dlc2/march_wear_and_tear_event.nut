@@ -133,7 +133,7 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Tailor.getImagePath());
-				_event.m.Tailor.improveMood(1.0, "Fashioned himself something nice from cloth scraps");
+				_event.m.Tailor.improveMood(1.0, "Fashioned something nice from cloth scraps");
 
 				if (_event.m.Tailor.getMoodState() >= this.Const.MoodState.Neutral)
 				{
