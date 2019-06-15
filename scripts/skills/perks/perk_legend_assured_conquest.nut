@@ -17,9 +17,9 @@ this.perk_legend_assured_conquest <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().getMoraleState() == this.Const.MoraleState.Steady)
 		{
-		_properties.MeleeSkill *= 1.1;
-		_properties.MeleeDefense *= 1.1;
-		_properties.RangedDefense *= 1.1;
+			_properties.MeleeSkill *= 1.1;
+			_properties.MeleeDefense *= 1.1;
+			_properties.RangedDefense *= 1.1;
 		}
 	}
 

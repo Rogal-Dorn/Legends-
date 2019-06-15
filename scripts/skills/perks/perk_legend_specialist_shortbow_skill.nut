@@ -19,8 +19,8 @@ this.perk_legend_specialist_shortbow_skill <- this.inherit("scripts/skills/skill
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null && item.getID() == "weapon.short_bow")
 		{
-		_properties.RangedSkill += 15;
-		_properties.DamageArmorMult += 0.25;
+			_properties.RangedSkill += 15;
+			_properties.DamageArmorMult *= 1.25;
 		}
 	}
 
