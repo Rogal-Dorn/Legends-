@@ -2,7 +2,10 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 	m = {
 		Target = null,
 		Dude = null,
-		IsPlayerAttacking = false
+		IsPlayerAttacking = false,
+		MinStrength = 500,
+		Perk = "perk.legend_favoured_enemy_spider",
+		ValidTypes = this.Const.LegendMod.FavoriteSpider		
 	},
 	function create()
 	{
@@ -527,15 +530,19 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 
 	function onIsValid()
 	{
-		return false;
-
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill("perk.legend_favoured_enemy_spider"))
+			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-			return true;
+				continue
+			}
+
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength > this.m.MinStrength) {
+				return true
 			}
 		}
+		return false
 	}
 
 	function onSerialize( _out )

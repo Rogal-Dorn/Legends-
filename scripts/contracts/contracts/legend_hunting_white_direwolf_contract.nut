@@ -2,7 +2,10 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 	m = {
 		Target = null,
 		Dude = null,
-		IsPlayerAttacking = true
+		IsPlayerAttacking = true,
+		MinStrength = 500,
+		Perk = "perk.legend_favoured_enemy_direwolf",
+		ValidTypes = this.Const.LegendMod.FavoriteDirewolf
 	},
 	function setEnemyType( _t )
 	{
@@ -431,7 +434,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "SignsOfAFight",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{With the beasts slain you take a moment to rest, one of your mercenaries asks you..%SPEECH_ON% So if you just killed the king of the wolves, does that make you the new king?.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{With the beasts slain you take a moment to rest, one of your mercenaries asks you. %SPEECH_ON%So if you just killed the king of the wolves, does that make you the new king?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
@@ -535,16 +538,21 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 
 	function onIsValid()
 	{
-		return false;
-
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill("perk.legend_favoured_enemy_direwolf"))
+			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-			return true;
+				continue
+			}
+
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength > this.m.MinStrength) {
+				return true
 			}
 		}
+		return false
 	}
+
 
 	function onSerialize( _out )
 	{
