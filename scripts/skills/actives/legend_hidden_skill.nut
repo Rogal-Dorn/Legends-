@@ -1,13 +1,11 @@
-this.spearwall <- this.inherit("scripts/skills/skill", {
-	m = {
-		BaseAttackName = "Thrust"
-	},
+this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
+	m = {},
 	function create()
 	{
-		this.m.ID = "actives.spearwall";
-		this.m.Name = "Spearwall";
-		this.m.Icon = "skills/active_23.png";
-		this.m.IconDisabled = "skills/active_23_sw.png";
+		this.m.ID = "actives.legend_hidden";
+		this.m.Name = "Hide";
+		this.m.Icon = "skills/legend_hidden.png";
+		this.m.IconDisabled = "skills/legend_hidden_sw.png";
 		this.m.Overlay = "active_23";
 		this.m.SoundOnUse = [
 			"sounds/combat/spearwall_01.wav",
@@ -15,14 +13,14 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/spearwall_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.IsWeaponSkill = true;
-		this.m.ActionPointCost = 4;
+		this.m.IsWeaponSkill = false;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -30,7 +28,7 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Prepare to immediately attack any opponent that attempts to move into melee range and, on a hit, prevent that opponent from closing in. Targets hit will receive half the damage of a normal " + this.m.BaseAttackName + " attack. Can not be used while already engaged in melee.";
+		return "Blend into the terrain and remain unseen until attacking or moving adjacent to an enemey.";
 	}
 
 	function getTooltip()
@@ -68,24 +66,7 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && !this.getContainer().hasSkill("effects.spearwall");
-	}
-
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = 1;
-
-		if (_properties.IsSpecializedInSpears )
-		{
-		this.m.FatigueCostMult *= 0.75;
-		}
-
-		if (_properties.IsSpecializedInSpearWall )
-		{
-		this.m.FatigueCostMult *= 0.75;
-		}
-
-		
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && !this.getContainer().hasSkill("terrain.hidden");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -95,11 +76,11 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.m.Container.add(this.new("scripts/skills/effects/spearwall_effect"));
+		this.m.Container.add(this.new("scripts/skills/effects/hidden_effect"));
 
 		if (!_user.isHiddenToPlayer())
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Spearwall");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Hide");
 		}
 
 		return true;
@@ -107,7 +88,7 @@ this.spearwall <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effects.spearwall");
+		this.m.Container.removeByID("terrain.hidden");
 	}
 
 });

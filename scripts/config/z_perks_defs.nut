@@ -2070,11 +2070,11 @@ gt.Const.Perks.PerkDefObjects <- [
 	{
 		ID = "perk.mastery.greatsword",
 		Script = "scripts/skills/perks/perk_mastery_greatsword",
-		Name = this.Const.Strings.PerkName.SpecGreatSword,
-		Tooltip = this.Const.Strings.PerkDescription.SpecGreatSword,
+		Name = this.Const.Strings.PerkName.LegendSpecGreatSword,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecGreatSword,
 		Icon = "ui/perks/spec_greatsword.png",
 		IconDisabled = "ui/perks/spec_greatsword_bw.png",
-		Const = "SpecGreatSword"
+		Const = "LegendSpecGreatSword"
 	},
 	{
 		ID = "perk.legend_forceful_swing",
@@ -2111,7 +2111,44 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/lithe.png",
 		IconDisabled = "ui/perks/lithe_bw.png",
 		Const = "LegendLithe"
-	}
+	},
+	{
+		ID = "perk.legend_hidden",
+		Script = "scripts/skills/perks/perk_legend_hidden",
+		Name = this.Const.Strings.PerkName.LegendHidden,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHidden,
+		Icon = "ui/perks/hidden.png",
+		IconDisabled = "ui/perks/hidden_bw.png",
+		Const = "LegendHidden"
+	},
+	{
+		ID = "perk.legend_specialist_spearwall",
+		Script = "scripts/skills/perks/perk_legend_specialist_spearwall",
+		Name = this.Const.Strings.PerkName.LegendSpecSpearWall,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecSpearWall,
+		Icon = "ui/perks/spearwall_mastery.png",
+		IconDisabled = "ui/perks/spearwall_mastery_bw.png",
+		Const = "LegendSpecSpearWall"
+	},
+	{
+		ID = "perk.legend_specialist_spearwall",
+		Script = "scripts/skills/perks/perk_legend_specialist_spearthrust",
+		Name = this.Const.Strings.PerkName.LegendSpecSpearThrust,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecSpearThrust,
+		Icon = "ui/perks/spearthrust_mastery.png",
+		IconDisabled = "ui/perks/spearthrust_mastery_bw.png",
+		Const = "LegendSpecSpearThrust"
+	},
+	{
+		ID = "perk.legend_assured_conquest",
+		Script = "scripts/skills/perks/perk_legend_assured_conquest",
+		Name = this.Const.Strings.PerkName.LegendAssuredConquest,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAssuredConquest,
+		Icon = "ui/perks/perk_21.png",
+		IconDisabled = "ui/perks/perk_21_bw.png",
+		Const = "LegendAssuredConquest"
+	},	
+	
 ];
 
 

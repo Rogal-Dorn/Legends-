@@ -10,9 +10,9 @@ gt.Const.Perks.ShieldTree <- {
 	Tree = [
 		[],
 		[],
-		[],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldPush],
+		[gt.Const.Perks.PerkDefs.ShieldExpert],
+		[gt.Const.Perks.PerkDefs.ShieldBash],
 		[],
 		[]
 	]
@@ -24,11 +24,11 @@ gt.Const.Perks.HeavyArmorTree <- {
 	Tree = [
 		[],
 		[],
+		[gt.Const.Perks.PerkDefs.Brawny],
 		[],
 		[],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.BattleForged],
+		[gt.Const.Perks.PerkDefs.FullForce]
 	]
 };
 
@@ -39,9 +39,9 @@ gt.Const.Perks.MediumArmorTree <- {
 		[],
 		[],
 		[],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendLithe],
+		[gt.Const.Perks.PerkDefs.LegendMatchingSet],
+		[gt.Const.Perks.PerkDefs.LegendBalance]
 	]
 };
 
@@ -49,21 +49,24 @@ gt.Const.Perks.LightArmorTree <- {
 	ID = "LightArmorTree",
 	Tree = [
 		[],
+		[
+			gt.Const.Perks.PerkDefs.Anticipation,
+			gt.Const.Perks.PerkDefs.Dodge
+		],
 		[],
 		[],
 		[],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.Nimble],
+		[] //gt.Const.Perks.PerkDefs.
 	]
 };
 
 gt.Const.Perks.HelmetTree <- {
 	ID = "HelmetTree",
 	Tree = [
-		[],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.Lookout],
+		[gt.Const.Perks.PerkDefs.SteelBrow],
+		[],//gt.Const.Perks.PerkDefs.
 		[],
 		[],
 		[],

@@ -1283,7 +1283,8 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecSpearThrust = "Thrust Master",
 	LegendBalance = "Balance",
 	LegendMatchingSet = "Matching Set",
-	LegendLithe = "Lithe"
+	LegendLithe = "Lithe",
+	LegendHidden = "Gray Man"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1492,8 +1493,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistWoodaxeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] melee skill while using a woodaxe. Does not apply to other axes",
 	LegendSpecialistSickleDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15-30[/color] damage while using a sickle. Does not apply to swords.",
 	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a sickle. ",
-	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10-30[/color] damage while using a sling. Does not apply to sling staves",
-	LegendSpecialistSlingSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling.",
+	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10-30[/color] damage while using a sling.",
+	LegendSpecialistSlingSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling.",
 	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints",
 	LegendSecondWind = "When dropping below 30hp, regain half of your fatigue",
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]",
@@ -1538,13 +1539,15 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemySwordmaster = "The path to martial prowess is beset by the fake and the weak. Only one can be the greatest swordsman. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a sword master",
 	LegendFavouredEnemyMercenary = "Mercenaries are the worst, no cause, no principles, no honour. They seek only coin, so they shall find only death. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a mercenary",
 	LegendFavouredEnemyCaravan = "Civilians are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee skill and ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] maximum damage for any attack on a civilian",
-	SpecGreatSword = "Master the art of fighting with a large unwieldy sword. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit, Swing, Overhead Strike and Great Slash gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	LegendSpecGreatSword = "Master the art of fighting with a large unwieldy sword. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit, Swing, Overhead Strike and Great Slash gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
 	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage. "
 	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature. Spearwall costs[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] less fatigue. Stacks with spear mastery ",
 	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust does [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage."
 	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] bonuse melee and ranged defense if your maximum armor value matches your current initiative. The value decreases for every point of difference between the two, to a minimum of 5",
 	LegendMatchingSet = "Proper distribution of weight is crucial for maintaining mobility. Grants up to  [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] fatigue per round if your helmet and armor values match. Decreases by 1 for every 10 points difference.",
 	LegendLithe = "Not as nimble as some, but more lithe than most. Like nimble, but with the 15 fatigue floor raised to  [color=" + this.Const.UI.Color.PositiveValue + "]30[/color], and the bonus halved"
+	LegendHidden = "Master the art of concelement. Blend in with your surroundings and remain hidden from the enemy until your next attack."
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

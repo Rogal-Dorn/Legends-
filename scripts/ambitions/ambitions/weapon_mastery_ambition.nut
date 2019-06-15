@@ -29,6 +29,10 @@ this.weapon_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 			{
 				count = ++count;
 			}
+			if (p.IsSpecializedInSlings)
+			{
+				count = ++count;
+			}			
 			else if (p.IsSpecializedInThrowing)
 			{
 				count = ++count;
@@ -37,6 +41,10 @@ this.weapon_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 			{
 				count = ++count;
 			}
+			else if (p.IsSpecializedInGreatSwords)
+			{
+				count = ++count;
+			}			
 			else if (p.IsSpecializedInCleavers)
 			{
 				count = ++count;

@@ -158,7 +158,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	// 	EnemyTrees = [],
 	// 	ClassTrees = []
 	// }	
-	this.logInfo("Getting dynamic perk tree")
+	//this.logInfo("Getting dynamic perk tree")
 	local tree = [ [], [], [], [], [], [], [], [], [], [], [] ];
 
 	//Add weapons
@@ -171,7 +171,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.WeaponTrees.getRandom(_exclude)
-		this.logInfo("Adding weapon perk tree " + t.ID);
+		//this.logInfo("Adding weapon perk tree " + t.ID);
 		_map.Weapon.push(t);
 		
 	}
@@ -186,7 +186,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.DefenseTrees.getRandom(_exclude)
-		this.logInfo("Adding Defense perk tree " + t.ID);
+		//this.logInfo("Adding Defense perk tree " + t.ID);
 		_map.Defense.push(t);
 	}
 
@@ -200,7 +200,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.TraitsTrees.getRandom(_exclude)
-		this.logInfo("Adding Traits perk tree " + t.ID);
+		//this.logInfo("Adding Traits perk tree " + t.ID);
 		_map.Traits.push(t);
 	}
 
@@ -214,7 +214,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.EnemyTrees.getRandom(_exclude)
-		this.logInfo("Adding Enemy perk tree " + t.ID);
+		//this.logInfo("Adding Enemy perk tree " + t.ID);
 		_map.Enemy.push(t);
 	}
 
@@ -228,7 +228,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			_exclude.push(tt.ID);
 		}		
 		local t = this.Const.Perks.ClassTrees.getRandom(_exclude)
-		this.logInfo("Adding Class perk tree " + t.ID);
+		//this.logInfo("Adding Class perk tree " + t.ID);
 		_map.Class.push(t);
 	}
 

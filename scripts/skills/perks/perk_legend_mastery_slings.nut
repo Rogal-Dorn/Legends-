@@ -15,6 +15,7 @@ this.perk_legend_mastery_slings <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		_properties.Vision += 1;
 		_properties.IsSpecializedInSlings = true;
 	}
 

@@ -8,8 +8,8 @@ if (!("Perks" in gt.Const))
 gt.Const.Perks.MaceTree <- {
 	ID = "Mace",
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendStunned],
-		[gt.Const.Perks.PerkDefs.LegendDaze],
+		[],
+		[],//[gt.Const.Perks.PerkDefs.LegendDaze],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecMace],
 		[],
@@ -36,9 +36,8 @@ gt.Const.Perks.HammerTree <- {
 	ID = "Hammer",
 	Tree = [
 		[],//gt.Const.Perks.PerkDefs.DestroyArmor
-		[],//gt.Const.Perks.PerkDefs.KnockBack
+		[gt.Const.Perks.PerkDefs.LegendSpecialistHammerSkill],//gt.Const.Perks.PerkDefs.KnockBack
 		[
-		 gt.Const.Perks.PerkDefs.LegendSpecialistHammerSkill,
 		 gt.Const.Perks.PerkDefs.LegendSpecialistHammerDamage
 		],
 		[gt.Const.Perks.PerkDefs.SpecHammer],
@@ -51,7 +50,7 @@ gt.Const.Perks.HammerTree <- {
 gt.Const.Perks.AxeTree <- {
 	ID = "Axe",
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.DestroyShield
+		[],
 		[], //gt.Const.Perks.PerkDefs.ShieldDamageIncrease
 		[],
 		[gt.Const.Perks.PerkDefs.SpecAxe],
@@ -64,7 +63,7 @@ gt.Const.Perks.AxeTree <- {
 gt.Const.Perks.CleaverTree <- {
 	ID = "Cleaver",
 	Tree = [
-		[], //gt.Const.Perks.PerkDefs.Bleed
+		[], 
 		[], //gt.Const.Perks.PerkDefs.BleedIncrease
 		[],
 		[gt.Const.Perks.PerkDefs.SpecCleaver],
@@ -79,18 +78,17 @@ gt.Const.Perks.GreatSwordTree <- {
 	Tree = [
 		[],//gt.Const.Perks.PerkDefs.AOE
 		[gt.Const.Perks.PerkDefs.BloodyHarvest],
-		[], //gt.Const.Perks.PerkDefs.AOECostReduction
-		[gt.Const.Perks.PerkDefs.SpecSword],
+		[gt.Const.Perks.PerkDefs.LegendForcefulSwing], //gt.Const.Perks.PerkDefs.AOECostReduction
+		[gt.Const.Perks.PerkDefs.LegendSpecGreatSword],
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.Fearsome]
 	]
 };
 
-gt.Const.Perks.SwordTree <- { //Fencing?
+gt.Const.Perks.SwordTree <- {
 	ID = "Sword",
 	Tree = [
-		[], //gt.Const.Perks.PerkDefs.Reposte
 		[],
 		[],//gt.Const.Perks.PerkDefs.Feint
 		[gt.Const.Perks.PerkDefs.SpecSword],
@@ -103,7 +101,7 @@ gt.Const.Perks.SwordTree <- { //Fencing?
 gt.Const.Perks.DaggerTree <- {
 	ID = "Dagger",
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.Puncture
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.Backstabber],
 		[gt.Const.Perks.PerkDefs.SpecDagger],
@@ -115,8 +113,8 @@ gt.Const.Perks.DaggerTree <- {
 gt.Const.Perks.PolearmTree <- {
 	ID = "Polearm",
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.Range
-		[],//gt.Const.Perks.PerkDefs.Executioner
+		[],
+		[gt.Const.Perks.PerkDefs.Slaughterer],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecPolearm],
 		[gt.Const.Perks.PerkDefs.ReachAdvantage],
@@ -128,11 +126,11 @@ gt.Const.Perks.PolearmTree <- {
 gt.Const.Perks.SpearTree <- {
 	ID = "Spear",
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.ZOC
-		[],//gt.Const.Perks.PerkDefs.ShieldWallExpert
+		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecSpearWall],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecSpear],
-		[],//gt.Const.Perks.PerkDefs.SpearHitChangeInc
+		[gt.Const.Perks.PerkDefs.LegendSpecSpearThrust],
 		[],
 		[]
 	]
@@ -185,10 +183,10 @@ gt.Const.Perks.SlingsTree <- {
 	Tree = [
 		[],//gt.Const.Perks.PerkDefs.RangedBlunt
 		[],
-		[],//gt.Const.Perks.PerkDefs.SlingAccuracy
-		[],//gt.Const.Perks.PerkDefs.SpecSling
-		[],//gt.Const.Perks.PerkDefs.SlingDaze
-		[],
+		[],//gt.Const.Perks.PerkDefs.BetweenTheEyes
+		[gt.Const.Perks.PerkDefs.LegendMasterySlings],//
+		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingSkill],//gt.Const.Perks.PerkDefs.SlingDaze
+		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingDamage],
 		[]
 	]
 };
@@ -199,7 +197,7 @@ gt.Const.Perks.StavesTree <- {
 		[],//gt.Const.Perks.PerkDefs.RangeStun
 		[],
 		[],//gt.Const.Perks.PerkDefs.StaveBlock
-		[],//gt.Const.Perks.PerkDefs.SpecStave
+		[gt.Const.Perks.PerkDefs.LegendMasteryStaves],//
 		[],//gt.Const.Perks.PerkDefs.StaveStun
 		[],
 		[]
@@ -221,8 +219,8 @@ gt.Const.Perks.WeaponTrees <- {
 		gt.Const.Perks.CrossbowTree,
 		gt.Const.Perks.BowTree,
 		gt.Const.Perks.ThrowingTree,
-		gt.Const.Perks.SlingsTree,
-		gt.Const.Perks.StavesTree
+		gt.Const.Perks.SlingsTree
+		//gt.Const.Perks.StavesTree
 	],
 	function getRandom(_exclude) 
 	{

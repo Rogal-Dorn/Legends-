@@ -29,6 +29,10 @@ this.ranged_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 			{
 				count = ++count;
 			}
+			else if (p.IsSpecializedInSlings)
+			{
+				count = ++count;
+			}			
 		}
 
 		return count;

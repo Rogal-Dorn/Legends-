@@ -136,7 +136,10 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
-		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if(_properties.IsSpecializedInSlings)
+		{
+			this.m.AdditionalAccuracy += this.m.AdditionalAccuracy * 0.1;
+		}	
 	}
 
 	function onUse( _user, _targetTile )
