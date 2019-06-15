@@ -2,7 +2,10 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 	m = {
 		Target = null,
 		Dude = null,
-		IsPlayerAttacking = false
+		IsPlayerAttacking = false,
+		MinStrength = 500,
+		Perk = "perk.legend_favoured_enemy_schrat",
+		ValidTypes = this.Const.LegendMod.FavoriteSchrat		
 	},
 	function create()
 	{
@@ -521,16 +524,21 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 
 	function onIsValid()
 	{
-		return false;
-
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill("perk.legend_favoured_enemy_schrat"))
+			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-			return true;
+				continue
+			}
+
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength > this.m.MinStrength) {
+				return true
 			}
 		}
+		return false
 	}
+
 
 	function onSerialize( _out )
 	{

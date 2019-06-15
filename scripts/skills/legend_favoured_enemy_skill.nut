@@ -83,33 +83,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTotalKillStats()
 	{
-		local _actor = this.getContainer().getActor();
-		if (_actor == null)
-		{
-			return 0;
-		}
-
-		local kills = 0;
-		local str = 0;
-		foreach (t in this.m.ValidTypes)
-		{
-			local mKills = 0;
-			mKills = _actor.getLifetimeStats().Tags.get(t)
-			if (mKills && mKills > 0)
-			{
-				kills += mKills;
-				local troop = this.Const.World.Spawn.TroopMap[t];
-				str += (mKills * troop.Strength);
-			}
-		}
-		local hitChance = this.Math.floor(this.Math.pow(0.3 * str, 0.5));
-		local hitMult = 1.0 + ((hitChance * 1.0) / 100.0);
-		return {
-			Kills = kills,
-			Strength = str,
-			HitChance = hitChance,
-			HitMult = hitMult
-		}
+		return this.Const.LegendMod.GetFavoriteEnemyStats(this.getContainer().getActor(), this.m.ValidTypes);
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
