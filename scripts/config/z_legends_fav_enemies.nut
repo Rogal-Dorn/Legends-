@@ -337,3 +337,38 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 	
 	return value
 }
+
+gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
+	{
+		if (_actor == null)
+		{
+			{
+				Kills = 0,
+				Strength = 0,
+				HitChance = 0,
+				HitMult = 0
+			}
+		}
+
+		local kills = 0;
+		local str = 0;
+		foreach (t in _types)
+		{
+			local mKills = 0;
+			mKills = _actor.getLifetimeStats().Tags.get(t)
+			if (mKills && mKills > 0)
+			{
+				kills += mKills;
+				local troop = this.Const.World.Spawn.TroopMap[t];
+				str += (mKills * troop.Strength);
+			}
+		}
+		local hitChance = this.Math.floor(this.Math.pow(0.3 * str, 0.5));
+		local hitMult = 1.0 + ((hitChance * 1.0) / 100.0);
+		return {
+			Kills = kills,
+			Strength = str,
+			HitChance = hitChance,
+			HitMult = hitMult
+		}
+	}
