@@ -909,3 +909,4 @@ New Perk 'Blend In' - Makes enemies 50% less likely to attack you instead of som
 New Perk 'Staff Spins' - Any staff hit that would usually daze, also stuns 
 New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense 
 New Perk 'DrumsOfWar' - active skill to reduce the fatigue of all allies 
+Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
