@@ -910,3 +910,5 @@ New Perk 'Staff Spins' - Any staff hit that would usually daze, also stuns
 New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense 
 New Perk 'DrumsOfWar' - active skill to reduce the fatigue of all allies 
 Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
+Adds Wildwomen, get the same events as wildmen, those events are now gender neutral, the wildwomen spawn in the same places, though less likely. 
+Peddlers and Cultists have a 10% chance of being women. Haven't fixed their events yet 

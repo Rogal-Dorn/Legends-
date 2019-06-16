@@ -54,7 +54,7 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"refugee_background",
 			"vagabond_background",
 			"vagabond_background",
-			"wildman_background",
+			"wildwoman_background",
 			"wildman_background",
 			"wildman_background",
 			"witchhunter_background",

@@ -11,7 +11,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Civilization is no place for a wildman like %wildman% and he quickly proves it.\n\nApparently, the damned man went crazy while in a shop and trashed the whole place. As the story goes, he just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after him with a broom, trying to shoo the man out of his store. Believing the broom a monster, the wildman proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.",
+			Text = "[img]gfx/ui/events/event_20.png[/img]Civilization is no place for a wildling like %wildman%, who quickly proves it.\n\nApparently, the damned mercenary went crazy while in a shop and trashed the whole place. As the story goes, they just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after them with a broom, trying to shoo the wildling out of his store. Believing the broom a monster, the wildling proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -66,13 +66,13 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Wildman.getImagePath());
-				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "You refused to pay for damages caused by one of your men");
+				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "You refused to pay for damages caused by one of your mercenaries");
 			}
 
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_01.png[/img]You go and see the shop. The wildman truly did a number on the place. And it reeks of his... scent. It would be a bad look for the company to not handle this issue with great care. You agree to pay for the damages, something most mercenary bands would not have done. This act of kindness does not slip the townspeople by.",
+			Text = "[img]gfx/ui/events/event_01.png[/img]You go and see the shop. The wildling truly did a number on the place. And it reeks of... scent markings. It would be a bad look for the company to not handle this issue with great care. You agree to pay for the damages, something most mercenary bands would not have done. This act of kindness does not slip the townspeople by.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -100,7 +100,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildman\'s. You dock his pay: for some time to come, the mercenary\'s earnings will be halved. Furthermore, you take what earnings he\'s made and hand them over to the shop owner. It doesn\'t even begin to cover the damages, but it\'s a start. One man is left happy, and another quite disgruntled.\n\nYou tell the wild cretin that now he\'ll think twice about smearing shit all over someone else\'s walls. But the wildman doesn\'t seem to understand you. He just understands that the gold he once owned has been given to someone else, and he eyes its departure with sadness and bottled anger.",
+			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildling\'s. You dock their pay: for some time to come, the mercenary\'s earnings will be halved. Furthermore, you take what earnings they\'ve made and hand it over to the shop owner. It doesn\'t even begin to cover the damages, but it\'s a start. One is left happy, and another quite disgruntled.\n\nYou tell the wild cretin that now they\'ll think twice about smearing shit all over someone else\'s walls. But the wildling doesn\'t seem to understand you. %wildman% just understands that the gold they once owned has been given to someone else, and eyes its departure with sadness and bottled anger.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -125,7 +125,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Wildman.getImagePath());
 				_event.m.Wildman.getBaseProperties().DailyWage -= this.Math.floor(_event.m.Wildman.getDailyCost() / 4);
 				_event.m.Wildman.getSkills().update();
-				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "One of your men caused havoc in town");
+				this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractFail, "One of your mercenaries caused havoc in town");
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_daily_money.png",
@@ -267,7 +267,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.wildman")
+			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
 			{
 				candidates_wildman.push(bro);
 			}

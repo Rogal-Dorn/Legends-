@@ -10,13 +10,13 @@ this.wildman_finds_something_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 30.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_25.png[/img]While trying not to lose your temper at just how many low-hanging branches are catching you in the face, %otherguy% hurries to your side and says %wildman% the wildman has run off. You turn round to see the rest of the men looking as confused as you are. Holding your fist up to quiet the company, the forest returns your order of silence with muted chirps of distant birds and the buzz of a bee or wasp somewhere unseen. Shaking your head, you decide to continue the march.\n\nA few hours later, the wildman jumps out of a bush you were about to cleave with a machete. He\'s got an armful of random items in hand. Where he got these things, you\'ve no idea, but you have the men sift through the findings. %wildman% returns to rank as though nothing happened at all. You glance at the man and catch him staring at a butterfly on his finger. When you glance at him again, the butterfly is gone and the man is swallowing something. %otherguy% gives you a report on what he brought.",
+			Text = "[img]gfx/ui/events/event_25.png[/img]While trying not to lose your temper at just how many low-hanging branches are catching you in the face, %otherguy% hurries to your side and says %wildman% the wildling has run off. You turn round to see the rest of the company looking as confused as you are. Holding your fist up to quiet the company, the forest returns your order of silence with muted chirps of distant birds and the buzz of a bee or wasp somewhere unseen. Shaking your head, you decide to continue the march.\n\nA few hours later, the wildling jumps out of a bush you were about to cleave with a machete. %wildman% has got an armful of random items in hand. Where these things came from, you\'ve no idea, but you have the mercenaries sift through the findings. %wildman% returns to rank as though nothing happened at all. You glance at the wildling who\'s staring at their finger where a butterfly has landed. When you glance again, the butterfly is gone and the wildling is swallowing something. %otherguy% gives you a report on what was brought.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Where did he get these?",
+					Text = "Where did these come from?",
 					function getResult( _event )
 					{
 						return 0;
@@ -108,7 +108,7 @@ this.wildman_finds_something_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.wildman")
+			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
 			{
 				candidates_wildman.push(bro);
 			}
