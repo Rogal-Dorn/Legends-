@@ -8,7 +8,7 @@ this.deserter_origin_volunteer_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.deserter_origin_volunteer";
 		this.m.Title = "Along the road...";
-		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_88.png[/img]{A pair of men looking disheveled and weary emerge from some bushes beside the road. They hold their hands up as if they\'d come to surrender themselves.%SPEECH_ON%Are ye the %companyname%? We\'d heard you were a band of deserters. And I don\'t mean that as an insult. We\'re runners, too, but we got nowhere else to go. Everywhere we turn there are bounty hunters and executioners. Let us fight for you. It ain\'t the fight that ever scared us, we swears by that.%SPEECH_OFF%}",
