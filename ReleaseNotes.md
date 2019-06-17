@@ -889,3 +889,10 @@ Favored Enemy perks damages now scale with the number of favored enemies killed.
 
 Integrates Boyski's Better Obituaries mod into Legends.
 
+Cultist text supports female cultists
+Raider start volunteers, Deserter start volunteers, cultist start volunteers and scacrifices and poacher start hunting events, all happen twice as often.
+
+Adds barbarbarian vs shieldmaiden event
+Adds blacksmith crafts armor event
+Adds blacksmith fixes equipment event
+Adds butcher vs donkey event 
