@@ -1,10 +1,13 @@
 this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+	ArmorCost = 0,
+	ArmorParts = 0
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_field_repairs";
 		this.m.Name = "Field Repairs";
-		this.m.Description = "Repair armor, costs 1 Armor Part for every %5 missing armor";
+		this.m.Description = "Repair armor, costs 1 Armor Part for every 5 missing armor";
 		this.m.Icon = "skills/coins_square.png";
 		this.m.IconDisabled = "skills/coins_square_bw.png";
 		this.m.Overlay = "active_41";
@@ -14,17 +17,17 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 			"sounds/coins_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 4;
+		this.m.ActionPointCost = 8;
+		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 3;
+		this.m.MaxRange = 2;
 		this.m.MaxLevelDifference = 4;
 	}
 
@@ -37,14 +40,14 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target damaged units"
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target units with damaged armor"
 			}
 		]);
 			ret.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"] TODO [/color] armor parts, this will cost [color=" + this.Const.UI.Color.PositiveValue +"] TODO [/color] armor parts. "
+				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.ArmorParts + "[/color] armor parts, this will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.ArmorCost + "[/color] armor parts. "
 			});
 
 		return ret;
@@ -62,8 +65,14 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		local currentBodyArmor = target.getArmor(this.Const.BodyPart.Body);
 		local maxHeadArmor = target.getArmorMax(this.Const.BodyPart.Head);
 		local maxBodyArmor = target.getArmorMax(this.Const.BodyPart.Body);
+		local missingHeadArmor = maxHeadArmor - currentHeadArmor;
+		local missingBodyArmor = maxBodyArmor - currentBodyArmor;
+		local missingArmor = missingHeadArmor + missingBodyArmor;
+		local cost = missingArmor / 5;
+		this.m.ArmorCost = cost;
 		local armorParts = this.World.Assets.getArmorParts();
-	
+		this.m.ArmorParts = armorParts;
+
 		if (currentHeadArmor = maxHeadArmor && currentBodyArmor = maxBodyArmor)
 		{
 			return false;
@@ -85,12 +94,8 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		local currentBodyArmor = target.getArmor(this.Const.BodyPart.Body);
 		local maxHeadArmor = target.getArmorMax(this.Const.BodyPart.Head);
 		local maxBodyArmor = target.getArmorMax(this.Const.BodyPart.Body);
-		local percentMaxHeadArmor = maxHeadArmor / 100;
-		local percentMaxBodyArmor = maxBodyArmor / 100;
-		local percentCurrentHeadArmor = currentHeadArmor / percentMaxHeadArmor;
-		local percentCurrentBodyArmor = currentBodyArmor / percentMaxBodyArmor;
-		local missingHeadArmor = percentMaxHeadArmor - percentCurrentHeadArmor;
-		local missingBodyArmor = percentMaxBodyArmor - percentCurrentBodyArmor;
+		local missingHeadArmor = maxHeadArmor - currentHeadArmor;
+		local missingBodyArmor = maxBodyArmor - currentBodyArmor;
 		local maxRepair = armorParts * 5;
 
 			if (missingHeadArmor > missingBodyArmor)

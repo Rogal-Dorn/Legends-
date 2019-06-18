@@ -1,10 +1,13 @@
 this.legend_field_triage <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+	Cost = 0,
+	Meds = 0
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_field_triage";
 		this.m.Name = "Field Triage";
-		this.m.Description = "Heal a unit, costs 1 medicine for every 5 health";
+		this.m.Description = "Heal a unit, costs 1 medicine for every 2 health";
 		this.m.Icon = "skills/coins_square.png";
 		this.m.IconDisabled = "skills/coins_square_bw.png";
 		this.m.Overlay = "active_41";
@@ -21,10 +24,10 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 4;
+		this.m.ActionPointCost = 8;
+		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 3;
+		this.m.MaxRange = 2;
 		this.m.MaxLevelDifference = 4;
 	}
 
@@ -44,7 +47,7 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"] TODO [/color] medicine, this will cost [color=" + this.Const.UI.Color.PositiveValue +"] TODO [/color] medicine. "
+				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Meds + "[/color] medicine, this will cost [color=" + this.Const.UI.Color.PositiveValue +"] " + this.m.Cost + "[/color] medicine. "
 			});
 
 		return ret;
@@ -59,9 +62,15 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 		local maxHP = target.getHitpointsMax();
+		local percentHP = maxHP / 100;
 		local currentHP = target.getHitpoints();
+		local currentPercent = currentHP / percentHP;
+		local missingPercent = 100 - currentPercent;
 		local meds = this.World.Assets.getMedicine();
-	
+		local cost = missingPercent / 2; 
+		this.m.Meds = meds;
+		this.m.Cost = cost;
+
 		if (maxHP = currentHP )
 		{
 			return false;
@@ -94,7 +103,7 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 			}
 		else if (missingPercent < maxHeal)
 			{
-			local cost = missingPercent * -0.2;
+			local cost = missingPercent * -0.5;
 			this.World.Assets.addMedicine(cost);
 			targetSetHitpoints(maxHP);
 			}

@@ -1,10 +1,13 @@
 this.legend_bribe <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+	Cost = 0,
+	Money = 0
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_bribe";
 		this.m.Name = "Bribe";
-		this.m.Description = "Throw coins at an enemy to bribe them away from battle";
+		this.m.Description = "Throw coins at an enemy to bribe them away from battle. Only works on humans and goblins, more powerful enemies cost more. ";
 		this.m.Icon = "skills/coins_square.png";
 		this.m.IconDisabled = "skills/coins_square_bw.png";
 		this.m.Overlay = "active_41";
@@ -14,7 +17,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 			"sounds/coins_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -44,7 +47,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"] TODO [/color] crowns"
+				text = "This will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Cost + "[/color] crowns out of" + this.m.Money +" total"
 			});
 
 		return ret;
@@ -59,7 +62,9 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 		local xp = target.getXPValue();
+		this.m.Cost = xp * 1.5;
 		local money = this.World.Assets.getMoney();
+		this.m.Money = money;
 		if (!target.getTags().has("human"))
 		{
 			return false;
