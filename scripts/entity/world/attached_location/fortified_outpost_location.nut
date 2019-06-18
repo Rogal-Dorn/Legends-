@@ -193,6 +193,11 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 				P = 1.0,
 				S = "helmets/flat_top_helmet"
 			});
+				_list.push({
+				R = 65,
+				P = 1.0,
+				S = "shields/legend_tower_shield"
+			});
 			_list.push({
 				R = 30,
 				P = 1.0,

@@ -188,6 +188,11 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 				S = "weapons/hooked_blade"
 			});
 			_list.push({
+				R = 65,
+				P = 1.0,
+				S = "shields/legend_tower_shield"
+			});
+			_list.push({
 				R = 60,
 				P = 1.0,
 				S = "weapons/scramasax"

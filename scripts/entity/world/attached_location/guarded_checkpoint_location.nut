@@ -70,6 +70,11 @@ this.guarded_checkpoint_location <- this.inherit("scripts/entity/world/attached_
 			_list.push({
 				R = 65,
 				P = 1.0,
+				S = "shields/legend_tower_shield"
+			});
+			_list.push({
+				R = 65,
+				P = 1.0,
 				S = "helmets/kettle_hat"
 			});
 			_list.push({

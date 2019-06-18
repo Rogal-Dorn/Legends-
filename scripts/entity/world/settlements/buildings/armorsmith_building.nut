@@ -203,6 +203,11 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "shields/heater_shield"
 			},
 			{
+				R = 75,
+				P = 1.0,
+				S = "shields/legend_tower_shield"
+			},
+			{
 				R = 45,
 				P = 1.0,
 				S = "shields/kite_shield"
