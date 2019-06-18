@@ -126,14 +126,14 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 			items.equip(this.new("scripts/items/helmets/full_aketon_cap"));
 		}
 
-		r = this.Math.rand(0, 2);
-		if (r <= 1)
-		{
-			items.equip(this.new("scripts/items/shields/wooden_shield"));
-		}
-		else if (r == 2)
+		r = this.Math.rand(0, 3);
+		if (r <= 2)
 		{
 			items.equip(this.new("scripts/items/shields/heater_shield"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/shields/legend_tower_shield"));
 		}
 
 		r = this.Math.rand(0, 4);
