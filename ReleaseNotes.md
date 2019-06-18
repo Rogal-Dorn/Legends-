@@ -896,3 +896,9 @@ Adds barbarbarian vs shieldmaiden event
 Adds blacksmith crafts armor event
 Adds blacksmith fixes equipment event
 Adds butcher vs donkey event 
+
+Fixes tooltips on bribe, hover on an enemy and then view the tooltip 
+Towershields available at armorsmiths or near military attached locations 
+Shieldmaidens can spawn with a tower shield 
+Archery contests can attract female nobles
+Disbanded troops situations can attract shieldmaidens 
