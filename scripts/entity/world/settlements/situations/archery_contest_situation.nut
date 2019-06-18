@@ -56,6 +56,9 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		_draftList.push("poacher_background");
 		_draftList.push("poacher_background");
 		_draftList.push("poacher_background");
+		_draftList.push("female_adventurous_noble_background");
+		_draftList.push("female_adventurous_noble_background");
+		_draftList.push("female_disowned_noble_background");
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");

@@ -66,6 +66,10 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_draftList.push("squire_background");
 		_draftList.push("squire_background");
 		_draftList.push("squire_background");
+		_draftList.push("squire_background");
+		_draftList.push("legend_shieldmaiden_background");
+		_draftList.push("legend_shieldmaiden_background");
+		_draftList.push("legend_shieldmaiden_background");
 		_draftList.push("hedge_knight_background");
 		_draftList.push("hedge_knight_background");
 		_draftList.push("hedge_knight_background");
