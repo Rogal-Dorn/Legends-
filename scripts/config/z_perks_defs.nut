@@ -2184,7 +2184,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/drums_circle_bw.png",
 		Const = "LegendDrumsOfWar"
 	},	
-	
+	{
+		ID = "perk.mastery.fist",
+		Script = "scripts/skills/perks/perk_mastery_fist",
+		Name = this.Const.Strings.PerkName.LegendSpecFists,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecFists,
+		Icon = "ui/perks/fist_circle.png",
+		IconDisabled = "ui/perks/fist_circle_bw.png",
+		Const = "LegendSpecFists"
+	},		
+	{
+		ID = "perk.legend_kick",
+		Script = "scripts/skills/perks/perk_legend_kick",
+		Name = this.Const.Strings.PerkName.LegendKick,
+		Tooltip = this.Const.Strings.PerkDescription.LegendKick,
+		Icon = "ui/perks/kick_circle.png",
+		IconDisabled = "ui/perks/kick_circle_bw.png",
+		Const = "LegendKick"
+	},
+	{
+		ID = "perk.legend_grapple",
+		Script = "scripts/skills/perks/perk_legend_grapple",
+		Name = this.Const.Strings.PerkName.LegendGrapple,
+		Tooltip = this.Const.Strings.PerkDescription.LegendGrapple,
+		Icon = "ui/perks/grapple_circle.png",
+		IconDisabled = "ui/perks/grapple_circle_bw.png",
+		Const = "LegendGrapple"
+	}
 ];
 
 

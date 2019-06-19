@@ -4,7 +4,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.hand_to_hand";
 		this.m.Name = "Hand-to-Hand Attack";
-		this.m.Description = "The standard fist-fighting attack.  Let them fly!  Maximum damage is 10% of the average of your hitpoints and initiative";
+		this.m.Description = "Let them fly!  Maximum damage is the average of your hitpoints and initiative minus 90";
 		this.m.KilledString = "Pummeled to death";
 		this.m.Icon = "skills/active_08.png";
 		this.m.IconDisabled = "skills/active_08_sw.png";
@@ -31,7 +31,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.1;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 5;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -125,9 +125,15 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			local actor = this.getContainer().getActor();
 			local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
 			_properties.DamageRegularMin += 5 + this.Math.floor(Avg - 100);
-			_properties.DamageRegularMax += 5 + this.Math.floor(Avg - 80);
+			_properties.DamageRegularMax += 5 + this.Math.floor(Avg - 90);
 			_properties.MeleeSkill -= 10;
+			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
 		}
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )
