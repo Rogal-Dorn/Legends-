@@ -9,7 +9,7 @@ this.cultist_origin_hood_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 15.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_03.png[/img]{%randomcultist%, one your followers, enters your tent and then just as soon leaves. You stand to see where he\'s gone, but come to find a leather half-helm sitting atop your table. The leather is stitched with hairs of unknown origin and pinched together by what look like hooks and fingernails. The holes of the helm are a pitch black, and you get the sense that even if you filled them the darkness would never depart. It is then, staring into those emptied sockets, that you know something is staring back. You nod approvingly.}",
+			Text = "[img]gfx/ui/events/event_03.png[/img]{%randomcultist%, one your followers, enters your tent and then just as soon leaves. You stand to see where the\'ve gone, but come to find a leather half-helm sitting atop your table. The leather is stitched with hairs of unknown origin and pinched together by what look like hooks and fingernails. The holes of the helm are a pitch black, and you get the sense that even if you filled them the darkness would never depart. It is then, staring into those emptied sockets, that you know something is staring back. You nod approvingly.}",
 			Image = "",
 			List = [],
 			Characters = [],

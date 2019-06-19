@@ -7,7 +7,7 @@ this.rangers_origin_hunt_food_event <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.rangers_origin_hunt_food";
 		this.m.Title = "Along the way...";
-		this.m.Cooldown = 7.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 4.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_10.png[/img]{Being the collection of hunters that you are, it becomes readily apparent that you\'ve entered some fine hunting grounds. %randombrother% suggests the company go for a hunt, though he warns the group should be mindful of just how much they pluck from these bountiful stretches.}",

@@ -890,7 +890,6 @@ Favored Enemy perks damages now scale with the number of favored enemies killed.
 Integrates Boyski's Better Obituaries mod into Legends.
 
 
-
 **dynamic spawns**
 Sword mastery split into sword mastery and greatsword mastery. 
 Sword mastery - Riposte has no pentalty to hitchance, Slash, Gash and Lunge gain +5% chance to hit
@@ -912,3 +911,16 @@ New Perk 'DrumsOfWar' - active skill to reduce the fatigue of all allies
 Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
 Adds Wildwomen, get the same events as wildmen, those events are now gender neutral, the wildwomen spawn in the same places, though less likely. 
 Peddlers and Cultists have a 10% chance of being women. Haven't fixed their events yet 
+Cultist text supports female cultists
+Raider start volunteers, Deserter start volunteers, cultist start volunteers and scacrifices and poacher start hunting events, all happen twice as often.
+
+Adds barbarbarian vs shieldmaiden event
+Adds blacksmith crafts armor event
+Adds blacksmith fixes equipment event
+Adds butcher vs donkey event 
+
+Fixes tooltips on bribe, hover on an enemy and then view the tooltip 
+Towershields available at armorsmiths or near military attached locations 
+Shieldmaidens can spawn with a tower shield 
+Archery contests can attract female nobles
+Disbanded troops situations can attract shieldmaidens 

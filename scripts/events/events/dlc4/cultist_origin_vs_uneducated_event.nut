@@ -10,13 +10,13 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 		this.m.Cooldown = 13.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]A few brothers come to you looking rather worried. They say %cultist% has been sitting with %uneducated% for a few hours now. When you ask what\'s the worry, they remind you that the cultist has a scarred forehead and speaks of incredibly strange things. Yeah. Those are the demands of Davkul, an example of one\'s committment. You do not understand what could possibly be wrong with that.\n\n You go and see the two men. %uneducated% looks up at you, smiling, and says the cultist actually has a lot to teach him. Perhaps he does, but you know Davkul\'s presence need not be felt in all, and if it desired being forced upon the world it would be a misapprehension of Davkul\'s purpose.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]A few mercenaries come to you looking rather worried. They say %cultist% has been sitting with %uneducated% for a few hours now. When you ask what\'s the worry, they remind you that the cultist has a scarred forehead and speaks of incredibly strange things. Yeah. Those are the demands of Davkul, an example of one\'s committment. You do not understand what could possibly be wrong with that.\n\n You go and see the two of them. %uneducated% looks up at you, smiling, and says the cultist actually has a lot to teach. Perhaps so, but you know Davkul\'s presence need not be felt in all, and if it desired being forced upon the world it would be a misapprehension of Davkul\'s purpose.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Show him the darkness.",
+					Text = "Show the darkness.",
 					function getResult( _event )
 					{
 						return "B";
@@ -41,7 +41,7 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You nod and turn away. By next morning, %uneducated% is found with a fresh wound on his forehead, the blood of conversion and the price some must pay to devote themselves to Davkul. When you ask how he is doing, he only says a few words.%SPEECH_ON%Davkul is coming.%SPEECH_OFF%Shaking your head, you correct him.%SPEECH_ON%Davkul is not coming. Davkul AWAITS us all.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_05.png[/img]You nod and turn away. By next morning, %uneducated% is found with a freshly wounded forehead, the blood of conversion and the price some must pay to devote themselves to Davkul. When you ask how  %uneducated% is doing, the reply is simple.%SPEECH_ON%Davkul is coming.%SPEECH_OFF%Shaking your head, you correct the initiate.%SPEECH_ON%Davkul is not coming. Davkul AWAITS us all.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -83,7 +83,7 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You separate the two men, telling %uneducated% to go count some inventory. When he leaves, %cultist% sneers at you.%SPEECH_ON%Davkul awaits. You see him in your sleep. You see him in the nights. His darkness is coming. No light burns forever.%SPEECH_OFF%The man pauses and stares into your soul. And you stare back from somewhere not of your body. You can only see infinite blackness around you and a pip of light through which %cultist% is looking. Slowly, you float back toward the light and find yourself blinking and staring at the man. He bows.%SPEECH_ON%Apologies, captain, I did not know that Davkul had such plans.%SPEECH_OFF%Blinking again, you can only nod.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]You separate the two, telling %uneducated% to go count some inventory. With that done, %cultist% sneers at you.%SPEECH_ON%Davkul awaits. You see him in your sleep. You see him in the nights. His darkness is coming. No light burns forever.%SPEECH_OFF%The cultist pauses and stares into your soul. And you stare back from somewhere not of your body. You can only see infinite blackness around you and a pip of light through which %cultist% is looking. Slowly, you float back toward the light and find yourself blinking and staring. %cultist%  bows.%SPEECH_ON%Apologies, captain, I did not know that Davkul had such plans.%SPEECH_OFF%Blinking again, you can only nod.",
 			Image = "",
 			List = [],
 			Characters = [],
