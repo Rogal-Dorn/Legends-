@@ -228,8 +228,17 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 				bro.improveMood(0.5, "Learned a new skill");
 			}
-
 		}
+	}
+
+	function onBuildPerkTree( _tree)
+	{
+		if  (_tree == null)
+		{
+			return;
+		}
+		
+		_tree.addPerk(this.Const.Perks.PerkDefs.Berserk)
 	}
 });
 

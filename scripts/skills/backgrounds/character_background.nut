@@ -560,6 +560,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 
 		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
+		this.World.Assets.getOrigin().onBuildPerkTree(pT);
+
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
 	}

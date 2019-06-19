@@ -113,32 +113,37 @@ gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom)
 
 gt.Const.Perks.BuildCustomPerkTree <- function (_custom) 
 {
-	local tree = []
-	local treeMap = {}
+	local pT = {
+		Tree = [],
+		Map = {}
+	}
+	pT.addPerk <- function (_perk, _row=0) 
+	{
+		local perk = clone this.Const.Perks.PerkDefObjects[_perk];
+		//Dont add dupes
+		if (perk.ID in this.Map)
+		{
+			return;
+		}
+		perk.Row <- _row;
+		perk.Unlocks <- _row;
+		for (local i = this.Tree.len(); i < _row + 1; i = ++i)
+		{
+			this.Tree.push([]);
+		}
+		this.Tree[_row].push(perk);
+		this.Map[perk.ID] <- perk;
+	}
 
 	for( local row = 0; row < _custom.len(); row = ++row )
 	{
-		local rowL = [];
 		for( local i = 0; i < _custom[row].len(); i = ++i )
 		{
-			local perk = clone this.Const.Perks.PerkDefObjects[_custom[row][i]];
-			//Dont add dupes
-			if (perk.ID in treeMap)
-			{
-				continue;
-			}
-			perk.Row <- row;
-			perk.Unlocks <- row;
-			rowL.push(perk);
-			treeMap[perk.ID] <- perk;
+			pT.addPerk(_custom[row][i], row)
 		}
-		tree.push(rowL);
 	}
 
-	return {
-		Tree = tree,
-		Map = treeMap
-	}	
+	return pT;
 };
 
 

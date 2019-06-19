@@ -88,6 +88,10 @@ this.starting_scenario <- {
 	{
 	}
 
+	function onBuildPerkTree( _tree)
+	{
+	}
+
 	function onCombatFinished()
 	{
 		return true;

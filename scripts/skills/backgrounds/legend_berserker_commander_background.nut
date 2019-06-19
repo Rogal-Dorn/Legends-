@@ -160,7 +160,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendBerserkerRage,
-				this.Const.Perks.PerkDefs.LegendInfectiousRage,
+				//this.Const.Perks.PerkDefs.LegendInfectiousRage,
 				this.Const.Perks.PerkDefs.LegendUberNimble,
 				this.Const.Perks.PerkDefs.LegendRoster6		
 			]
@@ -266,7 +266,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Berserker");
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_infectious_rage"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));

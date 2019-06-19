@@ -236,11 +236,7 @@ this.data_helper <- {
 			this.convertItemsToUIData(_entity.getTile().Items, result.ground);
 			result.ground.push(null);
 		}
-
-		foreach(k, v in result)
-		{
-			this.logInfo("k = " + k + " : v = " + v)
-		}
+		
 		return result;
 	}
 
