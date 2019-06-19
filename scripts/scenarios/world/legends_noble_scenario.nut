@@ -228,5 +228,16 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			_list.push("legend_noble_ranged");
 		}	
 	}
+
+	function onBuildPerkTree( _tree)
+	{
+		if  (_tree == null)
+		{
+			return;
+		}
+		
+		_tree.addPerk(this.Const.Perks.PerkDefs.BagsAndBelts)
+	}
+
 });
 

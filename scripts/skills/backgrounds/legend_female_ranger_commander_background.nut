@@ -74,7 +74,7 @@ this.legend_female_ranger_commander_background <- this.inherit("scripts/skills/b
 			0.0,
 			0.0
 		];
-this.m.CustomPerkTree = [
+		this.m.CustomPerkTree = [
 			[
 				this.Const.Perks.PerkDefs.CripplingStrikes,
 				this.Const.Perks.PerkDefs.FastAdaption,
@@ -148,7 +148,7 @@ this.m.CustomPerkTree = [
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.LegendGuideSteps,
+				//this.Const.Perks.PerkDefs.LegendGuideSteps,
 				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendBigGameHunter,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
@@ -227,7 +227,7 @@ this.m.CustomPerkTree = [
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));
+		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 	}
 

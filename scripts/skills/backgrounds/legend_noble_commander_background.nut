@@ -136,7 +136,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Inspire,
 				this.Const.Perks.PerkDefs.LegendRelax,
-				this.Const.Perks.PerkDefs.LegendPreparedForAnything,
+				//this.Const.Perks.PerkDefs.LegendPreparedForAnything,
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],
@@ -215,7 +215,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_prepared_for_anything"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 

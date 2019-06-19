@@ -217,7 +217,17 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
 			}
 		}
-
 	}
+
+	function onBuildPerkTree( _tree)
+	{
+		if  (_tree == null)
+		{
+			return;
+		}
+		
+		_tree.addPerk(this.Const.Perks.PerkDefs.Pathfinder);
+	}
+
 });
 
