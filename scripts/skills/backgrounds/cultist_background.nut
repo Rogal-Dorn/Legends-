@@ -7,8 +7,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Name = "Cultist";
 		this.m.Icon = "ui/backgrounds/background_34.png";
 		this.m.BackgroundDescription = "Cultists have a resolve to spread further their cult that is second to few.";
-		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of him, but every so often you have dreams in which he appears. He\'s often standing by himself in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
-		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread his faith. There\'s no telling what became of him, but there was a recent inquisition against unholy faiths and hundreds of \'men in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
+		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of the fanatic, but every so often they appear in your dreams. Often standing alone in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
+		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread the faith. There\'s no telling what became of the fanatic, but there was a recent inquisition against unholy faiths and hundreds of \'folk in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
 		this.m.HiringCost = 50;
 		this.m.DailyCost = 6;
 		this.m.Excluded = [
@@ -46,11 +46,27 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Fanatic",
 			"the Zealot"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.UntidyMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_00";
+
+		local r;
+		r = this.Math.rand(0, 9);
+		if (r == 0)
+			{
+			this.m.Faces = this.Const.Faces.OldFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Old;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			}
+		else
+			{
+			this.m.Faces = this.Const.Faces.AllMale;
+			this.m.Hairs = this.Const.Hair.UntidyMale;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = this.Const.Beards.Untidy;
+			this.m.Body = "bust_naked_body_00";
+			}
 		this.m.IsOutlawBackground = true;
 	}
 
@@ -72,7 +88,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function onBuildDescription()
 	{
-		return "{The man stands with a placard hanging from his neck. | The man\'s face is wreathed in garish tattoos. He carries a note. | The man hides his face inside a deep cowl, an islanded tip of a nose all that you see in the darkness. He carries a placard around his neck. | Clothed in rags, it is strange the man neither sweats nor shakes in heat or cold. He clutches a scroll as if it protects him from the very elements. | Scripture is written across his arm in scars, the coda of madness. | The stranger writes in the dirt as quick as a man who has done it a thousand times. His message is clear to see. | The man stands with a tome nestled behind a crooked arm. He hands it to you. Opening it, the leather feels like none you\'ve ever touched before. There is only one passage inside, written over and over.} It reads: \"Ph\'nglui mglw\'nafh Davkul R\'lyeh wgah\'nagl fhtagn. Nn\'nilgh\'ri, nn\'nglui. Sgn\'wahl sll\'ha ep\'shogg.\" Hmm... quaint.";
+		return "{The cultist stands with a placard hanging from their neck. | Their face is wreathed in garish tattoos. They carry a note. | The face is hidden inside a deep cowl, an islanded tip of a nose all that you see in the darkness. They carry a placard around their neck. | Clothed in rags, it is strange they neither sweat nor shake in heat or cold. Clutching a scroll as if it protects from the very elements. | Scripture is written across their arm in scars, the coda of madness. | The stranger writes in the dirt as quick as someone who has done it a thousand times. The message is clear to see. | They stand with a tome nestled behind a crooked arm. They hand it to you. Opening it, the leather feels like none you\'ve ever touched before. There is only one passage inside, written over and over.} It reads: \"Ph\'nglui mglw\'nafh Davkul R\'lyeh wgah\'nagl fhtagn. Nn\'nilgh\'ri, nn\'nglui. Sgn\'wahl sll\'ha ep\'shogg.\" Hmm... quaint.";
 	}
 
 	function onChangeAttributes()

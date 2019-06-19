@@ -5,8 +5,8 @@ this.legend_deathly_spectre_trait <- this.inherit("scripts/skills/traits/charact
 		this.character_trait.create();
 		this.m.ID = "trait.legend_deathly_spectre";
 		this.m.Name = "Deathly spectre";
-		this.m.Icon = "ui/traits/trait_icon_43.png";
-		this.m.Description = "The shadow of undeath follows this character, they will probably be resurrected after death";
+		this.m.Icon = "ui/traits/raisedead2_circle.png";
+		this.m.Description = "The shadow of undeath follows this character due to having a necromancer nearby, they will probably be resurrected after death but retain any injuries sustained";
 		this.m.Titles = [
 			"the Doomed",
 			"the Forsaken",
@@ -37,14 +37,14 @@ this.legend_deathly_spectre_trait <- this.inherit("scripts/skills/traits/charact
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] chance to be resurrected as undead when killed"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]66%[/color] chance to be resurrected as undead when killed, any injuries will be retained"
 			}
 		];
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.SurviveWithInjuryChanceMult *= 2.72;
+		_properties.SurviveWithInjuryChanceMult *= 2;
 		_properties.SurvivesAsUndead = true;
 	}
 
