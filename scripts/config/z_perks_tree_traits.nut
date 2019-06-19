@@ -65,8 +65,8 @@ gt.Const.Perks.DeviousTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendTrueBeliever],
 		[],
-		[gt.Const.Perks.PerkDefs.LoneWolf],
-		[gt.Const.Perks.PerkDefs.LegendHidden],//gt.Const.Perks.PerkDefs.Hide
+		[gt.Const.Perks.PerkDefs.LegendBlendIn],
+		[gt.Const.Perks.PerkDefs.LegendHidden],
 		[gt.Const.Perks.PerkDefs.LegendEvasion]
 	]
 };
@@ -92,10 +92,10 @@ gt.Const.Perks.IntelligentTree <- {
 			gt.Const.Perks.PerkDefs.Gifted,
 			gt.Const.Perks.PerkDefs.FortifiedMind
 		],
-		[gt.Const.Perks.PerkDefs.LegendBarterConvincing],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy],
+		[],
+		[],
 		[]
 	]
 };
@@ -133,16 +133,10 @@ gt.Const.Perks.OrganisedTree <- {
 	ID = "OrganisedTree",
 	Tree = [
 		[gt.Const.Perks.PerkDefs.BagsAndBelts],
-		[
-			gt.Const.Perks.PerkDefs.LegendEfficientPacking,
-			gt.Const.Perks.PerkDefs.LegendToolsSpares
-		],
-		[
-			gt.Const.Perks.PerkDefs.LegendSkillfulStacking,
-			gt.Const.Perks.PerkDefs.LegendToolsDrawers
-		],				
 		[],
+		[gt.Const.Perks.PerkDefs.LegendEfficientPacking],				
 		[],
+		[gt.Const.Perks.PerkDefs.LegendSkillfulStacking],
 		[],
 		[]
 	]

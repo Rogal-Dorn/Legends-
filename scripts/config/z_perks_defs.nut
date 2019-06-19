@@ -2144,9 +2144,45 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_assured_conquest",
 		Name = this.Const.Strings.PerkName.LegendAssuredConquest,
 		Tooltip = this.Const.Strings.PerkDescription.LegendAssuredConquest,
-		Icon = "ui/perks/perk_21.png",
-		IconDisabled = "ui/perks/perk_21_bw.png",
+		Icon = "ui/perks/assured_conquest_circle.png",
+		IconDisabled = "ui/perks/assured_conquest_circle_bw.png",
 		Const = "LegendAssuredConquest"
+	},	
+	{
+		ID = "perk.legend_blend_in",
+		Script = "scripts/skills/perks/perk_legend_blend_in",
+		Name = this.Const.Strings.PerkName.LegendBlendIn,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBlendIn,
+		Icon = "ui/perks/blend_in_circle.png",
+		IconDisabled = "ui/perks/blend_in_circle_bw.png",
+		Const = "LegendBlendIn"
+	},	
+	{
+		ID = "perk.legend_mastery_staff_stun",
+		Script = "scripts/skills/perks/perk_mastery_staff_stun",
+		Name = this.Const.Strings.PerkName.LegendSpecStaffStun,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecStaffStun,
+		Icon = "ui/perks/staff_circle.png",
+		IconDisabled = "ui/perks/staff_circle_bw.png",
+		Const = "LegendSpecStaffStun"
+	},	
+	{
+		ID = "perk.legend_staff_skill",
+		Script = "scripts/skills/perks/perk_legend_specialist_staff_skill",
+		Name = this.Const.Strings.PerkName.LegendSpecStaffStun,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecStaffStun,
+		Icon = "ui/perks/staff_skill_circle.png",
+		IconDisabled = "ui/perks/staff_skill_circle_bw.png",
+		Const = "LegendSpecStaffSkill"
+	},	
+	{
+		ID = "perk.legend_drums_of_war",
+		Script = "scripts/skills/perks/perk_legend_drums_of_war",
+		Name = this.Const.Strings.PerkName.LegendDrumsOfWar,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDrumsOfWar,
+		Icon = "ui/perks/drums_circle.png",
+		IconDisabled = "ui/perks/drums_circle_bw.png",
+		Const = "LegendDrumsOfWar"
 	},	
 	
 ];

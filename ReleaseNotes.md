@@ -903,5 +903,12 @@ New Perk 'Thrust Master' grants +15% damage on the 'Thrust' skill
 New Perk 'Balance' grants up to 50 bonuse melee and ranged defense if your maximum armor value matches your current initiative. The value decreases for every point of difference between the two, to a minimum of 5. 
 New Perk 'Matching Set' grants up to 5 fatigue per round if your helmet and armor values match. 
 New Perk 'Lithe' - Like nimble, but with the 15 fatigue floor raised to 30, and the bonus halved.
-New Perk 'Gray Man' - Master of concelement and blending in. Can hide from enemies in any terrain until next attack or moving adjacent to enemy. Can't be activated if adjacent to enemy.
-New Perk 'Assured Conquest' - 10% meleem skill, melee defense and range dfense when at confident moral.
+New Perk 'Camouflage' - Master of concelement and blending in. Can hide from enemies in any terrain until next attack or moving adjacent to enemy. Can't be activated if adjacent to enemy.
+New Perk 'Assured Conquest' - 10% melee skill, melee defense and range dfense when at confident moral.
+New Perk 'Blend In' - Makes enemies 50% less likely to attack you instead of someone else
+New Perk 'Staff Spins' - Any staff hit that would usually daze, also stuns 
+New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense 
+New Perk 'DrumsOfWar' - active skill to reduce the fatigue of all allies 
+Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
+Adds Wildwomen, get the same events as wildmen, those events are now gender neutral, the wildwomen spawn in the same places, though less likely. 
+Peddlers and Cultists have a 10% chance of being women. Haven't fixed their events yet 

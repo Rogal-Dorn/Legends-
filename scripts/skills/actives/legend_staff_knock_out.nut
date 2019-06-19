@@ -101,14 +101,15 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 			{
 				target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
 
+				if (_user.getCurrentProperties().IsSpecializedInStaffStun)
+				{
+				target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+				}
+
+
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed" + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-				}
-
-				if (this.m.IsFromLute && _user.isPlayerControlled())
-				{
-					this.updateAchievement("LuteStun", 1, 1);
 				}
 			}
 		}

@@ -914,6 +914,7 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInNets = false,
 	IsSpecializedInSlings = false,
 	IsSpecializedInStaves = false,
+	IsSpecializedInStaffStun = false,
 	IsSpecializedInSummons = false,
 	IsContentWithBeingInReserve = false,
 	DamageInitiativeMin = 0,

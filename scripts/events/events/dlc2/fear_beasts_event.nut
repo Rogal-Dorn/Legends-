@@ -9,13 +9,13 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% is carving a rabbit into a piece of bark. It\'s shaping up nicely until he angrily throws the whole thing into the campfire.%SPEECH_ON%Oh who the fark am I kidding? I wish I was out here hunting game! But this ain\'t game, these are monsters! Creatures of the night! Bullshit, all of it, where\'d they even come from? Well I tell you what, I ain\'t gonna be killed by one of them things! Not a farking chance!%SPEECH_OFF%The rest of the company stares at him as he comes down from the outburst. He quietly watches the rabbit carving churn and burn.}",
+			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% is carving a rabbit into a piece of bark. It\'s shaping up nicely until the whole thing is angrily thrown into the campfire.%SPEECH_ON%Oh who the fark am I kidding? I wish I was out here hunting game! But this ain\'t game, these are monsters! Creatures of the night! Bullshit, all of it, where\'d they even come from? Well I tell you what, I ain\'t gonna be killed by one of them things! Not a farking chance!%SPEECH_OFF%The rest of the company stares as %brother% comes down from the outburst. %brother% quietly sits watching the rabbit carving churn and burn.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "This is taking a toll on the men.",
+					Text = "This is taking a toll on the mercenaries.",
 					function getResult( _event )
 					{
 						return 0;
@@ -74,7 +74,7 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.wildman")
+			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
 			{
 				continue;
 			}

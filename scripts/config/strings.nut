@@ -1286,7 +1286,11 @@ gt.Const.Strings.PerkName <- {
 	LegendBalance = "Balance",
 	LegendMatchingSet = "Matching Set",
 	LegendLithe = "Lithe",
-	LegendHidden = "Gray Man"
+	LegendHidden = "Camouflage",
+	LegendBlendIn = "Blend in",
+	LegendSpecStaffStun = "Staff Spins",
+	LegendSpecStaffSkill = "Staff Block",
+	LegendDrumsOfWar = "Drums of War"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1548,8 +1552,11 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] bonuse melee and ranged defense if your maximum armor value matches your current initiative. The value decreases for every point of difference between the two, to a minimum of 5",
 	LegendMatchingSet = "Proper distribution of weight is crucial for maintaining mobility. Grants up to  [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] fatigue per round if your helmet and armor values match. Decreases by 1 for every 10 points difference.",
 	LegendLithe = "Not as nimble as some, but more lithe than most. Like nimble, but with the 15 fatigue floor raised to  [color=" + this.Const.UI.Color.PositiveValue + "]30[/color], and the bonus halved"
-	LegendHidden = "Master the art of concelement. Blend in with your surroundings and remain hidden from the enemy until your next attack."
-
+	LegendHidden = "Master the art of concelement. Blend in with your surroundings and remain hidden from the enemy until your next attack.",
+	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] less likely to attack you instead of an ally.",
+	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns",
+	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] melee defense",
+	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores 10 fatigue to every ally on the field."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

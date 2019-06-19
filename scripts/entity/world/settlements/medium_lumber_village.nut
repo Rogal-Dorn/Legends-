@@ -58,7 +58,7 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"poacher_background",
 			"tailor_background",
 			"vagabond_background",
-			"wildman_background",
+			"wildwoman_background",
 			"wildman_background",
 			"witchhunter_background",
 			"cripple_background",

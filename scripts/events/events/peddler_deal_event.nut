@@ -9,7 +9,7 @@ this.peddler_deal_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%peddler% comes to you, rubbing the back of his neck and nervously pulling on the front of his shirt. He proposes a plan wherein he goes into town with a handful of goods to peddle around, as he\'s done so often in the past.\n\nOnly problem is that he doesn\'t yet have the goods - he has to buy them from some local in the nearby hinterlands. All he needs now is a bit of money to get him started and help purchase the goods. A sum of 500 crowns all in all. Naturally, as a partner, you will get a cut of the profits once it\'s all said and done.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%peddler% comes to you, rubbing the back of their neck and nervously pulling on their shirt front. %peddler%  proposes a plan to goes into town with a handful of goods to peddle around, as they\'ve done so often in the past.\n\nOnly problem is that %peddler%  doesn\'t yet have the goods -  that will need to be bought from some local in the nearby hinterlands. All %peddler% needs now is a bit of money to get started and help purchase the goods. A sum of 500 crowns all in all. Naturally, as a partner, you will get a cut of the profits once it\'s all said and done.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -39,7 +39,7 @@ this.peddler_deal_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_04.png[/img]You hand %peddler% the crowns and off he goes.\n\nA few hours later, the peddler comes running up with a small lockbox in hand. The wily grin on his face is undeniable and he\'s unwittingly fistpumping as he glides to you. When he tries to speak, gasps of breath seize him. You hold your hand out, telling him to take his time. Settling down, the man hands over a heavy purse of coins, stating that it is your cut of the profits.\n\nBefore you can even say anything, the man wheels on his heels and jumps away, giddy with his success.",
+			Text = "[img]gfx/ui/events/event_04.png[/img]You hand %peddler% the crowns and send them off.\n\nA few hours later, the peddler comes running up with a small lockbox in hand. The wily grin on %peddler%\'s face is undeniable, unwittingly fistpumping while gliding to you. When %peddler%  tries to speak, but is seized by gasps of breath. You hold your hand out, telling %peddler%  to take their time. Settling down, the mercenary hands over a heavy purse of coins, stating that it is your cut of the profits.\n\nBefore you can even say anything, the peddler wheels on their heels and jumps away, giddy with success.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -87,7 +87,7 @@ this.peddler_deal_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%peddler% makes off and you tend to other business for the day.\n\nAs you step out of your tent hours later, you see a slumped shape in the distance, steadily heading your way. It appears to be the peddler. He carries nothing with him but a frown. As he gets closer, you begin to see the bruises that dot his body. He explains that while he managed to purchase the goods from his source, the actual townspeople weren\'t particularly warm to his selling tactics.\n\nWhat money was invested has been lost and %peddler% heads to a tent to nurse his wounds.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%peddler% makes off and you tend to other business for the day.\n\nAs you step out of your tent hours later, you see a slumped shape in the distance, steadily heading your way. It appears to be the peddler, carrying nothing but a frown. As %peddler% gets closer, you begin to see the bruises that dot their body. %peddler% explains that while managing to purchase the goods from the source, the actual townspeople weren\'t particularly warm to the selling tactics.\n\nWhat money was invested has been lost and %peddler% heads to a tent to nurse those wounds.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -118,7 +118,7 @@ this.peddler_deal_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/days_wounded.png",
 					text = _event.m.Peddler.getName() + " suffers light wounds"
 				});
-				_event.m.Peddler.worsenMood(2, "Failed in his plan and lost a large amount of money");
+				_event.m.Peddler.worsenMood(2, "Failed in a plan and lost a large amount of money");
 
 				if (_event.m.Peddler.getMoodState() < this.Const.MoodState.Neutral)
 				{

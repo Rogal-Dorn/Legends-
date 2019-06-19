@@ -9,13 +9,13 @@ this.fear_undead_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% looks around at the men around the campfire. He then looks at the ground for a few minutes before exploding.%SPEECH_ON%Am I the only one here who is sane? How is no one else losing their farking minds over the dead walking the earth again? What the hell, where are the old gods in all this, they just farking gonna watch this shitshow?%SPEECH_OFF%The company tries to temper his fears, but he goes back to a ponderous silence of a man with too much to think about and no one willing, or wanting, to truly listen.}",
+			Text = "[img]gfx/ui/events/event_26.png[/img]{%brother% looks around at the others around the campfire, then looks at the ground for a few minutes before exploding.%SPEECH_ON%Am I the only one here who is sane? How is no one else losing their farking minds over the dead walking the earth again? What the hell, where are the old gods in all this, they just farking gonna watch this shitshow?%SPEECH_OFF%The company tries to temper the fears, but %brother% goes back to a ponderous silence of a person with too much to think about and no one willing, or wanting, to truly listen.}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "This is taking a toll on the men.",
+					Text = "This is taking a toll on the company.",
 					function getResult( _event )
 					{
 						return 0;
@@ -74,7 +74,7 @@ this.fear_undead_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.crusader" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.wildman")
+			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.crusader" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman"  || bro.getBackground().getID() == "background.wildman")
 			{
 				continue;
 			}

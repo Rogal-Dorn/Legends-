@@ -78,7 +78,7 @@ gt.Const.Perks.GreatSwordTree <- {
 	Tree = [
 		[],//gt.Const.Perks.PerkDefs.AOE
 		[gt.Const.Perks.PerkDefs.BloodyHarvest],
-		[gt.Const.Perks.PerkDefs.LegendForcefulSwing], //gt.Const.Perks.PerkDefs.AOECostReduction
+		[gt.Const.Perks.PerkDefs.LegendForcefulSwing], 
 		[gt.Const.Perks.PerkDefs.LegendSpecGreatSword],
 		[],
 		[],
@@ -181,12 +181,12 @@ gt.Const.Perks.ThrowingTree <- {
 gt.Const.Perks.SlingsTree <- {
 	ID = "Slings",
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.RangedBlunt
-		[],
-		[],//gt.Const.Perks.PerkDefs.BetweenTheEyes
-		[gt.Const.Perks.PerkDefs.LegendMasterySlings],//
-		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingSkill],//gt.Const.Perks.PerkDefs.SlingDaze
 		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingDamage],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingSkill],
+		[gt.Const.Perks.PerkDefs.LegendMasterySlings],
+		[],
+		[],
 		[]
 	]
 };
@@ -194,11 +194,11 @@ gt.Const.Perks.SlingsTree <- {
 gt.Const.Perks.StavesTree <- {
 	ID = "Staves",
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.RangeStun
 		[],
-		[],//gt.Const.Perks.PerkDefs.StaveBlock
-		[gt.Const.Perks.PerkDefs.LegendMasteryStaves],//
-		[],//gt.Const.Perks.PerkDefs.StaveStun
+		[],
+		[gt.Const.Perks.PerkDefs.LegendStaffSkill],
+		[gt.Const.Perks.PerkDefs.LegendMasteryStaves],
+		[gt.Const.Perks.PerkDefs.LegendStaffStun],
 		[],
 		[]
 	]
@@ -219,8 +219,8 @@ gt.Const.Perks.WeaponTrees <- {
 		gt.Const.Perks.CrossbowTree,
 		gt.Const.Perks.BowTree,
 		gt.Const.Perks.ThrowingTree,
-		gt.Const.Perks.SlingsTree
-		//gt.Const.Perks.StavesTree
+		gt.Const.Perks.SlingsTree,
+		gt.Const.Perks.StavesTree
 	],
 	function getRandom(_exclude) 
 	{

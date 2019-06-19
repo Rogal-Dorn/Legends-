@@ -42,7 +42,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 				if (_event.m.Wildman != null)
 				{
 					this.Options.push({
-						Text = "You are a man of the wilds, %wildman%, go take a look.",
+						Text = "You came from the wilds, %wildman%, go take a look.",
 						function getResult( _event )
 						{
 							return "E";
@@ -87,12 +87,12 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_hunter")
+					if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_hunter" || bro.getBackground().getID() == "background.legend_commander_ranger")
 					{
 						continue;
 					}
 
-					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian")
+					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.legend_berserker" || bro.getBackground().getID() == "background.legend_commander_berserker")
 					{
 						continue;
 					}
@@ -114,7 +114,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{You tell the company to plug their ears if it bothers them so much. As the cries of the wild dogs grow louder the men turn to impromptu ear candling to keep the sounds at bay. Eventually, the sense deprived sellswords are awkwardly walking around like animatronics. You look to join the muted, plugging a waxball into your ear, but before you can get the second ear a loud crash sends inventory flowing and a tent billows as it collapses. You drain your ear and bark orders to the mercenaries who are scattered all over the camp.}",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{You tell the company to plug their ears if it bothers them so much. As the cries of the wild dogs grow louder the company turn to impromptu ear candling to keep the sounds at bay. Eventually, the sense deprived sellswords are awkwardly walking around like animatronics. You look to join the muted, plugging a waxball into your ear, but before you can get the second ear a loud crash sends inventory flowing and a tent billows as it collapses. You drain your ear and bark orders to the mercenaries who are scattered all over the camp.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -229,7 +229,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{You look about the company. A young %recruit% looks back. He looks down, as though to look within himself, and then hurriedly gets to his feet.%SPEECH_ON%Say no more, captain. I will find out what this disturbance is.%SPEECH_OFF%The fresh recruit gathers his things and then stands at the edge of the camp\'s light, a very dark forest looking back at him. The man stares down again and clenches and unclenches his hands.%SPEECH_ON%Alright. Alright.%SPEECH_OFF%He looks up.%SPEECH_ON%Let\'s do this.%SPEECH_OFF%The man is never seen again.}",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{You look about the company. A young %recruit% looks back. Looking down, as though to look within themself, and then hurriedly gets to their feet.%SPEECH_ON%Say no more, captain. I will find out what this disturbance is.%SPEECH_OFF%The fresh recruit gathers their things and then stands at the edge of the camp\'s light, a very dark forest looking back at them. The mercenary stares down again and clenches and unclenches their hands.%SPEECH_ON%Alright. Alright.%SPEECH_OFF%He looks up.%SPEECH_ON%Let\'s do this.%SPEECH_OFF%The recruit is never seen again.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -260,7 +260,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "G",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{You look about the company. A young %recruit% looks back. He looks down, as though to look within himself, and then hurriedly gets to his feet.%SPEECH_ON%Say no more, captain. I will find out what this disturbance is.%SPEECH_OFF%The fresh recruit gathers his things and then stands at the edge of the camp\'s light, a very dark forest looking back at him. The man stares down again and clenches and unclenches his hands. He huffs and then steps forth, immediately slipping into the shadows. Hours pass. Finally, he returns. His clothes are in tatters. His weapons are gone. He spits forth story after story. Magic rings, volcanoes, giant eagles, absolute nonsense. Whatever he saw, it\'s clear the blubbering sellsword needs to clear his head with some well earned beauty sleep. Which he\'ll get since all that awful noise has ceased.}",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{You look about the company. A young %recruit% looks back. They look down, as though to look within themself, and then hurriedly gets to their feet.%SPEECH_ON%Say no more, captain. I will find out what this disturbance is.%SPEECH_OFF%The fresh recruit gathers their things and then stands at the edge of the camp\'s light, a very dark forest looking back at them. The mercenary stares down again and clenches and unclenches their hands. %recruit% huffs and then steps forth, immediately slipping into the shadows. Hours pass. Finally, %recruit% returns. Their clothes are in tatters. Weapons are gone.  Spitting forth story after story. Magic rings, volcanoes, giant eagles, absolute nonsense. Whatever %recruit% saw, it\'s clear the blubbering sellsword needs to clear their head with some well earned beauty sleep. Which the\'ll get since all that awful noise has ceased.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -352,11 +352,11 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_hunter")
+			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_hunter"  || bro.getBackground().getID() == "background.legend_ranger"  || bro.getBackground().getID() == "background.legend_commander_ranger")
 			{
 				candidates_hunter.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.wildman")
+			else if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
 			{
 				candidates_wildman.push(bro);
 			}

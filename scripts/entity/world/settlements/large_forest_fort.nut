@@ -53,6 +53,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"ratcatcher_background",
 			"refugee_background",
 			"wildman_background",
+			"wildwoman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",

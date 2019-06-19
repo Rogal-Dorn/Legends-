@@ -61,7 +61,7 @@ this.large_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"thief_background",
 			"vagabond_background",
 			"wildman_background",
-			"wildman_background",
+			"wildwoman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"female_disowned_noble_background",

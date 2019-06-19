@@ -22,11 +22,11 @@ gt.Const.Perks.BardClassTree <- {
 	ID = "BardClassTree",
 	Tree = [
 		[],
+		[gt.Const.Perks.PerkDefs.LegendDaze],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendEntice],
 		[],
-		[],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendDrumsOfWar],
 		[]
 	]
 };
@@ -37,10 +37,10 @@ gt.Const.Perks.HealerClassTree <- {
 		[],
 		[],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecBandage],
+		[gt.Const.Perks.PerkDefs.LegendMedIngredients],
 		[],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendFieldTriage]
 	]
 };
 
@@ -75,11 +75,24 @@ gt.Const.Perks.RepairClassTree <- {
 	Tree = [
 		[],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendToolsDrawers],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendToolsSpares],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendFieldRepairs]
+	]
+};
+
+gt.Const.Perks.BarterClassTree <- {
+	ID = "BarterClassTree",
+	Tree = [
 		[],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendBarterConvincing],
 		[],
 		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy],
+		[gt.Const.Perks.PerkDefs.LegendBribe]
 	]
 };
 
@@ -90,7 +103,8 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.HealerClassTree,
 		gt.Const.Perks.FistsClassTree,
 		gt.Const.Perks.ChefClassTree, 
-		gt.Const.Perks.RepairClassTree
+		gt.Const.Perks.RepairClassTree,
+		gt.Const.Perks.BarterClassTree
 	],
 	function getRandom(_exclude) 
 	{
