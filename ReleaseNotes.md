@@ -914,7 +914,6 @@ New Perk 'Unarmed Mastery' -Reduces fatigue and increase armor penetration unarm
 Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
 Adds Wildwomen, get the same events as wildmen, those events are now gender neutral, the wildwomen spawn in the same places, though less likely. 
 Peddlers and Cultists have a 10% chance of being women. Haven't fixed their events yet 
-<<<<<<< HEAD
 Cultist text supports female cultists
 Raider start volunteers, Deserter start volunteers, cultist start volunteers and scacrifices and poacher start hunting events, all happen twice as often.
 
@@ -928,7 +927,5 @@ Towershields available at armorsmiths or near military attached locations
 Shieldmaidens can spawn with a tower shield 
 Archery contests can attract female nobles
 Disbanded troops situations can attract shieldmaidens 
-=======
 
 Adds all the old specialisations in as class perks. 
->>>>>>> 478b60a9fc6ebfc2117567126b6042c782ef5305
