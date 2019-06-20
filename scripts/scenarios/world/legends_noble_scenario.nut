@@ -164,6 +164,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 6;
 		this.World.Tags.set("IsLegendsNoble", true);
 	}

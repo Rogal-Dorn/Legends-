@@ -124,8 +124,10 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Events.fire("event.legend_necro_scenario_intro");
 		}, null);
 	}
-		function onInit()
+	
+	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 3;
 		this.World.Tags.set("IsLegendsNecro", true);
 	}

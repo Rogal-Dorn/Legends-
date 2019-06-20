@@ -171,6 +171,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 1;
 		this.World.Tags.set("IsLegendsBerserker", true);
 	}
