@@ -196,9 +196,9 @@ gt.Const.Perks.StavesTree <- {
 	Tree = [
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendStaffSkill],
+		[gt.Const.Perks.PerkDefs.LegendSpecStaffSkill],
 		[gt.Const.Perks.PerkDefs.LegendMasteryStaves],
-		[gt.Const.Perks.PerkDefs.LegendStaffStun],
+		[gt.Const.Perks.PerkDefs.LegendSpecStaffStun],
 		[],
 		[]
 	]

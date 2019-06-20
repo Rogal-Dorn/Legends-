@@ -173,6 +173,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.Assets.m.BuyPriceMult = 1.1;
 		this.World.Assets.m.SellPriceMult = 0.9;
 		this.World.Assets.m.ExtraLootChance = 50;

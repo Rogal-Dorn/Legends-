@@ -129,6 +129,7 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.Assets.m.BusinessReputationRate = 0.5;
 		this.World.Assets.m.BuyPriceMult = 0.9;
 		this.World.Assets.m.SellPriceMult = 1.1;

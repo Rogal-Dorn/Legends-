@@ -137,6 +137,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		this.World.Assets.m.BrothersMax = 3;
 		this.World.Tags.set("IsLegendsHunter", true);

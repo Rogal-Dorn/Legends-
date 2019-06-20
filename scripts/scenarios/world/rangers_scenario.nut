@@ -165,6 +165,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 	}
 	

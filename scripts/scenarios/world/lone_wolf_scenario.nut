@@ -125,6 +125,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 	function onInit()
 	{
+		this.starting_scenario.onInit();
 		this.World.Assets.m.BrothersMax = 12;
 	}
 

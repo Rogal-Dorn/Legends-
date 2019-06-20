@@ -885,10 +885,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		if (this.m.CustomPerkTree != null)
-		{
-			this.buildPerkTree();
-		}
+        //Don't call this here, let the scenario call it on deserialize
+		//since the scenario can add perks to the tree.
+		//if (this.m.CustomPerkTree != null)
+		//{
+		//	this.buildPerkTree();
+		//}
 	}
 
 });
