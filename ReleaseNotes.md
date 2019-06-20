@@ -907,10 +907,14 @@ New Perk 'Assured Conquest' - 10% melee skill, melee defense and range dfense wh
 New Perk 'Blend In' - Makes enemies 50% less likely to attack you instead of someone else
 New Perk 'Staff Spins' - Any staff hit that would usually daze, also stuns 
 New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense 
-New Perk 'DrumsOfWar' - active skill to reduce the fatigue of all allies 
+New Perk 'Drums Of War' - active skill to reduce the fatigue of all allies 
+New Perk 'Kicking' - Active skill to push back and fatigue enemies
+New Perk 'Grappling' - Active skill to stun and fatigue enemies
+New Perk 'Unarmed Mastery' -Reduces fatigue and increase armor penetration unarmed attacks
 Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
 Adds Wildwomen, get the same events as wildmen, those events are now gender neutral, the wildwomen spawn in the same places, though less likely. 
 Peddlers and Cultists have a 10% chance of being women. Haven't fixed their events yet 
+<<<<<<< HEAD
 Cultist text supports female cultists
 Raider start volunteers, Deserter start volunteers, cultist start volunteers and scacrifices and poacher start hunting events, all happen twice as often.
 
@@ -924,3 +928,7 @@ Towershields available at armorsmiths or near military attached locations
 Shieldmaidens can spawn with a tower shield 
 Archery contests can attract female nobles
 Disbanded troops situations can attract shieldmaidens 
+=======
+
+Adds all the old specialisations in as class perks. 
+>>>>>>> 478b60a9fc6ebfc2117567126b6042c782ef5305
