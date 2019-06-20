@@ -102,26 +102,26 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.beggar":
 		return [
-			//this.Const.Perks.FistsTree,
-			this.Const.Perks.DaggerTree,
-			this.Const.Perks.SlingsTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.MartyrTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.AgileTree
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.DaggerTree,
+			gt.Const.Perks.SlingsTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.MartyrTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.DeviousTree,
+			gt.Const.Perks.AgileTree
 			];
 		break;
 		case "background.legend_blacksmith":
 		return [
-			this.Const.Perks.HammerTree,
-			//this.Const.Perks.BlacksmithHammerTree,
-			this.Const.Perks.PolearmTree,
-			this.Const.Perks.HeavyArmorTree,
-			this.Const.Perks.RepairClassTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.FitTree
+			gt.Const.Perks.HammerTree,
+			gt.Const.Perks.HammerClassTree,
+			gt.Const.Perks.PolearmTree,
+			gt.Const.Perks.HeavyArmorTree,
+			gt.Const.Perks.RepairClassTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.SturdyTree,
+			gt.Const.Perks.FitTree
 			];
 		break;
 		case "background.bowyer":
@@ -150,38 +150,38 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.brawler":
 		return [
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.HammerTree,
-			this.Const.Perks.DaggerTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.TrainedTree,
-			this.Const.Perks.IndestructibleTree
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.HammerTree,
+			gt.Const.Perks.DaggerTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.TrainedTree,
+			gt.Const.Perks.IndestructibleTree
 			];
 		break;
 		case "background.butcher":
 		return [
-			this.Const.Perks.CleaverTree,
-			this.Const.Perks.DaggerTree,
-			//this.Const.Perks.ButcherCleaverTree
-			this.Const.Perks.MediumArmorTree,
-			//this.Const.Perks.ChefTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.LargeTree
+			gt.Const.Perks.CleaverTree,
+			gt.Const.Perks.DaggerTree,
+			gt.Const.Perks.ButcherClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			//gt.Const.Perks.ChefTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.LargeTree
 			];
 		break;
 		case "background.legend_cannibal":
 		return [
-			this.Const.Perks.CleaverTree,
-			this.Const.Perks.SwordsTree,
-			//this.Const.Perks.ButcherCleaverTree,
-			this.Const.Perks.MediumArmorTree,
-			//this.Const.Perks.ChefTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.CivilizationTree,
-			this.Const.Perks.MartyrTree
+			gt.Const.Perks.CleaverTree,
+			gt.Const.Perks.SwordsTree,
+			gt.Const.Perks.ButcherClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			//gt.Const.Perks.ChefTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.CivilizationTree,
+			gt.Const.Perks.MartyrTree
 			];
 		break;
 		case "background.caravan_hand":
@@ -198,26 +198,26 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.cripple":
 		return [
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.DaggerTree,
-			this.Const.Perks.SlingsTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.MartyrTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.IndestructibleTree
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.DaggerTree,
+			gt.Const.Perks.SlingsTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.MartyrTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.DeviousTree,
+			gt.Const.Perks.IndestructibleTree
 			];
 		break;
 		case "background.cultist":
 		return [
-			this.Const.Perks.CleaverTree,
-			this.Const.Perks.FlailTree,
-			//this.Const.Perks.NinetailsTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.MartyrTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.FastTree,
-			this.Const.Perks.IndestructibleTree
+			gt.Const.Perks.CleaverTree,
+			gt.Const.Perks.FlailTree,
+			gt.Const.Perks.NinetailsClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			gt.Const.Perks.MartyrTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.FastTree,
+			gt.Const.Perks.IndestructibleTree
 			];
 		break;
 		case "background.daytayler":
@@ -282,47 +282,35 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.legend_donkey":
 		return [
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.OrganisedTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.FitTree
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.OrganisedTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.SturdyTree,
+			gt.Const.Perks.FitTree
 			];
 		break;
 		case "background.eunuch":
 		return [
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.DaggerTree,
-			this.Const.Perks.SlingsTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.AgileTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.MartyrTree
-			];
-		break;
-		case "background.eunuch":
-		return [
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.DaggerTree,
-			this.Const.Perks.SlingsTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.AgileTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.MartyrTree
+			gt.Const.Perks.CleaverTree,
+			gt.Const.Perks.DaggerTree,
+			gt.Const.Perks.SlingsTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.IntelligentTree,
+			gt.Const.Perks.BarterClassTree
+			gt.Const.Perks.DeviousTree,
+			gt.Const.Perks.MartyrTree
 			];
 		break;
 		case "background.farmhand":
 		return [
-			this.Const.Perks.PolearmTree,
-			this.Const.Perks.FlailTree,
-			//this.Const.Perks.PitchforkTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.SturdyTree
+			gt.Const.Perks.PolearmTree,
+			gt.Const.Perks.FlailTree,
+			gt.Const.Perks.PitchforkClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.SturdyTree
 			];
 		break;
 		case "background.fisherman":
@@ -339,62 +327,62 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.female_fisherman":
 		return [
-			this.Const.Perks.CleaverTree,
-			this.Const.Perks.DaggerTree,
-			//this.Const.Perks.ButcherCleaverTree
-			this.Const.Perks.MediumArmorTree,
-			//this.Const.Perks.ChefTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.LargeTree
+			gt.Const.Perks.CleaverTree,
+			gt.Const.Perks.DaggerTree,
+			gt.Const.Perks.ButcherClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			//gt.Const.Perks.ChefTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.LargeTree
 			];
 		break;
 		case "background.flagellant":
 		return [
-			this.Const.Perks.FlailTree,
-			this.Const.Perks.CleaverTree,
-			//this.Const.Perks.NinetailsTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.MartyrTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.SturdyTree
+			gt.Const.Perks.FlailTree,
+			gt.Const.Perks.CleaverTree,
+			gt.Const.Perks.NinetailsClassTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.MartyrTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.SturdyTree
 			];
 		break;
 		case "background.gambler":
 		return [
-			this.Const.Perks.DaggerTree,
-			this.Const.Perks.ThrowingTree,
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.IntelligentTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.FastTree
+			gt.Const.Perks.DaggerTree,
+			gt.Const.Perks.ThrowingTree,
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.DeviousTree,
+			gt.Const.Perks.IntelligentTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.FastTree
 			];
 		break;
 		case "background.gravedigger":
 		return [
-			this.Const.Perks.MaceTree,
-			this.Const.Perks.HammerTree,
-			//this.Const.Perks.ShovelTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.SturdyTree
+			gt.Const.Perks.MaceTree,
+			gt.Const.Perks.HammerTree,
+			gt.Const.Perks.ShovelClassTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.SturdyTree
 			];
 		break;
 		case "background.graverobber":
 		return [
-			this.Const.Perks.MaceTree,
-			this.Const.Perks.CleaverTree,
-			//this.Const.Perks.ShovelTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.DeviousTree
+			gt.Const.Perks.MaceTree,
+			gt.Const.Perks.CleaverTree,
+			gt.Const.Perks.ShovelClassTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.DeviousTree
 			];
 		break;
 		case "background.hedge_knight":
@@ -411,14 +399,14 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.legend_herbalist":
 		return [
-			this.Const.Perks.SwordTree,
-			//this.Const.Perks.SickleTree,
-			this.Const.Perks.StavesTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.MysticTree,
-			this.Const.Perks.IntelligentTree,
-			this.Const.Perks.OrganisedTree,
-			this.Const.Perks.HealerClassTree
+			gt.Const.Perks.SwordTree,
+			gt.Const.Perks.SickleClassTree,
+			gt.Const.Perks.StavesTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.MysticTree,
+			gt.Const.Perks.IntelligentTree,
+			gt.Const.Perks.OrganisedTree,
+			gt.Const.Perks.HealerClassTree
 			];
 		break;
 		case "background.historian":
@@ -483,14 +471,14 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.legend_ironmonger":
 		return [
-			this.Const.Perks.HammerTree,
-			this.Const.Perks.SwordsTree,
-			//this.Const.Perks.BlacksmithHammerTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.RepairClassTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.FitTree
+			gt.Const.Perks.HammerTree,
+			gt.Const.Perks.SwordsTree,
+			gt.Const.Perks.HammerClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.RepairClassTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.FitTree
 			];
 		break;
 		case "background.juggler":
@@ -519,14 +507,14 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.lumberjack":
 		return [
-			this.Const.Perks.AxeTree,
-			this.Const.Perks.PolearmTree,
-			this.Const.Perks.WoodsmanAxeTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.AgileTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.FitTree
+			gt.Const.Perks.AxeTree,
+			gt.Const.Perks.PolearmTree,
+			gt.Const.Perks.WoodaxeClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			gt.Const.Perks.AgileTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.SturdyTree,
+			gt.Const.Perks.FitTree
 			];
 		break;
 		case "background.mason":
@@ -555,26 +543,26 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.militia":
 		return [
-			this.Const.Perks.SpearTree,
-			this.Const.Perks.ShieldTree,
-			this.Const.Perks.MilitiaSpearTree,
-			this.Const.Perks.HeavyArmorTree,
-			this.Const.Perks.OutlandersTree,
-			this.Const.Perks.TrainedTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.IndestructibleTree
+			gt.Const.Perks.SpearTree,
+			gt.Const.Perks.ShieldTree,
+			gt.Const.Perks.MilitiaClassTree,
+			gt.Const.Perks.HeavyArmorTree,
+			gt.Const.Perks.OutlandersTree,
+			gt.Const.Perks.TrainedTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.IndestructibleTree
 			];
 		break;
 		case "background.female_farmhand":
 		return [
-			this.Const.Perks.PolearmTree,
-			this.Const.Perks.FlailTree,
-			//this.Const.Perks.PitchforkTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.SturdyTree
+			gt.Const.Perks.PolearmTree,
+			gt.Const.Perks.FlailTree,
+			gt.Const.Perks.PitchforkClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.IndestructibleTree,
+			gt.Const.Perks.SturdyTree
 			];
 		break;
 		case "background.miller":
@@ -591,14 +579,14 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.miner":
 		return [
-			this.Const.Perks.HammerTree,
-			this.Const.Perks.AxeTree,
-			this.Const.Perks.MaceTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.OrcsTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.SturdyTree
+			gt.Const.Perks.HammerTree,
+			gt.Const.Perks.AxeTree,
+			gt.Const.Perks.PickaxeClassTree,
+			gt.Const.Perks.MediumArmorTree,
+			gt.Const.Perks.OrcsTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.SturdyTree
 			];
 		break;
 		case "background.minstrel":
@@ -687,50 +675,50 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.peddler":
 		return [
-			this.Const.Perks.StavesTree,
-			this.Const.Perks.SlingsTree,
-			this.Const.Perks.DaggersTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.OutlandersTree,
-			this.Const.Perks.OrganisedTree,
-			//this.Const.Perks.TraderTree,
-			this.Const.Perks.DeviousTree
+			gt.Const.Perks.StavesTree,
+			gt.Const.Perks.SlingsTree,
+			gt.Const.Perks.DaggersTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.OutlandersTree,
+			gt.Const.Perks.OrganisedTree,
+			gt.Const.Perks.BarterClassTree,
+			gt.Const.Perks.DeviousTree
 			];
 		break;
 		case "background.female_thief":
 		return [
-			//this.Const.Perks.KnifeTree,
-			this.Const.Perks.ThrowingTree,
-			this.Const.Perks.DaggersTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.FastTree,
-			this.Const.Perks.AgileTree,
-			this.Const.Perks.CivilizationTree,
-			this.Const.Perks.DeviousTree
+			gt.Const.Perks.KnifeClassTree,
+			gt.Const.Perks.ThrowingTree,
+			gt.Const.Perks.DaggersTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.FastTree,
+			gt.Const.Perks.AgileTree,
+			gt.Const.Perks.CivilizationTree,
+			gt.Const.Perks.DeviousTree
 			];
 		break;
 		case "background.pimp":
 		return [
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.StavesTree,
-			this.Const.Perks.ThrowingTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.OrganisedTree,
-			this.Const.Perks.CivilisationTree,
-			this.Const.Perks.DeviousTree
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.StavesTree,
+			gt.Const.Perks.ThrowingTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.OrganisedTree,
+			gt.Const.Perks.CivilisationTree,
+			gt.Const.Perks.DeviousTree
 			];
 		break;
 		case "background.poacher":
 		return [
-			this.Const.Perks.BowTree,
-			this.Const.Perks.SlingsTree,
-			//this.Const.Perks.ShortbowTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.FastTree,
-			this.Const.Perks.BeastsTree,
-			this.Const.Perks.AgileTree
+			gt.Const.Perks.BowTree,
+			gt.Const.Perks.SlingsTree,
+			gt.Const.Perks.ShortbowClassTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.FastTree,
+			gt.Const.Perks.BeastsTree,
+			gt.Const.Perks.AgileTree
 			];
 		break;
 		case "background.raider":
@@ -759,14 +747,14 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.refugee":
 		return [
-			this.Const.Perks.StavesTree,
-			this.Const.Perks.SlingsTree,
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.MartyrTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.FastTree,
-			this.Const.Perks.AgileTree
+			gt.Const.Perks.StavesTree,
+			gt.Const.Perks.SlingsTree,
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.MartyrTree,
+			gt.Const.Perks.SturdyTree,
+			gt.Const.Perks.FastTree,
+			gt.Const.Perks.AgileTree
 			];
 		break;
 		case "background.retired_soldier":
@@ -927,14 +915,14 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.thief":
 		return [
-			//this.Const.Perks.KnifeTree,
-			this.Const.Perks.SwordTree,
-			this.Const.Perks.DaggersTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.AgileTree,
-			this.Const.Perks.CivilizationTree,
-			this.Const.Perks.DeviousTree
+			gt.Const.Perks.KnifeClassTree,
+			gt.Const.Perks.SwordTree,
+			gt.Const.Perks.DaggersTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.ViciousTree,
+			gt.Const.Perks.AgileTree,
+			gt.Const.Perks.CivilizationTree,
+			gt.Const.Perks.DeviousTree
 			];
 		break;
 		case "background.female_minstrel":
@@ -963,38 +951,38 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.female_daytayler":
 		return [
-			this.Const.Perks.HammerTree,
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.MaceTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.IndestructibleTree
+			gt.Const.Perks.HammerTree,
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.MaceTree,
+			gt.Const.Perks.MediumArmorTree,
+			gt.Const.Perks.FitTree,
+			gt.Const.Perks.SturdyTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.IndestructibleTree
 			];
 		break;
 		case "background.wildman":
 		return [
-			this.Const.Perks.MaceTree,
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.AxeTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.OrcsTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.FitTree
+			gt.Const.Perks.MaceTree,
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.AxeTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.OrcsTree,
+			gt.Const.Perks.SturdyTree,
+			gt.Const.Perks.LargeTree,
+			gt.Const.Perks.FitTree
 			];
 		break;
-		case "background.wildman":
+		case "background.wildwoman":
 		return [
-			this.Const.Perks.MaceTree,
-			//this.Const.Perks.FistTree,
-			this.Const.Perks.AxeTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.OrcsTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.FitTree
+			gt.Const.Perks.MaceTree,
+			gt.Const.Perks.FistsClassTree,
+			gt.Const.Perks.AxeTree,
+			gt.Const.Perks.LightArmorTree,
+			gt.Const.Perks.OrcsTree,
+			gt.Const.Perks.SturdyTree,
+			gt.Const.Perks.DeviousTree,
+			gt.Const.Perks.FitTree
 			];
 		break;
 		case "background.witchhunter":
