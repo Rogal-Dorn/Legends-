@@ -2059,15 +2059,6 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendFavouredEnemyCaravan"
 	},
 	{
-		ID = "perk.legend_favoured_enemy_caravan",
-		Script = "scripts/skills/perks/perk_legend_favoured_enemy_caravan",
-		Name = this.Const.Strings.PerkName.LegendFavouredEnemyCaravan,
-		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyCaravan,
-		Icon = "ui/perks/favoured_caravan_01.png",
-		IconDisabled = "ui/perks/favoured_caravan_bw.png",
-		Const = "LegendFavouredEnemyCaravan"
-	},
-	{
 		ID = "perk.mastery.greatsword",
 		Script = "scripts/skills/perks/perk_mastery_greatsword",
 		Name = this.Const.Strings.PerkName.LegendSpecGreatSword,

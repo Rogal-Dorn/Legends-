@@ -10,7 +10,7 @@ this.perk_legend_favoured_enemy_mercenary <- this.inherit("scripts/skills/legend
 		this.m.ValidTypes = [
 			this.Const.EntityType.Wardog,
 			this.Const.EntityType.Mercenary,
-			this.Const.EntityType.BountHunter
+			this.Const.EntityType.BountyHunter
 		];
 	}
 

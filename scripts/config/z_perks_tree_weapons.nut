@@ -91,8 +91,8 @@ gt.Const.Perks.SwordTree <- {
 	Tree = [
 		[],
 		[],//gt.Const.Perks.PerkDefs.Feint
-		[gt.Const.Perks.PerkDefs.SpecSword],
 		[],
+		[gt.Const.Perks.PerkDefs.SpecSword],
 		[gt.Const.Perks.PerkDefs.Overwhelm],
 		[gt.Const.Perks.PerkDefs.Duelist]
 	]
