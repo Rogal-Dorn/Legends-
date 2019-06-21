@@ -77,7 +77,7 @@ this.starting_scenario <- {
 		local roster = this.World.getPlayerRoster().getAll();
 		foreach (bro in roster)
 		{
-			bro.buildPerkTree();
+			bro.getBackground().buildPerkTree();
 		}
 	}
 
