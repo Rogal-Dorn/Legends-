@@ -48,8 +48,8 @@ gt.Const.Perks.FistsClassTree <- {
 	ID = "FistsClassTree",
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.LegendSpecKick],
-		[gt.Const.Perks.PerkDefs.LegendSpecGrapple],
+		[gt.Const.Perks.PerkDefs.LegendKick],
+		[gt.Const.Perks.PerkDefs.LegendGrapple],
 		[gt.Const.Perks.PerkDefs.LegendSpecFists],
 		[],
 		[],
