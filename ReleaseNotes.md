@@ -929,3 +929,5 @@ Archery contests can attract female nobles
 Disbanded troops situations can attract shieldmaidens 
 
 Adds all the old specialisations in as class perks. 
+
+Adds a new start as three random level 3 backgrounds. Very useful for trying the new perk trees and adding extensive replayability.  It is possible to get any combination of any legends background, including three warlocks. Some of these combinations may have unexpected interactions. 
