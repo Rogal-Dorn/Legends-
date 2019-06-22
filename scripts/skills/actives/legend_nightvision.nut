@@ -50,7 +50,7 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text =  "Removes night penalties from all allies within [color=" + this.Const.UI.Color.PositiveValue + "]2[/color] tiles"
+				text =  "Removes night penalties from all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles"
 			}
 		];
 	}
@@ -69,7 +69,7 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (myTile.getDistanceTo(a.getTile()) > 2)
+			if (myTile.getDistanceTo(a.getTile()) > 4)
 			{
 				continue;
 			}
@@ -79,7 +79,7 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 				continue
 			}
 
-			if (!target.getCurrentProperties().IsAffectedByNight || !target.getSkills().hasSkill("special.night"))
+			if (target.getSkills().hasSkill("special.night"))
 		 	{
 				this.spawnIcon("status_effect_98", target.getTile());
 				target.getSkills().removeByID("special.night");
