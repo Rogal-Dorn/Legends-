@@ -14,7 +14,7 @@ this.legend_hunting_big_game <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "if an enemy has more health than you, deal damage equal to their hitpoints divided by your hitpoints";
+		return "if an enemy has more health than you, gain % damage equal to their health divided by your health. So if an enemy has 1,000 health, and you have 100 health, you would gain +10% damage. If you have 10 health, gain +100% damage. If you have 1 health, gain +1000% damage.";
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -28,10 +28,11 @@ this.legend_hunting_big_game <- this.inherit("scripts/skills/skill", {
 		local targetHP = _targetEntity.getHitpoints()
 		local ourHP =  actor.getHitpoints();
 		local HPratio = targetHP / ourHP;
-
-		if ( HPratio > 1 )
+		local ratiopercent = HPratio / 100;
+		local bonus = ratiopercent + 1;
+		if ( bonus > 1 )
 		{
-			_properties.DamageRegularMult += HPratio; 
+			_properties.DamageRegularMult += bonus; 
 		}
 	}
 

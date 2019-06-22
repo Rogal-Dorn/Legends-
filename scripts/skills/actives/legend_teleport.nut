@@ -30,7 +30,7 @@ this.legend_teleport <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 1;
+		this.m.FatigueCost = 40;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.MaxLevelDifference = 8;

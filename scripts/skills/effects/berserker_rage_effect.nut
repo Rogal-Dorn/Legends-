@@ -58,18 +58,18 @@ this.berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnStart()
 	{
-		this.m.RageStacks = this.Math.max(0, this.m.RageStacks - 1);
+		this.m.RageStacks = this.Math.max(0, this.m.RageStacks - 2);
 		this.getContainer().getActor().updateRageVisuals(this.m.RageStacks);
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.addRage(2);
+		this.addRage(1);
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
 	{
-		this.addRage(5);
+		this.addRage(3);
 	}
 
 });
