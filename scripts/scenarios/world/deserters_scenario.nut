@@ -229,6 +229,92 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			this.World.Events.fire("event.deserters_scenario_intro");
 		}, null);
 	}
+	function onUpdateDraftList( _list )
+	{
+	if (_list.len() >= 10)
+		{
+			local r;
+			r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+				_list.push("deserter_background");
+			}
+			r = this.Math.rand(0, 3);
+			if (r == 0)
+			{
+				_list.push("militia_background");
+			}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("disowned_noble_background");
+			}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("female_disowned_noble_background");
+			}
+		}
+		else 
+		{
+			local r;
+			r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+				_list.push("deserter_background");
+			}
+			r = this.Math.rand(0, 3);
+			if (r == 0)
+			{
+				_list.push("retired_soldier_background");
+			}
+			r = this.Math.rand(0, 19);
+			if (r == 0)
+			{
+				_list.push("swordmaster_background");
+			}
+			r = this.Math.rand(0, 19);
+			if (r == 0)
+			{
+				_list.push("bastard_background");
+			}
+		}
+	}
+	function onUpdateHiringRoster( _roster )
+	{
+		r = this.Math.rand(0, 9);
+			
+		if (r == 0)
+		{
+		bro.getSkills().add(this.new("scripts/skills/traits/dastard_trait"));
+		}
+		if (r == 1)
+		{
+		bro.getSkills().add(this.new("scripts/skills/traits/craven_trait"));
+		}
+		if (r == 2)
+		{
+		bro.getSkills().add(this.new("scripts/skills/traits/fear_nobles_trait"));
+		}
+		if (r == 3)
+		{
+		bro.getSkills().add(this.new("scripts/skills/traits/pessimist_trait"));
+		}
+		if (r == 4)
+		{
+		bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
+		}
+		if (r == 5)
+		{
+		bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
+		}
 
+			if (!bro.getBackground().isCombatBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.improveMood(1.5, "Is excited at becoming a deserter")
+			}
+	}
 });
 

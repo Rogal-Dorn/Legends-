@@ -78,6 +78,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
+				this.Const.Perks.PerkDefs.ShieldBash,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.Steadfast
 			],
@@ -86,10 +87,10 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.ShieldExpert,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
+				this.Const.Perks.PerkDefs.LegendSpecialistShieldPush
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
@@ -101,6 +102,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecAxe,
 				this.Const.Perks.PerkDefs.SpecThrowing,
+				this.Const.Perks.PerkDefs.ShieldExpert,
 				this.Const.Perks.PerkDefs.LegendRoster4
 
 			],
@@ -115,8 +117,6 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -136,7 +136,10 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				//this.Const.Perks.PerkDefs.LegendStrictSermons,
+				this.Const.Perks.PerkDefs.LegendFieldRepairs,
 				this.Const.Perks.PerkDefs.LegendHoldTheLine,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
 				this.Const.Perks.PerkDefs.PerfectFocus
 			],
 			[],

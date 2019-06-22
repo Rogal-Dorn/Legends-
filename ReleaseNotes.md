@@ -762,7 +762,7 @@ Ranger gains favoured enemy perks for: spider, direwolf, goblin, ork, unhold
 Seer gains favoured enemy perk for hexen 
 Berserker gains Adrenalin, negative status reduced with factions 
 Deserters, Sellswords and Retired Soldier: Lose student, gifted, fortified mind, dagger specialist. Gains Second wind, Sundering strikes, Composure and Steadfast 
-
+Seer gains staff skills, bandage mastery, drums of war, med ingredients and field triage 
 
 Beta WotN ll.2
 Fixes battle bug with missing hand injury
@@ -941,3 +941,12 @@ Fixed nightvision to correctly apply
 Warlock can trigger cultist events
 Hedgeknight gets Swordmaster favoured enemies 
 Killer gets civilisation group 
+Fixes raider scenario recruits having too many traits
+Deserters will find more deserters, retired soldiers, disowned nobles, bastards and swordmasters for hire. Their hires have a 60% chance of one of six negative traits.
+Crusader will find monks as he should
+Noble non-supporter cost lowered from 50% to 25% to standardise with other starts
+Noble gains first triage, tools drawer and field repairs. Favored enemy groups spread out. 
+Ranger hires should trigger in big cities
+Ranger gets blend in and hidden, favored enemy perks spread out
+Berserker gets kick, grapple and unarmed mastery 
+Crusader gets shield bash, shield push, shield mastery and field repair. Favored enemy perks spread out 
