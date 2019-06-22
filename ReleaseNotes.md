@@ -930,4 +930,12 @@ Disbanded troops situations can attract shieldmaidens
 
 Adds all the old specialisations in as class perks. 
 
-Adds a new start as three random level 3 backgrounds. Very useful for trying the new perk trees and adding extensive replayability.  It is possible to get any combination of any legends background, including three warlocks. Some of these combinations may have unexpected interactions. 
+New start: Random Trio. Three random level 2 backgrounds. Very useful for trying the new perk trees and adding extensive replayability.  It is possible to get any combination of any legends background, including three warlocks. Some of these combinations may have unexpected interactions. 
+New start: Random Solo. Level 4 avatar of a random background.  
+Berserker rage nerfed. lowered to 1 stack per hit from 3 and 3 stacks per kill, from 5. Falloff per turn raised to 2 from 1. 
+Nudist nerfed.  requires no clothes, damage reduction scaling reduced from 40 to 30%. 
+Big Game hunter nerfed. Calculation fixed so you correctly gain percentage damage rather than multiplier damage. Effectively 100 times less damage. Can still one hit kill things, but you have to be low on health, as intended.
+Teleport nerfed to 40 fatigue, to match darkflight. 
+Fixed nightvision to correctly apply
+
+ 

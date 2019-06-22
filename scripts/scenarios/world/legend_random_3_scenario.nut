@@ -3,7 +3,7 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function create()
 	{
 		this.m.ID = "scenario.legend_random_3";
-		this.m.Name = "An Unlikely Trio (Legends)";
+		this.m.Name = "Random Trio (Legends)";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p][p]Having fled a raid, three fellows decide to forge out a new path.\n[color=#bcad8c]Random Backgrounds:[/color] The backgrounds are different each time you start\n[color=#bcad8c]Random equipment:[/color]The equipment you begin with is different each time\n[color=#bcad8c]Random perks:[/color]The abilities of your mercenaries will be different each time[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 15;
@@ -27,19 +27,19 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 
 		local bros = roster.getAll();
-		bros[0].m.PerkPoints = 2;
-		bros[0].m.LevelUps = 2;
-		bros[0].m.Level = 3;
+		bros[0].m.PerkPoints = 1;
+		bros[0].m.LevelUps = 1;
+		bros[0].m.Level = 2;
 		bros[0].setVeteranPerks(2);	
 
 
-		bros[1].m.PerkPoints = 2;
-		bros[1].m.LevelUps = 2;
-		bros[1].m.Level = 3;
+		bros[1].m.PerkPoints = 1;
+		bros[1].m.LevelUps = 1;
+		bros[1].m.Level = 2;
 
-		bros[2].m.PerkPoints = 2;
-		bros[2].m.LevelUps = 2;
-		bros[2].m.Level = 3;
+		bros[2].m.PerkPoints = 1;
+		bros[2].m.LevelUps = 1;
+		bros[2].m.Level = 2;
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
