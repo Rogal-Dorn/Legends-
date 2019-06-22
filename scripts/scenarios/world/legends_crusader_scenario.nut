@@ -117,10 +117,10 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		if (_list.len() < 10)
 		{
-			return;
+				_list.push("monk_background");
 		}
 
-		_list.push("monk_background");
+
 		local r;
 		r = this.Math.rand(0, 999);	
 		if (r == 0)

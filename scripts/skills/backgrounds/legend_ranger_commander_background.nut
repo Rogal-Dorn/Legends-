@@ -105,7 +105,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 				this.Const.Perks.PerkDefs.LegendRoster3		
 			],
 			[
@@ -138,9 +137,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendCascade,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
+				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
@@ -148,9 +146,11 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				//this.Const.Perks.PerkDefs.LegendGuideSteps,
-				this.Const.Perks.PerkDefs.LegendEvasion,
-				this.Const.Perks.PerkDefs.LegendBigGameHunter,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
+				this.Const.Perks.PerkDefs.LegendEvasion,
+				this.Const.Perks.PerkDefs.LegendHidden,
+				this.Const.Perks.PerkDefs.LegendBigGameHunter,
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],
