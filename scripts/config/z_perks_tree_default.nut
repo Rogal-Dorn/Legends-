@@ -392,7 +392,7 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.AxeTree,
 			this.Const.Perks.HeavyArmorTree,
 			this.Const.Perks.TrainedTree,
-			this.Const.Perks.SturdyTree,
+			this.Const.Perks.SwordmasterTree,
 			this.Const.Perks.ViciousTree,
 			this.Const.Perks.FitTree
 			];
@@ -471,14 +471,14 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		break;
 		case "background.legend_ironmonger":
 		return [
-			gt.Const.Perks.HammerTree,
-			gt.Const.Perks.SwordsTree,
-			gt.Const.Perks.HammerClassTree,
-			gt.Const.Perks.MediumArmorTree,
-			gt.Const.Perks.IndestructibleTree,
-			gt.Const.Perks.RepairClassTree,
-			gt.Const.Perks.LargeTree,
-			gt.Const.Perks.FitTree
+			this.Const.Perks.HammerTree,
+			this.Const.Perks.SwordsTree,
+			this.Const.Perks.HammerClassTree,
+			this.Const.Perks.MediumArmorTree,
+			this.Const.Perks.IndestructibleTree,
+			this.Const.Perks.RepairClassTree,
+			this.Const.Perks.LargeTree,
+			this.Const.Perks.FitTree
 			];
 		break;
 		case "background.juggler":
@@ -501,7 +501,7 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.LightArmorTree,
 			this.Const.Perks.ViciousTree,
 			this.Const.Perks.DeviousTree,
-			this.Const.Perks.AgileTree,
+			this.Const.Perks.CivilizationTree,
 			this.Const.Perks.FastTree
 			];
 		break;
@@ -805,18 +805,6 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.FastTree
 			];
 		break;
-		case "background.servant":
-		return [
-			this.Const.Perks.SwordTree,
-			this.Const.Perks.AxeTree,
-			this.Const.Perks.ShieldTree,
-			this.Const.Perks.HeavyArmorTree,
-			this.Const.Perks.OutlanderTree,
-			this.Const.Perks.TrainedTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.LargeTree
-			];
-		break;
 		case "background.sellsword":
 		return [
 			this.Const.Perks.SwordTree,
@@ -994,7 +982,7 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.UndeadTree,
 			this.Const.Perks.AgileTree,
 			this.Const.Perks.ViciousTree,
-			this.Const.Perks.IntelligentTree
+			this.Const.Perks.MysticTree
 			];
 		break;
 

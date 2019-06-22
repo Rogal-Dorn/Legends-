@@ -10,7 +10,8 @@ gt.Const.LegendMod.FavoriteZombies <- [
 	this.Const.EntityType.Zombie,
 	this.Const.EntityType.ZombieBetrayer,
 	this.Const.EntityType.ZombieBoss,
-	this.Const.EntityType.ZombieKnight
+	this.Const.EntityType.ZombieKnight,
+	this.Const.EntityType.Necromancer
 ];
 
 gt.Const.LegendMod.FavoriteAlps <- [
@@ -90,7 +91,8 @@ gt.Const.LegendMod.FavoriteUnhold <- [
 
 
 gt.Const.LegendMod.FavoriteVampire <- [
-	this.Const.EntityType.Vampire
+	this.Const.EntityType.Vampire,
+	this.Const.EntityType.Ghost
 ];
 
 gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
