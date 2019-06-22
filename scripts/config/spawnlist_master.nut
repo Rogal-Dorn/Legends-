@@ -869,6 +869,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_skin_ghoul"
 	},
+	LegendSkinGhoulHIGH = {
+		ID = this.Const.EntityType.LegendSkinGhoul,
+		Variant = 0,
+		Strength = 100,
+		Cost = 200,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_skin_ghoul_high"
+	},
 	LegendStollwurm = {
 		ID = this.Const.EntityType.LegendStollwurm,
 		Variant = 0,
