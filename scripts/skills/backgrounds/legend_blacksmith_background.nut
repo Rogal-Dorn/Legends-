@@ -42,6 +42,23 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[3];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.HammerClassTree,
+				this.Const.Perks.PolearmTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.RepairClassTree]
+		}
 	}
 
 	function getTooltip()

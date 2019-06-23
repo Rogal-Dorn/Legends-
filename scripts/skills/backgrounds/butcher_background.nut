@@ -45,6 +45,22 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.IsLowborn = true;
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.CleaverTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.ButcherClassTree]
+		}
 	}
 
 	function getTooltip()

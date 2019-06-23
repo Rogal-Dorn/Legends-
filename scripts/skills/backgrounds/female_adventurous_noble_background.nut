@@ -43,6 +43,23 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.BowTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.CrossbowTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.InspirationalTree
+			],
+			Enemy = [this.Const.Perks.ArchersTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

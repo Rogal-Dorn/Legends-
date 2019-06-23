@@ -43,6 +43,23 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Ammo[1];			
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.HammerTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.IndestructibleTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.FistsClassTree]
+		}
 	}
 
 	function getTooltip()

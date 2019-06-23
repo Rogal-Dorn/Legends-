@@ -37,6 +37,23 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];	
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.CleaverTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.SturdyTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.NinetailsClassTree]
+		}
 	}
 
 	function getTooltip()

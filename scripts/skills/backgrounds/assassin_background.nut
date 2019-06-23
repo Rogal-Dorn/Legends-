@@ -50,6 +50,24 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.PolearmTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.TrainedTree
+			],
+			Enemy = [],
+			Class = []
+		}
 
 	}
 

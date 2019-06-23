@@ -26,6 +26,21 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.IsOutlawBackground = true;
 		this.m.Body = this.Const.Bodies.AllMale[this.Math.rand(0, this.Const.Bodies.AllMale.len() - 1)];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.SwordsTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.MartyrTree
+			],
+			Enemy = [this.Const.Perks.CivilizationTree],
+			Class = [this.Const.Perks.ButcherClassTree]
+		}
 	}
 
 	function getTooltip()

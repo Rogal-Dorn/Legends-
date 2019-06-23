@@ -51,6 +51,24 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.BowTree,
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

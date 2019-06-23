@@ -36,6 +36,23 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.IsFemaleBackground = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.FlailTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.SturdyTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

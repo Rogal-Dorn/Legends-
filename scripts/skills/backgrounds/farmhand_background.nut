@@ -45,6 +45,23 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 				0.0, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.FlailTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.SturdyTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.PitchforkClassTree]
+		}
 	}
 
 	function getTooltip()
