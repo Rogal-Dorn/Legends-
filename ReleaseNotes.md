@@ -950,3 +950,13 @@ Ranger hires should trigger in big cities
 Ranger gets blend in and hidden, favored enemy perks spread out
 Berserker gets kick, grapple and unarmed mastery 
 Crusader gets shield bash, shield push, shield mastery and field repair. Favored enemy perks spread out 
+
+Female background balance pass - a high female hitpoint roll is now equal to a low male hitpoint roll.  A high male stamina roll is now equal to a low female stamina roll. This is achieved by increasing roll variability for both. 
+Farmhands and milkmaids  have wider maximum and minimum hitpoint rolls
+Millers and bakers have wider maximum and minimum hitpoint and stamina roll
+Minstrels and troubadors have slightly higher maximum hitpoint and stamina rolls, 
+Servants and housemaids have wider maximum and minimum hitpoint and stamina rolls
+Tailors and housemaids have slightly higher maximum hitpoint and stamina rolls,
+Thieves and pickpockets have wider maximum and minimum hitpoint and stamina rolls
+wildmen and wildwomen have wider maximum and minimum hitpoint rolls
+Disowned and adventurous nobles and ladies have wider maximum and minimum rolls for all stats

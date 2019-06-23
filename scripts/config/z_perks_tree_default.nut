@@ -271,10 +271,10 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		case "background.female_disowned_noble":
 		return [
 			this.Const.Perks.CrossbowTree,
-			this.Const.Perks.BowTree,
+			this.Const.Perks.SwordTree,
 			this.Const.Perks.DaggerTree,
 			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.ArchersTree,
+			this.Const.Perks.TrainedTree,
 			this.Const.Perks.IntelligentTree,
 			this.Const.Perks.FastTree,
 			this.Const.Perks.MartyrTree
