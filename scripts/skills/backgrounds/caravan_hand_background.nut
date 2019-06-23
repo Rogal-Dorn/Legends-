@@ -46,6 +46,23 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 				0.025, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.StavesTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [this.Const.Perks.OutlandersTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

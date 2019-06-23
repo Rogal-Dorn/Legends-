@@ -30,6 +30,24 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.MaceTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function onBuildDescription()

@@ -32,6 +32,24 @@ this.fisherman_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];		
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.SpearTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function onBuildDescription()

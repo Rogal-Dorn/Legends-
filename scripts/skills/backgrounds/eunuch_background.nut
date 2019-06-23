@@ -43,6 +43,24 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SlingsTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.MartyrTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.BarterClassTree]
+		}
+	
 	}
 
 	function getTooltip()

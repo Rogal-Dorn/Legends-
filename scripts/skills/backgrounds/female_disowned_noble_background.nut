@@ -39,6 +39,23 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];	
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.BowTree,
+				this.Const.Perks.DaggerTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.MartyrTree
+			],
+			Enemy = [this.Const.Perks.ArchersTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

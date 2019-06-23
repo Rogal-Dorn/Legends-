@@ -48,6 +48,23 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_02";
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.FistsClassTree]
+		}
 	}
 
 	function getTooltip()

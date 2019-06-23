@@ -40,6 +40,23 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.HammerTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.MartyrTree
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [this.Const.Perks.CivilizationTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

@@ -52,6 +52,23 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SlingsTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.FistsClassTree]
+		}
 	}
 
 	function getTooltip()
