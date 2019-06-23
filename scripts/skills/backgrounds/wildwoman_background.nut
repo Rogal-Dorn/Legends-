@@ -59,6 +59,7 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
+		this.m.IsFemaleBackground = true;
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
@@ -116,8 +117,8 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				7,
-				5
+				8,
+				3
 			],
 			Bravery = [
 				12,

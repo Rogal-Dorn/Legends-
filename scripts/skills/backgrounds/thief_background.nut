@@ -83,8 +83,8 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				3,
+				-2
 			],
 			Bravery = [
 				5,
@@ -95,8 +95,8 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0
 			],
 			MeleeSkill = [
-				0,
-				0
+				-2,
+				3
 			],
 			RangedSkill = [
 				0,

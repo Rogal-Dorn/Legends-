@@ -70,15 +70,15 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-6,
+				-1
 			],
 			Bravery = [
 				15,
 				20
 			],
 			Stamina = [
-				10,
+				5,
 				10
 			],
 			MeleeSkill = [
@@ -86,19 +86,19 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 				5
 			],
 			RangedSkill = [
-				10,
-				15
+				15,
+				25
 			],
 			MeleeDefense = [
 				-5,
 				3
 			],
 			RangedDefense = [
-				8,
-				10
+				-5,
+				5
 			],
 			Initiative = [
-				0,
+				-2,
 				3
 			]
 		};

@@ -74,8 +74,8 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				7,
-				5
+				8,
+				3
 			],
 			Bravery = [
 				-2,

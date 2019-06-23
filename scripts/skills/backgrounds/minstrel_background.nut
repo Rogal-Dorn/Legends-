@@ -71,14 +71,14 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local c = {
 			Hitpoints = [
 				-5,
-				-3
+				0
 			],
 			Bravery = [
 				5,
 				10
 			],
 			Stamina = [
-				-10,
+				-5,
 				-10
 			],
 			MeleeSkill = [

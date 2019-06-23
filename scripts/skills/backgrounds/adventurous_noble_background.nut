@@ -68,8 +68,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				4,
+				-1
 			],
 			Bravery = [
 				15,
@@ -81,14 +81,14 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			MeleeSkill = [
 				10,
-				10
+				15
 			],
 			RangedSkill = [
 				0,
-				0
+				10
 			],
 			MeleeDefense = [
-				5,
+				3,
 				8
 			],
 			RangedDefense = [
@@ -96,8 +96,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 				-5
 			],
 			Initiative = [
-				0,
-				0
+				-7,
+				-2
 			]
 		};
 		return c;

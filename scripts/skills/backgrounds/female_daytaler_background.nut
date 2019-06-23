@@ -41,7 +41,7 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				-5,
+				0,
 				-5
 			],
 			Bravery = [
@@ -49,7 +49,7 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 				0
 			],
 			Stamina = [
-				5,
+				3,
 				8
 			],
 			MeleeSkill = [
