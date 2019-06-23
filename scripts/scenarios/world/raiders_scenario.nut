@@ -312,14 +312,29 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 				bro.improveMood(1.5, "Is excited at becoming a raider")
 				local r;
 				r = this.Math.rand(0, 9);
-				switch(r)
-				{
-					case 0: bro.getSkills().add(this.new("scripts/skills/traits/bloodthirsty_trait"));
-					case 1: bro.getSkills().add(this.new("scripts/skills/traits/deathwish_trait"));
-					case 2: bro.getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
-					case 3: bro.getSkills().add(this.new("scripts/skills/traits/cocky_trait"));
-					case 4: bro.getSkills().add(this.new("scripts/skills/traits/brute_trait"));
-				}
+			
+					if (r == 0)
+					{
+					bro.getSkills().add(this.new("scripts/skills/traits/bloodthirsty_trait"));
+					}
+					if (r == 1)
+					{
+					bro.getSkills().add(this.new("scripts/skills/traits/deathwish_trait"));
+					}
+					if (r == 2)
+					{
+					bro.getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
+					}
+					if (r == 3)
+					{
+					bro.getSkills().add(this.new("scripts/skills/traits/cocky_trait"));
+					}
+					if (r == 4)
+					{
+					bro.getSkills().add(this.new("scripts/skills/traits/brute_trait"));
+					}
+					
+				
 			}
 		}
 	}

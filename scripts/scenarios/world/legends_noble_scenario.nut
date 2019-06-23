@@ -79,7 +79,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.State.m.Player.getSprite("body").setBrush("figure_player_noble");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
-		f.addPlayerRelation(-100.0, "You and your men deserted");
+		f.addPlayerRelation(-100.0, "You picked the wrong faction");
 		local names = [];
 
 		for( local i = 0; i < 6; i = ++i )
@@ -198,7 +198,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			}
 			else if (!bro.getBackground().isNoble() && !bro.getBackground().isCombatBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
 
 			}
@@ -207,10 +207,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() < 10)
-		{
-			return;
-		}
+
 		
 		local r;		
 		r = this.Math.rand(0, 3);

@@ -160,10 +160,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() > 10)
-		{
-			return;
-		}
 
 		local r;
 		r = this.Math.rand(0, 1);

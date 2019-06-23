@@ -87,16 +87,16 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-7,
+				-2
 			],
 			Bravery = [
 				5,
 				0
 			],
 			Stamina = [
-				5,
-				5
+				8,
+				3
 			],
 			MeleeSkill = [
 				0,

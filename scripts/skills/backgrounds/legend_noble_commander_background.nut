@@ -96,7 +96,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.InspiringPresence,
+				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
@@ -105,11 +107,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSpecBandage,
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
 				this.Const.Perks.PerkDefs.LegendBarterConvincing,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
@@ -117,7 +114,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendBribe,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,		
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -127,6 +125,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendForwardPush,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
@@ -135,7 +134,11 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Inspire,
+				this.Const.Perks.PerkDefs.LegendBribe,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendRelax,
+				this.Const.Perks.PerkDefs.LegendFieldRepairs,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
 				//this.Const.Perks.PerkDefs.LegendPreparedForAnything,
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],

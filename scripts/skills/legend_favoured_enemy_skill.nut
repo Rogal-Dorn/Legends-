@@ -93,15 +93,18 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		
-		if (!this.validTarget(_targetEntity.getType()))
+		if (this.validTarget(_targetEntity.getType()))
 		{
-			return;
+			local stats = this.getTotalKillStats();
+			_properties.MeleeSkill += stats.HitChance;
+			_properties.RangedSkill += stats.HitChance;
+			_properties.DamageRegularMax *= stats.HitMult;
 		}
 		
-		local stats = this.getTotalKillStats();
-		_properties.MeleeSkill += stats.HitChance;
-		_properties.RangedSkill += stats.HitChance;
-		_properties.DamageRegularMax *= stats.HitMult;
+		else
+		{
+		 return;
+		}
 	}
 
 	function onUpdate( _properties )

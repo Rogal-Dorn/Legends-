@@ -54,7 +54,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.IsFemaleBackground = true;
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
-
+		this.m.IsEducatedBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
@@ -89,13 +89,16 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.LegendHorrify,
+				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 				this.Const.Perks.PerkDefs.LegendRoster3
+				
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.LegendEntice,
+				this.Const.Perks.PerkDefs.LegendSpecBandage,
 				this.Const.Perks.PerkDefs.LegendPush,
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
@@ -104,6 +107,8 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.LegendChainLightning,
+				this.Const.Perks.PerkDefs.LegendMedIngredients
+				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -111,6 +116,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendRelax,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.Ballistics,
+				this.Const.Perks.PerkDefs.LegendDrumsOfWar,
 				this.Const.Perks.PerkDefs.LegendLevitate,
 				this.Const.Perks.PerkDefs.LegendScry
 			],
@@ -120,6 +126,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendSleep,
 				this.Const.Perks.PerkDefs.LegendTeacher,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendTeleport,
 				this.Const.Perks.PerkDefs.LegendFirefield,
 				this.Const.Perks.PerkDefs.LegendRoster6
