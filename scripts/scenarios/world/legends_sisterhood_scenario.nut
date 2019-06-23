@@ -33,7 +33,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
 		bros[1].setStartValuesEx([
-			"female_thief_background"
+			"wildwoman_background"
 		]);
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);	
