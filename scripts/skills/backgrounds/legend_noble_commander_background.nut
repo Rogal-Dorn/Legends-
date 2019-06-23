@@ -114,7 +114,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendBribe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,		
 				this.Const.Perks.PerkDefs.LegendRoster5
