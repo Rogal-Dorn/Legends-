@@ -62,16 +62,16 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-7,
+				-2
 			],
 			Bravery = [
 				-5,
 				-5
 			],
 			Stamina = [
-				-5,
-				-5
+				-7,
+				-2
 			],
 			MeleeSkill = [
 				0,

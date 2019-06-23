@@ -82,36 +82,36 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				3,
+				-2
 			],
 			Bravery = [
-				-5,
-				-2
+				-6,
+				-1
 			],
 			Stamina = [
 				-10,
 				-5
 			],
 			MeleeSkill = [
-				8,
-				10
+				5,
+				15
 			],
 			RangedSkill = [
-				3,
-				6
+				0,
+				10
 			],
 			MeleeDefense = [
-				0,
-				3
+				-1,
+				4
 			],
 			RangedDefense = [
-				0,
-				0
+				-2,
+				3
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				5
 			]
 		};
 		return c;

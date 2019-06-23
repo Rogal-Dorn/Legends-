@@ -38,7 +38,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_necro_commander_background"
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_prophet_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);	
@@ -58,8 +58,8 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].getBackground().m.RawDescription = "You can not remember much about who %name% was in life, it is probably for the best that he can\'t either. All that matters is he is yours now.";
         bros[2].getSkills().add(this.new("scripts/skills/special/legend_animated_player_properties"));
 		bros[2].setVeteranPerks(3);	
-		this.World.Assets.addMoralReputation(-50);
-		this.World.Assets.m.Money = this.World.Assets.m.Money;
+		this.World.Assets.addMoralReputation(-100);
+		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
 
 	function onSpawnPlayer()
@@ -149,12 +149,12 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() < 10)
-		{
-			return;
+
+		local r = this.Math.rand(0, 2);
+		if (r == 0)
+			{
+			_list.push("graverobber_background");
 		}
-		
-		_list.push("graverobber_background");
 
 	}
 
@@ -176,6 +176,10 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			if (r == 0)
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
+			}
+			if (r == 1)
+			{
+				bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
 			}
 		}
 

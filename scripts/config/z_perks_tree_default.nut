@@ -31,10 +31,10 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 		case "background.female_disowned_noble":
 		return [
 			this.Const.Perks.CrossbowTree,
-			this.Const.Perks.BowTree,
+			this.Const.Perks.SwordTree,
 			this.Const.Perks.DaggerTree,
 			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.ArchersTree,
+			this.Const.Perks.TrainedTree,
 			this.Const.Perks.IntelligentTree,
 			this.Const.Perks.FastTree,
 			this.Const.Perks.MartyrTree
@@ -152,7 +152,7 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.AxeTree,
 			this.Const.Perks.HeavyArmorTree,
 			this.Const.Perks.TrainedTree,
-			this.Const.Perks.SturdyTree,
+			this.Const.Perks.SwordmasterTree,
 			this.Const.Perks.ViciousTree,
 			this.Const.Perks.FitTree
 			];
@@ -261,7 +261,7 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.LightArmorTree,
 			this.Const.Perks.ViciousTree,
 			this.Const.Perks.DeviousTree,
-			this.Const.Perks.AgileTree,
+			this.Const.Perks.CivilizationTree,
 			this.Const.Perks.FastTree
 			];
 		break;
@@ -565,18 +565,6 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.FastTree
 			];
 		break;
-		case "background.servant":
-		return [
-			this.Const.Perks.SwordTree,
-			this.Const.Perks.AxeTree,
-			this.Const.Perks.ShieldTree,
-			this.Const.Perks.HeavyArmorTree,
-			this.Const.Perks.OutlanderTree,
-			this.Const.Perks.TrainedTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.LargeTree
-			];
-		break;
 		case "background.sellsword":
 		return [
 			this.Const.Perks.SwordTree,
@@ -754,7 +742,7 @@ this.Const.Perks.getDefaultPerks <- function ( _background )
 			this.Const.Perks.UndeadTree,
 			this.Const.Perks.AgileTree,
 			this.Const.Perks.ViciousTree,
-			this.Const.Perks.IntelligentTree
+			this.Const.Perks.MysticTree
 			];
 		break;
 

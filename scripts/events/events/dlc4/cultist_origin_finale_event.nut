@@ -190,7 +190,7 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getOrigin().getID() != "scenario.cultists")
+		if (this.World.Assets.getOrigin().getID() != "scenario.cultists"  && this.World.Assets.getOrigin().getID() != "scenario.legends_necro")
 		{
 			return;
 		}

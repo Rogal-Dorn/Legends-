@@ -80,8 +80,8 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local c = {
 			Hitpoints = [
-				-2,
-				-5
+				-1,
+				-6
 			],
 			Bravery = [
 				0,
@@ -89,7 +89,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			],
 			Stamina = [
 				13,
-				10
+				8
 			],
 			MeleeSkill = [
 				0,
