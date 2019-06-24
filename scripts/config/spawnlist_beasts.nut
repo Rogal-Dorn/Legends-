@@ -11863,7 +11863,7 @@ gt.Const.World.Spawn.Hexen <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 
+				Num = 1
 			}
 		]
 	},

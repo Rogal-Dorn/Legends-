@@ -46,7 +46,7 @@ this.legend_random_solo_intro_event<- this.inherit("scripts/events/event", {
 			"bro1",
 			brothers[0].getName()
 		]);
-
+	}
 	function onClear()
 	{
 	}
