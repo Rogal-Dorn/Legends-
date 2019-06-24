@@ -4292,6 +4292,20 @@ this.tooltip_events <- {
 					text = "If enabled, guarentees at least one of each trade location building on the map."
 				}
 			];
+		
+		case "mapconfig.legendperktrees":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Legend perk trees"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, all recruits for hire will have and unique perk tree."
+					}
+				];
 
 		case "camp.commander":
 		case "camp.rest":

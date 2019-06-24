@@ -565,7 +565,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.CustomPerkTree == null)
 		{
-			this.m.CustomPerkTree = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
+			if (this.World.Assets.isLegendPerkTrees())
+			{
+				this.m.CustomPerkTree = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
+			}
+			else 
+			{
+				this.m.CustomPerkTree = this.Const.Perks.DefaultCustomPerkTree;
+			}
 		}
 
 		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
