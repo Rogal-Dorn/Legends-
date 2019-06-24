@@ -56,6 +56,22 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.DaggerTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.DeviousTree
+			],
+			Enemy = [this.Const.Perks.CivilizationTree],
+			Class = [this.Const.Perks.KnifeClassTree]
+		}
 	}
 
 	function getTooltip()

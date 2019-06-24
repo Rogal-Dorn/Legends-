@@ -42,6 +42,24 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.MaceTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

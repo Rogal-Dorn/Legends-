@@ -61,6 +61,24 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SlingsTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.DaggerTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.ViciousTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

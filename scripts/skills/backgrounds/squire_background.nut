@@ -47,6 +47,24 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.HammerTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.FastTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

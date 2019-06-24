@@ -77,9 +77,18 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Class = 0
 		},
 		PerkTreeDynamic = {
-			Weapon = [],
-			Defense = [],
-			Traits = [],
+			Weapon = [
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.PolearmTree
+			],
+			Defense = [this.Const.Perks.MediumArmorTree],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.FastTree
+			],
 			Enemy = [],
 			Class = []
 		},

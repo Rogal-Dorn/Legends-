@@ -59,6 +59,22 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0.0, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.AxeTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.SturdyTree
+			],
+			Enemy = [this.Const.Perks.OrcsTree],
+			Class = [this.Const.Perks.PickaxeClassTree]
+		}
 	}
 
 	function getTooltip()

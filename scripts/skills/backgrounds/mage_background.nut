@@ -70,6 +70,24 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[0];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[0];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.StavesTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

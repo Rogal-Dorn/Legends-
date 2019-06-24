@@ -52,6 +52,22 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.StavesTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.InspirationalTree
+			],
+			Enemy = [this.Const.Perks.UndeadTree],
+			Class = [this.Const.Perks.HealerClassTree]
+		}
 	}
 
 	function getTooltip()

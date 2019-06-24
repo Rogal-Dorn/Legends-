@@ -49,6 +49,23 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SlingsTree,
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [this.Const.Perks.BeastsTree],
+			Class = []
+		}
 	}
 
 	function onBuildDescription()

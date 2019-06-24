@@ -64,6 +64,23 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.AxeTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [this.Const.Perks.SwordmasterTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

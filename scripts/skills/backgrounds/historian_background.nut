@@ -50,6 +50,24 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.IsEducatedBackground = true;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

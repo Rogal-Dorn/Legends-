@@ -54,6 +54,22 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0.0, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.BowTree,
+				this.Const.Perks.SlingsTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [this.Const.Perks.BeastsTree],
+			Class = [this.Const.Perks.ShortbowClassTree]
+		}
 	}
 
 	function getTooltip()

@@ -76,6 +76,23 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 				0.0, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.SwordTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [this.Const.Perks.OrcsTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

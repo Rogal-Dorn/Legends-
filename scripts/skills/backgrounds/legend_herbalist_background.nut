@@ -70,6 +70,24 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 				0.0, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.StavesTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.OrganisedTree
+			],
+			Enemy = [this.Const.Perks.MysticTree],
+			Class = [
+				this.Const.Perks.SickleClassTree,
+				this.Const.Perks.HealerClassTree
+			]
+		}
 	}
 
 	function getTooltip()

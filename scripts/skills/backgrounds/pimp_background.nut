@@ -40,6 +40,22 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.DeviousTree
+			],
+			Enemy = [this.Const.Perks.CivilizationTree],
+			Class = [this.Const.Perks.FistsClassTree]
+		}
 	}
 
 	function getTooltip()

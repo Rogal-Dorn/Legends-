@@ -63,6 +63,23 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 				0.0, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.PolearmTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.WoodaxeClassTree]
+		}
 	}
 
 	function getTooltip()
