@@ -829,7 +829,8 @@ Normal alp trophies now grant +5% experience gain
 
 Adds Greenwood Schrats - Elite Schrats with an even tougher shield that spawn many more greenwood saplings, who in turn spawn regular saplings.  Increased stats 
 50% chance of dropping ancient green wood that can be used to craft:
-Heartwood shield - regenerates durability each turn in combat 
+Heartwood shield - regenerates 10% durability each turn in combat 
+Heartwood sap - grants 3 turns of perfect focus
 50% chance of dropping a shield rune stone 
 There is a contract to hunt them, unlocked by hiring a beast hunter and giving them 'Favoured Enemy Schrats' perk, which is available to: beast hunters, ranger, taxidermists, hunters, herbalists and lumberjacks
 
@@ -845,6 +846,7 @@ Adds Stollwurm - Elite wurms that can burrow across the map and regenerate healt
 Drops stollwurm blood and scales That can be used to craft 
 Stollwurm scale cloack - Adds 80 durability and immunity to stun 
 Stollwurm helmet - very durable, gives immunity to knockback and grab, immunity to surround maluses, and 0 fatigue from being hit (stalwart, steadfast and battleheart)
+Stollwurm blood - grants 3 turns of indominatable 
 50% chance of dropping an armor rune stone 
 The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy Lindwurm' perk, which is available to beast hunters, rangers, hunters, taxidermists, fishermen and miners. 
 
@@ -852,6 +854,7 @@ The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy L
 Adds Hexen Coven Leader - Elite Hexe that can charm for five turns and cast magic missiles 
 50% chance of dropping Glowing hexen hair that can be used to craft 
 Hexen Leader charm - Grants +10 Resolve 
+Gnarled staff - grants magic missile 
 Potion of Ichor - Grants +20 Health and Fatigue every turn for eight turns, also applies goblin poison for three turns 
 
 
@@ -960,3 +963,4 @@ Tailors and housemaids have slightly higher maximum hitpoint and stamina rolls,
 Thieves and pickpockets have wider maximum and minimum hitpoint and stamina rolls
 wildmen and wildwomen have wider maximum and minimum hitpoint rolls
 Disowned and adventurous nobles and ladies have wider maximum and minimum rolls for all stats
+

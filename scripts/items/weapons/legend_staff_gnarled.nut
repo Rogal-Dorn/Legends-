@@ -16,7 +16,7 @@ this.legend_staff_gnarled <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_staff_04";
-		this.m.Value = 500;
+		this.m.Value = 5000;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
@@ -35,6 +35,7 @@ this.legend_staff_gnarled <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
 		this.addSkill(this.new("scripts/skills/actives/legend_staff_knock_out"));
+		this.addSkill(this.new("scripts/skills/actives/legend_magic_missile"));
 	}
 
 });

@@ -10,7 +10,7 @@ this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shi
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = 8;
 		this.updateVariant();
-		this.m.Value = 700;
+		this.m.Value = 7000;
 		this.m.MeleeDefense = 30;
 		this.m.RangedDefense = 25;
 		this.m.StaminaModifier = -14;
@@ -20,11 +20,11 @@ this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shi
 
 	function updateVariant()
 	{
-		this.m.Sprite = "shield_named_0" + this.m.Variant;
-		this.m.SpriteDamaged = "shield_named_0" + this.m.Variant + "_damaged";
-		this.m.ShieldDecal = "shield_named_0" + this.m.Variant + "_destroyed";
-		this.m.IconLarge = "shields/inventory_named_shield_0" + this.m.Variant + ".png";
-		this.m.Icon = "shields/icon_named_shield_0" + this.m.Variant + ".png";
+		this.m.Sprite = "shield_heartwood";
+		this.m.SpriteDamaged = "shield_heartwood_damaged";
+		this.m.ShieldDecal = "shield_heartwood_destroyed";
+		this.m.IconLarge = "shields/inventory_heartwood_shield.png";
+		this.m.Icon = "shields/icon_heartwood_shield.png";
 	}
 
 	function onEquip()
@@ -46,7 +46,7 @@ this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shi
 		local actor = this.getContainer().getActor();
 		local shield = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local shieldMissing = shield.getConditionMax() - shield.getCondition();
-		local shieldAdded = this.Math.min(shieldMissing, this.Math.floor(shield.getConditionMax() * 0.05));
+		local shieldAdded = this.Math.min(shieldMissing, this.Math.floor(shield.getConditionMax() * 0.1));
 
 
 		if (shieldAdded <= 0)
