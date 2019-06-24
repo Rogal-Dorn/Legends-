@@ -965,7 +965,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	row.append(control);
 	this.mLegendPerkTreesCheckbox = $('<input type="checkbox" id="cb-legendperktrees"/>');
 	control.append(this.mLegendPerkTreesCheckbox);
-	this.mmLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Legend perk trees</label>');
+	this.mLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Legend perk trees</label>');
 	control.append(this.mLegendPerkTreesCheckboxLabel);
 	this.mLegendPerkTreesCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',

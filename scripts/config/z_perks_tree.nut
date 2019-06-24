@@ -76,7 +76,7 @@ local VanillaTree = [
 	[]	
 ];
 
-gt.Const.Perks.DefaultCustomPerkTree = VanillaTree;
+gt.Const.Perks.DefaultCustomPerkTree <- VanillaTree;
 
 gt.Const.Perks.BuildPerkTreeFromTemplate <- function (_custom) 
 {
