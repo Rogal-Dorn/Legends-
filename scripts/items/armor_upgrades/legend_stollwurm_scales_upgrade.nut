@@ -52,13 +52,58 @@ this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrad
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Immune to stun"
+			text = "Immune to stun, knockback and grab, and acid"
 		});
 	}
 
 	function onUpdateProperties( _properties )
 	{
 		_properties.IsImmuneToStun = true;
+		_properties.IsImmuneToKnockBackAndGrab = false,
+	}
+
+	function onEquip()
+	{
+		this.item.onEquip();
+		local c = this.m.Armor.getContainer();
+
+		if (c != null && c.getActor() != null && !c.getActor().isNull())
+		{
+			c.getActor().getTags().add("body_immune_to_acid");
+		}
+	}
+
+	function onUnequip()
+	{
+		this.item.onUnequip();
+		local c = this.m.Armor.getContainer();
+
+		if (c != null && c.getActor() != null && !c.getActor().isNull())
+		{
+			c.getActor().getTags().remove("body_immune_to_acid");
+		}
+	}
+
+	function onAdded()
+	{
+		this.armor_upgrade.onAdded();
+		local c = this.m.Armor.getContainer();
+
+		if (c != null && c.getActor() != null && !c.getActor().isNull())
+		{
+			c.getActor().getTags().add("body_immune_to_acid");
+		}
+	}
+
+	function onRemoved()
+	{
+		this.armor_upgrade.onRemoved();
+		local c = this.m.Armor.getContainer();
+
+		if (c != null && c.getActor() != null && !c.getActor().isNull())
+		{
+			c.getActor().getTags().remove("body_immune_to_acid");
+		}
 	}
 
 });
