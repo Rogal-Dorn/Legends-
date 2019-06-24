@@ -35,6 +35,24 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.FlailTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.SturdyTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

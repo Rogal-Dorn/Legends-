@@ -45,6 +45,23 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.SlingsTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.FistsClassTree]
+		}
 	}
 
 	function getTooltip()

@@ -42,6 +42,23 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.SlingsTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

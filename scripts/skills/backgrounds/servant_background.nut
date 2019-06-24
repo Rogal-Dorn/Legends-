@@ -51,6 +51,22 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.StavesTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.FastTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.BarterClassTree]
+		}
 	}
 
 	function onBuildDescription()

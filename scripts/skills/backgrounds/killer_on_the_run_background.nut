@@ -46,6 +46,23 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.PolearmTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.FastTree
+			],
+			Enemy = [this.Const.Perks.CivilizationTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

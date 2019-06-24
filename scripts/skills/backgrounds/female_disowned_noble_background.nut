@@ -42,7 +42,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.BowTree,
+				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
@@ -51,9 +51,10 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 			Traits = [
 				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.FastTree,
-				this.Const.Perks.MartyrTree
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.TrainedTree
 			],
-			Enemy = [this.Const.Perks.ArchersTree],
+			Enemy = [],
 			Class = []
 		}
 	}

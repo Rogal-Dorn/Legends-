@@ -38,6 +38,23 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[3];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.CleaverTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.ViciousTree
+			],
+			Enemy = [this.Const.Perks.BeastsTree],
+			Class = []
+		}
 	}
 
 	function onBuildDescription()

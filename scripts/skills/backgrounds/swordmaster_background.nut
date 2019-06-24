@@ -59,6 +59,23 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.GreatswordTree,
+				this.Const.Perks.PolearmTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.ViciousTree
+			],
+			Enemy = [this.Const.Perks.SwordmasterTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

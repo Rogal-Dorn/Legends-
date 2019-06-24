@@ -64,6 +64,25 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 				0.0, //stepps
 				0.0 //ocean
 			]
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.SwordTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.ViciousTree
+			],
+			Enemy = [
+				this.Const.Perks.UndeadTree,
+				this.Const.Perks.MysticTree
+			],
+			Class = []
+		}
 	}
 
 	function getTooltip()

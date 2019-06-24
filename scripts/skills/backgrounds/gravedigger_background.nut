@@ -32,6 +32,23 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.HammerTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.SturdyTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.ShovelClassTree]
+		}
 	}
 
 	function getTooltip()

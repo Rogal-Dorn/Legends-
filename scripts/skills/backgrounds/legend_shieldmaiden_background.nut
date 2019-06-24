@@ -37,6 +37,24 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.AxeTree
+			],
+			Defense = [
+				this.Const.Perks.ShieldTree,
+				this.Const.Perks.HeavyArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

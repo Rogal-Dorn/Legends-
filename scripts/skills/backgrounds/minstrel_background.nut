@@ -43,6 +43,23 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.InspirationalTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.BardClassTree]
+		}
 	}
 
 	function getTooltip()

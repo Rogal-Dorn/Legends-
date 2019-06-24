@@ -47,6 +47,23 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.SpearTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.FastTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.IntelligentTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.RepairClassTree]
+		}
 	}
 
 	function onBuildDescription()

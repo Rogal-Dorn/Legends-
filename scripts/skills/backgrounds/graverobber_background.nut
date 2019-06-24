@@ -33,6 +33,7 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		s
 	}
 
 	function getTooltip()

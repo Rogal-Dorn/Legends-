@@ -68,6 +68,23 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				0.0, //stepps
 				0.0 //ocean
 			];		
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.BowTree,
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.SwordTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [this.Const.Perks.BeastsTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

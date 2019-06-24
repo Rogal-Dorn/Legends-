@@ -54,6 +54,22 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.SlingsTree,
+				this.Const.Perks.DaggersTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.DeviousTree
+			],
+			Enemy = [this.Const.Perks.OutlandersTree],
+			Class = [this.Const.Perks.BarterClassTree]
+		}
 	}
 
 	function getTooltip()

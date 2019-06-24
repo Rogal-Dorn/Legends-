@@ -57,6 +57,24 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 				0.05, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.StavesTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

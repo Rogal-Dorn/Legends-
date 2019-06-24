@@ -30,6 +30,23 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsLowborn = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SpearTree,
+				
+			],
+			Defense = [
+				this.Const.Perks.ShieldTree
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.IndestructibleTree
+			],
+			Enemy = [this.Const.Perks.OutlandersTree],
+			Class = [this.Const.Perks.MilitiaClassTree]
+		}
 	}
 
 	function onBuildDescription()

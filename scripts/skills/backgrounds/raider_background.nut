@@ -52,6 +52,23 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.GreatswordTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.ViciousTree
+			],
+			Enemy = [this.Const.Perks.CivilizationTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

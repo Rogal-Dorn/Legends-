@@ -45,6 +45,23 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.IsFemaleBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree,
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.InspirationalTree,
+				this.Const.Perks.AgileTree
+			],
+			Enemy = [this.Const.Perks.CivilizationTree],
+			Class = [this.Const.Perks.BardClassTree]
+		}
 	}
 
 	function getTooltip()

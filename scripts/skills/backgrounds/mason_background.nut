@@ -31,6 +31,24 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.StavesTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()

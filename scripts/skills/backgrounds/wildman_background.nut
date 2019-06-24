@@ -83,6 +83,22 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0.0, //stepps
 				0.0 //ocean
 			];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.AxeTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [this.Const.Perks.OrcsTree],
+			Class = [this.Const.Perks.FistsClassTree]
+		}
 	}
 
 	function getTooltip()

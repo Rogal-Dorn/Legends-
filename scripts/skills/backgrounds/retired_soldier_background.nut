@@ -52,6 +52,23 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.AxeTree
+			],
+			Defense = [
+				this.Const.Perks.ShieldTree,
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [this.Const.Perks.OutlandersTree],
+			Class = []
+		}
 	}
 
 	function getTooltip()

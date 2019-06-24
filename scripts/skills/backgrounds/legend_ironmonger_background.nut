@@ -37,6 +37,23 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.SwordsTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.RepairClassTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.HammerClassTree]
+		}
 	}
 
 	function getTooltip()

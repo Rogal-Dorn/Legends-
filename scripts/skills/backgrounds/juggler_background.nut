@@ -37,8 +37,25 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
-
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.SlingsTree,
+				this.Const.Perks.FlailTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.TrainedTree
+			],
+			Enemy = [],
+			Class = []
+		}
 	}
 
 	function getTooltip()
