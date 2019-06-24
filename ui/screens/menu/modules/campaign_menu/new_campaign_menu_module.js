@@ -223,6 +223,8 @@ var NewCampaignMenuModule = function()
 	this.mStackCitadelsCheckboxLabel = null;
 	this.mAllTradeLocationsCheckbox = null;
 	this.mAllTradeLocationsCheckboxLabel = null;
+	this.mLegendPerkTreesCheckbox = null;
+	this.mLegendPerkTreesCheckboxLabel = null;
 
     // generics
     this.mIsVisible = false;
@@ -956,6 +958,23 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 		this.mAllTradeLocationsCheckbox.iCheck('check');
 	}
 
+	
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendPerkTreesCheckbox = $('<input type="checkbox" id="cb-legendperktrees"/>');
+	control.append(this.mLegendPerkTreesCheckbox);
+	this.mmLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Legend perk trees</label>');
+	control.append(this.mLegendPerkTreesCheckboxLabel);
+	this.mLegendPerkTreesCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendPerkTreesCheckbox.iCheck('check');
+
+
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
@@ -1160,6 +1179,10 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 
 	this.mAllTradeLocationsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
 	this.mAllTradeLocationsCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
+
+	this.mLegendPerkTreesCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendperktrees' });
+	this.mLegendPerkTreesCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendperktrees' });
+
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function ()
@@ -1264,7 +1287,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mAllTradeLocationsCheckbox.unbindTooltip();
 	this.mAllTradeLocationsCheckboxLabel.unbindTooltip();
 
-	
+	this.mLegendPerkTreesCheckbox.unbindTooltip();
+	this.mLegendPerkTreesCheckboxLabel.unbindTooltip();
 };
 
 
@@ -1615,7 +1639,8 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mDebugCheckbox.is(':checked'));
 	settings.push(this.mStackCitadelsCheckbox.is(':checked'));
 	settings.push(this.mAllTradeLocationsCheckbox.is(':checked'));
-    settings.push(this.mScenarios[this.mSelectedScenario].ID);
+	settings.push(this.mScenarios[this.mSelectedScenario].ID);
+	settings.push(this.mLegendPerkTreesCheckbox.is(":checked"));
 	return settings;
 }
 
