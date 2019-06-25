@@ -43,7 +43,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
-				this.Const.Perks.SwordTree,
+				this.Const.Perks.SwordsTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.DaggerTree
 			],
