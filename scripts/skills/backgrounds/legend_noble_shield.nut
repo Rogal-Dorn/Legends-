@@ -6,8 +6,8 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.legend_noble_shield";
 		this.m.Name = "Noble House Soldier";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
-		this.m.HiringCost = 100;
-		this.m.DailyCost = 4;
+		this.m.HiringCost = 200;
+		this.m.DailyCost = 8;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",

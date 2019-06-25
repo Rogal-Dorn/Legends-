@@ -36,7 +36,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 			],
 			Traits = [
 				this.Const.Perks.ViciousTree,
-				this.Const.Perks.MartyrTree
+				this.Const.Perks.DeviousTree
 			],
 			Enemy = [this.Const.Perks.CivilizationTree],
 			Class = [
