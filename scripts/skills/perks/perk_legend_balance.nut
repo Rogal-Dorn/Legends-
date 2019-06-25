@@ -16,10 +16,10 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		local body = actor.getArmorMax(this.Const.BodyPart.Body);
+		local body = actor.getArmor(this.Const.BodyPart.Body);
 		local initiative = actor.getInitiative();
-		local diff = this.Math.abs(body - initiative);
-		local bonus = this.Math.max(5, (50 - diff));
+		local diff = this.Math.abs(body - (2 * initiative));
+		local bonus = this.Math.max(5, (30 - diff));
 		_properties.MeleeDefenseMult += bonus;
 		_properties.RangedDefenseMult += bonus;
 	}
