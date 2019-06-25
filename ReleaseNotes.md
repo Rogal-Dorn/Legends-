@@ -956,7 +956,9 @@ Nudist nerfed.  requires no clothes, damage reduction scaling reduced from 40 to
 Berserker gets kick, grapple and unarmed mastery 
 
 Crusader:
-Crusader gets shield bash, shield push, shield mastery and field repair. Undead enemy perks now scale.  Crusader will find monks as he should
+True believers are no longer effected by allies fleeing or dying. 
+Crusader gets shield bash, shield push, shield mastery and field repair. Undead enemy perks now scale.  
+Crusader will find monks as he should
 
 Noble: 
 Noble non-supporter cost lowered from 50% to 25% to standardise with other starts
@@ -983,12 +985,12 @@ Farmhands and milkmaids, Millers and bakers, Minstrels and troubadors, Servants 
 Adventurous female nobles now have potential to roll the highest ranged skill of any background. They also have a perk to become the best archer in the land. 
 
 Deserters:
-Deserters are gauranteed skills for spears, dagger, sheild, heavy armor. along with trait groups of martyr, vicious, tenacious and devious
+Deserters have gauranteed skills for spears, dagger, shield and heavy armor. They are fit, large, trained and devious. 
 Deserters will find more deserters, retired soldiers, disowned nobles, bastards and swordmasters for hire. Their hires have a 60% chance of being cowards
 Deserter volunteers will arrive twice as often. 
 
 Raiders:
-Raiders are gauranteed skills for Axe, Polearm, Greatsword, Heavy armor. They are Vicious, Devious, Fast, and get favored enemy perks for hunting civilians.
+Barbarians have gauranteed skills for greatsword, axes, hammers and light armor. They are large, vicious and sturdy, and have perks for hunting civilians, mercenaries and nobles. 
 Fixes raider recruits having too many traits
 Raider volunteers arrive twice as often 
 
