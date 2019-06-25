@@ -6,7 +6,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.ID = "background.legend_noble_2h";
 		this.m.Name = "Noble House Warrior";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
-		this.m.HiringCost = 100;
+		this.m.HiringCost = 200;
 		this.m.DailyCost = 8;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [

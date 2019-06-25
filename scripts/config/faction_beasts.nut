@@ -412,9 +412,9 @@ gt.Const.Tactical.Actor.LegendRedbackSpider <- {
 };
 gt.Const.Tactical.Actor.LegendRockUnhold <- {
 	XP = 800,
-	ActionPoints = 9,
-	Hitpoints = 600,
-	Bravery = 150,
+	ActionPoints = 12,
+	Hitpoints = 1000,
+	Bravery = 250,
 	Stamina = 400,
 	MeleeSkill = 75,
 	RangedSkill = 0,
@@ -425,8 +425,8 @@ gt.Const.Tactical.Actor.LegendRockUnhold <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		400,
-		400
+		1000,
+		1000
 	]
 };
 gt.Const.Tactical.Actor.LegendDemonAlp <- {
@@ -508,19 +508,19 @@ gt.Const.Tactical.Actor.LegendGreenwoodSchratSmall <- {
 };
 gt.Const.Tactical.Actor.LegendHexeLeader <- {
 	XP = 900,
-	ActionPoints = 9,
+	ActionPoints = 14,
 	Hitpoints = 160,
 	Bravery = 200,
-	Stamina = 130,
+	Stamina = 150,
 	MeleeSkill = 0,
 	RangedSkill = 75,
-	MeleeDefense = 15,
-	RangedDefense = 15,
-	Initiative = 130,
+	MeleeDefense = 30,
+	RangedDefense = 30,
+	Initiative = 150,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 15,
-	Vision = 8,
+	Vision = 10,
 	Armor = [
 		50,
 		0

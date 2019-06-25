@@ -22,10 +22,18 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		
-		local missingBodyArmor = actor.getArmorMax(this.Const.BodyPart.Body) -  actor.getArmor(this.Const.BodyPart.Body);
-		local addedBodyArmor = this.Math.min(missingBodyArmor, this.Math.floor(actor.getArmorMax(this.Const.BodyPart.Body) * 0.15));
-		local missingHeadArmor = actor.getArmorMax(this.Const.BodyPart.Head) -  actor.getArmor(this.Const.BodyPart.Head);
-		local addedHeadArmor = this.Math.min(missingHeadArmor, this.Math.floor(actor.getArmorMax(this.Const.BodyPart.Head) * 0.15));
+		local totalBodyArmor = actor.getArmorMax(this.Const.BodyPart.Body);
+		local totalHeadArmor = actor.getArmorMax(this.Const.BodyPart.Head);
+		local currentBodyArmor = actor.getArmor(this.Const.BodyPart.Body);
+		local currentHeadArmor = actor.getArmor(this.Const.BodyPart.Head);
+		local missingBodyArmor = totalBodyArmor - currentBodyArmor;
+		local missingHeadArmor = totalHeadArmor - currentHeadArmor;
+		local healRateBody = totalBodyArmor * 0.1;
+		local healRateHead = totalHeadArmor * 0.1;
+		local addedBodyArmor = this.Math.min(missingBodyArmor, healRateBody);
+		local addedHeadArmor = this.Math.min(missingHeadArmor, healRateBody);
+		local newBodyArmor = currentBodyArmor + addedBodyArmor;
+		local newHeadArmor = currentHeadArmor + addedHeadArmor;
 
 		if (addedBodyArmor <= 0 && addedHeadArmor <= 0)
 		{
@@ -37,8 +45,8 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		actor.setArmor(this.Const.BodyPart.Body, actor.getArmor(this.Const.BodyPart.Body) + addedBodyArmor);
-		actor.setArmor(this.Const.BodyPart.Head, actor.getArmor(this.Const.BodyPart.Head) + addedHeadArmor);
+		actor.setArmor(this.Const.BodyPart.Body, newBodyArmor);
+		actor.setArmor(this.Const.BodyPart.Head, newHeadArmor);
 		actor.setDirty(true);
 
 		if (!actor.isHiddenToPlayer())
