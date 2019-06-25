@@ -2228,6 +2228,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/smackdown_circle.png",
 		IconDisabled = "ui/perks/smackdown_circle_bw.png",
 		Const = "LegendSmackdown"
+	},
+	{
+		ID = "perk.feint",
+		Script = "scripts/skills/perks/perk_feint",
+		Name = this.Const.Strings.PerkName.Feint,
+		Tooltip = this.Const.Strings.PerkDescription.Feint,
+		Icon = "ui/perks/feint_circle.png",
+		IconDisabled = "ui/perks/feint_circle_bw.png",
+		Const = "Feint"
 	}
 ];
 
