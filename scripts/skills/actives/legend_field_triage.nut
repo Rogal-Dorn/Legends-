@@ -8,13 +8,12 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_field_triage";
 		this.m.Name = "Field Triage";
 		this.m.Description = "Heal a unit, costs 1 medicine for every 2 health";
-		this.m.Icon = "skills/coins_square.png";
-		this.m.IconDisabled = "skills/coins_square_bw.png";
+		this.m.Icon = "skills/triage_square.png";
+		this.m.IconDisabled = "skills/triage_square_bw.png";
 		this.m.Overlay = "active_41";
 		this.m.SoundOnUse = [
-			"sounds/coins_01.wav",
-			"sounds/coins_02.wav",
-			"sounds/coins_03.wav"
+		"sounds/combat/first_aid_01.wav",
+		"sounds/combat/first_aid_02.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
@@ -67,7 +66,7 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 		local currentPercent = currentHP / percentHP;
 		local missingPercent = 100 - currentPercent;
 		local meds = this.World.Assets.getMedicine();
-		local cost = missingPercent / 2; 
+		local cost = missingPercent * 5; 
 		this.m.Meds = meds;
 		this.m.Cost = cost;
 

@@ -964,3 +964,5 @@ Thieves and pickpockets have wider maximum and minimum hitpoint and stamina roll
 wildmen and wildwomen have wider maximum and minimum hitpoint rolls
 Disowned and adventurous nobles and ladies have wider maximum and minimum rolls for all stats
 
+Adds icons and sounds for field repair and field triage
+New perk 'field treats' - lets you spend 50 food to bring mercenaries from wavering to steady

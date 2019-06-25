@@ -32,7 +32,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 			"the Sliver",
 			"the Cleaver",
 			"the Red",
-			"whitemeat",
+			"Whitemeat",
 			"Bloodeye"
 		];
 		this.m.Faces = this.Const.Faces.AllFemale;
@@ -47,6 +47,25 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.CleaverTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [],
+			Class = [
+				this.Const.Perks.ButcherClassTree,
+				this.Const.Perks.ChefClassTree
+			]
+		}
 	}
 
 	function getTooltip()

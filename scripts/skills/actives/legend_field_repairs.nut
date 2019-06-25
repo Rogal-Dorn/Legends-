@@ -8,13 +8,13 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_field_repairs";
 		this.m.Name = "Field Repairs";
 		this.m.Description = "Repair armor, costs 1 Armor Part for every 5 missing armor";
-		this.m.Icon = "skills/coins_square.png";
-		this.m.IconDisabled = "skills/coins_square_bw.png";
+		this.m.Icon = "skills/repair_square.png";
+		this.m.IconDisabled = "skills/repair_square_bw.png";
 		this.m.Overlay = "active_41";
 		this.m.SoundOnUse = [
-			"sounds/coins_01.wav",
-			"sounds/coins_02.wav",
-			"sounds/coins_03.wav"
+			"sounds/ambience/buildings/blacksmith_hammering_00.wav",
+			"sounds/ambience/buildings/blacksmith_hammering_01.wav",
+			"sounds/ambience/buildings/blacksmith_hammering_02.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
