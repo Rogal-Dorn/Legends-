@@ -59,7 +59,7 @@ this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrad
 	function onUpdateProperties( _properties )
 	{
 		_properties.IsImmuneToStun = true;
-		_properties.IsImmuneToKnockBackAndGrab = false,
+		_properties.IsImmuneToKnockBackAndGrab = true;
 	}
 
 	function onEquip()
