@@ -799,27 +799,33 @@ Beta 11.3.1 Released on Nexus
 
 
 Beta 12 - Monster hunt 
-Adds paintable tower shields, with fortify skill that shields surrounding allies 
-bucklers gain "buckler bash" skill to daze enemies 
 
-Adds Redback spiders - Elite spiders that have a poison dealing 10 damage each turn, decreasing by 1 damage per turn over 10 turns. Damage is doubled when in a web.  The have increased AP so they can web and bite at the same time, or bite twice in a turn. Increased stats and improved AI.
+Hark! The beasts approach!! 
+In this release we wanted to expand on the ideas of monster hunting and beast slaying introduced in the DLCs. 
+
+You begin by selecting a favored enemy beast, indicating you are ready to start down the beast hunting path. This will give you an immediate +5% bonus to damage, melee and ranged attack against your chosen foe. 
+Now you will need to begin hunting your enemy, for each one you kill, you will become better at fighting them, after killing 100 strength worth of enemies, your bonus grows by +1% damage, melee and ranged. This bonus scales indefinately, the more you kill, the stronger you become.
+When you reach a total bonus of +10%, word will spread of your achievements, and heralds will seek you out with brand new contracts to hunt more difficult versions of your chosen foe. These contracts will be exceptionally difficult, but offer huge rewards and unique legendary items. 
+
+
+Redback spiders - Elite spiders that have a poison dealing 10 damage each turn, decreasing by 1 damage per turn over 10 turns. Damage is doubled when in a web.  The have increased AP so they can web and bite at the same time, or bite twice in a turn. Increased stats and improved AI.
 Drops redback poison, can be used to craft: 
 Redback spider helm - made from the carapace of a redback spider, grants the web skill
 Redback dagger - made from the fangs and poison gland of a redback spider, inflicts redback poison 
 
 
-Adds White Wolves -  Elite direwolves with increased AP so they can attack three times in a turn applying overwhelm. Or howl twice increasing their allies resolve by 30 each time.  All other stats increased, and more cunning AI. Increased stats over frenzied direwolves. 
+White Wolves -  Elite direwolves with increased AP so they can attack three times in a turn applying overwhelm. Or howl twice increasing their allies resolve by 30 each time.  All other stats increased, and more cunning AI. Increased stats over frenzied direwolves. 
 Drops white wolf pelt that can be used to craft:
 white wolf helm - decreased the morale of adjacent enemies by 20 
 white wolf cloak - decreased the morale of adjacent enemies by 20 and increases armor by 30 
 
-Adds Skin Ghouls - Elite nimble ghouls with groteque elongated arms that can reap in an arc over two tiles, applying 5-10 damage, a 5hp bleed and a 25% chance to decapitate or disembowel. Those values are multipled by the ghoul's size so a Tier 3 skin ghoul can hit all of your units within 2 tiles for 15-30 damage, with 15 bleed, a 75% chance to decapitate and a 75% chance to disembowel. Increased stats, improved AI, and footwork.   
+Skin Ghouls - Elite nimble ghouls with groteque elongated arms that can reap in an arc over two tiles, applying 5-10 damage, a 5hp bleed and a 25% chance to decapitate or disembowel. Those values are multipled by the ghoul's size so a Tier 3 skin ghoul can hit all of your units within 2 tiles for 15-30 damage, with 15 bleed, a 75% chance to decapitate and a 75% chance to disembowel. Increased stats, improved AI, and footwork.   
 Drops Skin Ghoul skin that can be used to craft:
 Skin Ghoul Helmet - Medium armor that grants the wearer the ability to devour corpses to heal 
 Skin Ghoul Armor - Medium armor that grants the ability to heal each turn 
 Skin Ghoul Blood potion - Can be used to heal 10% of your missing health per turn, over 4 turns 
 
-Adds Demon Alps - Elite Alps who cast a burning realm with four shadows per turn. They gain levitate, anticipation, footwork, a horrifying scream and the ability to feast on corpses. Increased stats and improved AI  
+Demon Alps - Elite Alps who cast a burning realm with four shadows per turn. They levitate and summon fields of flame filled with tormented souls, combined with a horrifying scream and the ability to feast on corpses. Increased stats and improved AI  
 50% chance of dropping Demon Alp Skin 
 Demon Alp Helm - Grants horrific scream 
 80% chance of dropping a Demon's Third Eye that can be used to craft: 
@@ -827,12 +833,12 @@ Demon Alp Trophy - Grants +10% experience gain
 Normal alp trophies now grant +5% experience gain 
 50% chance of dropping helm rune stone 
 
-Adds Greenwood Schrats - Elite Schrats with an even tougher shield that spawn many more greenwood saplings, who in turn spawn regular saplings.  Increased stats 
+Greenwood Schrats - Elite Schrats with an even tougher shield that spawn many more greenwood saplings, who in turn spawn regular saplings. They just keep on multiplying. Increased stats 
 50% chance of dropping ancient green wood that can be used to craft:
-Heartwood shield - regenerates 10% durability each turn in combat 
-Heartwood sap - grants 3 turns of perfect focus
+Heartwood shield - regenerates 20% durability each turn in combat 
+Heartwood sap potion - grants 3 turns of perfect focus
 50% chance of dropping a shield rune stone 
-There is a contract to hunt them, unlocked by hiring a beast hunter and giving them 'Favoured Enemy Schrats' perk, which is available to: beast hunters, ranger, taxidermists, hunters, herbalists and lumberjacks
+To hunt them, take the 'Favoured Enemy Schrats' perk, which is available to: beast hunters, ranger, taxidermists, hunters, herbalists and lumberjacks
 
 
 Adds Rock Unholds - Elite Unholds with thick armor that regenerates in addition to their health regenerating. Increased stats 
@@ -858,111 +864,158 @@ Gnarled staff - grants magic missile
 Potion of Ichor - Grants +20 Health and Fatigue every turn for eight turns, also applies goblin poison for three turns 
 
 
-Nun and Monk gain a 'Field Triage' ability to heal on the battlefield in exchange for meds. They also gain skills for storing more meds, bandage mastery and favoured enemy perks for Alps, Hexen and Vampires. They lose berserk, fearsome, headhunter, kiling frenzy, executioner and all bladed specialisations,
-Nuns can now craft holy water, get in religious debates, and convert flagelents or be converted
-Witch hunter gains True Believer, Close combat archer, piercing shot and favoured enemies for ghoul, skeleton, zombie, hexen, alp and vampire. Loses battleforged, brawny, colossus and specialisations for axe and spear. 
-Berserker gains favoured enemies ork, goblin and unhold 
-Noble gains favoured enemies - noble, bandit, barbarian, mercenary and caravan 
-Crusader gains favoured enemies ghoul, skeleton, zombie, hexen and vampire
-Ranger gains Specialisation in axe, sword, dagger and nets. Favoured enemies direwolf, spider, ork, goblin, schrat, unhold, lindwurm 
-Hunter gains net mastery and favoured enemies Direwolf, Spider, Ork, Goblin, Schrat, Unhold and lindwurm 
-Seer gains favoured enemy - hexen. Cat bite damage and AP buffed 
-Canibal gains skills with a butcher's knife
-Butcher, fishwife and cannibal gain favoured enemies Ghoul, skeleton and zombie. They know about chopping up bodies.  
-Poachers gain favoured enemies direwolves, spiders, goblins and schrats.  
-Herbalists and lumberjacks gain favoured enemies Spiders and Schrats, lost in the woods 
-Sheppards gain favoured enemies direwolves, spiders and unholds, because thats what you use your sling on while gaurding sheep in hills
-Miners gain favoured enemies Orks, Unholds and lindwurms, because mountains. 
-Fishermen gain favoured enemy lindwurms, because seamonsters. 
-Milkmaid gains pitchfork skills
-Milkmaid and farmer gain favoured enemy direwolf, because wolves like farms. 
-Gravediggers and graverobbers gain favoured enemies ghouls, skeletons, zombies and vampires. Stay dead damnit!  
-Retired soldiers and sellswords gain "born with a board", composure, sundering strike, steadfast and Favoured enemy - Bandit and barbarian. Lose lonewolf, overwhelm, student, duelist, gifted and fortified mind. 
-Deserters gain composure, sundering strikes, steadfast and favoured enemies mercenary and noble- lose rally the troops, overwhelm, student, gifted and fortified mind. 
-Swordmasters and Hedge Knights gain Vengeance, Battleflow, Sundering strike and Favoured Enemy - Swordmasters.  lose student, gifted, fortified mind, shield expert, and all non-blade specialisations. 
-Bastards and disowned nobles gain True Believer, bribe and Favoured enemy - noble. Lose fortified mind, overwhelm and shield expert 
-Female Nobles, bowyers and fletchers gain Favoured Enemy - Archers  
-Assassins gain knife skills, sprint, evasion, poison mastery and Favoured Enemy - Nobles. Lose Rally the troops, taunt, shield expert and most weapon specialisations. 
-Barbarians and raiders gain favoured enemies - Civilians 
-Shieldmaiden gains favoured enemy - barbarian 
-Thieves and pickpockets gain favoured enemy - noble 
-
-Fixes Second Wind perk from crashing battles
-Favored Enemy perks damages now scale with the number of favored enemies killed. The more you kill, the better you get at killing them.
-
-Integrates Boyski's Better Obituaries mod into Legends.
 
 
-**dynamic spawns**
+**dynamic perks**
+Over the past few releases we've been trialling custom perk trees for different backgrounds, and your feedback has been overwhelmingly positive about this idea. While running these trials, we have also been building up a perk library, with the goal of massively increasing the perks available to all mercenaries.
+With this release we have gone all out and given every mercenary you hire a unique perk tree. We have assembled a library of over 260 perks, then arranged them into groups of perks that have synergy together. 
+We then assigned those groups by hand to each background, so that every background had gauranteed access to thematically appropriate perks. 
+However, those background groups only make up half of each mercenary's tree. The other half is randomly picked from the perk groups, providing variety while retaining the synergies.  
+Each mercenary gets 6 of the 15 weapon groups, 2 of the five defence groups, and eight from the 13 traits, 8 enemy groups and 6 class groups. This provides millions of possible combinations.
+
+
+**Unarmed skills** 
+Unarmed skill has always been strong in legends, it scales off initiative and hitpoints. Now there are three new perks to give more depth:
+New Perk 'Kicking' - Active skill to push back and fatigue enemies
+New Perk 'Grappling' - Active skill to stun and fatigue enemies
+New Perk 'Unarmed Mastery' -Reduces fatigue and increase armor penetration unarmed attacks
+Of course brawlers are gaurantees all three. 
+
+**Medium armor skills**
+There is a very strong nimble vs battleforged divide that drives mercenaries to the extremes. We wanted to break this dichotomy and encourage other kinds of armor.
+New Perk 'Balance' grants up to 30 bonuse melee and ranged defense if your current body armor is equal to twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of +5. 
+New Perk 'Matching Set' grants up to 5 fatigue per round if your helmet and armor values match. 
+New Perk 'Lithe' - Like nimble, but with the 15 fatigue floor raised to 30, and the damage mititgation reduced. 
+
+
+**Bard class**
+You'll find minstrels and troubadours have some new tricks up their sleeves, having gained Daze and Entice to control the battlefield. They also have
+New Perk 'Drums Of War' - active skill to reduce the fatigue of all allies 
+
+**Stealth class**
+Devious backgrounds can get a little sneaky
+New Perk 'Camouflage' - Master of concelement and blending in. Can hide from enemies in any terrain until next attack or moving adjacent to enemy. Can't be activated if adjacent to enemy.
+New Perk 'Blend In' - Makes enemies 50% less likely to attack you instead of someone else
+
+**Healer class**
+Monks and Nuns have also got some new abilties, with 'Bandage mastery' to stop the bleeding, and 'medical ingrendients' that will help pay for:
+New perk 'field triage' - lets you spend 5 medicine to heal 1 hitpoint in battle
+
+**Repair class**
+Blacksmiths and Seamstresses are not to be outdone, in addition to two tool storage perks, they have picked up
+New perk 'field repairs' - lets you spend 5 armor parts to repair 1 point of damage in battle 
+
+**Chef Class**
+Butchers, bakers and servants can help out too with: 
+New perk 'field treats' - lets you spend 50 food to bring mercenaries from wavering to steady
+
+
+**Staff Skills**
+We have had staff mastery for a while, but it was mainly used by the seer. Now we have added two more perks to make staves a more interesting option
+New Perk 'Staff Spins' - Any staff hit that would usually daze, also stuns 
+New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense 
+
+**Greatsword skills**
 Sword mastery split into sword mastery and greatsword mastery. 
 Sword mastery - Riposte has no pentalty to hitchance, Slash, Gash and Lunge gain +5% chance to hit
 Greatsword Mastery  - Split, Swing, Overhead Strike and Great Slash gain +5% chance to hit
 Greatswords are Greatsword, Longsword, Warbrand and Rhomphaia
 Greatswords have Great Slash Instead of Slash. Great Slash costs 3 more fatigue, but grants +30% armor penetration. 
 New Perk 'Forceful Swings' grants +10% damage to AOE attacks 
+
+**Spear skills**
 New Perk 'Spearwaller' grants -25% fatigue usage on spearwall, stacks with spear mastery
 New Perk 'Thrust Master' grants +15% damage on the 'Thrust' skill
-New Perk 'Balance' grants up to 50 bonuse melee and ranged defense if your maximum armor value matches your current initiative. The value decreases for every point of difference between the two, to a minimum of 5. 
-New Perk 'Matching Set' grants up to 5 fatigue per round if your helmet and armor values match. 
-New Perk 'Lithe' - Like nimble, but with the 15 fatigue floor raised to 30, and the bonus halved.
-New Perk 'Camouflage' - Master of concelement and blending in. Can hide from enemies in any terrain until next attack or moving adjacent to enemy. Can't be activated if adjacent to enemy.
-New Perk 'Assured Conquest' - 10% melee skill, melee defense and range dfense when at confident moral.
-New Perk 'Blend In' - Makes enemies 50% less likely to attack you instead of someone else
-New Perk 'Staff Spins' - Any staff hit that would usually daze, also stuns 
-New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense 
-New Perk 'Drums Of War' - active skill to reduce the fatigue of all allies 
-New Perk 'Kicking' - Active skill to push back and fatigue enemies
-New Perk 'Grappling' - Active skill to stun and fatigue enemies
-New Perk 'Unarmed Mastery' -Reduces fatigue and increase armor penetration unarmed attacks
-Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
-Adds Wildwomen, get the same events as wildmen, those events are now gender neutral, the wildwomen spawn in the same places, though less likely. 
-Peddlers and Cultists have a 10% chance of being women. Haven't fixed their events yet 
-Cultist text supports female cultists
-Raider start volunteers, Deserter start volunteers, cultist start volunteers and scacrifices and poacher start hunting events, all happen twice as often.
 
+**Other new skills**
+New Perk 'Assured Conquest' - 10% melee skill, melee defense and range dfense when at confident moral.
+New perk "smackdown" knockback enemies when you have more health and fatigue than them. added to hammer group
+New perk "smashing shields" deal +10% shield damage on any hit, added to axe group
+
+**Better obituaries**
+Integrates Boyski's Entire Better Obituaries mod into Legends, showing each mercenary's background, traits, stats and talents.
+
+
+**Shield Rework**
+
+Adds paintable tower shields, with 'fortify' skill to shields surrounding allies and 'safegaurd' skill to sacrifice some of your own defence to shield someone else. 
+Towershields available at armorsmiths or near military attached locations, or will spawn on shieldmaidens and soldiers.  
+bucklers gain "buckler bash" skill to daze enemies 
+parrying daggers gain the "engarde" skill to lower enemy defenses 
+
+
+Warlock:
+Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
+Warlock can trigger cultist events
+
+Berserker:
+Berserker rage nerfed. lowered to 1 stack per hit from 3 and 3 stacks per kill, from 5. Falloff per turn raised to 2 from 1. 
+Nudist nerfed.  requires no clothes, damage reduction scaling reduced from 40 to 30%. 
+Berserker gets kick, grapple and unarmed mastery 
+
+Crusader:
+Crusader gets shield bash, shield push, shield mastery and field repair. Undead enemy perks now scale.  Crusader will find monks as he should
+
+Noble: 
+Noble non-supporter cost lowered from 50% to 25% to standardise with other starts
+Noble gains first triage, tools drawer and field repairs. Favored enemy groups spread out. 
+
+Ranger: 
+Big Game hunter nerfed. Calculation fixed so you correctly gain percentage damage rather than multiplier damage. Effectively 100 times less damage. Can still one hit kill things, but you have to be low on health, as intended.
+Ranger hires should trigger in big cities
+Ranger gets 'blend in' and 'camouflage' perks to enable sneaky play. 
+Favored enemy perks spread out
+Fixes Second Wind perk from crashing battles
+Fixed nightvision to correctly apply
+
+Seer: 
+Teleport nerfed to 40 fatigue, to match darkflight.  
+Levitate fixed to only apply for one turn
+
+Sisterhood:
+Adds Wildwomen, get the same events as wildmen, all wildling events updated accordingly  the wildwomen spawn in the same places, though less likely. 
+Peddlers and cultists have 10% chance of being women, events updated. 
+Archery contests can attract female nobles, Disbanded troops situations can attract shieldmaidens 
+Female background balance pass, this increases the variability of backgrounds, allowing for outliers who are significantly better or worse than the average.  
+Farmhands and milkmaids, Millers and bakers, Minstrels and troubadors, Servants and housemaids, Tailors and housemaids, Thieves and pickpockets, wildmen and wildwomen, Disowned and adventurous nobles and ladies have wider maximum and minimum rolls for all stats
+Adventurous female nobles now have potential to roll the highest ranged skill of any background. They also have a perk to become the best archer in the land. 
+
+Deserters:
+Deserters are gauranteed skills for spears, dagger, sheild, heavy armor. along with trait groups of martyr, vicious, tenacious and devious
+Deserters will find more deserters, retired soldiers, disowned nobles, bastards and swordmasters for hire. Their hires have a 60% chance of being cowards
+Deserter volunteers will arrive twice as often. 
+
+Raiders:
+Raiders are gauranteed skills for Axe, Polearm, Greatsword, Heavy armor. They are Vicious, Devious, Fast, and get favored enemy perks for hunting civilians.
+Fixes raider recruits having too many traits
+Raider volunteers arrive twice as often 
+
+Lone Wolf: 
+Hedgeknights are gauranteed skills for: Greatsword, polearm, axes, heavy armor. they are Trained, Fit, Vicious and have a perk for becoming the best swordsman in the lands.  
+
+Cultists:
+Cultists are gauranteed skills for Cleaver, Flail, cat'o'nine tails and medium armor. They are Vicous, Tenacious, Devious, Martyrs 
+Cultist volunteers and scacrifices happen twice as often. 
+Cultists have a 10% chance of being women, all of their events updated accordingly
+
+Poachers: 
+Poachers are gaurantees skills for bow, slings, shortbow, light armor. They are Agile, Fast, Vicious and have skills for hunting beasts. 
+hunting events happen twice as often.
+
+Militia: 
+Every background now has gauranteed perk groups and random perk groups. 
+
+Trader: Fixes tooltips on bribe, hover on an enemy and then view the tooltip 
+
+New start: Random Trio. Three random level 2 backgrounds. Very useful for trying the new perk trees and adding extensive replayability.  It is possible to get any combination of any legends background, including three warlocks. Some of these combinations may have unexpected interactions. 
+New start: Random Solo. Level 4 avatar of a random background.  
+
+
+**New events** 
 Adds barbarbarian vs shieldmaiden event
 Adds blacksmith crafts armor event
 Adds blacksmith fixes equipment event
 Adds butcher vs donkey event 
 
-Fixes tooltips on bribe, hover on an enemy and then view the tooltip 
-Towershields available at armorsmiths or near military attached locations 
-Shieldmaidens can spawn with a tower shield 
-Archery contests can attract female nobles
-Disbanded troops situations can attract shieldmaidens 
 
-Adds all the old specialisations in as class perks. 
-
-New start: Random Trio. Three random level 2 backgrounds. Very useful for trying the new perk trees and adding extensive replayability.  It is possible to get any combination of any legends background, including three warlocks. Some of these combinations may have unexpected interactions. 
-New start: Random Solo. Level 4 avatar of a random background.  
-Berserker rage nerfed. lowered to 1 stack per hit from 3 and 3 stacks per kill, from 5. Falloff per turn raised to 2 from 1. 
-Nudist nerfed.  requires no clothes, damage reduction scaling reduced from 40 to 30%. 
-Big Game hunter nerfed. Calculation fixed so you correctly gain percentage damage rather than multiplier damage. Effectively 100 times less damage. Can still one hit kill things, but you have to be low on health, as intended.
-Teleport nerfed to 40 fatigue, to match darkflight. 
-Fixed nightvision to correctly apply
-
-Warlock can trigger cultist events
-Hedgeknight gets Swordmaster favoured enemies 
-Killer gets civilisation group 
-Fixes raider scenario recruits having too many traits
-Deserters will find more deserters, retired soldiers, disowned nobles, bastards and swordmasters for hire. Their hires have a 60% chance of one of six negative traits.
-Crusader will find monks as he should
-Noble non-supporter cost lowered from 50% to 25% to standardise with other starts
-Noble gains first triage, tools drawer and field repairs. Favored enemy groups spread out. 
-Ranger hires should trigger in big cities
-Ranger gets blend in and hidden, favored enemy perks spread out
-Berserker gets kick, grapple and unarmed mastery 
-Crusader gets shield bash, shield push, shield mastery and field repair. Favored enemy perks spread out 
-
-Female background balance pass - a high female hitpoint roll is now equal to a low male hitpoint roll.  A high male stamina roll is now equal to a low female stamina roll. This is achieved by increasing roll variability for both. 
-Farmhands and milkmaids  have wider maximum and minimum hitpoint rolls
-Millers and bakers have wider maximum and minimum hitpoint and stamina roll
-Minstrels and troubadors have slightly higher maximum hitpoint and stamina rolls, 
-Servants and housemaids have wider maximum and minimum hitpoint and stamina rolls
-Tailors and housemaids have slightly higher maximum hitpoint and stamina rolls,
-Thieves and pickpockets have wider maximum and minimum hitpoint and stamina rolls
-wildmen and wildwomen have wider maximum and minimum hitpoint rolls
-Disowned and adventurous nobles and ladies have wider maximum and minimum rolls for all stats
-
-Adds icons and sounds for field repair and field triage
-New perk 'field treats' - lets you spend 50 food to bring mercenaries from wavering to steady
+ 
