@@ -36,10 +36,8 @@ gt.Const.Perks.HammerTree <- {
 	ID = "Hammer",
 	Tree = [
 		[],//gt.Const.Perks.PerkDefs.DestroyArmor
-		[gt.Const.Perks.PerkDefs.LegendSpecialistHammerSkill],//gt.Const.Perks.PerkDefs.KnockBack
-		[
-		 gt.Const.Perks.PerkDefs.LegendSpecialistHammerDamage
-		],
+		[],//gt.Const.Perks.PerkDefs.KnockBack
+		[],
 		[gt.Const.Perks.PerkDefs.SpecHammer],
 		[],
 		[gt.Const.Perks.PerkDefs.SunderingStrikes],

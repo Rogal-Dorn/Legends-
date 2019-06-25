@@ -15,7 +15,7 @@ this.scenario_skin_ghoul <- this.inherit("scripts/scenarios/tactical/scenario_te
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.graveyard");
+		local testMap = this.MapGen.get("tactical.swamp");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);

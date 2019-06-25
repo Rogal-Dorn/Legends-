@@ -89,8 +89,8 @@ gt.Const.Perks.OutlandersTree <- {
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyBandit],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyBandit],
 		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian],
 		[]
 	]

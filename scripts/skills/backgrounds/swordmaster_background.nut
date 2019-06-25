@@ -62,7 +62,7 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.GreatswordTree,
+				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.PolearmTree
 			],
 			Defense = [
@@ -73,7 +73,7 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.FitTree,
 				this.Const.Perks.ViciousTree
 			],
-			Enemy = [this.Const.Perks.SwordmasterTree],
+			Enemy = [this.Const.Perks.SwordmastersTree],
 			Class = []
 		}
 	}
