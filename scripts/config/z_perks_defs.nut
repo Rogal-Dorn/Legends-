@@ -2210,6 +2210,24 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/drink_circle.png",
 		IconDisabled = "ui/perks/drink_circle_bw.png",
 		Const = "LegendFieldTreats"
+	},
+	{
+		ID = "perk.legend_smashing_shields",
+		Script = "scripts/skills/perks/perk_legend_smashing_shields",
+		Name = this.Const.Strings.PerkName.LegendSmashingShields,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSmashingShields,
+		Icon = "ui/perks/smashing_shields_circle.png",
+		IconDisabled = "ui/perks/smashing_shields_circle_bw.png",
+		Const = "LegendSmashingShields"
+	},
+	{
+		ID = "perk.legend_smackdown",
+		Script = "scripts/skills/perks/perk_legend_smackdown",
+		Name = this.Const.Strings.PerkName.LegendSmackdown,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSmackdown,
+		Icon = "ui/perks/smackdown_circle.png",
+		IconDisabled = "ui/perks/smackdown_circle_bw.png",
+		Const = "LegendSmackdown"
 	}
 ];
 

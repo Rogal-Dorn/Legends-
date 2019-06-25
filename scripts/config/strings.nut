@@ -1294,7 +1294,9 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecFists = "Unarmed Mastery",
 	LegendKick = "Kicking",
 	LegendGrapple = "Grappling",
-	LegendFieldTreats = "Field Treats"
+	LegendFieldTreats = "Field Treats",
+	LegendSmashingShields = "Smashing Shields",
+	LegendSmackdown = "Smackdown"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1562,7 +1564,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration of Hand to Hand, adds damage to Kick",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte ",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and stunning them for a round. Grants the \'Grapple\' ability",
-	LegendFieldTreats = "Make liberal use of alcohol and food to motivate your mercenaries. Spend 50 food to take someone from wavering to steady, cannot be applied to someone who has already been rallied."
+	LegendFieldTreats = "Make liberal use of alcohol and food to motivate your mercenaries. Spend 50 food to take someone from wavering to steady, cannot be applied to someone who has already been rallied.",
+	LegendSmashingShields = "Some folks take joy in the simple pleasures of destroying shields. Grants an additional  [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] shield damage on any successful hit",
+	LegendSmackdown = "Use your size and strength to bully your way into the prime position. Knockback any opponent on any attack where you have more health and fatigue than them."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
