@@ -51,7 +51,9 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [
+				this.Const.Perks.ChefClassTree
+			]
 		}
 	}
 

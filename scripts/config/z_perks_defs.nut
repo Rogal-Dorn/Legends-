@@ -2201,6 +2201,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/grapple_circle.png",
 		IconDisabled = "ui/perks/grapple_circle_bw.png",
 		Const = "LegendGrapple"
+	},
+	{
+		ID = "perk.legend_field_treats",
+		Script = "scripts/skills/perks/perk_legend_field_treats",
+		Name = this.Const.Strings.PerkName.LegendFieldTreats,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFieldTreats,
+		Icon = "ui/perks/drink_circle.png",
+		IconDisabled = "ui/perks/drink_circle_bw.png",
+		Const = "LegendFieldTreats"
 	}
 ];
 

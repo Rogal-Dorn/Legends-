@@ -4,7 +4,7 @@ this.legend_levitating_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_levitating";
 		this.m.Name = "Levitating";
-		this.m.Description = "This character is hovering just above the ground, able to move freely across all terrain";
+		this.m.Description = "This character is hovering just above the ground, able to move freely across all terrain until the end of the turn";
 		this.m.Icon = "ui/perks/levitate.png";
 		this.m.IconMini = "perk_37_mini";
 		this.m.Overlay = "perk_37";
@@ -17,12 +17,16 @@ this.legend_levitating_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		actor.m.ActionPointCosts = this.Const.LegendFlightMovementAPCost;
-		actor.m.FatigueCosts = clone this.Const.LegendFlightMovementFatigueCost;
+		actor.m.FatigueCosts = this.Const.LegendFlightMovementFatigueCost;
 		actor.m.LevelActionPointCost = 0;
 	}
 
 	function onTurnEnd()
 	{
+		local actor = this.getContainer().getActor();
+		actor.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
+		actor.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
+		actor.m.LevelActionPointCost = this.Const.Movement.LevelDifferenceActionPointCost;
 		this.removeSelf();
 	}
 

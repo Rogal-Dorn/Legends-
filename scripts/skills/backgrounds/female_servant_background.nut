@@ -68,7 +68,9 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 				this.Const.Perks.FitTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [
+				this.Const.Perks.ChefClassTree
+			]
 		}
 	}
 

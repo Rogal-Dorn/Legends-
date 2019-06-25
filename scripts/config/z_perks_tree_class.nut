@@ -50,7 +50,7 @@ gt.Const.Perks.FistsClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendKick],
 		[gt.Const.Perks.PerkDefs.LegendGrapple],
-		[gt.Const.Perks.PerkDefs.LegendSpecFists],
+		[C],
 		[],
 		[],
 		[]
@@ -66,7 +66,7 @@ gt.Const.Perks.ChefClassTree <- {
 		[],
 		[],
 		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendFieldTreats]
 	]
 };
 
