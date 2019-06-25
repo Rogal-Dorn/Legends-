@@ -34,8 +34,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 		function getTooltip( )
 	{
 		local ret = this.getDefaultTooltip();
-		ret.extend([
-			ret.push({
+		ret.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
