@@ -57,7 +57,9 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 				this.Const.Perks.AgileTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [
+				this.Const.Perks.BeastClassTree
+			]
 		}
 	}
 
