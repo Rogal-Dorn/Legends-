@@ -1516,7 +1516,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendStrictSermons = "Endlessly repeating the lessons of the old gods to your mercenaries will imbue them with faith in the heat of battle. Grants the \'Fortified Mind\' perk to anyone you fight with.",
 	LegendInfectiousRage = "The frenzy of the berserker rage is aided with clouds of herbs and ritual dances. These can be spread to your allies granting the \'Berserk\' perk to anyone you fight with.",
 	LegendTeacher = "The technqiues you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with.",
-	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body from the battlefied.",
+	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body or skeleton from the battlefied, if you are already collecting them.",
 	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
 	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line",
 	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",

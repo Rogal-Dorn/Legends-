@@ -931,6 +931,8 @@ New Perk 'Thrust Master' grants +15% damage on the 'Thrust' skill
 New Perk 'Assured Conquest' - 10% melee skill, melee defense and range dfense when at confident moral.
 New perk "smackdown" knockback enemies when you have more health and fatigue than them. added to hammer group
 New perk "smashing shields" deal +10% shield damage on any hit, added to axe group
+'Sling mastery' adds much more accuracy than before, though slings also begin with less accuracy. Slingstaves also have 'bash'
+
 
 **Better obituaries**
 Integrates Boyski's Entire Better Obituaries mod into Legends, showing each mercenary's background, traits, stats and talents.

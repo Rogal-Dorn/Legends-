@@ -138,7 +138,8 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
 		if(_properties.IsSpecializedInSlings)
 		{
-			this.m.AdditionalAccuracy += this.m.AdditionalAccuracy * 0.1;
+			this.m.AdditionalAccuracy += 5;
+			this.m.AdditionalHitChance += 5;
 		}	
 	}
 
