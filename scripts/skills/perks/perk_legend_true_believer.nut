@@ -16,6 +16,7 @@ this.perk_legend_true_believer <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.IsAffectedByFleeingAllies = false;
+		_properties.IsAffectedByDyingAllies = false;
 	}
 
 });
