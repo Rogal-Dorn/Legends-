@@ -48,7 +48,9 @@ this.fisherman_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
-			Class = []
+			Class = [
+				this.Const.Perks.BeastClassTree
+			]
 		}
 	}
 

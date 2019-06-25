@@ -84,7 +84,9 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.MysticTree,
 				this.Const.Perks.BeastsTree
 			],
-			Class = []
+			Class = [
+				this.Const.Perks.BeastClassTree
+			]
 		}
 	}
 
