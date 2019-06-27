@@ -17,8 +17,9 @@ this.perk_legend_smashing_shields <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
+	local user = _skill.getContainer().getActor();
 	local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-	local damage = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
+	local damage = user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
 	local bonus = damage * 0.1;
 	shield.applyShieldDamage(bonus);
 	}

@@ -91,7 +91,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.SpecMace,
 				this.Const.Perks.PerkDefs.SpecFlail,
 				this.Const.Perks.PerkDefs.SpecHammer,
-				this.Const.Perks.PerkDefs.SpecGreatSword,
+				this.Const.Perks.PerkDefs.LegendSpecGreatSword,
 				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecAxe,
