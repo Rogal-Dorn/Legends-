@@ -1029,6 +1029,7 @@ Fixed party start noble having no party size skills
 Fixed recruited noble having no skills 
 Fixed converted cultists having no skills
 Fixed broken outlander perks on sellswords 
+Fixes Smackdown not being selectable 
 Fixed crash from smackdown missing a function 
 Fixed missing sword group on adventurous noble, cannibal and ironmonger 
 Hedgeknight gets hammer group instead of axe group 
@@ -1037,4 +1038,6 @@ Fixes Recover missing from fit group
 Fixes Random solo having same description to Random Trio 
 Fixes Staff skills having duplicate descriptions. 
 Clarified tooltip text when attacking favored enemies 
+Fixes beggar getting free recruits 
+Noble start now gives Quick Hands instead of Bags n Belts 
 

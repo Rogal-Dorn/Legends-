@@ -3,8 +3,8 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_smackdown";
-		this.m.Name = this.Const.Strings.PerkName.LegendSmackDown;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendSmackDown;
+		this.m.Name = this.Const.Strings.PerkName.LegendSmackdown;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendSmackdown;
 		this.m.Icon = "ui/perks/smackdown_circle.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;

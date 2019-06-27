@@ -100,8 +100,8 @@ gt.Const.Perks.DaggerTree <- {
 	ID = "Dagger",
 	Tree = [
 		[],
-		[],
 		[gt.Const.Perks.PerkDefs.Backstabber],
+		[],
 		[gt.Const.Perks.PerkDefs.SpecDagger],
 		[gt.Const.Perks.PerkDefs.DoubleStrike],
 		[],

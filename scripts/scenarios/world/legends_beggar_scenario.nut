@@ -157,7 +157,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onHiredByScenario( bro )
 	{
-		bro.getSkills().add(this.new("scripts/skills/injurt/perk_sickness_injury"));
+		bro.getSkills().add(this.new("scripts/skills/injury/perk_sickness_injury"));
 		bro.worsenMood(1.0, "Fell sick after joining you");
 	}
 
