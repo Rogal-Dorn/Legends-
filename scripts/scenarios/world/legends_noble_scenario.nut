@@ -4,7 +4,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_noble";
 		this.m.Name = "Noble (Legends)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color]Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color]Your studies at the academy gave tactical and campaign skills\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]Born to a noble family, you were born to rule. With your trusted men at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers a noble house that wants to hunt you down.\n[color=#bcad8c]Highborn:[/color]Noble and military recruits support your cause and will cost 10% less, anyone else will cost 10% more.\n[color=#bcad8c]Trained leader:[/color]Your studies at the academy gave tactical and campaign skills, everyone begins with quick hands\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 14;
 	}
@@ -234,7 +234,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			return;
 		}
 		
-		_tree.addPerk(this.Const.Perks.PerkDefs.BagsAndBelts)
+		_tree.addPerk(this.Const.Perks.PerkDefs.QuickHands)
 	}
 
 });
