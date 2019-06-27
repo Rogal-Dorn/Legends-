@@ -13,6 +13,47 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function findTileToKnockBackTo( _userTile, _targetTile )
+	{
+		local dir = _userTile.getDirectionTo(_targetTile);
+
+		if (_targetTile.hasNextTile(dir))
+		{
+			local knockToTile = _targetTile.getNextTile(dir);
+
+			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			{
+				return knockToTile;
+			}
+		}
+
+		local altdir = dir - 1 >= 0 ? dir - 1 : 5;
+
+		if (_targetTile.hasNextTile(altdir))
+		{
+			local knockToTile = _targetTile.getNextTile(altdir);
+
+			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			{
+				return knockToTile;
+			}
+		}
+
+		altdir = dir + 1 <= 5 ? dir + 1 : 0;
+
+		if (_targetTile.hasNextTile(altdir))
+		{
+			local knockToTile = _targetTile.getNextTile(altdir);
+
+			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			{
+				return knockToTile;
+			}
+		}
+
+		return null;
+	}
+
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 

@@ -43,7 +43,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 					continue
 				}
 
-				if (a.getTile().getDistanceTo(myTile) > 1)
+				if (a.getTile().getDistanceTo(myTile) != 1)
 				{
 					continue;
 				}

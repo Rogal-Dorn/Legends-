@@ -35,19 +35,19 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + stats.HitChance + "%[/color] Melee Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + stats.HitChance + "%[/color] Melee Skill due to being a favored enemy"
 			},			
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + stats.HitChance + "%[/color] Range Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + stats.HitChance + "%[/color] Range Skill due to being a favored enemy"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(stats.HitMult - 1.0) * 100.0 + "%[/color] Max Damage"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(stats.HitMult - 1.0) * 100.0 + "%[/color] Max Damage due to being a favored enemy"
 			}
 		];
 		if (this.m.BraveryMult > 1)
@@ -56,14 +56,14 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				id = 15,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(this.m.BraveryMult - 1.0) * 100.0 + "%[/color] Resolve"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(this.m.BraveryMult - 1.0) * 100.0 + "%[/color] Resolve due to being a favored enemy"
 			})
 		}
 		resp.push({
 			id = 15,
 			type = "hint",
 			icon = "ui/icons/special.png",
-			text = stats.Kills + " favored kills"
+			text = stats.Kills + " favored enemy kills"
 		})
 
 		return resp;

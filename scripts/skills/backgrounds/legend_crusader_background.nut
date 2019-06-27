@@ -74,6 +74,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,	
 				this.Const.Perks.PerkDefs.Steadfast
 			],
 			[
@@ -90,6 +91,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.SpecMace,
 				this.Const.Perks.PerkDefs.SpecFlail,
 				this.Const.Perks.PerkDefs.SpecHammer,
+				this.Const.Perks.PerkDefs.SpecGreatSword,
 				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecAxe,
@@ -103,13 +105,14 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.FullForce,
 				this.Const.Perks.PerkDefs.ReturnFavor,
 				this.Const.Perks.PerkDefs.InspiringPresence,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,		
+				this.Const.Perks.PerkDefs.LegendForcefulSwing,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,		
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire
+			
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
+				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
@@ -123,6 +126,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.LegendHoldTheLine,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
 				this.Const.Perks.PerkDefs.PerfectFocus
 			],
 			[],
