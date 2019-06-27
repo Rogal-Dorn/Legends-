@@ -1026,8 +1026,7 @@ Test 3:
 Fixed graverobbers crashing game when entering towns 
 Fixed bucklers crashing game when at a distance of -1 tiles (when retreating)
 Fixed party start noble having no party size skills 
-Fixed recruited noble having no skills 
-Fixed converted cultists having no skills
+Fixed recruited noble, converted cultists, monk turned flagellent and pacified flagellent having no skills
 Fixed broken outlander perks on sellswords 
 Fixes Smackdown not being selectable 
 Fixed crash from smackdown missing a function 
