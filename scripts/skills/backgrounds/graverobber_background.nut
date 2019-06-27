@@ -33,7 +33,23 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
-		s
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.HammerTree
+			],
+			Defense = [
+				this.Const.Perks.LightArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.DeviousTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.ShovelClassTree]
+		}
 	}
 
 	function getTooltip()

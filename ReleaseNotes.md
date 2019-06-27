@@ -860,7 +860,7 @@ The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy L
 Adds Hexen Coven Leader - Elite Hexe that can charm for five turns and cast magic missiles 
 50% chance of dropping Glowing hexen hair that can be used to craft 
 Hexen Leader charm - Grants +10 Resolve 
-Gnarled staff - grants magic missile 
+Gnarled staff - grants Hexe spell to the wielder 
 Potion of Ichor - Grants +20 Health and Fatigue every turn for eight turns, also applies goblin poison for three turns 
 
 
@@ -874,43 +874,42 @@ However, those background groups only make up half of each mercenary's tree. The
 Each mercenary gets 6 of the 15 weapon groups, 2 of the five defence groups, and eight from the 13 traits, 8 enemy groups and 6 class groups. This provides millions of possible combinations.
 
 
-**Unarmed skills** 
+Unarmed skills 
 Unarmed skill has always been strong in legends, it scales off initiative and hitpoints. Now there are three new perks to give more depth:
 New Perk 'Kicking' - Active skill to push back and fatigue enemies
 New Perk 'Grappling' - Active skill to stun and fatigue enemies
 New Perk 'Unarmed Mastery' -Reduces fatigue and increase armor penetration unarmed attacks
 Of course brawlers are gaurantees all three. 
 
-**Medium armor skills**
+Medium armor skills
 There is a very strong nimble vs battleforged divide that drives mercenaries to the extremes. We wanted to break this dichotomy and encourage other kinds of armor.
 New Perk 'Balance' grants up to 30 bonuse melee and ranged defense if your current body armor is equal to twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of +5. 
 New Perk 'Matching Set' grants up to 5 fatigue per round if your helmet and armor values match. 
 New Perk 'Lithe' - Like nimble, but with the 15 fatigue floor raised to 30, and the damage mititgation reduced. 
 
 
-**Bard class**
+Bard class
 You'll find minstrels and troubadours have some new tricks up their sleeves, having gained Daze and Entice to control the battlefield. They also have
 New Perk 'Drums Of War' - active skill to reduce the fatigue of all allies 
 
-**Stealth class**
+Stealth skills
 Devious backgrounds can get a little sneaky
 New Perk 'Camouflage' - Master of concelement and blending in. Can hide from enemies in any terrain until next attack or moving adjacent to enemy. Can't be activated if adjacent to enemy.
 New Perk 'Blend In' - Makes enemies 50% less likely to attack you instead of someone else
 
-**Healer class**
+Healer class
 Monks and Nuns have also got some new abilties, with 'Bandage mastery' to stop the bleeding, and 'medical ingrendients' that will help pay for:
 New perk 'field triage' - lets you spend 5 medicine to heal 1 hitpoint in battle
 
-**Repair class**
+Repair class
 Blacksmiths and Seamstresses are not to be outdone, in addition to two tool storage perks, they have picked up
 New perk 'field repairs' - lets you spend 5 armor parts to repair 1 point of damage in battle 
 
-**Chef Class**
+Chef Class
 Butchers, bakers and servants can help out too with: 
 New perk 'field treats' - lets you spend 50 food to bring mercenaries from wavering to steady
 
-
-**Staff Skills**
+Staff Skills
 We have had staff mastery for a while, but it was mainly used by the seer. Now we have added two more perks to make staves a more interesting option
 New Perk 'Staff Spins' - Any staff hit that would usually daze, also stuns 
 New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense 
@@ -945,6 +944,12 @@ Towershields available at armorsmiths or near military attached locations, or wi
 bucklers gain "buckler bash" skill to daze enemies 
 parrying daggers gain the "engarde" skill to lower enemy defenses 
 
+
+**New events** 
+Adds barbarbarian vs shieldmaiden event
+Adds blacksmith crafts armor event
+Adds blacksmith fixes equipment event
+Adds butcher vs donkey event 
 
 Warlock:
 Warlock's deathly spectre reduced from 90% chance to resurrect to 66% chance 
@@ -1015,11 +1020,21 @@ New start: Random Trio. Three random level 2 backgrounds. Very useful for trying
 New start: Random Solo. Level 4 avatar of a random background.  
 
 
-**New events** 
-Adds barbarbarian vs shieldmaiden event
-Adds blacksmith crafts armor event
-Adds blacksmith fixes equipment event
-Adds butcher vs donkey event 
 
+Test 3:
 
- 
+Fixed graverobbers crashing games 
+Fixed bucklers crashing game when at a distance of -1 tiles (when retreating)
+Fixed party start noble having no party size skills 
+Fixed recruited noble having no skills 
+Fixed converted cultists having no skills
+Fixed broken outlander perks on sellswords 
+Fixed crash from smackdown missing a function 
+Fixed missing sword group on adventurous noble, cannibal and ironmonger 
+Hedgeknight gets hammer group instead of axe group 
+Crusader gets greatsword perks 
+Fixes Recover missing from fit group 
+Fixes Random solo having same description to Random Trio 
+Fixes Staff skills having duplicate descriptions. 
+Clarified tooltip text when attacking favored enemies 
+

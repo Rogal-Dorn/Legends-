@@ -163,7 +163,7 @@ gt.Const.Perks.FitTree <- {
 		[gt.Const.Perks.PerkDefs.Relentless],
 		[],
 		[gt.Const.Perks.PerkDefs.Rebound],
-		[gt.Const.Perks.PerkDefs.LegendSecondWind],
+		[gt.Const.Perks.PerkDefs.Recover],
 		[]
 	]
 };

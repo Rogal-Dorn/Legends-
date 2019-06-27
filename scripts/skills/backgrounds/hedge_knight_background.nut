@@ -68,7 +68,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			Weapon = [			
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.AxeTree
+				this.Const.Perks.HammerTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree

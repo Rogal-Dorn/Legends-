@@ -4,7 +4,7 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 	{
 		this.m.ID = "scenario.legend_random_solo";
 		this.m.Name = "Random Solo (Legends)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Having fled a raid, three fellows decide to forge out a new path.\n[color=#bcad8c]Random Backgrounds:[/color] Your background will be different each time you start\n[color=#bcad8c]Random equipment:[/color]The equipment you begin with is different each time\n[color=#bcad8c]Avatar:[/color]If you die, its game over[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Striking out on your own, who knows what the world has in store? \n[color=#bcad8c]Random Backgrounds:[/color] Your background will be different each time you start\n[color=#bcad8c]Random equipment:[/color]The equipment you begin with is different each time\n[color=#bcad8c]Avatar:[/color]If you die, its game over[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 16;
 		this.m.IsFixedLook = true;

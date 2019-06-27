@@ -34,6 +34,23 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.FlailTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.IndestructibleTree
+			],
+			Enemy = [],
+			Class = [this.Const.Perks.NinetailsClassTree]
+		}
 	}
 
 	function onBuildDescription()
