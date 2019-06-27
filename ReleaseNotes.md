@@ -1023,7 +1023,7 @@ New start: Random Solo. Level 4 avatar of a random background.
 
 Test 3:
 
-Fixed graverobbers crashing games 
+Fixed graverobbers crashing game when entering towns 
 Fixed bucklers crashing game when at a distance of -1 tiles (when retreating)
 Fixed party start noble having no party size skills 
 Fixed recruited noble having no skills 
@@ -1040,4 +1040,5 @@ Fixes Staff skills having duplicate descriptions.
 Clarified tooltip text when attacking favored enemies 
 Fixes beggar getting free recruits 
 Noble start now gives Quick Hands instead of Bags n Belts 
+Fixes issue with smashing shields causing attacks to fail 
 
