@@ -1844,7 +1844,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_mastery_slings",
-		Script = "scripts/skills/perks/legend_mastery_slings",
+		Script = "scripts/skills/perks/perk_legend_mastery_slings",
 		Name = this.Const.Strings.PerkName.LegendMasterySlings,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMasterySlings,
 		Icon = "ui/perks/sling_03.png",
@@ -2023,8 +2023,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendFavouredEnemyBandit"
 	},
 	{
-		ID = "perk.legend_favoured_enemy_archer",
-		Script = "scripts/skills/perks/perk_legend_favoured_enemy_archer",
+		ID = "perk.legend_favoured_enemy_master_archer",
+		Script = "scripts/skills/perks/perk_legend_favoured_enemy_master_archer",
 		Name = this.Const.Strings.PerkName.LegendFavouredEnemyArcher,
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyArcher,
 		Icon = "ui/perks/favoured_archer_01.png",

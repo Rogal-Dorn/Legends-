@@ -1042,9 +1042,17 @@ Noble start now gives Quick Hands instead of Bags n Belts
 Known issue: favored enemy perks don't select.
 
 Test 4: 
-Fixed another issue with smackdown not knowing who its user was 
-Fixed Random solo scenario getting stuck at 99% 
+
+Fixes Random solo scenario getting stuck at 99% 
 Updates favored enemy perks to provide more indication of the rate of bonus increase. 
 Fixes broken description for Staff Block 
 Tutorial, early access and militia scenarios given more money to match their easy rating
 Noble's retinue all given throwing group and start with quick hands 
+Fixes random trio not all having veteran perks 
+Fixes another issue with smackdown and smashing shields not knowing who their user was 
+Fixes description error on unarmed mastery 
+Fixes favored enemy archer script not found error
+Fixes issue with sling mastery script not found error
+Fixed instance of shovel skill not being selectable 
+Fixes missing image on favored enemy schrat overlay 
+Fixes caravan gaurds not being included in the the favored enemy caravan perk 
