@@ -1042,12 +1042,11 @@ Noble start now gives Quick Hands instead of Bags n Belts
 Known issue: favored enemy perks don't select.
 
 Test 4: 
-
-Fixes Random solo scenario getting stuck at 99% 
 Updates favored enemy perks to provide more indication of the rate of bonus increase. 
-Fixes broken description for Staff Block 
 Tutorial, early access and militia scenarios given more money to match their easy rating
 Noble's retinue all given throwing group and start with quick hands 
+Fixes Random solo scenario getting stuck at 99% 
+Fixes broken description for Staff Block 
 Fixes random trio not all having veteran perks 
 Fixes another issue with smackdown and smashing shields not knowing who their user was 
 Fixes description error on unarmed mastery 
@@ -1056,3 +1055,9 @@ Fixes issue with sling mastery script not found error
 Fixed instance of shovel skill not being selectable 
 Fixes missing image on favored enemy schrat overlay 
 Fixes caravan gaurds not being included in the the favored enemy caravan perk 
+Last Stand math reworked, buffed to directly add melee and ranged defense instead of using a multiplier. now gives 1 melee and ranged defence for every 5% missing health.   
+Balance math reworked, to directly add melee and ranged defense instead of using a multiplier. 
+Lithe nerfed to half the bonus of nimble with twice the equipment limit. Stacks with nimble. 
+Grapple reworked to apply a 'Grappled' effect instead of stun, lasts for two turns, halves max fatigue and reduces fatigue recovery by 20 per turn. 
+Fixes incorrect fatigue values in Grapple tooltip
+Recover moved to first tier of Fit group

@@ -11,7 +11,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_grapple";
 		this.m.Name = "Grapple";
-		this.m.Description = "Grab hold and restrain a target, stunning them for a turn and fatiguing them. Stunned targets can not keep up their Shieldwall, Spearwall or similar defensive skills.";
+		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills.";
 		this.m.Icon = "skills/grapple_square.png";
 		this.m.IconDisabled = "skills/grapple_square_bw.png";
 		this.m.Overlay = "active_32";
@@ -52,7 +52,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 2 + "[/color] extra fatigue"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 4 + "[/color] extra fatigue"
 		});
 
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInMaces)
@@ -96,12 +96,12 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.stunned"))
+			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.legend_grappled"))
 			{
-				target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+				target.getSkills().add(this.new("scripts/skills/effects/legend_grappled_effect"));
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has grappled " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has grappled " + this.Const.UI.getColorizedEntityName(target) + " for two turns");
 				}
 
 			}

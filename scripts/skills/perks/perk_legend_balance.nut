@@ -14,14 +14,47 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	function getBonus()
 	{
+		local actor = this.getContainer().getActor();
 		local body = actor.getArmor(this.Const.BodyPart.Body);
 		local initiative = actor.getInitiative();
 		local diff = this.Math.abs(body - (2 * initiative));
 		local bonus = this.Math.max(5, (30 - diff));
-		_properties.MeleeDefenseMult += bonus;
-		_properties.RangedDefenseMult += bonus;
+		return bonus;
+	}
+
+	function getTooltip()
+	{
+		local bonus = this.getBonus();
+
+		if (bonus > 5)
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] defence due to increased balance"
+			});
+		}
+		else
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5%[/color] from balance"
+			});
+		}
+
+		return tooltip;
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		local bonus = this.getBonus();
+		_properties.MeleeDefense += bonus;
+		_properties.RangedDefense += bonus;
 	}
 
 });
