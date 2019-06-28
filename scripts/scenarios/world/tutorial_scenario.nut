@@ -45,6 +45,7 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
 	}
 
 	function onSpawnPlayer()

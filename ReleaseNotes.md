@@ -1046,4 +1046,5 @@ Fixed another issue with smackdown not knowing who its user was
 Fixed Random solo scenario getting stuck at 99% 
 Updates favored enemy perks to provide more indication of the rate of bonus increase. 
 Fixes broken description for Staff Block 
-
+Tutorial, early access and militia scenarios given more money to match their easy rating
+Noble's retinue all given throwing group and start with quick hands 

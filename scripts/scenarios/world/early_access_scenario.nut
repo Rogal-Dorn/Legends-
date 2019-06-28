@@ -50,7 +50,7 @@ this.early_access_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bros[2].setVeteranPerks(2);	
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money + 400;
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
 	}
 
 	function onSpawnPlayer()
