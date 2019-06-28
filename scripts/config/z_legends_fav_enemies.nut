@@ -89,10 +89,57 @@ gt.Const.LegendMod.FavoriteUnhold <- [
 	this.Const.EntityType.LegendRockUnhold
 ];
 
-
 gt.Const.LegendMod.FavoriteVampire <- [
 	this.Const.EntityType.Vampire,
 	this.Const.EntityType.Ghost
+];
+
+gt.Const.LegendMod.FavoriteSwordmaster <- [
+	this.Const.EntityType.HedgeKnight,
+	this.Const.EntityType.Knight,
+	this.Const.EntityType.Greatsword,
+	this.Const.EntityType.Swordmaster,
+	this.Const.EntityType.BanditLeader,
+	this.Const.EntityType.BarbarianChampion,
+	this.Const.EntityType.Sergeant
+];
+
+gt.Const.LegendMod.FavoriteArcher <- [
+	this.Const.EntityType.MasterArcher,
+	this.Const.EntityType.BanditMarksman,
+	this.Const.EntityType.BanditPoacher,
+	this.Const.EntityType.MilitiaArcher,
+	this.Const.EntityType.Arbalester,
+	this.Const.EntityType.GoblinAmbusher
+];
+
+gt.Const.LegendMod.FavoriteBarbarian <- [
+	this.Const.EntityType.Warhound,
+	this.Const.EntityType.BarbarianThrall,
+	this.Const.EntityType.BarbarianMarauder,
+	this.Const.EntityType.BarbarianChampion,
+	this.Const.EntityType.BarbarianChosen,
+	this.Const.EntityType.BarbarianDrummer,
+	this.Const.EntityType.BarbarianBeastmaster
+];
+
+gt.Const.LegendMod.FavoriteBandit <- [
+	this.Const.EntityType.BanditRabble,
+	this.Const.EntityType.BanditThug,
+	this.Const.EntityType.BanditPoacher,
+	this.Const.EntityType.BanditMarksman,
+	this.Const.EntityType.BanditRaider,
+	this.Const.EntityType.BanditLeader
+];
+
+gt.Const.LegendMod.FavoriteNoble <- [
+	this.Const.EntityType.Footman,
+	this.Const.EntityType.Greatsword,
+	this.Const.EntityType.Billman,
+	this.Const.EntityType.Arbalester,
+	this.Const.EntityType.StandardBearer,
+	this.Const.EntityType.Sergeant,
+	this.Const.EntityType.Knight
 ];
 
 gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
