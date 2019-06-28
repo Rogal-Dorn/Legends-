@@ -1021,7 +1021,7 @@ New start: Random Solo. Level 4 avatar of a random background.
 
 
 
-Test 3:
+Beta 12 - Test 3 
 
 Fixed graverobbers crashing game when entering towns 
 Fixed bucklers crashing game when at a distance of -1 tiles (when retreating)
@@ -1031,13 +1031,19 @@ Fixed broken outlander perks on sellswords
 Fixes Smackdown not being selectable 
 Fixed crash from smackdown missing a function 
 Fixed missing sword group on adventurous noble, cannibal and ironmonger 
-Hedgeknight gets hammer group instead of axe group 
-Crusader gets greatsword perks 
 Fixes Recover missing from fit group 
 Fixes Random solo having same description to Random Trio 
 Fixes Staff skills having duplicate descriptions. 
-Clarified tooltip text when attacking favored enemies 
-Fixes beggar getting free recruits 
-Noble start now gives Quick Hands instead of Bags n Belts 
 Fixes issue with smashing shields causing attacks to fail 
+Fixes beggar getting free recruits 
+Hedgeknight gets hammer group instead of axe group 
+Crusader gets greatsword perks 
+Noble start now gives Quick Hands instead of Bags n Belts 
+Known issue: favored enemy perks don't select.
+
+Test 4: 
+Fixed another issue with smackdown not knowing who its user was 
+Fixed Random solo scenario getting stuck at 99% 
+
+
 

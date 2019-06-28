@@ -14,33 +14,31 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 	{
 		return this.Const.DLC.Wildmen;
 	}
-
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local bro;
-		bro = roster.create("scripts/entity/tactical/player");
-		bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
-		bro.setTitle("the Lone Wolf");
-		bro.getSkills().removeByID("trait.survivor");
-		bro.getSkills().removeByID("trait.greedy");
-		bro.getSkills().removeByID("trait.loyal");
-		bro.getSkills().removeByID("trait.disloyal");
-		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bro.setPlaceInFormation(4);
-		bro.getTags().set("IsPlayerCharacter", true);
-		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
-		bro.m.HireTime = this.Time.getVirtualTimeF();
-		bro.m.PerkPoints = 3;
-		bro.m.LevelUps = 3;
-		bro.m.Level = 4;
-		bro.setVeteranPerks(2);	
-		bro.m.Talents = [];
-		bro.m.Attributes = [];
+
+		for( local i = 0; i < 1; i = ++i )
+		{
+			local bro;
+			bro = roster.create("scripts/entity/tactical/player");
+			bro.m.HireTime = this.Time.getVirtualTimeF();
+			bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
+		}
+
+		local bros = roster.getAll();
+		bros[0].m.PerkPoints = 3;
+		bros[0].m.LevelUps = 3;
+		bros[0].m.Level = 4;
+		bros[0].setVeteranPerks(2);	
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getTags().set("IsPlayerCharacter", true);
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money * 5;
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
+
 
 	function onSpawnPlayer()
 	{
