@@ -22,7 +22,7 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.SoundVolume = 1.25;
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -38,7 +38,7 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
-		this.m.ChanceSmash = 66;
+		this.m.ChanceSmash = 33;
 	}
 
 	function getTooltip()
@@ -92,7 +92,7 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMin += 10;
+			_properties.DamageRegularMin += 5;
 			_properties.DamageRegularMax += 10;
 			_properties.FatigueDealtPerHitMult += 2.0;
 		}
