@@ -158,12 +158,12 @@ gt.Const.Perks.SturdyTree <- {
 gt.Const.Perks.FitTree <- {
 	ID = "FitTree",
 	Tree = [
-		[],
+		[gt.Const.Perks.PerkDefs.Recover],
 		[],
 		[gt.Const.Perks.PerkDefs.Relentless],
 		[],
 		[gt.Const.Perks.PerkDefs.Rebound],
-		[gt.Const.Perks.PerkDefs.Recover],
+		[],
 		[]
 	]
 };

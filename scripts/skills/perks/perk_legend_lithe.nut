@@ -20,7 +20,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Nimble like a cat! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. The lighter the armor, the more you benefit.";
+		return "Lithe like a lizard! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. The lighter the armor, the more you benefit.";
 	}
 
 	function getTooltip()
@@ -67,7 +67,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		}
 
 		fat = this.Math.min(0, fat + 30);
-		local ret = this.Math.minf(1.0, 1.0 - 0.6 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
+		local ret = this.Math.minf(1.0, 1.0 - 0.7 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
 		return ret;
 	}
 

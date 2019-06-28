@@ -1353,7 +1353,7 @@ gt.Const.Strings.PerkDescription <- {
 	ShieldExpert = "Learn to better deflect hits to the side instead of blocking them head on.\n\nThe shield defense bonus is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. This also applies to the additional defense bonus of the Shieldwall skill.\n\nShield damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] to a minimum of 1.\n\nThe \'Knock Back\' skill gains [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit.",
 	NineLives = "Once per battle, upon receiving a killing blow, survive instead with a few hitpoints left. The next hit is likely to kill you for good, of course.",
 	BatteringRam = "Immunity against being stunned.",
-	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color] additional Melee and Ranged Defense for every 1% of hitpoints missing.",
+	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] additional Melee and Ranged Defense for every 5% of hitpoints missing.",
 	Ironside = "All damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] for every opponent adjacent and in melee range, up to a [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] total damage reduction.",
 	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Items placed in bags no longer give a penalty to Maximum Fatigue, except for two-handed weapons and shields.",
 	Rebound = "Fatigue regeneration is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] per turn.",
