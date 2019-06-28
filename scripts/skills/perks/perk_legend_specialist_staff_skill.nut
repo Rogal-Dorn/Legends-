@@ -3,8 +3,8 @@ this.perk_legend_specialist_staff_skill <- this.inherit("scripts/skills/skill", 
 	function create()
 	{
 		this.m.ID = "perk.legend_specialist_staff_skill";
-		this.m.Name = this.Const.Strings.PerkName.LegendSpecialistStaffSkill;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendSpecialistStaffSkill;
+		this.m.Name = this.Const.Strings.PerkName.LegendSpecStaffSkill;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendSpecStaffSkill;
 		this.m.Icon = "ui/perks/spear_02.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
