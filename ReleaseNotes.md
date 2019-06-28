@@ -1044,6 +1044,6 @@ Known issue: favored enemy perks don't select.
 Test 4: 
 Fixed another issue with smackdown not knowing who its user was 
 Fixed Random solo scenario getting stuck at 99% 
-
+Updates favored enemy perks to provide more indication of the rate of bonus increase. 
 
 
