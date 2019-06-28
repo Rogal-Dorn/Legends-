@@ -10,7 +10,7 @@ this.perk_legend_favoured_enemy_caravan <- this.inherit("scripts/skills/legend_f
 		this.m.ValidTypes = [
 			this.Const.EntityType.Peasant,
 			this.Const.EntityType.CaravanHand,
-			this.Const.EntityType.CaravanGaurd,
+			this.Const.EntityType.CaravanGuard,
 			this.Const.EntityType.Militia,
 			this.Const.EntityType.MilitiaVeteran,
 			this.Const.EntityType.MilitiaCaptain,

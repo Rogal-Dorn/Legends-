@@ -36,11 +36,12 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[1].m.PerkPoints = 1;
 		bros[1].m.LevelUps = 1;
 		bros[1].m.Level = 2;
+		bros[1].setVeteranPerks(2);	
 
 		bros[2].m.PerkPoints = 1;
 		bros[2].m.LevelUps = 1;
 		bros[2].m.Level = 2;
-
+		bros[2].setVeteranPerks(2);	
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
 
