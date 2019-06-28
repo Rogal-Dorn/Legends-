@@ -1061,3 +1061,5 @@ Lithe nerfed to half the bonus of nimble with twice the equipment limit. Stacks 
 Grapple reworked to apply a 'Grappled' effect instead of stun, lasts for two turns, halves max fatigue and reduces fatigue recovery by 20 per turn. 
 Fixes incorrect fatigue values in Grapple tooltip
 Recover moved to first tier of Fit group
+Fixes the last instances of Staff Slings, there should only be Sling staves and slings now 
+Buckler bash ability order changed to resolve spearwall bash bug 

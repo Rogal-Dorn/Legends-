@@ -521,11 +521,6 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 					R = 50,
 					P = 1.0,
 					S = "weapons/warfork"
-				},
-				{
-					R = 30,
-					P = 1.0,
-					S = "weapons/staff_sling"
 				}
 			]);
 		}
