@@ -144,7 +144,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
-		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
 		this.World.Assets.m.Medicine = this.World.Assets.m.Medicine / 2;
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo / 2;

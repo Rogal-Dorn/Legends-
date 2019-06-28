@@ -62,9 +62,9 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
-				this.Const.Perks.GreatSwordTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.HammerTree
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.AxeTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree
