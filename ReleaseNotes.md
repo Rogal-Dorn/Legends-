@@ -1054,6 +1054,7 @@ Balance buffed. math reworked, to directly add melee and ranged defense instead 
 Lithe nerfed. To half the bonus of nimble with twice the equipment limit and half the falloff. 
 Grapple reworked to apply a 'Grappled' effect instead of stun, lasts for two turns, halves max fatigue and reduces fatigue recovery by 20 per turn. 
 Recover moved to first tier of Fit group
+White wolf helm and pelt effect lowered to 15 resolve each 
 Buckler bash ability order changed to fix the spearwall bash bug 
 Updates favored enemy perks to provide more indication of the rate of bonus increase. 
 Fixes favored enemy archer script not found error
@@ -1069,7 +1070,8 @@ Fixes the last instances of Staff Slings, there should only be Sling staves and 
 Fixes issue with sling mastery script not found error
 Fixed instance of shovel skill not being selectable 
 Fixes incorrect fatigue values in Grapple tooltip
-Adds chance for enemies to be female, applies to: Bandit Poacher, Bandit Rabble, Bandit Marksman, Master Archer, Barbarian Thrall, Barbarian Drummer, Peasants, Weidergangers, Armed Peasants and Milita.  
 Militia background has a 10% chance to be female
-White wolf helm and pelt effect lowered to 15 resolve each 
+Adds chance for enemies to be female, applies to: Bandit Poacher, Bandit Rabble, Bandit Marksman, Master Archer, Barbarian Thrall, Barbarian Drummer, Peasants, Weidergangers, Armed Peasants and Milita.  
 All backgrounds given a gauranteed ranged group 
+
+

@@ -62,7 +62,7 @@ gt.Const.Perks.CleaverTree <- {
 	ID = "Cleaver",
 	Tree = [
 		[], 
-		[gt.Const.Perks.PerkDefs.LegendBloodbath], 
+		[], //gt.Const.Perks.PerkDefs.LegendBloodbath
 		[],
 		[gt.Const.Perks.PerkDefs.SpecCleaver],
 		[],
