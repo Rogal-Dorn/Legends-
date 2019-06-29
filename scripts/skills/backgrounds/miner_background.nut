@@ -62,7 +62,8 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.AxeTree
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

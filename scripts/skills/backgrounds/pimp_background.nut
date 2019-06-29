@@ -43,7 +43,8 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.StavesTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.DaggerTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

@@ -68,7 +68,8 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 			Weapon = [			
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.SwordTree
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

@@ -1069,5 +1069,7 @@ Fixes the last instances of Staff Slings, there should only be Sling staves and 
 Fixes issue with sling mastery script not found error
 Fixed instance of shovel skill not being selectable 
 Fixes incorrect fatigue values in Grapple tooltip
-Adds chance for enemies to be female, applies to: Bandit Poacher, Bandit Rabble, Bandit Marksman, Master Archer, Barbarian Thrall, Barbarian Drummer, Peasants, Armed Peasants and Milita.  
+Adds chance for enemies to be female, applies to: Bandit Poacher, Bandit Rabble, Bandit Marksman, Master Archer, Barbarian Thrall, Barbarian Drummer, Peasants, Weidergangers, Armed Peasants and Milita.  
 Militia background has a 10% chance to be female
+White wolf helm and pelt effect lowered to 15 resolve each 
+All backgrounds given a gauranteed ranged group 

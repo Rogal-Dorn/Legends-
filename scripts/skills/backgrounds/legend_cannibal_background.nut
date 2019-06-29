@@ -29,7 +29,8 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.CleaverTree,
-				this.Const.Perks.SwordTree
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

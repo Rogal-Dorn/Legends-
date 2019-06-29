@@ -36,7 +36,8 @@ this.fisherman_background <- this.inherit("scripts/skills/backgrounds/character_
 			Weapon = [			
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.SpearTree
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.DaggerTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

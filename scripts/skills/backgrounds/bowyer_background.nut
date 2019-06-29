@@ -53,7 +53,8 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Weapon = [			
 				this.Const.Perks.BowTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.DaggerTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

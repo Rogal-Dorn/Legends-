@@ -35,7 +35,8 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 			Weapon = [			
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.StavesTree
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

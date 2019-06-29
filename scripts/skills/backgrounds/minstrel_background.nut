@@ -47,7 +47,8 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 			Weapon = [			
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.StavesTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

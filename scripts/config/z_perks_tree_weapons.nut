@@ -233,3 +233,58 @@ gt.Const.Perks.WeaponTrees <- {
 		return this.Tree[r];
 	}
 };
+
+gt.Const.Perks.MeleeWeaponTrees <- {
+	Tree = [
+		gt.Const.Perks.MaceTree,
+		gt.Const.Perks.FlailTree,
+		gt.Const.Perks.HammerTree,
+		gt.Const.Perks.AxeTree,
+		gt.Const.Perks.CleaverTree, 
+		gt.Const.Perks.GreatSwordTree,
+		gt.Const.Perks.SwordTree,
+		gt.Const.Perks.DaggerTree,
+		gt.Const.Perks.PolearmTree, 
+		gt.Const.Perks.SpearTree,
+		gt.Const.Perks.StavesTree
+	],
+	function getRandom(_exclude) 
+	{
+		local L = [];
+		foreach (i, t in this.Tree)
+		{
+			if (_exclude.find(t.ID))
+			{
+				continue;
+			}
+			L.push(i);
+		}
+
+		local r = this.Math.rand(0, L.len() - 1)
+		return this.Tree[r];
+	}
+};
+
+gt.Const.Perks.RangedWeaponTrees <- {
+	Tree = [
+		gt.Const.Perks.CrossbowTree,
+		gt.Const.Perks.BowTree,
+		gt.Const.Perks.ThrowingTree,
+		gt.Const.Perks.SlingsTree
+	],
+	function getRandom(_exclude) 
+	{
+		local L = [];
+		foreach (i, t in this.Tree)
+		{
+			if (_exclude.find(t.ID))
+			{
+				continue;
+			}
+			L.push(i);
+		}
+
+		local r = this.Math.rand(0, L.len() - 1)
+		return this.Tree[r];
+	}
+};

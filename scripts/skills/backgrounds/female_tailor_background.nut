@@ -52,7 +52,8 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.SpearTree
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

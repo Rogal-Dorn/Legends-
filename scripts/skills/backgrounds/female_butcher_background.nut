@@ -50,7 +50,8 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree
