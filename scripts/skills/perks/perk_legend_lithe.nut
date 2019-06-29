@@ -3,7 +3,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_lithe";
-		this.m.Name = this.Const.Strings.PerkName.Nimble;
+		this.m.Name = this.Const.Strings.PerkName.LegendLithe;
 		this.m.Icon = "ui/perks/lithe.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -20,7 +20,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Lithe like a lizard! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. The lighter the armor, the more you benefit.";
+		return "Lithe like a lizard! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. Does not work if you have nimble";
 	}
 
 	function getTooltip()
@@ -67,7 +67,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		}
 
 		fat = this.Math.min(0, fat + 30);
-		local ret = this.Math.minf(1.0, 1.0 - 0.7 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
+		local ret = this.Math.minf(1.0, 1.0 - 0.8 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
 		return ret;
 	}
 
@@ -77,9 +77,12 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-
+		local actor = this.getContainer().getActor();
+		if (!actor.getSkills().hasSkill("perk.nimble")
+		{
 		local chance = this.getChance();
 		_properties.DamageReceivedRegularMult *= chance;
+		}
 	}
 
 });

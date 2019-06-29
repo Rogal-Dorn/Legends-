@@ -108,7 +108,7 @@ gt.Const.LegendMod.FavoriteArcher <- [
 	this.Const.EntityType.MasterArcher,
 	this.Const.EntityType.BanditMarksman,
 	this.Const.EntityType.BanditPoacher,
-	this.Const.EntityType.MilitiaArcher,
+	this.Const.EntityType.MilitiaRanged,
 	this.Const.EntityType.Arbalester,
 	this.Const.EntityType.GoblinAmbusher
 ];
@@ -131,6 +131,17 @@ gt.Const.LegendMod.FavoriteBandit <- [
 	this.Const.EntityType.BanditRaider,
 	this.Const.EntityType.BanditLeader
 ];
+
+gt.Const.LegendMod.FavoriteCaravan <- [
+	this.Const.EntityType.Peasant,
+	this.Const.EntityType.CaravanHand,
+	this.Const.EntityType.CaravanGuard,
+	this.Const.EntityType.Militia,
+	this.Const.EntityType.MilitiaVeteran,
+	this.Const.EntityType.MilitiaCaptain,
+	this.Const.EntityType.MilitiaRanged
+];
+
 
 gt.Const.LegendMod.FavoriteNoble <- [
 	this.Const.EntityType.Footman,
@@ -408,7 +419,7 @@ gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
 			if (mKills && mKills > 0)
 			{
 				kills += mKills;
-				local troop = this.Const.World.Spawn.TroopMap[t];
+				local troop = this.Const.World.Spawn.Troops[t];
 				str += (mKills * troop.Strength);
 			}
 		}
