@@ -2237,6 +2237,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/feint_circle.png",
 		IconDisabled = "ui/perks/feint_circle_bw.png",
 		Const = "Feint"
+	},
+	{
+		ID = "perk.legend_clarity",
+		Script = "scripts/skills/perks/perk_legend_clarity",
+		Name = this.Const.Strings.PerkName.LegendClarity,
+		Tooltip = this.Const.Strings.PerkDescription.LegendClarity,
+		Icon = "ui/perks/clarity_circle.png",
+		IconDisabled = "ui/perks/clarity_circle_bw.png",
+		Const = "Feint"
 	}
 ];
 
