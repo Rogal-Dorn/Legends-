@@ -55,7 +55,8 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingsTree,
+				this.Const.Perks.StavesTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

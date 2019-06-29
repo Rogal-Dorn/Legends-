@@ -40,7 +40,8 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			Weapon = [			
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.FlailTree
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.SlingsTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

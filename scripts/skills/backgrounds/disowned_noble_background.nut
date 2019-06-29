@@ -41,7 +41,8 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			Weapon = [			
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.PolearmTree
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

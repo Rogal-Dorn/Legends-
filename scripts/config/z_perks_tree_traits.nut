@@ -100,6 +100,19 @@ gt.Const.Perks.IntelligentTree <- {
 	]
 };
 
+gt.Const.Perks.CalmTree <- {
+	ID = "CalmTree",
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendAlert],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendClarity],
+		[],
+		[gt.Const.Perks.PerkDefs.PerfectFocus]
+	]
+};
+
 gt.Const.Perks.FastTree <- {
 	ID = "FastTree",
 	Tree = [
@@ -191,6 +204,7 @@ gt.Const.Perks.TraitsTrees <- {
 		gt.Const.Perks.DeviousTree, 
 		gt.Const.Perks.InspirationalTree,
 		gt.Const.Perks.IntelligentTree,
+		gt.Const.Perks.CalmTree,
 		gt.Const.Perks.FastTree,
 		gt.Const.Perks.LargeTree, 
 		gt.Const.Perks.OrganisedTree,

@@ -61,7 +61,8 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.StavesTree
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.SpearTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

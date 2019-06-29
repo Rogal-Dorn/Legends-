@@ -637,7 +637,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("shaft");
 		local head = this.addSprite("head");
 		head.setHorizontalFlipping(true);
-		head.setBrush(this.Const.Faces.AllMale[this.Math.rand(0, this.Const.Faces.AllMale.len() - 1)]);
+		head.setBrush(this.Const.Faces.AllHuman[this.Math.rand(0, this.Const.Faces.AllHuman.len() - 1)]);
 		head.Saturation = body.Saturation;
 		head.Color = body.Color;
 		local tattoo_head = this.addSprite("tattoo_head");

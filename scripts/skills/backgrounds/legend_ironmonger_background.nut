@@ -40,7 +40,8 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.SwordTree
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

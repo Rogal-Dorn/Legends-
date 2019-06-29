@@ -52,7 +52,7 @@ this.legend_white_wolf_pelt_upgrade <- this.inherit("scripts/items/armor_upgrade
 
 	function onUpdateProperties( _properties )
 	{
-		_properties.Threat += 20;
+		_properties.Threat += 15;
 	}
 
 });

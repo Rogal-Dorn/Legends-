@@ -47,7 +47,8 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			Weapon = [			
 				this.Const.Perks.BowTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.CrossbowTree
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.SwordTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

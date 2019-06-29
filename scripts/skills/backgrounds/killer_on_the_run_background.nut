@@ -50,7 +50,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.PolearmTree
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

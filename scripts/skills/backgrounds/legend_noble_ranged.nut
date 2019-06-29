@@ -65,7 +65,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			Weapon = [			
 				this.Const.Perks.SlingsTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.BowTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

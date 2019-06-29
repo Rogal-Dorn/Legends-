@@ -57,7 +57,8 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

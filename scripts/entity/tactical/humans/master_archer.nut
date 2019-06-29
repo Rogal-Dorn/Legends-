@@ -10,6 +10,15 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
+		if (this.Math.rand(1, 100) <= 10)
+			{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Beards = null;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			}
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
 	}

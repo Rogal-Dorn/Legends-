@@ -12,6 +12,12 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
+		if (this.Math.rand(1, 100) <= 10)
+			{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			}
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_ranged_agent");
 		this.m.AIAgent.setActor(this);
 	}

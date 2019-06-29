@@ -11,6 +11,12 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
 		this.m.SoundPitch = 0.95;
+		if (this.Math.rand(1, 100) <= 10)
+			{
+			this.m.Faces = this.Const.Faces.WildFemale;
+			this.m.Beards = null;
+			this.m.SoundPitch = 1.15;
+			}
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/barbarian_drummer_agent");
 		this.m.AIAgent.setActor(this);
 	}
