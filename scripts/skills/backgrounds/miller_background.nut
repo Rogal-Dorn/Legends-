@@ -39,7 +39,8 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Weapon = [			
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

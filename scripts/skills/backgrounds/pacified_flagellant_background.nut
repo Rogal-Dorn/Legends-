@@ -35,7 +35,8 @@ this.pacified_flagellant_background <- this.inherit("scripts/skills/backgrounds/
 				this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.SlingsTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

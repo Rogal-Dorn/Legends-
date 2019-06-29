@@ -41,7 +41,8 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.StavesTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.PolearmTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

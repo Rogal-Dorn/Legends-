@@ -63,7 +63,8 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			Weapon = [			
 				this.Const.Perks.KnifeClassTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.DaggerTree
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.MaceTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

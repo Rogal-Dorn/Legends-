@@ -47,7 +47,8 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			Weapon = [			
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.AxeTree,
-				this.Const.Perks.HammerTree
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

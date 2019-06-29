@@ -46,7 +46,8 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.HammerTree
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

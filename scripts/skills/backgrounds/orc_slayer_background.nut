@@ -80,7 +80,8 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 			Weapon = [			
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.AxeTree,
-				this.Const.Perks.SwordTree
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree

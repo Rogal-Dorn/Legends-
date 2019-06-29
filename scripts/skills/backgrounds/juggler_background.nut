@@ -42,7 +42,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Weapon = [			
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.SlingsTree,
-				this.Const.Perks.FlailTree
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.DaggerTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

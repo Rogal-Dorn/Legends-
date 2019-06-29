@@ -63,7 +63,8 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			Weapon = [			
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.GreatSwordTree,
-				this.Const.Perks.PolearmTree
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree,

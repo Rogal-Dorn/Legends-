@@ -72,7 +72,8 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Weapon = [			
 				this.Const.Perks.BowTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SwordTree
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

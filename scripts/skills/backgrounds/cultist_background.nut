@@ -74,7 +74,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.SlingsTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

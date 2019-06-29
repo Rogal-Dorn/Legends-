@@ -71,7 +71,8 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.GreatSwordTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.BowTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree
