@@ -207,6 +207,13 @@ gt.Const.Faces.WildMale <- [
 	"bust_head_19",
 	"bust_head_20"
 ];
+gt.Const.Faces.WildFemale <- [
+	"bust_head_26",
+	"bust_head_27",
+	"bust_head_28",
+	"bust_head_29",
+	"bust_head_30"	
+];
 gt.Const.Faces.Necromancer <- [
 	"bust_head_necro_01",
 	"bust_head_necro_02"

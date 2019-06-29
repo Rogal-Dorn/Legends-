@@ -11,6 +11,15 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.WildExtended;
 		this.m.SoundPitch = 0.95;
+		if (this.Math.rand(1, 100) <= 10)
+		{
+		this.m.Faces = this.Const.Faces.WildFemale;
+		this.m.Beards = null;
+		this.m.Body = "bust_naked_body_03";
+		this.m.SoundPitch = 1.15;
+		this.m.IsFemaleBackground = true;
+		}
+
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/barbarian_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
