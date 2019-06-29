@@ -1057,9 +1057,13 @@ Fixes missing image on favored enemy schrat overlay
 Fixes caravan gaurds not being included in the the favored enemy caravan perk 
 Last Stand math reworked, buffed to directly add melee and ranged defense instead of using a multiplier. now gives 1 melee and ranged defence for every 5% missing health.   
 Balance math reworked, to directly add melee and ranged defense instead of using a multiplier. 
-Lithe nerfed to half the bonus of nimble with twice the equipment limit. Stacks with nimble. 
+Lithe nerfed to half the bonus of nimble with twice the equipment limit and half the falloff. 
 Grapple reworked to apply a 'Grappled' effect instead of stun, lasts for two turns, halves max fatigue and reduces fatigue recovery by 20 per turn. 
 Fixes incorrect fatigue values in Grapple tooltip
 Recover moved to first tier of Fit group
 Fixes the last instances of Staff Slings, there should only be Sling staves and slings now 
 Buckler bash ability order changed to resolve spearwall bash bug 
+Fixes missing entity errors for Favored enemy: archer and caravan 
+New Perk "Clarity" that gives +1 Action Points
+New Perk "Alert" that gives +20% Initiative 
+New Trait group "Calm", which includes "Perfect Focus", "Clarity" and "Alert"
