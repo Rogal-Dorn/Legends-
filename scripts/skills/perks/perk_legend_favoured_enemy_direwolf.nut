@@ -8,6 +8,7 @@ this.perk_legend_favoured_enemy_direwolf <- this.inherit("scripts/skills/legend_
 		this.m.Description = this.Const.Strings.PerkDescription.LegendFavouredEnemyDirewolf;
 		this.m.Icon = "ui/perks/favoured_direwolf_01.png";
 		this.m.ValidTypes = this.Const.LegendMod.FavoriteDirewolf;
+		this.m.BraveryMult = 1.0;
 	}
 
 });
