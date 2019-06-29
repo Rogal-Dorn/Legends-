@@ -16,7 +16,7 @@ this.perk_legend_clarity<- this.inherit("scripts/skills/skill", {
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
-		actor.setActionPoints(actor.getActionPointsMax() + 1))
+		actor.setActionPoints(actor.getActionPointsMax() + 1)
 	}
 
 });

@@ -1064,6 +1064,7 @@ Recover moved to first tier of Fit group
 Fixes the last instances of Staff Slings, there should only be Sling staves and slings now 
 Buckler bash ability order changed to resolve spearwall bash bug 
 Fixes missing entity errors for Favored enemy: archer and caravan 
+New Perk "Bloodbath" added to the Cleaver group.
 New Perk "Clarity" that gives +1 Action Points
 New Perk "Alert" that gives +20% Initiative 
 New Trait group "Calm", which includes "Perfect Focus", "Clarity" and "Alert"

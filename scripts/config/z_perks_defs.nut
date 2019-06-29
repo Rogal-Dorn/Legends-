@@ -2245,7 +2245,25 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendClarity,
 		Icon = "ui/perks/clarity_circle.png",
 		IconDisabled = "ui/perks/clarity_circle_bw.png",
-		Const = "Feint"
+		Const = "LegendClarity"
+	},
+	{
+		ID = "perk.legend_alert",
+		Script = "scripts/skills/perks/perk_legend_alert",
+		Name = this.Const.Strings.PerkName.LegendAlert,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAlert,
+		Icon = "ui/perks/alert_circle.png",
+		IconDisabled = "ui/perks/alert_circle_bw.png",
+		Const = "LegendAlert"
+	},
+	{
+		ID = "perk.legend_bloodbath",
+		Script = "scripts/skills/perks/perk_legend_bloodbath",
+		Name = this.Const.Strings.PerkName.LegendBloodbath,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBloodbath,
+		Icon = "ui/perks/bloodbath_circle.png",
+		IconDisabled = "ui/perks/bloodbath_circle_bw.png",
+		Const = "LegendBloodbath"
 	}
 ];
 

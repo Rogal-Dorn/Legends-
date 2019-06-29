@@ -1298,7 +1298,8 @@ gt.Const.Strings.PerkName <- {
 	LegendSmashingShields = "Smashing Shields",
 	LegendSmackdown = "Smackdown",
 	LegendClarity = "Clarity",
-	LegendAlert = "Alert"
+	LegendAlert = "Alert",
+	LegendBloodbath = "Bloodbath"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1570,7 +1571,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSmashingShields = "Some folks take joy in the simple pleasures of destroying shields. Grants an additional  [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] shield damage on any successful hit",
 	LegendSmackdown = "Use your size and strength to bully your way into the prime position. Knockback any opponent on any attack where you have more health and fatigue than them.",
 	LegendClarity = "A well honed mind can perceive more in each instant, making time appear slower in key instants of need. Gain 1 Action Point.",
-	LegendAlert = "Pay close attention at all times, surveying the surroundings and assessing every clue for an insight. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Initiative"
+	LegendAlert = "Pay close attention at all times, surveying the surroundings and assessing every clue for an insight. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Initiative",
+	LegendBloodbath = "Take joy in the suffering of others, gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Fatigue and Resolve for each bleeding character on the field"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
