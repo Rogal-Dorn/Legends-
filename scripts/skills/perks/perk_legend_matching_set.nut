@@ -16,6 +16,7 @@ this.perk_legend_matching_set <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
+		local actor = this.getContainer().getActor();
 		local body = actor.getArmorMax(this.Const.BodyPart.Body);
 		local body = actor.getArmorMax(this.Const.BodyPart.Head);
 		local diff = this.Math.abs(body - head);
