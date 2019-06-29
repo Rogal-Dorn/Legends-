@@ -49,7 +49,8 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			Weapon = [			
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.CrossbowTree
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.AxeTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

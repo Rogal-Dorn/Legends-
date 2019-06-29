@@ -36,7 +36,8 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.HammerTree
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

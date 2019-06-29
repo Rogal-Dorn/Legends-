@@ -48,7 +48,8 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.FlailTree
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.SlingsTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

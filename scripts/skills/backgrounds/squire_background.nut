@@ -51,7 +51,8 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Weapon = [			
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.HammerTree
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree,

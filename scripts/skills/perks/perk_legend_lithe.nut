@@ -78,7 +78,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		local actor = this.getContainer().getActor();
-		if (!actor.getSkills().hasSkill("perk.nimble")
+		if (!actor.getSkills().hasSkill("perk.nimble"))
 		{
 		local chance = this.getChance();
 		_properties.DamageReceivedRegularMult *= chance;

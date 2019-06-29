@@ -33,7 +33,8 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.MaceTree
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.StavesTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

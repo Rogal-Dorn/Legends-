@@ -42,7 +42,8 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree,

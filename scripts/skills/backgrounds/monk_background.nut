@@ -56,7 +56,8 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			Weapon = [			
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.HammerTree
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.SlingsTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

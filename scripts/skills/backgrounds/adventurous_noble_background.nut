@@ -45,7 +45,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			Weapon = [			
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.DaggerTree
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

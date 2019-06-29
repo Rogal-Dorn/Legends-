@@ -54,7 +54,8 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 			Weapon = [			
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SlingsTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

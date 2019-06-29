@@ -53,7 +53,8 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 			Weapon = [			
 				this.Const.Perks.SlingsTree,
 				this.Const.Perks.StavesTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.CleaverTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

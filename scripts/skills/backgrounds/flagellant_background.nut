@@ -40,7 +40,8 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.CleaverTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.SlingsTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
