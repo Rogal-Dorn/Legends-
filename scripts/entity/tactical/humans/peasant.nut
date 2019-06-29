@@ -17,8 +17,6 @@ this.peasant <- this.inherit("scripts/entity/tactical/human", {
 			{
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Beards = null;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
 			}
 	}
 

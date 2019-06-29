@@ -17,8 +17,6 @@ this.bandit_marksman <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Beards = null;
 			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
 			}
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_ranged_agent");
 		this.m.AIAgent.setActor(this);

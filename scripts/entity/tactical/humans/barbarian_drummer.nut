@@ -15,7 +15,6 @@ this.barbarian_drummer <- this.inherit("scripts/entity/tactical/human", {
 			{
 			this.m.Faces = this.Const.Faces.WildFemale;
 			this.m.Beards = null;
-			this.m.Body = "bust_naked_body_03";
 			this.m.SoundPitch = 1.15;
 			}
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/barbarian_drummer_agent");
