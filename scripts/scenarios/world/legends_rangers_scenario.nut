@@ -187,13 +187,11 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		{
 			bro.improveMood(1.0, "Supports the ranger cause");
 			bro.improveMood(0.5, "Learned a new skill");
-			bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 		}
 		else
 		{
 			bro.worsenMood(1.5, "Does not like sleeping in the woods");
 			bro.improveMood(0.5, "Learned a new skill");
-			bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 		}
 	}
 
