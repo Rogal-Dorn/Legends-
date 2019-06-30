@@ -40,6 +40,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		]);
 		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
@@ -183,16 +184,17 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onHiredByScenario( bro )
 	{
+		this.logInfo("**** ON HIRED BY SCENARIO ***")
 		if (bro.getBackground().isRangerRecruitBackground())
 		{
 			bro.improveMood(1.0, "Supports the ranger cause");
-			bro.improveMood(0.5, "Learned a new skill");
 		}
 		else
 		{
 			bro.worsenMood(1.5, "Does not like sleeping in the woods");
-			bro.improveMood(0.5, "Learned a new skill");
 		}
+		bro.improveMood(0.5, "Learned a new skill");
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -216,11 +218,12 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onBuildPerkTree( _tree)
 	{
+		this.logInfo("***on build perk tree for ranger")
 		if  (_tree == null)
 		{
 			return;
 		}
-		
+		this.logInfo("*** ADDING pathfinder perk")
 		_tree.addPerk(this.Const.Perks.PerkDefs.Pathfinder);
 	}
 

@@ -578,7 +578,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 
 		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
-		this.World.Assets.getOrigin().onBuildPerkTree(pT);
+		
+		//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
+		//already have added its perks so we should be ok. This will fail though loading an old save
+		//and we've added new perks to a scenario...
+		local origin = this.World.Assets.getOrigin()
+		if (origin != null)
+		{
+			this.World.Assets.getOrigin().onBuildPerkTree(pT);
+		}
 
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
@@ -903,12 +911,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-        //Don't call this here, let the scenario call it on deserialize
-		//since the scenario can add perks to the tree.
-		//if (this.m.CustomPerkTree != null)
-		//{
-		//	this.buildPerkTree();
-		//}
+		if (this.m.CustomPerkTree != null)
+		{
+			this.buildPerkTree();
+		}
 	}
 
 });

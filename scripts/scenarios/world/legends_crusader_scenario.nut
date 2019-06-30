@@ -24,6 +24,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			"legend_crusader_commander_background"
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);	
 		bro.getTags().set("IsPlayerCharacter", true);
@@ -129,6 +130,20 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 	}
 
+	function onHiredByScenario( bro )
+	{
+		if (bro.getBackground().isCrusaderRecruitBackground())
+		{
+			bro.improveMood(1.0, "Joined a righteous cause");
+		}
+		else
+		{
+			bro.worsenMood(1.0, "Dislikes your sermons");
+		}
+		bro.improveMood(0.5, "Learned a new skill");
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
+	}
+
 	function onUpdateHiringRoster( _roster )
 	{
 		local garbage = [];
@@ -140,17 +155,12 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
-				bro.improveMood(1.0, "Joined a righteous cause");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
-				bro.improveMood(0.5, "Learned a new skill");
+
 			} 
 			else
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
-				bro.worsenMood(1.0, "Dislikes your sermons");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
-				bro.improveMood(0.5, "Learned a new skill");
 			}
 
 			if (bro.getBackground().isOutlawBackground())

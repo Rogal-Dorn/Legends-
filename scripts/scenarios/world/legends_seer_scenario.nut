@@ -127,14 +127,10 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		if (bro.getBackground().isEducatedBackground())
 		{				
 			bro.improveMood(1.0, "Excited to study from you");
-			bro.improveMood(0.5, "Learned a new skill");
-			bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		}
 		else
 		{
 			bro.worsenMood(1.0, "Wishes you would stop using big words");
-			bro.improveMood(0.5, "Learned a new skill");
-			bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		}
 
 		if (bro.getSkills().hasSkill("trait.bright"))
@@ -146,6 +142,10 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		{
 			bro.worsenMood(0.5, "Thinks you are a boring nerd");
 		}
+
+		bro.improveMood(0.5, "Learned a new skill");
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -167,6 +167,16 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			}
 
 		}
+	}
+
+	function onBuildPerkTree( _tree)
+	{
+		if  (_tree == null)
+		{
+			return;
+		}
+		
+		_tree.addPerk(this.Const.Perks.PerkDefs.Student);
 	}
 
 });
