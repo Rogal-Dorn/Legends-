@@ -1385,3 +1385,9 @@ function calculateCosts( _p )
 this.calculateCosts(this.Const.World.Spawn.Caravan);
 this.calculateCosts(this.Const.World.Spawn.CaravanEscort);
 
+local spawnMap = {};
+foreach (t in gt.Const.World.Spawn.Troops)
+{
+	spawnMap[t.ID] <- t;
+}
+gt.Const.World.Spawn.TroopsMap <- spawnMap;

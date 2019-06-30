@@ -961,12 +961,11 @@ this.character_screen <- {
 	function general_onUnlockPerk( _data )
 	{
 		local entity = this.Tactical.getEntityByID(_data[0]);
-
 		if (entity == null || !entity.isPlayerControlled())
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToFindEntity);
 		}
-
+		
 		if (!entity.unlockPerk(_data[1]))
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToUnlockPerk);

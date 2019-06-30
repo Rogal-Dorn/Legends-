@@ -419,7 +419,7 @@ gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
 			if (mKills && mKills > 0)
 			{
 				kills += mKills;
-				local troop = this.Const.World.Spawn.Troops[t];
+				local troop = this.Const.World.Spawn.TroopsMap[t];
 				str += (mKills * troop.Strength);
 			}
 		}

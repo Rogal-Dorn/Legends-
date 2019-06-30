@@ -184,7 +184,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onHiredByScenario( bro )
 	{
-		this.logInfo("**** ON HIRED BY SCENARIO ***")
 		if (bro.getBackground().isRangerRecruitBackground())
 		{
 			bro.improveMood(1.0, "Supports the ranger cause");
@@ -218,12 +217,10 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onBuildPerkTree( _tree)
 	{
-		this.logInfo("***on build perk tree for ranger")
 		if  (_tree == null)
 		{
 			return;
 		}
-		this.logInfo("*** ADDING pathfinder perk")
 		_tree.addPerk(this.Const.Perks.PerkDefs.Pathfinder);
 	}
 
