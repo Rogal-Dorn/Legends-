@@ -74,11 +74,11 @@ this.starting_scenario <- {
 
 	function onInit()
 	{
-		local roster = this.World.getPlayerRoster().getAll();
-		foreach (bro in roster)
-		{
-			bro.getBackground().buildPerkTree();
-		}
+		//local roster = this.World.getPlayerRoster().getAll();
+		//foreach (bro in roster)
+		//{
+		//	bro.getBackground().buildPerkTree();
+		//}
 	}
 
 	function onUpdateHiringRoster( _roster )

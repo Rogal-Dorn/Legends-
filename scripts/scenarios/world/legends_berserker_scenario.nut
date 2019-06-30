@@ -31,6 +31,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			"legend_berserker_commander_background"
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);	
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
@@ -217,19 +218,27 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
-				bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
-				bro.improveMood(0.5, "Learned a new skill");
-			} 
+			}
 			else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
-				bro.improveMood(1.0, "Excited by your lust for battle")
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
-				bro.improveMood(0.5, "Learned a new skill");
 			}
 		}
+	}
+
+	function onHiredByScenario( bro )
+	{
+		if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
+		{
+			bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
+		} 
+		else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
+		{
+			bro.improveMood(1.0, "Excited by your lust for battle")
+		}
+		bro.improveMood(0.5, "Learned a new skill");
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 	}
 
 	function onBuildPerkTree( _tree)
