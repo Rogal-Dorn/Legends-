@@ -1075,3 +1075,6 @@ Adds chance for enemies to be female, applies to: Bandit Poacher, Bandit Rabble,
 All backgrounds given a gauranteed ranged group 
 
 
+Test 5
+Fixes favored enemy perks not working
+Fixes Settlement hire roster reverting to vanilla perk tree after loading saves.
