@@ -5,8 +5,8 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.Type = this.Const.SkillType.StatusEffect;
-		//this.m.Type = this.Const.SkillType.Perk;
+		//this.m.Type = this.Const.SkillType.StatusEffect;
+		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Icon = "skills/status_effect_57.png";
 		this.m.IconMini = "status_effect_57_mini";
 		this.m.Overlay = "status_effect_57";
