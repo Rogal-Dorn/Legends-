@@ -27,20 +27,8 @@ this.legend_random_3_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 
 		local bros = roster.getAll();
-		bros[0].m.PerkPoints = 8;
-		bros[0].m.LevelUps = 8;
-		bros[0].m.Level = 9;
 		bros[0].setVeteranPerks(2);	
-
-
-		bros[1].m.PerkPoints = 8;
-		bros[1].m.LevelUps = 8;
-		bros[1].m.Level = 9;
 		bros[1].setVeteranPerks(2);	
-
-		bros[2].m.PerkPoints = 8;
-		bros[2].m.LevelUps = 8;
-		bros[2].m.Level = 9;
 		bros[2].setVeteranPerks(2);	
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
