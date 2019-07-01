@@ -86,8 +86,6 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-
-
 		if (!_user.isHiddenToPlayer())
 		{
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Fortify");
@@ -116,25 +114,31 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!myTile.hasNextTile(i))
 			{
+				continue;
 			}
-			else
+			
+			local tile = myTile.getNextTile(i);
+			if (tile.IsEmpty)
 			{
-				local tile = myTile.getNextTile(i);
-
-				if (!tile.IsEmpty && tile.IsOccupiedByActor && this.Math.abs(myTile.Level - tile.Level) <= 1)
-				{
-					local entity = tile.getEntity();
-
-					if (actor.getFaction() == entity.getFaction())
-					{
-
-						entity.add(this.new("scripts/skills/effects/legend_fortify_effect"));
-					}
-				}
+				continue;
 			}
+			if (!tile.IsOccupiedByActor)
+			{
+				continue;
+			}
+			if (this.Math.abs(myTile.Level - tile.Level) > 1)
+			{
+				continue;
+			}
+
+			local entity = tile.getEntity();
+			if (actor.getFaction() == entity.getFaction())
+			{
+				entity.add(this.new("scripts/skills/effects/legend_fortify_effect"));
+			}
+		}
 
 		return true;
-		return false;
 	}
 
 	function onRemoved()
