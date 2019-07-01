@@ -13,12 +13,8 @@ this.legend_fortify_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
-
-
 	function getTooltip()
 	{
-
-
 		return [
 			{
 				id = 1,
@@ -40,20 +36,16 @@ this.legend_fortify_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-
 	function onUpdate( _properties )
 	{
-
 		_properties.MeleeDefense += 5;
 		_properties.RangedDefense += 5;
-
 	}
 
 	function onTurnStart()
 	{
 		this.removeSelf();
 	}
-
 
 	function onBeingAttacked( _attacker, _skill, _properties )
 	{

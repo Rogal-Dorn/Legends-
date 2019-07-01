@@ -1084,4 +1084,6 @@ Fixes crash when Man Mangler weapon is used
 Fixes crash with buckler effect
 Fixes Smashing Shields Perk
 Fixes Smackdown perk.
+Fixes Fortify skill.
+
 
