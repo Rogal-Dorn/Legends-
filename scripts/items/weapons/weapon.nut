@@ -65,7 +65,6 @@ this.weapon <- this.inherit("scripts/items/item", {
 
 	function getShieldDamage()
 	{
-
 		local bonus = 0;
 		if (this.getContainer() == null)
 		{
