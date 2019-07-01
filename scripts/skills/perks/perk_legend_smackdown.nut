@@ -57,43 +57,50 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 
+		if (_targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		{
+			return false;
+		}
+
 		local user = _skill.getContainer().getActor();
 		local ourHP =  user.getHitpoints();
 		local targetHP = _targetEntity.getHitpoints()
 		local ourFat =  user.getFatigue();
 		local targetFat = _targetEntity.getFatigue()
 
-		if(ourHP > targetHP && ourFat > targetFat)
+		if (ourHP <= targetHP)
 		{
-			local knockToTile = this.findTileToKnockBackTo(user.getTile(), _targetEntity.getTile());
-
-			if (knockToTile == null)
-			{
-				return false;
-			}
-
-			if (_targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab)
-			{
-				return false;
-			}
-
-			if (!user.isHiddenToPlayer() && (_targetEntity.getTile().IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has knocked back " + this.Const.UI.getColorizedEntityName(_targetEntity));
-			}
-
-			local skills = _targetEntity.getSkills();
-			skills.removeByID("effects.shieldwall");
-			skills.removeByID("effects.spearwall");
-			skills.removeByID("effects.riposte");
-
-			_targetEntity.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
-
-			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, this.onKnockedDown, tag, true);
-		
-
-			return true;
+			return false;
 		}
+
+		if (ourFat <= targetFat)
+		{
+			return false;
+		}
+		
+		local knockToTile = this.findTileToKnockBackTo(user.getTile(), _targetEntity.getTile());
+
+		if (knockToTile == null)
+		{
+			return false;
+		}
+
+		if (!user.isHiddenToPlayer() && (_targetEntity.getTile().IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has knocked back " + this.Const.UI.getColorizedEntityName(_targetEntity));
+		}
+
+		local skills = _targetEntity.getSkills();
+		skills.removeByID("effects.shieldwall");
+		skills.removeByID("effects.spearwall");
+		skills.removeByID("effects.riposte");
+
+		_targetEntity.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
+
+		this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, null, null, true);
+	
+		return true;
+		
 	}
 
 
