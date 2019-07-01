@@ -1,5 +1,7 @@
 this.perk_legend_smashing_shields <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Modifier = 0.10
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_smashing_shields";
@@ -14,14 +16,9 @@ this.perk_legend_smashing_shields <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	function getModifier()
 	{
-	local actor = this.getContainer().getActor();
-	local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-	local damage = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
-	local bonus = damage * 0.1;
-	shield.applyShieldDamage(bonus);
+		return this.m.Modifier;
 	}
 
 });

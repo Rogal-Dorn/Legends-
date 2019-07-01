@@ -1078,3 +1078,8 @@ All backgrounds given a gauranteed ranged group
 Test 5
 Fixes favored enemy perks not working
 Fixes Settlement hire roster reverting to vanilla perk tree after loading saves.
+
+Test 6
+Fixes crash when Man Mangler weapon is used
+Fixes crash with buckler effect
+Fixes Smashing Shields Perk
