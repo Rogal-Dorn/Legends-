@@ -1085,5 +1085,6 @@ Fixes crash with buckler effect
 Fixes Smashing Shields Perk
 Fixes Smackdown perk.
 Fixes Fortify skill.
+Fixes favorite enemy kill stats not being saved
 
 

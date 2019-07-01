@@ -398,6 +398,12 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 	return value
 }
 
+gt.Const.LegendMod.SetFavoriteEnemyKill <- function ( _actor, _target )
+{
+	local favKey = "Enemy" + _target.getType();
+	_actor.getLifetimeStats().Tags.increment(favKey, 1);
+}
+
 gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
 	{
 		if (_actor == null)
@@ -415,7 +421,8 @@ gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
 		foreach (t in _types)
 		{
 			local mKills = 0;
-			mKills = _actor.getLifetimeStats().Tags.get(t)
+			local favKey = "Enemy" + t;
+			mKills = _actor.getLifetimeStats().Tags.get(favKey)
 			if (mKills && mKills > 0)
 			{
 				kills += mKills;

@@ -25,7 +25,7 @@ this.stats_collector <- this.inherit("scripts/skills/skill", {
 		{
 			actor.getCombatStats().Kills += 1;
 			actor.getLifetimeStats().Kills += 1;
-			actor.getLifetimeStats().Tags.increment(_targetEntity.getType(), 1)
+			this.Const.LegendMod.SetFavoriteEnemyKill(actor, _targetEntity);
 		}
 
 		if (!_targetEntity.isPlayerControlled() && _targetEntity.getXPValue() > actor.getLifetimeStats().MostPowerfulVanquishedXP)
