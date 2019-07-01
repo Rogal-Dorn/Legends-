@@ -26,12 +26,18 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		local nearbyEnemies = 0;
 		if (!("Entities" in this.Tactical))
 		{
-			return 15;
+			return 0;
 		}
 		if (this.Tactical.Entities == null)
 		{
-			return 15;
+			return 0;
 		}
+		
+		if (!this.Tactical.isActive())
+		{
+			return 0;
+		}
+
 		local actors = this.Tactical.Entities.getAllInstances();
 		local bonus = 0;
 		foreach( i in actors )

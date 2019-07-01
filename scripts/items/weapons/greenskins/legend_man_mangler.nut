@@ -33,7 +33,7 @@ this.legend_man_mangler <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local skillToAdd = this.new("scripts/skills/actives/legend_great_swing");
+		local skillToAdd = this.new("scripts/skills/actives/legend_great_slash");
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		this.addSkill(skillToAdd);
 		skillToAdd = this.new("scripts/skills/actives/split_shield");
