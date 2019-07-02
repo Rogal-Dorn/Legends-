@@ -13,7 +13,7 @@ this.legend_stollwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting
 			},
 			{
 				Script = "scripts/items/misc/unhold_hide_item",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);

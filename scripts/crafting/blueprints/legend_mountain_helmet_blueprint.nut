@@ -18,6 +18,10 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 			{
 				Script = "scripts/items/misc/legend_rock_unhold_hide_item",
 				Num = 1
+			},
+			{
+				Script = "scripts/items/misc/unhold_hide_item",
+				Num = 2
 			}
 		];
 		this.init(ingredients);

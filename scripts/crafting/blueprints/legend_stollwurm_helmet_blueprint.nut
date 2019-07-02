@@ -9,7 +9,7 @@ this.legend_stollwurm_helmet_blueprint <- this.inherit("scripts/crafting/bluepri
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_stollwurm_scales_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/helmets/full_helm",
