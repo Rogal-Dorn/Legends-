@@ -1096,3 +1096,9 @@ Beta 12 Test 7
 Fixes Matching set perk
 Fixes possible crash with Smackdown
 Fixes Safegaurding perk
+
+adds craftable cloaks for redback and hexen
+AP and HP buff to skin ghouls,
+HP and armor buff to white wolf 
+AP, HP and Armor buff hexe leader, also gains the schrat racial.
+Stollwurm gets less HP but more AP. 
