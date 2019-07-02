@@ -1079,12 +1079,15 @@ Test 5
 Fixes favored enemy perks not working
 Fixes Settlement hire roster reverting to vanilla perk tree after loading saves.
 
-Test 6
+Beta 12 Test 6
+
 Fixes crash when Man Mangler weapon is used
 Fixes crash with buckler effect
 Fixes Smashing Shields Perk
 Fixes Smackdown perk.
 Fixes Fortify skill.
 Fixes favorite enemy kill stats not being saved
+
+https://drive.google.com/open?id=1gf6O8KUa9VEY3XCQDGF8XsIeKcZvwBlj
 
 

@@ -26,6 +26,7 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 0;
 	}
 
+
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
@@ -145,6 +146,6 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Container.removeByID("effects.legend_fortify");
 	}
-	}
+	
 });
 
