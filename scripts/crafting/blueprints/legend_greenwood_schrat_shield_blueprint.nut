@@ -9,11 +9,11 @@ this.legend_greenwood_schrat_shield_blueprint <- this.inherit("scripts/crafting/
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_ancient_green_wood_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/misc/glowing_resin_item",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);

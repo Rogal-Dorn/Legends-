@@ -5,14 +5,10 @@ this.legend_pack_small_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_pack_small";
 		this.m.PreviewCraftable = this.new("scripts/items/accessory/legend_pack_small");
-		this.m.Cost = 450;
+		this.m.Cost = 100;
 		local ingredients = [
 			{
 				Script = "scripts/items/trade/cloth_rolls_item",
-				Num = 1
-			},
-			{
-				Script = "scripts/items/misc/spider_silk_item",
 				Num = 1
 			}
 		];
