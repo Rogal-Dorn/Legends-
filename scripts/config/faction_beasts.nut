@@ -337,8 +337,8 @@ gt.Const.Tactical.Actor.KrakenTentacle <- {
 };
 gt.Const.Tactical.Actor.LegendSkinGhoul <- {
 	XP = 250,
-	ActionPoints = 9,
-	Hitpoints = 150,
+	ActionPoints = 12,
+	Hitpoints = 240,
 	Bravery = 80,
 	Stamina = 130,
 	MeleeSkill = 80,
@@ -356,7 +356,7 @@ gt.Const.Tactical.Actor.LegendSkinGhoul <- {
 gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	XP = 600,
 	ActionPoints = 16,
-	Hitpoints = 260,
+	Hitpoints = 400,
 	Bravery = 150,
 	Stamina = 260,
 	MeleeSkill = 80,
@@ -368,8 +368,8 @@ gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		240,
-		240
+		400,
+		400
 	]
 };
 gt.Const.Tactical.Actor.LegendWhiteWarwolf <- {
@@ -451,8 +451,8 @@ gt.Const.Tactical.Actor.LegendDemonAlp <- {
 };
 gt.Const.Tactical.Actor.LegendStollwurm <- {
 	XP = 1500,
-	ActionPoints = 8,
-	Hitpoints = 1200,
+	ActionPoints = 12,
+	Hitpoints = 1000,
 	Bravery = 180,
 	Stamina = 400,
 	MeleeSkill = 75,
@@ -508,8 +508,8 @@ gt.Const.Tactical.Actor.LegendGreenwoodSchratSmall <- {
 };
 gt.Const.Tactical.Actor.LegendHexeLeader <- {
 	XP = 900,
-	ActionPoints = 14,
-	Hitpoints = 160,
+	ActionPoints = 16,
+	Hitpoints = 320,
 	Bravery = 200,
 	Stamina = 150,
 	MeleeSkill = 0,
@@ -522,7 +522,7 @@ gt.Const.Tactical.Actor.LegendHexeLeader <- {
 	FatigueRecoveryRate = 15,
 	Vision = 10,
 	Armor = [
-		50,
+		100,
 		0
 	]
 };
