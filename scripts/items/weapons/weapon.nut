@@ -70,7 +70,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		{
 			return this.m.ShieldDamage;
 		}
-		if (this.getContiner().getActor() == null)
+		if (this.getContainer().getActor() == null)
 		{
 			return this.m.ShieldDamage;
 		}
