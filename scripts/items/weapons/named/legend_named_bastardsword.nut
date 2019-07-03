@@ -1,4 +1,4 @@
-this.named_bastardsword <- this.inherit("scripts/items/weapons/named/named_weapon", {
+this.legend_named_bastardsword <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
 		StunChance = 0
 	},
@@ -7,7 +7,7 @@ this.named_bastardsword <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.named_weapon.create();
 		this.m.Variant = 1;
 		this.updateVariant();
-		this.m.ID = "weapon.named_bastardsword";
+		this.m.ID = "weapon.legend_named_bastardsword";
 		this.m.NameList = this.Const.Strings.GreatswordNames;
 		this.m.Description = "This longsword is a true masterpiece, with a blade that is both flexible yet extremely durable.";
 		this.m.Categories = "Sword, Two-Handed";

@@ -1,11 +1,11 @@
-this.bastardsword <- this.inherit("scripts/items/weapons/weapon", {
+this.legend_bastardsword <- this.inherit("scripts/items/weapons/weapon", {
 	m = {
 		StunChance = 0
 	},
 	function create()
 	{
 		this.weapon.create();
-		this.m.ID = "weapon.bastardsword";
+		this.m.ID = "weapon.legend_bastardsword";
 		this.m.Name = "Longsword";
 		this.m.Description = "A long two-handed blade that makes for a versatile weapon.";
 		this.m.Categories = "Sword, Two-Handed";
