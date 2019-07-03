@@ -16,12 +16,20 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
+		if (this.getContainer() == null)
+		{
+			return 5;
+		}
 		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return 5;
+		}
+
 		local body = actor.getArmor(this.Const.BodyPart.Body);
 		local initiative = actor.getInitiative();
 		local diff = this.Math.abs(body - (2 * initiative));
-		local bonus = this.Math.max(5, (30 - diff));
-		return bonus;
+		return this.Math.max(5, (30 - diff));
 	}
 
 	function getTooltip()
@@ -34,7 +42,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] defence due to increased balance"
+				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] defence due to increased balance"
 			});
 		}
 		else
@@ -43,7 +51,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5%[/color] from balance"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5[/color] from balance"
 			});
 		}
 

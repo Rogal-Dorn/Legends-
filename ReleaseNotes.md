@@ -1091,3 +1091,8 @@ Fixes favorite enemy kill stats not being saved
 https://drive.google.com/open?id=1gf6O8KUa9VEY3XCQDGF8XsIeKcZvwBlj
 
 
+
+Beta 12 Test 7
+Fixes Matching set perk
+Fixes possible crash with Smackdown
+Fixes Safegaurding perk
