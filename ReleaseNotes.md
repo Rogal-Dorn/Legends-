@@ -1095,4 +1095,5 @@ https://drive.google.com/open?id=1gf6O8KUa9VEY3XCQDGF8XsIeKcZvwBlj
 Beta 12 Test 7
 Fixes Matching set perk
 Fixes possible crash with Smackdown
-Fixes Safegaurding perk
+Reworks the Tower shield Fortify perk. Fortify grants a +5 Melee and +5 Range defense bonus only to self. Intended to be used when not in a proper shield wall formation (effectively grants shield wall bonus).
+Tower shield Safeguarding perk is now +15 / -15 (guarded / guarding)
