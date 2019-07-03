@@ -33,8 +33,8 @@ this.rhomphaia <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local slash = this.new("scripts/skills/actives/legend_great_slash");
-		this.addSkill(slash);
+		this.addSkill(this.new("scripts/skills/actives/cleave"));
+		this.addSkill(this.new("scripts/skills/actives/gash_skill"));
 		this.addSkill(this.new("scripts/skills/actives/split"));
 		this.addSkill(this.new("scripts/skills/actives/swing"));
 	}

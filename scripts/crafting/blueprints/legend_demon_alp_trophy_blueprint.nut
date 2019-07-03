@@ -13,7 +13,7 @@ this.legend_demon_alp_trophy_blueprint <- this.inherit("scripts/crafting/bluepri
 			},
 			{
 				Script = "scripts/items/misc/legend_demon_third_eye_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/misc/petrified_scream_item",

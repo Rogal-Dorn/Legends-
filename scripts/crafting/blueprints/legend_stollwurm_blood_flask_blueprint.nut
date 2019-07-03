@@ -13,7 +13,7 @@ this.legend_stollwurm_blood_flask_blueprint <- this.inherit("scripts/crafting/bl
 			},
 			{
 				Script = "scripts/items/misc/lindwurm_blood_item",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);
