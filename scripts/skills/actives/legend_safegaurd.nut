@@ -66,21 +66,22 @@ this.legend_safegaurd <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-
-		if (_targetTile.IsOccupiedByActor)
+		if (!_targetTile.IsOccupiedByActor)
 		{
-			local target = _targetTile.getEntity();
-			target.getSkills().add(this.new("scripts/skills/effects/legend_safegaurded"));
-
-				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has safegaurded " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-				}
-
-		
-		this.m.Container.add(this.new("scripts/skills/effects/legend_safegaurding"));
+			return;
 		}
+
+		local target = _targetTile.getEntity();
+		target.getSkills().add(this.new("scripts/skills/effects/legend_safegaurded_effect"));
+
+		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has safegaurded " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+		}
+
+		this.getContainer().add(this.new("scripts/skills/effects/legend_safegaurding_effect"));
 	}
+
 	function onRemoved()
 	{
 		this.m.Container.removeByID("effects.legend_safegaurding");

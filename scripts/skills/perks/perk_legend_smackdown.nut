@@ -15,6 +15,17 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 
 	function findTileToKnockBackTo( _userTile, _targetTile )
 	{
+
+		if (_targetTile == null)
+		{
+			return null;
+		}
+
+		if (_userTile == null)
+		{
+			return null;
+		}
+
 		local dir = _userTile.getDirectionTo(_targetTile);
 
 		if (_targetTile.hasNextTile(dir))

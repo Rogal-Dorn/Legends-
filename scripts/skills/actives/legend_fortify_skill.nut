@@ -87,25 +87,34 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		if (this.getContainer() == null)
+		{
+			return 0;
+		}
+
+		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return 0;
+		}
+
 		if (!_user.isHiddenToPlayer())
 		{
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Fortify");
 		}
 
-		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap())
+		{
+			return 0;
+		}
 
-		actor.add(this.new("scripts/skills/effects/legend_fortify_effect"));
+		this.getContainer().add(this.new("scripts/skills/effects/legend_fortify_effect"));
 
-		local item = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		if (item != null && item.isItemType(this.Const.Items.ItemType.Shield))
 		{
 			item.onShieldUp();
-		}
-
-		if (!actor.isPlacedOnMap())
-		{
-			return 0;
 		}
 
 		local myTile = actor.getTile();
@@ -135,7 +144,7 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 			local entity = tile.getEntity();
 			if (actor.getFaction() == entity.getFaction())
 			{
-				entity.add(this.new("scripts/skills/effects/legend_fortify_effect"));
+				entity.getSkills().add(this.new("scripts/skills/effects/legend_fortify_effect"));
 			}
 		}
 

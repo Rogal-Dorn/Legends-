@@ -12,8 +12,6 @@ this.legend_safegaurding_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 	
-
-
 	function onUpdate( _properties )
 	{
 		_properties.MeleeDefense -= 15;
@@ -21,7 +19,7 @@ this.legend_safegaurding_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onTurnEnd()
+	function onTurnStart()
 	{
 		this.removeSelf();
 	}
