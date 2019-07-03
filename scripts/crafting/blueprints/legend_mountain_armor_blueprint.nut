@@ -9,7 +9,7 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_rock_unhold_bones_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/armor/coat_of_plates",
@@ -18,6 +18,10 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 			{
 				Script = "scripts/items/misc/legend_rock_unhold_hide_item",
 				Num = 2
+			},
+			{
+				Script = "scripts/items/misc/unhold_hide_item",
+				Num = 4
 			}
 		];
 		this.init(ingredients);

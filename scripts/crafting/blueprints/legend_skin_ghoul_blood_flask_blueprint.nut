@@ -13,7 +13,7 @@ this.legend_skin_ghoul_blood_flask_blueprint <- this.inherit("scripts/crafting/b
 			},
 			{
 				Script = "scripts/items/misc/ghoul_brain_item",
-				Num = 1
+				Num = 6
 			}
 		];
 		this.init(ingredients);

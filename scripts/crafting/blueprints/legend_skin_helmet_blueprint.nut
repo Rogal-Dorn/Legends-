@@ -9,7 +9,7 @@ this.legend_skin_helmet_blueprint <- this.inherit("scripts/crafting/blueprint", 
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_skin_ghoul_skin_item",
-				Num = 1
+				Num = 3
 			},
 			{
 				Script = "scripts/items/helmets/bascinet_with_mail",

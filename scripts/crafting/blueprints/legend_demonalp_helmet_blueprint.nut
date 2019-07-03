@@ -9,7 +9,7 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_demon_alp_skin_item",
-				Num = 1
+				Num = 2
 			},
 			{
 				Script = "scripts/items/misc/legend_demon_third_eye_item",

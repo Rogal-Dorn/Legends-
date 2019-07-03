@@ -263,6 +263,7 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 		charm_hair.Visible = false;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
+		this.m.Skills.add(this.new("scripts/skills/racial/schrat_racial"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_intensely_charm_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hex_skill"));

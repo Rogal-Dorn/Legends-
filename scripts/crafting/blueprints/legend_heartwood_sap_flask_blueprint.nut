@@ -13,7 +13,7 @@ this.legend_heartwood_sap_flask_blueprint <- this.inherit("scripts/crafting/blue
 			},
 			{
 				Script = "scripts/items/misc/glowing_resin_item",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);

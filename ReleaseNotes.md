@@ -1097,3 +1097,11 @@ Fixes Matching set perk
 Fixes possible crash with Smackdown
 Reworks the Tower shield Fortify perk. Fortify grants a +5 Melee and +5 Range defense bonus only to self. Intended to be used when not in a proper shield wall formation (effectively grants shield wall bonus).
 Tower shield Safeguarding perk is now +15 / -15 (guarded / guarding)
+Fixes Safegaurding perk
+Adds craftable cloaks for redback and hexen
+AP and HP buff to skin ghouls,
+HP and armor buff to white wolf 
+AP, HP and Armor buff hexe leader, also gains the schrat racial.
+Stollwurm gets less HP but more AP. 
+Costs increased for crafting the new beast items
+Costs decreased for crafting bags 
