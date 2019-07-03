@@ -57,6 +57,7 @@ gt.Const.AI <- {
 			GoblinLeader = "goblin.leader",
 			GoblinWolfrider = "goblin.wolfrider",
 			LegendStollwurm = "agent.legend_stollwurm"
+			LegendWhiteWarwolf = "agent.legend_whitewarwolf"
 		},
 		Intentions = {
 			IsDefendingPosition = false,
