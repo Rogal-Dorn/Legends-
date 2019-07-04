@@ -1109,3 +1109,11 @@ Fixes crash when spawning female master archers.
 Fixes Clarity Perk.
 Fixes whitewolf companion loot.
 
+Beta 12 test 8 
+Fixes isStacking bug causing un-enterable towns 
+Stops Smackdown working on enemies immune to knockback, noncombatants, dead or dying enemies, or if it has already pushed someone to that tile.
+Fixes spelling on redback dagger. 
+Removes the kill requirement on the new contracts, you just need the perk now. 
+
+Beta 12 test 9 
+Gives barbarians and iijirock new perks on legendary difficulty 
