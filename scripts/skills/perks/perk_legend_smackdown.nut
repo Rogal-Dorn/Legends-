@@ -13,6 +13,16 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
+		this.m.SoundOnUse = [
+			"sounds/combat/shatter_01.wav",
+			"sounds/combat/shatter_02.wav",
+			"sounds/combat/shatter_03.wav"
+		];
+		this.m.SoundOnHitHitpoints = [
+			"sounds/combat/shatter_hit_01.wav",
+			"sounds/combat/shatter_hit_02.wav",
+			"sounds/combat/shatter_hit_03.wav"
+		];
 	}
 
 	function findTileToKnockBackTo( _userTile, _targetTile )
@@ -70,6 +80,11 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		this.m.TilesUsed = [];
+		if (!_targetEntity.isAlive() || _targetEntity.isDying())
+		{
+			return false;
+		}
+		
 		if (_targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab)
 		{
 			return false;
@@ -96,16 +111,6 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 		
-		if (knockToTile == null)
-		{
-			return false;
-		}
-
-		if (!_targetEntity.isAlive() || _targetEntity.isDying())
-		{
-			return false;
-		}
-		
 		local knockToTile = this.findTileToKnockBackTo(user.getTile(), _targetEntity.getTile());
 
 		if (knockToTile == null)
@@ -128,11 +133,11 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		_targetEntity.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
 		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
 		if (damage == 0)
-			{
+		{
 			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, null, null, true);
-			}
+		}
 		else
-			{
+		{
 			local p = user.getCurrentProperties();
 			local tag = {
 				Attacker = user,
@@ -145,13 +150,25 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 			tag.HitInfo.BodyDamageMult = 1.0;
 			tag.HitInfo.FatalityChanceMult = 1.0;
 			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, this.onKnockedDown, tag, true);
-			}
+		}
 
 		this.m.TilesUsed = [];
 		return true;
 		
 	}
 
+	function onKnockedDown( _entity, _tag )
+	{
+		if (_tag.Skill.m.SoundOnHit.len() != 0)
+		{
+			this.Sound.play(_tag.Skill.m.SoundOnHit[this.Math.rand(0, _tag.Skill.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, _entity.getPos());
+		}
 
+		if (_tag.HitInfo.DamageRegular != 0)
+		{
+			_entity.onDamageReceived(_tag.Attacker, _tag.Skill, _tag.HitInfo);
+		}
+	}
+	
 });
 
