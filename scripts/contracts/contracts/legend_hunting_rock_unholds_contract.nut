@@ -579,13 +579,13 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		{
 			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				continue
-			}
-
-			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength > this.m.MinStrength) {
 				return true
 			}
+
+		//	local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+		//	if (stats.Strength > this.m.MinStrength) {
+		//		return true
+		//	}
 		}
 		return false
 	}
