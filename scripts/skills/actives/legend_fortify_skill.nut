@@ -83,7 +83,7 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		if (this.getContainer().hasSkill("effects.legend_safeguarding"))
+		if (this.getContainer().hasSkill("effects.legend_safegaurding"))
 		{
 			return false;
 		}

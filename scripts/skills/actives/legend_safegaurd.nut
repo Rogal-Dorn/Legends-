@@ -34,20 +34,19 @@ this.legend_safegaurd <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.skill.getDefaultTooltip();
+		local ret = this.skill.getDefaultUtilityTooltip();
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces your own defenses by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color]"
+			text = "Applies Safeguard to someone, increasing their defenses by [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color]"
 		});
 		ret.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Applies Safeguard to someone, increasing their defenses by [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color]"
+			text = "Reduces your own defenses by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color]"
 		});
-
 		return ret;
 	}
 
@@ -61,7 +60,7 @@ this.legend_safegaurd <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		if (this.getContainer().hasSkill("effects.legend_safeguarding"))
+		if (this.getContainer().hasSkill("effects.legend_safegaurding"))
 		{
 			return false;
 		}
@@ -89,6 +88,27 @@ this.legend_safegaurd <- this.inherit("scripts/skills/skill", {
 
 		this.getContainer().add(this.new("scripts/skills/effects/legend_safegaurding_effect"));
 	}
+
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (!this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().getSkills().hasSkill("effects.legend_safegaurded"))
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 
 	function onRemoved()
 	{
