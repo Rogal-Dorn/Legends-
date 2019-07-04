@@ -3,7 +3,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function create()
 	{
 		this.agent.create();
-		this.m.ID = this.Const.AI.Agent.ID.Alp;
+		this.m.ID = this.Const.AI.Agent.ID.LegendDemonAlp;
 		this.m.Properties.BehaviorMult[this.Const.AI.Behavior.ID.EngageRanged] = 0.5;
 		this.m.Properties.IsRangedUnit = true;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.0;
