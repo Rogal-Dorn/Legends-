@@ -1,5 +1,7 @@
 this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		TilesUsed = []
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_smackdown";
@@ -32,7 +34,7 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		{
 			local knockToTile = _targetTile.getNextTile(dir);
 
-			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1 && this.m.TilesUsed.find(knockToTile.ID) == null)
 			{
 				return knockToTile;
 			}
@@ -44,7 +46,7 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		{
 			local knockToTile = _targetTile.getNextTile(altdir);
 
-			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1 && this.m.TilesUsed.find(knockToTile.ID) == null)
 			{
 				return knockToTile;
 			}
@@ -56,7 +58,7 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		{
 			local knockToTile = _targetTile.getNextTile(altdir);
 
-			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1)
+			if (knockToTile.IsEmpty && knockToTile.Level - _targetTile.Level <= 1  && this.m.TilesUsed.find(knockToTile.ID) == null)
 			{
 				return knockToTile;
 			}
@@ -67,7 +69,7 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-
+		this.m.TilesUsed = [];
 		if (_targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab)
 		{
 			return false;
@@ -88,6 +90,21 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
+
+		if (_targetEntity.isNonCombatant() || _targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		{
+			return false;
+		}
+		
+		if (knockToTile == null)
+		{
+			return false;
+		}
+
+		if (!_targetEntity.isAlive() || _targetEntity.isDying())
+		{
+			return false;
+		}
 		
 		local knockToTile = this.findTileToKnockBackTo(user.getTile(), _targetEntity.getTile());
 
@@ -95,6 +112,8 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
+
+		this.m.TilesUsed.push(knockToTile.ID);
 
 		if (!user.isHiddenToPlayer() && (_targetEntity.getTile().IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
 		{
@@ -107,9 +126,28 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		skills.removeByID("effects.riposte");
 
 		_targetEntity.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
+		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
+		if (damage == 0)
+			{
+			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, null, null, true);
+			}
+		else
+			{
+			local p = user.getCurrentProperties();
+			local tag = {
+				Attacker = user,
+				Skill = _skill,
+				HitInfo = clone this.Const.Tactical.HitInfo
+			};
+			tag.HitInfo.DamageRegular = damage;
+			tag.HitInfo.DamageDirect = 1.0;
+			tag.HitInfo.BodyPart = this.Const.BodyPart.Body;
+			tag.HitInfo.BodyDamageMult = 1.0;
+			tag.HitInfo.FatalityChanceMult = 1.0;
+			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, this.onKnockedDown, tag, true);
+			}
 
-		this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, null, null, true);
-	
+		this.m.TilesUsed = [];
 		return true;
 		
 	}
