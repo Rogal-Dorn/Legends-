@@ -1105,3 +1105,4 @@ AP, HP and Armor buff hexe leader, also gains the schrat racial.
 Stollwurm gets less HP but more AP. 
 Costs increased for crafting the new beast items
 Costs decreased for crafting bags 
+Fixes crash when spawning female master archers.
