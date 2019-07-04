@@ -32,7 +32,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Apples redback poison to target"
+			text = "Applies redback poison to target"
 		});
 		return result;
 	}
