@@ -542,13 +542,13 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		{
 			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				continue
-			}
-
-			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength > this.m.MinStrength) {
 				return true
 			}
+
+		//	local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+		//	if (stats.Strength > this.m.MinStrength) {
+		//		return true
+		//	}
 		}
 		return false
 	}

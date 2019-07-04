@@ -394,13 +394,13 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 		{
 			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				continue
-			}
-
-			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength > this.m.MinStrength) {
 				return true
 			}
+
+		//	local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+		//	if (stats.Strength > this.m.MinStrength) {
+		//		return true
+		//	}
 		}
 		return false
 	}
