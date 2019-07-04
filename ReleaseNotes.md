@@ -1106,3 +1106,6 @@ Stollwurm gets less HP but more AP.
 Costs increased for crafting the new beast items
 Costs decreased for crafting bags 
 Fixes crash when spawning female master archers.
+Fixes Clarity Perk.
+Fixes whitewolf companion loot.
+
