@@ -218,11 +218,11 @@ gt.Const.Perks.SlingsTree <- {
 		"slings"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingDamage],
-		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingSkill],
-		[gt.Const.Perks.PerkDefs.LegendMasterySlings],
 		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendMasterySlings],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingDamage],
 		[],
 		[]
 	]
