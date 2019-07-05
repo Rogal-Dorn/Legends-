@@ -7,6 +7,9 @@ if (!("Perks" in gt.Const))
 
 gt.Const.Perks.BeastsTree <- {
 	ID = "BeastsTree",
+	Descriptions = [
+		"beasts"
+	],
 	Tree = [
 		[],
 		[],
@@ -24,6 +27,9 @@ gt.Const.Perks.BeastsTree <- {
 
 gt.Const.Perks.MysticTree <- {
 	ID = "MysticTree",
+	Descriptions = [
+		"mystics"
+	],
 	Tree = [
 		[],
 		[],
@@ -40,6 +46,9 @@ gt.Const.Perks.MysticTree <- {
 
 gt.Const.Perks.UndeadTree <- {
 	ID = "UndeadTree",
+	Descriptions = [
+		"undead"
+	],
 	Tree = [
 		[],
 		[],
@@ -56,6 +65,9 @@ gt.Const.Perks.UndeadTree <- {
 
 gt.Const.Perks.OrcsTree <- {
 	ID = "OrcsTree",
+	Descriptions = [
+		"orcs"
+	],
 	Tree = [
 		[],
 		[],
@@ -72,6 +84,9 @@ gt.Const.Perks.OrcsTree <- {
 
 gt.Const.Perks.CivilizationTree <- {
 	ID = "CivilizationTree",
+	Descriptions = [
+		"civilians"
+	],
 	Tree = [
 		[],
 		[],
@@ -85,6 +100,9 @@ gt.Const.Perks.CivilizationTree <- {
 
 gt.Const.Perks.OutlandersTree <- {
 	ID = "OutlandersTree",
+	Descriptions = [
+		"outlanders"
+	],
 	Tree = [
 		[],
 		[],
@@ -98,6 +116,9 @@ gt.Const.Perks.OutlandersTree <- {
 
 gt.Const.Perks.ArchersTree <- {
 	ID = "ArchersTree",
+	Descriptions = [
+		"archers"
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.Pathfinder],
 		[],
@@ -111,6 +132,9 @@ gt.Const.Perks.ArchersTree <- {
 
 gt.Const.Perks.SwordmastersTree <- {
 	ID = "SwordmastersTree",
+	Descriptions = [
+		"swordmasters"
+	],
 	Tree = [
 		[],
 		[],

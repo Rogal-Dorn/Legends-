@@ -7,6 +7,9 @@ if (!("Perks" in gt.Const))
 
 gt.Const.Perks.ShieldTree <- {
 	ID = "ShieldTree",
+	Descriptions = [
+		"shields"
+	],
 	Tree = [
 		[],
 		[],
@@ -21,6 +24,9 @@ gt.Const.Perks.ShieldTree <- {
 
 gt.Const.Perks.HeavyArmorTree <- {
 	ID = "HeavyArmorTree",
+	Descriptions = [
+		"heavy armor"
+	],
 	Tree = [
 		[],
 		[],
@@ -34,6 +40,9 @@ gt.Const.Perks.HeavyArmorTree <- {
 
 gt.Const.Perks.MediumArmorTree <- {
 	ID = "MediumArmorTree",
+	Descriptions = [
+		"medium armor"
+	],
 	Tree = [
 		[],
 		[],
@@ -47,6 +56,9 @@ gt.Const.Perks.MediumArmorTree <- {
 
 gt.Const.Perks.LightArmorTree <- {
 	ID = "LightArmorTree",
+	Descriptions = [
+		"light armor"
+	],
 	Tree = [
 		[],
 		[
@@ -63,6 +75,9 @@ gt.Const.Perks.LightArmorTree <- {
 
 gt.Const.Perks.HelmetTree <- {
 	ID = "HelmetTree",
+	Descriptions = [
+		"helmets"
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.Lookout],
 		[gt.Const.Perks.PerkDefs.SteelBrow],

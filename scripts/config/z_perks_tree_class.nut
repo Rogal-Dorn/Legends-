@@ -8,7 +8,7 @@ if (!("Perks" in gt.Const))
 gt.Const.Perks.BeastClassTree <- {
 	ID = "BeastClassTree",
 	Descriptions = [
-		"is skilled catching beasts"
+		"catching beasts"
 	],
 	Tree = [
 		[],
@@ -24,7 +24,7 @@ gt.Const.Perks.BeastClassTree <- {
 gt.Const.Perks.BardClassTree <- {
 	ID = "BardClassTree",
 	Descriptions = [
-		"is skilled in entertaining"
+		"entertaining"
 	],
 	Tree = [
 		[],
@@ -40,7 +40,7 @@ gt.Const.Perks.BardClassTree <- {
 gt.Const.Perks.HealerClassTree <- {
 	ID = "HealerClassTree",
 	Descriptions = [
-		"is skilled in healing"
+		"healing"
 	],
 	Tree = [
 		[],
@@ -56,7 +56,7 @@ gt.Const.Perks.HealerClassTree <- {
 gt.Const.Perks.FistsClassTree <- {
 	ID = "FistsClassTree",
 	Descriptions = [
-		"is skilled with fists"
+		"fists"
 	],
 	Tree = [
 		[],
@@ -72,7 +72,7 @@ gt.Const.Perks.FistsClassTree <- {
 gt.Const.Perks.ChefClassTree <- {
 	ID = "ChefClassTree",
 	Descriptions = [
-		"is a good cook"
+		"cooking"
 	],
 	Tree = [
 		[],
@@ -88,7 +88,7 @@ gt.Const.Perks.ChefClassTree <- {
 gt.Const.Perks.RepairClassTree <- {
 	ID = "RepairClassTree",
 	Descriptions = [
-		"is skilled in repairs"
+		"repairs"
 	],
 	Tree = [
 		[],
@@ -104,7 +104,7 @@ gt.Const.Perks.RepairClassTree <- {
 gt.Const.Perks.BarterClassTree <- {
 	ID = "BarterClassTree",
 	Descriptions = [
-		"is skilled in bartering"
+		"bartering"
 	],
 	Tree = [
 		[],
@@ -120,7 +120,7 @@ gt.Const.Perks.BarterClassTree <- {
 gt.Const.Perks.KnifeClassTree <- {
 	ID = "KnifeClassTree",
 	Descriptions = [
-		"is skilled with knives"
+		"knives"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill],
@@ -136,7 +136,7 @@ gt.Const.Perks.KnifeClassTree <- {
 gt.Const.Perks.ButcherClassTree <- {
 	ID = "ButcherClassTree",
 	Descriptions = [
-		"is skilled in butchery"
+		"butchery"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistButcherSkill],
@@ -152,7 +152,7 @@ gt.Const.Perks.ButcherClassTree <- {
 gt.Const.Perks.HammerClassTree <- {
 	ID = "HammerClassTree",
 	Descriptions = [
-		"is skilled with hammers"
+		"hammers"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistHammerSkill],
@@ -168,7 +168,7 @@ gt.Const.Perks.HammerClassTree <- {
 gt.Const.Perks.MilitiaClassTree <- {
 	ID = "MilitiaClassTree",
 	Descriptions = [
-		"is skilled with militia"
+		"militia"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistMilitiaSkill],
@@ -184,7 +184,7 @@ gt.Const.Perks.MilitiaClassTree <- {
 gt.Const.Perks.PickaxeClassTree <- {
 	ID = "PickaxeClassTree",
 	Descriptions = [
-		"is skilled with pickaxes"
+		"pickaxes"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistPickaxeSkill],
@@ -200,7 +200,7 @@ gt.Const.Perks.PickaxeClassTree <- {
 gt.Const.Perks.PitchforkClassTree <- {
 	ID = "PitchforkClassTree",
 	Descriptions = [
-		"is skilled with pitchforks"
+		"pitchforks"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistPitchforkSkill],
@@ -216,7 +216,7 @@ gt.Const.Perks.PitchforkClassTree <- {
 gt.Const.Perks.ShortbowClassTree <- {
 	ID = "ShortbowClassTree",
 	Descriptions = [
-		"is skilled with shortbows"
+		"shortbows"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistShortbowSkill],
@@ -232,7 +232,7 @@ gt.Const.Perks.ShortbowClassTree <- {
 gt.Const.Perks.ShovelClassTree <- {
 	ID = "ShovelClassTree",
 	Descriptions = [
-		"is skilled with shovels"
+		"shovels"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistShovelSkill],
@@ -248,7 +248,7 @@ gt.Const.Perks.ShovelClassTree <- {
 gt.Const.Perks.WoodaxeClassTree <- {
 	ID = "WoodaxeClassTree",
 	Descriptions = [
-		"is skilled with axes"
+		"axes"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistWoodaxeSkill],
@@ -264,7 +264,7 @@ gt.Const.Perks.WoodaxeClassTree <- {
 gt.Const.Perks.SickleClassTree <- {
 	ID = "SickleClassTree",
 	Descriptions = [
-		"is skilled with sickles"
+		"sickles"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistWoodaxeSkill],
@@ -280,7 +280,7 @@ gt.Const.Perks.SickleClassTree <- {
 gt.Const.Perks.NinetailsClassTree <- {
 	ID = "NinetailsClassTree",
 	Descriptions = [
-		"is skilled with ninetails"
+		"ninetails"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
