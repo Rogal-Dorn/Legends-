@@ -13,14 +13,9 @@ this.perk_legend_clarity<- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onAdded()
+	function onUpdate( _properties )
 	{
-		this.getContainer().getActor().getBaseProperties().ActionPoints += 1;
-	}
-
-	function onRemoved()
-	{
-		this.getContainer().getActor().getBaseProperties().ActionPoints -= 1;
+		_properties.ActionPoints += 1;
 	}
 
 });
