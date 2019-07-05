@@ -61,7 +61,8 @@ gt.Const.AI <- {
 			LegendWhiteDirewolf = "agent.legend_whitewolf",
 			LegendDemonAlp = "agent.legend_demonalp",
 			LegendRedbackSpider = "agent.legend_redback",
-			LegendSkinGhoul = "agent.legend_skin_ghoul"
+			LegendSkinGhoul = "agent.legend_skin_ghoul",
+			LegendBanditRabble = "agent.legend_bandit_rabble"
 
 
 		},
