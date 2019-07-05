@@ -29,32 +29,39 @@ this.legend_donkey_kick <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.1;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
 
-	function getTooltip()
+function getTooltip()
 	{
 		local actor = this.getContainer().getActor()
 		local p = actor.getCurrentProperties();
 		local mult = 1.0;
+		local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+		local damageMin = 5;
+		local damageMax = 10;
+		local avgMin = average - 100;
+		local avgMax = average - 90;	
 
-		if (this.getContainer().hasSkill("background.brawler"))
-		{
-			mult = 2.0;
-		}
-		local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
-		local DamageMin = this.Math.floor(Avg - 100);
-		local DamageMax = this.Math.floor(Avg - 80);
+		if ((average - 100) > 0)
+			{
+			damageMin += avgMin;
+			}
 
-		local damage_regular_min = DamageMin * p.DamageRegularMult * p.DamageTotalMult * mult;
-		local damage_regular_max = DamageMax * p.DamageRegularMult * p.DamageTotalMult * mult;
-		local damage_Armor_min = DamageMin * p.DamageArmorMult * p.DamageTotalMult * mult;
-		local damage_Armor_max = DamageMax * p.DamageArmorMult * p.DamageTotalMult * mult;
-		local damage_direct_max = this.Math.floor(DamageMax * this.m.DirectDamageMult);
+		if ((average - 90) > 0)
+			{
+			damageMax += avgMax;
+			}
+			
+		local damage_regular_min = this.Math.floor(damageMin * p.DamageRegularMult * p.DamageTotalMult);
+		local damage_regular_max = this.Math.floor(damageMax * p.DamageRegularMult * p.DamageTotalMult);
+		local damage_Armor_min = this.Math.floor(damageMin * p.DamageArmorMult * p.DamageTotalMult);
+		local damage_Armor_max = this.Math.floor(damageMax * p.DamageArmorMult * p.DamageTotalMult);
+		local damage_direct_max = this.Math.floor(damageMax * this.m.DirectDamageMult);
 		local ret = [
 			{
 				id = 1,
@@ -76,7 +83,7 @@ this.legend_donkey_kick <- this.inherit("scripts/skills/skill", {
 			id = 4,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts damage based on hitpoints and initiative [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
+			text = "Inflicts damage based on hitpoints and initiative [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, up to [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] damage can ignore armor"
 		});
 
 		if (damage_Armor_max > 0)
@@ -118,15 +125,30 @@ this.legend_donkey_kick <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)
 		{
 			local actor = this.getContainer().getActor();
-			local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
-			_properties.DamageRegularMin += this.Math.floor(Avg - 100);
-			_properties.DamageRegularMax += this.Math.floor(Avg - 80);
-			_properties.MeleeSkill -= 10;
+			local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+			local damageMin = 5;
+			local damageMax = 10;
+			local avgMin = average - 100;
+			local avgMax = average - 90;	
+
+			if ((average - 100) > 0)
+				{
+				damageMin += avgMin;
+				}
+
+			if ((average - 90) > 0)
+				{
+				damageMax += avgMax;
+				}
+
+			_properties.DamageRegularMin += this.Math.floor(damageMin);
+			_properties.DamageRegularMax += this.Math.floor(damageMax);
+			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.6 : 0.3;
 		}
 	}
 
