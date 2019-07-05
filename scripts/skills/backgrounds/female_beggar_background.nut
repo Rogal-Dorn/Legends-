@@ -150,7 +150,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
 		}
 
 		r = this.Math.rand(0, 3);
