@@ -112,6 +112,8 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		}
 
 		this.m.Payment.Pool = this.Math.max(75, distance * (1.5 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult());
+		local modBonus = distance * modrate * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentLightMult();
+		this.Contract.m.BulletpointsObjectives.push("You gain + " modBonus " crowns due to your bartering skills");
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
