@@ -1135,3 +1135,5 @@ Adds description of guaranteed perks for each background (hover over character b
 Tryout recuits now also reveals the perk tree for that recruit.
 Changes Evasion perk to not require a free offhand.
 Skeletons gain damage reduction against Cascade strike, Piercing shot, magic missile and siphon 
+Delivery and caravan contracts now show how much bonus you're getting from barter  
+Towershield nerfed to +25 melee and ranged defense for -30 stamina at 1000 gold, so it offers the same defense and stamina cost of holding two shields, at twice the price. 
