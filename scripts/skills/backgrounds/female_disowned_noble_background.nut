@@ -138,8 +138,8 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/short_bow"));
-			items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+			items.equip(this.new("scripts/items/weapons/arming_sword));
+			items.equip(this.new("scripts/items/shields/wooden_shield"));
 		}
 
 

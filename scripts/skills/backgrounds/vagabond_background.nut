@@ -45,8 +45,8 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.AxeTree,
-				this.Const.Perks.MaceTree,
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.StavesTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
@@ -131,11 +131,11 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/legend_saw"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
 		}
 
 		r = this.Math.rand(0, 3);

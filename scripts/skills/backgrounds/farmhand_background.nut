@@ -133,15 +133,23 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+		items.equip(this.new("scripts/items/weapons/legend_scythe"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/pitchfork"));
+		items.equip(this.new("scripts/items/weapons/wooden_flail"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_flail"));
+		items.equip(this.new("scripts/items/weapons/legend_hoe"));
+		}
+		else if (r == 3)
+		{
+		items.equip(this.new("scripts/items/weapons/pitchfork"));
+		}
+		else if (r == 4)
+		{
+		items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
 		}
 
 		r = this.Math.rand(0, 1);

@@ -68,7 +68,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			Weapon = [			
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.HammerTree,
+				this.Const.Perks.AxeTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
@@ -192,35 +192,15 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		local items = this.getContainer().getActor().getItems();
 		local r;
 
-		if (this.Const.DLC.Unhold)
-		{
-			r = this.Math.rand(0, 2);
+		r = this.Math.rand(0, 1);
 
-			if (r == 0)
-			{
-				items.equip(this.new("scripts/items/weapons/greataxe"));
-			}
-			else if (r == 1)
-			{
-				items.equip(this.new("scripts/items/weapons/greatsword"));
-			}
-			else if (r == 2)
-			{
-				items.equip(this.new("scripts/items/weapons/two_handed_flanged_mace"));
-			}
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/greataxe"));
 		}
-		else
+		else if (r == 1)
 		{
-			r = this.Math.rand(0, 1);
-
-			if (r == 0)
-			{
-				items.equip(this.new("scripts/items/weapons/greataxe"));
-			}
-			else if (r == 1)
-			{
-				items.equip(this.new("scripts/items/weapons/greatsword"));
-			}
+			items.equip(this.new("scripts/items/weapons/greatsword"));
 		}
 
 		r = this.Math.rand(0, 4);
