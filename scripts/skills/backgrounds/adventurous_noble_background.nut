@@ -137,27 +137,18 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/arming_sword"));
+			items.equip(this.new("scripts/items/weapons/fencing_sword"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/winged_mace"));
+			items.equip(this.new("scripts/items/weapons/pike"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/hand_axe"));
+			items.equip(this.new("scripts/items/weapons/rondel_dagger"));
+			items.equip(this.new("scripts/items/weapons/legend_parrying_dagger"));
 		}
 
-		r = this.Math.rand(0, 1);
-
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/shields/heater_shield"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/shields/kite_shield"));
-		}
 
 		r = this.Math.rand(0, 2);
 

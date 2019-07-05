@@ -64,7 +64,7 @@ this.evasion <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.IsSpent)
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/evasion_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/evasion"));
 			this.m.IsSpent = true;
 		}
 	}

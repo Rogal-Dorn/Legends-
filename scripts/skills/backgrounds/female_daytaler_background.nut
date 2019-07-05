@@ -102,11 +102,11 @@ this.female_daytaler_background <- this.inherit("scripts/skills/backgrounds/char
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
 		}
 
 		r = this.Math.rand(0, 4);

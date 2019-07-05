@@ -120,7 +120,7 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/legend_hoe"));
 		}
 		else if (r == 1)
 		{

@@ -107,7 +107,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			],
 			RangedSkill = [
 				3,
-				3
+				9
 			],
 			MeleeDefense = [
 				0,
@@ -137,11 +137,11 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/hatchet"));
+			items.equip(this.new("scripts/items/weapons/throwing_axe"));
 		}
 		else if (r == 2)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/throwing_spear"));
 		}
 		else if (r == 3)
 		{

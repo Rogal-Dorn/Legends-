@@ -50,7 +50,7 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			Weapon = [			
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.AxeTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [

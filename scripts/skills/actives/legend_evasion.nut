@@ -64,7 +64,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.getContainer().hasSkill("effects.evasion"))
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/evasion_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/evasion"));
 			return true;
 		}
 
