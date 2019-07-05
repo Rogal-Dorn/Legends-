@@ -1145,3 +1145,4 @@ Fixed redback spider bite to correctly apply redback poison
 Antidote now works on redback spider poison
 Redback scenario changed to one redback and eight spiders to reflect difficulty and likely encounters, scenario now has antidote 
 Sling perks reordered 
+Fixes the fall damage calculation on smackdown

@@ -131,7 +131,7 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		skills.removeByID("effects.riposte");
 
 		_targetEntity.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
-		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
+		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetEntity.getTile().Level) - 1) * this.Const.Combat.FallingDamage;
 		if (damage == 0)
 		{
 			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, null, null, true);
