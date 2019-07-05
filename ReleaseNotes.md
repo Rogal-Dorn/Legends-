@@ -1116,6 +1116,7 @@ Fixes spelling on redback dagger.
 Removes the kill requirement on the new contracts, you just need the perk now. 
 
 Beta 12 test 9 
+
 Gives barbarians and iijirock new perks on legendary difficulty 
 Fixes AI errors with new creatures 
 Vala won't show up before your bros have a combined level of 10. If she dies, it will be 60 days before another vala can appear. 
@@ -1125,3 +1126,10 @@ Contract reputation calculations reverted to vanilla, making early game contract
 Bandit Rabble are more likely to be wearing clothes and hats, have True Believer so they are less likely to flee, new AI more prone to flanking and killing. 
 A QA pass cross referencing all starting equipment against all starting perk groups 
 Fixes evasion Perk.
+
+https://drive.google.com/open?id=1TuuLxURW1oZN1LZ1HGKL2SpW2Y8jT3at
+
+
+Beta 12 test 10
+Adds description of guaranteed perks for each background (hover over character background on hire screen)
+Tryout recuits now also reveals the perk tree for that recruit.

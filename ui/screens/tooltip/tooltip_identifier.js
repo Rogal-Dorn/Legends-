@@ -270,7 +270,9 @@ var TooltipIdentifier =
 			TryoutButton: 'world-town-screen.hire-dialog-module.TryoutButton',
 			DismissButton: 'world-town-screen.hire-dialog-module.DismissButton',
             LeaveButton: 'world-town-screen.hire-dialog-module.LeaveButton',
-            UnknownTraits: 'world-town-screen.hire-dialog-module.UnknownTraits',
+			UnknownTraits: 'world-town-screen.hire-dialog-module.UnknownTraits',
+			UnknownPerks: 'world-town-screen.hire-dialog-module.UnknownPerks',
+			KnownPerks: 'world-town-screen.hire-dialog-module.KnownPerks'
         },
 
 		ShopDialogModule:
