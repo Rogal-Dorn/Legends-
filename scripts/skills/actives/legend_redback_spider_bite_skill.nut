@@ -73,11 +73,15 @@ this.legend_redback_spider_bite_skill <- this.inherit("scripts/skills/skill", {
 		}
 		
 		target.getSkills().add(this.new("scripts/skills/effects/legend_redback_spider_poison_effect"));
+		target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
 
 		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has poisoned " + this.Const.UI.getColorizedEntityName(target));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has poisoned " + this.Const.UI.getColorizedEntityName(target) + " for ten turns");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has stunned " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 		}
+
+
 
 		return success;
 	}

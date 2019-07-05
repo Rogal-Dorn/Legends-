@@ -285,15 +285,22 @@ this.legend_redback_spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_redback_spider_bite_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/web_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
+		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
+		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/racial/legend_redback_spider_racial"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 
