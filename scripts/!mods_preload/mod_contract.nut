@@ -129,12 +129,12 @@
 		return this.Math.max(this.Const.Difficulty.MinHeadPayments[this.World.Assets.getEconomicDifficulty()], val)
 	}
 
-//	o.getReputationToDifficultyMult = function()
-//	{
-//		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.94));
-//		local d = this.Math.minf(5.0, s);
-//		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
-//	}
+	o.getReputationToDifficultyMult = function()
+	{
+		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.94));
+		local d = this.Math.minf(5.0, s);
+		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
+	}
 //	o.getReputationToPaymentMult = function()
 //	{
 //		local r = this.Math.minf(2.7, this.Math.maxf(0.1, this.Math.pow(this.Math.maxf(0, 0.003 * this.World.Assets.getBusinessReputation()), 0.39)));
