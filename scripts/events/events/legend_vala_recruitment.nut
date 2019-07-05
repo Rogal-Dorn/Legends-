@@ -7,7 +7,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.legend_vala_recruitment";
 		this.m.Title = "Somewhere around %townname%...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/legend_vala_recruitment.png[/img]You run into a mysterious staff-wielding woman.",
@@ -87,7 +87,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}
-		if (totalbrothers < 1 || brotherlevels < 1)
+		if (totalbrothers < 1 || brotherlevels < 10)
 		{
 			return;
 		}
