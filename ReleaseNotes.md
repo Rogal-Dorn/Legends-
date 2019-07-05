@@ -1133,3 +1133,4 @@ https://drive.google.com/open?id=1TuuLxURW1oZN1LZ1HGKL2SpW2Y8jT3at
 Beta 12 test 10
 Adds description of guaranteed perks for each background (hover over character background on hire screen)
 Tryout recuits now also reveals the perk tree for that recruit.
+Changes Evasion perk to not require a free offhand.
