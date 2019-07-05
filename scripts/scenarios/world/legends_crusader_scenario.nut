@@ -182,7 +182,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			return;
 		}
 		
-		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind)
+		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 
 });
