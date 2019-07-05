@@ -1137,3 +1137,4 @@ Changes Evasion perk to not require a free offhand.
 Skeletons gain damage reduction against Cascade strike, Piercing shot, magic missile and siphon 
 Delivery and caravan contracts now show how much bonus you're getting from barter  
 Towershield nerfed to +25 melee and ranged defense for -30 stamina at 1000 gold, so it offers the same defense and stamina cost of holding two shields, at twice the price. 
+White Direwolf gains inspiring presence, fast adaption, backstabber, fearsome, battleheart, true believer and a new perk "terrifying visage" that reduces the resolve of any adjacent enemy by 15. On legendary difficulty it gains Battle forged, last stand and second wind. This means it won't run and will fight until the last, its pack won't run easy either, but your team will. 
