@@ -113,11 +113,11 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 		}
 		else if (r == 3)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_scythe));
+			items.equip(this.new("scripts/items/weapons/legend_scythe"));
 		}
 		else if (r == 4)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_saw));
+			items.equip(this.new("scripts/items/weapons/legend_saw"));
 		}
 
 
