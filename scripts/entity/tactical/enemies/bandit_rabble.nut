@@ -10,7 +10,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_bandit_rabble_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 30)
 			{
@@ -53,11 +53,17 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("eye_rings").Visible = true;
 		}
 
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 40)
+		{
+			b.MeleeDefense += 5;
+		}
+
 		this.getSprite("armor").Saturation = 0.8;
 		this.getSprite("helmet").Saturation = 0.8;
 		this.getSprite("helmet_damage").Saturation = 0.8;
 		this.getSprite("shield_icon").Saturation = 0.8;
 		this.getSprite("shield_icon").setBrightness(0.9);
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_believer"));
 			 if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
 			{
 			this.m.Skills.add(this.new("scripts/skills/traits/craven_trait"));
@@ -133,7 +139,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 
 	
 		
-		if (this.Math.rand(1, 100) <= 70)
+		if (this.Math.rand(1, 100) <= 90)
 		{
 			r = this.Math.rand(0, 4);
 
@@ -159,7 +165,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			}
 
 		}
-		if (this.Math.rand(1, 100) <= 30)
+		if (this.Math.rand(1, 100) <= 50)
 		{
 			local r = this.Math.rand(1, 2);
 
