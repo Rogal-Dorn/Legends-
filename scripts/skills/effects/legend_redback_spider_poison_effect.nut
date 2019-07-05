@@ -1,6 +1,6 @@
 this.legend_redback_spider_poison_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 10,
+		TurnsLeft = 7,
 		Damage = 1,
 		LastRoundApplied = 0
 	},
