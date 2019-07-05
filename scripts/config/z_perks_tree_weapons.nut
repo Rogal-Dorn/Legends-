@@ -224,13 +224,14 @@ gt.Const.Perks.WeaponTrees <- {
 		{
 			if (_exclude.find(t.ID))
 			{
+				//this.logInfo("Excluding " + t.ID)
 				continue;
 			}
 			L.push(i);
 		}
 
 		local r = this.Math.rand(0, L.len() - 1)
-		return this.Tree[r];
+		return this.Tree[L[r]];
 	}
 };
 
@@ -261,7 +262,7 @@ gt.Const.Perks.MeleeWeaponTrees <- {
 		}
 
 		local r = this.Math.rand(0, L.len() - 1)
-		return this.Tree[r];
+		return this.Tree[L[r]];
 	}
 };
 
@@ -285,6 +286,6 @@ gt.Const.Perks.RangedWeaponTrees <- {
 		}
 
 		local r = this.Math.rand(0, L.len() - 1)
-		return this.Tree[r];
+		return this.Tree[L[r]];;
 	}
 };

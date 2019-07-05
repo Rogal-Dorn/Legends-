@@ -169,6 +169,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	local tree = [ [], [], [], [], [], [], [], [], [], [], [] ];
 
 	//Add weapons
+	//this.logInfo("*BUILDING WEAPON TREE. NUM START =  " + _map.Weapon.len() + " : MIN = " + _mins.Weapon);
 	local count = _mins.Weapon - _map.Weapon.len();
 	for (local i = 0; i < count; i = ++i)
 	{

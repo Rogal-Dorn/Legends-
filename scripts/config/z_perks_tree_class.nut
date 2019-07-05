@@ -272,6 +272,6 @@ gt.Const.Perks.ClassTrees <- {
 		}
 
 		local r = this.Math.rand(0, L.len() - 1)
-		return this.Tree[r];
+		return this.Tree[L[r]];;
 	}	
 };

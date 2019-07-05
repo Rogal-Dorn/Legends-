@@ -1120,3 +1120,4 @@ Gives barbarians and iijirock new perks on legendary difficulty
 Fixes AI errors with new creatures 
 Vala won't show up before your bros have a combined level of 10. If she dies, it will be 60 days before another vala can appear. 
 Fixes Clarity perk adding AP on each save/load
+Fixes bug that prevents dynamic trees from reaching their full perk quota.

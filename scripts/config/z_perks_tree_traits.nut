@@ -7,6 +7,14 @@ if (!("Perks" in gt.Const))
 
 gt.Const.Perks.AgileTree <- {
 	ID = "AgileTree",
+	Descriptions = [
+		"moves gracefully",
+		"carries themself with ease",
+		"is impressively agile",
+		"has an athletic physique",
+		"is spry as a fox",
+		"is particularly dexterous"
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.Pathfinder],
 		[],
@@ -21,6 +29,14 @@ gt.Const.Perks.AgileTree <- {
 
 gt.Const.Perks.IndestructibleTree <- {
 	ID = "IndestructibleTree",
+	Descriptions = [
+		"is stubbornly relentless",
+		"is staunchly perserverent",
+		"has a strong will",
+		"steadfastly persists",
+		"seems unswervingly firm",
+		"is adamantly resolute"
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.NineLives],
 		[],//gt.Const.Perks.PerkDefs.LegendTasteThePain],
@@ -34,6 +50,9 @@ gt.Const.Perks.IndestructibleTree <- {
 
 gt.Const.Perks.MartyrTree <- {
 	ID = "MartyrTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[],
 		[],
@@ -47,6 +66,9 @@ gt.Const.Perks.MartyrTree <- {
 
 gt.Const.Perks.ViciousTree <- {
 	ID = "ViciousTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.CripplingStrikes],
 		[],
@@ -60,6 +82,9 @@ gt.Const.Perks.ViciousTree <- {
 
 gt.Const.Perks.DeviousTree <- {
 	ID = "DeviousTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[],
 		[],
@@ -73,6 +98,9 @@ gt.Const.Perks.DeviousTree <- {
 
 gt.Const.Perks.InspirationalTree <- {
 	ID = "InspirationalTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.RallyTheTroops],
@@ -86,6 +114,9 @@ gt.Const.Perks.InspirationalTree <- {
 
 gt.Const.Perks.IntelligentTree <- {
 	ID = "IntelligentTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.Student],
 		[
@@ -102,6 +133,9 @@ gt.Const.Perks.IntelligentTree <- {
 
 gt.Const.Perks.CalmTree <- {
 	ID = "CalmTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendAlert],
 		[],
@@ -115,6 +149,9 @@ gt.Const.Perks.CalmTree <- {
 
 gt.Const.Perks.FastTree <- {
 	ID = "FastTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[
 			gt.Const.Perks.PerkDefs.FastAdaption,
@@ -131,6 +168,9 @@ gt.Const.Perks.FastTree <- {
 
 gt.Const.Perks.LargeTree <- {
 	ID = "LargeTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.Colossus],
 		[],
@@ -144,6 +184,9 @@ gt.Const.Perks.LargeTree <- {
 
 gt.Const.Perks.OrganisedTree <- {
 	ID = "OrganisedTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.BagsAndBelts],
 		[],
@@ -157,6 +200,9 @@ gt.Const.Perks.OrganisedTree <- {
 
 gt.Const.Perks.SturdyTree <- {
 	ID = "SturdyTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.Stalwart],
@@ -170,6 +216,9 @@ gt.Const.Perks.SturdyTree <- {
 
 gt.Const.Perks.FitTree <- {
 	ID = "FitTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.Recover],
 		[],
@@ -183,6 +232,9 @@ gt.Const.Perks.FitTree <- {
 
 gt.Const.Perks.TrainedTree <- {
 	ID = "TrainedTree",
+		Descriptions = [
+
+	],
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.HoldOut],
@@ -225,6 +277,6 @@ gt.Const.Perks.TraitsTrees <- {
 		}
 
 		local r = this.Math.rand(0, L.len() - 1)
-		return this.Tree[r];
+		return this.Tree[L[r]];;
 	}
 };
