@@ -1121,3 +1121,6 @@ Fixes AI errors with new creatures
 Vala won't show up before your bros have a combined level of 10. If she dies, it will be 60 days before another vala can appear. 
 Fixes Clarity perk adding AP on each save/load
 Fixes bug that prevents dynamic trees from reaching their full perk quota.
+Contract reputation calculations reverted to vanilla, making early game contracts harder. 
+Bandit Rabble are more likely to be wearing clothes and hats, have True Believer so they are less likely to flee, new AI more prone to flanking and killing. 
+A QA pass cross referencing all starting equipment against all starting perk groups 

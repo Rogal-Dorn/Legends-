@@ -45,7 +45,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.AxeTree,
+				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
