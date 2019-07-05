@@ -51,7 +51,7 @@ this.slash <- this.inherit("scripts/skills/skill", {
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
 			}
 		]);
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 		{
 			ret.push({
 				id = 6,
