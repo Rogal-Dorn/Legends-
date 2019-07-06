@@ -32,7 +32,7 @@
 
     o.setArmor <- function (_bodyPart, _value)
     {
-        this.m.CurrentProperties.Armor[_bodyPart] = _value;
+        this.m.BaseProperties.Armor[_bodyPart] = _value;
     }
 
         //

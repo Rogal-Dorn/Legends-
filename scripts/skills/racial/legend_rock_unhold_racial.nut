@@ -21,7 +21,6 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
-		
 		local totalBodyArmor = actor.getArmorMax(this.Const.BodyPart.Body);
 		local totalHeadArmor = actor.getArmorMax(this.Const.BodyPart.Head);
 		local currentBodyArmor = actor.getArmor(this.Const.BodyPart.Body);
