@@ -1148,3 +1148,5 @@ Sling perks reordered
 Fixes the fall damage calculation on smackdown
 Hand to hand can no longer do negative damage, tooltip is more accurate, and won't show up on donkeys. Brawlers and Berserkers do +25% damage 
 Donkey Kick can no longer do negative damage 
+Rabble are each considered harder, and give more xp. This reflects their new behaviours. They are still about half a thug, instead of a quarter. 
+Early game contract difficulty scaling restored, though vanilla contract payout scaling remains. 
