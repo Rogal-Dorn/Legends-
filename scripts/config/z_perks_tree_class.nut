@@ -357,6 +357,25 @@ gt.Const.Perks.ValaSpiritClassTree <- {
 	]
 };
 
+gt.Const.Perks.InventorClassTree <- {
+	ID = "InventorClassTree",
+	Descriptions = [
+		"inventor"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendInventorAnatomy]
+	]
+};
+
+
+
+
 gt.Const.Perks.ClassTrees <- {
 	Tree = [
 		gt.Const.Perks.BeastClassTree,
