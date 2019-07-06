@@ -38,9 +38,8 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function onCombatFinished()
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
-		item.setArmor(item.getArmorMax());
+		this.m.Condition = this.m.ConditionMax;
+		this.updateAppearance();
 	}
 
 	function onTurnStart()

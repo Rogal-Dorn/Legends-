@@ -54,7 +54,7 @@ this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shi
 			return;
 		}
 
-		helm.setCondition(shield.getCondition() + shieldAdded);
+		shield.setCondition(shield.getCondition() + shieldAdded);
 		actor.setDirty(true);
 
 		if (!actor.isHiddenToPlayer())

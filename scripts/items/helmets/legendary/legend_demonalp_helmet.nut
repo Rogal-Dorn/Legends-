@@ -45,5 +45,6 @@ this.legend_demonalp_helmet <- this.inherit("scripts/items/helmets/named/named_h
 		this.named_helmet.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_horrific_scream"));
 	}
+	
 });
 
