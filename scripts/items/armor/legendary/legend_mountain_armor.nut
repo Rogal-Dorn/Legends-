@@ -32,12 +32,11 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 		});
 		return result;
 	}
-
+	
 	function onCombatFinished()
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		item.setArmor(item.getArmorMax());
+		this.m.Condition = this.m.ConditionMax;
+		this.updateAppearance();
 	}
 
 	function onTurnStart()
