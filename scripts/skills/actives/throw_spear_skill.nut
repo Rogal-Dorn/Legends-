@@ -77,7 +77,7 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] per tile of distance"
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] per tile of distance"
 			}
 		]);
 
