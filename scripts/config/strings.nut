@@ -1299,7 +1299,8 @@ gt.Const.Strings.PerkName <- {
 	LegendSmackdown = "Smackdown",
 	LegendClarity = "Clarity",
 	LegendAlert = "Alert",
-	LegendBloodbath = "Bloodbath"
+	LegendBloodbath = "Bloodbath",
+	LegendTerrifyingVisage = "TerrifyingVisage"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1573,6 +1574,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendClarity = "A well honed mind can perceive more in each instant, making time appear slower in key instants of need. Gain 1 Action Point.",
 	LegendAlert = "Pay close attention at all times, surveying the surroundings and assessing every clue for an insight. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Initiative",
 	LegendBloodbath = "Take joy in the suffering of others, gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Fatigue and Resolve for each bleeding character on the field"
+	LegendTerrifyingVisage = "The mere sight of you sends your enemies fleeing. Reduce resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeeValue + "]-15[/color] ";
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

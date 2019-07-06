@@ -2264,6 +2264,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/bloodbath_circle.png",
 		IconDisabled = "ui/perks/bloodbath_circle_bw.png",
 		Const = "LegendBloodbath"
+	},
+	{
+		ID = "perk.legend_terrifying_visage",
+		Script = "scripts/skills/perks/legend_terrifying_visage",
+		Name = this.Const.Strings.PerkName.LegendTerrifyingVisage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTerrifyingVisage,
+		Icon = "ui/perks/perk_21.png",
+		IconDisabled = "ui/perks/perk_21_bw.png",
+		Const = "LegendTerrifyingVisage"
 	}
 ];
 
