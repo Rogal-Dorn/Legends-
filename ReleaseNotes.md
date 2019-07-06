@@ -1140,3 +1140,8 @@ Towershield nerfed to +25 melee and ranged defense for -30 stamina at 1000 gold,
 White Direwolf gains inspiring presence, fast adaption, backstabber, fearsome, battleheart, true believer and a new perk "terrifying visage" that reduces the resolve of any adjacent enemy by 15. On legendary difficulty it gains Battle forged, last stand and second wind. AI changed to flank more and chase down fleeing units. This means it won't run and will fight until the last, its pack won't run easy either, but your team will, and then they are hunted. 
 Redback spiders gain nimble, rotation, recovery, underdog and overwhelm. On legendary they gain battle forged, crippling strikes and inspiring presence. Their bite now stuns for a turn, this is stopped by poison immunity, but not by stun immunity. Their AI is now more defensive, and will prioritises easy to hit targets so they can apply poison stacks more easily.
 Fixes Hidden/Camoflouge Perk.
+Redback spiders gain nimble, rotation, recovery, underdog and overwhelm. On legendary they gain battle forged, crippling strikes and inspiring presence. Their bite now stuns for a turn, this is stopped by poison immunity, but not by stun immunity. Their AI is now more defensive, and will prioritises easy to hit targets so they can apply poison stacks more easily.  
+Fixed redback spider bite to correctly apply redback poison
+Antidote now works on redback spider poison
+Redback scenario changed to one redback and eight spiders to reflect difficulty and likely encounters, scenario now has antidote 
+Sling perks reordered 
