@@ -123,9 +123,13 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		x = 19;
 		for (local i = 0; i < 4; i = ++i)
 		{
-			entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 12 + i, 12 + i);
+			entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 12 + i, 12 + i);
 			entity.setFaction(this.Const.Faction.Beasts);
 		}
+
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 11, 11);
+		 entity.setFaction(this.Const.Faction.Beasts);
+
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
