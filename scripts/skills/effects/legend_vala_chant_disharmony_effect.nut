@@ -52,7 +52,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 	}
 
 
-	function onMovementCompleted()
+	function onMovementCompleted( _tile )
 	{
 		if (!this.checkEntities())
 		{

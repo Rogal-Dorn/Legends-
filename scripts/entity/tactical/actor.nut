@@ -10,7 +10,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		Title = "",
 		WorldTroop = null,
 		BloodType = this.Const.BloodType.None,
-		BloodSaturation = 1.5,
+		BloodSaturation = 1.0,
 		BloodColor = this.createColor("#ffffff"),
 		MoraleState = this.Const.MoraleState.Steady,
 		MaxMoraleState = this.Const.MoraleState.Confident,
@@ -43,9 +43,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		DecapitateSplatterOffset = this.createVec(-4, -31),
 		SmashSplatterOffset = this.createVec(-15, -45),
 		ShakeLayers = this.Const.ShakeCharacterLayers,
-		DecapitateBloodAmount = 2.0,
-		DeathBloodAmount = 1.5,
-		BloodPoolScale = 1.25,
+		DecapitateBloodAmount = 1.0,
+		DeathBloodAmount = 1.0,
+		BloodPoolScale = 1.0,
 		RenderAnimationStartTime = 0.0,
 		RenderAnimationOffset = this.createVec(0, 0),
 		RenderAnimationSpeed = 1.0,
@@ -1646,15 +1646,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this) + "\'s " + this.Const.Strings.BodyPartName[_hitInfo.BodyPart] + " is hit for [b]" + this.Math.floor(damage) + "[/b] damage");
 			}
 
-			if (this.m.MoraleState != this.Const.MoraleState.Ignore && damage > this.Const.Morale.OnHitMinDamage)
+			if (this.m.MoraleState != this.Const.MoraleState.Ignore && damage > this.Const.Morale.OnHitMinDamage && this.getCurrentProperties().IsAffectedByLosingHitpoints)
 			{
-				if (!this.isPlayerControlled() || !this.m.Skills.hasSkill("trait.deathwish") && !this.m.Skills.hasSkill("effects.berserker_mushrooms") && !this.m.Skills.hasSkill("perk.legend_taste_the_pain")
+				if (!this.isPlayerControlled() || !this.m.Skills.hasSkill("effects.berserker_mushrooms"))
 				{
 					this.checkMorale(-1, this.Const.Morale.OnHitBaseDifficulty * (1.0 - this.getHitpoints() / this.getHitpointsMax()), this.Const.MoraleCheckType.Default, "", true);
-				}
-			   if (this.m.Skills.hasSkill("perk.legend_taste_the_pain"))
-				{
-				this.setMorale(this.getMorale() + 10);
 				}
 			}
 
@@ -2497,7 +2493,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		this.spawnTerrainDropdownEffect(_tile);
 		this.m.Skills.update();
-		this.m.Skills.MovementCompleted();
 		this.m.Items.onMovementFinished();
 		this.setDirty(true);
 	}
@@ -2944,9 +2939,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (this.Math.rand(0, 100) < this.Const.Combat.SpawnBloodSameTileChance)
 		{
-			local n = this.Const.Combat.SpawnBloodAttempts;
-
-			while (n != 0)
+			for( local n = this.Const.Combat.SpawnBloodAttempts; n != 0;  )
 			{
 				local decal = this.Const.BloodDecals[this.m.BloodType][this.Math.rand(0, this.Const.BloodDecals[this.m.BloodType].len() - 1)];
 				local detail = _tile.spawnDetail(decal, this.Math.rand(0, 1) == 0, false, 0);
@@ -2980,9 +2973,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 					return;
 				}
 
-				local n = this.Const.Combat.SpawnBloodAttempts;
-
-				while (n != 0)
+				for( local n = this.Const.Combat.SpawnBloodAttempts; n != 0;  )
 				{
 					local decal = this.Const.BloodDecals[this.m.BloodType][this.Math.rand(0, this.Const.BloodDecals[this.m.BloodType].len() - 1)];
 					local detail = spawnOnTile.spawnDetail(decal, this.Math.rand(0, 1) == 0, false, 0);
@@ -3558,7 +3549,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		this.m.XP = this.Math.floor(this.m.XP * _info.Hitpoints);
 		this.m.BaseProperties.Armor = _info.Armor;
 		this.onUpdateInjuryLayer();
-		this.World.getPlayerRoster().add(_info);
 	}
 
 	function assignRandomEquipment()
@@ -3772,4 +3762,3 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 	}
 
 });
-

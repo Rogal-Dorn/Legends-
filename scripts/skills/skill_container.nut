@@ -450,7 +450,7 @@ this.skill_container <- {
 		this.m.Actor.updateOverlay();
 	}
 
-	function MovementCompleted()
+	function MovementCompleted( _tile )
 	{
 		if (!this.m.Actor.isAlive())
 		{
@@ -459,7 +459,7 @@ this.skill_container <- {
 
 		foreach( skill in this.m.Skills )
 		{
-			skill.onMovementCompleted();
+			skill.onMovementCompleted(_tile);
 		}
 	}
 
