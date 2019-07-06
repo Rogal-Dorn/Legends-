@@ -56,7 +56,7 @@ gt.Const.Perks.HealerClassTree <- {
 gt.Const.Perks.FistsClassTree <- {
 	ID = "FistsClassTree",
 	Descriptions = [
-		"fists"
+		"unarmed combat"
 	],
 	Tree = [
 		[],
@@ -289,6 +289,70 @@ gt.Const.Perks.NinetailsClassTree <- {
 		[],
 		[],
 		[],
+		[]
+	]
+};
+
+gt.Const.Perks.ValaChantClassTree <- {
+	ID = "ValaChantClassTree",
+	Descriptions = [
+		"chants"
+	],
+	Tree = [
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaChantSenses],
+		[gt.Const.Perks.PerkDefs.LegendValaChantMastery],
+		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony]
+	]
+};
+
+gt.Const.Perks.ValaTranceClassTree <- {
+	ID = "ValaTranceClassTree",
+	Descriptions = [
+		"trances"
+	],
+	Tree = [
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaTranceMastery],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaThreads],
+		[]
+	]
+};
+
+gt.Const.Perks.ValaRuneClassTree <- {
+	ID = "ValaRuneClassTree",
+	Descriptions = [
+		"runes"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendValaInscribeShield],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaInscribeHelmet],
+		[gt.Const.Perks.PerkDefs.LegendValaInscriptionMastery],
+		[gt.Const.Perks.PerkDefs.LegendValaInscribeArmor],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaInscribeWeapon]
+	]
+};
+
+gt.Const.Perks.ValaSpiritClassTree <- {
+	ID = "ValaSpiritClassTree",
+	Descriptions = [
+		"spirits"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendValaWarden],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaPremonition],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendValaSpiritualBond],
 		[]
 	]
 };

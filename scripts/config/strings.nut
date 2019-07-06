@@ -1563,7 +1563,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHidden = "Master the art of concelement. Blend in with your surroundings and remain hidden from the enemy until your next attack.",
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] less likely to attack you instead of an ally.",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns",
-	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] melee defense",
+	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense while wielding a staff",
 	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores 10 fatigue to every ally on the field.",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration of Hand to Hand, adds damage to Kick",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte ",

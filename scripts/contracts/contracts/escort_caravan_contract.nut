@@ -170,8 +170,8 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Payment.Pool = this.Math.max(100, distance * (4 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
 		local r = this.Math.rand(1, 3);
 
-		local modBonus = distance * modrate * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
-		this.Contract.m.BulletpointsObjectives.push("You gain + " modBonus " crowns due to your bartering skills");
+	//	local modBonus = distance * modrate * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+	//	this.Contract.m.BulletpointsObjectives.push("You gain + " modBonus " crowns due to your bartering skills");
 
 
 		if (r == 1)
