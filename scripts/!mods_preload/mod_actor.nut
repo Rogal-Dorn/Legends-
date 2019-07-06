@@ -11,7 +11,7 @@
     o.onMovementFinish = function (_tile)
     {
         fn(_tile);
-        this.m.Skills.MovementCompleted();
+        this.m.Skills.MovementCompleted(_tile);
     }
 
     o.isArmedWithMagicStaff <- function()
