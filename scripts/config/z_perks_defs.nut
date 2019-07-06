@@ -2158,7 +2158,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendSpecStaffStun"
 	},	
 	{
-		ID = "perk.legend_staff_skill",
+		ID = "perk.legend_specialist_staff_skill",
 		Script = "scripts/skills/perks/perk_legend_specialist_staff_skill",
 		Name = this.Const.Strings.PerkName.LegendSpecStaffSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecStaffSkill,
