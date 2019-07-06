@@ -1133,20 +1133,17 @@ https://drive.google.com/open?id=1TuuLxURW1oZN1LZ1HGKL2SpW2Y8jT3at
 Beta 12 test 10
 Adds description of guaranteed perks for each background (hover over character background on hire screen)
 Tryout recuits now also reveals the perk tree for that recruit.
-Changes Evasion perk to not require a free offhand.
-Skeletons gain damage reduction against Cascade strike, Piercing shot, magic missile and siphon 
-Delivery and caravan contracts now show how much bonus you're getting from barter  
+Early game contract difficulty scaling restored, though vanilla contract payout scaling remains.
 Towershield nerfed to +25 melee and ranged defense for -30 stamina at 1000 gold, so it offers the same defense and stamina cost of holding two shields, at twice the price. 
 White Direwolf gains inspiring presence, fast adaption, backstabber, fearsome, battleheart, true believer and a new perk "terrifying visage" that reduces the resolve of any adjacent enemy by 15. On legendary difficulty it gains Battle forged, last stand and second wind. AI changed to flank more and chase down fleeing units. This means it won't run and will fight until the last, its pack won't run easy either, but your team will, and then they are hunted. 
-Redback spiders gain nimble, rotation, recovery, underdog and overwhelm. On legendary they gain battle forged, crippling strikes and inspiring presence. Their bite now stuns for a turn, this is stopped by poison immunity, but not by stun immunity. Their AI is now more defensive, and will prioritises easy to hit targets so they can apply poison stacks more easily.
-Fixes Hidden/Camoflouge Perk.
-Redback spiders gain nimble, rotation, recovery, underdog and overwhelm. On legendary they gain battle forged, crippling strikes and inspiring presence. Their bite now stuns for a turn, this is stopped by poison immunity, but not by stun immunity. Their AI is now more defensive, and will prioritises easy to hit targets so they can apply poison stacks more easily.  
-Fixed redback spider bite to correctly apply redback poison
+Redback spiders gain nimble, rotation, recovery, underdog and overwhelm. Fixed redback spider bite to correctly apply redback poison. On legendary they gain battle forged, crippling strikes and inspiring presence. Their bite now stuns for a turn, this is stopped by poison immunity, but not by stun immunity. Their AI is now more defensive, and will prioritises easy to hit targets so they can apply poison stacks more easily.
 Antidote now works on redback spider poison
-Redback scenario changed to one redback and eight spiders to reflect difficulty and likely encounters, scenario now has antidote 
+Redback scenario changed to one redback and six spiders to reflect difficulty, scenario now has antidote 
 Sling perks reordered 
-Fixes the fall damage calculation on smackdown
+Rabble are each considered harder, and give more xp. This reflects their new behaviours. They are still about half a thug, instead of a quarter. 
+Skeletons gain damage reduction against Cascade strike, Piercing shot, magic missile and siphon 
 Hand to hand can no longer do negative damage, tooltip is more accurate, and won't show up on donkeys. Brawlers and Berserkers do +25% damage 
 Donkey Kick can no longer do negative damage 
-Rabble are each considered harder, and give more xp. This reflects their new behaviours. They are still about half a thug, instead of a quarter. 
-Early game contract difficulty scaling restored, though vanilla contract payout scaling remains. 
+Changes Evasion perk to not require a free offhand.
+Fixes the fall damage calculation on smackdown
+Fixes Hidden/Camoflouge Perk.

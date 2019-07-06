@@ -121,7 +121,7 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		for (local i = 0; i < 4; i = ++i)
+		for (local i = 0; i < 6; i = ++i)
 		{
 			entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 12 + i, 12 + i);
 			entity.setFaction(this.Const.Faction.Beasts);
@@ -256,6 +256,9 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
+		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
+		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
+		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
 	}
 
 });
