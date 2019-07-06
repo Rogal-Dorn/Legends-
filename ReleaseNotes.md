@@ -1147,3 +1147,5 @@ Donkey Kick can no longer do negative damage
 Changes Evasion perk to not require a free offhand.
 Fixes the fall damage calculation on smackdown
 Fixes Hidden/Camoflouge Perk.
+Fixes Specialist Staff skill perk.
+

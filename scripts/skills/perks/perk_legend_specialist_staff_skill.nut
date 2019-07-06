@@ -17,29 +17,33 @@ this.perk_legend_specialist_staff_skill <- this.inherit("scripts/skills/skill", 
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.legend_staff")
+		if (item == null)
 		{
-		_properties.MeleeDefense += 10;
+			return;
+		}
+		if (item.getID() == "weapon.legend_staff")
+		{
+			_properties.MeleeDefense += 10;
 		}
 
-		if (item != null && item.getID() == "weapon.legend_tipstaff")
+		if (item.getID() == "weapon.legend_tipstaff")
 		{
-		_properties.MeleeDefense += 10;
+			_properties.MeleeDefense += 10;
 		}
 
-		if (item != null && item.getID() == "weapon.legend_staff_gnarled")
+		if (item.getID() == "weapon.legend_staff_gnarled")
 		{
-		_properties.MeleeDefense += 10;
+			_properties.MeleeDefense += 10;
 		}
 
-		if (item != null && item.getID() == "weapon.legend_mystic_staff")
+		if (item.getID() == "weapon.legend_mystic_staff")
 		{
-		_properties.MeleeDefense += 10;
+			_properties.MeleeDefense += 10;
 		}
 
-		if (item != null && item.getID() == "weapon.legend_staff_vala")
+		if (item.getID() == "weapon.legend_staff_vala")
 		{
-		_properties.MeleeDefense += 10;
+			_properties.MeleeDefense += 10;
 		}
 
 	}
