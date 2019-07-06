@@ -30,8 +30,8 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 		local missingHeadArmor = totalHeadArmor - currentHeadArmor;
 		local healRateBody = totalBodyArmor * 0.1;
 		local healRateHead = totalHeadArmor * 0.1;
-		local addedBodyArmor = this.Math.min(missingBodyArmor, healRateBody);
-		local addedHeadArmor = this.Math.min(missingHeadArmor, healRateBody);
+		local addedBodyArmor = this.Math.abs(this.Math.min(missingBodyArmor, healRateBody));
+		local addedHeadArmor = this.Math.abs(this.Math.min(missingHeadArmor, healRateBody));
 		local newBodyArmor = currentBodyArmor + addedBodyArmor;
 		local newHeadArmor = currentHeadArmor + addedHeadArmor;
 
