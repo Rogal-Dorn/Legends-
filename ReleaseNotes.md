@@ -1148,4 +1148,6 @@ Changes Evasion perk to not require a free offhand.
 Fixes the fall damage calculation on smackdown
 Fixes Hidden/Camoflouge Perk.
 Fixes Specialist Staff skill perk.
+Fixes Sling Mastery perk (accuracy with distance just kept increases)
+Fixes Rock Unhold not repairing armor each turn
 
