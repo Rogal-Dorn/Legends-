@@ -43,76 +43,25 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[3];
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[1];
-		this.m.CustomPerkTree = [
-			[
-				this.Const.Perks.PerkDefs.FastAdaption,
-				this.Const.Perks.PerkDefs.CripplingStrikes,
-				this.Const.Perks.PerkDefs.Colossus,
-				this.Const.Perks.PerkDefs.BagsAndBelts,
-				this.Const.Perks.PerkDefs.NineLives,
-				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.Adrenalin,
-				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.Student
+		this.m.PerkTreeDynamic = {
+			Weapon = [			
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.StavesTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.CrossbowTree
 			],
-			[
-				this.Const.Perks.PerkDefs.CoupDeGrace,
-				this.Const.Perks.PerkDefs.Bullseye,
-				this.Const.Perks.PerkDefs.Dodge,
-				this.Const.Perks.PerkDefs.FortifiedMind,
-				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.SteelBrow,
-				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.Gifted
+			Defense = [
+				this.Const.Perks.LightArmorTree
 			],
-			[
-				this.Const.Perks.PerkDefs.Backstabber,	
-				this.Const.Perks.PerkDefs.Anticipation,
-				this.Const.Perks.PerkDefs.ShieldExpert,
-				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.Relentless,
-				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.RallyTheTroops,
-				this.Const.Perks.PerkDefs.Taunt
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.OrganisedTree
 			],
-			[
-				this.Const.Perks.PerkDefs.SpecMace,
-				this.Const.Perks.PerkDefs.SpecFlail,
-				this.Const.Perks.PerkDefs.SpecHammer,
-				this.Const.Perks.PerkDefs.SpecAxe,
-				this.Const.Perks.PerkDefs.SpecCleaver,
-				this.Const.Perks.PerkDefs.SpecSword,
-				this.Const.Perks.PerkDefs.SpecDagger,
-				this.Const.Perks.PerkDefs.SpecPolearm,
-				this.Const.Perks.PerkDefs.SpecSpear,
-				this.Const.Perks.PerkDefs.SpecCrossbow,
-				this.Const.Perks.PerkDefs.SpecBow,
-				this.Const.Perks.PerkDefs.SpecThrowing
-			],
-			[
-				this.Const.Perks.PerkDefs.Underdog,
-				this.Const.Perks.PerkDefs.LoneWolf,
-				this.Const.Perks.PerkDefs.Overwhelm,
-				this.Const.Perks.PerkDefs.Footwork
-			],
-			[
-				this.Const.Perks.PerkDefs.HeadHunter,
-				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.BattleForged
-			],
-			[
-				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.Indomitable,
-				this.Const.Perks.PerkDefs.LegendInventorAnatomy,		
-			],
-			[],
-			[],
-			[],
-			[]				
-		];
+			Enemy = [],
+			Class = [
+				this.Const.Perks.RepairClassTree
+			]
+		}
 	}
 
 	function getTooltip()
