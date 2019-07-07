@@ -1158,3 +1158,5 @@ Beta12 Test 11
 *Fixes Matching set perk
 *Fixes enemies with greatswords not having a single target attack 
 *adds images for legendary contracts 
+*Fixes missing berserker tattoo brush
+*Fixes character screen crash on hexen escort battles.
