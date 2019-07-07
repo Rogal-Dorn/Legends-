@@ -1156,3 +1156,5 @@ https://drive.google.com/open?id=19effkSAgxnxc6uGOdMDZkz_F7BxAbJFy
 
 Beta12 Test 11
 *Fixes Matching set perk
+*Fixes enemies with greatswords not having a single target attack 
+*adds images for legendary contracts 
