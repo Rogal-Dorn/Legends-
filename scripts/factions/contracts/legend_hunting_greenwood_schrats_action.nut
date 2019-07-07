@@ -11,6 +11,11 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 
 	function onUpdate( _faction )
 	{
+		
+		this.m.Score = 999
+		return;
+		
+		
 		if (!this.Const.DLC.Unhold)
 		{
 			return;
@@ -21,6 +26,10 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 			return;
 		}
 
+
+		this.m.Score = 999
+		return;
+		
 		if (this.World.Assets.getBusinessReputation() < 1500)
 		{
 			return;

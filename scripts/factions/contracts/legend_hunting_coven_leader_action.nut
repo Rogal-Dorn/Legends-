@@ -11,6 +11,11 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 
 	function onUpdate( _faction )
 	{
+		
+		this.m.Score = 999
+		return;
+		
+		
 		if (!this.Const.DLC.Unhold)
 		{
 			return;
@@ -20,6 +25,10 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 		{
 			return;
 		}
+
+
+		this.m.Score = 999
+		return;
 
 		if (this.World.Assets.getBusinessReputation() < 900)
 		{

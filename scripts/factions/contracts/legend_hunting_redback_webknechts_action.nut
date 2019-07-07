@@ -11,6 +11,11 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 
 	function onUpdate( _faction )
 	{
+		
+		this.m.Score = 999
+		return;
+		
+		
 		if (!this.Const.DLC.Unhold)
 		{
 			return;
@@ -21,6 +26,10 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 			return;
 		}
 
+
+		this.m.Score = 999
+		return;
+		
 		if (this.World.getTime().Days <= 3 || this.Math.rand(1, 100) > 30)
 		{
 			return;
