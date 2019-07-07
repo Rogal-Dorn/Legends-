@@ -13,6 +13,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 		this.m.Type = "contract.legend_hunting_demon_alps";
 		this.m.Name = "Ending the Terror Demon (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DifficultyMult = 4.0;
 	}
 
 	function onImportIntro()

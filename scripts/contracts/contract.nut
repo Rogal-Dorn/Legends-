@@ -643,6 +643,10 @@ this.contract <- {
 		{
 			return "ui/icons/difficulty_hard";
 		}
+		else if (this.m.DifficultyMult >= 4.0)
+		{
+			return "ui/icons/difficulty_legend";
+		}
 	}
 
 	function getUIList()
@@ -742,6 +746,13 @@ this.contract <- {
 			{
 				return {
 					Image = "ui/images/difficulty_hard.png",
+					IsProcedural = false
+				};
+			}
+			else if (this.m.DifficultyMult >= 4.0)
+			{
+				return {
+					Image = "ui/images/difficulty_legend.png",
 					IsProcedural = false
 				};
 			}
