@@ -171,7 +171,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			this.Music.setTrackList([
 				"music/civilians_01.ogg"
 			], this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.legend_random_3_scenario_intro");
+			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
 	}
 
