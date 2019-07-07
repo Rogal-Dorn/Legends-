@@ -110,6 +110,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/greatsword",
 					"weapons/greataxe",
 					"weapons/legend_swordstaff",
+					"weapons/legend_bastardsword",
 					"weapons/warbrand"
 				]);
 			}
