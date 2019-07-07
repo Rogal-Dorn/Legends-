@@ -15,6 +15,11 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 		this.m.DifficultyMult = 4.0;
 	}
 
+	function getBanner()
+	{
+		return "ui/banners/factions/banner_legend_s";
+	}
+
 	function onImportIntro()
 	{
 		this.importSettlementIntro();
@@ -636,7 +641,7 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 	{
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (!bro.getSkills().hasSkill(this.m.Perk))
+			if (bro.getSkills().hasSkill(this.m.Perk))
 			{
 				return true
 			}

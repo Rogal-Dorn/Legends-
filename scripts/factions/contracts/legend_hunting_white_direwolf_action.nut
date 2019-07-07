@@ -11,6 +11,10 @@ this.legend_hunting_white_direwolf_action <- this.inherit("scripts/factions/fact
 
 	function onUpdate( _faction )
 	{
+		this.m.Score = 99999
+		return;
+		
+		
 		if (!this.Const.DLC.Unhold)
 		{
 			return;
@@ -20,6 +24,9 @@ this.legend_hunting_white_direwolf_action <- this.inherit("scripts/factions/fact
 		{
 			return;
 		}
+
+		this.m.Score = 999
+		return;
 
 		if (this.World.Assets.getBusinessReputation() < 900)
 		{

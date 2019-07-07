@@ -15136,7 +15136,6 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <- [
 		]
 	}
 ];
-
 gt.Const.World.Spawn.LegendRedbackSpider <- [
 	{
 		MovementSpeedMult = 1.2,
@@ -18420,4 +18419,11 @@ this.calculateCosts(this.Const.World.Spawn.HexenAndMore);
 this.calculateCosts(this.Const.World.Spawn.HexenAndNoSpiders);
 this.calculateCosts(this.Const.World.Spawn.Kraken);
 this.calculateCosts(this.Const.World.Spawn.Beasts);
+this.calculateCosts(this.Const.World.Spawn.LegendHexeLeader);
+this.calculateCosts(this.Const.World.Spawn.LegendRockUnhold);
+this.calculateCosts(this.Const.World.Spawn.LegendWhiteDirewolf);
+this.calculateCosts(this.Const.World.Spawn.LegendRedbackSpider);
+this.calculateCosts(this.Const.World.Spawn.LegendDemonAlp);
+this.calculateCosts(this.Const.World.Spawn.LegendStollwurm);
+this.calculateCosts(this.Const.World.Spawn.LegendGreenwoodSchrat);
 

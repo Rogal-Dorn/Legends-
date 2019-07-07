@@ -12,6 +12,11 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Flags.set("EnemyType", _t);
 	}
 
+	function getBanner()
+	{
+		return "ui/banners/factions/banner_legend_s";
+	}
+
 	function create()
 	{
 		this.contract.create();
@@ -541,7 +546,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 	{
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (!bro.getSkills().hasSkill(this.m.Perk))
+			if (bro.getSkills().hasSkill(this.m.Perk))
 			{
 				return true
 			}
