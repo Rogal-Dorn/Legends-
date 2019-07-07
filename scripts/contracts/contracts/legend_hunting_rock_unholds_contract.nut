@@ -18,6 +18,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Type = "contract.legend_hunting_rock_unholds";
 		this.m.Name = "Hunting a Mountain (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DifficultyMult = 4.0;
 	}
 
 	function onImportIntro()

@@ -13,6 +13,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.m.Type = "contract.legend_hunting_greenwood_schrats";
 		this.m.Name = "The Heart of the Woods (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DifficultyMult = 4.0;
 	}
 
 	function onImportIntro()

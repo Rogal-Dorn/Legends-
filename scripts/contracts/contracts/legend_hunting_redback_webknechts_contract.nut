@@ -13,6 +13,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		this.m.Type = "contract.legend_hunting_redback_webknechts";
 		this.m.Name = "Hunting Redback Webknechts (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DifficultyMult = 4.0;
 	}
 
 	function onImportIntro()
