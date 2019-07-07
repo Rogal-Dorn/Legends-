@@ -210,7 +210,11 @@ this.data_helper <- {
 		};
 		this.addFlagsToUIData(_entity, _activeEntity, result.flags);
 		this.addCharacterToUIData(_entity, result.character);
-		result.perkTree = _entity.getBackground().getPerkTree();
+		local bg = _entity.getBackground();
+		if (bg != null)
+		{
+			result.perkTree = _entity.getBackground().getPerkTree();
+		}
 		this.addStatsToUIData(_entity, result.stats);
 		local skills = _entity.getSkills();
 		this.addSkillsToUIData(skills.querySortedByItems(this.Const.SkillType.Active), result.activeSkills);
