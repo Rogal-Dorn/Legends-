@@ -4,4 +4,5 @@
 	o.m.PossibleSkills.push("actives.legend_skin_ghoul_claws");
 	o.m.PossibleSkills.push("actives.legend_white_wolf_bite");
 	o.m.PossibleSkills.push("actives.legend_redback_spider_bite");
+	o.m.PossibleSkills.push("actives.legend_great_slash");
 });
