@@ -1151,3 +1151,8 @@ Fixes Specialist Staff skill perk.
 Fixes Sling Mastery perk (accuracy with distance just kept increases)
 Fixes Rock Unhold not repairing armor each turn
 
+https://drive.google.com/open?id=19effkSAgxnxc6uGOdMDZkz_F7BxAbJFy
+
+
+Beta12 Test 11
+*Fixes Matching set perk
