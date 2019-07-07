@@ -163,11 +163,6 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/boar_spear"
 			},
 			{
-				R = 30,
-				P = 1.0,
-				S = "weapons/boar_spear"
-			},
-			{
 				R = 50,
 				P = 1.0,
 				S = "weapons/fighting_spear"
@@ -321,6 +316,21 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 60,
 				P = 1.0,
 				S = "weapons/two_handed_hammer"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "weapons/legend_glaive"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/legend_battle_glaive"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/legend_swordstaff"
 			}
 		];
 

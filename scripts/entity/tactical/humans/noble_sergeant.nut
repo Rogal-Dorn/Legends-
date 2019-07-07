@@ -97,7 +97,7 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
-		local r = this.Math.rand(1, 5);
+		local r = this.Math.rand(1, 7);
 
 		if (r == 1)
 		{
@@ -118,6 +118,14 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 		else if (r == 5)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
+		}
+		else if (r == 6)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_battle_glaive"));
+		}
+		else if (r == 7)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_swordstaff"));
 		}
 
 		r = this.Math.rand(1, 2);

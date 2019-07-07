@@ -53,6 +53,8 @@ this.militia_veteran <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/boar_spear",
 				"weapons/falchion",
 				"weapons/shortsword"
+				"weapons/legend_militia_glaive",
+				"weapons/legend_glaive",
 			];
 
 			if (this.Const.DLC.Unhold)

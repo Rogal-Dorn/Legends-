@@ -41,7 +41,7 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 5);
+		local r = this.Math.rand(1, 6);
 
 		if (r == 1)
 		{
@@ -62,6 +62,10 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 		else if (r == 5)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
+		}
+		else if (r == 6)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
 		}
 
 		this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));

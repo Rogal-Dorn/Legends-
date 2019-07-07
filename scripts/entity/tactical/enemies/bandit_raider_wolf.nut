@@ -13,7 +13,7 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(0, 8);
+		local r = this.Math.rand(0, 9);
 
 		if (r <= 1)
 		{
@@ -65,6 +65,10 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 			else if (r == 8)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/flail"));
+			}
+			else if (r == 9)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
 			}
 
 			if (this.Math.rand(1, 100) <= 75)

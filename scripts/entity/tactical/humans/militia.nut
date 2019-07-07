@@ -42,7 +42,7 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(0, 10);
+		local r = this.Math.rand(0, 11);
 
 		if (r <= 1)
 		{
@@ -138,6 +138,10 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 10)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+			}
+			else if (r == 11)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_militia_glaive"));
 			}
 
 			if (this.Math.rand(1, 100) <= 25)

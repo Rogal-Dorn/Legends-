@@ -30,7 +30,7 @@ this.caravan_hand <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 8);
+		local r = this.Math.rand(1, 9);
 
 		if (r == 1)
 		{
@@ -63,6 +63,10 @@ this.caravan_hand <- this.inherit("scripts/entity/tactical/human", {
 		else if (r == 8)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
+		}
+		else if (r == 9)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_militia_glaive"));
 		}
 
 		if (this.Math.rand(1, 100) <= 33)

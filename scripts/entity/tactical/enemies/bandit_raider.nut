@@ -150,7 +150,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			r = this.Math.rand(2, 10);
+			r = this.Math.rand(2, 11);
 
 			if (r == 2)
 			{
@@ -187,6 +187,10 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 10)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/military_pick"));
+			}
+			else if (r == 11)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
 			}
 
 			if (this.Math.rand(1, 100) <= 75)

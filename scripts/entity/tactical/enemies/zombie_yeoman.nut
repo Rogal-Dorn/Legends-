@@ -44,7 +44,7 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 	function assignRandomEquipment()
 	{
 		local r;
-		r = this.Math.rand(1, 6);
+		r = this.Math.rand(1, 7);
 
 		if (r == 1)
 		{
@@ -69,6 +69,10 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		else if (r == 6)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
+		}
+		else if (r == 7)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_militia_glaive"));
 		}
 
 		r = this.Math.rand(1, 5);
