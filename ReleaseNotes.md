@@ -1170,4 +1170,4 @@ Beta12 Test 11
 *Second wind becomes "Fully refresh your fatigue when falling below 50% health" 
 *Adds 'Freedom of Movement' perk that gives damage reduction as your oppontent tires. Added to Light Armor tree
 *Fast tree gains anticipation but loses dodge, light armor tree loses anticipation. 
-
+*Fixes crash when fighting master archers 
