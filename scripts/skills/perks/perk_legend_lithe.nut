@@ -67,7 +67,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 		}
 
 		fat = this.Math.min(0, fat + 30);
-		local ret = this.Math.minf(1.0, 1.0 - 0.8 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
+		local ret = this.Math.minf(1.0, 1.0 - 0.2 + this.Math.pow(this.Math.abs(fat), 1.1) * 0.01);
 		return ret;
 	}
 

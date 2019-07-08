@@ -15,7 +15,10 @@ this.perk_legend_clarity<- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		if (!actor.getSkills().hasSkill("perk.berserk"))
+		{
 		_properties.ActionPoints += 1;
+		}
 	}
 
 });
