@@ -2267,11 +2267,20 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_terrifying_visage",
-		Script = "scripts/skills/perks/legend_terrifying_visage",
+		Script = "scripts/skills/perks/perk_legend_terrifying_visage",
 		Name = this.Const.Strings.PerkName.LegendTerrifyingVisage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTerrifyingVisage,
 		Icon = "ui/perks/perk_21.png",
 		IconDisabled = "ui/perks/perk_21_bw.png",
+		Const = "LegendTerrifyingVisage"
+	},
+	{
+		ID = "perk.legend_freedom_of_movement",
+		Script = "scripts/skills/perks/perk_legend_freedom_of_movement",
+		Name = this.Const.Strings.PerkName.LegendFreedomOfMovement,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFreedomOfMovement,
+		Icon = "ui/perks/freedom_of_movement_circle.png",
+		IconDisabled = "ui/perks/freedom_of_movement_circle_bw.png",
 		Const = "LegendTerrifyingVisage"
 	}
 ];

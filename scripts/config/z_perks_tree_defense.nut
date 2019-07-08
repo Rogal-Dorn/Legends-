@@ -12,10 +12,10 @@ gt.Const.Perks.ShieldTree <- {
 	],
 	Tree = [
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.ShieldBash],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldPush],
 		[gt.Const.Perks.PerkDefs.ShieldExpert],
-		[gt.Const.Perks.PerkDefs.ShieldBash],
+		[],
 		[],
 		[]
 	]
@@ -61,15 +61,12 @@ gt.Const.Perks.LightArmorTree <- {
 	],
 	Tree = [
 		[],
-		[
-			gt.Const.Perks.PerkDefs.Anticipation,
-			gt.Const.Perks.PerkDefs.Dodge
-		],
+		[gt.Const.Perks.PerkDefs.Dodge],
 		[],
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.Nimble],
-		[] //gt.Const.Perks.PerkDefs.
+		[gt.Const.Perks.PerkDefs.LegendFreedomOfMovement] 
 	]
 };
 

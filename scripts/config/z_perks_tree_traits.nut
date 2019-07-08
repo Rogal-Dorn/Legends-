@@ -261,11 +261,11 @@ gt.Const.Perks.SturdyTree <- {
 	],
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.Stalwart],
+		[gt.Const.Perks.PerkDefs.LegendComposure],
 		[gt.Const.Perks.PerkDefs.Steadfast],
 		[],
+		[gt.Const.Perks.PerkDefs.Stalwart],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendComposure],
 		[]
 	]
 };
@@ -285,9 +285,9 @@ gt.Const.Perks.FitTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.Relentless],
 		[],
-		[gt.Const.Perks.PerkDefs.Rebound],
 		[],
-		[]
+		[],
+		[gt.Const.Perks.PerkDefs.Rebound]
 	]
 };
 
