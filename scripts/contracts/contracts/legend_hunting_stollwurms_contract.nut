@@ -29,12 +29,12 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 
 	function start()
 	{
-		this.m.Payment.Pool = 8000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1600 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 10)
 		{
-			this.m.Payment.Completion = 0.75;
-			this.m.Payment.Advance = 0.25;
+			this.m.Payment.Completion = 0.9;
+			this.m.Payment.Advance = 0.1;
 		}
 		else
 		{

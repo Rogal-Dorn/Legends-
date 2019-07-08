@@ -28,12 +28,12 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 
 	function start()
 	{
-		this.m.Payment.Pool = 6500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1300 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 10)
 		{
-			this.m.Payment.Completion = 0.75;
-			this.m.Payment.Advance = 0.25;
+			this.m.Payment.Completion = 0.9;
+			this.m.Payment.Advance = 0.1;
 		}
 		else
 		{
@@ -172,7 +172,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_68.png[/img]{The height of %employer%\'s keep gives an impressive view of the surrounding country. From up here you could imagine yourself as lord of all you survey. Unfortunately, all you survey is not worth much. The people below you look haggard and sleep deprived. They shamble along like walking corpses, between burned out houses and blackened fields. A woman is howling in the distance, holding charred remains in a small blanket. %employer% joins you at the bannister and sighs heavily at the sight before you. He looks across the horizon for a time, like a stern man thinking through intense emotions. At last he speaks, a deep gruff voice in soft low tones. %SPEECH_ON% You look upon my father\'s lands. He carved this keep out of the raw earth, raised up a whole town for his kin. Then the night terrors came, in blood and fire they destroyed his dream. When he fought back, they destroyed him too.%SPEECH_OFF% The pain is obvious on %employer%\'s face, but he turns away from the thought and towards you with iron determination. %SPEECH_ON% So, dream hunter, your arrival here so soon after the demons must not be a coincidence. I suppose you must have tracked the terrors here, in search of coin no doubt? Well, you shall have it. %SPEECH_OFF% His huge hand slaps you on the shoulder and he smiles as if finding dark humour in the situation. %SPEECH_ON% The nightmares have taken so much from me already, it seems only fitting that the rest should be taken by a dream hunter. If you return with a demon head, I will empty my coffers to you.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_68.png[/img]{The height of %employer%\'s keep gives an impressive view of the surrounding country. From up here you could imagine yourself as lord of all you survey. Unfortunately, all you survey is not worth much. The people below you look haggard and sleep deprived. They shamble along like walking corpses, between burned out houses and blackened fields. A woman is howling in the distance, holding charred remains in a small blanket. %employer% joins you at the bannister and sighs heavily at the sight before you. He looks across the horizon for a time, like a stern man thinking through intense emotions. At last he speaks, a deep gruff voice in soft low tones. %SPEECH_ON%You look upon my father\'s lands. He carved this keep out of the raw earth, raised up a whole town for his kin. Then the night terrors came, in blood and fire they destroyed his dream. When he fought back, they destroyed him too.%SPEECH_OFF%The pain is obvious on %employer%\'s face, but he turns away from the thought and towards you with iron determination. %SPEECH_ON%So, dream hunter, your arrival here so soon after the demons must not be a coincidence. I suppose you must have tracked the terrors here, in search of coin no doubt? Well, you shall have it. %SPEECH_OFF% His huge hand slaps you on the shoulder and he smiles as if finding dark humour in the situation. %SPEECH_ON% The nightmares have taken so much from me already, it seems only fitting that the rest should be taken by a dream hunter. If you return with a demon head, I will empty my coffers to you.%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -234,7 +234,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 						p.Entities = [];
 						p.Music = this.Const.Music.BeastsTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.LegendDemonAlps, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.LegendDemonAlp, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
