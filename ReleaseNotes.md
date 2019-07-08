@@ -1160,3 +1160,6 @@ Beta12 Test 11
 *adds images for legendary contracts 
 *Fixes missing berserker tattoo brush
 *Fixes character screen crash on hexen escort battles.
+*Fixes contract spelling and grammar, lowers payout, reduces chance and size of upfront payments. 
+*Adds Inspiring presence to inspirational tree, instead of assured conquest
+*Rabble lose True Believer, instead gaining Coerced, that gives them true believer and a resolve buff whenever there is a bandit on the field, they lose resolve when there are no bandits. Rabble no longer spawn without bandits. 
