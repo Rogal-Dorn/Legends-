@@ -16,7 +16,6 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Beards = null;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
 		}
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
