@@ -133,7 +133,7 @@ gt.Const.Perks.InspirationalTree <- {
 		[gt.Const.Perks.PerkDefs.Taunt],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendAssuredConquest],
+		[gt.Const.Perks.PerkDefs.InspiringPresence],
 		[gt.Const.Perks.PerkDefs.Inspire]
 	]
 };
