@@ -33,12 +33,16 @@ this.legend_shovel <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
+		local b = this.new("scripts/skills/actives/bash");
+		b.m.Icon = "skills/shovel_bash.png";
+		b.m.IconDisabled = "skills/shovel_bash_bw.png";
+		this.addSkill(b);
 	}
 
 	function onUpdateProperties( _properties )
 	{
 		this.weapon.onUpdateProperties(_properties);
+		_properties.HitChance[this.Const.BodyPart.Head] += 5;
 	}
 
 });
