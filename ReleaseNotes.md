@@ -1177,5 +1177,5 @@ Beta12 Test 11
 *Fixes enemies with greatswords not having a single target attack 
 *Fixes missing berserker tattoo brush
 *Fixes character screen crash on hexen escort battles.
-
+*Fixes party start having 0 resources 
 
