@@ -77,6 +77,8 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
+			r = this.Math.rand(1, 7);
+			
 			if (r == 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
@@ -84,6 +86,10 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 3)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
+			}
+			else if (r == 1)
+			{
+				this.m.Items.equip(this.new("scripts/items/weaponslegend_glaive"));
 			}
 			else if (r == 4)
 			{

@@ -98,6 +98,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/fighting_axe",
 				"weapons/warhammer",
 				"weapons/boar_spear",
+				"weapons/legend_glaive",
 				"weapons/winged_mace",
 				"weapons/arming_sword",
 				"weapons/military_cleaver"
@@ -108,6 +109,8 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				weapons.extend([
 					"weapons/greatsword",
 					"weapons/greataxe",
+					"weapons/legend_swordstaff",
+					"weapons/legend_bastardsword",
 					"weapons/warbrand"
 				]);
 			}

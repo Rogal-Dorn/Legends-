@@ -72,7 +72,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 12);
+		local r = this.Math.rand(1, 13);
 
 		if (r == 1)
 		{
@@ -152,6 +152,10 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 12)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
+			}
+			else if (r == 13)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_militia_glaive"));
 			}
 
 

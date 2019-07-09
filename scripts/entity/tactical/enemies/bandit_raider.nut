@@ -83,7 +83,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (this.Const.DLC.Unhold)
 			{
-				r = this.Math.rand(0, 8);
+				r = this.Math.rand(0, 9);
 
 				if (r == 0)
 				{
@@ -121,6 +121,10 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/longsword"));
 				}
+				else if (r == 9)
+				{
+					this.m.Items.equip(this.new("scripts/items/weapons/legend_bastardsword"));
+				}
 			}
 			else
 			{
@@ -150,7 +154,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			r = this.Math.rand(2, 10);
+			r = this.Math.rand(2, 11);
 
 			if (r == 2)
 			{
@@ -187,6 +191,10 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 10)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/military_pick"));
+			}
+			else if (r == 11)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
 			}
 
 			if (this.Math.rand(1, 100) <= 75)

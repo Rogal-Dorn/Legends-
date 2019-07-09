@@ -1155,19 +1155,27 @@ https://drive.google.com/open?id=19effkSAgxnxc6uGOdMDZkz_F7BxAbJFy
 
 
 Beta12 Test 11
+*The new legendary contracts will spawn correctly with new graphics 
+*Fixes to legendary contracts not completing, spelling, grammar, new text, lowers payouts, reduces chance and size of upfront payments. 
+*Adds Forest wraith's Bastard Sword, Battle Glaive, Glaive, Militia Glaive, Swordstaff, Mage swordstaff, named bastard sword, named Glaive, named swordstaff.
+*The new weapons can be found in weaponsmiths and on bandits, mercenaries, militia and nobles. 
+*Goblin spear and named goblin spears buffed. 
+*Rabble lose True Believer, instead gaining Coerced, that gives them true believer and a resolve buff whenever there is a bandit on the field, they lose resolve when there are no bandits. Rabble no longer spawn without bandits. 
+*Adds 'Freedom of Movement' perk that gives damage reduction as your oppontent tires. Added to Light Armor tree
+*Chains can flail and lash at a range of 3, but with -10 chance to hit 
+*Lithe damage reduction reduced significantly
+*Last stand becomes "Gain 1 Melee and ranged defense for each 1% of missing health below 50% health."
+*Second wind becomes "Fully refresh your fatigue when falling below 50% health"
+*Clarity now only works if you don't have berserk 
+*Adds Inspiring presence to inspirational tree, instead of assured conquest
+*Fast tree gains anticipation but loses dodge, light armor tree loses anticipation. 
+*Composure and stalwart swap places in sturdy tree
+*Rebound becomes T7 perk
+*Shield bash becomes T2 perk 
+*Fixes crash when fighting master archers 
 *Fixes Matching set perk
 *Fixes enemies with greatswords not having a single target attack 
 *Fixes missing berserker tattoo brush
 *Fixes character screen crash on hexen escort battles.
-*Adds images for legendary contracts and title screen 
-*Fixes contract spelling and grammar, lowers payout, reduces chance and size of upfront payments. 
-*Adds Inspiring presence to inspirational tree, instead of assured conquest
-*Rabble lose True Believer, instead gaining Coerced, that gives them true believer and a resolve buff whenever there is a bandit on the field, they lose resolve when there are no bandits. Rabble no longer spawn without bandits. 
-*Composure and stalwart swap places in sturdy tree
-*Rebound becomes T7 
-*Shield bash becomes T2 
-*Last stand becomes "Gain 1 Melee and ranged defense for each 1% of missing health below 50% health."
-*Second wind becomes "Fully refresh your fatigue when falling below 50% health" 
-*Adds 'Freedom of Movement' perk that gives damage reduction as your oppontent tires. Added to Light Armor tree
-*Fast tree gains anticipation but loses dodge, light armor tree loses anticipation. 
-*Fixes crash when fighting master archers 
+
+
