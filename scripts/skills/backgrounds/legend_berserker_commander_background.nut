@@ -96,7 +96,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Steadfast,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.BloodyHarvest
+				this.Const.Perks.PerkDefs.BloodyHarvest,
+				this.Const.Perks.PerkDefs.LegendBackToBasics,
+				this.Const.Perks.PerkDefs.LegendAlert
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -106,6 +108,8 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
+				this.Const.Perks.PerkDefs.LegendSmackdown,
+				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.LegendKick,
 				this.Const.Perks.PerkDefs.LegendRoster2
 			],
@@ -114,6 +118,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Debilitate,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
@@ -162,6 +167,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
+				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendBerserkerRage,
 				//this.Const.Perks.PerkDefs.LegendInfectiousRage,
 				this.Const.Perks.PerkDefs.LegendUberNimble,
