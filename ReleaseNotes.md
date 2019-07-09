@@ -1183,6 +1183,7 @@ Beta 12 Test 12
 Adds new perk "Onslaught" that provides a 50% chance to apply on any attack where your initiative and fatigue are higher than your opponent's. added to the mace group 
 Smackdown changed to 50% chance to knockback when your hitpoints and fatigue are higher than your opponent
 Fixes "Bloodbath" not showing up in the cleaver group 
+Glaives now have unique skill icons for each ability 
 Staff bash and staff daze now have unique skill icons for each staff
 Fixes Graveman skill not granting knock out 
 Fixes buckler bash being used as attack of opportunity
