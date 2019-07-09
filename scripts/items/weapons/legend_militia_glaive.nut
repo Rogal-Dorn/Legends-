@@ -29,8 +29,16 @@ this.legend_militia_glaive <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_glaive_slash"));
-		this.addSkill(this.new("scripts/skills/actives/spearwall"));
+		local s = this.new("scripts/skills/actives/legend_militia_slash");
+		s.m.Icon = "skills/glaive_militia_slash.png";
+		s.m.IconDisabled = "skills/glaive_militia_slash_bw.png";
+		this.addSkill(s);
+
+	
+		local t = this.new("scripts/skills/actives/spearwall");
+		t.m.Icon = "skills/glaive_spearwall.png";
+		t.m.IconDisabled = "skills/glaive_spearwall_bw.png";
+		this.addSkill(t);
 	}
 
 	function onUpdateProperties( _properties )
