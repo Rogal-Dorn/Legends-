@@ -1180,27 +1180,25 @@ Beta12 Test 11
 *Fixes party start having 0 resources 
 
 Beta 12 Test 12
-Adds new perk "Onslaught" that provides a 50% chance to apply on any attack where your initiative and fatigue are higher than your opponent's. added to the mace group 
+Adds new perk "Onslaught" that provides a 50% chance to apply daze on any attack where your initiative and fatigue are higher than your opponent's. added to the mace group 
+Adds new perk "Back to Basics" that provides fleeing characters a chance to rally when hit, equal to half their resolve. Added to Trained Group in place of Hold Out
 Smackdown changed to 50% chance to knockback when your hitpoints and fatigue are higher than your opponent
-Fixes "Bloodbath" not showing up in the cleaver group 
 Glaives now have unique skill icons for each ability 
 Staff bash and staff daze now have unique skill icons for each staff
-Fixes Graveman skill not granting knock out 
-Fixes buckler bash being used as attack of opportunity
-Adds new perk "Back to Basics" that provides fleeing characters a chance to rally when hit, equal to half their resolve. Added to Trained Group in place of Hold Out. 
 Berserker gains Back to Basics, Alert, Smackdown, Feint, Onslaught and Freedom of Movement
 Berserker in party start gets unarmed skills
 Crusader gains Back to Basics, Feint, Smackdown and Onslaught
 Noble gains Back to Basics, Feint, Clarity, Onslaught, Lithe, Matching Set and Balance
 Ranger gains Back to Basics, Alert, Feint, Onslaught, Lithe, Matching Set, Balance and Freedom of Movement
 Seer gains Alert and Clarity 
-Warlock gains True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Evasion, Vengeance, Camoflouge, Field Triage
+Warlock gains Bloodbath, True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Evasion, Vengeance, Camoflouge, Field Triage
 Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Reach Advantage, Underdog, Footwork. 
 Undead minions heal at 10% the usual rate and are effected by injuries, they are no longer upset by sacrifices 
 Deathly spectre returned to 90% chance from 66%
- 
-
-Gruesome feast is now t7, miasma is t7, insects is t6 
-Close Cambat Archer is now T7 
-
+Gruesome feast is now t7, miasma is t7, insect swarm is t6 
+Close Combat Archer is now T7 
+Fixes "Bloodbath" not showing up in the cleaver group 
+Fixes Graveman skill not granting knock out 
+Fixes buckler bash being used as attack of opportunity. 
+Fixes gravediggers and graverobbers not having Ressurectionist 
 
