@@ -119,6 +119,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendSleep,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendTeleport,
 				this.Const.Perks.PerkDefs.LegendFirefield
 				

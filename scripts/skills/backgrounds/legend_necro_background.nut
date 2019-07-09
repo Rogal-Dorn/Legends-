@@ -68,14 +68,15 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.LegendWither,
 				this.Const.Perks.PerkDefs.LegendSpawnZombieLow,
-				this.Const.Perks.PerkDefs.LegendSpawnSkeletonLow
+				this.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
+				this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill
 			],
 			[
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.LegendWither,
 				this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendRust,
 				this.Const.Perks.PerkDefs.LegendBloodbath,
@@ -83,9 +84,11 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			[
 				this.Const.Perks.PerkDefs.Backstabber,
-				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.Debilitate,
 				this.Const.Perks.PerkDefs.LegendDeathtouch,
 				this.Const.Perks.PerkDefs.Lookout,
+				this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
+				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 				this.Const.Perks.PerkDefs.LegendExtendendAura		
 			],
 			[
@@ -93,6 +96,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.SpecMace,
 				this.Const.Perks.PerkDefs.SpecCleaver,
 				this.Const.Perks.PerkDefs.SpecThrowing,
+				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
 				this.Const.Perks.PerkDefs.LegendSpawnSkeletonMed
@@ -100,27 +104,33 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
-				this.Const.Perks.PerkDefs.Underdog,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendGruesomeFeast,
+				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendReclamation,
+				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
+				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendConservation
 			],
 			[
-				this.Const.Perks.PerkDefs.HeadHunter,
-				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendMiasma,
+				this.Const.Perks.PerkDefs.LegendClarity,
+				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.LegendHex,
+				this.Const.Perks.PerkDefs.LegendInsects,
+				this.Const.Perks.PerkDefs.LegendVengeance,
 				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendChanneledPower,
 				this.Const.Perks.PerkDefs.LegendPossession
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.LegendInsects,
-				this.Const.Perks.PerkDefs.LegendDarkflight,
 				this.Const.Perks.PerkDefs.PerfectFocus,
+				this.Const.Perks.PerkDefs.LegendGruesomeFeast,
+				this.Const.Perks.PerkDefs.LastStand,
+				this.Const.Perks.PerkDefs.LegendEvasion,
+				this.Const.Perks.PerkDefs.LegendBalance,
+				this.Const.Perks.PerkDefs.LegendMiasma,
+				this.Const.Perks.PerkDefs.LegendDarkflight,
 				this.Const.Perks.PerkDefs.LegendViolentDecomposition,
 				this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
 				this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh

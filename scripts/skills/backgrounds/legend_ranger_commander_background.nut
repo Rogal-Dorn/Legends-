@@ -128,6 +128,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.CloseCombatArcher,
 				this.Const.Perks.PerkDefs.Ballistics,
 				this.Const.Perks.PerkDefs.LegendAmmoBundles,
+				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 				this.Const.Perks.PerkDefs.LegendRoster5		
@@ -139,6 +140,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendCascade,
+				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
@@ -153,6 +155,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 				this.Const.Perks.PerkDefs.LegendEvasion,
+				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendBigGameHunter,

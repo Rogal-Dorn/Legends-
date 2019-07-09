@@ -207,8 +207,8 @@ gt.Const.Perks.ThrowingTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.SpecThrowing],
 		[],
-		[gt.Const.Perks.PerkDefs.CloseCombatArcher],
-		[]
+		[],
+		[gt.Const.Perks.PerkDefs.CloseCombatArcher]
 	]
 };
 
