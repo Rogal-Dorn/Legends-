@@ -229,10 +229,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -259,10 +255,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 17
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -289,10 +281,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -319,10 +307,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 19
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -349,10 +333,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -379,10 +359,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -409,10 +385,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -439,10 +411,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 23
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -469,10 +437,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -575,10 +539,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -613,10 +573,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -651,10 +607,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -719,10 +671,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -757,10 +705,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -812,10 +756,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -880,10 +820,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -910,10 +846,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -948,10 +880,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 1
 			}
 		]
 	},
@@ -969,10 +897,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1007,10 +931,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1045,10 +965,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1075,10 +991,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1113,10 +1025,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1151,10 +1059,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 15
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 3
 			}
 		]
 	},
@@ -1181,10 +1085,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 17
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1211,10 +1111,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1241,10 +1137,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 19
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1271,10 +1163,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1301,10 +1189,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 2
 			}
 		]
 	},
@@ -1318,10 +1202,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 3
 			}
 		]
 	},
@@ -1348,10 +1228,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 3
 			}
 		]
 	},
@@ -1378,10 +1254,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 23
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 3
 			}
 		]
 	},
@@ -1408,10 +1280,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 3
 			}
 		]
 	},
@@ -1425,10 +1293,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 23
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 4
 			}
 		]
 	},
@@ -1442,10 +1306,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 5
 			}
 		]
 	},
@@ -1459,10 +1319,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 6
 			}
 		]
 	},
@@ -1476,10 +1332,6 @@ gt.Const.World.Spawn.Direwolves <- [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 7
 			}
 		]
 	},
@@ -1492,11 +1344,7 @@ gt.Const.World.Spawn.Direwolves <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
-				Num = 19
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 8
+				Num = 21
 			}
 		]
 	},
@@ -1509,11 +1357,7 @@ gt.Const.World.Spawn.Direwolves <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-				Num = 9
+				Num = 22
 			}
 		]
 	},
@@ -1556,6 +1400,414 @@ gt.Const.World.Spawn.Direwolves <- [
 			}
 		]
 	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 27
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 28
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 29
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 30
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 31
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 32
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 33
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 34
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 35
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 36
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 37
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 38
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 39
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 40
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 41
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 42
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 43
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 44
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 45
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 46
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 47
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 48
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 49
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 4
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_werewolf_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
+				Num = 50
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
+				Num = 5
+			}
+		]
+	}
 ];
 gt.Const.World.Spawn.Ghouls <- [
 	{
@@ -4692,33 +4944,7 @@ gt.Const.World.Spawn.Unhold <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 9
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
 				Num = 10
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 10
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
 			}
 		]
 	},
@@ -4736,33 +4962,7 @@ gt.Const.World.Spawn.Unhold <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 11
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
 				Num = 12
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 12
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
 			}
 		]
 	},
@@ -4780,33 +4980,7 @@ gt.Const.World.Spawn.Unhold <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 13
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
 				Num = 14
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 14
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
 			}
 		]
 	},
@@ -4824,46 +4998,7 @@ gt.Const.World.Spawn.Unhold <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 15
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
 				Num = 16
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 16
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 16
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 2
 			}
 		]
 	},
@@ -4873,19 +5008,6 @@ gt.Const.World.Spawn.Unhold <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Unhold,
 				Num = 17
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 17
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 2
 			}
 		]
 	},
@@ -4907,7 +5029,7 @@ gt.Const.World.Spawn.Unhold <- [
 			},
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -4929,7 +5051,7 @@ gt.Const.World.Spawn.Unhold <- [
 			},
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -4951,7 +5073,7 @@ gt.Const.World.Spawn.Unhold <- [
 			},
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -4973,7 +5095,7 @@ gt.Const.World.Spawn.Unhold <- [
 			},
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -4986,7 +5108,7 @@ gt.Const.World.Spawn.Unhold <- [
 			},
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 3
+				Num = 2
 			}
 		]
 	},
@@ -4996,6 +5118,19 @@ gt.Const.World.Spawn.Unhold <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Unhold,
 				Num = 22
+			}
+		]
+	},
+	{
+		Body = "figure_unhold_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Unhold,
+				Num = 22
+			},
+				{
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+				Num = 1
 			}
 		]
 	},
@@ -5009,19 +5144,6 @@ gt.Const.World.Spawn.Unhold <- [
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
 				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_unhold_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Unhold,
-				Num = 22
-			},
-				{
-				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 3
 			}
 		]
 	},
@@ -5043,7 +5165,7 @@ gt.Const.World.Spawn.Unhold <- [
 			},
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 2
+				Num = 1
 			}
 		]
 	},
@@ -5056,7 +5178,7 @@ gt.Const.World.Spawn.Unhold <- [
 			},
 				{
 				Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-				Num = 3
+				Num = 2
 			}
 		]
 	},
@@ -6096,10 +6218,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 1
 			}
 		]
 	},
@@ -6118,10 +6236,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 1
 			}
 		]
 	},
@@ -6140,10 +6254,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 2
 			}
 		]
 	},
@@ -6162,10 +6272,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 11
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 2
 			}
 		]
 	},
@@ -6184,10 +6290,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 2
 			}
 		]
 	},
@@ -6206,10 +6308,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 2
 			}
 		]
 	},
@@ -6228,10 +6326,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 2
 			}
 		]
 	},
@@ -6250,10 +6344,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 15
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 3
 			}
 		]
 	},
@@ -6272,10 +6362,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 3
 			}
 		]
 	},
@@ -6294,10 +6380,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 17
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 3
 			}
 		]
 	},
@@ -6316,10 +6398,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 3
 			}
 		]
 	},
@@ -6338,10 +6416,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 19
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 3
 			}
 		]
 	},
@@ -6360,10 +6434,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 4
 			}
 		]
 	},
@@ -6382,10 +6452,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 4
 			}
 		]
 	},
@@ -6404,10 +6470,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 4
 			}
 		]
 	},
@@ -6417,19 +6479,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 23
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 23
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 4
 			}
 		]
 	},
@@ -6449,10 +6498,6 @@ gt.Const.World.Spawn.Spiders <- [
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 24
 			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 4
-			}
 		]
 	},
 	{
@@ -6461,19 +6506,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 25
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 25
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 5
 			}
 		]
 	},
@@ -6491,33 +6523,7 @@ gt.Const.World.Spawn.Spiders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 26
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 5
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 27
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 27
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 5
 			}
 		]
 	},
@@ -6536,10 +6542,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 28
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 5
 			}
 		]
 	},
@@ -6558,10 +6560,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 29
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 5
 			}
 		]
 	},
@@ -6580,10 +6578,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 30
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 6
 			}
 		]
 	},
@@ -6602,10 +6596,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 31
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 6
 			}
 		]
 	},
@@ -6624,10 +6614,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 32
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 6
 			}
 		]
 	},
@@ -6646,10 +6632,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 33
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 6
 			}
 		]
 	},
@@ -6668,10 +6650,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 34
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 6
 			}
 		]
 	},
@@ -6690,10 +6668,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 35
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 7
 			}
 		]
 	},
@@ -6712,10 +6686,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 36
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 7
 			}
 		]
 	},
@@ -6734,10 +6704,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 37
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 7
 			}
 		]
 	},
@@ -6756,10 +6722,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 38
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 7
 			}
 		]
 	},
@@ -6778,10 +6740,6 @@ gt.Const.World.Spawn.Spiders <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 39
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 7
 			}
 		]
 	},
@@ -6803,7 +6761,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 8
+				Num = 1
 			}
 		]
 	},
@@ -6825,7 +6783,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 8
+				Num = 1
 			}
 		]
 	},
@@ -6847,7 +6805,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 8
+				Num = 1
 			}
 		]
 	},
@@ -6869,7 +6827,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 8
+				Num = 1
 			}
 		]
 	},
@@ -6891,6 +6849,640 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 45
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 45
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 46
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 46
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 47
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 47
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 48
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 48
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 49
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 49
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 50
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 50
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 51
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 51
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 52
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 52
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 53
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 53
+			},
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 54
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 54
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 55
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 55
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 56
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 56
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 57
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 57
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 58
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 58
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 59
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 59
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 60
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 60
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 61
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 61
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 62
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 62
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 64
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 64
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 65
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 65
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 66
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 66
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 67
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 67
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 68
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 68
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 69
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 69
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 70
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 70
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 7
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 71
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 71
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 7
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 72
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 72
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 7
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 74
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 74
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
+				Num = 7
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 75
+			}
+		]
+	},
+	{
+		Body = "figure_spider_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Spider,
+				Num = 75
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 				Num = 8
 			}
 		]
@@ -6900,644 +7492,6 @@ gt.Const.World.Spawn.Spiders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 45
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 45
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 9
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 46
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 46
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 9
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 47
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 47
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 9
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 48
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 48
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 9
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 49
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 49
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 9
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 50
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 50
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 10
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 51
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 51
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 10
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 52
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 52
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 10
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 53
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 53
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 10
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 54
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 54
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 10
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 55
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 55
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 11
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 56
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 56
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 11
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 57
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 57
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 11
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 58
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 58
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 11
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 59
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 59
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 11
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 60
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 60
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 12
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 61
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 61
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 12
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 62
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 62
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 12
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 64
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 64
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 12
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 65
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 65
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 13
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 66
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 66
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 13
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 67
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 67
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 13
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 68
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 68
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 13
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 69
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 69
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 13
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 70
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 70
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 14
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 71
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 71
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 14
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 72
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 72
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 14
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 74
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 74
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 14
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 75
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 75
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 15
-			}
-		]
-	},
-	{
-		Body = "figure_spider_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Spider,
 				Num = 77
 			}
 		]
@@ -7551,7 +7505,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 15
+				Num = 8
 			}
 		]
 	},
@@ -7573,7 +7527,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 15
+				Num = 8
 			}
 		]
 	},
@@ -7595,7 +7549,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 15
+				Num = 8
 			}
 		]
 	},
@@ -7617,7 +7571,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 16
+				Num = 9
 			}
 		]
 	},
@@ -7639,7 +7593,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 16
+				Num = 9
 			}
 		]
 	},
@@ -7661,7 +7615,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 16
+				Num = 9
 			}
 		]
 	},
@@ -7683,7 +7637,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 16
+				Num = 9
 			}
 		]
 	},
@@ -7705,7 +7659,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 16
+				Num = 9
 			}
 		]
 	},
@@ -7727,7 +7681,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 17
+				Num = 10
 			}
 		]
 	},
@@ -7749,7 +7703,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 17
+				Num = 10
 			}
 		]
 	},
@@ -7771,7 +7725,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 17
+				Num = 10
 			}
 		]
 	},
@@ -7793,7 +7747,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 17
+				Num = 10
 			}
 		]
 	},
@@ -7815,7 +7769,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 17
+				Num = 10
 			}
 		]
 	},
@@ -7837,7 +7791,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 18
+				Num = 11
 			}
 		]
 	},
@@ -7859,7 +7813,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 18
+				Num = 11
 			}
 		]
 	},
@@ -7881,7 +7835,7 @@ gt.Const.World.Spawn.Spiders <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-				Num = 18
+				Num = 11
 			}
 		]
 	},
@@ -7899,7 +7853,7 @@ gt.Const.World.Spawn.Spiders <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Spider,
-				Num = 94
+				Num = 91
 			}
 		]
 	},
@@ -8010,33 +7964,7 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 9
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
 			}
 		]
 	},
@@ -8049,38 +7977,13 @@ gt.Const.World.Spawn.Alps <- [
 			}
 		]
 	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
+
 	{
 		Body = "figure_alp_01",
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 11
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 11
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
 			}
 		]
 	},
@@ -8098,55 +8001,17 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 13
 			}
 		]
 	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
+
 	{
 		Body = "figure_alp_01",
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 14
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
 			}
 		]
 	},
@@ -8164,19 +8029,6 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 15
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 16
 			}
 		]
@@ -8186,59 +8038,7 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 17
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 17
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 17
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
 			}
 		]
 	},
@@ -8269,46 +8069,7 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 19
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 19
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 19
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
 			}
 		]
 	},
@@ -8326,59 +8087,7 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 20
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 21
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 21
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
 			}
 		]
 	},
@@ -8396,32 +8105,6 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 22
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 23
 			}
 		]
@@ -8431,72 +8114,7 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 23
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 23
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 24
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 24
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 3
 			}
 		]
 	},
@@ -8506,32 +8124,6 @@ gt.Const.World.Spawn.Alps <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 25
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 25
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_alp_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 25
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-				Num = 2
 			}
 		]
 	},
@@ -8550,6 +8142,214 @@ gt.Const.World.Spawn.Alps <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
 				Num = 27
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 27
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 28
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 29
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 30
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 31
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 32
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 33
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 34
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 35
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 35
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 36
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 37
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 37
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 38
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 39
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 40
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Num = 3
 			}
 		]
 	}
@@ -8663,10 +8463,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8687,10 +8483,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 11
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8711,10 +8503,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8735,10 +8523,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8759,10 +8543,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8783,10 +8563,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 15
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8807,10 +8583,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8831,10 +8603,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 17
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8855,10 +8623,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 18
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -8879,10 +8643,6 @@ gt.Const.World.Spawn.Schrats <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Schrat,
 				Num = 19
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-				Num = 1
 			}
 		]
 	},
@@ -11837,33 +11597,7 @@ gt.Const.World.Spawn.Hexen <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
 				Num = 5
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
 			}
 		]
 	},
@@ -11881,19 +11615,6 @@ gt.Const.World.Spawn.Hexen <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
 				Num = 7
 			}
 		]
@@ -11903,46 +11624,7 @@ gt.Const.World.Spawn.Hexen <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
 				Num = 8
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
 			}
 		]
 	},
@@ -11960,59 +11642,7 @@ gt.Const.World.Spawn.Hexen <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
 				Num = 10
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
 			}
 		]
 	},
@@ -12030,72 +11660,7 @@ gt.Const.World.Spawn.Hexen <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 11
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 11
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
 				Num = 12
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 3
 			}
 		]
 	},
@@ -12113,85 +11678,7 @@ gt.Const.World.Spawn.Hexen <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 3
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
 				Num = 14
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 3
 			}
 		]
 	},
@@ -12201,45 +11688,6 @@ gt.Const.World.Spawn.Hexen <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Hexe,
 				Num = 15
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 1
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 2
-			}
-		]
-	},
-	{
-		Body = "figure_hexe_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Hexe,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-				Num = 3
 			}
 		]
 	},
