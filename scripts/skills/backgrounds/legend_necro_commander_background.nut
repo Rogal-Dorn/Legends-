@@ -87,6 +87,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Gifted,
 				this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendRust,
+				this.Const.Perks.PerkDefs.LegendBloodbath,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendRoster1
 			],

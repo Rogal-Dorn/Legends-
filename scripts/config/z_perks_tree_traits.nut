@@ -191,11 +191,10 @@ gt.Const.Perks.FastTree <- {
 		"is a speedy sprinter"
 	],
 	Tree = [
-		[
-			gt.Const.Perks.PerkDefs.FastAdaption,
+		[gt.Const.Perks.PerkDefs.FastAdaption,
 			gt.Const.Perks.PerkDefs.Adrenalin
 		],
-		[gt.Const.Perks.PerkDefs.Dodge],
+		[gt.Const.Perks.PerkDefs.Anticipation],
 		[],
 		[],
 		[],
@@ -303,8 +302,8 @@ gt.Const.Perks.TrainedTree <- {
 		"has genuine experience"
 	],
 	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendBackToBasics],
 		[],
-		[gt.Const.Perks.PerkDefs.HoldOut],
 		[gt.Const.Perks.PerkDefs.Rotation],
 		[],
 		[gt.Const.Perks.PerkDefs.Underdog],

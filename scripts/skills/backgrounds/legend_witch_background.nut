@@ -89,6 +89,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.LegendAlert,
 				this.Const.Perks.PerkDefs.LegendHorrify
 			],
 			[
@@ -106,6 +107,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			[
 				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.LegendRelax,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.Ballistics

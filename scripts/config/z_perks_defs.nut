@@ -2291,6 +2291,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/onslaught_circle.png",
 		IconDisabled = "ui/perks/onslaught_circle_bw.png",
 		Const = "LegendOnslaught"
+	},
+	{
+		ID = "perk.legend_back_to_basics",
+		Script = "scripts/skills/perks/perk_legend_back_to_basics",
+		Name = this.Const.Strings.PerkName.LegendBackToBasics,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBackToBasics,
+		Icon = "ui/perks/back_to_basics_circle.png",
+		IconDisabled = "ui/perks/back_to_basics_circle_bw.png",
+		Const = "LegendBackToBasics"
 	}
 ];
 

@@ -54,7 +54,8 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.BagsAndBelts
+				this.Const.Perks.PerkDefs.BagsAndBelts,
+				this.Const.Perks.PerkDefs.LegendBackToBasics
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -72,6 +73,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.InspiringPresence,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
@@ -95,6 +97,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
+				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
