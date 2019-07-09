@@ -1301,7 +1301,8 @@ gt.Const.Strings.PerkName <- {
 	LegendAlert = "Alert",
 	LegendBloodbath = "Bloodbath",
 	LegendTerrifyingVisage = "TerrifyingVisage",
-	LegendFreedomOfMovement = "Freedom of Movement"
+	LegendFreedomOfMovement = "Freedom of Movement",
+	LegendOnslaught = "Onslaught"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1576,7 +1577,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendAlert = "Pay close attention at all times, surveying the surroundings and assessing every clue for an insight. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Initiative",
 	LegendBloodbath = "Take joy in the suffering of others, gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Fatigue and Resolve for each bleeding character on the field",
 	LegendTerrifyingVisage = "The mere sight of this character sends enemies fleeing. Reduce resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color] ",
-	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction."
+	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.",
+	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off gaurd. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. "
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

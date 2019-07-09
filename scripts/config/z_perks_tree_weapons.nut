@@ -12,7 +12,7 @@ gt.Const.Perks.MaceTree <- {
 	],
 	Tree = [
 		[],
-		[],//[gt.Const.Perks.PerkDefs.LegendDaze],
+		[gt.Const.Perks.PerkDefs.LegendOnslaught],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecMace],
 		[],
@@ -77,7 +77,7 @@ gt.Const.Perks.CleaverTree <- {
 	],
 	Tree = [
 		[], 
-		[], //gt.Const.Perks.PerkDefs.LegendBloodbath
+		[gt.Const.Perks.PerkDefs.LegendBloodbath],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecCleaver],
 		[],

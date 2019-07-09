@@ -111,6 +111,12 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 		
+		local randomchance = this.Math.rand(1, 100);
+			if (randomchance < 50)
+			{
+			return false;
+			}
+
 		local knockToTile = this.findTileToKnockBackTo(user.getTile(), _targetEntity.getTile());
 
 		if (knockToTile == null)

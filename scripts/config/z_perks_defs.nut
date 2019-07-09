@@ -2282,6 +2282,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/freedom_of_movement_circle.png",
 		IconDisabled = "ui/perks/freedom_of_movement_circle_bw.png",
 		Const = "LegendFreedomOfMovement"
+	},
+	{
+		ID = "perk.legend_onslaught",
+		Script = "scripts/skills/perks/perk_legend_onslaught",
+		Name = this.Const.Strings.PerkName.LegendOnslaught,
+		Tooltip = this.Const.Strings.PerkDescription.LegendOnslaught,
+		Icon = "ui/perks/onslaught_circle.png",
+		IconDisabled = "ui/perks/onslaught_circle_bw.png",
+		Const = "LegendOnslaught"
 	}
 ];
 
