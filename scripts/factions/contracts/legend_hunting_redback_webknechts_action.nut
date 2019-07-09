@@ -12,10 +12,7 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 	function onUpdate( _faction )
 	{
 		
-		this.m.Score = 999
-		return;
-		
-		
+
 		if (!this.Const.DLC.Unhold)
 		{
 			return;

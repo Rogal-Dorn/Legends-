@@ -12,10 +12,7 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 	function onUpdate( _faction )
 	{
 		
-		this.m.Score = 999
-		return;
-		
-		
+
 		if (!this.Const.DLC.Unhold)
 		{
 			return;

@@ -12,10 +12,7 @@ this.legend_hunting_stollwurms_action <- this.inherit("scripts/factions/faction_
 	function onUpdate( _faction )
 	{
 		
-		this.m.Score = 999
-		return;
-		
-		
+
 		if (!this.Const.DLC.Unhold || !this.Const.DLC.Lindwurm)
 		{
 			return;

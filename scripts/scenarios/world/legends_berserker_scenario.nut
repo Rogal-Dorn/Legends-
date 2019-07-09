@@ -33,16 +33,6 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_direwolf"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_ghoul"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_hexen"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_alps"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_unhold"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_lindwurm"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_spider"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_schrat"));
-
-
 		
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);	
