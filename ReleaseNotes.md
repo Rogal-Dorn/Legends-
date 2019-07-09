@@ -1191,10 +1191,12 @@ Adds new perk "Back to Basics" that provides fleeing characters a chance to rall
 Berserker gains Back to Basics, Alert, Smackdown, Feint, Onslaught and Freedom of Movement
 Berserker in party start gets unarmed skills
 Crusader gains Back to Basics, Feint, Smackdown and Onslaught
-Warlock gains Bloodbath
-Noble gains Back to Basics, Feint, Clarity and Onslaught
-Ranger gains Back to Basics, Alert, Feint, Onslaught and Freedom of Movement
-Seer gains alert and clarity 
-
+Noble gains Back to Basics, Feint, Clarity, Onslaught, Lithe, Matching Set and Balance
+Ranger gains Back to Basics, Alert, Feint, Onslaught, Lithe, Matching Set, Balance and Freedom of Movement
+Seer gains Alert and Clarity 
+Warlock gains True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Eveasion, Vengeance, Hidden/Camoflouge
+Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Reach Advantage, Underdog, Footwork. 
+Gruesome feast is now t7, miasma is t7, insects is t6 
+Close Cambat Archer is now T7 
 
 
