@@ -70,22 +70,6 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			this.World.Assets.getStash().add(this.new("scripts/items/supplies/dried_fruits_item"));
 		}
 
-		local randomMoney;
-		randomMoney = this.Math.rand(50, 150) / 100;
-		this.World.Assets.m.Money = this.Math.floor(this.World.Assets.m.Money * randomMoney)
-
-		local randomArmor;
-		randomArmor = this.Math.rand(50, 150) / 100;
-		this.World.Assets.m.ArmorParts = this.Math.floor(this.World.Assets.m.ArmorParts * randomArmor);
-
-		local randomMeds;
-		randomMeds = this.Math.rand(50, 150) / 100;
-		this.World.Assets.m.Medicine = this.Math.floor(this.World.Assets.m.Medicine * randomMeds);
-
-		local randomAmmo;
-		randomAmmo = this.Math.rand(50, 150) / 100;
-		this.World.Assets.m.Medicine = this.Math.floor(this.World.Assets.m.Medicine * randomAmmo);
-
 	}
 
 	function onSpawnPlayer()
