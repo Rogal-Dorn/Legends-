@@ -142,6 +142,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendMiasma,
 				this.Const.Perks.PerkDefs.LegendDarkflight,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendViolentDecomposition,
 				this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
 				this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh,

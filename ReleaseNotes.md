@@ -1194,8 +1194,12 @@ Crusader gains Back to Basics, Feint, Smackdown and Onslaught
 Noble gains Back to Basics, Feint, Clarity, Onslaught, Lithe, Matching Set and Balance
 Ranger gains Back to Basics, Alert, Feint, Onslaught, Lithe, Matching Set, Balance and Freedom of Movement
 Seer gains Alert and Clarity 
-Warlock gains True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Eveasion, Vengeance, Hidden/Camoflouge
+Warlock gains True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Evasion, Vengeance, Camoflouge, Field Triage
 Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Reach Advantage, Underdog, Footwork. 
+Undead minions heal at 10% the usual rate and are effected by injuries, they are no longer upset by sacrifices 
+Deathly spectre returned to 90% chance from 66%
+ 
+
 Gruesome feast is now t7, miasma is t7, insects is t6 
 Close Cambat Archer is now T7 
 
