@@ -1155,7 +1155,7 @@ https://drive.google.com/open?id=19effkSAgxnxc6uGOdMDZkz_F7BxAbJFy
 
 
 Beta12 Test 11
-*The new legendary contracts will spawn correctly with new graphics 
+*The new legendary contracts will spawn correctly after getting the perk, and with new contracts banners 
 *Fixes to legendary contracts not completing, spelling, grammar, new text, lowers payouts, reduces chance and size of upfront payments. 
 *Adds Forest wraith's Bastard Sword, Battle Glaive, Glaive, Militia Glaive, Swordstaff, Mage swordstaff, named bastard sword, named Glaive, named swordstaff.
 *The new weapons can be found in weaponsmiths and on bandits, mercenaries, militia and nobles. 
@@ -1178,4 +1178,14 @@ Beta12 Test 11
 *Fixes missing berserker tattoo brush
 *Fixes character screen crash on hexen escort battles.
 *Fixes party start having 0 resources 
+
+Beta 12 Test 12
+Adds new perk "Onslaught" that provides a 50% chance to apply on any attack where your initiative and fatigue are higher than your opponent's. added to the mace group 
+Smackdown changed to 50% chance to knockback when your hitpoints and fatigue are higher than your opponent
+Fixes "Bloodbath" not showing up in the cleaver group 
+Staff bash and staff daze now have unique skill icons for each staff
+Fixes Graveman skill not granting knock out 
+
+
+
 
