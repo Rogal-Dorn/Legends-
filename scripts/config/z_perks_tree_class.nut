@@ -239,7 +239,7 @@ gt.Const.Perks.ShovelClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistShovelDamage],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendResurrectionist],
 		[],
 		[]
 	]
