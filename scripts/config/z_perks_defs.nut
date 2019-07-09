@@ -2281,7 +2281,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFreedomOfMovement,
 		Icon = "ui/perks/freedom_of_movement_circle.png",
 		IconDisabled = "ui/perks/freedom_of_movement_circle_bw.png",
-		Const = "LegendTerrifyingVisage"
+		Const = "LegendFreedomOfMovement"
 	}
 ];
 
