@@ -130,7 +130,7 @@ this.legend_animated_player_properties <- this.inherit("scripts/skills/skill", {
 		_properties.IsAffectedByNight = false;
 		_properties.IsAffectedByFleeingAllies = false;
 		_properties.IsAffectedByDyingAllies = false;
-		_properties.IsAffectedFreshByInjuries = false;
+		_properties.IsAffectedByFreshInjuries = false;
 		_properties.MoraleEffectMult = 0;
 		_properties.FatigueEffectMult = 0;
 		_properties.HitpointsRecoveryRateMult = 0.1;
