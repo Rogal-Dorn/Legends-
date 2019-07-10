@@ -1191,13 +1191,13 @@ Crusader gains Back to Basics, Feint, Smackdown and Onslaught
 Noble gains Back to Basics, Feint, Clarity, Onslaught, Lithe, Matching Set and Balance
 Ranger gains Back to Basics, Alert, Feint, Onslaught, Lithe, Matching Set, Balance and Freedom of Movement
 Seer gains Alert and Clarity, magic missile does about 20% less damage
-Warlock gains Bloodbath, True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Evasion, Vengeance, Camoflouge, Field Triage, Favoured enemies Civilian, Zombie, Skeleton, Ghoul, Hexen and Alps. 
-Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Hex, Reach Advantage, Underdog, Footwork. 
+Warlock gains Bloodbath, True Believer, Debilitate, Staff mastery, staff spins, staff block, Lithe, Blend in, Clarity, Balance, Camoflouge, Field Triage, Favoured enemies Civilian, Ghoul, Hexen and Alps. 
+Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Hex, Reach Advantage, Underdog, Footwork, Pathfinder, Underdog, QuickHands, Composure,  Rally the troops, Last stand
 Warlock hood now grants +20 hitpoints and increases your morale each time you get hit 
 Warlock cloak now grants +20 hitpoints and grants +10% melee skills, melee defense and ranged defense when at confident morale. 
 Warlock hood and cloak are now craftable using ingredients from alps and hexen 
 Warlock no longer begins with warlock cloak and hood. 
-Undead minions heal at 10% the usual rate and are effected by injuries, they gain 10% experience instead of 33%, they are no longer upset by sacrifices 
+Undead minions heal at 10% the usual rate and are effected by injuries, though not until the end of the battle, they gain 10% experience instead of 33%, they are no longer upset by sacrifices 
 Deathly spectre returned to 90% chance from 66%
 Gruesome feast is now t7, miasma is t7, insect swarm is t6 
 Close Combat Archer is now T7 
@@ -1205,4 +1205,4 @@ Fixes "Bloodbath" not showing up in the cleaver group
 Fixes Graveman skill not granting knock out 
 Fixes buckler bash being used as attack of opportunity. 
 Fixes gravediggers and graverobbers not having Ressurectionist 
-
+Fixes enemies not using Glaives and swordstaves 

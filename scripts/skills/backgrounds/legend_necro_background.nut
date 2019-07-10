@@ -74,10 +74,10 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill
 			],
 			[
+				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendRust,
 				this.Const.Perks.PerkDefs.LegendBloodbath,
 				this.Const.Perks.PerkDefs.LegendMedPackages
@@ -107,27 +107,24 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendReclamation,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendConservation
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendClarity,
-				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.LegendHex,
 				this.Const.Perks.PerkDefs.LegendInsects,
-				this.Const.Perks.PerkDefs.Vengeance,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
 				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendChanneledPower,
 				this.Const.Perks.PerkDefs.LegendPossession
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendGruesomeFeast,
-				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.LegendEvasion,
+				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendMiasma,
 				this.Const.Perks.PerkDefs.LegendDarkflight,
