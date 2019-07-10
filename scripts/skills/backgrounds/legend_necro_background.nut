@@ -216,6 +216,17 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/dark_cowl"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
+		}
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()

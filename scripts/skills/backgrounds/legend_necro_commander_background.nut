@@ -246,7 +246,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/armor/witchhunter_hat"));
+			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
 		}
 
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
