@@ -41,6 +41,20 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 
 	function getBleeders()
 	{
+		if (!("Entities" in this.Tactical))
+		{
+			return 0;
+		}
+		if (this.Tactical.Entities == null)
+		{
+			return 0;
+		}
+		
+		if (!this.Tactical.isActive())
+		{
+			return 0;
+		}
+
 		local bleeders = 0;
 		local actors = this.Tactical.Entities.getAllInstances();
 		foreach( i in actors )

@@ -30,7 +30,7 @@ this.perk_legend_back_to_basics <- this.inherit("scripts/skills/skill", {
 
 		if (!a.getSkills().hasSkill("effects.rallied"))
 			{
-				local difficulty = this.Math.floor(_user.getCurrentProperties().getBravery() * 0.5);
+				local difficulty = this.Math.floor(a.getCurrentProperties().getBravery() * 0.5);
 				local morale = a.getMoraleState();
 
 				if (a.getMoraleState() == this.Const.MoraleState.Fleeing)
