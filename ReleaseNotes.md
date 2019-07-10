@@ -1209,4 +1209,8 @@ Fixes gravediggers and graverobbers not having Ressurectionist
 Fixes enemies not using glaives and swordstaves 
 Fixes Herbalists having woodaxe skills 
 Fixes Clarity not loading, and breaking saves with it taken 
+Fixes error with Cooerce 
+Fixes error with Back to basics not knowing who its user was
+Fixes error with Bloodbath outside combat
+Fixes error with Deathly Spectre not having an icon
 
