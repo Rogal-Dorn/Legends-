@@ -1185,6 +1185,7 @@ Adds new perk "Back to Basics" that provides fleeing characters a chance to rall
 Smackdown changed to 50% chance to knockback when your hitpoints and fatigue are higher than your opponent
 Glaives now have unique skill icons for each ability 
 Staff bash and staff daze now have unique skill icons for each staff
+Chains swap out Lash for Thresh 
 Berserker gains Back to Basics, Alert, Smackdown, Feint, Onslaught and Freedom of Movement
 Berserker in party start gets unarmed skills
 Crusader gains Back to Basics, Feint, Smackdown and Onslaught
@@ -1202,7 +1203,11 @@ Deathly spectre returned to 90% chance from 66%
 Gruesome feast is now t7, miasma is t7, insect swarm is t6 
 Close Combat Archer is now T7 
 Fixes "Bloodbath" not showing up in the cleaver group 
-Fixes Graveman skill not granting knock out 
+Fixes Gravesman skill not granting knock out 
 Fixes buckler bash being used as attack of opportunity. 
 Fixes gravediggers and graverobbers not having Ressurectionist 
-Fixes enemies not using Glaives and swordstaves 
+Fixes enemies not using glaives and swordstaves 
+
+Beta 12 Test 13
+Fixes Herbalists having woodaxe skills 
+
