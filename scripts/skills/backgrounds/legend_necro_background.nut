@@ -116,7 +116,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.LegendHex,
 				this.Const.Perks.PerkDefs.LegendInsects,
-				this.Const.Perks.PerkDefs.LegendVengeance,
+				this.Const.Perks.PerkDefs.Vengeance,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendChanneledPower,

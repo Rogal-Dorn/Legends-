@@ -1374,7 +1374,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getTags().has("PlayerSkeleton") || this.getTags().has("PlayerZombie"))
 		{
-			_xp = _xp * 0.33;
+			_xp = _xp * 0.1;
 		}
 
 	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
