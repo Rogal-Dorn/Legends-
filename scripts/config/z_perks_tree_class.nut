@@ -267,9 +267,9 @@ gt.Const.Perks.SickleClassTree <- {
 		"sickles"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendSpecialistWoodaxeSkill],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistSickleSkill],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendSpecialistWoodaxeDamage],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistSickleDamage],
 		[],
 		[],
 		[],
