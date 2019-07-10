@@ -95,6 +95,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 				this.Const.Perks.PerkDefs.LegendDeathtouch,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.Lookout,
 				this.Const.Perks.PerkDefs.LegendExtendendAura,
 				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
@@ -115,6 +116,9 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 				this.Const.Perks.PerkDefs.LegendReclamation,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendConservation,
@@ -123,10 +127,11 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			[
 				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.LegendHex,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LegendVengeance,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
 				this.Const.Perks.PerkDefs.LegendBrinkOfDeath,
 				this.Const.Perks.PerkDefs.LegendChanneledPower,
 				this.Const.Perks.PerkDefs.LegendPossession,
@@ -232,8 +237,19 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/legend_warlock_cloak"));
-		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));
+		local r;
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/dark_cowl"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/armor/witchhunter_hat"));
+		}
+
+		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
