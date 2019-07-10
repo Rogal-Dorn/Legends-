@@ -1190,9 +1190,13 @@ Berserker in party start gets unarmed skills
 Crusader gains Back to Basics, Feint, Smackdown and Onslaught
 Noble gains Back to Basics, Feint, Clarity, Onslaught, Lithe, Matching Set and Balance
 Ranger gains Back to Basics, Alert, Feint, Onslaught, Lithe, Matching Set, Balance and Freedom of Movement
-Seer gains Alert and Clarity 
-Warlock gains Bloodbath, True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Evasion, Vengeance, Camoflouge, Field Triage
-Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Reach Advantage, Underdog, Footwork. 
+Seer gains Alert and Clarity, magic missile does about 20% less damage
+Warlock gains Bloodbath, True Believer, Debilitate, Staff skills, Lithe, Blend in, Clarity, Balance, Evasion, Vengeance, Camoflouge, Field Triage, Favoured enemies Civilian, Zombie, Skeleton, Ghoul, Hexen and Alps. 
+Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Hex, Reach Advantage, Underdog, Footwork. 
+Warlock hood now grants +20 hitpoints and increases your morale each time you get hit 
+Warloak cloak now grants +20 hitpoints and grants +10% melee skills, melee defense and ranged defense when at confident morale. 
+Warlock hood and cloak are now craftable using ingredients from alps and hexen 
+Warlock no longer begins with warloack cloak and hood. 
 Undead minions heal at 10% the usual rate and are effected by injuries, they are no longer upset by sacrifices 
 Deathly spectre returned to 90% chance from 66%
 Gruesome feast is now t7, miasma is t7, insect swarm is t6 

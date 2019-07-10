@@ -6,8 +6,8 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 	{
 		this.legend_magic_skill.create();
 		this.m.AdditionalAccuracy = 20;
-		this.m.DamageInitiativeMin = 25;
-		this.m.DamageInitiativeMax = 45;
+		this.m.DamageInitiativeMin = 15;
+		this.m.DamageInitiativeMax = 35;
 		this.m.ID = "actives.legend_magic_missile";
 		this.m.Name = "Missile";
 		this.m.Description = "A burst of force, leaping forward into a foe.";

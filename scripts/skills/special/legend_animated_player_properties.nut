@@ -128,12 +128,11 @@ this.legend_animated_player_properties <- this.inherit("scripts/skills/skill", {
 		_properties.IsImmuneToBleeding = true;
 		_properties.IsImmuneToPoison = true;
 		_properties.IsAffectedByNight = false;
-		_properties.IsAffectedByInjuries = false;
-		_properties.IsAffectedByFreshInjuries = false;
 		_properties.IsAffectedByFleeingAllies = false;
 		_properties.IsAffectedByDyingAllies = false;
 		_properties.MoraleEffectMult = 0;
 		_properties.FatigueEffectMult = 0;
+		_properties.HitpointsRecoveryRateMult = 0.1;
 		_properties.MovementFatigueCostMult = 0;
 		_properties.DailyWageMult = 0;
 		_properties.DailyFood = 0;
