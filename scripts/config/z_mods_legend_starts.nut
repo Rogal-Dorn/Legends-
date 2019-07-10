@@ -81,8 +81,8 @@ gt.Const.LegendMod.Starts <- [
         banner = gt.Const.LegendMod.StartTypes.Vala
     },    
     {
-        name = "Necromancer",
-        intro = "[img]gfx/ui/events/event_24.png[/img]That last town was rough... lets not talk about that place anymore. You stop and turn to the corpse beside you, your only companion. I told you to stop talking about that last town already, I know you miss your wife and family, but I told you there are much greater opportunities for you in the afterlife.  Your companion's head lolls slightly to the side as if rolling its eyes at you before finally the tattered neck flesh gives way, and sends the skull rolling off down the valley. Thats the problem with people these days, always giving up, no one seems to have the fortitude to handle whatever death throws at them. Time to hire some new assistants.  ",
+        name = "Warlock",
+        intro = "[img]gfx/ui/events/event_46.png[/img]That last town was rough... lets not talk about that place anymore. You stop and turn to the corpse beside you, your only companion. I told you to stop talking about that last town already, I know you miss your wife and family, but I told you there are much greater opportunities for you in the afterlife.  Your companion's head lolls slightly to the side as if rolling its eyes at you before finally the tattered neck flesh gives way, and sends the skull rolling off down the valley. Thats the problem with people these days, always giving up, no one seems to have the fortitude to handle whatever death throws at them. Time to hire some new assistants.  ",
         description = "Hard.  Blood magic and necromancy. Solo start, 18 max recruits. Grants followers Survivor. Friendly with zombies",
         banner = gt.Const.LegendMod.StartTypes.Necro
     },
