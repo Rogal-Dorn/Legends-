@@ -15,6 +15,7 @@ this.perk_legend_clarity<- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		local actor = this.getContainer().getActor();
 		if (!actor.getSkills().hasSkill("perk.berserk"))
 		{
 		_properties.ActionPoints += 1;

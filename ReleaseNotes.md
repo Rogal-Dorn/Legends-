@@ -1207,7 +1207,6 @@ Fixes Gravesman skill not granting knock out
 Fixes buckler bash being used as attack of opportunity. 
 Fixes gravediggers and graverobbers not having Ressurectionist 
 Fixes enemies not using glaives and swordstaves 
-
-Beta 12 Test 13
 Fixes Herbalists having woodaxe skills 
+Fixes Clarity not loading, and breaking saves with it taken 
 
