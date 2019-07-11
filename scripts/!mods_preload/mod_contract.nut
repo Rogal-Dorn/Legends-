@@ -261,13 +261,13 @@
 
 		foreach( t in p.Troops )
 		{
-	
-			if (!(t.ID in troopMbMap))
+			local key = "Enemy" + t.Type.ID; 
+			if (!(key in troopMbMap))
 			{
-				troopMbMap[t.ID] = this.Const.LegendMod.GetFavEnemyBossChance(troop.ID);
+				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
 			}
 			
-			local mb = troopMbMap[t.ID];
+			local mb = troopMbMap[key];
 
 			if (this.getDifficultyMult() >= 1.45)
 			{
