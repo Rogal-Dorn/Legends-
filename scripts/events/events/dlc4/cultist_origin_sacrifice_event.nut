@@ -84,7 +84,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (skills.hasSkill("special.legend_animated_player_properties"))
+					if (bro.getSkills().hasSkill("special.legend_animated_player_properties"))
 						{
 							continue;
 						}
