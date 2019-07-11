@@ -212,15 +212,16 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	LegendOrcElite = {
 		ID = this.Const.EntityType.LegendOrcElite,
-		Variant = 0,
+		Variant = 1,
 		Strength = 60,
 		Cost = 60,
 		Row = 1,
+		NameList = this.Const.Strings.OrcWarlordNames,
 		Script = "scripts/entity/tactical/enemies/legend_orc_elite"
 	},
 	LegendOrcBehemoth = {
 		ID = this.Const.EntityType.LegendOrcBehemoth,
-		Variant = 0,
+		Variant = 1,
 		Strength = 80,
 		Cost = 80,
 		Row = 1,

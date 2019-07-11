@@ -643,10 +643,6 @@ this.contract <- {
 		{
 			return "ui/icons/difficulty_hard";
 		}
-		else if (this.m.DifficultyMult >= 4.0)
-		{
-			return "ui/icons/difficulty_legend";
-		}
 	}
 
 	function getUIList()
@@ -746,13 +742,6 @@ this.contract <- {
 			{
 				return {
 					Image = "ui/images/difficulty_hard.png",
-					IsProcedural = false
-				};
-			}
-			else if (this.m.DifficultyMult >= 4.0)
-			{
-				return {
-					Image = "ui/images/difficulty_legend.png",
 					IsProcedural = false
 				};
 			}
@@ -1129,114 +1118,6 @@ this.contract <- {
 		}
 
 		return false;
-	}
-
-	function addFootPrintsFromTo( _from, _to, _type, _scale = 0.5 )
-	{
-		local navSettings = this.World.getNavigator().createSettings();
-		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Sneak;
-		navSettings.RoadMult = 1.0;
-		local path = this.World.getNavigator().findPath(_from, _to, navSettings, 0);
-		local left = true;
-		local pos = _from.Pos;
-		local dest = null;
-		local tile = null;
-
-		
-		while (!path.isEmpty())
-		{
-			local dest;
-
-			if (path.isAtWaypoint(pos))
-			{
-				path.pop();
-
-				if (path.isEmpty())
-				{
-					break;
-				}
-				
-			}
-
-			dest = this.World.tileToWorld(path.getCurrent());
-			}
-
-			local tile = this.World.getTile(this.World.worldToTile(pos));
-			local speed = 100.0;
-			speed = speed * this.Const.World.MovementSettings.GlobalMult;
-
-			if (tile.HasRoad)
-			{
-				speed = speed * this.Const.World.MovementSettings.RoadMult;
-			}
-
-			if (!tile.IsOccupied)
-			{
-				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0);
-				left = !left;
-			}
-		}
-	}
-
-	function addUnitsToCombat( _into, _partyList, _resources, _faction )
-	{
-		local total_weight = 0;
-		local potential = [];
-
-		foreach( party in _partyList )
-		{
-			if (party.Cost < _resources * 0.7)
-			{
-				continue;
-			}
-
-			if (party.Cost > _resources)
-			{
-				break;
-			}
-
-			potential.push(party);
-			total_weight = total_weight + party.Cost;
-		}
-
-		local p;
-
-		if (potential.len() == 0)
-		{
-			if (_partyList[_partyList.len() - 1].Cost <= _resources)
-			{
-				p = _partyList[_partyList.len() - 1];
-			}
-			else
-			{
-				p = _partyList[0];
-			}
-		}
-		else
-		{
-			local pick = this.Math.rand(1, total_weight);
-
-			foreach( party in potential )
-			{
-				if (pick <= party.Cost)
-				{
-					p = party;
-					break;
-				}
-
-				pick = pick - party.Cost;
-			}
-		}
-
-		foreach( t in p.Troops )
-		{
-			for( local i = 0; i != t.Num; i = ++i )
-			{
-				local unit = clone t.Type;
-				unit.Faction <- _faction;
-				_into.push(unit);
-			}
-		}
 	}
 
 	function addUnitsToEntity( _entity, _partyList, _resources )
@@ -1839,4 +1720,3 @@ this.contract <- {
 	}
 
 };
-

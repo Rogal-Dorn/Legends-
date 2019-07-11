@@ -405,37 +405,109 @@ gt.Const.LegendMod.SetFavoriteEnemyKill <- function ( _actor, _target )
 }
 
 gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
+{
+	if (_actor == null)
 	{
-		if (_actor == null)
 		{
-			{
-				Kills = 0,
-				Strength = 0,
-				HitChance = 0,
-				HitMult = 0
-			}
-		}
-
-		local kills = 0;
-		local str = 0;
-		foreach (t in _types)
-		{
-			local mKills = 0;
-			local favKey = "Enemy" + t;
-			mKills = _actor.getLifetimeStats().Tags.get(favKey)
-			if (mKills && mKills > 0)
-			{
-				kills += mKills;
-				local troop = this.Const.World.Spawn.TroopsMap[t];
-				str += (mKills * troop.Strength);
-			}
-		}
-		local hitChance = this.Math.floor(this.Math.pow(0.3 * str, 0.5));
-		local hitMult = 1.0 + ((hitChance * 1.0) / 100.0);
-		return {
-			Kills = kills,
-			Strength = str,
-			HitChance = hitChance,
-			HitMult = hitMult
+			Kills = 0,
+			Strength = 0,
+			HitChance = 0,
+			HitMult = 0
 		}
 	}
+
+	local kills = 0;
+	local str = 0;
+	foreach (t in _types)
+	{
+		local mKills = 0;
+		local favKey = "Enemy" + t;
+		mKills = _actor.getLifetimeStats().Tags.get(favKey)
+		if (mKills && mKills > 0)
+		{
+			kills += mKills;
+			local troop = this.Const.World.Spawn.TroopsMap[t];
+			str += (mKills * troop.Strength);
+		}
+	}
+	local hitChance = this.Math.floor(this.Math.pow(0.3 * str, 0.5));
+	local hitMult = 1.0 + ((hitChance * 1.0) / 100.0);
+	return {
+		Kills = kills,
+		Strength = str,
+		HitChance = hitChance,
+		HitMult = hitMult
+	}
+}
+
+gt.Const.LegendMod.FavEnemyPerkMap <- {
+	Enemy1 <- [],
+
+	function getPerks( _id)
+	{
+		local key = "Enemy" + _id;
+		if (!(key in this))
+		{
+			return [];
+		}
+		return this[key];
+	}
+
+	function addPerk( _key, _perk)
+	{
+		local p = this[_key];
+		foreach (perk in p)
+		{
+			if (_perk == perk)
+			{
+				return;
+			}
+		}
+		p.push(_perk);
+	}
+
+	function addEnemies( _enemies, _perk)
+	{
+		foreach (e in _enemies)
+		{
+			local key = "Enemy" + _e;
+			if (!(key in this))
+			{
+				this[key] <- [];
+			}
+			this.addPerk(key, _perk);
+		}
+
+	}
+}
+
+gt.Const.LegendMod.GetFavEnemyBossChance <- function (_id)
+{
+	local perks = this.Const.LegendMod.FavEnemyPerkMap.getPerks(_id)
+	if( perk.len() == 0)
+	{
+		return 0;
+	}
+
+	local bonus = 0;
+	local roster = this.World.getPlayerRoster().getAll();
+	foreach (bro in roster)
+	{
+		foreach (perk in perks)
+		{
+			if (!bro.getSkills().hasSkill(perk))
+			{
+				continue
+			}
+
+			local P = bro.getSkills().getSkillByID(perk)
+			
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, P.m.ValidTypes);
+			bonus += this.Math.floor((stats.Kills * 1.0) / 10.0)
+			break;
+		}
+	}
+	return bonus;
+	
+}
+

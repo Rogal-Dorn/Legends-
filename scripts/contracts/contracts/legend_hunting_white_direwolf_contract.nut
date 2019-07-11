@@ -23,7 +23,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Type = "contract.legend_hunting_white_direwolf";
 		this.m.Name = "Hunting the white wolf (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = 4.0;
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 	}
 
 	function onImportIntro()
