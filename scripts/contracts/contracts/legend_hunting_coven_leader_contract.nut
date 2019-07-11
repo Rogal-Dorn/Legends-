@@ -3,6 +3,7 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 		Target = null,
 		Dude = null,
 		IsPlayerAttacking = true,
+		MinStrength = 300,
 		Perk = "perk.legend_favoured_enemy_hexen",
 		ValidTypes = this.Const.LegendMod.FavoriteHexe		
 	},
@@ -641,17 +642,18 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 	{
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill(this.m.Perk))
+			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				return true
+				continue;
 			}
 
-		//	local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-		//	if (stats.Strength > this.m.MinStrength) {
-		//		return true
-		//	}
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
+			}
 		}
-		return false
+		return false;
 	}
 
 	function onSerialize( _out )

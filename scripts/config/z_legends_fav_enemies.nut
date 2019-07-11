@@ -441,7 +441,7 @@ gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
 }
 
 gt.Const.LegendMod.FavEnemyPerkMap <- {
-	Enemy1 <- [],
+	Enemy1 = []
 
 	function getPerks( _id)
 	{
@@ -468,7 +468,7 @@ gt.Const.LegendMod.FavEnemyPerkMap <- {
 
 	function addEnemies( _enemies, _perk)
 	{
-		foreach (e in _enemies)
+		foreach (_e in _enemies)
 		{
 			local key = "Enemy" + _e;
 			if (!(key in this))
@@ -507,7 +507,6 @@ gt.Const.LegendMod.GetFavEnemyBossChance <- function (_id)
 			break;
 		}
 	}
-	return bonus;
-	
+	return bonus;	
 }
 
