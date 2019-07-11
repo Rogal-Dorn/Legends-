@@ -1214,3 +1214,6 @@ Fixes error with Back to basics not knowing who its user was
 Fixes error with Bloodbath outside combat
 Fixes error with Deathly Spectre not having an icon
 
+Beta 12 Release 13
+
+Fixed perk trees disappearing when bro background is converted to another. When a bro converts to another background he will keep his current tree, and the guarenteed perks from the new background will be added. All spent perks and points will be reset as well.

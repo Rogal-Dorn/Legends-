@@ -629,6 +629,18 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
 	}
 
+	function rebuildPerkTree( _tree )
+	{
+		this.m.CustomPerkTree = _tree
+		if (this.World.Assets.isLegendPerkTrees())
+		{
+			this.m.CustomPerkTree = this.Const.Perks.MergeDynamicPerkTree(_tree, this.m.PerkTreeDynamic);
+		}
+		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
+		this.m.PerkTree = pT.Tree;
+		this.m.PerkTreeMap = pT.Map;
+	}
+
 	function buildPerkTree()
 	{
 		if (this.m.PerkTree != null)

@@ -60,10 +60,13 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Monk.getImagePath());
 				this.Characters.push(_event.m.Flagellant.getImagePath());
 				local background = this.new("scripts/skills/backgrounds/pacified_flagellant_background");
+				local oldPerkTree = _event.m.Flagellant.getBackground().m.CustomPerkTree;
 				_event.m.Flagellant.getSkills().removeByID("background.flagellant");
 				_event.m.Flagellant.getSkills().add(background);
 				_event.m.Flagellant.m.Background = background;
 				background.buildDescription();
+				background.rebuildPerkTree(oldPerkTree);
+				_event.m.Flagellant.resetPerks();
 				this.List = [
 					{
 						id = 13,
@@ -102,10 +105,13 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Monk.getImagePath());
 				this.Characters.push(_event.m.Flagellant.getImagePath());
 				local background = this.new("scripts/skills/backgrounds/monk_turned_flagellant_background");
+				local oldPerkTree = _event.m.Flagellant.getBackground().m.CustomPerkTree;
 				_event.m.Monk.getSkills().removeByID("background.monk");
 				_event.m.Monk.getSkills().add(background);
 				_event.m.Monk.m.Background = background;
 				background.buildDescription();
+				background.rebuildPerkTree(oldPerkTree);
+				_event.m.Monk.resetPerks();
 				this.List = [
 					{
 						id = 13,

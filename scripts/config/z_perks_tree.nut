@@ -297,5 +297,45 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	return tree;
 }
 
+
+
+gt.Const.Perks.isInTree <- function ( _tree, _perk)
+{
+	foreach (row in _tree)
+	{
+		foreach (p in row)
+		{
+			if (p == _perk)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+gt.Const.Perks.MergeDynamicPerkTree <- function (_tree, _map)
+{	
+	foreach (v in _map)
+	{
+		foreach(mT in v)
+		{
+			foreach (i, row in mT.Tree)
+			{
+				foreach(p in row)
+				{
+					if (this.Const.Perks.isInTree(_tree, p))
+					{
+						continue
+					}
+					_tree[i].push(p);
+				}
+			}
+		}
+	}
+
+	return _tree;
+}
+
 gt.Const.Perks.PerksTreeTemplate <- gt.Const.Perks.BuildCustomPerkTree(VanillaTree)
 
