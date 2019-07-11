@@ -29,16 +29,10 @@ this.legend_battle_glaive <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local s = this.new("scripts/skills/actives/legend_glaive_slash");
-		s.m.Icon = "skills/glaive_battle_slash.png";
-		s.m.IconDisabled = "skills/glaive_battle_slash_bw.png";
-		this.addSkill(s);
-
-	
-		local t = this.new("scripts/skills/actives/spearwall");
-		t.m.Icon = "skills/glaive_battle_spearwall.png";
-		t.m.IconDisabled = "skills/glaive_battle_spearwall_bw.png";
-		this.addSkill(t);
+		this.addSkill(this.new("scripts/skills/actives/legend_glaive_slash"));
+		local spearwall = this.new("scripts/skills/actives/spearwall");
+		spearwall.m.BaseAttackName = legend_glaive_slash.getName();
+		this.addSkill(spearwall);
 	}
 
 	function onUpdateProperties( _properties )
