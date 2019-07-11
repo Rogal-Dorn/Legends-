@@ -24,6 +24,12 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 		local myTile = actor.getTile();
 		local myFaction = actor.getFaction();
 		local nearbyEnemies = 0;
+		
+		if (myTile == null)
+		{
+			return 0;
+		}
+
 		if (!("Entities" in this.Tactical))
 		{
 			return 0;
@@ -38,6 +44,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
+
 		local actors = this.Tactical.Entities.getAllInstances();
 		local bonus = 0;
 		foreach( i in actors )
@@ -46,7 +53,12 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 			{
 				if (a.getFaction() == myFaction)
 				{
-					continue
+					continue;
+				}
+
+				if (a.getTile() == null)
+				{
+					continue;
 				}
 
 				if (a.getTile().getDistanceTo(myTile) != 1)
