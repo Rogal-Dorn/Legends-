@@ -137,6 +137,11 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 	}
+
+	function onAdded()
+	{
+		this.Const.LegendMod.FavEnemyPerkMap.addEnemies(this.m.ValidTypes, this.m.ID)
+	}
 	
 });
 

@@ -323,4 +323,42 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 	
 	}
 
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.actor.makeMiniboss();
+		this.getSprite("miniboss").setBrush("bust_miniboss_greenskins");
+		local weapons = [
+			"weapons/named/named_orc_cleaver",
+			"weapons/named/named_orc_axe"
+		];
+		local shields = [
+			"shields/named/named_orc_heavy_shield"
+		];
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			this.m.Items.unequip(this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		}
+		else
+		{
+			this.m.Items.unequip(this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand));
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		}
+
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() != this.Const.Difficulty.Legendary)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+			this.m.Skills.add(this.new("scripts/skills/traits/perk_legend_second_wind"));
+		}
+
+		return true;
+	}
+
 });

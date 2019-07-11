@@ -12,7 +12,7 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 		this.m.Type = "contract.legend_hunting_coven_leader";
 		this.m.Name = "A Cavort with the Coven";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = 4.0;
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 	}
 
 	function getBanner()
