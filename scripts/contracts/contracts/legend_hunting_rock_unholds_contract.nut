@@ -3,7 +3,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		Target = null,
 		Dude = null,
 		IsPlayerAttacking = true,
-		MinStrength = 500,
+		MinStrength = 300,
 		Perk = "perk.legend_favoured_enemy_unhold",
 		ValidTypes = this.Const.LegendMod.FavoriteUnhold		
 	},
@@ -583,17 +583,18 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 	{
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill(this.m.Perk))
+			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				return true
+				continue;
 			}
 
-		//	local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-		//	if (stats.Strength > this.m.MinStrength) {
-		//		return true
-		//	}
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
+			}
 		}
-		return false
+		return false;
 	}
 
 	function onSerialize( _out )

@@ -3,7 +3,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		Target = null,
 		Dude = null,
 		IsPlayerAttacking = true,
-		MinStrength = 500,
+		MinStrength = 200,
 		Perk = "perk.legend_favoured_enemy_direwolf",
 		ValidTypes = this.Const.LegendMod.FavoriteDirewolf
 	},
@@ -546,19 +546,19 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 	{
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill(this.m.Perk))
+			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				return true
+				continue;
 			}
 
-		//	local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-		//	if (stats.Strength > this.m.MinStrength) {
-		//		return true
-		//	}
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
+			}
 		}
-		return false
+		return false;
 	}
-
 
 	function onSerialize( _out )
 	{

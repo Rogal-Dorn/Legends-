@@ -675,17 +675,18 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 	{
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (bro.getSkills().hasSkill(this.m.Perk))
+			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				return true
+				continue;
 			}
 
-		//	local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-		//	if (stats.Strength > this.m.MinStrength) {
-		//		return true
-		//	}
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
+			}
 		}
-		return false
+		return false;
 	}
 
 

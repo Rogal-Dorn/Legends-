@@ -1214,9 +1214,18 @@ Fixes error with Back to basics not knowing who its user was
 Fixes error with Bloodbath outside combat
 Fixes error with Deathly Spectre not having an icon
 
+
 Beta 12 Release 13
 
-Fixed perk trees disappearing when bro background is converted to another. When a bro converts to another background he will keep his current tree, and the guarenteed perks from the new background will be added. All spent perks and points will be reset as well.
-Fixed Hexe cloak typo
-Fix for buckler crashes
-Fixed up the unknown and known perk icons when hiring
+*Fixed perk trees disappearing when bro background is converted to another. When a bro converts to another background he will keep his current tree, and the guarenteed perks from the new background will be added. All spent perks and points will be reset as well.
+*Fixed Hexe cloak typo
+*Fix for buckler crashes
+*Fixed up the unknown and known perk icons when hiring.
+*Adds 4 star contracts.
+*Fixes pay scale on legendary beast contracts.
+*Adds back minimum strength levels for legendary beast contracts to spawn.
+*Each Favorite enemey perk now adds a 1% chance for every 10 kills from that group for an enemy in a party to become a champion/miniboss.
+*Swordstaffs are toned down 
+*Swordstaffs moved from spears to staves.
+
+https://drive.google.com/open?id=1vEchdPD9M5hEMhcrIEyBbV9yXW21DCgL

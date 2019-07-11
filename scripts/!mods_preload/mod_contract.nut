@@ -46,6 +46,7 @@
 		this.createScreens();
 	}
 
+
     o.buildText <- function(_text)
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
@@ -201,7 +202,7 @@
 		return (this.m.PaymentMult + broMult) * (this.m.DifficultyMult * repDiffMult);
 	}
 
-	function addUnitsToEntity = function ( _entity, _partyList, _resources )
+	o.addUnitsToEntity = function ( _entity, _partyList, _resources )
 	{
 		local total_weight = 0;
 		local potential = [];
