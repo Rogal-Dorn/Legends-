@@ -484,7 +484,7 @@ gt.Const.LegendMod.FavEnemyPerkMap <- {
 gt.Const.LegendMod.GetFavEnemyBossChance <- function (_id)
 {
 	local perks = this.Const.LegendMod.FavEnemyPerkMap.getPerks(_id)
-	if( perk.len() == 0)
+	if( perks.len() == 0)
 	{
 		return 0;
 	}
