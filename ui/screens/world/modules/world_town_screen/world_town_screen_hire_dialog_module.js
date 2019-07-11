@@ -485,7 +485,7 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
 
         if(data['IsTryoutDone'])
         {
-            var icon = $('<img src="' + Path.GFX + 'ui/icons/skills.png' + '"/>');
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/known_perks.png' + '"/>');
             icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.KnownPerks, entityId: data.ID });
             this.mDetailsPanel.CharacterTraitsContainer.append(icon);
 
@@ -550,7 +550,7 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
         }
         else
         {
-            var icon = $('<img src="' + Path.GFX + 'ui/icons/warning.png' + '"/>');
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/unknown_perks.png' + '"/>');
             icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.UnknownPerks, entityId: data.ID });
             this.mDetailsPanel.CharacterTraitsContainer.append(icon);
 
@@ -634,7 +634,7 @@ WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
         traitsContainer.empty();
         if(data['IsTryoutDone'])
         {
-            var icon = $('<img src="' + Path.GFX + 'ui/icons/skills.png' + '"/>');
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/known_perks.png' + '"/>');
             icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.KnownPerks, entityId: data.ID});
             traitsContainer.append(icon);
 
@@ -647,7 +647,7 @@ WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
         }
         else
         {
-            var icon = $('<img src="' + Path.GFX + 'ui/icons/warning.png' + '"/>');
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/unknown_perks.png' + '"/>');
             icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.UnknownPerks, entityId: data.ID });
             traitsContainer.append(icon);
 

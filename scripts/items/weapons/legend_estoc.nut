@@ -31,6 +31,7 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
 		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
+		this.addSkill(this.new("scripts/skills/actives/riposte"));
 	}
 
 	function onUpdateProperties( _properties )
