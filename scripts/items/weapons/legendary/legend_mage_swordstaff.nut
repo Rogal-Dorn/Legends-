@@ -6,7 +6,7 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_mage_swordstaff";
 		this.m.Name = "Bladed Magestaff";
 		this.m.Description = "While the nature of its construction remains a myth, this unique mage's staff is permeated with magic";
-		this.m.Categories = "Spear, Two-Handed";
+		this.m.Categories = "Staff, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_swordstaff_01_legendary_01.png";
 		this.m.Icon = "weapons/melee/legend_swordstaff_01_legendary_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
@@ -18,11 +18,11 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmamentIcon = "icon_legend_swordstaff_legendary_01";
 		this.m.Value = 750;
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 70.0;
-		this.m.ConditionMax = 70.0;
+		this.m.Condition = 60.0;
+		this.m.ConditionMax = 60.0;
 		this.m.StaminaModifier = -12;
-		this.m.RegularDamage = 60;
-		this.m.RegularDamageMax = 80;
+		this.m.RegularDamage = 55;
+		this.m.RegularDamageMax = 75;
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ChanceToHitHead = 5;
@@ -31,10 +31,10 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/thrust"));
-		this.addSkill(this.new("scripts/skills/actives/spearwall"));
-		this.addSkill(this.new("scripts/skills/actives/legend_spear_riposte"));
-		this.addSkill(this.new("scripts/skills/actives/legend_spear_lunge_skill"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_thrust"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staffwall"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_riposte"));
+		this.addSkill(this.new("scripts/skills/actives/legend_staff_lunge_skill"));
 	}
 
 });
