@@ -29,9 +29,10 @@ this.goblin_spear <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local thrust = this.new("scripts/skills/actives/legend_glaive_slash");
-		this.addSkill(thrust);
-		this.addSkill(this.new("scripts/skills/actives/spearwall"));
+		this.addSkill(this.new("scripts/skills/actives/legend_glaive_slash"));
+		local spearwall = this.new("scripts/skills/actives/spearwall");
+		spearwall.m.BaseAttackName = legend_glaive_slash.getName();
+		this.addSkill(spearwall);
 	}
 
 });
