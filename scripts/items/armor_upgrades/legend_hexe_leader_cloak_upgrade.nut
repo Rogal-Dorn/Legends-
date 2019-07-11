@@ -27,7 +27,7 @@ this.legend_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/armor_upgra
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]-25%[/color]"
+			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color]"
 		});
 		return result;
 	}
@@ -38,7 +38,7 @@ this.legend_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/armor_upgra
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]-25%[/color]"
+			text = "Reduces any ranged damage to the body by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] and increases resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color]"
 		});
 	}
 
