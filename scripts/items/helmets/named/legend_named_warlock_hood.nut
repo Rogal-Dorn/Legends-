@@ -5,6 +5,7 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/helmets/named/name
 		this.named_helmet.create();
 		this.m.ID = "armor.head.legend_named_warlock_hood";
 		this.m.Description = "A dark hood covering a helmet carved from the bones of the recently deceased. Imbued with the magics of both alps and hexen. Increases your Morale each time you get hit. Also grants +20 hitpoints, beware, you will lose 20 hitpoints when you remove it";
+		this.m.Name = "Warlock hood"
 		this.m.NameList = [
 			"Dead Man\'s Head",
 			"Necromancer\'s Headpiece",
@@ -29,7 +30,7 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/helmets/named/name
 
 	function getTooltip()
 	{
-		local result = this.helmet.getTooltip();
+		local result = this.named_helmet.getTooltip();
 		result.push({
 			id = 6,
 			type = "text",
