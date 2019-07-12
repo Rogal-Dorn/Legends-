@@ -1229,3 +1229,14 @@ Beta 12 Release 13
 *Swordstaffs moved from spears to staves.
 
 https://drive.google.com/open?id=1vEchdPD9M5hEMhcrIEyBbV9yXW21DCgL
+
+
+Beta 12 Release 14
+
+*Fix typo in Favorite enemy tooltip
+*Fix crashes when AI equips glaives and spearstaff
+*Fix last of the known buckler crashes.
+*Fix Camping Tent windows disappearing after reloading a save.
+*Adds names to the new legend beast blueprint items in the taxidermist.
+*Adjust the tryout icons to remove overflow.
+
