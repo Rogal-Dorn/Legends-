@@ -1246,4 +1246,7 @@ Beta 12.1
 *Fixes Ranger nightvision perk.
 *Fixes player world map base image resetting after camping.
 *Fixes spelling errors in typos
+*Fixes cat'o'ninetails flaggelate tooltip range
+*Fixes cat'o'nine not having disarm 
+*Adds new skill icons for flaggelate and ninetails disarm
 
