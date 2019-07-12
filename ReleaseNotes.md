@@ -1249,4 +1249,5 @@ Beta 12.1
 *Fixes cat'o'ninetails flaggelate tooltip range
 *Fixes cat'o'nine not having disarm 
 *Adds new skill icons for flaggelate and ninetails disarm
+*Stops spiders sometimes becoming champions and fights not loading as a result 
 
