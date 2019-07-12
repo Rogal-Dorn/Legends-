@@ -194,9 +194,11 @@ CampScreenCraftingDialogModule.prototype.destroyDIV = function ()
     this.mListContainer.remove();
     this.mListContainer = null;
 
+    this.mQueueScrollContainer.empty();
+    this.mQueueScrollContainer = null;
     this.mQueueContainer.destroyList();
+    this.mQueueContainer.remove();
     this.mQueueContainer= null;
-    this.mQueueScrollContainer= null;
     
     this.mLeaveButton.remove();
     this.mLeaveButton = null;
@@ -208,6 +210,9 @@ CampScreenCraftingDialogModule.prototype.destroyDIV = function ()
     this.mContainer.empty();
     this.mContainer.remove();
     this.mContainer = null;
+
+    this.mQueueList = null;
+    this.mQueueSlots = null;
 };
 
 CampScreenCraftingDialogModule.prototype.loadQueueData = function (_data)
