@@ -315,12 +315,17 @@ CampScreenHealerDialogModule.prototype.destroyDIV = function ()
     this.mBrothersAsset.remove();
     this.mBrothersAsset = null;
 
+    this.mQueueList = null;
+    this.mQueueSlots = null;
+    
     this.mSelectedEntry = null;
     this.mSelectedID = null;
 
+    this.mQueueScrollContainer.empty();
+    this.mQueueScrollContainer = null;
     this.mQueueContainer.destroyList();
-    this.mQueueContainer= null;
-    this.mQueueScrollContainer= null;
+    this.mQueueContainer.remove();
+    this.mQueueContainer = null;
 
     this.mDetailsPanel.Container.empty();
     this.mDetailsPanel.Container.remove();

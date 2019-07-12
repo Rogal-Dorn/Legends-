@@ -385,6 +385,10 @@ CampScreenWorkshopDialogModule.prototype.destroyDIV = function ()
     this.mStashSlots = null;
     this.mShopSlots = null;
 
+	// lists
+	this.mStashList = null;
+	this.mShopList = null;
+
     this.mStashListContainer.destroyList();
     this.mStashListScrollContainer = null;
     this.mStashListContainer = null;
