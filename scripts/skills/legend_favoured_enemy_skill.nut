@@ -98,9 +98,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 			local stats = this.getTotalKillStats();
 			_properties.MeleeSkill += stats.HitChance;
 			_properties.RangedSkill += stats.HitChance;
-			this.logInfo("DAMAGE REGuLAR MAX " + _properties.DamageRegularMax)
 			_properties.DamageRegularMax *= stats.HitMult;
-			this.logInfo("DAMAGE REGuLAR MAX " + _properties.DamageRegularMax)
 		}
 		
 		else
