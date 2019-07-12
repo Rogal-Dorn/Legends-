@@ -1,4 +1,4 @@
-this.legend_spear_lunge_skill <- this.inherit("scripts/skills/skill", {
+this.legend_staff_lunge_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		SoundOnAttack = [
 			"sounds/combat/dlc2/lunge_attack_01.wav",
@@ -9,7 +9,7 @@ this.legend_spear_lunge_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_spear_lunge";
+		this.m.ID = "actives.legend_staff_lunge";
 		this.m.Name = "Lunge";
 		this.m.Description = "A swift lunge towards a target 2 tiles away, followed by a precise thrusting attack to catch them unprepared. The faster you are, the more damage you do.";
 		this.m.KilledString = "Sliced up";
