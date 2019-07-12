@@ -26,7 +26,9 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.asthmatic",
 			"trait.craven",
 			"trait.dastard",
-			"trait.drunkard"
+			"trait.drunkard",
+			"trait.disloyal",
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Deerhunter",
