@@ -414,7 +414,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	SpiderBodyguard = {
 		ID = this.Const.EntityType.Spider,
-		Variant = 0,
+		Variant = 1,
 		Strength = 12,
 		Cost = 12,
 		Row = 1,
