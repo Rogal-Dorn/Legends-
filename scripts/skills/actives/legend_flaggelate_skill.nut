@@ -18,8 +18,8 @@ this.legend_flaggelate_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Flaggelate";
 		this.m.Description = "Lash out to apply three stacks of bleeding damage at once. Quite ineffective against armor.";
 		this.m.KilledString = "Flaggelated to death";
-		this.m.Icon = "skills/active_161.png";
-		this.m.IconDisabled = "skills/active_161.png";
+		this.m.Icon = "skills/flaggelate_square.png";
+		this.m.IconDisabled = "skills/flaggelate_square_bw.png";
 		this.m.Overlay = "active_161";
 		this.m.SoundOnUse = [
 			"sounds/combat/dlc4/whip_01.wav",
@@ -66,7 +66,7 @@ this.legend_flaggelate_skill <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]3" + "[/color] tiles"
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]1" + "[/color] tile"
 		});
 		ret.push({
 			id = 8,

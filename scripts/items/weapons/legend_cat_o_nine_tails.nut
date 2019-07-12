@@ -32,12 +32,10 @@ this.legend_cat_o_nine_tails <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local skill = this.new("scripts/skills/actives/legend_flaggelate_skill");
-		skill.m.Icon = "skills/active_171.png";
-		skill.m.IconDisabled = "skills/active_171_sw.png";
-		skill.m.Overlay = "active_171";
-		this.addSkill(skill);
-		local skill = this.new("scripts/skills/actives/disarm_skill");
+		local skill1 = this.new("scripts/skills/actives/legend_flaggelate_skill");
+		this.addSkill(skill1);
+		local skill2 = this.new("scripts/skills/actives/legend_ninetails_disarm_skill");
+		this.addSkill(skill2);
 	}
 
 });
