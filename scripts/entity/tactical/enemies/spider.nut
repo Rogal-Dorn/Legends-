@@ -344,8 +344,7 @@ function makeMiniboss()
 		this.actor.makeMiniboss();
 		this.m.Skills.add(this.new("scripts/skills/racial/legend_redback_spider_racial"));
 		this.m.BaseProperties.setValues(this.Const.Tactical.Actor.LegendRedbackSpider);
-
-
+		local legs_back = this.addSprite("legs_back");
 		legs_back.setBrush("bust_spider_redback_legs_back");
 		local body = this.addSprite("body");
 		body.setBrush("bust_spider_redback_body_0" + this.Math.rand(1, 4));
