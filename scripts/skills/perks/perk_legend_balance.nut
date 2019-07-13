@@ -6,8 +6,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 		this.m.Name = this.Const.Strings.PerkName.LegendBalance;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendBalance;
 		this.m.Icon = "ui/perks/balance.png";
-		this.m.IconDisabled = "ui/perks/balance_bw.png"
-		this.m.Type = this.Const.SkillType.Perk;
+		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
@@ -20,7 +19,9 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 		{
 			return 5;
 		}
+
 		local actor = this.getContainer().getActor();
+
 		if (actor == null)
 		{
 			return 5;
@@ -28,13 +29,14 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 
 		local body = actor.getArmor(this.Const.BodyPart.Body);
 		local initiative = actor.getInitiative();
-		local diff = this.Math.abs(body - (2 * initiative));
-		return this.Math.max(5, (30 - diff));
+		local diff = this.Math.abs(body - 2 * initiative);
+		return this.Math.max(5, 30 - diff);
 	}
 
 	function getTooltip()
 	{
 		local bonus = this.getBonus();
+		local tooltip = this.skill.getTooltip();
 
 		if (bonus > 5)
 		{
@@ -51,14 +53,14 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5[/color] from balance"
+				text = "This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5[/color] from balance"
 			});
 		}
 
 		return tooltip;
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
 		_properties.MeleeDefense += bonus;

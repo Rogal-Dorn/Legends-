@@ -1251,4 +1251,5 @@ Beta 12.1
 *Adds new skill icons for flaggelate and ninetails disarm
 *Stops spiders sometimes becoming champions and fights not loading as a result 
 *Fixes party start characters being both loyal and disloyal
-
+*Fixes Assured conquest perk.
+*Fixes Balance perk.

@@ -199,7 +199,7 @@ gt.Const.Perks.BowTree <- {
 gt.Const.Perks.ThrowingTree <- {
 	ID = "Throwing",
 	Descriptions = [
-		"thowing weapons"
+		"throwing weapons"
 	],
 	Tree = [
 		[],
