@@ -1,0 +1,60 @@
+<brush name="gfx/legend_world.png" version="17">
+<sprite id="legend_berserker_cave" ic="FF3E525F" img="world_entity\location\berserker_cave.png" />
+ <sprite id="legend_necromancer_swamp" ic="FF3E525F" img="world_entity\location\necromancer_swamp.png" />
+ <sprite id="legend_ranger_tower" ic="FF3E525F" img="world_entity\location\ranger_tower.png" />
+ <sprite id="legend_seer_tower" ic="FF3E525F" img="world_entity\location\seer_tower.png" />
+ <sprite id="figure_player_berserker" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_berserker.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_crusader" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_crusader.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_ranger" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_ranger.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_noble" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_noble.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_seer" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_seer.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_warlock" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_warlock.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_trader" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_trader.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_party" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_party.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="figure_player_vala" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_vala.png" left="-18" right="24" top="-39" bottom="9" />
+  <sprite id="Battlesite_Bandits_Bandits" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Bandits.png" />
+  <sprite id="Battlesite_Bandits_Beasts" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Beasts.png" />
+  <sprite id="Battlesite_Bandits_Beasts2" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Beasts2.png" />
+   <sprite id="Battlesite_Bandits_Goblins" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Goblins.png" />
+  <sprite id="Battlesite_Bandits_Goblins2" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Goblins2.png" />
+  <sprite id="Battlesite_Bandits_Humans" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Humans.png" />
+ <sprite id="Battlesite_Bandits_Humans2" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Humans2.png" />
+ <sprite id="Battlesite_Bandits_Orcs" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Orcs.png" />
+ <sprite id="Battlesite_Bandits_Orcs2" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Orcs2.png" />
+ <sprite id="Battlesite_Bandits_Undead" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Undead.png" />
+ <sprite id="Battlesite_Bandits_Undead2" ic="FF293742" img="world_entity\location\Battlesite_Bandits_Undead2.png" />
+ <sprite id="Battlesite_Beasts_Beasts" ic="FF293742" img="world_entity\location\Battlesite_Beasts_Beasts.png" />
+ <sprite id="Battlesite_Beasts_Goblins" ic="FF293742" img="world_entity\location\Battlesite_Beasts_Goblins.png" />
+ <sprite id="Battlesite_Beasts_Goblins2" ic="FF293742" img="world_entity\location\Battlesite_Beasts_Goblins2.png" />
+  <sprite id="Battlesite_Beasts_Humans" ic="FF293742" img="world_entity\location\Battlesite_Beasts_Humans.png" />
+ <sprite id="Battlesite_Beasts_Humans2" ic="FF293742" img="world_entity\location\Battlesite_Beasts_Humans2.png" />
+ <sprite id="Battlesite_Beasts_Orcs" ic="FF293742" img="world_entity\location\Battlesite_Beasts_Orcs2.png" />
+ <sprite id="Battlesite_Goblins_Goblins" ic="FF293742" img="world_entity\location\Battlesite_Goblins_Goblins.png" />
+ <sprite id="Battlesite_Goblins_Humans" ic="FF293742" img="world_entity\location\Battlesite_Goblins_Humans.png" />
+  <sprite id="Battlesite_Goblins_Humans2" ic="FF293742" img="world_entity\location\Battlesite_Goblins_Humans2.png" />
+  <sprite id="Battlesite_Goblins_Orcs" ic="FF293742" img="world_entity\location\Battlesite_Goblins_Orcs.png" />
+  <sprite id="Battlesite_Goblins_Orcs2" ic="FF293742" img="world_entity\location\Battlesite_Goblins_Orcs2.png" />
+  <sprite id="Battlesite_Humans_Humans" ic="FF293742" img="world_entity\location\Battlesite_Humans_Humans.png" />
+  <sprite id="Battlesite_Humans_Orcs" ic="FF293742" img="world_entity\location\Battlesite_Humans_Orcs.png" />
+  <sprite id="Battlesite_Humans_Orcs2" ic="FF293742" img="world_entity\location\Battlesite_Humans_Orcs2.png" />
+  <sprite id="Battlesite_Orcs_Orcs" ic="FF293742" img="world_entity\location\Battlesite_Orcs_Orcs.png" />
+  <sprite id="Battlesite_Undead_Beasts" ic="FF293742" img="world_entity\location\Battlesite_Undead_Beasts.png" />
+  <sprite id="Battlesite_Undead_Beasts2" ic="FF293742" img="world_entity\location\Battlesite_Undead_Beasts2.png" />
+  <sprite id="Battlesite_Undead_Goblins" ic="FF293742" img="world_entity\location\Battlesite_Undead_Goblins.png" />
+  <sprite id="Battlesite_Undead_Goblins2" ic="FF293742" img="world_entity\location\Battlesite_Undead_Goblins2.png" />
+  <sprite id="Battlesite_Undead_Humans" ic="FF293742" img="world_entity\location\Battlesite_Undead_Humans.png" />
+  <sprite id="Battlesite_Undead_Humans2" ic="FF293742" img="world_entity\location\Battlesite_Undead_Humans2.png" />
+  <sprite id="Battlesite_Undead_Orcs" ic="FF293742" img="world_entity\location\Battlesite_Undead_Orcs.png" />
+  <sprite id="Battlesite_Undead_Orcs2" ic="FF293742" img="world_entity\location\Battlesite_Undead_Orcs2.png" />
+  <sprite id="Battlesite_Undead_Undead" ic="FF293742" img="world_entity\location\Battlesite_Undead_Undead.png" />
+	<sprite id="figure_demonalp_01" offsetY="20" ic="FF7687A4" width="68" height="106" img="world_entity\party\figure_demonalp_01.png" left="-21" right="25" top="-43" bottom="5" />
+	<sprite id="figure_hexe_leader_01" offsetY="20" ic="FF384556" width="68" height="106" img="world_entity\party\figure_hexe_leader_01.png" left="-18" right="22" top="-40" bottom="4" />
+	<sprite id="figure_rock_unhold_01" offsetY="20" ic="FF13384A" width="68" height="106" img="world_entity\party\figure_rock_unhold_01.png" left="-28" right="30" top="-50" bottom="12" />
+	<sprite id="figure_redback_spider_01" offsetY="20" ic="FF222E38" width="68" height="106" img="world_entity\party\figure_redback_spider_01.png" left="-22" right="26" top="-43" bottom="1" />
+	<sprite id="figure_hexe_leader_01" offsetY="20" ic="FF384556" width="68" height="106" img="world_entity\party\figure_hexe_leader_01.png" left="-18" right="22" top="-40" bottom="4" />
+	<sprite id="figure_greenwood_schrat_01" offsetY="20" ic="FF213A56" width="68" height="106" img="world_entity\party\figure_greenwood_schrat_01.png" top="-43" bottom="23" />
+	<sprite id="figure_stollwurm_01" offsetY="20" ic="FF295956" width="68" height="106" img="world_entity\party\figure_stollwurm_01.png" left="-24" right="22" top="-43" bottom="21" />
+	<sprite id="figure_white_direwolf_01" offsetY="20" ic="FF232832" width="68" height="106" img="world_entity\party\figure_white_direwolf_01.png" left="-22" right="26" top="-46" bottom="0" />
+	<sprite id="figure_skin_ghoul_01" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_01.png" left="-17" right="21" top="-41" bottom="1" /> 
+ <sprite id="figure_skin_ghoul_02" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_02.png" left="-17" right="21" top="-41" bottom="1" /> 
+ </brush>
