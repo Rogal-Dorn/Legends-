@@ -1,0 +1,74 @@
+<brush name="gfx/legends_ui.png" version="17" >
+<sprite id="cat_bite" ic="FF23165B" img="skills\cat_bite.png" />
+<sprite id="stone_aim_square" ic="FF23165B" img="skills\stone_aim_square.png" />
+<sprite id="coordinated_volleys_square" ic="FF23165B" img="skills\coordinated_volleys_square.png" />
+<sprite id="mini_coordinated_volleys_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_coordinated_volleys_circle.png" />
+<sprite id="mini_mark_target" offsetY="35" ic="FF344955" img="skills\mini\mini_mark_target.png" />
+<sprite id="mini_big_game_hunter" offsetY="35" ic="FF344955" img="skills\mini\mini_big_game_hunter.png" />
+<sprite id="status_daze56_circle" ic="FF23165B" img="skills\status_daze56_circle.png" />
+<sprite id="daze_square" ic="FF23165B" img="skills\daze_square.png" />
+<sprite id="mini_daze56_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_daze56_circle.png" />
+<sprite id="deathtouch_square" ic="FF23165B" img="skills\deathtouch_square.png" />
+<sprite id="blooddrop_square" ic="FF23165B" img="skills\blooddrop_square.png" />
+<sprite id="siphon_square" ic="FF23165B" img="skills\siphon_square.png" />
+<sprite id="enthrall" ic="FF23165B" img="skills\enthrall.png" />
+<sprite id="entice" ic="FF23165B" img="skills\entice.png" />
+<sprite id="evasion" ic="FF23165B" img="skills\evasion.png" />
+<sprite id="horse_kick" ic="FF23165B" img="skills\horse_kick.png" />
+<sprite id="scry" ic="FF23165B" img="skills\scry.png" />
+<sprite id="teleport" ic="FF23165B" img="skills\teleport.png" />
+<sprite id="mark_target" ic="FF23165B" img="skills\MarkTarget.png" />
+<sprite id="piercing_bolt" ic="FF23165B" img="skills\PiercingBolt.png" />
+<sprite id="guided_steps_square" ic="FF23165B" img="skills\guided_steps_square.png" />
+<sprite id="mini_guided_steps_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_guided_steps_circle.png" />
+<sprite id="holdtheline_square" ic="FF23165B" img="skills\holdtheline_square.png" />
+<sprite id="status_holdtheline_circle" ic="FF23165B" img="skills\status_holdtheline_circle.png" />
+<sprite id="mini_holdtheline_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_holdtheline_circle.png" />
+<sprite id="missile_square" ic="FF23165B" img="skills\missile_square.png" />
+<sprite id="miasma_square" ic="FF23165B" img="skills\miasma_square.png" />
+<sprite id="nightvision_square" ic="FF23165B" img="skills\nightvision_square.png" />
+<sprite id="spears_square" ic="FF23165B" img="skills\spears_square.png" />
+<sprite id="status_spears_circle" ic="FF23165B" img="skills\status_spears_circle.png" />
+<sprite id="mini_spears_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_spears_circle.png" />
+<sprite id="revolt_square" ic="FF23165B" img="skills\revolt_square.png" />
+<sprite id="rebuild_skeleton" ic="FF23165B" img="skills\rebuild_skeleton.png" />
+<sprite id="rust" ic="FF23165B" img="skills\rust56.png" />
+<sprite id="skeleton_archer_01_square" ic="FF23165B" img="skills\skeleton_archer_01_square.png" />
+<sprite id="skeleton_archer_02_square" ic="FF23165B" img="skills\skeleton_archer_02_square.png" />
+<sprite id="skeleton_archer_03_square" ic="FF23165B" img="skills\skeleton_archer_03_square.png" />
+<sprite id="arrange_bones" ic="FF23165B" img="skills\arrange_bones.png" />
+<sprite id="align_joints" ic="FF23165B" img="skills\align_joints.png" />
+<sprite id="remake_man" ic="FF23165B" img="skills\remake_man.png" />
+<sprite id="mold_carrion" ic="FF23165B" img="skills\mold_carrion.png" />
+<sprite id="fashion_body" ic="FF23165B" img="skills\fashion_body.png" />
+<sprite id="zombie_archer_01_square" ic="FF23165B" img="skills\zombie_archer_01_square.png" />
+<sprite id="zombie_archer_02_square" ic="FF23165B" img="skills\zombie_archer_02_square.png" />
+<sprite id="zombie_archer_03_square" ic="FF23165B" img="skills\zombie_archer_03_square.png" />
+<sprite id="stun56" ic="FF23165B" img="skills\stun56.png" />
+<sprite id="cat_square" ic="FF23165B" img="skills\cat_square.png" />
+<sprite id="violent_decomposition" ic="FF23165B" img="skills\violent_decomposition.png" />
+<sprite id="wither" ic="FF23165B" img="skills\wither56_skill.png" />
+<sprite id="blood_potion_circle" ic="FF23165B" img="skills\blood_potion_circle.png" />
+<sprite id="ichor_potion_circle" ic="FF23165B" img="skills\ichor_potion_circle.png" />
+<sprite id="ichor_potion_circle" ic="FF23165B" img="skills\ichor_potion_circle.png" />
+
+<sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
+<sprite id="mini_shimmering_visage_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_shimmering_visage_circle.png" />
+<sprite id="mini_fortified_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_fortified_circle.png" />
+<sprite id="mini_parried_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_parried_circle.png" />
+
+
+<sprite id="cat_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\cat_orientation.png" />
+<sprite id="rabble_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\rabble_orientation.png" />
+<sprite id="orc_elite_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\orc_elite_orientation.png" />
+<sprite id="orc_behemoth_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\orc_behemoth_orientation.png" />
+<sprite id="demonalp_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\demonalp_orientation.png" />
+<sprite id="greenwood_schrat_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\greenwood_schrat_orientation.png" />
+<sprite id="greenwood_schrat_small_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\greenwood_schrat_small_orientation.png" />
+<sprite id="hexen_leader_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\hexen_leader_orientation.png" />
+<sprite id="redback_spider_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\redback_spider_orientation.png" />
+<sprite id="rock_unhold_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\rock_unhold_orientation.png" />
+<sprite id="skin_ghoul_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\skin_ghoul_orientation.png" />
+<sprite id="stollwurm_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\stollwurm_orientation.png" />
+<sprite id="white_direwolf_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\white_direwolf_orientation.png" />
+</brush>
