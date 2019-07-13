@@ -1999,7 +1999,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (background.isFemaleBackground()) {
 			this.m.Gender = 1;
-			this.m.VoiceSet = 0;
+			this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.WomanSounds[this.m.VoiceSet].Death;
