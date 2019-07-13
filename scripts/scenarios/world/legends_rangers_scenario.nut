@@ -125,7 +125,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", spawnTile.Coords.X, spawnTile.Coords.Y);
-		this.World.State.m.Player.getSprite("body").setBrush("figure_player_ranger");
+		this.World.Assets.updateLook(103);
+		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_ranger");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = nearestVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-20.0, "Heard rumors of you poaching in their woods");

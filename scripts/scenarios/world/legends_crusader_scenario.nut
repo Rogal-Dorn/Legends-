@@ -81,7 +81,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.State.m.Player.getSprite("body").setBrush("figure_player_crusader");
+		this.World.Assets.updateLook(102);
+		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_crusader");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
