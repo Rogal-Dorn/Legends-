@@ -1240,3 +1240,10 @@ Beta 12 Release 14
 *Adds names to the new legend beast blueprint items in the taxidermist.
 *Adjust the tryout icons to remove overflow.
 
+
+Beta 12.1
+
+*Fixes Ranger nightvision perk.
+*Fixes player world map base image resetting after camping.
+*Fixes spelling errors in typos
+

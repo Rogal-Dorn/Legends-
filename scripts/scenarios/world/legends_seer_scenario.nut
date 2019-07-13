@@ -80,7 +80,8 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.State.m.Player.getSprite("body").setBrush("figure_player_seer");
+		this.World.Assets.updateLook(105);
+		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_seer");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
