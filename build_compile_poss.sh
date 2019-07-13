@@ -44,6 +44,7 @@ while read -r line; do
     fi
 done <<< "$FILES"
 
+mkdir -p "brushes"
 cd ../bin
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/entity_blood.brush ../Repo/unpacked/entity_blood
 ./bbrusher.exe pack --gfxPath "../Repo/" ../Repo/brushes/legend_characters.brush ../Repo/unpacked/legend_characters
