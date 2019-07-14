@@ -159,6 +159,9 @@ gt.Const.Faces.Donkey <- [
 	"bust_head_33"
 ];
 
+gt.Const.Faces.Horse <- [
+	"horse_head_black"
+];
 
 gt.Const.Faces.NormalFemale <- [
 	"bust_head_23",
