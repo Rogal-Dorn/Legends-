@@ -25,8 +25,6 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	
-
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		this.m.TilesUsed = [];
@@ -67,7 +65,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			return false;
 			}
 		
-		if (_targetEntity.isAlive() && !target.getSkills().hasSkill("effects.stunned"))
+		if (_targetEntity.isAlive() && !_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
 
