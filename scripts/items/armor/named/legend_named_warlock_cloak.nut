@@ -33,7 +33,25 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants +10% Melee skill and defense when at confident morale. Also grants +20 hitpoints, beware, you will lose 20 hitpoints when you remove it"
+			text = "Grants [color=" + this.Const.UI.Color.PositiveEventValue + "] +10%[/color] Melee skill when at confident morale."
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Grants [color=" + this.Const.UI.Color.PositiveEventValue + "] +10%[/color] Melee defense when at confident morale."
+		});
+		result.push({
+			id = 8,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Grants [color=" + this.Const.UI.Color.PositiveEventValue + "] +10%[/color] Ranged defense when at confident morale."
+		});
+		result.push({
+			id = 9,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Increase max hitpoints by [color=" + this.Const.UI.Color.PositiveEventValue + "] +20[/color]."
 		});
 		return result;
 	}
@@ -42,10 +60,15 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 	{
 		this.named_armor.onEquip();
 		local a = this.getContainer().getActor();
-
-		if (a != null && !a.getSkills().hasSkill("perk.legend_assured_conquest"))
+		if (a == null)
 		{
-			_properties.Hitpoints += 20;
+			return;
+		}
+		
+		local b = a.getBaseProperties();
+		b.Hitpoints += 20;
+		if (!a.getSkills().hasSkill("perk.legend_assured_conquest"))
+		{
 			a.getSkills().add(this.new("scripts/skills/perks/perk_legend_assured_conquest"));
 		}
 	}
@@ -53,13 +76,16 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 	function onUnequip()
 	{
 		local a = this.getContainer().getActor();
-		if (a != null)
+		if (a == null)
 		{
-			_properties.Hitpoints -= 20;
-			a.getSkills().removeByID("perk.legend_assured_conquest");
+			return;
+			
 		}
-
+		a.getSkills().removeByID("perk.legend_assured_conquest");
+		local b = a.getBaseProperties();
+		b.Hitpoints -= 20;
 		this.named_armor.onUnequip();
 	}
+
 });
 

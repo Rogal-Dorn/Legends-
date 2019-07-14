@@ -1256,3 +1256,8 @@ Beta 12.1
 
 Beta 12.2
 *Fixes onslaught perk
+*Fixes named warlock cloak and hood crash.
+*Fixes crash from trying to load female sounds.
+
+
+

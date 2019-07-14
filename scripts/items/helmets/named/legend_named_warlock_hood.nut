@@ -35,7 +35,13 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/helmets/named/name
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Increases your morale each time you get hit. Also grants +20 hitpoints, beware, you will lose 20 hitpoints when you remove it"
+			text = "Increases your morale by[color=" + this.Const.UI.Color.PositiveEventValue + "] +20[/color] points each time you get hit."
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Increase max hitpoints by [color=" + this.Const.UI.Color.PositiveEventValue + "] +10[/color]."
 		});
 		return result;
 	}
@@ -44,10 +50,14 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/helmets/named/name
 	{
 		this.named_helmet.onEquip();
 		local a = this.getContainer().getActor();
-
-		if (a != null && !a.getSkills().hasSkill("perk.legend_taste_the_pain"))
+		if (a == null)
 		{
-			_properties.Hitpoints += 20;
+			return;
+		}
+		local b = a.getBaseProperties();
+		b.Hitpoints += 10;
+		if (!a.getSkills().hasSkill("perk.legend_taste_the_pain"))
+		{
 			a.getSkills().add(this.new("scripts/skills/perks/perk_legend_taste_the_pain"));
 		}
 	}
@@ -55,12 +65,13 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/helmets/named/name
 	function onUnequip()
 	{
 		local a = this.getContainer().getActor();
-		if (a != null)
+		if (a == null)
 		{
-			_properties.Hitpoints -= 20;
-			a.getSkills().removeByID("perk.legend_taste_the_pain");
+			return;
 		}
-
+		a.getSkills().removeByID("perk.legend_taste_the_pain");
+		local b = a.getBaseProperties();
+		b.Hitpoints -= 10;
 		this.helmet.onUnequip();
 	}
 
