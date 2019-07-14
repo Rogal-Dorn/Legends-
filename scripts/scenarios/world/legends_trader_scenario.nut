@@ -36,7 +36,7 @@ this.legends_trader_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"legend_donkey"
+			"legend_horse"
 		]);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
