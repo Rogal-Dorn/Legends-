@@ -143,6 +143,41 @@ this.data_helper <- {
 
 			foreach( entity in entities )
 			{
+				if (entity.isStabled())
+				{
+					continue;
+				}
+				result.push(this.convertEntityHireInformationToUIData(entity));
+			}
+
+			return result;
+		}
+
+		return null;
+	}
+
+	function convertStablesRosterToUIData( _rosterID )
+	{
+		local result = [];
+		local roster = this.World.getRoster(_rosterID);
+
+		if (roster == null)
+		{
+			return null;
+		}
+
+		local entities = roster.getAll();
+
+		if (entities != null)
+		{
+			local result = [];
+
+			foreach( entity in entities )
+			{
+				if (!entity.isStabled())
+				{
+					continue;
+				}
 				result.push(this.convertEntityHireInformationToUIData(entity));
 			}
 

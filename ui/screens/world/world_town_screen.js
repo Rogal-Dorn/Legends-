@@ -28,6 +28,7 @@ var WorldTownScreen = function()
 	this.mTavernDialogModule	    = null;
     this.mTrainingDialogModule      = null;
     this.mTaxidermistDialogModule   = null;
+    this.mStablesDialogModule       = null;
 	this.mActiveModule			    = null;
 
 	this.mAssetValues			    = null;
@@ -60,6 +61,7 @@ WorldTownScreen.prototype.onDisconnection = function ()
 	this.mTavernDialogModule.onDisconnection();
     this.mTrainingDialogModule.onDisconnection();
     this.mTaxidermistDialogModule.onDisconnection();
+    this.mStablesDialogModule.onDisconnection();
 
 	this.unregister();
 };
@@ -75,6 +77,7 @@ WorldTownScreen.prototype.onModuleOnConnectionCalled = function (_module)
 		(this.mTavernDialogModule !== null && this.mTavernDialogModule.isConnected()) &&
         (this.mTrainingDialogModule !== null && this.mTrainingDialogModule.isConnected()) &&
         (this.mTaxidermistDialogModule !== null && this.mTaxidermistDialogModule.isConnected()) &&
+        (this.mStablesDialogModule !== null && this.mStablesDialogModule.isConnected()) &&
         (this.mShopDialogModule !== null && this.mShopDialogModule.isConnected()) )
     {
         this.notifyBackendOnConnected();
@@ -92,6 +95,7 @@ WorldTownScreen.prototype.onModuleOnDisconnectionCalled = function (_module)
 		(this.mTavernDialogModule === null && !this.mTavernDialogModule.isConnected()) &&
         (this.mTrainingDialogModule === null && !this.mTrainingDialogModule.isConnected()) &&
         (this.mTaxidermistDialogModule === null && !this.mTaxidermistDialogModule.isConnected()) &&
+        (this.mStablesDialogModule === null && !this.mStablesDialogModule.isConnected()) &&
         (this.mShopDialogModule === null && !this.mShopDialogModule.isConnected()) )
     {
         this.notifyBackendOnDisconnected();
@@ -116,6 +120,7 @@ WorldTownScreen.prototype.createModules = function()
 {
     this.mMainDialogModule = new WorldTownScreenMainDialogModule(this);
     this.mHireDialogModule = new WorldTownScreenHireDialogModule(this);
+    this.mStablesDialogModule = new WorldTownScreenHireDialogModule(this);
     this.mShopDialogModule = new WorldTownScreenShopDialogModule(this);
     this.mTravelDialogModule = new WorldTownScreenTravelDialogModule(this);
     this.mTempleDialogModule = new WorldTownScreenTempleDialogModule(this);
@@ -135,6 +140,7 @@ WorldTownScreen.prototype.registerModules = function ()
 	this.mBarberDialogModule.register(this.mContainer);
 	this.mTavernDialogModule.register(this.mContainer);
     this.mTrainingDialogModule.register(this.mContainer);
+    this.mStablesDialogModule.register(this.mContainer);
     this.mTaxidermistDialogModule.register(this.mContainer);
 };
 
@@ -148,6 +154,7 @@ WorldTownScreen.prototype.unregisterModules = function ()
 	this.mBarberDialogModule.unregister();
 	this.mTavernDialogModule.unregister();
     this.mTrainingDialogModule.unregister();
+    this.mStablesDialogModule.unregister();
     this.mTaxidermistDialogModule.unregister();
 };
 
@@ -321,6 +328,28 @@ WorldTownScreen.prototype.showHireDialog = function (/*_withSlideAnimation,*/ _d
     }
 
     this.mHireDialogModule.show(_withSlideAnimation);
+};
+
+WorldTownScreen.prototype.showStablesDialog = function (/*_withSlideAnimation,*/ _data)
+{
+	var _withSlideAnimation = true;
+
+	this.mContainer.addClass('display-block').removeClass('display-none');
+
+	if(this.mActiveModule != null)
+		this.mActiveModule.hide(_withSlideAnimation);
+	else
+		this.mMainDialogModule.hide();
+
+	this.mActiveModule = this.mStablesDialogModule;
+
+	if(_data !== undefined && _data !== null && typeof(_data) === 'object')
+    {
+		this.loadAssetData(_data.Assets);
+		this.mStablesDialogModule.loadFromData(_data.Roster);
+    }
+
+    this.mStablesDialogModule.show(_withSlideAnimation);
 };
 
 WorldTownScreen.prototype.showShopDialog = function (/*_withSlideAnimation,*/ _data)
@@ -503,6 +532,7 @@ WorldTownScreen.prototype.getModule = function (_name)
 		case 'TavernDialogModule': return this.mTavernDialogModule;
         case 'TrainingDialogModule': return this.mTrainingDialogModule;
         case 'TaxidermistDialogModule': return this.mTaxidermistDialogModule;
+        case 'StablesDialogModule': return this.mStablesDialogModule;
         default: return null;
 	}
 };
@@ -518,7 +548,8 @@ WorldTownScreen.prototype.getModules = function ()
 		{ name: 'BarberDialogModule', module: this.mBarberDialogModule },
         { name: 'TrainingDialogModule', module: this.mTrainingDialogModule },
         { name: 'TaxidermistDialogModule', module: this.mTaxidermistDialogModule },
-		{ name: 'TavernDialogModule', module: this.mTavernDialogModule }
+        { name: 'TavernDialogModule', module: this.mTavernDialogModule },
+        { name: 'StablesDialogModule', module: this.mStablesDialogModule }
     ];
 };
 

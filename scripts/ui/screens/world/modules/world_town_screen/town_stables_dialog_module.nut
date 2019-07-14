@@ -4,7 +4,7 @@ this.town_stables_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 	},
 	function setRosterID( _id )
 	{
-		this.m.RosterID = _id + 10000;
+		this.m.RosterID = _id;
 	}
 
 	function create()
@@ -31,7 +31,7 @@ this.town_stables_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 	function queryHireInformation()
 	{
 		return {
-			Roster = this.UIDataHelper.convertHireRosterToUIData(this.m.RosterID),
+			Roster = this.UIDataHelper.convertStablesRosterToUIData(this.m.RosterID),
 			Assets = this.m.Parent.queryAssetsInformation()
 		};
 	}
