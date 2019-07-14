@@ -28,10 +28,13 @@ this.kings_guard_2_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Dude.getImagePath());
 				local bg = this.new("scripts/skills/backgrounds/kings_guard_background");
 				bg.m.IsNew = false;
+				local oldPerkTree = _event.m.Dude.getBackground().m.CustomPerkTree;
 				_event.m.Dude.getSkills().removeByID("background.cripple");
 				_event.m.Dude.getSkills().add(bg);
 				_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north. With your help, the former King\'s Guard regained his strength and now fights for you.";
 				_event.m.Dude.getBackground().buildDescription(true);
+				_event.m.Dude.getBackground().rebuildPerkTree(oldPerkTree);
+				_event.m.Dude.resetPerks();
 				_event.m.Dude.improveMood(1.0, "Is his former self again");
 
 				if (_event.m.Dude.getMoodState() >= this.Const.MoodState.Neutral)

@@ -67,8 +67,6 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSiphon,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
-				this.Const.Perks.PerkDefs.Colossus,
-				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Recover,
@@ -79,32 +77,30 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
-				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.FortifiedMind,
-				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.LegendComposure,
+				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.LegendRust,
+				this.Const.Perks.PerkDefs.LegendBloodbath,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendRoster1
 			],
 			[
 				this.Const.Perks.PerkDefs.Backstabber,
-				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.RallyTheTroops,
-				this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
-				this.Const.Perks.PerkDefs.LegendDeathtouch,
+				this.Const.Perks.PerkDefs.Debilitate,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.Lookout,
+				this.Const.Perks.PerkDefs.LegendDeathtouch,
 				this.Const.Perks.PerkDefs.LegendExtendendAura,
+				this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
+				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 				this.Const.Perks.PerkDefs.LegendRoster2
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecMace,
 				this.Const.Perks.PerkDefs.SpecCleaver,
+				this.Const.Perks.PerkDefs.LegendMasteryStaves,
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
@@ -112,36 +108,34 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
-				this.Const.Perks.PerkDefs.Overwhelm,
-				this.Const.Perks.PerkDefs.ReachAdvantage,
-				this.Const.Perks.PerkDefs.Underdog,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendGruesomeFeast,
+				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
+				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendReclamation,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendConservation,
 				this.Const.Perks.PerkDefs.LegendRoster3		
 			],
 			[
-				this.Const.Perks.PerkDefs.HeadHunter,
-				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendMiasma,
-				this.Const.Perks.PerkDefs.LegendHex,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendClarity,
+				this.Const.Perks.PerkDefs.LegendInsects,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
 				this.Const.Perks.PerkDefs.LegendBrinkOfDeath,
+				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendChanneledPower,
 				this.Const.Perks.PerkDefs.LegendPossession,
 				this.Const.Perks.PerkDefs.LegendRoster5		
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.Indomitable,
-				this.Const.Perks.PerkDefs.LegendInsects,
-				this.Const.Perks.PerkDefs.LegendDarkflight,
+				this.Const.Perks.PerkDefs.LegendGruesomeFeast,
 				this.Const.Perks.PerkDefs.PerfectFocus,
+				this.Const.Perks.PerkDefs.LegendBalance,
+				this.Const.Perks.PerkDefs.LegendMiasma,
+				this.Const.Perks.PerkDefs.LegendDarkflight,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendViolentDecomposition,
 				this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
 				this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh,
@@ -231,8 +225,19 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/armor/legend_warlock_cloak"));
-		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));
+		local r;
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/dark_cowl"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
+		}
+
+		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");

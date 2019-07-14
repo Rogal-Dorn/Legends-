@@ -212,15 +212,16 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	LegendOrcElite = {
 		ID = this.Const.EntityType.LegendOrcElite,
-		Variant = 0,
+		Variant = 1,
 		Strength = 60,
 		Cost = 60,
 		Row = 1,
+		NameList = this.Const.Strings.OrcWarlordNames,
 		Script = "scripts/entity/tactical/enemies/legend_orc_elite"
 	},
 	LegendOrcBehemoth = {
 		ID = this.Const.EntityType.LegendOrcBehemoth,
-		Variant = 0,
+		Variant = 1,
 		Strength = 80,
 		Cost = 80,
 		Row = 1,
@@ -413,7 +414,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	SpiderBodyguard = {
 		ID = this.Const.EntityType.Spider,
-		Variant = 0,
+		Variant = 1,
 		Strength = 12,
 		Cost = 12,
 		Row = 1,
@@ -710,8 +711,8 @@ gt.Const.World.Spawn.Troops <- {
 		BanditRabble = {
 		ID = this.Const.EntityType.BanditRabble,
 		Variant = 0,
-		Strength = 3,
-		Cost = 3,
+		Strength = 5,
+		Cost = 5,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/bandit_rabble"
 	},

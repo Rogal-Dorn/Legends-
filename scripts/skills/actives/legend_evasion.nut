@@ -11,7 +11,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/evasion_bw.png";
 		this.m.Overlay = "evasion";
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OtherTargeted;
+		this.m.Order = this.Const.SkillOrder.NonTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
@@ -47,12 +47,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.evasion");
-	}
-
-	function isHidden()
-	{
-		return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Offhand);
+		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.legend_evasion");
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -62,9 +57,9 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		if (!this.getContainer().hasSkill("effects.evasion"))
+		if (!this.getContainer().hasSkill("effects.legend_evasion"))
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/evasion_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/legend_evasion_effect"));
 			return true;
 		}
 
@@ -78,7 +73,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effects.evasion");
+		this.m.Container.removeByID("effects.legend_evasion");
 	}
 
 });

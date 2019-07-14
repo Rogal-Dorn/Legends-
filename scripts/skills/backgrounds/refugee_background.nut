@@ -133,7 +133,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
 		}
 		else if (r == 1)
 		{

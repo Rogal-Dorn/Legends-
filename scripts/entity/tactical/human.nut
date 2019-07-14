@@ -23,7 +23,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.create();
 		if(this.m.Gender == 1)
 		{
-			this.m.VoiceSet = 0;
+			this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.WomanSounds[this.m.VoiceSet].Death;
@@ -32,7 +32,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else 
 		{
-			this.m.VoiceSet = this.Math.rand(0, 5);
+			this.m.VoiceSet = this.Math.rand(0, this.Const.HumanSounds.len() - 1);
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.HumanSounds[this.m.VoiceSet].Death;
@@ -55,7 +55,21 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			return;
 		}
 
-		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], _volume * this.Const.HumanSounds[this.m.VoiceSet].Volume, this.getPos(), _pitch);
+		local volume = 1.0;
+		if(this.m.Gender == 1)
+		{	
+			if (this.m.VoiceSet > this.Const.WomanSounds.len() - 1)
+			{
+				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+			}
+			volume * this.Const.WomanSounds[this.m.VoiceSet].Volume
+		}
+		else
+		{
+			volume * this.Const.HumanSounds[this.m.VoiceSet].Volume
+		}
+
+		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
 	}
 
 	function onUpdateInjuryLayer()
@@ -634,20 +648,22 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Ethnicity = _in.readU8();
 		this.m.Gender = _in.readU8();
 		this.m.VoiceSet = _in.readU8();
-		this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].NoDamageReceived;
-		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].DamageReceived;
-		this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.HumanSounds[this.m.VoiceSet].Death;
-		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.HumanSounds[this.m.VoiceSet].Flee;
-		this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.HumanSounds[this.m.VoiceSet].Fatigue;
-			if(this.m.Gender == 1)
-			{
-			this.m.VoiceSet = 0;
+		if(this.m.Gender == 1)
+		{
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.WomanSounds[this.m.VoiceSet].Death;
 			this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.WomanSounds[this.m.VoiceSet].Flee;
 			this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.WomanSounds[this.m.VoiceSet].Fatigue;
-			}
+		}
+		else
+		{
+			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].NoDamageReceived;
+			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].DamageReceived;
+			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.HumanSounds[this.m.VoiceSet].Death;
+			this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.HumanSounds[this.m.VoiceSet].Fatigue;
+			this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.HumanSounds[this.m.VoiceSet].Fatigue;
+		}
 		_in.readBool();
 	}
 

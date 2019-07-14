@@ -441,7 +441,6 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (_index, _pare
         var entityId = (data !== null && 'entityId' in data) ? data.entityId : null;
         var dropIntoInventory = (KeyModiferConstants.CtrlKey in _event && _event[KeyModiferConstants.CtrlKey] === true);
         var repairItem = (KeyModiferConstants.AltKey in _event && _event[KeyModiferConstants.AltKey] === true);
-        console.error("REPAIR ITEM " + repairItem)
 
         if (isEmpty === false && itemId !== null && entityId !== null /*&& itemIdx !== null*/)
         {

@@ -179,7 +179,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 			}
 			else if (!this.Const.DLC.Wildmen)
 			{
-			items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
+			items.equip(this.new("scripts/items/weapons/legend_reinforced_flail"));
 			}
 		}
 

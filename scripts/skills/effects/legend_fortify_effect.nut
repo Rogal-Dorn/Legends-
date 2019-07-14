@@ -15,6 +15,14 @@ this.legend_fortify_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local mult = 1.0;
+
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInShields)
+		{
+			mult = mult * 1.25;
+		}
+
 		return [
 			{
 				id = 1,
@@ -22,24 +30,41 @@ this.legend_fortify_effect <- this.inherit("scripts/skills/skill", {
 				text = this.getName()
 			},
 			{
+				id = 2,
+				type = "description",
+				text = this.getDescription() 
+			},
+			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + 5 + "[/color] Melee Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getMeleeDefense() * mult + 5) + "[/color] Melee Defense"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + 5 + "[/color] Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getRangedDefense() * mult + 5) + "[/color] Ranged Defense"
 			}
 		];
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDefense += 5;
-		_properties.RangedDefense += 5;
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (item.isItemType(this.Const.Items.ItemType.Shield) && item.getCondition() > 0)
+		{
+			local mult = 1.0;
+
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInShields)
+			{
+				mult = mult * 1.25;
+			}
+
+			_properties.MeleeDefense += this.Math.floor(item.getMeleeDefense() * mult + 5);
+			_properties.RangedDefense += this.Math.floor(item.getRangedDefense() * mult + 5);
+		}
 	}
 
 	function onTurnStart()
@@ -47,10 +72,24 @@ this.legend_fortify_effect <- this.inherit("scripts/skills/skill", {
 		this.removeSelf();
 	}
 
-	function onBeingAttacked( _attacker, _skill, _properties )
+	function onAdded()
 	{
-		_properties.MeleeDefense += 5;
-		_properties.RangedDefense += 5;
+		local item = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (item != null && item.isItemType(this.Const.Items.ItemType.Shield))
+		{
+			item.onShieldUp();
+		}
+	}
+
+	function onRemoved()
+	{
+		local item = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (item != null && item.isItemType(this.Const.Items.ItemType.Shield))
+		{
+			item.onShieldDown();
+		}
 	}
 
 });

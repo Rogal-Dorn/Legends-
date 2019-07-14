@@ -6,8 +6,8 @@ this.greatsword <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.create();
 		this.m.ID = "weapon.greatsword";
-		this.m.Name = "Zweihander";
-		this.m.Description = "A massive two-handed blade as good for carving swathes through the enemy as for battering them into submission.";
+		this.m.Name = "Greatsword";
+		this.m.Description = "A long two-handed blade as good for crushing as for cutting.";
 		this.m.Categories = "Sword, Two-Handed";
 		this.m.IconLarge = "weapons/melee/sword_two_hand_02.png";
 		this.m.Icon = "weapons/melee/sword_two_hand_02_70x70.png";

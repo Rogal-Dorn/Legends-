@@ -51,33 +51,30 @@ this.legend_redback_spider_bite_skill <- this.inherit("scripts/skills/skill", {
 	{
 		
 		local success = this.attackEntity(_user, _targetTile.getEntity());
+
 		if (!_user.isAlive() || _user.isDying())
 		{
 			return success;
 		}
 
-		if (!success)
-		{
-			return success;
-		}
-		
-		local target = _targetTile.getEntity();
-		if (target == null)
-		{
-			return success
-		}
-		
-		if (target.getCurrentProperties().IsImmuneToPoison)
-		{
-			return success;
-		}
-		
-		target.getSkills().add(this.new("scripts/skills/effects/legend_redback_spider_poison_effect"));
+		if (success && _targetTile.IsOccupiedByActor)
+			{
+				local target = _targetTile.getEntity();
 
-		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has poisoned " + this.Const.UI.getColorizedEntityName(target));
-		}
+				target.getSkills().add(this.new("scripts/skills/effects/legend_redback_spider_poison_effect"));
+
+				if (!target.getSkills().hasSkill("effects.stunned"))
+				{
+					target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+				}
+
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+				{
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has poisoned " + this.Const.UI.getColorizedEntityName(target) + " for seven turns");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has stunned " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+				}
+			}
+	
 
 		return success;
 	}

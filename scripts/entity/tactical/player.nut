@@ -1374,7 +1374,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getTags().has("PlayerSkeleton") || this.getTags().has("PlayerZombie"))
 		{
-			_xp = _xp * 0.33;
+			_xp = _xp * 0.1;
 		}
 
 	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
@@ -1999,7 +1999,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (background.isFemaleBackground()) {
 			this.m.Gender = 1;
-			this.m.VoiceSet = 0;
+			this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.WomanSounds[this.m.VoiceSet].Death;
@@ -2667,6 +2667,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (this.m.Background.isFemaleBackground())
 			{
 				this.m.Gender = 1;
+				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			}
 		}
 

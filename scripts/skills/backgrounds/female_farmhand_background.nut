@@ -131,7 +131,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 3);
+		r = this.Math.rand(0, 6);
 
 		if (r == 1)
 		{
@@ -144,6 +144,10 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		else if (r == 3)
 		{
 			items.equip(this.new("scripts/items/weapons/legend_shovel"));
+		}
+		else if (r == 4)
+		{
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
 		}
 
 		r = this.Math.rand(0, 1);

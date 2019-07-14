@@ -5,7 +5,7 @@ this.legend_deathly_spectre_trait <- this.inherit("scripts/skills/traits/charact
 		this.character_trait.create();
 		this.m.ID = "trait.legend_deathly_spectre";
 		this.m.Name = "Deathly spectre";
-		this.m.Icon = "ui/traits/raisedead2_circle.png";
+		this.m.Icon = "ui/perks/raisedead2_circle.png";
 		this.m.Description = "The shadow of undeath follows this character due to having a necromancer nearby, they will probably be resurrected after death but retain any injuries sustained";
 		this.m.Titles = [
 			"the Doomed",
@@ -44,7 +44,7 @@ this.legend_deathly_spectre_trait <- this.inherit("scripts/skills/traits/charact
 
 	function onUpdate( _properties )
 	{
-		_properties.SurviveWithInjuryChanceMult *= 2;
+		_properties.SurviveWithInjuryChanceMult *= 2.72;
 		_properties.SurvivesAsUndead = true;
 	}
 

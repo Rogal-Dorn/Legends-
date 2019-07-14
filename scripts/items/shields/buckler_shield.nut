@@ -28,6 +28,7 @@ this.buckler_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Icon = "shields/icon_buckler_shield_0" + this.m.Variant + ".png";
 	}
 
+
 	function onEquip()
 	{
 		this.shield.onEquip();

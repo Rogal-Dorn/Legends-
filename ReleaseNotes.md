@@ -1095,12 +1095,169 @@ https://drive.google.com/open?id=1gf6O8KUa9VEY3XCQDGF8XsIeKcZvwBlj
 Beta 12 Test 7
 Fixes Matching set perk
 Fixes possible crash with Smackdown
+Reworks the Tower shield Fortify perk. Fortify grants a +5 Melee and +5 Range defense bonus only to self. Intended to be used when not in a proper shield wall formation (effectively grants shield wall bonus).
+Tower shield Safeguarding perk is now +15 / -15 (guarded / guarding)
 Fixes Safegaurding perk
-
-adds craftable cloaks for redback and hexen
+Adds craftable cloaks for redback and hexen
 AP and HP buff to skin ghouls,
 HP and armor buff to white wolf 
 AP, HP and Armor buff hexe leader, also gains the schrat racial.
 Stollwurm gets less HP but more AP. 
 Costs increased for crafting the new beast items
 Costs decreased for crafting bags 
+Fixes crash when spawning female master archers.
+Fixes Clarity Perk.
+Fixes whitewolf companion loot.
+
+Beta 12 test 8 
+Fixes isStacking bug causing un-enterable towns 
+Stops Smackdown working on enemies immune to knockback, noncombatants, dead or dying enemies, or if it has already pushed someone to that tile.
+Fixes spelling on redback dagger. 
+Removes the kill requirement on the new contracts, you just need the perk now. 
+
+Beta 12 test 9 
+
+Gives barbarians and iijirock new perks on legendary difficulty 
+Fixes AI errors with new creatures 
+Vala won't show up before your bros have a combined level of 10. If she dies, it will be 60 days before another vala can appear. 
+Fixes Clarity perk adding AP on each save/load
+Fixes bug that prevents dynamic trees from reaching their full perk quota.
+Contract reputation calculations reverted to vanilla, making early game contracts harder. 
+Bandit Rabble are more likely to be wearing clothes and hats, have True Believer so they are less likely to flee, new AI more prone to flanking and killing. 
+A QA pass cross referencing all starting equipment against all starting perk groups 
+Fixes evasion Perk.
+
+https://drive.google.com/open?id=1TuuLxURW1oZN1LZ1HGKL2SpW2Y8jT3at
+
+
+Beta 12 test 10
+Adds description of guaranteed perks for each background (hover over character background on hire screen)
+Tryout recuits now also reveals the perk tree for that recruit.
+Early game contract difficulty scaling restored, though vanilla contract payout scaling remains.
+Towershield nerfed to +25 melee and ranged defense for -30 stamina at 1000 gold, so it offers the same defense and stamina cost of holding two shields, at twice the price. 
+White Direwolf gains inspiring presence, fast adaption, backstabber, fearsome, battleheart, true believer and a new perk "terrifying visage" that reduces the resolve of any adjacent enemy by 15. On legendary difficulty it gains Battle forged, last stand and second wind. AI changed to flank more and chase down fleeing units. This means it won't run and will fight until the last, its pack won't run easy either, but your team will, and then they are hunted. 
+Redback spiders gain nimble, rotation, recovery, underdog and overwhelm. Fixed redback spider bite to correctly apply redback poison. On legendary they gain battle forged, crippling strikes and inspiring presence. Their bite now stuns for a turn, this is stopped by poison immunity, but not by stun immunity. Their AI is now more defensive, and will prioritises easy to hit targets so they can apply poison stacks more easily.
+Antidote now works on redback spider poison
+Redback scenario changed to one redback and six spiders to reflect difficulty, scenario now has antidote 
+Sling perks reordered 
+Rabble are each considered harder, and give more xp. This reflects their new behaviours. They are still about half a thug, instead of a quarter. 
+Skeletons gain damage reduction against Cascade strike, Piercing shot, magic missile and siphon 
+Hand to hand can no longer do negative damage, tooltip is more accurate, and won't show up on donkeys. Brawlers and Berserkers do +25% damage 
+Donkey Kick can no longer do negative damage 
+Changes Evasion perk to not require a free offhand.
+Fixes the fall damage calculation on smackdown
+Fixes Hidden/Camoflouge Perk.
+Fixes Specialist Staff skill perk.
+Fixes Sling Mastery perk (accuracy with distance just kept increases)
+Fixes Rock Unhold not repairing armor each turn
+
+https://drive.google.com/open?id=19effkSAgxnxc6uGOdMDZkz_F7BxAbJFy
+
+
+Beta12 Test 11
+*The new legendary contracts will spawn correctly after getting the perk, and with new contracts banners 
+*Fixes to legendary contracts not completing, spelling, grammar, new text, lowers payouts, reduces chance and size of upfront payments. 
+*Adds Forest wraith's Bastard Sword, Battle Glaive, Glaive, Militia Glaive, Swordstaff, Mage swordstaff, named bastard sword, named Glaive, named swordstaff.
+*The new weapons can be found in weaponsmiths and on bandits, mercenaries, militia and nobles. 
+*Goblin spear and named goblin spears buffed. 
+*Rabble lose True Believer, instead gaining Coerced, that gives them true believer and a resolve buff whenever there is a bandit on the field, they lose resolve when there are no bandits. Rabble no longer spawn without bandits. 
+*Adds 'Freedom of Movement' perk that gives damage reduction as your oppontent tires. Added to Light Armor tree
+*Chains can flail and lash at a range of 3, but with -10 chance to hit 
+*Lithe damage reduction reduced significantly
+*Last stand becomes "Gain 1 Melee and ranged defense for each 1% of missing health below 50% health."
+*Second wind becomes "Fully refresh your fatigue when falling below 50% health"
+*Clarity now only works if you don't have berserk 
+*Adds Inspiring presence to inspirational tree, instead of assured conquest
+*Fast tree gains anticipation but loses dodge, light armor tree loses anticipation. 
+*Composure and stalwart swap places in sturdy tree
+*Rebound becomes T7 perk
+*Shield bash becomes T2 perk 
+*Fixes crash when fighting master archers 
+*Fixes Matching set perk
+*Fixes enemies with greatswords not having a single target attack 
+*Fixes missing berserker tattoo brush
+*Fixes character screen crash on hexen escort battles.
+*Fixes party start having 0 resources 
+
+Beta 12 Test 12
+Adds new perk "Onslaught" that provides a 50% chance to apply daze on any attack where your initiative and fatigue are higher than your opponent's. added to the mace group 
+Adds new perk "Back to Basics" that provides fleeing characters a chance to rally when hit, equal to half their resolve. Added to Trained Group in place of Hold Out
+Smackdown changed to 50% chance to knockback when your hitpoints and fatigue are higher than your opponent
+Glaives now have unique skill icons for each ability 
+Staff bash and staff daze now have unique skill icons for each staff
+Chains swap out Lash for Thresh 
+Berserker gains Back to Basics, Alert, Smackdown, Feint, Onslaught and Freedom of Movement
+Berserker in party start gets unarmed skills
+Crusader gains Back to Basics, Feint, Smackdown and Onslaught
+Noble gains Back to Basics, Feint, Clarity, Onslaught, Lithe, Matching Set and Balance
+Ranger gains Back to Basics, Alert, Feint, Onslaught, Lithe, Matching Set, Balance and Freedom of Movement
+Seer gains Alert and Clarity, magic missile does about 20% less damage
+Warlock gains Bloodbath, True Believer, Debilitate, Staff mastery, staff spins, staff block, Lithe, Blend in, Clarity, Balance, Camoflouge, Field Triage, Favoured enemies Civilian, Ghoul, Hexen and Alps. 
+Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Hex, Reach Advantage, Underdog, Footwork, Pathfinder, Underdog, QuickHands, Composure,  Rally the troops, Last stand
+Warlock hood now grants +20 hitpoints and increases your morale each time you get hit 
+Warlock cloak now grants +20 hitpoints and grants +10% melee skills, melee defense and ranged defense when at confident morale. 
+Warlock hood and cloak are now craftable using ingredients from alps and hexen 
+Warlock no longer begins with warlock cloak and hood. 
+Undead minions heal at 10% the usual rate and are effected by injuries, though not until the end of the battle, they gain 10% experience instead of 33%, they are no longer upset by sacrifices 
+Deathly spectre returned to 90% chance from 66%
+Gruesome feast is now t7, miasma is t7, insect swarm is t6 
+Close Combat Archer is now T7 
+Fixes "Bloodbath" not showing up in the cleaver group 
+Fixes Gravesman skill not granting knock out 
+Fixes buckler bash being used as attack of opportunity. 
+Fixes gravediggers and graverobbers not having Ressurectionist 
+Fixes enemies not using glaives and swordstaves 
+Fixes Herbalists having woodaxe skills 
+Fixes Clarity not loading, and breaking saves with it taken 
+Fixes error with Coerce 
+Fixes error with Back to basics not knowing who its user was
+Fixes error with Bloodbath outside combat
+Fixes error with Deathly Spectre not having an icon
+
+
+Beta 12 Release 13
+
+*Fixed perk trees disappearing when bro background is converted to another. When a bro converts to another background he will keep his current tree, and the guarenteed perks from the new background will be added. All spent perks and points will be reset as well.
+*Fixed Hexe cloak typo
+*Fix for buckler crashes
+*Fixed up the unknown and known perk icons when hiring.
+*Adds 4 star contracts.
+*Fixes pay scale on legendary beast contracts.
+*Adds back minimum strength levels for legendary beast contracts to spawn.
+*Each Favorite enemey perk now adds a 1% chance for every 10 kills from that group for an enemy in a party to become a champion/miniboss.
+*Swordstaffs are toned down 
+*Swordstaffs moved from spears to staves.
+
+https://drive.google.com/open?id=1vEchdPD9M5hEMhcrIEyBbV9yXW21DCgL
+
+
+Beta 12 Release 14
+
+*Fix typo in Favorite enemy tooltip
+*Fix crashes when AI equips glaives and spearstaff
+*Fix last of the known buckler crashes.
+*Fix Camping Tent windows disappearing after reloading a save.
+*Adds names to the new legend beast blueprint items in the taxidermist.
+*Adjust the tryout icons to remove overflow.
+
+
+Beta 12.1
+
+*Fixes Ranger nightvision perk.
+*Fixes player world map base image resetting after camping.
+*Fixes spelling errors in typos
+*Fixes cat'o'ninetails flaggelate tooltip range
+*Fixes cat'o'nine not having disarm 
+*Adds new skill icons for flaggelate and ninetails disarm
+*Stops spiders sometimes becoming champions and fights not loading as a result 
+*Fixes party start characters being both loyal and disloyal
+*Fixes Assured conquest perk.
+*Fixes Balance perk.
+
+Beta 12.2
+*Fixes onslaught perk
+*Fixes named warlock cloak and hood crash.
+*Fixes crash from trying to load female sounds.
+
+
+

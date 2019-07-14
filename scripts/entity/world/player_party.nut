@@ -258,51 +258,52 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 	function setBaseImage( _version = -1)
 	{
 		local image = "figure_player_01";
-
-		if (this.World.Tags.get("IsLegendsNoble"))
-		{
-			image = "figure_player_noble";
-		} 
-		else if (this.World.Tags.get("IsLegendsCrusader"))
-		{
-			image = "figure_player_crusader";
-		} 
-		else if (this.World.Tags.get("IsLegendsHunter"))
-		{
-			image = "figure_player_ranger";
-		} 
-		else if (this.World.Tags.get("IsLegendsNecro"))
-		{
-			image = "figure_player_warlock";
-		} 
-		else if (this.World.Tags.get("IsLegendsWitch"))
-		{
-			image = "figure_player_seer";
-		} 
-		else if (this.World.Tags.get("IsLegendsBerserker"))
-		{
-			image = "figure_player_berserker";
-		} 
-		else if (this.World.Tags.get("IsLegendsTrader"))
-		{
-			image = "figure_player_trader";
-		} 
-		else if (this.World.Tags.get("IsLegendsParty"))
-		{
-			image = "figure_player_party";
-		} 
-		else if (this.World.Tags.get("IsLegendsVala"))
-		{
-			image = "figure_player_vala";
-		} 
-		else if (_version > 1 && _version < 10)
+		if (_version > 1 && _version < 10)
 		{
 			image = "figure_player_0" + _version;
 		}
-		else if (_version > 9)
+		else if (_version > 100)
+		{
+			switch(_version)
+			{
+				case 101:
+					image = "figure_player_noble";
+					break;
+				case 102:
+					image = "figure_player_crusader";
+					break;
+				case 103:
+					image = "figure_player_ranger";
+					break;
+				case 104:
+					image = "figure_player_warlock";
+					break;
+				case 105:
+					image = "figure_player_seer";
+					break;
+				case 106:
+					image = "figure_player_berserker";
+					break;
+				case 107:
+					image = "figure_player_trader";
+					break;
+				case 108:
+					image = "figure_player_vala";
+					break;
+				case 109:
+					image = "figure_player_party";
+					break;
+			}
+		}
+		else if ( _version > 9)
 		{
 			image = "figure_player_" + _version;
+		} 
+		else
+		{
+			image = "figure_player_01";
 		}
+		
 		this.getSprite("body").setBrush(image);
 	}
 
@@ -313,7 +314,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		this.m.VisionRadius = this.Const.World.Settings.Vision;
 		this.getSprite("base").setBrush("world_base_01");
 		this.getSprite("banner").setBrush(this.World.Assets.getBanner());
-		this.setBaseImage();
+		this.setBaseImage(1);
 		local lighting = this.addSprite("lighting");
 		this.setSpriteColorization("lighting", false);
 		lighting.setBrush("world_player_camp_01_fire");

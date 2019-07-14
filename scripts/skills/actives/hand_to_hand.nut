@@ -41,20 +41,32 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor()
 		local p = actor.getCurrentProperties();
 		local mult = 1.0;
+		local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+		local damageMin = 5;
+		local damageMax = 10;
+		local avgMin = average - 100;
+		local avgMax = average - 90;	
 
-		if (this.getContainer().hasSkill("background.brawler"))
-		{
-			mult = 2.0;
-		}
-		local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
-		local DamageMin = 5 + this.Math.floor(Avg - 90);
-		local DamageMax = 5 + this.Math.floor(Avg - 80);
+		if ((average - 100) > 0)
+			{
+			damageMin += avgMin;
+			}
 
-		local damage_regular_min = DamageMin * p.DamageRegularMult * p.DamageTotalMult * mult;
-		local damage_regular_max = DamageMax * p.DamageRegularMult * p.DamageTotalMult * mult;
-		local damage_Armor_min = DamageMin * p.DamageArmorMult * p.DamageTotalMult * mult;
-		local damage_Armor_max = DamageMax * p.DamageArmorMult * p.DamageTotalMult * mult;
-		local damage_direct_max = this.Math.floor(DamageMax * this.m.DirectDamageMult);
+		if ((average - 90) > 0)
+			{
+			damageMax += avgMax;
+			}
+			
+			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") )
+			{
+				damageMin = damageMin * 1.25;
+				damageMax = damageMax * 1.25;
+			}
+		local damage_regular_min = this.Math.floor(damageMin * p.DamageRegularMult * p.DamageTotalMult);
+		local damage_regular_max = this.Math.floor(damageMax * p.DamageRegularMult * p.DamageTotalMult);
+		local damage_Armor_min = this.Math.floor(damageMin * p.DamageArmorMult * p.DamageTotalMult);
+		local damage_Armor_max = this.Math.floor(damageMax * p.DamageArmorMult * p.DamageTotalMult);
+		local damage_direct_max = this.Math.floor(damageMax * this.m.DirectDamageMult);
 		local ret = [
 			{
 				id = 1,
@@ -76,7 +88,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			id = 4,
 			type = "text",
 			icon = "ui/icons/regular_damage.png",
-			text = "Inflicts damage based on hitpoints and initiative [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
+			text = "Inflicts damage based on hitpoints and initiative [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage, up to [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] damage can ignore armor"
 		});
 
 		if (damage_Armor_max > 0)
@@ -107,7 +119,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	function isHidden()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return mainhand != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden();
+		return mainhand != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden() || this.getContainer().hasSkill("background.legend_donkey");
 	}
 
 	function onUpdate( _properties )
@@ -123,9 +135,30 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			local actor = this.getContainer().getActor();
-			local Avg = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
-			_properties.DamageRegularMin += 5 + this.Math.floor(Avg - 100);
-			_properties.DamageRegularMax += 5 + this.Math.floor(Avg - 90);
+			local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+			local damageMin = 5;
+			local damageMax = 10;
+			local avgMin = average - 100;
+			local avgMax = average - 90;	
+
+			if ((average - 100) > 0)
+				{
+				damageMin += avgMin;
+				}
+
+			if ((average - 90) > 0)
+				{
+				damageMax += avgMax;
+				}
+			
+			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") )
+				{
+					damageMin = damageMin * 1.25;
+					damageMax = damageMax * 1.25;
+				}
+
+			_properties.DamageRegularMin += this.Math.floor(damageMin);
+			_properties.DamageRegularMax += this.Math.floor(damageMax);
 			_properties.MeleeSkill -= 10;
 			this.m.DirectDamageMult = _properties.IsSpecializedInFists ? 0.5 : 0.1;
 		}

@@ -106,6 +106,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Footwork,
+				this.Const.Perks.PerkDefs.LegendAlert,
 				this.Const.Perks.PerkDefs.LegendChainLightning,
 				this.Const.Perks.PerkDefs.LegendMedIngredients
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
@@ -115,6 +116,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendRelax,
 				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.Ballistics,
 				this.Const.Perks.PerkDefs.LegendDrumsOfWar,
 				this.Const.Perks.PerkDefs.LegendLevitate,

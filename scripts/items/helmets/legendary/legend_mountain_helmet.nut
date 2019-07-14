@@ -38,9 +38,8 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function onCombatFinished()
 	{
-		local actor = this.getContainer().getActor();
-		actor.setHitpoints(actor.getHitpointsMax());
-		actor.setDirty(true);
+		this.m.Condition = this.m.ConditionMax;
+		this.updateAppearance();
 	}
 
 	function onTurnStart()
@@ -63,7 +62,7 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		{
 			this.Tactical.spawnIconEffect("status_effect_79", actor.getTile(), this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
 			this.Sound.play("sounds/enemies/unhold_regenerate_02.wav", this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + helmAdded + " points");
+			this.Tactical.EventLog.log(this.Const.UI.getColorized(this.m.Name, "#1e468f") + " heals for " + helmAdded + " points");
 		}
 	}
 

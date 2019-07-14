@@ -114,10 +114,8 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		local distance = _targetEntity.getTile().getDistanceTo(actor.getTile());
 		local max = actor.getHitpointsMax() - actor.getHitpoints();
 
-		this.logInfo("Base Enemy health points for siphon = " + _targetEntity.getHitpoints())
 		local p = 0.3 - (0.05 * (distance - 1));
 		local damage = this.Math.min(max, p * _targetEntity.getHitpoints())
-		this.logInfo("Base Enemy damage points for siphon = " + damage)
 
 		_properties.DamageArmorMult *= 0.0;
 		_properties.IsIgnoringArmorOnAttack = true;

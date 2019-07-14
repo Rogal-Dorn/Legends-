@@ -1299,7 +1299,11 @@ gt.Const.Strings.PerkName <- {
 	LegendSmackdown = "Smackdown",
 	LegendClarity = "Clarity",
 	LegendAlert = "Alert",
-	LegendBloodbath = "Bloodbath"
+	LegendBloodbath = "Bloodbath",
+	LegendTerrifyingVisage = "TerrifyingVisage",
+	LegendFreedomOfMovement = "Freedom of Movement",
+	LegendOnslaught = "Onslaught",
+	LegendBackToBasics = "Back to Basics"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1356,7 +1360,7 @@ gt.Const.Strings.PerkDescription <- {
 	ShieldExpert = "Learn to better deflect hits to the side instead of blocking them head on.\n\nThe shield defense bonus is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. This also applies to the additional defense bonus of the Shieldwall skill.\n\nShield damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] to a minimum of 1.\n\nThe \'Knock Back\' skill gains [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit.",
 	NineLives = "Once per battle, upon receiving a killing blow, survive instead with a few hitpoints left. The next hit is likely to kill you for good, of course.",
 	BatteringRam = "Immunity against being stunned.",
-	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] additional Melee and Ranged Defense for every 5% of hitpoints missing.",
+	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] additional Melee and Ranged Defense for every 1% of missing hitpoints below 50%",
 	Ironside = "All damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] for every opponent adjacent and in melee range, up to a [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] total damage reduction.",
 	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Items placed in bags no longer give a penalty to Maximum Fatigue, except for two-handed weapons and shields.",
 	Rebound = "Fatigue regeneration is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] per turn.",
@@ -1509,7 +1513,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]10-30[/color] damage while using a sling.",
 	LegendSpecialistSlingSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling.",
 	LegendBigGameHunter = "When targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints",
-	LegendSecondWind = "When dropping below 30hp, regain half of your fatigue",
+	LegendSecondWind = "Fully refreshes your fatigue when falling below 50% health.",
 	LegendMarkTarget = "Mark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]",
 	LegendFieldTriage = "Spend medicine to heal a unit on the battlefield",
 	LegendFieldRepairs = "Spend armor parts to repair armor on the battlefield",
@@ -1558,11 +1562,11 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust does [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage."
 	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] bonuse melee and ranged defense if your current body armor is twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of 5",
 	LegendMatchingSet = "Proper distribution of weight is crucial for maintaining mobility. Grants up to  [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] fatigue per round if your helmet and armor values match. Decreases by 1 for every 10 points difference.",
-	LegendLithe = "Not as nimble as some, but more lithe than most. Like nimble, but the bonus is halved, the 15 fatigue floor raised to  [color=" + this.Const.UI.Color.PositiveValue + "]30[/color], and the fatgiue falloff is also halved, so you can wear much heavier armor. Does nothing if you have the Nimble perk."
+	LegendLithe = "Not as nimble as some, but more lithe than most. Like nimble, but the bonus is halved, the 15 fatigue floor raised to  [color=" + this.Const.UI.Color.PositiveValue + "]30[/color], and the fatigue falloff is also halved, so you can wear much heavier armor. Does nothing if you have the Nimble perk."
 	LegendHidden = "Master the art of concelement. Blend in with your surroundings and remain hidden from the enemy until your next attack.",
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] less likely to attack you instead of an ally.",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns",
-	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] melee defense",
+	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense while wielding a staff",
 	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores 10 fatigue to every ally on the field.",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration of Hand to Hand, adds damage to Kick",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte ",
@@ -1570,9 +1574,13 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFieldTreats = "Make liberal use of alcohol and food to motivate your mercenaries. Spend 50 food to take someone from wavering to steady, cannot be applied to someone who has already been rallied.",
 	LegendSmashingShields = "Some folks take joy in the simple pleasures of destroying shields. Grants an additional  [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] shield damage on any successful hit",
 	LegendSmackdown = "Use your size and strength to bully your way into the prime position. Knockback any opponent on any attack where you have more health and fatigue than them.",
-	LegendClarity = "A well honed mind can perceive more in each instant, making time appear slower in key instants of need. Gain 1 Action Point.",
+	LegendClarity = "A well honed mind can perceive more in each instant, making time appear slower in key instants of need. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Action Point. Does not work if you have Berserk.",
 	LegendAlert = "Pay close attention at all times, surveying the surroundings and assessing every clue for an insight. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Initiative",
-	LegendBloodbath = "Take joy in the suffering of others, gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Fatigue and Resolve for each bleeding character on the field"
+	LegendBloodbath = "Take joy in the suffering of others, gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Fatigue and Resolve for each bleeding character on the field",
+	LegendTerrifyingVisage = "The mere sight of this character sends enemies fleeing. Reduce resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color] ",
+	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.",
+	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off gaurd. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. ",
+	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

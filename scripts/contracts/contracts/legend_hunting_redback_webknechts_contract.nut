@@ -3,7 +3,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		Target = null,
 		Dude = null,
 		IsPlayerAttacking = false,
-		MinStrength = 500,
+		MinStrength = 100,
 		Perk = "perk.legend_favoured_enemy_spider",
 		ValidTypes = this.Const.LegendMod.FavoriteSpider		
 	},
@@ -13,6 +13,12 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		this.m.Type = "contract.legend_hunting_redback_webknechts";
 		this.m.Name = "Hunting Redback Webknechts (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+	}
+
+	function getBanner()
+	{
+		return "ui/banners/factions/banner_legend_s";
 	}
 
 	function onImportIntro()
@@ -22,12 +28,12 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 
 	function start()
 	{
-		this.m.Payment.Pool = 4500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 900 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 10)
 		{
-			this.m.Payment.Completion = 0.75;
-			this.m.Payment.Advance = 0.25;
+			this.m.Payment.Completion = 0.9;
+			this.m.Payment.Advance = 0.1;
 		}
 		else
 		{
@@ -115,7 +121,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 9, disallowedTerrain);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Redack Webknechts", false, this.Const.World.Spawn.LegendRedbackSpiders, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Redack Webknechts", false, this.Const.World.Spawn.LegendRedbackSpider, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				party.setDescription("A swarm of redback webknechts skittering about.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
@@ -237,7 +243,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{As you approach the keep of %employer% you pass through a courtyard filled with broken down carts and barking dogs pulling at their chains, a gaurd in a stained jerkin sits drinking on the stair, he nods you past. As you enter the keep itself you hear children yelling at each other, before a nasal woman\'s voice cuts through their chatter.%SPEECH_ON% Oi! you lot knock it off, we\'ve got company%SPEECH_OFF% The children protest a little but calm down. A large man waves you over, he is sitting topless by a fireplace eating a large hunk of meat, that has spilled juices on his huge hairy belly %SPEECH_ON% You came then? I thought maybe you were as weak as the rest of them spider hunters. Well I guess you've heard then, we've got a nest of them big black blighters. They are drawn in by the midden, that pile of filth has bugs the size of my fist and the spiders love it. I told the gaurds to clean it out, but they must have been mistaken for bugs, because none came back. %SPEECH_OFF%  He wipes his mouth with a hairy arm and takes a huge swig from an ale cask before burping loudly.  %SPEECH_ON% These ain\'t ordinary spiders mind you, a single bite could fell a giant. I know it is a big job, and I\'m prepared to pay you well for it. Interested? %SPEECH_OFF%  | You find %employer% behind the main keep, stretched out on his back under a catapult. You don\'t think he could have seen you from under there, but while still tinkering away he calls out. %SPEECH_ON%Ah, the spider hunter, just the one I wanted to see. We have a bit of a nasty problem.%SPEECH_OFF% He slides out from under the catapult and you see his uncovered chest is smeared with dirt, he pats the device affectionately. %SPEECH_ON% Not the kind of problem Bertha here can fix %SPEECH_OFF%. He pulls a robe over his shoulders and continues as he walks you back to the keep. %SPEECH_ON% We have had spiders in these parts for a long time, absolute bastards if they get a hold on you, but easy enough for the boys to scare off. Recently though we have been visited by spiders of a different kind. Giant black things with a huge gash of red upon their back. A single bite has enough poison enough to fell a knight. I hear you are the one for the job, and I am prepared to pay handsomely. Are you Interested? %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{As you approach the keep of %employer% you pass through a courtyard filled with broken down carts and barking dogs pulling at their chains, a gaurd in a stained jerkin sits drinking on the stair, he nods you past. As you enter the keep itself you hear children yelling at each other, before a nasal woman\'s voice cuts through their chatter.%SPEECH_ON%Oi! you lot knock it off, we\'ve got company%SPEECH_OFF% The children protest a little but calm down. A large man waves you over, he is sitting topless by a fireplace eating a large hunk of meat, that has spilled juices on his huge hairy belly %SPEECH_ON%You came then? I thought maybe you were as weak as the rest of them spider hunters. Well I guess you've heard then, we've got a nest of them big black blighters. They are drawn in by the midden, that pile of filth has bugs the size of my fist and the spiders love it. I told the gaurds to clean it out, but they must have been mistaken for bugs, because none came back. %SPEECH_OFF%  He wipes his mouth with a hairy arm and takes a huge swig from an ale cask before burping loudly.  %SPEECH_ON%These ain\'t ordinary spiders mind you, a single bite could fell a giant. I know it is a big job, and I\'m prepared to pay you well for it. Interested? %SPEECH_OFF%  | You find %employer% behind the main keep, stretched out on his back under a catapult. You don\'t think he could have seen you from under there, but while still tinkering away he calls out. %SPEECH_ON%Ah, the spider hunter, just the one I wanted to see. We have a bit of a nasty problem.%SPEECH_OFF% He slides out from under the catapult and you see his uncovered chest is smeared with dirt, he pats the device affectionately. %SPEECH_ON%Not the kind of problem Bertha here can fix %SPEECH_OFF%. He pulls a robe over his shoulders and continues as he walks you back to the keep. %SPEECH_ON%We have had spiders in these parts for a long time, absolute bastards if they get a hold on you, but easy enough for the boys to scare off. Recently though we have been visited by spiders of a different kind. Giant black things with a huge gash of red upon their back. A single bite has enough poison enough to fell a knight. I hear you are the one for the job, and I am prepared to pay handsomely. Are you Interested? %SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -534,15 +540,16 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		{
 			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				continue
+				continue;
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength > this.m.MinStrength) {
-				return true
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
 			}
 		}
-		return false
+		return false;
 	}
 
 	function onSerialize( _out )

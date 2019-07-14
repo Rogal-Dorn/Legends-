@@ -5,7 +5,8 @@ this.entity <- {
 		IsAlive = true,
 		IsDirty = false,
 		IsAttackable = false,
-		IsSummoned = false
+		IsSummoned = false,
+		IsHidden = false
 	},
 	function getName()
 	{
@@ -112,6 +113,16 @@ this.entity <- {
 		return this.m.IsSummoned;
 	}
 
+	function isHidden()
+	{
+		return this.m.IsHidden;
+	}
+
+	function setHidden ( _val )
+	{
+		this.m.IsHidden = _val;
+	}
+	
 	function onSerialize( _out )
 	{
 		this.m.Tags.onSerialize(_out);

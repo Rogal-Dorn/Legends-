@@ -124,11 +124,11 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 
 		r = this.Math.rand(0, 0);

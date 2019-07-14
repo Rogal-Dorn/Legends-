@@ -13,8 +13,8 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_staff_knock_out";
 		this.m.Name = "Staff Daze";
 		this.m.Description = "A heavy blow intended to daze anyone unlucky enough to be hit for one turn, but not to do the most damage. Dazed targets have tier damage, initiative and stamina reduced by 35%";
-		this.m.Icon = "skills/active_32.png";
-		this.m.IconDisabled = "skills/active_32_sw.png";
+		this.m.Icon = "skills/staff_knock_out.png";
+		this.m.IconDisabled = "skills/staff_knock_out_bw.png";
 		this.m.Overlay = "active_32";
 		this.m.SoundOnUse = [
 			"sounds/combat/bash_01.wav",

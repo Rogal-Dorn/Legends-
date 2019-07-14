@@ -200,14 +200,62 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.Name;
 	}
 
+	function getPerkTreeGroupDescription ( _p, _prefix = "")
+	{
+		if( _p.len() == 0) {
+			return ""
+		}
+		local i = 0;
+		local text = _prefix + " " + _p[i].Descriptions[this.Math.rand(0, _p[i].Descriptions.len() - 1)];
+		if (i == _p.len() - 1)
+		{
+			return text + ".\n";
+		}
+		
+		i = 1;
+		if (i == _p.len() - 1)
+		{
+			text = text + " and " + _p[i].Descriptions[this.Math.rand(0, _p[i].Descriptions.len() - 1)];
+			return text + ".\n";
+		}
+
+		text = text + ", ";
+		for (i; i < _p.len(); i = ++i)
+		{
+			text = text + _p[i].Descriptions[this.Math.rand(0, _p[i].Descriptions.len() - 1)];
+			if (i <  _p.len() - 2)
+			{
+				text = text + ", ";
+			}
+			else if (i <  _p.len() - 1)
+			{
+				text = text + " and "
+			}
+		}
+		return text + ".\n";		
+	}
+
+	function getPerkBackgroundDescription( _tree )
+	{
+		local text = "";
+		text += this.getPerkTreeGroupDescription(_tree.Weapon,  "Has an aptitude for");
+		text += this.getPerkTreeGroupDescription(_tree.Defense,  "Likes wearing");
+		text += this.getPerkTreeGroupDescription(_tree.Enemy,  "Prefers fighting");
+		text += this.getPerkTreeGroupDescription(_tree.Class,  "Is skilled in") ;
+		text += this.getPerkTreeGroupDescription(_tree.Traits,  "");
+		return text;
+	}
+
 	function getBackgroundDescription( _desc )
 	{
 		local text = ""
 		if (_desc)
 		{
 			text = text + this.m.BackgroundDescription + "\n";
+			text = text + "\n" + this.getPerkBackgroundDescription(this.m.PerkTreeDynamic) + "\n";
 		}
 
+		local mtext = ""
 		foreach (k, v in this.m.Modifiers)
 		{
 			if (k == "Terrain")
@@ -225,60 +273,69 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				case "Ammo":
 				case "Meds":
 				case "Stash":
-					text += k + " +" + v + "\n";
+					mtext += k + " +" + v + "\n";
 					break;
 				case "ArmorParts":
-					text += "Tools +" + v + "\n";
+					mtext += "Tools +" + v + "\n";
 					break;
 				default:
 					v = v * 100;
-					text += k + " +" + v + "%\n";
+					mtext += k + " +" + v + "%\n";
 			}
 		}
+		if (mtext != "")
+		{
+			text += "\n" + mtext;
+		}
 
-		text += "\n\nTerrain Movement Modifiers:"
 		local terrains = this.m.Modifiers.Terrain;
 		local val = 0.0
+		local ttext = "";
 		val = terrains[2] * 100.0;
 		if (val > 0) {
-			text += "\nPlains +" + val +"%"
+			ttext += "\nPlains +" + val +"%"
 		}
 		val = terrains[3] * 100.0;
 		if (val > 0) {
-			text += "\nSwamp +" + val +"%"
+			ttext += "\nSwamp +" + val +"%"
 		}
 		val = terrains[4] * 100.0;
 		if (val > 0) {
-			text += "\nHills +" + val +"%"
+			ttext += "\nHills +" + val +"%"
 		}		
 		val = terrains[5] * 100.0;
 		if (val > 0) {
-			text += "\nForests +" + val +"%"
+			ttext += "\nForests +" + val +"%"
 		}
 		val = terrains[9] * 100.0;
 		if (val > 0) {
-			text += "\nMountains +" + val +"%"
+			ttext += "\nMountains +" + val +"%"
 		}
 		val = terrains[11] * 100.0;
 		if (val > 0) {
-			text += "\nFarmland +" + val +"%"
+			ttext += "\nFarmland +" + val +"%"
 		}		
 		val = terrains[12] * 100.0;
 		if (val > 0) {
-			text += "\nSnow +" + val +"%"
+			ttext += "\nSnow +" + val +"%"
 		}
 		val = terrains[13] * 100.0;
 		if (val > 0) {
-			text += "\nBadlands +" + val +"%"
+			ttext += "\nBadlands +" + val +"%"
 		}
 		val = terrains[14] * 100.0;
 		if (val > 0) {
-			text += "\nHighlands +" + val +"%"
+			ttext += "\nHighlands +" + val +"%"
 		}
 		val = terrains[15] * 100.0;
 		if (val > 0) {
-			text += "\nStepps +" + val +"%"
-		}		
+			ttext += "\nStepps +" + val +"%"
+		}
+
+		if (ttext != "")
+		{
+		 	text += "\nTerrain Movement Modifiers:" + ttext;
+		}	
 		return text;
 	}
 
@@ -296,6 +353,20 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				text = this.getBackgroundDescription(true)
 			}
 		];
+	}
+
+	function getPerkTreeDescription()
+	{
+		local text = "";
+		foreach (i, group in this.m.PerkTree)
+		{
+			text += "\nTier " + (i + 1) + ": ";
+			foreach (p in group)
+			{
+				text += p.Name + ", ";
+			}
+		}
+		return text;
 	}
 
 	function getPerkTree()
@@ -556,6 +627,18 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		b.Initiative = this.Math.rand(a.Initiative[0], a.Initiative[1]);
 		this.getContainer().getActor().m.CurrentProperties = clone b;
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
+	}
+
+	function rebuildPerkTree( _tree )
+	{
+		this.m.CustomPerkTree = _tree
+		if (this.World.Assets.isLegendPerkTrees())
+		{
+			this.m.CustomPerkTree = this.Const.Perks.MergeDynamicPerkTree(_tree, this.m.PerkTreeDynamic);
+		}
+		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
+		this.m.PerkTree = pT.Tree;
+		this.m.PerkTreeMap = pT.Map;
 	}
 
 	function buildPerkTree()

@@ -21,14 +21,36 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 	function getBonus()
 	{
 		local actor = this.getContainer().getActor();
+		if (actor == null)
+		{
+			return 0;
+		}
+		
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+		{
+			return 0;
+		}
+
 		local myTile = actor.getTile();
 		local myFaction = actor.getFaction();
 		local nearbyEnemies = 0;
+		
+		if (myTile == null)
+		{
+			return 0;
+		}
+
 		if (!("Entities" in this.Tactical))
 		{
 			return 0;
 		}
+
 		if (this.Tactical.Entities == null)
+		{
+			return 0;
+		}
+
+		if (this.Tactical.State.isAutoRetreat())
 		{
 			return 0;
 		}
@@ -38,23 +60,35 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
-		local actors = this.Tactical.Entities.getAllInstances();
+		local actors = this.Tactical.Entities.getAllInstancesAsArray();
 		local bonus = 0;
-		foreach( i in actors )
+		foreach( a in actors )
 		{
-			foreach( a in i )
+			if (a == null)
 			{
-				if (a.getFaction() == myFaction)
-				{
-					continue
-				}
-
-				if (a.getTile().getDistanceTo(myTile) != 1)
-				{
-					continue;
-				}
-				++nearbyEnemies;
+				continue;
 			}
+
+			if(!a.isPlacedOnMap())
+			{
+				continue;
+			}
+
+			if (a.getFaction() == myFaction)
+			{
+				continue;
+			}
+
+			if (a.getTile() == null)
+			{
+				continue;
+			}
+
+			if (a.getTile().getDistanceTo(myTile) != 1)
+			{
+				continue;
+			}
+			++nearbyEnemies;
 		}
 
 		if (nearbyEnemies > 1)

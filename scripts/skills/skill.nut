@@ -761,7 +761,7 @@ this.skill <- {
 	{
 	}
 
-	function onMovementCompleted()
+	function onMovementCompleted( _tile )
 	{
 	}
 

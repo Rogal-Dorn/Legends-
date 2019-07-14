@@ -8,12 +8,12 @@ this.legend_white_wolf_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityHitpointsMult = 0.5;
 		this.m.Properties.TargetPriorityRandomMult = 0.1;
 		this.m.Properties.TargetPriorityDamageMult = 0.25;
-		this.m.Properties.TargetPriorityFleeingMult = 0.9;
+		this.m.Properties.TargetPriorityFleeingMult = 1.5;
 		this.m.Properties.TargetPriorityHittingAlliesMult = 0.1;
 		this.m.Properties.TargetPriorityCounterSkillsMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 0.3;
 		this.m.Properties.OverallFormationMult = 1.25;
-		this.m.Properties.EngageFlankingMult = 1.25;
+		this.m.Properties.EngageFlankingMult = 5.0;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 0.5;
 		this.m.Properties.EngageLockDownTargetMult = 2.0;
 		this.m.Properties.PreferCarefulEngage = true;

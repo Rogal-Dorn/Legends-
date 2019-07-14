@@ -237,6 +237,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_ironmonger_background",
 	"legend_nun_background",
 	"legend_taxidermist_background",
+	"legend_necro_background",
 	"lumberjack_background",
 	"mason_background",
 	"messenger_background",

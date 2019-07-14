@@ -6,8 +6,8 @@ this.legend_staff_bash <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Staff Bash";
 		this.m.Description = "A brute force attack that inflicts additional fatigue with every hit.";
 		this.m.KilledString = "Clubbed to death";
-		this.m.Icon = "skills/active_02.png";
-		this.m.IconDisabled = "skills/active_02_sw.png";
+		this.m.Icon = "skills/staff_bash.png";
+		this.m.IconDisabled = "skills/staff_bash_bw.png";
 		this.m.Overlay = "active_02";
 		this.m.SoundOnUse = [
 			"sounds/combat/bash_01.wav",

@@ -8,12 +8,12 @@ this.legend_tower_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "An large square shield that offers excelent protection for yourself and others, very heavy and hard to manoeuvre";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(2, 21);
+		this.m.Variant = this.Math.rand(1, 11);
 		this.updateVariant();
-		this.m.Value = 200;
-		this.m.MeleeDefense = 30;
-		this.m.RangedDefense = 30;
-		this.m.StaminaModifier = -20;
+		this.m.Value = 1000;
+		this.m.MeleeDefense = 25;
+		this.m.RangedDefense = 25;
+		this.m.StaminaModifier = -30;
 		this.m.Condition = 96;
 		this.m.ConditionMax = 96;
 	}

@@ -51,7 +51,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.DaggerTree,
+				this.Const.Perks.MaceTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [

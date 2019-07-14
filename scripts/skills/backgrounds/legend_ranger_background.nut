@@ -26,7 +26,9 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.asthmatic",
 			"trait.craven",
 			"trait.dastard",
-			"trait.drunkard"
+			"trait.drunkard",
+			"trait.disloyal",
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Deerhunter",
@@ -80,7 +82,9 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Lookout,
-				this.Const.Perks.PerkDefs.LegendMarkTarget
+				this.Const.Perks.PerkDefs.LegendMarkTarget,
+				this.Const.Perks.PerkDefs.LegendBackToBasics,
+				this.Const.Perks.PerkDefs.LegendAlert
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -92,12 +96,14 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Debilitate,
 				this.Const.Perks.PerkDefs.Sprint,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
+				this.Const.Perks.PerkDefs.LegendOnslaught
 			],
 			[
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
+				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
@@ -120,6 +126,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.CloseCombatArcher,
 				this.Const.Perks.PerkDefs.Ballistics,
+				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.LegendAmmoBundles,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin
 			],
@@ -130,10 +138,11 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendCascade,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
+				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm
+				this.Const.Perks.PerkDefs.LegendBlendIn,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat
+
 			],
 			[
 				this.Const.Perks.PerkDefs.KillingFrenzy,
@@ -141,6 +150,12 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendEvasion,
+				this.Const.Perks.PerkDefs.LegendBalance,
+				this.Const.Perks.PerkDefs.LegendHidden,
+				this.Const.Perks.PerkDefs.LegendBigGameHunter,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm
+				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 				this.Const.Perks.PerkDefs.LegendBigGameHunter
 			],

@@ -33,8 +33,15 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_staff_bash"));
-		this.addSkill(this.new("scripts/skills/actives/legend_staff_knock_out"));
+		local s = this.new("scripts/skills/actives/legend_staff_bash");
+		s.m.Icon = "skills/staff_bash_tip.png";
+		s.m.IconDisabled = "skills/staff_bash_tip_bw.png";
+		this.addSkill(s);
+
+		local t = this.new("scripts/skills/actives/legend_staff_knock_out");
+		t.m.Icon = "skills/staff_knock_out_tip.png";
+		t.m.IconDisabled = "skills/staff_knock_out_tip_bw.png";
+		this.addSkill(t);
 	}
 
 });
