@@ -1253,3 +1253,6 @@ Beta 12.1
 *Fixes party start characters being both loyal and disloyal
 *Fixes Assured conquest perk.
 *Fixes Balance perk.
+
+Beta 12.2
+*Fixes onslaught perk
