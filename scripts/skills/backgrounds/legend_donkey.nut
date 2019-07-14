@@ -24,6 +24,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.IsFemaleBackground = false;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
+		this.m.IsStabled = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[4];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[5];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[4];
