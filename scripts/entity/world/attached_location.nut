@@ -156,6 +156,10 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 	{
 	}
 
+	function onUpdateStablesList ( _list )
+	{
+	}
+	
 	function onUpdateShopList( _id, _list )
 	{
 	}

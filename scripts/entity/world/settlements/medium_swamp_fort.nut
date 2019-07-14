@@ -85,6 +85,9 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			"raider_background",
 			"retired_soldier_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A stone keep controlling routes through the swamps";
 		this.m.Description = "A stone keep controlling routes through and access to the surrounding swamps and marshes.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_02";
@@ -116,7 +119,7 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 		}
 		else
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1 || this.Const.World.Buildings.Kennels == 0)
 			{
@@ -129,6 +132,10 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
+			}
+			else if (r == 4)
+			{
+				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 			}
 		}
 

@@ -63,6 +63,9 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"sellsword_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A stone keep securing the surrounding tundra";
 		this.m.Description = "A stone keep that is the seat of power in the surrounding tundra. It acts as a base of operations for a decently sized garrison.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_02";
@@ -94,7 +97,7 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 		}
 		else
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r <= 2)
 			{
@@ -103,6 +106,10 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
+			}
+			else if (r == 4)
+			{
+				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 			}
 		}
 

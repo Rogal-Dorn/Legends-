@@ -81,6 +81,9 @@ this.medium_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"sellsword_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A stone keep projecting power over the flat steppe";
 		this.m.Description = "This stone keep is a strongpoint in the area and grants a good view of the surrounding flat and dry lands.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_02";
@@ -105,7 +108,7 @@ this.medium_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
-		local r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 4);
 
 		if (r == 1 || this.Const.World.Buildings.Fletchers == 0)
 		{
@@ -115,7 +118,11 @@ this.medium_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
 		}
-		else if (r == 3)
+		else if (r == 3 || this.Const.World.Buildings.Stables == 0)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+		}
+		else if (r == 4)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
 		}

@@ -180,6 +180,10 @@ this.building <- {
 	{
 	}
 
+	function onUpdateStablesList ( _list )
+	{
+	}
+
 	function onSerialize( _out )
 	{
 	}

@@ -76,6 +76,9 @@ this.medium_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"cripple_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A stone keep surrounded by fertile lands";
 		this.m.Description = "A stone keep surrounded by fertile lands and acting as a strongpoint and base of operations in the region.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_02";
@@ -100,17 +103,21 @@ this.medium_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
-		local r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 4);
 
 		if (r == 1 || this.Const.World.Buildings.Kennels == 0)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
 		}
-		else if (r == 2)
+		else if (r == 2 || this.Const.World.Buildings.Stables == 0)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+		}
+		else if (r == 3)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
 		}
-		else if (r == 3)
+		else if (r == 4)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/tavern_building"));
 		}

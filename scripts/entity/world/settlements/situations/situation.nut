@@ -111,6 +111,10 @@ this.situation <- {
 	{
 	}
 
+	function onUpdateStablesList ( _list )
+	{
+	}
+	
 	function onAdded( _settlement )
 	{
 	}

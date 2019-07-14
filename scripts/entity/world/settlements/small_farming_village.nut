@@ -53,8 +53,6 @@ this.small_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"farmhand_background",
 			"farmhand_background",
 			"farmhand_background",
-			"legend_donkey",
-			"legend_donkey",
 			"miller_background",
 			"miller_background",
 			"ratcatcher_background",

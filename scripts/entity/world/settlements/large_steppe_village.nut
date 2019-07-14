@@ -33,8 +33,6 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"female_bowyer_background",
 			"caravan_hand_background",
 			"caravan_hand_background",
-			"legend_donkey",
-			"legend_donkey",
 			"caravan_hand_background",
 			"gambler_background",
 			"female_daytaler_background",
@@ -71,6 +69,9 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"eunuch_background",
 			"legend_inventor_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -101,17 +102,13 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/tavern_building"));
+		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 
-		if (this.Math.rand(1, 100) <= 90 || this.Const.World.Buildings.Barbers == 0)
-		{
-			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/barber_building"));
-		}
-		else
+		if (this.Math.rand(1, 100) <= 50)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 		}
-
-		if (this.Math.rand(1, 100) <= 80)
+		else if (this.Math.rand(1, 100) <= 50)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 		}

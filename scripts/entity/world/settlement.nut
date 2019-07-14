@@ -20,6 +20,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		SoundsAtNight = [],
 		Situations = [],
 		DraftList = [],
+		StablesList = [],
 		Rumors = [],
 		Size = 1,
 		HousesMin = 0,
@@ -28,8 +29,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		HousesTiles = [],
 		LastShopUpdate = 0.0,
 		LastRosterUpdate = 0.0,
+		LastStablesUpdate = 0.0,
 		ShopSeed = 0,
 		RosterSeed = 0,
+		StablesSeed = 0,
 		Owner = null,
 		Factions = [],
 		ProduceString = "goods",
@@ -910,6 +913,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			++this.Const.World.Buildings.Taxidermists;
 		}
+		else if (_building.getID() == "building.stables")
+		{
+			++this.Const.World.Buildings.Stables;
+		}
+		else if (_building.getID() == "building.bank")
+		{
+			++this.Const.World.Buildings.Bank;
+		}
 	}
 
 	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
@@ -1233,7 +1244,16 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.RosterSeed = this.Math.floor(this.Time.getRealTime() + this.Math.rand());
 		this.m.LastRosterUpdate = this.Time.getVirtualTimeF();
 		local roster = this.World.getRoster(this.getID());
-		local current = roster.getAll();
+		local allbros = roster.getAll();
+		local current = [];
+		for (local i = 0; i < allbros.len(); i = ++i)
+		{
+			if (allbros[i].isStabled())
+			{
+				continue;
+			}
+			current.push(allbros[i]);
+		}
 		local iterations = this.Math.max(1, daysPassed / 2);
 		local activeLocations = 0;
 
@@ -1277,7 +1297,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 		else
 		{
-			roster.clear();
+			for (local i = 0; i < current.len(); i = ++i)
+			{
+				roster.remove(current[i]);
+			}
 			current = [];
 		}
 
@@ -1312,7 +1335,127 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			current.push(bro);
 		}
 
+		this.updateStables( _force )
+
 		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
+	}
+
+	function updateStables( _force = false )
+	{
+		if (!this.hasBuilding("building.stables"))
+		{
+			return;
+		}
+
+		local daysPassed = (this.Time.getVirtualTimeF() - this.m.LastStablesUpdate) / this.World.getTime().SecondsPerDay;
+
+		if (!_force && this.m.LastStablesUpdate != 0 && daysPassed < 2)
+		{
+			return;
+		}
+
+		if (this.m.StablesSeed != 0)
+		{
+			this.Math.seedRandom(this.m.StablesSeed);
+		}
+
+		this.m.StablesSeed = this.Math.floor(this.Time.getRealTime() + this.Math.rand());
+		this.m.LastStablesUpdate = this.Time.getVirtualTimeF();
+		local roster = this.World.getRoster(this.getID());
+		local allbros = roster.getAll();
+		local current = [];
+		for (local i = 0; i < allbros.len(); i = ++i)
+		{
+			if (!allbros[i].isStabled())
+			{
+				continue;
+			}
+			current.push(allbros[i]);
+		}
+
+		local iterations = this.Math.max(1, daysPassed / 2);
+		local activeLocations = 0;
+
+		foreach( loc in this.m.AttachedLocations )
+		{
+			if (loc.isActive())
+			{
+				activeLocations = ++activeLocations;
+			}
+		}
+
+		local minRosterSizes = [
+			0,
+			1,
+			3,
+			5
+		];
+		local rosterMin = minRosterSizes[this.m.Size];
+		local rosterMax = minRosterSizes[this.m.Size] + activeLocations;
+
+		if (this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() < 50)
+		{
+			rosterMin = rosterMin * (this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() / 50.0);
+			rosterMax = rosterMax * (this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation() / 50.0);
+		}
+
+		rosterMin = rosterMin * this.m.Modifiers.StablesMult;
+		rosterMax = rosterMax * this.m.Modifiers.StablesMult;
+
+		if (iterations < 5)
+		{
+			for( local i = 0; i < iterations; i = ++i )
+			{
+				for( local maxRecruits = this.Math.rand(this.Math.max(0, rosterMax / 2 - 1), rosterMax - 1); current.len() > maxRecruits;  )
+				{
+					local n = this.Math.rand(0, current.len() - 1);
+					roster.remove(current[n]);
+					current.remove(n);
+				}
+			}
+		}
+		else
+		{
+			for (local i = 0; i < current.len(); i = ++i)
+			{
+				if (current[i].isStabled())
+				{
+					continue;
+				}
+				current = [];
+			}
+		}
+
+		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
+		local draftList;
+		draftList = clone this.m.StablesList;
+
+		foreach( loc in this.m.AttachedLocations )
+		{
+			loc.onUpdateStablesList(draftList);
+		}
+
+		foreach( b in this.m.Buildings )
+		{
+			if (b != null)
+			{
+				b.onUpdateStablesList(draftList);
+			}
+		}
+
+		foreach( s in this.m.Situations )
+		{
+			s.onUpdateStablesList(draftList);
+		}
+
+		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
+
+		while (maxRecruits > current.len())
+		{
+			local bro = roster.create("scripts/entity/tactical/player");
+			bro.setStartValuesEx(draftList);
+			current.push(bro);
+		}
 	}
 
 	function updateImportedProduce()
@@ -1949,8 +2092,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		_out.writeBool(this.m.IsCoastal);
 		_out.writeF32(this.m.LastShopUpdate);
 		_out.writeF32(this.m.LastRosterUpdate);
+		_out.writeF32(this.m.LastStablesUpdate);
 		_out.writeI32(this.m.ShopSeed);
 		_out.writeI32(this.m.RosterSeed);
+		_out.writeI32(this.m.StablesSeed);
 
 		if (this.m.DeepOceanTile != null)
 		{
@@ -2024,8 +2169,16 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.IsCoastal = _in.readBool();
 		this.m.LastShopUpdate = _in.readF32();
 		this.m.LastRosterUpdate = _in.readF32();
+		if (_in.getMetaData().getVersion() >= 58)
+		{
+			this.m.LastStablesUpdate = _in.readF32();
+		}
 		this.m.ShopSeed = _in.readI32();
 		this.m.RosterSeed = _in.readI32();
+		if (_in.getMetaData().getVersion() >= 58)
+		{
+			this.m.StablesSeed = _in.readI32();
+		}
 		local x = _in.readI16();
 		local y = _in.readI16();
 

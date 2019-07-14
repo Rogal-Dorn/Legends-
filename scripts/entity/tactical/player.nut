@@ -830,6 +830,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.InReserves = _v;
 	}
 
+	function isStabled()
+	{
+		return this.getBackground().isStabled();
+	}
+
 	function create()
 	{
 		this.m.IsControlledByPlayer = true;

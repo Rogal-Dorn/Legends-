@@ -148,6 +148,10 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 
 		foreach( i, bro in bros )
 		{
+			if (bro.isStabled())
+			{
+				continue;
+			}
 			if (!bro.getBackground().isFemaleBackground())
 			{
 				garbage.push(bro);

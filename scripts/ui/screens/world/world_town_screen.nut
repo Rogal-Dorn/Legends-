@@ -10,6 +10,7 @@ this.world_town_screen <- {
 		TavernDialogModule = null,
 		TrainingDialogModule = null,
 		TaxidermistDialogModule = null,
+		StablesDialogModule = null,
 		Visible = null,
 		Animating = null,
 		LastActiveModule = null,
@@ -26,9 +27,9 @@ this.world_town_screen <- {
 
 	function isAnimating()
 	{
-		if (this.m.Animating != null && this.m.MainDialogModule != null && this.m.HireDialogModule != null && this.m.ShopDialogModule != null)
+		if (this.m.Animating != null && this.m.MainDialogModule != null && this.m.HireDialogModule != null && this.m.ShopDialogModule != null && this.m.StablesDialogModule != null)
 		{
-			return this.m.Animating == true || this.m.MainDialogModule.isAnimating() || this.m.HireDialogModule.isAnimating() || this.m.ShopDialogModule.isAnimating() || this.m.TrainingDialogModule.isAnimating() || this.m.BarberDialogModule.isAnimating();
+			return this.m.Animating == true || this.m.MainDialogModule.isAnimating() || this.m.HireDialogModule.isAnimating() || this.m.ShopDialogModule.isAnimating() || this.m.TrainingDialogModule.isAnimating() || this.m.BarberDialogModule.isAnimating() || this.m.StablesDialogModule.isAnimating();
 		}
 		else
 		{
@@ -44,6 +45,11 @@ this.world_town_screen <- {
 	function getHireDialogModule()
 	{
 		return this.m.HireDialogModule;
+	}
+
+	function getStablesDialogModule()
+	{
+		return this.m.StablesDialogModule;
 	}
 
 	function getShopDialogModule()
@@ -151,6 +157,9 @@ this.world_town_screen <- {
 		this.m.TaxidermistDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_taxidermist_dialog_module");
 		this.m.TaxidermistDialogModule.setParent(this);
 		this.m.TaxidermistDialogModule.connectUI(this.m.JSHandle);
+		this.m.StablesDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_stables_dialog_module");
+		this.m.StablesDialogModule.setParent(this);
+		this.m.StablesDialogModule.connectUI(this.m.JSHandle);
 	}
 
 	function destroy()
@@ -172,6 +181,8 @@ this.world_town_screen <- {
 		this.m.TrainingDialogModule = null;
 		this.m.TaxidermistDialogModule.destroy();
 		this.m.TaxidermistDialogModule = null;
+		this.m.StablesDialogModule.destroy();
+		this.m.StablesDialogModule = null;
 		this.m.MainDialogModule.destroy();
 		this.m.MainDialogModule = null;
 		this.m.JSHandle = this.UI.disconnect(this.m.JSHandle);
@@ -188,6 +199,7 @@ this.world_town_screen <- {
 		this.m.TempleDialogModule.clear();
 		this.m.TrainingDialogModule.clear();
 		this.m.TaxidermistDialogModule.clear();
+		this.m.StablesDialogModule.clear();
 		this.m.MainDialogModule.clear();
 	}
 
@@ -264,6 +276,10 @@ this.world_town_screen <- {
 		{
 			this.showTaxidermistDialog();
 		}
+		else if (this.m.LastActiveModule == this.m.StablesDialogModule)
+		{
+			this.showStablesDialog();
+		}
 		else
 		{
 			this.showMainDialog();
@@ -287,6 +303,16 @@ this.world_town_screen <- {
 			this.m.LastActiveModule = this.m.HireDialogModule;
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("showHireDialog", this.m.HireDialogModule.queryHireInformation());
+		}
+	}
+
+	function showStablesDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.StablesDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showStablesDialog", this.m.StablesDialogModule.queryHireInformation());
 		}
 	}
 

@@ -50,10 +50,6 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"female_farmhand_background",
 			"female_farmhand_background",
 			"female_farmhand_background",
-			"legend_donkey",
-			"legend_donkey",
-			"legend_donkey",
-			"legend_donkey",
 			"historian_background",
 			"juggler_background",
 			"militia_background",
@@ -79,6 +75,9 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"swordmaster_background",
 			"legend_inventor_background"
+		];
+		this.m.StablesList = [
+			"legend_donkey"
 		];
 		this.m.UIDescription = "A large city thriving on trade and agriculture";
 		this.m.Description = "A large city surrounded by lush green meadows, orchards and fields. Food stocks are usually filled to the brim.";
@@ -106,7 +105,11 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/tavern_building"));
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/barber_building"));
 
-		if (this.Const.World.Buildings.Fletchers == 0)
+		if (this.Const.World.Buildings.Stables == 0)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+		}
+		else if (this.Const.World.Buildings.Fletchers == 0)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
 		}

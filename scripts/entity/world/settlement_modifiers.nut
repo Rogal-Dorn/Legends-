@@ -11,6 +11,7 @@ this.settlement_modifiers <- {
 	MineralRarityMult = 1.0,
 	BuildingRarityMult = 1.0,
 	RecruitsMult = 1.0,
+	StablesMult = 1.0,
 	function reset()
 	{
 		this.PriceMult = 1.0;
@@ -25,6 +26,7 @@ this.settlement_modifiers <- {
 		this.MineralRarityMult = 1.0;
 		this.BuildingRarityMult = 1.0;
 		this.RecruitsMult = 1.0;
+		this.StablesMult = 1.0;
 	}
 
 	function create()

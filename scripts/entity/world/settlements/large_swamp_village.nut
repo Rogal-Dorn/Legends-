@@ -38,8 +38,6 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"female_beggar_background",
 			"brawler_background",
 			"caravan_hand_background",
-			"legend_donkey",
-			"legend_donkey",
 			"gambler_background",
 			"cultist_background",
 			"cultist_background",

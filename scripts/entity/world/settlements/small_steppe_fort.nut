@@ -61,6 +61,9 @@ this.small_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"retired_soldier_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A small wooden keep in the dry steppe";
 		this.m.Description = "This small wooden keep looks wide over the dry steppe and offers shade for weary soldiers.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_01";
@@ -84,13 +87,17 @@ this.small_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 
-		if (this.Const.World.Buildings.Kennels == 0)
+		if (this.Const.World.Buildings.Stables == 0)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+		}
+		else if (this.Const.World.Buildings.Kennels == 0)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
 		}
 		else
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -103,6 +110,10 @@ this.small_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
+			}
+			else if (r == 4)
+			{
+				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 			}
 		}
 

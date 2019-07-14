@@ -89,6 +89,10 @@ this.starting_scenario <- {
 	{
 	}
 
+	function onUpdateStablesList( _list )
+	{
+	}
+
 	function onHiredByScenario( bro )
 	{
 	}

@@ -46,8 +46,6 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"historian_background",
 			"hunter_background",
 			"hunter_background",
-			"legend_donkey",
-			"legend_donkey",
 			"killer_on_the_run_background",
 			"lumberjack_background",
 			"lumberjack_background",

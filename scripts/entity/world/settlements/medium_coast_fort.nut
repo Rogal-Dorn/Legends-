@@ -85,6 +85,9 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"swordmaster_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A stone keep that controls a strategically important port and protects nearby trading routes";
 		this.m.Description = "This stone keep controls a strategically important sea access and protects nearby trading routes.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_02";
@@ -122,9 +125,13 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
 		}
+		else if (this.Const.World.Buildings.Stables == 0)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+		}
 		else
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -137,6 +144,10 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
+			}
+			else if (r == 4)
+			{
+				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 			}
 		}
 

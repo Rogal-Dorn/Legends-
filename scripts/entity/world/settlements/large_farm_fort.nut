@@ -91,6 +91,9 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"swordmaster_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A massive citadel towering over the open plains";
 		this.m.Description = "A massive citadel towering over the open plains surrounding it. A seat of power to nobles, and housing large armed forces for a firm grip on the region.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_03";
@@ -148,9 +151,13 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
 
-		local r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 4);
 
-		if (r == 1 || this.Const.World.Buildings.Fletchers == 0)
+		if (r == 1 || this.Const.World.Buildings.Stables == 0)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+		}
+		else if (r == 2 || this.Const.World.Buildings.Fletchers == 0)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
 		}

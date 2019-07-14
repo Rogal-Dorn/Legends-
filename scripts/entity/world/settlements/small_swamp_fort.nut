@@ -69,6 +69,10 @@ this.small_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background"
 		];
 
+		this.m.StablesList = [
+			"legend_donkey"
+		];
+
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.DraftList.push("beast_hunter_background");
@@ -103,7 +107,7 @@ this.small_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 		}
 		else
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -116,6 +120,10 @@ this.small_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
+			}
+			else if (r == 4)
+			{
+				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 			}
 		}
 

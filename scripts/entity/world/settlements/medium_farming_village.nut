@@ -39,10 +39,6 @@ this.medium_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"apprentice_background",
 			"beggar_background",
 			"butcher_background",
-			"legend_donkey",
-			"legend_donkey",
-			"legend_donkey",
-			"legend_donkey",
 			"gambler_background",
 			"daytaler_background",
 			"daytaler_background",
@@ -85,6 +81,9 @@ this.medium_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"vagabond_background",
 			"retired_soldier_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A prospering village surrounded by fertile land";
 		this.m.Description = "A prospering village surrounded by fertile land. The market is usually filled with all kinds of fresh food.";
 		this.m.UIBackgroundCenter = "ui/settlements/townhall_02";
@@ -108,7 +107,7 @@ this.medium_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/tavern_building"));
-		local r = this.Math.rand(1, 2);
+		local r = this.Math.rand(1, 3);
 
 		if (r == 1 || this.Const.World.Buildings.Barbers == 0)
 		{
@@ -117,6 +116,10 @@ this.medium_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		else if (r == 2)
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/temple_building"));
+		}
+		else if (r == 3)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 		}
 
 		if (this.Math.rand(1, 100) <= 70)

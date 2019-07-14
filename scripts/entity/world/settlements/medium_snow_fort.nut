@@ -64,6 +64,9 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"raider_background",
 			"retired_soldier_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "This stone keep shelters a garrison from the snow";
 		this.m.Description = "This stone-built keep offers protection both from the cold and any invaders.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_02_snow";
@@ -93,9 +96,13 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 		{
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
 		}
+		else if (this.Const.World.Buildings.Stables == 0)
+		{
+			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
+		}
 		else
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -108,6 +115,10 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
+			}
+			else if (r == 4)
+			{
+				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 			}
 		}
 

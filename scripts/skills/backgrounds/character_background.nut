@@ -30,6 +30,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		IsRangerRecruitBackground = false,
 		IsCrusaderRecruitBackground = false,
 		IsOutlawBackground = false,
+		IsStabled = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
 			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
@@ -401,6 +402,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 
 		return this.Const.Perks.findByBackground(_id, this.getID());
+	}
+
+	function isStabled()
+	{
+		return this.m.IsStabled;
 	}
 
 	function buildDescription( _isFinal = false )

@@ -709,6 +709,8 @@ gt.Const.World.Buildings <- {
 	Fletchers = 0,
 	Temples = 0,
 	Taxidermists = 0,
+	Stables = 0,
+	Bank = 0,
 	function reset()
 	{
 		this.Barbers = 0;
@@ -716,6 +718,8 @@ gt.Const.World.Buildings <- {
 		this.Fletchers = 0;
 		this.Temples = 0;
 		this.Taxidermists = 0;
+		this.Stables = 0;
+		this.Bank = 0;
 	}
 
 };

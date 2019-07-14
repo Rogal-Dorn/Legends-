@@ -51,6 +51,9 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"retired_soldier_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey"
+		];
 		this.m.UIDescription = "A wooden motte towering above the tundra";
 		this.m.Description = "In the flat lands of the tundra, this small fortification can be spotted from quite a distance.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_01";
@@ -80,7 +83,7 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 		}
 		else
 		{
-			local r = this.Math.rand(1, 3);
+			local r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -93,6 +96,10 @@ this.small_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
+			}
+			else if (r == 4)
+			{
+				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));
 			}
 		}
 
