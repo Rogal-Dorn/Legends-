@@ -12,7 +12,8 @@ this.fear_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.brave",
 			"trait.determined",
 			"trait.cocky",
-			"trait.bloodthirsty"
+			"trait.bloodthirsty",
+			"trait.hate_nobles"
 		];
 	}
 

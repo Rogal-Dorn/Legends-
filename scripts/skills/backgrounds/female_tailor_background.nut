@@ -126,7 +126,7 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
-			else if (r == 3)
+			else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 		}

@@ -191,32 +191,29 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/legend_scythe"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/dagger"));
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
 		}
 		else if (r == 2)
 		{
-			if (this.Const.DLC.Wildmen)
-			{
 			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-			}
-			else if (!this.Const.DLC.Wildmen)
-			{
-			items.equip(this.new("scripts/items/weapons/knife"));
-			}
 		}
 		else if (r == 3)
 		{
+			items.equip(this.new("scripts/items/weapons/legend_chain"));
+		}
+		else if (r == 4)
+		{
 			if (this.Const.DLC.Wildmen)
 			{
-			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+			items.equip(this.new("scripts/items/weapons/battle_whip"));
 			}
 			else if (!this.Const.DLC.Wildmen)
 			{
-			items.equip(this.new("scripts/items/weapons/legend_shiv"));
+			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 			}
 		}
 

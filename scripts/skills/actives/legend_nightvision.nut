@@ -29,7 +29,6 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
 				id = 1,
@@ -59,8 +58,6 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 	{
 		local myTile = _user.getTile();
 		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
-		local target = _targetTile.getEntity();
-
 		foreach( a in actors)
 		{
 
@@ -79,10 +76,10 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 				continue
 			}
 
-			if (target.getSkills().hasSkill("special.night"))
+			if (a.getSkills().hasSkill("special.night"))
 		 	{
-				this.spawnIcon("status_effect_98", target.getTile());
-				target.getSkills().removeByID("special.night");
+				this.spawnIcon("status_effect_98", a.getTile());
+				a.getSkills().removeByID("special.night");
 		 	}
 			
 		}

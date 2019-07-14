@@ -35,7 +35,7 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.DaggerTree,
+				this.Const.Perks.AxeTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
@@ -147,7 +147,7 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/shields/wooden_shield"));
+			items.equip(this.new("scripts/items/shields/heater_shield"));
 		}
 
 		r = this.Math.rand(0, 3);

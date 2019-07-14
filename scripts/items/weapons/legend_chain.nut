@@ -36,16 +36,13 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local flail = this.new("scripts/skills/actives/flail_skill");
+		local flail = this.new("scripts/skills/actives/legend_chain_flail_skill");
 		flail.m.Icon = "skills/active_62.png";
 		flail.m.IconDisabled = "skills/active_62_sw.png";
 		flail.m.Overlay = "active_62";
 		this.addSkill(flail);
-		local lash = this.new("scripts/skills/actives/lash_skill");
-		lash.m.Icon = "skills/active_94.png";
-		lash.m.IconDisabled = "skills/active_94_sw.png";
-		lash.m.Overlay = "active_94";
-		this.addSkill(lash);
+		local thresh = this.new("scripts/skills/actives/legend_chain_thresh");
+		this.addSkill(thresh);
 		local lash = this.new("scripts/skills/actives/legend_chain_hook");
 		lash.m.Icon = "skills/active_31.png";
 		lash.m.IconDisabled = "skills/active_31_sw.png";

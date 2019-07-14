@@ -68,7 +68,7 @@ gt.Const.Tactical.Actor.WarWolf <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.BanditRabble <- {
-	XP = 40,
+	XP = 75,
 	ActionPoints = 9,
 	Hitpoints = 35,
 	Bravery = 30,

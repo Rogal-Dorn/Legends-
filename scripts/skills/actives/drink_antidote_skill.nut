@@ -131,6 +131,16 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 				return true;
 			}
 
+				if (target.getSkills().hasSkill("effects.spider_poison"))
+			{
+				return true;
+			}
+
+				if (target.getSkills().hasSkill("effects.legend_redback_spider_poison"))
+			{
+				return true;
+			}
+
 			return false;
 		}
 	}
@@ -150,6 +160,11 @@ this.drink_antidote_skill <- this.inherit("scripts/skills/skill", {
 			while (user.getSkills().hasSkill("effects.spider_poison"))
 			{
 				user.getSkills().removeByID("effects.spider_poison");
+			}
+
+			while (user.getSkills().hasSkill("effects.legend_redback_spider_poison"))
+			{
+				user.getSkills().removeByID("effects.legend_redback_spider_poison");
 			}
 
 			if (!user.isHiddenToPlayer())

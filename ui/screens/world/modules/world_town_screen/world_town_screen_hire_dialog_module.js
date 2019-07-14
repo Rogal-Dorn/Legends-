@@ -485,6 +485,10 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
 
         if(data['IsTryoutDone'])
         {
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/known_perks.png' + '"/>');
+            icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.KnownPerks, entityId: data.ID });
+            this.mDetailsPanel.CharacterTraitsContainer.append(icon);
+
             for(var i = 0; i < data.Traits.length; ++i)
             {
                 var icon = $('<img src="' + Path.GFX + data.Traits[i].icon + '"/>');
@@ -546,6 +550,10 @@ WorldTownScreenHireDialogModule.prototype.updateDetailsPanel = function(_element
         }
         else
         {
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/unknown_perks.png' + '"/>');
+            icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.UnknownPerks, entityId: data.ID });
+            this.mDetailsPanel.CharacterTraitsContainer.append(icon);
+
             var icon = $('<img src="' + Path.GFX + Asset.ICON_UNKNOWN_TRAITS + '"/>');
             icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.UnknownTraits });
             this.mDetailsPanel.CharacterTraitsContainer.append(icon);
@@ -626,6 +634,10 @@ WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
         traitsContainer.empty();
         if(data['IsTryoutDone'])
         {
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/known_perks.png' + '"/>');
+            icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.KnownPerks, entityId: data.ID});
+            traitsContainer.append(icon);
+
             for(var i = 0; i < data.Traits.length; ++i)
             {
                 var icon = $('<img src="' + Path.GFX + data.Traits[i].icon + '"/>');
@@ -635,6 +647,10 @@ WorldTownScreenHireDialogModule.prototype.updateListEntryValues = function()
         }
         else
         {
+            var icon = $('<img src="' + Path.GFX + 'ui/icons/unknown_perks.png' + '"/>');
+            icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.UnknownPerks, entityId: data.ID });
+            traitsContainer.append(icon);
+
             var icon = $('<img src="' + Path.GFX + Asset.ICON_UNKNOWN_TRAITS + '"/>');
             icon.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.UnknownTraits });
             traitsContainer.append(icon);

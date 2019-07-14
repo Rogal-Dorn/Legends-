@@ -121,11 +121,15 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		for (local i = 0; i < 4; i = ++i)
+		for (local i = 0; i < 6; i = ++i)
 		{
-			entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 12 + i, 12 + i);
+			entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 12 + i, 12 + i);
 			entity.setFaction(this.Const.Faction.Beasts);
 		}
+
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 11, 11);
+		 entity.setFaction(this.Const.Faction.Beasts);
+
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
@@ -252,6 +256,9 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
+		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
+		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
+		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
 	}
 
 });

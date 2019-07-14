@@ -38,7 +38,9 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.quick",
 			"trait.swift",
 			"trait.suser_footing",
-			"trait.tough"
+			"trait.tough",
+			"trait.disloyal",
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Enthralling",
@@ -89,6 +91,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.LegendAlert,
 				this.Const.Perks.PerkDefs.LegendHorrify
 			],
 			[
@@ -106,6 +109,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			[
 				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.LegendRelax,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.Ballistics
@@ -117,6 +121,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendSleep,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendTeleport,
 				this.Const.Perks.PerkDefs.LegendFirefield
 				

@@ -3,7 +3,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		Target = null,
 		Dude = null,
 		IsPlayerAttacking = true,
-		MinStrength = 500,
+		MinStrength = 300,
 		Perk = "perk.legend_favoured_enemy_unhold",
 		ValidTypes = this.Const.LegendMod.FavoriteUnhold		
 	},
@@ -18,6 +18,12 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Type = "contract.legend_hunting_rock_unholds";
 		this.m.Name = "Hunting a Mountain (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+	}
+
+	function getBanner()
+	{
+		return "ui/banners/factions/banner_legend_s";
 	}
 
 	function onImportIntro()
@@ -28,12 +34,12 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 
 	function start()
 	{
-		this.m.Payment.Pool = 7500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 10)
 		{
-			this.m.Payment.Completion = 0.75;
-			this.m.Payment.Advance = 0.25;
+			this.m.Payment.Completion = 0.9;
+			this.m.Payment.Advance = 0.1;
 		}
 		else
 		{
@@ -226,7 +232,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{When you enter %employer%\'s keep he runs out to greet you, he looks wracked with fear. He has clearly run too fast for his fat lungs and has to catch his breath before burbling out a slew of words.%SPEECH_ON%Thank the gods you came! The mountains have come alive! I have seen it, boulders the size of a house stiring up from their slumber, standing tall like a man and then crushing a horse in a single blow%SPEECH_OFF%. He throws you a huge lump of bluish crystaline rock, %employer% continues on %SPEECH_ON% My best men chopped this off the gaint, that stone you hold is its flesh. The beast is so armored that most weapons glance right off. It took four men with axes to carve that tiny chunk off, and as soon as they had finished, the rock grew right back. The beast barely noticed we were there, it crushed three men in a single blow. We fled, and we know not where it hides now. Search the surrounding lands, it is slow and huge, so it should not be hard to track. My tracker tells me you specialise in hunting unholds, so undoubtedly you already have poison with you to stop the creature regenerating. Even so, this beast may be impossible to kill, worse than a dozen unholds. If you do manage to kill a mountain, and I will reward you like a king.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{When you enter %employer%\'s keep he runs out to greet you, he looks wracked with fear. He has clearly run too fast for his fat lungs and has to catch his breath before burbling out a slew of words.%SPEECH_ON%Thank the gods you came! The mountains have come alive! I have seen it, boulders the size of a house stiring up from their slumber, standing tall like a man and then crushing a horse in a single blow.%SPEECH_OFF% He throws you a huge lump of bluish crystaline rock, %employer% continues on %SPEECH_ON%My best men chopped this off the gaint, that stone you hold is its flesh. The beast is so armored that most weapons glance right off. It took four men with axes to carve that tiny chunk off, and as soon as they had finished, the rock grew right back. The beast barely noticed we were there, it crushed three men in a single blow. We fled, and we know not where it hides now. Search the surrounding lands, it is slow and huge, so it should not be hard to track. My tracker tells me you specialise in hunting unholds, so undoubtedly you already have poison with you to stop the creature regenerating. Even so, this beast may be impossible to kill, worse than a dozen unholds. If you do manage to kill a mountain, and I will reward you like a king.%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -579,15 +585,16 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		{
 			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				continue
+				continue;
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength > this.m.MinStrength) {
-				return true
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
 			}
 		}
-		return false
+		return false;
 	}
 
 	function onSerialize( _out )

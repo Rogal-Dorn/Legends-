@@ -76,7 +76,8 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.State.m.Player.getSprite("body").setBrush("figure_player_noble");
+		this.World.Assets.updateLook(101);
+		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_noble");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-100.0, "You picked the wrong faction");

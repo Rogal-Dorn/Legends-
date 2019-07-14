@@ -2158,7 +2158,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendSpecStaffStun"
 	},	
 	{
-		ID = "perk.legend_staff_skill",
+		ID = "perk.legend_specialist_staff_skill",
 		Script = "scripts/skills/perks/perk_legend_specialist_staff_skill",
 		Name = this.Const.Strings.PerkName.LegendSpecStaffSkill,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecStaffSkill,
@@ -2264,6 +2264,42 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/bloodbath_circle.png",
 		IconDisabled = "ui/perks/bloodbath_circle_bw.png",
 		Const = "LegendBloodbath"
+	},
+	{
+		ID = "perk.legend_terrifying_visage",
+		Script = "scripts/skills/perks/perk_legend_terrifying_visage",
+		Name = this.Const.Strings.PerkName.LegendTerrifyingVisage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTerrifyingVisage,
+		Icon = "ui/perks/perk_21.png",
+		IconDisabled = "ui/perks/perk_21_bw.png",
+		Const = "LegendTerrifyingVisage"
+	},
+	{
+		ID = "perk.legend_freedom_of_movement",
+		Script = "scripts/skills/perks/perk_legend_freedom_of_movement",
+		Name = this.Const.Strings.PerkName.LegendFreedomOfMovement,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFreedomOfMovement,
+		Icon = "ui/perks/freedom_of_movement_circle.png",
+		IconDisabled = "ui/perks/freedom_of_movement_circle_bw.png",
+		Const = "LegendFreedomOfMovement"
+	},
+	{
+		ID = "perk.legend_onslaught",
+		Script = "scripts/skills/perks/perk_legend_onslaught",
+		Name = this.Const.Strings.PerkName.LegendOnslaught,
+		Tooltip = this.Const.Strings.PerkDescription.LegendOnslaught,
+		Icon = "ui/perks/onslaught_circle.png",
+		IconDisabled = "ui/perks/onslaught_circle_bw.png",
+		Const = "LegendOnslaught"
+	},
+	{
+		ID = "perk.legend_back_to_basics",
+		Script = "scripts/skills/perks/perk_legend_back_to_basics",
+		Name = this.Const.Strings.PerkName.LegendBackToBasics,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBackToBasics,
+		Icon = "ui/perks/back_to_basics_circle.png",
+		IconDisabled = "ui/perks/back_to_basics_circle_bw.png",
+		Const = "LegendBackToBasics"
 	}
 ];
 

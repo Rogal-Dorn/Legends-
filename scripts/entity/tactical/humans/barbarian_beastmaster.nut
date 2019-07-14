@@ -56,6 +56,12 @@ this.barbarian_beastmaster <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/actives/crack_the_whip_skill"));
+	 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			}
 	}
 
 	function assignRandomEquipment()

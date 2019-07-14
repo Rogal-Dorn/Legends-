@@ -13,7 +13,12 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 		this.m.Type = "contract.legend_hunting_stollwurms";
 		this.m.Name = "Hunting Stollwurms (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = this.Math.rand(95, 135) * 0.01;
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+	}
+
+	function getBanner()
+	{
+		return "ui/banners/factions/banner_legend_s";
 	}
 
 	function onImportIntro()
@@ -23,12 +28,12 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 
 	function start()
 	{
-		this.m.Payment.Pool = 8000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1600 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 10)
 		{
-			this.m.Payment.Completion = 0.75;
-			this.m.Payment.Advance = 0.25;
+			this.m.Payment.Completion = 0.9;
+			this.m.Payment.Advance = 0.1;
 		}
 		else
 		{
@@ -232,7 +237,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{You enter the keep and are shown down to the cellar. The room clearly once held food stores, they are reduced to rubbish now, smashed around the room. A huge hole has been smashed in one wall, and %employer% has his head pointed down the tunnel peering into the gloom.  You see torchlight further down the tunnel, but a voice from the hole yells out. %SPEECH_ON%Its no use sire, the tunnel ends in a collapse.%SPEECH_OFF%. %employer% turns back to the room and sees you waiting  %SPEECH_ON% Good good, glad to see you tracker. They tell me you have experience hunting wurms, and as you can see, I have a wurm problem. A Stollwurm has been terrorising the area, raiding our supplies and taking cattle before disapearing as fast as it arrived. We have tried chasing it down the holes, laying traps and every other trick we can think of. This is no ordinary wurm, it is as quick as lightning and just as deadly. It has killed several of my men, and will require expert tracking to find. Are you up for the challenge?.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{You enter the keep and are shown down to the cellar. The room clearly once held food stores, they are reduced to rubbish now, smashed around the room. A huge hole has been smashed in one wall, and %employer% has his head pointed down the tunnel peering into the gloom.  You see torchlight further down the tunnel, but a voice from the hole yells out. %SPEECH_ON%Its no use sire, the tunnel ends in a collapse.%SPEECH_OFF% %employer% turns back to the room and sees you waiting.  %SPEECH_ON%Good good, glad to see you tracker. They tell me you have experience hunting wurms, and as you can see, I have a wurm problem. A Stollwurm has been terrorising the area, raiding our supplies and taking cattle before disapearing as fast as it arrived. We have tried chasing it down the holes, laying traps and every other trick we can think of. This is no ordinary wurm, it is as quick as lightning and just as deadly. It has killed several of my men, and will require expert tracking to find. Are you up for the challenge?%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -264,7 +269,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Banter",
 			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/legend_stollwurm_hole.png[/img]{%randombrother% points out a large burrow, big enough for three cows to walk abreast. The tunnel smells like fresh death and excrement, The stollwurm is no doubt close. | %randombrother% states that he once heard the story of a stollwurm that killed someone without eating them.%SPEECH_ON%That\'s right. They said it spewed green water and the man just melted into his own boots. Said it looked like soup with his shins for stirring.%SPEECH_OFF%A disgusting tale, but one that hopefully keeps the men rightfully on their toes. Those stollwurms can\'t be far. | The tracks have the grass flattened in a snaking pattern with holes set to the sides. %randombrother% crouches beside the patterns.%SPEECH_ON%Either a plough with no dig or this be the critters we\'re lookin\' for.%SPEECH_OFF%You nod. The stollwurm can\'t be far.}",
+			Text = "[img]gfx/ui/events/legend_stollwurm_hole.png[/img]{%randombrother% points out a large burrow, big enough for three cows to walk abreast. The tunnel smells like fresh death and excrement, The stollwurm is no doubt close. | %randombrother% is poking at the edge of a hole, turns to you with a grim look. %SPEECH_ON%Stollwurm took my great uncle. He was walking across a field, and the ground opened up beneath him. The beast appeared directly below him, gobbled him up and left. I've had nightmares about them ever since. I do not like the size of these holes.%SPEECH_OFF% An offputting tale, when even the ground is not an ally. You direct the company to hold firm, those stollwurms can\'t be far. | The tracks have the grass flattened in a snaking pattern with holes set to the sides. %randombrother% crouches beside the patterns.%SPEECH_ON%Either a plough with no dig or this be the critters we\'re lookin\' for.%SPEECH_OFF%You nod. The stollwurm can\'t be far.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -672,15 +677,16 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 		{
 			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				continue
+				continue;
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength > this.m.MinStrength) {
-				return true
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
 			}
 		}
-		return false
+		return false;
 	}
 
 

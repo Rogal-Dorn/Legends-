@@ -26,42 +26,49 @@ this.legend_safegaurd <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsWeaponSkill = false;
-		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
-		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
-		this.m.ChanceDecapitate = 0;
-		this.m.ChanceDisembowel = 0;
 	}
 
 	function getTooltip()
 	{
-		local ret = this.skill.getDefaultTooltip();
+		local ret = this.skill.getDefaultUtilityTooltip();
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Reduces your own defense by [color=" + this.Const.UI.Color.DamageValue + "] -15 [/color] melee defense"
+			text = "Applies Safeguard to someone, increasing their defenses by [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color]"
 		});
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Applies Safegaurd to someone, increasing their defenses by 20"
-			});
-		}
-
-
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Reduces your own defenses by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color]"
+		});
 		return ret;
 	}
 
-	function onAfterUpdate( _properties )
+	function isUsable()
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInShields ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if (!this.skill.isUsable())
+		{
+			return false;
+		}
+		if (this.getContainer().hasSkill("effects.legend_fortify"))
+		{
+			return false;
+		}
+		if (this.getContainer().hasSkill("effects.legend_safegaurding"))
+		{
+			return false;
+		}
+		if (this.getContainer().hasSkill("effects.shieldwall"))
+		{
+			return false;
+		}
+		return true;
 	}
 
 	function onUse( _user, _targetTile )
@@ -76,11 +83,32 @@ this.legend_safegaurd <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has safegaurded " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " is safeguarding " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 		}
 
 		this.getContainer().add(this.new("scripts/skills/effects/legend_safegaurding_effect"));
 	}
+
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (!this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().getSkills().hasSkill("effects.legend_safegaurded"))
+		{
+			return false;
+		}
+
+		return true;
+	}
+
 
 	function onRemoved()
 	{

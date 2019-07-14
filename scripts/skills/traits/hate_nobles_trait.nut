@@ -11,7 +11,8 @@ this.hate_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 			"trait.weasel",
 			"trait.craven",
 			"trait.dastard",
-			"trait.fainthearted"
+			"trait.fainthearted",
+			"trait.fear_nobles"
 		];
 	}
 

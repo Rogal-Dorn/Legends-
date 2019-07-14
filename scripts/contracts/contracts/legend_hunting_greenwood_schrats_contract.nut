@@ -13,6 +13,12 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.m.Type = "contract.legend_hunting_greenwood_schrats";
 		this.m.Name = "The Heart of the Woods (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+	}
+
+	function getBanner()
+	{
+		return "ui/banners/factions/banner_legend_s";
 	}
 
 	function onImportIntro()
@@ -22,12 +28,12 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 
 	function start()
 	{
-		this.m.Payment.Pool = 9000 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1800 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 10)
 		{
-			this.m.Payment.Completion = 0.75;
-			this.m.Payment.Advance = 0.25;
+			this.m.Payment.Completion = 0.9;
+			this.m.Payment.Advance = 0.1;
 		}
 		else
 		{
@@ -116,7 +122,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 11, disallowedTerrain);
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Heartwood Schrats", false, this.Const.World.Spawn.LegendGreenwoodSchrats, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Heartwood Schrats", false, this.Const.World.Spawn.LegendGreenwoodSchrat, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				party.setDescription("A creature of bark and wood, blending between trees and shambling slowly, its roots digging through the soil.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.85);
@@ -528,17 +534,17 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		{
 			if (!bro.getSkills().hasSkill(this.m.Perk))
 			{
-				continue
+				continue;
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength > this.m.MinStrength) {
-				return true
+			if (stats.Strength >= this.m.MinStrength) 
+			{
+				return true;
 			}
 		}
-		return false
+		return false;
 	}
-
 
 	function onSerialize( _out )
 	{

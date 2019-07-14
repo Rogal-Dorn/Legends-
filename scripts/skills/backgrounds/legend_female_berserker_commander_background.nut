@@ -239,7 +239,7 @@ this.legend_female_berserker_commander_background <- this.inherit("scripts/skill
 		local tattoo_body = actor.getSprite("tattoo_body");
 		local tattoo_head = actor.getSprite("tattoo_head");
 		local body = actor.getSprite("body");
-		tattoo_body.setBrush((this.m.Tattoo == 0 ? "warpaint_01_" : "scar_02_") + "body_00");
+		tattoo_body.setBrush((this.m.Tattoo == 0 ? "warpaint_01_" : "scar_02_") + body.getBrush().Name);
 		tattoo_body.Visible = true;
 		tattoo_head.setBrush(this.m.Tattoo == 0 ? "warpaint_01_head" : "scar_02_head");
 		tattoo_head.Visible = true;
@@ -253,7 +253,7 @@ this.legend_female_berserker_commander_background <- this.inherit("scripts/skill
 		if (tattoo_body.HasBrush)
 		{
 			local body = actor.getSprite("body");
-			tattoo_body.setBrush((this.m.Tattoo == 0 ? "warpaint_01_" : "scar_02_") + "body_00");
+			tattoo_body.setBrush((this.m.Tattoo == 0 ? "warpaint_01_" : "scar_02_") + body.getBrush().Name);
 		}
 	}
 

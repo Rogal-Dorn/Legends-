@@ -11,7 +11,7 @@
     o.onMovementFinish = function (_tile)
     {
         fn(_tile);
-        this.m.Skills.MovementCompleted();
+        this.m.Skills.MovementCompleted(_tile);
     }
 
     o.isArmedWithMagicStaff <- function()
@@ -32,7 +32,28 @@
 
     o.setArmor <- function (_bodyPart, _value)
     {
-        this.m.CurrentProperties.Armor[_bodyPart] = _value;
+        this.m.BaseProperties.Armor[_bodyPart] = _value;
+    }
+
+    o.resetPerks <- function ()
+    {
+        local perks = this.m.PerkPointsSpent;
+		local hasStudent = false;
+
+		if (this.getSkills().hasSkill("perk.student"))
+		{
+			perks = perks - 1;
+			hasStudent = true;
+		}
+
+		this.m.PerkPoints += perks;
+		this.m.PerkPointsSpent = 0;
+		this.getSkills().removeByType(this.Const.SkillType.Perk);
+
+		if (hasStudent && _actor.getLevel() >= 11)
+		{
+			this.getSkills().add(this.new("scripts/skills/perks/perk_student"));
+		}
     }
 
         //

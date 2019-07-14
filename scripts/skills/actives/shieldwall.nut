@@ -28,7 +28,6 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local mult = 1.0;
 
@@ -76,7 +75,23 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.shieldwall");
+		if (!this.skill.isUsable())
+		{
+			return false;
+		}
+		if (this.getContainer().hasSkill("effects.legend_fortify"))
+		{
+			return false;
+		}
+		if (this.getContainer().hasSkill("effects.legend_safegaurding"))
+		{
+			return false;
+		}
+		if (this.getContainer().hasSkill("effects.shieldwall"))
+		{
+			return false;
+		}
+		return true;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -94,7 +109,6 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true;
-		return false;
 	}
 
 	function onRemoved()

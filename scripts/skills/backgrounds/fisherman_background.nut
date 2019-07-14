@@ -103,11 +103,15 @@ this.fisherman_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 1);
+		r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/weapons/knife"));
+		}
+		if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/throwing_spear"));
 		}
 
 		items.equip(this.new("scripts/items/tools/throwing_net"));

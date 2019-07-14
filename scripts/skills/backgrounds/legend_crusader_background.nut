@@ -32,7 +32,9 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.bleeder",
 			"trait.dastard",
 			"trait.insecure",
-			"trait.asthmatic"
+			"trait.asthmatic",
+			"trait.disloyal",
+			"trait.loyal"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,
@@ -64,7 +66,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.Adrenalin,
-				this.Const.Perks.PerkDefs.LegendComposure
+				this.Const.Perks.PerkDefs.LegendComposure,
+				this.Const.Perks.PerkDefs.LegendBackToBasics
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -74,6 +77,8 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
+				this.Const.Perks.PerkDefs.LegendSmackdown,
+				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,	
 				this.Const.Perks.PerkDefs.Steadfast
 			],
@@ -82,6 +87,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
+				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.ShieldExpert,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,

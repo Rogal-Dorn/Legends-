@@ -1466,18 +1466,12 @@ this.asset_manager <- {
 
 	function updateLook( _updateTo = -1 )
 	{
-		if (_updateTo == -1)
+		if (_updateTo != -1)
 		{
-			_updateTo = this.m.Look;
+			this.m.Look = _updateTo
 		}
 
-		if (_updateTo < this.m.Look)
-		{
-			return;
-		}
-
-		this.m.Look = _updateTo;
-		this.World.State.getPlayer().setBaseImage(_updateTo);
+		this.World.State.getPlayer().setBaseImage(this.m.Look);
 	}
 
 	function saveEquipment()

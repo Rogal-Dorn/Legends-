@@ -66,7 +66,31 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && !this.getContainer().hasSkill("terrain.hidden");
+		if (!this.Tactical.isActive())
+		{
+			return false;
+		}
+
+		if (!this.skill.isUsable())
+		{
+			return false;
+		}
+		
+		if (this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		{
+			return false;
+		}
+
+		if (this.getContainer().hasSkill("terrain.hidden"))
+		{
+			return false;
+		}
+
+		if (this.getContainer().hasSkill("effect.legend_hidden"))
+		{
+			return false;
+		}
+		return true;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -76,8 +100,9 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.m.Container.add(this.new("scripts/skills/effects/hidden_effect"));
-
+		this.m.Container.add(this.new("scripts/skills/effects/legend_hidden_effect"));
+		_user.setHidden(true);
+		
 		if (!_user.isHiddenToPlayer())
 		{
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Hide");
@@ -88,7 +113,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("terrain.hidden");
+		this.m.Container.removeByID("effect.legend_hidden");
 	}
 
 });

@@ -60,9 +60,12 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Cultist.getImagePath());
 				this.Characters.push(_event.m.Uneducated.getImagePath());
 				local background = this.new("scripts/skills/backgrounds/converted_cultist_background");
+				local oldPerkTree = _event.m.Uneducated.getBackground().m.CustomPerkTree;
 				_event.m.Uneducated.getSkills().removeByID(_event.m.Uneducated.getBackground().getID());
 				_event.m.Uneducated.getSkills().add(background);
 				background.buildDescription();
+				background.rebuildPerkTree(oldPerkTree);
+				_event.m.Uneducated.resetPerks();
 				background.onSetAppearance();
 				this.List = [
 					{

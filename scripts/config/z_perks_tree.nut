@@ -168,51 +168,82 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	//this.logInfo("Getting dynamic perk tree")
 	local tree = [ [], [], [], [], [], [], [], [], [], [], [] ];
 
+	local _localMap = {
+		Weapon = [],
+		Defense = [],
+		Traits = [],
+		Enemy = [],
+		Class = []
+	}
+
+	//Clone so we don't overwrite the default character background ones
+	foreach (p in _map.Weapon)
+	{
+		_localMap.Weapon.push(p);
+	}
+	foreach (p in _map.Defense)
+	{
+		_localMap.Defense.push(p);
+	}
+	foreach (p in _map.Traits)
+	{
+		_localMap.Traits.push(p);
+	}
+	foreach (p in _map.Enemy)
+	{
+		_localMap.Enemy.push(p);
+	}
+	foreach (p in _map.Class)
+	{
+		_localMap.Class.push(p);
+	}
+
 	//Add weapons
-	local count = _mins.Weapon - _map.Weapon.len();
+	//this.logInfo("*BUILDING WEAPON TREE. NUM START =  " + _map.Weapon.len() + " : MIN = " + _mins.Weapon);
+	local count = _mins.Weapon - _localMap.Weapon.len();
 	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
-		foreach (tt in _map.Weapon)
+		foreach (tt in _localMap.Weapon)
 		{
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.WeaponTrees.getRandom(_exclude)
 		//this.logInfo("Adding weapon perk tree " + t.ID);
-		_map.Weapon.push(t);
+		_localMap.Weapon.push(t);
 		
 	}
 
 	//Add Defense
-	local count = _mins.Defense - _map.Defense.len();
+	local count = _mins.Defense - _localMap.Defense.len();
 	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
-		foreach (tt in _map.Defense)
+		foreach (tt in _localMap.Defense)
 		{
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.DefenseTrees.getRandom(_exclude)
 		//this.logInfo("Adding Defense perk tree " + t.ID);
-		_map.Defense.push(t);
+		_localMap.Defense.push(t);
 	}
 
 	//Add Traits
-	local count = _mins.Traits - _map.Traits.len();
+	local count = _mins.Traits - _localMap.Traits.len();
 	for (local i = 0; i < count; i = ++i)
 	{
 		local _exclude = [];
-		foreach (tt in _map.Traits)
+		foreach (tt in _localMap.Traits)
 		{
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.TraitsTrees.getRandom(_exclude)
 		//this.logInfo("Adding Traits perk tree " + t.ID);
-		_map.Traits.push(t);
+		_localMap.Traits.push(t);
 	}
 
 	//Add Enemy
-	local count = _mins.Enemy - _map.Enemy.len();
+	local count = _mins.Enemy - _localMap.Enemy.len();
 	for (local i = 0; i < count; i = ++i)
 	{
 		local r = this.Math.rand(0, 100)
@@ -221,17 +252,17 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			continue
 		}
 		local _exclude = [];
-		foreach (tt in _map.Enemy)
+		foreach (tt in _localMap.Enemy)
 		{
 			_exclude.push(tt.ID);
 		}
 		local t = this.Const.Perks.EnemyTrees.getRandom(_exclude)
 		//this.logInfo("Adding Enemy perk tree " + t.ID);
-		_map.Enemy.push(t);
+		_localMap.Enemy.push(t);
 	}
 
 	//Add Class
-	local count = _mins.Class - _map.Class.len();
+	local count = _mins.Class - _localMap.Class.len();
 	for (local i = 0; i < count; i = ++i)
 	{
 		local r = this.Math.rand(0, 100)
@@ -240,16 +271,16 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 			continue
 		}
 		local _exclude = [];
-		foreach (tt in _map.Class)
+		foreach (tt in _localMap.Class)
 		{
 			_exclude.push(tt.ID);
 		}		
 		local t = this.Const.Perks.ClassTrees.getRandom(_exclude)
 		//this.logInfo("Adding Class perk tree " + t.ID);
-		_map.Class.push(t);
+		_localMap.Class.push(t);
 	}
 
-	foreach (v in _map)
+	foreach (v in _localMap)
 	{
 		foreach(mT in v)
 		{
@@ -264,6 +295,46 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	}
 
 	return tree;
+}
+
+
+
+gt.Const.Perks.isInTree <- function ( _tree, _perk)
+{
+	foreach (row in _tree)
+	{
+		foreach (p in row)
+		{
+			if (p == _perk)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+gt.Const.Perks.MergeDynamicPerkTree <- function (_tree, _map)
+{	
+	foreach (v in _map)
+	{
+		foreach(mT in v)
+		{
+			foreach (i, row in mT.Tree)
+			{
+				foreach(p in row)
+				{
+					if (this.Const.Perks.isInTree(_tree, p))
+					{
+						continue
+					}
+					_tree[i].push(p);
+				}
+			}
+		}
+	}
+
+	return _tree;
 }
 
 gt.Const.Perks.PerksTreeTemplate <- gt.Const.Perks.BuildCustomPerkTree(VanillaTree)

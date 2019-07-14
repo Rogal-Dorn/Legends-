@@ -126,11 +126,11 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 
 		r = this.Math.rand(0, 4);

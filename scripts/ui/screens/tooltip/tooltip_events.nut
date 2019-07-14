@@ -3900,6 +3900,35 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "world-town-screen.hire-dialog-module.UnknownPerks":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Unknown Character Perks"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "This character has unknown perks. You can pay for a tryout to reveal these."
+				}
+			];
+
+		case "world-town-screen.hire-dialog-module.KnownPerks":
+
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Character Perks"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = entity.getBackground().getPerkTreeDescription()
+				}
+			];
+
 		case "world-town-screen.taxidermist-dialog-module.CraftButton":
 			return [
 				{

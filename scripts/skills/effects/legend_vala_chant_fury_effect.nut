@@ -214,7 +214,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 	}
 
 
-	function onMovementCompleted()
+	function onMovementCompleted( _tile )
 	{
 		if (!this.checkEntities())
 		{

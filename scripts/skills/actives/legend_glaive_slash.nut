@@ -6,8 +6,8 @@ this.legend_glaive_slash <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Slash";
 		this.m.Description = "A swift slashing attack dealing average damage.";
 		this.m.KilledString = "Cut down";
-		this.m.Icon = "skills/active_01.png";
-		this.m.IconDisabled = "skills/active_01_sw.png";
+		this.m.Icon = "skills/glaive_slash.png";
+		this.m.IconDisabled = "skills/glaive_slash_bw.png";
 		this.m.Overlay = "active_01";
 		this.m.SoundOnUse = [
 			"sounds/combat/slash_01.wav",

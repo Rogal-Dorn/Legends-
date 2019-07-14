@@ -1,10 +1,10 @@
-this.legend_spear_riposte <- this.inherit("scripts/skills/skill", {
+this.legend_staff_riposte <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsSpent = false
 	},
 	function create()
 	{
-		this.m.ID = "actives.legend_spear_riposte";
+		this.m.ID = "actives.legend_staff_riposte";
 		this.m.Name = "Riposte";
 		this.m.Description = "Prepare to immediately counter-attack any opponent that attempts to attack in melee and misses.";
 		this.m.Icon = "skills/active_33.png";
