@@ -57,7 +57,11 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 		local volume = 1.0;
 		if(this.m.Gender == 1)
-		{
+		{	
+			if (this.m.VoiceSet > this.Const.WomanSounds.len() - 1)
+			{
+				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+			}
 			volume * this.Const.WomanSounds[this.m.VoiceSet].Volume
 		}
 		else
