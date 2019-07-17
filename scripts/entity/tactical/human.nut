@@ -21,31 +21,50 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	function create()
 	{
 		this.actor.create();
+		this.setGender(0);
+		this.getTags().add("human");
+	}
+
+	function setGender( _v, _reroll = true)
+	{
+		this.m.Gender = _v
 		if(this.m.Gender == 1)
 		{
-			this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+			if (_reroll)
+			{
+				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+			}
+
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.WomanSounds[this.m.VoiceSet].Death;
 			this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.WomanSounds[this.m.VoiceSet].Flee;
 			this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.WomanSounds[this.m.VoiceSet].Fatigue;
+			this.m.SoundPitch = this.Math.rand(105, 115) * 0.01;
+
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Hairs = this.Const.Hair.AllFemale;
 		}
 		else 
 		{
-			this.m.VoiceSet = this.Math.rand(0, this.Const.HumanSounds.len() - 1);
+			if (_reroll)
+			{
+				this.m.VoiceSet = this.Math.rand(0, this.Const.HumanSounds.len() - 1);
+			}
 			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].NoDamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].DamageReceived;
 			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.HumanSounds[this.m.VoiceSet].Death;
 			this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.HumanSounds[this.m.VoiceSet].Fatigue;
 			this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.HumanSounds[this.m.VoiceSet].Fatigue;
+			this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
 		}
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.NoDamageReceived] = 1.4;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 1.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 1.5;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Flee] = 1.1;
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Fatigue] = 0.95;
-		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
-		this.getTags().add("human");
 	}
 
 	function playSound( _type, _volume, _pitch = 1.0 )
@@ -648,22 +667,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Ethnicity = _in.readU8();
 		this.m.Gender = _in.readU8();
 		this.m.VoiceSet = _in.readU8();
-		if(this.m.Gender == 1)
-		{
-			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].NoDamageReceived;
-			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.WomanSounds[this.m.VoiceSet].DamageReceived;
-			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.WomanSounds[this.m.VoiceSet].Death;
-			this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.WomanSounds[this.m.VoiceSet].Flee;
-			this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.WomanSounds[this.m.VoiceSet].Fatigue;
-		}
-		else
-		{
-			this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].NoDamageReceived;
-			this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.HumanSounds[this.m.VoiceSet].DamageReceived;
-			this.m.Sound[this.Const.Sound.ActorEvent.Death] = this.Const.HumanSounds[this.m.VoiceSet].Death;
-			this.m.Sound[this.Const.Sound.ActorEvent.Flee] = this.Const.HumanSounds[this.m.VoiceSet].Fatigue;
-			this.m.Sound[this.Const.Sound.ActorEvent.Fatigue] = this.Const.HumanSounds[this.m.VoiceSet].Fatigue;
-		}
+		this.setGender(this.m.Gender, false)
 		_in.readBool();
 	}
 

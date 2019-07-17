@@ -12,10 +12,7 @@ this.master_archer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Beards = this.Const.Beards.Tidy;
 		if (this.Math.rand(1, 100) <= 10)
 		{
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Beards = null;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.BeardChance = 0;
+			this.setGender(1);
 		}
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
