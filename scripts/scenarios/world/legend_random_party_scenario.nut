@@ -51,7 +51,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 		if (randomFood == 2)
 		{
-			this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_vension_item"));
+			this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 			this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		}
 		if (randomFood == 3)
