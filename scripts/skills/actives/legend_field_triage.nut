@@ -16,96 +16,103 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 		"sounds/combat/first_aid_02.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 8;
+		this.m.ActionPointCost = 7;
 		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 2;
+		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 4;
 	}
 
-
-		function getTooltip( )
+	function getTooltip( )
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target damaged units"
-			}
-		]);
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Meds + "[/color] medicine, this will cost [color=" + this.Const.UI.Color.PositiveValue +"] " + this.m.Cost + "[/color] medicine. "
-			});
-
+		local ret = this.getDefaultUtilityTooltip();
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target damaged units."
+		});
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "You have [color=" + this.Const.UI.Color.PositiveValue +"]" + this.World.Assets.getMedicine() + "[/color] medicine."
+		});
+		local hp = this.World.Assets.getMedicine() * 2 ;
+		ret.push({
+			id = 8,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "You can heal max [color=" + this.Const.UI.Color.PositiveValue +"]" + this.Math.floor(hp) +  "[/color] hitpoints."
+		});
 		return ret;
 	}
 
+	function isUsable()
+	{
+		if (!this.skill.isUsable())
+		{
+			return false
+		}
+		if (this.World.Assets.getMedicine() * 2 < 1)
+		{
+			return false
+		}
+		return true
+	}
+
+
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
 		{
 			return false;
 		}
 
-		local target = _targetTile.getEntity();
-		local maxHP = target.getHitpointsMax();
-		local percentHP = maxHP / 100;
-		local currentHP = target.getHitpoints();
-		local currentPercent = currentHP / percentHP;
-		local missingPercent = 100 - currentPercent;
 		local meds = this.World.Assets.getMedicine();
-		local cost = missingPercent * 5; 
-		this.m.Meds = meds;
-		this.m.Cost = cost;
-
-		if (maxHP = currentHP )
+		if (meds <= 1 )
 		{
 			return false;
 		}
 
+		local target = _targetTile.getEntity();
+		if (target == null)
+		{
+			return false;
+		}
 
-		if (meds <= 1 )
+		if (!this.m.Container.getActor().isAlliedWith(target))
+		{
+			return false;
+		}
+
+		if (target.getHitpoints() >= target.getHitpointsMax())
 		{
 			return false;
 		}
 
 		return true;
 	}
+
 	function onUse( _user, _targetTile )
 	{
 		local meds = this.World.Assets.getMedicine();
 		local target = _targetTile.getEntity();
-		local maxHP = target.getHitpointsMax();
-		local percentHP = maxHP / 100;
-		local currentHP = target.getHitpoints();
-		local currentPercent = currentHP / percentHP;
-		local missingPercent = 100 - currentPercent;
-		local maxHeal = meds * 5; 
-		
-		if (missingPercent >= maxHeal)
-			{
-			local cost = meds * -1;
-			this.World.Assets.addMedicine(cost);
-			targetSetHitpoints(this.Math.min(actor.getHitpoints() + maxHeal, maxHP));
-			}
-		else if (missingPercent < maxHeal)
-			{
-			local cost = missingPercent * -0.5;
-			this.World.Assets.addMedicine(cost);
-			targetSetHitpoints(maxHP);
-			}
+		local maxHeal = meds * 2;
+		local neededHeal = target.getHitpointsMax() - target.getHitpoints()
+		local neededMeds = this.Math.floor(neededHeal / 2)
+
+		local cost = this.Math.min(meds, neededMeds)
+		this.World.Assets.addMedicine(cost * -1);
+		target.setHitpoints(this.Math.min(target.getHitpointsMax(), target.getHitpoints() + neededHeal));
 		return true;
 	}
 

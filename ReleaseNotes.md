@@ -1258,6 +1258,17 @@ Beta 12.2
 *Fixes onslaught perk
 *Fixes named warlock cloak and hood crash.
 *Fixes crash from trying to load female sounds.
+*Fixes low mercenary spawning with glaive.
+*Updates Balance perk: Halve the falloff from initiative. This means less swings from 5 to 30.
+*Fixes Field Triage perk.
+*Fixes Field Treats perk.
+*Fixes Field Repairs perk.
+*Fixes crash when equipping shovel.
+*Fixes incorrect images and names for the longsword.
+*Necro commander starts with Dark Cowl now (so he can craft the upgrade).
+*Recover Perk has been changed. Gain 5.5% fatigue reduction for each action point available. Recover can not be used if another skill is used that turn. 
+
+
 
 
 
