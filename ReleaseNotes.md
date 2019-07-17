@@ -1272,4 +1272,9 @@ Beta 12.2.1 Released on Nexus
 *Fixes Recover perk not recovering any fatigue.
 
 
+Beta 12.3
+*Fix a possible crash in Onslaught Perk.
+*Fix incorrent male sounds on female enemies.
+*Update Lithe description.
+
 
