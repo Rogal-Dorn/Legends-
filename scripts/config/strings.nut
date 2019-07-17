@@ -1378,7 +1378,7 @@ gt.Const.Strings.PerkDescription <- {
 	Inspire = "Unlocks the \'Inspire\' skill which can push allies to go beyond their limits, granting them additional Action Points.",
 	Underdog = "I\'m used to it. The defense malus due to being surrounded by opponents is reduces by 5. If an attacker has the Backstabber perk, the effect of that perk is negated, and the normal defense malus due to being surrounded is applied instead.",
 	Sprint = "Unlocks the \'Sprint\' skill which allows for sprinting over short distances in straight lines instantly.",
-	Recover = "Unlocks the \'Recover\' skill which allows for resting a turn in order to reduce accumulated Fatigue by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color].",
+	Recover = "Unlocks the \'Recover\' skill which allows for resting a turn in order to reduce accumulated Fatigue by [color=" + this.Const.UI.Color.NegativeValue + "]5.5% for each action point available. Recover can not be used if another skill is used.[/color].",
 	FirstMove = "Always act first in the very first round of combat, before any of your opponents do.",
 	Backstabber = "Honor doesn\'t win you fights, stabbing the enemy where it hurts does. The bonus to hitchance in melee is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for each ally surrounding and distracting your target.",
 	LoneWolf = "I work best alone. With no ally within 3 tiles of distance, gain a [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] bonus to Melee Skill, Ranged Skill, Melee Defense, Ranged Defense, and Resolve.",
