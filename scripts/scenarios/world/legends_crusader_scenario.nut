@@ -184,9 +184,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 		
 		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind);
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendFieldRepairs);
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendFieldTriage);
-		_tree.addPerk(this.Const.Perks.PerkDefs.LegendFieldTreats)
 	}
 
 });

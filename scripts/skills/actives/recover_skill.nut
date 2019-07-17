@@ -1,5 +1,8 @@
 this.recover_skill <- this.inherit("scripts/skills/skill", {
-	m = { CanRecover = true },
+	m = { 
+		CanRecover = true,
+		AP = 0
+	},
 	function create()
 	{
 		this.m.ID = "actives.recover";
@@ -55,6 +58,7 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 	function onTurnStart()
 	{
 		this.m.CanRecover = true;
+		this.m.AP = 0;
 	}
 	
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -76,10 +80,15 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 		return actor.getActionPoints();
 	}
 	
+	function onBeforeUse ( _user, _targetTile )
+	{
+		this.m.AP = _user.getActionPoints();
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local actor = this.getContainer().getActor();
-		local fatMult = actor.getActionPoints() * 0.055;
+		local fatMult = this.m.AP * 0.055;
 
 		_user.setFatigue(_user.getFatigue() - fatMult * _user.getFatigue() );
 		

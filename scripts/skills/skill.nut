@@ -605,6 +605,7 @@ this.skill <- {
 			}
 		}
 
+		this.onBeforeUse(user, _targetTile);
 		if (!_forFree)
 		{
 			++this.Const.SkillCounter;
@@ -729,6 +730,10 @@ this.skill <- {
 	}
 
 	function onItemSet()
+	{
+	}
+
+	function onBeforeUse ( _user, _targetEntity)
 	{
 	}
 
