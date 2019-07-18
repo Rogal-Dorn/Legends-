@@ -1276,5 +1276,5 @@ Beta 12.3
 *Fix a possible crash in Onslaught Perk.
 *Fix incorrent male sounds on female enemies.
 *Update Lithe description.
-
+*Fix necro hood and cloak giving continuous HP on reloads.
 
