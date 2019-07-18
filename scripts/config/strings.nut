@@ -1303,7 +1303,10 @@ gt.Const.Strings.PerkName <- {
 	LegendTerrifyingVisage = "TerrifyingVisage",
 	LegendFreedomOfMovement = "Freedom of Movement",
 	LegendOnslaught = "Onslaught",
-	LegendBackToBasics = "Back to Basics"
+	LegendBackToBasics = "Back to Basics",
+	PushTheAdvantage = "Push The Advantage",
+	TrophyHunter = "Trophy Hunter",
+	Bruiser = "Bruiser"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1580,7 +1583,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTerrifyingVisage = "The mere sight of this character sends enemies fleeing. Reduce resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color] ",
 	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.",
 	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off gaurd. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. ",
-	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve."
+	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve.",
+	PushTheAdvantage = "Gain both [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit the head against targets that are stunned.",
+	TrophyHunter = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] permanent hitpoint for every opponent slain.",
+	Bruiser = "Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

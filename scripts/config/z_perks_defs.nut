@@ -2300,6 +2300,33 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/back_to_basics_circle.png",
 		IconDisabled = "ui/perks/back_to_basics_circle_bw.png",
 		Const = "LegendBackToBasics"
+	},
+	{
+		ID = "perk.push_the_advantage",
+		Script = "scripts/skills/perks/perk_push_the_advantage",
+		Name = this.Const.Strings.PerkName.PushTheAdvantage,
+		Tooltip = this.Const.Strings.PerkDescription.PushTheAdvantage,
+		Icon = "ui/perks/perk_32.png",
+		IconDisabled = "ui/perks/perk_32_sw.png",
+		Const = "PushTheAdvantage"
+	},
+	{
+		ID = "perk.trophy_hunter",
+		Script = "scripts/skills/perks/perk_trophy_hunter",
+		Name = this.Const.Strings.PerkName.TrophyHunter,
+		Tooltip = this.Const.Strings.PerkDescription.TrophyHunter,
+		Icon = "ui/perks/perk_33.png",
+		IconDisabled = "ui/perks/perk_33_sw.png",
+		Const = "TrophyHunter"
+	},
+	{
+		ID = "perk.bruiser",
+		Script = "scripts/skills/perks/perk_bruiser",
+		Name = this.Const.Strings.PerkName.Bruiser,
+		Tooltip = this.Const.Strings.PerkDescription.Bruiser,
+		Icon = "ui/perks/perk_40.png",
+		IconDisabled = "ui/perks/perk_40_sw.png",
+		Const = "Bruiser"
 	}
 ];
 
