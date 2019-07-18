@@ -56,6 +56,12 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 		return result;
 	}
 
+	function onUpdateProperties( _properties )
+	{
+		_properties.Hitpoints += 20;
+	}
+
+
 	function onEquip()
 	{
 		this.named_armor.onEquip();
@@ -64,9 +70,7 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 		{
 			return;
 		}
-		
-		local b = a.getBaseProperties();
-		b.Hitpoints += 20;
+
 		if (!a.getSkills().hasSkill("perk.legend_assured_conquest"))
 		{
 			a.getSkills().add(this.new("scripts/skills/perks/perk_legend_assured_conquest"));
@@ -82,8 +86,6 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 			
 		}
 		a.getSkills().removeByID("perk.legend_assured_conquest");
-		local b = a.getBaseProperties();
-		b.Hitpoints -= 20;
 		this.named_armor.onUnequip();
 	}
 

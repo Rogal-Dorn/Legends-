@@ -38,6 +38,11 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		if (_targetEntity.isNonCombatant())
+		{
+			return false;
+		}
+
 		local user = _skill.getContainer().getActor();
 		local ourInit =  user.getInitiative();
 		local targetInit = _targetEntity.getInitiative()
@@ -54,22 +59,16 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_targetEntity.isNonCombatant())
+		if ( this.Math.rand(1, 100) < 50)
 		{
 			return false;
 		}
-
-		local randomchance = this.Math.rand(1, 100);
-			if (randomchance < 50)
-			{
-			return false;
-			}
 		
-		if (_targetEntity.isAlive() && !_targetEntity.getSkills().hasSkill("effects.stunned"))
+		if (!_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
 
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+			if (!user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 			{
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " battered " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them dazed");
 			}

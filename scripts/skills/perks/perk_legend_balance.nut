@@ -30,7 +30,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 		local body = actor.getArmor(this.Const.BodyPart.Body);
 		local initiative = actor.getInitiative();
 		local diff = this.Math.abs(body - 2 * initiative);
-		return this.Math.max(5, 30 - diff);
+		return this.Math.max(5, 30 - diff * 0.5);
 	}
 
 	function getTooltip()

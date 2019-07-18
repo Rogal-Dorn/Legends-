@@ -24,33 +24,49 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 8;
+		this.m.ActionPointCost = 7;
 		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 2;
+		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 4;
 	}
 
-
-		function getTooltip( )
+	function getTooltip( )
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color], can only target units with damaged armor"
-			}
-		]);
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.ArmorParts + "[/color] armor parts, this will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.ArmorCost + "[/color] armor parts. "
-			});
-
+		local ret = this.getDefaultUtilityTooltip();
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.MaxRange + "[/color]."
+		});
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "You have [color=" + this.Const.UI.Color.PositiveValue +"]" + this.Math.floor(this.World.Assets.getArmorParts()) + "[/color] tools."
+		});
+		local repairs = this.World.Assets.getArmorParts() * 5 ;
+		ret.push({
+			id = 8,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "You can repair max [color=" + this.Const.UI.Color.PositiveValue +"]" + this.Math.floor(repairs) +  "[/color] points of armor."
+		});
 		return ret;
+	}
+
+	function isUsable()
+	{
+		if (!this.skill.isUsable())
+		{
+			return false
+		}
+		if (this.World.Assets.getArmorParts() * 5 < 1)
+		{
+			return false
+		}
+		return true
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -60,7 +76,22 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		if (this.World.Assets.getArmorParts() * 5 < 1)
+		{
+			return false;
+		}
+
 		local target = _targetTile.getEntity();
+		if (target == null)
+		{
+			return false;
+		}
+
+		if (!this.m.Container.getActor().isAlliedWith(target))
+		{
+			return false;
+		}
+
 		local currentHeadArmor = target.getArmor(this.Const.BodyPart.Head);
 		local currentBodyArmor = target.getArmor(this.Const.BodyPart.Body);
 		local maxHeadArmor = target.getArmorMax(this.Const.BodyPart.Head);
@@ -68,66 +99,90 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		local missingHeadArmor = maxHeadArmor - currentHeadArmor;
 		local missingBodyArmor = maxBodyArmor - currentBodyArmor;
 		local missingArmor = missingHeadArmor + missingBodyArmor;
-		local cost = missingArmor / 5;
-		this.m.ArmorCost = cost;
-		local armorParts = this.World.Assets.getArmorParts();
-		this.m.ArmorParts = armorParts;
 
-		if (currentHeadArmor = maxHeadArmor && currentBodyArmor = maxBodyArmor)
-		{
-			return false;
-		}
-
-
-		if (armorParts <= 1 )
+		if (missingArmor < 1)
 		{
 			return false;
 		}
 
 		return true;
 	}
+
 	function onUse( _user, _targetTile )
 	{
 		local armorParts = this.World.Assets.getArmorParts();
 		local target = _targetTile.getEntity();
-		local currentHeadArmor = target.getArmor(this.Const.BodyPart.Head);
-		local currentBodyArmor = target.getArmor(this.Const.BodyPart.Body);
-		local maxHeadArmor = target.getArmorMax(this.Const.BodyPart.Head);
-		local maxBodyArmor = target.getArmorMax(this.Const.BodyPart.Body);
+
+		local body = target.getItems().getItemAtSlot(this.Const.ItemSlot.Body)
+		local head = target.getItems().getItemAtSlot(this.Const.ItemSlot.Head)
+		local currentHeadArmor = 0;
+		local maxHeadArmor = 0;
+		if (head != null)
+		{
+			currentHeadArmor = head.getArmor();
+			maxHeadArmor = head.getArmorMax();
+		}
+		local currentBodyArmor = 0;
+		local maxBodyArmor = 0;
+		if (body != null)
+		{
+			currentBodyArmor = body.getArmor();
+			maxBodyArmor = body.getArmorMax();
+		}
 		local missingHeadArmor = maxHeadArmor - currentHeadArmor;
 		local missingBodyArmor = maxBodyArmor - currentBodyArmor;
-		local maxRepair = armorParts * 5;
+		local maxRepair = armorParts * 5.0;
 
-			if (missingHeadArmor > missingBodyArmor)
-				{
-					if (missingHeadArmor >= maxRepair)
-						{
-						local cost = armorParts * -1;
-						this.World.Assets.addArmorParts(cost);
-						target.setArmor(this.Math.min(currentHeadArmor + maxRepair, maxHeadArmor));
-						}
-					else if (missingHeadArmor < maxRepair)
-						{
-						local cost = missingHeadArmor * -0.2;
-						this.World.Assets.addArmorParts(cost);
-						target.setArmor(maxHeadArmor);
-						}
-				}
-				else if (missingHeadArmor <= missingBodyArmor)
-				{
-					if (missingBodyArmor >= maxRepair)
-						{
-						local cost = armorParts * -1;
-						this.World.Assets.addArmorParts(cost);
-						target.setArmor(this.Math.min(currentBodyArmor + maxRepair, maxBodyArmor));
-						}
-					else if (missingBodyArmor < maxRepair)
-						{
-						local cost = missingBodyArmor * -0.2;
-						this.World.Assets.addArmorParts(cost);
-						target.setArmor(maxBodyArmor);
-						}
-				}
+		if (missingHeadArmor + missingBodyArmor <= maxRepair)
+		{
+			if (missingHeadArmor > 0)
+			{
+				head.setArmor(this.Math.minf(maxHeadArmor, currentHeadArmor + missingHeadArmor))
+			}
+
+			if (missingBodyArmor > 0)
+			{
+				body.setArmor(this.Math.minf(maxBodyArmor, currentBodyArmor + missingBodyArmor))
+			}
+			local cost = (missingHeadArmor + missingBodyArmor) * -1.0
+			this.World.Assets.addArmorParts(cost / 5.0)
+			return;
+		}
+
+		local maxHeadRepair = maxRepair / 2.0;
+		local maxBodyRepair = maxRepair / 2.0;
+		local headLeftOver = maxHeadRepair;
+		local bodyLeftOver = maxBodyRepair;
+
+		if (missingHeadArmor > 0)
+		{
+			maxBodyRepair += this.Math.maxf(0, maxHeadRepair - missingHeadArmor);
+		}
+		else 
+		{
+			maxBodyRepair += maxHeadRepair;
+		}
+
+		if (missingBodyArmor > 0)
+		{
+			maxHeadRepair += this.Math.maxf(0, maxBodyRepair - missingBodyArmor);
+		}
+		else 
+		{
+			maxHeadRepair += maxBodyRepair;
+		}
+
+		if (maxHeadRepair > 0)
+		{
+			head.setArmor(this.Math.minf(maxHeadArmor, currentHeadArmor + maxHeadRepair))
+		}
+
+		if (maxBodyRepair > 0)
+		{
+			body.setArmor(this.Math.minf(maxBodyArmor, currentBodyArmor + maxBodyRepair))
+		}
+		local cost = (maxHeadRepair + maxBodyRepair) * -1.0
+		this.World.Assets.addArmorParts(cost / 5.0)
 	}
 
 });
