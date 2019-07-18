@@ -1274,7 +1274,7 @@ Beta 12.2.1 Released on Nexus
 
 Beta 12.3
 *Fix a possible crash in Onslaught Perk.
-*Fix incorrent male sounds on female enemies.
+*Fix incorrect male sounds on female enemies.
 *Update Lithe description.
 *Fix necro hood and cloak giving continuous HP on reloads.
-
+*Fixes a crash when killing a Wolf (From gobbo wolf rider) when having the Fav Wolf perk.
