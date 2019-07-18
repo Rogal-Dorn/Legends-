@@ -1254,10 +1254,27 @@ Beta 12.1
 *Fixes Assured conquest perk.
 *Fixes Balance perk.
 
-Beta 12.2
+Beta 12.2 Released on Nexus
 *Fixes onslaught perk
 *Fixes named warlock cloak and hood crash.
 *Fixes crash from trying to load female sounds.
+*Fixes low mercenary spawning with glaive.
+*Updates Balance perk: Halve the falloff from initiative. This means less swings from 5 to 30.
+*Fixes Field Triage perk.
+*Fixes Field Treats perk.
+*Fixes Field Repairs perk.
+*Fixes crash when equipping shovel.
+*Fixes incorrect images and names for the longsword.
+*Necro commander starts with Dark Cowl now (so he can craft the upgrade).
+*Updates Recover Perk: Gain 5.5% fatigue reduction for each action point available. Recover can not be used if another skill is used that turn. 
+
+Beta 12.2.1 Released on Nexus
+*Fixes Recover perk not recovering any fatigue.
 
 
+Beta 12.3
+*Fix a possible crash in Onslaught Perk.
+*Fix incorrent male sounds on female enemies.
+*Update Lithe description.
+*Fix necro hood and cloak giving continuous HP on reloads.
 

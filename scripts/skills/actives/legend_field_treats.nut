@@ -1,14 +1,12 @@
 this.legend_field_treats <- this.inherit("scripts/skills/skill", {
-	m = {
-	Food = 0
-	},
+	m = {},
 	function create()
 	{
 		this.m.ID = "actives.legend_field_treats";
 		this.m.Name = "Field Treats";
 		this.m.Description = "Restore confidence through liberal application of alcohol and food, taking someone from wavering to steady";
-		this.m.Icon = "skills/drink_square.png";
-		this.m.IconDisabled = "skills/drink_square_bw.png";
+		this.m.Icon = "skills/drink_sqaure.png";
+		this.m.IconDisabled = "skills/drink_sqaure_bw.png";
 		this.m.Overlay = "active_41";
 		this.m.SoundOnUse = [
 			"sounds/combat/drink_01.wav",
@@ -16,32 +14,50 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/drink_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 8;
+		this.m.ActionPointCost = 7;
 		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 2;
+		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 4;
 	}
 
-
-		function getTooltip( )
+	function getTooltip( )
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = this.getDefaultUtilityTooltip();
 		ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Food + "[/color] food, this will cost [color=" + this.Const.UI.Color.PositiveValue +"] 50 [/color] food. "
-			});
-
+			id = 8,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "You have [color=" + this.Const.UI.Color.PositiveValue +"]" + this.World.Assets.getFood() + "[/color] food."
+		});
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/asset_money.png",
+			text = "Spend [color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] food to raise moral state of adjacent ally to steady."
+		});
 		return ret;
+	}
+
+	function isUsable()
+	{
+		if (!this.skill.isUsable())
+		{
+			return false
+		}
+		local food = this.World.Assets.getFood();
+		if (food < 50)
+		{
+			return false
+		}
+		return true
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -52,13 +68,26 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 		}
 
 		local food = this.World.Assets.getFood();
-		this.m.Food = food;
+		if (food < 50)
+		{
+			return false
+		}
 
-		if (food < 50 )
+		local target = _targetTile.getEntity();
+		if (target == null)
 		{
 			return false;
 		}
 
+		if (!this.m.Container.getActor().isAlliedWith(target))
+		{
+			return false;
+		}
+
+		if (target.getMoraleState() >= this.Const.MoraleState.Steady)
+		{
+			return false;
+		}
 		return true;
 	}
 
@@ -66,38 +95,8 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 	{
 		local food = this.World.Assets.getFood();
 		local a = _targetTile.getEntity();
-		local myTile = _user.getTile();
-
-		if (food >= 50)
-			{
-			this.World.Assets.addMedicine(-50);
-				if (!a.getSkills().hasSkill("effects.rallied"))
-				{
-					for( ; a.getMoraleState() >= this.Const.MoraleState.Steady;  )
-					{
-					}
-					local bravery = this.Math.floor(_user.getCurrentProperties().getBravery() * 0.5);
-					local difficulty = bravery;
-					local distance = a.getTile().getDistanceTo(myTile) * 10;
-					local morale = a.getMoraleState();
-
-					if (a.getMoraleState() == this.Const.MoraleState.Wavering)
-					{
-						a.checkMorale(this.Const.MoraleState.Steady - this.Const.MoraleState.Wavering, difficulty, this.Const.MoraleCheckType.Default, "status_effect_56");
-					}
-					else
-					{
-						a.checkMorale(1, difficulty - distance, this.Const.MoraleCheckType.Default, "status_effect_56");
-					}
-
-					if (morale != a.getMoraleState())
-					{
-						a.getSkills().add(this.new("scripts/skills/effects/rallied_effect"));
-					}
-				}
-
-			}
-
+		a.changeMorale(this.Const.MoraleState.Steady, "status_effect_56");
+		this.World.Assets.addMedicine(-50);
 		return true;
 	}
 

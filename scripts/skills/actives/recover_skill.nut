@@ -1,5 +1,8 @@
 this.recover_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = { 
+		CanRecover = true,
+		AP = 0
+	},
 	function create()
 	{
 		this.m.ID = "actives.recover";
@@ -24,6 +27,8 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local actor = this.getContainer().getActor();
+		local fatReduc = actor.getActionPoints() * 5.5
 		local ret = [
 			{
 				id = 1,
@@ -44,16 +49,49 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Current Fatigue is reduced by half"
+				text = "Current Fatigue is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]" + fatReduc + "%[/color]"
 			}
 		];
 		return ret;
 	}
+	
+	function onTurnStart()
+	{
+		this.m.CanRecover = true;
+		this.m.AP = 0;
+	}
+	
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill != this)
+		{
+			this.m.CanRecover = false;
+		}
+	}
+	
+	function isUsable()
+	{
+		return this.skill.isUsable() && this.m.CanRecover;
+	}
+	
+	function getActionPointCost()
+	{
+		local actor = this.getContainer().getActor();
+		return actor.getActionPoints();
+	}
+	
+	function onBeforeUse ( _user, _targetTile )
+	{
+		this.m.AP = _user.getActionPoints();
+	}
 
 	function onUse( _user, _targetTile )
 	{
-		_user.setFatigue(_user.getFatigue() / 2);
+		local actor = this.getContainer().getActor();
+		local fatMult = this.m.AP * 0.055;
 
+		_user.setFatigue(_user.getFatigue() - fatMult * _user.getFatigue() );
+		
 		if (!_user.isHiddenToPlayer())
 		{
 			_user.playSound(this.Const.Sound.ActorEvent.Fatigue, this.Const.Sound.Volume.Actor * _user.getSoundVolume(this.Const.Sound.ActorEvent.Fatigue));

@@ -13,10 +13,9 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/human", {
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_ranged_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
-			{
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Beards = null;
-			}
+		{
+			this.setGender(1);
+		}
 	}
 
 	function onInit()

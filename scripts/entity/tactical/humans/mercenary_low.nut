@@ -89,7 +89,7 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r == 1)
 			{
-				this.m.Items.equip(this.new("scripts/items/weaponslegend_glaive"));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
 			}
 			else if (r == 4)
 			{
