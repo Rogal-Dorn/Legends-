@@ -23,7 +23,8 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 85;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.4;
+		this.m.DirectDamageMult = 0.2;
+		this.m.DirectDamageAdd = 0.2;
 	}
 
 	function onEquip()
@@ -32,6 +33,7 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(this.new("scripts/skills/actives/slash"));
 		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
+		this.addSkill(this.new("scripts/skills/actives/split"));
 	}
 
 	function onUpdateProperties( _properties )
