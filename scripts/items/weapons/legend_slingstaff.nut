@@ -19,13 +19,13 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ArmamentIcon = "icon_sling_01";
 		this.m.Value = 1000;
 		this.m.RangeMin = 2;
-		this.m.RangeMax = 8;
-		this.m.RangeIdeal = 8;
+		this.m.RangeMax = 9;
+		this.m.RangeIdeal = 9;
 		this.m.StaminaModifier = -12;
 		this.m.Condition = 100.0;
 		this.m.ConditionMax = 100.0;
-		this.m.RegularDamage = 40;
-		this.m.RegularDamageMax = 55;
+		this.m.RegularDamage = 45;
+		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.8;
 	}

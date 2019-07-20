@@ -1285,3 +1285,6 @@ Beta 12.3
 *Fixes not being able to take the staff mastery perk.
 *Adds new perk: MindOverBody: Reduce fatigue cost of actions based on resolve.
 *Balance Perk changes: Bonus is applied to damage reduction as well as defense.
+*Sling staff gets +1 min and max range, +5 min and max damage. Now has -40 base accuracy, then gains +5 accuracy per tile 
+*Sling loses -5 max damage, +1 minimum range and -10 base accuracy 
+*Military Goedendag gains Cudgel in place of Knock Out 

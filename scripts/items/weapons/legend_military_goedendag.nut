@@ -40,18 +40,18 @@ this.legend_military_goedendag <- this.inherit("scripts/items/weapons/weapon", {
 		thrust.setFatigueCost(15);
 		thrust.m.ActionPointCost = 6;
 		this.addSkill(thrust);
-		local knockOut = this.new("scripts/skills/actives/knock_out");
-		knockOut.m.Icon = "skills/active_127.png";
-		knockOut.m.IconDisabled = "skills/active_127_sw.png";
-		knockOut.m.Overlay = "active_127";
-		knockOut.setFatigueCost(knockOut.getFatigueCostRaw() + 5);
-		knockOut.m.ActionPointCost = 6;
-		this.addSkill(knockOut);
+		local skill;
+		skill = this.new("scripts/skills/actives/cudgel_skill");
+		skill.m.Icon = "skills/active_131.png";
+		skill.m.IconDisabled = "skills/active_131_sw.png";
+		skill.m.Overlay = "active_131";
+		this.addSkill(skill);
 		local skill;
 		skill = this.new("scripts/skills/actives/strike_down_skill");
 		skill.m.Icon = "skills/active_132.png";
 		skill.m.IconDisabled = "skills/active_132_sw.png";
 		skill.m.Overlay = "active_132";
+		skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
 		this.addSkill(skill);
 	}
 
