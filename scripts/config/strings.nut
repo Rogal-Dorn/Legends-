@@ -1299,7 +1299,8 @@ gt.Const.Strings.PerkName <- {
 	LegendTerrifyingVisage = "TerrifyingVisage",
 	LegendFreedomOfMovement = "Freedom of Movement",
 	LegendOnslaught = "Onslaught",
-	LegendBackToBasics = "Back to Basics"
+	LegendBackToBasics = "Back to Basics",
+	LegendMindOverBody = "Mind over Body"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",

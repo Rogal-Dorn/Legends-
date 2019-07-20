@@ -2317,4 +2317,3 @@ foreach( i, v in gt.Const.Perks.PerkDefObjects )
 {
 	gt.Const.Perks.PerkDefs[v.Const] <- i;
 }
-
