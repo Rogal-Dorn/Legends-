@@ -13,6 +13,7 @@ this.perk_legend_mastery_staff_stun <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+
 	function onUpdate( _properties )
 	{
 		_properties.IsSpecializedInStaffStun = true;

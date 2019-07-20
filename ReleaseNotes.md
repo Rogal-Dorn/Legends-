@@ -1280,3 +1280,8 @@ Beta 12.3
 *Fixes a crash when killing a Wolf (From gobbo wolf rider) when having the Fav Wolf perk.
 *Fixes legend beast contracts being spammed.
 *Adds legend skin ghoul contracts.
+*Fixes missing runed towershield images.
+*Fixes tooltip errors with the inventors prosthetic appendages.
+*Fixes not being able to take the staff mastery perk.
+*Adds new perk: MindOverBody: Reduce fatigue cost of actions based on resolve.
+*Balance Perk changes: Bonus is applied to damage reduction as well as defense.
