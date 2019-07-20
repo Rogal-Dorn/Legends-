@@ -1,13 +1,13 @@
 this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 0,
+		AdditionalAccuracy = -40,
 		AdditionalHitChance = 0
 	},
 	function create()
 	{
 		this.m.ID = "actives.legend_sling_heavy_stone";
 		this.m.Name = "Sling Heavy Stone";
-		this.m.Description = "Propel a stone towards a target with your sling. Hard to aim and very unweildy, but stones are everywhere so you never run out of ammunition. Can not be used while engaged in melee.";
+		this.m.Description = "Hurl a stone towards a target with your sling. Hard to aim and very unweildy, but stones are everywhere so you never run out of ammunition. Can not be used while engaged in melee.";
 		this.m.KilledString = "Stoned";
 		this.m.Icon = "skills/active_12.png";
 		this.m.IconDisabled = "skills/active_12_sw.png";
@@ -57,9 +57,9 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 8;
 		this.m.FatigueCost = 25;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 8;
-		this.m.MaxLevelDifference = 4;
+		this.m.MinRange = 3;
+		this.m.MaxRange = 9;
+		this.m.MaxLevelDifference = 8;
 		this.m.ProjectileType = this.Const.ProjectileType.Stone;
 		this.m.ProjectileTimeScale = 1.2;
 		this.m.IsProjectileRotated = true;
@@ -104,7 +104,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
+				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
 			});
 		}
 
@@ -135,8 +135,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? (this.m.Item.getAdditionalAccuracy() + 5) : this.m.Item.getAdditionalAccuracy();
-		this.m.AdditionalHitChance = _properties.IsSpecializedInSlings ? 5 : 0;
+		this.m.AdditionalHitChance = _properties.IsSpecializedInSlings ? -35 : -40;
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
@@ -177,7 +176,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.RangedSkill += -10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -10 + this.m.AdditionalHitChance;
+			_properties.HitChanceAdditionalWithEachTile += 5 + this.m.AdditionalHitChance;
 		}
 	}
 

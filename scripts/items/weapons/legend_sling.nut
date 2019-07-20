@@ -24,7 +24,7 @@ this.legend_sling <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 50.0;
 		this.m.ConditionMax = 50.0;
 		this.m.RegularDamage = 25;
-		this.m.RegularDamageMax = 40;
+		this.m.RegularDamageMax = 35;
 		this.m.ArmorDamageMult = 0.5;
 		this.m.DirectDamageMult = 0.35;
 	}
