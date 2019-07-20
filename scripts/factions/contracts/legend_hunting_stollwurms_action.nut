@@ -28,12 +28,6 @@ this.legend_hunting_stollwurms_action <- this.inherit("scripts/factions/faction_
 			return;
 		}
 
-
-		if (this.Math.rand(1, 100) > 20)
-		{
-			return;
-		}
-
 		if (_faction.getSettlements()[0].isIsolated())
 		{
 			return;

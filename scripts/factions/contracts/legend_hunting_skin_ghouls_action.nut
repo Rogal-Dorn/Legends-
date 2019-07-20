@@ -1,8 +1,8 @@
-this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/faction_action", {
+this.legend_hunting_skin_ghouls_action <- this.inherit("scripts/factions/faction_action", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "legend_hunting_redback_webknechts_action";
+		this.m.ID = "legend_hunting_skin_ghouls_action";
 		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
@@ -11,8 +11,6 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 
 	function onUpdate( _faction )
 	{
-		
-
 		if (!this.Const.DLC.Unhold)
 		{
 			return;
@@ -28,13 +26,6 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 			return;
 		}
 
-		local village = _faction.getSettlements()[0];
-
-		if (!this.isKindOf(village, "small_lumber_village") && !this.isKindOf(village, "medium_lumber_village"))
-		{
-			return;
-		}
-
 		this.m.Score = 1;
 	}
 
@@ -44,7 +35,7 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 
 	function onExecute( _faction )
 	{
-		local contract = this.new("scripts/contracts/contracts/legend_hunting_redback_webknechts_contract");
+		local contract = this.new("scripts/contracts/contracts/legend_hunting_skin_ghouls_contract");
 		contract.setFaction(_faction.getID());
 		contract.setHome(_faction.getSettlements()[0]);
 		contract.setEmployerID(_faction.getRandomCharacter().getID());

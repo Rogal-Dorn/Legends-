@@ -23,20 +23,11 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 			return;
 		}
 
-
-		this.m.Score = 999
-		return;
-		
 		if (this.World.Assets.getBusinessReputation() < 1500)
 		{
 			return;
 		}
-
-		if (this.Math.rand(1, 100) > 20)
-		{
-			return;
-		}
-
+		
 		if (_faction.getSettlements()[0].isIsolated())
 		{
 			return;

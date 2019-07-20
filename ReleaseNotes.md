@@ -1278,3 +1278,5 @@ Beta 12.3
 *Update Lithe description.
 *Fix necro hood and cloak giving continuous HP on reloads.
 *Fixes a crash when killing a Wolf (From gobbo wolf rider) when having the Fav Wolf perk.
+*Fixes legend beast contracts being spammed.
+*Adds legend skin ghoul contracts.
