@@ -1298,3 +1298,4 @@ Beta 12.3.1
 
 Beta 12.3.2
 Fixes Freedom of Movement, Onslaught and Smackdown all triggering when user has more fatigue, instead of less.  Should now need to be less exhausted than your enemy for them to work. 
+Updates descriptions for vanilla starts to show what has changed in legends. 
