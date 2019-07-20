@@ -6,7 +6,7 @@ this.legend_named_swordstaff <- this.inherit("scripts/items/weapons/named/named_
 		this.m.ID = "weapon.legend_named_swordstaff";
 		this.m.NameList = this.Const.Strings.SpetumNames;
 		this.m.Description = "This Swordstaff is especially well-crafted, and its blade would be worthy of even a noble";
-		this.m.Categories = "Staff, Two-Handed";
+		this.m.Categories = "Sword/Spear, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_swordstaff_01_named_01.png";
 		this.m.Icon = "weapons/melee/legend_swordstaff_01_named_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
@@ -32,10 +32,10 @@ this.legend_named_swordstaff <- this.inherit("scripts/items/weapons/named/named_
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_staff_thrust"));
-		this.addSkill(this.new("scripts/skills/actives/legend_staffwall"));
-		this.addSkill(this.new("scripts/skills/actives/legend_staff_riposte"));
-		this.addSkill(this.new("scripts/skills/actives/legend_staff_lunge_skill"));
+		this.addSkill(this.new("scripts/skills/actives/thrust"));
+		this.addSkill(this.new("scripts/skills/actives/spearwall"));
+		this.addSkill(this.new("scripts/skills/actives/riposte"));
+		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
 	}
 });
 
