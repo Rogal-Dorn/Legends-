@@ -1288,3 +1288,6 @@ Beta 12.3
 *Sling staff gets +1 min and max range, +5 min and max damage. Now has -40 base accuracy, then gains +5 accuracy per tile 
 *Sling loses -5 max damage, +1 minimum range and -10 base accuracy 
 *Military Goedendag gains Cudgel in place of Knock Out 
+*Muscularity damage nerfed from 20% of HP to 10% of HP
+*Full Force damage nerfed from 10% of body armor to 5% of body armor 
+*Devastating strikes nerfed from +20% damage to +10% damage 
