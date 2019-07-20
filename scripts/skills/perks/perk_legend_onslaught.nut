@@ -54,7 +54,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (ourFat <= targetFat)
+		if (ourFat >= targetFat)
 		{
 			return false;
 		}

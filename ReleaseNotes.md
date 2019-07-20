@@ -1288,6 +1288,13 @@ Beta 12.3
 *Sling staff gets +1 min and max range, +5 min and max damage. Now has -40 base accuracy, then gains +5 accuracy per tile 
 *Sling loses -5 max damage, +1 minimum range and -10 base accuracy 
 *Military Goedendag gains Cudgel in place of Knock Out 
+
+Beta 12.3.1
 *Muscularity damage nerfed from 20% of HP to 10% of HP
 *Full Force damage nerfed from 10% of body armor to 5% of body armor 
 *Devastating strikes nerfed from +20% damage to +10% damage 
+*Fixes sling staves using their base accuracy as their accuracy per tile 
+*Fixes swordstaves failing to load 
+
+Beta 12.3.2
+Fixes Freedom of Movement, Onslaught and Smackdown all triggering when user has more fatigue, instead of less.  Should now need to be less exhausted than your enemy for them to work. 
