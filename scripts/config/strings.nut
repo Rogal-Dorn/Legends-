@@ -162,7 +162,6 @@ gt.Const.Strings.EntityName <- [
 	"Heartwood Schrat",
 	"Heartwood Sapling",
 	"White Warwolf"
-
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -1119,15 +1118,15 @@ gt.Const.Strings.PerkName <- {
 	SpecMace = "Mace Mastery",
 	SpecFlail = "Flail Mastery",
 	LegendSpecPoison = "Poison Mastery",
-	LegendCascade ="Cascade strikes",
-	LegendEvasion ="Evasion",
+	LegendCascade = "Cascade strikes",
+	LegendEvasion = "Evasion",
 	LegendRust = "Rust",
 	LegendWither = "Wither",
 	LegendDeathtouch = "Death Touch",
 	LegendHex = "Hex",
 	LegendMiasma = "Miasma",
 	LegendDarkflight = "Darkflight",
-	LegendDaze ="Daze",
+	LegendDaze = "Daze",
 	LegendStunned = "Stun",
 	LegendHorrify = "Horrify",
 	LegendPush = "Revolt",
@@ -1175,7 +1174,6 @@ gt.Const.Strings.PerkName <- {
 	LegendViolentDecomposition = "Violent Decomposition",
 	LegendPossession = "Possession",
 	LegendSiphon = "Siphon",
-
 	LegendValaInscriptionMastery = "Inscription Mastery",
 	LegendValaInscribeWeapon = "Rune Sigils: Weapons",
 	LegendValaInscribeHelmet = "Rune Sigils: Helmets",
@@ -1192,9 +1190,7 @@ gt.Const.Strings.PerkName <- {
 	LegendValaSpiritualBond = "Spiritual Bond",
 	LegendValaThreads = "Threads of Fate",
 	LegendValaPremonition = "Premonition",
-
 	LegendInventorAnatomy = "Anatomical Studies",
-
 	LegendGuideSteps = "Guide Steps",
 	LegendBerserkerRage = "Berserker Rage",
 	LegendAssuredConquest = "Assured Conquest",
@@ -1304,7 +1300,6 @@ gt.Const.Strings.PerkName <- {
 	LegendFreedomOfMovement = "Freedom of Movement",
 	LegendOnslaught = "Onslaught",
 	LegendBackToBasics = "Back to Basics"
-
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
@@ -1409,8 +1404,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendStunned = "Unleash a brilliant flash of white light aimed directly at the eyes of your target in an attempt to blind and incapacitate.",
 	LegendHorrify = "Blare out a piercing, unworldly sound that is more than likely to distress anyone unfortunate enough to hear it.",
 	LegendPush = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe.",
-	LegendEntice = "With a trick of the light, captivate your target in such a way that they can\'t help but approach you."
-	LegendSleep  = "Enshroud the area with thick smoke that draws the vigor out of your foes. Those that breathe in too much are forced into a light sleep.",
+	LegendEntice = "With a trick of the light, captivate your target in such a way that they can\'t help but approach you.",
+	LegendSleep = "Enshroud the area with thick smoke that draws the vigor out of your foes. Those that breathe in too much are forced into a light sleep.",
 	LegendFirefield = "throw a noxious concoction that sets the ground alight. Requires a staff",
 	LegendPossessUndead = "Allows you to boost the attacks of an undead minion",
 	LegendSprint = "For the remainder of this turn, the Action Point cost for movement is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for each tile, but the Fatigue cost is doubled.",
@@ -1435,11 +1430,11 @@ gt.Const.Strings.PerkDescription <- {
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue",
 	LegendUberNimble = "Gain another stack of nimble when not wearing armour or helmet, real berserkers don\'t need pants",
-	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage.",
+	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of your current hitpoints as additional maximum damage.",
 	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer effects this character\'s defences at all. upgraded version of underdog, immune to Backstabber",
 	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing or dying no longer lowers this character\'s morale",
 	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons.",
-	LegendSummonCat = "Summon feline familiar to your aide. Don't worry, this particular cat has nine times a million lives.",
+	LegendSummonCat = "Summon feline familiar to your aide. Don\'t worry, this particular cat has nine times a million lives.",
 	LegendSpawnZombieLow = "Raise a half-formed thrall from a pile of mismatched dead flesh. Though lacking in strength or bodily integrity, it shall obey. Requires a small flesh sacrifice to perform the ritual.",
 	LegendSpawnZombieMed = "Organize the remains before you raise it so that your creation is better suited to the work it is given. Sturdier in both form and function. Requires a minor flesh sacrifice to perform the ritual.",
 	LegendSpawnZombieHigh = "Stitch the body together with such precision so that, once raised, it could pass as alive. A magnum opus of flesh, unsurpassed in power. Requires a moderate flesh sacrifice to perform the ritual.",
@@ -1454,7 +1449,6 @@ gt.Const.Strings.PerkDescription <- {
 	LegendViolentDecomposition = "Corrupt the force sustaining one of your thralls, causing them to detonate destructively after the corruption has time to build. Affected dead explode at the end of their turn next round, dealing damage in a 1 tile radius. The less HP they have, the more damage the explosion inflicts. If they are killed before they explode, the effect no longer triggers.",
 	LegendPossession = "Enter the mind of a thrall and lend your power for one turn, increasing thralls combat prowess.",
 	LegendSiphon = "Draw from the lifeforce of your victim and transfer up to 30% of their health to yourself. You may not drain more health than you are missing nor drain a victim to their death. Effectiveness drops off 5% for each tile away.",
-
 	LegendValaInscriptionMastery = "The Vala becomes a master at inscribing the intricate and subtle signs, allowing her to create the rune sigils at faster rate.",
 	LegendValaInscribeWeapon = "Allows the Vala to inscribe rocks with weapon specific rune sigils while encamped.\n\nPossibilities: accuracy, bleeding, feeding, poison, power.",
 	LegendValaInscribeHelmet = "Allows the Vala to inscribe rocks with helmet specific rune sigils while encamped.\n\nPossibilities: bravery, clarity, luck.",
@@ -1478,7 +1472,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTasteThePain = "Whenever getting hurt would normally trigger a morale check, instead gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] morale",
 	LegendBecomeBerserker = "This character background changes into a berserker, losing all current perks",
 	LegendSkillfulStacking = "Balancing things is an art, by creating neat stacks and tying them down well you can carry more gear. Grants 10 additional stash spaces.",
-	LegendEfficientPacking = "Arranging gear in just the right way, you're able to squeeze more things into the same space. Grants 5 additional stash spaces.",
+	LegendEfficientPacking = "Arranging gear in just the right way, you\'re able to squeeze more things into the same space. Grants 5 additional stash spaces.",
 	LegendAmmoBinding = "Expertise in making ammunition lets you strip it down to pack the parts for storage. Increases maximum ammunition storage by 10.",
 	LegendAmmoBundles = "Using blankets and ropes to group large bundles of ammunition together you are able to carry far more. Increases maximum ammunition storage by 20.",
 	LegendMedPackages = "Your knowledge of medicines lets you repack them into more efficient packages. Increases maximum medicine storage by 10.",
@@ -1532,7 +1526,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points",
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
-	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]"
+	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]",
 	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is incerased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color].",
 	LegendSpecialistNinetailsDamage = "Turn the tips of the cattail to inflict maximum injury, increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]+5-10[/color] while using the cat o nine tails, does not apply to other whips.",
 	LegendSpecialistNinetailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon, granting [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while using the cat o nine tails, does not apply to other whips.",
@@ -1548,7 +1542,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemyGoblin = "Forces may be gathering to take over the world, but ask someone else, i have no interest in anything but goblins. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting goblins. Bonus increases the more Goblins you kill, the rate depends on how powerful the goblin is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.15%[/color] per goblin fighter, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.35%[/color] per Goblin Overseer you kill",
 	LegendFavouredEnemyVampire = "The terrifying abilities of the Necrosavants are developed over time beyond memory. Their techniques are honed to perfection, but that also makes them predictable. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting Necrosavants. Bonus increases at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.3% to +0.4%[/color] per necrosavant killed.",
 	LegendFavouredEnemySkeleton = "The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting skeletons. Bonus increases the more Skeletons you kill, the rate depends on how powerful the skeleton is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.14%[/color] per light skeleton, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.4%[/color] per Skeleton Priest you kill",
-	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves. They lose something crucial in death, and that can be exploited. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting wiedergangers. Bonus increases the more Wiederganger you kill, the rate depends on how powerful the wiederganger is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.05%[/color] per weideganger, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color] per Fallen Hero"
+	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves. They lose something crucial in death, and that can be exploited. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting wiedergangers. Bonus increases the more Wiederganger you kill, the rate depends on how powerful the wiederganger is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.05%[/color] per weideganger, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color] per Fallen Hero",
 	LegendFavouredEnemyNoble = "Soliders in glittering armor and colourful pennants, their pride shall be their undoing. No gods, no masters. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage against noble soldiers. Bonus increases the more noble soldiers you kill, the rate depends on how powerful the noble soldier is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color] per footman, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.4%[/color] per Knight you kill",
 	LegendFavouredEnemyBandit = "Villainous scum, hiding in the dark and stealing from good folk. The bandits must be purged to restore order in the world. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage against bandits. Bonus increases the more bandits you kill, the rate depends on how powerful the bandit is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.03%[/color] per Bandit Rabble, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.3%[/color] per Bandit Leader you kill",
 	LegendFavouredEnemyBarbarian = "Savages, naught but savages. Civilisation must be brought to those godless brutes. They may be strong, but they lack skill. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting barbarians. Bonus increases the more barbarians you kill, the rate depends on how powerful the barbarian is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.15%[/color] per Barbarian Thrall, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.35%[/color] per Barbarian Champion you kill",
@@ -1557,12 +1551,12 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemyMercenary = "Mercenaries are the worst, no cause, no principles, no honour. They seek only coin, so they shall find only death. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting mercenaries. Bonus increases the more mercenaries, wardogs and bountyhunters you kill.  The bonus depends on how powerful the mercenary is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.09%[/color] per Wardog, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.3%[/color] per Mercenary you kill",
 	LegendFavouredEnemyCaravan = "Civilians are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting civilians. Bonus increases the more civilians you kill. Includes Peasants, Caravan Hands, Caravan Gaurds, Militia, Militia Veterans, Militia Captains and Militia Archers.  The bonus depends on how powerful the civilian is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color] per Peasant, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color] per Militia Captain you kill ",
 	LegendSpecGreatSword = "Master the art of fighting with a large unwieldy sword. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit, Swing, Overhead Strike and Great Slash gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
-	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage. "
+	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage. ",
 	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature. Spearwall costs[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] less fatigue. Stacks with spear mastery ",
-	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust does [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage."
-	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] bonuse melee and ranged defense if your current body armor is twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of 5",
+	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust does [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage.",
+	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] bonuse melee and ranged defense and damage reduction if your current body armor is twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of 5",
 	LegendMatchingSet = "Proper distribution of weight is crucial for maintaining mobility. Grants up to  [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] fatigue per round if your helmet and armor values match. Decreases by 1 for every 10 points difference.",
-	LegendLithe = "Specialize in medium armor! By dodging or deflecting blows, convert any hits to glancing hits. Hitpoint damage taken is reduced by up to [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] but lowered exponentially by the total penalty to Maximum Fatigue from body and head armor above 30. The lighter your armor and helmet, the more you benefit.\n\nBrawny does not affects this perk.\n\nCan not be used with Nimble. \n\nDoes not affect damage from status effect, but can help to avoid receiving them." 
+	LegendLithe = "Not as nimble as some, but more lithe than most. Like nimble, but the bonus is halved, the 15 fatigue floor raised to  [color=" + this.Const.UI.Color.PositiveValue + "]30[/color], and the fatigue falloff is also halved, so you can wear much heavier armor. Does nothing if you have the Nimble perk.",
 	LegendHidden = "Master the art of concelement. Blend in with your surroundings and remain hidden from the enemy until your next attack.",
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] less likely to attack you instead of an ally.",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns",
@@ -1580,7 +1574,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTerrifyingVisage = "The mere sight of this character sends enemies fleeing. Reduce resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color] ",
 	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.",
 	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off gaurd. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. ",
-	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve."
+	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve.",
+	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 50."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
