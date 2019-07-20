@@ -29,7 +29,6 @@ this.legend_prosthetic_ear <- this.inherit("scripts/skills/traits/character_trai
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Initiative"
 			}
 		];
-		this.addTooltipHint(ret);
 		return ret;
 	}
 
