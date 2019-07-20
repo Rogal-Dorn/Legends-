@@ -167,6 +167,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	// }	
 	//this.logInfo("Getting dynamic perk tree")
 	local tree = [ [], [], [], [], [], [], [], [], [], [], [] ];
+	local attributes = this.Const.Perks.TraitsTrees.getBaseAttributes();
 
 	local _localMap = {
 		Weapon = [],
@@ -294,7 +295,31 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		}
 	}
 
-	return tree;
+	foreach (t in _localMap.Traits)
+	{
+		local c = t.Attributes;
+		attributes.Hitpoints[0] += c.Hitpoints[0];
+		attributes.Hitpoints[1] += c.Hitpoints[1];
+		attributes.Bravery[0] += c.Bravery[0];
+		attributes.Bravery[1] += c.Bravery[1];
+		attributes.Stamina[0] += c.Stamina[0];
+		attributes.Stamina[1] += c.Stamina[1];
+		attributes.MeleeSkill[0] += c.MeleeSkill[0];
+		attributes.MeleeSkill[1] += c.MeleeSkill[1];
+		attributes.MeleeDefense[0] += c.MeleeDefense[0];
+		attributes.MeleeDefense[1] += c.MeleeDefense[1];
+		attributes.RangedSkill[0] += c.RangedSkill[0];
+		attributes.RangedSkill[1] += c.RangedSkill[1];
+		attributes.RangedDefense[0] += c.RangedDefense[0];
+		attributes.RangedDefense[1] += c.RangedDefense[1];
+		attributes.Initiative[0] += c.Initiative[0];
+		attributes.Initiative[1] += c.Initiative[1];
+	}
+
+	return {
+		Tree = tree,
+		Attributes = attributes
+	};
 }
 
 

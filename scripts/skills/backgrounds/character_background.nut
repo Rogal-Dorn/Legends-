@@ -469,7 +469,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 	}
 
-	function buildAttributes(_tag = null)
+	function buildAttributes(_tag = null, _attrs = null)
 	{
 		local a = [];
 
@@ -603,6 +603,25 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		a.Initiative[0] += c.Initiative[0];
 		a.Initiative[1] += c.Initiative[1];
 		
+		if (_attrs != null)
+		{
+			a.Hitpoints[0] += _attrs.Hitpoints[0];
+			a.Hitpoints[1] += _attrs.Hitpoints[1];
+			a.Bravery[0] += _attrs.Bravery[0];
+			a.Bravery[1] += _attrs.Bravery[1];
+			a.Stamina[0] += _attrs.Stamina[0];
+			a.Stamina[1] += _attrs.Stamina[1];
+			a.MeleeSkill[0] += _attrs.MeleeSkill[0];
+			a.MeleeSkill[1] += _attrs.MeleeSkill[1];
+			a.MeleeDefense[0] += _attrs.MeleeDefense[0];
+			a.MeleeDefense[1] += _attrs.MeleeDefense[1];
+			a.RangedSkill[0] += _attrs.RangedSkill[0];
+			a.RangedSkill[1] += _attrs.RangedSkill[1];
+			a.RangedDefense[0] += _attrs.RangedDefense[0];
+			a.RangedDefense[1] += _attrs.RangedDefense[1];
+			a.Initiative[0] += _attrs.Initiative[0];
+			a.Initiative[1] += _attrs.Initiative[1];
+		}
 		local b = this.getContainer().getActor().getBaseProperties();
 		if (_tag == "zombie")
 		{
@@ -643,16 +662,52 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function buildPerkTree()
 	{
+	local a = {
+			Hitpoints = [
+				0,
+				0
+			],
+			Bravery = [
+				0,
+				0
+			],
+			Stamina = [
+				0,
+				0
+			],
+			MeleeSkill = [
+				0,
+				0
+			],
+			RangedSkill = [
+				0,
+				0
+			],
+			MeleeDefense = [
+				0,
+				0
+			],
+			RangedDefense = [
+				0,
+				0
+			],
+			Initiative = [
+				0,
+				0
+			]
+		};
 		if (this.m.PerkTree != null)
 		{
-			return;
+			return a;
 		}
 
 		if (this.m.CustomPerkTree == null)
 		{
 			if (this.World.Assets.isLegendPerkTrees())
 			{
-				this.m.CustomPerkTree = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
+				local result  = this.Const.Perks.GetDynamicPerkTree(this.m.PerkTreeDynamicMins, this.m.PerkTreeDynamic);
+				this.m.CustomPerkTree = result.Tree
+				a = result.Attributes;
 			}
 			else 
 			{
@@ -673,6 +728,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
+		return a
 	}
 
 	function updateAppearance()
