@@ -1297,5 +1297,7 @@ Beta 12.3.1
 *Fixes swordstaves failing to load 
 
 Beta 12.3.2
-Fixes Freedom of Movement, Onslaught and Smackdown all triggering when user has more fatigue, instead of less.  Should now need to be less exhausted than your enemy for them to work. 
-Updates descriptions for vanilla starts to show what has changed in legends. 
+*Fixes Freedom of Movement, Onslaught and Smackdown all triggering when user has more fatigue, instead of less. Should now need to be less exhausted than your enemy for them to work. 
+*Updates descriptions for vanilla starts to show what has changed in legends. 
+*Random character stat distributions are now weighted towards the perks in the random tree. IOW, characters should now have better attributes that compliment their unique perks in the tree.
+
