@@ -22,16 +22,7 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 			return;
 		}
 
-
-		this.m.Score = 999
-		return;
-
 		if (this.World.Assets.getBusinessReputation() < 1500)
-		{
-			return;
-		}
-
-		if (this.Math.rand(1, 100) > 6)
 		{
 			return;
 		}

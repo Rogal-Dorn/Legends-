@@ -22,14 +22,7 @@ this.legend_hunting_white_direwolf_action <- this.inherit("scripts/factions/fact
 			return;
 		}
 
-
-
 		if (this.World.Assets.getBusinessReputation() < 900)
-		{
-			return;
-		}
-
-		if (this.Math.rand(1, 100) > 6)
 		{
 			return;
 		}
