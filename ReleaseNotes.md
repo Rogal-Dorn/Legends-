@@ -1296,8 +1296,9 @@ Beta 12.3.1
 *Fixes sling staves using their base accuracy as their accuracy per tile 
 *Fixes swordstaves failing to load 
 
-Beta 12.3.2
+Beta 12.4
 *Fixes Freedom of Movement, Onslaught and Smackdown all triggering when user has more fatigue, instead of less. Should now need to be less exhausted than your enemy for them to work. 
 *Updates descriptions for vanilla starts to show what has changed in legends. 
 *Random character stat distributions are now weighted towards the perks in the random tree. IOW, characters should now have better attributes that compliment their unique perks in the tree.
+*Gamblers lose Vicious perk group and gain Calm perk group, Herbalists lose organised and gain Calm, Monks and Nunes lose favoured enemy undead, and gain Calm. tailors and seamstresses lose Fast and gain Calm, Washerwomen lose indestructible and gain Calm.  (this may result in broken saves)
 
