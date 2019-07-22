@@ -44,7 +44,7 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			Traits = [
 				this.Const.Perks.FitTree,
-				this.Const.Perks.FastTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.DeviousTree
 			],

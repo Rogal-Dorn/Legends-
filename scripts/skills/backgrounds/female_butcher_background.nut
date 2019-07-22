@@ -59,6 +59,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 			Traits = [
 				this.Const.Perks.OrganisedTree,
 				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.LargeTree
 			],
 			Enemy = [],

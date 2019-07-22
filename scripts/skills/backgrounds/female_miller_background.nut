@@ -48,6 +48,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			],
 			Traits = [
 				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.SturdyTree
 			],

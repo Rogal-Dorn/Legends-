@@ -58,7 +58,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.SturdyTree,
 				this.Const.Perks.FastTree,
-				this.Const.Perks.AgileTree
+				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
 			Class = [this.Const.Perks.FistsClassTree]

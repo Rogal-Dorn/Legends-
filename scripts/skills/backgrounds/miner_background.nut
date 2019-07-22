@@ -71,6 +71,7 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 			Traits = [
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree,
+				this.Const.Perks.TrainedTree,
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [this.Const.Perks.OrcsTree],

@@ -65,7 +65,7 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.DeviousTree,
-				this.Const.Perks.AgileTree
+				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
 			Class = [this.Const.Perks.FistsClassTree]

@@ -61,7 +61,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
-				this.Const.Perks.KnifeClassTree,
+				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.MaceTree
@@ -71,7 +71,8 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Traits = [
 				this.Const.Perks.FastTree,
-				this.Const.Perks.AgileTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.MartyrTree,
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [this.Const.Perks.CivilizationTree],

@@ -55,6 +55,8 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.OrganisedTree
 			],
 			Enemy = [],

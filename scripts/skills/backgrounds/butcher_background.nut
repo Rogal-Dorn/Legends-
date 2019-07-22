@@ -57,6 +57,7 @@ this.butcher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Traits = [
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.LargeTree
 			],
 			Enemy = [],

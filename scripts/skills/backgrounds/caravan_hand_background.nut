@@ -58,6 +58,7 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Traits = [
 				this.Const.Perks.SturdyTree,
+				this.Const.Perks.OrganisedTree,
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree
 			],
