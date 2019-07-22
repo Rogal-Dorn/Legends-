@@ -55,6 +55,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			Traits = [
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.ViciousTree,
+				this.Const.Perks.SturdyTree,
 				this.Const.Perks.LargeTree
 			],
 			Enemy = [this.Const.Perks.OutlandersTree],

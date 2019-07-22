@@ -54,9 +54,9 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			Traits = [
 				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.DeviousTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.AgileTree
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.FitTree
 			],
 			Enemy = [],
 			Class = []

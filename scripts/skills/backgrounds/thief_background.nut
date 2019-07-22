@@ -67,6 +67,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			],
 			Traits = [
 				this.Const.Perks.ViciousTree,
+				this.Const.Perks.MartyrTree,
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.DeviousTree
 			],

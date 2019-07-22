@@ -71,7 +71,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
+				this.Const.Perks.SturdyTree,
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree
