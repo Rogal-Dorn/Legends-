@@ -31,7 +31,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.1;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
