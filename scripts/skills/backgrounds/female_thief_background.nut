@@ -76,7 +76,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [this.Const.Perks.CivilizationTree],
-			Class = []
+			Class = [this.Const.Perks.KnifeClassTree]
 		}
 	}
 
@@ -121,7 +121,7 @@ this.female_thief_background <- this.inherit("scripts/skills/backgrounds/charact
 				0
 			],
 			RangedSkill = [
-				0,
+				5,
 				0
 			],
 			MeleeDefense = [

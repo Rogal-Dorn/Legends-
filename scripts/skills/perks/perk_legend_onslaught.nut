@@ -68,7 +68,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
 
-			if (!user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
+			if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
 			{
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " battered " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them dazed");
 			}
