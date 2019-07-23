@@ -1308,7 +1308,7 @@ Increases the number of gauranteed weapon groups to 8
 Grapple inflicts twice the fatigue
 Kick and Hand to Hand cost and additional 10 fatigue
 Unarmed skills can now show up in the general weapon pool
-Fixes "Attributes not found" error 
+Fixes "Attribute not found" error 
 Rebalanced gauranteed perks for each background to account for dynamic stats. 
 Barbarian gains trained, beast hunters gain devious and agile. beggar swaps agile for calm. butchers gain calm. caravan hands gain Organised. Cripples swap vicious for intelligent. Eunuchs gain calm. adventerous ladies swap fast for agile, gain vicious. widows swap agile for organised. Fishwives gain calm. Disowned ladies swap intelligent for vicious. Bakers gain calm. Troubadours swap agile for fast, gain calm. housemaids gain calm. seamstresses gain intelligent. Pickpockets swap knife skills for crossbow, lost agile, gain calm and martyr. Gravediggers swap indestructible for organised. Graverobbers swap fast for large. Historians swap agile for inspirational.  Houndmasters swap agile for indestructible. . Killers gain Large. Blackmiths gain organised. Cannibals gain calm and martyr. Herbalised gain organised and agile. Inventors gain calm and indestructible. Ironmongers gain fast and properly gain repair.  Noble warriors swap vicious for sturdy. Noble soldiers swap vicious for fast and fit for sturdy. Nuns gain martyr. shieldmaidens swap agile for fast.  taxidermists gain fast.   Militia gain sturdy. Miners gain trained. minstrels gain fit. Orc slayers gain inspirational. Peddlers gain calm and intelligent. Poachers swap fit for vicious, gain devious. Raiders swap devious for fit and large. rat catchers swap vicious for martyr and agile for calm. refugees swap agile for indestructible. Sellswords gain sturdy. Servants gain calm and intelligent. Shepherds gain calm. Swordmasters gain sturdy, tailors swap intelligent for fast and vicious. Thieves gain martyr. Vagabonds swap devious, vicious and agile for organised, fast and fit. Wildmen gain indestructible. Wild women swap devious for vicious, swap sturdy for large and gain indestructible. Witchhunters gain inspirational and intelligent. 
 Hunters gain devious, kings guard gain Large, Messengers swap large for organised, militia swap sturdy for vicious and indestructible for agile to match their vanilla stats.  Miners swap fit for indestructible to match vanilla stats. Monks gain organised. Retired soldiers lose vicious and large, gain organised, inspirational and fit. 
@@ -1316,4 +1316,9 @@ noble slingers defense buffed slightly
 Blacksmith nerfed back in line with other backgrounds.
 Shieldmaiden ranged skill and initiative nerfed
 Herbalist gets new titles and chance to be female         
+Donkeys have a chance to be female 
 
+Beta 12.4 test 3
+Fixes crash from onslaught 
+pickpockets gain knife skills
+donkey ladies 
