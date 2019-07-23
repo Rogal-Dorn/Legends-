@@ -694,16 +694,16 @@ gt.Const.Perks.SturdyTree <- {
 	],
 	Attributes = {
 		Hitpoints = [
-			3,
-			3
+			0,
+			0
 		],
 		Bravery = [
 			0,
 			0
 		],
 		Stamina = [
-			0,
-			0
+			3,
+			3
 		],
 		MeleeSkill = [
 			0,
@@ -902,31 +902,31 @@ gt.Const.Perks.TraitsTrees <- {
 	{
 		return {
 			Hitpoints = [
-				-9,
+				-6,
 				-9
 			],
 			Bravery = [
-				-9,
+				-6,
 				-9
 			],
 			Stamina = [
-				-6,
-				-6
+				-9,
+				-9
 			],
 			MeleeSkill = [
-				-9,
+				-6,
 				-9
 			],
 			RangedSkill = [
-				-9,
+				-6,
 				-9
 			],
 			MeleeDefense = [
-				-9,
+				-6,
 				-9
 			],
 			RangedDefense = [
-				-9,
+				-6,
 				-9
 			],
 			Initiative = [

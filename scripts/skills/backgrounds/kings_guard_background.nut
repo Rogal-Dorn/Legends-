@@ -30,6 +30,7 @@ this.kings_guard_background <- this.inherit("scripts/skills/backgrounds/characte
 			Traits = [
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.ViciousTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.FitTree
 			],
 			Enemy = [this.Const.Perks.SwordmastersTree],
