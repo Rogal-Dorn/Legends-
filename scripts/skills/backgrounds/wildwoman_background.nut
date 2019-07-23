@@ -94,7 +94,7 @@ this.wildwoman_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.SturdyTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.FitTree
