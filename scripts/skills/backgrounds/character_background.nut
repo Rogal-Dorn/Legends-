@@ -70,7 +70,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			]
 		},
 		PerkTreeDynamicMins = {
-			Weapon = 6,
+			Weapon = 8,
 			Defense = 2,
 			Traits = 8,
 			Enemy = 1,
@@ -635,15 +635,40 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			b.ActionPoints = 9;
 		}
+		local Hitpoints1 = this.Math.max(15, this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]));
+		local Bravery1 = this.Math.rand(a.Bravery[0], a.Bravery[1]);
+		local Stamina1 = this.Math.rand(a.Stamina[0], a.Stamina[1]);
+		local MeleeSkill1 = this.Math.rand(a.MeleeSkill[0], a.MeleeSkill[1]);
+		local RangedSkill1 = this.Math.rand(a.RangedSkill[0], a.RangedSkill[1]);
+		local MeleeDefense1 = this.Math.rand(a.MeleeDefense[0], a.MeleeDefense[1]);
+		local RangedDefense1 = this.Math.rand(a.RangedDefense[0], a.RangedDefense[1]);
+		local Initiative1 = this.Math.rand(a.Initiative[0], a.Initiative[1]);
+		local Hitpoints2 = this.Math.max(15, this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]));
+		local Bravery2 = this.Math.rand(a.Bravery[0], a.Bravery[1]);
+		local Stamina2 = this.Math.rand(a.Stamina[0], a.Stamina[1]);
+		local MeleeSkill2 = this.Math.rand(a.MeleeSkill[0], a.MeleeSkill[1]);
+		local RangedSkill2 = this.Math.rand(a.RangedSkill[0], a.RangedSkill[1]);
+		local MeleeDefense2 = this.Math.rand(a.MeleeDefense[0], a.MeleeDefense[1]);
+		local RangedDefense2 = this.Math.rand(a.RangedDefense[0], a.RangedDefense[1]);
+		local Initiative2 = this.Math.rand(a.Initiative[0], a.Initiative[1]);
+		local HitpointsAvg = this.Math.floor((Hitpoints1 + Hitpoints2) / 2);
+		local BraveryAvg  = this.Math.floor((Bravery1 + Bravery2) / 2);
+		local StaminaAvg  = this.Math.floor((Stamina1 + Stamina2) / 2);
+		local MeleeSkillAvg  = this.Math.floor((MeleeSkill1 + MeleeSkill2) / 2);
+		local RangedSkillAvg  = this.Math.floor((RangedSkill1 + RangedSkill2) / 2);
+		local MeleeDefenseAvg  = this.Math.floor((MeleeDefense1 + MeleeDefense2) / 2);
+		local RangedDefenseAvg  = this.Math.floor((RangedDefense1 + RangedDefense2) / 2);
+		local InitiativeAvg  = this.Math.floor((Initiative1 + Initiative2) / 2);
 
-		b.Hitpoints = this.Math.max(15, this.Math.rand(a.Hitpoints[0], a.Hitpoints[1]));
-		b.Bravery = this.Math.rand(a.Bravery[0], a.Bravery[1]);
-		b.Stamina = this.Math.rand(a.Stamina[0], a.Stamina[1]);
-		b.MeleeSkill = this.Math.rand(a.MeleeSkill[0], a.MeleeSkill[1]);
-		b.RangedSkill = this.Math.rand(a.RangedSkill[0], a.RangedSkill[1]);
-		b.MeleeDefense = this.Math.rand(a.MeleeDefense[0], a.MeleeDefense[1]);
-		b.RangedDefense = this.Math.rand(a.RangedDefense[0], a.RangedDefense[1]);
-		b.Initiative = this.Math.rand(a.Initiative[0], a.Initiative[1]);
+
+		b.Hitpoints = HitpointsAvg;
+		b.Bravery = BraveryAvg;
+		b.Stamina = StaminaAvg;
+		b.MeleeSkill = MeleeSkillAvg;
+		b.RangedSkill = RangedSkillAvg;
+		b.MeleeDefense = MeleeDefenseAvg;
+		b.RangedDefense = RangedDefenseAvg;
+		b.Initiative = InitiativeAvg;
 		this.getContainer().getActor().m.CurrentProperties = clone b;
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
 	}

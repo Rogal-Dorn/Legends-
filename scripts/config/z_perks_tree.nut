@@ -297,6 +297,8 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 
 	foreach (t in _localMap.Traits)
 	{
+		if (t.Attributes)
+		{
 		local c = t.Attributes;
 		attributes.Hitpoints[0] += c.Hitpoints[0];
 		attributes.Hitpoints[1] += c.Hitpoints[1];
@@ -314,6 +316,7 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 		attributes.RangedDefense[1] += c.RangedDefense[1];
 		attributes.Initiative[0] += c.Initiative[0];
 		attributes.Initiative[1] += c.Initiative[1];
+		}
 	}
 
 	return {
