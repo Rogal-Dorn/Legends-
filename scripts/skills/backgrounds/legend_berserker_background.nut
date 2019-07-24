@@ -91,6 +91,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
 				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.Adrenalin,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Steadfast,
