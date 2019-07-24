@@ -2,7 +2,8 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 	m = {
 		Monk = null,
 		Cultist = null,
-		Witchhunter = null
+		Witchhunter = null,
+		Dude = null
 	},
 	function create()
 	{
@@ -88,6 +89,18 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
+					Text = "Alright, we\'ll take you.",
+					function getResult( _event )
+					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
+						_event.m.Dude = null;
+						return 0;
+					}
+
+				},
+				{
 					Text = "I hope she finds somewhere safe to be.",
 					function getResult( _event )
 					{
@@ -100,6 +113,19 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			{
 				this.World.Assets.addMoralReputation(3);
 				local brothers = this.World.getPlayerRoster().getAll();
+
+				this.Characters.push(_event.m.Monk.getImagePath());
+				local roster = this.World.getTemporaryRoster();
+				_event.m.Dude = roster.create("scripts/entity/tactical/player");
+				_event.m.Dude.setStartValuesEx([
+					"this.Const.CharacterFemaleBackgrounds"
+				]);
+				_event.m.Dude.setTitle("the Roasted");
+				_event.m.Dude.getBackground().m.RawDescription = "While visiting " + _event.m.Town.getName() + ", you found %name% tied to a stake and set her free, now she fights with you and for her freedom";
+				_event.m.Dude.getBackground().buildDescription(true);
+				this.Characters.push(_event.m.Dude.getImagePath());
+
+
 
 				foreach( bro in brothers )
 				{
@@ -164,7 +190,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getSkills().hasSkill("trait.superstitious"))
+					if (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious"))
 					{
 						bro.worsenMood(1.0, "You set free an evil spirit");
 
@@ -200,7 +226,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Witchhunter.getImagePath());
-				local resolve = 1;
+				local resolve = 2;
 				local initiative = 1;
 				_event.m.Witchhunter.getBaseProperties().Bravery += resolve;
 				_event.m.Witchhunter.getBaseProperties().Initiative += initiative;
@@ -230,7 +256,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() != _event.m.Witchhunter.getID() && (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getSkills().hasSkill("trait.superstitious")))
+					if (bro.getID() != _event.m.Witchhunter.getID() && (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk"  || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious")))
 					{
 						bro.improveMood(1.0, "Saw an evil spirit meet its end");
 
@@ -249,7 +275,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Monk",
-			Text = "[img]gfx/ui/events/event_79.png[/img]The monk, %monk%, sits with the town\'s own friar and talks for a time. When they are done, a nod is given to the torchman who sets the wooden pallets aflame. The woman screams for mercy, but the flames have none for her, slowly working up feet first. It is a horrific sight and only when the smoke is a choking cloud does the dying woman go silent. The fire consumes her entirely as the rest of the town claps and cheers. %monk% states that she was clearly a witch and had to be done away with. You\'re not sure. All you saw was a woman burned alive, but you trust that he knows more than you about the war between the old gods and the evils of sorcery.",
+			Text = "[img]gfx/ui/events/event_79.png[/img]The holy one, %monk%, sits with the town\'s own friar and talks for a time. When they are done, a nod is given to the torchman who sets the wooden pallets aflame. The woman screams for mercy, but the flames have none for her, slowly working up feet first. It is a horrific sight and only when the smoke is a choking cloud does the dying woman go silent. The fire consumes her entirely as the rest of the town claps and cheers. %monk% states that she was clearly a witch and had to be done away with. You\'re not sure. All you saw was a woman burned alive, but you trust that he knows more than you about the war between the old gods and the evils of sorcery.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -266,7 +292,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Monk.getImagePath());
-				local resolve = this.Math.rand(2, 3);
+				local resolve = this.Math.rand(2, 4);
 				_event.m.Monk.getBaseProperties().Bravery += resolve;
 				_event.m.Monk.getSkills().update();
 				_event.m.Monk.improveMood(2.0, "Had a witch burned");
@@ -289,7 +315,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() != _event.m.Monk.getID() && (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getSkills().hasSkill("trait.superstitious")))
+					if (bro.getID() != _event.m.Monk.getID() && (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious")))
 					{
 						bro.improveMood(1.0, "Saw a witch burning at the stake");
 
@@ -308,7 +334,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Cultist",
-			Text = "[img]gfx/ui/events/event_79.png[/img]%cultist% steps forward and looks the villagers up and down. He shakes his head.%SPEECH_ON%You all should kill yourselves.%SPEECH_OFF%The town monk rustles up his cloak.%SPEECH_ON%E-excuse me?%SPEECH_OFF%The cultist starts to cut the woman down. A few of your mercenaries step forward to stop anyone from protesting. When she\'s free and sent running for her own safety, %cultist% speaks again.%SPEECH_ON%Kill yourselves. Each of you. Tonight. You\'ve angered Davkul and his rage is a debt you\'d do best to pay yourself.%SPEECH_OFF%The monk opens his mouth to say something, but his nose cracks as though indented by an invisible stone. He lurches, blood spewing from his nostrils. %cultist% nods.%SPEECH_ON%Hmm, he is angrier than I had thought. Davkul awaits us all, but he is now on your doorstep.%SPEECH_OFF%Screaming, the monk falls to the ground as his jaw sickeningly cracks open, his mouth left permanently ajar. The villagers scream and disperse like rabbits beneath the shadow of a hawk.",
+			Text = "[img]gfx/ui/events/event_79.png[/img]%cultist% steps forward and looks the villagers up and down, with a slowing shaking head.%SPEECH_ON%You all should kill yourselves.%SPEECH_OFF%The town monk rustles up his cloak.%SPEECH_ON%E-excuse me?%SPEECH_OFF%The cultist starts to cut the woman down. A few of your mercenaries step forward to stop anyone from protesting. When she\'s free and sent running for her own safety, %cultist% speaks again.%SPEECH_ON%Kill yourselves. Each of you. Tonight. You\'ve angered Davkul and his rage is a debt you\'d do best to pay yourself.%SPEECH_OFF%The monk opens his mouth to say something, but his nose cracks as though indented by an invisible stone. He lurches, blood spewing from his nostrils. %cultist% nods.%SPEECH_ON%Hmm, he is angrier than I had thought. Davkul awaits us all, but he is now on your doorstep.%SPEECH_OFF%Screaming, the monk falls to the ground as his jaw sickeningly cracks open, his mouth left permanently ajar. The villagers scream and disperse like rabbits beneath the shadow of a hawk.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -361,7 +387,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getSkills().hasSkill("trait.superstitious"))
+					else if (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk"  || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious"))
 					{
 						bro.worsenMood(1.0, _event.m.Cultist.getName() + " freed a witch");
 
@@ -410,7 +436,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_witchhunter.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk")
+			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
 			{
 				candidate_monk.push(bro);
 			}

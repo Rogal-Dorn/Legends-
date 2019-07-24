@@ -13,6 +13,11 @@ this.barbarian_beastmaster <- this.inherit("scripts/entity/tactical/human", {
 		this.m.SoundPitch = 0.95;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/barbarian_beastmaster_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 30)
+		{
+			this.setGender(1);
+			this.m.Faces = this.Const.Faces.WildFemale;
+		}
 	}
 
 	function onInit()

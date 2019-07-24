@@ -10,7 +10,7 @@ this.ailing_recovers_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 75.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]{%ailing% is walking around camp with his hands out and his fingers stretched as though he were balancing across a rope. He nods to himself as he turns around, foot placed before foot, marching his way back across.%SPEECH_ON%For the first time in a long time I actually feel quite alright. Thanks, %healer%!%SPEECH_OFF%It seems %healer% knew of a couple means to rid what ailed %ailing%.}",
+			Text = "[img]gfx/ui/events/event_05.png[/img]{%ailing% is walking around camp with hands out and fingers stretched as though balancing across a rope. Nodding and turns around, foot placed before foot, marching back across.%SPEECH_ON%For the first time in a long time I actually feel quite alright. Thanks, %healer%!%SPEECH_OFF%It seems %healer% knew of a couple means to rid what ailed %ailing%.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -78,7 +78,7 @@ this.ailing_recovers_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_ailing.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.beast_slayer")
+			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.legend_herbalist" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" )
 			{
 				candidates_healer.push(bro);
 			}

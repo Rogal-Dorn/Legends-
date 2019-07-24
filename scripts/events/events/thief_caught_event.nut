@@ -9,13 +9,13 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 30.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_33.png[/img]During a short rest, your men managed to catch a man that tried to make off with some of your supplies. His clothes are but rags and he looks more skeleton than man. What are you going to do with him?",
+			Text = "[img]gfx/ui/events/event_33.png[/img]During a short rest, your company managed to catch a theif that tried to make off with some of your supplies. The villain\'s clothes are but rags and looks more skeleton than human. What are you going to do with the crook?",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Give that poor guy some food and water.",
+					Text = "Give that poor soul some food and water.",
 					function getResult( _event )
 					{
 						return "D";
@@ -23,7 +23,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "Give him a good beating.",
+					Text = "Give the rotter a good beating.",
 					function getResult( _event )
 					{
 						return "C";
@@ -31,7 +31,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "Put him to the sword.",
+					Text = "Put that thief to the sword.",
 					function getResult( _event )
 					{
 						return "F";
@@ -46,7 +46,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_33.png[/img]Under the cloak of night some thief managed to nick some of your supplies. He will probably offer them back to you in the next settlement...",
+			Text = "[img]gfx/ui/events/event_33.png[/img]Under the cloak of night some thief managed to nick some of your supplies. Supplies that will probably be offered back to you in the next settlement...",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -118,7 +118,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_33.png[/img]%randombrother% gives the thief a proper beating with a short cane. The shaft lands viciously hard and you can hear the sound of the blows passing through the man\'s almost hollow frame. He wilts and turns and tries hard to get away, but the sellsword is persistent in meting out the punishment. When it\'s all said and done, you leave the beaten man behind, wimpering and clutching the dirt between his frail fingers.",
+			Text = "[img]gfx/ui/events/event_33.png[/img]%randombrother% gives the thief a proper beating with a short cane. The shaft lands viciously hard and you can hear the sound of the blows passing through the theif\'s almost hollow frame. The beaten culprit wilts and turns and tries hard to get away, but the sellsword is persistent in meting out the punishment. When it\'s all said and done, you leave the beaten thief behind, wimpering and clutching the dirt between frail fingers.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -139,7 +139,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_33.png[/img]Feeling bad for the feeble man, you decide to give him some water and food. He almost snatches the meal away from you and drives his famished face into it. The thief thanks you between every bite.",
+			Text = "[img]gfx/ui/events/event_33.png[/img]Feeling bad for the feeble cutpurse, you decide to offer some water and food. The withered person almost snatches the meal away from you and drives a famished face into it. The thief thanks you between every bite.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -177,7 +177,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_33.png[/img] You tell the men to get back to marching. The thief wipes his mouth and stands up, wobbling as his weak legs take a few steps after you. He asks if maybe he could join the company. He\'ll give his life for you, if he must, just anything to not have to steal anymore.",
+			Text = "[img]gfx/ui/events/event_33.png[/img] You tell the mercenaries to get back to marching. The thief uses a thin arm to wipe their mouth and stands up, wobbling on weak legs to take a few steps after you and asks if maybe they could join the company. %SPEECH_ON%I\'ll give my life for you, if I must, just anything to not have to steal anymore.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -194,7 +194,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "We need fighting men, not underfed thieves.",
+					Text = "We need warriors, not underfed thieves.",
 					function getResult( _event )
 					{
 						this.World.getTemporaryRoster().clear();
@@ -214,7 +214,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_33.png[/img]As the thief cowers, you draw your sword. He begs for mercy as his mirrored face ripples over the blade\'s fuller and edges. You raise the weapon. The man screams out that he\'ll work for you, that he\'ll work for free, anything to spare his life. You hesitate, your sword still lingering in the air.",
+			Text = "[img]gfx/ui/events/event_33.png[/img]As you draw your sword, the thief cowers, beggin for mercy as their mirrored face ripples over the blade\'s fuller and edges. You raise the weapon. The theif screams out that %SPEECH_ON% I\'ll work for you, I\'ll work for free, anything to spare my life.%SPEECH_OFF% You hesitate, your sword still lingering in the air.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -243,7 +243,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "G",
-			Text = "[img]gfx/ui/events/event_33.png[/img]%SPEECH_ON%The punishment for thievery is death.%SPEECH_OFF%You plunge the sword down, cutting off the thief\'s last words with a quick stab into his chest. He seizes up, speechless save for the scratching of his thin hands grabbing that which is killing him, and then he falls back, dead within moment. You retrieve your weapon and clean it off in the nook of your elbow. The dead man\'s head turns to a side as blood pools quietly beneath him.",
+			Text = "[img]gfx/ui/events/event_33.png[/img]%SPEECH_ON%The punishment for thievery is death.%SPEECH_OFF%You plunge the sword down, cutting off the thief\'s last words with a quick stab into their chest. The body seizes up, speechless save for the scratching of thin hands grabbing the killing implement, and then the face falls back, dead within moment. You retrieve your weapon and clean it off in the nook of your elbow. The dead head turns to a side as blood pools quietly beneath.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -264,7 +264,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.refugee" || bro.getBackground().getID() == "background.beggar")
+					if (bro.getBackground().getID() == "background.refugee" || bro.getBackground().getID() == "background.beggar"  || bro.getBackground().getID() == "background.female_beggar")
 					{
 						if (bro.getSkills().hasSkill("trait.bloodthirsty"))
 						{
@@ -288,7 +288,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "H",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You lower your weapon and the man crawls to you and hugs your legs. He kisses your feet until you draw away.\n\nTo get things straight, you give him a long list of orders and how it is to work in the company. You also give him a contract which he signs with a jagged \'x\'. A few of the brothers then spend the rest of the day teaching him the ropes and introducing him to the rest of the company. By night\'s end, it seems like he\'s already beginning to fit in. By next morning, you wake to see a great number of supplies are missing and the new man is nowhere in sight. It appears that, although you stayed the thief\'s execution, he went on ahead and stole things anyway. Let that be a lesson to you.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]You lower your weapon and the theif crawls to you and hugs your legs, kissing your feet until you draw away.\n\nTo get things straight, you give a long list of orders and how it is to work in the company. You also give a contract which is then signed with a jagged \'x\'. A few of the company then spend the rest of the day teaching the ropes and introducing the new selssword to the rest of the company. By night\'s end, it seems like the new blood is already beginning to fit in. By next morning, you wake to see a great number of supplies are missing and the new recruit is nowhere in sight. It appears that, although you stayed the thief\'s execution, they went on ahead and stole things anyway. Let that be a lesson to you.",
 			Image = "",
 			List = [],
 			Characters = [],

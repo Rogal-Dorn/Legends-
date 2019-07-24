@@ -1321,4 +1321,32 @@ Donkeys have a chance to be female
 Beta 12.4 test 3
 Fixes crash from onslaught 
 pickpockets gain knife skills
-donkey ladies 
+Weak Berserker gains addrenalin
+donkey ladies fixed 
+refugees can now be female 
+Many events to have female text and participants:
+*Female refugees and nuns can now help in the Children's crusade 
+*Female refugees and bloodthirsty, brutish and violent females can take part in the civilwar refugee event 
+*Female refugees, widows and housemaids can take part in the hedgeknight vs refugee event 
+*Female refugees, seamstresses and pickpockets can take part in the wear and tear event 
+*Female refugees can take part in the minstrel/troubadour regails refugee event 
+*Female refugees can take part in the refugee vs raider event 
+*Female refugees and widows can feel bad for the thief in the thief caught event 
+*Female refugees can take part in the Walker's bond event 
+*Nuns, warlocks, seers and supersticious females can now take part in the Bad Curse event 
+*Nuns can take part in the Cultist vs old Gods event 
+*Nuns, herbalists and seers can take part in the even to cure Ailing
+*Nuns, Inventor, seer and dumb females can take part in the Education event, cooldown decreased on the event to once a month 
+*Nuns, herbalists, rangers and valas can take part in the giant tree in forest event 
+*Nuns, female cultists, inventors, seers, noble slingers and rangers can take part in the "how far is the sun" event 
+*Nuns, troubadours and seamstresses can take part in the pimp vs harlot eventt 
+*Nuns can take part in the Relgious peasants event 
+*Nuns can take part in the "supposed witch" event, which now has a chance to give you a free female recruit, with a small chance for a Seer. 
+*Nuns, brutish women and bloodthirsty women can take part in "Troublemakers bully peasant" event 
+*Disowned ladies and female militia can be trained by the brawler in the "Brawler teaches" event 
+*Female friendly text for "combat drill" event 
+*Female friendly text for "More action" event 
+*Female friendly text for "More men" event
+*Female friendly text for "Wounds heals" event 
+*Female friendly text for "Rookie gets hurt" event 
+Now possible to encounter female enemy bounty hunters, cultists, mercenaries, militia and wildwomen

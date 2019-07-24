@@ -13,6 +13,10 @@ this.militia_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Tags.add("militia");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_ranged_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+		}
 	}
 
 	function onInit()
