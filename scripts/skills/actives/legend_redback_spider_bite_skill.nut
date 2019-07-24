@@ -30,7 +30,7 @@ this.legend_redback_spider_bite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.DirectDamageMult = 0.5;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
@@ -42,9 +42,9 @@ this.legend_redback_spider_bite_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageRegularMin += 30;
-		_properties.DamageRegularMax += 50;
-		_properties.DamageArmorMult *= 1.0;
+		_properties.DamageRegularMin += 25;
+		_properties.DamageRegularMax += 45;
+		_properties.DamageArmorMult *= 0.8;
 	}
 
 	function onUse( _user, _targetTile )
