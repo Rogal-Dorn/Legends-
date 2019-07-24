@@ -43,7 +43,7 @@ gt.Const.Perks.GhoulTree <- {
 	]
 };
 
-gt.Const.Perks.BeastsTree <- {
+gt.Const.Perks.DirewolfTree <- {
 	ID = "DirewolfTree",
 	Descriptions = [
 		"direwolves"

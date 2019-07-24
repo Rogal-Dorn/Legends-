@@ -1320,12 +1320,11 @@ Donkeys have a chance to be female
 
 Beta 12.4 test 3
 Shifts average stats down slightly so that dynamic stats have exactly 0 net impact 
+Fixes crash from onslaught 
+Redback spider bite nerfed by -10 min and max damage, -20% armor damage, -20% direct damage and -20% chance to disembowel. 
 Parrying dagger correctly effects Melee defense instead of melee skill 
 Parrying dagger has 36 condition instead of 24
 Split shield only does 10% damage to parrying dagger
-Well supplied situation grants +50% rare items instead of default +15% 
-Fixes crash from onslaught 
-redback spider bite nerfed by -10 min and max damage, -20% armor damage, -20% direct damage and -20% chance to disembowel. 
 pickpockets gain knife skills
 Weak Berserker gains addrenalin
 donkey ladies fixed 
@@ -1352,8 +1351,15 @@ Many events to have female text and participants:
 *Disowned ladies and female militia can be trained by the brawler in the "Brawler teaches" event 
 *Female friendly event text for "combat drill", "More action", "More men", "Wounds heals","Rookie gets hurt" and "all naked" even
 Now possible to encounter female enemy bounty hunters, cultists, mercenaries, militia and wildwomen
+Well supplied situation grants +50% rare items instead of default +15% 
 Beast hunter scenario starts with crafting tent 
 Lone wolf starts with training tent
 poachers start with hunting tent 
 Fixes enemies not knowing how to use chains 
 Vala inscribe perk text updated to explain why you would want rocks
+
+12.4 Test 3.1 
+fixes mislabeled direwolf tree
+Sisterhood start now has food, and begins with gathering tent 
+fixes error in donkey backround
+ 

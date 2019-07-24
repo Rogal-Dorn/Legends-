@@ -22,7 +22,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Body = "bust_naked_body_05";
 
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 		if (r == 0)
 			{
 			this.m.IsFemaleBackground = true;
