@@ -1355,4 +1355,5 @@ Now possible to encounter female enemy bounty hunters, cultists, mercenaries, mi
 Beast hunter scenario starts with crafting tent 
 Lone wolf starts with training tent
 poachers start with hunting tent 
+Fixes enemies not knowing how to use chains 
 Vala inscribe perk text updated to explain why you would want rocks
