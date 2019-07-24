@@ -33,9 +33,7 @@ gt.Const.Perks.GhoulTree <- {
 	Tree = [
 		[],
 		[],
-		[
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
-		],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul],
 		[],
 		[],
 		[],
@@ -51,9 +49,7 @@ gt.Const.Perks.DirewolfTree <- {
 	Tree = [
 		[],
 		[],
-		[
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf
-		],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf],
 		[],
 		[],
 		[],
@@ -69,8 +65,7 @@ gt.Const.Perks.SpiderTree <- {
 	Tree = [
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendFavouredEnemySpider
-		],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemySpider],
 		[],
 		[],
 		[],
@@ -125,9 +120,7 @@ gt.Const.Perks.HexenTree <- {
 		[],
 		[],
 		[],
-		[
-		gt.Const.Perks.PerkDefs.LegendFavouredEnemyHexen
-		]
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyHexen]
 	]
 };
 
@@ -176,8 +169,7 @@ gt.Const.Perks.SkeletonTree <- {
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton
-		],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton],
 		[],
 		[]
 	]
@@ -193,8 +185,7 @@ gt.Const.Perks.ZombieTree <- {
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyZombie
-		],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyZombie],
 		[],
 		[]
 	]
