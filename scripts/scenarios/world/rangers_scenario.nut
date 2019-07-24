@@ -85,6 +85,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
 		this.World.Assets.m.BusinessReputation = 50;
 		//this.World.Assets.getStash().resize(this.Math.min(15, this.World.Assets.getStash().getCapacity() / 2));
+		this.World.Tags.set("HasLegendCampHunting", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;

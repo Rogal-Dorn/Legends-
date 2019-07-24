@@ -103,6 +103,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		this.World.Assets.m.BusinessReputation = 200;
+		this.World.Tags.set("HasLegendCampCrafting", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/witch_hair_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/werewolf_pelt_item"));
