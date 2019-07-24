@@ -1320,7 +1320,7 @@ Donkeys have a chance to be female
 
 Beta 12.4 test 3
 Fixes crash from onslaught 
-redback spiderbite nerfed by -5 min and max damage and -20% armor damage and -20% direct damage
+redback spider bite nerfed by -10 min and max damage, -20% armor damage, -20% direct damage and -20% chance to disembowel. 
 pickpockets gain knife skills
 Weak Berserker gains addrenalin
 donkey ladies fixed 
