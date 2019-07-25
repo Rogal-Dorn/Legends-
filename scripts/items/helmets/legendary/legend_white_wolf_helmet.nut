@@ -42,6 +42,7 @@ this.legend_white_wolf_helmet <- this.inherit("scripts/items/helmets/named/named
 
 	function onUpdateProperties( _properties )
 	{
+		this.named_helmet.onUpdateProperties(_properties);
 		_properties.Threat += 15;
 	}
 });

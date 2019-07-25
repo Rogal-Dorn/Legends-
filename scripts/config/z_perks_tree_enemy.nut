@@ -28,7 +28,7 @@ gt.Const.Perks.BeastsTree <- {
 gt.Const.Perks.GhoulTree <- {
 	ID = "GhoulTree",
 	Descriptions = [
-		"shouls"
+		"ghouls"
 	],
 	Tree = [
 		[],

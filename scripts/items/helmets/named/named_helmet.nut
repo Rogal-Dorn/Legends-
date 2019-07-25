@@ -52,6 +52,8 @@ this.named_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function onEquip()
 	{
+
+		this.logInfo("***NAMED HELMET EQUIP *** " + this.m.ConditionMax)
 		this.helmet.onEquip();
 
 		if (this.m.Name.len() == 0)
