@@ -64,7 +64,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.FitTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.FastTree,
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.AgileTree

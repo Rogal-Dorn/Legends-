@@ -58,7 +58,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			Traits = [
 				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.AgileTree,
+				this.Const.Perks.TrainedTree,
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],

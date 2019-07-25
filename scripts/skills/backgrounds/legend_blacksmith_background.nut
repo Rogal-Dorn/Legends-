@@ -54,7 +54,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			Traits = [
 				this.Const.Perks.LargeTree,
-				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.SturdyTree,
 				this.Const.Perks.FitTree
 			],

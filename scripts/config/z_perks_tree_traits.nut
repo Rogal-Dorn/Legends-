@@ -83,8 +83,8 @@ gt.Const.Perks.IndestructibleTree <- {
 			6
 		],
 		Bravery = [
-			0,
-			0
+			3,
+			3
 		],
 		Stamina = [
 			0,
@@ -467,8 +467,8 @@ gt.Const.Perks.CalmTree <- {
 			0
 		],
 		RangedSkill = [
-			0,
-			0
+			3,
+			3
 		],
 		MeleeDefense = [
 			0,
@@ -536,8 +536,8 @@ gt.Const.Perks.FastTree <- {
 			6
 		],
 		RangedDefense = [
-			0,
-			0
+			3,
+			3
 		],
 		Initiative = [
 			0,
@@ -694,8 +694,8 @@ gt.Const.Perks.SturdyTree <- {
 	],
 	Attributes = {
 		Hitpoints = [
-			0,
-			0
+			3,
+			3
 		],
 		Bravery = [
 			0,
@@ -774,8 +774,8 @@ gt.Const.Perks.FitTree <- {
 			0
 		],
 		MeleeDefense = [
-			0,
-			0
+			3,
+			3
 		],
 		RangedDefense = [
 			0,
@@ -835,8 +835,8 @@ gt.Const.Perks.TrainedTree <- {
 			0
 		],
 		MeleeDefense = [
-			3,
-			3
+			6,
+			6
 		],
 		RangedDefense = [
 			0,
