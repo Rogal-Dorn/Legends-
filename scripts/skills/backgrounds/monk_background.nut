@@ -65,7 +65,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			Traits = [
 				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.CalmTree,
-				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [],

@@ -77,6 +77,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			Traits = [
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.ViciousTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.FitTree
 			],
 			Enemy = [this.Const.Perks.SwordmastersTree],
