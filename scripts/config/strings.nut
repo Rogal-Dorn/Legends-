@@ -1300,7 +1300,8 @@ gt.Const.Strings.PerkName <- {
 	LegendFreedomOfMovement = "Freedom of Movement",
 	LegendOnslaught = "Onslaught",
 	LegendBackToBasics = "Back to Basics",
-	LegendMindOverBody = "Mind over Body"
+	LegendMindOverBody = "Mind over Body",
+	LegendEscapeArtist = "Escape Artist"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it.",
@@ -1576,7 +1577,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.",
 	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off gaurd. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. ",
 	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve.",
-	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 50."
+	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 50.",
+	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants immunity to all rooting effects, including nets and webs."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

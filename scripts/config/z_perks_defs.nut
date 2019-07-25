@@ -2309,6 +2309,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/relax_circle.png",
 		IconDisabled = "ui/perks/relax_circle_bw.png",
 		Const = "LegendMindOverBody"
+	},
+	{
+		ID = "perk.legend_escape_artist",
+		Script = "scripts/skills/perks/perk_legend_escape_artist",
+		Name = this.Const.Strings.PerkName.LegendEscapeArtist,
+		Tooltip = this.Const.Strings.PerkDescription.LegendEscapeArtist,
+		Icon = "ui/perks/net_perk.png",
+		IconDisabled = "ui/perks/net_perk_bw.png",
+		Const = "LegendEscapeArtist"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};

@@ -1369,6 +1369,7 @@ Beta 12.4 Test 4
 *perk attribute groups have tertiary attributes to ensure equal maximums for each attribute
 *Apprentice swaps agile for trained, bowyers swap intelligent for calm, adventurous ladies swap vicious for fast, housemaids swap fit for intelligent, hedge knights gain large,  hunters swap fit for vicious,  blacksmiths swap organised for indestructible, cannibals swap calm for large, monks swap organised for indestructible, poachers swap fit for calm, swordmasters swap fit for large. 
 *Eunuchs can not be charmed by hexe or hexe coven leadership
+*Adds new perk Escape Artist to Beast Hunters. Grants immunity to webs and nets.
 
 
 
