@@ -1,0 +1,4 @@
+brushes/
+gfx/*.png
+!gfx/skills*
+!gfx/ui*

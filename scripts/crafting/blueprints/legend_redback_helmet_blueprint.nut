@@ -30,7 +30,9 @@ this.legend_redback_helmet_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/helmets/legendary/legend_redback_helmet"));
+		local item = this.new("scripts/items/helmets/legendary/legend_redback_helmet");
+		item.m.Name = "";
+		_stash.add(item);
 	}
 
 });

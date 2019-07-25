@@ -34,7 +34,9 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/armor/named/legend_named_warlock_cloak"));
+		local item = this.new("scripts/items/armor/named/legend_named_warlock_cloak");
+		item.m.Name = "";
+		_stash.add(item);
 	}
 
 });

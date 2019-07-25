@@ -34,7 +34,9 @@ this.legend_warlock_hood_blueprint <- this.inherit("scripts/crafting/blueprint",
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/helmets/named/legend_named_warlock_hood"));
+		local item = this.new("scripts/items/helmets/named/legend_named_warlock_hood");
+		item.m.Name = "";
+		_stash.add(item);
 	}
 
 });

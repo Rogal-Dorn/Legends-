@@ -1362,4 +1362,9 @@ Vala inscribe perk text updated to explain why you would want rocks
 fixes mislabeled direwolf tree
 Sisterhood start now has food, and begins with gathering tent 
 fixes error in donkey backround
+
+Beta 12.4 Test 4
+*fixes legend beast crafted items not having unique names
+
+
  
