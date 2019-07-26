@@ -55,6 +55,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.AgileTree,
 				this.Const.Perks.FastTree,
 				this.Const.Perks.InspirationalTree
 			],

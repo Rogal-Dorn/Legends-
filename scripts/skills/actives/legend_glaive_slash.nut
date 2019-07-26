@@ -3,7 +3,7 @@ this.legend_glaive_slash <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_glaive_slash";
-		this.m.Name = "Slash";
+		this.m.Name = "Glaive Slash";
 		this.m.Description = "A swift slashing attack dealing average damage.";
 		this.m.KilledString = "Cut down";
 		this.m.Icon = "skills/glaive_slash.png";

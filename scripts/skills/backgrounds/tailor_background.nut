@@ -58,9 +58,10 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.LightArmorTree,
 			],
 			Traits = [
-				this.Const.Perks.FastTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.IntelligentTree
+				this.Const.Perks.FastTree,
+				this.Const.Perks.ViciousTree
 			],
 			Enemy = [],
 			Class = [this.Const.Perks.RepairClassTree]

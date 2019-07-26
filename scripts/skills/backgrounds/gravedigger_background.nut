@@ -44,7 +44,7 @@ this.gravedigger_background <- this.inherit("scripts/skills/backgrounds/characte
 			Traits = [
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree,
-				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.OrganisedTree,
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [],

@@ -75,7 +75,12 @@ this.legend_staffwall <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = 1;
 
-		if (_properties.IsSpecializedInStaves )
+		if (_properties.IsSpecializedInSpears )
+		{
+		this.m.FatigueCostMult *= 0.75;
+		}
+		
+		if (_properties.IsSpecializedInSpearWall )
 		{
 		this.m.FatigueCostMult *= 0.75;
 		}

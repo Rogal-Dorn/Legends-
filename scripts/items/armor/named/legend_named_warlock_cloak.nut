@@ -58,6 +58,7 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 
 	function onUpdateProperties( _properties )
 	{
+		this.named_armor.onUpdateProperties(_properties);
 		_properties.Hitpoints += 20;
 	}
 

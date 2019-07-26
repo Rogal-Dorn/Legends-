@@ -16,9 +16,10 @@ this.perk_legend_full_force <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-			local bodyArmor = this.getContainer().getActor().getArmor(this.Const.BodyPart.Body);
-			_properties.DamageRegularMax += this.Math.floor(bodyArmor * 0.1);
-		
+			local actor = this.getContainer().getActor();
+			local bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
+			_properties.DamageRegularMax += this.Math.floor(bodyArmor * 0.05);
+
 	}
 
 });

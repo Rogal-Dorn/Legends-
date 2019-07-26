@@ -31,7 +31,9 @@ this.legend_demonalp_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 	
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/helmets/legendary/legend_demonalp_helmet"));
+		local item = this.new("scripts/items/helmets/legendary/legend_demonalp_helmet");
+		item.m.Name = "";
+		_stash.add(item);
 	}
 
 });

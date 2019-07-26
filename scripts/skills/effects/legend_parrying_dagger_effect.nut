@@ -76,7 +76,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Bonus = 10;
 		}
 
-		_properties.MeleeSkill += this.m.Bonus;
+		_properties.MeleeDefense += this.m.Bonus;
 
 
 

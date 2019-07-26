@@ -60,7 +60,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Traits = [
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.ViciousTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],

@@ -4,7 +4,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.beast_hunters";
 		this.m.Name = "Beast Slayers";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your men make your living by hunting down the many beasts that beset villages on the fringes of civilization. It\'s dangerous work, but it pays well enough, and there\'s always a bigger beast to slay and more crowns to earn.\n\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away.\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy.\n[color=#bcad8c]Prejudice:[/color] Most people don\'t trust your kind, so you get 10% worse prices.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your men make your living by hunting down the many beasts that beset villages on the fringes of civilization. It\'s dangerous work, but it pays well enough, and there\'s always a bigger beast to slay and more crowns to earn.\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away, [color=#c90000]perks for hunting legendary beasts.[/color]\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy [color=#c90000]or runestone[/color].\n[color=#bcad8c]Prejudice:[/color] Most people don\'t trust your kind, so you get 10% worse prices.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 5;
 		this.m.IsFixedLook = true;
@@ -103,6 +103,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		this.World.Assets.m.BusinessReputation = 200;
+		this.World.Tags.set("HasLegendCampCrafting", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/witch_hair_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/werewolf_pelt_item"));

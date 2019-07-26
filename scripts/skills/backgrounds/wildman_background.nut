@@ -94,6 +94,7 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			],
 			Traits = [
 				this.Const.Perks.SturdyTree,
+				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.FitTree
 			],

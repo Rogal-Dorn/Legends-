@@ -49,6 +49,7 @@ this.legend_redback_helmet <- this.inherit("scripts/items/helmets/named/named_he
 
 	function onUpdateProperties( _properties )
 	{
+		this.named_helmet.onUpdateProperties(_properties);
 		_properties.IsImmuneToPoison = true;
 	}
 

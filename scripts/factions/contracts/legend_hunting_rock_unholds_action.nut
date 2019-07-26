@@ -12,9 +12,7 @@ this.legend_hunting_rock_unholds_action <- this.inherit("scripts/factions/factio
 	}
 
 	function onUpdate( _faction )
-	{
-
-		
+	{	
 		if (!this.Const.DLC.Unhold)
 		{
 			return;
@@ -25,13 +23,7 @@ this.legend_hunting_rock_unholds_action <- this.inherit("scripts/factions/factio
 			return;
 		}
 
-		
 		if (this.World.Assets.getBusinessReputation() < 700)
-		{
-			return;
-		}
-
-		if (this.Math.rand(1, 100) > 15)
 		{
 			return;
 		}

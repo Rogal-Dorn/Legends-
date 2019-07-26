@@ -51,7 +51,7 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.SturdyTree,
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.FitTree,
-				this.Const.Perks.AgileTree
+				this.Const.Perks.FastTree
 			],
 			Enemy = [],
 			Class = []
@@ -88,10 +88,10 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 			Bravery = [6, 8],
 			Stamina = [8, 12],
 			MeleeSkill = [4, 6],
-			RangedSkill = [6, 8],
+			RangedSkill = [0, 0],
 			MeleeDefense = [10, 15],
 			RangedDefense = [10, 15],
-			Initiative = [-10, -15]
+			Initiative = [-20, -25]
 		};
 		return c;
 	}

@@ -179,7 +179,10 @@ this.legend_minor_sleep_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		_user.addStacks(stacks);
+		if ("addStacks" in _user)
+		{
+			_user.addStacks(stacks);
+		}
 	}
 
 });

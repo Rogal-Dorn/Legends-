@@ -88,6 +88,7 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
+				this.Const.Perks.InspirationalTree,
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree
 			],

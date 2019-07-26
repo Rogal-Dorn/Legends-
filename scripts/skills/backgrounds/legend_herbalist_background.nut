@@ -29,19 +29,35 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.bloodthirsty"
 		];
 		this.m.Titles = [
-			"the Pious",
-			"the Monk",
-			"the Scholar",
-			"the Preacher",
-			"the Devoted",
+			"the Gentle",
+			"the Wise",
+			"the Sage",
+			"the Soothsayer",
+			"the Healer",
 			"the Quiet",
 			"the Calm"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.Monk;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Monk;
-		this.m.Body = "bust_naked_body_00";
+		local r;
+		r = this.Math.rand(0, 3);
+		if (r == 0)
+			{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			}
+		else
+			{
+			this.m.Faces = this.Const.Faces.AllMale;
+			this.m.Hairs = this.Const.Hair.Monk;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = this.Const.Beards.Monk;
+			this.m.Body = "bust_naked_body_00";
+			}
+
 		this.m.IsOffendedByViolence = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
@@ -81,7 +97,9 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.OrganisedTree
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.CalmTree
 			],
 			Enemy = [this.Const.Perks.MysticTree],
 			Class = [

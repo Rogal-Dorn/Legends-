@@ -55,6 +55,7 @@ this.legend_stollwurm_helmet <- this.inherit("scripts/items/helmets/named/named_
 
 	function onUpdateProperties( _properties )
 	{
+		this.named_helmet.onUpdateProperties(_properties);
 		_properties.IsImmuneToKnockBackAndGrab = true;
 		_properties.FatigueReceivedPerHitMult *= 0.01;
 		_properties.IsImmuneToSurrounding = true;

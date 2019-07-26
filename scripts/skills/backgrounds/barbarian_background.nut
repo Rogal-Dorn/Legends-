@@ -55,6 +55,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			Traits = [
 				this.Const.Perks.ViciousTree,
+				this.Const.Perks.TrainedTree,
 				this.Const.Perks.LargeTree
 				this.Const.Perks.SturdyTree
 			],

@@ -133,11 +133,11 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			MeleeDefense = [
 				-3,
-				-3
+				-1
 			],
 			RangedDefense = [
-				-1,
-				-1
+				0,
+				3
 			],
 			Initiative = [
 				5,

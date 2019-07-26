@@ -35,7 +35,6 @@ this.legend_prosthetic_finger <- this.inherit("scripts/skills/traits/character_t
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2%[/color] Ranged Skill"
 			}
 		];
-		this.addTooltipHint(ret);
 		return ret;
 	}
 

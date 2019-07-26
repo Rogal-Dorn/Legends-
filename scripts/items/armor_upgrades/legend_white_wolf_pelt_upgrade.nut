@@ -52,6 +52,7 @@ this.legend_white_wolf_pelt_upgrade <- this.inherit("scripts/items/armor_upgrade
 
 	function onUpdateProperties( _properties )
 	{
+		this.armor_upgrade.onUpdateProperties(_properties);
 		_properties.Threat += 15;
 	}
 
