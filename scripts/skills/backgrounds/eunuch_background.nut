@@ -56,6 +56,7 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Traits = [
 				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.DeviousTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.MartyrTree
 			],
 			Enemy = [],

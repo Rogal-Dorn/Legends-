@@ -60,8 +60,9 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 			],
 			Traits = [
 				this.Const.Perks.FastTree,
+				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.AgileTree
+				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
 			Class = [this.Const.Perks.RepairClassTree]

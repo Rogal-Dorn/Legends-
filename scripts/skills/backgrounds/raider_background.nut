@@ -63,7 +63,8 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.DeviousTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.ViciousTree
 			],

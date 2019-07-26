@@ -1274,7 +1274,103 @@ Beta 12.2.1 Released on Nexus
 
 Beta 12.3
 *Fix a possible crash in Onslaught Perk.
-*Fix incorrent male sounds on female enemies.
+*Fix incorrect male sounds on female enemies.
 *Update Lithe description.
 *Fix necro hood and cloak giving continuous HP on reloads.
+*Fixes a crash when killing a Wolf (From gobbo wolf rider) when having the Fav Wolf perk.
+*Fixes legend beast contracts being spammed.
+*Adds legend skin ghoul contracts.
+*Fixes missing runed towershield images.
+*Fixes tooltip errors with the inventors prosthetic appendages.
+*Fixes not being able to take the staff mastery perk.
+*Adds new perk: MindOverBody: Reduce fatigue cost of actions based on resolve.
+*Balance Perk changes: Bonus is applied to damage reduction as well as defense.
+*Sling staff gets +1 min and max range, +5 min and max damage. Now has -40 base accuracy, then gains +5 accuracy per tile 
+*Sling loses -5 max damage, +1 minimum range and -10 base accuracy 
+*Military Goedendag gains Cudgel in place of Knock Out 
 
+Beta 12.3.1
+*Muscularity damage nerfed from 20% of HP to 10% of HP
+*Full Force damage nerfed from 10% of body armor to 5% of body armor 
+*Devastating strikes nerfed from +20% damage to +10% damage 
+*Fixes sling staves using their base accuracy as their accuracy per tile 
+*Fixes swordstaves failing to load 
+
+Beta 12.4
+*Random character stat distributions are now weighted towards the perks in the random tree. IOW, characters should now have better attributes that compliment their unique perks in the tree. 
+*Gamblers lose Vicious perk group and gain Calm perk group, Herbalists lose organised and gain Calm, Monks and Nunes lose favoured enemy undead, and gain Calm. tailors and seamstresses lose Fast and gain Calm, Washerwomen lose indestructible and gain Calm.  (this may result in broken saves)
+*Updates descriptions for vanilla starts to show what has changed in legends. 
+*Fixes Freedom of Movement, Onslaught and Smackdown all triggering when user has more fatigue, instead of less. Should now need to be less exhausted than your enemy for them to work. 
+
+Beta 12.4 test 2 
+Adds a basic statistical normal distribution to attribute calculations to create more "normal" people while still allowing more extreme outliers. 
+Increases the number of gauranteed weapon groups to 8
+Grapple inflicts twice the fatigue
+Kick and Hand to Hand cost and additional 10 fatigue
+Unarmed skills can now show up in the general weapon pool
+Fixes "Attribute not found" error 
+Rebalanced gauranteed perks for each background to account for dynamic stats. 
+Barbarian gains trained, beast hunters gain devious and agile. beggar swaps agile for calm. butchers gain calm. caravan hands gain Organised. Cripples swap vicious for intelligent. Eunuchs gain calm. adventerous ladies swap fast for agile, gain vicious. widows swap agile for organised. Fishwives gain calm. Disowned ladies swap intelligent for vicious. Bakers gain calm. Troubadours swap agile for fast, gain calm. housemaids gain calm. seamstresses gain intelligent. Pickpockets swap knife skills for crossbow, lost agile, gain calm and martyr. Gravediggers swap indestructible for organised. Graverobbers swap fast for large. Historians swap agile for inspirational.  Houndmasters swap agile for indestructible. . Killers gain Large. Blackmiths gain organised. Cannibals gain calm and martyr. Herbalised gain organised and agile. Inventors gain calm and indestructible. Ironmongers gain fast and properly gain repair.  Noble warriors swap vicious for sturdy. Noble soldiers swap vicious for fast and fit for sturdy. Nuns gain martyr. shieldmaidens swap agile for fast.  taxidermists gain fast.   Militia gain sturdy. Miners gain trained. minstrels gain fit. Orc slayers gain inspirational. Peddlers gain calm and intelligent. Poachers swap fit for vicious, gain devious. Raiders swap devious for fit and large. rat catchers swap vicious for martyr and agile for calm. refugees swap agile for indestructible. Sellswords gain sturdy. Servants gain calm and intelligent. Shepherds gain calm. Swordmasters gain sturdy, tailors swap intelligent for fast and vicious. Thieves gain martyr. Vagabonds swap devious, vicious and agile for organised, fast and fit. Wildmen gain indestructible. Wild women swap devious for vicious, swap sturdy for large and gain indestructible. Witchhunters gain inspirational and intelligent. 
+Hunters gain devious, kings guard gain Large, Messengers swap large for organised, militia swap sturdy for vicious and indestructible for agile to match their vanilla stats.  Miners swap fit for indestructible to match vanilla stats. Monks gain organised. Retired soldiers lose vicious and large, gain organised, inspirational and fit. 
+noble slingers defense buffed slightly
+Blacksmith nerfed back in line with other backgrounds.
+Shieldmaiden ranged skill and initiative nerfed
+Herbalist gets new titles and chance to be female         
+Donkeys have a chance to be female 
+
+Beta 12.4 test 3
+Shifts average stats down slightly so that dynamic stats have exactly 0 net impact 
+Fixes crash from onslaught 
+Redback spider bite nerfed by -10 min and max damage, -20% armor damage, -20% direct damage and -20% chance to disembowel. 
+Parrying dagger correctly effects Melee defense instead of melee skill 
+Parrying dagger has 36 condition instead of 24
+Split shield only does 10% damage to parrying dagger
+pickpockets gain knife skills
+Weak Berserker gains addrenalin
+donkey ladies fixed 
+refugees can now be female 
+Many events to have female text and participants:
+*Female refugees and nuns can now help in the Children's crusade 
+*Female refugees and bloodthirsty, brutish and violent females can take part in the civilwar refugee event 
+*Female refugees, widows and housemaids can take part in the hedgeknight vs refugee event 
+*Female refugees, seamstresses and pickpockets can take part in the wear and tear event 
+*Female refugees can take part in the minstrel/troubadour regails refugee event 
+*Female refugees can take part in the refugee vs raider event 
+*Female refugees and widows can feel bad for the thief in the thief caught event 
+*Female refugees can take part in the Walker's bond event 
+*Nuns, warlocks, seers and supersticious females can now take part in the Bad Curse event 
+*Nuns can take part in the Cultist vs old Gods event 
+*Nuns, herbalists and seers can take part in the even to cure Ailing
+*Nuns, Inventor, seer and dumb females can take part in the Education event, cooldown decreased on the event to once a month 
+*Nuns, herbalists, rangers and valas can take part in the giant tree in forest event 
+*Nuns, female cultists, inventors, seers, noble slingers and rangers can take part in the "how far is the sun" event 
+*Nuns, troubadours and seamstresses can take part in the pimp vs harlot eventt 
+*Nuns can take part in the Relgious peasants event 
+*Nuns can take part in the "supposed witch" event, which now has a chance to give you a free female recruit, with a small chance for a Seer. 
+*Nuns, brutish women and bloodthirsty women can take part in "Troublemakers bully peasant" event 
+*Disowned ladies and female militia can be trained by the brawler in the "Brawler teaches" event 
+*Female friendly event text for "combat drill", "More action", "More men", "Wounds heals","Rookie gets hurt" and "all naked" even
+Now possible to encounter female enemy bounty hunters, cultists, mercenaries, militia and wildwomen
+Well supplied situation grants +50% rare items instead of default +15% 
+Beast hunter scenario starts with crafting tent 
+Lone wolf starts with training tent
+poachers start with hunting tent 
+Fixes enemies not knowing how to use chains 
+Vala inscribe perk text updated to explain why you would want rocks
+
+12.4 Test 3.1 
+fixes mislabeled direwolf tree
+Sisterhood start now has food, and begins with gathering tent 
+fixes error in donkey backround
+
+Beta 12.4 Test 4
+*fixes legend crafted items not having unique names
+*Fixes legend crafted items not adding armor values
+*perk attribute groups have tertiary attributes to ensure equal maximums for each attribute
+*Apprentice swaps agile for trained, bowyers swap intelligent for calm, adventurous ladies swap vicious for fast, housemaids swap fit for intelligent, hedge knights gain large,  hunters swap fit for vicious,  blacksmiths swap organised for indestructible, cannibals swap calm for large, monks swap organised for indestructible, poachers swap fit for calm, swordmasters swap fit for large. 
+*Eunuchs can not be charmed by hexe or hexe coven leadership
+*Adds new perk Escape Artist to Beast Hunters. Grants immunity to webs and nets.
+
+
+
+ 

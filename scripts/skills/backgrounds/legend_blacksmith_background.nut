@@ -54,6 +54,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			Traits = [
 				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
 				this.Const.Perks.SturdyTree,
 				this.Const.Perks.FitTree
 			],
@@ -93,7 +94,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local c = {
 			Hitpoints = [
-				20,
+				10,
 				15
 			],
 			Bravery = [
@@ -105,20 +106,20 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 				10
 			],
 			MeleeSkill = [
-				15,
+				5,
 				10
 			],
 			RangedSkill = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			MeleeDefense = [
-				0,
+				-5,
 				0
 			],
 			RangedDefense = [
-				0,
-				0
+				-5,
+				-5
 			],
 			Initiative = [
 				5,

@@ -47,7 +47,6 @@ this.legend_prosthetic_forearm <- this.inherit("scripts/skills/traits/character_
 				text = "Is always content with being in reserve"
 			}
 		];
-		this.addTooltipHint(ret);
 		return ret;
 	}
 

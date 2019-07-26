@@ -64,7 +64,7 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.AgileTree
+				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [],
 			Class = []

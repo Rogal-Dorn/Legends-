@@ -31,7 +31,7 @@ this.legend_staffwall_effect <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.IsAttackingOnZoneOfControlEnter = true;
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInStaves)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
 		{
 			_properties.IsAttackingOnZoneOfControlAlways = true;
 		}

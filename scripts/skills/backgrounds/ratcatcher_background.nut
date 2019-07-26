@@ -52,10 +52,10 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.ViciousTree,
+				this.Const.Perks.MartyrTree,
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.FastTree,
-				this.Const.Perks.AgileTree
+				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
 			Class = [

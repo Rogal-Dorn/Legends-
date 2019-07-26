@@ -69,7 +69,7 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			Traits = [
 				this.Const.Perks.AgileTree,
-				this.Const.Perks.LargeTree,
+				this.Const.Perks.OrganisedTree,
 				this.Const.Perks.FastTree,
 				this.Const.Perks.FitTree
 			],

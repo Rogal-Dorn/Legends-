@@ -1,6 +1,6 @@
 this.sling_stone_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 0,
+		AdditionalAccuracy = -10,
 		AdditionalHitChance = 0
 	},
 	function create()
@@ -57,7 +57,7 @@ this.sling_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.DirectDamageMult = 0.35;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
-		this.m.MinRange = 1;
+		this.m.MinRange = 2;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Stone;

@@ -60,7 +60,7 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.OrganisedTree,
 				this.Const.Perks.FastTree,
 				this.Const.Perks.AgileTree

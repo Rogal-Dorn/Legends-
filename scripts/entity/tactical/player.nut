@@ -2006,7 +2006,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.setGender(1);
 		}
 
+		local attributes = background.buildPerkTree();
 		local maxTraits = 0;
+
 		if (this.getTags().has("PlayerZombie"))
 		{
 			background.buildAttributes("zombie");
@@ -2017,10 +2019,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			background.buildAttributes();
+			background.buildAttributes(null, attributes);
 		}
-
-		background.buildPerkTree();
 
 		background.buildDescription();
 

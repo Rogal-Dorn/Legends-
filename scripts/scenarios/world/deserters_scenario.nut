@@ -4,7 +4,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.deserters";
 		this.m.Name = "Deserters";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#c90000]Like minded:[/color] Increased chance of finding craven dastards, deserters and the disowned. [/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 6;
 	}
@@ -221,6 +221,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+		this.World.Tags.set("HasLegendCampScouting", true);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList([

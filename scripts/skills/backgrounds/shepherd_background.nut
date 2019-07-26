@@ -61,6 +61,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			Traits = [
 				this.Const.Perks.FitTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.FastTree,
 				this.Const.Perks.AgileTree
 			],

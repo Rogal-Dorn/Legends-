@@ -176,6 +176,23 @@ gt.Const.CharacterBackgroundsAnimated <- [
 	"witchhunter_background"
 ];
 
+gt.Const.CharacterFemaleBackgrounds <- [
+	"legend_shieldmaiden_background",
+	"female_thief_background",
+	"legend_witch_background",
+	"female_beggar_background",
+	"female_adventurous_noble_background",
+	"female_disowned_noble_background",
+	"female_bowyer_background",
+	"female_butcher_background",
+	"female_daytaler_background",
+	"female_farmhand_background",
+	"female_miller_background",
+	"female_minstrel_background",
+	"female_servant_background",
+	"female_tailor_background",
+	"legend_nun_background"
+];
 
 gt.Const.CharacterBackgroundsRandom <- [
 	"adventurous_noble_background",

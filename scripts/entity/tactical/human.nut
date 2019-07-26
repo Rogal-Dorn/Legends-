@@ -44,6 +44,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Beards = null;
+			this.m.Body = 3;
 			this.m.BeardChance = 0;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 		}

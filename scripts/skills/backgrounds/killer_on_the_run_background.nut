@@ -59,6 +59,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 			Traits = [
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.DeviousTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.FastTree
 			],
 			Enemy = [this.Const.Perks.CivilizationTree],

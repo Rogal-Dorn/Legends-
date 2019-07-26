@@ -44,6 +44,7 @@ this.protective_runes_upgrade <- this.inherit("scripts/items/armor_upgrades/armo
 
 	function onUpdateProperties( _properties )
 	{
+		this.armor_upgrade.onUpdateProperties(_properties);
 		_properties.MoraleCheckBravery[1] += 20;
 	}
 

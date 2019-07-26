@@ -9,7 +9,7 @@ this.rookie_gets_hurt_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_22.png[/img]After the battle is over, you find %noncombat% on his knees, his body swaying back and forth as he nurses a wound. You hear muffled cries in between all-too-loud moans. Approaching, you ask the man if he is alright. He shakes his head and explains that this was his first taste of real, vicious combat. It was not what he expected and isn\'t sure if he can continue.",
+			Text = "[img]gfx/ui/events/event_22.png[/img]After the battle is over, you find %noncombat% on their knees, body swaying back and forth, nursing a wound. You hear muffled cries in between all-too-loud moans. Approaching, you ask the if everything is alright. %noncombat%\'s head shakes and explains that this was the first taste of real, vicious combat. %SPEECH_ON%It was not what I expected and I am not sure if i can continue.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -39,7 +39,7 @@ this.rookie_gets_hurt_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_22.png[/img]You tell the mercenary to man up. When he pauses, stifling a cry, you tell him again. This time, he brings a leg out and plants a foot, steadying himself. With true grit, he manages to get himself standing again. His shirt is bloodslaked, his face covered in mud and crimson and other viscera battle makes of the living. But his eyes show a sign of resolve they did not before. He nods at you before walking back to join the rest of the men.",
+			Text = "[img]gfx/ui/events/event_22.png[/img]You tell the mercenary to harden up. When %noncombat% pauses, stifling a cry, you repeat it again. This time, %noncombat% brings a leg out and plants a foot, steadying. With true grit, the mercenary manages to get standing again. Shirt is bloodslaked, face covered in mud and crimson and other viscera battle makes of the living. But %noncombat%\'s eyes show a sign of resolve they did not before, the sellsword nods at you before walking back to join the rest of the men.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -80,13 +80,13 @@ this.rookie_gets_hurt_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_22.png[/img]Unfortunately, telling the man to \'suck it up\' gets him nowhere. He turns to you, face covered in the blood and gore of battle, but before any words can come out his lip quivers and keels over again. You ask the man if he wishes to be cut from the company, but he shakes his head no. He\'ll get better, he explains. You nod and walk off, but there\'s little doubt that this poor show of resolve has hurt the man\'s pride.",
+			Text = "[img]gfx/ui/events/event_22.png[/img]Unfortunately, telling the mercenary to \'suck it up\' gets nowhere. %noncombat% turns to you, face covered in the blood and gore of battle, but before any words can come out, their lip quivers and they keel over again. You ask if %noncombat% wishes to be cut from the company, but the response comes back with a shaken head and a forceful no. I'll get better, he explains. You nod and walk off, but there\'s little doubt that this poor show of resolve has hurt the mercenary\'s pride.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "He will be steeled by combat, or he will be killed by it.",
+					Text = "We will be steeled by combat, or we will be killed by it.",
 					function getResult( _event )
 					{
 						return 0;
@@ -121,7 +121,7 @@ this.rookie_gets_hurt_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_22.png[/img]The man looks around him, at the bodies, at the land, at the sky. He nods and gets to his feet. Before heading back to camp, he thanks you for your words.%SPEECH_ON%Thankee, captain. I\'ll do a better job of hiding my fears.%SPEECH_OFF%You nod back with a terse smile before putting your fist to your chest.%SPEECH_ON%Bottle it all up right here and don\'t let anybody else see it. Half of any battle is convincing your opponent that you\'re crazier than they are. Being fearless is impossible, but faking it for a time is not.%SPEECH_OFF%The man nods again and heads back to camp with his head held a little bit higher.",
+			Text = "[img]gfx/ui/events/event_22.png[/img]The mercenary looks around, at the bodies, at the land, at the sky. %noncombat% nods and gets to their feet. Before heading back to camp, thanking you for your words.%SPEECH_ON%Thankee, captain. I\'ll do a better job of hiding my fears.%SPEECH_OFF%You nod back with a terse smile before putting your fist to your chest.%SPEECH_ON%Bottle it all up right here and don\'t let anybody else see it. Half of any battle is convincing your opponent that you\'re crazier than they are. Being fearless is impossible, but faking it for a time is not.%SPEECH_OFF%The sellsword nods again and heads back to camp with head held a little bit higher.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -162,13 +162,13 @@ this.rookie_gets_hurt_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_22.png[/img]The man turns to you, tears cutting through the crusts of blood on his cheeks. He shakes his head and asks how is it that he\'s the only one out here crying. You shrug and ask the man if he wishes to leave the company. He shakes his head again.%SPEECH_ON%I\'ll get better. I just.. I just need some time to do it, that\'s all.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_22.png[/img]The mercenary turns to you, tears cutting through the crusts of bloody cheeks. %noncombat%\'s head is shaking and asking %SPEECH_ON%How is it that I\'m the only one out here crying?%SPEECH_OFF% You shrug and ask if the mercenary wishes to leave the company. %noncombat%\'s head shakes again.%SPEECH_ON%I\'ll get better. I just.. I just need some time to do it, that\'s all.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "He will be steeled by combat, or he will be killed by it.",
+					Text = "We will be steeled by combat, or we will be killed by it.",
 					function getResult( _event )
 					{
 						return 0;

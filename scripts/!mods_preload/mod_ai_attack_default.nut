@@ -7,4 +7,6 @@
 	o.m.PossibleSkills.push("actives.legend_great_slash");
 	o.m.PossibleSkills.push("actives.legend_glaive_slash");
 	o.m.PossibleSkills.push("actives.legend_spear_lunge_skill");
+	o.m.PossibleSkills.push("actives.legend_chain_thresh");
+	o.m.PossibleSkills.push("actives.legend_chain_flail_skill");
 });

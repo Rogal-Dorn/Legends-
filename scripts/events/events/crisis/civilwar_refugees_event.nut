@@ -11,7 +11,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 21.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_59.png[/img]{A true war has plenty of living amongst the casualties and this one is no different: going along a path, you find a large group of refugees huddling together. They were washing themselves in a creek when you discovered them, a party half-naked and half-washed and all-terrified. Mostly women and children, a few elders, and a few men who seem ready to lay down their lives for the rest, no matter how fruitless an effort their defense would be. One such man steps forward.%SPEECH_ON%What is it that you want?%SPEECH_OFF%%aggro_bro% approaches you.%SPEECH_ON%Sir, we could take everything they got, but I\'m sure they won\'t give it up willingly.%SPEECH_OFF%%injured_bro% shakes his head.%SPEECH_ON%I\'d say it ain\'t worth it. These people been through enough as it is and they\'ve little left to give the world.%SPEECH_OFF% | You come across a band of refugees. Women, children, elders, and a scattering of wide-eyed men. They\'ve little of value, but they still have things worth taking were you to put in the effort. | Refugees. A band of them stringed along the path in a long and filed row. At the sight of you, the head of the suffering centipede rears to a stop and all the bodies slowly shuffle together into a fearful blob. %aggro_bro% suggests killing them and taking what they got, although what they got doesn\'t appear to be much at all by your measurement.}",
+			Text = "[img]gfx/ui/events/event_59.png[/img]{A true war has plenty of living amongst the casualties and this one is no different: going along a path, you find a large group of refugees huddling together. They were washing themselves in a creek when you discovered them, a party half-naked and half-washed and all-terrified. Mostly women and children, a few elders, and a few men who seem ready to lay down their lives for the rest, no matter how fruitless an effort their defense would be. One such man steps forward.%SPEECH_ON%What is it that you want?%SPEECH_OFF%%aggro_bro% approaches you.%SPEECH_ON%Sir, we could take everything they got, but I\'m sure they won\'t give it up willingly.%SPEECH_OFF%%injured_bro% shakes their head.%SPEECH_ON%I\'d say it ain\'t worth it. These people been through enough as it is and they\'ve little left to give the world.%SPEECH_OFF% | You come across a band of refugees. Women, children, elders, and a scattering of wide-eyed men. They\'ve little of value, but they still have things worth taking were you to put in the effort. | Refugees. A band of them stringed along the path in a long and filed row. At the sight of you, the head of the suffering centipede rears to a stop and all the bodies slowly shuffle together into a fearful blob. %aggro_bro% suggests killing them and taking what they got, although what they got doesn\'t appear to be much at all by your measurement.}",
 			Image = "",
 			Characters = [],
 			Options = [
@@ -74,7 +74,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_59.png[/img]You order your men to take what they can. The refugees reel back in horror and some protest as your brothers file into their ranks. Suddenly, one of the refugees takes a large stone and bashes %injured_bro% over the head with it. Women and children scream and a few other men grab onto the mercenaries, fighting over weapons still sheathed. But the wandering souls haven\'t eaten in days and their weakened bodies are no match for your men. The %companyname% takes what it wants.",
+			Text = "[img]gfx/ui/events/event_59.png[/img]You order your mercenaries to take what they can. The refugees reel back in horror and some protest as your warriors file into their ranks. Suddenly, one of the refugees takes a large stone and bashes %injured_bro% over the head with it. Women and children scream and a few other men grab onto the mercenaries, fighting over weapons still sheathed. But the wandering souls haven\'t eaten in days and their weakened bodies are no match for your men. The %companyname% takes what it wants.",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -105,7 +105,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_59.png[/img]You order your men to take what they can. The refugees reel back in horror. Women cry out, children, more confused than understanding, do the same. Some tearful men beg that you simply leave. Unfortunately for this band of useless tramps, the %companyname% takes what it wants. Your men freely sift through the crowds, eventually returning with their hauls.",
+			Text = "[img]gfx/ui/events/event_59.png[/img]You order your mercenaries to take what they can. The refugees reel back in horror. Women cry out, children, more confused than understanding, do the same. Some tearful men beg that you simply leave. Unfortunately for this band of useless tramps, the %companyname% takes what it wants. Your warriors freely sift through the crowds, eventually returning with their hauls.",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -165,7 +165,7 @@ this.civilwar_refugees_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_59.png[/img]You decide to weigh on a man who has personal experience as a refugee: %refugee_bro%.\n\nThe mercenary heads into the sobbing and praying mass of weary travelers. He talks with them for a time and shares some food, his friendly gesticulations and tales of his own past gradually bringing the crowd to his side. You watch as an old man hands him something wrapped in sheepskin with leather thongs swooping beneath. The sellsword bows, shakes the man\'s hand, and returns.\n\nHe throws the sheepskin back to unveil a sword that glints in the light about as sharply as you can imagine it cuts. %refugee_bro% smiles.%SPEECH_ON%Like me mum always said, a bit of friendliness never hurt nobody, but this sword sure will!%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_59.png[/img]You decide to weigh on a mercenary who has personal experience as a refugee: %refugee_bro%.\n\nThe mercenary heads into the sobbing and praying mass of weary travelers. Talking with them for a time and sharing some food, friendly gesticulations and tales of %refugee_bro%\'s own past gradually bringing the crowd on side. You watch as an old man hands over something wrapped in sheepskin with leather thongs swooping beneath. The sellsword bows, shakes the man\'s hand, and returns.\n\n Throwing the sheepskin back unveils a sword that glints in the light about as sharply as you can imagine it cuts. %refugee_bro% smiles.%SPEECH_ON%Like me mum always said, a bit of friendliness never hurt nobody, but this sword sure will!%SPEECH_OFF%",
 			Image = "",
 			Characters = [],
 			List = [],

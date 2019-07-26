@@ -29,7 +29,6 @@ this.legend_prosthetic_nose <- this.inherit("scripts/skills/traits/character_tra
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Max Fatigue"
 			}
 		];
-		this.addTooltipHint(ret);
 		return ret;
 	}
 

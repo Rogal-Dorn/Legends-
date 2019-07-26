@@ -56,9 +56,9 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 
 		local bonus = 1;
 
-		if (ourFatiguePercentCurrent > enemyFatiguePercentCurrent)
+		if (ourFatiguePercentCurrent < enemyFatiguePercentCurrent)
 		{
-			local diff = ourFatiguePercentCurrent - enemyFatiguePercentCurrent;
+			local diff = enemyFatiguePercentCurrent - ourFatiguePercentCurrent;
 			local diffPoint = diff / 100;
 			bonus = 1 + diffPoint;
 		}

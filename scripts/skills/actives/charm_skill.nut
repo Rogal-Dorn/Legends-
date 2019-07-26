@@ -114,6 +114,16 @@ this.charm_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local bonus = _targetTile.getDistanceTo(_user.getTile()) == 1 ? -5 : 0;
 
+			if (target.getSkills().hasSkill("background.eunuch"))
+			{
+				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
+				{
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " can not be charmed");
+				}
+
+				return false;
+			}
+
 			if (target.checkMorale(0, -35 + bonus, this.Const.MoraleCheckType.MentalAttack))
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())

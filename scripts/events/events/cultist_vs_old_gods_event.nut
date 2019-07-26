@@ -41,13 +41,13 @@ this.cultist_vs_old_gods_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_06.png[/img] You step off to the side, letting the men hash out their differences as men with great differences do. Fists for arguments, the follower of the old gods makes his case, battering the cultist again and again. But the man with the scarred head only grins in return. His eyes are puffing up, the lids purpled and puckering over his eyesight. Yet, still, he grins, and there is bloody laughter spewing out of his reddened mouth.%SPEECH_ON%Such darkness! Davkul is most pleased!%SPEECH_OFF%With an anxious look, %oldgods% steps off %cultist% and backs away. He\'s rubbing his bloodied knuckles, realizing he may have broken a few in the seemingly one-sided scuffle. But it\'s the cultist\'s words that hurt him most of all.%SPEECH_ON%Man isn\'t tempted by the darkness, he is called to it! Lost without it! Gleeful in its return!%SPEECH_OFF%Almost afraid to look back, %oldgods% hurries away as the cultist remains behind, laughing and chuckling on the grass, nobody daring to get near him.",
+			Text = "[img]gfx/ui/events/event_06.png[/img] You step off to the side, letting the mercenaries hash out their differences as folk with great differences do. Fists for arguments, the follower of the old gods makes a case, battering the cultist again and again. But the selssword with the scarred head only grins in return. Eyes puffing up, the lids purpled and puckering over eyes. Yet, still, the grin, and there is bloody laughter spewing out of a reddened mouth.%SPEECH_ON%Such darkness! Davkul is most pleased!%SPEECH_OFF%With an anxious look, %oldgods% steps off %cultist% and backs away. Rubbing his bloodied knuckles, realizing a few may have broken in the seemingly one-sided scuffle. But it\'s the cultist\'s words that hurt most of all.%SPEECH_ON%Man isn\'t tempted by the darkness, he is called to it! Lost without it! Gleeful in its return!%SPEECH_OFF%Almost afraid to look back, %oldgods% hurries away as the cultist remains behind, laughing and chuckling on the grass, nobody daring to get near.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "I didn\'t know %oldgods% had it in him.",
+					Text = "I didn\'t know %oldgods% could get so angry.",
 					function getResult( _event )
 					{
 						return 0;
@@ -90,7 +90,7 @@ this.cultist_vs_old_gods_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_03.png[/img] The way things are going, you\'ve hardly a man to spare. Just as fists are about to start flying, you step in between the two men and put an end to it. You tell %oldgods% he is better than this, and you tell %cultist% nothing, for the cultist is almost bowled over in fits of laughter. He points, grinning madly.%SPEECH_ON%The light steps in, but darkness is patient. Davkul awaits you all.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_03.png[/img] The way things are going, you\'ve hardly a mercenary to spare. Just as fists are about to start flying, you step in between the two and put an end to it. You tell %oldgods% they are better than this, and you tell %cultist% nothing, for the cultist is almost bowled over in fits of laughter. Pointing, grinning madly.%SPEECH_ON%The light steps in, but darkness is patient. Davkul awaits you all.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -158,7 +158,7 @@ this.cultist_vs_old_gods_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.pacified_flagellant" || bro.getBackground().getID() == "background.monk_turned_flagellant")
+			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun"|| bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.pacified_flagellant" || bro.getBackground().getID() == "background.monk_turned_flagellant")
 			{
 				oldgods_candidates.push(bro);
 			}

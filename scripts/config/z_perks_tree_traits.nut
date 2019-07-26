@@ -16,18 +16,56 @@ gt.Const.Perks.AgileTree <- {
 		"is spry as a fox",
 		"is particularly dexterous"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			6,
+			6
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			3,
+			3
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.Pathfinder],
+		[
+			gt.Const.Perks.PerkDefs.Pathfinder
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Sprint],
+		[
+			gt.Const.Perks.PerkDefs.Sprint
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Footwork],
+		[
+			gt.Const.Perks.PerkDefs.Footwork
+		],
 		[],
 		[]
 	]
 };
-
-
 gt.Const.Perks.IndestructibleTree <- {
 	ID = "IndestructibleTree",
 	Descriptions = [
@@ -39,17 +77,56 @@ gt.Const.Perks.IndestructibleTree <- {
 		"seems unswervingly firm",
 		"is adamantly resolute"
 	],
+	Attributes = {
+		Hitpoints = [
+			6,
+			6
+		],
+		Bravery = [
+			3,
+			3
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.NineLives],
-		[],//gt.Const.Perks.PerkDefs.LegendTasteThePain],
-		[gt.Const.Perks.PerkDefs.HoldOut],
+		[
+			gt.Const.Perks.PerkDefs.NineLives
+		],
+		[],
+		[
+			gt.Const.Perks.PerkDefs.HoldOut
+		],
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.Indomitable]
+		[
+			gt.Const.Perks.PerkDefs.Indomitable
+		]
 	]
 };
-
 gt.Const.Perks.MartyrTree <- {
 	ID = "MartyrTree",
 	Descriptions = [
@@ -61,17 +138,56 @@ gt.Const.Perks.MartyrTree <- {
 		"takes joy in feeling pain",
 		"perversely enjoys to be tormented"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			6,
+			6
+		]
+	},
 	Tree = [
 		[],
 		[],
-		[],//gt.Const.Perks.PerkDefs.LegendTasteThePain],
 		[],
-		[gt.Const.Perks.PerkDefs.LoneWolf],
-		[gt.Const.Perks.PerkDefs.Vengeance],
-		[gt.Const.Perks.PerkDefs.LastStand]
+		[],
+		[
+			gt.Const.Perks.PerkDefs.LoneWolf
+		],
+		[
+			gt.Const.Perks.PerkDefs.Vengeance
+		],
+		[
+			gt.Const.Perks.PerkDefs.LastStand
+		]
 	]
 };
-
 gt.Const.Perks.ViciousTree <- {
 	ID = "ViciousTree",
 	Descriptions = [
@@ -83,17 +199,58 @@ gt.Const.Perks.ViciousTree <- {
 		"is beastially dangerous",
 		"enjoys martial butchery"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			6,
+			6
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.CripplingStrikes],
+		[
+			gt.Const.Perks.PerkDefs.CripplingStrikes
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Debilitate],
+		[
+			gt.Const.Perks.PerkDefs.Debilitate
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Berserk],
-		[gt.Const.Perks.PerkDefs.LegendAssuredConquest],
+		[
+			gt.Const.Perks.PerkDefs.Berserk
+		],
+		[
+			gt.Const.Perks.PerkDefs.LegendAssuredConquest
+		],
 		[]
 	]
 };
-
 gt.Const.Perks.DeviousTree <- {
 	ID = "DeviousTree",
 	Descriptions = [
@@ -105,17 +262,58 @@ gt.Const.Perks.DeviousTree <- {
 		"responds evasively",
 		"is shrewdly desceitful"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			6,
+			6
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendTrueBeliever],
+		[
+			gt.Const.Perks.PerkDefs.LegendTrueBeliever
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendBlendIn],
-		[gt.Const.Perks.PerkDefs.LegendHidden],
-		[gt.Const.Perks.PerkDefs.LegendEvasion]
+		[
+			gt.Const.Perks.PerkDefs.LegendBlendIn
+		],
+		[
+			gt.Const.Perks.PerkDefs.LegendHidden
+		],
+		[
+			gt.Const.Perks.PerkDefs.LegendEvasion
+		]
 	]
 };
-
 gt.Const.Perks.InspirationalTree <- {
 	ID = "InspirationalTree",
 	Descriptions = [
@@ -127,30 +325,107 @@ gt.Const.Perks.InspirationalTree <- {
 		"gives impressive speeches",
 		"instills motivation through words"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			6,
+			6
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			3,
+			3
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.RallyTheTroops],
-		[gt.Const.Perks.PerkDefs.Taunt],
+		[
+			gt.Const.Perks.PerkDefs.RallyTheTroops
+		],
+		[
+			gt.Const.Perks.PerkDefs.Taunt
+		],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.InspiringPresence],
-		[gt.Const.Perks.PerkDefs.Inspire]
+		[
+			gt.Const.Perks.PerkDefs.InspiringPresence
+		],
+		[
+			gt.Const.Perks.PerkDefs.Inspire
+		]
 	]
 };
-
 gt.Const.Perks.IntelligentTree <- {
 	ID = "IntelligentTree",
 	Descriptions = [
 		"is intelligent",
 		"is strikingly astute",
-		"has a creative imaginition",
+		"has a creative imagination",
 		"seems well informed",
 		"appears knowledgeable of many things",
 		"approaches problems rationally",
 		"inventively resolves challenges"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			6,
+			6
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.Student],
+		[
+			gt.Const.Perks.PerkDefs.Student
+		],
 		[
 			gt.Const.Perks.PerkDefs.Gifted,
 			gt.Const.Perks.PerkDefs.FortifiedMind
@@ -158,27 +433,72 @@ gt.Const.Perks.IntelligentTree <- {
 		[],
 		[],
 		[],
-		[],
+		[
+			gt.Const.Perks.PerkDefs.LegendMindOverBody
+		],
 		[]
 	]
 };
-
 gt.Const.Perks.CalmTree <- {
 	ID = "CalmTree",
 	Descriptions = [
-		"is calm"
+		"is calm",
+		"is soothingly relaxed",
+		"projects peace of mind",
+		"seems unflustered",
+		"goes with the flow",
+		"is unworried"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			3,
+			3
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			6,
+			6
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendAlert],
+		[
+			gt.Const.Perks.PerkDefs.LegendAlert
+		],
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendClarity],
+		[
+			gt.Const.Perks.PerkDefs.LegendClarity
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.PerfectFocus]
+		[
+			gt.Const.Perks.PerkDefs.PerfectFocus
+		]
 	]
 };
-
 gt.Const.Perks.FastTree <- {
 	ID = "FastTree",
 	Descriptions = [
@@ -190,11 +510,48 @@ gt.Const.Perks.FastTree <- {
 		"steps briskly",
 		"is a speedy sprinter"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			6,
+			6
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.FastAdaption,
+		[
+			gt.Const.Perks.PerkDefs.FastAdaption,
 			gt.Const.Perks.PerkDefs.Adrenalin
 		],
-		[gt.Const.Perks.PerkDefs.Anticipation],
+		[
+			gt.Const.Perks.PerkDefs.Anticipation
+		],
 		[],
 		[],
 		[],
@@ -202,7 +559,6 @@ gt.Const.Perks.FastTree <- {
 		[]
 	]
 };
-
 gt.Const.Perks.LargeTree <- {
 	ID = "LargeTree",
 	Descriptions = [
@@ -214,17 +570,56 @@ gt.Const.Perks.LargeTree <- {
 		"is a mountainous figure",
 		"wields considerable musculature"
 	],
+	Attributes = {
+		Hitpoints = [
+			6,
+			6
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			3,
+			3
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.Colossus],
+		[
+			gt.Const.Perks.PerkDefs.Colossus
+		],
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendSecondWind],
+		[
+			gt.Const.Perks.PerkDefs.LegendSecondWind
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendMuscularity]
+		[
+			gt.Const.Perks.PerkDefs.LegendMuscularity
+		]
 	]
 };
-
 gt.Const.Perks.OrganisedTree <- {
 	ID = "OrganisedTree",
 	Descriptions = [
@@ -236,17 +631,56 @@ gt.Const.Perks.OrganisedTree <- {
 		"straightened out the supplies",
 		"is fastidiously organised"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			6,
+			6
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			3,
+			3
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.BagsAndBelts],
+		[
+			gt.Const.Perks.PerkDefs.BagsAndBelts
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendEfficientPacking],				
+		[
+			gt.Const.Perks.PerkDefs.LegendEfficientPacking
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendSkillfulStacking],
+		[
+			gt.Const.Perks.PerkDefs.LegendSkillfulStacking
+		],
 		[],
 		[]
 	]
 };
-
 gt.Const.Perks.SturdyTree <- {
 	ID = "SturdyTree",
 	Descriptions = [
@@ -258,17 +692,56 @@ gt.Const.Perks.SturdyTree <- {
 		"is well built",
 		"seems hardy"
 	],
+	Attributes = {
+		Hitpoints = [
+			3,
+			3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			3,
+			3
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			6,
+			6
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.LegendComposure],
-		[gt.Const.Perks.PerkDefs.Steadfast],
+		[
+			gt.Const.Perks.PerkDefs.LegendComposure
+		],
+		[
+			gt.Const.Perks.PerkDefs.Steadfast
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Stalwart],
+		[
+			gt.Const.Perks.PerkDefs.Stalwart
+		],
 		[],
 		[]
 	]
 };
-
 gt.Const.Perks.FitTree <- {
 	ID = "FitTree",
 	Descriptions = [
@@ -279,17 +752,56 @@ gt.Const.Perks.FitTree <- {
 		"has superb stamina",
 		"rarely loses breath"
 	],
+	Attributes = {
+		Hitpoints = [
+			3,
+			3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			6,
+			6
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			3,
+			3
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.Recover],
+		[
+			gt.Const.Perks.PerkDefs.Recover
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Relentless],
+		[
+			gt.Const.Perks.PerkDefs.Relentless
+		],
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.Rebound]
+		[
+			gt.Const.Perks.PerkDefs.Rebound
+		]
 	]
 };
-
 gt.Const.Perks.TrainedTree <- {
 	ID = "TrainedTree",
 	Descriptions = [
@@ -301,48 +813,127 @@ gt.Const.Perks.TrainedTree <- {
 		"has been instructed by someone skillful",
 		"has genuine experience"
 	],
+	Attributes =  {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			6,
+			6
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			6,
+			6
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendBackToBasics],
+		[
+			gt.Const.Perks.PerkDefs.LegendBackToBasics
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Rotation],
+		[
+			gt.Const.Perks.PerkDefs.Rotation
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.Underdog],
+		[
+			gt.Const.Perks.PerkDefs.Underdog
+		],
 		[],
 		[]
 	]
 };
-
-
 gt.Const.Perks.TraitsTrees <- {
 	Tree = [
 		gt.Const.Perks.AgileTree,
 		gt.Const.Perks.IndestructibleTree,
 		gt.Const.Perks.MartyrTree,
 		gt.Const.Perks.ViciousTree,
-		gt.Const.Perks.DeviousTree, 
+		gt.Const.Perks.DeviousTree,
 		gt.Const.Perks.InspirationalTree,
 		gt.Const.Perks.IntelligentTree,
 		gt.Const.Perks.CalmTree,
 		gt.Const.Perks.FastTree,
-		gt.Const.Perks.LargeTree, 
+		gt.Const.Perks.LargeTree,
 		gt.Const.Perks.OrganisedTree,
 		gt.Const.Perks.SturdyTree,
 		gt.Const.Perks.FitTree,
 		gt.Const.Perks.TrainedTree
 	],
-	function getRandom(_exclude) 
+	function getRandom( _exclude )
 	{
 		local L = [];
-		foreach (i, t in this.Tree)
+
+		foreach( i, t in this.Tree )
 		{
 			if (_exclude.find(t.ID))
 			{
 				continue;
 			}
+
 			L.push(i);
 		}
 
-		local r = this.Math.rand(0, L.len() - 1)
-		return this.Tree[L[r]];;
+		local r = this.Math.rand(0, L.len() - 1);
+		return this.Tree[L[r]];
 	}
+
+	function getBaseAttributes()
+	{
+		return {
+			Hitpoints = [
+				-9,
+				-9
+			],
+			Bravery = [
+				-9,
+				-9
+			],
+			Stamina = [
+				-9,
+				-9
+			],
+			MeleeSkill = [
+				-9,
+				-9
+			],
+			RangedSkill = [
+				-9,
+				-9
+			],
+			MeleeDefense = [
+				-9,
+				-9
+			],
+			RangedDefense = [
+				-9,
+				-9
+			],
+			Initiative = [
+				-9,
+				-9
+			]
+		};
+	}
+
 };

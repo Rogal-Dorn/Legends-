@@ -17,7 +17,7 @@ this.perk_devastating_strikes <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageTotalMult *= 1.2;
+		_properties.DamageTotalMult *= 1.10;
 	}
 
 });

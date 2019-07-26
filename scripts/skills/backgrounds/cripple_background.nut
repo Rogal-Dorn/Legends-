@@ -59,7 +59,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			],
 			Traits = [
 				this.Const.Perks.MartyrTree,
-				this.Const.Perks.ViciousTree,
+				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.IndestructibleTree
 			],

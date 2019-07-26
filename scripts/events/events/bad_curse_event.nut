@@ -12,7 +12,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%superstitious% enters your tent with hat in hand. The rim of it turns round and round in his fingers as though he were plucking feathers from it. Even though you haven\'t said a word the man\'s head nods furiously and his eyes jet around as if looking for the words to say.\n\nYou put your quill pen down and ask what the issue is. Licking his lips, he nods again and begins to explain his predicament. The words come fast, but the general gist of it seems to be that a local witch has cursed the man to be incapable of some sexual export, as it were.\n\nYou shake your head and ask what it is the witch wants and %superstitious% says %payment% crowns, lest the curse be on him for life.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%superstitious% enters your tent with hat in hand. The rim of it turns round and round in their fingers as though plucking feathers from it. Even though you haven\'t said a word the %superstitious% \'s head nods furiously, with eyes darting around as if looking for the words to say.\n\nYou put your quill pen down and ask what the issue is. Licking lips, h%superstitious%  nods again and begins to explain the predicament. The words come fast, but the general gist of it seems to be that a local witch has cursed %superstitious% to be incapable of some sexual exploit, as it were.\n\nYou shake your head and ask what it is the witch wants and %superstitious% says %payment% crowns, lest the curse be for life.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -66,7 +66,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_05.png[/img]Thumb and finger pinching your eyes shut, you wonder if maybe this wasn\'t the life for you. Killing\'s easy, but this? Whatever. You throw your hands up and get out of your chair to retrieve a satchel of crowns. The superstitious man totters up on the tips of his toes.%SPEECH_ON%Please count it out! It mustn\'t be a crown short!%SPEECH_OFF%You begrudgingly set the satchel on the table and begin counting. Once the appropriate number is had, you shuffle it into a purse and toss it to %superstitious%. He bows, thanking you and your mercy. You wave the man off to quickly get him out of your tent.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]Thumb and finger pinching your eyes shut, you wonder if maybe this wasn\'t the life for you. Killing\'s easy, but this? Whatever. You throw your hands up and get out of your chair to retrieve a satchel of crowns. The superstitious mercenary totters up on toe tips.%SPEECH_ON%Please count it out! It mustn\'t be a crown short!%SPEECH_OFF%You begrudgingly set the satchel on the table and begin counting. Once the appropriate number is had, you shuffle it into a purse and toss it to %superstitious%, who bows, thanking you and your mercy. You wave the sellsword off to quickly get the whole incident out of your tent.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -100,7 +100,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You further muddy %superstitious%\'s poor countenance with some bad news: you\'re not paying any witch anything.%SPEECH_ON%A few farcical words from some strange woman in the woods is no basis for an exchange of business. What you\'ve heard is a tramp\'s attempt to get at you, mercenary. You cannot listen to such tripe, especially a tramp\'s tripe for a tramp\'s tripe is always in pursuit of one\'s coin.%SPEECH_OFF%None of these words help %superstitious% for he quickly runs out of the tent, perhaps in pursuit of another mercenary who will give him a loan.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]You further muddy %superstitious%\'s poor countenance with some bad news: you\'re not paying any witch anything.%SPEECH_ON%A few farcical words from some strange woman in the woods is no basis for an exchange of business. What you\'ve heard is a tramp\'s attempt to get at you, mercenary. You cannot listen to such tripe, especially a tramp\'s tripe for a tramp\'s tripe is always in pursuit of one\'s coin.%SPEECH_OFF%None of these words help %superstitious% who quickly runs out of the tent, perhaps in pursuit of another mercenary who will give a loan.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -137,7 +137,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_05.png[/img]Wondering if maybe %monk% the monk could help, you go and fetch the holy man.\n\nHe says he can indeed lend a hand for the old gods are always at war with the evils of witchcraft and other sorcery. Before he goes off on a long monologue about this old god or that one, you dip away and send him %superstitious%. For a few minutes, there is peace and quiet in your tent. But you know it can\'t last, for you are like a man beneath a rockslide, awaiting the tumbling stone with his name on it.\n\n However, %superstitious% doesn\'t return. After a few minutes more you realize he still hasn\'t made a disruptive entrance. In fact, his absence altogether has you on edge, as though silence itself might be haranguing. You leave the tent to find the monk and so-called cursed man deep in religious talks. Smiling, you return to your tent. If there\'s one thing the holy men are best at, it\'s maintaining a sense of tranquility.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]Wondering if maybe %monk% could help, you go and fetch the holy figure.\n\n %monk% is happy to lend a hand, for the old gods are always at war with the evils of witchcraft and other sorcery. Before an incoming long monologue about this old god or that one, you dip away and send in %superstitious%. For a few minutes, there is peace and quiet in your tent. But you know it can\'t last, for you are like someone beneath a rockslide, awaiting the tumbling stone with their name on it.\n\n However, %superstitious% doesn\'t return. After a few minutes more you realize there still hasn\'t been a disruptive entrance. In fact, the absence altogether has you on edge, as though silence itself might be haranguing. You leave the tent to find the holy one and so-called cursed one deep in religious talks. Smiling, you return to your tent. If there\'s one thing the holy are best at, it\'s maintaining a sense of tranquility.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -184,7 +184,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_05.png[/img]You snap your fingers, suddenly remembering %sorcerer%, the so-called sorcerer. Wanting to not spend another minute being a part of this bizarre affair, you refer %superstitious% to the sorcerer. He is quick to leave, but unfortunately returns a few minutes later, explaining that %sorcerer% has set him free from his curse.%SPEECH_ON%All I had to do was...%SPEECH_OFF%You hold your hand up, stopping the man\'s story right where it be. He asks if you want to hear the rest of it and you give a firm no.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]You snap your fingers, suddenly remembering %sorcerer%, the so-called sorceror. Wanting to not spend another minute being a part of this bizarre affair, you refer %superstitious% to the sorcerer who is quick to leave, but unfortunately returns a few minutes later, explaining that %sorcerer% has removed the curse.%SPEECH_ON%All I had to do was...%SPEECH_OFF%You hold your hand up, stopping the story right where it be. When asked if you want to hear the rest of it, you give a firm no.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -256,11 +256,11 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_cursed.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.monk_turned_flagellant")
+			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.monk_turned_flagellant" || bro.getBackground().getID() == "background.legend_nun")
 			{
 				candidates_monk.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.sorcerer")
+			else if (bro.getBackground().getID() == "background.sorcerer" || bro.getBackground().getID() == "background.legend_necro_background" || bro.getBackground().getID() == "background.legend_necro_commander_background" || bro.getBackground().getID() == "background.legend_witch_background" || bro.getBackground().getID() == "background.legend_witch_commander_background")
 			{
 				candidates_sorcerer.push(bro);
 			}

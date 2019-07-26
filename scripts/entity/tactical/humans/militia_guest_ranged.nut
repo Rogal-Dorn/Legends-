@@ -18,6 +18,11 @@ this.militia_guest_ranged <- this.inherit("scripts/entity/tactical/player", {
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/player_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+			this.m.Faces = this.Const.Faces.WildFemale;
+		}
 	}
 
 	function onInit()

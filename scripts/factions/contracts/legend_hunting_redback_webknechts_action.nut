@@ -23,15 +23,6 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 			return;
 		}
 
-
-		this.m.Score = 999
-		return;
-		
-		if (this.World.getTime().Days <= 3 || this.Math.rand(1, 100) > 30)
-		{
-			return;
-		}
-
 		if (_faction.getSettlements()[0].isIsolated() || _faction.getSettlements()[0].getSize() > 2)
 		{
 			return;

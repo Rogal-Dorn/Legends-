@@ -11,9 +11,6 @@ this.legend_hunting_demon_alps_action <- this.inherit("scripts/factions/faction_
 
 	function onUpdate( _faction )
 	{
-		
-		
-		
 		if (!this.Const.DLC.Unhold)
 		{
 			return;
@@ -23,16 +20,7 @@ this.legend_hunting_demon_alps_action <- this.inherit("scripts/factions/faction_
 		{
 			return;
 		}
-
-
-		this.m.Score = 999
-		return;
 		
-		if (this.Math.rand(1, 100) > 5)
-		{
-			return;
-		}
-
 		if (this.World.Assets.getBusinessReputation() < 400)
 		{
 			return;

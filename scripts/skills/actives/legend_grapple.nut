@@ -38,7 +38,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 15;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceDecapitate = 0;
@@ -52,7 +52,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 4 + "[/color] extra fatigue"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 8 + "[/color] on an enemy"
 		});
 
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInMaces)
@@ -115,7 +115,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.DamageTotalMult *= 0.3;
-			_properties.FatigueDealtPerHitMult += 4.0;
+			_properties.FatigueDealtPerHitMult += 8.0;
 		}
 	}
 

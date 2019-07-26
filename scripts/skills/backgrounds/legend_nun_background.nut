@@ -64,9 +64,11 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.MartyrTree,
 				this.Const.Perks.InspirationalTree
 			],
-			Enemy = [this.Const.Perks.UndeadTree],
+			Enemy = [],
 			Class = [this.Const.Perks.HealerClassTree]
 		}
 	}

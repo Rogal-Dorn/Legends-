@@ -66,7 +66,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.Adrenalin,
 		Tooltip = this.Const.Strings.PerkDescription.Adrenalin,
 		Icon = "ui/perks/perk_37.png",
-		IconDisabled = "ui/perks/perk_37_sw.png"
+		IconDisabled = "ui/perks/perk_37_sw.png",
 		Const = "Adrenalin"
 	},
 	{
@@ -473,7 +473,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/recruit2.png",
 		IconDisabled = "ui/perks/recruit2_bw.png",
 		Const = "LegendRoster2"
-	},			
+	},
 	{
 		ID = "perk.legend_roster_3",
 		Script = "scripts/skills/perks/perk_legend_roster_3",
@@ -600,7 +600,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/return_favor_circle_bw.png",
 		Const = "ReturnFavor"
 	},
-		{
+	{
 		ID = "perk.steadfast",
 		Script = "scripts/skills/perks/perk_steadfast",
 		Name = this.Const.Strings.PerkName.Steadfast,
@@ -608,7 +608,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/steadfast_circle.png",
 		IconDisabled = "ui/perks/steadfast_circle_bw.png",
 		Const = "Steadfast"
-		},
+	},
 	{
 		ID = "perk.sundering_strikes",
 		Script = "scripts/skills/perks/perk_sundering_strikes",
@@ -715,7 +715,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Tooltip = this.Const.Strings.PerkDescription.LegendRust,
 		Icon = "ui/perks/rust56_circle.png",
 		IconDisabled = "ui/perks/rust56_circle_bw.png",
-		Const = "LegendRust",
+		Const = "LegendRust"
 	},
 	{
 		ID = "perk.legend_deathtouch",
@@ -1580,7 +1580,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/coins_circle.png",
 		IconDisabled = "ui/perks/coins_circle_bw.png",
 		Const = "LegendDangerPay"
-	},															
+	},
 	{
 		ID = "perk.legend_vala_inscription_mastery",
 		Script = "scripts/skills/perks/legend_vala_inscription_mastery",
@@ -1589,7 +1589,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/legend_vala_inscription_mastery.png",
 		IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png",
 		Const = "LegendValaInscriptionMastery"
-	},	
+	},
 	{
 		ID = "perk.legend_vala_warden",
 		Script = "scripts/skills/perks/legend_vala_warden",
@@ -2012,7 +2012,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/favoured_barbarian_01.png",
 		IconDisabled = "ui/perks/favoured_barbarian_bw.png",
 		Const = "LegendFavouredEnemyBarbarian"
-	},	
+	},
 	{
 		ID = "perk.legend_favoured_enemy_bandit",
 		Script = "scripts/skills/perks/perk_legend_favoured_enemy_bandit",
@@ -2039,7 +2039,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/favoured_swordmaster_01.png",
 		IconDisabled = "ui/perks/favoured_swordmaster_bw.png",
 		Const = "LegendFavouredEnemySwordmaster"
-	},	
+	},
 	{
 		ID = "perk.legend_favoured_enemy_mercenary",
 		Script = "scripts/skills/perks/perk_legend_favoured_enemy_mercenary",
@@ -2138,7 +2138,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/assured_conquest_circle.png",
 		IconDisabled = "ui/perks/assured_conquest_circle_bw.png",
 		Const = "LegendAssuredConquest"
-	},	
+	},
 	{
 		ID = "perk.legend_blend_in",
 		Script = "scripts/skills/perks/perk_legend_blend_in",
@@ -2147,16 +2147,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/blend_in_circle.png",
 		IconDisabled = "ui/perks/blend_in_circle_bw.png",
 		Const = "LegendBlendIn"
-	},	
+	},
 	{
 		ID = "perk.legend_mastery_staff_stun",
-		Script = "scripts/skills/perks/perk_mastery_staff_stun",
+		Script = "scripts/skills/perks/perk_legend_mastery_staff_stun",
 		Name = this.Const.Strings.PerkName.LegendSpecStaffStun,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecStaffStun,
 		Icon = "ui/perks/staff_circle.png",
 		IconDisabled = "ui/perks/staff_circle_bw.png",
 		Const = "LegendSpecStaffStun"
-	},	
+	},
 	{
 		ID = "perk.legend_specialist_staff_skill",
 		Script = "scripts/skills/perks/perk_legend_specialist_staff_skill",
@@ -2165,7 +2165,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/staff_skill_circle.png",
 		IconDisabled = "ui/perks/staff_skill_circle_bw.png",
 		Const = "LegendSpecStaffSkill"
-	},	
+	},
 	{
 		ID = "perk.legend_drums_of_war",
 		Script = "scripts/skills/perks/perk_legend_drums_of_war",
@@ -2174,7 +2174,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/drums_circle.png",
 		IconDisabled = "ui/perks/drums_circle_bw.png",
 		Const = "LegendDrumsOfWar"
-	},	
+	},
 	{
 		ID = "perk.mastery.fist",
 		Script = "scripts/skills/perks/perk_mastery_fist",
@@ -2183,7 +2183,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/fist_circle.png",
 		IconDisabled = "ui/perks/fist_circle_bw.png",
 		Const = "LegendSpecFists"
-	},		
+	},
 	{
 		ID = "perk.legend_kick",
 		Script = "scripts/skills/perks/perk_legend_kick",
@@ -2327,13 +2327,29 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/perk_40.png",
 		IconDisabled = "ui/perks/perk_40_sw.png",
 		Const = "Bruiser"
+	},
+	{
+		ID = "perk.legend_mind_over_body",
+		Script = "scripts/skills/perks/perk_legend_mind_over_body",
+		Name = this.Const.Strings.PerkName.LegendMindOverBody,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMindOverBody,
+		Icon = "ui/perks/relax_circle.png",
+		IconDisabled = "ui/perks/relax_circle_bw.png",
+		Const = "LegendMindOverBody"
+	},
+	{
+		ID = "perk.legend_escape_artist",
+		Script = "scripts/skills/perks/perk_legend_escape_artist",
+		Name = this.Const.Strings.PerkName.LegendEscapeArtist,
+		Tooltip = this.Const.Strings.PerkDescription.LegendEscapeArtist,
+		Icon = "ui/perks/net_perk.png",
+		IconDisabled = "ui/perks/net_perk_bw.png",
+		Const = "LegendEscapeArtist"
 	}
 ];
+gt.Const.Perks.PerkDefs <- {};
 
-
-gt.Const.Perks.PerkDefs <- {}
-
-foreach(i, v in gt.Const.Perks.PerkDefObjects)
+foreach( i, v in gt.Const.Perks.PerkDefObjects )
 {
 	gt.Const.Perks.PerkDefs[v.Const] <- i;
 }

@@ -15,7 +15,7 @@ gt.Const.Perks.BeastClassTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendMasteryNets],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendEscapeArtist],
 		[],
 		[]
 	]

@@ -323,6 +323,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 1,
 		Script = "scripts/entity/tactical/enemies/goblin_wolfrider"
 	},
+	Wolf = {
+		ID = this.Const.EntityType.Wolf,
+		Variant = 0,
+		Strength = 15,
+		Cost = 20,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/wolf"
+	},
 	Direwolf = {
 		ID = this.Const.EntityType.Direwolf,
 		Variant = 0,

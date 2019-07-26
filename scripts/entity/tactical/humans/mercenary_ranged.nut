@@ -12,6 +12,11 @@ this.mercenary_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+			this.m.Faces = this.Const.Faces.WildFemale;
+		}
 	}
 
 	function onInit()

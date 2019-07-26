@@ -21,7 +21,17 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Body = "bust_naked_body_05";
-		this.m.IsFemaleBackground = false;
+
+		local r = this.Math.rand(0, 1);
+		if (r == 0)
+			{
+			this.m.IsFemaleBackground = true;
+			}
+		else
+			{
+			this.m.IsFemaleBackground = false;
+			}
+
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
 		this.m.IsStabled = true;

@@ -48,6 +48,7 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/helmets/named/name
 
 	function onUpdateProperties( _properties )
 	{
+		this.named_helmet.onUpdateProperties(_properties);
 		_properties.Hitpoints += 10;
 	}
 
@@ -74,7 +75,7 @@ this.legend_named_warlock_hood <- this.inherit("scripts/items/helmets/named/name
 			return;
 		}
 		a.getSkills().removeByID("perk.legend_taste_the_pain");
-		this.helmet.onUnequip();
+		this.named_helmet.onUnequip();
 	}
 
 });

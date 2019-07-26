@@ -52,6 +52,7 @@ this.direwolf_pelt_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 
 	function onUpdateProperties( _properties )
 	{
+		this.armor_upgrade.onUpdateProperties(_properties);
 		_properties.Threat += 5;
 	}
 
