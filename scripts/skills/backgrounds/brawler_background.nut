@@ -160,13 +160,6 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill.getID() == "actives.hand_to_hand")
-		{
-			_properties.DamageTotalMult *= 2.0;
-		}
-	}
 
 });
 

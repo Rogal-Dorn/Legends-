@@ -1373,4 +1373,5 @@ Beta 12.4 Test 4
 
 
 
- 
+ Beta 12.4.1
+brawlers hand to hand bonus reduced from +250% damage back to the intended +25% 
