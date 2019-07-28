@@ -19,6 +19,8 @@ this.item_container <- {
 			Body = "",
 			Armor = "",
 			ArmorColor = this.createColor("#ffffff"),
+			ArmorLayerChain = "",
+			ArmorLayerPlate= "",
 			ArmorUpgradeFront = "",
 			ArmorUpgradeBack = "",
 			Accessory = "",

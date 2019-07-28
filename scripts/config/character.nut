@@ -153,6 +153,8 @@ gt.Const.ShakeCharacterLayers <- [
 		"injury_body",
 		"quiver",
 		"tattoo_body",
+		"armor_layer_chain",
+		"armor_layer_plate",
 		"armor_upgrade_back",
 		"armor_upgrade_front"
 	],
@@ -173,6 +175,8 @@ gt.Const.ShakeCharacterLayers <- [
 		"injury_body",
 		"quiver",
 		"tattoo_body",
+		"armor_layer_chain",
+		"armor_layer_plate",
 		"armor_upgrade_back",
 		"armor_upgrade_front",
 		"head",

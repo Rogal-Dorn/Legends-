@@ -527,6 +527,8 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		injury_body.Visible = false;
 		injury_body.setBrush(body.getBrush().Name + "_injured");
 		this.addSprite("armor");
+		this.addSprite("armor_layer_chain");
+		this.addSprite("armor_layer_plate");
 		this.addSprite("surcoat");
 		this.addSprite("armor_upgrade_back");
 		local bandage2 = this.addSprite("bandage_2");

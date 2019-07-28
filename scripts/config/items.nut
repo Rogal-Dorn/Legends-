@@ -163,3 +163,10 @@ gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_khopesh"
 ];
 
+gt.Const.Items.ArmorUpgrades <- {
+	Chain = 0,
+	Plate = 1,
+	Cloak = 2,
+	Attachment = 3,
+	COUNT = 4
+}
