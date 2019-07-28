@@ -1,8 +1,9 @@
-this.legend_armor_hauberk <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
+this.legend_armor_hauberk <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
-		this.armor_upgrade.create();
+		this.legend_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Chain
 		this.m.ID = "legend_armor.hauberk";
 		this.m.Name = "Hauberk";
 		this.m.Description = "A long and heavy chainmail that offers good protection but is very fatiguing to wear.";
@@ -24,7 +25,7 @@ this.legend_armor_hauberk <- this.inherit("scripts/items/armor_upgrades/armor_up
 
 	function getTooltip()
 	{
-		local result = this.armor_upgrade.getTooltip();
+		local result = this.legend_armor_upgrade.getTooltip();
 		result.push({
 			id = 14,
 			type = "text",

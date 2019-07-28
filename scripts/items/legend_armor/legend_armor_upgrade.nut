@@ -1,4 +1,4 @@
-this.legend_armor_layers <- this.inherit("scripts/items/item", {
+this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	m = {
 		OverlayIcon = "",
 		OverlayIconLarge = "",
@@ -96,7 +96,7 @@ this.legend_armor_layers <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 65,
 			type = "text",
-			text = "Right-click or drag onto an armor carried by the currently selected character in order to permanently fuse. This item will be consumed in the process to give the following effects:"
+			text = "Right-click or drag onto an armor carried by the currently selected character in order to attach the armor upgrade."
 		});
 		return result;
 	}
@@ -119,37 +119,49 @@ this.legend_armor_layers <- this.inherit("scripts/items/item", {
 
 	function updateAppearance( _app )
 	{
-		if (this.m.Armor.m.Condition / this.m.Armor.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
+		
+		local frontSprite = "";
+		local backSprite = "";
+		if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
-			_app.ArmorUpgradeFront = this.m.SpriteDamagedFront != null ? this.m.SpriteDamagedFront : this.m.SpriteFront != null ? this.m.SpriteFront : "";
-			_app.ArmorUpgradeBack = this.m.SpriteDamagedBack != null ? this.m.SpriteDamagedBack : this.m.SpriteBack != null ? this.m.SpriteBack : "";
+			frontSprite = this.m.SpriteDamagedFront != null ? this.m.SpriteDamagedFront : this.m.SpriteFront != null ? this.m.SpriteFront : "";
+			backSprite = this.m.SpriteDamagedBack != null ? this.m.SpriteDamagedBack : this.m.SpriteBack != null ? this.m.SpriteBack : "";
 		}
 		else
 		{
-			_app.ArmorUpgradeFront = this.m.SpriteFront != null ? this.m.SpriteFront : "";
-			_app.ArmorUpgradeBack = this.m.SpriteBack != null ? this.m.SpriteBack : "";
+			frontSprite = this.m.SpriteFront != null ? this.m.SpriteFront : "";
+			backSprite = this.m.SpriteBack != null ? this.m.SpriteBack : "";
 		}
 
-		_app.CorpseArmorUpgradeFront = this.m.SpriteCorpseFront != null ? this.m.SpriteCorpseFront : "";
-		_app.CorpseArmorUpgradeBack = this.m.SpriteCorpseBack ? this.m.SpriteCorpseBack : "";
+		switch(this.m.Type)
+		{
+			case this.Const.Items.ArmorUpgrades.Chain:
+				_app.ArmorLayerChain = backSprite;
+				_app.CorpseArmorLayerChain =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+				break;
+			case this.Const.Items.ArmorUpgrades.Plate:
+				_app.ArmorLayerPlate = backSprite;
+				_app.CorpseArmorLayerPlate =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+				break;
+			case this.Const.Items.ArmorUpgrades.Cloak:
+				_app.ArmorLayerCloak= backSprite;
+				_app.CorpseArmorLayerCloak =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+				break;
+			case this.Const.Items.ArmorUpgrades.Attachment:
+				_app.ArmorUpgradeFront = frontSprite
+				_app.ArmorUpgradeBack = this.m.SpriteBack != null ? this.m.SpriteBack : "";
+				_app.CorpseArmorUpgradeFront = backSprite
+				_app.CorpseArmorUpgradeBack = this.m.SpriteCorpseBack ? this.m.SpriteCorpseBack : "";
+				break;
+		}
 	}
 
 	function onAdded()
 	{
-		this.m.PreviousCondition = this.m.Armor.m.ConditionMax;
-		this.m.PreviousStamina = this.m.Armor.m.StaminaModifier;
-		this.m.Armor.m.ConditionMax += this.m.ConditionModifier;
-		this.m.Armor.m.Condition += this.m.ConditionModifier;
-		this.m.Armor.m.StaminaModifier -= this.m.StaminaModifier;
 	}
 
 	function onRemoved()
 	{
-		this.m.Armor.m.ConditionMax = this.m.PreviousCondition;
-		this.m.Armor.m.Condition = this.Math.minf(this.m.Armor.m.Condition, this.m.Armor.m.ConditionMax);
-		this.m.Armor.m.StaminaModifier = this.m.PreviousStamina;
-		this.m.PreviousCondition = 0;
-		this.m.PreviousStamina = 0;
 	}
 
 	function onUse( _actor, _item = null )
@@ -192,19 +204,11 @@ this.legend_armor_layers <- this.inherit("scripts/items/item", {
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
-		_out.writeF32(this.m.PreviousCondition);
-		_out.writeI16(this.m.PreviousStamina);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
-
-		if (_in.getMetaData().getVersion() >= 44)
-		{
-			this.m.PreviousCondition = _in.readF32();
-			this.m.PreviousStamina = _in.readI16();
-		}
 	}
 
 });

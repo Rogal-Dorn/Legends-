@@ -285,7 +285,7 @@
 			if (_appearance.ArmorLayerChain.len() != 0)
 			{
 				local armor = this.getSprite("armor_layer_chain");
-				armor.setBrush(_appearance.ArmorLayerChain;
+				armor.setBrush(_appearance.ArmorLayerChain);
 				armor.Visible = true;
 			}
 			else
