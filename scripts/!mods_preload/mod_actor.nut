@@ -275,6 +275,40 @@
 		return true;
 	}
 
+	local oacFn = o.onAppearanceChanged;
+	o.onAppearanceChanged = function( _appearance, _setDirty = true )
+	{
+		oacFn(_appearance, _setDirty);
+		
+		if (this.hasSprite("armor_layer_chain"))
+		{
+			if (_appearance.ArmorLayerChain.len() != 0)
+			{
+				local armor = this.getSprite("armor_layer_chain");
+				armor.setBrush(_appearance.ArmorLayerChain;
+				armor.Visible = true;
+			}
+			else
+			{
+				this.getSprite("armor_layer_chain").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("armor_layer_plate"))
+		{
+			if (_appearance.ArmorLayerPlate.len() != 0)
+			{
+				local armor = this.getSprite("armor_layer_plate");
+				armor.setBrush(_appearance.ArmorLayerPlate);
+				armor.Visible = true;
+			}
+			else
+			{
+				this.getSprite("armor_layer_plate").Visible = false;
+			}
+		}
+	}
+
         //
     // local onResurrected = o.onResurrected;
     // o.onResurrected = function ( _info ) 
