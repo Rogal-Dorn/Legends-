@@ -19,8 +19,10 @@ this.legend_armor_plates <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "legend_armor_plates_dead";
 		this.m.Value = 5340;
-		this.m.ConditionModifier = 195;
+		this.m.Condition = 195;
+		this.m.ConditionMax = 195;
 		this.m.StaminaModifier = 26;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 	function getTooltip()

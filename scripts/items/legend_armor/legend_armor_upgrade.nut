@@ -14,8 +14,14 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		StaminaModifier = 0,
 		PreviousCondition = 0,
 		PreviousStamina = 0,
-		Type = -1
+		Type = -1,
+		ImpactSound = this.Const.Sound.ArmorLeatherImpact
 	},
+	function getType()
+	{
+		return this.m.Type;
+	}
+
 	function getOverlayIcon()
 	{
 		return this.m.OverlayIcon;
@@ -66,7 +72,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			{
 				id = 2,
 				type = "description",
-				text = this.getDescription()
+				text = this.m.Name
 			}
 		];
 		result.push({
@@ -108,7 +114,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			id = 15,
 			type = "text",
 			icon = "ui/icons/plus.png",
-			text = "Has an armor attachment which can be replaced, but will be destroyed in the process"
+			text = this.getDescription()
 		});
 	}
 

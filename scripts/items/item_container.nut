@@ -29,7 +29,7 @@ this.item_container <- {
 			CorpseArmor = "",
 			CorpseArmorLayerChain = "",
 			CorpseArmorLayerPlate= "",
-			CorspeArmorLayerCloak= "",
+			CorpseArmorLayerCloak= "",
 			CorpseArmorUpgradeFront = "",
 			CorpseArmorUpgradeBack = "",
 			Helmet = "",
