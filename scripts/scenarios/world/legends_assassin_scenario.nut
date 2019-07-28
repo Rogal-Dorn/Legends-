@@ -24,7 +24,6 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 			"legend_assassin_commander_background"
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
