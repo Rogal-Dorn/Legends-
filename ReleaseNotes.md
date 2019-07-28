@@ -1372,6 +1372,6 @@ Beta 12.4 Test 4
 *Adds new perk Escape Artist to Beast Hunters. Grants immunity to webs and nets.
 
 
-
  Beta 12.4.1
 brawlers hand to hand bonus reduced from +250% damage back to the intended +25% 
+escape artist now makes Break Free always succeed and be cheaper, rather than being immune to root
