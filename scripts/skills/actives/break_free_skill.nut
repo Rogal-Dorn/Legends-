@@ -80,6 +80,16 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onAfterUpdate( _properties )
+	{
+		if (target.getSkills().hasSkill("perk.legend_escape_artist"))
+				{
+				this.m.FatigueCostMult = 0.3;
+				this.m.ActionPointCost = 2;
+				this.m.ChanceBonus += 100,
+				}
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local skill = this.m.SkillBonus == null ? _user.getCurrentProperties().getMeleeSkill() : this.m.SkillBonus;
@@ -87,9 +97,16 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 		local rolled = this.Math.rand(1, 100);
 		this.Tactical.EventLog.log_newline();
 
-		if (rolled <= toHit)
+		if (rolled <= toHit || target.getSkills().hasSkill("perk.legend_escape_artist"))
 		{
-			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " breaks free (Chance: " + toHit + ", Rolled: " + rolled + ")");
+			if (target.getSkills().hasSkill("perk.legend_escape_artist"))
+				{
+				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " effortlessly breaks free.");
+				}
+			else
+				{
+				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " breaks free (Chance: " + toHit + ", Rolled: " + rolled + ")");
+				}
 
 			if (this.m.SoundOnHit.len() != 0)
 			{
