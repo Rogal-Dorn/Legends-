@@ -1,0 +1,15 @@
+<brush name="gfx/legend_armor.png" version="17">
+  <sprite id="legend_armor_hauberk" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\chain\legend_armor_hauberk.png" left="-48" right="46" top="-54" bottom="10" />
+  <sprite id="legend_armor_hauberk_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\chain\legend_armor_hauberk_damaged.png" left="-49" right="45" top="-53" bottom="11" />
+  <sprite id="legend_armor_hauberk_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\chain\legend_armor_hauberk_dead.png" left="-59" right="57" top="-54" bottom="58" />
+ 
+   <sprite id="legend_armor_plates" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\plate\legend_armor_plates.png" left="-48" right="46" top="-54" bottom="10" />
+  <sprite id="legend_armor_plates_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\plate\legend_armor_plates_damaged.png" left="-49" right="45" top="-53" bottom="11" />
+  <sprite id="legend_armor_plates_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\plate\legend_armor_plates_dead.png" left="-59" right="57" top="-54" bottom="58" />
+ 
+  <sprite id="legend_tabard_10" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_10.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_10_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_10_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_10_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_10_dead.png" left="-54" right="52" top="-55" bottom="51" />
+ 
+ 
+</brush>
