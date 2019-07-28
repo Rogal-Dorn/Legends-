@@ -86,7 +86,7 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 				{
 				this.m.FatigueCostMult = 0.3;
 				this.m.ActionPointCost = 2;
-				this.m.ChanceBonus += 100,
+				this.m.ChanceBonus += 100;
 				}
 	}
 
