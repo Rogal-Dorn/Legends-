@@ -19,8 +19,10 @@ this.legend_armor_hauberk <- this.inherit("scripts/items/legend_armor/legend_arm
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "legend_armor_hauberk_dead";
 		this.m.Value = 1500;
-		this.m.ConditionModifier = 110;
+		this.m.Condition = 110;
+		this.m.ConditionMax = 110;
 		this.m.StaminaModifier = 11;
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 	function getTooltip()

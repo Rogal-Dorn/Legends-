@@ -13,6 +13,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			}
 			value += u.getCondition();
 		}
+		
 		return value;
 	}
 
@@ -113,19 +114,19 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
-		if (this.m.Upgrades[_upgrade.Type] != null)
+		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
-			this.m.Upgrades[_upgrade.Type].onRemoved();
+			this.m.Upgrades[_upgrade.getType()].onRemoved();
 		}
 
-		this.m.Upgrades[_upgrade.Type] = _upgrade;
+		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 		if ( _upgrade == null)
 		{
 			return true;
 		}
 
-		this.m.Upgrades[_upgrade.Type].setArmor(this);
-		this.m.Upgrades[_upgrade.Type].onAdded();
+		this.m.Upgrades[_upgrade.getType()].setArmor(this);
+		this.m.Upgrades[_upgrade.getType()].onAdded();
 		this.updateAppearance();
 		return true
 	}
@@ -142,6 +143,15 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function getTooltip()
 	{
+		local description =  this.getDescription();
+		foreach (u in this.m.Upgrades)
+		{
+			if (u == null)
+			{
+				continue
+			}
+			description += " " + u.getArmorDescription()
+		}
 		local result = [
 			{
 				id = 1,
@@ -151,7 +161,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			{
 				id = 2,
 				type = "description",
-				text = this.getDescription() + (this.m.Upgrade != null ? " " + this.m.Upgrade.getArmorDescription() : "")
+				text = description
 			}
 		];
 		result.push({
@@ -547,11 +557,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			if ( upgrade == 0)
 			{
 				this.m.Upgrades.push(null);
+				continue;
 			}
 			local item = this.new(this.IO.scriptFilenameByHash(upgrade));
 			item.onDeserialize(_in);
-			this.m.Upgrades[item.Type] = item;
-			this.m.Upgrades[item.Type].setArmor(this);
+			this.m.Upgrades[item.getType()] = item;
+			this.m.Upgrades[item.getType()].setArmor(this);
 		}
 	}
 
