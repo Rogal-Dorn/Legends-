@@ -1382,3 +1382,5 @@ Berserker, Crusader, Seer and Ranger begin at level 3 to make up for the harder 
 Crusader and Ranger have a 25% chance of being female 
 Fixes tooltip error from Freedom of Movement
 Fixes Pitchfork skills not working, they now effect wooden pitchforks as well 
+Adds upgraded images for Large pack from LaikoSoM
+Fixes named crossbows being invisible in the inventory 
