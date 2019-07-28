@@ -71,7 +71,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			this.m.Beards = this.Const.Beards.Tidy;
 			this.m.Body = "bust_naked_body_02";
 			}
-		this.m.Level = 2;
+		this.m.Level = 3;
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
