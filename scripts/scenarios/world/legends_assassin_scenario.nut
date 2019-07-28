@@ -4,7 +4,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.m.ID = "scenario.legends_assassin";
 		this.m.Name = "Solo Assassin (Legends)";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_51.png[/img] \n[p]A quick, efficient and ruthless assassin. You strike from the shadows and collect the rewards. \n\n[color=#bcad8c]Camouflage:[/color] You will grant the Camouflage ability to anyone who joins you in battle. \n[color=#bcad8c]Underworld:[/color] You have a small chance of finding other Assassins for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
+		this.m.Description = "[img]gfx/ui/events/event_51.png[/img] \n[p]A quick, efficient and ruthless assassin. You strike from the shadows and collect the rewards. \n\n[color=#bcad8c]Camouflage:[/color] You will grant the Camouflage ability to anyone who joins you in battle. \n[color=#bcad8c]Underworld:[/color] You have a small chance of finding other Assassins for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 19;
 	}
@@ -143,7 +143,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		});
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
-		this.World.Assets.updateLook(106);
+		this.World.Assets.updateLook(110);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
