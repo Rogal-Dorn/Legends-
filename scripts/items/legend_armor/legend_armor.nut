@@ -1,4 +1,4 @@
-this.legend_armor <- this.inherit("scripts/items/armor", {
+this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {
 		Upgrades = null
 	},
@@ -11,7 +11,7 @@ this.legend_armor <- this.inherit("scripts/items/armor", {
 			{
 				continue;
 			}
-			value += u.getArmor();
+			value += u.getCondition();
 		}
 		return value;
 	}
@@ -25,7 +25,7 @@ this.legend_armor <- this.inherit("scripts/items/armor", {
 			{
 				continue;
 			}
-			value += u.getArmorMax();
+			value += u.getConditionMax();
 		}
 		return value;
 	}
@@ -366,9 +366,15 @@ this.legend_armor <- this.inherit("scripts/items/armor", {
 		{
 			local app = this.getContainer().getAppearance();
 			app.Armor = "";
+			app.ArmorLayerChain = "",
+			app.ArmorLayerPlate= "",
+			app.ArmorLayerCloak= "",
 			app.ArmorUpgradeFront = "";
 			app.ArmorUpgradeBack = "";
 			app.CorpseArmor = "";
+			app.CorpseArmorLayerChain = "",
+			app.CorpseArmorLayerPlate= "",
+			app.CorpseArmorLayerCloak= "",
 			app.CorpseArmorUpgradeFront = "";
 			app.CorpseArmorUpgradeBack = "";
 			app.HideBody = false;

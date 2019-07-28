@@ -32,6 +32,11 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
+
+		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/legend_gambeson"));
+		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/chain/legend_armor_hauberk"));
+		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/plate/legend_armor_plate"));
+		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/tabard/legend_armor_tabard_10"));
 	}
 
 	function onSpawnPlayer()

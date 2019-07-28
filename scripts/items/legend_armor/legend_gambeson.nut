@@ -1,4 +1,4 @@
-this.cloth_gambeson <- this.inherit("scripts/items/armor/layers/legend_armor", {
+this.legend_gambeson <- this.inherit("scripts/items/legend_armor/legend_armor", {
 	m = {},
 	function create()
 	{

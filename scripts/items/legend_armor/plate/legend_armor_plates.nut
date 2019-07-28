@@ -1,8 +1,9 @@
-this.legend_armor_plates <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
+this.legend_armor_plates <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
-		this.armor_upgrade.create();
+		this.legend_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
 		this.m.ID = "legend_armor.plates";
 		this.m.Name = "Metal Plates";
 		this.m.Description = "Heavy metal plates to be riveted upon lower armors. A very heavy armor that offers great protection.";
@@ -24,7 +25,7 @@ this.legend_armor_plates <- this.inherit("scripts/items/armor_upgrades/armor_upg
 
 	function getTooltip()
 	{
-		local result = this.armor_upgrade.getTooltip();
+		local result = this.legend_armor_upgrade.getTooltip();
 		result.push({
 			id = 14,
 			type = "text",
