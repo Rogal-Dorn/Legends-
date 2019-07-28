@@ -58,7 +58,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Beards = this.Const.Beards.Berserker;
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_04";
-		this.m.Level = 2;
+		this.m.Level = 4;
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;

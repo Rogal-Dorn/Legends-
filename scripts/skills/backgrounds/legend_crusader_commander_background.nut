@@ -47,7 +47,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 2;
+		this.m.Level = 4;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
 		this.m.IsUntalented = true;

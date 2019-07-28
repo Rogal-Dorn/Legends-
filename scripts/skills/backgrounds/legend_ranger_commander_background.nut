@@ -44,7 +44,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 2;
+		this.m.Level = 4;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 
@@ -208,7 +208,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			MeleeSkill = [
 				0,
-				0
+				5
 			],
 			RangedSkill = [
 				25,
@@ -216,7 +216,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			MeleeDefense = [
 				0,
-				0
+				5
 			],
 			RangedDefense = [
 				10,
