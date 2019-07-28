@@ -295,7 +295,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		local r;
 		items.equip(this.new("scripts/items/weapons/rondel_dagger"));
 		items.equip(this.new("scripts/items/armor/thick_dark_tunic"));
-		items.equip(this.new("scripts/items/helmets/dark_cowl"));
+		items.equip(this.new("scripts/items/helmets/hood"));
 	}
 
 	function onSerialize( _out )
