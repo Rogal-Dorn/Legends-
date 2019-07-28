@@ -1380,3 +1380,4 @@ Escape artist now makes Break Free always succeed and be cheaper, rather than be
 Brawlers hand to hand bonus reduced from +250% damage back to the intended +25% 
 Berserker, Crusader, Seer and Ranger begin at level 4 to make up for the harder early game. 
 Fixes tooltip error from Freedom of Movement
+Fixes Pitchfork skills not working, they now effect wooden pitchforks as well 
