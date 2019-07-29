@@ -19,7 +19,6 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local fm = this.Math.round(this.getChance() * 100);
 		local tooltip = this.skill.getTooltip();
 
 		{

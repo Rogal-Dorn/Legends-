@@ -19,11 +19,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onTurnStart()
-	{
-		this.getContainer().getActor().setHidden(false);
-		this.removeSelf();
-	}
+
 
 	function onMovementCompleted( _tile )
 	{

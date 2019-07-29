@@ -6,7 +6,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.assassin";
 		this.m.Name = "Assassin";
 		this.m.Icon = "ui/backgrounds/background_53.png";
-		this.m.BackgroundDescription = "";
+		this.m.BackgroundDescription = "This character has no history";
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 95;

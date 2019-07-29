@@ -52,7 +52,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-		this.m.Level = 2;
+		this.m.Level = 3;
 		this.m.IsUntalented = true;
 		this.m.IsEducatedBackground = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];

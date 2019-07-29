@@ -39,12 +39,28 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			"One Shot",
 			"Eagle Eye"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.UntidyMale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Body = "bust_naked_body_01";
-		this.m.Level = 2;
+		local r;
+		r = this.Math.rand(0, 3);
+		if (r == 0)
+			{
+			this.m.Faces = this.Const.Faces.PrettyFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			}
+		else
+			{
+			this.m.Faces = this.Const.Faces.AllMale;
+			this.m.Hairs = this.Const.Hair.TidyMale;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = this.Const.Beards.Tidy;
+			this.m.Body = "bust_naked_body_02";
+			}
+
+		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 
@@ -208,7 +224,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			MeleeSkill = [
 				0,
-				0
+				5
 			],
 			RangedSkill = [
 				25,
@@ -216,7 +232,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			MeleeDefense = [
 				0,
-				0
+				5
 			],
 			RangedDefense = [
 				10,
