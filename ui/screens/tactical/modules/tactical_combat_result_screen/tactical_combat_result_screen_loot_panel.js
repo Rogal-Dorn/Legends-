@@ -503,8 +503,7 @@ TacticalCombatResultScreenLootPanel.prototype.assignItemToSlot = function(_owner
 
         // assign image
         _slot.assignListItemImage(Path.ITEMS + _item[TacticalCombatResultScreenIdentifier.Item.ImagePath]);
-        if(_item['imageOverlayPath']) _slot.assignListItemOverlayImage(Path.ITEMS + _item['imageOverlayPath']);
-        else _slot.assignListItemOverlayImage();
+        _slot.assignListItemOverlayImage(_item['imageOverlayPath']);
 
         // show amount
          // show amount

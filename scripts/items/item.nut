@@ -90,12 +90,12 @@ this.item <- {
 
 	function getIconOverlay()
 	{
-		return "";
+		return [""];
 	}
 
 	function getIconLargeOverlay()
 	{
-		return "";
+		return [""];
 	}
 
 	function getDescription()

@@ -12,8 +12,6 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		Armor = null,
 		ConditionModifier = 0,
 		StaminaModifier = 0,
-		PreviousCondition = 0,
-		PreviousStamina = 0,
 		Type = -1,
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact
 	},

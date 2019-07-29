@@ -42,10 +42,6 @@ var ListItemIdentifier =
     emptyImage.attr('src', backgroundImage);
     imageLayer.append(emptyImage);
 
-    var overlayImage = $('<img/>');
-    overlayImage.attr('src', '');
-    imageLayer.append(overlayImage);
-
 	// repair layer
     var repairLayer = $('<div class="repair-layer display-none"/>');
     result.append(repairLayer);
@@ -79,7 +75,8 @@ var ListItemIdentifier =
     var itemData = this.data('item') || {};
     itemData.isEmpty = true;
     itemData.backgroundImage = backgroundImage;
-    itemData.overlay = overlayImage;
+    itemData.imageLayer = imageLayer;
+    itemData.overlays = [];
     result.data('item', itemData);
 
     this.append(result);
@@ -143,23 +140,31 @@ $.fn.assignListItemImage = function(_imagePath)
     }
 };
 
-$.fn.assignListItemOverlayImage = function(_imagePath)
+$.fn.assignListItemOverlayImage = function(_imagePaths)
 {
     var itemData = this.data('item');
-    var image = itemData.overlay;
+    var imageLayer = itemData.imageLayer;
 
-    if(_imagePath !== undefined)
+    var overlays = itemData.overlays;
+    overlays.forEach(function (overlay) {
+        overlay.remove();
+    });
+    overlays = [];
+    itemData.overlays = overlays
+
+    if (_imagePaths === undefined || _imagePaths === '' || _imagePaths.length === 0)
     {
-        image.attr('src', _imagePath);
-        image.removeClass('display-none');
-        image.addClass('display-block');
+        return;
     }
-    else
-    {
-        image.attr('src', '');
-        image.addClass('display-none');
-        image.removeClass('display-block');
-    }
+
+    _imagePaths.forEach(function (imagePath) {
+        if (imagePath === '') continue;
+        var overlayImage = $('<img/>');
+        overlayImage.attr('src', Path.ITEMS + imagePath);
+        overlayImage.addClass('display-block');
+        imageLayer.append(overlayImage);
+        overlays.push(overlayImage)
+    });
 };
 
 $.fn.assignListItemAmount = function(_value, _color)

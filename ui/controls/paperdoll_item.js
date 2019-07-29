@@ -44,10 +44,6 @@ var PaperdollItemIdentifier = {
     emptyImage.attr('src', backgroundImage);
     imageLayer.append(emptyImage);
 
-    var overlayImage = $('<img/>');
-    overlayImage.attr('src', '');
-    imageLayer.append(overlayImage);
-
     // locked layer
     var lockedLayer = $('<div class="locked-layer display-none"/>');
     result.append(lockedLayer);
@@ -81,7 +77,8 @@ var PaperdollItemIdentifier = {
     itemData.isEmpty = true;
     itemData.isImageSmall = false;
     itemData.backgroundImage = backgroundImage;
-    itemData.overlay = overlayImage;
+    itemData.imageLayer = imageLayer;
+    itemData.overlays = [];
     result.data('item', itemData);
 
     this.append(result);
@@ -151,33 +148,40 @@ $.fn.assignPaperdollItemImage = function(_imagePath, _imageIsSmall, _isBlocked)
     }
 };
 
-$.fn.assignPaperdollItemOverlayImage = function(_imagePath, _imageIsSmall, _isBlocked)
+$.fn.assignPaperdollItemOverlayImage = function(_imagePaths, _imageIsSmall, _isBlocked)
 {
     var itemData = this.data('item');
-    var image = itemData.overlay;
+    var imageLayer = itemData.imageLayer;
 
-    if (_imagePath !== undefined && _imagePath != '')
+    var overlays = itemData.overlays;
+    overlays.forEach(function (overlay) {
+        overlay.remove();
+    });
+    overlays = [];
+    itemData.overlays = overlays
+
+    if (_imagePaths === undefined || _imagePaths === '' || _imagePaths.length === 0)
     {
-        image.attr('src', _imagePath);
-        image.removeClass('display-none');
-        image.addClass('display-block');
+        return;
+    }
 
+    _imagePaths.forEach(function (imagePath) {
+        if (imagePath === '') continue;
+        var overlayImage = $('<img/>');
+        overlayImage.attr('src', Path.ITEMS + imagePath);
         if(itemData.isImageSmall === true)
-            image.addClass('is-small');
+            overlayImage.addClass('is-small');
         else
-            image.removeClass('is-small');
+            overlayImage.removeClass('is-small');
 
         if(_isBlocked !== undefined && _isBlocked === true)
-            image.addClass('is-blocked');
+            overlayImage.addClass('is-blocked');
         else
-            image.removeClass('is-blocked');
-    }
-    else
-    {
-        image.attr('src', '');
-        image.addClass('display-none');
-        image.removeClass('display-block');
-    }
+            overlayImage.removeClass('is-blocked');
+
+        imageLayer.append(overlayImage);
+        overlays.push(overlayImage)
+    })
 };
 
 $.fn.showPaperdollLockedImage = function(_value)

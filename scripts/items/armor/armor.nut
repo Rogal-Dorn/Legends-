@@ -49,12 +49,12 @@ this.armor <- this.inherit("scripts/items/item", {
 
 	function getIconOverlay()
 	{
-		return this.m.Upgrade != null ? this.m.Upgrade.getOverlayIcon() : "";
+		return this.m.Upgrade != null ? [this.m.Upgrade.getOverlayIcon()] : [""];
 	}
 
 	function getIconLargeOverlay()
 	{
-		return this.m.Upgrade != null ? this.m.Upgrade.getOverlayIconLarge() : "";
+		return this.m.Upgrade != null ? [this.m.Upgrade.getOverlayIconLarge()] : [""];
 	}
 
 	function getStaminaModifier()
