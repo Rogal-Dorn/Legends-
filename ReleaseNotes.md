@@ -1372,5 +1372,22 @@ Beta 12.4 Test 4
 *Adds new perk Escape Artist to Beast Hunters. Grants immunity to webs and nets.
 
 
+Beta 12.4.1
+Adds an Asssassin commander start, focused on stealth and damage 
+Camouflage no longer disapears at the end of turn, only disapearing when you attack or stand next to someone 
+Debilitate and Marked target now lasts three turns
+Escape artist now makes Break Free always succeed and be cheaper, rather than being immune to root
+Brawlers hand to hand bonus reduced from +250% damage back to the intended +25% 
+Berserker, Crusader, Seer and Ranger begin at level 3 to make up for the harder early game. 
+Crusader and Ranger have a 25% chance of being female 
+Fixes tooltip error from Freedom of Movement
+Fixes Pitchfork skills not working, they now effect wooden pitchforks as well 
+Fixes named crossbows being invisible in the inventory 
+Adds upgraded images for Large pack from LaikoSoM
+Fixes missing image for dazed effect
 
- 
+
+Beta 12.4.2
+*Fixes Break free perk crash
+*Fixes assassin scenario
+*Fixes burning witch event

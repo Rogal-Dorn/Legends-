@@ -302,7 +302,7 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_other.push(bro);
 
-				if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief")
+				if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief"  || bro.getBackground().getID() == "background.legend_commander_assassin")
 				{
 					candidates_thief.push(bro);
 				}

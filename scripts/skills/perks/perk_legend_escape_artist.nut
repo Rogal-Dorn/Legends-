@@ -13,9 +13,6 @@ this.perk_legend_escape_artist <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onUpdate( _properties )
-	{
-		_properties.IsImmuneToRoot = true;
-	}
+
 
 });

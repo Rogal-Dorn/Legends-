@@ -8,5 +8,4 @@ if (!("LegendMod" in gt.Const))
 	gt.Const.LegendMod <- {};
 }
 
-gt.Const.LegendMod.Beta10 <- true;
 gt.Const.LegendMod.Version <- "Legends Beta 0.13.0";

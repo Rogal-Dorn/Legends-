@@ -113,19 +113,16 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			{
 				this.World.Assets.addMoralReputation(3);
 				local brothers = this.World.getPlayerRoster().getAll();
-
-				this.Characters.push(_event.m.Monk.getImagePath());
+				
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"this.Const.CharacterFemaleBackgrounds"
-				]);
+				_event.m.Dude.setStartValuesEx(
+					this.Const.CharacterFemaleBackgrounds
+				);
 				_event.m.Dude.setTitle("the Roasted");
 				_event.m.Dude.getBackground().m.RawDescription = "While visiting " + _event.m.Town.getName() + ", you found %name% tied to a stake and set her free, now she fights with you and for her freedom";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
-
-
 
 				foreach( bro in brothers )
 				{

@@ -1,5 +1,7 @@
 this.legend_marked_target <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		TurnsLeft = 3
+	},
 	function create()
 	{
 		this.m.ID = "effects.legend_marked_target";
@@ -12,7 +14,10 @@ this.legend_marked_target <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 	
-
+	function getDescription()
+	{
+		return "This character has is a marked target and has [color=" + this.Const.UI.Color.NegativeValue + "] -20 [/color] ranged defense each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+	}
 
 	function onUpdate( _properties )
 	{
@@ -22,7 +27,10 @@ this.legend_marked_target <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		this.removeSelf();
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+		}
 	}
 
 });
