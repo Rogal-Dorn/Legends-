@@ -1385,3 +1385,9 @@ Fixes Pitchfork skills not working, they now effect wooden pitchforks as well
 Fixes named crossbows being invisible in the inventory 
 Adds upgraded images for Large pack from LaikoSoM
 Fixes missing image for dazed effect
+
+
+Beta 12.4.2
+*Fixes Break free perk crash
+*Fixes assassin scenario
+*Fixes burning witch event

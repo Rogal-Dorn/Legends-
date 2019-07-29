@@ -182,7 +182,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 
 			if (r == 0)
 			{
-				_list.push("assasssin_background");
+				_list.push("assassin_background");
 			}
 
 			local r;
