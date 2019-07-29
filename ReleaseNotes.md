@@ -1387,7 +1387,11 @@ Adds upgraded images for Large pack from LaikoSoM
 Fixes missing image for dazed effect
 
 
-Beta 12.4.2
+Beta 12.4.2 released on Nexus
 *Fixes Break free perk crash
 *Fixes assassin scenario
 *Fixes burning witch event
+
+
+
+Beta 13

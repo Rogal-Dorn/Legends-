@@ -71,12 +71,38 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function getIconOverlay()
 	{
-		return this.m.Upgrade != null ? this.m.Upgrade.getOverlayIcon() : "";
+		local L = [];
+		foreach (u in this.m.Upgrades)
+		{
+			if (u == null)
+			{
+				continue
+			}
+			L.push(u.getOverlayIcon())
+		}
+		if (L.len() == 0)
+		{
+			return [""];
+		}
+		return L;
 	}
 
 	function getIconLargeOverlay()
 	{
-		return this.m.Upgrade != null ? this.m.Upgrade.getOverlayIconLarge() : "";
+		local L = [];
+		foreach (u in this.m.Upgrades)
+		{
+			if (u == null)
+			{
+				continue
+			}
+			L.push(u.getOverlayIconLarge())
+		}
+		if (L.len() == 0)
+		{
+			return [""];
+		}
+		return L;
 	}
 
 	function getStaminaModifier()

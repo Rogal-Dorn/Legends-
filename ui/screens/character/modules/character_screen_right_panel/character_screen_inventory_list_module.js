@@ -755,8 +755,7 @@ CharacterScreenInventoryListModule.prototype.assignItemToSlot = function(_entity
 
         // assign image
         _slot.assignListItemImage(Path.ITEMS + _item[CharacterScreenIdentifier.Item.ImagePath]);
-        if(_item['imageOverlayPath']) _slot.assignListItemOverlayImage(Path.ITEMS + _item['imageOverlayPath']);
-        else _slot.assignListItemOverlayImage();
+        _slot.assignListItemOverlayImage(_item['imageOverlayPath']);
 
 		// show repair icon?
 		itemData.repair = _item['repair'];

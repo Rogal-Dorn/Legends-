@@ -962,8 +962,7 @@ CharacterScreenPaperdollModule.prototype.assignItemToSlot = function(_slot, _ent
         }
 
         _slot.Container.assignPaperdollItemImage(Path.ITEMS + _item[CharacterScreenIdentifier.Item.ImagePath], isSmall, isSlotBlocked);
-        if(_item['imageOverlayPath']) _slot.Container.assignPaperdollItemOverlayImage(Path.ITEMS + _item['imageOverlayPath'], isSmall, isSlotBlocked);
-        else _slot.Container.assignPaperdollItemOverlayImage('', isSmall, isSlotBlocked);
+        _slot.Container.assignPaperdollItemOverlayImage(_item['imageOverlayPath'], isSmall, isSlotBlocked);
 
 		// show amount
         if(!_isBlocked && _item['showAmount'] === true && _item[CharacterScreenIdentifier.Item.Amount] != '')

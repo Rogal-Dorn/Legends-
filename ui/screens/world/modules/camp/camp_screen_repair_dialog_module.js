@@ -763,8 +763,7 @@ CampScreenRepairDialogModule.prototype.assignItemToSlot = function(_owner, _slot
 
         // assign image
         _slot.assignListItemImage(Path.ITEMS + _item.imagePath);
-        if(_item['imageOverlayPath']) _slot.assignListItemOverlayImage(Path.ITEMS + _item['imageOverlayPath']);
-        else _slot.assignListItemOverlayImage();
+        _slot.assignListItemOverlayImage(_item['imageOverlayPath']);
 
         // show amount
         if(_item.showAmount === true && _item.amount != '')
