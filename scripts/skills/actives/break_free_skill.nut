@@ -45,6 +45,10 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local chance = this.Math.min(100, this.getContainer().getActor().getCurrentProperties().getMeleeSkill() - 10 + this.m.ChanceBonus);
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_escape_artist"))
+		{
+			chance = 100
+		} 
 		return [
 			{
 				id = 1,
@@ -103,7 +107,7 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 
 		if (rolled <= toHit || _user.getSkills().hasSkill("perk.legend_escape_artist"))
 		{
-			if (target.getSkills().hasSkill("perk.legend_escape_artist"))
+			if (_user.getSkills().hasSkill("perk.legend_escape_artist"))
 			{
 				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " effortlessly breaks free.");
 			}
