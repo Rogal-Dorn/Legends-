@@ -1391,3 +1391,6 @@ Beta 12.4.2
 *Fixes Break free perk crash
 *Fixes assassin scenario
 *Fixes burning witch event
+
+Beta 12.4.3
+*Fixes Break free chance tooltip and error in combat log.
