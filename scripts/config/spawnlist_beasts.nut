@@ -3369,7 +3369,7 @@ gt.Const.World.Spawn.Ghouls <- [
 				Num = 3
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
 				Num = 1
 			},
 			{
@@ -3386,11 +3386,11 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Type = this.Const.World.Spawn.Troops.Ghoul,
 				Num = 18
 			}
 		]
@@ -3420,28 +3420,11 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
 				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 				Num = 4
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
 				Num = 1
 			},
 			{
@@ -3466,24 +3449,7 @@ gt.Const.World.Spawn.Ghouls <- [
 				Num = 16
 			}
 		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
+	}
 	{
 		Cost = 0,
 		MovementSpeedMult = 1.0,
@@ -3496,7 +3462,7 @@ gt.Const.World.Spawn.Ghouls <- [
 				Num = 5
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
 				Num = 1
 			},
 			{
@@ -3530,23 +3496,6 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
 				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 				Num = 6
 			},
@@ -3585,23 +3534,6 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
 				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 				Num = 7
 			},
@@ -3623,45 +3555,11 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 7
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
 				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 				Num = 8
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Ghoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
 				Num = 16
 			}
 		]
@@ -3712,23 +3610,6 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
 				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 				Num = 9
 			},
@@ -3750,45 +3631,11 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 9
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 14
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
 				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 				Num = 10
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Ghoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 10
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
 				Num = 16
 			}
 		]
@@ -3827,40 +3674,6 @@ gt.Const.World.Spawn.Ghouls <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Ghoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 11
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 11
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
 				Num = 16
 			}
 		]
@@ -3899,23 +3712,6 @@ gt.Const.World.Spawn.Ghouls <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Ghoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 12
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
 				Num = 16
 			}
 		]
@@ -3953,40 +3749,6 @@ gt.Const.World.Spawn.Ghouls <- [
 				Num = 13
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.Ghoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 13
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
-				Num = 13
-			},
-			{
 				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
 				Num = 4
 			},
@@ -4009,23 +3771,6 @@ gt.Const.World.Spawn.Ghouls <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Ghoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 14
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
 				Num = 16
 			}
 		]
@@ -4064,23 +3809,6 @@ gt.Const.World.Spawn.Ghouls <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Ghoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 15
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
 				Num = 16
 			}
 		]
@@ -4131,23 +3859,6 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
-				Num = 16
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
-				Num = 16
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_ghoul_01",
-		Troops = [
-			{
 				Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 				Num = 16
 			},
@@ -4194,7 +3905,7 @@ gt.Const.World.Spawn.Ghouls <- [
 				Num = 16
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 				Num = 9
 			},
 			{
@@ -4337,7 +4048,7 @@ gt.Const.World.Spawn.Ghouls <- [
 		Body = "figure_ghoul_01",
 		Troops = [
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 				Num = 16
 			},
 			{
@@ -13363,7 +13074,7 @@ gt.Const.World.Spawn.LegendHexeLeader <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 				Num = 4
 			},
 			{
@@ -13453,7 +13164,7 @@ gt.Const.World.Spawn.LegendHexeLeader <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 				Num = 4
 			},
 			{
@@ -13498,7 +13209,7 @@ gt.Const.World.Spawn.LegendHexeLeader <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 				Num = 4
 			},
 			{
@@ -13539,7 +13250,7 @@ gt.Const.World.Spawn.LegendHexeLeader <- [
 				Num = 1
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendSkinGhoul,
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 				Num = 4
 			},
 			{
