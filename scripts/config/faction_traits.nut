@@ -63,6 +63,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/legend_hunting_greenwood_schrats_action",
 			"scripts/factions/contracts/legend_hunting_demon_alps_action",
 			"scripts/factions/contracts/legend_hunting_coven_leader_action",
+			"scripts/factions/contracts/legend_hunting_skin_ghouls_action",
 		],
 		[],
 		[
@@ -91,6 +92,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/legend_hunting_greenwood_schrats_action",
 			"scripts/factions/contracts/legend_hunting_demon_alps_action",
 			"scripts/factions/contracts/legend_hunting_coven_leader_action",
+			"scripts/factions/contracts/legend_hunting_skin_ghouls_action",
 			"scripts/factions/actions/send_caravan_action",
 			"scripts/factions/actions/send_peasants_action",
 			"scripts/factions/actions/defend_militia_action",

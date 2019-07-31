@@ -1392,5 +1392,6 @@ Beta 12.4.2
 *Fixes assassin scenario
 *Fixes burning witch event
 
-Beta 12.4.3
+Beta 12.4.3 Released on Nexus
 *Fixes Break free chance tooltip and error in combat log.
+
