@@ -32,6 +32,5 @@ this.perk_legend_specialist_ninetails_damage <- this.inherit("scripts/skills/ski
 			}
 		}
 	}
-	}
 
 });
