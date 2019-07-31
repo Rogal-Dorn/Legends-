@@ -1397,6 +1397,7 @@ Beta 12.4.3 Released on Nexus
 
 Beta 12.4.4 
 Perk descriptions updated to show perk groups, making the dynamic perks system more transparent
+Mind over body now has falloff. 100 resolve halves your fatigue, 150 resolve thirds your fatigue, 200 resolve would quarter your fatigue. 
 Polearm group fixed to give Executioner instead of Slaughterer 
 All class weapon skills have standardised bonuses and apply to others in their class. 
 Butcher's Strikes from 10-15 to 4-12 damage. 25% of this perk applies to other One handed cleavers except whips 
