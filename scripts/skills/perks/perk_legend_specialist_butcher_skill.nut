@@ -17,9 +17,16 @@ this.perk_legend_specialist_butcher_skill <- this.inherit("scripts/skills/skill"
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.butchers_cleaver")
+		if (item != null)
 		{
-			_properties.MeleeSkill += 15;
+			if(item.getID() == "weapon.butchers_cleaver")
+			{
+			_properties.MeleeSkill += 12;
+			}
+			if(item.getID() == "weapon.scramasax" || item.getID() == "weapon.military_cleaver" || item.getID() == "weapon.orc_cleaver"  || item.getID() == "weapon.falx"   || item.getID() == "weapon.khopesh"  || item.getID() == "weapon.antler_cleaver"  || item.getID() == "weapon.named_cleaver"  || item.getID() == "weapon.named_kopesh"  || item.getID() == "weapon.named_kopesh" || item.getID() == "weapon.named_orc_cleaver")
+			{
+			_properties.MeleeSkill += 3;
+			}
 		}
 	}
 

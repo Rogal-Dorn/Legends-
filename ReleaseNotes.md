@@ -1393,5 +1393,40 @@ Beta 12.4.2 released on Nexus
 *Fixes burning witch event
 
 
+Beta 12.4.3 Released on Nexus
+*Fixes Break free chance tooltip and error in combat log.
+
+Beta 12.5 Test 1
+Perk descriptions updated to show perk groups, making the dynamic perks system more transparent
+Adds Skin Ghoul contracts 
+Mind over body now has falloff. 100 resolve halves your fatigue, 150 resolve thirds your fatigue, 200 resolve would quarter your fatigue. 
+Polearm group fixed to give Executioner instead of Slaughterer 
+All class weapon perks have standardised bonuses and apply to others weapons of that type. 
+Butcher's Strikes from 10-15 to 4-12 damage. 25% of this perk applies to other One handed cleavers except whips 
+Butcher's Fillet from 15 to 12 melee skill to 25% of this perk applies to other One handed cleavers except whips 
+Blacksmith's Heavy Hammer from 5-15 to 4-12 damage. 25% of this perk applies to other One Handed Hammers
+Blacksmith's Technique from 15 skill and 50% armor damage to 12 skill and 40% armor damage. 25% of this perk applies to other One Handed Hammers
+Knife Fighting from 5-15 damage to 4-12 damage. 25% of this perk applies to other daggers
+Prisoner's Rush from 15 skill and 50% direct damage to 12 skill and 40% direct damage. 25% of this perk applies to other daggers
+Militia Training from 5-10 damage to 4-12 damage. 25% of this skill applies to other one handed spears 
+Militia Practice from 15 skill to 12 skill. 25% applies to other One handed spears 
+Flesh Mortification from 5-15 to 4-12 damage. 25% applies to other whips 
+Scourging from 15 to 12 skill. 25% applies to other whips 
+Miner's Strikes from 5-10 damage to 4-12 damage. 25% applies to Two handed hammers 
+Ore Hunter from 15 to 12 skill. 25% applies to Two Handed Hammers 
+Stable Shoveler from 10-20 damage to 4-12 damage. Also applies to Wooden Pitchfork, Hoe, Scyth and Wooden Flail. 25% applies to other Polearms
+Hay Bailing from 15 skill to 12 skill. Also applies to Wooden Pitchfork, Hoe, Scyth and Wooden Flail. 25% applies to other Polearms
+Small Game from 10-20 to 4-12 damage. Also applies to Goblin Bows and Wonky Bows. 25% applies to other bows
+Poacher's arm from 15 skill to 12 skill. Also applies to Goblin Bows and Wonky Bows. 25% applies to other bows
+Dig Deep from 10-20 to 4-12 damage. 25% applies to two handed maces 
+Gravesman from 15 skill to 12. 25% applies to two handed maces 
+Timber! 10-20 damage to 4-12 damage. Applies to Saws. 25% applies to other Axes 
+Woodsman's Cuts from 15 skill to 12. Applies to Saws. 25% applies to other Axes
+Lumberjacks can now spawn with a saw 
+Gatherer's Cuts from 15-25 damage to 4-12 damage. Applies to Goblin Notched Blade. 25% applies to One Handed Sword
+Harvest Twist from 15 skill to 12 skill. Applies to Goblin Notched Blade. 25% applies to One Handed Sword
+Heavy Rocks from 10-30 damage to 4-12 damage. 
+Slingers Spins from now correctly gives 12 Ranged skill
+
 
 Beta 13

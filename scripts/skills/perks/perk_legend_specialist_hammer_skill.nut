@@ -17,10 +17,18 @@ this.perk_legend_specialist_hammer_skill <- this.inherit("scripts/skills/skill",
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.legend_hammer")
+		if (item != null)
 		{
-		_properties.MeleeSkill += 15;
-		_properties.DamageArmorMult += 0.5;
+			if(item.getID() == "weapon.legend_hammer")
+			{
+			_properties.MeleeSkill += 12;
+			_properties.DamageArmorMult += 0.4;
+			}
+			if(item.getID() == "weapon.warhammer" ||  item.getID() == "weapon.military_pick" ||  item.getID() == "weapon.axehammer" || item.getID() == "weapon.named_warhammer" ||  item.getID() == "weapon.pickaxe")
+			{
+			_properties.MeleeSkill += 3;
+			_properties.DamageArmorMult += 0.1;
+			}
 		}
 	}
 

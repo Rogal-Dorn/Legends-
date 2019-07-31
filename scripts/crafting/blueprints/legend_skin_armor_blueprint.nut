@@ -26,7 +26,7 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	
 	function onCraft( _stash )
 	{
-		local item = this.new("scripts/items/armor/legendary/legend_skin_helmet");
+		local item = this.new("scripts/items/armor/legendary/legend_skin_armor");
 		item.m.Name = "";
 		_stash.add(item);
 	}

@@ -21,7 +21,19 @@ this.legend_hunting_skin_ghouls_action <- this.inherit("scripts/factions/faction
 			return;
 		}
 
-		if (_faction.getSettlements()[0].isIsolated() || _faction.getSettlements()[0].getSize() > 2)
+		if (this.World.Assets.getBusinessReputation() < 900)
+		{
+			return;
+		}
+
+		local village = _faction.getSettlements()[0];
+
+		if (village.isIsolated() || village.getSize() > 2)
+		{
+			return;
+		}
+
+		if (this.isKindOf(village, "small_snow_village") || this.isKindOf(village, "medium_snow_village"))
 		{
 			return;
 		}
