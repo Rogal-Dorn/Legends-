@@ -19,8 +19,8 @@ this.perk_legend_specialist_sling_damage <- this.inherit("scripts/skills/skill",
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null && (item.getID() == "weapon.legend_sling" || item.getID() == "weapon.legend_slingstaff" || item.getID() == "weapon.staff_sling"))
 		{
-			_properties.DamageRegularMin += 10;
-			_properties.DamageRegularMax += 30;
+			_properties.DamageRegularMin += 4;
+			_properties.DamageRegularMax += 12;
 		}
 	}
 

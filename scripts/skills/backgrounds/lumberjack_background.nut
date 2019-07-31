@@ -147,7 +147,7 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 2);
+		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
@@ -160,6 +160,10 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_saw"));
 		}
 
 		r = this.Math.rand(0, 2);

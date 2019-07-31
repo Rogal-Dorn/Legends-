@@ -19,8 +19,43 @@ this.perk_legend_specialist_knife_skill <- this.inherit("scripts/skills/skill", 
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null && item.getID() == "weapon.knife")
 		{
-			_properties.MeleeSkill += 15;
-			_properties.DamageDirectMult += 0.5;
+			_properties.MeleeSkill += 12;
+			_properties.DamageDirectMult += 0.4;
+		}
+
+	if (item != null && item.getID() == "weapon.dagger" )
+		{
+			_properties.MeleeSkill += 3;
+			_properties.DamageDirectMult += 0.1;
+		}
+
+		if (item != null && item.getID() == "weapon.rondel_dagger" )
+		{
+			_properties.MeleeSkill += 3;
+			_properties.DamageDirectMult += 0.1;
+		}
+
+		if (item != null && item.getID() == "weapon.named_dagger" )
+		{
+			_properties.MeleeSkill += 3;
+			_properties.DamageDirectMult += 0.1;
+		}
+
+		if (item != null && item.getID() == "weapon.obsidian_dagger" )
+		{
+			_properties.MeleeSkill += 3;
+			_properties.DamageDirectMult += 0.1;
+		}
+
+		if (item != null && item.getID() == "weapon.legend_redback_dagger" )
+		{
+			_properties.MeleeSkill += 3;
+			_properties.DamageDirectMult += 0.1;
+		}
+		if (item != null && item.getID() == "weapon.goblin_notched_blade" )
+		{
+			_properties.MeleeSkill += 3;
+			_properties.DamageDirectMult += 0.1;
 		}
 	}
 

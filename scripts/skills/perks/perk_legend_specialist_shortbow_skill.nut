@@ -19,8 +19,48 @@ this.perk_legend_specialist_shortbow_skill <- this.inherit("scripts/skills/skill
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null && item.getID() == "weapon.short_bow")
 		{
-			_properties.RangedSkill += 15;
-			_properties.DamageArmorMult *= 1.25;
+			_properties.RangedSkill += 12;
+			_properties.DamageDirectMult *= 1.25;
+		}
+		if (item != null && item.getID() == "weapon.goblin_bow")
+		{
+			_properties.RangedSkill += 12;
+			_properties.DamageDirectMult *= 1.25;
+		}
+		if (item != null && item.getID() == "weapon.wonky_bow")
+		{
+			_properties.RangedSkill += 12;
+			_properties.DamageDirectMult *= 1.25;
+		}
+		if (item != null && item.getID() == "weapon.hunting_bow")
+		{
+			_properties.RangedSkill += 3;
+			_properties.DamageDirectMult *= 1.08;
+		}
+		if (item != null && item.getID() == "weapon.masterwork_bow")
+		{
+			_properties.RangedSkill += 3;
+			_properties.DamageDirectMult *= 1.08;
+		}
+		if (item != null && item.getID() == "weapon.war_bow")
+		{
+			_properties.RangedSkill += 3;
+			_properties.DamageDirectMult *= 1.08;
+		}
+		if (item != null && item.getID() == "weapon.goblin_heavy_bow")
+		{
+			_properties.RangedSkill += 3;
+			_properties.DamageDirectMult *= 1.08;
+		}
+		if (item != null && item.getID() == "weapon.named_goblin_heavy_bow")
+		{
+			_properties.RangedSkill += 3;
+			_properties.DamageDirectMult *= 1.08;
+		}
+		if (item != null && item.getID() == "weapon.named_warbow")
+		{
+			_properties.RangedSkill += 3;
+			_properties.DamageDirectMult *= 1.08;
 		}
 	}
 
