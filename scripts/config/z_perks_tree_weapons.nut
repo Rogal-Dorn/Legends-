@@ -28,7 +28,7 @@ gt.Const.Perks.FlailTree <- {
 		"flails"
 	],
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.ShieldAvoidance],
+		[],
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecFlail],
@@ -44,7 +44,7 @@ gt.Const.Perks.HammerTree <- {
 		"hammers"
 	],
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.DestroyArmor
+		[],
 		[gt.Const.Perks.PerkDefs.LegendSmackdown],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecHammer],
@@ -139,7 +139,7 @@ gt.Const.Perks.PolearmTree <- {
 	],
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.Slaughterer],
+		[gt.Const.Perks.PerkDefs.CoupDeGrace],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecPolearm],
 		[gt.Const.Perks.PerkDefs.ReachAdvantage],
@@ -170,7 +170,7 @@ gt.Const.Perks.CrossbowTree <- {
 		"crossbows"
 	],
 	Tree = [
-		[],//gt.Const.Perks.PerkDefs.ArmorPierce
+		[],
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecCrossbow],

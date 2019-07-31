@@ -17,10 +17,18 @@ this.perk_legend_specialist_hammer_damage <- this.inherit("scripts/skills/skill"
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.legend_hammer")
+		if (item != null)
 		{
-			_properties.DamageRegularMin += 5;
-			_properties.DamageRegularMax += 15;
+			if(item.getID() == "weapon.legend_hammer")
+			{
+			_properties.DamageRegularMin += 4;
+			_properties.DamageRegularMax += 12;
+			}
+			if(item.getID() == "weapon.warhammer" ||  item.getID() == "weapon.axehammer" || item.getID() == "weapon.named_warhammer" ||  item.getID() == "weapon.pickaxe")
+			{
+			_properties.DamageRegularMin += 1;
+			_properties.DamageRegularMax += 3;
+			}
 		}
 	}
 

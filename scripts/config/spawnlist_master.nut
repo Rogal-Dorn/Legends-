@@ -870,13 +870,21 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_white_direwolf"
 	},
-	LegendSkinGhoul = {
+	LegendSkinGhoulLOW = {
 		ID = this.Const.EntityType.LegendSkinGhoul,
 		Variant = 0,
 		Strength = 50,
 		Cost = 50,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_skin_ghoul"
+	},
+	LegendSkinGhoulMED = {
+		ID = this.Const.EntityType.LegendSkinGhoul,
+		Variant = 0,
+		Strength = 75,
+		Cost = 100,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_skin_ghoul_med"
 	},
 	LegendSkinGhoulHIGH = {
 		ID = this.Const.EntityType.LegendSkinGhoul,

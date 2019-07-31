@@ -17,9 +17,16 @@ this.perk_legend_specialist_woodaxe_skill <- this.inherit("scripts/skills/skill"
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.woodcutters_axe")
+		if (item != null)
 		{
-		_properties.MeleeSkill += 15;
+			if(item.getID() == "weapon.woodcutters_axe" || item.getID() == "weapon.legend_saw")
+			{
+			_properties.MeleeSkill += 12;
+			}
+			if(item.getID() == "weapon.hand_axe" || item.getID() == "weapon.orc_axe"  || item.getID() == "weapon.fighting_axe"  || item.getID() == "weapon.throwing_axe"  || item.getID() == "weapon.orc_axe_2h"  || item.getID() == "weapon.named_axe"  || item.getID() == "weapon.axehammer"  || item.getID() == "weapon.crude_axe"  || item.getID() == "weapon.heavy_rusty_axe"  || item.getID() == "weapon.heavy_throwing_axe" || item.getID() == "weapon.named_heavy_rusty_axe" || item.getID() == "weapon.named_orc_axe" || item.getID() == "weapon.named_greataxe" || item.getID() == "weapon.greataxe" || item.getID() == "weapon.legend_hoe")
+			{
+			_properties.MeleeSkill += 3;
+			}
 		}
 	}
 
