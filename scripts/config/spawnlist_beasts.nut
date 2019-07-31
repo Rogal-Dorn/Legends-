@@ -14939,6 +14939,7 @@ gt.Const.World.Spawn.LegendSkinGhouls <- [
 				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
 				Num = 3
 			}
+		]
 	},
 	{
 		Cost = 0,
