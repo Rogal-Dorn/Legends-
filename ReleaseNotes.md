@@ -1395,11 +1395,12 @@ Beta 12.4.2
 Beta 12.4.3 Released on Nexus
 *Fixes Break free chance tooltip and error in combat log.
 
-Beta 12.4.4 
+Beta 12.5 Test 1
 Perk descriptions updated to show perk groups, making the dynamic perks system more transparent
+Adds Skin Ghoul contracts 
 Mind over body now has falloff. 100 resolve halves your fatigue, 150 resolve thirds your fatigue, 200 resolve would quarter your fatigue. 
 Polearm group fixed to give Executioner instead of Slaughterer 
-All class weapon skills have standardised bonuses and apply to others in their class. 
+All class weapon perks have standardised bonuses and apply to others weapons of that type. 
 Butcher's Strikes from 10-15 to 4-12 damage. 25% of this perk applies to other One handed cleavers except whips 
 Butcher's Fillet from 15 to 12 melee skill to 25% of this perk applies to other One handed cleavers except whips 
 Blacksmith's Heavy Hammer from 5-15 to 4-12 damage. 25% of this perk applies to other One Handed Hammers
