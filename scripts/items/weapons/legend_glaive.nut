@@ -21,7 +21,7 @@ this.legend_glaive <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ConditionMax = 64.0;
 		this.m.StaminaModifier = -12;
 		this.m.RegularDamage = 40;
-		this.m.RegularDamageMax = 55;
+		this.m.RegularDamageMax = 45;
 		this.m.ArmorDamageMult = 0.95;
 		this.m.DirectDamageMult = 0.25;
 	}
