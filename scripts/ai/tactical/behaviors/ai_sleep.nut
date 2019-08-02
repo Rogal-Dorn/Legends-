@@ -106,14 +106,15 @@ this.ai_sleep <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( o in _targets )
 		{
-			local opponentTile = o.Actor.getTile();
+			local target = o.Actor;
+			local targetTile = target.getTile();
 
-			if (myTile.getDistanceTo(opponentTile) > this.m.Skill.getMaxRange())
+			if (myTile.getDistanceTo(targetTile) > this.m.Skill.getMaxRange())
 			{
 				continue;
 			}
 
-			if (!this.m.Skill.isUsableOn(opponentTile))
+			if (!this.m.Skill.isUsableOn(targetTile))
 			{
 				continue;
 			}
@@ -129,114 +130,31 @@ this.ai_sleep <- this.inherit("scripts/ai/tactical/behavior", {
 				time = this.Time.getExactTime();
 			}
 
-			local score = 0.0;
-			local targets = [
-				o.Actor
-			];
+			local score = 10;
+			score = score + (this.m.Skill.getMaxRange() - myTile.getDistanceTo(targetTile));
+			score = score + this.Const.AI.Behavior.SleepZOCBonus * targetTile.getZoneOfControlCountOtherThan(target.getAlliedFactions());
+			score = score * this.queryTargetValue(_entity, target, null);
 
-			for( local i = 0; i < 6; i = ++i )
+			if (!target.isTurnDone())
 			{
-				if (!opponentTile.hasNextTile(i))
-				{
-				}
-				else
-				{
-					local adjacentTile = opponentTile.getNextTile(i);
+				score = score * this.Const.AI.Behavior.SleepStillToActMult;
 
-					if (!adjacentTile.IsOccupiedByActor)
+				foreach( other_target in _targets )
+				{
+					local other = other_target.Actor;
+
+					if (other.getID() == target.getID() || !this.isKindOf(other.get(), "player"))
 					{
+						continue;
 					}
-					else
-					{
-						local entity = adjacentTile.getEntity();
 
-						if (entity.getCurrentProperties().IsStunned)
-						{
-						}
-						else if (entity.isAlliedWith(_entity))
-						{
-						}
-						else
-						{
-							targets.push(entity);
-						}
+					local d = other.getTile().getDistanceTo(targetTile);
+
+					if (other.getTile().getDistanceTo(targetTile) <= 2 && other.getSkills().hasSkill("effects.sleeping"))
+					{
+						score = score * this.Const.AI.Behavior.SleepCanWakeOthersMult;
 					}
 				}
-			}
-
-			local numAffected = 0;
-
-			foreach( target in targets )
-			{
-				if (target.getMoraleState() == this.Const.MoraleState.Ignore || target.getMoraleState() == this.Const.MoraleState.Fleeing)
-				{
-					continue;
-				}
-
-				local targetTile = target.getTile();
-				local target_score = this.m.Skill.getMaxRange() - myTile.getDistanceTo(opponentTile);
-
-				if (myTile.getDistanceTo(opponentTile) <= target.getIdealRange())
-				{
-					target_score = target_score + this.Const.AI.Behavior.HorrorAttackingMeBonus;
-				}
-
-				target_score = target_score + this.Const.AI.Behavior.HorrorZOCBonus * target.getTile().getZoneOfControlCountOtherThan(target.getAlliedFactions());
-
-				if (target.getMoraleState() == this.Const.MoraleState.Breaking)
-				{
-					target_score = target_score + this.Const.AI.Behavior.HorrorAlmostFleeingBonus;
-				}
-
-				target_score = target_score * (1.0 - this.Math.minf(1.0, target.getCurrentProperties().getBravery() * 0.01));
-				target_score = target_score * (1.0 / target.getCurrentProperties().MoraleCheckBraveryMult[this.Const.MoraleCheckType.MentalAttack]);
-				target_score = target_score * target.getCurrentProperties().TargetAttractionMult;
-
-				if (!target.isTurnDone())
-				{
-					local targetTile = target.getTile();
-
-					foreach( other_target in _targets )
-					{
-						local other = other_target.Actor;
-
-						if (other.getID() == target.getID() || !this.isKindOf(other.get(), "player"))
-						{
-							continue;
-						}
-
-						local d = other.getTile().getDistanceTo(targetTile);
-
-						if (other.getTile().getDistanceTo(targetTile) <= 2 && (other.getSkills().hasSkill("effects.sleeping") || other.getSkills().hasSkill("effects.nightmare")))
-						{
-							target_score = target_score * this.Const.AI.Behavior.SleepCanWakeOthersMult;
-						}
-					}
-				}
-
-				for( local i = 0; i < 6; i = ++i )
-				{
-					if (!targetTile.hasNextTile(i))
-					{
-					}
-					else
-					{
-						local nextTile = targetTile.getNextTile(i);
-
-						if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAlliedWith(target) && (nextTile.getEntity().getSkills().hasSkill("effects.sleeping") || nextTile.getEntity().getSkills().hasSkill("effects.nightmare")))
-						{
-							target_score = target_score * this.Const.AI.Behavior.SleepCanWakeOthersMult;
-						}
-					}
-				}
-
-				score = score + target_score;
-				numAffected = ++numAffected;
-			}
-
-			if (numAffected > 1)
-			{
-				score = score * this.Math.pow(this.Const.AI.Behavior.RootNumAffectedPOW, numAffected - 1);
 			}
 
 			if (score > bestScore)

@@ -62,7 +62,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/warbrand",
 				"weapons/longsword",
 				"weapons/hand_axe",
-				"weapons/boar_spear",
+				"weapons/fighting_spear",
 				"weapons/morning_star",
 				"weapons/falchion",
 				"weapons/arming_sword",

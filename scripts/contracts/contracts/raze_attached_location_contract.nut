@@ -279,7 +279,7 @@ this.raze_attached_location_contract <- this.inherit("scripts/contracts/contract
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Let\'s talk money. | How much crowns are we talking about? | What will the pay be? | For the right price, everything can be done.}",
+					Text = "{Let\'s talk money. | How many crowns are we talking about? | What will the pay be? | For the right price, everything can be done.}",
 					function getResult()
 					{
 						return "Negotiation";

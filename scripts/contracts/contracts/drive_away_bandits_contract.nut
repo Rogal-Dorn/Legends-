@@ -245,7 +245,7 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{How much crowns are we talking about? | What is %townname% prepared to pay for their safety? | Let\'s talk money.}",
+					Text = "{How many crowns are we talking about? | What is %townname% prepared to pay for their safety? | Let\'s talk money.}",
 					function getResult()
 					{
 						return "Negotiation";

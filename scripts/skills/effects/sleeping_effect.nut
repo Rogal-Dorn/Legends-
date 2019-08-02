@@ -1,7 +1,8 @@
 this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsSleeping = 0,
-		TurnApplied = 0
+		TurnApplied = 0,
+		TurnsLeft = 3
 	},
 	function getTurnsSleeping()
 	{
@@ -39,8 +40,7 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		local wakeUpChance = this.Math.floor(this.getContainer().getActor().getCurrentProperties().getBravery() * 0.25) + this.m.TurnsSleeping * 10;
-		return "This character has fallen into unnatural sleep and is unable to act. There is a [color=" + this.Const.UI.Color.PositiveValue + "]" + wakeUpChance + "%[/color] chance each turn based on this character\'s resolve and how long they\'ve been asleep that they will wake up on their own. The character will also wake up when taking damage, or when forcibly awoken by nearby allies.\n\nThe higher a character\'s resolve, the higher the chance to resist the urge to sleep.";
+		return "This character has fallen into unnatural sleep and is unable to act. They\'ll wake up after [color=" + this.Const.UI.Color.NegativeValue + "]" + (this.m.TurnsLeft - 1) + "[/color] more turn(s), but can also be forcibly awoken by allies and will wake up when taking any amount of damage.\n\nThe higher a character\'s resolve, the higher the chance to resist the urge to sleep.";
 	}
 
 	function getTooltip()
@@ -60,7 +60,13 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 				id = 9,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-300[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-100[/color] Initiative"
+			},
+			{
+				id = 9,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Can take damage from Alps"
 			}
 		];
 	}
@@ -81,34 +87,18 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.0, this.getContainer().getActor().getPos());
 		}
+
+		this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
 	}
 
 	function onBeforeActivation()
 	{
-		local wakeUpChance = this.Math.floor(this.getContainer().getActor().getCurrentProperties().getBravery() * 0.25) + this.m.TurnsSleeping * 10;
-		local everyoneSleeping = true;
-		local allies = this.Tactical.Entities.getInstancesOfFaction(this.getContainer().getActor().getFaction());
+		++this.m.TurnsSleeping;
 
-		foreach( a in allies )
-		{
-			if (a.getID() == this.getContainer().getActor().getID())
-			{
-				continue;
-			}
-
-			if (!a.getSkills().hasSkill("effects.sleep") && !a.getSkills().hasSkill("effects.nightmare"))
-			{
-				everyoneSleeping = false;
-				break;
-			}
-		}
-
-		if (everyoneSleeping && allies.len() >= 3 || this.Math.rand(1, 100) < wakeUpChance)
+		if (--this.m.TurnsLeft <= 0)
 		{
 			this.removeSelf();
 		}
-
-		++this.m.TurnsSleeping;
 	}
 
 	function onTurnStart()
@@ -159,7 +149,7 @@ this.sleeping_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		_properties.IsStunned = true;
-		_properties.Initiative -= 300;
+		_properties.Initiative -= 100;
 
 		if (actor.hasSprite("status_stunned"))
 		{

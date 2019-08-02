@@ -30,6 +30,7 @@ this.goblin_shaman_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_root"));

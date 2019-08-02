@@ -5,9 +5,13 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "racial.alp";
-		this.m.Name = "Existing partly in dreams";
-		this.m.Description = "TODO";
+		this.m.Name = "";
+		this.m.Description = "";
 		this.m.Icon = "skills/status_effect_81.png";
+		this.m.SoundOnUse = [
+			"sounds/enemies/ghost_death_01.wav",
+			"sounds/enemies/ghost_death_02.wav"
+		];
 		this.m.Type = this.Const.SkillType.Racial | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
 		this.m.IsActive = false;
@@ -49,6 +53,50 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 		else if (_skill.getID() == "actives.wardog_bite" || _skill.getID() == "actives.wolf_bite" || _skill.getID() == "actives.warhound_bite")
 		{
 			_properties.DamageReceivedRegularMult *= 0.33;
+		}
+	}
+
+	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
+	{
+		local actor = this.getContainer().getActor();
+
+		if (_damageHitpoints >= actor.getHitpoints())
+		{
+			return;
+		}
+
+		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill);
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), null);
+	}
+
+	function onDeath()
+	{
+		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill);
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), null);
+	}
+
+	function teleport( _tag )
+	{
+		local allies = this.Tactical.Entities.getAllInstancesAsArray();
+
+		foreach( a in allies )
+		{
+			if (a.getHitpoints() > 0 && a.getType() == this.Const.EntityType.Alp)
+			{
+				if (!a.getAIAgent().hasKnownOpponent())
+				{
+					local strategy = a.getAIAgent().getStrategy().update();
+
+					do
+					{
+					}
+					while (!resume strategy);
+				}
+
+				local b = a.getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AlpTeleport);
+				b.onEvaluate(a);
+				b.onExecute(a);
+			}
 		}
 	}
 

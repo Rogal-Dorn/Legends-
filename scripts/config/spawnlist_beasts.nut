@@ -2194,6 +2194,308 @@ gt.Const.World.Spawn.Alps <- [
 				Num = 10
 			}
 		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 11
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 12
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 7
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 8
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 9
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 10
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 11
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 12
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 7
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 8
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 9
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 10
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 11
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 12
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 1
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 2
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Direwolf,
+				Num = 4
+			}
+		]
 	}
 ];
 gt.Const.World.Spawn.Schrats <- [

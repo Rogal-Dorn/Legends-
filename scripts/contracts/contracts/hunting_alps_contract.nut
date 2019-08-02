@@ -19,7 +19,7 @@ this.hunting_alps_contract <- this.inherit("scripts/contracts/contract", {
 
 	function start()
 	{
-		this.m.Payment.Pool = 650 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 600 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
@@ -172,7 +172,7 @@ this.hunting_alps_contract <- this.inherit("scripts/contracts/contract", {
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{How much crowns can you muster? | Let\'s talk pay. | Let\'s talk crowns. | We could look into this. For the right price.}",
+					Text = "{How many crowns can you muster? | Let\'s talk pay. | Let\'s talk crowns. | We could look into this. For the right price.}",
 					function getResult()
 					{
 						return "Negotiation";

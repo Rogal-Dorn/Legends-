@@ -818,7 +818,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "How much crowns, did you say?",
+					Text = "How many crowns, did you say?",
 					function getResult()
 					{
 						return "Negotiation";

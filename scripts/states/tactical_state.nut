@@ -1783,11 +1783,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (!this.isScenarioMode())
 			{
-				this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
-				this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-				this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-				this.World.Statistics.get().LastEnemiesDefeatedCount = 0;
-				this.World.Statistics.get().LastCombatResult = 2;
 				local playerRoster = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in playerRoster )
@@ -1829,6 +1824,15 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
 						}
 					}
+				}
+
+				if (this.World.getPlayerRoster().getSize() != 0)
+				{
+					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
+					this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
+					this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
+					this.World.Statistics.get().LastEnemiesDefeatedCount = 0;
+					this.World.Statistics.get().LastCombatResult = 2;
 				}
 			}
 		}
@@ -2876,8 +2880,8 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			if (this.m.LastTileHovered != null && this.m.LastTileHovered.IsEmpty)
 			{
-				local e = this.Tactical.spawnEntity("scripts/entity/tactical/humans/barbarian_thrall");
-				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Barbarians : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).getID());
+				local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp");
+				e.setFaction(this.isScenarioMode() ? this.Const.Faction.Beasts : this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 				e.assignRandomEquipment();
 			}
 
