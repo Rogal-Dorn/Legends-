@@ -200,6 +200,26 @@ gt.Const.Tactical.Actor.Alp <- {
 		0
 	]
 };
+gt.Const.Tactical.Actor.AlpShadow <- {
+	XP = 0,
+	ActionPoints = 9,
+	Hitpoints = 5,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 50,
+	RangedSkill = 50,
+	MeleeDefense = 10,
+	RangedDefense = 20,
+	Initiative = 100,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	FatigueRecoveryRate = 15,
+	Vision = 3,
+	Armor = [
+		0,
+		0
+	]
+};
 gt.Const.Tactical.Actor.Hexe <- {
 	XP = 450,
 	ActionPoints = 9,
