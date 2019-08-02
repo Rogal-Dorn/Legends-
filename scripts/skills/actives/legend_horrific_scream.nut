@@ -4,7 +4,7 @@ this.legend_horrific_scream <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_horrific_scream";
 		this.m.Name = "Horrific Scream";
-		this.m.Description = "Blare out a piercing, unworldly sound that is more than likely to distress anyone unfortunate enough to hear it within 4 tiles.";
+		this.m.Description = "Blare out a piercing, unworldly sound that is more than likely to distress anyone unfortunate enough to hear it within 4 tiles. Uses ranged skill";
 		this.m.Icon = "skills/horrify56.png";
 		this.m.IconDisabled = "skills/horrify56_bw.png";
 		this.m.Overlay = "active_41";
@@ -18,6 +18,7 @@ this.legend_horrific_scream <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = true;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 30;
