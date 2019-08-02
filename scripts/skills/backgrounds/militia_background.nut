@@ -29,17 +29,18 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
 		if (this.Math.rand(1, 100) <= 10)
-			{
+		{
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Beards = null;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
-			}
-		
+		}
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamicMins.Defense = 3;
+		this.m.PerkTreeDynamicMins.Enemy = 2;
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.SpearTree,
