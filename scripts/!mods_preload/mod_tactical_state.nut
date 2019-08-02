@@ -67,11 +67,6 @@
 
 			if (!this.isScenarioMode())
 			{
-				this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
-				this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-				this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-				this.World.Statistics.get().LastEnemiesDefeatedCount = 0;
-				this.World.Statistics.get().LastCombatResult = 2;
 				local playerRoster = this.World.getPlayerRoster().getAll();
 
 				foreach( bro in playerRoster )
@@ -113,6 +108,15 @@
 							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Felt useless in reserve");
 						}
 					}
+				}
+				
+				if (this.World.getPlayerRoster().getSize() != 0)
+				{
+					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
+					this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
+					this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
+					this.World.Statistics.get().LastEnemiesDefeatedCount = 0;
+					this.World.Statistics.get().LastCombatResult = 2;
 				}
 			}
 		}

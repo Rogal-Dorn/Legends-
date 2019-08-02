@@ -41,5 +41,6 @@ this.alp_shadow_agent <- this.inherit("scripts/ai/tactical/agent", {
 	{
 	}
 
+
 });
 
