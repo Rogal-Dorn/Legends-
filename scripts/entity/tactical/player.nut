@@ -1103,9 +1103,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/special/weapon_breaking_warning"));
 		this.m.Skills.add(this.new("scripts/skills/special/no_ammo_warning"));
 		this.m.Skills.add(this.new("scripts/skills/effects/battle_standard_effect"));
-		this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
+
+		if (this.Const.DLC.Unhold)
+		{
+			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
+		}
+
 		this.setFaction(this.Const.Faction.Player);
 		this.m.Items.setUnlockedBagSlots(2);
 		this.m.Skills.add(this.new("scripts/skills/special/bag_fatigue"));

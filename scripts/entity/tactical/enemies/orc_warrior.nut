@@ -245,12 +245,16 @@ this.orc_warrior <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("status_rooted", this.createVec(0, 5));
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
-		this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/line_breaker"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+
+		if (this.Const.DLC.Unhold)
+		{
+			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
+		}
 	}
 
 	function onFinish()
