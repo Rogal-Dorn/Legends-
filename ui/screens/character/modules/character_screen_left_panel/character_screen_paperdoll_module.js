@@ -102,7 +102,36 @@ CharacterScreenPaperdollModule.prototype.createDIV = function (_parentDiv)
 	var middleEquipmentColumn = $('<div class="equipment-column is-middle"/>');
 	this.mContainer.append(middleEquipmentColumn);
 	var middleEquipmentColumnLayout = $('<div class="l-equipment-column"/>');
-	middleEquipmentColumn.append(middleEquipmentColumnLayout);
+    middleEquipmentColumn.append(middleEquipmentColumnLayout);
+    
+    var layout = $('<div class="l-button remove1"/>');
+    middleEquipmentColumn.append(layout);
+    var btn1 = layout.createImageButton(Path.GFX + "ui/icons/armor_body.png", function (_event)
+    {
+        self.mDataSource.notifyBackendRemoveArmorUpgrade(0);
+    }, 'display-block', 6);
+
+    var layout = $('<div class="l-button remove2"/>');
+    middleEquipmentColumn.append(layout);
+    var btn2 = layout.createImageButton(Path.GFX + "ui/icons/armor_body.png", function (_event)
+    {
+        self.mDataSource.notifyBackendRemoveArmorUpgrade(1);
+    }, 'display-block', 6);
+
+    var layout = $('<div class="l-button remove3"/>');
+    middleEquipmentColumn.append(layout);
+    var btn3 = layout.createImageButton(Path.GFX + "ui/icons/armor_body.png", function (_event)
+    {
+        self.mDataSource.notifyBackendRemoveArmorUpgrade(2);
+    }, 'display-block', 6);
+
+    // var layout = $('<div class="l-button remove4"/>');
+    // middleEquipmentColumn.append(layout);
+    // var btn4 = layout.createImageButton(Path.GFX + "ui/icons/stat_screen_dmg_dealt.png", function (_event)
+    // {
+    //     //self.mDataSource.notifyBackendRemoveArmorUpgrade();
+    // }, 'display-block', 6);
+
 
 	var rightEquipmentColumn = $('<div class="equipment-column"/>');
 	this.mContainer.append(rightEquipmentColumn);

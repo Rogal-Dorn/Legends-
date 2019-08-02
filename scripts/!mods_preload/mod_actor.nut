@@ -309,6 +309,18 @@
 		}
 	}
 
+
+	o.removeArmorUpgrade <- function ( _slot)
+	{
+		local armor = this.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		if (armor == null)
+		{
+			return;
+		}
+
+		return armor.removeUpgrade( _slot );
+	}
+
         //
     // local onResurrected = o.onResurrected;
     // o.onResurrected = function ( _info ) 

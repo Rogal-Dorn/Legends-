@@ -69,6 +69,23 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return null;
 	}
 
+	function getUpgrades()
+	{
+		local slots = [];
+		foreach (u in this.m.Upgrades)
+		{
+			if (u == null)
+			{
+				slots.push(0)
+			}
+			else
+			{
+				slots.push(1);
+			}
+		}
+		return slots;
+	}
+
 	function getIconOverlay()
 	{
 		local L = [];
@@ -155,6 +172,19 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Upgrades[_upgrade.getType()].onAdded();
 		this.updateAppearance();
 		return true
+	}
+
+	function removeUpgrade ( _slot )
+	{
+		if (this.m.Upgrades[_slot] == null)
+		{
+			return null;
+		}
+		local item = this.m.Upgrades[_slot]
+		this.m.Upgrades[_slot] = null;
+		item.onRemoved();
+		this.updateAppearance();
+		return item;
 	}
 
 	function create()
