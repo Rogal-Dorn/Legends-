@@ -1431,3 +1431,4 @@ Beta 12.6
 Merges in 1.3.0.24 update 
 Fixes White Wolf not properly terrifying its opponents 
 Daze, Horrify and Revolt are ranged  
+Glaive damage reduced from 55 to 45
