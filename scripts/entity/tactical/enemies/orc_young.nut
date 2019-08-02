@@ -250,17 +250,21 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
-		this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/charge"));
 		
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			b.MeleeSkill += 10;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 
+
+		if (this.Const.DLC.Unhold)
+		{
+			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
+		}
 	}
 
 	function onFinish()

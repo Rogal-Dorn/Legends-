@@ -571,7 +571,12 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 5));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
-		this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
+
+		if (this.Const.DLC.Unhold)
+		{
+			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
+		}
+
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/effects/captain_effect"));
 	}
