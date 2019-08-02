@@ -25,7 +25,7 @@ this.ai_attack_default <- this.inherit("scripts/ai/tactical/behavior", {
 			"actives.werewolf_bite",
 			"actives.ghoul_claws",
 			"actives.ghastly_touch",
-			"actives.nightmare_touch",
+			"actives.nightmare",
 			"actives.flail",
 			"actives.pound",
 			"actives.cascade",

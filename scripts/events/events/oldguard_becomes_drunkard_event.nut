@@ -75,6 +75,11 @@ this.oldguard_becomes_drunkard_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
+			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+			{
+				continue;
+			}
+
 			if (bro.getLevel() >= 8 && !bro.getSkills().hasSkill("trait.drunkard") && this.World.getTime().Days - bro.getDaysWithCompany() < fallen[0].Time && this.World.getTime().Days - bro.getDaysWithCompany() < fallen[1].Time && !bro.getSkills().hasSkill("trait.player"))
 			{
 				candidates.push(bro);

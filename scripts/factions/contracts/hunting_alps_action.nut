@@ -26,7 +26,7 @@ this.hunting_alps_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (this.World.Assets.getBusinessReputation() < 400)
+		if (this.World.Assets.getBusinessReputation() < 350)
 		{
 			return;
 		}
@@ -38,7 +38,7 @@ this.hunting_alps_action <- this.inherit("scripts/factions/faction_action", {
 
 		local village = _faction.getSettlements()[0];
 
-		if (this.isKindOf(village, "small_lumber_village") || this.isKindOf(village, "medium_lumber_village") || this.isKindOf(village, "small_mining_village") || this.isKindOf(village, "medium_mining_village"))
+		if (this.isKindOf(village, "small_lumber_village") || this.isKindOf(village, "medium_lumber_village"))
 		{
 			return;
 		}

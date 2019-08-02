@@ -1,21 +1,5 @@
 this.sleep_skill <- this.inherit("scripts/skills/skill", {
-	m = {
-		IsFake = false
-	},
-	function setFake( _f )
-	{
-		this.m.IsFake = _f;
-
-		if (this.m.IsFake)
-		{
-			this.m.ActionPointCost = 6;
-		}
-		else
-		{
-			this.m.ActionPointCost = 6;
-		}
-	}
-
+	m = {},
 	function create()
 	{
 		this.m.ID = "actives.sleep";
@@ -38,6 +22,7 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/dlc2/alp_sleep_11.wav",
 			"sounds/enemies/dlc2/alp_sleep_12.wav"
 		];
+		this.m.IsUsingActorPitch = true;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 600;
@@ -52,11 +37,31 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 12;
+		this.m.MaxRange = 2;
 		this.m.MaxLevelDifference = 4;
+	}
+
+	function onVerifyTarget( _userTile, _targetTile )
+	{
+		if (!this.skill.onVerifyTarget(_userTile, _targetTile))
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().getCurrentProperties().IsStunned)
+		{
+			return false;
+		}
+
+		if (_targetTile.getEntity().isNonCombatant())
+		{
+			return false;
+		}
+
+		return true;
 	}
 
 	function isUsable()
@@ -66,44 +71,19 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		local actor = this.getContainer().getActor();
-		local opponents = actor.getAIAgent().getKnownOpponents();
-		local asleep = 0;
+		local b = this.getContainer().getActor().getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault);
+		local targets = b.queryTargetsInMeleeRange(this.getMinRange(), this.getMaxRange());
+		local myTile = this.getContainer().getActor().getTile();
 
-		foreach( o in opponents )
+		foreach( t in targets )
 		{
-			if (o.Actor.getSkills().hasSkill("effects.sleep"))
+			if (this.onVerifyTarget(myTile, t.getTile()))
 			{
-				asleep = ++asleep;
+				return true;
 			}
 		}
 
-		if (opponents.len() > 2 && opponents.len() - asleep <= 1)
-		{
-			return false;
-		}
-
-		return true;
-	}
-
-	function isViableTarget( _user, _target )
-	{
-		if (_target.isAlliedWith(_user))
-		{
-			return false;
-		}
-
-		if (_target.getCurrentProperties().IsStunned)
-		{
-			return false;
-		}
-
-		if (_target.isNonCombatant())
-		{
-			return false;
-		}
-
-		return true;
+		return false;
 	}
 
 	function onUse( _user, _targetTile )
@@ -119,48 +99,22 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 	function onDelayedEffect( _tag )
 	{
 		local targets = [];
-		local stacks = 0;
 		local _targetTile = _tag.TargetTile;
 		local _user = _tag.User;
 
 		if (_targetTile.IsOccupiedByActor)
 		{
 			local entity = _targetTile.getEntity();
-
-			if (this.isViableTarget(_user, entity))
-			{
-				targets.push(entity);
-			}
-		}
-
-		for( local i = 0; i < 6; i = ++i )
-		{
-			if (!_targetTile.hasNextTile(i))
-			{
-			}
-			else
-			{
-				local adjacent = _targetTile.getNextTile(i);
-
-				if (adjacent.IsOccupiedByActor)
-				{
-					local entity = adjacent.getEntity();
-
-					if (this.isViableTarget(_user, entity))
-					{
-						targets.push(entity);
-					}
-				}
-			}
+			targets.push(entity);
 		}
 
 		local myTile = _user.getTile();
 
 		foreach( target in targets )
 		{
-			local bonus = myTile.getDistanceTo(target.getTile()) == 1 ? -10 : 0;
+			local bonus = this.m.MaxRange + 1 - myTile.getDistanceTo(target.getTile());
 
-			if (this.m.IsFake || target.checkMorale(0, -25 + bonus, this.Const.MoraleCheckType.MentalAttack))
+			if (target.checkMorale(0, -25 * bonus, this.Const.MoraleCheckType.MentalAttack))
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
@@ -170,7 +124,6 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			stacks = ++stacks;
 			target.getSkills().add(this.new("scripts/skills/effects/sleeping_effect"));
 
 			if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
@@ -178,12 +131,6 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " falls to sleep");
 			}
 		}
-
-		if ("addStacks" in _user)
-		{
-			_user.addStacks(stacks);
-		}
-		
 	}
 
 });

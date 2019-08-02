@@ -29,7 +29,7 @@ gt.Const.FactionArchetypes <- [
 				this.Const.FactionTrait.Sheriff,
 				this.Const.FactionTrait.ManOfThePeople
 			],
-			Description = "The house of %noblehousename% holds high the principles of justice and honor, and without irrational rulings their region has prospered. Their reputation may be peaceful, but %noblehousename% knights are battle hardened and their troops will ferociously fight anyone threatening their realm, subordinates or principles. Many nobles envy their wealth and ridicule their principles; house %othernoblehouse% especially holds a more or less overt grudge against those of %noblehousename%.",
+			Description = "The house of %noblehousename% holds high the principles of justice and honor, and without irrational rulings their region has prospered. Their reputation may be peaceful, but %noblehousename% knights are battle-hardened and their troops will ferociously fight anyone threatening their realm, subordinates or principles. Many nobles envy their wealth and ridicule their principles; house %othernoblehouse% especially holds a more or less overt grudge against those of %noblehousename%.",
 			Mottos = [
 				"Live that you may live",
 				"Friendship without deceit",

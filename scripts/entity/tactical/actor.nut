@@ -71,6 +71,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		IsActingEachTurn = true,
 		IsNonCombatant = false,
 		IsShakingOnHit = true,
+		IsFlashingOnHit = true,
 		IsActingImmediately = false,
 		IsResurrected = false,
 		IsEmittingMovementSounds = true,
@@ -1552,16 +1553,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (damage <= 0 && armorDamage >= 0)
 		{
-			if (!this.isHiddenToPlayer())
+			if ((this.m.IsFlashingOnHit || this.getCurrentProperties().IsStunned || this.getCurrentProperties().IsRooted) && !this.isHiddenToPlayer() && _attacker != null && _attacker.isAlive())
 			{
 				local layers = this.m.ShakeLayers[_hitInfo.BodyPart];
 				local recoverMult = 1.0;
-
-				if (_attacker != null && _attacker.isAlive())
-				{
-					this.Tactical.getShaker().cancel(this);
-					this.Tactical.getShaker().shake(this, _attacker.getTile(), this.m.IsShakingOnHit ? 2 : 3, this.Const.Combat.ShakeEffectArmorHitColor, this.Const.Combat.ShakeEffectArmorHitHighlight, this.Const.Combat.ShakeEffectArmorHitFactor, this.Const.Combat.ShakeEffectArmorSaturation, layers, recoverMult);
-				}
+				this.Tactical.getShaker().cancel(this);
+				this.Tactical.getShaker().shake(this, _attacker.getTile(), this.m.IsShakingOnHit ? 2 : 3, this.Const.Combat.ShakeEffectArmorHitColor, this.Const.Combat.ShakeEffectArmorHitHighlight, this.Const.Combat.ShakeEffectArmorHitFactor, this.Const.Combat.ShakeEffectArmorSaturation, layers, recoverMult);
 			}
 
 			this.m.Skills.update();
@@ -1671,16 +1668,12 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			this.m.Skills.update();
 			this.onUpdateInjuryLayer();
 
-			if (!this.isHiddenToPlayer())
+			if ((this.m.IsFlashingOnHit || this.getCurrentProperties().IsStunned || this.getCurrentProperties().IsRooted) && !this.isHiddenToPlayer() && _attacker != null && _attacker.isAlive())
 			{
 				local layers = this.m.ShakeLayers[_hitInfo.BodyPart];
 				local recoverMult = this.Math.minf(1.5, this.Math.maxf(1.0, damage * 2.0 / this.getHitpointsMax()));
-
-				if (_attacker != null && _attacker.isAlive())
-				{
-					this.Tactical.getShaker().cancel(this);
-					this.Tactical.getShaker().shake(this, _attacker.getTile(), this.m.IsShakingOnHit ? 2 : 3, this.Const.Combat.ShakeEffectHitpointsHitColor, this.Const.Combat.ShakeEffectHitpointsHitHighlight, this.Const.Combat.ShakeEffectHitpointsHitFactor, this.Const.Combat.ShakeEffectHitpointsSaturation, layers, recoverMult);
-				}
+				this.Tactical.getShaker().cancel(this);
+				this.Tactical.getShaker().shake(this, _attacker.getTile(), this.m.IsShakingOnHit ? 2 : 3, this.Const.Combat.ShakeEffectHitpointsHitColor, this.Const.Combat.ShakeEffectHitpointsHitHighlight, this.Const.Combat.ShakeEffectHitpointsHitFactor, this.Const.Combat.ShakeEffectHitpointsSaturation, layers, recoverMult);
 			}
 
 			this.setDirty(true);

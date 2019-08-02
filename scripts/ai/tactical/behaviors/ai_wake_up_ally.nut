@@ -1,7 +1,7 @@
 this.ai_wake_up_ally <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		PossibleSkills = [
-			"actives.wake_ally_aoe"
+			"actives.wake_ally"
 		],
 		Skill = null
 	},

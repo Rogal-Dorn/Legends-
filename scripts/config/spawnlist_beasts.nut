@@ -7759,10 +7759,136 @@ gt.Const.World.Spawn.Alps <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Alp,
-				Num = 18
+				Num = 9
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 10
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 11
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 12
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 4
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 5
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 6
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 7
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 8
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 9
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 10
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 11
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 12
+			}
+		]
+	},
+	{
+		Body = "figure_alp_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Alp,
+				Num = 3
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
+				Type = this.Const.World.Spawn.Troops.Direwolf,
 				Num = 1
 			}
 		]

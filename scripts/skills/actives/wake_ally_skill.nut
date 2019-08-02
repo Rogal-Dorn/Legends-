@@ -4,13 +4,17 @@ this.wake_ally_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.wake_ally";
 		this.m.Name = "Wake Ally";
-		this.m.Description = "Forcibly wake a nearby ally from unnatural sleep.";
+		this.m.Description = "Forcibly wake an adjacent ally from unnatural sleep.";
 		this.m.Icon = "skills/active_118.png";
 		this.m.IconDisabled = "skills/active_118_sw.png";
 		this.m.Overlay = "active_118";
-		this.m.SoundOnUse = [
-			"sounds/combat/first_aid_01.wav",
-			"sounds/combat/first_aid_02.wav"
+		this.m.SoundOnHit = [
+			"sounds/enemies/dlc2/wake_up_01.wav",
+			"sounds/enemies/dlc2/wake_up_02.wav",
+			"sounds/enemies/dlc2/wake_up_03.wav",
+			"sounds/enemies/dlc2/wake_up_04.wav",
+			"sounds/enemies/dlc2/wake_up_05.wav",
+			"sounds/enemies/dlc2/wake_up_06.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.Last;
@@ -50,7 +54,7 @@ this.wake_ally_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Removes the Sleeping and Nightmares status effects"
+				text = "Removes the Sleeping status effect"
 			}
 		];
 		return ret;
@@ -74,7 +78,7 @@ this.wake_ally_skill <- this.inherit("scripts/skills/skill", {
 				{
 					local tile = myTile.getNextTile(i);
 
-					if (this.Math.abs(tile.Level - myTile.Level) <= 1 && tile.IsOccupiedByActor && (tile.getEntity().getSkills().hasSkill("effects.sleeping") || tile.getEntity().getSkills().hasSkill("effects.nightmare")))
+					if (this.Math.abs(tile.Level - myTile.Level) <= 1 && tile.IsOccupiedByActor && actor.isAlliedWith(tile.getEntity()) && tile.getEntity().getSkills().hasSkill("effects.sleeping"))
 					{
 						hasTarget = true;
 						break;
@@ -105,7 +109,7 @@ this.wake_ally_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (target.getSkills().hasSkill("effects.sleeping") || target.getSkills().hasSkill("effects.nightmare"))
+		if (target.getSkills().hasSkill("effects.sleeping"))
 		{
 			return true;
 		}
@@ -118,8 +122,13 @@ this.wake_ally_skill <- this.inherit("scripts/skills/skill", {
 		local target = _targetTile.getEntity();
 		this.spawnIcon("status_effect_83", _targetTile);
 		target.getSkills().removeByID("effects.sleeping");
-		target.getSkills().removeByID("effects.nightmare");
 		target.setDirty(true);
+
+		if (this.isKindOf(target, "human") && this.m.SoundOnHit.len() != 0)
+		{
+			this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill * this.m.SoundVolume, _user.getPos());
+		}
+
 		return true;
 	}
 

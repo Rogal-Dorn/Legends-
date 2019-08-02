@@ -241,7 +241,7 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{How much crowns can you muster? | Let\'s talk pay. | Let\'s talk crowns.}",
+					Text = "{How many crowns can you muster? | Let\'s talk pay. | Let\'s talk crowns.}",
 					function getResult()
 					{
 						return "Negotiation";

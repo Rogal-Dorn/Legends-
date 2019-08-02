@@ -10,6 +10,7 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.DecapitateBloodAmount = 1.0;
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.m.IsUsingZoneOfControl = false;
+		this.m.IsFlashingOnHit = false;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
 			"sounds/enemies/dlc2/alp_idle_01.wav",
@@ -257,8 +258,11 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.Alp);
+		b.Initiative += this.Math.rand(0, 50);
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
+		b.IsImmuneToBleeding = true;
+		b.IsImmuneToPoison = true;
 		b.IsImmuneToDisarm = true;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
@@ -278,7 +282,9 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 10));
-		this.m.Skills.add(this.new("scripts/skills/actives/shadows_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/sleep_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/nightmare_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/alp_teleport_skill"));
 		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)

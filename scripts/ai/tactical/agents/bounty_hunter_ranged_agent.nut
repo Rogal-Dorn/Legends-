@@ -30,6 +30,7 @@ this.bounty_hunter_ranged_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_rotation"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_reload"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_wake_up_ally"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));

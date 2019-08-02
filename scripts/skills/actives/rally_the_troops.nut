@@ -55,6 +55,12 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Triggers a morale check to raise the morale of anyone wavering or worse within 4 tiles distance, with a bonus to Resolve of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bravery + "[/color] based on this character\'s Resolve, but lowered by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] per tile distance"
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Removes the Sleeping status effect of allies within 4 tiles distance"
 			}
 		];
 
@@ -96,6 +102,8 @@ this.rally_the_troops <- this.inherit("scripts/skills/skill", {
 
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.rallied"))
 			{
+				a.getSkills().removeByID("effects.sleeping");
+
 				for( ; a.getMoraleState() >= this.Const.MoraleState.Steady;  )
 				{
 				}

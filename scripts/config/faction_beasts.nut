@@ -182,39 +182,19 @@ gt.Const.Tactical.Actor.UnholdBog <- {
 };
 gt.Const.Tactical.Actor.Alp <- {
 	XP = 350,
-	ActionPoints = 6,
-	Hitpoints = 75,
+	ActionPoints = 9,
+	Hitpoints = 90,
 	Bravery = 100,
 	Stamina = 100,
 	MeleeSkill = 0,
 	RangedSkill = 0,
 	MeleeDefense = 5,
 	RangedDefense = 5,
-	Initiative = 999,
+	Initiative = 60,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 15,
 	Vision = 7,
-	Armor = [
-		0,
-		0
-	]
-};
-gt.Const.Tactical.Actor.AlpShadow <- {
-	XP = 0,
-	ActionPoints = 9,
-	Hitpoints = 5,
-	Bravery = 100,
-	Stamina = 100,
-	MeleeSkill = 50,
-	RangedSkill = 50,
-	MeleeDefense = 10,
-	RangedDefense = 20,
-	Initiative = 100,
-	FatigueEffectMult = 0.0,
-	MoraleEffectMult = 0.0,
-	FatigueRecoveryRate = 15,
-	Vision = 3,
 	Armor = [
 		0,
 		0
