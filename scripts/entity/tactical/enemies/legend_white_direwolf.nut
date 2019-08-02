@@ -244,7 +244,7 @@ this.legend_white_direwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_battleheart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_believer"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_terrifying_visage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_terrifying_visage"));
 		this.m.Skills.add(this.new("scripts/skills/racial/werewolf_racial"));
 
 		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
