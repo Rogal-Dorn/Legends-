@@ -26,6 +26,7 @@
     z-index: 1;
 }
 
+
 .character-screen .character-screen-statuetes
 {
     width: 142.1rem;
@@ -45,10 +46,12 @@
     z-index: 2;
 	margin: auto;
 
-    background-image: url("coui://gfx/ui/skin/background_inventory.png");
+	background-image: url("coui://gfx/ui/skin/background_inventory.png");
+	
     background-size: 142.1rem 90.6rem;
     background-repeat: no-repeat;
 }
+
 
 
 .character-screen .character-screen-container

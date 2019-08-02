@@ -158,7 +158,10 @@ $.fn.assignListItemOverlayImage = function(_imagePaths)
     }
 
     _imagePaths.forEach(function (imagePath) {
-        if (imagePath === '') continue;
+        if (imagePath === '') 
+        {
+            return;
+        }
         var overlayImage = $('<img/>');
         overlayImage.attr('src', Path.ITEMS + imagePath);
         overlayImage.addClass('display-block');

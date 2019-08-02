@@ -166,7 +166,9 @@ $.fn.assignPaperdollItemOverlayImage = function(_imagePaths, _imageIsSmall, _isB
     }
 
     _imagePaths.forEach(function (imagePath) {
-        if (imagePath === '') continue;
+        if (imagePath === '') {
+            return;
+        }
         var overlayImage = $('<img/>');
         overlayImage.attr('src', Path.ITEMS + imagePath);
         if(itemData.isImageSmall === true)

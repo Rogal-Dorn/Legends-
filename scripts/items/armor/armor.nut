@@ -90,6 +90,17 @@ this.armor <- this.inherit("scripts/items/item", {
 		this.updateAppearance();
 	}
 
+	function removeUpgrade ( _slot )
+	{
+		if (this.m.Upgrade == null)
+		{
+			return null
+		}
+		local item = this.m.Upgrade;
+		this.setUpgrade(null);
+		return item;
+	}
+
 	function create()
 	{
 		this.m.SlotType = this.Const.ItemSlot.Body;

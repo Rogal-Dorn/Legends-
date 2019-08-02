@@ -1141,6 +1141,11 @@ this.item <- {
 		return this.m.MedicinePerDay;
 	}
 
+	function getUpgrades() 
+	{
+		return [];
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeBool(this.m.IsToBeRepaired);

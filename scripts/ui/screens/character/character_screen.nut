@@ -2393,6 +2393,18 @@ this.character_screen <- {
 		this.loadData();
 	}
 
+	function onRemoveArmorUpgrade( _data )
+	{
+		local slotId = _data[0];
+		local bro = this.Tactical.getEntityByID(_data[1]);
+		local upgrade = bro.removeArmorUpgrade(_data[0]);
+		if (upgrade != null)
+		{
+			this.World.Assets.getStash().add(upgrade);
+		}
+		return this.UIDataHelper.convertStashAndEntityToUIData(bro, null, false, this.m.InventoryFilter);
+	}
+
 	function onUpdateFormationName( _data )
 	{
 		local name = _data[0];

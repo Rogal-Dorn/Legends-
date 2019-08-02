@@ -311,3 +311,32 @@
 {
     margin-left: 0;
 }
+
+.character-screen-container .paperdoll-module .l-button
+{
+	width: 3.5rem;
+	height: 3.5rem;
+	position: absolute;
+	line-height: 2.6rem;
+	left: -1.4rem;
+}
+
+.character-screen-container .paperdoll-module .l-button.remove4
+{
+	top: 8.7rem;
+}
+
+.character-screen-container .paperdoll-module .l-button.remove3
+{
+	top: 12.8rem;
+}
+
+.character-screen-container .paperdoll-module .l-button.remove2
+{
+	top: 16.9rem;
+}
+
+.character-screen-container .paperdoll-module .l-button.remove1
+{
+	top: 21.0rem;
+}

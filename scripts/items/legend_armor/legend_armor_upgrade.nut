@@ -118,7 +118,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function playInventorySound( _eventType )
 	{
-		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+		this.Sound.play(this.m.ImpactSound[0], this.Const.Sound.Volume.Inventory);
 	}
 
 	function updateAppearance( _app )
@@ -166,6 +166,8 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function onRemoved()
 	{
+		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
+		this.m.Armor = null;
 	}
 
 	function onUse( _actor, _item = null )
