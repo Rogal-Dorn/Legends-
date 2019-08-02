@@ -16,14 +16,14 @@ this.perk_legend_sleep <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.sleep_skill"))
+		if (!this.m.Container.hasSkill("actives.legend_sleep"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/sleep_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_sleep_skill"));
 		}
 	}
 		function onRemoved()
 	{
-		this.m.Container.removeByID("actives.sleep_skill");
+		this.m.Container.removeByID("actives.legend_sleep");
 	}
 
 });

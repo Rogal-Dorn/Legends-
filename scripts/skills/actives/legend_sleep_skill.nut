@@ -2,11 +2,11 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_sleep_skill";
-		this.m.Name = "Mass Sleep";
-		this.m.Description = "Enshroud the area with thick smoke that draws the vigor out of your foes. Those that breathe in too much are forced into a light sleep.";
-		this.m.Icon = "skills/sleep_square.png";
-		this.m.IconDisabled = "skills/sleep_square_bw.png";
+		this.m.ID = "actives.legend_sleep";
+		this.m.Name = "Sleep";
+		this.m.Description = "";
+		this.m.Icon = "skills/active_116.png";
+		this.m.IconDisabled = "skills/active_116.png";
 		this.m.Overlay = "active_116";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc2/alp_sleep_01.wav",
@@ -22,6 +22,7 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/dlc2/alp_sleep_11.wav",
 			"sounds/enemies/dlc2/alp_sleep_12.wav"
 		];
+		this.m.IsUsingActorPitch = true;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 600;
@@ -36,53 +37,26 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 40;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 6;
-		this.m.MaxLevelDifference = 6;
+		this.m.MaxRange = 2;
+		this.m.MaxLevelDifference = 4;
 	}
 
-	function isUsable()
+	function onVerifyTarget( _userTile, _targetTile )
 	{
-		if (!this.skill.isUsable())
+		if (!this.skill.onVerifyTarget(_userTile, _targetTile))
 		{
 			return false;
 		}
 
-		local actor = this.getContainer().getActor();
-		local opponents = actor.getAIAgent().getKnownOpponents();
-		local asleep = 0;
-
-		foreach( o in opponents )
-		{
-			if (o.Actor.getSkills().hasSkill("effects.sleep"))
-			{
-				asleep = ++asleep;
-			}
-		}
-
-		if (opponents.len() > 2 && opponents.len() - asleep <= 1)
+		if (_targetTile.getEntity().getCurrentProperties().IsStunned)
 		{
 			return false;
 		}
 
-		return true;
-	}
-
-	function isViableTarget( _user, _target )
-	{
-		if (_target.isAlliedWith(_user))
-		{
-			return false;
-		}
-
-		if (_target.getCurrentProperties().IsStunned)
-		{
-			return false;
-		}
-
-		if (_target.isNonCombatant())
+		if (_targetTile.getEntity().isNonCombatant())
 		{
 			return false;
 		}
@@ -103,37 +77,31 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 	function onDelayedEffect( _tag )
 	{
 		local targets = [];
-		local stacks = 0;
 		local _targetTile = _tag.TargetTile;
 		local _user = _tag.User;
 
 		if (_targetTile.IsOccupiedByActor)
 		{
 			local entity = _targetTile.getEntity();
-
-			if (this.isViableTarget(_user, entity))
-			{
-				targets.push(entity);
-			}
+			targets.push(entity);
 		}
 
 		local myTile = _user.getTile();
 
 		foreach( target in targets )
 		{
-			local bonus = myTile.getDistanceTo(target.getTile()) == 1 ? -10 : 0;
+			local bonus = this.m.MaxRange + 1 - myTile.getDistanceTo(target.getTile());
 
-			if (this.m.IsFake || target.checkMorale(0, -25 + bonus, this.Const.MoraleCheckType.MentalAttack))
+			if (target.checkMorale(0, -25 * bonus, this.Const.MoraleCheckType.MentalAttack))
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " resists the urge to sleep thanks to their resolve");
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " resists the urge to sleep thanks to his resolve");
 				}
 
 				continue;
 			}
 
-			stacks = ++stacks;
 			target.getSkills().add(this.new("scripts/skills/effects/sleeping_effect"));
 
 			if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
@@ -141,11 +109,7 @@ this.legend_sleep_skill <- this.inherit("scripts/skills/skill", {
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " falls to sleep");
 			}
 		}
-
-		if ("addStacks" in _user)
-		{
-			_user.addStacks(stacks);
-		}
 	}
 
 });
+
