@@ -431,8 +431,8 @@ gt.Const.World.Spawn.Troops <- {
 	Alp = {
 		ID = this.Const.EntityType.Alp,
 		Variant = 0,
-		Strength = 35,
-		Cost = 35,
+		Strength = 30,
+		Cost = 30,
 		Row = -2,
 		Script = "scripts/entity/tactical/enemies/alp"
 	},

@@ -1428,5 +1428,13 @@ Harvest Twist from 15 skill to 12 skill. Applies to Goblin Notched Blade. 25% ap
 Heavy Rocks from 10-30 damage to 4-12 damage. 
 Slingers Spins from now correctly gives 12 Ranged skill
 
+<<<<<<< HEAD
 
 Beta 13
+=======
+Beta 12.6 
+Merges in 1.3.0.24 update 
+Fixes White Wolf not properly terrifying its opponents 
+Daze, Horrify and Revolt are ranged  
+Glaive damage reduced from 55 to 45
+>>>>>>> LegendsModv12

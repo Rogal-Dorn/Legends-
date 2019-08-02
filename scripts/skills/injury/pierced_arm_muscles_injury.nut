@@ -5,7 +5,7 @@ this.pierced_arm_muscles_injury <- this.inherit("scripts/skills/injury/injury", 
 		this.injury.create();
 		this.m.ID = "injury.pierced_arm_muscles";
 		this.m.Name = "Pierced Arm Muscles";
-		this.m.Description = "A piercing attack has punctured the arm and injured muscle tissue, limiting it\'s mobility.";
+		this.m.Description = "A piercing attack has punctured the arm and injured muscle tissue, limiting its mobility.";
 		this.m.Type = this.m.Type | this.Const.SkillType.TemporaryInjury;
 		this.m.DropIcon = "injury_icon_13";
 		this.m.Icon = "ui/injury/injury_icon_13.png";
