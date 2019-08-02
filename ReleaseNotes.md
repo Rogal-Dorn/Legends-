@@ -1426,3 +1426,8 @@ Gatherer's Cuts from 15-25 damage to 4-12 damage. Applies to Goblin Notched Blad
 Harvest Twist from 15 skill to 12 skill. Applies to Goblin Notched Blade. 25% applies to One Handed Sword
 Heavy Rocks from 10-30 damage to 4-12 damage. 
 Slingers Spins from now correctly gives 12 Ranged skill
+
+Beta 12.6 
+Merges in 1.3.0.24 update 
+Fixes White Wolf not properly terrifying its opponents 
+
