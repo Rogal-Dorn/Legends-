@@ -315,7 +315,7 @@
 		local armor = this.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		if (armor == null)
 		{
-			return;
+			return null;
 		}
 
 		return armor.removeUpgrade( _slot );

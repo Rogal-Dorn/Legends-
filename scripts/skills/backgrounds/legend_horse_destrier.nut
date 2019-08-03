@@ -22,7 +22,7 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/character
 			"trait.asthmatic",
 			"trait.bleeder",
 			"trait.fragile",
-			"trait.insecure,
+			"trait.insecure",
 			"trait.fainthearted"
 		];
 		this.m.Faces = this.Const.Faces.Horse;
@@ -129,9 +129,7 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/character
 
 	function onBuildDescription()
 	{
-		return "{  %name% was raised to batter men into submission through sheer size and strength. |  %name% was reared by a skilled and rich horse breeder. | A Destrier's life is bloody, and %name% has trampled many men underneath his hooves. | Though the work is dangerous, being the steed of an infamous Robber Knight allowed %name% to see the world, and kill its people. | The size of a wagon and able to carry any man, %name%'s first owner paid a fortune to acquire him. } 
-		{%name% carried his owner through many a both battle and tourney. | %name% was there when a cavalry charge broke the spine of a rampaging horde of Greenskins. | With an ornery streak a mile wide, %name% has cost many a stableboy their hand. | Rumors have swirled that %name% owner fed him on human flesh, though they never told to the owner's face. | While most horses would never dream of charging into battle and flee at the first sign of danger, not so for %name%. He seems to almost be gleeful when shattering humans beneath his weight. } 
-		{ When an errant lance-stroke hit his owner in the neck and killed him, %name% was taken as loot and put up for sale. | As useful as a Destrier is on the battlefield, they are of no use against an assassin's blade in the night, such as the one that claimed %name%'s prior owner. | Since then, %name% has bucked and trampled many a prospective owner, respecting only the strongest of riders. }";
+		return "{%name% was raised to batter men into submission through sheer size and strength. |  %name% was reared by a skilled and rich horse breeder. | A Destrier's life is bloody, and %name% has trampled many men underneath his hooves. | Though the work is dangerous, being the steed of an infamous Robber Knight allowed %name% to see the world, and kill its people. | The size of a wagon and able to carry any man, %name%'s first owner paid a fortune to acquire him. | %name% carried his owner through many a both battle and tourney. | %name% was there when a cavalry charge broke the spine of a rampaging horde of Greenskins. | With an ornery streak a mile wide, %name% has cost many a stableboy their hand. | Rumors have swirled that %name% owner fed him on human flesh, though they never told to the owner's face. | While most horses would never dream of charging into battle and flee at the first sign of danger, not so for %name%. He seems to almost be gleeful when shattering humans beneath his weight. | When an errant lance-stroke hit his owner in the neck and killed him, %name% was taken as loot and put up for sale. | As useful as a Destrier is on the battlefield, they are of no use against an assassin's blade in the night, such as the one that claimed %name%'s prior owner. | Since then, %name% has bucked and trampled many a prospective owner, respecting only the strongest of riders. }";
 	}
 
 	function onChangeAttributes()

@@ -7,10 +7,10 @@ this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrad
 		this.m.Name = "Stollwurm Scale Cloak";
 		this.m.Description = "A cloak made out of the scales of a Stollwurm. Not only is it a rare and impressive trophy, it also offers additional protection";
 		this.m.ArmorDescription = "A cloak made out of Stollwurm scales is worn over this armor for additional protection.";
-		this.m.Icon = "armor_upgrades/upgrade_04.png";
+		this.m.Icon = "armor_upgrades/upgrade_stollwurm.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_04.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_04.png";
+		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_stollwurm.png";
+		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_stollwurm.png";
 		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_stollwurm_back";
 		this.m.SpriteDamagedFront = null;

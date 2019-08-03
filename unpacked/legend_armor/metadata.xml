@@ -3,13 +3,106 @@
   <sprite id="legend_armor_hauberk_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\chain\legend_armor_hauberk_damaged.png" left="-49" right="45" top="-53" bottom="11" />
   <sprite id="legend_armor_hauberk_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\chain\legend_armor_hauberk_dead.png" left="-59" right="57" top="-54" bottom="58" />
  
-   <sprite id="legend_armor_plates" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\plate\legend_armor_plates.png" left="-48" right="46" top="-54" bottom="10" />
+  <sprite id="legend_armor_plates" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\plate\legend_armor_plates.png" left="-48" right="46" top="-54" bottom="10" />
   <sprite id="legend_armor_plates_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\plate\legend_armor_plates_damaged.png" left="-49" right="45" top="-53" bottom="11" />
   <sprite id="legend_armor_plates_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\plate\legend_armor_plates_dead.png" left="-59" right="57" top="-54" bottom="58" />
- 
-  <sprite id="legend_tabard_10" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_10.png" top="-53" bottom="11" />
-  <sprite id="legend_tabard_10_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_10_damaged.png" top="-53" bottom="11" />
-  <sprite id="legend_tabard_10_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_10_dead.png" left="-54" right="52" top="-55" bottom="51" />
- 
+
+
+  <sprite id="legend_tabard_01_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_01_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_01_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_01_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_01_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_01_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_02_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_02_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_02_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_02_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_02_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_02_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_03_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_03_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_03_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_03_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_03_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_03_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_04_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_04_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_04_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_04_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_04_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_04_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_05_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_05_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_05_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_05_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_05_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_05_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_06_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_06_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_06_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_06_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_06_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_06_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_07_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_07_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_07_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_07_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_07_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_07_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_08_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_08_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_08_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_08_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_08_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_08_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_09_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_09_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_09_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_09_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_09_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_09_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_10_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_10_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_10_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_10_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_10_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_10_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_11_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_11_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_11_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_11_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_11_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_11_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_12_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_12_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_12_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_12_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_12_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_12_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_13_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_13_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_13_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_13_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_13_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_13_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_14_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_14_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_14_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_14_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_14_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_14_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_15_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_15_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_15_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_15_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_15_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_15_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_16_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_16_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_16_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_16_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_16_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_16_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_17_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_17_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_17_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_17_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_17_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_17_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_18_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_18_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_18_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_18_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_18_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_18_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_19_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_19_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_19_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_19_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_19_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_19_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_20_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_20_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_20_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_20_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_20_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_20_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_101_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_101_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_101_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_101_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_101_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_101_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_102_back" offsetY="35" ic="FF3E362B" width="104" height="142" img="entity\legend_armor\legend_tabard_102_back.png" left="-42" right="40" top="-52" bottom="10" />
+  <sprite id="legend_tabard_102_back_damaged" offsetY="35" ic="FF393227" width="104" height="142" img="entity\legend_armor\legend_tabard_102_back_damaged.png" top="-52" bottom="10" />
+  <sprite id="legend_tabard_102_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF2B2729" width="131" height="125" img="entity\legend_armor\legend_tabard_102_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_103_back" offsetY="35" ic="FF6E6F71" width="104" height="142" img="entity\legend_armor\legend_tabard_103_back.png" left="-42" right="40" top="-52" bottom="10" />
+  <sprite id="legend_tabard_103_back_damaged" offsetY="35" ic="FF68686B" width="104" height="142" img="entity\legend_armor\legend_tabard_103_back_damaged.png" top="-52" bottom="10" />
+  <sprite id="legend_tabard_103_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF4A4D52" width="131" height="125" img="entity\legend_armor\legend_tabard_103_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_104_back" offsetY="35" ic="FF15144E" width="104" height="142" img="entity\legend_armor\legend_tabard_104_back.png" top="-52" bottom="12" />
+  <sprite id="legend_tabard_104_back_damaged" offsetY="35" ic="FF14134B" width="104" height="142" img="entity\legend_armor\legend_tabard_104_back_damaged.png" left="-40" right="38" top="-52" bottom="12" />
+  <sprite id="legend_tabard_104_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF14143D" width="131" height="125" img="entity\legend_armor\legend_tabard_104_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_105_back" offsetY="35" ic="FF495D49" width="104" height="142" img="entity\legend_armor\legend_tabard_105_back.png" top="-52" bottom="12" />
+  <sprite id="legend_tabard_105_back_damaged" offsetY="35" ic="FF3C513B" width="104" height="142" img="entity\legend_armor\legend_tabard_105_back_damaged.png" left="-40" right="38" top="-52" bottom="12" />
+  <sprite id="legend_tabard_105_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF293A29" width="131" height="125" img="entity\legend_armor\legend_tabard_105_back_dead.png" left="-55" right="51" top="-55" bottom="51" />
+  <sprite id="legend_tabard_106_back" offsetY="35" ic="FF7F7062" width="104" height="142" img="entity\legend_armor\legend_tabard_106_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_106_back_damaged" offsetY="35" ic="FF77695C" width="104" height="142" img="entity\legend_armor\legend_tabard_106_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_106_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF574D45" width="131" height="125" img="entity\legend_armor\legend_tabard_106_back_dead.png" top="-55" bottom="51" />
+  <sprite id="legend_tabard_107_back" offsetY="35" ic="FF274349" width="104" height="142" img="entity\legend_armor\legend_tabard_107_back.png" left="-41" right="39" top="-53" bottom="11" />
+  <sprite id="legend_tabard_107_back_damaged" offsetY="35" ic="FF253C3C" width="104" height="142" img="entity\legend_armor\legend_tabard_107_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_107_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF222D2D" width="131" height="125" img="entity\legend_armor\legend_tabard_107_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_108_back" offsetY="35" ic="FF242424" width="104" height="142" img="entity\legend_armor\legend_tabard_108_back.png" left="-42" right="40" top="-53" bottom="11" />
+  <sprite id="legend_tabard_108_back_damaged" offsetY="35" ic="FF222222" width="104" height="142" img="entity\legend_armor\legend_tabard_108_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_108_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1F1F21" width="131" height="125" img="entity\legend_armor\legend_tabard_108_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_109_back" offsetY="35" ic="FF1F4C7C" width="104" height="142" img="entity\legend_armor\legend_tabard_109_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_109_back_damaged" offsetY="35" ic="FF1C4473" width="104" height="142" img="entity\legend_armor\legend_tabard_109_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_109_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF193256" width="131" height="125" img="entity\legend_armor\legend_tabard_109_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_110_back" offsetY="35" ic="FF234E57" width="104" height="142" img="entity\legend_armor\legend_tabard_110_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_110_back_damaged" offsetY="35" ic="FF21484E" width="104" height="142" img="entity\legend_armor\legend_tabard_110_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_110_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1B373B" width="131" height="125" img="entity\legend_armor\legend_tabard_110_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_111_back" offsetY="35" ic="FF234E57" width="104" height="142" img="entity\legend_armor\legend_tabard_111_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_111_back_damaged" offsetY="35" ic="FF21484E" width="104" height="142" img="entity\legend_armor\legend_tabard_111_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_111_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1B373B" width="131" height="125" img="entity\legend_armor\legend_tabard_111_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+  <sprite id="legend_tabard_112_back" offsetY="35" ic="FF234E57" width="104" height="142" img="entity\legend_armor\legend_tabard_112_back.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_112_back_damaged" offsetY="35" ic="FF21484E" width="104" height="142" img="entity\legend_armor\legend_tabard_112_back_damaged.png" top="-53" bottom="11" />
+  <sprite id="legend_tabard_112_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1B373B" width="131" height="125" img="entity\legend_armor\legend_tabard_112_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
  
 </brush>
