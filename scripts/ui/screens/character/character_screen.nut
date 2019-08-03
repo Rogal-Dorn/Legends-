@@ -2398,7 +2398,7 @@ this.character_screen <- {
 		local slotId = _data[0];
 		local bro = this.Tactical.getEntityByID(_data[1]);
 		local upgrade = bro.removeArmorUpgrade(_data[0]);
-		if (upgrade != null)
+		if (upgrade != null && !upgrade.isDestroyedOnRemove())
 		{
 			this.World.Assets.getStash().add(upgrade);
 		}

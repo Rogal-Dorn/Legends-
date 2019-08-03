@@ -2,6 +2,22 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {
 		Upgrades = null
 	},
+	function create()
+	{
+		this.armor.create()
+		this.m.SlotType = this.Const.ItemSlot.Body;
+		this.m.Upgrades = [];
+		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
+		{
+			this.m.Upgrades.push(null);
+		}
+
+	}
+
+	function onAddedToStash( _stashID )
+	{
+	}
+
 	function getArmor()
 	{
 		local value = this.m.Condition
@@ -159,7 +175,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
-			this.m.Upgrades[_upgrade.getType()].onRemoved();
+			local item = this.m.Upgrades[_upgrade.getType()];
+			item.onRemoved();
+			if (!item.isDestroyedOnRemove()) 
+			{
+				this.World.Assets.getStash().add(item);
+			}
 		}
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
@@ -185,16 +206,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		item.onRemoved();
 		this.updateAppearance();
 		return item;
-	}
-
-	function create()
-	{
-		this.armor.create()
-		this.m.Upgrades = [];
-		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
-		{
-			this.m.Upgrades.push(null);
-		}
 	}
 
 	function getTooltip()

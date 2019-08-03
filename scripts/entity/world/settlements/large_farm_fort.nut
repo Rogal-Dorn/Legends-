@@ -92,7 +92,10 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey"
+			"legend_donkey",
+			"legend_horse_rouncey",
+			"legend_horse_destrier",
+			"legend_horse_courser"
 		];
 		this.m.UIDescription = "A massive citadel towering over the open plains";
 		this.m.Description = "A massive citadel towering over the open plains surrounding it. A seat of power to nobles, and housing large armed forces for a firm grip on the region.";

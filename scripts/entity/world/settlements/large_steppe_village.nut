@@ -70,7 +70,10 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"legend_inventor_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey"
+			"legend_donkey",
+			"legend_horse_rouncey",
+			"legend_horse_destrier",
+			"legend_horse_courser"
 		];
 
 		if (this.Const.DLC.Unhold)

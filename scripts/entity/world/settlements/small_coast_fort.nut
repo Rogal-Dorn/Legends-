@@ -70,7 +70,10 @@ this.small_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey"
+			"legend_donkey",
+			"legend_horse_rouncey",
+			"legend_horse_destrier",
+			"legend_horse_courser"
 		];
 		this.m.UIDescription = "A wooden motte with a bailey towering high over the nearby coastline";
 		this.m.Description = "A wooden motte with a bailey towering high over the nearby coastline.";

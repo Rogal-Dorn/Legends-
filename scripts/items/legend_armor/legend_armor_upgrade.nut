@@ -13,8 +13,18 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		ConditionModifier = 0,
 		StaminaModifier = 0,
 		Type = -1,
-		ImpactSound = this.Const.Sound.ArmorLeatherImpact
+		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
+		IsDestroyedOnRemove = false
 	},
+	function create()
+	{
+		this.m.SlotType = this.Const.ItemSlot.None;
+		this.m.ItemType = this.Const.Items.ItemType.Usable;
+		this.m.IsDroppedAsLoot = true;
+		this.m.IsAllowedInBag = false;
+		this.m.IsUsable = true;
+	}
+
 	function getType()
 	{
 		return this.m.Type;
@@ -35,6 +45,11 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		return this.m.Armor != null;
 	}
 
+	function isDestroyedOnRemove()
+	{
+		return this.m.IsDestroyedOnRemove;
+	}
+
 	function getArmor()
 	{
 		return this.m.Armor;
@@ -50,13 +65,9 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		return this.m.ArmorDescription;
 	}
 
-	function create()
+	function getStaminaModifier()
 	{
-		this.m.SlotType = this.Const.ItemSlot.None;
-		this.m.ItemType = this.Const.Items.ItemType.Usable;
-		this.m.IsDroppedAsLoot = true;
-		this.m.IsAllowedInBag = false;
-		this.m.IsUsable = true;
+		return this.m.StaminaModifier;
 	}
 
 	function getTooltip()
@@ -102,6 +113,26 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			type = "text",
 			text = "Right-click or drag onto an armor carried by the currently selected character in order to attach the armor upgrade."
 		});
+
+		result.push({
+			id = 4,
+			type = "progressbar",
+			icon = "ui/icons/armor_body.png",
+			value = this.getCondition(),
+			valueMax = this.getConditionMax(),
+			text = "" + this.getCondition() + " / " + this.getConditionMax() + "",
+			style = "armor-body-slim"
+		});
+
+		if (this.getStaminaModifier() < 0)
+		{
+			result.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Maximum Fatigue [color=" + this.Const.UI.Color.NegativeValue + "]" + this.getStaminaModifier() + "[/color]"
+			});
+		}
 		return result;
 	}
 
@@ -168,6 +199,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	{
 		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
 		this.m.Armor = null;
+		return this.m.IsDestroyedOnRemove;
 	}
 
 	function onUse( _actor, _item = null )
