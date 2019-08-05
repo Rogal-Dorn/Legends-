@@ -23,8 +23,8 @@ this.perk_close_combat_archer <- this.inherit("scripts/skills/skill", {
 
 		if (_skill.isRanged() && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) <= 2)
 		{
-			_properties.DamageRegularMult *= 1.5;
-			_properties.DamageArmorMult *= 1.5;
+			_properties.DamageRegularMult *= 1.25;
+			_properties.DamageArmorMult *= 1.25;
 		}
 	}
 
