@@ -1432,3 +1432,10 @@ Merges in 1.3.0.24 update
 Fixes White Wolf not properly terrifying its opponents 
 Daze, Horrify and Revolt are ranged  
 Glaive damage reduced from 55 to 45
+
+
+12.6.1
+Debilitate lowered to -25% damage, to make up for being three turns 
+Perfect focus raised to triple fatigue, to stave off some insane combos 
+Close combat archer lowered to +25% damage, because +50% is crazy. 
+
