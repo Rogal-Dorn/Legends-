@@ -1435,11 +1435,14 @@ Glaive damage reduced from 55 to 45
 
 
 12.6.1
+Warlock no longer has cultist events
+When warlock resurects people, they look undead 
 Vala recruitment changed, must be in the wilderness, and have combined mercenary levels above 30. 
 Mind over body increased to 75 resolve minimum, scales correctly for each point above. 
 Debilitate lowered to -25% damage, to make up for being three turns 
 Perfect focus raised to triple fatigue, to stave off some insane combos 
 Close combat archer lowered to +25% damage, because +50% is crazy. 
+Fixes log error when stollwurm tails move
 Favoured enemy perks no longer show up in groups of three: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
