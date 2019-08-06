@@ -1458,6 +1458,7 @@ Redback spiders 20% more numerous.
 Perk description updated for field triage and field repairs.
 Fixes Camouflage Perk not correctly hidding player from enemy.
 Fixes crash from when tracking green schrat kills.
+Fixes a crash playing skin ghoul sound effects.
 
 Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
