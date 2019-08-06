@@ -1577,7 +1577,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.  \n[color=#0b0084]From the Light Armor perk group[/color]",
 	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off gaurd. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. [color=#0b0084]From the Mace perk group[/color]",
 	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve. \n[color=#0b0084]From the Trained perk group[/color]",
-	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 50. \n[color=#0b0084]From the Intelligent perk group[/color]",
+	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 75.  \n[color=#0b0084]From the Intelligent perk group[/color]",
 	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants immunity to all rooting effects, including nets and webs. \n[color=#0b0084]From the Nets perk group[/color]"
 };
 gt.Const.Strings.Tooltip <- {

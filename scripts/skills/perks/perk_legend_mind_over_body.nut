@@ -28,12 +28,9 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 		}
 
 		local resolve = actor.getCurrentProperties().getBravery();
-		local fraction = resolve / 50;
-		local bonus = 1;
-		if (fraction > 1)
-		{
-		bonus = this.Math.floor(fraction)
-		}
+		local fraction = resolve / 75;
+		local normal = this.Math.floor(fraction * 100);
+		local bonus = normal / 100;
 
 		return bonus;
 	}
@@ -68,7 +65,10 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
+		if (bonus > 1)
+		{
 		_properties.FatigueEffectMult *= 1.0 / bonus;
+		}
 	}
 
 });
