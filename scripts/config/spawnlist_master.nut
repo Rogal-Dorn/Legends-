@@ -897,7 +897,7 @@ gt.Const.World.Spawn.Troops <- {
 	LegendStollwurm = {
 		ID = this.Const.EntityType.LegendStollwurm,
 		Variant = 0,
-		Strength =270,
+		Strength = 270,
 		Cost = 270,
 		Row = 1,
 		Script = "scripts/entity/tactical/enemies/legend_stollwurm"
@@ -913,8 +913,8 @@ gt.Const.World.Spawn.Troops <- {
 	LegendRedbackSpider = {
 		ID = this.Const.EntityType.LegendRedbackSpider,
 		Variant = 0,
-		Strength = 120,
-		Cost = 120,
+		Strength = 100,
+		Cost = 100,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_redback_spider"
 	},

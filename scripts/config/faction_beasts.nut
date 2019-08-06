@@ -451,8 +451,8 @@ gt.Const.Tactical.Actor.LegendDemonAlp <- {
 };
 gt.Const.Tactical.Actor.LegendStollwurm <- {
 	XP = 1500,
-	ActionPoints = 12,
-	Hitpoints = 1000,
+	ActionPoints = 15,
+	Hitpoints = 2000,
 	Bravery = 180,
 	Stamina = 400,
 	MeleeSkill = 75,
