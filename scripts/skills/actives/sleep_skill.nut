@@ -4,7 +4,7 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.sleep";
 		this.m.Name = "Sleep";
-		this.m.Description = "";
+		this.m.Description = "Use soothing vapours to lull an enemy to sleep. The chance of success is determined by their resolve";
 		this.m.Icon = "skills/active_116.png";
 		this.m.IconDisabled = "skills/active_116.png";
 		this.m.Overlay = "active_116";
@@ -71,6 +71,11 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		if (this.getContainer().getActor().isPlayerControlled())
+		{
+			return true;
+		}
+
 		local b = this.getContainer().getActor().getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault);
 		local targets = b.queryTargetsInMeleeRange(this.getMinRange(), this.getMaxRange());
 		local myTile = this.getContainer().getActor().getTile();
@@ -84,6 +89,7 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return false;
+
 	}
 
 	function onUse( _user, _targetTile )

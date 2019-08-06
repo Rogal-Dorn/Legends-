@@ -112,7 +112,7 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 		}
 		
 		local randomchance = this.Math.rand(1, 100);
-			if (randomchance < 50)
+			if (randomchance > 25)
 			{
 			return false;
 			}

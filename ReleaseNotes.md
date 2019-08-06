@@ -1442,6 +1442,12 @@ Mind over body increased to 75 resolve minimum, scales correctly for each point 
 Debilitate lowered to -25% damage, to make up for being three turns 
 Perfect focus raised to triple fatigue, to stave off some insane combos 
 Close combat archer lowered to +25% damage, because +50% is crazy. 
+Onslaught lowered to 25% of the time
+Smackdown lowered to 25% of the time
+Rebound only works when above 90% fatigue 
+Full force reworked to be: gain min and max damage equal to 10% of the combined fatigue modifier from your body, head, main hand and off hand. 
+Fixes Sleep Perk crashing if you had already selected it before the previous patch, now has a range of 2 like the alps 
+Fixes piercing bolt not working  
 Field Triage will not heal more than 20 health, or use more than 10 medicine in a single action. 
 Fixes log error when stollwurm tails move
 Stollwurm twice as healthy and 25% more AP  

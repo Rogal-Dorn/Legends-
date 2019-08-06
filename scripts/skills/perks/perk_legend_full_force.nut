@@ -16,9 +16,35 @@ this.perk_legend_full_force <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-			local actor = this.getContainer().getActor();
-			local bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
-			_properties.DamageRegularMax += this.Math.floor(bodyArmor * 0.05);
+			local fat = 0;
+			local body = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+			local head = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+			local mainhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			local offhand = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+			if (body != null)
+			{
+				fat = fat + body.getStaminaModifier();
+			}
+
+			if (head != null)
+			{
+				fat = fat + head.getStaminaModifier();
+			}
+
+			if (mainhand != null)
+			{
+				fat = fat + mainhand.getStaminaModifier();
+			}
+
+			if (offhand != null)
+			{
+				fat = fat + offhand.getStaminaModifier();
+			}
+
+			local bonus = this.Math.abs(fat / 10);
+			_properties.DamageRegularMin += this.Math.floor(bonus);
+			_properties.DamageRegularMax += this.Math.floor(bonus);
 
 	}
 
