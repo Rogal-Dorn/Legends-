@@ -1446,7 +1446,7 @@ Field Triage will not heal more than 20 health, or use more than 10 medicine in 
 Fixes log error when stollwurm tails move
 Stollwurm twice as healthy and 25% more AP  
 Redback spiders 20% more numerous
-Favoured enemy perks no longer show up in groups of three: 
+Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
 *Caravan hands lose barbarian 
@@ -1461,7 +1461,7 @@ Favoured enemy perks no longer show up in groups of three:
 *Taxidermists lose spider, gain unhold and alp
 *Miners lose goblins
 *monks lose skeleton
-*Fishermen gain flindwurm
+*Fishermen gain lindwurm
 *Diwowned nobles gain nobles 
 *deserters gain bandit and nobles
 *Peddler loses barbarians
