@@ -127,7 +127,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 			return true;
 		}
 
-		if (!actor.getSkills().hasSkill("perk.legend_piercing_bolt"))
+		if (!actor.getSkills().hasSkill("perk.legend_piercing_shot"))
 		{
 			return true;
 		}

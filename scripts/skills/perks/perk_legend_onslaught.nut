@@ -59,7 +59,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if ( this.Math.rand(1, 100) < 50)
+		if ( this.Math.rand(1, 100) > 25)
 		{
 			return false;
 		}
