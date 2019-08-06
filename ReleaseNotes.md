@@ -1435,10 +1435,12 @@ Glaive damage reduced from 55 to 45
 
 
 12.6.1
+Vala recruitment changed, must be in the wilderness, and have combined mercenary levels above 30. 
+Mind over body increased to 75 resolve minimum, scales correctly for each point above. 
 Debilitate lowered to -25% damage, to make up for being three turns 
 Perfect focus raised to triple fatigue, to stave off some insane combos 
 Close combat archer lowered to +25% damage, because +50% is crazy. 
-Favoured enemy perks no longer show up in groups of three. 
+Favoured enemy perks no longer show up in groups of three: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
 *Caravan hands lose barbarian 
@@ -1449,14 +1451,14 @@ Favoured enemy perks no longer show up in groups of three.
 *Cannibals lose mercenary and noble 
 *Herbalists lose alps
 *Nuns lose weidegangers
-*Shieldmaidens lose  bandits 
-*Taxidermists lose  spider, gain unhold and alp
+*Shieldmaidens lose bandits 
+*Taxidermists lose spider, gain unhold and alp
 *Miners lose goblins
 *monks lose skeleton
 *Fishermen gain flindwurm
 *Diwowned nobles gain nobles 
 *deserters gain bandit and nobles
-*Peddler loses  barbarians
+*Peddler loses barbarians
 *Pimp loses caravans
 *Poacher loses ghoul, gains goblins 
 *Gravedigger gains ghoul and weideganger 
@@ -1466,3 +1468,4 @@ Favoured enemy perks no longer show up in groups of three.
 *Thief loses caravans 
 *wildman and wildwoman lose unhold
 *Witchunter loses weideganger, skeleton and schrat 
+Perk description updated for field triage and field repairs 
