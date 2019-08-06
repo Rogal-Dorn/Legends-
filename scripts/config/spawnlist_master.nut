@@ -452,8 +452,24 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/schrat"
 	},
+	SchratSmall = {
+		ID = this.Const.EntityType.SchratSmall,
+		Variant = 1,
+		Strength = 70,
+		Cost = 70,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/schrat"
+	},
 	LegendGreenwoodSchrat = {
 		ID = this.Const.EntityType.LegendGreenwoodSchrat,
+		Variant = 0,
+		Strength = 280,
+		Cost = 210,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/legend_greenwood_schrat"
+	},
+	LegendGreenwoodSchratSmall = {
+		ID = this.Const.EntityType.LegendGreenwoodSchratSmall,
 		Variant = 0,
 		Strength = 280,
 		Cost = 210,
@@ -1399,6 +1415,25 @@ function calculateCosts( _p )
 	_p.sort(this.onCostCompare);
 }
 
+// function validateToopsMap()
+// {
+// 	foreach (t in this.Const.EntityType)
+// 	{
+// 		if (t == -1)
+// 		{
+// 			continue;
+// 		}
+		
+// 		// if (!t in this.Const.World.Spawn.TroopsMap)
+// 		{
+// 			this.logInfo("**** NOT IN TROOPSMAP " + t)
+// 		}
+		
+
+// 	}
+// }
+
+
 this.calculateCosts(this.Const.World.Spawn.Caravan);
 this.calculateCosts(this.Const.World.Spawn.CaravanEscort);
 
@@ -1408,3 +1443,5 @@ foreach (t in gt.Const.World.Spawn.Troops)
 	spawnMap[t.ID] <- t;
 }
 gt.Const.World.Spawn.TroopsMap <- spawnMap;
+
+// this.validateToopsMap();
