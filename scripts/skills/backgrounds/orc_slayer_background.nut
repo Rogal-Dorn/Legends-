@@ -92,7 +92,11 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree
 			],
-			Enemy = [this.Const.Perks.OrcsTree],
+			Enemy = [
+					this.Const.Perks.OrcTree,
+					this.Const.Perks.GoblinTree,
+					this.Const.Perks.UnholdTree,
+					],
 			Class = []
 		}
 	}

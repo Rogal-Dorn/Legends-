@@ -54,7 +54,12 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.FastTree,
 				this.Const.Perks.ViciousTree
 			],
-			Enemy = [this.Const.Perks.BeastsTree],
+			Enemy = [
+					this.Const.Perks.GhoulTree,
+					this.Const.Perks.DirewolfTree,
+					this.Const.Perks.UnholdTree,
+					this.Const.Perks.AlpTree
+					],
 			Class = []
 		}
 	}

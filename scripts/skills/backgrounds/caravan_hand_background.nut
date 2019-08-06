@@ -62,7 +62,7 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree
 			],
-			Enemy = [this.Const.Perks.OutlandersTree],
+			Enemy = [this.Const.Perks.BanditTree],
 			Class = []
 		}
 	}

@@ -99,7 +99,10 @@ this.wildwoman_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.FitTree
 			],
-			Enemy = [this.Const.Perks.OrcsTree],
+			Enemy = [
+				this.Const.Perks.OrcTree,
+				this.Const.Perks.GoblinTree
+				],
 			Class = [this.Const.Perks.FistsClassTree]
 		}
 	}

@@ -71,6 +71,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.SpearTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.BowTree
 			],
@@ -84,8 +85,14 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.FitTree
 			],
 			Enemy = [
-				this.Const.Perks.MysticTree,
-				this.Const.Perks.BeastsTree
+				this.Const.Perks.SchratTree,
+				this.Const.Perks.LindwurmTree,
+				this.Const.Perks.AlpTree,
+				this.Const.Perks.HexenTree,
+				this.Const.Perks.DirewolfTree,
+				this.Const.Perks.SpiderTree,
+				this.Const.Perks.GhoulTree.
+				this.Const.Perks.UnholdTree
 			],
 			Class = [
 				this.Const.Perks.BeastClassTree

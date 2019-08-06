@@ -1438,4 +1438,31 @@ Glaive damage reduced from 55 to 45
 Debilitate lowered to -25% damage, to make up for being three turns 
 Perfect focus raised to triple fatigue, to stave off some insane combos 
 Close combat archer lowered to +25% damage, because +50% is crazy. 
-
+Favoured enemy perks no longer show up in groups of three. 
+*Barbarian loses mercenary 
+*Beast hunters gain unhold
+*Caravan hands lose barbarian 
+*troubadour loses mercenary and caravans 
+*pickpocket loses caravans 
+*hunter loses ghouls, gains schrat
+*Killers loses caravan 
+*Cannibals lose mercenary and noble 
+*Herbalists lose alps
+*Nuns lose weidegangers
+*Shieldmaidens lose  bandits 
+*Taxidermists lose  spider, gain unhold and alp
+*Miners lose goblins
+*monks lose skeleton
+*Fishermen gain flindwurm
+*Diwowned nobles gain nobles 
+*deserters gain bandit and nobles
+*Peddler loses  barbarians
+*Pimp loses caravans
+*Poacher loses ghoul, gains goblins 
+*Gravedigger gains ghoul and weideganger 
+*Graverobber gains Ghoul and skeleton 
+*Raider loses nobles 
+*shephard losts ghouls, spiders and lindwurms
+*Thief loses caravans 
+*wildman and wildwoman lose unhold
+*Witchunter loses weideganger, skeleton and schrat 

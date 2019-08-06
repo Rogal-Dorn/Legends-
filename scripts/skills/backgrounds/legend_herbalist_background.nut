@@ -89,6 +89,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.PerkTreeDynamic = {
 			Weapon = [			
 				this.Const.Perks.SwordTree,
+				this.Const.Perks.AxeTree,
 				this.Const.Perks.StavesTree,
 				this.Const.Perks.BowTree
 			],
@@ -101,7 +102,10 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.CalmTree
 			],
-			Enemy = [this.Const.Perks.MysticTree],
+			Enemy = [
+					this.Const.Perks.SchratTree,
+					this.Const.Perks.HexenTree
+					],
 			Class = [
 				this.Const.Perks.SickleClassTree,
 				this.Const.Perks.HealerClassTree
