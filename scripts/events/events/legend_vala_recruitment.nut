@@ -58,7 +58,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		local playerTile = this.World.State.getPlayer().getTile();
 		foreach (t in towns)
 		{
-			if (t.getTile().getDistanceTo(playerTile) <= 500)
+			if (t.getTile().getDistanceTo(playerTile) >= 500)
 			{
 				nearTown = true;
 				town = t;
@@ -87,7 +87,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}
-		if (totalbrothers < 1 || brotherlevels < 10)
+		if (totalbrothers < 1 || brotherlevels < 30)
 		{
 			return;
 		}
