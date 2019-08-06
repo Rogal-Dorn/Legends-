@@ -19,7 +19,13 @@
 
 			for( local p = 0; p != instances[f].len(); p = ++p )
 			{
-				if (instances[f][p].getTile().IsHidingEntity && !instances[f][p].isVisibleToEntity() && !instances[f][p].isHidden())
+				if (instances[f][p].isHidden())
+				{
+					continue;
+				}
+
+
+				if (instances[f][p].getTile().IsHidingEntity && !instances[f][p].isVisibleToEntity())
 				{
                     continue;
 				}
@@ -27,6 +33,32 @@
 				this.onOpponentSighted(instances[f][p]);
 				
 			}
+		}
+	}
+
+	o.cleanUpKnownOpponents = function()
+	{
+		local garbage = [];
+
+		foreach( i, o in this.m.KnownOpponents )
+		{
+			if (o.Actor == null || o.Actor.isNull() || !o.Actor.isAlive() || !o.Actor.isPlacedOnMap() || this.Tactical.State.isScenarioMode() && this.Const.FactionAlliance[this.m.Faction].find(o.Actor.getFaction()) != null || !this.Tactical.State.isScenarioMode() && this.World.FactionManager.isAllied(this.m.Faction, o.Actor.getFaction()))
+			{
+				garbage.push(i);
+				continue
+			}
+
+			if (o.Actor.isHidden())
+			{
+				garbage.push(i)
+			}
+		}
+
+		garbage.reverse();
+
+		foreach( i in garbage )
+		{
+			this.m.KnownOpponents.remove(i);
 		}
 	}
 

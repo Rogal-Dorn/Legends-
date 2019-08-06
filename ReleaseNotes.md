@@ -1435,24 +1435,29 @@ Glaive damage reduced from 55 to 45
 
 
 12.6.1
-Warlock no longer has cultist events
-When warlock resurects people, they look undead 
+Warlock no longer has cultist events.
+When warlock resurects people, they look undead.
 Vala recruitment changed, must be in the wilderness, and have combined mercenary levels above 30. 
 Mind over body increased to 75 resolve minimum, scales correctly for each point above. 
-Debilitate lowered to -25% damage, to make up for being three turns 
-Perfect focus raised to triple fatigue, to stave off some insane combos 
+Debilitate lowered to -25% damage, to make up for being three turns.
+Perfect focus raised to triple fatigue, to stave off some insane combos.
 Close combat archer lowered to +25% damage, because +50% is crazy. 
-Onslaught lowered to 25% chance
-Smackdown lowered to 25% chance
-Rebound only works when above 90% fatigue 
+Onslaught lowered to 25% chance.
+Smackdown lowered to 25% chance.
+Rebound only works when above 90% fatigue. 
 Full force reworked to be: gain min and max damage equal to 10% of the combined fatigue modifier from your body, head, main hand and off hand. 
-Fixes Sleep Perk crashing if you had already selected it before the previous patch, now has a range of 2 like the alps 
-Fixes piercing bolt not working  
+Fixes Sleep Perk crashing if you had already selected it before the previous patch, now has a range of 2 like the alps.
+Fixes piercing bolt not working.
+Piercing Shot now takes 9 AP. If target is hit, back target will also be hit but with a 50% reduction in damage.
+Piercing Bolt now takes 4 AP. Ife target is hit, back target will also be hit but with a 50% reduction in damage.
 Field Triage will not heal more than 20 health, or use more than 10 medicine in a single action. 
-Fixes log error when stollwurm tails move
-Fixes skinghouls going grey when swallowing whole 
-Stollwurm twice as healthy and 25% more AP  
-Redback spiders 20% more numerous
+Fixes log error when stollwurm tails move.
+Fixes skinghouls going grey when swallowing whole .
+Stollwurm twice as healthy and 25% more AP.  
+Redback spiders 20% more numerous.
+Perk description updated for field triage and field repairs.
+Fixes Camouflage Perk not correctly hidding player from enemy.
+
 Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
@@ -1481,4 +1486,4 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 *Thief loses caravans 
 *wildman and wildwoman lose unhold
 *Witchunter loses weideganger, skeleton and schrat 
-Perk description updated for field triage and field repairs 
+
