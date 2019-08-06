@@ -1442,7 +1442,10 @@ Mind over body increased to 75 resolve minimum, scales correctly for each point 
 Debilitate lowered to -25% damage, to make up for being three turns 
 Perfect focus raised to triple fatigue, to stave off some insane combos 
 Close combat archer lowered to +25% damage, because +50% is crazy. 
+Field Triage will not heal more than 20 health, or use more than 10 medicine in a single action. 
 Fixes log error when stollwurm tails move
+Stollwurm twice as healthy and 25% more AP  
+Redback spiders 20% more numerous
 Favoured enemy perks no longer show up in groups of three: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
