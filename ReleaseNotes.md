@@ -1487,4 +1487,5 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 *Thief loses caravans 
 *wildman and wildwoman lose unhold
 *Witchunter loses weideganger, skeleton and schrat 
-
+*Man mangler description updated to show fatigue 
+*Noble captain no longer complains about pay, because his daily wage is now 25  
