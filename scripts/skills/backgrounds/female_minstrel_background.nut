@@ -61,7 +61,7 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.CalmTree,
 				this.Const.Perks.FastTree
 			],
-			Enemy = [this.Const.Perks.CivilizationTree],
+			Enemy = [this.Const.Perks.NoblesTree],
 			Class = [this.Const.Perks.BardClassTree]
 		}
 	}

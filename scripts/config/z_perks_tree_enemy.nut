@@ -73,6 +73,22 @@ gt.Const.Perks.SpiderTree <- {
 	]
 };
 
+gt.Const.Perks.LindwurmTree <- {
+	ID = "LindwurmTree",
+	Descriptions = [
+		"lindwurms"
+	],
+	Tree = [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm],
+		[]
+	]
+};
+
 gt.Const.Perks.MysticTree <- {
 	ID = "MysticTree",
 	Descriptions = [
@@ -420,27 +436,21 @@ gt.Const.Perks.SwordmastersTree <- {
 
 gt.Const.Perks.EnemyTrees <- {
 	Tree = [
-		gt.Const.Perks.BeastsTree,
 		gt.Const.Perks.GhoulTree,
 		gt.Const.Perks.DirewolfTree,
 		gt.Const.Perks.SpiderTree,
-		gt.Const.Perks.MysticTree,
 		gt.Const.Perks.SchratTree,
 		gt.Const.Perks.HexenTree,
 		gt.Const.Perks.AlpTree,
-		gt.Const.Perks.UndeadTree,
 		gt.Const.Perks.SkeletonTree,
 		gt.Const.Perks.ZombieTree,
 		gt.Const.Perks.VampireTree,
-		gt.Const.Perks.OrcsTree,
 		gt.Const.Perks.OrcTree,
 		gt.Const.Perks.GoblinTree,
 		gt.Const.Perks.UnholdTree,
-		gt.Const.Perks.CivilizationTree, 
 		gt.Const.Perks.CaravanTree,
 		gt.Const.Perks.MercenaryTree,
 		gt.Const.Perks.NoblesTree, 
-		gt.Const.Perks.OutlandersTree,
 		gt.Const.Perks.BanditTree,
 		gt.Const.Perks.BarbarianTree,
 		gt.Const.Perks.ArchersTree,
