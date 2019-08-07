@@ -41,9 +41,6 @@ var CharacterScreenInventoryListModule = function(_parent, _dataSource)
     this.mFilterArmorButton = null;
     this.mFilterMiscButton = null;
     this.mFilterUsableButton = null;
-    this.mFormationsSortInventoryButton = null;
-    this.mFormationsClearFormationButton = null;
-    this.mFormationNameContainer = null;
 
     this.mCurrentPopupDialog = null;
 
@@ -54,18 +51,7 @@ var CharacterScreenInventoryListModule = function(_parent, _dataSource)
 CharacterScreenInventoryListModule.prototype.createDIV = function (_parentDiv)
 {
     var self = this; 
-	this.mFormationsPanel = null;
-	this._formBtns = [
-		Path.GFX + 'ui/buttons/1.png',
-		Path.GFX + 'ui/buttons/2.png',
-		Path.GFX + 'ui/buttons/3.png',
-		Path.GFX + 'ui/buttons/4.png',
-		Path.GFX + 'ui/buttons/5.png',
-		Path.GFX + 'ui/buttons/6.png'
-		// Path.GFX + 'ui/buttons/7.png',
-		// Path.GFX + 'ui/buttons/8.png',
-	];
-    this.mFormationsButtons = [];
+
 
 	// create: containers
 	this.mContainer = $('<div class="inventory-list-module opacity-none"/>');
@@ -171,123 +157,6 @@ CharacterScreenInventoryListModule.prototype.createDIV = function (_parentDiv)
         self.mDataSource.notifyBackendFilterUsableButtonClicked();
     }, '', 3);
 
-    //formations
-    this.mFormationsPanel = $('<div class="formations-panel"/>');
-    this.mSlotCountPanel.append(this.mFormationsPanel);
-
-    this._formBtns.forEach(function (_img, _index)
-    {
-        var layout = $('<div class="l-button is-formation-' + _index + '"/>');
-		self.mFormationsPanel.append(layout);
-		var index = _index;
-		var fBtn = layout.createImageButton(_img, function ()
-		{
-            self.onFormationSelected(null, _index);
-            self.mDataSource.notifyBackendFormationClicked(index);
-
-        }, '', 3);
-
-		self.mFormationsButtons.push(fBtn);
-    })
-
-    var layout = $('<div class="l-button formation-panel-btn is-formation-6"/>');
-    this.mFormationsPanel.append(layout);
-    this.mFormationsSortInventoryButton = layout.createImageButton(Path.GFX + Asset.BUTTON_SORT, function ()
-    {
-        self.mDataSource.notifyBackendSortButtonClicked();
-    }, '', 3);
-
-    var layout = $('<div class="l-button is-formation-7"/>');
-    this.mFormationsPanel.append(layout);
-    this.mFormationsClearFormationButton = layout.createImageButton(Path.GFX + 'ui/skin/icon_cross.png', function ()
-    {
-        self.mDataSource.notifyBackendClearFormationButtonClicked();
-    }, '', 3);
-
-    this.mFormationNameContainer = $('<div class="formation-name"/>');
-    this.mFormationsPanel.append(this.mFormationNameContainer);
-    //var editNameimage = $('<img class="display-none"/>');
-    ///editNameimage.attr('src', Path.GFX + Asset.ICON_EDIT_NAME_AND_TITLE);
-    //this.mNameContainer.append(editNameimage);
-
-    var nameLabel = $('<div class="label title-font-normal font-bold font-color-brother-name"></div>');
-    this.mFormationNameContainer.append(nameLabel);
-    this.mFormationNameContainer.click(function ()
-    {
-        if ($(this).hasClass('is-clickable') === false)
-        {
-            return false;
-        }
-
-        self.mDataSource.notifyBackendPopupDialogIsVisible(true);
-        self.mCurrentPopupDialog = $('.character-screen').createPopupDialog('Change Formation Name', null, null, 'change-formation-name-popup');
-
-        self.mCurrentPopupDialog.addPopupDialogOkButton(function (_dialog)
-        {
-            self.updateFormationName(_dialog);
-            self.mCurrentPopupDialog = null;
-            _dialog.destroyPopupDialog();
-            self.mDataSource.notifyBackendPopupDialogIsVisible(false);
-        });
-        
-        self.mCurrentPopupDialog.addPopupDialogCancelButton(function (_dialog)
-        {
-            self.mCurrentPopupDialog = null;
-            _dialog.destroyPopupDialog();
-            self.mDataSource.notifyBackendPopupDialogIsVisible(false);
-        });
-
-        self.mCurrentPopupDialog.addPopupDialogContent(self.createChangeFormationNameDialogContent(self.mCurrentPopupDialog));
-
-		// focus!
-		var inputFields = self.mCurrentPopupDialog.findPopupDialogContentContainer().find('input');
-		$(inputFields[0]).focus();
-    });
-
-    this.mFormationNameContainer.addClass('is-clickable');
-
-    this.onFormationSelected(null, this.mDataSource.getFormationIndex());
-    this.onSetFormationName(null, this.mDataSource.getFormationName());
-    this.mFormationsPanel.hide()
-};
-
-CharacterScreenInventoryListModule.prototype.updateFormationName = function (_dialog)
-{
-    var contentContainer = _dialog.findPopupDialogContentContainer();
-    var inputFields = contentContainer.find('input');
-    this.mDataSource.updateFormationName(null, $(inputFields[0]).getInputText());
-};
-
-CharacterScreenInventoryListModule.prototype.createChangeFormationNameDialogContent = function (_dialog)
-{
-    var data = this.mDataSource.getFormationName();
-    var result = $('<div class="change-formation-name-container"/>');
-
-    // create & set name
-    var row = $('<div class="row"/>');
-    result.append(row);
-    var label = $('<div class="label text-font-normal font-color-label font-bottom-shadow">Name</div>');
-    row.append(label);
-
-	var self = this;
-
-    var inputLayout = $('<div class="l-input"/>');
-    row.append(inputLayout);
-    var inputField = inputLayout.createInput('', 0, Constants.Game.MAX_BROTHER_NAME_LENGTH, 1, function (_input)
-	{
-        _dialog.findPopupDialogOkButton().enableButton(_input.getInputTextLength() >= Constants.Game.MIN_BROTHER_NAME_LENGTH);
-    }, 'title-font-big font-bold font-color-brother-name', function (_input)
-	{
-		var button = _dialog.findPopupDialogOkButton();
-		if(button.isEnabled())
-		{
-			button.click();
-		}
-	});
-
-    inputField.setInputText(data);
-
-    return result;
 };
 
 CharacterScreenInventoryListModule.prototype.destroyDIV = function ()
@@ -867,8 +736,6 @@ CharacterScreenInventoryListModule.prototype.registerDatasourceListener = functi
 
 	this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.StashLoaded, jQuery.proxy(this.onStashLoaded, this));
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key, jQuery.proxy(this.onStashItemUpdated, this));
-    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.FormationIndex, jQuery.proxy(this.onFormationSelected, this));
-    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.FormationName, jQuery.proxy(this.onSetFormationName, this));
 };
 
 
@@ -887,43 +754,23 @@ CharacterScreenInventoryListModule.prototype.destroy = function()
 CharacterScreenInventoryListModule.prototype.bindTooltips = function ()
 {
     this.mSortInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.SortButton });
-    this.mFormationsSortInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.SortButton });
-    this.mFormationsClearFormationButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ClearFormationButton });
     this.mFilterAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterAllButton });
     this.mFilterWeaponsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterWeaponsButton });
     this.mFilterArmorButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterArmorButton });
     this.mFilterMiscButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterMiscButton });
     this.mFilterUsableButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterUsableButton });
     this.mFilterMoodButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterMoodButton });
-    this.mFormationsButtons.forEach(function(btn)
-    {
-        btn.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ChangeFormationButton });
-    });
-    if(this.mDataSource.isTacticalMode() !== true)
-    {
-        this.mFormationNameContainer.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ChangeFormationName });
-    }
 };
 
 CharacterScreenInventoryListModule.prototype.unbindTooltips = function ()
 {
     this.mSortInventoryButton.unbindTooltip();
-    this.mFormationsSortInventoryButton.unbindTooltip();
-    this.mFormationsClearFormationButton.unbindTooltip();
     this.mFilterAllButton.unbindTooltip();
     this.mFilterWeaponsButton.unbindTooltip();
     this.mFilterArmorButton.unbindTooltip();
     this.mFilterMiscButton.unbindTooltip();
     this.mFilterUsableButton.unbindTooltip();
     this.mFilterMoodButton.unbindTooltip();
-    this.mFormationsButtons.forEach(function(btn)
-    {
-        btn.unbindTooltip();
-    });
-    if(this.mDataSource.isTacticalMode() !== true)
-    {
-        this.mFormationNameContainer.unbindTooltip();
-    }
 };
 
 CharacterScreenInventoryListModule.prototype.register = function (_parentDiv)
@@ -994,18 +841,6 @@ CharacterScreenInventoryListModule.prototype.toggleFilterPanel = function (val)
     }
     this.mSlotCountContainer.show();
     this.mFilterPanel.hide();   
-};
-
-CharacterScreenInventoryListModule.prototype.toggleFormationsPanel = function (val)
-{
-    if (val) {
-        this.mFormationsPanel.show();
-        this.mSlotCountContainer.hide();
-        return;
-    }
-
-    this.mSlotCountContainer.show();
-    this.mFormationsPanel.hide();
 };
 
 
@@ -1163,45 +998,6 @@ CharacterScreenInventoryListModule.prototype.onDataSourceError  = function (_dat
     }
 
     console.info('CharacterScreenInventoryListModule::onDataSourceError(' + _data + ')');
-};
-
-CharacterScreenInventoryListModule.prototype.onFormationSelected = function (_dataSource, _index)
-{
-    this.mFormationsButtons.forEach(function (_b, _i) 
-    {
-        _b.removeClass('is-active');
-        if (_i === _index) {
-            _b.addClass('is-active');
-        }
-    });
-};
-
-CharacterScreenInventoryListModule.prototype.onSetFormationName = function( _dataSource, _name)
-{
-    if (_name == null || _name == undefined)
-    {
-        return;
-    }
-	var label = this.mFormationNameContainer.find('.label:first');
-    if (label.length > 0)
-    {
-        label.html(_name);
-    }
-
-    /*var image = this.mNameContainer.find('img:first');
-    if (image.length > 0)
-    {*/
-        if (this.mDataSource.isTacticalMode() !== true)
-        {
-            this.mFormationNameContainer.addClass('is-clickable');
-            //image.removeClass('display-none').addClass('display-block');
-        }
-        else
-        {
-            this.mFormationNameContainer.removeClass('is-clickable');
-            //image.removeClass('display-block').addClass('display-none');
-        }
-   // }
 };
 
 
