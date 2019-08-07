@@ -1,11 +1,10 @@
-this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/legend_horse", {
 	m = {},
 	function create()
 	{
-		this.character_background.create();
+		this.legend_horse.create();
 		this.m.ID = "background.legend_horse_destrier";
 		this.m.Name = "Destrier";
-		this.m.Icon = "ui/backgrounds/donkey.png";
 		this.m.BackgroundDescription = "Despite being so highly prized by fighting men they are also called Great Horses, not all knights can afford them over courser, and rare indeed is the non-Noble riding one";
 		this.m.GoodEnding = "A marvel of a fighting horse, %name% the Destrier was retired to horse breeder, where he was treated lavishly as he helped father the next generation of living engines-of-war";
 		this.m.BadEnding = "%name% the horse was sold to a trader, their caravan was attacked by orcs and the remains of %name% were never found";
@@ -25,107 +24,12 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/character
 			"trait.insecure",
 			"trait.fainthearted"
 		];
-		this.m.Faces = this.Const.Faces.Horse;
-		this.m.Hairs = this.Const.Hair.None;
-		this.m.HairColors = this.Const.HairColors.None;
-		this.m.Body = "bust_naked_body_100";
-		this.m.Level = this.Math.rand(4, 5);
-		this.m.IsFemaleBackground = false;
-		this.m.IsLowborn = false;
-		this.m.IsUntalented = true;
-		this.m.IsStabled = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
-		this.m.Modifiers.Terrain = [
-			0.0, // ?
-			0.0, //ocean
-			0.05,//plains
-			0.01, //swamp
-			0.01, //hills
-			0.01, //forest
-			0.01, //forest
-			0.01, //forest_leaves
-			0.01, //autumn_forest
-			0.01, //mountains
-			0.0, // ?
-			0.05, //farmland
-			0.011, // snow
-			0.015, // badlands
-			0.015, //highlands
-			0.05, //stepps
-			0.0 //ocean
-		];
-		this.m.CustomPerkTree = [
-			[
-				this.Const.Perks.PerkDefs.Colossus,
-				this.Const.Perks.PerkDefs.NineLives,
-				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.Steadfast,
-				this.Const.Perks.PerkDefs.Recover
-			],
-			[
-				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.SteelBrow
-			],
-			[
-				this.Const.Perks.PerkDefs.LegendOnslaught,
-				this.Const.Perks.PerkDefs.Dodge,
-				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.Sprint
-			],
-			[
-				this.Const.Perks.PerkDefs.LegendEfficientPacking,
-				this.Const.Perks.PerkDefs.LegendAmmoBinding,
-				this.Const.Perks.PerkDefs.LegendMedPackages,
-				this.Const.Perks.PerkDefs.LegendToolsDrawers
-				
-			],
-			[
-				this.Const.Perks.PerkDefs.Anticipation,
-				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.LoneWolf,
-				this.Const.Perks.PerkDefs.LegendBattleheart
-			],
-			[
-				this.Const.Perks.PerkDefs.LegendAssuredConquest,
-				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendMuscularity
-			],
-			[
-				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.Battleforged,
-				this.Const.Perks.PerkDefs.LegendFullForce
-			],
-			[],
-			[],
-			[],
-			[]	
-		];
 	}
 
-	function getTooltip()
-	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-	}
 
 	function onBuildDescription()
 	{
@@ -170,13 +74,6 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/character
 		};
 		return c;
 	}
-	function onAdded()
-	{
-		this.character_background.onAdded();
-		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
-		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
-		this.m.Container.add(this.new("scripts/skills/traits/legend_appetite_donkey"));
-	}	
 
 
 	function onAddEquipment()

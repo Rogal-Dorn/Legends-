@@ -27,10 +27,12 @@ var CharacterScreenRightPanelHeaderModule = function(_parent, _dataSource)
 	// button: callbacks
 	this.mOnToggleFilterCallback = null;
 	this.mOnSwitchToInventoryCallback = null;
-	this.mOnSwitchToPerksCallback = null;
+    this.mOnSwitchToPerksCallback = null;
+    this.mOnSwitchtoFormationsCallback = null;
 
     this.registerDatasourceListener();
 };
+
 
 
 CharacterScreenRightPanelHeaderModule.prototype.createDIV = function (_parentDiv)
@@ -96,6 +98,8 @@ CharacterScreenRightPanelHeaderModule.prototype.destroyDIV = function ()
     this.mSwitchToInventoryButton = null;
     this.mSwitchToPerksButton.remove();
     this.mSwitchToPerksButton = null;
+    this.mSwitchToFormationsButton.remove();
+    this.mSwitchToFormationsButton = null;
     this.mCloseButton.remove();
     this.mCloseButton = null;
 

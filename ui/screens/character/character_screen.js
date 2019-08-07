@@ -147,6 +147,7 @@ CharacterScreen.prototype.destroyDIV = function ()
 };
 
 
+
 CharacterScreen.prototype.createModules = function()
 {
     this.mCharacterPanelModule = new CharacterScreenLeftPanelModule(this, this.mDataSource);

@@ -22,6 +22,7 @@ var CharacterScreenRightPanelModule = function(_parent, _dataSource)
 	this.mHeaderModule = null;
 	this.mInventoryModule = null;
     this.mPerksModule = null;
+    this.mFormationsModule = null;
 
     this.createModules();
 };
@@ -41,11 +42,13 @@ CharacterScreenRightPanelModule.prototype.destroyDIV = function ()
 };
 
 
+
 CharacterScreenRightPanelModule.prototype.createModules = function()
 {
 	this.mHeaderModule = new CharacterScreenRightPanelHeaderModule(this, this.mDataSource);
 	this.mInventoryModule = new CharacterScreenInventoryListModule(this, this.mDataSource);
     this.mPerksModule = new CharacterScreenPerksModule(this, this.mDataSource);
+    this.mFormationsModule = new CharacterScreenFormationsModule(this, this.mDataSource);
 };
 
 CharacterScreenRightPanelModule.prototype.registerModules = function ()
@@ -53,6 +56,7 @@ CharacterScreenRightPanelModule.prototype.registerModules = function ()
     this.mHeaderModule.register(this.mContainer);
     this.mInventoryModule.register(this.mContainer);
     this.mPerksModule.register(this.mContainer);
+    this.mFormationsModule.register(this.mContainer);
 
     this.setupEventHandler();
 };
@@ -64,6 +68,7 @@ CharacterScreenRightPanelModule.prototype.unregisterModules = function ()
     this.mHeaderModule.unregister();
     this.mInventoryModule.unregister();
     this.mPerksModule.unregister();
+    this.mFormationsModule.unregister();
 };
 
 
@@ -152,7 +157,8 @@ CharacterScreenRightPanelModule.prototype.toggleFilterPanel = function ()
 
 CharacterScreenRightPanelModule.prototype.switchToInventory = function ()
 {
-	this.mPerksModule.hide();
+    this.mPerksModule.hide();
+    this.mFormationsModule.hide();
     this.mInventoryModule.show();
     this.mInventoryModule.toggleFilterPanel(true);
     this.mInventoryModule.toggleFormationsPanel(false);
@@ -162,6 +168,7 @@ CharacterScreenRightPanelModule.prototype.switchToInventory = function ()
 CharacterScreenRightPanelModule.prototype.switchToPerks = function ()
 {
     this.mInventoryModule.hide();
+    this.mFormationsModule.hide();
     this.mInventoryModule.toggleFilterPanel(false);
     this.mInventoryModule.toggleFormationsPanel(false);
     this.mPerksModule.show();
@@ -169,8 +176,10 @@ CharacterScreenRightPanelModule.prototype.switchToPerks = function ()
 
 CharacterScreenRightPanelModule.prototype.switchToFormations = function ()
 {
-    this.mInventoryModule.show();
+    this.mInventoryModule.hide();
+    this.mPerksModule.hide();
+    this.mFormationsModule.show();
     this.mInventoryModule.toggleFilterPanel(false);
     this.mInventoryModule.toggleFormationsPanel(true);
-    this.mPerksModule.hide();
+    
 };

@@ -281,3 +281,9 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"wildwoman_background",
 	"witchhunter_background"
 ];
+
+gt.Const.HorseBackgrounds <- [
+	"legend_horse_destrier",
+	"legend_horse_rouncey",
+	"legend_horse_courser"
+]
