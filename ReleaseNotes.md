@@ -1437,7 +1437,7 @@ Glaive damage reduced from 55 to 45
 12.6.1
 Warlock no longer has cultist events.
 When warlock resurects people, they look undead.
-On legendary combat difficulty, bandits get different skills depending on their weapon.
+On legendary combat difficulty, bandits get different skills depending on their weapon. Thugs and Rabble lose nimble, again lithe. 
 Vala recruitment changed, must be in the wilderness, and have combined mercenary levels above 30. 
 Adds a Drum weapon, minstrels and troubadors have a chance of spawning with one 
 Drums of war lowered to restore 5 fatigue to everyone on the field, requires a drum or lute equiped to use.  

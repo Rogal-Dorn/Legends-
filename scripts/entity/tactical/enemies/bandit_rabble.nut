@@ -130,7 +130,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_shovel"));
 				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 				{
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 				}
 		}
 		else if (r == 6)
@@ -138,7 +138,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
 				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 				{
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 				}
 		}
 		else if (r == 7)
@@ -146,7 +146,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_hammer"));
 				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 				{
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));
 				}
 		}
 		else if (r == 8)
@@ -154,7 +154,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_shiv"));
 					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 				{
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 				}
 		}
 		else if (r == 9)
@@ -162,7 +162,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/lute"));
 				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 				{
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind"));
 				}
 		}
 		else if (r == 10)
@@ -170,7 +170,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 				{
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
 				}
 		}
 		else if (r == 11)
@@ -178,7 +178,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_hoe"));
 				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 				{
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
 				}
 		}
 
