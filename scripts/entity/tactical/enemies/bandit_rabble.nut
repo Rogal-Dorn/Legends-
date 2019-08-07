@@ -75,7 +75,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 
 			 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_lithe"));
 			this.m.Skills.add(this.new("scripts/skills/traits/brave_trait"));
 			}
 
@@ -94,46 +94,92 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 		if (r == 1)
 		{
 		this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
+		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+			}
+
 		}
 		else if (r == 2)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_spear"));
+			if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_spearwall"));
+				}
+
 		}
 		else if (r == 3)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_sickle"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
+				}
 		}
 		else if (r == 4)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_staff"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_staff_skill"));
+				}
 		}
 		else if (r == 5)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_shovel"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught));
+				}
 		}
 		else if (r == 6)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught));
+				}
 		}
 		else if (r == 7)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_hammer"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown));
+				}
 		}
 		else if (r == 8)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_shiv"));
+					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber));
+				}
 		}
 		else if (r == 9)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/lute"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_fortified_mind));
+				}
 		}
 		else if (r == 10)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath));
+				}
 		}
 		else if (r == 11)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_hoe"));
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields));
+				}
 		}
 
 	
