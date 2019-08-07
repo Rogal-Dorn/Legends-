@@ -76,7 +76,7 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (this.World.Assets.getArmorParts() * / < 1)
+		if ((this.World.Assets.getArmorParts() / 5) < 1)
 		{
 			return false;
 		}

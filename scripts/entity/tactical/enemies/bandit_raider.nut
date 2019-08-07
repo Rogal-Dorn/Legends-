@@ -209,7 +209,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
 						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 							{
-								this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields));
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
 							}
 			}
 			else if (r == 4)
@@ -217,7 +217,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
 					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						{
-							this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm));
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 						}
 			}
 			else if (r == 5)
@@ -225,7 +225,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
 					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 							{
-								this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught));
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 							}
 			}
 			else if (r == 6)
@@ -249,7 +249,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/weapons/flail"));
 						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						{
-							this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter));
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 						}
 			}
 			else if (r == 9)
@@ -257,7 +257,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/weapons/scramasax"));
 						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						{
-							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath));
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
 						}
 			}
 			else if (r == 10)
@@ -265,7 +265,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.equip(this.new("scripts/items/weapons/military_pick"));
 						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						{
-							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown));
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));
 						}
 			}
 			else if (r == 11)

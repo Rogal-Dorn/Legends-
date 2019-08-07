@@ -30,7 +30,18 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 
 			if (ally.getMoraleState() != this.Const.MoraleState.Ignore)
 			{
+				local resolve = ally.getCurrentProperties().getBravery();
+				local r = this.Math.rand(1, 100);
+				if (r >= resolve)
+				{
 				ally.setMoraleState(this.Const.MoraleState.Confident);
+				}
+				if (r < (resolve/10))
+				{
+				ally.setMoraleState(this.Const.MoraleState.Wavering);
+				}
+
+
 			}
 		}
 	}
