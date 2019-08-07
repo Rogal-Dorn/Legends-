@@ -1460,6 +1460,7 @@ Fixes Camouflage Perk not correctly hidding player from enemy.
 Fixes crash from when tracking green schrat kills.
 Fixes a crash playing skin ghoul sound effects.
 Fixes contracts not correctly calculating the square root effect for barter modifications
+Fixes runed glaives being invisible in the inventory 
 Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
