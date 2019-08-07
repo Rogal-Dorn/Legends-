@@ -1508,3 +1508,6 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 *wildman and wildwoman lose unhold
 *Witchunter loses weideganger, skeleton and schrat 
 
+12.7 Test 2
+Mountain armor from 48 to 42 stamina, repair buffed to 10% 
+Mountain helm from 32 to 24 stamina repair buffed to 10% 
