@@ -56,7 +56,10 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.FitTree,
 				this.Const.Perks.AgileTree
 			],
-			Enemy = [this.Const.Perks.OutlandersTree],
+			Enemy = [
+				this.Const.Perks.BanditTree,
+				this.Const.Perks.BarbarianTree
+			],
 			Class = [this.Const.Perks.MilitiaClassTree]
 		}
 	}

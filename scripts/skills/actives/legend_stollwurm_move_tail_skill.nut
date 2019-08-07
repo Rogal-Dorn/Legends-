@@ -80,7 +80,6 @@ this.legend_stollwurm_move_tail_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			tag.IgnoreColors = true;
 			this.onTeleportStart(tag);
 		}
 

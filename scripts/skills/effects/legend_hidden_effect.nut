@@ -19,8 +19,6 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-
-
 	function onMovementCompleted( _tile )
 	{
 		if (_tile.hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))

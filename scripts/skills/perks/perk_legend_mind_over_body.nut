@@ -28,12 +28,9 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 		}
 
 		local resolve = actor.getCurrentProperties().getBravery();
-		local fraction = resolve / 50;
-		local bonus = 1;
-		if (fraction > 1)
-		{
-		bonus = this.Math.floor(fraction)
-		}
+		local fraction = resolve / 75;
+		local normal = this.Math.floor(fraction * 100);
+		local bonus = normal / 100;
 
 		return bonus;
 	}
@@ -41,6 +38,7 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local bonus = this.getBonus();
+		local benefit = 1.0 - (1.0 / bonus);
 		local tooltip = this.skill.getTooltip();
 
 		if (bonus > 1)
@@ -49,7 +47,7 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "All your fatigue costs are divided by [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color]."
+				text = "All your fatigue costs are divided by [color=" + this.Const.UI.Color.PositiveValue + "]" + benefit + "%[/color]."
 			});
 		}
 		else
@@ -68,7 +66,10 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
+		if (bonus > 1)
+		{
 		_properties.FatigueEffectMult *= 1.0 / bonus;
+		}
 	}
 
 });

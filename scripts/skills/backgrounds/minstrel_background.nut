@@ -137,9 +137,14 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 			items.equip(this.new("scripts/items/helmets/feathered_hat"));
 		}
 
-		if (this.Math.rand(1, 100) <= 80)
+		local r = this.Math.rand(0, 4);
+		if (r <= 2)
 		{
 			items.equip(this.new("scripts/items/weapons/lute"));
+		}
+		if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_drum"));
 		}
 	}
 

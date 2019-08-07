@@ -20,7 +20,7 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Value = 10000;
 		this.m.Condition = 300.0;
 		this.m.ConditionMax = 300.0;
-		this.m.StaminaModifier = -32;
+		this.m.StaminaModifier = -24;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}
 
@@ -31,7 +31,7 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Repairs [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] of its armor each turn"
+			text = "Repairs [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of its armor each turn"
 		});
 		return result;
 	}
@@ -47,7 +47,7 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		local actor = this.getContainer().getActor();
 		local helm = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local helmMissing = helm.getArmorMax() - helm.getArmor();
-		local helmAdded = this.Math.min(helmMissing, this.Math.floor(helm.getArmorMax() * 0.05));
+		local helmAdded = this.Math.min(helmMissing, this.Math.floor(helm.getArmorMax() * 0.1));
 
 
 		if (helmAdded <= 0)

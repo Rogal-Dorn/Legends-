@@ -98,7 +98,10 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.FitTree
 			],
-			Enemy = [this.Const.Perks.OrcsTree],
+			Enemy = [
+				this.Const.Perks.OrcTree,
+				this.Const.Perks.GoblinTree
+			],
 			Class = [this.Const.Perks.FistsClassTree]
 		}
 	}

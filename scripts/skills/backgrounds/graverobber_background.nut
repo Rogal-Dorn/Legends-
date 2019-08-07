@@ -48,7 +48,10 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.DeviousTree
 			],
-			Enemy = [],
+			Enemy = [
+				this.Const.Perks.GhoulTree,
+				this.Const.Perks.SkeletonTree
+			],
 			Class = [this.Const.Perks.ShovelClassTree]
 		}
 	}

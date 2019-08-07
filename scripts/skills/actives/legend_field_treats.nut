@@ -4,7 +4,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_field_treats";
 		this.m.Name = "Field Treats";
-		this.m.Description = "Restore confidence through liberal application of alcohol and food, taking someone from wavering to steady";
+		this.m.Description = "Restore confidence through liberal application of alcohol and food, taking someone from wavering to steady for 20 food.";
 		this.m.Icon = "skills/drink_sqaure.png";
 		this.m.IconDisabled = "skills/drink_sqaure_bw.png";
 		this.m.Overlay = "active_41";
@@ -21,7 +21,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 7;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
@@ -41,7 +41,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/asset_money.png",
-			text = "Spend [color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] food to raise moral state of adjacent ally to steady."
+			text = "Spend [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color] food to raise moral state of adjacent ally from wavering to steady."
 		});
 		return ret;
 	}
@@ -53,7 +53,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 			return false
 		}
 		local food = this.World.Assets.getFood();
-		if (food < 50)
+		if (food < 20)
 		{
 			return false
 		}
@@ -68,7 +68,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 		}
 
 		local food = this.World.Assets.getFood();
-		if (food < 50)
+		if (food < 20)
 		{
 			return false
 		}
@@ -96,7 +96,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 		local food = this.World.Assets.getFood();
 		local a = _targetTile.getEntity();
 		a.changeMorale(this.Const.MoraleState.Steady, "status_effect_56");
-		this.World.Assets.addMedicine(-50);
+		this.World.Assets.addMedicine(-20);
 		return true;
 	}
 
