@@ -19,10 +19,14 @@ this.perk_legend_matching_set <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local body = actor.getArmorMax(this.Const.BodyPart.Body);
 		local head = actor.getArmorMax(this.Const.BodyPart.Head);
+
+		if ((body + head) <= 350 )
+		{
 		local diff = this.Math.abs(body - head);
 		local diffadj = diff / 10;
 		local bonus = this.Math.max(1, (5 - diffadj));
 		_properties.FatigueRecoveryRate += bonus;
+		}
 	}
 
 });

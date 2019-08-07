@@ -47,7 +47,7 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.InspirationalTree
 			],
-			Enemy = [this.Const.Perks.UndeadTree],
+			Enemy = [],
 			Class = [
 				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.NinetailsClassTree

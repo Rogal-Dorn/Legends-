@@ -29,8 +29,8 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 
 		local body = actor.getArmor(this.Const.BodyPart.Body);
 		local initiative = actor.getInitiative();
-		local diff = this.Math.abs(body - 2 * initiative);
-		return this.Math.max(5, this.Math.floor(30 - diff * 0.5));
+		local diff = this.Math.abs(body - (2 * initiative));
+		return this.Math.max(5, this.Math.floor(40 - diff * 0.5));
 	}
 
 	function getTooltip()
@@ -53,7 +53,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5[/color] from balance"
+				text = "This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5[/color] defense from balance"
 			});
 		}
 
@@ -74,7 +74,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 		local bonus = this.getBonus();
-		_properties.DamageReceivedArmorMult *= 1.0 - bonus * 0.01;
+		_properties.DamageReceivedArmorMult *= 1.0 - (bonus * 0.01);
 	}
 
 });

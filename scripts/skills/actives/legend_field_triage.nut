@@ -7,7 +7,7 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_field_triage";
 		this.m.Name = "Field Triage";
-		this.m.Description = "Heal a unit, costs 1 medicine for every 2 health";
+		this.m.Description = "Heal a unit, costs 1 medicine for every 2 health. Heals up to 20 health per use";
 		this.m.Icon = "skills/triage_square.png";
 		this.m.IconDisabled = "skills/triage_square_bw.png";
 		this.m.Overlay = "active_41";
@@ -23,7 +23,7 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 7;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
@@ -106,13 +106,24 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 	{
 		local meds = this.World.Assets.getMedicine();
 		local target = _targetTile.getEntity();
-		local maxHeal = meds * 2;
+		local maxHeal = 20;
+		if (meds < 10)
+		{
+		maxHeal = meds * 2;
+		}
 		local neededHeal = target.getHitpointsMax() - target.getHitpoints()
-		local neededMeds = this.Math.floor(neededHeal / 2)
 
-		local cost = this.Math.min(meds, neededMeds)
+		local finalHeal = maxHeal;
+		if (neededHeal < maxHeal)
+		{
+		local finalHeal = neededHeal;
+		}
+
+		local finalMeds = finalHeal / 2;
+
+		local cost = this.Math.min(meds, finalMeds)
 		this.World.Assets.addMedicine(cost * -1);
-		target.setHitpoints(this.Math.min(target.getHitpointsMax(), target.getHitpoints() + neededHeal));
+		target.setHitpoints(this.Math.min(target.getHitpointsMax(), target.getHitpoints() + finalHeal));
 		return true;
 	}
 

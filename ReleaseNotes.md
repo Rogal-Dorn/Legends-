@@ -1435,6 +1435,85 @@ Daze, Horrify and Revolt are ranged
 Glaive damage reduced from 55 to 45
 
 
+12.7 Test 1
+Warlock no longer has cultist events.
+When warlock resurects people, they look undead.
+On legendary combat difficulty, bandits get different skills depending on their weapon. Thugs and Rabble lose nimble, again lithe. 
+Vala recruitment changed, must be in the wilderness, and have combined mercenary levels above 30. 
+Adds a Drum weapon, minstrels and troubadors have a chance of spawning with one 
+Drums of war lowered to restore 5 fatigue to everyone on the field, requires a drum or lute equiped to use.  
+Balance increased to a maximum of 40 melee defense, ranged defense and armor damage reduction. 
+Inspiring presence no longer gauranteed to set everyone at confident morale, the chance it fail is equal to the resolve of each bro, with 1/10th of that chance to set them at wavering instead. 
+Mind over body increased to 75 resolve minimum, scales correctly for each point above. 
+Debilitate lowered to -25% damage, to make up for being three turns.
+Perfect focus raised to 2.5x, to stave off some insane combos.
+Close combat archer lowered to +25% damage, because +50% is crazy. 
+Battle Flow lowered to 10% of fatigue restored on kill (perk description was already wrong, it was 15% not 25%)
+Onslaught lowered to 25% chance.
+Smackdown lowered to 25% chance.
+Rebound only works when above 90% fatigue. 
+Full force reworked to be: gain min and max damage equal to 10% of the combined fatigue modifier from your body, head, main hand and off hand. 
+Fixes Sleep Perk crashing if you had already selected it before the previous patch, now has a range of 2 like the alps.
+Fixes piercing bolt not working.
+Piercing Shot now takes 9 AP. If target is hit, back target will also be hit but with a 50% reduction in damage.
+Piercing Bolt now takes 4 AP. Ife target is hit, back target will also be hit but with a 50% reduction in damage.
+Field Triage will not heal more than 20 health, or use more than 10 medicine in a single action. Cost reduced to 4AP
+Field Repairs will not repair more than 20 durability or use more than 4 tools in a single action. 
+Field treats cost lowered to 20 food. 
+Fixes log error when stollwurm tails move.
+Fixes skinghouls going grey when swallowing whole .
+Stollwurm twice as healthy and 25% more AP.  
+Redback spiders 20% more numerous.
+Perk description updated for field triage and field repairs.
+Fixes Camouflage Perk not correctly hidding player from enemy.
+Fixes crash from when tracking green schrat kills.
+Fixes a crash playing skin ghoul sound effects.
+Fixes contracts not correctly calculating the square root effect for barter modifications.
+Fixes runed glaives being invisible in the inventory.
+Fixes missing images for named crossbows.
+Fixes redback dagger not applying poison.
+Militia skill residual bonus apply to glaives.
+Staff block gains a residual bonus with sword staves.
+Staff Mastery perk description updated to clarify that it helps regular staff skills.
+Buckler bash fatigue cost increased by 5%
+Buckler fixed to gain defense against 2 and 3 opponents at decreased rates.
+Man mangler description updated to show fatigue.
+Noble captain no longer complains about pay, because his daily wage is now 25.
+Fixes Favored perk enemy champion spawning rates. Each kill should now increases the chances of champions spawning.
+Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
+*Barbarian loses mercenary 
+*Beast hunters gain unhold
+*Caravan hands lose barbarian 
+*troubadour loses mercenary and caravans 
+*pickpocket loses caravans 
+*hunter loses ghouls, gains schrat
+*Killers loses caravan 
+*Cannibals lose mercenary and noble 
+*Herbalists lose alps
+*Nuns lose weidegangers
+*Shieldmaidens lose bandits 
+*Taxidermists lose spider, gain unhold and alp
+*Miners lose goblins
+*monks lose skeleton
+*Fishermen gain lindwurm
+*Diwowned nobles gain nobles 
+*deserters gain bandit and nobles
+*Peddler loses barbarians
+*Pimp loses caravans
+*Poacher loses ghoul, gains goblins 
+*Gravedigger gains ghoul and weideganger 
+*Graverobber gains Ghoul and skeleton 
+*Raider loses nobles 
+*shephard losts ghouls, spiders and lindwurms
+*Thief loses caravans 
+*wildman and wildwoman lose unhold
+*Witchunter loses weideganger, skeleton and schrat 
+
+12.7 Test 2
+Mountain armor from 48 to 42 stamina, repair buffed to 10% 
+Mountain helm from 32 to 24 stamina repair buffed to 10% 
+Adds new FavoriteEnemyBandit 4 skull contract - Hunt down a bandit army (Contributions by syku333)
+
 Beta 13
 *** Armor System:
 

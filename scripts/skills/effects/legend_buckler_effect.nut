@@ -4,7 +4,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.legend_buckler";
 		this.m.Name = "Buckler defense";
-		this.m.Description = "Bucklers work best against a single opponent, +15 Melee and +5 Range defense when only one opponent within 1 tile";
+		this.m.Description = "Bucklers work best against a single opponent, gain defense depending on how many enemies are within 1 tile. 12 melee when facing one enemy, 6 when facing 2, 4 when facing 3. Also gain half that as ranged defense";
 		this.m.Icon = "ui/perks/perk_02.png";
 		//this.m.IconMini = "perk_02_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
@@ -90,13 +90,29 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 			}
 			++nearbyEnemies;
 		}
-
-		if (nearbyEnemies > 1)
+		
+		if (nearbyEnemies > 3)
 		{
 			return 0;
 		}
 
-		return 15;
+		if (nearbyEnemies == 3)
+		{
+			return 4;
+		}
+
+		if (nearbyEnemies == 2)
+		{
+			return 6;
+		}
+		if (nearbyEnemies == 1)
+		{
+			return 12;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	function getTooltip()
@@ -123,7 +139,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus / 3 + "[/color]  Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus / 2 + "[/color]  Ranged Defense"
 			}
 		];
 	}
@@ -132,7 +148,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local bonus = this.getBonus();
 		_properties.MeleeDefense += bonus;
-		_properties.RangedDefense += bonus / 3;
+		_properties.RangedDefense += bonus / 2;
 	}
 
 

@@ -198,7 +198,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getOrigin().getID() != "scenario.cultists" && this.World.Assets.getOrigin().getID() != "scenario.legends_necro")
+		if (this.World.Assets.getOrigin().getID() != "scenario.cultists")
 		{
 			return;
 		}

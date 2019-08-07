@@ -483,6 +483,11 @@ gt.Const.LegendMod.FavEnemyPerkMap <- {
 
 gt.Const.LegendMod.GetFavEnemyBossChance <- function (_id)
 {
+	if (!this.Const.DLC.Wildmen)
+	{
+		return 0;
+	}
+
 	local perks = this.Const.LegendMod.FavEnemyPerkMap.getPerks(_id)
 	if( perks.len() == 0)
 	{

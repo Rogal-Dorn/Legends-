@@ -49,7 +49,7 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.3;
-		this.m.ActionPointCost = 5;
+		this.m.ActionPointCost = 9;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 7;
@@ -67,7 +67,7 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Can hit up to 2 targets"
+			text = "If arrow hits its target, it will continue through and damage any target behind, dealing %50 damage."
 		});
 
 		ret.push({
@@ -213,15 +213,43 @@ this.legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		local ret = _tag.Skill.attackEntity(_tag.User, _tag.TargetTile.getEntity());
 		local ownTile = _tag.User.getTile();
 		local dir = ownTile.getDirectionTo(_tag.TargetTile);
-		if (_tag.TargetTile.hasNextTile(dir))
-		{
-			local forwardTile = _tag.TargetTile.getNextTile(dir);
 
-			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
-			{
-				ret = _tag.Skill.attackEntity(_tag.User, forwardTile.getEntity()) || ret;
-			}
+		if (!_tag.TargetTile.hasNextTile(dir))
+		{
+			return ret
 		}
+
+		local forwardTile = _tag.TargetTile.getNextTile(dir);
+		if (!forwardTile.IsOccupiedByActor)
+		{
+			return ret
+		}
+
+		if (!forwardTile.getEntity().isAttackable())
+		{
+			return ret
+		}
+		
+		if (this.Math.abs(forwardTile.Level - ownTile.Level) > 1)
+		{
+			return ret
+		}
+
+		_tag.Skill.getContainer().setBusy(true);
+		local _targetEntity = forwardTile.getEntity();
+		local properties = _tag.Skill.m.Container.buildPropertiesForUse(_tag.Skill, _targetEntity);
+		properties.DamageTotalMult *= 0.50;
+		local info = {
+			Skill = _tag.Skill,
+			Container = _tag.Skill.getContainer(),
+			User = _tag.User,
+			TargetEntity = _targetEntity,
+			Properties = properties,
+			DistanceToTarget = _tag.User.getTile().getDistanceTo(_targetEntity.getTile())
+		};
+
+		_tag.Skill.onScheduledTargetHit(info);
+		this.Tactical.EventLog.logEx(_tag.Skill.getName() + " pierces " + this.Const.UI.getColorizedEntityName(_tag.TargetTile.getEntity()) + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
 		return ret
 	}
 

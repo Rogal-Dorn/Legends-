@@ -46,8 +46,8 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.4;
-		this.m.ActionPointCost = 2;
-		this.m.FatigueCost = 5;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 4;		
@@ -64,7 +64,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Can hit up to 2 targets"
+			text = "If bolt hits its target, it will continue through and damage any target behind, dealing %50 damage."
 		});
 
 		ret.push({
@@ -127,7 +127,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 			return true;
 		}
 
-		if (!actor.getSkills().hasSkill("perk.legend_piercing_bolt"))
+		if (!actor.getSkills().hasSkill("perk.legend_piercing_shot"))
 		{
 			return true;
 		}
@@ -167,25 +167,54 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
 	}
 
+
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_tag.TargetTile, this.Const.Tactical.AttackEffectSplit);
 		local ret = this.attackEntity(_user, _targetTile.getEntity());
-		local ownTile = _user.getTile();
-		local dir = ownTile.getDirectionTo(_targetTile);
-		if (_targetTile.hasNextTile(dir))
-		{
-			local forwardTile = _targetTile.getNextTile(dir);
-
-			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
-			{
-				ret = this.attackEntity(_user, forwardTile.getEntity()) || ret;
-			}
-		}
 		this.getItem().setLoaded(false);
 		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
 		skillToAdd.setItem(this.getItem());
 		this.getContainer().add(skillToAdd);
+
+		local ownTile = _user.getTile();
+		local dir = ownTile.getDirectionTo(_targetTile);
+		if (!_targetTile.hasNextTile(dir))
+		{
+			return ret
+		}
+
+		local forwardTile = _targetTile.getNextTile(dir);
+		if (!forwardTile.IsOccupiedByActor)
+		{
+			return ret
+		}
+
+		if (!forwardTile.getEntity().isAttackable())
+		{
+			return ret
+		}
+		
+		if (this.Math.abs(forwardTile.Level - ownTile.Level) > 1)
+		{
+			return ret
+		}
+
+		this.getContainer().setBusy(true);
+		local _targetEntity = forwardTile.getEntity();
+		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
+		properties.DamageTotalMult *= 0.50;
+		local info = {
+			Skill = this,
+			Container = this.getContainer(),
+			User = _user,
+			TargetEntity = _targetEntity,
+			Properties = properties,
+			DistanceToTarget = _user.User.getTile().getDistanceTo(_targetEntity.getTile())
+		};
+
+		this.onScheduledTargetHit(info);
+		this.Tactical.EventLog.logEx(this.getName() + " pierces " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
 		return ret
 	}
 

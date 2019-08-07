@@ -59,7 +59,10 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.LargeTree
 				this.Const.Perks.SturdyTree
 			],
-			Enemy = [this.Const.Perks.CivilizationTree],
+			Enemy = [
+				this.Const.Perks.CaravanTree,
+				this.Const.Perks.NoblesTree
+				],
 			Class = []
 		}
 	}

@@ -17,7 +17,7 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Value = 10000;
 		this.m.Condition = 300;
 		this.m.ConditionMax = 300;
-		this.m.StaminaModifier = -48;
+		this.m.StaminaModifier = -42;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}
 
@@ -28,7 +28,7 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Repairs [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] of its armor each turn"
+			text = "Repairs [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of its armor each turn"
 		});
 		return result;
 	}
@@ -44,7 +44,7 @@ this.legend_mountain_armor <- this.inherit("scripts/items/armor/armor", {
 		local actor = this.getContainer().getActor();
 		local body = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local bodyMissing = body.getArmorMax() - body.getArmor();
-		local bodyAdded = this.Math.min(bodyMissing, this.Math.floor(body.getArmorMax() * 0.05));
+		local bodyAdded = this.Math.min(bodyMissing, this.Math.floor(body.getArmorMax() * 0.1));
 
 
 		if (bodyAdded <= 0)

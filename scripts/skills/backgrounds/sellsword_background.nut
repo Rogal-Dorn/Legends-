@@ -60,7 +60,10 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.SturdyTree,
 				this.Const.Perks.LargeTree
 			],
-			Enemy = [this.Const.Perks.OutlandersTree],
+			Enemy = [
+				this.Const.Perks.BanditTree,
+				this.Const.Perks.BarbarianTree
+			],
 			Class = []
 		}
 	}

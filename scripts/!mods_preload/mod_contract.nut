@@ -192,7 +192,8 @@
 
 	o.getPaymentMult = function()
 	{
-		local repDiffMult = sqrt(this.getReputationToDifficultyMult());
+		local repDiffMult = this.Math.pow(this.getReputationToDifficultyMult(), 0.5);
+
 		local roster = this.World.getPlayerRoster().getAll();
 		local broMult = 0.0;
 		foreach( bro in roster )

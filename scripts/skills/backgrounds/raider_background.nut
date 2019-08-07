@@ -68,7 +68,10 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.ViciousTree
 			],
-			Enemy = [this.Const.Perks.CivilizationTree],
+			Enemy = [
+				this.Const.Perks.CaravanTree,
+				this.Const.Perks.MercenaryTree,
+			],
 			Class = []
 		}
 	}

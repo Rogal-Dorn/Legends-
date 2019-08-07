@@ -69,7 +69,11 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.AgileTree
 			],
-			Enemy = [this.Const.Perks.BeastsTree],
+			Enemy = [
+					this.Const.Perks.DirewolfTree,
+					this.Const.Perks.SpiderTree,
+					this.Const.Perks.GoblinTree
+					],
 			Class = [this.Const.Perks.ShortbowClassTree]
 		}
 	}
