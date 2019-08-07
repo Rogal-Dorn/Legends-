@@ -1470,7 +1470,10 @@ Militia skill residual bonus apply to glaives.
 Staff block gains a residual bonus with sword staves.
 Staff Mastery perk description updated to clarify that it helps regular staff skills.
 Buckler bash fatigue cost increased by 5%
-Buckler fixed to gain defense against 2 and 3 opponents at decreased rates. 
+Buckler fixed to gain defense against 2 and 3 opponents at decreased rates.
+Man mangler description updated to show fatigue.
+Noble captain no longer complains about pay, because his daily wage is now 25.
+Fixes Favored perk enemy champion spawning rates. Each kill should now increases the chances of champions spawning.
 Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
@@ -1499,5 +1502,4 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 *Thief loses caravans 
 *wildman and wildwoman lose unhold
 *Witchunter loses weideganger, skeleton and schrat 
-*Man mangler description updated to show fatigue 
-*Noble captain no longer complains about pay, because his daily wage is now 25  
+

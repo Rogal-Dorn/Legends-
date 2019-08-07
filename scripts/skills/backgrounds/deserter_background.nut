@@ -66,7 +66,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			Enemy = [
 					this.Const.Perks.BanditTree,
-					this.Const.Perks.NobleTree
+					this.Const.Perks.NoblesTree
 					],
 			Class = []
 		}
