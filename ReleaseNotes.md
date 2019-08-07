@@ -1434,7 +1434,7 @@ Daze, Horrify and Revolt are ranged
 Glaive damage reduced from 55 to 45
 
 
-12.6.1
+12.7 Test 1
 Warlock no longer has cultist events.
 When warlock resurects people, they look undead.
 On legendary combat difficulty, bandits get different skills depending on their weapon. Thugs and Rabble lose nimble, again lithe. 
