@@ -21,30 +21,16 @@ this.perk_legend_specialist_staff_skill <- this.inherit("scripts/skills/skill", 
 		{
 			return;
 		}
-		if (item.getID() == "weapon.legend_staff")
+		if (item.getID() == "weapon.legend_staff" || item.getID() == "weapon.legend_tipstaff" || item.getID() == "weapon.legend_staff_gnarled" || item.getID() == "weapon.legend_mystic_staff" || item.getID() == "weapon.legend_staff_vala")
 		{
-			_properties.MeleeDefense += 10;
+			_properties.MeleeDefense += 12;
 		}
 
-		if (item.getID() == "weapon.legend_tipstaff")
+		if (item.getID() == "weapon.legend_swordstaff" || item.getID() == "weapon.legend_named_swordstaff")
 		{
-			_properties.MeleeDefense += 10;
+			_properties.MeleeDefense += 3;
 		}
 
-		if (item.getID() == "weapon.legend_staff_gnarled")
-		{
-			_properties.MeleeDefense += 10;
-		}
-
-		if (item.getID() == "weapon.legend_mystic_staff")
-		{
-			_properties.MeleeDefense += 10;
-		}
-
-		if (item.getID() == "weapon.legend_staff_vala")
-		{
-			_properties.MeleeDefense += 10;
-		}
 
 	}
 
