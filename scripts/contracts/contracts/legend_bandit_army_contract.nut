@@ -25,7 +25,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Type = "contract.legend_bandit_army_contract";
 		this.m.Name = "Brigands Army (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DifficultyMult = this.Math.rand(175, 195) * 0.01;
 		
 	}
 
@@ -60,16 +60,17 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		local i = 0;
 		while (i < settlements.len())
 		{
-			local s = settlements[i];
+		 	local s = settlements[i];
 
-			if (s.isIsolatedFromRoads() || !s.isDiscovered() || s.getID() == this.m.Home.getID())
-			{
-				settlements.remove(i);
-				continue;
-			}
+		 	if (s.isIsolatedFromRoads() || !s.isDiscovered() || s.getID() == this.m.Home.getID())
+		 	{
+		 		settlements.remove(i);
+		 		continue;
+		 	}
 
-			i = ++i;
+		 	i = ++i;
 		}
+
 
 		this.m.Location1 = this.WeakTableRef(this.getNearestLocationTo(this.m.Home, settlements, true));
 		this.m.Location2 = this.WeakTableRef(this.getNearestLocationTo(this.m.Location1, settlements, true));
@@ -176,11 +177,11 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 				
 				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive())
 				{
-					if (!this.Flags.get("Tntercepted"))
+					if (!this.Flags.get("Intercepted"))
 					{
 						this.Contract.setScreen("Shortcut");
 						this.World.Contracts.showActiveContract();
-						this.Flags.set("Tntercepted",true);
+						this.Flags.set("Intercepted",true);
 					}
 					else
 					{
@@ -220,11 +221,11 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive())
 				{
-					if (!this.Flags.get("Tntercepted"))
+					if (!this.Flags.get("Intercepted"))
 					{
 						this.Contract.setScreen("Shortcut");
 						this.World.Contracts.showActiveContract();
-						this.Flags.set("Tntercepted",true);
+						this.Flags.set("Intercepted",true);
 					}
 					else
 					{
@@ -265,11 +266,11 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 				
 				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive())
 				{
-					if (!this.Flags.get("Tntercepted"))
+					if (!this.Flags.get("Intercepted"))
 					{
 						this.Contract.setScreen("Shortcut");
 						this.World.Contracts.showActiveContract();
-						this.Flags.set("Tntercepted",true);
+						this.Flags.set("Intercepted",true);
 					}
 					else
 					{
@@ -813,8 +814,6 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 	function onIsValid()
 	{
-		return true;
-
 		if (this.m.IsStarted)
 		{
 			if (this.m.Destination == null || this.m.Destination.isNull() || !this.m.Destination.isAlive())
@@ -851,17 +850,32 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 				return true;
 			}
 		}
-
 		return false;
 	}
 
 	function onSerialize( _out )
 	{
-		_out.writeI32(0);
-
 		if (this.m.Destination != null && !this.m.Destination.isNull())
 		{
 			_out.writeU32(this.m.Destination.getID());
+		}
+		else
+		{
+			_out.writeU32(0);
+		}
+
+		if (this.m.Location1 != null)
+		{
+			_out.writeU32(this.m.Location1.getID());
+		}
+		else
+		{
+			_out.writeU32(0);
+		}
+
+		if (this.m.Location2 != null)
+		{
+			_out.writeU32(this.m.Location2.getID());
 		}
 		else
 		{
@@ -873,12 +887,25 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 	function onDeserialize( _in )
 	{
-		_in.readI32();
 		local destination = _in.readU32();
 
 		if (destination != 0)
 		{
 			this.m.Destination = this.WeakTableRef(this.World.getEntityByID(destination));
+		}
+
+		local location1 = _in.readU32();
+
+		if (location1 != 0)
+		{
+			this.m.Location1 = this.WeakTableRef(this.World.getEntityByID(location1));
+		}
+
+		local location2 = _in.readU32();
+
+		if (location2 != 0)
+		{
+			this.m.Location2 = this.WeakTableRef(this.World.getEntityByID(location2));
 		}
 
 		this.contract.onDeserialize(_in);

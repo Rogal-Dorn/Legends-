@@ -11,9 +11,6 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 
 	function onUpdate( _faction )
 	{
-		this.m.Score = 99999;
-		return
-	
 		if (!_faction.isReadyForContract())
 		{
 			return;
@@ -76,7 +73,7 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 			return;
 		}
 
-		this.m.Score = 10;
+		this.m.Score = 15;
 	}
 
 	function onClear()
