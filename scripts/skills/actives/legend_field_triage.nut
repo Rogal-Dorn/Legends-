@@ -7,7 +7,7 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_field_triage";
 		this.m.Name = "Field Triage";
-		this.m.Description = "Heal a unit, costs 1 medicine for every 2 health. Up to 10 medicine.";
+		this.m.Description = "Heal a unit, costs 1 medicine for every 2 health. Heals up to 20 health per use";
 		this.m.Icon = "skills/triage_square.png";
 		this.m.IconDisabled = "skills/triage_square_bw.png";
 		this.m.Overlay = "active_41";
@@ -23,7 +23,7 @@ this.legend_field_triage <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 7;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;

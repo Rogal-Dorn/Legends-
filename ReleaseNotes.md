@@ -1454,7 +1454,9 @@ Fixes Sleep Perk crashing if you had already selected it before the previous pat
 Fixes piercing bolt not working.
 Piercing Shot now takes 9 AP. If target is hit, back target will also be hit but with a 50% reduction in damage.
 Piercing Bolt now takes 4 AP. Ife target is hit, back target will also be hit but with a 50% reduction in damage.
-Field Triage will not heal more than 20 health, or use more than 10 medicine in a single action. 
+Field Triage will not heal more than 20 health, or use more than 10 medicine in a single action. Cost reduced to 4AP
+Field Repairs will not repair more than 20 durability or use more than 4 tools in a single action. 
+Field treats cost lowered to 20 food. 
 Fixes log error when stollwurm tails move.
 Fixes skinghouls going grey when swallowing whole .
 Stollwurm twice as healthy and 25% more AP.  

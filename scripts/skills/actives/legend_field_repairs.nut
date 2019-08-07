@@ -7,7 +7,7 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_field_repairs";
 		this.m.Name = "Field Repairs";
-		this.m.Description = "Repair armor, costs 1 Armor Part for every 5 missing armor";
+		this.m.Description = "Repair armor, costs 1 Armor Part for every 5 missing armor, up to 20 missing armor.";
 		this.m.Icon = "skills/repair_square.png";
 		this.m.IconDisabled = "skills/repair_square_bw.png";
 		this.m.Overlay = "active_41";
@@ -24,7 +24,7 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 7;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 16;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
@@ -62,7 +62,7 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		{
 			return false
 		}
-		if (this.World.Assets.getArmorParts() * 5 < 1)
+		if (this.World.Assets.getArmorParts() / 5 < 1)
 		{
 			return false
 		}
@@ -76,7 +76,7 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (this.World.Assets.getArmorParts() * 5 < 1)
+		if (this.World.Assets.getArmorParts() * / < 1)
 		{
 			return false;
 		}
@@ -131,7 +131,7 @@ this.legend_field_repairs <- this.inherit("scripts/skills/skill", {
 		}
 		local missingHeadArmor = maxHeadArmor - currentHeadArmor;
 		local missingBodyArmor = maxBodyArmor - currentBodyArmor;
-		local maxRepair = armorParts * 5.0;
+		local maxRepair = this.Math.max(armorParts * 5.0, 20);
 
 		if (missingHeadArmor + missingBodyArmor <= maxRepair)
 		{
