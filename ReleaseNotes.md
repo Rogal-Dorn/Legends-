@@ -1438,10 +1438,13 @@ Glaive damage reduced from 55 to 45
 Warlock no longer has cultist events.
 When warlock resurects people, they look undead.
 Vala recruitment changed, must be in the wilderness, and have combined mercenary levels above 30. 
+Adds a Drum weapon, minstrels and troubadors have a chance of spawning with one 
+Drums of war lowered to restore 5 fatigue to everyone on the field, requires a drum or lute equiped to use.  
 Mind over body increased to 75 resolve minimum, scales correctly for each point above. 
 Debilitate lowered to -25% damage, to make up for being three turns.
 Perfect focus raised to triple fatigue, to stave off some insane combos.
 Close combat archer lowered to +25% damage, because +50% is crazy. 
+Battle Flow lowered to 10% of fatigue restored on kill (perk description was already wrong, it was 15% not 25%)
 Onslaught lowered to 25% chance.
 Smackdown lowered to 25% chance.
 Rebound only works when above 90% fatigue. 
@@ -1461,6 +1464,7 @@ Fixes crash from when tracking green schrat kills.
 Fixes a crash playing skin ghoul sound effects.
 Fixes contracts not correctly calculating the square root effect for barter modifications
 Fixes runed glaives being invisible in the inventory 
+Fixes missing images for named crossbows 
 Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold

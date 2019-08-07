@@ -15,15 +15,15 @@ this.perk_legend_drums_of_war <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.drums_of_war"))
+		if (!this.m.Container.hasSkill("actives.legend_drums_of_war"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/drums_of_war_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_drums_of_war_skill"));
 		}
 	}
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.drums_of_war");
+		this.m.Container.removeByID("actives.legend_drums_of_war");
 	}
 
 });
