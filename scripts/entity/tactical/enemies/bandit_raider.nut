@@ -90,7 +90,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
 						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 								{
-									this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields));
+									this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
 								}
 				}
 				else if (r == 1)
