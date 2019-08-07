@@ -34,7 +34,7 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.5;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 15;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.ChanceDecapitate = 0;

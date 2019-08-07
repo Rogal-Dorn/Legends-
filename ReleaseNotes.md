@@ -1469,7 +1469,8 @@ Fixes redback dagger not applying poison.
 Militia skill residual bonus apply to glaives.
 Staff block gains a residual bonus with sword staves.
 Staff Mastery perk description updated to clarify that it helps regular staff skills.
- 
+Buckler bash fatigue cost increased by 5%
+Buckler fixed to gain defense against 2 and 3 opponents at decreased rates. 
 Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
