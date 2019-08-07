@@ -58,7 +58,6 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 		local settlements = clone this.World.FactionManager.getFaction(this.m.Faction).getSettlements();
 		local i = 0;
-
 		while (i < settlements.len())
 		{
 			local s = settlements[i];
@@ -70,13 +69,6 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 			}
 
 			i = ++i;
-			i = i;
-			i = i;
-			i = i;
-			i = i;
-			i = i;
-			i = i;
-			i = i;
 		}
 
 		this.m.Location1 = this.WeakTableRef(this.getNearestLocationTo(this.m.Home, settlements, true));
@@ -821,29 +813,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 	function onIsValid()
 	{
-		if (this.World.FactionManager.getFaction(this.m.Faction).getSettlements().len() < 3)
-		{
-			return false;
-		}
-
 		return true;
-
-		foreach( bro in this.World.getPlayerRoster().getAll() )
-		{
-			if (!bro.getSkills().hasSkill(this.m.Perk))
-			{
-				continue;
-			}
-
-			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-
-			if (stats.Strength >= this.m.MinStrength)
-			{
-				return true;
-			}
-
-			return false;
-		}
 
 		if (this.m.IsStarted)
 		{
@@ -861,13 +831,28 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				return false;
 			}
+		}
 
-			return true;
-		}
-		else
+		if (this.World.FactionManager.getFaction(this.m.Faction).getSettlements().len() < 3)
 		{
-			return true;
+			return false;
 		}
+
+		foreach( bro in this.World.getPlayerRoster().getAll() )
+		{
+			if (!bro.getSkills().hasSkill(this.m.Perk))
+			{
+				continue;
+			}
+
+			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+			if (stats.Strength >= this.m.MinStrength)
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	function onSerialize( _out )
