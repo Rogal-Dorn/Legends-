@@ -83,7 +83,7 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_targetEntity.getCurrentProperties().IsImmuneToPoison = true || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
+		if (_targetEntity.getCurrentProperties().IsImmuneToPoison == true || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
 		{
 			return;
 		}
@@ -123,17 +123,19 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill == this)
+		if (_skill != this)
 		{
-			_properties.MeleeSkill -= 15;
-			_properties.DamageArmorMult *= 0.0;
-			_properties.IsIgnoringArmorOnAttack = true;
-			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
+			return
+		}
 
-			if (this.canDoubleGrip())
-			{
-				_properties.DamageTotalMult /= 1.25;
-			}
+		_properties.MeleeSkill -= 15;
+		_properties.DamageArmorMult *= 0.0;
+		_properties.IsIgnoringArmorOnAttack = true;
+		_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
+
+		if (this.canDoubleGrip())
+		{
+			_properties.DamageTotalMult /= 1.25;
 		}
 		
 		if (_targetEntity != null && _targetEntity.getSkills().hasSkill("effects.web"))

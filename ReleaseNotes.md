@@ -1464,7 +1464,9 @@ Fixes crash from when tracking green schrat kills.
 Fixes a crash playing skin ghoul sound effects.
 Fixes contracts not correctly calculating the square root effect for barter modifications
 Fixes runed glaives being invisible in the inventory 
-Fixes missing images for named crossbows 
+Fixes missing images for named crossbows
+Fixes redback dagger not applying poison.
+
 Favoured enemy perks no longer show up in groups of three. Most backgrounds have two or less: 
 *Barbarian loses mercenary 
 *Beast hunters gain unhold
