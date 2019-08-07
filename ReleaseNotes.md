@@ -1441,6 +1441,8 @@ On legendary combat difficulty, bandits get different skills depending on their 
 Vala recruitment changed, must be in the wilderness, and have combined mercenary levels above 30. 
 Adds a Drum weapon, minstrels and troubadors have a chance of spawning with one 
 Drums of war lowered to restore 5 fatigue to everyone on the field, requires a drum or lute equiped to use.  
+Balance increased to a maximum of 40 melee defense, ranged defense and armor damage reduction. 
+Inspiring presence no longer gauranteed to set everyone at confident morale, the chance it fail is equal to the resolve of each bro, with 1/10th of that chance to set them at wavering instead. 
 Mind over body increased to 75 resolve minimum, scales correctly for each point above. 
 Debilitate lowered to -25% damage, to make up for being three turns.
 Perfect focus raised to 2.5x, to stave off some insane combos.
