@@ -88,42 +88,82 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				if (r == 0)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+								{
+									this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
+								}
 				}
 				else if (r == 1)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/hooked_blade"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+							}
 				}
 				else if (r == 2)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/pike"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
+							}
 				}
 				else if (r == 3)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
+							}
 				}
 				else if (r == 4)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/longaxe"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+							}
 				}
 				else if (r == 5)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/two_handed_wooden_hammer"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
+							}
 				}
 				else if (r == 6)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
+							}
 				}
 				else if (r == 7)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/two_handed_mace"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+							}
 				}
 				else if (r == 8)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/longsword"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_vengeance"));
+							}
 				}
 				else if (r == 9)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/legend_bastardsword"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
+							}
 				}
 			}
 			else
@@ -159,42 +199,82 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			if (r == 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
+					 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
+							}
 			}
 			else if (r == 3)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields));
+							}
 			}
 			else if (r == 4)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
+					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+						{
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm));
+						}
 			}
 			else if (r == 5)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
+					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught));
+							}
 			}
 			else if (r == 6)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/falchion"));
+					 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
+							}
 			}
 			else if (r == 7)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
+							 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+							{
+								this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+							}
 			}
 			else if (r == 8)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/flail"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+						{
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter));
+						}
 			}
 			else if (r == 9)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/scramasax"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+						{
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath));
+						}
 			}
 			else if (r == 10)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/military_pick"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+						{
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown));
+						}
 			}
 			else if (r == 11)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
+						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+						{
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+						}
 			}
 
 			if (this.Math.rand(1, 100) <= 75)
