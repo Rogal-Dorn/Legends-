@@ -1516,5 +1516,5 @@ Extends tooltips for blacksmith, cannibal, donkey, herbalist, taxidermist and ho
 Fixes Parrying dagger tooltip 
 Fixes melee defense rolling 3 higher than it should on trained backgrounds
 Tier 1 resource contributions give a token amount
-
+Steadfast now reduces the fatigue impact of both being hit or being missed, by 90% 
 
