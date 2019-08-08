@@ -68,17 +68,17 @@ gt.Const.LegendMod.ResourceModifiers <- {
 	ArmorParts = [2, 5, 10, 15, 20, 30],
 	Meds = [5, 10, 15, 30, 40],
 	Stash = [1, 3, 5, 10, 15, 30],
-	Healing = [0.0, 0.10, 0.30. 0.50],
-	Injury = [0.0, 0.10, 0.30, 0.50],
-	Repair = [0.0, 0.10, 0.30, 0.50, 1.0],
-	Salvage = [0.0, 0.10, 0.30, 0.50],
-	Crafting = [0.0, 0.50, 0.75, 1.0],
-	Barter = [0.0, 0.005, 0.01, 0.015, 0.02],
-	ToolConsumption = [0.0, 0.05, 0.10, 0.20],
-	MedConsumption = [0.0, 0.05, 0.10, 0.20],
-	Hunting = [0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
-	Fletching = [0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
-	Scout = [0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
-	Gather = [0.0, 0.30, 0.50, 1.0], // = BasePoints + BasePoints * Modifier
-	Training = [0, 0.1, 0.2, 0.3] // = BasePoints + BasePoints * Modifier
+	Healing = [0.05, 0.10, 0.30. 0.50],
+	Injury = [0.05, 0.10, 0.30, 0.50],
+	Repair = [0.05, 0.10, 0.30, 0.50, 1.0],
+	Salvage = [0.05, 0.10, 0.30, 0.50],
+	Crafting = [0.05, 0.50, 0.75, 1.0],
+	Barter = [0.01, 0.025, 0.05, 0.015, 0.02],
+	ToolConsumption = [0.025, 0.05, 0.10, 0.20],
+	MedConsumption = [0.025, 0.05, 0.10, 0.20],
+	Hunting = [0.05, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Fletching = [0.05, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Scout = [0.05, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
+	Gather = [0.1, 0.30, 0.50, 1.0], // = BasePoints + BasePoints * Modifier
+	Training = [0.05, 0.1, 0.2, 0.3] // = BasePoints + BasePoints * Modifier
 }
