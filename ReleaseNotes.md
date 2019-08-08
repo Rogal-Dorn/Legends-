@@ -1512,3 +1512,9 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 Mountain armor from 48 to 42 stamina, repair buffed to 10% 
 Mountain helm from 32 to 24 stamina repair buffed to 10% 
 Adds new FavoriteEnemyBandit 4 skull contract - Hunt down a bandit army (Contributions by syku333)
+Extends tooltips for blacksmith, cannibal, donkey, herbalist, taxidermist and housemaid to make it clearer what they do. Will take time to expand this out. 
+Fixes Parrying dagger tooltip 
+Fixes melee defense rolling 3 higher than it should on trained backgrounds
+Tier 1 resource contributions give a token amount
+
+
