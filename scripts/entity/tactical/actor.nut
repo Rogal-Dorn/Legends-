@@ -1394,7 +1394,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		if (_skill != null && !_skill.isRanged())
 		{
-			this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult));
+			this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
 		}
 
 		this.m.Skills.onMissed(_attacker, _skill);

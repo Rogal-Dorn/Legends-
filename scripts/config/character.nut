@@ -817,6 +817,7 @@ gt.Const.CharacterProperties <- {
 		1.0
 	],
 	FatigueReceivedPerHitMult = 1.0,
+	FatigueLossOnBeingMissedMult = 1.0,
 	MoraleCheckBravery = [
 		0,
 		0,
