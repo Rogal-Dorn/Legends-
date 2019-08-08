@@ -43,7 +43,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.IsFemaleBackground = true;
 
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
-		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
@@ -74,6 +74,28 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 				this.Const.Perks.ChefClassTree
 			]
 		}
+	}
+
+	function getTooltip()
+	{
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Housemaids provide [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] stash spaces, [color=" + this.Const.UI.Color.PositiveValue + "]-5%[/color] medicine consumption, [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] maximum medicine storage,  [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] healing while in healing tent. [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] healing while in healing tent. [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] injury healing while in healing tent. [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] repair while in the repair tent. [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] salvage while in the salvage tent. [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] crafting while in the crafting tent. [color=" + this.Const.UI.Color.PositiveValue + "]+2.5%[/color] barter while trading and delivering. [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] fletching while in the fletching tent. [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] medicine while in gathering in camp.). "
+			}
+		];
 	}
 
 	function onBuildDescription()
