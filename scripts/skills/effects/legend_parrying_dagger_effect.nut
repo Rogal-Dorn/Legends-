@@ -39,6 +39,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		_properties.IsParrying = true;
 		if (!this.getContainer().getActor().isPlacedOnMap())
 		{
 			this.m.IsHidden = true;
@@ -69,11 +70,11 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		}
 		if (nearbyEnemies == 1)
 		{
-		this.m.Bonus = 40;
+		this.m.Bonus = 20;
 		}
 		if (nearbyEnemies == 2)
 		{
-		this.m.Bonus = 10;
+		this.m.Bonus = 5;
 		}
 
 		_properties.MeleeDefense += this.m.Bonus;

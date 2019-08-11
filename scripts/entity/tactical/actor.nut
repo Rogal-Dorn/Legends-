@@ -1392,6 +1392,13 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			}
 		}
 
+		
+		if (this.m.CurrentProperties.IsParrying && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
+		{
+
+			_attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
+		}
+
 		if (_skill != null && !_skill.isRanged())
 		{
 			this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));

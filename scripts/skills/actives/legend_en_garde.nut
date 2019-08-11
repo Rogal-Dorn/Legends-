@@ -11,7 +11,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_en_garde";
 		this.m.Name = "En Garde";
-		this.m.Description = "Block your enemy\'s weapons in a way that leaves them open to counter attack. Applies the Parried effect to an enemy, lowering their defenses.";
+		this.m.Description = "Block your enemy\'s weapons in a way that leaves them open to counter attack. Applies the Parried effect to an enemy, lowering their melee and ranged defenses by 10.";
 		this.m.Icon = "skills/en_garde_square.png";
 		this.m.IconDisabled = "skills/en_garde_square_bw.png";
 		this.m.Overlay = "active_32";
@@ -29,7 +29,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
-		this.m.IsAttack = true;
+		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
@@ -51,7 +51,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] -20 [/color] melee defense"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] -10 [/color] melee and ranged defense"
 		});
 
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInDaggers)
@@ -60,7 +60,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to parry on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to parry on a hit thanks to Dagger Mastery"
 			});
 		}
 		else
@@ -69,7 +69,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to parry on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to parry on a hit due to not having Dagger Mastery"
 			});
 		}
 
