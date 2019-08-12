@@ -27,7 +27,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 		this.m.Titles = [
 			"the Jilted",
-			"the Cougar",
+			"the Alone",
 			"the Rejected",
 			"the Abandoned",
 			"the Broken Heart",
@@ -108,8 +108,8 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 				-5
 			],
 			MeleeSkill = [
-				0,
-				0
+				5,
+				5
 			],
 			RangedSkill = [
 				0,

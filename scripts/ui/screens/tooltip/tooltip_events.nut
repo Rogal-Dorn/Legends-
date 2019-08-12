@@ -4300,7 +4300,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Gucci Citadels"
+					text = "Decked Out Citadels"
 				},
 				{
 					id = 2,
@@ -4327,15 +4327,40 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Legend perk trees"
+						text = "Dynamic Perk Trees"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all recruits for hire will have and unique perk tree."
+						text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. These perk trees are half determined by background, and half randomly chosen from perk groups."
 					}
 				];
-
+		case "mapconfig.legendgenderequality":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Gender Equality"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, 50% of all recruits will be female and all gender combinations will be available at the barber"
+					}
+				];
+		case "mapconfig.legendmagic":
+		return [
+				{
+					id = 1,
+					type = "title",
+					text = "Allow Magic"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If disabled, magic elements like Vala and Runestones will not appear in game. "
+				}
+			];
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":

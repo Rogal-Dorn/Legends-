@@ -7,8 +7,8 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Name = "Militia";
 		this.m.Icon = "ui/backgrounds/background_35.png";
 		this.m.BackgroundDescription = "Anyone that\'s been in the militia will have received at least some basic training in matters of combat.";
-		this.m.GoodEnding = "A former militiaman such as %name% eventually left the %companyname%. He traveled the lands, visiting villages and helping them establish credible militias with which to defend themselves. Finding success in an increasingly dangerous world, %name% eventually came to be a known name, called upon as a sort of \'fixer\' to come and ensure these villages would remain safe. Last you heard, he\'s purchased a plot of land and was raising a family far from the strife of the world.";
-		this.m.BadEnding = "%name% left the collapsing company and returned to his village. Back in the militia, it wasn\'t long until {greenskins | raiders} attacked and he was called to action. It\'s said that he stood tall, rallying the defense as he slew through countless enemies before succumbing to mortal wounds. When you visited the village, you found children playfighting beneath a statue made in the militiaman\'s image.";
+		this.m.GoodEnding = "A former militia recruit such as %name% eventually left the %companyname%. Traveling the lands, visiting villages and helping them establish credible militias with which to defend themselves. Finding success in an increasingly dangerous world, %name% eventually came to be a known name, called upon as a sort of \'fixer\' to come and ensure these villages would remain safe. Last you heard, %name% had purchased a plot of land and was raising a family far from the strife of the world.";
+		this.m.BadEnding = "%name% left the collapsing company and returned to the village. Back in the militia, it wasn\'t long until {greenskins | raiders} attacked and the militia was called to action. It\'s said that %name% stood tall, rallying the defense while slaying through countless enemies before succumbing to mortal wounds. When you visited the village, you found children playfighting beneath a statue made in the %name%\'s image.";
 		this.m.HiringCost = 85;
 		this.m.DailyCost = 9;
 		this.m.Excluded = [
@@ -28,7 +28,13 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
-		if (this.Math.rand(1, 100) <= 10)
+
+		local chance = 10;
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		chance = 50;
+		}
+		if (this.Math.rand(1, 100) <= chance)
 			{
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Beards = null;
@@ -65,7 +71,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function onBuildDescription()
 	{
-		return "{A militiaman like %name% is only raised in times of need. | Broke and without work, %name% joined his local militia. | Caught stealing an apple, %name% was pressed into the militia as a form of punishment. | Although a member of the peasantry, %name% was always willing to join the militia and protect his homestead. | War is a hungry beast - militia conscripts like %name% are what feed it.} {While he got proper training, there was rarely enough food to go around for the \'second-rate soldiers\'. | Even though he fought just as hard as the professionals, he found himself unable to garner any sort of respect for his work. | Being the bottom rung of soldiering, he quickly realized that it meant his life was expendable. | His weapons were rusted and the armor nonexistent. Unfortunately, enemies were not so kindly under-equipped.} {After a year of traipsing around with shoddy gear, he decided to look for something a bit more to his liking: sellswords. | When a lord sent his entire militia to almost certain doom, %name% realized he had better seek something better if he wanted to live. He took his modest skillset to the field of mercenaries. | Years in an outfit where he couldn\'t depend on the man next to him drove %name% to find something better. He\'s not the best soldier you\'ve ever seen, but he is earnest. | When his militia was disbanded, he returned home to find his town had been burned to the ground. One foot already in the door, it only made sense to join one of the numerous mercenary bands roaming the land. | %name%\'s modest military garb belies a man who has seen his fair share of training and combat.}";
+		return "{A militia recruit like %name% is only raised in times of need. | Broke and without work, %name% joined the local militia. | Caught stealing an apple, %name% was pressed into the militia as a form of punishment. | Although a member of the peasantry, %name% was always willing to join the militia and protect the homestead. | War is a hungry beast - militia conscripts like %name% are what feed it.} {While %name% got proper training, there was rarely enough food to go around for the \'second-rate soldiers\'. | %name% fought just as hard as the professionals, but was unable to garner any sort of respect for the work. | Being the bottom rung of soldiering, quickly makes it clear that your life is expendable. | %name%\'s weapons were rusted and the armor nonexistent. Unfortunately, enemies were not so kindly under-equipped.} {After a year of traipsing around with shoddy gear, %name% decided to look for something a bit more welcoming: sellswords. | When a lord sent his entire militia to almost certain doom, %name% realized it was time seek something better, to stay alive. The modest skillset transferred well to the field of mercenaries. | Years in an outfit where %name% couldn\'t depend on the solider beside, drove %name% to find something better. Perhaps not the best soldier you\'ve ever seen, but earnest. | When the local militia was disbanded, %name% returned home to find the town had been burned to the ground. One foot already in the door, it only made sense to join one of the numerous mercenary bands roaming the land. | %name%\'s modest military garb belies one who has seen their fair share of training and combat.}";
 	}
 
 	function onChangeAttributes()

@@ -91,7 +91,9 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			StackCitadels = _settings[22],
 			AllTradeLocations = _settings[23],
 			StartingScenario = _settings[24],
-			LegendPerkTrees = _settings[25]
+			LegendPerkTrees = _settings[25],
+			LegendGenderEquality = _settings[26],
+			LegendMagic = _settings[27]
 		}
 
 		// local settings = {

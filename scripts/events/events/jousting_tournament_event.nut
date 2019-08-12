@@ -11,7 +11,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 100.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%jouster% comes to you with a paper in hand. They slam it on your table and says they wishes to enter. You pick up the scroll, unfurling it to show that a local town is hosting a jousting tournament. The mercenary crosses his arms, awaiting your response.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%jouster% comes to you with a paper in hand. Slamming it on your table and saying they wish to enter. You pick up the scroll, unfurling it to show that a local town is hosting a jousting tournament. The mercenary crosses arms, awaiting your response.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -72,7 +72,7 @@ this.jousting_tournament_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "P",
-			Text = "[img]gfx/ui/events/event_96.png[/img]You take a seat amongst commoners and noblemen alike. Only the local lord has any separation from the riff-raff, sitting on a heightened row with the likes of his sons, daughters, and various royalty from around the land.\n\n%jouster% is up next, a squire helping lead his horse to one of the jousting lanes. Down the battleline, %opponent% rides onto the field, his horse black, his armor a vibrant purple with gold trimmings and tassels here and there. Both he and %jouster% take up their lances and slap down the faceplates of their helmets.\n\nA barker shouts their names from the royal-box, and then a clergyman says a few words about how this was ordained by the gods and, were anybody here to die today, they\'d sit amongst the greatest of men in the next realm, and be remembered with them in this one. All that said, the two jousters lower their lances and charge before either the barker or priest can even take a seat.",
+			Text = "[img]gfx/ui/events/event_96.png[/img]You take a seat amongst commoners and noblemen alike. Only the local lord has any separation from the riff-raff, sitting on a heightened row with the likes of his sons, daughters, and various royalty from around the land.\n\n%jouster% is up next, a squire helping lead the horse to one of the jousting lanes. Down the battleline, %opponent% rides onto the field, his horse black, his armor a vibrant purple with gold trimmings and tassels here and there. Both he and %jouster% take up their lances and slap down the faceplates of their helmets.\n\nA barker shouts their names from the royal-box, and then a clergyman says a few words about how this was ordained by the gods and, were anybody here to die today, they\'d sit amongst the greatest of men in the next realm, and be remembered with them in this one. All that said, the two jousters lower their lances and charge before either the barker or priest can even take a seat.",
 			Image = "",
 			List = [],
 			Characters = [],

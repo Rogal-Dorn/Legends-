@@ -39,6 +39,10 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		];
 		local r;
 		r = this.Math.rand(0, 3);
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		r = this.Math.rand(0, 1);
+		}
 		if (r == 0)
 			{
 			this.m.Faces = this.Const.Faces.AllFemale;
