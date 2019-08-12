@@ -1519,3 +1519,15 @@ Steadfast now reduces the fatigue impact of both being hit or being missed, by 9
 Parrying dagger now passively applies parry correctly, descriptions for the item and engarde updated to be accurate 
 Spelling error fixed in Chain Thresh 
 Fixes descriptions for mark target 
+
+Start option added for "no magic", just removes vala 
+Start option added for "gender equality", gives many backgrounds a 50% chance to be female. 
+*Adventurous noble is now Adventurous Noble Swordsman, gender equality gives 50% chance to be Adventurous noble swordswoman
+*Adventruous Lady is now Adventurous Noble Archer, gender equality gives 50% chance to be male 
+Gender Equality setting also grants 50/50 gender chance for Noble commander, Ranger commander, Trader commander, Assassins, Barbarians, Bowyer, Cultist, Farmhand, Widow(er), Fletcher, milkmaid(man), hedgeknight, killer on the run, herbalist, militia, peddler, refugee and sellsword. 
+Events made gender neutral: Apprentice learns, archery stunt, cat on tree, hedge knight vs raider, hedgeknight vs hedgeknight, jousting tournay, kids and dead merchant, killer vs others, lawmen after criminal, sellsword gets better deal, sellsword vs raider, shooting context, corpses in forest, kid blacksmith, adopt a warhound, barbarian tells a story, wild dog sounds
+Another 10 female names added
+Another 57 Knight names added
+72 Lady titles added 
+Debug start option hidden to make room for the other start options 
+

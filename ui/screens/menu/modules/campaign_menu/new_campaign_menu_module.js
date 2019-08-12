@@ -1216,6 +1216,13 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 	this.mLegendPerkTreesCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendperktrees' });
 	this.mLegendPerkTreesCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendperktrees' });
 
+	this.mLegendGenderEqualityCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
+	this.mLegendGenderEqualityCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
+	
+	this.mLegendMagicCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
+	this.mLegendMagicCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
+
+	
 };
 
 NewCampaignMenuModule.prototype.unbindTooltips = function ()
@@ -1669,11 +1676,12 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mMapOptions.ForestsMult.Value);
 	settings.push(this.mMapOptions.SwampsMult.Value);
 	settings.push(this.mMapOptions.MountainsMult.Value);
-	settings.push(this.mDebugCheckbox.is(':checked'));
 	settings.push(this.mStackCitadelsCheckbox.is(':checked'));
 	settings.push(this.mAllTradeLocationsCheckbox.is(':checked'));
 	settings.push(this.mScenarios[this.mSelectedScenario].ID);
 	settings.push(this.mLegendPerkTreesCheckbox.is(":checked"));
+	settings.push(this.mLegendGenderEqualityCheckbox.is(":checked"));
+	settings.push(this.mLegendMagicCheckbox.is(":checked"));
 	return settings;
 }
 

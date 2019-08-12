@@ -4,7 +4,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		this.character_background.create();
 		this.m.ID = "background.adventurous_noble";
-		this.m.Name = "Adventurous Noble Fighter";
+		this.m.Name = "Adventurous Noble Swordsman";
 		this.m.Icon = "ui/backgrounds/background_06.png";
 		this.m.BackgroundDescription = "Adventurous Nobles tend to have high resolve and melee skills, but often neglect ranged defense.";
 		this.m.GoodEnding = "Adventurousness never leaves the soul of a man like %name%. {Instead of returning to his noble family, he left the %companyname% and headed east in search of rare beasts. Word has it he returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | He departed the %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where he is these days, but you\'ve little doubt that he\'ll be coming back with stories to tell. | He retired from the %companyname% and, instead of returning to his noble family, headed south. Word has it he fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about his travels. | The nobleman left the %companyname% and, preferring the life of adventure to noble boredom, he headed north. Word has it that he\'s currently marching a troop of explorers to the furthest reaches of the world.}";
@@ -37,6 +37,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		r = this.Math.rand(0, 1);
 		if (r == 0)
 				{
+				this.m.Name = "Adventurous Noble Swordswoman";
 				this.m.Faces = this.Const.Faces.PrettyFemale;
 				this.m.Hairs = this.Const.Hair.AllFemale;
 				this.m.HairColors = this.Const.HairColors.Young;

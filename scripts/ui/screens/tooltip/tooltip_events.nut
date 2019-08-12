@@ -4345,7 +4345,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, 50% of all recruits will be female and all gender combinations will be available at the barber"
+						text = "If enabled, many backgrounds will have equal gender representation. If disabled there will still be females, but in jobs and numbers more reflective of historical biases"
 					}
 				];
 		case "mapconfig.legendmagic":
