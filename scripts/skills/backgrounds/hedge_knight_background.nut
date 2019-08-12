@@ -211,7 +211,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (this.Math.rand(0, 1) == 1)
 		{
 			local actor = this.getContainer().getActor();
-			if(this.m.IsFemaleBackground = true;)
+			if(this.m.IsFemaleBackground = true)
 			{
 			actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.LadyTitles.len() - 1)]);
 			}
