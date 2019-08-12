@@ -33,7 +33,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		];
 		this.m.Titles = this.Const.Strings.BarbarianTitles;
 
-		r = this.Math.rand(0, 9);
+		r = this.Math.rand(0, 19);
 		if (this.World.Assets.isLegendGenderEquality())
 			{
 			r = this.Math.rand(0, 1);
