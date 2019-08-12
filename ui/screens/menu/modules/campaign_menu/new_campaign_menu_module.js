@@ -1329,6 +1329,12 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mLegendPerkTreesCheckbox.unbindTooltip();
 	this.mLegendPerkTreesCheckboxLabel.unbindTooltip();
+
+	this.mLegendGenderEqualityCheckbox.unbindTooltip();
+	this.mLegendGenderEqualityCheckboxLabel.unbindTooltip();
+
+	this.mLegendMagicCheckbox.unbindTooltip();
+	this.mLegendMagicCheckboxLabel.unbindTooltip();
 };
 
 
