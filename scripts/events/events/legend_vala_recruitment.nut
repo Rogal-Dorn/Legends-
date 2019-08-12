@@ -70,6 +70,8 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (!this.World.Assets.isLegendMagic())
+		{
 
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;

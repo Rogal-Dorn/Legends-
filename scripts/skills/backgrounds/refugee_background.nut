@@ -43,7 +43,12 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsOffendedByViolence = true;
 		this.m.IsLowborn = true;
 
-		if (this.Math.rand(1, 100) <= 10)
+		local chance = 10;
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		chance = 50;
+		}
+		if (this.Math.rand(1, 100) <= chance)
 			{
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Beards = null;

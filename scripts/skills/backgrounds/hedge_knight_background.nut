@@ -56,6 +56,25 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
+
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		r = this.Math.rand(0, 1);
+		if (r == 0)
+				{
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 1;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+				this.m.BackgroundDescription = "Hedge Knights are competitive individuals that excel in fighting head to head with brute strength and heavy armor, but less so in cooperating with others or in swiftness.";
+				this.m.GoodEnding = "A woman like %name% would always find a way. The hedge knight eventually, if not inevitably, left the company and set out on her own. Unlike many other comrades, she did not spend her crowns on land or ladders with which to climb the noble life. Instead, she bought herself the finest war horses and the talents of armorers. The behemoth of a woman rode from one jousting tournament to the next, winning them all with ease. She\'s still at it to this day, and you think she won\'t stop until she\'s dead. The hedge knight simply knows no other life.";
+				this.m.BadEnding = "%name% the hedge knight eventually left the company. She traveled the lands, returning to her favorite past time of jousting, which was really a cover for her real favorite past time of lancing men off horses in a shower of splinters and glory. At some point, she was ordered to \'throw\' a match against a pitiful and gangly prince to earn the nobleman some prestige. Instead, the hedge knight drove her lance through the man\'s skull. Furious, the lord of the land ordered the hedge knight killed. They say over a hundred soldiers took to her home and only half returned alive.";
+			}
+		}
+
 		this.m.Level = this.Math.rand(2, 5);
 		this.m.IsCombatBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
@@ -103,7 +122,15 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 
 	function onBuildDescription()
 	{
+		if(this.m.IsFemaleBackground = true;)
+		{
+		return "{Some women are born to be feared. Well over six feet tall, %name%\'s stature alone is a threatening one. | %name%\'s shadow casts over smaller people - and they seem to only further shrink when she walks by. | Standing amongst people like a bear in a suit of armor, %name% earns plenty of double-takes. | Years of brutal combat with her equally huge siblings left %name% a scarred and scary figure.} {The hedge knight has spent many seasons taking her prized horse to jousting tournaments. Unfortunately, a polearm crowned her mount, leaving her without a ride. | A mercenary in the company of herself, the hedge knight wandered for years, doing battle for those who offered the most crowns. | When she cleaved five men with one swing, three of which were on her side, the hedge knight was banned from service in every army in the land. | Ordered to kill a lord\'s enemies, the hedge knight kicked in the door of a family and slaughtered them all with her bare hands. When the lord refused to pay, %name% killed him, too. | The hedge knight has spent many nights sleeping peacefully beneath a pale moon - and just as many days killing ruthlessly beneath a shining sun.} {Always on the hunt for more crowns, the company of sellswords seemed like a good fit. | Too terrifying to be employed for long, %name% seeks the company of men who will not piss themselves when she grabs a weapon. | Tired of killing jousters and lords, as well as women and children, %name% sees mercenary work as something of a vacation. | War has apparently gotten in the way of %name%\'s jousting career. She seeks to amend that problem.}";
+		}
+		else
+		{
 		return "{Some men are born to be feared. Well over six feet tall, %name%\'s stature alone is a threatening one. | %name%\'s shadow casts over smaller men - and they seem to only further shrink when he walks by. | Standing amongst men like a bear in a suit of armor, %name% earns plenty of double-takes. | Years of brutal combat with his equally huge brothers left %name% a scarred and scary figure.} {The hedge knight has spent many seasons taking his prized horse to jousting tournaments. Unfortunately, a polearm crowned his mount, leaving him without a ride. | A mercenary in the company of himself, the hedge knight wandered for years, doing battle for those who offered the most crowns. | When he cleaved five men with one swing, three of which were on his side, the hedge knight was banned from service in every army in the land. | Ordered to kill a lord\'s enemies, the hedge knight kicked in the door of a family and slaughtered them all with his bare hands. When the lord refused to pay, %name% killed him, too. | The hedge knight has spent many nights sleeping peacefully beneath a pale moon - and just as many days killing ruthlessly beneath a shining sun.} {Always on the hunt for more crowns, the company of sellswords seemed like a good fit. | Too terrifying to be employed for long, %name% seeks the company of men who will not piss themselves when he grabs a weapon. | Tired of killing jousters and lords, as well as women and children, %name% sees mercenary work as something of a vacation. | War has apparently gotten in the way of %name%\'s jousting career. He seeks to amend that problem.}";
+		}
+
 	}
 
 	function onSetAppearance()
@@ -181,10 +208,17 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 
-		if (this.Math.rand(0, 2) == 2)
+		if (this.Math.rand(0, 1) == 1)
 		{
 			local actor = this.getContainer().getActor();
+			if(this.m.IsFemaleBackground = true;)
+			{
+			actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.LadyTitles.len() - 1)]);
+			}
+			else
+			{
 			actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.HedgeKnightTitles.len() - 1)]);
+			}
 		}
 	}
 

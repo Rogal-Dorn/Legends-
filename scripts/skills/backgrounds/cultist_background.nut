@@ -49,6 +49,11 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		local r;
 		r = this.Math.rand(0, 9);
+
+		if (this.World.Assets.isLegendGenderEquality())
+			{
+			r = this.Math.rand(0, 1);
+			}
 		if (r == 0)
 			{
 			this.m.Faces = this.Const.Faces.OldFemale;

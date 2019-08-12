@@ -40,11 +40,31 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Titles = [
 			"the Assassin"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_00";
+		r = this.Math.rand(0, 19);
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		r = this.Math.rand(0, 1);
+		}
+
+		if (r == 0)
+				{
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+				}
+			else
+				{
+				this.m.Faces = this.Const.Faces.AllMale;
+				this.m.Hairs = this.Const.Hair.CommonMale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = this.Const.Beards.All;
+				this.m.Body = "bust_naked_body_00";
+				}
+
 		this.m.Level = 4;
 		this.m.IsOutlawBackground = true;
 		this.m.IsRangerRecruitBackground = true;

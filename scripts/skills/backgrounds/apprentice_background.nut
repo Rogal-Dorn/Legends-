@@ -32,11 +32,31 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 			"the Kid",
 			"the Bright"
 		];
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.YoungMale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		r = this.Math.rand(0, 19);
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		r = this.Math.rand(0, 1);
+		}
+
+		if (r == 0)
+				{
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+				}
+			else
+				{
+				this.m.Faces = this.Const.Faces.AllMale;
+				this.m.Hairs = this.Const.Hair.YoungMale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = this.Const.Beards.All;
+				this.m.Body = "bust_naked_body_01";
+				}
+
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsEducatedBackground = true;

@@ -225,7 +225,10 @@ var NewCampaignMenuModule = function()
 	this.mAllTradeLocationsCheckboxLabel = null;
 	this.mLegendPerkTreesCheckbox = null;
 	this.mLegendPerkTreesCheckboxLabel = null;
-
+	this.mLegendGenderEqualityCheckbox = null;
+	this.mLegendGenderEqualityCheckboxLabel = null;
+	this.mLegendMagicCheckbox = null;
+	this.mLegendMagicCheckboxLabel = null;
     // generics
     this.mIsVisible = false;
 };
@@ -928,7 +931,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	row.append(control);
 	this.mStackCitadelsCheckbox = $('<input type="checkbox" id="cb-stackcitadel"/>');
 	control.append(this.mStackCitadelsCheckbox);
-	this.mStackCitadelsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-stackcitadel">Gucci Citadels</label>');
+	this.mStackCitadelsCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-stackcitadel">Decked Out Citadels</label>');
 	control.append(this.mStackCitadelsCheckboxLabel);
 	this.mStackCitadelsCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -965,7 +968,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	row.append(control);
 	this.mLegendPerkTreesCheckbox = $('<input type="checkbox" id="cb-legendperktrees"/>');
 	control.append(this.mLegendPerkTreesCheckbox);
-	this.mLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Legend perk trees</label>');
+	this.mLegendPerkTreesCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendperktrees">Dynamic perk trees</label>');
 	control.append(this.mLegendPerkTreesCheckboxLabel);
 	this.mLegendPerkTreesCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
@@ -974,24 +977,54 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	});
 	this.mLegendPerkTreesCheckbox.iCheck('check');
 
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendGenderEqualityCheckbox = $('<input type="checkbox" id="cb-legendgenderequality"/>');
+	control.append(this.mLegendGenderEqualityCheckbox);
+	this.mLegendGenderEqualityCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendgenderequality">Gender Equality</label>');
+	control.append(this.mLegendGenderEqualityCheckboxLabel);
+	this.mLegendGenderEqualityCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendGenderEqualityCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mDebugCheckbox = $('<input type="checkbox" id="cb-debug"/>');
-	control.append(this.mDebugCheckbox);
-	this.mDebugCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-debug">Debug Map</label>');
-	control.append(this.mDebugCheckboxLabel);
-	this.mDebugCheckbox.iCheck({
+	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
+	control.append(this.mLegendMagicCheckbox);
+	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Allow Magic</label>');
+	control.append(this.mLegendMagicCheckboxLabel);
+	this.mLegendMagicCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	if (this.mMapOptions.Debug)
-	{
-		this.mDebugCheckbox.iCheck('check');
-	}
+	this.mLegendMagicCheckbox.iCheck('check');
+
+
+//	var row = $('<div class="row"></div>');
+//	rightColumn.append(row);
+//	var control = $('<div class="control"/>');
+//	row.append(control);
+//	this.mDebugCheckbox = $('<input type="checkbox" id="cb-debug"/>');
+//	control.append(this.mDebugCheckbox);
+//	this.mDebugCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-debug">(Debug) Show entire map</label>');
+//	control.append(this.mDebugCheckboxLabel);
+//	this.mDebugCheckbox.iCheck({
+//		checkboxClass: 'icheckbox_flat-orange',
+//		radioClass: 'iradio_flat-orange',
+//		increaseArea: '30%'
+//	});
+//	if (this.mMapOptions.Debug)
+//	{
+//		this.mDebugCheckbox.iCheck('check');
+//	}
 };
 
 NewCampaignMenuModule.prototype.updateMapConfig = function () 
