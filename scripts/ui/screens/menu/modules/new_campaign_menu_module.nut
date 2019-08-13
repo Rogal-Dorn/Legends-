@@ -87,14 +87,14 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			ForestsMult = _settings[18] / 100.0,
 			SwampsMult = _settings[19] / 100.0 ,
 			MountainsMult = _settings[20] / 100.0,
-			Debug = _settings[21],
-			StackCitadels = _settings[22],
-			AllTradeLocations = _settings[23],
-			StartingScenario = _settings[24],
-			LegendPerkTrees = _settings[25],
-			LegendGenderEquality = _settings[26],
-			LegendMagic = _settings[27]
-		}
+	//		Debug = _settings[21],
+			StackCitadels = _settings[21],
+			AllTradeLocations = _settings[22],
+			StartingScenario = _settings[23],
+			LegendPerkTrees = _settings[24],
+			LegendGenderEquality = _settings[25],
+			LegendMagic = _settings[26]
+		};
 
 		// local settings = {
 		// 	Name = _settings[0],

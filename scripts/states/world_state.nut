@@ -1208,7 +1208,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.logInfo(k + " = " + v);
 		}
 		this.m.CampaignSettings = _settings;
-		this.m.DebugMap = _settings.Debug;
+//		this.m.DebugMap = _settings.Debug;
 	}
 
 	function enterLocation( _location )
