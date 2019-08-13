@@ -34,7 +34,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 		if (r == 0)
 				{
 				this.m.Name = "Adventurous Noble Swordswoman";
@@ -161,7 +161,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		if(this.m.IsFemaleBackground = true;)
+		if(this.m.IsFemaleBackground = true)
 		{
 		actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
 		}

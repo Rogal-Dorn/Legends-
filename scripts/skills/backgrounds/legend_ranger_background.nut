@@ -59,6 +59,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
+			}
 		}
 
 		this.m.Level = 1;

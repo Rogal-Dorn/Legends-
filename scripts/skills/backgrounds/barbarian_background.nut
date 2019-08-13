@@ -32,8 +32,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.insecure"
 		];
 		this.m.Titles = this.Const.Strings.BarbarianTitles;
-
-		r = this.Math.rand(0, 19);
+		local r;
 		if (this.World.Assets.isLegendGenderEquality())
 			{
 			r = this.Math.rand(0, 1);

@@ -59,7 +59,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 		if (r == 0)
 				{
 				this.m.Faces = this.Const.Faces.AllFemale;

@@ -42,9 +42,9 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		];
 
 
-				if (this.World.Assets.isLegendGenderEquality())
+		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 
 		if (r == 0)
 				{

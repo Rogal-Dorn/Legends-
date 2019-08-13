@@ -42,6 +42,27 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
+
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		local r;
+		r = this.Math.rand(0, 1);
+	
+		if (r == 0)
+			{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			this.m.GoodEnding = "%name% the deserter continued fighting for the %companyname%, ever striving to redeem her name. Word has it that during a brutal fight with orcs, she dove headfirst into a crowd of greenskins, surfing across the top of their shocked heads. Her heroism rallied the mercenaries to an incredible victory and she lives out her days getting toasted in every bar she enters.";
+			this.m.BadEnding = "You heard %name% the deserter actually renewed her title and fled a battle the %companyname% had with some greenskins. Goblins caught her out in the woods and turned her head into a goblet for an orc warlord.";
+
+			}
+		}
+
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.IsCombatBackground = true;
 		this.m.IsLowborn = true;
@@ -96,7 +117,15 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onBuildDescription()
 	{
+		if(this.m.IsFemaleBackground == true)
+		{
+		return "{%name% used to be a common soldier in a lord\'s army, but suffering loss after loss, | Once a watchwoman on the outskirts of %randomtown%, %name% watched all her friends die to the beasts that lurk there. After so many losses | When two lords quarreled over a petty matter of who owned a local pond, %name% was conscripted to help settle the matter. Being a nobody, it was clear her life was of little value. One slaughter later, | While employed in a lord\'s professional army, a horrible disease fell upon %name% and her comrades. Fearing its wrath, | While on a lengthy military campaign, %name% felt that there was too much marching and too little spoils to be had. So} she {stuck her weapons in the ground and walked off. | waited until night to desert her outfit. | and several others disbanded in protest. | volunteered for a patrol and, at the first opening, abandoned her soldiering career.} {It is no secret that deserters are widely despised - and %name% keeps her head hung low to stay out of others\' eyes. | Most deserters spend the rest of their days avoiding the noose, and %name% is no different. | Donning the garb of the common folk, %name% has, for a time, avoided the deserter\'s punishment. | By total luck, %name% has, thus far, gotten away with her crime.} {But now broke and penniless, she seeks a return to his former field. | Perhaps compelled by lawmen closing in, she now finds herself joining another fighting force. | Unfortunately, she is not a smart woman. Lacking the imagination to pursue a safer career, %name% once again returns to fighting. | Feeling guilty about deserting her comrades in the field, she now seeks redemption in fighting for another outfit. But who is to say she won\'t flee again? | With an empty coin purse from drinking her memories away, she now considers any opportunity to make a living.}";
+		}
+		else
+		{
 		return "{%name% used to be a common soldier in a lord\'s army, but suffering loss after loss, | Once a watchman on the outskirts of %randomtown%, %name% watched all his friends die to the beasts that lurk there. After so many losses | When two lords quarreled over a petty matter of who owned a local pond, %name% was conscripted to help settle the matter. Being a nobody, it was clear his life was of little value. One slaughter later, | While employed in a lord\'s professional army, a horrible disease fell upon %name% and his comrades. Fearing its wrath, | While on a lengthy military campaign, %name% felt that there was too much marching and too little spoils to be had. So} he {stuck his weapons in the ground and walked off. | waited until night to desert his outfit. | and several others disbanded in protest. | volunteered for a patrol and, at the first opening, abandoned his soldiering career.} {It is no secret that deserters are widely despised - and %name% keeps his head hung low to stay out of others\' eyes. | Most deserters spend the rest of their days avoiding the noose, and %name% is no different. | Donning the garb of the everyman, %name% has, for a time, avoided the deserter\'s punishment. | By total luck, %name% has, thus far, gotten away with his crime.} {But now broke and penniless, he seeks a return to his former field. | Perhaps compelled by lawmen closing in, he now finds himself joining another fighting force. | Unfortunately, he is not a smart man. Lacking the imagination to pursue a safer career, %name% once again returns to fighting. | Feeling guilty about deserting his brothers in the field, he now seeks redemption in fighting for another outfit. But who is to say he won\'t flee again? | With an empty coin purse from drinking his memories away, he now considers any opportunity to make a living.}";
+	}
+
 	}
 
 	function onChangeAttributes()
