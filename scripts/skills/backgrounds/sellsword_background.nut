@@ -37,7 +37,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 		if (r == 0)
 				{
 				this.m.Faces = this.Const.Faces.AllFemale;

@@ -40,7 +40,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Titles = [
 			"the Assassin"
 		];
-		r = this.Math.rand(0, 19);
+		local r = this.Math.rand(0, 19);
 		if (this.World.Assets.isLegendGenderEquality())
 		{
 		r = this.Math.rand(0, 1);

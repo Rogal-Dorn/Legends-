@@ -64,6 +64,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
+			}
 		}
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;

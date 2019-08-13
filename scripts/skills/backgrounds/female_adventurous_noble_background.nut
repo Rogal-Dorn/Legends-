@@ -28,7 +28,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		];
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 
 		if (r == 0)
 				{

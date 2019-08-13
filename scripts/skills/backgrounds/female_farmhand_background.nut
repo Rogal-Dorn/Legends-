@@ -29,7 +29,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
+		local r = this.Math.rand(0, 1);
 		if (r == 0)
 				{
 				this.m.Name = "Milkman";
@@ -196,7 +196,7 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		}
 		else if (r == 1)
 		{
-			if(this.m.IsFemaleBackground = true;)
+			if(this.m.IsFemaleBackground = true)
 			{
 			items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 			}

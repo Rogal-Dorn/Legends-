@@ -73,6 +73,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
+			}
 		}
 
 		this.m.Level = 3;
