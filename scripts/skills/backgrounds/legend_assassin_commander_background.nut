@@ -52,7 +52,11 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			"the Sly"
 		];
 		local r;
-		r = this.Math.rand(0, 3);
+		r = this.Math.rand(0, 9);
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		r = this.Math.rand(0, 1);
+		}
 		if (r == 0)
 			{
 			this.m.Faces = this.Const.Faces.PrettyFemale;
@@ -201,7 +205,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 
 	function onBuildDescription()
 	{
-		return "{This is your commander, when he dies the company ends. This character has no history, any attempt to force discussion on it will only result in silence or lies.  }";
+		return "{This is your commander, when they die the company ends. This character has no history, any attempt to force discussion on it will only result in silence or lies.  }";
 	}
 
 	function onChangeAttributes()
