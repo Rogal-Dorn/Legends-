@@ -1510,16 +1510,19 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 
 12.7 Test 2
 Debug start option hidden to make room for the other start options 
-Start option added for "no magic". Means Vala will never show up. Seer only has non-magic attacks. Warlock only has summons. 
-Start option added for "gender equality", gives many backgrounds a 50% chance to be female. 
+Start option added for "no magic". This means: 
+*Vala will never show up and runestone drops are 10x rarer. Seer only has non-magic attacks. Warlock only has summons. Vala commander does not have Warden.  
+Start option added for "gender equality", This means: 
+All commanders and many backgrounds 50% chance to be female or male. With this option off, there are still women, but in roles and numbers that reflect historical bias.   
 *Adventurous noble is now Adventurous Noble Swordsman, gender equality gives 50% chance to be Adventurous noble swordswoman
 *Adventruous Lady is now Adventurous Noble Archer, gender equality gives 50% chance to be male
-Gender Equality setting also grants 50/50 gender chance for Noble commander, Ranger commander, Trader commander, Assassins, Barbarians, Bowyer, Cultist, Farmhand, Widow(er), Fletcher, milkmaid(man), hedgeknight, killer on the run, herbalist, militia, peddler, refugee and sellsword. 
+*Gender Equality setting also grants 50/50 gender chance for Noble commander, Ranger commander, Trader commander, Assassins, Barbarians, Bowyer, Cultist, Farmhand, Widow(er), Fletcher, milkmaid(man), hedgeknight, killer on the run, herbalist, militia, peddler, refugee and sellsword. 
 Events made gender neutral: Apprentice learns, archery stunt, cat on tree, hedge knight vs raider, hedgeknight vs hedgeknight, jousting tournay, kids and dead merchant, killer vs others, lawmen after criminal, sellsword gets better deal, sellsword vs raider, shooting context, corpses in forest, kid blacksmith, adopt a warhound, barbarian tells a story, wild dog sounds
 Another 10 female names added
 Another 57 Knight names added
 72 Lady titles added 
 Behemoth health from 500 to 800, defenses from -15 to 5 
+Vala gains Mind over Body and Perfect Focus 
 Berserker Rage stacks degrade at 2 per turn instead of 1. Hitting no longer grants 1 stack, being hit now grants 1 stack. Kills still grant 3 stacks
 Perfect Focus restored to 2x fatigue 
 Paints can now be crafted from dyes
@@ -1529,6 +1532,7 @@ Adds new FavoriteEnemyBandit 4 skull contract - Hunt down a bandit army (Contrib
 Extends tooltips for blacksmith, cannibal, donkey, herbalist, taxidermist and housemaid to make it clearer what they do. Will take time to expand this out. 
 Fixes melee defense rolling 3 higher than it should on trained backgrounds
 Tier 1 resource contributions give a token amount
+Donkeys can no longer be addicts, drunkards or greedy 
 Steadfast now reduces the fatigue impact of both being hit or being missed, by 90% 
 Parrying dagger now passively applies parry correctly, descriptions for the item and engarde updated to be accurate 
 Spelling error fixed in Chain Thresh 

@@ -46,11 +46,33 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			"the Sluggard",
 			"the Homeless"
 		];
+
+		local r;
+		r = this.Math.rand(0, 9);
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		r = this.Math.rand(0, 1);
+		}
+		if (r == 0)
+			{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Hairs = this.Const.Hair.UntidyMale;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			}
+		else
+			{
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
+			}
+
+
 		this.m.IsLowborn = true;
 		this.m.Level = 1;
 

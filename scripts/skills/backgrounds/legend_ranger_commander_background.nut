@@ -39,10 +39,10 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			"One Shot",
 			"Eagle Eye"
 		];
-		local r;
-		r = this.Math.rand(0, 3);
+	
 		if (this.World.Assets.isLegendGenderEquality())
 		{
+		local r;
 		r = this.Math.rand(0, 1);
 		}
 		if (r == 0)

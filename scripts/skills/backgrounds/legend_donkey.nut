@@ -13,6 +13,9 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.DailyCost = 1;
 		this.m.Excluded = [
 			"trait.tiny",
+			"trait.addict",
+			"trait.drunkard",
+			"trait.greedy",
 			"trait.clubfooted",
 			"trait.bright",
 			"trait.asthmatic"

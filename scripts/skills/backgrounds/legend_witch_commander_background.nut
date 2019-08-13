@@ -52,6 +52,22 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Beards = null;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+
+		
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		r = this.Math.rand(0, 1);
+		if (r == 0)
+				{
+				this.m.Faces = this.Const.Faces.AllMale;
+				this.m.Hairs = this.Const.Hair.CommonMale;
+				this.m.HairColors = this.Const.HairColors.All;
+				this.m.Beards = this.Const.Beards.All;
+				this.m.Body = "bust_naked_body_01";
+				this.m.IsFemaleBackground = false;
+			}
+		}
+
 		this.m.Level = 3;
 		this.m.IsUntalented = true;
 		this.m.IsEducatedBackground = true;
@@ -295,7 +311,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
 
-		if (!this.World.Assets.isLegendMagic())
+		if (this.World.Assets.isLegendMagic())
 		{
 		this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
 		}

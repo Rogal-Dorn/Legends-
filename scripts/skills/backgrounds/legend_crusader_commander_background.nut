@@ -43,8 +43,18 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			this.Const.Attributes.RangedDefense
 		];
 
+			this.m.Faces = this.Const.Faces.SmartMale;
+			this.m.Hairs = this.Const.Hair.TidyMale;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = this.Const.Beards.Tidy;
+			this.m.Body = "bust_naked_body_02";
+
+
+		if (this.World.Assets.isLegendGenderEquality())
+		{
 		local r;
-		r = this.Math.rand(0, 3);
+		r = this.Math.rand(0, 1);
+	
 		if (r == 0)
 			{
 			this.m.Faces = this.Const.Faces.PrettyFemale;
@@ -54,16 +64,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
-			}
-		else
-			{
-			this.m.Faces = this.Const.Faces.SmartMale;
-			this.m.Hairs = this.Const.Hair.TidyMale;
-			this.m.HairColors = this.Const.HairColors.All;
-			this.m.Beards = this.Const.Beards.Tidy;
-			this.m.Body = "bust_naked_body_02";
-			}
-
+		}
 		this.m.Level = 3;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
@@ -192,7 +193,14 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 
 	function onBuildDescription()
 	{
-		return "%name% lives to fight the undead scourge. Little is known about him and he almost never talks save for the occasional grunt while swinging his sword. His language seems to be codified into one simple structure: killing creatures of evil.";
+			if(this.m.IsFemaleBackground == true)
+			{
+			return "%name% lives to fight the undead scourge. Little is known about her and she almost never talks save for the occasional grunt while swinging her sword. Hr language seems to be codified into one simple structure: killing creatures of evil.";
+			}
+		else
+			{
+			return "%name% lives to fight the undead scourge. Little is known about him and he almost never talks save for the occasional grunt while swinging his sword. His language seems to be codified into one simple structure: killing creatures of evil.";
+			}	
 	}
 
 	function onSetAppearance()

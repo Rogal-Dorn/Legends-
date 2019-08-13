@@ -44,7 +44,33 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Body = "bust_naked_body_01";
+		this.m.Body = "bust_naked_body_02";
+
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		local r;
+		r = this.Math.rand(0, 1);
+	
+		if (r == 0)
+			{
+			this.m.Faces = this.Const.Faces.PrettyFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			}
+		else
+			{
+			this.m.Faces = this.Const.Faces.SmartMale;
+			this.m.Hairs = this.Const.Hair.TidyMale;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = this.Const.Beards.Tidy;
+			this.m.Body = "bust_naked_body_02";
+			}
+		}
+
 		this.m.Level = 1;
 		this.m.IsCombatBackground = true;
 		this.m.IsOffendedByViolence = true;
