@@ -1511,9 +1511,12 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 12.7 Test 2
 Debug start option hidden to make room for the other start options 
 Start option added for "no magic". This means: 
-*Vala will never show up and runestone drops are 10x rarer. Seer only has non-magic attacks. Warlock only has summons. Vala commander does not have Warden.  
+"No magic" Vala will never show up and runestone drops are 10x rarer. Vala commander does not have Warden.  
+"No magic" Seer only has non-magic attacks, losing magic missile, teleport and chain lightning 
+"No magic" Warlock only has summons, losing siphon, darkflight, insect swarm and miasma 
 Start option added for "gender equality", This means: 
-All commanders and many backgrounds 50% chance to be female or male. With this option off, there are still women, but in roles and numbers that reflect historical bias.   
+With this option off, there are still women, but in roles and numbers that reflect historical biases.
+"gender equal" commanders have a 50% chance to be female or male.    
 *Adventurous noble is now Adventurous Noble Swordsman, gender equality gives 50% chance to be Adventurous noble swordswoman
 *Adventruous Lady is now Adventurous Noble Archer, gender equality gives 50% chance to be male
 *Gender Equality setting also grants 50/50 gender chance for Noble commander, Ranger commander, Trader commander, Assassins, Barbarians, Bowyer, Cultist, Farmhand, Widow(er), Fletcher, milkmaid(man), hedgeknight, killer on the run, herbalist, militia, peddler, refugee and sellsword. 

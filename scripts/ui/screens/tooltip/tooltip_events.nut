@@ -4292,7 +4292,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, all settlements will be hidden at campaign start. For the true explorer experience!"
+					text = "If enabled, all settlements will be hidden at campaign start, giving a small scale start. For the true explorer experience!"
 				}
 			];
 		case "mapconfig.stackcitadels":
@@ -4345,7 +4345,7 @@ this.tooltip_events <- {
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, many backgrounds will have equal gender representation. If disabled there will still be females, but in jobs and numbers more reflective of historical biases"
+						text = "If enabled, all commanders and many backgrounds will have equal gender representation. If disabled there will still be females, but in jobs and numbers more reflective of historical discrimination."
 					}
 				];
 		case "mapconfig.legendmagic":
@@ -4358,7 +4358,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If disabled, magic elements like Vala and Runestones will not appear in game. "
+					text = "If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
 				}
 			];
 		case "camp.commander":

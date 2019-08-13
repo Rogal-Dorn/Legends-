@@ -217,8 +217,8 @@ var NewCampaignMenuModule = function()
 
 	this.mFogofWarCheckbox = null;
 	this.mFogofWarCheckboxLabel = null;
-	this.mDebugCheckbox = null;
-	this.mDebugCheckboxLabel = null;	
+	//this.mDebugCheckbox = null;
+	//this.mDebugCheckboxLabel = null;	
 	this.mStackCitadelsCheckbox = null;
 	this.mStackCitadelsCheckboxLabel = null;
 	this.mAllTradeLocationsCheckbox = null;
@@ -1052,10 +1052,10 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 	{
 		this.mFogofWarCheckbox.iCheck('check');
 	}
-	if (this.mMapOptions.Debug)
-	{
-		this.mDebugCheckbox.iCheck('check');
-	}	
+//	if (this.mMapOptions.Debug)
+//	{
+//		this.mDebugCheckbox.iCheck('check');
+//	}	
 	if (this.mMapOptions.StackCitadels)
 	{
 		this.mStackCitadelsCheckbox.iCheck('check');
@@ -1219,8 +1219,8 @@ NewCampaignMenuModule.prototype.bindTooltips = function ()
 	this.mLegendGenderEqualityCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
 	this.mLegendGenderEqualityCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
 	
-	this.mLegendMagicCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
-	this.mLegendMagicCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
+	this.mLegendMagicCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendmagic' });
+	this.mLegendMagicCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendmagic' });
 
 	
 };
@@ -1631,9 +1631,9 @@ NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 		if ('FOW' in _data) {
 			this.mMapOptions.FOW = _data['FOW'];
 		}
-		if ('Debug' in _data) {
-			this.mMapOptions.Debug = _data['Debug'];
-		}
+	//	if ('Debug' in _data) {
+	//		this.mMapOptions.Debug = _data['Debug'];
+	//	}
 		if ('StackCitadels' in _data)
 		{
 			this.mMapOptions.StackCitadels = _data['StackCitadels'];
