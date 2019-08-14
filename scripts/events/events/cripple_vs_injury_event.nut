@@ -10,13 +10,13 @@ this.cripple_vs_injury_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 60.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_26.png[/img]The recent battle left %injured% with a horrific and permanent injury. As he sits glumly about the campfire, %cripple% the cripple takes a seat next to him.%SPEECH_ON%So here you sit, bummed out about something that don\'t matter. Look at me. Just look at me! Look at where I am! I\'ve lost that which can\'t be returned, but did I dwell on it? No. I pressed on. I joined the %companyname%. Because that, that injury right there, that\'s gone and done. This up here...%SPEECH_OFF%The cripple taps the side of his head.%SPEECH_ON%Up here is what can be made anew. Up here is where you can think, yeah, that happened, but I\'m still a man and I\'m still in this. If the world wants me dead, it\'ll have to take all the pieces I got to give because I\'m not giving up until the last of me is gone!%SPEECH_OFF%%injured% nods and his mood already seems infinitely improved.",
+			Text = "[img]gfx/ui/events/event_26.png[/img]The recent battle left %injured% with a horrific and permanent injury. As the mercenary sits glumly about the campfire, %cripple% the cripple takes a seat next to the injured.%SPEECH_ON%So here you sit, bummed out about something that don\'t matter. Look at me. Just look at me! Look at where I am! I\'ve lost that which can\'t be returned, but did I dwell on it? No. I pressed on. I joined the %companyname%. Because that, that injury right there, that\'s gone and done. This up here...%SPEECH_OFF%The cripple taps the side of their head.%SPEECH_ON%Up here is what can be made anew. Up here is where you can think, yeah, that happened, but I\'m still alive and I\'m still in this. If the world wants me dead, it\'ll have to take all the pieces I got to give because I\'m not giving up until the last of me is gone!%SPEECH_OFF%%injured% nods with a mood that seems infinitely improved.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Quite the spirit on that man.",
+					Text = "Quite the spirit on that one.",
 					function getResult( _event )
 					{
 						return 0;

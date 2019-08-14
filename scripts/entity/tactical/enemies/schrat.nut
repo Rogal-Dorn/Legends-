@@ -151,7 +151,7 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 				if (this.World.Assets.isLegendMagic())
 					{
 					local chance = 10;
-					{
+					}
 					else
 					{
 					local chance = 1;

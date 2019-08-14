@@ -61,7 +61,6 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 				this.m.BadEnding = "%name% the fishmonger eventually left the declining company. He joined up with another outfit, but was caught slaughtering one of their war dogs. Apparently, he had been feeding the mercenaries dogmeat from all their mongrels that had gone \'missing\'. They did not take this news kindly, stripped the butcher, and fed him to the beasts.";
 
 				}
-		}
 
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];		
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];

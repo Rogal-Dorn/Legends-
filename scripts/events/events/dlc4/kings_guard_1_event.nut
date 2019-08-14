@@ -9,7 +9,7 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 9999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "%terrainImage%{The snowy wastes are home to not much of anything, so to find a man half-naked in its frigid geography is rather unusual. That he is actually alive even more so. You crouch beside him. His eyes are hollow and rime frosts make blinking them a struggle. His lips are jagged and purple. His nose a deep red bordering on black. You ask if he can speak. He nods.%SPEECH_ON%Barbarians. Took. Me.%SPEECH_OFF%You ask where his kidnappers are. He shrugs and continues his cold cadence.%SPEECH_ON%They. Got. Bored. And. Left.%SPEECH_OFF%It does seem in tune with the primitives to up and leave a prisoner in the ice. He explains that he was once a sturdy swordfighter. A smile squeezes  through the pain.%SPEECH_ON%A. King\'s. Guard. In. The. Kingless. Land. Things. Could. Be. Worse?%SPEECH_OFF%}",
+			Text = "%terrainImage%{The snowy wastes are home to not much of anything, so to find someone half-naked in its frigid geography is rather unusual. That the frozen figure is actually alive even more so. You crouch beside the frigid body, their eyes are hollow and rime frosts make blinking them a struggle, lips are jagged and purple and nose a deep red bordering on black. You ask if the pitiful wretch can speak, and are greeted with nods.%SPEECH_ON%Barbarians. Took. Me.%SPEECH_OFF%You ask where the kidnappers are, the figure shrugs and continues the cold cadence.%SPEECH_ON%They. Got. Bored. And. Left.%SPEECH_OFF%It does seem in tune with the primitives to up and leave a prisoner in the ice. The shivering prisoner explains they were once a sturdy swordfighter. A smile squeezes through the pain.%SPEECH_ON%A. King\'s. Guard. In. The. Kingless. Land. Things. Could. Be. Worse?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -39,7 +39,7 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 					"cripple_background"
 				], false);
 				_event.m.Dude.setTitle("");
-				_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north. He claims he was a King\'s Guard once, but looking at him now you see but a cripple.";
+				_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north, claiming to have been a King\'s Guard once, but looking at the wretch now you see but a cripple.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				_event.m.Dude.getFlags().set("IsSpecial", true);
 				_event.m.Dude.getBaseProperties().Bravery += 15;
@@ -66,7 +66,7 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "%terrainImage%{You pat the man on his head, but tell him it\'s already over. He nods.%SPEECH_ON%Speak. For. Yourself. Mercenary.%SPEECH_OFF%He smiles again, but this time it does release. It sticks. Literally. And he leans forward and his eyes are open and do not blink and in this state he is gone. You get the men back on the road, or what one can make of a road in these snowed stretches.}",
+			Text = "%terrainImage%{You pat the wretch on the head, but say it\'s already over. The downtrodden prisoner nods.%SPEECH_ON%Speak. For. Yourself. Mercenary.%SPEECH_OFF% The purple lips smile again, but this time it does release. It sticks. Literally. The crippled figure leans forward with eyes open that do not blink and in this state the mind is gone. You get the company back on the road, or what one can make of a road in these snowed stretches.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -90,7 +90,7 @@ this.kings_guard_1_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "%terrainImage%{The nearly frozen man joins the company. He\'s a ragged wreck, but if what he said is true maybe he will someday become the fighter he could barely speak of.}",
+			Text = "%terrainImage%{The nearly frozen figure joins the company. The prisoner\'s a ragged wreck, but if what was said is true maybe the frozen body will someday become the fighter it once was.}",
 			Image = "",
 			List = [],
 			Characters = [],

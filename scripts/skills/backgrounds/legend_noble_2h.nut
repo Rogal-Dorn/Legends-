@@ -7,7 +7,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Name = "Noble House Warrior";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 200;
-		this.m.DailyCost = 8;
+		this.m.DailyCost = 18;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",
@@ -40,14 +40,32 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 			this.Const.Attributes.RangedSkill,
 			this.Const.Attributes.RangedDefense
 		];
-		this.m.GoodEnding = "Supporting your cause from the start, %name%, and he was with you in retirement, leaving the company not long after you did. Though he was a lowly peasant, he proved himself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
+		this.m.BackgroundDescription = "Noble House Warriors are drawn from peasant backgrounds, then trained in two handed weapons and heavy armor";
+		this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though he was a lowly peasant, he proved himself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
 		this.m.BadEnding = "A supporter from the start, %name% was as loyal as he was talented. He stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that he had started his own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of his company, you learned that it had been completely annihilated in a battle between nobles.";
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
 		this.m.Body = "bust_naked_body_01";
-		this.m.IsUntalented = true;
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		local r = this.Math.rand(0, 1);
+		if (r == 0)
+				{
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+	
+				this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
+				this.m.BadEnding = "A supporter of your cause from the start, %name% was as loyal as she was talented. She stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that she had started her own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of her company, you learned that it had been completely annihilated in a battle between nobles.";
+				}
+		}
+
 		this.m.IsCombatBackground = true;
 
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
@@ -98,7 +116,15 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 
 	function onBuildDescription()
 	{
+		if(this.m.IsFemaleBackground = true)
+		{
+		return "Brooding and at times suicidal, it\'s no surprise that %name% is frequently found diving into battle with nothing more than a large two-hander. {Clothed in murderous intent, you once saw her cleave a man in two - top to bottom. | It is said that she once cleaved a warrior orc in two, leaving the trunk of its legs still standing. | The woman is known to ignore the fragility of her own mortality just to end the life of another. | She thrives being in the thick of battle where she can swing her weapons with little regard for safety or accuracy. | Supposedly, she once won a jousting tournament, but had to flee after bedding a watching nobleman\'s wife. | The woman is not a murderer, but she would have made a fine one. | Seemingly unstoppable at times, you are glad to have the woman on your side. | In a fit of bloodthirsty rage she once impaled two goblins on one pike. | A strong brute, you once saw %name% kill someone just on her backswing.} She\'ll use any weapon you give her, but %name% has a proclivity towards those that can make calamitous ruin out of a man\'s body.";
+		}
+		else
+		{
 		return "Brooding and at times suicidal, it\'s no surprise that %name% is frequently found diving into battle with nothing more than a large two-hander. {Clothed in murderous intent, you once saw him cleave a man in two - top to bottom. | It is said that he once cleaved a warrior orc in two, leaving the trunk of its legs still standing. | The man is known to ignore the fragility of his own mortality just to end the life of another. | He thrives being in the thick of battle where he can swing his weapons with little regard for safety or accuracy. | Supposedly, he once won a jousting tournament, but had to flee after bedding a watching nobleman\'s wife. | The man is not a murderer, but he would have made a fine one. | Seemingly unstoppable at times, you are glad to have the man on your side. | In a fit of bloodthirsty rage he once impaled two goblins on one pike. | A strong brute, you once saw %name% kill someone just on his backswing.} He\'ll use any weapon you give him, but %name% has a proclivity towards those that can make calamitous ruin out of a man\'s body.";
+		}
+
 	}
 
 	function onPrepareVariables( _vars )
@@ -122,24 +148,24 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				5
 			],
 			MeleeSkill = [
-				7,
-				3
+				12,
+				17
 			],
 			RangedSkill = [
-				-5,
-				-10
+				0,
+				-5
 			],
 			MeleeDefense = [
-				2,
-				0
+				3,
+				6
 			],
 			RangedDefense = [
 				2,
-				0
+				4
 			],
 			Initiative = [
-				-5,
-				0
+				-10,
+				-5
 			]
 		};
 		return c;

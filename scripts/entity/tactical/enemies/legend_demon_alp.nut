@@ -230,7 +230,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 					if (this.World.Assets.isLegendMagic())
 					{
 					local chance = 100;
-					{
+					}
 					else
 					{
 					local chance = 10;
