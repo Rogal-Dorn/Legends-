@@ -39,26 +39,23 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (actor.getSkills().hasSkill("effects.spider_poison_effect"))
+	if (!actor.getSkills().hasSkill("effects.spider_poison_effect") && !actor.getSkills().hasSkill("effects.legend_redback_spider_poison_effect") && !actor.getSkills().hasSkill("effects.legend_RSW_poison_effect")
 		{
-			return;
-		}
-
-		actor.setArmor(this.Const.BodyPart.Body, newBodyArmor);
-		actor.setArmor(this.Const.BodyPart.Head, newHeadArmor);
-		actor.setDirty(true);
-
-		if (!actor.isHiddenToPlayer())
-		{
-			this.spawnIcon("status_effect_79", actor.getTile());
-
-			if (this.m.SoundOnUse.len() != 0)
+			actor.setArmor(this.Const.BodyPart.Body, newBodyArmor);
+			actor.setArmor(this.Const.BodyPart.Head, newHeadArmor);
+			actor.setDirty(true);
+			if (!actor.isHiddenToPlayer())
 			{
-				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
-			}
+				this.spawnIcon("status_effect_79", actor.getTile());
 
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " regenerated " + addedBodyArmor + " points of body armor");
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " regenerated " + addedHeadArmor + " points of head armor");
+				if (this.m.SoundOnUse.len() != 0)
+				{
+					this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
+				}
+
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " regenerated " + addedBodyArmor + " points of body armor");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " regenerated " + addedHeadArmor + " points of head armor");
+			}
 		}
 	}
 
