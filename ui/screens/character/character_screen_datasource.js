@@ -1926,3 +1926,8 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (
         }
     });
 };
+
+CharacterScreenDatasource.prototype.notifyBackendAssignRider = function (_rider, _horse)
+{
+    SQ.call(this.mSQHandle, 'onAssignRider', [ _rider, _horse ]);
+};

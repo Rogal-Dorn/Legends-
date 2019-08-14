@@ -77,6 +77,22 @@
     background-size: 7.1rem 7.7rem;
 }
 
+.ui-control.is-brother-slot.is-horse-slot
+{
+    background-image: url("coui://gfx/ui/skin/inventory_tent.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 7.1rem 7.7rem;
+}
+
+.ui-control.is-brother-slot.is-rider-slot
+{
+    background-image: url("coui://gfx/ui/skin/inventory_figure.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 7.1rem 7.7rem;
+}
+
 .ui-control.is-brother-slot.is-blocked-slot
 {
     background-image: none;

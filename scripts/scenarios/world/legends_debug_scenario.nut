@@ -34,7 +34,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.setVeteranPerks(2);
 		}
 
-		local horsesize = 2
+		local horsesize = 10
 		for( local i = 0; i < horsesize; i = ++i )
 		{
 			local broLevel = broLevelMax
@@ -193,8 +193,5 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
 	}
-
-
-
 });
 
