@@ -40,6 +40,11 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Titles = [
 			"the Assassin"
 		];
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = this.Const.Beards.All;
+		this.m.Body = "bust_naked_body_00";
 		local r = this.Math.rand(0, 19);
 		if (this.World.Assets.isLegendGenderEquality())
 		{

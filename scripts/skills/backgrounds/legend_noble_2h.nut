@@ -49,7 +49,6 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
-		this.m.IsUntalented = true;
 
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -160,10 +159,6 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 2;
-		talents[this.Const.Attributes.MeleeDefense] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		r = this.Math.rand(0, 0);

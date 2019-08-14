@@ -30,7 +30,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.bloodthirsty"
 		];
 		local r;
-		r = this.Math.rand(0, 9);
+		r = this.Math.rand(0, 19);
 		if (this.World.Assets.isLegendGenderEquality())
 		{
 		r = this.Math.rand(0, 1);

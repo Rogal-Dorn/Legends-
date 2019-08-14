@@ -48,7 +48,6 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		this.m.IsUntalented = true;
 		this.m.IsCombatBackground = true;
 		this.m.IsUntalented = true;
 		this.m.IsRangerRecruitBackground = true;
@@ -160,11 +159,6 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onAddEquipment()
 	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 2;
-		talents[this.Const.Attributes.RangedDefense] = 1;
-		talents[this.Const.Attributes.Initiative] = 1;
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/legend_sling"));
