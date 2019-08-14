@@ -1543,10 +1543,15 @@ Fixes descriptions for mark target
 Fixes error when skin ghouls swallow 
 Fixes mind over body tooltip 
 
-12.7 Test 2
+12.7 Test 3
 Fixes missing heads for apprentice, noble and assassin from previous build
 Fishwives renamed to fishmongers, can now be corrupted by a cannibal 
-Events made gender neutral apprentice learns and swordmaster teaches
-Gender equal also effects butcher, fishmongers, squires, millers and bakers 
-Noble slingers, soldiers and warriors in noble start no longer have fixed stars
+Events made gender neutral: apprentice learns, swordmaster teaches, alp in a hole, dog in swamp, youngling alp, gambler vs other, minstrel outsmarts gambler, player plays dice, spooky forest, cripple pep talk, cripple vs injury, kings gaurd 1 and 2. 
+Gender equal also effects butcher, fishmongers, ironmongers, gamblers, cripples, squires, king's guard lumberjacks, beast hunters, noble warriors, noble soldiers, noble slingers, millers and bakers 
+Noble slingers, soldiers and warriors in noble start have each been given buffed stats and no longer have fixed stars. They also cost a lot more in wages
+Noble start has 3x starting crowns instead of 2x, to cover the increased wages
+Gambling event raised from 25 crowns to 100 
+Fixes tooltip for matching set, now shows your current bonus 
+Adds "steady hands" trait for +5 ranged skill 
+
 

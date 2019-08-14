@@ -23,13 +23,34 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 			"the Farrier",
 			"the Scavenger",
 			"the Iron-shaper",
-			"the Student"
+			"the Scroungert"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
+
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		local r = this.Math.rand(0, 1);
+		if (r == 0)
+				{
+				this.m.Name = "Adventurous Lady";
+				this.m.Faces = this.Const.Faces.PrettyFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+				this.m.BackgroundDescription = "Adventurous Nobles tend to have high resolve and melee skills, but often neglect ranged defense.";
+				this.m.GoodEnding = "A more reliable sellsword than most, %name%\'s background as an ironmonger helped her to keep the %companyname%\'s equipment functioning. Having saved more than enough crowns, %name% retired and returned to blacksmithing, learning from a true master and becoming a paragon of the craft. Last you heard of her she was living in luxury, making custom weapons and armor for nobles.";
+				this.m.BadEnding = "%name% the ironmonger stayed with the %companyname% for some time after your departure, but after a particularly nasty stretch of bad luck she saw the rot for what it was and jumped ship. Bad luck seemed to follow him, however, and she never managed to settle down. She burned through her leftover crowns in a few years. She died in poverty one winter, freezing overnight.";
+				}
+		}
+
+
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
@@ -84,7 +105,17 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		return "{When one needs tools repaired but cannot afford a blacksmith, they seek out their local ironmonger. | A self taught smith working from scrap metal, the ironmonger works mostly with farm tools and horseshoes.}{No ironmonger can compare to the skills of a full fledged blacksmith, but it can be a lucrative profession in smaller villages. | Though lacking the skills of a fully trained blacksmith, ironmongers are vital for some settlements, too small or remote to merit a resident blacksmith.} {%name% was an ironmonger in %townname%. | %name% served for many years as an ironmonger in %townname%. | %name% was an ironmonger, like his father. | Urged by his parents to join the craft, %name% was an ironmonger for many years. | Not to be outdone by his overachieving militia brother, %name% taught him to smith and served as the local ironmonger.}{Unfortunately, a trained blacksmith arrived in town, and %name%\'s skills were quickly rendered obsolete. Facing poverty, he left home to join a company of sellswords. | %name%’s clients eventually dried up, and he was forced to leave home and seek new work. | %name% eventually left home due to a tragedy that he refused to speak of. Face grim, he seeks new employment.}";
+		function onBuildDescription()
+			{
+				if(this.m.IsFemaleBackground == true)
+					{
+					return "{When one needs tools repaired but cannot afford a blacksmith, they seek out their local ironmonger. | A self taught smith working from scrap metal, the ironmonger works mostly with farm tools and horseshoes.}{No ironmonger can compare to the skills of a full fledged blacksmith, but it can be a lucrative profession in smaller villages. | Though lacking the skills of a fully trained blacksmith, ironmongers are vital for some settlements, too small or remote to merit a resident blacksmith.} {%name% was an ironmonger in %townname%. | %name% served for many years as an ironmonger in %townname%. | %name% was an ironmonger, like her father. | Urged by her parents to join the craft, %name% was an ironmonger for many years. | Not to be outdone by her overachieving militia sister, %name% learned to smith and served as the local ironmonger.}{Unfortunately, a trained blacksmith arrived in town, and %name%\'s skills were quickly rendered obsolete. Facing poverty, she left home to join a company of sellswords. | %name%’s clients eventually dried up, and she was forced to leave home and seek new work. | %name% eventually left home due to a tragedy that she refused to speak of. Face grim, she seeks new employment.}";
+					}
+				else
+					{
+					return "{When one needs tools repaired but cannot afford a blacksmith, they seek out their local ironmonger. | A self taught smith working from scrap metal, the ironmonger works mostly with farm tools and horseshoes.}{No ironmonger can compare to the skills of a full fledged blacksmith, but it can be a lucrative profession in smaller villages. | Though lacking the skills of a fully trained blacksmith, ironmongers are vital for some settlements, too small or remote to merit a resident blacksmith.} {%name% was an ironmonger in %townname%. | %name% served for many years as an ironmonger in %townname%. | %name% was an ironmonger, like his father. | Urged by his parents to join the craft, %name% was an ironmonger for many years. | Not to be outdone by his overachieving militia brother, %name% learned to smith and served as the local ironmonger.}{Unfortunately, a trained blacksmith arrived in town, and %name%\'s skills were quickly rendered obsolete. Facing poverty, he left home to join a company of sellswords. | %name%’s clients eventually dried up, and he was forced to leave home and seek new work. | %name% eventually left home due to a tragedy that he refused to speak of. Face grim, he seeks new employment.}";
+					}	
+			}
 	}
 
 	function onChangeAttributes()
