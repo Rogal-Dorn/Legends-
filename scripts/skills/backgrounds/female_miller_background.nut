@@ -25,7 +25,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.bloodthirsty"
 		];
 		this.m.Titles = [
-			"the Miller"
+			"the Baker"
 		];
 		this.m.Faces = this.Const.Faces.AllFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -34,6 +34,24 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		local r = this.Math.rand(0, 1);
+
+		if (r == 0)
+				{
+				this.m.Faces = this.Const.Faces.AllMale;
+				this.m.Hairs = this.Const.Hair.CommonMale;
+				this.m.HairColors = this.Const.HairColors.All;
+				this.m.Beards = this.Const.Beards.Untidy;
+				this.m.Body = "bust_naked_body_00";
+				this.m.IsFemaleBackground = false;
+				this.m.GoodEnding = "%name% the once-baker stayed with the %companyname% for a time, collecting enough crowns to start his own bakery. Last you heard, his sword-shaped desserts have been a hit with the nobility and he makes more money selling to them than he ever did with the company.";
+				this.m.BadEnding = "As the %companyname% fell on hard times, %name% the baker saw fit to go ahead and leave while he could still walk. He helped a nobleman test out a new way of grinding grains with mules and waterwheels working in tandem. Unfortunately, by \'helping\' he managed to fall into the contraption and was brutally crushed to death.";
+
+				}
+		}
+
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.PerkTreeDynamic = {

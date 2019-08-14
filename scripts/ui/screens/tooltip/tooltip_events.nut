@@ -4340,12 +4340,12 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Gender Equality"
+						text = "Battle Sisters"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all commanders and many backgrounds will have equal gender representation. If disabled there will still be females, but in jobs and numbers more reflective of historical discrimination."
+						text = "If enabled, all commanders and many backgrounds will have a chance of being any gender. If disabled there will still be females, but in positions more reflective of historical discrimination."
 					}
 				];
 		case "mapconfig.legendmagic":
@@ -4353,12 +4353,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Allow Magic"
+					text = "Magic"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
+					text = "If enabled, low magic is allowed in the world, for most starts this just makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
 				}
 			];
 		case "camp.commander":

@@ -55,6 +55,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.m.HairColors = this.Const.HairColors.All;
 				this.m.Beards = this.Const.Beards.WildExtended;
 				this.m.Body = "bust_naked_body_01";
+				this.m.IsFemaleBackground = false;
 				}
 
 

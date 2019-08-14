@@ -1542,3 +1542,11 @@ Spelling error fixed in Chain Thresh
 Fixes descriptions for mark target 
 Fixes error when skin ghouls swallow 
 Fixes mind over body tooltip 
+
+12.7 Test 2
+Fixes missing heads for apprentice, noble and assassin from previous build
+Fishwives renamed to fishmongers, can now be corrupted by a cannibal 
+Events made gender neutral apprentice learns and swordmaster teaches
+Gender equal also effects butcher, fishmongers, squires, millers and bakers 
+Noble slingers, soldiers and warriors in noble start no longer have fixed stars
+

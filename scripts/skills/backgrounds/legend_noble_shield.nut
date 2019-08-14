@@ -48,7 +48,6 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsCombatBackground = true;
-		this.m.IsUntalented = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
@@ -156,11 +155,6 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onAddEquipment()
 	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Hitpoints] = 2;
-		talents[this.Const.Attributes.Fatigue] = 1;
-		talents[this.Const.Attributes.Bravery] = 1;
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		
