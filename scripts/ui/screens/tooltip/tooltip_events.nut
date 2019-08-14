@@ -3124,7 +3124,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Switch to viewing the formation configuriations for your mercenary company."
+					text = "Switch to viewing the formation configurations for your mercenary company."
 				}
 			];
 

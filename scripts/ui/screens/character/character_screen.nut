@@ -2412,5 +2412,12 @@ this.character_screen <- {
 		return this.World.Assets.getFormationName();
 	}
 
+	function onAssignRider( _data )
+	{
+		local riderID = _data[0]
+		local horseID = _data[1]
+		this.logInfo("***** rider " + riderID + " horse " + horseID)
+	}
+
 };
 

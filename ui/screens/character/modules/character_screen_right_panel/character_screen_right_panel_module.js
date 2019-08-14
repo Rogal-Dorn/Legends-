@@ -161,7 +161,6 @@ CharacterScreenRightPanelModule.prototype.switchToInventory = function ()
     this.mFormationsModule.hide();
     this.mInventoryModule.show();
     this.mInventoryModule.toggleFilterPanel(true);
-    this.mInventoryModule.toggleFormationsPanel(false);
 };
 
 
@@ -170,7 +169,6 @@ CharacterScreenRightPanelModule.prototype.switchToPerks = function ()
     this.mInventoryModule.hide();
     this.mFormationsModule.hide();
     this.mInventoryModule.toggleFilterPanel(false);
-    this.mInventoryModule.toggleFormationsPanel(false);
     this.mPerksModule.show();
 };
 
@@ -180,6 +178,4 @@ CharacterScreenRightPanelModule.prototype.switchToFormations = function ()
     this.mPerksModule.hide();
     this.mFormationsModule.show();
     this.mInventoryModule.toggleFilterPanel(false);
-    this.mInventoryModule.toggleFormationsPanel(true);
-    
 };

@@ -12,7 +12,14 @@ var CharacterScreenFormationsModule = function(_parent, _dataSource)
     this.mDataSource = _dataSource;
 
 	// container
-	this.mContainer = null;
+    this.mContainer = null;
+    
+    this.mTopListContainer = null;
+    this.mTopBroListContainer = null;
+    this.mBottomListContainer = null;
+    this.mBottomBroListConatainer = null;
+    this.mSlots = null;
+    this.mNumActive = 0;
 
     this.mSlotCountPanel = null;
 
@@ -37,9 +44,48 @@ var CharacterScreenFormationsModule = function(_parent, _dataSource)
 
 CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
 {
+    this.mFormationsButtons = [];
+    var self = this;
 	// create: containers (init hidden!)
 	this.mContainer = $('<div class="formations-module opacity-none"/>');
-	_parentDiv.append(this.mContainer);
+    _parentDiv.append(this.mContainer);
+    
+    var row = $('<div class="title-row title-label title-font-big font-bold font-color-title"/>');
+    row.html("Stables")
+    this.mContainer.append(row);
+
+    var row = $('<div class="top-row"></div>');
+    this.mContainer.append(row);
+    this.mTopListContainer = $('<div class="l-list-container"/>');
+    row.append(this.mTopListContainer);
+
+    var row = $('<div class="top-row-bro"></div>');
+    this.mContainer.append(row);
+    this.mTopBroListContainer = $('<div class="l-list-container"/>');
+    row.append(this.mTopBroListContainer);
+
+    var row = $('<div class="bottom-row"></div>');
+    this.mContainer.append(row);
+    this.mBottomListContainer = $('<div class="l-list-container"/>');
+    row.append(this.mBottomListContainer);
+
+    var row = $('<div class="bottom-row-bro"></div>');
+    this.mContainer.append(row);
+    this.mBottomBroListContainer = $('<div class="l-list-container"/>');
+    row.append(this.mBottomBroListContainer);
+
+
+    this.mSlots = [];
+    for (var i = 0; i < 9 * 4; i++) 
+    {
+        this.mSlots.push(null)
+    }
+     // create empty slots
+     this.createStableSlots(this.mTopListContainer, 9 * 0, 9 * 1, false);
+     this.createStableSlots(this.mTopBroListContainer, 9 * 1, 9 * 2, true);
+     this.createStableSlots(this.mBottomListContainer, 9 * 2, 9 * 3, false);
+     this.createStableSlots(this.mBottomBroListContainer, 9 * 3, 9 * 4, true);
+
 
     this.mSlotCountPanel = $('<div class="slot-count-panel"/>');
     this.mContainer.append(this.mSlotCountPanel);
@@ -65,10 +111,6 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
 
     var layout = $('<div class="l-button formation-panel-btn is-formation-6"/>');
     this.mFormationsPanel.append(layout);
-    this.mFormationsSortInventoryButton = layout.createImageButton(Path.GFX + Asset.BUTTON_SORT, function ()
-    {
-        self.mDataSource.notifyBackendSortButtonClicked();
-    }, '', 3);
 
     var layout = $('<div class="l-button is-formation-7"/>');
     this.mFormationsPanel.append(layout);
@@ -125,6 +167,19 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
 
 CharacterScreenFormationsModule.prototype.destroyDIV = function ()
 {
+
+    this.mTopListContainer.empty();
+    this.mTopListContainer.remove();
+    this.mTopListContainer = null;
+    this.mTopBroListContainer.empty();
+    this.mTopBroListContainer.remove();
+    this.mTopBroListContainer = null;
+    this.mBottomListContainer.empty();
+    this.mBottomListContainer.remove();
+    this.mBottomListContainer = null;
+    this.mBottomBroListContainer.empty();
+    this.mBottomBroListContainer.remove();
+    this.mBottomBroListContainer = null;
     this.mSlotCountPanel.empty()
     this.mSlotCountPanel.remove()
     this.mSlotCountPanel = null;
@@ -175,6 +230,7 @@ CharacterScreenFormationsModule.prototype.createChangeFormationNameDialogContent
 
 CharacterScreenFormationsModule.prototype.registerDatasourceListener = function()
 {
+    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, jQuery.proxy(this.onBrothersListLoaded, this));
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Updated, jQuery.proxy(this.onBrotherUpdated, this));
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Selected, jQuery.proxy(this.onBrotherSelected, this));
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.FormationIndex, jQuery.proxy(this.onFormationSelected, this));
@@ -183,7 +239,6 @@ CharacterScreenFormationsModule.prototype.registerDatasourceListener = function(
 
 CharacterScreenFormationsModule.prototype.bindTooltips = function ()
 {
-    this.mFormationsSortInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.SortButton });
     this.mFormationsClearFormationButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ClearFormationButton });
     this.mFormationsButtons.forEach(function(btn)
     {
@@ -197,7 +252,6 @@ CharacterScreenFormationsModule.prototype.bindTooltips = function ()
 
 CharacterScreenFormationsModule.prototype.unbindTooltips = function ()
 {
-    this.mFormationsSortInventoryButton.unbindTooltip();
     this.mFormationsClearFormationButton.unbindTooltip();
     this.mFormationsButtons.forEach(function(btn)
     {
@@ -208,7 +262,6 @@ CharacterScreenFormationsModule.prototype.unbindTooltips = function ()
         this.mFormationNameContainer.unbindTooltip();
     }
 };
-
 
 CharacterScreenFormationsModule.prototype.onFormationSelected = function (_dataSource, _index)
 {
@@ -252,10 +305,12 @@ CharacterScreenFormationsModule.prototype.onSetFormationName = function( _dataSo
 CharacterScreenFormationsModule.prototype.create = function(_parentDiv)
 {
     this.createDIV(_parentDiv);
+    this.bindTooltips();
 };
 
 CharacterScreenFormationsModule.prototype.destroy = function()
 {
+    this.unbindTooltips();
     this.destroyDIV();
 };
 
@@ -320,13 +375,6 @@ CharacterScreenFormationsModule.prototype.isVisible = function ()
 	//return this.mContainer.hasClass('display-block');
 };
 
-
-CharacterScreenFormationsModule.prototype.onInventoryModeUpdated = function (_dataSource, _mode)
-{
-
-};
-
-
 CharacterScreenFormationsModule.prototype.onBrotherUpdated = function (_dataSource, _brother)
 {
 	if (_dataSource.isSelectedBrother(_brother))
@@ -342,3 +390,219 @@ CharacterScreenFormationsModule.prototype.onBrotherSelected = function (_dataSou
 		return;
 	}
 };
+
+CharacterScreenFormationsModule.prototype.createStableSlots = function (_parentDiv, _start, _stop, _isBro)
+{
+    var self = this;
+
+    var dropHandler = function (ev, dd)
+    {
+        var drag = $(dd.drag);
+        var drop = $(dd.drop);
+
+        if (drop === undefined || drop.data('idx') === undefined || drop.data('stable') === 1)
+        {
+            return false;
+        }
+        
+        var dropSlot = drop.data('idx');
+        var horse = self.mSlots[dropSlot - 9];
+        if (horse.data('child') === null)
+        {
+            return false;
+        }
+
+        drag.removeClass('is-dragged');
+        // do the swapping
+        self.mDataSource.notifyBackendAssignRider(drag.data("ID"),   horse.data('child').data('ID'))
+        return true
+    };
+
+    for (var i = _start; i < _stop; ++i)
+    {
+        if (!_isBro) 
+        {
+            this.mSlots[i] = $('<div class="ui-control is-brother-slot is-horse-slot"/>');
+            this.mSlots[i].drop("end", null);
+            this.mSlots[i].data('stable', 1);
+        }
+        else
+        {
+            this.mSlots[i] = $('<div class="ui-control is-brother-slot is-rider-slot"/>');
+            this.mSlots[i].drop("end", dropHandler);
+            this.mSlots[i].data('stable', 0);
+        }
+
+        _parentDiv.append(this.mSlots[i]);
+        //this.mSlots[i].removeClass('display-block').addClass('display-none');
+        this.mSlots[i].data('idx', i);
+        this.mSlots[i].data('child', null);
+    }
+
+    /*$('.is-brother-slot')
+      .drop("start", function ()
+      {
+          $(this).addClass("is-active-slot");
+      })
+      .drop("end", function ()
+      {
+          $(this).removeClass("is-active-slot");
+      });*/
+}
+
+CharacterScreenFormationsModule.prototype.clearBrothersList = function ()
+{
+    for(var i=0; i != this.mSlots.length; ++i)
+    {
+        this.mSlots[i].empty();
+        this.mSlots[i].data('child', null);
+    }
+
+    this.mNumActive = 0;
+};
+
+CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentDiv, _data, _index, _allowReordering)
+{
+    var self = this;
+    var screen = $('.character-screen');
+    _parentDiv.removeClass('display-none').addClass('display-block');
+    this.mSlots[9 + _index + 9 * Math.floor(_index / 9)].removeClass('display-none').addClass('display-block');
+    // create: slot & background layer
+    var result = _parentDiv.createListBrother(_data[CharacterScreenIdentifier.Entity.Id]);
+    result.attr('id', 'slot-index_' + _data[CharacterScreenIdentifier.Entity.Id]);
+    result.data('ID', _data[CharacterScreenIdentifier.Entity.Id]);
+    result.data('idx', _index);
+    result.data('inReserves', _data['inReserves']);
+
+    this.mSlots[_index].data('child', result);
+    
+    ++this.mNumActive;
+
+    // drag handler
+    if (_allowReordering)
+    {
+        result.drag("start", function (ev, dd)
+        {
+            // dont allow drag if this is an empty slot
+            /*var data = $(this).data('item');
+            if (data.isEmpty === true)
+            {
+                return false;
+            }*/
+
+            // build proxy
+            var proxy = $('<div class="ui-control brother is-proxy"/>');
+            proxy.appendTo(document.body);
+            proxy.data('idx', _index);
+
+            var imageLayer = result.find('.image-layer:first');
+            if (imageLayer.length > 0)
+            {
+                imageLayer = imageLayer.clone();
+                proxy.append(imageLayer);
+            }
+
+            $(dd.drag).addClass('is-dragged');
+
+            return proxy;
+        }, { distance: 3 });
+
+        result.drag(function (ev, dd)
+        {
+            $(dd.proxy).css({ top: dd.offsetY, left: dd.offsetX });
+        }, { relative: false, distance: 3 });
+
+        result.drag("end", function (ev, dd)
+        {
+            var drag = $(dd.drag);
+            var drop = $(dd.drop);
+            var proxy = $(dd.proxy);
+
+            var allowDragEnd = true; // TODO: check what we're dropping onto
+
+            // not dropped into anything?
+            if (drop.length === 0 || allowDragEnd === false)
+            {
+                proxy.velocity("finish", true).velocity({ top: dd.originalY, left: dd.originalX },
+			    {
+			        duration: 300,
+			        complete: function ()
+			        {
+			            proxy.remove();
+			            drag.removeClass('is-dragged');
+			        }
+			    });
+            }
+            else
+            {
+                proxy.remove();
+            }
+        }, { drop: '.is-brother-slot' });
+    }
+
+    // update image & name
+    var character = _data[CharacterScreenIdentifier.Entity.Character.Key];
+    var imageOffsetX = (CharacterScreenIdentifier.Entity.Character.ImageOffsetX in character ? character[CharacterScreenIdentifier.Entity.Character.ImageOffsetX] : 0);
+    var imageOffsetY = (CharacterScreenIdentifier.Entity.Character.ImageOffsetY in character ? character[CharacterScreenIdentifier.Entity.Character.ImageOffsetY] : 0);
+
+    result.assignListBrotherImage(Path.PROCEDURAL + character[CharacterScreenIdentifier.Entity.Character.ImagePath], imageOffsetX, imageOffsetY, 0.66);
+    //result.assignListBrotherName(character[CharacterScreenIdentifier.Entity.Character.Name]);
+    //result.assignListBrotherDailyMoneyCost(character[CharacterScreenIdentifier.Entity.Character.DailyMoneyCost]);
+
+    if(CharacterScreenIdentifier.Entity.Character.LeveledUp in character && character[CharacterScreenIdentifier.Entity.Character.LeveledUp] === true)
+    {
+        result.assignListBrotherLeveledUp();
+    }
+
+    /*if(CharacterScreenIdentifier.Entity.Character.DaysWounded in character && character[CharacterScreenIdentifier.Entity.Character.DaysWounded] === true)
+    {
+        result.assignListBrotherDaysWounded();
+    }*/
+
+    if('inReserves' in character && character['inReserves'] && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
+    {
+    	result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+    }
+    else if('moodIcon' in character && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
+    {
+    	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
+    }
+
+    for(var i = 0; i != _data['injuries'].length && i < 3; ++i)
+    {
+        result.assignListBrotherStatusEffect(_data['injuries'][i].imagePath, _data[CharacterScreenIdentifier.Entity.Id], _data['injuries'][i].id)
+    }
+
+    if(_data['injuries'].length <= 2 && _data['stats'].hitpoints < _data['stats'].hitpointsMax)
+    {
+    	result.assignListBrotherDaysWounded();
+    }
+
+    result.assignListBrotherClickHandler(function (_brother, _event)
+	{
+        var data = _brother.data('brother');
+        self.mDataSource.selectedBrotherById(data.id);
+    });
+};
+
+CharacterScreenFormationsModule.prototype.onBrothersListLoaded = function (_dataSource, _brothers)
+{
+	this.clearBrothersList();
+
+	if (_brothers === null || !jQuery.isArray(_brothers) || _brothers.length === 0)
+	{
+		return;
+	}
+
+	for (var i = 0; i < _brothers.length; ++i)
+	{
+        var brother = _brothers[i];
+
+        if (brother !== null && brother !== undefined && brother[CharacterScreenIdentifier.Entity.Character.Key].stabled)
+		{
+		    this.addBrotherSlotDIV(this.mSlots[this.mNumActive + 9 * Math.floor(this.mNumActive / 9)], brother, this.mNumActive, false);
+		}
+    }
+    
+};
+
