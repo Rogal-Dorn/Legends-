@@ -151,6 +151,11 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
+		else if (r >= 2)
+		{
+			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+		}
+
 
 		r = this.Math.rand(0, 4);
 
