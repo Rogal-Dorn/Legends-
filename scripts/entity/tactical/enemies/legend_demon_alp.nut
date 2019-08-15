@@ -227,10 +227,10 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 					}
 
 					loot.drop(_tile);
-					local chance = 1;
+					local chance = 10;
 					if (this.World.Assets.isLegendMagic())
 					{
-						chance = 10;
+						chance = 100;
 					}
 					if (this.Math.rand(1, 100) <= chance)
 					{
