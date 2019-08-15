@@ -5,7 +5,7 @@ this.steady_hands_trait <- this.inherit("scripts/skills/traits/character_trait",
 		this.character_trait.create();
 		this.m.ID = "trait.steady_hands";
 		this.m.Name = "Steady Hands";
-		this.m.Icon = "ui/traits/legend_stead_hands.png";
+		this.m.Icon = "ui/traits/legend_steady_hands.png";
 		this.m.Description = "Having particularly steady hands, this character can shoot straighter than most";
 		this.m.Titles = [
 			"the Steady",
