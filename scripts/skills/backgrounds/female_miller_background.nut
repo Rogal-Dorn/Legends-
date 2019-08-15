@@ -36,10 +36,10 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.IsFemaleBackground = true;
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		local r = this.Math.rand(0, 1);
+			local r = this.Math.rand(0, 1);
 
-		if (r == 0)
-				{
+			if (r == 0)
+			{
 				this.m.Faces = this.Const.Faces.AllMale;
 				this.m.Hairs = this.Const.Hair.CommonMale;
 				this.m.HairColors = this.Const.HairColors.All;
@@ -48,8 +48,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.m.IsFemaleBackground = false;
 				this.m.GoodEnding = "%name% the once-baker stayed with the %companyname% for a time, collecting enough crowns to start his own bakery. Last you heard, his sword-shaped desserts have been a hit with the nobility and he makes more money selling to them than he ever did with the company.";
 				this.m.BadEnding = "As the %companyname% fell on hard times, %name% the baker saw fit to go ahead and leave while he could still walk. He helped a nobleman test out a new way of grinding grains with mules and waterwheels working in tandem. Unfortunately, by \'helping\' he managed to fall into the contraption and was brutally crushed to death.";
-
-				}
+			}
 		}
 
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];

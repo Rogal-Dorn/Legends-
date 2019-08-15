@@ -59,8 +59,8 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
 				{
 				this.m.Faces = this.Const.Faces.AllFemale;
 				this.m.Hairs = this.Const.Hair.AllFemale;
@@ -211,13 +211,13 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (this.Math.rand(0, 1) == 1)
 		{
 			local actor = this.getContainer().getActor();
-			if(this.m.IsFemaleBackground = true)
+			if(this.m.IsFemaleBackground == true)
 			{
-			actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.LadyTitles.len() - 1)]);
+				actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.LadyTitles.len() - 1)]);
 			}
 			else
 			{
-			actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.HedgeKnightTitles.len() - 1)]);
+				actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.HedgeKnightTitles.len() - 1)]);
 			}
 		}
 	}

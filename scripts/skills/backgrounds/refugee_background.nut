@@ -46,17 +46,17 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		local chance = 10;
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		chance = 50;
+			chance = 50;
 		}
 		if (this.Math.rand(1, 100) <= chance)
-			{
+		{
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Beards = null;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
-			}
+		}
 
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];

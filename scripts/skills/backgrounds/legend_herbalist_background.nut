@@ -37,14 +37,20 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Quiet",
 			"the Calm"
 		];
-		local r;
-		r = this.Math.rand(0, 3);
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.Monk;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.Monk;
+		this.m.Body = "bust_naked_body_00";
+
+		local r = this.Math.rand(0, 3);
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
+			r = this.Math.rand(0, 1);
 		}
+		
 		if (r == 0)
-			{
+		{
 			this.m.Faces = this.Const.Faces.AllFemale;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 			this.m.HairColors = this.Const.HairColors.Young;
@@ -52,15 +58,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
-			}
-		else
-			{
-			this.m.Faces = this.Const.Faces.AllMale;
-			this.m.Hairs = this.Const.Hair.Monk;
-			this.m.HairColors = this.Const.HairColors.All;
-			this.m.Beards = this.Const.Beards.Monk;
-			this.m.Body = "bust_naked_body_00";
-			}
+		}
 
 		this.m.IsOffendedByViolence = true;
 		this.m.IsRangerRecruitBackground = true;

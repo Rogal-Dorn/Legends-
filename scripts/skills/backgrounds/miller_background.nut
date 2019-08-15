@@ -35,10 +35,10 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		local r = this.Math.rand(0, 1);
+			local r = this.Math.rand(0, 1);
 
-		if (r == 0)
-				{
+			if (r == 0)
+			{
 				this.m.Faces = this.Const.Faces.AllFemale;
 				this.m.Hairs = this.Const.Hair.AllFemale;
 				this.m.HairColors = this.Const.HairColors.Young;
@@ -46,7 +46,7 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.m.BeardChance = 0;
 				this.m.Body = "bust_naked_body_03";
 				this.m.IsFemaleBackground = true;
-				}
+			}
 		}
 
 		this.m.IsLowborn = true;
