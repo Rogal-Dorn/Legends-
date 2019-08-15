@@ -45,21 +45,19 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		local r;
-		r = this.Math.rand(0, 1);
-	
-		if (r == 0)
+			local r = this.Math.rand(0, 1);
+		
+			if (r == 0)
 			{
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.HairColors = this.Const.HairColors.Young;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
-			this.m.GoodEnding = "%name% the deserter continued fighting for the %companyname%, ever striving to redeem her name. Word has it that during a brutal fight with orcs, she dove headfirst into a crowd of greenskins, surfing across the top of their shocked heads. Her heroism rallied the mercenaries to an incredible victory and she lives out her days getting toasted in every bar she enters.";
-			this.m.BadEnding = "You heard %name% the deserter actually renewed her title and fled a battle the %companyname% had with some greenskins. Goblins caught her out in the woods and turned her head into a goblet for an orc warlord.";
-
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+				this.m.GoodEnding = "%name% the deserter continued fighting for the %companyname%, ever striving to redeem her name. Word has it that during a brutal fight with orcs, she dove headfirst into a crowd of greenskins, surfing across the top of their shocked heads. Her heroism rallied the mercenaries to an incredible victory and she lives out her days getting toasted in every bar she enters.";
+				this.m.BadEnding = "You heard %name% the deserter actually renewed her title and fled a battle the %companyname% had with some greenskins. Goblins caught her out in the woods and turned her head into a goblet for an orc warlord.";
 			}
 		}
 

@@ -37,7 +37,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		local chance = 10;
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		chance = 50;
+			chance = 50;
 		}
 		if (this.Math.rand(1, 100) <= chance)
 			{

@@ -33,9 +33,9 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-				{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
 				this.m.Name = "Adventurous Lady";
 				this.m.Faces = this.Const.Faces.PrettyFemale;
 				this.m.Hairs = this.Const.Hair.AllFemale;
@@ -47,7 +47,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.m.BackgroundDescription = "Adventurous Nobles tend to have high resolve and melee skills, but often neglect ranged defense.";
 				this.m.GoodEnding = "A more reliable sellsword than most, %name%\'s background as an ironmonger helped her to keep the %companyname%\'s equipment functioning. Having saved more than enough crowns, %name% retired and returned to blacksmithing, learning from a true master and becoming a paragon of the craft. Last you heard of her she was living in luxury, making custom weapons and armor for nobles.";
 				this.m.BadEnding = "%name% the ironmonger stayed with the %companyname% for some time after your departure, but after a particularly nasty stretch of bad luck she saw the rot for what it was and jumped ship. Bad luck seemed to follow him, however, and she never managed to settle down. She burned through her leftover crowns in a few years. She died in poverty one winter, freezing overnight.";
-				}
+			}
 		}
 
 

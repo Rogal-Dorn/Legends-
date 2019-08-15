@@ -56,9 +56,9 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		r = this.Math.rand(0, 1);
-		if (r == 0)
-				{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
 				this.m.Faces = this.Const.Faces.AllMale;
 				this.m.Hairs = this.Const.Hair.CommonMale;
 				this.m.HairColors = this.Const.HairColors.All;

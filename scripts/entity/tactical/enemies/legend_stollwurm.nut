@@ -176,23 +176,20 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 
 						loot.drop(_tile);
 								
-								if (this.World.Assets.isLegendMagic())
-								{
-								local chance = 100;
-								}
-								else
-								{
-								local chance = 10;
-								}
+						local chance = 10;
+						if (this.World.Assets.isLegendMagic())
+						{
+							chance = 100;
+						}
 
-							if (this.Math.rand(1, 100) <= chance)
-							{
-								local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-								token.setRuneVariant(this.Math.rand(21, 23));
-								token.setRuneBonus(true);
-								token.updateRuneSigilToken();
-								token.drop(_tile);
-							}
+						if (this.Math.rand(1, 100) <= chance)
+						{
+							local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+							token.setRuneVariant(this.Math.rand(21, 23));
+							token.setRuneBonus(true);
+							token.updateRuneSigilToken();
+							token.drop(_tile);
+						}
 					}
 					else
 					{

@@ -148,16 +148,13 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 
 					loot.drop(_tile);
 
-				if (this.World.Assets.isLegendMagic())
-					{
-					local chance = 10;
-					}
-					else
-					{
 					local chance = 1;
+					if (this.World.Assets.isLegendMagic())
+					{
+						chance = 10;
 					}
 
-				if (this.Math.rand(1, 100) <= chance)
+					if (this.Math.rand(1, 100) <= chance)
 					{
 						local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 						token.setRuneVariant(this.Math.rand(31, 32));

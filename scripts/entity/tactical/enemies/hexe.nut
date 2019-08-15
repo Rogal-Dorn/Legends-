@@ -195,15 +195,12 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 						food.drop(_tile);
 					}
 				}
-
+				
+				local chance = 1;
 				if (this.World.Assets.isLegendMagic())
-					{
-					local chance = 10;
-					}
-					else
-					{
-					local chance = 1;
-					}
+				{
+					chance = 10;
+				}
 
 				if (this.Math.rand(1, 100) < chance)
 				{
