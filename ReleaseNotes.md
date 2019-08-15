@@ -1560,3 +1560,12 @@ Fixes crash in previous test build when fighting any beast that drops rune stone
 Fixes error when hexen leader was shot or decapitated 
 Fixes cloaks blocking out the item they are on 
 Spider, Redback and Rune poison will block unhold regeneration, added as a loading screen tip 
+Fixes female background characters issues (headless, etc...)
+Fixes Test 2 save files not loading
+Fixes not being able to enter towns on deserter scenario
+Fixes steady hands trait icon
+Fixes crash on skin ghoul eating bro and dieing.
+Fixes Legend ghoul skin armor.
+Fixes "Free Her!" choice of which event
+Fixes rune drop loot tables
+

@@ -40,10 +40,10 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		local chance = 1;
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		chance = 50;
+			chance = 50;
 		}
 		if (this.Math.rand(1, 100) <= chance)
-			{
+		{
 			this.m.Faces = this.Const.Faces.PrettyFemale;
 			this.m.Beards = null;
 			this.m.Hairs = this.Const.Hair.AllFemale;
@@ -52,8 +52,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			this.m.IsFemaleBackground = true;
 			this.m.GoodEnding = "%name% the squire eventually left the %companyname%. You\'ve heard that she\'s since been knighted. No doubt she is sitting happy as a plum wherever she is.";
 			this.m.BadEnding = "The squire, %name%, eventually departed the %companyname%. She intended to return home and become knighted, fulfilling her lifelong dream. Cruel politics got in the way and not only was she not knighted, she was stripped of her squire duties. Word has it she hanged herself from a barn\'s rafters.";
-
-			}
+		}
 
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;

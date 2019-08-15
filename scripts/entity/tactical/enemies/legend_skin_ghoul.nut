@@ -214,13 +214,18 @@ this.legend_skin_ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		local skill = this.getSkills().getSkillByID("actives.legend_skin_ghoul_swallow_whole");
-
-		if (skill.getSwallowedEntity() == null)
+		if (skill == null)
 		{
 			return;
 		}
 
 		local e = skill.getSwallowedEntity();
+
+		if (e == null)
+		{
+			return;
+		}
+
 		this.Tactical.addEntityToMap(e, _tile.Coords.X, _tile.Coords.Y);
 		e.getTags().set("Devoured", false);
 		local slime = e.getSprite("dirt");

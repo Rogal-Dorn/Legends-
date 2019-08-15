@@ -27,9 +27,9 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		local r = this.Math.rand(0, 1);
-		if (r == 0)
-				{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
 				this.m.Faces = this.Const.Faces.AllFemale;
 				this.m.Hairs = this.Const.Hair.AllFemale;
 				this.m.HairColors = this.Const.HairColors.All;
@@ -39,7 +39,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.m.IsFemaleBackground = true;
 				this.m.GoodEnding = "The former farmhand, %name%, retired from the %companyname%. The money she made was put toward purchasing a bit of land. she spends the rest of her days happily farming and starting a family with way too many children.";
 				this.m.BadEnding = "The former farmhand, %name%, soon left the %companyname%. She purchased a bit of land out {south | north | east | west} and was doing quite well for herself - until noble soldiers hanged her from a tree for refusing to hand over all her crops.";
-				}
+			}
 		}
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];		

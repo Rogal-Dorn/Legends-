@@ -29,22 +29,20 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_00";
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		local r;
-		r = this.Math.rand(0, 1);
+			local r;
+			r = this.Math.rand(0, 1);
 	
-		if (r == 0)
+			if (r == 0)
 			{
-			this.m.Faces = this.Const.Faces.PrettyFemale;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.HairColors = this.Const.HairColors.Young;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
-			this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned she found a bit of mountain land and works it for a local nobleman. Ironically, her job is to hunt down poachers.";
-			this.m.BadEnding = "No longer seeing the point in risking her life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the woman down. You declined the offer, but the writing was on the wall: her days are numbered.";
-
-
+				this.m.Faces = this.Const.Faces.PrettyFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+				this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned she found a bit of mountain land and works it for a local nobleman. Ironically, her job is to hunt down poachers.";
+				this.m.BadEnding = "No longer seeing the point in risking her life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the woman down. You declined the offer, but the writing was on the wall: her days are numbered.";
 			}
 		}
 

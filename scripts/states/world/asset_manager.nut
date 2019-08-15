@@ -2277,6 +2277,10 @@ this.asset_manager <- {
 		if (_in.getMetaData().getVersion() >= 57)
 		{
 			this.m.IsLegendPerkTrees = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 58)
+		{
 			this.m.IsLegendGenderEquality = _in.readBool();
 			this.m.IsLegendMagic = _in.readBool();
 		}
