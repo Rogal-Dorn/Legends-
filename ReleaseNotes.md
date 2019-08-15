@@ -1560,3 +1560,8 @@ Fixes crash in previous test build when fighting any beast that drops rune stone
 Fixes error when hexen leader was shot or decapitated 
 Fixes cloaks blocking out the item they are on 
 Spider, Redback and Rune poison will block unhold regeneration, added as a loading screen tip 
+lets enemies use buckler bash. 
+Legendary bandit rabble are now each given a profession and a set of skills 
+Legendary thugs gain nimble again, to make it harder to kill them and scatter the rabble 
+bakers can start with a wooden stick 
+Knife skills effect the Shiv

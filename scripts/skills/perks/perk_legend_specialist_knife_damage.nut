@@ -23,6 +23,12 @@ this.perk_legend_specialist_knife_damage <- this.inherit("scripts/skills/skill",
 			_properties.DamageRegularMax += 12;
 		}
 
+		if (item != null && item.getID() == "weapon.legend_shiv")
+		{
+			_properties.DamageRegularMin += 4;
+			_properties.DamageRegularMax += 12;
+		}
+
 		if (item != null && item.getID() == "weapon.dagger" )
 		{
 			_properties.DamageRegularMin += 1;

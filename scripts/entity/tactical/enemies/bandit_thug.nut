@@ -24,7 +24,6 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CurrentProperties = clone b;
 		this.setAppearance();
 		this.getSprite("socket").setBrush("bust_base_bandits");
-
 		if (this.Math.rand(1, 100) <= 10)
 		{
 			local pox = this.getSprite("tattoo_head");
@@ -56,7 +55,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_lithe"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 
@@ -229,8 +228,12 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 						}
 			}
 
-
-			if (this.Math.rand(1, 100) <= 33)
+			local chance = 33;
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+						{
+						chance = 100;
+						}
+			if (this.Math.rand(1, 100) <= chance)
 			{
 				local r = this.Math.rand(1, 2);
 
@@ -245,7 +248,11 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		r = this.Math.rand(0, 9);
+		local r = this.Math.rand(0, 9);
+			if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+				{
+				r = this.Math.rand(6, 9);
+				}
 
 		if (r <= 1)
 		{
@@ -257,7 +264,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
+			this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
 		}
 		else if (r == 4)
 		{
@@ -265,7 +272,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/ragged_surcoat"));
+			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
 		}
 		else if (r == 6)
 		{
@@ -273,18 +280,23 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 7)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
+			this.m.Items.equip(this.new("scripts/items/armor/ragged_surcoat"));
 		}
 		else if (r == 8)
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
+			this.m.Items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		}
 		else if (r == 9)
 		{
 			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 
-		if (this.Math.rand(1, 100) <= 40)
+		local chance = 40; 
+			if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			{
+			chance = 100;
+			}
+		if (this.Math.rand(1, 100) <= chance)
 		{
 			local r = this.Math.rand(1, 6);
 
