@@ -7,7 +7,27 @@
   <sprite id="legend_armor_plates_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\plate\legend_armor_plates_damaged.png" left="-49" right="45" top="-53" bottom="11" />
   <sprite id="legend_armor_plates_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\plate\legend_armor_plates_dead.png" left="-59" right="57" top="-54" bottom="58" />
 
-
+  <sprite id="legend_plate_01" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\legend_plate_01.png" left="-48" right="46" top="-54" bottom="10" />
+  <sprite id="legend_plate_01_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\legend_plate_01_damaged.png" left="-49" right="45" top="-53" bottom="11" />
+  <sprite id="legend_plate_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\legend_plate_01_dead.png" left="-59" right="57" top="-54" bottom="58" />
+   <sprite id="legend_plate_02" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\legend_plate_02.png" left="-48" right="46" top="-54" bottom="10" />
+  <sprite id="legend_plate_02_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\legend_plate_02_damaged.png" left="-49" right="45" top="-53" bottom="11" />
+  <sprite id="legend_plate_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\legend_plate_02_dead.png" left="-59" right="57" top="-54" bottom="58" />
+  <sprite id="legend_frogmouth_01" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\helmets\legend_frogmouth_01.png" left="-41" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_01_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\helmets\legend_frogmouth_01_damaged.png" left="-39" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF4C4E51" width="191" height="185" img="entity\helmets\legend_frogmouth_01_dead.png" left="-92" right="22" top="-93" bottom="7" />
+   <sprite id="legend_frogmouth_02" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\helmets\legend_frogmouth_02.png" left="-41" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_02_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\helmets\legend_frogmouth_02_damaged.png" left="-39" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF4C4E51" width="191" height="185" img="entity\helmets\legend_frogmouth_02_dead.png" left="-92" right="22" top="-93" bottom="7" />  
+   <sprite id="legend_frogmouth_03" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\helmets\legend_frogmouth_03.png" left="-41" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_03_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\helmets\legend_frogmouth_03_damaged.png" left="-39" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF4C4E51" width="191" height="185" img="entity\helmets\legend_frogmouth_03_dead.png" left="-92" right="22" top="-93" bottom="7" />
+   <sprite id="legend_frogmouth_04" offsetY="35" ic="FF4E5053" width="184" height="222" img="entity\helmets\legend_frogmouth_04.png" left="-41" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_04_damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="entity\helmets\legend_frogmouth_04_damaged.png" left="-39" right="43" top="-29" bottom="105" />
+  <sprite id="legend_frogmouth_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF4C4E51" width="191" height="185" img="entity\helmets\legend_frogmouth_04_dead.png" left="-92" right="22" top="-93" bottom="7" />
+ 
+ 
+  
   <sprite id="legend_tabard_01_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\legend_tabard_01_back.png" top="-53" bottom="11" />
   <sprite id="legend_tabard_01_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\legend_tabard_01_back_damaged.png" top="-53" bottom="11" />
   <sprite id="legend_tabard_01_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\legend_tabard_01_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
