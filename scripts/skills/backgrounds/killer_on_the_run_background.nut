@@ -42,6 +42,24 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
+
+		local r = this.Math.rand(0, 9);
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			r = this.Math.rand(0, 1);
+		}
+
+		if (r == 0)
+		{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+		}
+
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];

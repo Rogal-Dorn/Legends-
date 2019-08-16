@@ -31,12 +31,29 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.dastard",
 			"trait.insecure"
 		];
-		this.m.Titles = this.Const.Strings.BarbarianTitles;
+		this.m.Titles = this.Const.Strings.BarbarianTitles;	
 		this.m.Faces = this.Const.Faces.WildMale;
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
 		this.m.Body = "bust_naked_body_01";
+		this.m.IsFemaleBackground = false;
+				
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.WildMale;
+				this.m.HairColors = this.Const.HairColors.All;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+			}
+		}
+		
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;

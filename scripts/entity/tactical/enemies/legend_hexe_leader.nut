@@ -195,8 +195,14 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 						food.drop(_tile);
 					}
 				}
+				
+				local chance = 10;
+				if (this.World.Assets.isLegendMagic())
+				{
+					chance = 100;
+				}
 
-				if (this.Math.rand(1, 100) < 50)
+				if (this.Math.rand(1, 100) <= chance)
 				{
 					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 					token.setRuneVariant(this.Math.rand(11, 13));

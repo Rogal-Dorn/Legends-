@@ -7,8 +7,8 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Name = "Trader";
 		this.m.Icon = "ui/backgrounds/background_19.png";
 		this.m.BackgroundDescription = "Traders are not used to hard physical labor or warfare, but they do excel at haggling for good prices.";
-		this.m.GoodEnding = "A man of the sale, %name% the trader couldn\'t stay fighting for long. He eventually left the %companyname% to go out and start his own business. Recently, you got word that he was selling trinkets with the company\'s sigil on them. You specifically told him he can do whatever he wants except just this one thing, but apparently your warning merely fostered the idea in him. When you went to tell him to stop, he slammed a crown-bulging satchel on his rather ornate table, saying it was your \'cut.\' He sells those trinkets to this day.";
-		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the trader was no different. Last you heard he got the tar beaten out of him trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
+		this.m.GoodEnding = "A lover of the sale, %name% the trader couldn\'t stay fighting for long. They eventually left the %companyname% to go out and start their own business. Recently, you got word that they were selling trinkets with the company\'s sigil on them. You specifically told them to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell them to stop, they slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' They sell those trinkets to this day.";
+		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard they got the tar beaten out of them trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
 		this.m.HiringCost = 60000;
 		this.m.DailyCost = 1;
 		this.m.Excluded = [
@@ -36,9 +36,22 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
+		local chance = 10;
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+		chance = 50;
+		}
+		if (this.Math.rand(1, 100) <= chance)
+			{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Beards = null;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			}
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
-
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[4];
 		this.m.CustomPerkTree = [
@@ -134,7 +147,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 
 	function onBuildDescription()
 	{
-		return "{House to house, | Once a proud merchant, now | An annoyance to most, | In tough times, everyone has to scrape by somehow, hence why | Not a man of the trades, but instead of trade itself,} %name% is a mere trader. {He\'ll dance, he\'ll sing, he\'ll boast and he\'ll act a king, anything to make that sale. | Pushy and unrelenting, his tenacity is admirable. | He\'ll try to sell off a rusty bucket for a helm once worn by kings. This man will sell anything. | This man will make you crave things you never knew you wanted. No refunds, though. | He used to make a decent living selling {used carts | pots, pans and jars}, until fierce competition drove him out of business - by breaking his arm.} {Marketing himself is what this frail man does best, though few believe his pitch about having \'Great swordsmanship and resolute bravery\'. | He supposedly handed out \'coupons\' for his services, whatever those are. He\'s chippy, though, and any outfit these days could use a warm body no matter its real value. | If hired, he promises, you\'ll get a special discount on a virility enhancing potion. | The man lowers his voice and tells you he\'s got a great deal on rusted arrow tips, just for you. He looks disappointed at your lack of interest. | This man knows a man who knows a man who knows a man. All three strangers potentially better at fighting than him. | A shame a man can\'t fight with his words these days. %name% would be unstoppable.}";
+		return "This is your commander, when they die it is game over. {House to house, | Once a proud merchant, now | An annoyance to most, | In tough times, everyone has to scrape by somehow, hence why | Not of the trades, but instead of trade itself,} %name% is a mere peddler. {Dancing, singing, boasting or acting a king, anything to make that sale. | Pushy and unrelenting, their tenacity is admirable. | %name% will try to sell off a rusty bucket for a helm once worn by kings. This trader will sell anything. | %name% will make you crave things you never knew you wanted. No refunds, though. | %name% used to make a decent living selling {used carts | pots, pans and jars }, until fierce competition ended the business - with a broken arm.} {Self marketing is what this frail merchant does best, though few believe the pitch about having \'Great swordsmanship and resolute bravery\'. | Supposedly handed out \'coupons\' for \'services\', whatever those are. %name% is chippy, though, and any outfit these days could use a warm body no matter its real value. | If hired, %name% promises, you\'ll get a special discount on a virility enhancing potion. | %name% lowers their voice and tells you they\'ve got a great deal on rusted arrow tips, just for you. The merchant looks disappointed at your lack of interest. | This merchant knows a man who knows a man who knows a man. All three strangers potentially better at fighting than %name%. | A shame a war can\'t be fought with words these days. %name% would be unstoppable.}";
 	}
 
 	function onChangeAttributes()

@@ -835,8 +835,8 @@ gt.Const.Perks.TrainedTree <- {
 			0
 		],
 		MeleeDefense = [
-			6,
-			6
+			3,
+			3
 		],
 		RangedDefense = [
 			0,

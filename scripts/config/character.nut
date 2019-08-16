@@ -821,6 +821,7 @@ gt.Const.CharacterProperties <- {
 		1.0
 	],
 	FatigueReceivedPerHitMult = 1.0,
+	FatigueLossOnBeingMissedMult = 1.0,
 	MoraleCheckBravery = [
 		0,
 		0,
@@ -887,6 +888,7 @@ gt.Const.CharacterProperties <- {
 	IsAttackingOnZoneOfControlEnter = false,
 	IsAttackingOnZoneOfControlAlways = false,
 	IsRiposting = false,
+	IsParrying = false,
 	IsSkillUseFree = false,
 	IsSkillUseHalfCost = false,
 	IsAffectedByNight = true,
@@ -902,6 +904,7 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInCrossbows = false,
 	IsSpecializedInThrowing = false,
 	IsSpecializedInSwords = false,
+	IsSpecializedInOneHandedSwords = false,
 	IsSpecializedInGreatSwords = false,
 	IsSpecializedInCleavers = false,
 	IsSpecializedInMaces = false,

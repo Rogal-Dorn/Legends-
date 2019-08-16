@@ -28,7 +28,7 @@ this.unhold_racial <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		if (!actor.getSkills().hasSkill("effects.spider_poison_effect"))
+		if (!actor.getSkills().hasSkill("effects.spider_poison_effect") && !actor.getSkills().hasSkill("effects.legend_redback_spider_poison_effect") && !actor.getSkills().hasSkill("effects.legend_RSW_poison_effect"))
 		{
 			actor.setHitpoints(actor.getHitpoints() + healthAdded);
 			actor.setDirty(true);

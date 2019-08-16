@@ -9,7 +9,7 @@ this.kings_guard_2_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 9999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_82.png[/img]{You find %guard% stretching about with surprising limberness. He looks nothing at all like the freezing, frigid man you found abandoned in the ice by those barbarians. Spotting you, he nods and comes over with a quiet voice.%SPEECH_ON%I\'m glad you trusted in me, captain. Perhaps you did it out of the kindness of your heart, but I need to show you something.%SPEECH_OFF%He flashes an emblem you have heard referenced many times, but have never seen: it carries the sigil of the King\'s Guard and its pristineness is such that there is no way it could have been a farce. The man smiles at you.%SPEECH_ON%I think I am in good health and ready to serve you as I did my liege.%SPEECH_OFF%The kings of these lands have long since fallen, replaced by squabbling lords and nobles. If this man can fight for you as he did for the kings, then the %companyname% has brighter days ahead surely.}",
+			Text = "[img]gfx/ui/events/event_82.png[/img]{You find %guard% stretching about with surprising limberness, and looks nothing at all like the freezing, frigid figure you found abandoned in the ice by those barbarians. Spotting you, the mercenary nods and comes over with a quiet voice.%SPEECH_ON%I\'m glad you trusted in me, captain. Perhaps you did it out of the kindness of your heart, but I need to show you something.%SPEECH_OFF%He flashes an emblem you have heard referenced many times, but have never seen: it carries the sigil of the King\'s Guard and its pristineness is such that there is no way it could have been a farce. The mercenary smiles at you.%SPEECH_ON%I think I am in good health and ready to serve you as I did my liege.%SPEECH_OFF%The kings of these lands have long since fallen, replaced by squabbling lords and nobles. If this mercenary can fight for you as well as for the kings, then the %companyname% has brighter days ahead surely.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -31,7 +31,7 @@ this.kings_guard_2_event <- this.inherit("scripts/events/event", {
 				local oldPerkTree = _event.m.Dude.getBackground().m.CustomPerkTree;
 				_event.m.Dude.getSkills().removeByID("background.cripple");
 				_event.m.Dude.getSkills().add(bg);
-				_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north. With your help, the former King\'s Guard regained his strength and now fights for you.";
+				_event.m.Dude.getBackground().m.RawDescription = "You found %name% frozen half to death in the north. With your help, the former King\'s Guard regained strength and now fights for you.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				_event.m.Dude.getBackground().rebuildPerkTree(oldPerkTree);
 				_event.m.Dude.resetPerks();

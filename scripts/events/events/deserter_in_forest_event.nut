@@ -9,13 +9,13 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 200.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_25.png[/img]While trundling through the forest, birds suddenly scatter into the sky, shaking the trees and branches with the very frightful urgency of their leaving. Not a moment later does a man come barreling through a bush, looking more flash flood than flesh and blood. He seizes up, this earthen golem, and begs you to hide him.%SPEECH_ON%Look, I\'ll be perfectly honest. I\'m a deserter. That\'s that. I didn\'t, I mean, alright I don\'t really have a defense. But look, what are you? Mercenaries? Great! Hide me and I\'ll fight for you to the end of time!%SPEECH_OFF%Halfway through his pleading spiel, you hear dogs barking in the distance. The man instinctively hides away into an arboreal cubby, quickly covering himself with dirt. He nods as if to say you\'ve already come to an agreement.\n\n Bounty hunters come through the tree line, their dogs already sniffing around. Their lieutenant looks around.%SPEECH_ON%Don\'t even try to fool me, sellsword. I know that deserter came this way. Two hundred crowns for his head. Where is he?%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_25.png[/img]While trundling through the forest, birds suddenly scatter into the sky, shaking the trees and branches with the very frightful urgency of their leaving. Not a moment later does a figure come barreling through a bush, looking more flash flood than flesh and blood. The frightened human seizes up, this dirty earthen golem, and begs you for a place to hide.%SPEECH_ON%Look, I\'ll be perfectly honest. I\'m a deserter. That\'s that. I didn\'t, I mean, alright I don\'t really have a defense. But look, what are you? Mercenaries? Great! Hide me and I\'ll fight for you to the end of time!%SPEECH_OFF%Halfway through the pleading spiel, you hear dogs barking in the distance. The deserter instinctively hides away into an arboreal cubby, quickly covering over with dirt. The dirt pile nods as if to say you\'ve already come to an agreement.\n\n Bounty hunters come through the tree line, their dogs already sniffing around. Their lieutenant looks around.%SPEECH_ON%Don\'t even try to fool me, sellsword. I know that deserter came this way. Two hundred crowns for the head. Where is the wretch?%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "He\'s right there, take him.",
+					Text = "Right there.",
 					function getResult( _event )
 					{
 						return "C";
@@ -71,7 +71,7 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude.setStartValuesEx([
 					"deserter_background"
 				]);
-				_event.m.Dude.getBackground().m.RawDescription = "You found %name% the deserter being chased through the forest. Though bounty hunters were hot on his trail, you elected to defend him and for that he swore an oath to you.";
+				_event.m.Dude.getBackground().m.RawDescription = "You found %name% the deserter being chased through the forest. Though bounty hunters were hot on the trail, you elected to defend the fugitive and for that swore an oath to you.";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
@@ -79,7 +79,7 @@ this.deserter_in_forest_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_25.png[/img]You nod to where the deserter is hiding. He must have kept one distrusting eye on you because he immediately jumps out of the hole and goes fleeing. The dogs run him down with ease, glomming onto him with caninal ferocity and dragging his screaming ass to the ground. Before you can even so much as laugh, the bounty hunter puts a bag of crowns into your palm.%SPEECH_ON%That\'s half my cut, but without the happenstance of your being here, I\'m not sure we would have caught that wily bastard.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_25.png[/img]You nod to where the deserter is hiding, who must have kept one distrusting eye on you because the mess of dirt immediately jumps out of the hole and goes fleeing. The dogs run the deserter down with ease, glomming on with caninal ferocity and dragging the screaming ass to the ground. Before you can even so much as laugh, the bounty hunter puts a bag of crowns into your palm.%SPEECH_ON%That\'s half my cut, but without the happenstance of your being here, I\'m not sure we would have caught that wily dastard.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],

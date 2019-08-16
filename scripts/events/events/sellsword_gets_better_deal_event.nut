@@ -11,7 +11,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 35.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]While counting inventory, %sellsword% joins your side, mindlessly picking at this sword or that shield. You set your quill pen down and ask him what\'s up for he sure as shit isn\'t here to count anything. He explains that another company wishes to use his swordhand - and they\'re willing to pay more. You ask how much and he holds up his hands to count.%SPEECH_ON%They\'re talking %newpay% crowns a day.%SPEECH_OFF%He\'s earning %pay% crowns a day with you.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]While counting inventory, %sellsword% joins your side, mindlessly picking at this sword or that shield. You set your quill pen down and ask what\'s up for the hired blade sure as shit isn\'t here to count anything. The sellsword explains that another company wishes to use the mercenary\'s swordhand - and they\'re willing to pay more. You ask how much and the sellsword holds up hands to count.%SPEECH_ON%They\'re talking %newpay% crowns a day.%SPEECH_OFF% %sellsword%\'s earning %pay% crowns a day with you.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -51,7 +51,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_05.png[/img] You turn around, crossing your arms and jacking a boot against a crate. Staring out across the land, you tell %sellsword% that the company has been through a lot together and everyone, yourself especially, would hate to see him go. He has a second family here with the the %companyname% and that\'s a rare treat in the mercenary world. Where he\'s going there is no guarantee of what he may find. You know, because you\'ve been there. You\'ve been in his very shoes, and you took those shoes and walked. And regretted it.\n\nThe sellsword looks at the ground, thinking your words over. Finally he nods and agrees to stay. You tell him he\'s made the right choice. The man turns and taps a quiver of arrows as he walks away.%SPEECH_ON%Might want to refill that.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_05.png[/img] You turn around, crossing your arms and jacking a boot against a crate. Staring out across the land, you tell %sellsword% that the company has been through a lot together and everyone, yourself especially, would hate to say farewell. There is a second family here with the %companyname% and that\'s a rare treat in the mercenary world. In other companies there is no guarantee of what may be found. You know, because you\'ve been there. You\'ve been in the sellsword's very shoes, and you took those shoes and walked. And regretted it.\n\nThe sellsword looks at the ground, thinking your words over. Finally the hired blade nods and agrees to stay. You reaffirm that it is definately the right choice. The mercenary turns and taps a quiver of arrows while walking away.%SPEECH_ON%Might want to refill that.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -74,7 +74,7 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_16.png[/img] You turn around, crossing your arms and jacking a boot against a crate. Staring out across the land, you tell %sellsword% that the company has been through a lot together and everyone, yourself especially, would hate to see him go. He has a second family here with the %companyname% and that\'s a rare treat in the mercenary world. Where he\'s going there is no guarantee of what he may find. You know, because you\'ve been there. You\'ve been in his very shoes, and you took those shoes and walked. And regretted it.\n\n The sellsword looks at the ground, thinking your words over. Finally he shakes his head and purses his lips with a look of \'sorry\'. You tell him he\'s making the wrong choice, but he\'s having none of it. The man turns and taps a quiver of arrows as he walks away.%SPEECH_ON%Might want to refill that.%SPEECH_OFF%The arrows are a little low, but all you can think about is figuring out how to replace a good swordhand such as he.",
+			Text = "[img]gfx/ui/events/event_16.png[/img] You turn around, crossing your arms and jacking a boot against a crate. Staring out across the land, you tell %sellsword% that the company has been through a lot together and everyone, yourself especially, would hate to say farewell. There is a second family here with the  %companyname% and that\'s a rare treat in the mercenary world. In other companies there is no guarantee of what may be found. You know, because you\'ve been there. You\'ve been in the sellsword's very shoes, and you took those shoes and walked. And regretted it.\n\n The sellsword looks at the ground, thinking your words over. Finally the hired blade's head shakes slowly, with pursed lips and a look of \'sorry\'. You argue that it is the wrong choice, but %sellsword%\'s having none of it. The mercenary turns and taps a quiver of arrows while walking away.%SPEECH_ON%Might want to refill that.%SPEECH_OFF%The arrows are a little low, but all you can think about is figuring out how to replace such a good swordhand",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -103,13 +103,13 @@ this.sellsword_gets_better_deal_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_04.png[/img] You sigh. The man nods and starts to leave, but you stop him. You\'ll pay the amount so he can stay. The %companyname% simply cannot afford to lose a man like him.",
+			Text = "[img]gfx/ui/events/event_04.png[/img] You sigh. %sellsword% nods and starts to leave, but you stop the mercenary. You\'ll pay the amount to stay the move. The %companyname% simply cannot afford to lose a blade like that.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "A good man doesn\'t come cheap.",
+					Text = "A good sword doesn\'t come cheap.",
 					function getResult( _event )
 					{
 						return 0;

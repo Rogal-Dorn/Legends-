@@ -239,6 +239,10 @@ gt.Const.CharacterTraits <- [
 	[
 		"trait.lucky",
 		"scripts/skills/traits/lucky_trait"
+	],
+	[
+		"trait.steady_hands",
+		"scripts/skills/traits/steady_hands_trait"
 	]
 ];
 

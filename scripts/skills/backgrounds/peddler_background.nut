@@ -29,26 +29,26 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.deathwish",
 			"trait.bloodthirsty"
 		];
-		local r;
-		r = this.Math.rand(0, 9);
-		if (r == 0)
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.TidyMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.Tidy;
+		this.m.Body = "bust_naked_body_02";
+
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
 			{
-			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Hairs = this.Const.Hair.AllFemale;
-			this.m.HairColors = this.Const.HairColors.Young;
-			this.m.Beards = null;
-			this.m.BeardChance = 0;
-			this.m.Body = "bust_naked_body_03";
-			this.m.IsFemaleBackground = true;
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
 			}
-		else
-			{
-			this.m.Faces = this.Const.Faces.AllMale;
-			this.m.Hairs = this.Const.Hair.TidyMale;
-			this.m.HairColors = this.Const.HairColors.All;
-			this.m.Beards = this.Const.Beards.Tidy;
-			this.m.Body = "bust_naked_body_02";
-			}
+		}
 		this.m.IsLowborn = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];

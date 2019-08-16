@@ -120,7 +120,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 					this.Const.CharacterFemaleBackgrounds
 				);
 				_event.m.Dude.setTitle("the Roasted");
-				_event.m.Dude.getBackground().m.RawDescription = "While visiting " + _event.m.Town.getName() + ", you found %name% tied to a stake and set her free, now she fights with you and for her freedom";
+				_event.m.Dude.getBackground().m.RawDescription = "While visiting the local village you found %name% tied to a stake and set her free, now she fights with you and for her freedom";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
 

@@ -4,7 +4,7 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_mark_target";
 		this.m.Name = "Mark Target";
-		this.m.Description = "Analyse the weak points on an opponent and tell your comrades, reducing the targets ranged defense by 20";
+		this.m.Description = "Analyse the weak points on an opponent and tell your comrades, reducing the targets ranged defense by 20 for 3 turns";
 		this.m.KilledString = "Marked";
 		this.m.Icon = "skills/MarkTargetSkill.png";
 		this.m.IconDisabled = "skills/MarkTargetSkill_bw.png";

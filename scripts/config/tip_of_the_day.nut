@@ -28,7 +28,7 @@ gt.Const.TipOfTheDay <- [
 	"Daggers can be used to attack weak spots in armor and deal damage directly to hitpoints.",
 	"Melee attack damage is based on your hitpoints and initiative",
 	"Ranged weapons work best when firing into groups of enemies - they are bound to hit someone.",
-
+	"Unholds and Rock unhold regeneration can be stopped with spider poison",
 	"Consider forming a shieldwall when overwhelmed.",
 	"Conserve your stamina when in prolonged engagements.",
 	"Success in Battle Brothers is also about picking the right fights.",
