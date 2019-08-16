@@ -51,10 +51,20 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			"the Rogue",
 			"the Sly"
 		];
-		local r;
-		r = this.Math.rand(0, 3);
+		this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.TidyMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.Tidy;
+		this.m.Body = "bust_naked_body_02";
+
+		local r = this.Math.rand(0, 9);
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			r = this.Math.rand(0, 1);
+		}
+
 		if (r == 0)
-			{
+		{
 			this.m.Faces = this.Const.Faces.PrettyFemale;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 			this.m.HairColors = this.Const.HairColors.All;
@@ -62,15 +72,8 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
-			}
-		else
-			{
-			this.m.Faces = this.Const.Faces.AllMale;
-			this.m.Hairs = this.Const.Hair.TidyMale;
-			this.m.HairColors = this.Const.HairColors.All;
-			this.m.Beards = this.Const.Beards.Tidy;
-			this.m.Body = "bust_naked_body_02";
-			}
+		}
+		
 		this.m.Level = 3;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
@@ -201,7 +204,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 
 	function onBuildDescription()
 	{
-		return "{This is your commander, when he dies the company ends. This character has no history, any attempt to force discussion on it will only result in silence or lies.  }";
+		return "{This is your commander, when they die the company ends. This character has no history, any attempt to force discussion on it will only result in silence or lies.  }";
 	}
 
 	function onChangeAttributes()

@@ -70,7 +70,10 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-
+		if (!this.World.Assets.isLegendMagic())
+		{
+			return;
+		}
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
 		local brotherlevels = 0;

@@ -7,7 +7,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Name = "Apprentice";
 		this.m.Icon = "ui/backgrounds/background_40.png";
 		this.m.BackgroundDescription = "Apprentices tend to be eager for knowledge and learn faster than others.";
-		this.m.GoodEnding = "Perhaps one of the sharpest men you\'ve ever met, %name% the apprentice was the quickest learner in the %companyname%. With plenty of crowns stored, he retired from fighting to take his talents to the business world. Last you heard he was doing very well for himself across multiple trades. If you ever have a son, this is the man you\'ll send him to for apprenticeship.";
+		this.m.GoodEnding = "Perhaps one of the sharpest men you\'ve ever met, %name% the apprentice was the quickest learner in the %companyname%. With plenty of crowns stored, he retired from fighting to take his talents to the business world. Last you heard he was doing very well for himself across multiple trades. If you ever have a child, this is the man you\'ll send them to for apprenticeship.";
 		this.m.BadEnding = "%name% the apprentice was, by far, the quickest learner in the %companyname%. Little surprise then that he was also one of the quickest to recognize its inevitable downfall and leave while he still could. Had he been born in a different time he would have gone on to do great things. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented men went to total waste.";
 		this.m.HiringCost = 90;
 		this.m.DailyCost = 8;
@@ -37,6 +37,24 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
+
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+			this.m.Faces = this.Const.Faces.AllFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
+			this.m.GoodEnding = "Perhaps one of the sharpest women you\'ve ever met, %name% the apprentice was the quickest learner in the %companyname%. With plenty of crowns stored, she retired from fighting to take her talents to the business world. Last you heard she was doing very well for herself across multiple trades. If you ever have a child, this is the woman you\'ll send them to for apprenticeship.";
+			this.m.BadEnding = "%name% the apprentice was, by far, the quickest learner in the %companyname%. Little surprise then that she was also one of the quickest to recognize its inevitable downfall and leave while she still could. Had she been born in a different time she would have gone on to do great things. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented women went to total waste.";
+			}
+		}
+
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.IsEducatedBackground = true;
@@ -90,7 +108,14 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 
 	function onBuildDescription()
 	{
-		return "{One enters the world always looking to be the best they can be, | Mastery of an art is prestigious, | Everybody looks up to the best,} {but no one gets there in an instant. | so what better way to be the best than to learn underneath one? | and it\'s no secret most look toward the masters for help.} {%name% thought the same, taking the role of an apprentice in %townname%. | Believing this to be true, %name% took up an apprenticeship in %townname%. | When %randomtown%\'s college asked for apprentices, %name% was the first to sign up. | Urged by his parents to better his craft, %name% looked to start his career as an apprentice. | Not to be outdone by his overachieving brother, %name% began looking for an apprenticeship.} {Unfortunately, his master was poorly chosen: an insane carpenter with a penchant for chopping the neckline instead of the treeline. Fleeing the impending doom by association, %name% has ended up in the company of sellswords. | Learning all he could, %name% built the greatest work of art possibly ever seen in the field of underwater basket-weaving. His master, though, was a jealous one. Not to be outdone by a pupil, he burned the project to ash and eye-watering fumes. It was clear to %name%: he could learn fast, but perhaps there were better masters to study beneath. | He had soaked up all there was to learn: masonry, carpentry, blacksmithing, lovemaking. Now he turns his eyes on the martial arts. While he isn\'t exactly a warrior yet, %name% is a fast learner.}";
+		if (this.m.IsFemaleBackground == true)
+			{
+			return "{One enters the world always looking to be the best they can be, | Mastery of an art is prestigious, | Everybody looks up to the best,} {but no one gets there in an instant. | so what better way to be the best than to learn underneath one? | and it\'s no secret most look toward the masters for help.} {%name% thought the same, taking the role of an apprentice in %townname%. | Believing this to be true, %name% took up an apprenticeship in %townname%. | When %randomtown%\'s college asked for apprentices, %name% was the first to sign up. | Urged by her parents to better her craft, %name% looked to start her career as an apprentice. | Not to be outdone by her overachieving brother, %name% began looking for an apprenticeship.} {Unfortunately, her master was poorly chosen: an insane carpenter with a penchant for chopping the neckline instead of the treeline. Fleeing the impending doom by association, %name% has ended up in the company of sellswords. | Learning all she could, %name% built the greatest work of art possibly ever seen in the field of underwater basket-weaving. Her master, though, was a jealous one. Not to be outdone by a pupil, she burned the project to ash and eye-watering fumes. It was clear to %name%: she could learn fast, but perhaps there were better masters to study beneath. | She had soaked up all there was to learn: masonry, carpentry, blacksmithing, lovemaking. Now she turns her eyes on the martial arts. While she isn\'t exactly a warrior yet, %name% is a fast learner.}";
+			}
+		else
+			{
+			return "{One enters the world always looking to be the best they can be, | Mastery of an art is prestigious, | Everybody looks up to the best,} {but no one gets there in an instant. | so what better way to be the best than to learn underneath one? | and it\'s no secret most look toward the masters for help.} {%name% thought the same, taking the role of an apprentice in %townname%. | Believing this to be true, %name% took up an apprenticeship in %townname%. | When %randomtown%\'s college asked for apprentices, %name% was the first to sign up. | Urged by his parents to better his craft, %name% looked to start his career as an apprentice. | Not to be outdone by his overachieving brother, %name% began looking for an apprenticeship.} {Unfortunately, his master was poorly chosen: an insane carpenter with a penchant for chopping the neckline instead of the treeline. Fleeing the impending doom by association, %name% has ended up in the company of sellswords. | Learning all he could, %name% built the greatest work of art possibly ever seen in the field of underwater basket-weaving. His master, though, was a jealous one. Not to be outdone by a pupil, he burned the project to ash and eye-watering fumes. It was clear to %name%: he could learn fast, but perhaps there were better masters to study beneath. | He had soaked up all there was to learn: masonry, carpentry, blacksmithing, lovemaking. Now he turns his eyes on the martial arts. While he isn\'t exactly a warrior yet, %name% is a fast learner.}";
+			}
 	}
 
 	function onChangeAttributes()
