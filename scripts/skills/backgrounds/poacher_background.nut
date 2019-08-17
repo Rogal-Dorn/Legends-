@@ -27,6 +27,26 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			local r;
+			r = this.Math.rand(0, 1);
+	
+			if (r == 0)
+			{
+				this.m.Faces = this.Const.Faces.PrettyFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+				this.m.GoodEnding = "%name%, former poacher, eventually saved enough money to leave the %companyname%. You learned she found a bit of mountain land and works it for a local nobleman. Ironically, her job is to hunt down poachers.";
+				this.m.BadEnding = "No longer seeing the point in risking her life for so few crowns, %name% the former poacher put down the sellsword\'s life and returned to unlawfully hunting deer in the woods. A nobleman once offered you a good satchel of crowns to specifically hunt the woman down. You declined the offer, but the writing was on the wall: her days are numbered.";
+			}
+		}
+
+
 		this.m.IsLowborn = true;
 		this.m.IsOutlawBackground = true;
 		this.m.IsRangerRecruitBackground = true;
@@ -96,7 +116,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function onBuildDescription()
 	{
-		return "{Interested in the thrill of the hunt, | Looking to support his family, | With a grumbling stomach, | After a long and hard winter that left him without a stock of food,} %name% {set off into the woods in chase of deer | sought wildlife to which, if his skittishness is any indication, he may or may not have had proper claim | ate his fill of all manner of woodland creatures, a well-used bow yoked across his shoulders indicating the means to his meals | took to the woods to hunt game with bow and spear}. Hailing from %townname%, %name% {was, as a poacher, the hunter and the hunted | needed to feed his wife and children back home | sought to support himself, his own hide, and his ever-growling stomach | was poaching, an act of rebellion against the order of things as much as a means to fill his belly}. {Fearful that his pursuits would attract bounty hunters or lawmen, he decided to settle on life as a bow for hire. | Tired of working so hard just to put food on the table, buying a meal with a sellsword\'s pay just seemed so much easier in his mind. | After a bad hunt led him to a long stay in a lord\'s dungeon, he\'d rather put his neck on the line as a mercenary now than in the noose as a poacher. | Years of lonely hunting wore on the man. Although life as a mercenary is exceedingly dangerous, he\'d rather die with company than by himself. | His wife pleaded long that he change his ways lest the whole family pay for his crimes. He stands here now, a testament to who won the argument.}";
+		return "{Interested in the thrill of the hunt, | Looking to support a family, | With a grumbling stomach, | After a long and hard winter without a stock of food,} %name% {set off into the woods in chase of deer | sought wildlife to which, if skittishness is any indication, the hunter may or may not have had proper claim | ate a fill of all manner of woodland creatures, a well-used bow yoked across shoulders indicating the means to the meals | took to the woods to hunt game with bow and spear}. Hailing from %townname%, %name% {was, as a poacher, the hunter and the hunted | needed to feed the children back home | sought to support oneself, one\'s own hide, and one\'s ever-growling stomach | was poaching, an act of rebellion against the order of things as much as a means to a full belly}. {Fearful these pursuits would attract bounty hunters or lawmen, decided to settle on life as a bow for hire. | Tired of working so hard just to put food on the table, buying a meal with a sellsword\'s pay just seemed so much easier. | After a bad hunt led to a long stay in a lord\'s dungeon, the poacher would rather put neck on the line as a mercenary now than in the noose as a poacher. | Years of lonely hunting wore on. Although life as a mercenary is exceedingly dangerous, it seems better to die with company than alone. | With a mother pleading for a change of ways, lest the whole family pay for the crimes. the poacher stands here now, a testament to who won the argument.}";
 	}
 
 	function onChangeAttributes()

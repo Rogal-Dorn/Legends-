@@ -16,7 +16,8 @@ this.perk_steadfast <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.FatigueReceivedPerHitMult *= 0.01;
+		_properties.FatigueReceivedPerHitMult *= 0.1;
+		_properties.FatigueLossOnBeingMissedMult *= 0.1;
 	}
 
 });

@@ -12,7 +12,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 80.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "%terrainImage%{While on the march, you find a drunken nobleman tottering side to side on the path. Mussy is the name of his hair, leaves and grass and what looks like birdshit swept up in it like someone stirred the ingredients to a prank. But his clothes sweep about with the finest of silks and his fingers glisten with jewelry. He has a bottle in each hand and he swings them around as he sings gibberish pub songs.\n\nHe is in all regards the greatest magnet for a mugging you\'ve ever seen. %randombrother% purses his lips and he looks like a wolf staring at a fat sheep.%SPEECH_ON%I\'m not saying nothing, sir, I\'m just. I\'m just seeing it. That\'s a lot of juice. A lot of juice limping down the road. But again I ain\'t saying nothing.%SPEECH_OFF%You know what he\'s talking about.}",
+			Text = "%terrainImage%{While on the march, you find a drunken nobleman tottering side to side on the path. Mussy is the name of his hair, leaves and grass and what looks like birdshit swept up in it like someone stirred the ingredients to a prank. But his clothes sweep about with the finest of silks and his fingers glisten with jewelry. He has a bottle in each hand and he swings them around as he sings gibberish pub songs.\n\nHe is in all regards the greatest magnet for a mugging you\'ve ever seen. %randombrother% purses lips and looks like a wolf staring at a fat sheep.%SPEECH_ON%I\'m not saying nothing, sir, I\'m just. I\'m just seeing it. That\'s a lot of juice. A lot of juice limping down the road. But again I ain\'t saying nothing.%SPEECH_OFF%You know what the sellsword\'s talking about.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -65,7 +65,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "%terrainImage%{You walk up to the man and help him sit down. He grins as one of his bottles clanks off the path and rolls away.%SPEECH_ON%Thankiicup, sir, jast, no, well, ya.%SPEECH_OFF%Nodding, you hold his hand out and spit on his fingers, then roll the jewelry off and pocket them. He merely watches as though you were a physician treating a malady. The rest of your mercenaries strip him down and throw a goatskin tarp over him and then leave him there. As you walk away he asks if you know about the drink.%SPEECH_ON%Not, not sayin\' away the secret, but, sirs, drinks are good.%SPEECH_OFF%Yes, are they ever. Unfortunately, as you rejoin the company %randombrother% reports that a kid saw everything and scampered off. You ask why he didn\'t chase after him. He looks at you shrewdly.%SPEECH_ON%I\'m not the scampering sort, sir.%SPEECH_OFF%}",
+			Text = "%terrainImage%{You walk up to the man and help him sit down. He grins as one of his bottles clanks off the path and rolls away.%SPEECH_ON%Thankiicup, sir, jast, no, well, ya.%SPEECH_OFF%Nodding, you hold his hand out and spit on his fingers, then roll the jewelry off and pocket them. He merely watches as though you were a physician treating a malady. The rest of your mercenaries strip him down and throw a goatskin tarp over him and then leave him there. As you walk away he asks if you know about the drink.%SPEECH_ON%Not, not sayin\' away the secret, but, sirs, drinks are good.%SPEECH_OFF%Yes, are they ever. Unfortunately, as you rejoin the company %randombrother% reports that a kid saw everything and scampered off. You ask why the mercenary didn\'t chase after him, the bemused sellsword looks at you shrewdly.%SPEECH_ON%I\'m not the scampering sort, sir.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -208,7 +208,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "%terrainImage%{You look back at the company, then unsheathe your sword as you turn around. You swing it up and clip the crossbow and the man shoots it just over your shoulder. You drive the blade down the slat of wood and cut the cords of the weapon and stab the steel into the man\'s chest. He goes down easy and you hear men shout in the distance, but they\'re scared and scampering away. Thieves like this know not to fight with sellswords. Unfortunately, the crossbow bolt that went over your shoulder struck %hurtbro%. He\'ll survive, but it is a garish wound.}",
+			Text = "%terrainImage%{You look back at the company, then unsheathe your sword as you turn around. You swing it up and clip the crossbow and the man shoots it just over your shoulder. You drive the blade down the slat of wood and cut the cords of the weapon and stab the steel into the man\'s chest. He goes down easy and you hear men shout in the distance, but they\'re scared and scampering away. Thieves like this know not to fight with sellswords. Unfortunately, the crossbow bolt that went over your shoulder struck %hurtbro%. Who\'ll survive, but it is a garish wound.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -362,11 +362,11 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.juggler")
+			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.female_servant" || bro.getBackground().getID() == "background.juggler")
 			{
 				candidates_servant.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.thief")
+			else if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief")
 			{
 				candidates_thief.push(bro);
 			}

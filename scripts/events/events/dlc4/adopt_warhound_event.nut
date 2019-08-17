@@ -79,7 +79,7 @@ this.adopt_warhound_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "%terrainImage%{You move to take the hound, but as you crouch down one of the sheep bays and charges, knocking you over. The men laugh and by the time you get to your knees another sheep crushes you from behind to many cheers. Drawing out your sword emits a sharp twang that sends the sheep scurrying. When you look back at the hound its nose is to the dirt and its eyes peerless. It has died and the sheep slowly collect around it bleating and crying out. You sheathe your sword and tell the company to move on.}",
+			Text = "%terrainImage%{You move to take the hound, but as you crouch down one of the sheep bays and charges, knocking you over. The company laughs and by the time you get to your knees another sheep crushes you from behind to many cheers. Drawing out your sword emits a sharp twang that sends the sheep scurrying. When you look back at the hound its nose is to the dirt and its eyes peerless. It has died and the sheep slowly collect around it bleating and crying out. You sheathe your sword and tell the company to move on.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -100,7 +100,7 @@ this.adopt_warhound_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "%terrainImage%{%houndman% steps forward.%SPEECH_ON%I know this breed. It is of northern stock, a sturdy creature. There is one thing it shall respect in a man and it is strength.%SPEECH_OFF%The sellsword crouches before the dog and without pause puts its hands around the scuff of its neck and starts to scratch. Despite the sudden movements, the dog responds positively and when the man stops scratching the dog lifts up off the ground and lopes forward and follows the man. %houndman% stares back at you as he roughs the dog up with some heavy petting.%SPEECH_ON%Yeah he\'ll fight for us. Fightin\' is what he\'s made for. He just needed someone to watch him rip and tear.%SPEECH_OFF%What a lovely creature this is. And the dog is fine, too.}",
+			Text = "%terrainImage%{%houndman% steps forward.%SPEECH_ON%I know this breed. It is of northern stock, a sturdy creature. There is one thing it shall respect in a pack leader and it is strength.%SPEECH_OFF%The sellsword crouches before the dog and without pause puts its hands around the scuff of its neck and starts to scratch. Despite the sudden movements, the dog responds positively and when the mercenary stops scratching the dog lifts up off the ground and lopes forward and follows the dog whisperer. %houndman% stares back at you and roughs the dog up with some heavy petting.%SPEECH_ON%Yeah he\'ll fight for us. Fightin\' is what he\'s made for. He just needed someone to watch him rip and tear.%SPEECH_OFF%What a lovely creature this is. And the dog is fine, too.}",
 			Image = "",
 			List = [],
 			Characters = [],

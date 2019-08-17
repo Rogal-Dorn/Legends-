@@ -4292,7 +4292,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, all settlements will be hidden at campaign start. For the true explorer experience!"
+					text = "If enabled, all settlements will be hidden at campaign start, giving a small scale start. For the true explorer experience!"
 				}
 			];
 		case "mapconfig.stackcitadels":
@@ -4300,7 +4300,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Gucci Citadels"
+					text = "Decked Out Citadels"
 				},
 				{
 					id = 2,
@@ -4327,15 +4327,40 @@ this.tooltip_events <- {
 					{
 						id = 1,
 						type = "title",
-						text = "Legend perk trees"
+						text = "Dynamic Perk Trees"
 					},
 					{
 						id = 2,
 						type = "description",
-						text = "If enabled, all recruits for hire will have and unique perk tree."
+						text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. These perk trees are half determined by background, and half randomly chosen from perk groups."
 					}
 				];
-
+		case "mapconfig.legendgenderequality":
+			return [
+					{
+						id = 1,
+						type = "title",
+						text = "Battle Sisters"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "If enabled, all commanders and many backgrounds will have a chance of being any gender. If disabled there will still be females, but in positions more reflective of historical discrimination."
+					}
+				];
+		case "mapconfig.legendmagic":
+		return [
+				{
+					id = 1,
+					type = "title",
+					text = "Magic"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled, low magic is allowed in the world, for most starts this just makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
+				}
+			];
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":

@@ -56,6 +56,11 @@ this.legend_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 			{
 				butcher_candidates.push(bro);
 			}
+			if (bro.getBackground().getID() == "background.female_butcher" && !bro.getSkills().hasSkill("trait.legend_cannibalistic"))
+			{
+				butcher_candidates.push(bro);
+			}
+
 		}
 		if (cannibal_candidates.len() < 1 || butcher_candidates.len() < 1)
 		{

@@ -10,7 +10,7 @@ this.gambler_vs_other_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_06.png[/img]{%gambler% and %nongambler% walk up to mottled with bruises. It appears they\'ve been in a bit of a scuffle. Seeing as how neither one is dead, you don\'t really care what it was over, but they tell you anyway.\n\nApparently the gambler took some money in a bit of sly cardsmanship. You ask either man if the company\'s money was involved. They say no. You ask what the hell they want from you then. | A game of cards comes to a table-flipping end when %nongambler% jumps off his stool and launches a tirade at %gambler%. The professional gambler looks around with sheepish incredulity. How could such a man come into so much money over a game of cards, he asks, but when his hands go up to feign confusion a few \'extra\' cards slip out of his sleeves. The ensuing battle is amusing, but you put a stop to it before anyone gets hurt.}",
+			Text = "[img]gfx/ui/events/event_06.png[/img]{%gambler% and %nongambler% walk up to mottled with bruises. It appears they\'ve been in a bit of a scuffle. Seeing as how neither one is dead, you don\'t really care what it was over, but they tell you anyway.\n\nApparently the gambler took some money in a bit of sly cardsmanship. You ask either one if the company\'s money was involved. They say no. You ask what the hell they want from you then. | A game of cards comes to a table-flipping end when %nongambler% jumps off a stool and launches a tirade at %gambler%. The professional gambler looks around with sheepish incredulity. How could such a person come into so much money over a game of cards, the gambler asks, but when raising hands to feign confusion a few \'extra\' cards slip out of the gambler\'s sleeves. The ensuing battle is amusing, but you put a stop to it before anyone gets hurt.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -89,7 +89,7 @@ this.gambler_vs_other_event <- this.inherit("scripts/events/event", {
 			{
 				gambler_candidates.push(bro);
 			}
-			else if (!bro.getSkills().hasSkill("trait.bright"))
+			else if (!bro.getSkills().hasSkill("trait.bright") )
 			{
 				dumb_candidates.push(bro);
 			}

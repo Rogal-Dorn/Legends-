@@ -67,7 +67,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_33.png[/img]{You tell the company to ignore the sounds. That\'s a hard task to oblige as the cries of the wild dogs only grow louder and louder until, just like that, they stop. Your men stand still as though making any noise could bring the hell of whatever horror it is that\'s out there. Nothing comes to pass, but a number of the men have a hard time sleeping through the night.}",
+			Text = "[img]gfx/ui/events/event_33.png[/img]{You tell the company to ignore the sounds. That\'s a hard task to oblige as the cries of the wild dogs only grow louder and louder until, just like that, they stop. Your mercenaries stand still as though making any noise could bring the hell of whatever horror it is that\'s out there. Nothing comes to pass, but a number of the company have a hard time sleeping through the night.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -87,7 +87,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_hunter" || bro.getBackground().getID() == "background.legend_commander_ranger")
+					if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.legend_commander_ranger")
 					{
 						continue;
 					}
@@ -142,7 +142,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_14.png[/img]{It does appear the men will not be assuaged by telling them to grow a pair. %hunter% elects to go seek out the noise, as he\'s sure it\'s nothing more than the wild dogs squabbling over primacy over the pack. You send him on his way, the man venturing into the dark all by his lonesome. Just as soon as he\'s gone the canines cease their crying and you hear a growl that seems as though it came from a much higher ground. The whole camp is dead silent, daring not to even move.\n\n An hour later and the hunter walks into camp, nobody having heard him come in. He\'s camouflaged himself in mud slaked with twigs and leaves. He\'s grafted stems into a hood which he wears like some arboreal abbess. With hushed tones, the sellswords ask what he saw. He shrugs.%SPEECH_ON%Well. I seen about a dozen dead dogs. Some ripped apart. Found a few in the pit of very large footprints and they\'d not found the print but had been stomped there, you know. And I saw something move along in the shadows between the tree tops and it went the other way and I did not follow. I found a deer dead on its feet leaning against a tree. Heart faltered by whatever it saw, I suppose. I harvested everything I could.%SPEECH_OFF%The man turns and slings forward a rack of meat strung to a paneling of wood and leaves.%SPEECH_ON%Anyone hungry?%SPEECH_OFF%} ",
+			Text = "[img]gfx/ui/events/event_14.png[/img]{It does appear the mercenaries will not be assuaged by telling them to grow a pair. %hunter% elects to go seek out the noise, sure it\'s nothing more than the wild dogs squabbling over primacy over the pack. You agree, the archer venturing into the dark all alone. Just as soon as the outline is gone the canines cease their crying and you hear a growl that seems as though it came from a much higher ground. The whole camp is dead silent, daring not to even move.\n\n An hour later and the hunter walks into camp, nobody having heard the archer come in. The hunter is camouflaged in mud slaked with twigs and leaves. %hunter%\'s grafted stems into a hood, worn like some arboreal abbess. With hushed tones, the sellswords ask what it was. With a shrug the reply comes.%SPEECH_ON%Well. I seen about a dozen dead dogs. Some ripped apart. Found a few in the pit of very large footprints and they\'d not found the print but had been stomped there, you know. And I saw something move along in the shadows between the tree tops and it went the other way and I did not follow. I found a deer dead on its feet leaning against a tree. Heart faltered by whatever it saw, I suppose. I harvested everything I could.%SPEECH_OFF%The hunter turns and slings forward a rack of meat strung to a paneling of wood and leaves.%SPEECH_ON%Anyone hungry?%SPEECH_OFF%} ",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -159,6 +159,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Hunter.getImagePath());
+				local item = this.new("scripts/items/supplies/cured_venison_item");
 				local item = this.new("scripts/items/supplies/cured_venison_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -177,12 +178,12 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_hunter")
+					if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_slayer")
 					{
 						continue;
 					}
 
-					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian")
+					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.barbarian")
 					{
 						continue;
 					}
@@ -352,7 +353,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_hunter"  || bro.getBackground().getID() == "background.legend_ranger"  || bro.getBackground().getID() == "background.legend_commander_ranger")
+			if (bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.beast_slayer"  || bro.getBackground().getID() == "background.legend_ranger"  || bro.getBackground().getID() == "background.legend_commander_ranger")
 			{
 				candidates_hunter.push(bro);
 			}

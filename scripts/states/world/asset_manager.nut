@@ -37,6 +37,8 @@ this.asset_manager <- {
 		IsIronman = false,
 		IsPermanentDestruction = true,
 		IsLegendPerkTrees = true,
+		IsLegendGenderEquality = false,
+		IsLegendMagic = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
 		IsConsumingAssets = true,
@@ -242,6 +244,16 @@ this.asset_manager <- {
 		return this.m.IsLegendPerkTrees;
 	}
 
+	function isLegendGenderEquality()
+	{
+		return this.m.IsLegendGenderEquality;
+	}
+
+	function isLegendMagic()
+	{
+		return this.m.IsLegendMagic;
+	}
+
 	function isCamping()
 	{
 		return this.World.Camp.isCamping();
@@ -390,6 +402,8 @@ this.asset_manager <- {
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
 		this.m.IsLegendPerkTrees = _settings.LegendPerkTrees;
+		this.m.IsLegendGenderEquality = _settings.LegendGenderEquality;
+		this.m.IsLegendMagic = _settings.LegendMagic;
 		this.m.Origin = _settings.StartingScenario;
 		this.m.BusinessReputation = 0;
 		this.m.SeedString = _settings.Seed;
@@ -2203,6 +2217,8 @@ this.asset_manager <- {
 		_out.writeBool(this.m.IsIronman);
 		_out.writeBool(!this.m.IsPermanentDestruction);
 		_out.writeBool(this.m.IsLegendPerkTrees);
+		_out.writeBool(this.m.IsLegendGenderEquality);
+		_out.writeBool(this.m.IsLegendMagic);
 		_out.writeString(this.m.Origin.getID());
 		_out.writeString(this.m.SeedString);
 		_out.writeF32(this.m.Money);
@@ -2261,6 +2277,12 @@ this.asset_manager <- {
 		if (_in.getMetaData().getVersion() >= 57)
 		{
 			this.m.IsLegendPerkTrees = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 58)
+		{
+			this.m.IsLegendGenderEquality = _in.readBool();
+			this.m.IsLegendMagic = _in.readBool();
 		}
 
 		if (_in.getMetaData().getVersion() >= 46)

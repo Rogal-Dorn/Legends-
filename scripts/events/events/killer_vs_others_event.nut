@@ -11,13 +11,13 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 30.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_06.png[/img]While you attempt to study some poorly drawn maps, the sound of blades being drawn pierces your ears. You roll up your work and put it into a scroll\'s sleeve before making way to the disturbance.\n\n%killerontherun% is being held down by one brother\'s knee, while %otherguy1% and %otherguy2% look about ready to chop his head off. Seeing your arrival, the men calm down for a moment. They explain that the killer tried to slay one of them. Indeed, the brother has a nick on his neck. A little bit deeper and something other than words would be coming out of his mouth right about now. The men demand %killerontherun% be hanged for this attempted murder.",
+			Text = "[img]gfx/ui/events/event_06.png[/img]While you attempt to study some poorly drawn maps, the sound of blades being drawn pierces your ears. You roll up your work and put it into a scroll\'s sleeve before making way to the disturbance.\n\n%killerontherun% is being held down by one mercenary\'s knee, while %otherguy1% and %otherguy2% look about ready to chop a head off. Seeing your arrival, the mercenaries calm down for a moment. They explain that the killer tried to slay one of them. Indeed, the speaker has a nick on their neck. A little bit deeper and something other than words would be coming out of their mouth right about now. The company demand %killerontherun% be hanged for this attempted murder.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Have him flogged for this.",
+					Text = "Have the knave flogged for this.",
 					function getResult( _event )
 					{
 						return "B";
@@ -25,7 +25,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "Have him hanged for this.",
+					Text = "Have the villain hanged for this.",
 					function getResult( _event )
 					{
 						return "C";
@@ -63,7 +63,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_38.png[/img]You order the man flogged. %killerontherun% spits on your name as the brothers tie him up to a tree. You say do that again and you\'ll add more lashings. They rip his shirt off and take turns with the whip as you stand by the side, counting. On the first lash a straight line of skin is stripped from his back. The man flinches and you hear the ropes that bind him draw taut as his hands clench into fists. By the fifth lashing he is no longer standing. By the tenth he is no longer awake. After five more you call it and order the men to take him down and tend his wounds.",
+			Text = "[img]gfx/ui/events/event_38.png[/img]You order the attacker flogged. %killerontherun% spits on your name while being tied to a tree. You say if that happens again you\'ll add more lashings. They rip the back of perpertrators shirt and take turns with the whip as you stand by the side, counting. On the first lash a straight line of skin is stripped from %killerontherun%\'s back, who flinches and you hear the binding ropes draw taut as tense hands clench into fists. By the fifth lashing %killerontherun% is no longer standing, and no longer awake by the tenth. After five more you call it, and order the mercenaries to untie the bonds and tend the wounds.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -104,7 +104,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_02.png[/img]You order the man hanged. Half the company cheers and %killerontherun% screams a shriek rather suitable for seeing death ordered to his side. They drag the man beneath a tree. Ropes are thrown up over the branches, again and again, looping and drawing taut. One man ties a noose while the others cheer and clap and drink beer. A stool is placed and the condemned man is forced to stand on it. As %killerontherun%\'s head is put into the noose, he says he has a word for all of you, but whatever he has to say is cut off when %otherguy1% kicks the stool out from beneath him.\n\nThis is not a good way to die. It is by an executioner\'s hand or means. Ordinarily a man dropped from a platform breaks his neck, or is even decapitated. This man hangs choking and kicking. You hear some screams in his lungs, but they struggle to get past his throat. A few minutes pass and he is still fighting. %otherguy2% steps over to the dying man, grabbing one of his jerking feet to keep him still, and with his free hand he stabs %killerontherun% in the heart. And that was that.\n\n{Surprisingly, the brothers agree to cut the man down and bury him. | The man is left hanging there when the company\'s march begins anew.}",
+			Text = "[img]gfx/ui/events/event_02.png[/img]You order the attacker hanged. Half the company cheers and %killerontherun% screams a shriek rather suitable for seeing death ordered. They drag %killerontherun% beneath a tree. Ropes are thrown up over the branches, again and again, looping and drawing taut. One mercenary ties a noose while the others cheer and clap and drink beer. A stool is placed and the condemned is forced to stand on it. %killerontherun%\'s head is put into the noose, who claims to have a word for all of you, but is cut off when %otherguy1% kicks the stool out from below.\n\nThis is not a good way to die. It is by an executioner\'s hand or means. Ordinarily someone dropped from a platform breaks their neck, or is even decapitated. This one hangs choking and kicking. You hear some screams in lungs, but they struggle to reach the throat. A few minutes pass and %killerontherun% is still fighting. %otherguy2% steps over to the dying mercenary, grabbing one of the jerking feet to keep it still, and with a free hand stabs %killerontherun% in the heart. And that was that.\n\n{Surprisingly, the brothers agree to cut the attacker down for a burial. | The killer is left hanging there when the company\'s march begins anew.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -145,7 +145,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_64.png[/img]While you try to bring peace between a party of misfits, your attempts for neutrality only seem to anger a few of the men. In particular, the man with the nicked neck is seething, swearing and kicking things over. A few of the other men worry aloud about a lack of discipline.",
+			Text = "[img]gfx/ui/events/event_64.png[/img]While you try to bring peace between a party of misfits, your attempts for neutrality only seem to anger a few of them. In particular, the one with the nicked neck is seething, swearing and kicking things over. A few of the others worry aloud about a lack of discipline.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -194,7 +194,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_64.png[/img]The call for cooler heads to prevail seems to have failed as %killerontherun%\'s body is found dead anyway. {It appears someone stabbed him in the back. | Someone garroted the man with a line of strong linen. | He was nearly chopped in half, the work of a truly angry person. | His head was found resting on his chest, his hands placed in such a manner as to be holding it. | Emphasis on the word \'body\', as his head was nowhere to be found. | Someone had slit his throat in the night. | Bruises on his body and cuts on his hands suggests a fight, but whoever it was managed to gut the man anyway.} You have a good guess as to who did it, but none of the men seem all that upset about the man\'s death and certain proof would elude any kind of investigation. While all of that may be true, you still order the suspected brother to help bury the dead.",
+			Text = "[img]gfx/ui/events/event_64.png[/img]The call for cooler heads to prevail seems to have failed as %killerontherun%\'s body is found dead anyway. {It appears someone stabbed the killer in the back. | Someone garroted the killer with a line of strong linen. | %killerontherun% was nearly chopped in half, the work of a truly angry person. | %killerontherun%\'s head was found resting next to their chest, hands placed in such a manner as to be holding it. | Emphasis on the word \'body\', as the head was nowhere to be found. | Someone had slit %killerontherun% \'s throat in the night. | Bruises on the body and cuts on the hands suggests a fight, but whoever it was managed to gut the killer anyway.} You have a good guess as to who did it, but none of the mercenaries seem all that upset about the killer\'s death and certain proof would elude any kind of investigation. While all of that may be true, you still order the suspected mercenary to help bury the dead.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -212,14 +212,14 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.OtherGuy1.getImagePath());
 				local dead = _event.m.Killer;
-				this.World.Statistics.addFallen(dead,  "Murdered by his fellow brothers");
+				this.World.Statistics.addFallen(dead,  "Murdered by his fellow comrades");
 				this.List.push({
 					id = 13,
 					icon = "ui/icons/kills.png",
 					text = _event.m.Killer.getName() + " has died"
 				});
 				_event.m.Killer.getItems().transferToStash(this.World.Assets.getStash());
-				this.World.Statistics.addFallen(_event.m.Killer, "Murdered by his fellow brothers");				
+				this.World.Statistics.addFallen(_event.m.Killer, "Murdered by his fellow comrades");				
 				this.World.getPlayerRoster().remove(_event.m.Killer);
 				local brothers = this.World.getPlayerRoster().getAll();
 
@@ -251,7 +251,7 @@ this.killer_vs_others_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "Well, %killerontherun% isn\'t dead, but he stands before you broken and beaten. It looks like vengeful justice found him out anyway. He demands that some suspected brothers be punished for going around your orders. You consider this, but then ask the man what will happen if you continue this cycle of violence. It\'s hard to see the man\'s face as it is puffed up in blacks and purples, and his eyes are lost behind puckered lids, but he nods gingerly. You are right, he says. It is best to let this whole thing die down lest it get out of control.",
+			Text = "Well, %killerontherun% isn\'t dead, but stands before you broken and beaten. It looks like vengeful justice was found anyway. %killerontherun% demands that some suspected mercenaries be punished for going around your orders. You consider this, but then ask the killer what will happen if you continue this cycle of violence. It\'s hard to see the %killerontherun% \'s face as it is puffed up in blacks and purples, with eyes are lost behind puckered lids, but you see the gingerly nods. You are right. It is best to let this whole thing die down lest it get out of control.",
 			Image = "",
 			List = [],
 			Characters = [],

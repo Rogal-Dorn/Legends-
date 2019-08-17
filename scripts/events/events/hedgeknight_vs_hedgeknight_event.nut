@@ -12,7 +12,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%nonhedgeknight% sprints into your tent, nearly taking out one of the stakes and bringing the whole thing down. Sweat flies off his face and onto your maps. You look at the man with a stare that demands a good answer for what he\'s doing. He explains that the hedge knights %hedgeknight1% and %hedgeknight2% are getting into it. They\'ve both picked up weapons and look about ready to kill each other. Having the two largest men in the company do battle probably isn\'t best for the health of... well, everyone. You quickly rush to the scene.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%nonhedgeknight% sprints into your tent, nearly taking out one of the stakes and bringing the whole thing down. Sweat flies off the intruder\'s face and onto your maps. You look at the mercenary with a stare that demands a good answer. The mercenary explains that the hedge knights %hedgeknight1% and %hedgeknight2% are getting into it. They\'ve both picked up weapons and look about ready to kill each other. Having the two largest soldiers in the company do battle probably isn\'t best for the health of... well, everyone. You quickly rush to the scene.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -34,13 +34,13 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_35.png[/img]You find %hedgeknight1% with a great sword in hand and %hedgeknight2% is twirling a giant axe around like a child would a stick. Most of the men have cleared out. %nonhedgeknight% explains that the two {have unfinished business from a jousting tournament | met before on the battlefield, on opposite sides, and now look to continue a battle long past | seek to end a dispute between them by the old tradition of mortal combat}. Another brother steps forward, begging that the hedge knights put their differences aside, but %hedgeknight2% throws him out of the way. Golems of might and terror that they are, perhaps it is wise to seek an end to this confrontation?",
+			Text = "[img]gfx/ui/events/event_35.png[/img]You find %hedgeknight1% with a great sword in hand and %hedgeknight2% is twirling a giant axe around like a child would a stick. Most of the company have cleared out. %nonhedgeknight% explains that the two {have unfinished business from a jousting tournament | met before on the battlefield, on opposite sides, and now look to continue a battle long past | seek to end a dispute between them by the old tradition of mortal combat}. Another comrade steps forward, begging that the hedge knights put their differences aside, but %hedgeknight2% throws the mediator out of the way. Golems of might and terror that they are, perhaps it is wise to seek an end to this confrontation?",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "May the strongest man win.",
+					Text = "May the strongest win.",
 					function getResult( _event )
 					{
 						return _event.m.Monk == null ? "C1" : "C2";
@@ -73,7 +73,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C1",
-			Text = "[img]gfx/ui/events/event_35.png[/img]%nonhedgeknight% calls out to you, asking you to stop the fight. The two hedge knights look over, each breath heaving their massive chests. You throw a dismissive hand. The knights nod and charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither man seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nAgain, the company looks to you for guidance as it is becoming readily obvious that these men seek to fight to a finish.",
+			Text = "[img]gfx/ui/events/event_35.png[/img]%nonhedgeknight% calls out to you, asking you to stop the fight. The two hedge knights look over, each breath heaving their massive chests. You throw a dismissive hand. The knights nod and charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nAgain, the company looks to you for guidance as it is becoming readily obvious that these two seek to fight to a finish.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -116,7 +116,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C3",
-			Text = "[img]gfx/ui/events/event_35.png[/img]The two hedge knights stand there, eyes only on their opponent and with no regard to your words, each breath heaving their massive chests. A short moment and they charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither man seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nThe company looks to you for guidance as it is becoming readily obvious that these men seek to fight to a finish.",
+			Text = "[img]gfx/ui/events/event_35.png[/img]The two hedge knights stand there, eyes only on their opponent and with no regard to your words, each breath heaving their massive chests. A short moment and they charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither man seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nThe company looks to you for guidance as it is becoming readily obvious that these two seek to fight to a finish.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -159,7 +159,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C2",
-			Text = "[img]gfx/ui/events/event_35.png[/img]%nonhedgeknight% calls out to you, asking you to stop the fight. The two hedge knights look over, each breath heaving their massive chests. You throw a dismissive hand. The knights nod and charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither man seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nAgain, the company looks to you for guidance as it is becoming readily obvious that these men seek to fight to a finish.",
+			Text = "[img]gfx/ui/events/event_35.png[/img]%nonhedgeknight% calls out to you, asking you to stop the fight. The two hedge knights look over, each breath heaving their massive chests. You throw a dismissive hand. The knights nod and charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither man seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nAgain, the company looks to you for guidance as it is becoming readily obvious that these two seek to fight to a finish.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -210,7 +210,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C4",
-			Text = "[img]gfx/ui/events/event_35.png[/img]The two hedge knights stand there, eyes only on their opponent and with no regard to your words, each breath heaving their massive chests. A short moment and they charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither man seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nThe company looks to you for guidance as it is becoming readily obvious that these men seek to fight to a finish.",
+			Text = "[img]gfx/ui/events/event_35.png[/img]The two hedge knights stand there, eyes only on their opponent and with no regard to your words, each breath heaving their massive chests. A short moment and they charge one another. The clash is loud, metal-shattering, bone-crunching. Growls follow every attempt to kill, so sonorous become the weapon swings. The sword catches the shaft of the giant axe and the two blades snap against one another. The hedge knights exchange cruel stares over the crossing, then quickly disarm and pull daggers, stabbing each other repeatedly as they fall to the ground. Neither man seems the least bit bothered by the wounds. They give up on the pitiful daggers and turn to using their own mitts, punching each other so fiercely you see teeth scattering amongst the bloodsprays.\n\nThe company looks to you for guidance as it is becoming readily obvious that these two seek to fight to a finish.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -261,7 +261,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_04.png[/img]You bring out a satchel heavy with coins. The two hedge knights look over, the sound of gold clinking against itself hard to miss.%SPEECH_ON%A thousand crowns to each of you, yeah?%SPEECH_OFF%The men exchange a glance. They shrug. You nod.%SPEECH_ON%Alright, but this isn\'t happening again, understand?%SPEECH_OFF%The men nod too, walking over and accepting the crowns with shameless ease. Some brothers look a little miffed that these men just got free money for essentially choosing not to fight. The hedge knights begrudgingly find peace amongst themselves, being more concerned with counting money than killing each other. You just hope they got an equal amount lest the \'festivities\' resume.",
+			Text = "[img]gfx/ui/events/event_04.png[/img]You bring out a satchel heavy with coins. The two hedge knights look over, the sound of gold clinking against itself hard to miss.%SPEECH_ON%A thousand crowns to each of you, yeah?%SPEECH_OFF%The two exchange a glance. They shrug. You nod.%SPEECH_ON%Alright, but this isn\'t happening again, understand?%SPEECH_OFF%The men nod too, walking over and accepting the crowns with shameless ease. Some comrades look a little miffed that these mercenaries just got free money for essentially choosing not to fight. The hedge knights begrudgingly find peace amongst themselves, being more concerned with counting money than killing each other. You just hope they got an equal amount lest the \'festivities\' resume.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -298,11 +298,11 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 
 					if (bro.getSkills().hasSkill("trait.greedy"))
 					{
-						bro.worsenMood(2.0, "Angry about you bribing men to stop their fight");
+						bro.worsenMood(2.0, "Angry about you bribing mercenaries to stop their fight");
 					}
 					else if (this.Math.rand(1, 100) <= 50)
 					{
-						bro.worsenMood(1.0, "Concerned about you bribing men to stop their fight");
+						bro.worsenMood(1.0, "Concerned about you bribing mercenaries to stop their fight");
 					}
 
 					this.List.push({
@@ -316,7 +316,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_35.png[/img]Having seen enough, you order the men to intervene. They hesitate, but you quickly remind them of their contractual duties. The men grab great tarps of leather and blankets and some pots and pans and a few carry buckets. Their strategy is sound: buckets are slammed over the heads of the hedge knights, blinding them just long enough to throw everything else over them. As a man would wrestle a bull, the men tangle with the hedge knights, occasionally being thrown into the air, and one brother eats a kick to the face, suffering a black-gapped smile for his troubles. Another is swallowed up in the mass of blankets, being smashed in between the growling hedge knights like an amorphous blob of anger.\n\nEventually, the two men cool down and the battle is over. They begrudgingly make peace, lest you have the rest of your men pick up real weapons to end the scuffle. The rest of the company recovers, picking themselves up as though a great tornado had just torn through the camp. You take account of the injuries and begin distributing aid.",
+			Text = "[img]gfx/ui/events/event_35.png[/img]Having seen enough, you order the company to intervene. They hesitate, but you quickly remind them of their contractual duties. The mercenaries grab great tarps of leather and blankets and some pots and pans and a few carry buckets. Their strategy is sound: buckets are slammed over the heads of the hedge knights, blinding them just long enough to throw everything else over them. As someone would wrestle a bull, the company tangle with the hedge knights, occasionally being thrown into the air, and one mercenary eats a kick to the face, suffering a black-gapped smile for the troubles. Another is swallowed up in the mass of blankets, being smashed in between the growling hedge knights like an amorphous blob of anger.\n\nEventually, the two knights cool down and the battle is over. They begrudgingly make peace, lest you have the rest of your company pick up real weapons to end the scuffle. The rest of the company recovers, picking themselves up as though a great tornado had just torn through the camp. You take account of the injuries and begin distributing aid.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -372,7 +372,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_35.png[/img]You set yourself down on a stump and watch the rest of the fight. The men roll around on the ground, smashing each other in the face with punches that would kill a horse. Eventually, %hedgeknight1% squats on %hedgeknight2%\'s shoulders. Seeing a rock nearby, %hedgeknight1% grabs it and cracks it over his opponent\'s skull. A bit of flesh is sheared off, revealing a slop of red and white beneath. The rock is brought down again. The brain pan splinters, shards of bone rupturing into fragments. %hedgeknight2% goes a bit limp, showing only a modicum of fight left in him. %hedgeknight1% punches his fist into the brainbox and rips out the namesake in one big gush of crimson. You gag at the sight, and a few men turn and vomit.\n\n%hedgeknight1% gets to his feet and throws his trophy into the tall grass. He wipes his forehead and says only one word.%SPEECH_ON%Finished.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_35.png[/img]You set yourself down on a stump and watch the rest of the fight. The two roll around on the ground, smashing each other in the face with punches that would kill a horse. Eventually, %hedgeknight1% squats on %hedgeknight2%\'s shoulders. Seeing a rock nearby, %hedgeknight1% grabs it and cracks it over the opponent\'s skull. A bit of flesh is sheared off, revealing a slop of red and white beneath. The rock is brought down again. The brain pan splinters, shards of bone rupturing into fragments. %hedgeknight2% goes a bit limp, showing only a modicum of fight left in him. %hedgeknight1% punches a fist into the brainbox and rips out the namesake in one big gush of crimson. You gag at the sight, and a few of the company turn and vomit.\n\n%hedgeknight1% gets to his feet and throws the trophy into the tall grass. Wiping the forehead and saying only one word.%SPEECH_ON%Finished.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -492,7 +492,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "H",
-			Text = "[img]gfx/ui/events/event_05.png[/img]The monk nods, stepping forward and calmly walking between the two men. His hands are raised, the fingers trailing to and fro as they mimic the shapes of old religious rites. He speaks of the gods and how they judge men for what they are and what they do. He says that some gods might find this battle favorable, but that most would not. Most of all, though, the monk says that if they truly wish to fight, then there is plenty of room for that after they die. However, if they kill one another, the loser is given great prestige in the afterlife, and the winner will not, for this violence serves no purpose than to give the victor pride. Surprisingly, this oddity in religious rules calms the men down. The monk invites them to talk more and they do so, the three walking off, hands gesticulating, backs arching in bellowing laughter. As for the rest of the company, they just seem happy nobody got killed.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]The monk nods, stepping forward and calmly walking between the two fighters. With hands raised, the fingers trailing to and fro as they mimic the shapes of old religious rites. the holy one speaks of the gods and how they judge folks for what they are and what they do. Some gods might find this battle favorable, but most would not. Most of all, though, the holy one says that if they truly wish to fight, then there is plenty of room for that after they die. However, if they kill one another, the loser is given great prestige in the afterlife, and the winner will not, for this violence serves no purpose than to give the victor pride. Surprisingly, this oddity in religious rules calms the fighters down. The monk invites them to talk more and they do so, the three walking off, hands gesticulating, backs arching in bellowing laughter. As for the rest of the company, they just seem happy nobody got killed.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -561,7 +561,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_other.push(bro);
 
-				if (bro.getBackground().getID() == "background.monk")
+				if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
 				{
 					candidates_monk.push(bro);
 				}
