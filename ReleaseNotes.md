@@ -1582,3 +1582,6 @@ Fixes Man Mangler not effecting Reach Advantage
 Fixes a number of spelling errors in perk descriptions 
 Fixes a crash from piercing bolt 
 Fixes a crash from skin armor 
+Hexe Leader cloak correctly applies bonuses (thanks syku333)
+Rebound correctly kicks in at 90% (thanks syku333)
+Backgrounds no longer show the same values 
