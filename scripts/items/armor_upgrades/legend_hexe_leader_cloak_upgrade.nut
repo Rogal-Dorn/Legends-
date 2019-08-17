@@ -42,9 +42,17 @@ this.legend_hexe_leader_cloak_upgrade <- this.inherit("scripts/items/armor_upgra
 		});
 	}
 
-	function onUpdate( _properties )
+	function onUpdateProperties( _properties )
 	{
 		_properties.BraveryMult *= 1.25;
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
+		{
+			_properties.DamageReceivedRangedMult *= 0.9;
+		}
 	}
 
 });

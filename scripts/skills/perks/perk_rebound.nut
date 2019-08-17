@@ -18,12 +18,12 @@ this.perk_rebound <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local maxFat = actor.getFatigueMax();
-		local percentFat = maxFat / 100;
 		local currentFat = actor.getFatigue();
-		local ratio = currentFat / percentFat;
+		local ratio = currentFat / maxFat;
+
 		if (ratio > 0.9)
 		{
-		_properties.FatigueRecoveryRate += 5;
+			_properties.FatigueRecoveryRate += 5;
 		}
 	}
 
