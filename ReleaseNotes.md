@@ -1560,7 +1560,6 @@ Fixes crash in previous test build when fighting any beast that drops rune stone
 Fixes error when hexen leader was shot or decapitated 
 Fixes cloaks blocking out the item they are on 
 Spider, Redback and Rune poison will block unhold regeneration, added as a loading screen tip 
-<<<<<<< HEAD
 lets enemies use buckler bash. 
 Legendary bandit rabble are now each given a profession and a set of skills 
 Legendary thugs gain nimble again, to make it harder to kill them and scatter the rabble 
@@ -1585,3 +1584,11 @@ Fixes a crash from skin armor
 Hexe Leader cloak correctly applies bonuses (thanks syku333)
 Rebound correctly kicks in at 90% (thanks syku333)
 Backgrounds no longer show the same values 
+Fixes error with staff spins 
+Legendary Bandit Rabble now each have a profession with skills and equipment to match their background. thugs regain nimble
+Bakers often start with a wooden stick 
+Knife skills apply to shiv 
+Enemy AI now knows how to use buckler bash 
+Increases rune drop rate for demon alps to reflect their difficulty 
+Fixes not being able to enter a town on deserter origin. 
+
