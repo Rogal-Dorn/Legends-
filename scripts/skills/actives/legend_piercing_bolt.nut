@@ -28,10 +28,10 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/bolt_shot_miss_01.wav",
 			"sounds/combat/bolt_shot_miss_02.wav",
 			"sounds/combat/bolt_shot_miss_03.wav"
-		];	
+		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
-		this.m.Delay = 100;		
+		this.m.Delay = 100;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -41,7 +41,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
-		this.m.IsDoingForwardMove = false;		
+		this.m.IsDoingForwardMove = false;
 		this.m.IsAOE = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
@@ -50,7 +50,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
-		this.m.MaxLevelDifference = 4;		
+		this.m.MaxLevelDifference = 4;
 		this.m.ChanceDecapitate = 10;
 		this.m.ChanceDisembowel = 50;
 		this.m.ChanceSmash = 0;
@@ -170,7 +170,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.spawnAttackEffect(_TargetTile, this.Const.Tactical.AttackEffectSplit);
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplit);
 		local ret = this.attackEntity(_user, _targetTile.getEntity());
 		this.getItem().setLoaded(false);
 		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
@@ -194,7 +194,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		{
 			return ret
 		}
-		
+
 		if (this.Math.abs(forwardTile.Level - ownTile.Level) > 1)
 		{
 			return ret
