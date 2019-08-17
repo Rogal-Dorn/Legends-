@@ -170,7 +170,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.spawnAttackEffect(_tag.TargetTile, this.Const.Tactical.AttackEffectSplit);
+		this.spawnAttackEffect(_TargetTile, this.Const.Tactical.AttackEffectSplit);
 		local ret = this.attackEntity(_user, _targetTile.getEntity());
 		this.getItem().setLoaded(false);
 		local skillToAdd = this.new("scripts/skills/actives/reload_bolt");
