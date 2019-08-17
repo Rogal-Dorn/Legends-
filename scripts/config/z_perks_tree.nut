@@ -44,7 +44,7 @@ local VanillaTree = [
 		gt.Const.Perks.PerkDefs.SpecAxe,
 		gt.Const.Perks.PerkDefs.SpecCleaver,
 		gt.Const.Perks.PerkDefs.SpecSword,
-		gt.Const.Perks.PerkDefs.SpecGreatSword,
+		gt.Const.Perks.PerkDefs.LegendSpecGreatSword,
 		gt.Const.Perks.PerkDefs.SpecDagger,
 		gt.Const.Perks.PerkDefs.SpecPolearm,
 		gt.Const.Perks.PerkDefs.SpecSpear,
