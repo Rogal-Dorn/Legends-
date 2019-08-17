@@ -1566,7 +1566,6 @@ Legendary bandit rabble are now each given a profession and a set of skills
 Legendary thugs gain nimble again, to make it harder to kill them and scatter the rabble 
 bakers can start with a wooden stick 
 Knife skills effect the Shiv
-=======
 Fixes female background characters issues (headless, etc...)
 Fixes Test 2 save files not loading
 Fixes not being able to enter towns on deserter scenario
@@ -1576,4 +1575,8 @@ Fixes Legend ghoul skin armor.
 Fixes "Free Her!" choice of which event
 Fixes rune drop loot tables
 
->>>>>>> b1d76f9774fa630458e8b11dd8cfe92830317df1
+
+12.7 Test 5
+Adds Greatsword mastery to default perk tree for when dynamic perk trees are disabled
+Fixes Man Mangler not effecting Reach Advantage 
+Fixes a number of spelling errors in perk descriptions 
