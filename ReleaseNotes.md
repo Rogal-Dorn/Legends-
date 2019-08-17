@@ -1595,5 +1595,5 @@ Fixes not being able to enter a town on deserter origin.
 12.7 Test 6
 Fixed daemon alps crash
 Fixes cascade skill icon
-
+Fixes piercing bolt skill
 
