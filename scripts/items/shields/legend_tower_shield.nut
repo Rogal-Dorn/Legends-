@@ -5,7 +5,7 @@ this.legend_tower_shield <- this.inherit("scripts/items/shields/shield", {
 		this.shield.create();
 		this.m.ID = "shield.legend_tower_shield";
 		this.m.Name = "Tower Shield";
-		this.m.Description = "An large square shield that offers excelent protection for yourself and others, very heavy and hard to manoeuvre";
+		this.m.Description = "An large square shield that offers excellent protection for yourself and others, very heavy and hard to manoeuvre";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = this.Math.rand(1, 11);

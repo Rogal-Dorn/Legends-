@@ -899,7 +899,8 @@ gt.Const.AI <- {
 		AdrenalineFresh = 0.4,
 		AdrenalineBeingKitedMult = 2.0,
 		IndomitableSurrounded = 0.1,
-		IndomitableScoreCutoff = 2.5
+		IndomitableScoreCutoff = 2.5,
+		SleepTurnDoneMult = 0.1
 	}
 };
 

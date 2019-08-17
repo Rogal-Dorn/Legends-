@@ -6,8 +6,8 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Cascade";
 		this.m.Description = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.";
 		this.m.KilledString = "Smashed";
-		this.m.Icon = "skills/triplestrike_square.png";
-		this.m.IconDisabled = "skills/triplestrike_square_bw.png";
+		this.m.Icon = "skills/active_125.png";
+		this.m.IconDisabled = "skills/active_125_sw.png";
 		this.m.Overlay = "active_125";
 		this.m.SoundOnUse = [
 			"sounds/combat/flail_01.wav",
@@ -103,4 +103,3 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-
