@@ -38,10 +38,13 @@ this.legend_skin_armor <- this.inherit("scripts/items/armor/named/named_armor", 
 	function onCombatFinished()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor != null && actor.getHitpoints() > 0)
+		if (actor != null)
 		{
+			if (actor.getHitpoints() > 0)
+			{
 			actor.setHitpoints(actor.getHitpointsMax());
 			actor.setDirty(true);
+			}
 		}
 	}
 

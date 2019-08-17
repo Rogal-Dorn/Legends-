@@ -1580,3 +1580,5 @@ Fixes rune drop loot tables
 Adds Greatsword mastery to default perk tree for when dynamic perk trees are disabled
 Fixes Man Mangler not effecting Reach Advantage 
 Fixes a number of spelling errors in perk descriptions 
+Fixes a crash from piercing bolt 
+Fixes a crash from skin armor 
