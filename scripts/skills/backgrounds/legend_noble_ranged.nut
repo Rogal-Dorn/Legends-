@@ -7,7 +7,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Name = "Noble House Slinger";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 150;
-		this.m.DailyCost = 6;
+		this.m.DailyCost = 16;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",
@@ -48,9 +48,25 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
-		this.m.IsUntalented = true;
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+				this.m.Faces = this.Const.Faces.AllFemale;
+				this.m.Hairs = this.Const.Hair.AllFemale;
+				this.m.HairColors = this.Const.HairColors.Young;
+				this.m.Beards = null;
+				this.m.BeardChance = 0;
+				this.m.Body = "bust_naked_body_03";
+				this.m.IsFemaleBackground = true;
+	
+				this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
+				this.m.BadEnding = "A supporter of your cause from the start, %name% was as loyal as she was talented. She stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that she had started her own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of her company, you learned that it had been completely annihilated in a battle between nobles.";
+			}
+		}
+
 		this.m.IsCombatBackground = true;
-		this.m.IsUntalented = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -100,7 +116,15 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onBuildDescription()
 	{
+		if (this.m.IsFemaleBackground == true)
+		{
+		return "%name% is one of the more talented markswoman you\'ve encountered in your travels. {After she saved your life with an arrow into the heart of a would-be assassin, you hired the woman on the spot. | Learning of the woman was easy - you just had to find the winner of a local shooting competition. | She once won an archery contest that had over a hundred participants from all the lands. | It is said that she can split an arrow - mid-flight. | You found the woman on a farm where, obviously, you thought her shooting talents were going to waste. | A poacher, a bowyer, an archer, the woman\'s skills have gotten plenty of use. You suspect she readily accepted your offer for mercenary work just to say \'she\'s done it all\'. | You once saw her shoot the moon, but that may have been some sort of trick. | A clever bowman, she once loosed two arrows simultaneously to kill a charging set of brigands.} While she has a fondness for killing from afar, %name%\'s no slouch in close-quarters combat.";
+		}
+		else
+		{
 		return "%name% is one of the more talented marksman you\'ve encountered in your travels. {After he saved your life with an arrow into the heart of a would-be assassin, you hired the man on the spot. | Learning of the man was easy - you just had to find the winner of a local shooting competition. | He once won an archery contest that had over a hundred participants from all the lands. | It is said that he can split an arrow - mid-flight. | You found the man on a farm where, obviously, you thought his shooting talents were going to waste. | A poacher, a bowyer, an archer, the man\'s skills have gotten plenty of use. You suspect he readily accepted your offer for mercenary work just to say \'he\'s done it all\'. | You once saw him shoot the moon, but that may have been some sort of trick. | A clever bowman, he once loosed two arrows simultaneously to kill a charging set of brigands.} While he has a fondness for killing from afar, %name%\'s no slouch in close-quarters combat.";
+		}
+
 	}
 
 	function onPrepareVariables( _vars )
@@ -124,16 +148,16 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				0
 			],
 			MeleeSkill = [
-				1,
-				0
+				3,
+				6
 			],
 			RangedSkill = [
-				12,
-				7
+				17,
+				11
 			],
 			MeleeDefense = [
-				-3,
-				-1
+				0,
+				4
 			],
 			RangedDefense = [
 				0,
@@ -160,11 +184,6 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onAddEquipment()
 	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 2;
-		talents[this.Const.Attributes.RangedDefense] = 1;
-		talents[this.Const.Attributes.Initiative] = 1;
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/weapons/legend_sling"));

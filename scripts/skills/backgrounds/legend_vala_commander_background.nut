@@ -32,15 +32,93 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
 		this.m.IsFemaleBackground = true;
+
+		
+		if (this.World.Assets.isLegendGenderEquality())
+		{
+			local r = this.Math.rand(0, 1);
+			if (r == 0)
+			{
+				this.m.Faces = this.Const.Faces.AllMale;
+				this.m.Hairs = this.Const.Hair.CommonMale;
+				this.m.HairColors = this.Const.HairColors.All;
+				this.m.Beards = this.Const.Beards.All;
+				this.m.Body = "bust_naked_body_01";
+				this.m.IsFemaleBackground = false;
+			}
+		}
+
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
 		this.m.Modifiers.Enchanting = 1.0;		
 		this.m.Level = 2;
-		this.m.CustomPerkTree = [
+
+			if (!this.World.Assets.isLegendMagic())
+		{
+			this.m.CustomPerkTree = [
 			[
 				this.Const.Perks.PerkDefs.LegendValaWarden,
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.Pathfinder,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.Student,
+				this.Const.Perks.PerkDefs.LegendValaInscribeShield,
+				this.Const.Perks.PerkDefs.LegendRoster1
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
+				this.Const.Perks.PerkDefs.FastAdaption,
+				this.Const.Perks.PerkDefs.Colossus,
+				this.Const.Perks.PerkDefs.FortifiedMind,
+				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.LegendRoster2
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantSenses,
+				this.Const.Perks.PerkDefs.LegendValaPremonition,
+				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.RallyTheTroops,
+				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
+				this.Const.Perks.PerkDefs.LegendRoster3
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantMastery,
+				this.Const.Perks.PerkDefs.LegendValaTranceMastery,
+				this.Const.Perks.PerkDefs.LegendAlert,
+				this.Const.Perks.PerkDefs.LegendValaInscriptionMastery
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantDisharmony,
+				this.Const.Perks.PerkDefs.LegendValaInscribeArmor,
+				this.Const.Perks.PerkDefs.LegendRoster4
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaThreads,
+				this.Const.Perks.PerkDefs.LegendValaSpiritualBond,
+				this.Const.Perks.PerkDefs.LegendMindOverBody,
+				this.Const.Perks.PerkDefs.LegendRoster5
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendValaChantFury,
+				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
+				this.Const.Perks.PerkDefs.PerfectFocus,
+				this.Const.Perks.PerkDefs.LegendRoster6
+			],
+			[],
+			[],
+			[],
+			[]				
+		];
+
+		}
+		else
+		{
+			this.m.CustomPerkTree = [
+			[
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Recover,
@@ -77,11 +155,13 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[
 				this.Const.Perks.PerkDefs.LegendValaThreads,
 				this.Const.Perks.PerkDefs.LegendValaSpiritualBond,
+				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantFury,
 				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
+				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[],
@@ -89,6 +169,9 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[],
 			[]				
 		];
+		}
+
+		
 	}
 
 	function getTooltip()

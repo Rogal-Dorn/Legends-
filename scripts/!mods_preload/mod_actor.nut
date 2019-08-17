@@ -35,6 +35,43 @@
         this.m.BaseProperties.Armor[_bodyPart] = _value;
     }
 
+	o.onMissed = function ( _attacker, _skill, _dontShake = false )
+	{
+		if (!_dontShake && !this.isHiddenToPlayer() && this.m.IsShakingOnHit && (!_skill.isRanged() || _attacker.getTile().getDistanceTo(this.getTile()) == 1) && !this.Tactical.getNavigator().isTravelling(this))
+		{
+			this.Tactical.getShaker().shake(this, _attacker.getTile(), 4);
+		}
+
+		if (this.m.CurrentProperties.IsRiposting && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
+		{
+			local skill = this.m.Skills.getAttackOfOpportunity();
+
+			if (skill != null)
+			{
+				local info = {
+					User = this,
+					Skill = skill,
+					TargetTile = _attacker.getTile()
+				};
+				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay, this.onRiposte.bindenv(this), info);
+			}
+		}
+
+		
+		if (this.m.CurrentProperties.IsParrying && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
+		{
+
+			_attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
+		}
+
+		if (_skill != null && !_skill.isRanged())
+		{
+			this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
+		}
+
+		this.m.Skills.onMissed(_attacker, _skill);
+	}
+
     o.resetPerks <- function ()
     {
         local perks = this.m.PerkPointsSpent;
@@ -165,6 +202,7 @@
 			}
 		}
 	}
+
 
 	o.checkMorale = function( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
 	{

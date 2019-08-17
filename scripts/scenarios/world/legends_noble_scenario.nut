@@ -19,7 +19,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 
 		this.World.Assets.m.BusinessReputation = 100;
-		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 
 	function onSpawnPlayer()

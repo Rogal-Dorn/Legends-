@@ -1510,11 +1510,73 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 *Witchunter loses weideganger, skeleton and schrat 
 
 12.7 Test 2
+Debug start option hidden to make room for the other start options 
+Start option added for "no magic". This means: 
+"No magic" Vala will never show up and runestone drops are 10x rarer. Vala commander does not have Warden.  
+"No magic" Seer only has non-magic attacks, losing magic missile, teleport and chain lightning 
+"No magic" Warlock only has summons, losing siphon, darkflight, insect swarm and miasma 
+Start option added for "gender equality", This means: 
+With this option off, there are still women, but in roles and numbers that reflect historical biases.
+"gender equal" commanders have a 50% chance to be female or male.    
+*Adventurous noble is now Adventurous Noble Swordsman, gender equality gives 50% chance to be Adventurous noble swordswoman
+*Adventruous Lady is now Adventurous Noble Archer, gender equality gives 50% chance to be male
+*Gender Equality setting also grants 50/50 gender chance for Noble commander, Ranger commander, Trader commander, Assassins, Barbarians, Bowyer, Poacher, Deserter, Cultist, Farmhand, Widow(er), Fletcher, milkmaid(man), hedgeknight, killer on the run, herbalist, militia, peddler, refugee and sellsword. 
+Events made gender neutral: Apprentice learns, archery stunt, cat on tree, hedge knight vs raider, hedgeknight vs hedgeknight, jousting tournay, kids and dead merchant, killer vs others, lawmen after criminal, sellsword gets better deal, sellsword vs raider, shooting context, corpses in forest, kid blacksmith, adopt a warhound, barbarian tells a story, wild dog sounds, forest lover, poacher vs thief, civilwar deserter, deserter in forest, 
+Another 10 female names added
+Another 57 Knight names added
+72 Lady titles added 
+Behemoth health from 500 to 800, defenses from -15 to 5 
+Vala gains Mind over Body and Perfect Focus 
+Berserker Rage stacks degrade at 2 per turn instead of 1. Hitting no longer grants 1 stack, being hit now grants 1 stack. Kills still grant 3 stacks
+Perfect Focus restored to 2x fatigue 
+Paints can now be crafted from dyes
 Mountain armor from 48 to 42 stamina, repair buffed to 10% 
 Mountain helm from 32 to 24 stamina repair buffed to 10% 
 Adds new FavoriteEnemyBandit 4 skull contract - Hunt down a bandit army (Contributions by syku333)
+Extends tooltips for blacksmith, cannibal, donkey, herbalist, taxidermist and housemaid to make it clearer what they do. Will take time to expand this out. 
+Fixes melee defense rolling 3 higher than it should on trained backgrounds
+Tier 1 resource contributions give a token amount
+Donkeys can no longer be addicts, drunkards or greedy 
+Steadfast now reduces the fatigue impact of both being hit or being missed, by 90% 
+Parrying dagger now passively applies parry correctly, descriptions for the item and engarde updated to be accurate 
+Spelling error fixed in Chain Thresh 
+Fixes descriptions for mark target 
+Fixes error when skin ghouls swallow 
+Fixes mind over body tooltip 
 
-Beta 13
-*** Armor System:
+12.7 Test 3
+Fixes missing heads for apprentice, noble and assassin from previous build
+Fishwives renamed to fishmongers, can now be corrupted by a cannibal 
+Events made gender neutral: apprentice learns, swordmaster teaches, alp in a hole, dog in swamp, youngling alp, gambler vs other, minstrel outsmarts gambler, player plays dice, spooky forest, cripple pep talk, cripple vs injury, mason vs theif, kings gaurd 1 and 2. 
+Gender equal also effects butcher, fishmongers, ironmongers, gamblers, cripples, squires, king's guard lumberjacks, beast hunters, noble warriors, noble soldiers, noble slingers, thieves, millers and bakers 
+Noble slingers, soldiers and warriors in noble start have each been given buffed stats and no longer have fixed stars. They also cost a lot more in wages
+Noble start has 3x starting crowns instead of 2x, to cover the increased wages
+Gambling event raised from 25 crowns to 100 
+Fixes tooltip for matching set, now shows your current bonus 
+Adds "steady hands" trait for +5 ranged skill 
+Fixes peddlers and trader not providing very much barter 
+Fixes crash in previous test build when fighting any beast that drops rune stones 
 
-* Military based backgrounds have an extra defense trait group (3 instead of 2)
+12.7 Test 4
+Fixes error when hexen leader was shot or decapitated 
+Fixes cloaks blocking out the item they are on 
+Spider, Redback and Rune poison will block unhold regeneration, added as a loading screen tip 
+lets enemies use buckler bash. 
+Legendary bandit rabble are now each given a profession and a set of skills 
+Legendary thugs gain nimble again, to make it harder to kill them and scatter the rabble 
+bakers can start with a wooden stick 
+Knife skills effect the Shiv
+Fixes female background characters issues (headless, etc...)
+Fixes Test 2 save files not loading
+Fixes not being able to enter towns on deserter scenario
+Fixes steady hands trait icon
+Fixes crash on skin ghoul eating bro and dieing.
+Fixes Legend ghoul skin armor.
+Fixes "Free Her!" choice of which event
+Fixes rune drop loot tables
+
+
+
+Beta 13 
+
+Armor system
