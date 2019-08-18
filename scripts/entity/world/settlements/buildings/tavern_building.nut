@@ -549,18 +549,21 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 					drunkChance = drunkChance + 10;
 				}
 			}
-			else if (!b.getSkills().hasSkill("trait.drunkard"))
+			else
 			{
-				if (this.Math.rand(1, 100) <= 10)
+				drunkChance = 0;
+				if (!b.getSkills().hasSkill("trait.drunkard"))
 				{
-					local drunk = this.new("scripts/skills/traits/drunkard_trait");
-					b.getSkills().add(drunk);
-					result.Result.push({
-						Icon = drunk.getIcon(),
-						Text = b.getName() + " is now a drunkard."
-					});
+					if (this.Math.rand(1, 100) <= this.m.RoundsGiven + 5)
+					{
+						local drunk = this.new("scripts/skills/traits/drunkard_trait");
+						b.getSkills().add(drunk);
+						result.Result.push({
+							Icon = drunk.getIcon(),
+							Text = b.getName() + " is now a drunkard."
+						});
+					}
 				}
-				drunkChance = 0
 			}
 
 			if (this.Math.rand(1, 100) <= drunkChance)
