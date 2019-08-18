@@ -735,7 +735,7 @@ this.faction_manager <- {
 			}
 		}
 
-	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(80.0); 
+	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(80.0);
 		this.logInfo("Making a noble house friendly");
 
 	}
@@ -744,7 +744,7 @@ this.faction_manager <- {
 	{
 		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
 		local randomHouseID = nobleHouses[this.Math.rand(0, nobleHouses.len() - 1)].getID();
-	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-80.0); 
+	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-80.0);
 		this.logInfo("Making a noble house unfriendly");
 	}
 
@@ -771,7 +771,7 @@ this.faction_manager <- {
 	{
 		local settlements = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.Settlement);
 		local randomSettlementID = settlements[this.Math.rand(0, settlements.len() - 1)].getID();
-	    this.World.FactionManager.getFaction(randomSettlementID).setPlayerRelation(50.0); 
+	    this.World.FactionManager.getFaction(randomSettlementID).setPlayerRelation(50.0);
 		this.logInfo("Making a settlement friendly");
 		local settlements = this.World.EntityManager.getSettlements();
 		foreach( s in settlements )
@@ -865,7 +865,7 @@ this.faction_manager <- {
 		}
 		else if (GE.NextPhaseTime <= this.Time.getVirtualTimeF())
 		{
-			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 210)
+			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet)
 			{
 				this.logInfo("STARTING GREATER EVIL - WARNING PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Warning;
@@ -915,7 +915,7 @@ this.faction_manager <- {
 					}
 				}
 			}
-			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 210)
+			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning)
 			{
 				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Live;
