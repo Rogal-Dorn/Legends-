@@ -203,7 +203,7 @@ this.data_helper <- {
 			Brothers = entities != null ? entities.len() : 0,
 			BrothersMax = this.World.Assets.getBrothersMax()
 		};
-		
+
 	}
 
 	function convertStashAndEntityToUIData( _entity = null, _activeEntity = null, _withoutStash = false, _filter = 0 )
@@ -275,7 +275,7 @@ this.data_helper <- {
 			this.convertItemsToUIData(_entity.getTile().Items, result.ground);
 			result.ground.push(null);
 		}
-		
+
 		return result;
 	}
 
@@ -390,7 +390,7 @@ this.data_helper <- {
 		{
 			_target.background <- _entity.getBackground().getID();
 		}
-		else 
+		else
 		{
 			_target.background <- "";
 		}
@@ -401,6 +401,7 @@ this.data_helper <- {
 		}
 		_target.inReserves <- _entity.isInReserves()
 		_target.stabled <- _entity.isStabled()
+		_target.riderID <- _entity.getRiderID()
 	}
 
 	function addStatsToUIData( _entity, _target )

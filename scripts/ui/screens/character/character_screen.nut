@@ -382,7 +382,7 @@ this.character_screen <- {
 
 			result.formationIndex <- this.World.Assets.getFormationIndex(),
 			result.formationName <- this.World.Assets.getFormationName(),
-			result.maxBrothers <- this.World.Assets.getBrothersMax()			
+			result.maxBrothers <- this.World.Assets.getBrothersMax()
 		}
 
 		if (this.m.InventoryMode != this.Const.CharacterScreen.InventoryMode.Ground)
@@ -484,7 +484,7 @@ this.character_screen <- {
 				item = obj
 			}
 		}
-		else 
+		else
 		{
 			obj = this.Stash.getItemByInstanceID(itemId);
 			if (obj != null)
@@ -509,12 +509,12 @@ this.character_screen <- {
 			if (item.setToBeRepaired(true, index))
 			{
 				item.setToBeSalvaged(false, 0);
-			} 
+			}
 			else if (item.canBeSalvaged())
 			{
 				item.setToBeSalvaged(true, index);
 			}
-			
+
 		}
 		else if (item.isToBeRepaired() && item.canBeSalvaged())
 		{
@@ -965,7 +965,7 @@ this.character_screen <- {
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToFindEntity);
 		}
-		
+
 		if (!entity.unlockPerk(_data[1]))
 		{
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToUnlockPerk);
@@ -2416,7 +2416,36 @@ this.character_screen <- {
 	{
 		local riderID = _data[0]
 		local horseID = _data[1]
-		this.logInfo("***** rider " + riderID + " horse " + horseID)
+
+		local rider = this.Tactical.getEntityByID(_data[0]);
+		local horse = this.Tactical.getEntityByID(_data[1]);
+
+		if (rider == null && horse == null)
+		{
+			return this.onQueryBrothersList();
+		}
+
+		//assign a bro to a horse
+		if (horse != null && rider != null)
+		{
+			horse.setRiderID(_data[0]);
+			rider.setRiderID(_data[0]);
+			return this.onQueryBrothersList();
+		}
+
+		//Removing bro from horse
+		if (horse != null)
+		{
+			horse.setRiderID("");
+		}
+
+		//Removing horse from bro
+		if (rider != null)
+		{
+			rider.setRiderID("");
+		}
+
+		return this.onQueryBrothersList()
 	}
 
 };

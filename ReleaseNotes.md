@@ -1596,3 +1596,9 @@ Fixes not being able to enter a town on deserter origin.
 Fixed daemon alps crash
 Fixes cascade skill icon
 Fixes piercing bolt skill
+
+
+Beta 13
+
+*Adds a 5% chance to get drunkard trait if drinking at tavern while already drunk. Adds extra percent for each round.
+*Remove party strength restriction from crisis events.

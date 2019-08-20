@@ -6,14 +6,13 @@
 "use strict";
 
 
-var CharacterScreenFormationsModule = function(_parent, _dataSource)
-{
+var CharacterScreenFormationsModule = function (_parent, _dataSource) {
     this.mParent = _parent;
     this.mDataSource = _dataSource;
 
-	// container
+    // container
     this.mContainer = null;
-    
+
     this.mTopListContainer = null;
     this.mTopBroListContainer = null;
     this.mBottomListContainer = null;
@@ -27,29 +26,28 @@ var CharacterScreenFormationsModule = function(_parent, _dataSource)
     this.mFormationsSortInventoryButton = null;
     this.mFormationsClearFormationButton = null;
     this.mFormationNameContainer = null;
-	this._formBtns = [
-		Path.GFX + 'ui/buttons/1.png',
-		Path.GFX + 'ui/buttons/2.png',
-		Path.GFX + 'ui/buttons/3.png',
-		Path.GFX + 'ui/buttons/4.png',
-		Path.GFX + 'ui/buttons/5.png',
-		Path.GFX + 'ui/buttons/6.png'
-		// Path.GFX + 'ui/buttons/7.png',
-		// Path.GFX + 'ui/buttons/8.png',
-	];
+    this._formBtns = [
+        Path.GFX + 'ui/buttons/1.png',
+        Path.GFX + 'ui/buttons/2.png',
+        Path.GFX + 'ui/buttons/3.png',
+        Path.GFX + 'ui/buttons/4.png',
+        Path.GFX + 'ui/buttons/5.png',
+        Path.GFX + 'ui/buttons/6.png'
+        // Path.GFX + 'ui/buttons/7.png',
+        // Path.GFX + 'ui/buttons/8.png',
+    ];
     this.mFormationsButtons = [];
 
     this.registerDatasourceListener();
 };
 
-CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
-{
+CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv) {
     this.mFormationsButtons = [];
     var self = this;
-	// create: containers (init hidden!)
-	this.mContainer = $('<div class="formations-module opacity-none"/>');
+    // create: containers (init hidden!)
+    this.mContainer = $('<div class="formations-module opacity-none"/>');
     _parentDiv.append(this.mContainer);
-    
+
     var row = $('<div class="title-row title-label title-font-big font-bold font-color-title"/>');
     row.html("Stables")
     this.mContainer.append(row);
@@ -76,15 +74,14 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
 
 
     this.mSlots = [];
-    for (var i = 0; i < 9 * 4; i++) 
-    {
+    for (var i = 0; i < 9 * 4; i++) {
         this.mSlots.push(null)
     }
-     // create empty slots
-     this.createStableSlots(this.mTopListContainer, 9 * 0, 9 * 1, false);
-     this.createStableSlots(this.mTopBroListContainer, 9 * 1, 9 * 2, true);
-     this.createStableSlots(this.mBottomListContainer, 9 * 2, 9 * 3, false);
-     this.createStableSlots(this.mBottomBroListContainer, 9 * 3, 9 * 4, true);
+    // create empty slots
+    this.createStableSlots(this.mTopListContainer, 9 * 0, 9 * 1, false);
+    this.createStableSlots(this.mTopBroListContainer, 9 * 1, 9 * 2, true);
+    this.createStableSlots(this.mBottomListContainer, 9 * 2, 9 * 3, false);
+    this.createStableSlots(this.mBottomBroListContainer, 9 * 3, 9 * 4, true);
 
 
     this.mSlotCountPanel = $('<div class="slot-count-panel"/>');
@@ -94,19 +91,17 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
     this.mFormationsPanel = $('<div class="formations-panel"/>');
     this.mSlotCountPanel.append(this.mFormationsPanel);
 
-    this._formBtns.forEach(function (_img, _index)
-    {
+    this._formBtns.forEach(function (_img, _index) {
         var layout = $('<div class="l-button is-formation-' + _index + '"/>');
-		self.mFormationsPanel.append(layout);
-		var index = _index;
-		var fBtn = layout.createImageButton(_img, function ()
-		{
+        self.mFormationsPanel.append(layout);
+        var index = _index;
+        var fBtn = layout.createImageButton(_img, function () {
             self.onFormationSelected(null, _index);
             self.mDataSource.notifyBackendFormationClicked(index);
 
         }, '', 3);
 
-		self.mFormationsButtons.push(fBtn);
+        self.mFormationsButtons.push(fBtn);
     })
 
     var layout = $('<div class="l-button formation-panel-btn is-formation-6"/>');
@@ -114,8 +109,7 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
 
     var layout = $('<div class="l-button is-formation-7"/>');
     this.mFormationsPanel.append(layout);
-    this.mFormationsClearFormationButton = layout.createImageButton(Path.GFX + 'ui/skin/icon_cross.png', function ()
-    {
+    this.mFormationsClearFormationButton = layout.createImageButton(Path.GFX + 'ui/skin/icon_cross.png', function () {
         self.mDataSource.notifyBackendClearFormationButtonClicked();
     }, '', 3);
 
@@ -127,26 +121,22 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
 
     var nameLabel = $('<div class="label title-font-normal font-bold font-color-brother-name"></div>');
     this.mFormationNameContainer.append(nameLabel);
-    this.mFormationNameContainer.click(function ()
-    {
-        if ($(this).hasClass('is-clickable') === false)
-        {
+    this.mFormationNameContainer.click(function () {
+        if ($(this).hasClass('is-clickable') === false) {
             return false;
         }
 
         self.mDataSource.notifyBackendPopupDialogIsVisible(true);
         self.mCurrentPopupDialog = $('.character-screen').createPopupDialog('Change Formation Name', null, null, 'change-formation-name-popup');
 
-        self.mCurrentPopupDialog.addPopupDialogOkButton(function (_dialog)
-        {
+        self.mCurrentPopupDialog.addPopupDialogOkButton(function (_dialog) {
             self.updateFormationName(_dialog);
             self.mCurrentPopupDialog = null;
             _dialog.destroyPopupDialog();
             self.mDataSource.notifyBackendPopupDialogIsVisible(false);
         });
-        
-        self.mCurrentPopupDialog.addPopupDialogCancelButton(function (_dialog)
-        {
+
+        self.mCurrentPopupDialog.addPopupDialogCancelButton(function (_dialog) {
             self.mCurrentPopupDialog = null;
             _dialog.destroyPopupDialog();
             self.mDataSource.notifyBackendPopupDialogIsVisible(false);
@@ -154,9 +144,9 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
 
         self.mCurrentPopupDialog.addPopupDialogContent(self.createChangeFormationNameDialogContent(self.mCurrentPopupDialog));
 
-		// focus!
-		var inputFields = self.mCurrentPopupDialog.findPopupDialogContentContainer().find('input');
-		$(inputFields[0]).focus();
+        // focus!
+        var inputFields = self.mCurrentPopupDialog.findPopupDialogContentContainer().find('input');
+        $(inputFields[0]).focus();
     });
 
     this.mFormationNameContainer.addClass('is-clickable');
@@ -165,8 +155,7 @@ CharacterScreenFormationsModule.prototype.createDIV = function (_parentDiv)
     this.onSetFormationName(null, this.mDataSource.getFormationName());
 };
 
-CharacterScreenFormationsModule.prototype.destroyDIV = function ()
-{
+CharacterScreenFormationsModule.prototype.destroyDIV = function () {
 
     this.mTopListContainer.empty();
     this.mTopListContainer.remove();
@@ -189,15 +178,13 @@ CharacterScreenFormationsModule.prototype.destroyDIV = function ()
     this.mContainer = null;
 };
 
-CharacterScreenFormationsModule.prototype.updateFormationName = function (_dialog)
-{
+CharacterScreenFormationsModule.prototype.updateFormationName = function (_dialog) {
     var contentContainer = _dialog.findPopupDialogContentContainer();
     var inputFields = contentContainer.find('input');
     this.mDataSource.updateFormationName(null, $(inputFields[0]).getInputText());
 };
 
-CharacterScreenFormationsModule.prototype.createChangeFormationNameDialogContent = function (_dialog)
-{
+CharacterScreenFormationsModule.prototype.createChangeFormationNameDialogContent = function (_dialog) {
     var data = this.mDataSource.getFormationName();
     var result = $('<div class="change-formation-name-container"/>');
 
@@ -207,29 +194,25 @@ CharacterScreenFormationsModule.prototype.createChangeFormationNameDialogContent
     var label = $('<div class="label text-font-normal font-color-label font-bottom-shadow">Name</div>');
     row.append(label);
 
-	var self = this;
+    var self = this;
 
     var inputLayout = $('<div class="l-input"/>');
     row.append(inputLayout);
-    var inputField = inputLayout.createInput('', 0, Constants.Game.MAX_BROTHER_NAME_LENGTH, 1, function (_input)
-	{
+    var inputField = inputLayout.createInput('', 0, Constants.Game.MAX_BROTHER_NAME_LENGTH, 1, function (_input) {
         _dialog.findPopupDialogOkButton().enableButton(_input.getInputTextLength() >= Constants.Game.MIN_BROTHER_NAME_LENGTH);
-    }, 'title-font-big font-bold font-color-brother-name', function (_input)
-	{
-		var button = _dialog.findPopupDialogOkButton();
-		if(button.isEnabled())
-		{
-			button.click();
-		}
-	});
+    }, 'title-font-big font-bold font-color-brother-name', function (_input) {
+        var button = _dialog.findPopupDialogOkButton();
+        if (button.isEnabled()) {
+            button.click();
+        }
+    });
 
     inputField.setInputText(data);
 
     return result;
 };
 
-CharacterScreenFormationsModule.prototype.registerDatasourceListener = function()
-{
+CharacterScreenFormationsModule.prototype.registerDatasourceListener = function () {
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.ListLoaded, jQuery.proxy(this.onBrothersListLoaded, this));
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Updated, jQuery.proxy(this.onBrotherUpdated, this));
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Selected, jQuery.proxy(this.onBrotherSelected, this));
@@ -237,36 +220,37 @@ CharacterScreenFormationsModule.prototype.registerDatasourceListener = function(
     this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.FormationName, jQuery.proxy(this.onSetFormationName, this));
 };
 
-CharacterScreenFormationsModule.prototype.bindTooltips = function ()
-{
-    this.mFormationsClearFormationButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ClearFormationButton });
-    this.mFormationsButtons.forEach(function(btn)
-    {
-        btn.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ChangeFormationButton });
+CharacterScreenFormationsModule.prototype.bindTooltips = function () {
+    this.mFormationsClearFormationButton.bindTooltip({
+        contentType: 'ui-element',
+        elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ClearFormationButton
     });
-    if(this.mDataSource.isTacticalMode() !== true)
-    {
-        this.mFormationNameContainer.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ChangeFormationName });
+    this.mFormationsButtons.forEach(function (btn) {
+        btn.bindTooltip({
+            contentType: 'ui-element',
+            elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ChangeFormationButton
+        });
+    });
+    if (this.mDataSource.isTacticalMode() !== true) {
+        this.mFormationNameContainer.bindTooltip({
+            contentType: 'ui-element',
+            elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.ChangeFormationName
+        });
     }
 };
 
-CharacterScreenFormationsModule.prototype.unbindTooltips = function ()
-{
+CharacterScreenFormationsModule.prototype.unbindTooltips = function () {
     this.mFormationsClearFormationButton.unbindTooltip();
-    this.mFormationsButtons.forEach(function(btn)
-    {
+    this.mFormationsButtons.forEach(function (btn) {
         btn.unbindTooltip();
     });
-    if(this.mDataSource.isTacticalMode() !== true)
-    {
+    if (this.mDataSource.isTacticalMode() !== true) {
         this.mFormationNameContainer.unbindTooltip();
     }
 };
 
-CharacterScreenFormationsModule.prototype.onFormationSelected = function (_dataSource, _index)
-{
-    this.mFormationsButtons.forEach(function (_b, _i) 
-    {
+CharacterScreenFormationsModule.prototype.onFormationSelected = function (_dataSource, _index) {
+    this.mFormationsButtons.forEach(function (_b, _i) {
         _b.removeClass('is-active');
         if (_i === _index) {
             _b.addClass('is-active');
@@ -274,69 +258,56 @@ CharacterScreenFormationsModule.prototype.onFormationSelected = function (_dataS
     });
 };
 
-CharacterScreenFormationsModule.prototype.onSetFormationName = function( _dataSource, _name)
-{
-    if (_name == null || _name == undefined)
-    {
+CharacterScreenFormationsModule.prototype.onSetFormationName = function (_dataSource, _name) {
+    if (_name == null || _name == undefined) {
         return;
     }
-	var label = this.mFormationNameContainer.find('.label:first');
-    if (label.length > 0)
-    {
+    var label = this.mFormationNameContainer.find('.label:first');
+    if (label.length > 0) {
         label.html(_name);
     }
 
     /*var image = this.mNameContainer.find('img:first');
     if (image.length > 0)
     {*/
-        if (this.mDataSource.isTacticalMode() !== true)
-        {
-            this.mFormationNameContainer.addClass('is-clickable');
-            //image.removeClass('display-none').addClass('display-block');
-        }
-        else
-        {
-            this.mFormationNameContainer.removeClass('is-clickable');
-            //image.removeClass('display-block').addClass('display-none');
-        }
-   // }
+    if (this.mDataSource.isTacticalMode() !== true) {
+        this.mFormationNameContainer.addClass('is-clickable');
+        //image.removeClass('display-none').addClass('display-block');
+    } else {
+        this.mFormationNameContainer.removeClass('is-clickable');
+        //image.removeClass('display-block').addClass('display-none');
+    }
+    // }
 };
 
-CharacterScreenFormationsModule.prototype.create = function(_parentDiv)
-{
+CharacterScreenFormationsModule.prototype.create = function (_parentDiv) {
     this.createDIV(_parentDiv);
     this.bindTooltips();
 };
 
-CharacterScreenFormationsModule.prototype.destroy = function()
-{
+CharacterScreenFormationsModule.prototype.destroy = function () {
     this.unbindTooltips();
     this.destroyDIV();
 };
 
 
-CharacterScreenFormationsModule.prototype.register = function (_parentDiv)
-{
+CharacterScreenFormationsModule.prototype.register = function (_parentDiv) {
     console.log('CharacterScreenFormationsModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
+    if (this.mContainer !== null) {
         console.error('ERROR: Failed to register Perks Module. Reason: Module is already initialized.');
         return;
     }
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
+    if (_parentDiv !== null && typeof (_parentDiv) == 'object') {
         this.create(_parentDiv);
     }
 };
 
-CharacterScreenFormationsModule.prototype.unregister = function ()
-{
+CharacterScreenFormationsModule.prototype.unregister = function () {
     console.log('CharacterScreenFormationsModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
+    if (this.mContainer === null) {
         console.error('ERROR: Failed to unregister Perks Module. Reason: Module is not initialized.');
         return;
     }
@@ -344,90 +315,75 @@ CharacterScreenFormationsModule.prototype.unregister = function ()
     this.destroy();
 };
 
-CharacterScreenFormationsModule.prototype.isRegistered = function ()
-{
-	if (this.mContainer !== null)
-	{
-		return this.mContainer.parent().length !== 0;
-	}
+CharacterScreenFormationsModule.prototype.isRegistered = function () {
+    if (this.mContainer !== null) {
+        return this.mContainer.parent().length !== 0;
+    }
 
-	return false;
+    return false;
 };
 
 
-CharacterScreenFormationsModule.prototype.show = function ()
-{
+CharacterScreenFormationsModule.prototype.show = function () {
     // NOTE: (js) HACK which prevents relayouting..
-	this.mContainer.removeClass('opacity-none').addClass('opacity-full');
-	//this.mContainer.removeClass('display-none').addClass('display-block');
+    this.mContainer.removeClass('opacity-none').addClass('opacity-full');
+    //this.mContainer.removeClass('display-none').addClass('display-block');
 };
 
-CharacterScreenFormationsModule.prototype.hide = function ()
-{
+CharacterScreenFormationsModule.prototype.hide = function () {
     // NOTE: (js) HACK which prevents relayouting..
-	this.mContainer.removeClass('opacity-full is-top').addClass('opacity-none');
-	//this.mContainer.removeClass('display-block is-top').addClass('display-none');
+    this.mContainer.removeClass('opacity-full is-top').addClass('opacity-none');
+    //this.mContainer.removeClass('display-block is-top').addClass('display-none');
 };
 
-CharacterScreenFormationsModule.prototype.isVisible = function ()
-{
-	return this.mContainer.hasClass('opacity-full');
-	//return this.mContainer.hasClass('display-block');
+CharacterScreenFormationsModule.prototype.isVisible = function () {
+    return this.mContainer.hasClass('opacity-full');
+    //return this.mContainer.hasClass('display-block');
 };
 
-CharacterScreenFormationsModule.prototype.onBrotherUpdated = function (_dataSource, _brother)
-{
-	if (_dataSource.isSelectedBrother(_brother))
-	{
-		this.onBrotherSelected(_dataSource, _brother);
-	}
+CharacterScreenFormationsModule.prototype.onBrotherUpdated = function (_dataSource, _brother) {
+    if (_dataSource.isSelectedBrother(_brother)) {
+        this.onBrotherSelected(_dataSource, _brother);
+    }
 };
 
-CharacterScreenFormationsModule.prototype.onBrotherSelected = function (_dataSource, _brother)
-{
-	if (_brother === null)
-	{
-		return;
-	}
+CharacterScreenFormationsModule.prototype.onBrotherSelected = function (_dataSource, _brother) {
+    if (_brother === null) {
+        return;
+    }
 };
 
-CharacterScreenFormationsModule.prototype.createStableSlots = function (_parentDiv, _start, _stop, _isBro)
-{
+CharacterScreenFormationsModule.prototype.createStableSlots = function (_parentDiv, _start, _stop, _isBro) {
     var self = this;
 
-    var dropHandler = function (ev, dd)
-    {
+    var dropHandler = function (ev, dd) {
         var drag = $(dd.drag);
         var drop = $(dd.drop);
 
-        if (drop === undefined || drop.data('idx') === undefined || drop.data('stable') === 1)
-        {
+        if (drop === undefined || drop.data('idx') === undefined || drop.data('stable') === 1) {
             return false;
         }
-        
+
         var dropSlot = drop.data('idx');
         var horse = self.mSlots[dropSlot - 9];
-        if (horse.data('child') === null)
-        {
+        if (horse.data('child') === null) {
             return false;
         }
 
         drag.removeClass('is-dragged');
         // do the swapping
-        self.mDataSource.notifyBackendAssignRider(drag.data("ID"),   horse.data('child').data('ID'))
+        self.mDataSource.notifyBackendAssignRider(drag.data("ID"), horse.data('child').data('ID'), function (_data) {
+            self.onBrothersListLoaded(null, _data);
+        })
         return true
     };
 
-    for (var i = _start; i < _stop; ++i)
-    {
-        if (!_isBro) 
-        {
+    for (var i = _start; i < _stop; ++i) {
+        if (!_isBro) {
             this.mSlots[i] = $('<div class="ui-control is-brother-slot is-horse-slot"/>');
             this.mSlots[i].drop("end", null);
             this.mSlots[i].data('stable', 1);
-        }
-        else
-        {
+        } else {
             this.mSlots[i] = $('<div class="ui-control is-brother-slot is-rider-slot"/>');
             this.mSlots[i].drop("end", dropHandler);
             this.mSlots[i].data('stable', 0);
@@ -450,10 +406,8 @@ CharacterScreenFormationsModule.prototype.createStableSlots = function (_parentD
       });*/
 }
 
-CharacterScreenFormationsModule.prototype.clearBrothersList = function ()
-{
-    for(var i=0; i != this.mSlots.length; ++i)
-    {
+CharacterScreenFormationsModule.prototype.clearBrothersList = function () {
+    for (var i = 0; i != this.mSlots.length; ++i) {
         this.mSlots[i].empty();
         this.mSlots[i].data('child', null);
     }
@@ -461,8 +415,7 @@ CharacterScreenFormationsModule.prototype.clearBrothersList = function ()
     this.mNumActive = 0;
 };
 
-CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentDiv, _data, _index, _allowReordering)
-{
+CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentDiv, _data, _index, _allowReordering) {
     var self = this;
     var screen = $('.character-screen');
     _parentDiv.removeClass('display-none').addClass('display-block');
@@ -475,14 +428,12 @@ CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentD
     result.data('inReserves', _data['inReserves']);
 
     this.mSlots[_index].data('child', result);
-    
+
     ++this.mNumActive;
 
     // drag handler
-    if (_allowReordering)
-    {
-        result.drag("start", function (ev, dd)
-        {
+    if (_allowReordering) {
+        result.drag("start", function (ev, dd) {
             // dont allow drag if this is an empty slot
             /*var data = $(this).data('item');
             if (data.isEmpty === true)
@@ -496,8 +447,7 @@ CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentD
             proxy.data('idx', _index);
 
             var imageLayer = result.find('.image-layer:first');
-            if (imageLayer.length > 0)
-            {
+            if (imageLayer.length > 0) {
                 imageLayer = imageLayer.clone();
                 proxy.append(imageLayer);
             }
@@ -505,15 +455,21 @@ CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentD
             $(dd.drag).addClass('is-dragged');
 
             return proxy;
-        }, { distance: 3 });
+        }, {
+            distance: 3
+        });
 
-        result.drag(function (ev, dd)
-        {
-            $(dd.proxy).css({ top: dd.offsetY, left: dd.offsetX });
-        }, { relative: false, distance: 3 });
+        result.drag(function (ev, dd) {
+            $(dd.proxy).css({
+                top: dd.offsetY,
+                left: dd.offsetX
+            });
+        }, {
+            relative: false,
+            distance: 3
+        });
 
-        result.drag("end", function (ev, dd)
-        {
+        result.drag("end", function (ev, dd) {
             var drag = $(dd.drag);
             var drop = $(dd.drop);
             var proxy = $(dd.proxy);
@@ -521,23 +477,23 @@ CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentD
             var allowDragEnd = true; // TODO: check what we're dropping onto
 
             // not dropped into anything?
-            if (drop.length === 0 || allowDragEnd === false)
-            {
-                proxy.velocity("finish", true).velocity({ top: dd.originalY, left: dd.originalX },
-			    {
-			        duration: 300,
-			        complete: function ()
-			        {
-			            proxy.remove();
-			            drag.removeClass('is-dragged');
-			        }
-			    });
-            }
-            else
-            {
+            if (drop.length === 0 || allowDragEnd === false) {
+                proxy.velocity("finish", true).velocity({
+                    top: dd.originalY,
+                    left: dd.originalX
+                }, {
+                    duration: 300,
+                    complete: function () {
+                        proxy.remove();
+                        drag.removeClass('is-dragged');
+                    }
+                });
+            } else {
                 proxy.remove();
             }
-        }, { drop: '.is-brother-slot' });
+        }, {
+            drop: '.is-brother-slot'
+        });
     }
 
     // update image & name
@@ -549,8 +505,7 @@ CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentD
     //result.assignListBrotherName(character[CharacterScreenIdentifier.Entity.Character.Name]);
     //result.assignListBrotherDailyMoneyCost(character[CharacterScreenIdentifier.Entity.Character.DailyMoneyCost]);
 
-    if(CharacterScreenIdentifier.Entity.Character.LeveledUp in character && character[CharacterScreenIdentifier.Entity.Character.LeveledUp] === true)
-    {
+    if (CharacterScreenIdentifier.Entity.Character.LeveledUp in character && character[CharacterScreenIdentifier.Entity.Character.LeveledUp] === true) {
         result.assignListBrotherLeveledUp();
     }
 
@@ -559,50 +514,65 @@ CharacterScreenFormationsModule.prototype.addBrotherSlotDIV = function (_parentD
         result.assignListBrotherDaysWounded();
     }*/
 
-    if('inReserves' in character && character['inReserves'] && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
-    {
-    	result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
-    }
-    else if('moodIcon' in character && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash)
-    {
-    	result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
+    if ('inReserves' in character && character['inReserves'] && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash) {
+        result.showListBrotherMoodImage(true, 'ui/buttons/mood_heal.png');
+    } else if ('moodIcon' in character && this.mDataSource.getInventoryMode() == CharacterScreenDatasourceIdentifier.InventoryMode.Stash) {
+        result.showListBrotherMoodImage(this.IsMoodVisible, character['moodIcon']);
     }
 
-    for(var i = 0; i != _data['injuries'].length && i < 3; ++i)
-    {
+    for (var i = 0; i != _data['injuries'].length && i < 3; ++i) {
         result.assignListBrotherStatusEffect(_data['injuries'][i].imagePath, _data[CharacterScreenIdentifier.Entity.Id], _data['injuries'][i].id)
     }
 
-    if(_data['injuries'].length <= 2 && _data['stats'].hitpoints < _data['stats'].hitpointsMax)
-    {
-    	result.assignListBrotherDaysWounded();
+    if (_data['injuries'].length <= 2 && _data['stats'].hitpoints < _data['stats'].hitpointsMax) {
+        result.assignListBrotherDaysWounded();
     }
 
-    result.assignListBrotherClickHandler(function (_brother, _event)
-	{
+    result.assignListBrotherClickHandler(function (_brother, _event) {
         var data = _brother.data('brother');
         self.mDataSource.selectedBrotherById(data.id);
     });
 };
 
-CharacterScreenFormationsModule.prototype.onBrothersListLoaded = function (_dataSource, _brothers)
-{
-	this.clearBrothersList();
+CharacterScreenFormationsModule.prototype.onBrothersListLoaded = function (_dataSource, _brothers) {
+    this.clearBrothersList();
 
-	if (_brothers === null || !jQuery.isArray(_brothers) || _brothers.length === 0)
-	{
-		return;
-	}
+    if (_brothers === null || !jQuery.isArray(_brothers) || _brothers.length === 0) {
+        return;
+    }
 
-	for (var i = 0; i < _brothers.length; ++i)
-	{
+    var stableMap = {};
+    var toAdd = [];
+
+    for (var i = 0; i < _brothers.length; ++i) {
         var brother = _brothers[i];
 
-        if (brother !== null && brother !== undefined && brother[CharacterScreenIdentifier.Entity.Character.Key].stabled)
-		{
-		    this.addBrotherSlotDIV(this.mSlots[this.mNumActive + 9 * Math.floor(this.mNumActive / 9)], brother, this.mNumActive, false);
-		}
-    }
-    
-};
+        if (brother === null || brother === undefined) {
+            continue
+        }
 
+        if (brother[CharacterScreenIdentifier.Entity.Character.Key].stabled) {
+            var slotNum = this.mNumActive + 9 * Math.floor(this.mNumActive / 9);
+            this.addBrotherSlotDIV(this.mSlots[slotNum], brother, this.mNumActive, false);
+
+            if (brother[CharacterScreenIdentifier.Entity.Character.Key].riderID !== '') {
+                stableMap[brother[CharacterScreenIdentifier.Entity.Character.Key].riderID] = slotNum;
+            }
+            continue
+        }
+
+        if (brother[CharacterScreenIdentifier.Entity.Character.Key].riderID !== '') {
+            toAdd.push(i);
+        }
+    }
+
+    for (var i = 0; i < toAdd.length; ++i) {
+        var riderID = _brothers[toAdd[i]][CharacterScreenIdentifier.Entity.Character.Key].riderID
+        var slotNum = stableMap[riderID]
+        if (slotNum === undefined) {
+            continue
+        }
+        this.addBrotherSlotDIV(this.mSlots[slotNum + 9], _brothers[toAdd[i]], this.mNumActive, true);
+    }
+
+};

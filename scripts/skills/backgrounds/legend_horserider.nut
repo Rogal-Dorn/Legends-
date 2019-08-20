@@ -18,9 +18,9 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.asthmatic"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.TidyMale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.All;
+		this.m.Hairs = this.Const.Hair.None;
+		this.m.HairColors = this.Const.HairColors.None;
+		this.m.Beards = null
 		this.m.Body = "bust_naked_body_00";
 		this.m.IsFemaleBackground = false;
 		this.m.IsLowborn = false;
@@ -74,7 +74,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
@@ -98,7 +98,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 			[],
 			[],
 			[],
-			[]	
+			[]
 		];
 	}
 
@@ -164,42 +164,68 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 
 	function onSetAppearance()
 	{
-		local actor = this.getContainer().getActor();
-		local offset = this.createVec(-20, 20);
-		actor.setSpriteOffset("body", offset);
-		actor.setSpriteOffset("armor", offset);
-		actor.setSpriteOffset("head", offset);
-		actor.setSpriteOffset("hair", offset);
-		actor.setSpriteOffset("beard", offset);
-		actor.setSpriteOffset("beard_top", offset);
-		actor.setSpriteOffset("injury", offset);
-		actor.setSpriteOffset("weapon", offset);
-		actor.setSpriteOffset("shield", offset);
-		actor.setSpriteOffset("armor_upgrade_front", offset);
-		actor.setSpriteOffset("armor_upgrade_back", offset);
-		actor.setSpriteOffset("accessory", offset);
-		actor.setSpriteOffset("quiver", offset);
-		actor.setSpriteOffset("helmet", offset);
-		actor.setSpriteOffset("helmet_damage", offset);
-		actor.setSpriteOffset("body_blood", offset);
 
+		local actor = this.getContainer().getActor();
+		local rider = actor.getRider();
+		//actor.copySpritesFrom(rider);
+
+		local Sprites = [
+			"body",
+			"armor",
+			"head",
+			"hair",
+			"beard",
+			"beard_top",
+			"injury",
+			"arms_icon",
+			"shield_icon",
+			"shield",
+			"armor_upgrade_front",
+			"armor_upgrade_back",
+			"accessory",
+			"quiver",
+			"helmet",
+			"helmet_damage",
+			"body_blood"
+		]
+		foreach(s in Sprites)
+		{
+			if (!rider.hasSprite(s))
+			{
+				continue
+			}
+			local brush = rider.getSprite(s).getBrush()
+			if (brush == null)
+			{
+				continue
+			}
+			if (!actor.hasSprite(s))
+			{
+				actor.addSprite(s)
+			}
+			actor.getSprite(s).setBrush(brush.Name)
+		}
+
+		local offset = this.createVec(-20, 0);
+		foreach(s in Sprites)
+		{
+			actor.setSpriteOffset(s, offset);
+		}
+
+		offset = this.createVec(10,0)
 		local variant = this.Math.rand(0, 7);
 		local horse = actor.addSprite("horse_body");
-		horse.setBrush("bust_naked_body_10" + variant);
+		horse.setBrush(actor.getHorse().getSprite("body").getBrush().Name);
 		horse.varySaturation(0.15);
 		horse.varyColor(0.07, 0.07, 0.07);
 		local horse = actor.addSprite("horse_head");
-		horse.setBrush("bust_head_10" + variant);
+		horse.setBrush(actor.getHorse().getSprite("head").getBrush().Name);
 		local horse_injury = actor.addSprite("injury_horse_body");
-		horse_injury.setBrush("bust_naked_body_100_injured");
-		horse_injury.Visible = false;
-//		local horse_armor = actor.addSprite("horse_armor");
-//		horse_armor.setBrush("horse_caparison_brown");
-		local offset = this.createVec(20, -20);
-		actor.setSpriteOffset("horse", offset);
-//		actor.setSpriteOffset("horse_head", offset);
-//		actor.setSpriteOffset("injury_horse_body", offset);
-//		actor.setSpriteOffset("horse_armor", offset);
+
+		local offset = this.createVec(10, 0);
+		actor.setSpriteOffset("horse_body", offset);
+		actor.setSpriteOffset("horse_head", offset);
+		actor.setSpriteOffset("injury_horse_body", offset);
 	}
 
 
@@ -208,7 +234,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
 		this.m.Container.add(this.new("scripts/skills/traits/legend_appetite_donkey"));
-	}	
+	}
 
 
 	function onAddEquipment()
