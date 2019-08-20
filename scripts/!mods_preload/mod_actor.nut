@@ -6,6 +6,7 @@
         o.m.BloodSaturation = 1.5;
         o.m.DeathBloodAmount = 1.5;
         o.m.BloodPoolScale = 1.25;
+		o.m.RiderID <- "";
     }
     local fn = o.onMovementFinish;
     o.onMovementFinish = function (_tile)
@@ -57,7 +58,7 @@
 			}
 		}
 
-		
+
 		if (this.m.CurrentProperties.IsParrying && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
 		{
 
@@ -96,7 +97,7 @@
 	o.changeMorale <- function( _change, _showIconBeforeMoraleIcon = "", _noNewLine = false)
 	{
 		local oldMoraleState = this.m.MoraleState;
-		this.m.MoraleState = _change; 
+		this.m.MoraleState = _change;
 		this.m.FleeingRounds = 0;
 
 		if (oldMoraleState == this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn)
@@ -317,7 +318,7 @@
 	o.onAppearanceChanged = function( _appearance, _setDirty = true )
 	{
 		oacFn(_appearance, _setDirty);
-		
+
 		if (this.hasSprite("armor_layer_chain"))
 		{
 			if (_appearance.ArmorLayerChain.len() != 0)
@@ -359,9 +360,39 @@
 		return armor.removeUpgrade( _slot );
 	}
 
-        //
+	o.setRiderID <- function ( _id)
+	{
+		if (_id == null)
+		{
+			_id = ""
+		}
+		this.m.RiderID = _id;
+	}
+
+	o.getRiderID <- function()
+	{
+		return this.m.RiderID
+	}
+
+	local szFn = o.onSerialize
+	o.onSerialize = function( _out )
+	{
+		szFn(_out)
+		_out.writeString(this.m.RiderID);
+	}
+
+	local dszFn = o.onDeserialize
+	o.onDeserialize = function( _in )
+	{
+		dszFn(_in)
+		if (_in.getMetaData().getVersion() >= 59)
+		{
+			this.m.RiderID = _in.readString();
+		}
+	}
+
     // local onResurrected = o.onResurrected;
-    // o.onResurrected = function ( _info ) 
+    // o.onResurrected = function ( _info )
     // {
     //     onResurrected(_info);
     //     this.World.getPlayerRoster().add(_info);

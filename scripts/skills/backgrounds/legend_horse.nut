@@ -1,5 +1,7 @@
 this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_background", {
-	m = {},
+	m = {
+		Variant = 0
+	},
 	function create()
 	{
 		this.character_background.create();
@@ -17,10 +19,11 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			"trait.bright",
 			"trait.asthmatic"
 		];
+		this.m.Variant = this.Math.rand(0, 7)
 		this.m.Faces = this.Const.Faces.Horse;
 		this.m.Hairs = this.Const.Hair.None;
 		this.m.HairColors = this.Const.HairColors.None;
-		this.m.Body = "bust_naked_body_100";
+		this.m.Body = "bust_naked_body_10"
 		this.m.IsFemaleBackground = false;
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
@@ -73,7 +76,7 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
@@ -97,8 +100,34 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			[],
 			[],
 			[],
-			[]	
+			[]
 		];
+	}
+
+	function setAppearance(_tag = null)
+	{
+		local actor = this.getContainer().getActor();
+
+		if (this.m.Faces != null)
+		{
+			local sprite = actor.getSprite("head");
+			sprite.setBrush(this.m.Faces[this.m.Variant])
+			sprite.Color = this.createColor("#fbffff");
+			sprite.varyColor(0.05, 0.05, 0.05);
+			sprite.varySaturation(0.1);
+			local body = actor.getSprite("body");
+			body.Color = sprite.Color;
+			body.Saturation = sprite.Saturation;
+		}
+
+		if (this.m.Body != null)
+		{
+			this.m.Body = this.m.Body + this.m.Variant;
+			actor.getSprite("body").setBrush(this.m.Body);
+			actor.getSprite("injury_body").setBrush(this.m.Body + "_injured");
+		}
+
+		this.onSetAppearance();
 	}
 
 	function getTooltip()
@@ -160,13 +189,14 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		};
 		return c;
 	}
+
 	function onAdded()
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
 		this.m.Container.add(this.new("scripts/skills/traits/legend_appetite_donkey"));
-	}	
+	}
 
 
 	function onAddEquipment()
@@ -176,7 +206,28 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
-
 	}
 
+	function updateVariant()
+	{
+		this.m.Body = this.m.Body + this.m.Variant;
+	}
+
+	function onSerialize( _out )
+	{
+		this.character_background.onSerialize(_out);
+		_out.writeU8(this.m.Variant);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.character_background.onDeserialize(_in)
+
+		if (_in.getMetaData().getVersion() >= 59)
+		{
+			this.m.Variant = _in.readU8()
+			this.updateVariant()
+		}
+
+	}
 });

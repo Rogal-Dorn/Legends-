@@ -8,7 +8,7 @@ this.formations_container <- {
 	},
 	function setActor( _a )
 	{
-		this.m.Actor = this.WeakTableRef(_a);
+		;
 	}
 
 	function getActor()
@@ -27,12 +27,12 @@ this.formations_container <- {
         }
 	}
 
-    function setFormation(_index) 
+    function setFormation(_index)
     {
         this.m.CurrentIndex = _index;
     }
 
-    function getCurrentIndex() 
+    function getCurrentIndex()
     {
         return this.m.CurrentIndex;
     }
@@ -42,12 +42,12 @@ this.formations_container <- {
         return this.m.Positions[this.m.CurrentIndex];
     }
 
-    function getItems() 
+    function getItems()
     {
         return this.m.Items[this.m.CurrentIndex];
     }
 
-    function getBags() 
+    function getBags()
     {
         return this.m.Bags[this.m.CurrentIndex];
     }
@@ -81,7 +81,7 @@ this.formations_container <- {
             if (item.isEquipped())
             {
                 this.m.Items[this.m.CurrentIndex].push(item.getInstanceID());
-            } 
+            }
             else
             {
                this.m.Bags[this.m.CurrentIndex].push(item.getInstanceID());
@@ -98,16 +98,16 @@ this.formations_container <- {
 		    _out.writeU8(this.m.Positions[i]);
             local items = this.m.Items[i];
             _out.writeU8(items.len());
-            foreach( item in items) 
+            foreach( item in items)
             {
                 _out.writeString(item);
             }
             local bags = this.m.Bags[i];
             _out.writeU8(bags.len());
-            foreach( item in bags) 
+            foreach( item in bags)
             {
                 _out.writeString(item);
-            }            
+            }
         }
 	}
 

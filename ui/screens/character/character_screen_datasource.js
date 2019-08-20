@@ -3,7 +3,7 @@
  *	@Company:		Overhype Studios
  *
  *	@Copyright:		(c) Overhype Studios | 2013 - 2017
- * 
+ *
  *  @Author:		Overhype Studios
  *  @Date:			24.01.2017 / Reworked: 26.11.2017
  *  @Description:	Character Screen Datasource JS
@@ -192,7 +192,7 @@ CharacterScreenDatasource.prototype.setInventoryMode = function(_mode)
 	{
 		console.error('ERROR: Failed to set inventory mode. Reason: Invalid mode.');
 	}
-	
+
 	switch(_mode.toLowerCase())
 	{
 		case CharacterScreenDatasourceIdentifier.InventoryMode.Stash:
@@ -283,7 +283,7 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
 
     if ('stashSpaceUsed' in _data)
         this.mStashSpaceUsed = _data.stashSpaceUsed;
-    
+
     if ('stashSpaceMax' in _data)
         this.mStashSpaceMax = _data.stashSpaceMax;
 
@@ -345,7 +345,7 @@ CharacterScreenDatasource.prototype.loadBrothersList = function(_data, _withoutN
 	{
 		this.setInventoryMode(CharacterScreenDatasourceIdentifier.InventoryMode.Stash);
 	}
-	
+
 	this.mSelectedBrotherIndex = null;
 	this.mBrothersList = data;
 
@@ -555,7 +555,7 @@ CharacterScreenDatasource.prototype.switchToNextBrother = function(_withoutNotif
     }
 
     if(this.mSelectedBrotherIndex == currentIndex)
-    {  
+    {
         for (var i = 0; i < this.mSelectedBrotherIndex; ++i)
         {
             if (this.mBrothersList[i] !== null)
@@ -848,7 +848,7 @@ CharacterScreenDatasource.prototype.swapInventoryItem = function (_sourceItemIdx
                 }
             }
         }
-    });    
+    });
 };
 
 CharacterScreenDatasource.prototype.destroyInventoryItem = function(_brotherId, _itemId)
@@ -1517,7 +1517,7 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 		return;
 	}
 
-    
+
     if (this.mStashList.length !== _data.length)
     {
         this.mStashList = _data;
@@ -1541,7 +1541,7 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 	{
 		var sourceItem = this.mStashList[i];
         var targetItem = _data[i];
-    
+
 		// item added to stash slot
 		if (sourceItem === null && targetItem !== null)
 		{
@@ -1700,7 +1700,7 @@ CharacterScreenDatasource.prototype.getMaxBrothers = function ()
 	return null;
 };*/
 
-CharacterScreenDatasource.prototype.notifyBackendSortButtonClicked = function () 
+CharacterScreenDatasource.prototype.notifyBackendSortButtonClicked = function ()
 {
    	SQ.call(this.mSQHandle, 'onSortButtonClicked');
 }
@@ -1744,7 +1744,7 @@ CharacterScreenDatasource.prototype.notifyBackendUpdateFormationName = function 
 };
 
 CharacterScreenDatasource.prototype.notifyBackendCommitStatIncreaseValues = function (_brotherId, _statsIncreaseValues, _callback)
-{   
+{
     // NOTE: (js) Convert Object to array..as we cannot deliver objects with a function call to the backend... thanks Awesomium...
     var increaseValues = [];
     increaseValues.push(_statsIncreaseValues[CharacterScreenIdentifier.Entity.Character.LevelUp.HitpointsIncrease]);
@@ -1927,7 +1927,7 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (
     });
 };
 
-CharacterScreenDatasource.prototype.notifyBackendAssignRider = function (_rider, _horse)
+CharacterScreenDatasource.prototype.notifyBackendAssignRider = function (_rider, _horse, _callback)
 {
-    SQ.call(this.mSQHandle, 'onAssignRider', [ _rider, _horse ]);
+    SQ.call(this.mSQHandle, 'onAssignRider', [ _rider, _horse ], _callback);
 };
