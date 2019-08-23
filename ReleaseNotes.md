@@ -1597,3 +1597,30 @@ Fixed daemon alps crash
 Fixes cascade skill icon
 Fixes piercing bolt skill
 
+12.7.1 Test 1 
+
+Merges in 1.3.0.25 
+* AI slightly prefers to cast miasma
+* Charachters can now be called Vikingur
+* Alps give 300 xp instead of 350 
+* Weaponsmiths can now have named pikes 
+* the namelist is applied to each spawned unit rather than a clone of them, not sure of the impact of this. 
+* spelling fixed on alps contract 
+* Champion Goblin ambushers gain overwhelm 
+* Goatherd locations add shepherds to the towns recruit pool 
+* wool spinners can add a shepherd to the towns recruit pool 
+* Player characters can't take part in the alp nightmare event 
+* Greater evil triggers at 200 party strength instead of 210 
+* roaming alp parties can spawn in 20% greater numbers 
+* items crafted statistics are reset to 0 on new campaigns with the B&E DLC
+* Permenant destruction tooltip no longer reads "recommended" 
+* Permanent destruction checkbox is no longer checked by default 
+New legendary contract added for barbarians (thanks skyu)
+*Bandit army spawns tweaked
+*Berserk rage stacks rebalanced
+*Nudist nerfed (correctly this time) 
+*improves odds of finding vala
+Legendary contract timeout increased from one week to one month 
+Fixes crash when decapitating or shooting hexen coven leaders 
+Web skill gains a tooltip 
+Fixes ironmonger description 

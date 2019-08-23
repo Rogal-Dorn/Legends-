@@ -372,7 +372,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 
 		var extraLateControl = $('<div class="control permanent-destruction-control"/>');
 		row.append(extraLateControl);
-		this.mEvilPermanentDestructionCheckbox = $('<input type="checkbox" id="cb-extra-late" checked/>');
+		this.mEvilPermanentDestructionCheckbox = $('<input type="checkbox" id="cb-extra-late"/>');
 		extraLateControl.append(this.mEvilPermanentDestructionCheckbox);
 		this.mEvilPermanentDestructionLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-extra-late">Permanent Destruction</label>');
 		extraLateControl.append(this.mEvilPermanentDestructionLabel);
