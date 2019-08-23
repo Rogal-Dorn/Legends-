@@ -1621,3 +1621,6 @@ New legendary contract added for barbarians (thanks skyu)
 *Nudist nerfed (correctly this time) 
 *improves odds of finding vala
 Legendary contract timeout increased from one week to one month 
+Fixes crash when decapitating or shooting hexen coven leaders 
+Web skill gains a tooltip 
+Fixes ironmonger description 
