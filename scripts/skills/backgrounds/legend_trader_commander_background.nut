@@ -36,20 +36,24 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
-		local chance = 10;
+		
+		local r = this.Math.rand(0, 3);
 		if (this.World.Assets.isLegendGenderEquality())
 		{
-		chance = 50;
+			r = this.Math.rand(0, 1);
 		}
-		if (this.Math.rand(1, 100) <= chance)
-			{
+		
+		if (r == 0)
+		{
 			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Beards = null;
 			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
-			}
+		}
+
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
