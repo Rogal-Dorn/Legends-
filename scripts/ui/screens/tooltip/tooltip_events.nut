@@ -1990,7 +1990,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Cities, towns and castles can be permanently destroyed during a late game crisis, and having the world go down in flames is one of the many ways you can lose your campaign. Recommended."
+					text = "Cities, towns and castles can be permanently destroyed during a late game crisis, and having the world go down in flames is one of the many ways you can lose your campaign."
 				}
 			];
 

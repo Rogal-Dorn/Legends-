@@ -3562,6 +3562,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		if (this.Const.DLC.Unhold && !this.World.Tags.get("IsUnholdCampaign"))
 		{
+			this.World.Statistics.getFlags().set("ItemsCrafted", 0);
 			this.World.Tags.set("IsUnholdCampaign", true);
 			this.Time.scheduleEvent(this.TimeUnit.Real, 6000, function ( _tag )
 			{
