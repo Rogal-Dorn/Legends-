@@ -11,7 +11,7 @@ this.barbarian_king_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onUpdate( _faction )
 	{
-		if (!this.Const.DLC.Wildmen)
+		if (!this.Const.DLC.Wildmen || this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians) == null)
 		{
 			return;
 		}

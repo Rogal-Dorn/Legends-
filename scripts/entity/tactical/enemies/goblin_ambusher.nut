@@ -99,6 +99,7 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 			"weapons/named/named_goblin_heavy_bow"
 		];
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		return true;
 	}
 

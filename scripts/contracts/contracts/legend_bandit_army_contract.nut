@@ -24,7 +24,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.legend_bandit_army_contract";
 		this.m.Name = "Brigands Army (Legendary)";
-		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 30.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 		
 	}
