@@ -248,9 +248,9 @@ gt.Const.World.Common <- {
 						unit.Strength = this.Math.round(unit.Strength * 1.35);
 						unit.Variant = this.Math.rand(1, 255);
 
-						if ("NameList" in unit.Type)
+						if ("NameList" in t.Type)
 						{
-							unit.Name = this.generateName(unit.Type.NameList) + (unit.Type.TitleList != null ? " " + unit.Type.TitleList[this.Math.rand(0, unit.Type.TitleList.len() - 1)] : "");
+							unit.Name = this.generateName(t.Type.NameList) + (t.Type.TitleList != null ? " " + t.Type.TitleList[this.Math.rand(0, t.Type.TitleList.len() - 1)] : "");
 						}
 					}
 				}

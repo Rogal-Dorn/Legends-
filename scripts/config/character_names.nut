@@ -313,6 +313,7 @@ gt.Const.Strings.BarbarianNames <- [
 	"Hafgufa",
 	"Vaettir",
 	"Frugar",
+	"Vikingur",
 	"Brokkr",
 	"Hurik",
 	"Skarbrand"

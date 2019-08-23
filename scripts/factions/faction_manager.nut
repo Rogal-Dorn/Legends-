@@ -865,7 +865,7 @@ this.faction_manager <- {
 		}
 		else if (GE.NextPhaseTime <= this.Time.getVirtualTimeF())
 		{
-			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 210)
+			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 200)
 			{
 				this.logInfo("STARTING GREATER EVIL - WARNING PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Warning;
@@ -915,7 +915,7 @@ this.faction_manager <- {
 					}
 				}
 			}
-			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 210)
+			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 200)
 			{
 				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Live;
