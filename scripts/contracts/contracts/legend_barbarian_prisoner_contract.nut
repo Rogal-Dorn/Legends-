@@ -176,7 +176,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 				this.Contract.m.BarbCamp.setLootScaleBasedOnResources(200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				this.Contract.m.BarbCamp.updateStrength();
 				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).spawnEntity(this.Contract.m.BarbCamp.getTile(), "Barbarian Retalietion", false, this.Const.World.Spawn.Barbarians, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Barbarians).spawnEntity(this.Contract.m.BarbCamp.getTile(), "Barbarian Retaliation", false, this.Const.World.Spawn.Barbarians, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				party.getSprite("banner").setBrush(this.Contract.m.BarbCamp.getBanner());
 				party.setAttackableByAI(false);
 				this.Contract.m.BarbRetal = this.WeakTableRef(party);
@@ -203,7 +203,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 			{
 				this.Contract.m.BulletpointsObjectives = [
 					"Escort prisoner to %objective% about %days% to the %direction%",
-					"Provisions for the way are provided to your men"
+					"Provisions for the journey are provided to your mercenaries"
 				];
 
 				if (this.Contract.m.Destination != null && !this.Contract.m.Destination.isNull())
@@ -366,7 +366,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_100.png[/img] {%employer%\'s crosses his arms and purses his lips.%SPEECH_ON%Ordinarily I wouldn\'t ask some sellswords to guard a caravan, but my usual crew is a little out of it - sickness, drunkenness, licentiousness... I think you get it. What\'s important is that I have important cargo going to %objective% about %days% to the %direction% and I need someone watching it... someone specialized in that sort of \'cargo\'. What I’ve heard is your funny company has \'individuals\' that are extra skilled in handling such savage beasts. This mountain of muscles visiting my dungeon is most wanted bastard in  %objective% . Rumor is this beast killed their whole patrol with bare hands only.  Anyway are you interested or not?%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_100.png[/img] {%employer%\'s crosses his arms and purses his lips.%SPEECH_ON%Ordinarily I wouldn\'t ask some sellswords to guard a caravan, but my usual crew is a little out of it - sickness, drunkenness, licentiousness... I think you understand. What\'s important is that I have important cargo going to %objective% about %days% to the %direction% and I need someone watching it... someone specialized in that sort of \'cargo\'. What I’ve heard is your funny company has \'individuals\' that are extra skilled in handling such savage beasts. The mountain of muscles visiting my dungeon is the most wanted bastard in %objective%. Rumor is this beast killed a whole patrol with bare hands only. Let us not dwell on those grisly details, are you interested or not?%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -398,7 +398,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Success1",
 			Title = "At %objective%",
-			Text = "[img]gfx/ui/events/event_65.png[/img] {You\'ve made it, having delivered the prisoner cart just as you have promised %employer% you would. The caravan leader after claiming reward for criminal you delivered hands over most of it. Sight of monstrous savage beast finally  in chains  causes noticeable joy and relief to local people of %objective%. You wonder whether to stay around for a while to enjoy the show scheduled for tomorrow but most common folk across streets already started celebrating. Either way job is done, reward is paid and you can move out at any time.}",
+			Text = "[img]gfx/ui/events/event_65.png[/img] {You\'ve made it, having delivered the prison cart just as you promised %employer% you would. The caravan leader claims the reward for the criminal you delivered, and quickly hands over most of it. The sight of a monstrous savage beast finally in chains causes noticeable joy and relief to the local populace of %objective%. You wonder whether to stay around for a while to enjoy the show scheduled for tomorrow, but the common folk across streets have already started celebrating. Either way the job is done, the reward is paid and you can move out at any time.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -435,13 +435,13 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "TheBattle",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_145.png[/img] {Battle was more bloody then usual pushover skirmishes your men are involved in.  %randombrother%  looks over wounded companions.  %randombrother2% checks out prisoner wagon cart to ensure it survived recent encounter in condition that allows to resume the journey.  %randombrother2% approaches you after a while. %SPEECH_ON% Damn… these barbarians were serious business. This big brute we have in custody must be someone important… Just maybe … I don’t know boss…  but maybe lets see what prisoner has to say ? This might be their king or some kind of famed warrior! Who cares about   %employer% opinion on that matter ? We got paid already and I don’t think we gonna get single additional coin in %objective%. %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_145.png[/img] {This battle was more bloody than the usual easy skirmishes your men are involved in. %randombrother% looks over wounded companions. %randombrother2% checks out the prison cart to ensure the recent enounter left it in a decent condition to resume the journey.  %randombrother2% approaches you after a while. %SPEECH_ON% Damn… these barbarians were serious business. This big brute we have in custody must be someone important… Just maybe … I don’t know boss…  but maybe lets see what prisoner has to say ? This might be their king or some kind of famed warrior! Who cares about %employer%\'s opinion on the matter? We got paid already and I don’t think we're going to get one coin more in %objective%. %SPEECH_OFF% }",
 			Image = "",
 			Characters = [],
 			List = [],
 			Options = [
 				{
-					Text = "No. Execution is only solution to this savages crimes!",
+					Text = "No. Execution is only solution to the crimes of this savage!",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(5);
@@ -450,7 +450,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Good idea. Let\'s talk with prisoner",
+					Text = "Good idea. Let\'s talk with the prisoner",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-3);
@@ -463,7 +463,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "ThePrisoner",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_139.png[/img] {All your men left in shape good enough to fight gathers around wagon. %randombrother%  holding weapon tight ready to strike if need be. As you closing by presence of half naked northman getting more and more menacing.  What is left of %employer% \'s men are upset about this but after recent battle  there is not enough of them to enforce anything anymore. Finally prisoner speaks.  %SPEECH_ON% HAHA!! That was impressive brawl you did there! I didn’t expect you manage to kill them all. Maybe a few then I was ready to finish job with the rest of them over your dead bodies and continue my revenge later. You look surprised ? HA ! You think these rookies were send to rescue me ? Those were my enemies and there is more of them left to behead. Killing these warriors was prove your not just bunch of weakling like all these noble baby boys. I have a score to settle with chieftain of Reaver\'s Hold. Hell… after that I even might join your band !!  Let’s finish these %employer% \'s  farmhands in fancy armor and go to fight real men! You can fight rest of warriors but chieftain is my KILL! What say you? %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_139.png[/img] {Those of the company who are still strong enough to fight gather around the wagon. %randombrother% holds a weapon tight, ready to strike if need be. As you approach, the presence of the half naked northerner grows more and more menacing.  What is left of %employer% \'s men are upset about this but after the recent battle they aren\'t looking for another fight. Finally the prisoner speaks.  %SPEECH_ON% HAHA!! That was an impressive brawl there! I didn’t expect you\'d manage to kill them all. Maybe a few, then I was ready to finish off the rest over your dead bodies and continue my revenge later. You look surprised ? HA! You think these rookies were sent to rescue me? Those were my enemies and there is more of them left to behead. Killing these warriors was proof you\'re not just a bunch of milk drinking weaklings like all these noble baby boys. I have a score to settle with the chieftain of Reaver\'s Hold. Hell… after that I even might join your band!  Let’s finish these %employer% \'s farmhands in fancy armor and go to fight real warriors! You can fight rest of clan, but the chieftain is my kill! What say you? %SPEECH_OFF% }",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -494,7 +494,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Failure1",
 			Title = "Retreat...",
-			Text = "[img]gfx/ui/events/event_60.png[/img] {Prisoner wagon cart is opened. No sight of prisoner anywhere. You failed.}",	
+			Text = "[img]gfx/ui/events/event_60.png[/img] {The prison cart is opened. there is no sight of the prisoner anywhere. You failed.}",	
 			Image = "",
 			Characters = [],
 			List = [],
@@ -516,7 +516,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Success2",
 			Title = "After the battle",
-			Text = "[img]gfx/ui/events/event_145.png[/img] {Battle was hard but you prevailed. Your men finishes all those who have not started their journey to valhalla yet. While plundering  begins the person who convinced you to betray %employer% emerges victorious from chieftain hut. Caring over bloody head with fancy helm still on top of it. To fancy for ordinary barbarians. Mighty warrior throws this head under your feet and helm at last slips off it. Apparently this head was ripped off with bare hands.%SPEECH_ON%I am done here. Counting on you can find better challenge for me then this.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_145.png[/img] {The battle was hard fought, but you prevailed. Your mercenaries finish all those who have not reached the afterlife yet. While plundering begins the comrade who convinced you to betray %employer% emerges victorious from the chieftain\'s hut. Carying over a bloody head with a fancy helm still on top of it. Too fancy for ordinary barbarians. The warrior throws the gruesome head to your feet, the helm slips off and rolls aside leaving the ragged bloody stump facing up at you. By the state of the wound, this head was ripped off with bare hands. %SPEECH_ON%I am done here. I hope I can count on you to find better challenges for me than this.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [],
@@ -603,7 +603,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 							"legend_berserker_background"
 						]);
 						this.Contract.m.Dude.setTitle("the Beast");
-						this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from execution. You decided that his killing machine is worthy acquisition ignoring fact it is also most wanted criminal in the north.";
+						this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from execution. You decided that this killing machine is a worthy acquisition, ignoring the fact it is also the most wanted criminal in the north.";
 						this.Contract.m.Dude.getBackground().buildDescription(true);						
 					}
 				}
@@ -613,7 +613,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 						"barbarian_background"
 					]);
 					this.Contract.m.Dude.setTitle("the Barbarian");
-					this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from death sentence. Recruiting this savage barbarian has put in bad terms with nobles in the north.";
+					this.Contract.m.Dude.getBackground().m.RawDescription = "%name% was \'saved\' by you from a death sentence. Recruiting this savage barbarian has put you in bad terms with the nobles of the north.";
 					this.Contract.m.Dude.getBackground().buildDescription(true);					
 				}
 
@@ -646,7 +646,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		party.getSprite("banner").Visible = false;
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
-		party.setDescription("A prisoner wagon cart from " + this.m.Home.getName() + " that is transporting dangerous barbarian.");
+		party.setDescription("A prison cart from " + this.m.Home.getName() + " that is transporting a dangerous barbarian.");
 		party.setMovementSpeed(this.Const.World.MovementSettings.Speed * 0.6);
 		party.setLeaveFootprints(false);
 		party.getLoot().Money = this.Math.rand(0, 400);
