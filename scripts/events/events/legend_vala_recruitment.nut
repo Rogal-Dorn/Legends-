@@ -51,21 +51,27 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		{
 			return;
 		}
+		
+		if (!currentTile.HasRoad)
+		{
+			return;
+		}		
 
 		local towns = this.World.EntityManager.getSettlements();
-		local nearTown = false;
+		local nearTown = true;
 		local town;
 		local playerTile = this.World.State.getPlayer().getTile();
 		foreach (t in towns)
 		{
-			if (t.getTile().getDistanceTo(playerTile) >= 400 && t.isAlliedWithPlayer())
+			if (t.getTile().getDistanceTo(playerTile) >= 5 && t.isAlliedWithPlayer())
 			{
-				nearTown = true;
+				nearTown = false;
 				town = t;
 				break;
 			}
 		}
-		if (!nearTown)
+		
+		if (nearTown)
 		{
 			return;
 		}
@@ -74,6 +80,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		{
 			return;
 		}
+		
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
 		local brotherlevels = 0;
@@ -90,6 +97,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}
+		
 		if (totalbrothers < 1 || brotherlevels < 30)
 		{
 			return;
