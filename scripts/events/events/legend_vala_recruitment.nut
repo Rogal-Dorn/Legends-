@@ -52,11 +52,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 		
-		if (!currentTile.HasRoad)
-		{
-			return;
-		}		
-
 		local towns = this.World.EntityManager.getSettlements();
 		local nearTown = true;
 		local town;
@@ -72,6 +67,11 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		}
 		
 		if (nearTown)
+		{
+			return;
+		}
+		
+		if (!playerTile.HasRoad)
 		{
 			return;
 		}
@@ -106,7 +106,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 		this.m.Town = town;
 		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
-		//this.m.Score = 0;
 	}
 
 	function onPrepare()
