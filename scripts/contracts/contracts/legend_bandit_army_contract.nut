@@ -9,7 +9,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		Briber = null,
 		Reward = 0,
 		OriginalReward = 0,
-		MinStrength = 200,
+		MinStrength = 600,
 		BribeMoney = 1000,
 		Perk = "perk.legend_favoured_enemy_bandit",
 		ValidTypes = this.Const.LegendMod.FavoriteBandit
