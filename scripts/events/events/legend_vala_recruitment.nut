@@ -6,7 +6,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.legend_vala_recruitment";
-		this.m.Title = "Somewhere around %townname%...";
+		this.m.Title = "Along the way...";
 		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
@@ -53,20 +53,26 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		}
 		
 		local towns = this.World.EntityManager.getSettlements();
-		local nearTown = true;
+		local nearTown = false;
 		local town;
 		local playerTile = this.World.State.getPlayer().getTile();
+		
 		foreach (t in towns)
 		{
-			if (t.getTile().getDistanceTo(playerTile) >= 5 && t.isAlliedWithPlayer())
+			if (t.getTile().getDistanceTo(playerTile) <= 5 && t.isAlliedWithPlayer())
 			{
-				nearTown = false;
+				nearTown = true;
 				town = t;
 				break;
 			}
 		}
 		
-		if (nearTown)
+		if (!nearTown)
+		{
+			return;
+		}
+
+		if (playerTile.SquareCoords.Y < this.World.getMapSize().Y * 0.7)
 		{
 			return;
 		}
@@ -114,10 +120,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 	function onPrepareVariables( _vars )
 	{
-		_vars.push([
-			"townname",
-			this.m.Town.m.Name
-		]);
 	}
 
 	function onClear()
