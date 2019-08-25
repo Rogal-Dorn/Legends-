@@ -1,9 +1,9 @@
-this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_commander_trader";
+		this.m.ID = "background.legend_trader";
 		this.m.Name = "Trader";
 		this.m.Icon = "ui/backgrounds/background_19.png";
 		this.m.BackgroundDescription = "Traders are not used to hard physical labor or warfare, but they do excel at haggling for good prices.";
@@ -54,7 +54,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 			this.m.IsFemaleBackground = true;
 		}
 
-		this.m.Level = 2;
+		this.m.Level = 1;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[4];
@@ -77,8 +77,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.SteelBrow,
-				this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.LegendRoster2
+				this.Const.Perks.PerkDefs.LegendComposure
 
 			],
 			[
@@ -87,8 +86,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Sprint,
-				this.Const.Perks.PerkDefs.LegendDangerPay,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.LegendDangerPay
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecCrossbow,
@@ -99,8 +97,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
-				this.Const.Perks.PerkDefs.LegendBarterConvincing,
-				this.Const.Perks.PerkDefs.LegendRoster4
+				this.Const.Perks.PerkDefs.LegendBarterConvincing
 				
 			],
 			[
@@ -108,23 +105,20 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.ReachAdvantage,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.Underdog,
-				this.Const.Perks.PerkDefs.LegendRoster5
+				this.Const.Perks.PerkDefs.Underdog
 			],
 			[
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.BattleForged,
-				this.Const.Perks.PerkDefs.Rebound,
-				this.Const.Perks.PerkDefs.LegendRoster6
+				this.Const.Perks.PerkDefs.Rebound
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Indomitable,
 				this.Const.Perks.PerkDefs.LegendSkillfulStacking,
-				this.Const.Perks.PerkDefs.LegendBarterTrustworthy,
-				this.Const.Perks.PerkDefs.LegendRoster7
+				this.Const.Perks.PerkDefs.LegendBarterTrustworthy
 			],
 			[],
 			[],
@@ -166,8 +160,8 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				0
 			],
 			Stamina = [
-				30,
-				30
+				20,
+				20
 			],
 			MeleeSkill = [
 				-10,
@@ -186,8 +180,8 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				7
 			],
 			Initiative = [
-				30,
-				30
+				20,
+				20
 			]
 		};
 		return c;
@@ -199,10 +193,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		local actor = this.getContainer().getActor();
 		actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
-		
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));		
 	}
 
 	function onAddEquipment()
@@ -211,12 +202,12 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
 		items.equip(this.new("scripts/items/armor/linen_tunic"));
 		items.equip(this.new("scripts/items/helmets/feathered_hat"));
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/trade/cloth_rolls_item"));
-		stash.add(this.new("scripts/items/misc/snake_oil_item"));
-		stash.add(this.new("scripts/items/supplies/dried_fruits_item"));
+		// local stash = this.World.Assets.getStash()
+		// stash.removeByID("supplies.ground_grains");
+		// stash.removeByID("supplies.ground_grains");
+		// stash.add(this.new("scripts/items/trade/cloth_rolls_item"));
+		// stash.add(this.new("scripts/items/misc/snake_oil_item"));
+		// stash.add(this.new("scripts/items/supplies/dried_fruits_item"));
 		// stash.add(this.new("scripts/items/tents/tent_craft"));
 		// stash.add(this.new("scripts/items/tents/tent_enchant"));		
 		// stash.add(this.new("scripts/items/tents/tent_fletcher"));		
