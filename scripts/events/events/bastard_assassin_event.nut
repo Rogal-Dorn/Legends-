@@ -387,6 +387,7 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 
 		local candidates = [];
 		local candidates_other = [];
+		local cantidates_assassins = [];
 
 		foreach( bro in brothers )
 		{
@@ -394,20 +395,24 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 			{
 				candidates.push(bro);
 			}
+			else if (bro.getBackground().getID() == "background.assassin || bro.getBackground().getID() == "background.legend_assassin_commander")
+			{
+				cantidates_assassins.push(bro);
+			}
 			else if (!bro.getSkills().hasSkill("trait.player"))
 			{
 				candidates_other.push(bro);
 			}
 		}
 
-		if (candidates.len() == 0 || candidates_other.len() == 0)
+		if (candidates.len() == 0 || candidates_other.len() == 0 || cantidates_assassins.len() >= 1)
 		{
 			return;
 		}
 
 		this.m.Bastard = candidates[this.Math.rand(0, candidates.len() - 1)];
 		this.m.Other = candidates_other[this.Math.rand(0, candidates_other.len() - 1)];
-		this.m.Score = candidates.len() * 2;
+		this.m.Score = candidates.len() * 5;
 	}
 
 	function onPrepare()
