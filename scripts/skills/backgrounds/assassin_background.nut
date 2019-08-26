@@ -64,7 +64,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 
-		local r = this.Math.rand(0, 3);
+		local r = this.Math.rand(0, 9);
 		
 		if (this.World.Assets.isLegendGenderEquality())
 		{
