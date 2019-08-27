@@ -1125,6 +1125,58 @@ this.contract <- {
 		local total_weight = 0;
 		local potential = [];
 
+this.logInfo("freykin contract test");
+//testing new bandit spawns
+	if (_party.getFaction() == 5)
+	{
+		this.logInfo("bandit contract spawn worked");
+		local party = 
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops =
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 1
+			}
+		}
+		local numBandits = math.ceil(_resources / 5);
+	
+	foreach( t in p.Troops )
+		{
+			local mb;
+
+			if (this.getDifficultyMult() >= 1.15)
+			{
+				mb = 5;
+			}
+			else if (this.getDifficultyMult() >= 0.85)
+			{
+				mb = 0;
+			}
+			else
+			{
+				mb = -99;
+			}
+
+			for( local i = 0; i != t.Num; i = ++i )
+			{
+				this.Const.World.Common.addTroop(_entity, t, false, mb);
+			}
+		}
+
+		if (_entity.isLocation())
+		{
+			_entity.resetDefenderSpawnDay();
+		}
+
+		_entity.updateStrength();
+		this.logInfo("bandit contract test end");
+		return;
+	}
 		foreach( party in _partyList )
 		{
 			if (party.Cost < _resources * 0.7)
