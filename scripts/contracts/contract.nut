@@ -1127,7 +1127,7 @@ this.contract <- {
 
 this.logInfo("freykin contract test");
 //testing new bandit spawns
-	if (_party.getFaction() == 5)
+	if (_partyList.getFaction() == 5)
 	{
 		this.logInfo("bandit contract spawn worked");
 		local party = 
@@ -1145,7 +1145,7 @@ this.logInfo("freykin contract test");
 		}
 		local numBandits = math.ceil(_resources / 5);
 	
-	foreach( t in p.Troops )
+	foreach( t in party.Troops )
 		{
 			local mb;
 
