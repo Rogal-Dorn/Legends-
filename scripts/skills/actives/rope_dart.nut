@@ -13,7 +13,7 @@ this.rope_dart <- this.inherit("scripts/skills/skill", {
 		this.m.IconDisabled = "skills/active_27_sw.png";
 		this.m.Overlay = "active_27";
 		this.m.SoundOnUse = [
-			"sounds/combat/puncture01.wav",
+			"sounds/combat/puncture_01.wav",
 			"sounds/combat/puncture_02.wav",
 			"sounds/combat/puncture_03.wav"
 		];
@@ -166,4 +166,4 @@ this.rope_dart <- this.inherit("scripts/skills/skill", {
 			_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
 			_properties.HitChanceAdditionalWithEachTile += -5 + this.m.AdditionalHitChance;
 		}
-	});
+	}});
