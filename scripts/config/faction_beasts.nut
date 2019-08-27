@@ -181,7 +181,7 @@ gt.Const.Tactical.Actor.UnholdBog <- {
 	]
 };
 gt.Const.Tactical.Actor.Alp <- {
-	XP = 350,
+	XP = 300,
 	ActionPoints = 9,
 	Hitpoints = 90,
 	Bravery = 100,
