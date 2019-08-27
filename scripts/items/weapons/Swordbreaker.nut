@@ -44,8 +44,8 @@ this.sword_breaker <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		local skill;
-		local skillToAdd = this.new("scripts/skills/actives/overhead_strike");
-		//skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
+		skill = this.new("scripts/skills/actives/overhead_strike");
+		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		
 		skill = this.new("scripts/skills/actives/sword_breaker");
