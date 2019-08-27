@@ -7,6 +7,37 @@ if (!("World" in gt.Const))
 
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
+this.logInfo("freykin test");
+//testing new bandit spawns
+	if (_party.getFaction() == 5)
+	{
+	this.logInfo("bandit spawn worked");
+		local party = 
+	{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops =
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 1
+			}
+	}
+	local numBandits = math.ceil(_resources / 5);
+
+party.Troops.Num = numBandits;
+	_party.setMovementSpeed(party.MovementSpeedMult * this.Const.World.MovementSettings.Speed);
+	_party.setVisibilityMult(party.VisibilityMult);
+	_party.setVisionRadius(this.Const.World.Settings.Vision * party.VisionMult);
+	_party.getSprite("body").setBrush(party.Body);
+	
+		_party.updateStrength();
+		this.logInfo("made it to end of bandit spawn test");
+		return party;
+	}
+	
 	if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
 	{
 		_resources = _partyList[_partyList.len() - 1].Cost;

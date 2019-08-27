@@ -82,7 +82,18 @@ this.weapon <- this.inherit("scripts/items/item", {
 		local bonus = skill.getModifier();
 		return this.Math.round( this.m.ShieldDamage + this.m.ShieldDamage * bonus);
 	}
-
+	
+	function getRegularDamage()
+	{
+		return this.m.RegularDamage;
+	}
+	
+		function getRegularMaxDamage()
+	{
+		return this.m.RegularMaxDamage;
+	}
+	
+	
 	function isDoubleGrippable()
 	{
 		return this.m.IsDoubleGrippable;

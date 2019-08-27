@@ -575,6 +575,52 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 			resources = resources * 0.75;
 		}
 
+this.logInfo("freykin defender test");
+//testing new bandit spawns
+	if (_party.getFaction() == 5)
+	{
+	this.logInfo("bandit defender spawn worked");
+		local party = 
+		{
+		Cost = 0,
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_bandit_01",
+		Troops =
+			{
+				Type = this.Const.World.Spawn.Troops.BanditRabble,
+				Num = 1
+			}
+		}
+		local numBandits = math.ceil(_resources / 5);
+		party.Troops.Num = numBandits;
+		
+		if (party != null)
+		{
+			this.m.Troops = [];
+
+			if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
+			{
+				this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
+			}
+			else
+			{
+				this.m.DefenderSpawnDay = this.World.getTime().Days;
+			}
+
+			foreach( t in party.Troops )
+			{
+				for( local i = 0; i != t.Num; i = ++i )
+				{
+					this.Const.World.Common.addTroop(this, t, false);
+				}
+			}
+
+			this.updateStrength();
+			this.logInfo("made it to end of bandit defender test");
+		}
+	}
 		local best;
 		local bestCost = -9000;
 
