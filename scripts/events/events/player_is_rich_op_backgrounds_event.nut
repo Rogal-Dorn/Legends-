@@ -41,6 +41,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 						Text = "There\'s no need to argue, we can work it out.",
 						function getResult( _event )
 						{
+							this.m.Compensation = this.Math.round(0.04 * UniquebrosNumber * cash);
 							return "D";
 						}
 					});
@@ -54,7 +55,8 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 
 					if (bro.getMoodState() >= this.Const.MoodState.Neutral)
 					{
-						bro.worsenMood(2.0, "Rivalry!");
+						bro.getMoodState() = this.Const.MoodState.Neutral;
+						bro.worsenMood(1.0, "Rivalry!");
 						
 						this.List.push({
 							id = 10,
@@ -297,11 +299,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 		local UniquebrosNumber = this.Math.floor(candidate_opbackground.len());
 		local cash = this.World.Assets.getMoney();
 		this.m.Compensation = this.Math.round(0.05 * cash + (0.05 * UniquebrosNumber * cash));
-		if (this.m.TraderCmr != null && !this.m.TraderCmr.isNull())
-		{
-			this.m.Compensation = this.Math.round(0.04 * UniquebrosNumber * cash);
-		}
-
+		
 		local r = this.Math.rand(0, candidate_opbackground.len() - 1);
 		this.m.OPBro1 = candidate_opbackground[r];
 		candidate_opbackground.remove(r);
