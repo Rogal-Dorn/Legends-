@@ -7,31 +7,89 @@ if (!("World" in gt.Const))
 
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
-this.logInfo("freykin test");
-//testing new bandit spawns
-	if (_party.getFaction() == 5)
+	this.logInfo("freykin test");
+	
+	//testing new bandit spawns
+	
+	if (_partyList.IsBandit == true)
 	{
-	this.logInfo("bandit spawn worked");
-		local party = 
-	{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_bandit_01",
-		Troops =
-			{
-				Type = this.Const.World.Spawn.Troops.BanditRabble,
-				Num = 1
-			}
-	}
-	local numBandits = math.ceil(_resources / 5);
+		this.logInfo("bandit spawn worked");
+		
+		local party =
+		{
+			Troops = []
+		}
+		
+		party.MovementSpeedMult = _partyList.MovementSpeedMult;
+		party.VisibilityMult = _partyList.VisibilityMult;
+		party.VisionMult = _partyList.VisionMult;
+		party.Body = _partyList.Body;
+		this.logInfo("freykin assign party test");
+		this.logInfo(party.Body);
+		
+		local troops = _partylist.Troops;
+		
+		local melee_weight = troops.Melee.Weight;
+		local cavalry_weight = troops.Cavalry.Weight;
+		local ranged_weight troops.Ranged.Weight;
+		local leader_weight = troops.Leader.Weight;
 
-party.Troops.Num = numBandits;
-	_party.setMovementSpeed(party.MovementSpeedMult * this.Const.World.MovementSettings.Speed);
-	_party.setVisibilityMult(party.VisibilityMult);
-	_party.setVisionRadius(this.Const.World.Settings.Vision * party.VisionMult);
-	_party.getSprite("body").setBrush(party.Body);
+		total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
+
+		if(total_weight != 1)
+			this.logInfo("Weight is not 100%");
+		
+		this.logInfo("resources test" + _resources);
+		
+		while(_resources > 0)
+		{
+			local random = this.Math.rand(1, 100);
+			
+			local weight = 0;
+			
+			foreach(type in troops)
+			{
+				weight += type.Weight * 100;
+				
+				if (random <= weight)
+				{
+					local t = this.Math.rand(1, type.len() - 1);
+					local troop = type[t];
+					
+					if(this.doesTroopAlreadyExist(troop, party.Troops)
+					{
+						local index = this.getTroopIndex(troop, party.Troops);
+						++party.Troops[index].Num;
+						_resources = _resources - troop.Cost;
+						break;
+					}
+					troop.Num = 1;
+					party.Troops.push(troop);
+					_resources = _resources - troop.Cost;
+				}
+			}
+		}
+		_party.setMovementSpeed(party.MovementSpeedMult * this.Const.World.MovementSettings.Speed);
+		_party.setVisibilityMult(party.VisibilityMult);
+		_party.setVisionRadius(this.Const.World.Settings.Vision * party.VisionMult);
+		_party.getSprite("body").setBrush(party.Body);
+		
+		local troopMbMap = {};
+		foreach( t in party.Troops )
+		{
+			local key = "Enemy" + t.Type.ID; 
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
+			}
+		
+			local mb = troopMbMap[key];
+
+			for( local i = 0; i != t.Num; i = ++i )
+			{
+				this.addTroop(_party, t, false, mb);
+			}
+		}
 	
 		_party.updateStrength();
 		this.logInfo("made it to end of bandit spawn test");
@@ -244,4 +302,25 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 			_into.push(unit);
 		}
 	}
+}
+
+function getTroopIndex(_troop, _troops)
+{
+	for(i = 0; i < _troops.len(); ++i)
+	{
+		if(_troop == _troops[i])
+			return i;
+		else
+			return null;
+	}
+}
+
+function doesTroopAlreadyExist(_troop, _troops)
+{
+	foreach(t in _troops)
+	{
+		if(_troop.Type == t.Type)
+		return true;
+	}
+	return false;
 }

@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.BanditRoamers <- 
 	{
+		IsBandit = true,
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
@@ -74,6 +75,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 
 gt.Const.World.Spawn.BanditScouts <- 
 	{
+		IsBandit = true,
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
@@ -133,6 +135,7 @@ gt.Const.World.Spawn.BanditScouts <-
 
 gt.Const.World.Spawn.BanditRaiders <- 
 	{
+		IsBandit = true,
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
@@ -200,6 +203,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 
 gt.Const.World.Spawn.BanditDefenders <- 
 	{
+		IsBandit = true,
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
@@ -267,6 +271,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 
 gt.Const.World.Spawn.BanditBoss <- 
 	{
+		IsBandit = true,
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
@@ -330,6 +335,7 @@ gt.Const.World.Spawn.BanditBoss <-
 
 gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <- 
 	{
+		IsBandit = true,
 		Cost = 0,
 		MovementSpeedMult = 1.0,
 		VisibilityMult = 1.0,
