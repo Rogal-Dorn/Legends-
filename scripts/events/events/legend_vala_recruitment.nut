@@ -59,7 +59,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		
 		foreach (t in towns)
 		{
-			if (t.getTile().getDistanceTo(playerTile) <= 5 && t.isAlliedWithPlayer())
+			if (t.getTile().getDistanceTo(playerTile) <= 7 && !t.isIsolatedFromRoads())
 			{
 				nearTown = true;
 				town = t;
