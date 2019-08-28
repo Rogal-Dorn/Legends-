@@ -265,8 +265,13 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 
         foreach( bro in brothers )
         {
-            switch (bro.getBackground().getID())
+		    if (bro.getSkills().hasSkill("trait.player"))
             {
+				continue;
+			}			
+            switch (bro.getBackground().getID())
+            {			
+				
 				case "background.legend_trader_commander":
 					thetrader.push(bro);
 					break;
@@ -281,10 +286,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
                     candidate_opbackground.push(bro);			
                     break;
                 default:
-                    if (!bro.getSkills().hasSkill("trait.player"))
-                    {
-                        candidate_rest.push(bro);
-                    }
+					candidate_rest.push(bro);
             }
         }
 		if (candidate_opbackground.len() <= 2)
