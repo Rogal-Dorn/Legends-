@@ -577,7 +577,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 this.logInfo("freykin defender test");
 //testing new bandit spawns
-	if (_party.getFaction() == 5)
+	if (this.getFaction() == 5)
 	{
 	this.logInfo("bandit defender spawn worked");
 		local party = 
