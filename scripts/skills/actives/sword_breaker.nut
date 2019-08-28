@@ -43,9 +43,9 @@ this.sword_breaker <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local damage = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getRegularDamage();
+		local damage = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getDamageMin();
 		
-		local maxDamage = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getRegularMaxDamage();
+		local maxDamage = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getDamageMax();
 
 		if (this.m.ApplySwordMastery && this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 		{
@@ -135,8 +135,8 @@ this.sword_breaker <- this.inherit("scripts/skills/skill", {
 		if (weapon != null)
 		{
 			this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplitShield);
-			local damage = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getRegularDamage();
-			local maxDamage = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getRegularMaxDamage();
+			local damage = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getDamageMin();
+			local maxDamage = _user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getDamageMax();
 
 			if (this.m.ApplySwordMastery && _user.getCurrentProperties().IsSpecializedInSwords)
 			{
@@ -150,7 +150,12 @@ this.sword_breaker <- this.inherit("scripts/skills/skill", {
 	
 			local conditionBefore = weapon.getCondition();
 			local damage_dealt = this.Math.rand(damage, maxDamage);
-			weapon.setCondition(damage_dealt);
+			
+			local conditionAfter = conditionBefore - damageDealt;
+			
+			if(conditionAfter < 0)
+				conditionAfter = 0;
+			weapon.setCondition(conditionAfter);
 
 			if (weapon.getCondition() == 0)
 			{
