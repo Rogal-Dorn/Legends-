@@ -369,8 +369,9 @@ gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 				{
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
+				}
 			],
-			LeaserWeight = 0,
+			LeaderWeight = 0,
 			Leader =
 			[
 				{

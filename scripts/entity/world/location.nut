@@ -641,7 +641,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 						local t = this.Math.rand(1, type.len() - 1);
 						local troop = type[t];
 						
-						if(this.doesTroopAlreadyExist(troop, party.Troops)
+						if(this.doesTroopAlreadyExist(troop, party.Troops))
 						{
 							local index = this.getTroopIndex(troop, party.Troops);
 							++party.Troops[index].Num;
