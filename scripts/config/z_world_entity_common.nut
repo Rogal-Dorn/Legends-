@@ -102,12 +102,12 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	local troopMbMap = {};
 	foreach( t in p.Troops )
 	{
-		local key = "Enemy" + t.Type.ID; 
+		local key = "Enemy" + t.Type.ID;
 		if (!(key in troopMbMap))
 		{
 			troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
 		}
-		
+
 		local mb = troopMbMap[key];
 
 		for( local i = 0; i != t.Num; i = ++i )
@@ -178,7 +178,7 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 	local troopMbMap = {};
 	foreach( t in p.Troops )
 	{
-		local key = "Enemy" + t.Type.ID; 
+		local key = "Enemy" + t.Type.ID;
 		if (!(key in troopMbMap))
 		{
 			troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
@@ -203,9 +203,9 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 					unit.Strength = this.Math.round(unit.Strength * 1.35);
 					unit.Variant = this.Math.rand(1, 255);
 
-					if ("NameList" in unit.Type)
+					if ("NameList" in t.Type)
 					{
-						unit.Name = this.generateName(unit.Type.NameList) + (unit.Type.TitleList != null ? " " + unit.Type.TitleList[this.Math.rand(0, unit.Type.TitleList.len() - 1)] : "");
+						unit.Name = this.generateName(t.Type.NameList) + (t.Type.TitleList != null ? " " + t.Type.TitleList[this.Math.rand(0, t.Type.TitleList.len() - 1)] : "");
 					}
 				}
 			}
