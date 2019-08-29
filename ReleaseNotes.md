@@ -1659,16 +1659,21 @@ Tweaks to Bandit Army Legendary contract:
 * Wont spawn in citadels anymore 
 * Requirement to spawn increased and payout decreased
 Improvement / bugfixes:
-* Bandit Rabble wont brake game if have buckler equiped
+* Bandit Rabble wont brake game if have buckler equipped
 * Corrected typo in Skin Ghouls Legendary contract
 * Updated description to Rage perk and tooltip
-* Updated Last Stand perk to give bonus Melee and Ranged defence all the time not just when attacked
+* Updated Last Stand perk to give bonus Melee and Ranged defense all the time not just when attacked
 * Fixed Danger Pay perk for Trader Commander
 * Vala recruitment event changed - distance corrected, have to be on the road close to settlement in the north
-Changed Bastard vs Assassin event - chance to trigger increased 2.5x but can not happen if party already have an assasin
+Changed Bastard vs Assassin event - chance to trigger increased 2.5x but cannot happen if party already have an assassin
 Legend Party Start:
 * Replaced Warlock with Assassin
 * Assassin gets custom perk tree like Assassin Commander
 Added extended Player is rich event:
 * Can happen only when company has over 30k crowns and more then two backgrounds with custom perk trees (excluding Vala and character with trait.player)
-Added Trader background (non commander version) posible to get in random trio or party starts
+Added Trader background (non commander version) possible to get in random trio/party starts
+Unified perk trees for regular and commander Vala
+* Non-commander Vala gains Alert, Backstabber, Mind over Body, Perfect Focus and Field Triage
+* Neither Vala cannot be male anymore even with Gender Equality on
+Fixed Student perk not being given to Seer and Seer Commander
+Added more possible titles to Seer

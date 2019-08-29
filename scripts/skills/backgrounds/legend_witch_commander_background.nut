@@ -5,7 +5,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_witch";
 		this.m.Icon = "ui/backgrounds/seer_02.png";
-		local r = this.Math.rand(0, 3);
+		local r = this.Math.rand(0, 4);
 
 		if (r == 0)
 		{
@@ -23,6 +23,11 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		{
 			this.m.Name = "Soothsayer";
 		}
+		else if (r == 4)
+		{
+			this.m.Name = "Seer";
+		}
+
 
 		this.m.HiringCost = 250;
 		this.m.DailyCost = 0;
@@ -310,6 +315,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_teacher"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 
 		if (this.World.Assets.isLegendMagic())
 		{
