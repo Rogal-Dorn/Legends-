@@ -62,6 +62,27 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		return true;
 	}
 
+	function getTroopIndex(_troop, _troops)
+	{
+		for(i = 0; i < _troops.len(); ++i)
+		{
+			if(_troop == _troops[i])
+				return i;
+			else
+				return null;
+		}
+	}
+
+	function doesTroopAlreadyExist(_troop, _troops)
+	{
+		foreach(t in _troops)
+		{
+			if(_troop.Type == t.Type)
+			return true;
+		}
+		return false;
+	}
+
 	function isShowingDefenders()
 	{
 		return this.m.IsShowingDefenders || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.World.Assets.getOrigin().getID() == "scenario.legends_rangers";
@@ -575,52 +596,88 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 			resources = resources * 0.75;
 		}
 
-this.logInfo("freykin defender test");
-//testing new bandit spawns
-	if (this.getFaction() == 5)
-	{
-	this.logInfo("bandit defender spawn worked");
-		local party = 
+		this.logInfo("freykin defender test");
+		//testing new bandit spawns
+		if (this.m.DefenderSpawnList.IsBandit == true)
 		{
-		Cost = 0,
-		MovementSpeedMult = 1.0,
-		VisibilityMult = 1.0,
-		VisionMult = 1.0,
-		Body = "figure_bandit_01",
-		Troops =
+			this.logInfo("bandit defender spawn worked");
+			local troops = this.m.DefenderSpawnList;
+			local party = 
 			{
-				Type = this.Const.World.Spawn.Troops.BanditRabble,
-				Num = 1
+				Cost = 0,
+				MovementSpeedMult = troops.MovementSpeedMult,
+				VisibilityMult = troops.VisibilityMult,
+				VisionMult = troops.VisionMult,
+				Body = troops.Body,
+				Troops = []
 			}
-		}
-		local numBandits = math.ceil(_resources / 5);
-		party.Troops.Num = numBandits;
-		
-		if (party != null)
-		{
-			this.m.Troops = [];
-
-			if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
+			
+			local melee_weight = troops.Melee.Weight;
+			local cavalry_weight = troops.Cavalry.Weight;
+			local ranged_weight troops.Ranged.Weight;
+			local leader_weight = troops.Leader.Weight;
+	
+			local total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
+	
+			if(total_weight != 1)
+				this.logInfo("Defender Weight is not 100%");
+			
+			this.logInfo("defender resources test" + resources);
+			
+			while(resources > 0)
 			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
-			}
-			else
-			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days;
-			}
-
-			foreach( t in party.Troops )
-			{
-				for( local i = 0; i != t.Num; i = ++i )
+				local random = this.Math.rand(1, 100);
+				
+				local weight = 0;
+				
+				foreach(type in troops)
 				{
-					this.Const.World.Common.addTroop(this, t, false);
+					weight += type.Weight * 100;
+					
+					if (random <= weight)
+					{
+						local t = this.Math.rand(1, type.len() - 1);
+						local troop = type[t];
+						
+						if(this.doesTroopAlreadyExist(troop, party.Troops)
+						{
+							local index = this.getTroopIndex(troop, party.Troops);
+							++party.Troops[index].Num;
+							resources = _resources - troop.Cost;
+							break;
+						}
+						troop.Num = 1;
+						party.Troops.push(troop);
+						resources = _resources - troop.Cost;
+					}
 				}
 			}
-
-			this.updateStrength();
-			this.logInfo("made it to end of bandit defender test");
+			
+			if (party != null)
+			{
+				this.m.Troops = [];
+	
+				if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
+				{
+					this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
+				}
+				else
+				{
+					this.m.DefenderSpawnDay = this.World.getTime().Days;
+				}
+	
+				foreach( t in party.Troops )
+				{
+					for( local i = 0; i != t.Num; i = ++i )
+					{
+						this.Const.World.Common.addTroop(this, t, false);
+					}
+				}
+	
+				this.updateStrength();
+				this.logInfo("made it to end of bandit defender test");
+			}
 		}
-	}
 		local best;
 		local bestCost = -9000;
 

@@ -34,7 +34,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		local ranged_weight troops.Ranged.Weight;
 		local leader_weight = troops.Leader.Weight;
 
-		total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
+		local total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
 
 		if(total_weight != 1)
 			this.logInfo("Weight is not 100%");
