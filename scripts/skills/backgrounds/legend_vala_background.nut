@@ -61,6 +61,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantMastery,
 				this.Const.Perks.PerkDefs.LegendValaTranceMastery,
+				this.Const.Perks.PerkDefs.LegendAlert,				
 				this.Const.Perks.PerkDefs.LegendValaInscriptionMastery
 			],
 			[

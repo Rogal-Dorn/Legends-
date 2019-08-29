@@ -5,9 +5,28 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.character_background.create();
 		this.m.ID = "background.legend_witch";
 		this.m.Icon = "ui/backgrounds/seer_02.png";
-		local r = this.Math.rand(0, 3);
+		local r = this.Math.rand(0, 4);
 
-		this.m.Name = "Seer";
+		if (r == 0)
+		{
+			this.m.Name = "Conjourer";
+		}
+		else if (r == 1)
+		{
+			this.m.Name = "Witch";
+		}
+		else if (r == 2)
+		{
+			this.m.Name = "Wise Woman";
+		}
+		else if (r == 3)
+		{
+			this.m.Name = "Soothsayer";
+		}
+		else if (r == 4)
+		{
+			this.m.Name = "Seer";
+		}
 
 		this.m.HiringCost = 20000;
 		this.m.DailyCost = 20;
@@ -79,7 +98,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.Student,
 					this.Const.Perks.PerkDefs.Recover,
 					this.Const.Perks.PerkDefs.LegendDaze,
-					this.Const.Perks.PerkDefs.LegendRoster1
 				],
 				[
 					this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -89,7 +107,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.HoldOut,
 					this.Const.Perks.PerkDefs.Gifted,
 					this.Const.Perks.PerkDefs.LegendStunned,
-					this.Const.Perks.PerkDefs.LegendRoster2
 				],
 				[
 					this.Const.Perks.PerkDefs.Backstabber,
@@ -99,7 +116,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.Taunt,
 					this.Const.Perks.PerkDefs.LegendHorrify,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-					this.Const.Perks.PerkDefs.LegendRoster3
 				
 				],
 				[
@@ -109,7 +125,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.LegendEntice,
 					this.Const.Perks.PerkDefs.LegendSpecBandage,
 					this.Const.Perks.PerkDefs.LegendPush,
-					this.Const.Perks.PerkDefs.LegendRoster4
 				],
 				[
 					this.Const.Perks.PerkDefs.LoneWolf,
@@ -118,7 +133,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.LegendAlert,
 					this.Const.Perks.PerkDefs.LegendMedIngredients
 					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-					this.Const.Perks.PerkDefs.LegendRoster5
 				],
 				[
 					this.Const.Perks.PerkDefs.Nimble,
@@ -139,7 +153,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendFirefield,
-					this.Const.Perks.PerkDefs.LegendRoster6
 				],
 				[],
 				[],
@@ -160,7 +173,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.Recover,
 					this.Const.Perks.PerkDefs.LegendSummonCat,
 					this.Const.Perks.PerkDefs.LegendDaze,
-					this.Const.Perks.PerkDefs.LegendRoster1
 				],
 				[
 					this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -170,7 +182,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.HoldOut,
 					this.Const.Perks.PerkDefs.Gifted,
 					this.Const.Perks.PerkDefs.LegendStunned,
-					this.Const.Perks.PerkDefs.LegendRoster2
 				],
 				[
 					this.Const.Perks.PerkDefs.Backstabber,
@@ -180,7 +191,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.Taunt,
 					this.Const.Perks.PerkDefs.LegendHorrify,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-					this.Const.Perks.PerkDefs.LegendRoster3
 				
 				],
 				[
@@ -190,7 +200,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.LegendEntice,
 					this.Const.Perks.PerkDefs.LegendSpecBandage,
 					this.Const.Perks.PerkDefs.LegendPush,
-					this.Const.Perks.PerkDefs.LegendRoster4
 				],
 				[
 					this.Const.Perks.PerkDefs.LoneWolf,
@@ -200,7 +209,6 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.LegendChainLightning,
 					this.Const.Perks.PerkDefs.LegendMedIngredients
 					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-					this.Const.Perks.PerkDefs.LegendRoster5
 				],
 				[
 					this.Const.Perks.PerkDefs.Nimble,
@@ -297,6 +305,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		if (this.World.Assets.isLegendMagic())
 		{
