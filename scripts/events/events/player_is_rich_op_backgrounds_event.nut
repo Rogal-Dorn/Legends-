@@ -55,7 +55,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 
 					if (bro.getMoodState() >= this.Const.MoodState.Neutral)
 					{
-						bro.getMoodState() = this.Const.MoodState.Neutral;
+						bro.Mood = 3;
 						bro.worsenMood(1.0, "Rivalry!");
 						
 						this.List.push({

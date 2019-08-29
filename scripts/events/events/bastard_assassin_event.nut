@@ -395,7 +395,7 @@ this.bastard_assassin_event <- this.inherit("scripts/events/event", {
 			{
 				candidates.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.assassin || bro.getBackground().getID() == "background.legend_assassin_commander")
+			else if (bro.getBackground().getID() == "background.assassin" || bro.getBackground().getID() == "background.legend_assassin_commander")
 			{
 				cantidates_assassins.push(bro);
 			}
