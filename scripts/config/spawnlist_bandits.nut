@@ -83,9 +83,9 @@ gt.Const.World.Spawn.BanditScouts <-
 		VisionMult = 1.0,
 		Body = "figure_bandit_01",
 		Troops = [
-			Melee = 
-			{
-				Weight = 0.5
+			MeleeWeight = 0.4,
+			Melee =
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					Cost = 5
@@ -102,18 +102,18 @@ gt.Const.World.Spawn.BanditScouts <-
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				}
-			},
+				],
+			CavalryWeight = 0.4,
 			Cavalry =
-			{
-				Weight = 0.25
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
 				}
-			},
+			],
+			RangedWeight = 0.2,
 			Ranged = 
-			{
-				Weight = 0.25
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
 					Cost = 8
@@ -121,16 +121,20 @@ gt.Const.World.Spawn.BanditScouts <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.MasterArcher,
+					Cost = 40
 				}
-			},
+			],
+			LeaderWeight = 0,
 			Leader =
-			{
-				Weight = 0
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25
 				}
-			}
+			]
 		]
 	}
 
@@ -143,9 +147,9 @@ gt.Const.World.Spawn.BanditRaiders <-
 		VisionMult = 1.0,
 		Body = "figure_bandit_01",
 		Troops = [
-			Melee = 
-			{
-				Weight = 0.6
+			MeleeWeight = 0.4,
+			Melee =
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					Cost = 5
@@ -161,23 +165,19 @@ gt.Const.World.Spawn.BanditRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.HedgeKnight,
-					Cost = 40
 				}
-			},
+				],
+			CavalryWeight = 0.4,
 			Cavalry =
-			{
-				Weight = 0
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
 				}
-			},
+			],
+			RangedWeight = 0.2,
 			Ranged = 
-			{
-				Weight = 0.3
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
 					Cost = 8
@@ -190,15 +190,15 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
 				}
-			},
+			],
+			LeaderWeight = 0,
 			Leader =
-			{
-				Weight = 0.1
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25
 				}
-			}
+			]
 		]
 	}
 
@@ -211,9 +211,9 @@ gt.Const.World.Spawn.BanditDefenders <-
 		VisionMult = 1.0,
 		Body = "figure_bandit_01",
 		Troops = [
-			Melee = 
-			{
-				Weight = 0.6
+			MeleeWeight = 0.4,
+			Melee =
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					Cost = 5
@@ -229,23 +229,19 @@ gt.Const.World.Spawn.BanditDefenders <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.HedgeKnight,
-					Cost = 40
 				}
-			},
+				],
+			CavalryWeight = 0.4,
 			Cavalry =
-			{
-				Weight = 0
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
 				}
-			},
+			],
+			RangedWeight = 0.2,
 			Ranged = 
-			{
-				Weight = 0.3
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
 					Cost = 8
@@ -258,15 +254,15 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
 				}
-			},
+			],
+			LeaderWeight = 0,
 			Leader =
-			{
-				Weight = 0.1
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25
 				}
-			}
+			]
 		]
 	}
 
@@ -279,9 +275,9 @@ gt.Const.World.Spawn.BanditBoss <-
 		VisionMult = 1.0,
 		Body = "figure_bandit_01",
 		Troops = [
-			Melee = 
-			{
-				Weight = 0.41
+			MeleeWeight = 0.4,
+			Melee =
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					Cost = 5
@@ -298,18 +294,18 @@ gt.Const.World.Spawn.BanditBoss <-
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				}
-			},
+				],
+			CavalryWeight = 0.4,
 			Cavalry =
-			{
-				Weight = 0
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
 				}
-			},
+			],
+			RangedWeight = 0.2,
 			Ranged = 
-			{
-				Weight = 0.41
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
 					Cost = 8
@@ -322,15 +318,15 @@ gt.Const.World.Spawn.BanditBoss <-
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
 				}
-			},
+			],
+			LeaderWeight = 0,
 			Leader =
-			{
-				Weight = 0.16
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25
 				}
-			}
+			]
 		]
 	}
 
@@ -343,25 +339,25 @@ gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 		VisionMult = 1.0,
 		Body = "figure_werewolf_01",
 		Troops = [
+			MeleeWeight = 1.0,
 			Melee = 
-			{
-				Weight = 1.0
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditsDisguisedAsDireWolves,
 					Cost = 25
 				}
-			},
+			],
+			CavalryWeight = 0,
 			Cavalry =
-			{
-				Weight = 0,
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
 					Cost = 5
 				}
-			},
+			],
+			RangedWeight = 0,
 			Ranged = 
-			{
-				Weight = 0,
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
 					Cost = 8
@@ -373,14 +369,14 @@ gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 				{
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
-			},
+			],
+			LeaserWeight = 0,
 			Leader =
-			{
-				Weight = 0
+			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25
 				}
-			}
+			]
 		]
 	}

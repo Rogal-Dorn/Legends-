@@ -1161,12 +1161,12 @@ this.contract <- {
 				Troops = []
 			}
 			
-			local troops = _partyList;
+			local troops = _partyList.Troops;
 			
-			local melee_weight = troops.Melee.Weight;
-			local cavalry_weight = troops.Cavalry.Weight;
-			local ranged_weight troops.Ranged.Weight;
-			local leader_weight = troops.Leader.Weight;
+			local melee_weight = _partyList.MeleeWeight;
+			local cavalry_weight = _partyList.CavalryWeight;
+			local ranged_weight _partyList.RangedWeight;
+			local leader_weight = _partyList.LeaderWeight;
 	
 			total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
 	

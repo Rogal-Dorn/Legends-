@@ -601,21 +601,23 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		if (this.m.DefenderSpawnList.IsBandit == true)
 		{
 			this.logInfo("bandit defender spawn worked");
-			local troops = this.m.DefenderSpawnList;
+			
 			local party = 
 			{
 				Cost = 0,
-				MovementSpeedMult = troops.MovementSpeedMult,
-				VisibilityMult = troops.VisibilityMult,
-				VisionMult = troops.VisionMult,
-				Body = troops.Body,
+				MovementSpeedMult = this.m.DefenderSpawnList.MovementSpeedMult,
+				VisibilityMult = this.m.DefenderSpawnList.VisibilityMult,
+				VisionMult = this.m.DefenderSpawnList.VisionMult,
+				Body = this.m.DefenderSpawnList.Body,
 				Troops = []
 			}
 			
-			local melee_weight = troops.Melee.Weight;
-			local cavalry_weight = troops.Cavalry.Weight;
-			local ranged_weight troops.Ranged.Weight;
-			local leader_weight = troops.Leader.Weight;
+			local troops = this.m.DefenderSpawnList.Troops;
+			
+			local melee_weight = this.m.DefenderSpawnList.MeleeWeight;
+			local cavalry_weight = this.m.DefenderSpawnList.CavalryWeight;
+			local ranged_weight =  this.m.DefenderSpawnList.RangedWeight;
+			local leader_weight = this.m.DefenderSpawnList.LeaderWeight;
 	
 			local total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
 	

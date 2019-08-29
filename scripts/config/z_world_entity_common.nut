@@ -29,10 +29,10 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		
 		local troops = _partylist.Troops;
 		
-		local melee_weight = troops.Melee.Weight;
-		local cavalry_weight = troops.Cavalry.Weight;
-		local ranged_weight troops.Ranged.Weight;
-		local leader_weight = troops.Leader.Weight;
+		local melee_weight = _partylist.MeleeWeight;
+		local cavalry_weight = _partylist.CavalryWeight;
+		local ranged_weight =  _partylist.RangedWeight;
+		local leader_weight = _partylist.LeaderWeight;
 
 		local total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
 
