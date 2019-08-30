@@ -451,3 +451,24 @@
 		}
 	}
 });
+
+function doesTroopAlreadyExist(_troop, _troops)
+	{
+		foreach(t in _troops)
+		{
+			if(_troop.Type == t.Type)
+			return true;
+		}
+		return false;
+	}
+	
+	function getTroopIndex(_troop, _troops)
+	{
+		for(i = 0; i < _troops.len(); ++i)
+		{
+			if(_troop == _troops[i])
+				return i;
+			else
+				return null;
+		}
+	}
