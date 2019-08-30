@@ -1659,21 +1659,22 @@ Tweaks to Bandit Army Legendary contract:
 * Wont spawn in citadels anymore 
 * Requirement to spawn increased and payout decreased
 Improvement / bugfixes:
-* Bandit Rabble wont brake game if have buckler equipped
-* Corrected typo in Skin Ghouls Legendary contract
-* Updated description to Rage perk and tooltip
-* Updated Last Stand perk to give bonus Melee and Ranged defense all the time not just when attacked
+* Bandit Rabble wont brake game if they have buckler equipped
+* Corrected typos in legendary contracts descriptions
+* Updated description for perks: Favoured Enemy - Barbarian, Favoured Enemy - Bandit
+* Updated description to Rage perk and Rage tooltip in combat
+* Updated Last Stand perk to give bonus melee and ranged defense all the time not just when attacked
 * Fixed Danger Pay perk for Trader Commander
-* Vala recruitment event changed - distance corrected, have to be on the road close to settlement in the north
-Changed Bastard vs Assassin event - chance to trigger increased 2.5x but cannot happen if party already have an assassin
+* Vala recruitment event changed - distance corrected, have to be in the north part of map and not from settlement connected to roads 
+Changed Bastard vs Assassin event - chance to trigger increased to 2.5x but cannot happen if party already have an assassin
 Legend Party Start:
 * Replaced Warlock with Assassin
 * Assassin gets custom perk tree like Assassin Commander
-Added extended Player is rich event:
+Added extended Player is Rich event:
 * Can happen only when company has over 30k crowns and more then two backgrounds with custom perk trees (excluding Vala and character with trait.player)
 Added Trader background (non commander version) possible to get in random trio/party starts
 Unified perk trees for regular and commander Vala
 * Non-commander Vala gains Alert, Backstabber, Mind over Body, Perfect Focus and Field Triage
-* Neither Vala cannot be male anymore even with Gender Equality on
+* Vala cannot be male anymore even with Gender Equality on
 Fixed Student perk not being given to Seer and Seer Commander
-Added more possible titles to Seer
+Added more possible titles to Seer background

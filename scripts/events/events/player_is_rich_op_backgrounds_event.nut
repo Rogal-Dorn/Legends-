@@ -55,8 +55,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 
 					if (bro.getMoodState() >= this.Const.MoodState.Neutral)
 					{
-						bro.Mood = 3;
-						bro.worsenMood(1.0, "Rivalry!");
+						bro.worsenMood(2.0, "Rivalry!");
 						
 						this.List.push({
 							id = 10,
@@ -311,8 +310,8 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 	
 		
 
-		// this.m.Score = candidate_opbackground.len() * (this.World.Assets.getMoney() - 30000) * 0.0005;
-		this.m.Score = 9999;
+		this.m.Score = candidate_opbackground.len() * (this.World.Assets.getMoney() - 30000) * 0.0005;
+		// this.m.Score = 9999;
 	}
 
 	function onPrepareVariables( _vars )
