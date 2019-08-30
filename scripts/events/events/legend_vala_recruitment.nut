@@ -77,11 +77,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 		
-		if (!playerTile.HasRoad)
-		{
-			return;
-		}
-
 		if (!this.World.Assets.isLegendMagic())
 		{
 			return;
