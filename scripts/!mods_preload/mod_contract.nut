@@ -208,6 +208,97 @@
 		local total_weight = 0;
 		local potential = [];
 
+		this.logInfo("freykin contract test");
+		//testing new bandit spawns
+		if (_partyList.IsBandit == true)
+		{
+			this.logInfo("bandit contract spawn worked");
+			local party = 
+			{
+				Cost = 0,
+				MovementSpeedMult = _partyList.MovementSpeedMult,
+				VisibilityMult = _partyList.VisibilityMult,
+				VisionMult = _partyList.VisionMult,
+				Body = _partyList.Body,
+				Troops = []
+			}
+			
+			local troops = _partyList.Troops;
+			
+			local melee_weight = _partyList.MeleeWeight;
+			local cavalry_weight = _partyList.CavalryWeight;
+			local ranged_weight _partyList.RangedWeight;
+			local leader_weight = _partyList.LeaderWeight;
+	
+			total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
+	
+			if(total_weight != 1)
+				this.logInfo("Contract Weight is not 100%");
+			
+			this.logInfo("Contract resources test" + _resources);
+			
+			while(_resources > 0)
+			{
+				local random = this.Math.rand(1, 100);
+				
+				local weight = 0;
+				
+				foreach(type in troops)
+				{
+					weight += type.Weight * 100;
+					
+					if (random <= weight)
+					{
+						local t = this.Math.rand(1, type.len() - 1);
+						local troop = type[t];
+						
+						if(this.doesTroopAlreadyExist(troop, party.Troops))
+						{
+							local index = this.getTroopIndex(troop, party.Troops);
+							++party.Troops[index].Num;
+							_resources = _resources - troop.Cost;
+							break;
+						}
+						troop.Num = 1;
+						party.Troops.push(troop);
+						_resources = _resources - troop.Cost;
+					}
+				}
+			}
+			
+			foreach( t in party.Troops )
+			{
+				local mb;
+	
+				if (this.getDifficultyMult() >= 1.15)
+				{
+					mb = 5;
+				}
+				else if (this.getDifficultyMult() >= 0.85)
+				{
+					mb = 0;
+				}
+				else
+				{
+					mb = -99;
+				}
+	
+				for( local i = 0; i != t.Num; i = ++i )
+				{
+					this.Const.World.Common.addTroop(_entity, t, false, mb);
+				}
+			}
+	
+			if (_entity.isLocation())
+			{
+				_entity.resetDefenderSpawnDay();
+			}
+	
+			_entity.updateStrength();
+			this.logInfo("bandit contract test end");
+			return;
+		}
+
 		foreach( party in _partyList )
 		{
 			if (party.Cost < _resources * 0.7)
