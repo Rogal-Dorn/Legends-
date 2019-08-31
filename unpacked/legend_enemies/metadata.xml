@@ -154,7 +154,7 @@
   <sprite id="bust_hexenleader_head_01_dead" offsetX="-6" offsetY="6" f="6401" f1="-5" f2="-10" ic="FF52627F" width="179" height="154" img="entity\beasts\bust_hexenleader_head_01_dead.png" left="-42" right="26" top="-33" bottom="27" />
     <sprite id="bust_hexenleader_body_01_dead_arrows" offsetY="20" f="6402" ic="FF40484C" width="169" height="139" img="entity\beasts\bust_hexenleader_body_01_dead_arrows.png" left="-30" right="26" top="-15" bottom="37" />
   <sprite id="bust_hexenleader_body_01_dead_javelin" offsetY="20" f="6402" ic="FF151C29" width="169" height="139" img="entity\beasts\bust_hexenleader_body_01_dead_javelin.png" left="7" right="35" top="-10" bottom="48" />
-   <sprite id="bust_hexenleader_head_03_bloodpool" offsetY="20" f="6420" f1="30" f2="-25" width="169" height="139" img="entity\beasts\bust_hexenleader_head_03_dead_bloodpool.png" left="-9" right="63" top="-66" bottom="10" />
+   <sprite id="bust_hexenleader_head_01_bloodpool" offsetY="20" f="6420" f1="30" f2="-25" width="169" height="139" img="entity\beasts\bust_hexenleader_head_01_bloodpool.png" left="-9" right="63" top="-66" bottom="10" />
 
   
   <sprite id="bust_schrat_green_01_injured" offsetX="-5" offsetY="35" ic="FF36586C" width="174" height="214" img="entity\beasts\bust_schrat_green_01_injured.png" left="-32" right="50" top="-47" bottom="23" />

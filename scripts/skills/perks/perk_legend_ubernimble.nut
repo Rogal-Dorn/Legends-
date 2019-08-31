@@ -54,7 +54,7 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 	{		
 		local fat = 1;
 		fat = this.Math.min(0, fat);
-		local ret = this.Math.minf(1.0, 1.0 - 0.7 + this.Math.pow(this.Math.abs(fat), 1.2) * 0.01);
+		local ret = this.Math.minf(1.0, 1.0 - 0.5 + this.Math.pow(this.Math.abs(fat), 1.2) * 0.01);
 		return ret;
 	}
 
