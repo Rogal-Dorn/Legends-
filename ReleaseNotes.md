@@ -1659,7 +1659,8 @@ Tweaks to Bandit Army Legendary contract:
 * Wont spawn in citadels anymore 
 * Requirement to spawn increased and payout decreased
 Improvement / bugfixes:
-* Bandit Rabble wont brake game if they have buckler equipped
+* Bandit Rabble wont break game if they have buckler equipped
+* Improved MindOverBody tooltip
 * Corrected typos in legendary contracts descriptions
 * Updated description for perks: Favoured Enemy - Barbarian, Favoured Enemy - Bandit
 * Updated description to Rage perk and Rage tooltip in combat
@@ -1678,3 +1679,5 @@ Unified perk trees for regular and commander Vala
 * Vala cannot be male anymore even with Gender Equality on
 Fixed Student perk not being given to Seer and Seer Commander
 Added more possible titles to Seer background
+Fixed white war wolf pet
+
