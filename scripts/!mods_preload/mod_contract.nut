@@ -210,7 +210,7 @@
 
 		this.logInfo("freykin contract test");
 		//testing new bandit spawns
-		if (_partyList.IsBandit == true)
+		if (_partyList.IsBandit != null)
 		{
 			this.logInfo("bandit contract spawn worked");
 			local party = 
