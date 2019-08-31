@@ -352,7 +352,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 			Melee =
 			[
 				{
-					Type = this.Const.World.Spawn.Troops.BanditsDisguisedAsDireWolves,
+					Type = this.Const.World.Spawn.Troops.BanditRaiderWolf,
 					Cost = 25
 				}
 				],

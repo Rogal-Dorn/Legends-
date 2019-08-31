@@ -598,7 +598,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 		this.logInfo("freykin defender test");
 		//testing new bandit spawns
-		if (this.m.DefenderSpawnList.IsBandit == true)
+		if (this.m.DefenderSpawnList.IsBandit != null)
 		{
 			this.logInfo("bandit defender spawn worked");
 			

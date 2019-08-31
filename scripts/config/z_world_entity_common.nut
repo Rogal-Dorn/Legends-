@@ -11,7 +11,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	
 	//testing new bandit spawns
 	
-	if (_partyList.IsBandit == true)
+	if (_partyList.IsBandit != null)
 	{
 		this.logInfo("bandit spawn worked");
 		
