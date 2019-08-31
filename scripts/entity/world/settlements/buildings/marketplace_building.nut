@@ -176,6 +176,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 	{
 		local list = [
 		
+			
 			{
 				R = 10,
 				P = 1.0,
@@ -350,6 +351,15 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				P = 1.0,
 				S = "supplies/armor_parts_item"
 			});
+		}
+
+	foreach( i in this.Const.Items.NamedRangedWeapons )
+		{
+				list.push({
+					R = 10,
+					P = 0.05,
+					S = i
+				});
 		}
 
 		if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.fishing_huts"))
