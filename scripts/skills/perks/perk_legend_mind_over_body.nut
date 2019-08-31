@@ -38,6 +38,7 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local bonus = this.getBonus();
+		local reduction = this.Math.round((1 - 1 / bonus)*100);
 		local tooltip = this.skill.getTooltip();
 
 		if (bonus > 1)
@@ -46,7 +47,7 @@ this.perk_legend_mind_over_body <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "All your fatigue costs are divided by [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color]."
+				text = "All your fatigue costs are reduced by [color=" + this.Const.UI.Color.PositiveValue + "]" + reduction + "%[/color]."
 			});
 		}
 		else
