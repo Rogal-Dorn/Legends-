@@ -450,7 +450,7 @@
 			return "ui/icons/difficulty_legend";
 		}
 	}
-});
+}
 
 o.doesTroopAlreadyExist <- function(_troop, _troops)
 	{
@@ -471,4 +471,4 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 			else
 				return null;
 		}
-	}
+	});
