@@ -22,7 +22,8 @@ gt.Const.World.Spawn.BanditRoamers <-
 		CavalryWeight = 0.4,
 		RangedWeight = 0.2,
 		LeaderWeight = 0,
-		Troops = [
+		Troops = 
+		{
 			Melee =
 			[
 				{
@@ -71,7 +72,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 					Cost = 25
 				}
 			]
-		]
+		}
 	}
 
 gt.Const.World.Spawn.BanditScouts <- 
@@ -86,7 +87,8 @@ gt.Const.World.Spawn.BanditScouts <-
 		CavalryWeight = 0.4,
 		RangedWeight = 0.2,
 		LeaderWeight = 0,
-		Troops = [
+		Troops = 
+		{
 			Melee =
 			[
 				{
@@ -135,7 +137,7 @@ gt.Const.World.Spawn.BanditScouts <-
 					Cost = 25
 				}
 			]
-		]
+		}
 	}
 
 gt.Const.World.Spawn.BanditRaiders <- 
@@ -150,7 +152,8 @@ gt.Const.World.Spawn.BanditRaiders <-
 		CavalryWeight = 0.4,
 		RangedWeight = 0.2,
 		LeaderWeight = 0,
-		Troops = [
+		Troops = 
+		{
 			Melee =
 			[
 				{
@@ -199,7 +202,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Cost = 25
 				}
 			]
-		]
+		}
 	}
 
 gt.Const.World.Spawn.BanditDefenders <- 
@@ -210,8 +213,12 @@ gt.Const.World.Spawn.BanditDefenders <-
 		VisibilityMult = 1.0,
 		VisionMult = 1.0,
 		Body = "figure_bandit_01",
-		Troops = [
-			MeleeWeight = 0.4,
+		MeleeWeight = 0.4,
+		CavalryWeight = 0.4,
+		RangedWeight = 0.2,
+		LeaderWeight = 0,
+		Troops = 
+		{
 			Melee =
 			[
 				{
@@ -230,8 +237,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				}
-				],
-			CavalryWeight = 0.4,
+			],
 			Cavalry =
 			[
 				{
@@ -239,7 +245,6 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 5
 				}
 			],
-			RangedWeight = 0.2,
 			Ranged = 
 			[
 				{
@@ -255,7 +260,6 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 40
 				}
 			],
-			LeaderWeight = 0,
 			Leader =
 			[
 				{
@@ -263,7 +267,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 25
 				}
 			]
-		]
+		}
 	}
 
 gt.Const.World.Spawn.BanditBoss <- 
@@ -278,7 +282,8 @@ gt.Const.World.Spawn.BanditBoss <-
 		CavalryWeight = 0.4,
 		RangedWeight = 0.2,
 		LeaderWeight = 0,
-		Troops = [
+		Troops = 
+		{
 			Melee =
 			[
 				{
@@ -327,7 +332,7 @@ gt.Const.World.Spawn.BanditBoss <-
 					Cost = 25
 				}
 			]
-		]
+		}
 	}
 	
 gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <- 
@@ -342,7 +347,8 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 		CavalryWeight = 0,
 		RangedWeight = 0,
 		LeaderWeight = 0,
-		Troops = [
+		Troops = 
+		{
 			Melee =
 			[
 				{
@@ -379,5 +385,5 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 					Cost = 25
 				}
 			]
-		]
+		}
 	}

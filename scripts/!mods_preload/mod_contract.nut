@@ -452,7 +452,7 @@
 	}
 });
 
-function doesTroopAlreadyExist(_troop, _troops)
+o.doesTroopAlreadyExist <- function(_troop, _troops)
 	{
 		foreach(t in _troops)
 		{
@@ -462,7 +462,7 @@ function doesTroopAlreadyExist(_troop, _troops)
 		return false;
 	}
 	
-	function getTroopIndex(_troop, _troops)
+	o.getTroopIndex <- function(_troop, _troops)
 	{
 		for(i = 0; i < _troops.len(); ++i)
 		{
