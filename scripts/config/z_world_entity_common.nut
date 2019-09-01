@@ -10,9 +10,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	this.logInfo("freykin test");
 	
 	//testing new bandit spawns
-	if(_partyList.isBandit == null)
-		_partyList.isBandit <- false;
-	if (_partyList.IsBandit == true)
+	if (IsBandit in _partylist)
 	{
 		this.logInfo("bandit spawn worked");
 		
