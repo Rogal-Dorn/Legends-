@@ -1666,7 +1666,7 @@ Improvement / bugfixes:
 * Updated description to Rage perk and Rage tooltip in combat
 * Updated Last Stand perk to give bonus melee and ranged defense all the time not just when attacked
 * Fixed Danger Pay perk for Trader Commander
-* Vala recruitment event changed - distance corrected, have to be in the north part of map and not from settlement connected to roads 
+* Vala recruitment event changed - distance corrected, have to be in the north part of map and not far from settlements that are connected to roads
 Changed Bastard vs Assassin event - chance to trigger increased to 2.5x but cannot happen if party already have an assassin
 Legend Party Start:
 * Replaced Warlock with Assassin
@@ -1680,4 +1680,5 @@ Unified perk trees for regular and commander Vala
 Fixed Student perk not being given to Seer and Seer Commander
 Added more possible titles to Seer background
 Fixed white war wolf pet
-
+Fixed Noble player character demnading more pay in event
+Fixed typo in Towershield description
