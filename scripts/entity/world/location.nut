@@ -68,9 +68,8 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		{
 			if(_troop == _troops[i])
 				return i;
-			else
-				return null;
-		}
+	}
+		return null;
 	}
 
 	function doesTroopAlreadyExist(_troop, _troops)
@@ -78,7 +77,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		foreach(t in _troops)
 		{
 			if(_troop.Type == t.Type)
-			return true;
+				return true;
 		}
 		return false;
 	}

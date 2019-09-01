@@ -312,9 +312,8 @@ function getTroopIndex(_troop, _troops)
 	{
 		if(_troop == _troops[i])
 			return i;
-		else
-			return null;
 	}
+	return null;
 }
 
 function doesTroopAlreadyExist(_troop, _troops)
@@ -322,7 +321,7 @@ function doesTroopAlreadyExist(_troop, _troops)
 	foreach(t in _troops)
 	{
 		if(_troop.Type == t.Type)
-		return true;
+			return true;
 	}
 	return false;
 }
