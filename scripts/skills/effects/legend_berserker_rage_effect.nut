@@ -36,7 +36,7 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	}
 	function getDescription()
 	{
-		return "Hulk Smash!";
+		return "The smell of blood and death sends you into an uncontrollable rage. Once in a rage, you must continuously feed it to keep it going";
 	}
 
 	function addRage( _r )

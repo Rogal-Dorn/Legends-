@@ -113,7 +113,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 				{
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_militia_skill"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_militia_damage"));
-					this.m.Items.equip(this.new("scripts/items/weapons/buckler_shield"));
+					this.m.Items.equip(this.new("scripts/items/shields/buckler_shield"));
 					this.m.Items.equip(this.new("scripts/items/armor/leather_tunic"));
 					this.m.Items.equip(this.new("scripts/items/helmets/open_leather_cap"));
 
