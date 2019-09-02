@@ -2770,8 +2770,6 @@ gt.Const.World.Spawn.Barbarians <- [
 	}
 ];
 
-gt.Const.World.Spawn.Barbarians.IsBandit <- false;
-
 gt.Const.World.Spawn.BarbarianHunters <- [
 	{
 		Body = "figure_wildman_01",

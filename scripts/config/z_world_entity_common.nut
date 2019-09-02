@@ -10,7 +10,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	this.logInfo("freykin test");
 	
 	//testing new bandit spawns
-	if (IsBandit in _partylist)
+	if ("IsBandit" in _partylist)
 	{
 		this.logInfo("bandit spawn worked");
 		
@@ -41,6 +41,8 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		
 		this.logInfo("resources test" + _resources);
 		
+		weights = [];
+		weights.push(
 		while(_resources > 0)
 		{
 			local random = this.Math.rand(1, 100);
