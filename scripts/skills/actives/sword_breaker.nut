@@ -151,7 +151,7 @@ this.sword_breaker <- this.inherit("scripts/skills/skill", {
 			local conditionBefore = weapon.getCondition();
 			local damage_dealt = this.Math.rand(damage, maxDamage);
 			
-			local conditionAfter = conditionBefore - damageDealt;
+			local conditionAfter = conditionBefore - damage_dealt;
 			
 			if(conditionAfter < 0)
 				conditionAfter = 0;

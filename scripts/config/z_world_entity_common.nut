@@ -42,7 +42,6 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		this.logInfo("resources test" + _resources);
 		
 		weights = [];
-		weights.push(
 		while(_resources > 0)
 		{
 			local random = this.Math.rand(1, 100);
@@ -324,4 +323,4 @@ function doesTroopAlreadyExist(_troop, _troops)
 			return true;
 	}
 	return false;
-}
+});
