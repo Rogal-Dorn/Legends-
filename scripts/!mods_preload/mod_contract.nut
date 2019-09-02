@@ -227,7 +227,7 @@
 			
 			local melee_weight = _partyList.MeleeWeight;
 			local cavalry_weight = _partyList.CavalryWeight;
-			local ranged_weight _partyList.RangedWeight;
+			local ranged_weight = _partyList.RangedWeight;
 			local leader_weight = _partyList.LeaderWeight;
 	
 			total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
@@ -468,6 +468,6 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 		{
 			if(_troop == _troops[i])
 				return i;
-	}
+		}
 	return null;
 	});
