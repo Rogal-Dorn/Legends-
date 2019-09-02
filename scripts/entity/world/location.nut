@@ -62,25 +62,24 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		return true;
 	}
 
-	function getTroopIndex(_troop, _troops)
-	{
-		for(i = 0; i < _troops.len(); ++i)
-		{
-			if(_troop == _troops[i])
-				return i;
-	}
-		return null;
-	}
-
 	function doesTroopAlreadyExist(_troop, _troops)
+{
+	local troop_existence =
 	{
-		foreach(t in _troops)
-		{
-			if(_troop.Type == t.Type)
-				return true;
-		}
-		return false;
+		AlreadyExist = false,
+		index = -1
 	}
+	
+	for(i = 0; i < _troops.len(); ++i)
+	{
+		if(_troop.Type == _troops[i].Type)
+		troop_existence.AlreadyExist = true;
+		troop_existence.Index = i;
+		
+			return troop_existence;
+	}
+	return troop_existence;
+}
 
 	function isShowingDefenders()
 	{
@@ -601,58 +600,59 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		{
 			this.logInfo("bandit defender spawn worked");
 			
-			local party = 
+			local party =
+		{
+			Troops = []
+		}
+		
+		party.MovementSpeedMult <- _partyList.MovementSpeedMult;
+		party.VisibilityMult <- _partyList.VisibilityMult;
+		party.VisionMult <- _partyList.VisionMult;
+		party.Body <- _partyList.Body;
+		this.logInfo("freykin assign party test");
+		this.logInfo(party.Body);
+		
+		local troops = _partylist.Troops;
+
+		local total_weight = 0;
+		foreach(w in _partyList.Weights)
+			total_weight += w;
+			
+		if(total_weight != 1)
+			this.logInfo("Weight is not 100%");
+		
+		this.logInfo("resources test" + _resources);
+		//currently assumes all weights add to 100, and that there are the same number of weights as unit types, in the same order
+		
+		while(_resources > 0)
+		{
+			local random = this.Math.rand(1, 100);
+			
+			local weight = 0;
+			
+			for(i = 0; i < troops.len(); ++i;)
 			{
-				Cost = 0,
-				MovementSpeedMult = this.m.DefenderSpawnList.MovementSpeedMult,
-				VisibilityMult = this.m.DefenderSpawnList.VisibilityMult,
-				VisionMult = this.m.DefenderSpawnList.VisionMult,
-				Body = this.m.DefenderSpawnList.Body,
-				Troops = []
-			}
-			
-			local troops = this.m.DefenderSpawnList.Troops;
-			
-			local melee_weight = this.m.DefenderSpawnList.MeleeWeight;
-			local cavalry_weight = this.m.DefenderSpawnList.CavalryWeight;
-			local ranged_weight =  this.m.DefenderSpawnList.RangedWeight;
-			local leader_weight = this.m.DefenderSpawnList.LeaderWeight;
-	
-			local total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
-	
-			if(total_weight != 1)
-				this.logInfo("Defender Weight is not 100%");
-			
-			this.logInfo("defender resources test" + resources);
-			
-			while(resources > 0)
-			{
-				local random = this.Math.rand(1, 100);
+				local unit_type = troops[i];
+				weight += _partyList.Weights[i] * 100;
 				
-				local weight = 0;
-				
-				foreach(type in troops)
+				if (random <= weight)
 				{
-					weight += type.Weight * 100;
+					local t = this.Math.rand(1, type.len() - 1);
+					local troop = unit_type[t];
 					
-					if (random <= weight)
+					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops))
+					if(troop_existence.AlreadyExists)
 					{
-						local t = this.Math.rand(1, type.len() - 1);
-						local troop = type[t];
-						
-						if(this.doesTroopAlreadyExist(troop, party.Troops))
-						{
-							local index = this.getTroopIndex(troop, party.Troops);
-							++party.Troops[index].Num;
-							resources = _resources - troop.Cost;
-							break;
-						}
-						troop.Num = 1;
-						party.Troops.push(troop);
-						resources = _resources - troop.Cost;
+						++party.Troops[troop_existence.Index].Num;
+						_resources = _resources - troop.Cost;
+						break;
 					}
+					troop.Num <- 1;
+					party.Troops.push(troop);
+					_resources = _resources - troop.Cost;
 				}
 			}
+		}
 			
 			if (party != null)
 			{
@@ -677,6 +677,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 	
 				this.updateStrength();
 				this.logInfo("made it to end of bandit defender test");
+				return;
 			}
 		}
 		local best;

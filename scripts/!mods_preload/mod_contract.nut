@@ -213,58 +213,59 @@
 		if ("IsBandit" in _partyList)
 		{
 			this.logInfo("bandit contract spawn worked");
-			local party = 
+			local party =
+		{
+			Troops = []
+		}
+		
+		party.MovementSpeedMult <- _partyList.MovementSpeedMult;
+		party.VisibilityMult <- _partyList.VisibilityMult;
+		party.VisionMult <- _partyList.VisionMult;
+		party.Body <- _partyList.Body;
+		this.logInfo("freykin assign party test");
+		this.logInfo(party.Body);
+		
+		local troops = _partylist.Troops;
+
+		local total_weight = 0;
+		foreach(w in _partyList.Weights)
+			total_weight += w;
+			
+		if(total_weight != 1)
+			this.logInfo("Weight is not 100%");
+		
+		this.logInfo("resources test" + _resources);
+		//currently assumes all weights add to 100, and that there are the same number of weights as unit types, in the same order
+		
+		while(_resources > 0)
+		{
+			local random = this.Math.rand(1, 100);
+			
+			local weight = 0;
+			
+			for(i = 0; i < troops.len(); ++i;)
 			{
-				Cost = 0,
-				MovementSpeedMult = _partyList.MovementSpeedMult,
-				VisibilityMult = _partyList.VisibilityMult,
-				VisionMult = _partyList.VisionMult,
-				Body = _partyList.Body,
-				Troops = []
-			}
-			
-			local troops = _partyList.Troops;
-			
-			local melee_weight = _partyList.MeleeWeight;
-			local cavalry_weight = _partyList.CavalryWeight;
-			local ranged_weight = _partyList.RangedWeight;
-			local leader_weight = _partyList.LeaderWeight;
-	
-			total_weight = melee_weight + cavalry_weight + ranged_weight + leader_weight;
-	
-			if(total_weight != 1)
-				this.logInfo("Contract Weight is not 100%");
-			
-			this.logInfo("Contract resources test" + _resources);
-			
-			while(_resources > 0)
-			{
-				local random = this.Math.rand(1, 100);
+				local unit_type = troops[i];
+				weight += _partyList.Weights[i] * 100;
 				
-				local weight = 0;
-				
-				foreach(type in troops)
+				if (random <= weight)
 				{
-					weight += type.Weight * 100;
+					local t = this.Math.rand(1, type.len() - 1);
+					local troop = unit_type[t];
 					
-					if (random <= weight)
+					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops))
+					if(troop_existence.AlreadyExists)
 					{
-						local t = this.Math.rand(1, type.len() - 1);
-						local troop = type[t];
-						
-						if(this.doesTroopAlreadyExist(troop, party.Troops))
-						{
-							local index = this.getTroopIndex(troop, party.Troops);
-							++party.Troops[index].Num;
-							_resources = _resources - troop.Cost;
-							break;
-						}
-						troop.Num = 1;
-						party.Troops.push(troop);
+						++party.Troops[troop_existence.Index].Num;
 						_resources = _resources - troop.Cost;
+						break;
 					}
+					troop.Num <- 1;
+					party.Troops.push(troop);
+					_resources = _resources - troop.Cost;
 				}
 			}
+		}
 			
 			foreach( t in party.Troops )
 			{
@@ -453,21 +454,22 @@
 }
 
 o.doesTroopAlreadyExist <- function(_troop, _troops)
+{
+	local troop_existence =
 	{
-		foreach(t in _troops)
-		{
-			if(_troop.Type == t.Type)
-				return true;
-		}
-		return false;
+		AlreadyExists = false,
+		index = -1
 	}
 	
-	o.getTroopIndex <- function(_troop, _troops)
+	for(i = 0; i < _troops.len(); ++i)
 	{
-		for(i = 0; i < _troops.len(); ++i)
+		if(_troop.Type == _troops[i].Type)
 		{
-			if(_troop == _troops[i])
-				return i;
+			troop_existence.AlreadyExists = true;
+			troop_existence.Index = i;
+		
+			return troop_existence;
 		}
-	return null;
-	});
+	}
+	return troop_existence;
+});
