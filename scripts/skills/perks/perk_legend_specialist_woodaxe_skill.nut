@@ -23,7 +23,7 @@ this.perk_legend_specialist_woodaxe_skill <- this.inherit("scripts/skills/skill"
 			{
 			_properties.MeleeSkill += 12;
 			}
-			if(item.getID() == "weapon.hand_axe" || item.getID() == "weapon.orc_axe"  || item.getID() == "weapon.fighting_axe"  || item.getID() == "weapon.throwing_axe"  || item.getID() == "weapon.orc_axe_2h"  || item.getID() == "weapon.named_axe"  || item.getID() == "weapon.axehammer"  || item.getID() == "weapon.crude_axe"  || item.getID() == "weapon.heavy_rusty_axe"  || item.getID() == "weapon.heavy_throwing_axe" || item.getID() == "weapon.named_heavy_rusty_axe" || item.getID() == "weapon.named_orc_axe" || item.getID() == "weapon.named_greataxe" || item.getID() == "weapon.greataxe" || item.getID() == "weapon.legend_hoe")
+			if(item.getID() == "weapon.hand_axe" ||item.getID() == "weapon.hatchet" || item.getID() == "weapon.orc_axe"  || item.getID() == "weapon.fighting_axe"  || item.getID() == "weapon.throwing_axe"  || item.getID() == "weapon.orc_axe_2h"  || item.getID() == "weapon.named_axe"  || item.getID() == "weapon.axehammer"  || item.getID() == "weapon.crude_axe"  || item.getID() == "weapon.heavy_rusty_axe"  || item.getID() == "weapon.heavy_throwing_axe" || item.getID() == "weapon.named_heavy_rusty_axe" || item.getID() == "weapon.named_orc_axe" || item.getID() == "weapon.named_greataxe" || item.getID() == "weapon.greataxe" || item.getID() == "weapon.legend_hoe")
 			{
 			_properties.MeleeSkill += 3;
 			}
