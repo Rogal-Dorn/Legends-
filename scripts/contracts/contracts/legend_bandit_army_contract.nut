@@ -9,7 +9,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		Briber = null,
 		Reward = 0,
 		OriginalReward = 0,
-		MinStrength = 200,
+		MinStrength = 600,
 		BribeMoney = 1000,
 		Perk = "perk.legend_favoured_enemy_bandit",
 		ValidTypes = this.Const.LegendMod.FavoriteBandit
@@ -24,8 +24,8 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.legend_bandit_army_contract";
 		this.m.Name = "Brigands Army (Legendary)";
-		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
-		this.m.DifficultyMult = this.Math.rand(175, 195) * 0.01;
+		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 30.0;
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 		
 	}
 
@@ -77,7 +77,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		local banditcamp = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getNearestSettlement(this.m.Home.getTile());
 		this.m.Destination = this.WeakTableRef(banditcamp);
 		this.m.Flags.set("DestinationName", banditcamp.getName());
-		this.m.Payment.Pool = 1400 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 1200 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 		this.m.BribeMoney = this.Math.round(400 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
 
 
@@ -119,7 +119,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				this.Contract.m.Destination.clearTroops();
 				this.Contract.m.Destination.getLoot().clear();
-				this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.BanditDefenders, 150 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
+				this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.BanditDefenders, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				this.Contract.m.Destination.setLootScaleBasedOnResources(200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 				this.Contract.m.Destination.setResources(this.Math.min(this.Contract.m.Destination.getResources(), 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult()));
 				this.Contract.setScreen("Overview");
@@ -440,7 +440,6 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 					Text = "Attack them!",
 					function getResult()
 					{
-						this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.BanditDefenders, 50 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 						this.World.Contracts.showCombatDialog();
 						this.Flags.set("BribeEventDone", true);
 						return 0;
@@ -501,6 +500,8 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 					icon = "ui/icons/asset_money.png",
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]" + this.Contract.m.BribeMoney + "[/color] Crowns"
 				});
+				this.Contract.m.Destination.clearTroops();
+				this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.BanditDefenders, 150 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult());
 			}
 
 		});

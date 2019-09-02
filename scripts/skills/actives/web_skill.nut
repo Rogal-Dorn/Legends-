@@ -6,7 +6,7 @@ this.web_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.web";
 		this.m.Name = "Weave Web";
-		this.m.Description = "";
+		this.m.Description = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative";
 		this.m.Icon = "skills/active_114.png";
 		this.m.IconDisabled = "skills/active_114.png";
 		this.m.Overlay = "active_114";

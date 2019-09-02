@@ -431,7 +431,7 @@ gt.Const.AI <- {
 			Swing = 400,
 			Reap = 400,
 			Thresh = 400,
-			Miasma = 390,
+			Miasma = 420,
 			Horror = 480,
 			Corruption = 480,
 			GruesomeFeast = 500,

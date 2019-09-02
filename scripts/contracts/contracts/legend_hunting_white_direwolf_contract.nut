@@ -22,7 +22,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_white_direwolf";
 		this.m.Name = "Hunting the white wolf (Legendary)";
-		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 30.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 	}
 
@@ -349,20 +349,20 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 			],
 			function start()
 			{
-					this.Characters.push(_event.m.Dude.getImagePath());
-						local item = this.new("scripts/items/accessory/legend_white_wolf_item");
-						this.World.Assets.getStash().add(item);
-						this.List.push({
-							id = 10,
-							icon = "ui/items/" + item.getIcon(),
-							text = "You gain " + item.getName()
-						});
-						_event.m.Dude.improveMood(2.0, "Managed to tame a white wolf");
-						this.List.push({
-							id = 10,
-							icon = this.Const.MoodStateIcon[_event.m.Houndmaster.getMoodState()],
-							text = _event.m.Dude.getName() + this.Const.MoodStateEvent[_event.m.Dude.getMoodState()]
-						});
+				this.Characters.push(this.Contract.m.Dude.getImagePath());
+				local item = this.new("scripts/items/accessory/legend_white_wolf_item");
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
+				});
+				this.Contract.m.Dude.improveMood(2.0, "Managed to tame a white wolf");
+				this.List.push({
+					id = 10,
+					icon = this.Const.MoodStateIcon[this.Contract.m.Dude.getMoodState()],
+					text = this.Contract.m.Dude.getName() + this.Const.MoodStateEvent[this.Contract.m.Dude.getMoodState()]
+				});
 			}
 
 		});

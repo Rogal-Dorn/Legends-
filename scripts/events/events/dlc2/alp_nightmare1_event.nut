@@ -198,6 +198,15 @@ this.alp_nightmare1_event <- this.inherit("scripts/events/event", {
 
 		local brothers = this.World.getPlayerRoster().getAll();
 
+		foreach( i, bro in brothers )
+		{
+			if (bro.getSkills().hasSkill("trait.player"))
+			{
+				brothers.remove(i);
+				break;
+			}
+		}
+
 		if (brothers.len() < 3)
 		{
 			return;
