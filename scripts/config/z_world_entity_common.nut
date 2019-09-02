@@ -10,7 +10,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	this.logInfo("freykin test");
 	
 	//testing new bandit spawns
-	if ("IsBandit" in _partylist)
+	if ("IsBandit" in _partyList)
 	{
 		this.logInfo("bandit spawn worked");
 		
@@ -26,7 +26,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		this.logInfo("freykin assign party test");
 		this.logInfo(party.Body);
 		
-		local troops = _partylist.Troops;
+		local troops = _partyList.Troops;
 
 		local total_weight = 0;
 		foreach(w in _partyList.Weights)
