@@ -229,11 +229,13 @@
 
 		local total_weight = 0;
 		foreach(w in _partyList.Weights)
+		{
 			total_weight += w;
-			
+		}
 		if(total_weight != 1)
+		{
 			this.logInfo("Weight is not 100%");
-		
+		}
 		this.logInfo("resources test" + _resources);
 		//currently assumes all weights add to 100, and that there are the same number of weights as unit types, in the same order
 		
@@ -457,7 +459,7 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 {
 	local troop_existence =
 	{
-		AlreadyExists = false,
+		AlreadyExist = false,
 		index = -1
 	}
 	
@@ -465,7 +467,7 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 	{
 		if(_troop.Type == _troops[i].Type)
 		{
-			troop_existence.AlreadyExists = true;
+			troop_existence.AlreadyExist = true;
 			troop_existence.Index = i;
 		
 			return troop_existence;
