@@ -597,6 +597,7 @@ gt.Const.EntityIcon <- [
 	"demonalp_orientation",
 	"hexen_leader_orientation",
 	"greenwood_schrat_orientation",
-	"greenwood_schrat_small_orientation"
+	"greenwood_schrat_small_orientation",
+	"white_direwolf_orientation"	
 ];
 
