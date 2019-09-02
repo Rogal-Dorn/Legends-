@@ -210,7 +210,7 @@
 
 		this.logInfo("freykin contract test");
 		//testing new bandit spawns
-		if (_partyList.IsBandit != null)
+		if (IsBandit in _partyList)
 		{
 			this.logInfo("bandit contract spawn worked");
 			local party = 
@@ -457,7 +457,7 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 		foreach(t in _troops)
 		{
 			if(_troop.Type == t.Type)
-			return true;
+				return true;
 		}
 		return false;
 	}
@@ -468,7 +468,6 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 		{
 			if(_troop == _troops[i])
 				return i;
-			else
-				return null;
-		}
+	}
+	return null;
 	});

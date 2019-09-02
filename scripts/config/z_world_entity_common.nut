@@ -10,9 +10,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	this.logInfo("freykin test");
 	
 	//testing new bandit spawns
-	if(_partyList.isBandit == null)
-		_partyList.isBandit <- false;
-	if (_partyList.IsBandit == true)
+	if (IsBandit in _partylist)
 	{
 		this.logInfo("bandit spawn worked");
 		
@@ -312,9 +310,8 @@ function getTroopIndex(_troop, _troops)
 	{
 		if(_troop == _troops[i])
 			return i;
-		else
-			return null;
 	}
+	return null;
 }
 
 function doesTroopAlreadyExist(_troop, _troops)
@@ -322,7 +319,7 @@ function doesTroopAlreadyExist(_troop, _troops)
 	foreach(t in _troops)
 	{
 		if(_troop.Type == t.Type)
-		return true;
+			return true;
 	}
 	return false;
 }
