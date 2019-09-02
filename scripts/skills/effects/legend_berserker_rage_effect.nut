@@ -36,7 +36,7 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	}
 	function getDescription()
 	{
-		return "Hulk Smash!";
+		return "The smell of blood and death sends you into an uncontrollable rage. Once in a rage, you must continuously feed it to keep it going";
 	}
 
 	function addRage( _r )
@@ -69,17 +69,27 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnStart()
 	{
-		this.m.RageStacks = this.Math.max(0, this.m.RageStacks - 2);
+		local actor = this.getContainer().getActor();
+		local HP = actor.getHitpoints();
+		local maxHP = actor.getHitpointsMax();
+		local ragedrop = 2 + this.m.RageStacks * HP/(maxHP * 3);
+		this.m.RageStacks = this.Math.max(0, this.m.RageStacks - ragedrop);
+		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " losses rage.");
 	}
 
-	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
+	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-	this.addRage(1);
+		this.addRage(1);
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
 	{
 		this.addRage(3);
+	}
+
+	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
+	{
+		this.addRage(2);
 	}
 
 	function onCombatStarted()

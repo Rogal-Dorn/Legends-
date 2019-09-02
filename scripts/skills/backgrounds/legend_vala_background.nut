@@ -48,7 +48,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
 				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.Colossus,
-				this.Const.Perks.PerkDefs.FortifiedMind
+				this.Const.Perks.PerkDefs.FortifiedMind,
+				this.Const.Perks.PerkDefs.Backstabber,				
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantSenses,
@@ -60,6 +61,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantMastery,
 				this.Const.Perks.PerkDefs.LegendValaTranceMastery,
+				this.Const.Perks.PerkDefs.LegendAlert,				
 				this.Const.Perks.PerkDefs.LegendValaInscriptionMastery
 			],
 			[
@@ -68,11 +70,14 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaThreads,
+				this.Const.Perks.PerkDefs.LegendMindOverBody,				
 				this.Const.Perks.PerkDefs.LegendValaSpiritualBond
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantFury,
-				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon
+				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,				
+				this.Const.Perks.PerkDefs.PerfectFocus				
 			],
 			[],
 			[],
