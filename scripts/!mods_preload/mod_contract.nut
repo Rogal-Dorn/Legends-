@@ -245,7 +245,7 @@
 			
 			local weight = 0;
 			
-			for(i = 0; i < troops.len(); ++i;)
+			for(i = 0; i < troops.len(); ++i)
 			{
 				local unit_type = troops[i];
 				weight += _partyList.Weights[i] * 100;

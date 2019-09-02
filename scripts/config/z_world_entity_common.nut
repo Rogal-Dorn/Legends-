@@ -48,7 +48,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 			
 			local weight = 0;
 			
-			for(i = 0; i < troops.len(); ++i;)
+			for(i = 0; i < troops.len(); ++i)
 			{
 				local unit_type = troops[i];
 				weight += _partyList.Weights[i] * 100;
