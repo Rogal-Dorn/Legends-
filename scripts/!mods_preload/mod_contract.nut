@@ -225,7 +225,7 @@
 		this.logInfo("freykin assign party test");
 		this.logInfo(party.Body);
 		
-		local troops = _partylist.Troops;
+		local troops = _partyList.Troops;
 
 		local total_weight = 0;
 		foreach(w in _partyList.Weights)
