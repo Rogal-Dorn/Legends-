@@ -255,7 +255,7 @@
 					local t = this.Math.rand(1, type.len() - 1);
 					local troop = unit_type[t];
 					
-					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops))
+					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops)
 					if(troop_existence.AlreadyExists)
 					{
 						++party.Troops[troop_existence.Index].Num;
