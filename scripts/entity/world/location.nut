@@ -73,10 +73,12 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 	for(i = 0; i < _troops.len(); ++i)
 	{
 		if(_troop.Type == _troops[i].Type)
-		troop_existence.AlreadyExist = true;
-		troop_existence.Index = i;
+		{
+			troop_existence.AlreadyExist = true;
+			troop_existence.Index = i;
 		
 			return troop_existence;
+		}
 	}
 	return troop_existence;
 }
@@ -616,10 +618,14 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 		local total_weight = 0;
 		foreach(w in _partyList.Weights)
+		{
 			total_weight += w;
-			
+		}
+		
 		if(total_weight != 1)
+		{
 			this.logInfo("Weight is not 100%");
+		}
 		
 		this.logInfo("resources test" + _resources);
 		//currently assumes all weights add to 100, and that there are the same number of weights as unit types, in the same order
