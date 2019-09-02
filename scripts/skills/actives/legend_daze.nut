@@ -31,7 +31,7 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.IsRanged = true;
+		this.m.IsRanged = false;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
