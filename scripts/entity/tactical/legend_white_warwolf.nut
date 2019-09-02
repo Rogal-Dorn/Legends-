@@ -1,7 +1,7 @@
 this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
 		Item = null,
-		Name = "White Wolf"
+		Name = "White Warwolf"
 	},
 	function setItem( _i )
 	{
@@ -29,12 +29,12 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.m.Type = this.Const.EntityType.LegendWhiteWarwolf;
 		this.m.XP = this.Const.Tactical.Actor.LegendWhiteWarwolf.XP;
-		this.m.BloodType = this.Const.BloodType.Red;
-		this.actor.create();
+		this.m.BloodType = this.Const.BloodType.Red;		
 		this.m.IsActingImmediately = true;
 		this.m.BloodSplatterOffset = this.createVec(0, 0);
 		this.m.DecapitateSplatterOffset = this.createVec(-4, -25);
 		this.m.DecapitateBloodAmount = 0.5;
+		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [
 			"sounds/enemies/wolf_death_00.wav",
 			"sounds/enemies/wolf_death_01.wav",
@@ -152,7 +152,7 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onFactionChanged();
 		local flip = this.isAlliedWithPlayer();
 		this.getSprite("body").setHorizontalFlipping(flip);
-		this.getSprite("armor").setHorizontalFlipping(flip);
+		// this.getSprite("armor").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);
 
@@ -203,11 +203,11 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.getAppearance().Body = "bust_direwolf_white_tame_01";
 		this.addSprite("socket").setBrush("bust_base_player");
 		local body = this.addSprite("body");
-		body.setBrush("bust_direwolf_white_tame_01");
+		body.setBrush("bust_direwolf_white_01");
 		body.varySaturation(0.15);
 		body.varyColor(0.07, 0.07, 0.07);
 		local head = this.addSprite("head");
-		head.setBrush("bust_direwolf_white_tame_01_head");
+		head.setBrush("bust_direwolf_white_01_head");
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
 		local injury = this.addSprite("injury");
@@ -230,8 +230,8 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_white_wolf_howl"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"))
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));;
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/racial/werewolf_racial"));
 	}
