@@ -23,24 +23,20 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		party.VisibilityMult <- _partyList.VisibilityMult;
 		party.VisionMult <- _partyList.VisionMult;
 		party.Body <- _partyList.Body;
-		this.logInfo("freykin assign party test");
-		this.logInfo(party.Body);
 
 		local troops = _partyList.Troops;
 
 		local total_weight = 0;
-		foreach(w in _partyList.Weights)
+		foreach(t in troops)
 		{
-			total_weight += w;
+			total_weight += t.Weight;
 		}
 
-		if(total_weight != 1)
+		if(total_weight != 100)
 		{
 			this.logInfo("Weight is not 100%");
 		}
-
-		this.logInfo("resources test" + _resources);
-		//currently assumes all weights add to 100, and that there are the same number of weights as unit types, in the same order
+		//currently assumes all weights add to 100
 
 		while(_resources > 0)
 		{
@@ -51,12 +47,12 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 			for(local i = 0; i < troops.len(); ++i)
 			{
 				local unit_type = troops[i];
-				weight += _partyList.Weights[i] * 100;
+				weight += troops[i].Weight;
 
 				if (random <= weight)
 				{
 					local t = this.Math.rand(1, type.len() - 1);
-					local troop = unit_type[t];
+					local troop = unit_type.Types[t];
 
 					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops)
 					if(troop_existence.AlreadyExists)
