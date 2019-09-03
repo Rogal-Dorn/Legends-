@@ -52,8 +52,7 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 				{
 					local type = this.Math.rand(1, t.Types.len() - 1);
 					local troop = t.Types[type];
-
-					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops)
+					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops);
 					if(troop_existence.AlreadyExists)
 					{
 						++party.Troops[troop_existence.Index].Num;
