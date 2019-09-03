@@ -421,8 +421,7 @@ gt.Const.LegendMod.BoxMuller <- {
 	}
 }
 
-
-function doesTroopAlreadyExist(_troop, _troops)
+gt.Const.World.Common.doesTroopAlreadyExist <- function (_troop, _troops)
 {
 	local troop_existence =
 	{
