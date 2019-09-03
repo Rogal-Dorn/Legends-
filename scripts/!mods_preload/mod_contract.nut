@@ -455,7 +455,7 @@
 	{
 		local troop_existence =
 		{
-			AlreadyExist = false,
+			AlreadyExists = false,
 			index = -1
 		}
 
@@ -463,7 +463,7 @@
 		{
 			if(_troop.Type == _troops[i].Type)
 			{
-				troop_existence.AlreadyExist = true;
+				troop_existence.AlreadyExists = true;
 				troop_existence.Index = i;
 
 				return troop_existence;
