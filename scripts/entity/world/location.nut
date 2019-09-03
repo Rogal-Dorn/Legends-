@@ -70,7 +70,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		index = -1
 	}
 	
-	for(i = 0; i < _troops.len(); ++i)
+	for(local i = 0; i < _troops.len(); ++i)
 	{
 		if(_troop.Type == _troops[i].Type)
 		{
