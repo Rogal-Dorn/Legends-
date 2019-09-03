@@ -8,24 +8,24 @@ if (!("World" in gt.Const))
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
 	this.logInfo("freykin test");
-	
+
 	//testing new bandit spawns
 	if ("IsBandit" in _partyList)
 	{
 		this.logInfo("bandit spawn worked");
-		
+
 		local party =
 		{
 			Troops = []
 		}
-		
+
 		party.MovementSpeedMult <- _partyList.MovementSpeedMult;
 		party.VisibilityMult <- _partyList.VisibilityMult;
 		party.VisionMult <- _partyList.VisionMult;
 		party.Body <- _partyList.Body;
 		this.logInfo("freykin assign party test");
 		this.logInfo(party.Body);
-		
+
 		local troops = _partyList.Troops;
 
 		local total_weight = 0;
@@ -33,31 +33,31 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		{
 			total_weight += w;
 		}
-		
+
 		if(total_weight != 1)
 		{
 			this.logInfo("Weight is not 100%");
 		}
-		
+
 		this.logInfo("resources test" + _resources);
 		//currently assumes all weights add to 100, and that there are the same number of weights as unit types, in the same order
-		
+
 		while(_resources > 0)
 		{
 			local random = this.Math.rand(1, 100);
-			
+
 			local weight = 0;
-			
+
 			for(local i = 0; i < troops.len(); ++i)
 			{
 				local unit_type = troops[i];
 				weight += _partyList.Weights[i] * 100;
-				
+
 				if (random <= weight)
 				{
 					local t = this.Math.rand(1, type.len() - 1);
 					local troop = unit_type[t];
-					
+
 					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops)
 					if(troop_existence.AlreadyExists)
 					{
@@ -75,16 +75,16 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		_party.setVisibilityMult(party.VisibilityMult);
 		_party.setVisionRadius(this.Const.World.Settings.Vision * party.VisionMult);
 		_party.getSprite("body").setBrush(party.Body);
-		
+
 		local troopMbMap = {};
 		foreach( t in party.Troops )
 		{
-			local key = "Enemy" + t.Type.ID; 
+			local key = "Enemy" + t.Type.ID;
 			if (!(key in troopMbMap))
 			{
 				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
 			}
-		
+
 			local mb = troopMbMap[key];
 
 			for( local i = 0; i != t.Num; i = ++i )
@@ -92,12 +92,12 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 				this.addTroop(_party, t, false, mb);
 			}
 		}
-	
+
 		_party.updateStrength();
 		this.logInfo("made it to end of bandit spawn test");
 		return party;
 	}
-	
+
 	if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
 	{
 		_resources = _partyList[_partyList.len() - 1].Cost;
@@ -306,6 +306,127 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 	}
 }
 
+
+gt.Const.World.Common.assignTroopsDynamic <- function( _party, _template, _resources, _weightMode = 1 )
+{
+	// if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
+	// {
+	// 	_resources = _partyList[_partyList.len() - 1].Cost;
+	// }
+
+	_party.setMovementSpeed(_template.MovementSpeedMult * this.Const.World.MovementSettings.Speed);
+	_party.setVisibilityMult(_template.VisibilityMult);
+	_party.setVisionRadius(this.Const.World.Settings.Vision * _template.VisionMult);
+	_party.getSprite("body").setBrush(_template.Body);
+
+	local totalWeight = 0;
+	foreach (k, v in _template.Troops)
+	{
+		totalWeight += v.Weight;
+	}
+
+	local troop = null;
+	local r = this.Math.rand(1, totalWeight)
+	foreach (k, v in _template.Troops)
+	{
+		r -= v.Weight;
+		if (r > 0)
+		{
+			continue
+		}
+
+		troop = v;
+		this.logInfo("** Picking Troop Category " + k)
+		break;
+	}
+
+	local troopMbMap = {};
+	//We are assuming the Types list here is in Cost order
+	//TODO call a sort on the spawnlist_xxxx file to guarentee this
+	local min = v.Types[0].Cost;
+	local max = v.Types[v.Types.len() - 1].Cost;
+	while (resources > 0)
+	{
+		//Will return points we can use to purchase troops.
+		local points = this.Const.LegendMod.BoxMuller.Next(min, max)
+		while (points > 0)
+		{
+			//Always purchase the most expensive unit we can
+			for (local i = v.Types.len() - 1; i > 0; i = --i)
+			{
+				if (v.Types[i].Cost > points)
+				{
+					continue;
+				}
+
+				points -= v.Types[i].Cost;
+				resources -= v.Types[i].Cost;
+				local key = "Enemy" + v.Types[i].Type.ID;
+				if (!(key in troopMbMap))
+				{
+					troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
+				}
+
+				local mb = troopMbMap[key];
+				this.addTroop(_party, v.Types[i].Type, false, mb);
+				break;
+			}
+		}
+	}
+
+	_party.updateStrength();
+	return;
+}
+
+if (!("LegendMod" in gt.Const))
+{
+	gt.Const.LegendMod <- {};
+}
+
+gt.Const.LegendMod.BoxMuller <- {
+	UseLast = false,
+	NextValue = 0.0,
+	function generate()
+	{
+		if (this.UseLast)
+		{
+			this.UseLast = false;
+			return this.NextValue;
+		}
+		local s = 0.0;
+		local v1 = 0.0;
+		local v2 = 0.0;
+		while (s >= 1.0 || s == 0.0)
+		{
+			v1 = 2.0 * this.Math.rand(0, 1000) / 1000 - 1.0;
+			v2 = 2.0 * this.Math.rand(0, 1000) / 1000 - 1.0;
+			s = v1 * v1 + v2 * v2;
+		}
+
+		s = this.Math.pow(-2.0 * log(s) / s, 0.5);
+		this.NextValue = v2 * s
+		this.UseLast = true;
+		return v1 * s;
+	}
+
+	function BoxMuller( _mean, _deviation )
+	{
+		return _mean + this.generate() * _deviation;
+	}
+
+	function Next( _min, _max )
+	{
+		local deviations = 3.5;
+		local r = _max + 1; //so we iterate at least once
+		while (r > _max || r < _min)
+		{
+			r = this.BoxMuller(_min + (_max - _min) / 2.0, (_max - _min) / 2.0 / deviations);
+		}
+		return r;
+	}
+}
+
+
 function doesTroopAlreadyExist(_troop, _troops)
 {
 	local troop_existence =
@@ -313,16 +434,21 @@ function doesTroopAlreadyExist(_troop, _troops)
 		AlreadyExist = false,
 		index = -1
 	}
-	
+
 	for(i = 0; i < _troops.len(); ++i)
 	{
 		if(_troop.Type == _troops[i].Type)
 		{
 			troop_existence.AlreadyExist = true;
 			troop_existence.Index = i;
-		
+
 			return troop_existence;
 		}
 	}
 	return troop_existence;
 }
+
+// for (local i = 0; i < 100; i = ++i)
+// {
+// 	this.logInfo(gt.Const.LegendMod.BoxMuller.Next(1, 100))
+// }

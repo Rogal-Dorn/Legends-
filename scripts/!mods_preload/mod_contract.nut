@@ -158,7 +158,7 @@
 	}
 
 	local payFn = o.m.Payment.getOnCompletion;
-	o.m.Payment.getOnCompletion = function () 
+	o.m.Payment.getOnCompletion = function ()
 	{
 		local val = payFn();
 		return this.Math.max(this.Const.Difficulty.MinPayments[this.World.Assets.getEconomicDifficulty()], val)
@@ -217,14 +217,14 @@
 		{
 			Troops = []
 		}
-		
+
 		party.MovementSpeedMult <- _partyList.MovementSpeedMult;
 		party.VisibilityMult <- _partyList.VisibilityMult;
 		party.VisionMult <- _partyList.VisionMult;
 		party.Body <- _partyList.Body;
 		this.logInfo("freykin assign party test");
 		this.logInfo(party.Body);
-		
+
 		local troops = _partyList.Troops;
 
 		local total_weight = 0;
@@ -238,23 +238,23 @@
 		}
 		this.logInfo("resources test" + _resources);
 		//currently assumes all weights add to 100, and that there are the same number of weights as unit types, in the same order
-		
+
 		while(_resources > 0)
 		{
 			local random = this.Math.rand(1, 100);
-			
+
 			local weight = 0;
-			
+
 			for(local i = 0; i < troops.len(); ++i)
 			{
 				local unit_type = troops[i];
 				weight += _partyList.Weights[i] * 100;
-				
+
 				if (random <= weight)
 				{
 					local t = this.Math.rand(1, type.len() - 1);
 					local troop = unit_type[t];
-					
+
 					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops)
 					if(troop_existence.AlreadyExists)
 					{
@@ -268,11 +268,11 @@
 				}
 			}
 		}
-			
+
 			foreach( t in party.Troops )
 			{
 				local mb;
-	
+
 				if (this.getDifficultyMult() >= 1.15)
 				{
 					mb = 5;
@@ -285,18 +285,18 @@
 				{
 					mb = -99;
 				}
-	
+
 				for( local i = 0; i != t.Num; i = ++i )
 				{
 					this.Const.World.Common.addTroop(_entity, t, false, mb);
 				}
 			}
-	
+
 			if (_entity.isLocation())
 			{
 				_entity.resetDefenderSpawnDay();
 			}
-	
+
 			_entity.updateStrength();
 			this.logInfo("bandit contract test end");
 			return;
@@ -356,12 +356,12 @@
 
 		foreach( t in p.Troops )
 		{
-			local key = "Enemy" + t.Type.ID; 
+			local key = "Enemy" + t.Type.ID;
 			if (!(key in troopMbMap))
 			{
 				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
 			}
-			
+
 			local mb = troopMbMap[key];
 
 			if (this.getDifficultyMult() >= 1.45)
@@ -453,25 +453,26 @@
 			return "ui/icons/difficulty_legend";
 		}
 	}
-}
 
-o.doesTroopAlreadyExist <- function(_troop, _troops)
-{
-	local troop_existence =
+	o.doesTroopAlreadyExist <- function(_troop, _troops)
 	{
-		AlreadyExist = false,
-		index = -1
-	}
-	
-	for(i = 0; i < _troops.len(); ++i)
-	{
-		if(_troop.Type == _troops[i].Type)
+		local troop_existence =
 		{
-			troop_existence.AlreadyExist = true;
-			troop_existence.Index = i;
-		
-			return troop_existence;
+			AlreadyExist = false,
+			index = -1
 		}
+
+		for(i = 0; i < _troops.len(); ++i)
+		{
+			if(_troop.Type == _troops[i].Type)
+			{
+				troop_existence.AlreadyExist = true;
+				troop_existence.Index = i;
+
+				return troop_existence;
+			}
+		}
+		return troop_existence;
 	}
-	return troop_existence;
+
 });
