@@ -428,8 +428,8 @@ gt.Const.World.Common.doesTroopAlreadyExist <- function (_troop, _troops)
 		AlreadyExist = false,
 		index = -1
 	}
-
-	foreach(local i = 0; i < _troops.len(); ++i)
+	
+	for(local i = 0; i < _troops.len(); ++i)
 	{
 		if(_troop.Type == _troops[i].Type)
 		{
