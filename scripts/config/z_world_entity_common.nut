@@ -44,15 +44,14 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 
 			local weight = 0;
 
-			for(local i = 0; i < troops.len(); ++i)
+			foreach(t in troops)
 			{
-				local unit_type = troops[i];
-				weight += troops[i].Weight;
+				weight += t.Weight;
 
 				if (random <= weight)
 				{
-					local t = this.Math.rand(1, type.len() - 1);
-					local troop = unit_type.Types[t];
+					local type = this.Math.rand(1, type.len() - 1);
+					local troop = t.Types[type];
 
 					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops)
 					if(troop_existence.AlreadyExists)
