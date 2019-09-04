@@ -227,12 +227,9 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 	{
 		local total_weight = 0;
 		local potential = [];
-
-		this.logInfo("freykin contract test");
 		//testing new bandit spawns
 		if ("IsBandit" in _partyList)
 		{
-			this.logInfo("bandit contract spawn worked");
 			local party =
 		{
 			Troops = []
@@ -314,7 +311,6 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 			}
 
 			_entity.updateStrength();
-			this.logInfo("bandit contract test end");
 			return;
 		}
 

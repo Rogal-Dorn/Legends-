@@ -28,13 +28,9 @@ gt.Const.World.Common.doesTroopAlreadyExist <- function (_troop, _troops)
 
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
-	this.logInfo("freykin test");
-
 	//testing new bandit spawns
 	if ("IsBandit" in _partyList)
 	{
-		this.logInfo("bandit spawn worked");
-
 		local party =
 		{
 			Troops = []
@@ -109,7 +105,6 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 		}
 
 		_party.updateStrength();
-		this.logInfo("made it to end of bandit spawn test");
 		return party;
 	}
 
