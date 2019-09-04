@@ -230,11 +230,18 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 		//testing new bandit spawns
 		if ("IsBandit" in _partyList)
 		{
+			this.Const.World.Common.assignTroopsDynamic(_entity, _partyList, _resources);
+			
+			if (_entity.isLocation())
+		{
+			_entity.resetDefenderSpawnDay();
+		}
+		return;
 			local party =
 		{
 			Troops = []
 		}
-
+		
 		party.MovementSpeedMult <- _partyList.MovementSpeedMult;
 		party.VisibilityMult <- _partyList.VisibilityMult;
 		party.VisionMult <- _partyList.VisionMult;
