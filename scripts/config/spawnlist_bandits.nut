@@ -86,7 +86,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 
 gt.Const.World.Spawn.BanditScouts <-
 {
-IsBandit = true,
+	IsBandit = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -160,7 +160,7 @@ IsBandit = true,
 
 gt.Const.World.Spawn.BanditRaiders <-
 {
-IsBandit = true,
+	IsBandit = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -234,7 +234,7 @@ IsBandit = true,
 
 gt.Const.World.Spawn.BanditDefenders <-
 {
-IsBandit = true,
+	IsBandit = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -290,6 +290,7 @@ IsBandit = true,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
 				}
+				21
 			]
 		},
 		Leader =
@@ -308,7 +309,7 @@ IsBandit = true,
 
 gt.Const.World.Spawn.BanditBoss <-
 {
-IsBandit = true,
+	IsBandit = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -382,7 +383,7 @@ IsBandit = true,
 
 gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 {
-IsBandit = true,
+	IsBandit = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,

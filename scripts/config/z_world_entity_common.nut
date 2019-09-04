@@ -12,7 +12,7 @@ gt.Const.World.Common.doesTroopAlreadyExist <- function (_troop, _troops)
 		AlreadyExists = false,
 		Index = -1
 	}
-	
+
 	for(local i = 0; i < _troops.len(); ++i)
 	{
 		if(_troop.Type == _troops[i].Type)
@@ -341,52 +341,78 @@ gt.Const.World.Common.assignTroopsDynamic <- function( _party, _template, _resou
 	}
 
 	local troop = null;
-	local r = this.Math.rand(1, totalWeight)
-	foreach (k, v in _template.Troops)
-	{
-		r -= v.Weight;
-		if (r > 0)
-		{
-			continue
-		}
-
-		troop = v;
-		this.logInfo("** Picking Troop Category " + k)
-		break;
-	}
-
 	local troopMbMap = {};
-	//We are assuming the Types list here is in Cost order
-	//TODO call a sort on the spawnlist_xxxx file to guarentee this
-	local min = v.Types[0].Cost;
-	local max = v.Types[v.Types.len() - 1].Cost;
+
 	while (resources > 0)
 	{
-		//Will return points we can use to purchase troops.
-		local points = this.Const.LegendMod.BoxMuller.Next(min, max)
-		while (points > 0)
+		local r = this.Math.rand(1, totalWeight)
+		foreach (k, v in _template.Troops)
 		{
-			//Always purchase the most expensive unit we can
-			for (local i = v.Types.len() - 1; i > 0; i = --i)
+			r -= v.Weight;
+			if (r > 0)
 			{
-				if (v.Types[i].Cost > points)
-				{
-					continue;
-				}
+				continue
+			}
 
-				points -= v.Types[i].Cost;
-				resources -= v.Types[i].Cost;
-				local key = "Enemy" + v.Types[i].Type.ID;
-				if (!(key in troopMbMap))
-				{
-					troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
-				}
+			troop = v;
+			break;
+		}
+		//We are assuming the Types list here is in Cost order
+		//TODO call a sort on the spawnlist_xxxx file to guarentee this
+		local min = troop.Types[0].Cost;
+		local max = troop.Types[troop.Types.len() - 1].Cost;
+		local mean = (max - min) / 2.0
+		local deviation = mean / 3.5
+		local meanScaled = 0;
+		local points = min;
+		if (mean > 0)
+		{
+			meanScaled = this.Math.min(max, this.Math.pow(resources / 10.0 / mean, 0.5))
+			points = this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, deviation)
+		}
+		//Always purchase the most expensive unit we can
+		for (local i = troop.Types.len() - 1; i >= 0; i = --i)
+		{
+			if (troop.Types[i].Cost > points)
+			{
+				continue;
+			}
 
-				local mb = troopMbMap[key];
-				this.addTroop(_party, v.Types[i].Type, false, mb);
+			points -= troop.Types[i].Cost;
+			resources -= troop.Types[i].Cost;
+			local key = "Enemy" + troop.Types[i].Type.ID;
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
+			}
+
+			local mb = troopMbMap[key];
+			this.addTroop(_party, troop.Types[i].Type, false, mb);
+
+			//See if we have enough left to purcahse the next lowest
+			if (i - 1 < 0)
+			{
 				break;
 			}
+
+			if (troop.Types[i-1].Cost > points)
+			{
+				break;
+			}
+
+			points -= troop.Types[i-1].Cost;
+			resources -= troop.Types[i-1].Cost;
+			local key = "Enemy" + troop.Types[i-1].Type.ID;
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
+			}
+
+			local mb = troopMbMap[key];
+			this.addTroop(_party, troop.Types[i-1].Type, false, mb);
+			break;
 		}
+
 	}
 
 	_party.updateStrength();
@@ -441,9 +467,128 @@ gt.Const.LegendMod.BoxMuller <- {
 	}
 }
 
+function testSpawn( _template, resources )
+{
+	local totalWeight = 0;
+	foreach (k, v in _template.Troops)
+	{
+		totalWeight += v.Weight;
+	}
 
+	local troop = null;
+	local troopMbMap = {};
 
-// for (local i = 0; i < 100; i = ++i)
-// {
-// 	this.logInfo(gt.Const.LegendMod.BoxMuller.Next(1, 100))
-// }
+	while (resources > 0)
+	{
+		local r = this.Math.rand(1, totalWeight)
+		foreach (k, v in _template.Troops)
+		{
+			r -= v.Weight;
+			if (r > 0)
+			{
+				continue
+			}
+
+			troop = v;
+			break;
+		}
+		//We are assuming the Types list here is in Cost order
+		//TODO call a sort on the spawnlist_xxxx file to guarentee this
+		local min = troop.Types[0].Cost;
+		local max = troop.Types[troop.Types.len() - 1].Cost;
+		local mean = (max - min) / 2.0
+		local deviation = mean / 3.5
+		local meanScaled = 0;
+		local points = min;
+		if (mean > 0)
+		{
+			meanScaled = resources / mean
+			points = this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, deviation)
+		}
+		//Always purchase the most expensive unit we can
+		for (local i = troop.Types.len() - 1; i >= 0; i = --i)
+		{
+			if (troop.Types[i].Cost > points)
+			{
+				continue;
+			}
+
+			points -= troop.Types[i].Cost;
+			resources -= troop.Types[i].Cost;
+			local key = "" + i
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- 0;
+			}
+
+			troopMbMap[key] += 1;
+
+			//See if we have enough left to purcahse the next lowest
+			if (i - 1 < 0)
+			{
+				break;
+			}
+
+			if (troop.Types[i-1].Cost > points)
+			{
+				break;
+			}
+
+			points -= troop.Types[i-1].Cost;
+			resources -= troop.Types[i-1].Cost;
+			local key = "" + i
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- 0;
+			}
+
+			troopMbMap[key] += 1;
+			break;
+		}
+	}
+
+	return troopMbMap
+}
+this.logInfo("****** 100 ")
+for (local i = 0; i < 10; i = ++i)
+{
+	this.logInfo(" > " + i)
+	local res = testSpawn(gt.Const.World.Spawn.BanditRaiders, 100)
+	foreach (k, v in res)
+	{
+		this.logInfo(k + " : " + v)
+	}
+}
+
+this.logInfo("****** 500 ")
+for (local i = 0; i < 10; i = ++i)
+{
+	this.logInfo(" > " + i)
+	local res = testSpawn(gt.Const.World.Spawn.BanditRaiders, 500)
+	foreach (k, v in res)
+	{
+		this.logInfo(k + " : " + v)
+	}
+}
+
+this.logInfo("****** 1000 ")
+for (local i = 0; i < 10; i = ++i)
+{
+	this.logInfo(" > " + i)
+	local res = testSpawn(gt.Const.World.Spawn.BanditRaiders, 1000)
+	foreach (k, v in res)
+	{
+		this.logInfo(k + " : " + v)
+	}
+}
+
+this.logInfo("****** 2000 ")
+for (local i = 0; i < 10; i = ++i)
+{
+	this.logInfo(" > " + i)
+	local res = testSpawn(gt.Const.World.Spawn.BanditRaiders, 2000)
+	foreach (k, v in res)
+	{
+		this.logInfo(k + " : " + v)
+	}
+}
