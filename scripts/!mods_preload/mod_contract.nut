@@ -46,6 +46,26 @@
 		this.createScreens();
 	}
 
+o.doesTroopAlreadyExist <- function(_troop, _troops)
+	{
+		local troop_existence =
+		{
+			AlreadyExists = false,
+			index = -1
+		}
+
+		for(local i = 0; i < _troops.len(); ++i)
+		{
+			if(_troop.Type == _troops[i].Type)
+			{
+				troop_existence.AlreadyExists = true;
+				troop_existence.Index = i;
+
+				return troop_existence;
+			}
+		}
+		return troop_existence;
+	}
 
     o.buildText <- function(_text)
 	{
@@ -450,26 +470,4 @@
 			return "ui/icons/difficulty_legend";
 		}
 	}
-
-	o.doesTroopAlreadyExist <- function(_troop, _troops)
-	{
-		local troop_existence =
-		{
-			AlreadyExists = false,
-			index = -1
-		}
-
-		for(local i = 0; i < _troops.len(); ++i)
-		{
-			if(_troop.Type == _troops[i].Type)
-			{
-				troop_existence.AlreadyExists = true;
-				troop_existence.Index = i;
-
-				return troop_existence;
-			}
-		}
-		return troop_existence;
-	}
-
 });
