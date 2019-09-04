@@ -31,6 +31,9 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	//testing new bandit spawns
 	if ("IsBandit" in _partyList)
 	{
+		this.assignTroopsDynamic(_party, _partyList, _resources);
+		return;
+		
 		local party =
 		{
 			Troops = []
@@ -338,7 +341,7 @@ gt.Const.World.Common.assignTroopsDynamic <- function( _party, _template, _resou
 	local troop = null;
 	local troopMbMap = {};
 
-	while (resources > 0)
+	while (_resources > 0)
 	{
 		local r = this.Math.rand(1, totalWeight)
 		foreach (k, v in _template.Troops)
