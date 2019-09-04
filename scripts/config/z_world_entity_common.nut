@@ -476,6 +476,7 @@ function testSpawn( _template, resources )
 	while (resources > 0)
 	{
 		local r = this.Math.rand(1, totalWeight)
+		local cat = ""
 		foreach (k, v in _template.Troops)
 		{
 			r -= v.Weight;
@@ -485,6 +486,7 @@ function testSpawn( _template, resources )
 			}
 
 			troop = v;
+			cat = k;
 			break;
 		}
 		//We are assuming the Types list here is in Cost order
@@ -510,7 +512,7 @@ function testSpawn( _template, resources )
 
 			points -= troop.Types[i].Cost;
 			resources -= troop.Types[i].Cost;
-			local key = "" + i
+			local key = "" + cat + " " + i
 			if (!(key in troopMbMap))
 			{
 				troopMbMap[key] <- 0;
@@ -531,7 +533,7 @@ function testSpawn( _template, resources )
 
 			points -= troop.Types[i-1].Cost;
 			resources -= troop.Types[i-1].Cost;
-			local key = "" + i
+			local key = "" + cat + " " + i
 			if (!(key in troopMbMap))
 			{
 				troopMbMap[key] <- 0;
