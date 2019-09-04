@@ -32,7 +32,7 @@ this.sword_breaker <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsUsingHitchance = true;
+		this.m.IsUsingHitchance = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsWeaponSkill = true;
 		this.m.ActionPointCost = 4;
@@ -110,7 +110,7 @@ this.sword_breaker <- this.inherit("scripts/skills/skill", {
 
 		if (this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getBlockedSlotType() != null)
 		{
-			this.m.ActionPointCost = 6;
+			this.m.ActionPointCost = 1;
 		}
 		else
 		{
@@ -150,12 +150,15 @@ this.sword_breaker <- this.inherit("scripts/skills/skill", {
 	
 			local conditionBefore = weapon.getCondition();
 			local damage_dealt = this.Math.rand(damage, maxDamage);
+			this.logInfo("damage dealt = " + damage_dealt);
 			
 			local conditionAfter = conditionBefore - damage_dealt;
 			
 			if(conditionAfter < 0)
 				conditionAfter = 0;
+			this.logInfo("before condition = " + weapon.getCondition);
 			weapon.setCondition(conditionAfter);
+			this.logInfo("after condition = " + weapon.getCondition);
 
 			if (weapon.getCondition() == 0)
 			{
