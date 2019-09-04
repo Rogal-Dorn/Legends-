@@ -269,9 +269,8 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 
 				if (random <= weight)
 				{
-					local type = this.Math.rand(1, t.Types.len() - 1);
+					local type = this.Math.rand(0, t.Types.len() - 1);
 					local troop = t.Types[type];
-					logInfo("troop cost " + troop.Cost);
 					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops);
 					if(troop_existence.AlreadyExists)
 					{
