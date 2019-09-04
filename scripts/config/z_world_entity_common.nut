@@ -5,6 +5,27 @@ if (!("World" in gt.Const))
 	gt.Const.World <- {};
 }
 
+gt.Const.World.Common.doesTroopAlreadyExist <- function (_troop, _troops)
+{
+	local troop_existence =
+	{
+		AlreadyExists = false,
+		index = -1
+	}
+	
+	for(local i = 0; i < _troops.len(); ++i)
+	{
+		if(_troop.Type == _troops[i].Type)
+		{
+			troop_existence.AlreadyExists = true;
+			troop_existence.Index = i;
+
+			return troop_existence;
+		}
+	}
+	return troop_existence;
+}
+
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
 	this.logInfo("freykin test");
@@ -420,26 +441,7 @@ gt.Const.LegendMod.BoxMuller <- {
 	}
 }
 
-gt.Const.World.Common.doesTroopAlreadyExist <- function (_troop, _troops)
-{
-	local troop_existence =
-	{
-		AlreadyExists = false,
-		index = -1
-	}
-	
-	for(local i = 0; i < _troops.len(); ++i)
-	{
-		if(_troop.Type == _troops[i].Type)
-		{
-			troop_existence.AlreadyExists = true;
-			troop_existence.Index = i;
 
-			return troop_existence;
-		}
-	}
-	return troop_existence;
-}
 
 // for (local i = 0; i < 100; i = ++i)
 // {
