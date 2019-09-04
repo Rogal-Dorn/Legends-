@@ -67,7 +67,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 	local troop_existence =
 	{
 		AlreadyExists = false,
-		index = -1
+		Index = -1
 	}
 	
 	for(local i = 0; i < _troops.len(); ++i)
@@ -628,7 +628,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		}
 		//currently assumes all weights add to 100
 
-		while(_resources > 0)
+		while(resources > 0)
 		{
 			local random = this.Math.rand(1, 100);
 
@@ -646,12 +646,12 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 					if(troop_existence.AlreadyExists)
 					{
 						++party.Troops[troop_existence.Index].Num;
-						_resources = _resources - troop.Cost;
+						resources = resources - troop.Cost;
 						break;
 					}
 					troop.Num <- 1;
 					party.Troops.push(troop);
-					_resources = _resources - troop.Cost;
+					resources = resources - troop.Cost;
 				}
 			}
 		}

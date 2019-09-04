@@ -10,7 +10,7 @@ gt.Const.World.Common.doesTroopAlreadyExist <- function (_troop, _troops)
 	local troop_existence =
 	{
 		AlreadyExists = false,
-		index = -1
+		Index = -1
 	}
 	
 	for(local i = 0; i < _troops.len(); ++i)
