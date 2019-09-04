@@ -640,7 +640,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 
 				if (random <= weight)
 				{
-					local type = this.Math.rand(1, t.Types.len() - 1);
+					local type = this.Math.rand(0,  t.Types.len() - 1);
 					local troop = t.Types[type];
 					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops);
 					if(troop_existence.AlreadyExists)
