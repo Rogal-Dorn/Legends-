@@ -601,10 +601,36 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		if ("IsBandit" in this.m.DefenderSpawnList)
 		{
 			this.logInfo("bandit defender spawn worked");
-			
 			local party =
 		{
 			Troops = []
+		}
+		
+		this.World.Common.assignTroopsDynamic(party, this.m.DefenderSpawnList, resources);
+		
+		if (party != null)
+		{
+			this.m.Troops = [];
+
+			if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
+			{
+				this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
+			}
+			else
+			{
+				this.m.DefenderSpawnDay = this.World.getTime().Days;
+			}
+
+			foreach( t in party.Troops )
+			{
+				for( local i = 0; i != t.Num; i = ++i )
+				{
+					this.Const.World.Common.addTroop(this, t, false);
+				}
+			}
+
+			this.updateStrength();
+			return;
 		}
 		
 		party.MovementSpeedMult <- this.m.DefenderSpawnList.MovementSpeedMult;
