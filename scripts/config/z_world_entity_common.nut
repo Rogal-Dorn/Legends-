@@ -241,7 +241,7 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 	local troops = null;
 	local troopMap = {};
 
-	local resourceScale = this.Math.pow(_resources / 10.0, 0.5)
+	local resourceScale = this.Math.pow(_resources / 10.0, 0.75)
 
 	while (_resources > 0)
 	{
@@ -266,12 +266,12 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 		local max = troops.len() > 1 ? troops[1].Cost : troops[0].Cost;
 		local meanMax = troops[troops.len() - 1].Cost
 		local mean = (max + min) / 2.0
-		local deviation = (meanMax - min) / 2.0 / 2.0
+		local deviation = (meanMax - min) / 2.0 / 3.0
 		local meanScaled = 0;
 		local points = min;
 		if (mean > 0)
 		{
-			meanScaled = mean + this.Math.min(max, resourceScale)
+			meanScaled = mean + this.Math.min(max + mean, resourceScale)
 			points = this.Math.max(min, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, deviation))
 			//this.logInfo(cat + " Mean " + mean + " : Scaled " + meanScaled + " : Deviation " + deviation + " : Points " + points)
 		}
@@ -297,27 +297,27 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 			troopMap[key].Num += 1
 
 			//See if we have enough left to purcahse the next lowest
-			if (i - 1 < 0)
-			{
-				break;
-			}
+			// if (i - 1 < 0)
+			// {
+			// 	break;
+			// }
 
-			if (troops[i-1].Cost > points)
-			{
-				break;
-			}
+			// if (troops[i-1].Cost > points)
+			// {
+			// 	break;
+			// }
 
-			points -= troops[i-1].Cost;
-			_resources -= troops[i-1].Cost;
-			key = troops[i].Type.Script;
-			if (!(key in troopMap))
-			{
-				troopMap[key] <- {
-					Type = troops[i].Type,
-					Num = 0
-				}
-			}
-			troopMap[key].Num += 1
+			// points -= troops[i-1].Cost;
+			// _resources -= troops[i-1].Cost;
+			// key = troops[i].Type.Script;
+			// if (!(key in troopMap))
+			// {
+			// 	troopMap[key] <- {
+			// 		Type = troops[i].Type,
+			// 		Num = 0
+			// 	}
+			// }
+			// troopMap[key].Num += 1
 			break;
 		}
 	}
