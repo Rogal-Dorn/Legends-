@@ -264,7 +264,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 
         foreach( bro in brothers )
         {
-		    if (bro.getSkills().hasSkill("trait.player"))
+		    if (bro.getSkills().hasSkill("trait.player") && bro.getBackground.getID != "background.legend_trader_commander")
             {
 				continue;
 			}			

@@ -1680,5 +1680,16 @@ Unified perk trees for regular and commander Vala
 Fixed Student perk not being given to Seer and Seer Commander
 Added more possible titles to Seer background
 Fixed white war wolf pet
-Fixed Noble player character demnading more pay in event
+Fixed Noble player character demanding more pay in event
 Fixed typo in Towershield description
+
+
+12.7.1 Test 4
+Updated for Wildman causes Havoc event for case of Berserker and Trader present in company
+Updated wages for Trader background
+Added Trader recruitment event. Requirements are:
+* 50k crowns ambition complete
+* Alteast 30k crowns in company possesion 
+* On the road and daytime 
+Added Favored Enemy Swordmasters perk releted event to fight 1v1 duels with swordmaster/hedge_knight/barbarbarian_champion
+
