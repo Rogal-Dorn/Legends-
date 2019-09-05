@@ -62,27 +62,6 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		return true;
 	}
 
-	function doesTroopAlreadyExist(_troop, _troops)
-{
-	local troop_existence =
-	{
-		AlreadyExists = false,
-		Index = -1
-	}
-	
-	for(local i = 0; i < _troops.len(); ++i)
-	{
-		if(_troop.Type == _troops[i].Type)
-		{
-			troop_existence.AlreadyExists = true;
-			troop_existence.Index = i;
-		
-			return troop_existence;
-		}
-	}
-	return troop_existence;
-}
-
 	function isShowingDefenders()
 	{
 		return this.m.IsShowingDefenders || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.World.Assets.getOrigin().getID() == "scenario.legends_rangers";
@@ -596,189 +575,96 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 			resources = resources * 0.75;
 		}
 
-		this.logInfo("freykin defender test");
-		//testing new bandit spawns
-		if ("IsBandit" in this.m.DefenderSpawnList)
-		{
-			this.logInfo("bandit defender spawn worked");
-			local party =
-		{
-			Troops = []
-		}
-		
-		this.World.Common.assignTroopsDynamic(party, this.m.DefenderSpawnList, resources);
-		
-		if (party != null)
-		{
-			this.m.Troops = [];
-
-			if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
-			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
-			}
-			else
-			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days;
-			}
-
-			foreach( t in party.Troops )
-			{
-				for( local i = 0; i != t.Num; i = ++i )
-				{
-					this.Const.World.Common.addTroop(this, t, false);
-				}
-			}
-
-			this.updateStrength();
-			return;
-		}
-		
-		party.MovementSpeedMult <- this.m.DefenderSpawnList.MovementSpeedMult;
-		party.VisibilityMult <- this.m.DefenderSpawnList.VisibilityMult;
-		party.VisionMult <- this.m.DefenderSpawnList.VisionMult;
-		party.Body <- this.m.DefenderSpawnList.Body;
-		this.logInfo("freykin assign party test");
-		this.logInfo(party.Body);
-		
-		local troops = this.m.DefenderSpawnList.Troops;
-
-		local total_weight = 0;
-		foreach(t in troops)
-		{
-			total_weight += t.Weight;
-		}
-
-		if(total_weight != 100)
-		{
-			this.logInfo("Weight is not 100%");
-		}
-		//currently assumes all weights add to 100
-
-		while(resources > 0)
-		{
-			local random = this.Math.rand(1, 100);
-
-			local weight = 0;
-
-			foreach(t in troops)
-			{
-				weight += t.Weight;
-
-				if (random <= weight)
-				{
-					local type = this.Math.rand(0,  t.Types.len() - 1);
-					local troop = t.Types[type];
-					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops);
-					if(troop_existence.AlreadyExists)
-					{
-						++party.Troops[troop_existence.Index].Num;
-						resources = resources - troop.Cost;
-						break;
-					}
-					troop.Num <- 1;
-					party.Troops.push(troop);
-					resources = resources - troop.Cost;
-				}
-			}
-		}
-			
-			if (party != null)
-			{
-				this.m.Troops = [];
-	
-				if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
-				{
-					this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
-				}
-				else
-				{
-					this.m.DefenderSpawnDay = this.World.getTime().Days;
-				}
-	
-				foreach( t in party.Troops )
-				{
-					for( local i = 0; i != t.Num; i = ++i )
-					{
-						this.Const.World.Common.addTroop(this, t, false);
-					}
-				}
-	
-				this.updateStrength();
-				this.logInfo("made it to end of bandit defender test");
-				return;
-			}
-		}
 		local best;
-		local bestCost = -9000;
-
-		foreach( party in this.m.DefenderSpawnList )
+		if ("IsDynamic" in this.m.DefenderSpawnList)
 		{
-			if (party.Cost > resources)
-			{
-				continue;
-			}
-
-			if (best == null || party.Cost > bestCost)
-			{
-				best = party;
-				bestCost = party.Cost;
-			}
+			p = this.Const.World.Common.buildDynamicTroopList(this.m.DefenderSpawnList, _resources)
 		}
-
-		local potential = [];
-
-		foreach( party in this.m.DefenderSpawnList )
+		else
 		{
-			if (party.Cost > resources || party.Cost < bestCost * 0.75)
+			local bestCost = -9000;
+
+			foreach( party in this.m.DefenderSpawnList )
 			{
-				continue;
+				if (party.Cost > resources)
+				{
+					continue;
+				}
+
+				if (best == null || party.Cost > bestCost)
+				{
+					best = party;
+					bestCost = party.Cost;
+				}
 			}
 
-			potential.push(party);
-		}
+			local potential = [];
 
-		if (potential.len() != 0)
-		{
-			best = potential[this.Math.rand(0, potential.len() - 1)];
+			foreach( party in this.m.DefenderSpawnList )
+			{
+				if (party.Cost > resources || party.Cost < bestCost * 0.75)
+				{
+					continue;
+				}
+
+				potential.push(party);
+			}
+
+			if (potential.len() != 0)
+			{
+				best = potential[this.Math.rand(0, potential.len() - 1)];
+			}
+
+			if (best == null)
+			{
+				bestCost = 9000;
+
+				foreach( party in this.m.DefenderSpawnList )
+				{
+					if (this.Math.abs(party.Cost - resources) < bestCost)
+					{
+						best = party;
+						bestCost = this.Math.abs(party.Cost - resources);
+					}
+				}
+			}
 		}
 
 		if (best == null)
 		{
-			bestCost = 9000;
-
-			foreach( party in this.m.DefenderSpawnList )
-			{
-				if (this.Math.abs(party.Cost - resources) < bestCost)
-				{
-					best = party;
-					bestCost = this.Math.abs(party.Cost - resources);
-				}
-			}
+			return
 		}
 
-		if (best != null)
+		this.m.Troops = [];
+
+		if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
 		{
-			this.m.Troops = [];
-
-			if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
-			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
-			}
-			else
-			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days;
-			}
-
-			foreach( t in best.Troops )
-			{
-				for( local i = 0; i != t.Num; i = ++i )
-				{
-					this.Const.World.Common.addTroop(this, t, false);
-				}
-			}
-
-			this.updateStrength();
+			this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
 		}
+		else
+		{
+			this.m.DefenderSpawnDay = this.World.getTime().Days;
+		}
+
+		local troopMbMap = {};
+		foreach( t in best.Troops )
+		{
+			local key = "Enemy" + t.Type.ID;
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
+			}
+
+			local mb = troopMbMap[key];
+
+			for( local i = 0; i != t.Num; i = ++i )
+			{
+				this.Const.World.Common.addTroop(this, t, false, mb);
+			}
+		}
+
+		this.updateStrength();
+
 	}
 
 	function onSerialize( _out )
@@ -806,4 +692,3 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 	}
 
 });
-

@@ -12,7 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.BanditRoamers <-
 {
-	IsBandit = true,
+	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -86,7 +86,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 
 gt.Const.World.Spawn.BanditScouts <-
 {
-	IsBandit = true,
+	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -160,7 +160,7 @@ gt.Const.World.Spawn.BanditScouts <-
 
 gt.Const.World.Spawn.BanditRaiders <-
 {
-	IsBandit = true,
+	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -169,7 +169,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 	{
 		Melee =
 		{
-			Weight = 70,
+			Weight = 75,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -191,7 +191,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		Cavalry =
 		{
-			Weight = 5,
+			Weight = 3,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
@@ -220,7 +220,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		Leader =
 		{
-			Weight = 5,
+			Weight = 2,
 			Types =
 			[
 				{
@@ -234,7 +234,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 
 gt.Const.World.Spawn.BanditDefenders <-
 {
-	IsBandit = true,
+	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -309,7 +309,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 
 gt.Const.World.Spawn.BanditBoss <-
 {
-	IsBandit = true,
+	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -369,7 +369,7 @@ gt.Const.World.Spawn.BanditBoss <-
 		},
 		Leader =
 		{
-			Weight = 5,
+			Weight = 10,
 			Types =
 			[
 				{
@@ -383,7 +383,7 @@ gt.Const.World.Spawn.BanditBoss <-
 
 gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 {
-	IsBandit = true,
+	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
@@ -392,7 +392,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 	{
 		Melee =
 		{
-			Weight = 100,
+			Weight = 70,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaiderWolf,
@@ -402,7 +402,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 		},
 		Cavalry =
 		{
-			Weight = 0,
+			Weight = 5,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
@@ -412,7 +412,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 		},
 		Ranged =
 		{
-			Weight = 0,
+			Weight = 20,
 			Types =
 			[
 				{
@@ -431,7 +431,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 		},
 		Leader =
 		{
-			Weight = 0,
+			Weight = 5,
 			Types =
 			[
 				{
