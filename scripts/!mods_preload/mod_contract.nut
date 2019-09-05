@@ -46,26 +46,6 @@
 		this.createScreens();
 	}
 
-o.doesTroopAlreadyExist <- function(_troop, _troops)
-	{
-		local troop_existence =
-		{
-			AlreadyExists = false,
-			Index = -1
-		}
-
-		for(local i = 0; i < _troops.len(); ++i)
-		{
-			if(_troop.Type == _troops[i].Type)
-			{
-				troop_existence.AlreadyExists = true;
-				troop_existence.Index = i;
-
-				return troop_existence;
-			}
-		}
-		return troop_existence;
-	}
 
     o.buildText <- function(_text)
 	{
@@ -225,149 +205,63 @@ o.doesTroopAlreadyExist <- function(_troop, _troops)
 
 	o.addUnitsToEntity = function ( _entity, _partyList, _resources )
 	{
-		local total_weight = 0;
-		local potential = [];
-		//testing new bandit spawns
-		if ("IsBandit" in _partyList)
-		{
-			this.Const.World.Common.assignTroopsDynamic(_entity, _partyList, _resources);
-			
-			if (_entity.isLocation())
-		{
-			_entity.resetDefenderSpawnDay();
-		}
-		return;
-			local party =
-		{
-			Troops = []
-		}
-		
-		party.MovementSpeedMult <- _partyList.MovementSpeedMult;
-		party.VisibilityMult <- _partyList.VisibilityMult;
-		party.VisionMult <- _partyList.VisionMult;
-		party.Body <- _partyList.Body;
-
-		local troops = _partyList.Troops;
-
-		local total_weight = 0;
-		foreach(t in troops)
-		{
-			total_weight += t.Weight;
-		}
-
-		if(total_weight != 100)
-		{
-			this.logInfo("Weight is not 100%");
-		}
-		//currently assumes all weights add to 100
-
-		while(_resources > 0)
-		{
-			local random = this.Math.rand(1, 100);
-
-			local weight = 0;
-
-			foreach(t in troops)
-			{
-				weight += t.Weight;
-
-				if (random <= weight)
-				{
-					local type = this.Math.rand(0, t.Types.len() - 1);
-					local troop = t.Types[type];
-					local troop_existence = this.doesTroopAlreadyExist(troop, party.Troops);
-					if(troop_existence.AlreadyExists)
-					{
-						++party.Troops[troop_existence.Index].Num;
-						_resources = _resources - troop.Cost;
-						break;
-					}
-					troop.Num <- 1;
-					party.Troops.push(troop);
-					_resources = _resources - troop.Cost;
-				}
-			}
-		}
-
-			foreach( t in party.Troops )
-			{
-				local mb;
-
-				if (this.getDifficultyMult() >= 1.15)
-				{
-					mb = 5;
-				}
-				else if (this.getDifficultyMult() >= 0.85)
-				{
-					mb = 0;
-				}
-				else
-				{
-					mb = -99;
-				}
-
-				for( local i = 0; i != t.Num; i = ++i )
-				{
-					this.Const.World.Common.addTroop(_entity, t, false, mb);
-				}
-			}
-
-			if (_entity.isLocation())
-			{
-				_entity.resetDefenderSpawnDay();
-			}
-
-			_entity.updateStrength();
-			return;
-		}
-
-		foreach( party in _partyList )
-		{
-			if (party.Cost < _resources * 0.7)
-			{
-				continue;
-			}
-
-			if (party.Cost > _resources)
-			{
-				break;
-			}
-
-			potential.push(party);
-			total_weight = total_weight + party.Cost;
-		}
-
 		local p;
 
-		if (potential.len() == 0)
+		if ("IsDynamic" in _partyList)
 		{
-			local best;
-			local bestCost = 9000;
-
-			foreach( party in _partyList )
-			{
-				if (this.Math.abs(_resources - party.Cost) <= bestCost)
-				{
-					best = party;
-					bestCost = this.Math.abs(_resources - party.Cost);
-				}
-			}
-
-			p = best;
+			p = this.Const.World.Common.buildDynamicTroopList(_partyList, _resources)
 		}
 		else
 		{
-			local pick = this.Math.rand(1, total_weight);
+			local total_weight = 0;
+			local potential = [];
 
-			foreach( party in potential )
+			foreach( party in _partyList )
 			{
-				if (pick <= party.Cost)
+				if (party.Cost < _resources * 0.7)
 				{
-					p = party;
+					continue;
+				}
+
+				if (party.Cost > _resources)
+				{
 					break;
 				}
 
-				pick = pick - party.Cost;
+				potential.push(party);
+				total_weight = total_weight + party.Cost;
+			}
+
+			if (potential.len() == 0)
+			{
+				local best;
+				local bestCost = 9000;
+
+				foreach( party in _partyList )
+				{
+					if (this.Math.abs(_resources - party.Cost) <= bestCost)
+					{
+						best = party;
+						bestCost = this.Math.abs(_resources - party.Cost);
+					}
+				}
+
+				p = best;
+			}
+			else
+			{
+				local pick = this.Math.rand(1, total_weight);
+
+				foreach( party in potential )
+				{
+					if (pick <= party.Cost)
+					{
+						p = party;
+						break;
+					}
+
+					pick = pick - party.Cost;
+				}
 			}
 		}
 
