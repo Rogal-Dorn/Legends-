@@ -756,7 +756,15 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 		}
 	]
 }
-//might be unnecessary code below, commented out to check
-//this.Const.World.Spawn.Beasts <- [];
-//this.Const.World.Spawn.Beasts.extend(this.Const.World.Spawn.Direwolves);
-//this.Const.World.Spawn.Beasts.extend(this.Const.World.Spawn.Ghouls);
+
+this.Const.World.Spawn.Beasts <- {};
+
+foreach(k, v in this.Const.World.Spawn.Direwolves)
+{
+	this.Const.World.Spawn.Beasts.rawset(k, v);
+}
+
+foreach(k, v in this.Const.World.Spawn.Ghouls)
+{
+	this.Const.World.Spawn.Beasts.rawset(k, v);
+}
