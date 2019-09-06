@@ -17,70 +17,53 @@ gt.Const.World.Spawn.Noble <- [
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_noble_01",
-	Troops = 
-	[
-		Melee =
+	Troops = [
 		{
 			Weight = 60,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
-					Cost = 8
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.Billman,
-					Cost = 12
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.Greatsword,
-					Cost = 15
-				},				
-			]
-		},
-		// Cavalry =
-		// {
-		// 		Weight = 5,
-		// 		Types = 
-		// 		[
-		// 			{
-		// 				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-		// 				Cost = 5
-		// 			}
-		//		]
-		// },
-		Ranged =
-		{
-			Weight = 15,
-			Types =
-			[
-				{
-					Type = this.Const.World.Spawn.Troops.Arbalester,
-					Cost = 15
-				}
-			]
-		},
-		Leader =
-		{
-			Weight = 25,
-			Types =
-			[
-				{
-					Type = this.Const.World.Spawn.Troops.StandardBearer,
-					Cost = 30
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.Sergeant,
 					Cost = 20
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.Knight,
+					Type = this.Const.World.Spawn.Troops.Billman,
+					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.Greatsword,
 					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 15,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Arbalester,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 25,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.StandardBearer,
+					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.Sergeant,
+					Cost = 25
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.Knight,
+					Cost = 35
 				}
 			]
 		}
 	]
 }
+
 gt.Const.World.Spawn.NobleCaravan <- 
 {
 	IsDynamic = true,
@@ -88,59 +71,50 @@ gt.Const.World.Spawn.NobleCaravan <-
 	VisibilityMult = 1.0,
 	VisionMult = 0.25,
 	Body = "cart_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 70,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
-					Cost = 8
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Billman,
-					Cost = 12
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Greatsword,
-					Cost = 15
+					Cost = 25
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 5,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-					Cost = 5
+					Cost = 0
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 20,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Arbalester,
-					Cost = 15
-				}
-			]
-		},
-		Leader =
-		{
-			Weight = 10,
-			Types =
-			[
-				{
-					Type = this.Const.World.Spawn.Troops.Sergeant,
 					Cost = 20
 				}
 			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Sergeant,
+					Cost = 25
+				}
+			]
 		}
-	}
+	]
 }

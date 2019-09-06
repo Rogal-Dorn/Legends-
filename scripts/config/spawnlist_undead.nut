@@ -17,69 +17,60 @@ gt.Const.World.Spawn.UndeadArmy <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_skeleton_01",
-	Troops = 
-	[
-		Melee =
+	Troops = [
 		{
 			Weight = 70,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonLight,
-					Cost = 5
+					Cost = 13
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonMedium,
-					Cost = 10
+					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
-					Cost = 12
+					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavy,
-					Cost = 18
+					Cost = 35
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavyBodyguard,
-					Cost = 20
+					Cost = 35
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 15,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.VampireLOW,
-					Cost = 20
+					Cost = 30
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					Cost = 25
-				}				
-			]
-		},
-		Ranged =
-		{
-			Weight = 20,
-			Types =
-			[
-				{
-					Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
-					Cost = 7
+					Cost = 40
 				}
 			]
 		},
-		Leader =
+		{
+			Weight = 20,
+			Types =[
+				{
+					Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
+					Cost = 25
+				}
+			]
+		},
 		{
 			Weight = 5,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonPriest,
-					Cost = 25
+					Cost = 40
 				}
 			]
 		}
@@ -93,24 +84,21 @@ gt.Const.World.Spawn.Vampires <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_vampire_02",
-	Troops =
-	{
-		Leader =
+	Troops = [
 		{
 			Weight = 100,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.VampireLOW,
-					Cost = 20
-				},			
+					Cost = 30
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					Cost = 25
+					Cost = 40
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.VampiresAndSkeletons <- 
@@ -120,33 +108,28 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_vampire_01",
-	Troops = 
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 70,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonLight,
-					Cost = 5
+					Cost = 13
 				}
 			]
-		},	
-		Leader =
+		},
 		{
 			Weight = 30,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.VampireLOW,
-					Cost = 20
-				},			
+					Cost = 30
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					Cost = 25
+					Cost = 40
 				}
 			]
 		}
-	}
+	]
 }

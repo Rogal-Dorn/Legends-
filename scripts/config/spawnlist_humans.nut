@@ -17,16 +17,13 @@ gt.Const.World.Spawn.Cultists <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_civilian_03",
-	Troops = 
-	[
-		Melee =
+	Troops = [
 		{
 			Weight = 100,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.CultistAmbush,
-					Cost = 5
+					Cost = 15
 				}
 			]
 		}
@@ -40,19 +37,19 @@ gt.Const.World.Spawn.Peasants <-
 	VisibilityMult = 1.0,
 	VisionMult = 0.75,
 	Body = "figure_civilian_03",
-	Troops = 
-	[
-		Melee =
+	Troops = [
 		{
 			Weight = 100,
-			Types =		
-			{
-				Type = this.Const.World.Spawn.Troops.Peasant,			
-				Cost = 2
-			}
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Peasant,
+					Cost = 10
+				}
+			]
 		}
 	]
 }
+
 gt.Const.World.Spawn.PeasantsArmed <- 
 {
 	IsDynamic = true,
@@ -60,19 +57,19 @@ gt.Const.World.Spawn.PeasantsArmed <-
 	VisibilityMult = 1.0,
 	VisionMult = 0.75,
 	Body = "figure_civilian_03",
-	Troops = 
-	[
-		Melee =
+	Troops = [
 		{
 			Weight = 100,
-			Types =		
-			{
-				Type = this.Const.World.Spawn.Troops.PeasantArmed,				
-				Cost = 5
-			}
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantArmed,
+					Cost = 10
+				}
+			]
 		}
 	]
-}	
+}
+
 gt.Const.World.Spawn.BountyHunters <- 
 {
 	IsDynamic = true,
@@ -80,38 +77,31 @@ gt.Const.World.Spawn.BountyHunters <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_03",
-	Troops = 
-	[
-		Melee =
+	Troops = [
 		{
 			Weight = 70,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BountyHunter,
-					Cost = 10
+					Cost = 25
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 10,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
-					Cost = 5
+					Cost = 8
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 20,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BountyHunterRanged,
-					Cost = 12
+					Cost = 20
 				}
 			]
 		}
@@ -125,74 +115,66 @@ gt.Const.World.Spawn.Mercenaries <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_03",
-	Troops = 
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 70,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.MercenaryLOW,
-					Cost = 5
+					Cost = 18
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Mercenary,
-					Cost = 8
+					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.HedgeKnight,
-					Cost = 20
+					Cost = 40
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Swordmaster,
-					Cost = 20
-				}				
-			]
-		},
-		Cavalry =
-		{
-			Weight = 5,
-			Types = 
-			[
-				{
-					Type = this.Const.World.Spawn.Troops.Wardog,
-					Cost = 5
+					Cost = 40
 				}
 			]
 		},
-		Ranged =
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Wardog,
+					Cost = 8
+				}
+			]
+		},
 		{
 			Weight = 20,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.MercenaryRanged,
-					Cost = 10
+					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
-					Cost = 20
+					Cost = 40
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 5,
-			Types =
-			[
+			Types =[
 				{
 					Type = this.Const.World.Spawn.Troops.HedgeKnight,
-					Cost = 20
+					Cost = 40
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Swordmaster,
-					Cost = 20
+					Cost = 40
 				}
 			]
 		}
-	}
-}	
+	]
+}
 
 gt.Const.World.Spawn.Militia <- 
 {
@@ -201,54 +183,37 @@ gt.Const.World.Spawn.Militia <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_militia_01",
-	Troops = 
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 70,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Militia,
-					Cost = 8
+					Cost = 10
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.MilitiaVeteran,
-					Cost = 15
-				}		
-			]
-		},
-		// Cavalry =
-		// {
-		//	Weight = 0,
-		//	Types = [
-		//		{
-		//			Type = this.Const.World.Spawn.Troops.Wardog,
-		//			Cost = 5
-		//		}
-		//	]
-		// },
-		Ranged =
-		{
-			Weight = 20,
-			Types =
-			[
-				{
-					Type = this.Const.World.Spawn.Troops.MilitiaRanged,
 					Cost = 12
 				}
 			]
 		},
-		Leader =
+		{
+			Weight = 20,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.MilitiaRanged,
+					Cost = 10
+				}
+			]
+		},
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.MilitiaCaptain,
-					Cost = 15
+					Cost = 20
 				}
 			]
 		}
-	}
+	]
 }

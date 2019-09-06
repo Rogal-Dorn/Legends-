@@ -32,42 +32,35 @@ gt.Const.World.Spawn.Direwolves <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_werewolf_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 79,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
 					Cost = 20
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 20,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.DirewolfHIGH,
 					Cost = 25
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 1,
-			Types =
-			[
+			Types =[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
 					Cost = 75
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.Ghouls <-
@@ -77,13 +70,10 @@ gt.Const.World.Spawn.Ghouls <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_ghoul_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 79,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulLOW,
 					Cost = 9
@@ -94,22 +84,18 @@ gt.Const.World.Spawn.Ghouls <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 20,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
 					Cost = 30
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 1,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 					Cost = 50
@@ -124,7 +110,7 @@ gt.Const.World.Spawn.Ghouls <-
 				}
 			]
 		}
-	}
+	]
 }
 
 
@@ -135,31 +121,26 @@ gt.Const.World.Spawn.Lindwurm <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_lindwurm_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Lindwurm,
 					Cost = 80
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
 					Cost = 270
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.Unhold <-
@@ -169,31 +150,26 @@ gt.Const.World.Spawn.Unhold <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_unhold_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Unhold,
 					Cost = 50
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
 					Cost = 180
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.UnholdFrost <-
@@ -203,31 +179,26 @@ gt.Const.World.Spawn.UnholdFrost <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_unhold_02",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdFrost,
 					Cost = 60
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
 					Cost = 180
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.UnholdBog <-
@@ -237,31 +208,26 @@ gt.Const.World.Spawn.UnholdBog <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_unhold_03",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdBog,
 					Cost = 50
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
 					Cost = 180
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.Spiders <-
@@ -271,31 +237,26 @@ gt.Const.World.Spawn.Spiders <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_spiders_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Spider,
 					Cost = 12
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types =[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 					Cost = 100
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.Alps <-
@@ -305,42 +266,35 @@ gt.Const.World.Spawn.Alps <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_alp_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 85,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Alp,
 					Cost = 30
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 10,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
 					Cost = 20
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 5,
-			Types =
-			[
+			Types =[
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
 					Cost = 105
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.Schrats <-
@@ -350,31 +304,26 @@ gt.Const.World.Spawn.Schrats <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_schrat_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Schrat,
 					Cost = 70
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
 					Cost = 210
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.HexenAndMore <-
@@ -384,13 +333,10 @@ gt.Const.World.Spawn.HexenAndMore <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_hexe_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 65,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
@@ -433,11 +379,9 @@ gt.Const.World.Spawn.HexenAndMore <-
 				},
 			]
 		},
-		Cavalry =
 		{
 			Weight = 20
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
 					Cost = 20
@@ -448,22 +392,18 @@ gt.Const.World.Spawn.HexenAndMore <-
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 5,
-			Types = 
-			[
+			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.BanditMarksmen,
+					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					Cost = 15
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Hexe,
 					Cost = 50
@@ -474,7 +414,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 				}
 			]
 		}
-	}
+	]
 }
 
 
@@ -485,13 +425,10 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_hexe_leader_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 65,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
@@ -562,11 +499,9 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 20
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
 					Cost = 20
@@ -577,22 +512,18 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 5,
-			Types = 
-			[
+			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.BanditMarksmen,
+					Type = this.Const.World.Spawn.Troops.BanditMarksman,
 					Cost = 15
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Hexe,
 					Cost = 50
@@ -603,7 +534,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.LegendRockUnhold <-
@@ -613,31 +544,26 @@ gt.Const.World.Spawn.LegendRockUnhold <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_rock_unhold_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdFrost,
 					Cost = 60
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
 					Cost = 180
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.LegendSkinGhouls <-
@@ -647,13 +573,10 @@ gt.Const.World.Spawn.LegendSkinGhouls <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_ghoul_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
 					Cost = 50
@@ -664,18 +587,16 @@ gt.Const.World.Spawn.LegendSkinGhouls <-
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulHIGH,
 					Cost = 200
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.LegendWhiteDirewolf <-
@@ -685,13 +606,10 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_white_direwolf_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 90,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Direwolf,
 					Cost = 20
@@ -702,18 +620,16 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
 					Cost = 75
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.LegendRedbackSpider <-
@@ -723,42 +639,35 @@ gt.Const.World.Spawn.LegendRedbackSpider <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_redback_spider_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 85,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Spider,
 					Cost = 12
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 5
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
 					Cost = 20
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 					Cost = 100
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.LegendDemonAlp <-
@@ -768,31 +677,26 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 	VisibilityMult = 0.7,
 	VisionMult = 1.3,
 	Body = "figure_demonalp_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 60,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Alp,
 					Cost = 30
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 40,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
 					Cost = 105
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.LegendStollwurm <-
@@ -802,31 +706,26 @@ gt.Const.World.Spawn.LegendStollwurm <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.1,
 	Body = "figure_stollwurm_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 60,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Lindwurm,
 					Cost = 80
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 40,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
 					Cost = 270
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.LegendGreenwoodSchrat <-
@@ -836,31 +735,26 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 	VisibilityMult = 0.9,
 	VisionMult = 1.2,
 	Body = "figure_greenwood_schrat_01",
-	Troops =
-	{
-		Melee =
+	Troops = [
 		{
 			Weight = 60,
-			Types = 
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Schrat,
 					Cost = 70
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 40,
-			Types =
-			[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
 					Cost = 210
 				}
 			]
 		}
-	}
+	]
 }
 
 this.Const.World.Spawn.Beasts <- [];
