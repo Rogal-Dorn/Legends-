@@ -17,14 +17,14 @@ gt.Const.World.Spawn.BanditRoamers <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
-	Troops =
-	{
-		Melee =
+	Fixed = [],
+	Troops = [
 		{
 			Weight = 70,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
+					MaxResource = 500,
 					Cost = 5
 				},
 				{
@@ -41,7 +41,6 @@ gt.Const.World.Spawn.BanditRoamers <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 5,
 			Types = [
@@ -51,7 +50,6 @@ gt.Const.World.Spawn.BanditRoamers <-
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 20,
 			Types =
@@ -70,18 +68,18 @@ gt.Const.World.Spawn.BanditRoamers <-
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 5,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
+					MinResource = 100,
 					Cost = 25
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.BanditScouts <-
@@ -91,14 +89,14 @@ gt.Const.World.Spawn.BanditScouts <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
-	Troops =
-	{
-		Melee =
+	Fixed = [],
+	Troops =[
 		{
 			Weight = 60,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
+					MaxResource = 500,
 					Cost = 5
 				},
 				{
@@ -115,7 +113,6 @@ gt.Const.World.Spawn.BanditScouts <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 10,
 			Types = [
@@ -125,7 +122,6 @@ gt.Const.World.Spawn.BanditScouts <-
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 25,
 			Types =
@@ -144,18 +140,18 @@ gt.Const.World.Spawn.BanditScouts <-
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 5,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
+					MinResource = 100,
 					Cost = 25
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.BanditRaiders <-
@@ -166,8 +162,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Troops =
-	{
-		Melee =
+	[
 		{
 			Weight = 75,
 			Types = [
@@ -189,7 +184,6 @@ gt.Const.World.Spawn.BanditRaiders <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 3,
 			Types = [
@@ -240,8 +234,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Troops =
-	{
-		Melee =
+	[
 		{
 			Weight = 70,
 			Types = [
@@ -263,7 +256,6 @@ gt.Const.World.Spawn.BanditDefenders <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 5,
 			Types = [
@@ -273,7 +265,6 @@ gt.Const.World.Spawn.BanditDefenders <-
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 20,
 			Types =
@@ -293,7 +284,6 @@ gt.Const.World.Spawn.BanditDefenders <-
 				21
 			]
 		},
-		Leader =
 		{
 			Weight = 5,
 			Types =
@@ -304,7 +294,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.BanditBoss <-
@@ -315,8 +305,7 @@ gt.Const.World.Spawn.BanditBoss <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Troops =
-	{
-		Melee =
+	[
 		{
 			Weight = 70,
 			Types = [
@@ -338,7 +327,6 @@ gt.Const.World.Spawn.BanditBoss <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 5,
 			Types = [
@@ -348,7 +336,6 @@ gt.Const.World.Spawn.BanditBoss <-
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 20,
 			Types =
@@ -367,7 +354,6 @@ gt.Const.World.Spawn.BanditBoss <-
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 10,
 			Types =
@@ -378,7 +364,7 @@ gt.Const.World.Spawn.BanditBoss <-
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
@@ -389,8 +375,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Troops =
-	{
-		Melee =
+	[
 		{
 			Weight = 70,
 			Types = [
@@ -400,7 +385,6 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 				}
 			]
 		},
-		Cavalry =
 		{
 			Weight = 5,
 			Types = [
@@ -410,7 +394,6 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 				}
 			]
 		},
-		Ranged =
 		{
 			Weight = 20,
 			Types =
@@ -429,7 +412,6 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 				}
 			]
 		},
-		Leader =
 		{
 			Weight = 5,
 			Types =
@@ -440,5 +422,5 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 				}
 			]
 		}
-	}
+	]
 }
