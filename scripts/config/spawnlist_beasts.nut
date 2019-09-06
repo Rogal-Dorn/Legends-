@@ -53,7 +53,7 @@ gt.Const.World.Spawn.Direwolves <-
 		},
 		{
 			Weight = 1,
-			Types =[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
 					Cost = 75
@@ -249,7 +249,7 @@ gt.Const.World.Spawn.Spiders <-
 		},
 		{
 			Weight = 10,
-			Types =[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 					Cost = 100
@@ -287,7 +287,7 @@ gt.Const.World.Spawn.Alps <-
 		},
 		{
 			Weight = 5,
-			Types =[
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
 					Cost = 105
