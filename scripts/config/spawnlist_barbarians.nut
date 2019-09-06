@@ -89,7 +89,7 @@ gt.Const.World.Spawn.BarbarianHunters <-
 					Cost = 12
 				}
 			]
-		}
+		},
 		{
 			Weight = 34,
 			Types = [
@@ -101,7 +101,6 @@ gt.Const.World.Spawn.BarbarianHunters <-
 		}
 	]
 }
-
 
 gt.Const.World.Spawn.BarbarianKing <- 
 {
