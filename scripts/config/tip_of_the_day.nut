@@ -17,7 +17,7 @@ gt.Const.TipOfTheDay <- [
 	"Ranged weapon accuracy drops with distance.",
 	"Female professions have more fatigue but less health than their male counterparts",
 	"Your stash size is determined by the people you hire",
-	"Apprentices, blacksmiths and ironongers can help repair your equipment quickly",
+	"Apprentices, blacksmiths and ironmongers can help repair your equipment quickly",
 	"Magic damage is based on your initiative",
 	"You don\'t have to be a hero, you\'re running a business.",
 	"Valas are mystic women capable of inscribing powerful runes on your gear.",
