@@ -236,7 +236,7 @@ gt.Const.World.Spawn.Spiders <-
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
-	Body = "figure_spiders_01",
+	Body = "figure_spider_01",
 	Troops = [
 		{
 			Weight = 90,
@@ -756,7 +756,7 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 		}
 	]
 }
-
-this.Const.World.Spawn.Beasts <- [];
-this.Const.World.Spawn.Beasts.extend(this.Const.World.Spawn.Direwolves);
-this.Const.World.Spawn.Beasts.extend(this.Const.World.Spawn.Ghouls);
+//might be unnecessary code below, commented out to check
+//this.Const.World.Spawn.Beasts <- [];
+//this.Const.World.Spawn.Beasts.extend(this.Const.World.Spawn.Direwolves);
+//this.Const.World.Spawn.Beasts.extend(this.Const.World.Spawn.Ghouls);

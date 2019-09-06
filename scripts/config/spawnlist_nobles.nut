@@ -10,8 +10,7 @@ if (!("Spawn" in gt.Const.World))
 	gt.Const.World.Spawn <- {};
 }
 
-gt.Const.World.Spawn.Noble <- [
-{
+gt.Const.World.Spawn.Noble <- {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
