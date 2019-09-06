@@ -28,7 +28,7 @@ gt.Const.World.Spawn.OrcRoamers <-
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
 					Cost = 16
-				},
+				}
 			]
 		},
 		{
@@ -83,7 +83,7 @@ gt.Const.World.Spawn.OrcScouts <-
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
 					Cost = 16
-				},
+				}
 			]
 		},
 		{
@@ -142,7 +142,7 @@ gt.Const.World.Spawn.OrcRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
 					Cost = 16
-				},
+				}
 			]
 		},
 		{
@@ -210,7 +210,7 @@ gt.Const.World.Spawn.OrcDefenders <-
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
 					Cost = 16
-				},
+				}
 			]
 		},
 		{
@@ -270,7 +270,7 @@ gt.Const.World.Spawn.OrcBoss <-
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
 					Cost = 16
-				},
+				}
 			]
 		},
 		{
@@ -358,7 +358,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
 					Cost = 16
-				},
+				}
 			]
 		},
 		{
