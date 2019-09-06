@@ -10,15 +10,6 @@ if (!("Spawn" in gt.Const.World))
 	gt.Const.World.Spawn <- {};
 }
 
-gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <- {};
-gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <- {};
-
-foreach(k, v in this.Const.World.Spawn.Zombies)
-{
-	this.Const.World.Spawn.ZombiesOrZombiesAndGhosts.rawset(k, v);
-	this.Const.World.Spawn.ZombiesOrZombiesAndGhouls.rawset(k, v);
-}
-
 gt.Const.World.Spawn.Zombies <- 
 {
 	IsDynamic = true,
@@ -101,6 +92,9 @@ gt.Const.World.Spawn.ZombiesLight <-
 		}
 	]
 }
+
+gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <- {};
+gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <- {};
 
 foreach(k, v in this.Const.World.Spawn.Zombies)
 {

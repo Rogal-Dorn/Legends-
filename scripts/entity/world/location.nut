@@ -578,7 +578,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		local best;
 		if ("IsDynamic" in this.m.DefenderSpawnList)
 		{
-			p = this.Const.World.Common.buildDynamicTroopList(this.m.DefenderSpawnList, _resources)
+			p = this.Const.World.Common.buildDynamicTroopList(this.m.DefenderSpawnList, resources)
 		}
 		else
 		{
