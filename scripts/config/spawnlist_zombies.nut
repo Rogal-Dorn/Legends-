@@ -93,11 +93,229 @@ gt.Const.World.Spawn.ZombiesLight <-
 	]
 }
 
-gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <- {};
-gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <- {};
-
-foreach(k, v in this.Const.World.Spawn.Zombies)
+gt.Const.World.Spawn.ZombiesAndGhouls <- 
 {
-	this.Const.World.Spawn.ZombiesOrZombiesAndGhosts.rawset(k, v);
-	this.Const.World.Spawn.ZombiesOrZombiesAndGhouls.rawset(k, v);
+	IsDynamic = true,
+	MovementSpeedMult = 0.8,
+	VisibilityMult = 1.0,
+	VisionMult = 0.8,
+	Body = "figure_zombie_01",
+	Troops = [
+		{
+			Weight = 50,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Zombie,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+					Cost = 12
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnight,
+					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 50,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulLOW,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulMED,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
+					Cost = 5
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <- 
+{
+	IsDynamic = true,
+	MovementSpeedMult = 0.8,
+	VisibilityMult = 1.0,
+	VisionMult = 0.8,
+	Body = "figure_zombie_01",
+	Troops = [
+		{
+			Weight = 75,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Zombie,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+					Cost = 12
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnight,
+					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 25,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulLOW,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulMED,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
+					Cost = 5
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.ZombiesAndGhosts <- 
+{
+	IsDynamic = true,
+	MovementSpeedMult = 0.8,
+	VisibilityMult = 1.0,
+	VisionMult = 0.8,
+	Body = "figure_zombie_01",
+	Troops = [
+		{
+			Weight = 70,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Zombie,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+					Cost = 12
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnight,
+					Cost = 25
+				}
+			]
+		}
+		{
+			Weight = 30,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Ghost,
+					Cost = 20
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <- 
+{
+	IsDynamic = true,
+	MovementSpeedMult = 0.8,
+	VisibilityMult = 1.0,
+	VisionMult = 0.8,
+	Body = "figure_zombie_01",
+	Troops = [
+		{
+			Weight = 85,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Zombie,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+					Cost = 12
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnight,
+					Cost = 25
+				}
+			]
+		}
+		{
+			Weight = 15,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Ghost,
+					Cost = 20
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.Necromancer <- 
+{
+	IsDynamic = true,
+	MovementSpeedMult = 0.8,
+	VisibilityMult = 1.0,
+	VisionMult = 0.8,
+	Body = "figure_zombie_01",
+	Troops = [
+		{
+			Weight = 65,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Zombie,
+					Cost = 5
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+					Cost = 12
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnight,
+					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 15,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieBodyguard,
+					Cost = 6
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanBodyguard,
+					Cost = 12
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieKnightBodyguard,
+					Cost = 25
+				}
+			]
+		}
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Ghost,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Necromancer,
+					Cost = 30
+				}
+			]
+		}
+	]
 }
