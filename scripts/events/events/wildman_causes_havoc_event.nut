@@ -13,7 +13,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 50.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Civilization is no place for a wildling like %wildman%, who quickly proves it.\n\nApparently, the damned mercenary went crazy while in a shop and trashed the whole place. As the story goes, they just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after them with a broom, trying to shoo the wildling out of his store. Believing the broom a monster, the wildling proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.",
+			Text = "[img]gfx/ui/events/event_20.png[/img]Civilization is no place for a wildling like %vandal%, who quickly proves it.\n\nApparently, the damned mercenary went crazy while in a shop and trashed the whole place. As the story goes, they just walked in and started taking things, not quite understanding the social norms of paying for goods. The shop owner then came after them with a broom, trying to shoo the wildling out of his store. Believing the broom a monster, the wildling proceeded to go completely crazy. Judging by the reports, it was quite the commotion, up to and including shite throwing.\n\nNow the shop owner is in your face demanding compensation for the damage done. Apparently he\'s wanting %compensation% crowns. Behind him, a few town militia stand with very watchful eyes.",
 			Image = "",
 			List = [],
 			Characters = [],			
@@ -65,7 +65,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 				if (_event.m.Trader != null)
 				{
 					this.Options.push({
-						Text = "Fine, the company will cover the damages. But %trader% will assess compensation",
+						Text = "Fine, the company will cover the damages. But %trader% will assess compensation.",
 						function getResult( _event )
 						{
 							if (_event.m.Berserker != null)
@@ -82,10 +82,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 
 					});
 				}
-			}
-
-			function end( _event )
-			{
+				
 				if (_event.m.Berserker != null)
 				{
 					this.Characters.push(_event.m.Berserker.getImagePath());
@@ -96,7 +93,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					this.Characters.push(_event.m.Wildman.getImagePath());
 				}
 			}
-
+			
 		});
 		this.m.Screens.push({
 			ID = "B",
@@ -109,6 +106,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					Text = "To hell with your shop.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(-1);
 						return this.Math.rand(1, 100) <= 80 ? "E" : 0;
 					}
 
@@ -141,6 +139,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					Text = "Charity through destruction?",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(2);
 						return 0;
 					}
 
@@ -215,7 +214,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "X",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildling\'s. You dock their pay: for some time to come, the mercenary\'s earnings will be halved. Furthermore, you take what earnings they\'ve made and hand it over to the shop owner. It doesn\'t even begin to cover the damages, but it\'s a start. One is left happy, and another quite disgruntled.\n\nYou tell the wild cretin that now they\'ll think twice about smearing shit all over someone else\'s walls. But the wildling doesn\'t seem to understand you. %wildman% just understands that the gold they once owned has been given to someone else, and eyes its departure with sadness and bottled anger.",
+			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildling\'s. You dock their pay: for some time to come, the mercenary\'s earnings will be halved. %vandal%  doesn’t take this information lightly. As his face starts to express evergrowing anger, you start to question yourself whether it was good idea to discipline such a volatile brute. Eventually %vandal%\'s  restrain breaks, and he jumps at you with fists eager to smash your face. Before rest of %companyname% finally  manage to restrain %vandal%, captain almost fainted. This time compensation for damage caused by wildlings of %companyname% was paid both with crowns and blood of your men.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -297,6 +296,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					Text = "A shame it had to come to this.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(-2);
 						this.World.FactionManager.getFaction(_event.m.Town.getFactions()[0]).addPlayerRelation(this.Const.World.Assets.RelationBetrayal, "You killed some of the militia");
 						local properties = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
 						properties.CombatID = "Event";
@@ -313,6 +313,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					Text = "Fine. I did not wake up this morning looking to slaughter innocents.",
 					function getResult( _event )
 					{
+						this.World.Assets.addMoralReputation(1);
 						return "G";
 					}
 
@@ -387,6 +388,44 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
+		this.m.Screens.push({
+			ID = "T",
+			Text = "[img]gfx/ui/events/event_01.png[/img]%trader% goes and sees the shop. The wildling truly did a number on the place. %trader% demands a list for all caused by %vandal%. The shop owner hands it over… reluctantly. Your trader engages into heated discussion about proper evaluation of compensation for this act of vandalism. Looks like the shop owner wanted to earn extra coins on your account. Numbers on his list were so exaggerated, he could afford three new shops if you paid it. After proper evaluation of necessary compensation by %trader%,  you agree to pay for the damages, something most mercenary bands would not have done. This act of kindness does not slip the townspeople by.",
+			Image = "",
+			List = [],
+			Characters = [],
+			Options = [
+				{
+					Text = "Charity through destruction?",
+					function getResult( _event )
+					{
+						this.World.Assets.addMoralReputation(2);
+						return 0;
+					}
+
+				}
+			],
+			function start( _event )
+			{
+				if (_event.m.Berserker != null)
+				{
+					this.Characters.push(_event.m.Berserker.getImagePath());
+				}
+
+				if (_event.m.Wildman != null && _event.m.Berserker == null)
+				{
+					this.Characters.push(_event.m.Wildman.getImagePath());
+				}
+
+				this.World.Assets.addMoney(-_event.m.Compensation);
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_money.png",
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]" + _event.m.Compensation + "[/color] Crowns"
+				});
+			}
+
+		});
 	}
 
 	function onUpdateScore()
@@ -396,7 +435,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (this.World.Assets.getMoney() < this.m.Compensation)
+		if (this.World.Assets.getMoney() < 600)
 		{
 			return;
 		}
@@ -408,7 +447,8 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 
 		foreach( t in towns )
 		{
-			if (t.getTile().getDistanceTo(playerTile) <= 3 && !t.isIsolated())
+			if (t.getTile().getDistanceTo(playerTile) <= 3 && t.isAlliedWithPlayer())
+			// if (t.getTile().getDistanceTo(playerTile) <= 3 )
 			{
 				nearTown = true;
 				town = t;
@@ -423,31 +463,31 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 
 		this.m.Town = town;
 		local brothers = this.World.getPlayerRoster().getAll();
-		local candidates_wildmen = [];
+		local candidates_wildchars = [];
 		local candidates_berserkers = [];
 		local thetraders = [];
 
 		foreach( bro in brothers )
 		{
-			switch(bro.getBackground().getID())
+			switch (bro.getBackground().getID())
 			{
-			case "background.legend_trader":
-			case "background.legend_trader_commander":
-				thetraders.push(bro);
-				break;
-
-			case "background.wildman":
-			case "background.wildwoman":
-				candidates_wildmen.push(bro);
-				break;
-
-			case "background.legend_berserker":
-				candidates_berserkers.push(bro);
-				break;
+				case "background.legend_trader":
+				case "background.legend_trader_commander":
+					thetraders.push(bro);
+					break;
+				case "background.wildman":
+				case "background.wildwoman":
+					candidates_wildchars.push(bro);
+					break;
+				case "background.legend_berserker":
+					candidates_berserkers.push(bro);
+					break;
 			}
 		}
-
-		if (candidates_wildmen.len() == 0 && candidates_berserkers.len() == 0)
+		
+		// this.logInfo("Wildnubs= " + candidates_wildchars.len() + " WildBoss= " + candidates_berserkers.len() + " Traders= " + thetraders.len());
+		
+		if (candidates_wildchars.len() == 0 && candidates_berserkers.len() == 0)
 		{
 			return;
 		}
@@ -458,10 +498,10 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 			this.m.Berserker = candidates_berserkers[this.Math.rand(0, candidates_berserkers.len() - 1)];
 		}
 
-		if (candidates_wildmen.len() != 0)
+		if (candidates_wildchars.len() != 0)
 		{
 			this.m.Compensation = this.Math.round(500 + 0.03 * this.World.Assets.getMoney());
-			this.m.Wildman = candidates_wildmen[this.Math.rand(0, candidates_wildmen.len() - 1)];
+			this.m.Wildman = candidates_wildchars[this.Math.rand(0, candidates_wildchars.len() - 1)];
 		}
 
 		if (thetraders.len() != 0)
@@ -469,11 +509,8 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 			this.m.Trader = thetraders[this.Math.rand(0, thetraders.len() - 1)];
 		}
 
-		this.m.Town = town;
-		this.m.Score = 9999;
-		this.logDebug(towns);
-		this.logDebug(candidates_berserkers);
-		this.logDebug(candidates_wildmen);
+		// this.m.Score = 9999;
+		this.m.Score = candidates_wildchars.len() * 10 + candidates_berserkers.len() * 30;
 	}
 
 	function onPrepare()
@@ -484,16 +521,20 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"trader",
-			this.m.Trader.getNameOnly()
+			this.m.Trader != null ? this.m.Trader.getNameOnly() : ""
 		]);
 		_vars.push([
 			"berserker",
-			this.m.Berserker.getNameOnly()
+			this.m.Berserker != null ? this.m.Berserker.getNameOnly() : ""
 		]);
 		_vars.push([
 			"wildman",
-			this.m.Wildman.getNameOnly()
+			this.m.Wildman != null ? this.m.Wildman.getNameOnly() : ""
 		]);
+		_vars.push([		
+			"vandal",
+			this.m.Berserker != null ? this.m.Berserker.getNameOnly() : this.m.Wildman.getNameOnly()
+		]);		
 		_vars.push([
 			"townname",
 			this.m.Town.getName()
