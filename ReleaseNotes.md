@@ -1682,3 +1682,6 @@ Added more possible titles to Seer background
 Fixed white war wolf pet
 Fixed Noble player character demnading more pay in event
 Fixed typo in Towershield description
+
+12.7.1 Test 4?
+* Added hatchet and longaxe to both woodcutter specialist perks
