@@ -214,7 +214,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.BanditDefenders <-
@@ -270,7 +270,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 			]
 		},
 		{
-			Weight = 5s,
+			Weight = 5,
 			Types =
 			[
 				{
@@ -299,7 +299,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 				}
 			]
 		}
-	}
+	]
 }
 
 gt.Const.World.Spawn.BanditBoss <-

@@ -243,13 +243,14 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 	local troops = null;
 	local troopMap = {};
 
-	local resourceScale = (credits - _template.MinR) / _template.MaxR
+	local resourceScale = ((credits - _template.MinR) * 1.0) / (_template.MaxR * 1.0) * 1.5
 
 	local prevPoints = 0;
 	while (credits > 0)
 	{
 		local r = this.Math.rand(1, totalWeight)
-		foreach (t in _template.Troops)
+		local cat = 0;
+		foreach (i, t in _template.Troops)
 		{
 			r = r - t.Weight;
 			if (r > 0)
@@ -258,6 +259,7 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 			}
 
 			troops = t.Types;
+			cat = i;
 			break;
 		}
 		//We are assuming the Types list here is in Cost order
@@ -274,7 +276,7 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 			meanScaled = mean + resourceScale * (meanMax - min);
 			points = this.Math.max(min, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, deviation)) + prevPoints;
 			prevPoints = points;
-			//this.logInfo(cat + " Mean " + mean + " : Scaled " + meanScaled + " : Deviation " + deviation + " : Points " + points)
+			this.logInfo(cat + " Mean " + mean + " : Scaled " + meanScaled + " : Deviation " + deviation + " : Points " + points)
 		}
 		//Always purchase the most expensive unit we can
 		for (local i = troops.len() - 1; i >= 0; i = --i)
@@ -284,12 +286,12 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 				continue;
 			}
 
-			if ("MaxR" in troops[i] && _resource > troops[i].MaxR)
+			if ("MaxR" in troops[i] && _resources > troops[i].MaxR)
 			{
 				continue;
 			}
 
-			if ("MinR" in troops[i] && _resource < troops[i].MinR)
+			if ("MinR" in troops[i] && _resources < troops[i].MinR)
 			{
 				continue;
 			}
@@ -382,7 +384,9 @@ gt.Const.LegendMod.BoxMuller <- {
 
 	function BoxMuller( _mean, _deviation )
 	{
-		return _mean + this.generate() * _deviation;
+		local g = this.generate()
+		this.logInfo("G = " + g)
+		return _mean + g * _deviation;
 	}
 
 	function Next( _min, _max )
