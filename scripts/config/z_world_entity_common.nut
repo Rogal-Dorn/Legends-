@@ -232,47 +232,48 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 
 gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 {
+
 	local totalWeight = 0;
-	foreach (k, v in _template.Troops)
+	foreach (t in _template.Troops)
 	{
-		totalWeight += v.Weight;
+		totalWeight += t.Weight;
 	}
 
+	local credits = this.Math.max(_template.MinR, _resources)
 	local troops = null;
 	local troopMap = {};
 
-	local resourceScale = this.Math.pow(_resources / 10.0, 0.75)
+	local resourceScale = (credits - _template.MinR) / _template.MaxR
 
-	while (_resources > 0)
+	local prevPoints = 0;
+	while (credits > 0)
 	{
 		local r = this.Math.rand(1, totalWeight)
-		local cat
-		foreach (k, v in _template.Troops)
+		foreach (t in _template.Troops)
 		{
-
-			r = r - v.Weight;
+			r = r - t.Weight;
 			if (r > 0)
 			{
 				continue
 			}
 
-			troops = v.Types;
-			cat = k
+			troops = t.Types;
 			break;
 		}
 		//We are assuming the Types list here is in Cost order
 		//TODO call a sort on the spawnlist_xxxx file to guarentee this
 		local min = troops[0].Cost;
 		local max = troops.len() > 1 ? troops[1].Cost : troops[0].Cost;
-		local meanMax = troops[troops.len() - 1].Cost
-		local mean = (max + min) / 2.0
-		local deviation = (meanMax - min) / 2.0 / 3.0
+		local meanMax = troops[troops.len() - 1].Cost;
+		local mean = (max + min) / 2.0;
+		local deviation = (meanMax - min) / 2.0 / 3.0;
 		local meanScaled = 0;
 		local points = min;
 		if (mean > 0)
 		{
-			meanScaled = mean + this.Math.min(max + mean, resourceScale)
-			points = this.Math.max(min, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, deviation))
+			meanScaled = mean + resourceScale * (meanMax - min);
+			points = this.Math.max(min, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, deviation)) + prevPoints;
+			prevPoints = points;
 			//this.logInfo(cat + " Mean " + mean + " : Scaled " + meanScaled + " : Deviation " + deviation + " : Points " + points)
 		}
 		//Always purchase the most expensive unit we can
@@ -283,8 +284,18 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 				continue;
 			}
 
+			if ("MaxR" in troops[i] && _resource > troops[i].MaxR)
+			{
+				continue;
+			}
+
+			if ("MinR" in troops[i] && _resource < troops[i].MinR)
+			{
+				continue;
+			}
+
 			points -= troops[i].Cost;
-			_resources -= troops[i].Cost;
+			credits -= troops[i].Cost;
 
 			local key = troops[i].Type.Script;
 			if (!(key in troopMap))
@@ -318,6 +329,7 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 			// 	}
 			// }
 			// troopMap[key].Num += 1
+			prevPoints = 0;
 			break;
 		}
 	}
@@ -385,6 +397,17 @@ gt.Const.LegendMod.BoxMuller <- {
 	}
 }
 
+this.logInfo("****** 50 ")
+for (local i = 0; i < 10; i = ++i)
+{
+	this.logInfo(" > " + i)
+	local res = gt.Const.World.Common.buildDynamicTroopList(gt.Const.World.Spawn.BanditRaiders, 50)
+	foreach (t in res.Troops)
+	{
+		this.logInfo(t.Type.Script + " : " + t.Num)
+	}
+}
+
 this.logInfo("****** 100 ")
 for (local i = 0; i < 10; i = ++i)
 {
@@ -396,33 +419,22 @@ for (local i = 0; i < 10; i = ++i)
 	}
 }
 
+this.logInfo("****** 250 ")
+for (local i = 0; i < 10; i = ++i)
+{
+	this.logInfo(" > " + i)
+	local res = gt.Const.World.Common.buildDynamicTroopList(gt.Const.World.Spawn.BanditRaiders, 250)
+	foreach (t in res.Troops)
+	{
+		this.logInfo(t.Type.Script + " : " + t.Num)
+	}
+}
+
 this.logInfo("****** 500 ")
 for (local i = 0; i < 10; i = ++i)
 {
 	this.logInfo(" > " + i)
 	local res = gt.Const.World.Common.buildDynamicTroopList(gt.Const.World.Spawn.BanditRaiders, 500)
-	foreach (t in res.Troops)
-	{
-		this.logInfo(t.Type.Script + " : " + t.Num)
-	}
-}
-
-this.logInfo("****** 1000 ")
-for (local i = 0; i < 10; i = ++i)
-{
-	this.logInfo(" > " + i)
-	local res = gt.Const.World.Common.buildDynamicTroopList(gt.Const.World.Spawn.BanditRaiders, 1000)
-	foreach (t in res.Troops)
-	{
-		this.logInfo(t.Type.Script + " : " + t.Num)
-	}
-}
-
-this.logInfo("****** 2000 ")
-for (local i = 0; i < 10; i = ++i)
-{
-	this.logInfo(" > " + i)
-	local res = gt.Const.World.Common.buildDynamicTroopList(gt.Const.World.Spawn.BanditRaiders, 2000)
 	foreach (t in res.Troops)
 	{
 		this.logInfo(t.Type.Script + " : " + t.Num)
