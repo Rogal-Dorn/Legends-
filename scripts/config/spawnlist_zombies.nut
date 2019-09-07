@@ -123,15 +123,15 @@ gt.Const.World.Spawn.ZombiesAndGhouls <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulLOW,
-					Cost = 5
+					Cost = 9
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.GhoulMED,
-					Cost = 5
+					Type = this.Const.World.Spawn.Troops.Ghoul,
+					Cost = 19
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
-					Cost = 5
+					Cost = 30
 				}
 			]
 		}
@@ -168,15 +168,15 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulLOW,
-					Cost = 5
+					Cost = 9
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.GhoulMED,
-					Cost = 5
+					Type = this.Const.World.Spawn.Troops.Ghoul,
+					Cost = 19
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
-					Cost = 5
+					Cost = 30
 				}
 			]
 		}
