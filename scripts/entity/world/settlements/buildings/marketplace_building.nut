@@ -175,18 +175,6 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 	function onUpdateShopList()
 	{
 		local list = [
-		
-			
-			{
-				R = 10,
-				P = 1.0,
-				S = "weapons/rope_dart"
-			},
-			{
-				R = 10,
-				P = 1.0,
-				S = "weapons/sword_breaker"
-			},
 			{
 				R = 10,
 				P = 1.0,
