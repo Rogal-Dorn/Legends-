@@ -207,7 +207,7 @@ gt.Const.World.Spawn.ZombiesAndGhosts <-
 					Cost = 25
 				}
 			]
-		}
+		},
 		{
 			Weight = 30,
 			Types = [
@@ -244,7 +244,7 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 					Cost = 25
 				}
 			]
-		}
+		},
 		{
 			Weight = 15,
 			Types = [
@@ -256,6 +256,27 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 		}
 	]
 }
+
+gt.Const.World.Spawn.Ghosts <- 
+{
+	IsDynamic = true,
+	MovementSpeedMult = 0.8,
+	VisibilityMult = 1.0,
+	VisionMult = 0.8,
+	Body = "figure_zombie_01",
+	Troops = [
+		{
+			Weight = 30,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Ghost,
+					Cost = 20
+				}
+			]
+		}
+	]
+}
+
 
 gt.Const.World.Spawn.Necromancer <- 
 {
