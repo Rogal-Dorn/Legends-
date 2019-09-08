@@ -347,7 +347,6 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/direwolf_high"
 	},
-
 	DirewolfBodyguard = {
 		ID = this.Const.EntityType.Direwolf,
 		Variant = 0,
@@ -732,7 +731,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		Script = "scripts/entity/tactical/wardog"
 	},
-		BanditRabble = {
+	BanditRabble = {
 		ID = this.Const.EntityType.BanditRabble,
 		Variant = 0,
 		Strength = 5,
@@ -886,6 +885,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_white_direwolf"
 	},
+	LegendWhiteDirewolfBodyguard = {
+		ID = this.Const.EntityType.LegendWhiteDirewolf,
+		Variant = 0,
+		Strength = 300,
+		Cost = 75,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_white_direwolf_bodyguard"
+	},
 	LegendSkinGhoulLOW = {
 		ID = this.Const.EntityType.LegendSkinGhoul,
 		Variant = 0,
@@ -933,6 +940,14 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 100,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_redback_spider"
+	},
+	LegendRedbackSpiderBodyguard = {
+		ID = this.Const.EntityType.LegendRedbackSpider,
+		Variant = 0,
+		Strength = 100,
+		Cost = 100,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_redback_spider_bodyguard"
 	},
 	LegendDemonAlp = {
 		ID = this.Const.EntityType.LegendDemonAlp,
@@ -1423,12 +1438,12 @@ function calculateCosts( _p )
 // 		{
 // 			continue;
 // 		}
-		
+
 // 		// if (!t in this.Const.World.Spawn.TroopsMap)
 // 		{
 // 			this.logInfo("**** NOT IN TROOPSMAP " + t)
 // 		}
-		
+
 
 // 	}
 // }

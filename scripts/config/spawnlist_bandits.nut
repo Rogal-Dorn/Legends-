@@ -18,7 +18,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Fixed = [],
-	MinR = 56,
+	//MinR = 56,
 	MaxR = 220,
 	Troops = [
 		{
@@ -26,7 +26,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 100,
+					MaxR = 0.25 * 220,
 					Cost = 5
 				},
 				{
@@ -76,16 +76,16 @@ gt.Const.World.Spawn.BanditScouts <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
-	MinR = 61,
+	//MinR = 61,
 	MaxR = 170,
 	Fixed = [],
-	Troops =[
+	Troops = [
 		{
 			Weight = 70,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 100,
+					MaxR = 0.25 * 170,
 					Cost = 5
 				},
 				{
@@ -140,7 +140,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Fixed = [],
-	MinR = 63,
+	//MinR = 63,
 	MaxR = 600
 	Troops =
 	[
@@ -149,7 +149,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 100,
+					MaxR = 0.15 * 600,
 					Cost = 5
 				},
 				{
@@ -225,7 +225,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Fixed = [],
-	MinR = 45,
+	//MinR = 45,
 	MaxR = 585
 	Troops =
 	[
@@ -234,7 +234,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 100,
+					MaxR = 0.15 * 585,
 					Cost = 5
 				},
 				{
@@ -395,7 +395,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Fixed = [],
-	MinR = 75,
+	//MinR = 75,
 	MaxR = 475,
 	Troops =
 	[

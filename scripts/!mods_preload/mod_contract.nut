@@ -207,7 +207,7 @@
 	{
 		local p;
 
-		if ("IsDynamic" in _partyList)
+		if (typeof(_partyList) == "table")
 		{
 			p = this.Const.World.Common.buildDynamicTroopList(_partyList, _resources)
 		}

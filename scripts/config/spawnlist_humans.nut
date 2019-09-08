@@ -10,13 +10,14 @@ if (!("Spawn" in gt.Const.World))
 	gt.Const.World.Spawn <- {};
 }
 
-gt.Const.World.Spawn.Cultists <- 
+gt.Const.World.Spawn.Cultists <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_civilian_03",
+	MaxR = 105,
 	Troops = [
 		{
 			Weight = 100,
@@ -30,13 +31,14 @@ gt.Const.World.Spawn.Cultists <-
 	]
 }
 
-gt.Const.World.Spawn.Peasants <- 
+gt.Const.World.Spawn.Peasants <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 0.75,
 	VisibilityMult = 1.0,
 	VisionMult = 0.75,
 	Body = "figure_civilian_03",
+	MaxR = 160,
 	Troops = [
 		{
 			Weight = 100,
@@ -50,13 +52,14 @@ gt.Const.World.Spawn.Peasants <-
 	]
 }
 
-gt.Const.World.Spawn.PeasantsArmed <- 
+gt.Const.World.Spawn.PeasantsArmed <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 0.75,
 	VisibilityMult = 1.0,
 	VisionMult = 0.75,
 	Body = "figure_civilian_03",
+	MaxR = 160,
 	Troops = [
 		{
 			Weight = 100,
@@ -70,13 +73,14 @@ gt.Const.World.Spawn.PeasantsArmed <-
 	]
 }
 
-gt.Const.World.Spawn.BountyHunters <- 
+gt.Const.World.Spawn.BountyHunters <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_03",
+	MaxR = 525,
 	Troops = [
 		{
 			Weight = 70,
@@ -106,15 +110,16 @@ gt.Const.World.Spawn.BountyHunters <-
 			]
 		}
 	]
-}	
+}
 
-gt.Const.World.Spawn.Mercenaries <- 
+gt.Const.World.Spawn.Mercenaries <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_03",
+	MaxR = 690,
 	Troops = [
 		{
 			Weight = 70,
@@ -176,7 +181,7 @@ gt.Const.World.Spawn.Mercenaries <-
 	]
 }
 
-gt.Const.World.Spawn.Militia <- 
+gt.Const.World.Spawn.Militia <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 0.899999976,
