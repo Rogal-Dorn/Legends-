@@ -105,7 +105,38 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local arm = this.new("scripts/items/legend_armor/armor/" + a);
 			this.World.Assets.getStash().add(arm);
 		}
+		
+		local chain = [
+			"legend_armor_leather",
+			"legend_armor_hide_and_bone",
+			"legend_armor_patched_mail",
+			"legend_armor_leather_lamellar",
+			"legend_armor_ancient_mail",
+			"legend_armor_worn_mail",
+			"legend_armor_basic_mail",
+			"legend_armor_ancient_double_layer",
+			"legend_armor_mail_shirt",
+			"legend_armor_leather_scale",
+			"legend_armor_mail_hauberk",
+			"legend_armor_decayed_reinforced",
+			"legend_armor_light_scale",
+			"legend_armor_footmans_armor",
+			"legend_armor_lamellar",
+			"legend_armor_scale",
+			"legend_armor_heraldic",
+			"legend_armor_sellswords",
+			"legend_armor_coat_of_plates",
+			"legend_armor_ikon_scale"
+		];
+		
+		foreach(c in chain)
+		{
+			this.logInfo("Adding " + c);
+			local cha = this.new("scripts/items/legend_armor/chain/" + c);
+			this.World.Assets.getStash().add(cha);
+		}
 	}
+
 
 	function onSpawnPlayer()
 	{
