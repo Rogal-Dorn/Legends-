@@ -184,7 +184,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 		else if (!bro.getBackground().isNoble() && !bro.getBackground().isCombatBackground())
 		{			
-			bro.worsenMood(1.0, "Is uncormfortable serving a usurper");
+			bro.worsenMood(1.0, “Feels uncomfortable serving a usurper”);
 		}
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
