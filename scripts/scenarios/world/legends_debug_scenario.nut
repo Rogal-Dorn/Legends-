@@ -135,6 +135,36 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local cha = this.new("scripts/items/legend_armor/chain/" + c);
 			this.World.Assets.getStash().add(cha);
 		}
+		
+		local chain = [
+			"legend_armor_hide_and_bone",
+			"legend_armor_lamellar",
+			"legend_armor_rugged_scale",
+			"legend_armor_heavy_iron",
+			"legend_armor_ancient_scale_harness",
+			"legend_armor_ancient_breastplate",
+			"legend_armor_ancient_plate",
+			"legend_armor_ancient_plate_harness",
+			"legend_armor_ancient_plate_scale",
+			"legend_armor_refurbished_ancient_plate",
+			"legend_armor_decayed_plates",
+			"legend_armor_heavy_lamellar",
+			"legend_armor_coat_of_plates",
+			"legend_armor_chestplate_2",
+			"legend_armor_dem_avalon_plate",
+			"legend_armor_wuxiang_plate",
+			"legend_armor_pixel_plate",
+			"legend_armor_ikon_plates",
+			"legend_armor_karl_plates",
+			"legend_armor_shkimmilk_plates"
+		];
+		
+		foreach(p in plate)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/plate/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
 	}
 
 
