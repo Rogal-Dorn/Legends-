@@ -69,7 +69,8 @@ gt.Const.World.Spawn.Ghouls <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_ghoul_01",
-	MaxR = 535,
+	MaxR = 484,
+	MinR = 30,
 	Troops = [
 		{
 			Weight = 80,
@@ -103,7 +104,7 @@ gt.Const.World.Spawn.Ghouls <-
 					Cost = 50
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW,
+					Type = this.Const.World.Spawn.Troops.LegendSkinGhoulMED,
 					Cost = 100
 				}
 			]
@@ -353,7 +354,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 			MinGuards = 1,
 			MaxGuards = 2,
 			MaxGuardsWeight = 66,
-			Weight = 100,
+			Weight = 0, //0 Weight guarentees this will be added
 			Guards = [
 				{
 					Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
@@ -522,17 +523,10 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 			MinGuards = 1,
 			MaxGuards = 2,
 			MaxGuardsWeight = 66,
-			Weight = 100,
+			Weight = 0, // 0 guarentees this will be added
 			Guards = [
 				{
 					Type = this.Const.World.Spawn.Troops.DirewolfBodyguard,
-					Cost = 20,
-					function Weight(scale) {
-						return 50;
-					}
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.SpiderBodyguard,
 					Cost = 20,
 					function Weight(scale) {
 						return 50;
@@ -627,13 +621,6 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 							function Weight(scale) {
 								return 50;
 							}
-						},
-						{
-							Type = this.Const.World.Spawn.Troops.SpiderBodyguard,
-							Cost = 20,
-							function Weight(scale) {
-								return 50;
-							}
 						}
 					]
 				},
@@ -682,6 +669,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 			MinGuards = 2,
 			MaxGuards = 3,
 			MaxGuardsWeight = 50,
+			Weight = 0, // 0 guarentees this will be added
 			Guards = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,

@@ -39,6 +39,7 @@ gt.Const.World.Spawn.Peasants <-
 	VisionMult = 0.75,
 	Body = "figure_civilian_03",
 	MaxR = 160,
+	MinR = 30,
 	Troops = [
 		{
 			Weight = 100,
@@ -81,6 +82,7 @@ gt.Const.World.Spawn.BountyHunters <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_03",
 	MaxR = 525,
+	MinR = 103,
 	Troops = [
 		{
 			Weight = 70,
@@ -120,6 +122,7 @@ gt.Const.World.Spawn.Mercenaries <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_03",
 	MaxR = 690,
+	MinR = 97,
 	Troops = [
 		{
 			Weight = 70,
@@ -188,6 +191,8 @@ gt.Const.World.Spawn.Militia <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_militia_01",
+	MaxR = 326,
+	MinR = 60,
 	Troops = [
 		{
 			Weight = 70,

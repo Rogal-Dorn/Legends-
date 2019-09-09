@@ -62,8 +62,10 @@ gt.Const.World.Spawn.Barbarians <-
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianBeastmaster,
 					Cost = 15,
-					MaxCount = 2,
-					Fixed = [
+					MinGuards = 1,
+					MaxGuards = 2,
+					MaxGuardsWeight = 50,
+					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.BarbarianUnhold,
 							Cost = 50,
@@ -126,10 +128,12 @@ gt.Const.World.Spawn.BarbarianKing <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_wildman_06",
+	MaxR = 500,
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.BarbarianChosen,
-			Cost = 9999
+			Weight = 0,
+			Cost = 45
 		}
 	],
 	Troops = []

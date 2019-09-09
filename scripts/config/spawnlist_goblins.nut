@@ -10,16 +10,18 @@ if (!("Spawn" in gt.Const.World))
 	gt.Const.World.Spawn <- {};
 }
 
-gt.Const.World.Spawn.GoblinRoamers <- 
+gt.Const.World.Spawn.GoblinRoamers <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_goblin_01",
+	MaxR = 380,
+	MinR = 50,
 	Troops = [
 		{
-			Weight = 35,
+			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
@@ -32,7 +34,7 @@ gt.Const.World.Spawn.GoblinRoamers <-
 			]
 		},
 		{
-			Weight = 55,
+			Weight = 20,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
@@ -45,7 +47,7 @@ gt.Const.World.Spawn.GoblinRoamers <-
 			]
 		},
 		{
-			Weight = 10,
+			Weight = 70,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
@@ -56,16 +58,18 @@ gt.Const.World.Spawn.GoblinRoamers <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinScouts <- 
+gt.Const.World.Spawn.GoblinScouts <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_goblin_02",
+	MinR = 75,
+	MaxR = 200,
 	Troops = [
 		{
-			Weight = 35,
+			Weight = 30,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
@@ -78,7 +82,7 @@ gt.Const.World.Spawn.GoblinScouts <-
 			]
 		},
 		{
-			Weight = 55,
+			Weight = 40,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
@@ -91,7 +95,7 @@ gt.Const.World.Spawn.GoblinScouts <-
 			]
 		},
 		{
-			Weight = 10,
+			Weight = 30,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
@@ -102,16 +106,18 @@ gt.Const.World.Spawn.GoblinScouts <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinRaiders <- 
+gt.Const.World.Spawn.GoblinRaiders <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_goblin_05",
+	MinR = 55,
+	MaxR = 695,
 	Troops = [
 		{
-			Weight = 35,
+			Weight = 45,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
@@ -137,7 +143,7 @@ gt.Const.World.Spawn.GoblinRaiders <-
 			]
 		},
 		{
-			Weight = 35,
+			Weight = 25,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
@@ -146,12 +152,19 @@ gt.Const.World.Spawn.GoblinRaiders <-
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 3,
+			MinR = 0.40 * 695,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinOverseer,
 					Cost = 35
-				},
+				}
+			]
+		},
+		{
+			Weight = 3,
+			MinR = 0.40 * 695,
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinShaman,
 					Cost = 35
@@ -161,16 +174,18 @@ gt.Const.World.Spawn.GoblinRaiders <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinDefenders <- 
+gt.Const.World.Spawn.GoblinDefenders <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_goblin_04",
+	MinR = 40,
+	MaxR = 585,
 	Troops = [
 		{
-			Weight = 45,
+			Weight = 50,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinSkirmisherLOW,
@@ -183,7 +198,7 @@ gt.Const.World.Spawn.GoblinDefenders <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 30,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusherLOW,
@@ -196,7 +211,7 @@ gt.Const.World.Spawn.GoblinDefenders <-
 			]
 		},
 		{
-			Weight = 30,
+			Weight = 15,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
@@ -205,12 +220,19 @@ gt.Const.World.Spawn.GoblinDefenders <-
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 3,
+			MinR = 0.50 * 585,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinOverseer,
 					Cost = 35
-				},
+				}
+			]
+		},
+		{
+			Weight = 3,
+			MinR = 0.50 * 585,
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinShaman,
 					Cost = 35
@@ -220,13 +242,22 @@ gt.Const.World.Spawn.GoblinDefenders <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinBoss <- 
+gt.Const.World.Spawn.GoblinBoss <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_goblin_04",
+	MinR = 215,
+	MaxR = 585,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.GoblinOverseer,
+			Weight = 0,
+			Cost = 35
+		}
+	],
 	Troops = [
 		{
 			Weight = 55,
@@ -238,7 +269,7 @@ gt.Const.World.Spawn.GoblinBoss <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 30,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinAmbusher,
@@ -247,7 +278,7 @@ gt.Const.World.Spawn.GoblinBoss <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 8,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinWolfrider,
@@ -256,12 +287,17 @@ gt.Const.World.Spawn.GoblinBoss <-
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 3,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinOverseer,
 					Cost = 35
-				},
+				}
+			]
+		},
+		{
+			Weight = 3,
+			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GoblinShaman,
 					Cost = 35

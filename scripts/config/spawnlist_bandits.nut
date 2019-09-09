@@ -312,6 +312,7 @@ gt.Const.World.Spawn.BanditBoss <-
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.BanditLeader,
+			Weight = 0,
 			Cost = 25
 		}
 	],

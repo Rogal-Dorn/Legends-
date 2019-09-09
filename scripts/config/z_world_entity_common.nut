@@ -230,9 +230,11 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 	}
 }
 
-function selectTroop(_list, _resources, _scale, _map, _credits)
+
+gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale, _map, _credits)
 {
 	local candidates = [];
+	local T = [];
 	local totalWeight = 0;
 	foreach (t in _list)
 	{
@@ -246,25 +248,33 @@ function selectTroop(_list, _resources, _scale, _map, _credits)
 			continue;
 		}
 
-		if (typeof(t.Weight) == 'function')
+
+		local w = 0
+		if (typeof(t.Weight) == "function")
 		{
-			totalWeight += t.Weight(_scale)
+			w = t.Weight(_scale)
 		}
 		else
 		{
-			totalWeight += t.Weight;
+			w = t.Weight;
 		}
+
+		if (w == 0)
+		{
+			T.push(t)
+			continue
+		}
+		totalWeight += w;
 		candidates.push(t);
 	}
 
-	local troop = null;
-	local r = this.Math.rand(0, totalWeight)
+	local r = this.Math.rand(0, totalWeight);
 	foreach (t in candidates)
 	{
 		local w = 0;
-		if (typeof(t.Weight) == 'function')
+		if (typeof(t.Weight) == "function")
 		{
-			w = t.Weight(_scale)
+			w = t.Weight(_scale);
 		}
 		else
 		{
@@ -273,108 +283,148 @@ function selectTroop(_list, _resources, _scale, _map, _credits)
 		r = r - w;
 		if (r > 0)
 		{
-			continue
+			continue;
 		}
 
-		troop = t;
+		T.push(t);
 		break;
 	}
 
-	if ("Type" in troop)
+	foreach (troop in T)
 	{
-		_credits -= troop.Cost;
-		local key = troop.Type.Script;
-		if (!(key in _map))
+		if ("Type" in troop)
 		{
-			_map[key] <- {
-				Type = troop.Type,
-				Num = 0
+			_credits -= troop.Cost;
+			local key = troop.Type.Script;
+			if (!(key in _map))
+			{
+				_map[key] <- {
+					Type = troop.Type,
+					Num = 0
+				}
+			}
+			_map[key].Num += 1;
+
+			if ("MaxCount" in troop)
+			{
+				for (local i = 1; i < troop.MaxCount; i = ++i)
+				{
+					if (_credits < 0)
+					{
+						break;
+					}
+
+					local w = 100;
+					if (typeof(troop.Weight) == "function")
+					{
+						w = troop.Weight(_scale);
+					}
+					else
+					{
+						w = troop.Weight;
+					}
+
+					if (this.Math.rand(0, 100) < w)
+					{
+						_credits -= troop.Cost;
+						local key = troop.Type.Script;
+						if (!(key in _map))
+						{
+							_map[key] <- {
+								Type = troop.Type,
+								Num = 0
+							}
+						}
+						_map[key].Num += 1;
+					}
+				}
+			}
+
+		}
+
+
+		if ("Guards" in troop)
+		{
+			local maxCount = "MaxGuards" in troop ? troop.MaxGuards : 1;
+			local minCount = "MinGuards" in troop ? troop.MinGuards : 1;
+			for (local i = 0; i < maxCount; i = ++i)
+			{
+				local weight = 100;
+				if ("MaxGuardsWeight" in troop)
+				{
+					weight = troop.MaxGuardsWeight;
+				}
+				local r = this.Math.rand(0, 100)
+				if (weight < r && i >= minCount)
+				{
+					continue;
+				}
+
+				_credits = this.Const.World.Common.dynamicSelectTroop(troop.Guards, _resources, _scale, _map, _credits)
+
+				if (_credits < 0)
+				{
+					break;
+				}
 			}
 		}
-		_map[key].Num += 1
-	}
 
-	if ("Guards" in troop)
-	{
-		local maxCount = "MaxGuards" in t ? t.MaxGuards : 1;
-		local minCount = "MinGuards" in t ? t.MinGuards : 1;
-		for (local i = 0; i < maxCount; i = ++i)
+		if (_credits < 0)
 		{
-			local weight = 100;
-			if ("MaxGuardsWeight" in troop)
-			{
-				weight = troop.MaxGuardsWeight;
-			}
-			local r = this.Math.rand(0, 100)
-			if (weight < r && i >= minCount)
+			return _credits;
+		}
+
+		if (!("Types" in troop))
+		{
+			continue;
+		}
+
+		local points = troop.Types[0].Cost;
+		if (troop.Types.len() > 1)
+		{
+			local meanScaled = troop.MinMean + _scale * (troop.MaxMean - troop.MinMean)
+			points = this.Math.max(points, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, troop.Deviation));
+			//this.logInfo(cat + " Mean " + meanScaled + " : Deviation " + troops.Deviation + " : Points " + points)
+		}
+		//Always purchase the most expensive unit we can
+		for (local i = troop.Types.len() - 1; i >= 0; i = --i)
+		{
+			if (troop.Types[i].Cost > points)
 			{
 				continue;
 			}
 
-			_credits = selectTroop(troop.Guards, _resources, _scale, _map, _credits)
-
-			if (_credits < 0)
+			if ("MaxR" in troop.Types[i] && _resources > troop.Types[i].MaxR)
 			{
-				break;
+				continue;
 			}
-		}
-	}
 
-	if (_credits < 0)
-	{
-		return _credits;
-	}
-
-	if (!("Types" in troops))
-	{
-		return _credits;
-	}
-
-	local points = troop.Types[0].Cost;
-	if (troop.Types.len() > 1)
-	{
-		local meanScaled = troop.MinMean + _scale * (troop.MaxMean - troop.MinMean)
-		points = this.Math.max(points, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, troop.Deviation));
-		//this.logInfo(cat + " Mean " + meanScaled + " : Deviation " + troops.Deviation + " : Points " + points)
-	}
-	//Always purchase the most expensive unit we can
-	for (local i = troop.Types.len() - 1; i >= 0; i = --i)
-	{
-		if (troop.Types[i].Cost > points)
-		{
-			continue;
-		}
-
-		if ("MaxR" in troop.Types[i] && _resources > troop.Types[i].MaxR)
-		{
-			continue;
-		}
-
-		if ("MinR" in troop.Types[i] && _resources < troop.Types[i].MinR)
-		{
-			continue;
-		}
-
-		_credits -= troop.Types[i].Cost;
-
-		local key = troop.Types[i].Type.Script;
-		if (!(key in _map))
-		{
-			_map[key] <- {
-				Type = troop.Types[i].Type,
-				Num = 0
+			if ("MinR" in troop.Types[i] && _resources < troop.Types[i].MinR)
+			{
+				continue;
 			}
-		}
-		_map[key].Num += 1
 
-		if ("Guards" in troop.Types[i])
-		{
-			_credits = selectTroop(troop.Types[i].Guards, _resources, _scale, _map, _credits)
+			_credits -= troop.Types[i].Cost;
+
+			local key = troop.Types[i].Type.Script;
+			if (!(key in _map))
+			{
+				_map[key] <- {
+					Type = troop.Types[i].Type,
+					Num = 0
+				}
+			}
+			_map[key].Num += 1
+
+			if ("Guards" in troop.Types[i])
+			{
+				_credits = this.Const.World.Common.dynamicSelectTroop(troop.Types[i].Guards, _resources, _scale, _map, _credits)
+			}
+			break;
 		}
-		break;
 	}
 
-	return credits
+	return _credits
 }
 
 gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
@@ -390,14 +440,14 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 
 	if ("Fixed" in _template)
 	{
-		credits = selectTroop(_template.Fixed, _resources, scale, troopMap, credits)
+		credits = this.Const.World.Common.dynamicSelectTroop(_template.Fixed, _resources, scale, troopMap, credits)
 	}
 
-	if ("Troops" in _template) && _template.Troops.len() > 0)
+	if ("Troops" in _template && _template.Troops.len() > 0)
 	{
 		while (credits > 0)
 		{
-			credits = selectTroop(_template.Troops, _resources, scale, troopMap, credits)
+			credits = this.Const.World.Common.dynamicSelectTroop(_template.Troops, _resources, scale, troopMap, credits)
 		}
 	}
 
@@ -529,41 +579,39 @@ foreach(k,v in this.Const.World.Spawn)
 	}
 
 }
-
-
 //TESTING
-foreach(k,v in this.Const.World.Spawn)
-{
-	if (k == "Troops" || k == "Unit" || k == "TroopsMap")
-	{
-		continue;
-	}
+// foreach(k,v in this.Const.World.Spawn)
+// {
+// 	if (k == "Troops" || k == "Unit" || k == "TroopsMap")
+// 	{
+// 		continue;
+// 	}
 
-	if (typeof(v) != "table")
-	{
-		continue
-	}
+// 	if (typeof(v) != "table")
+// 	{
+// 		continue
+// 	}
 
-	if (!("MaxR" in v))
-	{
-		continue;
-	}
+// 	if (!("MaxR" in v))
+// 	{
+// 		continue;
+// 	}
 
-	local P = [0.15, 0.25, 0.50, 0.75, 1];
+// 	local P = [0.15, 0.25, 0.50, 0.75, 1];
 
-	this.logInfo("****** " + k + " ******")
-	foreach (p in P)
-	{
-		this.logInfo(" >>> Percent:  " + p + " <<<")
-		for (local i = 0; i < 3; i = ++i)
-		{
-			this.logInfo(" RUN  " + i)
-			local res = gt.Const.World.Common.buildDynamicTroopList(v, p * v.MaxR)
-			foreach (t in res.Troops)
-			{
-				this.logInfo(t.Type.Script + " : " + t.Num)
-			}
-		}
+// 	this.logInfo("****** " + k + " ******")
+// 	foreach (p in P)
+// 	{
+// 		this.logInfo(" >>> Percent:  " + p + " <<<")
+// 		for (local i = 0; i < 3; i = ++i)
+// 		{
+// 			this.logInfo(" RUN  " + i)
+// 			local res = gt.Const.World.Common.buildDynamicTroopList(v, p * v.MaxR)
+// 			foreach (t in res.Troops)
+// 			{
+// 				this.logInfo(t.Type.Script + " : " + t.Num)
+// 			}
+// 		}
 
-	}
-}
+// 	}
+// }

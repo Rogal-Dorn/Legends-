@@ -10,19 +10,22 @@ if (!("Spawn" in gt.Const.World))
 	gt.Const.World.Spawn <- {};
 }
 
-gt.Const.World.Spawn.OrcRoamers <- 
+gt.Const.World.Spawn.OrcRoamers <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
+	MaxR = 260,
+	MinR = 64,
 	Body = "figure_orc_02",
 	Troops = [
 		{
-			Weight = 65,
+			Weight = 80,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+					MaxR = 1.0 *260,
 					Cost = 13
 				},
 				{
@@ -35,15 +38,6 @@ gt.Const.World.Spawn.OrcRoamers <-
 			Weight = 15,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.OrcWarrior,
-					Cost = 40
-				}
-			]
-		}
-		{
-			Weight = 15,
-			Types = [
-				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					Cost = 25
 				}
@@ -51,33 +45,33 @@ gt.Const.World.Spawn.OrcRoamers <-
 		},
 		{
 			Weight = 5,
+			MinR = 0.50 * 260,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
 					Cost = 60
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					Cost = 80
 				}
 			]
 		}
 	]
 }
 
-gt.Const.World.Spawn.OrcScouts <- 
+gt.Const.World.Spawn.OrcScouts <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
+	MaxR = 176,
+	MinR = 52,
 	Troops = [
 		{
 			Weight = 65,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+					MaxR = 1.0 * 176,
 					Cost = 13
 				},
 				{
@@ -91,216 +85,56 @@ gt.Const.World.Spawn.OrcScouts <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+					MaxR = 1.0 * 176,
 					Cost = 30
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcWarrior,
+					MinR = 0.5 * 176,
 					Cost = 40
-				}
-			]
-		}
-		{
-			Weight = 15,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcBerserker,
-					Cost = 25
-				}
-			]
-		},
-		{
-			Weight = 5,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
-					Cost = 60
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					Cost = 80
 				}
 			]
 		}
 	]
 }
 
-gt.Const.World.Spawn.OrcRaiders <- 
+gt.Const.World.Spawn.OrcRaiders <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
+	MaxR = 822,
+	MinR = 72,
 	Troops = [
 		{
-			Weight = 65,
+			Weight = 50,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+					MaxR = 0.75 * 822
 					Cost = 13
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoung,
 					Cost = 16
-				}
-			]
-		},
-		{
-			Weight = 15,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
-					Cost = 30
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.OrcWarrior,
-					Cost = 40
-				}
-			]
-		}
-		{
-			Weight = 15,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcBerserker,
-					Cost = 25
-				}
-			]
-		},
-		{
-			Weight = 4,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
-					Cost = 60
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					Cost = 80
-				}
-			]
-		},
-		{
-			Weight = 1,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcWarlord,
-					Cost = 50
-				}
-			]
-		}
-	]
-}
-
-gt.Const.World.Spawn.OrcDefenders <- 
-{
-	IsDynamic = true,
-	MovementSpeedMult = 1.0,
-	VisibilityMult = 1.0,
-	VisionMult = 1.0,
-	Body = "figure_orc_01",
-	Troops = [
-		{
-			Weight = 65,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
-					Cost = 13
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.OrcYoung,
-					Cost = 16
-				}
-			]
-		},
-		{
-			Weight = 15,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcWarrior,
-					Cost = 40
-				}
-			]
-		}
-		{
-			Weight = 15,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcBerserker,
-					Cost = 25
-				}
-			]
-		},
-		{
-			Weight = 5,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
-					Cost = 60
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					Cost = 80
-				}
-			]
-		},
-		{
-			Weight = 1,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcWarlord,
-					Cost = 50
-				}
-			]
-		}
-	]
-}
-
-gt.Const.World.Spawn.OrcBoss <- 
-{
-	IsDynamic = true,
-	MovementSpeedMult = 1.0,
-	VisibilityMult = 1.0,
-	VisionMult = 1.0,
-	Body = "figure_orc_01",
-	Troops = [
-		{
-			Weight = 20,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcYoung,
-					Cost = 16
-				}
-			]
-		},
-		{
-			Weight = 20,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcWarrior,
-					Cost = 40
-				}
-			]
-		}
-		{
-			Weight = 20,
-			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.OrcBerserker,
-					Cost = 25
 				}
 			]
 		},
 		{
 			Weight = 30,
+			MinR = 0.2 * 822,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
-					Cost = 60
+					Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+					MaxR = 0.80 * 822,
+					Cost = 30
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
-					Cost = 80
+					Type = this.Const.World.Spawn.Troops.OrcWarrior,
+					MinR = 0.25 * 1115,
+					Cost = 40
 				}
 			]
 		},
@@ -308,21 +142,194 @@ gt.Const.World.Spawn.OrcBoss <-
 			Weight = 10,
 			Types = [
 				{
+					Type = this.Const.World.Spawn.Troops.OrcBerserker,
+					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
 					Type = this.Const.World.Spawn.Troops.OrcWarlord,
 					Cost = 50
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+					MinR = 0.50 * 1115,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					MinR = 0.50 * 1115,
+					Cost = 80
 				}
 			]
 		}
 	]
 }
 
-gt.Const.World.Spawn.YoungOrcsOnly <- 
+gt.Const.World.Spawn.OrcDefenders <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
+	MaxR = 720,
+	MinR = 52,
+	Troops = [
+		{
+			Weight = 50,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+					MaxR = 0.75 * 822
+					Cost = 13
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					Cost = 16
+				}
+			]
+		},
+		{
+			Weight = 30,
+			MinR = 0.2 * 822,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+					MaxR = 0.80 * 822,
+					Cost = 30
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.OrcWarrior,
+					MinR = 0.25 * 1115,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcBerserker,
+					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcWarlord,
+					Cost = 50
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+					MinR = 0.50 * 1115,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					MinR = 0.50 * 1115,
+					Cost = 80
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.OrcBoss <-
+{
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_orc_01",
+	MaxR = 798,
+	MinR = 164,
+	Fixed = [
+		{
+			Weight = 100 //percentage chance after min count is met
+			Type = this.Const.World.Spawn.Troops.OrcWarlord,
+			Cost = 50
+		}
+	],
+	Troops = [
+		{
+			Weight = 50,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					Cost = 16
+				}
+			]
+		},
+		{
+			Weight = 30,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcWarrior,
+					MinR = 0.25 * 1115,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcBerserker,
+					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcWarlord,
+					Cost = 50
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+					MinR = 0.50 * 798,
+					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					Cost = 80
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.YoungOrcsOnly <-
+{
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_orc_01",
+	MaxR = 250,
+	MinR = 50,
 	Troops = [
 		{
 			Weight = 100,
@@ -340,19 +347,22 @@ gt.Const.World.Spawn.YoungOrcsOnly <-
 	]
 }
 
-gt.Const.World.Spawn.YoungOrcsAndBerserkers <- 
+gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
+	MaxR = 288,
+	MinR = 50,
 	Troops = [
 		{
-			Weight = 65,
+			Weight = 70,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+					MaxR = 1.0 * 288,
 					Cost = 13
 				},
 				{
@@ -362,31 +372,67 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 			]
 		},
 		{
-			Weight = 35,
+			Weight = 20,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					Cost = 25
 				}
 			]
+		},
+		{
+			Weight = 20,
+			MinR = 1.0 * 288,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					Cost = 80
+				}
+			]
 		}
 	]
 }
 
-gt.Const.World.Spawn.BerserkersOnly <- 
+gt.Const.World.Spawn.BerserkersOnly <-
 {
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_orc_01",
+	MaxR = 248,
+	MinR = 50,
 	Troops = [
 		{
-			Weight = 15,
+			Weight = 20,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+					MaxR = 1.0 * 288,
+					Cost = 13
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					Cost = 16
+				}
+			]
+		},
+		{
+			Weight = 70,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.OrcBerserker,
 					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 10,
+			MinR = 1.0 * 288,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcBehemoth,
+					Cost = 80
 				}
 			]
 		}
