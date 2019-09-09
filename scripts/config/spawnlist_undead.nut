@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.UndeadArmy <-
 {
+	Name = "UndeadArmy",
 	IsDynamic = true,
 	MovementSpeedMult = 0.9,
 	VisibilityMult = 1.0,
@@ -89,6 +90,7 @@ gt.Const.World.Spawn.UndeadArmy <-
 
 gt.Const.World.Spawn.Vampires <-
 {
+	Name = "Vampires",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -115,6 +117,7 @@ gt.Const.World.Spawn.Vampires <-
 
 gt.Const.World.Spawn.VampiresAndSkeletons <-
 {
+	Name = "VampiresAndSkeletons",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,

@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.BanditRoamers <-
 {
+	Name = "BanditRoamers",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -71,6 +72,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 
 gt.Const.World.Spawn.BanditScouts <-
 {
+	Name = "BanditScouts",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -134,6 +136,7 @@ gt.Const.World.Spawn.BanditScouts <-
 
 gt.Const.World.Spawn.BanditRaiders <-
 {
+	Name = "BanditRaiders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -186,6 +189,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 5,
+			MinR = 80,
 			Types =
 			[
 				{
@@ -196,6 +200,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
+			MinR = 200,
 			Types =
 			[
 				{
@@ -206,6 +211,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
+			MinR = 200,
 			Types =
 			[
 				{
@@ -219,6 +225,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 
 gt.Const.World.Spawn.BanditDefenders <-
 {
+	Name = "BanditDefenders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -304,6 +311,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 
 gt.Const.World.Spawn.BanditBoss <-
 {
+	Name = "BanditBoss",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -390,6 +398,7 @@ gt.Const.World.Spawn.BanditBoss <-
 
 gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
 {
+	Name = "BanditsDisguisedAsDireWolves",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,

@@ -285,7 +285,6 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 		{
 			continue;
 		}
-
 		T.push(t);
 		break;
 	}
@@ -429,6 +428,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 
 gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 {
+	this.logInfo("*DynamicTroopList : template = " + _template.Name + " : resources = " + _resources)
 	local credits = _resources;
 	if ("MinR" in _template)
 	{
@@ -456,6 +456,13 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 	{
 		T.push(v)
 	}
+
+
+	//TESTING
+	// foreach (t in T)
+	// {
+	// 	this.logInfo(t.Type.Script + " : " + t.Num)
+	// }
 
 	return {
 		MovementSpeedMult = _template.MovementSpeedMult,
@@ -541,7 +548,7 @@ foreach(k,v in this.Const.World.Spawn)
 		continue;
 	}
 
-	this.logInfo("Calculating costs for " + k)
+	//this.logInfo("Calculating costs for " + k)
 	foreach (i, _t in v.Troops)
 	{
 		if (_t.Types.len() == 1)
@@ -614,4 +621,10 @@ foreach(k,v in this.Const.World.Spawn)
 // 		}
 
 // 	}
+// }
+
+// for (local i = 0; i < 25; i = ++i)
+// {
+// 	this.logInfo(" RUN  " + i)
+// 	local res = gt.Const.World.Common.buildDynamicTroopList(this.Const.World.Spawn.BanditRaiders, 51.06)
 // }

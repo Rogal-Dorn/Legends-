@@ -11,6 +11,7 @@ if (!("Spawn" in gt.Const.World))
 }
 
 gt.Const.World.Spawn.Noble <- {
+	Name = "Noble",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -94,6 +95,7 @@ gt.Const.World.Spawn.Noble <- {
 
 gt.Const.World.Spawn.NobleCaravan <-
 {
+	Name = "NobleCaravan",
 	IsDynamic = true,
 	MovementSpeedMult = 0.5,
 	VisibilityMult = 1.0,

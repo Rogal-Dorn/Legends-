@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.Kraken <-
 {
+	Name = "Kraken",
 	IsDynamic = true,
 	MovementSpeedMult = 0.0,
 	VisibilityMult = 0.5,
@@ -29,6 +30,7 @@ gt.Const.World.Spawn.Kraken <-
 
 gt.Const.World.Spawn.Direwolves <-
 {
+	Name = "Direwolves",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -64,6 +66,7 @@ gt.Const.World.Spawn.Direwolves <-
 
 gt.Const.World.Spawn.Ghouls <-
 {
+	Name = "Ghouls",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -114,6 +117,7 @@ gt.Const.World.Spawn.Ghouls <-
 
 gt.Const.World.Spawn.Lindwurm <-
 {
+	Name = "Lindwurm",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -145,6 +149,7 @@ gt.Const.World.Spawn.Lindwurm <-
 
 gt.Const.World.Spawn.Unhold <-
 {
+	Name = "Unhold",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -176,6 +181,7 @@ gt.Const.World.Spawn.Unhold <-
 
 gt.Const.World.Spawn.UnholdFrost <-
 {
+	Name = "UnholdFrost",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -207,6 +213,7 @@ gt.Const.World.Spawn.UnholdFrost <-
 
 gt.Const.World.Spawn.UnholdBog <-
 {
+	Name = "UnholdBog",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -238,6 +245,7 @@ gt.Const.World.Spawn.UnholdBog <-
 
 gt.Const.World.Spawn.Spiders <-
 {
+	Name = "Spiders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -269,6 +277,7 @@ gt.Const.World.Spawn.Spiders <-
 
 gt.Const.World.Spawn.Alps <-
 {
+	Name = "Alps",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -309,6 +318,7 @@ gt.Const.World.Spawn.Alps <-
 
 gt.Const.World.Spawn.Schrats <-
 {
+	Name = "Schrats",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -340,6 +350,7 @@ gt.Const.World.Spawn.Schrats <-
 
 gt.Const.World.Spawn.HexenAndMore <-
 {
+	Name = "HexenAndMore",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -509,6 +520,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 
 gt.Const.World.Spawn.HexenAndNoSpiders <-
 {
+	Name = "HexenAndNoSpiders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -655,6 +667,7 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 
 gt.Const.World.Spawn.LegendHexeLeader <-
 {
+	Name = "LegendHexeLeader",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -829,6 +842,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 
 gt.Const.World.Spawn.LegendRockUnhold <-
 {
+	Name = "LegendRockUnhold",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -859,6 +873,7 @@ gt.Const.World.Spawn.LegendRockUnhold <-
 
 gt.Const.World.Spawn.LegendSkinGhouls <-
 {
+	Name = "LegendSkinGhouls",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -893,6 +908,7 @@ gt.Const.World.Spawn.LegendSkinGhouls <-
 
 gt.Const.World.Spawn.LegendWhiteDirewolf <-
 {
+	Name = "LegendWhiteDirewolf",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -927,6 +943,7 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 
 gt.Const.World.Spawn.LegendRedbackSpider <-
 {
+	Name = "LegendRedbackSpider",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -966,6 +983,7 @@ gt.Const.World.Spawn.LegendRedbackSpider <-
 
 gt.Const.World.Spawn.LegendDemonAlp <-
 {
+	Name = "LegendDemonAlp",
 	IsDynamic = true,
 	MovementSpeedMult = 1.1,
 	VisibilityMult = 0.7,
@@ -996,6 +1014,7 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 
 gt.Const.World.Spawn.LegendStollwurm <-
 {
+	Name = "LegendStollwurm",
 	IsDynamic = true,
 	MovementSpeedMult = 0.9,
 	VisibilityMult = 1.0,
@@ -1026,6 +1045,7 @@ gt.Const.World.Spawn.LegendStollwurm <-
 
 gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 {
+	Name = "LegendGreenwoodSchrat",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 0.9,

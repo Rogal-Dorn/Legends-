@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.Zombies <-
 {
+	Name = "Zombies",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,
@@ -52,6 +53,7 @@ gt.Const.World.Spawn.Zombies <-
 
 gt.Const.World.Spawn.ZombiesLight <-
 {
+	Name = "ZombiesLight",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,
@@ -74,6 +76,7 @@ gt.Const.World.Spawn.ZombiesLight <-
 
 gt.Const.World.Spawn.ZombiesAndGhouls <-
 {
+	Name = "ZombiesAndGhouls",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,
@@ -127,6 +130,7 @@ gt.Const.World.Spawn.ZombiesAndGhouls <-
 
 gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <-
 {
+	Name = "ZombiesOrZombiesAndGhouls",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,
@@ -180,6 +184,7 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <-
 
 gt.Const.World.Spawn.ZombiesAndGhosts <-
 {
+	Name = "ZombiesAndGhosts",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,
@@ -229,6 +234,7 @@ gt.Const.World.Spawn.ZombiesAndGhosts <-
 
 gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 {
+	Name = "ZombiesOrZombiesAndGhosts",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,
@@ -278,6 +284,7 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 
 gt.Const.World.Spawn.Ghosts <-
 {
+	Name = "Ghosts",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,
@@ -300,6 +307,7 @@ gt.Const.World.Spawn.Ghosts <-
 
 gt.Const.World.Spawn.Necromancer <-
 {
+	Name = "Necromancer",
 	IsDynamic = true,
 	MovementSpeedMult = 0.8,
 	VisibilityMult = 1.0,

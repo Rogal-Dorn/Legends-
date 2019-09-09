@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.OrcRoamers <-
 {
+	Name = "OrcRoamers",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -58,6 +59,7 @@ gt.Const.World.Spawn.OrcRoamers <-
 
 gt.Const.World.Spawn.OrcScouts <-
 {
+	Name = "OrcScouts",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -100,6 +102,7 @@ gt.Const.World.Spawn.OrcScouts <-
 
 gt.Const.World.Spawn.OrcRaiders <-
 {
+	Name = "OrcRaiders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -176,6 +179,7 @@ gt.Const.World.Spawn.OrcRaiders <-
 
 gt.Const.World.Spawn.OrcDefenders <-
 {
+	Name = "OrcDefenders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -252,6 +256,7 @@ gt.Const.World.Spawn.OrcDefenders <-
 
 gt.Const.World.Spawn.OrcBoss <-
 {
+	Name = "OrcBoss",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -323,6 +328,7 @@ gt.Const.World.Spawn.OrcBoss <-
 
 gt.Const.World.Spawn.YoungOrcsOnly <-
 {
+	Name = "YoungOrcsOnly",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -349,6 +355,7 @@ gt.Const.World.Spawn.YoungOrcsOnly <-
 
 gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 {
+	Name = "YoungOrcsAndBerserkers",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -395,6 +402,7 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 
 gt.Const.World.Spawn.BerserkersOnly <-
 {
+	Name = "BerserkersOnly",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,

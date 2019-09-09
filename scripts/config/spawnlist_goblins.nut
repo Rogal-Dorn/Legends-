@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.GoblinRoamers <-
 {
+	Name = "GoblinRoamers",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -60,6 +61,7 @@ gt.Const.World.Spawn.GoblinRoamers <-
 
 gt.Const.World.Spawn.GoblinScouts <-
 {
+	Name = "GoblinScouts",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -108,6 +110,7 @@ gt.Const.World.Spawn.GoblinScouts <-
 
 gt.Const.World.Spawn.GoblinRaiders <-
 {
+	Name = "GoblinRaiders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -176,6 +179,7 @@ gt.Const.World.Spawn.GoblinRaiders <-
 
 gt.Const.World.Spawn.GoblinDefenders <-
 {
+	Name = "GoblinDefenders",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -244,6 +248,7 @@ gt.Const.World.Spawn.GoblinDefenders <-
 
 gt.Const.World.Spawn.GoblinBoss <-
 {
+	Name = "GoblinBoss",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,

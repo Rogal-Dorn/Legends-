@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.UndeadScourge <-
 {
+	Name = "UndeadScourge",
 	IsDynamic = true,
 	MovementSpeedMult = 0.9,
 	VisibilityMult = 1.0,

@@ -21,6 +21,7 @@ gt.Const.World.Spawn.Unit <- {
 	Script = "",
 	Name = ""
 };
+
 gt.Const.World.Spawn.Troops <- {
 	Necromancer = {
 		ID = this.Const.EntityType.Necromancer,
@@ -969,6 +970,7 @@ gt.Const.World.Spawn.Troops <- {
 
 gt.Const.World.Spawn.Caravan <-
 {
+	Name = "Caravan",
 	IsDynamic = true,
 	MovementSpeedMult = 0.5,
 	VisibilityMult = 1.0,
@@ -1004,6 +1006,7 @@ gt.Const.World.Spawn.Caravan <-
 
 gt.Const.World.Spawn.CaravanEscort <- [
 	{
+
 		Cost = 0,
 		MovementSpeedMult = 0.5,
 		VisibilityMult = 1.0,

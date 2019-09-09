@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.Barbarians <-
 {
+	Name = "Barbarians",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -91,6 +92,7 @@ gt.Const.World.Spawn.Barbarians <-
 
 gt.Const.World.Spawn.BarbarianHunters <-
 {
+	Name = "BarbarianHunters",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -123,6 +125,7 @@ gt.Const.World.Spawn.BarbarianHunters <-
 
 gt.Const.World.Spawn.BarbarianKing <-
 {
+	Name = "BarbarianKing",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,

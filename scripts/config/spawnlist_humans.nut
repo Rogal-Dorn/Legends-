@@ -12,6 +12,7 @@ if (!("Spawn" in gt.Const.World))
 
 gt.Const.World.Spawn.Cultists <-
 {
+	Name = "Cultists",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -33,6 +34,7 @@ gt.Const.World.Spawn.Cultists <-
 
 gt.Const.World.Spawn.Peasants <-
 {
+	Name = "Peasants",
 	IsDynamic = true,
 	MovementSpeedMult = 0.75,
 	VisibilityMult = 1.0,
@@ -55,6 +57,7 @@ gt.Const.World.Spawn.Peasants <-
 
 gt.Const.World.Spawn.PeasantsArmed <-
 {
+	Name = "PeasantsArmed",
 	IsDynamic = true,
 	MovementSpeedMult = 0.75,
 	VisibilityMult = 1.0,
@@ -76,6 +79,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 
 gt.Const.World.Spawn.BountyHunters <-
 {
+	Name = "BountyHunters",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -116,6 +120,7 @@ gt.Const.World.Spawn.BountyHunters <-
 
 gt.Const.World.Spawn.Mercenaries <-
 {
+	Name = "Mercenaries",
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -186,6 +191,7 @@ gt.Const.World.Spawn.Mercenaries <-
 
 gt.Const.World.Spawn.Militia <-
 {
+	Name = "Militia",
 	IsDynamic = true,
 	MovementSpeedMult = 0.899999976,
 	VisibilityMult = 1.0,
