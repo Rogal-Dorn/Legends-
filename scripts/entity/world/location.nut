@@ -575,11 +575,13 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 			resources = resources * 0.75;
 		}
 
-		local best;
-		best.Troops <- [];
-		if (typeof(this.m.DefenderSpawnList) == "table")
+		local best = {
+			Troops = []
+		}
+
+		if (this.m.DefenderSpawnList && ("Name" in this.m.DefenderSpawnList))
 		{
-			best.Troops = this.Const.World.Common.buildDynamicTroopList(this.m.DefenderSpawnList, resources)
+			best = this.Const.World.Common.buildDynamicTroopList(this.m.DefenderSpawnList, resources)
 		}
 		else
 		{
@@ -665,7 +667,6 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 		}
 
 		this.updateStrength();
-
 	}
 
 	function onSerialize( _out )

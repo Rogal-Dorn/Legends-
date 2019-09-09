@@ -1694,3 +1694,9 @@ Fixed typo in Towershield description
 *This test build is compatible with exsting 12.7 saves.
 
 https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
+
+12.7.1 - 13.0.0.1 Dynamic Spawns Test 2
+
+*Fixed locations not spawning.
+
+https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
