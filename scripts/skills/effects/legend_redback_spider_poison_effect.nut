@@ -33,7 +33,8 @@ this.legend_redback_spider_poison_effect <- this.inherit("scripts/skills/skill",
 
 	function getDescription()
 	{
-		return "This character has a vicious poison running through his veins and will lose [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Damage + "[/color] hitpoints each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+		local timeDamage = (this.m.Damage * this.m.TurnsLeft);
+		return "This character has a vicious poison running through his veins and will lose [color=" + this.Const.UI.Color.NegativeValue + "]" + timeDamage + "[/color] hitpoints each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function resetTime()
