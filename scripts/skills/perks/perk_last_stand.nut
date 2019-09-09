@@ -14,7 +14,7 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	function onUpdate( _properties )
 	{
 		local maxHP = this.getContainer().getActor().getHitpointsMax();
 		local percentHP = maxHP / 100;
@@ -22,10 +22,12 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 		local currentPercent = currentHP / percentHP;
 		local missingPercent = 100 - currentPercent;
 		local bonus = 0;
-		if( missingPercent > 50)
+		
+		if( missingPercent >= 50)
 		{
-		bonus = this.Math.floor(missingPercent - 50);
+			bonus = this.Math.floor(missingPercent - 50);
 		}
+		
 		_properties.MeleeDefense += bonus;
 		_properties.RangedDefense += bonus;
 	}

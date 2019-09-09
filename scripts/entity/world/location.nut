@@ -575,77 +575,98 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 			resources = resources * 0.75;
 		}
 
-		local best;
-		local bestCost = -9000;
-
-		foreach( party in this.m.DefenderSpawnList )
-		{
-			if (party.Cost > resources)
-			{
-				continue;
-			}
-
-			if (best == null || party.Cost > bestCost)
-			{
-				best = party;
-				bestCost = party.Cost;
-			}
+		local best = {
+			Troops = []
 		}
 
-		local potential = [];
-
-		foreach( party in this.m.DefenderSpawnList )
+		if (this.m.DefenderSpawnList && ("Name" in this.m.DefenderSpawnList))
 		{
-			if (party.Cost > resources || party.Cost < bestCost * 0.75)
+			best = this.Const.World.Common.buildDynamicTroopList(this.m.DefenderSpawnList, resources)
+		}
+		else
+		{
+			local bestCost = -9000;
+
+			foreach( party in this.m.DefenderSpawnList )
 			{
-				continue;
+				if (party.Cost > resources)
+				{
+					continue;
+				}
+
+				if (best == null || party.Cost > bestCost)
+				{
+					best = party;
+					bestCost = party.Cost;
+				}
 			}
 
-			potential.push(party);
-		}
+			local potential = [];
 
-		if (potential.len() != 0)
-		{
-			best = potential[this.Math.rand(0, potential.len() - 1)];
+			foreach( party in this.m.DefenderSpawnList )
+			{
+				if (party.Cost > resources || party.Cost < bestCost * 0.75)
+				{
+					continue;
+				}
+
+				potential.push(party);
+			}
+
+			if (potential.len() != 0)
+			{
+				best = potential[this.Math.rand(0, potential.len() - 1)];
+			}
+
+			if (best == null)
+			{
+				bestCost = 9000;
+
+				foreach( party in this.m.DefenderSpawnList )
+				{
+					if (this.Math.abs(party.Cost - resources) < bestCost)
+					{
+						best = party;
+						bestCost = this.Math.abs(party.Cost - resources);
+					}
+				}
+			}
 		}
 
 		if (best == null)
 		{
-			bestCost = 9000;
-
-			foreach( party in this.m.DefenderSpawnList )
-			{
-				if (this.Math.abs(party.Cost - resources) < bestCost)
-				{
-					best = party;
-					bestCost = this.Math.abs(party.Cost - resources);
-				}
-			}
+			return
 		}
 
-		if (best != null)
+		this.m.Troops = [];
+
+		if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
 		{
-			this.m.Troops = [];
-
-			if (this.Time.getVirtualTimeF() - this.m.LastSpawnTime <= 60.0)
-			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
-			}
-			else
-			{
-				this.m.DefenderSpawnDay = this.World.getTime().Days;
-			}
-
-			foreach( t in best.Troops )
-			{
-				for( local i = 0; i != t.Num; i = ++i )
-				{
-					this.Const.World.Common.addTroop(this, t, false);
-				}
-			}
-
-			this.updateStrength();
+			this.m.DefenderSpawnDay = this.World.getTime().Days - 7;
 		}
+		else
+		{
+			this.m.DefenderSpawnDay = this.World.getTime().Days;
+		}
+
+		local troopMbMap = {};
+		foreach( t in best.Troops )
+		{
+			local key = "Enemy" + t.Type.ID;
+			if (!(key in troopMbMap))
+			{
+				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
+			}
+
+			local mb = troopMbMap[key];
+
+			for( local i = 0; i != t.Num; i = ++i )
+			{
+				this.Const.World.Common.addTroop(this, t, false, mb);
+			}
+		}
+
+		this.updateStrength();
 	}
 
 	function onSerialize( _out )
@@ -673,4 +694,3 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 	}
 
 });
-

@@ -21,6 +21,7 @@ gt.Const.World.Spawn.Unit <- {
 	Script = "",
 	Name = ""
 };
+
 gt.Const.World.Spawn.Troops <- {
 	Necromancer = {
 		ID = this.Const.EntityType.Necromancer,
@@ -347,7 +348,6 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/direwolf_high"
 	},
-
 	DirewolfBodyguard = {
 		ID = this.Const.EntityType.Direwolf,
 		Variant = 0,
@@ -732,7 +732,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		Script = "scripts/entity/tactical/wardog"
 	},
-		BanditRabble = {
+	BanditRabble = {
 		ID = this.Const.EntityType.BanditRabble,
 		Variant = 0,
 		Strength = 5,
@@ -886,6 +886,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_white_direwolf"
 	},
+	LegendWhiteDirewolfBodyguard = {
+		ID = this.Const.EntityType.LegendWhiteDirewolf,
+		Variant = 0,
+		Strength = 300,
+		Cost = 75,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_white_direwolf_bodyguard"
+	},
 	LegendSkinGhoulLOW = {
 		ID = this.Const.EntityType.LegendSkinGhoul,
 		Variant = 0,
@@ -934,6 +942,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_redback_spider"
 	},
+	LegendRedbackSpiderBodyguard = {
+		ID = this.Const.EntityType.LegendRedbackSpider,
+		Variant = 0,
+		Strength = 100,
+		Cost = 100,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_redback_spider_bodyguard"
+	},
 	LegendDemonAlp = {
 		ID = this.Const.EntityType.LegendDemonAlp,
 		Variant = 0,
@@ -951,334 +967,46 @@ gt.Const.World.Spawn.Troops <- {
 		Script = "scripts/entity/tactical/enemies/legend_hexe_leader"
 	}
 };
-gt.Const.World.Spawn.Caravan <- [
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 1
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanHand,
-				Num = 8
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanGuard,
-				Num = 4
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 3
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.5,
-		VisibilityMult = 1.0,
-		VisionMult = 0.25,
-		Body = "cart_02",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Mercenary,
-				Num = 6
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.MercenaryRanged,
-				Num = 3
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.CaravanDonkey,
-				Num = 2
-			}
-		]
-	}
-];
+
+gt.Const.World.Spawn.Caravan <-
+{
+	Name = "Caravan",
+	IsDynamic = true,
+	MovementSpeedMult = 0.5,
+	VisibilityMult = 1.0,
+	VisionMult = 0.25,
+	Body = "cart_02",
+	MaxR = 225,
+	MinR = 30,
+	Fixed = [
+		{
+			MinCount = 1,
+			MaxCount = 3,
+			Weight = 30 //percentage chance after min count is met
+			Type = this.Const.World.Spawn.Troops.CaravanDonkey,
+			Cost = 0
+		}
+	],
+	Troops = [
+		{
+			Weight = 100,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.CaravanHand,
+					Cost = 10
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.CaravanGuard,
+					Cost = 15
+				}
+			]
+		}
+	]
+}
+
 gt.Const.World.Spawn.CaravanEscort <- [
 	{
+
 		Cost = 0,
 		MovementSpeedMult = 0.5,
 		VisibilityMult = 1.0,
@@ -1381,6 +1109,7 @@ gt.Const.World.Spawn.CaravanEscort <- [
 		]
 	}
 ];
+
 function onCostCompare( _t1, _t2 )
 {
 	if (_t1.Cost < _t2.Cost)
@@ -1423,18 +1152,16 @@ function calculateCosts( _p )
 // 		{
 // 			continue;
 // 		}
-		
+
 // 		// if (!t in this.Const.World.Spawn.TroopsMap)
 // 		{
 // 			this.logInfo("**** NOT IN TROOPSMAP " + t)
 // 		}
-		
+
 
 // 	}
 // }
 
-
-this.calculateCosts(this.Const.World.Spawn.Caravan);
 this.calculateCosts(this.Const.World.Spawn.CaravanEscort);
 
 local spawnMap = {};

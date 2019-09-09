@@ -6,7 +6,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.legend_vala_recruitment";
-		this.m.Title = "Somewhere around %townname%...";
+		this.m.Title = "Along the way...";
 		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
@@ -51,29 +51,37 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		{
 			return;
 		}
-
+		
 		local towns = this.World.EntityManager.getSettlements();
 		local nearTown = false;
 		local town;
 		local playerTile = this.World.State.getPlayer().getTile();
+		
 		foreach (t in towns)
 		{
-			if (t.getTile().getDistanceTo(playerTile) >= 400 && t.isAlliedWithPlayer())
+			if (t.getTile().getDistanceTo(playerTile) <= 7 && !t.isIsolatedFromRoads())
 			{
 				nearTown = true;
 				town = t;
 				break;
 			}
 		}
+		
 		if (!nearTown)
 		{
 			return;
 		}
 
+		if (playerTile.SquareCoords.Y < this.World.getMapSize().Y * 0.7)
+		{
+			return;
+		}
+		
 		if (!this.World.Assets.isLegendMagic())
 		{
 			return;
 		}
+		
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
 		local brotherlevels = 0;
@@ -90,6 +98,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}
+		
 		if (totalbrothers < 1 || brotherlevels < 30)
 		{
 			return;
@@ -98,7 +107,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 		this.m.Town = town;
 		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
-		//this.m.Score = 0;
 	}
 
 	function onPrepare()
@@ -107,10 +115,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 	function onPrepareVariables( _vars )
 	{
-		_vars.push([
-			"townname",
-			this.m.Town.m.Name
-		]);
 	}
 
 	function onClear()
