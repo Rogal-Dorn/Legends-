@@ -93,8 +93,8 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.DamageRegularMin += 5;
-			_properties.DamageRegularMax += 10;
+			_properties.DamageRegularMin = 5;
+			_properties.DamageRegularMax = 10;
 			_properties.FatigueDealtPerHitMult += 2.0;
 		}
 	}
