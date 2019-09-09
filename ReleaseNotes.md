@@ -1597,66 +1597,66 @@ Fixed daemon alps crash
 Fixes cascade skill icon
 Fixes piercing bolt skill
 
-12.7.1 Test 1 
+12.7.1 Test 1
 
-Merges in 1.3.0.25 
+Merges in 1.3.0.25
 * AI slightly prefers to cast miasma
 * Charachters can now be called Vikingur
-* Alps give 300 xp instead of 350 
-* Weaponsmiths can now have named pikes 
-* the namelist is applied to each spawned unit rather than a clone of them, not sure of the impact of this. 
-* spelling fixed on alps contract 
-* Champion Goblin ambushers gain overwhelm 
-* Goatherd locations add shepherds to the towns recruit pool 
-* wool spinners can add a shepherd to the towns recruit pool 
-* Player characters can't take part in the alp nightmare event 
-* Greater evil triggers at 200 party strength instead of 210 
-* roaming alp parties can spawn in 20% greater numbers 
+* Alps give 300 xp instead of 350
+* Weaponsmiths can now have named pikes
+* the namelist is applied to each spawned unit rather than a clone of them, not sure of the impact of this.
+* spelling fixed on alps contract
+* Champion Goblin ambushers gain overwhelm
+* Goatherd locations add shepherds to the towns recruit pool
+* wool spinners can add a shepherd to the towns recruit pool
+* Player characters can't take part in the alp nightmare event
+* Greater evil triggers at 200 party strength instead of 210
+* roaming alp parties can spawn in 20% greater numbers
 * items crafted statistics are reset to 0 on new campaigns with the B&E DLC
-* Permenant destruction tooltip no longer reads "recommended" 
-* Permanent destruction checkbox is no longer checked by default 
+* Permenant destruction tooltip no longer reads "recommended"
+* Permanent destruction checkbox is no longer checked by default
 New legendary contract added for barbarians (thanks skyu)
 *Bandit army spawns tweaked
 *Berserk rage stacks rebalanced
-*Nudist nerfed (correctly this time) 
+*Nudist nerfed (correctly this time)
 *improves odds of finding vala
-Legendary contract timeout increased from one week to one month 
-Fixes crash when decapitating or shooting hexen coven leaders 
-Web skill gains a tooltip 
-Fixes ironmonger description 
+Legendary contract timeout increased from one week to one month
+Fixes crash when decapitating or shooting hexen coven leaders
+Web skill gains a tooltip
+Fixes ironmonger description
 
 
-12.7.1 Test 2 
-Merges in 1.3.0.25 
+12.7.1 Test 2
+Merges in 1.3.0.25
 * AI slightly prefers to cast miasma
 * Charachters can now be called Vikingur
-* Alps give 300 xp instead of 350 
-* Weaponsmiths can now have named pikes 
-* the namelist is applied to each spawned unit rather than a clone of them, not sure of the impact of this. 
-* spelling fixed on alps contract 
-* Champion Goblin ambushers gain overwhelm 
-* Goatherd locations add shepherds to the towns recruit pool 
-* wool spinners can add a shepherd to the towns recruit pool 
-* Player characters can't take part in the alp nightmare event 
-* Greater evil triggers at 200 party strength instead of 210 
-* roaming alp parties can spawn in 20% greater numbers 
+* Alps give 300 xp instead of 350
+* Weaponsmiths can now have named pikes
+* the namelist is applied to each spawned unit rather than a clone of them, not sure of the impact of this.
+* spelling fixed on alps contract
+* Champion Goblin ambushers gain overwhelm
+* Goatherd locations add shepherds to the towns recruit pool
+* wool spinners can add a shepherd to the towns recruit pool
+* Player characters can't take part in the alp nightmare event
+* Greater evil triggers at 200 party strength instead of 210
+* roaming alp parties can spawn in 20% greater numbers
 * items crafted statistics are reset to 0 on new campaigns with the B&E DLC
-* Permenant destruction tooltip no longer reads "recommended" 
-* Permanent destruction checkbox is no longer checked by default 
+* Permenant destruction tooltip no longer reads "recommended"
+* Permanent destruction checkbox is no longer checked by default
 New legendary contract added for barbarians (thanks syku333)
 *Bandit army spawns tweaked
 *Berserk rage stacks rebalanced
-*Nudist nerfed (correctly this time) 
+*Nudist nerfed (correctly this time)
 *improves odds of finding vala
-Legendary contract timeout increased from one week to one month 
-Fixes crash when decapitating or shooting hexen coven leaders 
-Web skill gains a tooltip 
-Fixes ironmonger description 
+Legendary contract timeout increased from one week to one month
+Fixes crash when decapitating or shooting hexen coven leaders
+Web skill gains a tooltip
+Fixes ironmonger description
 
 
 12.7.1 Test 3
 Tweaks to Bandit Army Legendary contract:
-* Wont spawn in citadels anymore 
+* Wont spawn in citadels anymore
 * Requirement to spawn increased and payout decreased
 Improvement / bugfixes:
 * Bandit Rabble wont break game if they have buckler equipped
@@ -1685,3 +1685,12 @@ Fixed typo in Towershield description
 
 12.7.1 Test 4?
 * Added hatchet and longaxe to both woodcutter specialist perks
+
+12.7.1 - 13.0.0.1 Dynamic Spawns Test
+
+*This is the first major feature of v13 - Testing dynamic spawnlists.
+*This replaces every handcrafted vanilla spawnlist with a new system that uses a psuedo random generator to select units for enemy groups.
+*What this means is that there is no longer an enemy party level cap. They will scale in strength and numbers infintely.
+*This test build is compatible with exsting 12.7 saves.
+
+https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
