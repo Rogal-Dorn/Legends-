@@ -1,4 +1,4 @@
-this.legend_armor_ancient_mail <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
+this.legend_armor_mail_hauberk <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
@@ -8,16 +8,16 @@ this.legend_armor_ancient_mail <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "Mail Hauberk";
 		this.m.Description = "A long and heavy chainmail that offers good protection but is very fatiguing to wear.";
 		this.m.ArmorDescription = "Includes a long and heavy chainmail that offers good protection but is very fatiguing to wear.";
-		this.m.Icon = "legend_armor/chain/icon_legend_armor_ancient_mail.png";
+		this.m.Icon = "legend_armor/chain/icon_legend_armor_mail_hauberk.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/chain/icon_legend_armor_ancient_mail.png";
-		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_armor_ancient_mail.png";
+		this.m.OverlayIcon = "legend_armor/chain/icon_legend_armor_mail_hauberk.png";
+		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_armor_mail_hauberk.png";
 		this.m.SpriteFront = null;
-		this.m.SpriteBack = "legend_armor_ancient_mail";
+		this.m.SpriteBack = "legend_armor_mail_hauberk";
 		this.m.SpriteDamagedFront = null;
-		this.m.SpriteDamagedBack = "legend_armor_ancient_mail_damaged";
+		this.m.SpriteDamagedBack = "legend_armor_mail_hauberk_damaged";
 		this.m.SpriteCorpseFront = null;
-		this.m.SpriteCorpseBack = "legend_armor_ancient_mail_dead";
+		this.m.SpriteCorpseBack = "legend_armor_mail_hauberk_dead";
 		this.m.Value = 1000;
 		this.m.Condition = 150;
 		this.m.ConditionMax = 150;
