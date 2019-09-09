@@ -22,7 +22,7 @@ this.legend_armor_sellswords <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Condition = 260;
 		this.m.ConditionMax = 260;
 		this.m.StaminaModifier = 32;
-		this.m.ImpactSound = this.Const.Sound.ArmorChainImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 	function getTooltip()

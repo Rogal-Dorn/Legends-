@@ -22,7 +22,7 @@ this.legend_armor_footmans_armor <- this.inherit("scripts/items/legend_armor/leg
 		this.m.Condition = 190;
 		this.m.ConditionMax = 190;
 		this.m.StaminaModifier = 22;
-		this.m.ImpactSound = this.Const.Sound.ArmorChainImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 	function getTooltip()

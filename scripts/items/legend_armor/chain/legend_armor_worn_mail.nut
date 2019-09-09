@@ -22,7 +22,7 @@ this.legend_armor_worn_mail <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.Condition = 110;
 		this.m.ConditionMax = 110;
 		this.m.StaminaModifier = 12;
-		this.m.ImpactSound = this.Const.Sound.ArmorChainImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 	function getTooltip()

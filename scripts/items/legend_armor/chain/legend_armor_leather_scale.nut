@@ -22,7 +22,7 @@ this.legend_armor_leather_scale <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Condition = 140;
 		this.m.ConditionMax = 140;
 		this.m.StaminaModifier = 16
-		this.m.ImpactSound = this.Const.Sound.ArmorChainImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 	function getTooltip()
