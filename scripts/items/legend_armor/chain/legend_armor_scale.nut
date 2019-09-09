@@ -22,7 +22,7 @@ this.legend_armor_scale <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.Condition = 240;
 		this.m.ConditionMax = 240;
 		this.m.StaminaModifier = 28;
-		this.m.ImpactSound = this.Const.Sound.ArmorChainImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 	function getTooltip()

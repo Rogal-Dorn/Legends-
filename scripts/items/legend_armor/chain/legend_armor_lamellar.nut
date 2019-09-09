@@ -22,7 +22,7 @@ this.legend_armor_lamellar <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.Condition = 230;
 		this.m.ConditionMax = 230;
 		this.m.StaminaModifier = 30;
-		this.m.ImpactSound = this.Const.Sound.ArmorChainImpact;
+		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 	function getTooltip()
