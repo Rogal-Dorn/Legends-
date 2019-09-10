@@ -201,6 +201,10 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_rock_unhold"));
 					break;
 
+				case 37:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_banshee"));
+					break;
+
 				default:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
 					break;
@@ -485,12 +489,12 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				id = 14,
 				name = "Heartwood Schrats (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_heartwood.png[/img][/p]\n[p=c]It is just one tree, how bad could it be?[/p]"
-			},			
+			},
 			{
 				id = 35,
 				name = "Demon Alps (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
-			},		
+			},
 			{
 				id = 32,
 				name = "Stollwurm (Legendary)",
@@ -500,12 +504,12 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				id = 33,
 				name = "The Coven (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_hexe_leader.png[/img][/p]\n[p=c]A witch approaches.[/p]"
-			},		
+			},
 			{
 				id = 9,
 				name = "Line Battle (Legendary)",
 				description = "[p=c][img]gfx/ui/events/event_49.png[/img][/p]\n[p=c]ORC ORC ORC ORC ORC ORC. Difficult.[/p]"
-			},				
+			},
 			{
 				id = 0,
 				name = "Combat Basics",
@@ -558,7 +562,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		}
 
 		return result;
-	}			
+	}
 
 	function options_menu_module_onOkPressed()
 	{

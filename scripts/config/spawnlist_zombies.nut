@@ -294,11 +294,21 @@ gt.Const.World.Spawn.Ghosts <-
 	MinR = 80,
 	Troops = [
 		{
-			Weight = 100,
+			Weight = 90,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
 					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 10,
+			MinR = 460,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBanshee,
+					Cost = 70
 				}
 			]
 		}
@@ -412,11 +422,21 @@ gt.Const.World.Spawn.Necromancer <-
 			]
 		},
 		{
-			Weight = 10,
+			Weight = 8,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
 					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 2,
+			MinR = 640,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBanshee,
+					Cost = 70
 				}
 			]
 		}
