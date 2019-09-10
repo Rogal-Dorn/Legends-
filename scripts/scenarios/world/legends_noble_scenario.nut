@@ -113,37 +113,37 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(14);
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[1].setStartValuesEx([
 		"legend_noble_shield"
 		]);
 		bros[1].setPlaceInFormation(3);
-		bros[1].setVeteranPerks(2);	
+		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[2].setStartValuesEx([
 		"legend_noble_2h"
 		]);
 		bros[2].setPlaceInFormation(4);
-		bros[2].setVeteranPerks(2);	
+		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[3].setStartValuesEx([
 		"legend_noble_shield"
 		]);
 		bros[3].setPlaceInFormation(5);
-		bros[3].setVeteranPerks(2);	
+		bros[3].setVeteranPerks(2);
 		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[4].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
 		bros[4].setPlaceInFormation(13);
-		bros[4].setVeteranPerks(2);	
+		bros[4].setVeteranPerks(2);
 		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 		bros[5].setStartValuesEx([
 		"legend_noble_ranged"
 		]);
 		bros[5].setPlaceInFormation(15);
-		bros[5].setVeteranPerks(2);	
+		bros[5].setVeteranPerks(2);
 		bros[5].getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
 
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
@@ -183,8 +183,8 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.improveMood(0.5, "Supports your cause as a usurper");
 		}
 		else if (!bro.getBackground().isNoble() && !bro.getBackground().isCombatBackground())
-		{			
-			bro.worsenMood(1.0, "Is uncormfortable serving a usurper");
+		{
+			bro.worsenMood(1.0, "Feels uncomfortable serving a usurper");
 		}
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_quick_hands"));
@@ -213,23 +213,23 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onUpdateDraftList( _list )
 	{
 
-		
-		local r;		
+
+		local r;
 		r = this.Math.rand(0, 3);
 		if (r == 0)
 		{
 			_list.push("legend_noble_2h");
-		}	
+		}
 		r = this.Math.rand(0, 3);
 		if (r == 0)
 		{
 			_list.push("legend_noble_shield");
-		}				
+		}
 		r = this.Math.rand(0, 3);
 		if (r == 0)
 		{
 			_list.push("legend_noble_ranged");
-		}	
+		}
 	}
 
 	function onBuildPerkTree( _tree)
@@ -238,9 +238,10 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			return;
 		}
-		
+
 		_tree.addPerk(this.Const.Perks.PerkDefs.QuickHands)
 	}
+
 
 });
 
