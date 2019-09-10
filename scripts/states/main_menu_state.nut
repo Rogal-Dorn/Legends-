@@ -466,6 +466,11 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 
 		local result = [
 			{
+				id = 37,
+				name = "Banshees (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
+			},
+			{
 				id = 30,
 				name = "Skin Ghouls (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_skin_ghoul.png[/img][/p]\n[p=c]Head to head vs the creepy naked beasties[/p]"

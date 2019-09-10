@@ -26,7 +26,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.asthmatic",
 			"trait.spartan",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
@@ -35,7 +35,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Body = "bust_naked_body_01";
 
 		local chance = 10;
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			chance = 50;
 		}
@@ -139,7 +139,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,		
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
@@ -172,7 +172,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			[],
 			[],
 			[],
-			[]			
+			[]
 		];
 	}
 
@@ -202,7 +202,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		else
 			{
 			return "This is the commander, when they die, it is game over. {A minor noble | As the third in the line of succession | A young and brash noble | A skilled swordsman}, %name%\'s life at court {had grown stale for him | was not exciting enough for him with endless studying of court etiquette and family lineage | felt like wasting the best time of his life | was not half as exciting to him as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of his brother | To the frustration of his mother | Finally making a decision to change things}, %name% rode out to {prove himself | make a name for himself | earn glory on the battlefield | test his skills in battle} and {live life to its fullest as he imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn his place in the world | be knighted for his valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
-			}		
+			}
 	}
 
 
@@ -269,7 +269,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/helmets/greatsword_hat"));
-		
+
 		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");

@@ -45,11 +45,11 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r;
 			r = this.Math.rand(0, 1);
-		
+
 			if (r == 0)
 			{
 				this.m.Faces = this.Const.Faces.PrettyFemale;
@@ -90,7 +90,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			0.01, //highlands
 			0.0, //stepps
 			0.0 //ocean
-		];	
+		];
 		this.m.CustomPerkTree = [
 			[
 				this.Const.Perks.PerkDefs.CripplingStrikes,
@@ -181,7 +181,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			[],
 			[],
 			[]
-		];	
+		];
 	}
 
 	function getTooltip()
@@ -210,7 +210,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onChangeAttributes()
 	{
-			
+
 		local c = {
 			Hitpoints = [
 				-5,
@@ -254,7 +254,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}	
+	}
 
 
 

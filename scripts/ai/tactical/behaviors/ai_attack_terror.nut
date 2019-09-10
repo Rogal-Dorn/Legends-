@@ -3,7 +3,9 @@ this.ai_attack_terror <- this.inherit("scripts/ai/tactical/behavior", {
 		TargetTile = null,
 		TargetScore = 0.0,
 		PossibleSkills = [
-			"actives.horrific_scream"
+			"actives.horrific_scream",
+			"actives.legend_banshee_scream",
+			"actives.legend_horrific_scream"
 		],
 		Skill = null
 	},
