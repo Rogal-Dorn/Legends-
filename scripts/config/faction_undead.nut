@@ -281,4 +281,22 @@ gt.Const.Tactical.Actor.Necromancer <- {
 		0
 	]
 };
+gt.Const.Tactical.Actor.LegendBanshee <- {
+	XP = 550,
+	ActionPoints = 9,
+	Hitpoints = 5,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 75,
+	RangedSkill = 0,
+	MeleeDefense = 35,
+	RangedDefense = 999,
+	Initiative = 105,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};
 

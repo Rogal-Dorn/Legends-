@@ -965,7 +965,15 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 200,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_hexe_leader"
-	}
+	},
+	LegendBanshee = {
+		ID = this.Const.EntityType.LegendBanshee,
+		Variant = 0,
+		Strength = 70,
+		Cost = 70,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/legend_banshee"
+	},
 };
 
 gt.Const.World.Spawn.Caravan <-

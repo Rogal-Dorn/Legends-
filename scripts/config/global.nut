@@ -193,7 +193,7 @@ gt.Const.Difficulty <- {
 		10,
 		5,
 		1
-	],	
+	],
 	HealMult = [
 		1.0,
 		0.66,
@@ -329,7 +329,7 @@ gt.Const.EntityType <- {
 	BarbarianMadman = 80,
 	BanditRabble = 81,
 	LegendCat = 82,
-	LegendOrcElite = 83, 
+	LegendOrcElite = 83,
 	LegendOrcBehemoth = 84,
 	LegendWhiteDirewolf = 85,
 	LegendSkinGhoul = 86,
@@ -340,7 +340,8 @@ gt.Const.EntityType <- {
 	LegendHexeLeader = 91,
 	LegendGreenwoodSchrat = 92,
 	LegendGreenwoodSchratSmall = 93,
-	LegendWhiteWarwolf = 94
+	LegendWhiteWarwolf = 94,
+	LegendBanshee = 95
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -598,6 +599,6 @@ gt.Const.EntityIcon <- [
 	"hexen_leader_orientation",
 	"greenwood_schrat_orientation",
 	"greenwood_schrat_small_orientation",
-	"white_direwolf_orientation"	
+	"white_direwolf_orientation"
 ];
 
