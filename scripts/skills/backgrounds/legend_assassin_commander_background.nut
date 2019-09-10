@@ -58,7 +58,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Body = "bust_naked_body_02";
 
 		local r = this.Math.rand(0, 9);
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			r = this.Math.rand(0, 1);
 		}
@@ -73,7 +73,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
 		}
-		
+
 		this.m.Level = 3;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;

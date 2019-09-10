@@ -59,7 +59,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_04";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -102,7 +102,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			0.0, //stepps
 			0.0 //ocean
 		];
-		this.m.CustomPerkTree = [ 
+		this.m.CustomPerkTree = [
 			[
 				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
@@ -163,7 +163,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.SunderingStrikes,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,		
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 				this.Const.Perks.PerkDefs.LegendRoster4
 
 			],
@@ -187,9 +187,9 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendBerserkerRage,
 				//this.Const.Perks.PerkDefs.LegendInfectiousRage,
 				this.Const.Perks.PerkDefs.LegendUberNimble,
-				this.Const.Perks.PerkDefs.LegendRoster6		
+				this.Const.Perks.PerkDefs.LegendRoster6
 			]
-		];		
+		];
 	}
 
 	function getTooltip()
@@ -223,7 +223,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		else
 			{
 			return "{For some, the wild is a refuge. | It is said that man is born with the wilderness in him, and that he does wrong by turning his back on it. | Civilization is a stain, one prolonged arming of every next-generation to better battle the ultimate enemy: Mother Nature herself. | In a time of war, it\'s not surprising that many once again seek refuge in the wild. | Some people flee from town to town. Others stop in between, disappearing into the tranquil forests.} {%name% once found a safe register amongst the trees, but that time is over. | Once a mysterious figure to hunters - the famed masskewatsthat - %name% now returns to civilization for reasons unknown. | %name%\'s got the hands of a blacksmith, but the hygiene of a pigsty. | Maybe it was spurned love, or maybe just war, but %name% has spent the last decade far from the rest of mankind. | Possibly a poacher who settled where he hunted, %name%\'s lived amongst the trees for untold years. | With cleverly stitched garb, %name%\'s atavistic appearance perhaps belies a past as a tailor or tanner.} {There is an obvious language barrier with the berserker, but for some reason he seems very willing to fight. Let\'s hope his newfound \'calling\' doesn\'t have a darker purpose behind it. | Colorful and permanent ritual rites circle about his body. When asked why he wishes to join a band of mercenaries, he hoots and, with a crooked finger, replicates one of his fleshen arts across the sky. | Wounds, old and fresh, dot his already mottled body. And they are not superficial - this man had been fighting something fierce in the wild. | One has to wonder if the calamities which chased him into the forests have come to chase him back out. | Judging by his wild grunting, it\'s doubtful he\'s here to rejoin civilization. | Years as a recluse haven\'t made the man forget what a few crowns can get you. The question is, why did he come back? | He has the strength to wrestle a boar - and his many scars makes you wonder if perhaps he did.}";
-			}	
+			}
 
 
 	}
@@ -303,7 +303,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Container.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-	}	
+	}
 
 
 	function onAddEquipment()
@@ -319,7 +319,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
 		stash.add(this.new("scripts/items/accessory/berserker_mushrooms_item"));
-		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));		
+		stash.add(this.new("scripts/items/supplies/roots_and_berries_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/weapons/throwing_axe"));
 		items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));

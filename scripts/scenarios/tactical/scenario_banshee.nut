@@ -131,7 +131,9 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		//  entity.setFaction(this.Const.Faction.Beasts);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 12, 12);
 		//  entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", x, x, 17, 17);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 17, 17);
+		 //entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 15, 15, 15, 18);
+		 //entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 18, 18, 16, 16);
 		 entity.setFaction(this.Const.Faction.Zombies);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 18, 18);
 		// entity.setFaction(this.Const.Faction.Beasts);

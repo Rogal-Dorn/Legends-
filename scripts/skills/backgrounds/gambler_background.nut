@@ -48,7 +48,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_02";
 
 		local r = this.Math.rand(0, 9);
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			r = this.Math.rand(0, 1);
 		}
@@ -70,7 +70,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsOutlawBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.StavesTree

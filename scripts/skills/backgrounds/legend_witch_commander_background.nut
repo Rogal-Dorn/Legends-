@@ -38,7 +38,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.huge",
 			"trait.tough",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Enthralling",
@@ -58,8 +58,8 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 
-		
-		if (this.World.Assets.isLegendGenderEquality())
+
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -86,7 +86,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 			this.m.CustomPerkTree = [
 				[
 					this.Const.Perks.PerkDefs.FastAdaption,
-					this.Const.Perks.PerkDefs.CripplingStrikes, 
+					this.Const.Perks.PerkDefs.CripplingStrikes,
 					this.Const.Perks.PerkDefs.BagsAndBelts,
 					this.Const.Perks.PerkDefs.NineLives,
 					this.Const.Perks.PerkDefs.LegendAlert,
@@ -114,7 +114,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendHorrify,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 					this.Const.Perks.PerkDefs.LegendRoster3
-				
+
 				],
 				[
 					this.Const.Perks.PerkDefs.SpecDagger,
@@ -167,7 +167,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 			this.m.CustomPerkTree = [
 				[
 					this.Const.Perks.PerkDefs.FastAdaption,
-					this.Const.Perks.PerkDefs.CripplingStrikes, 
+					this.Const.Perks.PerkDefs.CripplingStrikes,
 					this.Const.Perks.PerkDefs.BagsAndBelts,
 					this.Const.Perks.PerkDefs.NineLives,
 					this.Const.Perks.PerkDefs.Student,
@@ -195,7 +195,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendHorrify,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
 					this.Const.Perks.PerkDefs.LegendRoster3
-				
+
 				],
 				[
 					this.Const.Perks.PerkDefs.SpecDagger,
@@ -266,9 +266,9 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		return "{ %name% is a knower of the wise ways. |  %name% carries a distant look, as if distracted by otherworldly events. | %name%\'s face is seems lined by years | Not much is known about %name%, but she is said to know the secret ways. | Wherever there is a birth, %name% makes an appearance to guide the mother. | The brooches on %name%\'s cloak seem to swirl and dance like midnight in a jug. | %name%\'s hands are rare to see, only coming out as if to portray the feelings of a face which lies hidden deep in its hood. | %name%\'s eyes could be mistaken for a cat\'s one day and for a blind man\'s the next.} {Little is known of their history | their past i but a mystery to most. | Some say they traveled deep into the northern foothills, returning with unspoken knowledge. | Ostensibly, the cunning ways are their heritage, or so it seems. | Their past is kept from all. Maybe it\'s just uninteresting, or maybe just the opposite. | One rumor says she traveled the land as a spellweaver. | Rumors of magic surround the woman, though some incredulous cynics are hardly impressed. | One rumor is that she was a conman, and another is that she\'s a sorcerer. You\'re not sure which you prefer. | With rumors of dark arts being practiced once more, the woman\'s magical proclamation just might be true. | Some say she eats toads for breakfast and black cats for dinner.} {You ask %name% a lot of questions, but through some handwaves and nods, you realize you have forgotten her answers. Or did you ask the questions at all? | %name% produces a dove from her sleeve. An old trick that fancies no one - until it turns in the air, returning to her as a crow. | %name% has shown the ability to shoot smoke from her mouth. It\'s not fire, but it\'s close, and has people talking in hushed tones. | %name% floats a gold coin into the air. An amazing display that leaves the woman too tired to attempt it again. | Predictions of the weather are common, but %name% is unusually accurate with her own. | %name% asks to read your palms. You decline. Her presence alone is as close as you\'re willing to go. | %name% suggests that the stars are a roadmap to another world. She seems to know a lot about the heavens above. | %name% suggests that the heavens above are in fact just endless streams of beings, continuing on for eons. What a jest! | %name% points to one star in the sky and seems to suggest that is where she came from. You don\'t ask for a clarification on the matter.}";
 	}
-	
 
-		
+
+
 	function onChangeAttributes()
 	{
 		local c = {
@@ -307,7 +307,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		};
 		return c;
 	}
-	
+
 	function onAdded()
 	{
 		this.character_background.onAdded();

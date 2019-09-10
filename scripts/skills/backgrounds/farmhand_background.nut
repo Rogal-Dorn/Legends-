@@ -25,7 +25,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -42,7 +42,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 			}
 		}
 		this.m.IsLowborn = true;
-		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];		
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Terrain = [
 				0.0, // ?
@@ -64,7 +64,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 				0.0 //ocean
 			];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.SlingsTree

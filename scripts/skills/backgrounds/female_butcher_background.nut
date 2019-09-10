@@ -44,7 +44,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.IsFemaleBackground = true;
 
 		local r = this.Math.rand(0, 3);
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			r = this.Math.rand(0, 1);
 		}
@@ -61,13 +61,13 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 			this.m.BadEnding = "%name% the fishmonger eventually left the declining company. He joined up with another outfit, but was caught slaughtering one of their war dogs. Apparently, he had been feeding the mercenaries dogmeat from all their mongrels that had gone \'missing\'. They did not take this news kindly, stripped the butcher, and fed him to the beasts.";
 		}
 
-		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];		
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.ThrowingTree
@@ -177,7 +177,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		if (r == 0)
 		{
 			items.equip(this.new("scripts/items/armor/butcher_apron"));
-		}		
+		}
 		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/legend_maid_apron"));

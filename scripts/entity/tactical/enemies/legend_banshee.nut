@@ -142,20 +142,26 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.getAppearance().Body = "bust_banshee_01";
 		this.addSprite("socket").setBrush("bust_base_undead");
 		this.addSprite("fog").setBrush("bust_ghost_fog_02");
+
 		local body = this.addSprite("body");
 		body.setBrush("bust_banshee_01");
+		body.Saturation = 0.5
+		body.setBrightness(0.8);
 		body.varySaturation(0.25);
 		body.varyColor(0.2, 0.2, 0.2);
 		local head = this.addSprite("head");
 		head.setBrush("bust_banshee_01");
+		head.setBrightness(0.8);
 		head.varySaturation(0.25);
 		head.varyColor(0.2, 0.2, 0.2);
 		local blur_1 = this.addSprite("blur_1");
 		blur_1.setBrush("bust_banshee_01");
+		blur_1.setBrightness(0.8);
 		blur_1.varySaturation(0.25);
 		blur_1.varyColor(0.2, 0.2, 0.2);
 		local blur_2 = this.addSprite("blur_2");
 		blur_2.setBrush("bust_banshee_01");
+		blur_2.setBrightness(0.8);
 		blur_2.varySaturation(0.25);
 		blur_2.varyColor(0.2, 0.2, 0.2);
 		this.addDefaultStatusSprites();

@@ -29,20 +29,20 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.deathwish",
 			"trait.bloodthirsty",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
-		
+
 		local r = this.Math.rand(0, 9);
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			r = this.Math.rand(0, 1);
 		}
-		
+
 		if (r == 0)
 		{
 			this.m.Faces = this.Const.Faces.AllFemale;
@@ -98,7 +98,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendBarterConvincing
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.Overwhelm,
@@ -123,7 +123,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 			[],
 			[],
 			[],
-			[]	
+			[]
 		];
 	}
 
@@ -193,7 +193,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		local actor = this.getContainer().getActor();
 		actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));		
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 	}
 
 	function onAddEquipment()
@@ -209,15 +209,15 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		// stash.add(this.new("scripts/items/misc/snake_oil_item"));
 		// stash.add(this.new("scripts/items/supplies/dried_fruits_item"));
 		// stash.add(this.new("scripts/items/tents/tent_craft"));
-		// stash.add(this.new("scripts/items/tents/tent_enchant"));		
-		// stash.add(this.new("scripts/items/tents/tent_fletcher"));		
-		// stash.add(this.new("scripts/items/tents/tent_gather"));		
-		// stash.add(this.new("scripts/items/tents/tent_heal"));		
+		// stash.add(this.new("scripts/items/tents/tent_enchant"));
+		// stash.add(this.new("scripts/items/tents/tent_fletcher"));
+		// stash.add(this.new("scripts/items/tents/tent_gather"));
+		// stash.add(this.new("scripts/items/tents/tent_heal"));
 		// stash.add(this.new("scripts/items/tents/tent_hunter"));
-		// stash.add(this.new("scripts/items/tents/tent_repair"));		
-		// stash.add(this.new("scripts/items/tents/tent_scout"));		
-		// stash.add(this.new("scripts/items/tents/tent_scrap"));		
-		// stash.add(this.new("scripts/items/tents/tent_train"));		
+		// stash.add(this.new("scripts/items/tents/tent_repair"));
+		// stash.add(this.new("scripts/items/tents/tent_scout"));
+		// stash.add(this.new("scripts/items/tents/tent_scrap"));
+		// stash.add(this.new("scripts/items/tents/tent_train"));
 
 
 	}

@@ -57,7 +57,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"the Rogue",
 			"the Sly"
 		];
-		
+
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
@@ -65,12 +65,12 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Body = "bust_naked_body_02";
 
 		local r = this.Math.rand(0, 9);
-		
-		if (this.World.Assets.isLegendGenderEquality())
+
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 		}
-		
+
 		if (r == 0)
 		{
 			this.m.Faces = this.Const.Faces.AllFemale;
@@ -81,7 +81,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
 		}
-			
+
 		this.m.Level = 3;
 		this.m.IsOutlawBackground = true;
 		this.m.IsUntalented = true;
