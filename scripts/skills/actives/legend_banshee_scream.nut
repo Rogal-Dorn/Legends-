@@ -28,11 +28,6 @@ this.legend_banshee_scream <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 	}
 
-	function getDamage()
-	{
-		return this.Math.max(10, 30 - this.Math.floor(this.getContainer().getActor().getCurrentProperties().getBravery() * 0.25));
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		if (!_user.isHiddenToPlayer() || _targetTile.IsVisibleForPlayer)
