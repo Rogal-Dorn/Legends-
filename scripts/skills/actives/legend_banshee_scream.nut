@@ -63,6 +63,11 @@ this.legend_banshee_scream <- this.inherit("scripts/skills/skill", {
 		hitInfo.FatalityChanceMult = 0.0;
 		target.onDamageReceived(this.getContainer().getActor(), this, hitInfo);
 
+		target.getSkills().add(this.new("scripts/skills/effects/horrified_effect"));
+		if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
+		{
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(target) + " is horrified");
+		}
 
 		return true;
 	}
