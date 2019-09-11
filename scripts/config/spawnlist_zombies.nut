@@ -221,11 +221,21 @@ gt.Const.World.Spawn.ZombiesAndGhosts <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 15,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
 					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			MinR = 400,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBanshee,
+					Cost = 70
 				}
 			]
 		}
@@ -271,11 +281,21 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 15,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
 					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			MinR = 400,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBanshee,
+					Cost = 70
 				}
 			]
 		}
@@ -304,7 +324,7 @@ gt.Const.World.Spawn.Ghosts <-
 		},
 		{
 			Weight = 10,
-			MinR = 460,
+			MinR = 400,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendBanshee,

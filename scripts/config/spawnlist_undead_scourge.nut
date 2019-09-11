@@ -108,6 +108,10 @@ gt.Const.World.Spawn.UndeadScourge <-
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBanshee,
+					Cost = 70
 				}
 			]
 		},

@@ -289,7 +289,7 @@ gt.Const.Tactical.Actor.LegendBanshee <- {
 	Stamina = 100,
 	MeleeSkill = 75,
 	RangedSkill = 0,
-	MeleeDefense = 35,
+	MeleeDefense = 50,
 	RangedDefense = 999,
 	Initiative = 105,
 	FatigueEffectMult = 0.0,
