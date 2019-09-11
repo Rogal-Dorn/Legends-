@@ -601,5 +601,6 @@ gt.Const.EntityIcon <- [
 	"greenwood_schrat_small_orientation",
 	"white_direwolf_orientation",
 	"ghost_01_orientation"
+	"banshee_orientation_2"
 ];
 
