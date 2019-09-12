@@ -1644,3 +1644,9 @@ Beta 12.7.1 Released on Nexus
 *Added Favored Enemy Swordmasters perk releted event to fight 1v1 duel with swordmaster/hedge_knight/bandit_leader
 *Added hatchet and longaxe to both woodcutter specialist perks
 *Offhand skills damage won't scale to mainhand damage range anymore
+
+12.7.1 Test 1
+* Fixed Glaive Slash not properly using spear specialization
+* Added the four legend named weapons to the named melee weapons pool
+- Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
+* Fixed the orc weapon Skin Flayer not using extra fatigue per attack
