@@ -223,7 +223,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			r = this.Math.rand(0, 9);
 			if (r == 0)
 			{
-			_list.push("barbarian_background");
+				_list.push("barbarian_background");
 			}
 			
 		}

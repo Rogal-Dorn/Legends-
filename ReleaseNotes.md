@@ -1646,7 +1646,19 @@ Beta 12.7.1 Released on Nexus
 *Offhand skills damage won't scale to mainhand damage range anymore
 
 12.7.1 Test 1
+* Fixed various typos in descriptions/tooltips
 * Fixed Glaive Slash not properly using spear specialization
-* Added the four legend named weapons to the named melee weapons pool
+Added the four legend named weapons to the named melee weapons pool
 - Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
+* Fixed orc weapons tooltip not informing about additional fatigue cost
+* Fixed Man Mangler's weapon shield damage 
 * Fixed the orc weapon Skin Flayer not using extra fatigue per attack
+* Fixed Greenwood Schrat's Shield selfrepair feature
+* Removed roster upgrade perk from non-commander Seer background
+* Fixed Spear weapon group not giving "Thrust Master" perk
+* Updated Trader background description
+* Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
+Assassin Commander start reworked
+- Max roster of 24 bros with all corresponding perks
+- Everybody gets Backstabber perk in this start
+
