@@ -136,7 +136,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Assets.getStash().add(cha);
 		}
 		
-		local chain = [
+		local plate = [
 			"legend_armor_hide_and_bone",
 			"legend_armor_lamellar",
 			"legend_armor_rugged_scale",
