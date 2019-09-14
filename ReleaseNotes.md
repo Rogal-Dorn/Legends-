@@ -1661,4 +1661,4 @@ Added the four legend named weapons to the named melee weapons pool
 Assassin Commander start reworked
 - Max roster of 24 bros with all corresponding perks
 - Everybody gets Backstabber perk in this start
-
+* Fixed Poacher start to properly use your starting bro's names
