@@ -27,12 +27,12 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 			return;
 		}
 
-		if (_faction.getSettlements()[0].isIsolated() || _faction.getSettlements()[0].getSize() > 2)
+		local village = _faction.getSettlements()[0];
+
+		if (village.isIsolated() || village.getSize() > 2)
 		{
 			return;
 		}
-
-		local village = _faction.getSettlements()[0];
 
 		if (this.isKindOf(village, "small_snow_village") || this.isKindOf(village, "medium_snow_village"))
 		{

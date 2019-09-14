@@ -1645,7 +1645,7 @@ Beta 12.7.1 Released on Nexus
 *Added hatchet and longaxe to both woodcutter specialist perks
 *Offhand skills damage won't scale to mainhand damage range anymore
 
-12.7.1 Test 1
+12.7.2 Test 1
 * Fixed various typos in descriptions/tooltips
 * Fixed Glaive Slash not properly using spear specialization
 Added the four legend named weapons to the named melee weapons pool
@@ -1659,6 +1659,8 @@ Added the four legend named weapons to the named melee weapons pool
 * Updated Trader background description
 * Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
 Assassin Commander start reworked
-- Max roster of 24 bros with all corresponding perks
+- Max roster of 21 bros with all corresponding perks
 - Everybody gets Backstabber perk in this start
 * Fixed Poacher start to properly use your starting bro's names
+* Fixed Hexe Legendary Contract spawning multiple times in same settlement
+* Fixed Gash tooltip 
