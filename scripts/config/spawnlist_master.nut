@@ -974,6 +974,22 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/legend_banshee"
 	},
+	LegendDemonHound = {
+		ID = this.Const.EntityType.LegendDemonHound,
+		Variant = 0,
+		Strength = 25,
+		Cost = 25,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/legend_demon_hound"
+	},
+	LegendVampireLord = {
+		ID = this.Const.EntityType.LegendVampireLord,
+		Variant = 0,
+		Strength = 60,
+		Cost,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_vampire_lord"
+	}
 };
 
 gt.Const.World.Spawn.Caravan <-

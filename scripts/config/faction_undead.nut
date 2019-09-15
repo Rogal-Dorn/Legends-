@@ -281,6 +281,7 @@ gt.Const.Tactical.Actor.Necromancer <- {
 		0
 	]
 };
+
 gt.Const.Tactical.Actor.LegendBanshee <- {
 	XP = 550,
 	ActionPoints = 9,
@@ -300,3 +301,41 @@ gt.Const.Tactical.Actor.LegendBanshee <- {
 	]
 };
 
+gt.Const.Tactical.Actor.VampireLord <- {
+	XP = 600,
+	ActionPoints = 9,
+	Hitpoints = 300,
+	Bravery = 65,
+	Stamina = 100,
+	MeleeSkill = 85,
+	RangedSkill = 0,
+	MeleeDefense = 35,
+	RangedDefense = 35,
+	Initiative = 115,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		35,
+		0
+	]
+};
+
+
+gt.Const.Tactical.Actor.DemonHound <- {
+	XP = 250,
+	ActionPoints = 12,
+	Hitpoints = 90,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 55,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 10,
+	Initiative = 100,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};

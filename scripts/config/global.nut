@@ -341,7 +341,9 @@ gt.Const.EntityType <- {
 	LegendGreenwoodSchrat = 92,
 	LegendGreenwoodSchratSmall = 93,
 	LegendWhiteWarwolf = 94,
-	LegendBanshee = 95
+	LegendBanshee = 95,
+	LegendDemonHound = 96,
+	LegendVampireLord = 97
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -600,7 +602,9 @@ gt.Const.EntityIcon <- [
 	"greenwood_schrat_orientation",
 	"greenwood_schrat_small_orientation",
 	"white_direwolf_orientation",
-	"ghost_01_orientation"
-	"banshee_orientation_2"
+	"ghost_01_orientation",
+	"banshee_orientation_2",
+	"demon_hound_orientation",
+	"vampire_lord_orientation"
 ];
 

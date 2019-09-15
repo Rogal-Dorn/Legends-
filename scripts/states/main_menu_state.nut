@@ -205,6 +205,14 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_banshee"));
 					break;
 
+				case 38:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_vampire_lord"));
+					break;
+
+				case 39:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_demon_hound"));
+					break;
+
 				default:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
 					break;
@@ -465,6 +473,16 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 	{
 
 		local result = [
+			{
+				id = 38,
+				name = "Höllenhunds (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Undead demon hounds[/p]"
+			},
+			{
+				id = 38,
+				name = "Necrosavant Lords (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Necrosave Lords[/p]"
+			},
 			{
 				id = 37,
 				name = "Banshees (Legendary)",

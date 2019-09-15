@@ -1,18 +1,15 @@
-this.ancient_priest_attire <- this.inherit("scripts/items/armor/armor", {
+this.legend_vampire_lord_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {},
 	function create()
 	{
 		this.armor.create();
-		this.m.ID = "armor.body.ancient_priest_attire";
-		this.m.Name = "Ancient Priest Attire";
+		this.m.ID = "armor.body.legend_vampire_lord_attire";
+		this.m.Name = "Vampire Lord Attire";
 		this.m.Description = "";
 		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = true;
 		local variants = [
-			70,
-			71,
-			72,
-			73
+			970,
 		];
 		this.m.Variant = variants[this.Math.rand(0, variants.len() - 1)];
 		this.updateVariant();
