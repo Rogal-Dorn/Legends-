@@ -132,15 +132,15 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 12, 12);
 		//  entity.setFaction(this.Const.Faction.Beasts);
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 17, 17);
-		 entity.setFaction(this.Const.Faction.Zombies);
+		 entity.setFaction(this.Const.Faction.Undead);
+		 entity.assignRandomEquipment();
 		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 16);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 15);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 14);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 13);
-		 entity.setFaction(this.Const.Faction.Zombies);
+		 entity.setFaction(this.Const.Faction.Undead);
+		 //entity.assignRandomEquipment();
+		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 14);
+		//  entity.setFaction(this.Const.Faction.Zombies);
+		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 13);
+		//  entity.setFaction(this.Const.Faction.Zombies);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 18, 18);
 		// entity.setFaction(this.Const.Faction.Beasts);
 	}

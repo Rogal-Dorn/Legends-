@@ -4,10 +4,10 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 	},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.VampireLord;
+		this.m.Type = this.Const.EntityType.LegendVampireLord;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.MoraleState = this.Const.MoraleState.Ignore;
-		this.m.XP = this.Const.Tactical.Actor.VampireLord.XP;
+		this.m.XP = this.Const.Tactical.Actor.LegendVampireLord.XP;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
 			"sounds/enemies/vampire_hurt_01.wav",
@@ -80,14 +80,14 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("old_body").setHorizontalFlipping(flip);
 		this.getSprite("armor").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
-		this.getSprite("head_detail").setHorizontalFlipping(flip);
+		//this.getSprite("head_detail").setHorizontalFlipping(flip);
 		this.getSprite("old_head").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);
 		this.getSprite("beard").setHorizontalFlipping(flip);
 		this.getSprite("hair").setHorizontalFlipping(flip);
 		this.getSprite("helmet").setHorizontalFlipping(flip);
 		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
-		this.getSprite("beard_top").setHorizontalFlipping(flip);
+		//this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("dirt").setHorizontalFlipping(flip);
 	}
@@ -172,8 +172,15 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("old_body");
 		this.addSprite("body_injury").setBrush("bust_skeleton_body_05_injured");
 		this.addSprite("armor");
+		//local head_detail = this.addSprite("head_detail");
 
-		this.addSprite("body_detail");
+		// if (this.Math.rand(1, 100) <= 90)
+		// {
+		//head_detail.setBrush("bust_skeleton_head_detail_01");
+		// }
+
+		local body_detail = this.addSprite("body_detail");
+		body_detail.setBrush("bust_skeleton_detail_03")
 
 		local head = this.addSprite("head");
 		head.setBrush("bust_vampire_lord_head_01");
@@ -186,7 +193,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		local beard = this.addSprite("beard");
 		beard.setBrightness(0.7);
 		beard.varyColor(0.02, 0.02, 0.02);
-		//local hair = this.addSprite("hair");
+		local hair = this.addSprite("hair");
 		hair.Color = beard.Color;
 
 		// if (this.Math.rand(1, 100) <= 75)
@@ -230,11 +237,12 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 100);
 
 		this.m.Items.equip(this.new("scripts/items/armor/legend_vampire_lord_armor"));
-		this.m.Items.equip(this.new("scripts/items/helmets/ancient/legend_vampire_lord_helmet"));
+		this.m.Items.equip(this.new("scripts/items/helmets/legend_vampire_lord_helmet"));
 		
+		local r = this.Math.rand(1, 100);
+
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
