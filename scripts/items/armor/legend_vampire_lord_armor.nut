@@ -1,10 +1,10 @@
-this.ancient_priest_attire <- this.inherit("scripts/items/armor/armor", {
+this.legend_vampire_lord_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {},
 	function create()
 	{
 		this.armor.create();
-		this.m.ID = "armor.body.ancient_priest_attire";
-		this.m.Name = "Ancient Priest Attire";
+		this.m.ID = "armor.body.legend_vampire_lord_armor";
+		this.m.Name = "Vampire Lord Armor";
 		this.m.Description = "";
 		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = true;
@@ -24,9 +24,9 @@ this.ancient_priest_attire <- this.inherit("scripts/items/armor/armor", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "bust_body_vampire_lord_armor" + variant;
-		this.m.SpriteDamaged = "bust_body_vampire_lord_armor" + variant + "_damaged";
-		this.m.SpriteCorpse = "bust_body_vampire_lord_armor" + variant + "_dead";
+		this.m.Sprite = "bust_body_vampire_lord_armor_" + variant;
+		this.m.SpriteDamaged = "bust_body_vampire_lord_armor_" + variant + "_damaged";
+		this.m.SpriteCorpse = "bust_body_vampire_lord_armor_" + variant + "_dead";
 		// this.m.IconLarge = "armor/inventory_body_armor_" + variant + ".png";
 		// this.m.Icon = "armor/icon_body_armor_" + variant + ".png";
 	}

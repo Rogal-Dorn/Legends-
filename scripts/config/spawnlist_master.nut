@@ -986,11 +986,12 @@ gt.Const.World.Spawn.Troops <- {
 		ID = this.Const.EntityType.LegendVampireLord,
 		Variant = 0,
 		Strength = 60,
-		Cost,
+		Cost = 60,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_vampire_lord"
 	}
 };
+
 
 
 gt.Const.World.Spawn.Caravan <-

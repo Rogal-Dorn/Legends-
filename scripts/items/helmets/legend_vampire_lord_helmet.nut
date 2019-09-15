@@ -28,13 +28,11 @@ this.legend_vampire_lord_helmet <- this.inherit("scripts/items/helmets/helmet", 
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "bust_helmet_vampire_" + variant;
+		this.m.Sprite = "bust_helmet_vampire_lord_" + variant;
 		this.m.SpriteDamaged = "bust_helmet_vampire_lord_" + variant + "_damaged";
 		this.m.SpriteCorpse = "bust_helmet_vampire_lord_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = """
+		this.m.Icon = ""
 	}
-
-
 });
 

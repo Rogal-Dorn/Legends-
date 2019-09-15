@@ -8,4 +8,6 @@ cd ../bin
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legend_world.brush ../battlebrothers/unpacked/legend_world
 ./bbrusher.exe pack --gfxPath "../battlebrothers/" ../battlebrothers/brushes/legends_ui.brush ../battlebrothers/unpacked/legends_ui
 cd ../battlebrothers
+
+cp -R gfx/*.png "c:\Steam\steamapps\common\Battle Brothers\data\gfx"
 cp -R brushes/. "c:\Steam\steamapps\common\Battle Brothers\data\brushes"

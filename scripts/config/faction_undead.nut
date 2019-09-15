@@ -301,7 +301,7 @@ gt.Const.Tactical.Actor.LegendBanshee <- {
 	]
 };
 
-gt.Const.Tactical.Actor.VampireLord <- {
+gt.Const.Tactical.Actor.LegendVampireLord <- {
 	XP = 600,
 	ActionPoints = 9,
 	Hitpoints = 300,

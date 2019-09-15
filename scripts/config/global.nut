@@ -604,7 +604,7 @@ gt.Const.EntityIcon <- [
 	"white_direwolf_orientation",
 	"ghost_01_orientation",
 	"banshee_orientation_2",
-	"demon_hound_orientation",
-	"vampire_lord_orientation"
+	"white_direwolf_orientation",
+	"vampire_01_orientation"
 ];
 

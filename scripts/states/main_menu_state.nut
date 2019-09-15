@@ -481,7 +481,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 			{
 				id = 38,
 				name = "Necrosavant Lords (Legendary)",
-				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Necrosave Lords[/p]"
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Necrosavant Lords[/p]"
 			},
 			{
 				id = 37,
