@@ -1,4 +1,4 @@
-this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_template", {
+this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_template", {
 	m = {},
 	function generate()
 	{
