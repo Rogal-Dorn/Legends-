@@ -1665,4 +1665,4 @@ Assassin Commander start reworked
 * Fixed Hexe Legendary Contract spawning multiple times in same settlement
 * Fixed Gash tooltip 
 * Fixed Slings related skills to get bonuses from Sling Mastery perk
-
+* Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
