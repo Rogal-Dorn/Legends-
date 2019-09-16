@@ -7,6 +7,7 @@ this.legend_hunting_white_direwolf_action <- this.inherit("scripts/factions/fact
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
+		this.m.DifficultyMult <- this.Math.rand(145, 175) * 0.01;
 	}
 
 	function onUpdate( _faction )
@@ -39,6 +40,19 @@ this.legend_hunting_white_direwolf_action <- this.inherit("scripts/factions/fact
 			return;
 		}
 
+		local minResources = this.World.LegendaryContract.WhiteWolf * contractCosts.WHITE_WOLF + contractCosts.WHITE_WOLF;
+		
+		local currentResources = this.m.DifficultyMult * this.getReputationToDifficultyMult * contractCosts.WHITE_WOLF;
+		
+		if(currentResources < minResources)
+		{
+			return;
+		}
+		else
+		{
+			this.World.LegendaryContract.WhiteWolf += 1;
+		}
+		
 		this.m.Score = 1;
 	}
 

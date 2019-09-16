@@ -149,3 +149,12 @@ gt.Const.World.NewCampaignOpts <- function ()
 		AllTradeLocations = false
 	}
 }
+
+gt.Const.World.LegendaryContracts <-
+{
+	WhiteWolf = 0
+}
+
+enum contractCosts {
+	WHITE_WOLF 200
+}

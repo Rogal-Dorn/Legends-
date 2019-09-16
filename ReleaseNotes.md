@@ -1665,4 +1665,6 @@ Assassin Commander start reworked
 * Fixed Hexe Legendary Contract spawning multiple times in same settlement
 * Fixed Gash tooltip 
 * Fixed Slings related skills to get bonuses from Sling Mastery perk
-
+* Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
+* Fixed Adventurous Noble background to properly choose the appropriate name for female characters
+* Legendary White Wolf contracts now require more resources to spawn after each appears
