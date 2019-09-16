@@ -125,7 +125,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_armor_scale",
 			"legend_armor_heraldic",
 			"legend_armor_sellswords",
-			"legend_armor_coat_of_plates",
+			"legend_armor_coat_of_scales",
 			"legend_armor_ikon_scale"
 		];
 		
