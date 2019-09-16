@@ -43,7 +43,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (_tile != null)
 		{
-			local decal = _tile.spawnDetail("bust_skeleton_vampire_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false);
+			local decal = _tile.spawnDetail("bust_vampire_lord_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false);
 			decal.Scale = 0.9;
 			decal.setBrightness(0.9);
 			this.spawnTerrainDropdownEffect(_tile);
@@ -240,7 +240,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.Items.equip(this.new("scripts/items/armor/legend_vampire_lord_armor"));
 		this.m.Items.equip(this.new("scripts/items/helmets/legend_vampire_lord_helmet"));
-		
+
 		local r = this.Math.rand(1, 100);
 
 		if (r == 1)

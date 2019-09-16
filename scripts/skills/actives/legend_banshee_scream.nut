@@ -11,7 +11,8 @@ this.legend_banshee_scream <- this.inherit("scripts/skills/skill", {
 		this.m.SoundOnUse = [
 			"sounds/enemies/banshee_attack_01.wav",
 			"sounds/enemies/banshee_attack_02.wav",
-			"sounds/enemies/banshee_attack_03.wav"
+			"sounds/enemies/banshee_attack_03.wav",
+			"sounds/enemies/banshee_attack_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;

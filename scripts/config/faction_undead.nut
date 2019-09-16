@@ -320,17 +320,16 @@ gt.Const.Tactical.Actor.LegendVampireLord <- {
 	]
 };
 
-
-gt.Const.Tactical.Actor.DemonHound <- {
+gt.Const.Tactical.Actor.LegendDemonHound <- {
 	XP = 250,
 	ActionPoints = 12,
-	Hitpoints = 90,
+	Hitpoints = 125,
 	Bravery = 100,
 	Stamina = 100,
 	MeleeSkill = 55,
 	RangedSkill = 0,
-	MeleeDefense = 10,
-	RangedDefense = 10,
+	MeleeDefense = 15,
+	RangedDefense = 25,
 	Initiative = 100,
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,

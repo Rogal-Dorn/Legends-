@@ -977,8 +977,8 @@ gt.Const.World.Spawn.Troops <- {
 	LegendDemonHound = {
 		ID = this.Const.EntityType.LegendDemonHound,
 		Variant = 0,
-		Strength = 25,
-		Cost = 25,
+		Strength = 20,
+		Cost = 20,
 		Row = -1,
 		Script = "scripts/entity/tactical/enemies/legend_demon_hound"
 	},

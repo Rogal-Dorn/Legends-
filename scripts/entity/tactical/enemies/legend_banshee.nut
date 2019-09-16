@@ -30,6 +30,10 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/banshee_idle_01.wav",
 			"sounds/enemies/banshee_idle_02.wav",
 		];
+		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
+			"sounds/enemies/banshee_hit_01.wav",
+			"sounds/enemies/banshee_hit_02.wav",
+		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.getTags().add("undead");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/ghost_agent");

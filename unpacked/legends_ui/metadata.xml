@@ -71,4 +71,10 @@
 <sprite id="skin_ghoul_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\skin_ghoul_orientation.png" />
 <sprite id="stollwurm_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\stollwurm_orientation.png" />
 <sprite id="white_direwolf_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\white_direwolf_orientation.png" />
+<sprite id="banshee_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\banshee_orientation.png" />
+<sprite id="banshee_orientation_2" groupId="4DBF973D" ic="FF22200A" img="orientation\banshee_orientation_2.png" />
+<sprite id="hollenhound_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\hollenhound_orientation.png" />
+<sprite id="vampire_lord_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\vampire_lord_orientation.png" />
+
+
 </brush>

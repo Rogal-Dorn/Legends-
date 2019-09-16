@@ -158,5 +158,14 @@ gt.Const.World.Spawn.UndeadScourge <-
 				}
 			]
 		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					Cost = 20
+				}
+			]
+		}
 	]
 }

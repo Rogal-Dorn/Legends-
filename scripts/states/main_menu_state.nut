@@ -474,7 +474,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 
 		local result = [
 			{
-				id = 38,
+				id = 39,
 				name = "Höllenhunds (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Undead demon hounds[/p]"
 			},

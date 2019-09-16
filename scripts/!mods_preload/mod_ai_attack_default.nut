@@ -9,4 +9,5 @@
 	o.m.PossibleSkills.push("actives.legend_spear_lunge_skill");
 	o.m.PossibleSkills.push("actives.legend_chain_thresh");
 	o.m.PossibleSkills.push("actives.legend_chain_flail_skill");
+	o.m.PossibleSkills.push("actives.legend_demon_hound_bite");
 });

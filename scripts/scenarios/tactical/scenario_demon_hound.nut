@@ -121,28 +121,32 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_stollwurm", x, x, 16, 16);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_rock_unhold", x, x, 13, 13);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 14, 14);
-		//  entity.setFaction(this.Const.Faction.Beasts);
-		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 15, 15);
-		//  entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 12, 12);
-		//  entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 17, 17);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 16);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 15);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 14);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 13);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 18, 18);
-		// entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 17, 17);
+		 entity.setFaction(this.Const.Faction.Undead);
+		 //entity.setBrushes(1,1)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 16, 16);
+		 entity.setFaction(this.Const.Faction.Undead);
+		// entity.setBrushes(1,2)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 15, 15);
+		 entity.setFaction(this.Const.Faction.Undead);
+		//   entity.setBrushes(1,3)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 14, 14);
+		 entity.setFaction(this.Const.Faction.Undead);
+		//   entity.setBrushes(2,1)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 13, 13);
+		 entity.setFaction(this.Const.Faction.Undead);
+		//   entity.setBrushes(2,2)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 12, 12);
+		 entity.setFaction(this.Const.Faction.Undead);
+		//   entity.setBrushes(2,3)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 11, 11);
+		 entity.setFaction(this.Const.Faction.Undead);
+		//   entity.setBrushes(3,1)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 10, 10);
+		 entity.setFaction(this.Const.Faction.Undead);
+		//   entity.setBrushes(3,2)
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 9, 9);
+		 entity.setFaction(this.Const.Faction.Undead);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
