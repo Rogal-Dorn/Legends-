@@ -72,6 +72,27 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
+		{
+			local p = this.getContainer().getActor().getCurrentProperties();
+			local damagemin = this.Math.abs(10 * p.DamageTotalMult);
+			local damagemax = this.Math.abs(25 * p.DamageTotalMult);
+			
+			ret.push({
+				id = 4,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damagemin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damagemax + "[/color] damage to hitpoints"
+			});	
+			
+			ret.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/armor_damage.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.abs(0.5 * damagemin) + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.abs(0.5 * damagemax) + "[/color] damage to armor"
+			});
+		}
+		
 		return ret;
 	}
 
@@ -223,6 +244,11 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost = 3;
+		}
+		
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
+		{
+			this.m.FatigueCost = 15;
 		}
 	}
 	
