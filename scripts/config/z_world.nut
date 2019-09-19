@@ -156,5 +156,5 @@ gt.Const.World.LegendaryContracts <-
 }
 
 enum contractCosts {
-	WHITE_WOLF 200
-}
+	WHITE_WOLF = 200
+};
