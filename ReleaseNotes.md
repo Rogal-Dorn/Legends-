@@ -1646,13 +1646,14 @@ Beta 12.7.1 Released on Nexus
 *Offhand skills damage won't scale to mainhand damage range anymore
 
 12.7.2 Test 1
-* Fixed various typos in descriptions/tooltips
-* Fixed Glaive Slash not properly using spear specialization
+Added Events to possible tame Wolfs or even a White Direwolf
 Added the four legend named weapons to the named melee weapons pool
 - Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
 * Fixed orc weapons tooltip not informing about additional fatigue cost
 * Fixed Man Mangler's weapon shield damage 
 * Fixed the orc weapon Skin Flayer not using extra fatigue per attack
+* Fixed various typos in descriptions/tooltips
+* Fixed Glaive Slash not properly using spear specialization
 * Fixed Greenwood Schrat's Shield selfrepair feature
 * Removed roster upgrade perk from non-commander Seer background
 * Fixed Spear weapon group not giving "Thrust Master" perk
@@ -1663,9 +1664,10 @@ Assassin Commander start reworked
 - Everybody gets Backstabber perk in this start
 * Fixed Poacher start to properly use your starting bro's names
 * Fixed Hexe Legendary Contract spawning multiple times in same settlement
-* Fixed Gash tooltip 
+* Fixed Gash and Grapple skills tooltips
 * Fixed Slings related skills to get bonuses from Sling Mastery perk
 * Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
+* Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
 * Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
 * Fixed Adventurous Noble background to properly choose the appropriate name for female characters
 * Legendary White Wolf contracts now require more resources to spawn after each appears
