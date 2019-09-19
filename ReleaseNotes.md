@@ -1670,3 +1670,4 @@ Assassin Commander start reworked
 * Fixed Adventurous Noble background to properly choose the appropriate name for female characters
 * Legendary White Wolf contracts now require more resources to spawn after each appears
 * Fixed a crash that could occur when a Vala is swallowed whole while chanting
+* Added a cooldown description for the Legendary Redback Helmet's Web skill
