@@ -1669,4 +1669,4 @@ Assassin Commander start reworked
 * Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
 * Fixed Adventurous Noble background to properly choose the appropriate name for female characters
 * Legendary White Wolf contracts now require more resources to spawn after each appears
-
+* Fixed a crash that could occur when a Vala is swallowed whole while chanting
