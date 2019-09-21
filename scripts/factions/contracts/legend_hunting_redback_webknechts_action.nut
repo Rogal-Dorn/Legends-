@@ -7,6 +7,7 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
+		this.m.DifficultyMult <- this.Math.rand(145, 175) * 0.01;
 	}
 
 	function onUpdate( _faction )
@@ -34,8 +35,21 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 		{
 			return;
 		}
+		
+		local minResources = this.Const.World.LegendaryContract.RedSpider * contractCosts.RED_SPIDER + contractCosts.RED_SPIDER;
+		
+		local currentResources = this.m.DifficultyMult * this.getReputationToDifficultyMult * contractCosts.RED_SPIDER;
+		
+		if(currentResources < minResources)
+		{
+			return;
+		}
+		else
+		{
+			this.Const.World.LegendaryContract.RedSpider += 1;
+		}
 
-		this.m.Score = 1;
+		this.m.Score = 5;
 	}
 
 	function onClear()
