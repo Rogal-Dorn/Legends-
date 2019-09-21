@@ -53,9 +53,9 @@ this.legend_hunting_rock_unholds_action <- this.inherit("scripts/factions/factio
 			return;
 		}
 		
-		local minResources = this.Const.World.LegendaryContract.RockUnhold * contractCosts.ROCK_UNHOLD + contractCosts.ROCK_UNHOLD;
+		local minResources = this.Const.World.LegendaryContract.RockUnhold * this.Const.World.ContractCost.ROCK_UNHOLD + this.Const.World.ContractCost.ROCK_UNHOLD;
 		
-		local currentResources = this.m.DifficultyMult * this.getReputationToDifficultyMult * contractCosts.ROCK_UNHOLD;
+		local currentResources = this.m.DifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.ROCK_UNHOLD;
 		
 		if(currentResources < minResources)
 		{

@@ -36,9 +36,9 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 			return;
 		}
 		
-		local minResources = this.Const.World.LegendaryContract.RedSpider * contractCosts.RED_SPIDER + contractCosts.RED_SPIDER;
+		local minResources = this.Const.World.LegendaryContract.RedSpider * this.Const.World.ContractCost.RED_SPIDER + this.Const.World.ContractCost.RED_SPIDER;
 		
-		local currentResources = this.m.DifficultyMult * this.getReputationToDifficultyMult * contractCosts.RED_SPIDER;
+		local currentResources = this.m.DifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.RED_SPIDER;
 		
 		if(currentResources < minResources)
 		{

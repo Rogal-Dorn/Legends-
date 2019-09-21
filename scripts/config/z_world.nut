@@ -164,7 +164,8 @@ gt.Const.World.LegendaryContract <-
 	BanditArmy = 0
 }
 
-enum contractCosts {
+gt.Const.World.ContractCost <-
+{
 	WHITE_WOLF = 200,
 	RED_SPIDER = 200,
 	GREEN_SCHRAT = 200,
