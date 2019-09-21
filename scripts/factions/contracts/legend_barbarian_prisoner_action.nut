@@ -97,9 +97,9 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 			return;
 		}
 		
-		local minResources = this.Const.World.LegendaryContract.BarbPrison * contractCosts.BARB_PRISON + contractCosts.BARB_PRISON;
+		local minResources = this.Const.World.LegendaryContract.BarbPrison * this.Const.World.ContractCost.BARB_PRISON + this.Const.World.ContractCost.BARB_PRISON;
 		
-		local currentResources = this.m.DifficultyMult * this.getReputationToDifficultyMult * contractCosts.BARB_PRISON;
+		local currentResources = this.m.DifficultyMult() * this.getReputationToDifficultyMult * this.Const.World.ContractCost.BARB_PRISON;
 		
 		if(currentResources < minResources)
 		{
