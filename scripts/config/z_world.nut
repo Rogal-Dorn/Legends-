@@ -150,11 +150,29 @@ gt.Const.World.NewCampaignOpts <- function ()
 	}
 }
 
-gt.Const.World.LegendaryContracts <-
+gt.Const.World.LegendaryContract <-
 {
-	WhiteWolf = 0
+	WhiteWolf = 0,
+	RedSpider = 0,
+	GreenSchrat = 0,
+	DemonAlp = 0,
+	BossHexe = 0,
+	RockUnhold = 0,
+	Stollwurm = 0,
+	SkinGhoul = 0,
+	BarbPrison = 0,
+	BanditArmy = 0
 }
 
 enum contractCosts {
-	WHITE_WOLF = 200
+	WHITE_WOLF = 200,
+	RED_SPIDER = 200,
+	GREEN_SCHRAT = 200,
+	DEMON_ALP = 200,
+	BOSS_HEXE = 200,
+	ROCK_UNHOLD = 200,
+	STOLL_WURM = 200,
+	SKIN_GHOUL = 200,
+	BARB_PRISON = 200,
+	BANDIT_ARMY = 200
 };

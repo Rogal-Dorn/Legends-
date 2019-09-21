@@ -7,6 +7,7 @@ this.legend_hunting_demon_alps_action <- this.inherit("scripts/factions/faction_
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
+		this.m.DifficultyMult <- this.Math.rand(145, 175) * 0.01;
 	}
 
 	function onUpdate( _faction )
@@ -38,7 +39,20 @@ this.legend_hunting_demon_alps_action <- this.inherit("scripts/factions/faction_
 			return;
 		}
 
-		this.m.Score = 1;
+		local minResources = this.Const.World.LegendaryContract.DemonAlp * contractCosts.DEMON_ALP + contractCosts.DEMON_ALP;
+		
+		local currentResources = this.m.DifficultyMult * this.getReputationToDifficultyMult * contractCosts.DEMON_ALP;
+		
+		if(currentResources < minResources)
+		{
+			return;
+		}
+		else
+		{
+			this.Const.World.LegendaryContract.DemonAlp += 1;
+		}
+
+		this.m.Score = 5;
 	}
 
 	function onClear()

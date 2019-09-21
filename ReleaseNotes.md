@@ -1646,22 +1646,23 @@ Beta 12.7.1 Released on Nexus
 *Offhand skills damage won't scale to mainhand damage range anymore
 
 12.7.2 Test 1
+Legendary contracts now require more resources to spawn after each appears
 Added Events to possible tame Wolfs or even a White Direwolf
 Added the four legend named weapons to the named melee weapons pool
 - Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
+Assassin Commander start reworked
+- Max roster of 21 bros with all corresponding perks
+- Everybody gets Backstabber perk in this start
 * Fixed orc weapons tooltip not informing about additional fatigue cost
 * Fixed Man Mangler's weapon shield damage 
 * Fixed the orc weapon Skin Flayer not using extra fatigue per attack
 * Fixed various typos in descriptions/tooltips
 * Fixed Glaive Slash not properly using spear specialization
-* Fixed Greenwood Schrat's Shield selfrepair feature
+* Fixed Greenwood Schrat's Shield self-repair feature
 * Removed roster upgrade perk from non-commander Seer background
-* Fixed Spear weapon group not giving "Thrust Master" perk
+* Fixed Spear weapon group not giving Thrust Master perk
 * Updated Trader background description
 * Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
-Assassin Commander start reworked
-- Max roster of 21 bros with all corresponding perks
-- Everybody gets Backstabber perk in this start
 * Fixed Poacher start to properly use your starting bro's names
 * Fixed Hexe Legendary Contract spawning multiple times in same settlement
 * Fixed Gash and Grapple skills tooltips
@@ -1670,7 +1671,6 @@ Assassin Commander start reworked
 * Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
 * Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
 * Fixed Adventurous Noble background to properly choose the appropriate name for female characters
-* Legendary White Wolf contracts now require more resources to spawn after each appears
 * Fixed a crash that could occur when a Vala is swallowed whole while chanting
 * Added a cooldown description for the Legendary Redback Helmet's Web skill
-* Fixed a bug where canouflage wasn't properly being removed at the end of battle
+* Fixed a bug where camouflage wasn't properly being removed at the end of battle

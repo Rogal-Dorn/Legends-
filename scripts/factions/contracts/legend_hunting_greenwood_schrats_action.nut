@@ -7,6 +7,7 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
+		this.m.DifficultyMult <- this.Math.rand(145, 175) * 0.01;
 	}
 
 	function onUpdate( _faction )
@@ -40,7 +41,20 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 			return;
 		}
 
-		this.m.Score = 1;
+		local minResources = this.Const.World.LegendaryContract.GreenSchrat * contractCosts.GREEN_SCHRAT + contractCosts.GREEN_SCHRAT;
+		
+		local currentResources = this.m.DifficultyMult * this.getReputationToDifficultyMult * contractCosts.GREEN_SCHRAT;
+		
+		if(currentResources < minResources)
+		{
+			return;
+		}
+		else
+		{
+			this.Const.World.LegendaryContract.GreenSchrat += 1;
+		}
+
+		this.m.Score = 5;
 	}
 
 	function onClear()
