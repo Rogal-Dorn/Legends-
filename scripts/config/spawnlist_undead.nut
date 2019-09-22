@@ -84,6 +84,15 @@ gt.Const.World.Spawn.UndeadArmy <-
 					Cost = 40
 				}
 			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					Cost = 20
+				}
+			]
 		}
 	]
 }
@@ -127,7 +136,7 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 	MinR = 108,
 	Troops = [
 		{
-			Weight = 70,
+			Weight = 65,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonLight,
@@ -155,6 +164,15 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					Cost = 20
 				}
 			]
 		}

@@ -984,7 +984,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	LegendVampireLord = {
 		ID = this.Const.EntityType.LegendVampireLord,
-		Variant = 0,
+		Variant = 1,
 		Strength = 60,
 		Cost = 60,
 		Row = 2,

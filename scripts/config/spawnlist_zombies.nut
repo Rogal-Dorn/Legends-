@@ -221,10 +221,19 @@ gt.Const.World.Spawn.ZombiesAndGhosts <-
 			]
 		},
 		{
-			Weight = 15,
+			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
 					Cost = 20
 				}
 			]
@@ -281,10 +290,19 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 			]
 		},
 		{
-			Weight = 15,
+			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
 					Cost = 20
 				}
 			]
@@ -314,7 +332,7 @@ gt.Const.World.Spawn.Ghosts <-
 	MinR = 80,
 	Troops = [
 		{
-			Weight = 90,
+			Weight = 80,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
@@ -322,6 +340,15 @@ gt.Const.World.Spawn.Ghosts <-
 				}
 			]
 		},
+		{
+			Weight = 10,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					Cost = 20
+				}
+			]
+		}
 		{
 			Weight = 10,
 			MinR = 400,
@@ -442,7 +469,7 @@ gt.Const.World.Spawn.Necromancer <-
 			]
 		},
 		{
-			Weight = 8,
+			Weight = 4,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
@@ -450,6 +477,15 @@ gt.Const.World.Spawn.Necromancer <-
 				}
 			]
 		},
+		{
+			Weight = 4,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					Cost = 20
+				}
+			]
+		}
 		{
 			Weight = 2,
 			MinR = 640,

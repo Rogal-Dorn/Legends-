@@ -243,13 +243,21 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 
 		local r = this.Math.rand(1, 100);
 
-		if (r == 1)
+		if (r <= 2)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
 		}
-		else
+		else if (r <= 4)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/named/named_legend_great_khopesh"));
+		}
+		else if (r <= 25)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_great_khopesh"));
 		}
 	}
 });
