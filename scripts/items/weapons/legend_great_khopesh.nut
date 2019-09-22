@@ -1,0 +1,47 @@
+this.legend_great_khopesh <- this.inherit("scripts/items/weapons/weapon", {
+	m = {},
+	function create()
+	{
+		this.weapon.create();
+		this.m.ID = "weapon.legend_great_khopesh";
+		this.m.Name = "Khopesh";
+		this.m.Description = "A giant ancient curved sword on a long handle with strange ornamentations. Its shape makes it particularly effective against armor.";
+		this.m.Categories = "Cleaver, Two-Handed";
+		this.m.IconLarge = "weapons/melee/legend_great_kopesh.png";
+		this.m.Icon = "weapons/melee/legend_great_kopesh_70x70.png";
+		this.m.SlotType = this.Const.ItemSlot.Mainhand;
+		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
+		this.m.IsDoubleGrippable = false;
+		this.m.AddGenericSkill = true;
+		this.m.ShowQuiver = false;
+		this.m.ShowArmamentIcon = true;
+		this.m.ArmamentIcon = "icon_legend_great_khopesh";
+		this.m.ShieldDamage = 0;
+		this.m.Condition = 50.0;
+		this.m.ConditionMax = 50.0;
+		this.m.StaminaModifier = -18;
+		this.m.Value = 2000;
+		this.m.RegularDamage = 75;
+		this.m.RegularDamageMax = 95;
+		this.m.ArmorDamageMult = 1.2;
+		this.m.DirectDamageMult = 0.25;
+	}
+
+	function onEquip()
+	{
+		this.weapon.onEquip();
+		local cleave = this.new("scripts/skills/actives/cleave");
+		cleave.m.FatigueCost = 18;
+		this.addSkill(cleave);
+		this.addSkill(this.new("scripts/skills/actives/decapitate"));
+		this.addSkill(this.new("scripts/skills/actives/swing"));
+	}
+
+	function onUpdateProperties( _properties )
+	{
+		this.weapon.onUpdateProperties(_properties);
+	}
+
+});
+
