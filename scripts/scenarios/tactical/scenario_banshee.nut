@@ -32,13 +32,16 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		local entity;
 		local items;
 
-		for( local x = 10; x < 20; x = ++x )
+		for( local x = 10; x < 20; x = x )
 		{
-			for( local y = 10; y < 20; y = ++y )
+			for( local y = 10; y < 20; y = y )
 			{
 				local tile = this.Tactical.getTile(x, y);
 				tile.removeObject();
+				y = ++y;
 			}
+
+			x = ++x;
 		}
 
 		entity = this.spawnEntity("scripts/entity/tactical/player", 12, 12, 15, 15);
@@ -121,28 +124,49 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_stollwurm", x, x, 16, 16);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_rock_unhold", x, x, 13, 13);
-		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 14, 14);
-		//  entity.setFaction(this.Const.Faction.Beasts);
-		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 15, 15);
-		//  entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 12, 12);
-		//  entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 17, 17);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 16);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 15);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 14);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 13);
-		 entity.setFaction(this.Const.Faction.Zombies);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 18, 18);
-		// entity.setFaction(this.Const.Faction.Beasts);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 17, 17);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 16);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 15);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 14);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 13);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 11, 11);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 12, 12);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 13, 13);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie", 20, 20, 14, 14);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_knight", 20, 20, 15, 15);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 16, 16);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie", 20, 20, 17, 17);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/necromancer", 21, 21, 14, 14);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 21, 21, 15, 15);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_knight_bodyguard", 21, 21, 16, 16);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_knight_bodyguard", 21, 21, 13, 13);
+		entity.setFaction(this.Const.Faction.Undead);
+		entity.assignRandomEquipment();
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
