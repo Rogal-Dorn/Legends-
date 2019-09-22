@@ -121,7 +121,7 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onInit();
 		this.setRenderCallbackEnabled(true);
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.Ghost);
+		b.setValues(this.Const.Tactical.Actor.LegendBanshee);
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToPoison = true;
 		b.IsImmuneToKnockBackAndGrab = true;
