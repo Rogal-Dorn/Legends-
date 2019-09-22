@@ -161,6 +161,7 @@ gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_bladed_pike",
 	"weapons/named/named_crypt_cleaver",
 	"weapons/named/named_warscythe",
-	"weapons/named/named_khopesh"
+	"weapons/named/named_khopesh",
+	"weapons/named/named_legend_great_khopesh"
 ];
 

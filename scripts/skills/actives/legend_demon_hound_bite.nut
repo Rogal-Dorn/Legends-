@@ -70,7 +70,7 @@ this.legend_demon_hound_bite <- this.inherit("scripts/skills/skill", {
 		}
 
 		//TODO get new status icon effect
-		this.spawnIcon("status_effect_54", _targetEntity.getTile());
+		this.spawnIcon("demon_hound_flame_01", _targetEntity.getTile());
 		local poison = _targetEntity.getSkills().getSkillByID("effects.legend_demon_hound_bite_effect");
 
 		if (poison == null)

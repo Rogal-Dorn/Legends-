@@ -80,7 +80,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("old_body").setHorizontalFlipping(flip);
 		this.getSprite("armor").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
-		//this.getSprite("head_detail").setHorizontalFlipping(flip);
+		this.getSprite("head_detail").setHorizontalFlipping(flip);
 		this.getSprite("old_head").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);
 		this.getSprite("beard").setHorizontalFlipping(flip);
@@ -172,15 +172,18 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("old_body");
 		this.addSprite("body_injury").setBrush("bust_skeleton_body_05_injured");
 		this.addSprite("armor");
-		//local head_detail = this.addSprite("head_detail");
+		local head_detail = this.addSprite("head_detail");
 
-		// if (this.Math.rand(1, 100) <= 90)
-		// {
-		//head_detail.setBrush("bust_skeleton_head_detail_01");
-		// }
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			head_detail.setBrush("bust_skeleton_head_detail_01");
+		}
 
 		local body_detail = this.addSprite("body_detail");
-		body_detail.setBrush("bust_skeleton_detail_03")
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			body_detail.setBrush("bust_skeleton_detail_03")
+		}
 
 		local head = this.addSprite("head");
 		head.setBrush("bust_vampire_lord_head_01");
@@ -196,10 +199,10 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		local hair = this.addSprite("hair");
 		hair.Color = beard.Color;
 
-		// if (this.Math.rand(1, 100) <= 75)
-		// {
-		hair.setBrush("bust_vampire_lord_hair_01")
-		// }
+		if (this.Math.rand(1, 100) <= 60)
+		{
+			hair.setBrush("bust_vampire_lord_hair_01")
+		}
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
 		this.addSprite("helmet");
