@@ -6,8 +6,8 @@ this.legend_demon_hound_bite <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Höllenhund Bite";
 		this.m.Description = "";
 		this.m.KilledString = "Drained of life";
-		this.m.Icon = "skills/active_71.png";
-		this.m.Overlay = "active_71";
+		this.m.Icon = "skills/demon_hound_flame_01.png";
+		this.m.Overlay = "demon_hound_flame_01";
 		this.m.SoundOnUse = [
 			"sounds/enemies/hollen_attack_01.wav",
 			"sounds/enemies/hollen_attack_02.wav",
