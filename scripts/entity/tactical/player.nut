@@ -1450,7 +1450,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			++this.m.PerkPoints;
 		}
 
-		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS 
+		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS
 
 		return true;
 	}
@@ -1993,7 +1993,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		b.RangedDefense = 10;
 		b.Initiative = 115;
 		this.setName(this.Const.Tactical.Common.getRandomPlayerName());
-		local background = this.new("scripts/skills/backgrounds/" + this.Const.CharacterBackgrounds[this.Math.rand(0, this.Const.CharacterBackgrounds.len() - 1)]);
+		local background = this.new("scripts/skills/backgrounds/" + this.Const.CharacterFemaleBackgrounds[this.Math.rand(0, this.Const.CharacterFemaleBackgrounds.len() - 1)]);
 		background.setScenarioOnly(true);
 		this.m.Skills.add(background);
 		background.buildDescription();
@@ -2015,7 +2015,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
-		
+
 		if (this.m.Name.len() == 0 && background.isFemaleBackground() == false)
 		{
 			this.m.Name = this.Const.Tactical.Common.getRandomPlayerName();
@@ -2396,10 +2396,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Formations.savePosition(this.m.PlaceInFormation);
 		this.m.Formations.saveItems(this.getItems());
 	}
-	
+
 	function setFormation( _i, _stash)
 	{
-		if (_i == this.m.Formations.getCurrentIndex()) 
+		if (_i == this.m.Formations.getCurrentIndex())
 		{
 			return [[], []];
 		}
@@ -2445,7 +2445,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			broStash += item.getStashModifier();
 		}
 
-		local skills = 
+		local skills =
 		[
 			"perk.legend_skillful_stacking",
 			"perk.legend_efficient_packing"
@@ -2464,7 +2464,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getAmmoModifier()
 	{
 		local mod = this.getBackground().getModifiers().Ammo;
-		local skills = 
+		local skills =
 		[
 			"perk.legend_ammo_bundles",
 			"perk.legend_ammo_binding"
@@ -2483,7 +2483,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getArmorPartsModifier()
 	{
 		local mod = this.getBackground().getModifiers().ArmorParts;
-		local skills = 
+		local skills =
 		[
 			"perk.legend_tools_spares",
 			"perk.legend_tools_drawers"
@@ -2502,7 +2502,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getMedsModifier()
 	{
 		local mod = this.getBackground().getModifiers().Meds;
-		local skills = 
+		local skills =
 		[
 			"perk.legend_med_packages",
 			"perk.legend_med_ingredients"
@@ -2521,7 +2521,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getBarterModifier()
 	{
 		local mod = this.getBackground().getModifiers().Barter;
-		local skills = 
+		local skills =
 		[
 			"perk.legend_barter_trustworthy",
 			"perk.legend_barter_convincing"
@@ -2534,10 +2534,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				mod += skill.getModifier();
 			}
 		}
-		return mod;		
+		return mod;
 	}
 
-	function getCampHealing() 
+	function getCampHealing()
 	{
 		return this.m.CampHealing;
 	}
@@ -2720,7 +2720,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Formations.onDeserialize(_in);
 		}
-		
+
 		if (_in.getMetaData().getVersion() >= 47)
 		{
 			this.m.VeteranPerks = _in.readU8();
