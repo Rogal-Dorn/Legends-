@@ -253,7 +253,14 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 					Text = "{Sounds to me like you should honor your pact. | This won\'t be worth the risk. | I\'d rather not get the company involved with an enemy like this.}",
 					function getResult()
 					{
-						this.World.Contracts.removeContract(this.Contract);
+					foreach(f in this.World.FactionManager.getFactions())
+			{
+				foreach(c in f.getContracts())
+				{
+					f.removeContract(c);
+				}
+			}
+						//this.World.Contracts.removeContract(this.Contract);
 						return 0;
 					}
 

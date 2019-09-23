@@ -841,16 +841,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function onKeyInput( _key )
 	{
-	if (_key.getKey() == 82)
-		{
-			foreach(f in this.World.FactionManager.getFactions())
-			{
-				foreach(c in f.getContracts())
-				{
-					f.removeContract(c);
-				}
-			}
-		}
 		return this.helper_handleContextualKeyInput(_key);
 		return false;
 	}
