@@ -254,11 +254,12 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 					function getResult()
 					{
 					foreach(f in this.World.FactionManager.getFactions())
-					if(f == null)
+					
+			{
+			if(f == null)
 					{
 						continue;
 					}
-			{
 				foreach(c in f.getContracts())
 				{
 				if(c == null)
