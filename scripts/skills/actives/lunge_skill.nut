@@ -78,7 +78,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
 		{
 			ret.push({
 				id = 6,
