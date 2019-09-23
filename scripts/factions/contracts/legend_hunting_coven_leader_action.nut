@@ -43,7 +43,7 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 		local minResources = this.Const.World.LegendaryContract.BossHexe * this.Const.World.ContractCost.BOSS_HEXE + this.Const.World.ContractCost.BOSS_HEXE;
 		
 		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BOSS_HEXE;
-		
+		this.logInfo("Coven contract minR:" + minResources + " currentR:" + currentResources);
 		if(currentResources < minResources)
 		{
 			return;
