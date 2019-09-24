@@ -49,7 +49,7 @@ this.web_skill <- this.inherit("scripts/skills/skill", {
 				{
 					id = 6,
 					type = "text",
-					text = "Has " + this.m.Cooldown + " turns left.";
+					text = "Has " + this.m.Cooldown + " turns left."
 				}
 			]);
 		}
