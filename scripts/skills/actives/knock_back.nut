@@ -72,7 +72,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if ("perk.shield_bash"))
+        if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
 			local actor = this.getContainer().getActor();
 			local p = this.getContainer().getActor().getCurrentProperties();
@@ -80,13 +80,13 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 			local mult = p.MeleeDamageMult;
 			local damagemin = this.Math.abs(10 * p.DamageTotalMult);
 			local damagemax = this.Math.abs(25 * p.DamageTotalMult);
-			if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 			{
 				local muscularity = this.Math.floor(bodyHealth * 0.1);
 				damagemax += muscularity;
 			}
 			
-			if(mult != 1.0)
+			if (mult != 1.0)
 			{
 				damagemin = this.Math.floor(damagemin * mult);
 				damagemax = this.Math.floor(damagemax * mult);
@@ -240,7 +240,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 				local damagemin = this.Math.abs(10 * p.DamageTotalMult);
 				local damagemax = this.Math.abs(25 * p.DamageTotalMult);
 				
-				if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 				{
 					local muscularity = this.Math.floor(bodyHealth * 0.1);
 					damagemax += muscularity;

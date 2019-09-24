@@ -1665,7 +1665,7 @@ Assassin Commander start reworked
 * Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
 * Fixed Poacher start to properly use your starting bro's names
 * Fixed Hexe Legendary Contract spawning multiple times in same settlement
-* Fixed Gash and Grapple skills tooltips
+* Fixed Gash, Grapple and Lunge skills tooltips
 * Fixed Slings related skills to get bonuses from Sling Mastery perk
 * Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
 * Fixed En Garde skill to have set damage values, uninfluenced by main hand stats

@@ -34,6 +34,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local actor = this.getContainer().getActor();
 		local p = this.getContainer().getActor().getCurrentProperties();
 		local ret = [
 			{
@@ -53,7 +54,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
-		if (p.IsSpecializedInFists)
+		if (actor.IsSpecializedInFists)
 		{
 			local actor = this.getContainer().getActor();
 			local p = this.getContainer().getActor().getCurrentProperties();
@@ -61,7 +62,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 			local mult = p.MeleeDamageMult;
 			local damagemin = this.Math.abs(10 * p.DamageTotalMult);
 			local damagemax = this.Math.abs(25 * p.DamageTotalMult);
-			if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 			{
 				local muscularity = this.Math.floor(bodyHealth * 0.1);
 				damagemax += muscularity;
@@ -239,7 +240,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 				local damagemin = this.Math.abs(10 * p.DamageTotalMult);
 				local damagemax = this.Math.abs(25 * p.DamageTotalMult);
 				
-				if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 				{
 					local muscularity = this.Math.floor(bodyHealth * 0.1);
 					damagemax += muscularity;

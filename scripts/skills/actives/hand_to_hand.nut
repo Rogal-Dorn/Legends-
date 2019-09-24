@@ -49,20 +49,20 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		local avgMax = average - 90;	
 
 		if ((average - 100) > 0)
-			{
+		{
 			damageMin += avgMin;
-			}
+		}
 
 		if ((average - 90) > 0)
-			{
+		{
 			damageMax += avgMax;
-			}
+		}
 			
-			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") )
-			{
-				damageMin = damageMin * 1.25;
-				damageMax = damageMax * 1.25;
-			}
+		if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") )
+		{
+			damageMin = damageMin * 1.25;
+			damageMax = damageMax * 1.25;
+		}
 			
 		local damage_regular_min = this.Math.floor(damageMin * p.DamageRegularMult * p.DamageTotalMult);
 		local damage_regular_max = this.Math.floor(damageMax * p.DamageRegularMult * p.DamageTotalMult);
@@ -70,7 +70,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		local damage_Armor_max = this.Math.floor(damageMax * p.DamageArmorMult * p.DamageTotalMult);
 		local damage_direct_max = this.Math.floor(damageMax * this.m.DirectDamageMult);
 		
-		if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 		{
 			local muscularity = this.Math.floor(bodyHealth * 0.1);
 			 damage_regular_max += muscularity;
@@ -78,7 +78,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			 damage_direct_max += muscularity;
 		}
 		
-		if(mult != 1.0)
+		if (mult != 1.0)
 		{
 			damage_regular_min = this.Math.floor(damage_regular_min * mult);
 			damage_regular_max = this.Math.floor(damage_regular_max * mult);
@@ -86,6 +86,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			damage_Armor_max = this.Math.floor(damage_Armor_max * mult);
 			damage_direct_max = this.Math.floor(damage_direct_max * mult);
 		}
+		
 		local ret = [
 			{
 				id = 1,
@@ -126,6 +127,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/hitchance.png",
 			text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] chance to hit"
 		});
+		
 		return ret;
 	}
 
@@ -162,22 +164,22 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			local avgMax = average - 90;	
 
 			if ((average - 100) > 0)
-				{
+			{
 				damageMin += avgMin;
-				}
+			}
 
 			if ((average - 90) > 0)
-				{
+			{
 				damageMax += avgMax;
-				}
+			}
 			
 			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
-				{
-					damageMin = damageMin * 1.25;
-					damageMax = damageMax * 1.25;
-				}
+			{
+				damageMin = damageMin * 1.25;
+				damageMax = damageMax * 1.25;
+			}
 
-			if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 			{
 				local muscularity = this.Math.floor(bodyHealth * 0.1);
 				damageMax += muscularity;
