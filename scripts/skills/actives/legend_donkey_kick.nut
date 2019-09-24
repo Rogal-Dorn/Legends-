@@ -4,7 +4,7 @@ this.legend_donkey_kick <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_donkey_kick";
 		this.m.Name = "Donkey Kick";
-		this.m.Description = "The main attack of a donkey, more for defense than attack";
+		this.m.Description = "The main attack of a donkey, more for defense than attack. Maximum damage is the average of your hitpoints and initiative minus 90";
 		this.m.KilledString = "Kicked to death";
 		this.m.Icon = "skills/horse_kick.png";
 		this.m.IconDisabled = "skills/horse_kick_bw.png";
@@ -40,8 +40,9 @@ function getTooltip()
 	{
 		local actor = this.getContainer().getActor()
 		local p = actor.getCurrentProperties();
-		local mult = 1.0;
-		local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+		local mult = p.MeleeDamageMult;
+		local bodyHealth = actor.getHitpointsMax();
+		local average = (actor.getInitiative() +  bodyHealth) / 2;
 		local damageMin = 5;
 		local damageMax = 10;
 		local avgMin = average - 100;
@@ -62,6 +63,23 @@ function getTooltip()
 		local damage_Armor_min = this.Math.floor(damageMin * p.DamageArmorMult * p.DamageTotalMult);
 		local damage_Armor_max = this.Math.floor(damageMax * p.DamageArmorMult * p.DamageTotalMult);
 		local damage_direct_max = this.Math.floor(damageMax * this.m.DirectDamageMult);
+		if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+		{
+			local muscularity = this.Math.floor(bodyHealth * 0.1);
+			 damage_regular_max += muscularity;
+			 damage_Armor_max += muscularity;
+			 damage_direct_max += muscularity;
+		}
+		
+		if(mult != 1.0)
+		{
+			damage_regular_min = this.Math.floor(damage_regular_min * mult);
+			damage_regular_max = this.Math.floor(damage_regular_max * mult);
+			damage_Armor_min = this.Math.floor(damage_Armor_min * mult);
+			damage_Armor_max = this.Math.floor(damage_Armor_max * mult);
+			damage_direct_max = this.Math.floor(damage_direct_max * mult);
+		}
+		
 		local ret = [
 			{
 				id = 1,
@@ -130,7 +148,10 @@ function onAnySkillUsed( _skill, _targetEntity, _properties )
 		if (_skill == this)
 		{
 			local actor = this.getContainer().getActor();
-			local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+			local p = actor.getCurrentProperties();
+			local mult = p.MeleeDamageMult;
+			local bodyHealth = actor.getHitpointsMax();
+			local average = (actor.getInitiative() +  bodyHealth) / 2;
 			local damageMin = 5;
 			local damageMax = 10;
 			local avgMin = average - 100;
@@ -145,6 +166,12 @@ function onAnySkillUsed( _skill, _targetEntity, _properties )
 				{
 				damageMax += avgMax;
 				}
+
+			if(this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity")
+			{
+				local muscularity = this.Math.floor(bodyHealth * 0.1);
+				damageMax += muscularity;
+			}
 
 			_properties.DamageRegularMin += this.Math.floor(damageMin);
 			_properties.DamageRegularMax += this.Math.floor(damageMax);
