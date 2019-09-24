@@ -1674,3 +1674,4 @@ Assassin Commander start reworked
 * Fixed a crash that could occur when a Vala is swallowed whole while chanting
 * Added a cooldown description for the Legendary Redback Helmet's Web skill
 * Fixed a bug where camouflage wasn't properly being removed at the end of battle
+* Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
