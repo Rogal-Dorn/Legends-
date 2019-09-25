@@ -28,6 +28,12 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
+function getTooltip()
+	{
+		local ret = this.getDefaultTooltip();
+		return ret;
+	}
+	
 	function isUsable()
 	{
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);

@@ -41,9 +41,9 @@ this.legend_hunting_stollwurms_action <- this.inherit("scripts/factions/faction_
 			return;
 		}
 
-		local minResources = this.Const.World.LegendaryContract.Stollwurm * this.Const.World.ContractCost.STOLL_WURM + this.Const.World.ContractCost.STOLL_WURM;
+		local minResources = this.Const.World.LegendaryContract.Stollwurm * this.Const.World.ContractCost.StollWurm + this.Const.World.ContractCost.StollWurm;
 		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.STOLL_WURM;
+		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.StollWurm;
 		
 		if(currentResources < minResources)
 		{
