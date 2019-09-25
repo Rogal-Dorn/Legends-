@@ -166,14 +166,14 @@ gt.Const.World.LegendaryContract <-
 
 gt.Const.World.ContractCost <-
 {
-	WHITE_WOLF = 200,
-	RED_SPIDER = 200,
-	GREEN_SCHRAT = 200,
-	DEMON_ALP = 200,
-	BOSS_HEXE = 200,
-	ROCK_UNHOLD = 200,
-	STOLL_WURM = 200,
-	SKIN_GHOUL = 200,
-	BARB_PRISON = 200,
-	BANDIT_ARMY = 200
+	WhiteWolf = 200,
+	RedSpider = 200,
+	GreenSchrat = 200,
+	DemonAlp = 200,
+	BossHexe = 200,
+	RockUnhold = 200,
+	StollWurm = 200,
+	SkinGhoul = 200,
+	BarbPrison = 200,
+	BanditArmy = 200
 };

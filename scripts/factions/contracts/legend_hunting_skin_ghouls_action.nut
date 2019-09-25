@@ -39,9 +39,9 @@ this.legend_hunting_skin_ghouls_action <- this.inherit("scripts/factions/faction
 			return;
 		}
 		
-		local minResources = this.Const.World.LegendaryContract.SkinGhoul * this.Const.World.ContractCost.SKIN_GHOUL + this.Const.World.ContractCost.SKIN_GHOUL;
+		local minResources = this.Const.World.LegendaryContract.SkinGhoul * this.Const.World.ContractCost.SkinGhoul + this.Const.World.ContractCost.SkinGhoul;
 		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.SKIN_GHOUL;
+		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.SkinGhoul;
 		
 		if(currentResources < minResources)
 		{

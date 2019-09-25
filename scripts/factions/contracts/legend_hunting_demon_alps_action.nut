@@ -39,9 +39,9 @@ this.legend_hunting_demon_alps_action <- this.inherit("scripts/factions/faction_
 			return;
 		}
 
-		local minResources = this.Const.World.LegendaryContract.DemonAlp * this.Const.World.ContractCost.DEMON_ALP + this.Const.World.ContractCost.DEMON_ALP;
+		local minResources = this.Const.World.LegendaryContract.DemonAlp * this.Const.World.ContractCost.DemonAlp + this.Const.World.ContractCost.DemonAlp;
 		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.DEMON_ALP;
+		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.DemonAlp;
 		
 		if(currentResources < minResources)
 		{

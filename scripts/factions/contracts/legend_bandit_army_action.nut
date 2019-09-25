@@ -75,9 +75,9 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 		}
 
 
-		local minResources = this.Const.World.LegendaryContract.BanditArmy * this.Const.World.ContractCost.BANDIT_ARMY + this.Const.World.ContractCost.BANDIT_ARMY;
+		local minResources = this.Const.World.LegendaryContract.BanditArmy * this.Const.World.ContractCost.BanditArmy + this.Const.World.ContractCost.BanditArmy;
 		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BANDIT_ARMY;
+		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BanditArmy;
 		
 		if(currentResources < minResources)
 		{

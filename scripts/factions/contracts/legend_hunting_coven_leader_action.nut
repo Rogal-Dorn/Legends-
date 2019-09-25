@@ -40,9 +40,9 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 			return;
 		}
 
-		local minResources = this.Const.World.LegendaryContract.BossHexe * this.Const.World.ContractCost.BOSS_HEXE + this.Const.World.ContractCost.BOSS_HEXE;
+		local minResources = this.Const.World.LegendaryContract.BossHexe * this.Const.World.ContractCost.BossHexe + this.Const.World.ContractCost.BossHexe;
 		
-		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BOSS_HEXE;
+		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BossHexe;
 		if(currentResources < minResources)
 		{
 			return;
