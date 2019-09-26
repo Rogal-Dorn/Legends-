@@ -396,7 +396,7 @@ gt.Const.World.Spawn.BanditBoss <-
 	]
 }
 
-gt.Const.World.Spawn.BanditsDisguisedAsDireWolves <-
+gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 {
 	Name = "BanditsDisguisedAsDireWolves",
 	IsDynamic = true,
