@@ -86,7 +86,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
 
-		if (!this.World.Assets.isLegendMagic())
+		if ("Assets" in this.World && this.World.Assets != null && !this.World.Assets.isLegendMagic())
 		{
 			this.m.CustomPerkTree = [
 				[
@@ -307,7 +307,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_daze"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_student"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		if (this.World.Assets.isLegendMagic())
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.isLegendMagic())
 		{
 		this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
 		}

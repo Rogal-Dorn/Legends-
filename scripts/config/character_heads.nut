@@ -98,26 +98,24 @@ gt.Const.Faces.AllHuman <- [
 	"bust_head_18",
 	"bust_head_19",
 	"bust_head_20",
-	"bust_head_21",
-	"bust_head_22",
-	"bust_head_23",
-	"bust_head_24",
-	"bust_head_25",
-	"bust_head_26",
-	"bust_head_27",
-	"bust_head_28",
-	"bust_head_29",
-	"bust_head_30",
-	"bust_head_31",
-	"bust_head_32",
-	"bust_head_50",
-	"bust_head_51",
-	"bust_head_52",
-	"bust_head_53",
-	"bust_head_54",
-	"bust_head_55",
-	"bust_head_56",
-	"bust_head_57"
+	"bust_head_100",
+	"bust_head_101",
+	"bust_head_female_01",
+	"bust_head_female_02",
+	"bust_head_female_03",
+	"bust_head_female_04",
+	"bust_head_female_05",
+	"bust_head_female_06",
+	"bust_head_female_07",
+	"bust_head_female_08",
+	"bust_head_female_09",
+	"bust_head_female_10",
+	"bust_head_female_11",
+	"bust_head_female_12",
+	"bust_head_female_13",
+	"bust_head_female_14",
+	"bust_head_female_15",
+	"bust_head_female_16"
 ];
 gt.Const.Faces.AllMale <- [
 	"bust_head_01",
@@ -140,61 +138,60 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_18",
 	"bust_head_19",
 	"bust_head_20",
-	"bust_head_56",
-	"bust_head_57"
+	"bust_head_100",
+	"bust_head_101"
 ];
 gt.Const.Faces.AllFemale <- [
-	// "bust_head_21",
-	// "bust_head_22",
-	// "bust_head_23",
-	// "bust_head_24",
-	// "bust_head_25",
-	// "bust_head_26",
-	// "bust_head_27",
-	// "bust_head_28",
-	// "bust_head_29",
-	// "bust_head_30",
-	// "bust_head_50",
-	"bust_head_51",
-	"bust_head_52",
-	"bust_head_53",
-	"bust_head_54",
-	"bust_head_55",
-	"bust_head_56",
-	"bust_head_57"
+	"bust_head_female_01",
+	"bust_head_female_02",
+	"bust_head_female_03",
+	"bust_head_female_04",
+	"bust_head_female_05",
+	"bust_head_female_06",
+	"bust_head_female_07",
+	"bust_head_female_08",
+	"bust_head_female_09",
+	"bust_head_female_10",
+	"bust_head_female_11",
+	"bust_head_female_12",
+	"bust_head_female_13",
+	"bust_head_female_14",
+	"bust_head_female_15",
+	"bust_head_female_16"
 ];
 
 gt.Const.Faces.PrettyFemale <- [
-	// "bust_head_21",
-	// "bust_head_50",
-	// "bust_head_51",
-	// "bust_head_52",
-	// "bust_head_53",
-	// "bust_head_54",
-	// "bust_head_55"
-	"bust_head_51",
-	"bust_head_52",
-	"bust_head_53",
-	"bust_head_54",
-	"bust_head_55",
-	"bust_head_56",
-	"bust_head_57"
+	"bust_head_female_01",
+	"bust_head_female_02",
+	"bust_head_female_03",
+	"bust_head_female_04",
+	"bust_head_female_05",
+	"bust_head_female_06",
+	"bust_head_female_07",
+	"bust_head_female_08",
+	"bust_head_female_09",
+	"bust_head_female_10",
+	"bust_head_female_11",
+	"bust_head_female_12",
+	"bust_head_female_13",
+	"bust_head_female_14",
+	"bust_head_female_15",
+	"bust_head_female_16"
 ];
 
 gt.Const.Faces.Donkey <- [
-	"bust_head_33"
+	"bust_head_donkey_01"
 ];
 
 gt.Const.Faces.OldFemale <- [
-	"bust_head_25",
-	"bust_head_26",
-	"bust_head_29",
-	"bust_head_54"
+	"bust_head_female_08",
+	"bust_head_female_11",
+	"bust_head_female_15"
 ];
 
 gt.Const.Faces.Berserker <- [
-	"bust_head_31",
-	"bust_head_32"
+	"bust_head_berserker_01",
+	"bust_head_berserker_02"
 ];
 
 
@@ -208,8 +205,7 @@ gt.Const.Faces.SmartMale <- [
 	"bust_head_09",
 	"bust_head_12",
 	"bust_head_13",
-	"bust_head_14",
-	"bust_head_56"
+	"bust_head_14"
 ];
 gt.Const.Faces.WildMale <- [
 	"bust_head_02",
@@ -225,17 +221,22 @@ gt.Const.Faces.WildMale <- [
 	"bust_head_20"
 ];
 gt.Const.Faces.WildFemale <- [
-	"bust_head_26",
-	"bust_head_27",
-	"bust_head_28",
-	"bust_head_29",
-	"bust_head_30",
-	"bust_head_50",
-	"bust_head_51",
-	"bust_head_52",
-	"bust_head_53",
-	"bust_head_54",
-	"bust_head_55"
+	"bust_head_female_01",
+	"bust_head_female_02",
+	"bust_head_female_03",
+	"bust_head_female_04",
+	"bust_head_female_05",
+	"bust_head_female_06",
+	"bust_head_female_07",
+	"bust_head_female_08",
+	"bust_head_female_09",
+	"bust_head_female_10",
+	"bust_head_female_11",
+	"bust_head_female_12",
+	"bust_head_female_13",
+	"bust_head_female_14",
+	"bust_head_female_15",
+	"bust_head_female_16"
 ];
 
 gt.Const.Faces.Necromancer <- [
@@ -488,8 +489,8 @@ gt.Const.Beards.Barber <- [
 	"15",
 	"16",
 	"17",
-	"18",
-	"19"
+	"18"
+	// "19"
 ];
 gt.Const.Beards.All <- [
 	"01",
@@ -509,8 +510,8 @@ gt.Const.Beards.All <- [
 	"15",
 	"16",
 	"17",
-	"18",
-	"19"
+	"18"
+	// "19"
 ];
 
 gt.Const.Beards.Berserker <- [

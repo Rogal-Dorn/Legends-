@@ -23,7 +23,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 	MaxR = 220,
 	Troops = [
 		{
-			Weight = 25,
+			Weight = 50,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -54,7 +54,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 			]
 		},
 		{
-			Weight = 60,
+			Weight = 35,
 			Types =
 			[
 				{
