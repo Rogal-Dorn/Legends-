@@ -75,6 +75,7 @@
 <sprite id="vampire_lord_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\vampire_lord_orientation.png" />
 
 <sprite id="demon_hound_flame_01" ic="FF23165B" img="skills\demon_hound_flame_01.png" />
+<sprite id="demon_hound_bite" ic="FF23165B" img="skills\demon_hound_bite.png" />
 
 
 </brush>
