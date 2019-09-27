@@ -54,7 +54,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 			}
 		];
 
-		if (actor.IsSpecializedInFists)
+		if (p.IsSpecializedInFists)
 		{
 			local actor = this.getContainer().getActor();
 			local p = this.getContainer().getActor().getCurrentProperties();
