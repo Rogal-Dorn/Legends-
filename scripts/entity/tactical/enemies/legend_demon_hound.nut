@@ -32,6 +32,13 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 			"sounds/enemies/hollen_idle_01.wav",
 			"sounds/enemies/hollen_idle_02.wav",
 		];
+		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
+			"sounds/enemies/hollen_charge_01.wav",
+			"sounds/enemies/hollen_charge_02.wav",
+			"sounds/enemies/hollen_charge_03.wav",
+			"sounds/enemies/hollen_charge_04.wav",
+			"sounds/enemies/hollen_charge_05.wav"
+		];
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.getTags().add("undead");
 		this.getTags().add("skeleton");

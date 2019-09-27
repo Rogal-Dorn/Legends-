@@ -41,78 +41,90 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 			}
 		}
 
-		for (local i = 0; i < 8; i = ++i)
-		{
-			local entity = this.spawnEntity("scripts/entity/tactical/player", i+2, i+2, 19, 19);
-			this.World.getPlayerRoster().add(entity);
-			entity.setName(this.getRandomPlayerName());
-			entity.setScenarioValues();
-			local head = entity.getSprite("head")
-			head.setBrush(this.Const.Faces.AllFemale[i])
-			local hair = entity.getSprite("hair")
-			hair.Visible = false
-			//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		}
-
-		for (local i = 8; i < 16; i = ++i)
-		{
-			local entity = this.spawnEntity("scripts/entity/tactical/player", i - 6, i - 6, 17, 17);
-			this.World.getPlayerRoster().add(entity);
-			entity.setName(this.getRandomPlayerName());
-			entity.setScenarioValues();
-			local head = entity.getSprite("head")
-			head.setBrush(this.Const.Faces.AllFemale[i])
-			local hair = entity.getSprite("hair")
-			hair.Visible = false
-			//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		}
-
-
-
-		for (local i = 0; i < 8; i = ++i)
-		{
-			local entity = this.spawnEntity("scripts/entity/tactical/player", i+2, i+2, 15, 15);
-			this.World.getPlayerRoster().add(entity);
-			entity.setName(this.getRandomPlayerName());
-			entity.setScenarioValues();
-			local head = entity.getSprite("head")
-			head.setBrush(this.Const.Faces.AllMale[11+i])
-			local hair = entity.getSprite("hair")
-			hair.Visible = false
-			local body = entity.getSprite("body");
-			body.setBrush("bust_naked_body_00");
-			//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		}
-
-		for (local i = 8; i < 10; i = ++i)
-		{
-			local entity = this.spawnEntity("scripts/entity/tactical/player", i-6 i-6, 13, 13);
-			this.World.getPlayerRoster().add(entity);
-			entity.setName(this.getRandomPlayerName());
-			entity.setScenarioValues();
-			local head = entity.getSprite("head")
-			head.setBrush(this.Const.Faces.AllMale[12+i])
-			local hair = entity.getSprite("hair")
-			hair.Visible = false
-			local body = entity.getSprite("body");
-			body.setBrush("bust_naked_body_01");
-			//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		}
-		// for (local i = 0; i < 5; i = ++i)
+		// for (local i = 0; i < 8; i = ++i)
 		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 19, 19);
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+2, i+2, 19, 19);
 		// 	this.World.getPlayerRoster().add(entity);
 		// 	entity.setName(this.getRandomPlayerName());
 		// 	entity.setScenarioValues();
 		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[12])
+		// 	head.setBrush(this.Const.Faces.AllFemale[i])
 		// 	local hair = entity.getSprite("hair")
-		// 	hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
+		// 	hair.Visible = false
+		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
 		// }
+
+		// for (local i = 8; i < 16; i = ++i)
+		// {
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i - 6, i - 6, 17, 17);
+		// 	this.World.getPlayerRoster().add(entity);
+		// 	entity.setName(this.getRandomPlayerName());
+		// 	entity.setScenarioValues();
+		// 	local head = entity.getSprite("head")
+		// 	head.setBrush(this.Const.Faces.AllFemale[i])
+		// 	local hair = entity.getSprite("hair")
+		// 	hair.Visible = false
+		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
+		// }
+
+
+
+		// for (local i = 0; i < 8; i = ++i)
+		// {
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+2, i+2, 15, 15);
+		// 	this.World.getPlayerRoster().add(entity);
+		// 	entity.setName(this.getRandomPlayerName());
+		// 	entity.setScenarioValues();
+		// 	local head = entity.getSprite("head")
+		// 	head.setBrush(this.Const.Faces.AllMale[11+i])
+		// 	local hair = entity.getSprite("hair")
+		// 	hair.Visible = false
+		// 	local body = entity.getSprite("body");
+		// 	body.setBrush("bust_naked_body_00");
+		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
+		// }
+
+		// for (local i = 8; i < 10; i = ++i)
+		// {
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i-6 i-6, 13, 13);
+		// 	this.World.getPlayerRoster().add(entity);
+		// 	entity.setName(this.getRandomPlayerName());
+		// 	entity.setScenarioValues();
+		// 	local head = entity.getSprite("head")
+		// 	head.setBrush(this.Const.Faces.AllMale[12+i])
+		// 	local hair = entity.getSprite("hair")
+		// 	hair.Visible = false
+		// 	local body = entity.getSprite("body");
+		// 	body.setBrush("bust_naked_body_01");
+		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
+		//}
+		for (local i = 0; i < 5; i = ++i)
+		{
+			local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 19, 19);
+			this.World.getPlayerRoster().add(entity);
+			entity.setName(this.getRandomPlayerName());
+			entity.setScenarioValues();
+			local head = entity.getSprite("head")
+			head.setBrush(this.Const.Faces.AllFemale[12])
+			local hair = entity.getSprite("hair")
+			hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[10 + i])
+		}
+
+		for (local i = 0; i < 5; i = ++i)
+		{
+			local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 17, 17);
+			this.World.getPlayerRoster().add(entity);
+			entity.setName(this.getRandomPlayerName());
+			entity.setScenarioValues();
+			local head = entity.getSprite("head")
+			head.setBrush(this.Const.Faces.AllFemale[11])
+			local hair = entity.getSprite("hair")
+			hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[10 + i])
+		}
 
 		// for (local i = 0; i < 5; i = ++i)
 		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 18, 18);
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 17, 17);
 		// 	this.World.getPlayerRoster().add(entity);
 		// 	entity.setName(this.getRandomPlayerName());
 		// 	entity.setScenarioValues();
@@ -124,7 +136,7 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 
 		// for (local i = 0; i < 5; i = ++i)
 		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 17, 17);
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 15, 15);
 		// 	this.World.getPlayerRoster().add(entity);
 		// 	entity.setName(this.getRandomPlayerName());
 		// 	entity.setScenarioValues();
@@ -136,7 +148,7 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 
 		// for (local i = 0; i < 5; i = ++i)
 		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 16, 16);
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 13, 13);
 		// 	this.World.getPlayerRoster().add(entity);
 		// 	entity.setName(this.getRandomPlayerName());
 		// 	entity.setScenarioValues();
@@ -148,12 +160,12 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 
 		// for (local i = 0; i < 5; i = ++i)
 		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 15, 15);
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 11, 11);
 		// 	this.World.getPlayerRoster().add(entity);
 		// 	entity.setName(this.getRandomPlayerName());
 		// 	entity.setScenarioValues();
 		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[12])
+		// 	head.setBrush(this.Const.Faces.AllFemale[11])
 		// 	local hair = entity.getSprite("hair")
 		// 	hair.setBrush("hair_brown_" + this.Const.Hair.AllFemale[15 + i])
 		// }

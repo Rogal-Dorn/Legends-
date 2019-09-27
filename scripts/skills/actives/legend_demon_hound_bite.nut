@@ -6,8 +6,8 @@ this.legend_demon_hound_bite <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Höllenhund Bite";
 		this.m.Description = "";
 		this.m.KilledString = "Drained of life";
-		this.m.Icon = "skills/demon_hound_flame_01.png";
-		this.m.Overlay = "demon_hound_flame_01";
+		this.m.Icon = "skills/demon_hound_bite.png";
+		this.m.Overlay = "demon_hound_bite";
 		this.m.SoundOnUse = [
 			"sounds/enemies/hollen_attack_01.wav",
 			"sounds/enemies/hollen_attack_02.wav",
@@ -70,7 +70,7 @@ this.legend_demon_hound_bite <- this.inherit("scripts/skills/skill", {
 		}
 
 		//TODO get new status icon effect
-		this.spawnIcon("demon_hound_flame_01", _targetEntity.getTile());
+		this.spawnIcon("demon_hound_bite", _targetEntity.getTile());
 		local poison = _targetEntity.getSkills().getSkillByID("effects.legend_demon_hound_bite_effect");
 
 		if (poison == null)
