@@ -421,7 +421,7 @@ gt.Const.Strings.HedgeKnightTitles <- [
 	"The Brave",
 	"The Titan",
 	"The Loyal",
-	"The Mercyful",
+	"The Merciful",
 	"The Butcher",
 	"The Horrific",
 	"The Invincible",
@@ -470,7 +470,7 @@ gt.Const.Strings.HedgeKnightTitles <- [
 ];
 
 gt.Const.Strings.LadyTitles <- [
-	"The Gaurdian",
+	"The Guardian",
 	"The Ghost",
 	"The Swift",
 	"Steelwielder",
@@ -497,7 +497,7 @@ gt.Const.Strings.LadyTitles <- [
 	"The Brave",
 	"The Titan",
 	"The Loyal",
-	"The Mercyful",
+	"The Merciful",
 	"The Butcher",
 	"The Horrific",
 	"The Invincible",

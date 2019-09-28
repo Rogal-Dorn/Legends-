@@ -1503,6 +1503,7 @@ Fixes cascade skill icon
 Fixes piercing bolt skill
 
 Beta 12.7.1 Released on Nexus
+<<<<<<< HEAD
 
 - Merges in 1.3.0.25
 - New legendary contract added for barbarians (thanks skyu).
@@ -1549,3 +1550,80 @@ Beta 12.7.1 Released on Nexus
 - Added Favored Enemy Swordmasters perk releted event to fight 1v1 duel with swordmaster/hedge_knight/bandit_leader
 - Added hatchet and longaxe to both woodcutter specialist perks
 - Offhand skills damage won't scale to mainhand damage range anymore.
+=======
+*Merges in 1.3.0.25
+*New legendary contract added for barbarians (thanks skyu).
+*Bandit army spawns tweaked.
+*Berserk rage stacks rebalanced.
+*Nudist nerfed (correctly this time).
+*Legendary contract timeout increased from one week to one month .
+*Fixes crash when decapitating or shooting hexen coven leaders.
+*Web skill gains a tooltip.
+*Fixes ironmonger description.
+*Tweaks to Bandit Army Legendary contract:
+-Wont spawn in citadels anymore
+-Requirement to spawn increased and payout decreased
+* Bandit Rabble wont break game if they have buckler equipped
+* Improved MindOverBody tooltip
+* Corrected typos in legendary contracts descriptions
+* Updated description for perks: Favoured Enemy - Barbarian, Favoured Enemy - Bandit
+* Updated description to Rage perk and Rage tooltip in combat
+* Updated Last Stand perk to give bonus melee and ranged defense all the time not just when attacked
+* Fixed Danger Pay perk for Trader Commander
+* Vala recruitment event changed - distance corrected, have to be in the north part of map and not far from settlements that are connected to roads.
+*Changed Bastard vs Assassin event - chance to trigger increased to 2.5x but cannot happen if party already have an assassin
+*Legend Party Start:
+-Replaced Warlock with Assassin
+-Assassin gets custom perk tree like Assassin Commander
+*Added extended Player is Rich event:
+-Can happen only when company has over 30k crowns and more then two backgrounds with custom perk trees (excluding Vala and character with trait.player).
+*Added Trader background (non commander version) possible to get in random trio/party starts
+*Unified perk trees for regular and commander Vala
+-Non-commander Vala gains Alert, Backstabber, Mind over Body, Perfect Focus and Field Triage
+-Vala cannot be male anymore even with Gender Equality on
+*Fixed Student perk not being given to Seer and Seer Commander
+*Added more possible titles to Seer background
+*Fixed white war wolf pet
+*Fixed Noble player character demanding more pay in event
+*Corrected various typos
+*Updated for Wildman causes Havoc event for case of Berserker and Trader present in company
+*Updated wages for Trader background
+*Added Trader recruitment event. Requirements are:
+-50k crowns ambition complete
+-At least 30k crowns in company possesion
+-On the road and daytime
+*Added Favored Enemy Swordmasters perk releted event to fight 1v1 duel with swordmaster/hedge_knight/bandit_leader
+*Added hatchet and longaxe to both woodcutter specialist perks
+*Offhand skills damage won't scale to mainhand damage range anymore
+
+12.7.2 Test 1
+Legendary contracts now require more resources to spawn after each appears
+Added Events to possible tame Wolfs or even a White Direwolf
+Added the four legend named weapons to the named melee weapons pool
+- Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
+Assassin Commander start reworked
+- Max roster of 21 bros with all corresponding perks
+- Everybody gets Backstabber perk in this start
+* Fixed orc weapons tooltip not informing about additional fatigue cost
+* Fixed Man Mangler's weapon shield damage 
+* Fixed the orc weapon Skin Flayer not using extra fatigue per attack
+* Fixed various typos in descriptions/tooltips
+* Fixed Glaive Slash not properly using spear specialization
+* Fixed Greenwood Schrat's Shield self-repair feature
+* Removed roster upgrade perk from non-commander Seer background
+* Fixed Spear weapon group not giving Thrust Master perk
+* Updated Trader background description
+* Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
+* Fixed Poacher start to properly use your starting bro's names
+* Fixed Hexe Legendary Contract spawning multiple times in same settlement
+* Fixed Gash, Grapple and Lunge skills tooltips
+* Fixed Slings related skills to get bonuses from Sling Mastery perk
+* Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
+* Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
+* Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
+* Fixed Adventurous Noble background to properly choose the appropriate name for female characters
+* Fixed a crash that could occur when a Vala is swallowed whole while chanting
+* Added a cooldown description for the Legendary Redback Helmet's Web skill
+* Fixed a bug where camouflage wasn't properly being removed at the end of battle
+* Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
+>>>>>>> Syku_BBLv12_WIP

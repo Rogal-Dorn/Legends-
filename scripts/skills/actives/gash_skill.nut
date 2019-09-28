@@ -58,7 +58,7 @@ this.gash_skill <- this.inherit("scripts/skills/skill", {
 				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] lower threshold to inflict injuries"
 			}
 		]);
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 		{
 			ret.push({
 				id = 6,

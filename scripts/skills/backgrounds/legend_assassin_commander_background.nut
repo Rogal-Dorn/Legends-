@@ -7,7 +7,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_assassin";
 		this.m.Name = "Assassin";
-		this.m.BackgroundDescription = "This character has no history";
+		this.m.BackgroundDescription = "This character history is a secret";
 		this.m.GoodEnding = "After leaving %companyname%, %name% was never heard from again. %name%\'s calling card has been found near a few accidents, so you believe the assassin is doing well.";
 		this.m.BadEnding = "After leaving %companyname%, %name% was never heard from again. There are rumours that a rival assassin was hunting %name%, but no one has heard anything from either of them.";
 		this.m.Icon = "ui/backgrounds/background_53.png";
@@ -109,8 +109,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Colossus,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.LegendAlert,
-				this.Const.Perks.PerkDefs.LegendRoster1
+				this.Const.Perks.PerkDefs.LegendAlert
 			],
 			[
 				this.Const.Perks.PerkDefs.QuickHands,
@@ -122,8 +121,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.Gifted,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendRoster2
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit
 			],
 			[
 				this.Const.Perks.PerkDefs.Anticipation,
@@ -146,7 +144,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.LegendSpecFists,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
-				this.Const.Perks.PerkDefs.LegendPoisonImmunity
+				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
@@ -158,7 +156,8 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
+				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -170,7 +169,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
-				this.Const.Perks.PerkDefs.LegendRoster4
+				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.KillingFrenzy,
@@ -181,7 +180,8 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendHidden,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster,
+				this.Const.Perks.PerkDefs.LegendRoster6
 			]
 		];
 	}
@@ -278,7 +278,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
-		this.m.Container.add(this.new("scripts/skills/traits/deathwish_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 	}
 
