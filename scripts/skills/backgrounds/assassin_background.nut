@@ -8,7 +8,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.assassin";
 		this.m.Name = "Assassin";
 		this.m.Icon = "ui/backgrounds/background_53.png";
-		this.m.BackgroundDescription = "This character has no history";
+		this.m.BackgroundDescription = "This character history is a secret";
 		this.m.GoodEnding = "";
 		this.m.BadEnding = "";
 		this.m.HiringCost = 10000;
@@ -257,6 +257,8 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 	}
 
 	function onAddEquipment()

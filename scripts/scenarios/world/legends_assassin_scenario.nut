@@ -4,7 +4,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.m.ID = "scenario.legends_assassin";
 		this.m.Name = "Solo Assassin (Legends)";
-		this.m.Description = "[img]gfx/ui/events/event_51.png[/img] \n[p]A quick, efficient and ruthless assassin. You strike from the shadows and collect the rewards. \n\n[color=#bcad8c]Camouflage:[/color] You will grant the Camouflage ability to anyone who joins you in battle. \n[color=#bcad8c]Underworld:[/color] You have a small chance of finding other Assassins for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_51.png[/img][/p][p] A quick, efficient and ruthless assassin. You strike from the shadows and collect the rewards. \n\n[color=#bcad8c]Camouflage:[/color] You will grant the Backstabber perk to anyone who joins you in battle. \n[color=#bcad8c]Underworld:[/color] You have a small chance of finding other Assassins for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 19;
 	}
@@ -24,6 +24,8 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 			"legend_assassin_commander_background"
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_backstabber"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
@@ -36,30 +38,25 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 	function onSpawnPlayer()
 	{
 		local randomVillage;
-		local northernmostY = 0;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
 		{
-			local v = this.World.EntityManager.getSettlements()[i];
+			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (v.getTile().SquareCoords.Y > northernmostY && !v.isMilitary() && !v.isIsolatedFromRoads() && v.getSize() <= 2)
+			if (!randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() >= 3)
 			{
-				northernmostY = v.getTile().SquareCoords.Y;
-				randomVillage = v;
+				break;
 			}
-
-			i = ++i;
 		}
 
-		randomVillage.setLastSpawnTimeToNow();
 		local randomVillageTile = randomVillage.getTile();
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
 		do
 		{
-			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 2), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 2));
-			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 2), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 2));
+			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 8), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 8));
+			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 8), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 8));
 
 			if (!this.World.isValidTileSquare(x, y))
 			{
@@ -68,10 +65,13 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 			{
 				local tile = this.World.getTileSquare(x, y);
 
-				if (tile.Type == this.Const.World.TerrainType.Ocean || tile.Type == this.Const.World.TerrainType.Shore || tile.IsOccupied)
+				if (tile.IsOccupied)
 				{
 				}
-				else if (tile.getDistanceTo(randomVillageTile) <= 1)
+				else if (tile.getDistanceTo(randomVillageTile) <= 5)
+				{
+				}
+				else if (!tile.HasRoad)
 				{
 				}
 				else
@@ -88,65 +88,12 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 		while (1);
 
-		local attachedLocations = randomVillage.getAttachedLocations();
-		local closest;
-		local dist = 99999;
-
-		foreach( a in attachedLocations )
-		{
-			if (a.getTile().getDistanceTo(randomVillageTile) < dist)
-			{
-				dist = a.getTile().getDistanceTo(randomVillageTile);
-				closest = a;
-			}
-		}
-
-
-		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
-		local houses = [];
-
-		foreach( n in nobles )
-		{
-			local closest;
-			local dist = 9999;
-
-			foreach( s in n.getSettlements() )
-			{
-				local d = s.getTile().getDistanceTo(randomVillageTile);
-
-				if (d < dist)
-				{
-					dist = d;
-					closest = s;
-				}
-			}
-
-			houses.push({
-				Faction = n,
-				Dist = dist
-			});
-		}
-
-		houses.sort(function ( _a, _b )
-		{
-			if (_a.Dist > _b.Dist)
-			{
-				return 1;
-			}
-			else if (_a.Dist < _b.Dist)
-			{
-				return -1;
-			}
-
-			return 0;
-		});
-
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.Assets.updateLook(110);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
-			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
+			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_assassin_scenario_intro");
 		}, null);
 	}
@@ -175,66 +122,79 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onUpdateDraftList( _list )
 	{
-		if (_list.len() >= 8)
+		local r;
+		r = this.Math.rand(0, 199);
+
+		if (r == 0)
 		{
-			local r;
-			r = this.Math.rand(0, 9);
-
-			if (r == 0)
-			{
-				_list.push("assassin_background");
-			}
-
-			local r;
-			r = this.Math.rand(0, 3);
-
-			if (r == 0)
-			{
-				_list.push("thief_background");
-			}
-
-			local r;
-			r = this.Math.rand(0, 3);
-
-			if (r == 0)
-			{
-				_list.push("female_thief_background");
-			}
+			_list.push("assassin_background");
 		}
 
-		if (_list.len() <= 5)
+		local r;
+		r = this.Math.rand(0, 9);
+
+		if (r == 0)
 		{
-			local r;
-			r = this.Math.rand(0, 9);
+			_list.push("thief_background");
+		}
 
-			if (r == 0)
-			{
-				_list.push("killer_on_the_run_background");
-			}
+		local r;
+		r = this.Math.rand(0, 9);
 
-			local r;
-			r = this.Math.rand(0, 6);
+		if (r == 0)
+		{
+			_list.push("female_thief_background");
+		}
 
-			if (r == 0)
-			{
-				_list.push("graverobber_background");
-			}
+		local r;
+		r = this.Math.rand(0, 19);
 
-			local r;
-			r = this.Math.rand(0, 6);
+		if (r == 0)
+		{
+			_list.push("killer_on_the_run_background");
+		}
 
-			if (r == 0)
-			{
-				_list.push("gambler_background");
-			}
+		local r;
+		r = this.Math.rand(0, 19);
+
+		if (r == 0)
+		{
+			_list.push("graverobber_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 19);
+
+		if (r == 0)
+		{
+			_list.push("gambler_background");
 		}
 	}
 
+	function onUpdateHiringRoster( _roster )
+	{
+		local bros = _roster.getAll();
 
+		foreach( i, bro in bros )
+		{
+			if (!bro.getBackground().isOutlawBackground())
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
+				bro.worsenMood(1.0, "Is uncomfortable with joining an assassin");
+			}
+			else
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.improveMood(1.0, "Is excited at becoming part of outlaw company")				
+			}				
+		}
+	}
+	
 	function onHiredByScenario( bro )
 	{
-		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_backstabber"));	
 	}
 
 	function onBuildPerkTree( _tree )
@@ -245,6 +205,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 
 		_tree.addPerk(this.Const.Perks.PerkDefs.LegendHidden);
+		_tree.addPerk(this.Const.Perks.PerkDefs.Backstabber);
 	}
 
 });

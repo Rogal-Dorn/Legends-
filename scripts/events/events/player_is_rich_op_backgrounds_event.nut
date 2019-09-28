@@ -11,7 +11,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 	{
 		this.m.ID = "event.player_is_rich_op_backgrounds_event";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 150.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 100.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/event_06.png[/img] Over time, you\'ve come to acquire a great deal of money. While you keep the war chest under lock and key, you can\'t help but notice a few brothers have gotten a bit greedier over the time they\'ve spent in your company. Now you hear rumors of the men demanding higher pay. Breaking point has been met when argue between %bro1%  and %bro2% was about to transition into violence. Who contributed the most to piles of coins %companyname% posses? Looked like they were ready to kill each other to resolve this dispute.",
@@ -264,7 +264,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 
         foreach( bro in brothers )
         {
-		    if (bro.getSkills().hasSkill("trait.player") && bro.getBackground.getID != "background.legend_trader_commander")
+		    if (bro.getSkills().hasSkill("trait.player") && bro.getBackground().getID() != "background.legend_trader_commander")
             {
 				continue;
 			}			

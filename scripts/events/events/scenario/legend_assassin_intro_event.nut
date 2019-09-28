@@ -6,7 +6,7 @@ this.legend_assassin_intro_event <- this.inherit("scripts/events/event", {
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
-       		Text = "[img]gfx/ui/events/event_24.png[/img]Focus. Focus on the task. You are a sharpened blade, honed to perfection for a single task. Ending lives. Years of training, years of practice. Your previous life has been wiped from reality, broken down and rebuilt as an efficient tool. The rules are clear, be invisible, be silent, be quick, leave no trace.",
+       		Text = "[img]gfx/ui/events/event_51.png[/img]Focus. Focus on the task. You are a sharpened blade, honed to perfection for a single task. Ending lives. Years of training, years of practice. Your previous life has been wiped from reality, broken down and rebuilt as an efficient tool. The rules are clear, be invisible, be silent, be quick, leave no trace.",
 			Image = "",
 			Banner = "",
 			List = [],
