@@ -3,10 +3,11 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 	function create()
 	{
 		this.m.ID = "legend_barbarian_prisoner_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 	}
 
 	function onUpdate( _faction )
@@ -95,8 +96,21 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 		{
 			return;
 		}
-
-		this.m.Score = 9999;
+		
+		local minResources = this.Const.World.LegendaryContract.BarbPrison * this.Const.World.ContractCost.BarbPrison + this.Const.World.ContractCost.BarbPrison;
+		
+		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BarbPrison;
+		
+		if(currentResources < minResources)
+		{
+			return;
+		}
+		else
+		{
+			this.Const.World.LegendaryContract.BarbPrison += 1;
+		}
+		
+		this.m.Score = 5;
 	}
 
 	function onClear()
