@@ -149,3 +149,31 @@ gt.Const.World.NewCampaignOpts <- function ()
 		AllTradeLocations = false
 	}
 }
+
+gt.Const.World.LegendaryContract <-
+{
+	WhiteWolf = 0,
+	RedSpider = 0,
+	GreenSchrat = 0,
+	DemonAlp = 0,
+	BossHexe = 0,
+	RockUnhold = 0,
+	Stollwurm = 0,
+	SkinGhoul = 0,
+	BarbPrison = 0,
+	BanditArmy = 0
+}
+
+gt.Const.World.ContractCost <-
+{
+	WhiteWolf = 200,
+	RedSpider = 200,
+	GreenSchrat = 200,
+	DemonAlp = 200,
+	BossHexe = 200,
+	RockUnhold = 200,
+	StollWurm = 200,
+	SkinGhoul = 200,
+	BarbPrison = 200,
+	BanditArmy = 200
+};

@@ -7,7 +7,8 @@ this.faction_action <- {
 		CooldownUntil = 0.0,
 		IsRunOnNewCampaign = false,
 		IsStartingOnCooldown = true,
-		IsSettlementsRequired = false
+		IsSettlementsRequired = false,
+		DifficultyMult = 1.0
 	},
 	function getID()
 	{
@@ -42,6 +43,11 @@ this.faction_action <- {
 	function resetCooldown()
 	{
 		this.m.CooldownUntil = 0.0;
+	}
+
+	function getDifficultyMult()
+	{
+		return this.m.DifficultyMult;
 	}
 
 	function create()

@@ -109,5 +109,17 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 		return success;
 	}
 
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.DamageRegularMin = 20;
+			_properties.DamageRegularMax = 40;
+			_properties.DamageArmorMult = 0.7;
+			_properties.DamageDirectMult = 0.2;
+			// _properties.IsIgnoringArmorOnAttack = false;
+			// _properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
+		}
+	}
 });
 

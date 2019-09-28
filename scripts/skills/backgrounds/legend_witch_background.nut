@@ -229,8 +229,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 					this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendTeleport,
-					this.Const.Perks.PerkDefs.LegendFirefield,
-					this.Const.Perks.PerkDefs.LegendRoster6
+					this.Const.Perks.PerkDefs.LegendFirefield
 				],
 				[],
 				[],
