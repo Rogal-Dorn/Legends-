@@ -98,17 +98,17 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		// 	body.setBrush("bust_naked_body_01");
 		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
 		//}
-		for (local i = 0; i < 5; i = ++i)
-		{
-			local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 19, 19);
-			this.World.getPlayerRoster().add(entity);
-			entity.setName(this.getRandomPlayerName());
-			entity.setScenarioValues();
-			local head = entity.getSprite("head")
-			head.setBrush(this.Const.Faces.AllFemale[12])
-			local hair = entity.getSprite("hair")
-			hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		}
+		// for (local i = 0; i < 5; i = ++i)
+		// {
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 19, 19);
+		// 	this.World.getPlayerRoster().add(entity);
+		// 	entity.setName(this.getRandomPlayerName());
+		// 	entity.setScenarioValues();
+		// 	local head = entity.getSprite("head")
+		// 	head.setBrush(this.Const.Faces.AllFemale[12])
+		// 	local hair = entity.getSprite("hair")
+		// 	hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
+		// }
 
 		// for (local i = 0; i < 5; i = ++i)
 		// {
@@ -122,29 +122,29 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		// 	hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
 		// }
 
-		for (local i = 0; i < 5; i = ++i)
-		{
-			local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 17, 17);
-			this.World.getPlayerRoster().add(entity);
-			entity.setName(this.getRandomPlayerName());
-			entity.setScenarioValues();
-			local head = entity.getSprite("head")
-			head.setBrush(this.Const.Faces.AllFemale[13])
-			local hair = entity.getSprite("hair")
-			hair.setBrush("hair_red_" + this.Const.Hair.AllFemale[15 + i])
-		}
+		// for (local i = 0; i < 5; i = ++i)
+		// {
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 17, 17);
+		// 	this.World.getPlayerRoster().add(entity);
+		// 	entity.setName(this.getRandomPlayerName());
+		// 	entity.setScenarioValues();
+		// 	local head = entity.getSprite("head")
+		// 	head.setBrush(this.Const.Faces.AllFemale[13])
+		// 	local hair = entity.getSprite("hair")
+		// 	hair.setBrush("hair_red_" + this.Const.Hair.AllFemale[15 + i])
+		// }
 
-		for (local i = 0; i < 5; i = ++i)
-		{
-			local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 15, 15);
-			this.World.getPlayerRoster().add(entity);
-			entity.setName(this.getRandomPlayerName());
-			entity.setScenarioValues();
-			local head = entity.getSprite("head")
-			head.setBrush(this.Const.Faces.AllFemale[14])
-			local hair = entity.getSprite("hair")
-			hair.setBrush("hair_blonde_" + this.Const.Hair.AllFemale[15 + i])
-		}
+		// for (local i = 0; i < 5; i = ++i)
+		// {
+		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 15, 15);
+		// 	this.World.getPlayerRoster().add(entity);
+		// 	entity.setName(this.getRandomPlayerName());
+		// 	entity.setScenarioValues();
+		// 	local head = entity.getSprite("head")
+		// 	head.setBrush(this.Const.Faces.AllFemale[14])
+		// 	local hair = entity.getSprite("hair")
+		// 	hair.setBrush("hair_blonde_" + this.Const.Hair.AllFemale[15 + i])
+		// }
 
 		for (local i = 0; i < 5; i = ++i)
 		{
@@ -259,21 +259,21 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		//  entity.setFaction(this.Const.Faction.Beasts);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/alp", x, x, 12, 12);
 		//  entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 11);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 12, 11);
 		 entity.setFaction(this.Const.Faction.Undead);
 		 entity.assignRandomEquipment();
-		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 16);
-		//  entity.setFaction(this.Const.Faction.Undead);
-		//  entity.assignRandomEquipment();
-		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 15);
-		//  entity.setFaction(this.Const.Faction.Undead);
-		//  entity.assignRandomEquipment();
-		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 14);
-		//  entity.setFaction(this.Const.Faction.Undead);
-		//  entity.assignRandomEquipment();
-		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 13);
-		//  entity.setFaction(this.Const.Faction.Undead);
-		//  entity.assignRandomEquipment();
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 12, 16);
+		 entity.setFaction(this.Const.Faction.Undead);
+		 entity.assignRandomEquipment();
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 12, 15);
+		 entity.setFaction(this.Const.Faction.Undead);
+		 entity.assignRandomEquipment();
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 12, 14);
+		 entity.setFaction(this.Const.Faction.Undead);
+		 entity.assignRandomEquipment();
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 12, 19);
+		 entity.setFaction(this.Const.Faction.Undead);
+		 entity.assignRandomEquipment();
 		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 14);
 		//  entity.setFaction(this.Const.Faction.Zombies);
 		//  entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 13);
@@ -406,6 +406,9 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
+		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
+		this.Stash.add(this.new("scripts/items/weapons/legend_estoc"));
+		this.Stash.add(this.new("scripts/items/weapons/named/legend_named_estoc"));
 	}
 
 });
