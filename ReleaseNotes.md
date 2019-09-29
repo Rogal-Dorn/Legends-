@@ -1623,3 +1623,7 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 -Höllenhunds - Demon hounds found with the undead. Aggressive and fast. They will seek out the strongest playes. Beware their bite, it saps the strength from even the mightiest.
 -Winselmutters - The dead mothers of fallen heroes who have never been able to find rest in death. Not only can their scream turn the most resolute warrior running, it has been known to inflict damage upon those she sets her sights on.
 -Vampire Lords - You thought normal vampires were hard to kill? Stronger,tougher and now they come with giant two handed cleavers, and they just don't seem to want to die either!
+
+12.7.2 - 13.0.0.1 Test 6
+* Legendary Ranger's Nightvision skill now applies to themself as well
+* Fixed a crash that could occur when reapplying poison to a weapon that already has poison
