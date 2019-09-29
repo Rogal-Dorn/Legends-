@@ -158,7 +158,7 @@
 	}
 
 	local payFn = o.m.Payment.getOnCompletion;
-	o.m.Payment.getOnCompletion = function () 
+	o.m.Payment.getOnCompletion = function ()
 	{
 		local val = payFn();
 		return this.Math.max(this.Const.Difficulty.MinPayments[this.World.Assets.getEconomicDifficulty()], val)
@@ -205,56 +205,63 @@
 
 	o.addUnitsToEntity = function ( _entity, _partyList, _resources )
 	{
-		local total_weight = 0;
-		local potential = [];
-
-		foreach( party in _partyList )
-		{
-			if (party.Cost < _resources * 0.7)
-			{
-				continue;
-			}
-
-			if (party.Cost > _resources)
-			{
-				break;
-			}
-
-			potential.push(party);
-			total_weight = total_weight + party.Cost;
-		}
-
 		local p;
 
-		if (potential.len() == 0)
+		if (typeof(_partyList) == "table")
 		{
-			local best;
-			local bestCost = 9000;
-
-			foreach( party in _partyList )
-			{
-				if (this.Math.abs(_resources - party.Cost) <= bestCost)
-				{
-					best = party;
-					bestCost = this.Math.abs(_resources - party.Cost);
-				}
-			}
-
-			p = best;
+			p = this.Const.World.Common.buildDynamicTroopList(_partyList, _resources)
 		}
 		else
 		{
-			local pick = this.Math.rand(1, total_weight);
+			local total_weight = 0;
+			local potential = [];
 
-			foreach( party in potential )
+			foreach( party in _partyList )
 			{
-				if (pick <= party.Cost)
+				if (party.Cost < _resources * 0.7)
 				{
-					p = party;
+					continue;
+				}
+
+				if (party.Cost > _resources)
+				{
 					break;
 				}
 
-				pick = pick - party.Cost;
+				potential.push(party);
+				total_weight = total_weight + party.Cost;
+			}
+
+			if (potential.len() == 0)
+			{
+				local best;
+				local bestCost = 9000;
+
+				foreach( party in _partyList )
+				{
+					if (this.Math.abs(_resources - party.Cost) <= bestCost)
+					{
+						best = party;
+						bestCost = this.Math.abs(_resources - party.Cost);
+					}
+				}
+
+				p = best;
+			}
+			else
+			{
+				local pick = this.Math.rand(1, total_weight);
+
+				foreach( party in potential )
+				{
+					if (pick <= party.Cost)
+					{
+						p = party;
+						break;
+					}
+
+					pick = pick - party.Cost;
+				}
 			}
 		}
 
@@ -262,12 +269,12 @@
 
 		foreach( t in p.Troops )
 		{
-			local key = "Enemy" + t.Type.ID; 
+			local key = "Enemy" + t.Type.ID;
 			if (!(key in troopMbMap))
 			{
 				troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
 			}
-			
+
 			local mb = troopMbMap[key];
 
 			if (this.getDifficultyMult() >= 1.45)

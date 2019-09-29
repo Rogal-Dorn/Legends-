@@ -5,14 +5,14 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 		IsPlayerAttacking = true,
 		MinStrength = 300,
 		Perk = "perk.legend_favoured_enemy_hexen",
-		ValidTypes = this.Const.LegendMod.FavoriteHexe		
+		ValidTypes = this.Const.LegendMod.FavoriteHexe
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_coven_leader";
-		this.m.Name = "A Cavort with the Coven";
-		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.Name = "A Cavort with the Coven (Legendary)";
+		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 30.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 	}
 
@@ -298,35 +298,35 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 						p.Music = this.Const.Music.CivilianTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						p.Entities.push({
-							ID = this.Const.EntityType.Spider,
-							Variant = 0,
-							Row = 1,
-							Script = "scripts/entity/tactical/enemies/spider_bodyguard",
-							Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
-							Callback = null
-						});
-						p.Entities.push({
-							ID = this.Const.EntityType.Spider,
-							Variant = 0,
-							Row = 1,
-							Script = "scripts/entity/tactical/enemies/spider_bodyguard",
-							Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
-							Callback = null
-						});
-						p.Entities.push({
-							ID = this.Const.EntityType.Hexe,
-							Variant = 0,
-							Row = 2,
-							Script = "scripts/entity/tactical/enemies/legend_redback_spider",
-							Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
-							function Callback( _e, _t )
-							{
-								_e.m.Name = "Spider Queen";
-							}
+						// p.Entities.push({
+						// 	ID = this.Const.EntityType.Spider,
+						// 	Variant = 0,
+						// 	Row = 1,
+						// 	Script = "scripts/entity/tactical/enemies/spider_bodyguard",
+						// 	Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
+						// 	Callback = null
+						// });
+						// p.Entities.push({
+						// 	ID = this.Const.EntityType.Spider,
+						// 	Variant = 0,
+						// 	Row = 1,
+						// 	Script = "scripts/entity/tactical/enemies/spider_bodyguard",
+						// 	Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
+						// 	Callback = null
+						// });
+						// p.Entities.push({
+						// 	ID = this.Const.EntityType.Hexe,
+						// 	Variant = 0,
+						// 	Row = 2,
+						// 	Script = "scripts/entity/tactical/enemies/legend_redback_spider",
+						// 	Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
+						// 	function Callback( _e, _t )
+						// 	{
+						// 		_e.m.Name = "Spider Queen";
+						// 	}
 
-						});
-						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.LegendHexeLeader, 150 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+						// });
+						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.LegendHexeLeader, 200 * this.Contract.getDifficultyMult() * this.Contract.getReputationToDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
 					}
@@ -648,7 +648,7 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

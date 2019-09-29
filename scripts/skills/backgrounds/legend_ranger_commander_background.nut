@@ -28,7 +28,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 			"trait.dastard",
 			"trait.drunkard",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Deerhunter",
@@ -45,7 +45,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -125,7 +125,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendRoster3		
+				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecAxe,
@@ -147,7 +147,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
-				this.Const.Perks.PerkDefs.LegendRoster5		
+				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -208,7 +208,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 
 	function onChangeAttributes()
 	{
-			
+
 		local c = {
 			Hitpoints = [
 				0,
@@ -253,7 +253,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_guide_steps"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_footwork"));
-	}	
+	}
 
 
 	function onAddEquipment()

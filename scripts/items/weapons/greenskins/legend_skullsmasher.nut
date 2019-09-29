@@ -29,6 +29,18 @@ this.legend_skullsmasher <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ChanceToHitHead = 0;
 	}
 
+	function getTooltip()
+	{
+		local ret = this.weapon.getTooltip();
+		ret.push({
+			id = 18,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
+		});
+		return ret;
+	}
+
 	function onEquip()
 	{
 		this.weapon.onEquip();

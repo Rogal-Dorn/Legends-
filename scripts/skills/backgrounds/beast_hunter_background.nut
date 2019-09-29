@@ -45,7 +45,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(2, 3);
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 		local r = this.Math.rand(0, 1);
 
@@ -90,7 +90,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 				0.0 //ocean
 			];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,

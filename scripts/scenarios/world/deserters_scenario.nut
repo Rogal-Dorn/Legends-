@@ -232,7 +232,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	}
 	function onUpdateDraftList( _list )
 	{
-	if (_list.len() >= 10)
+		if (_list.len() >= 10)
 		{
 			local r;
 			r = this.Math.rand(0, 1);

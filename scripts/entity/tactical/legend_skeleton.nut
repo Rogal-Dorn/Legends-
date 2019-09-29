@@ -22,7 +22,7 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 
 	function addXP(_xp)
     {
-        
+
     }
 
 	function onInit()
@@ -127,15 +127,15 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		if (typeof _i == "instance")
 		{
 			this.m.Item = _i;
-			return 
+			return
 		}
-		
+
 		this.m.Item = this.WeakTableRef(_i);
 	}
 
 	function setVariant( _v )
 	{
-		
+
 	}
 
 
@@ -150,13 +150,13 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.actor.onActorKilled(_actor, _tile, _skill);
 		local XPkiller = this.Math.floor(_actor.getXPValue() * this.Const.XP.XPForKillerPct);
 		local XPgroup = _actor.getXPValue() * (1.0 - this.Const.XP.XPForKillerPct);
-        
+
         local summoner = getTags().get("Summoner");
         if (summoner != null && "addXP" in summoner)
         {
             summoner.addXP(this.Math.floor(XPkiller * 0.50));
         }
-		
+
         local brothers = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
 
 		if (brothers.len() == 1)

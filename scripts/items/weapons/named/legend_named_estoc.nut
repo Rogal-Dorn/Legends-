@@ -4,7 +4,7 @@ this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapo
 	{
 		this.named_weapon.create();
 		this.m.ID = "weapon.legend_named_estoc";
-		this.m.NameList = this.Const.Strings.GreatswordNames;
+		this.m.NameList = this.Const.Strings.EstocNames;
 		this.m.Description = "To craft a wellmade Estoc is difficult, requiring both a stiff blade for the thrust, and an elegant blade suitable for a swift and mobile fencer. Yet, the smith that crafted this did more than craft a wellmade one, he crafted a masterpiece.";
 
 		this.m.Categories = "Sword, Two-Handed";
@@ -20,7 +20,7 @@ this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.Condition = 56.0;
 		this.m.ConditionMax = 56.0;
 		this.m.StaminaModifier = -10;
-		this.m.Value = 3200;
+		this.m.Value = 4200;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 85;
 		this.m.ArmorDamageMult = 1.0;

@@ -11,6 +11,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsHidden = false;
 		this.m.IsSerialized = false;
+		this.m.IsRemovedAfterBattle = true;
 	}
 
 	function getDescription()

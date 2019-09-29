@@ -29,27 +29,31 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 			"trait.deathwish",
 			"trait.bloodthirsty",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
-		local chance = 10;
-		if (this.World.Assets.isLegendGenderEquality())
+
+		local r = this.Math.rand(0, 9);
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
-		chance = 50;
+			r = this.Math.rand(0, 1);
 		}
-		if (this.Math.rand(1, 100) <= chance)
-			{
+
+		if (r == 0)
+		{
 			this.m.Faces = this.Const.Faces.AllFemale;
-			this.m.Beards = null;
 			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+			this.m.Beards = null;
 			this.m.BeardChance = 0;
 			this.m.Body = "bust_naked_body_03";
 			this.m.IsFemaleBackground = true;
-			}
+		}
+
 		this.m.Level = 2;
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
@@ -97,7 +101,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendBarterConvincing,
 				this.Const.Perks.PerkDefs.LegendRoster4
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.Overwhelm,
@@ -125,7 +129,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 			[],
 			[],
 			[],
-			[]	
+			[]
 		];
 	}
 
@@ -195,9 +199,10 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		local actor = this.getContainer().getActor();
 		actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_4"));
-		
+
 	}
 
 	function onAddEquipment()
@@ -213,15 +218,15 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		stash.add(this.new("scripts/items/misc/snake_oil_item"));
 		stash.add(this.new("scripts/items/supplies/dried_fruits_item"));
 		// stash.add(this.new("scripts/items/tents/tent_craft"));
-		// stash.add(this.new("scripts/items/tents/tent_enchant"));		
-		// stash.add(this.new("scripts/items/tents/tent_fletcher"));		
-		// stash.add(this.new("scripts/items/tents/tent_gather"));		
-		// stash.add(this.new("scripts/items/tents/tent_heal"));		
+		// stash.add(this.new("scripts/items/tents/tent_enchant"));
+		// stash.add(this.new("scripts/items/tents/tent_fletcher"));
+		// stash.add(this.new("scripts/items/tents/tent_gather"));
+		// stash.add(this.new("scripts/items/tents/tent_heal"));
 		// stash.add(this.new("scripts/items/tents/tent_hunter"));
-		// stash.add(this.new("scripts/items/tents/tent_repair"));		
-		// stash.add(this.new("scripts/items/tents/tent_scout"));		
-		// stash.add(this.new("scripts/items/tents/tent_scrap"));		
-		// stash.add(this.new("scripts/items/tents/tent_train"));		
+		// stash.add(this.new("scripts/items/tents/tent_repair"));
+		// stash.add(this.new("scripts/items/tents/tent_scout"));
+		// stash.add(this.new("scripts/items/tents/tent_scrap"));
+		// stash.add(this.new("scripts/items/tents/tent_train"));
 
 
 	}

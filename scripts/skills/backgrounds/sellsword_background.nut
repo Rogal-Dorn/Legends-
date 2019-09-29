@@ -35,7 +35,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -64,7 +64,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.PerkTreeDynamicMins.Defense = 3;
 		this.m.PerkTreeDynamicMins.Enemy = 2;
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.CrossbowTree
