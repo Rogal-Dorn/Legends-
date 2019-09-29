@@ -255,7 +255,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 				minr = t.MinR;
 			}
 
-			dateToSkip = 0
+			local dateToSkip = 0
 			switch (this.World.Assets.getCombatDifficulty())
 			{
 				case this.Const.Difficulty.Easy:
@@ -272,7 +272,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 					break;
 			}
 
-			if (_resources < t.MinR && this.World.getTime().Days <= dateToSkip)
+			if (_resources < minr && this.World.getTime().Days <= dateToSkip)
 			{
 				continue
 			}
@@ -439,7 +439,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 					minr = troop.Types[i].MinR;
 				}
 
-				dateToSkip = 0
+				local dateToSkip = 0
 				switch (this.World.Assets.getCombatDifficulty())
 				{
 					case this.Const.Difficulty.Easy:
@@ -456,7 +456,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 						break;
 				}
 
-				if (_resources < t.MinR && this.World.getTime().Days <= dateToSkip)
+				if (_resources < minr && this.World.getTime().Days <= dateToSkip)
 				{
 					continue
 				}

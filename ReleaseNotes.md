@@ -1603,6 +1603,7 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 *Fixed a bug where camouflage wasn't properly being removed at the end of battle
 *Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
 *Fixed estoc orientation
+*Fixd poor weapon conditions on Warlock Zombie and Skeleton summons (weapons should not fall apart after one or two hits anymore)
 *Removed Player strength minimums from Crisis. This means Solo and small party runs will start crises after normal periods of time.
 
 *Dynamic Spawn changes:
