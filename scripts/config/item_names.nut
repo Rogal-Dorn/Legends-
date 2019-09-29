@@ -218,6 +218,7 @@ gt.Const.Strings.BillNames <- [
 	"Mangler",
 	"Gasher"
 ];
+
 gt.Const.Strings.GreatswordNames <- [
 	"Greatsword",
 	"Zweihander",
@@ -237,6 +238,34 @@ gt.Const.Strings.GreatswordNames <- [
 	"Warsword",
 	"Bidenhander",
 	"Gassenhauer"
+];
+
+gt.Const.Strings.EstocNames <- [
+	"Estoc",
+	"Blade",
+	"Longblade",
+	"Slayer",
+	"Vanquisher",
+	"Poker",
+	"Executioner",
+	"Defender",
+	"Orcslayer",
+	"Honor",
+	"Raiders\'s Bane",
+	"Long Reach",
+	"Stabber",
+	"Splinter",
+	"Thorn",
+	"Sting",
+	"Snickersnee",
+	"Bloodletter",
+	"Oathbreaker",
+	"Venom",
+	"Cunning",
+	"Avenger",
+	"Backstabber",
+	"Heartseeker",
+	"Needle"
 ];
 gt.Const.Strings.WarbrandNames <- [
 	"Warbrand",
@@ -282,6 +311,7 @@ gt.Const.Strings.DaggerNames <- [
 	"Needle",
 	"Estoc"
 ];
+
 gt.Const.Strings.CrossbowNames <- [
 	"Bolter",
 	"Impaler",

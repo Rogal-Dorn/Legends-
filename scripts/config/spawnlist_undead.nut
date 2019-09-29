@@ -82,6 +82,10 @@ gt.Const.World.Spawn.UndeadArmy <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
+					Cost = 60
 				}
 			]
 		},
@@ -109,7 +113,7 @@ gt.Const.World.Spawn.Vampires <-
 	MinR = 40,
 	Troops = [
 		{
-			Weight = 100,
+			Weight = 90,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.VampireLOW,
@@ -118,6 +122,16 @@ gt.Const.World.Spawn.Vampires <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 10,
+			MinR = 300,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
+					Cost = 60
 				}
 			]
 		}
@@ -164,9 +178,14 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
+				},
+				{
+					MinR = 300,
+					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
+					Cost = 60
 				}
 			]
-		},
+		}
 		{
 			Weight = 5,
 			Types = [

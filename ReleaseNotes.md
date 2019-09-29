@@ -1572,35 +1572,53 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
  12.7.1 - 13.0.0.1 Dynamic Spawns Test 4
  *Fixed typo preventing a particular type of Bandit group to spawn
 
-12.7.2 Test 1
-Legendary contracts now require more resources to spawn after each appears
-Added Events to possible tame Wolfs or even a White Direwolf
-Added the four legend named weapons to the named melee weapons pool
+12.7.2 - 13.0.0.1 Test 5
+*Legendary contracts now require more resources to spawn after each appears
+*Added Events to possible tame Wolfs or even a White Direwolf
+*Added the four legend named weapons to the named melee weapons pool
 - Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
-Assassin Commander start reworked
+*Assassin Commander start reworked
 - Max roster of 21 bros with all corresponding perks
 - Everybody gets Backstabber perk in this start
-* Fixed orc weapons tooltip not informing about additional fatigue cost
-* Fixed Man Mangler's weapon shield damage
-* Fixed the orc weapon Skin Flayer not using extra fatigue per attack
-* Fixed various typos in descriptions/tooltips
-* Fixed Glaive Slash not properly using spear specialization
-* Fixed Greenwood Schrat's Shield self-repair feature
-* Removed roster upgrade perk from non-commander Seer background
-* Fixed Spear weapon group not giving Thrust Master perk
-* Updated Trader background description
-* Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
-* Fixed Poacher start to properly use your starting bro's names
-* Fixed Hexe Legendary Contract spawning multiple times in same settlement
-* Fixed Gash, Grapple and Lunge skills tooltips
-* Fixed Slings related skills to get bonuses from Sling Mastery perk
-* Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
-* Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
-* Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
-* Fixed Adventurous Noble background to properly choose the appropriate name for female characters
-* Fixed a crash that could occur when a Vala is swallowed whole while chanting
-* Added a cooldown description for the Legendary Redback Helmet's Web skill
-* Fixed a bug where camouflage wasn't properly being removed at the end of battle
-* Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
-
+*Fixed orc weapons tooltip not informing about additional fatigue cost
+*Fixed Man Mangler's weapon shield damage
+*Fixed the orc weapon Skin Flayer not using extra fatigue per attack
+*Fixed various typos in descriptions/tooltips
+*Fixed Glaive Slash not properly using spear specialization
+*Fixed Greenwood Schrat's Shield self-repair feature
+*Removed roster upgrade perk from non-commander Seer background
+*Fixed Spear weapon group not giving Thrust Master perk
+*Updated Trader background description
+*Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
+*Fixed Poacher start to properly use your starting bro's names
+*Fixed Hexe Legendary Contract spawning multiple times in same settlement
+*Fixed Gash, Grapple and Lunge skills tooltips
+*Fixed Slings related skills to get bonuses from Sling Mastery perk
+*Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
+*Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
+*Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
+*Fixed Adventurous Noble background to properly choose the appropriate name for female characters
+*Fixed a crash that could occur when a Vala is swallowed whole while chanting
+*Added a cooldown description for the Legendary Redback Helmet's Web skill
+*Fixed a bug where camouflage wasn't properly being removed at the end of battle
+*Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
 *Fixed estoc orientation
+*Removed Player strength minimums from Crisis. This means Solo and small party runs will start crises after normal periods of time.
+
+*Dynamic Spawn changes:
+-Reduced overall ratio of archer units for human enemy factions
+-Increased minium strength levels for spawning HedgeKnights, Swordmasters, Leaders and Master Archers (shouldn't show up earlier game anymore)
+-Minium strength thresholds have an expiration date based on combat difficulty now (this allows solo runs and small party group runs to now experience late game enemies once the date threshold is met)
+-Beginner = 120 days
+-Normal = 90 days,
+-Expert = 60 days,
+-Legendary = 30 days
+
+*Adds 4 new Female heads
+*Adds 2 new Male heads
+*Adds 5 new Female hair styles
+
+*Adds 3 new Enemies
+-Höllenhunds - Demon hounds found with the undead. Aggressive and fast. They will seek out the strongest playes. Beware their bite, it saps the strength from even the mightiest.
+-Winselmutters - The dead mothers of fallen heroes who have never been able to find rest in death. Not only can their scream turn the most resolute warrior running, it has been known to inflict damage upon those she sets her sights on.
+-Vampire Lords - You thought normal vampires were hard to kill? Stronger,tougher and now they come with giant two handed cleavers, and they just don't seem to want to die either!

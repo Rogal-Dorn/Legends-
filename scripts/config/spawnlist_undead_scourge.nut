@@ -99,6 +99,10 @@ gt.Const.World.Spawn.UndeadScourge <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
+					Cost = 60
 				}
 			]
 		},

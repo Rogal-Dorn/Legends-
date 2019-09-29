@@ -23,7 +23,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 	MaxR = 220,
 	Troops = [
 		{
-			Weight = 50,
+			Weight = 60,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
@@ -54,7 +54,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 			]
 		},
 		{
-			Weight = 35,
+			Weight = 25,
 			Types =
 			[
 				{
@@ -79,7 +79,7 @@ gt.Const.World.Spawn.BanditScouts <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	//MinR = 61,
-	MaxR = 170,
+	MaxR = 250,
 	Fixed = [],
 	Troops = [
 		{
@@ -126,6 +126,7 @@ gt.Const.World.Spawn.BanditScouts <-
 					Cost = 15
 				},
 				{
+					MinR = 250,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
 				}
@@ -182,6 +183,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Cost = 15
 				},
 				{
+					MinR = 0.75 * 600,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
 				}
@@ -189,7 +191,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 5,
-			MinR = 80,
+			MinR = 125,
 			Types =
 			[
 				{
@@ -200,7 +202,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 200,
+			MinR = 300,
 			Types =
 			[
 				{
@@ -211,7 +213,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 1,
-			MinR = 200,
+			MinR = 300,
 			Types =
 			[
 				{
@@ -271,6 +273,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 15
 				},
 				{
+					MinR = 0.75 * 585,
 					Type = this.Const.World.Spawn.Troops.MasterArcher,
 					Cost = 40
 				}
@@ -278,6 +281,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 5,
+			MinR = 100,
 			Types =
 			[
 				{
@@ -288,6 +292,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 1,
+			MinR = 0.50 * 585,
 			Types =
 			[
 				{
@@ -298,6 +303,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 1,
+			MinR = 0.50 * 585,
 			Types =
 			[
 				{
