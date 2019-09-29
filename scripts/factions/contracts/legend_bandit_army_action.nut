@@ -3,10 +3,11 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 	function create()
 	{
 		this.m.ID = "legend_bandit_army_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
+		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 	}
 
 	function onUpdate( _faction )
@@ -26,10 +27,10 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 			return;
 		}
 
-		if (this.World.getTime().Days <= 3 && this.Math.rand(1, 100) < 33 || this.Math.rand(1, 100) > 25)
-		{
-			return;
-		}
+		//if (this.World.getTime().Days <= 3 && this.Math.rand(1, 100) < 33 || this.Math.rand(1, 100) > 25)
+		//{
+		//	return;
+		//}
 
 		local tooFar = true;
 		local myTile = _faction.getSettlements()[0].getTile();
@@ -73,7 +74,21 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 			return;
 		}
 
-		this.m.Score = 15;
+
+		local minResources = this.Const.World.LegendaryContract.BanditArmy * this.Const.World.ContractCost.BanditArmy + this.Const.World.ContractCost.BanditArmy;
+		
+		local currentResources = this.getDifficultyMult() * this.getReputationToDifficultyMult() * this.Const.World.ContractCost.BanditArmy;
+		
+		if(currentResources < minResources)
+		{
+			return;
+		}
+		else
+		{
+			this.Const.World.LegendaryContract.BanditArmy += 1;
+		}
+
+		this.m.Score = 5;
 	}
 
 	function onClear()

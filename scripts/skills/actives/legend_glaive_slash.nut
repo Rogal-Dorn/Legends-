@@ -51,7 +51,7 @@ this.legend_glaive_slash <- this.inherit("scripts/skills/skill", {
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
 			}
 		]);
-		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
 		{
 			ret.push({
 				id = 6,
@@ -80,7 +80,13 @@ this.legend_glaive_slash <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.MeleeSkill += 10;
+			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
+			{
+				_properties.MeleeSkill += 5;
+			}
 		}
+		
+		
 	}
 
 });

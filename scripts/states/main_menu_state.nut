@@ -201,6 +201,18 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_rock_unhold"));
 					break;
 
+				case 37:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_banshee"));
+					break;
+
+				case 38:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_vampire_lord"));
+					break;
+
+				case 39:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_demon_hound"));
+					break;
+
 				default:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
 					break;
@@ -462,6 +474,21 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 
 		local result = [
 			{
+				id = 39,
+				name = "Höllenhunds (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Undead demon hounds[/p]"
+			},
+			{
+				id = 38,
+				name = "Necrosavant Lords (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Necrosavant Lords[/p]"
+			},
+			{
+				id = 37,
+				name = "Banshees (Legendary)",
+				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
+			},
+			{
 				id = 30,
 				name = "Skin Ghouls (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_skin_ghoul.png[/img][/p]\n[p=c]Head to head vs the creepy naked beasties[/p]"
@@ -485,12 +512,12 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				id = 14,
 				name = "Heartwood Schrats (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_heartwood.png[/img][/p]\n[p=c]It is just one tree, how bad could it be?[/p]"
-			},			
+			},
 			{
 				id = 35,
 				name = "Demon Alps (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_demonalp.png[/img][/p]\n[p=c]Nightmares become reality[/p]"
-			},		
+			},
 			{
 				id = 32,
 				name = "Stollwurm (Legendary)",
@@ -500,12 +527,12 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 				id = 33,
 				name = "The Coven (Legendary)",
 				description = "[p=c][img]gfx/ui/events/legend_hexe_leader.png[/img][/p]\n[p=c]A witch approaches.[/p]"
-			},		
+			},
 			{
 				id = 9,
 				name = "Line Battle (Legendary)",
 				description = "[p=c][img]gfx/ui/events/event_49.png[/img][/p]\n[p=c]ORC ORC ORC ORC ORC ORC. Difficult.[/p]"
-			},				
+			},
 			{
 				id = 0,
 				name = "Combat Basics",
@@ -558,7 +585,7 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		}
 
 		return result;
-	}			
+	}
 
 	function options_menu_module_onOkPressed()
 	{

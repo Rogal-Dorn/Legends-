@@ -20,7 +20,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			"trait.fainthearted",
 			"trait.insecure",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Vala"
@@ -32,30 +32,14 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.BeardChance = 0;
 		this.m.Body = this.Const.Bodies.AllFemale[this.Math.rand(0, this.Const.Bodies.AllFemale.len() - 1)];
 		this.m.IsFemaleBackground = true;
-
-		
-		if (this.World.Assets.isLegendGenderEquality())
-		{
-			local r = this.Math.rand(0, 1);
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.AllMale;
-				this.m.Hairs = this.Const.Hair.CommonMale;
-				this.m.HairColors = this.Const.HairColors.All;
-				this.m.Beards = this.Const.Beards.All;
-				this.m.Body = "bust_naked_body_01";
-				this.m.IsFemaleBackground = false;
-			}
-		}
-
 		this.m.IsUntalented = true;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
-		this.m.Modifiers.Enchanting = 1.0;		
+		this.m.Modifiers.Enchanting = 1.0;
 		this.m.Level = 2;
 
-			if (!this.World.Assets.isLegendMagic())
+		if ("Assets" in this.World && this.World.Assets != null && !this.World.Assets.isLegendMagic())
 		{
 			this.m.CustomPerkTree = [
 			[
@@ -78,7 +62,6 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantSenses,
 				this.Const.Perks.PerkDefs.LegendValaPremonition,
-				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
@@ -111,9 +94,8 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[],
 			[],
 			[],
-			[]				
+			[]
 		];
-
 		}
 		else
 		{
@@ -137,7 +119,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantSenses,
 				this.Const.Perks.PerkDefs.LegendValaPremonition,
-				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
 				this.Const.Perks.PerkDefs.LegendRoster3
@@ -145,6 +127,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantMastery,
 				this.Const.Perks.PerkDefs.LegendValaTranceMastery,
+				this.Const.Perks.PerkDefs.LegendAlert,
 				this.Const.Perks.PerkDefs.LegendValaInscriptionMastery
 			],
 			[
@@ -154,24 +137,23 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaThreads,
-				this.Const.Perks.PerkDefs.LegendValaSpiritualBond,
 				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantFury,
 				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[],
 			[],
 			[],
-			[]				
+			[]
 		];
 		}
 
-		
 	}
 
 	function getTooltip()

@@ -373,7 +373,7 @@ gt.Const.Perks.OutlandersTree <- {
 gt.Const.Perks.BanditTree <- {
 	ID = "BanditTree",
 	Descriptions = [
-		"banditss"
+		"bandits"
 	],
 	Tree = [
 		[],

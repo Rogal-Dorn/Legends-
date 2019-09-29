@@ -38,35 +38,55 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		local p = actor.getCurrentProperties();
-		local mult = 1.0;
-		local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+		local mult = p.MeleeDamageMult;
+		local bodyHealth = actor.getHitpointsMax();
+		local average = (actor.getInitiative() +  bodyHealth) / 2;
 		local damageMin = 5;
 		local damageMax = 10;
 		local avgMin = average - 100;
 		local avgMax = average - 90;	
 
 		if ((average - 100) > 0)
-			{
+		{
 			damageMin += avgMin;
-			}
+		}
 
 		if ((average - 90) > 0)
-			{
+		{
 			damageMax += avgMax;
-			}
+		}
 			
-			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") )
-			{
-				damageMin = damageMin * 1.25;
-				damageMax = damageMax * 1.25;
-			}
+		if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") || this.getContainer().hasSkill("background.legend_berserker") )
+		{
+			damageMin = damageMin * 1.25;
+			damageMax = damageMax * 1.25;
+		}
+			
 		local damage_regular_min = this.Math.floor(damageMin * p.DamageRegularMult * p.DamageTotalMult);
 		local damage_regular_max = this.Math.floor(damageMax * p.DamageRegularMult * p.DamageTotalMult);
 		local damage_Armor_min = this.Math.floor(damageMin * p.DamageArmorMult * p.DamageTotalMult);
 		local damage_Armor_max = this.Math.floor(damageMax * p.DamageArmorMult * p.DamageTotalMult);
 		local damage_direct_max = this.Math.floor(damageMax * this.m.DirectDamageMult);
+		
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
+		{
+			local muscularity = this.Math.floor(bodyHealth * 0.1);
+			 damage_regular_max += muscularity;
+			 damage_Armor_max += muscularity;
+			 damage_direct_max += muscularity;
+		}
+		
+		if (mult != 1.0)
+		{
+			damage_regular_min = this.Math.floor(damage_regular_min * mult);
+			damage_regular_max = this.Math.floor(damage_regular_max * mult);
+			damage_Armor_min = this.Math.floor(damage_Armor_min * mult);
+			damage_Armor_max = this.Math.floor(damage_Armor_max * mult);
+			damage_direct_max = this.Math.floor(damage_direct_max * mult);
+		}
+		
 		local ret = [
 			{
 				id = 1,
@@ -107,6 +127,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/hitchance.png",
 			text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] chance to hit"
 		});
+		
 		return ret;
 	}
 
@@ -135,28 +156,35 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			local actor = this.getContainer().getActor();
-			local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 2;
+			local bodyHealth = actor.getHitpointsMax();
+			local average = (actor.getInitiative() +  bodyHealth) / 2;
 			local damageMin = 5;
 			local damageMax = 10;
 			local avgMin = average - 100;
 			local avgMax = average - 90;	
 
 			if ((average - 100) > 0)
-				{
+			{
 				damageMin += avgMin;
-				}
+			}
 
 			if ((average - 90) > 0)
-				{
+			{
 				damageMax += avgMax;
-				}
+			}
 			
-			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker") )
-				{
-					damageMin = damageMin * 1.25;
-					damageMax = damageMax * 1.25;
-				}
+			if (this.getContainer().hasSkill("background.brawler") || this.getContainer().hasSkill("background.legend_commander_berserker" || this.getContainer().hasSkill("background.legend_berserker")) )
+			{
+				damageMin = damageMin * 1.25;
+				damageMax = damageMax * 1.25;
+			}
 
+			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
+			{
+				local muscularity = this.Math.floor(bodyHealth * 0.1);
+				damageMax += muscularity;
+			}
+			
 			_properties.DamageRegularMin += this.Math.floor(damageMin);
 			_properties.DamageRegularMax += this.Math.floor(damageMax);
 			_properties.MeleeSkill -= 10;

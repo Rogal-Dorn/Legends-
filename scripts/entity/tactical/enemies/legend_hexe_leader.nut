@@ -195,9 +195,9 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 						food.drop(_tile);
 					}
 				}
-				
+
 				local chance = 10;
-				if (this.World.Assets.isLegendMagic())
+				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.isLegendMagic())
 				{
 					chance = 100;
 				}
@@ -279,7 +279,7 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			
+
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));

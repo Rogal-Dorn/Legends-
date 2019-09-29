@@ -34,7 +34,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 
@@ -54,7 +54,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
@@ -166,7 +166,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			items.equip(this.new("scripts/items/armor/legend_maid_dress"));
 		}
-		else 
+		else
 		{
 			local item = this.new("scripts/items/armor/linen_tunic");
 			item.setVariant(this.Math.rand(6, 7));

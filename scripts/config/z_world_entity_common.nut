@@ -7,89 +7,97 @@ if (!("World" in gt.Const))
 
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
-	if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
-	{
-		_resources = _partyList[_partyList.len() - 1].Cost;
-	}
-
-	local total_weight = 0;
-	local best;
-	local bestCost = _weightMode == this.WeightMode.Strongest ? -9000.0 : 9000;
-	local potential = [];
-
-	foreach( party in _partyList )
-	{
-		if (party.Cost < _resources * 0.7)
-		{
-			continue;
-		}
-
-		if (party.Cost > _resources)
-		{
-			break;
-		}
-
-		if (_weightMode == this.WeightMode.Weighted || _weightMode == this.WeightMode.Random)
-		{
-			potential.push(party);
-			total_weight = total_weight + party.Cost;
-		}
-		else if (_weightMode == this.WeightMode.Strongest)
-		{
-			if (party.Cost > bestCost)
-			{
-				best = party;
-				bestCost = party.Cost;
-			}
-		}
-		else if (_weightMode == this.WeightMode.Weakest)
-		{
-			if (party.Cost < bestCost)
-			{
-				best = party;
-				bestCost = party.Cost;
-			}
-		}
-	}
-
 	local p;
-
-	if (potential.len() == 0 && best == null)
+	//New Legends Dynamic Spawn lists
+	if (typeof(_partyList) == "table")
 	{
-		bestCost = 9000;
+		p = this.Const.World.Common.buildDynamicTroopList(_partyList, _resources)
+	}
+	//Vanilla partlyList spawnlists
+	else
+	{
+		if (_partyList[_partyList.len() - 1].Cost < _resources * 0.7)
+		{
+			_resources = _partyList[_partyList.len() - 1].Cost;
+		}
+
+		local total_weight = 0;
+		local best;
+		local bestCost = _weightMode == this.WeightMode.Strongest ? -9000.0 : 9000;
+		local potential = [];
 
 		foreach( party in _partyList )
 		{
-			if (this.Math.abs(_resources - party.Cost) <= bestCost)
+			if (party.Cost < _resources * 0.7)
 			{
-				best = party;
-				bestCost = this.Math.abs(_resources - party.Cost);
+				continue;
 			}
-		}
 
-		p = best;
-	}
-	else if (_weightMode == this.WeightMode.Random)
-	{
-		p = potential[this.Math.rand(0, potential.len() - 1)];
-	}
-	else if (_weightMode == this.WeightMode.Strongest || _weightMode == this.WeightMode.Weakest)
-	{
-		p = best;
-	}
-	else if (_weightMode == this.WeightMode.Weighted)
-	{
-		local pick = this.Math.rand(1, total_weight);
-
-		foreach( party in potential )
-		{
-			if (pick <= party.Cost)
+			if (party.Cost > _resources)
 			{
-				p = party;
 				break;
 			}
 
-			pick = pick - party.Cost;
+			if (_weightMode == this.WeightMode.Weighted || _weightMode == this.WeightMode.Random)
+			{
+				potential.push(party);
+				total_weight = total_weight + party.Cost;
+			}
+			else if (_weightMode == this.WeightMode.Strongest)
+			{
+				if (party.Cost > bestCost)
+				{
+					best = party;
+					bestCost = party.Cost;
+				}
+			}
+			else if (_weightMode == this.WeightMode.Weakest)
+			{
+				if (party.Cost < bestCost)
+				{
+					best = party;
+					bestCost = party.Cost;
+				}
+			}
+		}
+
+		if (potential.len() == 0 && best == null)
+		{
+			bestCost = 9000;
+
+			foreach( party in _partyList )
+			{
+				if (this.Math.abs(_resources - party.Cost) <= bestCost)
+				{
+					best = party;
+					bestCost = this.Math.abs(_resources - party.Cost);
+				}
+			}
+
+			p = best;
+		}
+		else if (_weightMode == this.WeightMode.Random)
+		{
+			p = potential[this.Math.rand(0, potential.len() - 1)];
+		}
+		else if (_weightMode == this.WeightMode.Strongest || _weightMode == this.WeightMode.Weakest)
+		{
+			p = best;
+		}
+		else if (_weightMode == this.WeightMode.Weighted)
+		{
+			local pick = this.Math.rand(1, total_weight);
+
+			foreach( party in potential )
+			{
+				if (pick <= party.Cost)
+				{
+					p = party;
+					break;
+				}
+
+				pick = pick - party.Cost;
+			}
 		}
 	}
 
@@ -102,12 +110,12 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 	local troopMbMap = {};
 	foreach( t in p.Troops )
 	{
-		local key = "Enemy" + t.Type.ID; 
+		local key = "Enemy" + t.Type.ID;
 		if (!(key in troopMbMap))
 		{
 			troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
 		}
-		
+
 		local mb = troopMbMap[key];
 
 		for( local i = 0; i != t.Num; i = ++i )
@@ -122,63 +130,70 @@ gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _
 
 gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources, _faction, _minibossify = 0 )
 {
-	local total_weight = 0;
-	local potential = [];
+	local p
 
-	foreach( party in _partyList )
+	if (typeof(_partyList) == "table")
 	{
-		if (party.Cost < _resources * 0.7)
-		{
-			continue;
-		}
-
-		if (party.Cost > _resources)
-		{
-			break;
-		}
-
-		potential.push(party);
-		total_weight = total_weight + party.Cost;
-	}
-
-	local p;
-
-	if (potential.len() == 0)
-	{
-		local best;
-		local bestCost = 9000;
-
-		foreach( party in _partyList )
-		{
-			if (this.Math.abs(_resources - party.Cost) <= bestCost)
-			{
-				best = party;
-				bestCost = this.Math.abs(_resources - party.Cost);
-			}
-		}
-
-		p = best;
+		p = this.Const.World.Common.buildDynamicTroopList(_partyList, _resources)
 	}
 	else
 	{
-		local pick = this.Math.rand(1, total_weight);
+		local total_weight = 0;
+		local potential = [];
 
-		foreach( party in potential )
+		foreach( party in _partyList )
 		{
-			if (pick <= party.Cost)
+			if (party.Cost < _resources * 0.7)
 			{
-				p = party;
+				continue;
+			}
+
+			if (party.Cost > _resources)
+			{
 				break;
 			}
 
-			pick = pick - party.Cost;
+			potential.push(party);
+			total_weight = total_weight + party.Cost;
+		}
+
+		if (potential.len() == 0)
+		{
+			local best;
+			local bestCost = 9000;
+
+			foreach( party in _partyList )
+			{
+				if (this.Math.abs(_resources - party.Cost) <= bestCost)
+				{
+					best = party;
+					bestCost = this.Math.abs(_resources - party.Cost);
+				}
+			}
+
+			p = best;
+		}
+		else
+		{
+			local pick = this.Math.rand(1, total_weight);
+
+			foreach( party in potential )
+			{
+				if (pick <= party.Cost)
+				{
+					p = party;
+					break;
+				}
+
+				pick = pick - party.Cost;
+			}
 		}
 	}
 
 	local troopMbMap = {};
 	foreach( t in p.Troops )
 	{
-		local key = "Enemy" + t.Type.ID; 
+		local key = "Enemy" + t.Type.ID;
 		if (!(key in troopMbMap))
 		{
 			troopMbMap[key] <- this.Const.LegendMod.GetFavEnemyBossChance(t.Type.ID);
@@ -214,3 +229,462 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 		}
 	}
 }
+
+
+gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale, _map, _credits)
+{
+	local candidates = [];
+	local T = [];
+	local totalWeight = 0;
+	foreach (t in _list)
+	{
+		if ("MaxR" in t && _resources > t.MaxR)
+		{
+			continue;
+		}
+
+		if ("MinR" in t)
+		{
+			local minr = 0;
+			if (typeof(t.MinR) == "function")
+			{
+				minr = t.MinR()
+			}
+			else
+			{
+				minr = t.MinR;
+			}
+
+			local dateToSkip = 0
+			switch (this.World.Assets.getCombatDifficulty())
+			{
+				case this.Const.Difficulty.Easy:
+					dateToSkip = 120;
+					break;
+				case this.Const.Difficulty.Normal:
+					dateToSkip = 90
+					break;
+				case this.Const.Difficulty.Hard:
+					dateToSkip = 60
+					break;
+				case this.Const.Difficulty.Legendary:
+					dateToSkip = 30
+					break;
+			}
+
+			if (_resources < minr && this.World.getTime().Days <= dateToSkip)
+			{
+				continue
+			}
+		}
+
+		local w = 0
+		if (typeof(t.Weight) == "function")
+		{
+			w = t.Weight(_scale)
+		}
+		else
+		{
+			w = t.Weight;
+		}
+
+		if (w == 0)
+		{
+			T.push(t)
+			continue
+		}
+		totalWeight += w;
+		candidates.push(t);
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	foreach (t in candidates)
+	{
+		local w = 0;
+		if (typeof(t.Weight) == "function")
+		{
+			w = t.Weight(_scale);
+		}
+		else
+		{
+			w = t.Weight;
+		}
+		r = r - w;
+		if (r > 0)
+		{
+			continue;
+		}
+		T.push(t);
+		break;
+	}
+
+	foreach (troop in T)
+	{
+		if ("Type" in troop)
+		{
+			_credits -= troop.Cost;
+			local key = troop.Type.Script;
+			if (!(key in _map))
+			{
+				_map[key] <- {
+					Type = troop.Type,
+					Num = 0
+				}
+			}
+			_map[key].Num += 1;
+
+			if ("MaxCount" in troop)
+			{
+				for (local i = 1; i < troop.MaxCount; i = ++i)
+				{
+					if (_credits < 0)
+					{
+						break;
+					}
+
+					local w = 100;
+					if (typeof(troop.Weight) == "function")
+					{
+						w = troop.Weight(_scale);
+					}
+					else
+					{
+						w = troop.Weight;
+					}
+
+					if (this.Math.rand(0, 100) < w)
+					{
+						_credits -= troop.Cost;
+						local key = troop.Type.Script;
+						if (!(key in _map))
+						{
+							_map[key] <- {
+								Type = troop.Type,
+								Num = 0
+							}
+						}
+						_map[key].Num += 1;
+					}
+				}
+			}
+
+		}
+
+
+		if ("Guards" in troop)
+		{
+			local maxCount = "MaxGuards" in troop ? troop.MaxGuards : 1;
+			local minCount = "MinGuards" in troop ? troop.MinGuards : 1;
+			for (local i = 0; i < maxCount; i = ++i)
+			{
+				local weight = 100;
+				if ("MaxGuardsWeight" in troop)
+				{
+					weight = troop.MaxGuardsWeight;
+				}
+				local r = this.Math.rand(0, 100)
+				if (weight < r && i >= minCount)
+				{
+					continue;
+				}
+
+				_credits = this.Const.World.Common.dynamicSelectTroop(troop.Guards, _resources, _scale, _map, _credits)
+
+				if (_credits < 0)
+				{
+					break;
+				}
+			}
+		}
+
+		if (_credits < 0)
+		{
+			return _credits;
+		}
+
+		if (!("Types" in troop))
+		{
+			continue;
+		}
+
+		local points = troop.Types[0].Cost;
+		if (troop.Types.len() > 1)
+		{
+			local meanScaled = troop.MinMean + _scale * (troop.MaxMean - troop.MinMean)
+			points = this.Math.max(points, this.Const.LegendMod.BoxMuller.BoxMuller(meanScaled, troop.Deviation));
+			//this.logInfo(cat + " Mean " + meanScaled + " : Deviation " + troops.Deviation + " : Points " + points)
+		}
+		//Always purchase the most expensive unit we can
+		for (local i = troop.Types.len() - 1; i >= 0; i = --i)
+		{
+			if (troop.Types[i].Cost > points)
+			{
+				continue;
+			}
+
+			if ("MaxR" in troop.Types[i] && _resources > troop.Types[i].MaxR)
+			{
+				continue;
+			}
+
+			if ("MinR" in  troop.Types[i])
+			{
+				local minr = 0;
+				if (typeof(troop.Types[i].MinR) == "function")
+				{
+					minr = troop.Types[i].MinR()
+				}
+				else
+				{
+					minr = troop.Types[i].MinR;
+				}
+
+				local dateToSkip = 0
+				switch (this.World.Assets.getCombatDifficulty())
+				{
+					case this.Const.Difficulty.Easy:
+						dateToSkip = 120;
+						break;
+					case this.Const.Difficulty.Normal:
+						dateToSkip = 90
+						break;
+					case this.Const.Difficulty.Hard:
+						dateToSkip = 60
+						break;
+					case this.Const.Difficulty.Legendary:
+						dateToSkip = 30
+						break;
+				}
+
+				if (_resources < minr && this.World.getTime().Days <= dateToSkip)
+				{
+					continue
+				}
+			}
+
+
+			_credits -= troop.Types[i].Cost;
+
+			local key = troop.Types[i].Type.Script;
+			if (!(key in _map))
+			{
+				_map[key] <- {
+					Type = troop.Types[i].Type,
+					Num = 0
+				}
+			}
+			_map[key].Num += 1
+
+			if ("Guards" in troop.Types[i])
+			{
+				_credits = this.Const.World.Common.dynamicSelectTroop(troop.Types[i].Guards, _resources, _scale, _map, _credits)
+			}
+			break;
+		}
+	}
+
+	return _credits
+}
+
+gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
+{
+	this.logInfo("*DynamicTroopList : template = " + _template.Name + " : resources = " + _resources)
+	local credits = _resources;
+	if ("MinR" in _template)
+	{
+		credits = this.Math.max(_template.MinR, credits)
+	}
+	local scale = "MaxR" in _template ? (_resources * 1.0) / (_template.MaxR * 1.0) : 1.0;
+	local troopMap = {};
+	local prevPoints = 0;
+
+	if ("Fixed" in _template)
+	{
+		credits = this.Const.World.Common.dynamicSelectTroop(_template.Fixed, _resources, scale, troopMap, credits)
+	}
+
+	if ("Troops" in _template && _template.Troops.len() > 0)
+	{
+		while (credits > 0)
+		{
+			credits = this.Const.World.Common.dynamicSelectTroop(_template.Troops, _resources, scale, troopMap, credits)
+		}
+	}
+
+	local T = []
+	foreach ( k, v in troopMap)
+	{
+		T.push(v)
+	}
+
+
+	//TESTING
+	// foreach (t in T)
+	// {
+	// 	this.logInfo(t.Type.Script + " : " + t.Num)
+	// }
+
+	return {
+		MovementSpeedMult = _template.MovementSpeedMult,
+		VisibilityMult = _template.VisibilityMult,
+		VisionMult = _template.VisionMult,
+		Body = _template.Body,
+		Troops = T
+	}
+}
+
+if (!("LegendMod" in gt.Const))
+{
+	gt.Const.LegendMod <- {};
+}
+
+gt.Const.LegendMod.BoxMuller <- {
+	UseLast = false,
+	NextValue = 0.0,
+	function generate()
+	{
+		if (this.UseLast)
+		{
+			this.UseLast = false;
+			return this.NextValue;
+		}
+		local s = 0.0;
+		local v1 = 0.0;
+		local v2 = 0.0;
+		while (s >= 1.0 || s == 0.0)
+		{
+			v1 = 2.0 * this.Math.rand(0, 1000) / 1000 - 1.0;
+			v2 = 2.0 * this.Math.rand(0, 1000) / 1000 - 1.0;
+			s = v1 * v1 + v2 * v2;
+		}
+
+		s = this.Math.pow(-2.0 * log(s) / s, 0.5);
+		this.NextValue = v2 * s
+		this.UseLast = true;
+		return v1 * s;
+	}
+
+	function BoxMuller( _mean, _deviation )
+	{
+		local g = this.generate()
+		return _mean + g * _deviation;
+	}
+
+	function Next( _min, _max )
+	{
+		local deviations = 3.5;
+		local r = _max + 1; //so we iterate at least once
+		while (r > _max || r < _min)
+		{
+			r = this.BoxMuller(_min + (_max - _min) / 2.0, (_max - _min) / 2.0 / deviations);
+		}
+		return r;
+	}
+}
+
+function onCostCompare( _t1, _t2 )
+{
+	if (_t1.Cost < _t2.Cost)
+	{
+		return -1;
+	}
+	else if (_t1.Cost > _t2.Cost)
+	{
+		return 1;
+	}
+
+	return 0;
+}
+
+foreach(k,v in this.Const.World.Spawn)
+{
+	if (k == "Troops" || k == "Unit" || k == "TroopsMap")
+	{
+		continue;
+	}
+
+	if (typeof(v) != "table")
+	{
+		continue;
+	}
+
+	//this.logInfo("Calculating costs for " + k)
+	foreach (i, _t in v.Troops)
+	{
+		if (_t.Types.len() == 1)
+		{
+			continue;
+		}
+
+		v.Troops[i].Types.sort(this.onCostCompare)
+
+		local mean = 0;
+		local variance = 0;
+		local deviation = 0;
+
+		foreach (o in v.Troops[i].Types)
+		{
+			mean += o.Cost;
+		}
+		mean = (mean * 1.0) / ( v.Troops[i].Types.len() * 1.0)
+
+		foreach (o in v.Troops[i].Types)
+		{
+			local d = o.Cost - mean;
+			variance += (d * d);
+		}
+		variance = (variance * 1.0) / ( v.Troops[i].Types.len() * 1.0)
+		deviation = this.Math.pow(variance, 0.5)
+
+
+		v.Troops[i].Mean <- mean;
+		v.Troops[i].Variance <- variance;
+		v.Troops[i].Deviation <- deviation;
+		v.Troops[i].MinMean <- v.Troops[i].Types[0].Cost - deviation;
+		v.Troops[i].MaxMean <-  v.Troops[i].Types[v.Troops[i].Types.len() - 1].Cost + deviation;
+		//this.logInfo(" mean  " + mean + " variance " + variance + " deviation " + deviation + " min " + v.Troops[i].MinMean + " max " + v.Troops[i].MaxMean)
+	}
+
+}
+//TESTING
+// foreach(k,v in this.Const.World.Spawn)
+// {
+// 	if (k == "Troops" || k == "Unit" || k == "TroopsMap")
+// 	{
+// 		continue;
+// 	}
+
+// 	if (typeof(v) != "table")
+// 	{
+// 		continue
+// 	}
+
+// 	if (!("MaxR" in v))
+// 	{
+// 		continue;
+// 	}
+
+// 	local P = [0.15, 0.25, 0.50, 0.75, 1];
+
+// 	this.logInfo("****** " + k + " ******")
+// 	foreach (p in P)
+// 	{
+// 		this.logInfo(" >>> Percent:  " + p + " <<<")
+// 		for (local i = 0; i < 3; i = ++i)
+// 		{
+// 			this.logInfo(" RUN  " + i)
+// 			local res = gt.Const.World.Common.buildDynamicTroopList(v, p * v.MaxR)
+// 			foreach (t in res.Troops)
+// 			{
+// 				this.logInfo(t.Type.Script + " : " + t.Num)
+// 			}
+// 		}
+
+// 	}
+// }
+
+// for (local i = 0; i < 25; i = ++i)
+// {
+// 	this.logInfo(" RUN  " + i)
+// 	local res = gt.Const.World.Common.buildDynamicTroopList(this.Const.World.Spawn.BanditRaiders, 51.06)
+// }

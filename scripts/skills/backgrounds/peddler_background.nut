@@ -35,7 +35,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -55,7 +55,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.StavesTree,
 				this.Const.Perks.SlingsTree,
 				this.Const.Perks.DaggerTree,

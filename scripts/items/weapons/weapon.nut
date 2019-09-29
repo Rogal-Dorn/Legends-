@@ -81,7 +81,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		}
 		local bonus = skill.getModifier();
 		return this.Math.round( this.m.ShieldDamage + this.m.ShieldDamage * bonus);
-	}
+		}
 
 	function isDoubleGrippable()
 	{
@@ -473,6 +473,11 @@ this.weapon <- this.inherit("scripts/items/item", {
 
 		this.updateAppearance();
 
+		if (this.getContainer().getActor().isSummoned())
+		{
+			return;
+		}
+
 		if (this.m.Condition == this.m.ConditionMax && !this.isKindOf(this.getContainer().getActor().get(), "player"))
 		{
 			this.m.Condition = this.Math.rand(1, this.Math.max(1, this.m.ConditionMax - 2)) * 1.0;
@@ -590,7 +595,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 		this.item.updateRuneSigil();
 		this.m.ArmamentIcon = "runed_" + this.m.ArmamentIcon;
 	}
-	
+
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);

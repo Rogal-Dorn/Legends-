@@ -2122,7 +2122,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendSpecSpearWall"
 	},
 	{
-		ID = "perk.legend_specialist_spearwall",
+		ID = "perk.legend_specialist_spearthrust",
 		Script = "scripts/skills/perks/perk_legend_specialist_spearthrust",
 		Name = this.Const.Strings.PerkName.LegendSpecSpearThrust,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSpecSpearThrust,

@@ -27,11 +27,11 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r;
 			r = this.Math.rand(0, 1);
-	
+
 			if (r == 0)
 			{
 				this.m.Faces = this.Const.Faces.PrettyFemale;
@@ -75,7 +75,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0.0 //ocean
 			];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.BowTree,
 				this.Const.Perks.SlingsTree,
 				this.Const.Perks.DaggerTree

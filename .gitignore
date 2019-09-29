@@ -2,3 +2,5 @@ brushes/
 gfx/*.png
 !gfx/skills*
 !gfx/ui*
+*.cnut
+*.DS_Store

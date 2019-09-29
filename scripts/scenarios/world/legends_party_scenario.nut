@@ -42,15 +42,15 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);	
 		bros[1].setStartValuesEx([
-			"legend_necro_background"
+			"assassin_background"
 		]);
-		bros[1].getBackground().m.RawDescription = "{%name% was weird when you met him, though at the time it could have just been socially awkward. Over time you have come to see that this man has an unhealthy obsession with death, and you fear to leave your back turned to him. }";
+		bros[1].getBackground().m.RawDescription = "{%name% was weird when you met him. After some time traveling with your party you found out %name% was hired to assassinate local lord. %name%  wanted to use your company just for temporary disguise but decided to stay. }";
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);	
 		bros[2].setStartValuesEx([
 			"legend_crusader_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "%name% is a righteous man, constantly chanting religious hymns and passages. He exists to fight the undead and has a burning passion against any kind of necromancy, how he ever agreed to join forces with a warlock is beyond you.";
+		bros[2].getBackground().m.RawDescription = "%name% is a righteous man, constantly chanting religious hymns and passages. He exists to fight the undead and has a burning passion against any kind of necromancy. How he ever agreed to join forces with those who do not share his zeal remains a mystery.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);	
 		bros[3].setStartValuesEx([

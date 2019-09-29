@@ -144,7 +144,11 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/named_two_handed_hammer",
 	"weapons/named/named_warbrand",
 	"weapons/named/named_warhammer",
-	"weapons/named/named_pike"
+	"weapons/named/named_pike",
+	"weapons/named/legend_named_bastardsword",
+	"weapons/named/legend_named_estoc",
+	"weapons/named/legend_named_glaive",
+	"weapons/named/legend_named_swordstaff"
 ];
 gt.Const.Items.NamedRangedWeapons <- [
 	"weapons/named/named_crossbow",
@@ -161,7 +165,8 @@ gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_bladed_pike",
 	"weapons/named/named_crypt_cleaver",
 	"weapons/named/named_warscythe",
-	"weapons/named/named_khopesh"
+	"weapons/named/named_khopesh",
+	"weapons/named/named_legend_great_khopesh"
 ];
 
 gt.Const.Items.ArmorUpgrades <- {
