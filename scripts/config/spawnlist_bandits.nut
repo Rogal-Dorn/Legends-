@@ -191,7 +191,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 5,
-			MinR = 125,
+			MinR = 75,
 			Types =
 			[
 				{
@@ -281,7 +281,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 5,
-			MinR = 100,
+			MinR = 75,
 			Types =
 			[
 				{

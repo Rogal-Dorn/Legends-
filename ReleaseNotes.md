@@ -1627,7 +1627,11 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 
 
-12.7.2 - 13.0.0.1 Test 6
+
+13.0.0.1 Test 2 Dynamic Spawns + New Enemies
 * Legendary Ranger's Nightvision skill now applies to themself as well
 * Fixed a crash that could occur when reapplying poison to a weapon that already has poison
-* Fixes crash with skin flayer weapon.
+* Fixes crash with loading orc camps.
+
+https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
+
