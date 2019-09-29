@@ -59,6 +59,7 @@ gt.Const.World.Spawn.Barbarians <-
 		},
 		{
 			Weight = 10,
+			MinR = 0.4 * 880,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BarbarianBeastmaster,

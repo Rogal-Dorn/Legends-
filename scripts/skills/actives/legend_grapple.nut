@@ -52,16 +52,16 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 8 + "[/color] on an enemy"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 8 + "[/color] fatigue on an enemy"
 		});
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInMaces)
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to grapple on a hit"
 			});
 		}
 		else
@@ -70,7 +70,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to stun on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to grapple on a hit"
 			});
 		}
 

@@ -31,15 +31,15 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.dastard",
 			"trait.insecure"
 		];
-		this.m.Titles = this.Const.Strings.BarbarianTitles;	
+		this.m.Titles = this.Const.Strings.BarbarianTitles;
 		this.m.Faces = this.Const.Faces.WildMale;
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsFemaleBackground = false;
-				
-		if (this.World.Assets.isLegendGenderEquality())
+
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -53,7 +53,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.m.IsFemaleBackground = true;
 			}
 		}
-		
+
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
 		this.m.IsOutlawBackground = true;
@@ -61,7 +61,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.HammerTree,

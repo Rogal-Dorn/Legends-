@@ -44,11 +44,11 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Body = "bust_naked_body_00";
 
 		local r = this.Math.rand(0, 3);
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			r = this.Math.rand(0, 1);
 		}
-		
+
 		if (r == 0)
 		{
 			this.m.Faces = this.Const.Faces.AllFemale;
@@ -89,7 +89,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 				0.0 //ocean
 			];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.StavesTree,

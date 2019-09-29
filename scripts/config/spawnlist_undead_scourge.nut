@@ -99,6 +99,10 @@ gt.Const.World.Spawn.UndeadScourge <-
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
 					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
+					Cost = 60
 				}
 			]
 		},
@@ -108,6 +112,10 @@ gt.Const.World.Spawn.UndeadScourge <-
 				{
 					Type = this.Const.World.Spawn.Troops.Ghost,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBanshee,
+					Cost = 70
 				}
 			]
 		},
@@ -154,5 +162,14 @@ gt.Const.World.Spawn.UndeadScourge <-
 				}
 			]
 		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
+					Cost = 20
+				}
+			]
+		}
 	]
 }

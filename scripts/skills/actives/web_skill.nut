@@ -40,6 +40,22 @@ this.web_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 1;
 	}
 
+			function getTooltip()
+	{
+		local ret = this.getDefaultTooltip();
+		if (this.m.Cooldown != 0)
+		{
+			ret.extend([
+				{
+					id = 6,
+					type = "text",
+					text = "Has " + this.m.Cooldown + " turns left."
+				}
+			]);
+		}
+		return ret;
+	}
+	
 	function isUsable()
 	{
 		return this.skill.isUsable() && this.m.Cooldown == 0;

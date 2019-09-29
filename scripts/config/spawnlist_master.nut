@@ -965,8 +965,34 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 200,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_hexe_leader"
+	},
+	LegendBanshee = {
+		ID = this.Const.EntityType.LegendBanshee,
+		Variant = 0,
+		Strength = 70,
+		Cost = 70,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/legend_banshee"
+	},
+	LegendDemonHound = {
+		ID = this.Const.EntityType.LegendDemonHound,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = -1,
+		Script = "scripts/entity/tactical/enemies/legend_demon_hound"
+	},
+	LegendVampireLord = {
+		ID = this.Const.EntityType.LegendVampireLord,
+		Variant = 1,
+		Strength = 60,
+		Cost = 60,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_vampire_lord"
 	}
 };
+
+
 
 gt.Const.World.Spawn.Caravan <-
 {

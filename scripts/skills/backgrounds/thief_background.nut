@@ -52,7 +52,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -75,7 +75,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SlingsTree

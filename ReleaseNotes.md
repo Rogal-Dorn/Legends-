@@ -4,78 +4,38 @@
 
 Mod Features:
 
-* Alternate Starts
-    - Beggar: Start with nothing but the rags on your back.
-    - Noble: Focus on leadership skills.
-    - Crusader: Level 6 with good melee stats and equipment. Focus on heavy armor and 2-handers.
-    - Hunter: Strong archers with footwork and pathfinder.
-	- Seer: Old and powerful, but sleepy. Focus on control spells.
-    - Warlock: Weak character with the ability to raise the dead and debuff enemies.
-	- Berserker: Wildman with great tanking perks.
-* Commander Centric Starts
-	- Commander starts with company size of 6.
-	- Commander-only perks that increase the size of roster up to 27.
-	- Extra perk point for every 3rd veteran level.
-	- If the Commander dies, it's game over.
-* Unique Perk Trees for different Backgrounds
-* Max resources are now tied to the Backgrounds of your mercs
-	- Backgrounds can add different amounts of food, ammo, tools, and stash size.
-	- Check Background icon tooltips for details.
-* Certain Backgrounds now improve the map movement speed over different terrains
-	- Bonuses stack.
-	- Having a Messenger in the company improves communications and overall speed across all terrains.
-	- Moving through the mountains? Having some Miners who know the terrain helps.
-	- Hunters, Poachers, and Lumberjacks make a living in the woods, having a few certainly helps the company navigate the thick foilage.
-	- Wildmen, hailing from the lands of the north, know their way around the frozen terrain.
-	- Farmhands, Vagabonds, Caravan Hands, Beast Slayers, Witchhunters, all contribute their knowledge of terrain.
-	- Check Background icon tooltips for details.
-* Removed Cart and Wagon ambitions
-	- Utilize Background bonuses to manage stash size.
-* Different Backgrounds can now improve both repair and heal rates.
-	- Add a couple extra Apprentices and or Tailors to speed up repair of items.
-	- Add a Monk or two to help injured bros recover.
-* Enhanced Spawn lists
-	- Low level spawns added for single character starts.
-	- Increased variety of spawn options in the mid game.
-	- High level spawns added for parties beyond 12 mercs.
-    - End game battles now feature hundreds of opponents.
-* Increased maximum company size to 27 brothers
-	- No reserves tent, every man in every battle.
-	- Getting 27 bros takes dedication and perk points - only commanders can increase company pool size.
-	- Increased level scaling to support 27 mercs, previously difficulty stopped at 12. Be careful increasing your roster too early.
-* Battle Sisters
-	- Increased recruitable character faces from 18 to 30 faces.
-	- Includes female bodies, faces and names (and no more beards!).
-	- Includes correct gender text and events.
-* Formations Mod - Save and change all merc positions and equipment
-    - Total of 6 formation slots.
-    - Each formation can be individually labeled.
-* Bigger world
-	- Increased world size.
-	- Increased number of cities.
-	- Added 6 AI faction archetypes: Questing warriors, populist authoritarian, surveilence police state, iron fisted collector, beloved schemers, altruistic marauders.
-* Endless war
-	- Reduced crises interval from ~100 days to ~30 days.
-	- Noble houses don't start allied
-	- Greenskins don't start allied
-	- Bandits don't start allied
-	- increased ambushes, can be ambushed closer to settlements
-* Alp nerf
-	- Only spawns 1 nightmare per turn.
-* Hexen nerf
-	- Only uses one ability per turn.
-* More blood
-* Tryout Talents
-    - Reveals star attributes when trying out a brother in hire screen.
-* Increased Event spawn rate by 10%.
-
+- Alternate Starts
+  - Beggar: Start with nothing but the rags on your back.
+  - Noble: Focus on leadership skills.
+  - Crusader: Level 6 with good melee stats and equipment. Focus on heavy armor and 2-handers.
+  - Hunter: Strong archers with footwork and pathfinder. - Seer: Old and powerful, but sleepy. Focus on control spells.
+  - Warlock: Weak character with the ability to raise the dead and debuff enemies. - Berserker: Wildman with great tanking perks.
+- Commander Centric Starts - Commander starts with company size of 6. - Commander-only perks that increase the size of roster up to 27. - Extra perk point for every 3rd veteran level. - If the Commander dies, it's game over.
+- Unique Perk Trees for different Backgrounds
+- Max resources are now tied to the Backgrounds of your mercs - Backgrounds can add different amounts of food, ammo, tools, and stash size. - Check Background icon tooltips for details.
+- Certain Backgrounds now improve the map movement speed over different terrains - Bonuses stack. - Having a Messenger in the company improves communications and overall speed across all terrains. - Moving through the mountains? Having some Miners who know the terrain helps. - Hunters, Poachers, and Lumberjacks make a living in the woods, having a few certainly helps the company navigate the thick foilage. - Wildmen, hailing from the lands of the north, know their way around the frozen terrain. - Farmhands, Vagabonds, Caravan Hands, Beast Slayers, Witchhunters, all contribute their knowledge of terrain. - Check Background icon tooltips for details.
+- Removed Cart and Wagon ambitions - Utilize Background bonuses to manage stash size.
+- Different Backgrounds can now improve both repair and heal rates. - Add a couple extra Apprentices and or Tailors to speed up repair of items. - Add a Monk or two to help injured bros recover.
+- Enhanced Spawn lists - Low level spawns added for single character starts. - Increased variety of spawn options in the mid game. - High level spawns added for parties beyond 12 mercs.
+  - End game battles now feature hundreds of opponents.
+- Increased maximum company size to 27 brothers - No reserves tent, every man in every battle. - Getting 27 bros takes dedication and perk points - only commanders can increase company pool size. - Increased level scaling to support 27 mercs, previously difficulty stopped at 12. Be careful increasing your roster too early.
+- Battle Sisters - Increased recruitable character faces from 18 to 30 faces. - Includes female bodies, faces and names (and no more beards!). - Includes correct gender text and events.
+- Formations Mod - Save and change all merc positions and equipment
+  - Total of 6 formation slots.
+  - Each formation can be individually labeled.
+- Bigger world - Increased world size. - Increased number of cities. - Added 6 AI faction archetypes: Questing warriors, populist authoritarian, surveilence police state, iron fisted collector, beloved schemers, altruistic marauders.
+- Endless war - Reduced crises interval from ~100 days to ~30 days. - Noble houses don't start allied - Greenskins don't start allied - Bandits don't start allied - increased ambushes, can be ambushed closer to settlements
+- Alp nerf - Only spawns 1 nightmare per turn.
+- Hexen nerf - Only uses one ability per turn.
+- More blood
+- Tryout Talents
+  - Reveals star attributes when trying out a brother in hire screen.
+- Increased Event spawn rate by 10%.
 
 Recommended addons:
-* More Music
-	- Adds 48 new tracks to the game.
-* Dark Reskin
-	- Reworks all graphics.
 
+- More Music - Adds 48 new tracks to the game.
+- Dark Reskin - Reworks all graphics.
 
 Beta 08
 
@@ -95,25 +55,17 @@ Beta 08
 *Through event, can get new Vala class that is able to inscribed rune weapons with accompanying graphics (event).
 *Cannibal can provide free food provision (Ewww!) (provided by a cannibal and/or a cannibalistically corrupted butcher).
 *New sounds added for some perks and weapons.
-*Improved tooltips
+\*Improved tooltips
 
 Beta 9
-*Warlock rework
-	* Gains ability to summon zombies and skeletons
-	* New item types, human carrion and human bones, the 'ammo' for summoning
-	* Human carrion & human bones have a medicine upkeep (no wages for these guys, just lots of bandages to keep em' patched up)
-	* 3 tiers of zombie summoning
-		- All Tiers have Double Grip and Zombie Bite.
-		- Teir 1 : Low end armor/weapons; Have BattleForged, Fast Adaptation, Footwork
-		- Teir 2 : Medium end armor/weapons; Have BattleForged, Rotation
-		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
-	* 3 tiers of skeleton summoning
-		- All Tiers have Skeleton Racial, Double Grip, Hand-to-Hand, and Pathfinder
-		- Teir 1 : Low end ancient weapons/armor; Mastery Sword, Mastery Spear
-		- Teir 2 : Medium end armor/weapons; Steel Brow, Shield Expert
-		- Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
-	* Summoning requires a flesh sacrifice. The higher the tier, the higher the flesh sacrifice required.
-	* New Perks: Siphon, Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition
+_Warlock rework
+_ Gains ability to summon zombies and skeletons
+_ New item types, human carrion and human bones, the 'ammo' for summoning
+_ Human carrion & human bones have a medicine upkeep (no wages for these guys, just lots of bandages to keep em' patched up)
+_ 3 tiers of zombie summoning - All Tiers have Double Grip and Zombie Bite. - Teir 1 : Low end armor/weapons; Have BattleForged, Fast Adaptation, Footwork - Teir 2 : Medium end armor/weapons; Have BattleForged, Rotation - Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
+_ 3 tiers of skeleton summoning - All Tiers have Skeleton Racial, Double Grip, Hand-to-Hand, and Pathfinder - Teir 1 : Low end ancient weapons/armor; Mastery Sword, Mastery Spear - Teir 2 : Medium end armor/weapons; Steel Brow, Shield Expert - Teir 3 : High end armor/weapons; Have BattleForged, Reach Advantage, Fearsome
+_ Summoning requires a flesh sacrifice. The higher the tier, the higher the flesh sacrifice required.
+_ New Perks: Siphon, Extended Aura, Channel Power, Reclamation, Conservation, Possession, Violent Decomposition
 *Noble now has 5 retainers
 *Ranger Commander begins with two rangers
 *Crusader starts with custom armor and weapon and The Apprentice perk.
@@ -150,21 +102,20 @@ Beta 9
 *Increased size of Rabble spawns.
 *Organized order of skills in toolbar
 *Rebalanced starting stats of all commander backgrounds.
-*Fix crash on inventory screen for hexen/firstborn contracts.
-
+\*Fix crash on inventory screen for hexen/firstborn contracts.
 
 Beta 0.9.4
 *Magic spell rework
-	-Each magic spell has it's own base Min/Max damage
-	-Min/Max damage is increased for every point of initiative over 100
-	-Ranged magic attacks use Range skill for hitchance
-	-Melee Magic attacks use Melee skill for hitchance
+-Each magic spell has it's own base Min/Max damage
+-Min/Max damage is increased for every point of initiative over 100
+-Ranged magic attacks use Range skill for hitchance
+-Melee Magic attacks use Melee skill for hitchance
 *Reworkd Warlocks Wither, Rust and Deathtouch spells
 *Fixed Warlock Siphon giving health on attacks other than Siphon
 *Fixed being able to loot weapons off of Warlock summons
 *Berserk start gets 4 attributes with Stars.
 *Ranger start removes two start companions (roster slots still available) and give Guided Step perk instead (everyone in battle gets free pathfinder)
-*Medical supplies for Warlock summons will not be used during any contract that provides provisions.
+\*Medical supplies for Warlock summons will not be used during any contract that provides provisions.
 
 Beta 0.9.5
 *Lowers contract difficulty floor, making early game contracts easier
@@ -194,7 +145,7 @@ Beta 0.9.5
 
 Beta 0.10 Test Build 1
 
-****DISCLAIMER!!!!****
+\***\*DISCLAIMER!!!!\*\***
 THIS IS A TEST BUILD!
 !!Camp screen art work is placeholder (we know it looks like shit) New Art still in work.
 !!Camp system is unbalanced! In progress
@@ -202,109 +153,106 @@ THIS IS A TEST BUILD!
 
 Camp Documentation:
 
-*Repair Tent*
-	-Repairs can now only happen while encamped.
-	-All gear has to be explicitly queued up for repairs (In vanilla, equipped gear was always repaired - not so anymore).
-	-Select equipment to be repaired using the Repair tent interface. (you can still use inventory + alt-right click to queue stash items for repair)
-	-Drag gear from stash side to repair side to queue up (equipped gear is included in this view - you do not have to unequip it manually). You can also right click any piece to swap it to the other side.
-	-Gear is repaired linearly. Left to right, top to bottom in the queue.
-	-Each hour encamped, durability is added to the queued equipment.
-	-The amount of durability added per hour is based on how many people have been assigned to repair duty (and their backgrounds also influence how much they can repair per hour).
-	-1 unit of tools can repair 15 durability.
-	-Tent upgrade found at weaponsmith
+_Repair Tent_
+-Repairs can now only happen while encamped.
+-All gear has to be explicitly queued up for repairs (In vanilla, equipped gear was always repaired - not so anymore).
+-Select equipment to be repaired using the Repair tent interface. (you can still use inventory + alt-right click to queue stash items for repair)
+-Drag gear from stash side to repair side to queue up (equipped gear is included in this view - you do not have to unequip it manually). You can also right click any piece to swap it to the other side.
+-Gear is repaired linearly. Left to right, top to bottom in the queue.
+-Each hour encamped, durability is added to the queued equipment.
+-The amount of durability added per hour is based on how many people have been assigned to repair duty (and their backgrounds also influence how much they can repair per hour).
+-1 unit of tools can repair 15 durability.
+-Tent upgrade found at weaponsmith
 
-*Workshop Tent*
-	-Workshop allows converting weapons and armor in your stash into tools for repair.
-	-Salvage can only happend while encamped.
-	-Select equipment to be salvaged using the Workshop tent interface. (you can use inventory + alt-right click to queue stash items for salvage)
-	-Drag gear from stash side to salvage side to queue up (You can not salvage equipped gear). You can also right click any piece to swap it to the other side.
-	-Gear is salvaged linearly. Left to right, top to bottom in the queue.
-	-Each hour encamped, durability is subtracted from equipment and converted into tools.
-	-Once a piece of equipment reaches 0 durability, it is destroyed.
-	-The amount of durability converted into tools per hour is based on how many people have been assigned to salvage duty (and their backgrounds also influence how much they can salvage per hour).
-	-15 points of durability equals 1 tool.
-	-Tent upgrade found at armorsmith or near blast furnaces
+_Workshop Tent_
+-Workshop allows converting weapons and armor in your stash into tools for repair.
+-Salvage can only happend while encamped.
+-Select equipment to be salvaged using the Workshop tent interface. (you can use inventory + alt-right click to queue stash items for salvage)
+-Drag gear from stash side to salvage side to queue up (You can not salvage equipped gear). You can also right click any piece to swap it to the other side.
+-Gear is salvaged linearly. Left to right, top to bottom in the queue.
+-Each hour encamped, durability is subtracted from equipment and converted into tools.
+-Once a piece of equipment reaches 0 durability, it is destroyed.
+-The amount of durability converted into tools per hour is based on how many people have been assigned to salvage duty (and their backgrounds also influence how much they can salvage per hour).
+-15 points of durability equals 1 tool.
+-Tent upgrade found at armorsmith or near blast furnaces
 
-*Healing Tent*
-	-Reserve/Healing tent is where injuries can be treated and brothers can be held in reserves
-	-Injuries are still healed over time, whether encamped or not
-	-Injuries will heal quicker while encamped
-	-When bro is assigned to Reserve/Heal tent, any injury can be added to the Queue.
-	-The cost of an injuery to be treated is measured in Medicine units
-	-On average, each bro assigned to the tent contributes 1 Med unit/hour to the queue. Once Injury cost is met, the injury is treated.
-	-Injuries in the queue are treated linearly. Left to right, top to bottom.
-	-Bros assigned to the Reserve/Injury tent will not particiapate in player initiated combat. If the player is attacked, everyone is in included in the combat.
-	-All Bros in the Reserve/Heal tent consume x3 the normal amount of rations.
-	-Tent Upgrade found near herbalist groves, gatherer huts and wool spinners
+_Healing Tent_
+-Reserve/Healing tent is where injuries can be treated and brothers can be held in reserves
+-Injuries are still healed over time, whether encamped or not
+-Injuries will heal quicker while encamped
+-When bro is assigned to Reserve/Heal tent, any injury can be added to the Queue.
+-The cost of an injuery to be treated is measured in Medicine units
+-On average, each bro assigned to the tent contributes 1 Med unit/hour to the queue. Once Injury cost is met, the injury is treated.
+-Injuries in the queue are treated linearly. Left to right, top to bottom.
+-Bros assigned to the Reserve/Injury tent will not particiapate in player initiated combat. If the player is attacked, everyone is in included in the combat.
+-All Bros in the Reserve/Heal tent consume x3 the normal amount of rations.
+-Tent Upgrade found near herbalist groves, gatherer huts and wool spinners
 
-*Crafting Tent*
-	-Crafting tent is the taxidermist on-the-go for the company.
-	-Crafting requirements for each blueprint are the same as the taxidermist.
-	-Crafting can only happend while encamped.
-	-Each hour encamped, crafting 'units' are added to the first item in the Queue. Once the time cost is met, the item will be added to the stash.
-	-The amount of crafting each hour is based on how many people have been assigned to crafting duty (and their backgrounds also influence how much they can craft per hour).
-	-Tent upgrade found near tanners, workshops and wool spinners
+_Crafting Tent_
+-Crafting tent is the taxidermist on-the-go for the company.
+-Crafting requirements for each blueprint are the same as the taxidermist.
+-Crafting can only happend while encamped.
+-Each hour encamped, crafting 'units' are added to the first item in the Queue. Once the time cost is met, the item will be added to the stash.
+-The amount of crafting each hour is based on how many people have been assigned to crafting duty (and their backgrounds also influence how much they can craft per hour).
+-Tent upgrade found near tanners, workshops and wool spinners
 
-*Hunting Tent*
-	-Send people out on a hunting party to collect food and possible spoils from the hunt.
-	-Each hour spent out hunting increases the amount of food that is collected.
-	-Depending on the type of food hunted and the amount of time spent out, additional items can be gained from the hunt.
-	- tent upgrade found near hunters cabins, tanners and trappers
+_Hunting Tent_
+-Send people out on a hunting party to collect food and possible spoils from the hunt.
+-Each hour spent out hunting increases the amount of food that is collected.
+-Depending on the type of food hunted and the amount of time spent out, additional items can be gained from the hunt. - tent upgrade found near hunters cabins, tanners and trappers
 
-*Gathering Tent*
-	-Send people out to forage for herbs and create salves and concotions for medical supplies.
-	-Each hour spent out increases the amount of medicine that is collected.
-	-The longer spent out gathering supplies, the greate chance that additional items might be found!
-	-Tent upgrade found near gatherers huts, mushroom groves and herbalists groves
+_Gathering Tent_
+-Send people out to forage for herbs and create salves and concotions for medical supplies.
+-Each hour spent out increases the amount of medicine that is collected.
+-The longer spent out gathering supplies, the greate chance that additional items might be found!
+-Tent upgrade found near gatherers huts, mushroom groves and herbalists groves
 
-*Fletching Tent*
-	-Assign people to create and manufactor ammo.
-	-Each hour spent increases the amount of ammo that is created.
-	-Tent upgrade found in fletchers and near wool spinners
+_Fletching Tent_
+-Assign people to create and manufactor ammo.
+-Each hour spent increases the amount of ammo that is created.
+-Tent upgrade found in fletchers and near wool spinners
 
-*Patrol Tent*
-	-Send brothers out on patrol to gain intelligence and get advanced warning of incoming enemies
-	-Without a patrol, the camp is effectively blind to all outside activity.
-	-The more brothers assigned, the faster and further you can see.
-	-Some backgrounds are better suited at patrolling than others.
-	-Depending on skill of bros on patrol, there is a chance they can discover the direction and distance to an enemy camp.
-	-Tent upgrade found near wooden or stone watch towers, gaurded checkpoints or militia training camps
+_Patrol Tent_
+-Send brothers out on patrol to gain intelligence and get advanced warning of incoming enemies
+-Without a patrol, the camp is effectively blind to all outside activity.
+-The more brothers assigned, the faster and further you can see.
+-Some backgrounds are better suited at patrolling than others.
+-Depending on skill of bros on patrol, there is a chance they can discover the direction and distance to an enemy camp.
+-Tent upgrade found near wooden or stone watch towers, gaurded checkpoints or militia training camps
 
-*Training Tent*
-	-Training tent allows the company to train and prepare for combat.
-	-A successfull training session for a brother results in a 20% XP increase for his next fight
-	-Success chance scales with brother level and length of time training.
-	-Lower the level, the higher the chance of success. Longer training time improves chance for everyone.
-	-There is a very small chance the brother could have a breakthrough training session and permanently improve a skill. Chance improves the longer the training session.
-	-Tent upgrade found near fortified outposts, gaurded checkpoints, militia training camps or stone watch towers
+_Training Tent_
+-Training tent allows the company to train and prepare for combat.
+-A successfull training session for a brother results in a 20% XP increase for his next fight
+-Success chance scales with brother level and length of time training.
+-Lower the level, the higher the chance of success. Longer training time improves chance for everyone.
+-There is a very small chance the brother could have a breakthrough training session and permanently improve a skill. Chance improves the longer the training session.
+-Tent upgrade found near fortified outposts, gaurded checkpoints, militia training camps or stone watch towers
 
-*Enchanting tent*
-	- Use Vala perks to unlock craftable runes that can be attached to weapons, armor, helmets
-	- Tent upgrade found near amber collectors, gem mines or wool spinners
+_Enchanting tent_ - Use Vala perks to unlock craftable runes that can be attached to weapons, armor, helmets - Tent upgrade found near amber collectors, gem mines or wool spinners
 
-*Barber Tent*
-	-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
+_Barber Tent_
+-While encamed, get a shave, hair tonic, nip n' tuck, whatever your fancy.
 
-*Enemy scaling is now tied to the combat difficulty option:
-	-Normal is BB default
-	-Easy is modified Normal
-	-Expert is the curved scaling from previous mod iterations
-	-Legendary is same as Easy, but all enemies are a lot harder
+\*Enemy scaling is now tied to the combat difficulty option:
+-Normal is BB default
+-Easy is modified Normal
+-Expert is the curved scaling from previous mod iterations
+-Legendary is same as Easy, but all enemies are a lot harder
 
-*"Legendary" combat difficulty adds terrifying perk combinations for all enemy types. (Nimble direwolves, fearless battle forged raiders, Unholds on whole new level of resilient )
-*"Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
-*"None" starting funds setting starts you with no resources except food.
+_"Legendary" combat difficulty adds terrifying perk combinations for all enemy types. (Nimble direwolves, fearless battle forged raiders, Unholds on whole new level of resilient )
+_"Legendary" economic difficulty reduces contract payment and sell prices by 20%, increases buy prices by 10%
+\*"None" starting funds setting starts you with no resources except food.
 
 *Donkeys and backpacks:
-*Recruitable beasts of burden that can massively increase your stash size, but they are very hungry and must be protected in battle.  With their own perk trees to increase carrying capacity and defenses.
-*Backpacks can be bought in most towns or crafted in your camp.
+*Recruitable beasts of burden that can massively increase your stash size, but they are very hungry and must be protected in battle. With their own perk trees to increase carrying capacity and defenses.
+\*Backpacks can be bought in most towns or crafted in your camp.
 
 Trader commander:
 *Begins with 20% barter bonus that can be upgraded through perks.
 *Begins with a donkey and skills that increase carrying capacity to allow for large trading missions
 *Bribe skill allows you to pay human opponents to make them flee from battle.
 *Danger Pay skill lets you pay your mercenaries more to raise their morale in battle.
-*Barter bonus now effects pay scaling of caravan and delivery contracts
+\*Barter bonus now effects pay scaling of caravan and delivery contracts
 
 Seer:
 *Max party size 22
@@ -329,7 +277,7 @@ Warlock:
 *Miasma overlay icon fixed
 *Rust overlay icon fixed
 *Siphon sound, description and overlay icon updated
-*summon zombies, cat and skeletons all have overlay icons updated
+\*summon zombies, cat and skeletons all have overlay icons updated
 
 Ranger:
 *Max party size 24
@@ -347,26 +295,26 @@ Noble:
 *Gains noble killer trait
 8Gains Prepared for Anything, Efficient Packing, Convincing Barter, Bribe, True believer, Backstabber, Sprint, Student, Berserk, Headhunter and Crippling strikes
 *Push forward sound, overlay icon and effect icon updated
-*Hold the line sound, overlay icon and effect icons updated
+\*Hold the line sound, overlay icon and effect icons updated
 
 Berserker:
 *Max party size 16
 *Gains Infectious Rage that grants Berserker perk to all allies battle
 *Gains second wind, regaining half fatigue at 1/3rd health.
 *Poison immunity fixed to work vs spiders
-*Steadfast buffed to remove all fatigue on damage, not just multiplier
+\*Steadfast buffed to remove all fatigue on damage, not just multiplier
 
 Crusader:
 *Max party size 20
 *Gains Strict Sermons perk that grants Fortified mind to all allies in battle
 *Gains undead killer trait
 *Gains second wind, last stand, reach advantage, overwhelm, throwing mastery, quick hands, crippling strikes, pathfinder and bags and belts
-*Gains tools drawers and tools spares perks
+\*Gains tools drawers and tools spares perks
 
 New recruitable backgrounds:
 *Adds Nun, Nun robes and nun habit - she helps heal and spawns near wineries, beekeepers, breweries and herbalist groves
 *Adds Herbalist and herbalist robes - has sickle skills, reduces med usage and spawns near herbalist groves, gatherer's huts and mushroom groves
-*Adds Taxidermist and taxidermist apron - reduces med usage, helps with camp crafting, spawns near trappers, tanners and pig farms
+\*Adds Taxidermist and taxidermist apron - reduces med usage, helps with camp crafting, spawns near trappers, tanners and pig farms
 
 Changes for recruitable backgrounds:
 
@@ -385,17 +333,14 @@ Changes for recruitable backgrounds:
 *Shepared gain perks for slings
 *Thieves and pickpockets gain perks for knives
 
-Nearly all backgrounds have skills to help around the camp, details in the wiki  https://legendmod.fandom.com/wiki/Backgrounds
-
-
-
+Nearly all backgrounds have skills to help around the camp, details in the wiki https://legendmod.fandom.com/wiki/Backgrounds
 
 Other changes:
 *Player world figurine changes based on commander
 *Increases crises phase length to ~50 days
 *Increases caravan speed to encourage playstyles
 *Staves apply daze instead of stun, staff bash and staff knockout skills use staff mastery
-*Slings apply blunt force trauma instead of piercing
+\*Slings apply blunt force trauma instead of piercing
 
 Bug fixes:
 Hexen won't use charm if there is one opponent
@@ -417,14 +362,11 @@ Maskes all commanders loyal so they don't abandon themselves
 Fixes formations mod stash size exploit
 Fixes Food tooltip showing double consumption rate
 
-
 In progress:
 *Orc Behemoth
 *Battlesite icons added but not implemented
 *Legendary locations designed but not implemented
 *Vala Runestones
-
-
 
 Beta v10 test 2
 
@@ -447,33 +389,32 @@ Beta v10 test 3
 *While encamped, all tent activites should give a report on world screen map if applicable.
 *Fixed Trustworthy and Convincing Barter perks (now correctly applied)
 *Fixed repairing
-*Fixed salvaging
+\*Fixed salvaging
 
 Beta v10 test 4
-*Fix AI Crashes and lock ups
+\*Fix AI Crashes and lock ups
 
 Beta v10 test 5
 *Alt + Right click on paperdoll/equipped items in inventory screen to tag them to be repaired.
-*Changed scaling on expert and legendary so that each bro you hire adds more difficulty than the last. On expert this means the 26th guy you hire adds as much difficulty as the first seven you hire combined.  On legendary this effect is doubled.
+*Changed scaling on expert and legendary so that each bro you hire adds more difficulty than the last. On expert this means the 26th guy you hire adds as much difficulty as the first seven you hire combined. On legendary this effect is doubled.
 *Fixes training tent always giving training perk and salvage tent always giving max tools.
 *Ranger Mark Target is now ranged
 *Removes duplicate seer perks
 *Prepared For Anything, Brink of Death, Strict Sermons, Infectious Rage, Teacher should now work.
 *Reworked all background passive resource modifiers for ammo,stash,tools,meds, and all camp related tasks. Check character tooltips in commander tent (and background tooltip when hiring) https://docs.google.com/document/d/16bC2sRNXsizN6Bv4Ip3k3LtvR5Jei3CRpTc6V9g8yq0
 *New Vala! Vala is now her own start with her own very unique Perk tree. (Tree is still being worked on and flushed out)
-*New Vala inscribing mechanics. When Vala is with your party, enchant tent will be available in the camp. Use Vala perks to unlock craftable runes that can be attached to weapons, armor, helmets, shields.
+\*New Vala inscribing mechanics. When Vala is with your party, enchant tent will be available in the camp. Use Vala perks to unlock craftable runes that can be attached to weapons, armor, helmets, shields.
 
- Beta v10 test 6
- https://drive.google.com/open?id=1UywXYMo6Rz6Fq2cCXZzjzTm91Ax97tLI
- ***WILL BREAK test 5 Saves if you have any Vala stuff in it***
- *Crafted runes now have variable stat perks (no longer fixed).
- *Fixes runes not being added to stash
- *Fixes the crafting and enchanting queues being removed upon loading a save
- *Adds new camp background art
- *Fixes party sizes for starting heroes.
- *Fix Double Grip and Limb Lopper
- *Fixes reported errors selecting new perks
-
+Beta v10 test 6
+https://drive.google.com/open?id=1UywXYMo6Rz6Fq2cCXZzjzTm91Ax97tLI
+**_WILL BREAK test 5 Saves if you have any Vala stuff in it_**
+*Crafted runes now have variable stat perks (no longer fixed).
+*Fixes runes not being added to stash
+*Fixes the crafting and enchanting queues being removed upon loading a save
+*Adds new camp background art
+*Fixes party sizes for starting heroes.
+*Fix Double Grip and Limb Lopper
+\*Fixes reported errors selecting new perks
 
 Beta v10 Release Candidate (Feature complete)
 https://drive.google.com/open?id=12557T2DziboD_BnmnSZ46nLpkxcQY2PR
@@ -501,20 +442,19 @@ https://drive.google.com/open?id=12557T2DziboD_BnmnSZ46nLpkxcQY2PR
 *Warden has more tiles it can spawn on, and if it doesn't spawn onCombatStarted it will now try to spawn one every onTurnStart.
 *New Shield Rune: Radiance
 *New Behemoth Orc added
-*Healing tent change - it is now an active job (it is consistent now with all other tents) Hurt or injured bros do not need to be assigned to healing tent. Healing happens all the time now, no matter where they are. Assigning bros to tent increases healing and allows wounds to be treated.
+\*Healing tent change - it is now an active job (it is consistent now with all other tents) Hurt or injured bros do not need to be assigned to healing tent. Healing happens all the time now, no matter where they are. Assigning bros to tent increases healing and allows wounds to be treated.
 
 Beta 10.1
 *Fixes Crash loading bad orc sound
 *Fixes crash loading orc scenario
 *Fixes training camp tooltip disappearing
 *Fixes camp activities ambition not completing
-*Adds ReachAdvantage perk for Blacksmith and Ironmonger
-
+\*Adds ReachAdvantage perk for Blacksmith and Ironmonger
 
 Beta 0.10.2 Released on Nexus
 *Fixes camp tents not getting results when completed
 *Fixes Orc Behemoth not dieing
-*Removes duplicate student perk on noble perk tree
+\*Removes duplicate student perk on noble perk tree
 
 Beta 0.10.3
 *Ranger starts with higher ammo.
@@ -533,11 +473,11 @@ Beta 0.10.3
 *Fixed Camp training tooltip
 *Training tent now has a chance to give permanent stat increases everytime you train (not just when you successfully get XP upgrade). Percentage is directly related to how long you are in camp plus training tent bonus.
 *Fixed missing sickle perks icons
-*Legends Crusader, Noble and Ranger can be obtained through crisis events  (replaces the vanilla crusader and orc slayer, noble is new event)
+\*Legends Crusader, Noble and Ranger can be obtained through crisis events (replaces the vanilla crusader and orc slayer, noble is new event)
 
 *Rebalance legendary combat difficulty skills:
 *Legendary unhold loses nimble, colossus and muscularity. Gains last stand. Gains +100% health, heal rate doubled.
-*Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health,  heal rate quadrupled.
+*Legendary bog unhold loses nimble, last stand, muscularity. Gains +100% health, heal rate quadrupled.
 *Legendary frost unhold loses executioner and nimble. Keeps muscularity. Gains +100% health double healing rate.
 *Legendary raiders gain nimble
 *Legendary bandits gain backstabber
@@ -547,13 +487,13 @@ Beta 0.10.3
 *Legendary spiders lose overwhelm, their poison does double damage
 *Legendary basic direwolves lose overwhelm, all direwolves deal twice as much damage when injured
 *Legendary orc young lose battle forged and gain crippling strikes
-*Legndary Bandit and Marksman get nimble
+\*Legndary Bandit and Marksman get nimble
 
 *Credit to LeVillainJoueur for the cool balance ideas:
 *Crossbow shots cost 3AP and reload costs 4AP. adds manueverability and berserk synergy to crossbows.
 *Makes throwing flasks and nets cost the same as throwing a weapon
 *indomitable and stalwart grant immunity from being swallowed
-*Spider poison disables Unhold healing
+\*Spider poison disables Unhold healing
 
 Beta 0.10.4
 *Fix crash when loading save that has an active escort caravan contract.
@@ -566,13 +506,13 @@ Beta 0.10.4
 *Slightly increase late game difficulty scaling on legendary
 *Legendary economic doubles the penalty for failing caravan missions
 *Fix for Vala Radiance effect.
-*Fix naked bakers.
+\*Fix naked bakers.
 
 Beta 0.10.5
 https://drive.google.com/open?id=1kRaoKLt_umetj70uemthad3w67t-fD9v
 *Enables heal outside of camp, rate set by economic difficulty 100%, 66%, 33%, 10%
-*Enables repair outside of camp rate set by economic difficulty  100%, 66%, 33%, 10%
-*Bro modifiers in camp all now have diminishing returns. No more stacking
+*Enables repair outside of camp rate set by economic difficulty 100%, 66%, 33%, 10%
+\*Bro modifiers in camp all now have diminishing returns. No more stacking
 Makes easy economic buy and sell values 5% easier on all difficulties except normal.
 A new Bandit start, begins with 8 characters and 27 roster slots. begins at war with all civilian settlements, at war with all nobles but one, and friendly with bandits, all camp activities unlocked.
 Noble begins with enough reputation to do noble missions, friendly with one noble, at war with another. begins with bags and belts and scouting unlocked.
@@ -611,8 +551,6 @@ fixes missing inventory images for runed slings
 Fixed lute entice ruining other weapons
 fixes towns not being enterable when female nobles spawned
 difficulty tooltips, start descriptions and sigil tooltips updated
-
-
 
 Beta 0.10.6
 Slings use sling mastery, available to poachers and shepards
@@ -662,7 +600,6 @@ fixes crash on lone wolf start due to stash size, also gets crusader gear
 cultists get a warlock - doesn't have a scythe yet
 barter skill is roughly one tenth of previous value to align with DLC trader start
 
-
 Beta 11 test 3
 updated to 1.3.0.17
 Fixes DLC backgrounds having the wrong icons
@@ -672,7 +609,7 @@ Bucklers are now stronger against a single opponent, but weaker against more tha
 Adds Parrying dagger, an offhand weapon for debuffing opponents. rare. Found and weaponsmiths.
 Adds Estoc, a high tier two handed fencing sword, rare, found at weaponsmiths. Requires B&E
 Adds Military goedendag, high tier goedendag. rare, found at weaponsmiths requires B&E.
-Adds Two handed club, mid tier two handed mace.  found at weaponsmiths. Requires B&E.
+Adds Two handed club, mid tier two handed mace. found at weaponsmiths. Requires B&E.
 Adds reinforced wooden flail, mid tier two handed flail. found at weaponsmiths. Requires B&E
 Adds cat 'o nine tails, low tier multihead whip. found at weaponsmiths and mushroom groves, and on cultists and flagelents. Requires WotN
 Adds Dem Avalon's new Warden art
@@ -715,7 +652,6 @@ Beggar begins alone and hated by a noble house
 Sisterhood start begins with seer, vala, shieldmaiden, noblewoman, fletcher and pickpocket. Can only hire women
 Fixed not being able to enter cities with shepards in them
 
-
 Beta 11 WotN Test 7
 Worldmap figures fixed for all legends starts
 Veteran perk points for starting bros, every 3 levels for milita, every 2 for everyone else
@@ -730,7 +666,7 @@ Outlaw backgrounds are: assassin, barbarian, berserker, brawler, cultist, desert
 Berserker has an offputing effect on all but the lowborn or outlaws, making them cost 25% more. He inspires combat backgrounds and outlaws, making them cost 10% less. Has an increased chance of finding barbarians for hire in small towns
 Crusader will not hire outlaws, but pious recruits will be more numerous, happy to join his cause and 10% cheaper.
 Crusader pious recruits are: adventurous noble, apprentice, eunuch, troubadour, flagellant, hedgeknight, historian, blacksmith, inventor, ironmonger, nun, shieldmaiden, squire, minstrel, monk, orc slayer, retired soldier, shepherd, swordmaster and witch hunter
-Ranger starts alone, people who want to join the rangers will cost 10% less, others demand 25% more.  Increased chance of finding poachers and hunters in small towns, with a 1/1000 chance of finding a ranger for hire.
+Ranger starts alone, people who want to join the rangers will cost 10% less, others demand 25% more. Increased chance of finding poachers and hunters in small towns, with a 1/1000 chance of finding a ranger for hire.
 Ranger recruits are: apprentice, assassin, beast hunter, bowyer, adventurous female noble, fletcher, disowned female noble, houndmaster, hunter, blacksmith, herbalist, inventor, taxidermist, lumberjack, orc slayer, poacher, retired soldier, swordmaster, witch hunter.
 Warlock makes pious recruits deeply uncomfortable, with 33% becoming superstitious. Outlaw recruits enjoy the warlock carnage, but it leads 33% to develop paranoia. Increased chance of finding graverobbers in big towns.
 Noble starts with a group of gaurds and more coin, hiring nobles and military backgrounds costs 10% less, everyone else costs 10% more. Able to hire noble house soldiers to his cause.
@@ -738,7 +674,7 @@ Sisterhood is led by a Vala and loses seer, recruits gain Hold Out. She is are m
 Trading caravan has increased chance of finding donkeys, peddlers and caravan hands, default trading caravan removed.
 Beggar will make all new hires sick and unhappy. Has 25% chance of being female
 Hunters, Bowyers, Fletchers and female nobles gain Lookout, Sprint, Balistics, Close Combat archer, Double Stike. Lose Battleforged, Brawny, Colossus, Flail, Mace and Hammer specialisations
-Poachers gain Lookout, Sprint, Debilitate and Double Strike in addition to their shortbow skills.  Lose Battleforged, Brawny, Colossus, Flail, Mace and Hammer specialisations
+Poachers gain Lookout, Sprint, Debilitate and Double Strike in addition to their shortbow skills. Lose Battleforged, Brawny, Colossus, Flail, Mace and Hammer specialisations
 Fixed poachers start crash
 Fixed ranger not scouting locations
 Fixed militia start not loading
@@ -776,7 +712,6 @@ Adds a minimum contract payout: 100, 50, 30, 10 based on economic difficulty.
 New Map Config option: Gucci Citadels - all Citadels will have Training Hall, Armor, Weapons, Fletcher, Barracks, Ore Smeleter, Blast Furnace, and Workshops.
 New Map Config option: All trade locations - guarentees that at least of one of every location that produces something is on the map.
 
-
 Beta 11.3 Released on Nexus
 *Updates mod to work with 1.3.0.21
 *Fixes all players joining 1v1 champion event battles
@@ -794,9 +729,7 @@ Beta 11.3 Released on Nexus
 *Fixes the buckler bonus. When using a buckler in combat, grants a +15 Melee and +5 Range bonus if adjacent to at most 1 enemy.
 
 Beta 11.3.1 Released on Nexus
-*Fixes crashes reported from havnig buckler equipped.
-
-
+\*Fixes crashes reported from havnig buckler equipped.
 
 Beta 12 - Monster hunt
 
@@ -807,14 +740,12 @@ You begin by selecting a favored enemy beast, indicating you are ready to start 
 Now you will need to begin hunting your enemy, for each one you kill, you will become better at fighting them, after killing 100 strength worth of enemies, your bonus grows by +1% damage, melee and ranged. This bonus scales indefinately, the more you kill, the stronger you become.
 When you reach a total bonus of +10%, word will spread of your achievements, and heralds will seek you out with brand new contracts to hunt more difficult versions of your chosen foe. These contracts will be exceptionally difficult, but offer huge rewards and unique legendary items.
 
-
-Redback spiders - Elite spiders that have a poison dealing 10 damage each turn, decreasing by 1 damage per turn over 10 turns. Damage is doubled when in a web.  The have increased AP so they can web and bite at the same time, or bite twice in a turn. Increased stats and improved AI.
+Redback spiders - Elite spiders that have a poison dealing 10 damage each turn, decreasing by 1 damage per turn over 10 turns. Damage is doubled when in a web. The have increased AP so they can web and bite at the same time, or bite twice in a turn. Increased stats and improved AI.
 Drops redback poison, can be used to craft:
 Redback spider helm - made from the carapace of a redback spider, grants the web skill
 Redback dagger - made from the fangs and poison gland of a redback spider, inflicts redback poison
 
-
-White Wolves -  Elite direwolves with increased AP so they can attack three times in a turn applying overwhelm. Or howl twice increasing their allies resolve by 30 each time.  All other stats increased, and more cunning AI. Increased stats over frenzied direwolves.
+White Wolves - Elite direwolves with increased AP so they can attack three times in a turn applying overwhelm. Or howl twice increasing their allies resolve by 30 each time. All other stats increased, and more cunning AI. Increased stats over frenzied direwolves.
 Drops white wolf pelt that can be used to craft:
 white wolf helm - decreased the morale of adjacent enemies by 20
 white wolf cloak - decreased the morale of adjacent enemies by 20 and increases armor by 30
@@ -840,13 +771,11 @@ Heartwood sap potion - grants 3 turns of perfect focus
 50% chance of dropping a shield rune stone
 To hunt them, take the 'Favoured Enemy Schrats' perk, which is available to: beast hunters, ranger, taxidermists, hunters, herbalists and lumberjacks
 
-
 Adds Rock Unholds - Elite Unholds with thick armor that regenerates in addition to their health regenerating. Increased stats
 Drops Rock Unhold Bones and Hide that can be used to craft:
 Helm of the Mountain - regenerates durability each turn
 Armor of the Mountain - regenerates durability each turn
 The contract to hunt these beasts is unlocked by a bro selecting 'Favoured Enemy Unhold' perk, which is available to beast hunters, taxidermists, hunters, ranger, berserker, sheppards and miners.
-
 
 Adds Stollwurm - Elite wurms that can burrow across the map and regenerate health each turn. Increased stats
 Drops stollwurm blood and scales That can be used to craft
@@ -856,15 +785,11 @@ Stollwurm blood - grants 3 turns of indominatable
 50% chance of dropping an armor rune stone
 The contract to hunt stollwurms is unlocked by a bro selecting 'Favoured Enemy Lindwurm' perk, which is available to beast hunters, rangers, hunters, taxidermists, fishermen and miners.
 
-
 Adds Hexen Coven Leader - Elite Hexe that can charm for five turns and cast magic missiles
 50% chance of dropping Glowing hexen hair that can be used to craft
 Hexen Leader charm - Grants +10 Resolve
 Gnarled staff - grants Hexe spell to the wielder
 Potion of Ichor - Grants +20 Health and Fatigue every turn for eight turns, also applies goblin poison for three turns
-
-
-
 
 **dynamic perks**
 Over the past few releases we've been trialling custom perk trees for different backgrounds, and your feedback has been overwhelmingly positive about this idea. While running these trials, we have also been building up a perk library, with the goal of massively increasing the perks available to all mercenaries.
@@ -872,7 +797,6 @@ With this release we have gone all out and given every mercenary you hire a uniq
 We then assigned those groups by hand to each background, so that every background had gauranteed access to thematically appropriate perks.
 However, those background groups only make up half of each mercenary's tree. The other half is randomly picked from the perk groups, providing variety while retaining the synergies.
 Each mercenary gets 6 of the 15 weapon groups, 2 of the five defence groups, and eight from the 13 traits, 8 enemy groups and 6 class groups. This provides millions of possible combinations.
-
 
 Unarmed skills
 Unarmed skill has always been strong in legends, it scales off initiative and hitpoints. Now there are three new perks to give more depth:
@@ -886,7 +810,6 @@ There is a very strong nimble vs battleforged divide that drives mercenaries to 
 New Perk 'Balance' grants up to 30 bonuse melee and ranged defense if your current body armor is equal to twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of +5.
 New Perk 'Matching Set' grants up to 5 fatigue per round if your helmet and armor values match.
 New Perk 'Lithe' - Like nimble, but with the 15 fatigue floor raised to 30, and the damage mititgation reduced.
-
 
 Bard class
 You'll find minstrels and troubadours have some new tricks up their sleeves, having gained Daze and Entice to control the battlefield. They also have
@@ -917,7 +840,7 @@ New Perk 'Staff blocks' - Wielding a staff grants +20 melee defense
 **Greatsword skills**
 Sword mastery split into sword mastery and greatsword mastery.
 Sword mastery - Riposte has no pentalty to hitchance, Slash, Gash and Lunge gain +5% chance to hit
-Greatsword Mastery  - Split, Swing, Overhead Strike and Great Slash gain +5% chance to hit
+Greatsword Mastery - Split, Swing, Overhead Strike and Great Slash gain +5% chance to hit
 Greatswords are Greatsword, Longsword, Warbrand and Rhomphaia
 Greatswords have Great Slash Instead of Slash. Great Slash costs 3 more fatigue, but grants +30% armor penetration.
 New Perk 'Forceful Swings' grants +10% damage to AOE attacks
@@ -932,10 +855,8 @@ New perk "smackdown" knockback enemies when you have more health and fatigue tha
 New perk "smashing shields" deal +10% shield damage on any hit, added to axe group
 'Sling mastery' adds much more accuracy than before, though slings also begin with less accuracy. Slingstaves also have 'bash'
 
-
 **Better obituaries**
 Integrates Boyski's Entire Better Obituaries mod into Legends, showing each mercenary's background, traits, stats and talents.
-
 
 **Shield Rework**
 
@@ -943,7 +864,6 @@ Adds paintable tower shields, with 'fortify' skill to shields surrounding allies
 Towershields available at armorsmiths or near military attached locations, or will spawn on shieldmaidens and soldiers.
 bucklers gain "buckler bash" skill to daze enemies
 parrying daggers gain the "engarde" skill to lower enemy defenses
-
 
 **New events**
 Adds barbarbarian vs shieldmaiden event
@@ -957,7 +877,7 @@ Warlock can trigger cultist events
 
 Berserker:
 Berserker rage nerfed. lowered to 1 stack per hit from 3 and 3 stacks per kill, from 5. Falloff per turn raised to 2 from 1.
-Nudist nerfed.  requires no clothes, damage reduction scaling reduced from 40 to 30%.
+Nudist nerfed. requires no clothes, damage reduction scaling reduced from 40 to 30%.
 Berserker gets kick, grapple and unarmed mastery
 
 Crusader:
@@ -982,7 +902,7 @@ Teleport nerfed to 40 fatigue, to match darkflight.
 Levitate fixed to only apply for one turn
 
 Sisterhood:
-Adds Wildwomen, get the same events as wildmen, all wildling events updated accordingly  the wildwomen spawn in the same places, though less likely.
+Adds Wildwomen, get the same events as wildmen, all wildling events updated accordingly the wildwomen spawn in the same places, though less likely.
 Peddlers and cultists have 10% chance of being women, events updated.
 Archery contests can attract female nobles, Disbanded troops situations can attract shieldmaidens
 Female background balance pass, this increases the variability of backgrounds, allowing for outliers who are significantly better or worse than the average.
@@ -1016,10 +936,8 @@ Every background now has gauranteed perk groups and random perk groups.
 
 Trader: Fixes tooltips on bribe, hover on an enemy and then view the tooltip
 
-New start: Random Trio. Three random level 2 backgrounds. Very useful for trying the new perk trees and adding extensive replayability.  It is possible to get any combination of any legends background, including three warlocks. Some of these combinations may have unexpected interactions.
+New start: Random Trio. Three random level 2 backgrounds. Very useful for trying the new perk trees and adding extensive replayability. It is possible to get any combination of any legends background, including three warlocks. Some of these combinations may have unexpected interactions.
 New start: Random Solo. Level 4 avatar of a random background.
-
-
 
 Beta 12 - Test 3
 
@@ -1074,7 +992,6 @@ Militia background has a 10% chance to be female
 Adds chance for enemies to be female, applies to: Bandit Poacher, Bandit Rabble, Bandit Marksman, Master Archer, Barbarian Thrall, Barbarian Drummer, Peasants, Weidergangers, Armed Peasants and Milita.
 All backgrounds given a gauranteed ranged group
 
-
 Test 5
 Fixes favored enemy perks not working
 Fixes Settlement hire roster reverting to vanilla perk tree after loading saves.
@@ -1089,8 +1006,6 @@ Fixes Fortify skill.
 Fixes favorite enemy kill stats not being saved
 
 https://drive.google.com/open?id=1gf6O8KUa9VEY3XCQDGF8XsIeKcZvwBlj
-
-
 
 Beta 12 Test 7
 Fixes Matching set perk
@@ -1129,7 +1044,6 @@ Fixes evasion Perk.
 
 https://drive.google.com/open?id=1TuuLxURW1oZN1LZ1HGKL2SpW2Y8jT3at
 
-
 Beta 12 test 10
 Adds description of guaranteed perks for each background (hover over character background on hire screen)
 Tryout recuits now also reveals the perk tree for that recruit.
@@ -1152,7 +1066,6 @@ Fixes Sling Mastery perk (accuracy with distance just kept increases)
 Fixes Rock Unhold not repairing armor each turn
 
 https://drive.google.com/open?id=19effkSAgxnxc6uGOdMDZkz_F7BxAbJFy
-
 
 Beta12 Test 11
 *The new legendary contracts will spawn correctly after getting the perk, and with new contracts banners
@@ -1177,7 +1090,7 @@ Beta12 Test 11
 *Fixes enemies with greatswords not having a single target attack
 *Fixes missing berserker tattoo brush
 *Fixes character screen crash on hexen escort battles.
-*Fixes party start having 0 resources
+\*Fixes party start having 0 resources
 
 Beta 12 Test 12
 Adds new perk "Onslaught" that provides a 50% chance to apply daze on any attack where your initiative and fatigue are higher than your opponent's. added to the mace group
@@ -1193,7 +1106,7 @@ Noble gains Back to Basics, Feint, Clarity, Onslaught, Lithe, Matching Set and B
 Ranger gains Back to Basics, Alert, Feint, Onslaught, Lithe, Matching Set, Balance and Freedom of Movement
 Seer gains Alert and Clarity, magic missile does about 20% less damage
 Warlock gains Bloodbath, True Believer, Debilitate, Staff mastery, staff spins, staff block, Lithe, Blend in, Clarity, Balance, Camoflouge, Field Triage, Favoured enemies Civilian, Ghoul, Hexen and Alps.
-Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Hex, Reach Advantage, Underdog, Footwork, Pathfinder, Underdog, QuickHands, Composure,  Rally the troops, Last stand
+Warlock loses Colossus, Dodge, Anticipation, Rotation, Brawny, Overwhelm, Hex, Reach Advantage, Underdog, Footwork, Pathfinder, Underdog, QuickHands, Composure, Rally the troops, Last stand
 Warlock hood now grants +20 hitpoints and increases your morale each time you get hit
 Warlock cloak now grants +20 hitpoints and grants +10% melee skills, melee defense and ranged defense when at confident morale.
 Warlock hood and cloak are now craftable using ingredients from alps and hexen
@@ -1214,7 +1127,6 @@ Fixes error with Back to basics not knowing who its user was
 Fixes error with Bloodbath outside combat
 Fixes error with Deathly Spectre not having an icon
 
-
 Beta 12 Release 13
 
 *Fixed perk trees disappearing when bro background is converted to another. When a bro converts to another background he will keep his current tree, and the guarenteed perks from the new background will be added. All spent perks and points will be reset as well.
@@ -1230,7 +1142,6 @@ Beta 12 Release 13
 
 https://drive.google.com/open?id=1vEchdPD9M5hEMhcrIEyBbV9yXW21DCgL
 
-
 Beta 12 Release 14
 
 *Fix typo in Favorite enemy tooltip
@@ -1239,7 +1150,6 @@ Beta 12 Release 14
 *Fix Camping Tent windows disappearing after reloading a save.
 *Adds names to the new legend beast blueprint items in the taxidermist.
 *Adjust the tryout icons to remove overflow.
-
 
 Beta 12.1
 
@@ -1269,8 +1179,7 @@ Beta 12.2 Released on Nexus
 *Updates Recover Perk: Gain 5.5% fatigue reduction for each action point available. Recover can not be used if another skill is used that turn.
 
 Beta 12.2.1 Released on Nexus
-*Fixes Recover perk not recovering any fatigue.
-
+\*Fixes Recover perk not recovering any fatigue.
 
 Beta 12.3
 *Fix a possible crash in Onslaught Perk.
@@ -1287,18 +1196,18 @@ Beta 12.3
 *Balance Perk changes: Bonus is applied to damage reduction as well as defense.
 *Sling staff gets +1 min and max range, +5 min and max damage. Now has -40 base accuracy, then gains +5 accuracy per tile
 *Sling loses -5 max damage, +1 minimum range and -10 base accuracy
-*Military Goedendag gains Cudgel in place of Knock Out
+\*Military Goedendag gains Cudgel in place of Knock Out
 
 Beta 12.3.1
 *Muscularity damage nerfed from 20% of HP to 10% of HP
 *Full Force damage nerfed from 10% of body armor to 5% of body armor
 *Devastating strikes nerfed from +20% damage to +10% damage
 *Fixes sling staves using their base accuracy as their accuracy per tile
-*Fixes swordstaves failing to load
+\*Fixes swordstaves failing to load
 
 Beta 12.4
 *Random character stat distributions are now weighted towards the perks in the random tree. IOW, characters should now have better attributes that compliment their unique perks in the tree.
-*Gamblers lose Vicious perk group and gain Calm perk group, Herbalists lose organised and gain Calm, Monks and Nunes lose favoured enemy undead, and gain Calm. tailors and seamstresses lose Fast and gain Calm, Washerwomen lose indestructible and gain Calm.  (this may result in broken saves)
+*Gamblers lose Vicious perk group and gain Calm perk group, Herbalists lose organised and gain Calm, Monks and Nunes lose favoured enemy undead, and gain Calm. tailors and seamstresses lose Fast and gain Calm, Washerwomen lose indestructible and gain Calm. (this may result in broken saves)
 *Updates descriptions for vanilla starts to show what has changed in legends.
 *Fixes Freedom of Movement, Onslaught and Smackdown all triggering when user has more fatigue, instead of less. Should now need to be less exhausted than your enemy for them to work.
 
@@ -1310,8 +1219,8 @@ Kick and Hand to Hand cost and additional 10 fatigue
 Unarmed skills can now show up in the general weapon pool
 Fixes "Attribute not found" error
 Rebalanced gauranteed perks for each background to account for dynamic stats.
-Barbarian gains trained, beast hunters gain devious and agile. beggar swaps agile for calm. butchers gain calm. caravan hands gain Organised. Cripples swap vicious for intelligent. Eunuchs gain calm. adventerous ladies swap fast for agile, gain vicious. widows swap agile for organised. Fishwives gain calm. Disowned ladies swap intelligent for vicious. Bakers gain calm. Troubadours swap agile for fast, gain calm. housemaids gain calm. seamstresses gain intelligent. Pickpockets swap knife skills for crossbow, lost agile, gain calm and martyr. Gravediggers swap indestructible for organised. Graverobbers swap fast for large. Historians swap agile for inspirational.  Houndmasters swap agile for indestructible. . Killers gain Large. Blackmiths gain organised. Cannibals gain calm and martyr. Herbalised gain organised and agile. Inventors gain calm and indestructible. Ironmongers gain fast and properly gain repair.  Noble warriors swap vicious for sturdy. Noble soldiers swap vicious for fast and fit for sturdy. Nuns gain martyr. shieldmaidens swap agile for fast.  taxidermists gain fast.   Militia gain sturdy. Miners gain trained. minstrels gain fit. Orc slayers gain inspirational. Peddlers gain calm and intelligent. Poachers swap fit for vicious, gain devious. Raiders swap devious for fit and large. rat catchers swap vicious for martyr and agile for calm. refugees swap agile for indestructible. Sellswords gain sturdy. Servants gain calm and intelligent. Shepherds gain calm. Swordmasters gain sturdy, tailors swap intelligent for fast and vicious. Thieves gain martyr. Vagabonds swap devious, vicious and agile for organised, fast and fit. Wildmen gain indestructible. Wild women swap devious for vicious, swap sturdy for large and gain indestructible. Witchhunters gain inspirational and intelligent.
-Hunters gain devious, kings guard gain Large, Messengers swap large for organised, militia swap sturdy for vicious and indestructible for agile to match their vanilla stats.  Miners swap fit for indestructible to match vanilla stats. Monks gain organised. Retired soldiers lose vicious and large, gain organised, inspirational and fit.
+Barbarian gains trained, beast hunters gain devious and agile. beggar swaps agile for calm. butchers gain calm. caravan hands gain Organised. Cripples swap vicious for intelligent. Eunuchs gain calm. adventerous ladies swap fast for agile, gain vicious. widows swap agile for organised. Fishwives gain calm. Disowned ladies swap intelligent for vicious. Bakers gain calm. Troubadours swap agile for fast, gain calm. housemaids gain calm. seamstresses gain intelligent. Pickpockets swap knife skills for crossbow, lost agile, gain calm and martyr. Gravediggers swap indestructible for organised. Graverobbers swap fast for large. Historians swap agile for inspirational. Houndmasters swap agile for indestructible. . Killers gain Large. Blackmiths gain organised. Cannibals gain calm and martyr. Herbalised gain organised and agile. Inventors gain calm and indestructible. Ironmongers gain fast and properly gain repair. Noble warriors swap vicious for sturdy. Noble soldiers swap vicious for fast and fit for sturdy. Nuns gain martyr. shieldmaidens swap agile for fast. taxidermists gain fast. Militia gain sturdy. Miners gain trained. minstrels gain fit. Orc slayers gain inspirational. Peddlers gain calm and intelligent. Poachers swap fit for vicious, gain devious. Raiders swap devious for fit and large. rat catchers swap vicious for martyr and agile for calm. refugees swap agile for indestructible. Sellswords gain sturdy. Servants gain calm and intelligent. Shepherds gain calm. Swordmasters gain sturdy, tailors swap intelligent for fast and vicious. Thieves gain martyr. Vagabonds swap devious, vicious and agile for organised, fast and fit. Wildmen gain indestructible. Wild women swap devious for vicious, swap sturdy for large and gain indestructible. Witchhunters gain inspirational and intelligent.
+Hunters gain devious, kings guard gain Large, Messengers swap large for organised, militia swap sturdy for vicious and indestructible for agile to match their vanilla stats. Miners swap fit for indestructible to match vanilla stats. Monks gain organised. Retired soldiers lose vicious and large, gain organised, inspirational and fit.
 noble slingers defense buffed slightly
 Blacksmith nerfed back in line with other backgrounds.
 Shieldmaiden ranged skill and initiative nerfed
@@ -1367,10 +1276,9 @@ Beta 12.4 Test 4
 *fixes legend crafted items not having unique names
 *Fixes legend crafted items not adding armor values
 *perk attribute groups have tertiary attributes to ensure equal maximums for each attribute
-*Apprentice swaps agile for trained, bowyers swap intelligent for calm, adventurous ladies swap vicious for fast, housemaids swap fit for intelligent, hedge knights gain large,  hunters swap fit for vicious,  blacksmiths swap organised for indestructible, cannibals swap calm for large, monks swap organised for indestructible, poachers swap fit for calm, swordmasters swap fit for large.
+*Apprentice swaps agile for trained, bowyers swap intelligent for calm, adventurous ladies swap vicious for fast, housemaids swap fit for intelligent, hedge knights gain large, hunters swap fit for vicious, blacksmiths swap organised for indestructible, cannibals swap calm for large, monks swap organised for indestructible, poachers swap fit for calm, swordmasters swap fit for large.
 *Eunuchs can not be charmed by hexe or hexe coven leadership
 *Adds new perk Escape Artist to Beast Hunters. Grants immunity to webs and nets.
-
 
 Beta 12.4.1
 Adds an Asssassin commander start, focused on stealth and damage
@@ -1390,11 +1298,11 @@ Fixes missing image for dazed effect
 Beta 12.4.2 released on Nexus
 *Fixes Break free perk crash
 *Fixes assassin scenario
-*Fixes burning witch event
+\*Fixes burning witch event
 
 
 Beta 12.4.3 Released on Nexus
-*Fixes Break free chance tooltip and error in combat log.
+\*Fixes Break free chance tooltip and error in combat log.
 
 Beta 12.5 Test 1
 Perk descriptions updated to show perk groups, making the dynamic perks system more transparent
@@ -1433,7 +1341,6 @@ Merges in 1.3.0.24 update
 Fixes White Wolf not properly terrifying its opponents
 Daze, Horrify and Revolt are ranged
 Glaive damage reduced from 55 to 45
-
 
 12.7 Test 1
 Warlock no longer has cultist events.
@@ -1507,7 +1414,7 @@ Favoured enemy perks no longer show up in groups of three. Most backgrounds have
 *shephard losts ghouls, spiders and lindwurms
 *Thief loses caravans
 *wildman and wildwoman lose unhold
-*Witchunter loses weideganger, skeleton and schrat
+\*Witchunter loses weideganger, skeleton and schrat
 
 12.7 Test 2
 Debug start option hidden to make room for the other start options
@@ -1520,7 +1427,7 @@ With this option off, there are still women, but in roles and numbers that refle
 "gender equal" commanders have a 50% chance to be female or male.
 *Adventurous noble is now Adventurous Noble Swordsman, gender equality gives 50% chance to be Adventurous noble swordswoman
 *Adventruous Lady is now Adventurous Noble Archer, gender equality gives 50% chance to be male
-*Gender Equality setting also grants 50/50 gender chance for Noble commander, Ranger commander, Trader commander, Assassins, Barbarians, Bowyer, Poacher, Deserter, Cultist, Farmhand, Widow(er), Fletcher, milkmaid(man), hedgeknight, killer on the run, herbalist, militia, peddler, refugee and sellsword.
+\*Gender Equality setting also grants 50/50 gender chance for Noble commander, Ranger commander, Trader commander, Assassins, Barbarians, Bowyer, Poacher, Deserter, Cultist, Farmhand, Widow(er), Fletcher, milkmaid(man), hedgeknight, killer on the run, herbalist, militia, peddler, refugee and sellsword.
 Events made gender neutral: Apprentice learns, archery stunt, cat on tree, hedge knight vs raider, hedgeknight vs hedgeknight, jousting tournay, kids and dead merchant, killer vs others, lawmen after criminal, sellsword gets better deal, sellsword vs raider, shooting context, corpses in forest, kid blacksmith, adopt a warhound, barbarian tells a story, wild dog sounds, forest lover, poacher vs thief, civilwar deserter, deserter in forest,
 Another 10 female names added
 Another 57 Knight names added
@@ -1597,79 +1504,19 @@ Fixed daemon alps crash
 Fixes cascade skill icon
 Fixes piercing bolt skill
 
-12.7.1 Test 1
-
-Merges in 1.3.0.25
-* AI slightly prefers to cast miasma
-* Charachters can now be called Vikingur
-* Alps give 300 xp instead of 350
-* Weaponsmiths can now have named pikes
-* the namelist is applied to each spawned unit rather than a clone of them, not sure of the impact of this.
-* spelling fixed on alps contract
-* Champion Goblin ambushers gain overwhelm
-* Goatherd locations add shepherds to the towns recruit pool
-* wool spinners can add a shepherd to the towns recruit pool
-* Player characters can't take part in the alp nightmare event
-* Greater evil triggers at 200 party strength instead of 210
-* roaming alp parties can spawn in 20% greater numbers
-* items crafted statistics are reset to 0 on new campaigns with the B&E DLC
-* Permenant destruction tooltip no longer reads "recommended"
-* Permanent destruction checkbox is no longer checked by default
-New legendary contract added for barbarians (thanks skyu)
-*Bandit army spawns tweaked
-*Berserk rage stacks rebalanced
-*Nudist nerfed (correctly this time)
-*improves odds of finding vala
-Legendary contract timeout increased from one week to one month
-Fixes crash when decapitating or shooting hexen coven leaders
-Web skill gains a tooltip
-Fixes ironmonger description
-
-
-
-Beta 13
-
-*Adds a 5% chance to get drunkard trait if drinking at tavern while already drunk. Adds extra percent for each round.
-*Remove party strength restriction from crisis events.
-Legendary contract timeout increased from one week to one month
-Fixes crash when decapitating or shooting hexen coven leaders
-Web skill gains a tooltip
-Fixes ironmonger description
-
-
-12.7.1 Test 2
-Merges in 1.3.0.25
-* AI slightly prefers to cast miasma
-* Charachters can now be called Vikingur
-* Alps give 300 xp instead of 350
-* Weaponsmiths can now have named pikes
-* the namelist is applied to each spawned unit rather than a clone of them, not sure of the impact of this.
-* spelling fixed on alps contract
-* Champion Goblin ambushers gain overwhelm
-* Goatherd locations add shepherds to the towns recruit pool
-* wool spinners can add a shepherd to the towns recruit pool
-* Player characters can't take part in the alp nightmare event
-* Greater evil triggers at 200 party strength instead of 210
-* roaming alp parties can spawn in 20% greater numbers
-* items crafted statistics are reset to 0 on new campaigns with the B&E DLC
-* Permenant destruction tooltip no longer reads "recommended"
-* Permanent destruction checkbox is no longer checked by default
-New legendary contract added for barbarians (thanks syku333)
-*Bandit army spawns tweaked
-*Berserk rage stacks rebalanced
-*Nudist nerfed (correctly this time)
-*improves odds of finding vala
-Legendary contract timeout increased from one week to one month
-Fixes crash when decapitating or shooting hexen coven leaders
-Web skill gains a tooltip
-Fixes ironmonger description
-
-
-12.7.1 Test 3
-Tweaks to Bandit Army Legendary contract:
-* Wont spawn in citadels anymore
-* Requirement to spawn increased and payout decreased
-Improvement / bugfixes:
+Beta 12.7.1 Released on Nexus
+*Merges in 1.3.0.25
+*New legendary contract added for barbarians (thanks skyu).
+*Bandit army spawns tweaked.
+*Berserk rage stacks rebalanced.
+*Nudist nerfed (correctly this time).
+*Legendary contract timeout increased from one week to one month .
+*Fixes crash when decapitating or shooting hexen coven leaders.
+*Web skill gains a tooltip.
+*Fixes ironmonger description.
+*Tweaks to Bandit Army Legendary contract:
+-Wont spawn in citadels anymore
+-Requirement to spawn increased and payout decreased
 * Bandit Rabble wont break game if they have buckler equipped
 * Improved MindOverBody tooltip
 * Corrected typos in legendary contracts descriptions
@@ -1677,25 +1524,31 @@ Improvement / bugfixes:
 * Updated description to Rage perk and Rage tooltip in combat
 * Updated Last Stand perk to give bonus melee and ranged defense all the time not just when attacked
 * Fixed Danger Pay perk for Trader Commander
-* Vala recruitment event changed - distance corrected, have to be in the north part of map and not far from settlements that are connected to roads
-Changed Bastard vs Assassin event - chance to trigger increased to 2.5x but cannot happen if party already have an assassin
-Legend Party Start:
-* Replaced Warlock with Assassin
-* Assassin gets custom perk tree like Assassin Commander
-Added extended Player is Rich event:
-* Can happen only when company has over 30k crowns and more then two backgrounds with custom perk trees (excluding Vala and character with trait.player)
-Added Trader background (non commander version) possible to get in random trio/party starts
-Unified perk trees for regular and commander Vala
-* Non-commander Vala gains Alert, Backstabber, Mind over Body, Perfect Focus and Field Triage
-* Vala cannot be male anymore even with Gender Equality on
-Fixed Student perk not being given to Seer and Seer Commander
-Added more possible titles to Seer background
-Fixed white war wolf pet
-Fixed Noble player character demnading more pay in event
-Fixed typo in Towershield description
-
-12.7.1 Test 4?
-* Added hatchet and longaxe to both woodcutter specialist perks
+* Vala recruitment event changed - distance corrected, have to be in the north part of map and not far from settlements that are connected to roads.
+*Changed Bastard vs Assassin event - chance to trigger increased to 2.5x but cannot happen if party already have an assassin
+*Legend Party Start:
+-Replaced Warlock with Assassin
+-Assassin gets custom perk tree like Assassin Commander
+*Added extended Player is Rich event:
+-Can happen only when company has over 30k crowns and more then two backgrounds with custom perk trees (excluding Vala and character with trait.player).
+*Added Trader background (non commander version) possible to get in random trio/party starts
+*Unified perk trees for regular and commander Vala
+-Non-commander Vala gains Alert, Backstabber, Mind over Body, Perfect Focus and Field Triage
+-Vala cannot be male anymore even with Gender Equality on
+*Fixed Student perk not being given to Seer and Seer Commander
+*Added more possible titles to Seer background
+*Fixed white war wolf pet
+*Fixed Noble player character demanding more pay in event
+*Corrected various typos
+*Updated for Wildman causes Havoc event for case of Berserker and Trader present in company
+*Updated wages for Trader background
+*Added Trader recruitment event. Requirements are:
+-50k crowns ambition complete
+-At least 30k crowns in company possesion
+-On the road and daytime
+*Added Favored Enemy Swordmasters perk releted event to fight 1v1 duel with swordmaster/hedge_knight/bandit_leader
+*Added hatchet and longaxe to both woodcutter specialist perks
+*Offhand skills damage won't scale to mainhand damage range anymore
 
 12.7.1 - 13.0.0.1 Dynamic Spawns Test
 
@@ -1711,3 +1564,66 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 *Fixed locations not spawning.
 
 https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
+
+12.7.1 - 13.0.0.1 Dynamic Spawns Test 3
+ *Updated to latest 12.7.1 release
+ *Beastmasters + unholds won't spawn early game.
+
+ https://drive.google.com/open?id=1Sn3rQND5XvXoHBdxZy9n35ZLM5ypIdGT
+
+ 12.7.1 - 13.0.0.1 Dynamic Spawns Test 4
+ *Fixed typo preventing a particular type of Bandit group to spawn
+
+13.0.0.1 Test 1 Dynamic Spawns + New Enemies
+*Legendary contracts now require more resources to spawn after each appears
+*Added Events to possible tame Wolfs or even a White Direwolf
+*Added the four legend named weapons to the named melee weapons pool
+- Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
+*Assassin Commander start reworked
+- Max roster of 21 bros with all corresponding perks
+- Everybody gets Backstabber perk in this start
+*Fixed orc weapons tooltip not informing about additional fatigue cost
+*Fixed Man Mangler's weapon shield damage
+*Fixed the orc weapon Skin Flayer not using extra fatigue per attack
+*Fixed various typos in descriptions/tooltips
+*Fixed Glaive Slash not properly using spear specialization
+*Fixed Greenwood Schrat's Shield self-repair feature
+*Removed roster upgrade perk from non-commander Seer background
+*Fixed Spear weapon group not giving Thrust Master perk
+*Updated Trader background description
+*Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
+*Fixed Poacher start to properly use your starting bro's names
+*Fixed Hexe Legendary Contract spawning multiple times in same settlement
+*Fixed Gash, Grapple and Lunge skills tooltips
+*Fixed Slings related skills to get bonuses from Sling Mastery perk
+*Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
+*Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
+*Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
+*Fixed Adventurous Noble background to properly choose the appropriate name for female characters
+*Fixed a crash that could occur when a Vala is swallowed whole while chanting
+*Added a cooldown description for the Legendary Redback Helmet's Web skill
+*Fixed a bug where camouflage wasn't properly being removed at the end of battle
+*Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
+*Fixed estoc orientation
+*Fixd poor weapon conditions on Warlock Zombie and Skeleton summons (weapons should not fall apart after one or two hits anymore)
+*Removed Player strength minimums from Crisis. This means Solo and small party runs will start crises after normal periods of time.
+
+*Dynamic Spawn changes:
+-Reduced overall ratio of archer units for human enemy factions
+-Increased minium strength levels for spawning HedgeKnights, Swordmasters, Leaders and Master Archers (shouldn't show up earlier game anymore)
+-Minium strength thresholds have an expiration date based on combat difficulty now (this allows solo runs and small party group runs to now experience late game enemies once the date threshold is met)
+-Beginner = 120 days
+-Normal = 90 days,
+-Expert = 60 days,
+-Legendary = 30 days
+
+*Adds 4 new Female heads
+*Adds 2 new Male heads
+*Adds 5 new Female hair styles
+
+*Adds 3 new Enemies
+-Höllenhunds - Demon hounds found with the undead. Aggressive and fast. They will seek out the strongest playes. Beware their bite, it saps the strength from even the mightiest.
+-Winselmutters - The dead mothers of fallen heroes who have never been able to find rest in death. Not only can their scream turn the most resolute warrior running, it has been known to inflict damage upon those she sets her sights on.
+-Vampire Lords - You thought normal vampires were hard to kill? Stronger,tougher and now they come with giant two handed cleavers, and they just don't seem to want to die either!
+
+https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V

@@ -36,7 +36,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.dastard",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,
@@ -49,10 +49,10 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
-		
+
 			if (r == 0)
 			{
 				this.m.Faces = this.Const.Faces.PrettyFemale;
@@ -152,7 +152,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LastStand,
 				this.Const.Perks.PerkDefs.SunderingStrikes,
 				this.Const.Perks.PerkDefs.InspiringPresence,
-				this.Const.Perks.PerkDefs.LegendRoster6		
+				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
@@ -170,7 +170,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			[],
 			[],
 			[],
-			[]				
+			[]
 		];
 
 	}
@@ -200,7 +200,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		else
 			{
 			return "%name% lives to fight the undead scourge. Little is known about him and he almost never talks save for the occasional grunt while swinging his sword. His language seems to be codified into one simple structure: killing creatures of evil.";
-			}	
+			}
 	}
 
 	function onSetAppearance()
@@ -302,7 +302,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
 		items.equip(this.new("scripts/items/armor/legend_crusader_armor"));
 		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
-	
+
 	}
 
 });

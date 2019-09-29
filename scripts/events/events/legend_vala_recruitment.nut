@@ -46,17 +46,17 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		
+
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
 		}
-		
+
 		local towns = this.World.EntityManager.getSettlements();
 		local nearTown = false;
 		local town;
 		local playerTile = this.World.State.getPlayer().getTile();
-		
+
 		foreach (t in towns)
 		{
 			if (t.getTile().getDistanceTo(playerTile) <= 7 && !t.isIsolatedFromRoads())
@@ -66,7 +66,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 				break;
 			}
 		}
-		
+
 		if (!nearTown)
 		{
 			return;
@@ -76,12 +76,12 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		{
 			return;
 		}
-		
-		if (!this.World.Assets.isLegendMagic())
+
+		if ("Assets" in this.World && this.World.Assets != null && !this.World.Assets.isLegendMagic())
 		{
 			return;
 		}
-		
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
 		local brotherlevels = 0;
@@ -98,7 +98,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			totalbrothers += 1;
 			brotherlevels += bro.getLevel();
 		}
-		
+
 		if (totalbrothers < 1 || brotherlevels < 30)
 		{
 			return;

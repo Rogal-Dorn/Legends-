@@ -44,8 +44,8 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
-	
-		if (this.World.Assets.isLegendGenderEquality())
+
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -69,7 +69,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.BowTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.ThrowingTree,
@@ -178,7 +178,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		{
 			items.equip(this.new("scripts/items/armor/apron"));
 		}
-		
+
 		if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/legend_maid_apron"));

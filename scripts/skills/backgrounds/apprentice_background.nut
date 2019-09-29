@@ -38,7 +38,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -64,7 +64,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.CrossbowTree,
