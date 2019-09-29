@@ -45,7 +45,7 @@ function getTooltip()
 		slash.m.Icon = "skills/active_78.png";
 		slash.m.IconDisabled = "skills/active_78_sw.png";
 		slash.m.Overlay = "active_78";
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
+		slash.setFatigueCost(this.Math.round(slash.getFatigueCostRaw() + 5));
 		this.addSkill(slash);
 	}
 
