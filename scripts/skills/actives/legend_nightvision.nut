@@ -61,11 +61,6 @@ this.legend_nightvision <- this.inherit("scripts/skills/skill", {
 		foreach( a in actors)
 		{
 
-			if (a.getID() == _user.getID())
-			{
-				continue;
-			}
-
 			if (myTile.getDistanceTo(a.getTile()) > 4)
 			{
 				continue;

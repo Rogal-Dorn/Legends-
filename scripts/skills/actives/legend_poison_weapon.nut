@@ -83,7 +83,7 @@ this.legend_poison_weapon<- this.inherit("scripts/skills/skill", {
 
 		if (poison != null)
 		{
-			poison.reset();
+			poison.resetTime();
 		}
 		else
 		{
