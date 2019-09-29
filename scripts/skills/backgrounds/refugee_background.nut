@@ -44,7 +44,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsLowborn = true;
 
 		local chance = 10;
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			chance = 50;
 		}
@@ -61,7 +61,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.StavesTree,
 				this.Const.Perks.SlingsTree,
 				this.Const.Perks.ThrowingTree

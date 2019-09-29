@@ -48,7 +48,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Body = "bust_naked_body_03";
 		this.m.IsFemaleBackground = true;
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)
@@ -70,7 +70,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SlingsTree,
 				this.Const.Perks.CleaverTree,
@@ -115,7 +115,7 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 		else
 			{
 			return "{After losing his wife to a fire | After his wife\'s gambling addiction got the better of her | His wife was framed for a crime she didn\'t commit, and having to pay the constable everything to keep himself out of the dungeons | A refugee and widower after his village was burned to the ground | Banished from his home after a violent struggle with his wife | A man with few talents and no wife | After being released alone from a lord\'s dungeon where he spent countless years chained to a wall | After giving all his worldly possessions to an obscure cult that took his wife and promised salvation of his eternal soul | Married to a very intelligent woman until a brigand knocked her over the head}, {%name% found himself on the streets, | %name% was forced onto the streets,} {having to beg for bread | depending on the goodwill of others | being beaten and resigned to his fate | spending what little coin he had to drink the days away | digging into the trash of others and scurrying away from lawmen | avoiding ruffians and thugs while he begged for crowns}. {While he seems earnest in becoming a mercenary, there is little doubt that all his time on the street, and his former marriage, have robbed %name% of his best years. | Years have passed and took a toll on his health by now. | Once a man like %name% has spent a few days on the streets, much less a few years, even the very dangerous job of being a sellsword seems like the greenest of pastures. | Only the gods know what %name% has done to survive, but he is a frail man standing before you now. | At the sight of you he rises with open arms to embrace you, claiming to know you well from years past and many a shared adventure, although your name escapes him at the moment.}";
-			}	
+			}
 
 	}
 

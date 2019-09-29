@@ -46,10 +46,10 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
 
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			local r = this.Math.rand(0, 1);
-		
+
 			if (r == 0)
 			{
 				this.m.Faces = this.Const.Faces.PrettyFemale;
@@ -96,7 +96,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.LegendSmackdown,
 				this.Const.Perks.PerkDefs.LegendOnslaught,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,	
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 				this.Const.Perks.PerkDefs.Steadfast
 			],
 			[
@@ -129,9 +129,9 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.ReturnFavor,
 				this.Const.Perks.PerkDefs.InspiringPresence,
 				this.Const.Perks.PerkDefs.LegendForcefulSwing,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,		
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
-			
+
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -155,7 +155,7 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 			[],
 			[],
 			[],
-			[]				
+			[]
 		];
 
 	}

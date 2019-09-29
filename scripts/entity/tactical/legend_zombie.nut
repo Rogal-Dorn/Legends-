@@ -143,7 +143,7 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		if (typeof _i == "instance")
 		{
 			this.m.Item = _i;
-			return 
+			return
 		}
 
 		this.m.Item = this.WeakTableRef(_i);
@@ -151,7 +151,7 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 
 	function setVariant( _v )
 	{
-		
+
 	}
 
     function isReallyKilled(_fatalityType)
@@ -164,13 +164,13 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.actor.onActorKilled(_actor, _tile, _skill);
 		local XPkiller = this.Math.floor(_actor.getXPValue() * this.Const.XP.XPForKillerPct);
 		local XPgroup = _actor.getXPValue() * (1.0 - this.Const.XP.XPForKillerPct);
-        
+
         local summoner = getTags().get("Summoner");
         if (summoner != null)
         {
             summoner.addXP(this.Math.floor(XPkiller * 0.50));
         }
-		
+
         local brothers = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
 
 		if (brothers.len() == 1)
@@ -186,7 +186,7 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		}
 	}
 
-	
+
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
 		local flip = false;

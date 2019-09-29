@@ -258,7 +258,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "Banter",
 			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_75.png[/img]{%randombrother% has been intently scanning for tracks, with an urgency you can\'t place. At last he speaks %SPEECH_ON% My grandmother told me stories of the Wolf King when i was a child. She said he is half human from eating human brains, he walks on two legs, wears armor and even understand speech. It was meant to make me do my chores, but it only ever gave me nightmares. He can\'t be real, can he? %SPEECH_OFF%.}",
+			Text = "[img]gfx/ui/events/event_75.png[/img]{%randombrother% has been intently scanning for tracks, with an urgency you can\'t place. At last he speaks %SPEECH_ON% My grandmother told me stories of the Wolf King when I was a child. She said he is half human from eating human brains, he walks on two legs, wears armor and even understand speech. It was meant to make me do my chores, but it only ever gave me nightmares. He can\'t be real, can he? %SPEECH_OFF%.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -461,7 +461,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% seems surprised when you return. %SPEECH_ON%Could it be? Have you slain the White Wolf? %SPEECH_OFF%  You show him the bloody wolf pelt and he stares in disbelief.  %SPEECH_ON% The reign of terror is over! This demands a celebration! Tonight, for the first time in many moons, we sahll drink and be merry! %SPEECH_OFF%  He gestures to his servants who cheer as one, then begin tending to your wounds, bringing over drinks, food, and a small chest full of crowns. }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% seems surprised when you return. %SPEECH_ON%Could it be? Have you slain the White Wolf? %SPEECH_OFF%  You show him the bloody wolf pelt and he stares in disbelief.  %SPEECH_ON% The reign of terror is over! This demands a celebration! Tonight, for the first time in many moons, we shall drink and be merry! %SPEECH_OFF%  He gestures to his servants who cheer as one, then begin tending to your wounds, bringing over drinks, food, and a small chest full of crowns. }",
 			Image = "",
 			Characters = [],
 			List = [],

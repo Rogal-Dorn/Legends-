@@ -49,7 +49,7 @@ this.legend_meat_hacker <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/split_shield");
 		skill.setApplyAxeMastery(true);
-		skill.setFatigueCost(skill.getFatigueCostRaw() + 10);
+		skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
 		this.addSkill(skill);
 	}
 

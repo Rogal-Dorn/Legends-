@@ -20,7 +20,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			"trait.fainthearted",
 			"trait.insecure",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Titles = [
 			"the Vala"
@@ -36,10 +36,10 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[3];
-		this.m.Modifiers.Enchanting = 1.0;		
+		this.m.Modifiers.Enchanting = 1.0;
 		this.m.Level = 2;
 
-		if (!this.World.Assets.isLegendMagic())
+		if ("Assets" in this.World && this.World.Assets != null && !this.World.Assets.isLegendMagic())
 		{
 			this.m.CustomPerkTree = [
 			[
@@ -94,7 +94,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[],
 			[],
 			[],
-			[]				
+			[]
 		];
 		}
 		else
@@ -150,10 +150,10 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 			[],
 			[],
 			[],
-			[]				
+			[]
 		];
-		}	
-		
+		}
+
 	}
 
 	function getTooltip()

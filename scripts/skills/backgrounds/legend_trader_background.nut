@@ -10,7 +10,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.GoodEnding = "A lover of the sale, %name% the trader couldn\'t stay fighting for long. They eventually left the %companyname% to go out and start their own business. Recently, you got word that they were selling trinkets with the company\'s sigil on them. You specifically told them to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell them to stop, they slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' They sell those trinkets to this day.";
 		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard they got the tar beaten out of them trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
 		this.m.HiringCost = 60000;
-		this.m.DailyCost = 1;
+		this.m.DailyCost = 40;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.fear_undead",
@@ -29,20 +29,20 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.deathwish",
 			"trait.bloodthirsty",
 			"trait.disloyal",
-			"trait.loyal"			
+			"trait.loyal"
 		];
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_02";
-		
+
 		local r = this.Math.rand(0, 9);
-		if (this.World.Assets.isLegendGenderEquality())
+		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
 		{
 			r = this.Math.rand(0, 1);
 		}
-		
+
 		if (r == 0)
 		{
 			this.m.Faces = this.Const.Faces.AllFemale;
@@ -98,7 +98,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendBarterConvincing
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.Overwhelm,
@@ -123,7 +123,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 			[],
 			[],
 			[],
-			[]	
+			[]
 		];
 	}
 
@@ -145,7 +145,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onBuildDescription()
 	{
-		return "This is your commander, when they die it is game over. {House to house, | Once a proud merchant, now | An annoyance to most, | In tough times, everyone has to scrape by somehow, hence why | Not of the trades, but instead of trade itself,} %name% is a mere peddler. {Dancing, singing, boasting or acting a king, anything to make that sale. | Pushy and unrelenting, their tenacity is admirable. | %name% will try to sell off a rusty bucket for a helm once worn by kings. This trader will sell anything. | %name% will make you crave things you never knew you wanted. No refunds, though. | %name% used to make a decent living selling {used carts | pots, pans and jars }, until fierce competition ended the business - with a broken arm.} {Self marketing is what this frail merchant does best, though few believe the pitch about having \'Great swordsmanship and resolute bravery\'. | Supposedly handed out \'coupons\' for \'services\', whatever those are. %name% is chippy, though, and any outfit these days could use a warm body no matter its real value. | If hired, %name% promises, you\'ll get a special discount on a virility enhancing potion. | %name% lowers their voice and tells you they\'ve got a great deal on rusted arrow tips, just for you. The merchant looks disappointed at your lack of interest. | This merchant knows a man who knows a man who knows a man. All three strangers potentially better at fighting than %name%. | A shame a war can\'t be fought with words these days. %name% would be unstoppable.}";
+		return "{House to house, | Once a proud merchant, now | An annoyance to most, | In tough times, everyone has to scrape by somehow, hence why | Not of the trades, but instead of trade itself,} %name% is a mere peddler. {Dancing, singing, boasting or acting a king, anything to make that sale. | Pushy and unrelenting, their tenacity is admirable. | %name% will try to sell off a rusty bucket for a helm once worn by kings. This trader will sell anything. | %name% will make you crave things you never knew you wanted. No refunds, though. | %name% used to make a decent living selling {used carts | pots, pans and jars }, until fierce competition ended the business - with a broken arm.} {Self marketing is what this frail merchant does best, though few believe the pitch about having \'Great swordsmanship and resolute bravery\'. | Supposedly handed out \'coupons\' for \'services\', whatever those are. %name% is chippy, though, and any outfit these days could use a warm body no matter its real value. | If hired, %name% promises, you\'ll get a special discount on a virility enhancing potion. | %name% lowers their voice and tells you they\'ve got a great deal on rusted arrow tips, just for you. The merchant looks disappointed at your lack of interest. | This merchant knows a man who knows a man who knows a man. All three strangers potentially better at fighting than %name%. | A shame a war can\'t be fought with words these days. %name% would be unstoppable.}";
 	}
 
 	function onChangeAttributes()
@@ -193,7 +193,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		local actor = this.getContainer().getActor();
 		actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));		
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 	}
 
 	function onAddEquipment()
@@ -209,15 +209,15 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		// stash.add(this.new("scripts/items/misc/snake_oil_item"));
 		// stash.add(this.new("scripts/items/supplies/dried_fruits_item"));
 		// stash.add(this.new("scripts/items/tents/tent_craft"));
-		// stash.add(this.new("scripts/items/tents/tent_enchant"));		
-		// stash.add(this.new("scripts/items/tents/tent_fletcher"));		
-		// stash.add(this.new("scripts/items/tents/tent_gather"));		
-		// stash.add(this.new("scripts/items/tents/tent_heal"));		
+		// stash.add(this.new("scripts/items/tents/tent_enchant"));
+		// stash.add(this.new("scripts/items/tents/tent_fletcher"));
+		// stash.add(this.new("scripts/items/tents/tent_gather"));
+		// stash.add(this.new("scripts/items/tents/tent_heal"));
 		// stash.add(this.new("scripts/items/tents/tent_hunter"));
-		// stash.add(this.new("scripts/items/tents/tent_repair"));		
-		// stash.add(this.new("scripts/items/tents/tent_scout"));		
-		// stash.add(this.new("scripts/items/tents/tent_scrap"));		
-		// stash.add(this.new("scripts/items/tents/tent_train"));		
+		// stash.add(this.new("scripts/items/tents/tent_repair"));
+		// stash.add(this.new("scripts/items/tents/tent_scout"));
+		// stash.add(this.new("scripts/items/tents/tent_scrap"));
+		// stash.add(this.new("scripts/items/tents/tent_train"));
 
 
 	}

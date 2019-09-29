@@ -13,7 +13,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		return this.m.XP * this.m.Size;
 	}
-		
+
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.LegendDemonAlp;
@@ -228,7 +228,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 					loot.drop(_tile);
 					local chance = 10;
-					if (this.World.Assets.isLegendMagic())
+					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.isLegendMagic())
 					{
 						chance = 100;
 					}
@@ -238,7 +238,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 						token.setRuneVariant(this.Math.rand(1, 3));
 						token.setRuneBonus(true);
 						token.updateRuneSigilToken();
-						token.drop(_tile);	
+						token.drop(_tile);
 					}
 				}
 			}
@@ -303,7 +303,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
 		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
 		this.m.Skills.add(this.new("scripts/skills/actives/gruesome_feast"));
-		this.m.Skills.add(this.new("scripts/skills/effects/gruesome_feast_effect"));	
+		this.m.Skills.add(this.new("scripts/skills/effects/gruesome_feast_effect"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
