@@ -36,6 +36,11 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/legend_banshee_essence_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/legend_banshee_essence_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/legend_demon_hound_bones_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/misc/legend_demon_hound_bones_item"));
+		
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 
