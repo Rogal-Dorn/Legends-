@@ -1,9 +1,9 @@
-this.legend_demon_banshee_item <- this.inherit("scripts/items/accessory/accessory", {
+this.legend_demon_banshee_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	m = {},
 	function create()
 	{
 		this.accessory.create();
-		this.m.ID = "accessory.legend_demon_banshee";
+		this.m.ID = "accessory.legend_demon_banshee_trophy";
 		this.m.Name = "Demonic Banshee Trophy";
 		this.m.Description = "An eerie trophy that, when worn, provides incredible vigor and speed.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;

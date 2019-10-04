@@ -65,13 +65,15 @@ this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 	
 				if (t.getType() == this.Const.EntityType.LegendDemonHound)
 				{
-					if(t.getTile().getDistanceTo(myTile) == 2)
-					{
-						penalty = actor.getInitiative() * 0.25;
-					}
-					else if(t.getTile().getDistanceTo(myTile) == 1)
+					if(t.getTile().getDistanceTo(myTile) == 1)
 					{
 						penalty = actor.getInitiative() * 0.5;
+						return penalty;
+						
+					}
+					else if(t.getTile().getDistanceTo(myTile) == 2)
+					{
+						penalty = actor.getInitiative() * 0.25;
 					}
 				}
 			}
