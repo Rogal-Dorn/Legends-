@@ -504,6 +504,7 @@ this.legend_demon_hound <- this.inherit("scripts/entity/tactical/actor", {
 					
 					loot.drop(_tile);
 				}
+			}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
