@@ -119,7 +119,7 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/effects/leg
 		else if (distance == 3)
 		{
 			bonus *= 0.5;
-		}
+	}
 
 		_properties.MeleeDefense += this.Math.round(bonus);
 		_properties.RangedDefense += this.Math.round(bonus);

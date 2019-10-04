@@ -571,6 +571,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 5));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
+		
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -579,6 +580,8 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/effects/captain_effect"));
+		
+		this.m.Skills.add(this.new("scripts/skills/effects/legend_demon_hound_aura_effect"));
 	}
 
 	function setAppearance()
