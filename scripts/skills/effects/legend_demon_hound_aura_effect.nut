@@ -53,6 +53,7 @@ this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 		{
 			foreach(t in tar)
 			{
+				local penalty = 0;
 				if (t.getID() == actor.getID() || !t.isPlacedOnMap())
 				{
 					continue;
@@ -65,7 +66,6 @@ this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 	
 				if (t.getType() == this.Const.EntityType.LegendDemonHound)
 				{
-				local penalty = 0;
 					if(t.getTile().getDistanceTo(myTile) == 2)
 					{
 						penalty = actor.getInitiative() * 0.25;
@@ -74,8 +74,8 @@ this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 					{
 						penalty = actor.getInitiative() * 0.5;
 					}
-					return penalty;
 				}
+				return penalty;
 			}
 		}
 	}
