@@ -78,7 +78,7 @@ this.legend_demon_banshee_trophy_item <- this.inherit("scripts/items/accessory/a
 	{
 		this.accessory.onUpdateProperties(_properties);
 		_properties.Initiative += 10;
-		properties.FatigueRecoveryRate += 2;
+		_properties.FatigueRecoveryRate += 2;
 	}
 
 });
