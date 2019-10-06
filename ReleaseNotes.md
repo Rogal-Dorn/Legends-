@@ -1631,3 +1631,9 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Legendary Ranger's Nightvision skill now applies to themself as well
 * Fixed a crash that could occur when reapplying poison to a weapon that already has poison
 * Fixes crash with skin flayer weapon.
+* Redback poison now displays damage correctly in Legendary difficulty
+* Repair tent calculations simplified, now adding bros is always beneficial
+* Female player characters now have the right sound effects
+* Bandits have once again learned how to disguise themselves as Direwolves
+* Fixed warlock hood description to match tooltip
+* Adds Necrosavant Lords to the Favored Enemy: Necrosavant perk
