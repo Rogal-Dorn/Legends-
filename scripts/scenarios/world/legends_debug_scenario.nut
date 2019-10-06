@@ -75,27 +75,16 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		local armors = [
 			"legend_gambeson",
-			"legend_robe_herbalist",
-			"legend_robe_monk",
-			"legend_robe_necromancers",
-			"legend_robe_nun_dark",
-			"legend_robe_nun_light",
-			"legend_robe_wizard",
+			"legend_robes",
+			"legend_robes_smith",
+			"legend_robes_nun",
+			"legend_robes_wizard",
+			"legend_robes_butcher",
+			"legend_sackcloth_patched",
 			"legend_sackcloth_tattered",
 			"legend_sackcloth",
-			"legend_surcoat_ragged",
-			"legend_surcoat_ragged_dark",
-			"legend_surcoat_padded",
-			"legend_tunic_linen",
 			"legend_tunic_noble",
-			"legend_tunic_thick_dark",
-			"legend_tunic_thick",
-			"legend_tunic_rabble",
-			"legend_cloak_warlock",
-			"legend_dress_vala",
-			"legend_cloak_vala",
-			"legend_dress_maid",
-			"legend_rabble_fur"
+			"legend_tunic"
 		];
 
 		foreach(a in armors)
