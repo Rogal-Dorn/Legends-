@@ -9,7 +9,10 @@ this.ancient_priest_attire <- this.inherit("scripts/items/armor/armor", {
 		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = true;
 		local variants = [
-			970,
+			70,
+			71,
+			72,
+			73,
 		];
 		this.m.Variant = variants[this.Math.rand(0, variants.len() - 1)];
 		this.updateVariant();
