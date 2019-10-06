@@ -113,6 +113,28 @@ this.legend_banshee <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.spawnParticleEffect(false, effect.Brushes, _tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
 		}
 
+		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
+		{
+			local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
+
+			for( local i = 0; i < n; i = ++i )
+			{
+				local r = this.Math.rand(1, 100);
+				local loot;
+				
+				if (r <= 50)
+				{
+					loot = this.new("scripts/items/misc/legend_banshee_essence_item");
+				}
+				else
+				{
+					continue;
+				}
+				
+				loot.drop(_tile);
+			}
+		}
+
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
