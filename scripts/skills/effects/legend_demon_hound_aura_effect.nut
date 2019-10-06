@@ -32,7 +32,7 @@ this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + penalty + "[/color] Initative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + penalty * 100 + "%[/color] Initative"
 			}
 		];
 	}
@@ -47,59 +47,61 @@ this.legend_demon_hound_aura_effect <- this.inherit("scripts/skills/skill", {
 		}
 		local worstPenalty = 0;
 		local myTile = actor.getTile();
-		local targets = this.Tactical.Entities.getAllInstances();
+		local targets = this.Tactical.Entities.getAllInstancesAsArray();
 
-		foreach(tar in targets)
+		foreach(t in targets)
 		{
-			foreach(t in tar)
+			if (t.getID() == actor.getID() || !t.isPlacedOnMap())
 			{
-				if (t.getID() == actor.getID() || !t.isPlacedOnMap())
-				{
-					continue;
-				}
-	
-				if (t.getTile().getDistanceTo(myTile) > 2)
-				{
-					continue;
-				}
-	
-				if (t.getType() == this.Const.EntityType.LegendDemonHound)
-				{
-					local distance = t.getTile().getDistanceTo(myTile);
-					
-					local penalty = actor.getInitiative() * 0.5;
-					penalty /= distance;
-					
-					if(penalty > worstPenalty)
-					{
-						worstPenalty = penalty;
-					}
-				}
+				continue;
 			}
+
+			if (t.getType() != this.Const.EntityType.LegendDemonHound)
+			{
+				continue;
+			}
+
+			local distance = t.getTile().getDistanceTo(myTile)
+			if (distance > 2)
+			{
+				continue;
+			}
+
+			local distance = t.getTile().getDistanceTo(myTile);
+			local penalty = 0.25;
+
+			if (distance == 1)
+			{
+				penalty = 0.50;
+			}
+
+			if (penalty > worstPenalty)
+			{
+				worstPenalty = penalty;
+			}
+
 		}
+
+
 		return worstPenalty;
 	}
 
 	function onUpdate( _properties )
 	{
 		this.m.IsHidden = true;
+		this.m.Penalty = 0;
 	}
 
 	function onAfterUpdate( _properties )
 	{
 		local penalty = this.getPenalty(_properties);
-
-		if (penalty != 0)
+		if (penalty == 0)
 		{
-			this.m.IsHidden = false;
-			_properties.Initiative -= penalty;
-			this.m.Penalty = penalty;
+			return;
 		}
-		else
-		{
-			this.m.IsHidden = true;
-			this.m.Penalty = 0;
-		}
+		_properties.Initiative *= penalty;
+		this.m.Penalty = penalty;
+		this.m.IsHidden = false;
 	}
 
 	function onCombatFinished()
