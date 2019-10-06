@@ -1644,4 +1644,7 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Added minimum resource limits fir UndeadArmy spawns
 * Reduced the Melee and Range defense of White dire wolves.
 * Fixes crash with Undead Priests
-
+* New Höllenhunds area effect. Any player within 1 Tile suffers 50% Reduction in iniative. Any player within 2 Tiles suffers 25% reduction in iniative.
+* New Höllenhunds drop loot. Bones - used for crafting
+* New Winselmutters drop loot - Winselmutter essence - used for crafting.
+* New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
