@@ -23,7 +23,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		for( local i = 0; i < partysize; i = ++i )
 		{
 			local broLevel = broLevelMax
-			local broPerks = broLevel - 1; 
+			local broPerks = broLevel - 1;
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -38,7 +38,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		for( local i = 0; i < horsesize; i = ++i )
 		{
 			local broLevel = broLevelMax
-			local broPerks = broLevel - 1; 
+			local broPerks = broLevel - 1;
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -74,7 +74,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local armors = [
-			"legend_gambeson_blotched",
 			"legend_gambeson",
 			"legend_robe_herbalist",
 			"legend_robe_monk",
@@ -102,10 +101,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		foreach(a in armors)
 		{
 			this.logInfo("Adding " + a);
-			local arm = this.new("scripts/items/legend_armor/armor/" + a);
+			local arm = this.new("scripts/items/legend_armor/cloth/" + a);
 			this.World.Assets.getStash().add(arm);
 		}
-		
+
 		local chain = [
 			"legend_armor_leather",
 			"legend_armor_hide_and_bone",
@@ -128,14 +127,14 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_armor_coat_of_scales",
 			"legend_armor_ikon_scale"
 		];
-		
+
 		foreach(c in chain)
 		{
 			this.logInfo("Adding " + c);
 			local cha = this.new("scripts/items/legend_armor/chain/" + c);
 			this.World.Assets.getStash().add(cha);
 		}
-		
+
 		local plate = [
 			"legend_armor_hide_and_bone",
 			"legend_armor_lamellar",
@@ -158,7 +157,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_armor_karl_plates",
 			"legend_armor_shkimmilk_plates"
 		];
-		
+
 		foreach(p in plate)
 		{
 			this.logInfo("Adding " + p);
