@@ -30,12 +30,13 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 		bros[0].m.PerkPoints = 3;
 		bros[0].m.LevelUps = 3;
 		bros[0].m.Level = 4;
-		bros[0].setVeteranPerks(2);	
+		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getTags().set("IsPlayerCharacter", true);
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
+
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 
