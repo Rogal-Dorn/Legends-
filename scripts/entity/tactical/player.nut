@@ -2572,6 +2572,30 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			list.append(s.getIcon());
 		}
 
+function playSound( _type, _volume, _pitch = 1.0 )
+	{
+		if (this.m.Sound[_type].len() == 0)
+		{
+			return;
+		}
+
+		local volume = 1.0;
+		if(this.m.Background.isFemaleBackground)
+		{
+			if (this.m.VoiceSet > this.Const.WomanSounds.len() - 1)
+			{
+				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
+			}
+			volume * this.Const.WomanSounds[this.m.VoiceSet].Volume
+		}
+		else
+		{
+			volume * this.Const.HumanSounds[this.m.VoiceSet].Volume
+		}
+
+		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
+	}
+
 		for( local i = list.len(); i < 4; i++ )
 		{
 			list.append("");
