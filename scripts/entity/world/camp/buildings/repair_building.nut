@@ -241,19 +241,9 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         {  
             ret.Consumption = 1.0 / 20.0
         }
-        local craft = 2 * this.m.BaseCraft * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()];
         
-        if (ret.Assigned == 0)
-        {
-            ret.Craft = craft;
-        }
+        ret.craft += this.m.BaseCraft;
         
-        local bros = this.getNumberAssigned();
-        
-        if (ret.Craft < craft && bros > 0)
-        {
-        		ret.Craft = craft + bros;
-        }
         return ret;
     }
 

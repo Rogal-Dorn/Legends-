@@ -91,7 +91,9 @@ gt.Const.LegendMod.FavoriteUnhold <- [
 
 gt.Const.LegendMod.FavoriteVampire <- [
 	this.Const.EntityType.Vampire,
-	this.Const.EntityType.Ghost
+	this.Const.EntityType.Ghost,
+	this.Const.EntityType.LegendVampireLord,
+	this.Const.EntityType.LegendBanshee
 ];
 
 gt.Const.LegendMod.FavoriteSwordmaster <- [
@@ -220,6 +222,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		case "this.Const.EntityType.Vampire":
 		value = 2;
 		break;
+		case "this.Const.EntityType.LegendVampireLord":
+		value = 1;
+		break;
 		case "this.Const.EntityType.SkeletonPriest":
 		value = 2;
 		break;
@@ -234,6 +239,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		break;
 		case "this.Const.EntityType.Ghost":
 		value = 4;
+		break;
+		case "this.Const.EntityType.LegendBanshee":
+		value = 3;
 		break;
 		case "this.Const.EntityType.ZombieBoss":
 		value = 1;

@@ -48,7 +48,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.BeardChance = 0;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 		}
-		else 
+		else
 		{
 			if (_reroll)
 			{
@@ -77,7 +77,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 		local volume = 1.0;
 		if(this.m.Gender == 1)
-		{	
+		{
 			if (this.m.VoiceSet > this.Const.WomanSounds.len() - 1)
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
@@ -574,6 +574,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("status_rooted", this.createVec(0, 5));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
 
+
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
@@ -581,6 +582,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/effects/captain_effect"));
+		this.m.Skills.add(this.new("scripts/skills/effects/legend_demon_hound_aura_effect"));
 	}
 
 	function setAppearance()

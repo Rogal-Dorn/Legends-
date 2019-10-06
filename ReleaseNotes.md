@@ -1629,7 +1629,24 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 
 
-12.7.2 - 13.0.0.1 Test 6
+
+13.0.0.1 Test 2 Dynamic Spawns + New Enemies
 * Legendary Ranger's Nightvision skill now applies to themself as well
 * Fixed a crash that could occur when reapplying poison to a weapon that already has poison
+* Fixes crash with loading orc camps.
+
+13.0.0.1 Test 3 Dynamic Spawns + New Enemies
 * Fixes crash with skin flayer weapon.
+* Redback poison now displays damage correctly in Legendary difficulty
+* Repair tent calculations simplified, now adding bros is always beneficial
+* Female player characters now have the right sound effects
+* Bandits have once again learned how to disguise themselves as Direwolves
+* Fixed warlock hood description to match tooltip
+* Adds Necrosavant Lords to the Favored Enemy: Necrosavant perk
+* Added minimum resource limits fir UndeadArmy spawns
+* Reduced the Melee and Range defense of White dire wolves.
+* Fixes crash with Undead Priests
+* New Höllenhunds area effect. Any player within 1 Tile suffers 50% Reduction in iniative. Any player within 2 Tiles suffers 25% reduction in iniative.
+* New Höllenhunds drop loot. Bones - used for crafting
+* New Winselmutters drop loot - Winselmutter essence - used for crafting.
+* New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.

@@ -33,4 +33,9 @@ this.legend_demon_hound_bite_effect <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function resetTime()
+	{
+		this.m.TurnsLeft = 3;
+	}
+
 });

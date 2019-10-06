@@ -191,7 +191,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 		},
 		{
 			Weight = 5,
-			MinR = 125,
+			MinR = 75,
 			Types =
 			[
 				{
@@ -281,7 +281,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 		},
 		{
 			Weight = 5,
-			MinR = 100,
+			MinR = 75,
 			Types =
 			[
 				{
@@ -409,7 +409,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
-	Body = "figure_bandit_01",
+	Body = "figure_werewolf_01",
 	Fixed = [],
 	//MinR = 75,
 	MaxR = 475,

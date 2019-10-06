@@ -34,12 +34,13 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavy,
+					MinR = 0.60 * 625,
 					Cost = 35
 				}
 			]
 		},
 		{
-			Weight = 40,
+			Weight = 35,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
@@ -47,12 +48,14 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavyPolearm,
+					MinR = 0.60 * 625,
 					Cost = 35
 				}
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 3,
+			MinR = 0.75 * 625,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonPriest,
@@ -74,6 +77,7 @@ gt.Const.World.Spawn.UndeadArmy <-
 		},
 		{
 			Weight = 5
+			MinR = 0.20 * 625,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.VampireLOW,
@@ -85,12 +89,14 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
+					MinR = 1.0 * 625,
 					Cost = 60
 				}
 			]
 		},
 		{
 			Weight = 5,
+			MinR = 0.15 * 625,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
