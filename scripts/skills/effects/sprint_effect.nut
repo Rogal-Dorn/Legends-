@@ -4,9 +4,8 @@ this.sprint_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.sprint";
 		this.m.Name = "Sprinting";
-		this.m.Description = "TODO";
-		this.m.Icon = "ui/perks/perk_37.png";
-		this.m.IconMini = "perk_37_mini";
+		this.m.Description = "You run like the wind, moving at great speed. Movement costs 1 less AP, at double fatigue costs.";
+		this.m.Icon = "ui/perks/perk_sprint.png";
 		this.m.Overlay = "perk_37";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
