@@ -278,6 +278,8 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 			}
 		}
 
+
+
 		local w = 0
 		if (typeof(t.Weight) == "function")
 		{
@@ -322,7 +324,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 	{
 		if ("Type" in troop)
 		{
-			_credits -= troop.Cost;
+
 			local key = troop.Type.Script;
 			if (!(key in _map))
 			{
@@ -331,7 +333,17 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 					Num = 0
 				}
 			}
+
+			if ("Roll" in troop)
+			{
+				if (!troop.Roll(_map[key].Num))
+				{
+					continue;
+				}
+			}
+			_credits -= troop.Cost;
 			_map[key].Num += 1;
+
 
 			if ("MaxCount" in troop)
 			{
@@ -462,9 +474,6 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 				}
 			}
 
-
-			_credits -= troop.Types[i].Cost;
-
 			local key = troop.Types[i].Type.Script;
 			if (!(key in _map))
 			{
@@ -473,6 +482,17 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 					Num = 0
 				}
 			}
+
+			if ("Roll" in troop.Types[i])
+			{
+				if (!troop.Types[i].Roll(_map[key].Num))
+				{
+					continue;
+				}
+			}
+
+
+			_credits -= troop.Types[i].Cost;
 			_map[key].Num += 1
 
 			if ("Guards" in troop.Types[i])
