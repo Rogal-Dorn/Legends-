@@ -1,0 +1,28 @@
+
+this.legend_armor_leather_lamellar_harness <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
+	m = {},
+	function create()
+	{
+		this.legend_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
+		this.m.ID = "legend_armor.leather_lamellar_harness";
+		this.m.Name = "Lamellar Harness";
+		this.m.Description = "A body armor made of thick overlapping metal plates that cover most of the upper body.";
+		this.m.ArmorDescription = "Includes body armor made of thick overlapping metal plates that cover most of the upper body.";
+		this.m.Icon = "legend_armor/plate/icon_legend_leather_lamellar_harness.png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_lamellar_harness.png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_lamellar_harness.png";
+		this.m.SpriteBack = "bust_legend_leather_lamellar_harness";
+		this.m.SpriteDamagedBack = "bust_legend_leather_lamellar_harness_damaged";
+		this.m.SpriteCorpseBack = "bust_legend_leather_lamellar_harness_dead";
+		this.m.Value = 3000;
+		this.m.Condition = 230;
+		this.m.ConditionMax = 230;
+		this.m.StaminaModifier = -30;
+		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
+		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
+	}
+
+});
+
