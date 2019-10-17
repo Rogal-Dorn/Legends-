@@ -8,19 +8,18 @@ this.legend_armor_reinforced_rotten_mail_shirt <- this.inherit("scripts/items/le
 		this.m.Name = "Rotten Reinforced Mail Shirt";
 		this.m.Description = "A reinforced mail shirt that is rotting at the seams.";
 		this.m.ArmorDescription = "Includes a reinforced mail shirt that has seen better days.";
-		this.m.Icon = "legend_armor/chain/icon_legend_reinforced_rotten_mail_shirt.png";
+		this.m.Icon = "legend_armor/chain/legend_reinforced_rotten_mail_shirt.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/chain/icon_legend_reinforced_rotten_mail_shirt.png";
 		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_reinforced_rotten_mail_shirt.png";
-		this.m.SpriteBack = "legend_reinforced_rotten_mail_shirt";
-		this.m.SpriteDamagedBack = "legend_reinforced_rotten_mail_shirt_damaged";
-		this.m.SpriteCorpseBack = "legend_reinforced_rotten_mail_shirt_dead";
+		this.m.SpriteBack = "bust_legend_reinforced_rotten_mail_shirt";
+		this.m.SpriteDamagedBack = "bust_legend_reinforced_rotten_mail_shirt_damaged";
+		this.m.SpriteCorpseBack = "bust_legend_reinforced_rotten_mail_shirt_dead";
 		this.m.Value = 200;
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = 10;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 });

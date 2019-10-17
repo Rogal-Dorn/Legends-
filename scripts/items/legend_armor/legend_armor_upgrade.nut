@@ -14,6 +14,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		StaminaModifier = 0,
 		Type = -1,
 		ImpactSound = this.Const.Sound.ArmorLeatherImpact,
+		InventorySound = this.Const.Sound.ArmorLeatherImpact,
 		IsDestroyedOnRemove = false
 	},
 	function create()
@@ -154,7 +155,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function updateAppearance( _app )
 	{
-		
+
 		local frontSprite = "";
 		local backSprite = "";
 		if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
@@ -177,6 +178,10 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			case this.Const.Items.ArmorUpgrades.Plate:
 				_app.ArmorLayerPlate = backSprite;
 				_app.CorpseArmorLayerPlate =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
+				break;
+			case this.Const.Items.ArmorUpgrades.Tabbard:
+				_app.ArmorLayerTabbard= backSprite;
+				_app.CorpseArmorLayerTabbard =  this.m.SpriteCorpseBack != null ? this.m.SpriteCorpseBack : "";
 				break;
 			case this.Const.Items.ArmorUpgrades.Cloak:
 				_app.ArmorLayerCloak= backSprite;
@@ -234,7 +239,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.m.Condition = this.Math.max(0, this.m.Condition - _damage) * 1.0;
 		return 0.0
 	}
-	
+
 	function onArmorTooltip( _result )
 	{
 	}

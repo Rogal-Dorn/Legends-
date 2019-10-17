@@ -8,7 +8,7 @@ this.legend_armor_mail_shirt_simple <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Simple Mail Shirt";
 		this.m.Description = "A simple mail shirt. Offers decent and affordable protection against slashing and piercing attacks.";
 		this.m.ArmorDescription = "Includes a simple mail shirt that offers good protection against slashing and piercing attacks.";
-		this.m.Icon = "legend_armor/chain/icon_legend_mail_shirt_2.png";
+		this.m.Icon = "legend_armor/chain/legend_mail_shirt_2.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/chain/icon_legend_mail_shirt_2.png";
 		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_mail_shirt_2.png";
@@ -20,7 +20,6 @@ this.legend_armor_mail_shirt_simple <- this.inherit("scripts/items/legend_armor/
 		this.m.ConditionMax = 130;
 		this.m.StaminaModifier = 14;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 });

@@ -9,7 +9,7 @@ this.legend_armor_plate_full <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Name = "Full Coat of Plate Armor";
 		this.m.Description = "A full set of solid plated steel.";
 		this.m.ArmorDescription = "Includes a full set of solid plated steel.";
-		this.m.Icon = "legend_armor/plate/icon_legend_plate_full.png";
+		this.m.Icon = "legend_armor/plate/legend_plate_full.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_plate_full.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_plate_full.png";
@@ -20,8 +20,6 @@ this.legend_armor_plate_full <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Condition = 320;
 		this.m.ConditionMax = 320;
 		this.m.StaminaModifier = -42;
-        this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

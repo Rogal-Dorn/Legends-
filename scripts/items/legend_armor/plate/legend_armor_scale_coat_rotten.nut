@@ -9,7 +9,7 @@ this.legend_armor_scale_coat_rotten <- this.inherit("scripts/items/legend_armor/
 		this.m.Name = "Decayed Coat of Scales";
 		this.m.Description = "This coat of scales is worn and parts have come lose or are missing. It still offers very good protection if you don\'t mind the smell.";
 		this.m.ArmorDescription = "Includes worn and smelly heavy armor made of thick, overlapping metal scales.";
-		this.m.Icon = "legend_armor/plate/icon_legend_scale_coat_rotten.png";
+		this.m.Icon = "legend_armor/plate/legend_scale_coat_rotten.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_scale_coat_rotten.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_scale_coat_rotten.png";
@@ -21,7 +21,6 @@ this.legend_armor_scale_coat_rotten <- this.inherit("scripts/items/legend_armor/
 		this.m.ConditionMax = 240;
 		this.m.StaminaModifier = -36;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

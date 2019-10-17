@@ -9,7 +9,7 @@ this.legend_armor_leather_lamellar <- this.inherit("scripts/items/legend_armor/l
 		this.m.Name = "Leather Lamellar Armor";
 		this.m.Description = "Numerous overlapping leather plates provide decent protection for most of the upper body.";
 		this.m.ArmorDescription = "Includes armor of overlapping leather plates.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_lamellar.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_lamellar.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_lamellar.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_lamellar.png";
@@ -21,7 +21,6 @@ this.legend_armor_leather_lamellar <- this.inherit("scripts/items/legend_armor/l
 		this.m.ConditionMax = 95;
 		this.m.StaminaModifier = -10;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 });

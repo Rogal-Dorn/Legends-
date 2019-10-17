@@ -9,7 +9,7 @@ this.legend_armor_leather_brigandine <- this.inherit("scripts/items/legend_armor
 		this.m.Name = "Leather Brigandine Armor";
 		this.m.Description = "A thick leather brigandine studded with steel rivets for added protection.";
 		this.m.ArmorDescription = "Includes leather brigandine armor.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_brigandine.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_brigandine.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_brigandine.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_brigandine.png";
@@ -21,7 +21,6 @@ this.legend_armor_leather_brigandine <- this.inherit("scripts/items/legend_armor
 		this.m.ConditionMax = 210;
 		this.m.StaminaModifier = -26;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 });

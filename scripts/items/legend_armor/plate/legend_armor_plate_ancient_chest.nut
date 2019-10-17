@@ -9,7 +9,7 @@ this.legend_armor_plate_ancient_chest <- this.inherit("scripts/items/legend_armo
 		this.m.Name = "Ancient Breastplate";
 		this.m.Description = "A tarnished thick breastplate of ancient origin.";
 		this.m.ArmorDescription = "Includes a tarnished thick breastplate of ancient origin.";
-		this.m.Icon = "legend_armor/plate/icon_legend_plate_ancient_chest.png";
+		this.m.Icon = "legend_armor/plate/legend_plate_ancient_chest.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_plate_ancient_chest.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_plate_ancient_chest.png";
@@ -21,7 +21,6 @@ this.legend_armor_plate_ancient_chest <- this.inherit("scripts/items/legend_armo
 		this.m.ConditionMax = 135;
 		this.m.StaminaModifier = -22;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

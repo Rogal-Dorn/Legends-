@@ -9,7 +9,7 @@ this.legend_armor_plate_chest <- this.inherit("scripts/items/legend_armor/legend
 		this.m.Name = "Breastplate Armor";
 		this.m.Description = "A breastplate of solid plated steel.";
 		this.m.ArmorDescription = "Includes a breastplate of solid plated steel.";
-		this.m.Icon = "legend_armor/plate/icon_legend_plate_chest.png";
+		this.m.Icon = "legend_armor/plate/legend_plate_chest.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_plate_chest.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_plate_chest.png";
@@ -21,7 +21,6 @@ this.legend_armor_plate_chest <- this.inherit("scripts/items/legend_armor/legend
 		this.m.ConditionMax = 250;
 		this.m.StaminaModifier = -30;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

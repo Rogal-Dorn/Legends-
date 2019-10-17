@@ -8,11 +8,11 @@ this.legend_armor_leather_riveted_light <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Footman\'s Leather Armor";
 		this.m.Description = "A light leather armor reinforced with metal rivets.";
 		this.m.ArmorDescription = "Includes a leather armor coat rivetted with metal plates with metal plates.";
-		this.m.Icon = "legend_armor/chain/icon_legend_leather_riveted_light.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_riveted_light.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/chain/icon_legend_leather_riveted_light.png";
-		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_leather_riveted_light.png";
-		this.m.SpriteBack = "bust_legend_armor_leather_riveted_light";
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_riveted_light.png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_riveted_light.png";
+		this.m.SpriteBack = "bust_legend_leather_riveted_light";
 		this.m.SpriteDamagedBack = "bust_legend_leather_riveted_light_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_leather_riveted_light_dead";
 		this.m.Value = 1600;
@@ -20,7 +20,6 @@ this.legend_armor_leather_riveted_light <- this.inherit("scripts/items/legend_ar
 		this.m.ConditionMax = 190;
 		this.m.StaminaModifier = -24;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-        this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 });

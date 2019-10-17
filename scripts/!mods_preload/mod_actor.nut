@@ -346,6 +346,34 @@
 				this.getSprite("armor_layer_plate").Visible = false;
 			}
 		}
+
+		if (this.hasSprite("armor_layer_tabbard"))
+		{
+			if (_appearance.ArmorLayerTabbard.len() != 0)
+			{
+				local armor = this.getSprite("armor_layer_tabbard");
+				armor.setBrush(_appearance.ArmorLayerTabbard);
+				armor.Visible = true;
+			}
+			else
+			{
+				this.getSprite("armor_layer_tabbard").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("armor_layer_cloak"))
+		{
+			if (_appearance.ArmorLayerCloak.len() != 0)
+			{
+				local armor = this.getSprite("armor_layer_cloak");
+				armor.setBrush(_appearance.ArmorLayerCloak);
+				armor.Visible = true;
+			}
+			else
+			{
+				this.getSprite("armor_layer_cloak").Visible = false;
+			}
+		}
 	}
 
 
@@ -372,6 +400,11 @@
 	o.getRiderID <- function()
 	{
 		return this.m.RiderID
+	}
+
+	o.getRider <- function()
+	{
+		return null;
 	}
 
 	local szFn = o.onSerialize

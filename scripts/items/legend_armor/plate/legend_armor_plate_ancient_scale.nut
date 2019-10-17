@@ -9,7 +9,7 @@ this.legend_armor_plate_ancient_scale <- this.inherit("scripts/items/legend_armo
 		this.m.Name = "Ancient Plated Scale";
 		this.m.Description = "A heavy coat of scales, partly reinforced with a layer of plated metal on top. It\'s a massive armor of ancient origin that didn\'t age well.";
 		this.m.ArmorDescription = "Includes an ancient heavy coat of scales.";
-		this.m.Icon = "legend_armor/plate/icon_legend_plate_ancient_scale.png";
+		this.m.Icon = "legend_armor/plate/legend_plate_ancient_scale.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_plate_ancient_scale.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_plate_ancient_scale.png";
@@ -21,7 +21,6 @@ this.legend_armor_plate_ancient_scale <- this.inherit("scripts/items/legend_armo
 		this.m.ConditionMax = 210;
 		this.m.StaminaModifier = -30;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });
