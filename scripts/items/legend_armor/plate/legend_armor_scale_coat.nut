@@ -9,7 +9,7 @@ this.legend_armor_scale_coat <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Name = "Coat of Scales";
 		this.m.Description = "A heavy armor made of thick, overlapping metal scales covering most of the body.";
 		this.m.ArmorDescription = "Includes heavy armor made of thick, overlapping metal scales.";
-		this.m.Icon = "legend_armor/plate/icon_legend_scale_coat.png";
+		this.m.Icon = "legend_armor/plate/legend_scale_coat.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_scale_coat.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_scale_coat.png";
@@ -21,7 +21,6 @@ this.legend_armor_scale_coat <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.ConditionMax = 300;
 		this.m.StaminaModifier = -38;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

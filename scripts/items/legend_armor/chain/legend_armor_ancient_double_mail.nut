@@ -8,22 +8,18 @@ this.legend_armor_ancient_double_mail <- this.inherit("scripts/items/legend_armo
 		this.m.Name = "Ancient Double Layer Mail";
 		this.m.Description = "A heavy and rotten double-layered mail of ancient design. Not comfortable to wear but still useable.";
 		this.m.Description = "Includes A heavy and rotten double-layered mail of ancient design.";
-		this.m.Icon = "legend_armor/chain/icon_legend_ancient_double_mail.png";
+		this.m.Icon = "legend_armor/chain/legend_ancient_double_mail.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/chain/icon_legend_ancient_double_mail.png";
 		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_ancient_double_mail.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "bust_legend_ancient_double_mail";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "bust_legend_ancient_double_mail_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "bust_legend_ancient_double_mail_dead";
 		this.m.Value = 450;
 		this.m.Condition = 120;
 		this.m.ConditionMax = 120;
 		this.m.StaminaModifier = 16;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 });

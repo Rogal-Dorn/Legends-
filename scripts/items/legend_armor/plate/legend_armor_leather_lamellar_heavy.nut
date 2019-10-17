@@ -9,7 +9,7 @@ this.legend_armor_leather_lamellar_heavy <- this.inherit("scripts/items/legend_a
 		this.m.Name = "Heavy Lamellar Armor";
 		this.m.Description = "A heavy lamellar armor that covers most parts of the body with thick, overlapping metal plates for maximum protection.";
 		this.m.ArmorDescription = "Includes heavy lamellar armor that covers most parts of the body with thick, overlapping metal plates.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_lamellar_heavy.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_lamellar_heavy.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_lamellar_heavy.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_lamellar_heavy.png";
@@ -21,7 +21,6 @@ this.legend_armor_leather_lamellar_heavy <- this.inherit("scripts/items/legend_a
 		this.m.ConditionMax = 285;
 		this.m.StaminaModifier = -40;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 });

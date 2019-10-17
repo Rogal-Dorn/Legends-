@@ -9,7 +9,7 @@ this.legend_armor_leather_padded <- this.inherit("scripts/items/legend_armor/leg
 		this.m.Name = "Padded Leather Armor";
 		this.m.Description = "Padded leather reinforced with fittings for added protection.";
 		this.m.ArmorDescription = "Includes padded leather armor.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_padded.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_padded.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_padded.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_padded.png";
@@ -21,8 +21,6 @@ this.legend_armor_leather_padded <- this.inherit("scripts/items/legend_armor/leg
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -8;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
-
 	}
 
 });

@@ -9,7 +9,7 @@ this.legend_armor_plate_ancient_mail <- this.inherit("scripts/items/legend_armor
 		this.m.Name = "Ancient Plated Mail";
 		this.m.Description = "An ancient mail armor with plated arm guards. Very heavy and severely limiting the mobility of the wearer.";
 		this.m.ArmorDescription = "Includes an ancient mail armor with plated arm guards.";
-		this.m.Icon = "legend_armor/plate/icon_legend_plate_ancient_mail.png";
+		this.m.Icon = "legend_armor/plate/legend_plate_ancient_mail.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_plate_ancient_mail.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_plate_ancient_mail.png";
@@ -21,7 +21,6 @@ this.legend_armor_plate_ancient_mail <- this.inherit("scripts/items/legend_armor
 		this.m.ConditionMax = 180;
 		this.m.StaminaModifier = -22;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

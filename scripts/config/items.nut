@@ -172,7 +172,9 @@ gt.Const.Items.NamedUndeadWeapons <- [
 gt.Const.Items.ArmorUpgrades <- {
 	Chain = 0,
 	Plate = 1,
-	Cloak = 2,
-	Attachment = 3,
-	COUNT = 4
+	Tabbard = 2,
+	Cloak = 3,
+	Attachment = 4,
+	Rune = 5
+	COUNT = 6
 }

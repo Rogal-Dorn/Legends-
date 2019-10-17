@@ -9,7 +9,7 @@ this.legend_armor_leather_lamellar_reinforced <- this.inherit("scripts/items/leg
 		this.m.Name = "Reinforced Leather Lamellar Armor";
 		this.m.Description = "Numerous overlapping metal reinforced leather plates that provides excellent protection for most of the upper body but is very heavy.";
 		this.m.ArmorDescription = "Includes armor of overlapping reinforced metal leather plates.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_lamellar_reinforced.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_lamellar_reinforced.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_lamellar_reinforced.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_lamellar_reinforced.png";
@@ -21,7 +21,6 @@ this.legend_armor_leather_lamellar_reinforced <- this.inherit("scripts/items/leg
 		this.m.ConditionMax = 185;
 		this.m.StaminaModifier = -32;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 });

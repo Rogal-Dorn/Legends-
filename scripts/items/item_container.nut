@@ -21,6 +21,7 @@ this.item_container <- {
 			ArmorColor = this.createColor("#ffffff"),
 			ArmorLayerChain = "",
 			ArmorLayerPlate= "",
+			ArmorLayerTabbard= "",
 			ArmorLayerCloak= "",
 			ArmorUpgradeFront = "",
 			ArmorUpgradeBack = "",
@@ -29,6 +30,7 @@ this.item_container <- {
 			CorpseArmor = "",
 			CorpseArmorLayerChain = "",
 			CorpseArmorLayerPlate= "",
+			CorpseArmorLayerTabbard= ""
 			CorpseArmorLayerCloak= "",
 			CorpseArmorUpgradeFront = "",
 			CorpseArmorUpgradeBack = "",

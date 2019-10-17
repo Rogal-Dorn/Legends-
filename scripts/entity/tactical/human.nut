@@ -529,7 +529,9 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("armor");
 		this.addSprite("armor_layer_chain");
 		this.addSprite("armor_layer_plate");
+		this.addSprite("armor_layer_tabbard");
 		this.addSprite("surcoat");
+		this.addSprite("armor_layer_cloak");
 		this.addSprite("armor_upgrade_back");
 		local bandage2 = this.addSprite("bandage_2");
 		bandage2.Visible = false;

@@ -8,7 +8,7 @@ this.legend_armor_rusty_mail_shirt <- this.inherit("scripts/items/legend_armor/l
 		this.m.Name = "Patched Mail Shirt";
 		this.m.Description = "This light mail shirt has seen better times but still grants decent protection.";
 		this.m.ArmorDescription = "Includes a rusty and patched mail shirt that offers decent protection.";
-		this.m.Icon = "legend_armor/chain/icon_legend_rusty_mail_shirt.png";
+		this.m.Icon = "legend_armor/chain/legend_rusty_mail_shirt.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/chain/icon_legend_rusty_mail_shirt.png";
 		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_rusty_mail_shirt.png";
@@ -20,7 +20,6 @@ this.legend_armor_rusty_mail_shirt <- this.inherit("scripts/items/legend_armor/l
 		this.m.ConditionMax = 90;
 		this.m.StaminaModifier = 10;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 });

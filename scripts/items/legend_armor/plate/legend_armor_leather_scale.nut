@@ -9,7 +9,7 @@ this.legend_armor_leather_scale <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "Leather Scale Armor";
 		this.m.Description = "A thick leather scale armor for added protection.";
 		this.m.ArmorDescription = "Includes scaled leather armor.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_scale.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_scale.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_scale.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_scale.png";
@@ -21,7 +21,6 @@ this.legend_armor_leather_scale <- this.inherit("scripts/items/legend_armor/lege
 		this.m.ConditionMax = 140;
 		this.m.StaminaModifier = -16;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 });

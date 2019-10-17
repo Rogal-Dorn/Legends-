@@ -9,7 +9,7 @@ this.legend_armor_plate_chest_rotten <- this.inherit("scripts/items/legend_armor
 		this.m.Name = "Decayed Breastplate Armor";
 		this.m.Description = "A breastplate of solid plated steel that is worn and decayed.";
 		this.m.ArmorDescription = "Includes a breastplate of decaying plated steel.";
-		this.m.Icon = "legend_armor/plate/icon_legend_plate_chest_rotten.png";
+		this.m.Icon = "legend_armor/plate/legend_plate_chest_rotten.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_plate_chest_rotten.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_plate_chest_rotten.png";
@@ -21,7 +21,6 @@ this.legend_armor_plate_chest_rotten <- this.inherit("scripts/items/legend_armor
 		this.m.ConditionMax = 225;
 		this.m.StaminaModifier = -30;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

@@ -9,7 +9,7 @@ this.legend_armor_scale_shirt <- this.inherit("scripts/items/legend_armor/legend
 		this.m.Name = "Light Scale Armor";
 		this.m.Description = "A sturdy yet flexible armor composed of small, overlapping metal scales.";
 		this.m.ArmorDescription = "Includes body vest with small overlapping metal scales.";
-		this.m.Icon = "legend_armor/plate/icon_legend_scale_shirt.png";
+		this.m.Icon = "legend_armor/plate/legend_scale_shirt.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_scale_shirt.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_scale_shirt.png";
@@ -21,7 +21,6 @@ this.legend_armor_scale_shirt <- this.inherit("scripts/items/legend_armor/legend
 		this.m.ConditionMax = 170;
 		this.m.StaminaModifier = -21;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

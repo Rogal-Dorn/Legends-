@@ -29,7 +29,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			}
 			value += u.getCondition();
 		}
-		
+
 		return value;
 	}
 
@@ -177,7 +177,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			local item = this.m.Upgrades[_upgrade.getType()];
 			item.onRemoved();
-			if (!item.isDestroyedOnRemove()) 
+			if (!item.isDestroyedOnRemove())
 			{
 				this.World.Assets.getStash().add(item);
 			}
@@ -445,12 +445,14 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			app.Armor = "";
 			app.ArmorLayerChain = "",
 			app.ArmorLayerPlate= "",
+			app.ArmorLayerTabbard= "",
 			app.ArmorLayerCloak= "",
 			app.ArmorUpgradeFront = "";
 			app.ArmorUpgradeBack = "";
 			app.CorpseArmor = "";
 			app.CorpseArmorLayerChain = "",
 			app.CorpseArmorLayerPlate= "",
+			app.CorpseArmorLayerTabbard= "",
 			app.CorpseArmorLayerCloak= "",
 			app.CorpseArmorUpgradeFront = "";
 			app.CorpseArmorUpgradeBack = "";

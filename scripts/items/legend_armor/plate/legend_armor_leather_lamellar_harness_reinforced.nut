@@ -9,7 +9,7 @@ this.legend_armor_leather_lamellar_harness_reinforced <- this.inherit("scripts/i
 		this.m.Name = "Reinforced Lamellar Harness";
 		this.m.Description = "A body armor made of thick overlapping metal plates that cover most of the upper body.";
 		this.m.ArmorDescription = "Includes body armor made of thick overlapping metal plates that cover most of the upper body.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_lamellar_harness_reinforced.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_lamellar_harness_reinforced.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_lamellar_harness_reinforced.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_lamellar_harness_reinforced.png";
@@ -21,7 +21,6 @@ this.legend_armor_leather_lamellar_harness_reinforced <- this.inherit("scripts/i
 		this.m.ConditionMax = 200;
 		this.m.StaminaModifier = -27;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 });

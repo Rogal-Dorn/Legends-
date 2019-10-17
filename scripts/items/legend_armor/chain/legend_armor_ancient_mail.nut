@@ -8,7 +8,7 @@ this.legend_armor_ancient_mail <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "Ancient Mail";
 		this.m.Description = "An old and crusted heavy mail of ancient design. Some parts are missing, but it still offers decent protection.";
 		this.m.Description = "Includes an old and crusted heavy mail of ancient design.";
-		this.m.Icon = "legend_armor/chain/icon_legend_ancient_mail.png";
+		this.m.Icon = "legend_armor/chain/legend_ancient_mail.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/chain/icon_legend_ancient_mail.png";
 		this.m.OverlayIconLarge = "legend_armor/chain/inventory_legend_ancient_mail.png";
@@ -20,7 +20,6 @@ this.legend_armor_ancient_mail <- this.inherit("scripts/items/legend_armor/legen
 		this.m.ConditionMax = 100;
 		this.m.StaminaModifier = 14;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
 });

@@ -9,7 +9,7 @@ this.legend_armor_plate_cuirass <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "Plate Cuirass Armor";
 		this.m.Description = "A body vest of solid plated steel.";
 		this.m.ArmorDescription = "Includes a body vest of solid plated steel.";
-		this.m.Icon = "legend_armor/plate/icon_legend_plate_cuirass.png";
+		this.m.Icon = "legend_armor/plate/legend_plate_cuirass.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_plate_cuirass.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_plate_cuirass.png";
@@ -21,7 +21,6 @@ this.legend_armor_plate_cuirass <- this.inherit("scripts/items/legend_armor/lege
 		this.m.ConditionMax = 240;
 		this.m.StaminaModifier = -28;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 
 });

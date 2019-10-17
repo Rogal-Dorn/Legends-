@@ -1,5 +1,10 @@
 <brush name="gfx/legend_armor.png" version="17">
 
+<sprite id="bust_legend_gambeson_00" offsetY="35" ic="FF496576" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_00.png" left="-42" right="46" top="-50" bottom="22" />
+<sprite id="bust_legend_gambeson_00_damaged" offsetY="35" ic="FF445E6F" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_00_damaged.png" left="-42" right="46" top="-50" bottom="22" />
+<sprite id="bust_legend_gambeson_00_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_00_dead.png" />
+<sprite id="bust_legend_gambeson_00_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF42484D" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_00_dead_arrows.png" left="-21" right="3" />
+<sprite id="bust_legend_gambeson_00_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF131A2A" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_00_dead_javelin.png" left="-32" right="14" top="-24" bottom="52" />
 <sprite id="bust_legend_gambeson_01" offsetY="35" ic="FF496576" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_01.png" left="-42" right="46" top="-50" bottom="22" />
 <sprite id="bust_legend_gambeson_01_damaged" offsetY="35" ic="FF445E6F" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_01_damaged.png" left="-42" right="46" top="-50" bottom="22" />
 <sprite id="bust_legend_gambeson_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_01_dead.png" />
@@ -195,6 +200,8 @@
 <sprite id="bust_legend_gambeson_39_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_39_dead.png" />
 <sprite id="bust_legend_gambeson_39_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF42484D" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_39_dead_arrows.png" left="-21" right="3" />
 <sprite id="bust_legend_gambeson_39_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF131A2A" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_39_dead_javelin.png" left="-32" right="14" top="-24" bottom="52" />
+
+
 <sprite id="bust_legend_gambeson_40" offsetY="35" ic="FF496576" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_40.png" left="-42" right="46" top="-50" bottom="22" />
 <sprite id="bust_legend_gambeson_40_damaged" offsetY="35" ic="FF445E6F" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_40_damaged.png" left="-42" right="46" top="-50" bottom="22" />
 <sprite id="bust_legend_gambeson_40_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_40_dead.png" />
@@ -320,16 +327,13 @@
 <sprite id="bust_legend_gambeson_64_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_64_dead.png" />
 <sprite id="bust_legend_gambeson_64_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF42484D" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_64_dead_arrows.png" left="-21" right="3" />
 <sprite id="bust_legend_gambeson_64_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF131A2A" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_64_dead_javelin.png" left="-32" right="14" top="-24" bottom="52" />
-<sprite id="bust_legend_gambeson_65" offsetY="35" ic="FF496576" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_65.png" left="-42" right="46" top="-50" bottom="22" />
-<sprite id="bust_legend_gambeson_65_damaged" offsetY="35" ic="FF445E6F" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_65_damaged.png" left="-42" right="46" top="-50" bottom="22" />
-<sprite id="bust_legend_gambeson_65_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_65_dead.png" />
-<sprite id="bust_legend_gambeson_65_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF42484D" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_65_dead_arrows.png" left="-21" right="3" />
-<sprite id="bust_legend_gambeson_65_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF131A2A" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_65_dead_javelin.png" left="-32" right="14" top="-24" bottom="52" />
-<sprite id="bust_legend_gambeson_66" offsetY="35" ic="FF496576" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_66.png" left="-42" right="46" top="-50" bottom="22" />
-<sprite id="bust_legend_gambeson_66_damaged" offsetY="35" ic="FF445E6F" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_66_damaged.png" left="-42" right="46" top="-50" bottom="22" />
-<sprite id="bust_legend_gambeson_66_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_66_dead.png" />
-<sprite id="bust_legend_gambeson_66_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF42484D" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_66_dead_arrows.png" left="-21" right="3" />
-<sprite id="bust_legend_gambeson_66_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF131A2A" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_66_dead_javelin.png" left="-32" right="14" top="-24" bottom="52" />
+
+<sprite id="bust_legend_gambeson_wolf" offsetY="35" ic="FF496576" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_wolf.png" left="-42" right="46" top="-50" bottom="22" />
+<sprite id="bust_legend_gambeson_wolf_damaged" offsetY="35" ic="FF445E6F" width="104" height="142" img="entity/legend_armor/cloth/bust_legend_gambeson_wolf_damaged.png" left="-42" right="46" top="-50" bottom="22" />
+<sprite id="bust_legend_gambeson_wolf_dead" offsetX="6" offsetY="10" f="64FE" ic="FF344552" width="131" height="125" img="entity/legend_armor/cloth/bust_legend_gambeson_wolf_dead.png" />
+<sprite id="bust_legend_gambeson_wolf_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF42484D" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_wolf_dead_arrows.png" left="-21" right="3" />
+<sprite id="bust_legend_gambeson_wolf_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF131A2A" width="131" height="124" img="entity/legend_armor/cloth/bust_legend_gambeson_wolf_dead_javelin.png" left="-32" right="14" top="-24" bottom="52" />
+
 
 <sprite id="bust_legend_tunic_01" offsetY="35" ic="FF273844" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_tunic_01.png" left="-44" right="48" top="-51" bottom="11" />
 <sprite id="bust_legend_tunic_01_damaged" offsetY="35" ic="FF293946" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_tunic_01_damaged.png" top="-51" bottom="11" />
@@ -361,6 +365,7 @@
 <sprite id="bust_legend_tunic_06_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24323E" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_tunic_06_dead.png" left="-56" right="58" top="-50" bottom="48" />
 <sprite id="bust_legend_tunic_06_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF3C424B" width="131" height="114" img="entity\legend_armor\cloth\bust_legend_tunic_06_dead_arrows.png" left="-7" right="19" top="-9" bottom="37" />
 <sprite id="bust_legend_tunic_06_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF131A2A" width="131" height="114" img="entity\legend_armor\cloth\bust_legend_tunic_06_dead_javelin.png" left="-15" right="31" top="-28" bottom="48" />
+
 
 <sprite id="bust_legend_sackcloth_02" offsetY="35" ic="FF364656" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_sackcloth_02.png" left="-39" right="43" top="-61" bottom="13" />
 <sprite id="bust_legend_sackcloth_02_damaged" offsetY="35" ic="FF354453" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_sackcloth_02_damage.png" left="-39" right="43" top="-61" bottom="13" />
@@ -479,121 +484,215 @@
 <sprite id="bust_legend_ancient_double_mail_damaged" offsetY="35" ic="FF15202C" width="104" height="142" img="entity\legend_armor\chain\bust_legend_ancient_double_mail_damaged.png" top="-51" bottom="11" />
 <sprite id="bust_legend_ancient_double_mail_dead" offsetX="6" offsetY="10" f="64FE" ic="FF15202B" width="131" height="125" img="entity\legend_armor\chain\bust_legend_ancient_double_mail_dead.png" left="-53" right="55" top="-51" bottom="45" />
 
-  <sprite id="bust_legend_leather_jacket_simple" offsetY="35" ic="FF2B3340" width="104" height="142" img="entity\bodies\bust_legend_leather_jacket_simple.png" left="-52" right="48" top="-51" bottom="17" />
-  <sprite id="bust_legend_leather_jacket_simple_damaged" offsetY="35" ic="FF28303D" width="104" height="142" img="entity\bodies\bust_legend_leather_jacket_simple_damaged.png" left="-51" right="47" top="-51" bottom="17" />
-  <sprite id="bust_legend_leather_jacket_simple_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242831" width="131" height="125" img="entity\bodies\bust_legend_leather_jacket_simple_dead.png" top="-53" bottom="55" />
+  <sprite id="bust_legend_leather_jacket_simple" offsetY="35" ic="FF2B3340" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_jacket_simple.png" left="-52" right="48" top="-51" bottom="17" />
+  <sprite id="bust_legend_leather_jacket_simple_damaged" offsetY="35" ic="FF28303D" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_jacket_simple_damaged.png" left="-51" right="47" top="-51" bottom="17" />
+  <sprite id="bust_legend_leather_jacket_simple_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242831" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_jacket_simple_dead.png" top="-53" bottom="55" />
 
-  <sprite id="bust_legend_leather_jacket" offsetY="35" ic="FF1C2938" width="104" height="142" img="entity\bodies\bust_legend_leather_jacket.png" left="-45" right="41" top="-51" bottom="17" />
-  <sprite id="bust_legend_leather_jacket_damaged" offsetY="35" ic="FF1C2938" width="104" height="142" img="entity\bodies\bust_legend_leather_jacket_damaged.png" left="-45" right="41" top="-51" bottom="17" />
-  <sprite id="bust_legend_leather_jacket_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1C2632" width="131" height="125" img="entity\bodies\bust_legend_leather_jacket_dead.png" left="-57" right="59" top="-53" bottom="55" />
+  <sprite id="bust_legend_leather_jacket" offsetY="35" ic="FF1C2938" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_jacket.png" left="-45" right="41" top="-51" bottom="17" />
+  <sprite id="bust_legend_leather_jacket_damaged" offsetY="35" ic="FF1C2938" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_jacket_damaged.png" left="-45" right="41" top="-51" bottom="17" />
+  <sprite id="bust_legend_leather_jacket_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1C2632" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_jacket_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
-  <sprite id="bust_legend_leather_padded" offsetY="35" ic="FF21283F" width="104" height="142" img="entity\bodies\bust_legend_leather_padded.png" left="-51" right="49" top="-52" bottom="14" />
-  <sprite id="bust_legend_leather_padded_damaged" offsetY="35" ic="FF1F263C" width="104" height="142" img="entity\bodies\bust_legend_leather_padded_damaged.png" left="-50" right="48" top="-52" bottom="14" />
-  <sprite id="bust_legend_leather_padded_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B2032" width="131" height="125" img="entity\bodies\bust_legend_leather_padded_dead.png" left="-57" right="59" />
+  <sprite id="bust_legend_leather_padded" offsetY="35" ic="FF21283F" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_padded.png" left="-51" right="49" top="-52" bottom="14" />
+  <sprite id="bust_legend_leather_padded_damaged" offsetY="35" ic="FF1F263C" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_padded_damaged.png" left="-50" right="48" top="-52" bottom="14" />
+  <sprite id="bust_legend_leather_padded_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B2032" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_padded_dead.png" left="-57" right="59" />
 
-  <sprite id="bust_legend_leather_scale" offsetY="35" ic="FF1A2738" width="104" height="142" img="entity\bodies\bust_legend_leather_scale.png" left="-42" right="46" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_scale_damaged" offsetY="35" ic="FF1B2635" width="104" height="142" img="entity\bodies\bust_legend_leather_scale_damaged.png" left="-42" right="46" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_scale_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242C37" width="191" height="185" img="entity\bodies\bust_legend_leather_scale_dead.png" left="-59" right="57" top="-53" bottom="49" />
+  <sprite id="bust_legend_leather_scale" offsetY="35" ic="FF1A2738" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_scale.png" left="-42" right="46" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_scale_damaged" offsetY="35" ic="FF1B2635" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_scale_damaged.png" left="-42" right="46" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_scale_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242C37" width="191" height="185" img="entity\legend_armor\plate\bust_legend_leather_scale_dead.png" left="-59" right="57" top="-53" bottom="49" />
 
-  <sprite id="bust_legend_leather_noble" offsetY="35" ic="FF242F3F" width="104" height="142" img="entity\bodies\bust_legend_leather_noble.png" left="-42" right="44" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_noble_damaged" offsetY="35" ic="FF202C3C" width="104" height="142" img="entity\bodies\bust_legend_leather_noble_damaged.png" left="-46" right="44" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_noble_dead" offsetX="6" offsetY="10" f="64FE" ic="FF282F3C" width="191" height="185" img="entity\bodies\bust_legend_leather_noble_dead.png" top="-52" bottom="56" />
+  <sprite id="bust_legend_leather_noble" offsetY="35" ic="FF242F3F" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_noble.png" left="-42" right="44" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_noble_damaged" offsetY="35" ic="FF202C3C" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_noble_damaged.png" left="-46" right="44" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_noble_dead" offsetX="6" offsetY="10" f="64FE" ic="FF282F3C" width="191" height="185" img="entity\legend_armor\plate\bust_legend_leather_noble_dead.png" top="-52" bottom="56" />
 
   <sprite id="bust_legend_leather_riveted" offsetY="35" ic="FF2A3045" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_riveted.png" top="-50" bottom="12" />
   <sprite id="bust_legend_leather_riveted_damaged" offsetY="35" ic="FF2A2F3F" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_riveted_damaged.png" top="-50" bottom="12" />
   <sprite id="bust_legend_leather_riveted_dead" ic="FF212636" width="191" height="185" img="entity\legend_armor\plate\bust_legend_leather_riveted_dead.png" left="-59" right="57" top="-51" bottom="57" />
 `
-  <sprite id="bust_legend_leather_riveted_light" offsetY="35" ic="FF293242" width="104" height="142" img="entity\bodies\bust_legend_leather_riveted_light.png" top="-65" bottom="13" />
-  <sprite id="bust_legend_leather_riveted_light_damaged" offsetY="35" ic="FF2A313D" width="104" height="142" img="entity\bodies\bust_legend_leather_riveted_light_damaged.png" top="-65" bottom="13" />
-  <sprite id="bust_legend_leather_riveted_light_dead" offsetX="6" offsetY="10" f="64FE" ic="FF202733" width="191" height="185" img="entity\bodies\bust_legend_leather_riveted_light_dead.png" left="-59" right="57" top="-53" bottom="49" />
+  <sprite id="bust_legend_leather_riveted_light" offsetY="35" ic="FF293242" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_riveted_light.png" top="-65" bottom="13" />
+  <sprite id="bust_legend_leather_riveted_light_damaged" offsetY="35" ic="FF2A313D" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_riveted_light_damaged.png" top="-65" bottom="13" />
+  <sprite id="bust_legend_leather_riveted_light_dead" offsetX="6" offsetY="10" f="64FE" ic="FF202733" width="191" height="185" img="entity\legend_armor\plate\bust_legend_leather_riveted_light_dead.png" left="-59" right="57" top="-53" bottom="49" />
 
-  <sprite id="bust_legend_leather_lamellar" offsetY="35" ic="FF1F2D46" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar.png" left="-48" right="46" top="-52" bottom="14" />
-  <sprite id="bust_legend_leather_lamellar_damaged" offsetY="35" ic="FF1C2A41" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_damaged.png" left="-52" right="48" top="-52" bottom="22" />
-  <sprite id="bust_legend_leather_lamellar_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B2638" width="131" height="125" img="entity\bodies\bust_legend_leather_lamellar_dead.png" left="-57" right="59" top="-53" bottom="55" />
+  <sprite id="bust_legend_leather_lamellar" offsetY="35" ic="FF1F2D46" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar.png" left="-48" right="46" top="-52" bottom="14" />
+  <sprite id="bust_legend_leather_lamellar_damaged" offsetY="35" ic="FF1C2A41" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_damaged.png" left="-52" right="48" top="-52" bottom="22" />
+  <sprite id="bust_legend_leather_lamellar_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B2638" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_lamellar_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
-  <sprite id="bust_legend_leather_lamellar_reinforced" offsetY="35" ic="FF323841" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_reinforced.png" left="-46" right="48" top="-52" bottom="8" />
-  <sprite id="bust_legend_leather_lamellar_reinforced_damaged" offsetY="35" ic="FF2E343D" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_reinforced_damaged.png" top="-52" bottom="8" />
-  <sprite id="bust_legend_leather_lamellar_reinforced_dead" offsetX="6" offsetY="10" f="64FE" ic="FF282D35" width="131" height="125" img="entity\bodies\bust_legend_leather_lamellar_reinforced_dead.png" left="-57" right="59" />
+  <sprite id="bust_legend_leather_lamellar_reinforced" offsetY="35" ic="FF323841" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_reinforced.png" left="-46" right="48" top="-52" bottom="8" />
+  <sprite id="bust_legend_leather_lamellar_reinforced_damaged" offsetY="35" ic="FF2E343D" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_reinforced_damaged.png" top="-52" bottom="8" />
+  <sprite id="bust_legend_leather_lamellar_reinforced_dead" offsetX="6" offsetY="10" f="64FE" ic="FF282D35" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_lamellar_reinforced_dead.png" left="-57" right="59" />
 
-  <sprite id="bust_legend_leather_lamellar_heavy" offsetY="35" ic="FF323A46" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_heavy.png" left="-52" right="46" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_lamellar_heavy_damaged" offsetY="35" ic="FF2D3541" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_heavy_damaged.png" left="-52" right="46" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_lamellar_heavy_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2D343E" width="191" height="185" img="entity\bodies\bust_legend_leather_lamellar_heavy_dead.png" top="-52" bottom="54" />
+  <sprite id="bust_legend_leather_lamellar_heavy" offsetY="35" ic="FF323A46" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_heavy.png" left="-52" right="46" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_lamellar_heavy_damaged" offsetY="35" ic="FF2D3541" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_heavy_damaged.png" left="-52" right="46" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_lamellar_heavy_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2D343E" width="191" height="185" img="entity\legend_armor\plate\bust_legend_leather_lamellar_heavy_dead.png" top="-52" bottom="54" />
 
-  <sprite id="bust_legend_leather_lamellar_harness" offsetY="35" ic="FF2F3642" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_harness.png" left="-52" right="50" top="-51" bottom="17" />
-  <sprite id="bust_legend_leather_lamellar_harness_damaged" offsetY="35" ic="FF2A313E" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_harness_damaged.png" left="-52" right="50" top="-51" bottom="17" />
-  <sprite id="bust_legend_leather_lamellar_harness_dead" offsetX="6" offsetY="10" f="64FE" ic="FF262D38" width="191" height="185" img="entity\bodies\bust_legend_leather_lamellar_harness_dead.png" top="-52" bottom="54" />
+  <sprite id="bust_legend_leather_lamellar_harness_heavy" offsetY="35" ic="FF2F3642" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_harness_heavy.png" left="-52" right="50" top="-51" bottom="17" />
+  <sprite id="bust_legend_leather_lamellar_harness_heavy_damaged" offsetY="35" ic="FF2A313E" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_harness_heavy_damaged.png" left="-52" right="50" top="-51" bottom="17" />
+  <sprite id="bust_legend_leather_lamellar_harness_heavy_dead" offsetX="6" offsetY="10" f="64FE" ic="FF262D38" width="191" height="185" img="entity\legend_armor\plate\bust_legend_leather_lamellar_harness_heavy_dead.png" top="-52" bottom="54" />
 
-  <sprite id="bust_legend_leather_lamellar_harness_reinforced" offsetY="35" ic="FF2F3741" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_harness_reinforced.png" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_lamellar_harness_reinforced_damaged" offsetY="35" ic="FF2B323D" width="104" height="142" img="entity\bodies\bust_legend_leather_lamellar_harness_reinforced_damaged.png" left="-45" right="43" top="-51" bottom="11" />
-  <sprite id="bust_legend_leather_lamellar_harness_reinforced_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242A31" width="131" height="125" img="entity\bodies\bust_legend_leather_lamellar_harness_reinforced_dead.png" left="-57" right="59" />
+  <sprite id="bust_legend_leather_lamellar_harness_reinforced" offsetY="35" ic="FF2F3741" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_harness_reinforced.png" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_lamellar_harness_reinforced_damaged" offsetY="35" ic="FF2B323D" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_lamellar_harness_reinforced_damaged.png" left="-45" right="43" top="-51" bottom="11" />
+  <sprite id="bust_legend_leather_lamellar_harness_reinforced_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242A31" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_lamellar_harness_reinforced_dead.png" left="-57" right="59" />
 
-  <sprite id="bust_legend_leather_brigandine" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\bodies\bust_legend_leather_brigandine.png" left="-44" right="50" top="-53" bottom="13" />
-  <sprite id="bust_legend_leather_brigandine_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\bodies\bust_legend_leather_brigandine_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-  <sprite id="bust_legend_leather_brigandine_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\bodies\bust_legend_leather_brigandine_dead.png" left="-57" right="59" top="-53" bottom="55" />
+  <sprite id="bust_legend_leather_brigandine" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_brigandine.png" left="-44" right="50" top="-53" bottom="13" />
+  <sprite id="bust_legend_leather_brigandine_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_brigandine_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+  <sprite id="bust_legend_leather_brigandine_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_brigandine_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
-  <sprite id="bust_legend_leather_brigandine_hardened" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\bodies\bust_legend_leather_brigandine_hardened.png" left="-44" right="50" top="-53" bottom="13" />
-  <sprite id="bust_legend_leather_brigandine_hardened_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\bodies\bust_legend_leather_brigandine_hardened_damaged.png" left="-47" right="45" top="-64" bottom="14" />
-  <sprite id="bust_legend_leather_brigandine_hardened_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\bodies\bust_legend_leather_brigandine_hardened_dead.png" left="-57" right="59" top="-53" bottom="55" />
+  <sprite id="bust_legend_leather_brigandine_hardened" offsetY="35" ic="FF242D3A" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_brigandine_hardened.png" left="-44" right="50" top="-53" bottom="13" />
+  <sprite id="bust_legend_leather_brigandine_hardened_damaged" offsetY="35" ic="FF242C39" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_brigandine_hardened_damaged.png" left="-47" right="45" top="-64" bottom="14" />
+  <sprite id="bust_legend_leather_brigandine_hardened_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_brigandine_hardened_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
-  <sprite id="bust_legend_leather_brigandine_hardened_full" offsetY="35" ic="FF1F2D46" width="104" height="142" img="entity\bodies\bust_legend_leather_brigandine_hardened_full.png" left="-48" right="46" top="-52" bottom="14" />
-  <sprite id="bust_legend_leather_brigandine_hardened_full_damaged" offsetY="35" ic="FF1C2A41" width="104" height="142" img="entity\bodies\bust_legend_leather_brigandine_hardened_full_damaged.png" left="-52" right="48" top="-52" bottom="22" />
-  <sprite id="bust_legend_leather_brigandine_hardened_full_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B2638" width="131" height="125" img="entity\bodies\bust_legend_leather_brigandine_hardened_full_dead.png" left="-57" right="59" top="-53" bottom="55" />
+  <sprite id="bust_legend_leather_brigandine_hardened_full" offsetY="35" ic="FF1F2D46" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_brigandine_hardened_full.png" left="-48" right="46" top="-52" bottom="14" />
+  <sprite id="bust_legend_leather_brigandine_hardened_full_damaged" offsetY="35" ic="FF1C2A41" width="104" height="142" img="entity\legend_armor\plate\bust_legend_leather_brigandine_hardened_full_damaged.png" left="-52" right="48" top="-52" bottom="22" />
+  <sprite id="bust_legend_leather_brigandine_hardened_full_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B2638" width="131" height="125" img="entity\legend_armor\plate\bust_legend_leather_brigandine_hardened_full_dead.png" left="-57" right="59" top="-53" bottom="55" />
 
 
-  <sprite id="bust_legend_scale" offsetY="35" ic="FF3A3D42" width="104" height="142" img="entity\bodies\bust_legend_scale.png" top="-52" bottom="8" />
-  <sprite id="bust_legend_scale_damaged" offsetY="35" ic="FF34373E" width="104" height="142" img="entity\bodies\bust_legend_scale_damaged.png" left="-47" right="49" top="-57" bottom="7" />
-  <sprite id="bust_legend_scale_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F36" width="131" height="125" img="entity\bodies\bust_legend_scale_dead.png" top="-52" bottom="54" />
+  <sprite id="bust_legend_scale" offsetY="35" ic="FF3A3D42" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale.png" top="-52" bottom="8" />
+  <sprite id="bust_legend_scale_damaged" offsetY="35" ic="FF34373E" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale_damaged.png" left="-47" right="49" top="-57" bottom="7" />
+  <sprite id="bust_legend_scale_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F36" width="131" height="125" img="entity\legend_armor\plate\bust_legend_scale_dead.png" top="-52" bottom="54" />
 
-  <sprite id="bust_legend_scale_shirt" offsetY="35" ic="FF3A4148" width="104" height="142" img="entity\bodies\bust_legend_scale_shirt.png" top="-51" bottom="11" />
-  <sprite id="bust_legend_scale_shirt_damaged" offsetY="35" ic="FF323A41" width="104" height="142" img="entity\bodies\bust_legend_scale_shirt_damaged.png" left="-45" right="43" top="-51" bottom="11" />
-  <sprite id="bust_legend_scale_shirt_dead" offsetX="6" offsetY="10" f="64FE" ic="FF31383F" width="191" height="185" img="entity\bodies\bust_legend_scale_shirt_dead.png" left="-59" right="57" top="-53" bottom="49" />
+  <sprite id="bust_legend_scale_shirt" offsetY="35" ic="FF3A4148" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale_shirt.png" top="-51" bottom="11" />
+  <sprite id="bust_legend_scale_shirt_damaged" offsetY="35" ic="FF323A41" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale_shirt_damaged.png" left="-45" right="43" top="-51" bottom="11" />
+  <sprite id="bust_legend_scale_shirt_dead" offsetX="6" offsetY="10" f="64FE" ic="FF31383F" width="191" height="185" img="entity\legend_armor\plate\bust_legend_scale_shirt_dead.png" left="-59" right="57" top="-53" bottom="49" />
 
-  <sprite id="bust_legend_scale_coat" offsetY="35" ic="FF3C4047" width="104" height="142" img="entity\bodies\bust_legend_scale_coat.png" left="-45" right="47" top="-51" bottom="7" />
-  <sprite id="bust_legend_scale_coat_damaged" offsetY="35" ic="FF373B43" width="104" height="142" img="entity\bodies\bust_legend_scale_coat_damaged.png" top="-51" bottom="7" />
-  <sprite id="bust_legend_scale_coat_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2D3137" width="131" height="125" img="entity\bodies\bust_legend_scale_coat_dead.png" top="-52" bottom="56" />
+  <sprite id="bust_legend_scale_coat" offsetY="35" ic="FF3C4047" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale_coat.png" left="-45" right="47" top="-51" bottom="7" />
+  <sprite id="bust_legend_scale_coat_damaged" offsetY="35" ic="FF373B43" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale_coat_damaged.png" top="-51" bottom="7" />
+  <sprite id="bust_legend_scale_coat_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2D3137" width="131" height="125" img="entity\legend_armor\plate\bust_legend_scale_coat_dead.png" top="-52" bottom="56" />
 
-  <sprite id="bust_legend_scale_coat_rotten" offsetY="35" ic="FF2D3138" width="104" height="142" img="entity\bodies\bust_legend_scale_coat_rotten.png" left="-45" right="47" top="-51" bottom="11" />
-  <sprite id="bust_legend_scale_coat_rotten_damaged" offsetY="35" ic="FF2A2E35" width="104" height="142" img="entity\bodies\bust_legend_scale_coat_rotten_damaged.png" left="-45" right="47" top="-51" bottom="11" />
-  <sprite id="bust_legend_scale_coat_rotten_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1C1F25" width="131" height="125" img="entity\bodies\bust_legend_scale_coat_rotten_dead.png" left="-57" right="59" top="-55" bottom="53" />
+  <sprite id="bust_legend_scale_coat_rotten" offsetY="35" ic="FF2D3138" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale_coat_rotten.png" left="-45" right="47" top="-51" bottom="11" />
+  <sprite id="bust_legend_scale_coat_rotten_damaged" offsetY="35" ic="FF2A2E35" width="104" height="142" img="entity\legend_armor\plate\bust_legend_scale_coat_rotten_damaged.png" left="-45" right="47" top="-51" bottom="11" />
+  <sprite id="bust_legend_scale_coat_rotten_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1C1F25" width="131" height="125" img="entity\legend_armor\plate\bust_legend_scale_coat_rotten_dead.png" left="-57" right="59" top="-55" bottom="53" />
 
-  <sprite id="bust_legend_plate_cuirass" offsetY="35" ic="FF3A3D42" width="104" height="142" img="entity\bodies\bust_legend_plate_cuirass.png" top="-52" bottom="8" />
-  <sprite id="bust_legend_plate_cuirass_damaged" offsetY="35" ic="FF34373E" width="104" height="142" img="entity\bodies\bust_legend_plate_cuirass_damaged.png" left="-47" right="49" top="-57" bottom="7" />
-  <sprite id="bust_legend_plate_cuirass_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F36" width="131" height="125" img="entity\bodies\bust_legend_plate_cuirass_dead.png" top="-52" bottom="54" />
+  <sprite id="bust_legend_plate_cuirass" offsetY="35" ic="FF3A3D42" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_cuirass.png" top="-52" bottom="8" />
+  <sprite id="bust_legend_plate_cuirass_damaged" offsetY="35" ic="FF34373E" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_cuirass_damaged.png" left="-47" right="49" top="-57" bottom="7" />
+  <sprite id="bust_legend_plate_cuirass_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F36" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_cuirass_dead.png" top="-52" bottom="54" />
 
-  <sprite id="bust_legend_plate_full" offsetY="35" ic="FF333741" width="104" height="142" img="entity\bodies\bust_legend_plate_full.png" left="-46" right="44" top="-53" bottom="13" />
-  <sprite id="bust_legend_plate_full_damaged" offsetY="35" ic="FF2E343E" width="104" height="142" img="entity\bodies\bust_legend_plate_full_damaged.png" top="-53" bottom="13" />
-  <sprite id="bust_legend_plate_full_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F37" width="131" height="125" img="entity\bodies\bust_legend_plate_full_dead.png" top="-52" bottom="56" />
+  <sprite id="bust_legend_plate_full" offsetY="35" ic="FF333741" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_full.png" left="-46" right="44" top="-53" bottom="13" />
+  <sprite id="bust_legend_plate_full_damaged" offsetY="35" ic="FF2E343E" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_full_damaged.png" top="-53" bottom="13" />
+  <sprite id="bust_legend_plate_full_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F37" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_full_dead.png" top="-52" bottom="56" />
 
-  <sprite id="bust_legend_plate_chest" offsetY="35" ic="FF333741" width="104" height="142" img="entity\bodies\bust_legend_plate_chest.png" left="-46" right="44" top="-53" bottom="13" />
-  <sprite id="bust_legend_plate_chest_damaged" offsetY="35" ic="FF2E343E" width="104" height="142" img="entity\bodies\bust_legend_plate_chest_damaged.png" top="-53" bottom="13" />
-  <sprite id="bust_legend_plate_chest_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F37" width="131" height="125" img="entity\bodies\bust_legend_plate_chest_dead.png" top="-52" bottom="56" />
+  <sprite id="bust_legend_plate_chest" offsetY="35" ic="FF333741" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_chest.png" left="-46" right="44" top="-53" bottom="13" />
+  <sprite id="bust_legend_plate_chest_damaged" offsetY="35" ic="FF2E343E" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_chest_damaged.png" top="-53" bottom="13" />
+  <sprite id="bust_legend_plate_chest_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F37" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_chest_dead.png" top="-52" bottom="56" />
 
-  <sprite id="bust_legend_plate_chest_rotten" offsetY="35" ic="FF333741" width="104" height="142" img="entity\bodies\bust_legend_plate_chest_rotten.png" left="-46" right="44" top="-53" bottom="13" />
-  <sprite id="bust_legend_plate_chest_rotten_damaged" offsetY="35" ic="FF2E343E" width="104" height="142" img="entity\bodies\bust_legend_plate_chest_rotten_damaged.png" top="-53" bottom="13" />
-  <sprite id="bust_legend_plate_chest_rotten_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F37" width="131" height="125" img="entity\bodies\bust_legend_plate_chest_rotten_dead.png" top="-52" bottom="56" />
+  <sprite id="bust_legend_plate_chest_rotten" offsetY="35" ic="FF333741" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_chest_rotten.png" left="-46" right="44" top="-53" bottom="13" />
+  <sprite id="bust_legend_plate_chest_rotten_damaged" offsetY="35" ic="FF2E343E" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_chest_rotten_damaged.png" top="-53" bottom="13" />
+  <sprite id="bust_legend_plate_chest_rotten_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2B2F37" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_chest_rotten_dead.png" top="-52" bottom="56" />
 
-  <sprite id="bust_legend_plate_ancient_chest" offsetY="35" ic="FF1E3641" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_chest.png" left="-46" right="50" top="-54" bottom="10" />
-  <sprite id="bust_legend_plate_ancient_chest_damaged" offsetY="35" ic="FF1A2F3B" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_chest_damaged.png" left="-46" right="50" top="-54" bottom="10" />
-  <sprite id="bust_legend_plate_ancient_chest_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182730" width="131" height="125" img="entity\undead\armor\bust_legend_plate_ancient_chest_dead.png" left="-53" right="55" top="-50" bottom="46" />
+  <sprite id="bust_legend_plate_ancient_chest" offsetY="35" ic="FF1E3641" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_chest.png" left="-46" right="50" top="-54" bottom="10" />
+  <sprite id="bust_legend_plate_ancient_chest_damaged" offsetY="35" ic="FF1A2F3B" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_chest_damaged.png" left="-46" right="50" top="-54" bottom="10" />
+  <sprite id="bust_legend_plate_ancient_chest_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182730" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_ancient_chest_dead.png" left="-53" right="55" top="-50" bottom="46" />
 
-  <sprite id="bust_legend_plate_ancient_mail" offsetY="35" ic="FF1C2B35" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_mail.png" left="-42" right="44" top="-52" bottom="10" />
-  <sprite id="bust_legend_plate_ancient_mail_damaged" offsetY="35" ic="FF18252F" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_mail_damaged.png" left="-42" right="44" top="-52" bottom="10" />
-  <sprite id="bust_legend_plate_ancient_mail_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182530" width="131" height="125" img="entity\undead\armor\bust_legend_plate_ancient_mail_dead.png" left="-60" right="62" top="-63" bottom="61" />
+  <sprite id="bust_legend_plate_ancient_mail" offsetY="35" ic="FF1C2B35" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_mail.png" left="-42" right="44" top="-52" bottom="10" />
+  <sprite id="bust_legend_plate_ancient_mail_damaged" offsetY="35" ic="FF18252F" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_mail_damaged.png" left="-42" right="44" top="-52" bottom="10" />
+  <sprite id="bust_legend_plate_ancient_mail_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182530" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_ancient_mail_dead.png" left="-60" right="62" top="-63" bottom="61" />
 
-  <sprite id="bust_legend_plate_ancient_scale" offsetY="35" ic="FF192A39" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_scale.png" left="-45" right="51" top="-53" bottom="11" />
-  <sprite id="bust_legend_plate_ancient_scale_damaged" offsetY="35" ic="FF162634" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_scale_damaged.png" left="-45" right="51" top="-53" bottom="11" />
-  <sprite id="bust_legend_plate_ancient_scale_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182836" width="131" height="125" img="entity\undead\armor\bust_legend_plate_ancient_scale_dead.png" left="-60" right="62" />
+  <sprite id="bust_legend_plate_ancient_scale" offsetY="35" ic="FF192A39" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale.png" left="-45" right="51" top="-53" bottom="11" />
+  <sprite id="bust_legend_plate_ancient_scale_damaged" offsetY="35" ic="FF162634" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_damaged.png" left="-45" right="51" top="-53" bottom="11" />
+  <sprite id="bust_legend_plate_ancient_scale_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182836" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_dead.png" left="-60" right="62" />
 
-  <sprite id="bust_legend_plate_ancient_harness" offsetY="35" ic="FF1C3140" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_harness.png" left="-42" right="48" top="-50" bottom="10" />
-  <sprite id="bust_legend_plate_ancient_harness_damaged" offsetY="35" ic="FF182836" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_harness_damaged.png" left="-42" right="48" top="-50" bottom="10" />
-  <sprite id="bust_legend_plate_ancient_harness_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182630" width="131" height="125" img="entity\undead\armor\bust_legend_plate_ancient_harness_dead.png" left="-60" right="62" />
+  <sprite id="bust_legend_plate_ancient_harness" offsetY="35" ic="FF1C3140" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_harness.png" left="-42" right="48" top="-50" bottom="10" />
+  <sprite id="bust_legend_plate_ancient_harness_damaged" offsetY="35" ic="FF182836" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_harness_damaged.png" left="-42" right="48" top="-50" bottom="10" />
+  <sprite id="bust_legend_plate_ancient_harness_dead" offsetX="6" offsetY="10" f="64FE" ic="FF182630" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_ancient_harness_dead.png" left="-60" right="62" />
 
-  <sprite id="bust_legend_plate_ancient_scale_harness" offsetY="35" ic="FF192D3A" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_scale_harness.png" left="-25" right="45" top="-58" bottom="6" />
-  <sprite id="bust_legend_plate_ancient_scale_harness_damaged" offsetY="35" ic="FF162734" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_scale_harness_damaged.png" left="-25" right="45" top="-58" bottom="6" />
-  <sprite id="bust_legend_plate_ancient_scale_harness_dead" offsetX="6" offsetY="10" f="64FE" ic="FF142029" width="131" height="125" img="entity\undead\armor\bust_legend_plate_ancient_scale_harness_dead.png" left="-53" right="55" top="-51" bottom="45" />
+  <sprite id="bust_legend_plate_ancient_scale_harness" offsetY="35" ic="FF192D3A" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_harness.png" left="-25" right="45" top="-58" bottom="6" />
+  <sprite id="bust_legend_plate_ancient_scale_harness_damaged" offsetY="35" ic="FF162734" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_harness_damaged.png" left="-25" right="45" top="-58" bottom="6" />
+  <sprite id="bust_legend_plate_ancient_scale_harness_dead" offsetX="6" offsetY="10" f="64FE" ic="FF142029" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_harness_dead.png" left="-53" right="55" top="-51" bottom="45" />
 
-  <sprite id="bust_legend_plate_ancient_scale_coat" offsetY="35" ic="FF192D3B" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_scale_coat.png" left="-51" right="45" top="-55" bottom="9" />
-  <sprite id="bust_legend_plate_ancient_scale_coat_damaged" offsetY="35" ic="FF162735" width="104" height="142" img="entity\undead\armor\bust_legend_plate_ancient_scale_coat_damaged.png" left="-51" right="45" top="-55" bottom="9" />
-  <sprite id="bust_legend_plate_ancient_scale_coat_dead" offsetX="6" offsetY="10" f="64FE" ic="FF14212B" width="131" height="125" img="entity\undead\armor\bust_legend_plate_ancient_scale_coat_dead.png" left="-63" right="61" top="-63" bottom="55" />
+  <sprite id="bust_legend_plate_ancient_scale_coat" offsetY="35" ic="FF192D3B" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_coat.png" left="-51" right="45" top="-55" bottom="9" />
+  <sprite id="bust_legend_plate_ancient_scale_coat_damaged" offsetY="35" ic="FF162735" width="104" height="142" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_coat_damaged.png" left="-51" right="45" top="-55" bottom="9" />
+  <sprite id="bust_legend_plate_ancient_scale_coat_dead" offsetX="6" offsetY="10" f="64FE" ic="FF14212B" width="131" height="125" img="entity\legend_armor\plate\bust_legend_plate_ancient_scale_coat_dead.png" left="-63" right="61" top="-63" bottom="55" />
+
+<sprite id="legend_tabard_01_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_01_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_01_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_01_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_01_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_01_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_02_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_02_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_02_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_02_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_02_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_02_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_03_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_03_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_03_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_03_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_03_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_03_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_04_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_04_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_04_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_04_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_04_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_04_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_05_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_05_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_05_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_05_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_05_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_05_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_06_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_06_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_06_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_06_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_06_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_06_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_07_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_07_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_07_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_07_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_07_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_07_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_08_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_08_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_08_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_08_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_08_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_08_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_09_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_09_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_09_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_09_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_09_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_09_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_10_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_10_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_10_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_10_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_10_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_10_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_11_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_11_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_11_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_11_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_11_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_11_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_12_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_12_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_12_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_12_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_12_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_12_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_13_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_13_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_13_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_13_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_13_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_13_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_14_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_14_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_14_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_14_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_14_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_14_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_15_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_15_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_15_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_15_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_15_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_15_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_16_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_16_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_16_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_16_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_16_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_16_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_17_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_17_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_17_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_17_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_17_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_17_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_18_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_18_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_18_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_18_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_18_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_18_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_19_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_19_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_19_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity/legend_armor/tabard/legend_tabard_19_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_19_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity/legend_armor/tabard/legend_tabard_19_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_101_back" offsetY="35" ic="FF211A41" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_101_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_101_back_damaged" offsetY="35" ic="FF20193C" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_101_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_101_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF221D37" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_101_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_102_back" offsetY="35" ic="FF3E362B" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_102_back.png" left="-42" right="40" top="-52" bottom="10" />
+<sprite id="legend_tabard_102_back_damaged" offsetY="35" ic="FF393227" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_102_back_damaged.png" top="-52" bottom="10" />
+<sprite id="legend_tabard_102_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF2B2729" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_102_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_103_back" offsetY="35" ic="FF6E6F71" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_103_back.png" left="-42" right="40" top="-52" bottom="10" />
+<sprite id="legend_tabard_103_back_damaged" offsetY="35" ic="FF68686B" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_103_back_damaged.png" top="-52" bottom="10" />
+<sprite id="legend_tabard_103_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF4A4D52" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_103_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_104_back" offsetY="35" ic="FF15144E" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_104_back.png" top="-52" bottom="12" />
+<sprite id="legend_tabard_104_back_damaged" offsetY="35" ic="FF14134B" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_104_back_damaged.png" left="-40" right="38" top="-52" bottom="12" />
+<sprite id="legend_tabard_104_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF14143D" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_104_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_105_back" offsetY="35" ic="FF495D49" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_105_back.png" top="-52" bottom="12" />
+<sprite id="legend_tabard_105_back_damaged" offsetY="35" ic="FF3C513B" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_105_back_damaged.png" left="-40" right="38" top="-52" bottom="12" />
+<sprite id="legend_tabard_105_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF293A29" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_105_back_dead.png" left="-55" right="51" top="-55" bottom="51" />
+<sprite id="legend_tabard_106_back" offsetY="35" ic="FF7F7062" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_106_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_106_back_damaged" offsetY="35" ic="FF77695C" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_106_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_106_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF574D45" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_106_back_dead.png" top="-55" bottom="51" />
+<sprite id="legend_tabard_107_back" offsetY="35" ic="FF274349" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_107_back.png" left="-41" right="39" top="-53" bottom="11" />
+<sprite id="legend_tabard_107_back_damaged" offsetY="35" ic="FF253C3C" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_107_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_107_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF222D2D" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_107_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_108_back" offsetY="35" ic="FF242424" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_108_back.png" left="-42" right="40" top="-53" bottom="11" />
+<sprite id="legend_tabard_108_back_damaged" offsetY="35" ic="FF222222" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_108_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_108_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1F1F21" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_108_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_109_back" offsetY="35" ic="FF1F4C7C" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_109_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_109_back_damaged" offsetY="35" ic="FF1C4473" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_109_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_109_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF193256" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_109_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_110_back" offsetY="35" ic="FF234E57" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_110_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_110_back_damaged" offsetY="35" ic="FF21484E" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_110_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_110_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1B373B" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_110_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_111_back" offsetY="35" ic="FF234E57" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_111_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_111_back_damaged" offsetY="35" ic="FF21484E" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_111_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_111_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1B373B" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_111_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
+<sprite id="legend_tabard_112_back" offsetY="35" ic="FF234E57" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_112_back.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_112_back_damaged" offsetY="35" ic="FF21484E" width="104" height="142" img="entity\legend_armor\tabard\legend_tabard_112_back_damaged.png" top="-53" bottom="11" />
+<sprite id="legend_tabard_112_back_dead" offsetX="6" offsetY="10" f="64FD" ic="FF1B373B" width="131" height="125" img="entity\legend_armor\tabard\legend_tabard_112_back_dead.png" left="-54" right="52" top="-55" bottom="51" />
 
 </brush>

@@ -8,7 +8,7 @@ this.legend_armor_leather_jacket_simple <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Simple Leather Jacket";
 		this.m.Description = "A simple leather jacket for minimal protection."
 		this.m.ArmorDescription = "Includes a simple leather jacket for added protection.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_jacket_simple.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_jacket_simple.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_jacket_simple.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_jacket_simple.png";
@@ -20,7 +20,6 @@ this.legend_armor_leather_jacket_simple <- this.inherit("scripts/items/legend_ar
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = -8;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
-		this.m.InventorySound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
 });

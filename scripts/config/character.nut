@@ -155,6 +155,8 @@ gt.Const.ShakeCharacterLayers <- [
 		"tattoo_body",
 		"armor_layer_chain",
 		"armor_layer_plate",
+		"armor_layer_tabbard",
+		"armor_layer_cloak",
 		"armor_upgrade_back",
 		"armor_upgrade_front"
 	],
@@ -177,8 +179,10 @@ gt.Const.ShakeCharacterLayers <- [
 		"tattoo_body",
 		"armor_layer_chain",
 		"armor_layer_plate",
+		"armor_layer_tabbard",
+		"armor_layer_cloak",
 		"armor_upgrade_back",
-		"armor_upgrade_front",
+		"armor_upgrade_front"
 		"head",
 		"head_skin",
 		"injury",
@@ -928,7 +932,7 @@ gt.Const.CharacterProperties <- {
 	DamageInitiativeMin = 0,
 	DamageInitiativeMax = 0,
 	DamageInitiativeCutoff = 100
-	
+
 
 	DailyWage = 0,
 	DailyWageMult = 1.0,

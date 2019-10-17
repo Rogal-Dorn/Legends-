@@ -3,7 +3,7 @@ this.legend_armor_company_tabard <- this.inherit("scripts/items/legend_armor/leg
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak
+		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard
 		this.m.ID = "legend_armor.company_tabard";
 		this.m.Name = "Tabard";
 		this.m.Description = "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to moral.";
@@ -32,7 +32,7 @@ this.legend_armor_company_tabard <- this.inherit("scripts/items/legend_armor/leg
 		this.m.SpriteBack = "tabard_" + variant;
 		this.m.SpriteDamagedBack = "tabard_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "tabard_" + variant + "_destroyed";
-		this.m.Icon = "legend_armor/tabard/tabard_" + variant + ".png";
+		this.m.Icon = "legend_armor/tabard/icon_tabard_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/tabard/icon_tabard_" + variant + ".png";
 		this.m.OverlayIconLarge = "legend_armor/tabard/inventory_tabard_"  + variant + ".png";
