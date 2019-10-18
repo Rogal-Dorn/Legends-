@@ -177,6 +177,35 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 2);
+
+		local cloths = [
+			["cloth/legend_gambeson", 0],
+			["cloth/legend_gambeson_plain", 0],
+			["cloth/legend_gambeson_wolf", 0],
+			["cloth/legend_padded_surcoat", 0],
+			["cloth/legend_robes", 0],
+			["cloth/legend_robes_butcher", 0],
+			["cloth/legend_robes_nun", 0],
+			["cloth/legend_robes_smith", 1],
+			["cloth/legend_robes_wizard", 0],
+			["cloth/legend_sackcloth", 0],
+			["cloth/legend_sackcloth_patched", 0],
+			["cloth/legend_sackcloth_tattered", 0],
+			["cloth/legend_tunic", 1],
+			["cloth/legend_tunic_noble", 0]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		if (armor != null)
+		{
+			items.equip(armor)
+		}
+	}
+
 	function onUpdate( _properties )
 	{
 		this.character_background.onUpdate(_properties);
