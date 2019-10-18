@@ -126,4 +126,21 @@ this.legend_baker_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 2);
+
+		if (r <= 1)
+		{
+			items.equip(this.new("scripts/items/weapons/wooden_stick"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/knife"));
+		}
+
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+	}
 });

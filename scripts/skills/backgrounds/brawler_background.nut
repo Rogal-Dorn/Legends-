@@ -42,9 +42,9 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsOutlawBackground = true;
 		this.m.IsLowborn = true;
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
-		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Ammo[1];			
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.ThrowingTree
@@ -157,6 +157,35 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		else if (r == 2)
 		{
 			items.equip(this.new("scripts/items/armor/leather_wraps"));
+		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+
+		local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_robes_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[1, "cloth/legend_sackcloth"],
+			[1, "cloth/legend_sackcloth_patched"],
+			[1, "cloth/legend_sackcloth_tattered"],
+			[0, "cloth/legend_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+
+		if (armor != null)
+		{
+			items.equip(armor);
 		}
 	}
 

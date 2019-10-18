@@ -560,27 +560,27 @@ gt.Const.World.Common.pickLegendArmor <- function (_list)
 	local w = 0
 	foreach (t in _list)
 	{
-		if (t[1] == 0)
+		if (t[0] == 0)
 		{
 			continue;
 		}
 		candidates.push(t)
-		totalWeight += t[1]
+		totalWeight += t[0]
 	}
 
 	local r = this.Math.rand(0, totalWeight);
 	foreach (t in candidates)
 	{
-		r = r - t[1];
+		r = r - t[0];
 		if (r > 0)
 		{
 			continue;
 		}
-		if (t[0] == "")
+		if (t[1] == "")
 		{
 			return null;
 		}
-		return this.new("scripts/items/legend_armor/" + t[0]);
+		return this.new("scripts/items/legend_armor/" + t[1]);
 	}
 	return null;
 }

@@ -49,7 +49,7 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.SpearTree,
@@ -134,6 +134,19 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 
 
 		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+
+		local r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{

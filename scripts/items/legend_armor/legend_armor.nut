@@ -11,9 +11,17 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
 		{
 			this.m.Upgrades.push(null);
-			this.m.Blocked.push[false]
+			this.m.Blocked.push(false);
 		}
 
+	}
+
+	function blockUpgrades()
+	{
+		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
+		{
+			this.m.Blocked.push(true);
+		}
 	}
 
 	function onAddedToStash( _stashID )
@@ -175,7 +183,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
-		if (upgrade != null && this.m.Blocked[_upgrade.getType()])
+		if (_upgrade != null && this.m.Blocked[_upgrade.getType()])
 		{
 			return false;
 		}

@@ -184,5 +184,30 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/hunting_bow"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/short_bow"));
+		}
+
+		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_smith"));
+
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		}
+	}
 });
 

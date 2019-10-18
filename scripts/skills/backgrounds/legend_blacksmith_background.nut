@@ -15,7 +15,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.asthmatic",
 			"trait.clumsy",
 			"trait.fragile",
-			
+
 		];
 		this.m.Titles = [
 			"Iron-arm",
@@ -43,7 +43,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[3];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.HammerClassTree,
 				this.Const.Perks.PolearmTree,
@@ -134,5 +134,12 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_hammer"));
 		items.equip(this.new("scripts/items/armor/legend_blacksmith_apron"));
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/weapons/legend_hammer"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_smith"));
 	}
 })

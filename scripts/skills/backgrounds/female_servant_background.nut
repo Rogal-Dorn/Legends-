@@ -54,7 +54,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CleaverTree,
@@ -156,6 +156,12 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		{
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 	}
 
 });
