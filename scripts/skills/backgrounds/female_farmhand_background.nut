@@ -214,4 +214,53 @@ this.female_farmhand_background <- this.inherit("scripts/skills/backgrounds/char
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r = this.Math.rand(0, 6);
+
+		if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/pitchfork"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_wooden_pitchfork"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
+		}
+		else if (r == 4)
+		{
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
+		}
+
+		local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_robes_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[1, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[1, "cloth/legend_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		items.equip(armor)
+
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/straw_hat"));
+		}
+	}
 });

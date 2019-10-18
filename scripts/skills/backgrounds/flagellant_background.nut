@@ -35,10 +35,10 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
-		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];	
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.SlingsTree
@@ -213,5 +213,70 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 4);
+
+		if (r == 1)
+		{
+
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
+		}
+		else if (r == 3)
+		{
+			if (this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+			}
+			else if (!this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
+			}
+		}
+		else if (r == 4)
+		{
+			if (this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/battle_whip"));
+			}
+			else if (!this.Const.DLC.Wildmen)
+			{
+			items.equip(this.new("scripts/items/weapons/legend_reinforced_flail"));
+			}
+		}
+
+		local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[1, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_robes_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[1, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[1, "cloth/legend_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		items.equip(armor)
+
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/hood"));
+		}
+	}
 });
 

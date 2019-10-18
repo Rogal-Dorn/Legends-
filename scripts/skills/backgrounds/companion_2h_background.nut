@@ -182,5 +182,52 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.MeleeDefense] = 1;
+		talents[this.Const.Attributes.Bravery] = 1;
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 0);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
+		}
+
+		local cloths = [
+            [0, ""],
+			[1, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[1, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_robes_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[0, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[0, "cloth/legend_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		items.equip(armor)
+
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/hood"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/headscarf"));
+		}
+	}
 });
 

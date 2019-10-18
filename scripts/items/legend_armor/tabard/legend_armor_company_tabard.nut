@@ -15,7 +15,7 @@ this.legend_armor_company_tabard <- this.inherit("scripts/items/legend_armor/leg
 		this.m.OverlayIcon = "legend_armor/tabard/icon_tabard_101.png";
 		this.m.OverlayIconLarge = "legend_armor/tabard/inventory_tabard_101.png";
 		this.m.SpriteFront = null;
-		this.m.SpriteBack = "legend_tabard_101";
+		this.m.SpriteBack = "legend_tabard_101_back";
 		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "legend_tabard_101_damaged";
 		this.m.SpriteCorpseFront = null;
@@ -29,9 +29,9 @@ this.legend_armor_company_tabard <- this.inherit("scripts/items/legend_armor/leg
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "tabard_" + variant;
-		this.m.SpriteDamagedBack = "tabard_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "tabard_" + variant + "_destroyed";
+		this.m.SpriteBack = "tabard_" + variant + "_back";
+		this.m.SpriteDamagedBack = "tabard_" + variant + "_back_damaged";
+		this.m.SpriteCorpseBack = "tabard_" + variant + "_back_destroyed";
 		this.m.Icon = "legend_armor/tabard/icon_tabard_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/tabard/icon_tabard_" + variant + ".png";

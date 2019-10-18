@@ -39,7 +39,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Body = "bust_naked_body_00";
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.SlingsTree,
 				this.Const.Perks.FlailTree,
@@ -154,6 +154,39 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
+
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/jesters_hat"));
+		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/dagger"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/throwing_axe"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/throwing_spear"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/knife"));
+		}
+
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 
 		r = this.Math.rand(0, 1);
 

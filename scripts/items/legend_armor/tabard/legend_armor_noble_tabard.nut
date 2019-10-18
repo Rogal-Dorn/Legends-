@@ -26,9 +26,9 @@ this.legend_armor_noble_tabard <- this.inherit("scripts/items/legend_armor/legen
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "tabard_" + variant;
-		this.m.SpriteDamagedBack = "tabard_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "tabard_" + variant + "_destroyed";
+		this.m.SpriteBack = "tabard_" + variant + "_back";
+		this.m.SpriteDamagedBack = "tabard_" + variant + "_back_damaged";
+		this.m.SpriteCorpseBack = "tabard_" + variant + "_back_destroyed";
 		this.m.Icon = "legend_armor/tabard/icon_tabard_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/tabard/icon_tabard_" + variant + ".png";
