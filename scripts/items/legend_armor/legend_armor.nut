@@ -1,6 +1,7 @@
 this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {
 		Upgrades = null
+		Blocked = []
 	},
 	function create()
 	{
@@ -10,6 +11,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
 		{
 			this.m.Upgrades.push(null);
+			this.m.Blocked.push[false]
 		}
 
 	}
@@ -173,6 +175,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
+		if (upgrade != null && this.m.Blocked[_upgrade.getType()])
+		{
+			return false;
+		}
+
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
 			local item = this.m.Upgrades[_upgrade.getType()];
@@ -182,6 +189,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				this.World.Assets.getStash().add(item);
 			}
 		}
+
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 		if ( _upgrade == null)

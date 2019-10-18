@@ -56,7 +56,7 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 	{
 		this.m.JSHandle.asyncCall("setConfigOpts", _opts);
 	}
-	
+
 	function setStartingScenarios( _scenarios )
 	{
 		this.m.JSHandle.asyncCall("setStartingScenarios", _scenarios);
@@ -73,7 +73,7 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Ironman = _settings[5],
 			GreaterEvil = _settings[6],
 			PermanentDestruction = _settings[7],
-			Seed = _settings[8],			
+			Seed = _settings[8],
 			Width = _settings[9],
 			Height = _settings[10],
 			LandMassMult = (_settings[11] + 100) / 100.0 ,
@@ -93,7 +93,8 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			StartingScenario = _settings[23],
 			LegendPerkTrees = _settings[24],
 			LegendGenderEquality = _settings[25],
-			LegendMagic = _settings[26]
+			LegendMagic = _settings[26],
+			LegendArmor = true
 		};
 
 		// local settings = {

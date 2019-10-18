@@ -247,6 +247,60 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(1, 3);
+
+		if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/barbarians/axehammer"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/barbarians/crude_axe"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/barbarians/blunt_cleaver"));
+		}
+
+		r = this.Math.rand(0, 3);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/armor/barbarians/thick_furs_armor"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
+		}
+
+		r = this.Math.rand(0, 3);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/barbarians/bear_headpiece"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/barbarians/leather_headband"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/helmets/barbarians/leather_helmet"));
+		}
+	}
+
 	function onSerialize( _out )
 	{
 		this.character_background.onSerialize(_out);

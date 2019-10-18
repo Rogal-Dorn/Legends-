@@ -212,7 +212,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			return text + ".\n";
 		}
-		
+
 		i = 1;
 		if (i == _p.len() - 1)
 		{
@@ -233,7 +233,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				text = text + " and "
 			}
 		}
-		return text + ".\n";		
+		return text + ".\n";
 	}
 
 	function getPerkBackgroundDescription( _tree )
@@ -303,7 +303,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		val = terrains[4] * 100.0;
 		if (val > 0) {
 			ttext += "\nHills +" + val +"%"
-		}		
+		}
 		val = terrains[5] * 100.0;
 		if (val > 0) {
 			ttext += "\nForests +" + val +"%"
@@ -315,7 +315,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		val = terrains[11] * 100.0;
 		if (val > 0) {
 			ttext += "\nFarmland +" + val +"%"
-		}		
+		}
 		val = terrains[12] * 100.0;
 		if (val > 0) {
 			ttext += "\nSnow +" + val +"%"
@@ -336,7 +336,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (ttext != "")
 		{
 		 	text += "\nTerrain Movement Modifiers:" + ttext;
-		}	
+		}
 		return text;
 	}
 
@@ -390,7 +390,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if ( _id == null )
 		{
 			return null;
-		}		
+		}
 
 		if (this.m.PerkTreeMap != null)
 		{
@@ -608,7 +608,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		a.RangedDefense[1] += c.RangedDefense[1];
 		a.Initiative[0] += c.Initiative[0];
 		a.Initiative[1] += c.Initiative[1];
-		
+
 		if (_attrs != null)
 		{
 			a.Hitpoints[0] += _attrs.Hitpoints[0];
@@ -740,14 +740,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.m.CustomPerkTree = result.Tree
 				a = result.Attributes;
 			}
-			else 
+			else
 			{
 				this.m.CustomPerkTree = this.Const.Perks.DefaultCustomPerkTree;
 			}
 		}
 
 		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
-		
+
 		//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
 		//already have added its perks so we should be ok. This will fail though loading an old save
 		//and we've added new perks to a scenario...
@@ -768,7 +768,15 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function addEquipment()
 	{
-		this.onAddEquipment();
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			this.onAddLegendEquipment()
+		}
+		else
+		{
+			this.onAddEquipment();
+		}
+
 		this.adjustHiringCostBasedOnEquipment();
 	}
 
@@ -949,6 +957,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 	}
 
+	function onAddLegendEquipment()
+	{
+
+	}
+
 	function onSetAppearance()
 	{
 	}
@@ -1033,8 +1046,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
-		} 
-		else 
+		}
+		else
 		{
 			_out.writeU8(this.m.CustomPerkTree.len());
 			for( local i = 0; i < this.m.CustomPerkTree.len(); i = ++i )
@@ -1044,7 +1057,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				{
 					_out.writeU16(this.m.CustomPerkTree[i][j]);
 				}
-			}		
+			}
 		}
 	}
 

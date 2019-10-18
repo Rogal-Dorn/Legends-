@@ -553,6 +553,38 @@ gt.Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 	}
 }
 
+gt.Const.World.Common.pickLegendArmor <- function (_list)
+{
+	local candidates = []
+	local totalWeight = 0
+	local w = 0
+	foreach (t in _list)
+	{
+		if (t[1] == 0)
+		{
+			continue;
+		}
+		candidates.push(t)
+		totalWeight += t[1]
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	foreach (t in candidates)
+	{
+		r = r - t[1];
+		if (r > 0)
+		{
+			continue;
+		}
+		if (t[0] == "")
+		{
+			return null;
+		}
+		return this.new("scripts/items/legend_armor/" + t[0]);
+	}
+	return null;
+}
+
 if (!("LegendMod" in gt.Const))
 {
 	gt.Const.LegendMod <- {};
@@ -601,6 +633,7 @@ gt.Const.LegendMod.BoxMuller <- {
 		return r;
 	}
 }
+
 
 function onCostCompare( _t1, _t2 )
 {

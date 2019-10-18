@@ -39,6 +39,7 @@ this.asset_manager <- {
 		IsLegendPerkTrees = true,
 		IsLegendGenderEquality = false,
 		IsLegendMagic = true,
+		IsLegendArmor = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
 		IsConsumingAssets = true,
@@ -254,6 +255,10 @@ this.asset_manager <- {
 		return this.m.IsLegendMagic;
 	}
 
+	function isLegendArmor()
+	{
+		return this.m.IsLegendArmor;
+	}
 	function isCamping()
 	{
 		return this.World.Camp.isCamping();
@@ -268,7 +273,7 @@ this.asset_manager <- {
 	{
 		return this.m.IsConsumingAssets;
 	}
-	
+
 	function setCamping( _c )
 	{
 		this.m.IsCamping = _c;
@@ -404,6 +409,7 @@ this.asset_manager <- {
 		this.m.IsLegendPerkTrees = _settings.LegendPerkTrees;
 		this.m.IsLegendGenderEquality = _settings.LegendGenderEquality;
 		this.m.IsLegendMagic = _settings.LegendMagic;
+		this.m.IsLegendArmor = _settings.LegendArmor;
 		this.m.Origin = _settings.StartingScenario;
 		this.m.BusinessReputation = 0;
 		this.m.SeedString = _settings.Seed;
@@ -411,7 +417,7 @@ this.asset_manager <- {
 		this.World.FactionManager.getGreaterEvil().IsExtraLate = false;
 
 		this.m.Stash.resize( this.Const.LegendMod.MaxResources[_settings.EconomicDifficulty].Stash);
-		
+
 		this.m.Money = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Money;
 		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
 		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
@@ -531,7 +537,7 @@ this.asset_manager <- {
 			}
 
 			local rm = bro.getBackground().getModifiers().Healing * 100.0;
-			if (rm > 0) 
+			if (rm > 0)
 			{
 				ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
 			}
@@ -755,7 +761,7 @@ this.asset_manager <- {
 				{
 					continue;
 				}
-				
+
 				item.onNewDay();
 			}
 
@@ -837,7 +843,7 @@ this.asset_manager <- {
 
 			}
 
-			
+
 			if (stashSize != this.m.Stash.getCapacity())
 			{
 				this.m.Stash.resize(stashSize);
@@ -1310,12 +1316,12 @@ this.asset_manager <- {
 		this.m.FormationIndex = _index;
 		local roster = this.World.getPlayerRoster().getAll();
 
-		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
+		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a
 		//full stash and losing the gear
 		//this.World.Assets.getStash().setResizable(true);
 		//Save current loadout and strip all gear into stash if moving into a saved formation
 		local toTransfer = [];
-		foreach (b in roster) 
+		foreach (b in roster)
 		{
 			b.saveFormation();
 			b.getItems().transferToList(toTransfer);
@@ -1331,7 +1337,7 @@ this.asset_manager <- {
 		//stash.sort()
 
 
-		//Check if the next Formation has been set, if not, use the previous formation 
+		//Check if the next Formation has been set, if not, use the previous formation
 		if (this.getFormationName() == "NULL")
 		{
 			this.setFormationName(_index, "Formation " + (_index + 1));
@@ -1372,14 +1378,14 @@ this.asset_manager <- {
 		local roster = this.World.getPlayerRoster().getAll();
 
 		local toTransfer = [];
-		foreach (b in roster) 
+		foreach (b in roster)
 		{
 			b.getItems().transferToList(toTransfer);
 			b.saveFormation();
 		}
 
 		local stash = this.World.Assets.getStash();
-		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a 
+		//Temporarily set Stash to be resizeable -- this is to prevent fully loaded bros stripping gear into a
 		//full stash and losing the gear
 		stash.setResizable(true);
 		foreach (item in toTransfer)
@@ -1393,7 +1399,7 @@ this.asset_manager <- {
 
 	function setFormationName(_index, _name)
 	{
-		if (_name == "") 
+		if (_name == "")
 		{
 			return;
 		}
@@ -2184,13 +2190,13 @@ this.asset_manager <- {
 			});
 		}
 
-		local sortfn = function (first, second) 
+		local sortfn = function (first, second)
 		{
 			if (first.Level == second.Level)
 			{
 				return 0
 			}
-			if (first.Level > second.Level) 
+			if (first.Level > second.Level)
 			{
 				return -1
 			}
@@ -2202,7 +2208,7 @@ this.asset_manager <- {
 		return ret;
 
 	}
-	
+
 	function onSerialize( _out )
 	{
 		_out.writeU16(this.m.Stash.getCapacity());
@@ -2219,6 +2225,7 @@ this.asset_manager <- {
 		_out.writeBool(this.m.IsLegendPerkTrees);
 		_out.writeBool(this.m.IsLegendGenderEquality);
 		_out.writeBool(this.m.IsLegendMagic);
+		_out.writeBool(this.m.IsLegendArmor);
 		_out.writeString(this.m.Origin.getID());
 		_out.writeString(this.m.SeedString);
 		_out.writeF32(this.m.Money);
@@ -2233,7 +2240,7 @@ this.asset_manager <- {
 		_out.writeF32(this.m.LastFoodConsumed);
 		_out.writeBool(this.m.IsCamping);
 		_out.writeU8(this.m.FormationIndex);
-		foreach( name in this.m.FormationNames) 
+		foreach( name in this.m.FormationNames)
 		{
 			_out.writeString(name);
 		}
@@ -2283,6 +2290,12 @@ this.asset_manager <- {
 		{
 			this.m.IsLegendGenderEquality = _in.readBool();
 			this.m.IsLegendMagic = _in.readBool();
+			this.m.IsLegendArmor = _in.readBool();
+		}
+
+		if (_in.getMetaData().getVersion() >= 60)
+		{
+			this.m.IsLegendArmor = _in.readBool();
 		}
 
 		if (_in.getMetaData().getVersion() >= 46)
@@ -2321,7 +2334,7 @@ this.asset_manager <- {
 		this.m.LastHourUpdated = _in.readU8();
 		this.m.LastFoodConsumed = _in.readF32();
 		this.m.IsCamping = _in.readBool();
-		
+
 		if (_in.getMetaData().getVersion() >= 46 )
 		{
 			this.m.FormationIndex = _in.readU8();
@@ -2379,7 +2392,7 @@ this.asset_manager <- {
 		_in.readBool();
 		local maxBrothers = this.m.BrothersMax;
 		this.m.Origin.onInit();
-		this.World.Assets.m.BrothersMax = maxBrothers; 
+		this.World.Assets.m.BrothersMax = maxBrothers;
 	}
 
 };

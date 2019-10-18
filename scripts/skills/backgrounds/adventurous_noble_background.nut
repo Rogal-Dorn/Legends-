@@ -220,5 +220,128 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/fencing_sword"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/pike"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/rondel_dagger"));
+			items.equip(this.new("scripts/items/weapons/legend_parrying_dagger"));
+		}
+
+		local cloths = [
+			["cloth/legend_gambeson", 2],
+			["cloth/legend_gambeson_plain", 0],
+			["cloth/legend_gambeson_wolf", 0],
+			["cloth/legend_padded_surcoat", 2],
+			["cloth/legend_robes", 0],
+			["cloth/legend_robes_butcher", 0],
+			["cloth/legend_robes_nun", 0],
+			["cloth/legend_robes_smith", 0],
+			["cloth/legend_robes_wizard", 0],
+			["cloth/legend_sackcloth", 0],
+			["cloth/legend_sackcloth_patched", 0],
+			["cloth/legend_sackcloth_tattered", 0],
+			["cloth/legend_tunic", 2],
+			["cloth/legend_tunic_noble", 1]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+
+		if (armor != null)
+		{
+			local chains = [
+				["chain/legend_armor_ancient_double_mail", 0],
+				["chain/legend_armor_ancient_mail", 0],
+				["chain/legend_armor_basic_mail", 1],
+				["chain/legend_armor_hauberk", 1],
+				["chain/legend_armor_hauberk_full", 0],
+				["chain/legend_armor_hauberk_sleevless", 1],
+				["chain/legend_armor_mail_shirt", 1],
+				["chain/legend_armor_mail_shirt_simple", 1],
+				["chain/legend_armor_reinforced_mail", 1],
+				["chain/legend_armor_reinforced_mail_shirt", 1],
+				["chain/legend_armor_reinforced_rotten_mail_shirt", 0],
+				["chain/legend_armor_reinforced_worn_mail", 0],
+				["chain/legend_armor_reinforced_worn_mail_shirt", 0],
+				["chain/legend_armor_rusty_mail_shirt", 0],
+				["chain/legend_armor_short_mail", 1]
+			]
+
+			local chain = this.Const.World.Common.pickLegendArmor(chains)
+			if (chain != null)
+			{
+				armor.setUpgrade(chain)
+			}
+
+			local plates = [
+				["plate/legend_armor_leather_brigandine", 0],
+				["plate/legend_armor_leather_brigandine_hardened", 0],
+				["plate/legend_armor_leather_brigandine_hardened_full", 0],
+				["plate/legend_armor_leather_jacket", 0],
+				["plate/legend_armor_leather_jacket_simple", 0],
+				["plate/legend_armor_leather_lamellar", 0],
+				["plate/legend_armor_leather_lamellar_harness_heavy", 0],
+				["plate/legend_armor_leather_lamellar_harness_reinforced", 0],
+				["plate/legend_armor_leather_lamellar_heavy", 0],
+				["plate/legend_armor_leather_lamellar_reinforced", 0],
+				["plate/legend_armor_leather_noble", 0],
+				["plate/legend_armor_leather_padded", 0],
+				["plate/legend_armor_leather_riveted", 0],
+				["plate/legend_armor_leather_riveted_light", 0],
+				["plate/legend_armor_leather_scale", 0],
+				["plate/legend_armor_plate_ancient_chest", 0],
+				["plate/legend_armor_plate_ancient_harness", 0],
+				["plate/legend_armor_plate_ancient_mail", 0],
+				["plate/legend_armor_plate_ancient_scale", 0],
+				["plate/legend_armor_plate_ancient_scale_coat", 0],
+				["plate/legend_armor_plate_ancient_scale_harness", 0],
+				["plate/legend_armor_plate_chest", 0],
+				["plate/legend_armor_plate_chest_rotten", 0],
+				["plate/legend_armor_plate_cuirass", 0],
+				["plate/legend_armor_plate_full", 0],
+				["plate/legend_armor_scale", 0],
+				["plate/legend_armor_scale_coat", 0],
+				["plate/legend_armor_scale_coat_rotten", 0],
+				["plate/legend_armor_scale_shirt", 0]
+			]
+			local plate = this.Const.World.Common.pickLegendArmor(plates)
+			if (plate != null)
+			{
+				armor.setUpgrade(plate)
+			}
+
+			items.equip(armor);
+		}
+
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/nasal_helmet"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/padded_nasal_helmet"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/helmets/nasal_helmet_with_mail"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/helmets/mail_coif"));
+		}
+	}
 });
 
