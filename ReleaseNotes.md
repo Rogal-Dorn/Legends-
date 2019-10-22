@@ -1650,3 +1650,16 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * New Höllenhunds drop loot. Bones - used for crafting
 * New Winselmutters drop loot - Winselmutter essence - used for crafting.
 * New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
+
+
+13.0.0.4
+* Adds in x3 new Named Barbarian Armors.
+-Bronze armor
+-Plated fur
+-Skull and chain
+* Adds x1 new named legendary armor
+-Named sellsword plate
+* Adds a new craftable recipe for Lindwurm scale armor.
+
+Dynamic Spwans:
+Leader and high end units will be less like to spawn in multiples earlier in the game.

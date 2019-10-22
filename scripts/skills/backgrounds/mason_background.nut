@@ -32,7 +32,7 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.StavesTree,
@@ -133,6 +133,12 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/linen_tunic"));
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 	}
 
 	function onUpdate( _properties )

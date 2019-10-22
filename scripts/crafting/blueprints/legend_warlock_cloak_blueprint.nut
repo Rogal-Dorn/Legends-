@@ -5,6 +5,10 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_warlock_cloak";
 		this.m.PreviewCraftable = this.new("scripts/items/armor/named/legend_named_warlock_cloak");
+		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/named/legend_armor_named_warlock_cloak");
+		}
 		this.m.Cost = 200;
 		local ingredients = [
 			{
@@ -16,14 +20,25 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 				Num = 1
 			},
 			{
-				Script = "scripts/items/armor/thick_dark_tunic",
-				Num = 1
-			},
-			{
 				Script = "scripts/items/spawns/zombie_item",
 				Num = 1
 			}
 		];
+		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		{
+			ingredients.push({
+				Script = "scripts/items/legend_armor/cloth/legend_tunic",
+				Num = 1
+			})
+		}
+		else
+		{
+			ingredients.push({
+				Script = "scripts/items/armor/thick_dark_tunic",
+				Num = 1
+			})
+		}
+
 		this.init(ingredients);
 	}
 
@@ -34,7 +49,15 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 	function onCraft( _stash )
 	{
-		local item = this.new("scripts/items/armor/named/legend_named_warlock_cloak");
+		local item
+		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		{
+			item = this.new("scripts/items/legend_armor/named/legend_armor_named_warlock_cloak");
+		}
+		else
+		{
+			item = this.new("scripts/items/armor/named/legend_named_warlock_cloak");
+		}
 		item.m.Name = "";
 		_stash.add(item);
 	}

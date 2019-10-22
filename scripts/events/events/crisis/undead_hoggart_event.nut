@@ -183,7 +183,16 @@ this.undead_hoggart_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				local item = this.new("scripts/items/armor/named/black_leather_armor");
+				local item = null;
+				if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+				{
+					item = this.new("scripts/items/legend_armor/named/legend_black_leather_armor");
+				}
+				else
+				{
+					item = this.new("scripts/items/armor/named/black_leather_armor");
+				}
+
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

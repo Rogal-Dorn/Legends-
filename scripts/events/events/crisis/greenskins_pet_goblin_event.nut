@@ -274,8 +274,7 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 				}
 
 				local r = this.Math.rand(1, 4);
-				local item;
-
+				local item = null;
 				if (r == 1)
 				{
 					item = this.new("scripts/items/weapons/named/named_axe");
@@ -290,7 +289,14 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 				}
 				else if (r == 4)
 				{
-					item = this.new("scripts/items/armor/named/black_leather_armor");
+					if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+					{
+						item = this.new("scripts/items/legend_armor/named/legend_black_leather_armor");
+					}
+					else
+					{
+						item = this.new("scripts/items/armor/named/black_leather_armor");
+					}
 				}
 
 				this.World.Assets.getStash().add(item);

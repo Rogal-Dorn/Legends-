@@ -53,7 +53,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.HammerTree,
@@ -141,6 +141,12 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/armor/monk_robe"));
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes"));
 	}
 
 });

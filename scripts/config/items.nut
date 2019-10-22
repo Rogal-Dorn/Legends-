@@ -90,7 +90,17 @@ gt.Const.Items.NamedArmors <- [
 	"armor/named/brown_coat_of_plates_armor",
 	"armor/named/golden_scale_armor",
 	"armor/named/green_coat_of_plates_armor",
-	"armor/named/heraldic_mail_armor"
+	"armor/named/heraldic_mail_armor",
+	"armor/named/named_sellswords_armor"
+];
+gt.Const.Items.LegendNamedArmors <- [
+	"legend_armor/named/legend_black_leather_armor",
+	"legend_armor/named/legend_blue_studded_mail_armor",
+	"legend_armor/named/legend_brown_coat_of_plates_armor",
+	"legend_armor/named/legend_golden_scale_armor",
+	"legend_armor/named/legend_green_coat_of_plates_armor",
+	"legend_armor/named/legend_heraldic_mail_armor",
+	"legend_armor/named/legend_named_sellswords_armor"
 ];
 gt.Const.Items.NamedHelmets <- [
 	"helmets/named/golden_feathers_helmet",
@@ -160,7 +170,16 @@ gt.Const.Items.NamedWeapons <- clone this.Const.Items.NamedMeleeWeapons;
 gt.Const.Items.NamedWeapons.extend(this.Const.Items.NamedRangedWeapons);
 gt.Const.Items.NamedBarbarianWeapons <- [];
 gt.Const.Items.NamedBarbarianHelmets <- [];
-gt.Const.Items.NamedBarbarianArmors <- [];
+gt.Const.Items.NamedBarbarianArmors <- [
+	"armor/named/named_bronze_armor",
+	"armor/named/named_plated_fur_armor",
+	"armor/named/named_skull_and_chain_armor"
+];
+gt.Const.Items.LegendNamedBarbarianArmors <- [
+	"legend_armor/named/legend_named_bronze_armor",
+	"legend_armor/named/legend_named_plated_fur_armor",
+	"legend_armor/named/legend_named_skull_and_chain_armor"
+];
 gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_bladed_pike",
 	"weapons/named/named_crypt_cleaver",

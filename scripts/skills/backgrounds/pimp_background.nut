@@ -41,7 +41,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.StavesTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.DaggerTree
@@ -132,6 +132,13 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.new("scripts/items/armor/noble_tunic"));
+		items.equip(this.new("scripts/items/helmets/feathered_hat"));
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic_noble"));
 		items.equip(this.new("scripts/items/helmets/feathered_hat"));
 	}
 

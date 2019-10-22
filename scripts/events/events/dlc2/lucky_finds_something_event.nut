@@ -75,8 +75,19 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		this.m.Score = 5;
 	}
 
+	function onLegendPrepare()
+	{
+
+	}
+
 	function onPrepare()
 	{
+
+		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		{
+			return this.onLegendPrepare()
+		}
+
 		local item;
 		local r = this.Math.rand(1, 19);
 

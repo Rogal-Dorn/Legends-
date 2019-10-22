@@ -72,7 +72,18 @@ this.barbarian_beastmaster <- this.inherit("scripts/entity/tactical/human", {
 	function assignRandomEquipment()
 	{
 		this.m.Items.equip(this.new("scripts/items/weapons/barbarians/thorned_whip"));
-		this.m.Items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
+
+		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		{
+			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
+			armor.setUpgrade(this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor"));
+			this.m.Items.equip(armor);
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
+		}
+
 		this.m.Items.equip(this.new("scripts/items/helmets/barbarians/beastmasters_headpiece"));
 	}
 

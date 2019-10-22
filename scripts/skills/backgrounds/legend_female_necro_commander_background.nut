@@ -121,7 +121,7 @@ this.m.CustomPerkTree = [
 				this.Const.Perks.PerkDefs.LegendReclamation,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendConservation,
-				this.Const.Perks.PerkDefs.LegendRoster3		
+				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
 				this.Const.Perks.PerkDefs.HeadHunter,
@@ -133,7 +133,7 @@ this.m.CustomPerkTree = [
 				this.Const.Perks.PerkDefs.LegendBrinkOfDeath,
 				this.Const.Perks.PerkDefs.LegendChanneledPower,
 				this.Const.Perks.PerkDefs.LegendPossession,
-				this.Const.Perks.PerkDefs.LegendRoster5		
+				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
@@ -152,7 +152,7 @@ this.m.CustomPerkTree = [
 			[],
 			[],
 			[]
-		];		
+		];
 	}
 
 	function getTooltip()
@@ -233,6 +233,23 @@ this.m.CustomPerkTree = [
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/legend_warlock_cloak"));
+		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));
+		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
+		local stash = this.World.Assets.getStash();
+		stash.removeByID("supplies.ground_grains");
+		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/supplies/strange_meat_item"));
+	}
+
+	function onAddLegendEquipment()
+	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Fatigue] = 2;
+		talents[this.Const.Attributes.Hitpoints] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/legend_armor/legend_armor_warlock_cloak"));
 		items.equip(this.new("scripts/items/helmets/legend_warlock_hood"));
 		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
 		local stash = this.World.Assets.getStash();

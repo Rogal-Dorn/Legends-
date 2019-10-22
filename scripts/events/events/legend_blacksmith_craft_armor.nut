@@ -87,7 +87,15 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/asset_money.png",
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]10000[/color] Crowns"
 				});
-				local item = this.new("scripts/items/armor/named/named_golden_lamellar_armor");
+				local item = null;
+				if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+				{
+					item = this.new("scripts/items/legend_armor/named/legend_named_golden_lamellar_armor");
+				}
+				else
+				{
+					item =  this.new("scripts/items/armor/named/named_golden_lamellar_armor");
+				}
 				item.m.Name = _event.m.Blacksmith.getNameOnly() + "\'s golden lamellar armor";
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -191,7 +199,15 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					}
 				}
 
-				local item = this.new("scripts/items/armor/named/named_golden_lamellar_armor");
+				local item = null;
+				if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+				{
+					item = this.new("scripts/items/legend_armor/named/legend_named_golden_lamellar_armor");
+				}
+				else
+				{
+					item =  this.new("scripts/items/armor/named/named_golden_lamellar_armor");
+				}
 				item.m.Name = _event.m.Blacksmith.getNameOnly() + "\'s golden lamellar armor";
 				this.World.Assets.getStash().add(item);
 				this.List.push({

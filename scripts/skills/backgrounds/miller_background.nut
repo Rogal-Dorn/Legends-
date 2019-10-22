@@ -158,5 +158,22 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_shovel"));
+		}
+
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic")
+	}
 });
 

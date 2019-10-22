@@ -39,7 +39,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[2];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.CleaverTree,
@@ -63,7 +63,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 			Class = []
 		}
 	}
-	
+
 	function getTooltip()
 	{
 		return [
@@ -133,12 +133,26 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 	{
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 0);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/armor/legend_taxidermist_apron"));
-		}
+		local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[1, "cloth/legend_robes_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[0, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[0, "cloth/legend_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		items.equip(armor)
 
 		r = this.Math.rand(0, 1);
 

@@ -45,7 +45,14 @@ this.envoy <- this.inherit("scripts/entity/tactical/player", {
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
+		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		{
+			this.m.Items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
+		}
 
 		if (this.Math.rand(1, 100) <= 33)
 		{

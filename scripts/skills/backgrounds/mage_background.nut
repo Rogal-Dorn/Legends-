@@ -71,7 +71,7 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[0];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[0];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.StavesTree
@@ -130,5 +130,30 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_robes_smith"],
+			[1, "cloth/legend_robes_wizard"],
+			[0, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[0, "cloth/legend_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		items.equip(armor)
+		items.equip(this.new("scripts/items/helmets/wizard_hat"));
+
+	}
 });
 

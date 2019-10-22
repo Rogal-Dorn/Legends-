@@ -280,4 +280,22 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
 	}
 
+	function onAddLegendEquipment()
+	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.MeleeDefense] = 3;
+		this.getContainer().getActor().fillTalentValues(2, true);
+		local items = this.getContainer().getActor().getItems();
+		local stash =this.World.Assets.getStash()
+		local r;
+		stash.removeByID("supplies.ground_grains");
+		stash.removeByID("supplies.ground_grains");
+		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
+		stash.add(this.new("scripts/items/supplies/medicine_item"));
+		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
+		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_crusader"));
+		items.equip(this.new("scripts/items/helmets/closed_flat_top_helmet"));
+	}
+
 });

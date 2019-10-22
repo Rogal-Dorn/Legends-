@@ -48,7 +48,7 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.SpearTree,
@@ -122,6 +122,21 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		{
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
 		}
+
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/feathered_hat"));
+		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+
 
 		r = this.Math.rand(0, 1);
 

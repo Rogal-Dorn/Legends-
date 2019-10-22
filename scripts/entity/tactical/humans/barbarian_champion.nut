@@ -106,12 +106,44 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			local armor = [
-				"armor/barbarians/rugged_scale_armor",
-				"armor/barbarians/heavy_iron_armor",
-				"armor/barbarians/thick_plated_barbarian_armor"
-			];
-			this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			{
+				local cloths = [
+					[1, "cloth/legend_sackcloth"]
+				];
+				local armor = this.Const.World.Common.pickLegendArmor(cloths)
+
+				if (armor != null)
+				{
+					local plates = [
+						[0, ""],
+						[0, "plate/legend_animal_hide_armor"],
+						[1, "plate/legend_heavy_iron_armor"],
+						[0, "plate/legend_hide_and_bone_armor"],
+						[0, "plate/legend_reinforced_animal_hide_armor"],
+						[1, "plate/legend_rugged_scale_armor"],
+						[0, "plate/legend_scrap_metal_armor"],
+						[0, "plate/legend_thick_furs_armor"],
+						[1, "plate/legend_thick_plated_barbarian_armor"],
+					]
+					local plate = this.Const.World.Common.pickLegendArmor(plates)
+					if (plate != null)
+					{
+						armor.setUpgrade(plate)
+					}
+
+					this.m.Items.equip(armor);
+				}
+			}
+			else
+			{
+				local armor = [
+					"armor/barbarians/rugged_scale_armor",
+					"armor/barbarians/heavy_iron_armor",
+					"armor/barbarians/thick_plated_barbarian_armor"
+				];
+				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+			}
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
@@ -135,6 +167,10 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = this.Const.Items.NamedBarbarianWeapons;
 		local armor = this.Const.Items.NamedBarbarianArmors;
+		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		{
+			armor = this.Const.Items.LegendNamedBarbarianArmors;
+		}
 		local helmets = this.Const.Items.NamedBarbarianHelmets;
 		local r = this.Math.rand(1, 3);
 

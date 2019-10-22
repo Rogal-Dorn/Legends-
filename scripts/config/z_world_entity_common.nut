@@ -585,6 +585,38 @@ gt.Const.World.Common.pickLegendArmor <- function (_list)
 	return null;
 }
 
+gt.Const.World.Common.pickItem <- function (_list)
+{
+	local candidates = []
+	local totalWeight = 0
+	local w = 0
+	foreach (t in _list)
+	{
+		if (t[0] == 0)
+		{
+			continue;
+		}
+		candidates.push(t)
+		totalWeight += t[0]
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	foreach (t in candidates)
+	{
+		r = r - t[0];
+		if (r > 0)
+		{
+			continue;
+		}
+		if (t[1] == "")
+		{
+			return null;
+		}
+		return this.new(t[1]);
+	}
+	return null;
+}
+
 if (!("LegendMod" in gt.Const))
 {
 	gt.Const.LegendMod <- {};

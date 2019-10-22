@@ -60,7 +60,7 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0.0 //ocean
 			];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.ThrowingTree
@@ -160,6 +160,21 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 		{
 			items.equip(this.new("scripts/items/armor/sackcloth"));
 		}
+
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/mouth_piece"));
+		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		items.equip(this.new("scripts/items/weapons/pickaxe"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_sackcloth"));
 
 		r = this.Math.rand(0, 1);
 

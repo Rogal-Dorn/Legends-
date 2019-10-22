@@ -180,4 +180,29 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r = this.Math.rand(0, 1);
+
+		local cloths = [[1, "cloth/legend_robes_smith"]];
+		if (r == 0)
+		{
+			cloths = [[1, "cloth/legend_tunic"]]
+		}
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		local plates = [
+			[2, ""],
+			[1, "plate/legend_armor_leather_jacket"],
+			[1, "plate/legend_armor_leather_jacket_simple"]
+		]
+		local plate = this.Const.World.Common.pickLegendArmor(plates)
+		if (plate != null)
+		{
+			armor.setUpgrade(plate)
+		}
+
+		items.equip(armor);
+	}
+
 });
