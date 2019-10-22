@@ -118,7 +118,7 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 			[],
 			[],
 			[],
-			[]			
+			[]
 		];
 	}
 
@@ -201,6 +201,20 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/armor/noble_tunic"));
+		items.equip(this.new("scripts/items/weapons/pike"));
+		local stash = this.World.Assets.getStash()
+		stash.add(this.new("scripts/items/supplies/wine_item"));
+	}
+
+	function onAddLegendEquipment()
+	{
+	local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Bravery] = 3;
+		talents[this.Const.Attributes.MeleeSkill] = 2;
+		this.getContainer().getActor().fillTalentValues(1, true);
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic_noble"));
 		items.equip(this.new("scripts/items/weapons/pike"));
 		local stash = this.World.Assets.getStash()
 		stash.add(this.new("scripts/items/supplies/wine_item"));

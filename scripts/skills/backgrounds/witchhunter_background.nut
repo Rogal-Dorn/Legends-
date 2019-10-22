@@ -65,7 +65,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 				0.0 //ocean
 			]
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SwordTree,
@@ -227,6 +227,41 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		{
 			items.equip(this.new("scripts/items/armor/ragged_surcoat"));
 		}
+
+		r = this.Math.rand(0, 0);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/witchhunter_hat"));
+		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/light_crossbow"));
+		}
+		else
+		{
+			items.equip(this.new("scripts/items/weapons/crossbow"));
+		}
+
+		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.addToBag(this.new("scripts/items/weapons/knife"));
+		}
+
+
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_padded_surcoat"));
+
 
 		r = this.Math.rand(0, 0);
 

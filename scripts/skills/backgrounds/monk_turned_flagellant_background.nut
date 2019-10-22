@@ -29,10 +29,10 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 		this.m.IsOffendedByViolence = false;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
-		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];	
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CleaverTree,
@@ -79,5 +79,8 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 	{
 	}
 
+	function onAddLegendEquipment()
+	{
+	}
 });
 

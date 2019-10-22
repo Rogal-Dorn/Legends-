@@ -200,4 +200,32 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+		items.equip(this.new("scripts/items/weapons/legend_sling"));
+		items.addToBag(this.new("scripts/items/weapons/legend_shiv"));
+		r = this.Math.rand(0, 1);
+
+		local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_robes_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[0, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[1, "cloth/legend_tunic"],
+			[1, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+		items.equip(armor)
+	}
 });

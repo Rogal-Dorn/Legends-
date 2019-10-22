@@ -301,4 +301,50 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		}
 	}
 
+	function onAddLegendEquipment()
+	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.RangedSkill] = 3;
+		talents[this.Const.Attributes.Fatigue] = 2;
+		this.getContainer().getActor().fillTalentValues(2, true);
+		local items = this.getContainer().getActor().getItems();
+
+
+		local r;
+		items.equip(this.new("scripts/items/weapons/hunting_bow"));
+		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+
+		local stash =this.World.Assets.getStash()
+		stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));
+		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
+		stash.removeByID("supplies.ground_grains");
+
+		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_ranger"));
+
+
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.addToBag(this.new("scripts/items/weapons/dagger"));
+		}
+		if (r == 1)
+		{
+			items.addToBag(this.new("scripts/items/weapons/bludgeon"));
+		}
+
+
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/hood"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/hunters_hat"));
+		}
+	}
+
 });

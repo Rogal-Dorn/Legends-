@@ -33,7 +33,7 @@ this.pacified_flagellant_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 				this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.SlingsTree
@@ -65,5 +65,8 @@ this.pacified_flagellant_background <- this.inherit("scripts/skills/backgrounds/
 	{
 	}
 
+	function onAddLegendEquipment()
+	{
+	}
 });
 

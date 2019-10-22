@@ -1,4 +1,4 @@
-this.legend_werewolf_hide_armor <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_armor_werewolf_hide <- this.inherit("scripts/items/legend_armor/legend_armor", {
 	m = {},
 	function create()
 	{
@@ -19,6 +19,7 @@ this.legend_werewolf_hide_armor <- this.inherit("scripts/items/legend_armor/lege
 		this.m.StaminaModifier = -9;
 		this.blockUpgrades();
 		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
 	}
 
 	function getTooltip()

@@ -86,7 +86,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,
@@ -110,7 +110,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 			[],
 			[],
 			[],
-			[]	
+			[]
 		];
 	}
 
@@ -134,7 +134,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 				text = "Donkeys provide [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] stash space, [color=" + this.Const.UI.Color.PositiveValue + "]+50[/color] maximum ammunition storage, [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] maximum medicine capacity,  [color=" + this.Const.UI.Color.PositiveValue + "]+30[/color] maximum armor parts. These can be increased with perks (may take a moment for the increases to register). "
 			}
 		];
-	
+
 	}
 
 	function onBuildDescription()
@@ -186,7 +186,7 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
 		this.m.Container.add(this.new("scripts/skills/actives/legend_donkey_kick"));
 		this.m.Container.add(this.new("scripts/skills/traits/legend_appetite_donkey"));
-	}	
+	}
 
 
 	function onAddEquipment()
@@ -196,7 +196,15 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(1, true);
-
 	}
 
+	function onAddLegendEquipment()
+	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Hitpoints] = 3;
+		talents[this.Const.Attributes.Fatigue] = 3;
+		this.getContainer().getActor().fillTalentValues(1, true);
+
+	}
 });

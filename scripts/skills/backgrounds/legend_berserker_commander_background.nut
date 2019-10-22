@@ -373,7 +373,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/weapons/throwing_axe"));
 
-		items.equip(this.new("scripts/items/legend_armor/armor/legend_werewolf_hide_armor"));
+		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_werewolf_hide"));
 
 		local r;
 		r = this.Math.rand(0, 5);

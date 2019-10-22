@@ -8,7 +8,7 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Icon = "ui/backgrounds/background_46.png";
 		this.m.BackgroundDescription = "Messengers are used to long and tiring travels.";
 		this.m.GoodEnding = "The oddity of having %name% the messenger in your band did not seem so strange after he showed himself to be a killer sellsword. As far as you know, he\'s still with the company, preferring the march of a mercenary to that of a messenger. You don\'t blame him: an errand boy must bend the knee to every nobleman he comes across, but in the company of sellswords he\'ll no doubt get the occasional chance to kill one of them bastards. Not a hard trade off to accept!";
-		this.m.BadEnding = "%name% the messenger departed the %companyname% and returned to being an errand boy for the letters of lieges. You tried to find out where the man had gone to and eventually tracked him down - or what was left of him. Unfortunately, \"don\'t shoot the messenger\" is not an adage well followed in these fractured lands.";
+		this.m.BadEnding = "%name% the messenger departed the %companyname% and returned to being an errand boy for the letters of lieges. You tried to find out where the man had gone to and eventually tracked him down - or what was left of him. Unfortunately, \'don\'t shoot the messenger\' is not an adage well followed in these fractured lands.";
 		this.m.HiringCost = 60;
 		this.m.DailyCost = 6;
 		this.m.Excluded = [
@@ -58,7 +58,7 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 				0.0 //ocean
 			];
 		this.m.PerkTreeDynamic = {
-			Weapon = [			
+			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.StavesTree,
@@ -151,6 +151,110 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 		else if (r == 1)
 		{
 			items.equip(this.new("scripts/items/armor/linen_tunic"));
+		}
+
+		r = this.Math.rand(0, 2);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/helmets/hood"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/helmets/straw_hat"));
+		}
+	}
+
+	function onAddLegendEquipment()
+	{
+		local items = this.getContainer().getActor().getItems();
+		local r;
+
+		local cloths = [
+            [0, ""],
+			[0, "cloth/legend_gambeson"],
+			[0, "cloth/legend_gambeson_plain"],
+			[0, "cloth/legend_gambeson_wolf"],
+			[0, "cloth/legend_padded_surcoat"],
+			[0, "cloth/legend_robes"],
+			[0, "cloth/legend_robes_butcher"],
+			[0, "cloth/legend_robes_nun"],
+			[0, "cloth/legend_robes_smith"],
+			[0, "cloth/legend_robes_wizard"],
+			[0, "cloth/legend_sackcloth"],
+			[0, "cloth/legend_sackcloth_patched"],
+			[0, "cloth/legend_sackcloth_tattered"],
+			[1, "cloth/legend_tunic"],
+			[0, "cloth/legend_tunic_noble"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
+
+		if (armor != null)
+		{
+			local chains = [
+                [0, ""],
+                [0, "chain/legend_armor_mail_shirt"],
+				[0, "chain/legend_armor_mail_shirt_simple"],
+				[0, "chain/legend_armor_rusty_mail_shirt"],
+				[0, "chain/legend_armor_ancient_double_mail"],
+				[0, "chain/legend_armor_ancient_mail"],
+				[0, "chain/legend_armor_basic_mail"],
+				[0, "chain/legend_armor_hauberk"],
+				[0, "chain/legend_armor_hauberk_full"],
+				[0, "chain/legend_armor_hauberk_sleevless"],
+				[0, "chain/legend_armor_reinforced_mail"],
+				[0, "chain/legend_armor_reinforced_mail_shirt"],
+				[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+				[0, "chain/legend_armor_reinforced_worn_mail"],
+				[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
+				[0, "chain/legend_armor_short_mail"]
+			]
+
+			local chain = this.Const.World.Common.pickLegendArmor(chains)
+			if (chain != null)
+			{
+				armor.setUpgrade(chain)
+			}
+
+			local plates = [
+                [2, ""],
+				[0, "plate/legend_armor_leather_brigandine"],
+				[0, "plate/legend_armor_leather_brigandine_hardened"],
+				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
+				[1, "plate/legend_armor_leather_jacket"],
+				[1, "plate/legend_armor_leather_jacket_simple"],
+				[0, "plate/legend_armor_leather_lamellar"],
+				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
+				[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+				[0, "plate/legend_armor_leather_lamellar_heavy"],
+				[0, "plate/legend_armor_leather_lamellar_reinforced"],
+				[0, "plate/legend_armor_leather_noble"],
+				[0, "plate/legend_armor_leather_padded"],
+				[0, "plate/legend_armor_leather_riveted"],
+				[0, "plate/legend_armor_leather_riveted_light"],
+				[0, "plate/legend_armor_leather_scale"],
+				[0, "plate/legend_armor_plate_ancient_chest"],
+				[0, "plate/legend_armor_plate_ancient_harness"],
+				[0, "plate/legend_armor_plate_ancient_mail"],
+				[0, "plate/legend_armor_plate_ancient_scale"],
+				[0, "plate/legend_armor_plate_ancient_scale_coat"],
+				[0, "plate/legend_armor_plate_ancient_scale_harness"],
+				[0, "plate/legend_armor_plate_chest"],
+				[0, "plate/legend_armor_plate_chest_rotten"],
+				[0, "plate/legend_armor_plate_cuirass"],
+				[0, "plate/legend_armor_plate_full"],
+				[0, "plate/legend_armor_scale"],
+				[0, "plate/legend_armor_scale_coat"],
+				[0, "plate/legend_armor_scale_coat_rotten"],
+				[0, "plate/legend_armor_scale_shirt"]
+			]
+			local plate = this.Const.World.Common.pickLegendArmor(plates)
+			if (plate != null)
+			{
+				armor.setUpgrade(plate)
+			}
+
+			items.equip(armor);
 		}
 
 		r = this.Math.rand(0, 2);

@@ -49,7 +49,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.Colossus,
 				this.Const.Perks.PerkDefs.FortifiedMind,
-				this.Const.Perks.PerkDefs.Backstabber,				
+				this.Const.Perks.PerkDefs.Backstabber,
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantSenses,
@@ -61,7 +61,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantMastery,
 				this.Const.Perks.PerkDefs.LegendValaTranceMastery,
-				this.Const.Perks.PerkDefs.LegendAlert,				
+				this.Const.Perks.PerkDefs.LegendAlert,
 				this.Const.Perks.PerkDefs.LegendValaInscriptionMastery
 			],
 			[
@@ -70,19 +70,19 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaThreads,
-				this.Const.Perks.PerkDefs.LegendMindOverBody,				
+				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.LegendValaSpiritualBond
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantFury,
 				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
-				this.Const.Perks.PerkDefs.LegendFieldTriage,				
-				this.Const.Perks.PerkDefs.PerfectFocus				
+				this.Const.Perks.PerkDefs.LegendFieldTriage,
+				this.Const.Perks.PerkDefs.PerfectFocus
 			],
 			[],
 			[],
 			[],
-			[]				
+			[]
 		];
 
 	}
@@ -152,4 +152,26 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/armor/legend_vala_dress"));
 		}
 	}
+
+		function onAddLegendEquipment()
+	{
+		local talents = this.getContainer().getActor().getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Bravery] = this.Math.rand(2, 3);
+		this.getContainer().getActor().fillTalentValues(2, true);
+
+		local items = this.getContainer().getActor().getItems();
+		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
+
+		local r = this.Math.rand(0, 1);
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_vala_cloak"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_vala_dress"));
+		}
+	}
+
 });
