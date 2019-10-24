@@ -104,6 +104,7 @@ this.legend_named_armor <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.Name = _in.readString();
 		this.m.ConditionMax = _in.readF32();
 		this.m.StaminaModifier = _in.readI8();
+		this.logInfo("Names armor = " + this.m.Name)
 		this.legend_armor.onDeserialize(_in);
 		this.updateVariant();
 		if (this.isRuned())

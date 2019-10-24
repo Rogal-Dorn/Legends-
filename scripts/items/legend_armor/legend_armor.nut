@@ -620,14 +620,20 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		this.armor.onSerialize(_out)
 		_out.writeU8(this.m.Upgrades.len());
-		foreach (u in this.m.Upgrades)
+		for( local i = 0; i != this.m.Upgrades.len(); i = ++i )
 		{
-			if (u == null)
+			local item = this.m.Upgrades[i];
+			if (item == null)
 			{
-				_out.writeI32(0);
-				continue
+				_out.writeBool(false);
 			}
-			u.onSerialize(_out);
+			else
+			{
+				_out.writeBool(true);
+				_out.writeI32(item.ClassNameHash);
+				item.onSerialize(_out);
+
+			}
 		}
 	}
 
@@ -638,16 +644,18 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Upgrades = [];
 		for ( local i = 0; i < count; i = ++i)
 		{
-			local upgrade = _in.readI32();
-			if ( upgrade == 0)
+			local hasItem = _in.readBool();
+
+			if (!hasItem)
 			{
 				this.m.Upgrades.push(null);
 				continue;
 			}
-			local item = this.new(this.IO.scriptFilenameByHash(upgrade));
+
+			local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
 			item.onDeserialize(_in);
-			this.m.Upgrades[item.getType()] = item;
-			this.m.Upgrades[item.getType()].setArmor(this);
+			this.m.Upgrades[i] = item;
+			this.m.Upgrades[i].setArmor(this);
 		}
 	}
 

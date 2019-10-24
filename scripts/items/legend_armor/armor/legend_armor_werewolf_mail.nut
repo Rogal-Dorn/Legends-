@@ -1,4 +1,4 @@
-this.legend_armor_werewolf_hide <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_armor_werewolf_mail <- this.inherit("scripts/items/legend_armor/legend_armor", {
 	m = {},
 	function create()
 	{
@@ -6,7 +6,6 @@ this.legend_armor_werewolf_hide <- this.inherit("scripts/items/legend_armor/lege
 		this.m.ID = "legend_armor.body.legend_werewolf_hide";
 		this.m.Name = "Direwolf Hide Armor";
 		this.m.Description = "A thick leather armor skillfully crafted from the pelt of a giant wolf. Donning the skin of a beast like this can turn one into an imposing figure.";
-		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = 16;

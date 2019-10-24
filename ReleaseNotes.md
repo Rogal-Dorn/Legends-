@@ -1653,6 +1653,10 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 
 
 13.0.0.4
+*ARMOR LAYERS!
+ 6 Tiers:
+-
+
 * Adds in x3 new Named Barbarian Armors.
 -Bronze armor
 -Plated fur

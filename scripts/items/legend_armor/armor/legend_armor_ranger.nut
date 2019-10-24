@@ -6,7 +6,6 @@ this.legend_armor_ranger <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.ID = "legend_armor.body.legend_ranger_armor";
 		this.m.Name = "Ranger\'s Armor";
 		this.m.Description = "A sturdy and heavy padded tunic made from rare materials that offers good protection while being light to wear.";
-		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = 512;
