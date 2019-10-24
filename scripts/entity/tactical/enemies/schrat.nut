@@ -149,7 +149,7 @@ this.schrat <- this.inherit("scripts/entity/tactical/actor", {
 					loot.drop(_tile);
 
 					local chance = 1;
-					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.isLegendMagic())
+					if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 					{
 						chance = 10;
 					}

@@ -140,7 +140,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -294,7 +294,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.LegendNamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
 			}

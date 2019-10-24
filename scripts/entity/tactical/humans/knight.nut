@@ -128,7 +128,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],
@@ -296,7 +296,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				this.m.Items.equip(this.new("scripts/items/" + legend_armor[this.Math.rand(0, armor.len() - 1)]));
 			}

@@ -77,7 +77,7 @@ this.skeleton_heavy <- this.inherit("scripts/entity/tactical/skeleton", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				local cloths = [
 					[0, ""],

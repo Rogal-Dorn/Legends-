@@ -68,7 +68,8 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
-					Cost = 25
+					Cost = 25,
+					Roll = true
 				}
 			]
 		},
@@ -77,7 +78,8 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Knight,
-					Cost = 35
+					Cost = 35,
+					Roll = true
 				}
 			]
 		},
@@ -154,7 +156,8 @@ gt.Const.World.Spawn.NobleCaravan <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
-					Cost = 25
+					Cost = 25,
+					Roll = true
 				}
 			]
 		}

@@ -6,14 +6,29 @@ if (!("LegendMod" in gt.Const))
 }
 
 gt.Const.LegendMod.Configs <- {
-    LegendArmorsEnabled <- function ()
+    LegendArmorsEnabled = function ()
     {
         if (!("Assets" in this.World))
         {
             return false;
-
         }
-        return this.World.Assets.isLegendArmor())
+        if (this.World.Assets == null)
+        {
+            return false;
+        }
+        return this.World.Assets.isLegendArmor();
+    },
+    LegendMagicEnabled = function ()
+    {
+        if (!("Assets" in this.World))
+        {
+            return false;
+        }
+        if (this.World.Assets == null)
+        {
+            return false;
+        }
+        return 	this.World.Assets.isLegendMagic()
     }
 }
 

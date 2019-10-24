@@ -85,7 +85,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 				local muscularity = this.Math.floor(bodyHealth * 0.1);
 				damagemax += muscularity;
 			}
-			
+
 			if (mult != 1.0)
 			{
 				damagemin = this.Math.floor(damagemin * mult);
@@ -96,8 +96,8 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damagemin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damagemax + "[/color] damage to hitpoints"
-			});	
-			
+			});
+
 			ret.push({
 				id = 5,
 				type = "text",
@@ -105,7 +105,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.abs(0.5 * damagemin) + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.abs(0.5 * damagemax) + "[/color] damage to armor"
 			});
 		}
-		
+
 		return ret;
 	}
 
@@ -236,16 +236,16 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 			if (hasShieldBash)
 			{
 				local p = this.getContainer().getActor().getCurrentProperties();
-				local bodyHealth = actor.getHitpointsMax();
+				local bodyHealth = p.getHitpointsMax();
 				local damagemin = this.Math.abs(10 * p.DamageTotalMult);
 				local damagemax = this.Math.abs(25 * p.DamageTotalMult);
-				
+
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 				{
 					local muscularity = this.Math.floor(bodyHealth * 0.1);
 					damagemax += muscularity;
 				}
-				
+
 				damage = damage + this.Math.rand(damagemin, damagemax);
 				tag.HitInfoBash = clone this.Const.Tactical.HitInfo;
 				tag.HitInfoBash.DamageRegular = damage * p.DamageRegularMult;
@@ -269,13 +269,13 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost = 3;
 		}
-		
+
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
 			this.m.FatigueCost = 15;
 		}
 	}
-	
+
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill == this)

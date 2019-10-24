@@ -47,7 +47,7 @@ this.firstborn <- this.inherit("scripts/entity/tactical/player", {
 	function assignRandomEquipment()
 	{
 
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			this.m.Items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 		}

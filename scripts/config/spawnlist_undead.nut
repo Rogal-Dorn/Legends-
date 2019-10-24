@@ -34,13 +34,14 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavy,
-					MinR = 0.60 * 625,
+					MinR = 400,
 					Cost = 35
 				}
 			]
 		},
 		{
 			Weight = 35,
+			MinR = 250,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
@@ -48,7 +49,7 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavyPolearm,
-					MinR = 0.60 * 625,
+					MinR = 400,
 					Cost = 35
 				}
 			]
@@ -59,7 +60,8 @@ gt.Const.World.Spawn.UndeadArmy <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonPriest,
-					Cost = 40
+					Cost = 40,
+					Roll = true
 					MinGuards = 1,
 					MaxGuards = 2,
 					MaxGuardsWeight = 33,

@@ -33,12 +33,14 @@ gt.Const.World.Spawn.UndeadScourge <-
 					Cost = 20
 				},
 				{
+					MinR = 400
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavy,
 					Cost = 35
 				}
 			]
 		},
 		{
+			MinR = 250,
 			Weight = 20,
 			Types = [
 				{
@@ -46,6 +48,7 @@ gt.Const.World.Spawn.UndeadScourge <-
 					Cost = 25
 				},
 				{
+					MinR = 400
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavyPolearm,
 					Cost = 35
 				}
@@ -53,10 +56,12 @@ gt.Const.World.Spawn.UndeadScourge <-
 		},
 		{
 			Weight = 5,
+			MinR = 600,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonPriest,
-					Cost = 40
+					Cost = 40,
+					Roll = true
 					MinGuards = 1,
 					MaxGuards = 2,
 					MaxGuardsWeight = 33,
@@ -84,6 +89,7 @@ gt.Const.World.Spawn.UndeadScourge <-
 					Cost = 12
 				},
 				{
+					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.ZombieKnight,
 					Cost = 25
 				}
@@ -101,6 +107,7 @@ gt.Const.World.Spawn.UndeadScourge <-
 					Cost = 40
 				},
 				{
+					MinR = 600,
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
 					Cost = 60
 				}
@@ -114,6 +121,7 @@ gt.Const.World.Spawn.UndeadScourge <-
 					Cost = 20
 				},
 				{
+					MinR = 350,
 					Type = this.Const.World.Spawn.Troops.LegendBanshee,
 					Cost = 70
 				}
@@ -125,6 +133,7 @@ gt.Const.World.Spawn.UndeadScourge <-
 				{
 					Type = this.Const.World.Spawn.Troops.Necromancer,
 					Cost = 30,
+					Roll = true,
 					MinGuards = 1,
 					MaxGuards = 2,
 					MaxGuardsWeight = 50,

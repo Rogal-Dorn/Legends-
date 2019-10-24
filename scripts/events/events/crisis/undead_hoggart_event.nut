@@ -184,7 +184,7 @@ this.undead_hoggart_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local item = null;
-				if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/named/legend_black_leather_armor");
 				}

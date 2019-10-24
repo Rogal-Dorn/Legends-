@@ -6,7 +6,6 @@ this.legend_armor_crusader <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.ID = "legend_armor.body.legend_armor_crusader";
 		this.m.Name = "Crusader Armor";
 		this.m.Description = "A mail shirt with shoulder guards providing excellent protection against most weapons.";
-		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Variant = 509;

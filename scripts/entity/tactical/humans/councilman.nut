@@ -61,37 +61,76 @@ this.councilman <- this.inherit("scripts/entity/tactical/human", {
 		local withDetail = true;
 		local withHelmet = true;
 
-		if (r <= 7)
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
-			this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
-
-			if (this.Math.rand(1, 100) <= 33)
+			if (r <= 7)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+				this.m.Items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
+
+				if (this.Math.rand(1, 100) <= 33)
+				{
+					this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+					withHelmet = false;
+				}
+			}
+			else if (r <= 9)
+			{
+				this.m.Items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic_noble"));
+			}
+			else if (r == 10)
+			{
+				this.m.Items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes"));
+				withDetail = false;
 				withHelmet = false;
 			}
-		}
-		else if (r <= 9)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/noble_tunic"));
-		}
-		else if (r == 10)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
-			withDetail = false;
-			withHelmet = false;
-		}
-		else if (r == 11)
-		{
-			this.m.Items.equip(this.new("scripts/items/armor/wizard_robe"));
-			withDetail = false;
-
-			if (this.Math.rand(1, 100) <= 50)
+			else if (r == 11)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/wizard_hat"));
-				withHelmet = false;
+				this.m.Items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_wizard"));
+				withDetail = false;
+
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					this.m.Items.equip(this.new("scripts/items/helmets/wizard_hat"));
+					withHelmet = false;
+				}
 			}
 		}
+		else
+		{
+			if (r <= 7)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
+
+				if (this.Math.rand(1, 100) <= 33)
+				{
+					this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+					withHelmet = false;
+				}
+			}
+			else if (r <= 9)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/noble_tunic"));
+			}
+			else if (r == 10)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/monk_robe"));
+				withDetail = false;
+				withHelmet = false;
+			}
+			else if (r == 11)
+			{
+				this.m.Items.equip(this.new("scripts/items/armor/wizard_robe"));
+				withDetail = false;
+
+				if (this.Math.rand(1, 100) <= 50)
+				{
+					this.m.Items.equip(this.new("scripts/items/helmets/wizard_hat"));
+					withHelmet = false;
+				}
+			}
+		}
+
+
 
 		if (withDetail && this.Math.rand(1, 100) <= 66)
 		{

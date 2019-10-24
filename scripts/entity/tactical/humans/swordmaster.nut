@@ -87,7 +87,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 
 				local cloths = [
@@ -248,7 +248,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 				"armor/named/named_noble_mail_armor"
 			]);
 
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				legend_armor.extend([
 					"armor/named/legend_named_noble_mail_armor"
@@ -262,7 +262,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				this.m.Items.equip(this.new("scripts/items/" + armor[this.Math.rand(0, legend_armor.len() - 1)]));
 			}
