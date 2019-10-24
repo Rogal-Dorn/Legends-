@@ -26,17 +26,17 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		bro.setPlaceInFormation(4);
-		bro.setVeteranPerks(2);	
+		bro.setVeteranPerks(2);
 		bro.getTags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
 
-		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/legend_gambeson"));
-		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/chain/legend_armor_hauberk"));
-		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/plate/legend_armor_plates"));
-		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/tabard/legend_armor_tabard_10"));
+		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/legend_gambeson"));
+		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/chain/legend_armor_hauberk"));
+		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/plate/legend_armor_plates"));
+		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/tabard/legend_armor_tabard_10"));
 	}
 
 	function onSpawnPlayer()
@@ -129,7 +129,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 
 		local r;
-		r = this.Math.rand(0, 999);	
+		r = this.Math.rand(0, 999);
 		if (r == 0)
 		{
 			_list.push("legend_crusader_background");
@@ -162,7 +162,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 
-			} 
+			}
 			else
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
@@ -187,7 +187,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		{
 			return;
 		}
-		
+
 		_tree.addPerk(this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 

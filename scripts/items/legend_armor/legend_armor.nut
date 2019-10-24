@@ -632,7 +632,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				_out.writeBool(true);
 				_out.writeI32(item.ClassNameHash);
 				item.onSerialize(_out);
-
 			}
 		}
 	}

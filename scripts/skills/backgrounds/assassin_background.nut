@@ -66,7 +66,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 		local r = this.Math.rand(0, 9);
 
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
 		}

@@ -43,7 +43,7 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_00";
 
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
 

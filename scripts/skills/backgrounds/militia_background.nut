@@ -30,7 +30,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.IsLowborn = true;
 
 		local chance = 10;
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			chance = 50;
 		}

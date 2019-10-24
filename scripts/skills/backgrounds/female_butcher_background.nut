@@ -44,7 +44,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.IsFemaleBackground = true;
 
 		local r = this.Math.rand(0, 3);
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			r = this.Math.rand(0, 1);
 		}

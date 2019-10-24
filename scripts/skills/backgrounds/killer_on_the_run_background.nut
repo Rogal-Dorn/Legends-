@@ -44,7 +44,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Body = "bust_naked_body_00";
 
 		local r = this.Math.rand(0, 9);
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			r = this.Math.rand(0, 1);
 		}

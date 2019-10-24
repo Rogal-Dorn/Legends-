@@ -45,7 +45,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Body = "bust_naked_body_01";
 		this.m.Level = this.Math.rand(2, 3);
 
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 		local r = this.Math.rand(0, 1);
 

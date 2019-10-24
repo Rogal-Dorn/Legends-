@@ -35,7 +35,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Body = "bust_naked_body_01";
 
 		local chance = 10;
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			chance = 50;
 		}

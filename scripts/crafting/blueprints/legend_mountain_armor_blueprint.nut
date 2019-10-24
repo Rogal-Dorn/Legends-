@@ -6,14 +6,11 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.m.ID = "blueprint.legend_mountain_armor";
 		this.m.PreviewCraftable = this.new("scripts/items/armor/legendary/legend_mountain_armor");
 		this.m.Cost = 2500;
+
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_rock_unhold_bones_item",
 				Num = 2
-			},
-			{
-				Script = "scripts/items/armor/coat_of_plates",
-				Num = 1
 			},
 			{
 				Script = "scripts/items/misc/legend_rock_unhold_hide_item",
@@ -24,6 +21,29 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 				Num = 4
 			}
 		];
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			ingredients.push({
+				Script = "scripts/items/legend_armor/cloth/legend_gambeson",
+				Num = 1
+			})
+			ingredients.push({
+				Script = "scripts/items/legend_armor/chain/legend_armor_hauberk",
+				Num = 1
+			})
+			ingredients.push({
+				Script = "scripts/items/legend_armor/plate/legend_armor_plate_chest",
+				Num = 1
+			})
+		}
+		else
+		{
+			ingredients.push({
+				Script = "scripts/items/armor/coat_of_plates",
+				Num = 1
+			})
+		}
+
 		this.init(ingredients);
 	}
 
@@ -32,10 +52,18 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 	{
 		return true;
 	}
-	
+
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/armor/legendary/legend_mountain_armor"));
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			_stash.add(this.new("scripts/items/legend_armor/legendary/legend_armor_mountain"));
+		}
+		else
+		{
+			_stash.add(this.new("scripts/items/armor/legendary/legend_mountain_armor"));
+		}
+
 	}
 
 });
