@@ -44,7 +44,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Body = "bust_naked_body_00";
 
 		local r = this.Math.rand(0, 3);
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			r = this.Math.rand(0, 1);
 		}

@@ -49,7 +49,17 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 					icon = "ui/items/" + item.getIcon(),
 					text = "You gain " + item.getName()
 				});
-				local item = this.new("scripts/items/armor/legendary/ijirok_armor");
+
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					item = this.new("scripts/items/legend_armor/legendary/legend_ijirok_armor");
+				}
+				else
+				{
+					item = this.new("scripts/items/armor/legendary/ijirok_armor");
+				}
+
+
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

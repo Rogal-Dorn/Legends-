@@ -167,7 +167,15 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 			"loot/golden_chalice_item",
 			"loot/ancient_gold_coins_item"
 		], _lootTable);
-		_lootTable.push(this.new("scripts/items/armor/legendary/emperors_armor"));
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			_lootTable.push(this.new("scripts/items/legend_armor/legendary/legend_emperors_armor"));
+		}
+		else
+		{
+			_lootTable.push(this.new("scripts/items/armor/legendary/emperors_armor"));
+		}
+
 	}
 
 	function onInit()

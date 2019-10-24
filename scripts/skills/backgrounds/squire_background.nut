@@ -38,7 +38,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Body = "bust_naked_body_01";
 
 		local chance = 1;
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			chance = 50;
 		}

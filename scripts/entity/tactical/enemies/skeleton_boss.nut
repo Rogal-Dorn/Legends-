@@ -54,7 +54,15 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 		}
 
-		this.m.Items.equip(this.new("scripts/items/armor/legendary/emperors_armor_fake"));
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			this.m.Items.equip(this.new("scripts/items/legend_rmor/legendary/legend_emperors_armor_fake"));;
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/armor/legendary/emperors_armor_fake"));
+		}
+
 		this.m.Items.equip(this.new("scripts/items/helmets/ancient/ancient_laurels"));
 	}
 

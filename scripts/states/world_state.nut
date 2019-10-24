@@ -79,6 +79,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		LegendsMod = null,
 		Camp = null
 	},
+
 	function getPlayer()
 	{
 		return this.m.Player;
@@ -476,7 +477,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Tags <- this.m.Tags;
 		this.m.Assets = this.new("scripts/states/world/asset_manager");
 		this.World.Assets <- this.WeakTableRef(this.m.Assets);
-		this.m.LegendsMod = this.new("scripts/mods/legends_mod"); 
+		this.m.LegendsMod = this.new("scripts/mods/legends_mod");
 		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
 		this.m.Camp = this.new("scripts/states/world/camp_manager");
 		this.World.Camp <- this.WeakTableRef(this.m.Camp);
@@ -614,7 +615,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.LegendsMod = null;
 		this.m.Camp.destroy();
 		this.m.Camp = null;
-		this.World.Camp = null;		
+		this.World.Camp = null;
 		this.onDestroyUI();
 		this.Sound.stopAmbience();
 	}
@@ -1072,6 +1073,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.Time.setVirtualTime(0);
 		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
+		this.Const.LegendMod.Configs.Update(this.m.CampaignSettings);
 		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
 		this.Const.World.SettlementsUpdate(this.m.CampaignSettings.NumSettlements);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
@@ -1087,12 +1089,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 				W = minX,
 				H = minY
 			}, this.m.CampaignSettings);
-			if (result) 
+			if (result)
 			{
 				break;
 			}
 			tries = --tries
-			this.logInfo("Invalid map. Regenerating...")			
+			this.logInfo("Invalid map. Regenerating...")
 			//Failures are because of water issues, help map generation towards default results
 			if (tries < 195)
 			{
@@ -1136,7 +1138,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.World.Tags.set("IsUnholdCampaign", true);
 		}
-		
+
 		if (this.Const.DLC.Wildmen)
 		{
 			this.World.Tags.set("IsWildmenCampaign", true);
@@ -1203,7 +1205,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 	function setNewCampaignSettings( _settings )
 	{
-		foreach(k,v in _settings) 
+		foreach(k,v in _settings)
 		{
 			this.logInfo(k + " = " + v);
 		}
@@ -1667,7 +1669,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.m.LastWorldSpeedMult = 1.0;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
 			this.World.setSpeedMult(1.0);
-			this.World.TopbarDayTimeModule.updateTimeButtons(1);			
+			this.World.TopbarDayTimeModule.updateTimeButtons(1);
 			this.setPause(true);
 		}
 
@@ -3451,7 +3453,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				}
 
 				break;
-			
+
 			case 32:
 				if (!this.m.MenuStack.hasBacksteps())
 				{
@@ -3750,6 +3752,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.World.Tags.onSerialize(_out);
+		this.Const.LegendMod.Configs.onSerialize(_out)
 		this.World.FactionManager.onSerialize(_out);
 		this.World.EntityManager.onSerialize(_out);
 		this.World.Assets.onSerialize(_out);
@@ -3762,6 +3765,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		_out.writeBool(this.m.IsCampingAllowed);
 		_out.writeI32(this.m.CombatSeed);
 		this.World.Camp.onSerialize(_out);
+
 	}
 
 	function onDeserialize( _in )
@@ -3787,6 +3791,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.World.Tags.onDeserialize(_in);
+		this.Const.LegendMod.Configs.onDeserialize(_in);
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);
 		this.World.Assets.onDeserialize(_in);

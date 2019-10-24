@@ -35,7 +35,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
 
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)

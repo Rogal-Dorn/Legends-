@@ -37,9 +37,6 @@ this.asset_manager <- {
 		IsIronman = false,
 		IsPermanentDestruction = true,
 		IsLegendPerkTrees = true,
-		IsLegendGenderEquality = false,
-		IsLegendMagic = true,
-		IsLegendArmor = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
 		IsConsumingAssets = true,
@@ -245,20 +242,6 @@ this.asset_manager <- {
 		return this.m.IsLegendPerkTrees;
 	}
 
-	function isLegendGenderEquality()
-	{
-		return this.m.IsLegendGenderEquality;
-	}
-
-	function isLegendMagic()
-	{
-		return this.m.IsLegendMagic;
-	}
-
-	function isLegendArmor()
-	{
-		return this.m.IsLegendArmor;
-	}
 	function isCamping()
 	{
 		return this.World.Camp.isCamping();
@@ -407,17 +390,12 @@ this.asset_manager <- {
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
 		this.m.IsLegendPerkTrees = _settings.LegendPerkTrees;
-		this.m.IsLegendGenderEquality = _settings.LegendGenderEquality;
-		this.m.IsLegendMagic = _settings.LegendMagic;
-		this.m.IsLegendArmor = _settings.LegendArmor;
 		this.m.Origin = _settings.StartingScenario;
 		this.m.BusinessReputation = 0;
 		this.m.SeedString = _settings.Seed;
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
 		this.World.FactionManager.getGreaterEvil().IsExtraLate = false;
-
 		this.m.Stash.resize( this.Const.LegendMod.MaxResources[_settings.EconomicDifficulty].Stash);
-
 		this.m.Money = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Money;
 		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
 		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
@@ -2223,9 +2201,6 @@ this.asset_manager <- {
 		_out.writeBool(this.m.IsIronman);
 		_out.writeBool(!this.m.IsPermanentDestruction);
 		_out.writeBool(this.m.IsLegendPerkTrees);
-		_out.writeBool(this.m.IsLegendGenderEquality);
-		_out.writeBool(this.m.IsLegendMagic);
-		_out.writeBool(this.m.IsLegendArmor);
 		_out.writeString(this.m.Origin.getID());
 		_out.writeString(this.m.SeedString);
 		_out.writeF32(this.m.Money);
@@ -2286,18 +2261,6 @@ this.asset_manager <- {
 			this.m.IsLegendPerkTrees = _in.readBool();
 		}
 
-		if (_in.getMetaData().getVersion() >= 58)
-		{
-			this.m.IsLegendGenderEquality = _in.readBool();
-			this.m.IsLegendMagic = _in.readBool();
-			this.m.IsLegendArmor = _in.readBool();
-		}
-
-		if (_in.getMetaData().getVersion() >= 60)
-		{
-			this.m.IsLegendArmor = _in.readBool();
-		}
-
 		if (_in.getMetaData().getVersion() >= 46)
 		{
 			this.m.Origin = _in.readString();
@@ -2352,7 +2315,6 @@ this.asset_manager <- {
 		{
 			this.m.BrothersMax = _in.readU8();
 		}
-
 		this.updateAverageMoodState();
 		this.updateFood();
 		this.updateFormation();

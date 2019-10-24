@@ -6,29 +6,45 @@ if (!("LegendMod" in gt.Const))
 }
 
 gt.Const.LegendMod.Configs <- {
+    IsArmor = false,
+    IsMagic = false,
+    IsGender = false,
+
+    Update = function (_settings)
+    {
+		this.IsGender = _settings.LegendGenderEquality;
+		this.IsMagic = _settings.LegendMagic;
+		this.IsArmor = _settings.LegendArmor;
+    }
+
     LegendArmorsEnabled = function ()
     {
-        if (!("Assets" in this.World))
-        {
-            return false;
-        }
-        if (this.World.Assets == null)
-        {
-            return false;
-        }
-        return this.World.Assets.isLegendArmor();
-    },
+        return this.IsArmor
+    }
+
     LegendMagicEnabled = function ()
     {
-        if (!("Assets" in this.World))
-        {
-            return false;
-        }
-        if (this.World.Assets == null)
-        {
-            return false;
-        }
-        return 	this.World.Assets.isLegendMagic()
+        return this.IsMagic
     }
+
+    LegendGenderEnabled = function ()
+    {
+        return this.IsGender
+    }
+
+    onSerialize = function (_out)
+    {
+        _out.writeBool(this.IsArmor);
+		_out.writeBool(this.IsMagic);
+		_out.writeBool(this.IsGender);
+    }
+
+    onDeserialize = function (_in)
+    {
+		this.IsArmor = _in.readBool();
+		this.IsMagic = _in.readBool();
+		this.IsGender = _in.readBool();
+    }
+
 }
 

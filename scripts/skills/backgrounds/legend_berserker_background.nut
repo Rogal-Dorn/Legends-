@@ -59,7 +59,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.BeardChance = 100;
 		this.m.Body = "bust_naked_body_01";
 
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)

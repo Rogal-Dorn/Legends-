@@ -39,7 +39,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Body = "bust_naked_body_01";
 		this.m.IsFemaleBackground = false;
 
-		if ("Assets" in this.World && this.World.Assets.isLegendGenderEquality())
+		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
 			if (r == 0)

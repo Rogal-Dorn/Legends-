@@ -103,26 +103,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_armor_reinforced_worn_mail",
 			"legend_armor_rusty_mail_shirt",
 			"legend_armor_short_mail"
-			// "legend_armor_leather",
-			// "legend_armor_hide_and_bone",
-			// "legend_armor_patched_mail",
-			// "legend_armor_leather_lamellar",
-			// "legend_armor_ancient_mail",
-			// "legend_armor_worn_mail",
-			// "legend_armor_basic_mail",
-			// "legend_armor_ancient_double_layer",
-			// "legend_armor_mail_shirt",
-			// "legend_armor_leather_scale",
-			// "legend_armor_mail_hauberk",
-			// "legend_armor_decayed_reinforced",
-			// "legend_armor_light_scale",
-			// "legend_armor_footmans_armor",
-			// "legend_armor_lamellar",
-			// "legend_armor_scale",
-			// "legend_armor_heraldic",
-			// "legend_armor_sellswords",
-			// "legend_armor_coat_of_scales",
-			// "legend_armor_ikon_scale"
 		];
 
 		foreach(c in chain)
@@ -171,27 +151,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_scrap_metal_armor.nut",
 			"legend_thick_furs_armor.nut",
 			"legend_thick_plated_barbarian_armor.nut"
-			// "legend_armor_leather_"
-			// "legend_armor_hide_and_bone",
-			// "legend_armor_lamellar",
-			// "legend_armor_rugged_scale",
-			// "legend_armor_heavy_iron",
-			// "legend_armor_ancient_scale_harness",
-			// "legend_armor_ancient_breastplate",
-			// "legend_armor_ancient_plate",
-			// "legend_armor_ancient_plate_harness",
-			// "legend_armor_ancient_plate_scale",
-			// "legend_armor_refurbished_ancient_plate",
-			// "legend_armor_decayed_plates",
-			// "legend_armor_heavy_lamellar",
-			// "legend_armor_coat_of_plates",
-			// "legend_armor_chestplate_2",
-			// "legend_armor_dem_avalon_plate",
-			// "legend_armor_wuxiang_plate",
-			// "legend_armor_pixel_plate",
-			// "legend_armor_ikon_plates",
-			// "legend_armor_karl_plates",
-			// "legend_armor_shkimmilk_plates"
 		];
 
 		foreach(p in plate)
@@ -257,6 +216,21 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Assets.getStash().add(pla);
 		}
 
+		local legendary = [
+			"legend_armor_mountain",
+			"legend_armor_of_davkul",
+			"legend_armor_skin",
+			"legend_emperors_armor",
+			"legend_emperors_armor_fake",
+			"legend_ijirok_armor"
+		];
+
+		foreach(p in legendary)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/legendary/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
 	}
 
 

@@ -89,7 +89,15 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 				_event.m.Sacrifice.getItems().transferToStash(this.World.Assets.getStash());
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
 				this.World.Assets.getStash().makeEmptySlots(1);
-				local item = this.new("scripts/items/armor/legendary/armor_of_davkul");
+				local item
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					item =this.new("scripts/items/legend_armor/legendary/legend_armor_of_davkul");
+				}
+				else
+				{
+					item = this.new("scripts/items/armor/legendary/armor_of_davkul");
+				}
 				item.m.Description = "A grisly aspect of Davkul, an ancient power not from this world, and the last remnants of " + _event.m.Sacrifice.getName() + " from whose body it has been fashioned. It shall never break, but instead keep regrowing its scarred skin on the spot.";
 				this.World.Assets.getStash().add(item);
 				this.List.push({
