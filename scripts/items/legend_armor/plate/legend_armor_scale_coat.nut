@@ -17,9 +17,9 @@ this.legend_armor_scale_coat <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.SpriteDamagedBack = "bust_legend_scale_coat_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_scale_coat_dead";
 		this.m.Value = 6000;
-		this.m.Condition = 300;
-		this.m.ConditionMax = 300;
-		this.m.StaminaModifier = -38;
+		this.m.Condition = 185;
+		this.m.ConditionMax = 185;
+		this.m.StaminaModifier = -20;
         this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 	}
 

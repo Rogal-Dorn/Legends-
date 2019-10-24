@@ -18,7 +18,7 @@ this.legend_armor_ancient_mail <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Value = 350;
 		this.m.Condition = 100;
 		this.m.ConditionMax = 100;
-		this.m.StaminaModifier = 14;
+		this.m.StaminaModifier = -14;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

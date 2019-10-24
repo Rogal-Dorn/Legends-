@@ -18,7 +18,7 @@ this.legend_armor_reinforced_rotten_mail_shirt <- this.inherit("scripts/items/le
 		this.m.Value = 200;
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
-		this.m.StaminaModifier = 10;
+		this.m.StaminaModifier = -10;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

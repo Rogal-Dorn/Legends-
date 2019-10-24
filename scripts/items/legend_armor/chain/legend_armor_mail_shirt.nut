@@ -16,9 +16,9 @@ this.legend_armor_mail_shirt <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.SpriteDamagedBack = "bust_legend_mail_shirt_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_mail_shirt_dead";
 		this.m.Value = 650;
-		this.m.Condition = 130;
-		this.m.ConditionMax = 130;
-		this.m.StaminaModifier = 14;
+		this.m.Condition = 65;
+		this.m.ConditionMax = 65;
+		this.m.StaminaModifier = -6;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 

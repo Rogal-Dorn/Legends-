@@ -16,9 +16,9 @@ this.legend_armor_hauberk_full <- this.inherit("scripts/items/legend_armor/legen
 		this.m.SpriteDamagedBack = "bust_legend_hauberk_full_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_hauberk_full_dead";
 		this.m.Value = 1500;
-		this.m.Condition = 110;
-		this.m.ConditionMax = 110;
-		this.m.StaminaModifier = 11;
+		this.m.Condition = 100;
+		this.m.ConditionMax = 100;
+		this.m.StaminaModifier = -10;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}
 
