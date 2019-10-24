@@ -12,10 +12,10 @@ this.legend_reinforced_animal_hide_armor <- this.inherit("scripts/items/legend_a
 		this.m.SpriteBack = "bust_body_" + variant;
 		this.m.SpriteDamagedBack = "bust_body_" + variant + "_damaged";
 		this.m.SpriteCorpseBack = "bust_body_" + variant + "_dead";
-		this.m.IconLarge = "armor/inventory_body_armor_" + variant + ".png";
-		this.m.Icon = "armor/icon_body_armor_" + variant + ".png";
-		this.m.OverlayIconLarge = this.m.IconLarge;
-		this.m.OverlayIcon = this.m.Icon;
+		this.m.Icon = "legend_armor/plate/legend_reinforced_animal_hide_armor.png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_reinforced_animal_hide_armor.png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_reinforced_animal_hide_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.Value = 120;
 		this.m.Condition = 65;

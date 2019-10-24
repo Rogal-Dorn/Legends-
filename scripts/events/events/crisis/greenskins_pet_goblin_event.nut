@@ -289,7 +289,7 @@ this.greenskins_pet_goblin_event <- this.inherit("scripts/events/event", {
 				}
 				else if (r == 4)
 				{
-					if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+					if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 					{
 						item = this.new("scripts/items/legend_armor/named/legend_black_leather_armor");
 					}

@@ -39,7 +39,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Modifiers.Enchanting = 1.0;
 		this.m.Level = 2;
 
-		if ("Assets" in this.World && this.World.Assets != null && !this.World.Assets.isLegendMagic())
+		if (!this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
 			this.m.CustomPerkTree = [
 			[

@@ -83,7 +83,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 	function onPrepare()
 	{
 
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			return this.onLegendPrepare()
 		}

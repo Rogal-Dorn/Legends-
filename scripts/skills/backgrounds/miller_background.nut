@@ -173,7 +173,7 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			items.equip(this.new("scripts/items/weapons/legend_shovel"));
 		}
 
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic")
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_tunic"));
 	}
 });
 

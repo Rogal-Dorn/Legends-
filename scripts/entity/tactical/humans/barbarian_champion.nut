@@ -106,7 +106,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				local cloths = [
 					[1, "cloth/legend_sackcloth"]
@@ -167,7 +167,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local weapons = this.Const.Items.NamedBarbarianWeapons;
 		local armor = this.Const.Items.NamedBarbarianArmors;
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			armor = this.Const.Items.LegendNamedBarbarianArmors;
 		}

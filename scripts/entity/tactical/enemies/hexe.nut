@@ -197,7 +197,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 				}
 
 				local chance = 1;
-				if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.isLegendMagic())
+				if (this.Const.LegendMod.Configs.LegendMagicEnabled())
 				{
 					chance = 10;
 				}

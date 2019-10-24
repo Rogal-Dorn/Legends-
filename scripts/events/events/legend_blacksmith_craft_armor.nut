@@ -88,7 +88,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]10000[/color] Crowns"
 				});
 				local item = null;
-				if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/named/legend_named_golden_lamellar_armor");
 				}
@@ -200,7 +200,7 @@ this.legend_blacksmith_craft_armor <- this.inherit("scripts/events/event", {
 				}
 
 				local item = null;
-				if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				{
 					item = this.new("scripts/items/legend_armor/named/legend_named_golden_lamellar_armor");
 				}

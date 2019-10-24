@@ -115,7 +115,7 @@ this.bandit_raider_low <- this.inherit("scripts/entity/tactical/enemies/bandit_r
 			}
 		}
 
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

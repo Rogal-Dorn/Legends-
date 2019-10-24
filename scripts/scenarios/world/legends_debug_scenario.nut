@@ -161,7 +161,16 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_armor_scale",
 			"legend_armor_scale_coat",
 			"legend_armor_scale_coat_rotten",
-			"legend_armor_scale_shirt"
+			"legend_armor_scale_shirt",
+			"legend_animal_hide_armor.nut",
+			"legend_armor_scale_shirt.nut",
+			"legend_heavy_iron_armor.nut",
+			"legend_hide_and_bone_armor.nut",
+			"legend_reinforced_animal_hide_armor.nut",
+			"legend_rugged_scale_armor.nut",
+			"legend_scrap_metal_armor.nut",
+			"legend_thick_furs_armor.nut",
+			"legend_thick_plated_barbarian_armor.nut"
 			// "legend_armor_leather_"
 			// "legend_armor_hide_and_bone",
 			// "legend_armor_lamellar",
@@ -205,6 +214,49 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			item.setVariant(i);
 			this.World.Assets.getStash().add(item);
 		}
+
+		local fixed = [
+			"legend_armor_crusader",
+			"legend_armor_rabble_fur",
+			"legend_armor_ranger",
+			"legend_armor_seer_robes",
+			"legend_armor_vala_cloak",
+			"legend_armor_vala_dress",
+			"legend_armor_warlock_cloak",
+			"legend_armor_werewolf_mail"
+		];
+
+		foreach(p in fixed)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/armor/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
+
+		local named = [
+			"legend_armor_named_warlock_cloak",
+			"legend_black_leather_armor",
+			"legend_blue_studded_mail_armor",
+			"legend_brown_coat_of_plates_armor",
+			"legend_golden_scale_armor",
+			"legend_green_coat_of_plates_armor",
+			"legend_heraldic_mail_armor",
+			"legend_lindwurm_armor",
+			"legend_named_bronze_armor",
+			"legend_named_golden_lamellar_armor",
+			"legend_named_noble_mail_armor",
+			"legend_named_plated_fur_armor",
+			"legend_named_sellswords_armor",
+			"legend_named_skull_and_chain_armor"
+		];
+
+		foreach(p in named)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/named/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
+
 	}
 
 

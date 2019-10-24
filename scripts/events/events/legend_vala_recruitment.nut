@@ -77,7 +77,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if ("Assets" in this.World && this.World.Assets != null && !this.World.Assets.isLegendMagic())
+		if (!this.Const.LegendMod.Configs.LegendMagicEnabled())
 		{
 			return;
 		}

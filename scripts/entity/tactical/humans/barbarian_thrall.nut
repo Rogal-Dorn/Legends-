@@ -111,7 +111,7 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield_old"));
 		}
 
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
 				[4, ""],
@@ -122,7 +122,7 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 			if (armor != null)
 			{
 				local plates = [
-					[, ""],
+					[0, ""],
 					[1, "plate/legend_animal_hide_armor"],
 					[0, "plate/legend_heavy_iron_armor"],
 					[0, "plate/legend_hide_and_bone_armor"],

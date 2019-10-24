@@ -64,7 +64,7 @@ this.skeleton_heavy_polearm <- this.inherit("scripts/entity/tactical/skeleton", 
 			this.m.Items.equip(this.new("scripts/items/shields/ancient/tower_shield"));
 		}
 
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],

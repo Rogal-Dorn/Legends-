@@ -444,6 +444,7 @@ gt.Const.World.Spawn.Necromancer <-
 				{
 					Type = this.Const.World.Spawn.Troops.Necromancer,
 					Cost = 30,
+					Roll = true
 					MinGuards = 1,
 					MaxGuards = 2,
 					MaxGuardsWeight = 50,

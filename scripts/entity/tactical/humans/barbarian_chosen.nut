@@ -102,7 +102,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
-			if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 			{
 				local cloths = [
 					[1, "cloth/legend_sackcloth"]

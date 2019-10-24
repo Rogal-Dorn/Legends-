@@ -236,13 +236,34 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 	local candidates = [];
 	local T = [];
 	local totalWeight = 0;
+	local dateToSkip = 0
+	switch (this.World.Assets.getCombatDifficulty())
+	{
+		case this.Const.Difficulty.Easy:
+			dateToSkip = 120;
+			break;
+		case this.Const.Difficulty.Normal:
+			dateToSkip = 90
+			break;
+		case this.Const.Difficulty.Hard:
+			dateToSkip = 60
+			break;
+		case this.Const.Difficulty.Legendary:
+			dateToSkip = 30
+			break;
+	}
+
+	//Go through each Item in the spawn list (which are structures defining enemies)
 	foreach (t in _list)
 	{
+		//Don't pick if resources are greater than threshold
 		if ("MaxR" in t && _resources > t.MaxR)
 		{
 			continue;
 		}
 
+		//Don't pick if resources are less than threshold AND we have surpassed
+		//the given days in game based on Difficulty
 		if ("MinR" in t)
 		{
 			local minr = 0;
@@ -255,30 +276,11 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 				minr = t.MinR;
 			}
 
-			local dateToSkip = 0
-			switch (this.World.Assets.getCombatDifficulty())
-			{
-				case this.Const.Difficulty.Easy:
-					dateToSkip = 120;
-					break;
-				case this.Const.Difficulty.Normal:
-					dateToSkip = 90
-					break;
-				case this.Const.Difficulty.Hard:
-					dateToSkip = 60
-					break;
-				case this.Const.Difficulty.Legendary:
-					dateToSkip = 30
-					break;
-			}
-
 			if (_resources < minr && this.World.getTime().Days <= dateToSkip)
 			{
 				continue
 			}
 		}
-
-
 
 		local w = 0
 		if (typeof(t.Weight) == "function")
@@ -299,7 +301,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 		candidates.push(t);
 	}
 
-	local r = this.Math.rand(0, totalWeight);
+	local r = this.Math.rand(1, totalWeight);
 	foreach (t in candidates)
 	{
 		local w = 0;
@@ -336,11 +338,26 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 
 			if ("Roll" in troop)
 			{
-				if (!troop.Roll(_map[key].Num))
+				if (typeof(troop.Roll) == "function")
 				{
-					continue;
+					if (!troop.Roll(_map[key].Num))
+					{
+						continue;
+					}
+				}
+				else
+				{
+					if (this.World.getTime().Days <= dateToSkip)
+					{
+						local chance = 1.0 / (1.0 + this.Math.pow(_map[key].Num, 0.5)) * 100
+						if (this.Math.rand(1, 100) > chance)
+						{
+							continue;
+						}
+					}
 				}
 			}
+
 			_credits -= troop.Cost;
 			_map[key].Num += 1;
 
@@ -451,23 +468,6 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 					minr = troop.Types[i].MinR;
 				}
 
-				local dateToSkip = 0
-				switch (this.World.Assets.getCombatDifficulty())
-				{
-					case this.Const.Difficulty.Easy:
-						dateToSkip = 120;
-						break;
-					case this.Const.Difficulty.Normal:
-						dateToSkip = 90
-						break;
-					case this.Const.Difficulty.Hard:
-						dateToSkip = 60
-						break;
-					case this.Const.Difficulty.Legendary:
-						dateToSkip = 30
-						break;
-				}
-
 				if (_resources < minr && this.World.getTime().Days <= dateToSkip)
 				{
 					continue
@@ -483,11 +483,25 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 				}
 			}
 
-			if ("Roll" in troop.Types[i])
+			if ("Roll" in troop)
 			{
-				if (!troop.Types[i].Roll(_map[key].Num))
+				if (typeof(troop.Roll) == "function")
 				{
-					continue;
+					if (!troop.Roll(_map[key].Num))
+					{
+						continue;
+					}
+				}
+				else
+				{
+					if (this.World.getTime().Days <= dateToSkip)
+					{
+						local chance = 1.0 / (1.0 + this.Math.pow(_map[key].Num, 0.5)) * 100
+						if (this.Math.rand(1, 100) > chance)
+						{
+							continue;
+						}
+					}
 				}
 			}
 

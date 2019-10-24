@@ -768,7 +768,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function addEquipment()
 	{
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			this.onAddLegendEquipment()
 		}

@@ -54,7 +54,7 @@ this.zombie_yeoman_bodyguard <- this.inherit("scripts/entity/tactical/enemies/zo
 		}
 
 		local armor
-		if ("Assets" in this.World && this.World.Assets.isLegendArmor())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],
