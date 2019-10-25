@@ -17,7 +17,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local partysize = 4
+		local partysize = 12
 		local broLevelMax = 11
 
 		for( local i = 0; i < partysize; i = ++i )
@@ -162,7 +162,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		for( local i = 101; i < 113; i = ++i )
 		{
-			local item = this.new("scripts/items/legend_armor/tabard/legend_armor_company_tabard")
+			local item = this.new("scripts/items/legend_armor/tabard/legend_armor_tabard")
 			item.setVariant(i);
 			this.World.Assets.getStash().add(item);
 		}
@@ -170,6 +170,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		for( local i = 1; i < 11; i = ++i )
 		{
 			local item = this.new("scripts/items/legend_armor/tabard/legend_armor_noble_tabard")
+			item.setVariant(i);
+			this.World.Assets.getStash().add(item);
+		}
+
+		for( local i = 1; i < 8; i = ++i )
+		{
+			local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak")
 			item.setVariant(i);
 			this.World.Assets.getStash().add(item);
 		}
