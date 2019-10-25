@@ -205,6 +205,11 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
 		this.m.Armor = null;
+		if (_app == null)
+		{
+			return
+		}
+
 		switch(this.m.Type)
 		{
 			case this.Const.Items.ArmorUpgrades.Chain:
