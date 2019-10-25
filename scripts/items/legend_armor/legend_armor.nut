@@ -197,9 +197,16 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
-		local app = this.getContainer().getAppearance();
+
+
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
+			local app
+			if (this.getContainer() != null && this.isEquipped())
+			{
+				app = this.getContainer().getAppearance();
+			}
+
 			local item = this.m.Upgrades[_upgrade.getType()];
 			item.onRemoved(app);
 			if (!item.isDestroyedOnRemove())
