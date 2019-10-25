@@ -91,12 +91,12 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			text = this.getValueString()
 		});
 
-		if (this.getIconLarge() != null)
+		if (this.getOverlayIconLarge() != null)
 		{
 			result.push({
 				id = 3,
 				type = "image",
-				image = this.getIconLarge(),
+				image = this.getOverlayIconLarge(),
 				isLarge = true
 			});
 		}
@@ -200,10 +200,36 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	{
 	}
 
-	function onRemoved()
+	function onRemoved(_app)
 	{
+
 		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
 		this.m.Armor = null;
+		switch(this.m.Type)
+		{
+			case this.Const.Items.ArmorUpgrades.Chain:
+				_app.ArmorLayerChain = ""
+				_app.CorpseArmorLayerChain =  ""
+				break;
+			case this.Const.Items.ArmorUpgrades.Plate:
+				_app.ArmorLayerPlate = ""
+				_app.CorpseArmorLayerPlate =  ""
+				break;
+			case this.Const.Items.ArmorUpgrades.Tabbard:
+				_app.ArmorLayerTabbard = ""
+				_app.CorpseArmorLayerTabbard = ""
+				break;
+			case this.Const.Items.ArmorUpgrades.Cloak:
+				_app.ArmorLayerCloak = ""
+				_app.CorpseArmorLayerCloak = ""
+				break;
+			case this.Const.Items.ArmorUpgrades.Attachment:
+				_app.ArmorUpgradeFront = ""
+				_app.ArmorUpgradeBack = ""
+				_app.CorpseArmorUpgradeFront = ""
+				_app.CorpseArmorUpgradeBack = ""
+				break;
+		}
 		return this.m.IsDestroyedOnRemove;
 	}
 
@@ -221,9 +247,13 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			return false;
 		}
 
-		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
-		armor.setUpgrade(this);
-		return true;
+		local success = armor.setUpgrade(this);
+		if (success)
+		{
+			this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
+		}
+
+		return success;
 	}
 
 	function onDamageReceived( _damage, _fatalityType, _attacker )

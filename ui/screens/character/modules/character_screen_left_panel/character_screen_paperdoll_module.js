@@ -10,7 +10,7 @@
  */
 "use strict";
 
-var CharacterScreenPaperdollModule = function(_parent, _dataSource) {
+var CharacterScreenPaperdollModule = function (_parent, _dataSource) {
   this.mParent = _parent;
   this.mDataSource = _dataSource;
 
@@ -76,7 +76,7 @@ var CharacterScreenPaperdollModule = function(_parent, _dataSource) {
   this.registerDatasourceListener();
 };
 
-CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
+CharacterScreenPaperdollModule.prototype.createDIV = function (_parentDiv) {
   var self = this;
 
   // create: containers
@@ -98,9 +98,10 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
 
   var layout = $('<div class="l-button remove1"/>');
   middleEquipmentColumn.append(layout);
+
   this.mUpgradeButtons.push(layout.createTextButton(
     "1",
-    function(_event) {
+    function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(0);
     },
     "display-block",
@@ -111,7 +112,7 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
   middleEquipmentColumn.append(layout);
   this.mUpgradeButtons.push(layout.createTextButton(
     "2",
-    function(_event) {
+    function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(1);
     },
     "display-block",
@@ -122,7 +123,7 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
   middleEquipmentColumn.append(layout);
   this.mUpgradeButtons.push(layout.createTextButton(
     "3",
-    function(_event) {
+    function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(2);
     },
     "display-block",
@@ -133,7 +134,7 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
   middleEquipmentColumn.append(layout);
   this.mUpgradeButtons.push(layout.createTextButton(
     "4",
-    function(_event) {
+    function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(3);
     },
     "display-block",
@@ -144,7 +145,7 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
   middleEquipmentColumn.append(layout);
   this.mUpgradeButtons.push(layout.createTextButton(
     "5",
-    function(_event) {
+    function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(4);
     },
     "display-block",
@@ -156,7 +157,7 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
   middleEquipmentColumn.append(layout);
   this.mUpgradeButtons.push(layout.createTextButton(
     "R",
-    function(_event) {
+    function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(5);
     },
     "display-block",
@@ -179,13 +180,13 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
 
   // create: equipment slots
   var screen = $(".character-screen");
-  $.each(this.mLeftEquipmentSlots, function(_key, _value) {
+  $.each(this.mLeftEquipmentSlots, function (_key, _value) {
     self.createEquipmentSlot(_value, leftEquipmentColumnLayout, screen);
   });
-  $.each(this.mMiddleEquipmentSlots, function(_key, _value) {
+  $.each(this.mMiddleEquipmentSlots, function (_key, _value) {
     self.createEquipmentSlot(_value, middleEquipmentColumnLayout, screen);
   });
-  $.each(this.mRightEquipmentSlots, function(_key, _value) {
+  $.each(this.mRightEquipmentSlots, function (_key, _value) {
     self.createEquipmentSlot(_value, rightEquipmentColumnLayout, screen);
   });
 
@@ -204,20 +205,20 @@ CharacterScreenPaperdollModule.prototype.createDIV = function(_parentDiv) {
   }
 };
 
-CharacterScreenPaperdollModule.prototype.destroyDIV = function() {
-  $.each(this.mLeftEquipmentSlots, function(_key, _value) {
+CharacterScreenPaperdollModule.prototype.destroyDIV = function () {
+  $.each(this.mLeftEquipmentSlots, function (_key, _value) {
     _value.Container.empty();
     _value.Container.remove();
     _value.Container = null;
   });
 
-  $.each(this.mMiddleEquipmentSlots, function(_key, _value) {
+  $.each(this.mMiddleEquipmentSlots, function (_key, _value) {
     _value.Container.empty();
     _value.Container.remove();
     _value.Container = null;
   });
 
-  $.each(this.mRightEquipmentSlots, function(_key, _value) {
+  $.each(this.mRightEquipmentSlots, function (_key, _value) {
     _value.Container.empty();
     _value.Container.remove();
     _value.Container = null;
@@ -235,7 +236,7 @@ CharacterScreenPaperdollModule.prototype.destroyDIV = function() {
   this.mContainer = null;
 };
 
-CharacterScreenPaperdollModule.prototype.createBagSlot = function(
+CharacterScreenPaperdollModule.prototype.createBagSlot = function (
   _index,
   _parentDiv,
   _screenDiv
@@ -249,8 +250,8 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
 
   var layout = $(
     '<div id="backpack-slot-' +
-      _index +
-      '" class="l-slot-container is-backpack"/>'
+    _index +
+    '" class="l-slot-container is-backpack"/>'
   );
   _parentDiv.append(layout);
 
@@ -265,7 +266,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
   itemData.owner = CharacterScreenIdentifier.ItemOwner.Backpack;
 
   // add event handler
-  var dropHandler = function(_source, _target, _proxy) {
+  var dropHandler = function (_source, _target, _proxy) {
     //var sourceData = _source.data('item');
     var sourceData = _proxy.data("item");
     var targetData = _target.data("item");
@@ -285,9 +286,9 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
     }
 
     var entityId =
-      sourceData !== null && "entityId" in sourceData
-        ? sourceData.entityId
-        : null;
+      sourceData !== null && "entityId" in sourceData ?
+      sourceData.entityId :
+      null;
     var sourceItemId =
       sourceData !== null && "itemId" in sourceData ? sourceData.itemId : null;
     var sourceItemIdx =
@@ -296,29 +297,29 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
       targetData !== null && "index" in targetData ? targetData.index : null;
     //var targetItemId = (targetData !== null && 'itemId' in targetData) ? targetData.itemId : null;
     var sourceSlotType =
-      sourceData !== null && "slotType" in sourceData
-        ? sourceData.slotType
-        : null;
+      sourceData !== null && "slotType" in sourceData ?
+      sourceData.slotType :
+      null;
     var targetSlotType =
-      targetData !== null && "slotType" in targetData
-        ? targetData.slotType
-        : null;
+      targetData !== null && "slotType" in targetData ?
+      targetData.slotType :
+      null;
     var sourceIsBlockingOffhand =
-      sourceData !== null && "isBlockingOffhand" in sourceData
-        ? sourceData.isBlockingOffhand
-        : false;
+      sourceData !== null && "isBlockingOffhand" in sourceData ?
+      sourceData.isBlockingOffhand :
+      false;
     var targetIsBlockingOffhand =
-      targetData !== null && "isBlockingOffhand" in targetData
-        ? targetData.isBlockingOffhand
-        : false;
+      targetData !== null && "isBlockingOffhand" in targetData ?
+      targetData.isBlockingOffhand :
+      false;
     var isUsable =
-      sourceData !== null && "isUsable" in sourceData
-        ? sourceData.isUsable
-        : false;
+      sourceData !== null && "isUsable" in sourceData ?
+      sourceData.isUsable :
+      false;
 
     if (sourceOwner === CharacterScreenIdentifier.ItemOwner.Ground) {
       // bullshit hack, fu imp
-      $(".is-equipable").each(function() {
+      $(".is-equipable").each(function () {
         $(this).removeClass("is-equipable");
       });
     }
@@ -459,8 +460,8 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
     }
   };
 
-  var dragEndHandler = function(_source, _target, _proxy) {
-    $(".is-equipable").each(function() {
+  var dragEndHandler = function (_source, _target, _proxy) {
+    $(".is-equipable").each(function () {
       $(this).removeClass("is-equipable");
     });
 
@@ -481,9 +482,9 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
          */
 
     var isAllowedToDrop =
-      sourceData !== null && "isAllowedToDrop" in sourceData
-        ? sourceData.isAllowedToDrop
-        : false;
+      sourceData !== null && "isAllowedToDrop" in sourceData ?
+      sourceData.isAllowedToDrop :
+      false;
     if (isAllowedToDrop === false) {
       console.info(
         "Backpack::dragEndHandler: Failed to drop item. Not allowed."
@@ -496,7 +497,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
     return true;
   };
 
-  var dragStartHandler = function(_source, _proxy) {
+  var dragStartHandler = function (_source, _proxy) {
     var paperdollModule = $(".paperdoll-module");
 
     if (_source.length === 0) {
@@ -507,9 +508,9 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
     var sourceData = _proxy.data("item");
     //var proxyData = _source.data('item');
     var sourceSlotType =
-      sourceData !== null && "slotType" in sourceData
-        ? sourceData.slotType
-        : null;
+      sourceData !== null && "slotType" in sourceData ?
+      sourceData.slotType :
+      null;
     //console.log("Source data: " + sourceSlotType);
 
     switch (sourceSlotType) {
@@ -577,7 +578,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
   );
 
   // add event handler
-  result.Container.assignPaperdollItemRightClick(function(_item, _event) {
+  result.Container.assignPaperdollItemRightClick(function (_item, _event) {
     var data = _item.data("item");
 
     var isEmpty = data !== null && "isEmpty" in data ? data.isEmpty : true;
@@ -598,7 +599,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
     ) {
       // equip or drop into inventory
       if (repairItem === true) {
-        self.mDataSource.toggleInventoryItem(itemId, entityId, function(ret) {
+        self.mDataSource.toggleInventoryItem(itemId, entityId, function (ret) {
           data["repair"] = ret["repair"];
           data["salvage"] = ret["salvage"];
           result.setRepairImageVisible(data["repair"], data["salvage"]);
@@ -619,7 +620,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function(
   return result;
 };
 
-CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
+CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
   _slot,
   _parentDiv,
   _screenDiv
@@ -642,7 +643,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
   itemData.slotType = _slot.SlotType;
 
   // add event handler
-  var dropHandler = function(_source, _target, _proxy) {
+  var dropHandler = function (_source, _target, _proxy) {
     //var sourceData = _source.data('item');
     var sourceData = _proxy.data("item");
     var targetData = _target.data("item");
@@ -669,39 +670,39 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
 
     if (sourceOwner === CharacterScreenIdentifier.ItemOwner.Ground) {
       // bullshit hack, fuck you imp
-      $(".is-equipable").each(function() {
+      $(".is-equipable").each(function () {
         $(this).removeClass("is-equipable");
       });
     }
 
     var entityId =
-      sourceData !== null && "entityId" in sourceData
-        ? sourceData.entityId
-        : null;
+      sourceData !== null && "entityId" in sourceData ?
+      sourceData.entityId :
+      null;
     var itemId =
       sourceData !== null && "itemId" in sourceData ? sourceData.itemId : null;
 
     // we only allow equipping items with the same slot type
     var sourceSlotType =
-      sourceData !== null && "slotType" in sourceData
-        ? sourceData.slotType
-        : null;
+      sourceData !== null && "slotType" in sourceData ?
+      sourceData.slotType :
+      null;
     var targetSlotType =
-      targetData !== null && "slotType" in targetData
-        ? targetData.slotType
-        : null;
+      targetData !== null && "slotType" in targetData ?
+      targetData.slotType :
+      null;
     var sourceItemId =
       sourceData !== null && "itemId" in sourceData ? sourceData.itemId : null;
     var sourceItemIdx =
       sourceData !== null && "index" in sourceData ? sourceData.index : null;
     var sourceIsBlockingOffhand =
-      sourceData !== null && "isBlockingOffhand" in sourceData
-        ? sourceData.isBlockingOffhand
-        : false;
+      sourceData !== null && "isBlockingOffhand" in sourceData ?
+      sourceData.isBlockingOffhand :
+      false;
     var targetIsBlockingOffhand =
-      targetData !== null && "isBlockingOffhand" in targetData
-        ? targetData.isBlockingOffhand
-        : false;
+      targetData !== null && "isBlockingOffhand" in targetData ?
+      targetData.isBlockingOffhand :
+      false;
     var isUsable =
       sourceData !== null && "isUsable" in sourceData ? sourceData.isUsable : 0;
 
@@ -851,8 +852,8 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
     }
   };
 
-  var dragEndHandler = function(_source, _target, _proxy) {
-    $(".is-equipable").each(function() {
+  var dragEndHandler = function (_source, _target, _proxy) {
+    $(".is-equipable").each(function () {
       $(this).removeClass("is-equipable");
     });
 
@@ -868,9 +869,9 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
       sourceData !== null &&
       "isAllowedToDrop" in sourceData &&
       targetData !== undefined &&
-      targetData !== null
-        ? sourceData.isAllowedToDrop
-        : false;
+      targetData !== null ?
+      sourceData.isAllowedToDrop :
+      false;
     if (isAllowedToDrop === false) {
       console.info(
         "Paperdoll::dragEndHandler: Failed to drop item. Not allowed."
@@ -885,9 +886,9 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
     var hasTargetIndex =
       targetData !== null && "index" in targetData && targetData.index !== null;
     var isEmpty =
-      targetData !== null && "isEmpty" in targetData
-        ? targetData.isEmpty
-        : true;
+      targetData !== null && "isEmpty" in targetData ?
+      targetData.isEmpty :
+      true;
 
     /*
                 if (sourceOwner === null || targetOwner === null)
@@ -988,7 +989,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
     return true;
   };
 
-  var dragStartHandler = function(_source, _proxy) {
+  var dragStartHandler = function (_source, _proxy) {
     var paperdollModule = $(".paperdoll-module");
 
     if (_source.length === 0) {
@@ -999,9 +1000,9 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
     var sourceData = _proxy.data("item");
     //var proxyData = _source.data('item');
     var sourceSlotType =
-      sourceData !== null && "slotType" in sourceData
-        ? sourceData.slotType
-        : null;
+      sourceData !== null && "slotType" in sourceData ?
+      sourceData.slotType :
+      null;
     //console.log("Source data: " + sourceSlotType);
 
     switch (sourceSlotType) {
@@ -1069,7 +1070,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
     dropHandler
   );
 
-  _slot.Container.assignPaperdollItemRightClick(function(_item, _event) {
+  _slot.Container.assignPaperdollItemRightClick(function (_item, _event) {
     var data = _item.data("item");
 
     var isEmpty = data !== null && "isEmpty" in data ? data.isEmpty : true;
@@ -1089,7 +1090,7 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
       entityId !== null /*&& itemIdx !== null*/
     ) {
       if (repairItem === true) {
-        self.mDataSource.toggleInventoryItem(itemId, entityId, function(ret) {
+        self.mDataSource.toggleInventoryItem(itemId, entityId, function (ret) {
           data["repair"] = ret["repair"];
           data["salvage"] = ret["salvage"];
           _slot.Container.setRepairImageVisible(
@@ -1113,28 +1114,33 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function(
   });
 };
 
-CharacterScreenPaperdollModule.prototype.removeItemFromSlot = function(_slot) {
+CharacterScreenPaperdollModule.prototype.removeItemFromSlot = function (_slot) {
   _slot.Container.assignPaperdollItemImage();
   _slot.Container.assignPaperdollItemOverlayImage();
   _slot.Container.setPaperdollRepairImageVisible(false);
 };
 
-CharacterScreenPaperdollModule.prototype.clearItems = function() {
+CharacterScreenPaperdollModule.prototype.clearItems = function () {
   var self = this;
-  $.each(this.mLeftEquipmentSlots, function(_key, _value) {
+  $.each(this.mLeftEquipmentSlots, function (_key, _value) {
     self.removeItemFromSlot(_value);
   });
 
-  $.each(this.mMiddleEquipmentSlots, function(_key, _value) {
+  $.each(this.mMiddleEquipmentSlots, function (_key, _value) {
     self.removeItemFromSlot(_value);
   });
 
-  $.each(this.mRightEquipmentSlots, function(_key, _value) {
+  $.each(this.mRightEquipmentSlots, function (_key, _value) {
     self.removeItemFromSlot(_value);
   });
+
+  this.mUpgradeButtons.forEach(function (btn, index) {
+    btn.unbindTooltip();
+  })
+
 };
 
-CharacterScreenPaperdollModule.prototype.assignItemToSlot = function(
+CharacterScreenPaperdollModule.prototype.assignItemToSlot = function (
   _slot,
   _entityId,
   _item,
@@ -1170,17 +1176,17 @@ CharacterScreenPaperdollModule.prototype.assignItemToSlot = function(
     itemData.slotType =
       isSlotBlocked === true &&
       _item[CharacterScreenIdentifier.Item.Slot] ===
-        CharacterScreenIdentifier.ItemSlot.Mainhand
-        ? CharacterScreenIdentifier.ItemSlot.Offhand
-        : _item[CharacterScreenIdentifier.Item.Slot];
+      CharacterScreenIdentifier.ItemSlot.Mainhand ?
+      CharacterScreenIdentifier.ItemSlot.Offhand :
+      _item[CharacterScreenIdentifier.Item.Slot];
     itemData.entityId = _entityId;
     itemData.isChangeableInBattle =
       CharacterScreenIdentifier.ItemFlag.IsChangeableInBattle in _item &&
       _item[CharacterScreenIdentifier.ItemFlag.IsChangeableInBattle] === true;
     itemData.isBlockingOffhand =
-      CharacterScreenIdentifier.ItemFlag.IsBlockingOffhand in _item
-        ? _item[CharacterScreenIdentifier.ItemFlag.IsBlockingOffhand]
-        : false;
+      CharacterScreenIdentifier.ItemFlag.IsBlockingOffhand in _item ?
+      _item[CharacterScreenIdentifier.ItemFlag.IsBlockingOffhand] :
+      false;
     itemData.isAllowedInBag = _item.isAllowedInBag;
     itemData.isUsable = _item.isUsable;
     _slot.Container.data("item", itemData);
@@ -1236,40 +1242,38 @@ CharacterScreenPaperdollModule.prototype.assignItemToSlot = function(
   }
 };
 
-CharacterScreenPaperdollModule.prototype.showSlotLock = function(
+CharacterScreenPaperdollModule.prototype.showSlotLock = function (
   _slot,
   _showLock
 ) {
   _slot.Container.showPaperdollLockedImage(_showLock);
 };
 
-CharacterScreenPaperdollModule.prototype.updateSlotLocks = function(
+CharacterScreenPaperdollModule.prototype.updateSlotLocks = function (
   _inventoryMode
 ) {
   switch (_inventoryMode) {
     case CharacterScreenDatasourceIdentifier.InventoryMode.Stash:
-    case CharacterScreenDatasourceIdentifier.InventoryMode.BattlePreparation:
-      {
-        this.showSlotLock(this.mMiddleEquipmentSlots.Head, false);
-        this.showSlotLock(this.mMiddleEquipmentSlots.Body, false);
-      }
-      break;
-    case CharacterScreenDatasourceIdentifier.InventoryMode.Ground:
-      {
-        this.showSlotLock(this.mMiddleEquipmentSlots.Head, true);
-        this.showSlotLock(this.mMiddleEquipmentSlots.Body, true);
-      }
-      break;
+    case CharacterScreenDatasourceIdentifier.InventoryMode.BattlePreparation: {
+      this.showSlotLock(this.mMiddleEquipmentSlots.Head, false);
+      this.showSlotLock(this.mMiddleEquipmentSlots.Body, false);
+    }
+    break;
+  case CharacterScreenDatasourceIdentifier.InventoryMode.Ground: {
+    this.showSlotLock(this.mMiddleEquipmentSlots.Head, true);
+    this.showSlotLock(this.mMiddleEquipmentSlots.Body, true);
+  }
+  break;
   }
 };
 
-CharacterScreenPaperdollModule.prototype.clearBags = function() {
+CharacterScreenPaperdollModule.prototype.clearBags = function () {
   for (var i = 0; i < this.mBackpackSlots.length; ++i) {
     this.removeItemFromSlot(this.mBackpackSlots[i]);
   }
 };
 
-CharacterScreenPaperdollModule.prototype.showBags = function(_numberOfBags) {
+CharacterScreenPaperdollModule.prototype.showBags = function (_numberOfBags) {
   if (_numberOfBags < 0 || _numberOfBags > Constants.Game.MAX_BACKPACK_SLOTS) {
     console.error(
       "ERROR: Failed to show paperdoll bags. Invalid number of bags."
@@ -1297,7 +1301,7 @@ CharacterScreenPaperdollModule.prototype.showBags = function(_numberOfBags) {
   }
 };
 
-CharacterScreenPaperdollModule.prototype.registerDatasourceListener = function() {
+CharacterScreenPaperdollModule.prototype.registerDatasourceListener = function () {
   this.mDataSource.addListener(
     ErrorCode.Key,
     jQuery.proxy(this.onDataSourceError, this)
@@ -1318,15 +1322,15 @@ CharacterScreenPaperdollModule.prototype.registerDatasourceListener = function()
   );
 };
 
-CharacterScreenPaperdollModule.prototype.create = function(_parentDiv) {
+CharacterScreenPaperdollModule.prototype.create = function (_parentDiv) {
   this.createDIV(_parentDiv);
 };
 
-CharacterScreenPaperdollModule.prototype.destroy = function() {
+CharacterScreenPaperdollModule.prototype.destroy = function () {
   this.destroyDIV();
 };
 
-CharacterScreenPaperdollModule.prototype.register = function(_parentDiv) {
+CharacterScreenPaperdollModule.prototype.register = function (_parentDiv) {
   console.log("CharacterScreenPaperdollModule::REGISTER");
 
   if (this.mContainer !== null) {
@@ -1341,7 +1345,7 @@ CharacterScreenPaperdollModule.prototype.register = function(_parentDiv) {
   }
 };
 
-CharacterScreenPaperdollModule.prototype.unregister = function() {
+CharacterScreenPaperdollModule.prototype.unregister = function () {
   console.log("CharacterScreenPaperdollModule::UNREGISTER");
 
   if (this.mContainer === null) {
@@ -1354,7 +1358,7 @@ CharacterScreenPaperdollModule.prototype.unregister = function() {
   this.destroy();
 };
 
-CharacterScreenPaperdollModule.prototype.isRegistered = function() {
+CharacterScreenPaperdollModule.prototype.isRegistered = function () {
   if (this.mContainer !== null) {
     return this.mContainer.parent().length !== 0;
   }
@@ -1362,11 +1366,12 @@ CharacterScreenPaperdollModule.prototype.isRegistered = function() {
   return false;
 };
 
-CharacterScreenPaperdollModule.prototype.assignEquipment = function(
+CharacterScreenPaperdollModule.prototype.assignEquipment = function (
   _brotherId,
   _data
 ) {
   var blockOffhand = false;
+  var self = this;
   if (CharacterScreenIdentifier.ItemSlot.Mainhand in _data) {
     var mainHand = _data[CharacterScreenIdentifier.ItemSlot.Mainhand];
     blockOffhand =
@@ -1416,21 +1421,34 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function(
       _data[CharacterScreenIdentifier.ItemSlot.Body]
     );
 
-    //Setup the armor layers based on an image in the pats
-    var _imagePaths = _data[CharacterScreenIdentifier.ItemSlot.Body]["imageOverlayPath"]
+    //Setup the armor layers enable buttons
+    var _upgrades = _data[CharacterScreenIdentifier.ItemSlot.Body]["upgrades"]
     this.mUpgradeButtons.forEach(function (btn, index) {
-        var enabled = false
-        if (_imagePaths !== undefined && _imagePaths !== '' && _imagePaths.length > 0) {
-            var path = _imagePaths[index];
-            if (path !== undefined && path !== null && path !== '')
-            {
-                enabled = true;
-            }
+      var enabled = false;
+      var text = "X";
+      if (_upgrades !== undefined && _upgrades !== '' && _upgrades.length > 0) {
+        var tLabel = index + 1;
+        switch (_upgrades[index]) {
+          case 0:
+            text = "" + tLabel;
+            break;
+          case 1:
+            text = "" + tLabel;
+            enabled = self.mDataSource.isTacticalMode() === true ? false : true;
+            break;
         }
-        btn.enableButton(enabled)
+      }
+      btn.changeButtonText(text);
+      btn.enableButton(enabled);
+      btn.bindTooltip({
+        contentType: 'ui-item',
+        entityId: _brotherId,
+        itemId: index,
+        itemOwner: 'paperdoll.remove-armor-layer'
+      });
     });
 
-}
+  }
 
   if (CharacterScreenIdentifier.ItemSlot.Accessory in _data) {
     this.assignItemToSlot(
@@ -1449,15 +1467,15 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function(
   }
 };
 
-CharacterScreenPaperdollModule.prototype.assignBags = function(
+CharacterScreenPaperdollModule.prototype.assignBags = function (
   _brotherId,
   _data
 ) {
   if (jQuery.isArray(_data) && _data.length !== null) {
     var numBags =
-      _data.length > Constants.Game.MAX_BACKPACK_SLOTS
-        ? Constants.Game.MAX_BACKPACK_SLOTS
-        : _data.length;
+      _data.length > Constants.Game.MAX_BACKPACK_SLOTS ?
+      Constants.Game.MAX_BACKPACK_SLOTS :
+      _data.length;
     this.showBags(numBags);
 
     for (var i = 0; i < numBags; ++i) {
@@ -1466,7 +1484,7 @@ CharacterScreenPaperdollModule.prototype.assignBags = function(
   }
 };
 
-CharacterScreenPaperdollModule.prototype.onBrotherUpdated = function(
+CharacterScreenPaperdollModule.prototype.onBrotherUpdated = function (
   _dataSource,
   _brother
 ) {
@@ -1475,7 +1493,7 @@ CharacterScreenPaperdollModule.prototype.onBrotherUpdated = function(
   }
 };
 
-CharacterScreenPaperdollModule.prototype.onBrotherSelected = function(
+CharacterScreenPaperdollModule.prototype.onBrotherSelected = function (
   _dataSource,
   _brother
 ) {
@@ -1499,14 +1517,14 @@ CharacterScreenPaperdollModule.prototype.onBrotherSelected = function(
   }
 };
 
-CharacterScreenPaperdollModule.prototype.onInventoryModeUpdated = function(
+CharacterScreenPaperdollModule.prototype.onInventoryModeUpdated = function (
   _dataSource,
   _mode
 ) {
   this.updateSlotLocks(_mode);
 };
 
-CharacterScreenPaperdollModule.prototype.onDataSourceError = function(
+CharacterScreenPaperdollModule.prototype.onDataSourceError = function (
   _dataSource,
   _data
 ) {
@@ -1522,8 +1540,7 @@ CharacterScreenPaperdollModule.prototype.onDataSourceError = function(
             this.mSlotCountContainer.shakeLeftRight();
         } break;
         */
-  ) {
-  }
+  ) {}
 
   console.info(
     "CharacterScreenPaperdollModule::onDataSourceError(" + _data + ")"

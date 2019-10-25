@@ -20,7 +20,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
 		{
-			this.m.Blocked.push(true);
+			this.m.Blocked[i] = true;
 		}
 	}
 
@@ -78,6 +78,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return this.Const.Items.ConditionColor[this.Math.max(0, this.Math.floor(this.getArmor() / (this.getArmorMax() * 1.0) * (this.Const.Items.ConditionColor.len() - 1)))];
 	}
 
+	function upgradeIsBlocked(_slot)
+	{
+		return this.m.Blocked[_slot];
+	}
+
 	function getUpgrade( _slot = -1)
 	{
 		if (_slot != -1)
@@ -98,9 +103,13 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	function getUpgrades()
 	{
 		local slots = [];
-		foreach (u in this.m.Upgrades)
+		foreach (i, u in this.m.Upgrades)
 		{
-			if (u == null)
+			if (this.m.Blocked[i])
+			{
+				slots.push(-1)
+			}
+			else if (u == null)
 			{
 				slots.push(0)
 			}
@@ -188,10 +197,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
+		local app = this.getContainer().getAppearance();
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
 			local item = this.m.Upgrades[_upgrade.getType()];
-			item.onRemoved();
+			item.onRemoved(app);
 			if (!item.isDestroyedOnRemove())
 			{
 				this.World.Assets.getStash().add(item);
@@ -217,9 +227,10 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			return null;
 		}
+		local app = this.getContainer().getAppearance();
 		local item = this.m.Upgrades[_slot]
 		this.m.Upgrades[_slot] = null;
-		item.onRemoved();
+		item.onRemoved(app);
 		this.updateAppearance();
 		return item;
 	}
@@ -391,7 +402,8 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local sound =  this.m.ImpactSound
 		if (this.m.Upgrades[this.Const.Items.ArmorUpgrades.Plate] != null) {
 			sound = this.m.Upgrades[this.Const.Items.ArmorUpgrades.Plate].m.ImpactSound;
-		} else if (this.m.Upgrades[this.Const.Items.ArmorUpgrades.Chain] != null)
+		}
+		else if (this.m.Upgrades[this.Const.Items.ArmorUpgrades.Chain] != null)
 		{
 			sound = this.m.Upgrades[this.Const.Items.ArmorUpgrades.Chain].m.ImpactSound;
 		}
@@ -614,6 +626,36 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			}
 			u.onActorDied(_onTile);
 		}
+	}
+
+	function getBuyPrice()
+	{
+		local basePrice = this.armor.getBuyPrice()
+
+		foreach (u in this.m.Upgrades)
+		{
+			if (u == null)
+			{
+				continue
+			}
+			basePrice += u.getBuyPrice();
+		}
+		return basePrice;
+	}
+
+	function getSellPrice()
+	{
+		local basePrice = this.armor.getSellPrice()
+
+		foreach (u in this.m.Upgrades)
+		{
+			if (u == null)
+			{
+				continue
+			}
+			basePrice += u.getSellPrice();
+		}
+		return basePrice;
 	}
 
 	function onSerialize( _out )
