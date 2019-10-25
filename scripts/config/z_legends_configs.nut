@@ -45,6 +45,5 @@ gt.Const.LegendMod.Configs <- {
 		this.IsMagic = _in.readBool();
 		this.IsGender = _in.readBool();
     }
-
 }
 

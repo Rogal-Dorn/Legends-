@@ -2402,6 +2402,7 @@ this.character_screen <- {
 		{
 			this.World.Assets.getStash().add(upgrade);
 		}
+		bro.getSkills().update();
 		return this.UIDataHelper.convertStashAndEntityToUIData(bro, null, false, this.m.InventoryFilter);
 	}
 

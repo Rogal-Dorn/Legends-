@@ -3,28 +3,28 @@
  *	@Company:		Overhype Studios
  *
  *	@Copyright:		(c) Overhype Studios | 2015
- * 
+ *
  *  @Author:		Overhype Studios
  *  @Date:			03.03.2015
  *  @Description:	New Campaign Menu Module JS
  */
 "use strict";
 
-var NewCampaignMenuModule = function()
-{
-    this.mSQHandle = null;
+var NewCampaignMenuModule = function () {
+	this.mSQHandle = null;
 
-    // event listener
-    this.mEventListener = null;
+	// event listener
+	this.mEventListener = null;
 
-    // generic containers
-    this.mContainer = null;
-    this.mDialogContainer = null;
+	// generic containers
+	this.mContainer = null;
+	this.mDialogContainer = null;
 
-    this.mFirstPanel = null;
-    this.mSecondPanel = null;
+	this.mFirstPanel = null;
+	this.mSecondPanel = null;
 	this.mThirdPanel = null;
 	this.mMapPanel = null;
+	this.mConfigPanel = null;
 
 	// controls
 	this.mDifficultyEasyCheckbox = null;
@@ -44,7 +44,7 @@ var NewCampaignMenuModule = function()
 	this.mEconomicDifficultyHardLabel = null;
 	this.mEconomicDifficultyLegendaryCheckbox = null;
 	this.mEconomicDifficultyLegendaryLabel = null;
-	
+
 	this.mBudgetDifficultyEasyCheckbox = null;
 	this.mBudgetDifficultyEasyLabel = null;
 	this.mBudgetDifficultyNormalCheckbox = null;
@@ -53,7 +53,7 @@ var NewCampaignMenuModule = function()
 	this.mBudgetDifficultyHardLabel = null;
 	this.mBudgetDifficultyLegendaryCheckbox = null;
 	this.mBudgetDifficultyLegendaryLabel = null;
-	
+
 	this.mIronmanCheckbox = null;
 	this.mIronmanCheckboxLabel = null;
 	this.mCompanyName = null;
@@ -77,9 +77,9 @@ var NewCampaignMenuModule = function()
 
 	this.mSeed = null;
 
-    // buttons
-    this.mStartButton = null;
-    this.mCancelButton = null;
+	// buttons
+	this.mStartButton = null;
+	this.mCancelButton = null;
 
 	// banners
 	this.mBanners = null;
@@ -91,9 +91,9 @@ var NewCampaignMenuModule = function()
 	this.mBudgetDifficulty = 0;
 	this.mEvil = 0;
 
-    // scenario
-    this.mScenarios = null;
-    this.mSelectedScenario = 0;
+	// scenario
+	this.mScenarios = null;
+	this.mSelectedScenario = 0;
 	this.mScenarioContainer = null;
 	this.mScenarioScrollContainer = null;
 
@@ -161,7 +161,7 @@ var NewCampaignMenuModule = function()
 			Max: 5000,
 			Value: 500,
 			Step: 100,
-		},		
+		},
 		NumSettlements: {
 			Control: null,
 			Title: null,
@@ -206,8 +206,8 @@ var NewCampaignMenuModule = function()
 			Max: 0,
 			Value: 0,
 			Step: 1
-		},						
-		FOW : true,
+		},
+		FOW: true,
 		Debug: false,
 		StackCitadels: false,
 		AllTradeLocations: false
@@ -217,8 +217,8 @@ var NewCampaignMenuModule = function()
 
 	this.mFogofWarCheckbox = null;
 	this.mFogofWarCheckboxLabel = null;
-	//this.mDebugCheckbox = null;
-	//this.mDebugCheckboxLabel = null;	
+	this.mDebugCheckbox = null;
+	this.mDebugCheckboxLabel = null;
 	this.mStackCitadelsCheckbox = null;
 	this.mStackCitadelsCheckboxLabel = null;
 	this.mAllTradeLocationsCheckbox = null;
@@ -229,54 +229,49 @@ var NewCampaignMenuModule = function()
 	this.mLegendGenderEqualityCheckboxLabel = null;
 	this.mLegendMagicCheckbox = null;
 	this.mLegendMagicCheckboxLabel = null;
-    // generics
-    this.mIsVisible = false;
+	this.mLegendArmorCheckbox = null;
+	this.mLegendArmorCheckboxLabel = null;
+	// generics
+	this.mIsVisible = false;
 };
 
 
-NewCampaignMenuModule.prototype.isConnected = function ()
-{
-    return this.mSQHandle !== null;
+NewCampaignMenuModule.prototype.isConnected = function () {
+	return this.mSQHandle !== null;
 };
 
-NewCampaignMenuModule.prototype.onConnection = function (_handle)
-{
+NewCampaignMenuModule.prototype.onConnection = function (_handle) {
 	this.mSQHandle = _handle;
 
-    // notify listener
-	if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener))
-	{
-        this.mEventListener.onModuleOnConnectionCalled(this);
-    }
+	// notify listener
+	if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener)) {
+		this.mEventListener.onModuleOnConnectionCalled(this);
+	}
 };
 
-NewCampaignMenuModule.prototype.onDisconnection = function ()
-{
+NewCampaignMenuModule.prototype.onDisconnection = function () {
 	this.mSQHandle = null;
 
-    // notify listener
-	if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener))
-	{
-        this.mEventListener.onModuleOnDisconnectionCalled(this);
-    }
+	// notify listener
+	if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener)) {
+		this.mEventListener.onModuleOnDisconnectionCalled(this);
+	}
 };
 
 
-NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
-{
-    var self = this;
+NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
+	var self = this;
 
-    // create: dialog container
-    this.mContainer = $('<div class="new-campaign-menu-module display-none"/>');
-    _parentDiv.append(this.mContainer);
-    this.mDialogContainer = this.mContainer.createDialog('New Campaign', null, null /*Path.GFX + Asset.HEADER_TACTICAL_COMBAT_DIALOG*/, false, 'dialog-800-720-2');
+	// create: dialog container
+	this.mContainer = $('<div class="new-campaign-menu-module display-none"/>');
+	_parentDiv.append(this.mContainer);
+	this.mDialogContainer = this.mContainer.createDialog('New Campaign', null, null /*Path.GFX + Asset.HEADER_TACTICAL_COMBAT_DIALOG*/ , false, 'dialog-800-720-2');
 
 	// create: content
 	var contentContainer = this.mDialogContainer.findDialogContentContainer();
 
 	this.mSecondPanel = $('<div class="display-block"/>');
-	contentContainer.append(this.mSecondPanel);
-	{
+	contentContainer.append(this.mSecondPanel); {
 		var leftColumn = $('<div class="column"/>');
 		this.mSecondPanel.append(leftColumn);
 		var rightColumn = $('<div class="column"/>');
@@ -290,10 +285,9 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 
 		var inputLayout = $('<div class="l-input"/>');
 		row.append(inputLayout);
-		this.mCompanyName = inputLayout.createInput('Battle Brothers', 0, 32, 1, function (_input)
-		{
-			if(self.mStartButton !== null) self.mStartButton.enableButton(_input.getInputTextLength() >= 1);
-		}, 'title-font-big font-bold font-color-brother-name'); 
+		this.mCompanyName = inputLayout.createInput('Battle Brothers', 0, 32, 1, function (_input) {
+			if (self.mStartButton !== null) self.mStartButton.enableButton(_input.getInputTextLength() >= 1);
+		}, 'title-font-big font-bold font-color-brother-name');
 		this.mCompanyName.setInputText('Battle Brothers');
 
 		// greater evil
@@ -301,7 +295,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		leftColumn.append(row);
 		var title = $('<div class="title title-font-big font-color-title">Late Game Crisis</div>');
 		row.append(title);
-		
+
 		var evilRandomControl = $('<div class="control"></div>');
 		row.append(evilRandomControl);
 		this.mEvilRandomCheckbox = $('<input type="radio" id="cb-evil-random" name="evil" checked />');
@@ -313,8 +307,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEvilRandomCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEvilRandomCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEvil = 0;
 		});
@@ -330,8 +323,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEvilWarCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEvilWarCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEvil = 1;
 		});
@@ -347,8 +339,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEvilGreenskinsCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEvilGreenskinsCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEvil = 2;
 		});
@@ -364,8 +355,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEvilUndeadCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEvilUndeadCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEvil = 3;
 		});
@@ -395,20 +385,17 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		bannerContainer.append(table);
 
 		var prevBanner = table.find('.prev-banner-button:first');
-		this.mPrevBannerButton = prevBanner.createImageButton(Path.GFX + Asset.BUTTON_PREVIOUS_BANNER, function ()
-		{
+		this.mPrevBannerButton = prevBanner.createImageButton(Path.GFX + Asset.BUTTON_PREVIOUS_BANNER, function () {
 			self.onPreviousBannerClicked();
 		}, '', 6);
 
 		var nextBanner = table.find('.next-banner-button:first');
-		this.mNextBannerButton = nextBanner.createImageButton(Path.GFX + Asset.BUTTON_NEXT_BANNER, function ()
-		{
+		this.mNextBannerButton = nextBanner.createImageButton(Path.GFX + Asset.BUTTON_NEXT_BANNER, function () {
 			self.onNextBannerClicked();
 		}, '', 6);
 
 		var bannerImage = table.find('.banner-image-container:first');
-		this.mBannerImage = bannerImage.createImage(Path.GFX + 'ui/banners/banner_01.png', function (_image)
-		{
+		this.mBannerImage = bannerImage.createImage(Path.GFX + 'ui/banners/banner_01.png', function (_image) {
 			_image.removeClass('display-none').addClass('display-block');
 			//_image.centerImageWithinParent();
 		}, null, 'display-none banner-image');
@@ -425,12 +412,11 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 	}
 
 	this.mThirdPanel = $('<div class="display-none"/>');
-	contentContainer.append(this.mThirdPanel);
-	{
+	contentContainer.append(this.mThirdPanel); {
 		var leftColumn = $('<div class="column"/>');
-        this.mThirdPanel.append(leftColumn);
+		this.mThirdPanel.append(leftColumn);
 		var rightColumn = $('<div class="column"/>');
-        this.mThirdPanel.append(rightColumn);
+		this.mThirdPanel.append(rightColumn);
 
 		// economic difficulty
 		var row = $('<div class="row" />');
@@ -449,8 +435,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEconomicDifficultyEasyCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEconomicDifficultyEasyCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEconomicDifficulty = 0;
 		});
@@ -466,8 +451,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEconomicDifficultyNormalCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEconomicDifficultyNormalCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEconomicDifficulty = 1;
 		});
@@ -483,14 +467,13 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEconomicDifficultyHardCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEconomicDifficultyHardCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEconomicDifficulty = 2;
 		});
-		
-		
-			var LegendaryDifficultyControl = $('<div class="control"></div>');
+
+
+		var LegendaryDifficultyControl = $('<div class="control"></div>');
 		row.append(LegendaryDifficultyControl);
 		this.mEconomicDifficultyLegendaryCheckbox = $('<input type="radio" id="cb-economic-difficulty-Legendary" name="economic-difficulty" />');
 		LegendaryDifficultyControl.append(this.mEconomicDifficultyLegendaryCheckbox);
@@ -501,8 +484,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mEconomicDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mEconomicDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mEconomicDifficulty = 3;
 		});
@@ -524,8 +506,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mBudgetDifficultyEasyCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mBudgetDifficultyEasyCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mBudgetDifficulty = 0;
 		});
@@ -541,8 +522,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mBudgetDifficultyNormalCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mBudgetDifficultyNormalCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mBudgetDifficulty = 1;
 		});
@@ -558,8 +538,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mBudgetDifficultyHardCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mBudgetDifficultyHardCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mBudgetDifficulty = 2;
 		});
@@ -575,12 +554,11 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mBudgetDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mBudgetDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mBudgetDifficulty = 3;
-		});		
-	
+		});
+
 		// combat difficulty
 		var row = $('<div class="row" />');
 		rightColumn.append(row);
@@ -598,8 +576,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mDifficultyEasyCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mDifficultyEasyCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mDifficulty = 0;
 		});
@@ -615,8 +592,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mDifficultyNormalCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mDifficultyNormalCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mDifficulty = 1;
 		});
@@ -632,12 +608,11 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mDifficultyHardCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mDifficultyHardCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mDifficulty = 2;
 		});
-		
+
 		var LegendaryDifficultyControl = $('<div class="control"></div>');
 		row.append(LegendaryDifficultyControl);
 		this.mDifficultyLegendaryCheckbox = $('<input type="radio" id="cb-difficulty-Legendary" name="difficulty" />');
@@ -649,8 +624,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			radioClass: 'iradio_flat-orange',
 			increaseArea: '30%'
 		});
-		this.mDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event)
-		{
+		this.mDifficultyLegendaryCheckbox.on('ifChecked', null, this, function (_event) {
 			var self = _event.data;
 			self.mDifficulty = 3;
 		});
@@ -674,31 +648,32 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		});
 	}
 
-    this.mFirstPanel = $('<div class="display-none"/>');
-	contentContainer.append(this.mFirstPanel);
-	{
-        var leftColumn = $('<div class="column2"/>');
-        this.mFirstPanel.append(leftColumn);
-        var rightColumn = $('<div class="column3"/>');
-        this.mFirstPanel.append(rightColumn);
+	this.mFirstPanel = $('<div class="display-none"/>');
+	contentContainer.append(this.mFirstPanel); {
+		var leftColumn = $('<div class="column2"/>');
+		this.mFirstPanel.append(leftColumn);
+		var rightColumn = $('<div class="column3"/>');
+		this.mFirstPanel.append(rightColumn);
 
-        // starting scenario
-        var row = $('<div class="row" />');
-        leftColumn.append(row);
-        var title = $('<div class="title title-font-big font-color-title">Company Origin</div>');
-        row.append(title);
-        //this.mScenariosRow = row;
+		// starting scenario
+		var row = $('<div class="row" />');
+		leftColumn.append(row);
+		var title = $('<div class="title title-font-big font-color-title">Company Origin</div>');
+		row.append(title);
+		//this.mScenariosRow = row;
 
 		var listContainerLayout = $('<div class="l-list-container"/>');
 		row.append(listContainerLayout);
 		this.mScenarioContainer = listContainerLayout.createList(8.85);
 		this.mScenarioScrollContainer = this.mScenarioContainer.findListScrollContainer();
-	
-        var row = $('<div class="row3 text-font-medium font-color-description" />');
-        rightColumn.append(row);
-        this.mScenariosDesc = row;
 
-        this.mScenariosDifficulty = row.createImage('', function (_image) { _image.removeClass('display-none').addClass('display-block'); }, null, 'display-none difficulty');
+		var row = $('<div class="row3 text-font-medium font-color-description" />');
+		rightColumn.append(row);
+		this.mScenariosDesc = row;
+
+		this.mScenariosDifficulty = row.createImage('', function (_image) {
+			_image.removeClass('display-none').addClass('display-block');
+		}, null, 'display-none difficulty');
 		rightColumn.append(this.mScenariosDifficulty);
 	}
 
@@ -706,71 +681,78 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 	contentContainer.append(this.mMapPanel);
 	this.buildMapConfig();
 
-    // create footer button bar
-    var footerButtonBar = $('<div class="l-button-bar"></div>');
-    this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
+	this.mConfigPanel = $('<div class="display-none"/>');
+	contentContainer.append(this.mConfigPanel);
+	this.buildConfigPage();
+
+
+	// create footer button bar
+	var footerButtonBar = $('<div class="l-button-bar"></div>');
+	this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
 
 	var layout = $('<div class="l-random-button"/>');
 	footerButtonBar.append(layout);
-	this.mRandomButton = layout.createTextButton("Random", function ()
-    {
+	this.mRandomButton = layout.createTextButton("Random", function () {
 		self.randomizeMapConfig();
 	}, '', 1);
 	this.mRandomButton.addClass('display-none')
-	
-    var layout = $('<div class="l-ok-button"/>');
-    footerButtonBar.append(layout);
-    this.mStartButton = layout.createTextButton("Next", function ()
-    {
-		self.advanceScreen();	
-    }, '', 1);
 
-    layout = $('<div class="l-cancel-button"/>');
-    footerButtonBar.append(layout);
-    this.mCancelButton = layout.createTextButton("Cancel", function ()
-    {
-		if (self.mFirstPanel.hasClass('display-block'))
-    	{
-    		self.notifyBackendCancelButtonPressed();
-		}
-		else if (self.mSecondPanel.hasClass('display-block'))
-    	{
+	var layout = $('<div class="l-ok-button"/>');
+	footerButtonBar.append(layout);
+	this.mStartButton = layout.createTextButton("Next", function () {
+		self.advanceScreen();
+	}, '', 1);
+
+	layout = $('<div class="l-cancel-button"/>');
+	footerButtonBar.append(layout);
+	this.mCancelButton = layout.createTextButton("Cancel", function () {
+		if (self.mFirstPanel.hasClass('display-block')) {
+			self.notifyBackendCancelButtonPressed();
+		} else if (self.mSecondPanel.hasClass('display-block')) {
 			self.mFirstPanel.removeClass('display-none').addClass('display-block');
 			self.mSecondPanel.removeClass('display-block').addClass('display-none');
 			self.mThirdPanel.removeClass('display-block').addClass('display-none');
-			self.mMapPanel.removeClass('display-block').addClass('display-none')
-    		self.mStartButton.changeButtonText("Next");
+			self.mMapPanel.removeClass('display-block').addClass('display-none');
+			self.mConfigPanel.removeClass('display-block').addClass('display-none');
+			self.mStartButton.changeButtonText("Next");
 			self.mCancelButton.changeButtonText("Cancel");
 			self.mRandomButton.removeClass('display-block').addClass('display-none');
-		}
-    	else if (self.mThirdPanel.hasClass('display-block'))
-    	{
+		} else if (self.mThirdPanel.hasClass('display-block')) {
 			self.mFirstPanel.removeClass('display-block').addClass('display-none');
 			self.mSecondPanel.removeClass('display-none').addClass('display-block');
 			self.mThirdPanel.removeClass('display-block').addClass('display-none');
-			self.mMapPanel.removeClass('display-block').addClass('display-none')
+			self.mMapPanel.removeClass('display-block').addClass('display-none');
+			self.mConfigPanel.removeClass('display-block').addClass('display-none');
 			self.mStartButton.changeButtonText("Next");
 			self.mCancelButton.changeButtonText("Previous");
 			self.mRandomButton.removeClass('display-block').addClass('display-none');
-		} 
-		else 
-		{
+		} else if (self.mMapPanel.hasClass('display-block')) {
 			self.mFirstPanel.removeClass('display-block').addClass('display-none');
 			self.mSecondPanel.removeClass('display-block').addClass('display-none');
 			self.mThirdPanel.removeClass('display-none').addClass('display-block');
-			self.mMapPanel.removeClass('display-block').addClass('display-none')
+			self.mMapPanel.removeClass('display-block').addClass('display-none');
+			self.mConfigPanel.removeClass('display-block').addClass('display-none');
 			self.mStartButton.changeButtonText("Next");
 			self.mCancelButton.changeButtonText("Previous");
 			self.mRandomButton.removeClass('display-block').addClass('display-none');
-		} 	
-    }, '', 1);
+		} else {
+			self.mFirstPanel.removeClass('display-block').addClass('display-none');
+			self.mSecondPanel.removeClass('display-block').addClass('display-none');
+			self.mThirdPanel.removeClass('display-block').addClass('display-none');
+			self.mMapPanel.removeClass('display-none').addClass('display-block');
+			self.mConfigPanel.removeClass('display-block').addClass('display-none');
+			self.mStartButton.changeButtonText("Next");
+			self.mCancelButton.changeButtonText("Previous");
+			self.mRandomButton.removeClass('display-none').addClass('display-block');
+		}
 
-    this.mIsVisible = false;
+	}, '', 1);
+
+	this.mIsVisible = false;
 };
 
-NewCampaignMenuModule.prototype.destroyDIV = function ()
-{
-    // controls
+NewCampaignMenuModule.prototype.destroyDIV = function () {
+	// controls
 	this.mDifficultyEasyCheckbox.remove();
 	this.mDifficultyEasyCheckbox = null;
 	this.mDifficultyEasyLabel.remove();
@@ -801,91 +783,98 @@ NewCampaignMenuModule.prototype.destroyDIV = function ()
 	this.mSeed = null;
 
 	// buttons
-    this.mStartButton.remove();
-    this.mStartButton = null;
-    this.mCancelButton.remove();
-    this.mCancelButton = null;
+	this.mStartButton.remove();
+	this.mStartButton = null;
+	this.mCancelButton.remove();
+	this.mCancelButton = null;
 
 	this.mScenarioScrollContainer.empty();
-    this.mScenarioScrollContainer = null;
-    this.mScenarioContainer.destroyList();
-    this.mScenarioContainer.remove();
+	this.mScenarioScrollContainer = null;
+	this.mScenarioContainer.destroyList();
+	this.mScenarioContainer.remove();
 	this.mScenarioContainer = null;
-	
-    this.mFirstPanel.empty();
-    this.mFirstPanel.remove();
-    this.mFirstPanel = null;
 
-    this.mSecondPanel.empty();
-    this.mSecondPanel.remove();
-    this.mSecondPanel = null;
+	this.mFirstPanel.empty();
+	this.mFirstPanel.remove();
+	this.mFirstPanel = null;
 
-    this.mThirdPanel.empty();
-    this.mThirdPanel.remove();
-    this.mThirdPanel = null;
+	this.mSecondPanel.empty();
+	this.mSecondPanel.remove();
+	this.mSecondPanel = null;
+
+	this.mThirdPanel.empty();
+	this.mThirdPanel.remove();
+	this.mThirdPanel = null;
 
 	this.mMapPanel.empty();
-    this.mMapPanel.remove();
+	this.mMapPanel.remove();
 	this.mMapPanel = null;
 
-    this.mDialogContainer.empty();
-    this.mDialogContainer.remove();
-    this.mDialogContainer = null;
+	this.mConfigPanel.empty();
+	this.mConfigPanel.remove();
+	this.mConfigPanel = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mDialogContainer.empty();
+	this.mDialogContainer.remove();
+	this.mDialogContainer = null;
+
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
-NewCampaignMenuModule.prototype.advanceScreen = function() 
-{
-	if(this.mFirstPanel.hasClass('display-block'))
-	{
+NewCampaignMenuModule.prototype.advanceScreen = function () {
+	if (this.mFirstPanel.hasClass('display-block')) {
 		this.mFirstPanel.removeClass('display-block').addClass('display-none');
 		this.mSecondPanel.removeClass('display-none').addClass('display-block');
 		this.mThirdPanel.removeClass('display-block').addClass('display-none');
-		this.mMapPanel.removeClass('display-block').addClass('display-none')
+		this.mMapPanel.removeClass('display-block').addClass('display-none');
+		this.mConfigPanel.removeClass('display-block').addClass('display-none');
 		this.mStartButton.changeButtonText("Next");
 		this.mCancelButton.changeButtonText("Previous");
 		this.mRandomButton.addClass('display-none').removeClass('display-block');
-
-	} else if(this.mSecondPanel.hasClass('display-block'))
-	{
+	} else if (this.mSecondPanel.hasClass('display-block')) {
 		this.mFirstPanel.removeClass('display-block').addClass('display-none');
 		this.mSecondPanel.removeClass('display-block').addClass('display-none');
-		this.mThirdPanel.removeClass('display-none').addClass('display-block');		
-		this.mMapPanel.removeClass('display-block').addClass('display-none')
+		this.mThirdPanel.removeClass('display-none').addClass('display-block');
+		this.mMapPanel.removeClass('display-block').addClass('display-none');
+		this.mConfigPanel.removeClass('display-block').addClass('display-none');
 		this.mStartButton.changeButtonText("Next");
 		this.mCancelButton.changeButtonText("Previous");
 		this.mRandomButton.addClass('display-none').removeClass('display-block');
-
-	} else if(this.mThirdPanel.hasClass('display-block'))
-	{
+	} else if (this.mThirdPanel.hasClass('display-block')) {
 		this.mFirstPanel.removeClass('display-block').addClass('display-none');
 		this.mSecondPanel.removeClass('display-block').addClass('display-none');
-		this.mThirdPanel.removeClass('display-block').addClass('display-none');		
-		this.mMapPanel.removeClass('display-none').addClass('display-block')
-		this.mStartButton.changeButtonText("Start");
+		this.mThirdPanel.removeClass('display-block').addClass('display-none');
+		this.mMapPanel.removeClass('display-none').addClass('display-block');
+		this.mConfigPanel.removeClass('display-block').addClass('display-none');
+		this.mStartButton.changeButtonText("Next");
 		this.mCancelButton.changeButtonText("Previous");
 		this.mRandomButton.addClass('display-block').removeClass('display-none');
-	}	
-	else
-	{
+	} else if (this.mMapPanel.hasClass('display-block')) {
+		this.mFirstPanel.removeClass('display-block').addClass('display-none');
+		this.mSecondPanel.removeClass('display-block').addClass('display-none');
+		this.mThirdPanel.removeClass('display-block').addClass('display-none');
+		this.mMapPanel.removeClass('display-block').addClass('display-none');
+		this.mConfigPanel.removeClass('display-none').addClass('display-block');
+		this.mStartButton.changeButtonText("Start");
+		this.mCancelButton.changeButtonText("Previous");
+		this.mRandomButton.addClass('display-none').removeClass('display-block');
+	} else {
 		this.notifyBackendStartButtonPressed();
-	}    	
+	}
 
 }
 
-NewCampaignMenuModule.prototype.buildMapConfig = function ()
-{
+NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	var leftColumn = $('<div class="column"></div>');
 	this.mMapPanel.append(leftColumn);
 	var rightColumn = $('<div class="column"></div>');
 	this.mMapPanel.append(rightColumn);
 
-	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);	
+	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
-	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);	
+	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water Connectivity', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Snowline, 'Snowline', leftColumn);
@@ -909,6 +898,8 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
+	var title = $('<div class="title title-font-big font-color-title">Map Options</div>');
+	row.append(title);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mFogofWarCheckbox = $('<input type="checkbox" id="cb-fog-of-war"/>');
@@ -920,8 +911,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	if (this.mMapOptions.FOW)
-	{
+	if (this.mMapOptions.FOW) {
 		this.mFogofWarCheckbox.iCheck('check');
 	}
 
@@ -938,8 +928,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	if (this.mMapOptions.StackCitadels)
-	{
+	if (this.mMapOptions.StackCitadels) {
 		this.mStackCitadelsCheckbox.iCheck('check');
 	}
 
@@ -956,14 +945,38 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	if (this.mMapOptions.AllTradeLocations)
-	{
+	if (this.mMapOptions.AllTradeLocations) {
 		this.mAllTradeLocationsCheckbox.iCheck('check');
 	}
 
-	
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mDebugCheckbox = $('<input type="checkbox" id="cb-debug"/>');
+	control.append(this.mDebugCheckbox);
+	this.mDebugCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-debug">(Debug) Show entire map</label>');
+	control.append(this.mDebugCheckboxLabel);
+	this.mDebugCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	if (this.mMapOptions.Debug) {
+		this.mDebugCheckbox.iCheck('check');
+	}
+};
+
+NewCampaignMenuModule.prototype.buildConfigPage = function () {
+	var leftColumn = $('<div class="column"></div>');
+	this.mConfigPanel.append(leftColumn);
+	var rightColumn = $('<div class="column"></div>');
+	this.mConfigPanel.append(rightColumn);
+
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var title = $('<div class="title title-font-big font-color-title">Configuration Options</div>');
+	row.append(title);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendPerkTreesCheckbox = $('<input type="checkbox" id="cb-legendperktrees"/>');
@@ -978,7 +991,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	this.mLegendPerkTreesCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	rightColumn.append(row);
+	leftColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendGenderEqualityCheckbox = $('<input type="checkbox" id="cb-legendgenderequality"/>');
@@ -993,7 +1006,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	this.mLegendGenderEqualityCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
-	rightColumn.append(row);
+	leftColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
 	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
@@ -1007,28 +1020,24 @@ NewCampaignMenuModule.prototype.buildMapConfig = function ()
 	});
 	this.mLegendMagicCheckbox.iCheck('check');
 
+	var row = $('<div class="row"></div>');
+	leftColumn.append(row);
+	var control = $('<div class="control"/>');
+	row.append(control);
+	this.mLegendArmorCheckbox = $('<input type="checkbox" id="cb-legendarmor"/>');
+	control.append(this.mLegendArmorCheckbox);
+	this.mLegendArmorCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendarmor">Armor Layer System</label>');
+	control.append(this.mLegendArmorCheckboxLabel);
+	this.mLegendArmorCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+	this.mLegendArmorCheckbox.iCheck('check');
 
-//	var row = $('<div class="row"></div>');
-//	rightColumn.append(row);
-//	var control = $('<div class="control"/>');
-//	row.append(control);
-//	this.mDebugCheckbox = $('<input type="checkbox" id="cb-debug"/>');
-//	control.append(this.mDebugCheckbox);
-//	this.mDebugCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-debug">(Debug) Show entire map</label>');
-//	control.append(this.mDebugCheckboxLabel);
-//	this.mDebugCheckbox.iCheck({
-//		checkboxClass: 'icheckbox_flat-orange',
-//		radioClass: 'iradio_flat-orange',
-//		increaseArea: '30%'
-//	});
-//	if (this.mMapOptions.Debug)
-//	{
-//		this.mDebugCheckbox.iCheck('check');
-//	}
 };
 
-NewCampaignMenuModule.prototype.updateMapConfig = function () 
-{
+NewCampaignMenuModule.prototype.updateMapConfig = function () {
 	var controls = [
 		this.mMapOptions.Width,
 		this.mMapOptions.Height,
@@ -1048,26 +1057,22 @@ NewCampaignMenuModule.prototype.updateMapConfig = function ()
 		_definition.Control.val(_definition.Value);
 		_definition.Label.text('' + _definition.Value);
 	});
-	if (this.mMapOptions.FOW)
-	{
+	if (this.mMapOptions.FOW) {
 		this.mFogofWarCheckbox.iCheck('check');
 	}
-//	if (this.mMapOptions.Debug)
-//	{
-//		this.mDebugCheckbox.iCheck('check');
-//	}	
-	if (this.mMapOptions.StackCitadels)
-	{
+	if (this.mMapOptions.Debug) {
+		this.mDebugCheckbox.iCheck('check');
+	}
+	if (this.mMapOptions.StackCitadels) {
 		this.mStackCitadelsCheckbox.iCheck('check');
 	}
-	if( this.mMapOptions.AllTradeLocations)
-	{
+	if (this.mMapOptions.AllTradeLocations) {
 		this.mAllTradeLocationsCheckbox.iCheck('check');
 	}
+
 }
 
-NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
-{
+NewCampaignMenuModule.prototype.randomizeMapConfig = function () {
 
 	this.mMapOptions.Width.Value = Helper.getRandomInt(this.mMapOptions.Width.Min, this.mMapOptions.Width.Max);
 	this.mMapOptions.Height.Value = Helper.getRandomInt(this.mMapOptions.Height.Min, this.mMapOptions.Height.Max);
@@ -1082,8 +1087,7 @@ NewCampaignMenuModule.prototype.randomizeMapConfig = function ()
 	this.updateMapConfig();
 }
 
-NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv)
-{
+NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv) {
 	var row = $('<div class="row"></div>');
 	_parentDiv.append(row);
 	_definition.Title = $('<div class="title title-font-big font-bold font-color-title">' + _label + '</div>');
@@ -1099,134 +1103,340 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
 	_definition.Control.val(_definition.Value);
 	control.append(_definition.Control);
 
-	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
+	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' + _definition.Value + '</div>');
 	control.append(_definition.Label);
 
-	_definition.Control.on("change", function ()
-	{
+	_definition.Control.on("change", function () {
 		_definition.Value = parseInt(_definition.Control.val());
 		_definition.Label.text('' + _definition.Value);
 	});
 };
 
-NewCampaignMenuModule.prototype.bindTooltips = function ()
-{
-	this.mCompanyName.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.CompanyName });
-	this.mSeed.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Seed });
+NewCampaignMenuModule.prototype.bindTooltips = function () {
+	this.mCompanyName.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.CompanyName
+	});
+	this.mSeed.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.Seed
+	});
 
-	this.mDifficultyEasyLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyEasy });
-	this.mDifficultyEasyCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyEasy });
+	this.mDifficultyEasyLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyEasy
+	});
+	this.mDifficultyEasyCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyEasy
+	});
 
-	this.mDifficultyNormalLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyNormal });
-	this.mDifficultyNormalCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyNormal });
+	this.mDifficultyNormalLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyNormal
+	});
+	this.mDifficultyNormalCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyNormal
+	});
 
-	this.mDifficultyHardLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHard });
-	this.mDifficultyHardCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHard });
+	this.mDifficultyHardLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHard
+	});
+	this.mDifficultyHardCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyHard
+	});
 
-	this.mDifficultyLegendaryLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyLegendary });
-	this.mDifficultyLegendaryCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyLegendary });
-	
-	
-	this.mIronmanCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
-	this.mIronmanCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman });
+	this.mDifficultyLegendaryLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyLegendary
+	});
+	this.mDifficultyLegendaryCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.DifficultyLegendary
+	});
 
-	this.mEconomicDifficultyEasyLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
-	this.mEconomicDifficultyEasyCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy });
 
-	this.mEconomicDifficultyNormalLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyNormal });
-	this.mEconomicDifficultyNormalCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyNormal });
+	this.mIronmanCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman
+	});
+	this.mIronmanCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.Ironman
+	});
 
-	this.mEconomicDifficultyHardLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyHard });
-	this.mEconomicDifficultyHardCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyHard });
+	this.mEconomicDifficultyEasyLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy
+	});
+	this.mEconomicDifficultyEasyCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyEasy
+	});
 
-	this.mEconomicDifficultyLegendaryLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyLegendary });
-	this.mEconomicDifficultyLegendaryCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyLegendary });
+	this.mEconomicDifficultyNormalLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyNormal
+	});
+	this.mEconomicDifficultyNormalCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyNormal
+	});
 
-	
-	this.mBudgetDifficultyEasyLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyEasy });
-	this.mBudgetDifficultyEasyCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyEasy });
+	this.mEconomicDifficultyHardLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyHard
+	});
+	this.mEconomicDifficultyHardCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyHard
+	});
 
-	this.mBudgetDifficultyNormalLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyNormal });
-	this.mBudgetDifficultyNormalCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyNormal });
+	this.mEconomicDifficultyLegendaryLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyLegendary
+	});
+	this.mEconomicDifficultyLegendaryCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EconomicDifficultyLegendary
+	});
 
-	this.mBudgetDifficultyHardLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyHard });
-	this.mBudgetDifficultyHardCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyHard });
 
-	this.mBudgetDifficultyLegendaryLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyLegendary });
-	this.mBudgetDifficultyLegendaryCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyLegendary });
-	
-	
-	this.mEvilRandomLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilRandom });
-	this.mEvilRandomCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilRandom });
+	this.mBudgetDifficultyEasyLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyEasy
+	});
+	this.mBudgetDifficultyEasyCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyEasy
+	});
+
+	this.mBudgetDifficultyNormalLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyNormal
+	});
+	this.mBudgetDifficultyNormalCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyNormal
+	});
+
+	this.mBudgetDifficultyHardLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyHard
+	});
+	this.mBudgetDifficultyHardCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyHard
+	});
+
+	this.mBudgetDifficultyLegendaryLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyLegendary
+	});
+	this.mBudgetDifficultyLegendaryCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.BudgetDifficultyLegendary
+	});
+
+
+	this.mEvilRandomLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilRandom
+	});
+	this.mEvilRandomCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilRandom
+	});
 
 	/*this.mEvilNoneLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilNone });
 	this.mEvilNoneCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilNone });*/
 
-	this.mEvilWarLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilWar });
-	this.mEvilWarCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilWar });
+	this.mEvilWarLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilWar
+	});
+	this.mEvilWarCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilWar
+	});
 
-	this.mEvilGreenskinsLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilGreenskins });
-	this.mEvilGreenskinsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilGreenskins });
+	this.mEvilGreenskinsLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilGreenskins
+	});
+	this.mEvilGreenskinsCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilGreenskins
+	});
 
-	this.mEvilUndeadLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
-	this.mEvilUndeadCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
+	this.mEvilUndeadLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead
+	});
+	this.mEvilUndeadCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead
+	});
 
-	this.mEvilPermanentDestructionLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction });
-	this.mEvilPermanentDestructionCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction });
+	this.mEvilPermanentDestructionLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction
+	});
+	this.mEvilPermanentDestructionCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction
+	});
 
-	this.mMapOptions.Width.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.width' });
-	this.mMapOptions.Width.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.width' });
-	
-	this.mMapOptions.Height.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.height' });
-	this.mMapOptions.Height.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.height' });	
-	
-	this.mMapOptions.LandMassMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.landmass' });
-	this.mMapOptions.LandMassMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.landmass' });
+	this.mMapOptions.Width.Control.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.width'
+	});
+	this.mMapOptions.Width.Title.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.width'
+	});
 
-	this.mMapOptions.WaterConnectivity.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.water' });
-	this.mMapOptions.WaterConnectivity.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.water' });	
+	this.mMapOptions.Height.Control.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.height'
+	});
+	this.mMapOptions.Height.Title.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.height'
+	});
 
-	this.mMapOptions.Snowline.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.snowline' });
-	this.mMapOptions.Snowline.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.snowline' });	
+	this.mMapOptions.LandMassMult.Control.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.landmass'
+	});
+	this.mMapOptions.LandMassMult.Title.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.landmass'
+	});
+
+	this.mMapOptions.WaterConnectivity.Control.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.water'
+	});
+	this.mMapOptions.WaterConnectivity.Title.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.water'
+	});
+
+	this.mMapOptions.Snowline.Control.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.snowline'
+	});
+	this.mMapOptions.Snowline.Title.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.snowline'
+	});
 
 	// this.mMapOptions.MountainsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });
-	// this.mMapOptions.MountainsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });	
+	// this.mMapOptions.MountainsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.mountains' });
 
 	// this.mMapOptions.ForestsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });
-	// this.mMapOptions.ForestsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });	
+	// this.mMapOptions.ForestsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.forest' });
 
 	// this.mMapOptions.SwampsMult.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });
-	// this.mMapOptions.SwampsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });	
+	// this.mMapOptions.SwampsMult.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.swamp' });
 
-	this.mMapOptions.NumSettlements.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.settlements' });
-	this.mMapOptions.NumSettlements.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.settlements' });	
+	this.mMapOptions.NumSettlements.Control.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.settlements'
+	});
+	this.mMapOptions.NumSettlements.Title.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.settlements'
+	});
 
-	this.mMapOptions.NumFactions.Control.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.factions' });
-	this.mMapOptions.NumFactions.Title.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.factions' });	
+	this.mMapOptions.NumFactions.Control.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.factions'
+	});
+	this.mMapOptions.NumFactions.Title.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.factions'
+	});
 
-	this.mFogofWarCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.fow' });
-	this.mFogofWarCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.fow' });
+	this.mFogofWarCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.fow'
+	});
+	this.mFogofWarCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.fow'
+	});
 
-	this.mStackCitadelsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.stackcitadels' });
-	this.mStackCitadelsCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.stackcitadels' });
+	this.mStackCitadelsCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.stackcitadels'
+	});
+	this.mStackCitadelsCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.stackcitadels'
+	});
 
-	this.mAllTradeLocationsCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
-	this.mAllTradeLocationsCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.alltradelocations' });
+	this.mAllTradeLocationsCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.alltradelocations'
+	});
+	this.mAllTradeLocationsCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.alltradelocations'
+	});
 
-	this.mLegendPerkTreesCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendperktrees' });
-	this.mLegendPerkTreesCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendperktrees' });
+	this.mLegendPerkTreesCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendperktrees'
+	});
+	this.mLegendPerkTreesCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendperktrees'
+	});
 
-	this.mLegendGenderEqualityCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
-	this.mLegendGenderEqualityCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendgenderequality' });
-	
-	this.mLegendMagicCheckbox.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendmagic' });
-	this.mLegendMagicCheckboxLabel.bindTooltip({ contentType: 'ui-element', elementId: 'mapconfig.legendmagic' });
+	this.mLegendGenderEqualityCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendgenderequality'
+	});
+	this.mLegendGenderEqualityCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendgenderequality'
+	});
 
-	
+	this.mLegendMagicCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendmagic'
+	});
+	this.mLegendMagicCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendmagic'
+	});
+
+	this.mLegendArmorCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendarmor'
+	});
+	this.mLegendArmorCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legendarmor'
+	});
+
+	this.mDebugCheckbox.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legenddebug'
+	});
+	this.mDebugCheckboxLabel.bindTooltip({
+		contentType: 'ui-element',
+		elementId: 'mapconfig.legenddebug'
+	});
+
 };
 
-NewCampaignMenuModule.prototype.unbindTooltips = function ()
-{
+NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mCompanyName.unbindTooltip();
 	this.mSeed.unbindTooltip();
 
@@ -1238,7 +1448,7 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mDifficultyHardLabel.unbindTooltip();
 	this.mDifficultyHardCheckbox.unbindTooltip();
-	
+
 	this.mDifficultyLegendaryLabel.unbindTooltip();
 	this.mDifficultyLegendaryCheckbox.unbindTooltip();
 
@@ -1254,7 +1464,7 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mEconomicDifficultyLegendaryLabel.unbindTooltip();
 	this.mEconomicDifficultyLegendaryCheckbox.unbindTooltip();
 
-	
+
 	this.mBudgetDifficultyEasyLabel.unbindTooltip();
 	this.mBudgetDifficultyEasyCheckbox.unbindTooltip();
 
@@ -1263,7 +1473,7 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mBudgetDifficultyHardLabel.unbindTooltip();
 	this.mBudgetDifficultyHardCheckbox.unbindTooltip();
-	
+
 	this.mBudgetDifficultyLegendaryLabel.unbindTooltip();
 	this.mBudgetDifficultyLegendaryCheckbox.unbindTooltip();
 
@@ -1319,7 +1529,7 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 	this.mMapOptions.NumFactions.Title.unbindTooltip();
 
 	this.mFogofWarCheckbox.unbindTooltip();
-	this.mFogofWarCheckboxLabel.unbindTooltip();	
+	this.mFogofWarCheckboxLabel.unbindTooltip();
 
 	this.mStackCitadelsCheckbox.unbindTooltip();
 	this.mStackCitadelsCheckboxLabel.unbindTooltip();
@@ -1335,242 +1545,226 @@ NewCampaignMenuModule.prototype.unbindTooltips = function ()
 
 	this.mLegendMagicCheckbox.unbindTooltip();
 	this.mLegendMagicCheckboxLabel.unbindTooltip();
+
+	this.mLegendArmorCheckbox.unbindTooltip();
+	this.mLegendArmorCheckboxLabel.unbindTooltip();
+
+	this.mDebugCheckbox.unbindTooltip();
+	this.mDebugCheckboxLabel.unbindTooltip();
 };
 
 
-NewCampaignMenuModule.prototype.create = function(_parentDiv)
-{
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+NewCampaignMenuModule.prototype.create = function (_parentDiv) {
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
-NewCampaignMenuModule.prototype.destroy = function()
-{
-    this.unbindTooltips();
-    this.destroyDIV();
-};
-
-
-NewCampaignMenuModule.prototype.register = function (_parentDiv)
-{
-    console.log('NewCampaignMenuModule::REGISTER');
-
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register New Campaign Menu Module. Reason: New Campaign Menu Module is already initialized.');
-        return;
-    }
-
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
-};
-
-NewCampaignMenuModule.prototype.unregister = function ()
-{
-    console.log('NewCampaignMenuModule::UNREGISTER');
-
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister New Campaign Menu Module. Reason: New Campaign Menu Module is not initialized.');
-        return;
-    }
-
-    this.destroy();
-};
-
-NewCampaignMenuModule.prototype.isRegistered = function ()
-{
-    if (this.mContainer !== null)
-    {
-        return this.mContainer.parent().length !== 0;
-    }
-
-    return false;
+NewCampaignMenuModule.prototype.destroy = function () {
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
-NewCampaignMenuModule.prototype.registerEventListener = function(_listener)
-{
-    this.mEventListener = _listener;
+NewCampaignMenuModule.prototype.register = function (_parentDiv) {
+	console.log('NewCampaignMenuModule::REGISTER');
+
+	if (this.mContainer !== null) {
+		console.error('ERROR: Failed to register New Campaign Menu Module. Reason: New Campaign Menu Module is already initialized.');
+		return;
+	}
+
+	if (_parentDiv !== null && typeof (_parentDiv) == 'object') {
+		this.create(_parentDiv);
+	}
+};
+
+NewCampaignMenuModule.prototype.unregister = function () {
+	console.log('NewCampaignMenuModule::UNREGISTER');
+
+	if (this.mContainer === null) {
+		console.error('ERROR: Failed to unregister New Campaign Menu Module. Reason: New Campaign Menu Module is not initialized.');
+		return;
+	}
+
+	this.destroy();
+};
+
+NewCampaignMenuModule.prototype.isRegistered = function () {
+	if (this.mContainer !== null) {
+		return this.mContainer.parent().length !== 0;
+	}
+
+	return false;
 };
 
 
-NewCampaignMenuModule.prototype.show = function ()
-{
+NewCampaignMenuModule.prototype.registerEventListener = function (_listener) {
+	this.mEventListener = _listener;
+};
+
+
+NewCampaignMenuModule.prototype.show = function () {
 	// reseed
 	//this.mSeed.setInputText(Math.round(Math.random() * 9999999).toString(16));
 
-    var seed = "";
-    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var seed = "";
+	var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    for(var i = 0; i < 10; i++)
-        seed += characters.charAt(Math.floor(Math.random() * characters.length));
+	for (var i = 0; i < 10; i++)
+		seed += characters.charAt(Math.floor(Math.random() * characters.length));
 
-    this.mSeed.setInputText(seed);
+	this.mSeed.setInputText(seed);
 
 	// reset panels
 	this.mFirstPanel.addClass('display-block').removeClass('display-none');
-    this.mSecondPanel.removeClass('display-block').addClass('display-none');
+	this.mSecondPanel.removeClass('display-block').addClass('display-none');
 	this.mThirdPanel.removeClass('display-block').addClass('display-none');
-	this.mMapPanel.removeClass('display-block').addClass('display-none');	
+	this.mMapPanel.removeClass('display-block').addClass('display-none');
+	this.mConfigPanel.removeClass('display-block').addClass('display-none');
 	this.mStartButton.changeButtonText("Next");
 	this.mCancelButton.changeButtonText("Cancel");
-	this.mRandomButton.removeClass('display-block').addClass('display-none');	
+	this.mRandomButton.removeClass('display-block').addClass('display-none');
 
 	var self = this;
 
-    var offset = -(this.mContainer.parent().width() + this.mContainer.width());
-    this.mContainer.css({ 'left' : offset });
-    this.mContainer.velocity("finish", true).velocity({ opacity: 1, left: '0', right: '0' },
-	{
-        duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            $(this).removeClass('display-none').addClass('display-block');
-            self.notifyBackendModuleAnimating();
-        },
-        complete: function ()
-        {
-            self.mIsVisible = true;
-            self.notifyBackendModuleShown();
-        }
-    });
+	var offset = -(this.mContainer.parent().width() + this.mContainer.width());
+	this.mContainer.css({
+		'left': offset
+	});
+	this.mContainer.velocity("finish", true).velocity({
+		opacity: 1,
+		left: '0',
+		right: '0'
+	}, {
+		duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function () {
+			$(this).removeClass('display-none').addClass('display-block');
+			self.notifyBackendModuleAnimating();
+		},
+		complete: function () {
+			self.mIsVisible = true;
+			self.notifyBackendModuleShown();
+		}
+	});
 };
 
-NewCampaignMenuModule.prototype.hide = function ()
-{
-    var self = this;
+NewCampaignMenuModule.prototype.hide = function () {
+	var self = this;
 
-    var offset = -(this.mContainer.parent().width() + this.mContainer.width());
-    this.mContainer.velocity("finish", true).velocity({ opacity: 0, left: offset },
-	{
-        duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            self.notifyBackendModuleAnimating();
-        },
-        complete: function ()
-        {
-            self.mIsVisible = false;
-            $(this).removeClass('display-block').addClass('display-none');
-            self.notifyBackendModuleHidden();
-        }
-    });
+	var offset = -(this.mContainer.parent().width() + this.mContainer.width());
+	this.mContainer.velocity("finish", true).velocity({
+		opacity: 0,
+		left: offset
+	}, {
+		duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function () {
+			self.notifyBackendModuleAnimating();
+		},
+		complete: function () {
+			self.mIsVisible = false;
+			$(this).removeClass('display-block').addClass('display-none');
+			self.notifyBackendModuleHidden();
+		}
+	});
 };
 
-NewCampaignMenuModule.prototype.isVisible = function ()
-{
-    return this.mIsVisible;
+NewCampaignMenuModule.prototype.isVisible = function () {
+	return this.mIsVisible;
 };
 
 
-NewCampaignMenuModule.prototype.onPreviousBannerClicked = function()
-{
+NewCampaignMenuModule.prototype.onPreviousBannerClicked = function () {
 	--this.mCurrentBannerIndex;
 
-	if(this.mCurrentBannerIndex < 0)
+	if (this.mCurrentBannerIndex < 0)
 		this.mCurrentBannerIndex = this.mBanners.length - 1;
 
 	this.mBannerImage.attr('src', Path.GFX + 'ui/banners/' + this.mBanners[this.mCurrentBannerIndex] + '.png');
 };
 
 
-NewCampaignMenuModule.prototype.onNextBannerClicked = function()
-{
+NewCampaignMenuModule.prototype.onNextBannerClicked = function () {
 	++this.mCurrentBannerIndex;
 
-	if(this.mCurrentBannerIndex >= this.mBanners.length)
+	if (this.mCurrentBannerIndex >= this.mBanners.length)
 		this.mCurrentBannerIndex = 0;
 
 	this.mBannerImage.attr('src', Path.GFX + 'ui/banners/' + this.mBanners[this.mCurrentBannerIndex] + '.png');
 };
 
 
-NewCampaignMenuModule.prototype.setBanners = function(_data)
-{
-	if(_data !== null && jQuery.isArray(_data))
-	{
+NewCampaignMenuModule.prototype.setBanners = function (_data) {
+	if (_data !== null && jQuery.isArray(_data)) {
 		this.mBanners = _data;
 		this.mCurrentBannerIndex = Math.floor(Math.random() * _data.length);
 
 		this.mBannerImage.attr('src', Path.GFX + 'ui/banners/' + _data[this.mCurrentBannerIndex] + '.png');
-	}
-	else
-	{
+	} else {
 		console.error('ERROR: No banners specified for NewCampaignMenu::setBanners');
 	}
 }
 
 
-NewCampaignMenuModule.prototype.setStartingScenarios = function (_data)
-{
-    if (_data !== null && jQuery.isArray(_data))
-    {
-        this.mScenarios = _data;
+NewCampaignMenuModule.prototype.setStartingScenarios = function (_data) {
+	if (_data !== null && jQuery.isArray(_data)) {
+		this.mScenarios = _data;
 
-        for (var i = 0; i < _data.length; ++i)
-        {
-            this.addStartingScenario(i, _data[i], this.mScenarioScrollContainer);
+		for (var i = 0; i < _data.length; ++i) {
+			this.addStartingScenario(i, _data[i], this.mScenarioScrollContainer);
 		}
-    }
+	}
 }
 
 
-NewCampaignMenuModule.prototype.addStartingScenario = function (_index, _data, _row)
-{
-    var self = this;
+NewCampaignMenuModule.prototype.addStartingScenario = function (_index, _data, _row) {
+	var self = this;
 
-    var control = $('<div class="control"></div>');
-    _row.append(control);
+	var control = $('<div class="control"></div>');
+	_row.append(control);
 
-    var radioButton = $('<input type="radio" id="cb-scenario-' + _index + '" name="scenario" ' + (_index == 0 ? 'checked' : '') + '/>');
-    control.append(radioButton);
+	var radioButton = $('<input type="radio" id="cb-scenario-' + _index + '" name="scenario" ' + (_index == 0 ? 'checked' : '') + '/>');
+	control.append(radioButton);
 
-    var label = $('<label class="text-font-normal font-color-subtitle" for="cb-scenario-' + _index + '">' + _data.Name + '</label>');
-    control.append(label);
+	var label = $('<label class="text-font-normal font-color-subtitle" for="cb-scenario-' + _index + '">' + _data.Name + '</label>');
+	control.append(label);
 
-    label.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.StartingScenario });
+	label.bindTooltip({
+		contentType: 'ui-element',
+		elementId: TooltipIdentifier.MenuScreen.NewCampaign.StartingScenario
+	});
 
-    radioButton.iCheck(
-    {
-        checkboxClass: 'icheckbox_flat-orange',
-        radioClass: 'iradio_flat-orange',
-        increaseArea: '30%'
-    });
+	radioButton.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
 
-    radioButton.on('ifChecked', null, this, function (_event)
-    {
-        var self = _event.data;
-        self.mSelectedScenario = _index;
-        self.updateStartingScenarioDescription(_data.Description, _data.Difficulty);
-    });
+	radioButton.on('ifChecked', null, this, function (_event) {
+		var self = _event.data;
+		self.mSelectedScenario = _index;
+		self.updateStartingScenarioDescription(_data.Description, _data.Difficulty);
+	});
 
-    if(_index == 0)
-        this.updateStartingScenarioDescription(_data.Description, _data.Difficulty);
+	if (_index == 0)
+		this.updateStartingScenarioDescription(_data.Description, _data.Difficulty);
 }
 
 
-NewCampaignMenuModule.prototype.updateStartingScenarioDescription = function (_desc, _difficulty)
-{
-	var parsedText = XBBCODE.process(
-    {
+NewCampaignMenuModule.prototype.updateStartingScenarioDescription = function (_desc, _difficulty) {
+	var parsedText = XBBCODE.process({
 		text: _desc,
 		removeMisalignedTags: false,
 		addInLineBreaks: true
 	});
-									
-    this.mScenariosDesc.html(parsedText.html);
-    this.mScenariosDifficulty.attr('src', Path.GFX + 'ui/images/' + _difficulty + '.png');
+
+	this.mScenariosDesc.html(parsedText.html);
+	this.mScenariosDifficulty.attr('src', Path.GFX + 'ui/images/' + _difficulty + '.png');
 };
 
-NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
-{
-	if(_data !== null)
-	{
+NewCampaignMenuModule.prototype.setConfigOpts = function (_data) {
+	if (_data !== null) {
 		this.mMapConfigOpts = _data;
 
 		if ('Height' in _data) {
@@ -1622,37 +1816,32 @@ NewCampaignMenuModule.prototype.setConfigOpts = function(_data)
 			this.mMapOptions.SwampsMult.Value = _data['SwampsMult'];
 			this.mMapOptions.SwampsMult.Min = _data['SwampsMultMin'];
 			this.mMapOptions.SwampsMult.Max = _data['SwampsMultMax'];
-		}	
+		}
 		if ('MountainsMult' in _data) {
 			this.mMapOptions.MountainsMult.Value = _data['MountainsMult'];
 			this.mMapOptions.MountainsMult.Min = _data['MountainsMultMin'];
 			this.mMapOptions.MountainsMult.Max = _data['MountainsMultMax'];
-		}		
+		}
 		if ('FOW' in _data) {
 			this.mMapOptions.FOW = _data['FOW'];
 		}
-	//	if ('Debug' in _data) {
-	//		this.mMapOptions.Debug = _data['Debug'];
-	//	}
-		if ('StackCitadels' in _data)
-		{
+		if ('Debug' in _data) {
+			this.mMapOptions.Debug = _data['Debug'];
+		}
+		if ('StackCitadels' in _data) {
 			this.mMapOptions.StackCitadels = _data['StackCitadels'];
 		}
-		if ('AllTradeLocations' in _data)
-		{
+		if ('AllTradeLocations' in _data) {
 			this.mMapOptions.AllTradeLocations = _data['AllTradeLocations'];
 		}
-	}
-	else
-	{
+	} else {
 		console.error('ERROR: No opts specified for NewCampaignMenu::setConfigOpts');
 	}
 	this.updateMapConfig();
 }
 
 
-NewCampaignMenuModule.prototype.collectSettings = function()
-{
+NewCampaignMenuModule.prototype.collectSettings = function () {
 	var settings = [];
 
 	// company name
@@ -1669,15 +1858,14 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mEvil);
 	settings.push(this.mEvilPermanentDestructionCheckbox.is(':checked'));
 	settings.push(this.mSeed.getInputText());
-	settings.push(this.mMapOptions.Width.Value);	
-	settings.push(this.mMapOptions.Height.Value);	
-	settings.push(this.mMapOptions.LandMassMult.Value);	
-	settings.push(this.mMapOptions.WaterConnectivity.Value);	
-	settings.push(this.mMapOptions.MinLandToWaterRatio.Value);	
-	settings.push(this.mMapOptions.Snowline.Value);	
-	settings.push(this.mMapOptions.NumSettlements.Value);	
+	settings.push(this.mMapOptions.Width.Value);
+	settings.push(this.mMapOptions.Height.Value);
+	settings.push(this.mMapOptions.LandMassMult.Value);
+	settings.push(this.mMapOptions.WaterConnectivity.Value);
+	settings.push(this.mMapOptions.MinLandToWaterRatio.Value);
+	settings.push(this.mMapOptions.Snowline.Value);
+	settings.push(this.mMapOptions.NumSettlements.Value);
 	settings.push(this.mMapOptions.NumFactions.Value);
-	// settings.push(this.mMapOptions.Vision.Value);	
 	settings.push(this.mFogofWarCheckbox.is(':checked'));
 	settings.push(this.mMapOptions.ForestsMult.Value);
 	settings.push(this.mMapOptions.SwampsMult.Value);
@@ -1688,47 +1876,39 @@ NewCampaignMenuModule.prototype.collectSettings = function()
 	settings.push(this.mLegendPerkTreesCheckbox.is(":checked"));
 	settings.push(this.mLegendGenderEqualityCheckbox.is(":checked"));
 	settings.push(this.mLegendMagicCheckbox.is(":checked"));
+	settings.push(this.mLegendArmorCheckbox.is(":checked"));
+	settings.push(this.mDebugCheckbox.is(":checked"));
 	return settings;
 }
 
 
-NewCampaignMenuModule.prototype.notifyBackendModuleShown = function ()
-{
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onModuleShown');
-    }
+NewCampaignMenuModule.prototype.notifyBackendModuleShown = function () {
+	if (this.mSQHandle !== null) {
+		SQ.call(this.mSQHandle, 'onModuleShown');
+	}
 };
 
-NewCampaignMenuModule.prototype.notifyBackendModuleHidden = function ()
-{
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onModuleHidden');
-    }
+NewCampaignMenuModule.prototype.notifyBackendModuleHidden = function () {
+	if (this.mSQHandle !== null) {
+		SQ.call(this.mSQHandle, 'onModuleHidden');
+	}
 };
 
-NewCampaignMenuModule.prototype.notifyBackendModuleAnimating = function ()
-{
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onModuleAnimating');
-    }
+NewCampaignMenuModule.prototype.notifyBackendModuleAnimating = function () {
+	if (this.mSQHandle !== null) {
+		SQ.call(this.mSQHandle, 'onModuleAnimating');
+	}
 };
 
-NewCampaignMenuModule.prototype.notifyBackendStartButtonPressed = function ()
-{
-	if (this.mSQHandle !== null)
-	{
+NewCampaignMenuModule.prototype.notifyBackendStartButtonPressed = function () {
+	if (this.mSQHandle !== null) {
 		var settings = this.collectSettings();
 		SQ.call(this.mSQHandle, 'onStartButtonPressed', settings);
 	}
 };
 
-NewCampaignMenuModule.prototype.notifyBackendCancelButtonPressed = function ()
-{
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onCancelButtonPressed');
-    }
+NewCampaignMenuModule.prototype.notifyBackendCancelButtonPressed = function () {
+	if (this.mSQHandle !== null) {
+		SQ.call(this.mSQHandle, 'onCancelButtonPressed');
+	}
 };

@@ -306,6 +306,13 @@ this.tooltip_events <- {
 			}
 
 			return null;
+
+		case "paperdoll.remove-armor-layer":
+			if (entity == null)
+			{
+				return null;
+			}
+			return entity.getRemoveLayerTooltip(_itemId);
 		}
 
 		return null;
@@ -606,14 +613,14 @@ this.tooltip_events <- {
 					icon = "ui/icons/mouse_right_button_alt.png",
 					text = "Set item to be salvaged"
 				});
-			} 
+			}
 			else if (_item.getCondition() < _item.getConditionMax())
 			{
 				local text = "Set item to be repaired"
-				if (_item.isToBeRepaired()) 
+				if (_item.isToBeRepaired())
 				{
 					text = "Set item to be salvaged"
-				} 
+				}
 				else if (_item.isToBeSalvaged())
 				{
 					text = "Set item to not be salvaged or repaired"
@@ -624,7 +631,7 @@ this.tooltip_events <- {
 					icon = "ui/icons/mouse_right_button_alt.png",
 					text = text
 				});
-			} 
+			}
 			break;
 
 		case "tactical-combat-result-screen.stash":
@@ -657,7 +664,7 @@ this.tooltip_events <- {
 			}
 
 			break;
-		
+
 		case "camp-screen-repair-dialog-module.stash":
 		case "camp-screen-workshop-dialog-module.stash":
 		case "world-town-screen-shop-dialog-module.stash":
@@ -835,6 +842,13 @@ this.tooltip_events <- {
 			}
 
 			return null;
+
+		case "paperdoll.remove-armor-layer":
+			if (entity == null)
+			{
+				return null;
+			}
+			return entity.getRemoveLayerTooltip(_itemId);
 		}
 
 		return null;
@@ -1085,13 +1099,13 @@ this.tooltip_events <- {
 			}
 
 			local id = 4;
-			local sortfn = function (first, second) 
+			local sortfn = function (first, second)
 			{
 				if (first[0] == second[0])
 				{
 					return 0
 				}
-				if (first[0] > second[0]) 
+				if (first[0] > second[0])
 				{
 					return -1
 				}
@@ -1233,19 +1247,19 @@ this.tooltip_events <- {
 			}
 
 			local id = 4;
-			local sortfn = function (first, second) 
+			local sortfn = function (first, second)
 			{
 				if (first[0] == second[0])
 				{
 					return 0
 				}
-				if (first[0] > second[0]) 
+				if (first[0] > second[0])
 				{
 					return -1
 				}
 				return 1
 			}
-			brolist.sort(sortfn);			
+			brolist.sort(sortfn);
 			foreach (bro in brolist)
 			{
 				ret.push({
@@ -1472,7 +1486,7 @@ this.tooltip_events <- {
 			// 	})
 			// 	++id;
 			// }
-			if (heal.Injuries.len() > 0) 
+			if (heal.Injuries.len() > 0)
 			{
 				ret.push({
 					id = id,
@@ -1539,7 +1553,7 @@ this.tooltip_events <- {
 					text = "L" + bro.Level + "  " + bro.Name + " (" + bro.Background + ")"
 				})
 				++id;
-			}			
+			}
 			return ret
 
 		case "assets.BusinessReputation":
@@ -2203,7 +2217,7 @@ this.tooltip_events <- {
 					text = "You\'ll start with fewer crowns and resources.\n\n 250 gold.  0/10 ammo. 0/5 meds. 0/5 armor parts. 15 stash. Plus starting bonuses.\n\nRecommended for expert players."
 				}
 			];
-		
+
 		case "menu-screen.new-campaign.LegendaryDifficultyBudget":
 			return [
 				{
@@ -4141,7 +4155,7 @@ this.tooltip_events <- {
 				text = "Open store page in browser"
 			});
 			return ret;
-		
+
 		case "mapconfig.width":
 			return [
 				{
@@ -4321,7 +4335,7 @@ this.tooltip_events <- {
 					text = "If enabled, guarentees at least one of each trade location building on the map."
 				}
 			];
-		
+
 		case "mapconfig.legendperktrees":
 			return [
 					{
@@ -4359,6 +4373,32 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "If enabled, low magic is allowed in the world, for most starts this just makes it possible to find vala and rune stones. If disabled, vala will not appear, runes stones will be 10x rarer, and magic commanders have low magic."
+				}
+			];
+		case "mapconfig.legendarmor":
+		return [
+				{
+					id = 1,
+					type = "title",
+					text = "Armor layer system"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled, armor is replaced with a layering system that allows armor to be compiled together from different layers. Base cloth, chain, plate, tabard, cloak, attachment and finally a rune layer."
+				}
+			];
+		case "mapconfig.legenddebug":
+		return [
+				{
+					id = 1,
+					type = "title",
+					text = "Debug"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "If enabled, the map will start completely revealed and all enemies and camps will be visible."
 				}
 			];
 		case "camp.commander":
@@ -4670,6 +4710,7 @@ this.tooltip_events <- {
 					text = "Setup camp."
 				}
 			];
+
 		case "dlc_4":
 			local ret = [
 				{
@@ -4700,7 +4741,7 @@ this.tooltip_events <- {
 				text = "Open store page in browser"
 			});
 			return ret;
-			
+
 
 		}
 

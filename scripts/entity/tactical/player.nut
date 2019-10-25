@@ -2578,7 +2578,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			list.append(s.getIcon());
 		}
 
-function playSound( _type, _volume, _pitch = 1.0 )
+		for( local i = list.len(); i < 4; i++ )
+		{
+			list.append("");
+		}
+
+		return list;
+	}
+
+	function playSound( _type, _volume, _pitch = 1.0 )
 	{
 		if (this.m.Sound[_type].len() == 0)
 		{
@@ -2602,12 +2610,89 @@ function playSound( _type, _volume, _pitch = 1.0 )
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);
 	}
 
-		for( local i = list.len(); i < 4; i++ )
+	function getRemoveLayerTooltip(_layer)
+	{
+		local armor = this.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local title = ""
+		switch(_layer)
 		{
-			list.append("");
+			case 0:
+				title = "Chain Mail Layer"
+				break;
+			case 1:
+				title = "Plate Layer"
+				break;
+			case 2:
+				title = "Tabard Layer"
+				break;
+			case 3:
+				title = "Cloak Layer"
+				break;
+			case 4:
+				title = "Upgrade Attachment Layer"
+				break;
+			case 5:
+				title = "Rune Layer"
+				break;
 		}
 
-		return list;
+		local tt = [
+			{
+				id = 1,
+				type = "title",
+				text = title
+			}
+		];
+
+		if (armor == null)
+		{
+			tt.push({
+				id = 2,
+				type = "description",
+				text = "A base piece of armor, such as a tunic or surcoat, needs to be worn in order to attach a layer"
+			})
+			return tt;
+		}
+
+		if (armor.upgradeIsBlocked(_layer))
+		{
+			tt.push({
+				id = 2,
+				type = "description",
+				text = "The layer can not be attached to this piece of armor."
+			})
+			return tt;
+		}
+
+		local upgrade = armor.getUpgrade(_layer)
+		if (upgrade == null)
+		{
+			tt.push({
+				id = 2,
+				type = "description",
+				text = "This layer is vacant. Right-click or drag a layer piece from the stash to attach it to this armor"
+			})
+			return tt;
+		}
+
+		tt.extend(upgrade.getTooltip())
+		tt.push({
+			id = 1,
+			type = "hint",
+			icon = "ui/icons/mouse_right_button.png",
+			text = "UnEquip layer"
+		});
+
+		foreach(t in tt)
+		{
+			if (t.id != 65)
+			{
+				continue;
+			}
+			t.text = "Click this button to remove the attached layer and return it to the stash."
+			break;
+		}
+		return tt;
 	}
 
 	function onSerialize( _out )

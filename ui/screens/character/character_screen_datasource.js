@@ -1495,7 +1495,7 @@ CharacterScreenDatasource.prototype.updateBrother = function (_data)
 	{
 	    if (this.mBrothersList[i] != null && this.mBrothersList[i][CharacterScreenIdentifier.Entity.Id] === _data[CharacterScreenIdentifier.Entity.Id])
 		{
-			this.mBrothersList[i] = _data;
+            this.mBrothersList[i] = _data;
 			this.notifyEventListener(CharacterScreenDatasourceIdentifier.Brother.Updated, this.mBrothersList[i]);
 			return;
 		}
