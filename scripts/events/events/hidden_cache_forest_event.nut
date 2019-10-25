@@ -83,28 +83,59 @@ this.hidden_cache_forest_event <- this.inherit("scripts/events/event", {
 					icon = "ui/items/" + item.getIcon(),
 					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
 				});
-				r = this.Math.rand(1, 5);
 
-				if (r == 1)
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				{
-					item = this.new("scripts/items/armor/gambeson");
+					local cloths = [
+						[0, ""],
+						[1, "cloth/legend_gambeson"],
+						[0, "cloth/legend_gambeson_plain"],
+						[0, "cloth/legend_gambeson_wolf"],
+						[1, "cloth/legend_padded_surcoat"],
+						[1, "cloth/legend_robes"],
+						[1, "cloth/legend_robes_butcher"],
+						[0, "cloth/legend_robes_nun"],
+						[1, "cloth/legend_robes_smith"],
+						[1, "cloth/legend_robes_wizard"],
+						[0, "cloth/legend_sackcloth"],
+						[0, "cloth/legend_sackcloth_patched"],
+						[0, "cloth/legend_sackcloth_tattered"],
+						[1, "cloth/legend_tunic"],
+						[1, "cloth/legend_tunic_noble"],
+						[1, "chain/legend_armor_rusty_mail_shirt"],
+						[1, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+						[1, "chain/legend_armor_reinforced_worn_mail"],
+						[1, "chain/legend_armor_reinforced_worn_mail_shirt"]
+					];
+					item = this.Const.World.Common.pickLegendArmor(cloths)
 				}
-				else if (r == 2)
+				else
 				{
-					item = this.new("scripts/items/armor/leather_tunic");
+					r = this.Math.rand(1, 5);
+
+					if (r == 1)
+					{
+						item = this.new("scripts/items/armor/gambeson");
+					}
+					else if (r == 2)
+					{
+						item = this.new("scripts/items/armor/leather_tunic");
+					}
+					else if (r == 3)
+					{
+						item = this.new("scripts/items/armor/thick_tunic");
+					}
+					else if (r == 4)
+					{
+						item = this.new("scripts/items/armor/wizard_robe");
+					}
+					else if (r == 5)
+					{
+						item = this.new("scripts/items/armor/worn_mail_shirt");
+					}
 				}
-				else if (r == 3)
-				{
-					item = this.new("scripts/items/armor/thick_tunic");
-				}
-				else if (r == 4)
-				{
-					item = this.new("scripts/items/armor/wizard_robe");
-				}
-				else if (r == 5)
-				{
-					item = this.new("scripts/items/armor/worn_mail_shirt");
-				}
+
+
 
 				this.World.Assets.getStash().add(item);
 				this.List.push({

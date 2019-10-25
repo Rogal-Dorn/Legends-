@@ -131,11 +131,26 @@ this.civilwar_ambush_event <- this.inherit("scripts/events/event", {
 				}
 				else if (r == 3)
 				{
-					item = this.new("scripts/items/armor/mail_shirt");
+					if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+					{
+						item = this.new("scripts/items/legend_armor/chain/legend_armor_mail_shirt");
+					}
+					else
+					{
+						item = this.new("scripts/items/armor/mail_shirt");
+					}
 				}
 				else if (r == 4)
 				{
-					item = this.new("scripts/items/armor/basic_mail_shirt");
+					if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+					{
+						item = this.new("scripts/items/legend_armor/chain/legend_armor_mail_shirt_simple");
+					}
+					else
+					{
+						item = this.new("scripts/items/armor/basic_mail_shirt");
+					}
+
 				}
 
 				this.World.Assets.getStash().add(item);

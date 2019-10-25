@@ -15,6 +15,10 @@ this.barbarian_shelter_location <- this.inherit("scripts/entity/world/location",
 		this.m.Resources = 75;
 		this.m.NamedWeaponsList = this.Const.Items.NamedBarbarianWeapons;
 		this.m.NamedArmorsList = this.Const.Items.NamedBarbarianArmors;
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			this.m.NamedArmorsList = this.Const.Items.LegendNamedBarbarianArmors;
+		}
 		this.m.NamedHelmetsList = this.Const.Items.NamedBarbarianHelmets;
 	}
 

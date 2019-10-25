@@ -97,7 +97,15 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 2)
 		{
-			item = this.new("scripts/items/armor/patched_mail_shirt");
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				item = this.new("scripts/items/armor/patched_mail_shirt");
+			}
+			else
+			{
+				item = this.new("scripts/items/armor/patched_mail_shirt");
+			}
+
 		}
 		else if (r == 3)
 		{
@@ -117,11 +125,61 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 7)
 		{
-			item = this.new("scripts/items/armor/ragged_surcoat");
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				local cloths = [
+					[0, ""],
+					[1, "cloth/legend_gambeson"],
+					[0, "cloth/legend_gambeson_plain"],
+					[0, "cloth/legend_gambeson_wolf"],
+					[1, "cloth/legend_padded_surcoat"],
+					[1, "cloth/legend_robes"],
+					[0, "cloth/legend_robes_butcher"],
+					[0, "cloth/legend_robes_nun"],
+					[1, "cloth/legend_robes_smith"],
+					[0, "cloth/legend_robes_wizard"],
+					[1, "cloth/legend_sackcloth"],
+					[1, "cloth/legend_sackcloth_patched"],
+					[0, "cloth/legend_sackcloth_tattered"],
+					[1, "cloth/legend_tunic"],
+					[1, "cloth/legend_tunic_noble"]
+				];
+				item = this.Const.World.Common.pickLegendArmor(cloths)
+			}
+			else
+			{
+				item = this.new("scripts/items/armor/ragged_surcoat");
+			}
+
 		}
 		else if (r == 8)
 		{
-			item = this.new("scripts/items/armor/noble_tunic");
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				local cloths = [
+					[0, ""],
+					[1, "cloth/legend_gambeson"],
+					[0, "cloth/legend_gambeson_plain"],
+					[0, "cloth/legend_gambeson_wolf"],
+					[1, "cloth/legend_padded_surcoat"],
+					[1, "cloth/legend_robes"],
+					[0, "cloth/legend_robes_butcher"],
+					[0, "cloth/legend_robes_nun"],
+					[1, "cloth/legend_robes_smith"],
+					[0, "cloth/legend_robes_wizard"],
+					[1, "cloth/legend_sackcloth"],
+					[1, "cloth/legend_sackcloth_patched"],
+					[0, "cloth/legend_sackcloth_tattered"],
+					[1, "cloth/legend_tunic"],
+					[1, "cloth/legend_tunic_noble"]
+				];
+				item = this.Const.World.Common.pickLegendArmor(cloths)
+			}
+			else
+			{
+				item = this.new("scripts/items/armor/noble_tunic");
+			}
+
 		}
 		else if (r == 9)
 		{
@@ -157,7 +215,31 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 17)
 		{
-			item = this.new("scripts/items/armor/thick_dark_tunic");
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				local cloths = [
+					[0, ""],
+					[1, "cloth/legend_gambeson"],
+					[0, "cloth/legend_gambeson_plain"],
+					[0, "cloth/legend_gambeson_wolf"],
+					[1, "cloth/legend_padded_surcoat"],
+					[1, "cloth/legend_robes"],
+					[0, "cloth/legend_robes_butcher"],
+					[0, "cloth/legend_robes_nun"],
+					[1, "cloth/legend_robes_smith"],
+					[0, "cloth/legend_robes_wizard"],
+					[1, "cloth/legend_sackcloth"],
+					[1, "cloth/legend_sackcloth_patched"],
+					[0, "cloth/legend_sackcloth_tattered"],
+					[1, "cloth/legend_tunic"],
+					[1, "cloth/legend_tunic_noble"]
+				];
+				item = this.Const.World.Common.pickLegendArmor(cloths)
+			}
+			else
+			{
+				item = this.new("scripts/items/armor/thick_dark_tunic");
+			}
 		}
 		else if (r == 18)
 		{

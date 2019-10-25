@@ -140,12 +140,63 @@ this.civilwar_wounded_soldier_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 3)
 		{
-			item = this.new("scripts/items/armor/mail_shirt");
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				local chains = [
+                [0, ""],
+                [1, "chain/legend_armor_mail_shirt"],
+				[1, "chain/legend_armor_mail_shirt_simple"],
+				[0, "chain/legend_armor_rusty_mail_shirt"],
+				[0, "chain/legend_armor_ancient_double_mail"],
+				[0, "chain/legend_armor_ancient_mail"],
+				[1, "chain/legend_armor_basic_mail"],
+				[1, "chain/legend_armor_hauberk"],
+				[1, "chain/legend_armor_hauberk_full"],
+				[1, "chain/legend_armor_hauberk_sleevless"],
+				[1, "chain/legend_armor_reinforced_mail"],
+				[1, "chain/legend_armor_reinforced_mail_shirt"],
+				[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+				[1, "chain/legend_armor_reinforced_worn_mail"],
+				[1, "chain/legend_armor_reinforced_worn_mail_shirt"],
+				[1, "chain/legend_armor_short_mail"]
+				]
+				item = this.Const.World.Common.pickLegendArmor(chains)
+			}
+			else
+			{
+				item = this.new("scripts/items/armor/mail_shirt");
+			}
+
 		}
 		else if (r == 4)
 		{
-			item = this.new("scripts/items/armor/mail_hauberk");
-			item.setVariant(28);
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				local chains = [
+                [0, ""],
+                [1, "chain/legend_armor_mail_shirt"],
+				[1, "chain/legend_armor_mail_shirt_simple"],
+				[0, "chain/legend_armor_rusty_mail_shirt"],
+				[0, "chain/legend_armor_ancient_double_mail"],
+				[0, "chain/legend_armor_ancient_mail"],
+				[1, "chain/legend_armor_basic_mail"],
+				[1, "chain/legend_armor_hauberk"],
+				[1, "chain/legend_armor_hauberk_full"],
+				[1, "chain/legend_armor_hauberk_sleevless"],
+				[1, "chain/legend_armor_reinforced_mail"],
+				[1, "chain/legend_armor_reinforced_mail_shirt"],
+				[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
+				[1, "chain/legend_armor_reinforced_worn_mail"],
+				[1, "chain/legend_armor_reinforced_worn_mail_shirt"],
+				[1, "chain/legend_armor_short_mail"]
+				]
+				item = this.Const.World.Common.pickLegendArmor(chains)
+			}
+			else
+			{
+				item = this.new("scripts/items/armor/mail_hauberk");
+				item.setVariant(28);
+			}
 		}
 
 		item.setCondition(44.0);

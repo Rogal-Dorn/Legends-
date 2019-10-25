@@ -41,7 +41,31 @@ this.wildman_finds_something_event <- this.inherit("scripts/events/event", {
 					}
 					else if (r == 2)
 					{
-						item = this.new("scripts/items/armor/tattered_sackcloth");
+						if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+						{
+							local cloths = [
+								[0, ""],
+								[0, "cloth/legend_gambeson"],
+								[0, "cloth/legend_gambeson_plain"],
+								[0, "cloth/legend_gambeson_wolf"],
+								[1, "cloth/legend_padded_surcoat"],
+								[1, "cloth/legend_robes"],
+								[1, "cloth/legend_robes_butcher"],
+								[0, "cloth/legend_robes_nun"],
+								[0, "cloth/legend_robes_smith"],
+								[0, "cloth/legend_robes_wizard"],
+								[1, "cloth/legend_sackcloth"],
+								[1, "cloth/legend_sackcloth_patched"],
+								[1, "cloth/legend_sackcloth_tattered"],
+								[1, "cloth/legend_tunic"],
+								[0, "cloth/legend_tunic_noble"]
+							];
+							item = this.Const.World.Common.pickLegendArmor(cloths)
+						}
+						else
+						{
+							item = this.new("scripts/items/armor/tattered_sackcloth");
+						}
 					}
 					else if (r == 3)
 					{

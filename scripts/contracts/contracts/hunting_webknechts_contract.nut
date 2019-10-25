@@ -336,14 +336,29 @@ this.hunting_webknechts_contract <- this.inherit("scripts/contracts/contract", {
 				local item;
 				local r = this.Math.rand(1, 2);
 
-				if (r == 1)
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				{
-					item = this.new("scripts/items/armor/decayed_reinforced_mail_hauberk");
+					if (r == 1)
+					{
+						item = this.new("scripts/items/legend_armor/plate/legend_armor_plate_chest_rotten");
+					}
+					else if (r == 2)
+					{
+						item = this.new("scripts/items/legend_armor/plate/legend_armor_scale_coat_rotten");
+					}
 				}
-				else if (r == 2)
+				else
 				{
-					item = this.new("scripts/items/armor/decayed_coat_of_scales");
+					if (r == 1)
+					{
+						item = this.new("scripts/items/armor/decayed_reinforced_mail_hauberk");
+					}
+					else if (r == 2)
+					{
+						item = this.new("scripts/items/armor/decayed_coat_of_scales");
+					}
 				}
+
 
 				this.World.Assets.getStash().add(item);
 				this.List.push({

@@ -141,5 +141,115 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		}
 	}
 
+
+	function onUpdateLegendShopList( _id, _list )
+	{
+		if (_id == "building.marketplace")
+		{
+			local armorsL = [
+				[15, 1.0, "plate/legend_armor_leather_jacket"],
+				[15, 1.0, "plate/legend_armor_leather_jacket_simple"],
+				[10, 1.0, "cloth/legend_robes_smith"],
+				[35, 1.0, "plate/legend_armor_leather_padded"],
+				[35, 1.0, "plate/legend_armor_leather_noble"],
+				[35, 1.0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+				[40, 1.0, "plate/legend_armor_leather_lamellar"],
+				[40, 1.0, "plate/legend_armor_leather_riveted"],
+				[40, 1.0, "plate/legend_armor_leather_riveted_light"],
+				[45, 1.0, "plate/legend_armor_leather_scale"]
+			]
+
+			foreach( a in armorsL)
+			{
+				_list.push({
+					R = a[0],
+					P = a[1],
+					S = "legend_armor/" + a[2]
+				});
+			}
+
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_chain"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "helmets/full_leather_cap"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_hunter"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "tents/tent_craft"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "helmets/full_leather_cap"
+			});
+		}
+		else if (_id == "building.specialized_trader")
+		{
+		}
+		else if (_id == "building.weaponsmith")
+		{
+		}
+		else if (_id == "building.armorsmith")
+		{
+			local armorsL = [
+				[35, 1.0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+				[40, 1.0, "plate/legend_armor_leather_lamellar"],
+				[40, 1.0, "plate/legend_armor_leather_riveted"],
+				[40, 1.0, "plate/legend_armor_leather_riveted_light"],
+				[45, 1.0, "plate/legend_armor_leather_scale"],
+				[50, 1.0, "plate/legend_armor_leather_lamellar_harness_heavy"],
+				[50, 1.0, "plate/legend_armor_leather_brigandine"],
+				[50, 1.0, "plate/legend_armor_leather_lamellar_reinforced"],
+				[55, 1.0, "plate/legend_armor_leather_lamellar_heavy"],
+				[55, 1.0, "plate/legend_armor_leather_brigandine_hardened"],
+				[55, 1.0, "plate/legend_armor_leather_brigandine_hardened_full"]
+			]
+
+			foreach( a in armorsL)
+			{
+				_list.push({
+					R = a[0],
+					P = a[1],
+					S = "legend_armor/" + a[2]
+				});
+			}
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "helmets/padded_nasal_helmet"
+			});
+			_list.push({
+				R = 35,
+				P = 1.0,
+				S = "helmets/padded_kettle_hat"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "helmets/padded_flat_top_helmet"
+			});
+			_list.push({
+				R = 45,
+				P = 1.0,
+				S = "helmets/closed_flat_top_helmet"
+			});
+			_list.push({
+				R = 40,
+				P = 1.0,
+				S = "shields/kite_shield"
+			});
+		}
+	}
 });
 

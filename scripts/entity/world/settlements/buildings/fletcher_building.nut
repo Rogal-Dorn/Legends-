@@ -115,7 +115,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 				R = 20,
 				P = 1.0,
 				S = "weapons/war_bow"
-			},			
+			},
 			{
 				R = 20,
 				P = 1.0,

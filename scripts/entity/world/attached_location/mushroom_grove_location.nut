@@ -81,5 +81,56 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 		}
 	}
 
+	function onUpdateLegendShopList( _id, _list )
+	{
+		if (_id == "building.marketplace")
+		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "supplies/pickled_mushrooms_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_robes"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "weapons/legend_sickle"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_gather"
+			});
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_shovel"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "supplies/medicine_item"
+			});
+			_list.push({
+				R = 50,
+				P = 1.0,
+				S = "accessory/berserker_mushrooms_item"
+			});
+
+		if (this.Const.DLC.Wildmen)
+		{
+			_list.push({
+				R = 30,
+				P = 1.0,
+				S = "weapons/legend_cat_o_nine_tails"
+			});
+		}
+
+		}
+	}
 });
 

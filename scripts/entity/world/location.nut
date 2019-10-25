@@ -468,6 +468,10 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 					else if (type <= 100)
 					{
 						local armor = clone this.Const.Items.NamedArmors;
+						if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+						{
+							armor = clone this.Const.Items.LegendNamedArmors;
+						}
 
 						if (this.m.NamedArmorsList != null && this.m.NamedArmorsList.len() != 0)
 						{

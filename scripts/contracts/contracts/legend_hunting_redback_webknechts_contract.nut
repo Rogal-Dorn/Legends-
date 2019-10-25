@@ -5,7 +5,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		IsPlayerAttacking = false,
 		MinStrength = 100,
 		Perk = "perk.legend_favoured_enemy_spider",
-		ValidTypes = this.Const.LegendMod.FavoriteSpider		
+		ValidTypes = this.Const.LegendMod.FavoriteSpider
 	},
 	function create()
 	{
@@ -345,14 +345,30 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 				local item;
 				local r = this.Math.rand(1, 2);
 
-				if (r == 1)
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 				{
-					item = this.new("scripts/items/armor/mail_hauberk");
+					if (r == 1)
+					{
+						item = this.new("scripts/items/legend_armor/plate/legend_armor_plate_chest");
+					}
+					else if (r == 2)
+					{
+						item = this.new("scripts/items/legend_armor/plate/legend_armor_scale_coat");
+					}
 				}
-				else if (r == 2)
+				else
 				{
-					item = this.new("scripts/items/armor/coat_of_scales");
+					if (r == 1)
+					{
+						item = this.new("scripts/items/armor/mail_hauberk");
+					}
+					else if (r == 2)
+					{
+						item = this.new("scripts/items/armor/coat_of_scales");
+					}
 				}
+
+
 
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -544,7 +560,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
-			if (stats.Strength >= this.m.MinStrength) 
+			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}

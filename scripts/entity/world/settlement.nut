@@ -890,7 +890,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			if (candidates.len() != 0)
 			{
 				this.m.Buildings[candidates[this.Math.rand(0, candidates.len() - 1)]] = _building;
-			} 
+			}
 		}
 
 		if (_building.getID() == "building.barber")
@@ -1518,7 +1518,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (building != null)
 			{
-				building.onUpdateShopList();
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					building.onUpdateLegendShopList();
+				}
+				else
+				{
+					building.onUpdateShopList();
+				}
 
 				if (building.getStash() != null)
 				{
@@ -1839,7 +1846,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (loc.isActive())
 			{
-				loc.onUpdateShopList(_id, _list);
+				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+				{
+					loc.onUpdateLegendShopList(_id, _list);
+				}
+				else
+				{
+					loc.onUpdateShopList(_id, _list);
+				}
 			}
 		}
 	}
@@ -2049,7 +2063,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		else if (!this.World.Tags.get("HasLegendCampGathering") && (this.hasAttachedLocation("attached_location.gatherers_hut") || this.hasAttachedLocation("attached_location.herbalists_grove")))
 		{
 			eventID = "event.legend_camp_unlock_gather";
-		}		
+		}
 		else if (!this.World.Tags.get("HasLegendCampHunting") && (this.hasAttachedLocation("attached_location.trapper") || this.hasAttachedLocation("attached_location.hunters_cabin")))
 		{
 			eventID = "event.legend_camp_unlock_hunt";
@@ -2062,7 +2076,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			eventID = "event.legend_camp_unlock_scouting";
 		}
-												
+
 		if (eventID == "")
 		{
 			return;

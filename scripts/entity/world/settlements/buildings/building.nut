@@ -172,6 +172,11 @@ this.building <- {
 	{
 	}
 
+	function onUpdateLegendShopList()
+	{
+		return this.onUpdateShopList()
+	}
+
 	function onUpdateShopList()
 	{
 	}

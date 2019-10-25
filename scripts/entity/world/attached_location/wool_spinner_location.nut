@@ -81,5 +81,57 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		}
 	}
 
+
+	function onUpdateLegendShopList( _id, _list )
+	{
+		if (_id == "building.marketplace")
+		{
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_tunic"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "legend_armor/cloth/legend_tunic"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "helmets/hood"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_heal"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_fletcher"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_enchant"
+			});
+			_list.push({
+				R = 95,
+				P = 1.0,
+				S = "tents/tent_craft"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "trade/cloth_rolls_item"
+			});
+
+		}
+		else if (_id == "building.specialized_trader")
+		{
+		}
+	}
+
 });
 
