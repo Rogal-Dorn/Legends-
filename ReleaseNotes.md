@@ -1651,12 +1651,15 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * New Winselmutters drop loot - Winselmutter essence - used for crafting.
 * New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
 
-<<<<<<< HEAD
-
 13.0.0.4
 *ARMOR LAYERS!
  6 Tiers:
--
+-Chain
+-Plate
+-Tabard
+-Cload
+-Attachment
+-Rune
 
 * Adds in x3 new Named Barbarian Armors.
 -Bronze armor
@@ -1666,11 +1669,11 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 -Named sellsword plate
 * Adds a new craftable recipe for Lindwurm scale armor.
 
-Dynamic Spwans:
-Leader and high end units will be less like to spawn in multiples earlier in the game.
-=======
-13.0.0.1 Test 4 Dynamic Spawns + New Enemies
 * Sprint effect now has a description and a matching icon
 * Fixed missing icons for runed named great khopesh's
 * Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly
->>>>>>> LegendsModv12_DynamicSpawn
+
+* Dynamic Spwans:
+-Leader and high end units will be less likely to spawn in multiples earlier in the game.
+-Adjusted spawn thresholds for many of the mid and late tier enemies to help ease the early game.
+
