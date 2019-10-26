@@ -1648,3 +1648,8 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * New Höllenhunds drop loot. Bones - used for crafting
 * New Winselmutters drop loot - Winselmutter essence - used for crafting.
 * New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
+
+13.0.0.1 Test 4 Dynamic Spawns + New Enemies
+* Sprint effect now has a description and a matching icon
+* Fixed missing icons for runed named great khopesh's
+* Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly
