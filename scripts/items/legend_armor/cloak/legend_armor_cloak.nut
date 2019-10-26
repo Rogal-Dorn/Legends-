@@ -19,9 +19,9 @@ this.legend_armor_cloak <- this.inherit("scripts/items/legend_armor/legend_armor
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-		this.m.SpriteBack = "cloak_" + variant + "_back";
-		this.m.SpriteDamagedBack = "cloak_" + variant + "_back_damaged";
-		this.m.SpriteCorpseBack = "cloak_" + variant + "_back_destroyed";
+		this.m.SpriteBack = "cloak_" + variant + "";
+		this.m.SpriteDamagedBack = "cloak_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "cloak_" + variant + "_destroyed";
 		this.m.Icon = "legend_armor/cloak/cloak_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/cloak/icon_cloak_" + variant + ".png";

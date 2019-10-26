@@ -692,11 +692,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Upgrades = [];
 		for ( local i = 0; i < count; i = ++i)
 		{
+			this.m.Upgrades.push(null)
 			local hasItem = _in.readBool();
 
 			if (!hasItem)
 			{
-				this.m.Upgrades.push(null);
 				continue;
 			}
 
