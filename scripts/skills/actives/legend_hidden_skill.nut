@@ -28,7 +28,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Blend into the terrain and remain unseen until attacking or moving adjacent to an enemey.";
+		return "Blend into the terrain and remain unseen until attacking or moving adjacent to an enemy.";
 	}
 
 	function getTooltip()
