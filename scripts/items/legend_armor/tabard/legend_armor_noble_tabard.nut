@@ -1,4 +1,4 @@
-this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armor_tabard", {
+this.legend_armor_noble_tabard <- this.inherit("scripts/items/legend_armor/tabard/legend_armor_tabard", {
 	m = {},
 	function create()
 	{
