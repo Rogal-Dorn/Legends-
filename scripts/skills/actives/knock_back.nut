@@ -236,7 +236,7 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 			if (hasShieldBash)
 			{
 				local p = this.getContainer().getActor().getCurrentProperties();
-				local bodyHealth = actor.getHitpointsMax();
+				local bodyHealth = p.getHitpointsMax();
 				local damagemin = this.Math.abs(10 * p.DamageTotalMult);
 				local damagemax = this.Math.abs(25 * p.DamageTotalMult);
 				
