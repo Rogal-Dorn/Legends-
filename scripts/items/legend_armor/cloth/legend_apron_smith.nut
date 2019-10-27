@@ -2,7 +2,7 @@ this.legend_apron_smith <- this.inherit("scripts/items/legend_armor/cloth/legend
 	m = {},
 	function create()
 	{
-		this.legend_robes.create();
+		this.legend_apron.create();
 		this.m.ID = "legend.armor.body.legend_blacksmith_apron";
 		this.m.Name = "Blacksmith Apron";
 		this.m.Description = "A leather apron usually worn by a blacksmith";

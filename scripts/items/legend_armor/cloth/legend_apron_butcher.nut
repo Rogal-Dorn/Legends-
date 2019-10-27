@@ -2,7 +2,7 @@ this.legend_apron_butcher <- this.inherit("scripts/items/legend_armor/cloth/lege
 	m = {},
 	function create()
 	{
-		this.legend_robes.create();
+		this.legend_apron.create();
 		this.m.ID = "legend.armor.body.butcher_apron";
 		this.m.Name = "Butcher\'s Apron";
 		this.m.Description = "A rugged apron worn by butchers to protect against accidental cuts.";
