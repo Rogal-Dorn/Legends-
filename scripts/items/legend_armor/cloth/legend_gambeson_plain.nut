@@ -6,8 +6,20 @@ this.legend_gambeson_plain <- this.inherit("scripts/items/legend_armor/cloth/leg
 		this.m.ID = "legend.armor.body.gambeson_plain.cloth";
         local variants = [
             0,
-            1,
-            8
+            8,
+			13,
+			14,
+			16,
+			34,
+			40,
+			59,
+			65,
+			66,
+			67,
+			68,
+			69,
+			70
+
         ]
 		this.m.Variant = this.Math.rand(0, variants.len() - 1);
 		this.updateVariant();
