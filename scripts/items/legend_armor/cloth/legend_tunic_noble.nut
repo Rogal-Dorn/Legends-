@@ -6,7 +6,17 @@ this.legend_tunic_noble <- this.inherit("scripts/items/legend_armor/cloth/legend
 		this.m.ID = "legend.armor.body.noble_tunic";
 		this.m.Name = "Noble Tunic";
 		this.m.Description = "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.";
-		this.m.Variant = 6;
+		 local variants = [
+					6,
+					12,
+					14,
+					24,
+					25,
+					26,
+					27,
+					28
+				]
+		this.m.Variant = this.Math.rand(0, variants.len() - 1);
 		this.updateVariant();
 		this.m.Value = 100;
 		this.m.Condition = 20;
