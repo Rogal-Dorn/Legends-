@@ -537,6 +537,13 @@
 <sprite id="bust_legend_robes_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_robes_02_dead.png" left="-59" right="57" top="-54" bottom="58" />
 <sprite id="bust_legend_robes_02_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495054" width="131" height="114" img="entity\legend_armor\cloth\bust_legend_robes_02_dead_arrows.png" left="-13" right="25" top="-16" bottom="44" />
 <sprite id="bust_legend_robes_02_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF12182B" width="131" height="134" img="entity\legend_armor\cloth\bust_legend_robes_02_dead_javelin.png" left="-26" right="6" top="-27" bottom="67" />
+<sprite id="bust_legend_robes_03" offsetY="35" ic="FF3C3D3C" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_03.png" top="-52" bottom="20" />
+<sprite id="bust_legend_robes_03_damaged" offsetY="35" ic="FF3A3B3A" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_03_damaged.png" top="-52" bottom="20" />
+<sprite id="bust_legend_robes_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2D2F30" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_robes_03_dead.png" />
+<sprite id="bust_legend_robes_03_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF444B4F" width="131" height="114" img="entity\legend_armor\cloth\bust_legend_robes_03_dead_arrows.png" left="-8" right="18" top="-4" bottom="38" />
+<sprite id="bust_legend_robes_03_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF111823" width="131" height="124" img="entity\legend_armor\cloth\bust_legend_robes_03_dead_javelin.png" left="-10" right="32" top="-2" bottom="58" />
+
+
 
 <sprite id="bust_legend_robes_06" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_06.png" left="-48" right="46" top="-58" bottom="11" />
 <sprite id="bust_legend_robes_06_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_06_damaged.png" left="-49" right="45" top="-58" bottom="11" />
@@ -548,11 +555,6 @@
 <sprite id="bust_legend_robes_07_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_robes_07_dead.png" left="-59" right="57" top="-54" bottom="58" />
 <sprite id="bust_legend_robes_07_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF495054" width="131" height="114" img="entity\legend_armor\cloth\bust_legend_robes_07_dead_arrows.png" left="-13" right="25" top="-16" bottom="44" />
 <sprite id="bust_legend_robes_07_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF12182B" width="131" height="134" img="entity\legend_armor\cloth\bust_legend_robes_07_dead_javelin.png" left="-26" right="6" top="-27" bottom="67" />
-<sprite id="bust_legend_robes_10" offsetY="35" ic="FF3C3D3C" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_10.png" top="-52" bottom="20" />
-<sprite id="bust_legend_robes_10_damaged" offsetY="35" ic="FF3A3B3A" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_10_damaged.png" top="-52" bottom="20" />
-<sprite id="bust_legend_robes_10_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2D2F30" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_robes_10_dead.png" />
-<sprite id="bust_legend_robes_10_dead_arrows" offsetX="6" offsetY="10" f="64FB" ic="FF444B4F" width="131" height="114" img="entity\legend_armor\cloth\bust_legend_robes_10_dead_arrows.png" left="-8" right="18" top="-4" bottom="38" />
-<sprite id="bust_legend_robes_10_dead_javelin" offsetX="6" offsetY="10" f="64FB" ic="FF111823" width="131" height="124" img="entity\legend_armor\cloth\bust_legend_robes_10_dead_javelin.png" left="-10" right="32" top="-2" bottom="58" />
 <sprite id="bust_legend_robes_11" offsetY="35" ic="FF2A3545" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_11.png" left="-48" right="46" top="-54" bottom="10" />
 <sprite id="bust_legend_robes_11_damaged" offsetY="35" ic="FF293342" width="104" height="142" img="entity\legend_armor\cloth\bust_legend_robes_11_damaged.png" left="-49" right="45" top="-53" bottom="11" />
 <sprite id="bust_legend_robes_11_dead" offsetX="6" offsetY="10" f="64FE" ic="FF222A36" width="131" height="125" img="entity\legend_armor\cloth\bust_legend_robes_11_dead.png" left="-59" right="57" top="-54" bottom="58" />
