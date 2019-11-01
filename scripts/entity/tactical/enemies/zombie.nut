@@ -575,6 +575,12 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("body").setHorizontalFlipping(flip);
 		this.getSprite("tattoo_body").setHorizontalFlipping(flip);
 		this.getSprite("armor").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_chain").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_plate").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_tabbard").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
+		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
+		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("tattoo_head").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);
@@ -631,6 +637,11 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		body_injury.setBrightness(0.75);
 		body_injury.setBrush("zombify_body_01");
 		this.addSprite("armor").setHorizontalFlipping(true);
+		this.addSprite("armor_layer_chain").setHorizontalFlipping(true);
+		this.addSprite("armor_layer_plate").setHorizontalFlipping(true);
+		this.addSprite("armor_layer_tabbard").setHorizontalFlipping(true);
+		this.addSprite("armor_layer_cloak").setHorizontalFlipping(true);
+		this.addSprite("armor_upgrade_back").setHorizontalFlipping(true);
 		this.addSprite("surcoat");
 		local body_blood_always = this.addSprite("body_blood_always");
 		body_blood_always.setBrush("bust_body_bloodied_01");

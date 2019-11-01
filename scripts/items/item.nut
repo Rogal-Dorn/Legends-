@@ -40,7 +40,7 @@ this.item <- {
 		RuneBonus2 = 0,
 		IsToBeSalvaged = false
 	},
-	
+
 	function setContainer( _c )
 	{
 		if (_c != null)
@@ -195,7 +195,7 @@ this.item <- {
 		return this.m.IsToBeSalvaged;
 		//return this.m.CurrentSlotType != this.Const.ItemSlot.None && this.getCondition() < this.getConditionMax() || this.m.IsToBeRepaired;
 	}
-	
+
 	function isToBeSalvagedQ()
 	{
 		return this.m.IsToBeSalvagedQueue;
@@ -306,6 +306,7 @@ this.item <- {
 		this.m.Condition = _a;
 		this.updateAppearance();
 	}
+
 
 	function isAmountShown()
 	{
@@ -794,7 +795,7 @@ this.item <- {
 		switch (this.m.RuneVariant)
 		{
 			case 1:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 				}
@@ -805,7 +806,7 @@ this.item <- {
 				break;
 
 			case 2:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 					bonus2 = this.Math.rand(3, 12)
@@ -814,11 +815,11 @@ this.item <- {
 				{
 					bonus = this.Math.rand(3, 9)
 					bonus2 = this.Math.rand(3, 9)
-				}		
+				}
 				break;
 
 			case 3:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 				}
@@ -829,7 +830,7 @@ this.item <- {
 				break;
 
 			case 4:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(1, 3)
 					bonus2 = this.Math.rand(3, 12)
@@ -842,7 +843,7 @@ this.item <- {
 				break;
 
 			case 5:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 					bonus2 = this.Math.rand(1, 3)
@@ -855,7 +856,7 @@ this.item <- {
 				break;
 
 			case 11:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(0, 2)
 					bonus2 = this.Math.rand(3, 12)
@@ -864,11 +865,11 @@ this.item <- {
 				{
 					bonus = this.Math.rand(0, 1)
 					bonus2 = this.Math.rand(3, 9)
-				}	
+				}
 				break;
 
 			case 12:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 					bonus2 = this.Math.rand(1, 5)
@@ -877,11 +878,11 @@ this.item <- {
 				{
 					bonus = this.Math.rand(3, 9)
 					bonus2 = this.Math.rand(1, 3)
-				}	
+				}
 				break;
 
 			case 13:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 				}
@@ -892,7 +893,7 @@ this.item <- {
 				break;
 
 			case 21:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(0, 3)
 					bonus2 = this.Math.rand(3, 12)
@@ -901,11 +902,11 @@ this.item <- {
 				{
 					bonus = this.Math.rand(0, 1)
 					bonus2 = this.Math.rand(3, 9)
-				}	
+				}
 				break;
 
 			case 22:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 					bonus2 = this.Math.rand(3, 12)
@@ -914,14 +915,14 @@ this.item <- {
 				{
 					bonus = this.Math.rand(3, 9)
 					bonus2 = this.Math.rand(3, 9)
-				}			
+				}
 				break;
 
 			case 23:
 				break;
 
 			case 31:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 					bonus2 = this.Math.rand(3, 12)
@@ -930,11 +931,11 @@ this.item <- {
 				{
 					bonus = this.Math.rand(3, 9)
 					bonus2 = this.Math.rand(3, 9)
-				}		
+				}
 				break;
 
 			case 32:
-				if (_bonus) 
+				if (_bonus)
 				{
 					bonus = this.Math.rand(3, 12)
 					bonus2 = this.Math.rand(3, 12)
@@ -943,7 +944,7 @@ this.item <- {
 				{
 					bonus = this.Math.rand(3, 9)
 					bonus2 = this.Math.rand(3, 9)
-				}		
+				}
 				break;
 
 			default:
@@ -1141,7 +1142,7 @@ this.item <- {
 		return this.m.MedicinePerDay;
 	}
 
-	function getUpgrades() 
+	function getUpgrades()
 	{
 		return [];
 	}
@@ -1152,7 +1153,7 @@ this.item <- {
 		_out.writeU16(this.m.Variant);
 		_out.writeF32(this.m.Condition);
 		_out.writeF32(this.m.PriceMult);
-		_out.writeString(this.getInstanceID()); //Need old ID for saved formations	
+		_out.writeString(this.getInstanceID()); //Need old ID for saved formations
 		_out.writeU8(this.m.RuneVariant);
 		_out.writeBool(this.m.IsToBeSalvaged);
 		_out.writeU16(this.m.IsToBeRepairedQueue);
@@ -1184,20 +1185,20 @@ this.item <- {
 		if (_in.getMetaData().getVersion() >= 51)
 		{
 			this.m.RuneVariant = _in.readU8();
-		}		
-	
+		}
+
 		if (_in.getMetaData().getVersion() >= 52)
 		{
 			this.m.IsToBeSalvaged = _in.readBool();
-		}		
-	
+		}
+
 		if (_in.getMetaData().getVersion() >= 53)
 		{
 			this.m.IsToBeRepairedQueue = _in.readU16();
 			this.m.IsToBeSalvagedQueue = _in.readU16();
 			this.m.RuneBonus1 =  _in.readU8();
 		}
-		
+
 		if (_in.getMetaData().getVersion() >= 54)
 		{
 			this.m.RuneBonus2 =  _in.readU8();

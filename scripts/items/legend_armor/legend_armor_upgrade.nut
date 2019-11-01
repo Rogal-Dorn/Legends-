@@ -153,6 +153,22 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.Sound.play(this.m.ImpactSound[0], this.Const.Sound.Volume.Inventory);
 	}
 
+
+	function setCondition( _a )
+	{
+		this.m.Condition = _a;
+		if (this.m.Armor == null)
+		{
+			return
+		}
+
+		if (this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
+		{
+			app = this.m.Armor.getContainer().getAppearance();
+		}
+		this.updateAppearance(app);
+	}
+
 	function updateAppearance( _app )
 	{
 
@@ -167,6 +183,11 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		{
 			frontSprite = this.m.SpriteFront != null ? this.m.SpriteFront : "";
 			backSprite = this.m.SpriteBack != null ? this.m.SpriteBack : "";
+		}
+
+		if (_app == null)
+		{
+			return
 		}
 
 		switch(this.m.Type)

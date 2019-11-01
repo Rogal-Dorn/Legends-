@@ -12,7 +12,7 @@ this.legend_sackcloth_tattered <- this.inherit("scripts/items/legend_armor/cloth
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 0;
+		this.m.Value = 5;
 		this.m.Condition = 5;
 		this.m.ConditionMax = 5;
 		this.m.StaminaModifier = 0;

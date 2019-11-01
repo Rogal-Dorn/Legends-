@@ -197,8 +197,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
-
-
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
 			local app

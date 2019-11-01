@@ -462,6 +462,10 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("tattoo_body").setHorizontalFlipping(flip);
 		this.getSprite("injury_body").setHorizontalFlipping(flip);
 		this.getSprite("armor").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_chain").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_plate").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_tabbard").setHorizontalFlipping(flip);
+		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 		this.getSprite("surcoat").setHorizontalFlipping(flip);
 		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
 		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);

@@ -321,7 +321,7 @@
 
 		if (this.hasSprite("armor_layer_chain"))
 		{
-			if (_appearance.ArmorLayerChain.len() != 0)
+				if (_appearance.ArmorLayerChain.len() != 0)
 			{
 				local armor = this.getSprite("armor_layer_chain");
 				armor.setBrush(_appearance.ArmorLayerChain);
