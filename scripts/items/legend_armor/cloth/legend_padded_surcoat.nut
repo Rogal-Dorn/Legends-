@@ -8,7 +8,7 @@ this.legend_padded_surcoat <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.Description = "A sturdy and heavy padded coat that offers decent protection.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(40, 66);
+		this.m.Variant = this.Math.rand(40, 64);
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
