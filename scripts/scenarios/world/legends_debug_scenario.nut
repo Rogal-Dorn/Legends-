@@ -75,7 +75,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			["legend_sackcloth",1,1],
 			["legend_sackcloth",4,12],
 			["legend_tunic_noble",6,6],
-			["legend_tunic",1,5],
+			["legend_tunic",1,28],
 		];
 
 		foreach(a in armors)

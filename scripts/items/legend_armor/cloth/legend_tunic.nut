@@ -10,7 +10,6 @@ this.legend_tunic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.ShowOnCharacter = true;
 		 local variants = [
 					1,
-					2,
 					3,
 					4,
 					5,
@@ -18,9 +17,6 @@ this.legend_tunic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 					8,
 					9,
 					10,
-					11,
-					13,
-					13,
 					15,
 					16,
 					17,
@@ -29,8 +25,10 @@ this.legend_tunic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 					20,
 					21,
 					22,
-					23
-
+					23,
+					24,
+					25,
+					26
 				]
 		this.m.Variant = this.Math.rand(0, variants.len() - 1);
 		this.updateVariant();
