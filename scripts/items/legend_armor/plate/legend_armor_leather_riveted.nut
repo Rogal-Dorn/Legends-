@@ -8,18 +8,25 @@ this.legend_armor_leather_riveted <- this.inherit("scripts/items/legend_armor/le
 		this.m.Name = "Sellsword\'s Leather Armor";
 		this.m.Description = "A long leather armor coat reinforced with metal plates.";
 		this.m.ArmorDescription = "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear.";
-		this.m.Icon = "legend_armor/plate/legend_leather_riveted.png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_riveted.png";
-		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_riveted.png";
-		this.m.SpriteBack = "bust_legend_leather_riveted";
-		this.m.SpriteDamagedBack = "bust_legend_leather_riveted_damaged";
-		this.m.SpriteCorpseBack = "bust_legend_leather_riveted_dead";
+		this.m.Variant = this.Math.rand(1, 9);
+		this.updateVariant();
 		this.m.Value = 4500;
 		this.m.Condition = 95;
 		this.m.ConditionMax = 95;
 		this.m.StaminaModifier = -10;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
+		this.m.SpriteBack = "bust_legend_leather_riveted_" + variant ;
+		this.m.SpriteDamagedBack = "bust_legend_leather_riveted_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_legend_leather_riveted_" + variant + "_dead";
+		this.m.Icon = "legend_armor/plate/legend_leather_riveted_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_riveted_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_riveted"  + variant + ".png";
 	}
 
 });
