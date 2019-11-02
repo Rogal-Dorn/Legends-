@@ -37,7 +37,7 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 		this.m.SpriteDamaged = "bust_legend_sackcloth_" + variant + "_damaged";
 		this.m.SpriteCorpse = "bust_legend_sackcloth_" + variant + "_dead";
 		this.m.IconLarge = "legend_armor/cloth/inventory_legend_sackcloth_" + variant + ".png";
-		this.m.Icon = "legend_armor/cloth/legend_sackcloth_" + variant + ".png";
+		this.m.Icon = "legend_armor/cloth/icon_legend_sackcloth_" + variant + ".png";
 	}
 
 });
