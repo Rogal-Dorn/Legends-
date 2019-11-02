@@ -7,6 +7,7 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 		this.m.Name = "Sackcloth";
 		this.m.Description = "Better than running naked.";
 		this.m.IsDroppedAsLoot = true;
+		this.m.ShowOnCharacter = true;
         local variants = [
             1,
 			4,
