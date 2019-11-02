@@ -1657,7 +1657,7 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 -Chain
 -Plate
 -Tabard
--Cload
+-Cloak
 -Attachment
 -Rune
 
@@ -1668,6 +1668,7 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Adds x1 new named legendary armor
 -Named sellsword plate
 * Adds a new craftable recipe for Lindwurm scale armor.
+* Adds dozens of colour variants for tunics, sackcloths and leather jackets 
 
 * Sprint effect now has a description and a matching icon
 * Fixed missing icons for runed named great khopesh's
