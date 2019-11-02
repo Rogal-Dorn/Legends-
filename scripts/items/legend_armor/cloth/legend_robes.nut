@@ -10,7 +10,9 @@ this.legend_robes <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.ShowOnCharacter = true;
 		 local variants = [
 					1,
+					2,
 					11,
+					12,
 					13,
 					14,
 					15,
