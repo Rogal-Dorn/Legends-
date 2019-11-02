@@ -19,7 +19,7 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 			11,
 			12
         ]
-		this.m.Variant = this.Math.rand(0, variants.len() - 1);
+		this.m.Variant = this.Math.rand(1, variants.len() - 1);
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
@@ -36,7 +36,7 @@ this.legend_sackcloth <- this.inherit("scripts/items/legend_armor/legend_armor",
 		this.m.SpriteDamaged = "bust_legend_sackcloth_" + variant + "_damaged";
 		this.m.SpriteCorpse = "bust_legend_sackcloth_" + variant + "_dead";
 		this.m.IconLarge = "legend_armor/cloth/inventory_legend_sackcloth_" + variant + ".png";
-		this.m.Icon = "legend_armor/cloth/icon_legend_sackcloth_" + variant + ".png";
+		this.m.Icon = "legend_armor/cloth/legend_sackcloth_" + variant + ".png";
 	}
 
 });
