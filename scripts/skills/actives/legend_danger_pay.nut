@@ -44,7 +44,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"] TODO [/color] crowns"
+				text = "You have[color=" + this.Const.UI.Color.PositiveValue +"]" + this.World.Assets.getMoney() + "[/color] crowns"
 			});
 
 		return ret;
