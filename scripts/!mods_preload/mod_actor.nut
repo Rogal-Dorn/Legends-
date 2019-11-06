@@ -87,7 +87,7 @@
 		this.m.PerkPointsSpent = 0;
 		this.getSkills().removeByType(this.Const.SkillType.Perk);
 
-		if (hasStudent && _actor.getLevel() >= 11)
+		if (hasStudent && this.getLevel() >= 11)
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		}
