@@ -1654,3 +1654,5 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Fixed missing icons for runed named great khopesh's
 * Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly
 * Fixed Danger Pay tooltip, and typo in Bribe tooltip
+* Fixed missing Student perk after Davkul Cultists origin conversion event
+* Fixed Peasant Militia max roster size
