@@ -63,16 +63,19 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local armors = [
 			["legend_gambeson", 0, 39],
 			["legend_padded_surcoat", 40, 64],
-			["legend_robes_smith",4,5],
+			["legend_apron",1,10],
 			["legend_robes",1,2],
+			["legend_robes",11,18],
 			["legend_robes_nun",6,7],
-			["legend_robes_wizard",10,10],
-			["legend_robes_butcher",3,3],
+			["legend_robes_wizard",3,3],
 			["legend_sackcloth_patched",3,3],
+			["legend_sackcloth_patched",19,25],
 			["legend_sackcloth_tattered",2,2],
+			["legend_sackcloth_tattered",13,18],
 			["legend_sackcloth",1,1],
+			["legend_sackcloth",4,12],
 			["legend_tunic_noble",6,6],
-			["legend_tunic",1,5],
+			["legend_tunic",1,28],
 		];
 
 		foreach(a in armors)

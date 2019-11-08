@@ -208,7 +208,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		}
 
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_smith"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_apron_smith"));
 
 		r = this.Math.rand(0, 2);
 

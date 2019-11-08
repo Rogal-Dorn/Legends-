@@ -8,7 +8,29 @@ this.legend_tunic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.Description = "A simple cloth tunic. Fashionable but offering little in protection.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 5);
+		 local variants = [
+					1,
+					3,
+					4,
+					5,
+					7,
+					8,
+					9,
+					10,
+					15,
+					16,
+					17,
+					18,
+					19,
+					20,
+					21,
+					22,
+					23,
+					24,
+					25,
+					26
+				]
+		this.m.Variant = this.Math.rand(0, variants.len() - 1);
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;

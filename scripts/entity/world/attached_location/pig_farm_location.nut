@@ -135,7 +135,7 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 			_list.push({
 				R = 20,
 				P = 1.0,
-				S = "legend_armor/cloth/legend_robes_butcher"
+				S = "legend_armor/cloth/legend_apron_butcher"
 			});
 		}
 	}
