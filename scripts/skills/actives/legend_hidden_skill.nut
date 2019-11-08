@@ -28,7 +28,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Blend into the terrain and remain unseen until attacking or moving adjacent to an enemey.";
+		return "Blend into the terrain and remain unseen until attacking or moving adjacent to an enemy.";
 	}
 
 	function getTooltip()
@@ -75,7 +75,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		
+
 		if (this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
 			return false;
@@ -102,7 +102,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Container.add(this.new("scripts/skills/effects/legend_hidden_effect"));
 		_user.setHidden(true);
-		
+
 		if (!_user.isHiddenToPlayer())
 		{
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Hide");
