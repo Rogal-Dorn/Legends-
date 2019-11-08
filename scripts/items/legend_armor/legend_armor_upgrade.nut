@@ -26,6 +26,11 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.m.IsUsable = true;
 	}
 
+	function getValue()
+	{
+		return this.Math.floor(this.m.Value * ((1.0 * this.m.Condition) / (1.0 * this.m.ConditionMax)));
+	}
+
 	function getType()
 	{
 		return this.m.Type;
