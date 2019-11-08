@@ -140,6 +140,6 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_hammer"));
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_smith"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_apron_smith"));
 	}
 })

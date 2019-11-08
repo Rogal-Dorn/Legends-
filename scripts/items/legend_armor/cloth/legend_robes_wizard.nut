@@ -6,7 +6,7 @@ this.legend_robes_wizard <- this.inherit("scripts/items/legend_armor/cloth/legen
 		this.m.ID = "legend.armor.body.wizard_robe";
 		this.m.Name = "Wizard\'s Robe";
 		this.m.Description = "A cloth robe coverd in all kinds of mystical ornaments and symbols.";
-		this.m.Variant = 10;
+		this.m.Variant = 3;
 		this.updateVariant();
 		this.m.Value = 60;
 		this.m.Condition = 20;

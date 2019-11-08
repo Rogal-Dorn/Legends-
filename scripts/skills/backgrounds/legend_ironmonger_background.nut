@@ -185,7 +185,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		local items = this.getContainer().getActor().getItems();
 		local r = this.Math.rand(0, 1);
 
-		local cloths = [[1, "cloth/legend_robes_smith"]];
+		local cloths = [[1, "cloth/legend_apron_smith"]];
 		if (r == 0)
 		{
 			cloths = [[1, "cloth/legend_tunic"]]

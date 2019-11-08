@@ -199,7 +199,7 @@ this.female_butcher_background <- this.inherit("scripts/skills/backgrounds/chara
 			items.equip(this.new("scripts/items/weapons/knife"));
 		}
 
-		items.equip(this.new("scripts/items/legend_armor/cloth/legend_robes_butcher"));
+		items.equip(this.new("scripts/items/legend_armor/cloth/legend_apron_butcher"));
 
 	}
 });
