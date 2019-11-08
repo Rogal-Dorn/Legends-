@@ -1656,3 +1656,6 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Fixed Danger Pay tooltip, and typo in Bribe tooltip
 * Fixed missing Student perk after Davkul Cultists origin conversion event
 * Fixed Peasant Militia max roster size
+* Fixed Vala's Warden not being immune to Charm
+* Fixed Immunity to poison not providing protection versus Redback Spider Poison
+* Fixed Redback Spider applying poison regardless of direct damage dealt 
