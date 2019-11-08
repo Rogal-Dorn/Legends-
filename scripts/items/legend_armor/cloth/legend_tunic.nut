@@ -30,7 +30,7 @@ this.legend_tunic <- this.inherit("scripts/items/legend_armor/legend_armor", {
 					25,
 					26
 				]
-		this.m.Variant = this.Math.rand(0, variants.len() - 1);
+		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;

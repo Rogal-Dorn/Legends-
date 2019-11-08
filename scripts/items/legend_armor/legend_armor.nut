@@ -173,7 +173,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function getValue()
 	{
-		local value = this.m.Value * (this.m.Condition / this.m.ConditionMax)
+		local value = this.m.Value * ((1.0 * this.m.Condition) / (1.0 *this.m.ConditionMax))
 		foreach (u in this.m.Upgrades)
 		{
 			if (u == null)

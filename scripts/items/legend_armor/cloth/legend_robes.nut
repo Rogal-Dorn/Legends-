@@ -8,19 +8,19 @@ this.legend_robes <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.Description = "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.";
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
-		 local variants = [
-					1,
-					2,
-					11,
-					12,
-					13,
-					14,
-					15,
-					16,
-					17,
-					18
-				]
-		this.m.Variant = this.Math.rand(1, variants.len() - 1);
+		local variants = [
+			1,
+			2,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18
+		]
+		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
