@@ -1668,7 +1668,7 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Adds x1 new named legendary armor
 -Named sellsword plate
 * Adds a new craftable recipe for Lindwurm scale armor.
-* Adds dozens of colour variants for tunics, sackcloths and leather jackets 
+* Adds dozens of colour variants for tunics, sackcloths and leather jackets
 
 * Sprint effect now has a description and a matching icon
 * Fixed missing icons for runed named great khopesh's
@@ -1678,3 +1678,4 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 -Leader and high end units will be less likely to spawn in multiples earlier in the game.
 -Adjusted spawn thresholds for many of the mid and late tier enemies to help ease the early game.
 
+* Nerfed WhiteDirewolf Armor/MDef/Fatigue ... They will still be very very offensive in nature, but once hits start landing they should be easier to kill now.

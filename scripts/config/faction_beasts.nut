@@ -358,18 +358,18 @@ gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	ActionPoints = 16,
 	Hitpoints = 400,
 	Bravery = 150,
-	Stamina = 260,
+	Stamina = 240,
 	MeleeSkill = 80,
 	RangedSkill = 0,
-	MeleeDefense = 25,
+	MeleeDefense = 20,
 	RangedDefense = 20,
 	Initiative = 175,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
-	FatigueRecoveryRate = 30,
+	FatigueRecoveryRate = 25,
 	Armor = [
-		400,
-		400
+		200,
+		200
 	]
 };
 gt.Const.Tactical.Actor.LegendWhiteWarwolf <- {
