@@ -499,14 +499,14 @@ gt.Const.World.Spawn.HexenAndMore <-
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 20,
+							Cost = 75,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 20,
+							Cost = 50,
 							function Weight(scale) {
 								return 50;
 							}
@@ -646,14 +646,14 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 20,
+							Cost = 75,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 20,
+							Cost = 50,
 							function Weight(scale) {
 								return 50;
 							}
@@ -821,14 +821,14 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 20,
+							Cost = 75,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 20,
+							Cost = 55,
 							function Weight(scale) {
 								return 50;
 							}
