@@ -47,7 +47,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "This will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Cost + "[/color] crowns out of" + this.m.Money +" total"
+				text = "This will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Cost + "[/color] crowns out of " + this.m.Money +" total"
 			});
 
 		return ret;

@@ -1651,6 +1651,7 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * New Winselmutters drop loot - Winselmutter essence - used for crafting.
 * New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
 
+
 13.0.0.4
 *ARMOR LAYERS!
  6 Tiers:
@@ -1670,12 +1671,17 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Adds a new craftable recipe for Lindwurm scale armor.
 * Adds dozens of colour variants for tunics, sackcloths and leather jackets
 
-* Sprint effect now has a description and a matching icon
-* Fixed missing icons for runed named great khopesh's
-* Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly
-
 * Dynamic Spwans:
 -Leader and high end units will be less likely to spawn in multiples earlier in the game.
 -Adjusted spawn thresholds for many of the mid and late tier enemies to help ease the early game.
 
 * Nerfed WhiteDirewolf Armor/MDef/Fatigue ... They will still be very very offensive in nature, but once hits start landing they should be easier to kill now.
+* Fixed Danger Pay tooltip, and typo in Bribe tooltip
+* Fixed missing Student perk after Davkul Cultists origin conversion event
+* Fixed Peasant Militia max roster size
+* Fixed Vala's Warden not being immune to Charm
+* Fixed Immunity to poison not providing protection versus Redback Spider Poison
+* Fixed Redback Spider applying poison regardless of direct damage dealt
+* Sprint effect now has a description and a matching icon
+* Fixed missing icons for runed named great khopesh's
+* Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly

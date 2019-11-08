@@ -19,12 +19,12 @@ this.legend_redback_spider_racial <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_targetEntity.getCurrentProperties().IsImmuneToPoison = true || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
+		if (_targetEntity.getCurrentProperties().IsImmuneToPoison || _damageInflictedHitpoints <= this.Const.Combat.PoisonEffectMinDamage || _targetEntity.getHitpoints() <= 0)
 		{
 			return;
 		}
 
-		if (!_targetEntity.isAlive())
+		if (!_targetEntity.isAlive() || _targetEntity.isDying())
 		{
 			return;
 		}
@@ -46,7 +46,13 @@ this.legend_redback_spider_racial <- this.inherit("scripts/skills/skill", {
 
 		this.spawnIcon("status_effect_54", _targetEntity.getTile());
 		local poison = _targetEntity.getSkills().getSkillByID("effects.legend_redback_spider_poison");
-
+		
+		if (!_targetEntity.getSkills().hasSkill("effects.stunned") && !_targetEntity.getCurrentProperties().IsImmuneToStun)
+		{
+			_targetEntity.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is stunned");
+		}
+		
 		if (poison == null)
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_redback_spider_poison_effect"));
