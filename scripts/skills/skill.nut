@@ -300,7 +300,7 @@ this.skill <- {
 		{
 			return 0;
 		}
-		else if (this.m.Container.getActor().getCurrentProperties().IsSkillUseHalfCost)
+		else if (this.m.Container.getActor().getCurrentProperties().IsSkillUseHalfCost && this.m.ActionPointCost != 0)
 		{
 			return this.Math.max(1, this.Math.floor(this.m.ActionPointCost / 2));
 		}
