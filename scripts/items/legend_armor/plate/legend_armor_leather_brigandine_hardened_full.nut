@@ -6,7 +6,7 @@ this.legend_armor_leather_brigandine_hardened_full <- this.inherit("scripts/item
 		this.legend_armor_upgrade.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Plate
 		this.m.ID = "legend_armor.leather_brigandine_hardened_full";
-		this.m.Name = "Hardened Brigandine Armor";
+		this.m.Name = "Reinforced Hardened Leather Brigandine Armor";
 		this.m.Description = "A boiled and hardened brigandine studded with steel rivets and reinforced with steel padded shoulders for added protection.";
 		this.m.ArmorDescription = "Includes hardened brigandine armor.";
 		this.m.Icon = "legend_armor/plate/legend_leather_brigandine_hardened_full.png";

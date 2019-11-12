@@ -21,7 +21,15 @@ this.additional_padding_upgrade_blueprint <- this.inherit("scripts/crafting/blue
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/armor_upgrades/additional_padding_upgrade"));
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_additional_padding_upgrade"));
+		}
+		else
+		{
+			_stash.add(this.new("scripts/items/armor_upgrades/additional_padding_upgrade"));
+		}
+
 	}
 
 });

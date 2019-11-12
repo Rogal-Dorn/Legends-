@@ -23,10 +23,18 @@ this.legend_stollwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting
 	{
 		return true;
 	}
-	
+
 	function onCraft( _stash )
 	{
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		{
+		_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_stollwurm_scales_upgrade"));
+		}
+		else
+		{
 		_stash.add(this.new("scripts/items/armor_upgrades/legend_stollwurm_scales_upgrade"));
+		}
+
 	}
 
 });
