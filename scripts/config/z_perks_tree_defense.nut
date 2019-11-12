@@ -29,7 +29,7 @@ gt.Const.Perks.HeavyArmorTree <- {
 	],
 	Tree = [
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.SteelBrow],
 		[gt.Const.Perks.PerkDefs.Brawny],
 		[],
 		[],
@@ -60,7 +60,7 @@ gt.Const.Perks.LightArmorTree <- {
 		"light armor"
 	],
 	Tree = [
-		[],
+		[gt.Const.Perks.PerkDefs.Lookout],
 		[gt.Const.Perks.PerkDefs.Dodge],
 		[],
 		[],
@@ -70,29 +70,29 @@ gt.Const.Perks.LightArmorTree <- {
 	]
 };
 
-gt.Const.Perks.HelmetTree <- {
-	ID = "HelmetTree",
-	Descriptions = [
-		"helmets"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.Lookout],
-		[gt.Const.Perks.PerkDefs.SteelBrow],
-		[],//gt.Const.Perks.PerkDefs.
-		[],
-		[],
-		[],
-		[]
-	]
-};
+//gt.Const.Perks.HelmetTree <- {
+	//ID = "HelmetTree",
+	//Descriptions = [
+	//	"helmets"
+	//],
+	//Tree = [
+	//	[gt.Const.Perks.PerkDefs.Lookout],
+	//	[gt.Const.Perks.PerkDefs.SteelBrow],
+	//	[],//gt.Const.Perks.PerkDefs.
+	//	[],
+	//	[],
+	//	[],
+	//	[]
+	//]
+//};
 
 gt.Const.Perks.DefenseTrees <- {
 	Tree = [
 		gt.Const.Perks.ShieldTree,
 		gt.Const.Perks.HeavyArmorTree,
 		gt.Const.Perks.MediumArmorTree,
-		gt.Const.Perks.LightArmorTree,
-		gt.Const.Perks.HelmetTree
+		gt.Const.Perks.LightArmorTree
+		//gt.Const.Perks.HelmetTree
 	],
 	function getRandom(_exclude) 
 	{
