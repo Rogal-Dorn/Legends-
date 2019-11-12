@@ -241,6 +241,36 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local pla = this.new("scripts/items/legend_armor/legendary/" + p);
 			this.World.Assets.getStash().add(pla);
 		}
+
+		local upgrades = [
+			"legend_additional_padding_upgrade",
+			"legend_armor_hexe_leader_cloak_upgrade",
+			"legend_armor_redback_cloak_upgrade",
+			"legend_armor_stollwurm_scales_upgrade",
+			"legend_armor_white_wolf_pelt_upgrade",
+			"legend_barbarian_horn_upgrade",
+			"legend_bone_platings_upgrade",
+			"legend_direwolf_pelt_upgrade",
+			"legend_double_mail_upgrade",
+			"legend_heraldic_plates_upgrade",
+			"legend_horn_plate_upgrade",
+			"legend_joint_cover_upgrade",
+			"legend_leather_neckguard_upgrade",
+			"legend_leather_shoulderguards_upgrade",
+			"legend_light_padding_replacement_upgrade",
+			"legend_lindwurm_scales_upgrade",
+			"legend_mail_patch_upgrade",
+			"legend_metal_pauldrons_upgrade",
+			"legend_metal_plating_upgrade",
+			"legend_unhold_fur_upgrade"
+		];
+
+		foreach(p in upgrades)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/armor_upgrade/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
 	}
 
 
