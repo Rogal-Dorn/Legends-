@@ -782,7 +782,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			this.onAddLegendEquipment()
-		}Yeah
+		}
 		else
 		{
 			this.onAddEquipment();
