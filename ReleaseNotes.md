@@ -1658,4 +1658,8 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Fixed Peasant Militia max roster size
 * Fixed Vala's Warden not being immune to Charm
 * Fixed Immunity to poison not providing protection versus Redback Spider Poison
-* Fixed Redback Spider applying poison regardless of direct damage dealt 
+* Fixed Redback Spider applying poison regardless of direct damage dealt
+
+* Fixed Escort Barbarian Prisoner (Legendary) contract error when recruiting prisoner
+* Fixed Perfect Focus affecting skills with 0 AP cost, corrected tooltip and description
+* Nerfed Barter values gain from backgrounds alone
