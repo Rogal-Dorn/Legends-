@@ -22,7 +22,7 @@ this.legend_sackcloth_patched <- this.inherit("scripts/items/legend_armor/cloth/
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
-		this.m.Value = 40;
+		this.m.Value = 35;
 		this.m.Condition = 15;
 		this.m.ConditionMax = 15;
 		this.m.StaminaModifier = 0;
