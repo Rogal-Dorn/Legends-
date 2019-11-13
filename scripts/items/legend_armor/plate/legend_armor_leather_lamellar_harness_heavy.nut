@@ -9,7 +9,7 @@ this.legend_armor_leather_lamellar_harness_heavy <- this.inherit("scripts/items/
 		this.m.Name = "Lamellar Harness";
 		this.m.Description = "A body armor made of thick overlapping metal plates that cover most of the upper body.";
 		this.m.ArmorDescription = "Includes body armor made of thick overlapping metal plates that cover most of the upper body.";
-		this.m.Icon = "legend_armor/plate/icon_legend_leather_lamellar_harness_heavy.png";
+		this.m.Icon = "legend_armor/plate/legend_leather_lamellar_harness_heavy.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_lamellar_harness_heavy.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_lamellar_harness_heavy.png";

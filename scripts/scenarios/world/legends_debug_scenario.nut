@@ -278,7 +278,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_rune_resilience"
 		];
 
-		foreach(p in upgrades)
+		foreach(p in runes)
 		{
 			this.logInfo("Adding " + p);
 			local pla = this.new("scripts/items/legend_armor/runes/" + p);
