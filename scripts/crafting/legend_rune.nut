@@ -125,11 +125,39 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 
 	function onEnchant( _stash, _bonus )
 	{
-		local rune =  this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-		rune.setRuneVariant(this.m.Rune);
-		rune.setRuneBonus(_bonus);	
-		rune.updateRuneSigilToken();
-		_stash.add(rune);
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled() && (this.m.Rune == 21 || this.m.Rune == 22 || this.m.Rune == 23))
+		{
+			local rune;
+			switch (this.m.Rune)
+			{
+				case 21:
+				rune = this.new("scripts/items/legend_armor/runes/legend_rune_endurance");
+				break;
+
+				case 22:
+				rune = this.new("scripts/items/legend_armor/runes/legend_rune_safety");
+				break
+
+				case 23:
+				rune = this.new("scripts/items/legend_armor/runes/legend_rune_resilience");
+				break
+			}
+			rune.setRuneVariant(this.m.Rune);
+			rune.setRuneBonus(_bonus);
+			rune.setRuneVariant(0);
+			//rune.updateRuneSigilToken();
+			_stash.add(rune);
+
+		}
+		else
+		{
+			local rune =  this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+			rune.setRuneVariant(this.m.Rune);
+			rune.setRuneBonus(_bonus);
+			rune.updateRuneSigilToken();
+			_stash.add(rune);
+		}
+
 	}
 
 });
