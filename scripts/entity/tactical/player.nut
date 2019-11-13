@@ -43,7 +43,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-		StarWeights = []
+		StarWeights = [1,1,1,1,1,1,1,1]
 	},
 	function setName( _value )
 	{
