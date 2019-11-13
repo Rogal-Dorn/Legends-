@@ -245,7 +245,8 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		};
 		return c;
 	}
-		function onAdded()
+
+	function onAdded()
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));
@@ -270,7 +271,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 
-		local stash =this.World.Assets.getStash()
+		local stash = this.World.Assets.getStash()
 		stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		stash.removeByID("supplies.ground_grains");
@@ -315,7 +316,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 
-		local stash =this.World.Assets.getStash()
+		local stash = this.World.Assets.getStash()
 		stash.add(this.new("scripts/items/ammo/quiver_of_arrows"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		stash.removeByID("supplies.ground_grains");
