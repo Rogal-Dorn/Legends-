@@ -40,7 +40,9 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			"trait.bloodthirsty"
 		];
 		this.m.ExcludedTalents = [
-			this.Const.Attributes.RangedSkill
+			this.Const.Attributes.RangedSkill,
+			//this.Const.Attributes.Hitpoints,
+			//this.Const.Attributes.Fatigue
 		];
 		this.m.Titles = [
 			"the Legend",
@@ -64,10 +66,12 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.CrossbowTree
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.Throwinthisree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
+				this.Const.Perks.LightArmorTree,
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
