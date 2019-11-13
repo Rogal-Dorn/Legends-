@@ -78,6 +78,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.InspirationalTree,
 				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.CalmTree,
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [

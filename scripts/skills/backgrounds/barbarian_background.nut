@@ -51,6 +51,8 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.m.BeardChance = 0;
 				this.m.Body = "bust_naked_body_03";
 				this.m.IsFemaleBackground = true;
+				this.m.GoodEnding = "%name% the barbarian took all the coin she earned with the company and ventured north. With her money, she gathered a band of warriors and conquered so many tribes that, last you heard, she had been ordained \'queen of the north\'.";
+				this.m.BadEnding = "With things the way they were, %name% departed. Last you heard she was traveling north. Penniless with little to her name but an axe, and not looking anything like the natives or speaking their tongue, you figure the barbarian did not get far. Based upon what you\'ve seen happen to her ilk, she\'s either been killed already or captured as a slave.";
 			}
 		}
 
@@ -65,6 +67,8 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.HammerTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.CleaverTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
@@ -73,8 +77,9 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			Traits = [
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.TrainedTree,
-				this.Const.Perks.LargeTree
-				this.Const.Perks.SturdyTree
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.FitTree
 			],
 			Enemy = [
 				this.Const.Perks.CaravanTree,
@@ -102,14 +107,25 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 
 	function onBuildDescription()
 	{
-		return "{%name% survived the battle between yourself and his own tribe of warriors. He offered himself to your company or to your sword. Impressed by his bravery, you chose to take him in. A foreign brute, he hardly speaks your native tongue and he is not well liked by the rest of the company. But if anything can bond two men it is fighting beside one another, killing when it counts, and drinking the night away at the tavern.}";
+		if (this.m.IsFemaleBackground == true)
+		{
+			return "{%name% survived the battle between yourself and her own tribe of warriors. She offered herself to your company or to your sword. Impressed by his bravery, you chose to take her in. A foreign brute, she hardly speaks your native tongue and she is not well liked by the rest of the company. But if anything can bond two people it is fighting beside one another, killing when it counts, and drinking the night away at the tavern.}";
+		}
+		else
+		{
+			return "{%name% survived the battle between yourself and his own tribe of warriors. He offered himself to your company or to your sword. Impressed by his bravery, you chose to take him in. A foreign brute, he hardly speaks your native tongue and he is not well liked by the rest of the company. But if anything can bond two men it is fighting beside one another, killing when it counts, and drinking the night away at the tavern.}";
+		}
 	}
 
 	function onAdded()
 	{
-		if (this.m.IsNew)
+		if (this.m.IsNew && this.m.IsFemaleBackground == false)
 		{
 			this.getContainer().getActor().setName(this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)]);
+		}
+		if (this.m.IsNew && this.m.IsFemaleBackground == true)
+		{
+			this.getContainer().getActor().setName(this.Const.Strings.CharacterNamesFemaleNorse[this.Math.rand(0, this.Const.Strings.CharacterNamesFemaleNorse.len() - 1)]);
 		}
 
 		this.character_background.onAdded();
