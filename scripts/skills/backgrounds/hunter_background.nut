@@ -82,6 +82,7 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.FastTree,
 				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FitTree,
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [
