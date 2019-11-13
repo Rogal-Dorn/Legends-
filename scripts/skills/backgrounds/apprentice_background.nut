@@ -109,13 +109,13 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 	function onBuildDescription()
 	{
 		if (this.m.IsFemaleBackground == true)
-			{
+		{
 			return "{One enters the world always looking to be the best they can be, | Mastery of an art is prestigious, | Everybody looks up to the best,} {but no one gets there in an instant. | so what better way to be the best than to learn underneath one? | and it\'s no secret most look toward the masters for help.} {%name% thought the same, taking the role of an apprentice in %townname%. | Believing this to be true, %name% took up an apprenticeship in %townname%. | When %randomtown%\'s college asked for apprentices, %name% was the first to sign up. | Urged by her parents to better her craft, %name% looked to start her career as an apprentice. | Not to be outdone by her overachieving brother, %name% began looking for an apprenticeship.} {Unfortunately, her master was poorly chosen: an insane carpenter with a penchant for chopping the neckline instead of the treeline. Fleeing the impending doom by association, %name% has ended up in the company of sellswords. | Learning all she could, %name% built the greatest work of art possibly ever seen in the field of underwater basket-weaving. Her master, though, was a jealous one. Not to be outdone by a pupil, she burned the project to ash and eye-watering fumes. It was clear to %name%: she could learn fast, but perhaps there were better masters to study beneath. | She had soaked up all there was to learn: masonry, carpentry, blacksmithing, lovemaking. Now she turns her eyes on the martial arts. While she isn\'t exactly a warrior yet, %name% is a fast learner.}";
-			}
+		}
 		else
-			{
+		{
 			return "{One enters the world always looking to be the best they can be, | Mastery of an art is prestigious, | Everybody looks up to the best,} {but no one gets there in an instant. | so what better way to be the best than to learn underneath one? | and it\'s no secret most look toward the masters for help.} {%name% thought the same, taking the role of an apprentice in %townname%. | Believing this to be true, %name% took up an apprenticeship in %townname%. | When %randomtown%\'s college asked for apprentices, %name% was the first to sign up. | Urged by his parents to better his craft, %name% looked to start his career as an apprentice. | Not to be outdone by his overachieving brother, %name% began looking for an apprenticeship.} {Unfortunately, his master was poorly chosen: an insane carpenter with a penchant for chopping the neckline instead of the treeline. Fleeing the impending doom by association, %name% has ended up in the company of sellswords. | Learning all he could, %name% built the greatest work of art possibly ever seen in the field of underwater basket-weaving. His master, though, was a jealous one. Not to be outdone by a pupil, he burned the project to ash and eye-watering fumes. It was clear to %name%: he could learn fast, but perhaps there were better masters to study beneath. | He had soaked up all there was to learn: masonry, carpentry, blacksmithing, lovemaking. Now he turns his eyes on the martial arts. While he isn\'t exactly a warrior yet, %name% is a fast learner.}";
-			}
+		}
 	}
 
 	function onChangeAttributes()
