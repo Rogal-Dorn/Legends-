@@ -268,7 +268,20 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		foreach(p in upgrades)
 		{
 			this.logInfo("Adding " + p);
-			local pla = this.new("scripts/items/legend_armor/armor_upgrade/" + p);
+			local pla = this.new("scripts/items/legend_armor/armor_upgrades/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
+
+		local runes = [
+			"legend_rune_safety",
+			"legend_rune_endurance",
+			"legend_rune_resilience"
+		];
+
+		foreach(p in upgrades)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/runes/" + p);
 			this.World.Assets.getStash().add(pla);
 		}
 	}
