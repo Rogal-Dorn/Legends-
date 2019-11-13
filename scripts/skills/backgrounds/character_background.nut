@@ -677,6 +677,17 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		b.Initiative = InitiativeAvg;
 		this.getContainer().getActor().m.CurrentProperties = clone b;
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
+
+		local weighted = []
+		weighted.push(this.Math.floor((a.Hitpoints[1] - b.Hitpoints) / (a.Hitpoints[1] - a.Hitpoints[0]) * 100.0))
+		weighted.push(this.Math.floor((a.Bravery[1] - b.Bravery) / (a.Bravery[1] - a.Bravery[0]) * 100.0))
+		weighted.push(this.Math.floor((a.Stamina[1] - b.Stamina) / (a.Stamina[1] - a.Stamina[0]) * 100.0))
+		weighted.push(this.Math.floor((a.Initiative[1] - b.Initiative) / (a.Initiative[1] - a.Initiative[0]) * 100.0))
+		weighted.push(this.Math.floor((a.MeleeSkill[1] - b.MeleeSkill) / (a.MeleeSkill[1] - a.MeleeSkill[0]) * 100.0))
+		weighted.push(this.Math.floor((a.RangedSkill[1] - b.RangedSkill) / (a.RangedSkill[1] - a.RangedSkill[0]) * 100.0))
+		weighted.push(this.Math.floor((a.MeleeDefense[1] - b.MeleeDefense) / (a.MeleeDefense[1] - a.MeleeDefense[0]) * 100.0))
+		weighted.push(this.Math.floor((a.RangedDefense[1] - b.RangedDefense) / (a.RangedDefense[1] - a.RangedDefense[0]) * 100.0))
+		return weighted;
 	}
 
 	function rebuildPerkTree( _tree )
@@ -771,7 +782,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			this.onAddLegendEquipment()
-		}
+		}Yeah
 		else
 		{
 			this.onAddEquipment();

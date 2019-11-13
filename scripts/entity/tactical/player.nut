@@ -42,7 +42,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		LastCampAssignment = "camp.rest",
 		CampHealing = 0,
 		LastCampTime = 0,
-		InReserves = false
+		InReserves = false,
+		StarWeights = []
 	},
 	function setName( _value )
 	{
@@ -2040,15 +2041,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.getTags().has("PlayerZombie"))
 		{
-			background.buildAttributes("zombie");
+			this.m.StarWeights = background.buildAttributes("zombie");
 		}
 		else if (this.getTags().has("PlayerSkeleton"))
 		{
-			background.buildAttributes("skeleton");
+			this.m.StarWeights = background.buildAttributes("skeleton");
 		}
 		else
 		{
-			background.buildAttributes(null, attributes);
+			this.m.StarWeights = background.buildAttributes(null, attributes);
 		}
 
 		background.buildDescription();
@@ -2133,73 +2134,79 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		for( local done = 0; done < _num;  )
 		{
-			local i = this.Math.rand(0, this.Const.Attributes.COUNT - 1);
 
-			if (this.getTags().has("PlayerZombie"))
+			local totalWeight = 0;
+			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
 			{
-				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Fatigue && i != this.Const.Attributes.Initiative && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				if (this.m.Talents[i] != 0 )
 				{
-					local r = this.Math.rand(1, 100);
-
-					if (r <= 60)
-					{
-						this.m.Talents[i] = 1;
-					}
-					else if (r <= 90)
-					{
-						this.m.Talents[i] = 2;
-					}
-					else
-					{
-						this.m.Talents[i] = 3;
-					}
-
-					done = ++done;
+					continue;
 				}
+
+				if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
+				{
+					continue;
+				}
+
+				if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
+				{
+					continue;
+				}
+
+				if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
+				{
+					continue;
+				}
+
+				totalWeight += this.m.StarWeights[i];
 			}
-			else if (this.getTags().has("PlayerSkeleton"))
+
+			local r = this.Math.rand(0, totalWeight);
+
+			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
 			{
-				if (this.m.Talents[i] == 0 && i != this.Const.Attributes.Bravery && i != this.Const.Attributes.Fatigue && i != this.Const.Attributes.Hitpoints && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+				if (this.m.Talents[i] != 0 )
 				{
-					local r = this.Math.rand(1, 100);
-
-					if (r <= 60)
-					{
-						this.m.Talents[i] = 1;
-					}
-					else if (r <= 90)
-					{
-						this.m.Talents[i] = 2;
-					}
-					else
-					{
-						this.m.Talents[i] = 3;
-					}
-
-					done = ++done;
+					continue;
 				}
-			}
-			else
-			{
-				if (this.m.Talents[i] == 0 && (this.getBackground() == null || this.getBackground().getExcludedTalents().find(i) == null))
+
+				if (this.getBackground() != null && this.getBackground().getExcludedTalents().find(i) != null)
 				{
-					local r = this.Math.rand(1, 100);
-
-					if (r <= 60)
-					{
-						this.m.Talents[i] = 1;
-					}
-					else if (r <= 90)
-					{
-						this.m.Talents[i] = 2;
-					}
-					else
-					{
-						this.m.Talents[i] = 3;
-					}
-
-					done = ++done;
+					continue;
 				}
+
+				if (this.getTags().has("PlayerZombie") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Initiative))
+				{
+					continue;
+				}
+
+				if (this.getTags().has("PlayerSkeleton") && (i == this.Const.Attributes.Bravery || i == this.Const.Attributes.Fatigue || i == this.Const.Attributes.Hitpoints))
+				{
+					continue;
+				}
+
+				r = r - this.m.StarWeights[i];
+				if (r > 0)
+				{
+					continue;
+				}
+
+				r = this.Math.rand(1, 100);
+				if (r <= 60)
+				{
+					this.m.Talents[i] = 1;
+				}
+				else if (r <= 90)
+				{
+					this.m.Talents[i] = 2;
+				}
+				else
+				{
+					this.m.Talents[i] = 3;
+				}
+
+				done = ++done;
+				break;
 			}
 		}
 	}

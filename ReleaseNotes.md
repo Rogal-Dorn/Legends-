@@ -1685,3 +1685,5 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 * Sprint effect now has a description and a matching icon
 * Fixed missing icons for runed named great khopesh's
 * Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly
+
+* Which attribute gets a star is longer purely random. It is still RNG, but it is now weighted towards the skills/perks/attributes that background has rolled - so if the background has a proportionally higher MD than other attributes, it's more likely MD will have a star.
