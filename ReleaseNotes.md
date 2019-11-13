@@ -1651,15 +1651,18 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 - New Winselmutters drop loot - Winselmutter essence - used for crafting.
 - New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
 
-  13.0.0.4
-  \*ARMOR LAYERS!
-  6 Tiers:
+  13.0.0.5 Armor Layer Test Build
+  *ARMOR LAYERS!
+  *Warning - This is the first public test build. It is still considered experimental and still WIP for balance issues and some stability issues.
+  *Requires a new campaign.
+  6 Tiers of composable armor layers:
   -Chain
   -Plate
   -Tabard
   -Cloak
   -Attachment
   -Rune
+ * For the first phase of armor layers we are not adding any new mechanics to armor. It is still just durability and stamina. But now those values are vastly more customizable. As well as the bling bling of the armor set looks.
 
 - Adds in x3 new Named Barbarian Armors.
   -Bronze armor

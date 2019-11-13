@@ -282,23 +282,34 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/weapons/barbarians/blunt_cleaver"));
 		}
 
-		r = this.Math.rand(0, 3);
+		local cloths = [
+			[1, "cloth/legend_sackcloth"],
+			[1, "cloth/legend_sackcloth_patched"],
+			[1, "cloth/legend_sackcloth_tattered"]
+		];
+		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 
-		if (r == 0)
+		if (armor != null)
 		{
-			items.equip(this.new("scripts/items/armor/barbarians/thick_furs_armor"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/armor/barbarians/reinforced_animal_hide_armor"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/armor/barbarians/hide_and_bone_armor"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/armor/barbarians/scrap_metal_armor"));
+
+			local plates = [
+				[0, ""],
+				[1, "legend_thick_furs_armor"],
+				[1, "animal hide"],
+				[1, "legend_hide_and_bone_armor"],
+				[1, "legend_reinforced_animal_hide_armor"],
+				[1, "legend_scrap_metal_armor"],
+				[0, "legend_rugged_scale_armor"],
+				[0, "legend_heavy_iron_armor"],
+				[0, "legend_thick_plated_barbarian_armor"]
+			]
+			local plate = this.Const.World.Common.pickLegendArmor(plates)
+			if (plate != null)
+			{
+				armor.setUpgrade(plate)
+			}
+
+			items.equip(armor);
 		}
 
 		r = this.Math.rand(0, 3);
