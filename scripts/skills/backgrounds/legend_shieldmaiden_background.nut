@@ -52,6 +52,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.SturdyTree,
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.FitTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.LargeTree,
 				this.Const.Perks.FastTree
 			],
 			Enemy = [this.Const.Perks.BarbarianTree],
