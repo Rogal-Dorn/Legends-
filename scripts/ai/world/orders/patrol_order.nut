@@ -58,40 +58,40 @@ this.patrol_order <- this.inherit("scripts/ai/world/orders/move_order", {
 			local r = this.Math.rand(0, this.Math.max(3, s.len() - 1));
 			this.m.TargetTile = s[r].getTile();
 			return true;
-
+			  // [076]  OP_CLOSE          0      3    0    0
 		}
 
 		_entity.setOrders("Patrolling");
 
-		if (_entity.getTile().ID == this.m.TargetTile.ID)
+		if (_entity.getTile().ID == $[stack offset 0].m.TargetTile.ID)
 		{
-			if (_entity.getPos().X == this.m.TargetTile.Pos.X + this.m.Offset.X && _entity.getPos().Y == this.m.TargetTile.Pos.Y + this.m.Offset.Y)
+			if (_entity.getPos().X == $[stack offset 0].m.TargetTile.Pos.X + $[stack offset 0].m.Offset.X && _entity.getPos().Y == $[stack offset 0].m.TargetTile.Pos.Y + $[stack offset 0].m.Offset.Y)
 			{
-				this.m.TargetTile = null;
+				$[stack offset 0].m.TargetTile = null;
 				return true;
 			}
 			else
 			{
-				_entity.setDestination(this.createVec(this.m.TargetTile.Pos.X + this.m.Offset.X, this.m.TargetTile.Pos.Y + this.m.Offset.Y));
+				_entity.setDestination($[stack offset 0].createVec($[stack offset 0].m.TargetTile.Pos.X + $[stack offset 0].m.Offset.X, $[stack offset 0].m.TargetTile.Pos.Y + $[stack offset 0].m.Offset.Y));
 			}
 		}
 		else if (_hasChanged || _entity.getPath() == null)
 		{
-			local navSettings = this.World.getNavigator().createSettings();
-			navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
-			navSettings.RoadMult = 1.0 / this.Const.World.MovementSettings.RoadMult;
+			local navSettings = $[stack offset 0].World.getNavigator().createSettings();
+			navSettings.ActionPointCosts = $[stack offset 0].Const.World.TerrainTypeNavCost;
+			navSettings.RoadMult = 1.0 / $[stack offset 0].Const.World.MovementSettings.RoadMult;
 
-			if (this.m.RoadsOnly)
+			if ($[stack offset 0].m.RoadsOnly)
 			{
 				navSettings.RoadMult *= 0.05;
 			}
 
-			if (this.m.AvoidSettlements)
+			if ($[stack offset 0].m.AvoidSettlements)
 			{
 				navSettings.HeatCost = 100;
 			}
 
-			local path = this.World.getNavigator().findPath(_entity.getTile(), this.m.TargetTile, navSettings, 0);
+			local path = $[stack offset 0].World.getNavigator().findPath(_entity.getTile(), $[stack offset 0].m.TargetTile, navSettings, 0);
 
 			if (!path.isEmpty())
 			{
