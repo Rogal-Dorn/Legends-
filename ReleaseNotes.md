@@ -1693,3 +1693,5 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 - Reduced the Helmet Perk tree group into Light(+Lookout) and Heavy(+SteelBrow) trees for dynamic trees system.
 - Tweaked the guarenteed perk groups for HedgeKnights(+Mace, +Hammer, +Sturdy, +Indestructible), Swordmasters(-XBow, -Heavy, +Light, +Cleaver, +Throwing, +Dagger), Barbarian (+Fit, +Mace, +Cleaver), BeastHunter (+Calm, +Medium, -Heavy), Hunters (+Fit), ShieldMaidens(+Large, +Indestructible), Sellswords (+Fit), Witchhunters (+Calm)
 - Attribute stars are no longer purely random. It is still RNG, but it is now weighted towards the skills/perks/attributes that background has rolled - so if the background has a proportionally higher MD than other attributes, it's more likely MD will have a star.
+
+https://drive.google.com/open?id=1m-2I9x6pSo-kv-Z_50C0ZJ74mUCLL3VK
