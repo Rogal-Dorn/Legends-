@@ -1687,5 +1687,6 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 - Fixed Escort Barbarian Prisoner (Legendary) contract error when recruiting prisoner
 - Fixed Perfect Focus affecting skills with 0 AP cost, corrected tooltip and description
 - Nerfed Barter values gain from backgrounds alone
-
+- Reduced the Helmet Perk tree group into Light(+Lookout) and Heavy(+SteelBrow) trees for dynamic trees system.
+- Tweaked the guarenteed perk groups for HedgeKnights(+Mace, +Hammer, +Sturdy, +Indestructible), Swordmasters(-XBow, -Heavy, +Light, +Cleaver, +Throwing, +Dagger), Barbarian (+Fit, +Mace, +Cleaver), BeastHunter (+Calm, +Medium, -Heavy), Hunters (+Fit), ShieldMaidens(+Large, +Indestructible), Sellswords (+Fit), Witchhunters (+Calm)
 - Attribute stars are no longer purely random. It is still RNG, but it is now weighted towards the skills/perks/attributes that background has rolled - so if the background has a proportionally higher MD than other attributes, it's more likely MD will have a star.

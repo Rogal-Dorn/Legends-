@@ -18,7 +18,7 @@ this.legend_rugged_scale_armor <- this.inherit("scripts/items/legend_armor/legen
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_rugged_scale_armor.png";
 
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 550;
+		this.m.Value = 2700;
 		this.m.Condition = 140;
 		this.m.ConditionMax = 140;
 		this.m.StaminaModifier = -18;

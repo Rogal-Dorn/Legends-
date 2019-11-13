@@ -18,10 +18,10 @@ this.legend_tunic_noble <- this.inherit("scripts/items/legend_armor/cloth/legend
 				]
 		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 100;
+		this.m.Value = 50;
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;
-		this.m.StaminaModifier = -2;
+		this.m.StaminaModifier = 0;
 	}
 });
 

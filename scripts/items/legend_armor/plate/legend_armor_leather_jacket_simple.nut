@@ -10,14 +10,14 @@ this.legend_armor_leather_jacket_simple <- this.inherit("scripts/items/legend_ar
 		this.m.ArmorDescription = "Includes a simple leather jacket for added protection.";
 		this.m.Variant = this.Math.rand(1, 6);
 		this.updateVariant();
-		this.m.Value = 200;
+		this.m.Value = 330;
 		this.m.Condition = 40;
 		this.m.ConditionMax = 40;
 		this.m.StaminaModifier = -4;
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 	}
 
-	
+
 	function updateVariant()
 	{
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;

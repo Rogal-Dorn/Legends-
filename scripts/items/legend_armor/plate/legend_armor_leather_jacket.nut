@@ -10,7 +10,7 @@ this.legend_armor_leather_jacket <- this.inherit("scripts/items/legend_armor/leg
 		this.m.ArmorDescription = "Includes a leather jacket for added protection.";
 		this.m.Variant = this.Math.rand(1, 9);
 		this.updateVariant();
-		this.m.Value = 200;
+		this.m.Value = 450;
 		this.m.Condition = 50;
 		this.m.ConditionMax = 50;
 		this.m.StaminaModifier = -5;

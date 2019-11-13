@@ -15,9 +15,9 @@ this.legend_armor_reinforced_worn_mail_shirt <- this.inherit("scripts/items/lege
 		this.m.SpriteBack = "bust_legend_reinforced_worn_mail_shirt";
 		this.m.SpriteDamagedBack = "bust_legend_reinforced_worn_mail_shirt_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_reinforced_worn_mail_shirt_dead";
-		this.m.Value = 400;
-		this.m.Condition = 95;
-		this.m.ConditionMax = 95;
+		this.m.Value = 630;
+		this.m.Condition = 85;
+		this.m.ConditionMax = 85;
 		this.m.StaminaModifier = -10;
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 	}

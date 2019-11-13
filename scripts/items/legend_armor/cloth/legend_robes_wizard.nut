@@ -8,9 +8,9 @@ this.legend_robes_wizard <- this.inherit("scripts/items/legend_armor/cloth/legen
 		this.m.Description = "A cloth robe coverd in all kinds of mystical ornaments and symbols.";
 		this.m.Variant = 3;
 		this.updateVariant();
-		this.m.Value = 60;
-		this.m.Condition = 20;
-		this.m.ConditionMax = 20;
+		this.m.Value = 65;
+		this.m.Condition = 25;
+		this.m.ConditionMax = 25;
 		this.m.StaminaModifier = 0;
 	}
 
