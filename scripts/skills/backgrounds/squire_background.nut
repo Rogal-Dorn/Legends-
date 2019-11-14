@@ -105,13 +105,13 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	function onBuildDescription()
 	{
 		if(this.m.IsFemaleBackground == true)
-			{
+		{
 			return "{A young squire, %name% dutifully accompanied her knight to many battles. | Squire to a harsh knight, %name% spent her days running errands for her lordship. | Although a squire, %name%\'s life largely meant guarding prisoners of war, much to her chagrin. | Squire to a knight, sure, but %name% mostly cleaned latrines, fed dogs, and got far too much use out of a shinebox.} {One night, strange, shuffling men silhouetted the moonlit horizon. Alarm bells met their moans and an hour later half of %townname% lay in ruin. | While traveling, brigands attacked her lordship\'s wagon-train. Swords were drawn, heads were halved, and when it was all said and done the squire had failed: everyone she was supposed to protect lay dead. | But one evening a horde of ferocious, furred creatures came down upon her lord\'s keep. In desperation, %name% let a group of prisoners free, hoping they would aid her in combat. Instead, they slew her lordship and ran off into the night. The squire, bravely, managed to survive, a dozen husky corpses at her feet, but the battle left her alone and without purpose. | Angered by a horrible crime in %townname%, she took matters into her own hands, personally slaying the criminal. A just act, but also an improper one. The young squire was banished for her insubordination. | When a devilish red knight came to %townname% for a duel, %name%\'s knight proved far too sick to fight. After downing a mug of liquid confidence, %name% donned her lordship\'s armor and faced the red knight herself. With a sword slash so fast it rang the very air, %name% slew her opponent down.} {Now there was only one task left for her - to attain knighthood. | Now the squire seeks the company of good folk with which to again prove herself worthy of being a knight. | As war ravages the land, there is now plenty of opportunity to put her skills to use. | Though a bit too earnest, there is no doubt the world needs women like %name%.}";
-			}
+		}
 		else
-			{
+		{
 			return "{A young squire, %name% dutifully accompanied his knight to many battles. | Squire to a harsh knight, %name% spent his days running errands for his lordship. | Although a squire, %name%\'s life largely meant guarding prisoners of war, much to his chagrin. | Squire to a knight, sure, but %name% mostly cleaned latrines, fed dogs, and got far too much use out of a shinebox.} {One night, strange, shuffling men silhouetted the moonlit horizon. Alarm bells met their moans and an hour later half of %townname% lay in ruin. | While traveling, brigands attacked his lordship\'s wagon-train. Swords were drawn, heads were halved, and when it was all said and done the squire had failed: everyone he was supposed to protect lay dead. | But one evening a horde of ferocious, furred creatures came down upon his lord\'s keep. In desperation, %name% let a group of prisoners free, hoping they would aid him in combat. Instead, they slew his lordship and ran off into the night. The squire, bravely, managed to survive, a dozen husky corpses at his feet, but the battle left him alone and without purpose. | Angered by a horrible crime in %townname%, he took matters into his own hands, personally slaying the criminal. A just act, but also an improper one. The young squire was banished for his insubordination. | When a devilish red knight came to %townname% for a duel, %name%\'s knight proved far too sick to fight. After downing a mug of liquid confidence, %name% donned his lordship\'s armor and faced the red knight himself. With a sword slash so fast it rang the very air, %name% slew his opponent down.} {Now there was only one task left for him - to attain knighthood. | Now the squire seeks the company of good folk with which to again prove himself worthy of being a knight. | As war ravages the land, there is now plenty of opportunity to put his skills to use. | Though a bit too earnest, there is no doubt the world needs men like %name%.}";
-			}
+		}
 	}
 
 	function onChangeAttributes()
@@ -151,6 +151,21 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			]
 		};
 		return c;
+	}
+
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		local actor = this.getContainer().getActor();
+
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
+		}
 	}
 
 	function onAddEquipment()

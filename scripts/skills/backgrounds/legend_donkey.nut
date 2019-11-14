@@ -27,13 +27,13 @@ this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_backgro
 
 		local r = this.Math.rand(0, 1);
 		if (r == 0)
-			{
+		{
 			this.m.IsFemaleBackground = true;
-			}
+		}
 		else
-			{
+		{
 			this.m.IsFemaleBackground = false;
-			}
+		}
 
 		this.m.IsLowborn = true;
 		this.m.IsUntalented = true;
