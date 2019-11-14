@@ -2023,6 +2023,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
+		local bground = "scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
@@ -2136,8 +2137,28 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return;
 		}
 
+		local count = 0;
 		for( local done = 0; done < _num;  )
 		{
+			if (count > this.m.Talents.len())
+			{
+				break;
+			}
+			count = ++count
+			//Check for free talents:
+			local noFree = true;
+			for (local i = 0; i < this.m.Talents.len() - 1; i = ++i)
+			{
+				if (this.m.Talents[i] == 0 && this.getBackground().getExcludedTalents().find(i) == null)
+				{
+					noFree = false;
+					break;
+				}
+			}
+
+			if (noFree) {
+				break;
+			}
 
 			local totalWeight = 0;
 			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
@@ -2165,7 +2186,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				totalWeight += this.m.StarWeights[i];
 			}
 
-			local r = this.Math.rand(0, totalWeight);
+			local r = this.Math.rand(1, totalWeight);
 
 			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
 			{

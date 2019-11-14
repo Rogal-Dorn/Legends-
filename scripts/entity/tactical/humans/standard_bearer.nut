@@ -67,10 +67,10 @@ this.standard_bearer <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local cloths = [
 				[0, ""],
-				[0, "cloth/legend_gambeson"],
+				[1, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[0, "cloth/legend_padded_surcoat"],
+				[1, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],

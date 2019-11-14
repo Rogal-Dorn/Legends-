@@ -1709,7 +1709,12 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 
 - Fixed solo berserker origin from not starting.
 - Fixed not being able to enter settlements with stables.
-- Fixed not repairing all attached layers armor.
+- Fixed not repairing all attached armor layers.
+- Fixed not showing damage percentage for layers.
 - Fixed footmen without armor.
-- Updated more texts and names for Gender equality.
+- Updated more texts and names for gender equality.
 - Fixed tatoo warning for female cultists.
+
+13.0.0.8 Armor Layer Test Build Patch 3
+
+- Cloaks should now have a higher chance of showing up in towns with wool spinner locations.
