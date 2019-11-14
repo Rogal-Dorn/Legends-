@@ -37,11 +37,12 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Body = "bust_naked_body_01";
 
-		local chance = 1;
+		local chance = 10;
 		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			chance = 50;
 		}
+
 		if (this.Math.rand(1, 100) <= chance)
 		{
 			this.m.Faces = this.Const.Faces.PrettyFemale;
