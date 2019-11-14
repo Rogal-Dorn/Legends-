@@ -194,7 +194,7 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 
 	function onAddEquipment()
 	{
-	local talents = this.getContainer().getActor().getTalents();
+		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -208,7 +208,7 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 
 	function onAddLegendEquipment()
 	{
-	local talents = this.getContainer().getActor().getTalents();
+		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 2;

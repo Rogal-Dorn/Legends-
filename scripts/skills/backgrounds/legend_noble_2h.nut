@@ -118,11 +118,11 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	{
 		if (this.m.IsFemaleBackground == true)
 		{
-		return "Brooding and at times suicidal, it\'s no surprise that %name% is frequently found diving into battle with nothing more than a large two-hander. {Clothed in murderous intent, you once saw her cleave a man in two - top to bottom. | It is said that she once cleaved a warrior orc in two, leaving the trunk of its legs still standing. | The woman is known to ignore the fragility of her own mortality just to end the life of another. | She thrives being in the thick of battle where she can swing her weapons with little regard for safety or accuracy. | Supposedly, she once won a jousting tournament, but had to flee after bedding a watching nobleman\'s wife. | The woman is not a murderer, but she would have made a fine one. | Seemingly unstoppable at times, you are glad to have the woman on your side. | In a fit of bloodthirsty rage she once impaled two goblins on one pike. | A strong brute, you once saw %name% kill someone just on her backswing.} She\'ll use any weapon you give her, but %name% has a proclivity towards those that can make calamitous ruin out of a man\'s body.";
+			return "Brooding and at times suicidal, it\'s no surprise that %name% is frequently found diving into battle with nothing more than a large two-hander. {Clothed in murderous intent, you once saw her cleave a man in two - top to bottom. | It is said that she once cleaved a warrior orc in two, leaving the trunk of its legs still standing. | The woman is known to ignore the fragility of her own mortality just to end the life of another. | She thrives being in the thick of battle where she can swing her weapons with little regard for safety or accuracy. | Supposedly, she once won a jousting tournament, but had to flee after bedding a watching nobleman\'s wife. | The woman is not a murderer, but she would have made a fine one. | Seemingly unstoppable at times, you are glad to have the woman on your side. | In a fit of bloodthirsty rage she once impaled two goblins on one pike. | A strong brute, you once saw %name% kill someone just on her backswing.} She\'ll use any weapon you give her, but %name% has a proclivity towards those that can make calamitous ruin out of a man\'s body.";
 		}
 		else
 		{
-		return "Brooding and at times suicidal, it\'s no surprise that %name% is frequently found diving into battle with nothing more than a large two-hander. {Clothed in murderous intent, you once saw him cleave a man in two - top to bottom. | It is said that he once cleaved a warrior orc in two, leaving the trunk of its legs still standing. | The man is known to ignore the fragility of his own mortality just to end the life of another. | He thrives being in the thick of battle where he can swing his weapons with little regard for safety or accuracy. | Supposedly, he once won a jousting tournament, but had to flee after bedding a watching nobleman\'s wife. | The man is not a murderer, but he would have made a fine one. | Seemingly unstoppable at times, you are glad to have the man on your side. | In a fit of bloodthirsty rage he once impaled two goblins on one pike. | A strong brute, you once saw %name% kill someone just on his backswing.} He\'ll use any weapon you give him, but %name% has a proclivity towards those that can make calamitous ruin out of a man\'s body.";
+			return "Brooding and at times suicidal, it\'s no surprise that %name% is frequently found diving into battle with nothing more than a large two-hander. {Clothed in murderous intent, you once saw him cleave a man in two - top to bottom. | It is said that he once cleaved a warrior orc in two, leaving the trunk of its legs still standing. | The man is known to ignore the fragility of his own mortality just to end the life of another. | He thrives being in the thick of battle where he can swing his weapons with little regard for safety or accuracy. | Supposedly, he once won a jousting tournament, but had to flee after bedding a watching nobleman\'s wife. | The man is not a murderer, but he would have made a fine one. | Seemingly unstoppable at times, you are glad to have the man on your side. | In a fit of bloodthirsty rage he once impaled two goblins on one pike. | A strong brute, you once saw %name% kill someone just on his backswing.} He\'ll use any weapon you give him, but %name% has a proclivity towards those that can make calamitous ruin out of a man\'s body.";
 		}
 
 	}
@@ -174,11 +174,20 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	function onAdded()
 	{
 		this.character_background.onAdded();
+		local actor = this.getContainer().getActor();
 
 		if (this.Math.rand(0, 3) == 3)
 		{
-			local actor = this.getContainer().getActor();
 			actor.setTitle(this.Const.Strings.SellswordTitles[this.Math.rand(0, this.Const.Strings.SellswordTitles.len() - 1)]);
+		}
+
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
 		}
 	}
 

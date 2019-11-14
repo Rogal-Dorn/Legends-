@@ -193,14 +193,14 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 
 	function onBuildDescription()
 	{
-			if(this.m.IsFemaleBackground == true)
-			{
+		if (this.m.IsFemaleBackground == true)
+		{
 			return "%name% lives to fight the undead scourge. Little is known about her and she almost never talks save for the occasional grunt while swinging her sword. Hr language seems to be codified into one simple structure: killing creatures of evil.";
-			}
+		}
 		else
-			{
+		{
 			return "%name% lives to fight the undead scourge. Little is known about him and he almost never talks save for the occasional grunt while swinging his sword. His language seems to be codified into one simple structure: killing creatures of evil.";
-			}
+		}
 	}
 
 	function onSetAppearance()
@@ -283,6 +283,15 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_strict_sermons"));
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
+		}
 	}
 
 	function onAddEquipment()
@@ -293,7 +302,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		talents[this.Const.Attributes.MeleeSkill] = 2;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		local stash =this.World.Assets.getStash()
+		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
@@ -313,7 +322,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		talents[this.Const.Attributes.MeleeSkill] = 2;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		local stash =this.World.Assets.getStash()
+		local stash = this.World.Assets.getStash()
 		stash.removeByID("supplies.ground_grains");
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
