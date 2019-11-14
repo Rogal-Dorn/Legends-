@@ -318,6 +318,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
 		}
 
+		local actor = this.getContainer().getActor();
 		if (this.m.IsFemaleBackground == true)
 		{
 			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);

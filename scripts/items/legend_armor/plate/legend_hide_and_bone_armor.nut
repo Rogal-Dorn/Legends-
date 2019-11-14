@@ -17,7 +17,7 @@ this.legend_hide_and_bone_armor <- this.inherit("scripts/items/legend_armor/lege
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_hide_and_bone_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_hide_and_bone_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorBoneImpact;
-		this.m.Value = 220;
+		this.m.Value = 860;
 		this.m.Condition = 65;
 		this.m.ConditionMax = 65;
 		this.m.StaminaModifier = -6;

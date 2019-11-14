@@ -52,7 +52,7 @@ this.legend_gambeson_rare_color <- this.inherit("scripts/items/legend_armor/clot
 			63,
 			64
         ]
-		this.m.Variant = this.Math.rand(0, variants.len() - 1);
+		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
 
 	}

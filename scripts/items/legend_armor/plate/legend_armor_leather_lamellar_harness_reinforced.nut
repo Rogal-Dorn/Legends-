@@ -16,7 +16,7 @@ this.legend_armor_leather_lamellar_harness_reinforced <- this.inherit("scripts/i
 		this.m.SpriteBack = "bust_legend_leather_lamellar_harness_reinforced";
 		this.m.SpriteDamagedBack = "bust_legend_leather_lamellar_harness_reinforced_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_leather_lamellar_harness_reinforced_dead";
-		this.m.Value = 2500;
+		this.m.Value = 1575;
 		this.m.Condition = 85;
 		this.m.ConditionMax = 85;
 		this.m.StaminaModifier = -9;

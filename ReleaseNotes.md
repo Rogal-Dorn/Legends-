@@ -1294,12 +1294,10 @@ Fixes named crossbows being invisible in the inventory
 Adds upgraded images for Large pack from LaikoSoM
 Fixes missing image for dazed effect
 
-
 Beta 12.4.2 released on Nexus
 *Fixes Break free perk crash
 *Fixes assassin scenario
 \*Fixes burning witch event
-
 
 Beta 12.4.3 Released on Nexus
 \*Fixes Break free chance tooltip and error in combat log.
@@ -1517,40 +1515,41 @@ Beta 12.7.1 Released on Nexus
 *Tweaks to Bandit Army Legendary contract:
 -Wont spawn in citadels anymore
 -Requirement to spawn increased and payout decreased
-* Bandit Rabble wont break game if they have buckler equipped
-* Improved MindOverBody tooltip
-* Corrected typos in legendary contracts descriptions
-* Updated description for perks: Favoured Enemy - Barbarian, Favoured Enemy - Bandit
-* Updated description to Rage perk and Rage tooltip in combat
-* Updated Last Stand perk to give bonus melee and ranged defense all the time not just when attacked
-* Fixed Danger Pay perk for Trader Commander
-* Vala recruitment event changed - distance corrected, have to be in the north part of map and not far from settlements that are connected to roads.
-*Changed Bastard vs Assassin event - chance to trigger increased to 2.5x but cannot happen if party already have an assassin
-*Legend Party Start:
--Replaced Warlock with Assassin
--Assassin gets custom perk tree like Assassin Commander
-*Added extended Player is Rich event:
--Can happen only when company has over 30k crowns and more then two backgrounds with custom perk trees (excluding Vala and character with trait.player).
-*Added Trader background (non commander version) possible to get in random trio/party starts
-*Unified perk trees for regular and commander Vala
--Non-commander Vala gains Alert, Backstabber, Mind over Body, Perfect Focus and Field Triage
--Vala cannot be male anymore even with Gender Equality on
-*Fixed Student perk not being given to Seer and Seer Commander
-*Added more possible titles to Seer background
-*Fixed white war wolf pet
-*Fixed Noble player character demanding more pay in event
-*Corrected various typos
-*Updated for Wildman causes Havoc event for case of Berserker and Trader present in company
-*Updated wages for Trader background
-*Added Trader recruitment event. Requirements are:
--50k crowns ambition complete
--At least 30k crowns in company possesion
--On the road and daytime
-*Added Favored Enemy Swordmasters perk releted event to fight 1v1 duel with swordmaster/hedge_knight/bandit_leader
-*Added hatchet and longaxe to both woodcutter specialist perks
-*Offhand skills damage won't scale to mainhand damage range anymore
 
-12.7.1 - 13.0.0.1 Dynamic Spawns Test
+- Bandit Rabble wont break game if they have buckler equipped
+- Improved MindOverBody tooltip
+- Corrected typos in legendary contracts descriptions
+- Updated description for perks: Favoured Enemy - Barbarian, Favoured Enemy - Bandit
+- Updated description to Rage perk and Rage tooltip in combat
+- Updated Last Stand perk to give bonus melee and ranged defense all the time not just when attacked
+- Fixed Danger Pay perk for Trader Commander
+- Vala recruitment event changed - distance corrected, have to be in the north part of map and not far from settlements that are connected to roads.
+  *Changed Bastard vs Assassin event - chance to trigger increased to 2.5x but cannot happen if party already have an assassin
+  *Legend Party Start:
+  -Replaced Warlock with Assassin
+  -Assassin gets custom perk tree like Assassin Commander
+  *Added extended Player is Rich event:
+  -Can happen only when company has over 30k crowns and more then two backgrounds with custom perk trees (excluding Vala and character with trait.player).
+  *Added Trader background (non commander version) possible to get in random trio/party starts
+  *Unified perk trees for regular and commander Vala
+  -Non-commander Vala gains Alert, Backstabber, Mind over Body, Perfect Focus and Field Triage
+  -Vala cannot be male anymore even with Gender Equality on
+  *Fixed Student perk not being given to Seer and Seer Commander
+  *Added more possible titles to Seer background
+  *Fixed white war wolf pet
+  *Fixed Noble player character demanding more pay in event
+  *Corrected various typos
+  *Updated for Wildman causes Havoc event for case of Berserker and Trader present in company
+  *Updated wages for Trader background
+  *Added Trader recruitment event. Requirements are:
+  -50k crowns ambition complete
+  -At least 30k crowns in company possesion
+  -On the road and daytime
+  *Added Favored Enemy Swordmasters perk releted event to fight 1v1 duel with swordmaster/hedge_knight/bandit_leader
+  *Added hatchet and longaxe to both woodcutter specialist perks
+  *Offhand skills damage won't scale to mainhand damage range anymore
+
+  12.7.1 - 13.0.0.1 Dynamic Spawns Test
 
 *This is the first major feature of v13 - Testing dynamic spawnlists.
 *This replaces every handcrafted vanilla spawnlist with a new system that uses a psuedo random generator to select units for enemy groups.
@@ -1561,54 +1560,55 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 
 12.7.1 - 13.0.0.1 Dynamic Spawns Test 2
 
-*Fixed locations not spawning.
+\*Fixed locations not spawning.
 
 https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 
 12.7.1 - 13.0.0.1 Dynamic Spawns Test 3
- *Updated to latest 12.7.1 release
- *Beastmasters + unholds won't spawn early game.
+*Updated to latest 12.7.1 release
+*Beastmasters + unholds won't spawn early game.
 
- https://drive.google.com/open?id=1Sn3rQND5XvXoHBdxZy9n35ZLM5ypIdGT
+https://drive.google.com/open?id=1Sn3rQND5XvXoHBdxZy9n35ZLM5ypIdGT
 
- 12.7.1 - 13.0.0.1 Dynamic Spawns Test 4
- *Fixed typo preventing a particular type of Bandit group to spawn
+12.7.1 - 13.0.0.1 Dynamic Spawns Test 4
+\*Fixed typo preventing a particular type of Bandit group to spawn
 
 13.0.0.1 Test 1 Dynamic Spawns + New Enemies
 *Legendary contracts now require more resources to spawn after each appears
 *Added Events to possible tame Wolfs or even a White Direwolf
-*Added the four legend named weapons to the named melee weapons pool
+\*Added the four legend named weapons to the named melee weapons pool
+
 - Bastard swords, Estocs, Glaives, and Swordstaffs all have named versions now
-*Assassin Commander start reworked
+  \*Assassin Commander start reworked
 - Max roster of 21 bros with all corresponding perks
 - Everybody gets Backstabber perk in this start
-*Fixed orc weapons tooltip not informing about additional fatigue cost
-*Fixed Man Mangler's weapon shield damage
-*Fixed the orc weapon Skin Flayer not using extra fatigue per attack
-*Fixed various typos in descriptions/tooltips
-*Fixed Glaive Slash not properly using spear specialization
-*Fixed Greenwood Schrat's Shield self-repair feature
-*Removed roster upgrade perk from non-commander Seer background
-*Fixed Spear weapon group not giving Thrust Master perk
-*Updated Trader background description
-*Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
-*Fixed Poacher start to properly use your starting bro's names
-*Fixed Hexe Legendary Contract spawning multiple times in same settlement
-*Fixed Gash, Grapple and Lunge skills tooltips
-*Fixed Slings related skills to get bonuses from Sling Mastery perk
-*Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
-*Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
-*Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
-*Fixed Adventurous Noble background to properly choose the appropriate name for female characters
-*Fixed a crash that could occur when a Vala is swallowed whole while chanting
-*Added a cooldown description for the Legendary Redback Helmet's Web skill
-*Fixed a bug where camouflage wasn't properly being removed at the end of battle
-*Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
-*Fixed estoc orientation
-*Fixd poor weapon conditions on Warlock Zombie and Skeleton summons (weapons should not fall apart after one or two hits anymore)
-*Removed Player strength minimums from Crisis. This means Solo and small party runs will start crises after normal periods of time.
+  *Fixed orc weapons tooltip not informing about additional fatigue cost
+  *Fixed Man Mangler's weapon shield damage
+  *Fixed the orc weapon Skin Flayer not using extra fatigue per attack
+  *Fixed various typos in descriptions/tooltips
+  *Fixed Glaive Slash not properly using spear specialization
+  *Fixed Greenwood Schrat's Shield self-repair feature
+  *Removed roster upgrade perk from non-commander Seer background
+  *Fixed Spear weapon group not giving Thrust Master perk
+  *Updated Trader background description
+  *Changed guaranteed trait for Assassin and Assassin Commander from Deathwish to Quick
+  *Fixed Poacher start to properly use your starting bro's names
+  *Fixed Hexe Legendary Contract spawning multiple times in same settlement
+  *Fixed Gash, Grapple and Lunge skills tooltips
+  *Fixed Slings related skills to get bonuses from Sling Mastery perk
+  *Fixed Shield Bash perk missing 10 fatigue reduction to Knock Back skill and tooltip about damage
+  *Fixed En Garde skill to have set damage values, uninfluenced by main hand stats
+  *Fixed some inconsistencies with the Repair Tent on Beginner or Veteran economic difficulties
+  *Fixed Adventurous Noble background to properly choose the appropriate name for female characters
+  *Fixed a crash that could occur when a Vala is swallowed whole while chanting
+  *Added a cooldown description for the Legendary Redback Helmet's Web skill
+  *Fixed a bug where camouflage wasn't properly being removed at the end of battle
+  *Fixed a bug where the perk Muscularity wasn´t applied properly to Donkey Kick, Hand to Hand, Knock Back, and Kick. this is a buff.
+  *Fixed estoc orientation
+  *Fixd poor weapon conditions on Warlock Zombie and Skeleton summons (weapons should not fall apart after one or two hits anymore)
+  \*Removed Player strength minimums from Crisis. This means Solo and small party runs will start crises after normal periods of time.
 
-*Dynamic Spawn changes:
+\*Dynamic Spawn changes:
 -Reduced overall ratio of archer units for human enemy factions
 -Increased minium strength levels for spawning HedgeKnights, Swordmasters, Leaders and Master Archers (shouldn't show up earlier game anymore)
 -Minium strength thresholds have an expiration date based on combat difficulty now (this allows solo runs and small party group runs to now experience late game enemies once the date threshold is met)
@@ -1619,69 +1619,97 @@ https://drive.google.com/open?id=1_uEmwX8o-tlMDW5-Yp1kxdAqBbIvtLvo
 
 *Adds 4 new Female heads
 *Adds 2 new Male heads
-*Adds 5 new Female hair styles
+\*Adds 5 new Female hair styles
 
-*Adds 3 new Enemies
+\*Adds 3 new Enemies
 -Höllenhunds - Demon hounds found with the undead. Aggressive and fast. They will seek out the strongest playes. Beware their bite, it saps the strength from even the mightiest.
 -Winselmutters - The dead mothers of fallen heroes who have never been able to find rest in death. Not only can their scream turn the most resolute warrior running, it has been known to inflict damage upon those she sets her sights on.
 -Vampire Lords - You thought normal vampires were hard to kill? Stronger,tougher and now they come with giant two handed cleavers, and they just don't seem to want to die either!
 
 https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 
-
-
 13.0.0.1 Test 2 Dynamic Spawns + New Enemies
-* Legendary Ranger's Nightvision skill now applies to themself as well
-* Fixed a crash that could occur when reapplying poison to a weapon that already has poison
-* Fixes crash with loading orc camps.
 
-13.0.0.1 Test 3 Dynamic Spawns + New Enemies
-* Fixes crash with skin flayer weapon.
-* Redback poison now displays damage correctly in Legendary difficulty
-* Repair tent calculations simplified, now adding bros is always beneficial
-* Female player characters now have the right sound effects
-* Bandits have once again learned how to disguise themselves as Direwolves
-* Fixed warlock hood description to match tooltip
-* Adds Necrosavant Lords to the Favored Enemy: Necrosavant perk
-* Added minimum resource limits fir UndeadArmy spawns
-* Reduced the Melee and Range defense of White dire wolves.
-* Fixes crash with Undead Priests
-* New Höllenhunds area effect. Any player within 1 Tile suffers 50% Reduction in iniative. Any player within 2 Tiles suffers 25% reduction in iniative.
-* New Höllenhunds drop loot. Bones - used for crafting
-* New Winselmutters drop loot - Winselmutter essence - used for crafting.
-* New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
+- Legendary Ranger's Nightvision skill now applies to themself as well
+- Fixed a crash that could occur when reapplying poison to a weapon that already has poison
+- Fixes crash with loading orc camps.
 
+  13.0.0.1 Test 3 Dynamic Spawns + New Enemies
 
-13.0.0.4
-*ARMOR LAYERS!
- 6 Tiers:
--Chain
--Plate
--Tabard
--Cloak
--Attachment
--Rune
+- Fixes crash with skin flayer weapon.
+- Redback poison now displays damage correctly in Legendary difficulty
+- Repair tent calculations simplified, now adding bros is always beneficial
+- Female player characters now have the right sound effects
+- Bandits have once again learned how to disguise themselves as Direwolves
+- Fixed warlock hood description to match tooltip
+- Adds Necrosavant Lords to the Favored Enemy: Necrosavant perk
+- Added minimum resource limits fir UndeadArmy spawns
+- Reduced the Melee and Range defense of White dire wolves.
+- Fixes crash with Undead Priests
+- New Höllenhunds area effect. Any player within 1 Tile suffers 50% Reduction in iniative. Any player within 2 Tiles suffers 25% reduction in iniative.
+- New Höllenhunds drop loot. Bones - used for crafting
+- New Winselmutters drop loot - Winselmutter essence - used for crafting.
+- New Winselmutter Craftable Trophy - Increased Initiative and Fatigue recovery.
 
-* Adds in x3 new Named Barbarian Armors.
--Bronze armor
--Plated fur
--Skull and chain
-* Adds x1 new named legendary armor
--Named sellsword plate
-* Adds a new craftable recipe for Lindwurm scale armor.
-* Adds dozens of colour variants for tunics, sackcloths and leather jackets
+  13.0.0.5 Armor Layer Test Build
+  *ARMOR LAYERS!
+  *Warning - This is the first public test build. It is still considered experimental and still WIP for balance issues and some stability issues.
+  \*Requires a new campaign.
+  6 Tiers of composable armor layers:
+  -Chain
+  -Plate
+  -Tabard
+  -Cloak
+  -Attachment
+  -Rune
 
-* Dynamic Spwans:
--Leader and high end units will be less likely to spawn in multiples earlier in the game.
--Adjusted spawn thresholds for many of the mid and late tier enemies to help ease the early game.
+* For the first phase of armor layers we are not adding any new mechanics to armor. It is still just durability and stamina. But now those values are vastly more customizable. As well as the bling bling of the armor set looks.
 
-* Nerfed WhiteDirewolf Armor/MDef/Fatigue ... They will still be very very offensive in nature, but once hits start landing they should be easier to kill now.
-* Fixed Danger Pay tooltip, and typo in Bribe tooltip
-* Fixed missing Student perk after Davkul Cultists origin conversion event
-* Fixed Peasant Militia max roster size
-* Fixed Vala's Warden not being immune to Charm
-* Fixed Immunity to poison not providing protection versus Redback Spider Poison
-* Fixed Redback Spider applying poison regardless of direct damage dealt
-* Sprint effect now has a description and a matching icon
-* Fixed missing icons for runed named great khopesh's
-* Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly
+- Adds in x3 new Named Barbarian Armors.
+  -Bronze armor
+  -Plated fur
+  -Skull and chain
+- Adds x1 new named legendary armor
+  -Named sellsword plate
+- Adds a new craftable recipe for Lindwurm scale armor.
+- Adds dozens of colour variants for tunics, sackcloths and leather jackets
+
+- Dynamic Spwans:
+  -Leader and high end units will be less likely to spawn in multiples earlier in the game.
+  -Adjusted spawn thresholds for many of the mid and late tier enemies to help ease the early game.
+
+- Nerfed WhiteDirewolf Armor/MDef/Fatigue ... They will still be very very offensive in nature, but once hits start landing they should be easier to kill now.
+- Fixed Danger Pay tooltip, and typo in Bribe tooltip
+- Fixed missing Student perk after Davkul Cultists origin conversion event
+- Fixed Peasant Militia max roster size
+- Fixed Vala's Warden not being immune to Charm
+- Fixed Immunity to poison not providing protection versus Redback Spider Poison
+- Fixed Redback Spider applying poison regardless of direct damage dealt
+- Sprint effect now has a description and a matching icon
+- Fixed missing icons for runed named great khopesh's
+- Fixed Knock Back not working with Shield Bash perk; Muscularity should now apply properly
+- Fixed Escort Barbarian Prisoner (Legendary) contract error when recruiting prisoner
+- Fixed Perfect Focus affecting skills with 0 AP cost, corrected tooltip and description
+- Nerfed Barter values gain from backgrounds alone
+- Reduced the Helmet Perk tree group into Light(+Lookout) and Heavy(+SteelBrow) trees for dynamic trees system.
+- Tweaked the guarenteed perk groups for HedgeKnights(+Mace, +Hammer, +Sturdy, +Indestructible), Swordmasters(-XBow, -Heavy, +Light, +Cleaver, +Throwing, +Dagger), Barbarian (+Fit, +Mace, +Cleaver), BeastHunter (+Calm, +Medium, -Heavy), Hunters (+Fit), ShieldMaidens(+Large, +Indestructible), Sellswords (+Fit), Witchhunters (+Calm)
+- Attribute stars are no longer purely random. It is still RNG, but it is now weighted towards the skills/perks/attributes that background has rolled - so if the background has a proportionally higher MD than other attributes, it's more likely MD will have a star.
+
+https://drive.google.com/open?id=1m-2I9x6pSo-kv-Z_50C0ZJ74mUCLL3VK
+
+13.0.0.6 Armor Layer Test Build Patch 1
+
+- Fix issue where layers could not be unassigned.
+- Fix seer start not having the correct armor.
+- Fix missing leather jacket images.
+
+https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
+
+13.0.0.7 Armor Layer Test Build Patch 2
+
+- Fixed solo berserker origin from not starting.
+- Fixed not being able to enter settlements with stables.
+- Fixed not repairing all attached layers armor.
+- Fixed footmen without armor.
+- Updated more texts and names for Gender equality.
+- Fixed tatoo warning for female cultists.

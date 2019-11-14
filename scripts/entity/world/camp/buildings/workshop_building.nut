@@ -95,7 +95,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -127,7 +127,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
 				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to salvage all items in the queue."
-			},				
+			},
 			{
 				id = 5,
 				type = "text",
@@ -152,7 +152,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function isHidden()
 	{
 		return !this.World.Tags.get("HasLegendCampScraping")
-	}	
+	}
 
 	function getUpgraded()
 	{
@@ -168,7 +168,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
@@ -190,9 +190,9 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 continue;
             }
-            
+
             this.m.PointsNeeded += r.Item.getCondition();
-        }        
+        }
     }
 
     function onInit()
@@ -231,10 +231,10 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     {
         return this.m.Capacity;
     }
-    
+
     function getResults()
     {
-        if (this.m.ToolsCreated == 0) 
+        if (this.m.ToolsCreated == 0)
         {
             return [];
         }
@@ -249,8 +249,8 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
     function getModifiers()
     {
         local ret = this.camp_building.getModifiers();
-        if (this.getUpgraded()) 
-        {  
+        if (this.getUpgraded())
+        {
             ret.Consumption = 1.0 / 20.0
         }
         return ret;
@@ -265,7 +265,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 continue;
             }
-            
+
             points += r.Item.getCondition()
         }
         local modifiers = this.getModifiers();
@@ -279,14 +279,14 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         {
             return 0;
         }
-        
+
         foreach (i, r in this.m.Salvage)
         {
             if (r == null)
             {
                 continue;
             }
-            
+
             points += r.Item.getCondition()
         }
         local modifiers = this.getModifiers();
@@ -325,9 +325,9 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			return "Salvaged ... 100%";
 		}
-		
+
 		local text = "Salvaged ... " + percent + "%";
-        
+
         if (this.World.Assets.getArmorPartsF() == this.World.Assets.getMaxArmorParts())
         {
             return text + " (At max tools!)";
@@ -360,24 +360,24 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 break;
             }
 
-			if (modifiers.Craft <= 0) 
+			if (modifiers.Craft <= 0)
             {
                 break
             }
 
-            local consumed = r.Item.getCondition()
+            local consumed = r.Item.getRepair()
             if (modifiers.Craft < consumed)
             {
                 consumed = modifiers.Craft;
             }
-            r.Item.setCondition(r.Item.getCondition() - consumed);
+            r.Item.setArmor(r.Item.getRepair() - consumed);
             modifiers.Craft -= consumed;
             this.m.PointsSalvaged += consumed;
 			local created = consumed * modifiers.Consumption;
-			this.m.ToolsCreated += created;   
+			this.m.ToolsCreated += created;
 			this.World.Assets.addArmorPartsF(created);
 
-            if (r.Item.getCondition() <= 0)
+            if (r.Item.getRepair() <= 0)
             {
                 this.m.ItemsDestroyed += 1
 				this.World.Assets.getStash().remove(r.Item);
@@ -446,7 +446,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                     Item = item
                 });
             }
-            else 
+            else
             {
                 stash.push({
                     Bro = null,
@@ -476,12 +476,12 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             if (_filter == 99 && s.Bro != null)
             {
                 continue;
-            } 
+            }
             else if ((s.Item.getItemType() & _filter) == 0)
             {
                 continue;
             }
-            
+
             for (index; index < this.m.Salvage.len(); index = ++index)
             {
                 if (this.m.Salvage[index] == null)
@@ -494,7 +494,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             if (index >= this.m.Salvage.len())
             {
                 this.m.Salvage.push(s);
-            } 
+            }
             else
             {
                 this.m.Salvage[index] = s;
@@ -526,7 +526,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             if (index >= this.m.Stash.len())
             {
                 this.m.Stash.push(s);
-            } 
+            }
             else
             {
                 this.m.Stash[index] = s;
@@ -560,7 +560,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 targetList = this.m.Stash;
             }
-            else 
+            else
             {
                 targetList = this.m.Salvage;
                 isRepair = true;
@@ -574,7 +574,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 targetList = this.m.Salvage;
                 isRepair = true
             }
-            else 
+            else
             {
                 targetList = this.m.Stash;
             }
@@ -605,7 +605,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 index = targetItemIdx
             }
-            sourceItem.Item.setToBeSalvaged(isRepair, index);            
+            sourceItem.Item.setToBeSalvaged(isRepair, index);
             return true
         }
 
@@ -624,10 +624,10 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
             {
                 index = i
             }
-            sourceItem.Item.setToBeSalvaged(isRepair, index);            
+            sourceItem.Item.setToBeSalvaged(isRepair, index);
             return true
         }
-        
+
         //No null spot, push to the end
         targetList.push(sourceItem);
         sourceList[sourceItemIdx] = null;
@@ -637,7 +637,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         {
             index = targetList.len() - 1
         }
-        sourceItem.Item.setToBeSalvaged(isRepair, index);        
+        sourceItem.Item.setToBeSalvaged(isRepair, index);
         return true
 	}
 
@@ -646,7 +646,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
         _campScreen.showWorkshopDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);

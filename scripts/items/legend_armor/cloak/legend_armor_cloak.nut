@@ -10,7 +10,7 @@ this.legend_armor_cloak <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.ArmorDescription = "Has a flowing cloth cloak";
 		this.m.Variant = this.Math.rand(1, 7);
 		this.updateVariant();
-		this.m.Value = 200;
+		this.m.Value = 350;
 		this.m.Condition = 3;
 		this.m.ConditionMax = 3;
 		this.m.StaminaModifier = -1;

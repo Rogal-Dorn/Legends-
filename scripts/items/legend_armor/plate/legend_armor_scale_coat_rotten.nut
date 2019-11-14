@@ -16,7 +16,7 @@ this.legend_armor_scale_coat_rotten <- this.inherit("scripts/items/legend_armor/
 		this.m.SpriteBack = "bust_legend_scale_coat_rotten";
 		this.m.SpriteDamagedBack = "bust_legend_scale_coat_rotten_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_scale_coat_rotten_dead";
-		this.m.Value = 3000;
+		this.m.Value = 6550;
 		this.m.Condition = 165;
 		this.m.ConditionMax = 165;
 		this.m.StaminaModifier = -19;

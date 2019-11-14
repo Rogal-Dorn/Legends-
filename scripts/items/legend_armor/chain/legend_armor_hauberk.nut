@@ -15,7 +15,7 @@ this.legend_armor_hauberk <- this.inherit("scripts/items/legend_armor/legend_arm
 		this.m.SpriteBack = "bust_legend_hauberk";
 		this.m.SpriteDamagedBack = "bust_legend_hauberk_damaged";
 		this.m.SpriteCorpseBack = "bust_legend_hauberk_dead";
-		this.m.Value = 1500;
+		this.m.Value = 630;
 		this.m.Condition = 85;
 		this.m.ConditionMax = 85;
 		this.m.StaminaModifier = -8;

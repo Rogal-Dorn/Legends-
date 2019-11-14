@@ -119,9 +119,9 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		this.character_background.onAdded();
 
+		local actor = this.getContainer().getActor();
 		if (this.Math.rand(0, 4) == 4)
 		{
-			local actor = this.getContainer().getActor();
 			actor.setTitle(this.Const.Strings.MilitiaTitles[this.Math.rand(0, this.Const.Strings.MilitiaTitles.len() - 1)]);
 		}
 

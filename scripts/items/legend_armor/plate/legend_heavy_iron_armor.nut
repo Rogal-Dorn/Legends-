@@ -17,7 +17,7 @@ this.legend_heavy_iron_armor <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_heavy_iron_armor.png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_heavy_iron_armor.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
-		this.m.Value = 700;
+		this.m.Value = 3675;
 		this.m.Condition = 170;
 		this.m.ConditionMax = 170;
 		this.m.StaminaModifier = -24;

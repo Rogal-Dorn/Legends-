@@ -348,13 +348,13 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue;
             }
 
-            local needed = r.Item.getConditionMax() - r.Item.getCondition()
+            local needed = r.Item.getRepairMax() - r.Item.getRepair()
             if (modifiers.Craft < needed)
             {
                 needed = modifiers.Craft;
             }
 
-            r.Item.setCondition(r.Item.getCondition() + needed);
+            r.Item.setArmor(r.Item.getRepair() + needed);
             this.m.PointsRepaired += needed;
             modifiers.Craft -= needed;
 
@@ -365,7 +365,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 this.World.Assets.addArmorPartsF(consumed * -1.0);
             }
 
-            if (r.Item.getCondition() >= r.Item.getConditionMax())
+            if (r.Item.getRepair() >= r.Item.getRepairMax())
             {
                 this.m.ItemsRepaired += 1
                 this.swapItems("camp-screen-repair-dialog-module.shop", i, "camp-screen-repair-dialog-module.stash", null);

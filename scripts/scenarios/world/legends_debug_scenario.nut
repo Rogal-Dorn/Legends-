@@ -11,6 +11,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
+		return false;
 		return this.Const.DLC.Wildmen;
 	}
 
@@ -145,15 +146,15 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_armor_scale_coat",
 			"legend_armor_scale_coat_rotten",
 			"legend_armor_scale_shirt",
-			"legend_animal_hide_armor.nut",
-			"legend_armor_scale_shirt.nut",
-			"legend_heavy_iron_armor.nut",
-			"legend_hide_and_bone_armor.nut",
-			"legend_reinforced_animal_hide_armor.nut",
-			"legend_rugged_scale_armor.nut",
-			"legend_scrap_metal_armor.nut",
-			"legend_thick_furs_armor.nut",
-			"legend_thick_plated_barbarian_armor.nut"
+			"legend_animal_hide_armor",
+			"legend_armor_scale_shirt",
+			"legend_heavy_iron_armor",
+			"legend_hide_and_bone_armor",
+			"legend_reinforced_animal_hide_armor",
+			"legend_rugged_scale_armor",
+			"legend_scrap_metal_armor",
+			"legend_thick_furs_armor",
+			"legend_thick_plated_barbarian_armor"
 		];
 
 		foreach(p in plate)
@@ -239,6 +240,49 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			this.logInfo("Adding " + p);
 			local pla = this.new("scripts/items/legend_armor/legendary/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
+
+		local upgrades = [
+			"legend_additional_padding_upgrade",
+			"legend_armor_hexe_leader_cloak_upgrade",
+			"legend_armor_redback_cloak_upgrade",
+			"legend_armor_stollwurm_scales_upgrade",
+			"legend_armor_white_wolf_pelt_upgrade",
+			"legend_barbarian_horn_upgrade",
+			"legend_bone_platings_upgrade",
+			"legend_direwolf_pelt_upgrade",
+			"legend_double_mail_upgrade",
+			"legend_heraldic_plates_upgrade",
+			"legend_horn_plate_upgrade",
+			"legend_joint_cover_upgrade",
+			"legend_leather_neckguard_upgrade",
+			"legend_leather_shoulderguards_upgrade",
+			"legend_light_padding_replacement_upgrade",
+			"legend_lindwurm_scales_upgrade",
+			"legend_mail_patch_upgrade",
+			"legend_metal_pauldrons_upgrade",
+			"legend_metal_plating_upgrade",
+			"legend_unhold_fur_upgrade"
+		];
+
+		foreach(p in upgrades)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/armor_upgrades/" + p);
+			this.World.Assets.getStash().add(pla);
+		}
+
+		local runes = [
+			"legend_rune_safety",
+			"legend_rune_endurance",
+			"legend_rune_resilience"
+		];
+
+		foreach(p in runes)
+		{
+			this.logInfo("Adding " + p);
+			local pla = this.new("scripts/items/legend_armor/runes/" + p);
 			this.World.Assets.getStash().add(pla);
 		}
 	}

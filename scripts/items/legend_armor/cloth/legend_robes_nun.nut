@@ -8,10 +8,6 @@ this.legend_robes_nun <- this.inherit("scripts/items/legend_armor/cloth/legend_r
 		this.m.Description = "A rugged, large robe made of simple cloth usually worn by young nuns.";
 		this.m.Variant = this.Math.rand(6,7);
 		this.updateVariant();
-		this.m.Value = 45;
-		this.m.Condition = 25;
-		this.m.ConditionMax = 25;
-		this.m.StaminaModifier = 0;
 	}
 
 });
