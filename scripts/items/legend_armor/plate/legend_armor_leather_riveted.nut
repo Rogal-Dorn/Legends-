@@ -25,7 +25,8 @@ this.legend_armor_leather_riveted <- this.inherit("scripts/items/legend_armor/le
 		this.m.SpriteCorpseBack = "bust_legend_leather_riveted_" + variant + "_dead";
 		this.m.Icon = "legend_armor/plate/legend_leather_riveted_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_riveted_" + variant + ".png";
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_riveted.png";
+		//this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_riveted_" + variant + ".png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_riveted_"  + variant + ".png";
 	}
 
