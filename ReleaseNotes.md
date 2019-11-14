@@ -1654,7 +1654,7 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
   13.0.0.5 Armor Layer Test Build
   *ARMOR LAYERS!
   *Warning - This is the first public test build. It is still considered experimental and still WIP for balance issues and some stability issues.
-  *Requires a new campaign.
+  \*Requires a new campaign.
   6 Tiers of composable armor layers:
   -Chain
   -Plate
@@ -1662,7 +1662,8 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
   -Cloak
   -Attachment
   -Rune
- * For the first phase of armor layers we are not adding any new mechanics to armor. It is still just durability and stamina. But now those values are vastly more customizable. As well as the bling bling of the armor set looks.
+
+* For the first phase of armor layers we are not adding any new mechanics to armor. It is still just durability and stamina. But now those values are vastly more customizable. As well as the bling bling of the armor set looks.
 
 - Adds in x3 new Named Barbarian Armors.
   -Bronze armor
@@ -1697,6 +1698,16 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 https://drive.google.com/open?id=1m-2I9x6pSo-kv-Z_50C0ZJ74mUCLL3VK
 
 13.0.0.6 Armor Layer Test Build Patch 1
-  - Fix issue where layers could not be unassigned.
-  - Fix seer start not having the correct armor.
-  - Fix missing leather jacket images.
+
+- Fix issue where layers could not be unassigned.
+- Fix seer start not having the correct armor.
+- Fix missing leather jacket images.
+
+https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
+
+13.0.0.7 Armor Layer Test Build Patch 2
+
+- Fix solo berserker origin from not starting.
+- Fix not being able to enter settlements with stables.
+- Fix not repairing all attached layers armor.
+- Fix footmen without armor.

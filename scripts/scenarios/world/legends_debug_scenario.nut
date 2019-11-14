@@ -145,15 +145,15 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_armor_scale_coat",
 			"legend_armor_scale_coat_rotten",
 			"legend_armor_scale_shirt",
-			"legend_animal_hide_armor.nut",
-			"legend_armor_scale_shirt.nut",
-			"legend_heavy_iron_armor.nut",
-			"legend_hide_and_bone_armor.nut",
-			"legend_reinforced_animal_hide_armor.nut",
-			"legend_rugged_scale_armor.nut",
-			"legend_scrap_metal_armor.nut",
-			"legend_thick_furs_armor.nut",
-			"legend_thick_plated_barbarian_armor.nut"
+			"legend_animal_hide_armor",
+			"legend_armor_scale_shirt",
+			"legend_heavy_iron_armor",
+			"legend_hide_and_bone_armor",
+			"legend_reinforced_animal_hide_armor",
+			"legend_rugged_scale_armor",
+			"legend_scrap_metal_armor",
+			"legend_thick_furs_armor",
+			"legend_thick_plated_barbarian_armor"
 		];
 
 		foreach(p in plate)

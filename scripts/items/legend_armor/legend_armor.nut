@@ -28,6 +28,16 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 	}
 
+	function getRepair()
+	{
+		return this.Math.floor(this.getArmor());
+	}
+
+	function getRepairMax()
+	{
+		return this.Math.floor(this.getArmorMax());
+	}
+
 	function getArmor()
 	{
 		local value = this.m.Condition
@@ -59,7 +69,26 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 	function setArmor( _a )
 	{
-		this.m.Condition = _a;
+		if (_a <= this.m.ConditionMax) {
+			this.m.Condition = _a
+			this.updateAppearance();
+			return;
+		}
+
+		local delta = _a - this.m.ConditionMax
+		this.m.Condition = this.m.ConditionMax;
+		foreach (u in this.m.Upgrades)
+		{
+			if (u == null)
+			{
+				continue;
+			}
+			delta = u.setCondition(delta);
+			if (delta <= 0)
+			{
+				break;
+			}
+		}
 		this.updateAppearance();
 	}
 

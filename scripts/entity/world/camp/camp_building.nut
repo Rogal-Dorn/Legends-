@@ -201,7 +201,7 @@ this.camp_building <- {
 				Volume = 1.0,
 				Pitch = 1.0
 			}
-		
+
 		],
         CanEnter = true,
         InCommanderTent = true,
@@ -228,12 +228,12 @@ this.camp_building <- {
     {
     }
 
-	function Camping() 
+	function Camping()
 	{
 		return this.m.Camping;
 	}
 
-	function Escorting() 
+	function Escorting()
 	{
 		return this.m.Escorting;
 	}
@@ -295,7 +295,7 @@ this.camp_building <- {
 			terrainlabel = "0" + _terrain;
 		}
 		local day = this.World.getTime().IsDaytime ? "day" : "night";
-		return "ui/settlements/" + terrainlabel + "_" + this.getSlot() + "_" + this.getLevel() + "_" + day; 
+		return "ui/settlements/" + terrainlabel + "_" + this.getSlot() + "_" + this.getLevel() + "_" + day;
 	}
 
 	function getTooltipID()
@@ -411,7 +411,7 @@ this.camp_building <- {
         this.World.State.getMenuStack().push(function ()
 		{
 			this.World.State.getCampScreen().showMainDialog();
-			this.World.State.getCampScreen().refresh();			
+			this.World.State.getCampScreen().refresh();
 		}, function ()
 		{
 			return !this.World.State.getCampScreen().isAnimating();
@@ -424,7 +424,7 @@ this.camp_building <- {
 
 	function onBroEnter ( _bro )
 	{
-		return _bro.getBackground().getID() != "background.legend_donkey"
+		return !_bro.getBackground().isStabled()
 	}
 
 	function onSerialize( _out )
@@ -453,7 +453,7 @@ this.camp_building <- {
 
     function getModifiers()
     {
-        local ret = 
+        local ret =
         {
 			Consumption = 1.0 / this.m.Conversion,
             Craft = 0.0,
@@ -469,15 +469,15 @@ this.camp_building <- {
             }
             local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers()[this.m.ModName] * this.m.ModMod;
             ++ret.Assigned
-			ret.Modifiers.push([mod, bro.getNameOnly(), bro.getBackground().getNameOnly()]);			
+			ret.Modifiers.push([mod, bro.getNameOnly(), bro.getBackground().getNameOnly()]);
         }
 
         ret.Modifiers.sort(this.sortModifiers);
         for (local i = 0; i < ret.Modifiers.len(); i = ++i)
         {
             ret.Modifiers[i][0] = ret.Modifiers[i][0] * this.Math.pow(i + 1, -0.5);
-			if (this.getUpgraded()) 
-			{  
+			if (this.getUpgraded())
+			{
 				ret.Modifiers[i][0] *= 1.15;
 			}
             ret.Craft += ret.Modifiers[i][0];
@@ -508,8 +508,8 @@ this.camp_building <- {
 		{
 			if (!this.onBroEnter(b))
 			{
-				continue 
-			}			
+				continue
+			}
 			local bro = this.UIDataHelper.convertEntityToUIData(b, null);
 			local tent = this.World.Camp.getBuildingByID( b.getCampAssignment() );
 			bro.bannerImage <- tent.getBanner()
@@ -522,7 +522,7 @@ this.camp_building <- {
 			bro.Modifier <- modifier;
 			roster.push(bro);
 		}
-		
+
 		roster.sort(this.onSortByModifier);
 		return roster
 	}

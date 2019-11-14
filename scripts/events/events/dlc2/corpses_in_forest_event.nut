@@ -201,6 +201,7 @@ this.corpses_in_forest_event <- this.inherit("scripts/events/event", {
 						[1, "chain/legend_armor_short_mail"]
 					]
 					item = this.Const.World.Common.pickLegendArmor(chains)
+					item.setCondition(this.Math.rand(0.25 * item.getConditionMax(), 0.60 * item.getConditionMax()) * 1.0);
 				}
 				else
 				{

@@ -161,10 +161,20 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function setCondition( _a )
 	{
-		this.m.Condition = _a;
+		local delta = 0;
+		if (_a > this.m.ConditionMax)
+		{
+			this.m.Condition = this.m.ConditionMax;
+			delta = _a - this.m.ConditionMax;
+		}
+		else
+		{
+			this.m.Condition = _a;
+		}
+
 		if (this.m.Armor == null)
 		{
-			return
+			return delta
 		}
 
 		if (this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
@@ -172,6 +182,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			app = this.m.Armor.getContainer().getAppearance();
 		}
 		this.updateAppearance(app);
+		return delta
 	}
 
 	function updateAppearance( _app )

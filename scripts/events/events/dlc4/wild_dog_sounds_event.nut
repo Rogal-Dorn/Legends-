@@ -314,7 +314,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 
 				if (items.getItemAtSlot(this.Const.ItemSlot.Body) != null)
 				{
-					items.getItemAtSlot(this.Const.ItemSlot.Body).setCondition(this.Math.max(1, items.getItemAtSlot(this.Const.ItemSlot.Body).getConditionMax() * this.Math.rand(10, 40) * 0.01));
+					items.getItemAtSlot(this.Const.ItemSlot.Body).setArmor(this.Math.max(1, items.getItemAtSlot(this.Const.ItemSlot.Body).getRepairMax() * this.Math.rand(10, 40) * 0.01));
 				}
 			}
 

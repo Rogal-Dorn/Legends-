@@ -61,9 +61,7 @@ this.small_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 		];
 		this.m.StablesList = [
 			"legend_donkey",
-			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "This motte with bailey looks wide over the endless snow";
 		this.m.Description = "This motte with bailey looks wide over the endless snow, and offers shelter from the cold and warm food to the garrison stationed here.";
