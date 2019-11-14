@@ -59,9 +59,7 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 		];
 		this.m.StablesList = [
 			"legend_donkey",
-			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			"legend_horse_rouncey"
 		];
 
 		if (this.Const.DLC.Unhold)
@@ -125,7 +123,7 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			else if (r == 3)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/kennel_building"));
-			}			
+			}
 			else if (r == 4)
 			{
 				this.addBuilding(this.new("scripts/entity/world/settlements/buildings/stables_building"));

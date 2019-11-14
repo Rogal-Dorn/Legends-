@@ -27,6 +27,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"Brunnenfeste",
 			"Tauschanze"
 		]);
+
 		this.m.DraftList = [
 			"apprentice_background",
 			"gambler_background",
@@ -119,7 +120,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
-		
+
 		if ( _settings.StackCitadels)
 		{
 			local ALL = [
@@ -132,7 +133,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.AutumnForest,
 				this.Const.World.TerrainType.LeaveForest
-			];			
+			];
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
@@ -148,7 +149,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/orchard_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/herbalists_grove_location", ALL, [], 0, false, true, true);
 			return;
-		} 
+		}
 
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));

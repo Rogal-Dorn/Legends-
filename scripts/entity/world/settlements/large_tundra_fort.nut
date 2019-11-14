@@ -80,6 +80,11 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"hedge_knight_background",
 			"hedge_knight_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey",
+			"legend_horse_rouncey",
+			"legend_horse_destrier"
+		];
 		this.m.UIDescription = "A large citadel towering high over the surrounding tundra";
 		this.m.Description = "A large citadel towering high over the surrounding tundra and securing the large and open region. Many come here to resupply, make repairs and rest until venturing on.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_03";
@@ -114,8 +119,8 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.AutumnForest,
-				this.Const.World.TerrainType.LeaveForest		
-			];			
+				this.Const.World.TerrainType.LeaveForest
+			];
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
@@ -126,7 +131,7 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, [], 0, false, true, true);
-			
+
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/pig_farm_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/brewery_location", ALL, [], 0, false, true, true);
 			return;

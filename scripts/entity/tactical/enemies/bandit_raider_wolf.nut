@@ -186,6 +186,8 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 						armor.setUpgrade(plate)
 					}
 
+					local upgrade = this.new("scripts/items/legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade");
+					armor.setUpgrade(upgrade);
 					this.m.Items.equip(armor);
 				}
 			}

@@ -419,6 +419,11 @@ this.armor <- this.inherit("scripts/items/item", {
 		}
 	}
 
+	function upgradeIsBlocked(_slot)
+	{
+		return true;
+	}
+
 	function onSerialize( _out )
 	{
 		if (this.m.Upgrade != null)
@@ -478,6 +483,8 @@ this.armor <- this.inherit("scripts/items/item", {
 			this.updateRuneSigil();
 		}
 	}
+
+
 
 });
 

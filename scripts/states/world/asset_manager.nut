@@ -857,15 +857,15 @@ this.asset_manager <- {
 
 			 	foreach( item in items )
 			 	{
-			 		if (item.getCondition() < item.getConditionMax())
+			 		if (item.getRepair() < item.getRepairMax())
 			 		{
-			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getConditionMax() - item.getCondition());
-			 			item.setCondition(item.getCondition() + d);
+			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair());
+			 			item.setArmor(item.getRepair() + d);
 			 			this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
 			 			updateBro = true;
 			 		}
 
-			 		if (item.getCondition() >= item.getConditionMax())
+			 		if (item.getRepair() >= item.getRepairMax())
 			 		{
 			 			item.setToBeRepaired(false, 0);
 			 		}
@@ -898,14 +898,14 @@ this.asset_manager <- {
 
 			 	if (item.isToBeRepaired())
 			 	{
-			 		if (item.getCondition() < item.getConditionMax())
+			 		if (item.getRepair() < item.getRepairMax())
 			 		{
-			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getConditionMax() - item.getCondition());
-			 			item.setCondition(item.getCondition() + d);
+			 			local d = this.Math.minf(this.Const.World.Assets.ArmorPerHour * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()], item.getRepairMax() - item.getRepair());
+			 			item.setArmor(item.getRepair() + d);
 						this.m.ArmorParts = this.Math.maxf(0, this.m.ArmorParts - d * this.Const.World.Assets.ArmorPartsPerArmor * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()]);
 			 		}
 
-			 		if (item.getCondition() >= item.getConditionMax())
+			 		if (item.getRepair() >= item.getRepairMax())
 			 		{
 			 			item.setToBeRepaired(false, 0);
 			 		}

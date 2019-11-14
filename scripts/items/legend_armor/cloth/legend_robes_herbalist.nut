@@ -12,12 +12,8 @@ this.legend_robes_herbalist <- this.inherit("scripts/items/legend_armor/cloth/le
 					16,
 					18
 				]
-		this.m.Variant = this.Math.rand(0, variants.len() - 1);
+		this.m.Variant = variants[this.Math.rand(1, variants.len() - 1)];
 		this.updateVariant();
-		this.m.Value = 65;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
-		this.m.StaminaModifier = -1;
 	}
 
 });

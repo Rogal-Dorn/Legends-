@@ -88,8 +88,7 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.StablesList = [
 			"legend_donkey",
 			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			"legend_horse_destrier"
 		];
 		this.m.UIDescription = "A stone keep that controls a strategically important port and protects nearby trading routes";
 		this.m.Description = "This stone keep controls a strategically important sea access and protects nearby trading routes.";

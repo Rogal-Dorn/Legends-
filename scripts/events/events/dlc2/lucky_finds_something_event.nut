@@ -82,12 +82,6 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-
-		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
-		{
-			return this.onLegendPrepare()
-		}
-
 		local item;
 		local r = this.Math.rand(1, 19);
 
@@ -195,7 +189,15 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 12)
 		{
-			item = this.new("scripts/items/armor_upgrades/joint_cover_upgrade");
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				item = this.new("scripts/items/legend_armor/armor_upgrades/legend_joint_cover_upgrade");
+			}
+			else
+			{
+				item = this.new("scripts/items/armor_upgrades/joint_cover_upgrade");
+			}
+
 		}
 		else if (r == 13)
 		{
@@ -243,7 +245,14 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 18)
 		{
-			item = this.new("scripts/items/armor_upgrades/mail_patch_upgrade");
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				item = this.new("scripts/items/legend_armor/armor_upgrades/legend_mail_patch_upgrade");
+			}
+			else
+			{
+				item = this.new("scripts/items/armor_upgrades/mail_patch_upgrade");
+			}
 		}
 		else if (r == 19)
 		{

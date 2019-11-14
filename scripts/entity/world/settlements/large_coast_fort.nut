@@ -96,6 +96,10 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"cripple_background",
 			"eunuch_background"
 		];
+		this.m.StablesList = [
+			"legend_horse_destrier",
+			"legend_horse_courser"
+		];
 		this.m.UIDescription = "This massive citadel guards a warport and the surrounding trade routes";
 		this.m.Description = "This massive citadel guards a warport and the surrounding trade routes. It is a seat of power for nobility and home to a large garrison.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_03";
@@ -129,7 +133,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Snow,
 				this.Const.World.TerrainType.Hills,
 				this.Const.World.TerrainType.Tundra
-			];			
+			];
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/stone_watchtower_location", ALL, [], 5, true);
@@ -156,7 +160,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			]);
 
 			return;
-		} 
+		}
 
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/tavern_building"));
 

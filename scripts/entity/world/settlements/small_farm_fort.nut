@@ -66,8 +66,6 @@ this.small_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.StablesList = [
 			"legend_donkey",
 			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
 		];
 		this.m.UIDescription = "A wooden motte with a bailey overlooking the surrounding fields";
 		this.m.Description = "A wooden motte with a bailey overlooking the surrounding fields.";

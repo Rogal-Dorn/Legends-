@@ -141,8 +141,7 @@ this.building <- {
 					{
 						if (this.Math.rand(1, 100) <= 50)
 						{
-
-							local condition = this.Math.rand(item.getConditionMax() * 0.4, item.getConditionMax() * 1.0)
+							local condition = this.Math.rand(item.getConditionMax() * 0.4, item.getConditionMax() * 0.9)
 							item.setCondition(condition);
 						}
 					}

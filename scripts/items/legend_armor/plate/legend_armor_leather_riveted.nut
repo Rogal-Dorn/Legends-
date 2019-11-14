@@ -10,7 +10,7 @@ this.legend_armor_leather_riveted <- this.inherit("scripts/items/legend_armor/le
 		this.m.ArmorDescription = "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear.";
 		this.m.Variant = this.Math.rand(1, 9);
 		this.updateVariant();
-		this.m.Value = 4500;
+		this.m.Value = 1100;
 		this.m.Condition = 95;
 		this.m.ConditionMax = 95;
 		this.m.StaminaModifier = -10;
@@ -26,7 +26,7 @@ this.legend_armor_leather_riveted <- this.inherit("scripts/items/legend_armor/le
 		this.m.Icon = "legend_armor/plate/legend_leather_riveted_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_riveted_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_riveted"  + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_riveted_"  + variant + ".png";
 	}
 
 });

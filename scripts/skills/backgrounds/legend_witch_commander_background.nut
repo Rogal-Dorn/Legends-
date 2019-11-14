@@ -323,6 +323,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
 		}
 
+		local actor = this.getContainer().getActor();
 		if (this.m.IsFemaleBackground == true)
 		{
 			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
@@ -330,7 +331,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		else
 		{
 			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-		}		
+		}
 	}
 
 	function onAddEquipment()
@@ -359,7 +360,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		talents[this.Const.Attributes.Fatigue] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
-		items.equip(this.new("scripts/items/legend_armor/armor_legend_armor_seer_robes"));
+		items.equip(this.new("scripts/items/legend_armor/armor/legend_armor_seer_robes"));
 		items.equip(this.new("scripts/items/helmets/legend_seer_hat"));
 		items.equip(this.new("scripts/items/weapons/legend_mystic_staff"));
 		local stash = this.World.Assets.getStash()

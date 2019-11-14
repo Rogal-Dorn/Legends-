@@ -65,9 +65,7 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 		];
 		this.m.StablesList = [
 			"legend_donkey",
-			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "A stone keep securing the surrounding tundra";
 		this.m.Description = "A stone keep that is the seat of power in the surrounding tundra. It acts as a base of operations for a decently sized garrison.";

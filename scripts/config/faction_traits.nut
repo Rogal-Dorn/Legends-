@@ -64,6 +64,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/legend_hunting_demon_alps_action",
 			"scripts/factions/contracts/legend_hunting_coven_leader_action",
 			"scripts/factions/contracts/legend_hunting_skin_ghouls_action",
+			"scripts/factions/contracts/legend_bandit_army_action",
 			"scripts/factions/contracts/legend_barbarian_prisoner_action"
 		],
 		[],

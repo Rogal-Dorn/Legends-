@@ -128,7 +128,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 						armor.setUpgrade(plate)
 					}
 
-					local u = this.new("scripts/items/legend_armor/upgrades/legend_barbarian_horn_upgrade");
+					local u = this.new("scripts/items/legend_armor/armor_upgrades/legend_barbarian_horn_upgrade");
 					armor.setUpgrade(u);
 
 					this.m.Items.equip(armor);

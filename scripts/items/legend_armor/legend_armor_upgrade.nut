@@ -26,6 +26,26 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.m.IsUsable = true;
 	}
 
+	function isAmountShown()
+	{
+		return this.m.Condition != this.m.ConditionMax;
+	}
+
+	function getAmountString()
+	{
+		return "" + this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * 100) + "%";
+	}
+
+	function getAmountColor()
+	{
+		return this.Const.Items.ConditionColor[this.Math.max(0, this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * (this.Const.Items.ConditionColor.len() - 1)))];
+	}
+
+	function getValue()
+	{
+		return this.Math.floor(this.m.Value * ((1.0 * this.m.Condition) / (1.0 * this.m.ConditionMax)));
+	}
+
 	function getType()
 	{
 		return this.m.Type;
@@ -156,17 +176,29 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function setCondition( _a )
 	{
-		this.m.Condition = _a;
+		local delta = 0;
+		if (_a > this.m.ConditionMax)
+		{
+			this.m.Condition = this.m.ConditionMax;
+			delta = _a - this.m.ConditionMax;
+		}
+		else
+		{
+			this.m.Condition = _a;
+		}
+
 		if (this.m.Armor == null)
 		{
-			return
+			return delta
 		}
 
 		if (this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
 		{
-			app = this.m.Armor.getContainer().getAppearance();
+			local app = this.m.Armor.getContainer().getAppearance();
+			this.updateAppearance(app);
 		}
-		this.updateAppearance(app);
+
+		return delta
 	}
 
 	function updateAppearance( _app )

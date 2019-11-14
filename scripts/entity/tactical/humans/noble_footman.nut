@@ -102,14 +102,14 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		shield.setFaction(banner);
 		this.m.Items.equip(shield);
 
-				if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
 				[0, ""],
-				[0, "cloth/legend_gambeson"],
+				[1, "cloth/legend_gambeson"],
 				[0, "cloth/legend_gambeson_plain"],
 				[0, "cloth/legend_gambeson_wolf"],
-				[0, "cloth/legend_padded_surcoat"],
+				[1, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
 				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
@@ -118,7 +118,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_sackcloth"],
 				[0, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
-				[0, "cloth/legend_tunic"],
+				[1, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)

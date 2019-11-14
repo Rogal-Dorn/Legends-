@@ -759,42 +759,42 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/metal_plating_upgrade"
+				S = "legend_armor/armor_upgrades/legend_metal_plating_upgrade"
 			});
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/metal_pauldrons_upgrade"
+				S = "legend_armor/armor_upgrades/legend_metal_pauldrons_upgrade"
 			});
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/mail_patch_upgrade"
+				S = "legend_armor/armor_upgrades/legend_mail_patch_upgrade"
 			});
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/leather_shoulderguards_upgrade"
+				S = "legend_armor/armor_upgrades/legend_leather_shoulderguards_upgrade"
 			});
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/leather_neckguard_upgrade"
+				S = "legend_armor/armor_upgrades/legend_leather_neckguard_upgrade"
 			});
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/joint_cover_upgrade"
+				S = "legend_armor/armor_upgrades/legend_joint_cover_upgrade"
 			});
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/heraldic_plates_upgrade"
+				S = "legend_armor/armor_upgrades/legend_heraldic_plates_upgrade"
 			});
 			list.push({
 				R = 85,
 				P = 1.25,
-				S = "armor_upgrades/double_mail_upgrade"
+				S = "legend_armor/armor_upgrades/legend_double_mail_upgrade"
 			});
 		}
 

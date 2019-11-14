@@ -116,6 +116,12 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"hedge_knight_background"
 		];
+		this.m.StablesList = [
+			"legend_horse_destrier",
+			"legend_horse_courser",
+			"legend_horse_destrier",
+			"legend_horse_courser"
+		];
 		this.m.UIDescription = "A mighty citadel towering above the surrounding steppe";
 		this.m.Description = "This mighty citadel towers high above the surrounding steppe and is the seat of power in the region. It houses a large garrison and offers all kinds of services valuable to travellers and mercenaries.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_03";
@@ -152,7 +158,7 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.AutumnForest,
 				this.Const.World.TerrainType.LeaveForest
-			];			
+			];
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/fletcher_building"));
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/stone_watchtower_location", ALL, [], 5, true, true, true);
@@ -163,7 +169,7 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/goat_herd_location", ALL, [], 0, false, true, true);
 			return;
-		} 
+		}
 
 
 		if (this.Math.rand(1, 100) <= 50 || this.Const.World.Buildings.Fletchers == 0)
@@ -228,7 +234,7 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,
 			this.Const.World.TerrainType.Hills
-		], []);		
+		], []);
 		this.buildAttachedLocation(this.Math.rand(0, 1), "scripts/entity/world/attached_location/workshop_location", [
 			this.Const.World.TerrainType.Plains,
 			this.Const.World.TerrainType.Steppe,

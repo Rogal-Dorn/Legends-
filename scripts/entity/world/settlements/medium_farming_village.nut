@@ -83,9 +83,8 @@ this.medium_farming_village <- this.inherit("scripts/entity/world/settlement", {
 		];
 		this.m.StablesList = [
 			"legend_donkey",
-			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			"legend_donkey",
+			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "A prospering village surrounded by fertile land";
 		this.m.Description = "A prospering village surrounded by fertile land. The market is usually filled with all kinds of fresh food.";

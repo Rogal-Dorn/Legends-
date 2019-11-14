@@ -73,7 +73,12 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"legend_shieldmaiden_background",
 			"legend_shieldmaiden_background"
 		];
-
+		this.m.StablesList = [
+			"legend_donkey",
+			"legend_horse_rouncey",
+			"legend_horse_destrier",
+			"legend_horse_courser"
+		];
 		if (this.Const.DLC.Unhold)
 		{
 			this.m.DraftList.push("beast_hunter_background");
@@ -115,8 +120,8 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.AutumnForest,
-				this.Const.World.TerrainType.LeaveForest			
-			];			
+				this.Const.World.TerrainType.LeaveForest
+			];
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
@@ -127,7 +132,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, [], 0, false, true, true);
-			
+
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/herbalists_grove_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/hunters_cabin_location", ALL, [], 1, false, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/lumber_camp_location", ALL, [], 1, false, true);

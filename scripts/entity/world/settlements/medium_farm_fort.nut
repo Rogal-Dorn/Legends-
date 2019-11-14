@@ -79,8 +79,7 @@ this.medium_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.m.StablesList = [
 			"legend_donkey",
 			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			"legend_horse_destrier"
 		];
 		this.m.UIDescription = "A stone keep surrounded by fertile lands";
 		this.m.Description = "A stone keep surrounded by fertile lands and acting as a strongpoint and base of operations in the region.";

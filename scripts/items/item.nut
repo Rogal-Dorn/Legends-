@@ -273,6 +273,16 @@ this.item <- {
 		return this.Math.floor(this.m.ConditionMax);
 	}
 
+	function getRepair()
+	{
+		return this.Math.floor(this.m.Condition);
+	}
+
+	function getRepairMax()
+	{
+		return this.Math.floor(this.m.ConditionMax);
+	}
+
 	function getValue()
 	{
 		return this.m.Value;
@@ -307,6 +317,10 @@ this.item <- {
 		this.updateAppearance();
 	}
 
+	function setArmor( _a )
+	{
+		this.setCondition( _a)
+	}
 
 	function isAmountShown()
 	{

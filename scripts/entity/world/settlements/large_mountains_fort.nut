@@ -112,6 +112,12 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			"hedge_knight_background",
 			"hedge_knight_background"
 		];
+		this.m.StablesList = [
+			"legend_donkey",
+			"legend_horse_rouncey",
+			"legend_horse_destrier",
+			"legend_horse_courser"
+		];
 		this.m.UIDescription = "A massive stone citadel built into the steep mountains";
 		this.m.Description = "This massive stone citadel is built into the steep mountains. A large number of men are stationed here to hold a firm grip on the land.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_03";
@@ -146,8 +152,8 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 				this.Const.World.TerrainType.Forest,
 				this.Const.World.TerrainType.SnowyForest,
 				this.Const.World.TerrainType.AutumnForest,
-				this.Const.World.TerrainType.LeaveForest		
-			];			
+				this.Const.World.TerrainType.LeaveForest
+			];
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/armorsmith_building"));
 			this.addBuilding(this.new("scripts/entity/world/settlements/buildings/weaponsmith_building"));
@@ -158,7 +164,7 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/ore_smelters_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/blast_furnace_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/workshop_location", ALL, [], 0, false, true, true);
-			
+
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/goat_herd_location", ALL, [], 0, false, true, true);
 			this.buildAttachedLocation(1, "scripts/entity/world/attached_location/wheat_fields_location", [
 				this.Const.World.TerrainType.Plains

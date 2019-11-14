@@ -87,9 +87,7 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 		];
 		this.m.StablesList = [
 			"legend_donkey",
-			"legend_horse_rouncey",
-			"legend_horse_destrier",
-			"legend_horse_courser"
+			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "A stone keep controlling routes through the swamps";
 		this.m.Description = "A stone keep controlling routes through and access to the surrounding swamps and marshes.";
