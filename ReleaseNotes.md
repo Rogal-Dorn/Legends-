@@ -1695,3 +1695,8 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 - Attribute stars are no longer purely random. It is still RNG, but it is now weighted towards the skills/perks/attributes that background has rolled - so if the background has a proportionally higher MD than other attributes, it's more likely MD will have a star.
 
 https://drive.google.com/open?id=1m-2I9x6pSo-kv-Z_50C0ZJ74mUCLL3VK
+
+13.0.0.6 Armor Layer Test Build Patch 1
+  - Fix issue where layers could not be unassigned.
+  - Fix seer start not having the correct armor.
+  - Fix missing leather jacket images.
