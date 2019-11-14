@@ -178,7 +178,14 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 
 	function onBuildDescription()
 	{
-		return "%name% lives to fight the undead scourge. Little is known about him and he almost never talks save for the occasional grunt while swinging his sword. His language seems to be codified into one simple structure: killing creatures of evil.";
+		if (this.m.IsFemaleBackground == true)
+		{
+			return "%name% lives to fight the undead scourge. Little is known about her and she almost never talks save for the occasional grunt while swinging her sword. Her language seems to be codified into one simple structure: killing creatures of evil.";
+		}
+		else
+		{
+			return "%name% lives to fight the undead scourge. Little is known about him and he almost never talks save for the occasional grunt while swinging his sword. His language seems to be codified into one simple structure: killing creatures of evil.";
+		}
 	}
 
 	function onSetAppearance()
@@ -260,6 +267,15 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		this.m.Container.add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_rebound"));
+
+		if(this.m.IsFemaleBackground == true)
+		{
+			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
+		}
 	}
 
 	function onAddEquipment()

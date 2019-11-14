@@ -6,6 +6,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.ID = "background.refugee";
 		this.m.Name = "Refugee";
 		this.m.Icon = "ui/backgrounds/background_38.png";
+		//gender neutral descriptions
 		this.m.BackgroundDescription = "Refugees lack the conviction to fight for their homes, but they are used to long and exhausting travel by now.";
 		this.m.GoodEnding = "%name% the refugee proved to be a natural fighter, but eventually retired from the %companyname%. Word has it %name% returned home and is using the wealth gained in the company to help rebuild the town.";
 		this.m.BadEnding = "With the downfall of the %companyname% written plainly on the wall, %name% the refugee split with the company. Using their remaining scant crowns to purchase a set of shoes and returned to a destroyed home, to try and rebuild it. While walking home, an illiterate wildman murdered %name% and ate the shoes.";
@@ -98,6 +99,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function onBuildDescription()
 	{
+		//gender neutral description
 		return "{Catastrophes are cheap. | Disease, the ultimate invisible hand. | Win or lose a war, everything is as it has been.} %name% hails from a tiny village that {is now only remembered by spoken word, a generation away from being forgotten. | was destroyed, to put it succinctly. | now stands as a mere footnote, wasting little of the historian\'s ink. | suffered the world\'s wrath.} But %name% is a survivor. {%name% fled the disaster with only clothes. | With home ablaze, %name% saved what little could be saved, and fled. | After stumbling upon their dead family, %name% gathered what could be saved and ran. | War, famine, disease. It\'s all a blur now.} {%name% is merely anxious to look ahead rather than behind. | %name% carries little more than a sense of steeled determination, but that is something worth having. | A horrific history scars %name%\'s body and glazes their eyes, but the mercenary is easily motivated to never experience that past again. | Whatever befell the %name%\'s town didn\'t get %name% and, judging by the rumors you hear, that\'s saying something. | %name% isn\'t skilled in martial arts, but is damn sure determined to survive. | Whatever vocation %name% had in the past is now lost. Like many others, seeking mercenary work to get by in this increasingly bloody world. | One of many refugees you\'ve seen, this victim has decided to stop running and start fighting.}";
 	}
 
@@ -138,6 +140,21 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			]
 		};
 		return c;
+	}
+
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		local actor = this.getContainer().getActor();
+
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
+		}
 	}
 
 	function onAddEquipment()

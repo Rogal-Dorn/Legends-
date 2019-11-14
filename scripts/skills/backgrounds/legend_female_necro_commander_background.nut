@@ -63,7 +63,7 @@ this.legend_female_necro_commander_background <- this.inherit("scripts/skills/ba
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
-this.m.CustomPerkTree = [
+		this.m.CustomPerkTree = [
 			[
 				this.Const.Perks.PerkDefs.LegendSiphon,
 				this.Const.Perks.PerkDefs.NineLives,
