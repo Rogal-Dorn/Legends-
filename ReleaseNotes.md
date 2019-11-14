@@ -1707,7 +1707,9 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 
 13.0.0.7 Armor Layer Test Build Patch 2
 
-- Fix solo berserker origin from not starting.
-- Fix not being able to enter settlements with stables.
-- Fix not repairing all attached layers armor.
-- Fix footmen without armor.
+- Fixed solo berserker origin from not starting.
+- Fixed not being able to enter settlements with stables.
+- Fixed not repairing all attached layers armor.
+- Fixed footmen without armor.
+- Updated more texts and names for Gender equality.
+- Fixed tatoo warning for female cultists.
