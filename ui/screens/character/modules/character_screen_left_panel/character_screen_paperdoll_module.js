@@ -51,7 +51,7 @@ var CharacterScreenPaperdollModule = function (_parent, _dataSource) {
     }
   };
 
-  this.mUpgradeButtons = [];
+  this.mUpgradeButtons = [null, null, null, null, null, null];
 
   this.mRightEquipmentSlots = {
     Ammo: {
@@ -99,70 +99,70 @@ CharacterScreenPaperdollModule.prototype.createDIV = function (_parentDiv) {
   var layout = $('<div class="l-button remove1"/>');
   middleEquipmentColumn.append(layout);
 
-  this.mUpgradeButtons.push(layout.createTextButton(
+  this.mUpgradeButtons[0] = layout.createTextButton(
     "1",
     function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(0);
     },
     "display-block",
     11
-  ));
+  );
 
   var layout = $('<div class="l-button remove2"/>');
   middleEquipmentColumn.append(layout);
-  this.mUpgradeButtons.push(layout.createTextButton(
+  this.mUpgradeButtons[1] = layout.createTextButton(
     "2",
     function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(1);
     },
     "display-block",
     11
-  ));
+  );
 
   var layout = $('<div class="l-button remove3"/>');
   middleEquipmentColumn.append(layout);
-  this.mUpgradeButtons.push(layout.createTextButton(
+  this.mUpgradeButtons[2] = layout.createTextButton(
     "3",
     function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(2);
     },
     "display-block",
     11
-  ));
+  );
 
   var layout = $('<div class="l-button remove4"/>');
   middleEquipmentColumn.append(layout);
-  this.mUpgradeButtons.push(layout.createTextButton(
+  this.mUpgradeButtons[3] = layout.createTextButton(
     "4",
     function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(3);
     },
     "display-block",
     11
-  ));
+  );
 
   var layout = $('<div class="l-button remove5"/>');
   middleEquipmentColumn.append(layout);
-  this.mUpgradeButtons.push(layout.createTextButton(
+  this.mUpgradeButtons[4] = layout.createTextButton(
     "5",
     function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(4);
     },
     "display-block",
     11
-  ));
+  );
   //btn5.enableButton(false)
 
   var layout = $('<div class="l-button remove6"/>');
   middleEquipmentColumn.append(layout);
-  this.mUpgradeButtons.push(layout.createTextButton(
+  this.mUpgradeButtons[5] = layout.createTextButton(
     "R",
     function (_event) {
       self.mDataSource.notifyBackendRemoveArmorUpgrade(5);
     },
     "display-block",
     11
-  ));
+  );
   //btn6.enableButton(false)
   // var layout = $('<div class="l-button remove4"/>');
   // middleEquipmentColumn.append(layout);
