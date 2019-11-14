@@ -137,13 +137,12 @@ this.building <- {
 						r = r + p;
 					}
 
-					if (_allowDamagedEquipment && item.getRepairMax() > 1)
+					if (_allowDamagedEquipment && item.getConditionMax() > 1)
 					{
 						if (this.Math.rand(1, 100) <= 50)
 						{
-
-							local condition = this.Math.rand(item.getRepairMax() * 0.4, item.getRepairMax() * 1.0)
-							item.setArmor(condition);
+							local condition = this.Math.rand(item.getConditionMax() * 0.4, item.getConditionMax() * 0.9)
+							item.setCondition(condition);
 						}
 					}
 

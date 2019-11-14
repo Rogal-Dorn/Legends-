@@ -26,6 +26,21 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.m.IsUsable = true;
 	}
 
+	function isAmountShown()
+	{
+		return this.m.Condition != this.m.ConditionMax;
+	}
+
+	function getAmountString()
+	{
+		return "" + this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * 100) + "%";
+	}
+
+	function getAmountColor()
+	{
+		return this.Const.Items.ConditionColor[this.Math.max(0, this.Math.floor(this.m.Condition / (this.m.ConditionMax * 1.0) * (this.Const.Items.ConditionColor.len() - 1)))];
+	}
+
 	function getValue()
 	{
 		return this.Math.floor(this.m.Value * ((1.0 * this.m.Condition) / (1.0 * this.m.ConditionMax)));
@@ -179,9 +194,10 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		if (this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
 		{
-			app = this.m.Armor.getContainer().getAppearance();
+			local app = this.m.Armor.getContainer().getAppearance();
+			this.updateAppearance(app);
 		}
-		this.updateAppearance(app);
+
 		return delta
 	}
 

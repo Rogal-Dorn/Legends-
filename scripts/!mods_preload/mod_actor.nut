@@ -8,6 +8,12 @@
         o.m.BloodPoolScale = 1.25;
 		o.m.RiderID <- "";
     }
+
+	o.isStabled <- function ()
+	{
+		return false;
+	}
+
     local fn = o.onMovementFinish;
     o.onMovementFinish = function (_tile)
     {
