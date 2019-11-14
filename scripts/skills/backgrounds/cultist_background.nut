@@ -52,21 +52,23 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Body = "bust_naked_body_00";
+		
+		local r = this.Math.rand(0, 9);
 
 		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
+		}
 
-			if (r == 0)
-			{
-				this.m.Faces = this.Const.Faces.OldFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Old;
-				this.m.Beards = null;
-				this.m.BeardChance = 0;
-				this.m.Body = "bust_naked_body_03";
-				this.m.IsFemaleBackground = true;
-			}
+		if (r == 0)
+		{
+			this.m.Faces = this.Const.Faces.OldFemale;
+			this.m.Hairs = this.Const.Hair.AllFemale;
+			this.m.HairColors = this.Const.HairColors.Old;
+			this.m.Beards = null;
+			this.m.BeardChance = 0;
+			this.m.Body = "bust_naked_body_03";
+			this.m.IsFemaleBackground = true;
 		}
 
 		this.m.IsOutlawBackground = true;
@@ -158,7 +160,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 
-		if(this.m.IsFemaleBackground == true)
+		if (this.m.IsFemaleBackground == true)
 		{
 			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
 		}
@@ -170,33 +172,39 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function onSetAppearance()
 	{
-		local actor = this.getContainer().getActor();
-		local tattoo_body = actor.getSprite("tattoo_body");
-		local tattoo_head = actor.getSprite("tattoo_head");
-
-		if (this.Math.rand(1, 100) <= 50)
+		if (this.m.IsFemaleBackground == false)
 		{
-			local body = actor.getSprite("body");
-			tattoo_body.setBrush("tattoo_01_" + body.getBrush().Name);
-			tattoo_body.Visible = true;
-		}
+			local actor = this.getContainer().getActor();
+			local tattoo_body = actor.getSprite("tattoo_body");
+			local tattoo_head = actor.getSprite("tattoo_head");
 
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			tattoo_head.setBrush("tattoo_head_01");
-			tattoo_head.Visible = true;
+			if (this.Math.rand(1, 100) <= 50)
+			{
+				local body = actor.getSprite("body");
+				tattoo_body.setBrush("tattoo_01_" + body.getBrush().Name);
+				tattoo_body.Visible = true;
+			}
+
+			if (this.Math.rand(1, 100) <= 50)
+			{
+				tattoo_head.setBrush("tattoo_head_01");
+				tattoo_head.Visible = true;
+			}
 		}
 	}
 
 	function updateAppearance()
 	{
-		local actor = this.getContainer().getActor();
-		local tattoo_body = actor.getSprite("tattoo_body");
-
-		if (tattoo_body.HasBrush)
+		if (this.m.IsFemaleBackground == false)
 		{
-			local body = actor.getSprite("body");
-			tattoo_body.setBrush("tattoo_01_" + body.getBrush().Name);
+			local actor = this.getContainer().getActor();
+			local tattoo_body = actor.getSprite("tattoo_body");
+
+			if (tattoo_body.HasBrush)
+			{
+				local body = actor.getSprite("body");
+				tattoo_body.setBrush("tattoo_01_" + body.getBrush().Name);
+			}
 		}
 	}
 
@@ -295,11 +303,11 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		{
 			if (this.Const.DLC.Wildmen)
 			{
-			items.equip(this.new("scripts/items/weapons/battle_whip"));
+				items.equip(this.new("scripts/items/weapons/battle_whip"));
 			}
 			else if (!this.Const.DLC.Wildmen)
 			{
-			items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+				items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 			}
 		}
 
