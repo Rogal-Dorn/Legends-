@@ -294,14 +294,14 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 
 			local plates = [
 				[0, ""],
-				[1, "legend_thick_furs_armor"],
-				[1, "animal hide"],
-				[1, "legend_hide_and_bone_armor"],
-				[1, "legend_reinforced_animal_hide_armor"],
-				[1, "legend_scrap_metal_armor"],
-				[0, "legend_rugged_scale_armor"],
-				[0, "legend_heavy_iron_armor"],
-				[0, "legend_thick_plated_barbarian_armor"]
+				[1, "plate/legend_thick_furs_armor"],
+				[1, "plate/legend_animal_hide_armor"],
+				[1, "plate/legend_hide_and_bone_armor"],
+				[1, "plate/legend_reinforced_animal_hide_armor"],
+				[1, "plate/legend_scrap_metal_armor"],
+				[0, "plate/legend_rugged_scale_armor"],
+				[0, "plate/legend_heavy_iron_armor"],
+				[0, "plate/legend_thick_plated_barbarian_armor"]
 			]
 			local plate = this.Const.World.Common.pickLegendArmor(plates)
 			if (plate != null)

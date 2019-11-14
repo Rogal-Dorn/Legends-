@@ -25,8 +25,7 @@ this.legend_armor_leather_jacket <- this.inherit("scripts/items/legend_armor/leg
 		this.m.SpriteCorpseBack = "bust_legend_leather_jacket_" + variant + "_dead";
 		this.m.Icon = "legend_armor/plate/legend_leather_jacket_" + variant + ".png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_jacket.png";
-		//this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_jacket_" + variant + ".png";
+		this.m.OverlayIcon = "legend_armor/plate/icon_legend_leather_jacket_" + variant + ".png";
 		this.m.OverlayIconLarge = "legend_armor/plate/inventory_legend_leather_jacket_"  + variant + ".png";
 	}
 });
