@@ -142,9 +142,10 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		this.character_background.onAdded();
 
+		local actor = this.getContainer().getActor();
+
 		if (this.Math.rand(0, 3) == 3)
 		{
-			local actor = this.getContainer().getActor();
 			actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
 		}
 

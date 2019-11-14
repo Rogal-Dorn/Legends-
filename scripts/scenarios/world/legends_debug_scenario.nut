@@ -11,6 +11,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
+		return false;
 		return this.Const.DLC.Wildmen;
 	}
 
