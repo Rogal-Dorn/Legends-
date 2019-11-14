@@ -211,18 +211,15 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 	function onAdded()
 	{
 		this.character_background.onAdded();
+		local actor = this.getContainer().getActor();
 
-		if (this.Math.rand(0, 1) == 1)
+		if(this.m.IsFemaleBackground == true)
 		{
-			local actor = this.getContainer().getActor();
-			if(this.m.IsFemaleBackground == true)
-			{
-				actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.LadyTitles.len() - 1)]);
-			}
-			else
-			{
-				actor.setTitle(this.Const.Strings.HedgeKnightTitles[this.Math.rand(0, this.Const.Strings.HedgeKnightTitles.len() - 1)]);
-			}
+			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 		}
 	}
 

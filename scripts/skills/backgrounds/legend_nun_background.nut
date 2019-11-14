@@ -145,11 +145,11 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 
 		if (r <= 2)
 		{
-				items.equip(this.new("scripts/items/armor/legend_nun_robe_dark"));
+			items.equip(this.new("scripts/items/armor/legend_nun_robe_dark"));
 		}
 		if (r == 3)
 		{
-				items.equip(this.new("scripts/items/armor/legend_nun_robe_light"));
+			items.equip(this.new("scripts/items/armor/legend_nun_robe_light"));
 		}
 
 	}

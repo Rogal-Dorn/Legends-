@@ -47,6 +47,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Body = "bust_naked_body_01";
+		
 		if (this.Const.LegendMod.Configs.LegendGenderEnabled())
 		{
 			local r = this.Math.rand(0, 1);
@@ -59,7 +60,6 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 				this.m.BeardChance = 0;
 				this.m.Body = "bust_naked_body_03";
 				this.m.IsFemaleBackground = true;
-
 				this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
 				this.m.BadEnding = "A supporter of your cause from the start, %name% was as loyal as she was talented. She stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that she had started her own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of her company, you learned that it had been completely annihilated in a battle between nobles.";
 			}
@@ -116,11 +116,11 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		if (this.m.IsFemaleBackground == true)
 		{
-		return "%name% is not known to be a big talker, but she has every right to be. {She\'s saved the lives of many of the company. | She once spared you from an orc\'s wicked chain. | An assassin would have killed the local noble in a pub were it not for this woman. | A misfired crossbow nearly took out your eye - hadn\'t %name%\'s shield been there to stop it. | She once pushed two men off a cliff using only her shield and two strong legs. | She learned how to fight from her father, a vanguard at the Battle of Many Names. | Sacrificing her family\'s heirloom - an old shield of wood and studded iron - she saved the local noble\'s life. | A woman of rather consistent heroism, she pulled a drunken captain from a pub fire. | Faced with a horde of goblins, she used her shield and strength to push a hole in their lines, opening the way for the rest of her company to kill them all.} With quick whirls and whips of her shield, the woman\'s deflected all manner of mortal danger. Although rather quiet, you\'ve found %name%\'s place in a shield-wall to be rather indispensable.";
+			return "%name% is not known to be a big talker, but she has every right to be. {She\'s saved the lives of many of the company. | She once spared you from an orc\'s wicked chain. | An assassin would have killed the local noble in a pub were it not for this woman. | A misfired crossbow nearly took out your eye - hadn\'t %name%\'s shield been there to stop it. | She once pushed two men off a cliff using only her shield and two strong legs. | She learned how to fight from her father, a vanguard at the Battle of Many Names. | Sacrificing her family\'s heirloom - an old shield of wood and studded iron - she saved the local noble\'s life. | A woman of rather consistent heroism, she pulled a drunken captain from a pub fire. | Faced with a horde of goblins, she used her shield and strength to push a hole in their lines, opening the way for the rest of her company to kill them all.} With quick whirls and whips of her shield, the woman\'s deflected all manner of mortal danger. Although rather quiet, you\'ve found %name%\'s place in a shield-wall to be rather indispensable.";
 		}
 		else
 		{
-		return "%name% is not known to be a big talker, but he has every right to be. {He\'s saved the lives of many of the company. | He once spared you from an orc\'s wicked chain. | An assassin would have killed the local noble in a pub were it not for this man. | A misfired crossbow nearly took out your eye - hadn\'t %name%\'s shield been there to stop it. | He once pushed two men off a cliff using only his shield and two strong legs. | He learned how to fight from his father, a vanguard at the Battle of Many Names. | Sacrificing his family\'s heirloom - an old shield of wood and studded iron - he saved the local noble\'s life. | A man of rather consistent heroism, he pulled a drunken %2h% from a pub fire. | Faced with a horde of goblins, he used his shield and strength to push a hole in their lines, opening the way for the rest of her company to kill them all.} With quick whirls and whips of his shield, the man\'s deflected all manner of mortal danger. Although rather quiet, you\'ve found %name%\'s place in a shield-wall to be rather indispensable.";
+			return "%name% is not known to be a big talker, but he has every right to be. {He\'s saved the lives of many of the company. | He once spared you from an orc\'s wicked chain. | An assassin would have killed the local noble in a pub were it not for this man. | A misfired crossbow nearly took out your eye - hadn\'t %name%\'s shield been there to stop it. | He once pushed two men off a cliff using only his shield and two strong legs. | He learned how to fight from his father, a vanguard at the Battle of Many Names. | Sacrificing his family\'s heirloom - an old shield of wood and studded iron - he saved the local noble\'s life. | A man of rather consistent heroism, he pulled a drunken %2h% from a pub fire. | Faced with a horde of goblins, he used his shield and strength to push a hole in their lines, opening the way for the rest of her company to kill them all.} With quick whirls and whips of his shield, the man\'s deflected all manner of mortal danger. Although rather quiet, you\'ve found %name%\'s place in a shield-wall to be rather indispensable.";
 		}
 
 	}
@@ -172,12 +172,20 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 	function onAdded()
 	{
 		this.character_background.onAdded();
+		local actor = this.getContainer().getActor();
 
 		if (this.Math.rand(0, 3) == 3)
 		{
-			local actor = this.getContainer().getActor();
 			actor.setTitle(this.Const.Strings.SellswordTitles[this.Math.rand(0, this.Const.Strings.SellswordTitles.len() - 1)]);
 		}
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
+		}		
 	}
 
 	function onAddEquipment()

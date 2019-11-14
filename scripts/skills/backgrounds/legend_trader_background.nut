@@ -6,11 +6,12 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.ID = "background.legend_trader";
 		this.m.Name = "Trader";
 		this.m.Icon = "ui/backgrounds/background_19.png";
+		//descriptions gender neutral - no need variants
 		this.m.BackgroundDescription = "Traders are not used to hard physical labor or warfare, but they do excel at haggling for good prices.";
 		this.m.GoodEnding = "A lover of the sale, %name% the trader couldn\'t stay fighting for long. They eventually left the %companyname% to go out and start their own business. Recently, you got word that they were selling trinkets with the company\'s sigil on them. You specifically told them to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell them to stop, they slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' They sell those trinkets to this day.";
 		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard they got the tar beaten out of them trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
 		this.m.HiringCost = 60000;
-		this.m.DailyCost = 40;
+		this.m.DailyCost = 25;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.fear_undead",
@@ -194,6 +195,15 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
 		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
+
+		if (this.m.IsFemaleBackground == true)
+		{
+			actor.setName(this.Const.Strings.CharacterNamesFemale[this.Math.rand(0, this.Const.Strings.CharacterNamesFemale.len() - 1)]);
+		}
+		else
+		{
+			actor.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
+		}
 	}
 
 	function onAddEquipment()
