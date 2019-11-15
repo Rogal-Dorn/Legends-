@@ -219,7 +219,7 @@ this.item <- {
 
 	function setToBeRepaired( _r, _idx )
 	{
-		if (_r && this.getCondition() == this.getConditionMax())
+		if (_r && this.getRepair() == this.getRepairMax())
 		{
 			this.m.IsToBeRepairedQueue = 0;
 			return false;
@@ -232,7 +232,7 @@ this.item <- {
 
 	function setToBeSalvaged( _r, _idx )
 	{
-		if (_r && this.getCondition() <= 0)
+		if (_r && this.getRepair() <= 0)
 		{
 			this.m.IsToBeSalvagedQueue = 0;
 			return false;

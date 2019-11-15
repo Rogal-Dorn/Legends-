@@ -2145,20 +2145,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				break;
 			}
 			count = ++count
-			//Check for free talents:
-			local noFree = true;
-			for (local i = 0; i < this.m.Talents.len() - 1; i = ++i)
-			{
-				if (this.m.Talents[i] == 0 && this.getBackground().getExcludedTalents().find(i) == null)
-				{
-					noFree = false;
-					break;
-				}
-			}
-
-			if (noFree) {
-				break;
-			}
 
 			local totalWeight = 0;
 			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
