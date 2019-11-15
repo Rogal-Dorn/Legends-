@@ -177,7 +177,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue;
             }
 
-            this.m.PointsNeeded += r.Item.getConditionMax() - r.Item.getCondition()
+            this.m.PointsNeeded += r.Item.getRepairMax() - r.Item.getRepair()
         }
     }
 
@@ -257,7 +257,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue;
             }
 
-            points += r.Item.getConditionMax() - r.Item.getCondition()
+            points += r.Item.getRepairMax() - r.Item.getRepair()
         }
         local modifiers = this.getModifiers();
         return this.Math.ceil(points * modifiers.Consumption);
@@ -278,7 +278,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue;
             }
 
-            points += r.Item.getConditionMax() - r.Item.getCondition()
+            points += r.Item.getRepairMax() - r.Item.getRepair()
         }
         local modifiers = this.getModifiers();
         return this.Math.ceil(points / modifiers.Craft);
@@ -416,7 +416,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                     continue
                 }
 
-                if (item.getCondition() >= item.getConditionMax())
+                if (item.getRepair() >= item.getRepairMax())
                 {
                     continue;
                 }
@@ -445,7 +445,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue;
             }
 
-            if (item.getCondition() >= item.getConditionMax())
+            if (item.getRepair() >= item.getRepairMax())
             {
                 continue;
             }
@@ -487,7 +487,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                     continue
                 }
 
-                if (item.getCondition() >= item.getConditionMax())
+                if (item.getRepair() >= item.getRepairMax())
                 {
                     continue;
                 }

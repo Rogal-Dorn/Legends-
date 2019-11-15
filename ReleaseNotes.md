@@ -1715,6 +1715,9 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 - Updated more texts and names for gender equality.
 - Fixed tatoo warning for female cultists.
 
-13.0.0.8 Armor Layer Test Build Patch 3
+  13.0.0.8 Armor Layer Test Build Patch 3
 
+- Fixes the occaisional crash when entering towns.
+- Fixes repairing of armor with attached layers.
+- Fixes crash with ancient dead fights.
 - Cloaks should now have a higher chance of showing up in towns with wool spinner locations.
