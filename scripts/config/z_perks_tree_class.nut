@@ -128,8 +128,8 @@ gt.Const.Perks.KnifeClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage],
 		[],
 		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendHidden],
+		[gt.Const.Perks.PerkDefs.LegendUntouchable]
 	]
 };
 
@@ -143,9 +143,9 @@ gt.Const.Perks.ButcherClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistButcherDamage],
 		[],
-		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendPrepareBleed],
+		[gt.Const.Perks.PerkDefs.LegendPrepareGraze],
+		[gt.Const.Perks.PerkDefs.LegendSlaughter]
 	]
 };
 
@@ -159,7 +159,7 @@ gt.Const.Perks.HammerClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistHammerDamage],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.Bruiser],
 		[],
 		[]
 	]
@@ -191,7 +191,7 @@ gt.Const.Perks.PickaxeClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistPickaxeDamage],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.Bruiser],
 		[],
 		[]
 	]
@@ -271,9 +271,9 @@ gt.Const.Perks.SickleClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistSickleDamage],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendGatherer],
 		[],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendPotionBrewer]
 	]
 };
 
@@ -284,11 +284,11 @@ gt.Const.Perks.NinetailsClassTree <- {
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecCultHood],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage],
 		[],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendPrepareGraze],
+		[gt.Const.Perks.PerkDefs.LegendSpecCultArmor],
 		[]
 	]
 };

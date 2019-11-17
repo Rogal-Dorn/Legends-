@@ -100,6 +100,17 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		if (_user.getTile().IsVisibleForPlayer)
+			{
+				if (this.Const.Tactical.DarkflightStartParticles.len() != 0)
+				{
+					for( local i = 0; i < this.Const.Tactical.SmokeParticles.len(); i = ++i )
+					{
+						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.SmokeParticles[i].Brushes, _user.getTile(), this.Const.Tactical.smokeParticles[i].Delay, this.Const.Tactical.smokeParticles[i].Quantity, this.Const.Tactical.SmokeParticles[i].LifeTimeQuantity, this.Const.Tactical.SmokeParticles[i].SpawnRate, this.Const.Tactical.SmokeParticles[i].Stages);
+					}
+				}
+			}
+
 		this.m.Container.add(this.new("scripts/skills/effects/legend_hidden_effect"));
 		_user.setHidden(true);
 

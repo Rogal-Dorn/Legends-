@@ -2345,7 +2345,88 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/net_perk.png",
 		IconDisabled = "ui/perks/net_perk_bw.png",
 		Const = "LegendEscapeArtist"
-	}
+	},
+	{
+		ID = "perk.legend_gatherer",
+		Script = "scripts/skills/perks/perk_legend_gatherer",
+		Name = this.Const.Strings.PerkName.LegendGatherer,
+		Tooltip = this.Const.Strings.PerkDescription.LegendGatherer,
+		Icon = "ui/perks/herbs_circle.png",
+		IconDisabled = "ui/perks/herbs_circle_bw.png",
+		Const = "LegendGatherer"
+	},
+	{
+		ID = "perk.legend_potion_brewer",
+		Script = "scripts/skills/perks/perk_legend_potion_brewer",
+		Name = this.Const.Strings.PerkName.LegendPotionBrewer,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPotionBrewer,
+		Icon = "ui/perks/potion_circle.png",
+		IconDisabled = "ui/perks/potion_circle_bw.png",
+		Const = "LegendPotionBrewer"
+	},
+	{
+		ID = "perk.legend_specialist_cult_hood",
+		Script = "scripts/skills/perks/perk_legend_specialist_cult_hood",
+		Name = this.Const.Strings.PerkName.LegendSpecCultHood,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecCultHood,
+		Icon = "ui/perks/dedication_circle.png",
+		IconDisabled = "ui/perks/dedication_circle_bw.png",
+		Const = "LegendSpecCultHood"
+	},
+	{
+		ID = "perk.legend_specialist_cult_armor",
+		Script = "scripts/skills/perks/perk_legend_specialist_cult_armor",
+		Name = this.Const.Strings.PerkName.LegendSpecCultArmor,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSpecCultArmor,
+		Icon = "ui/perks/penance_circle.png",
+		IconDisabled = "ui/perks/penance_circle_bw.png",
+		Const = "LegendSpecCultArmor"
+	},
+	{
+		ID = "perk.legend_prepare_bleed",
+		Script = "scripts/skills/perks/perk_prepare_bleed",
+		Name = this.Const.Strings.PerkName.LegendPrepareBleed,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrepareBleed,
+		Icon = "ui/perks/bleed_circle.png",
+		IconDisabled = "ui/perks/bleed_circle_bw.png",
+		Const = "LegendPrepareBleed"
+	},
+	{
+		ID = "perk.legend_prepare_graze",
+		Script = "scripts/skills/perks/perk_prepare_graze",
+		Name = this.Const.Strings.PerkName.LegendPrepareGraze,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrepareGraze,
+		Icon = "ui/perks/graze_circle.png",
+		IconDisabled = "ui/perks/graze_circle_bw.png",
+		Const = "LegendPrepareGraze"
+	},
+	{
+		ID = "perk.legend_slaughter",
+		Script = "scripts/skills/perks/perk_slaughter",
+		Name = this.Const.Strings.PerkName.LegendSlaughter,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSlaughter,
+		Icon = "ui/perks/slaughter_circle.png",
+		IconDisabled = "ui/perks/slaughter_circle_bw.png",
+		Const = "LegendSlaughter"
+	},	
+	{
+		ID = "perk.legend_untouchable",
+		Script = "scripts/skills/perks/perk_untouchable",
+		Name = this.Const.Strings.PerkName.LegendUntouchable,
+		Tooltip = this.Const.Strings.PerkDescription.LegendUntouchable,
+		Icon = "ui/perks/untouchable_circle.png",
+		IconDisabled = "ui/perks/untouchable_circle_bw.png",
+		Const = "LegendUntouchable"
+	},	
+	{
+		ID = "perk.legend_assassinate",
+		Script = "scripts/skills/perks/perk_assassinate",
+		Name = this.Const.Strings.PerkName.LegendAssassinate,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAssassinate,
+		Icon = "ui/perks/assassinate_circle.png",
+		IconDisabled = "ui/perks/assassinate_circle_bw.png",
+		Const = "LegendAssassinate"
+	},
 ];
 gt.Const.Perks.PerkDefs <- {};
 

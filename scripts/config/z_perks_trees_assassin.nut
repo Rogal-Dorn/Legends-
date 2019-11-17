@@ -11,10 +11,11 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.CripplingStrikes,
 		gt.Const.Perks.PerkDefs.Colossus,
 		gt.Const.Perks.PerkDefs.BagsAndBelts,
-		gt.Const.Perks.PerkDefs.Student,
 		gt.Const.Perks.PerkDefs.NineLives,
+		gt.Const.Perks.PerkDefs.LegendBackToBasics,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
+		gt.Const.Perks.PerkDefs.Alert,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill
 	],
@@ -27,6 +28,8 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.SteelBrow,
 		gt.Const.Perks.PerkDefs.QuickHands,
 		gt.Const.Perks.PerkDefs.Gifted,
+		gt.Const.Perks.PerkDefs.LegendKick,
+		gt.Const.Perks.PerkDefs.LegendPrepareBleed,
 		gt.Const.Perks.PerkDefs.Sprint
 	],
 	[
@@ -36,6 +39,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Relentless,
 		gt.Const.Perks.PerkDefs.Rotation,
 		gt.Const.Perks.PerkDefs.Taunt,
+		gt.Const.Perks.PerkDefs.LegendGrapple,
 		gt.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage
 	],
 	[
@@ -45,6 +49,9 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.SpecCrossbow,
 		gt.Const.Perks.PerkDefs.SpecBow,
 		gt.Const.Perks.PerkDefs.SpecThrowing,
+		gt.Const.Perks.PerkDefs.LegendSpecFists,
+		gt.Const.Perks.PerkDefs.LegendEscapeArtist,
+		gt.Const.Perks.PerkDefs.LegendPoisonImmunity,
 		gt.Const.Perks.PerkDefs.LegendSpecPoison
 
 	],
@@ -53,6 +60,9 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LoneWolf,
 		gt.Const.Perks.PerkDefs.Overwhelm,
 		gt.Const.Perks.PerkDefs.Footwork,
+		gt.Const.Perks.PerkDefs.PushTheAdvantage,
+		gt.Const.Perks.PerkDefs.LegendSlaughter,
+		gt.Const.Perks.PerkDefs.LegendSecondWind,
 		gt.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 
 	],
@@ -60,6 +70,8 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.HeadHunter,
 		gt.Const.Perks.PerkDefs.Berserk,
 		gt.Const.Perks.PerkDefs.Nimble,
+		gt.Const.Perks.PerkDefs.LegendClarity,
+		gt.Const.Perks.PerkDefs.LegendUntouchable,
 		gt.Const.Perks.PerkDefs.LegendEvasion,
 		gt.Const.Perks.PerkDefs.BattleForged
 
@@ -68,7 +80,9 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.Fearsome,
 		gt.Const.Perks.PerkDefs.Duelist,
 		gt.Const.Perks.PerkDefs.KillingFrenzy,
-		gt.Const.Perks.PerkDefs.Indomitable
+		gt.Const.Perks.PerkDefs.LegendFreedomOfMovement,
+		gt.Const.Perks.PerkDefs.LegendAssassinate
+		
 		
 	],
 	[],
