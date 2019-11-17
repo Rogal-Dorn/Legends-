@@ -84,9 +84,13 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				b.MeleeSkill += bonus;
 				b.RangedSkill += bonus;
 				b.MeleeDefense += bonus / 2;
+				b.RangedDefense += bonus / 2;
 				b.Hitpoints += bonus * 2;
-				b.XP += bonus * 2;
+				b.Initiative += bonus / 2;
+				b.Stamina += bonus;
+				b.XP += bonus * 4;
 				b.Bravery += bonus;
+				b.FatigueRecoveryRate += bonus / 4;
 			}
 	}
 

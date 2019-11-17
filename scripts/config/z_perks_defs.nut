@@ -2427,6 +2427,24 @@ gt.Const.Perks.PerkDefObjects <- [
 		IconDisabled = "ui/perks/assassinate_circle_bw.png",
 		Const = "LegendAssassinate"
 	},
+	{
+		ID = "perk.legend_meal_preperation",
+		Script = "scripts/skills/perks/perk_meal_preperation",
+		Name = this.Const.Strings.PerkName.LegendMealPreperation,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMealPreperation,
+		Icon = "ui/perks/meal_prep_circle.png",
+		IconDisabled = "ui/perks/meal_prep_bw.png",
+		Const = "LegendMealPreperation"
+	},	
+	{
+		ID = "perk.legend_alcohol_brewing",
+		Script = "scripts/skills/perks/perk_alcohol_brewing",
+		Name = this.Const.Strings.PerkName.LegendAlcoholBrewing,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAlcholBrewing,
+		Icon = "ui/perks/alcohol_circle.png",
+		IconDisabled = "ui/perks/alcohol_circle_bw.png",
+		Const = "LegendAlcoholBrewing"
+	}
 ];
 gt.Const.Perks.PerkDefs <- {};
 

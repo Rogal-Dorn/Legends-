@@ -76,10 +76,10 @@ gt.Const.Perks.ChefClassTree <- {
 	],
 	Tree = [
 		[],
+		[gt.Const.Perks.PerkDefs.LegendMealPreperation],
 		[],
 		[],
-		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendAlcoholBrewing],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendFieldTreats]
 	]
