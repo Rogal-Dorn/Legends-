@@ -1693,3 +1693,40 @@ https://drive.google.com/open?id=1EewK6n_eTIOibjsigK91Gbq7GEm83J_V
 - Reduced the Helmet Perk tree group into Light(+Lookout) and Heavy(+SteelBrow) trees for dynamic trees system.
 - Tweaked the guarenteed perk groups for HedgeKnights(+Mace, +Hammer, +Sturdy, +Indestructible), Swordmasters(-XBow, -Heavy, +Light, +Cleaver, +Throwing, +Dagger), Barbarian (+Fit, +Mace, +Cleaver), BeastHunter (+Calm, +Medium, -Heavy), Hunters (+Fit), ShieldMaidens(+Large, +Indestructible), Sellswords (+Fit), Witchhunters (+Calm)
 - Attribute stars are no longer purely random. It is still RNG, but it is now weighted towards the skills/perks/attributes that background has rolled - so if the background has a proportionally higher MD than other attributes, it's more likely MD will have a star.
+
+Perks:
+
+	cultists:	
+	Flesh Mortification - damage increased by 5-10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
+	Scourging - melee skill increased by 10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
+	Dedication - New perk - melee and ranged defense increased by 10% of your resolve while wearing a cultist hood
+	Penance - New perk - Increase your resolve by 10% of your missing health, while wearing cultist robes, sackcloth or leather wraps
+	Evisceration - New perk - prepare your next attack to inflict a bleed that does 2 damage per round over five rounds. 
+	
+	Butcher: 
+	Also gains evisceration
+	Exsanguination - New perk - prepare your next attack to inflict a bleed that does 5 damage per round over two rounds 
+	Slaughter - New Perk - Gain 20% damage increase against bleeding enemies. 
+	
+	Apocathery: 
+	Camp gathering no longer grants happy powder and miracle drugs. When most backgrounds gather they just gain mysterious herbs, small medicine and roots and berries.
+	When apocatheries or vala gather they can find Medicine, Poison, Antidote, Berserker Mushrooms and a new Apocathery Mushroom that is the inverse of berserker mushrooms
+	The chance to find these rare items is increased by the combined level of all apocatheries and valas gathering.
+	Gatherer - New perk - Your level is counted again when determining gather rates for rare items. When taken on non-apocatheries, they count as apocatheries for the drop rate.
+	Potion Brewer - New perk - Allows potions to be discovered while gathering. If you have at least 10 levels of apocathery, and a brewer, you can find lionheart, ironwill, recovery and cat potions while gathering.
+	If you have over 60 levels of apocatheries, and over 20 levels of brewers, you have a chance of finding potions of knowledge and oblivion.
+	The gather time required to find one of these items is 1-100 hours of camping, minus your combined total apocathery levels.
+	
+	Assassin:
+	Hidden - Now has visual effects to show when its working 
+	Untouchable - New Perk - Gain 40 melee and ranged defense while hidden 
+	Assassinate - Damage doubled while hidden
+	Gains - Back to basics, Alert, Kick, Prepare to bleed, Grapple, Fist specialisation, Slaughter, Second Wind, Clarity, Freedom of movement
+	Loses - student and indomitable
+	
+	others
+	Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
+	Bloodbath - now a tier 6 skill in cleaver tree 
+
+	PushTheAdvantage - New perk in the staff tree - When attacking a sleeping or stunned enemy, gain 20 melee and ranged skill, along with a +20% chance to hit the head. 
+		
