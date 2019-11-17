@@ -15,7 +15,7 @@ local Tree = [
 		gt.Const.Perks.PerkDefs.LegendBackToBasics,
 		gt.Const.Perks.PerkDefs.Pathfinder,
 		gt.Const.Perks.PerkDefs.Adrenalin,
-		gt.Const.Perks.PerkDefs.Alert,
+		gt.Const.Perks.PerkDefs.LegendAlert,
 		gt.Const.Perks.PerkDefs.Recover,
 		gt.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill
 	],

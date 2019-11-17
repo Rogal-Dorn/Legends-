@@ -2440,7 +2440,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		ID = "perk.legend_alcohol_brewing",
 		Script = "scripts/skills/perks/perk_alcohol_brewing",
 		Name = this.Const.Strings.PerkName.LegendAlcoholBrewing,
-		Tooltip = this.Const.Strings.PerkDescription.LegendAlcholBrewing,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAlcoholBrewing,
 		Icon = "ui/perks/alcohol_circle.png",
 		IconDisabled = "ui/perks/alcohol_circle_bw.png",
 		Const = "LegendAlcoholBrewing"

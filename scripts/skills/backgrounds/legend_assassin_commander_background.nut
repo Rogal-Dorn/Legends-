@@ -103,9 +103,10 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Adrenalin,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.FastAdaption,
+				this.Const.Perks.PerkDefs.BagsAndBelts,
+				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
-				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Colossus,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
@@ -115,11 +116,11 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.CoupDeGrace,
+				this.Const.Perks.PerkDefs.Bullseye,
+				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendKick,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendOnslaught,
-				this.Const.Perks.PerkDefs.Gifted,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit
 			],
@@ -127,24 +128,26 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Feint,
+				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Debilitate,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
+				this.Const.Perks.PerkDefs.LegendPrepareBleed,
 				this.Const.Perks.PerkDefs.LegendEscapeArtist,
-				this.Const.Perks.PerkDefs.Sprint,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian
+				this.Const.Perks.PerkDefs.Sprint
 
 			],
 			[
-				this.Const.Perks.PerkDefs.SpecDagger
+				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecPolearm,
 				this.Const.Perks.PerkDefs.SpecBow,
-				this.Const.Perks.PerkDefs.SpecThrowing
+				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.LegendSpecFists,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
+				this.Const.Perks.PerkDefs.LegendHidden
 				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
@@ -153,34 +156,33 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.Vengeance,
-				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.PushTheAdvantage,
+				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.Nimble,
+				this.Const.Perks.PerkDefs.Underdog,
+				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendClarity,
-				this.Const.Perks.PerkDefs.Rebound,
-				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.HeadHunter,
+				this.Const.Perks.PerkDefs.LegendEvasion,
+				this.Const.Perks.PerkDefs.LegendSlaughter,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
-				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendBlendIn,
+				this.Const.Perks.PerkDefs.LegendSecondWind
 				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.LegendEvasion,
-				this.Const.Perks.PerkDefs.LegendHidden,
-				this.Const.Perks.PerkDefs.LegendBalance,
+				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster,
+				this.Const.Perks.PerkDefs.LegendUntouchable,
+				this.Const.Perks.PerkDefs.LegendAssassinate,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster
 				this.Const.Perks.PerkDefs.LegendRoster6
 			]
 		];
