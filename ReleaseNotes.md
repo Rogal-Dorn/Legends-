@@ -1703,7 +1703,7 @@ Perks:
 	Penance - New perk - Increase your resolve by 10% of your missing health, while wearing cultist robes, sackcloth or leather wraps
 	Evisceration - New perk - prepare your next attack to inflict a bleed that does 2 damage per round over five rounds. 
 	
-	Butcher: 
+	Butchers and fishmongers: 
 	Also gains evisceration
 	Exsanguination - New perk - prepare your next attack to inflict a bleed that does 5 damage per round over two rounds 
 	Slaughter - New Perk - Gain 20% damage increase against bleeding enemies. 
@@ -1721,8 +1721,14 @@ Perks:
 	Hidden - Now has visual effects to show when its working 
 	Untouchable - New Perk - Gain 40 melee and ranged defense while hidden 
 	Assassinate - Damage doubled while hidden
-	Gains - Back to basics, Alert, Kick, Prepare to bleed, Grapple, Fist specialisation, Slaughter, Second Wind, Clarity, Freedom of movement
-	Loses - student and indomitable
+	Gains: BagsAndBelts, Pathfinder, Bullseye, Holdout, Backstabber, Prepare to bleed, push the advantage, slaughter, underdog
+	Loses: Student, Onslaught, Gifted, favoured enemy barbarian, battleheart, rebound, mind over body, battleflow 
+	
+	Bakers, Butchers, Fishmongers, Housemaid and Servants
+	Hunting now gives fresh meat and fresh fruit instead of strange meat. 
+	The rate of secondary rewards when hunting is now tied to the levels of all chef classes currently hunting. 
+	Meal Preperation - New Skill - Unlocks new secondary food rewards when hunting, including new items for porridge, pudding and pie. These will also appear in towns with wheat fields. 
+	Alcohol Brewing - New Skill - Unlocks new secondary alcohol rewards when hunting, beer, wine and mead. 
 	
 	others
 	Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
