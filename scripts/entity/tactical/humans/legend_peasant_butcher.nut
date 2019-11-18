@@ -1,4 +1,4 @@
-this.peasant <- this.inherit("scripts/entity/tactical/human", {
+this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 	m = {},
 	function create()
 	{

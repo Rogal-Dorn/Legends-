@@ -74,10 +74,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Weapon = 8,
 			Defense = 2,
 			Traits = 8,
-			Enemy = 1,
+			Enemy = 2,
 			EnemyChance = 0.33,
-			Class = 0,
-			ClassChance = 0.33
+			Class = 1,
+			ClassChance = 0.40
 		},
 		PerkTreeDynamic = {
 			Weapon = [

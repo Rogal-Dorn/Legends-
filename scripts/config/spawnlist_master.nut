@@ -548,6 +548,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/peasant"
 	},
+	PeasantButcher = {
+		ID = this.Const.EntityType.Peasant,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_butcher"
+	},	
 	PeasantArmed = {
 		ID = this.Const.EntityType.Peasant,
 		Variant = 0,

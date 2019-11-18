@@ -1737,14 +1737,11 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 
 
 13.0.0.10 New Perks
-
-- After day 50 Bandit leader stats will now scale with each day - Bandit leaders will remain dangerous 
-
 - New higher tier Bandits:
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
  * After (Easy 120, Noraml 90, Hard 60, Legendary 30) days, Bandit Leaders and Bandit Warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days - until your company perishes!
-
+ - Added in a butcher variant for peasant armies.
 Perks:
 
 - Cultists:	
@@ -1763,7 +1760,7 @@ Perks:
 * Camp gathering no longer grants happy powder and miracle drugs. When most backgrounds gather they just gain mysterious herbs, small medicine and roots and berries.
 * When apothecaries or vala gather they can find Medicine, Poison, Antidote, Berserker Mushrooms and a new Apothecary Mushroom that is the inverse of berserker mushrooms
 * The chance to find these rare items is increased by the combined level of all apothecaries and valas gathering.
-* Gatherer - New perk - Your level is counted again when determining gather rates for rare items. When taken on non-apocatheries, they count as apocatheries for the drop rate.
+* Gatherer - New perk - Your level is counted again when determining gather rates for rare items. When taken on non-apothecaries, they count as apothecaries for the drop rate.
 * Potion Brewer - New perk - Allows potions to be discovered while gathering. If you have at least 10 levels of Apothecary, and a brewer, you can find lionheart, ironwill, recovery and cat potions while gathering.
 * If you have over 60 levels of apothecaries, and over 20 levels of brewers, you have a chance of finding potions of knowledge and oblivion.
 * The gather time required to find one of these items is 1-100 hours of camping, minus your combined total Apothecary levels.

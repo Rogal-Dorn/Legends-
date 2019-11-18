@@ -66,10 +66,19 @@ gt.Const.World.Spawn.PeasantsArmed <-
 	MaxR = 160,
 	Troops = [
 		{
-			Weight = 100,
+			Weight = 95,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.PeasantArmed,
+					Cost = 10
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantButcher,
 					Cost = 10
 				}
 			]
