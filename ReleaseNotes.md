@@ -1729,3 +1729,5 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 - Increased drop rate of armor (enemy armor is dropped already in layer format - you must manually equip and remove the layers)
 - Fix helmets with zero sell price.
 - Tabards should now have a higher chance of showing up in towns with wool spinner locations and armorsmiths.
+- Fixes armor layer spawning for warlock spawned zombies and skeletons.
+- Fixed a potential crash when playing AI female sounds.
