@@ -1732,3 +1732,5 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 - Fixes armor layer spawning for warlock spawned zombies and skeletons.
 - Fixed a potential crash when playing AI female sounds.
 - FIXED female sounds resetting on reload! (only applies to newly created females after this patch)
+
+https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
