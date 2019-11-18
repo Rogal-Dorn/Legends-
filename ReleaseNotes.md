@@ -1739,6 +1739,12 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 13.0.0.10 New Perks
 
 - After day 50 Bandit leader stats will now scale with each day - Bandit leaders will remain dangerous 
+
+- New higher tier Bandits:
+ - Veterans (upgrades to Raiders)
+ - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
+ * After (Easy 120, Noraml 90, Hard 60, Legendary 30) days, Bandit Leaders and Bandit Warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days - until your company perishes!
+
 Perks:
 
 - Cultists:	
