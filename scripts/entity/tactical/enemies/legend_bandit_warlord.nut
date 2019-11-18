@@ -70,24 +70,47 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		}
+
+		if (!this.Tactical.State.isScenarioMode())
+		{
+			switch (this.World.Assets.getCombatDifficulty())
+			{
+				case this.Const.Difficulty.Easy:
+					dateToSkip = 120;
+					break;
+				case this.Const.Difficulty.Normal:
+					dateToSkip = 90
+					break;
+				case this.Const.Difficulty.Hard:
+					dateToSkip = 60
+					break;
+				case this.Const.Difficulty.Legendary:
+					dateToSkip = 30
+					break;
 			}
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50)
+			if (this.World.getTime().Days >= dateToSkip)
 			{
-			local bonus = this.World.getTime().Days / 10;
+				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 15.0));
 				b.MeleeSkill += bonus;
 				b.RangedSkill += bonus;
-				b.MeleeDefense += bonus / 2;
-				b.Hitpoints += bonus * 2;
-				b.XP += bonus * 2;
+				b.MeleeDefense += this.Math.floor(bonus / 2);
+				b.RangedDefense += this.Math.floor(bonus / 2);
+				b.Hitpoints += this.Math.floor(bonus * 2);
+				b.Initiative += this.Math.floor(bonus / 2);
+				b.Stamina += bonus;
+				b.XP += this.Math.floor(bonus * 4);
 				b.Bravery += bonus;
+				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
 			}
+		}
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )
@@ -101,6 +124,22 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
+
+		local shields = clone this.Const.Items.NamedShields;
+		shields.extend([
+			"shields/named/named_bandit_kite_shield",
+			"shields/named/named_bandit_heater_shield"
+		]);
+		
+		if (this.Math.rand(1, 100) > 50) 
+		{
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedWeapons[this.Math.rand(0, this.Const.Items.NamedWeapons.len() - 1)]));
+		};
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
+		}
+
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
 		{
 			local weapons = [
@@ -138,13 +177,21 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
 		}
 
-		if (this.Math.rand(1, 100) <= 35)
+
+		if (this.Math.rand(1, 100) > 50)
 		{
-			local weapons = [
-				"weapons/throwing_axe",
-				"weapons/javelin"
-			];
-			this.m.Items.addToBag(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
+			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
+			{
+				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.LegendNamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
+			}
+			else
+			{
+				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
+			}
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedHelmets[this.Math.rand(0, this.Const.Items.NamedHelmets.len() - 1)]));
 		}
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
@@ -184,8 +231,8 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 						[0, "chain/legend_armor_basic_mail"],
 						[1, "chain/legend_armor_hauberk"],
 						[1, "chain/legend_armor_hauberk_full"],
-						[1, "chain/legend_armor_hauberk_sleevless"],
-						[0, "chain/legend_armor_reinforced_mail"],
+						[0, "chain/legend_armor_hauberk_sleevless"],
+						[1, "chain/legend_armor_reinforced_mail"],
 						[0, "chain/legend_armor_reinforced_mail_shirt"],
 						[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
 						[0, "chain/legend_armor_reinforced_worn_mail"],
@@ -200,7 +247,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 					}
 
 					local plates = [
-						[5, ""],
+						[0, ""],
 						[0, "plate/legend_armor_leather_brigandine"],
 						[0, "plate/legend_armor_leather_brigandine_hardened"],
 						[0, "plate/legend_armor_leather_brigandine_hardened_full"],
@@ -228,7 +275,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 						[1, "plate/legend_armor_plate_full"],
 						[1, "plate/legend_armor_scale"],
 						[1, "plate/legend_armor_scale_coat"],
-						[1, "plate/legend_armor_scale_coat_rotten"],
+						[0, "plate/legend_armor_scale_coat_rotten"],
 						[1, "plate/legend_armor_scale_shirt"]
 					]
 					local plate = this.Const.World.Common.pickLegendArmor(plates)
@@ -278,6 +325,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			];
 			this.m.Items.equip(this.new("scripts/items/" + helmet[this.Math.rand(0, helmet.len() - 1)]));
 		}
+
 	}
 
 	function makeMiniboss()
@@ -288,37 +336,6 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
-		local shields = clone this.Const.Items.NamedShields;
-		shields.extend([
-			"shields/named/named_bandit_kite_shield",
-			"shields/named/named_bandit_heater_shield"
-		]);
-		local r = this.Math.rand(1, 4);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedWeapons[this.Math.rand(0, this.Const.Items.NamedWeapons.len() - 1)]));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/" + shields[this.Math.rand(0, shields.len() - 1)]));
-		}
-		else if (r == 3)
-		{
-			if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
-			{
-				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.LegendNamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedArmors[this.Math.rand(0, this.Const.Items.NamedArmors.len() - 1)]));
-			}
-
-		}
-		else
-		{
-			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedHelmets[this.Math.rand(0, this.Const.Items.NamedHelmets.len() - 1)]));
-		}
 
 		return true;
 	}

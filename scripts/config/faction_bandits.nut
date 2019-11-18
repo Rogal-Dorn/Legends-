@@ -181,6 +181,7 @@ gt.Const.Tactical.Actor.BanditLeader <- {
 	],
 	FatigueRecoveryRate = 25
 };
+
 gt.Const.Tactical.Actor.BanditVeteran <- {
 	XP = 400,
 	ActionPoints = 9,

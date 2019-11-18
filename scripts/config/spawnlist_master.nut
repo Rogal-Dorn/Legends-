@@ -788,6 +788,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/bandit_raider_wolf"
 	},
+	BanditVeteran = {
+		ID = this.Const.EntityType.BanditVeteran,
+		Variant = 0,
+		Strength = 30,
+		Cost = 35,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_bandit_veteran"
+	},	
 	BanditLeader = {
 		ID = this.Const.EntityType.BanditLeader,
 		Variant = 1,
@@ -798,6 +806,16 @@ gt.Const.World.Spawn.Troops <- {
 		NameList = this.Const.Strings.BanditLeaderNames,
 		TitleList = null
 	},
+	BanditWarlord = {
+		ID = this.Const.EntityType.BanditWarlord,
+		Variant = 1,
+		Strength = 60,
+		Cost = 50,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_bandit_warlord",
+		NameList = this.Const.Strings.BanditLeaderNames,
+		TitleList = null
+	},	
 	Warhound = {
 		ID = this.Const.EntityType.Warhound,
 		Variant = 0,
@@ -990,6 +1008,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_vampire_lord"
 	}
+
 };
 
 
