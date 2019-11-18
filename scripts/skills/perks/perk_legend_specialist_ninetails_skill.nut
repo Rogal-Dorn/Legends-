@@ -23,11 +23,11 @@ this.perk_legend_specialist_ninetails_skill <- this.inherit("scripts/skills/skil
 		{
 			if(item.getID() == "weapon.legend_cat_o_nine_tails")
 			{
-			_properties.MeleeSkill += resolve / 10;
+				_properties.MeleeSkill += this.Math.floor(resolve * 0.1);
 			}
 			if(item.getID() == "weapon.battle_whip" || item.getID() == "weapon.thorned_whip" || item.getID() == "weapon.named_battle_whip")
 			{
-			_properties.MeleeSkill += resolve / 20;
+				_properties.MeleeSkill += this.Math.floor(resolve * 0.2);
 			}
 		}
 	}
