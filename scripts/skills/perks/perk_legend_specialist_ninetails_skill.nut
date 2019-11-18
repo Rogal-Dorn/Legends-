@@ -17,15 +17,17 @@ this.perk_legend_specialist_ninetails_skill <- this.inherit("scripts/skills/skil
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local resolve = actor.getBaseProperties().Bravery;
+
 		if (item != null)
 		{
 			if(item.getID() == "weapon.legend_cat_o_nine_tails")
 			{
-			_properties.MeleeSkill += 12;
+			_properties.MeleeSkill += resolve / 10;
 			}
 			if(item.getID() == "weapon.battle_whip" || item.getID() == "weapon.thorned_whip" || item.getID() == "weapon.named_battle_whip")
 			{
-			_properties.MeleeSkill += 3;
+			_properties.MeleeSkill += resolve / 20;
 			}
 		}
 	}
