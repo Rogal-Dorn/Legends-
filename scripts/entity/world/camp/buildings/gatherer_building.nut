@@ -169,7 +169,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 			
 		
-			if (bro.getBackground().getSkills().hasskill("perk.legend_gatherer")
+			if (bro.getBackground().getSkills().hasskill("perk.legend_gatherer"))
 			{
                apothecaryLevel += bro.getLevel()
             }
@@ -191,9 +191,9 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-			if (bro.getBackground().getSkills().hasskill("perk.legend_potion_brewer")
+			if (bro.getBackground().getSkills().hasskill("perk.legend_potion_brewer"))
 			{
-               local brewerLevel += bro.getLevel()
+               brewerLevel += bro.getLevel()
             }
 
 			return brewerLevel;
@@ -259,12 +259,12 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		if (apothecarylevels >= 60 && brewerlevels >= 20 )
 		{	
-			local secondary = [
+			secondary.extend([
 				"scripts/items/misc/miracle_drug_item",
 				"scripts/items/accessory/spider_poison_item",
 				"scripts/items/misc/potion_of_oblivion_item",
 				"scripts/items/misc/potion_of_knowledge_item"
-			];
+			]);
 		}
 
 		local secondarychance = this.Math.min(8, 100 - apothecarylevels);
