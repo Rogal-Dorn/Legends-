@@ -14,56 +14,48 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
-	function getDescription()
-	{
-		local ret = this.m.Description;
-		return ret;
-	}
-
 	function getTooltip()
 	{
-		
 		local ret = this.getDefaultTooltip();
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_assassinate"))
-			{
-				ret.extend([
-					{
-						id = 11,
-						type = "text",
-						icon = "ui/icons/regular_damage.png",
-						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Minimum Damage from the Assassinate perk"
-					},
-					{
-						id = 12,
-						type = "text",
-						icon = "ui/icons/regular_damage.png",
-						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Maximum Damage from the Assassinate perk"
-					},
-				]);
-			}
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_assassinate"))
+		{
+			ret.extend([
+				{
+					id = 11,
+					type = "text",
+					icon = "ui/icons/regular_damage.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Minimum Damage from the Assassinate perk"
+				},
+				{
+					id = 12,
+					type = "text",
+					icon = "ui/icons/regular_damage.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] Maximum Damage from the Assassinate perk"
+				},
+			]);
+		}
 
 
-			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
-			{
-				ret.extend([
-							{
-						id = 13,
-						type = "text",
-						icon = "ui/icons/melee_defense.png",
-						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Melee Defense from the Untouchable perk"
-					},
-					{
-						id = 14,
-						type = "text",
-						icon = "ui/icons/ranged_defense.png",
-						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Ranged Defense from the Untouchable perk"
-					}
-				]);
-			}
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
+		{
+			ret.extend([
+						{
+					id = 13,
+					type = "text",
+					icon = "ui/icons/melee_defense.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Melee Defense from the Untouchable perk"
+				},
+				{
+					id = 14,
+					type = "text",
+					icon = "ui/icons/ranged_defense.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] Ranged Defense from the Untouchable perk"
+				}
+			]);
+		}
 
 		return ret;
 
-		];
 	}
 
 	function onMovementCompleted( _tile )
@@ -146,15 +138,15 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_untouchable"))
 		{
-		_properties.RangedDefense += 40;
-		_properties.MeleeDefense += 40;
+			_properties.RangedDefense += 40;
+			_properties.MeleeDefense += 40;
 		}
 
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_assassinate"))
 		{
-		_properties.DamageRegularMin *= 2;
-		_properties.DamageRegularMax *= 2;
+			_properties.DamageRegularMin *= 2;
+			_properties.DamageRegularMax *= 2;
 		}
 	}
 

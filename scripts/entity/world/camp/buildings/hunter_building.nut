@@ -128,8 +128,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getChefLevel()
 	{
-	local roster = this.World.getPlayerRoster().getAll();
-	local chefLevel = 0;
+		local roster = this.World.getPlayerRoster().getAll();
+		local chefLevel = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
@@ -138,9 +138,9 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             }
 
 		
-			if (bro.getBackground().getSkills().hasskill("perk.legend_meal_preperation")
+			if (bro.getBackground().getSkills().hasskill("perk.legend_meal_preperation"))
 			{
-               local chefLevel += bro.getLevel()
+               chefLevel += bro.getLevel()
             }
 
 			return chefLevel;
@@ -151,8 +151,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getBrewerLevel()
 	{
-	local roster = this.World.getPlayerRoster().getAll();
-	local brewerLevel = 0;
+		local roster = this.World.getPlayerRoster().getAll();
+		local brewerLevel = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
@@ -160,9 +160,9 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 continue
             }
 
-			if (bro.getBackground().getSkills().hasskill("perk.legend_alcohol_brewer")
+			if (bro.getBackground().getSkills().hasskill("perk.legend_alcohol_brewer"))
 			{
-               local brewerLevel += bro.getLevel()
+               brewerLevel += bro.getLevel()
             }
 
 			return brewerLevel;
@@ -221,8 +221,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return this.getUpdateText();
 		}
 
-
-
 		local r = this.Math.rand(1, 4);
 		local item = null;
 		local secondary = [];
@@ -255,120 +253,49 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	
 			];
 		}
+
 		local cheflevels = this.getChefLevel();
 		local brewerlevels = this.getBrewerLevel();
-		if (cheflevels => 1 && cheflevels <= 15 && brewerlevels < 1)
+		if (cheflevels >= 1 && cheflevels <= 15)
 		{	
-			local secondary = [
-			"scripts/items/supplies/dried_fruit_item",
-			"scripts/items/supplies/cured_vension_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/legend_pudding_item",
-			"scripts/items/supplies/ground_grains_item",
-			"scripts/items/supplies/legend_pie_item",
-			"scripts/items/supplies/dried_fish_item",
-			];
-		}
-		if (cheflevels > 15 && brewerlevels < 1)
-		{	
-			local secondary = [
-			"scripts/items/supplies/dried_fruit_item",
-			"scripts/items/supplies/cured_vension_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/smoked_ham_item",
-			"scripts/items/supplies/legend_pudding_item",
-			"scripts/items/supplies/legend_pie_item",
-			"scripts/items/supplies/bread_item",
-			"scripts/items/supplies/goat_cheese_item",
-			"scripts/items/supplies/dried_fish_item",
-			];
-		}
-		if (cheflevels < 1 && brewerlevels => 1 && brewerlevels <= 15 )
-		{	
-			local secondary = [
-			"scripts/items/supplies/dried_fruit_item",
-			"scripts/items/supplies/beer_item",
-			"scripts/items/supplies/wine_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/ground_grains_item"
-
-			];
+			secondary.extend([
+				"scripts/items/supplies/dried_fruit_item",
+				"scripts/items/supplies/cured_vension_item",
+				"scripts/items/supplies/legend_porridge_item",
+				"scripts/items/supplies/legend_pudding_item",
+				"scripts/items/supplies/ground_grains_item",
+				"scripts/items/supplies/legend_pie_item",
+				"scripts/items/supplies/dried_fish_item"
+			]);
 		}
 
-			if (cheflevels => 1 && cheflevels <= 15 && brewerlevels => 1 && brewerlevels <= 15)
+		if (cheflevels > 15)
 		{	
-			local secondary = [
-			"scripts/items/supplies/dried_fruit_item",
-			"scripts/items/supplies/cured_vension_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/beer_item",
-			"scripts/items/supplies/wine_item",
-			"scripts/items/supplies/legend_pudding_item",
-			"scripts/items/supplies/ground_grains_item",
-			"scripts/items/supplies/legend_pie_item",
-			"scripts/items/supplies/dried_fish_item",
-			];
-		}
-			if (cheflevels > 15 && brewerlevels => 1 && brewerlevels <= 15)
-		{	
-			local secondary = [
-			"scripts/items/supplies/dried_fruit_item",
-			"scripts/items/supplies/cured_vension_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/beer_item",
-			"scripts/items/supplies/wine_item",
-			"scripts/items/supplies/smoked_ham_item",
-			"scripts/items/supplies/legend_pudding_item",
-			"scripts/items/supplies/legend_pie_item",
-			"scripts/items/supplies/dried_fish_item",
-			"scripts/items/supplies/bread_item",
-			"scripts/items/supplies/goat_cheese_item",
-			"scripts/items/supplies/dried_fish_item",
-			];
-		}
-		if (cheflevels => 1 && cheflevels <= 15 && brewerlevels > 15)
-		{	
-			local secondary = [
-			"scripts/items/supplies/dried_fruit_item",
-			"scripts/items/supplies/cured_vension_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/legend_porridge_item",
-			"scripts/items/supplies/beer_item",
-			"scripts/items/supplies/beer_item",
-			"scripts/items/supplies/wine_item",
-			"scripts/items/supplies/wine_item",
-			"scripts/items/supplies/mead_item",
-			"scripts/items/supplies/mead_item",
-			"scripts/items/supplies/preserved_mead_item",
-			"scripts/items/supplies/legend_pudding_item",
-			"scripts/items/supplies/ground_grains_item",
-			"scripts/items/supplies/legend_pie_item",
-			"scripts/items/supplies/dried_fish_item",
-			];
+			secondary.extend([
+				"scripts/items/supplies/smoked_ham_item",
+				"scripts/items/supplies/bread_item",
+				"scripts/items/supplies/goat_cheese_item"
+			]);
 		}
 
-		if (cheflevels > 15 && brewerlevels > 15)
+		if ( brewerlevels >= 1 && brewerlevels <= 15 )
 		{	
-			local secondary = [
-			"scripts/items/supplies/cured_vension_item",
-			"scripts/items/supplies/beer_item",
-			"scripts/items/supplies/beer_item",
-			"scripts/items/supplies/wine_item",
-			"scripts/items/supplies/wine_item",
-			"scripts/items/supplies/mead_item",
-			"scripts/items/supplies/mead_item",
-			"scripts/items/supplies/preserved_mead_item",
-			"scripts/items/supplies/legend_pudding_item",
-			"scripts/items/supplies/legend_pie_item",
-			"scripts/items/supplies/dried_fish_item",
-			"scripts/items/supplies/cured_rations_item",
-			"scripts/items/supplies/pickled_mushrooms_item",
-			"scripts/items/supplies/smoked_ham_item",
-			"scripts/items/supplies/goats_cheese_item",
-			];
+			secondary.extend([
+				"scripts/items/supplies/beer_item",
+				"scripts/items/supplies/wine_item"
+			]);
+		}
+
+
+		if ( brewerlevels > 15)
+		{	
+			secondary.extend([
+				"scripts/items/supplies/beer_item",
+				"scripts/items/supplies/wine_item",
+				"scripts/items/supplies/mead_item",
+				"scripts/items/supplies/mead_item",
+				"scripts/items/supplies/preserved_mead_item"
+			]);
 		}
 
 		if (this.m.Points < item.m.Value)
@@ -387,8 +314,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			return this.getUpdateText();
 		}
-		local secondarychance = 100 - (cheflevels + brewerlevels);
+		local secondarychance = this.Math.min(8, 100 - (cheflevels + brewerlevels));
 
+		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
+		{
+			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
+			this.m.Items.push(item);
+			this.Stash.add(item);				
+		}
+
+		//Roll twice
 		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
 		{
 			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
