@@ -3,8 +3,8 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_specialist_cult_armor";
-		this.m.Name = this.Const.Strings.PerkName.LegendSpecialistCultArmor;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendSpecialistCultArmor;
+		this.m.Name = this.Const.Strings.PerkName.LegendSpecCultArmor;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendSpecCultArmor;
 		this.m.Icon = "ui/perks/penance_circle.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -16,14 +16,24 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local healthMissing = actor.getHitpointsMax() - actor.getHitpoints();
 		if (item != null)
 		{
-			if(item.getID() == "armor.body.leather_wraps" || item.getID() == "armor.body.cultist_leather_robe" || item.getID() == "armor.body.sackcloth" || item.getID() == "armor.body.tattered_sackcloth" || item.getID() == "armor.body.armor_of_davkul")
+			switch (item.getID())
 			{
-			_properties.Bravery += healthMissing / 10;
-			_properties.Bravery += healthMissing / 10;
+				case "armor.body.leather_wraps":
+				case "armor.body.cultist_leather_robe":
+				case "armor.body.sackcloth":
+				case "armor.body.tattered_sackcloth":
+				case "armor.body.armor_of_davkul":
+				case "legend.armor.body.patched_sackcloth":
+				case "legend.armor.body.tattered_sackcloth":
+				case "legend.armor.body.sackcloth":
+				case "legend_armor.body.cultist_leather_robe":
+				case "legend.armor.body.monk_robes":
+					_properties.Bravery += this.Math.floor(healthMissing * 0.1);
+					break;
 			}
 		}
 	}
