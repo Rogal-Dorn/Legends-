@@ -1054,6 +1054,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeU8(this.m.Level);
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
+		_out.writeBool(this.m.IsFemaleBackground);
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1071,7 +1072,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		_out.writeBool(this.m.IsFemaleBackground);
+
 	}
 
 	function onDeserialize( _in )
@@ -1089,6 +1090,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.DailyCostMult = 1.0;
+		}
+
+		if (_in.getMetaData().getVersion() >= 61)
+		{
+			this.m.IsFemaleBackground = _in.readBool();
 		}
 
 		if (_in.getMetaData().getVersion() >= 57)
@@ -1112,10 +1118,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.buildPerkTree();
 		}
 
-		if (_in.getMetaData().getVersion() >= 61)
-		{
-			this.m.IsFemaleBackground = _in.readBool();
-		}
+
 	}
 
 });

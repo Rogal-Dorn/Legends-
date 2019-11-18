@@ -13,6 +13,7 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 	function assignRandomEquipment()
 	{
 		local r;
+		local armor
 		r = this.Math.rand(1, 6);
 
 		if (r == 1)

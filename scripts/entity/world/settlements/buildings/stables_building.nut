@@ -6,8 +6,8 @@ this.stables_building <- this.inherit("scripts/entity/world/settlements/building
 		this.m.ID = "building.stables";
 		this.m.Name = "Stables";
 		this.m.Description = "Stables for horses";
-		this.m.UIImage = "ui/settlements/building_13";
-		this.m.UIImageNight = "ui/settlements/building_13_night";
+		this.m.UIImage = "ui/settlements/building_14";
+		this.m.UIImageNight = "ui/settlements/building_14_night";
 		this.m.Tooltip = "world-town-screen.main-dialog-module.Stables";
 		this.m.TooltipIcon = "ui/icons/buildings/stables.png";
 		this.m.Sounds = [
