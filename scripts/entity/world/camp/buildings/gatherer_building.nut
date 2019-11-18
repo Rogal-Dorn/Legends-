@@ -148,6 +148,56 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds";
 	}
 
+	function getApocatheryLevel()
+	{
+	local roster = this.World.getPlayerRoster().getAll();
+	local apocatheryLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			if (bro.getBackground().getID() == "background.legend_apocathery" || bro.getBackground().getID() == "background.legend_vala_background" || bro.getBackground().getID() == "background.legend_vala"  || bro.getBackground().getID() == "background.legend_vala_commander")
+			{
+              	local apocatheryLevel += bro.getLevel()
+            }
+			
+		
+			if (bro.getBackground().getSkills().hasskill("perk.legend_gatherer")
+			{
+               local apocatheryLevel += bro.getLevel()
+            }
+
+			return apocatheryLevel;
+
+        }
+
+	}
+
+	function getBrewerLevel()
+	{
+	local roster = this.World.getPlayerRoster().getAll();
+	local brewerLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			if (bro.getBackground().getSkills().hasskill("perk.legend_potion_brewer")
+			{
+               local brewerLevel += bro.getLevel()
+            }
+
+			return brewerLevel;
+
+        }
+
+	}
+
     function completed()
     {
 		local item = null
@@ -167,13 +217,78 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local secondary = [
-			"scripts/items/misc/miracle_drug_item",
+			"scripts/items/misc/roots_and_berries_item",
 			"scripts/items/misc/mysterious_herbs_item",
-			"scripts/items/misc/happy_powder_item"
+			"scripts/items/misc/medicine_small_item"
 		];
 
-		//this can be upgrade system
-		if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
+		//check for apocatheries
+		local apocatherylevels = this.getApocatheryLevel();
+		local brewerlevels = this.getBrewerLevel();
+		if (apocatherylevels => 1 && apocatherylevels < 10)
+		{	
+			local secondary = [
+			"scripts/items/accessory/berserker_mushrooms_item",
+			"scripts/items/accessory/legend_apocathery_mushrooms_item",
+			"scripts/items/misc/antidote_item",
+			"scripts/items/misc/poison_item",
+			"scripts/items/misc/medicine_item",
+			];
+		}
+		if (apocatherylevels => 10 && brewerlevels < 1)
+		{	
+			local secondary = [
+			"scripts/items/misc/miracle_drug_item",
+			"scripts/items/accessory/berserker_mushrooms_item",
+			"scripts/items/accessory/legend_apocathery_mushrooms_item",
+			"scripts/items/accessory/spider_poison_item",
+			"scripts/items/misc/antidote_item",
+			"scripts/items/misc/poison_item",
+			"scripts/items/misc/medicine_item",
+			"scripts/items/misc/happy_powder_item"
+			];
+		}
+
+		if (apocatherylevels => 10 && brewerlevels => 1)
+		{	
+			local secondary = [
+			"scripts/items/misc/miracle_drug_item",
+			"scripts/items/accessory/berserker_mushrooms_item",
+			"scripts/items/accessory/legend_apocathery_mushrooms_item",
+			"scripts/items/accessory/spider_poison_item",
+			"scripts/items/misc/antidote_item",
+			"scripts/items/misc/poison_item",
+			"scripts/items/misc/medicine_item",
+			"scripts/items/misc/lionheart_potion_item",
+			"scripts/items/misc/ironwill_potion_item",
+			"scripts/items/misc/recovery_potion_item",
+			"scripts/items/misc/cat_potion_item",
+			"scripts/items/misc/happy_powder_item"
+			];
+		}
+
+			if (apocatherylevels => 60 && brewerlevels => 20 )
+		{	
+			local secondary = [
+			"scripts/items/misc/miracle_drug_item",
+			"scripts/items/accessory/berserker_mushrooms_item",
+			"scripts/items/accessory/legend_apocathery_mushrooms_item",
+			"scripts/items/accessory/spider_poison_item",
+			"scripts/items/misc/antidote_item",
+			"scripts/items/misc/poison_item",
+			"scripts/items/misc/medicine_item",
+			"scripts/items/misc/lionheart_potion_item",
+			"scripts/items/misc/ironwill_potion_item",
+			"scripts/items/misc/recovery_potion_item",
+			"scripts/items/misc/cat_potion_item",
+			"scripts/items/misc/potion_of_oblivion_item",
+			"scripts/items/misc/potion_of_knowledge_item",
+			"scripts/items/misc/happy_powder_item"
+			];
+		}
+
+		local secondarychance = 100 - apocatherylevels;
+		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
 		{
 			local item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);

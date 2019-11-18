@@ -78,6 +78,20 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50)
+			{
+			local bonus = this.World.getTime().Days / 10;
+				b.MeleeSkill += bonus;
+				b.RangedSkill += bonus;
+				b.MeleeDefense += bonus / 2;
+				b.RangedDefense += bonus / 2;
+				b.Hitpoints += bonus * 2;
+				b.Initiative += bonus / 2;
+				b.Stamina += bonus;
+				b.XP += bonus * 4;
+				b.Bravery += bonus;
+				b.FatigueRecoveryRate += bonus / 4;
+			}
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )

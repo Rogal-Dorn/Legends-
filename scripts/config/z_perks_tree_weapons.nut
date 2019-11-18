@@ -77,11 +77,11 @@ gt.Const.Perks.CleaverTree <- {
 	],
 	Tree = [
 		[], 
-		[gt.Const.Perks.PerkDefs.LegendBloodbath],
+		[],
 		[],
 		[gt.Const.Perks.PerkDefs.SpecCleaver],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendBloodbath],
 		[gt.Const.Perks.PerkDefs.Fearsome]
 	]
 };
@@ -240,7 +240,7 @@ gt.Const.Perks.StavesTree <- {
 		[gt.Const.Perks.PerkDefs.LegendMasteryStaves],
 		[gt.Const.Perks.PerkDefs.LegendSpecStaffStun],
 		[],
-		[]
+		[gt.Const.Perks.PerkDefs.PushTheAdvantage]
 	]
 };
 
