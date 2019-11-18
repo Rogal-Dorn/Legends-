@@ -1,10 +1,10 @@
-this.legend_apocathery_mushrooms_effect <- this.inherit("scripts/skills/skill", {
+this.legend_apothecary_mushrooms_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 4
 	},
 	function create()
 	{
-		this.m.ID = "effects.legend_apocathery_mushrooms";
+		this.m.ID = "effects.legend_apothecary_mushrooms";
 		this.m.Name = "Purple Haze";
 		this.m.Icon = "skills/status_effect_67.png";
 		this.m.IconMini = "status_effect_67_mini";
@@ -71,15 +71,15 @@ this.legend_apocathery_mushrooms_effect <- this.inherit("scripts/skills/skill", 
 
 	function onUpdate( _properties )
 	{
-		_properties.MeleeDefenseMult *= 1.0 - 0.1 * this.m.TurnsLeft;
-		_properties.RangedDefenseMult *= 1.0 - 0.1 * this.m.TurnsLeft;
+		_properties.MeleeDefenseMult *= 1.0 + 0.1 * this.m.TurnsLeft;
+		_properties.RangedDefenseMult *= 1.0 + 0.1 * this.m.TurnsLeft;
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill.isAttack() && !_skill.isRanged())
 		{
-			_properties.DamageTotalMult *= 1.0 + 0.1 * this.m.TurnsLeft;
+			_properties.DamageTotalMult *= 1.0 - 0.1 * this.m.TurnsLeft;
 		}
 	}
 

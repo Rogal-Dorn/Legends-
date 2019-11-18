@@ -1741,7 +1741,8 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
  * After (Easy 120, Noraml 90, Hard 60, Legendary 30) days, Bandit Leaders and Bandit Warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days - until your company perishes!
- - Added in a butcher variant for peasant armies.
+- Vampire Lords now have bloodbath and slaughter perks.
+
 Perks:
 
 - Cultists:	
@@ -1756,7 +1757,7 @@ Perks:
 * Exsanguination - New perk - prepare your next attack to inflict a bleed that does 5 damage per round over two rounds 
 * Slaughter - New Perk - Gain 20% damage increase against bleeding enemies. 
 	
-- Apothecary: 
+- Herbalist / Vala: 
 * Camp gathering no longer grants happy powder and miracle drugs. When most backgrounds gather they just gain mysterious herbs, small medicine and roots and berries.
 * When apothecaries or vala gather they can find Medicine, Poison, Antidote, Berserker Mushrooms and a new Apothecary Mushroom that is the inverse of berserker mushrooms
 * The chance to find these rare items is increased by the combined level of all apothecaries and valas gathering.
@@ -1780,6 +1781,6 @@ Perks:
 	
 - Others
 * Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
-* Bloodbath - now a tier 6 skill in cleaver tree 
+* Bloodbath - Added as Tier 6 skill in cleaver tree 
 * PushTheAdvantage - New perk in the staff tree - When attacking a sleeping or stunned enemy, gain 20 melee and ranged skill, along with a +20% chance to hit the head. 
 		

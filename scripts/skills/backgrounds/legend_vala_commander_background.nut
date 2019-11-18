@@ -88,6 +88,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
 				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.PerfectFocus,
+				this.Const.Perks.PerkDefs.LegendPotionBrewer,
 				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[],
