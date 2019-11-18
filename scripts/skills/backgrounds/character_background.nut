@@ -1070,6 +1070,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+
+		_out.writeBool(this.m.IsFemaleBackground);
 	}
 
 	function onDeserialize( _in )
@@ -1108,6 +1110,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		if (this.m.CustomPerkTree != null)
 		{
 			this.buildPerkTree();
+		}
+
+		if (_in.getMetaData().getVersion() >= 61)
+		{
+			this.m.IsFemaleBackground = _in.readBool();
 		}
 	}
 

@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 60
+	Version = 61
 };
 gt.Const.DLC <- {
 	Mask = 0,
