@@ -70,6 +70,11 @@ this.legend_skeleton <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.m.BloodSaturation = body.Saturation;
 		this.addSprite("body_injury").setBrush("bust_skeleton_body_injured");
 		this.addSprite("armor");
+		this.addSprite("armor_layer_chain");
+		this.addSprite("armor_layer_plate");
+		this.addSprite("armor_layer_tabbard");
+		this.addSprite("armor_layer_cloak");
+		this.addSprite("armor_upgrade_back");
 		local head = this.addSprite("head");
 		head.setBrush("bust_skeleton_head");
 		head.Color = body.Color;
