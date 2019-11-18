@@ -77,7 +77,7 @@ this.helmet <- this.inherit("scripts/items/item", {
 
 	function getValue()
 	{
-		return this.Math.floor(this.m.Value * (this.m.Condition / this.m.ConditionMax));
+		return this.Math.floor(this.m.Value * ((1.0 * this.m.Condition) / (1.0 * this.m.ConditionMax)));
 	}
 
 	function create()
