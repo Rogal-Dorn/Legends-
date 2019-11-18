@@ -66,7 +66,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantDisharmony,
-				this.Const.Perks.PerkDefs.LegendValaInscribeArmor
+				this.Const.Perks.PerkDefs.LegendValaInscribeArmor,
+				this.Const.Perks.PerkDefs.LegendGatherer
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaThreads,

@@ -222,7 +222,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			"scripts/items/misc/medicine_small_item"
 		];
 
-		//check for apocatheries
+		//check for apothecaries
 		local apocatherylevels = this.getApocatheryLevel();
 		local brewerlevels = this.getBrewerLevel();
 		if (apocatherylevels => 1 && apocatherylevels < 10)
