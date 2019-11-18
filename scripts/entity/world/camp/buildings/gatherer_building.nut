@@ -148,10 +148,10 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds";
 	}
 
-	function getApocatheryLevel()
+	function getApothecaryLevel()
 	{
-	local roster = this.World.getPlayerRoster().getAll();
-	local apocatheryLevel = 0;
+		local roster = this.World.getPlayerRoster().getAll();
+		local apothecaryLevel = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
@@ -159,18 +159,22 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue
             }
 
-			if (bro.getBackground().getID() == "background.legend_apocathery" || bro.getBackground().getID() == "background.legend_vala_background" || bro.getBackground().getID() == "background.legend_vala"  || bro.getBackground().getID() == "background.legend_vala_commander")
+			switch (bro.getBackground().getID())
 			{
-              	local apocatheryLevel += bro.getLevel()
-            }
+				case "background.legend_vala":
+				case "background.legend_vala_commander":
+				case "background.legend_herbalist":
+					apothecaryLevel += bro.getLevel()
+					break;
+			}
 			
 		
 			if (bro.getBackground().getSkills().hasskill("perk.legend_gatherer")
 			{
-               local apocatheryLevel += bro.getLevel()
+               apothecaryLevel += bro.getLevel()
             }
 
-			return apocatheryLevel;
+			return apothecaryLevel;
 
         }
 
@@ -178,8 +182,8 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getBrewerLevel()
 	{
-	local roster = this.World.getPlayerRoster().getAll();
-	local brewerLevel = 0;
+		local roster = this.World.getPlayerRoster().getAll();
+		local brewerLevel = 0;
         foreach( bro in roster )
         {
             if (bro.getCampAssignment() != this.m.ID)
@@ -223,71 +227,47 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		];
 
 		//check for apothecaries
-		local apocatherylevels = this.getApocatheryLevel();
+		local apothecarylevels = this.getApothecaryLevel();
 		local brewerlevels = this.getBrewerLevel();
-		if (apocatherylevels => 1 && apocatherylevels < 10)
+		if (apothecarylevels >= 1 && apothecarylevels < 10)
 		{	
-			local secondary = [
-			"scripts/items/accessory/berserker_mushrooms_item",
-			"scripts/items/accessory/legend_apocathery_mushrooms_item",
-			"scripts/items/misc/antidote_item",
-			"scripts/items/misc/poison_item",
-			"scripts/items/misc/medicine_item",
-			];
+			secondary.extend([
+				"scripts/items/accessory/berserker_mushrooms_item",
+				"scripts/items/accessory/legend_apothecary_mushrooms_item",
+				"scripts/items/misc/antidote_item",
+				"scripts/items/misc/poison_item",
+				"scripts/items/misc/medicine_item"
+			])
 		}
-		if (apocatherylevels => 10 && brewerlevels < 1)
+
+		if (apothecarylevels >= 10 && brewerlevels < 1)
+		{	
+			secondary.extend([
+				"scripts/items/misc/happy_powder_item"
+			]);
+		}
+
+		if (apothecarylevels >= 10 && brewerlevels >= 1)
+		{	
+			secondary.extend([
+				"scripts/items/misc/lionheart_potion_item",
+				"scripts/items/misc/ironwill_potion_item",
+				"scripts/items/misc/recovery_potion_item",
+				"scripts/items/misc/cat_potion_item"
+			]);
+		}
+
+		if (apothecarylevels >= 60 && brewerlevels >= 20 )
 		{	
 			local secondary = [
-			"scripts/items/misc/miracle_drug_item",
-			"scripts/items/accessory/berserker_mushrooms_item",
-			"scripts/items/accessory/legend_apocathery_mushrooms_item",
-			"scripts/items/accessory/spider_poison_item",
-			"scripts/items/misc/antidote_item",
-			"scripts/items/misc/poison_item",
-			"scripts/items/misc/medicine_item",
-			"scripts/items/misc/happy_powder_item"
+				"scripts/items/misc/miracle_drug_item",
+				"scripts/items/accessory/spider_poison_item",
+				"scripts/items/misc/potion_of_oblivion_item",
+				"scripts/items/misc/potion_of_knowledge_item"
 			];
 		}
 
-		if (apocatherylevels => 10 && brewerlevels => 1)
-		{	
-			local secondary = [
-			"scripts/items/misc/miracle_drug_item",
-			"scripts/items/accessory/berserker_mushrooms_item",
-			"scripts/items/accessory/legend_apocathery_mushrooms_item",
-			"scripts/items/accessory/spider_poison_item",
-			"scripts/items/misc/antidote_item",
-			"scripts/items/misc/poison_item",
-			"scripts/items/misc/medicine_item",
-			"scripts/items/misc/lionheart_potion_item",
-			"scripts/items/misc/ironwill_potion_item",
-			"scripts/items/misc/recovery_potion_item",
-			"scripts/items/misc/cat_potion_item",
-			"scripts/items/misc/happy_powder_item"
-			];
-		}
-
-			if (apocatherylevels => 60 && brewerlevels => 20 )
-		{	
-			local secondary = [
-			"scripts/items/misc/miracle_drug_item",
-			"scripts/items/accessory/berserker_mushrooms_item",
-			"scripts/items/accessory/legend_apocathery_mushrooms_item",
-			"scripts/items/accessory/spider_poison_item",
-			"scripts/items/misc/antidote_item",
-			"scripts/items/misc/poison_item",
-			"scripts/items/misc/medicine_item",
-			"scripts/items/misc/lionheart_potion_item",
-			"scripts/items/misc/ironwill_potion_item",
-			"scripts/items/misc/recovery_potion_item",
-			"scripts/items/misc/cat_potion_item",
-			"scripts/items/misc/potion_of_oblivion_item",
-			"scripts/items/misc/potion_of_knowledge_item",
-			"scripts/items/misc/happy_powder_item"
-			];
-		}
-
-		local secondarychance = 100 - apocatherylevels;
+		local secondarychance = this.Math.min(8, 100 - apothecarylevels);
 		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
 		{
 			local item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);

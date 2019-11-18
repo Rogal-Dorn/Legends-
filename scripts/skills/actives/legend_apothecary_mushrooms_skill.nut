@@ -1,4 +1,4 @@
-this.legend_apocathery_mushrooms_skill <- this.inherit("scripts/skills/skill", {
+this.legend_apothecary_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		Item = null
 	},
@@ -9,7 +9,7 @@ this.legend_apocathery_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		this.m.ID = "actives.legend_apocathery_mushrooms";
+		this.m.ID = "actives.legend_apothecary_mushrooms";
 		this.m.Name = "Eat or Give Strange Mushrooms";
 		this.m.Description = "Give to an adjacent ally or eat yourself strange mushrooms to enter a state of trance-like state with otherworldy dodging and no sense of pain. May result in sickness. The effect will slowly wear off over 4 turns. Can not be used while engaged in melee, and anyone receiving the item needs to have a free bag slot.";
 		this.m.Icon = "skills/mushroom_square.png";
@@ -134,7 +134,7 @@ this.legend_apocathery_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 
 		if (_user.getID() == user.getID())
 		{
-			local shrooms = user.getSkills().getSkillByID("effects.legend_apocathery_mushrooms");
+			local shrooms = user.getSkills().getSkillByID("effects.legend_apothecary_mushrooms");
 
 			if (shrooms != null)
 			{
@@ -142,7 +142,7 @@ this.legend_apocathery_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 			}
 			else
 			{
-				user.getSkills().add(this.new("scripts/skills/effects/legend_apocathery_mushrooms_effect"));
+				user.getSkills().add(this.new("scripts/skills/effects/legend_apothecary_mushrooms_effect"));
 			}
 
 			if (!_user.isHiddenToPlayer())

@@ -4,7 +4,7 @@ this.legend_graze_prepared_effect<- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "effects.legend_bleed_prepared";
+		this.m.ID = "effects.legend_graze_prepared";
 		this.m.Name = "Prepared to inflict a slow bleed";
 		this.m.Icon = "skills/status_effect_66.png";
 		this.m.IconMini = "status_effect_66_mini";
