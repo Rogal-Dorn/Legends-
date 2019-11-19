@@ -148,6 +148,60 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds";
 	}
 
+	function getApothecaryLevel()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local apothecaryLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			switch (bro.getBackground().getID())
+			{
+				case "background.legend_vala":
+				case "background.legend_vala_commander":
+				case "background.legend_herbalist":
+					apothecaryLevel += bro.getLevel()
+					break;
+			}
+			
+		
+			if (bro.getBackground().getSkills().hasskill("perk.legend_gatherer"))
+			{
+               apothecaryLevel += bro.getLevel()
+            }
+
+			return apothecaryLevel;
+
+        }
+
+	}
+
+	function getBrewerLevel()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local brewerLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			if (bro.getBackground().getSkills().hasskill("perk.legend_potion_brewer"))
+			{
+               brewerLevel += bro.getLevel()
+            }
+
+			return brewerLevel;
+
+        }
+
+	}
+
     function completed()
     {
 		local item = null
@@ -167,13 +221,54 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		local secondary = [
-			"scripts/items/misc/miracle_drug_item",
+			"scripts/items/misc/roots_and_berries_item",
 			"scripts/items/misc/mysterious_herbs_item",
-			"scripts/items/misc/happy_powder_item"
+			"scripts/items/misc/medicine_small_item"
 		];
 
-		//this can be upgrade system
-		if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
+		//check for apothecaries
+		local apothecarylevels = this.getApothecaryLevel();
+		local brewerlevels = this.getBrewerLevel();
+		if (apothecarylevels >= 1 && apothecarylevels < 10)
+		{	
+			secondary.extend([
+				"scripts/items/accessory/berserker_mushrooms_item",
+				"scripts/items/accessory/legend_apothecary_mushrooms_item",
+				"scripts/items/misc/antidote_item",
+				"scripts/items/misc/poison_item",
+				"scripts/items/misc/medicine_item"
+			])
+		}
+
+		if (apothecarylevels >= 10 && brewerlevels < 1)
+		{	
+			secondary.extend([
+				"scripts/items/misc/happy_powder_item"
+			]);
+		}
+
+		if (apothecarylevels >= 10 && brewerlevels >= 1)
+		{	
+			secondary.extend([
+				"scripts/items/misc/lionheart_potion_item",
+				"scripts/items/misc/ironwill_potion_item",
+				"scripts/items/misc/recovery_potion_item",
+				"scripts/items/misc/cat_potion_item"
+			]);
+		}
+
+		if (apothecarylevels >= 60 && brewerlevels >= 20 )
+		{	
+			secondary.extend([
+				"scripts/items/misc/miracle_drug_item",
+				"scripts/items/accessory/spider_poison_item",
+				"scripts/items/misc/potion_of_oblivion_item",
+				"scripts/items/misc/potion_of_knowledge_item"
+			]);
+		}
+
+		local secondarychance = this.Math.min(8, 100 - apothecarylevels);
+		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
 		{
 			local item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);

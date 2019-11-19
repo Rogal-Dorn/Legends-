@@ -66,7 +66,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaChantDisharmony,
-				this.Const.Perks.PerkDefs.LegendValaInscribeArmor
+				this.Const.Perks.PerkDefs.LegendValaInscribeArmor,
+				this.Const.Perks.PerkDefs.LegendGatherer
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendValaThreads,
@@ -77,6 +78,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.PerkDefs.LegendValaChantFury,
 				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
 				this.Const.Perks.PerkDefs.LegendFieldTriage,
+				this.Const.Perks.PerkDefs.LegendPotionBrewer,
 				this.Const.Perks.PerkDefs.PerfectFocus
 			],
 			[],

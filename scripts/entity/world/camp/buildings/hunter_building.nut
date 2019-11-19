@@ -12,7 +12,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.m.ID = this.Const.World.CampBuildings.Hunter;
         this.m.ModName = "Hunting";
         this.m.ModMod = 10.0;
-        this.m.BaseCraft = 6.5;		
+        this.m.BaseCraft = 4.0;		
         this.m.Slot = "hunt";
         this.m.Name = "Hunting";
         this.m.Description = "Send out a hunting party for food provisions"
@@ -126,6 +126,51 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.Craft = mod.Craft;
     }
 
+	function getChefLevel()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local chefLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+		
+			if (bro.getBackground().getSkills().hasskill("perk.legend_meal_preperation"))
+			{
+               chefLevel += bro.getLevel()
+            }
+
+			return chefLevel;
+
+        }
+
+	}
+
+	function getBrewerLevel()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local brewerLevel = 0;
+        foreach( bro in roster )
+        {
+            if (bro.getCampAssignment() != this.m.ID)
+            {
+                continue
+            }
+
+			if (bro.getBackground().getSkills().hasskill("perk.legend_alcohol_brewer"))
+			{
+               brewerLevel += bro.getLevel()
+            }
+
+			return brewerLevel;
+
+        }
+
+	}
+
 	function getResults()
     {
 		local res = []
@@ -181,25 +226,76 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local secondary = [];
 		if (r == 1 || r == 2)
 		{
-			item = this.new("scripts/items/supplies/strange_meat_item");
+			item = this.new("scripts/items/supplies/fresh_meat_item");
 			secondary = [
 				"scripts/items/misc/adrenaline_gland_item",
 				"scripts/items/misc/poison_gland_item",
 				"scripts/items/misc/spider_silk_item",
 				"scripts/items/misc/werewolf_pelt_item",
-				"scripts/items/accessory/spider_poison_item"
+				"scripts/items/accessory/spider_poison_item",
+				"scripts/items/supplies/strange_meat_item"
+				
 			];
 		}
 		else if (r == 3)
 		{
 			item = this.new("scripts/items/supplies/roots_and_berries_item");
 			secondary = [
-				"scripts/items/accessory/berserker_mushrooms_item"
+				"scripts/items/supplies/cured_vension_item"
+	
 			];
 		}
 		else if (r == 4)
 		{
-			item = this.new("scripts/items/supplies/cured_venison_item");
+			item = this.new("scripts/items/supplies/fresh_fruit_item");
+				secondary = [
+				"scripts/items/supplies/dried_fruit_item"
+	
+			];
+		}
+
+		local cheflevels = this.getChefLevel();
+		local brewerlevels = this.getBrewerLevel();
+		if (cheflevels >= 1 && cheflevels <= 15)
+		{	
+			secondary.extend([
+				"scripts/items/supplies/dried_fruit_item",
+				"scripts/items/supplies/cured_vension_item",
+				"scripts/items/supplies/legend_porridge_item",
+				"scripts/items/supplies/legend_pudding_item",
+				"scripts/items/supplies/ground_grains_item",
+				"scripts/items/supplies/legend_pie_item",
+				"scripts/items/supplies/dried_fish_item"
+			]);
+		}
+
+		if (cheflevels > 15)
+		{	
+			secondary.extend([
+				"scripts/items/supplies/smoked_ham_item",
+				"scripts/items/supplies/bread_item",
+				"scripts/items/supplies/goat_cheese_item"
+			]);
+		}
+
+		if ( brewerlevels >= 1 && brewerlevels <= 15 )
+		{	
+			secondary.extend([
+				"scripts/items/supplies/beer_item",
+				"scripts/items/supplies/wine_item"
+			]);
+		}
+
+
+		if ( brewerlevels > 15)
+		{	
+			secondary.extend([
+				"scripts/items/supplies/beer_item",
+				"scripts/items/supplies/wine_item",
+				"scripts/items/supplies/mead_item",
+				"scripts/items/supplies/mead_item",
+				"scripts/items/supplies/preserved_mead_item"
+			]);
 		}
 
 		if (this.m.Points < item.m.Value)
@@ -218,8 +314,17 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			return this.getUpdateText();
 		}
+		local secondarychance = this.Math.min(8, 100 - (cheflevels + brewerlevels));
 
-		if (this.Math.rand(1, 100) <= this.m.Camp.getCampTimeHours())
+		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
+		{
+			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
+			this.m.Items.push(item);
+			this.Stash.add(item);				
+		}
+
+		//Roll twice
+		if (this.Math.rand(1, secondarychance) <= this.m.Camp.getCampTimeHours())
 		{
 			item = this.new(secondary[this.Math.rand(0, secondary.len()-1)]);
 			this.m.Items.push(item);
@@ -244,4 +349,5 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		this.camp_building.onDeserialize(_in);
 	}
+
 });

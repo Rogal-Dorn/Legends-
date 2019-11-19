@@ -17,18 +17,19 @@ this.perk_legend_specialist_ninetails_damage <- this.inherit("scripts/skills/ski
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local resolve = actor.getBaseProperties().Bravery;
 
 		if (item != null)
 		{
 			if(item.getID() == "weapon.legend_cat_o_nine_tails")
 			{
-			_properties.DamageRegularMin += 4;
-			_properties.DamageRegularMax += 12;
+				_properties.DamageRegularMin += this.Math.floor(resolve * 0.1);
+				_properties.DamageRegularMax +=this.Math.floor(resolve * 0.05);
 			}
 			if(item.getID() == "weapon.battle_whip" || item.getID() == "weapon.thorned_whip" || item.getID() == "weapon.named_battle_whip")
 			{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 3;
+				_properties.DamageRegularMin += this.Math.floor(resolve * 0.2);
+				_properties.DamageRegularMax += this.Math.floor(resolve * 0.2);
 			}
 		}
 	}
