@@ -1782,5 +1782,7 @@ Perks:
 - Others
 * Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
 * Bloodbath - Added as Tier 6 skill in cleaver tree 
-* PushTheAdvantage - New perk in the staff tree - When attacking a sleeping or stunned enemy, gain 20 melee and ranged skill, along with a +20% chance to hit the head. 
-		
+* PushTheAdvantage - New perk in the staff tree - When attacking a sleeping or stunned enemy, gain 20 melee and ranged skill, along with a +20% chance to hit the head.
+
+Bugfixes:
+* Fixes missing +5% chance to hit text in Overhead Strike skill due to weapon specialization 
