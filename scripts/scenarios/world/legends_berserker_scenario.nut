@@ -225,7 +225,13 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			{
 				_list.push("barbarian_background");
 			}
-			
+		}
+
+		local r;
+		r = this.Math.rand(0, 999);
+		if (r == 0)
+		{
+			_list.push("legend_berserker_background");
 		}
 	}
 
