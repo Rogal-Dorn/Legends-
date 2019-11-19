@@ -74,10 +74,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Weapon = 8,
 			Defense = 2,
 			Traits = 8,
-			Enemy = 1,
+			Enemy = 2,
 			EnemyChance = 0.33,
-			Class = 0,
-			ClassChance = 0.33
+			Class = 1,
+			ClassChance = 0.40
 		},
 		PerkTreeDynamic = {
 			Weapon = [
@@ -1054,6 +1054,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeU8(this.m.Level);
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
+		_out.writeBool(this.m.IsFemaleBackground);
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1070,6 +1071,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+
+
 	}
 
 	function onDeserialize( _in )
@@ -1087,6 +1090,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		else
 		{
 			this.m.DailyCostMult = 1.0;
+		}
+
+		if (_in.getMetaData().getVersion() >= 61)
+		{
+			this.m.IsFemaleBackground = _in.readBool();
 		}
 
 		if (_in.getMetaData().getVersion() >= 57)
@@ -1109,6 +1117,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			this.buildPerkTree();
 		}
+
+
 	}
 
 });

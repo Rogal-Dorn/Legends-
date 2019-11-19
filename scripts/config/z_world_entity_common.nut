@@ -262,7 +262,7 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 			continue;
 		}
 
-		//Don't pick if resources are less than threshold AND we have surpassed
+		//Don't pick if resources are less than threshold AND we have not surpassed
 		//the given days in game based on Difficulty
 		if ("MinR" in t)
 		{
@@ -347,13 +347,10 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 				}
 				else
 				{
-					if (this.World.getTime().Days <= dateToSkip)
+					local chance = 1.0 / (1.0 + this.Math.pow(_map[key].Num, 0.5)) * 100
+					if (this.Math.rand(1, 100) > chance)
 					{
-						local chance = 1.0 / (1.0 + this.Math.pow(_map[key].Num, 0.5)) * 100
-						if (this.Math.rand(1, 100) > chance)
-						{
-							continue;
-						}
+						continue;
 					}
 				}
 			}
@@ -494,13 +491,10 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 				}
 				else
 				{
-					if (this.World.getTime().Days <= dateToSkip)
+					local chance = 1.0 / (1.0 + this.Math.pow(_map[key].Num, 0.5)) * 100
+					if (this.Math.rand(1, 100) > chance)
 					{
-						local chance = 1.0 / (1.0 + this.Math.pow(_map[key].Num, 0.5)) * 100
-						if (this.Math.rand(1, 100) > chance)
-						{
-							continue;
-						}
+						continue;
 					}
 				}
 			}

@@ -82,11 +82,11 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			}
-			volume * this.Const.WomanSounds[this.m.VoiceSet].Volume
+			volume *= this.Const.WomanSounds[this.m.VoiceSet].Volume
 		}
 		else
 		{
-			volume * this.Const.HumanSounds[this.m.VoiceSet].Volume
+			volume *= this.Const.HumanSounds[this.m.VoiceSet].Volume
 		}
 
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);

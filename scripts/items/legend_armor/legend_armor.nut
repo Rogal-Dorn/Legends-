@@ -394,9 +394,33 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
 		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
-		if (this.m.Condition > 10 && isPlayer || this.m.Condition > 30 && this.m.Condition / this.m.ConditionMax >= 0.25 || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || isLucky)
+		
+		local repair = this.getRepair();
+		local repairMax = this.getRepairMax();
+		
+		if (repair > 10 && isPlayer)
 		{
 			return true;
+		}
+
+		if (repair > 10 && repair / repairMax >= 0.20)
+		{
+			return true
+		}
+
+		if (this.isItemType(this.Const.Items.ItemType.Named))
+		{
+			return true
+		}
+
+		if (this.isItemType(this.Const.Items.ItemType.Legendary))
+		{
+			return true
+		}
+
+		if (isLucky)
+		{
+			return true
 		}
 
 		return false;

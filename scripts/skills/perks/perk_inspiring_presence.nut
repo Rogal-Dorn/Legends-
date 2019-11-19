@@ -31,16 +31,22 @@ this.perk_inspiring_presence <- this.inherit("scripts/skills/skill", {
 			if (ally.getMoraleState() != this.Const.MoraleState.Ignore)
 			{
 				local resolve = ally.getCurrentProperties().getBravery();
+				local waverchance = (250 - resolve) / 100
 				local r = this.Math.rand(1, 100);
-				if (r >= resolve)
+				if (r >= resolve / 3)
 				{
 				ally.setMoraleState(this.Const.MoraleState.Confident);
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is confident due to an inspiring speech");
 				}
-				if (r < (resolve/10))
+				if (r <= waverchance)
 				{
 				ally.setMoraleState(this.Const.MoraleState.Wavering);
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " is wavering after being scared by a speech");
 				}
-
+				else
+				{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(ally) + " was not paying attention to a speech");
+				}
 
 			}
 		}

@@ -1307,10 +1307,19 @@ gt.Const.Strings.PerkName <- {
 	LegendOnslaught = "Onslaught",
 	LegendBackToBasics = "Back to Basics",
 	PushTheAdvantage = "Push The Advantage",
-	TrophyHunter = "Trophy Hunter",
-	Bruiser = "Bruiser",
 	LegendMindOverBody = "Mind over Body",
-	LegendEscapeArtist = "Escape Artist"
+	LegendEscapeArtist = "Escape Artist",
+	LegendGatherer = "Gatherer",
+	LegendPotionBrewer = "Potion Brewer",
+	LegendSpecCultHood = "Dedication",
+	LegendSpecCultArmor = "Penance",
+	LegendPrepareBleed = "Exsanguination",
+	LegendPrepareGraze = "Evisceration",
+	LegendSlaughter = "Slaughter",
+	LegendUntouchable = "Untouchable",
+	LegendAssassinate = "Assassinate",
+	LegendMealPreperation = "Meal Preperation",
+	LegendAlcoholBrewing = "Alcohol Brewing"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1343,8 +1352,8 @@ gt.Const.Strings.PerkDescription <- {
 	Duelist = "Become one with your weapon and go for the weak spots! With the offhand free, an additional [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] of any damage ignores armor. Does not work with two-handed weapons. \n[color=#0b0084]From the One Handed Sword perk group[/color]",
 	CripplingStrikes = "Cripple your enemies! Lowers the threshold to inflict injuries by [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] for both melee and ranged attacks. \n[color=#0b0084]From the Vicious perk group[/color]",
 	QuickHands = "Looking for this? Swapping items in battle becomes a free action with no Action Point cost once every turn. \n[color=#0b0084]From the Throwing perk group[/color]",
-	TrophyHunter = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] permanent hitpoint for every opponent slain.",
-	Bruiser = "Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used.",
+	TrophyHunter = "Each fight tells a story, with glory and strength growing in their end. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] permanent hitpoint for every opponent slain.",
+	Bruiser = "Intense weight training has led your attacks to inflict more damage against armor. Effectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used.",
 	Crusher = "Put full force in your every blow! Shield damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] when using the Split Shield skill.",
 	CloseCombatArcher = "If you can see the white in your enemy\'s eyes, aim for it! Damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] when using a ranged weapon (including throwing weapons) against a target 2 or less tiles away. \n[color=#0b0084]From the Throwing perk group[/color]",
 	Bullseye = "Nailed it! The penalty to hitchance when shooting at a target you have no clear line of fire to is reduced from [color=" + this.Const.UI.Color.NegativeValue + "]75%[/color] to [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] for ranged weapons.  \n[color=#0b0084]From the Bow perk group[/color]",
@@ -1380,7 +1389,7 @@ gt.Const.Strings.PerkDescription <- {
 	Captain = "Use a sergeant on the battlefield as an extension of your leadership and to keep everyone in line. Allies at a range of 5 tiles or less will get [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] of this character\'s Resolve as a bonus added to their own, up to a maximum of this character\'s Resolve.\n\nDoes not stack; the sergeant with the highest Resolve will apply the bonus.",
 	BoondockBlade = "When in a hiding place, such as high grass, gain a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to Melee Skill, Ranged Skill, and Melee and Ranged Defense.",
 	ArtfulDodger = "Zone of Control is ignored when moving away from enemy combatants in melee.",
-	InspiringPresence = "A rousing speech at the start of every battle grants allies a chance to start the battle at confident morale unless prohibited by character traits. The chance someone will not get this benefit is equal to their resolve. The chance of backfire is 10% of each character\'s resolve. If a character does not like the speech, they will begin the battle at wavering morale. \n[color=#0b0084]From the Inspirational perk group[/color]",
+	InspiringPresence = "A rousing speech at the start of every battle grants allies a chance to start the battle at confident morale unless prohibited by character traits. The percentage chance for each ally to gain confident morale, is a third of your resolve.  There is a small chance the speech backfires and sets your ally to wavering instead. There is a 2% chance of backfire at 50 resolve, decreasing to 0% at 150 resolve.  \n[color=#0b0084]From the Inspirational perk group[/color]",
 	Inspire = "Unlocks the \'Inspire\' skill which can push allies to go beyond their limits, granting them additional Action Points. \n[color=#0b0084]From the Inspirational perk group[/color]",
 	Underdog = "I\'m used to it. The defense malus due to being surrounded by opponents is reduced by 5. If an attacker has the Backstabber perk, the effect of that perk is negated, and the normal defense malus due to being surrounded is applied instead. \n[color=#0b0084]From the Trained perk group[/color]",
 	Sprint = "Unlocks the \'Sprint\' skill which allows for sprinting over short distances in straight lines instantly. \n[color=#0b0084]From the Agile perk group[/color]",
@@ -1402,7 +1411,6 @@ gt.Const.Strings.PerkDescription <- {
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent. \n[color=#0b0084]From the Hammer perk group[/color]",
 	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune. \n[color=#0b0084]From the Mace perk group[/color] ",
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit. \n[color=#0b0084]From the Flail perk group[/color]",
-	PushTheAdvantage = "TODO",
 	LegendSpecPoison = "Master poison, giving you the ability to keep your weapons covered in poison at all times",
 	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
 	LegendEvasion = "Enables the character for one turn to move swiftly and safely through any Zone of Control without incurring any free attacks. \n[color=#0b0084]From the Devious perk group[/color]",
@@ -1540,8 +1548,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistScytheSkill = "Practicing with the unweildy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while weilding a scythe",
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]",
 	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. \n[color=#0b0084]From the Sling perk group[/color]",
-	LegendSpecialistNinetailsDamage = "Turn the tips of the cattail to inflict maximum injury, increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] while using the cat o nine tails. 25% of this perk applies to other whips. \n[color=#0b0084]From the Ninetails perk group[/color]",
-	LegendSpecialistNinetailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon, granting [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using the cat o nine tails. 25% of this perk applies to other whips. \n[color=#0b0084]From the Ninetails perk group[/color]",
+	LegendSpecialistNinetailsDamage = "Use your strength of will to turn the tips of the cattail to inflict horrible injuries. While wielding a cat of nine tails this skill increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]+5-10%[/color] of your resolve. 50% of this perk applies to other whips. \n[color=#0b0084]From the Ninetails perk group[/color]",
+	LegendSpecialistNinetailsSkill = "Practice in the arts of punishment grants greater accuracy with the unweildy weapon. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as melee skill while using the cat o nine tails. 50% of this perk applies to other whips. \n[color=#0b0084]From the Ninetails perk group[/color]",
 	LegendFavouredEnemyGhoul = "Studying these monstrosities has given you insights into the strengths and weaknesses of the palid necrophilic flesh devourers. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting nachzehrers. Bonus increases the more Nachzehrer you kill.  The bonus depends on how powerful the Nachzehrer is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color] per Nachzherer, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] per Skin Ghoul you kill. Taking this perk unlocks an extremely difficult legendary contract to hunt elite nachzehrers, also known as Skin Ghouls",
 	LegendFavouredEnemyHexen = "Understanding the techniques of the malevolent crones gives you protection against their coven.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and resolve while fighting hexe. Bonus increases the more Hexe you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] per Hexe you kill. Taking this perk unlocks a difficult legendary contract to hunt a coven leader",
 	LegendFavouredEnemyAlps = "Preparing for the nightmare creepers gives you techniques against their haggard curses.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and resolve while fighting alps. Bonus increases the more Alps you kill, at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.35%[/color] per Alp you kill. Taking this perk unlocks an extremely difficult legendary contract to hunt a fire breathing nightmare demon.",
@@ -1587,8 +1595,21 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.  \n[color=#0b0084]From the Light Armor perk group[/color]",
 	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off guard. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. [color=#0b0084]From the Mace perk group[/color]",
 	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve. \n[color=#0b0084]From the Trained perk group[/color]",
+	PushTheAdvantage = "Strike hardest where they are weakest. When attacking a sleeping or stunned enemy, gain [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Melee and Ranged skill, and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit the head",
 	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 75.  \n[color=#0b0084]From the Intelligent perk group[/color]",
 	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants immunity to all rooting effects, including nets and webs. \n[color=#0b0084]From the Nets perk group[/color]"
+	LegendGatherer = "Knowledge of the landscape and vegetation provides a wealth of opportunities when gathering in camp. Apothecaries usualy gain their level as a percentage reduction in hours required to find special items. This skill doubles that bonus to twice their level. When the total bonus from all apothecaries is above 10%, they can also find mushrooms, poisons, antidotes and powders",
+	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apocethery or vala must gather the ingredients for the potion brewer. When the total level of all potion brewers gathering is above 20, they have a chance to create potions of knowledge and oblivion. ",
+	LegendSpecCultHood = "In Davkul we find the truth of ourselves. We have no identity beyond his servitude, our glory is his glory. While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as a bonus to melee and ranged defense",
+	LegendSpecCultArmor = "Pain is the embrace of Davkul, our bodies keep us from him. Only in suffering can we know truth.  Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your missing health as resolve, while wearing cultist robes, sackcloth or leather wraps",
+	LegendPrepareBleed = "Time spent assessing an enemy, finding the arteries, will pay off in blood shed on the field. Grants the active skill Prepare to Bleed that primes your next strike to inflict intense but short lived bleeding.",
+	LegendPrepareGraze = "Long slow deep rending scratches can leave many bleeding grazes. Grants the active skill Prepare to Bleed that primes your next strike to inflict weak but long lasting bleeding.",
+	LegendSlaughter = "If it bleeds, we can kill it. An existing injury can open up avenues of attack for the final slaughter. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage when attacking a bleeding enemy.",
+	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] melee and ranged defense while hidden ",
+	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really count.  Striking from the shadows allows you to bypass enemy defenses and strike for their unfended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+200%[/color] damage while hidden",
+	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks. Unlocks a chance to get better food rewards when this character hunts in camp. The chance and rewards increase as you level up. Includes porridge, pies and puddings. ",
+	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead."
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

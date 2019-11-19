@@ -679,7 +679,9 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 		   [15, 1.0, "cloth/legend_robes"],
            [10, 1.0, "cloth/legend_sackcloth"],
            [10, 1.0, "cloth/legend_sackcloth_patched"],
-           [10, 1.0, "cloth/legend_sackcloth_tattered"]
+           [10, 1.0, "cloth/legend_sackcloth_tattered"],
+		   [75, 1.0, "cloak/legend_armor_cloak"],
+		   [75, 1.0, "tabard/legend_armor_tabard"]
 		]
 
 		foreach( a in armorsL)

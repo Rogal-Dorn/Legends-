@@ -410,7 +410,6 @@ this.skeleton <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("armor_layer_tabbard").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_cloak").setHorizontalFlipping(flip);
 		this.getSprite("armor_upgrade_back").setHorizontalFlipping(flip);
-		this.getSprite("armor_upgrade_front").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("face").setHorizontalFlipping(flip);
 		this.getSprite("injury").setHorizontalFlipping(flip);

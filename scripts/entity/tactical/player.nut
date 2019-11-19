@@ -2023,6 +2023,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_backgrounds = this.Const.CharacterPiracyBackgrounds;
 		}
 
+		local bground = "scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 		this.m.Skills.add(background);
 		this.m.Background = background;
@@ -2136,8 +2137,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return;
 		}
 
+		local count = 0;
 		for( local done = 0; done < _num;  )
 		{
+			if (count > this.m.Talents.len())
+			{
+				break;
+			}
+			count = ++count
 
 			local totalWeight = 0;
 			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
@@ -2165,7 +2172,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				totalWeight += this.m.StarWeights[i];
 			}
 
-			local r = this.Math.rand(0, totalWeight);
+			local r = this.Math.rand(1, totalWeight);
 
 			for (local i = 0; i < this.m.StarWeights.len() - 1; i = ++i)
 			{
@@ -2605,17 +2612,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local volume = 1.0;
-		if(this.m.Background.isFemaleBackground)
+		if(this.getBackground() != null && this.getBackground().isFemaleBackground())
 		{
 			if (this.m.VoiceSet > this.Const.WomanSounds.len() - 1)
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 			}
-			volume * this.Const.WomanSounds[this.m.VoiceSet].Volume
+			volume *= this.Const.WomanSounds[this.m.VoiceSet].Volume
 		}
 		else
 		{
-			volume * this.Const.HumanSounds[this.m.VoiceSet].Volume
+			volume *= this.Const.HumanSounds[this.m.VoiceSet].Volume
 		}
 
 		this.Sound.play(this.m.Sound[_type][this.Math.rand(0, this.m.Sound[_type].len() - 1)], volume, this.getPos(), _pitch);

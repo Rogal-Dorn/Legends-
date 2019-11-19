@@ -191,7 +191,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
 
-            this.m.PointsNeeded += r.Item.getCondition();
+            this.m.PointsNeeded += r.Item.getRepair();
         }
     }
 
@@ -266,7 +266,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
 
-            points += r.Item.getCondition()
+            points += r.Item.getRepair()
         }
         local modifiers = this.getModifiers();
         return this.Math.ceil(points * modifiers.Consumption);
@@ -287,7 +287,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
 
-            points += r.Item.getCondition()
+            points += r.Item.getRepair()
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)

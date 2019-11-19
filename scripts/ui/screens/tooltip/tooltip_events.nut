@@ -605,7 +605,7 @@ this.tooltip_events <- {
 				});
 			}
 
-			if (_item.getCondition() >= _item.getConditionMax())
+			if (_item.getRepair() >= _item.getRepairMax())
 			{
 				tooltip.push({
 					id = 3,
@@ -614,7 +614,7 @@ this.tooltip_events <- {
 					text = "Set item to be salvaged"
 				});
 			}
-			else if (_item.getCondition() < _item.getConditionMax())
+			else if (_item.getRepair() < _item.getRepairMax())
 			{
 				local text = "Set item to be repaired"
 				if (_item.isToBeRepaired())
@@ -675,10 +675,10 @@ this.tooltip_events <- {
 				text = "Sell item for [img]gfx/ui/tooltips/money.png[/img]" + _item.getSellPrice()
 			});
 
-			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getConditionMax() > 1 && _item.getCondition() < _item.getConditionMax())
+			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getRepairMax() > 1 && _item.getRepair() < _item.getRepairMax())
 			{
-				local price = (_item.getConditionMax() - _item.getCondition()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getCondition() / _item.getConditionMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local price = (_item.getRepairMax() - _item.getRepair()) * this.Const.World.Assets.CostToRepairPerPoint;
+				local value = _item.m.Value * (1.0 - _item.getRepair() / _item.getRepairMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)

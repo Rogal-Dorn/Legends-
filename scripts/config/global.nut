@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 60
+	Version = 61
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -343,7 +343,9 @@ gt.Const.EntityType <- {
 	LegendWhiteWarwolf = 94,
 	LegendBanshee = 95,
 	LegendDemonHound = 96,
-	LegendVampireLord = 97
+	LegendVampireLord = 97,
+	BanditVeteran = 98,
+	BanditWarlord = 99
 	function convertOldToNew( _id )
 	{
 		switch(_id)

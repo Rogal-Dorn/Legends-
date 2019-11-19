@@ -42,7 +42,6 @@ gt.Const.World.Spawn.BanditRoamers <-
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				}
-			]
 		},
 		{
 			Weight = 15,
@@ -102,7 +101,13 @@ gt.Const.World.Spawn.BanditScouts <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
+				},
+				{
+					MinR = 250,
+					Type = this.Const.World.Spawn.Troops.BanditVeteran,
+					Cost = 30
 				}
+			]
 			]
 		},
 		{
@@ -170,7 +175,13 @@ gt.Const.World.Spawn.BanditRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
+				},
+				{
+					MinR = 500,
+					Type = this.Const.World.Spawn.Troops.BanditVeteran,
+					Cost = 30
 				}
+			]				
 			]
 		},
 		{
@@ -202,6 +213,12 @@ gt.Const.World.Spawn.BanditRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25,
+					Roll = true
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.BanditWarlord,
+					Cost = 50,
 					Roll = true
 				}
 			]
@@ -265,6 +282,11 @@ gt.Const.World.Spawn.BanditDefenders <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
+				},
+				{
+					MinR = 500,
+					Type = this.Const.World.Spawn.Troops.BanditVeteran,
+					Cost = 30
 				}
 			]
 		},
@@ -297,6 +319,12 @@ gt.Const.World.Spawn.BanditDefenders <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25,
+					Roll = true
+				},
+				{
+					MinR = 600,
+					Type = this.Const.World.Spawn.Troops.BanditWarlord,
+					Cost = 50,
 					Roll = true
 				}
 			]
@@ -339,8 +367,15 @@ gt.Const.World.Spawn.BanditBoss <-
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.BanditLeader,
-			Weight = 0,
+			Weight = 1,
 			Cost = 25,
+			Roll = true
+		},
+		{
+			MinR = 585,
+			Weight = 1,
+			Type = this.Const.World.Spawn.Troops.BanditWarlord,
+			Cost = 50,
 			Roll = true
 		}
 	],
@@ -362,6 +397,11 @@ gt.Const.World.Spawn.BanditBoss <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
+				},
+				{
+					MinR = 500,
+					Type = this.Const.World.Spawn.Troops.BanditVeteran,
+					Cost = 30
 				}
 			]
 		},
@@ -391,6 +431,12 @@ gt.Const.World.Spawn.BanditBoss <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 25,
+					Roll = true
+				},
+				{
+					MinR = 585,
+					Type = this.Const.World.Spawn.Troops.BanditWarlord,
+					Cost = 50,
 					Roll = true
 				}
 			]

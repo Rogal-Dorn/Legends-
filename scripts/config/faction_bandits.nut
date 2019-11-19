@@ -182,3 +182,41 @@ gt.Const.Tactical.Actor.BanditLeader <- {
 	FatigueRecoveryRate = 25
 };
 
+gt.Const.Tactical.Actor.BanditVeteran <- {
+	XP = 400,
+	ActionPoints = 9,
+	Hitpoints = 100,
+	Bravery = 65,
+	Stamina = 140,
+	MeleeSkill = 75,
+	RangedSkill = 55,
+	MeleeDefense = 20,
+	RangedDefense = 20,
+	Initiative = 95,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
+gt.Const.Tactical.Actor.BanditWarlord <- {
+	XP = 400,
+	ActionPoints = 9,
+	Hitpoints = 200,
+	Bravery = 140,
+	Stamina = 180,
+	MeleeSkill = 110,
+	RangedSkill = 90,
+	MeleeDefense = 30,
+	RangedDefense = 30,
+	Initiative = 170,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 25
+};

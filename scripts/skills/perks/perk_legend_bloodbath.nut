@@ -13,31 +13,29 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-//	function isHidden()
-//	{
-//		local bleeders = this.getBleeders();
-//		return bleeders < 1;
-//	}
-//
-//	function getTooltip()
-//	{
-//		local bleeders = this.getBleeders();
-//		local bonus = bleeders * 5;
-//		local tooltip = this.skill.getTooltip();
-//
-//		if (bleeders >= 1)
-//		{
-//			tooltip.push({
-//				id = 6,
-//				type = "text",
-//				icon = "ui/icons/special.png",
-//				text = "There are currently [color=" + this.Const.UI.Color.PositiveValue + "]" + bleeders + "[/color] characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
-//			});
-//		}
-//		return tooltip;
-//	}
+	function isHidden()
+	{
+		local bleeders = this.getBleeders();
+		return bleeders < 1;
+	}
 
+	function getTooltip()
+	{
+		local bleeders = this.getBleeders();
+		local bonus = bleeders * 5;
+		local tooltip = this.skill.getTooltip();
 
+		if (bleeders >= 1)
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "There are currently [color=" + this.Const.UI.Color.PositiveValue + "]" + bleeders + "[/color] characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
+			});
+		}
+		return tooltip;
+	}
 
 	function getBleeders()
 	{
@@ -56,16 +54,13 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		}
 
 		local bleeders = 0;
-		local actors = this.Tactical.Entities.getAllInstances();
-		foreach( i in actors )
-		{
-			foreach( a in i )
-			{
-				if (a.getSkills().hasSkill("effects.bleeding"))
-				{
-					bleeders += 1;
+		local actors = this.Tactical.Entities.getAllInstancesAsArray();
 
-				}
+		foreach( a in actors )
+		{
+			if (a.getSkills().hasSkill("effects.bleeding") || a.getSkills().hasSkill("effects.legend_grazed_effect") )
+			{
+				bleeders += 1;
 
 			}
 		}
@@ -74,12 +69,10 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-
 		local bleeders = this.getBleeders();
-		local percent = bleeders / 20;
-		local bonus = 1 + percent;
-		_properties.BraveryMult *= bonus;
-		_properties.StaminaMult *= bonus;
+		local bonus = 0.05 * bleeders;
+		_properties.BraveryMult += bonus;
+		_properties.StaminaMult += bonus;
 	}
 
 });

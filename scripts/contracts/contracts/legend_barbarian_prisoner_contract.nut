@@ -154,7 +154,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 				if (this.Contract.m.BarbCampTile == null || this.Contract.m.BarbCampTile.IsOccupied)
 				{
 					local playerTile = this.World.State.getPlayer().getTile();
-					this.Contract.m.BarbCampTile = this.getTileToSpawnLocation(playerTile, 6, 12, [
+					this.Contract.m.BarbCampTile = this.Contract.getTileToSpawnLocation(playerTile, 6, 12, [
 						this.Const.World.TerrainType.Shore,
 						this.Const.World.TerrainType.Ocean,
 						this.Const.World.TerrainType.Mountains

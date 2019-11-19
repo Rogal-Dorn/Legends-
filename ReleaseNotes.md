@@ -1709,7 +1709,78 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 
 - Fixed solo berserker origin from not starting.
 - Fixed not being able to enter settlements with stables.
-- Fixed not repairing all attached layers armor.
+- Fixed not repairing all attached armor layers.
+- Fixed not showing damage percentage for layers.
 - Fixed footmen without armor.
-- Updated more texts and names for Gender equality.
+- Updated more texts and names for gender equality.
 - Fixed tatoo warning for female cultists.
+
+13.0.0.8 Armor Layer Test Build Patch 3
+
+- Fixes the occaisional crash when entering towns.
+- Fixes repairing of armor with attached layers.
+- Fixes crash with ancient dead fights.
+- Cloaks should now have a higher chance of showing up in towns with wool spinner locations.
+
+13.0.0.9 Armor Layer Test Build Patch 4
+
+- Fix crash in barbarian prison contract.
+- Females have warpaint and tatoo graphics now.
+- Increased drop rate of armor (enemy armor is dropped already in layer format - you must manually equip and remove the layers)
+- Fix helmets with zero sell price.
+- Tabards should now have a higher chance of showing up in towns with wool spinner locations and armorsmiths.
+- Fixes armor layer spawning for warlock spawned zombies and skeletons.
+- Fixed a potential crash when playing AI female sounds.
+- FIXED female sounds resetting on reload! (only applies to newly created females after this patch)
+
+https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
+
+
+13.0.0.10 New Perks
+- New higher tier Bandits:
+ - Veterans (upgrades to Raiders)
+ - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
+ * After (Easy 120, Noraml 90, Hard 60, Legendary 30) days, Bandit Leaders and Bandit Warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days - until your company perishes!
+- Vampire Lords now have bloodbath and slaughter perks.
+
+Perks:
+
+- Cultists:	
+* Flesh Mortification - damage increased by 5-10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
+* Scourging - melee skill increased by 10% of your resolve while using cat'o'nine tails. Half this effect applies to other whips
+* Dedication - New perk - melee and ranged defense increased by 10% of your resolve while wearing a cultist hood
+* Penance - New perk - Increase your resolve by 10% of your missing health, while wearing cultist robes, sackcloth or leather wraps
+* Evisceration - New perk - prepare your next attack to inflict a bleed that does 2 damage per round over five rounds. 
+	
+- Butchers and fishmongers: 
+* Also gains evisceration
+* Exsanguination - New perk - prepare your next attack to inflict a bleed that does 5 damage per round over two rounds 
+* Slaughter - New Perk - Gain 20% damage increase against bleeding enemies. 
+	
+- Herbalist / Vala: 
+* Camp gathering no longer grants happy powder and miracle drugs. When most backgrounds gather they just gain mysterious herbs, small medicine and roots and berries.
+* When apothecaries or vala gather they can find Medicine, Poison, Antidote, Berserker Mushrooms and a new Apothecary Mushroom that is the inverse of berserker mushrooms
+* The chance to find these rare items is increased by the combined level of all apothecaries and valas gathering.
+* Gatherer - New perk - Your level is counted again when determining gather rates for rare items. When taken on non-apothecaries, they count as apothecaries for the drop rate.
+* Potion Brewer - New perk - Allows potions to be discovered while gathering. If you have at least 10 levels of Apothecary, and a brewer, you can find lionheart, ironwill, recovery and cat potions while gathering.
+* If you have over 60 levels of apothecaries, and over 20 levels of brewers, you have a chance of finding potions of knowledge and oblivion.
+* The gather time required to find one of these items is 1-100 hours of camping, minus your combined total Apothecary levels.
+	
+- Assassin:
+* Hidden - Now has visual effects to show when its working 
+* Untouchable - New Perk - Gain 40 melee and ranged defense while hidden 
+* Assassinate - Damage doubled while hidden
+* Gains: BagsAndBelts, Pathfinder, Bullseye, Holdout, Backstabber, Prepare to bleed, push the advantage, slaughter, underdog
+* Loses: Student, Onslaught, Gifted, favoured enemy barbarian, battleheart, rebound, mind over body, battleflow 
+	
+- Bakers, Butchers, Fishmongers, Housemaid and Servants
+* Hunting now gives fresh meat and fresh fruit instead of strange meat. 
+* The rate of secondary rewards when hunting is now tied to the levels of all chef classes currently hunting. 
+* Meal Preperation - New Skill - Unlocks new secondary food rewards when hunting, including new items for porridge, pudding and pie. These will also appear in towns with wheat fields. 
+* Alcohol Brewing - New Skill - Unlocks new secondary alcohol rewards when hunting, beer, wine and mead. 
+	
+- Others
+* Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
+* Bloodbath - Added as Tier 6 skill in cleaver tree 
+* PushTheAdvantage - New perk in the staff tree - When attacking a sleeping or stunned enemy, gain 20 melee and ranged skill, along with a +20% chance to hit the head. 
+		

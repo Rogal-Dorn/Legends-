@@ -70,14 +70,47 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		}
+
+		if (!this.Tactical.State.isScenarioMode())
+		{
+			switch (this.World.Assets.getCombatDifficulty())
+			{
+				case this.Const.Difficulty.Easy:
+					dateToSkip = 120;
+					break;
+				case this.Const.Difficulty.Normal:
+					dateToSkip = 90
+					break;
+				case this.Const.Difficulty.Hard:
+					dateToSkip = 60
+					break;
+				case this.Const.Difficulty.Legendary:
+					dateToSkip = 30
+					break;
 			}
 
+			if (this.World.getTime().Days >= dateToSkip)
+			{
+				local bonus = this.Math.min(1, this.Math.floor( (this.World.getTime().Days - dateToSkip) / 15.0));
+				b.MeleeSkill += bonus;
+				b.RangedSkill += bonus;
+				b.MeleeDefense += this.Math.floor(bonus / 2);
+				b.RangedDefense += this.Math.floor(bonus / 2);
+				b.Hitpoints += this.Math.floor(bonus * 2);
+				b.Initiative += this.Math.floor(bonus / 2);
+				b.Stamina += bonus;
+				b.XP += this.Math.floor(bonus * 4);
+				b.Bravery += bonus;
+				b.FatigueRecoveryRate += this.Math.floor(bonus / 4);
+			}
+		}
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )
