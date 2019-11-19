@@ -49,6 +49,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 
 			if (!this.Tactical.State.isScenarioMode())
 			{
+				local dateToSkip = 0;
 				switch (this.World.Assets.getCombatDifficulty())
 				{
 					case this.Const.Difficulty.Easy:
@@ -150,7 +151,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
 						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 							{
-							this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));		
+							this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 							}
 				}
 				else if (r == 5)
@@ -305,7 +306,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/military_pick"));
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
-				
+
 						if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						{
 							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));

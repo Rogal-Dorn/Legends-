@@ -80,6 +80,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 		if (!this.Tactical.State.isScenarioMode())
 		{
+			local dateToSkip = 0;
 			switch (this.World.Assets.getCombatDifficulty())
 			{
 				case this.Const.Difficulty.Easy:
@@ -130,8 +131,8 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-		
-		if (this.Math.rand(1, 100) > 50) 
+
+		if (this.Math.rand(1, 100) > 50)
 		{
 			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedWeapons[this.Math.rand(0, this.Const.Items.NamedWeapons.len() - 1)]));
 		};

@@ -42,6 +42,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				}
+			]
 		},
 		{
 			Weight = 15,
@@ -69,6 +70,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 		}
 	]
 }
+
 
 gt.Const.World.Spawn.BanditScouts <-
 {
@@ -107,7 +109,6 @@ gt.Const.World.Spawn.BanditScouts <-
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
-			]
 			]
 		},
 		{
@@ -182,7 +183,6 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Cost = 30
 				}
 			]				
-			]
 		},
 		{
 			Weight = 24,

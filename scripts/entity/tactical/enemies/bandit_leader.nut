@@ -80,6 +80,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 
 		if (!this.Tactical.State.isScenarioMode())
 		{
+			local dateToSkip = 0;
 			switch (this.World.Assets.getCombatDifficulty())
 			{
 				case this.Const.Difficulty.Easy:
