@@ -1784,3 +1784,20 @@ Perks:
 * Bloodbath - Added as Tier 6 skill in cleaver tree 
 * PushTheAdvantage - New perk in the staff tree - When attacking a sleeping or stunned enemy, gain 20 melee and ranged skill, along with a +20% chance to hit the head. 
 		
+Horse perks:
+
+Longeing 	Gain resolve 25%	Time spent working on a long rope helps build trust between horse and rider. 
+Liberty	gain portion of rider's resolve	Though extensive roundpenning training, the horse gains trust in the movements of the rider. 	
+Desensitization	Gain portion of rider's mattack	Using loud noises and sudden movements, the horse is trained to not react to the sounds of battle until the rider tells it to. This makes it much more useful in battle. 
+Bitting	Gain portion of rider's mdef	Getting a horse accustomed to the feel of a bit and a bridle, makes it easier to control the movements. This increases defenses in battle
+Pirouette	footwork with 3 range	Learning to turn quickly allows quick changes in direction required to escape enemies
+Piaffe	Better mattack 25%	Keeping the horse moving can retain their focus and prepare them for oncoming battle. 	
+Collection	gain fatigue 25%	By training the horses posture, advanced movements become easier to perform and less draining
+Impulsion	Increase initiative	Effective leverage of equestrian physiology relaxes the spinal column and allows the hindquarters to engage effectively. 
+Lead change	Movement costs 25% less fatigue	A horses lead leg can tire, by training a horse to swap legs it is possible to prevent the horse from tiring. 
+Flying change	gain AP	Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances
+Tempi change	Increased Rdef 25%	the most challenging form of lead change, a tempi change requires shifting back and forth between lead legs. This form of training can allow the horse to change lead leg according to the situation, useful in rough terrain.
+Passage 	Better movement in rough terrain	Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain 
+Parthian shot	Increased Rattack 25%	shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. 
+Leg control	Increased rattack  25%	it is not possible to hold the reigns while firing a bow. Horse and rider must learn to communicate through the rider's legs
+Hippology	Increased hitpoints 25%	Knowledge of horse physiology allows for better diet, excercise and care. 

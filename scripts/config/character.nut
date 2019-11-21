@@ -668,6 +668,30 @@ gt.Const.PathfinderMovementAPCost <- [
 	3,
 	3
 ];
+gt.Const.HorseMovementAPCost <- [
+	0,
+	1,
+	1,
+	3,
+	3,
+	5,
+	5,
+	5,
+	5
+];
+
+gt.Const.HorsePassageMovementAPCost <- [
+	0,
+	1,
+	1,
+	2,
+	2,
+	4,
+	4,
+	4,
+	4
+];
+
 gt.Const.ImmobileMovementAPCost <- [
 	0,
 	0,
@@ -734,6 +758,28 @@ gt.Const.PathfinderMovementFatigueCost <- [
 	7,
 	6,
 	6
+];
+gt.Const.HorseMovementFatigueCost <- [
+	0,
+	1,
+	1,
+	4,
+	4,
+	6,
+	12,
+	10,
+	10
+];
+gt.Const.HorsePassageMovementFatigueCost <- [
+	0,
+	1,
+	1,
+	2,
+	2,
+	3,
+	6,
+	5,
+	5
 ];
 gt.Const.LegendFlightMovementFatigueCost <- [
 	0,
