@@ -91,7 +91,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_liberty"))
 		{
-		totalBravery += riderBravery * 0.25;
+			totalBravery += riderBravery * 0.25;
 		}
 
 		b.Bravery = totalBravery;
@@ -109,7 +109,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_desensitization"))
 		{
-		totalMeleeSkill += riderMeleeSkill * 0.25;
+			totalMeleeSkill += riderMeleeSkill * 0.25;
 		}
 
 		b.MeleeSkill = totalMeleeSkill;
@@ -121,7 +121,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_parthian_shot"))
 		{
-		totalRangedSkill += riderRangedSkill * 0.25;
+			totalRangedSkill += riderRangedSkill * 0.25;
 		}
 
 		b.RangedSkill = totalRangedSkill;
@@ -133,7 +133,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_bitting"))
 		{
-		totalMeleeDefense += riderMeleeDefense * 0.25;
+			totalMeleeDefense += riderMeleeDefense * 0.25;
 		}
 
 		b.MeleeDefense = totalMeleeDefense;
@@ -163,19 +163,19 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 //add horse skills
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_movement") && !this.getHorse().getSkills().hasSkill("perk.legend_horse_passage"))
 		{
-		this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
+			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		}
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_passage"))
 		{
-		this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_passage"));
+			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_passage"));
 		}
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_pirouette"))
 		{
-		this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_pirouette"));
+			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_pirouette"));
 		}
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_charge"))
 		{
-		this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_charge"));
+			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_horse_charge"));
 		}
 
 		background.buildDescription();
