@@ -210,7 +210,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 			User = _user,
 			TargetEntity = _targetEntity,
 			Properties = properties,
-			DistanceToTarget = _user.User.getTile().getDistanceTo(_targetEntity.getTile())
+			DistanceToTarget = _user.getTile().getDistanceTo(_targetEntity.getTile())
 		};
 
 		this.onScheduledTargetHit(info);
