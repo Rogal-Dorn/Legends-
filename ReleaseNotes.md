@@ -1783,7 +1783,9 @@ Perks:
 * Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
 * Bloodbath - Added as Tier 6 skill in cleaver tree 
 * PushTheAdvantage - New perk in the staff tree - When attacking a sleeping or stunned enemy, gain 20 melee and ranged skill, along with a +20% chance to hit the head. 
-		
+* Drums of war - Reduced to 1 fatigue reduction per turn, but stacks. 
+
+
 Horse perks:
 
 Longeing 	Gain resolve 25%	Time spent working on a long rope helps build trust between horse and rider. 
@@ -1801,3 +1803,7 @@ Passage 	Better movement in rough terrain	Training the legs to raise higher and 
 Parthian shot	Increased Rattack 25%	shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. 
 Leg control	Increased rattack  25%	it is not possible to hold the reigns while firing a bow. Horse and rider must learn to communicate through the rider's legs
 Hippology	Increased hitpoints 25%	Knowledge of horse physiology allows for better diet, excercise and care. 
+
+
+
+Fixes worldmap icons being too large for banshee, hollenhound, vampie lord and werebear 
