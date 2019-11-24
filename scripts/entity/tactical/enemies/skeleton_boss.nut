@@ -56,7 +56,7 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
-			this.m.Items.equip(this.new("scripts/items/legend_rmor/legendary/legend_emperors_armor_fake"));;
+			this.m.Items.equip(this.new("scripts/items/legend_armor/legendary/legend_emperors_armor_fake"));;
 		}
 		else
 		{
