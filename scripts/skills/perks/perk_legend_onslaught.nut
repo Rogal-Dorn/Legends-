@@ -46,18 +46,13 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 		local user = _skill.getContainer().getActor();
 		local ourInit =  user.getInitiative();
 		local targetInit = _targetEntity.getInitiative()
-		local ourFat =  user.getFatigue();
-		local targetFat = _targetEntity.getFatigue()
+
 
 		if (ourInit <= targetInit)
 		{
 			return false;
 		}
 
-		if (ourFat >= targetFat)
-		{
-			return false;
-		}
 
 		if ( this.Math.rand(1, 100) > 25)
 		{

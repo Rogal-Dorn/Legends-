@@ -289,7 +289,7 @@ gt.Const.Perks.NinetailsClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendPrepareGraze],
 		[gt.Const.Perks.PerkDefs.LegendSpecCultArmor],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendLacerate]
 	]
 };
 
