@@ -1,17 +1,17 @@
-this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
+this.legend_peasant_poacher <- this.inherit("scripts/entity/tactical/human", {
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.Peasant;
+		this.m.Type = this.Const.EntityType.LegendPeasantPoacher;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.Peasant.XP;
+		this.m.XP = this.Const.Tactical.Actor.LegendPeasantPoacher.XP;
 		this.human.create();
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.getTags().add("peasant");
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_butcher_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_ranged_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
 		{
@@ -23,46 +23,42 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.human.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.Peasant);
+		b.setValues(this.Const.Tactical.Actor.LegendPeasantPoacher);
 		this.m.ActionPoints = b.ActionPoints;
+		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
 		this.setAppearance();
 		local dirt = this.getSprite("dirt");
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(0, 255);
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shortbow_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_shortbow_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_bow"));
 		this.getSprite("socket").setBrush("bust_base_militia");
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_slaughter"));
-		this.m.Skills.add(this.new("scripts/skills/actives/legend_prepare_bleed_skill"));
-		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_butcher_skill"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_butcher_damage"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
-
 	}
 
 	function assignRandomEquipment()
 	{
 		local r;
-		r = this.Math.rand(1, 5);
+		r = this.Math.rand(1, 4);
 
-		if (r <= 3)
+		if (r <= 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+			this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
 		}
-		else if (r == 4)
+		else if (r >= 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/knife"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_sling"));
 		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
-		}
-	
+
 
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
@@ -73,14 +69,14 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 				[0, "cloth/legend_gambeson_wolf"],
 				[0, "cloth/legend_padded_surcoat"],
 				[0, "cloth/legend_robes"],
-				[4, "cloth/legend_apron_butcher"],
+				[0, "cloth/legend_apron_butcher"],
 				[0, "cloth/legend_robes_nun"],
 				[0, "cloth/legend_apron_smith"],
 				[0, "cloth/legend_robes_wizard"],
-				[0, "cloth/legend_sackcloth"],
+				[1, "cloth/legend_sackcloth"],
 				[1, "cloth/legend_sackcloth_patched"],
 				[0, "cloth/legend_sackcloth_tattered"],
-				[0, "cloth/legend_tunic"],
+				[4, "cloth/legend_tunic"],
 				[0, "cloth/legend_tunic_noble"]
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)
@@ -113,12 +109,12 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[0, ""],
+					[10, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],
 					[0, "plate/legend_armor_leather_jacket"],
-					[0, "plate/legend_armor_leather_jacket_simple"],
+					[1, "plate/legend_armor_leather_jacket_simple"],
 					[0, "plate/legend_armor_leather_lamellar"],
 					[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
 					[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
@@ -155,24 +151,24 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 8);
+			r = this.Math.rand(1, 10);
 
 			if (r == 1)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/butcher_apron"));
+				this.m.Items.equip(this.new("scripts/items/armor/sackcloth"));
 			}
-			else if (r == 4)
+			else if (r == 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/leather_wraps"));
+				this.m.Items.equip(this.new("scripts/items/armor/thick_tunic"));
 			}
 			else
 			{
-				this.m.Items.equip(this.new("scripts/items/armor/butcher_apron"));
+				this.m.Items.equip(this.new("scripts/items/armor/linen_tunic"));
 			}
 		}
 
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 66)
 		{
 			local r = this.Math.rand(1, 4);
 
@@ -180,15 +176,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.Items.equip(this.new("scripts/items/helmets/hood"));
 			}
-			else if (r == 2)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/headscarf"));
-			}
-			else if (r == 3)
-			{
-				this.m.Items.equip(this.new("scripts/items/helmets/straw_hat"));
-			}
-			else if (r == 4)
+			else if (r >= 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
 			}

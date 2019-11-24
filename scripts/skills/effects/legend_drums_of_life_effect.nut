@@ -1,12 +1,12 @@
-this.legend_drums_of_war_effect <- this.inherit("scripts/skills/skill", {
+this.legend_drums_of_life_effect <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "effects.legend_drums_of_war";
-		this.m.Name = "Drums of War";
+		this.m.ID = "effects.legend_drums_of_life";
+		this.m.Name = "Drums of Life";
 		this.m.Description = "";
-		this.m.Icon = "skills/status_effect_105.png";
-		this.m.Overlay = "status_effect_105";
+		this.m.Icon = "ui/perks/drums_of_life_circle.png";
+		this.m.Overlay = "drums_of_life_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsHidden = true;
@@ -16,8 +16,11 @@ this.legend_drums_of_war_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		local actor = this.getContainer().getActor();
-		actor.setFatigue(this.Math.max(0, actor.getFatigue() - 1));
+		if (actor.getHitpoints < actor.getHitpointsMax)
+		{
+		actor.setFatigue(this.Math.max(0, actor.getHitpoints() + 1));
 		this.spawnIcon(this.m.Overlay, actor.getTile());
+		}
 	}
 
 	function onTurnEnd()
