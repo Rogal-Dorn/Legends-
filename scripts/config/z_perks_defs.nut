@@ -2450,8 +2450,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_charge",
 		Name = this.Const.Strings.PerkName.LegendHorseCharge,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseCharge,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/charge_perk.png",
+		IconDisabled = "ui/perks/charge_perk_bw.png",
 		Const = "LegendHorseCharge"
 	},
 	{
@@ -2486,8 +2486,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_hippology",
 		Name = this.Const.Strings.PerkName.LegendHorseHippology,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseHippology,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/hippology_perk.png",
+		IconDisabled = "ui/perks/hippology_perk_bw.png",
 		Const = "LegendHorseHippology"
 	},
 	{
@@ -2522,8 +2522,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_liberty",
 		Name = this.Const.Strings.PerkName.LegendHorseLiberty,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLiberty,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/liberty_perk.png",
+		IconDisabled = "ui/perks/liberty_perk_bw.png",
 		Const = "LegendHorseLiberty"
 	},
 	{
@@ -2531,8 +2531,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_longeing",
 		Name = this.Const.Strings.PerkName.LegendHorseLongeing,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLongeing,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/longeing_perk.png",
+		IconDisabled = "ui/perks/longeing_perk_bw.png",
 		Const = "LegendHorseLongeing"
 	},
 	{
