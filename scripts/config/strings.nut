@@ -164,7 +164,17 @@ gt.Const.Strings.EntityName <- [
 	"White Warwolf",
 	"Winselmutter",
 	"Höllenhund",
-	"Necrosavant Lord"
+	"Necrosavant Lord",
+	"Peasant Butcher",
+	"Peasant Blacksmith",
+	"Peasant Monk",
+	"Peasant Farmhand",
+	"Peasant Minstrel",
+	"Peasant Poacher",
+	"Peasant Woodcutter",
+	"Peasant Miner",
+	"Peasant Squire",
+	"Peasant Witch Hunter"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -264,7 +274,17 @@ gt.Const.Strings.EntityNamePlural <- [
 	"White Warwolves",
 	"Winselmutters",
 	"Höllenhunds",
-	"Necrosavant Lords"
+	"Necrosavant Lords",
+	"Peasant Butchers",
+	"Peasant Blacksmiths",
+	"Peasant Monks",
+	"Peasant Farmhands",
+	"Peasant Minstrels",
+	"Peasant Poachers",
+	"Peasant Woodsfolk",
+	"Peasant Miners",
+	"Peasant Squires",
+	"Peasant Witch Hunters"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1319,7 +1339,25 @@ gt.Const.Strings.PerkName <- {
 	LegendUntouchable = "Untouchable",
 	LegendAssassinate = "Assassinate",
 	LegendMealPreperation = "Meal Preperation",
-	LegendAlcoholBrewing = "Alcohol Brewing"
+	LegendAlcoholBrewing = "Alcohol Brewing",
+	LegendHorseCharge = "Mounted Charge",
+	LegendHorsePirouette = "Pirouette",
+	LegendHorseBitting = "Bitting",
+	LegendHorseDesensitization = "Desensitization",
+	LegendHorseHippology = "Hippology",
+	LegendHorseImpulsion = "Impulsion",
+	LegendHorseLeadChange = "Lead Change",
+	LegendHorseLegControl = "Leg Control",
+	LegendHorseLiberty = "Liberty",
+	LegendHorseLongeing = "Longeing",
+	LegendHorseParthianShot = "Parthian Shot",
+	LegendHorsePiaffe = "Piaffe",
+	LegendHorseTempiChange = "Tempi Change",
+	LegendHorseCollection = "Collection",
+	LegendHorseFlyingChange = "Flying Change",
+	LegendHorsePassage = "Passage",
+	LegendDrumsOfLife = "Drums of Life"
+
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. \n[color=#0b0084]From the Fit perk group[/color]",
@@ -1499,8 +1537,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMedIngredients = "Not all of a plant is required for healing, your knowledge of the active ingredients lets you throw away excess leaves and roots. Increases maximum medicine storage by 20.  \n[color=#0b0084]From the Healer perk group[/color]",
 	LegendToolsDrawers = "Organising your tools into labeled compartments lets you carry more. Increases maximum tool storage by 10.  \n[color=#0b0084]From the Repair perk group[/color]",
 	LegendToolsSpares = "Your experience with repairs has taught you to save your scraps and left over parts. These spares take up little space but are often just what you need for field repairs. Increases maximum tool storage by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color].  \n[color=#0b0084]From the Repair perk group[/color]",
-	LegendBarterConvincing = "This characters skill with words makes their trade proposals more acceptable. Grants +2.5% barter skill, increasing sell prices, reducing buy prices and increasing pay for delivery contracts.  \n[color=#0b0084]From the Barter perk group[/color]",
-	LegendBarterTrustworthy = "This characters body language makes people believe them, leading to more favourable trade agreements. Grants +5% barter.  \n[color=#0b0084]From the Barter perk group[/color]",
+	LegendBarterConvincing = "This characters skill with words makes their trade proposals more acceptable. Grants +2.5 barter skill, increasing sell prices, reducing buy prices and increasing pay for delivery contracts. Barter skill begins falling off at higher total rates.  \n[color=#0b0084]From the Barter perk group[/color]",
+	LegendBarterTrustworthy = "This characters body language makes people believe them, leading to more favourable trade agreements. Grants +5 barter skill increasing sell prices, reducing buy prices and increasing pay for delivery contracts. Barter skill begins falling off at higher total rates.  \n[color=#0b0084]From the Barter perk group[/color]",
 	LegendBribe = "Throw coins at your enemies to bribe them away from battle, only works on humans. The cost is double the XP that would be granted by killing the enemy.  \n[color=#0b0084]From the Bribe perk group[/color]",
 	LegendSpecialistButcherDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]4-12[/color] damage while using a Butchers Cleaver. 25% of this skill applies to One Handed Cleavers, except whips. \n[color=#0b0084]From the Butcher perk group[/color]",
 	LegendSpecialistButcherSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]12[/color] melee skill while using a Butcher\'s Cleaver. 25% of this skill applies to One Handed Cleavers, except whips.  \n[color=#0b0084]From the Butcher perk group[/color]",
@@ -1581,7 +1619,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] less likely to attack you instead of an ally. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee defense while wielding a staff. 25% of this bonus is applied to Swordstaves. \n[color=#0b0084]From the Staff perk group[/color]",
-	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] fatigue to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] fatigue to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration of Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte. \n[color=#0b0084]From the Unarmed perk group[/color] ",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and stunning them for a round. Grants the \'Grapple\' ability. \n[color=#0b0084]From the Unarmed perk group[/color]",
@@ -1608,8 +1646,24 @@ gt.Const.Strings.PerkDescription <- {
 	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] melee and ranged defense while hidden ",
 	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really count.  Striking from the shadows allows you to bypass enemy defenses and strike for their unfended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+200%[/color] damage while hidden",
 	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks. Unlocks a chance to get better food rewards when this character hunts in camp. The chance and rewards increase as you level up. Includes porridge, pies and puddings. ",
-	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead."
-
+	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead.",
+	LegendHorseCharge = "Use the great weight and speed of the horse to charge forward. Move up to four spaces and attack an enemy",
+	LegendHorsePirouette = "Learning to turn quickly allows quick changes in direction required to escape enemies",
+	LegendHorseBitting = "Getting a horse accustomed to the feel of a bit and a bridle, makes it easier to control the movements. This increases defenses in battle by 25% of the rider\'s melee defense",
+	LegendHorseDesensitization = "Using loud noises and sudden movements, the horse is trained to not react to the sounds of battle until the rider tells it to. This increases melee attack in battle by 25% of the rider\'s melee attack ",
+	LegendHorseHippology = "Knowledge of horse physiology allows for better diet, excercise and care. Increases hitpoints by 25%",
+	LegendHorseImpulsion = "Effective leverage of equestrian physiology relaxes the spinal column and allows the hindquarters to engage effectively. Increases Initiative by 25%",
+	LegendHorseLeadChange = "A horse\'s lead leg can tire, by training a horse to swap legs it is possible to prevent the horse from tiring. Movement costs 25% less fatigue",
+	LegendHorseLegControl = "it is not possible to hold the reigns while firing a bow. Horse and rider must learn to communicate through the rider\'s legs. Increases ranged attack in battle by 25%",
+	LegendHorseLiberty = "Though extensive roundpenning training, the horse gains trust in the movements of the rider. This increases resolve in battle by 25% of the rider\'s resolve  ",
+	LegendHorseLongeing = "Time spent working on a long rope helps build trust between horse and rider. Increases resolve by 25%",
+	LegendHorseParthianShot = "shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. Increases ranged attack by 25%",
+	LegendHorsePiaffe = "Keeping a horse moving can retain their focus and prepare them for oncoming battle. Increases melee attack in battle by 25% ",
+	LegendHorseTempiChange = "the most challenging form of lead change, a tempi change requires shifting back and forth between lead legs. This form of training can allow the horse to change lead leg according to the situation, useful when under fire. Increases ranged defense by 25%",
+	LegendHorseCollection = "By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases fatigue by 25%",
+	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
+	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
+	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

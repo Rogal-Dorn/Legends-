@@ -64,10 +64,10 @@ gt.Const.LegendMod.StartResources <- [
 ]
 
 gt.Const.LegendMod.ResourceModifiers <- {
-	Ammo = [5, 10, 15, 30, 50],
-	ArmorParts = [2, 5, 10, 15, 20, 30],
-	Meds = [5, 10, 15, 30, 40],
-	Stash = [1, 3, 5, 10, 15, 30],
+	Ammo = [8, 13, 21, 34, 55],
+	ArmorParts = [3, 5, 8, 13, 21, 34],
+	Meds = [5, 8, 13, 21, 34],
+	Stash = [3, 5, 8, 13, 21, 34],
 	Healing = [0.0, 0.10, 0.30. 0.50],
 	Injury = [0.0, 0.10, 0.30, 0.50],
 	Repair = [0.0, 0.10, 0.30, 0.50, 1.0],

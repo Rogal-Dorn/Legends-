@@ -606,6 +606,16 @@ gt.Const.EntityIcon <- [
 	"white_direwolf_orientation",
 	"banshee_orientation_2",
 	"hollenhound_orientation",
-	"vampire_lord_orientation"
+	"vampire_lord_orientation",
+	"butcher_orientation",
+	"blacksmith_orientation",
+	"monk_orientation",
+	"farmhand_orientation",
+	"minstrel_orientation",
+	"poacher_orientation",
+	"woodcutter_orientation",
+	"miner_orientation",
+	"squire_orientation",
+	"witchhunter_orientation"
 ];
 

@@ -31,9 +31,9 @@ gt.Const.Perks.BardClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendDaze],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendPush],
 		[gt.Const.Perks.PerkDefs.LegendDrumsOfWar],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendDrumsOfLife]
 	]
 };
 

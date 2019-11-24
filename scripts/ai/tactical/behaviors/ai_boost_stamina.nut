@@ -2,7 +2,9 @@ this.ai_boost_stamina <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		TargetTile = null,
 		PossibleSkills = [
-			"actives.drums_of_war"
+			"actives.drums_of_war",
+			"actives.legend_drums_of_war",
+			"actives.legend_drums_of_life"
 		],
 		Skill = null
 	},
