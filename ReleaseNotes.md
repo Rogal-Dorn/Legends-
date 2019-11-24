@@ -1737,6 +1737,11 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 
 
 13.0.0.10 New Perks
+- Fixed black monolith battle not loading.
+- Fixed Piercing bolt perk.
+- Fixed lute being double grippable.
+- Cleaned up all layered armor graphics (fixed alignments and art quality)
+
 - New higher tier Bandits:
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
