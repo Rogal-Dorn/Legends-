@@ -31,7 +31,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 2;
-		this.m.MaxRange = 6;
+		this.m.MaxRange = 9;
 	}
 
 	function getTooltip()
@@ -41,7 +41,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]6[/color] tiles"
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]9[/color] tiles"
 		});
 		ret.push({
 			id = 7,

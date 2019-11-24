@@ -4,7 +4,7 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_drums_of_war";
 		this.m.Name = "Drums of War";
-		this.m.Description = "Push allies on with your music, lowering the fatigue of all allies by 5. Must be holding a musical instrument to use.";
+		this.m.Description = "Push allies on with your music, lowering the fatigue of all allies by 1. Must be holding a musical instrument to use.";
 		this.m.Icon = "skills/active_163.png";
 		this.m.IconDisabled = "skills/active_163.png";
 		this.m.Overlay = "active_163";
@@ -19,7 +19,7 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = false;
-		this.m.IsStacking = false;
+		this.m.IsStacking = true;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
@@ -57,7 +57,7 @@ function getTooltip()
 				continue;
 			}
 
-			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.legend_drums_of_war"))
+			if (a.getFaction() == _user.getFaction())
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
 			}
