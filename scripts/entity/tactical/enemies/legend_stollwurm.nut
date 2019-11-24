@@ -203,7 +203,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 									break
 								}
 								rune.setRuneVariant(variant);
-								rune.setRuneBonus(_bonus);
+								rune.setRuneBonus(true);
 								rune.setRuneVariant(0);
 								rune.drop(_tile);
 							}
