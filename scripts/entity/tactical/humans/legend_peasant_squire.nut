@@ -103,7 +103,7 @@ this.legend_peasant_squire <- this.inherit("scripts/entity/tactical/human", {
 				}
 
 				local plates = [
-					[, ""],
+					[0, ""],
 					[0, "plate/legend_armor_leather_brigandine"],
 					[0, "plate/legend_armor_leather_brigandine_hardened"],
 					[0, "plate/legend_armor_leather_brigandine_hardened_full"],

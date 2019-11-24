@@ -644,6 +644,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			barterMult += bro.getBarterModifier();
 		}
+		barterMult = this.Math.pow(barterMult, 0.5);
 		if ((this.m.Modifiers.BuyPriceMult - barterMult) > 0.01)
 		{
 		p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
@@ -674,6 +675,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			barterMult += bro.getBarterModifier();
 		}
+		barterMult = this.Math.pow(barterMult, 0.5);
 		p = p * (this.m.Modifiers.SellPriceMult + barterMult);
 		return p;
 	}

@@ -98,7 +98,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		{
 			barterMult += bro.getBarterModifier();
 		}
-		local bartermod = 100 * barterMult;
+		local bartermod = 10 * barterMult;
 		local modrate = this.Math.pow(bartermod, 0.5);
 		
 
