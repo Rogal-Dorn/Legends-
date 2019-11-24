@@ -2,9 +2,9 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.Peasant;
+		this.m.Type = this.Const.EntityType.LegendPeasantButcher;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.Peasant.XP;
+		this.m.XP = this.Const.Tactical.Actor.LegendPeasantButcher.XP;
 		this.human.create();
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
