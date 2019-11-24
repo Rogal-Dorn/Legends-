@@ -171,7 +171,10 @@ gt.Const.Strings.EntityName <- [
 	"Peasant Farmhand",
 	"Peasant Minstrel",
 	"Peasant Poacher",
-	"Peasant Woodcutter"
+	"Peasant Woodcutter",
+	"Peasant Miner",
+	"Peasant Squire",
+	"Peasant Witch Hunter"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -278,7 +281,10 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Peasant Farmhands",
 	"Peasant Minstrels",
 	"Peasant Poachers",
-	"Peasant Woodsfolk"
+	"Peasant Woodsfolk",
+	"Peasant Miners",
+	"Peasant Squires",
+	"Peasant Witch Hunters"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",

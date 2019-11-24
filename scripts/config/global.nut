@@ -613,6 +613,9 @@ gt.Const.EntityIcon <- [
 	"farmhand_orientation",
 	"minstrel_orientation",
 	"poacher_orientation",
-	"woodcutter_orientation"
+	"woodcutter_orientation",
+	"miner_orientation",
+	"squire_orientation",
+	"witchhunter_orientation"
 ];
 

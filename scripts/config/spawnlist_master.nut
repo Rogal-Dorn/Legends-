@@ -1019,7 +1019,7 @@ gt.Const.World.Spawn.Troops <- {
 	LegendPeasantBlacksmith = {
 		ID = this.Const.EntityType.LegendPeasantBlacksmith,
 		Variant = 0,
-		Strength = 5,
+		Strength = 10,
 		Cost = 20,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/legend_peasant_blacksmith"
@@ -1027,8 +1027,8 @@ gt.Const.World.Spawn.Troops <- {
 	LegendPeasantMonk = {
 		ID = this.Const.EntityType.LegendPeasantMonk,
 		Variant = 0,
-		Strength = 5,
-		Cost = 10,
+		Strength = 10,
+		Cost = 15,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/legend_peasant_monk"
 	},
@@ -1063,6 +1063,30 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 10,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/legend_peasant_woodsman"
+	},
+	LegendPeasantMiner = {
+		ID = this.Const.EntityType.LegendPeasantMiner,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_miner"
+	},
+	LegendPeasantSquire = {
+		ID = this.Const.EntityType.LegendPeasantSquire,
+		Variant = 0,
+		Strength = 10,
+		Cost = 20,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_squire"
+	},
+	LegendPeasantWitchHunter = {
+		ID = this.Const.EntityType.LegendPeasantWitchHunter,
+		Variant = 0,
+		Strength = 15,
+		Cost = 25,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_witchhunter"
 	}
 };
 

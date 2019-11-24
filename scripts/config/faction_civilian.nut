@@ -509,3 +509,63 @@ gt.Const.Tactical.Actor.LegendPeasantWoodsman <- {
 	],
 	FatigueRecoveryRate = 20
 };
+
+gt.Const.Tactical.Actor.LegendPeasantMiner <- {
+	XP = 75,
+	ActionPoints = 9,
+	Hitpoints = 150,
+	Bravery = 50,
+	Stamina = 100,
+	MeleeSkill = 60,
+	RangedSkill = 20,
+	MeleeDefense = 10,
+	RangedDefense = 10,
+	Initiative = 90,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
+
+gt.Const.Tactical.Actor.LegendPeasantSquire <- {
+	XP = 100,
+	ActionPoints = 9,
+	Hitpoints = 120,
+	Bravery = 75,
+	Stamina = 120,
+	MeleeSkill = 70,
+	RangedSkill = 20,
+	MeleeDefense = 20,
+	RangedDefense = 10,
+	Initiative = 90,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
+
+gt.Const.Tactical.Actor.LegendPeasantWitchHunter <- {
+	XP = 75,
+	ActionPoints = 9,
+	Hitpoints = 75,
+	Bravery = 35,
+	Stamina = 100,
+	MeleeSkill = 50,
+	RangedSkill = 80,
+	MeleeDefense = 10,
+	RangedDefense = 30,
+	Initiative = 110,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};

@@ -178,7 +178,7 @@ this.legend_peasant_poacher <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r >= 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/helmets/feathered_hat"));
+				this.m.Items.equip(this.new("scripts/items/helmets/hunters_hat"));
 			}
 		}
 	}
