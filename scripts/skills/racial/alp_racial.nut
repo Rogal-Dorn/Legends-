@@ -34,11 +34,6 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		if (_skill == null)
-		{
-			return;
-		}
-
 		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot")
 		{
 			_properties.DamageReceivedRegularMult *= 0.1;
@@ -106,4 +101,3 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-
