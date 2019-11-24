@@ -333,7 +333,7 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 				}	
 				_event.m.Champion.getSkills().update();
 				
-				foreach( bro in brothers )
+				foreach( bro in this.World.getPlayerRoster().getAll() )
 				{
 					if (bro.getBackground().isCombatBackground() && this.Math.rand(1, 100) <= 33)
 					{

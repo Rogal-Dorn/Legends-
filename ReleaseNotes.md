@@ -1741,12 +1741,25 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 - Fixed Piercing bolt perk.
 - Fixed lute being double grippable.
 - Cleaned up all layered armor graphics (fixed alignments and art quality)
+- Increases stash and ammo carrying capacity for all backgrounds 
+- Fixes worldmap icons being too large for banshee, hollenhound, vampie lord and werebear 
+- Fixes rune drop when fighting stollwurms
+- Fixes error in swordmaster fav enemy event 
 
 - New higher tier Bandits:
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
  * After (Easy 120, Noraml 90, Hard 60, Legendary 30) days, Bandit Leaders and Bandit Warlords will increase ALL of their stats every 15 days and Bandit Veterans will increase MS, RS, HP every 15 days - until your company perishes!
 - Vampire Lords now have bloodbath and slaughter perks.
+
+
+- Mid tier peasant enemies:
+ - Peasant Butcher - Applies bleed and deals extra damage to bleeding targets
+ - Peasant Blacksmith - deals estra damage to armor 
+ - Peasant Farmhand - reach advantage 
+ - Peasant Minstrel - drums of war and life 
+ - Peasant Monk - high resolve, rallies the peasants 
+ - Peasant Poacher - ranged unit with increased accuracy 
 
 Perks:
 
@@ -1820,14 +1833,4 @@ Leg control	Increased rattack  25%	it is not possible to hold the reigns while f
 Hippology	Increased hitpoints 25%	Knowledge of horse physiology allows for better diet, excercise and care. 
 
 
-Increases stash and ammo carrying capacity for all backgrounds 
-Fixes worldmap icons being too large for banshee, hollenhound, vampie lord and werebear 
 
-
-Mid tier peasant enemies:
-	Peasant Butcher - Applies bleed and deals extra damage to bleeding targets
-	Peasant Blacksmith - deals estra damage to armor 
-	Peasant Farmhand - reach advantage 
-	Peasant Minstrel - drums of war and life 
-	Peasant Monk - high resolve, rallies the peasants 
-	Peasant Poacher - ranged unit with increased accuracy 
