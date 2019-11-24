@@ -38,6 +38,8 @@ while read -r line; do
         echo "skipping $line"
     elif [ "$line" == "scripts/factions/faction_action.nut" ]; then
         echo "skipping $line"
+    elif [ "$line" == "scripts/skills/racial/alp_racial.nut" ]; then
+        echo "skipping $line"        
     else
         echo "$line"
         path=$( echo ${line%/*} )

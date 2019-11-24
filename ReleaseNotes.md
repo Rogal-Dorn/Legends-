@@ -1745,7 +1745,9 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 - Fixes worldmap icons being too large for banshee, hollenhound, vampie lord and werebear 
 - Fixes rune drop when fighting stollwurms
 - Fixes error in swordmaster fav enemy event  
-- Cultist enemies gain ninetails, chains, flails and the cultist perks described above 
+- Fixes possible crash with alp teleports
+- Cultist enemies gain ninetails, chains, flails and the cultist perks described above
+
 - New higher tier Bandits:
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
@@ -1753,7 +1755,7 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 - Vampire Lords now have bloodbath and slaughter perks.
 
 
-- Mid tier peasant enemies:
+- New Mid tier peasant enemies:
  - Peasant Butcher - Applies bleed and deals extra damage to bleeding targets
  - Peasant Blacksmith - deals estra damage to armor 
  - Peasant Farmhand - reach advantage 
