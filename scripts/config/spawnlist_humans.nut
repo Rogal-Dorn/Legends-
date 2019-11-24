@@ -78,7 +78,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 5,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantButcher,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantButcher,
 					Cost = 15
 				}
 			]
@@ -87,7 +87,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 15,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantFarmhand,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
 					Cost = 15
 				}
 			]
@@ -96,7 +96,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 5,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantMonk,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
 					Cost = 20
 				}
 			]
@@ -105,7 +105,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 5,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantBlacksmith,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantBlacksmith,
 					Cost = 25
 				}
 			]
@@ -114,7 +114,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 10,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantMinstrel,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMinstrel,
 					Cost = 15
 				}
 			]
@@ -123,7 +123,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 10,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantPoacher,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
 					Cost = 20
 				}
 			]
@@ -132,7 +132,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 5,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantWoodsman,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWoodsman,
 					Cost = 15
 				}
 			]
@@ -141,7 +141,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 5,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantMiner,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantMiner,
 					Cost = 20
 				}
 			]
@@ -150,7 +150,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 5,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantSquire,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantSquire,
 					Cost = 30
 				}
 			]
@@ -159,7 +159,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Weight = 5,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.PeasantWitchHunter,
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWitchHunter,
 					Cost = 35
 				}
 			]

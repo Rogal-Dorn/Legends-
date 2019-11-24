@@ -345,7 +345,17 @@ gt.Const.EntityType <- {
 	LegendDemonHound = 96,
 	LegendVampireLord = 97,
 	BanditVeteran = 98,
-	BanditWarlord = 99
+	BanditWarlord = 99,
+	LegendPeasantButcher = 100,
+	LegendPeasantBlacksmith = 101,
+	LegendPeasantMonk = 102,
+	LegendPeasantFarmhand = 103,
+	LegendPeasantMinstrel = 104,
+	LegendPeasantPoacher = 105,
+	LegendPeasantWoodsman = 106,
+	LegendPeasantMiner = 107,
+	LegendPeasantSquire = 108,
+	LegendPeasantWitchHunter = 109,
 	function convertOldToNew( _id )
 	{
 		switch(_id)

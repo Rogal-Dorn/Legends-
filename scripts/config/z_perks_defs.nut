@@ -2433,7 +2433,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Name = this.Const.Strings.PerkName.LegendMealPreperation,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMealPreperation,
 		Icon = "ui/perks/meal_prep_circle.png",
-		IconDisabled = "ui/perks/meal_prep_bw.png",
+		IconDisabled = "ui/perks/meal_prep_circle_bw.png",
 		Const = "LegendMealPreperation"
 	},	
 	{
@@ -2529,11 +2529,11 @@ gt.Const.Perks.PerkDefObjects <- [
 	{
 		ID = "perk.legend_horse_longeing",
 		Script = "scripts/skills/perks/perk_legend_horse_longeing",
-		Name = this.Const.Strings.PerkName.LegendHorseLongeling,
-		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLongeling,
+		Name = this.Const.Strings.PerkName.LegendHorseLongeing,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLongeing,
 		Icon = "ui/perks/perk_23.png",
 		IconDisabled = "ui/perks/perk_23_sw.png",
-		Const = "LegendHorseLongeling"
+		Const = "LegendHorseLongeing"
 	},
 	{
 		ID = "perk.legend_horse_parthian_shot",
@@ -2556,7 +2556,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	{
 		ID = "perk.legend_horse_tempi_change",
 		Script = "scripts/skills/perks/perk_legend_horse_tempi_change",
-		Name = this.Const.Strings.PerkName.LegendTempiChange,
+		Name = this.Const.Strings.PerkName.LegendHorseTempiChange,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseTempiChange,
 		Icon = "ui/perks/perk_23.png",
 		IconDisabled = "ui/perks/perk_23_sw.png",

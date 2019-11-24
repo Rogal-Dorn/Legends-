@@ -1090,8 +1090,6 @@ gt.Const.World.Spawn.Troops <- {
 	}
 };
 
-
-
 gt.Const.World.Spawn.Caravan <-
 {
 	Name = "Caravan",
