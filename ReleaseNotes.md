@@ -1751,6 +1751,7 @@ Perks:
 * Dedication - New perk - melee and ranged defense increased by 10% of your resolve while wearing a cultist hood
 * Penance - New perk - Increase your resolve by 10% of your missing health, while wearing cultist robes, sackcloth or leather wraps
 * Evisceration - New perk - prepare your next attack to inflict a bleed that does 2 damage per round over five rounds. 
+* Lacerate - New perk - Gain a chance to inflict bleed, equal to your missing health as a percentage	
 	
 - Butchers and fishmongers: 
 * Also gains evisceration
@@ -1826,3 +1827,5 @@ Mid tier peasant enemies:
 	Peasant Minstrel - drums of war and life 
 	Peasant Monk - high resolve, rallies the peasants 
 	Peasant Poacher - ranged unit with increased accuracy 
+
+Cultist enemies gain ninetails, chains, flails and the cultist perks described above 
