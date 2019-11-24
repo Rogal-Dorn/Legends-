@@ -50,6 +50,12 @@
 <sprite id="wither" ic="FF23165B" img="skills\wither56_skill.png" />
 <sprite id="blood_potion_circle" ic="FF23165B" img="skills\blood_potion_circle.png" />
 <sprite id="ichor_potion_circle" ic="FF23165B" img="skills\ichor_potion_circle.png" />
+<sprite id="drums_of_life_circle" ic="FF23165B" img="skills\drums_of_life_circle.png" />
+<sprite id="prayer_purple" ic="FF23165B" img="skills\prayer_purple.png" />
+<sprite id="prayer_green" ic="FF23165B" img="skills\prayer_green.png" />
+<sprite id="alcohol" ic="FF23165B" img="skills\alcohol.png" />
+<sprite id="graze" ic="FF23165B" img="skills\graze.png" />
+<sprite id="bleed" ic="FF23165B" img="skills\bleed.png" />
 
 <sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
 <sprite id="mini_shimmering_visage_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_shimmering_visage_circle.png" />
@@ -73,6 +79,14 @@
 <sprite id="banshee_orientation_2" groupId="4DBF973D" ic="FF22200A" img="orientation\banshee_orientation_2.png" />
 <sprite id="hollenhound_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\hollenhound_orientation.png" />
 <sprite id="vampire_lord_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\vampire_lord_orientation.png" />
+<sprite id="blacksmith_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\blacksmith_orientation.png" />
+<sprite id="butcher_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\butcher_orientation.png" />
+<sprite id="farmhand_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\farmhand_orientation.png" />
+<sprite id="minstrel_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\minstrel_orientation.png" />
+<sprite id="monk_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\monk_orientation.png" />
+<sprite id="poacher_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\poacher_orientation.png" />
+<sprite id="woodcuter_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\woodcutter_orientation.png" />
+<sprite id="werebear_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\werebear_orientation.png" />
 
 <sprite id="demon_hound_flame_01" ic="FF23165B" img="skills\demon_hound_flame_01.png" />
 <sprite id="demon_hound_bite" ic="FF23165B" img="skills\demon_hound_bite.png" />

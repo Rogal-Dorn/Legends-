@@ -547,14 +547,6 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 10,
 		Row = -1,
 		Script = "scripts/entity/tactical/humans/peasant"
-	},
-	PeasantButcher = {
-		ID = this.Const.EntityType.Peasant,
-		Variant = 0,
-		Strength = 5,
-		Cost = 10,
-		Row = -1,
-		Script = "scripts/entity/tactical/humans/legend_peasant_butcher"
 	},	
 	PeasantArmed = {
 		ID = this.Const.EntityType.Peasant,
@@ -1015,8 +1007,63 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 60,
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_vampire_lord"
+	},
+	LegendPeasantButcher = {
+		ID = this.Const.EntityType.LegendPeasantButcher,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_butcher"
+	},
+	LegendPeasantBlacksmith = {
+		ID = this.Const.EntityType.LegendPeasantBlacksmith,
+		Variant = 0,
+		Strength = 5,
+		Cost = 20,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_blacksmith"
+	},
+	LegendPeasantMonk = {
+		ID = this.Const.EntityType.LegendPeasantMonk,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_monk"
+	},
+	LegendPeasantFarmhand = {
+		ID = this.Const.EntityType.LegendPeasantFarmhand,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_farmhand"
+	},
+	LegendPeasantMinstrel = {
+		ID = this.Const.EntityType.LegendPeasantMinstrel,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_minstrel"
+	},
+	LegendPeasantPoacher = {
+		ID = this.Const.EntityType.LegendPeasantPoacher,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_poacher"
+	},
+	LegendPeasantWoodsman = {
+		ID = this.Const.EntityType.LegendPeasantWoodsman,
+		Variant = 0,
+		Strength = 5,
+		Cost = 10,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/legend_peasant_woodsman"
 	}
-
 };
 
 

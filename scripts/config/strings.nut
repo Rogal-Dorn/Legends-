@@ -164,7 +164,14 @@ gt.Const.Strings.EntityName <- [
 	"White Warwolf",
 	"Winselmutter",
 	"Höllenhund",
-	"Necrosavant Lord"
+	"Necrosavant Lord",
+	"Peasant Butcher",
+	"Peasant Blacksmith",
+	"Peasant Monk",
+	"Peasant Farmhand",
+	"Peasant Minstrel",
+	"Peasant Poacher",
+	"Peasant Woodcutter"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -264,7 +271,14 @@ gt.Const.Strings.EntityNamePlural <- [
 	"White Warwolves",
 	"Winselmutters",
 	"Höllenhunds",
-	"Necrosavant Lords"
+	"Necrosavant Lords",
+	"Peasant Butchers",
+	"Peasant Blacksmiths",
+	"Peasant Monks",
+	"Peasant Farmhands",
+	"Peasant Minstrels",
+	"Peasant Poachers",
+	"Peasant Woodsfolk"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -1335,7 +1349,8 @@ gt.Const.Strings.PerkName <- {
 	LegendHorseTempiChange = "Tempi Change",
 	LegendHorseCollection = "Collection",
 	LegendHorseFlyingChange = "Flying Change",
-	LegendHorsePassage = "Passage"
+	LegendHorsePassage = "Passage",
+	LegendDrumsOfLife = "Drums of Life"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1598,7 +1613,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] less likely to attack you instead of an ally. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee defense while wielding a staff. 25% of this bonus is applied to Swordstaves. \n[color=#0b0084]From the Staff perk group[/color]",
-	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] fatigue to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] fatigue to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue cost of Hand to Hand, Kick and Grapple. Increases armor penetration of Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte. \n[color=#0b0084]From the Unarmed perk group[/color] ",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and stunning them for a round. Grants the \'Grapple\' ability. \n[color=#0b0084]From the Unarmed perk group[/color]",
@@ -1641,7 +1656,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorseTempiChange = "the most challenging form of lead change, a tempi change requires shifting back and forth between lead legs. This form of training can allow the horse to change lead leg according to the situation, useful when under fire. Increases ranged defense by 25%",
 	LegendHorseCollection = "By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases fatigue by 25%",
 	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
-	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain"
+	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
+	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

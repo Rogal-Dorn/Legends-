@@ -48,7 +48,7 @@ gt.Const.World.Spawn.Peasants <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Peasant,
-					Cost = 10
+					Cost = 5
 				}
 			]
 		}
@@ -66,7 +66,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 	MaxR = 160,
 	Troops = [
 		{
-			Weight = 95,
+			Weight = 55,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.PeasantArmed,
@@ -79,7 +79,61 @@ gt.Const.World.Spawn.PeasantsArmed <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.PeasantButcher,
-					Cost = 10
+					Cost = 15
+				}
+			]
+		},
+		{
+			Weight = 15,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantFarmhand,
+					Cost = 15
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantMonk,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantBlacksmith,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantMinstrel,
+					Cost = 15
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantPoacher,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.PeasantWoodsman,
+					Cost = 15
 				}
 			]
 		}

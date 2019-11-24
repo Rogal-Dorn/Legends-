@@ -1,12 +1,12 @@
-this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
+this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.legend_drums_of_war";
-		this.m.Name = "Drums of War";
-		this.m.Description = "Push allies on with your music, lowering the fatigue of all allies by 1. Must be holding a musical instrument to use.";
-		this.m.Icon = "skills/active_163.png";
-		this.m.IconDisabled = "skills/active_163.png";
+		this.m.ID = "actives.legend_drums_of_life";
+		this.m.Name = "Drums of Life";
+		this.m.Description = "Push allies on with your music, restoring the health of all allies by 1. Must be holding a musical instrument to use.";
+		this.m.Icon = "ui/perks/drums_of_life_square.png";
+		this.m.IconDisabled = "skills/drums_of_life_square_bw.png";
 		this.m.Overlay = "active_163";
 		this.m.SoundOnUse = [
 			"sounds/enemies/dlc4/wardrums_01.wav",
@@ -59,11 +59,11 @@ function getTooltip()
 
 			if (a.getFaction() == _user.getFaction())
 			{
-				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
+				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
 			}
 		}
 
-		this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
+		this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
 		return true;
 	}
 

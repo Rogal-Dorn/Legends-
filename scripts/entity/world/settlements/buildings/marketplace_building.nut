@@ -266,6 +266,16 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "helmets/hood"
 			},
 			{
+				R = 90,
+				P = 1.0,
+				S = "weapons/legend_drum"
+			},
+			{
+				R = 90,
+				P = 1.0,
+				S = "weapons/lute"
+			},
+			{
 				R = 15,
 				P = 1.0,
 				S = "shields/buckler_shield"

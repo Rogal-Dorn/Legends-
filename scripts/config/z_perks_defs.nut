@@ -2597,6 +2597,15 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/perk_23.png",
 		IconDisabled = "ui/perks/perk_23_sw.png",
 		Const = "LegendHorsePirouette"
+	},
+	{
+		ID = "perk.legend_drums_of_life",
+		Script = "scripts/skills/perks/perk_legend_drums_of_life",
+		Name = this.Const.Strings.PerkName.LegendDrumsOfLife,
+		Tooltip = this.Const.Strings.PerkDescription.LegendDrumsOfLife,
+		Icon = "ui/perks/drums_of_life.png",
+		IconDisabled = "ui/perks/drums_of_life_bw.png",
+		Const = "LegendDrumsOfLife"
 	}
 ];
 gt.Const.Perks.PerkDefs <- {};
