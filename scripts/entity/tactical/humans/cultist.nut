@@ -33,14 +33,20 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_dagger"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_flail"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_lacerate"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_ninetails_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_ninetails_damage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_cult_hood"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_cult_armor"));
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_flow"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 
@@ -48,11 +54,11 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 3);
+		local r = this.Math.rand(1, 6);
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/dagger"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_chain"));
 		}
 		else if (r == 2)
 		{
@@ -60,13 +66,17 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/scramasax"));
+			this.m.Items.equip(this.new("scripts/items/weapons/wooden_flail"));
+		}
+		else if (r >= 4)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		}
 
 		if (this.Const.LegendMod.Configs.LegendArmorsEnabled())
 		{
 			local cloths = [
-				[1, "armor/legend_armor_robes_cultist"],
+				[3, "armor/legend_armor_robes_cultist"],
 				[1, "cloth/legend_robes"],
 			];
 			local armor = this.Const.World.Common.pickLegendArmor(cloths)

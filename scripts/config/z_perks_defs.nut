@@ -2606,7 +2606,16 @@ gt.Const.Perks.PerkDefObjects <- [
 		Icon = "ui/perks/drums_of_life.png",
 		IconDisabled = "ui/perks/drums_of_life_bw.png",
 		Const = "LegendDrumsOfLife"
-	}
+	},
+	{
+		ID = "perk.legend_lacerate",
+		Script = "scripts/skills/perks/perk_lacerate",
+		Name = this.Const.Strings.PerkName.LegendLacerate,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLacerate,
+		Icon = "ui/perks/bleed_circle.png",
+		IconDisabled = "ui/perks/bleed_circle_bw.png",
+		Const = "LegendLacerate"
+	},
 ];
 gt.Const.Perks.PerkDefs <- {};
 

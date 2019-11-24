@@ -1744,8 +1744,8 @@ https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 - Increases stash and ammo carrying capacity for all backgrounds 
 - Fixes worldmap icons being too large for banshee, hollenhound, vampie lord and werebear 
 - Fixes rune drop when fighting stollwurms
-- Fixes error in swordmaster fav enemy event 
-
+- Fixes error in swordmaster fav enemy event  
+- Cultist enemies gain ninetails, chains, flails and the cultist perks described above 
 - New higher tier Bandits:
  - Veterans (upgrades to Raiders)
  - Warlord (upgrades to Leaders ; guarenteed multiple famed items!)
@@ -1769,6 +1769,7 @@ Perks:
 * Dedication - New perk - melee and ranged defense increased by 10% of your resolve while wearing a cultist hood
 * Penance - New perk - Increase your resolve by 10% of your missing health, while wearing cultist robes, sackcloth or leather wraps
 * Evisceration - New perk - prepare your next attack to inflict a bleed that does 2 damage per round over five rounds. 
+* Lacerate - New perk - Gain a chance to inflict bleed, equal to your missing health as a percentage	
 	
 - Butchers and fishmongers: 
 * Also gains evisceration
@@ -1831,6 +1832,3 @@ Passage 	Better movement in rough terrain	Training the legs to raise higher and 
 Parthian shot	Increased Rattack 25%	shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. 
 Leg control	Increased rattack  25%	it is not possible to hold the reigns while firing a bow. Horse and rider must learn to communicate through the rider's legs
 Hippology	Increased hitpoints 25%	Knowledge of horse physiology allows for better diet, excercise and care. 
-
-
-

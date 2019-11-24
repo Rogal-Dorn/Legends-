@@ -1356,7 +1356,8 @@ gt.Const.Strings.PerkName <- {
 	LegendHorseCollection = "Collection",
 	LegendHorseFlyingChange = "Flying Change",
 	LegendHorsePassage = "Passage",
-	LegendDrumsOfLife = "Drums of Life"
+	LegendDrumsOfLife = "Drums of Life",
+	LegendLacerate = "Lacerate"
 
 };
 gt.Const.Strings.PerkDescription <- {
@@ -1631,7 +1632,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBloodbath = "Take joy in the suffering of others, gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Fatigue and Resolve for each bleeding character on the field [color=#0b0084]From the Cleaver perk group[/color]",
 	LegendTerrifyingVisage = "The mere sight of this character sends enemies fleeing. Reduce resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color] ",
 	LegendFreedomOfMovement = "As others tire, you push on. If your opponent is tiring, and you are not, their attacks do less damage. When an enemy attacks you, subtract their fatigue % from your fatigue %, and gain the difference as damage reduction.  \n[color=#0b0084]From the Light Armor perk group[/color]",
-	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off guard. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] chance to apply daze on every hit with any weapon, when your Initiative and Fatigue are higher than that of your opponent. [color=#0b0084]From the Mace perk group[/color]",
+	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off guard. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] chance to apply daze on every hit with any weapon, when your Initiative is higher than that of your opponent. [color=#0b0084]From the Mace perk group[/color]",
 	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. If this character takes damage while fleeing, they have a chance to rally. The chance is equal to half their resolve. \n[color=#0b0084]From the Trained perk group[/color]",
 	PushTheAdvantage = "Strike hardest where they are weakest. When attacking a sleeping or stunned enemy, gain [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Melee and Ranged skill, and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit the head",
 	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 75.  \n[color=#0b0084]From the Intelligent perk group[/color]",
@@ -1664,6 +1665,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point",
 	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain",
 	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] health to every ally on the field. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]"
+	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
