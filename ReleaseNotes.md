@@ -1784,7 +1784,11 @@ Perks:
  * Drums of life - new perk - 1 healing per turn to all units, stacks 
  * Entice buffed to range 9 
  * Gained revolt 
-	
+
+-Peddlers
+ * barter skill now has falloff for buying and selling, equal to the square root of your barter skill. 
+ * Fixed deliver item contract paying out 10 times too much from barter bonus
+ 
 - Others
 * Inspiring presence - Chance to set each ally at confident is now 1/3rd of your resolve. there is a 2% chance of backfire at 50 resolve, falling to 0% at 150 resolve. 
 * Bloodbath - Added as Tier 6 skill in cleaver tree 
@@ -1811,7 +1815,7 @@ Leg control	Increased rattack  25%	it is not possible to hold the reigns while f
 Hippology	Increased hitpoints 25%	Knowledge of horse physiology allows for better diet, excercise and care. 
 
 
-
+Increases stash and ammo carrying capacity for all backgrounds 
 Fixes worldmap icons being too large for banshee, hollenhound, vampie lord and werebear 
 
 
