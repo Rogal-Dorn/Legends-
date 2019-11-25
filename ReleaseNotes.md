@@ -1736,17 +1736,20 @@ https://drive.google.com/open?id=1PDhZG8zWlnRbcqUcfkS_hRw6nT5NYsn1
 https://drive.google.com/open?id=1WMxpxCXbba7f00vqMXhM_IYmrVU7H47P
 
 
-13.0.0.10 New Perks
+13.0.0.10 Balance Patch
+
+- Rebalance Dynamic Perks - Reduces intensity of effect, reduces differences between backgrounds
+- Increases stash and ammo carrying capacity for all backgrounds 
+- Nerfs barter
 - Fixed black monolith battle not loading.
 - Fixed Piercing bolt perk.
 - Fixed lute being double grippable.
 - Cleaned up all layered armor graphics (fixed alignments and art quality)
-- Increases stash and ammo carrying capacity for all backgrounds 
 - Fixes worldmap icons being too large for banshee, hollenhound, vampie lord and werebear 
 - Fixes rune drop when fighting stollwurms
 - Fixes error in swordmaster fav enemy event  
 - Fixes possible crash with alp teleports
-- Cultist enemies gain ninetails, chains, flails and the cultist perks described above
+- Cultist enemies gain ninetails, chains, flails and the cultist perks described below
 
 - New higher tier Bandits:
  - Veterans (upgrades to Raiders)
@@ -1834,3 +1837,5 @@ Passage 	Better movement in rough terrain	Training the legs to raise higher and 
 Parthian shot	Increased Rattack 25%	shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. 
 Leg control	Increased rattack  25%	it is not possible to hold the reigns while firing a bow. Horse and rider must learn to communicate through the rider's legs
 Hippology	Increased hitpoints 25%	Knowledge of horse physiology allows for better diet, excercise and care. 
+
+
