@@ -2384,7 +2384,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_prepare_bleed",
-		Script = "scripts/skills/perks/perk_prepare_bleed",
+		Script = "scripts/skills/perks/perk_legend_prepare_bleed",
 		Name = this.Const.Strings.PerkName.LegendPrepareBleed,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPrepareBleed,
 		Icon = "ui/perks/bleed_circle.png",
@@ -2393,7 +2393,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_prepare_graze",
-		Script = "scripts/skills/perks/perk_prepare_graze",
+		Script = "scripts/skills/perks/perk_legend_prepare_graze",
 		Name = this.Const.Strings.PerkName.LegendPrepareGraze,
 		Tooltip = this.Const.Strings.PerkDescription.LegendPrepareGraze,
 		Icon = "ui/perks/graze_circle.png",
@@ -2402,7 +2402,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_slaughter",
-		Script = "scripts/skills/perks/perk_slaughter",
+		Script = "scripts/skills/perks/perk_legend_slaughter",
 		Name = this.Const.Strings.PerkName.LegendSlaughter,
 		Tooltip = this.Const.Strings.PerkDescription.LegendSlaughter,
 		Icon = "ui/perks/slaughter_circle.png",
@@ -2411,7 +2411,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},	
 	{
 		ID = "perk.legend_untouchable",
-		Script = "scripts/skills/perks/perk_untouchable",
+		Script = "scripts/skills/perks/perk_legend_untouchable",
 		Name = this.Const.Strings.PerkName.LegendUntouchable,
 		Tooltip = this.Const.Strings.PerkDescription.LegendUntouchable,
 		Icon = "ui/perks/untouchable_circle.png",
@@ -2420,7 +2420,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},	
 	{
 		ID = "perk.legend_assassinate",
-		Script = "scripts/skills/perks/perk_assassinate",
+		Script = "scripts/skills/perks/perk_legend_assassinate",
 		Name = this.Const.Strings.PerkName.LegendAssassinate,
 		Tooltip = this.Const.Strings.PerkDescription.LegendAssassinate,
 		Icon = "ui/perks/assassinate_circle.png",
@@ -2429,7 +2429,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},
 	{
 		ID = "perk.legend_meal_preperation",
-		Script = "scripts/skills/perks/perk_meal_preperation",
+		Script = "scripts/skills/perks/perk_legend_meal_preperation",
 		Name = this.Const.Strings.PerkName.LegendMealPreperation,
 		Tooltip = this.Const.Strings.PerkDescription.LegendMealPreperation,
 		Icon = "ui/perks/meal_prep_circle.png",
@@ -2438,7 +2438,7 @@ gt.Const.Perks.PerkDefObjects <- [
 	},	
 	{
 		ID = "perk.legend_alcohol_brewing",
-		Script = "scripts/skills/perks/perk_alcohol_brewing",
+		Script = "scripts/skills/perks/perk_legend_alcohol_brewing",
 		Name = this.Const.Strings.PerkName.LegendAlcoholBrewing,
 		Tooltip = this.Const.Strings.PerkDescription.LegendAlcoholBrewing,
 		Icon = "ui/perks/alcohol_circle.png",
