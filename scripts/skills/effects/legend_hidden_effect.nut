@@ -84,54 +84,56 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.getSprite("armor").Saturation = 0.5;
-		this.getSprite("armor").setBrightness(0.5);
-		this.getSprite("helmet").Saturation = 0.5;
-		this.getSprite("helmet").setBrightness(0.5);
-		this.getSprite("shield_icon").Saturation = 0.5;
-		this.getSprite("shield_icon").setBrightness(0.5);
-		this.getSprite("armor_layer_chain").setBrightness(0.5);
-		this.getSprite("armor_layer_chain").Saturation = 0.5;
-		this.getSprite("armor_layer_plate").setBrightness(0.5);
-		this.getSprite("armor_layer_plate").Saturation = 0.5;
-		this.getSprite("armor_layer_tabbard").setBrightness(0.5);
-		this.getSprite("armor_layer_tabbard").Saturation = 0.5;
-		this.getSprite("armor_layer_cloak").setBrightness(0.5);
-		this.getSprite("armor_layer_cloak").Saturation = 0.5;
-		this.getSprite("head").setBrightness(0.5);
-		this.getSprite("head").Saturation = 0.5;
-		this.getSprite("body").setBrightness(0.5);
-		this.getSprite("body").Saturation = 0.5;
-		this.getSprite("hair").setBrightness(0.5);
-		this.getSprite("hair").Saturation = 0.5;
-		this.getSprite("beard").setBrightness(0.5);
-		this.getSprite("beard").Saturation = 0.5;
+		local actor = this.getContainer().getActor();
+		actor.getSprite("armor").Saturation = 0.5;
+		actor.getSprite("armor").setBrightness(0.5);
+		actor.getSprite("helmet").Saturation = 0.5;
+		actor.getSprite("helmet").setBrightness(0.5);
+		actor.getSprite("shield_icon").Saturation = 0.5;
+		actor.getSprite("shield_icon").setBrightness(0.5);
+		actor.getSprite("armor_layer_chain").setBrightness(0.5);
+		actor.getSprite("armor_layer_chain").Saturation = 0.5;
+		actor.getSprite("armor_layer_plate").setBrightness(0.5);
+		actor.getSprite("armor_layer_plate").Saturation = 0.5;
+		actor.getSprite("armor_layer_tabbard").setBrightness(0.5);
+		actor.getSprite("armor_layer_tabbard").Saturation = 0.5;
+		actor.getSprite("armor_layer_cloak").setBrightness(0.5);
+		actor.getSprite("armor_layer_cloak").Saturation = 0.5;
+		actor.getSprite("head").setBrightness(0.5);
+		actor.getSprite("head").Saturation = 0.5;
+		actor.getSprite("body").setBrightness(0.5);
+		actor.getSprite("body").Saturation = 0.5;
+		actor.getSprite("hair").setBrightness(0.5);
+		actor.getSprite("hair").Saturation = 0.5;
+		actor.getSprite("beard").setBrightness(0.5);
+		actor.getSprite("beard").Saturation = 0.5;
 	}
 
 	function onRemoved()
 	{
-		this.getSprite("armor").Saturation = 1.0;
-		this.getSprite("armor").setBrightness(1.0);
-		this.getSprite("helmet").Saturation = 1.0;
-		this.getSprite("helmet").setBrightness(1.0);
-		this.getSprite("shield_icon").Saturation = 1.0;
-		this.getSprite("shield_icon").setBrightness(1.0);
-		this.getSprite("armor_layer_chain").setBrightness(1.0);
-		this.getSprite("armor_layer_chain").Saturation = 1.0;
-		this.getSprite("armor_layer_plate").setBrightness(1.0);
-		this.getSprite("armor_layer_plate").Saturation = 1.0;
-		this.getSprite("armor_layer_tabbard").setBrightness(1.0);
-		this.getSprite("armor_layer_tabbard").Saturation = 1.0;
-		this.getSprite("armor_layer_cloak").setBrightness(1.0);
-		this.getSprite("armor_layer_cloak").Saturation = 1.0;
-		this.getSprite("head").setBrightness(1.0);
-		this.getSprite("head").Saturation = 1.0;
-		this.getSprite("body").setBrightness(1.0);
-		this.getSprite("body").Saturation = 1.0;
-		this.getSprite("hair").setBrightness(1.0);
-		this.getSprite("hair").Saturation = 1.0;
-		this.getSprite("beard").setBrightness(1.0);
-		this.getSprite("beard").Saturation = 1.0;
+		local actor = this.getContainer().getActor();
+		actor.getSprite("armor").Saturation = 1.0;
+		actor.getSprite("armor").setBrightness(1.0);
+		actor.getSprite("helmet").Saturation = 1.0;
+		actor.getSprite("helmet").setBrightness(1.0);
+		actor.getSprite("shield_icon").Saturation = 1.0;
+		actor.getSprite("shield_icon").setBrightness(1.0);
+		actor.getSprite("armor_layer_chain").setBrightness(1.0);
+		actor.getSprite("armor_layer_chain").Saturation = 1.0;
+		actor.getSprite("armor_layer_plate").setBrightness(1.0);
+		actor.getSprite("armor_layer_plate").Saturation = 1.0;
+		actor.getSprite("armor_layer_tabbard").setBrightness(1.0);
+		actor.getSprite("armor_layer_tabbard").Saturation = 1.0;
+		actor.getSprite("armor_layer_cloak").setBrightness(1.0);
+		actor.getSprite("armor_layer_cloak").Saturation = 1.0;
+		actor.getSprite("head").setBrightness(1.0);
+		actor.getSprite("head").Saturation = 1.0;
+		actor.getSprite("body").setBrightness(1.0);
+		actor.getSprite("body").Saturation = 1.0;
+		actor.getSprite("hair").setBrightness(1.0);
+		actor.getSprite("hair").Saturation = 1.0;
+		actor.getSprite("beard").setBrightness(1.0);
+		actor.getSprite("beard").Saturation = 1.0;
 	}
 
 	function onUpdate( _properties )
