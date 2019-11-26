@@ -2459,8 +2459,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_pirouette",
 		Name = this.Const.Strings.PerkName.LegendHorsePirouette,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorsePirouette,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/pirouette_perk.png",
+		IconDisabled = "ui/perks/pirouette_perk_bw.png",
 		Const = "LegendHorsePirouette"
 	},
 	{
@@ -2468,8 +2468,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_bitting",
 		Name = this.Const.Strings.PerkName.LegendHorseBitting,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseBitting,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/bitting_perk.png",
+		IconDisabled = "ui/perks/bitting_perk_bw.png",
 		Const = "LegendHorseBitting"
 	},
 	{
@@ -2477,8 +2477,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_desensitization",
 		Name = this.Const.Strings.PerkName.LegendHorseDesensitization,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseDesensitization,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/desensitization_perk.png",
+		IconDisabled = "ui/perks/desensitization_perk_bw.png",
 		Const = "LegendHorseDesensitization"
 	},
 	{
@@ -2495,8 +2495,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_impulsion",
 		Name = this.Const.Strings.PerkName.LegendHorseImpulsion,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseImpulsion,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/impulse_perk.png",
+		IconDisabled = "ui/perks/impulse_perk_bw.png",
 		Const = "LegendHorseImpulsion"
 	},
 	{
@@ -2513,8 +2513,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_leg_control",
 		Name = this.Const.Strings.PerkName.LegendHorseLegControl,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseLegControl,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/legcontrol_perk.png",
+		IconDisabled = "ui/perks/legcontrol_perk_bw.png",
 		Const = "LegendHorseLegControl"
 	},
 	{
@@ -2540,8 +2540,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_parthian_shot",
 		Name = this.Const.Strings.PerkName.LegendHorseParthianShot,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseParthianShot,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/partian_shot_perk.png",
+		IconDisabled = "ui/perks/partian_shot_perk_bw.png",
 		Const = "LegendHorseParthianShot"
 	},
 	{
@@ -2549,8 +2549,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_piaffe",
 		Name = this.Const.Strings.PerkName.LegendHorsePiaffe,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorsePiaffe,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/Piaffe_perk.png",
+		IconDisabled = "ui/perks/Piaffe_perk_bw.png",
 		Const = "LegendHorsePiaffe"
 	},
 	{
@@ -2567,8 +2567,8 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_collection",
 		Name = this.Const.Strings.PerkName.LegendHorseCollection,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorseCollection,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/collection_perk.png",
+		IconDisabled = "ui/perks/collection_perk_bw.png",
 		Const = "LegendHorseCollection"
 	},
 	{
@@ -2585,18 +2585,9 @@ gt.Const.Perks.PerkDefObjects <- [
 		Script = "scripts/skills/perks/perk_legend_horse_passage",
 		Name = this.Const.Strings.PerkName.LegendHorsePassage,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHorsePassage,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
+		Icon = "ui/perks/passage_perk.png",
+		IconDisabled = "ui/perks/passage_perk_bw.png",
 		Const = "LegendHorsePassage"
-	},
-	{
-		ID = "perk.legend_horse_pirouette",
-		Script = "scripts/skills/perks/perk_legend_horse_pirouette",
-		Name = this.Const.Strings.PerkName.LegendHorsePirouette,
-		Tooltip = this.Const.Strings.PerkDescription.LegendHorsePirouette,
-		Icon = "ui/perks/perk_23.png",
-		IconDisabled = "ui/perks/perk_23_sw.png",
-		Const = "LegendHorsePirouette"
 	},
 	{
 		ID = "perk.legend_drums_of_life",
