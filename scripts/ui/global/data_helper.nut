@@ -54,6 +54,11 @@ this.data_helper <- {
 		{
 			d = d + " Ironman";
 		}
+		
+		if (_meta.getInt("autosave") == 1)
+		{
+			d = d + " Autosave off";
+		}
 
 		d = d + ")";
 		return {
@@ -64,7 +69,8 @@ this.data_helper <- {
 			dayName = "Day " + _meta.getInt("days") + d,
 			creationDate = _meta.getCreationDate(),
 			isIncompatibleVersion = _meta.getVersion() < 21 || _meta.getVersion() > this.Const.Serialization.Version || !this.Const.DLC.isCompatible(_meta),
-			isIronman = _meta.getInt("ironman") == 1
+			isIronman = _meta.getInt("ironman") == 1,
+			isAutosave = _meta.getInt("autosave") == 1
 		};
 	}
 

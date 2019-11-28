@@ -2260,6 +2260,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "menu-screen.new-campaign.Autosave":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Autosave"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Only disable for the most masochistic playthroughs. No save will exist for the company, the game will not be automatically saved during the game or when exiting it. \n\n Harder than ironman, there can be no alt f4, the entire run must happen in one sitting. "
+				}
+			];
+
 		case "menu-screen.new-campaign.EvilRandom":
 			return [
 				{

@@ -228,10 +228,15 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 		this.Tooltip.hide();
 		this.m.TacticalScreen.hide();
 
-		if (!this.World.Assets.isIronman())
+		if (!this.World.Assets.isIronman() && this.World.Assets.isAutosave())
 		{
 			this.showDialogPopup("Quit to Main Menu", "Are you sure you want to quit this battle and return to the main menu?\n\nAny progress made in battle will be lost, but there was an autosave made right before the battle started.", this.onQuitToMainMenu.bindenv(this), this.onCancelQuitToMainMenu.bindenv(this));
 		}
+		else if (!this.World.Assets.isIronman() && !this.World.Assets.isAutosave())
+		{
+			this.showDialogPopup("Quit to Main Menu", "Are you sure you want to quit this battle and return to the main menu?\n\nAny progress made in battle will be lost, there was no autosave before the battle started.", this.onQuitToMainMenu.bindenv(this), this.onCancelQuitToMainMenu.bindenv(this));
+		}
+
 		else
 		{
 			this.showDialogPopup("Quit & Retire", "Are you sure you want to quit this battle and thereby forfeit your ironman run and retire from your company?\n\nYour save will be deleted and you won\'t be able to continue.", this.onQuitToMainMenu.bindenv(this), this.onCancelQuitToMainMenu.bindenv(this));

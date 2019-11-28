@@ -116,6 +116,7 @@ var TooltipIdentifier =
 			BudgetDifficultyHard: 'menu-screen.new-campaign.HardDifficultyBudget',
 			BudgetDifficultyLegendary: 'menu-screen.new-campaign.LegendaryDifficultyBudget',
 			Ironman: 'menu-screen.new-campaign.Ironman',
+			Autosave: 'menu-screen.new-campaign.Autosave',
 			EvilRandom: 'menu-screen.new-campaign.EvilRandom',
 			EvilNone: 'menu-screen.new-campaign.EvilNone',
 			EvilWar: 'menu-screen.new-campaign.EvilWar',

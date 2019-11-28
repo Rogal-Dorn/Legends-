@@ -35,6 +35,7 @@ this.asset_manager <- {
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
 		IsIronman = false,
+		IsAutosave = false,
 		IsPermanentDestruction = true,
 		IsLegendPerkTrees = true,
 		IsCamping = false,
@@ -232,6 +233,11 @@ this.asset_manager <- {
 		return this.m.IsIronman;
 	}
 
+	function isAutosave()
+	{
+		return this.m.IsAutosave;
+	}
+
 	function isPermanentDestruction()
 	{
 		return this.m.IsPermanentDestruction;
@@ -388,6 +394,7 @@ this.asset_manager <- {
 		this.m.CombatDifficulty = _settings.Difficulty;
 		this.m.EconomicDifficulty = _settings.EconomicDifficulty;
 		this.m.IsIronman = _settings.Ironman;
+		this.m.IsAutosave = _settings.Autosave;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
 		this.m.IsLegendPerkTrees = _settings.LegendPerkTrees;
 		this.m.Origin = _settings.StartingScenario;
